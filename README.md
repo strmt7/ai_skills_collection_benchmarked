@@ -1,4 +1,4 @@
-# AI Skill Collection Benchmarked
+# AI Skills Collection Benchmarked
 
 > Early alpha: this repository is experimental. Many entries may be incomplete, incompatible, stale, or unsuitable for a given environment. Use it at your own risk; the maintainers accept no responsibility for results, failures, or downstream use.
 
