@@ -1,7 +1,7 @@
 {
   "artifact_kind": "provenance_check",
   "artifact_version": "1.0",
-  "catalog_commit": "7512fbf179925eeb015e320e35004d16a95050e8",
+  "catalog_commit": "515e8b9056ae5cf4a1d8ee3f5d64d1f3c729b375",
   "evidence": {
     "artifact_paths": [
       "result.json",
@@ -9,7 +9,7 @@
     ],
     "citations_or_paths": [
       "skills/bria-ai/SKILL.md",
-      "included/skills/by-category/creative-media-design/latest-release-creative/bria-ai-bria-skill-skills-bria-ai/SKILL.md",
+      "included/skills/by-category/creative-media-design/latest-release-creative/bria-ai/SKILL.md",
       "AGENTS.md"
     ]
   },
@@ -28,7 +28,7 @@
     "identifier": "https://github.com/Bria-AI/bria-skill/blob/b0e107b0f4667f0e1c9177bcd491b7d436c6932d/skills/bria-ai/SKILL.md",
     "is_real": true,
     "kind": "source-skill-repository",
-    "mirrored_path": "included/skills/by-category/creative-media-design/latest-release-creative/bria-ai-bria-skill-skills-bria-ai",
+    "mirrored_path": "included/skills/by-category/creative-media-design/latest-release-creative/bria-ai",
     "skill_file_sha256": "a2c001abdde576d83cbf911446ec4a243eea8fcbd6e5d16086e6c7edcb64bf2e",
     "source_commit": "b0e107b0f4667f0e1c9177bcd491b7d436c6932d"
   },
@@ -46,13 +46,13 @@
   ],
   "outputs": {
     "path": "result.json",
-    "result_sha256": "baaede9c7141b4bbb95692f137e9221c768c1d3b4415d5a0cee0b768a4fe86be",
+    "result_sha256": "02ec94624b15d7eb8459f408451da31973d4d4e18169e03037156665e52400ec",
     "schema": "evaluators/source_grounded_skill_proof.schema.json"
   },
   "runner": {
     "batch_name": "2026-04-17-first-source-proofs",
     "model_or_runtime": "local-deterministic-source-proof-runner",
-    "timestamp_utc": "2026-04-17T19:10:10Z",
+    "timestamp_utc": "2026-04-17T21:39:52Z",
     "tool": "tools/create_source_proof_batch.py"
   },
   "scenario_id": "skill-proof-bria-ai-bria-skill-skills-bria-ai-skill-md",

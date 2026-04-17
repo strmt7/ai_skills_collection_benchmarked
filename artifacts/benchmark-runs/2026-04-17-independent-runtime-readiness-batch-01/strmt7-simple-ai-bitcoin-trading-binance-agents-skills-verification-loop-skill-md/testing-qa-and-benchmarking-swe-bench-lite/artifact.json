@@ -1,7 +1,7 @@
 {
   "artifact_kind": "independent_benchmark",
   "artifact_version": "1.0",
-  "catalog_commit": "8e3e1077c5dd0d16334f25cdddbc01e658b2f353",
+  "catalog_commit": "515e8b9056ae5cf4a1d8ee3f5d64d1f3c729b375",
   "evidence": {
     "artifact_paths": [
       "result.json",
@@ -11,8 +11,8 @@
     ],
     "citations_or_paths": [
       "benchmarks/independent-runtime-readiness/batch-01/tasks.json",
-      "included/skills/by-category/testing-qa-benchmarking/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop/SKILL.md",
-      "included/agent-ready/by-category/testing-qa-benchmarking/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop/SKILL.md",
+      "included/skills/by-category/testing-qa-benchmarking/selected-project-reference/verification-loop-simple-ai-bitcoin-trading-binance/SKILL.md",
+      "included/agent-ready/by-category/testing-qa-benchmarking/selected-project-reference/verification-loop-simple-ai-bitcoin-trading-binance/SKILL.md",
       "data/benchmark_scenarios.json",
       "data/benchmark_tracks.json",
       "data/skill_risk_audit.json",
@@ -36,7 +36,7 @@
     "identifier": "https://github.com/SWE-bench/SWE-bench",
     "is_real": true,
     "kind": "real-github-repository-tree",
-    "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop",
+    "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/selected-project-reference/verification-loop-simple-ai-bitcoin-trading-binance",
     "resolved_commit": "f7bbbb2ccdf479001d6467c9e34af59e44a840f9",
     "track_subpath": null,
     "track_subpath_present": true,
@@ -65,13 +65,13 @@
   ],
   "outputs": {
     "path": "result.json",
-    "result_sha256": "4451c709d68fb866757d34f080a1416de6fdbf885da96de4daa1f31fa86b2962",
+    "result_sha256": "ba54982489bee11c75238601964a308a76dd01dc155fee68939d691f607f16ab",
     "schema": "evaluators/generic_workflow_result.schema.json"
   },
   "runner": {
     "batch_name": "2026-04-17-independent-runtime-readiness-batch-01",
     "model_or_runtime": "local-deterministic-runtime-readiness-runner",
-    "timestamp_utc": "2026-04-17T20:35:46Z",
+    "timestamp_utc": "2026-04-17T21:39:52Z",
     "tool": "tools/create_independent_runtime_batch.py"
   },
   "scenario_id": "testing-qa-and-benchmarking-swe-bench-lite",

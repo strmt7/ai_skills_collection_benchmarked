@@ -1,7 +1,7 @@
 {
   "artifact_kind": "independent_benchmark",
   "artifact_version": "1.0",
-  "catalog_commit": "8e3e1077c5dd0d16334f25cdddbc01e658b2f353",
+  "catalog_commit": "515e8b9056ae5cf4a1d8ee3f5d64d1f3c729b375",
   "evidence": {
     "artifact_paths": [
       "result.json",
@@ -11,8 +11,8 @@
     ],
     "citations_or_paths": [
       "benchmarks/independent-runtime-readiness/batch-01/tasks.json",
-      "included/skills/by-category/devops-cloud-operations/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget/SKILL.md",
-      "included/agent-ready/by-category/devops-cloud-operations/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget/SKILL.md",
+      "included/skills/by-category/devops-cloud-operations/selected-project-reference/context-budget-simple-ai-bitcoin-trading-binance/SKILL.md",
+      "included/agent-ready/by-category/devops-cloud-operations/selected-project-reference/context-budget-simple-ai-bitcoin-trading-binance/SKILL.md",
       "data/benchmark_scenarios.json",
       "data/benchmark_tracks.json",
       "data/skill_risk_audit.json",
@@ -36,7 +36,7 @@
     "identifier": "https://github.com/kubernetes/examples",
     "is_real": true,
     "kind": "real-github-repository-tree",
-    "mirrored_path": "included/skills/by-category/devops-cloud-operations/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget",
+    "mirrored_path": "included/skills/by-category/devops-cloud-operations/selected-project-reference/context-budget-simple-ai-bitcoin-trading-binance",
     "resolved_commit": "d6b8cd27eacb51e651a1aa6f7c190a28713eff6e",
     "track_subpath": null,
     "track_subpath_present": true,
@@ -65,13 +65,13 @@
   ],
   "outputs": {
     "path": "result.json",
-    "result_sha256": "e906ea5fc55cd41392cc8e18aa81166c4f12c795f5a0301f4e0ba815f33c46d0",
+    "result_sha256": "64e74c82f939ad300e5392ad99bb64a1c4ca0192552eefcf399f384ed31726dd",
     "schema": "evaluators/generic_workflow_result.schema.json"
   },
   "runner": {
     "batch_name": "2026-04-17-independent-runtime-readiness-batch-01",
     "model_or_runtime": "local-deterministic-runtime-readiness-runner",
-    "timestamp_utc": "2026-04-17T20:35:46Z",
+    "timestamp_utc": "2026-04-17T21:39:52Z",
     "tool": "tools/create_independent_runtime_batch.py"
   },
   "scenario_id": "devops-cloud-and-operations-kubernetes-examples",

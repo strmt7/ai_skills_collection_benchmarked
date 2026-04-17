@@ -178,14 +178,86 @@ def slug(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-") or "item"
 
 
-def install_name(entry_or_repo: dict[str, Any] | str, source_path: str | None = None) -> str:
-    if isinstance(entry_or_repo, dict):
-        repo = entry_or_repo["source_repo"]
-        source_path = entry_or_repo["source_path"]
+GENERIC_SKILL_PATH_PARTS = {
+    ".agents",
+    ".claude",
+    ".cursor",
+    ".github",
+    ".kiro",
+    "agents",
+    "claude-skills",
+    "docs",
+    "plugins",
+    "skill",
+    "skills",
+}
+GENERIC_REPO_NAMES = {"skill", "skills"}
+
+
+def repo_identity_slug(source_repo: str) -> str:
+    owner, _, repo = source_repo.partition("/")
+    repo_value = slug(repo or source_repo)
+    if repo_value in GENERIC_REPO_NAMES:
+        return slug(owner)
+    return repo_value
+
+
+def source_path_slug(source_path: str) -> str:
+    parts = [slug(part) for part in Path(source_path).parts[:-1]]
+    meaningful = [part for part in parts if part and part not in GENERIC_SKILL_PATH_PARTS]
+    return slug("-".join(meaningful[-3:] or parts[-1:] or ["skill"]))
+
+
+def base_install_name(skill_name: str, source_path: str) -> str:
+    name_slug = slug(skill_name)
+    if name_slug != "item" and name_slug not in GENERIC_SKILL_PATH_PARTS:
+        return name_slug
+    return source_path_slug(source_path)
+
+
+def unique_install_name(entry: dict[str, Any], used_names: set[str], base_counts: dict[str, int]) -> str:
+    base = base_install_name(entry["name"], entry["source_path"])
+    source_identity = repo_identity_slug(entry["source_repo"])
+    path_identity = source_path_slug(entry["source_path"])
+    full_source_identity = slug(f"{entry['source_repo']} {entry['source_path'].removesuffix('/SKILL.md').removesuffix('SKILL.md')}")
+
+    if base_counts[base] == 1:
+        candidates = [base, f"{base}--{source_identity}", f"{base}--{path_identity}"]
     else:
-        repo = entry_or_repo
+        candidates = [
+            f"{base}--{source_identity}",
+            f"{base}--{path_identity}",
+            f"{base}--{source_identity}-{path_identity}",
+        ]
+    candidates.append(f"{base}--{full_source_identity}")
+
+    for candidate in candidates:
+        value = slug(candidate)
+        if value not in used_names:
+            used_names.add(value)
+            return value
+    raise ValueError(f"could not allocate unique install_name for {entry['id']}")
+
+
+def assign_install_names(entries: list[dict[str, Any]]) -> None:
+    base_counts: dict[str, int] = {}
+    for entry in entries:
+        base = base_install_name(entry["name"], entry["source_path"])
+        base_counts[base] = base_counts.get(base, 0) + 1
+
+    used_names: set[str] = set()
+    for entry in sorted(entries, key=lambda item: item["id"]):
+        entry_install_name = unique_install_name(entry, used_names, base_counts)
+        entry["install_name"] = entry_install_name
+        entry["mirrored_path"] = skill_mirror_path(entry["category"], entry["subcategory"], entry_install_name)
+        entry["agent_ready_path"] = skill_agent_ready_path(entry["category"], entry["subcategory"], entry_install_name)
+
+
+def install_name(entry_or_repo: dict[str, Any] | str, source_path: str | None = None, skill_name: str | None = None) -> str:
+    if isinstance(entry_or_repo, dict):
+        return base_install_name(entry_or_repo["name"], entry_or_repo["source_path"])
     assert source_path is not None
-    return slug(f"{repo} {source_path.removesuffix('/SKILL.md').removesuffix('SKILL.md')}")
+    return base_install_name(skill_name or Path(source_path).parent.name, source_path)
 
 
 def sanitize_secret_like_text(text: str) -> str:
@@ -503,7 +575,7 @@ def collect() -> list[dict[str, Any]]:
             category = category_for(source, rel, name, source_description)
             resource_flags = flags(skill_file)
             has_required_frontmatter = all(key in meta for key in ("name", "description"))
-            entry_install_name = install_name(source["repo"], rel)
+            entry_install_name = install_name(source["repo"], rel, name)
             item = {
                 "id": slug(f"{source['repo']} {rel}"),
                 "name": name,
@@ -559,6 +631,7 @@ def collect() -> list[dict[str, Any]]:
             item["benchmark_scenarios"] = [f"skill-proof-{item['id']}"] + scenario_ids(category)
             entries.append(item)
     entries.sort(key=lambda e: (0 if e["selected_subset"] else 1, e["category"], e["source_repo"], e["source_path"]))
+    assign_install_names(entries)
     return entries
 
 
@@ -670,8 +743,9 @@ def mirror_all_skills(entries: list[dict[str, Any]]) -> None:
     (target / "README.md").write_text(
         f"# Included Skills\n\n"
         f"This directory contains one physical mirror for each of the `{len(entries)}` cataloged source-backed skills.\n\n"
-        "Skill mirrors are grouped by category and source tier, then isolated in a stable repository-and-path `install_name` directory so duplicate upstream skill names do not overwrite each other. "
-        "Use `manifest.json` to trace every mirror back to its immutable source URL, commit, source path, and SHA-256 hashes.\n\n"
+        "Skill mirrors are grouped by category and source tier, then isolated in a stable `install_name` directory. "
+        "The install name is the skill name when unique, with exact source-derived qualifiers only when needed to prevent collisions. "
+        "Use `manifest.json` to trace every mirror back to its full immutable source URL, commit, source path, and SHA-256 hashes.\n\n"
         "Do not bulk-install entries where `bulk_install_safe` is false.\n",
         encoding="utf-8",
     )
@@ -752,7 +826,7 @@ def write_selected_manifest(entries: list[dict[str, Any]]) -> None:
     (target / "README.md").write_text(
         "# Selected Skills\n\n"
         "This directory is a selected subset manifest only. The actual skill directories are physically written once under `included/skills/` and are referenced by each entry's `mirrored_path`.\n\n"
-        "Use `manifest.json` to trace selected entries back to immutable source URLs and unique `install_name` values. Do not bulk-install entries where `bulk_install_safe` is false.\n",
+        "Use `manifest.json` to trace selected entries back to full immutable source URLs and unique `install_name` values. Do not bulk-install entries where `bulk_install_safe` is false.\n",
         encoding="utf-8",
     )
 

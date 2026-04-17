@@ -2,9 +2,9 @@
 
 ## coding-standards - affaan-m/everything-claude-code `.agents/skills/coding-standards/SKILL.md`
 
-- Skill page: [affaan-m-everything-claude-code-agents-skills-coding-standards](../skills/by-category/frontend-ui-browser-automation/selected-structure-reference/affaan-m-everything-claude-code-agents-skills-coding-standards.md)
-- Mirrored skill: `included/skills/by-category/frontend-ui-browser-automation/selected-structure-reference/affaan-m-everything-claude-code-agents-skills-coding-standards`
-- Agent-ready entrypoint: `included/agent-ready/by-category/frontend-ui-browser-automation/selected-structure-reference/affaan-m-everything-claude-code-agents-skills-coding-standards/SKILL.md`
+- Skill page: [coding-standards](../skills/by-category/frontend-ui-browser-automation/selected-structure-reference/coding-standards.md)
+- Mirrored skill: `included/skills/by-category/frontend-ui-browser-automation/selected-structure-reference/coding-standards`
+- Agent-ready entrypoint: `included/agent-ready/by-category/frontend-ui-browser-automation/selected-structure-reference/coding-standards/SKILL.md`
 - Source: [affaan-m/everything-claude-code `.agents/skills/coding-standards/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/coding-standards/SKILL.md)
 - Selected ref: `v1.10.0`; commit `846ffb75da9a`
 - What it covers: Catalog summary: Universal coding standards, best practices, and patterns for TypeScript, JavaScript, React, and Node.js development.
@@ -23,9 +23,9 @@
 
 ## frontend-patterns - affaan-m/everything-claude-code `.agents/skills/frontend-patterns/SKILL.md`
 
-- Skill page: [affaan-m-everything-claude-code-agents-skills-frontend-patterns](../skills/by-category/frontend-ui-browser-automation/selected-structure-reference/affaan-m-everything-claude-code-agents-skills-frontend-patterns.md)
-- Mirrored skill: `included/skills/by-category/frontend-ui-browser-automation/selected-structure-reference/affaan-m-everything-claude-code-agents-skills-frontend-patterns`
-- Agent-ready entrypoint: `included/agent-ready/by-category/frontend-ui-browser-automation/selected-structure-reference/affaan-m-everything-claude-code-agents-skills-frontend-patterns/SKILL.md`
+- Skill page: [frontend-patterns](../skills/by-category/frontend-ui-browser-automation/selected-structure-reference/frontend-patterns.md)
+- Mirrored skill: `included/skills/by-category/frontend-ui-browser-automation/selected-structure-reference/frontend-patterns`
+- Agent-ready entrypoint: `included/agent-ready/by-category/frontend-ui-browser-automation/selected-structure-reference/frontend-patterns/SKILL.md`
 - Source: [affaan-m/everything-claude-code `.agents/skills/frontend-patterns/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/frontend-patterns/SKILL.md)
 - Selected ref: `v1.10.0`; commit `846ffb75da9a`
 - What it covers: Catalog summary: Frontend development patterns for React, Next.js, state management, performance optimization, and UI best practices.
@@ -44,9 +44,9 @@
 
 ## claude-in-chrome-troubleshooting - trailofbits/skills `plugins/claude-in-chrome-troubleshooting/skills/claude-in-chrome-troubleshooting/SKILL.md`
 
-- Skill page: [trailofbits-skills-plugins-claude-in-chrome-troubleshooting-skills-claude-in-chrome-troubleshooting](../skills/by-category/frontend-ui-browser-automation/security-reference/trailofbits-skills-plugins-claude-in-chrome-troubleshooting-skills-claude-in-chrome-troubleshooting.md)
-- Mirrored skill: `included/skills/by-category/frontend-ui-browser-automation/security-reference/trailofbits-skills-plugins-claude-in-chrome-troubleshooting-skills-claude-in-chrome-troubleshooting`
-- Agent-ready entrypoint: `included/agent-ready/by-category/frontend-ui-browser-automation/security-reference/trailofbits-skills-plugins-claude-in-chrome-troubleshooting-skills-claude-in-chrome-troubleshooting/SKILL.md`
+- Skill page: [claude-in-chrome-troubleshooting](../skills/by-category/frontend-ui-browser-automation/security-reference/claude-in-chrome-troubleshooting.md)
+- Mirrored skill: `included/skills/by-category/frontend-ui-browser-automation/security-reference/claude-in-chrome-troubleshooting`
+- Agent-ready entrypoint: `included/agent-ready/by-category/frontend-ui-browser-automation/security-reference/claude-in-chrome-troubleshooting/SKILL.md`
 - Source: [trailofbits/skills `plugins/claude-in-chrome-troubleshooting/skills/claude-in-chrome-troubleshooting/SKILL.md`](https://github.com/trailofbits/skills/blob/e8cc5baf9329ccb491bfa200e82eacbac83b1ead/plugins/claude-in-chrome-troubleshooting/skills/claude-in-chrome-troubleshooting/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `e8cc5baf9329`
 - What it covers: Catalog summary: Diagnose and fix Claude in Chrome MCP extension connectivity issues. Use when mcp__claude-in-chrome__* tools fail, return "Browser extension is not connected", or behave erratically.

@@ -1,7 +1,7 @@
 {
   "artifact_kind": "provenance_check",
   "artifact_version": "1.0",
-  "catalog_commit": "7512fbf179925eeb015e320e35004d16a95050e8",
+  "catalog_commit": "515e8b9056ae5cf4a1d8ee3f5d64d1f3c729b375",
   "evidence": {
     "artifact_paths": [
       "result.json",
@@ -9,7 +9,7 @@
     ],
     "citations_or_paths": [
       "packages/cli/skills/show-hn-writer/SKILL.md",
-      "included/skills/by-category/agent-infrastructure-skill-creation/reddit-verified-gtm-registry/varnan-tech-opendirectory-packages-cli-skills-show-hn-writer/SKILL.md",
+      "included/skills/by-category/agent-infrastructure-skill-creation/reddit-verified-gtm-registry/show-hn-writer/SKILL.md",
       "AGENTS.md"
     ]
   },
@@ -28,7 +28,7 @@
     "identifier": "https://github.com/Varnan-Tech/opendirectory/blob/bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4/packages/cli/skills/show-hn-writer/SKILL.md",
     "is_real": true,
     "kind": "source-skill-repository",
-    "mirrored_path": "included/skills/by-category/agent-infrastructure-skill-creation/reddit-verified-gtm-registry/varnan-tech-opendirectory-packages-cli-skills-show-hn-writer",
+    "mirrored_path": "included/skills/by-category/agent-infrastructure-skill-creation/reddit-verified-gtm-registry/show-hn-writer",
     "skill_file_sha256": "37642287d833b24b41a408518b67de11415d610fa226dda9c78c51b064e25266",
     "source_commit": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4"
   },
@@ -46,13 +46,13 @@
   ],
   "outputs": {
     "path": "result.json",
-    "result_sha256": "f959777728606a69598d7ce7c0a12d3610f1f1d27290569157e1c8ae64a630ba",
+    "result_sha256": "7fd8a1f4e01f8b8b433d4419260cb43181195b1d759bbc93a9cff57059fcd7d4",
     "schema": "evaluators/source_grounded_skill_proof.schema.json"
   },
   "runner": {
     "batch_name": "2026-04-17-first-source-proofs",
     "model_or_runtime": "local-deterministic-source-proof-runner",
-    "timestamp_utc": "2026-04-17T19:10:10Z",
+    "timestamp_utc": "2026-04-17T21:39:52Z",
     "tool": "tools/create_source_proof_batch.py"
   },
   "scenario_id": "skill-proof-varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md",

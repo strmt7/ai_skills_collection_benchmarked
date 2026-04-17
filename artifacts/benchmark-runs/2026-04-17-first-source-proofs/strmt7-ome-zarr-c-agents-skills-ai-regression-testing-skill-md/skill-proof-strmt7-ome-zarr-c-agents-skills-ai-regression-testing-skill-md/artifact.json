@@ -1,7 +1,7 @@
 {
   "artifact_kind": "provenance_check",
   "artifact_version": "1.0",
-  "catalog_commit": "7512fbf179925eeb015e320e35004d16a95050e8",
+  "catalog_commit": "515e8b9056ae5cf4a1d8ee3f5d64d1f3c729b375",
   "evidence": {
     "artifact_paths": [
       "result.json",
@@ -9,7 +9,7 @@
     ],
     "citations_or_paths": [
       ".agents/skills/ai-regression-testing/SKILL.md",
-      "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-ai-regression-testing/SKILL.md",
+      "included/skills/by-category/science-research-data-analysis/selected-project-reference/ai-regression-testing-ome-zarr-c/SKILL.md",
       "AGENTS.md"
     ]
   },
@@ -28,7 +28,7 @@
     "identifier": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/ai-regression-testing/SKILL.md",
     "is_real": true,
     "kind": "source-skill-repository",
-    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-ai-regression-testing",
+    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/ai-regression-testing-ome-zarr-c",
     "skill_file_sha256": "cd08927aebc6b000df78ea0845d3adafa60bd64ae52c7f2fabe64f72f7e8041f",
     "source_commit": "a9238a81742f96c89acf6d83fce6d6b882ac4d1c"
   },
@@ -46,13 +46,13 @@
   ],
   "outputs": {
     "path": "result.json",
-    "result_sha256": "36ff6fa8d2bbfcbfde188531881eaeadd66487f2f3117420d91bb729dbbe26cb",
+    "result_sha256": "a8f602165f739dd61a8a5d7a95145dc5d0babc40a364f0f1883eb487fe234933",
     "schema": "evaluators/source_grounded_skill_proof.schema.json"
   },
   "runner": {
     "batch_name": "2026-04-17-first-source-proofs",
     "model_or_runtime": "local-deterministic-source-proof-runner",
-    "timestamp_utc": "2026-04-17T19:10:10Z",
+    "timestamp_utc": "2026-04-17T21:39:52Z",
     "tool": "tools/create_source_proof_batch.py"
   },
   "scenario_id": "skill-proof-strmt7-ome-zarr-c-agents-skills-ai-regression-testing-skill-md",

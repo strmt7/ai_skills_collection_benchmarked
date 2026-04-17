@@ -1,10 +1,10 @@
 batch: 2026-04-17-first-source-proofs
-timestamp_utc: 2026-04-17T19:10:10Z
+timestamp_utc: 2026-04-17T21:39:52Z
 runner: tools/create_source_proof_batch.py
-catalog_commit: 7512fbf179925eeb015e320e35004d16a95050e8
+catalog_commit: 515e8b9056ae5cf4a1d8ee3f5d64d1f3c729b375
 skill_id: bria-ai-bria-skill-skills-bria-ai-skill-md
 scenario_id: skill-proof-bria-ai-bria-skill-skills-bria-ai-skill-md
-read: included/skills/by-category/creative-media-design/latest-release-creative/bria-ai-bria-skill-skills-bria-ai/SKILL.md
+read: included/skills/by-category/creative-media-design/latest-release-creative/bria-ai/SKILL.md
 source: https://github.com/Bria-AI/bria-skill/blob/b0e107b0f4667f0e1c9177bcd491b7d436c6932d/skills/bria-ai/SKILL.md
 skill_file_sha256: a2c001abdde576d83cbf911446ec4a243eea8fcbd6e5d16086e6c7edcb64bf2e
 line_count: 247

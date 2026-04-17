@@ -27,7 +27,7 @@
     }
   ],
   "required_context": [
-    "Read the mirrored SKILL.md at included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-android-visual-qa/SKILL.md.",
+    "Read the mirrored SKILL.md at included/skills/by-category/game-mobile-visual-qa/selected-project-reference/android-visual-qa/SKILL.md.",
     "Use source provenance strmt7/project_air_defense .agents/skills/android-visual-qa/SKILL.md at 77f082fe23a86ded15e696a22955b2a890da2fce."
   ],
   "safe_boundaries": [

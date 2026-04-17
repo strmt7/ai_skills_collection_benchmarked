@@ -1,15 +1,15 @@
 {
   "citations_or_paths": [
     "benchmarks/independent-runtime-readiness/batch-01/tasks.json",
-    "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset/SKILL.md",
-    "included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset/SKILL.md",
+    "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/preset/SKILL.md",
+    "included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/preset/SKILL.md",
     "data/benchmark_scenarios.json",
     "data/benchmark_tracks.json",
     "data/skill_risk_audit.json",
     "https://github.com/kubernetes/examples"
   ],
   "inputs": {
-    "agent_ready_path": "included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/preset/SKILL.md",
     "dataset_snapshot": {
       "head_sha": "d6b8cd27eacb51e651a1aa6f7c190a28713eff6e",
       "kind": "real-github-repository-tree",
@@ -45,7 +45,7 @@
       "url": "https://github.com/kubernetes/examples"
     },
     "dataset_track_id": "kubernetes-examples",
-    "mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset",
+    "mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/preset",
     "risk_level": "likely_non_working",
     "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
     "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset-skill-md",
@@ -91,12 +91,12 @@
         "passed": true
       },
       {
-        "evidence": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset/SKILL.md",
+        "evidence": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/preset/SKILL.md",
         "name": "mirror_skill_file_exists",
         "passed": true
       },
       {
-        "evidence": "included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset/SKILL.md",
+        "evidence": "included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/preset/SKILL.md",
         "name": "agent_ready_entrypoint_exists",
         "passed": true
       },
@@ -118,7 +118,7 @@
         "passed": false
       },
       {
-        "evidence": "included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset/SKILL.md",
+        "evidence": "included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/preset/SKILL.md",
         "name": "single_session_entrypoint_clean",
         "passed": true
       },
