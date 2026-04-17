@@ -1,0 +1,139 @@
+{
+  "citations_or_paths": [
+    "benchmarks/independent-runtime-readiness/batch-01/tasks.json",
+    "included/skills/by-category/testing-qa-benchmarking/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop/SKILL.md",
+    "included/agent-ready/by-category/testing-qa-benchmarking/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop/SKILL.md",
+    "data/benchmark_scenarios.json",
+    "data/benchmark_tracks.json",
+    "data/skill_risk_audit.json",
+    "https://github.com/SWE-bench/SWE-bench"
+  ],
+  "inputs": {
+    "agent_ready_path": "included/agent-ready/by-category/testing-qa-benchmarking/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop/SKILL.md",
+    "dataset_snapshot": {
+      "head_sha": "f7bbbb2ccdf479001d6467c9e34af59e44a840f9",
+      "kind": "real-github-repository-tree",
+      "repo_url": "https://github.com/SWE-bench/SWE-bench",
+      "resolved": true,
+      "sampled_paths": [
+        ".github",
+        ".github/ISSUE_TEMPLATE",
+        ".github/ISSUE_TEMPLATE/bug_report.yml",
+        ".github/ISSUE_TEMPLATE/config.yml",
+        ".github/ISSUE_TEMPLATE/feature_request.yml",
+        ".github/ISSUE_TEMPLATE/question.yml",
+        ".github/PULL_REQUEST_TEMPLATE.md",
+        ".github/workflows",
+        ".github/workflows/deploy-docs.yml",
+        ".github/workflows/pytest.yaml",
+        ".gitignore",
+        ".pre-commit-config.yaml",
+        "CHANGELOG.md",
+        "LICENSE",
+        "README.md",
+        "codecov.yml",
+        "docs",
+        "docs/README.md",
+        "docs/api",
+        "docs/api/harness.md"
+      ],
+      "track_subpath": null,
+      "track_subpath_present": true,
+      "tree_api_url": "https://api.github.com/repos/SWE-bench/SWE-bench/git/trees/f7bbbb2ccdf479001d6467c9e34af59e44a840f9?recursive=1",
+      "tree_path_count": 1206,
+      "tree_truncated": false,
+      "url": "https://github.com/SWE-bench/SWE-bench"
+    },
+    "dataset_track_id": "swe-bench-lite",
+    "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop",
+    "risk_level": "likely_non_working",
+    "scenario_id": "testing-qa-and-benchmarking-swe-bench-lite",
+    "skill_id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md",
+    "skill_name": "verification-loop",
+    "source_path": ".agents/skills/verification-loop/SKILL.md",
+    "source_repo": "strmt7/simple_ai_bitcoin_trading_binance",
+    "task_brief_path": "benchmarks/independent-runtime-readiness/batch-01/tasks.json",
+    "task_id": "runtime-readiness-strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md-testing-qa-and-benchmarking-swe-bench-lite"
+  },
+  "metrics": {
+    "benchmark_verdict": "failed",
+    "blocking_failure_count": 1,
+    "checks_passed": 9,
+    "checks_total": 10,
+    "dataset_tree_path_count": 1206,
+    "missing_local_link_count": 0,
+    "score_percent": 90.0
+  },
+  "outputs": {
+    "benchmark_verdict": "failed",
+    "blocking_failures": [
+      "required_frontmatter_present"
+    ],
+    "checks": [
+      {
+        "evidence": "https://github.com/SWE-bench/SWE-bench",
+        "measured": {
+          "head_sha": "f7bbbb2ccdf479001d6467c9e34af59e44a840f9",
+          "track_subpath_present": true,
+          "tree_path_count": 1206
+        },
+        "name": "real_dataset_snapshot_resolved",
+        "passed": true
+      },
+      {
+        "evidence": "testing-qa-and-benchmarking-swe-bench-lite",
+        "name": "assigned_non_provenance_scenario",
+        "passed": true
+      },
+      {
+        "evidence": "benchmarks/independent-runtime-readiness/batch-01/tasks.json",
+        "name": "independent_task_brief_present",
+        "passed": true
+      },
+      {
+        "evidence": "included/skills/by-category/testing-qa-benchmarking/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop/SKILL.md",
+        "name": "mirror_skill_file_exists",
+        "passed": true
+      },
+      {
+        "evidence": "included/agent-ready/by-category/testing-qa-benchmarking/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop/SKILL.md",
+        "name": "agent_ready_entrypoint_exists",
+        "passed": true
+      },
+      {
+        "evidence": "a5de5ed9f0088375c9237c86451a54bcf151571fb6bd314efdf6713198ab99cf",
+        "name": "source_hash_matches_catalog",
+        "passed": true
+      },
+      {
+        "evidence": "catalog.has_required_frontmatter",
+        "name": "required_frontmatter_present",
+        "passed": false
+      },
+      {
+        "evidence": [],
+        "name": "local_markdown_links_resolve",
+        "passed": true
+      },
+      {
+        "evidence": "included/agent-ready/by-category/testing-qa-benchmarking/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop/SKILL.md",
+        "name": "single_session_entrypoint_clean",
+        "passed": true
+      },
+      {
+        "evidence": "evaluators/generic_workflow_result.schema.json",
+        "name": "generic_workflow_schema_recorded",
+        "passed": true
+      }
+    ],
+    "risk_findings": [],
+    "score_percent": 90.0
+  },
+  "steps": [
+    "Selected a likely non-working skill from data/skill_risk_audit.json.",
+    "Selected the first assigned non-provenance scenario for the skill.",
+    "Resolved the real repository workflow snapshot from the benchmark track URL.",
+    "Evaluated the mirrored package against independently defined loadability checks.",
+    "Recorded pass/fail metrics without modifying the mirrored skill."
+  ]
+}

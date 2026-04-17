@@ -133,6 +133,7 @@ def test_generated_counts_are_documented():
     assert f"- Minimum `{MIN_SCENARIOS}` benchmark scenarios assigned per scenario-covered candidate." in readme
     assert "[Benchmark runner requirements](docs/benchmark-runner-requirements.md)" in readme
     assert "[Benchmark results](docs/benchmark-results.md)" in readme
+    assert "[Runtime benchmark batch 01](docs/runtime-benchmark-batch-01.md)" in readme
     assert "[Skill risk findings](docs/skill-risk-findings.md)" in readme
     assert "[Immutable audit model](docs/immutable-audit-model.md)" in readme
     assert "[Included skill mirrors](included/skills/README.md)" in readme
@@ -236,10 +237,16 @@ def test_static_benchmark_results_are_real_and_current():
     provenance_paths = {path.relative_to(ROOT).as_posix() for path, artifact, _ in artifacts if artifact["artifact_kind"] == "provenance_check"}
     assert results["summary"]["skill_count"] == len(catalog)
     assert results["summary"]["runtime_artifacts_recorded"] == len(runtime_paths)
+    assert results["summary"]["runtime_artifacts_recorded"] >= 10
+    assert results["summary"]["runtime_artifacts_passed"] + results["summary"]["runtime_artifacts_failed"] == len(runtime_paths)
     assert results["summary"]["provenance_artifacts_recorded"] == len(provenance_paths)
     assert results["summary"]["provenance_artifacts_recorded"] >= 10
     assert {item["artifact_path"] for item in results["runtime_artifacts"]} == runtime_paths
     assert {item["artifact_path"] for item in results["provenance_artifacts"]} == provenance_paths
+    for item in results["runtime_artifacts"]:
+        assert item["artifact_kind"] == "independent_benchmark"
+        assert item["benchmark_verdict"] in {"passed", "failed"}
+        assert isinstance(item["score_percent"], (int, float))
     assert sum(track["runtime_artifacts_recorded"] for track in results["tracks"]) == len(runtime_paths)
     assert sum(item["runtime_artifacts_recorded"] for item in results["skills"]) == len(runtime_paths)
     assert {item["skill_id"] for item in results["skills"]} == {entry["id"] for entry in catalog}
@@ -247,9 +254,43 @@ def test_static_benchmark_results_are_real_and_current():
     assert sum(item["quality_fix_point_count"] for item in results["skills"]) == results["summary"]["quality_fix_points"]
     text = (ROOT / "docs" / "benchmark-results.md").read_text(encoding="utf-8")
     assert "Static checks passed" in text
+    assert "Runtime scenario artifacts passed" in text
+    assert "Runtime scenario artifacts failed" in text
     assert "Source-proof artifacts are provenance checks, not runtime benchmark passes" in text
     quality_text = (ROOT / "docs" / "skill-quality-findings.md").read_text(encoding="utf-8")
     assert "| Skill | Category | Static score | Failed checks | Fix points |" in quality_text
+
+def test_independent_runtime_batch_is_separate_and_scored():
+    manifest = load("artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/manifest.json")
+    tasks = load("benchmarks/independent-runtime-readiness/batch-01/tasks.json")
+    scenarios = {item["id"]: item for item in load("data/benchmark_scenarios.json")}
+    assert manifest["artifact_kind"] == "independent_benchmark"
+    assert manifest["summary"]["artifact_count"] == 10
+    assert manifest["summary"]["passed"] == 0
+    assert manifest["summary"]["failed"] == 10
+    assert tasks["task_count"] == manifest["summary"]["artifact_count"]
+    assert "excluding visual/browser categories" in tasks["selection_policy"]
+    task_by_id = {task["task_id"]: task for task in tasks["tasks"]}
+    for item in manifest["artifacts"]:
+        artifact_path = ROOT / item["artifact_path"]
+        artifact = load(item["artifact_path"])
+        result = load(item["result_path"])
+        assert artifact_path.is_file()
+        assert artifact["artifact_kind"] == "independent_benchmark"
+        assert artifact["independence"]["task_defined_outside_skill"] is True
+        assert artifact["independence"]["evaluator_defined_outside_skill"] is True
+        assert artifact["independence"]["expected_result_defined_outside_skill"] is True
+        assert artifact["independence"]["uses_exact_skill_content_for_expected_result"] is False
+        assert artifact["scenario_id"] == item["scenario_id"]
+        assert scenarios[item["scenario_id"]]["dataset_track_id"] != "source-skill-repository"
+        task = task_by_id[result["inputs"]["task_id"]]
+        assert task["expected_result"]["all_required_checks_pass"] is True
+        assert task["skill_id"] == item["skill_id"]
+        assert result["metrics"]["benchmark_verdict"] == item["benchmark_verdict"]
+        assert result["metrics"]["score_percent"] == item["score_percent"]
+        assert result["outputs"]["blocking_failures"] == item["blocking_failures"]
+        assert result["inputs"]["dataset_snapshot"]["resolved"] is True
+        assert result["inputs"]["dataset_snapshot"]["tree_path_count"] > 0
 
 def test_skill_risk_audit_covers_every_skill():
     audit = load("data/skill_risk_audit.json")
