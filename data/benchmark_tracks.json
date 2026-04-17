@@ -1,0 +1,230 @@
+[
+  {
+    "id": "source-skill-repository",
+    "kind": "real dataset or repository workflow",
+    "metrics": [
+      "frontmatter valid",
+      "trigger derivable",
+      "proof artifact schema valid"
+    ],
+    "problem": "Use the skill source repository itself as the proof fixture: inspect SKILL.md, companion resources, and source path to verify trigger, constraints, and expected artifacts.",
+    "title": "Source skill repository proof",
+    "url": "https://github.com/strmt7/ai_skills_collection_benchmarked"
+  },
+  {
+    "id": "swe-bench-lite",
+    "kind": "real dataset or repository workflow",
+    "metrics": [
+      "patch applies",
+      "test pass rate",
+      "regression count"
+    ],
+    "problem": "Patch real GitHub issue tasks and verify with repository tests.",
+    "title": "SWE-bench Lite",
+    "url": "https://github.com/SWE-bench/SWE-bench"
+  },
+  {
+    "id": "nyc-tlc-trip-records",
+    "kind": "real dataset or repository workflow",
+    "metrics": [
+      "schema correctness",
+      "aggregation accuracy",
+      "runtime budget"
+    ],
+    "problem": "Clean, aggregate, and explain large real trip data.",
+    "title": "NYC TLC trip records",
+    "url": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page"
+  },
+  {
+    "id": "sec-edgar-companyfacts",
+    "kind": "real dataset or repository workflow",
+    "metrics": [
+      "citation coverage",
+      "numeric reconciliation",
+      "filing provenance"
+    ],
+    "problem": "Extract and reconcile financial facts from filings.",
+    "title": "SEC EDGAR company facts",
+    "url": "https://www.sec.gov/edgar/sec-api-documentation"
+  },
+  {
+    "id": "common-crawl-warc",
+    "kind": "real dataset or repository workflow",
+    "metrics": [
+      "source precision",
+      "deduplication",
+      "citation traceability"
+    ],
+    "problem": "Retrieve, parse, and cite web-scale documents.",
+    "title": "Common Crawl WARC",
+    "url": "https://commoncrawl.org/"
+  },
+  {
+    "id": "beir-retrieval",
+    "kind": "real dataset or repository workflow",
+    "metrics": [
+      "nDCG@10",
+      "recall@100",
+      "query latency"
+    ],
+    "problem": "Evaluate retrieval workflows across datasets.",
+    "title": "BEIR retrieval benchmark",
+    "url": "https://github.com/beir-cellar/beir"
+  },
+  {
+    "id": "ms-marco",
+    "kind": "real dataset or repository workflow",
+    "metrics": [
+      "MRR",
+      "recall",
+      "answer support"
+    ],
+    "problem": "Rank passages and support answer extraction.",
+    "title": "MS MARCO",
+    "url": "https://microsoft.github.io/msmarco/"
+  },
+  {
+    "id": "enron-email",
+    "kind": "real dataset or repository workflow",
+    "metrics": [
+      "routing accuracy",
+      "PII handling",
+      "summary faithfulness"
+    ],
+    "problem": "Classify, summarize, and route real email threads.",
+    "title": "CMU Enron email dataset",
+    "url": "https://www.cs.cmu.edu/~enron/"
+  },
+  {
+    "id": "stackoverflow-survey",
+    "kind": "real dataset or repository workflow",
+    "metrics": [
+      "cleaning correctness",
+      "chart reproducibility",
+      "method clarity"
+    ],
+    "problem": "Analyze survey data and produce reproducible charts.",
+    "title": "Stack Overflow Developer Survey",
+    "url": "https://survey.stackoverflow.co/"
+  },
+  {
+    "id": "ome-ngff-samples",
+    "kind": "real dataset or repository workflow",
+    "metrics": [
+      "metadata validity",
+      "chunk correctness",
+      "shape parity"
+    ],
+    "problem": "Read and validate multiscale microscopy data.",
+    "title": "OME-NGFF sample data",
+    "url": "https://idr.github.io/ome-ngff-samples/"
+  },
+  {
+    "id": "cellxgene-census",
+    "kind": "real dataset or repository workflow",
+    "metrics": [
+      "query correctness",
+      "metadata filters",
+      "reproducibility"
+    ],
+    "problem": "Query and analyze single-cell expression data.",
+    "title": "CZ CELLxGENE Census",
+    "url": "https://chanzuckerberg.github.io/cellxgene-census/"
+  },
+  {
+    "id": "chembl",
+    "kind": "real dataset or repository workflow",
+    "metrics": [
+      "identifier accuracy",
+      "filter correctness",
+      "citation provenance"
+    ],
+    "problem": "Retrieve molecular bioactivity records.",
+    "title": "ChEMBL",
+    "url": "https://www.ebi.ac.uk/chembl/"
+  },
+  {
+    "id": "owasp-benchmark",
+    "kind": "real dataset or repository workflow",
+    "metrics": [
+      "true positives",
+      "false positives",
+      "CWE mapping"
+    ],
+    "problem": "Find and classify vulnerability test cases.",
+    "title": "OWASP Benchmark",
+    "url": "https://owasp.org/www-project-benchmark/"
+  },
+  {
+    "id": "owasp-juice-shop",
+    "kind": "real dataset or repository workflow",
+    "metrics": [
+      "finding reproducibility",
+      "risk classification",
+      "remediation quality"
+    ],
+    "problem": "Run safe local security workflows against a known vulnerable app.",
+    "title": "OWASP Juice Shop",
+    "url": "https://owasp.org/www-project-juice-shop/"
+  },
+  {
+    "id": "kubernetes-examples",
+    "kind": "real dataset or repository workflow",
+    "metrics": [
+      "schema validity",
+      "least privilege",
+      "rollout success"
+    ],
+    "problem": "Validate manifests and operational runbooks.",
+    "title": "Kubernetes examples",
+    "url": "https://github.com/kubernetes/examples"
+  },
+  {
+    "id": "opentelemetry-demo",
+    "kind": "real dataset or repository workflow",
+    "metrics": [
+      "trace completeness",
+      "metric coverage",
+      "diagnostic accuracy"
+    ],
+    "problem": "Debug telemetry across microservices.",
+    "title": "OpenTelemetry demo",
+    "url": "https://github.com/open-telemetry/opentelemetry-demo"
+  },
+  {
+    "id": "coco-captions",
+    "kind": "real dataset or repository workflow",
+    "metrics": [
+      "caption faithfulness",
+      "object coverage",
+      "layout accuracy"
+    ],
+    "problem": "Evaluate image understanding and visual QA tasks.",
+    "title": "COCO captions",
+    "url": "https://cocodataset.org/#download"
+  },
+  {
+    "id": "local-omero-compose-workflows",
+    "kind": "real dataset or repository workflow",
+    "metrics": [
+      "compose health",
+      "plugin workflow",
+      "regression count"
+    ],
+    "problem": "Validate OMERO deployment, plugin, upload/import, and monitoring workflows.",
+    "title": "ZMB-UZH OMERO workflows",
+    "url": "https://github.com/ZMB-UZH/omero-docker-extended"
+  },
+  {
+    "id": "air-defense-android-benchmarks",
+    "kind": "real dataset or repository workflow",
+    "metrics": [
+      "startup time",
+      "frame stability",
+      "visual regressions"
+    ],
+    "problem": "Run startup, gameplay, and visual QA benchmark scenarios.",
+    "title": "Project Air Defense Android benchmarks",
+    "url": "https://github.com/strmt7/project_air_defense/tree/main/benchmarks"
+  }
+]

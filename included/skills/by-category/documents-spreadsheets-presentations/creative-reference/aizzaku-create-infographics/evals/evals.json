@@ -1,0 +1,48 @@
+{
+  "skill_name": "create-infographics",
+  "version": "v2",
+  "evals": [
+    {
+      "id": 1,
+      "name": "eval-remote-work-dark",
+      "prompt": "Create an infographic. Remote work stats 2024: 74% of workers prefer remote/hybrid, productivity up 18% YoY, office lease cancellations up 31%, top talent turnover 2.4x higher when RTO is mandated.",
+      "expected_output": "Design brief asked, thesis stated, visual concept declared, archetype named, HTML produced with dark background, annotation-first labels, reduction pass run",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "eval-saas-mode-c",
+      "prompt": "I want to make an infographic about our SaaS metrics but not sure what style would look best. MRR $240K (+180% YoY), Churn 1.2%, NPS 67, CAC $310, LTV $4,200.",
+      "expected_output": "Mode C triggered, thesis stated, two composition options presented with distinct archetypes and rationale, no HTML until after option selection, HTML produced after selection",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "eval-before-after-light",
+      "prompt": "Infographic comparing our team before and after going fully remote. Response time: 4h -> 47min. Bug resolution: 3.2 days -> 1.1 days. Sprint velocity: 34 pts -> 52 pts. Employee satisfaction: 6.2/10 -> 8.7/10. Light background, clean and professional — this is going in a company report.",
+      "expected_output": "Light background used, slope chart selected for before/after data, thesis stated, visual concept declared, HTML produced",
+      "files": []
+    },
+    {
+      "id": 4,
+      "name": "eval-crypto-tokenomics-light",
+      "prompt": "Create an infographic for our whitepaper. Tokenomics: 1B total supply. Team 30% (24mo vesting, 6mo cliff), Ecosystem Fund 25%, Public Sale 20%, Treasury 15%, Advisors 10%. Light background, Editorial/Clean aesthetic — needs to look credible and institutional.",
+      "expected_output": "Light background, Editorial/Clean aesthetic applied with strict reduction pass, pie/donut or waffle chart for part-of-whole data, vesting details included, thesis stated, visual concept declared",
+      "files": []
+    },
+    {
+      "id": 5,
+      "name": "eval-defi-launch-dark",
+      "prompt": "Make an infographic for our DeFi protocol launch. TVL $47M, 12,400 unique wallets, best pool APY 340%, 3 security audits passed, $0 exploited to date. Brand color is #00E5CC.",
+      "expected_output": "Brand color #00E5CC used as primary accent, dark background, thesis stated, visual concept declared, archetype named, no fabricated data, HTML produced",
+      "files": []
+    },
+    {
+      "id": 6,
+      "name": "eval-nft-mode-c",
+      "prompt": "We're announcing our NFT collection's 1-year performance. Floor price went from 0.3 ETH at mint to 2.4 ETH now. Total trading volume: 8,200 ETH. Unique holders: 3,847. Creator royalties earned: 142 ETH. Not sure what direction to go with the design.",
+      "expected_output": "Mode C triggered, two composition options presented with crypto/NFT-appropriate aesthetics, thesis identifies strongest insight (floor price 8x), HTML produced after option selection",
+      "files": []
+    }
+  ]
+}

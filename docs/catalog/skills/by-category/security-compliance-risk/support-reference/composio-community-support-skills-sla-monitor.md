@@ -1,0 +1,37 @@
+# sla-monitor
+
+Category: Security, compliance & risk
+
+Mirrored skill: `included/skills/by-category/security-compliance-risk/support-reference/composio-community-support-skills-sla-monitor`
+
+Agent-ready entrypoint: `included/agent-ready/by-category/security-compliance-risk/support-reference/composio-community-support-skills-sla-monitor/SKILL.md`
+
+Source: [composio-community/support-skills `sla-monitor/SKILL.md`](https://github.com/composio-community/support-skills/blob/b4f842c3cbdcae0c45771fd996c396aee80dde2e/sla-monitor/SKILL.md)
+
+Selected ref: `default-branch HEAD`; commit `b4f842c3cbdc`
+
+## Use
+
+Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+
+## Scope
+
+Source description: Check SLA compliance across open tickets and flag breaches or at-risk tickets
+
+## Verification
+
+Static benchmark results are reported in `docs/benchmark-results.md`. Runtime claims require a validated artifact.
+
+Assigned scenarios:
+
+- `skill-proof-composio-community-support-skills-sla-monitor-skill-md`: Use the immutable source file https://github.com/composio-community/support-skills/blob/b4f842c3cbdcae0c45771fd996c396aee80dde2e/sla-monitor/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+- `security-compliance-and-risk-owasp-benchmark`: Find and classify vulnerability test cases.
+- `security-compliance-and-risk-owasp-juice-shop`: Run safe local security workflows against a known vulnerable app.
+- `security-compliance-and-risk-kubernetes-examples`: Validate manifests and operational runbooks.
+
+Improvement notes:
+
+- Keep provenance and selected ref visible so agents can verify the source before use.
+- Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
+- Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings.
+- Add an executable validator or helper script so the workflow has objective checks.
