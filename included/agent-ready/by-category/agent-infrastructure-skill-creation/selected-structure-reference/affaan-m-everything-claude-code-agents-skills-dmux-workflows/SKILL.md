@@ -1,6 +1,6 @@
 ---
 name: "dmux-workflows"
-description: "Multi-agent orchestration using dmux (tmux pane manager for AI agents). Patterns for parallel agent workflows across Claude Code, Codex, OpenCode, and other harnesses. Use when running multiple agent sessions in parallel or coordinating multi-agent development workflows."
+description: "Single-session workflow coordination using dmux (tmux pane manager for AI agents). Patterns for single-session workflow coordination across Claude Code, Codex, OpenCode, and other harnesses. Use when running one AI session or coordinating single-session development workflows."
 source_skill_id: "affaan-m-everything-claude-code-agents-skills-dmux-workflows-skill-md"
 category: "Agent infrastructure & skill creation"
 source_mirror: "../../../../../skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/affaan-m-everything-claude-code-agents-skills-dmux-workflows/SKILL.md"

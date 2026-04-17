@@ -12,11 +12,11 @@ Selected ref: `v1.10.0`; commit `846ffb75da9a`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Suggests manual context compaction at logical intervals to preserve context through task phases rather than arbitrary auto-compaction.
+Catalog summary: Suggests manual context compaction at logical intervals to preserve context through task phases rather than arbitrary auto-compaction.
 
 ## Verification
 

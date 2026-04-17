@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Azure Blob Storage SDK for Rust. Use for uploading, downloading, and managing blobs and containers. Triggers: "blob storage rust", "BlobClient rust", "upload blob rust", "download blob rust", "container rust".
+Catalog summary: Azure Blob Storage SDK for Rust. Use for uploading, downloading, and managing blobs and containers. Triggers: "blob storage rust", "BlobClient rust", "upload blob rust", "download blob rust", "container rust".
 
 ## Verification
 

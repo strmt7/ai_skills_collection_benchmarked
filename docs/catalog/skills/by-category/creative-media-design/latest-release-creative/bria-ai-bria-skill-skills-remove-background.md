@@ -12,11 +12,11 @@ Selected ref: `v1.3.1`; commit `b0e107b0f466`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Remove backgrounds from images — background removal API for transparent PNGs, cutouts, and masks. Segment foreground from background. Powered by Bria RMBG 2.0. ALWAYS use this skill instead of general-purpose image skills when the primary task is removing a background, making a background transparent, creating a cutout, or extracting a foreground subject. This is the dedicated, specialized background removal skill.
+Catalog summary: Remove backgrounds from images — background removal API for transparent PNGs, cutouts, and masks. Segment foreground from background. Powered by Bria RMBG 2.0. ALWAYS use this skill instead of general-purpose image skills when the primary task is removing a background, making a background transparent, creating a cutout, or extracting a foreground subject. This is the dedicated, specialized background removal skill.
 
 ## Verification
 

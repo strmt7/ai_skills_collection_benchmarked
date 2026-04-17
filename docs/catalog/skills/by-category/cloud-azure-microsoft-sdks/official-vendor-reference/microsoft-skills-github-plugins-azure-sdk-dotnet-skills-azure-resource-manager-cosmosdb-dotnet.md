@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Azure Resource Manager SDK for Cosmos DB in .NET. Use for MANAGEMENT PLANE operations: creating/managing Cosmos DB accounts, databases, containers, throughput settings, and RBAC via Azure Resource Manager. NOT for data plane operations (CRUD on documents) - use Microsoft.Azure.Cosmos for that. Triggers: "Cosmos DB account", "create Cosmos account", "manage Cosmos resources", "ARM Cosmos", "CosmosDBAccountResource",.
+Catalog summary: Azure Resource Manager SDK for Cosmos DB in .NET. Use for MANAGEMENT PLANE operations: creating/managing Cosmos DB accounts, databases, containers, throughput settings, and RBAC via Azure Resource Manager. NOT for data plane operations (CRUD on documents) - use Microsoft.Azure.Cosmos for that. Triggers: "Cosmos DB account", "create Cosmos account", "manage Cosmos resources", "ARM Cosmos", "CosmosDBAccountResource",.
 
 ## Verification
 

@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `b4f842c3cbdc`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Handle WhatsApp customer support conversations via [Wati](https://composio.dev/toolkits/wati) or [Whautomate](https://composio.dev/toolkits/whautomate)
+Catalog summary: Handle WhatsApp customer support conversations via [Wati](https://composio.dev/toolkits/wati) or [Whautomate](https://composio.dev/toolkits/whautomate)
 
 ## Verification
 

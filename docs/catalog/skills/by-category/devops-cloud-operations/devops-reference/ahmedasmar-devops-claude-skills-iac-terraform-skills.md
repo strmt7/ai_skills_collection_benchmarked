@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `1489c33ad882`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Infrastructure as Code with Terraform and Terragrunt. Use this skill whenever the user mentions Terraform, Terragrunt, HCL, or infrastructure as code. Triggers include writing or reviewing .tf files, creating reusable modules, debugging terraform plan/apply errors, managing remote state and locks, fixing state drift, setting up CI/CD for Terraform, scaffolding new modules, validating module structure, and.
+Catalog summary: Infrastructure as Code with Terraform and Terragrunt. Use this skill whenever the user mentions Terraform, Terragrunt, HCL, or infrastructure as code. Triggers include writing or reviewing .tf files, creating reusable modules, debugging terraform plan/apply errors, managing remote state and locks, fixing state drift, setting up CI/CD for Terraform, scaffolding new modules, validating module structure, and.
 
 ## Verification
 

@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Azure Resource Manager SDK for Arize AI Observability and Evaluation (.NET). Use when managing Arize AI organizations on Azure via Azure Marketplace, creating/updating/deleting Arize resources, or integrating Arize ML observability into .NET applications. Triggers: "Arize AI", "ML observability", "ArizeAIObservabilityEval", "Arize organization".
+Catalog summary: Azure Resource Manager SDK for Arize AI Observability and Evaluation (.NET). Use when managing Arize AI organizations on Azure via Azure Marketplace, creating/updating/deleting Arize resources, or integrating Arize ML observability into .NET applications. Triggers: "Arize AI", "ML observability", "ArizeAIObservabilityEval", "Arize organization".
 
 ## Verification
 

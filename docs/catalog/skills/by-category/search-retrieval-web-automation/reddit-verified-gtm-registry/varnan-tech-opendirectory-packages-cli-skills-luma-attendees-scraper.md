@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `bc01f7c1c31f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Browser-console script to export attendee data from a Luma event into a CSV. Use when users ask to scrape or export attendees from a Luma event.
+Catalog summary: Browser-console script to export attendee data from a Luma event into a CSV. Use when users ask to scrape or export attendees from a Luma event.
 
 ## Verification
 

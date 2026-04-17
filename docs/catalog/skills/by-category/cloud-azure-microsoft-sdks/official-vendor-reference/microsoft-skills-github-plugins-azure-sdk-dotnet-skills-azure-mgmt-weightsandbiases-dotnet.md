@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Azure Weights & Biases SDK for .NET. ML experiment tracking and model management via Azure Marketplace. Use for creating W&B instances, managing SSO, marketplace integration, and ML observability. Triggers: "Weights and Biases", "W&B", "WeightsAndBiases", "ML experiment tracking", "model registry", "experiment management", "wandb".
+Catalog summary: Azure Weights & Biases SDK for .NET. ML experiment tracking and model management via Azure Marketplace. Use for creating W&B instances, managing SSO, marketplace integration, and ML observability. Triggers: "Weights and Biases", "W&B", "WeightsAndBiases", "ML experiment tracking", "model registry", "experiment management", "wandb".
 
 ## Verification
 

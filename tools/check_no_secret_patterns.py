@@ -28,6 +28,7 @@ RULES = [
     Rule("google_api_key", re.compile(r"AIza[0-9A-Za-z_-]{35}")),
     Rule("aws_access_key_id", re.compile(r"(?:A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}")),
     Rule("openai_api_key", re.compile(r"(?<![A-Za-z0-9_-])sk-(?:proj-)?[A-Za-z0-9_]{20,}(?![A-Za-z0-9_-])")),
+    Rule("provider_api_key_example_shape", re.compile(r"(?<![A-Za-z0-9_-])sk-(?:proj-)?(?:[xX][xX-]{2,}|\.{3}|[A-Za-z0-9][A-Za-z0-9_.-]*\.{3})(?![A-Za-z0-9_-])")),
     Rule("github_token", re.compile(r"(?:gh[pousr]_[A-Za-z0-9_]{30,}|github_pat_[A-Za-z0-9_]{20,})")),
     Rule("github_token_example_shape", re.compile(r"\b(?:gh[pousr]_|github_pat_)[A-Za-z0-9_.-]+")),
     Rule("gitlab_token", re.compile(r"glpat-[A-Za-z0-9_-]{20,}")),

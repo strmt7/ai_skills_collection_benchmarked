@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Azure Resource Manager SDK for Redis in .NET. Use for MANAGEMENT PLANE operations: creating/managing Azure Cache for Redis instances, firewall rules, access keys, patch schedules, linked servers (geo-replication), and private endpoints via Azure Resource Manager. NOT for data plane operations (get/set keys, pub/sub) - use StackExchange.Redis for that. Triggers: "Redis cache", "create Redis", "manage Redis", "ARM.
+Catalog summary: Azure Resource Manager SDK for Redis in .NET. Use for MANAGEMENT PLANE operations: creating/managing Azure Cache for Redis instances, firewall rules, access keys, patch schedules, linked servers (geo-replication), and private endpoints via Azure Resource Manager. NOT for data plane operations (get/set keys, pub/sub) - use StackExchange.Redis for that. Triggers: "Redis cache", "create Redis", "manage Redis", "ARM.
 
 ## Verification
 

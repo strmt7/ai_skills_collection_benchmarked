@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Azure Application Insights SDK for .NET. Application performance monitoring and observability resource management. Use for creating Application Insights components, web tests, workbooks, analytics items, and API keys. Triggers: "Application Insights", "ApplicationInsights", "App Insights", "APM", "application monitoring", "web tests", "availability tests", "workbooks".
+Catalog summary: Azure Application Insights SDK for .NET. Application performance monitoring and observability resource management. Use for creating Application Insights components, web tests, workbooks, analytics items, and API keys. Triggers: "Application Insights", "ApplicationInsights", "App Insights", "APM", "application monitoring", "web tests", "availability tests", "workbooks".
 
 ## Verification
 

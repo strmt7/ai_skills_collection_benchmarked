@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `749ed52133b8`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: This skill helps users analyze Amazon competitor listings by ASIN and produce structured competitive intelligence plus strategic opportunity points for their own go-to-market. The Agent should proactively apply this skill when users want to analyze a competitor Amazon listing by ASIN, understand what a top-ranked product does right in content keywords or visuals, find market gaps and unmet buyer needs, turn.
+Catalog summary: This skill helps users analyze Amazon competitor listings by ASIN and produce structured competitive intelligence plus strategic opportunity points for their own go-to-market. The Agent should proactively apply this skill when users want to analyze a competitor Amazon listing by ASIN, understand what a top-ranked product does right in content keywords or visuals, find market gaps and unmet buyer needs, turn.
 
 ## Verification
 

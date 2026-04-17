@@ -12,6 +12,10 @@ import build_catalog
 MIN_CATALOG = 200
 MIN_SCENARIOS = 3
 HEX64 = re.compile(r"[0-9a-f]{64}")
+PACKAGE_LOCK_MINIMUMS = {
+    "node_modules/brace-expansion": (2, 0, 3),
+    "node_modules/protobufjs": (7, 5, 5),
+}
 
 def load(path):
     return json.loads((ROOT / path).read_text(encoding="utf-8"))
@@ -28,6 +32,9 @@ def unique_ids(items, key, label):
     ids = [item[key] for item in items]
     require(len(ids) == len(set(ids)), f"duplicate {label} ids")
     return ids
+
+def version_tuple(version):
+    return tuple(int(part) for part in str(version).split(".")[:3] if part.isdigit())
 
 catalog = load("data/skills_catalog.json")
 track_items = load("data/benchmark_tracks.json")
@@ -73,7 +80,7 @@ readme_expectations = {
     f"- `{len(catalog)}` source-backed skill entries.": "catalog count",
     f"- `{len(catalog)}` written skill mirrors under `included/skills/`.": "mirror count",
     f"- `{len(catalog)}` compact agent-ready skill entrypoints under `included/agent-ready/`.": "agent-ready count",
-    f"- `{sum(1 for entry in catalog if entry['source_tier'].startswith('priority'))}` priority entries from selected repositories.": "priority count",
+    f"- `{sum(1 for entry in catalog if entry['source_tier'].startswith('priority'))}` selected repository entries.": "selected count",
     f"- `{len({entry['category'] for entry in catalog})}` categories.": "category count",
     f"- `{len(scenarios)}` real-data scenario templates.": "scenario count",
     f"- Minimum `{MIN_SCENARIOS}` benchmark scenarios assigned per scenario-covered candidate.": "minimum scenario count",
@@ -120,6 +127,25 @@ require(set(locked_skills) == set(catalog_by_id), "source lock skills do not mat
 agents_text = (ROOT / "AGENTS.md").read_text(encoding="utf-8").lower()
 for phrase in ["mandatory single-session rule", "do not spawn", "subagents", "one ai session only"]:
     require(phrase in agents_text, f"AGENTS.md missing single-session rule phrase: {phrase}")
+
+for agent_ready_path in (ROOT / "included" / "agent-ready").rglob("SKILL.md"):
+    text = agent_ready_path.read_text(encoding="utf-8").lower()
+    for phrase in ["subagent", "parallel agent", "multi-agent orchestration"]:
+        require(phrase not in text, f"{agent_ready_path} recommends delegated AI work: {phrase}")
+
+for lock_path in (ROOT / "included" / "skills").rglob("package-lock.json"):
+    try:
+        lock_data = json.loads(lock_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        fail(f"{lock_path} is not valid JSON")
+    packages = lock_data.get("packages", {})
+    require(isinstance(packages, dict), f"{lock_path} missing package lock packages")
+    for package_path, minimum in PACKAGE_LOCK_MINIMUMS.items():
+        package_data = packages.get(package_path)
+        if not isinstance(package_data, dict):
+            continue
+        observed = version_tuple(package_data.get("version"))
+        require(observed >= minimum, f"{lock_path} keeps vulnerable {package_path} version {package_data.get('version')}")
 
 for entry in catalog:
     for key in ["name", "description", "category", "subcategory", "install_name", "mirrored_path", "agent_ready_path", "source_repo", "source_path", "source_url", "immutable_source_url", "commit_sha", "selection_policy", "skill_file_sha256", "skill_dir_sha256"]:

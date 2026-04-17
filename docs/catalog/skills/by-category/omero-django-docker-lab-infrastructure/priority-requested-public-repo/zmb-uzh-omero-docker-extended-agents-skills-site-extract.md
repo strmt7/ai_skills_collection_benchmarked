@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Extract the smallest useful amount of text or structured data from a known public page before falling back to full browser automation.
+Catalog summary: Extract the smallest useful amount of text or structured data from a known public page before falling back to full browser automation.
 
 ## Verification
 

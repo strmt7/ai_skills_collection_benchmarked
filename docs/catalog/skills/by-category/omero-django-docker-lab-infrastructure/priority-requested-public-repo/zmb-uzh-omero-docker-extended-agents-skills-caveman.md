@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Lower output token usage on demand for all AI agents without sacrificing technical accuracy, safety, or repo-specific clarity.
+Catalog summary: Lower output token usage on demand for all AI agents without sacrificing technical accuracy, safety, or repo-specific clarity.
 
 ## Verification
 

@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Azure AI Projects SDK for .NET. High-level client for Azure AI Foundry projects including agents, connections, datasets, deployments, evaluations, and indexes. Use for AI Foundry project management, versioned agents, and orchestration. Triggers: "AI Projects", "AIProjectClient", "Foundry project", "versioned agents", "evaluations", "datasets", "connections", "deployments .NET".
+Catalog summary: Azure AI Projects SDK for .NET. High-level client for Azure AI Foundry projects including agents, connections, datasets, deployments, evaluations, and indexes. Use for AI Foundry project management, versioned agents, and orchestration. Triggers: "AI Projects", "AIProjectClient", "Foundry project", "versioned agents", "evaluations", "datasets", "connections", "deployments .NET".
 
 ## Verification
 

@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `b4f842c3cbdc`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Analyze customer message text for sentiment, urgency, and emotional tone.
+Catalog summary: Analyze customer message text for sentiment, urgency, and emotional tone.
 
 ## Verification
 

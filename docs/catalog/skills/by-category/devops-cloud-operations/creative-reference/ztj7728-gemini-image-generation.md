@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `9d2727cab3ab`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Generate or edit images with Gemini using the Google GenAI SDK. Use when the user asks to create, transform, render, or save one or more images in an OpenClaw skill workflow.
+Catalog summary: Generate or edit images with Gemini using the Google GenAI SDK. Use when the user asks to create, transform, render, or save one or more images in an OpenClaw skill workflow.
 
 ## Verification
 

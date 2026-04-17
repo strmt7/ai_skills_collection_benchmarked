@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `bc01f7c1c31f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Converts a blog post URL or article into a Twitter/X thread with a strong hook, one insight per tweet, and a CTA. Optionally posts the full thread to X via Composio using a reply chain. Use when asked to turn a blog post into a tweet thread, repurpose an article for Twitter, create a thread from a blog, write a Twitter thread about a topic, or share a blog post as a thread. Trigger when a user mentions Twitter.
+Catalog summary: Converts a blog post URL or article into a Twitter/X thread with a strong hook, one insight per tweet, and a CTA. Optionally posts the full thread to X via Composio using a reply chain. Use when asked to turn a blog post into a tweet thread, repurpose an article for Twitter, create a thread from a blog, write a Twitter thread about a topic, or share a blog post as a thread. Trigger when a user mentions Twitter.
 
 ## Verification
 

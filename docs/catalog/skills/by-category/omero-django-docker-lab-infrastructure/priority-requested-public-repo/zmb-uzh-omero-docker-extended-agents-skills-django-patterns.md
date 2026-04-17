@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Django patterns for OMERO.web plugins: app boundaries, views, services, templates, and shared helper usage.
+Catalog summary: Django patterns for OMERO.web plugins: app boundaries, views, services, templates, and shared helper usage.
 
 ## Verification
 

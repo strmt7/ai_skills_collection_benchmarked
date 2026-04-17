@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `e8cc5baf9329`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Runs a trailmark summary analysis on a codebase. Returns language detection, entry point count, and dependency graph shape. Use when vivisect or galvanize needs a quick structural overview. Triggers: trailmark summary, code summary, structural overview.
+Catalog summary: Runs a trailmark summary analysis on a codebase. Returns language detection, entry point count, and dependency graph shape. Use when vivisect or galvanize needs a quick structural overview. Triggers: trailmark summary, code summary, structural overview.
 
 ## Verification
 

@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Microsoft Entra Agent ID (preview) for creating OAuth2-capable AI agent identities via Microsoft Graph beta API. Covers Agent Identity Blueprints, BlueprintPrincipals, Agent Identities, required permissions, sponsors, and Workload Identity Federation. Includes Microsoft Entra SDK for AgentID (containerized sidecar) for polyglot agent authentication (Docker/Kubernetes), 3P agent integration, autonomous and.
+Catalog summary: Microsoft Entra Agent ID (preview) for creating OAuth2-capable AI agent identities via Microsoft Graph beta API. Covers Agent Identity Blueprints, BlueprintPrincipals, Agent Identities, required permissions, sponsors, and Workload Identity Federation. Includes Microsoft Entra SDK for AgentID (containerized sidecar) for polyglot agent authentication (Docker/Kubernetes), 3P agent integration, autonomous and.
 
 ## Verification
 

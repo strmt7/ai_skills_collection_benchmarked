@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Microsoft 365 Agents SDK for TypeScript/Node.js. Build multichannel agents for Teams/M365/Copilot Studio with AgentApplication routing, Express hosting, streaming responses, and Copilot Studio client integration. Triggers: "Microsoft 365 Agents SDK", "@microsoft/agents-hosting", "AgentApplication", "startServer", "streamingResponse", "Copilot Studio client", "@microsoft/agents-copilotstudio-client".
+Catalog summary: Microsoft 365 Agents SDK for TypeScript/Node.js. Build multichannel agents for Teams/M365/Copilot Studio with AgentApplication routing, Express hosting, streaming responses, and Copilot Studio client integration. Triggers: "Microsoft 365 Agents SDK", "@microsoft/agents-hosting", "AgentApplication", "startServer", "streamingResponse", "Copilot Studio client", "@microsoft/agents-copilotstudio-client".
 
 ## Verification
 

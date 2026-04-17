@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `bc01f7c1c31f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Takes a GitHub PR URL or the current branch and writes a plain-English explanation of what it does and why, then posts it as a PR comment. Use when asked to explain a PR, summarize a pull request, write a plain-English description of a PR, add a summary comment to a PR, or understand what a PR changes. Trigger when a user says "explain this PR", "summarize this pull request", "what does this PR do", "add a comment.
+Catalog summary: Takes a GitHub PR URL or the current branch and writes a plain-English explanation of what it does and why, then posts it as a PR comment. Use when asked to explain a PR, summarize a pull request, write a plain-English description of a PR, add a summary comment to a PR, or understand what a PR changes. Trigger when a user says "explain this PR", "summarize this pull request", "what does this PR do", "add a comment.
 
 ## Verification
 

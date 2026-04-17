@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `b4f842c3cbdc`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Aggregate and analyze customer feedback from [Delighted](https://composio.dev/toolkits/delighted), [GatherUp](https://composio.dev/toolkits/gatherup), [Gleap](https://composio.dev/toolkits/gleap), or [Simplesat](https://composio.dev/toolkits/simplesat)
+Catalog summary: Aggregate and analyze customer feedback from [Delighted](https://composio.dev/toolkits/delighted), [GatherUp](https://composio.dev/toolkits/gatherup), [Gleap](https://composio.dev/toolkits/gleap), or [Simplesat](https://composio.dev/toolkits/simplesat)
 
 ## Verification
 

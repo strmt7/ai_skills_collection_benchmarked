@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `b4f842c3cbdc`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Find and flag duplicate or related [Gorgias](https://composio.dev/toolkits/gorgias) tickets that should be merged
+Catalog summary: Find and flag duplicate or related [Gorgias](https://composio.dev/toolkits/gorgias) tickets that should be merged
 
 ## Verification
 

@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Microsoft 365 Agents SDK for Python. Build multichannel agents for Teams/M365/Copilot Studio with aiohttp hosting, AgentApplication routing, streaming responses, and MSAL-based auth. Triggers: "Microsoft 365 Agents SDK", "microsoft_agents", "AgentApplication", "start_agent_process", "TurnContext", "Copilot Studio client", "CloudAdapter".
+Catalog summary: Microsoft 365 Agents SDK for Python. Build multichannel agents for Teams/M365/Copilot Studio with aiohttp hosting, AgentApplication routing, streaming responses, and MSAL-based auth. Triggers: "Microsoft 365 Agents SDK", "microsoft_agents", "AgentApplication", "start_agent_process", "TurnContext", "Copilot Studio client", "CloudAdapter".
 
 ## Verification
 

@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Azure AI Document Intelligence SDK for .NET. Extract text, tables, and structured data from documents using prebuilt and custom models. Use for invoice processing, receipt extraction, ID document analysis, and custom document models. Triggers: "Document Intelligence", "DocumentIntelligenceClient", "form recognizer", "invoice extraction", "receipt OCR", "document analysis .NET".
+Catalog summary: Azure AI Document Intelligence SDK for .NET. Extract text, tables, and structured data from documents using prebuilt and custom models. Use for invoice processing, receipt extraction, ID document analysis, and custom document models. Triggers: "Document Intelligence", "DocumentIntelligenceClient", "form recognizer", "invoice extraction", "receipt OCR", "document analysis .NET".
 
 ## Verification
 

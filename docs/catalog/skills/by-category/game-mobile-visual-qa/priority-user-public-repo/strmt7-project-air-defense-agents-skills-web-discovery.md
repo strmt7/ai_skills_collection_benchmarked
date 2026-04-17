@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Plan and run current public-web discovery for docs, releases, issues, and community evidence without guessing or over-browsing.
+Catalog summary: Plan and run current public-web discovery for docs, releases, issues, and community evidence without guessing or over-browsing.
 
 ## Verification
 

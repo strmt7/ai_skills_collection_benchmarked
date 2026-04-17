@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `b4f842c3cbdc`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Enrich customer/lead profiles with business data using [LeadIQ](https://composio.dev/toolkits/leadiq), [RocketReach](https://composio.dev/toolkits/rocket-reach), or [Clearout](https://composio.dev/toolkits/clearout)
+Catalog summary: Enrich customer/lead profiles with business data using [LeadIQ](https://composio.dev/toolkits/leadiq), [RocketReach](https://composio.dev/toolkits/rocket-reach), or [Clearout](https://composio.dev/toolkits/clearout)
 
 ## Verification
 

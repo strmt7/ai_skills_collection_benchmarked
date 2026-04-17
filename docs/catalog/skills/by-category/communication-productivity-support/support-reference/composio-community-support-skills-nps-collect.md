@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `b4f842c3cbdc`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Send NPS/CSAT surveys and analyze results using [Delighted](https://composio.dev/toolkits/delighted) or [Satismeter](https://composio.dev/toolkits/satismeter)
+Catalog summary: Send NPS/CSAT surveys and analyze results using [Delighted](https://composio.dev/toolkits/delighted) or [Satismeter](https://composio.dev/toolkits/satismeter)
 
 ## Verification
 

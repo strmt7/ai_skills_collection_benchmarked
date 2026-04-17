@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `b4f842c3cbdc`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Draft and send client proposals via [Better Proposals](https://composio.dev/toolkits/better-proposals) or [Bidsketch](https://composio.dev/toolkits/bidsketch)
+Catalog summary: Draft and send client proposals via [Better Proposals](https://composio.dev/toolkits/better-proposals) or [Bidsketch](https://composio.dev/toolkits/bidsketch)
 
 ## Verification
 

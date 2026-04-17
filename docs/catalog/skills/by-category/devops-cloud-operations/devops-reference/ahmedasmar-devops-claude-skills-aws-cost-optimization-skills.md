@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `1489c33ad882`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: AWS cost optimization and FinOps workflows. Use this skill whenever the user mentions AWS costs, cloud spending, FinOps, Reserved Instances, Savings Plans, or cost reduction. Triggers include finding unused resources, analyzing the AWS bill, rightsizing EC2 or RDS instances, evaluating Spot instances, detecting cost anomalies, migrating to Graviton or newer instance generations, implementing tagging for cost.
+Catalog summary: AWS cost optimization and FinOps workflows. Use this skill whenever the user mentions AWS costs, cloud spending, FinOps, Reserved Instances, Savings Plans, or cost reduction. Triggers include finding unused resources, analyzing the AWS bill, rightsizing EC2 or RDS instances, evaluating Spot instances, detecting cost anomalies, migrating to Graviton or newer instance generations, implementing tagging for cost.
 
 ## Verification
 

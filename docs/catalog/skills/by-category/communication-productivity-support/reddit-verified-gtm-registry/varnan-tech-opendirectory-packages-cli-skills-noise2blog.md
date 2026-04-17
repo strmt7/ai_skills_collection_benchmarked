@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `bc01f7c1c31f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Turns rough notes, bullet points, voice transcripts, or tweet dumps into a polished, publication-ready blog post. Optionally enriches with Tavily research to add supporting data and credibility to claims. Use when asked to write a blog post from notes, turn rough ideas into an article, expand bullet points into a full post, clean up a voice transcript into a blog, or repurpose a tweet thread as an article. Trigger.
+Catalog summary: Turns rough notes, bullet points, voice transcripts, or tweet dumps into a polished, publication-ready blog post. Optionally enriches with Tavily research to add supporting data and credibility to claims. Use when asked to write a blog post from notes, turn rough ideas into an article, expand bullet points into a full post, clean up a voice transcript into a blog, or repurpose a tweet thread as an article. Trigger.
 
 ## Verification
 

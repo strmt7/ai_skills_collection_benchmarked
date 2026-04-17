@@ -1,6 +1,6 @@
 ---
 name: "cargo-fuzz"
-description: "cargo-fuzz is the de facto fuzzing tool for Rust projects using Cargo. Use for fuzzing Rust code with libFuzzer backend."
+description: "Cargo-fuzz is the de facto fuzzing tool for Rust projects using Cargo. Use for fuzzing Rust code with libFuzzer backend."
 source_skill_id: "trailofbits-skills-plugins-testing-handbook-skills-skills-cargo-fuzz-skill-md"
 category: "Security, compliance & risk"
 source_mirror: "../../../../../skills/by-category/security-compliance-risk/security-reference/trailofbits-skills-plugins-testing-handbook-skills-skills-cargo-fuzz/SKILL.md"

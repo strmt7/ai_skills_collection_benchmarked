@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Keep public-web research compliant, bounded, and efficient through rule checks, caching, and backoff instead of evasive scraping.
+Catalog summary: Keep public-web research compliant, bounded, and efficient through rule checks, caching, and backoff instead of evasive scraping.
 
 ## Verification
 
