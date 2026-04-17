@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "artifact_version": {
+      "pattern": "^1\\.",
+      "type": "string"
+    },
+    "catalog_commit": {
+      "pattern": "^[0-9a-f]{40}$",
+      "type": "string"
+    },
+    "evidence": {
+      "additionalProperties": true,
+      "properties": {
+        "artifact_paths": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "citations_or_paths": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "context_memory": {
+          "type": "object"
+        },
+        "visual": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "artifact_paths",
+        "citations_or_paths"
+      ],
+      "type": "object"
+    },
+    "execution": {
+      "additionalProperties": true,
+      "properties": {
+        "commands_or_transcript_path": {
+          "type": "string"
+        },
+        "fresh_session": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "fresh_session",
+        "commands_or_transcript_path"
+      ],
+      "type": "object"
+    },
+    "input_snapshot": {
+      "additionalProperties": true,
+      "properties": {
+        "identifier": {
+          "type": "string"
+        },
+        "is_real": {
+          "type": "boolean"
+        },
+        "kind": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "identifier",
+        "is_real"
+      ],
+      "type": "object"
+    },
+    "metrics": {
+      "type": "object"
+    },
+    "objective_checks": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "outputs": {
+      "type": "object"
+    },
+    "runner": {
+      "additionalProperties": true,
+      "properties": {
+        "model_or_runtime": {
+          "type": "string"
+        },
+        "timestamp_utc": {
+          "type": "string"
+        },
+        "tool": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "timestamp_utc",
+        "tool",
+        "model_or_runtime"
+      ],
+      "type": "object"
+    },
+    "scenario_id": {
+      "type": "string"
+    },
+    "scenario_requirements": {
+      "additionalProperties": true,
+      "properties": {
+        "context_memory": {
+          "type": "boolean"
+        },
+        "token_efficiency_claim": {
+          "type": "boolean"
+        },
+        "visual_or_browser": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "skill_id": {
+      "type": "string"
+    },
+    "source_commit": {
+      "pattern": "^[0-9a-f]{40}$",
+      "type": "string"
+    },
+    "source_path": {
+      "type": "string"
+    },
+    "source_repo": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "artifact_version",
+    "skill_id",
+    "scenario_id",
+    "catalog_commit",
+    "source_commit",
+    "source_repo",
+    "source_path",
+    "runner",
+    "scenario_requirements",
+    "input_snapshot",
+    "execution",
+    "outputs",
+    "metrics",
+    "evidence",
+    "objective_checks"
+  ],
+  "title": "Benchmark run artifact",
+  "type": "object"
+}

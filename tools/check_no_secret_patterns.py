@@ -27,11 +27,14 @@ class Rule:
 RULES = [
     Rule("google_api_key", re.compile(r"AIza[0-9A-Za-z_-]{35}")),
     Rule("aws_access_key_id", re.compile(r"(?:A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}")),
-    Rule("openai_api_key", re.compile(r"sk-(?:proj-)?[A-Za-z0-9_-]{20,}")),
+    Rule("openai_api_key", re.compile(r"(?<![A-Za-z0-9_-])sk-(?:proj-)?[A-Za-z0-9_]{20,}(?![A-Za-z0-9_-])")),
     Rule("github_token", re.compile(r"(?:gh[pousr]_[A-Za-z0-9_]{30,}|github_pat_[A-Za-z0-9_]{20,})")),
+    Rule("github_token_example_shape", re.compile(r"\b(?:gh[pousr]_|github_pat_)[A-Za-z0-9_.-]+")),
     Rule("gitlab_token", re.compile(r"glpat-[A-Za-z0-9_-]{20,}")),
+    Rule("gitlab_token_example_shape", re.compile(r"\bglpat-[A-Za-z0-9_.-]+")),
     Rule("huggingface_token", re.compile(r"hf_[A-Za-z0-9]{30,}")),
     Rule("slack_token", re.compile(r"xox[baprs]-[A-Za-z0-9-]{10,}")),
+    Rule("slack_token_example_shape", re.compile(r"\bxox[baprs]-[A-Za-z0-9_.-]+")),
     Rule("private_key", re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH |DSA |)?PRIVATE KEY-----")),
 ]
 
@@ -42,12 +45,21 @@ def git(*args: str) -> str:
     return subprocess.check_output(["git", "-C", str(ROOT), *args], text=True)
 
 
+def git_bytes(*args: str) -> bytes:
+    return subprocess.check_output(["git", "-C", str(ROOT), *args])
+
+
 def tracked_files() -> list[Path]:
     return [ROOT / line for line in git("ls-files").splitlines() if line]
 
 
 def history_commits() -> list[str]:
     return [line for line in git("rev-list", "--all").splitlines() if line]
+
+
+def commit_changed_names(commit: str) -> list[str]:
+    data = git_bytes("diff-tree", "-z", "--no-commit-id", "--name-only", "-r", commit)
+    return [item.decode("utf-8", errors="surrogateescape") for item in data.split(b"\0") if item]
 
 
 def file_text(path: Path) -> str | None:
@@ -94,8 +106,7 @@ def scan_worktree() -> list[str]:
 def scan_history() -> list[str]:
     findings: list[str] = []
     for commit in history_commits():
-        names = git("diff-tree", "--no-commit-id", "--name-only", "-r", commit).splitlines()
-        for name in names:
+        for name in commit_changed_names(commit):
             if not name or SKIP_PARTS.intersection(Path(name).parts):
                 continue
             text = commit_file_text(commit, name)

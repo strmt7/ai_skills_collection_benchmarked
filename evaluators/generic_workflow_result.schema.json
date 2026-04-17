@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "citations_or_paths": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "inputs": {
+      "type": "object"
+    },
+    "metrics": {
+      "type": "object"
+    },
+    "outputs": {
+      "type": "object"
+    },
+    "runner_environment": {
+      "type": "object"
+    },
+    "steps": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    }
+  },
+  "required": [
+    "inputs",
+    "steps",
+    "outputs",
+    "metrics",
+    "citations_or_paths"
+  ],
+  "title": "Generic workflow benchmark result",
+  "type": "object"
+}

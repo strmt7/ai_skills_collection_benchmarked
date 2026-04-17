@@ -1,0 +1,26 @@
+name: Offline validation
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install test dependencies
+        run: python -m pip install -e '.[test]'
+      - name: Validate generated JSON
+        run: python -m json.tool data/skills_catalog.json >/dev/null
+      - name: Validate catalog and mirrors
+        run: python tools/validate_catalog.py
+      - name: Validate static benchmark outputs
+        run: python tools/run_static_benchmarks.py --check
+      - name: Run tests
+        run: python -m pytest -q
+      - name: Compile Python
+        run: python -m compileall -q tools tests
