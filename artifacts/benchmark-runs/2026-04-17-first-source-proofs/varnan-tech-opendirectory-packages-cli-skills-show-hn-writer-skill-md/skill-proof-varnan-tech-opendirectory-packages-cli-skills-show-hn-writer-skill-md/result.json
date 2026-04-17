@@ -30,7 +30,7 @@
     }
   ],
   "required_context": [
-    "Read the mirrored SKILL.md at included/skills/by-category/agent-infrastructure-skill-creation/reddit-verified-gtm-registry/varnan-tech-opendirectory-packages-cli-skills-show-hn-writer/SKILL.md.",
+    "Read the mirrored SKILL.md at included/skills/by-category/agent-infrastructure-skill-creation/reddit-verified-gtm-registry/show-hn-writer/SKILL.md.",
     "Use source provenance Varnan-Tech/opendirectory packages/cli/skills/show-hn-writer/SKILL.md at bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4.",
     "Load bundled resources on demand: has_references."
   ],

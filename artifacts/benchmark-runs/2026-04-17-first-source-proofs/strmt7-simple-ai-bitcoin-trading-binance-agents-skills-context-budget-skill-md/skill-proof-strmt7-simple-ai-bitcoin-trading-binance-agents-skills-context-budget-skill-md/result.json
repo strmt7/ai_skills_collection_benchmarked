@@ -27,7 +27,7 @@
     }
   ],
   "required_context": [
-    "Read the mirrored SKILL.md at included/skills/by-category/devops-cloud-operations/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget/SKILL.md.",
+    "Read the mirrored SKILL.md at included/skills/by-category/devops-cloud-operations/selected-project-reference/context-budget-simple-ai-bitcoin-trading-binance/SKILL.md.",
     "Use source provenance strmt7/simple_ai_bitcoin_trading_binance .agents/skills/context-budget/SKILL.md at 451d77df90621e3b666581d9835d246fb7147349."
   ],
   "safe_boundaries": [

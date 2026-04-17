@@ -2,9 +2,9 @@
 
 ## azure-pipelines-generator - akin-ozer/cc-devops-skills `devops-skills-plugin/skills/azure-pipelines-generator/SKILL.md`
 
-- Skill page: [akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator](../skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/latest-release-devops/akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator/SKILL.md`
+- Skill page: [azure-pipelines-generator](../skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-generator.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-generator`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-generator/SKILL.md`
 - Source: [akin-ozer/cc-devops-skills `devops-skills-plugin/skills/azure-pipelines-generator/SKILL.md`](https://github.com/akin-ozer/cc-devops-skills/blob/7fe7595e4512f8ce43dcf956aa5190b96d627dd1/devops-skills-plugin/skills/azure-pipelines-generator/SKILL.md)
 - Selected ref: `v1.0.0`; commit `7fe7595e4512`
 - What it covers: Catalog summary: Generate/create/scaffold azure-pipelines.yml, stages, jobs, steps, or reusable templates.
@@ -23,9 +23,9 @@
 
 ## azure-pipelines-validator - akin-ozer/cc-devops-skills `devops-skills-plugin/skills/azure-pipelines-validator/SKILL.md`
 
-- Skill page: [akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-validator](../skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-validator.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-validator`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/latest-release-devops/akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-validator/SKILL.md`
+- Skill page: [azure-pipelines-validator](../skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-validator.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-validator`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-validator/SKILL.md`
 - Source: [akin-ozer/cc-devops-skills `devops-skills-plugin/skills/azure-pipelines-validator/SKILL.md`](https://github.com/akin-ozer/cc-devops-skills/blob/7fe7595e4512f8ce43dcf956aa5190b96d627dd1/devops-skills-plugin/skills/azure-pipelines-validator/SKILL.md)
 - Selected ref: `v1.0.0`; commit `7fe7595e4512`
 - What it covers: Catalog summary: Validate, lint, audit, or review azure-pipelines.yml — syntax, security, best practices.
@@ -44,9 +44,9 @@
 
 ## loki-config-generator - akin-ozer/cc-devops-skills `devops-skills-plugin/skills/loki-config-generator/SKILL.md`
 
-- Skill page: [akin-ozer-cc-devops-skills-devops-skills-plugin-skills-loki-config-generator](../skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/akin-ozer-cc-devops-skills-devops-skills-plugin-skills-loki-config-generator.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/akin-ozer-cc-devops-skills-devops-skills-plugin-skills-loki-config-generator`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/latest-release-devops/akin-ozer-cc-devops-skills-devops-skills-plugin-skills-loki-config-generator/SKILL.md`
+- Skill page: [loki-config-generator](../skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/loki-config-generator.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/loki-config-generator`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/latest-release-devops/loki-config-generator/SKILL.md`
 - Source: [akin-ozer/cc-devops-skills `devops-skills-plugin/skills/loki-config-generator/SKILL.md`](https://github.com/akin-ozer/cc-devops-skills/blob/7fe7595e4512f8ce43dcf956aa5190b96d627dd1/devops-skills-plugin/skills/loki-config-generator/SKILL.md)
 - Selected ref: `v1.0.0`; commit `7fe7595e4512`
 - What it covers: Catalog summary: Generate/create Loki configs — ingester, querier, compactor, ruler, S3/GCS/Azure backends.
@@ -66,9 +66,9 @@
 
 ## azure-ai-agents-persistent-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-ai-agents-persistent-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-ai-agents-persistent-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-ai-agents-persistent-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-ai-agents-persistent-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-ai-agents-persistent-dotnet/SKILL.md`
+- Skill page: [azure-ai-agents-persistent-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-agents-persistent-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-agents-persistent-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-agents-persistent-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-ai-agents-persistent-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-ai-agents-persistent-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure AI Agents Persistent SDK for .NET. Low-level SDK for creating and managing AI agents with threads, messages, runs, and tools. Use for agent CRUD, conversation threads, streaming responses, function calling, file search, and code interpreter. Triggers: "PersistentAgentsClient", "persistent agents", "agent threads", "agent runs", "streaming agents", "function calling agents .NET".
@@ -87,9 +87,9 @@
 
 ## azure-ai-document-intelligence-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-ai-document-intelligence-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-ai-document-intelligence-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-ai-document-intelligence-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-ai-document-intelligence-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-ai-document-intelligence-dotnet/SKILL.md`
+- Skill page: [azure-ai-document-intelligence-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-document-intelligence-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-document-intelligence-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-document-intelligence-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-ai-document-intelligence-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-ai-document-intelligence-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure AI Document Intelligence SDK for .NET. Extract text, tables, and structured data from documents using prebuilt and custom models. Use for invoice processing, receipt extraction, ID document analysis, and custom document models. Triggers: "Document Intelligence", "DocumentIntelligenceClient", "form recognizer", "invoice extraction", "receipt OCR", "document analysis .NET".
@@ -108,9 +108,9 @@
 
 ## azure-ai-openai-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-ai-openai-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-ai-openai-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-ai-openai-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-ai-openai-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-ai-openai-dotnet/SKILL.md`
+- Skill page: [azure-ai-openai-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-openai-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-openai-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-openai-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-ai-openai-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-ai-openai-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure OpenAI SDK for .NET. Client library for Azure OpenAI and OpenAI services. Use for chat completions, embeddings, image generation, audio transcription, and assistants. Triggers: "Azure OpenAI", "AzureOpenAIClient", "ChatClient", "chat completions .NET", "GPT-4", "embeddings", "DALL-E", "Whisper", "OpenAI .NET".
@@ -129,9 +129,9 @@
 
 ## azure-ai-projects-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-ai-projects-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-ai-projects-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-ai-projects-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-ai-projects-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-ai-projects-dotnet/SKILL.md`
+- Skill page: [azure-ai-projects-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-projects-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-projects-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-projects-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-ai-projects-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-ai-projects-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure AI Projects SDK for .NET. High-level client for Azure AI Foundry projects including agents, connections, datasets, deployments, evaluations, and indexes. Use for AI Foundry project management, versioned agents, and orchestration. Triggers: "AI Projects", "AIProjectClient", "Foundry project", "versioned agents", "evaluations", "datasets", "connections", "deployments .NET".
@@ -150,9 +150,9 @@
 
 ## azure-ai-voicelive-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-ai-voicelive-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-ai-voicelive-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-ai-voicelive-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-ai-voicelive-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-ai-voicelive-dotnet/SKILL.md`
+- Skill page: [azure-ai-voicelive-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-voicelive-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-voicelive-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-voicelive-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-ai-voicelive-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-ai-voicelive-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure AI Voice Live SDK for .NET. Build real-time voice AI applications with bidirectional WebSocket communication. Use for voice assistants, conversational AI, real-time speech-to-speech, and voice-enabled chatbots. Triggers: "voice live", "real-time voice", "VoiceLiveClient", "VoiceLiveSession", "voice assistant .NET", "bidirectional audio", "speech-to-speech".
@@ -171,9 +171,9 @@
 
 ## azure-eventgrid-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-eventgrid-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-eventgrid-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-eventgrid-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-eventgrid-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-eventgrid-dotnet/SKILL.md`
+- Skill page: [azure-eventgrid-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventgrid-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventgrid-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventgrid-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-eventgrid-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-eventgrid-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Event Grid SDK for .NET. Client library for publishing and consuming events with Azure Event Grid. Use for event-driven architectures, pub/sub messaging, CloudEvents, and EventGridEvents. Triggers: "Event Grid", "EventGridPublisherClient", "CloudEvent", "EventGridEvent", "publish events .NET", "event-driven", "pub/sub".
@@ -192,9 +192,9 @@
 
 ## azure-eventhub-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-eventhub-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-eventhub-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-eventhub-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-eventhub-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-eventhub-dotnet/SKILL.md`
+- Skill page: [azure-eventhub-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-eventhub-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-eventhub-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Event Hubs SDK for .NET. Use for high-throughput event streaming: sending events (EventHubProducerClient, EventHubBufferedProducerClient), receiving events (EventProcessorClient with checkpointing), partition management, and real-time data ingestion. Triggers: "Event Hubs", "event streaming", "EventHubProducerClient", "EventProcessorClient", "send events", "receive events", "checkpointing", "partition".
@@ -213,9 +213,9 @@
 
 ## azure-identity-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-identity-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-identity-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-identity-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-identity-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-identity-dotnet/SKILL.md`
+- Skill page: [azure-identity-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-identity-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-identity-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-identity-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-identity-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-identity-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Identity library for .NET. Authentication library for Azure SDK clients using Microsoft Entra ID. Use for DefaultAzureCredential, managed identity, service principals, and developer credentials. Triggers: "Azure Identity", "DefaultAzureCredential", "ManagedIdentityCredential", "ClientSecretCredential", "authentication .NET", "Azure auth", "credential chain".
@@ -234,9 +234,9 @@
 
 ## azure-mgmt-apicenter-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-apicenter-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apicenter-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apicenter-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apicenter-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apicenter-dotnet/SKILL.md`
+- Skill page: [azure-mgmt-apicenter-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-apicenter-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-apicenter-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-apicenter-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-apicenter-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-apicenter-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure API Center SDK for .NET. Centralized API inventory management with governance, versioning, and discovery. Use for creating API services, workspaces, APIs, versions, definitions, environments, deployments, and metadata schemas. Triggers: "API Center", "ApiCenterService", "ApiCenterWorkspace", "ApiCenterApi", "API inventory", "API governance", "API versioning", "API catalog", "API discovery".
@@ -255,9 +255,9 @@
 
 ## azure-mgmt-apimanagement-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-apimanagement-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apimanagement-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apimanagement-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apimanagement-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apimanagement-dotnet/SKILL.md`
+- Skill page: [azure-mgmt-apimanagement-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-apimanagement-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-apimanagement-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-apimanagement-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-apimanagement-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-apimanagement-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Resource Manager SDK for API Management in .NET. Use for MANAGEMENT PLANE operations: creating/managing APIM services, APIs, products, subscriptions, policies, users, groups, gateways, and backends via Azure Resource Manager. Triggers: "API Management", "APIM service", "create APIM", "manage APIs", "ApiManagementServiceResource", "API policies", "APIM products", "APIM subscriptions".
@@ -276,9 +276,9 @@
 
 ## azure-mgmt-applicationinsights-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-applicationinsights-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-applicationinsights-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-applicationinsights-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-applicationinsights-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-applicationinsights-dotnet/SKILL.md`
+- Skill page: [azure-mgmt-applicationinsights-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-applicationinsights-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-applicationinsights-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-applicationinsights-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-applicationinsights-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-applicationinsights-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Application Insights SDK for .NET. Application performance monitoring and observability resource management. Use for creating Application Insights components, web tests, workbooks, analytics items, and API keys. Triggers: "Application Insights", "ApplicationInsights", "App Insights", "APM", "application monitoring", "web tests", "availability tests", "workbooks".
@@ -297,9 +297,9 @@
 
 ## azure-mgmt-arizeaiobservabilityeval-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-arizeaiobservabilityeval-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-arizeaiobservabilityeval-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-arizeaiobservabilityeval-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-arizeaiobservabilityeval-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-arizeaiobservabilityeval-dotnet/SKILL.md`
+- Skill page: [azure-mgmt-arizeaiobservabilityeval-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-arizeaiobservabilityeval-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-arizeaiobservabilityeval-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-arizeaiobservabilityeval-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-arizeaiobservabilityeval-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-arizeaiobservabilityeval-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Resource Manager SDK for Arize AI Observability and Evaluation (.NET). Use when managing Arize AI organizations on Azure via Azure Marketplace, creating/updating/deleting Arize resources, or integrating Arize ML observability into .NET applications. Triggers: "Arize AI", "ML observability", "ArizeAIObservabilityEval", "Arize organization".
@@ -318,9 +318,9 @@
 
 ## azure-mgmt-botservice-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-botservice-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-botservice-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-botservice-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-botservice-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-botservice-dotnet/SKILL.md`
+- Skill page: [azure-mgmt-botservice-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-botservice-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-botservice-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-botservice-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-botservice-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-botservice-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Resource Manager SDK for Bot Service in .NET. Management plane operations for creating and managing Azure Bot resources, channels (Teams, DirectLine, Slack), and connection settings. Triggers: "Bot Service", "BotResource", "Azure Bot", "DirectLine channel", "Teams channel", "bot management .NET", "create bot".
@@ -339,9 +339,9 @@
 
 ## azure-mgmt-fabric-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-fabric-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-fabric-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-fabric-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-fabric-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-fabric-dotnet/SKILL.md`
+- Skill page: [azure-mgmt-fabric-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-fabric-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-fabric-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-fabric-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-fabric-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-fabric-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Resource Manager SDK for Fabric in .NET. Use for MANAGEMENT PLANE operations: provisioning, scaling, suspending/resuming Microsoft Fabric capacities, checking name availability, and listing SKUs via Azure Resource Manager. Triggers: "Fabric capacity", "create capacity", "suspend capacity", "resume capacity", "Fabric SKU", "provision Fabric", "ARM Fabric", "FabricCapacityResource".
@@ -360,9 +360,9 @@
 
 ## azure-mgmt-mongodbatlas-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-mongodbatlas-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-mongodbatlas-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-mongodbatlas-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-mongodbatlas-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-mongodbatlas-dotnet/SKILL.md`
+- Skill page: [azure-mgmt-mongodbatlas-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-mongodbatlas-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-mongodbatlas-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-mongodbatlas-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-mongodbatlas-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-mongodbatlas-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Manage MongoDB Atlas Organizations as Azure ARM resources using Azure.ResourceManager.MongoDBAtlas SDK. Use when creating, updating, listing, or deleting MongoDB Atlas organizations through Azure Marketplace integration. This SDK manages the Azure-side organization resource, not Atlas clusters/databases directly.
@@ -381,9 +381,9 @@
 
 ## azure-mgmt-weightsandbiases-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-weightsandbiases-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-weightsandbiases-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-weightsandbiases-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-weightsandbiases-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-weightsandbiases-dotnet/SKILL.md`
+- Skill page: [azure-mgmt-weightsandbiases-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-weightsandbiases-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-weightsandbiases-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-weightsandbiases-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-weightsandbiases-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-mgmt-weightsandbiases-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Weights & Biases SDK for .NET. ML experiment tracking and model management via Azure Marketplace. Use for creating W&B instances, managing SSO, marketplace integration, and ML observability. Triggers: "Weights and Biases", "W&B", "WeightsAndBiases", "ML experiment tracking", "model registry", "experiment management", "wandb".
@@ -402,9 +402,9 @@
 
 ## azure-resource-manager-cosmosdb-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-cosmosdb-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-cosmosdb-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-cosmosdb-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-cosmosdb-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-cosmosdb-dotnet/SKILL.md`
+- Skill page: [azure-resource-manager-cosmosdb-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-manager-cosmosdb-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-manager-cosmosdb-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-manager-cosmosdb-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-cosmosdb-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-cosmosdb-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Resource Manager SDK for Cosmos DB in .NET. Use for MANAGEMENT PLANE operations: creating/managing Cosmos DB accounts, databases, containers, throughput settings, and RBAC via Azure Resource Manager. NOT for data plane operations (CRUD on documents) - use Microsoft.Azure.Cosmos for that. Triggers: "Cosmos DB account", "create Cosmos account", "manage Cosmos resources", "ARM Cosmos", "CosmosDBAccountResource",.
@@ -423,9 +423,9 @@
 
 ## azure-resource-manager-durabletask-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-durabletask-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-durabletask-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-durabletask-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-durabletask-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-durabletask-dotnet/SKILL.md`
+- Skill page: [azure-resource-manager-durabletask-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-manager-durabletask-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-manager-durabletask-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-manager-durabletask-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-durabletask-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-durabletask-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Resource Manager SDK for Durable Task Scheduler in .NET. Use for MANAGEMENT PLANE operations: creating/managing Durable Task Schedulers, Task Hubs, and retention policies via Azure Resource Manager. Triggers: "Durable Task Scheduler", "create scheduler", "task hub", "DurableTaskSchedulerResource", "provision Durable Task", "orchestration scheduler".
@@ -444,9 +444,9 @@
 
 ## azure-resource-manager-mysql-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-mysql-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-mysql-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-mysql-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-mysql-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-mysql-dotnet/SKILL.md`
+- Skill page: [azure-resource-manager-mysql-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-manager-mysql-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-manager-mysql-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-manager-mysql-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-mysql-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-mysql-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure MySQL Flexible Server SDK for .NET. Database management for MySQL Flexible Server deployments. Use for creating servers, databases, firewall rules, configurations, backups, and high availability. Triggers: "MySQL", "MySqlFlexibleServer", "MySQL Flexible Server", "Azure Database for MySQL", "MySQL database management", "MySQL firewall", "MySQL backup".
@@ -465,9 +465,9 @@
 
 ## azure-resource-manager-playwright-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-playwright-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-playwright-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-playwright-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-playwright-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-playwright-dotnet/SKILL.md`
+- Skill page: [azure-resource-manager-playwright-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-manager-playwright-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-manager-playwright-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-manager-playwright-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-playwright-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-playwright-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Resource Manager SDK for Microsoft Playwright Testing in .NET. Use for MANAGEMENT PLANE operations: creating/managing Playwright Testing workspaces, checking name availability, and managing workspace quotas via Azure Resource Manager. NOT for running Playwright tests - use Azure.Developer.MicrosoftPlaywrightTesting.NUnit for that. Triggers: "Playwright workspace", "create Playwright Testing workspace",.
@@ -486,9 +486,9 @@
 
 ## azure-resource-manager-redis-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-redis-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-redis-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-redis-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-redis-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-redis-dotnet/SKILL.md`
+- Skill page: [azure-resource-manager-redis-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-manager-redis-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-manager-redis-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-manager-redis-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-redis-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-redis-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Resource Manager SDK for Redis in .NET. Use for MANAGEMENT PLANE operations: creating/managing Azure Cache for Redis instances, firewall rules, access keys, patch schedules, linked servers (geo-replication), and private endpoints via Azure Resource Manager. NOT for data plane operations (get/set keys, pub/sub) - use StackExchange.Redis for that. Triggers: "Redis cache", "create Redis", "manage Redis", "ARM.
@@ -507,9 +507,9 @@
 
 ## azure-resource-manager-sql-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-sql-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-sql-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-sql-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-sql-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-resource-manager-sql-dotnet/SKILL.md`
+- Skill page: [azure-resource-manager-sql-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-manager-sql-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-manager-sql-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-manager-sql-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-sql-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-resource-manager-sql-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Resource Manager SDK for Azure SQL in .NET. Use for MANAGEMENT PLANE operations: creating/managing SQL servers, databases, elastic pools, firewall rules, and failover groups via Azure Resource Manager. NOT for data plane operations (executing queries) - use Microsoft.Data.SqlClient for that. Triggers: "SQL server", "create SQL database", "manage SQL resources", "ARM SQL", "SqlServerResource", "provision Azure.
@@ -528,9 +528,9 @@
 
 ## azure-search-documents-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-search-documents-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-search-documents-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-search-documents-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-search-documents-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-search-documents-dotnet/SKILL.md`
+- Skill page: [azure-search-documents-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-search-documents-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-search-documents-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-search-documents-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-search-documents-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-search-documents-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure AI Search SDK for .NET (Azure.Search.Documents). Use for building search applications with full-text, vector, semantic, and hybrid search. Covers SearchClient (queries, document CRUD), SearchIndexClient (index management), and SearchIndexerClient (indexers, skillsets). Triggers: "Azure Search .NET", "SearchClient", "SearchIndexClient", "vector search C#", "semantic search .NET", "hybrid search",.
@@ -549,9 +549,9 @@
 
 ## azure-security-keyvault-keys-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-security-keyvault-keys-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-security-keyvault-keys-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-security-keyvault-keys-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-security-keyvault-keys-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-security-keyvault-keys-dotnet/SKILL.md`
+- Skill page: [azure-security-keyvault-keys-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-keys-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-keys-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-keys-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-security-keyvault-keys-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-security-keyvault-keys-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Key Vault Keys SDK for .NET. Client library for managing cryptographic keys in Azure Key Vault and Managed HSM. Use for key creation, rotation, encryption, decryption, signing, and verification. Triggers: "Key Vault keys", "KeyClient", "CryptographyClient", "RSA key", "EC key", "encrypt decrypt .NET", "key rotation", "HSM".
@@ -570,9 +570,9 @@
 
 ## azure-servicebus-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-servicebus-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-servicebus-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-servicebus-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-servicebus-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-servicebus-dotnet/SKILL.md`
+- Skill page: [azure-servicebus-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-servicebus-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-servicebus-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-servicebus-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/azure-servicebus-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/azure-servicebus-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Service Bus SDK for .NET. Enterprise messaging with queues, topics, subscriptions, and sessions. Use for reliable message delivery, pub/sub patterns, dead letter handling, and background processing. Triggers: "Service Bus", "ServiceBusClient", "ServiceBusSender", "ServiceBusReceiver", "ServiceBusProcessor", "message queue", "pub/sub .NET", "dead letter queue".
@@ -591,9 +591,9 @@
 
 ## m365-agents-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/m365-agents-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-m365-agents-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-m365-agents-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-m365-agents-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-m365-agents-dotnet/SKILL.md`
+- Skill page: [m365-agents-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/m365-agents-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/m365-agents-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/m365-agents-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/m365-agents-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/m365-agents-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Microsoft 365 Agents SDK for .NET. Build multichannel agents for Teams/M365/Copilot Studio with ASP.NET Core hosting, AgentApplication routing, and MSAL-based auth. Triggers: "Microsoft 365 Agents SDK", "Microsoft.Agents", "AddAgentApplicationOptions", "AgentApplication", "AddAgentAspNetAuthentication", "Copilot Studio client", "IAgentHttpAdapter".
@@ -612,9 +612,9 @@
 
 ## microsoft-azure-webjobs-extensions-authentication-events-dotnet - microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/microsoft-azure-webjobs-extensions-authentication-events-dotnet/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-dotnet-skills-microsoft-azure-webjobs-extensions-authentication-events-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-microsoft-azure-webjobs-extensions-authentication-events-dotnet.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-microsoft-azure-webjobs-extensions-authentication-events-dotnet`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-microsoft-azure-webjobs-extensions-authentication-events-dotnet/SKILL.md`
+- Skill page: [microsoft-azure-webjobs-extensions-authentication-events-dotnet](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-azure-webjobs-extensions-authentication-events-dotnet.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-azure-webjobs-extensions-authentication-events-dotnet`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-azure-webjobs-extensions-authentication-events-dotnet/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-dotnet/skills/microsoft-azure-webjobs-extensions-authentication-events-dotnet/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-dotnet/skills/microsoft-azure-webjobs-extensions-authentication-events-dotnet/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Microsoft Entra Authentication Events SDK for .NET. Azure Functions triggers for custom authentication extensions. Use for token enrichment, custom claims, attribute collection, and OTP customization in Entra ID. Triggers: "Authentication Events", "WebJobsAuthenticationEventsTrigger", "OnTokenIssuanceStart", "OnAttributeCollectionStart", "custom claims", "token enrichment", "Entra custom extension", "authentication.
@@ -633,9 +633,9 @@
 
 ## azure-ai-agents-persistent-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-ai-agents-persistent-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-agents-persistent-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-agents-persistent-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-agents-persistent-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-agents-persistent-java/SKILL.md`
+- Skill page: [azure-ai-agents-persistent-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-agents-persistent-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-agents-persistent-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-agents-persistent-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-ai-agents-persistent-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-ai-agents-persistent-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure AI Agents Persistent SDK for Java. Low-level SDK for creating and managing AI agents with threads, messages, runs, and tools. Triggers: "PersistentAgentsClient", "persistent agents java", "agent threads java", "agent runs java", "streaming agents java".
@@ -654,9 +654,9 @@
 
 ## azure-ai-anomalydetector-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-ai-anomalydetector-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-anomalydetector-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-anomalydetector-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-anomalydetector-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-anomalydetector-java/SKILL.md`
+- Skill page: [azure-ai-anomalydetector-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-anomalydetector-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-anomalydetector-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-anomalydetector-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-ai-anomalydetector-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-ai-anomalydetector-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build anomaly detection applications with Azure AI Anomaly Detector SDK for Java. Use when implementing univariate/multivariate anomaly detection, time-series analysis, or AI-powered monitoring.
@@ -675,9 +675,9 @@
 
 ## azure-ai-contentsafety-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-ai-contentsafety-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-contentsafety-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-contentsafety-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-contentsafety-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-contentsafety-java/SKILL.md`
+- Skill page: [azure-ai-contentsafety-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-contentsafety-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-contentsafety-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-contentsafety-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-ai-contentsafety-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-ai-contentsafety-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build content moderation applications with Azure AI Content Safety SDK for Java. Use when implementing text/image analysis, blocklist management, or harm detection for hate, violence, sexual content, and self-harm.
@@ -696,9 +696,9 @@
 
 ## azure-ai-formrecognizer-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-ai-formrecognizer-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-formrecognizer-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-formrecognizer-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-formrecognizer-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-formrecognizer-java/SKILL.md`
+- Skill page: [azure-ai-formrecognizer-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-formrecognizer-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-formrecognizer-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-formrecognizer-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-ai-formrecognizer-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-ai-formrecognizer-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build document analysis applications with Azure Document Intelligence (Form Recognizer) SDK for Java. Use when extracting text, tables, key-value pairs from documents, receipts, invoices, or building custom document models.
@@ -717,9 +717,9 @@
 
 ## azure-ai-projects-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-ai-projects-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-projects-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-projects-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-projects-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-projects-java/SKILL.md`
+- Skill page: [azure-ai-projects-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-projects-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-projects-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-projects-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-ai-projects-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-ai-projects-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure AI Projects SDK for Java. High-level SDK for Azure AI Foundry project management including connections, datasets, indexes, and evaluations. Triggers: "AIProjectClient java", "azure ai projects java", "Foundry project java", "ConnectionsClient", "DatasetsClient", "IndexesClient".
@@ -738,9 +738,9 @@
 
 ## azure-ai-vision-imageanalysis-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-ai-vision-imageanalysis-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-vision-imageanalysis-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-vision-imageanalysis-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-vision-imageanalysis-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-vision-imageanalysis-java/SKILL.md`
+- Skill page: [azure-ai-vision-imageanalysis-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-vision-imageanalysis-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-vision-imageanalysis-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-vision-imageanalysis-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-ai-vision-imageanalysis-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-ai-vision-imageanalysis-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build image analysis applications with Azure AI Vision SDK for Java. Use when implementing image captioning, OCR text extraction, object detection, tagging, or smart cropping.
@@ -759,9 +759,9 @@
 
 ## azure-ai-voicelive-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-ai-voicelive-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-voicelive-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-voicelive-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-voicelive-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-ai-voicelive-java/SKILL.md`
+- Skill page: [azure-ai-voicelive-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-voicelive-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-voicelive-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-voicelive-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-ai-voicelive-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-ai-voicelive-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure AI VoiceLive SDK for Java. Real-time bidirectional voice conversations with AI assistants using WebSocket. Triggers: "VoiceLiveClient java", "voice assistant java", "real-time voice java", "audio streaming java", "voice activity detection java".
@@ -780,9 +780,9 @@
 
 ## azure-appconfiguration-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-appconfiguration-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-appconfiguration-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-appconfiguration-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-appconfiguration-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-appconfiguration-java/SKILL.md`
+- Skill page: [azure-appconfiguration-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-appconfiguration-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-appconfiguration-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-appconfiguration-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-appconfiguration-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-appconfiguration-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure App Configuration SDK for Java. Centralized application configuration management with key-value settings, feature flags, and snapshots. Triggers: "ConfigurationClient java", "app configuration java", "feature flag java", "configuration setting java", "azure config java".
@@ -801,9 +801,9 @@
 
 ## azure-communication-callautomation-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-communication-callautomation-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-communication-callautomation-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-communication-callautomation-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-communication-callautomation-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-communication-callautomation-java/SKILL.md`
+- Skill page: [azure-communication-callautomation-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-communication-callautomation-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-communication-callautomation-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-communication-callautomation-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-communication-callautomation-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-communication-callautomation-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build call automation workflows with Azure Communication Services Call Automation Java SDK. Use when implementing IVR systems, call routing, call recording, DTMF recognition, text-to-speech, or AI-powered call flows.
@@ -822,9 +822,9 @@
 
 ## azure-communication-callingserver-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-communication-callingserver-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-communication-callingserver-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-communication-callingserver-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-communication-callingserver-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-communication-callingserver-java/SKILL.md`
+- Skill page: [azure-communication-callingserver-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-communication-callingserver-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-communication-callingserver-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-communication-callingserver-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-communication-callingserver-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-communication-callingserver-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Communication Services CallingServer (legacy) Java SDK. Note - This SDK is deprecated. Use azure-communication-callautomation instead for new projects. Only use this skill when maintaining legacy code.
@@ -843,9 +843,9 @@
 
 ## azure-communication-chat-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-communication-chat-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-communication-chat-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-communication-chat-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-communication-chat-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-communication-chat-java/SKILL.md`
+- Skill page: [azure-communication-chat-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-communication-chat-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-communication-chat-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-communication-chat-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-communication-chat-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-communication-chat-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build real-time chat applications with Azure Communication Services Chat Java SDK. Use when implementing chat threads, messaging, participants, read receipts, typing notifications, or real-time chat features.
@@ -864,9 +864,9 @@
 
 ## azure-communication-common-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-communication-common-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-communication-common-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-communication-common-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-communication-common-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-communication-common-java/SKILL.md`
+- Skill page: [azure-communication-common-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-communication-common-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-communication-common-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-communication-common-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-communication-common-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-communication-common-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Communication Services common utilities for Java. Use when working with CommunicationTokenCredential, user identifiers, token refresh, or shared authentication across ACS services.
@@ -885,9 +885,9 @@
 
 ## azure-communication-sms-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-communication-sms-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-communication-sms-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-communication-sms-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-communication-sms-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-communication-sms-java/SKILL.md`
+- Skill page: [azure-communication-sms-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-communication-sms-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-communication-sms-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-communication-sms-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-communication-sms-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-communication-sms-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Send SMS messages with Azure Communication Services SMS Java SDK. Use when implementing SMS notifications, alerts, OTP delivery, bulk messaging, or delivery reports.
@@ -906,9 +906,9 @@
 
 ## azure-compute-batch-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-compute-batch-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-compute-batch-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-compute-batch-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-compute-batch-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-compute-batch-java/SKILL.md`
+- Skill page: [azure-compute-batch-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-compute-batch-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-compute-batch-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-compute-batch-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-compute-batch-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-compute-batch-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Batch SDK for Java. Run large-scale parallel and HPC batch jobs with pools, jobs, tasks, and compute nodes. Triggers: "BatchClient java", "azure batch java", "batch pool java", "batch job java", "HPC java", "parallel computing java".
@@ -927,9 +927,9 @@
 
 ## azure-cosmos-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-cosmos-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-cosmos-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-cosmos-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-cosmos-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-cosmos-java/SKILL.md`
+- Skill page: [azure-cosmos-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-cosmos-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-cosmos-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-cosmos-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-cosmos-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-cosmos-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Cosmos DB SDK for Java. NoSQL database operations with global distribution, multi-model support, and reactive patterns. Triggers: "CosmosClient java", "CosmosAsyncClient", "cosmos database java", "cosmosdb java", "document database java".
@@ -948,9 +948,9 @@
 
 ## azure-data-tables-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-data-tables-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-data-tables-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-data-tables-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-data-tables-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-data-tables-java/SKILL.md`
+- Skill page: [azure-data-tables-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-data-tables-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-data-tables-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-data-tables-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-data-tables-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-data-tables-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build table storage applications with Azure Tables SDK for Java. Use when working with Azure Table Storage or Cosmos DB Table API for NoSQL key-value data, schemaless storage, or structured data at scale.
@@ -969,9 +969,9 @@
 
 ## azure-eventgrid-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-eventgrid-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-eventgrid-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-eventgrid-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-eventgrid-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-eventgrid-java/SKILL.md`
+- Skill page: [azure-eventgrid-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventgrid-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventgrid-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventgrid-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-eventgrid-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-eventgrid-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build event-driven applications with Azure Event Grid SDK for Java. Use when publishing events, implementing pub/sub patterns, or integrating with Azure services via events.
@@ -990,9 +990,9 @@
 
 ## azure-eventhub-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-eventhub-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-eventhub-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-eventhub-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-eventhub-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-eventhub-java/SKILL.md`
+- Skill page: [azure-eventhub-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-eventhub-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-eventhub-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build real-time streaming applications with Azure Event Hubs SDK for Java. Use when implementing event streaming, high-throughput data ingestion, or building event-driven architectures.
@@ -1011,9 +1011,9 @@
 
 ## azure-identity-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-identity-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-identity-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-identity-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-identity-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-identity-java/SKILL.md`
+- Skill page: [azure-identity-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-identity-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-identity-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-identity-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-identity-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-identity-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Identity library for Java authentication with Azure services. Use when implementing DefaultAzureCredential, managed identity, service principal, or any Azure authentication pattern in Java applications.
@@ -1032,9 +1032,9 @@
 
 ## azure-messaging-webpubsub-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-messaging-webpubsub-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-messaging-webpubsub-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-messaging-webpubsub-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-messaging-webpubsub-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-messaging-webpubsub-java/SKILL.md`
+- Skill page: [azure-messaging-webpubsub-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-messaging-webpubsub-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-messaging-webpubsub-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-messaging-webpubsub-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-messaging-webpubsub-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-messaging-webpubsub-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build real-time web applications with Azure Web PubSub SDK for Java. Use when implementing WebSocket-based messaging, live updates, chat applications, or server-to-client push notifications.
@@ -1053,9 +1053,9 @@
 
 ## azure-monitor-ingestion-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-monitor-ingestion-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-ingestion-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-ingestion-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-ingestion-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-ingestion-java/SKILL.md`
+- Skill page: [azure-monitor-ingestion-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-ingestion-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-ingestion-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-ingestion-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-monitor-ingestion-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-monitor-ingestion-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Monitor Ingestion SDK for Java. Send custom logs to Azure Monitor via Data Collection Rules (DCR) and Data Collection Endpoints (DCE). Triggers: "LogsIngestionClient java", "azure monitor ingestion java", "custom logs java", "DCR java", "data collection rule java".
@@ -1074,9 +1074,9 @@
 
 ## azure-monitor-opentelemetry-exporter-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-monitor-opentelemetry-exporter-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-opentelemetry-exporter-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-opentelemetry-exporter-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-opentelemetry-exporter-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-opentelemetry-exporter-java/SKILL.md`
+- Skill page: [azure-monitor-opentelemetry-exporter-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-opentelemetry-exporter-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-opentelemetry-exporter-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-opentelemetry-exporter-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-monitor-opentelemetry-exporter-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-monitor-opentelemetry-exporter-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Monitor OpenTelemetry Exporter for Java. Export OpenTelemetry traces, metrics, and logs to Azure Monitor/Application Insights. Triggers: "AzureMonitorExporter java", "opentelemetry azure java", "application insights java otel", "azure monitor tracing java". Note: This package is DEPRECATED. Migrate to azure-monitor-opentelemetry-autoconfigure.
@@ -1095,9 +1095,9 @@
 
 ## azure-monitor-query-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-monitor-query-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-query-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-query-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-query-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-query-java/SKILL.md`
+- Skill page: [azure-monitor-query-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-query-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-query-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-query-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-monitor-query-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-monitor-query-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Monitor Query SDK for Java. Execute Kusto queries against Log Analytics workspaces and query metrics from Azure resources. Triggers: "LogsQueryClient java", "MetricsQueryClient java", "kusto query java", "log analytics java", "azure monitor query java". Note: This package is deprecated. Migrate to azure-monitor-query-logs and azure-monitor-query-metrics.
@@ -1116,9 +1116,9 @@
 
 ## azure-security-keyvault-keys-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-security-keyvault-keys-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-security-keyvault-keys-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-security-keyvault-keys-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-security-keyvault-keys-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-security-keyvault-keys-java/SKILL.md`
+- Skill page: [azure-security-keyvault-keys-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-keys-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-keys-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-keys-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-security-keyvault-keys-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-security-keyvault-keys-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Key Vault Keys Java SDK for cryptographic key management. Use when creating, managing, or using RSA/EC keys, performing encrypt/decrypt/sign/verify operations, or working with HSM-backed keys.
@@ -1137,9 +1137,9 @@
 
 ## azure-security-keyvault-secrets-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-security-keyvault-secrets-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-security-keyvault-secrets-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-security-keyvault-secrets-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-security-keyvault-secrets-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-security-keyvault-secrets-java/SKILL.md`
+- Skill page: [azure-security-keyvault-secrets-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-secrets-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-secrets-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-secrets-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-security-keyvault-secrets-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-security-keyvault-secrets-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Key Vault Secrets Java SDK for secret management. Use when storing, retrieving, or managing passwords, API keys, connection strings, or other sensitive configuration data.
@@ -1158,9 +1158,9 @@
 
 ## azure-storage-blob-java - microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-storage-blob-java/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-java-skills-azure-storage-blob-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-storage-blob-java.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-storage-blob-java`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-storage-blob-java/SKILL.md`
+- Skill page: [azure-storage-blob-java](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-blob-java.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-blob-java`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-blob-java/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-java/skills/azure-storage-blob-java/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-java/skills/azure-storage-blob-java/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build blob storage applications with Azure Storage Blob SDK for Java. Use when uploading, downloading, or managing files in Azure Blob Storage, working with containers, or implementing streaming data operations.
@@ -1179,9 +1179,9 @@
 
 ## agent-framework-azure-ai-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/agent-framework-azure-ai-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-agent-framework-azure-ai-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-agent-framework-azure-ai-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-agent-framework-azure-ai-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-agent-framework-azure-ai-py/SKILL.md`
+- Skill page: [agent-framework-azure-ai-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/agent-framework-azure-ai-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/agent-framework-azure-ai-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/agent-framework-azure-ai-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/agent-framework-azure-ai-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/agent-framework-azure-ai-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build Azure AI Foundry agents using the Microsoft Agent Framework Python SDK (agent-framework-azure-ai). Use when creating persistent agents with AzureAIAgentsProvider, using hosted tools (code interpreter, file search, web search), integrating MCP servers, managing conversation threads, or implementing streaming responses. Covers function tools, structured outputs, and multi-tool agents.
@@ -1200,9 +1200,9 @@
 
 ## agents-v2-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/agents-v2-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-agents-v2-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-agents-v2-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-agents-v2-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-agents-v2-py/SKILL.md`
+- Skill page: [agents-v2-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/agents-v2-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/agents-v2-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/agents-v2-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/agents-v2-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/agents-v2-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build container-based Foundry Agents using Azure AI Projects SDK with ImageBasedHostedAgentDefinition. Use when creating hosted agents that run custom code in Azure AI Foundry with your own container images. Triggers: "ImageBasedHostedAgentDefinition", "hosted agent", "container agent", "Foundry Agent", "create_version", "ProtocolVersionRecord", "AgentProtocol.RESPONSES", "custom agent image".
@@ -1221,9 +1221,9 @@
 
 ## azure-ai-contentsafety-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-ai-contentsafety-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-contentsafety-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-contentsafety-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-contentsafety-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-contentsafety-py/SKILL.md`
+- Skill page: [azure-ai-contentsafety-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-contentsafety-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-contentsafety-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-contentsafety-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-ai-contentsafety-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-ai-contentsafety-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure AI Content Safety SDK for Python. Use for detecting harmful content in text and images with multi-severity classification. Triggers: "azure-ai-contentsafety", "ContentSafetyClient", "content moderation", "harmful content", "text analysis", "image analysis".
@@ -1242,9 +1242,9 @@
 
 ## azure-ai-contentunderstanding-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-ai-contentunderstanding-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-contentunderstanding-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-contentunderstanding-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-contentunderstanding-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-contentunderstanding-py/SKILL.md`
+- Skill page: [azure-ai-contentunderstanding-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-contentunderstanding-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-contentunderstanding-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-contentunderstanding-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-ai-contentunderstanding-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-ai-contentunderstanding-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure AI Content Understanding SDK for Python. Use for multimodal content extraction from documents, images, audio, and video. Triggers: "azure-ai-contentunderstanding", "ContentUnderstandingClient", "multimodal analysis", "document extraction", "video analysis", "audio transcription".
@@ -1263,9 +1263,9 @@
 
 ## azure-ai-language-conversations-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-ai-language-conversations-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-language-conversations-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-language-conversations-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-language-conversations-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-language-conversations-py/SKILL.md`
+- Skill page: [azure-ai-language-conversations-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-language-conversations-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-language-conversations-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-language-conversations-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-ai-language-conversations-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-ai-language-conversations-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Implement Conversational Language Understanding (CLU) using the azure-ai-language-conversations Python SDK. Use when working with ConversationAnalysisClient to analyze conversation intent and entities, building NLP features, or integrating language understanding into applications.
@@ -1284,9 +1284,9 @@
 
 ## azure-ai-ml-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-ai-ml-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-ml-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-ml-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-ml-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-ml-py/SKILL.md`
+- Skill page: [azure-ai-ml-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-ml-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-ml-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-ml-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-ai-ml-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-ai-ml-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Machine Learning SDK v2 for Python. Use for ML workspaces, jobs, models, datasets, compute, and pipelines. Triggers: "azure-ai-ml", "MLClient", "workspace", "model registry", "training jobs", "datasets".
@@ -1305,9 +1305,9 @@
 
 ## azure-ai-projects-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-ai-projects-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-projects-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-projects-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-projects-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-projects-py/SKILL.md`
+- Skill page: [azure-ai-projects-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-projects-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-projects-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-projects-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-ai-projects-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-ai-projects-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build AI applications using the Azure AI Projects Python SDK (azure-ai-projects). Use when working with Foundry project clients, creating versioned agents with PromptAgentDefinition, running evaluations, managing connections/deployments/datasets/indexes, or using OpenAI-compatible clients. This is the high-level Foundry SDK - for low-level agent operations, use azure-ai-agents-python skill.
@@ -1326,9 +1326,9 @@
 
 ## azure-ai-textanalytics-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-ai-textanalytics-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-textanalytics-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-textanalytics-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-textanalytics-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-textanalytics-py/SKILL.md`
+- Skill page: [azure-ai-textanalytics-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-textanalytics-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-textanalytics-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-textanalytics-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-ai-textanalytics-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-ai-textanalytics-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure AI Text Analytics SDK for sentiment analysis, entity recognition, key phrases, language detection, PII, and healthcare NLP. Use for natural language processing on text. Triggers: "text analytics", "sentiment analysis", "entity recognition", "key phrase", "PII detection", "TextAnalyticsClient".
@@ -1347,9 +1347,9 @@
 
 ## azure-ai-transcription-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-ai-transcription-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-transcription-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-transcription-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-transcription-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-transcription-py/SKILL.md`
+- Skill page: [azure-ai-transcription-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-transcription-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-transcription-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-transcription-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-ai-transcription-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-ai-transcription-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure AI Transcription SDK for Python. Use for real-time and batch speech-to-text transcription with timestamps and diarization. Triggers: "transcription", "speech to text", "Azure AI Transcription", "TranscriptionClient".
@@ -1368,9 +1368,9 @@
 
 ## azure-ai-translation-document-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-ai-translation-document-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-translation-document-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-translation-document-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-translation-document-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-translation-document-py/SKILL.md`
+- Skill page: [azure-ai-translation-document-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-translation-document-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-translation-document-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-translation-document-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-ai-translation-document-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-ai-translation-document-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure AI Document Translation SDK for batch translation of documents with format preservation. Use for translating Word, PDF, Excel, PowerPoint, and other document formats at scale. Triggers: "document translation", "batch translation", "translate documents", "DocumentTranslationClient".
@@ -1389,9 +1389,9 @@
 
 ## azure-ai-translation-text-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-ai-translation-text-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-translation-text-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-translation-text-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-translation-text-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-translation-text-py/SKILL.md`
+- Skill page: [azure-ai-translation-text-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-translation-text-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-translation-text-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-translation-text-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-ai-translation-text-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-ai-translation-text-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure AI Text Translation SDK for real-time text translation, transliteration, language detection, and dictionary lookup. Use for translating text content in applications. Triggers: "text translation", "translator", "translate text", "transliterate", "TextTranslationClient".
@@ -1410,9 +1410,9 @@
 
 ## azure-ai-vision-imageanalysis-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-ai-vision-imageanalysis-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-vision-imageanalysis-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-vision-imageanalysis-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-vision-imageanalysis-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-vision-imageanalysis-py/SKILL.md`
+- Skill page: [azure-ai-vision-imageanalysis-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-vision-imageanalysis-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-vision-imageanalysis-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-vision-imageanalysis-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-ai-vision-imageanalysis-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-ai-vision-imageanalysis-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure AI Vision Image Analysis SDK for captions, tags, objects, OCR, people detection, and smart cropping. Use for computer vision and image understanding tasks. Triggers: "image analysis", "computer vision", "OCR", "object detection", "ImageAnalysisClient", "image caption".
@@ -1431,9 +1431,9 @@
 
 ## azure-ai-voicelive-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-ai-voicelive-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-voicelive-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-voicelive-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-voicelive-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-voicelive-py/SKILL.md`
+- Skill page: [azure-ai-voicelive-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-voicelive-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-voicelive-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-voicelive-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-ai-voicelive-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-ai-voicelive-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build real-time voice AI applications using Azure AI Voice Live SDK (azure-ai-voicelive). Use this skill when creating Python applications that need real-time bidirectional audio communication with Azure AI, including voice assistants, voice-enabled chatbots, real-time speech-to-speech translation, voice-driven avatars, or any WebSocket-based audio streaming with AI models. Supports Server VAD (Voice Activity.
@@ -1452,9 +1452,9 @@
 
 ## azure-appconfiguration-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-appconfiguration-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-appconfiguration-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-appconfiguration-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-appconfiguration-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-appconfiguration-py/SKILL.md`
+- Skill page: [azure-appconfiguration-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-appconfiguration-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-appconfiguration-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-appconfiguration-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-appconfiguration-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-appconfiguration-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure App Configuration SDK for Python. Use for centralized configuration management, feature flags, and dynamic settings. Triggers: "azure-appconfiguration", "AzureAppConfigurationClient", "feature flags", "configuration", "key-value settings".
@@ -1473,9 +1473,9 @@
 
 ## azure-containerregistry-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-containerregistry-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-containerregistry-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-containerregistry-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-containerregistry-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-containerregistry-py/SKILL.md`
+- Skill page: [azure-containerregistry-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-containerregistry-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-containerregistry-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-containerregistry-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-containerregistry-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-containerregistry-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Container Registry SDK for Python. Use for managing container images, artifacts, and repositories. Triggers: "azure-containerregistry", "ContainerRegistryClient", "container images", "docker registry", "ACR".
@@ -1494,9 +1494,9 @@
 
 ## azure-cosmos-db-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-cosmos-db-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-cosmos-db-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-cosmos-db-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-cosmos-db-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-cosmos-db-py/SKILL.md`
+- Skill page: [azure-cosmos-db-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-cosmos-db-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-cosmos-db-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-cosmos-db-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-cosmos-db-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-cosmos-db-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build Azure Cosmos DB NoSQL services with Python/FastAPI following production-grade patterns. Use when implementing database client setup with dual auth (DefaultAzureCredential + emulator), service layer classes with CRUD operations, partition key strategies, parameterized queries, or TDD patterns for Cosmos. Triggers on phrases like "Cosmos DB", "NoSQL database", "document store", "add persistence", "database.
@@ -1515,9 +1515,9 @@
 
 ## azure-cosmos-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-cosmos-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-cosmos-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-cosmos-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-cosmos-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-cosmos-py/SKILL.md`
+- Skill page: [azure-cosmos-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-cosmos-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-cosmos-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-cosmos-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-cosmos-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-cosmos-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Cosmos DB SDK for Python (NoSQL API). Use for document CRUD, queries, containers, and globally distributed data. Triggers: "cosmos db", "CosmosClient", "container", "document", "NoSQL", "partition key".
@@ -1536,9 +1536,9 @@
 
 ## azure-data-tables-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-data-tables-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-data-tables-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-data-tables-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-data-tables-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-data-tables-py/SKILL.md`
+- Skill page: [azure-data-tables-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-data-tables-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-data-tables-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-data-tables-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-data-tables-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-data-tables-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Tables SDK for Python (Storage and Cosmos DB). Use for NoSQL key-value storage, entity CRUD, and batch operations. Triggers: "table storage", "TableServiceClient", "TableClient", "entities", "PartitionKey", "RowKey".
@@ -1557,9 +1557,9 @@
 
 ## azure-eventgrid-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-eventgrid-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-eventgrid-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-eventgrid-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-eventgrid-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-eventgrid-py/SKILL.md`
+- Skill page: [azure-eventgrid-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventgrid-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventgrid-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventgrid-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-eventgrid-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-eventgrid-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Event Grid SDK for Python. Use for publishing events, handling CloudEvents, and event-driven architectures. Triggers: "event grid", "EventGridPublisherClient", "CloudEvent", "EventGridEvent", "publish events".
@@ -1578,9 +1578,9 @@
 
 ## azure-eventhub-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-eventhub-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-eventhub-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-eventhub-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-eventhub-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-eventhub-py/SKILL.md`
+- Skill page: [azure-eventhub-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-eventhub-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-eventhub-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Event Hubs SDK for Python streaming. Use for high-throughput event ingestion, producers, consumers, and checkpointing. Triggers: "event hubs", "EventHubProducerClient", "EventHubConsumerClient", "streaming", "partitions".
@@ -1599,9 +1599,9 @@
 
 ## azure-identity-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-identity-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-identity-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-identity-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-identity-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-identity-py/SKILL.md`
+- Skill page: [azure-identity-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-identity-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-identity-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-identity-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-identity-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-identity-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Identity SDK for Python authentication with Microsoft Entra ID. Use for DefaultAzureCredential, managed identity, service principals, and token caching. Triggers: "azure-identity", "DefaultAzureCredential", "authentication", "managed identity", "service principal", "credential".
@@ -1621,9 +1621,9 @@
 
 ## azure-keyvault-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-keyvault-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-keyvault-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-keyvault-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-keyvault-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-keyvault-py/SKILL.md`
+- Skill page: [azure-keyvault-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-keyvault-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-keyvault-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-keyvault-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-keyvault-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-keyvault-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Key Vault SDK for Python. Use for secrets, keys, and certificates management with secure storage. Triggers: "key vault", "SecretClient", "KeyClient", "CertificateClient", "secrets", "encryption keys".
@@ -1642,9 +1642,9 @@
 
 ## azure-messaging-webpubsubservice-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-messaging-webpubsubservice-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-messaging-webpubsubservice-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-messaging-webpubsubservice-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-messaging-webpubsubservice-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-messaging-webpubsubservice-py/SKILL.md`
+- Skill page: [azure-messaging-webpubsubservice-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-messaging-webpubsubservice-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-messaging-webpubsubservice-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-messaging-webpubsubservice-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-messaging-webpubsubservice-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-messaging-webpubsubservice-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Web PubSub Service SDK for Python. Use for real-time messaging, WebSocket connections, and pub/sub patterns. Triggers: "azure-messaging-webpubsubservice", "WebPubSubServiceClient", "real-time", "WebSocket", "pub/sub".
@@ -1663,9 +1663,9 @@
 
 ## azure-mgmt-apicenter-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-mgmt-apicenter-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-mgmt-apicenter-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-mgmt-apicenter-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-mgmt-apicenter-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-mgmt-apicenter-py/SKILL.md`
+- Skill page: [azure-mgmt-apicenter-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-apicenter-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-apicenter-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-apicenter-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-mgmt-apicenter-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-mgmt-apicenter-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure API Center Management SDK for Python. Use for managing API inventory, metadata, and governance across your organization. Triggers: "azure-mgmt-apicenter", "ApiCenterMgmtClient", "API Center", "API inventory", "API governance".
@@ -1684,9 +1684,9 @@
 
 ## azure-mgmt-apimanagement-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-mgmt-apimanagement-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-mgmt-apimanagement-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-mgmt-apimanagement-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-mgmt-apimanagement-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-mgmt-apimanagement-py/SKILL.md`
+- Skill page: [azure-mgmt-apimanagement-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-apimanagement-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-apimanagement-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-apimanagement-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-mgmt-apimanagement-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-mgmt-apimanagement-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure API Management SDK for Python. Use for managing APIM services, APIs, products, subscriptions, and policies. Triggers: "azure-mgmt-apimanagement", "ApiManagementClient", "APIM", "API gateway", "API Management".
@@ -1705,9 +1705,9 @@
 
 ## azure-mgmt-botservice-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-mgmt-botservice-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-mgmt-botservice-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-mgmt-botservice-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-mgmt-botservice-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-mgmt-botservice-py/SKILL.md`
+- Skill page: [azure-mgmt-botservice-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-botservice-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-botservice-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-botservice-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-mgmt-botservice-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-mgmt-botservice-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Bot Service Management SDK for Python. Use for creating, managing, and configuring Azure Bot Service resources. Triggers: "azure-mgmt-botservice", "AzureBotService", "bot management", "conversational AI", "bot channels".
@@ -1726,9 +1726,9 @@
 
 ## azure-mgmt-fabric-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-mgmt-fabric-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-mgmt-fabric-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-mgmt-fabric-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-mgmt-fabric-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-mgmt-fabric-py/SKILL.md`
+- Skill page: [azure-mgmt-fabric-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-fabric-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-fabric-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-fabric-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-mgmt-fabric-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-mgmt-fabric-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Fabric Management SDK for Python. Use for managing Microsoft Fabric capacities and resources. Triggers: "azure-mgmt-fabric", "FabricMgmtClient", "Fabric capacity", "Microsoft Fabric", "Power BI capacity".
@@ -1747,9 +1747,9 @@
 
 ## azure-monitor-ingestion-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-monitor-ingestion-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-monitor-ingestion-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-monitor-ingestion-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-monitor-ingestion-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-monitor-ingestion-py/SKILL.md`
+- Skill page: [azure-monitor-ingestion-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-ingestion-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-ingestion-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-ingestion-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-monitor-ingestion-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-monitor-ingestion-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Monitor Ingestion SDK for Python. Use for sending custom logs to Log Analytics workspace via Logs Ingestion API. Triggers: "azure-monitor-ingestion", "LogsIngestionClient", "custom logs", "DCR", "data collection rule", "Log Analytics".
@@ -1768,9 +1768,9 @@
 
 ## azure-monitor-opentelemetry-exporter-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-monitor-opentelemetry-exporter-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-monitor-opentelemetry-exporter-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-monitor-opentelemetry-exporter-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-monitor-opentelemetry-exporter-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-monitor-opentelemetry-exporter-py/SKILL.md`
+- Skill page: [azure-monitor-opentelemetry-exporter-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-opentelemetry-exporter-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-opentelemetry-exporter-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-opentelemetry-exporter-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-monitor-opentelemetry-exporter-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-monitor-opentelemetry-exporter-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Monitor OpenTelemetry Exporter for Python. Use for low-level OpenTelemetry export to Application Insights. Triggers: "azure-monitor-opentelemetry-exporter", "AzureMonitorTraceExporter", "AzureMonitorMetricExporter", "AzureMonitorLogExporter".
@@ -1789,9 +1789,9 @@
 
 ## azure-monitor-opentelemetry-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-monitor-opentelemetry-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-monitor-opentelemetry-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-monitor-opentelemetry-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-monitor-opentelemetry-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-monitor-opentelemetry-py/SKILL.md`
+- Skill page: [azure-monitor-opentelemetry-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-opentelemetry-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-opentelemetry-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-opentelemetry-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-monitor-opentelemetry-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-monitor-opentelemetry-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Monitor OpenTelemetry Distro for Python. Use for one-line Application Insights setup with auto-instrumentation. Triggers: "azure-monitor-opentelemetry", "configure_azure_monitor", "Application Insights", "OpenTelemetry distro", "auto-instrumentation".
@@ -1810,9 +1810,9 @@
 
 ## azure-monitor-query-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-monitor-query-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-monitor-query-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-monitor-query-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-monitor-query-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-monitor-query-py/SKILL.md`
+- Skill page: [azure-monitor-query-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-query-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-query-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-query-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-monitor-query-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-monitor-query-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Monitor Query SDK for Python. Use for querying Log Analytics workspaces and Azure Monitor metrics. Triggers: "azure-monitor-query", "LogsQueryClient", "MetricsQueryClient", "Log Analytics", "Kusto queries", "Azure metrics".
@@ -1831,9 +1831,9 @@
 
 ## azure-search-documents-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-search-documents-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-search-documents-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-search-documents-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-search-documents-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-search-documents-py/SKILL.md`
+- Skill page: [azure-search-documents-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-search-documents-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-search-documents-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-search-documents-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-search-documents-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-search-documents-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure AI Search SDK for Python. Use for vector search, hybrid search, semantic ranking, indexing, and skillsets. Triggers: "azure-search-documents", "SearchClient", "SearchIndexClient", "vector search", "hybrid search", "semantic search".
@@ -1853,9 +1853,9 @@
 
 ## azure-servicebus-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-servicebus-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-servicebus-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-servicebus-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-servicebus-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-servicebus-py/SKILL.md`
+- Skill page: [azure-servicebus-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-servicebus-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-servicebus-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-servicebus-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-servicebus-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-servicebus-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Service Bus SDK for Python messaging. Use for queues, topics, subscriptions, and enterprise messaging patterns. Triggers: "service bus", "ServiceBusClient", "queue", "topic", "subscription", "message broker".
@@ -1874,9 +1874,9 @@
 
 ## azure-speech-to-text-rest-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-speech-to-text-rest-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-speech-to-text-rest-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-speech-to-text-rest-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-speech-to-text-rest-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-speech-to-text-rest-py/SKILL.md`
+- Skill page: [azure-speech-to-text-rest-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-speech-to-text-rest-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-speech-to-text-rest-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-speech-to-text-rest-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-speech-to-text-rest-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-speech-to-text-rest-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Speech to Text REST API for short audio (Python). Use for simple speech recognition of audio files up to 60 seconds without the Speech SDK. Triggers: "speech to text REST", "short audio transcription", "speech recognition REST API", "STT REST", "recognize speech REST". DO NOT USE FOR: Long audio (>60 seconds), real-time streaming, batch transcription, custom speech models, speech translation. Use Speech SDK.
@@ -1895,9 +1895,9 @@
 
 ## azure-storage-blob-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-storage-blob-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-storage-blob-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-storage-blob-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-storage-blob-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-storage-blob-py/SKILL.md`
+- Skill page: [azure-storage-blob-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-blob-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-blob-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-blob-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-storage-blob-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-storage-blob-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Blob Storage SDK for Python. Use for uploading, downloading, listing blobs, managing containers, and blob lifecycle. Triggers: "blob storage", "BlobServiceClient", "ContainerClient", "BlobClient", "upload blob", "download blob".
@@ -1916,9 +1916,9 @@
 
 ## azure-storage-file-datalake-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-storage-file-datalake-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-storage-file-datalake-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-storage-file-datalake-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-storage-file-datalake-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-storage-file-datalake-py/SKILL.md`
+- Skill page: [azure-storage-file-datalake-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-file-datalake-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-file-datalake-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-file-datalake-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-storage-file-datalake-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-storage-file-datalake-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Data Lake Storage Gen2 SDK for Python. Use for hierarchical file systems, big data analytics, and file/directory operations. Triggers: "data lake", "DataLakeServiceClient", "FileSystemClient", "ADLS Gen2", "hierarchical namespace".
@@ -1937,9 +1937,9 @@
 
 ## azure-storage-file-share-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-storage-file-share-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-storage-file-share-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-storage-file-share-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-storage-file-share-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-storage-file-share-py/SKILL.md`
+- Skill page: [azure-storage-file-share-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-file-share-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-file-share-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-file-share-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-storage-file-share-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-storage-file-share-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Storage File Share SDK for Python. Use for SMB file shares, directories, and file operations in the cloud. Triggers: "azure-storage-file-share", "ShareServiceClient", "ShareClient", "file share", "SMB".
@@ -1958,9 +1958,9 @@
 
 ## azure-storage-queue-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-storage-queue-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-azure-storage-queue-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-storage-queue-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-storage-queue-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-azure-storage-queue-py/SKILL.md`
+- Skill page: [azure-storage-queue-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-queue-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-queue-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-queue-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/azure-storage-queue-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/azure-storage-queue-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Queue Storage SDK for Python. Use for reliable message queuing, task distribution, and asynchronous processing. Triggers: "queue storage", "QueueServiceClient", "QueueClient", "message queue", "dequeue".
@@ -1979,9 +1979,9 @@
 
 ## fastapi-router-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/fastapi-router-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-fastapi-router-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-fastapi-router-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-fastapi-router-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-fastapi-router-py/SKILL.md`
+- Skill page: [fastapi-router-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/fastapi-router-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/fastapi-router-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/fastapi-router-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/fastapi-router-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/fastapi-router-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Create FastAPI routers with CRUD operations, authentication dependencies, and proper response models. Use when building REST API endpoints, creating new routes, implementing CRUD operations, or adding authenticated endpoints in FastAPI applications.
@@ -2000,9 +2000,9 @@
 
 ## hosted-agents-v2-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/hosted-agents-v2-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-hosted-agents-v2-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-hosted-agents-v2-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-hosted-agents-v2-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-hosted-agents-v2-py/SKILL.md`
+- Skill page: [hosted-agents-v2-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/hosted-agents-v2-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/hosted-agents-v2-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/hosted-agents-v2-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/hosted-agents-v2-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/hosted-agents-v2-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build hosted agents using Azure AI Projects SDK with ImageBasedHostedAgentDefinition. Use when creating container-based agents that run custom code in Azure AI Foundry. Triggers: "ImageBasedHostedAgentDefinition", "hosted agent", "container agent", "create_version", "ProtocolVersionRecord", "AgentProtocol.RESPONSES".
@@ -2021,9 +2021,9 @@
 
 ## m365-agents-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/m365-agents-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-m365-agents-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-m365-agents-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-m365-agents-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-m365-agents-py/SKILL.md`
+- Skill page: [m365-agents-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/m365-agents-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/m365-agents-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/m365-agents-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/m365-agents-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/m365-agents-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Microsoft 365 Agents SDK for Python. Build multichannel agents for Teams/M365/Copilot Studio with aiohttp hosting, AgentApplication routing, streaming responses, and MSAL-based auth. Triggers: "Microsoft 365 Agents SDK", "microsoft_agents", "AgentApplication", "start_agent_process", "TurnContext", "Copilot Studio client", "CloudAdapter".
@@ -2042,9 +2042,9 @@
 
 ## pydantic-models-py - microsoft/skills `.github/plugins/azure-sdk-python/skills/pydantic-models-py/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-python-skills-pydantic-models-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-pydantic-models-py.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-pydantic-models-py`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-python-skills-pydantic-models-py/SKILL.md`
+- Skill page: [pydantic-models-py](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/pydantic-models-py.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/pydantic-models-py`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/pydantic-models-py/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-python/skills/pydantic-models-py/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-python/skills/pydantic-models-py/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Create Pydantic models following the multi-model pattern with Base, Create, Update, Response, and InDB variants. Use when defining API request/response schemas, database models, or data validation in Python applications using Pydantic v2.
@@ -2063,9 +2063,9 @@
 
 ## azure-cosmos-rust - microsoft/skills `.github/plugins/azure-sdk-rust/skills/azure-cosmos-rust/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-cosmos-rust](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-cosmos-rust.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-cosmos-rust`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-cosmos-rust/SKILL.md`
+- Skill page: [azure-cosmos-rust](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-cosmos-rust.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-cosmos-rust`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-cosmos-rust/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-rust/skills/azure-cosmos-rust/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-rust/skills/azure-cosmos-rust/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Cosmos DB SDK for Rust (NoSQL API). Use for document CRUD, queries, containers, and globally distributed data. Triggers: "cosmos db rust", "CosmosClient rust", "container", "document rust", "NoSQL rust", "partition key".
@@ -2084,9 +2084,9 @@
 
 ## azure-eventhub-rust - microsoft/skills `.github/plugins/azure-sdk-rust/skills/azure-eventhub-rust/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-eventhub-rust](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-eventhub-rust.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-eventhub-rust`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-eventhub-rust/SKILL.md`
+- Skill page: [azure-eventhub-rust](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-rust.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-rust`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-rust/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-rust/skills/azure-eventhub-rust/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-rust/skills/azure-eventhub-rust/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Event Hubs SDK for Rust. Use for sending and receiving events, streaming data ingestion. Triggers: "event hubs rust", "ProducerClient rust", "ConsumerClient rust", "send event rust", "streaming rust".
@@ -2105,9 +2105,9 @@
 
 ## azure-identity-rust - microsoft/skills `.github/plugins/azure-sdk-rust/skills/azure-identity-rust/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-identity-rust](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-identity-rust.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-identity-rust`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-identity-rust/SKILL.md`
+- Skill page: [azure-identity-rust](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-identity-rust.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-identity-rust`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-identity-rust/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-rust/skills/azure-identity-rust/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-rust/skills/azure-identity-rust/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Identity SDK for Rust authentication. Use for DeveloperToolsCredential, ManagedIdentityCredential, ClientSecretCredential, and token-based authentication. Triggers: "azure-identity", "DeveloperToolsCredential", "authentication rust", "managed identity rust", "credential rust".
@@ -2126,9 +2126,9 @@
 
 ## azure-keyvault-certificates-rust - microsoft/skills `.github/plugins/azure-sdk-rust/skills/azure-keyvault-certificates-rust/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-keyvault-certificates-rust](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-keyvault-certificates-rust.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-keyvault-certificates-rust`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-keyvault-certificates-rust/SKILL.md`
+- Skill page: [azure-keyvault-certificates-rust](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-keyvault-certificates-rust.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-keyvault-certificates-rust`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-keyvault-certificates-rust/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-rust/skills/azure-keyvault-certificates-rust/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-rust/skills/azure-keyvault-certificates-rust/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Key Vault Certificates SDK for Rust. Use for creating, importing, and managing certificates. Triggers: "keyvault certificates rust", "CertificateClient rust", "create certificate rust", "import certificate rust".
@@ -2147,9 +2147,9 @@
 
 ## azure-keyvault-keys-rust - microsoft/skills `.github/plugins/azure-sdk-rust/skills/azure-keyvault-keys-rust/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-keyvault-keys-rust](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-keyvault-keys-rust.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-keyvault-keys-rust`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-keyvault-keys-rust/SKILL.md`
+- Skill page: [azure-keyvault-keys-rust](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-keyvault-keys-rust.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-keyvault-keys-rust`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-keyvault-keys-rust/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-rust/skills/azure-keyvault-keys-rust/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-rust/skills/azure-keyvault-keys-rust/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Key Vault Keys SDK for Rust. Use for creating, managing, and using cryptographic keys. Triggers: "keyvault keys rust", "KeyClient rust", "create key rust", "encrypt rust", "sign rust".
@@ -2168,9 +2168,9 @@
 
 ## azure-keyvault-secrets-rust - microsoft/skills `.github/plugins/azure-sdk-rust/skills/azure-keyvault-secrets-rust/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-keyvault-secrets-rust](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-keyvault-secrets-rust.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-keyvault-secrets-rust`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-keyvault-secrets-rust/SKILL.md`
+- Skill page: [azure-keyvault-secrets-rust](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-keyvault-secrets-rust.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-keyvault-secrets-rust`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-keyvault-secrets-rust/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-rust/skills/azure-keyvault-secrets-rust/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-rust/skills/azure-keyvault-secrets-rust/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Key Vault Secrets SDK for Rust. Use for storing and retrieving secrets, passwords, and API keys. Triggers: "keyvault secrets rust", "SecretClient rust", "get secret rust", "set secret rust".
@@ -2189,9 +2189,9 @@
 
 ## azure-storage-blob-rust - microsoft/skills `.github/plugins/azure-sdk-rust/skills/azure-storage-blob-rust/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-storage-blob-rust](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-storage-blob-rust.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-storage-blob-rust`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-storage-blob-rust/SKILL.md`
+- Skill page: [azure-storage-blob-rust](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-blob-rust.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-blob-rust`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-blob-rust/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-rust/skills/azure-storage-blob-rust/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-rust/skills/azure-storage-blob-rust/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Blob Storage SDK for Rust. Use for uploading, downloading, and managing blobs and containers. Triggers: "blob storage rust", "BlobClient rust", "upload blob rust", "download blob rust", "container rust".
@@ -2210,9 +2210,9 @@
 
 ## azure-ai-contentsafety-ts - microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-ai-contentsafety-ts/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-ai-contentsafety-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-ai-contentsafety-ts.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-ai-contentsafety-ts`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-ai-contentsafety-ts/SKILL.md`
+- Skill page: [azure-ai-contentsafety-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-contentsafety-ts.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-contentsafety-ts`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-contentsafety-ts/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-ai-contentsafety-ts/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-typescript/skills/azure-ai-contentsafety-ts/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Analyze text and images for harmful content using Azure AI Content Safety (@azure-rest/ai-content-safety). Use when moderating user-generated content, detecting hate speech, violence, sexual content, or self-harm, or managing custom blocklists.
@@ -2231,9 +2231,9 @@
 
 ## azure-ai-document-intelligence-ts - microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-ai-document-intelligence-ts/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-ai-document-intelligence-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-ai-document-intelligence-ts.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-ai-document-intelligence-ts`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-ai-document-intelligence-ts/SKILL.md`
+- Skill page: [azure-ai-document-intelligence-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-document-intelligence-ts.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-document-intelligence-ts`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-document-intelligence-ts/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-ai-document-intelligence-ts/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-typescript/skills/azure-ai-document-intelligence-ts/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Extract text, tables, and structured data from documents using Azure Document Intelligence (@azure-rest/ai-document-intelligence). Use when processing invoices, receipts, IDs, forms, or building custom document models.
@@ -2252,9 +2252,9 @@
 
 ## azure-ai-projects-ts - microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-ai-projects-ts/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-ai-projects-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-ai-projects-ts.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-ai-projects-ts`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-ai-projects-ts/SKILL.md`
+- Skill page: [azure-ai-projects-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-projects-ts.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-projects-ts`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-projects-ts/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-ai-projects-ts/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-typescript/skills/azure-ai-projects-ts/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build AI applications using Azure AI Projects SDK for JavaScript (@azure/ai-projects). Use when working with Foundry project clients, agents, connections, deployments, datasets, indexes, evaluations, or getting OpenAI clients.
@@ -2273,9 +2273,9 @@
 
 ## azure-ai-translation-ts - microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-ai-translation-ts/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-ai-translation-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-ai-translation-ts.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-ai-translation-ts`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-ai-translation-ts/SKILL.md`
+- Skill page: [azure-ai-translation-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-translation-ts.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-translation-ts`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-translation-ts/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-ai-translation-ts/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-typescript/skills/azure-ai-translation-ts/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build translation applications using Azure Translation SDKs for JavaScript (@azure-rest/ai-translation-text, @azure-rest/ai-translation-document). Use when implementing text translation, transliteration, language detection, or batch document translation.
@@ -2294,9 +2294,9 @@
 
 ## azure-ai-voicelive-ts - microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-ai-voicelive-ts/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-ai-voicelive-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-ai-voicelive-ts.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-ai-voicelive-ts`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-ai-voicelive-ts/SKILL.md`
+- Skill page: [azure-ai-voicelive-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-voicelive-ts.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-voicelive-ts`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-voicelive-ts/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-ai-voicelive-ts/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-typescript/skills/azure-ai-voicelive-ts/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure AI Voice Live SDK for JavaScript/TypeScript. Build real-time voice AI applications with bidirectional WebSocket communication. Use for voice assistants, conversational AI, real-time speech-to-speech, and voice-enabled chatbots in Node.js or browser environments. Triggers: "voice live", "real-time voice", "VoiceLiveClient", "VoiceLiveSession", "voice assistant TypeScript", "bidirectional audio",.
@@ -2315,9 +2315,9 @@
 
 ## azure-appconfiguration-ts - microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-appconfiguration-ts/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-appconfiguration-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-appconfiguration-ts.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-appconfiguration-ts`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-appconfiguration-ts/SKILL.md`
+- Skill page: [azure-appconfiguration-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-appconfiguration-ts.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-appconfiguration-ts`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-appconfiguration-ts/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-appconfiguration-ts/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-typescript/skills/azure-appconfiguration-ts/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build applications using Azure App Configuration SDK for JavaScript (@azure/app-configuration). Use when working with configuration settings, feature flags, Key Vault references, dynamic refresh, or centralized configuration management.
@@ -2336,9 +2336,9 @@
 
 ## azure-cosmos-ts - microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-cosmos-ts/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-cosmos-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-cosmos-ts.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-cosmos-ts`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-cosmos-ts/SKILL.md`
+- Skill page: [azure-cosmos-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-cosmos-ts.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-cosmos-ts`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-cosmos-ts/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-cosmos-ts/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-typescript/skills/azure-cosmos-ts/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Cosmos DB JavaScript/TypeScript SDK (@azure/cosmos) for data plane operations. Use for CRUD operations on documents, queries, bulk operations, and container management. Triggers: "Cosmos DB", "@azure/cosmos", "CosmosClient", "document CRUD", "NoSQL queries", "bulk operations", "partition key", "container.items".
@@ -2357,9 +2357,9 @@
 
 ## azure-eventhub-ts - microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-eventhub-ts/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-eventhub-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-eventhub-ts.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-eventhub-ts`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-eventhub-ts/SKILL.md`
+- Skill page: [azure-eventhub-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-ts.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-ts`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-ts/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-eventhub-ts/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-typescript/skills/azure-eventhub-ts/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build event streaming applications using Azure Event Hubs SDK for JavaScript (@azure/event-hubs). Use when implementing high-throughput event ingestion, real-time analytics, IoT telemetry, or event-driven architectures with partitioned consumers.
@@ -2378,9 +2378,9 @@
 
 ## azure-identity-ts - microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-identity-ts/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-identity-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-identity-ts.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-identity-ts`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-identity-ts/SKILL.md`
+- Skill page: [azure-identity-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-identity-ts.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-identity-ts`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-identity-ts/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-identity-ts/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-typescript/skills/azure-identity-ts/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Authenticate to Azure services using Azure Identity library for JavaScript (@azure/identity). Use when configuring authentication with DefaultAzureCredential, managed identity, service principals, or interactive browser login.
@@ -2399,9 +2399,9 @@
 
 ## azure-keyvault-keys-ts - microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-keyvault-keys-ts/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-keyvault-keys-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-keyvault-keys-ts.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-keyvault-keys-ts`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-keyvault-keys-ts/SKILL.md`
+- Skill page: [azure-keyvault-keys-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-keyvault-keys-ts.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-keyvault-keys-ts`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-keyvault-keys-ts/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-keyvault-keys-ts/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-typescript/skills/azure-keyvault-keys-ts/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Manage cryptographic keys using Azure Key Vault Keys SDK for JavaScript (@azure/keyvault-keys). Use when creating, encrypting/decrypting, signing, or rotating keys.
@@ -2420,9 +2420,9 @@
 
 ## azure-keyvault-secrets-ts - microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-keyvault-secrets-ts/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-keyvault-secrets-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-keyvault-secrets-ts.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-keyvault-secrets-ts`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-keyvault-secrets-ts/SKILL.md`
+- Skill page: [azure-keyvault-secrets-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-keyvault-secrets-ts.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-keyvault-secrets-ts`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-keyvault-secrets-ts/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-keyvault-secrets-ts/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-typescript/skills/azure-keyvault-secrets-ts/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Manage secrets using Azure Key Vault Secrets SDK for JavaScript (@azure/keyvault-secrets). Use when storing and retrieving application secrets or configuration values.
@@ -2441,9 +2441,9 @@
 
 ## azure-microsoft-playwright-testing-ts - microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-microsoft-playwright-testing-ts/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-microsoft-playwright-testing-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-microsoft-playwright-testing-ts.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-microsoft-playwright-testing-ts`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-microsoft-playwright-testing-ts/SKILL.md`
+- Skill page: [azure-microsoft-playwright-testing-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-microsoft-playwright-testing-ts.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-microsoft-playwright-testing-ts`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-microsoft-playwright-testing-ts/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-microsoft-playwright-testing-ts/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-typescript/skills/azure-microsoft-playwright-testing-ts/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Run Playwright tests at scale using Azure Playwright Workspaces (formerly Microsoft Playwright Testing). Use when scaling browser tests across cloud-hosted browsers, integrating with CI/CD pipelines, or publishing test results to the Azure portal.
@@ -2462,9 +2462,9 @@
 
 ## azure-monitor-opentelemetry-ts - microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-monitor-opentelemetry-ts/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-monitor-opentelemetry-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-monitor-opentelemetry-ts.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-monitor-opentelemetry-ts`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-monitor-opentelemetry-ts/SKILL.md`
+- Skill page: [azure-monitor-opentelemetry-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-opentelemetry-ts.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-opentelemetry-ts`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-opentelemetry-ts/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-monitor-opentelemetry-ts/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-typescript/skills/azure-monitor-opentelemetry-ts/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Instrument applications with Azure Monitor and OpenTelemetry for JavaScript (@azure/monitor-opentelemetry). Use when adding distributed tracing, metrics, and logs to Node.js applications with Application Insights.
@@ -2483,9 +2483,9 @@
 
 ## azure-search-documents-ts - microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-search-documents-ts/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-search-documents-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-search-documents-ts.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-search-documents-ts`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-search-documents-ts/SKILL.md`
+- Skill page: [azure-search-documents-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-search-documents-ts.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-search-documents-ts`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-search-documents-ts/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-search-documents-ts/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-typescript/skills/azure-search-documents-ts/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build search applications using Azure AI Search SDK for JavaScript (@azure/search-documents). Use when creating/managing indexes, implementing vector/hybrid search, semantic ranking, or building agentic retrieval with knowledge bases.
@@ -2504,9 +2504,9 @@
 
 ## azure-servicebus-ts - microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-servicebus-ts/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-servicebus-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-servicebus-ts.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-servicebus-ts`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-servicebus-ts/SKILL.md`
+- Skill page: [azure-servicebus-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-servicebus-ts.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-servicebus-ts`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-servicebus-ts/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-servicebus-ts/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-typescript/skills/azure-servicebus-ts/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build messaging applications using Azure Service Bus SDK for JavaScript (@azure/service-bus). Use when implementing queues, topics/subscriptions, message sessions, dead-letter handling, or enterprise messaging patterns.
@@ -2525,9 +2525,9 @@
 
 ## azure-storage-blob-ts - microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-storage-blob-ts/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-storage-blob-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-storage-blob-ts.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-storage-blob-ts`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-storage-blob-ts/SKILL.md`
+- Skill page: [azure-storage-blob-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-blob-ts.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-blob-ts`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-blob-ts/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-storage-blob-ts/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-typescript/skills/azure-storage-blob-ts/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Blob Storage JavaScript/TypeScript SDK (@azure/storage-blob) for blob operations. Use for uploading, downloading, listing, and managing blobs and containers. Supports block blobs, append blobs, page blobs, SAS tokens, and streaming. Triggers: "blob storage", "@azure/storage-blob", "BlobServiceClient", "ContainerClient", "upload blob", "download blob", "SAS token", "block blob".
@@ -2546,9 +2546,9 @@
 
 ## azure-storage-file-share-ts - microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-storage-file-share-ts/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-storage-file-share-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-storage-file-share-ts.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-storage-file-share-ts`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-storage-file-share-ts/SKILL.md`
+- Skill page: [azure-storage-file-share-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-file-share-ts.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-file-share-ts`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-file-share-ts/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-storage-file-share-ts/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-typescript/skills/azure-storage-file-share-ts/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure File Share JavaScript/TypeScript SDK (@azure/storage-file-share) for SMB file share operations. Use for creating shares, managing directories, uploading/downloading files, and handling file metadata. Supports Azure Files SMB protocol scenarios. Triggers: "file share", "@azure/storage-file-share", "ShareServiceClient", "ShareClient", "SMB", "Azure Files".
@@ -2567,9 +2567,9 @@
 
 ## azure-storage-queue-ts - microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-storage-queue-ts/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-storage-queue-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-storage-queue-ts.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-storage-queue-ts`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-storage-queue-ts/SKILL.md`
+- Skill page: [azure-storage-queue-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-queue-ts.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-queue-ts`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage-queue-ts/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-storage-queue-ts/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-typescript/skills/azure-storage-queue-ts/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Queue Storage JavaScript/TypeScript SDK (@azure/storage-queue) for message queue operations. Use for sending, receiving, peeking, and deleting messages in queues. Supports visibility timeout, message encoding, and batch operations. Triggers: "queue storage", "@azure/storage-queue", "QueueServiceClient", "QueueClient", "send message", "receive message", "dequeue", "visibility timeout".
@@ -2589,9 +2589,9 @@
 
 ## azure-web-pubsub-ts - microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-web-pubsub-ts/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-web-pubsub-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-web-pubsub-ts.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-web-pubsub-ts`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-web-pubsub-ts/SKILL.md`
+- Skill page: [azure-web-pubsub-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-web-pubsub-ts.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-web-pubsub-ts`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-web-pubsub-ts/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-typescript/skills/azure-web-pubsub-ts/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-typescript/skills/azure-web-pubsub-ts/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build real-time messaging applications using Azure Web PubSub SDKs for JavaScript (@azure/web-pubsub, @azure/web-pubsub-client). Use when implementing WebSocket-based real-time features, pub/sub messaging, group chat, or live notifications.
@@ -2610,9 +2610,9 @@
 
 ## frontend-ui-dark-ts - microsoft/skills `.github/plugins/azure-sdk-typescript/skills/frontend-ui-dark-ts/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-typescript-skills-frontend-ui-dark-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-frontend-ui-dark-ts.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-frontend-ui-dark-ts`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-frontend-ui-dark-ts/SKILL.md`
+- Skill page: [frontend-ui-dark-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/frontend-ui-dark-ts.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/frontend-ui-dark-ts`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/frontend-ui-dark-ts/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-typescript/skills/frontend-ui-dark-ts/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-typescript/skills/frontend-ui-dark-ts/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build dark-themed React applications using Tailwind CSS with custom theming, glassmorphism effects, and Framer Motion animations. Use when creating dashboards, admin panels, or data-rich interfaces with a refined dark aesthetic.
@@ -2632,9 +2632,9 @@
 
 ## m365-agents-ts - microsoft/skills `.github/plugins/azure-sdk-typescript/skills/m365-agents-ts/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-typescript-skills-m365-agents-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-m365-agents-ts.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-m365-agents-ts`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-m365-agents-ts/SKILL.md`
+- Skill page: [m365-agents-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/m365-agents-ts.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/m365-agents-ts`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/m365-agents-ts/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-typescript/skills/m365-agents-ts/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-typescript/skills/m365-agents-ts/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Microsoft 365 Agents SDK for TypeScript/Node.js. Build multichannel agents for Teams/M365/Copilot Studio with AgentApplication routing, Express hosting, streaming responses, and Copilot Studio client integration. Triggers: "Microsoft 365 Agents SDK", "@microsoft/agents-hosting", "AgentApplication", "startServer", "streamingResponse", "Copilot Studio client", "@microsoft/agents-copilotstudio-client".
@@ -2653,9 +2653,9 @@
 
 ## react-flow-node-ts - microsoft/skills `.github/plugins/azure-sdk-typescript/skills/react-flow-node-ts/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-typescript-skills-react-flow-node-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-react-flow-node-ts.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-react-flow-node-ts`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-react-flow-node-ts/SKILL.md`
+- Skill page: [react-flow-node-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/react-flow-node-ts.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/react-flow-node-ts`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/react-flow-node-ts/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-typescript/skills/react-flow-node-ts/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-typescript/skills/react-flow-node-ts/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Create React Flow node components with TypeScript types, handles, and Zustand integration. Use when building custom nodes for React Flow canvas, creating visual workflow editors, or implementing node-based UI components.
@@ -2674,9 +2674,9 @@
 
 ## zustand-store-ts - microsoft/skills `.github/plugins/azure-sdk-typescript/skills/zustand-store-ts/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-sdk-typescript-skills-zustand-store-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-zustand-store-ts.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-zustand-store-ts`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-sdk-typescript-skills-zustand-store-ts/SKILL.md`
+- Skill page: [zustand-store-ts](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/zustand-store-ts.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/zustand-store-ts`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/zustand-store-ts/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-sdk-typescript/skills/zustand-store-ts/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-sdk-typescript/skills/zustand-store-ts/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Create Zustand stores with TypeScript, subscribeWithSelector middleware, and proper state/action separation. Use when building React state management, creating global stores, or implementing reactive state patterns with Zustand.
@@ -2695,9 +2695,9 @@
 
 ## appinsights-instrumentation - microsoft/skills `.github/plugins/azure-skills/skills/appinsights-instrumentation/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-appinsights-instrumentation](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-appinsights-instrumentation.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-appinsights-instrumentation`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-appinsights-instrumentation/SKILL.md`
+- Skill page: [appinsights-instrumentation](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/appinsights-instrumentation.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/appinsights-instrumentation`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/appinsights-instrumentation/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/appinsights-instrumentation/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/appinsights-instrumentation/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Guidance for instrumenting webapps with Azure Application Insights. Provides telemetry patterns, SDK setup, and configuration references. WHEN: how to instrument app, App Insights SDK, telemetry patterns, what is App Insights, Application Insights guidance, instrumentation examples, APM best practices.
@@ -2716,9 +2716,9 @@
 
 ## azure-ai - microsoft/skills `.github/plugins/azure-skills/skills/azure-ai/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-azure-ai](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-ai.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-ai`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-ai/SKILL.md`
+- Skill page: [azure-ai](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/azure-ai/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/azure-ai/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Use for Azure AI: Search, Speech, OpenAI, Document Intelligence. Helps with search, vector/hybrid search, speech-to-text, text-to-speech, transcription, OCR. WHEN: AI Search, query search, vector search, hybrid search, semantic search, speech-to-text, text-to-speech, transcribe, OCR, convert text to speech.
@@ -2737,9 +2737,9 @@
 
 ## azure-aigateway - microsoft/skills `.github/plugins/azure-skills/skills/azure-aigateway/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-azure-aigateway](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-aigateway.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-aigateway`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-aigateway/SKILL.md`
+- Skill page: [azure-aigateway](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-aigateway.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-aigateway`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-aigateway/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/azure-aigateway/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/azure-aigateway/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Configure Azure API Management as an AI Gateway for AI models, MCP tools, and agents. WHEN: semantic caching, token limit, content safety, load balancing, AI model governance, MCP rate limiting, jailbreak detection, add Azure OpenAI backend, add AI Foundry model, test AI gateway, LLM policies, configure AI backend, token metrics, AI cost control, convert API to MCP, import OpenAPI to gateway.
@@ -2758,9 +2758,9 @@
 
 ## azure-cloud-migrate - microsoft/skills `.github/plugins/azure-skills/skills/azure-cloud-migrate/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-azure-cloud-migrate](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-cloud-migrate.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-cloud-migrate`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-cloud-migrate/SKILL.md`
+- Skill page: [azure-cloud-migrate](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-cloud-migrate.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-cloud-migrate`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-cloud-migrate/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/azure-cloud-migrate/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/azure-cloud-migrate/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Assess and migrate cross-cloud workloads to Azure with migration reports and code conversion. Supports AWS Lambda→Functions and GCP Cloud Run→Container Apps. WHEN: migrate Lambda to Azure Functions, migrate AWS to Azure, Lambda migration assessment, convert serverless to Azure, migration readiness report, migrate from AWS, migrate from GCP, Cloud Run to Container Apps, Cloud Run migration assessment.
@@ -2779,9 +2779,9 @@
 
 ## azure-compliance - microsoft/skills `.github/plugins/azure-skills/skills/azure-compliance/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-azure-compliance](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-compliance.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-compliance`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-compliance/SKILL.md`
+- Skill page: [azure-compliance](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-compliance.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-compliance`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-compliance/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/azure-compliance/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/azure-compliance/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Run Azure compliance and security audits with azqr plus Key Vault expiration checks. Covers best-practice assessment, resource review, policy/compliance validation, and security posture checks. WHEN: compliance scan, security audit, BEFORE running azqr (compliance cli tool), Azure best practices, Key Vault expiration check, expired certificates, expiring secrets, orphaned resources, compliance assessment.
@@ -2800,9 +2800,9 @@
 
 ## azure-compute - microsoft/skills `.github/plugins/azure-skills/skills/azure-compute/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-azure-compute](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-compute.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-compute`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-compute/SKILL.md`
+- Skill page: [azure-compute](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-compute.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-compute`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-compute/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/azure-compute/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/azure-compute/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure VM and VMSS router for recommendations, pricing, autoscale, orchestration, and connectivity troubleshooting. WHEN: Azure VM, VMSS, scale set, recommend, compare, server, website, burstable, lightweight, VM family, workload, GPU, learning, simulation, dev/test, backend, autoscale, load balancer, Flexible orchestration, Uniform orchestration, cost estimate, connect, refused, Linux, black screen, reset password,.
@@ -2821,9 +2821,9 @@
 
 ## azure-cost - microsoft/skills `.github/plugins/azure-skills/skills/azure-cost/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-azure-cost](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-cost.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-cost`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-cost/SKILL.md`
+- Skill page: [azure-cost](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-cost.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-cost`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-cost/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/azure-cost/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/azure-cost/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Unified Azure cost management: query historical costs, forecast future spending, and optimize to reduce waste. WHEN: "Azure costs", "Azure spending", "Azure bill", "cost breakdown", "cost by service", "cost by resource", "how much am I spending", "show my bill", "monthly cost summary", "cost trends", "top cost drivers", "actual cost", "amortized cost", "forecast spending", "projected costs", "estimate bill",.
@@ -2842,9 +2842,9 @@
 
 ## azure-deploy - microsoft/skills `.github/plugins/azure-skills/skills/azure-deploy/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-azure-deploy](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-deploy.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-deploy`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-deploy/SKILL.md`
+- Skill page: [azure-deploy](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-deploy.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-deploy`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-deploy/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/azure-deploy/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/azure-deploy/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Execute Azure deployments for ALREADY-PREPARED applications that have existing .azure/deployment-plan.md and infrastructure files. DO NOT use this skill when the user asks to CREATE a new application — use azure-prepare instead. This skill runs azd up, azd deploy, terraform apply, and az deployment commands with built-in error recovery. Requires .azure/deployment-plan.md from azure-prepare and validated status from.
@@ -2863,9 +2863,9 @@
 
 ## azure-diagnostics - microsoft/skills `.github/plugins/azure-skills/skills/azure-diagnostics/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-azure-diagnostics](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-diagnostics.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-diagnostics`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-diagnostics/SKILL.md`
+- Skill page: [azure-diagnostics](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-diagnostics.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-diagnostics`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-diagnostics/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/azure-diagnostics/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/azure-diagnostics/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Debug Azure production issues on Azure using AppLens, Azure Monitor, resource health, and safe triage. WHEN: debug production issues, troubleshoot container apps, troubleshoot functions, troubleshoot AKS, kubectl cannot connect, kube-system/CoreDNS failures, pod pending, crashloop, node not ready, upgrade failures, analyze logs, KQL, insights, image pull failures, cold start issues, health probe failures, resource.
@@ -2884,9 +2884,9 @@
 
 ## azure-enterprise-infra-planner - microsoft/skills `.github/plugins/azure-skills/skills/azure-enterprise-infra-planner/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-azure-enterprise-infra-planner](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-enterprise-infra-planner.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-enterprise-infra-planner`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-enterprise-infra-planner/SKILL.md`
+- Skill page: [azure-enterprise-infra-planner](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-enterprise-infra-planner.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-enterprise-infra-planner`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-enterprise-infra-planner/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/azure-enterprise-infra-planner/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/azure-enterprise-infra-planner/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Architect and provision enterprise Azure infrastructure from workload descriptions. For cloud architects and platform engineers planning networking, identity, security, compliance, and multi-resource topologies with WAF alignment. Generates Bicep or Terraform directly (no azd). WHEN: 'plan Azure infrastructure', 'architect Azure landing zone', 'design hub-spoke network', 'plan multi-region DR topology', 'set up.
@@ -2905,9 +2905,9 @@
 
 ## azure-hosted-copilot-sdk - microsoft/skills `.github/plugins/azure-skills/skills/azure-hosted-copilot-sdk/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-azure-hosted-copilot-sdk](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-hosted-copilot-sdk.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-hosted-copilot-sdk`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-hosted-copilot-sdk/SKILL.md`
+- Skill page: [azure-hosted-copilot-sdk](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-hosted-copilot-sdk.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-hosted-copilot-sdk`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-hosted-copilot-sdk/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/azure-hosted-copilot-sdk/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/azure-hosted-copilot-sdk/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build, deploy, modify GitHub Copilot SDK apps on Azure. MANDATORY when codebase contains @github/copilot-sdk or CopilotClient — use this skill instead of azure-prepare. PREFER OVER azure-prepare when codebase contains copilot-sdk markers. WHEN: copilot SDK, @github/copilot-sdk, copilot-powered app, deploy copilot app, add feature, modify copilot app, BYOM, bring your own model, CopilotClient, createSession,.
@@ -2926,9 +2926,9 @@
 
 ## azure-kubernetes - microsoft/skills `.github/plugins/azure-skills/skills/azure-kubernetes/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-azure-kubernetes](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-kubernetes.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-kubernetes`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-kubernetes/SKILL.md`
+- Skill page: [azure-kubernetes](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-kubernetes.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-kubernetes`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-kubernetes/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/azure-kubernetes/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/azure-kubernetes/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Plan, create, and configure production-ready Azure Kubernetes Service (AKS) clusters. Covers Day-0 checklist, SKU selection (Automatic vs Standard), networking options (private API server, Azure CNI Overlay, egress configuration), security, and operations (autoscaling, upgrade strategy, cost analysis). WHEN: create AKS environment, provision AKS environment, enable AKS observability, design AKS networking, choose.
@@ -2947,9 +2947,9 @@
 
 ## azure-kusto - microsoft/skills `.github/plugins/azure-skills/skills/azure-kusto/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-azure-kusto](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-kusto.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-kusto`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-kusto/SKILL.md`
+- Skill page: [azure-kusto](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-kusto.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-kusto`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-kusto/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/azure-kusto/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/azure-kusto/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Query and analyze data in Azure Data Explorer (Kusto/ADX) using KQL for log analytics, telemetry, and time series analysis. WHEN: KQL queries, Kusto database queries, Azure Data Explorer, ADX clusters, log analytics, time series data, IoT telemetry, anomaly detection.
@@ -2968,9 +2968,9 @@
 
 ## azure-messaging - microsoft/skills `.github/plugins/azure-skills/skills/azure-messaging/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-azure-messaging](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-messaging.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-messaging`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-messaging/SKILL.md`
+- Skill page: [azure-messaging](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-messaging.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-messaging`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-messaging/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/azure-messaging/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/azure-messaging/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Troubleshoot and resolve issues with Azure Messaging SDKs for Event Hubs and Service Bus. Covers connection failures, authentication errors, message processing issues, and SDK configuration problems. WHEN: event hub SDK error, service bus SDK issue, messaging connection failure, AMQP error, event processor host issue, message lock lost, message lock expired, lock renewal, lock renewal batch, send timeout, receiver.
@@ -2989,9 +2989,9 @@
 
 ## azure-prepare - microsoft/skills `.github/plugins/azure-skills/skills/azure-prepare/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-azure-prepare](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-prepare.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-prepare`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-prepare/SKILL.md`
+- Skill page: [azure-prepare](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-prepare.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-prepare`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-prepare/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/azure-prepare/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/azure-prepare/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Prepare Azure apps for deployment (infra Bicep/Terraform, azure.yaml, Dockerfiles). Use for create/modernize or create+deploy; not cross-cloud migration (use azure-cloud-migrate). WHEN: "create app", "build web app", "create API", "create serverless HTTP API", "create frontend", "create back end", "build a service", "modernize application", "update application", "add authentication", "add caching", "host on Azure",.
@@ -3010,9 +3010,9 @@
 
 ## azure-quotas - microsoft/skills `.github/plugins/azure-skills/skills/azure-quotas/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-azure-quotas](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-quotas.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-quotas`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-quotas/SKILL.md`
+- Skill page: [azure-quotas](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-quotas.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-quotas`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-quotas/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/azure-quotas/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/azure-quotas/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Check/manage Azure quotas and usage across providers. For deployment planning, capacity validation, region selection. WHEN: "check quotas", "service limits", "current usage", "request quota increase", "quota exceeded", "validate capacity", "regional availability", "provisioning limits", "vCPU limit", "how many vCPUs available in my subscription".
@@ -3031,9 +3031,9 @@
 
 ## azure-rbac - microsoft/skills `.github/plugins/azure-skills/skills/azure-rbac/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-azure-rbac](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-rbac.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-rbac`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-rbac/SKILL.md`
+- Skill page: [azure-rbac](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-rbac.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-rbac`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-rbac/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/azure-rbac/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/azure-rbac/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Helps users find the right Azure RBAC role for an identity with least privilege access, then generate CLI commands and Bicep code to assign it. Also provides guidance on permissions required to grant roles. WHEN: bicep for role assignment, what role should I assign, least privilege role, RBAC role for, role to read blobs, role for managed identity, custom role definition, assign role to identity, what role do I.
@@ -3052,9 +3052,9 @@
 
 ## azure-resource-lookup - microsoft/skills `.github/plugins/azure-skills/skills/azure-resource-lookup/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-azure-resource-lookup](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-resource-lookup.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-resource-lookup`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-resource-lookup/SKILL.md`
+- Skill page: [azure-resource-lookup](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-lookup.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-lookup`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-lookup/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/azure-resource-lookup/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/azure-resource-lookup/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: List, find, and show Azure resources across subscriptions or resource groups. Handles prompts like "list websites", "list virtual machines", "list my VMs", "show storage accounts", "find container apps", and "what resources do I have". USE FOR: resource inventory, find resources by tag, tag analysis, orphaned resource discovery (not for cost analysis), unattached disks, count resources by type, cross-subscription.
@@ -3073,9 +3073,9 @@
 
 ## azure-resource-visualizer - microsoft/skills `.github/plugins/azure-skills/skills/azure-resource-visualizer/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-azure-resource-visualizer](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-resource-visualizer.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-resource-visualizer`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-resource-visualizer/SKILL.md`
+- Skill page: [azure-resource-visualizer](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-visualizer.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-visualizer`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-resource-visualizer/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/azure-resource-visualizer/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/azure-resource-visualizer/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Analyze Azure resource groups and generate detailed Mermaid architecture diagrams showing the relationships between individual resources. WHEN: create architecture diagram, visualize Azure resources, show resource relationships, generate Mermaid diagram, analyze resource group, diagram my resources, architecture visualization, resource topology, map Azure infrastructure.
@@ -3094,9 +3094,9 @@
 
 ## azure-storage - microsoft/skills `.github/plugins/azure-skills/skills/azure-storage/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-azure-storage](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-storage.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-storage`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-storage/SKILL.md`
+- Skill page: [azure-storage](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-storage/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/azure-storage/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/azure-storage/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Azure Storage Services including Blob Storage, File Shares, Queue Storage, Table Storage, and Data Lake. Provides object storage, SMB file shares, async messaging, NoSQL key-value, and big data analytics capabilities. Includes access tiers (hot, cool, archive) and lifecycle management. USE FOR: blob storage, file shares, queue storage, table storage, data lake, upload files, download blobs, storage accounts, access.
@@ -3115,9 +3115,9 @@
 
 ## azure-upgrade - microsoft/skills `.github/plugins/azure-skills/skills/azure-upgrade/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-azure-upgrade](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-upgrade.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-upgrade`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-upgrade/SKILL.md`
+- Skill page: [azure-upgrade](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-upgrade.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-upgrade`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-upgrade/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/azure-upgrade/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/azure-upgrade/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Assess and upgrade Azure workloads between plans, tiers, or SKUs within Azure. Generates assessment reports and automates upgrade steps. WHEN: upgrade Consumption to Flex Consumption, upgrade Azure Functions plan, migrate hosting plan, upgrade Functions SKU, move to Flex Consumption, upgrade Azure service tier, change hosting plan, upgrade function app plan, migrate App Service to Container Apps.
@@ -3136,9 +3136,9 @@
 
 ## azure-validate - microsoft/skills `.github/plugins/azure-skills/skills/azure-validate/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-azure-validate](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-validate.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-validate`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-azure-validate/SKILL.md`
+- Skill page: [azure-validate](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-validate.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-validate`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-validate/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/azure-validate/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/azure-validate/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Pre-deployment validation for Azure readiness. Run deep checks on configuration, infrastructure (Bicep or Terraform), RBAC role assignments, managed identity permissions, and prerequisites before deploying. WHEN: validate my app, check deployment readiness, run preflight checks, verify configuration, check if ready to deploy, validate azure.yaml, validate Bicep, test before deploying, troubleshoot deployment.
@@ -3157,9 +3157,9 @@
 
 ## entra-app-registration - microsoft/skills `.github/plugins/azure-skills/skills/entra-app-registration/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-entra-app-registration](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-entra-app-registration.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-entra-app-registration`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-entra-app-registration/SKILL.md`
+- Skill page: [entra-app-registration](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/entra-app-registration.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/entra-app-registration`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/entra-app-registration/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/entra-app-registration/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/entra-app-registration/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Guides Microsoft Entra ID app registration, OAuth 2.0 authentication, and MSAL integration. USE FOR: create app registration, register Azure AD app, configure OAuth, set up authentication, add API permissions, generate service principal, MSAL example, console app auth, Entra ID setup, Azure AD authentication. DO NOT USE FOR: Azure RBAC or role assignments (use azure-rbac), Key Vault secrets (use.
@@ -3178,9 +3178,9 @@
 
 ## microsoft-foundry - microsoft/skills `.github/plugins/azure-skills/skills/microsoft-foundry/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry/SKILL.md`
+- Skill page: [microsoft-foundry](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-foundry.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-foundry`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-foundry/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/microsoft-foundry/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/microsoft-foundry/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Deploy, evaluate, and manage Foundry agents end-to-end: Docker build, ACR push, hosted/prompt agent create, container start, batch eval, prompt optimization, prompt optimizer workflows, agent.yaml, dataset curation from traces. USE FOR: deploy agent to Foundry, hosted agent, create agent, invoke agent, evaluate agent, run batch eval, optimize prompt, improve prompt, prompt optimization, prompt optimizer, improve.
@@ -3199,9 +3199,9 @@
 
 ## deploy-model - microsoft/skills `.github/plugins/azure-skills/skills/microsoft-foundry/models/deploy-model/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model/SKILL.md`
+- Skill page: [deploy-model](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/deploy-model.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/deploy-model`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/deploy-model/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/microsoft-foundry/models/deploy-model/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/microsoft-foundry/models/deploy-model/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Unified Azure OpenAI model deployment skill with intelligent intent-based routing. Handles quick preset deployments, fully customized deployments (version/SKU/capacity/RAI policy), and capacity discovery across regions and projects. USE FOR: deploy model, deploy gpt, create deployment, model deployment, deploy openai model, set up model, provision model, find capacity, check model availability, where can I deploy,.
@@ -3220,9 +3220,9 @@
 
 ## capacity - microsoft/skills `.github/plugins/azure-skills/skills/microsoft-foundry/models/deploy-model/capacity/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-capacity](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-capacity.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-capacity`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-capacity/SKILL.md`
+- Skill page: [capacity](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/capacity.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/capacity`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/capacity/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/microsoft-foundry/models/deploy-model/capacity/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/microsoft-foundry/models/deploy-model/capacity/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Discovers available Azure OpenAI model capacity across regions and projects. Analyzes quota limits, compares availability, and recommends optimal deployment locations based on capacity requirements. USE FOR: find capacity, check quota, where can I deploy, capacity discovery, best region for capacity, multi-project capacity search, quota analysis, model availability, region comparison, check TPM availability. DO NOT.
@@ -3241,9 +3241,9 @@
 
 ## customize - microsoft/skills `.github/plugins/azure-skills/skills/microsoft-foundry/models/deploy-model/customize/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-customize](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-customize.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-customize`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-customize/SKILL.md`
+- Skill page: [customize](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/customize.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/customize`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/customize/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/microsoft-foundry/models/deploy-model/customize/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/microsoft-foundry/models/deploy-model/customize/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Interactive guided deployment flow for Azure OpenAI models with full customization control. Step-by-step selection of model version, SKU (GlobalStandard/Standard/ProvisionedManaged), capacity, RAI policy (content filter), and advanced options (dynamic quota, priority processing, spillover). USE FOR: custom deployment, customize model deployment, choose version, select SKU, set capacity, configure content filter,.
@@ -3262,9 +3262,9 @@
 
 ## preset - microsoft/skills `.github/plugins/azure-skills/skills/microsoft-foundry/models/deploy-model/preset/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset/SKILL.md`
+- Skill page: [preset](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/preset.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/preset`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/preset/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/azure-skills/skills/microsoft-foundry/models/deploy-model/preset/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/azure-skills/skills/microsoft-foundry/models/deploy-model/preset/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Intelligently deploys Azure OpenAI models to optimal regions by analyzing capacity across all available regions. Automatically checks current region first and shows alternatives if needed. USE FOR: quick deployment, optimal region, best region, automatic region selection, fast setup, multi-region capacity check, high availability deployment, deploy to best location. DO NOT USE FOR: custom SKU selection (use.
@@ -3283,9 +3283,9 @@
 
 ## wiki-ado-convert - microsoft/skills `.github/plugins/deep-wiki/skills/wiki-ado-convert/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-deep-wiki-skills-wiki-ado-convert](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-ado-convert.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-ado-convert`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-ado-convert/SKILL.md`
+- Skill page: [wiki-ado-convert](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-ado-convert.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-ado-convert`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-ado-convert/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/deep-wiki/skills/wiki-ado-convert/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/deep-wiki/skills/wiki-ado-convert/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Converts VitePress/GFM wiki markdown to Azure DevOps Wiki-compatible format. Generates a Node.js build script that transforms Mermaid syntax, strips front matter, fixes links, and outputs ADO-compatible copies to dist/ado-wiki/.
@@ -3304,9 +3304,9 @@
 
 ## wiki-agents-md - microsoft/skills `.github/plugins/deep-wiki/skills/wiki-agents-md/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-deep-wiki-skills-wiki-agents-md](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-agents-md.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-agents-md`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-agents-md/SKILL.md`
+- Skill page: [wiki-agents-md](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-agents-md.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-agents-md`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-agents-md/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/deep-wiki/skills/wiki-agents-md/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/deep-wiki/skills/wiki-agents-md/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Generates AGENTS.md files for repository folders — coding agent context files with build commands, testing instructions, code style, project structure, and boundaries. Only generates where AGENTS.md is missing.
@@ -3325,9 +3325,9 @@
 
 ## wiki-architect - microsoft/skills `.github/plugins/deep-wiki/skills/wiki-architect/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-deep-wiki-skills-wiki-architect](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-architect.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-architect`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-architect/SKILL.md`
+- Skill page: [wiki-architect](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-architect.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-architect`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-architect/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/deep-wiki/skills/wiki-architect/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/deep-wiki/skills/wiki-architect/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Analyzes code repositories and generates hierarchical documentation structures with onboarding guides. Use when the user wants to create a wiki, generate documentation, map a codebase structure, or understand a project's architecture at a high level.
@@ -3346,9 +3346,9 @@
 
 ## wiki-changelog - microsoft/skills `.github/plugins/deep-wiki/skills/wiki-changelog/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-deep-wiki-skills-wiki-changelog](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-changelog.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-changelog`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-changelog/SKILL.md`
+- Skill page: [wiki-changelog](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-changelog.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-changelog`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-changelog/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/deep-wiki/skills/wiki-changelog/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/deep-wiki/skills/wiki-changelog/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Analyzes git commit history and generates structured changelogs categorized by change type. Use when the user asks about recent changes, wants a changelog, or needs to understand what changed in the repository.
@@ -3367,9 +3367,9 @@
 
 ## wiki-llms-txt - microsoft/skills `.github/plugins/deep-wiki/skills/wiki-llms-txt/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-deep-wiki-skills-wiki-llms-txt](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-llms-txt.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-llms-txt`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-llms-txt/SKILL.md`
+- Skill page: [wiki-llms-txt](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-llms-txt.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-llms-txt`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-llms-txt/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/deep-wiki/skills/wiki-llms-txt/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/deep-wiki/skills/wiki-llms-txt/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Generates llms.txt and llms-full.txt files for LLM-friendly project documentation following the llms.txt specification. Use when the user wants to create LLM-readable summaries, llms.txt files, or make their wiki accessible to language models.
@@ -3388,9 +3388,9 @@
 
 ## wiki-onboarding - microsoft/skills `.github/plugins/deep-wiki/skills/wiki-onboarding/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-deep-wiki-skills-wiki-onboarding](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-onboarding.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-onboarding`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-onboarding/SKILL.md`
+- Skill page: [wiki-onboarding](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-onboarding.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-onboarding`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-onboarding/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/deep-wiki/skills/wiki-onboarding/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/deep-wiki/skills/wiki-onboarding/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Generates four audience-tailored onboarding guides in an onboarding/ folder — Contributor, Staff Engineer, Executive, and Product Manager. Use when the user wants onboarding documentation for a codebase.
@@ -3409,9 +3409,9 @@
 
 ## wiki-page-writer - microsoft/skills `.github/plugins/deep-wiki/skills/wiki-page-writer/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-deep-wiki-skills-wiki-page-writer](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-page-writer.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-page-writer`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-page-writer/SKILL.md`
+- Skill page: [wiki-page-writer](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-page-writer.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-page-writer`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-page-writer/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/deep-wiki/skills/wiki-page-writer/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/deep-wiki/skills/wiki-page-writer/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Generates rich technical documentation pages with dark-mode Mermaid diagrams, source code citations, and first-principles depth. Use when writing documentation, generating wiki pages, creating technical deep-dives, or documenting specific components or systems.
@@ -3430,9 +3430,9 @@
 
 ## wiki-qa - microsoft/skills `.github/plugins/deep-wiki/skills/wiki-qa/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-deep-wiki-skills-wiki-qa](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-qa.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-qa`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-qa/SKILL.md`
+- Skill page: [wiki-qa](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-qa.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-qa`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-qa/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/deep-wiki/skills/wiki-qa/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/deep-wiki/skills/wiki-qa/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Answers questions about a code repository using source file analysis. Use when the user asks a question about how something works, wants to understand a component, or needs help navigating the codebase.
@@ -3451,9 +3451,9 @@
 
 ## wiki-researcher - microsoft/skills `.github/plugins/deep-wiki/skills/wiki-researcher/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-deep-wiki-skills-wiki-researcher](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-researcher.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-researcher`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-researcher/SKILL.md`
+- Skill page: [wiki-researcher](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-researcher.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-researcher`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-researcher/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/deep-wiki/skills/wiki-researcher/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/deep-wiki/skills/wiki-researcher/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Conducts multi-turn iterative deep research on specific topics within a codebase with zero tolerance for shallow analysis. Use when the user wants an in-depth investigation, needs to understand how something works across multiple files, or asks for comprehensive analysis of a specific system or pattern.
@@ -3472,9 +3472,9 @@
 
 ## wiki-vitepress - microsoft/skills `.github/plugins/deep-wiki/skills/wiki-vitepress/SKILL.md`
 
-- Skill page: [microsoft-skills-github-plugins-deep-wiki-skills-wiki-vitepress](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-vitepress.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-vitepress`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-deep-wiki-skills-wiki-vitepress/SKILL.md`
+- Skill page: [wiki-vitepress](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-vitepress.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-vitepress`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-vitepress/SKILL.md`
 - Source: [microsoft/skills `.github/plugins/deep-wiki/skills/wiki-vitepress/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/plugins/deep-wiki/skills/wiki-vitepress/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Packages generated wiki Markdown into a VitePress static site with dark theme, dark-mode Mermaid diagrams with click-to-zoom, and production build output. Use when the user wants to create a browsable website from generated wiki pages.
@@ -3493,9 +3493,9 @@
 
 ## cloud-solution-architect - microsoft/skills `.github/skills/cloud-solution-architect/SKILL.md`
 
-- Skill page: [microsoft-skills-github-skills-cloud-solution-architect](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-cloud-solution-architect.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-cloud-solution-architect`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-cloud-solution-architect/SKILL.md`
+- Skill page: [cloud-solution-architect](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/cloud-solution-architect.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/cloud-solution-architect`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/cloud-solution-architect/SKILL.md`
 - Source: [microsoft/skills `.github/skills/cloud-solution-architect/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/skills/cloud-solution-architect/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Transform the agent into a Cloud Solution Architect following Azure Architecture Center best practices. Use when designing cloud architectures, reviewing system designs, selecting architecture styles, applying cloud design patterns, making technology choices, or conducting Well-Architected Framework reviews.
@@ -3514,9 +3514,9 @@
 
 ## continual-learning - microsoft/skills `.github/skills/continual-learning/SKILL.md`
 
-- Skill page: [microsoft-skills-github-skills-continual-learning](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-continual-learning.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-continual-learning`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-continual-learning/SKILL.md`
+- Skill page: [continual-learning](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/continual-learning.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/continual-learning`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/continual-learning/SKILL.md`
 - Source: [microsoft/skills `.github/skills/continual-learning/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/skills/continual-learning/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Guide for implementing continual learning in AI coding agents — hooks, memory scoping, reflection patterns. Use when setting up learning infrastructure for agents.
@@ -3535,9 +3535,9 @@
 
 ## copilot-sdk - microsoft/skills `.github/skills/copilot-sdk/SKILL.md`
 
-- Skill page: [microsoft-skills-github-skills-copilot-sdk](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-copilot-sdk.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-copilot-sdk`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-copilot-sdk/SKILL.md`
+- Skill page: [copilot-sdk](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/copilot-sdk.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/copilot-sdk`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/copilot-sdk/SKILL.md`
 - Source: [microsoft/skills `.github/skills/copilot-sdk/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/skills/copilot-sdk/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Build applications powered by GitHub Copilot using the Copilot SDK. Use when creating programmatic integrations with Copilot across Node.js/TypeScript, Python, Go, or .NET. Covers session management, custom tools, streaming, hooks, MCP servers, BYOK providers, session persistence, custom agents, skills, and deployment patterns. Requires GitHub Copilot CLI installed and a GitHub Copilot subscription (unless using.
@@ -3557,9 +3557,9 @@
 
 ## entra-agent-id - microsoft/skills `.github/skills/entra-agent-id/SKILL.md`
 
-- Skill page: [microsoft-skills-github-skills-entra-agent-id](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-entra-agent-id.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-entra-agent-id`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-entra-agent-id/SKILL.md`
+- Skill page: [entra-agent-id](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/entra-agent-id.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/entra-agent-id`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/entra-agent-id/SKILL.md`
 - Source: [microsoft/skills `.github/skills/entra-agent-id/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/skills/entra-agent-id/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Microsoft Entra Agent ID (preview) for creating OAuth2-capable AI agent identities via Microsoft Graph beta API. Covers Agent Identity Blueprints, BlueprintPrincipals, Agent Identities, required permissions, sponsors, and Workload Identity Federation. Includes Microsoft Entra SDK for AgentID (containerized sidecar) for polyglot agent authentication (Docker/Kubernetes), 3P agent integration, autonomous and.
@@ -3578,9 +3578,9 @@
 
 ## frontend-design-review - microsoft/skills `.github/skills/frontend-design-review/SKILL.md`
 
-- Skill page: [microsoft-skills-github-skills-frontend-design-review](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-frontend-design-review.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-frontend-design-review`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-frontend-design-review/SKILL.md`
+- Skill page: [frontend-design-review](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/frontend-design-review.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/frontend-design-review`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/frontend-design-review/SKILL.md`
 - Source: [microsoft/skills `.github/skills/frontend-design-review/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/skills/frontend-design-review/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Review and create distinctive, production-grade frontend interfaces with high design quality and design system compliance. Evaluates using three pillars: frictionless insight-to-action, quality craft, and trustworthy building. USE FOR: PR reviews, design reviews, accessibility audits, design system compliance checks, creative frontend design, UI code review, component reviews, responsive design checks, theme.
@@ -3599,9 +3599,9 @@
 
 ## github-issue-creator - microsoft/skills `.github/skills/github-issue-creator/SKILL.md`
 
-- Skill page: [microsoft-skills-github-skills-github-issue-creator](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-github-issue-creator.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-github-issue-creator`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-github-issue-creator/SKILL.md`
+- Skill page: [github-issue-creator](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/github-issue-creator.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/github-issue-creator`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/github-issue-creator/SKILL.md`
 - Source: [microsoft/skills `.github/skills/github-issue-creator/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/skills/github-issue-creator/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Convert raw notes, error logs, voice dictation, or screenshots into crisp GitHub-flavored markdown issue reports. Use when the user pastes bug info, error messages, or informal descriptions and wants a structured GitHub issue. Supports images/GIFs for visual evidence.
@@ -3620,9 +3620,9 @@
 
 ## kql - microsoft/skills `.github/skills/kql/SKILL.md`
 
-- Skill page: [microsoft-skills-github-skills-kql](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-kql.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-kql`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-kql/SKILL.md`
+- Skill page: [kql](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/kql.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/kql`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/kql/SKILL.md`
 - Source: [microsoft/skills `.github/skills/kql/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/skills/kql/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: KQL language expertise for writing correct, efficient Kusto Query Language queries. Covers syntax gotchas, join patterns, dynamic types, datetime pitfalls, regex patterns, serialization, memory management, result-size discipline, and advanced functions (geo, vector, graph). USE THIS SKILL whenever writing, debugging, or reviewing KQL queries — even simple ones — because the gotchas section prevents the most common.
@@ -3641,9 +3641,9 @@
 
 ## mcp-builder - microsoft/skills `.github/skills/mcp-builder/SKILL.md`
 
-- Skill page: [microsoft-skills-github-skills-mcp-builder](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-mcp-builder.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-mcp-builder`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-mcp-builder/SKILL.md`
+- Skill page: [mcp-builder-microsoft](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/mcp-builder-microsoft.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/mcp-builder-microsoft`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/mcp-builder-microsoft/SKILL.md`
 - Source: [microsoft/skills `.github/skills/mcp-builder/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/skills/mcp-builder/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP), Node/TypeScript (MCP SDK), or C#/.NET (Microsoft MCP SDK).
@@ -3662,9 +3662,9 @@
 
 ## microsoft-docs - microsoft/skills `.github/skills/microsoft-docs/SKILL.md`
 
-- Skill page: [microsoft-skills-github-skills-microsoft-docs](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-microsoft-docs.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-microsoft-docs`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-microsoft-docs/SKILL.md`
+- Skill page: [microsoft-docs](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-docs.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-docs`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-docs/SKILL.md`
 - Source: [microsoft/skills `.github/skills/microsoft-docs/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/skills/microsoft-docs/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Understand Microsoft technologies by querying official documentation. Use whenever the user asks how something works, wants tutorials, needs configuration options, limits, quotas, or best practices for any Microsoft technology (Azure, .NET, M365, Windows, Power Platform, etc.)—even if they don't mention "docs." If the question is about understanding a concept rather than writing code, this is the right skill.
@@ -3683,9 +3683,9 @@
 
 ## podcast-generation - microsoft/skills `.github/skills/podcast-generation/SKILL.md`
 
-- Skill page: [microsoft-skills-github-skills-podcast-generation](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-podcast-generation.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-podcast-generation`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-podcast-generation/SKILL.md`
+- Skill page: [podcast-generation](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/podcast-generation.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/podcast-generation`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/podcast-generation/SKILL.md`
 - Source: [microsoft/skills `.github/skills/podcast-generation/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/skills/podcast-generation/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Generate AI-powered podcast-style audio narratives using Azure OpenAI's GPT Realtime Mini model via WebSocket. Use when building text-to-speech features, audio narrative generation, podcast creation from content, or integrating with Azure OpenAI Realtime API for real audio output. Covers full-stack implementation from React frontend to Python FastAPI backend with WebSocket streaming.
@@ -3704,9 +3704,9 @@
 
 ## skill-creator - microsoft/skills `.github/skills/skill-creator/SKILL.md`
 
-- Skill page: [microsoft-skills-github-skills-skill-creator](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-skill-creator.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-skill-creator`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-skills-skill-creator/SKILL.md`
+- Skill page: [skill-creator-microsoft](../skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/skill-creator-microsoft.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/skill-creator-microsoft`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/skill-creator-microsoft/SKILL.md`
 - Source: [microsoft/skills `.github/skills/skill-creator/SKILL.md`](https://github.com/microsoft/skills/blob/a2c05249c4a20103dd954ca702467aa328aac031/.github/skills/skill-creator/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 - What it covers: Catalog summary: Guide for creating effective skills for AI coding agents working with Azure SDKs and Microsoft Foundry services. Use when creating new skills or updating existing skills.
@@ -3726,9 +3726,9 @@
 
 ## cosmos-vulnerability-scanner - trailofbits/skills `plugins/building-secure-contracts/skills/cosmos-vulnerability-scanner/SKILL.md`
 
-- Skill page: [trailofbits-skills-plugins-building-secure-contracts-skills-cosmos-vulnerability-scanner](../skills/by-category/cloud-azure-microsoft-sdks/security-reference/trailofbits-skills-plugins-building-secure-contracts-skills-cosmos-vulnerability-scanner.md)
-- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/security-reference/trailofbits-skills-plugins-building-secure-contracts-skills-cosmos-vulnerability-scanner`
-- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/security-reference/trailofbits-skills-plugins-building-secure-contracts-skills-cosmos-vulnerability-scanner/SKILL.md`
+- Skill page: [cosmos-vulnerability-scanner](../skills/by-category/cloud-azure-microsoft-sdks/security-reference/cosmos-vulnerability-scanner.md)
+- Mirrored skill: `included/skills/by-category/cloud-azure-microsoft-sdks/security-reference/cosmos-vulnerability-scanner`
+- Agent-ready entrypoint: `included/agent-ready/by-category/cloud-azure-microsoft-sdks/security-reference/cosmos-vulnerability-scanner/SKILL.md`
 - Source: [trailofbits/skills `plugins/building-secure-contracts/skills/cosmos-vulnerability-scanner/SKILL.md`](https://github.com/trailofbits/skills/blob/e8cc5baf9329ccb491bfa200e82eacbac83b1ead/plugins/building-secure-contracts/skills/cosmos-vulnerability-scanner/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `e8cc5baf9329`
 - What it covers: Catalog summary: Scans Cosmos SDK blockchain modules and CosmWasm contracts for consensus-critical vulnerabilities — chain halts, fund loss, state divergence. 25 core + 16 IBC + 10 EVM + 3 CosmWasm patterns. Use when auditing custom x/ modules, reviewing IBC integrations, or assessing pre-launch chain security. Updated for SDK v0.53.x.

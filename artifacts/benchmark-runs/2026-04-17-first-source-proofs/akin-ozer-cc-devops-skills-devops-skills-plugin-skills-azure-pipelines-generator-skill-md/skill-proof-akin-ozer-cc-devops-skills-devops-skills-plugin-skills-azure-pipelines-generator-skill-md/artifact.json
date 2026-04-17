@@ -1,7 +1,7 @@
 {
   "artifact_kind": "provenance_check",
   "artifact_version": "1.0",
-  "catalog_commit": "7512fbf179925eeb015e320e35004d16a95050e8",
+  "catalog_commit": "515e8b9056ae5cf4a1d8ee3f5d64d1f3c729b375",
   "evidence": {
     "artifact_paths": [
       "result.json",
@@ -9,7 +9,7 @@
     ],
     "citations_or_paths": [
       "devops-skills-plugin/skills/azure-pipelines-generator/SKILL.md",
-      "included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator/SKILL.md",
+      "included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-generator/SKILL.md",
       "AGENTS.md"
     ]
   },
@@ -28,7 +28,7 @@
     "identifier": "https://github.com/akin-ozer/cc-devops-skills/blob/7fe7595e4512f8ce43dcf956aa5190b96d627dd1/devops-skills-plugin/skills/azure-pipelines-generator/SKILL.md",
     "is_real": true,
     "kind": "source-skill-repository",
-    "mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator",
+    "mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-generator",
     "skill_file_sha256": "99e7ae998f87bb6a54ee543f84539efe8e1bc46a9da3bb7a8ed584d1f5c96428",
     "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1"
   },
@@ -46,13 +46,13 @@
   ],
   "outputs": {
     "path": "result.json",
-    "result_sha256": "15beb415cb38a31411598fb7b3100fcad108d14c4424fc0c6053b41ba9233a0f",
+    "result_sha256": "6925cbfc2c5232587c2401b9cce2a28c2cde1be53f6b85741ccf33dda133ca87",
     "schema": "evaluators/source_grounded_skill_proof.schema.json"
   },
   "runner": {
     "batch_name": "2026-04-17-first-source-proofs",
     "model_or_runtime": "local-deterministic-source-proof-runner",
-    "timestamp_utc": "2026-04-17T19:10:10Z",
+    "timestamp_utc": "2026-04-17T21:39:52Z",
     "tool": "tools/create_source_proof_batch.py"
   },
   "scenario_id": "skill-proof-akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator-skill-md",

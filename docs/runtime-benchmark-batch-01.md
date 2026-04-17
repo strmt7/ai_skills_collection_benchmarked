@@ -5,7 +5,7 @@ This batch records independent runtime-readiness results for selected high-risk 
 ## Summary
 
 - Batch: `2026-04-17-independent-runtime-readiness-batch-01`
-- Catalog commit: `8e3e1077c5dd0d16334f25cdddbc01e658b2f353`
+- Catalog commit: `515e8b9056ae5cf4a1d8ee3f5d64d1f3c729b375`
 - Skills evaluated: `10`
 - Passed: `0`
 - Failed: `10`

@@ -2,9 +2,9 @@
 
 ## producthunt-launch-kit - Varnan-Tech/opendirectory `packages/cli/skills/producthunt-launch-kit/SKILL.md`
 
-- Skill page: [varnan-tech-opendirectory-packages-cli-skills-producthunt-launch-kit](../skills/by-category/finance-commerce-forecasting/reddit-verified-gtm-registry/varnan-tech-opendirectory-packages-cli-skills-producthunt-launch-kit.md)
-- Mirrored skill: `included/skills/by-category/finance-commerce-forecasting/reddit-verified-gtm-registry/varnan-tech-opendirectory-packages-cli-skills-producthunt-launch-kit`
-- Agent-ready entrypoint: `included/agent-ready/by-category/finance-commerce-forecasting/reddit-verified-gtm-registry/varnan-tech-opendirectory-packages-cli-skills-producthunt-launch-kit/SKILL.md`
+- Skill page: [producthunt-launch-kit](../skills/by-category/finance-commerce-forecasting/reddit-verified-gtm-registry/producthunt-launch-kit.md)
+- Mirrored skill: `included/skills/by-category/finance-commerce-forecasting/reddit-verified-gtm-registry/producthunt-launch-kit`
+- Agent-ready entrypoint: `included/agent-ready/by-category/finance-commerce-forecasting/reddit-verified-gtm-registry/producthunt-launch-kit/SKILL.md`
 - Source: [Varnan-Tech/opendirectory `packages/cli/skills/producthunt-launch-kit/SKILL.md`](https://github.com/Varnan-Tech/opendirectory/blob/bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4/packages/cli/skills/producthunt-launch-kit/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `bc01f7c1c31f`
 - What it covers: Catalog summary: Use for producthunt-launch-kit workflows. Source sections include Product Hunt Launch Kit, Step 1: Gather Product Details, Step 2: Gallery Strategy.
@@ -23,9 +23,9 @@
 
 ## market-research - affaan-m/everything-claude-code `.agents/skills/market-research/SKILL.md`
 
-- Skill page: [affaan-m-everything-claude-code-agents-skills-market-research](../skills/by-category/finance-commerce-forecasting/selected-structure-reference/affaan-m-everything-claude-code-agents-skills-market-research.md)
-- Mirrored skill: `included/skills/by-category/finance-commerce-forecasting/selected-structure-reference/affaan-m-everything-claude-code-agents-skills-market-research`
-- Agent-ready entrypoint: `included/agent-ready/by-category/finance-commerce-forecasting/selected-structure-reference/affaan-m-everything-claude-code-agents-skills-market-research/SKILL.md`
+- Skill page: [market-research](../skills/by-category/finance-commerce-forecasting/selected-structure-reference/market-research.md)
+- Mirrored skill: `included/skills/by-category/finance-commerce-forecasting/selected-structure-reference/market-research`
+- Agent-ready entrypoint: `included/agent-ready/by-category/finance-commerce-forecasting/selected-structure-reference/market-research/SKILL.md`
 - Source: [affaan-m/everything-claude-code `.agents/skills/market-research/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/market-research/SKILL.md)
 - Selected ref: `v1.10.0`; commit `846ffb75da9a`
 - What it covers: Catalog summary: Conduct market research, competitive analysis, investor due diligence, and industry intelligence with source attribution and decision-oriented summaries. Use when the user wants market sizing, competitor comparisons, fund research, technology scans, or research that informs business decisions.

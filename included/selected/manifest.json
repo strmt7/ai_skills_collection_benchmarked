@@ -1,6 +1,6 @@
 [
   {
-    "agent_ready_path": "included/agent-ready/by-category/devops-cloud-operations/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/devops-cloud-operations/selected-project-reference/context-budget-simple-ai-bitcoin-trading-binance/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md",
       "devops-cloud-and-operations-kubernetes-examples",
@@ -13,8 +13,8 @@
     "has_required_frontmatter": false,
     "id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md",
     "immutable_source_url": "https://github.com/strmt7/simple_ai_bitcoin_trading_binance/blob/451d77df90621e3b666581d9835d246fb7147349/.agents/skills/context-budget/SKILL.md",
-    "install_name": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget",
-    "mirrored_path": "included/skills/by-category/devops-cloud-operations/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget",
+    "install_name": "context-budget-simple-ai-bitcoin-trading-binance",
+    "mirrored_path": "included/skills/by-category/devops-cloud-operations/selected-project-reference/context-budget-simple-ai-bitcoin-trading-binance",
     "name": "context-budget",
     "name_conflict_group": "context-budget",
     "selected_ref": "default-branch HEAD",
@@ -26,7 +26,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-android-visual-qa/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/android-visual-qa/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md",
       "game-mobile-and-visual-qa-air-defense-android-benchmarks",
@@ -39,8 +39,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/android-visual-qa/SKILL.md",
-    "install_name": "strmt7-project-air-defense-agents-skills-android-visual-qa",
-    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-android-visual-qa",
+    "install_name": "android-visual-qa",
+    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/android-visual-qa",
     "name": "android-visual-qa",
     "name_conflict_group": null,
     "selected_ref": "default-branch HEAD",
@@ -52,7 +52,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-browser-fallback/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/browser-fallback-project-air-defense/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-project-air-defense-agents-skills-browser-fallback-skill-md",
       "game-mobile-and-visual-qa-air-defense-android-benchmarks",
@@ -65,8 +65,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-browser-fallback-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/browser-fallback/SKILL.md",
-    "install_name": "strmt7-project-air-defense-agents-skills-browser-fallback",
-    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-browser-fallback",
+    "install_name": "browser-fallback-project-air-defense",
+    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/browser-fallback-project-air-defense",
     "name": "browser-fallback",
     "name_conflict_group": "browser-fallback",
     "selected_ref": "default-branch HEAD",
@@ -78,7 +78,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-caveman-help/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/caveman-help/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-project-air-defense-agents-skills-caveman-help-skill-md",
       "game-mobile-and-visual-qa-air-defense-android-benchmarks",
@@ -91,8 +91,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-caveman-help-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/caveman-help/SKILL.md",
-    "install_name": "strmt7-project-air-defense-agents-skills-caveman-help",
-    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-caveman-help",
+    "install_name": "caveman-help",
+    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/caveman-help",
     "name": "caveman-help",
     "name_conflict_group": null,
     "selected_ref": "default-branch HEAD",
@@ -104,7 +104,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-caveman/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/caveman-project-air-defense/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-project-air-defense-agents-skills-caveman-skill-md",
       "game-mobile-and-visual-qa-air-defense-android-benchmarks",
@@ -117,8 +117,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-caveman-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/caveman/SKILL.md",
-    "install_name": "strmt7-project-air-defense-agents-skills-caveman",
-    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-caveman",
+    "install_name": "caveman-project-air-defense",
+    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/caveman-project-air-defense",
     "name": "caveman",
     "name_conflict_group": "caveman",
     "selected_ref": "default-branch HEAD",
@@ -130,7 +130,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-compliance-and-rate-limit/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/compliance-and-rate-limit-project-air-defense/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-project-air-defense-agents-skills-compliance-and-rate-limit-skill-md",
       "game-mobile-and-visual-qa-air-defense-android-benchmarks",
@@ -143,8 +143,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-compliance-and-rate-limit-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/compliance-and-rate-limit/SKILL.md",
-    "install_name": "strmt7-project-air-defense-agents-skills-compliance-and-rate-limit",
-    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-compliance-and-rate-limit",
+    "install_name": "compliance-and-rate-limit-project-air-defense",
+    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/compliance-and-rate-limit-project-air-defense",
     "name": "compliance-and-rate-limit",
     "name_conflict_group": "compliance-and-rate-limit",
     "selected_ref": "default-branch HEAD",
@@ -156,7 +156,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-context-budget/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/context-budget-project-air-defense/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-project-air-defense-agents-skills-context-budget-skill-md",
       "game-mobile-and-visual-qa-air-defense-android-benchmarks",
@@ -169,8 +169,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-context-budget-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/context-budget/SKILL.md",
-    "install_name": "strmt7-project-air-defense-agents-skills-context-budget",
-    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-context-budget",
+    "install_name": "context-budget-project-air-defense",
+    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/context-budget-project-air-defense",
     "name": "context-budget",
     "name_conflict_group": "context-budget",
     "selected_ref": "default-branch HEAD",
@@ -182,7 +182,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-level-asset-curation/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/level-asset-curation/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-project-air-defense-agents-skills-level-asset-curation-skill-md",
       "game-mobile-and-visual-qa-air-defense-android-benchmarks",
@@ -195,8 +195,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-level-asset-curation-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/level-asset-curation/SKILL.md",
-    "install_name": "strmt7-project-air-defense-agents-skills-level-asset-curation",
-    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-level-asset-curation",
+    "install_name": "level-asset-curation",
+    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/level-asset-curation",
     "name": "level-asset-curation",
     "name_conflict_group": null,
     "selected_ref": "default-branch HEAD",
@@ -208,7 +208,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-site-extract/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/site-extract-project-air-defense/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-project-air-defense-agents-skills-site-extract-skill-md",
       "game-mobile-and-visual-qa-air-defense-android-benchmarks",
@@ -221,8 +221,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-site-extract-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/site-extract/SKILL.md",
-    "install_name": "strmt7-project-air-defense-agents-skills-site-extract",
-    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-site-extract",
+    "install_name": "site-extract-project-air-defense",
+    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/site-extract-project-air-defense",
     "name": "site-extract",
     "name_conflict_group": "site-extract",
     "selected_ref": "default-branch HEAD",
@@ -234,7 +234,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-source-audit/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/source-audit-project-air-defense/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-project-air-defense-agents-skills-source-audit-skill-md",
       "game-mobile-and-visual-qa-air-defense-android-benchmarks",
@@ -247,8 +247,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-source-audit-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/source-audit/SKILL.md",
-    "install_name": "strmt7-project-air-defense-agents-skills-source-audit",
-    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-source-audit",
+    "install_name": "source-audit-project-air-defense",
+    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/source-audit-project-air-defense",
     "name": "source-audit",
     "name_conflict_group": "source-audit",
     "selected_ref": "default-branch HEAD",
@@ -260,7 +260,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-city-pipeline/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/ue5-city-pipeline/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-project-air-defense-agents-skills-ue5-city-pipeline-skill-md",
       "game-mobile-and-visual-qa-air-defense-android-benchmarks",
@@ -273,8 +273,8 @@
     "has_required_frontmatter": false,
     "id": "strmt7-project-air-defense-agents-skills-ue5-city-pipeline-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/ue5-city-pipeline/SKILL.md",
-    "install_name": "strmt7-project-air-defense-agents-skills-ue5-city-pipeline",
-    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-city-pipeline",
+    "install_name": "ue5-city-pipeline",
+    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/ue5-city-pipeline",
     "name": "ue5-city-pipeline",
     "name_conflict_group": null,
     "selected_ref": "default-branch HEAD",
@@ -286,7 +286,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-commonui-menu-systems/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/ue5-commonui-menu-systems/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-project-air-defense-agents-skills-ue5-commonui-menu-systems-skill-md",
       "game-mobile-and-visual-qa-air-defense-android-benchmarks",
@@ -299,8 +299,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-ue5-commonui-menu-systems-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/ue5-commonui-menu-systems/SKILL.md",
-    "install_name": "strmt7-project-air-defense-agents-skills-ue5-commonui-menu-systems",
-    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-commonui-menu-systems",
+    "install_name": "ue5-commonui-menu-systems",
+    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/ue5-commonui-menu-systems",
     "name": "ue5-commonui-menu-systems",
     "name_conflict_group": null,
     "selected_ref": "default-branch HEAD",
@@ -312,7 +312,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-mobile-gameplay/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/ue5-mobile-gameplay/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-project-air-defense-agents-skills-ue5-mobile-gameplay-skill-md",
       "game-mobile-and-visual-qa-air-defense-android-benchmarks",
@@ -325,8 +325,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-ue5-mobile-gameplay-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/ue5-mobile-gameplay/SKILL.md",
-    "install_name": "strmt7-project-air-defense-agents-skills-ue5-mobile-gameplay",
-    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-mobile-gameplay",
+    "install_name": "ue5-mobile-gameplay",
+    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/ue5-mobile-gameplay",
     "name": "ue5-mobile-gameplay",
     "name_conflict_group": null,
     "selected_ref": "default-branch HEAD",
@@ -338,7 +338,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-mobile-rendering/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/ue5-mobile-rendering/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-project-air-defense-agents-skills-ue5-mobile-rendering-skill-md",
       "game-mobile-and-visual-qa-air-defense-android-benchmarks",
@@ -351,8 +351,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-ue5-mobile-rendering-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/ue5-mobile-rendering/SKILL.md",
-    "install_name": "strmt7-project-air-defense-agents-skills-ue5-mobile-rendering",
-    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-mobile-rendering",
+    "install_name": "ue5-mobile-rendering",
+    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/ue5-mobile-rendering",
     "name": "ue5-mobile-rendering",
     "name_conflict_group": null,
     "selected_ref": "default-branch HEAD",
@@ -364,7 +364,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-mobile-ui/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/ue5-mobile-ui/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-project-air-defense-agents-skills-ue5-mobile-ui-skill-md",
       "game-mobile-and-visual-qa-air-defense-android-benchmarks",
@@ -377,8 +377,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-ue5-mobile-ui-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/ue5-mobile-ui/SKILL.md",
-    "install_name": "strmt7-project-air-defense-agents-skills-ue5-mobile-ui",
-    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-mobile-ui",
+    "install_name": "ue5-mobile-ui",
+    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/ue5-mobile-ui",
     "name": "ue5-mobile-ui",
     "name_conflict_group": null,
     "selected_ref": "default-branch HEAD",
@@ -390,7 +390,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-photoreal-city-scene/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/ue5-photoreal-city-scene/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-project-air-defense-agents-skills-ue5-photoreal-city-scene-skill-md",
       "game-mobile-and-visual-qa-air-defense-android-benchmarks",
@@ -403,8 +403,8 @@
     "has_required_frontmatter": false,
     "id": "strmt7-project-air-defense-agents-skills-ue5-photoreal-city-scene-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/ue5-photoreal-city-scene/SKILL.md",
-    "install_name": "strmt7-project-air-defense-agents-skills-ue5-photoreal-city-scene",
-    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-photoreal-city-scene",
+    "install_name": "ue5-photoreal-city-scene",
+    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/ue5-photoreal-city-scene",
     "name": "ue5-photoreal-city-scene",
     "name_conflict_group": null,
     "selected_ref": "default-branch HEAD",
@@ -416,7 +416,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-verification-loop/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/verification-loop-project-air-defense/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-project-air-defense-agents-skills-verification-loop-skill-md",
       "game-mobile-and-visual-qa-air-defense-android-benchmarks",
@@ -429,8 +429,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-verification-loop-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/verification-loop/SKILL.md",
-    "install_name": "strmt7-project-air-defense-agents-skills-verification-loop",
-    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-verification-loop",
+    "install_name": "verification-loop-project-air-defense",
+    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/verification-loop-project-air-defense",
     "name": "verification-loop",
     "name_conflict_group": "verification-loop",
     "selected_ref": "default-branch HEAD",
@@ -442,7 +442,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-web-discovery/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/web-discovery-project-air-defense/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-project-air-defense-agents-skills-web-discovery-skill-md",
       "game-mobile-and-visual-qa-air-defense-android-benchmarks",
@@ -455,8 +455,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-web-discovery-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/web-discovery/SKILL.md",
-    "install_name": "strmt7-project-air-defense-agents-skills-web-discovery",
-    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-web-discovery",
+    "install_name": "web-discovery-project-air-defense",
+    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/web-discovery-project-air-defense",
     "name": "web-discovery",
     "name_conflict_group": "web-discovery",
     "selected_ref": "default-branch HEAD",
@@ -468,7 +468,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-skills-android-3d-air-defense/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/android-3d-air-defense/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-project-air-defense-skills-android-3d-air-defense-skill-md",
       "game-mobile-and-visual-qa-air-defense-android-benchmarks",
@@ -481,8 +481,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-skills-android-3d-air-defense-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/skills/android-3d-air-defense/SKILL.md",
-    "install_name": "strmt7-project-air-defense-skills-android-3d-air-defense",
-    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-skills-android-3d-air-defense",
+    "install_name": "android-3d-air-defense",
+    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/android-3d-air-defense",
     "name": "android-3d-air-defense",
     "name_conflict_group": null,
     "selected_ref": "default-branch HEAD",
@@ -494,7 +494,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/ai-regression-testing-omero-docker-extended/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -507,8 +507,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/ai-regression-testing/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing",
+    "install_name": "ai-regression-testing-omero-docker-extended",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/ai-regression-testing-omero-docker-extended",
     "name": "ai-regression-testing",
     "name_conflict_group": "ai-regression-testing",
     "selected_ref": "default-branch HEAD",
@@ -520,7 +520,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-browser-fallback/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/browser-fallback-omero-docker-extended/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-browser-fallback-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -533,8 +533,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-browser-fallback-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/browser-fallback/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-browser-fallback",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-browser-fallback",
+    "install_name": "browser-fallback-omero-docker-extended",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/browser-fallback-omero-docker-extended",
     "name": "browser-fallback",
     "name_conflict_group": "browser-fallback",
     "selected_ref": "default-branch HEAD",
@@ -546,7 +546,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-caveman/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/caveman-omero-docker-extended/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-caveman-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -559,8 +559,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-caveman-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/caveman/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-caveman",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-caveman",
+    "install_name": "caveman-omero-docker-extended",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/caveman-omero-docker-extended",
     "name": "caveman",
     "name_conflict_group": "caveman",
     "selected_ref": "default-branch HEAD",
@@ -572,7 +572,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-compliance-and-rate-limit/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/compliance-and-rate-limit-omero-docker-extended/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-compliance-and-rate-limit-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -585,8 +585,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-compliance-and-rate-limit-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/compliance-and-rate-limit/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-compliance-and-rate-limit",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-compliance-and-rate-limit",
+    "install_name": "compliance-and-rate-limit-omero-docker-extended",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/compliance-and-rate-limit-omero-docker-extended",
     "name": "compliance-and-rate-limit",
     "name_conflict_group": "compliance-and-rate-limit",
     "selected_ref": "default-branch HEAD",
@@ -598,7 +598,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-context-budget/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/context-budget-omero-docker-extended/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-context-budget-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -611,8 +611,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-context-budget-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/context-budget/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-context-budget",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-context-budget",
+    "install_name": "context-budget-omero-docker-extended",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/context-budget-omero-docker-extended",
     "name": "context-budget",
     "name_conflict_group": "context-budget",
     "selected_ref": "default-branch HEAD",
@@ -624,7 +624,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-deployment-patterns/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/deployment-patterns-omero-docker-extended/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-deployment-patterns-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -637,8 +637,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-deployment-patterns-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/deployment-patterns/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-deployment-patterns",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-deployment-patterns",
+    "install_name": "deployment-patterns-omero-docker-extended",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/deployment-patterns-omero-docker-extended",
     "name": "deployment-patterns",
     "name_conflict_group": "deployment-patterns",
     "selected_ref": "default-branch HEAD",
@@ -650,7 +650,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-django-patterns/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/django-patterns-omero-docker-extended/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-django-patterns-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -663,8 +663,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-django-patterns-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/django-patterns/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-django-patterns",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-django-patterns",
+    "install_name": "django-patterns-omero-docker-extended",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/django-patterns-omero-docker-extended",
     "name": "django-patterns",
     "name_conflict_group": "django-patterns",
     "selected_ref": "default-branch HEAD",
@@ -676,7 +676,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-django-security/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/django-security-omero-docker-extended/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-django-security-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -689,8 +689,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-django-security-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/django-security/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-django-security",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-django-security",
+    "install_name": "django-security-omero-docker-extended",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/django-security-omero-docker-extended",
     "name": "django-security",
     "name_conflict_group": "django-security",
     "selected_ref": "default-branch HEAD",
@@ -702,7 +702,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-django-verification/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/django-verification-omero-docker-extended/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-django-verification-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -715,8 +715,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-django-verification-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/django-verification/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-django-verification",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-django-verification",
+    "install_name": "django-verification-omero-docker-extended",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/django-verification-omero-docker-extended",
     "name": "django-verification",
     "name_conflict_group": "django-verification",
     "selected_ref": "default-branch HEAD",
@@ -728,7 +728,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-docker-patterns/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/docker-patterns-omero-docker-extended/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-docker-patterns-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -741,8 +741,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-docker-patterns-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/docker-patterns/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-docker-patterns",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-docker-patterns",
+    "install_name": "docker-patterns-omero-docker-extended",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/docker-patterns-omero-docker-extended",
     "name": "docker-patterns",
     "name_conflict_group": "docker-patterns",
     "selected_ref": "default-branch HEAD",
@@ -754,7 +754,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-docs-knowledge-maintainer/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/docs-knowledge-maintainer/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-docs-knowledge-maintainer-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -767,8 +767,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-docs-knowledge-maintainer-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/docs-knowledge-maintainer/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-docs-knowledge-maintainer",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-docs-knowledge-maintainer",
+    "install_name": "docs-knowledge-maintainer",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/docs-knowledge-maintainer",
     "name": "docs-knowledge-maintainer",
     "name_conflict_group": null,
     "selected_ref": "default-branch HEAD",
@@ -780,7 +780,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-documentation-lookup/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-omero-docker-extended/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-documentation-lookup-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -793,8 +793,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-documentation-lookup-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/documentation-lookup/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-documentation-lookup",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-documentation-lookup",
+    "install_name": "documentation-lookup-omero-docker-extended",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-omero-docker-extended",
     "name": "documentation-lookup",
     "name_conflict_group": "documentation-lookup",
     "selected_ref": "default-branch HEAD",
@@ -806,7 +806,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-env-contract-reviewer/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/env-contract-reviewer/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-env-contract-reviewer-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -819,8 +819,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-env-contract-reviewer-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/env-contract-reviewer/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-env-contract-reviewer",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-env-contract-reviewer",
+    "install_name": "env-contract-reviewer",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/env-contract-reviewer",
     "name": "env-contract-reviewer",
     "name_conflict_group": null,
     "selected_ref": "default-branch HEAD",
@@ -832,7 +832,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-frontend-preview/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/frontend-preview/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-frontend-preview-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -845,8 +845,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-frontend-preview-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/frontend-preview/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-frontend-preview",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-frontend-preview",
+    "install_name": "frontend-preview",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/frontend-preview",
     "name": "frontend-preview",
     "name_conflict_group": null,
     "selected_ref": "default-branch HEAD",
@@ -858,7 +858,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-omero-runtime-verifier/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/omero-runtime-verifier/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-omero-runtime-verifier-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -871,8 +871,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-omero-runtime-verifier-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/omero-runtime-verifier/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-omero-runtime-verifier",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-omero-runtime-verifier",
+    "install_name": "omero-runtime-verifier",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/omero-runtime-verifier",
     "name": "omero-runtime-verifier",
     "name_conflict_group": null,
     "selected_ref": "default-branch HEAD",
@@ -884,7 +884,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-plugin-regression-triager/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/plugin-regression-triager/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-plugin-regression-triager-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -897,8 +897,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-plugin-regression-triager-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/plugin-regression-triager/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-plugin-regression-triager",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-plugin-regression-triager",
+    "install_name": "plugin-regression-triager",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/plugin-regression-triager",
     "name": "plugin-regression-triager",
     "name_conflict_group": null,
     "selected_ref": "default-branch HEAD",
@@ -910,7 +910,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-postgres-patterns/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/postgres-patterns-omero-docker-extended/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-postgres-patterns-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -923,8 +923,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-postgres-patterns-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/postgres-patterns/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-postgres-patterns",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-postgres-patterns",
+    "install_name": "postgres-patterns-omero-docker-extended",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/postgres-patterns-omero-docker-extended",
     "name": "postgres-patterns",
     "name_conflict_group": "postgres-patterns",
     "selected_ref": "default-branch HEAD",
@@ -936,7 +936,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-python-patterns/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/python-patterns-omero-docker-extended/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-python-patterns-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -949,8 +949,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-python-patterns-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/python-patterns/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-python-patterns",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-python-patterns",
+    "install_name": "python-patterns-omero-docker-extended",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/python-patterns-omero-docker-extended",
     "name": "python-patterns",
     "name_conflict_group": "python-patterns",
     "selected_ref": "default-branch HEAD",
@@ -962,7 +962,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-python-testing/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/python-testing-omero-docker-extended/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-python-testing-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -975,8 +975,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-python-testing-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/python-testing/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-python-testing",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-python-testing",
+    "install_name": "python-testing-omero-docker-extended",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/python-testing-omero-docker-extended",
     "name": "python-testing",
     "name_conflict_group": "python-testing",
     "selected_ref": "default-branch HEAD",
@@ -988,7 +988,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-search-first/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/search-first-omero-docker-extended/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-search-first-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1001,8 +1001,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-search-first-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/search-first/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-search-first",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-search-first",
+    "install_name": "search-first-omero-docker-extended",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/search-first-omero-docker-extended",
     "name": "search-first",
     "name_conflict_group": "search-first",
     "selected_ref": "default-branch HEAD",
@@ -1014,7 +1014,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-security-finding-triager/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/security-finding-triager/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-security-finding-triager-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1027,8 +1027,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-security-finding-triager-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/security-finding-triager/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-security-finding-triager",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-security-finding-triager",
+    "install_name": "security-finding-triager",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/security-finding-triager",
     "name": "security-finding-triager",
     "name_conflict_group": null,
     "selected_ref": "default-branch HEAD",
@@ -1040,7 +1040,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-security-review/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/security-review-omero-docker-extended/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-security-review-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1053,8 +1053,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-security-review-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/security-review/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-security-review",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-security-review",
+    "install_name": "security-review-omero-docker-extended",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/security-review-omero-docker-extended",
     "name": "security-review",
     "name_conflict_group": "security-review",
     "selected_ref": "default-branch HEAD",
@@ -1066,7 +1066,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-site-extract/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/site-extract-omero-docker-extended/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-site-extract-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1079,8 +1079,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-site-extract-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/site-extract/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-site-extract",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-site-extract",
+    "install_name": "site-extract-omero-docker-extended",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/site-extract-omero-docker-extended",
     "name": "site-extract",
     "name_conflict_group": "site-extract",
     "selected_ref": "default-branch HEAD",
@@ -1092,7 +1092,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-source-audit/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/source-audit-omero-docker-extended/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-source-audit-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1105,8 +1105,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-source-audit-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/source-audit/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-source-audit",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-source-audit",
+    "install_name": "source-audit-omero-docker-extended",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/source-audit-omero-docker-extended",
     "name": "source-audit",
     "name_conflict_group": "source-audit",
     "selected_ref": "default-branch HEAD",
@@ -1118,7 +1118,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-tdd-workflow/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/tdd-workflow-omero-docker-extended/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-tdd-workflow-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1131,8 +1131,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-tdd-workflow-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/tdd-workflow/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-tdd-workflow",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-tdd-workflow",
+    "install_name": "tdd-workflow-omero-docker-extended",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/tdd-workflow-omero-docker-extended",
     "name": "tdd-workflow",
     "name_conflict_group": "tdd-workflow",
     "selected_ref": "default-branch HEAD",
@@ -1144,7 +1144,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-verification-loop/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/verification-loop-omero-docker-extended/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-verification-loop-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1157,8 +1157,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-verification-loop-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/verification-loop/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-verification-loop",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-verification-loop",
+    "install_name": "verification-loop-omero-docker-extended",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/verification-loop-omero-docker-extended",
     "name": "verification-loop",
     "name_conflict_group": "verification-loop",
     "selected_ref": "default-branch HEAD",
@@ -1170,7 +1170,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-web-discovery/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/web-discovery-omero-docker-extended/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-web-discovery-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1183,8 +1183,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-web-discovery-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/web-discovery/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-agents-skills-web-discovery",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-web-discovery",
+    "install_name": "web-discovery-omero-docker-extended",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/web-discovery-omero-docker-extended",
     "name": "web-discovery",
     "name_conflict_group": "web-discovery",
     "selected_ref": "default-branch HEAD",
@@ -1196,7 +1196,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-caveman-v1-6-0-skills-caveman/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/caveman-third-party-caveman-v1-6-0-caveman/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-third-party-caveman-v1-6-0-skills-caveman-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1209,8 +1209,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-caveman-v1-6-0-skills-caveman-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/caveman-v1.6.0/skills/caveman/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-third-party-caveman-v1-6-0-skills-caveman",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-caveman-v1-6-0-skills-caveman",
+    "install_name": "caveman-third-party-caveman-v1-6-0-caveman",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/caveman-third-party-caveman-v1-6-0-caveman",
     "name": "caveman",
     "name_conflict_group": "caveman",
     "selected_ref": "default-branch HEAD",
@@ -1222,7 +1222,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-ai-regression-testing/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/ai-regression-testing-third-party-ecc-v1-10-0-ai-regression-testing/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-ai-regression-testing-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1235,8 +1235,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-ai-regression-testing-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/ai-regression-testing/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-ai-regression-testing",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-ai-regression-testing",
+    "install_name": "ai-regression-testing-third-party-ecc-v1-10-0-ai-regression-testing",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/ai-regression-testing-third-party-ecc-v1-10-0-ai-regression-testing",
     "name": "ai-regression-testing",
     "name_conflict_group": "ai-regression-testing",
     "selected_ref": "default-branch HEAD",
@@ -1248,7 +1248,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-context-budget/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/context-budget-third-party-ecc-v1-10-0-context-budget/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-context-budget-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1261,8 +1261,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-context-budget-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/context-budget/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-context-budget",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-context-budget",
+    "install_name": "context-budget-third-party-ecc-v1-10-0-context-budget",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/context-budget-third-party-ecc-v1-10-0-context-budget",
     "name": "context-budget",
     "name_conflict_group": "context-budget",
     "selected_ref": "default-branch HEAD",
@@ -1274,7 +1274,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-deployment-patterns/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/deployment-patterns-third-party-ecc-v1-10-0-deployment-patterns/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-deployment-patterns-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1287,8 +1287,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-deployment-patterns-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/deployment-patterns/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-deployment-patterns",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-deployment-patterns",
+    "install_name": "deployment-patterns-third-party-ecc-v1-10-0-deployment-patterns",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/deployment-patterns-third-party-ecc-v1-10-0-deployment-patterns",
     "name": "deployment-patterns",
     "name_conflict_group": "deployment-patterns",
     "selected_ref": "default-branch HEAD",
@@ -1300,7 +1300,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-patterns/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/django-patterns-third-party-ecc-v1-10-0-django-patterns/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-patterns-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1313,8 +1313,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-patterns-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/django-patterns/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-patterns",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-patterns",
+    "install_name": "django-patterns-third-party-ecc-v1-10-0-django-patterns",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/django-patterns-third-party-ecc-v1-10-0-django-patterns",
     "name": "django-patterns",
     "name_conflict_group": "django-patterns",
     "selected_ref": "default-branch HEAD",
@@ -1326,7 +1326,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-security/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/django-security-third-party-ecc-v1-10-0-django-security/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-security-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1339,8 +1339,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-security-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/django-security/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-security",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-security",
+    "install_name": "django-security-third-party-ecc-v1-10-0-django-security",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/django-security-third-party-ecc-v1-10-0-django-security",
     "name": "django-security",
     "name_conflict_group": "django-security",
     "selected_ref": "default-branch HEAD",
@@ -1352,7 +1352,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-verification/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/django-verification-third-party-ecc-v1-10-0-django-verification/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-verification-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1365,8 +1365,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-verification-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/django-verification/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-verification",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-verification",
+    "install_name": "django-verification-third-party-ecc-v1-10-0-django-verification",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/django-verification-third-party-ecc-v1-10-0-django-verification",
     "name": "django-verification",
     "name_conflict_group": "django-verification",
     "selected_ref": "default-branch HEAD",
@@ -1378,7 +1378,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-docker-patterns/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/docker-patterns-third-party-ecc-v1-10-0-docker-patterns/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-docker-patterns-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1391,8 +1391,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-docker-patterns-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/docker-patterns/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-docker-patterns",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-docker-patterns",
+    "install_name": "docker-patterns-third-party-ecc-v1-10-0-docker-patterns",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/docker-patterns-third-party-ecc-v1-10-0-docker-patterns",
     "name": "docker-patterns",
     "name_conflict_group": "docker-patterns",
     "selected_ref": "default-branch HEAD",
@@ -1404,7 +1404,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-documentation-lookup/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-third-party-ecc-v1-10-0-documentation-lookup/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-documentation-lookup-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1417,8 +1417,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-documentation-lookup-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/documentation-lookup/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-documentation-lookup",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-documentation-lookup",
+    "install_name": "documentation-lookup-third-party-ecc-v1-10-0-documentation-lookup",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/documentation-lookup-third-party-ecc-v1-10-0-documentation-lookup",
     "name": "documentation-lookup",
     "name_conflict_group": "documentation-lookup",
     "selected_ref": "default-branch HEAD",
@@ -1430,7 +1430,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-postgres-patterns/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/postgres-patterns-third-party-ecc-v1-10-0-postgres-patterns/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-postgres-patterns-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1443,8 +1443,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-postgres-patterns-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/postgres-patterns/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-postgres-patterns",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-postgres-patterns",
+    "install_name": "postgres-patterns-third-party-ecc-v1-10-0-postgres-patterns",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/postgres-patterns-third-party-ecc-v1-10-0-postgres-patterns",
     "name": "postgres-patterns",
     "name_conflict_group": "postgres-patterns",
     "selected_ref": "default-branch HEAD",
@@ -1456,7 +1456,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-patterns/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/python-patterns-third-party-ecc-v1-10-0-python-patterns/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-patterns-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1469,8 +1469,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-patterns-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/python-patterns/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-patterns",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-patterns",
+    "install_name": "python-patterns-third-party-ecc-v1-10-0-python-patterns",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/python-patterns-third-party-ecc-v1-10-0-python-patterns",
     "name": "python-patterns",
     "name_conflict_group": "python-patterns",
     "selected_ref": "default-branch HEAD",
@@ -1482,7 +1482,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-testing/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/python-testing-third-party-ecc-v1-10-0-python-testing/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-testing-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1495,8 +1495,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-testing-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/python-testing/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-testing",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-testing",
+    "install_name": "python-testing-third-party-ecc-v1-10-0-python-testing",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/python-testing-third-party-ecc-v1-10-0-python-testing",
     "name": "python-testing",
     "name_conflict_group": "python-testing",
     "selected_ref": "default-branch HEAD",
@@ -1508,7 +1508,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-search-first/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/search-first-third-party-ecc-v1-10-0-search-first/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-search-first-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1521,8 +1521,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-search-first-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/search-first/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-search-first",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-search-first",
+    "install_name": "search-first-third-party-ecc-v1-10-0-search-first",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/search-first-third-party-ecc-v1-10-0-search-first",
     "name": "search-first",
     "name_conflict_group": "search-first",
     "selected_ref": "default-branch HEAD",
@@ -1534,7 +1534,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-security-review/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/security-review-third-party-ecc-v1-10-0-security-review/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-security-review-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1547,8 +1547,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-security-review-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/security-review/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-security-review",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-security-review",
+    "install_name": "security-review-third-party-ecc-v1-10-0-security-review",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/security-review-third-party-ecc-v1-10-0-security-review",
     "name": "security-review",
     "name_conflict_group": "security-review",
     "selected_ref": "default-branch HEAD",
@@ -1560,7 +1560,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/tdd-workflow-third-party-ecc-v1-10-0-tdd-workflow/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1573,8 +1573,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/tdd-workflow/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow",
+    "install_name": "tdd-workflow-third-party-ecc-v1-10-0-tdd-workflow",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/tdd-workflow-third-party-ecc-v1-10-0-tdd-workflow",
     "name": "tdd-workflow",
     "name_conflict_group": "tdd-workflow",
     "selected_ref": "default-branch HEAD",
@@ -1586,7 +1586,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-verification-loop/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/verification-loop-third-party-ecc-v1-10-0-verification-loop/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-verification-loop-skill-md",
       "omero-django-docker-and-lab-infrastructure-local-omero-compose-workflows",
@@ -1599,8 +1599,8 @@
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-verification-loop-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/verification-loop/SKILL.md",
-    "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-verification-loop",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-verification-loop",
+    "install_name": "verification-loop-third-party-ecc-v1-10-0-verification-loop",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/verification-loop-third-party-ecc-v1-10-0-verification-loop",
     "name": "verification-loop",
     "name_conflict_group": "verification-loop",
     "selected_ref": "default-branch HEAD",
@@ -1612,7 +1612,7 @@
     "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-ai-regression-testing/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/ai-regression-testing-ome-zarr-c/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-ome-zarr-c-agents-skills-ai-regression-testing-skill-md",
       "science-research-and-data-analysis-cellxgene-census",
@@ -1625,8 +1625,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-ai-regression-testing-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/ai-regression-testing/SKILL.md",
-    "install_name": "strmt7-ome-zarr-c-agents-skills-ai-regression-testing",
-    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-ai-regression-testing",
+    "install_name": "ai-regression-testing-ome-zarr-c",
+    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/ai-regression-testing-ome-zarr-c",
     "name": "ai-regression-testing",
     "name_conflict_group": "ai-regression-testing",
     "selected_ref": "default-branch HEAD",
@@ -1638,7 +1638,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-benchmark-first/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/benchmark-first/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-ome-zarr-c-agents-skills-benchmark-first-skill-md",
       "science-research-and-data-analysis-cellxgene-census",
@@ -1651,8 +1651,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-benchmark-first-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/benchmark-first/SKILL.md",
-    "install_name": "strmt7-ome-zarr-c-agents-skills-benchmark-first",
-    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-benchmark-first",
+    "install_name": "benchmark-first",
+    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/benchmark-first",
     "name": "benchmark-first",
     "name_conflict_group": null,
     "selected_ref": "default-branch HEAD",
@@ -1664,7 +1664,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-browser-fallback/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/browser-fallback-ome-zarr-c/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-ome-zarr-c-agents-skills-browser-fallback-skill-md",
       "science-research-and-data-analysis-cellxgene-census",
@@ -1677,8 +1677,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-browser-fallback-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/browser-fallback/SKILL.md",
-    "install_name": "strmt7-ome-zarr-c-agents-skills-browser-fallback",
-    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-browser-fallback",
+    "install_name": "browser-fallback-ome-zarr-c",
+    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/browser-fallback-ome-zarr-c",
     "name": "browser-fallback",
     "name_conflict_group": "browser-fallback",
     "selected_ref": "default-branch HEAD",
@@ -1690,7 +1690,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-compliance-and-rate-limit/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/compliance-and-rate-limit-ome-zarr-c/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-ome-zarr-c-agents-skills-compliance-and-rate-limit-skill-md",
       "science-research-and-data-analysis-cellxgene-census",
@@ -1703,8 +1703,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-compliance-and-rate-limit-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/compliance-and-rate-limit/SKILL.md",
-    "install_name": "strmt7-ome-zarr-c-agents-skills-compliance-and-rate-limit",
-    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-compliance-and-rate-limit",
+    "install_name": "compliance-and-rate-limit-ome-zarr-c",
+    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/compliance-and-rate-limit-ome-zarr-c",
     "name": "compliance-and-rate-limit",
     "name_conflict_group": "compliance-and-rate-limit",
     "selected_ref": "default-branch HEAD",
@@ -1716,7 +1716,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-context-budget/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/context-budget-ome-zarr-c/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-ome-zarr-c-agents-skills-context-budget-skill-md",
       "science-research-and-data-analysis-cellxgene-census",
@@ -1729,8 +1729,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-context-budget-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/context-budget/SKILL.md",
-    "install_name": "strmt7-ome-zarr-c-agents-skills-context-budget",
-    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-context-budget",
+    "install_name": "context-budget-ome-zarr-c",
+    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/context-budget-ome-zarr-c",
     "name": "context-budget",
     "name_conflict_group": "context-budget",
     "selected_ref": "default-branch HEAD",
@@ -1742,7 +1742,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-cpp-parity-porting/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/cpp-parity-porting/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-ome-zarr-c-agents-skills-cpp-parity-porting-skill-md",
       "science-research-and-data-analysis-cellxgene-census",
@@ -1755,8 +1755,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-cpp-parity-porting-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/cpp-parity-porting/SKILL.md",
-    "install_name": "strmt7-ome-zarr-c-agents-skills-cpp-parity-porting",
-    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-cpp-parity-porting",
+    "install_name": "cpp-parity-porting",
+    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/cpp-parity-porting",
     "name": "cpp-parity-porting",
     "name_conflict_group": null,
     "selected_ref": "default-branch HEAD",
@@ -1768,7 +1768,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-cpp-performance-optimization/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/cpp-performance-optimization/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-ome-zarr-c-agents-skills-cpp-performance-optimization-skill-md",
       "science-research-and-data-analysis-cellxgene-census",
@@ -1781,8 +1781,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-cpp-performance-optimization-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/cpp-performance-optimization/SKILL.md",
-    "install_name": "strmt7-ome-zarr-c-agents-skills-cpp-performance-optimization",
-    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-cpp-performance-optimization",
+    "install_name": "cpp-performance-optimization",
+    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/cpp-performance-optimization",
     "name": "cpp-performance-optimization",
     "name_conflict_group": null,
     "selected_ref": "default-branch HEAD",
@@ -1794,7 +1794,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-immutable-parity-proof/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/immutable-parity-proof/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-ome-zarr-c-agents-skills-immutable-parity-proof-skill-md",
       "science-research-and-data-analysis-cellxgene-census",
@@ -1807,8 +1807,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-immutable-parity-proof-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/immutable-parity-proof/SKILL.md",
-    "install_name": "strmt7-ome-zarr-c-agents-skills-immutable-parity-proof",
-    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-immutable-parity-proof",
+    "install_name": "immutable-parity-proof",
+    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/immutable-parity-proof",
     "name": "immutable-parity-proof",
     "name_conflict_group": null,
     "selected_ref": "default-branch HEAD",
@@ -1820,7 +1820,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-pybind11-runtime-parity/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/pybind11-runtime-parity/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-ome-zarr-c-agents-skills-pybind11-runtime-parity-skill-md",
       "science-research-and-data-analysis-cellxgene-census",
@@ -1833,8 +1833,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-pybind11-runtime-parity-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/pybind11-runtime-parity/SKILL.md",
-    "install_name": "strmt7-ome-zarr-c-agents-skills-pybind11-runtime-parity",
-    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-pybind11-runtime-parity",
+    "install_name": "pybind11-runtime-parity",
+    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/pybind11-runtime-parity",
     "name": "pybind11-runtime-parity",
     "name_conflict_group": null,
     "selected_ref": "default-branch HEAD",
@@ -1846,7 +1846,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-python-testing/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/python-testing-ome-zarr-c/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-ome-zarr-c-agents-skills-python-testing-skill-md",
       "science-research-and-data-analysis-cellxgene-census",
@@ -1859,8 +1859,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-python-testing-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/python-testing/SKILL.md",
-    "install_name": "strmt7-ome-zarr-c-agents-skills-python-testing",
-    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-python-testing",
+    "install_name": "python-testing-ome-zarr-c",
+    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/python-testing-ome-zarr-c",
     "name": "python-testing",
     "name_conflict_group": "python-testing",
     "selected_ref": "default-branch HEAD",
@@ -1872,7 +1872,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-search-first/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/search-first-ome-zarr-c/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-ome-zarr-c-agents-skills-search-first-skill-md",
       "science-research-and-data-analysis-cellxgene-census",
@@ -1885,8 +1885,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-search-first-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/search-first/SKILL.md",
-    "install_name": "strmt7-ome-zarr-c-agents-skills-search-first",
-    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-search-first",
+    "install_name": "search-first-ome-zarr-c",
+    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/search-first-ome-zarr-c",
     "name": "search-first",
     "name_conflict_group": "search-first",
     "selected_ref": "default-branch HEAD",
@@ -1898,7 +1898,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-site-extract/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/site-extract-ome-zarr-c/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-ome-zarr-c-agents-skills-site-extract-skill-md",
       "science-research-and-data-analysis-cellxgene-census",
@@ -1911,8 +1911,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-site-extract-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/site-extract/SKILL.md",
-    "install_name": "strmt7-ome-zarr-c-agents-skills-site-extract",
-    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-site-extract",
+    "install_name": "site-extract-ome-zarr-c",
+    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/site-extract-ome-zarr-c",
     "name": "site-extract",
     "name_conflict_group": "site-extract",
     "selected_ref": "default-branch HEAD",
@@ -1924,7 +1924,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-source-audit/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/source-audit-ome-zarr-c/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-ome-zarr-c-agents-skills-source-audit-skill-md",
       "science-research-and-data-analysis-cellxgene-census",
@@ -1937,8 +1937,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-source-audit-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/source-audit/SKILL.md",
-    "install_name": "strmt7-ome-zarr-c-agents-skills-source-audit",
-    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-source-audit",
+    "install_name": "source-audit-ome-zarr-c",
+    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/source-audit-ome-zarr-c",
     "name": "source-audit",
     "name_conflict_group": "source-audit",
     "selected_ref": "default-branch HEAD",
@@ -1950,7 +1950,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-tdd-workflow/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/tdd-workflow-ome-zarr-c/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-ome-zarr-c-agents-skills-tdd-workflow-skill-md",
       "science-research-and-data-analysis-cellxgene-census",
@@ -1963,8 +1963,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-tdd-workflow-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/tdd-workflow/SKILL.md",
-    "install_name": "strmt7-ome-zarr-c-agents-skills-tdd-workflow",
-    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-tdd-workflow",
+    "install_name": "tdd-workflow-ome-zarr-c",
+    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/tdd-workflow-ome-zarr-c",
     "name": "tdd-workflow",
     "name_conflict_group": "tdd-workflow",
     "selected_ref": "default-branch HEAD",
@@ -1976,7 +1976,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-verification-loop/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/verification-loop-ome-zarr-c/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-ome-zarr-c-agents-skills-verification-loop-skill-md",
       "science-research-and-data-analysis-cellxgene-census",
@@ -1989,8 +1989,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-verification-loop-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/verification-loop/SKILL.md",
-    "install_name": "strmt7-ome-zarr-c-agents-skills-verification-loop",
-    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-verification-loop",
+    "install_name": "verification-loop-ome-zarr-c",
+    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/verification-loop-ome-zarr-c",
     "name": "verification-loop",
     "name_conflict_group": "verification-loop",
     "selected_ref": "default-branch HEAD",
@@ -2002,7 +2002,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-web-discovery/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/web-discovery-ome-zarr-c/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-ome-zarr-c-agents-skills-web-discovery-skill-md",
       "science-research-and-data-analysis-cellxgene-census",
@@ -2015,8 +2015,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-web-discovery-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/web-discovery/SKILL.md",
-    "install_name": "strmt7-ome-zarr-c-agents-skills-web-discovery",
-    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-web-discovery",
+    "install_name": "web-discovery-ome-zarr-c",
+    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/web-discovery-ome-zarr-c",
     "name": "web-discovery",
     "name_conflict_group": "web-discovery",
     "selected_ref": "default-branch HEAD",
@@ -2028,7 +2028,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-workflow-supply-chain-maintenance/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/workflow-supply-chain-maintenance/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-ome-zarr-c-agents-skills-workflow-supply-chain-maintenance-skill-md",
       "science-research-and-data-analysis-cellxgene-census",
@@ -2041,8 +2041,8 @@
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-workflow-supply-chain-maintenance-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/workflow-supply-chain-maintenance/SKILL.md",
-    "install_name": "strmt7-ome-zarr-c-agents-skills-workflow-supply-chain-maintenance",
-    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-workflow-supply-chain-maintenance",
+    "install_name": "workflow-supply-chain-maintenance",
+    "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/workflow-supply-chain-maintenance",
     "name": "workflow-supply-chain-maintenance",
     "name_conflict_group": null,
     "selected_ref": "default-branch HEAD",
@@ -2054,7 +2054,7 @@
     "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/testing-qa-benchmarking/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/testing-qa-benchmarking/selected-project-reference/verification-loop-simple-ai-bitcoin-trading-binance/SKILL.md",
     "benchmark_scenarios": [
       "skill-proof-strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md",
       "testing-qa-and-benchmarking-swe-bench-lite",
@@ -2067,8 +2067,8 @@
     "has_required_frontmatter": false,
     "id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md",
     "immutable_source_url": "https://github.com/strmt7/simple_ai_bitcoin_trading_binance/blob/451d77df90621e3b666581d9835d246fb7147349/.agents/skills/verification-loop/SKILL.md",
-    "install_name": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop",
-    "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop",
+    "install_name": "verification-loop-simple-ai-bitcoin-trading-binance",
+    "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/selected-project-reference/verification-loop-simple-ai-bitcoin-trading-binance",
     "name": "verification-loop",
     "name_conflict_group": "verification-loop",
     "selected_ref": "default-branch HEAD",

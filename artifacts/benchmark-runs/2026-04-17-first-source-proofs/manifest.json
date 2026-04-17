@@ -123,7 +123,7 @@
     }
   ],
   "batch_name": "2026-04-17-first-source-proofs",
-  "catalog_commit": "7512fbf179925eeb015e320e35004d16a95050e8",
-  "generated_at_utc": "2026-04-17T19:10:10Z",
+  "catalog_commit": "515e8b9056ae5cf4a1d8ee3f5d64d1f3c729b375",
+  "generated_at_utc": "2026-04-17T21:39:52Z",
   "selection_policy": "first 10 distinct categories in catalog order"
 }
