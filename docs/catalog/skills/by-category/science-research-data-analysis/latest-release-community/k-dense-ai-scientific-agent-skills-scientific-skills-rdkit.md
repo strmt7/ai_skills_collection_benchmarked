@@ -1,0 +1,37 @@
+# rdkit
+
+Category: Science, research & data analysis
+
+Mirrored skill: `included/skills/by-category/science-research-data-analysis/latest-release-community/k-dense-ai-scientific-agent-skills-scientific-skills-rdkit`
+
+Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/latest-release-community/k-dense-ai-scientific-agent-skills-scientific-skills-rdkit/SKILL.md`
+
+Source: [K-Dense-AI/scientific-agent-skills `scientific-skills/rdkit/SKILL.md`](https://github.com/K-Dense-AI/scientific-agent-skills/blob/eb20fb0dcb0b1dadaa3db2737188f0755bbc4770/scientific-skills/rdkit/SKILL.md)
+
+Selected ref: `v2.37.1`; commit `eb20fb0dcb0b`
+
+## Use
+
+Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+
+## Scope
+
+Source description: Cheminformatics toolkit for fine-grained molecular control. SMILES/SDF parsing, descriptors (MW, LogP, TPSA), fingerprints, substructure search, 2D/3D generation, similarity, reactions. For standard workflows with simpler interface, use datamol (wrapper around RDKit). Use rdkit for advanced control, custom sanitization, specialized algorithms.
+
+## Verification
+
+Static benchmark results are reported in `docs/benchmark-results.md`. Runtime claims require a validated artifact.
+
+Assigned scenarios:
+
+- `skill-proof-k-dense-ai-scientific-agent-skills-scientific-skills-rdkit-skill-md`: Use the immutable source file https://github.com/K-Dense-AI/scientific-agent-skills/blob/eb20fb0dcb0b1dadaa3db2737188f0755bbc4770/scientific-skills/rdkit/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+- `science-research-and-data-analysis-cellxgene-census`: Query and analyze single-cell expression data.
+- `science-research-and-data-analysis-chembl`: Retrieve molecular bioactivity records.
+- `science-research-and-data-analysis-ome-ngff-samples`: Read and validate multiscale microscopy data.
+
+Improvement notes:
+
+- Keep provenance and selected ref visible so agents can verify the source before use.
+- Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
+- Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings.
+- Move long background material into references/ to keep SKILL.md concise.
