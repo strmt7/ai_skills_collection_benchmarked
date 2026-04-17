@@ -5,7 +5,15 @@
     {
       "artifact_kind": "provenance_check",
       "artifact_path": "artifacts/benchmark-runs/2026-04-17-first-source-proofs/akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator-skill-md/skill-proof-akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator-skill-md/artifact.json",
+      "benchmark_verdict": null,
       "catalog_commit": "7512fbf179925eeb015e320e35004d16a95050e8",
+      "metrics": {
+        "activation_condition_count": 1,
+        "observed_heading_count": 8,
+        "proof_evidence_count": 3,
+        "source_line_count": 244,
+        "workflow_step_count": 4
+      },
       "runner": {
         "batch_name": "2026-04-17-first-source-proofs",
         "model_or_runtime": "local-deterministic-source-proof-runner",
@@ -13,6 +21,7 @@
         "tool": "tools/create_source_proof_batch.py"
       },
       "scenario_id": "skill-proof-akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator-skill-md",
+      "score_percent": null,
       "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator-skill-md",
       "source_path": "devops-skills-plugin/skills/azure-pipelines-generator/SKILL.md",
       "source_repo": "akin-ozer/cc-devops-skills",
@@ -27,7 +36,15 @@
     {
       "artifact_kind": "provenance_check",
       "artifact_path": "artifacts/benchmark-runs/2026-04-17-first-source-proofs/bria-ai-bria-skill-skills-bria-ai-skill-md/skill-proof-bria-ai-bria-skill-skills-bria-ai-skill-md/artifact.json",
+      "benchmark_verdict": null,
       "catalog_commit": "7512fbf179925eeb015e320e35004d16a95050e8",
+      "metrics": {
+        "activation_condition_count": 1,
+        "observed_heading_count": 8,
+        "proof_evidence_count": 3,
+        "source_line_count": 247,
+        "workflow_step_count": 4
+      },
       "runner": {
         "batch_name": "2026-04-17-first-source-proofs",
         "model_or_runtime": "local-deterministic-source-proof-runner",
@@ -35,6 +52,7 @@
         "tool": "tools/create_source_proof_batch.py"
       },
       "scenario_id": "skill-proof-bria-ai-bria-skill-skills-bria-ai-skill-md",
+      "score_percent": null,
       "skill_id": "bria-ai-bria-skill-skills-bria-ai-skill-md",
       "source_path": "skills/bria-ai/SKILL.md",
       "source_repo": "Bria-AI/bria-skill",
@@ -49,7 +67,15 @@
     {
       "artifact_kind": "provenance_check",
       "artifact_path": "artifacts/benchmark-runs/2026-04-17-first-source-proofs/strmt7-ome-zarr-c-agents-skills-ai-regression-testing-skill-md/skill-proof-strmt7-ome-zarr-c-agents-skills-ai-regression-testing-skill-md/artifact.json",
+      "benchmark_verdict": null,
       "catalog_commit": "7512fbf179925eeb015e320e35004d16a95050e8",
+      "metrics": {
+        "activation_condition_count": 1,
+        "observed_heading_count": 2,
+        "proof_evidence_count": 3,
+        "source_line_count": 18,
+        "workflow_step_count": 4
+      },
       "runner": {
         "batch_name": "2026-04-17-first-source-proofs",
         "model_or_runtime": "local-deterministic-source-proof-runner",
@@ -57,6 +83,7 @@
         "tool": "tools/create_source_proof_batch.py"
       },
       "scenario_id": "skill-proof-strmt7-ome-zarr-c-agents-skills-ai-regression-testing-skill-md",
+      "score_percent": null,
       "skill_id": "strmt7-ome-zarr-c-agents-skills-ai-regression-testing-skill-md",
       "source_path": ".agents/skills/ai-regression-testing/SKILL.md",
       "source_repo": "strmt7/ome-zarr-C",
@@ -71,7 +98,15 @@
     {
       "artifact_kind": "provenance_check",
       "artifact_path": "artifacts/benchmark-runs/2026-04-17-first-source-proofs/strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md/skill-proof-strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md/artifact.json",
+      "benchmark_verdict": null,
       "catalog_commit": "7512fbf179925eeb015e320e35004d16a95050e8",
+      "metrics": {
+        "activation_condition_count": 1,
+        "observed_heading_count": 5,
+        "proof_evidence_count": 3,
+        "source_line_count": 58,
+        "workflow_step_count": 4
+      },
       "runner": {
         "batch_name": "2026-04-17-first-source-proofs",
         "model_or_runtime": "local-deterministic-source-proof-runner",
@@ -79,6 +114,7 @@
         "tool": "tools/create_source_proof_batch.py"
       },
       "scenario_id": "skill-proof-strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md",
+      "score_percent": null,
       "skill_id": "strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md",
       "source_path": ".agents/skills/android-visual-qa/SKILL.md",
       "source_repo": "strmt7/project_air_defense",
@@ -93,7 +129,15 @@
     {
       "artifact_kind": "provenance_check",
       "artifact_path": "artifacts/benchmark-runs/2026-04-17-first-source-proofs/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md/skill-proof-strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md/artifact.json",
+      "benchmark_verdict": null,
       "catalog_commit": "7512fbf179925eeb015e320e35004d16a95050e8",
+      "metrics": {
+        "activation_condition_count": 1,
+        "observed_heading_count": 5,
+        "proof_evidence_count": 3,
+        "source_line_count": 25,
+        "workflow_step_count": 4
+      },
       "runner": {
         "batch_name": "2026-04-17-first-source-proofs",
         "model_or_runtime": "local-deterministic-source-proof-runner",
@@ -101,6 +145,7 @@
         "tool": "tools/create_source_proof_batch.py"
       },
       "scenario_id": "skill-proof-strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md",
+      "score_percent": null,
       "skill_id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md",
       "source_path": ".agents/skills/context-budget/SKILL.md",
       "source_repo": "strmt7/simple_ai_bitcoin_trading_binance",
@@ -115,7 +160,15 @@
     {
       "artifact_kind": "provenance_check",
       "artifact_path": "artifacts/benchmark-runs/2026-04-17-first-source-proofs/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md/skill-proof-strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md/artifact.json",
+      "benchmark_verdict": null,
       "catalog_commit": "7512fbf179925eeb015e320e35004d16a95050e8",
+      "metrics": {
+        "activation_condition_count": 1,
+        "observed_heading_count": 4,
+        "proof_evidence_count": 3,
+        "source_line_count": 18,
+        "workflow_step_count": 4
+      },
       "runner": {
         "batch_name": "2026-04-17-first-source-proofs",
         "model_or_runtime": "local-deterministic-source-proof-runner",
@@ -123,6 +176,7 @@
         "tool": "tools/create_source_proof_batch.py"
       },
       "scenario_id": "skill-proof-strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md",
+      "score_percent": null,
       "skill_id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md",
       "source_path": ".agents/skills/verification-loop/SKILL.md",
       "source_repo": "strmt7/simple_ai_bitcoin_trading_binance",
@@ -137,7 +191,15 @@
     {
       "artifact_kind": "provenance_check",
       "artifact_path": "artifacts/benchmark-runs/2026-04-17-first-source-proofs/varnan-tech-opendirectory-packages-cli-skills-claude-md-generator-skill-md/skill-proof-varnan-tech-opendirectory-packages-cli-skills-claude-md-generator-skill-md/artifact.json",
+      "benchmark_verdict": null,
       "catalog_commit": "7512fbf179925eeb015e320e35004d16a95050e8",
+      "metrics": {
+        "activation_condition_count": 1,
+        "observed_heading_count": 8,
+        "proof_evidence_count": 3,
+        "source_line_count": 251,
+        "workflow_step_count": 4
+      },
       "runner": {
         "batch_name": "2026-04-17-first-source-proofs",
         "model_or_runtime": "local-deterministic-source-proof-runner",
@@ -145,6 +207,7 @@
         "tool": "tools/create_source_proof_batch.py"
       },
       "scenario_id": "skill-proof-varnan-tech-opendirectory-packages-cli-skills-claude-md-generator-skill-md",
+      "score_percent": null,
       "skill_id": "varnan-tech-opendirectory-packages-cli-skills-claude-md-generator-skill-md",
       "source_path": "packages/cli/skills/claude-md-generator/SKILL.md",
       "source_repo": "Varnan-Tech/opendirectory",
@@ -159,7 +222,15 @@
     {
       "artifact_kind": "provenance_check",
       "artifact_path": "artifacts/benchmark-runs/2026-04-17-first-source-proofs/varnan-tech-opendirectory-packages-cli-skills-kill-the-standup-skill-md/skill-proof-varnan-tech-opendirectory-packages-cli-skills-kill-the-standup-skill-md/artifact.json",
+      "benchmark_verdict": null,
       "catalog_commit": "7512fbf179925eeb015e320e35004d16a95050e8",
+      "metrics": {
+        "activation_condition_count": 1,
+        "observed_heading_count": 6,
+        "proof_evidence_count": 3,
+        "source_line_count": 168,
+        "workflow_step_count": 4
+      },
       "runner": {
         "batch_name": "2026-04-17-first-source-proofs",
         "model_or_runtime": "local-deterministic-source-proof-runner",
@@ -167,6 +238,7 @@
         "tool": "tools/create_source_proof_batch.py"
       },
       "scenario_id": "skill-proof-varnan-tech-opendirectory-packages-cli-skills-kill-the-standup-skill-md",
+      "score_percent": null,
       "skill_id": "varnan-tech-opendirectory-packages-cli-skills-kill-the-standup-skill-md",
       "source_path": "packages/cli/skills/kill-the-standup/SKILL.md",
       "source_repo": "Varnan-Tech/opendirectory",
@@ -181,7 +253,15 @@
     {
       "artifact_kind": "provenance_check",
       "artifact_path": "artifacts/benchmark-runs/2026-04-17-first-source-proofs/varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md/skill-proof-varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md/artifact.json",
+      "benchmark_verdict": null,
       "catalog_commit": "7512fbf179925eeb015e320e35004d16a95050e8",
+      "metrics": {
+        "activation_condition_count": 1,
+        "observed_heading_count": 8,
+        "proof_evidence_count": 3,
+        "source_line_count": 300,
+        "workflow_step_count": 4
+      },
       "runner": {
         "batch_name": "2026-04-17-first-source-proofs",
         "model_or_runtime": "local-deterministic-source-proof-runner",
@@ -189,6 +269,7 @@
         "tool": "tools/create_source_proof_batch.py"
       },
       "scenario_id": "skill-proof-varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md",
+      "score_percent": null,
       "skill_id": "varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md",
       "source_path": "packages/cli/skills/show-hn-writer/SKILL.md",
       "source_repo": "Varnan-Tech/opendirectory",
@@ -203,7 +284,15 @@
     {
       "artifact_kind": "provenance_check",
       "artifact_path": "artifacts/benchmark-runs/2026-04-17-first-source-proofs/zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing-skill-md/skill-proof-zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing-skill-md/artifact.json",
+      "benchmark_verdict": null,
       "catalog_commit": "7512fbf179925eeb015e320e35004d16a95050e8",
+      "metrics": {
+        "activation_condition_count": 1,
+        "observed_heading_count": 3,
+        "proof_evidence_count": 3,
+        "source_line_count": 25,
+        "workflow_step_count": 4
+      },
       "runner": {
         "batch_name": "2026-04-17-first-source-proofs",
         "model_or_runtime": "local-deterministic-source-proof-runner",
@@ -211,6 +300,7 @@
         "tool": "tools/create_source_proof_batch.py"
       },
       "scenario_id": "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing-skill-md",
+      "score_percent": null,
       "skill_id": "zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing-skill-md",
       "source_path": ".agents/skills/ai-regression-testing/SKILL.md",
       "source_repo": "ZMB-UZH/omero-docker-extended",
@@ -223,7 +313,318 @@
       }
     }
   ],
-  "runtime_artifacts": [],
+  "runtime_artifacts": [
+    {
+      "artifact_kind": "independent_benchmark",
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apimanagement-dotnet-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "catalog_commit": "8e3e1077c5dd0d16334f25cdddbc01e658b2f353",
+      "metrics": {
+        "benchmark_verdict": "failed",
+        "blocking_failure_count": 1,
+        "checks_passed": 9,
+        "checks_total": 10,
+        "dataset_tree_path_count": 573,
+        "missing_local_link_count": 1,
+        "score_percent": 90.0
+      },
+      "runner": {
+        "batch_name": "2026-04-17-independent-runtime-readiness-batch-01",
+        "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+        "timestamp_utc": "2026-04-17T20:35:46Z",
+        "tool": "tools/create_independent_runtime_batch.py"
+      },
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apimanagement-dotnet-skill-md",
+      "source_path": ".github/plugins/azure-sdk-dotnet/skills/azure-mgmt-apimanagement-dotnet/SKILL.md",
+      "source_repo": "microsoft/skills",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": []
+      }
+    },
+    {
+      "artifact_kind": "independent_benchmark",
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-ingestion-java-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "catalog_commit": "8e3e1077c5dd0d16334f25cdddbc01e658b2f353",
+      "metrics": {
+        "benchmark_verdict": "failed",
+        "blocking_failure_count": 1,
+        "checks_passed": 9,
+        "checks_total": 10,
+        "dataset_tree_path_count": 573,
+        "missing_local_link_count": 1,
+        "score_percent": 90.0
+      },
+      "runner": {
+        "batch_name": "2026-04-17-independent-runtime-readiness-batch-01",
+        "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+        "timestamp_utc": "2026-04-17T20:35:46Z",
+        "tool": "tools/create_independent_runtime_batch.py"
+      },
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-ingestion-java-skill-md",
+      "source_path": ".github/plugins/azure-sdk-java/skills/azure-monitor-ingestion-java/SKILL.md",
+      "source_repo": "microsoft/skills",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": []
+      }
+    },
+    {
+      "artifact_kind": "independent_benchmark",
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-sdk-python-skills-m365-agents-py-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "catalog_commit": "8e3e1077c5dd0d16334f25cdddbc01e658b2f353",
+      "metrics": {
+        "benchmark_verdict": "failed",
+        "blocking_failure_count": 1,
+        "checks_passed": 9,
+        "checks_total": 10,
+        "dataset_tree_path_count": 573,
+        "missing_local_link_count": 1,
+        "score_percent": 90.0
+      },
+      "runner": {
+        "batch_name": "2026-04-17-independent-runtime-readiness-batch-01",
+        "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+        "timestamp_utc": "2026-04-17T20:35:46Z",
+        "tool": "tools/create_independent_runtime_batch.py"
+      },
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-azure-sdk-python-skills-m365-agents-py-skill-md",
+      "source_path": ".github/plugins/azure-sdk-python/skills/m365-agents-py/SKILL.md",
+      "source_repo": "microsoft/skills",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": []
+      }
+    },
+    {
+      "artifact_kind": "independent_benchmark",
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-capacity-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "catalog_commit": "8e3e1077c5dd0d16334f25cdddbc01e658b2f353",
+      "metrics": {
+        "benchmark_verdict": "failed",
+        "blocking_failure_count": 1,
+        "checks_passed": 9,
+        "checks_total": 10,
+        "dataset_tree_path_count": 573,
+        "missing_local_link_count": 4,
+        "score_percent": 90.0
+      },
+      "runner": {
+        "batch_name": "2026-04-17-independent-runtime-readiness-batch-01",
+        "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+        "timestamp_utc": "2026-04-17T20:35:46Z",
+        "tool": "tools/create_independent_runtime_batch.py"
+      },
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-capacity-skill-md",
+      "source_path": ".github/plugins/azure-skills/skills/microsoft-foundry/models/deploy-model/capacity/SKILL.md",
+      "source_repo": "microsoft/skills",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": []
+      }
+    },
+    {
+      "artifact_kind": "independent_benchmark",
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-customize-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "catalog_commit": "8e3e1077c5dd0d16334f25cdddbc01e658b2f353",
+      "metrics": {
+        "benchmark_verdict": "failed",
+        "blocking_failure_count": 1,
+        "checks_passed": 9,
+        "checks_total": 10,
+        "dataset_tree_path_count": 573,
+        "missing_local_link_count": 1,
+        "score_percent": 90.0
+      },
+      "runner": {
+        "batch_name": "2026-04-17-independent-runtime-readiness-batch-01",
+        "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+        "timestamp_utc": "2026-04-17T20:35:46Z",
+        "tool": "tools/create_independent_runtime_batch.py"
+      },
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-customize-skill-md",
+      "source_path": ".github/plugins/azure-skills/skills/microsoft-foundry/models/deploy-model/customize/SKILL.md",
+      "source_repo": "microsoft/skills",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": []
+      }
+    },
+    {
+      "artifact_kind": "independent_benchmark",
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "catalog_commit": "8e3e1077c5dd0d16334f25cdddbc01e658b2f353",
+      "metrics": {
+        "benchmark_verdict": "failed",
+        "blocking_failure_count": 1,
+        "checks_passed": 9,
+        "checks_total": 10,
+        "dataset_tree_path_count": 573,
+        "missing_local_link_count": 1,
+        "score_percent": 90.0
+      },
+      "runner": {
+        "batch_name": "2026-04-17-independent-runtime-readiness-batch-01",
+        "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+        "timestamp_utc": "2026-04-17T20:35:46Z",
+        "tool": "tools/create_independent_runtime_batch.py"
+      },
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset-skill-md",
+      "source_path": ".github/plugins/azure-skills/skills/microsoft-foundry/models/deploy-model/preset/SKILL.md",
+      "source_repo": "microsoft/skills",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": []
+      }
+    },
+    {
+      "artifact_kind": "independent_benchmark",
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "catalog_commit": "8e3e1077c5dd0d16334f25cdddbc01e658b2f353",
+      "metrics": {
+        "benchmark_verdict": "failed",
+        "blocking_failure_count": 1,
+        "checks_passed": 9,
+        "checks_total": 10,
+        "dataset_tree_path_count": 573,
+        "missing_local_link_count": 4,
+        "score_percent": 90.0
+      },
+      "runner": {
+        "batch_name": "2026-04-17-independent-runtime-readiness-batch-01",
+        "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+        "timestamp_utc": "2026-04-17T20:35:46Z",
+        "tool": "tools/create_independent_runtime_batch.py"
+      },
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-skill-md",
+      "source_path": ".github/plugins/azure-skills/skills/microsoft-foundry/models/deploy-model/SKILL.md",
+      "source_repo": "microsoft/skills",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": []
+      }
+    },
+    {
+      "artifact_kind": "independent_benchmark",
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "catalog_commit": "8e3e1077c5dd0d16334f25cdddbc01e658b2f353",
+      "metrics": {
+        "benchmark_verdict": "failed",
+        "blocking_failure_count": 1,
+        "checks_passed": 9,
+        "checks_total": 10,
+        "dataset_tree_path_count": 573,
+        "missing_local_link_count": 1,
+        "score_percent": 90.0
+      },
+      "runner": {
+        "batch_name": "2026-04-17-independent-runtime-readiness-batch-01",
+        "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+        "timestamp_utc": "2026-04-17T20:35:46Z",
+        "tool": "tools/create_independent_runtime_batch.py"
+      },
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-skill-md",
+      "source_path": ".github/plugins/azure-skills/skills/microsoft-foundry/SKILL.md",
+      "source_repo": "microsoft/skills",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": []
+      }
+    },
+    {
+      "artifact_kind": "independent_benchmark",
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md/devops-cloud-and-operations-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "catalog_commit": "8e3e1077c5dd0d16334f25cdddbc01e658b2f353",
+      "metrics": {
+        "benchmark_verdict": "failed",
+        "blocking_failure_count": 1,
+        "checks_passed": 9,
+        "checks_total": 10,
+        "dataset_tree_path_count": 573,
+        "missing_local_link_count": 0,
+        "score_percent": 90.0
+      },
+      "runner": {
+        "batch_name": "2026-04-17-independent-runtime-readiness-batch-01",
+        "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+        "timestamp_utc": "2026-04-17T20:35:46Z",
+        "tool": "tools/create_independent_runtime_batch.py"
+      },
+      "scenario_id": "devops-cloud-and-operations-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md",
+      "source_path": ".agents/skills/context-budget/SKILL.md",
+      "source_repo": "strmt7/simple_ai_bitcoin_trading_binance",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": []
+      }
+    },
+    {
+      "artifact_kind": "independent_benchmark",
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md/testing-qa-and-benchmarking-swe-bench-lite/artifact.json",
+      "benchmark_verdict": "failed",
+      "catalog_commit": "8e3e1077c5dd0d16334f25cdddbc01e658b2f353",
+      "metrics": {
+        "benchmark_verdict": "failed",
+        "blocking_failure_count": 1,
+        "checks_passed": 9,
+        "checks_total": 10,
+        "dataset_tree_path_count": 1206,
+        "missing_local_link_count": 0,
+        "score_percent": 90.0
+      },
+      "runner": {
+        "batch_name": "2026-04-17-independent-runtime-readiness-batch-01",
+        "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+        "timestamp_utc": "2026-04-17T20:35:46Z",
+        "tool": "tools/create_independent_runtime_batch.py"
+      },
+      "scenario_id": "testing-qa-and-benchmarking-swe-bench-lite",
+      "score_percent": 90.0,
+      "skill_id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md",
+      "source_path": ".agents/skills/verification-loop/SKILL.md",
+      "source_repo": "strmt7/simple_ai_bitcoin_trading_binance",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": []
+      }
+    }
+  ],
   "skills": [
     {
       "agent_ready_path": "included/agent-ready/by-category/devops-cloud-operations/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget/SKILL.md",
@@ -252,8 +653,10 @@
         "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings.",
         "Add an executable validator or helper script so the workflow has objective checks."
       ],
-      "runtime_artifact_paths": [],
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifact_paths": [
+        "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md/devops-cloud-and-operations-kubernetes-examples/artifact.json"
+      ],
+      "runtime_artifacts_recorded": 1,
       "skill_id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md",
       "source_path": ".agents/skills/context-budget/SKILL.md",
       "source_repo": "strmt7/simple_ai_bitcoin_trading_binance",
@@ -3081,8 +3484,10 @@
         "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings.",
         "Add an executable validator or helper script so the workflow has objective checks."
       ],
-      "runtime_artifact_paths": [],
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifact_paths": [
+        "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md/testing-qa-and-benchmarking-swe-bench-lite/artifact.json"
+      ],
+      "runtime_artifacts_recorded": 1,
       "skill_id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md",
       "source_path": ".agents/skills/verification-loop/SKILL.md",
       "source_repo": "strmt7/simple_ai_bitcoin_trading_binance",
@@ -3835,8 +4240,10 @@
         "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.",
         "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings."
       ],
-      "runtime_artifact_paths": [],
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifact_paths": [
+        "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apimanagement-dotnet-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json"
+      ],
+      "runtime_artifacts_recorded": 1,
       "skill_id": "microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apimanagement-dotnet-skill-md",
       "source_path": ".github/plugins/azure-sdk-dotnet/skills/azure-mgmt-apimanagement-dotnet/SKILL.md",
       "source_repo": "microsoft/skills",
@@ -5203,8 +5610,10 @@
         "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.",
         "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings."
       ],
-      "runtime_artifact_paths": [],
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifact_paths": [
+        "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-ingestion-java-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json"
+      ],
+      "runtime_artifacts_recorded": 1,
       "skill_id": "microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-ingestion-java-skill-md",
       "source_path": ".github/plugins/azure-sdk-java/skills/azure-monitor-ingestion-java/SKILL.md",
       "source_repo": "microsoft/skills",
@@ -6861,8 +7270,10 @@
         "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.",
         "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings."
       ],
-      "runtime_artifact_paths": [],
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifact_paths": [
+        "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-sdk-python-skills-m365-agents-py-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json"
+      ],
+      "runtime_artifacts_recorded": 1,
       "skill_id": "microsoft-skills-github-plugins-azure-sdk-python-skills-m365-agents-py-skill-md",
       "source_path": ".github/plugins/azure-sdk-python/skills/m365-agents-py/SKILL.md",
       "source_repo": "microsoft/skills",
@@ -8843,8 +9254,10 @@
         "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.",
         "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings."
       ],
-      "runtime_artifact_paths": [],
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifact_paths": [
+        "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json"
+      ],
+      "runtime_artifacts_recorded": 1,
       "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-skill-md",
       "source_path": ".github/plugins/azure-skills/skills/microsoft-foundry/SKILL.md",
       "source_repo": "microsoft/skills",
@@ -8879,8 +9292,10 @@
         "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.",
         "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings."
       ],
-      "runtime_artifact_paths": [],
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifact_paths": [
+        "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json"
+      ],
+      "runtime_artifacts_recorded": 1,
       "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-skill-md",
       "source_path": ".github/plugins/azure-skills/skills/microsoft-foundry/models/deploy-model/SKILL.md",
       "source_repo": "microsoft/skills",
@@ -8915,8 +9330,10 @@
         "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.",
         "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings."
       ],
-      "runtime_artifact_paths": [],
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifact_paths": [
+        "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-capacity-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json"
+      ],
+      "runtime_artifacts_recorded": 1,
       "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-capacity-skill-md",
       "source_path": ".github/plugins/azure-skills/skills/microsoft-foundry/models/deploy-model/capacity/SKILL.md",
       "source_repo": "microsoft/skills",
@@ -8951,8 +9368,10 @@
         "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.",
         "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings."
       ],
-      "runtime_artifact_paths": [],
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifact_paths": [
+        "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-customize-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json"
+      ],
+      "runtime_artifacts_recorded": 1,
       "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-customize-skill-md",
       "source_path": ".github/plugins/azure-skills/skills/microsoft-foundry/models/deploy-model/customize/SKILL.md",
       "source_repo": "microsoft/skills",
@@ -8987,8 +9406,10 @@
         "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.",
         "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings."
       ],
-      "runtime_artifact_paths": [],
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifact_paths": [
+        "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json"
+      ],
+      "runtime_artifacts_recorded": 1,
       "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset-skill-md",
       "source_path": ".github/plugins/azure-skills/skills/microsoft-foundry/models/deploy-model/preset/SKILL.md",
       "source_repo": "microsoft/skills",
@@ -24633,7 +25054,9 @@
     "average_static_score_percent": 100.0,
     "provenance_artifacts_recorded": 10,
     "quality_fix_points": 2194,
-    "runtime_artifacts_recorded": 0,
+    "runtime_artifacts_failed": 10,
+    "runtime_artifacts_passed": 0,
+    "runtime_artifacts_recorded": 10,
     "skill_count": 673,
     "static_checks_passed": 8076,
     "static_checks_total": 8076
@@ -24648,7 +25071,7 @@
     {
       "assigned_scenarios": 57,
       "id": "swe-bench-lite",
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifacts_recorded": 1,
       "title": "SWE-bench Lite"
     },
     {
@@ -24726,7 +25149,7 @@
     {
       "assigned_scenarios": 305,
       "id": "kubernetes-examples",
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifacts_recorded": 9,
       "title": "Kubernetes examples"
     },
     {

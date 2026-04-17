@@ -857,6 +857,7 @@ Start here:
 - [Catalog index](docs/catalog/index.md)
 - [Benchmark suite](docs/benchmarks.md)
 - [Benchmark results](docs/benchmark-results.md)
+- [Runtime benchmark batch 01](docs/runtime-benchmark-batch-01.md)
 - [Skill quality findings](docs/skill-quality-findings.md)
 - [Skill risk findings](docs/skill-risk-findings.md)
 - [Immutable audit model](docs/immutable-audit-model.md)
@@ -1020,7 +1021,7 @@ Assigned scenarios:
 
     benchmark_doc = "# Benchmark Suite\n\nScenario definitions live in `data/benchmark_scenarios.json`; per-skill assignments live in `data/benchmark_assignments.json`.\n\n"
     category_template_count = len(scenarios) - len(entries)
-    benchmark_doc += f"The current suite contains `{len(entries)}` source-grounded skill-proof scenarios and `{category_template_count}` category workflow templates. A scenario is only a template until a runner records artifacts under the rules in [Benchmark runner requirements](benchmark-runner-requirements.md).\n\n"
+    benchmark_doc += f"The current suite contains `{len(entries)}` source-grounded skill-proof scenarios and `{category_template_count}` category workflow templates. A scenario is only a template until a runner records artifacts under the rules in [Benchmark runner requirements](benchmark-runner-requirements.md). Current measured outputs are summarized in [Benchmark results](benchmark-results.md), with the first independent runtime-readiness batch in [Runtime benchmark batch 01](runtime-benchmark-batch-01.md).\n\n"
     benchmark_doc += "## Scoring Rules\n\nA benchmark run must record the skill ID, scenario ID, source commit, dataset or website snapshot, environment, commands or transcript, output artifact, objective metrics, and evaluator result. Synthetic fixtures may supplement coverage, but they do not replace a real source repository, real dataset, real website, or recorded runtime workflow when the scenario calls for one.\n\n"
     for track_id, title, url, problem, metrics in TRACKS:
         benchmark_doc += f"## {title}\n\n- ID: `{track_id}`\n- URL: {url}\n- Workflow: {problem}\n- Metrics: {', '.join(metrics)}\n\n"
