@@ -1,803 +1,803 @@
 [
   {
-    "agent_ready_path": "included/agent-ready/by-category/devops-cloud-operations/priority-user-public-repo/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/devops-cloud-operations/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "DevOps, cloud & operations",
     "id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md",
     "install_name": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget",
     "name": "context-budget",
-    "source_mirrored_path": "included/skills/by-category/devops-cloud-operations/priority-user-public-repo/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/devops-cloud-operations/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-android-visual-qa/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-android-visual-qa/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Game, mobile & visual QA",
     "id": "strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md",
     "install_name": "strmt7-project-air-defense-agents-skills-android-visual-qa",
     "name": "android-visual-qa",
-    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-android-visual-qa",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-android-visual-qa",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-browser-fallback/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-browser-fallback/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Game, mobile & visual QA",
     "id": "strmt7-project-air-defense-agents-skills-browser-fallback-skill-md",
     "install_name": "strmt7-project-air-defense-agents-skills-browser-fallback",
     "name": "browser-fallback",
-    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-browser-fallback",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-browser-fallback",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-caveman-help/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-caveman-help/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Game, mobile & visual QA",
     "id": "strmt7-project-air-defense-agents-skills-caveman-help-skill-md",
     "install_name": "strmt7-project-air-defense-agents-skills-caveman-help",
     "name": "caveman-help",
-    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-caveman-help",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-caveman-help",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-caveman/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-caveman/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Game, mobile & visual QA",
     "id": "strmt7-project-air-defense-agents-skills-caveman-skill-md",
     "install_name": "strmt7-project-air-defense-agents-skills-caveman",
     "name": "caveman",
-    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-caveman",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-caveman",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-compliance-and-rate-limit/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-compliance-and-rate-limit/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Game, mobile & visual QA",
     "id": "strmt7-project-air-defense-agents-skills-compliance-and-rate-limit-skill-md",
     "install_name": "strmt7-project-air-defense-agents-skills-compliance-and-rate-limit",
     "name": "compliance-and-rate-limit",
-    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-compliance-and-rate-limit",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-compliance-and-rate-limit",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-context-budget/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-context-budget/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Game, mobile & visual QA",
     "id": "strmt7-project-air-defense-agents-skills-context-budget-skill-md",
     "install_name": "strmt7-project-air-defense-agents-skills-context-budget",
     "name": "context-budget",
-    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-context-budget",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-context-budget",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-level-asset-curation/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-level-asset-curation/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Game, mobile & visual QA",
     "id": "strmt7-project-air-defense-agents-skills-level-asset-curation-skill-md",
     "install_name": "strmt7-project-air-defense-agents-skills-level-asset-curation",
     "name": "level-asset-curation",
-    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-level-asset-curation",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-level-asset-curation",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-site-extract/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-site-extract/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Game, mobile & visual QA",
     "id": "strmt7-project-air-defense-agents-skills-site-extract-skill-md",
     "install_name": "strmt7-project-air-defense-agents-skills-site-extract",
     "name": "site-extract",
-    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-site-extract",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-site-extract",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-source-audit/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-source-audit/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Game, mobile & visual QA",
     "id": "strmt7-project-air-defense-agents-skills-source-audit-skill-md",
     "install_name": "strmt7-project-air-defense-agents-skills-source-audit",
     "name": "source-audit",
-    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-source-audit",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-source-audit",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-city-pipeline/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-city-pipeline/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Game, mobile & visual QA",
     "id": "strmt7-project-air-defense-agents-skills-ue5-city-pipeline-skill-md",
     "install_name": "strmt7-project-air-defense-agents-skills-ue5-city-pipeline",
     "name": "ue5-city-pipeline",
-    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-city-pipeline",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-city-pipeline",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-commonui-menu-systems/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-commonui-menu-systems/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Game, mobile & visual QA",
     "id": "strmt7-project-air-defense-agents-skills-ue5-commonui-menu-systems-skill-md",
     "install_name": "strmt7-project-air-defense-agents-skills-ue5-commonui-menu-systems",
     "name": "ue5-commonui-menu-systems",
-    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-commonui-menu-systems",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-commonui-menu-systems",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-mobile-gameplay/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-mobile-gameplay/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Game, mobile & visual QA",
     "id": "strmt7-project-air-defense-agents-skills-ue5-mobile-gameplay-skill-md",
     "install_name": "strmt7-project-air-defense-agents-skills-ue5-mobile-gameplay",
     "name": "ue5-mobile-gameplay",
-    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-mobile-gameplay",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-mobile-gameplay",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-mobile-rendering/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-mobile-rendering/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Game, mobile & visual QA",
     "id": "strmt7-project-air-defense-agents-skills-ue5-mobile-rendering-skill-md",
     "install_name": "strmt7-project-air-defense-agents-skills-ue5-mobile-rendering",
     "name": "ue5-mobile-rendering",
-    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-mobile-rendering",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-mobile-rendering",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-mobile-ui/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-mobile-ui/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Game, mobile & visual QA",
     "id": "strmt7-project-air-defense-agents-skills-ue5-mobile-ui-skill-md",
     "install_name": "strmt7-project-air-defense-agents-skills-ue5-mobile-ui",
     "name": "ue5-mobile-ui",
-    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-mobile-ui",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-mobile-ui",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-photoreal-city-scene/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-photoreal-city-scene/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Game, mobile & visual QA",
     "id": "strmt7-project-air-defense-agents-skills-ue5-photoreal-city-scene-skill-md",
     "install_name": "strmt7-project-air-defense-agents-skills-ue5-photoreal-city-scene",
     "name": "ue5-photoreal-city-scene",
-    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-photoreal-city-scene",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-photoreal-city-scene",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-verification-loop/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-verification-loop/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Game, mobile & visual QA",
     "id": "strmt7-project-air-defense-agents-skills-verification-loop-skill-md",
     "install_name": "strmt7-project-air-defense-agents-skills-verification-loop",
     "name": "verification-loop",
-    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-verification-loop",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-verification-loop",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-web-discovery/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-web-discovery/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Game, mobile & visual QA",
     "id": "strmt7-project-air-defense-agents-skills-web-discovery-skill-md",
     "install_name": "strmt7-project-air-defense-agents-skills-web-discovery",
     "name": "web-discovery",
-    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-web-discovery",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-web-discovery",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-skills-android-3d-air-defense/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-skills-android-3d-air-defense/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Game, mobile & visual QA",
     "id": "strmt7-project-air-defense-skills-android-3d-air-defense-skill-md",
     "install_name": "strmt7-project-air-defense-skills-android-3d-air-defense",
     "name": "android-3d-air-defense",
-    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-skills-android-3d-air-defense",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-skills-android-3d-air-defense",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing",
     "name": "ai-regression-testing",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-browser-fallback/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-browser-fallback/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-browser-fallback-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-browser-fallback",
     "name": "browser-fallback",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-browser-fallback",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-browser-fallback",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-caveman/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-caveman/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-caveman-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-caveman",
     "name": "caveman",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-caveman",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-caveman",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-compliance-and-rate-limit/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-compliance-and-rate-limit/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-compliance-and-rate-limit-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-compliance-and-rate-limit",
     "name": "compliance-and-rate-limit",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-compliance-and-rate-limit",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-compliance-and-rate-limit",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-context-budget/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-context-budget/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-context-budget-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-context-budget",
     "name": "context-budget",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-context-budget",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-context-budget",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-deployment-patterns/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-deployment-patterns/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-deployment-patterns-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-deployment-patterns",
     "name": "deployment-patterns",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-deployment-patterns",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-deployment-patterns",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-django-patterns/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-django-patterns/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-django-patterns-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-django-patterns",
     "name": "django-patterns",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-django-patterns",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-django-patterns",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-django-security/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-django-security/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-django-security-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-django-security",
     "name": "django-security",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-django-security",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-django-security",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-django-verification/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-django-verification/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-django-verification-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-django-verification",
     "name": "django-verification",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-django-verification",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-django-verification",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-docker-patterns/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-docker-patterns/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-docker-patterns-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-docker-patterns",
     "name": "docker-patterns",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-docker-patterns",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-docker-patterns",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-docs-knowledge-maintainer/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-docs-knowledge-maintainer/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-docs-knowledge-maintainer-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-docs-knowledge-maintainer",
     "name": "docs-knowledge-maintainer",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-docs-knowledge-maintainer",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-docs-knowledge-maintainer",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-documentation-lookup/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-documentation-lookup/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-documentation-lookup-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-documentation-lookup",
     "name": "documentation-lookup",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-documentation-lookup",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-documentation-lookup",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-env-contract-reviewer/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-env-contract-reviewer/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-env-contract-reviewer-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-env-contract-reviewer",
     "name": "env-contract-reviewer",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-env-contract-reviewer",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-env-contract-reviewer",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-frontend-preview/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-frontend-preview/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-frontend-preview-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-frontend-preview",
     "name": "frontend-preview",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-frontend-preview",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-frontend-preview",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-omero-runtime-verifier/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-omero-runtime-verifier/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-omero-runtime-verifier-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-omero-runtime-verifier",
     "name": "omero-runtime-verifier",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-omero-runtime-verifier",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-omero-runtime-verifier",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-plugin-regression-triager/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-plugin-regression-triager/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-plugin-regression-triager-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-plugin-regression-triager",
     "name": "plugin-regression-triager",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-plugin-regression-triager",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-plugin-regression-triager",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-postgres-patterns/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-postgres-patterns/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-postgres-patterns-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-postgres-patterns",
     "name": "postgres-patterns",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-postgres-patterns",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-postgres-patterns",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-python-patterns/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-python-patterns/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-python-patterns-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-python-patterns",
     "name": "python-patterns",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-python-patterns",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-python-patterns",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-python-testing/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-python-testing/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-python-testing-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-python-testing",
     "name": "python-testing",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-python-testing",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-python-testing",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-search-first/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-search-first/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-search-first-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-search-first",
     "name": "search-first",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-search-first",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-search-first",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-security-finding-triager/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-security-finding-triager/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-security-finding-triager-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-security-finding-triager",
     "name": "security-finding-triager",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-security-finding-triager",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-security-finding-triager",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-security-review/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-security-review/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-security-review-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-security-review",
     "name": "security-review",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-security-review",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-security-review",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-site-extract/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-site-extract/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-site-extract-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-site-extract",
     "name": "site-extract",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-site-extract",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-site-extract",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-source-audit/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-source-audit/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-source-audit-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-source-audit",
     "name": "source-audit",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-source-audit",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-source-audit",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-tdd-workflow/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-tdd-workflow/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-tdd-workflow-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-tdd-workflow",
     "name": "tdd-workflow",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-tdd-workflow",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-tdd-workflow",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-verification-loop/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-verification-loop/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-verification-loop-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-verification-loop",
     "name": "verification-loop",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-verification-loop",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-verification-loop",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-web-discovery/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-web-discovery/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-agents-skills-web-discovery-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-agents-skills-web-discovery",
     "name": "web-discovery",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-web-discovery",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-web-discovery",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-caveman-v1-6-0-skills-caveman/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-caveman-v1-6-0-skills-caveman/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-third-party-caveman-v1-6-0-skills-caveman-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-third-party-caveman-v1-6-0-skills-caveman",
     "name": "caveman",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-caveman-v1-6-0-skills-caveman",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-caveman-v1-6-0-skills-caveman",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-ai-regression-testing/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-ai-regression-testing/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-ai-regression-testing-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-ai-regression-testing",
     "name": "ai-regression-testing",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-ai-regression-testing",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-ai-regression-testing",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-context-budget/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-context-budget/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-context-budget-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-context-budget",
     "name": "context-budget",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-context-budget",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-context-budget",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-deployment-patterns/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-deployment-patterns/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-deployment-patterns-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-deployment-patterns",
     "name": "deployment-patterns",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-deployment-patterns",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-deployment-patterns",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-patterns/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-patterns/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-patterns-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-patterns",
     "name": "django-patterns",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-patterns",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-patterns",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-security/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-security/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-security-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-security",
     "name": "django-security",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-security",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-security",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-verification/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-verification/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-verification-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-verification",
     "name": "django-verification",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-verification",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-verification",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-docker-patterns/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-docker-patterns/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-docker-patterns-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-docker-patterns",
     "name": "docker-patterns",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-docker-patterns",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-docker-patterns",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-documentation-lookup/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-documentation-lookup/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-documentation-lookup-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-documentation-lookup",
     "name": "documentation-lookup",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-documentation-lookup",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-documentation-lookup",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-postgres-patterns/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-postgres-patterns/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-postgres-patterns-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-postgres-patterns",
     "name": "postgres-patterns",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-postgres-patterns",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-postgres-patterns",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-patterns/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-patterns/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-patterns-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-patterns",
     "name": "python-patterns",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-patterns",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-patterns",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-testing/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-testing/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-testing-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-testing",
     "name": "python-testing",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-testing",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-testing",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-search-first/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-search-first/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-search-first-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-search-first",
     "name": "search-first",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-search-first",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-search-first",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-security-review/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-security-review/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-security-review-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-security-review",
     "name": "security-review",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-security-review",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-security-review",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow",
     "name": "tdd-workflow",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-verification-loop/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-verification-loop/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "OMERO, Django, Docker & lab infrastructure",
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-verification-loop-skill-md",
     "install_name": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-verification-loop",
     "name": "verification-loop",
-    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-verification-loop",
-    "subcategory": "priority-requested-public-repo"
+    "source_mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-verification-loop",
+    "subcategory": "selected-omero-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-ai-regression-testing/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-ai-regression-testing/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Science, research & data analysis",
     "id": "strmt7-ome-zarr-c-agents-skills-ai-regression-testing-skill-md",
     "install_name": "strmt7-ome-zarr-c-agents-skills-ai-regression-testing",
     "name": "ai-regression-testing",
-    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-ai-regression-testing",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-ai-regression-testing",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-benchmark-first/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-benchmark-first/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Science, research & data analysis",
     "id": "strmt7-ome-zarr-c-agents-skills-benchmark-first-skill-md",
     "install_name": "strmt7-ome-zarr-c-agents-skills-benchmark-first",
     "name": "benchmark-first",
-    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-benchmark-first",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-benchmark-first",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-browser-fallback/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-browser-fallback/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Science, research & data analysis",
     "id": "strmt7-ome-zarr-c-agents-skills-browser-fallback-skill-md",
     "install_name": "strmt7-ome-zarr-c-agents-skills-browser-fallback",
     "name": "browser-fallback",
-    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-browser-fallback",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-browser-fallback",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-compliance-and-rate-limit/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-compliance-and-rate-limit/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Science, research & data analysis",
     "id": "strmt7-ome-zarr-c-agents-skills-compliance-and-rate-limit-skill-md",
     "install_name": "strmt7-ome-zarr-c-agents-skills-compliance-and-rate-limit",
     "name": "compliance-and-rate-limit",
-    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-compliance-and-rate-limit",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-compliance-and-rate-limit",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-context-budget/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-context-budget/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Science, research & data analysis",
     "id": "strmt7-ome-zarr-c-agents-skills-context-budget-skill-md",
     "install_name": "strmt7-ome-zarr-c-agents-skills-context-budget",
     "name": "context-budget",
-    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-context-budget",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-context-budget",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-cpp-parity-porting/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-cpp-parity-porting/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Science, research & data analysis",
     "id": "strmt7-ome-zarr-c-agents-skills-cpp-parity-porting-skill-md",
     "install_name": "strmt7-ome-zarr-c-agents-skills-cpp-parity-porting",
     "name": "cpp-parity-porting",
-    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-cpp-parity-porting",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-cpp-parity-porting",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-cpp-performance-optimization/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-cpp-performance-optimization/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Science, research & data analysis",
     "id": "strmt7-ome-zarr-c-agents-skills-cpp-performance-optimization-skill-md",
     "install_name": "strmt7-ome-zarr-c-agents-skills-cpp-performance-optimization",
     "name": "cpp-performance-optimization",
-    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-cpp-performance-optimization",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-cpp-performance-optimization",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-immutable-parity-proof/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-immutable-parity-proof/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Science, research & data analysis",
     "id": "strmt7-ome-zarr-c-agents-skills-immutable-parity-proof-skill-md",
     "install_name": "strmt7-ome-zarr-c-agents-skills-immutable-parity-proof",
     "name": "immutable-parity-proof",
-    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-immutable-parity-proof",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-immutable-parity-proof",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-pybind11-runtime-parity/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-pybind11-runtime-parity/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Science, research & data analysis",
     "id": "strmt7-ome-zarr-c-agents-skills-pybind11-runtime-parity-skill-md",
     "install_name": "strmt7-ome-zarr-c-agents-skills-pybind11-runtime-parity",
     "name": "pybind11-runtime-parity",
-    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-pybind11-runtime-parity",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-pybind11-runtime-parity",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-python-testing/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-python-testing/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Science, research & data analysis",
     "id": "strmt7-ome-zarr-c-agents-skills-python-testing-skill-md",
     "install_name": "strmt7-ome-zarr-c-agents-skills-python-testing",
     "name": "python-testing",
-    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-python-testing",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-python-testing",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-search-first/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-search-first/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Science, research & data analysis",
     "id": "strmt7-ome-zarr-c-agents-skills-search-first-skill-md",
     "install_name": "strmt7-ome-zarr-c-agents-skills-search-first",
     "name": "search-first",
-    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-search-first",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-search-first",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-site-extract/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-site-extract/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Science, research & data analysis",
     "id": "strmt7-ome-zarr-c-agents-skills-site-extract-skill-md",
     "install_name": "strmt7-ome-zarr-c-agents-skills-site-extract",
     "name": "site-extract",
-    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-site-extract",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-site-extract",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-source-audit/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-source-audit/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Science, research & data analysis",
     "id": "strmt7-ome-zarr-c-agents-skills-source-audit-skill-md",
     "install_name": "strmt7-ome-zarr-c-agents-skills-source-audit",
     "name": "source-audit",
-    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-source-audit",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-source-audit",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-tdd-workflow/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-tdd-workflow/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Science, research & data analysis",
     "id": "strmt7-ome-zarr-c-agents-skills-tdd-workflow-skill-md",
     "install_name": "strmt7-ome-zarr-c-agents-skills-tdd-workflow",
     "name": "tdd-workflow",
-    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-tdd-workflow",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-tdd-workflow",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-verification-loop/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-verification-loop/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Science, research & data analysis",
     "id": "strmt7-ome-zarr-c-agents-skills-verification-loop-skill-md",
     "install_name": "strmt7-ome-zarr-c-agents-skills-verification-loop",
     "name": "verification-loop",
-    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-verification-loop",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-verification-loop",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-web-discovery/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-web-discovery/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Science, research & data analysis",
     "id": "strmt7-ome-zarr-c-agents-skills-web-discovery-skill-md",
     "install_name": "strmt7-ome-zarr-c-agents-skills-web-discovery",
     "name": "web-discovery",
-    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-web-discovery",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-web-discovery",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-workflow-supply-chain-maintenance/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-workflow-supply-chain-maintenance/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Science, research & data analysis",
     "id": "strmt7-ome-zarr-c-agents-skills-workflow-supply-chain-maintenance-skill-md",
     "install_name": "strmt7-ome-zarr-c-agents-skills-workflow-supply-chain-maintenance",
     "name": "workflow-supply-chain-maintenance",
-    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-workflow-supply-chain-maintenance",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-workflow-supply-chain-maintenance",
+    "subcategory": "selected-project-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/testing-qa-benchmarking/priority-user-public-repo/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/testing-qa-benchmarking/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Testing, QA & benchmarking",
     "id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md",
     "install_name": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop",
     "name": "verification-loop",
-    "source_mirrored_path": "included/skills/by-category/testing-qa-benchmarking/priority-user-public-repo/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop",
-    "subcategory": "priority-user-public-repo"
+    "source_mirrored_path": "included/skills/by-category/testing-qa-benchmarking/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop",
+    "subcategory": "selected-project-reference"
   },
   {
     "agent_ready_path": "included/agent-ready/by-category/agent-infrastructure-skill-creation/reddit-verified-gtm-registry/varnan-tech-opendirectory-packages-cli-skills-show-hn-writer/SKILL.md",

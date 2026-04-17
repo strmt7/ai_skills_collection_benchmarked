@@ -1,0 +1,49 @@
+{
+  "activation_conditions": [
+    "Use for verification-loop workflows. Source sections include Verification Loop, Principle, Process"
+  ],
+  "observed_headings": [
+    "Verification Loop",
+    "Principle",
+    "Process",
+    "Rule"
+  ],
+  "proof_evidence": [
+    {
+      "claim": "Skill identity is verification-loop.",
+      "line_or_section": "line 1",
+      "source_path": ".agents/skills/verification-loop/SKILL.md"
+    },
+    {
+      "claim": "Use for verification-loop workflows. Source sections include Verification Loop, Principle, Process",
+      "line_or_section": "line 1",
+      "source_path": ".agents/skills/verification-loop/SKILL.md"
+    },
+    {
+      "claim": "Observed workflow section: Verification Loop.",
+      "line_or_section": "section Verification Loop",
+      "source_path": ".agents/skills/verification-loop/SKILL.md"
+    }
+  ],
+  "required_context": [
+    "Read the mirrored SKILL.md at included/skills/by-category/testing-qa-benchmarking/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop/SKILL.md.",
+    "Use source provenance strmt7/simple_ai_bitcoin_trading_binance .agents/skills/verification-loop/SKILL.md at 451d77df90621e3b666581d9835d246fb7147349."
+  ],
+  "safe_boundaries": [
+    "Follow repository-level AGENTS.md and use one AI session only.",
+    "Do not claim a runtime benchmark pass without a validated artifact.",
+    "Do not use or emit real credentials; keep provider-shaped examples neutralized."
+  ],
+  "scenario_id": "skill-proof-strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md",
+  "skill_file_sha256": "a5de5ed9f0088375c9237c86451a54bcf151571fb6bd314efdf6713198ab99cf",
+  "skill_id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md",
+  "source_commit": "451d77df90621e3b666581d9835d246fb7147349",
+  "source_path": ".agents/skills/verification-loop/SKILL.md",
+  "source_repo": "strmt7/simple_ai_bitcoin_trading_binance",
+  "workflow_steps": [
+    "Confirm the user task matches the skill description or source path.",
+    "Read the local SKILL.md mirror and only then load referenced resources if needed.",
+    "Execute the smallest task-specific workflow that produces objective evidence.",
+    "Record commands, files read, outputs, metrics, and citations before making claims."
+  ]
+}

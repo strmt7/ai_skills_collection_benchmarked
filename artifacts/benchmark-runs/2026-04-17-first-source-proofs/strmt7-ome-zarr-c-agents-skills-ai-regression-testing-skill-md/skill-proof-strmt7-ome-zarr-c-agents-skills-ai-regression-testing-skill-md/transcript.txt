@@ -1,0 +1,15 @@
+batch: 2026-04-17-first-source-proofs
+timestamp_utc: 2026-04-17T19:10:10Z
+runner: tools/create_source_proof_batch.py
+catalog_commit: 7512fbf179925eeb015e320e35004d16a95050e8
+skill_id: strmt7-ome-zarr-c-agents-skills-ai-regression-testing-skill-md
+scenario_id: skill-proof-strmt7-ome-zarr-c-agents-skills-ai-regression-testing-skill-md
+read: included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-ai-regression-testing/SKILL.md
+source: https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/ai-regression-testing/SKILL.md
+skill_file_sha256: cd08927aebc6b000df78ea0845d3adafa60bd64ae52c7f2fabe64f72f7e8041f
+line_count: 18
+checks:
+- parsed SKILL.md frontmatter/body
+- produced source-grounded proof JSON
+- recorded source path citations
+- validated artifact with tools/check_benchmark_artifact.py

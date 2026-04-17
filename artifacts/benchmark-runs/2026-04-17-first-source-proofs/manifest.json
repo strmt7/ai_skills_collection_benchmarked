@@ -1,0 +1,129 @@
+{
+  "artifact_count": 10,
+  "artifacts": [
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-first-source-proofs/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md/skill-proof-strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md/artifact.json",
+      "scenario_id": "skill-proof-strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md",
+      "skill_id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": [
+          "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+        ]
+      }
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-first-source-proofs/strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md/skill-proof-strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md/artifact.json",
+      "scenario_id": "skill-proof-strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md",
+      "skill_id": "strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": [
+          "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+        ]
+      }
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-first-source-proofs/zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing-skill-md/skill-proof-zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing-skill-md/artifact.json",
+      "scenario_id": "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing-skill-md",
+      "skill_id": "zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing-skill-md",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": [
+          "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+        ]
+      }
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-first-source-proofs/strmt7-ome-zarr-c-agents-skills-ai-regression-testing-skill-md/skill-proof-strmt7-ome-zarr-c-agents-skills-ai-regression-testing-skill-md/artifact.json",
+      "scenario_id": "skill-proof-strmt7-ome-zarr-c-agents-skills-ai-regression-testing-skill-md",
+      "skill_id": "strmt7-ome-zarr-c-agents-skills-ai-regression-testing-skill-md",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": [
+          "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+        ]
+      }
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-first-source-proofs/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md/skill-proof-strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md/artifact.json",
+      "scenario_id": "skill-proof-strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md",
+      "skill_id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": [
+          "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+        ]
+      }
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-first-source-proofs/varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md/skill-proof-varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md/artifact.json",
+      "scenario_id": "skill-proof-varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md",
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": [
+          "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+        ]
+      }
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-first-source-proofs/akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator-skill-md/skill-proof-akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator-skill-md/artifact.json",
+      "scenario_id": "skill-proof-akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator-skill-md",
+      "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator-skill-md",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": [
+          "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+        ]
+      }
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-first-source-proofs/varnan-tech-opendirectory-packages-cli-skills-claude-md-generator-skill-md/skill-proof-varnan-tech-opendirectory-packages-cli-skills-claude-md-generator-skill-md/artifact.json",
+      "scenario_id": "skill-proof-varnan-tech-opendirectory-packages-cli-skills-claude-md-generator-skill-md",
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-claude-md-generator-skill-md",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": [
+          "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+        ]
+      }
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-first-source-proofs/varnan-tech-opendirectory-packages-cli-skills-kill-the-standup-skill-md/skill-proof-varnan-tech-opendirectory-packages-cli-skills-kill-the-standup-skill-md/artifact.json",
+      "scenario_id": "skill-proof-varnan-tech-opendirectory-packages-cli-skills-kill-the-standup-skill-md",
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-kill-the-standup-skill-md",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": [
+          "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+        ]
+      }
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-first-source-proofs/bria-ai-bria-skill-skills-bria-ai-skill-md/skill-proof-bria-ai-bria-skill-skills-bria-ai-skill-md/artifact.json",
+      "scenario_id": "skill-proof-bria-ai-bria-skill-skills-bria-ai-skill-md",
+      "skill_id": "bria-ai-bria-skill-skills-bria-ai-skill-md",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": [
+          "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+        ]
+      }
+    }
+  ],
+  "batch_name": "2026-04-17-first-source-proofs",
+  "catalog_commit": "7512fbf179925eeb015e320e35004d16a95050e8",
+  "generated_at_utc": "2026-04-17T19:10:10Z",
+  "selection_policy": "first 10 distinct categories in catalog order"
+}

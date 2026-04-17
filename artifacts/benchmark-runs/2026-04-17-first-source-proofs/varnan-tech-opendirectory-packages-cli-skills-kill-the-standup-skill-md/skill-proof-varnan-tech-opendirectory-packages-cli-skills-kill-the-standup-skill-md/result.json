@@ -1,0 +1,52 @@
+{
+  "activation_conditions": [
+    "Reads yesterday's Linear issues and GitHub commits for the authenticated user, formats a standup update (done / doing / blockers), and posts it to Slack. Use when asked to write a standup, generate a standup update, post to the standup channel, summarize yesterday's work, or automate the daily standup. Trigger when a user says \"write my standup\", \"post standup\", \"generate standup update\", \"what did I do yesterday\","
+  ],
+  "observed_headings": [
+    "Kill the Standup",
+    "Step 1: Setup Check",
+    "Step 2: Fetch Linear Activity",
+    "Step 3: Fetch GitHub Commits",
+    "Step 4: Format Standup",
+    "Step 5: Post to Slack or Output"
+  ],
+  "proof_evidence": [
+    {
+      "claim": "Skill identity is kill-the-standup.",
+      "line_or_section": "line 2",
+      "source_path": "packages/cli/skills/kill-the-standup/SKILL.md"
+    },
+    {
+      "claim": "Reads yesterday's Linear issues and GitHub commits for the authenticated user, formats a standup update (done / doing / blockers), and posts it to Slack. Use when asked to write a standup, generate a standup update, post to the standup channel, summarize yesterday's work, or automate the daily standup. Trigger when a user says \"write my standup\", \"post standup\", \"generate standup update\", \"what did I do yesterday\",",
+      "line_or_section": "line 3",
+      "source_path": "packages/cli/skills/kill-the-standup/SKILL.md"
+    },
+    {
+      "claim": "Observed workflow section: Kill the Standup.",
+      "line_or_section": "section Kill the Standup",
+      "source_path": "packages/cli/skills/kill-the-standup/SKILL.md"
+    }
+  ],
+  "required_context": [
+    "Read the mirrored SKILL.md at included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/varnan-tech-opendirectory-packages-cli-skills-kill-the-standup/SKILL.md.",
+    "Use source provenance Varnan-Tech/opendirectory packages/cli/skills/kill-the-standup/SKILL.md at bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4.",
+    "Load bundled resources on demand: has_references."
+  ],
+  "safe_boundaries": [
+    "Follow repository-level AGENTS.md and use one AI session only.",
+    "Do not claim a runtime benchmark pass without a validated artifact.",
+    "Do not use or emit real credentials; keep provider-shaped examples neutralized."
+  ],
+  "scenario_id": "skill-proof-varnan-tech-opendirectory-packages-cli-skills-kill-the-standup-skill-md",
+  "skill_file_sha256": "a1f5696c05b6e1e75b889ef279f2907a44ec518692e8f3e36af581fb47b26f17",
+  "skill_id": "varnan-tech-opendirectory-packages-cli-skills-kill-the-standup-skill-md",
+  "source_commit": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4",
+  "source_path": "packages/cli/skills/kill-the-standup/SKILL.md",
+  "source_repo": "Varnan-Tech/opendirectory",
+  "workflow_steps": [
+    "Confirm the user task matches the skill description or source path.",
+    "Read the local SKILL.md mirror and only then load referenced resources if needed.",
+    "Execute the smallest task-specific workflow that produces objective evidence.",
+    "Record commands, files read, outputs, metrics, and citations before making claims."
+  ]
+}
