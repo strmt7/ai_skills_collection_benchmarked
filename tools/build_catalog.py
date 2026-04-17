@@ -741,7 +741,7 @@ def write_docs(entries: list[dict[str, Any]], scenarios: list[dict[str, Any]]) -
     categories = sorted({e["category"] for e in entries})
     priority = [e for e in entries if e["source_tier"].startswith("priority")]
 
-    (ROOT / "README.md").write_text(f"""# AI Skill Collection Benchmarked
+    (ROOT / "README.md").write_text(f"""# AI Skills Collection Benchmarked
 
 > Early alpha: this repository is experimental. Many entries may be incomplete, incompatible, stale, or unsuitable for a given environment. Use it at your own risk; the maintainers accept no responsibility for results, failures, or downstream use.
 

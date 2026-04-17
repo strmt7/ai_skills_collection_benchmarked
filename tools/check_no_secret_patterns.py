@@ -54,7 +54,7 @@ def tracked_files() -> list[Path]:
 
 
 def history_commits() -> list[str]:
-    return [line for line in git("rev-list", "--all").splitlines() if line]
+    return [line for line in git("rev-list", "HEAD").splitlines() if line]
 
 
 def commit_changed_names(commit: str) -> list[str]:
