@@ -1,10 +1,10 @@
 batch: 2026-04-17-first-source-proofs
-timestamp_utc: 2026-04-17T19:10:10Z
+timestamp_utc: 2026-04-17T21:39:52Z
 runner: tools/create_source_proof_batch.py
-catalog_commit: 7512fbf179925eeb015e320e35004d16a95050e8
+catalog_commit: 515e8b9056ae5cf4a1d8ee3f5d64d1f3c729b375
 skill_id: strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md
 scenario_id: skill-proof-strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md
-read: included/skills/by-category/devops-cloud-operations/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget/SKILL.md
+read: included/skills/by-category/devops-cloud-operations/selected-project-reference/context-budget-simple-ai-bitcoin-trading-binance/SKILL.md
 source: https://github.com/strmt7/simple_ai_bitcoin_trading_binance/blob/451d77df90621e3b666581d9835d246fb7147349/.agents/skills/context-budget/SKILL.md
 skill_file_sha256: ae259dc7adb506e068e2361bb724e9bb603c3c9eed0d777b0e9cceb451777da4
 line_count: 25

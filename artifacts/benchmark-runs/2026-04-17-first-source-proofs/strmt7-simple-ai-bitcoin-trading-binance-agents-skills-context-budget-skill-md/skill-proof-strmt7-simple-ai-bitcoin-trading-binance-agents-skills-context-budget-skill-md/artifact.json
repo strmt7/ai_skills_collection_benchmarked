@@ -1,7 +1,7 @@
 {
   "artifact_kind": "provenance_check",
   "artifact_version": "1.0",
-  "catalog_commit": "7512fbf179925eeb015e320e35004d16a95050e8",
+  "catalog_commit": "515e8b9056ae5cf4a1d8ee3f5d64d1f3c729b375",
   "evidence": {
     "artifact_paths": [
       "result.json",
@@ -9,7 +9,7 @@
     ],
     "citations_or_paths": [
       ".agents/skills/context-budget/SKILL.md",
-      "included/skills/by-category/devops-cloud-operations/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget/SKILL.md",
+      "included/skills/by-category/devops-cloud-operations/selected-project-reference/context-budget-simple-ai-bitcoin-trading-binance/SKILL.md",
       "AGENTS.md"
     ]
   },
@@ -28,7 +28,7 @@
     "identifier": "https://github.com/strmt7/simple_ai_bitcoin_trading_binance/blob/451d77df90621e3b666581d9835d246fb7147349/.agents/skills/context-budget/SKILL.md",
     "is_real": true,
     "kind": "source-skill-repository",
-    "mirrored_path": "included/skills/by-category/devops-cloud-operations/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget",
+    "mirrored_path": "included/skills/by-category/devops-cloud-operations/selected-project-reference/context-budget-simple-ai-bitcoin-trading-binance",
     "skill_file_sha256": "ae259dc7adb506e068e2361bb724e9bb603c3c9eed0d777b0e9cceb451777da4",
     "source_commit": "451d77df90621e3b666581d9835d246fb7147349"
   },
@@ -46,13 +46,13 @@
   ],
   "outputs": {
     "path": "result.json",
-    "result_sha256": "640b74d5b1942d977315762c5f6a09e4a82253bb165c8928eb95ef0eca26d520",
+    "result_sha256": "738eebd796b442a75ae8af1daf22da581fc10a40dfb769e8e134e94d9561e491",
     "schema": "evaluators/source_grounded_skill_proof.schema.json"
   },
   "runner": {
     "batch_name": "2026-04-17-first-source-proofs",
     "model_or_runtime": "local-deterministic-source-proof-runner",
-    "timestamp_utc": "2026-04-17T19:10:10Z",
+    "timestamp_utc": "2026-04-17T21:39:52Z",
     "tool": "tools/create_source_proof_batch.py"
   },
   "scenario_id": "skill-proof-strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md",

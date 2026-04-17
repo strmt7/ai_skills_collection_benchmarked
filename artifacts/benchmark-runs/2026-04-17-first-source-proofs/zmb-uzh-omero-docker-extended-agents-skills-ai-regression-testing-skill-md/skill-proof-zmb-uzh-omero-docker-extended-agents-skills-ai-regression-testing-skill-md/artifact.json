@@ -1,7 +1,7 @@
 {
   "artifact_kind": "provenance_check",
   "artifact_version": "1.0",
-  "catalog_commit": "7512fbf179925eeb015e320e35004d16a95050e8",
+  "catalog_commit": "515e8b9056ae5cf4a1d8ee3f5d64d1f3c729b375",
   "evidence": {
     "artifact_paths": [
       "result.json",
@@ -9,7 +9,7 @@
     ],
     "citations_or_paths": [
       ".agents/skills/ai-regression-testing/SKILL.md",
-      "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing/SKILL.md",
+      "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/ai-regression-testing-omero-docker-extended/SKILL.md",
       "AGENTS.md"
     ]
   },
@@ -28,7 +28,7 @@
     "identifier": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/ai-regression-testing/SKILL.md",
     "is_real": true,
     "kind": "source-skill-repository",
-    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing",
+    "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/ai-regression-testing-omero-docker-extended",
     "skill_file_sha256": "10e3d43ebade9b583f937d641b08d1ea1ead8da16907c8274cdb829c9a79b6ee",
     "source_commit": "b7c7cfa2a057f08eb872aadae49d89f521480114"
   },
@@ -46,13 +46,13 @@
   ],
   "outputs": {
     "path": "result.json",
-    "result_sha256": "36f625d1ed795368e99d0746c7def3bc3598d1f993473b1d15eae34ccb01b6aa",
+    "result_sha256": "6a15ba618eef0f8196475b03385a43f6119aa1df354eb4007cdb8cdc4695c6d6",
     "schema": "evaluators/source_grounded_skill_proof.schema.json"
   },
   "runner": {
     "batch_name": "2026-04-17-first-source-proofs",
     "model_or_runtime": "local-deterministic-source-proof-runner",
-    "timestamp_utc": "2026-04-17T19:10:10Z",
+    "timestamp_utc": "2026-04-17T21:39:52Z",
     "tool": "tools/create_source_proof_batch.py"
   },
   "scenario_id": "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing-skill-md",

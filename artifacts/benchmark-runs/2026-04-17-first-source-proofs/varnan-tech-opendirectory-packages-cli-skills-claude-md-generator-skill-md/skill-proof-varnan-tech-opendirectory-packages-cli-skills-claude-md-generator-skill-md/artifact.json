@@ -1,7 +1,7 @@
 {
   "artifact_kind": "provenance_check",
   "artifact_version": "1.0",
-  "catalog_commit": "7512fbf179925eeb015e320e35004d16a95050e8",
+  "catalog_commit": "515e8b9056ae5cf4a1d8ee3f5d64d1f3c729b375",
   "evidence": {
     "artifact_paths": [
       "result.json",
@@ -9,7 +9,7 @@
     ],
     "citations_or_paths": [
       "packages/cli/skills/claude-md-generator/SKILL.md",
-      "included/skills/by-category/coding-refactoring-repository-automation/reddit-verified-gtm-registry/varnan-tech-opendirectory-packages-cli-skills-claude-md-generator/SKILL.md",
+      "included/skills/by-category/coding-refactoring-repository-automation/reddit-verified-gtm-registry/claude-md-generator/SKILL.md",
       "AGENTS.md"
     ]
   },
@@ -28,7 +28,7 @@
     "identifier": "https://github.com/Varnan-Tech/opendirectory/blob/bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4/packages/cli/skills/claude-md-generator/SKILL.md",
     "is_real": true,
     "kind": "source-skill-repository",
-    "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/reddit-verified-gtm-registry/varnan-tech-opendirectory-packages-cli-skills-claude-md-generator",
+    "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/reddit-verified-gtm-registry/claude-md-generator",
     "skill_file_sha256": "73f8d92940af2bbd5aae9777d692c9cd1ac7eba11d9bb585d241c52ad6397ff5",
     "source_commit": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4"
   },
@@ -46,13 +46,13 @@
   ],
   "outputs": {
     "path": "result.json",
-    "result_sha256": "365190399ba50258ee23f4f67afb1fce437052c0723c975eb9503f0db30ca5b4",
+    "result_sha256": "15293afb99bd863879c8902deb44bf9539ef5cdd3081a743772ef4b09c6b5e88",
     "schema": "evaluators/source_grounded_skill_proof.schema.json"
   },
   "runner": {
     "batch_name": "2026-04-17-first-source-proofs",
     "model_or_runtime": "local-deterministic-source-proof-runner",
-    "timestamp_utc": "2026-04-17T19:10:10Z",
+    "timestamp_utc": "2026-04-17T21:39:52Z",
     "tool": "tools/create_source_proof_batch.py"
   },
   "scenario_id": "skill-proof-varnan-tech-opendirectory-packages-cli-skills-claude-md-generator-skill-md",

@@ -25,7 +25,7 @@
     }
   ],
   "required_context": [
-    "Read the mirrored SKILL.md at included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing/SKILL.md.",
+    "Read the mirrored SKILL.md at included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/ai-regression-testing-omero-docker-extended/SKILL.md.",
     "Use source provenance ZMB-UZH/omero-docker-extended .agents/skills/ai-regression-testing/SKILL.md at b7c7cfa2a057f08eb872aadae49d89f521480114.",
     "Load bundled resources on demand: has_agents_metadata."
   ],

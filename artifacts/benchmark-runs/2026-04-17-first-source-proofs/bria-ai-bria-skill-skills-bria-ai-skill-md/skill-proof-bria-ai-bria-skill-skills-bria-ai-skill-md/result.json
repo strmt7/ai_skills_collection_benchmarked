@@ -30,7 +30,7 @@
     }
   ],
   "required_context": [
-    "Read the mirrored SKILL.md at included/skills/by-category/creative-media-design/latest-release-creative/bria-ai-bria-skill-skills-bria-ai/SKILL.md.",
+    "Read the mirrored SKILL.md at included/skills/by-category/creative-media-design/latest-release-creative/bria-ai/SKILL.md.",
     "Use source provenance Bria-AI/bria-skill skills/bria-ai/SKILL.md at b0e107b0f4667f0e1c9177bcd491b7d436c6932d.",
     "Load bundled resources on demand: has_references."
   ],

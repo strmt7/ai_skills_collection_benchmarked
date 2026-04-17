@@ -1,7 +1,7 @@
 {
   "artifact_kind": "provenance_check",
   "artifact_version": "1.0",
-  "catalog_commit": "7512fbf179925eeb015e320e35004d16a95050e8",
+  "catalog_commit": "515e8b9056ae5cf4a1d8ee3f5d64d1f3c729b375",
   "evidence": {
     "artifact_paths": [
       "result.json",
@@ -9,7 +9,7 @@
     ],
     "citations_or_paths": [
       ".agents/skills/android-visual-qa/SKILL.md",
-      "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-android-visual-qa/SKILL.md",
+      "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/android-visual-qa/SKILL.md",
       "AGENTS.md"
     ]
   },
@@ -28,7 +28,7 @@
     "identifier": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/android-visual-qa/SKILL.md",
     "is_real": true,
     "kind": "source-skill-repository",
-    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-android-visual-qa",
+    "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/android-visual-qa",
     "skill_file_sha256": "480fe5b49dc71eb029067549a2aeab5be0fa7b580e42fb7d7d4099c5f6dd585f",
     "source_commit": "77f082fe23a86ded15e696a22955b2a890da2fce"
   },
@@ -46,13 +46,13 @@
   ],
   "outputs": {
     "path": "result.json",
-    "result_sha256": "12a34f24af72cf0cced56838d79287294ba538520404f4d18776ad371ca8f9b7",
+    "result_sha256": "4ead6ef857fb5ea45bdbf76b5bdbdb94a329cdddd867ef3517ceff034fca0621",
     "schema": "evaluators/source_grounded_skill_proof.schema.json"
   },
   "runner": {
     "batch_name": "2026-04-17-first-source-proofs",
     "model_or_runtime": "local-deterministic-source-proof-runner",
-    "timestamp_utc": "2026-04-17T19:10:10Z",
+    "timestamp_utc": "2026-04-17T21:39:52Z",
     "tool": "tools/create_source_proof_batch.py"
   },
   "scenario_id": "skill-proof-strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md",

@@ -24,7 +24,7 @@
     }
   ],
   "required_context": [
-    "Read the mirrored SKILL.md at included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-ai-regression-testing/SKILL.md.",
+    "Read the mirrored SKILL.md at included/skills/by-category/science-research-data-analysis/selected-project-reference/ai-regression-testing-ome-zarr-c/SKILL.md.",
     "Use source provenance strmt7/ome-zarr-C .agents/skills/ai-regression-testing/SKILL.md at a9238a81742f96c89acf6d83fce6d6b882ac4d1c."
   ],
   "safe_boundaries": [

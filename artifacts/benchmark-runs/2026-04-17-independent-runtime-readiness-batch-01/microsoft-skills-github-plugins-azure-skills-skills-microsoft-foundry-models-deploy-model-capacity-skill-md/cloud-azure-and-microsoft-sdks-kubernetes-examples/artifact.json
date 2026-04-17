@@ -1,7 +1,7 @@
 {
   "artifact_kind": "independent_benchmark",
   "artifact_version": "1.0",
-  "catalog_commit": "8e3e1077c5dd0d16334f25cdddbc01e658b2f353",
+  "catalog_commit": "515e8b9056ae5cf4a1d8ee3f5d64d1f3c729b375",
   "evidence": {
     "artifact_paths": [
       "result.json",
@@ -11,8 +11,8 @@
     ],
     "citations_or_paths": [
       "benchmarks/independent-runtime-readiness/batch-01/tasks.json",
-      "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-capacity/SKILL.md",
-      "included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-capacity/SKILL.md",
+      "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/capacity/SKILL.md",
+      "included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/capacity/SKILL.md",
       "data/benchmark_scenarios.json",
       "data/benchmark_tracks.json",
       "data/skill_risk_audit.json",
@@ -36,7 +36,7 @@
     "identifier": "https://github.com/kubernetes/examples",
     "is_real": true,
     "kind": "real-github-repository-tree",
-    "mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-capacity",
+    "mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/capacity",
     "resolved_commit": "d6b8cd27eacb51e651a1aa6f7c190a28713eff6e",
     "track_subpath": null,
     "track_subpath_present": true,
@@ -65,13 +65,13 @@
   ],
   "outputs": {
     "path": "result.json",
-    "result_sha256": "aac5234be574adaf8f5f2b6973c0a59bcf9eb4e07d5417e62dae4f4a714bd7ca",
+    "result_sha256": "c1a0266ade292d06f576df13d9b116889e55fe6f66e89a19cad458cf1904e628",
     "schema": "evaluators/generic_workflow_result.schema.json"
   },
   "runner": {
     "batch_name": "2026-04-17-independent-runtime-readiness-batch-01",
     "model_or_runtime": "local-deterministic-runtime-readiness-runner",
-    "timestamp_utc": "2026-04-17T20:35:46Z",
+    "timestamp_utc": "2026-04-17T21:39:52Z",
     "tool": "tools/create_independent_runtime_batch.py"
   },
   "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
