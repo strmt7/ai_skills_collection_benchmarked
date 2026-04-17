@@ -12,11 +12,11 @@ Selected ref: `v1.0.0`; commit `7fe7595e4512`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Create, generate, or write Dockerfiles and multi-stage Docker images. Containerize apps.
+Catalog summary: Create, generate, or write Dockerfiles and multi-stage Docker images. Containerize apps.
 
 ## Verification
 

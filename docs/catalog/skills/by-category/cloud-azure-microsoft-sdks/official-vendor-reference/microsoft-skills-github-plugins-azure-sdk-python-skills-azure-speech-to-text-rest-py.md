@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Azure Speech to Text REST API for short audio (Python). Use for simple speech recognition of audio files up to 60 seconds without the Speech SDK. Triggers: "speech to text REST", "short audio transcription", "speech recognition REST API", "STT REST", "recognize speech REST". DO NOT USE FOR: Long audio (>60 seconds), real-time streaming, batch transcription, custom speech models, speech translation. Use Speech SDK.
+Catalog summary: Azure Speech to Text REST API for short audio (Python). Use for simple speech recognition of audio files up to 60 seconds without the Speech SDK. Triggers: "speech to text REST", "short audio transcription", "speech recognition REST API", "STT REST", "recognize speech REST". DO NOT USE FOR: Long audio (>60 seconds), real-time streaming, batch transcription, custom speech models, speech translation. Use Speech SDK.
 
 ## Verification
 

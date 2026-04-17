@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `10d5e16780b4`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Create beautiful, performant SVG animations and illustrations. Use this skill when the user asks to create SVG graphics, icons, illustrations, animated logos, path animations, morphing shapes, loading spinners, or any animated SVG content. Covers SMIL animations, CSS-driven SVG animation, path drawing effects, shape morphing, motion paths, gradients, masks, and filters.
+Catalog summary: Create beautiful, performant SVG animations and illustrations. Use this skill when the user asks to create SVG graphics, icons, illustrations, animated logos, path animations, morphing shapes, loading spinners, or any animated SVG content. Covers SMIL animations, CSS-driven SVG animation, path drawing effects, shape morphing, motion paths, gradients, masks, and filters.
 
 ## Verification
 

@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `2c7ec5e78b8e`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.
+Catalog summary: Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.
 
 ## Verification
 

@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Azure Identity library for Java authentication with Azure services. Use when implementing DefaultAzureCredential, managed identity, service principal, or any Azure authentication pattern in Java applications.
+Catalog summary: Azure Identity library for Java authentication with Azure services. Use when implementing DefaultAzureCredential, managed identity, service principal, or any Azure authentication pattern in Java applications.
 
 ## Verification
 

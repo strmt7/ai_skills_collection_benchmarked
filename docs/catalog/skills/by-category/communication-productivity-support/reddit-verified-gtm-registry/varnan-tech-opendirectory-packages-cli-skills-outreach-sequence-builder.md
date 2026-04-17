@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `bc01f7c1c31f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Takes a buying signal and generates a personalized multi-channel outreach sequence across email, LinkedIn, and phone. Outputs 4-6 ready-to-send touchpoints over 10-14 days. Optionally drafts email touchpoints via Composio Gmail. Use when asked to write an outreach sequence, build a sales cadence, create a follow-up sequence, personalize outreach for a signal, or generate cold outreach messages. Trigger when a user.
+Catalog summary: Takes a buying signal and generates a personalized multi-channel outreach sequence across email, LinkedIn, and phone. Outputs 4-6 ready-to-send touchpoints over 10-14 days. Optionally drafts email touchpoints via Composio Gmail. Use when asked to write an outreach sequence, build a sales cadence, create a follow-up sequence, personalize outreach for a signal, or generate cold outreach messages. Trigger when a user.
 
 ## Verification
 

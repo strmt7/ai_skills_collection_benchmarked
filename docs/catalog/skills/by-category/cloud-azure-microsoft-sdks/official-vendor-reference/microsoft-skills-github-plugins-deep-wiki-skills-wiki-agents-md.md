@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Generates AGENTS.md files for repository folders — coding agent context files with build commands, testing instructions, code style, project structure, and boundaries. Only generates where AGENTS.md is missing.
+Catalog summary: Generates AGENTS.md files for repository folders — coding agent context files with build commands, testing instructions, code style, project structure, and boundaries. Only generates where AGENTS.md is missing.
 
 ## Verification
 

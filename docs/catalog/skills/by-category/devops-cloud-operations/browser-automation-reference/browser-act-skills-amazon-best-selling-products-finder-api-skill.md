@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `749ed52133b8`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: This skill helps users extract structured best-selling product data from Amazon via the BrowserAct API. Agent should proactively apply this skill when users express needs like search for best selling products on Amazon, extract Amazon product data based on keywords, find top rated Amazon products, monitor Amazon competitor prices and sales, discover trending products on Amazon marketplace, extract Amazon product.
+Catalog summary: This skill helps users extract structured best-selling product data from Amazon via the BrowserAct API. Agent should proactively apply this skill when users express needs like search for best selling products on Amazon, extract Amazon product data based on keywords, find top rated Amazon products, monitor Amazon competitor prices and sales, discover trending products on Amazon marketplace, extract Amazon product.
 
 ## Verification
 

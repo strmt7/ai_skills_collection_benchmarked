@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Azure Service Bus SDK for .NET. Enterprise messaging with queues, topics, subscriptions, and sessions. Use for reliable message delivery, pub/sub patterns, dead letter handling, and background processing. Triggers: "Service Bus", "ServiceBusClient", "ServiceBusSender", "ServiceBusReceiver", "ServiceBusProcessor", "message queue", "pub/sub .NET", "dead letter queue".
+Catalog summary: Azure Service Bus SDK for .NET. Enterprise messaging with queues, topics, subscriptions, and sessions. Use for reliable message delivery, pub/sub patterns, dead letter handling, and background processing. Triggers: "Service Bus", "ServiceBusClient", "ServiceBusSender", "ServiceBusReceiver", "ServiceBusProcessor", "message queue", "pub/sub .NET", "dead letter queue".
 
 ## Verification
 

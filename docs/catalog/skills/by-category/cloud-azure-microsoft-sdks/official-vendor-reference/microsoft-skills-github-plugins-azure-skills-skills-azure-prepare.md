@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Prepare Azure apps for deployment (infra Bicep/Terraform, azure.yaml, Dockerfiles). Use for create/modernize or create+deploy; not cross-cloud migration (use azure-cloud-migrate). WHEN: "create app", "build web app", "create API", "create serverless HTTP API", "create frontend", "create back end", "build a service", "modernize application", "update application", "add authentication", "add caching", "host on Azure",.
+Catalog summary: Prepare Azure apps for deployment (infra Bicep/Terraform, azure.yaml, Dockerfiles). Use for create/modernize or create+deploy; not cross-cloud migration (use azure-cloud-migrate). WHEN: "create app", "build web app", "create API", "create serverless HTTP API", "create frontend", "create back end", "build a service", "modernize application", "update application", "add authentication", "add caching", "host on Azure",.
 
 ## Verification
 

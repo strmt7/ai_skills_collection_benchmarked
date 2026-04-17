@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Port one upstream ome-zarr-py surface to standalone native C++ without touching the frozen snapshot.
+Catalog summary: Port one upstream ome-zarr-py surface to standalone native C++ without touching the frozen snapshot.
 
 ## Verification
 

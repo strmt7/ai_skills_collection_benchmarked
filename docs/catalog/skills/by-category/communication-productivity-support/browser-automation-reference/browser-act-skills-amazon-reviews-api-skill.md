@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `749ed52133b8`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: This skill helps users automatically extract Amazon product reviews via the Amazon Reviews API. Agent should proactively apply this skill when users express needs like getting reviews for Amazon product with ASIN B07TS6R1SF, analyzing customer feedback for a specific Amazon item, getting ratings and comments for a competitive product, tracking sentiment of recent Amazon reviews, extracting verified purchase reviews.
+Catalog summary: This skill helps users automatically extract Amazon product reviews via the Amazon Reviews API. Agent should proactively apply this skill when users express needs like getting reviews for Amazon product with ASIN B07TS6R1SF, analyzing customer feedback for a specific Amazon item, getting ratings and comments for a competitive product, tracking sentiment of recent Amazon reviews, extracting verified purchase reviews.
 
 ## Verification
 

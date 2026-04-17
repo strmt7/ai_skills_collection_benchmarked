@@ -1,6 +1,6 @@
 ---
 name: "semgrep"
-description: "Run Semgrep static analysis scan on a codebase using parallel subagents. Supports two scan modes \u2014 \"run all\" (full ruleset coverage) and \"important only\" (high-confidence security vulnerabilities). Automatically detects and uses Semgrep Pro for cross-file taint analysis when available. Use when asked to scan code for vulnerabilities, run a security audit with Semgrep, find bugs, or perform static analysis. Spawns."
+description: "Run Semgrep static analysis scan on a codebase using single-session review passes. Supports two scan modes \u2014 \"run all\" (full ruleset coverage) and \"important only\" (high-confidence security vulnerabilities). Automatically detects and uses Semgrep Pro for cross-file taint analysis when available. Use when asked to scan code for vulnerabilities, run a security audit with Semgrep, find bugs, or perform static."
 source_skill_id: "trailofbits-skills-plugins-static-analysis-skills-semgrep-skill-md"
 category: "Security, compliance & risk"
 source_mirror: "../../../../../skills/by-category/security-compliance-risk/security-reference/trailofbits-skills-plugins-static-analysis-skills-semgrep/SKILL.md"

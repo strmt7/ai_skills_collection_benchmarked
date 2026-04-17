@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Azure Batch SDK for Java. Run large-scale parallel and HPC batch jobs with pools, jobs, tasks, and compute nodes. Triggers: "BatchClient java", "azure batch java", "batch pool java", "batch job java", "HPC java", "parallel computing java".
+Catalog summary: Azure Batch SDK for Java. Run large-scale parallel and HPC batch jobs with pools, jobs, tasks, and compute nodes. Triggers: "BatchClient java", "azure batch java", "batch pool java", "batch job java", "HPC java", "parallel computing java".
 
 ## Verification
 

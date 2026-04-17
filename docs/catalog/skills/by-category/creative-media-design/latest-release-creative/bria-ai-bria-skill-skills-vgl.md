@@ -12,11 +12,11 @@ Selected ref: `v1.3.1`; commit `b0e107b0f466`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Maximum control over AI image generation — write structured VGL (Visual Generation Language) JSON that explicitly controls every visual attribute. Define exact object placement, lighting direction, camera angle, lens focal length, composition, color scheme, and artistic style as deterministic JSON instead of ambiguous natural language. Use this skill when you need reproducible image generation, precise control over.
+Catalog summary: Maximum control over AI image generation — write structured VGL (Visual Generation Language) JSON that explicitly controls every visual attribute. Define exact object placement, lighting direction, camera angle, lens focal length, composition, color scheme, and artistic style as deterministic JSON instead of ambiguous natural language. Use this skill when you need reproducible image generation, precise control over.
 
 ## Verification
 

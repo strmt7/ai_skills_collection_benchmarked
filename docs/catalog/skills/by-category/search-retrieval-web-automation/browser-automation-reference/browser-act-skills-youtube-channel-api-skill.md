@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `749ed52133b8`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: This skill helps users automatically extract structured channel data from YouTube search results via BrowserAct API. Agent should proactively apply this skill when users express needs like finding YouTube channels about specific topics, collecting data on YouTube content creators, tracking YouTube influencers in specific industries, getting YouTube channel information for competitor analysis, searching for YouTube.
+Catalog summary: This skill helps users automatically extract structured channel data from YouTube search results via BrowserAct API. Agent should proactively apply this skill when users express needs like finding YouTube channels about specific topics, collecting data on YouTube content creators, tracking YouTube influencers in specific industries, getting YouTube channel information for competitor analysis, searching for YouTube.
 
 ## Verification
 

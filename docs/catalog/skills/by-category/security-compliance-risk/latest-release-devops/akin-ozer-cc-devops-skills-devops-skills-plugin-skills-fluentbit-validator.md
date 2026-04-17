@@ -12,11 +12,11 @@ Selected ref: `v1.0.0`; commit `7fe7595e4512`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Validate, lint, audit, or check Fluent Bit configs (INPUT, FILTER, OUTPUT, tag routing).
+Catalog summary: Validate, lint, audit, or check Fluent Bit configs (INPUT, FILTER, OUTPUT, tag routing).
 
 ## Verification
 

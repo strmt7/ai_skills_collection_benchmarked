@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Assess and migrate cross-cloud workloads to Azure with migration reports and code conversion. Supports AWS Lambda→Functions and GCP Cloud Run→Container Apps. WHEN: migrate Lambda to Azure Functions, migrate AWS to Azure, Lambda migration assessment, convert serverless to Azure, migration readiness report, migrate from AWS, migrate from GCP, Cloud Run to Container Apps, Cloud Run migration assessment.
+Catalog summary: Assess and migrate cross-cloud workloads to Azure with migration reports and code conversion. Supports AWS Lambda→Functions and GCP Cloud Run→Container Apps. WHEN: migrate Lambda to Azure Functions, migrate AWS to Azure, Lambda migration assessment, convert serverless to Azure, migration readiness report, migrate from AWS, migrate from GCP, Cloud Run to Container Apps, Cloud Run migration assessment.
 
 ## Verification
 

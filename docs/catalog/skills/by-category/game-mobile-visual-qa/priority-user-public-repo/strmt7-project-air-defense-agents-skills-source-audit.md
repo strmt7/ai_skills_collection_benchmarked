@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Verify public-web findings with source quality, dates, and second-source checks before turning them into advice or claims.
+Catalog summary: Verify public-web findings with source quality, dates, and second-source checks before turning them into advice or claims.
 
 ## Verification
 

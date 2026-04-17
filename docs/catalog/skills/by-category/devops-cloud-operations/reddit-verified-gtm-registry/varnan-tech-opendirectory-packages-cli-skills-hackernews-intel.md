@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `bc01f7c1c31f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Monitors Hacker News for user-configured keywords, deduplicates against a local SQLite cache, and sends Slack alerts for new matching posts. Use when asked to monitor Hacker News for mentions, track keywords on HN, get alerts when something is posted about a topic on Hacker News, or set up HN keyword monitoring. Trigger when a user mentions Hacker News alerts, HN monitoring, keyword tracking on HN, or wants to know.
+Catalog summary: Monitors Hacker News for user-configured keywords, deduplicates against a local SQLite cache, and sends Slack alerts for new matching posts. Use when asked to monitor Hacker News for mentions, track keywords on HN, get alerts when something is posted about a topic on Hacker News, or set up HN keyword monitoring. Trigger when a user mentions Hacker News alerts, HN monitoring, keyword tracking on HN, or wants to know.
 
 ## Verification
 

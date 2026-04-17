@@ -1,6 +1,6 @@
 ---
 name: "designing-workflow-skills"
-description: "Guides the design and structuring of workflow-based Claude Code skills with multi-step phases, decision trees, subagent delegation, and progressive disclosure. Use when creating skills that involve sequential pipelines, routing patterns, safety gates, task tracking, phased execution, or any multi-step workflow. Also applies when reviewing or refactoring existing workflow skills for quality."
+description: "Guides the design and structuring of workflow-based Claude Code skills with multi-step phases, decision trees, explicit workflow routing, and progressive disclosure. Use when creating skills that involve sequential pipelines, routing patterns, safety gates, task tracking, phased execution, or any multi-step workflow. Also applies when reviewing or refactoring existing workflow skills for quality."
 source_skill_id: "trailofbits-skills-plugins-workflow-skill-design-skills-designing-workflow-skills-skill-md"
 category: "DevOps, cloud & operations"
 source_mirror: "../../../../../skills/by-category/devops-cloud-operations/security-reference/trailofbits-skills-plugins-workflow-skill-design-skills-designing-workflow-skills/SKILL.md"

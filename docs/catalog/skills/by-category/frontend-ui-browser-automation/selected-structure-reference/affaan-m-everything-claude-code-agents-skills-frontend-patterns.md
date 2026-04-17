@@ -12,11 +12,11 @@ Selected ref: `v1.10.0`; commit `846ffb75da9a`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Frontend development patterns for React, Next.js, state management, performance optimization, and UI best practices.
+Catalog summary: Frontend development patterns for React, Next.js, state management, performance optimization, and UI best practices.
 
 ## Verification
 

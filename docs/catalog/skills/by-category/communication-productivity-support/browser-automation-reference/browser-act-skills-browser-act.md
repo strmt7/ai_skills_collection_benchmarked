@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `749ed52133b8`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Browser automation CLI for AI agents with anti-detection stealth browsing, captcha solving, and parallel multi-browser support. Use when the user needs to interact with websites, including navigating pages, filling forms, clicking buttons, taking screenshots, extracting data, scraping sites with bot detection, or automating any browser task. Also use when the user needs to connect to their existing Chrome session,.
+Catalog summary: Browser automation CLI for AI agents with anti-detection stealth browsing, captcha solving, and parallel multi-browser support. Use when the user needs to interact with websites, including navigating pages, filling forms, clicking buttons, taking screenshots, extracting data, scraping sites with bot detection, or automating any browser task. Also use when the user needs to connect to their existing Chrome session,.
 
 ## Verification
 

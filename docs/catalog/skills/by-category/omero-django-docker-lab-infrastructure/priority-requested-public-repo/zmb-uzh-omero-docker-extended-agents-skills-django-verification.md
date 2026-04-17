@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Verify Django and OMERO.web changes with the repo's split pytest model, docs gates, and targeted runtime checks.
+Catalog summary: Verify Django and OMERO.web changes with the repo's split pytest model, docs gates, and targeted runtime checks.
 
 ## Verification
 

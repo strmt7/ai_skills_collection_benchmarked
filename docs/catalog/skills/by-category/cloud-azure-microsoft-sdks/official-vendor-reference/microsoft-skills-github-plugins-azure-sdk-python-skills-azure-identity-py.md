@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Azure Identity SDK for Python authentication with Microsoft Entra ID. Use for DefaultAzureCredential, managed identity, service principals, and token caching. Triggers: "azure-identity", "DefaultAzureCredential", "authentication", "managed identity", "service principal", "credential".
+Catalog summary: Azure Identity SDK for Python authentication with Microsoft Entra ID. Use for DefaultAzureCredential, managed identity, service principals, and token caching. Triggers: "azure-identity", "DefaultAzureCredential", "authentication", "managed identity", "service principal", "credential".
 
 ## Verification
 

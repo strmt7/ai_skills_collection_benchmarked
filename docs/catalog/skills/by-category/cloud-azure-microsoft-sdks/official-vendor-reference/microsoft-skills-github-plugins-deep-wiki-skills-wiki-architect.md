@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Analyzes code repositories and generates hierarchical documentation structures with onboarding guides. Use when the user wants to create a wiki, generate documentation, map a codebase structure, or understand a project's architecture at a high level.
+Catalog summary: Analyzes code repositories and generates hierarchical documentation structures with onboarding guides. Use when the user wants to create a wiki, generate documentation, map a codebase structure, or understand a project's architecture at a high level.
 
 ## Verification
 

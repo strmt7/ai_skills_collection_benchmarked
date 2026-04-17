@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `e8cc5baf9329`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Debugs the Buttercup CRS (Cyber Reasoning System) running on Kubernetes. Use when diagnosing pod crashes, restart loops, Redis failures, resource pressure, disk saturation, DinD issues, or any service misbehavior in the crs namespace. Covers triage, log analysis, queue inspection, and common failure patterns for: redis, fuzzer-bot, coverage-bot, seed-gen, patcher, build-bot, scheduler, task-server, task-downloader,.
+Catalog summary: Debugs the Buttercup CRS (Cyber Reasoning System) running on Kubernetes. Use when diagnosing pod crashes, restart loops, Redis failures, resource pressure, disk saturation, DinD issues, or any service misbehavior in the crs namespace. Covers triage, log analysis, queue inspection, and common failure patterns for: redis, fuzzer-bot, coverage-bot, seed-gen, patcher, build-bot, scheduler, task-server, task-downloader,.
 
 ## Verification
 

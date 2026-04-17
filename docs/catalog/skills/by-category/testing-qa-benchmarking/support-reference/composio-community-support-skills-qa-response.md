@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `b4f842c3cbdc`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Review a drafted support response for quality, accuracy, tone, and completeness before sending.
+Catalog summary: Review a drafted support response for quality, accuracy, tone, and completeness before sending.
 
 ## Verification
 

@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Build real-time voice AI applications using Azure AI Voice Live SDK (azure-ai-voicelive). Use this skill when creating Python applications that need real-time bidirectional audio communication with Azure AI, including voice assistants, voice-enabled chatbots, real-time speech-to-speech translation, voice-driven avatars, or any WebSocket-based audio streaming with AI models. Supports Server VAD (Voice Activity.
+Catalog summary: Build real-time voice AI applications using Azure AI Voice Live SDK (azure-ai-voicelive). Use this skill when creating Python applications that need real-time bidirectional audio communication with Azure AI, including voice assistants, voice-enabled chatbots, real-time speech-to-speech translation, voice-driven avatars, or any WebSocket-based audio streaming with AI models. Supports Server VAD (Voice Activity.
 
 ## Verification
 

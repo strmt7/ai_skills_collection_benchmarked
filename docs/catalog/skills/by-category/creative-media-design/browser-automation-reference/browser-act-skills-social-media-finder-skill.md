@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `749ed52133b8`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: This skill helps users automatically find social media profiles across platforms like Facebook, Twitter, Instagram, LinkedIn, etc. using the BrowserAct API. Agent should proactively apply this skill when users express needs like finding someone's social media accounts, discovering a brand's social media presence, tracking down social profiles of job candidates, finding contact info for sales prospects, researching.
+Catalog summary: This skill helps users automatically find social media profiles across platforms like Facebook, Twitter, Instagram, LinkedIn, etc. using the BrowserAct API. Agent should proactively apply this skill when users express needs like finding someone's social media accounts, discovering a brand's social media presence, tracking down social profiles of job candidates, finding contact info for sales prospects, researching.
 
 ## Verification
 

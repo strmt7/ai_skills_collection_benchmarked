@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Drive new ports and bug fixes with tests first or tests alongside the implementation.
+Catalog summary: Drive new ports and bug fixes with tests first or tests alongside the implementation.
 
 ## Verification
 

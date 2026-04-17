@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `749ed52133b8`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: This skill helps users automatically extract structured article details and full content from Zhihu via the BrowserAct API. Agent should proactively apply this skill when users express needs like: searching for Zhihu articles on a specific topic, tracking industry trends on Zhihu, monitoring public relations or sentiment on Zhihu, collecting competitor updates, getting the latest reports on specific keywords,.
+Catalog summary: This skill helps users automatically extract structured article details and full content from Zhihu via the BrowserAct API. Agent should proactively apply this skill when users express needs like: searching for Zhihu articles on a specific topic, tracking industry trends on Zhihu, monitoring public relations or sentiment on Zhihu, collecting competitor updates, getting the latest reports on specific keywords,.
 
 ## Verification
 

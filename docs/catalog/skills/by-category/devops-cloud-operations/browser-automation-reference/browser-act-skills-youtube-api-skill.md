@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `749ed52133b8`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: This skill helps users automatically extract detailed video metrics and channel information from YouTube based on keyword searches using the BrowserAct API. The Agent should proactively apply this skill when users express needs such as extract specific keyword YouTube video detailed data, monitor the latest video performance of competitor channels, collect comment and like counts for videos on a specific topic,.
+Catalog summary: This skill helps users automatically extract detailed video metrics and channel information from YouTube based on keyword searches using the BrowserAct API. The Agent should proactively apply this skill when users express needs such as extract specific keyword YouTube video detailed data, monitor the latest video performance of competitor channels, collect comment and like counts for videos on a specific topic,.
 
 ## Verification
 

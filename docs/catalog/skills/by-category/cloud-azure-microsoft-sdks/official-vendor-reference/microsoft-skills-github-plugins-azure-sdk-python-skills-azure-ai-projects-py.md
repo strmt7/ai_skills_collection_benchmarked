@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Build AI applications using the Azure AI Projects Python SDK (azure-ai-projects). Use when working with Foundry project clients, creating versioned agents with PromptAgentDefinition, running evaluations, managing connections/deployments/datasets/indexes, or using OpenAI-compatible clients. This is the high-level Foundry SDK - for low-level agent operations, use azure-ai-agents-python skill.
+Catalog summary: Build AI applications using the Azure AI Projects Python SDK (azure-ai-projects). Use when working with Foundry project clients, creating versioned agents with PromptAgentDefinition, running evaluations, managing connections/deployments/datasets/indexes, or using OpenAI-compatible clients. This is the high-level Foundry SDK - for low-level agent operations, use azure-ai-agents-python skill.
 
 ## Verification
 

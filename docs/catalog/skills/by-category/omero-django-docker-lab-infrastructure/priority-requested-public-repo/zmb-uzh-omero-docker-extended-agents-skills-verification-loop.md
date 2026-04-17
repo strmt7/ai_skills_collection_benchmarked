@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Repository-specific verification flow for OMERO Docker Extended. Runs docs validation, Ruff, split pytest suites, and targeted fallback checks without overstating coverage.
+Catalog summary: Repository-specific verification flow for OMERO Docker Extended. Runs docs validation, Ruff, split pytest suites, and targeted fallback checks without overstating coverage.
 
 ## Verification
 

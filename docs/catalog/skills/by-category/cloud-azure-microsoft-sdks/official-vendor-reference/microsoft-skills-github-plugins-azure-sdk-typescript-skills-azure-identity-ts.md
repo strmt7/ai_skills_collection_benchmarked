@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Authenticate to Azure services using Azure Identity library for JavaScript (@azure/identity). Use when configuring authentication with DefaultAzureCredential, managed identity, service principals, or interactive browser login.
+Catalog summary: Authenticate to Azure services using Azure Identity library for JavaScript (@azure/identity). Use when configuring authentication with DefaultAzureCredential, managed identity, service principals, or interactive browser login.
 
 ## Verification
 

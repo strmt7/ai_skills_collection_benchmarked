@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `749ed52133b8`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: This skill is designed to help users automatically extract reviews from Google Maps via the Google Maps Reviews API. Agent should proactively apply this skill when users request to find reviews for local businesses (e.g., coffee shops, clinics), monitor customer feedback for a specific brand or location, analyze sentiment of reviews for competitors, extract reviews for a chain of stores or services, track.
+Catalog summary: This skill is designed to help users automatically extract reviews from Google Maps via the Google Maps Reviews API. Agent should proactively apply this skill when users request to find reviews for local businesses (e.g., coffee shops, clinics), monitor customer feedback for a specific brand or location, analyze sentiment of reviews for competitors, extract reviews for a chain of stores or services, track.
 
 ## Verification
 

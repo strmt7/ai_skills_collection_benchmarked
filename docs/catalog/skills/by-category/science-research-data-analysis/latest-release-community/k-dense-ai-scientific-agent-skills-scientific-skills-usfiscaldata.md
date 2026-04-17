@@ -12,11 +12,11 @@ Selected ref: `v2.37.1`; commit `eb20fb0dcb0b`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Query the U.S. Treasury Fiscal Data API for federal financial data including national debt, government spending, revenue, interest rates, exchange rates, and savings bonds. Access 54 datasets and 182 data tables with no API key required. Use when working with U.S. federal fiscal data, national debt tracking (Debt to the Penny), Daily Treasury Statements, Monthly Treasury Statements, Treasury securities auctions,.
+Catalog summary: Query the U.S. Treasury Fiscal Data API for federal financial data including national debt, government spending, revenue, interest rates, exchange rates, and savings bonds. Access 54 datasets and 182 data tables with no API key required. Use when working with U.S. federal fiscal data, national debt tracking (Debt to the Penny), Daily Treasury Statements, Monthly Treasury Statements, Treasury securities auctions,.
 
 ## Verification
 

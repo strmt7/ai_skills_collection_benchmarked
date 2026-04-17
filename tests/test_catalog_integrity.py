@@ -112,7 +112,7 @@ def test_generated_counts_are_documented():
     assert f"- `{len(catalog)}` source-backed skill entries." in readme
     assert f"- `{len(catalog)}` written skill mirrors under `included/skills/`." in readme
     assert f"- `{len(catalog)}` compact agent-ready skill entrypoints under `included/agent-ready/`." in readme
-    assert f"- `{sum(1 for entry in catalog if entry['source_tier'].startswith('priority'))}` priority entries from selected repositories." in readme
+    assert f"- `{sum(1 for entry in catalog if entry['source_tier'].startswith('priority'))}` selected repository entries." in readme
     assert f"- `{len({entry['category'] for entry in catalog})}` categories." in readme
     assert f"- `{len(scenarios)}` real-data scenario templates." in readme
     assert f"- Minimum `{MIN_SCENARIOS}` benchmark scenarios assigned per scenario-covered candidate." in readme
@@ -120,6 +120,7 @@ def test_generated_counts_are_documented():
     assert "[Benchmark results](docs/benchmark-results.md)" in readme
     assert "[Included skill mirrors](included/skills/README.md)" in readme
     assert "[Agent-ready skills](included/agent-ready/README.md)" in readme
+    assert "[Selected skills](docs/priority-skills.md)" in readme
     assert "Early alpha" in readme
     assert "priority entries from requested repositories" not in readme
     for forbidden in [
@@ -224,6 +225,30 @@ def test_agent_instructions_forbid_subagents():
     text = (ROOT / "AGENTS.md").read_text(encoding="utf-8").lower()
     for phrase in ["mandatory single-session rule", "do not spawn", "subagents", "one ai session only"]:
         assert phrase in text
+
+
+def test_agent_ready_entrypoints_do_not_recommend_delegation():
+    for path in (ROOT / "included" / "agent-ready").rglob("SKILL.md"):
+        text = path.read_text(encoding="utf-8").lower()
+        assert "subagent" not in text, path
+        assert "parallel agent" not in text, path
+        assert "multi-agent orchestration" not in text, path
+
+
+def test_mirrored_package_locks_keep_known_advisory_floors():
+    minimums = {
+        "node_modules/brace-expansion": (2, 0, 3),
+        "node_modules/protobufjs": (7, 5, 5),
+    }
+    for path in (ROOT / "included" / "skills").rglob("package-lock.json"):
+        lock = json.loads(path.read_text(encoding="utf-8"))
+        for package_path, minimum in minimums.items():
+            package_data = lock.get("packages", {}).get(package_path)
+            if not package_data:
+                continue
+            observed = tuple(int(part) for part in package_data["version"].split(".")[:3])
+            assert observed >= minimum, (path, package_path, package_data["version"])
+
 
 def test_benchmark_artifact_checker_accepts_complete_artifact_and_rejects_incomplete_visual():
     catalog = load("data/skills_catalog.json")

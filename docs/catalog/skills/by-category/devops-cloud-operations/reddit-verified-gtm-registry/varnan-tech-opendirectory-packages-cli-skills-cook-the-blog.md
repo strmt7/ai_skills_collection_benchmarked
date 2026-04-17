@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `bc01f7c1c31f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Generate high-converting, deep-dive growth case studies in MDX format. Use this skill when asked to write a case study or blog post about a company's growth, tech stack, or product-led strategy. It handles the full pipeline (researching the company via Tavily, generating a 16:9 cover image, quality checking the draft, uploading assets to cloud storage, and pushing directly to the target repository).
+Catalog summary: Generate high-converting, deep-dive growth case studies in MDX format. Use this skill when asked to write a case study or blog post about a company's growth, tech stack, or product-led strategy. It handles the full pipeline (researching the company via Tavily, generating a 16:9 cover image, quality checking the draft, uploading assets to cloud storage, and pushing directly to the target repository).
 
 ## Verification
 

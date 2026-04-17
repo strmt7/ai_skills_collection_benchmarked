@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `bc01f7c1c31f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Use for producthunt-launch-kit workflows. Source sections include Product Hunt Launch Kit, Step 1: Gather Product Details, Step 2: Gallery Strategy.
+Catalog summary: Use for producthunt-launch-kit workflows. Source sections include Product Hunt Launch Kit, Step 1: Gather Product Details, Step 2: Gallery Strategy.
 
 ## Verification
 

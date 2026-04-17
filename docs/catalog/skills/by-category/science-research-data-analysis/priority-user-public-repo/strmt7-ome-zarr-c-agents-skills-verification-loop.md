@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Run the smallest correct verification lane and report it precisely.
+Catalog summary: Run the smallest correct verification lane and report it precisely.
 
 ## Verification
 

@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Use when changing a major UE5 front-end menu, options flow, modal stack, routed input surface, or layered smartphone-first menu architecture. Applies to CommonUI adoption decisions, activatable-widget stacks, menu settings flows, and player-facing mobile front-end structure.
+Catalog summary: Use when changing a major UE5 front-end menu, options flow, modal stack, routed input surface, or layered smartphone-first menu architecture. Applies to CommonUI adoption decisions, activatable-widget stacks, menu settings flows, and player-facing mobile front-end structure.
 
 ## Verification
 

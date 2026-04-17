@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Keep agent context small and high-signal by routing into AGENTS, the nearest docs, and the narrowest correct test lanes.
+Catalog summary: Keep agent context small and high-signal by routing into AGENTS, the nearest docs, and the narrowest correct test lanes.
 
 ## Verification
 

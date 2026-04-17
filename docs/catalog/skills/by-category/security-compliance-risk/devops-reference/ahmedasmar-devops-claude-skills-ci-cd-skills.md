@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `1489c33ad882`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: CI/CD pipeline design, optimization, DevSecOps security scanning, and troubleshooting. Use this skill whenever the user mentions CI/CD, GitHub Actions, GitLab CI, pipelines, workflows, builds, or DevSecOps. Triggers include creating new CI/CD workflows, debugging pipeline failures or flaky tests, implementing SAST/DAST/SCA security scanning, optimizing slow builds with caching or parallelization, setting up.
+Catalog summary: CI/CD pipeline design, optimization, DevSecOps security scanning, and troubleshooting. Use this skill whenever the user mentions CI/CD, GitHub Actions, GitLab CI, pipelines, workflows, builds, or DevSecOps. Triggers include creating new CI/CD workflows, debugging pipeline failures or flaky tests, implementing SAST/DAST/SCA security scanning, optimizing slow builds with caching or parallelization, setting up.
 
 ## Verification
 

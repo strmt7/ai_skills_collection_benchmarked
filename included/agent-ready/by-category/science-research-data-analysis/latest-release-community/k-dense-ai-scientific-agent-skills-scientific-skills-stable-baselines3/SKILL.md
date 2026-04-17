@@ -1,6 +1,6 @@
 ---
 name: "stable-baselines3"
-description: "Production-ready reinforcement learning algorithms (PPO, SAC, DQN, TD3, DDPG, A2C) with scikit-learn-like API. Use for standard RL experiments, quick prototyping, and well-documented algorithm implementations. Best for single-agent RL with Gymnasium environments. For high-performance parallel training, multi-agent systems, or custom vectorized environments, use pufferlib instead."
+description: "Production-ready reinforcement learning algorithms (PPO, SAC, DQN, TD3, DDPG, A2C) with scikit-learn-like API. Use for standard RL experiments, quick prototyping, and well-documented algorithm implementations. Best for single-agent RL with Gymnasium environments. For high-performance parallel training, single-session systems, or custom vectorized environments, use pufferlib instead."
 source_skill_id: "k-dense-ai-scientific-agent-skills-scientific-skills-stable-baselines3-skill-md"
 category: "Science, research & data analysis"
 source_mirror: "../../../../../skills/by-category/science-research-data-analysis/latest-release-community/k-dense-ai-scientific-agent-skills-scientific-skills-stable-baselines3/SKILL.md"

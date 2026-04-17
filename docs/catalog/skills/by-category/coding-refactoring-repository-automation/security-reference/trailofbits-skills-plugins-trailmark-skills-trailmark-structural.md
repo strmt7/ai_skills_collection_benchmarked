@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `e8cc5baf9329`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Runs full trailmark structural analysis with all pre-analysis passes (blast radius, taint propagation, privilege boundaries, complexity hotspots). Use when vivisect needs detailed structural data for a target. Triggers: structural analysis, blast radius, taint analysis, complexity hotspots.
+Catalog summary: Runs full trailmark structural analysis with all pre-analysis passes (blast radius, taint propagation, privilege boundaries, complexity hotspots). Use when vivisect needs detailed structural data for a target. Triggers: structural analysis, blast radius, taint analysis, complexity hotspots.
 
 ## Verification
 

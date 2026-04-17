@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Keep context narrow and high-signal by loading only the smallest correct docs, code, tests, and skills.
+Catalog summary: Keep context narrow and high-signal by loading only the smallest correct docs, code, tests, and skills.
 
 ## Verification
 

@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `b4f842c3cbdc`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Rewrite a support response in a different tone - formal, casual, technical, empathetic, or concise.
+Catalog summary: Rewrite a support response in a different tone - formal, casual, technical, empathetic, or concise.
 
 ## Verification
 

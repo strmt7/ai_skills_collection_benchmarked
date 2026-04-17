@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Azure AI Projects SDK for Java. High-level SDK for Azure AI Foundry project management including connections, datasets, indexes, and evaluations. Triggers: "AIProjectClient java", "azure ai projects java", "Foundry project java", "ConnectionsClient", "DatasetsClient", "IndexesClient".
+Catalog summary: Azure AI Projects SDK for Java. High-level SDK for Azure AI Foundry project management including connections, datasets, indexes, and evaluations. Triggers: "AIProjectClient java", "azure ai projects java", "Foundry project java", "ConnectionsClient", "DatasetsClient", "IndexesClient".
 
 ## Verification
 

@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Azure Key Vault SDK for Python. Use for secrets, keys, and certificates management with secure storage. Triggers: "key vault", "SecretClient", "KeyClient", "CertificateClient", "secrets", "encryption keys".
+Catalog summary: Azure Key Vault SDK for Python. Use for secrets, keys, and certificates management with secure storage. Triggers: "key vault", "SecretClient", "KeyClient", "CertificateClient", "secrets", "encryption keys".
 
 ## Verification
 

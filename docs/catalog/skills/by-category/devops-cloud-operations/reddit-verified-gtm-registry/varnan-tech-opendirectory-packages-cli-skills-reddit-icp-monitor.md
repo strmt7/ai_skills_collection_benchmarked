@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `bc01f7c1c31f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Watches subreddits for people describing the exact problem you solve, scores their relevance to your ICP, and drafts a helpful non-spammy reply for each high-signal post. Use when asked to monitor Reddit for ICP signals, find prospects on Reddit, surface pain point posts, draft helpful Reddit replies, or scan subreddits for buying signals. Trigger when a user says "monitor Reddit for my ICP", "find people on Reddit.
+Catalog summary: Watches subreddits for people describing the exact problem you solve, scores their relevance to your ICP, and drafts a helpful non-spammy reply for each high-signal post. Use when asked to monitor Reddit for ICP signals, find prospects on Reddit, surface pain point posts, draft helpful Reddit replies, or scan subreddits for buying signals. Trigger when a user says "monitor Reddit for my ICP", "find people on Reddit.
 
 ## Verification
 

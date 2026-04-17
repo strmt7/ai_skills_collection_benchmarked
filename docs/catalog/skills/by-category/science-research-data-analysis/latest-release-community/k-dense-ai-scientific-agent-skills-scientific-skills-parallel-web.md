@@ -12,11 +12,11 @@ Selected ref: `v2.37.1`; commit `eb20fb0dcb0b`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: All-in-one web toolkit powered by parallel-cli, with a strong emphasis on academic and scientific sources. Use this skill whenever the user needs to search the web, fetch/extract URL content, enrich data with web-sourced fields, or run deep research reports. Covers: web search (fast lookups, research, current info — prioritizing peer-reviewed papers, preprints, and scholarly databases), URL extraction (fetching.
+Catalog summary: All-in-one web toolkit powered by parallel-cli, with a strong emphasis on academic and scientific sources. Use this skill whenever the user needs to search the web, fetch/extract URL content, enrich data with web-sourced fields, or run deep research reports. Covers: web search (fast lookups, research, current info — prioritizing peer-reviewed papers, preprints, and scholarly databases), URL extraction (fetching.
 
 ## Verification
 

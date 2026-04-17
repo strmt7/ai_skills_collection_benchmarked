@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `bc01f7c1c31f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Aggregates RSS feeds from the past week, synthesizes the top stories using Gemini, and publishes a newsletter digest to Ghost CMS. Optionally outputs formatted Markdown for Substack or any other platform. Use when asked to generate a newsletter, create a weekly digest, summarize RSS feeds, compile top stories for a newsletter, or publish a digest to Ghost. Trigger when a user mentions newsletter digest, weekly.
+Catalog summary: Aggregates RSS feeds from the past week, synthesizes the top stories using Gemini, and publishes a newsletter digest to Ghost CMS. Optionally outputs formatted Markdown for Substack or any other platform. Use when asked to generate a newsletter, create a weekly digest, summarize RSS feeds, compile top stories for a newsletter, or publish a digest to Ghost. Trigger when a user mentions newsletter digest, weekly.
 
 ## Verification
 

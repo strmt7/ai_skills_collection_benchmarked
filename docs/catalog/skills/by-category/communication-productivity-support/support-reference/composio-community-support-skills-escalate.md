@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `b4f842c3cbdc`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Escalate a support ticket to a [Linear](https://composio.dev/toolkits/linear) issue and notify the team on [Slack](https://composio.dev/toolkits/slack).
+Catalog summary: Escalate a support ticket to a [Linear](https://composio.dev/toolkits/linear) issue and notify the team on [Slack](https://composio.dev/toolkits/slack).
 
 ## Verification
 

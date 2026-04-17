@@ -12,11 +12,11 @@ Selected ref: `v1.3.1`; commit `b0e107b0f466`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Classic image manipulation with Python Pillow - resize, crop, composite, format conversion, watermarks, brightness/contrast adjustments, and web optimization. Use this skill when post-processing AI-generated images, preparing images for web delivery, batch processing image directories, creating responsive image variants, or performing any deterministic pixel-level image operation. Works standalone or alongside.
+Catalog summary: Classic image manipulation with Python Pillow - resize, crop, composite, format conversion, watermarks, brightness/contrast adjustments, and web optimization. Use this skill when post-processing AI-generated images, preparing images for web delivery, batch processing image directories, creating responsive image variants, or performing any deterministic pixel-level image operation. Works standalone or alongside.
 
 ## Verification
 

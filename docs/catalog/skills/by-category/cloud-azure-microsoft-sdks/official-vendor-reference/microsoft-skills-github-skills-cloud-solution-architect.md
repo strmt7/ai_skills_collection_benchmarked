@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Transform the agent into a Cloud Solution Architect following Azure Architecture Center best practices. Use when designing cloud architectures, reviewing system designs, selecting architecture styles, applying cloud design patterns, making technology choices, or conducting Well-Architected Framework reviews.
+Catalog summary: Transform the agent into a Cloud Solution Architect following Azure Architecture Center best practices. Use when designing cloud architectures, reviewing system designs, selecting architecture styles, applying cloud design patterns, making technology choices, or conducting Well-Architected Framework reviews.
 
 ## Verification
 

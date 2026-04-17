@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `451d77df9062`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Use for verification-loop workflows. Source sections include Verification Loop, Principle, Process.
+Catalog summary: Use for verification-loop workflows. Source sections include Verification Loop, Principle, Process.
 
 ## Verification
 

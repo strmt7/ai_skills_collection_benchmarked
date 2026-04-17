@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `bc01f7c1c31f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Use for show-hn-writer workflows. Source sections include Show HN Writer, Step 1: Gather Project Context, Step 2: Read Context Files (if available).
+Catalog summary: Use for show-hn-writer workflows. Source sections include Show HN Writer, Step 1: Gather Project Context, Step 2: Read Context Files (if available).
 
 ## Verification
 

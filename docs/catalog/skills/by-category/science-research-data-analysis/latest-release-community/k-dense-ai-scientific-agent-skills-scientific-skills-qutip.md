@@ -12,11 +12,11 @@ Selected ref: `v2.37.1`; commit `eb20fb0dcb0b`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Quantum physics simulation library for open quantum systems. Use when studying master equations, Lindblad dynamics, decoherence, quantum optics, or cavity QED. Best for physics research, open system dynamics, and educational simulations. NOT for circuit-based quantum computing—use qiskit, cirq, or pennylane for quantum algorithms and hardware execution.
+Catalog summary: Quantum physics simulation library for open quantum systems. Use when studying master equations, Lindblad dynamics, decoherence, quantum optics, or cavity QED. Best for physics research, open system dynamics, and educational simulations. NOT for circuit-based quantum computing—use qiskit, cirq, or pennylane for quantum algorithms and hardware execution.
 
 ## Verification
 

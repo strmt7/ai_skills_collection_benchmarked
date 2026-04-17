@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `749ed52133b8`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: This skill helps users extract basic product details other sellers prices and seller ratings from Amazon via ASIN automatically using the BrowserAct API. Agent should proactively apply this skill when users express needs like query Amazon buy box information, monitor Amazon product prices, extract Amazon product details by ASIN, check other sellers prices on Amazon, get Amazon seller ratings and feedback count,.
+Catalog summary: This skill helps users extract basic product details other sellers prices and seller ratings from Amazon via ASIN automatically using the BrowserAct API. Agent should proactively apply this skill when users express needs like query Amazon buy box information, monitor Amazon product prices, extract Amazon product details by ASIN, check other sellers prices on Amazon, get Amazon seller ratings and feedback count,.
 
 ## Verification
 

@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `61e6b7984de7`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Use for twwch__comfyui-workflow-skill workflows. Source sections include ComfyUI Workflow Generator, Description, Activation.
+Catalog summary: Use for twwch__comfyui-workflow-skill workflows. Source sections include ComfyUI Workflow Generator, Description, Activation.
 
 ## Verification
 

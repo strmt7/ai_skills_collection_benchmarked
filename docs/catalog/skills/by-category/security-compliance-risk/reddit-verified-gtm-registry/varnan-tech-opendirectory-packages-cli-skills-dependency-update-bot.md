@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `bc01f7c1c31f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Scans your project for outdated npm, pip, Cargo, Go, or Ruby packages. Runs a CVE security audit. Fetches changelogs, summarizes breaking changes with Gemini, and opens one PR per risk group (patch, minor, major). Includes Diagnosis Mode for install conflicts. Use when asked to update dependencies, check for outdated packages, open dependency PRs, scan for package updates, audit for CVEs, or flag breaking changes.
+Catalog summary: Scans your project for outdated npm, pip, Cargo, Go, or Ruby packages. Runs a CVE security audit. Fetches changelogs, summarizes breaking changes with Gemini, and opens one PR per risk group (patch, minor, major). Includes Diagnosis Mode for install conflicts. Use when asked to update dependencies, check for outdated packages, open dependency PRs, scan for package updates, audit for CVEs, or flag breaking changes.
 
 ## Verification
 

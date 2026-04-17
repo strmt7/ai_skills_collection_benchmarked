@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Azure Cosmos DB SDK for Rust (NoSQL API). Use for document CRUD, queries, containers, and globally distributed data. Triggers: "cosmos db rust", "CosmosClient rust", "container", "document rust", "NoSQL rust", "partition key".
+Catalog summary: Azure Cosmos DB SDK for Rust (NoSQL API). Use for document CRUD, queries, containers, and globally distributed data. Triggers: "cosmos db rust", "CosmosClient rust", "container", "document rust", "NoSQL rust", "partition key".
 
 ## Verification
 

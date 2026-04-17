@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `b4f842c3cbdc`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Summarize customer support/sales calls from [Dialpad](https://composio.dev/toolkits/dialpad) or [Leexi](https://composio.dev/toolkits/leexi) call logs
+Catalog summary: Summarize customer support/sales calls from [Dialpad](https://composio.dev/toolkits/dialpad) or [Leexi](https://composio.dev/toolkits/leexi) call logs
 
 ## Verification
 

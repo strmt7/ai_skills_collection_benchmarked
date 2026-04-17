@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Use this skill when building, debugging, balancing, profiling, or visually upgrading the Project Air Defense Android 3D missile-defense prototype, especially for libGDX battle flow, mobile rendering quality, interception logic, HUD ergonomics, and emulator-verified Android fixes.
+Catalog summary: Use this skill when building, debugging, balancing, profiling, or visually upgrading the Project Air Defense Android 3D missile-defense prototype, especially for libGDX battle flow, mobile rendering quality, interception logic, HUD ergonomics, and emulator-verified Android fixes.
 
 ## Verification
 
