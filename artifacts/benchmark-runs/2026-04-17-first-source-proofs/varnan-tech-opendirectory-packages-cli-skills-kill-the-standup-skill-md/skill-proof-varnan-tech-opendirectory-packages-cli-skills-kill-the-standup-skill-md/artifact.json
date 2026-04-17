@@ -1,7 +1,7 @@
 {
   "artifact_kind": "provenance_check",
   "artifact_version": "1.0",
-  "catalog_commit": "7512fbf179925eeb015e320e35004d16a95050e8",
+  "catalog_commit": "515e8b9056ae5cf4a1d8ee3f5d64d1f3c729b375",
   "evidence": {
     "artifact_paths": [
       "result.json",
@@ -9,7 +9,7 @@
     ],
     "citations_or_paths": [
       "packages/cli/skills/kill-the-standup/SKILL.md",
-      "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/varnan-tech-opendirectory-packages-cli-skills-kill-the-standup/SKILL.md",
+      "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/kill-the-standup/SKILL.md",
       "AGENTS.md"
     ]
   },
@@ -28,7 +28,7 @@
     "identifier": "https://github.com/Varnan-Tech/opendirectory/blob/bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4/packages/cli/skills/kill-the-standup/SKILL.md",
     "is_real": true,
     "kind": "source-skill-repository",
-    "mirrored_path": "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/varnan-tech-opendirectory-packages-cli-skills-kill-the-standup",
+    "mirrored_path": "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/kill-the-standup",
     "skill_file_sha256": "a1f5696c05b6e1e75b889ef279f2907a44ec518692e8f3e36af581fb47b26f17",
     "source_commit": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4"
   },
@@ -46,13 +46,13 @@
   ],
   "outputs": {
     "path": "result.json",
-    "result_sha256": "9de6c5fb5855fd5ed0269f531a0e9bd0c53177359c320d9412bcd5dd1b9c50da",
+    "result_sha256": "b048e1468deff734645ffea0cdf435a5062e9ed21908a2e268e034bb2e3a6477",
     "schema": "evaluators/source_grounded_skill_proof.schema.json"
   },
   "runner": {
     "batch_name": "2026-04-17-first-source-proofs",
     "model_or_runtime": "local-deterministic-source-proof-runner",
-    "timestamp_utc": "2026-04-17T19:10:10Z",
+    "timestamp_utc": "2026-04-17T21:39:52Z",
     "tool": "tools/create_source_proof_batch.py"
   },
   "scenario_id": "skill-proof-varnan-tech-opendirectory-packages-cli-skills-kill-the-standup-skill-md",

@@ -119,6 +119,7 @@ require(len(list((ROOT / "included" / "agent-ready").rglob("SKILL.md"))) == len(
 install_names = [entry.get("install_name") for entry in catalog]
 require(all(install_names), "catalog entry missing install_name")
 require(len(install_names) == len(set(install_names)), "duplicate catalog install_name")
+require(max(len(name) for name in install_names) <= 80, "catalog install_name value exceeds path policy")
 
 locked_skills = {
     skill["id"]: source | {"skill": skill}
@@ -165,6 +166,10 @@ for entry in catalog:
     require(HEX64.fullmatch(entry["skill_dir_sha256"]) is not None, f"{entry['id']} invalid skill_dir_sha256")
     require(entry["mirrored_path"] == build_catalog.skill_mirror_path(entry["category"], entry["subcategory"], entry["install_name"]), f"{entry['id']} mirrored_path/install_name mismatch")
     require(entry["agent_ready_path"] == build_catalog.skill_agent_ready_path(entry["category"], entry["subcategory"], entry["install_name"]), f"{entry['id']} agent_ready_path/install_name mismatch")
+    require(Path(entry["mirrored_path"]).name == entry["install_name"], f"{entry['id']} mirrored_path leaf does not match install_name")
+    require(Path(entry["agent_ready_path"]).parent.name == entry["install_name"], f"{entry['id']} agent_ready_path leaf does not match install_name")
+    for path_key in ["install_name", "mirrored_path", "agent_ready_path", "source_path", "immutable_source_url"]:
+        require("..." not in entry[path_key], f"{entry['id']} {path_key} contains an elided path")
     expected_immutable = f"https://github.com/{entry['source_repo']}/blob/{entry['commit_sha']}/{entry['source_path']}"
     require(entry["immutable_source_url"] == expected_immutable, f"{entry['id']} immutable_source_url mismatch")
     if entry.get("latest_release_tag"):
@@ -188,6 +193,7 @@ for entry in catalog:
     require(locked["repo"] == entry["source_repo"], f"{entry['id']} source lock repo mismatch")
     require(locked["commit_sha"] == entry["commit_sha"], f"{entry['id']} source lock commit mismatch")
     require(locked["skill"]["source_path"] == entry["source_path"], f"{entry['id']} source lock path mismatch")
+    require(locked["skill"]["install_name"] == entry["install_name"], f"{entry['id']} source lock install_name mismatch")
     require(locked["skill"]["skill_file_sha256"] == entry["skill_file_sha256"], f"{entry['id']} source lock file hash mismatch")
     require(locked["skill"]["skill_dir_sha256"] == entry["skill_dir_sha256"], f"{entry['id']} source lock dir hash mismatch")
     mirror_path = ROOT / entry["mirrored_path"]

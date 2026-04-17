@@ -1,15 +1,15 @@
 {
   "citations_or_paths": [
     "benchmarks/independent-runtime-readiness/batch-01/tasks.json",
-    "included/skills/by-category/devops-cloud-operations/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget/SKILL.md",
-    "included/agent-ready/by-category/devops-cloud-operations/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget/SKILL.md",
+    "included/skills/by-category/devops-cloud-operations/selected-project-reference/context-budget-simple-ai-bitcoin-trading-binance/SKILL.md",
+    "included/agent-ready/by-category/devops-cloud-operations/selected-project-reference/context-budget-simple-ai-bitcoin-trading-binance/SKILL.md",
     "data/benchmark_scenarios.json",
     "data/benchmark_tracks.json",
     "data/skill_risk_audit.json",
     "https://github.com/kubernetes/examples"
   ],
   "inputs": {
-    "agent_ready_path": "included/agent-ready/by-category/devops-cloud-operations/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/devops-cloud-operations/selected-project-reference/context-budget-simple-ai-bitcoin-trading-binance/SKILL.md",
     "dataset_snapshot": {
       "head_sha": "d6b8cd27eacb51e651a1aa6f7c190a28713eff6e",
       "kind": "real-github-repository-tree",
@@ -45,7 +45,7 @@
       "url": "https://github.com/kubernetes/examples"
     },
     "dataset_track_id": "kubernetes-examples",
-    "mirrored_path": "included/skills/by-category/devops-cloud-operations/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget",
+    "mirrored_path": "included/skills/by-category/devops-cloud-operations/selected-project-reference/context-budget-simple-ai-bitcoin-trading-binance",
     "risk_level": "likely_non_working",
     "scenario_id": "devops-cloud-and-operations-kubernetes-examples",
     "skill_id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md",
@@ -91,12 +91,12 @@
         "passed": true
       },
       {
-        "evidence": "included/skills/by-category/devops-cloud-operations/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget/SKILL.md",
+        "evidence": "included/skills/by-category/devops-cloud-operations/selected-project-reference/context-budget-simple-ai-bitcoin-trading-binance/SKILL.md",
         "name": "mirror_skill_file_exists",
         "passed": true
       },
       {
-        "evidence": "included/agent-ready/by-category/devops-cloud-operations/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget/SKILL.md",
+        "evidence": "included/agent-ready/by-category/devops-cloud-operations/selected-project-reference/context-budget-simple-ai-bitcoin-trading-binance/SKILL.md",
         "name": "agent_ready_entrypoint_exists",
         "passed": true
       },
@@ -116,7 +116,7 @@
         "passed": true
       },
       {
-        "evidence": "included/agent-ready/by-category/devops-cloud-operations/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget/SKILL.md",
+        "evidence": "included/agent-ready/by-category/devops-cloud-operations/selected-project-reference/context-budget-simple-ai-bitcoin-trading-binance/SKILL.md",
         "name": "single_session_entrypoint_clean",
         "passed": true
       },
