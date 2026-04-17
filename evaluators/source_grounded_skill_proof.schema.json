@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "activation_conditions": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "proof_evidence": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "claim": {
+            "type": "string"
+          },
+          "line_or_section": {
+            "type": "string"
+          },
+          "source_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_path",
+          "line_or_section",
+          "claim"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "required_context": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "safe_boundaries": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "workflow_steps": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    }
+  },
+  "required": [
+    "activation_conditions",
+    "required_context",
+    "safe_boundaries",
+    "workflow_steps",
+    "proof_evidence"
+  ],
+  "title": "Source-grounded skill proof",
+  "type": "object"
+}
