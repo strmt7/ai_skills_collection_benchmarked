@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `bc01f7c1c31f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Writes and optionally posts a Reddit post for any subreddit, following that subreddit's specific culture and rules. Drafts a title, body, and first comment using the 90/10 rule. Uses Composio Reddit MCP for optional direct posting. Use when asked to post on Reddit, draft a Reddit post, share a project on Reddit, write a subreddit post, or launch something on Reddit. Trigger when a user says "post this on Reddit",.
+Catalog summary: Writes and optionally posts a Reddit post for any subreddit, following that subreddit's specific culture and rules. Drafts a title, body, and first comment using the 90/10 rule. Uses Composio Reddit MCP for optional direct posting. Use when asked to post on Reddit, draft a Reddit post, share a project on Reddit, write a subreddit post, or launch something on Reddit. Trigger when a user says "post this on Reddit",.
 
 ## Verification
 

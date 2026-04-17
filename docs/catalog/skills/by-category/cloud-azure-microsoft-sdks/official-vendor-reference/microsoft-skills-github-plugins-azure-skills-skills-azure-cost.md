@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Unified Azure cost management: query historical costs, forecast future spending, and optimize to reduce waste. WHEN: "Azure costs", "Azure spending", "Azure bill", "cost breakdown", "cost by service", "cost by resource", "how much am I spending", "show my bill", "monthly cost summary", "cost trends", "top cost drivers", "actual cost", "amortized cost", "forecast spending", "projected costs", "estimate bill",.
+Catalog summary: Unified Azure cost management: query historical costs, forecast future spending, and optimize to reduce waste. WHEN: "Azure costs", "Azure spending", "Azure bill", "cost breakdown", "cost by service", "cost by resource", "how much am I spending", "show my bill", "monthly cost summary", "cost trends", "top cost drivers", "actual cost", "amortized cost", "forecast spending", "projected costs", "estimate bill",.
 
 ## Verification
 

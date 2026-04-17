@@ -1,6 +1,6 @@
-# Priority Skills
+# Selected Skills
 
-Priority entries: `80`.
+Selected entries: `80`.
 
 | Skill | Category | Source | Ref | Scenarios |
 |---|---|---|---|---:|
@@ -85,4 +85,4 @@ Priority entries: `80`.
 | `workflow-supply-chain-maintenance` | Science, research & data analysis | [strmt7/ome-zarr-C](https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/workflow-supply-chain-maintenance/SKILL.md) | default-branch HEAD | 4 |
 | `verification-loop` | Testing, QA & benchmarking | [strmt7/simple_ai_bitcoin_trading_binance](https://github.com/strmt7/simple_ai_bitcoin_trading_binance/blob/451d77df90621e3b666581d9835d246fb7147349/.agents/skills/verification-loop/SKILL.md) | default-branch HEAD | 4 |
 
-Priority entries are a subset of the physical mirrors under `included/skills/`; `included/priority/manifest.json` points to the exact mirrored directory for each one. Adjacent agent instruction files and benchmark folders are documented as context in the source policy, not counted as skills.
+Selected entries are a subset of the physical mirrors under `included/skills/`; `included/priority/manifest.json` points to the exact mirrored directory for each one. Adjacent agent instruction files and benchmark folders are documented as context in the source policy, not counted as skills.

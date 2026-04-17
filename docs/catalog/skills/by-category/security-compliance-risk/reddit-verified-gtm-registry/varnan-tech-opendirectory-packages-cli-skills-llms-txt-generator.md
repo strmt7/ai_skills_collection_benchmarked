@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `bc01f7c1c31f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Generates and maintains a standards-compliant llms.txt file for any website — either by crawling the live site OR by reading the website's codebase directly. Use this skill when asked to create an llms.txt, add AI discoverability to a site, improve GEO (Generative Engine Optimization), make a website readable by AI agents, generate an llms-full.txt, check if a site has llms.txt, or audit a site's AI readiness for.
+Catalog summary: Generates and maintains a standards-compliant llms.txt file for any website — either by crawling the live site OR by reading the website's codebase directly. Use this skill when asked to create an llms.txt, add AI discoverability to a site, improve GEO (Generative Engine Optimization), make a website readable by AI agents, generate an llms-full.txt, check if a site has llms.txt, or audit a site's AI readiness for.
 
 ## Verification
 

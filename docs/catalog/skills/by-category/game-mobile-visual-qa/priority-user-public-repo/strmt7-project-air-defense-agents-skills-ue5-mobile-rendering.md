@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Use when changing UE5 smartphone rendering, graphics settings, anti-aliasing, ambient occlusion, reflections, post-process, device profiles, or mobile performance tiers. Applies when exposing graphics options to players or claiming that a visual feature works on-device.
+Catalog summary: Use when changing UE5 smartphone rendering, graphics settings, anti-aliasing, ambient occlusion, reflections, post-process, device profiles, or mobile performance tiers. Applies when exposing graphics options to players or claiming that a visual feature works on-device.
 
 ## Verification
 

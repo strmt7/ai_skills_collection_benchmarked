@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `7d9d03b290f0`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Guide for creating logos, brand identities, and visual assets using AI tools — covers tool selection, prompt engineering, vectorization pipelines, mockups, automation, and IP safety.
+Catalog summary: Guide for creating logos, brand identities, and visual assets using AI tools — covers tool selection, prompt engineering, vectorization pipelines, mockups, automation, and IP safety.
 
 ## Verification
 

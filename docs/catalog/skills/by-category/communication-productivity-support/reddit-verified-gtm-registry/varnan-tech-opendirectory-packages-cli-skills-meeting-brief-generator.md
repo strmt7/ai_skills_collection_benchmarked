@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `bc01f7c1c31f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Takes a company name and optional contact, runs targeted research via Tavily, synthesizes a 1-page pre-call brief with Gemini, and optionally saves it to Notion. Use when asked to prepare for a meeting, research a prospect before a call, generate a company brief, create a pre-call summary, or write a meeting prep doc. Trigger when a user says "prepare me for a meeting with", "research this company before my call",.
+Catalog summary: Takes a company name and optional contact, runs targeted research via Tavily, synthesizes a 1-page pre-call brief with Gemini, and optionally saves it to Notion. Use when asked to prepare for a meeting, research a prospect before a call, generate a company brief, create a pre-call summary, or write a meeting prep doc. Trigger when a user says "prepare me for a meeting with", "research this company before my call",.
 
 ## Verification
 

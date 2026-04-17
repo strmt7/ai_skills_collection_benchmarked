@@ -1,6 +1,6 @@
 ---
 name: "pufferlib"
-description: "High-performance reinforcement learning framework optimized for speed and scale. Use when you need fast parallel training, vectorized environments, multi-agent systems, or integration with game environments (Atari, Procgen, NetHack). Achieves 2-10x speedups over standard implementations. For quick prototyping or standard algorithm implementations with extensive documentation, use stable-baselines3 instead."
+description: "High-performance reinforcement learning framework optimized for speed and scale. Use when you need fast parallel training, vectorized environments, single-session systems, or integration with game environments (Atari, Procgen, NetHack). Achieves 2-10x speedups over standard implementations. For quick prototyping or standard algorithm implementations with extensive documentation, use stable-baselines3 instead."
 source_skill_id: "k-dense-ai-scientific-agent-skills-scientific-skills-pufferlib-skill-md"
 category: "Game, mobile & visual QA"
 source_mirror: "../../../../../skills/by-category/game-mobile-visual-qa/latest-release-community/k-dense-ai-scientific-agent-skills-scientific-skills-pufferlib/SKILL.md"

@@ -7,8 +7,8 @@
 - Agent-ready entrypoint: `included/agent-ready/by-category/frontend-ui-browser-automation/selected-structure-reference/affaan-m-everything-claude-code-agents-skills-coding-standards/SKILL.md`
 - Source: [affaan-m/everything-claude-code `.agents/skills/coding-standards/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/coding-standards/SKILL.md)
 - Selected ref: `v1.10.0`; commit `846ffb75da9a`
-- What it covers: Source description: Universal coding standards, best practices, and patterns for TypeScript, JavaScript, React, and Node.js development.
-- Agent use: Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+- What it covers: Catalog summary: Universal coding standards, best practices, and patterns for TypeScript, JavaScript, React, and Node.js development.
+- Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 - Observed structure: Headings: Coding Standards & Best Practices, When to Activate, Code Quality Principles, 1. Readability First, 2. KISS (Keep It Simple, Stupid). Resources: has_agents_metadata.
 - Notability: Included from selected repository structure reference with explicit GitHub provenance.
 - Improvement and correction plan:
@@ -28,8 +28,8 @@
 - Agent-ready entrypoint: `included/agent-ready/by-category/frontend-ui-browser-automation/selected-structure-reference/affaan-m-everything-claude-code-agents-skills-frontend-patterns/SKILL.md`
 - Source: [affaan-m/everything-claude-code `.agents/skills/frontend-patterns/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/frontend-patterns/SKILL.md)
 - Selected ref: `v1.10.0`; commit `846ffb75da9a`
-- What it covers: Source description: Frontend development patterns for React, Next.js, state management, performance optimization, and UI best practices.
-- Agent use: Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+- What it covers: Catalog summary: Frontend development patterns for React, Next.js, state management, performance optimization, and UI best practices.
+- Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 - Observed structure: Headings: Frontend Development Patterns, When to Activate, Component Patterns, Composition Over Inheritance, Compound Components. Resources: has_agents_metadata.
 - Notability: Included from selected repository structure reference with explicit GitHub provenance.
 - Improvement and correction plan:
@@ -49,8 +49,8 @@
 - Agent-ready entrypoint: `included/agent-ready/by-category/frontend-ui-browser-automation/security-reference/trailofbits-skills-plugins-claude-in-chrome-troubleshooting-skills-claude-in-chrome-troubleshooting/SKILL.md`
 - Source: [trailofbits/skills `plugins/claude-in-chrome-troubleshooting/skills/claude-in-chrome-troubleshooting/SKILL.md`](https://github.com/trailofbits/skills/blob/e8cc5baf9329ccb491bfa200e82eacbac83b1ead/plugins/claude-in-chrome-troubleshooting/skills/claude-in-chrome-troubleshooting/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `e8cc5baf9329`
-- What it covers: Source description: Diagnose and fix Claude in Chrome MCP extension connectivity issues. Use when mcp__claude-in-chrome__* tools fail, return "Browser extension is not connected", or behave erratically.
-- Agent use: Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+- What it covers: Catalog summary: Diagnose and fix Claude in Chrome MCP extension connectivity issues. Use when mcp__claude-in-chrome__* tools fail, return "Browser extension is not connected", or behave erratically.
+- Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 - Observed structure: Headings: Claude in Chrome MCP Troubleshooting, When to Use, When NOT to Use, The Claude.app vs Claude Code Conflict (Primary Issue), Two Native Hosts, Two Socket Formats. Resources: none observed.
 - Notability: Included from security and audit skills with explicit GitHub provenance.
 - Improvement and correction plan:

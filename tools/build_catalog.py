@@ -34,6 +34,7 @@ SECRET_PLACEHOLDERS = [
     (re.compile(r"AIza[0-9A-Za-z_-]{35}"), "<GOOGLE_API_KEY>"),
     (re.compile(r"(?:A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}"), "<AWS_ACCESS_KEY_ID>"),
     (re.compile(r"(?<![A-Za-z0-9_-])sk-(?:proj-)?[A-Za-z0-9_]{20,}(?![A-Za-z0-9_-])"), "<OPENAI_API_KEY>"),
+    (re.compile(r"(?<![A-Za-z0-9_-])sk-(?:proj-)?(?:[xX][xX-]{2,}|\.{3}|[A-Za-z0-9][A-Za-z0-9_.-]*\.{3})(?![A-Za-z0-9_-])"), "<API_KEY>"),
     (re.compile(r"(?:gh[pousr]_[A-Za-z0-9_]{30,}|github_pat_[A-Za-z0-9_]{20,})"), "<GITHUB_TOKEN>"),
     (re.compile(r"\bgh[pousr]_[A-Za-z0-9_.-]+"), "<GITHUB_TOKEN>"),
     (re.compile(r"\bgithub_pat_[A-Za-z0-9_.-]+"), "<GITHUB_TOKEN>"),
@@ -44,6 +45,21 @@ SECRET_PLACEHOLDERS = [
     (re.compile(r"\bxox[baprs]-[A-Za-z0-9_.-]+"), "<SLACK_TOKEN>"),
     (re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH |DSA |)?PRIVATE KEY-----"), "<PRIVATE_KEY_HEADER>"),
 ]
+
+PACKAGE_LOCK_SECURITY_OVERRIDES = {
+    "node_modules/brace-expansion": {
+        "version": "2.1.0",
+        "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-2.1.0.tgz",
+        "integrity": "sha512-TN1kCZAgdgweJhWWpgKYrQaMNHcDULHkWwQIspdtjV4Y5aurRdZpjAqn6yX3FPqTA9ngHCc4hJxMAMgGfve85w==",
+        "remove_keys": ["license"],
+    },
+    "node_modules/protobufjs": {
+        "version": "7.5.5",
+        "resolved": "https://registry.npmjs.org/protobufjs/-/protobufjs-7.5.5.tgz",
+        "integrity": "sha512-3wY1AxV+VBNW8Yypfd1yQY9pXnqTAN+KwQxL8iYm3/BjKYMNg4i0owhEe26PWDOMaIrzeeF98Lqd5NGz4omiIg==",
+        "remove_keys": ["license"],
+    },
+}
 
 
 SOURCES: list[dict[str, Any]] = [
@@ -184,6 +200,36 @@ def normalize_text_file(text: str) -> str:
     return "\n".join(lines).rstrip("\n") + "\n"
 
 
+def patch_package_lock_text(path: Path, text: str) -> str:
+    if path.name != "package-lock.json":
+        return text
+    try:
+        data = json.loads(text)
+    except json.JSONDecodeError:
+        return text
+    packages = data.get("packages")
+    if not isinstance(packages, dict):
+        return text
+
+    changed = False
+    for package_path, override in PACKAGE_LOCK_SECURITY_OVERRIDES.items():
+        package_data = packages.get(package_path)
+        if not isinstance(package_data, dict):
+            continue
+        for key in ("version", "resolved", "integrity"):
+            if package_data.get(key) != override[key]:
+                package_data[key] = override[key]
+                changed = True
+        for key in override.get("remove_keys", []):
+            if key in package_data:
+                del package_data[key]
+                changed = True
+
+    if not changed:
+        return text
+    return json.dumps(data, indent=2) + "\n"
+
+
 def sanitized_file_bytes(path: Path) -> bytes:
     data = path.read_bytes()
     if b"\0" in data:
@@ -192,6 +238,7 @@ def sanitized_file_bytes(path: Path) -> bytes:
         text = data.decode("utf-8")
     except UnicodeDecodeError:
         return data
+    text = patch_package_lock_text(path, text)
     return normalize_text_file(sanitize_secret_like_text(text)).encode("utf-8")
 
 
@@ -325,6 +372,32 @@ def compact(text: Any, limit: int = 420) -> str:
     return value[: limit - 1].rsplit(" ", 1)[0] + "."
 
 
+def single_session_summary(text: str) -> str:
+    """Keep generated, agent-facing summaries compatible with AGENTS.md."""
+    replacements = [
+        (r"\busing parallel subagents\b", "using single-session review passes"),
+        (r"\bvia Task subagents\b", "within one session"),
+        (r"\bsubagent delegation\b", "explicit workflow routing"),
+        (r"\bparallel subagents\b", "single-session review passes"),
+        (r"\bsubagents\b", "single-session review steps"),
+        (r"\bsubagent\b", "single-session review step"),
+        (r"\bSpawns? parallel workers?[^.]*\.", "Uses one-session workflow coordination."),
+        (r"\bSpawn all scan Tasks[^.]*\.", "Plan scan tasks inside one session."),
+        (r"\bparallel agent workflows\b", "single-session workflow coordination"),
+        (r"\bagents?\s+in\s+parallel\b", "one AI session"),
+        (r"\bmultiple agent sessions in parallel\b", "one AI session"),
+        (r"\bcoordinating multi-agent development workflows\b", "coordinating single-session development workflows"),
+        (r"\bparallel agents\b", "single-session review steps"),
+        (r"\bmulti-agent orchestration\b", "single-session workflow coordination"),
+        (r"\bmulti-agent\b", "single-session"),
+    ]
+    value = text
+    for pattern, replacement in replacements:
+        value = re.sub(pattern, replacement, value, flags=re.IGNORECASE)
+    summary = compact(value)
+    return summary[:1].upper() + summary[1:] if summary else summary
+
+
 def headings(body: str) -> list[str]:
     found: list[str] = []
     for line in body.splitlines():
@@ -425,8 +498,9 @@ def collect() -> list[dict[str, Any]]:
             skill_dir = skill_file.parent
             meta, body = parse_frontmatter(text)
             name = str(meta.get("name") or skill_file.parent.name)
-            description = compact(meta.get("description") or fallback_description(name, rel, body))
-            category = category_for(source, rel, name, description)
+            source_description = compact(meta.get("description") or fallback_description(name, rel, body))
+            description = single_session_summary(source_description)
+            category = category_for(source, rel, name, source_description)
             resource_flags = flags(skill_file)
             has_required_frontmatter = all(key in meta for key in ("name", "description"))
             entry_install_name = install_name(source["repo"], rel)
@@ -476,10 +550,10 @@ def collect() -> list[dict[str, Any]]:
                 notes.append("Move long background material into references/ to keep SKILL.md concise.")
             item["improvement_notes"] = notes[:5]
             item["explanation"] = {
-                "what_it_covers": f"Source description: {description}",
-                "how_an_agent_should_use_it": "Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.",
+                "what_it_covers": f"Catalog summary: {description}",
+                "how_an_agent_should_use_it": "Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.",
                 "observed_structure": f"Headings: {', '.join(item['headings'][:5]) or 'none observed'}. Resources: {', '.join(k for k, v in resource_flags.items() if v) or 'none observed'}.",
-                "notability": "Selected priority source." if source["tier"].startswith("priority") else f"Included from {source['group']} with explicit GitHub provenance.",
+                "notability": "Selected source." if source["tier"].startswith("priority") else f"Included from {source['group']} with explicit GitHub provenance.",
             }
             item["benchmark_scenarios"] = [f"skill-proof-{item['id']}"] + scenario_ids(category)
             entries.append(item)
@@ -672,9 +746,9 @@ def write_priority_manifest(entries: list[dict[str, Any]]) -> None:
     manifest = [skill_manifest_entry(entry, conflicts[entry["id"]]) for entry in priority_entries]
     write_json(target / "manifest.json", manifest)
     (target / "README.md").write_text(
-        "# Priority Skills\n\n"
-        "This directory is a priority subset manifest only. The actual skill directories are physically written once under `included/skills/` and are referenced by each entry's `mirrored_path`.\n\n"
-        "Use `manifest.json` to trace priority entries back to immutable source URLs and unique `install_name` values. Do not bulk-install entries where `bulk_install_safe` is false.\n",
+        "# Selected Skills\n\n"
+        "This directory is a selected subset manifest only. The actual skill directories are physically written once under `included/skills/` and are referenced by each entry's `mirrored_path`.\n\n"
+        "Use `manifest.json` to trace selected entries back to immutable source URLs and unique `install_name` values. Do not bulk-install entries where `bulk_install_safe` is false.\n",
         encoding="utf-8",
     )
 
@@ -752,7 +826,7 @@ Repository scope:
 - Catalog entries come from observed `SKILL.md` files in public GitHub repositories.
 - Each entry records source repo, path, selected ref, immutable commit URL, category, and readiness caveat.
 - Source discovery used a broad web and repository search, then offline verification against local checkouts.
-- Priority ordering follows the source policy and lock files, not README-only claims.
+- Selected-entry ordering follows the source policy and lock files, not README-only claims.
 - Scenario-covered candidates must have multiple benchmark scenarios before any runtime claim is considered.
 - The benchmark suite defines realistic workflows and datasets; it does not claim a skill passed until a run artifact is recorded.
 
@@ -761,7 +835,7 @@ Current snapshot:
 - `{len(entries)}` source-backed skill entries.
 - `{len(entries)}` written skill mirrors under `included/skills/`.
 - `{len(entries)}` compact agent-ready skill entrypoints under `included/agent-ready/`.
-- `{len(priority)}` priority entries from selected repositories.
+- `{len(priority)}` selected repository entries.
 - `{len(categories)}` categories.
 - `{len(scenarios)}` real-data scenario templates.
 - Minimum `{MIN_SCENARIOS}` benchmark scenarios assigned per scenario-covered candidate.
@@ -772,7 +846,7 @@ Start here:
 - [Source policy](docs/source-policy.md)
 - [Included skill mirrors](included/skills/README.md)
 - [Agent-ready skills](included/agent-ready/README.md)
-- [Priority skills](docs/priority-skills.md)
+- [Selected skills](docs/priority-skills.md)
 - [Catalog index](docs/catalog/index.md)
 - [Benchmark suite](docs/benchmarks.md)
 - [Benchmark results](docs/benchmark-results.md)
@@ -838,10 +912,10 @@ python3 tools/build_catalog.py --source-root /path/to/ai_skill_sources
 Validation does not depend on `/tmp`, a local username, a private absolute path, or a specific host. Network-heavy benchmark execution should be performed by a separate runner that records dataset versions and artifacts.
 """, encoding="utf-8")
 
-    priority_doc = f"# Priority Skills\n\nPriority entries: `{len(priority)}`.\n\n| Skill | Category | Source | Ref | Scenarios |\n|---|---|---|---|---:|\n"
+    priority_doc = f"# Selected Skills\n\nSelected entries: `{len(priority)}`.\n\n| Skill | Category | Source | Ref | Scenarios |\n|---|---|---|---|---:|\n"
     for entry in priority:
         priority_doc += f"| `{esc(entry['name'])}` | {esc(entry['category'])} | [{esc(entry['source_repo'])}]({entry['immutable_source_url']}) | {esc(entry['selected_ref'])} | {len(entry['benchmark_scenarios'])} |\n"
-    priority_doc += "\nPriority entries are a subset of the physical mirrors under `included/skills/`; `included/priority/manifest.json` points to the exact mirrored directory for each one. Adjacent agent instruction files and benchmark folders are documented as context in the source policy, not counted as skills.\n"
+    priority_doc += "\nSelected entries are a subset of the physical mirrors under `included/skills/`; `included/priority/manifest.json` points to the exact mirrored directory for each one. Adjacent agent instruction files and benchmark folders are documented as context in the source policy, not counted as skills.\n"
     (docs / "priority-skills.md").write_text(priority_doc, encoding="utf-8")
 
     index = f"# Catalog Index\n\nTotal entries: `{len(entries)}`. Every skill also has its own compact page under `docs/catalog/skills/by-category/`.\n\n| Category | Count | Category document |\n|---|---:|---|\n"

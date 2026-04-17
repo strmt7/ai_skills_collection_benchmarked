@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `bc01f7c1c31f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Use for schema-markup-generator workflows. Source sections include schema-markup-generator, Workflow, Step 1: Setup Check.
+Catalog summary: Use for schema-markup-generator workflows. Source sections include schema-markup-generator, Workflow, Step 1: Setup Check.
 
 ## Verification
 

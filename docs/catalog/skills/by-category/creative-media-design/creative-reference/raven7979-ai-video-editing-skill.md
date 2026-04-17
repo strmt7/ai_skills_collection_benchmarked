@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `9bf0a9c3396c`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: 用于 AI 口播初剪、自动剪辑、去气口、去重复、视频转字幕、按口播稿对稿。支持语义级重复判断、剪后重新转字幕并与口播稿复核，还会标出大段 NG / 试讲 / 临场发挥候选段供用户确认。支持中文和英文，默认按电脑语言自动切换，也可手动指定。中文触发词包括 AI剪辑、自动剪辑、初剪、口播初剪、去气口、视频转字幕、对稿；英文触发词包括 AI video editing、auto edit this video、video edit、rough cut、trim pauses、remove repeated takes。开始前先确认用户是否提供口播稿，以及剪辑强度选 一般 或 多点。
+Catalog summary: 用于 AI 口播初剪、自动剪辑、去气口、去重复、视频转字幕、按口播稿对稿。支持语义级重复判断、剪后重新转字幕并与口播稿复核，还会标出大段 NG / 试讲 / 临场发挥候选段供用户确认。支持中文和英文，默认按电脑语言自动切换，也可手动指定。中文触发词包括 AI剪辑、自动剪辑、初剪、口播初剪、去气口、视频转字幕、对稿；英文触发词包括 AI video editing、auto edit this video、video edit、rough cut、trim pauses、remove repeated takes。开始前先确认用户是否提供口播稿，以及剪辑强度选 一般 或 多点。
 
 ## Verification
 

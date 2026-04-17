@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `c37c209942ba`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: AI UGC video production from the terminal using the `agent-media` CLI.
+Catalog summary: AI UGC video production from the terminal using the `agent-media` CLI.
 
 ## Verification
 
