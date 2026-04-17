@@ -18,8 +18,28 @@ jobs:
         run: python -m json.tool data/skills_catalog.json >/dev/null
       - name: Validate catalog and mirrors
         run: python tools/validate_catalog.py
+      - name: Validate benchmark and provenance artifacts
+        run: |
+          python - <<'PY'
+          import sys
+          from pathlib import Path
+
+          sys.path.insert(0, "tools")
+          import check_benchmark_artifact
+
+          paths = sorted(Path("artifacts/benchmark-runs").rglob("artifact.json"))
+          if not paths:
+              raise SystemExit("no benchmark or provenance artifacts recorded")
+          for path in paths:
+              result = check_benchmark_artifact.validate_artifact(path)
+              if result["verdict"] != "artifact_complete":
+                  raise SystemExit(f"{path}: {result}")
+          print(f"validated {len(paths)} benchmark/provenance artifacts")
+          PY
       - name: Validate static benchmark outputs
         run: python tools/run_static_benchmarks.py --check
+      - name: Validate skill risk audit
+        run: python tools/audit_skill_quality.py --check
       - name: Run tests
         run: python -m pytest -q
       - name: Compile Python

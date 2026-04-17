@@ -1,0 +1,50 @@
+{
+  "activation_conditions": [
+    "Use when validating Project Air Defense with screenshots, OCR, template matching, or live emulator navigation, especially when libGDX SurfaceView content is not visible in the Android accessibility tree"
+  ],
+  "observed_headings": [
+    "Android Visual QA",
+    "Read next",
+    "Workflow",
+    "Rules",
+    "Validation"
+  ],
+  "proof_evidence": [
+    {
+      "claim": "Skill identity is android-visual-qa.",
+      "line_or_section": "line 2",
+      "source_path": ".agents/skills/android-visual-qa/SKILL.md"
+    },
+    {
+      "claim": "Use when validating Project Air Defense with screenshots, OCR, template matching, or live emulator navigation, especially when libGDX SurfaceView content is not visible in the Android accessibility tree",
+      "line_or_section": "line 3",
+      "source_path": ".agents/skills/android-visual-qa/SKILL.md"
+    },
+    {
+      "claim": "Observed workflow section: Android Visual QA.",
+      "line_or_section": "section Android Visual QA",
+      "source_path": ".agents/skills/android-visual-qa/SKILL.md"
+    }
+  ],
+  "required_context": [
+    "Read the mirrored SKILL.md at included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-android-visual-qa/SKILL.md.",
+    "Use source provenance strmt7/project_air_defense .agents/skills/android-visual-qa/SKILL.md at 77f082fe23a86ded15e696a22955b2a890da2fce."
+  ],
+  "safe_boundaries": [
+    "Follow repository-level AGENTS.md and use one AI session only.",
+    "Do not claim a runtime benchmark pass without a validated artifact.",
+    "Do not use or emit real credentials; keep provider-shaped examples neutralized."
+  ],
+  "scenario_id": "skill-proof-strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md",
+  "skill_file_sha256": "480fe5b49dc71eb029067549a2aeab5be0fa7b580e42fb7d7d4099c5f6dd585f",
+  "skill_id": "strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md",
+  "source_commit": "77f082fe23a86ded15e696a22955b2a890da2fce",
+  "source_path": ".agents/skills/android-visual-qa/SKILL.md",
+  "source_repo": "strmt7/project_air_defense",
+  "workflow_steps": [
+    "Confirm the user task matches the skill description or source path.",
+    "Read the local SKILL.md mirror and only then load referenced resources if needed.",
+    "Execute the smallest task-specific workflow that produces objective evidence.",
+    "Record commands, files read, outputs, metrics, and citations before making claims."
+  ]
+}

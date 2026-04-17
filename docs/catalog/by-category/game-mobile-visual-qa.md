@@ -2,9 +2,9 @@
 
 ## android-visual-qa - strmt7/project_air_defense `.agents/skills/android-visual-qa/SKILL.md`
 
-- Skill page: [strmt7-project-air-defense-agents-skills-android-visual-qa](../skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-android-visual-qa.md)
-- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-android-visual-qa`
-- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-android-visual-qa/SKILL.md`
+- Skill page: [strmt7-project-air-defense-agents-skills-android-visual-qa](../skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-android-visual-qa.md)
+- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-android-visual-qa`
+- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-android-visual-qa/SKILL.md`
 - Source: [strmt7/project_air_defense `.agents/skills/android-visual-qa/SKILL.md`](https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/android-visual-qa/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 - What it covers: Catalog summary: Use when validating Project Air Defense with screenshots, OCR, template matching, or live emulator navigation, especially when libGDX SurfaceView content is not visible in the Android accessibility tree.
@@ -23,9 +23,9 @@
 
 ## browser-fallback - strmt7/project_air_defense `.agents/skills/browser-fallback/SKILL.md`
 
-- Skill page: [strmt7-project-air-defense-agents-skills-browser-fallback](../skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-browser-fallback.md)
-- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-browser-fallback`
-- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-browser-fallback/SKILL.md`
+- Skill page: [strmt7-project-air-defense-agents-skills-browser-fallback](../skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-browser-fallback.md)
+- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-browser-fallback`
+- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-browser-fallback/SKILL.md`
 - Source: [strmt7/project_air_defense `.agents/skills/browser-fallback/SKILL.md`](https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/browser-fallback/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 - What it covers: Catalog summary: Use a deterministic browser workflow only when direct fetch or extraction is insufficient for a public-web task.
@@ -43,9 +43,9 @@
 
 ## caveman-help - strmt7/project_air_defense `.agents/skills/caveman-help/SKILL.md`
 
-- Skill page: [strmt7-project-air-defense-agents-skills-caveman-help](../skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-caveman-help.md)
-- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-caveman-help`
-- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-caveman-help/SKILL.md`
+- Skill page: [strmt7-project-air-defense-agents-skills-caveman-help](../skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-caveman-help.md)
+- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-caveman-help`
+- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-caveman-help/SKILL.md`
 - Source: [strmt7/project_air_defense `.agents/skills/caveman-help/SKILL.md`](https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/caveman-help/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 - What it covers: Catalog summary: One-shot caveman reference card aligned to upstream caveman v1.5.0.
@@ -64,9 +64,9 @@
 
 ## caveman - strmt7/project_air_defense `.agents/skills/caveman/SKILL.md`
 
-- Skill page: [strmt7-project-air-defense-agents-skills-caveman](../skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-caveman.md)
-- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-caveman`
-- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-caveman/SKILL.md`
+- Skill page: [strmt7-project-air-defense-agents-skills-caveman](../skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-caveman.md)
+- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-caveman`
+- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-caveman/SKILL.md`
 - Source: [strmt7/project_air_defense `.agents/skills/caveman/SKILL.md`](https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/caveman/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 - What it covers: Catalog summary: Mandatory concise-output mode for Project Air Defense agents.
@@ -85,9 +85,9 @@
 
 ## compliance-and-rate-limit - strmt7/project_air_defense `.agents/skills/compliance-and-rate-limit/SKILL.md`
 
-- Skill page: [strmt7-project-air-defense-agents-skills-compliance-and-rate-limit](../skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-compliance-and-rate-limit.md)
-- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-compliance-and-rate-limit`
-- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-compliance-and-rate-limit/SKILL.md`
+- Skill page: [strmt7-project-air-defense-agents-skills-compliance-and-rate-limit](../skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-compliance-and-rate-limit.md)
+- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-compliance-and-rate-limit`
+- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-compliance-and-rate-limit/SKILL.md`
 - Source: [strmt7/project_air_defense `.agents/skills/compliance-and-rate-limit/SKILL.md`](https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/compliance-and-rate-limit/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 - What it covers: Catalog summary: Keep public-web research compliant, bounded, and efficient through rule checks, caching, and backoff instead of evasive scraping.
@@ -105,9 +105,9 @@
 
 ## context-budget - strmt7/project_air_defense `.agents/skills/context-budget/SKILL.md`
 
-- Skill page: [strmt7-project-air-defense-agents-skills-context-budget](../skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-context-budget.md)
-- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-context-budget`
-- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-context-budget/SKILL.md`
+- Skill page: [strmt7-project-air-defense-agents-skills-context-budget](../skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-context-budget.md)
+- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-context-budget`
+- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-context-budget/SKILL.md`
 - Source: [strmt7/project_air_defense `.agents/skills/context-budget/SKILL.md`](https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/context-budget/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 - What it covers: Catalog summary: Keep agent context small, fast, and deterministic in Project Air Defense.
@@ -126,9 +126,9 @@
 
 ## level-asset-curation - strmt7/project_air_defense `.agents/skills/level-asset-curation/SKILL.md`
 
-- Skill page: [strmt7-project-air-defense-agents-skills-level-asset-curation](../skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-level-asset-curation.md)
-- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-level-asset-curation`
-- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-level-asset-curation/SKILL.md`
+- Skill page: [strmt7-project-air-defense-agents-skills-level-asset-curation](../skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-level-asset-curation.md)
+- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-level-asset-curation`
+- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-level-asset-curation/SKILL.md`
 - Source: [strmt7/project_air_defense `.agents/skills/level-asset-curation/SKILL.md`](https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/level-asset-curation/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 - What it covers: Catalog summary: Source, validate, attribute, and integrate city/structure assets for Project Air Defense.
@@ -147,9 +147,9 @@
 
 ## site-extract - strmt7/project_air_defense `.agents/skills/site-extract/SKILL.md`
 
-- Skill page: [strmt7-project-air-defense-agents-skills-site-extract](../skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-site-extract.md)
-- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-site-extract`
-- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-site-extract/SKILL.md`
+- Skill page: [strmt7-project-air-defense-agents-skills-site-extract](../skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-site-extract.md)
+- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-site-extract`
+- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-site-extract/SKILL.md`
 - Source: [strmt7/project_air_defense `.agents/skills/site-extract/SKILL.md`](https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/site-extract/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 - What it covers: Catalog summary: Extract the smallest useful amount of text or structured data from a known public page before falling back to full browser automation.
@@ -167,9 +167,9 @@
 
 ## source-audit - strmt7/project_air_defense `.agents/skills/source-audit/SKILL.md`
 
-- Skill page: [strmt7-project-air-defense-agents-skills-source-audit](../skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-source-audit.md)
-- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-source-audit`
-- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-source-audit/SKILL.md`
+- Skill page: [strmt7-project-air-defense-agents-skills-source-audit](../skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-source-audit.md)
+- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-source-audit`
+- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-source-audit/SKILL.md`
 - Source: [strmt7/project_air_defense `.agents/skills/source-audit/SKILL.md`](https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/source-audit/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 - What it covers: Catalog summary: Verify public-web findings with source quality, dates, and second-source checks before turning them into advice or claims.
@@ -187,9 +187,9 @@
 
 ## ue5-city-pipeline - strmt7/project_air_defense `.agents/skills/ue5-city-pipeline/SKILL.md`
 
-- Skill page: [strmt7-project-air-defense-agents-skills-ue5-city-pipeline](../skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-city-pipeline.md)
-- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-city-pipeline`
-- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-city-pipeline/SKILL.md`
+- Skill page: [strmt7-project-air-defense-agents-skills-ue5-city-pipeline](../skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-city-pipeline.md)
+- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-city-pipeline`
+- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-city-pipeline/SKILL.md`
 - Source: [strmt7/project_air_defense `.agents/skills/ue5-city-pipeline/SKILL.md`](https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/ue5-city-pipeline/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 - What it covers: Catalog summary: Use for ue5-city-pipeline workflows. Source sections include UE5 City Pipeline, Load first, Rules.
@@ -208,9 +208,9 @@
 
 ## ue5-commonui-menu-systems - strmt7/project_air_defense `.agents/skills/ue5-commonui-menu-systems/SKILL.md`
 
-- Skill page: [strmt7-project-air-defense-agents-skills-ue5-commonui-menu-systems](../skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-commonui-menu-systems.md)
-- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-commonui-menu-systems`
-- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-commonui-menu-systems/SKILL.md`
+- Skill page: [strmt7-project-air-defense-agents-skills-ue5-commonui-menu-systems](../skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-commonui-menu-systems.md)
+- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-commonui-menu-systems`
+- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-commonui-menu-systems/SKILL.md`
 - Source: [strmt7/project_air_defense `.agents/skills/ue5-commonui-menu-systems/SKILL.md`](https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/ue5-commonui-menu-systems/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 - What it covers: Catalog summary: Use when changing a major UE5 front-end menu, options flow, modal stack, routed input surface, or layered smartphone-first menu architecture. Applies to CommonUI adoption decisions, activatable-widget stacks, menu settings flows, and player-facing mobile front-end structure.
@@ -229,9 +229,9 @@
 
 ## ue5-mobile-gameplay - strmt7/project_air_defense `.agents/skills/ue5-mobile-gameplay/SKILL.md`
 
-- Skill page: [strmt7-project-air-defense-agents-skills-ue5-mobile-gameplay](../skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-mobile-gameplay.md)
-- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-mobile-gameplay`
-- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-mobile-gameplay/SKILL.md`
+- Skill page: [strmt7-project-air-defense-agents-skills-ue5-mobile-gameplay](../skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-mobile-gameplay.md)
+- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-mobile-gameplay`
+- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-mobile-gameplay/SKILL.md`
 - Source: [strmt7/project_air_defense `.agents/skills/ue5-mobile-gameplay/SKILL.md`](https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/ue5-mobile-gameplay/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 - What it covers: Catalog summary: Use when changing UE5 mobile gameplay flow, menu-to-battle state, touch input routing, hidden debug bindings, deterministic simulation ownership, or verification for a smartphone-first game. Applies to controller state, battle bootstrap, Enhanced Input, and automation-backed gameplay checks.
@@ -250,9 +250,9 @@
 
 ## ue5-mobile-rendering - strmt7/project_air_defense `.agents/skills/ue5-mobile-rendering/SKILL.md`
 
-- Skill page: [strmt7-project-air-defense-agents-skills-ue5-mobile-rendering](../skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-mobile-rendering.md)
-- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-mobile-rendering`
-- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-mobile-rendering/SKILL.md`
+- Skill page: [strmt7-project-air-defense-agents-skills-ue5-mobile-rendering](../skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-mobile-rendering.md)
+- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-mobile-rendering`
+- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-mobile-rendering/SKILL.md`
 - Source: [strmt7/project_air_defense `.agents/skills/ue5-mobile-rendering/SKILL.md`](https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/ue5-mobile-rendering/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 - What it covers: Catalog summary: Use when changing UE5 smartphone rendering, graphics settings, anti-aliasing, ambient occlusion, reflections, post-process, device profiles, or mobile performance tiers. Applies when exposing graphics options to players or claiming that a visual feature works on-device.
@@ -271,9 +271,9 @@
 
 ## ue5-mobile-ui - strmt7/project_air_defense `.agents/skills/ue5-mobile-ui/SKILL.md`
 
-- Skill page: [strmt7-project-air-defense-agents-skills-ue5-mobile-ui](../skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-mobile-ui.md)
-- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-mobile-ui`
-- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-mobile-ui/SKILL.md`
+- Skill page: [strmt7-project-air-defense-agents-skills-ue5-mobile-ui](../skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-mobile-ui.md)
+- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-mobile-ui`
+- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-mobile-ui/SKILL.md`
 - Source: [strmt7/project_air_defense `.agents/skills/ue5-mobile-ui/SKILL.md`](https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/ue5-mobile-ui/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 - What it covers: Catalog summary: Use when changing any UE5 player-facing menu, HUD, pause surface, settings surface, touch control, or smartphone layout. Applies to UMG/CommonUI choice, safe zones, touch hit targets, information density, keyboard-hint suppression, and keeping the playfield visible on phones.
@@ -292,9 +292,9 @@
 
 ## ue5-photoreal-city-scene - strmt7/project_air_defense `.agents/skills/ue5-photoreal-city-scene/SKILL.md`
 
-- Skill page: [strmt7-project-air-defense-agents-skills-ue5-photoreal-city-scene](../skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-photoreal-city-scene.md)
-- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-photoreal-city-scene`
-- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-ue5-photoreal-city-scene/SKILL.md`
+- Skill page: [strmt7-project-air-defense-agents-skills-ue5-photoreal-city-scene](../skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-photoreal-city-scene.md)
+- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-photoreal-city-scene`
+- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-ue5-photoreal-city-scene/SKILL.md`
 - Source: [strmt7/project_air_defense `.agents/skills/ue5-photoreal-city-scene/SKILL.md`](https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/ue5-photoreal-city-scene/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 - What it covers: Catalog summary: Use for ue5-photoreal-city-scene workflows. Source sections include UE5 Photoreal City Scene, Load first, Rules.
@@ -313,9 +313,9 @@
 
 ## verification-loop - strmt7/project_air_defense `.agents/skills/verification-loop/SKILL.md`
 
-- Skill page: [strmt7-project-air-defense-agents-skills-verification-loop](../skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-verification-loop.md)
-- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-verification-loop`
-- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-verification-loop/SKILL.md`
+- Skill page: [strmt7-project-air-defense-agents-skills-verification-loop](../skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-verification-loop.md)
+- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-verification-loop`
+- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-verification-loop/SKILL.md`
 - Source: [strmt7/project_air_defense `.agents/skills/verification-loop/SKILL.md`](https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/verification-loop/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 - What it covers: Catalog summary: State the narrowest correct verification lane and report exactly what passed.
@@ -334,9 +334,9 @@
 
 ## web-discovery - strmt7/project_air_defense `.agents/skills/web-discovery/SKILL.md`
 
-- Skill page: [strmt7-project-air-defense-agents-skills-web-discovery](../skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-web-discovery.md)
-- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-web-discovery`
-- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-agents-skills-web-discovery/SKILL.md`
+- Skill page: [strmt7-project-air-defense-agents-skills-web-discovery](../skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-web-discovery.md)
+- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-web-discovery`
+- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-web-discovery/SKILL.md`
 - Source: [strmt7/project_air_defense `.agents/skills/web-discovery/SKILL.md`](https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/web-discovery/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 - What it covers: Catalog summary: Plan and run current public-web discovery for docs, releases, issues, and community evidence without guessing or over-browsing.
@@ -354,9 +354,9 @@
 
 ## android-3d-air-defense - strmt7/project_air_defense `skills/android-3d-air-defense/SKILL.md`
 
-- Skill page: [strmt7-project-air-defense-skills-android-3d-air-defense](../skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-skills-android-3d-air-defense.md)
-- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-skills-android-3d-air-defense`
-- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/priority-user-public-repo/strmt7-project-air-defense-skills-android-3d-air-defense/SKILL.md`
+- Skill page: [strmt7-project-air-defense-skills-android-3d-air-defense](../skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-skills-android-3d-air-defense.md)
+- Mirrored skill: `included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-skills-android-3d-air-defense`
+- Agent-ready entrypoint: `included/agent-ready/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-skills-android-3d-air-defense/SKILL.md`
 - Source: [strmt7/project_air_defense `skills/android-3d-air-defense/SKILL.md`](https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/skills/android-3d-air-defense/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 - What it covers: Catalog summary: Use this skill when building, debugging, balancing, profiling, or visually upgrading the Project Air Defense Android 3D missile-defense prototype, especially for libGDX battle flow, mobile rendering quality, interception logic, HUD ergonomics, and emulator-verified Android fixes.

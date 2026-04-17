@@ -1,0 +1,54 @@
+{
+  "activation_conditions": [
+    "Generate/create/scaffold azure-pipelines.yml, stages, jobs, steps, or reusable templates"
+  ],
+  "observed_headings": [
+    "Azure Pipelines Generator",
+    "Trigger Guidance",
+    "Execution Model",
+    "1) Classify Request Mode",
+    "2) Capture Required Inputs",
+    "3) Load References (Progressive Disclosure)",
+    "4) External Docs Escalation (Only When Needed)",
+    "5) Pipeline Generation Checklist"
+  ],
+  "proof_evidence": [
+    {
+      "claim": "Skill identity is azure-pipelines-generator.",
+      "line_or_section": "line 2",
+      "source_path": "devops-skills-plugin/skills/azure-pipelines-generator/SKILL.md"
+    },
+    {
+      "claim": "Generate/create/scaffold azure-pipelines.yml, stages, jobs, steps, or reusable templates",
+      "line_or_section": "line 3",
+      "source_path": "devops-skills-plugin/skills/azure-pipelines-generator/SKILL.md"
+    },
+    {
+      "claim": "Observed workflow section: Azure Pipelines Generator.",
+      "line_or_section": "section Azure Pipelines Generator",
+      "source_path": "devops-skills-plugin/skills/azure-pipelines-generator/SKILL.md"
+    }
+  ],
+  "required_context": [
+    "Read the mirrored SKILL.md at included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator/SKILL.md.",
+    "Use source provenance akin-ozer/cc-devops-skills devops-skills-plugin/skills/azure-pipelines-generator/SKILL.md at 7fe7595e4512f8ce43dcf956aa5190b96d627dd1.",
+    "Load bundled resources on demand: has_examples."
+  ],
+  "safe_boundaries": [
+    "Follow repository-level AGENTS.md and use one AI session only.",
+    "Do not claim a runtime benchmark pass without a validated artifact.",
+    "Do not use or emit real credentials; keep provider-shaped examples neutralized."
+  ],
+  "scenario_id": "skill-proof-akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator-skill-md",
+  "skill_file_sha256": "99e7ae998f87bb6a54ee543f84539efe8e1bc46a9da3bb7a8ed584d1f5c96428",
+  "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator-skill-md",
+  "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+  "source_path": "devops-skills-plugin/skills/azure-pipelines-generator/SKILL.md",
+  "source_repo": "akin-ozer/cc-devops-skills",
+  "workflow_steps": [
+    "Confirm the user task matches the skill description or source path.",
+    "Read the local SKILL.md mirror and only then load referenced resources if needed.",
+    "Execute the smallest task-specific workflow that produces objective evidence.",
+    "Record commands, files read, outputs, metrics, and citations before making claims."
+  ]
+}

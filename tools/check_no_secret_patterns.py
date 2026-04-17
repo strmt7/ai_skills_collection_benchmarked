@@ -59,8 +59,26 @@ def history_commits() -> list[str]:
 
 
 def commit_changed_names(commit: str) -> list[str]:
-    data = git_bytes("diff-tree", "-z", "--no-commit-id", "--name-only", "-r", commit)
-    return [item.decode("utf-8", errors="surrogateescape") for item in data.split(b"\0") if item]
+    data = git_bytes("diff-tree", "-z", "--no-commit-id", "--name-status", "-r", "-M", commit)
+    items = [item.decode("utf-8", errors="surrogateescape") for item in data.split(b"\0") if item]
+    paths: list[str] = []
+    index = 0
+    while index < len(items):
+        status = items[index]
+        index += 1
+        status_code = status[:1]
+        if status_code in {"R", "C"}:
+            index += 1
+            if index < len(items):
+                paths.append(items[index])
+            index += 1
+        elif status_code == "D":
+            index += 1
+        else:
+            if index < len(items):
+                paths.append(items[index])
+            index += 1
+    return paths
 
 
 def file_text(path: Path) -> str | None:
@@ -77,7 +95,7 @@ def file_text(path: Path) -> str | None:
 
 def commit_file_text(commit: str, path: str) -> str | None:
     try:
-        data = subprocess.check_output(["git", "-C", str(ROOT), "show", f"{commit}:{path}"])
+        data = subprocess.check_output(["git", "-C", str(ROOT), "show", f"{commit}:{path}"], stderr=subprocess.DEVNULL)
     except subprocess.CalledProcessError:
         return None
     if b"\0" in data:

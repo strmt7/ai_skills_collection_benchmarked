@@ -1,0 +1,15 @@
+batch: 2026-04-17-first-source-proofs
+timestamp_utc: 2026-04-17T19:10:10Z
+runner: tools/create_source_proof_batch.py
+catalog_commit: 7512fbf179925eeb015e320e35004d16a95050e8
+skill_id: zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing-skill-md
+scenario_id: skill-proof-zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing-skill-md
+read: included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing/SKILL.md
+source: https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/ai-regression-testing/SKILL.md
+skill_file_sha256: 10e3d43ebade9b583f937d641b08d1ea1ead8da16907c8274cdb829c9a79b6ee
+line_count: 25
+checks:
+- parsed SKILL.md frontmatter/body
+- produced source-grounded proof JSON
+- recorded source path citations
+- validated artifact with tools/check_benchmark_artifact.py

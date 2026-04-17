@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 
 import build_catalog
+import check_benchmark_artifact
 
 
 def load(path: str) -> Any:
@@ -24,7 +25,40 @@ def write_json(path: Path, data: Any) -> None:
     path.write_text(json.dumps(data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
-def check_entry(entry: dict[str, Any], scenarios: dict[str, dict[str, Any]]) -> dict[str, Any]:
+def artifact_records(artifact_kind: str | None = None) -> list[dict[str, Any]]:
+    root = ROOT / "artifacts" / "benchmark-runs"
+    if not root.exists():
+        return []
+    records: list[dict[str, Any]] = []
+    for artifact_path in sorted(root.rglob("artifact.json")):
+        validation = check_benchmark_artifact.validate_artifact(artifact_path)
+        try:
+            artifact = load_json_path(artifact_path)
+        except Exception:
+            artifact = {}
+        if validation["verdict"] != "artifact_complete":
+            continue
+        if artifact_kind and artifact.get("artifact_kind") != artifact_kind:
+            continue
+        records.append({
+            "artifact_path": artifact_path.relative_to(ROOT).as_posix(),
+            "artifact_kind": artifact["artifact_kind"],
+            "skill_id": artifact["skill_id"],
+            "scenario_id": artifact["scenario_id"],
+            "source_repo": artifact["source_repo"],
+            "source_path": artifact["source_path"],
+            "catalog_commit": artifact["catalog_commit"],
+            "runner": artifact["runner"],
+            "validation": validation,
+        })
+    return records
+
+
+def load_json_path(path: Path) -> Any:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def check_entry(entry: dict[str, Any], scenarios: dict[str, dict[str, Any]], artifacts_by_skill: dict[str, list[dict[str, Any]]]) -> dict[str, Any]:
     mirror = ROOT / entry["mirrored_path"]
     skill_file = mirror / "SKILL.md"
     agent_ready = ROOT / entry["agent_ready_path"]
@@ -56,7 +90,8 @@ def check_entry(entry: dict[str, Any], scenarios: dict[str, dict[str, Any]]) -> 
         "source_path": entry["source_path"],
         "mirrored_path": entry["mirrored_path"],
         "agent_ready_path": entry["agent_ready_path"],
-        "runtime_artifacts_recorded": 0,
+        "runtime_artifacts_recorded": len(artifacts_by_skill.get(entry["id"], [])),
+        "runtime_artifact_paths": [item["artifact_path"] for item in artifacts_by_skill.get(entry["id"], [])],
         "static_checks_passed": passed,
         "static_checks_total": total,
         "static_score_percent": round((passed / total) * 100, 2),
@@ -75,7 +110,7 @@ def render_results(results: dict[str, Any]) -> str:
     lines = [
         "# Benchmark Results",
         "",
-        "This page reports measured results only. Offline static checks were run against the mirrored files in this repository. Runtime artifact counts are shown separately and stay at zero unless a validated artifact is committed.",
+        "This page reports measured results only. Offline static checks were run against the mirrored files in this repository. Runtime benchmark counts include only committed independent benchmark artifacts that pass `tools/check_benchmark_artifact.py`. Source-proof artifacts are provenance checks, not runtime benchmark passes.",
         "",
         "## Summary",
         "",
@@ -83,6 +118,7 @@ def render_results(results: dict[str, Any]) -> str:
         f"- Static checks passed: `{results['summary']['static_checks_passed']}` / `{results['summary']['static_checks_total']}`",
         f"- Average static score: `{results['summary']['average_static_score_percent']}`",
         f"- Runtime scenario artifacts recorded: `{results['summary']['runtime_artifacts_recorded']}`",
+        f"- Source-proof provenance artifacts recorded: `{results['summary']['provenance_artifacts_recorded']}`",
         "",
         "## Benchmark Tracks",
         "",
@@ -102,6 +138,32 @@ def render_results(results: dict[str, Any]) -> str:
         failed = ", ".join(item["failed_checks"]) if item["failed_checks"] else "none"
         checks = f"{item['static_checks_passed']}/{item['static_checks_total']}"
         lines.append(f"| `{item['skill_id']}` | {table_cell(item['category'])} | {checks} | {item['static_score_percent']} | {item['runtime_artifacts_recorded']} | {item['quality_fix_point_count']} | {table_cell(failed)} |")
+    lines.extend([
+        "",
+        "## Runtime Artifacts",
+        "",
+        "| Artifact | Skill | Scenario | Runner |",
+        "|---|---|---|---|",
+    ])
+    if results["runtime_artifacts"]:
+        for artifact in results["runtime_artifacts"]:
+            runner = artifact.get("runner", {})
+            lines.append(f"| `{artifact['artifact_path']}` | `{artifact['skill_id']}` | `{artifact['scenario_id']}` | {table_cell(runner.get('tool', 'unknown'))} |")
+    else:
+        lines.append("| none | none | none | none |")
+    lines.extend([
+        "",
+        "## Source-Proof Provenance Artifacts",
+        "",
+        "| Artifact | Skill | Scenario | Runner |",
+        "|---|---|---|---|",
+    ])
+    if results["provenance_artifacts"]:
+        for artifact in results["provenance_artifacts"]:
+            runner = artifact.get("runner", {})
+            lines.append(f"| `{artifact['artifact_path']}` | `{artifact['skill_id']}` | `{artifact['scenario_id']}` | {table_cell(runner.get('tool', 'unknown'))} |")
+    else:
+        lines.append("| none | none | none | none |")
     return "\n".join(lines) + "\n"
 
 
@@ -126,7 +188,15 @@ def run() -> dict[str, Any]:
     scenarios = {item["id"]: item for item in load("data/benchmark_scenarios.json")}
     assignments = load("data/benchmark_assignments.json")
     tracks = load("data/benchmark_tracks.json")
-    skill_results = [check_entry(entry, scenarios) for entry in catalog]
+    runtime_artifacts = artifact_records("independent_benchmark")
+    provenance_artifacts = artifact_records("provenance_check")
+    artifacts_by_skill: dict[str, list[dict[str, Any]]] = {}
+    artifacts_by_track: dict[str, int] = {}
+    for artifact in runtime_artifacts:
+        artifacts_by_skill.setdefault(artifact["skill_id"], []).append(artifact)
+        track_id = scenarios[artifact["scenario_id"]]["dataset_track_id"]
+        artifacts_by_track[track_id] = artifacts_by_track.get(track_id, 0) + 1
+    skill_results = [check_entry(entry, scenarios, artifacts_by_skill) for entry in catalog]
     total_checks = sum(item["static_checks_total"] for item in skill_results)
     passed_checks = sum(item["static_checks_passed"] for item in skill_results)
     assigned_by_track = {track["id"]: 0 for track in tracks}
@@ -139,7 +209,7 @@ def run() -> dict[str, Any]:
             "id": track["id"],
             "title": track["title"],
             "assigned_scenarios": assigned_by_track[track["id"]],
-            "runtime_artifacts_recorded": 0,
+            "runtime_artifacts_recorded": artifacts_by_track.get(track["id"], 0),
         }
         for track in tracks
     ]
@@ -151,10 +221,13 @@ def run() -> dict[str, Any]:
             "static_checks_passed": passed_checks,
             "static_checks_total": total_checks,
             "average_static_score_percent": round(sum(item["static_score_percent"] for item in skill_results) / len(skill_results), 2),
-            "runtime_artifacts_recorded": 0,
+            "runtime_artifacts_recorded": len(runtime_artifacts),
+            "provenance_artifacts_recorded": len(provenance_artifacts),
             "quality_fix_points": sum(item["quality_fix_point_count"] for item in skill_results),
         },
         "tracks": track_results,
+        "runtime_artifacts": runtime_artifacts,
+        "provenance_artifacts": provenance_artifacts,
         "skills": skill_results,
     }
 

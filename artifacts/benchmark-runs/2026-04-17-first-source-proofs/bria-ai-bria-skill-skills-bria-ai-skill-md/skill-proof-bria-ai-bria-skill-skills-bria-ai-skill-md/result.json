@@ -1,0 +1,54 @@
+{
+  "activation_conditions": [
+    "AI image generation, editing, and background removal API via Bria.ai \u2014 remove backgrounds to get transparent PNGs and cutouts, generate images from text prompts, and edit photos with natural language instructions. Also create product photography and lifestyle shots, replace or blur backgrounds, upscale resolution, restyle, and batch-generate visual assets. Use this skill whenever the user wants to remove a"
+  ],
+  "observed_headings": [
+    "Bria \u2014 AI Image Generation, Editing & Background Removal",
+    "When to Use This Skill",
+    "What You Can Build",
+    "Setup \u2014 Authentication",
+    "Step 1: Check for existing credentials",
+    "Step 2: Authenticate via device authorization",
+    "Step 3: Verify billing status and resolve API key",
+    "Core Capabilities"
+  ],
+  "proof_evidence": [
+    {
+      "claim": "Skill identity is bria-ai.",
+      "line_or_section": "line 2",
+      "source_path": "skills/bria-ai/SKILL.md"
+    },
+    {
+      "claim": "AI image generation, editing, and background removal API via Bria.ai \u2014 remove backgrounds to get transparent PNGs and cutouts, generate images from text prompts, and edit photos with natural language instructions. Also create product photography and lifestyle shots, replace or blur backgrounds, upscale resolution, restyle, and batch-generate visual assets. Use this skill whenever the user wants to remove a",
+      "line_or_section": "line 3",
+      "source_path": "skills/bria-ai/SKILL.md"
+    },
+    {
+      "claim": "Observed workflow section: Bria \u2014 AI Image Generation, Editing & Background Removal.",
+      "line_or_section": "section Bria \u2014 AI Image Generation, Editing & Background Removal",
+      "source_path": "skills/bria-ai/SKILL.md"
+    }
+  ],
+  "required_context": [
+    "Read the mirrored SKILL.md at included/skills/by-category/creative-media-design/latest-release-creative/bria-ai-bria-skill-skills-bria-ai/SKILL.md.",
+    "Use source provenance Bria-AI/bria-skill skills/bria-ai/SKILL.md at b0e107b0f4667f0e1c9177bcd491b7d436c6932d.",
+    "Load bundled resources on demand: has_references."
+  ],
+  "safe_boundaries": [
+    "Follow repository-level AGENTS.md and use one AI session only.",
+    "Do not claim a runtime benchmark pass without a validated artifact.",
+    "Do not use or emit real credentials; keep provider-shaped examples neutralized."
+  ],
+  "scenario_id": "skill-proof-bria-ai-bria-skill-skills-bria-ai-skill-md",
+  "skill_file_sha256": "a2c001abdde576d83cbf911446ec4a243eea8fcbd6e5d16086e6c7edcb64bf2e",
+  "skill_id": "bria-ai-bria-skill-skills-bria-ai-skill-md",
+  "source_commit": "b0e107b0f4667f0e1c9177bcd491b7d436c6932d",
+  "source_path": "skills/bria-ai/SKILL.md",
+  "source_repo": "Bria-AI/bria-skill",
+  "workflow_steps": [
+    "Confirm the user task matches the skill description or source path.",
+    "Read the local SKILL.md mirror and only then load referenced resources if needed.",
+    "Execute the smallest task-specific workflow that produces objective evidence.",
+    "Record commands, files read, outputs, metrics, and citations before making claims."
+  ]
+}

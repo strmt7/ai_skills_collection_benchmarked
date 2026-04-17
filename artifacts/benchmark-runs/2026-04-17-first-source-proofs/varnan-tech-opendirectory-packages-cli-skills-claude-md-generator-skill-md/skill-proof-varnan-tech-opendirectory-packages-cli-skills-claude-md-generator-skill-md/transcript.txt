@@ -1,0 +1,15 @@
+batch: 2026-04-17-first-source-proofs
+timestamp_utc: 2026-04-17T19:10:10Z
+runner: tools/create_source_proof_batch.py
+catalog_commit: 7512fbf179925eeb015e320e35004d16a95050e8
+skill_id: varnan-tech-opendirectory-packages-cli-skills-claude-md-generator-skill-md
+scenario_id: skill-proof-varnan-tech-opendirectory-packages-cli-skills-claude-md-generator-skill-md
+read: included/skills/by-category/coding-refactoring-repository-automation/reddit-verified-gtm-registry/varnan-tech-opendirectory-packages-cli-skills-claude-md-generator/SKILL.md
+source: https://github.com/Varnan-Tech/opendirectory/blob/bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4/packages/cli/skills/claude-md-generator/SKILL.md
+skill_file_sha256: 73f8d92940af2bbd5aae9777d692c9cd1ac7eba11d9bb585d241c52ad6397ff5
+line_count: 251
+checks:
+- parsed SKILL.md frontmatter/body
+- produced source-grounded proof JSON
+- recorded source path citations
+- validated artifact with tools/check_benchmark_artifact.py

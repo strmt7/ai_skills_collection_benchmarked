@@ -1,0 +1,47 @@
+{
+  "activation_conditions": [
+    "Add narrow regression and differential tests that catch incomplete or overconfident code changes"
+  ],
+  "observed_headings": [
+    "AI Regression Testing",
+    "Rules"
+  ],
+  "proof_evidence": [
+    {
+      "claim": "Skill identity is ai-regression-testing.",
+      "line_or_section": "line 2",
+      "source_path": ".agents/skills/ai-regression-testing/SKILL.md"
+    },
+    {
+      "claim": "Add narrow regression and differential tests that catch incomplete or overconfident code changes",
+      "line_or_section": "line 3",
+      "source_path": ".agents/skills/ai-regression-testing/SKILL.md"
+    },
+    {
+      "claim": "Observed workflow section: AI Regression Testing.",
+      "line_or_section": "section AI Regression Testing",
+      "source_path": ".agents/skills/ai-regression-testing/SKILL.md"
+    }
+  ],
+  "required_context": [
+    "Read the mirrored SKILL.md at included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-ai-regression-testing/SKILL.md.",
+    "Use source provenance strmt7/ome-zarr-C .agents/skills/ai-regression-testing/SKILL.md at a9238a81742f96c89acf6d83fce6d6b882ac4d1c."
+  ],
+  "safe_boundaries": [
+    "Follow repository-level AGENTS.md and use one AI session only.",
+    "Do not claim a runtime benchmark pass without a validated artifact.",
+    "Do not use or emit real credentials; keep provider-shaped examples neutralized."
+  ],
+  "scenario_id": "skill-proof-strmt7-ome-zarr-c-agents-skills-ai-regression-testing-skill-md",
+  "skill_file_sha256": "cd08927aebc6b000df78ea0845d3adafa60bd64ae52c7f2fabe64f72f7e8041f",
+  "skill_id": "strmt7-ome-zarr-c-agents-skills-ai-regression-testing-skill-md",
+  "source_commit": "a9238a81742f96c89acf6d83fce6d6b882ac4d1c",
+  "source_path": ".agents/skills/ai-regression-testing/SKILL.md",
+  "source_repo": "strmt7/ome-zarr-C",
+  "workflow_steps": [
+    "Confirm the user task matches the skill description or source path.",
+    "Read the local SKILL.md mirror and only then load referenced resources if needed.",
+    "Execute the smallest task-specific workflow that produces objective evidence.",
+    "Record commands, files read, outputs, metrics, and citations before making claims."
+  ]
+}

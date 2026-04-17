@@ -2,9 +2,9 @@
 
 ## verification-loop - strmt7/simple_ai_bitcoin_trading_binance `.agents/skills/verification-loop/SKILL.md`
 
-- Skill page: [strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop](../skills/by-category/testing-qa-benchmarking/priority-user-public-repo/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop.md)
-- Mirrored skill: `included/skills/by-category/testing-qa-benchmarking/priority-user-public-repo/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop`
-- Agent-ready entrypoint: `included/agent-ready/by-category/testing-qa-benchmarking/priority-user-public-repo/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop/SKILL.md`
+- Skill page: [strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop](../skills/by-category/testing-qa-benchmarking/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop.md)
+- Mirrored skill: `included/skills/by-category/testing-qa-benchmarking/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop`
+- Agent-ready entrypoint: `included/agent-ready/by-category/testing-qa-benchmarking/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop/SKILL.md`
 - Source: [strmt7/simple_ai_bitcoin_trading_binance `.agents/skills/verification-loop/SKILL.md`](https://github.com/strmt7/simple_ai_bitcoin_trading_binance/blob/451d77df90621e3b666581d9835d246fb7147349/.agents/skills/verification-loop/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `451d77df9062`
 - What it covers: Catalog summary: Use for verification-loop workflows. Source sections include Verification Loop, Principle, Process.

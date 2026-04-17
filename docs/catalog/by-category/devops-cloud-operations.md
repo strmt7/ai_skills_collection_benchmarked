@@ -2,9 +2,9 @@
 
 ## context-budget - strmt7/simple_ai_bitcoin_trading_binance `.agents/skills/context-budget/SKILL.md`
 
-- Skill page: [strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget](../skills/by-category/devops-cloud-operations/priority-user-public-repo/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget.md)
-- Mirrored skill: `included/skills/by-category/devops-cloud-operations/priority-user-public-repo/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget`
-- Agent-ready entrypoint: `included/agent-ready/by-category/devops-cloud-operations/priority-user-public-repo/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget/SKILL.md`
+- Skill page: [strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget](../skills/by-category/devops-cloud-operations/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget.md)
+- Mirrored skill: `included/skills/by-category/devops-cloud-operations/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget`
+- Agent-ready entrypoint: `included/agent-ready/by-category/devops-cloud-operations/selected-project-reference/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget/SKILL.md`
 - Source: [strmt7/simple_ai_bitcoin_trading_binance `.agents/skills/context-budget/SKILL.md`](https://github.com/strmt7/simple_ai_bitcoin_trading_binance/blob/451d77df90621e3b666581d9835d246fb7147349/.agents/skills/context-budget/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `451d77df9062`
 - What it covers: Catalog summary: Use for context-budget workflows. Source sections include Context Budget, Goal, Workflow.

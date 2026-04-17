@@ -1,0 +1,15 @@
+batch: 2026-04-17-first-source-proofs
+timestamp_utc: 2026-04-17T19:10:10Z
+runner: tools/create_source_proof_batch.py
+catalog_commit: 7512fbf179925eeb015e320e35004d16a95050e8
+skill_id: strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md
+scenario_id: skill-proof-strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md
+read: included/skills/by-category/game-mobile-visual-qa/selected-project-reference/strmt7-project-air-defense-agents-skills-android-visual-qa/SKILL.md
+source: https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/android-visual-qa/SKILL.md
+skill_file_sha256: 480fe5b49dc71eb029067549a2aeab5be0fa7b580e42fb7d7d4099c5f6dd585f
+line_count: 58
+checks:
+- parsed SKILL.md frontmatter/body
+- produced source-grounded proof JSON
+- recorded source path citations
+- validated artifact with tools/check_benchmark_artifact.py

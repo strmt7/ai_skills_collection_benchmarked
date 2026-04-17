@@ -1,0 +1,49 @@
+{
+  "activation_conditions": [
+    "Catch AI-style regressions with narrow contract tests, split pytest lanes, and sandbox-path checks before and after fixes"
+  ],
+  "observed_headings": [
+    "AI Regression Testing",
+    "Upstream baseline",
+    "Repo overlay"
+  ],
+  "proof_evidence": [
+    {
+      "claim": "Skill identity is ai-regression-testing.",
+      "line_or_section": "line 2",
+      "source_path": ".agents/skills/ai-regression-testing/SKILL.md"
+    },
+    {
+      "claim": "Catch AI-style regressions with narrow contract tests, split pytest lanes, and sandbox-path checks before and after fixes",
+      "line_or_section": "line 3",
+      "source_path": ".agents/skills/ai-regression-testing/SKILL.md"
+    },
+    {
+      "claim": "Observed workflow section: AI Regression Testing.",
+      "line_or_section": "section AI Regression Testing",
+      "source_path": ".agents/skills/ai-regression-testing/SKILL.md"
+    }
+  ],
+  "required_context": [
+    "Read the mirrored SKILL.md at included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing/SKILL.md.",
+    "Use source provenance ZMB-UZH/omero-docker-extended .agents/skills/ai-regression-testing/SKILL.md at b7c7cfa2a057f08eb872aadae49d89f521480114.",
+    "Load bundled resources on demand: has_agents_metadata."
+  ],
+  "safe_boundaries": [
+    "Follow repository-level AGENTS.md and use one AI session only.",
+    "Do not claim a runtime benchmark pass without a validated artifact.",
+    "Do not use or emit real credentials; keep provider-shaped examples neutralized."
+  ],
+  "scenario_id": "skill-proof-zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing-skill-md",
+  "skill_file_sha256": "10e3d43ebade9b583f937d641b08d1ea1ead8da16907c8274cdb829c9a79b6ee",
+  "skill_id": "zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing-skill-md",
+  "source_commit": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+  "source_path": ".agents/skills/ai-regression-testing/SKILL.md",
+  "source_repo": "ZMB-UZH/omero-docker-extended",
+  "workflow_steps": [
+    "Confirm the user task matches the skill description or source path.",
+    "Read the local SKILL.md mirror and only then load referenced resources if needed.",
+    "Execute the smallest task-specific workflow that produces objective evidence.",
+    "Record commands, files read, outputs, metrics, and citations before making claims."
+  ]
+}
