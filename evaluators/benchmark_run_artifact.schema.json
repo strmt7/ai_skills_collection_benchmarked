@@ -2,6 +2,13 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": true,
   "properties": {
+    "artifact_kind": {
+      "enum": [
+        "provenance_check",
+        "independent_benchmark"
+      ],
+      "type": "string"
+    },
     "artifact_version": {
       "pattern": "^1\\.",
       "type": "string"
@@ -53,6 +60,30 @@
       "required": [
         "fresh_session",
         "commands_or_transcript_path"
+      ],
+      "type": "object"
+    },
+    "independence": {
+      "additionalProperties": true,
+      "properties": {
+        "evaluator_defined_outside_skill": {
+          "type": "boolean"
+        },
+        "expected_result_defined_outside_skill": {
+          "type": "boolean"
+        },
+        "skill_content_usage": {
+          "type": "string"
+        },
+        "task_defined_outside_skill": {
+          "type": "boolean"
+        },
+        "uses_exact_skill_content_for_expected_result": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "skill_content_usage"
       ],
       "type": "object"
     },
@@ -143,6 +174,7 @@
   },
   "required": [
     "artifact_version",
+    "artifact_kind",
     "skill_id",
     "scenario_id",
     "catalog_commit",
@@ -155,6 +187,7 @@
     "execution",
     "outputs",
     "metrics",
+    "independence",
     "evidence",
     "objective_checks"
   ],

@@ -1,0 +1,15 @@
+batch: 2026-04-17-first-source-proofs
+timestamp_utc: 2026-04-17T19:10:10Z
+runner: tools/create_source_proof_batch.py
+catalog_commit: 7512fbf179925eeb015e320e35004d16a95050e8
+skill_id: varnan-tech-opendirectory-packages-cli-skills-kill-the-standup-skill-md
+scenario_id: skill-proof-varnan-tech-opendirectory-packages-cli-skills-kill-the-standup-skill-md
+read: included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/varnan-tech-opendirectory-packages-cli-skills-kill-the-standup/SKILL.md
+source: https://github.com/Varnan-Tech/opendirectory/blob/bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4/packages/cli/skills/kill-the-standup/SKILL.md
+skill_file_sha256: a1f5696c05b6e1e75b889ef279f2907a44ec518692e8f3e36af581fb47b26f17
+line_count: 168
+checks:
+- parsed SKILL.md frontmatter/body
+- produced source-grounded proof JSON
+- recorded source path citations
+- validated artifact with tools/check_benchmark_artifact.py

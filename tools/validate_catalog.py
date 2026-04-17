@@ -40,7 +40,7 @@ catalog = load("data/skills_catalog.json")
 track_items = load("data/benchmark_tracks.json")
 scenario_items = load("data/benchmark_scenarios.json")
 assignment_items = load("data/benchmark_assignments.json")
-priority_manifest = load("included/priority/manifest.json")
+selected_manifest = load("included/selected/manifest.json")
 skills_manifest = load("included/skills/manifest.json")
 agent_ready_manifest = load("included/agent-ready/manifest.json")
 source_lock = load("data/source_lock.json")
@@ -50,7 +50,7 @@ readme = (ROOT / "README.md").read_text(encoding="utf-8")
 unique_ids(track_items, "id", "track")
 unique_ids(scenario_items, "id", "scenario")
 unique_ids(assignment_items, "skill_id", "assignment skill")
-unique_ids(priority_manifest, "id", "priority manifest")
+unique_ids(selected_manifest, "id", "selected manifest")
 unique_ids(skills_manifest, "id", "skills manifest")
 unique_ids(agent_ready_manifest, "id", "agent-ready manifest")
 
@@ -80,7 +80,7 @@ readme_expectations = {
     f"- `{len(catalog)}` source-backed skill entries.": "catalog count",
     f"- `{len(catalog)}` written skill mirrors under `included/skills/`.": "mirror count",
     f"- `{len(catalog)}` compact agent-ready skill entrypoints under `included/agent-ready/`.": "agent-ready count",
-    f"- `{sum(1 for entry in catalog if entry['source_tier'].startswith('priority'))}` selected repository entries.": "selected count",
+    f"- `{sum(1 for entry in catalog if entry.get('selected_subset'))}` selected repository entries.": "selected count",
     f"- `{len({entry['category'] for entry in catalog})}` categories.": "category count",
     f"- `{len(scenarios)}` real-data scenario templates.": "scenario count",
     f"- Minimum `{MIN_SCENARIOS}` benchmark scenarios assigned per scenario-covered candidate.": "minimum scenario count",
@@ -89,6 +89,11 @@ for snippet, label in readme_expectations.items():
     require(snippet in readme, f"README {label} is stale")
 require("Early alpha" in readme, "README missing early alpha note")
 require("priority entries from requested repositories" not in readme, "README uses requested repositories wording")
+require("[Selected skills](docs/selected-skills.md)" in readme, "README missing selected skills link")
+require("[Skill risk findings](docs/skill-risk-findings.md)" in readme, "README missing skill risk link")
+require("[Immutable audit model](docs/immutable-audit-model.md)" in readme, "README missing immutable audit model link")
+require(not (ROOT / "docs" / "priority-skills.md").exists(), "legacy priority skills document still exists")
+require(not (ROOT / "included" / "priority").exists(), "legacy priority manifest directory still exists")
 for forbidden in [
     "strmt7/simple_ai_bitcoin_trading_binance",
     "strmt7/ome-zarr-C",
@@ -150,6 +155,9 @@ for lock_path in (ROOT / "included" / "skills").rglob("package-lock.json"):
 for entry in catalog:
     for key in ["name", "description", "category", "subcategory", "install_name", "mirrored_path", "agent_ready_path", "source_repo", "source_path", "source_url", "immutable_source_url", "commit_sha", "selection_policy", "skill_file_sha256", "skill_dir_sha256"]:
         require(entry.get(key), f"{entry['id']} missing {key}")
+    require(isinstance(entry.get("selected_subset"), bool), f"{entry['id']} invalid selected_subset")
+    require(not entry["source_tier"].startswith("priority"), f"{entry['id']} has legacy priority source_tier")
+    require("requested" not in entry["source_tier"], f"{entry['id']} has requested source_tier wording")
     require(isinstance(entry.get("has_required_frontmatter"), bool), f"{entry['id']} invalid has_required_frontmatter")
     require(entry["source_path"].endswith("SKILL.md"), f"{entry['id']} is not SKILL.md")
     require(re.fullmatch(r"[0-9a-f]{40}", entry["commit_sha"]) is not None, f"{entry['id']} invalid commit_sha")
@@ -202,16 +210,16 @@ for entry in catalog:
                 require(scenario.get(scenario_key), f"{scenario_id} missing {scenario_key}")
             require((ROOT / scenario["evaluator_path"]).is_file(), f"{scenario_id} missing evaluator file {scenario['evaluator_path']}")
 
-priority_ids = {entry["id"] for entry in catalog if entry["source_tier"].startswith("priority")}
-manifest_ids = {entry["id"] for entry in priority_manifest}
-require(manifest_ids == priority_ids, "priority manifest does not match priority catalog entries")
-priority_install_names = [item.get("install_name") for item in priority_manifest]
-require(all(priority_install_names), "priority manifest entry missing install_name")
-require(len(priority_install_names) == len(set(priority_install_names)), "duplicate priority install_name")
-for item in priority_manifest:
+selected_ids = {entry["id"] for entry in catalog if entry.get("selected_subset")}
+manifest_ids = {entry["id"] for entry in selected_manifest}
+require(manifest_ids == selected_ids, "selected manifest does not match selected catalog entries")
+selected_install_names = [item.get("install_name") for item in selected_manifest]
+require(all(selected_install_names), "selected manifest entry missing install_name")
+require(len(selected_install_names) == len(set(selected_install_names)), "duplicate selected install_name")
+for item in selected_manifest:
     catalog_entry = catalog_by_id[item["id"]]
     for key in ["subcategory", "install_name", "mirrored_path", "agent_ready_path", "source_repo", "source_path", "immutable_source_url", "commit_sha", "skill_file_sha256", "skill_dir_sha256"]:
-        require(item.get(key) == catalog_entry[key], f"{item['id']} priority manifest {key} mismatch")
+        require(item.get(key) == catalog_entry[key], f"{item['id']} selected manifest {key} mismatch")
     mirror_path = ROOT / item["mirrored_path"]
     require(mirror_path.is_dir(), f"{item['id']} missing mirrored directory")
     require((mirror_path / "SKILL.md").is_file(), f"{item['id']} mirrored directory missing SKILL.md")

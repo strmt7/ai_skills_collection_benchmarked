@@ -1,0 +1,68 @@
+{
+  "artifact_kind": "provenance_check",
+  "artifact_version": "1.0",
+  "catalog_commit": "7512fbf179925eeb015e320e35004d16a95050e8",
+  "evidence": {
+    "artifact_paths": [
+      "result.json",
+      "transcript.txt"
+    ],
+    "citations_or_paths": [
+      "devops-skills-plugin/skills/azure-pipelines-generator/SKILL.md",
+      "included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator/SKILL.md",
+      "AGENTS.md"
+    ]
+  },
+  "execution": {
+    "commands_or_transcript_path": "transcript.txt",
+    "fresh_session": true
+  },
+  "independence": {
+    "evaluator_defined_outside_skill": true,
+    "expected_result_defined_outside_skill": false,
+    "skill_content_usage": "source text used only for provenance and activation extraction; this artifact is not a counted runtime benchmark pass",
+    "task_defined_outside_skill": false,
+    "uses_exact_skill_content_for_expected_result": true
+  },
+  "input_snapshot": {
+    "identifier": "https://github.com/akin-ozer/cc-devops-skills/blob/7fe7595e4512f8ce43dcf956aa5190b96d627dd1/devops-skills-plugin/skills/azure-pipelines-generator/SKILL.md",
+    "is_real": true,
+    "kind": "source-skill-repository",
+    "mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator",
+    "skill_file_sha256": "99e7ae998f87bb6a54ee543f84539efe8e1bc46a9da3bb7a8ed584d1f5c96428",
+    "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1"
+  },
+  "metrics": {
+    "activation_condition_count": 1,
+    "observed_heading_count": 8,
+    "proof_evidence_count": 3,
+    "source_line_count": 244,
+    "workflow_step_count": 4
+  },
+  "objective_checks": [
+    "frontmatter or fallback source structure used",
+    "source citations present",
+    "no unsupported capability claims"
+  ],
+  "outputs": {
+    "path": "result.json",
+    "result_sha256": "15beb415cb38a31411598fb7b3100fcad108d14c4424fc0c6053b41ba9233a0f",
+    "schema": "evaluators/source_grounded_skill_proof.schema.json"
+  },
+  "runner": {
+    "batch_name": "2026-04-17-first-source-proofs",
+    "model_or_runtime": "local-deterministic-source-proof-runner",
+    "timestamp_utc": "2026-04-17T19:10:10Z",
+    "tool": "tools/create_source_proof_batch.py"
+  },
+  "scenario_id": "skill-proof-akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator-skill-md",
+  "scenario_requirements": {
+    "context_memory": false,
+    "token_efficiency_claim": false,
+    "visual_or_browser": false
+  },
+  "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator-skill-md",
+  "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+  "source_path": "devops-skills-plugin/skills/azure-pipelines-generator/SKILL.md",
+  "source_repo": "akin-ozer/cc-devops-skills"
+}

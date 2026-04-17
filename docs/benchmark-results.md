@@ -1,6 +1,6 @@
 # Benchmark Results
 
-This page reports measured results only. Offline static checks were run against the mirrored files in this repository. Runtime artifact counts are shown separately and stay at zero unless a validated artifact is committed.
+This page reports measured results only. Offline static checks were run against the mirrored files in this repository. Runtime benchmark counts include only committed independent benchmark artifacts that pass `tools/check_benchmark_artifact.py`. Source-proof artifacts are provenance checks, not runtime benchmark passes.
 
 ## Summary
 
@@ -8,6 +8,7 @@ This page reports measured results only. Offline static checks were run against 
 - Static checks passed: `8076` / `8076`
 - Average static score: `100.0`
 - Runtime scenario artifacts recorded: `0`
+- Source-proof provenance artifacts recorded: `10`
 
 ## Benchmark Tracks
 
@@ -710,3 +711,24 @@ This page reports measured results only. Offline static checks were run against 
 | `trailofbits-skills-plugins-testing-handbook-skills-skills-wycheproof-skill-md` | Testing, QA & benchmarking | 12/12 | 100.0 | 0 | 5 | none |
 | `trailofbits-skills-plugins-trailmark-skills-genotoxic-skill-md` | Testing, QA & benchmarking | 12/12 | 100.0 | 0 | 4 | none |
 | `trailofbits-skills-plugins-trailmark-skills-vector-forge-skill-md` | Testing, QA & benchmarking | 12/12 | 100.0 | 0 | 4 | none |
+
+## Runtime Artifacts
+
+| Artifact | Skill | Scenario | Runner |
+|---|---|---|---|
+| none | none | none | none |
+
+## Source-Proof Provenance Artifacts
+
+| Artifact | Skill | Scenario | Runner |
+|---|---|---|---|
+| `artifacts/benchmark-runs/2026-04-17-first-source-proofs/akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator-skill-md/skill-proof-akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator-skill-md/artifact.json` | `akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator-skill-md` | `skill-proof-akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator-skill-md` | tools/create_source_proof_batch.py |
+| `artifacts/benchmark-runs/2026-04-17-first-source-proofs/bria-ai-bria-skill-skills-bria-ai-skill-md/skill-proof-bria-ai-bria-skill-skills-bria-ai-skill-md/artifact.json` | `bria-ai-bria-skill-skills-bria-ai-skill-md` | `skill-proof-bria-ai-bria-skill-skills-bria-ai-skill-md` | tools/create_source_proof_batch.py |
+| `artifacts/benchmark-runs/2026-04-17-first-source-proofs/strmt7-ome-zarr-c-agents-skills-ai-regression-testing-skill-md/skill-proof-strmt7-ome-zarr-c-agents-skills-ai-regression-testing-skill-md/artifact.json` | `strmt7-ome-zarr-c-agents-skills-ai-regression-testing-skill-md` | `skill-proof-strmt7-ome-zarr-c-agents-skills-ai-regression-testing-skill-md` | tools/create_source_proof_batch.py |
+| `artifacts/benchmark-runs/2026-04-17-first-source-proofs/strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md/skill-proof-strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md/artifact.json` | `strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md` | `skill-proof-strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md` | tools/create_source_proof_batch.py |
+| `artifacts/benchmark-runs/2026-04-17-first-source-proofs/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md/skill-proof-strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md/artifact.json` | `strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md` | `skill-proof-strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md` | tools/create_source_proof_batch.py |
+| `artifacts/benchmark-runs/2026-04-17-first-source-proofs/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md/skill-proof-strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md/artifact.json` | `strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md` | `skill-proof-strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md` | tools/create_source_proof_batch.py |
+| `artifacts/benchmark-runs/2026-04-17-first-source-proofs/varnan-tech-opendirectory-packages-cli-skills-claude-md-generator-skill-md/skill-proof-varnan-tech-opendirectory-packages-cli-skills-claude-md-generator-skill-md/artifact.json` | `varnan-tech-opendirectory-packages-cli-skills-claude-md-generator-skill-md` | `skill-proof-varnan-tech-opendirectory-packages-cli-skills-claude-md-generator-skill-md` | tools/create_source_proof_batch.py |
+| `artifacts/benchmark-runs/2026-04-17-first-source-proofs/varnan-tech-opendirectory-packages-cli-skills-kill-the-standup-skill-md/skill-proof-varnan-tech-opendirectory-packages-cli-skills-kill-the-standup-skill-md/artifact.json` | `varnan-tech-opendirectory-packages-cli-skills-kill-the-standup-skill-md` | `skill-proof-varnan-tech-opendirectory-packages-cli-skills-kill-the-standup-skill-md` | tools/create_source_proof_batch.py |
+| `artifacts/benchmark-runs/2026-04-17-first-source-proofs/varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md/skill-proof-varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md/artifact.json` | `varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md` | `skill-proof-varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md` | tools/create_source_proof_batch.py |
+| `artifacts/benchmark-runs/2026-04-17-first-source-proofs/zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing-skill-md/skill-proof-zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing-skill-md/artifact.json` | `zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing-skill-md` | `skill-proof-zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing-skill-md` | tools/create_source_proof_batch.py |

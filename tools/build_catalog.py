@@ -63,10 +63,10 @@ PACKAGE_LOCK_SECURITY_OVERRIDES = {
 
 
 SOURCES: list[dict[str, Any]] = [
-    {"repo": "strmt7/simple_ai_bitcoin_trading_binance", "dir": "strmt7__simple_ai_bitcoin_trading_binance", "tier": "priority-user-public-repo", "group": "strmt7 account priority", "policy": "default-branch HEAD; GitHub API reported no latest release", "prefixes": [".agents/skills/"]},
-    {"repo": "strmt7/ome-zarr-C", "dir": "strmt7__ome-zarr-C", "tier": "priority-user-public-repo", "group": "strmt7 account priority", "policy": "default-branch HEAD; GitHub API reported no latest release", "prefixes": [".agents/skills/"]},
-    {"repo": "strmt7/project_air_defense", "dir": "strmt7__project_air_defense", "tier": "priority-user-public-repo", "group": "strmt7 account priority", "policy": "default-branch HEAD; GitHub API reported no latest release", "prefixes": [".agents/skills/", "skills/"]},
-    {"repo": "ZMB-UZH/omero-docker-extended", "dir": "ZMB-UZH__omero-docker-extended", "tier": "priority-requested-public-repo", "group": "requested OMERO repository priority", "policy": "default-branch HEAD; GitHub API reported no latest release", "prefixes": [".agents/skills/", "third_party/"]},
+    {"repo": "strmt7/simple_ai_bitcoin_trading_binance", "dir": "strmt7__simple_ai_bitcoin_trading_binance", "tier": "selected-project-reference", "group": "selected project repository", "policy": "default-branch HEAD; GitHub API reported no latest release", "prefixes": [".agents/skills/"], "selected_subset": True},
+    {"repo": "strmt7/ome-zarr-C", "dir": "strmt7__ome-zarr-C", "tier": "selected-project-reference", "group": "selected project repository", "policy": "default-branch HEAD; GitHub API reported no latest release", "prefixes": [".agents/skills/"], "selected_subset": True},
+    {"repo": "strmt7/project_air_defense", "dir": "strmt7__project_air_defense", "tier": "selected-project-reference", "group": "selected project repository", "policy": "default-branch HEAD; GitHub API reported no latest release", "prefixes": [".agents/skills/", "skills/"], "selected_subset": True},
+    {"repo": "ZMB-UZH/omero-docker-extended", "dir": "ZMB-UZH__omero-docker-extended", "tier": "selected-omero-reference", "group": "selected OMERO repository", "policy": "default-branch HEAD; GitHub API reported no latest release", "prefixes": [".agents/skills/", "third_party/"], "selected_subset": True},
     {"repo": "anthropics/skills", "dir": "anthropics__skills", "tier": "official-reference", "group": "official skill reference", "policy": "default-branch HEAD; GitHub API reported no latest release", "prefixes": ["skills/"], "exclude_prefixes": ["template/"]},
     {"repo": "K-Dense-AI/scientific-agent-skills", "dir": "K-Dense-AI__scientific-agent-skills", "tier": "latest-release-community", "group": "latest release scientific skills", "policy": "latest GitHub release v2.37.1", "tag": "v2.37.1", "release_url": "https://github.com/K-Dense-AI/scientific-agent-skills/releases/tag/v2.37.1", "prefixes": ["scientific-skills/"]},
     {"repo": "microsoft/skills", "dir": "microsoft__skills", "tier": "official-vendor-reference", "group": "Microsoft skills reference", "policy": "default-branch HEAD; GitHub API reported no latest release", "prefixes": [".github/plugins/", ".github/skills/"]},
@@ -516,6 +516,7 @@ def collect() -> list[dict[str, Any]]:
                 "source_repo": source["repo"],
                 "source_group": source["group"],
                 "source_tier": source["tier"],
+                "selected_subset": bool(source.get("selected_subset")),
                 "source_path": rel,
                 "source_url": f"https://github.com/{source['repo']}/blob/{ref_url}/{rel}",
                 "immutable_source_url": f"https://github.com/{source['repo']}/blob/{commit}/{rel}",
@@ -553,11 +554,11 @@ def collect() -> list[dict[str, Any]]:
                 "what_it_covers": f"Catalog summary: {description}",
                 "how_an_agent_should_use_it": "Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.",
                 "observed_structure": f"Headings: {', '.join(item['headings'][:5]) or 'none observed'}. Resources: {', '.join(k for k, v in resource_flags.items() if v) or 'none observed'}.",
-                "notability": "Selected source." if source["tier"].startswith("priority") else f"Included from {source['group']} with explicit GitHub provenance.",
+                "notability": "Selected source." if source.get("selected_subset") else f"Included from {source['group']} with explicit GitHub provenance.",
             }
             item["benchmark_scenarios"] = [f"skill-proof-{item['id']}"] + scenario_ids(category)
             entries.append(item)
-    entries.sort(key=lambda e: (0 if e["source_tier"].startswith("priority") else 1, e["category"], e["source_repo"], e["source_path"]))
+    entries.sort(key=lambda e: (0 if e["selected_subset"] else 1, e["category"], e["source_repo"], e["source_path"]))
     return entries
 
 
@@ -736,14 +737,17 @@ Do not claim this skill passed a runtime benchmark until a validated artifact ex
     )
 
 
-def write_priority_manifest(entries: list[dict[str, Any]]) -> None:
-    target = ROOT / "included" / "priority"
+def write_selected_manifest(entries: list[dict[str, Any]]) -> None:
+    legacy_target = ROOT / "included" / "priority"
+    if legacy_target.exists():
+        shutil.rmtree(legacy_target)
+    target = ROOT / "included" / "selected"
     if target.exists():
         shutil.rmtree(target)
     target.mkdir(parents=True)
-    priority_entries = [entry for entry in entries if entry["source_tier"].startswith("priority")]
+    selected_entries = [entry for entry in entries if entry["selected_subset"]]
     conflicts = name_conflict_groups(entries)
-    manifest = [skill_manifest_entry(entry, conflicts[entry["id"]]) for entry in priority_entries]
+    manifest = [skill_manifest_entry(entry, conflicts[entry["id"]]) for entry in selected_entries]
     write_json(target / "manifest.json", manifest)
     (target / "README.md").write_text(
         "# Selected Skills\n\n"
@@ -813,7 +817,10 @@ def write_docs(entries: list[dict[str, Any]], scenarios: list[dict[str, Any]]) -
     skill_doc_dir = skill_doc_root / "by-category"
     skill_doc_dir.mkdir(parents=True, exist_ok=True)
     categories = sorted({e["category"] for e in entries})
-    priority = [e for e in entries if e["source_tier"].startswith("priority")]
+    selected = [e for e in entries if e["selected_subset"]]
+    legacy_priority_doc = docs / "priority-skills.md"
+    if legacy_priority_doc.exists():
+        legacy_priority_doc.unlink()
 
     (ROOT / "README.md").write_text(f"""# AI Skills Collection Benchmarked
 
@@ -835,7 +842,7 @@ Current snapshot:
 - `{len(entries)}` source-backed skill entries.
 - `{len(entries)}` written skill mirrors under `included/skills/`.
 - `{len(entries)}` compact agent-ready skill entrypoints under `included/agent-ready/`.
-- `{len(priority)}` selected repository entries.
+- `{len(selected)}` selected repository entries.
 - `{len(categories)}` categories.
 - `{len(scenarios)}` real-data scenario templates.
 - Minimum `{MIN_SCENARIOS}` benchmark scenarios assigned per scenario-covered candidate.
@@ -846,11 +853,13 @@ Start here:
 - [Source policy](docs/source-policy.md)
 - [Included skill mirrors](included/skills/README.md)
 - [Agent-ready skills](included/agent-ready/README.md)
-- [Selected skills](docs/priority-skills.md)
+- [Selected skills](docs/selected-skills.md)
 - [Catalog index](docs/catalog/index.md)
 - [Benchmark suite](docs/benchmarks.md)
 - [Benchmark results](docs/benchmark-results.md)
 - [Skill quality findings](docs/skill-quality-findings.md)
+- [Skill risk findings](docs/skill-risk-findings.md)
+- [Immutable audit model](docs/immutable-audit-model.md)
 - [Benchmark runner requirements](docs/benchmark-runner-requirements.md)
 - [Host-agnostic installation](docs/installation.md)
 - [Agent consumability checklist](docs/agent-consumability.md)
@@ -879,6 +888,31 @@ Rules:
 8. Every cataloged skill also gets a compact agent-ready entrypoint under `included/agent-ready/`.
 
 The repository provides catalog and benchmark definitions. A skill is not marked as having passed until an external run artifact is recorded.
+""", encoding="utf-8")
+
+    (docs / "immutable-audit-model.md").write_text("""# Immutable Audit Model
+
+This repository keeps skill mirroring and benchmark evaluation as separate loops.
+
+## Skill Mirror Loop
+
+The mirror loop imports source-locked skill folders from pinned public commits and writes catalog metadata, source mirrors, agent-ready entrypoints, and documentation. It does not rewrite upstream `SKILL.md` content to remove findings or improve benchmark results.
+
+Allowed mirror transformations are deterministic and auditable:
+
+- Secret-shaped text is neutralized before it can enter the repository.
+- Declared dependency advisory floors may be applied by the generator.
+- Stable generated paths, category labels, and metadata are derived from catalog rules.
+
+## Artifact And Test Loop
+
+The artifact loop works from the generated catalog, mirrored source files, benchmark scenarios, and real run evidence. It records benchmark artifacts, static benchmark tables, risk reports, and validation checks.
+
+Benchmark tasks, fixtures, expected results, and evaluators must be defined independently from the exact text of the skill being evaluated. Skill text may be used for activation and operating context, but it must not define the expected answer used to score that same skill.
+
+Source-grounded skill-proof artifacts are provenance checks. They are useful for confirming that a source file can be located and interpreted, but they are not runtime benchmark passes.
+
+A counted runtime benchmark artifact must record that its task, evaluator, and expected result were created outside the skill content.
 """, encoding="utf-8")
 
     source_doc = "# Source Policy\n\n## Skill Sources\n\n"
@@ -912,11 +946,11 @@ python3 tools/build_catalog.py --source-root /path/to/ai_skill_sources
 Validation does not depend on `/tmp`, a local username, a private absolute path, or a specific host. Network-heavy benchmark execution should be performed by a separate runner that records dataset versions and artifacts.
 """, encoding="utf-8")
 
-    priority_doc = f"# Selected Skills\n\nSelected entries: `{len(priority)}`.\n\n| Skill | Category | Source | Ref | Scenarios |\n|---|---|---|---|---:|\n"
-    for entry in priority:
-        priority_doc += f"| `{esc(entry['name'])}` | {esc(entry['category'])} | [{esc(entry['source_repo'])}]({entry['immutable_source_url']}) | {esc(entry['selected_ref'])} | {len(entry['benchmark_scenarios'])} |\n"
-    priority_doc += "\nSelected entries are a subset of the physical mirrors under `included/skills/`; `included/priority/manifest.json` points to the exact mirrored directory for each one. Adjacent agent instruction files and benchmark folders are documented as context in the source policy, not counted as skills.\n"
-    (docs / "priority-skills.md").write_text(priority_doc, encoding="utf-8")
+    selected_doc = f"# Selected Skills\n\nSelected entries: `{len(selected)}`.\n\n| Skill | Category | Source | Ref | Scenarios |\n|---|---|---|---|---:|\n"
+    for entry in selected:
+        selected_doc += f"| `{esc(entry['name'])}` | {esc(entry['category'])} | [{esc(entry['source_repo'])}]({entry['immutable_source_url']}) | {esc(entry['selected_ref'])} | {len(entry['benchmark_scenarios'])} |\n"
+    selected_doc += "\nSelected entries are a subset of the physical mirrors under `included/skills/`; `included/selected/manifest.json` points to the exact mirrored directory for each one. Adjacent agent instruction files and benchmark folders are documented as context in the source policy, not counted as skills.\n"
+    (docs / "selected-skills.md").write_text(selected_doc, encoding="utf-8")
 
     index = f"# Catalog Index\n\nTotal entries: `{len(entries)}`. Every skill also has its own compact page under `docs/catalog/skills/by-category/`.\n\n| Category | Count | Category document |\n|---|---:|---|\n"
     for category in categories:
@@ -1094,6 +1128,7 @@ def write_evaluators() -> None:
         "type": "object",
         "required": [
             "artifact_version",
+            "artifact_kind",
             "skill_id",
             "scenario_id",
             "catalog_commit",
@@ -1106,11 +1141,13 @@ def write_evaluators() -> None:
             "execution",
             "outputs",
             "metrics",
+            "independence",
             "evidence",
             "objective_checks",
         ],
         "properties": {
             "artifact_version": {"type": "string", "pattern": "^1\\."},
+            "artifact_kind": {"type": "string", "enum": ["provenance_check", "independent_benchmark"]},
             "skill_id": {"type": "string"},
             "scenario_id": {"type": "string"},
             "catalog_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
@@ -1157,6 +1194,18 @@ def write_evaluators() -> None:
             },
             "outputs": {"type": "object"},
             "metrics": {"type": "object"},
+            "independence": {
+                "type": "object",
+                "required": ["skill_content_usage"],
+                "properties": {
+                    "task_defined_outside_skill": {"type": "boolean"},
+                    "evaluator_defined_outside_skill": {"type": "boolean"},
+                    "expected_result_defined_outside_skill": {"type": "boolean"},
+                    "uses_exact_skill_content_for_expected_result": {"type": "boolean"},
+                    "skill_content_usage": {"type": "string"},
+                },
+                "additionalProperties": True,
+            },
             "evidence": {
                 "type": "object",
                 "required": ["artifact_paths", "citations_or_paths"],
@@ -1194,7 +1243,7 @@ def main() -> None:
     write_json(ROOT / "data" / "source_lock.json", build_source_lock(entries))
     mirror_all_skills(entries)
     write_agent_ready_skills(entries)
-    write_priority_manifest(entries)
+    write_selected_manifest(entries)
     write_docs(entries, scenarios)
     write_evaluators()
     # Tests and validation are hand-maintained so they can check generated

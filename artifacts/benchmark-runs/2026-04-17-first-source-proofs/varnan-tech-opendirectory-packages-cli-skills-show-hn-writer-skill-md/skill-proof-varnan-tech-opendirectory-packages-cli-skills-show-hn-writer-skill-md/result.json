@@ -1,0 +1,54 @@
+{
+  "activation_conditions": [
+    "Use for show-hn-writer workflows. Source sections include Show HN Writer, Step 1: Gather Project Context, Step 2: Read Context Files (if available)"
+  ],
+  "observed_headings": [
+    "Show HN Writer",
+    "Step 1: Gather Project Context",
+    "Step 2: Read Context Files (if available)",
+    "Step 3: Draft the Title",
+    "Step 4: Draft the Body",
+    "Step 5: Summarize Submission with Gemini",
+    "Step 6: Self-QA",
+    "Step 7: Post to Hacker News (Optional)"
+  ],
+  "proof_evidence": [
+    {
+      "claim": "Skill identity is show-hn-writer.",
+      "line_or_section": "line 2",
+      "source_path": "packages/cli/skills/show-hn-writer/SKILL.md"
+    },
+    {
+      "claim": "Use for show-hn-writer workflows. Source sections include Show HN Writer, Step 1: Gather Project Context, Step 2: Read Context Files (if available)",
+      "line_or_section": "line 3",
+      "source_path": "packages/cli/skills/show-hn-writer/SKILL.md"
+    },
+    {
+      "claim": "Observed workflow section: Show HN Writer.",
+      "line_or_section": "section Show HN Writer",
+      "source_path": "packages/cli/skills/show-hn-writer/SKILL.md"
+    }
+  ],
+  "required_context": [
+    "Read the mirrored SKILL.md at included/skills/by-category/agent-infrastructure-skill-creation/reddit-verified-gtm-registry/varnan-tech-opendirectory-packages-cli-skills-show-hn-writer/SKILL.md.",
+    "Use source provenance Varnan-Tech/opendirectory packages/cli/skills/show-hn-writer/SKILL.md at bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4.",
+    "Load bundled resources on demand: has_references."
+  ],
+  "safe_boundaries": [
+    "Follow repository-level AGENTS.md and use one AI session only.",
+    "Do not claim a runtime benchmark pass without a validated artifact.",
+    "Do not use or emit real credentials; keep provider-shaped examples neutralized."
+  ],
+  "scenario_id": "skill-proof-varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md",
+  "skill_file_sha256": "37642287d833b24b41a408518b67de11415d610fa226dda9c78c51b064e25266",
+  "skill_id": "varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md",
+  "source_commit": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4",
+  "source_path": "packages/cli/skills/show-hn-writer/SKILL.md",
+  "source_repo": "Varnan-Tech/opendirectory",
+  "workflow_steps": [
+    "Confirm the user task matches the skill description or source path.",
+    "Read the local SKILL.md mirror and only then load referenced resources if needed.",
+    "Execute the smallest task-specific workflow that produces objective evidence.",
+    "Record commands, files read, outputs, metrics, and citations before making claims."
+  ]
+}
