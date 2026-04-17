@@ -1,0 +1,299 @@
+{
+  "batch_name": "2026-04-17-independent-runtime-readiness-batch-01",
+  "required_checks": [
+    "real_dataset_snapshot_resolved",
+    "assigned_non_provenance_scenario",
+    "independent_task_brief_present",
+    "mirror_skill_file_exists",
+    "agent_ready_entrypoint_exists",
+    "source_hash_matches_catalog",
+    "required_frontmatter_present",
+    "local_markdown_links_resolve",
+    "single_session_entrypoint_clean",
+    "generic_workflow_schema_recorded"
+  ],
+  "selection_policy": "first 10 likely_non_working skills with assigned non-provenance repository workflows excluding visual/browser categories for this readiness batch",
+  "task_count": 10,
+  "tasks": [
+    {
+      "dataset_track_id": "kubernetes-examples",
+      "dataset_url": "https://github.com/kubernetes/examples",
+      "expected_result": {
+        "all_required_checks_pass": true,
+        "blocking_failures": [],
+        "score_percent": 100.0
+      },
+      "independence_note": "This task brief, evaluator, required checks, and expected result are defined outside the evaluated skill text.",
+      "objective": "Independently determine whether the mirrored skill package is loadable and ready for a fresh single-session agent to attempt the assigned real repository workflow.",
+      "required_checks": [
+        "real_dataset_snapshot_resolved",
+        "assigned_non_provenance_scenario",
+        "independent_task_brief_present",
+        "mirror_skill_file_exists",
+        "agent_ready_entrypoint_exists",
+        "source_hash_matches_catalog",
+        "required_frontmatter_present",
+        "local_markdown_links_resolve",
+        "single_session_entrypoint_clean",
+        "generic_workflow_schema_recorded"
+      ],
+      "scenario_id": "devops-cloud-and-operations-kubernetes-examples",
+      "skill_id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md",
+      "task_id": "runtime-readiness-strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md-devops-cloud-and-operations-kubernetes-examples",
+      "task_version": "1.0",
+      "workflow": "Validate manifests and operational runbooks."
+    },
+    {
+      "dataset_track_id": "swe-bench-lite",
+      "dataset_url": "https://github.com/SWE-bench/SWE-bench",
+      "expected_result": {
+        "all_required_checks_pass": true,
+        "blocking_failures": [],
+        "score_percent": 100.0
+      },
+      "independence_note": "This task brief, evaluator, required checks, and expected result are defined outside the evaluated skill text.",
+      "objective": "Independently determine whether the mirrored skill package is loadable and ready for a fresh single-session agent to attempt the assigned real repository workflow.",
+      "required_checks": [
+        "real_dataset_snapshot_resolved",
+        "assigned_non_provenance_scenario",
+        "independent_task_brief_present",
+        "mirror_skill_file_exists",
+        "agent_ready_entrypoint_exists",
+        "source_hash_matches_catalog",
+        "required_frontmatter_present",
+        "local_markdown_links_resolve",
+        "single_session_entrypoint_clean",
+        "generic_workflow_schema_recorded"
+      ],
+      "scenario_id": "testing-qa-and-benchmarking-swe-bench-lite",
+      "skill_id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md",
+      "task_id": "runtime-readiness-strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md-testing-qa-and-benchmarking-swe-bench-lite",
+      "task_version": "1.0",
+      "workflow": "Patch real GitHub issue tasks and verify with repository tests."
+    },
+    {
+      "dataset_track_id": "kubernetes-examples",
+      "dataset_url": "https://github.com/kubernetes/examples",
+      "expected_result": {
+        "all_required_checks_pass": true,
+        "blocking_failures": [],
+        "score_percent": 100.0
+      },
+      "independence_note": "This task brief, evaluator, required checks, and expected result are defined outside the evaluated skill text.",
+      "objective": "Independently determine whether the mirrored skill package is loadable and ready for a fresh single-session agent to attempt the assigned real repository workflow.",
+      "required_checks": [
+        "real_dataset_snapshot_resolved",
+        "assigned_non_provenance_scenario",
+        "independent_task_brief_present",
+        "mirror_skill_file_exists",
+        "agent_ready_entrypoint_exists",
+        "source_hash_matches_catalog",
+        "required_frontmatter_present",
+        "local_markdown_links_resolve",
+        "single_session_entrypoint_clean",
+        "generic_workflow_schema_recorded"
+      ],
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "skill_id": "microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apimanagement-dotnet-skill-md",
+      "task_id": "runtime-readiness-microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apimanagement-dotnet-skill-md-cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "task_version": "1.0",
+      "workflow": "Validate manifests and operational runbooks."
+    },
+    {
+      "dataset_track_id": "kubernetes-examples",
+      "dataset_url": "https://github.com/kubernetes/examples",
+      "expected_result": {
+        "all_required_checks_pass": true,
+        "blocking_failures": [],
+        "score_percent": 100.0
+      },
+      "independence_note": "This task brief, evaluator, required checks, and expected result are defined outside the evaluated skill text.",
+      "objective": "Independently determine whether the mirrored skill package is loadable and ready for a fresh single-session agent to attempt the assigned real repository workflow.",
+      "required_checks": [
+        "real_dataset_snapshot_resolved",
+        "assigned_non_provenance_scenario",
+        "independent_task_brief_present",
+        "mirror_skill_file_exists",
+        "agent_ready_entrypoint_exists",
+        "source_hash_matches_catalog",
+        "required_frontmatter_present",
+        "local_markdown_links_resolve",
+        "single_session_entrypoint_clean",
+        "generic_workflow_schema_recorded"
+      ],
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "skill_id": "microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-ingestion-java-skill-md",
+      "task_id": "runtime-readiness-microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-ingestion-java-skill-md-cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "task_version": "1.0",
+      "workflow": "Validate manifests and operational runbooks."
+    },
+    {
+      "dataset_track_id": "kubernetes-examples",
+      "dataset_url": "https://github.com/kubernetes/examples",
+      "expected_result": {
+        "all_required_checks_pass": true,
+        "blocking_failures": [],
+        "score_percent": 100.0
+      },
+      "independence_note": "This task brief, evaluator, required checks, and expected result are defined outside the evaluated skill text.",
+      "objective": "Independently determine whether the mirrored skill package is loadable and ready for a fresh single-session agent to attempt the assigned real repository workflow.",
+      "required_checks": [
+        "real_dataset_snapshot_resolved",
+        "assigned_non_provenance_scenario",
+        "independent_task_brief_present",
+        "mirror_skill_file_exists",
+        "agent_ready_entrypoint_exists",
+        "source_hash_matches_catalog",
+        "required_frontmatter_present",
+        "local_markdown_links_resolve",
+        "single_session_entrypoint_clean",
+        "generic_workflow_schema_recorded"
+      ],
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "skill_id": "microsoft-skills-github-plugins-azure-sdk-python-skills-m365-agents-py-skill-md",
+      "task_id": "runtime-readiness-microsoft-skills-github-plugins-azure-sdk-python-skills-m365-agents-py-skill-md-cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "task_version": "1.0",
+      "workflow": "Validate manifests and operational runbooks."
+    },
+    {
+      "dataset_track_id": "kubernetes-examples",
+      "dataset_url": "https://github.com/kubernetes/examples",
+      "expected_result": {
+        "all_required_checks_pass": true,
+        "blocking_failures": [],
+        "score_percent": 100.0
+      },
+      "independence_note": "This task brief, evaluator, required checks, and expected result are defined outside the evaluated skill text.",
+      "objective": "Independently determine whether the mirrored skill package is loadable and ready for a fresh single-session agent to attempt the assigned real repository workflow.",
+      "required_checks": [
+        "real_dataset_snapshot_resolved",
+        "assigned_non_provenance_scenario",
+        "independent_task_brief_present",
+        "mirror_skill_file_exists",
+        "agent_ready_entrypoint_exists",
+        "source_hash_matches_catalog",
+        "required_frontmatter_present",
+        "local_markdown_links_resolve",
+        "single_session_entrypoint_clean",
+        "generic_workflow_schema_recorded"
+      ],
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-skill-md",
+      "task_id": "runtime-readiness-microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-skill-md-cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "task_version": "1.0",
+      "workflow": "Validate manifests and operational runbooks."
+    },
+    {
+      "dataset_track_id": "kubernetes-examples",
+      "dataset_url": "https://github.com/kubernetes/examples",
+      "expected_result": {
+        "all_required_checks_pass": true,
+        "blocking_failures": [],
+        "score_percent": 100.0
+      },
+      "independence_note": "This task brief, evaluator, required checks, and expected result are defined outside the evaluated skill text.",
+      "objective": "Independently determine whether the mirrored skill package is loadable and ready for a fresh single-session agent to attempt the assigned real repository workflow.",
+      "required_checks": [
+        "real_dataset_snapshot_resolved",
+        "assigned_non_provenance_scenario",
+        "independent_task_brief_present",
+        "mirror_skill_file_exists",
+        "agent_ready_entrypoint_exists",
+        "source_hash_matches_catalog",
+        "required_frontmatter_present",
+        "local_markdown_links_resolve",
+        "single_session_entrypoint_clean",
+        "generic_workflow_schema_recorded"
+      ],
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-skill-md",
+      "task_id": "runtime-readiness-microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-skill-md-cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "task_version": "1.0",
+      "workflow": "Validate manifests and operational runbooks."
+    },
+    {
+      "dataset_track_id": "kubernetes-examples",
+      "dataset_url": "https://github.com/kubernetes/examples",
+      "expected_result": {
+        "all_required_checks_pass": true,
+        "blocking_failures": [],
+        "score_percent": 100.0
+      },
+      "independence_note": "This task brief, evaluator, required checks, and expected result are defined outside the evaluated skill text.",
+      "objective": "Independently determine whether the mirrored skill package is loadable and ready for a fresh single-session agent to attempt the assigned real repository workflow.",
+      "required_checks": [
+        "real_dataset_snapshot_resolved",
+        "assigned_non_provenance_scenario",
+        "independent_task_brief_present",
+        "mirror_skill_file_exists",
+        "agent_ready_entrypoint_exists",
+        "source_hash_matches_catalog",
+        "required_frontmatter_present",
+        "local_markdown_links_resolve",
+        "single_session_entrypoint_clean",
+        "generic_workflow_schema_recorded"
+      ],
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-capacity-skill-md",
+      "task_id": "runtime-readiness-microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-capacity-skill-md-cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "task_version": "1.0",
+      "workflow": "Validate manifests and operational runbooks."
+    },
+    {
+      "dataset_track_id": "kubernetes-examples",
+      "dataset_url": "https://github.com/kubernetes/examples",
+      "expected_result": {
+        "all_required_checks_pass": true,
+        "blocking_failures": [],
+        "score_percent": 100.0
+      },
+      "independence_note": "This task brief, evaluator, required checks, and expected result are defined outside the evaluated skill text.",
+      "objective": "Independently determine whether the mirrored skill package is loadable and ready for a fresh single-session agent to attempt the assigned real repository workflow.",
+      "required_checks": [
+        "real_dataset_snapshot_resolved",
+        "assigned_non_provenance_scenario",
+        "independent_task_brief_present",
+        "mirror_skill_file_exists",
+        "agent_ready_entrypoint_exists",
+        "source_hash_matches_catalog",
+        "required_frontmatter_present",
+        "local_markdown_links_resolve",
+        "single_session_entrypoint_clean",
+        "generic_workflow_schema_recorded"
+      ],
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-customize-skill-md",
+      "task_id": "runtime-readiness-microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-customize-skill-md-cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "task_version": "1.0",
+      "workflow": "Validate manifests and operational runbooks."
+    },
+    {
+      "dataset_track_id": "kubernetes-examples",
+      "dataset_url": "https://github.com/kubernetes/examples",
+      "expected_result": {
+        "all_required_checks_pass": true,
+        "blocking_failures": [],
+        "score_percent": 100.0
+      },
+      "independence_note": "This task brief, evaluator, required checks, and expected result are defined outside the evaluated skill text.",
+      "objective": "Independently determine whether the mirrored skill package is loadable and ready for a fresh single-session agent to attempt the assigned real repository workflow.",
+      "required_checks": [
+        "real_dataset_snapshot_resolved",
+        "assigned_non_provenance_scenario",
+        "independent_task_brief_present",
+        "mirror_skill_file_exists",
+        "agent_ready_entrypoint_exists",
+        "source_hash_matches_catalog",
+        "required_frontmatter_present",
+        "local_markdown_links_resolve",
+        "single_session_entrypoint_clean",
+        "generic_workflow_schema_recorded"
+      ],
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset-skill-md",
+      "task_id": "runtime-readiness-microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset-skill-md-cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "task_version": "1.0",
+      "workflow": "Validate manifests and operational runbooks."
+    }
+  ]
+}

@@ -7,7 +7,9 @@ This page reports measured results only. Offline static checks were run against 
 - Skills checked: `673`
 - Static checks passed: `8076` / `8076`
 - Average static score: `100.0`
-- Runtime scenario artifacts recorded: `0`
+- Runtime scenario artifacts recorded: `10`
+- Runtime scenario artifacts passed: `0`
+- Runtime scenario artifacts failed: `10`
 - Source-proof provenance artifacts recorded: `10`
 
 ## Benchmark Tracks
@@ -15,7 +17,7 @@ This page reports measured results only. Offline static checks were run against 
 | Track | Assigned scenarios | Runtime artifacts |
 |---|---:|---:|
 | `source-skill-repository` | 673 | 0 |
-| `swe-bench-lite` | 57 | 0 |
+| `swe-bench-lite` | 57 | 1 |
 | `nyc-tlc-trip-records` | 32 | 0 |
 | `sec-edgar-companyfacts` | 251 | 0 |
 | `common-crawl-warc` | 24 | 0 |
@@ -28,7 +30,7 @@ This page reports measured results only. Offline static checks were run against 
 | `chembl` | 148 | 0 |
 | `owasp-benchmark` | 76 | 0 |
 | `owasp-juice-shop` | 85 | 0 |
-| `kubernetes-examples` | 305 | 0 |
+| `kubernetes-examples` | 305 | 9 |
 | `opentelemetry-demo` | 294 | 0 |
 | `coco-captions` | 58 | 0 |
 | `local-omero-compose-workflows` | 105 | 0 |
@@ -38,7 +40,7 @@ This page reports measured results only. Offline static checks were run against 
 
 | Skill | Category | Static checks | Static score | Runtime artifacts | Fix points | Failed static checks |
 |---|---|---:|---:|---:|---:|---|
-| `strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md` | DevOps, cloud & operations | 12/12 | 100.0 | 0 | 4 | none |
+| `strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md` | DevOps, cloud & operations | 12/12 | 100.0 | 1 | 4 | none |
 | `strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md` | Game, mobile & visual QA | 12/12 | 100.0 | 0 | 3 | none |
 | `strmt7-project-air-defense-agents-skills-browser-fallback-skill-md` | Game, mobile & visual QA | 12/12 | 100.0 | 0 | 2 | none |
 | `strmt7-project-air-defense-agents-skills-caveman-help-skill-md` | Game, mobile & visual QA | 12/12 | 100.0 | 0 | 3 | none |
@@ -117,7 +119,7 @@ This page reports measured results only. Offline static checks were run against 
 | `strmt7-ome-zarr-c-agents-skills-verification-loop-skill-md` | Science, research & data analysis | 12/12 | 100.0 | 0 | 4 | none |
 | `strmt7-ome-zarr-c-agents-skills-web-discovery-skill-md` | Science, research & data analysis | 12/12 | 100.0 | 0 | 3 | none |
 | `strmt7-ome-zarr-c-agents-skills-workflow-supply-chain-maintenance-skill-md` | Science, research & data analysis | 12/12 | 100.0 | 0 | 4 | none |
-| `strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md` | Testing, QA & benchmarking | 12/12 | 100.0 | 0 | 4 | none |
+| `strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md` | Testing, QA & benchmarking | 12/12 | 100.0 | 1 | 4 | none |
 | `varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md` | Agent infrastructure & skill creation | 12/12 | 100.0 | 0 | 3 | none |
 | `affaan-m-everything-claude-code-agents-skills-claude-api-skill-md` | Agent infrastructure & skill creation | 12/12 | 100.0 | 0 | 2 | none |
 | `affaan-m-everything-claude-code-agents-skills-dmux-workflows-skill-md` | Agent infrastructure & skill creation | 12/12 | 100.0 | 0 | 2 | none |
@@ -138,7 +140,7 @@ This page reports measured results only. Offline static checks were run against 
 | `microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-eventhub-dotnet-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-identity-dotnet-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apicenter-dotnet-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
-| `microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apimanagement-dotnet-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
+| `microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apimanagement-dotnet-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 1 | 3 | none |
 | `microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-applicationinsights-dotnet-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-arizeaiobservabilityeval-dotnet-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-botservice-dotnet-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
@@ -176,7 +178,7 @@ This page reports measured results only. Offline static checks were run against 
 | `microsoft-skills-github-plugins-azure-sdk-java-skills-azure-eventhub-java-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `microsoft-skills-github-plugins-azure-sdk-java-skills-azure-identity-java-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `microsoft-skills-github-plugins-azure-sdk-java-skills-azure-messaging-webpubsub-java-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
-| `microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-ingestion-java-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
+| `microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-ingestion-java-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 1 | 3 | none |
 | `microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-opentelemetry-exporter-java-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-query-java-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `microsoft-skills-github-plugins-azure-sdk-java-skills-azure-security-keyvault-keys-java-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
@@ -222,7 +224,7 @@ This page reports measured results only. Offline static checks were run against 
 | `microsoft-skills-github-plugins-azure-sdk-python-skills-azure-storage-queue-py-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `microsoft-skills-github-plugins-azure-sdk-python-skills-fastapi-router-py-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `microsoft-skills-github-plugins-azure-sdk-python-skills-hosted-agents-v2-py-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
-| `microsoft-skills-github-plugins-azure-sdk-python-skills-m365-agents-py-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
+| `microsoft-skills-github-plugins-azure-sdk-python-skills-m365-agents-py-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 1 | 3 | none |
 | `microsoft-skills-github-plugins-azure-sdk-python-skills-pydantic-models-py-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-cosmos-rust-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-eventhub-rust-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
@@ -277,11 +279,11 @@ This page reports measured results only. Offline static checks were run against 
 | `microsoft-skills-github-plugins-azure-skills-skills-azure-upgrade-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `microsoft-skills-github-plugins-azure-skills-skills-azure-validate-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `microsoft-skills-github-plugins-azure-skills-skills-entra-app-registration-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
-| `microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
-| `microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
-| `microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-capacity-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
-| `microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-customize-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
-| `microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
+| `microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 1 | 3 | none |
+| `microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 1 | 3 | none |
+| `microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-capacity-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 1 | 3 | none |
+| `microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-customize-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 1 | 3 | none |
+| `microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 1 | 3 | none |
 | `microsoft-skills-github-plugins-deep-wiki-skills-wiki-ado-convert-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `microsoft-skills-github-plugins-deep-wiki-skills-wiki-agents-md-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `microsoft-skills-github-plugins-deep-wiki-skills-wiki-architect-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
@@ -714,9 +716,18 @@ This page reports measured results only. Offline static checks were run against 
 
 ## Runtime Artifacts
 
-| Artifact | Skill | Scenario | Runner |
-|---|---|---|---|
-| none | none | none | none |
+| Artifact | Skill | Scenario | Verdict | Score | Runner |
+|---|---|---|---|---:|---|
+| `artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apimanagement-dotnet-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json` | `microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apimanagement-dotnet-skill-md` | `cloud-azure-and-microsoft-sdks-kubernetes-examples` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
+| `artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-ingestion-java-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json` | `microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-ingestion-java-skill-md` | `cloud-azure-and-microsoft-sdks-kubernetes-examples` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
+| `artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-sdk-python-skills-m365-agents-py-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json` | `microsoft-skills-github-plugins-azure-sdk-python-skills-m365-agents-py-skill-md` | `cloud-azure-and-microsoft-sdks-kubernetes-examples` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
+| `artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-capacity-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json` | `microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-capacity-skill-md` | `cloud-azure-and-microsoft-sdks-kubernetes-examples` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
+| `artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-customize-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json` | `microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-customize-skill-md` | `cloud-azure-and-microsoft-sdks-kubernetes-examples` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
+| `artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json` | `microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset-skill-md` | `cloud-azure-and-microsoft-sdks-kubernetes-examples` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
+| `artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json` | `microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-skill-md` | `cloud-azure-and-microsoft-sdks-kubernetes-examples` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
+| `artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json` | `microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-skill-md` | `cloud-azure-and-microsoft-sdks-kubernetes-examples` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
+| `artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md/devops-cloud-and-operations-kubernetes-examples/artifact.json` | `strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md` | `devops-cloud-and-operations-kubernetes-examples` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
+| `artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md/testing-qa-and-benchmarking-swe-bench-lite/artifact.json` | `strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md` | `testing-qa-and-benchmarking-swe-bench-lite` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
 
 ## Source-Proof Provenance Artifacts
 
