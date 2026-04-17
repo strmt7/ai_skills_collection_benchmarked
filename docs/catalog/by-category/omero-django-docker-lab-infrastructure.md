@@ -2,9 +2,9 @@
 
 ## ai-regression-testing - ZMB-UZH/omero-docker-extended `.agents/skills/ai-regression-testing/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/ai-regression-testing/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/ai-regression-testing/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Catch AI-style regressions with narrow contract tests, split pytest lanes, and sandbox-path checks before and after fixes.
@@ -22,9 +22,9 @@
 
 ## browser-fallback - ZMB-UZH/omero-docker-extended `.agents/skills/browser-fallback/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-browser-fallback](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-browser-fallback.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-browser-fallback`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-browser-fallback/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-browser-fallback](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-browser-fallback.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-browser-fallback`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-browser-fallback/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/browser-fallback/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/browser-fallback/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Use a deterministic browser workflow only when direct fetch or extraction is insufficient for a public-web task.
@@ -42,9 +42,9 @@
 
 ## caveman - ZMB-UZH/omero-docker-extended `.agents/skills/caveman/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-caveman](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-caveman.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-caveman`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-caveman/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-caveman](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-caveman.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-caveman`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-caveman/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/caveman/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/caveman/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Lower output token usage on demand for all AI agents without sacrificing technical accuracy, safety, or repo-specific clarity.
@@ -62,9 +62,9 @@
 
 ## compliance-and-rate-limit - ZMB-UZH/omero-docker-extended `.agents/skills/compliance-and-rate-limit/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-compliance-and-rate-limit](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-compliance-and-rate-limit.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-compliance-and-rate-limit`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-compliance-and-rate-limit/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-compliance-and-rate-limit](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-compliance-and-rate-limit.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-compliance-and-rate-limit`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-compliance-and-rate-limit/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/compliance-and-rate-limit/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/compliance-and-rate-limit/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Keep public-web research compliant, bounded, and efficient through rule checks, caching, and backoff instead of evasive scraping.
@@ -82,9 +82,9 @@
 
 ## context-budget - ZMB-UZH/omero-docker-extended `.agents/skills/context-budget/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-context-budget](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-context-budget.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-context-budget`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-context-budget/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-context-budget](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-context-budget.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-context-budget`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-context-budget/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/context-budget/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/context-budget/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Keep agent context small and high-signal by routing into AGENTS, the nearest docs, and the narrowest correct test lanes.
@@ -102,9 +102,9 @@
 
 ## deployment-patterns - ZMB-UZH/omero-docker-extended `.agents/skills/deployment-patterns/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-deployment-patterns](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-deployment-patterns.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-deployment-patterns`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-deployment-patterns/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-deployment-patterns](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-deployment-patterns.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-deployment-patterns`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-deployment-patterns/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/deployment-patterns/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/deployment-patterns/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Deployment and rollout guidance for this repo's Dockerized OMERO platform, with emphasis on env contracts and update safety.
@@ -122,9 +122,9 @@
 
 ## django-patterns - ZMB-UZH/omero-docker-extended `.agents/skills/django-patterns/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-django-patterns](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-django-patterns.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-django-patterns`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-django-patterns/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-django-patterns](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-django-patterns.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-django-patterns`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-django-patterns/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/django-patterns/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/django-patterns/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Django patterns for OMERO.web plugins: app boundaries, views, services, templates, and shared helper usage.
@@ -142,9 +142,9 @@
 
 ## django-security - ZMB-UZH/omero-docker-extended `.agents/skills/django-security/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-django-security](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-django-security.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-django-security`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-django-security/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-django-security](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-django-security.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-django-security`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-django-security/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/django-security/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/django-security/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Django and OMERO.web security rules for views, uploads, responses, permissions, and admin-only surfaces.
@@ -162,9 +162,9 @@
 
 ## django-verification - ZMB-UZH/omero-docker-extended `.agents/skills/django-verification/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-django-verification](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-django-verification.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-django-verification`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-django-verification/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-django-verification](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-django-verification.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-django-verification`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-django-verification/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/django-verification/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/django-verification/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Verify Django and OMERO.web changes with the repo's split pytest model, docs gates, and targeted runtime checks.
@@ -182,9 +182,9 @@
 
 ## docker-patterns - ZMB-UZH/omero-docker-extended `.agents/skills/docker-patterns/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-docker-patterns](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-docker-patterns.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-docker-patterns`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-docker-patterns/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-docker-patterns](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-docker-patterns.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-docker-patterns`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-docker-patterns/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/docker-patterns/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/docker-patterns/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Docker and Compose patterns for this repo's multi-container OMERO runtime, startup scripts, and hardening rules.
@@ -202,9 +202,9 @@
 
 ## docs-knowledge-maintainer - ZMB-UZH/omero-docker-extended `.agents/skills/docs-knowledge-maintainer/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-docs-knowledge-maintainer](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-docs-knowledge-maintainer.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-docs-knowledge-maintainer`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-docs-knowledge-maintainer/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-docs-knowledge-maintainer](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-docs-knowledge-maintainer.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-docs-knowledge-maintainer`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-docs-knowledge-maintainer/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/docs-knowledge-maintainer/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/docs-knowledge-maintainer/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Keep repository documentation accurate when behavior, topology, env contracts, or troubleshooting procedures change.
@@ -222,9 +222,9 @@
 
 ## documentation-lookup - ZMB-UZH/omero-docker-extended `.agents/skills/documentation-lookup/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-documentation-lookup](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-documentation-lookup.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-documentation-lookup`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-documentation-lookup/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-documentation-lookup](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-documentation-lookup.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-documentation-lookup`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-documentation-lookup/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/documentation-lookup/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/documentation-lookup/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Use current official documentation and release notes for OMERO, Django, Docker, Python, PostgreSQL, monitoring tools, and AI harnesses instead of memory.
@@ -242,9 +242,9 @@
 
 ## env-contract-reviewer - ZMB-UZH/omero-docker-extended `.agents/skills/env-contract-reviewer/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-env-contract-reviewer](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-env-contract-reviewer.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-env-contract-reviewer`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-env-contract-reviewer/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-env-contract-reviewer](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-env-contract-reviewer.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-env-contract-reviewer`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-env-contract-reviewer/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/env-contract-reviewer/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/env-contract-reviewer/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Review environment-driven configuration changes so they stay template-backed, typed, documented, and free of hard-coded runtime values.
@@ -262,9 +262,9 @@
 
 ## frontend-preview - ZMB-UZH/omero-docker-extended `.agents/skills/frontend-preview/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-frontend-preview](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-frontend-preview.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-frontend-preview`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-frontend-preview/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-frontend-preview](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-frontend-preview.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-frontend-preview`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-frontend-preview/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/frontend-preview/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/frontend-preview/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Preview HTML/CSS/JS changes in Django plugin templates with the pinned host-side Vite/Vitest toolchain, then validate live in OMERO.web.
@@ -282,9 +282,9 @@
 
 ## omero-runtime-verifier - ZMB-UZH/omero-docker-extended `.agents/skills/omero-runtime-verifier/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-omero-runtime-verifier](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-omero-runtime-verifier.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-omero-runtime-verifier`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-omero-runtime-verifier/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-omero-runtime-verifier](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-omero-runtime-verifier.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-omero-runtime-verifier`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-omero-runtime-verifier/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/omero-runtime-verifier/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/omero-runtime-verifier/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Safe runtime-debugging workflow for OMERO Docker Extended, including Loki-first log triage, container venv discovery, and correct OMERO service-user usage.
@@ -302,9 +302,9 @@
 
 ## plugin-regression-triager - ZMB-UZH/omero-docker-extended `.agents/skills/plugin-regression-triager/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-plugin-regression-triager](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-plugin-regression-triager.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-plugin-regression-triager`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-plugin-regression-triager/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-plugin-regression-triager](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-plugin-regression-triager.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-plugin-regression-triager`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-plugin-regression-triager/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/plugin-regression-triager/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/plugin-regression-triager/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Map changed files to the correct split pytest suites and fast regression checks for this repository.
@@ -322,9 +322,9 @@
 
 ## postgres-patterns - ZMB-UZH/omero-docker-extended `.agents/skills/postgres-patterns/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-postgres-patterns](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-postgres-patterns.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-postgres-patterns`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-postgres-patterns/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-postgres-patterns](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-postgres-patterns.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-postgres-patterns`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-postgres-patterns/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/postgres-patterns/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/postgres-patterns/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: PostgreSQL guidance for the main OMERO database, plugin database, migrations, indexes, and maintenance contracts.
@@ -342,9 +342,9 @@
 
 ## python-patterns - ZMB-UZH/omero-docker-extended `.agents/skills/python-patterns/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-python-patterns](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-python-patterns.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-python-patterns`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-python-patterns/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-python-patterns](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-python-patterns.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-python-patterns`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-python-patterns/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/python-patterns/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/python-patterns/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Python patterns for this repo's helpers, plugins, services, startup tooling, and environment-driven contracts.
@@ -362,9 +362,9 @@
 
 ## python-testing - ZMB-UZH/omero-docker-extended `.agents/skills/python-testing/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-python-testing](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-python-testing.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-python-testing`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-python-testing/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-python-testing](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-python-testing.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-python-testing`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-python-testing/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/python-testing/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/python-testing/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Python testing guidance for split pytest lanes, contract tests, shell checks, and syntax-only fallbacks in this repo.
@@ -382,9 +382,9 @@
 
 ## search-first - ZMB-UZH/omero-docker-extended `.agents/skills/search-first/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-search-first](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-search-first.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-search-first`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-search-first/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-search-first](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-search-first.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-search-first`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-search-first/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/search-first/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/search-first/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Research-before-coding workflow for OMERO Docker Extended. Check the repo, tests, official upstream docs, and release notes before writing new code.
@@ -402,9 +402,9 @@
 
 ## security-finding-triager - ZMB-UZH/omero-docker-extended `.agents/skills/security-finding-triager/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-security-finding-triager](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-security-finding-triager.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-security-finding-triager`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-security-finding-triager/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-security-finding-triager](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-security-finding-triager.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-security-finding-triager`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-security-finding-triager/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/security-finding-triager/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/security-finding-triager/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Triage code-scanning findings using the repo's live runbook, closed-history ledger, and canonical prevention playbook before editing security-sensitive code.
@@ -422,9 +422,9 @@
 
 ## security-review - ZMB-UZH/omero-docker-extended `.agents/skills/security-review/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-security-review](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-security-review.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-security-review`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-security-review/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-security-review](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-security-review.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-security-review`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-security-review/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/security-review/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/security-review/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Security review for uploads, filesystem paths, SQL, responses, subprocesses, Docker, workflows, and secrets in this repo.
@@ -442,9 +442,9 @@
 
 ## site-extract - ZMB-UZH/omero-docker-extended `.agents/skills/site-extract/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-site-extract](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-site-extract.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-site-extract`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-site-extract/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-site-extract](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-site-extract.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-site-extract`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-site-extract/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/site-extract/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/site-extract/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Extract the smallest useful amount of text or structured data from a known public page before falling back to full browser automation.
@@ -462,9 +462,9 @@
 
 ## source-audit - ZMB-UZH/omero-docker-extended `.agents/skills/source-audit/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-source-audit](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-source-audit.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-source-audit`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-source-audit/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-source-audit](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-source-audit.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-source-audit`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-source-audit/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/source-audit/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/source-audit/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Verify public-web findings with source quality, dates, and second-source checks before turning them into advice or claims.
@@ -482,9 +482,9 @@
 
 ## tdd-workflow - ZMB-UZH/omero-docker-extended `.agents/skills/tdd-workflow/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-tdd-workflow](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-tdd-workflow.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-tdd-workflow`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-tdd-workflow/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-tdd-workflow](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-tdd-workflow.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-tdd-workflow`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-tdd-workflow/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/tdd-workflow/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/tdd-workflow/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: TDD guidance for repo changes using narrow regression tests, split pytest lanes, and docs updates as part of done-ness.
@@ -502,9 +502,9 @@
 
 ## verification-loop - ZMB-UZH/omero-docker-extended `.agents/skills/verification-loop/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-verification-loop](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-verification-loop.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-verification-loop`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-verification-loop/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-verification-loop](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-verification-loop.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-verification-loop`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-verification-loop/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/verification-loop/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/verification-loop/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Repository-specific verification flow for OMERO Docker Extended. Runs docs validation, Ruff, split pytest suites, and targeted fallback checks without overstating coverage.
@@ -522,9 +522,9 @@
 
 ## web-discovery - ZMB-UZH/omero-docker-extended `.agents/skills/web-discovery/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-web-discovery](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-web-discovery.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-web-discovery`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-agents-skills-web-discovery/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-agents-skills-web-discovery](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-web-discovery.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-web-discovery`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-agents-skills-web-discovery/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `.agents/skills/web-discovery/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/web-discovery/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Plan and run current public-web discovery for docs, releases, issues, and community evidence without guessing or over-browsing.
@@ -542,9 +542,9 @@
 
 ## caveman - ZMB-UZH/omero-docker-extended `third_party/caveman-v1.6.0/skills/caveman/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-third-party-caveman-v1-6-0-skills-caveman](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-caveman-v1-6-0-skills-caveman.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-caveman-v1-6-0-skills-caveman`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-caveman-v1-6-0-skills-caveman/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-third-party-caveman-v1-6-0-skills-caveman](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-caveman-v1-6-0-skills-caveman.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-caveman-v1-6-0-skills-caveman`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-caveman-v1-6-0-skills-caveman/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `third_party/caveman-v1.6.0/skills/caveman/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/caveman-v1.6.0/skills/caveman/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Ultra-compressed communication mode. Cuts token usage ~75% by speaking like caveman while keeping full technical accuracy. Supports intensity levels: lite, full (default), ultra, wenyan-lite, wenyan-full, wenyan-ultra. Use when user says "caveman mode", "talk like caveman", "use caveman", "less tokens", "be brief", or invokes /caveman. Also auto-triggers when token efficiency is requested.
@@ -563,9 +563,9 @@
 
 ## ai-regression-testing - ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/ai-regression-testing/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-ai-regression-testing](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-ai-regression-testing.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-ai-regression-testing`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-ai-regression-testing/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-ai-regression-testing](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-ai-regression-testing.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-ai-regression-testing`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-ai-regression-testing/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/ai-regression-testing/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/ai-regression-testing/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Regression testing strategies for AI-assisted development. Sandbox-mode API testing without database dependencies, automated bug-check workflows, and patterns to catch AI blind spots where the same model writes and reviews code.
@@ -584,9 +584,9 @@
 
 ## context-budget - ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/context-budget/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-context-budget](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-context-budget.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-context-budget`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-context-budget/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-context-budget](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-context-budget.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-context-budget`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-context-budget/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/context-budget/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/context-budget/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Audits Claude Code context window consumption across agents, skills, MCP servers, and rules. Identifies bloat, redundant components, and produces prioritized token-savings recommendations.
@@ -605,9 +605,9 @@
 
 ## deployment-patterns - ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/deployment-patterns/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-deployment-patterns](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-deployment-patterns.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-deployment-patterns`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-deployment-patterns/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-deployment-patterns](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-deployment-patterns.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-deployment-patterns`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-deployment-patterns/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/deployment-patterns/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/deployment-patterns/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Deployment workflows, CI/CD pipeline patterns, Docker containerization, health checks, rollback strategies, and production readiness checklists for web applications.
@@ -626,9 +626,9 @@
 
 ## django-patterns - ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/django-patterns/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-patterns](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-patterns.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-patterns`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-patterns/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-patterns](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-patterns.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-patterns`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-patterns/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/django-patterns/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/django-patterns/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Django architecture patterns, REST API design with DRF, ORM best practices, caching, signals, middleware, and production-grade Django apps.
@@ -648,9 +648,9 @@
 
 ## django-security - ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/django-security/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-security](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-security.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-security`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-security/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-security](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-security.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-security`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-security/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/django-security/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/django-security/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Django security best practices, authentication, authorization, CSRF protection, SQL injection prevention, XSS prevention, and secure deployment configurations.
@@ -670,9 +670,9 @@
 
 ## django-verification - ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/django-verification/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-verification](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-verification.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-verification`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-verification/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-verification](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-verification.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-verification`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-verification/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/django-verification/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/django-verification/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Verification loop for Django projects: migrations, linting, tests with coverage, security scans, and deployment readiness checks before release or PR.
@@ -691,9 +691,9 @@
 
 ## docker-patterns - ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/docker-patterns/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-docker-patterns](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-docker-patterns.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-docker-patterns`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-docker-patterns/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-docker-patterns](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-docker-patterns.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-docker-patterns`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-docker-patterns/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/docker-patterns/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/docker-patterns/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Docker and Docker Compose patterns for local development, container security, networking, volume strategies, and multi-service orchestration.
@@ -712,9 +712,9 @@
 
 ## documentation-lookup - ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/documentation-lookup/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-documentation-lookup](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-documentation-lookup.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-documentation-lookup`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-documentation-lookup/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-documentation-lookup](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-documentation-lookup.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-documentation-lookup`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-documentation-lookup/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/documentation-lookup/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/documentation-lookup/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Use up-to-date library and framework docs via Context7 MCP instead of training data. Activates for setup questions, API references, code examples, or when the user names a framework (e.g. React, Next.js, Prisma).
@@ -733,9 +733,9 @@
 
 ## postgres-patterns - ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/postgres-patterns/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-postgres-patterns](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-postgres-patterns.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-postgres-patterns`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-postgres-patterns/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-postgres-patterns](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-postgres-patterns.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-postgres-patterns`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-postgres-patterns/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/postgres-patterns/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/postgres-patterns/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: PostgreSQL database patterns for query optimization, schema design, indexing, and security. Based on Supabase best practices.
@@ -754,9 +754,9 @@
 
 ## python-patterns - ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/python-patterns/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-patterns](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-patterns.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-patterns`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-patterns/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-patterns](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-patterns.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-patterns`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-patterns/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/python-patterns/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/python-patterns/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Pythonic idioms, PEP 8 standards, type hints, and best practices for building robust, efficient, and maintainable Python applications.
@@ -776,9 +776,9 @@
 
 ## python-testing - ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/python-testing/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-testing](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-testing.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-testing`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-testing/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-testing](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-testing.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-testing`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-testing/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/python-testing/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/python-testing/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Python testing strategies using pytest, TDD methodology, fixtures, mocking, parametrization, and coverage requirements.
@@ -798,9 +798,9 @@
 
 ## search-first - ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/search-first/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-search-first](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-search-first.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-search-first`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-search-first/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-search-first](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-search-first.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-search-first`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-search-first/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/search-first/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/search-first/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Research-before-coding workflow. Search for existing tools, libraries, and patterns before writing custom code. Invokes the researcher agent.
@@ -819,9 +819,9 @@
 
 ## security-review - ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/security-review/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-security-review](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-security-review.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-security-review`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-security-review/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-security-review](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-security-review.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-security-review`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-security-review/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/security-review/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/security-review/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Use this skill when adding authentication, handling user input, working with secrets, creating API endpoints, or implementing payment/sensitive features. Provides comprehensive security checklist and patterns.
@@ -840,9 +840,9 @@
 
 ## tdd-workflow - ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/tdd-workflow/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/tdd-workflow/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/tdd-workflow/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: Use this skill when writing new features, fixing bugs, or refactoring code. Enforces test-driven development with 80%+ coverage including unit, integration, and E2E tests.
@@ -861,9 +861,9 @@
 
 ## verification-loop - ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/verification-loop/SKILL.md`
 
-- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-verification-loop](../skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-verification-loop.md)
-- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-verification-loop`
-- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/priority-requested-public-repo/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-verification-loop/SKILL.md`
+- Skill page: [zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-verification-loop](../skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-verification-loop.md)
+- Mirrored skill: `included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-verification-loop`
+- Agent-ready entrypoint: `included/agent-ready/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-verification-loop/SKILL.md`
 - Source: [ZMB-UZH/omero-docker-extended `third_party/ecc-v1.10.0/skills/verification-loop/SKILL.md`](https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/verification-loop/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 - What it covers: Catalog summary: A comprehensive verification system for Claude Code sessions.

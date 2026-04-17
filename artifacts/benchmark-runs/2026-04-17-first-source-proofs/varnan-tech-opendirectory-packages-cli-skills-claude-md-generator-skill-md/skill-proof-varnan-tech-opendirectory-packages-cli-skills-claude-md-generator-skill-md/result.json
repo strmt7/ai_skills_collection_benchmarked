@@ -1,0 +1,54 @@
+{
+  "activation_conditions": [
+    "Use for claude-md-generator workflows. Source sections include CLAUDE.md Generator, Step 1: Detect Mode, Discover ALL CLAUDE.md locations"
+  ],
+  "observed_headings": [
+    "CLAUDE.md Generator",
+    "Step 1: Detect Mode",
+    "Discover ALL CLAUDE.md locations",
+    "Step 2: Audit Mode (skip to Step 3 if create/update)",
+    "CLAUDE.md Audit Report",
+    "Step 3: Scan Project Structure",
+    "Project type and package manager",
+    "Top-level directory structure"
+  ],
+  "proof_evidence": [
+    {
+      "claim": "Skill identity is claude-md-generator.",
+      "line_or_section": "line 2",
+      "source_path": "packages/cli/skills/claude-md-generator/SKILL.md"
+    },
+    {
+      "claim": "Use for claude-md-generator workflows. Source sections include CLAUDE.md Generator, Step 1: Detect Mode, Discover ALL CLAUDE.md locations",
+      "line_or_section": "line 3",
+      "source_path": "packages/cli/skills/claude-md-generator/SKILL.md"
+    },
+    {
+      "claim": "Observed workflow section: CLAUDE.md Generator.",
+      "line_or_section": "section CLAUDE.md Generator",
+      "source_path": "packages/cli/skills/claude-md-generator/SKILL.md"
+    }
+  ],
+  "required_context": [
+    "Read the mirrored SKILL.md at included/skills/by-category/coding-refactoring-repository-automation/reddit-verified-gtm-registry/varnan-tech-opendirectory-packages-cli-skills-claude-md-generator/SKILL.md.",
+    "Use source provenance Varnan-Tech/opendirectory packages/cli/skills/claude-md-generator/SKILL.md at bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4.",
+    "Load bundled resources on demand: has_references."
+  ],
+  "safe_boundaries": [
+    "Follow repository-level AGENTS.md and use one AI session only.",
+    "Do not claim a runtime benchmark pass without a validated artifact.",
+    "Do not use or emit real credentials; keep provider-shaped examples neutralized."
+  ],
+  "scenario_id": "skill-proof-varnan-tech-opendirectory-packages-cli-skills-claude-md-generator-skill-md",
+  "skill_file_sha256": "73f8d92940af2bbd5aae9777d692c9cd1ac7eba11d9bb585d241c52ad6397ff5",
+  "skill_id": "varnan-tech-opendirectory-packages-cli-skills-claude-md-generator-skill-md",
+  "source_commit": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4",
+  "source_path": "packages/cli/skills/claude-md-generator/SKILL.md",
+  "source_repo": "Varnan-Tech/opendirectory",
+  "workflow_steps": [
+    "Confirm the user task matches the skill description or source path.",
+    "Read the local SKILL.md mirror and only then load referenced resources if needed.",
+    "Execute the smallest task-specific workflow that produces objective evidence.",
+    "Record commands, files read, outputs, metrics, and citations before making claims."
+  ]
+}

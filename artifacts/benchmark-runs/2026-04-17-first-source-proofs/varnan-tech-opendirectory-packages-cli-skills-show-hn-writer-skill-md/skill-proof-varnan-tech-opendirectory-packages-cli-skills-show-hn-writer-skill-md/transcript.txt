@@ -1,0 +1,15 @@
+batch: 2026-04-17-first-source-proofs
+timestamp_utc: 2026-04-17T19:10:10Z
+runner: tools/create_source_proof_batch.py
+catalog_commit: 7512fbf179925eeb015e320e35004d16a95050e8
+skill_id: varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md
+scenario_id: skill-proof-varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md
+read: included/skills/by-category/agent-infrastructure-skill-creation/reddit-verified-gtm-registry/varnan-tech-opendirectory-packages-cli-skills-show-hn-writer/SKILL.md
+source: https://github.com/Varnan-Tech/opendirectory/blob/bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4/packages/cli/skills/show-hn-writer/SKILL.md
+skill_file_sha256: 37642287d833b24b41a408518b67de11415d610fa226dda9c78c51b064e25266
+line_count: 300
+checks:
+- parsed SKILL.md frontmatter/body
+- produced source-grounded proof JSON
+- recorded source path citations
+- validated artifact with tools/check_benchmark_artifact.py

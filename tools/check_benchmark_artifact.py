@@ -15,6 +15,7 @@ HEX40 = re.compile(r"^[0-9a-f]{40}$")
 
 REQUIRED_TOP_LEVEL = [
     "artifact_version",
+    "artifact_kind",
     "skill_id",
     "scenario_id",
     "catalog_commit",
@@ -27,6 +28,7 @@ REQUIRED_TOP_LEVEL = [
     "execution",
     "outputs",
     "metrics",
+    "independence",
     "evidence",
     "objective_checks",
 ]
@@ -69,6 +71,9 @@ def validate_artifact(artifact_path: Path, catalog_path: Path | None = None, sce
 
     if artifact.get("benchmark_status") == "passed" or artifact.get("verdict") == "passed":
         errors.append("artifact must not self-claim benchmark_status/verdict passed")
+    artifact_kind = artifact.get("artifact_kind")
+    if artifact_kind not in {"provenance_check", "independent_benchmark"}:
+        errors.append("artifact_kind must be provenance_check or independent_benchmark")
     for key in ["catalog_commit", "source_commit"]:
         if not HEX40.fullmatch(str(artifact.get(key, ""))):
             errors.append(f"{key} must be a 40-character lowercase git SHA")
@@ -97,6 +102,29 @@ def validate_artifact(artifact_path: Path, catalog_path: Path | None = None, sce
             errors.append("scenario_id is not assigned to this skill")
     if artifact["scenario_id"] not in scenarios:
         errors.append(f"unknown scenario_id: {artifact['scenario_id']}")
+
+    independence = artifact["independence"]
+    if not isinstance(independence, dict):
+        errors.append("independence must be an object")
+        independence = {}
+    if not independence.get("skill_content_usage"):
+        errors.append("independence.skill_content_usage is required")
+    if artifact_kind == "independent_benchmark":
+        required_true = [
+            "task_defined_outside_skill",
+            "evaluator_defined_outside_skill",
+            "expected_result_defined_outside_skill",
+        ]
+        for key in required_true:
+            if independence.get(key) is not True:
+                errors.append(f"independent_benchmark requires independence.{key} true")
+        if independence.get("uses_exact_skill_content_for_expected_result") is not False:
+            errors.append("independent_benchmark requires uses_exact_skill_content_for_expected_result false")
+        scenario = scenarios.get(artifact["scenario_id"])
+        if scenario and scenario.get("dataset_track_id") == "source-skill-repository":
+            errors.append("source-skill-repository scenarios are provenance checks, not independent benchmarks")
+    elif artifact_kind == "provenance_check":
+        warnings.append("provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes")
 
     runner = artifact["runner"]
     if not isinstance(runner, dict) or not all(runner.get(key) for key in ["timestamp_utc", "tool", "model_or_runtime"]):

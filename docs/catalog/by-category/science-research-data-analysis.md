@@ -2,9 +2,9 @@
 
 ## ai-regression-testing - strmt7/ome-zarr-C `.agents/skills/ai-regression-testing/SKILL.md`
 
-- Skill page: [strmt7-ome-zarr-c-agents-skills-ai-regression-testing](../skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-ai-regression-testing.md)
-- Mirrored skill: `included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-ai-regression-testing`
-- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-ai-regression-testing/SKILL.md`
+- Skill page: [strmt7-ome-zarr-c-agents-skills-ai-regression-testing](../skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-ai-regression-testing.md)
+- Mirrored skill: `included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-ai-regression-testing`
+- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-ai-regression-testing/SKILL.md`
 - Source: [strmt7/ome-zarr-C `.agents/skills/ai-regression-testing/SKILL.md`](https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/ai-regression-testing/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 - What it covers: Catalog summary: Add narrow regression and differential tests that catch incomplete or overconfident code changes.
@@ -24,9 +24,9 @@
 
 ## benchmark-first - strmt7/ome-zarr-C `.agents/skills/benchmark-first/SKILL.md`
 
-- Skill page: [strmt7-ome-zarr-c-agents-skills-benchmark-first](../skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-benchmark-first.md)
-- Mirrored skill: `included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-benchmark-first`
-- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-benchmark-first/SKILL.md`
+- Skill page: [strmt7-ome-zarr-c-agents-skills-benchmark-first](../skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-benchmark-first.md)
+- Mirrored skill: `included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-benchmark-first`
+- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-benchmark-first/SKILL.md`
 - Source: [strmt7/ome-zarr-C `.agents/skills/benchmark-first/SKILL.md`](https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/benchmark-first/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 - What it covers: Catalog summary: Benchmark converted code against the frozen upstream implementation before making performance claims.
@@ -46,9 +46,9 @@
 
 ## browser-fallback - strmt7/ome-zarr-C `.agents/skills/browser-fallback/SKILL.md`
 
-- Skill page: [strmt7-ome-zarr-c-agents-skills-browser-fallback](../skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-browser-fallback.md)
-- Mirrored skill: `included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-browser-fallback`
-- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-browser-fallback/SKILL.md`
+- Skill page: [strmt7-ome-zarr-c-agents-skills-browser-fallback](../skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-browser-fallback.md)
+- Mirrored skill: `included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-browser-fallback`
+- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-browser-fallback/SKILL.md`
 - Source: [strmt7/ome-zarr-C `.agents/skills/browser-fallback/SKILL.md`](https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/browser-fallback/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 - What it covers: Catalog summary: Use a deterministic browser workflow only when direct fetch or extraction is insufficient for a public-web task.
@@ -67,9 +67,9 @@
 
 ## compliance-and-rate-limit - strmt7/ome-zarr-C `.agents/skills/compliance-and-rate-limit/SKILL.md`
 
-- Skill page: [strmt7-ome-zarr-c-agents-skills-compliance-and-rate-limit](../skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-compliance-and-rate-limit.md)
-- Mirrored skill: `included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-compliance-and-rate-limit`
-- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-compliance-and-rate-limit/SKILL.md`
+- Skill page: [strmt7-ome-zarr-c-agents-skills-compliance-and-rate-limit](../skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-compliance-and-rate-limit.md)
+- Mirrored skill: `included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-compliance-and-rate-limit`
+- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-compliance-and-rate-limit/SKILL.md`
 - Source: [strmt7/ome-zarr-C `.agents/skills/compliance-and-rate-limit/SKILL.md`](https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/compliance-and-rate-limit/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 - What it covers: Catalog summary: Keep public-web research compliant, bounded, and efficient through rule checks, caching, and backoff instead of evasive scraping.
@@ -88,9 +88,9 @@
 
 ## context-budget - strmt7/ome-zarr-C `.agents/skills/context-budget/SKILL.md`
 
-- Skill page: [strmt7-ome-zarr-c-agents-skills-context-budget](../skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-context-budget.md)
-- Mirrored skill: `included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-context-budget`
-- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-context-budget/SKILL.md`
+- Skill page: [strmt7-ome-zarr-c-agents-skills-context-budget](../skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-context-budget.md)
+- Mirrored skill: `included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-context-budget`
+- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-context-budget/SKILL.md`
 - Source: [strmt7/ome-zarr-C `.agents/skills/context-budget/SKILL.md`](https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/context-budget/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 - What it covers: Catalog summary: Keep context narrow and high-signal by loading only the smallest correct docs, code, tests, and skills.
@@ -110,9 +110,9 @@
 
 ## cpp-parity-porting - strmt7/ome-zarr-C `.agents/skills/cpp-parity-porting/SKILL.md`
 
-- Skill page: [strmt7-ome-zarr-c-agents-skills-cpp-parity-porting](../skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-cpp-parity-porting.md)
-- Mirrored skill: `included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-cpp-parity-porting`
-- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-cpp-parity-porting/SKILL.md`
+- Skill page: [strmt7-ome-zarr-c-agents-skills-cpp-parity-porting](../skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-cpp-parity-porting.md)
+- Mirrored skill: `included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-cpp-parity-porting`
+- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-cpp-parity-porting/SKILL.md`
 - Source: [strmt7/ome-zarr-C `.agents/skills/cpp-parity-porting/SKILL.md`](https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/cpp-parity-porting/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 - What it covers: Catalog summary: Port one upstream ome-zarr-py surface to standalone native C++ without touching the frozen snapshot.
@@ -132,9 +132,9 @@
 
 ## cpp-performance-optimization - strmt7/ome-zarr-C `.agents/skills/cpp-performance-optimization/SKILL.md`
 
-- Skill page: [strmt7-ome-zarr-c-agents-skills-cpp-performance-optimization](../skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-cpp-performance-optimization.md)
-- Mirrored skill: `included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-cpp-performance-optimization`
-- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-cpp-performance-optimization/SKILL.md`
+- Skill page: [strmt7-ome-zarr-c-agents-skills-cpp-performance-optimization](../skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-cpp-performance-optimization.md)
+- Mirrored skill: `included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-cpp-performance-optimization`
+- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-cpp-performance-optimization/SKILL.md`
 - Source: [strmt7/ome-zarr-C `.agents/skills/cpp-performance-optimization/SKILL.md`](https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/cpp-performance-optimization/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 - What it covers: Catalog summary: Optimize a parity-proven ome-zarr native C++ surface for measurable speedups by improving data layout, copies, cache behavior, and boundary design without changing behavior.
@@ -154,9 +154,9 @@
 
 ## immutable-parity-proof - strmt7/ome-zarr-C `.agents/skills/immutable-parity-proof/SKILL.md`
 
-- Skill page: [strmt7-ome-zarr-c-agents-skills-immutable-parity-proof](../skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-immutable-parity-proof.md)
-- Mirrored skill: `included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-immutable-parity-proof`
-- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-immutable-parity-proof/SKILL.md`
+- Skill page: [strmt7-ome-zarr-c-agents-skills-immutable-parity-proof](../skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-immutable-parity-proof.md)
+- Mirrored skill: `included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-immutable-parity-proof`
+- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-immutable-parity-proof/SKILL.md`
 - Source: [strmt7/ome-zarr-C `.agents/skills/immutable-parity-proof/SKILL.md`](https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/immutable-parity-proof/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 - What it covers: Catalog summary: Produce content-addressed parity evidence and protect the frozen upstream snapshot while porting or verifying native surfaces.
@@ -176,9 +176,9 @@
 
 ## pybind11-runtime-parity - strmt7/ome-zarr-C `.agents/skills/pybind11-runtime-parity/SKILL.md`
 
-- Skill page: [strmt7-ome-zarr-c-agents-skills-pybind11-runtime-parity](../skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-pybind11-runtime-parity.md)
-- Mirrored skill: `included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-pybind11-runtime-parity`
-- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-pybind11-runtime-parity/SKILL.md`
+- Skill page: [strmt7-ome-zarr-c-agents-skills-pybind11-runtime-parity](../skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-pybind11-runtime-parity.md)
+- Mirrored skill: `included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-pybind11-runtime-parity`
+- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-pybind11-runtime-parity/SKILL.md`
 - Source: [strmt7/ome-zarr-C `.agents/skills/pybind11-runtime-parity/SKILL.md`](https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/pybind11-runtime-parity/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 - What it covers: Catalog summary: Legacy reference only. Current main does not use pybind11 ports; use this only to understand old debt before removing it.
@@ -198,9 +198,9 @@
 
 ## python-testing - strmt7/ome-zarr-C `.agents/skills/python-testing/SKILL.md`
 
-- Skill page: [strmt7-ome-zarr-c-agents-skills-python-testing](../skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-python-testing.md)
-- Mirrored skill: `included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-python-testing`
-- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-python-testing/SKILL.md`
+- Skill page: [strmt7-ome-zarr-c-agents-skills-python-testing](../skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-python-testing.md)
+- Mirrored skill: `included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-python-testing`
+- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-python-testing/SKILL.md`
 - Source: [strmt7/ome-zarr-C `.agents/skills/python-testing/SKILL.md`](https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/python-testing/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 - What it covers: Catalog summary: Choose Python-side parity tests and syntax checks without weakening coverage.
@@ -220,9 +220,9 @@
 
 ## search-first - strmt7/ome-zarr-C `.agents/skills/search-first/SKILL.md`
 
-- Skill page: [strmt7-ome-zarr-c-agents-skills-search-first](../skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-search-first.md)
-- Mirrored skill: `included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-search-first`
-- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-search-first/SKILL.md`
+- Skill page: [strmt7-ome-zarr-c-agents-skills-search-first](../skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-search-first.md)
+- Mirrored skill: `included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-search-first`
+- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-search-first/SKILL.md`
 - Source: [strmt7/ome-zarr-C `.agents/skills/search-first/SKILL.md`](https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/search-first/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 - What it covers: Catalog summary: Search the repo, the frozen upstream snapshot, and official upstream sources before adding code or dependencies.
@@ -242,9 +242,9 @@
 
 ## site-extract - strmt7/ome-zarr-C `.agents/skills/site-extract/SKILL.md`
 
-- Skill page: [strmt7-ome-zarr-c-agents-skills-site-extract](../skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-site-extract.md)
-- Mirrored skill: `included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-site-extract`
-- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-site-extract/SKILL.md`
+- Skill page: [strmt7-ome-zarr-c-agents-skills-site-extract](../skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-site-extract.md)
+- Mirrored skill: `included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-site-extract`
+- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-site-extract/SKILL.md`
 - Source: [strmt7/ome-zarr-C `.agents/skills/site-extract/SKILL.md`](https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/site-extract/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 - What it covers: Catalog summary: Extract the smallest useful amount of text or structured data from a known public page before falling back to full browser automation.
@@ -263,9 +263,9 @@
 
 ## source-audit - strmt7/ome-zarr-C `.agents/skills/source-audit/SKILL.md`
 
-- Skill page: [strmt7-ome-zarr-c-agents-skills-source-audit](../skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-source-audit.md)
-- Mirrored skill: `included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-source-audit`
-- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-source-audit/SKILL.md`
+- Skill page: [strmt7-ome-zarr-c-agents-skills-source-audit](../skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-source-audit.md)
+- Mirrored skill: `included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-source-audit`
+- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-source-audit/SKILL.md`
 - Source: [strmt7/ome-zarr-C `.agents/skills/source-audit/SKILL.md`](https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/source-audit/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 - What it covers: Catalog summary: Verify public-web findings with source quality, dates, and second-source checks before turning them into advice or claims.
@@ -284,9 +284,9 @@
 
 ## tdd-workflow - strmt7/ome-zarr-C `.agents/skills/tdd-workflow/SKILL.md`
 
-- Skill page: [strmt7-ome-zarr-c-agents-skills-tdd-workflow](../skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-tdd-workflow.md)
-- Mirrored skill: `included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-tdd-workflow`
-- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-tdd-workflow/SKILL.md`
+- Skill page: [strmt7-ome-zarr-c-agents-skills-tdd-workflow](../skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-tdd-workflow.md)
+- Mirrored skill: `included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-tdd-workflow`
+- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-tdd-workflow/SKILL.md`
 - Source: [strmt7/ome-zarr-C `.agents/skills/tdd-workflow/SKILL.md`](https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/tdd-workflow/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 - What it covers: Catalog summary: Drive new ports and bug fixes with tests first or tests alongside the implementation.
@@ -306,9 +306,9 @@
 
 ## verification-loop - strmt7/ome-zarr-C `.agents/skills/verification-loop/SKILL.md`
 
-- Skill page: [strmt7-ome-zarr-c-agents-skills-verification-loop](../skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-verification-loop.md)
-- Mirrored skill: `included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-verification-loop`
-- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-verification-loop/SKILL.md`
+- Skill page: [strmt7-ome-zarr-c-agents-skills-verification-loop](../skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-verification-loop.md)
+- Mirrored skill: `included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-verification-loop`
+- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-verification-loop/SKILL.md`
 - Source: [strmt7/ome-zarr-C `.agents/skills/verification-loop/SKILL.md`](https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/verification-loop/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 - What it covers: Catalog summary: Run the smallest correct verification lane and report it precisely.
@@ -328,9 +328,9 @@
 
 ## web-discovery - strmt7/ome-zarr-C `.agents/skills/web-discovery/SKILL.md`
 
-- Skill page: [strmt7-ome-zarr-c-agents-skills-web-discovery](../skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-web-discovery.md)
-- Mirrored skill: `included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-web-discovery`
-- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-web-discovery/SKILL.md`
+- Skill page: [strmt7-ome-zarr-c-agents-skills-web-discovery](../skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-web-discovery.md)
+- Mirrored skill: `included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-web-discovery`
+- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-web-discovery/SKILL.md`
 - Source: [strmt7/ome-zarr-C `.agents/skills/web-discovery/SKILL.md`](https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/web-discovery/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 - What it covers: Catalog summary: Plan and run current public-web discovery for docs, releases, issues, and community evidence without guessing or over-browsing.
@@ -349,9 +349,9 @@
 
 ## workflow-supply-chain-maintenance - strmt7/ome-zarr-C `.agents/skills/workflow-supply-chain-maintenance/SKILL.md`
 
-- Skill page: [strmt7-ome-zarr-c-agents-skills-workflow-supply-chain-maintenance](../skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-workflow-supply-chain-maintenance.md)
-- Mirrored skill: `included/skills/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-workflow-supply-chain-maintenance`
-- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/priority-user-public-repo/strmt7-ome-zarr-c-agents-skills-workflow-supply-chain-maintenance/SKILL.md`
+- Skill page: [strmt7-ome-zarr-c-agents-skills-workflow-supply-chain-maintenance](../skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-workflow-supply-chain-maintenance.md)
+- Mirrored skill: `included/skills/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-workflow-supply-chain-maintenance`
+- Agent-ready entrypoint: `included/agent-ready/by-category/science-research-data-analysis/selected-project-reference/strmt7-ome-zarr-c-agents-skills-workflow-supply-chain-maintenance/SKILL.md`
 - Source: [strmt7/ome-zarr-C `.agents/skills/workflow-supply-chain-maintenance/SKILL.md`](https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/workflow-supply-chain-maintenance/SKILL.md)
 - Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 - What it covers: Catalog summary: Use when editing GitHub Actions, CodeQL, Dependabot, or workflow-installed tool pins and the repo needs verified current versions and scanner scope discipline.
