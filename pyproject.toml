@@ -1,7 +1,7 @@
 [project]
-name = "ai-skill-collection-benchmarked"
+name = "ai-skills-collection-benchmarked"
 version = "0.1.0"
-description = "Evidence-backed AI skill catalog with real workflow benchmark definitions."
+description = "Evidence-backed AI skills catalog with real workflow benchmark definitions."
 requires-python = ">=3.10"
 dependencies = [
   "PyYAML>=6.0.0",
