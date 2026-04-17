@@ -1,0 +1,136 @@
+{
+  "artifact_kind": "independent_benchmark",
+  "artifacts": [
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md/devops-cloud-and-operations-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "blocking_failures": [
+        "required_frontmatter_present"
+      ],
+      "dataset_track_id": "kubernetes-examples",
+      "result_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md/devops-cloud-and-operations-kubernetes-examples/result.json",
+      "scenario_id": "devops-cloud-and-operations-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md"
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md/testing-qa-and-benchmarking-swe-bench-lite/artifact.json",
+      "benchmark_verdict": "failed",
+      "blocking_failures": [
+        "required_frontmatter_present"
+      ],
+      "dataset_track_id": "swe-bench-lite",
+      "result_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md/testing-qa-and-benchmarking-swe-bench-lite/result.json",
+      "scenario_id": "testing-qa-and-benchmarking-swe-bench-lite",
+      "score_percent": 90.0,
+      "skill_id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md"
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apimanagement-dotnet-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "blocking_failures": [
+        "local_markdown_links_resolve"
+      ],
+      "dataset_track_id": "kubernetes-examples",
+      "result_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apimanagement-dotnet-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/result.json",
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apimanagement-dotnet-skill-md"
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-ingestion-java-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "blocking_failures": [
+        "local_markdown_links_resolve"
+      ],
+      "dataset_track_id": "kubernetes-examples",
+      "result_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-ingestion-java-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/result.json",
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-ingestion-java-skill-md"
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-sdk-python-skills-m365-agents-py-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "blocking_failures": [
+        "local_markdown_links_resolve"
+      ],
+      "dataset_track_id": "kubernetes-examples",
+      "result_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-sdk-python-skills-m365-agents-py-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/result.json",
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-azure-sdk-python-skills-m365-agents-py-skill-md"
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "blocking_failures": [
+        "local_markdown_links_resolve"
+      ],
+      "dataset_track_id": "kubernetes-examples",
+      "result_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/result.json",
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-skill-md"
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "blocking_failures": [
+        "local_markdown_links_resolve"
+      ],
+      "dataset_track_id": "kubernetes-examples",
+      "result_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/result.json",
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-skill-md"
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-capacity-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "blocking_failures": [
+        "local_markdown_links_resolve"
+      ],
+      "dataset_track_id": "kubernetes-examples",
+      "result_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-capacity-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/result.json",
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-capacity-skill-md"
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-customize-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "blocking_failures": [
+        "local_markdown_links_resolve"
+      ],
+      "dataset_track_id": "kubernetes-examples",
+      "result_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-customize-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/result.json",
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-customize-skill-md"
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "blocking_failures": [
+        "local_markdown_links_resolve"
+      ],
+      "dataset_track_id": "kubernetes-examples",
+      "result_path": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/result.json",
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset-skill-md"
+    }
+  ],
+  "batch_name": "2026-04-17-independent-runtime-readiness-batch-01",
+  "catalog_commit": "8e3e1077c5dd0d16334f25cdddbc01e658b2f353",
+  "generated_at_utc": "2026-04-17T20:35:46Z",
+  "runner": "tools/create_independent_runtime_batch.py",
+  "summary": {
+    "artifact_count": 10,
+    "average_score_percent": 90.0,
+    "failed": 10,
+    "passed": 0
+  },
+  "task_definitions_path": "benchmarks/independent-runtime-readiness/batch-01/tasks.json"
+}
