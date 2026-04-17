@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Optimize a parity-proven ome-zarr native C++ surface for measurable speedups by improving data layout, copies, cache behavior, and boundary design without changing behavior.
+Catalog summary: Optimize a parity-proven ome-zarr native C++ surface for measurable speedups by improving data layout, copies, cache behavior, and boundary design without changing behavior.
 
 ## Verification
 

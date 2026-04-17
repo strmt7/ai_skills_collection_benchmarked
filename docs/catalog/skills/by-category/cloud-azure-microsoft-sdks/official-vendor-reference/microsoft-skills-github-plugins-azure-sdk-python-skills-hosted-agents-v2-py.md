@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a2c05249c4a2`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Build hosted agents using Azure AI Projects SDK with ImageBasedHostedAgentDefinition. Use when creating container-based agents that run custom code in Azure AI Foundry. Triggers: "ImageBasedHostedAgentDefinition", "hosted agent", "container agent", "create_version", "ProtocolVersionRecord", "AgentProtocol.RESPONSES".
+Catalog summary: Build hosted agents using Azure AI Projects SDK with ImageBasedHostedAgentDefinition. Use when creating container-based agents that run custom code in Azure AI Foundry. Triggers: "ImageBasedHostedAgentDefinition", "hosted agent", "container agent", "create_version", "ProtocolVersionRecord", "AgentProtocol.RESPONSES".
 
 ## Verification
 

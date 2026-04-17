@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `b7c7cfa2a057`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: PostgreSQL guidance for the main OMERO database, plugin database, migrations, indexes, and maintenance contracts.
+Catalog summary: PostgreSQL guidance for the main OMERO database, plugin database, migrations, indexes, and maintenance contracts.
 
 ## Verification
 

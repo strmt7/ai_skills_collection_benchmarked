@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `bc01f7c1c31f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Converts any content, blog post URL, pasted article, GitHub PR description, or a description of something built, into a formatted LinkedIn post with proper hook, story arc, and formatting. Optionally posts directly to LinkedIn via Composio. Use when asked to write a LinkedIn post, turn a blog into a LinkedIn update, announce a shipped feature, share a case study on LinkedIn, or post something professionally..
+Catalog summary: Converts any content, blog post URL, pasted article, GitHub PR description, or a description of something built, into a formatted LinkedIn post with proper hook, story arc, and formatting. Optionally posts directly to LinkedIn via Composio. Use when asked to write a LinkedIn post, turn a blog into a LinkedIn update, announce a shipped feature, share a case study on LinkedIn, or post something professionally..
 
 ## Verification
 

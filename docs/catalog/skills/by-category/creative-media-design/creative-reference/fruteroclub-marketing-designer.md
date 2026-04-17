@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `c8f65f94fc3a`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Expert marketing creative-strategic skill combining Peggy Olson's bold creative intuition with modern data-driven precision. Use for: (1) Campaign development and creative concepting, (2) Copy and messaging optimization, (3) Proposal and pitch deck improvement, (4) Brand voice and positioning, (5) Marketing strategy and measurement design, (6) Creative brief writing and review. Triggers on: "improve copy",.
+Catalog summary: Expert marketing creative-strategic skill combining Peggy Olson's bold creative intuition with modern data-driven precision. Use for: (1) Campaign development and creative concepting, (2) Copy and messaging optimization, (3) Proposal and pitch deck improvement, (4) Brand voice and positioning, (5) Marketing strategy and measurement design, (6) Creative brief writing and review. Triggers on: "improve copy",.
 
 ## Verification
 

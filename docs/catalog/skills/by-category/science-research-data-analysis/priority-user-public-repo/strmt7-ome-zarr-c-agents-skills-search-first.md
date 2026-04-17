@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `a9238a81742f`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Search the repo, the frozen upstream snapshot, and official upstream sources before adding code or dependencies.
+Catalog summary: Search the repo, the frozen upstream snapshot, and official upstream sources before adding code or dependencies.
 
 ## Verification
 

@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `5c8c8821026e`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Creates production-grade infographics as HTML, PNG, and PDF from any data or brief. Use when asked for an infographic, visual summary, one-pager, data visualization, or to convert tables, stats, timelines, or comparisons into a visual format. Also triggers on: "shareable graphic", "visual report", "poster" + data content, "one-pager", or any request where information should be presented as a designed image. Crypto.
+Catalog summary: Creates production-grade infographics as HTML, PNG, and PDF from any data or brief. Use when asked for an infographic, visual summary, one-pager, data visualization, or to convert tables, stats, timelines, or comparisons into a visual format. Also triggers on: "shareable graphic", "visual report", "poster" + data content, "one-pager", or any request where information should be presented as a designed image. Crypto.
 
 ## Verification
 

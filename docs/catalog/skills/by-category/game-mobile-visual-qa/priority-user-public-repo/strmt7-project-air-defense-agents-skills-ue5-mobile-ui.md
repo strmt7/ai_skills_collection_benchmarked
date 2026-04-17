@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Use when changing any UE5 player-facing menu, HUD, pause surface, settings surface, touch control, or smartphone layout. Applies to UMG/CommonUI choice, safe zones, touch hit targets, information density, keyboard-hint suppression, and keeping the playfield visible on phones.
+Catalog summary: Use when changing any UE5 player-facing menu, HUD, pause surface, settings surface, touch control, or smartphone layout. Applies to UMG/CommonUI choice, safe zones, touch hit targets, information density, keyboard-hint suppression, and keeping the playfield visible on phones.
 
 ## Verification
 

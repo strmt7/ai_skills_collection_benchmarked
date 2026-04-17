@@ -12,11 +12,11 @@ Selected ref: `default-branch HEAD`; commit `77f082fe23a8`
 
 ## Use
 
-Load this skill only when the task matches the source description or path; read SKILL.md first and then load referenced resources on demand.
+Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 
 ## Scope
 
-Source description: Use when changing UE5 mobile gameplay flow, menu-to-battle state, touch input routing, hidden debug bindings, deterministic simulation ownership, or verification for a smartphone-first game. Applies to controller state, battle bootstrap, Enhanced Input, and automation-backed gameplay checks.
+Catalog summary: Use when changing UE5 mobile gameplay flow, menu-to-battle state, touch input routing, hidden debug bindings, deterministic simulation ownership, or verification for a smartphone-first game. Applies to controller state, battle bootstrap, Enhanced Input, and automation-backed gameplay checks.
 
 ## Verification
 
