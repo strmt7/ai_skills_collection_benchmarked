@@ -1,0 +1,36 @@
+Batch: 2026-04-18-independent-runtime-readiness-batch-02
+Runner: tools/create_independent_runtime_batch.py
+Skill: k-dense-ai-scientific-agent-skills-scientific-skills-datamol-skill-md
+Scenario: science-research-and-data-analysis-cellxgene-census
+Task: runtime-readiness-k-dense-ai-scientific-agent-skills-scientific-skills-datamol-skill-md-science-research-and-data-analysis-cellxgene-census
+
+Independence:
+- Task brief, required checks, and expected result came from the batch runner and task fixture.
+- Skill text was read only as the object under test for loadability checks.
+- Mirrored skill files were not edited by this runner.
+
+Dataset snapshot:
+{
+  "kind": "real-url",
+  "resolved": true,
+  "status": 200,
+  "url": "https://chanzuckerberg.github.io/cellxgene-census/"
+}
+
+Commands:
+
+Result metrics:
+{
+  "benchmark_verdict": "failed",
+  "blocking_failure_count": 1,
+  "checks_passed": 9,
+  "checks_total": 10,
+  "dataset_tree_path_count": 0,
+  "missing_local_link_count": 1,
+  "score_percent": 90.0
+}
+
+Blocking failures:
+[
+  "local_markdown_links_resolve"
+]

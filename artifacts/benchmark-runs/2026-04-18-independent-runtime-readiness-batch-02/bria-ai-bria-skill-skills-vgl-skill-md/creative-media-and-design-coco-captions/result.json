@@ -1,0 +1,113 @@
+{
+  "citations_or_paths": [
+    "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+    "included/skills/by-category/creative-media-design/latest-release-creative/vgl/SKILL.md",
+    "included/agent-ready/by-category/creative-media-design/latest-release-creative/vgl/SKILL.md",
+    "data/benchmark_scenarios.json",
+    "data/benchmark_tracks.json",
+    "data/skill_risk_audit.json",
+    "https://cocodataset.org/#download"
+  ],
+  "inputs": {
+    "agent_ready_path": "included/agent-ready/by-category/creative-media-design/latest-release-creative/vgl/SKILL.md",
+    "dataset_snapshot": {
+      "kind": "real-url",
+      "resolved": true,
+      "status": 200,
+      "url": "https://cocodataset.org/#download"
+    },
+    "dataset_track_id": "coco-captions",
+    "mirrored_path": "included/skills/by-category/creative-media-design/latest-release-creative/vgl",
+    "risk_level": "likely_non_working",
+    "scenario_id": "creative-media-and-design-coco-captions",
+    "skill_id": "bria-ai-bria-skill-skills-vgl-skill-md",
+    "skill_name": "vgl",
+    "source_path": "skills/vgl/SKILL.md",
+    "source_repo": "Bria-AI/bria-skill",
+    "task_brief_path": "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+    "task_id": "runtime-readiness-bria-ai-bria-skill-skills-vgl-skill-md-creative-media-and-design-coco-captions"
+  },
+  "metrics": {
+    "benchmark_verdict": "failed",
+    "blocking_failure_count": 1,
+    "checks_passed": 9,
+    "checks_total": 10,
+    "dataset_tree_path_count": 0,
+    "missing_local_link_count": 1,
+    "score_percent": 90.0
+  },
+  "outputs": {
+    "benchmark_verdict": "failed",
+    "blocking_failures": [
+      "local_markdown_links_resolve"
+    ],
+    "checks": [
+      {
+        "evidence": "https://cocodataset.org/#download",
+        "measured": {
+          "head_sha": null,
+          "track_subpath_present": null,
+          "tree_path_count": null
+        },
+        "name": "real_dataset_snapshot_resolved",
+        "passed": true
+      },
+      {
+        "evidence": "creative-media-and-design-coco-captions",
+        "name": "assigned_non_provenance_scenario",
+        "passed": true
+      },
+      {
+        "evidence": "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+        "name": "independent_task_brief_present",
+        "passed": true
+      },
+      {
+        "evidence": "included/skills/by-category/creative-media-design/latest-release-creative/vgl/SKILL.md",
+        "name": "mirror_skill_file_exists",
+        "passed": true
+      },
+      {
+        "evidence": "included/agent-ready/by-category/creative-media-design/latest-release-creative/vgl/SKILL.md",
+        "name": "agent_ready_entrypoint_exists",
+        "passed": true
+      },
+      {
+        "evidence": "36e0c57976d98c6f3be2a01ad94645918c3eff35422098364ae678639dbd829a",
+        "name": "source_hash_matches_catalog",
+        "passed": true
+      },
+      {
+        "evidence": "catalog.has_required_frontmatter",
+        "name": "required_frontmatter_present",
+        "passed": true
+      },
+      {
+        "evidence": [
+          "../bria-ai/SKILL.md"
+        ],
+        "name": "local_markdown_links_resolve",
+        "passed": false
+      },
+      {
+        "evidence": "included/agent-ready/by-category/creative-media-design/latest-release-creative/vgl/SKILL.md",
+        "name": "single_session_entrypoint_clean",
+        "passed": true
+      },
+      {
+        "evidence": "evaluators/generic_workflow_result.schema.json",
+        "name": "generic_workflow_schema_recorded",
+        "passed": true
+      }
+    ],
+    "risk_findings": [],
+    "score_percent": 90.0
+  },
+  "steps": [
+    "Selected a likely_non_working skill from data/skill_risk_audit.json.",
+    "Selected the first assigned non-provenance scenario for the skill.",
+    "Resolved the real repository workflow snapshot from the benchmark track URL.",
+    "Evaluated the mirrored package against independently defined loadability checks.",
+    "Recorded pass/fail metrics without modifying the mirrored skill."
+  ]
+}

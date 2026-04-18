@@ -1,0 +1,75 @@
+Batch: 2026-04-18-independent-runtime-readiness-batch-02
+Runner: tools/create_independent_runtime_batch.py
+Skill: trailofbits-skills-plugins-dimensional-analysis-skills-dimensional-analysis-skill-md
+Scenario: coding-refactoring-and-repository-automation-swe-bench-lite
+Task: runtime-readiness-trailofbits-skills-plugins-dimensional-analysis-skills-dimensional-analysis-skill-md-coding-refactoring-and-repository-automation-swe-bench-lite
+
+Independence:
+- Task brief, required checks, and expected result came from the batch runner and task fixture.
+- Skill text was read only as the object under test for loadability checks.
+- Mirrored skill files were not edited by this runner.
+
+Dataset snapshot:
+{
+  "head_sha": "f7bbbb2ccdf479001d6467c9e34af59e44a840f9",
+  "kind": "real-github-repository-tree",
+  "repo_url": "https://github.com/SWE-bench/SWE-bench",
+  "resolved": true,
+  "sampled_paths": [
+    ".github",
+    ".github/ISSUE_TEMPLATE",
+    ".github/ISSUE_TEMPLATE/bug_report.yml",
+    ".github/ISSUE_TEMPLATE/config.yml",
+    ".github/ISSUE_TEMPLATE/feature_request.yml",
+    ".github/ISSUE_TEMPLATE/question.yml",
+    ".github/PULL_REQUEST_TEMPLATE.md",
+    ".github/workflows",
+    ".github/workflows/deploy-docs.yml",
+    ".github/workflows/pytest.yaml",
+    ".gitignore",
+    ".pre-commit-config.yaml",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md",
+    "codecov.yml",
+    "docs",
+    "docs/README.md",
+    "docs/api",
+    "docs/api/harness.md"
+  ],
+  "track_subpath": null,
+  "track_subpath_present": true,
+  "tree_api_url": "https://api.github.com/repos/SWE-bench/SWE-bench/git/trees/f7bbbb2ccdf479001d6467c9e34af59e44a840f9?recursive=1",
+  "tree_path_count": 1206,
+  "tree_truncated": false,
+  "url": "https://github.com/SWE-bench/SWE-bench"
+}
+
+Commands:
+{
+  "command": [
+    "git",
+    "ls-remote",
+    "https://github.com/SWE-bench/SWE-bench",
+    "HEAD"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "f7bbbb2ccdf479001d6467c9e34af59e44a840f9\tHEAD"
+}
+
+Result metrics:
+{
+  "benchmark_verdict": "failed",
+  "blocking_failure_count": 1,
+  "checks_passed": 9,
+  "checks_total": 10,
+  "dataset_tree_path_count": 1206,
+  "missing_local_link_count": 4,
+  "score_percent": 90.0
+}
+
+Blocking failures:
+[
+  "local_markdown_links_resolve"
+]

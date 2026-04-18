@@ -1,0 +1,124 @@
+{
+  "citations_or_paths": [
+    "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+    "included/skills/by-category/security-compliance-risk/security-reference/agentic-actions-auditor/SKILL.md",
+    "included/agent-ready/by-category/security-compliance-risk/security-reference/agentic-actions-auditor/SKILL.md",
+    "data/benchmark_scenarios.json",
+    "data/benchmark_tracks.json",
+    "data/skill_risk_audit.json",
+    "https://owasp.org/www-project-benchmark/"
+  ],
+  "inputs": {
+    "agent_ready_path": "included/agent-ready/by-category/security-compliance-risk/security-reference/agentic-actions-auditor/SKILL.md",
+    "dataset_snapshot": {
+      "kind": "real-url",
+      "resolved": true,
+      "status": 200,
+      "url": "https://owasp.org/www-project-benchmark/"
+    },
+    "dataset_track_id": "owasp-benchmark",
+    "mirrored_path": "included/skills/by-category/security-compliance-risk/security-reference/agentic-actions-auditor",
+    "risk_level": "likely_non_working",
+    "scenario_id": "security-compliance-and-risk-owasp-benchmark",
+    "skill_id": "trailofbits-skills-plugins-agentic-actions-auditor-skills-agentic-actions-auditor-skill-md",
+    "skill_name": "agentic-actions-auditor",
+    "source_path": "plugins/agentic-actions-auditor/skills/agentic-actions-auditor/SKILL.md",
+    "source_repo": "trailofbits/skills",
+    "task_brief_path": "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+    "task_id": "runtime-readiness-trailofbits-skills-plugins-agentic-actions-auditor-skills-agentic-actions-auditor-skill-md-security-compliance-and-risk-owasp-benchmark"
+  },
+  "metrics": {
+    "benchmark_verdict": "failed",
+    "blocking_failure_count": 1,
+    "checks_passed": 9,
+    "checks_total": 10,
+    "dataset_tree_path_count": 0,
+    "missing_local_link_count": 12,
+    "score_percent": 90.0
+  },
+  "outputs": {
+    "benchmark_verdict": "failed",
+    "blocking_failures": [
+      "local_markdown_links_resolve"
+    ],
+    "checks": [
+      {
+        "evidence": "https://owasp.org/www-project-benchmark/",
+        "measured": {
+          "head_sha": null,
+          "track_subpath_present": null,
+          "tree_path_count": null
+        },
+        "name": "real_dataset_snapshot_resolved",
+        "passed": true
+      },
+      {
+        "evidence": "security-compliance-and-risk-owasp-benchmark",
+        "name": "assigned_non_provenance_scenario",
+        "passed": true
+      },
+      {
+        "evidence": "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+        "name": "independent_task_brief_present",
+        "passed": true
+      },
+      {
+        "evidence": "included/skills/by-category/security-compliance-risk/security-reference/agentic-actions-auditor/SKILL.md",
+        "name": "mirror_skill_file_exists",
+        "passed": true
+      },
+      {
+        "evidence": "included/agent-ready/by-category/security-compliance-risk/security-reference/agentic-actions-auditor/SKILL.md",
+        "name": "agent_ready_entrypoint_exists",
+        "passed": true
+      },
+      {
+        "evidence": "369b998e1d457c9c88fb9fff915b0b083c551e2c1d3e3d6baa6aa7310ac820d7",
+        "name": "source_hash_matches_catalog",
+        "passed": true
+      },
+      {
+        "evidence": "catalog.has_required_frontmatter",
+        "name": "required_frontmatter_present",
+        "passed": true
+      },
+      {
+        "evidence": [
+          "{baseDir}/references/action-profiles.md",
+          "{baseDir}/references/cross-file-resolution.md",
+          "{baseDir}/references/foundations.md",
+          "{baseDir}/references/vector-a-env-var-intermediary.md",
+          "{baseDir}/references/vector-b-direct-expression-injection.md",
+          "{baseDir}/references/vector-c-cli-data-fetch.md",
+          "{baseDir}/references/vector-d-pr-target-checkout.md",
+          "{baseDir}/references/vector-e-error-log-injection.md",
+          "{baseDir}/references/vector-f-subshell-expansion.md",
+          "{baseDir}/references/vector-g-eval-of-ai-output.md",
+          "{baseDir}/references/vector-h-dangerous-sandbox-configs.md",
+          "{baseDir}/references/vector-i-wildcard-allowlists.md"
+        ],
+        "name": "local_markdown_links_resolve",
+        "passed": false
+      },
+      {
+        "evidence": "included/agent-ready/by-category/security-compliance-risk/security-reference/agentic-actions-auditor/SKILL.md",
+        "name": "single_session_entrypoint_clean",
+        "passed": true
+      },
+      {
+        "evidence": "evaluators/generic_workflow_result.schema.json",
+        "name": "generic_workflow_schema_recorded",
+        "passed": true
+      }
+    ],
+    "risk_findings": [],
+    "score_percent": 90.0
+  },
+  "steps": [
+    "Selected a likely_non_working skill from data/skill_risk_audit.json.",
+    "Selected the first assigned non-provenance scenario for the skill.",
+    "Resolved the real repository workflow snapshot from the benchmark track URL.",
+    "Evaluated the mirrored package against independently defined loadability checks.",
+    "Recorded pass/fail metrics without modifying the mirrored skill."
+  ]
+}

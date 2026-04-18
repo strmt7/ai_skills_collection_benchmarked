@@ -1,0 +1,143 @@
+{
+  "citations_or_paths": [
+    "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+    "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-ado-convert/SKILL.md",
+    "included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-ado-convert/SKILL.md",
+    "data/benchmark_scenarios.json",
+    "data/benchmark_tracks.json",
+    "data/skill_risk_audit.json",
+    "https://github.com/kubernetes/examples"
+  ],
+  "inputs": {
+    "agent_ready_path": "included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-ado-convert/SKILL.md",
+    "dataset_snapshot": {
+      "head_sha": "d6b8cd27eacb51e651a1aa6f7c190a28713eff6e",
+      "kind": "real-github-repository-tree",
+      "repo_url": "https://github.com/kubernetes/examples",
+      "resolved": true,
+      "sampled_paths": [
+        ".gitignore",
+        "AI",
+        "AI/README.md",
+        "AI/model-serving-tensorflow",
+        "AI/model-serving-tensorflow/README.md",
+        "AI/model-serving-tensorflow/deployment.yaml",
+        "AI/model-serving-tensorflow/ingress.yaml",
+        "AI/model-serving-tensorflow/pv.yaml",
+        "AI/model-serving-tensorflow/pvc.yaml",
+        "AI/model-serving-tensorflow/service.yaml",
+        "AI/vllm-deployment",
+        "AI/vllm-deployment/README.md",
+        "AI/vllm-deployment/hpa",
+        "AI/vllm-deployment/hpa/.gitignore",
+        "AI/vllm-deployment/hpa/README.md",
+        "AI/vllm-deployment/hpa/gpu-dcgm-exporter-service-generic.yaml",
+        "AI/vllm-deployment/hpa/gpu-dcgm-exporter-service-gke.yaml",
+        "AI/vllm-deployment/hpa/gpu-horizontal-pod-autoscaler.yaml",
+        "AI/vllm-deployment/hpa/gpu-hpa.md",
+        "AI/vllm-deployment/hpa/gpu-service-monitor-generic.yaml"
+      ],
+      "track_subpath": null,
+      "track_subpath_present": true,
+      "tree_api_url": "https://api.github.com/repos/kubernetes/examples/git/trees/d6b8cd27eacb51e651a1aa6f7c190a28713eff6e?recursive=1",
+      "tree_path_count": 573,
+      "tree_truncated": false,
+      "url": "https://github.com/kubernetes/examples"
+    },
+    "dataset_track_id": "kubernetes-examples",
+    "mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-ado-convert",
+    "risk_level": "likely_non_working",
+    "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+    "skill_id": "microsoft-skills-github-plugins-deep-wiki-skills-wiki-ado-convert-skill-md",
+    "skill_name": "wiki-ado-convert",
+    "source_path": ".github/plugins/deep-wiki/skills/wiki-ado-convert/SKILL.md",
+    "source_repo": "microsoft/skills",
+    "task_brief_path": "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+    "task_id": "runtime-readiness-microsoft-skills-github-plugins-deep-wiki-skills-wiki-ado-convert-skill-md-cloud-azure-and-microsoft-sdks-kubernetes-examples"
+  },
+  "metrics": {
+    "benchmark_verdict": "failed",
+    "blocking_failure_count": 1,
+    "checks_passed": 9,
+    "checks_total": 10,
+    "dataset_tree_path_count": 573,
+    "missing_local_link_count": 3,
+    "score_percent": 90.0
+  },
+  "outputs": {
+    "benchmark_verdict": "failed",
+    "blocking_failures": [
+      "local_markdown_links_resolve"
+    ],
+    "checks": [
+      {
+        "evidence": "https://github.com/kubernetes/examples",
+        "measured": {
+          "head_sha": "d6b8cd27eacb51e651a1aa6f7c190a28713eff6e",
+          "track_subpath_present": true,
+          "tree_path_count": 573
+        },
+        "name": "real_dataset_snapshot_resolved",
+        "passed": true
+      },
+      {
+        "evidence": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+        "name": "assigned_non_provenance_scenario",
+        "passed": true
+      },
+      {
+        "evidence": "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+        "name": "independent_task_brief_present",
+        "passed": true
+      },
+      {
+        "evidence": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-ado-convert/SKILL.md",
+        "name": "mirror_skill_file_exists",
+        "passed": true
+      },
+      {
+        "evidence": "included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-ado-convert/SKILL.md",
+        "name": "agent_ready_entrypoint_exists",
+        "passed": true
+      },
+      {
+        "evidence": "afb330d4d5b43c470e83693ef73caee21f99c149dd5011f8543c424a751cebc3",
+        "name": "source_hash_matches_catalog",
+        "passed": true
+      },
+      {
+        "evidence": "catalog.has_required_frontmatter",
+        "name": "required_frontmatter_present",
+        "passed": true
+      },
+      {
+        "evidence": [
+          "../../src/file.cs",
+          "../path",
+          "URL"
+        ],
+        "name": "local_markdown_links_resolve",
+        "passed": false
+      },
+      {
+        "evidence": "included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-ado-convert/SKILL.md",
+        "name": "single_session_entrypoint_clean",
+        "passed": true
+      },
+      {
+        "evidence": "evaluators/generic_workflow_result.schema.json",
+        "name": "generic_workflow_schema_recorded",
+        "passed": true
+      }
+    ],
+    "risk_findings": [],
+    "score_percent": 90.0
+  },
+  "steps": [
+    "Selected a likely_non_working skill from data/skill_risk_audit.json.",
+    "Selected the first assigned non-provenance scenario for the skill.",
+    "Resolved the real repository workflow snapshot from the benchmark track URL.",
+    "Evaluated the mirrored package against independently defined loadability checks.",
+    "Recorded pass/fail metrics without modifying the mirrored skill."
+  ]
+}

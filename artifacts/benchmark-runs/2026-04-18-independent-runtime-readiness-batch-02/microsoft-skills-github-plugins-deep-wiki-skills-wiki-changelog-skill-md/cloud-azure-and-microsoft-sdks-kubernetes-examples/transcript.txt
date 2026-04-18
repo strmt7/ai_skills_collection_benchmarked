@@ -1,0 +1,75 @@
+Batch: 2026-04-18-independent-runtime-readiness-batch-02
+Runner: tools/create_independent_runtime_batch.py
+Skill: microsoft-skills-github-plugins-deep-wiki-skills-wiki-changelog-skill-md
+Scenario: cloud-azure-and-microsoft-sdks-kubernetes-examples
+Task: runtime-readiness-microsoft-skills-github-plugins-deep-wiki-skills-wiki-changelog-skill-md-cloud-azure-and-microsoft-sdks-kubernetes-examples
+
+Independence:
+- Task brief, required checks, and expected result came from the batch runner and task fixture.
+- Skill text was read only as the object under test for loadability checks.
+- Mirrored skill files were not edited by this runner.
+
+Dataset snapshot:
+{
+  "head_sha": "d6b8cd27eacb51e651a1aa6f7c190a28713eff6e",
+  "kind": "real-github-repository-tree",
+  "repo_url": "https://github.com/kubernetes/examples",
+  "resolved": true,
+  "sampled_paths": [
+    ".gitignore",
+    "AI",
+    "AI/README.md",
+    "AI/model-serving-tensorflow",
+    "AI/model-serving-tensorflow/README.md",
+    "AI/model-serving-tensorflow/deployment.yaml",
+    "AI/model-serving-tensorflow/ingress.yaml",
+    "AI/model-serving-tensorflow/pv.yaml",
+    "AI/model-serving-tensorflow/pvc.yaml",
+    "AI/model-serving-tensorflow/service.yaml",
+    "AI/vllm-deployment",
+    "AI/vllm-deployment/README.md",
+    "AI/vllm-deployment/hpa",
+    "AI/vllm-deployment/hpa/.gitignore",
+    "AI/vllm-deployment/hpa/README.md",
+    "AI/vllm-deployment/hpa/gpu-dcgm-exporter-service-generic.yaml",
+    "AI/vllm-deployment/hpa/gpu-dcgm-exporter-service-gke.yaml",
+    "AI/vllm-deployment/hpa/gpu-horizontal-pod-autoscaler.yaml",
+    "AI/vllm-deployment/hpa/gpu-hpa.md",
+    "AI/vllm-deployment/hpa/gpu-service-monitor-generic.yaml"
+  ],
+  "track_subpath": null,
+  "track_subpath_present": true,
+  "tree_api_url": "https://api.github.com/repos/kubernetes/examples/git/trees/d6b8cd27eacb51e651a1aa6f7c190a28713eff6e?recursive=1",
+  "tree_path_count": 573,
+  "tree_truncated": false,
+  "url": "https://github.com/kubernetes/examples"
+}
+
+Commands:
+{
+  "command": [
+    "git",
+    "ls-remote",
+    "https://github.com/kubernetes/examples",
+    "HEAD"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "d6b8cd27eacb51e651a1aa6f7c190a28713eff6e\tHEAD"
+}
+
+Result metrics:
+{
+  "benchmark_verdict": "failed",
+  "blocking_failure_count": 1,
+  "checks_passed": 9,
+  "checks_total": 10,
+  "dataset_tree_path_count": 573,
+  "missing_local_link_count": 2,
+  "score_percent": 90.0
+}
+
+Blocking failures:
+[
+  "local_markdown_links_resolve"
+]
