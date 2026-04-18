@@ -1,0 +1,36 @@
+Batch: 2026-04-18-independent-runtime-readiness-batch-02
+Runner: tools/create_independent_runtime_batch.py
+Skill: varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md
+Scenario: communication-productivity-and-support-enron-email
+Task: runtime-readiness-varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md-communication-productivity-and-support-enron-email
+
+Independence:
+- Task brief, required checks, and expected result came from the batch runner and task fixture.
+- Skill text was read only as the object under test for loadability checks.
+- Mirrored skill files were not edited by this runner.
+
+Dataset snapshot:
+{
+  "kind": "real-url",
+  "resolved": true,
+  "status": 200,
+  "url": "https://www.cs.cmu.edu/~enron/"
+}
+
+Commands:
+
+Result metrics:
+{
+  "benchmark_verdict": "failed",
+  "blocking_failure_count": 1,
+  "checks_passed": 9,
+  "checks_total": 10,
+  "dataset_tree_path_count": 0,
+  "missing_local_link_count": 1,
+  "score_percent": 90.0
+}
+
+Blocking failures:
+[
+  "local_markdown_links_resolve"
+]

@@ -30,9 +30,6 @@ import build_catalog
 import check_benchmark_artifact
 
 BATCH_NAME = "2026-04-17-independent-runtime-readiness-batch-01"
-TASKS_PATH = ROOT / "benchmarks" / "independent-runtime-readiness" / "batch-01" / "tasks.json"
-OUTPUT_ROOT = ROOT / "artifacts" / "benchmark-runs" / BATCH_NAME
-REPORT_PATH = ROOT / "docs" / "runtime-benchmark-batch-01.md"
 RUNNER_ID = "tools/create_independent_runtime_batch.py"
 RISK_LEVEL = "likely_non_working"
 EXCLUDED_CATEGORIES = {"Game, mobile & visual QA"}
@@ -172,19 +169,71 @@ def first_non_provenance_scenario(entry: dict[str, Any], scenarios: dict[str, di
     raise ValueError(f"no non-provenance scenario assigned to {entry['id']}")
 
 
-def select_candidates(limit: int, include_visual: bool = False) -> list[dict[str, Any]]:
+def batch_paths(batch_name: str, batch_slug: str) -> dict[str, Path]:
+    return {
+        "tasks": ROOT / "benchmarks" / "independent-runtime-readiness" / batch_slug / "tasks.json",
+        "output": ROOT / "artifacts" / "benchmark-runs" / batch_name,
+        "report": ROOT / "docs" / f"runtime-benchmark-{batch_slug}.md",
+    }
+
+
+def existing_independent_skill_ids(current_batch_name: str) -> set[str]:
+    skill_ids: set[str] = set()
+    for artifact_path in (ROOT / "artifacts" / "benchmark-runs").rglob("artifact.json"):
+        if current_batch_name in artifact_path.parts:
+            continue
+        try:
+            artifact = load_json(artifact_path)
+        except Exception:
+            continue
+        if artifact.get("artifact_kind") == "independent_benchmark" and artifact.get("skill_id"):
+            skill_ids.add(str(artifact["skill_id"]))
+    return skill_ids
+
+
+def select_candidates(
+    limit: int,
+    *,
+    risk_level: str,
+    include_visual: bool = False,
+    category_spread: bool = False,
+    exclude_skill_ids: set[str] | None = None,
+) -> list[dict[str, Any]]:
     audit = load_json(ROOT / "data" / "skill_risk_audit.json")
-    candidates: list[dict[str, Any]] = []
+    excluded = exclude_skill_ids or set()
+    pool: list[dict[str, Any]] = []
     for item in audit["skills"]:
-        if item["risk_level"] != RISK_LEVEL:
+        if item["risk_level"] != risk_level:
             continue
         if not include_visual and item["category"] in EXCLUDED_CATEGORIES:
             continue
-        candidates.append(item)
-        if len(candidates) == limit:
-            break
+        if item["skill_id"] in excluded:
+            continue
+        pool.append(item)
+
+    if not category_spread:
+        candidates = pool[:limit]
+    else:
+        candidates = []
+        seen_categories: set[str] = set()
+        for item in pool:
+            if item["category"] in seen_categories:
+                continue
+            candidates.append(item)
+            seen_categories.add(item["category"])
+            if len(candidates) == limit:
+                break
+        if len(candidates) < limit:
+            selected_ids = {item["skill_id"] for item in candidates}
+            for item in pool:
+                if item["skill_id"] in selected_ids:
+                    continue
+                candidates.append(item)
+                if len(candidates) == limit:
+                    break
+
     if len(candidates) < limit:
-        raise SystemExit(f"only found {len(candidates)} {RISK_LEVEL} candidates for this batch")
+        raise SystemExit(f"only found {len(candidates)} {risk_level} candidates for this batch")
     return candidates
 
 
@@ -228,6 +277,8 @@ def evaluate_skill(
     scenario: dict[str, Any],
     task: dict[str, Any],
     dataset_snapshot: dict[str, Any],
+    tasks_path: Path,
+    risk_level: str,
 ) -> dict[str, Any]:
     mirror = ROOT / entry["mirrored_path"]
     skill_file = mirror / "SKILL.md"
@@ -257,7 +308,7 @@ def evaluate_skill(
         {
             "name": "independent_task_brief_present",
             "passed": task["expected_result"]["all_required_checks_pass"] is True and task["required_checks"] == REQUIRED_CHECKS,
-            "evidence": TASKS_PATH.relative_to(ROOT).as_posix(),
+            "evidence": tasks_path.relative_to(ROOT).as_posix(),
         },
         {
             "name": "mirror_skill_file_exists",
@@ -302,11 +353,11 @@ def evaluate_skill(
         "inputs": {
             "skill_id": entry["id"],
             "skill_name": entry["name"],
-            "risk_level": RISK_LEVEL,
+            "risk_level": risk_level,
             "scenario_id": scenario["id"],
             "dataset_track_id": scenario["dataset_track_id"],
             "task_id": task["task_id"],
-            "task_brief_path": TASKS_PATH.relative_to(ROOT).as_posix(),
+            "task_brief_path": tasks_path.relative_to(ROOT).as_posix(),
             "mirrored_path": entry["mirrored_path"],
             "agent_ready_path": entry["agent_ready_path"],
             "source_repo": entry["source_repo"],
@@ -314,7 +365,7 @@ def evaluate_skill(
             "dataset_snapshot": dataset_snapshot,
         },
         "steps": [
-            "Selected a likely non-working skill from data/skill_risk_audit.json.",
+            f"Selected a {risk_level} skill from data/skill_risk_audit.json.",
             "Selected the first assigned non-provenance scenario for the skill.",
             "Resolved the real repository workflow snapshot from the benchmark track URL.",
             "Evaluated the mirrored package against independently defined loadability checks.",
@@ -337,7 +388,7 @@ def evaluate_skill(
             "dataset_tree_path_count": dataset_snapshot.get("tree_path_count", 0),
         },
         "citations_or_paths": [
-            TASKS_PATH.relative_to(ROOT).as_posix(),
+            tasks_path.relative_to(ROOT).as_posix(),
             entry["mirrored_path"] + "/SKILL.md",
             entry["agent_ready_path"],
             "data/benchmark_scenarios.json",
@@ -355,9 +406,10 @@ def render_transcript(
     dataset_snapshot: dict[str, Any],
     commands: list[dict[str, Any]],
     result: dict[str, Any],
+    batch_name: str,
 ) -> str:
     lines = [
-        f"Batch: {BATCH_NAME}",
+        f"Batch: {batch_name}",
         f"Runner: {RUNNER_ID}",
         f"Skill: {entry['id']}",
         f"Scenario: {scenario['id']}",
@@ -396,6 +448,8 @@ def artifact_for(
     timestamp: str,
     catalog_commit: str,
     artifact_dir: Path,
+    batch_name: str,
+    tasks_path: Path,
 ) -> dict[str, Any]:
     result_path = artifact_dir / "result.json"
     return {
@@ -411,7 +465,7 @@ def artifact_for(
             "timestamp_utc": timestamp,
             "tool": RUNNER_ID,
             "model_or_runtime": "local-deterministic-runtime-readiness-runner",
-            "batch_name": BATCH_NAME,
+            "batch_name": batch_name,
         },
         "scenario_requirements": {
             "visual_or_browser": False,
@@ -450,7 +504,7 @@ def artifact_for(
             "skill_content_usage": (
                 "skill text was read only as the object under test for package loadability, "
                 "frontmatter, hash, and local-link checks; task and expected results came "
-                "from benchmarks/independent-runtime-readiness/batch-01/tasks.json and this runner"
+                f"from {tasks_path.relative_to(ROOT).as_posix()} and this runner"
             ),
         },
         "evidence": {
@@ -458,7 +512,7 @@ def artifact_for(
                 "result.json",
                 "transcript.txt",
                 "dataset_snapshot.json",
-                TASKS_PATH.relative_to(ROOT).as_posix(),
+                tasks_path.relative_to(ROOT).as_posix(),
             ],
             "citations_or_paths": result["citations_or_paths"],
         },
@@ -466,9 +520,9 @@ def artifact_for(
     }
 
 
-def render_report(manifest: dict[str, Any]) -> str:
+def render_report(manifest: dict[str, Any], batch_slug: str) -> str:
     lines = [
-        "# Runtime Benchmark Batch 01",
+        f"# Runtime Benchmark {batch_slug.replace('-', ' ').title()}",
         "",
         "This batch records independent runtime-readiness results for selected high-risk skills. It checks whether each mirrored skill package is loadable and ready for an assigned real repository workflow. It does not claim full task-solution quality.",
         "",
@@ -496,12 +550,29 @@ def render_report(manifest: dict[str, Any]) -> str:
     return "\n".join(lines) + "\n"
 
 
-def run(limit: int, include_visual: bool = False) -> dict[str, Any]:
+def run(
+    limit: int,
+    *,
+    batch_name: str = BATCH_NAME,
+    batch_slug: str = "batch-01",
+    risk_level: str = RISK_LEVEL,
+    include_visual: bool = False,
+    category_spread: bool = False,
+    avoid_existing_independent: bool = False,
+) -> dict[str, Any]:
     catalog = {entry["id"]: entry for entry in load_json(ROOT / "data" / "skills_catalog.json")}
     manifest = {entry["id"]: entry for entry in load_json(ROOT / "included" / "skills" / "manifest.json")}
     scenarios = {scenario["id"]: scenario for scenario in load_json(ROOT / "data" / "benchmark_scenarios.json")}
     tracks = {track["id"]: track for track in load_json(ROOT / "data" / "benchmark_tracks.json")}
-    candidates = select_candidates(limit, include_visual=include_visual)
+    paths = batch_paths(batch_name, batch_slug)
+    excluded = existing_independent_skill_ids(batch_name) if avoid_existing_independent else set()
+    candidates = select_candidates(
+        limit,
+        risk_level=risk_level,
+        include_visual=include_visual,
+        category_spread=category_spread,
+        exclude_skill_ids=excluded,
+    )
     catalog_commit = git_text("rev-parse", "HEAD")
     timestamp = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
@@ -514,31 +585,34 @@ def run(limit: int, include_visual: bool = False) -> dict[str, Any]:
         task = build_task(entry, scenario, track)
         selected.append((entry, scenario, track, task))
         tasks.append(task)
-    write_json(TASKS_PATH, {
-        "batch_name": BATCH_NAME,
+    write_json(paths["tasks"], {
+        "batch_name": batch_name,
         "task_count": len(tasks),
         "selection_policy": (
-            f"first {limit} {RISK_LEVEL} skills with assigned non-provenance repository workflows"
+            ("category-spread " if category_spread else "first ")
+            + f"{limit} {risk_level} skills with assigned non-provenance repository workflows"
             + (" including visual categories" if include_visual else " excluding visual/browser categories for this readiness batch")
+            + (" and excluding skills already covered by earlier independent runtime artifacts" if avoid_existing_independent else "")
         ),
         "required_checks": REQUIRED_CHECKS,
         "tasks": tasks,
     })
 
     artifact_summaries: list[dict[str, Any]] = []
-    OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
+    output_root = paths["output"]
+    output_root.mkdir(parents=True, exist_ok=True)
     for entry, scenario, track, task in selected:
         dataset_snapshot, commands = resolve_dataset_snapshot(track)
-        artifact_dir = OUTPUT_ROOT / build_catalog.slug(entry["id"]) / build_catalog.slug(scenario["id"])
+        artifact_dir = output_root / build_catalog.slug(entry["id"]) / build_catalog.slug(scenario["id"])
         artifact_dir.mkdir(parents=True, exist_ok=True)
         write_json(artifact_dir / "dataset_snapshot.json", dataset_snapshot)
-        result = evaluate_skill(entry, manifest[entry["id"]], scenario, task, dataset_snapshot)
+        result = evaluate_skill(entry, manifest[entry["id"]], scenario, task, dataset_snapshot, paths["tasks"], risk_level)
         write_json(artifact_dir / "result.json", result)
         (artifact_dir / "transcript.txt").write_text(
-            render_transcript(entry, scenario, task, dataset_snapshot, commands, result),
+            render_transcript(entry, scenario, task, dataset_snapshot, commands, result, batch_name),
             encoding="utf-8",
         )
-        artifact = artifact_for(entry, scenario, track, task, dataset_snapshot, result, timestamp, catalog_commit, artifact_dir)
+        artifact = artifact_for(entry, scenario, track, task, dataset_snapshot, result, timestamp, catalog_commit, artifact_dir, batch_name, paths["tasks"])
         write_json(artifact_dir / "artifact.json", artifact)
         validation = check_benchmark_artifact.validate_artifact(artifact_dir / "artifact.json")
         if validation["verdict"] != "artifact_complete":
@@ -558,12 +632,12 @@ def run(limit: int, include_visual: bool = False) -> dict[str, Any]:
     failed = sum(1 for item in artifact_summaries if item["benchmark_verdict"] == "failed")
     average_score = round(sum(item["score_percent"] for item in artifact_summaries) / len(artifact_summaries), 2)
     manifest_data = {
-        "batch_name": BATCH_NAME,
+        "batch_name": batch_name,
         "artifact_kind": "independent_benchmark",
         "runner": RUNNER_ID,
         "generated_at_utc": timestamp,
         "catalog_commit": catalog_commit,
-        "task_definitions_path": TASKS_PATH.relative_to(ROOT).as_posix(),
+        "task_definitions_path": paths["tasks"].relative_to(ROOT).as_posix(),
         "summary": {
             "artifact_count": len(artifact_summaries),
             "passed": passed,
@@ -572,17 +646,30 @@ def run(limit: int, include_visual: bool = False) -> dict[str, Any]:
         },
         "artifacts": artifact_summaries,
     }
-    write_json(OUTPUT_ROOT / "manifest.json", manifest_data)
-    REPORT_PATH.write_text(render_report(manifest_data), encoding="utf-8")
+    write_json(output_root / "manifest.json", manifest_data)
+    paths["report"].write_text(render_report(manifest_data, batch_slug), encoding="utf-8")
     return manifest_data
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Create independent runtime-readiness benchmark artifacts.")
     parser.add_argument("--limit", type=int, default=10)
+    parser.add_argument("--batch-name", default=BATCH_NAME)
+    parser.add_argument("--batch-slug", default="batch-01")
+    parser.add_argument("--risk-level", default=RISK_LEVEL)
     parser.add_argument("--include-visual", action="store_true", help="Include visual/browser categories in this readiness batch.")
+    parser.add_argument("--category-spread", action="store_true", help="Select across categories before filling remaining slots.")
+    parser.add_argument("--avoid-existing-independent", action="store_true", help="Exclude skills already covered by earlier independent runtime artifacts.")
     args = parser.parse_args()
-    manifest = run(args.limit, include_visual=args.include_visual)
+    manifest = run(
+        args.limit,
+        batch_name=args.batch_name,
+        batch_slug=args.batch_slug,
+        risk_level=args.risk_level,
+        include_visual=args.include_visual,
+        category_spread=args.category_spread,
+        avoid_existing_independent=args.avoid_existing_independent,
+    )
     print(
         f"Independent runtime readiness artifacts: {manifest['summary']['artifact_count']} "
         f"created, {manifest['summary']['passed']} passed, {manifest['summary']['failed']} failed."

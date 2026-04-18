@@ -1,0 +1,113 @@
+{
+  "citations_or_paths": [
+    "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+    "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest/SKILL.md",
+    "included/agent-ready/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest/SKILL.md",
+    "data/benchmark_scenarios.json",
+    "data/benchmark_tracks.json",
+    "data/skill_risk_audit.json",
+    "https://www.cs.cmu.edu/~enron/"
+  ],
+  "inputs": {
+    "agent_ready_path": "included/agent-ready/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest/SKILL.md",
+    "dataset_snapshot": {
+      "kind": "real-url",
+      "resolved": true,
+      "status": 200,
+      "url": "https://www.cs.cmu.edu/~enron/"
+    },
+    "dataset_track_id": "enron-email",
+    "mirrored_path": "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest",
+    "risk_level": "likely_non_working",
+    "scenario_id": "communication-productivity-and-support-enron-email",
+    "skill_id": "varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md",
+    "skill_name": "newsletter-digest",
+    "source_path": "packages/cli/skills/newsletter-digest/SKILL.md",
+    "source_repo": "Varnan-Tech/opendirectory",
+    "task_brief_path": "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+    "task_id": "runtime-readiness-varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md-communication-productivity-and-support-enron-email"
+  },
+  "metrics": {
+    "benchmark_verdict": "failed",
+    "blocking_failure_count": 1,
+    "checks_passed": 9,
+    "checks_total": 10,
+    "dataset_tree_path_count": 0,
+    "missing_local_link_count": 1,
+    "score_percent": 90.0
+  },
+  "outputs": {
+    "benchmark_verdict": "failed",
+    "blocking_failures": [
+      "local_markdown_links_resolve"
+    ],
+    "checks": [
+      {
+        "evidence": "https://www.cs.cmu.edu/~enron/",
+        "measured": {
+          "head_sha": null,
+          "track_subpath_present": null,
+          "tree_path_count": null
+        },
+        "name": "real_dataset_snapshot_resolved",
+        "passed": true
+      },
+      {
+        "evidence": "communication-productivity-and-support-enron-email",
+        "name": "assigned_non_provenance_scenario",
+        "passed": true
+      },
+      {
+        "evidence": "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+        "name": "independent_task_brief_present",
+        "passed": true
+      },
+      {
+        "evidence": "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest/SKILL.md",
+        "name": "mirror_skill_file_exists",
+        "passed": true
+      },
+      {
+        "evidence": "included/agent-ready/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest/SKILL.md",
+        "name": "agent_ready_entrypoint_exists",
+        "passed": true
+      },
+      {
+        "evidence": "1964a22798f3b34e06f37b158d64d7bd33c4c6ce6cb28677c37817663bb5bcde",
+        "name": "source_hash_matches_catalog",
+        "passed": true
+      },
+      {
+        "evidence": "catalog.has_required_frontmatter",
+        "name": "required_frontmatter_present",
+        "passed": true
+      },
+      {
+        "evidence": [
+          "URL"
+        ],
+        "name": "local_markdown_links_resolve",
+        "passed": false
+      },
+      {
+        "evidence": "included/agent-ready/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest/SKILL.md",
+        "name": "single_session_entrypoint_clean",
+        "passed": true
+      },
+      {
+        "evidence": "evaluators/generic_workflow_result.schema.json",
+        "name": "generic_workflow_schema_recorded",
+        "passed": true
+      }
+    ],
+    "risk_findings": [],
+    "score_percent": 90.0
+  },
+  "steps": [
+    "Selected a likely_non_working skill from data/skill_risk_audit.json.",
+    "Selected the first assigned non-provenance scenario for the skill.",
+    "Resolved the real repository workflow snapshot from the benchmark track URL.",
+    "Evaluated the mirrored package against independently defined loadability checks.",
+    "Recorded pass/fail metrics without modifying the mirrored skill."
+  ]
+}
