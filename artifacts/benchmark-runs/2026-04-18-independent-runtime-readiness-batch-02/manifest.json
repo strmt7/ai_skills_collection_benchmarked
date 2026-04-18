@@ -1,0 +1,160 @@
+{
+  "artifact_kind": "independent_benchmark",
+  "artifacts": [
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/microsoft-skills-github-plugins-deep-wiki-skills-wiki-ado-convert-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "blocking_failures": [
+        "local_markdown_links_resolve"
+      ],
+      "dataset_track_id": "kubernetes-examples",
+      "result_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/microsoft-skills-github-plugins-deep-wiki-skills-wiki-ado-convert-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/result.json",
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-deep-wiki-skills-wiki-ado-convert-skill-md"
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/trailofbits-skills-plugins-dimensional-analysis-skills-dimensional-analysis-skill-md/coding-refactoring-and-repository-automation-swe-bench-lite/artifact.json",
+      "benchmark_verdict": "failed",
+      "blocking_failures": [
+        "local_markdown_links_resolve"
+      ],
+      "dataset_track_id": "swe-bench-lite",
+      "result_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/trailofbits-skills-plugins-dimensional-analysis-skills-dimensional-analysis-skill-md/coding-refactoring-and-repository-automation-swe-bench-lite/result.json",
+      "scenario_id": "coding-refactoring-and-repository-automation-swe-bench-lite",
+      "score_percent": 90.0,
+      "skill_id": "trailofbits-skills-plugins-dimensional-analysis-skills-dimensional-analysis-skill-md"
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md/communication-productivity-and-support-enron-email/artifact.json",
+      "benchmark_verdict": "failed",
+      "blocking_failures": [
+        "local_markdown_links_resolve"
+      ],
+      "dataset_track_id": "enron-email",
+      "result_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md/communication-productivity-and-support-enron-email/result.json",
+      "scenario_id": "communication-productivity-and-support-enron-email",
+      "score_percent": 90.0,
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md"
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/bria-ai-bria-skill-skills-vgl-skill-md/creative-media-and-design-coco-captions/artifact.json",
+      "benchmark_verdict": "failed",
+      "blocking_failures": [
+        "local_markdown_links_resolve"
+      ],
+      "dataset_track_id": "coco-captions",
+      "result_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/bria-ai-bria-skill-skills-vgl-skill-md/creative-media-and-design-coco-captions/result.json",
+      "scenario_id": "creative-media-and-design-coco-captions",
+      "score_percent": 90.0,
+      "skill_id": "bria-ai-bria-skill-skills-vgl-skill-md"
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/varnan-tech-opendirectory-packages-cli-skills-reddit-icp-monitor-skill-md/devops-cloud-and-operations-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "blocking_failures": [
+        "local_markdown_links_resolve"
+      ],
+      "dataset_track_id": "kubernetes-examples",
+      "result_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/varnan-tech-opendirectory-packages-cli-skills-reddit-icp-monitor-skill-md/devops-cloud-and-operations-kubernetes-examples/result.json",
+      "scenario_id": "devops-cloud-and-operations-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-reddit-icp-monitor-skill-md"
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/k-dense-ai-scientific-agent-skills-scientific-skills-datamol-skill-md/science-research-and-data-analysis-cellxgene-census/artifact.json",
+      "benchmark_verdict": "failed",
+      "blocking_failures": [
+        "local_markdown_links_resolve"
+      ],
+      "dataset_track_id": "cellxgene-census",
+      "result_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/k-dense-ai-scientific-agent-skills-scientific-skills-datamol-skill-md/science-research-and-data-analysis-cellxgene-census/result.json",
+      "scenario_id": "science-research-and-data-analysis-cellxgene-census",
+      "score_percent": 90.0,
+      "skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-datamol-skill-md"
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/affaan-m-everything-claude-code-agents-skills-deep-research-skill-md/search-retrieval-and-web-automation-common-crawl-warc/artifact.json",
+      "benchmark_verdict": "failed",
+      "blocking_failures": [
+        "local_markdown_links_resolve"
+      ],
+      "dataset_track_id": "common-crawl-warc",
+      "result_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/affaan-m-everything-claude-code-agents-skills-deep-research-skill-md/search-retrieval-and-web-automation-common-crawl-warc/result.json",
+      "scenario_id": "search-retrieval-and-web-automation-common-crawl-warc",
+      "score_percent": 90.0,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-deep-research-skill-md"
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/trailofbits-skills-plugins-agentic-actions-auditor-skills-agentic-actions-auditor-skill-md/security-compliance-and-risk-owasp-benchmark/artifact.json",
+      "benchmark_verdict": "failed",
+      "blocking_failures": [
+        "local_markdown_links_resolve"
+      ],
+      "dataset_track_id": "owasp-benchmark",
+      "result_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/trailofbits-skills-plugins-agentic-actions-auditor-skills-agentic-actions-auditor-skill-md/security-compliance-and-risk-owasp-benchmark/result.json",
+      "scenario_id": "security-compliance-and-risk-owasp-benchmark",
+      "score_percent": 90.0,
+      "skill_id": "trailofbits-skills-plugins-agentic-actions-auditor-skills-agentic-actions-auditor-skill-md"
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/lackeyjb-playwright-skill-skills-playwright-skill-skill-md/testing-qa-and-benchmarking-swe-bench-lite/artifact.json",
+      "benchmark_verdict": "failed",
+      "blocking_failures": [
+        "local_markdown_links_resolve"
+      ],
+      "dataset_track_id": "swe-bench-lite",
+      "result_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/lackeyjb-playwright-skill-skills-playwright-skill-skill-md/testing-qa-and-benchmarking-swe-bench-lite/result.json",
+      "scenario_id": "testing-qa-and-benchmarking-swe-bench-lite",
+      "score_percent": 90.0,
+      "skill_id": "lackeyjb-playwright-skill-skills-playwright-skill-skill-md"
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/microsoft-skills-github-plugins-deep-wiki-skills-wiki-architect-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "blocking_failures": [
+        "local_markdown_links_resolve"
+      ],
+      "dataset_track_id": "kubernetes-examples",
+      "result_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/microsoft-skills-github-plugins-deep-wiki-skills-wiki-architect-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/result.json",
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-deep-wiki-skills-wiki-architect-skill-md"
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/microsoft-skills-github-plugins-deep-wiki-skills-wiki-changelog-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "blocking_failures": [
+        "local_markdown_links_resolve"
+      ],
+      "dataset_track_id": "kubernetes-examples",
+      "result_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/microsoft-skills-github-plugins-deep-wiki-skills-wiki-changelog-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/result.json",
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-deep-wiki-skills-wiki-changelog-skill-md"
+    },
+    {
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/microsoft-skills-github-plugins-deep-wiki-skills-wiki-llms-txt-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "blocking_failures": [
+        "local_markdown_links_resolve"
+      ],
+      "dataset_track_id": "kubernetes-examples",
+      "result_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/microsoft-skills-github-plugins-deep-wiki-skills-wiki-llms-txt-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/result.json",
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-deep-wiki-skills-wiki-llms-txt-skill-md"
+    }
+  ],
+  "batch_name": "2026-04-18-independent-runtime-readiness-batch-02",
+  "catalog_commit": "6cedc0a98916f91d3437370a7a4d12219fdd25f0",
+  "generated_at_utc": "2026-04-18T11:14:45Z",
+  "runner": "tools/create_independent_runtime_batch.py",
+  "summary": {
+    "artifact_count": 12,
+    "average_score_percent": 90.0,
+    "failed": 12,
+    "passed": 0
+  },
+  "task_definitions_path": "benchmarks/independent-runtime-readiness/batch-02/tasks.json"
+}

@@ -7,6 +7,14 @@ from helpers import ROOT, complete_artifacts, load
 import check_benchmark_artifact
 
 
+def assert_real_dataset_snapshot_resolved(snapshot):
+    assert snapshot["resolved"] is True
+    if snapshot["kind"] == "real-github-repository-tree":
+        assert snapshot["tree_path_count"] > 0
+    else:
+        assert 200 <= snapshot["status"] < 400
+
+
 def test_static_benchmark_results_are_real_and_current():
     results = load("data/static_benchmark_results.json")
     catalog = load("data/skills_catalog.json")
@@ -68,8 +76,43 @@ def test_independent_runtime_batch_is_separate_and_scored():
         assert result["metrics"]["benchmark_verdict"] == item["benchmark_verdict"]
         assert result["metrics"]["score_percent"] == item["score_percent"]
         assert result["outputs"]["blocking_failures"] == item["blocking_failures"]
-        assert result["inputs"]["dataset_snapshot"]["resolved"] is True
-        assert result["inputs"]["dataset_snapshot"]["tree_path_count"] > 0
+        assert_real_dataset_snapshot_resolved(result["inputs"]["dataset_snapshot"])
+
+
+def test_independent_runtime_batch_02_is_category_spread_and_non_overlapping():
+    batch_01 = load("artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/manifest.json")
+    batch_02 = load("artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/manifest.json")
+    tasks = load("benchmarks/independent-runtime-readiness/batch-02/tasks.json")
+    catalog = {entry["id"]: entry for entry in load("data/skills_catalog.json")}
+    scenarios = {item["id"]: item for item in load("data/benchmark_scenarios.json")}
+    batch_01_skill_ids = {item["skill_id"] for item in batch_01["artifacts"]}
+    batch_02_skill_ids = {item["skill_id"] for item in batch_02["artifacts"]}
+
+    assert batch_02["artifact_kind"] == "independent_benchmark"
+    assert batch_02["summary"]["artifact_count"] == 12
+    assert batch_02["summary"]["passed"] == 0
+    assert batch_02["summary"]["failed"] == 12
+    assert tasks["task_count"] == batch_02["summary"]["artifact_count"]
+    assert "category-spread" in tasks["selection_policy"]
+    assert "excluding skills already covered" in tasks["selection_policy"]
+    assert not (batch_01_skill_ids & batch_02_skill_ids)
+    assert len({catalog[skill_id]["category"] for skill_id in batch_02_skill_ids}) >= 8
+
+    task_by_id = {task["task_id"]: task for task in tasks["tasks"]}
+    for item in batch_02["artifacts"]:
+        artifact = load(item["artifact_path"])
+        result = load(item["result_path"])
+        task = task_by_id[result["inputs"]["task_id"]]
+        assert artifact["artifact_kind"] == "independent_benchmark"
+        assert artifact["runner"]["batch_name"] == batch_02["batch_name"]
+        assert artifact["independence"]["uses_exact_skill_content_for_expected_result"] is False
+        assert artifact["scenario_id"] == item["scenario_id"]
+        assert scenarios[item["scenario_id"]]["dataset_track_id"] != "source-skill-repository"
+        assert task["skill_id"] == item["skill_id"]
+        assert result["metrics"]["benchmark_verdict"] == item["benchmark_verdict"]
+        assert result["metrics"]["score_percent"] == item["score_percent"]
+        assert result["outputs"]["blocking_failures"] == item["blocking_failures"]
+        assert_real_dataset_snapshot_resolved(result["inputs"]["dataset_snapshot"])
 
 
 def test_benchmark_artifact_checker_accepts_complete_artifact_and_rejects_incomplete_visual():

@@ -1,0 +1,89 @@
+{
+  "artifact_kind": "independent_benchmark",
+  "artifact_version": "1.0",
+  "catalog_commit": "6cedc0a98916f91d3437370a7a4d12219fdd25f0",
+  "evidence": {
+    "artifact_paths": [
+      "result.json",
+      "transcript.txt",
+      "dataset_snapshot.json",
+      "benchmarks/independent-runtime-readiness/batch-02/tasks.json"
+    ],
+    "citations_or_paths": [
+      "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+      "included/skills/by-category/creative-media-design/latest-release-creative/vgl/SKILL.md",
+      "included/agent-ready/by-category/creative-media-design/latest-release-creative/vgl/SKILL.md",
+      "data/benchmark_scenarios.json",
+      "data/benchmark_tracks.json",
+      "data/skill_risk_audit.json",
+      "https://cocodataset.org/#download"
+    ]
+  },
+  "execution": {
+    "commands_or_transcript_path": "transcript.txt",
+    "fresh_session": true
+  },
+  "independence": {
+    "evaluator_defined_outside_skill": true,
+    "expected_result_defined_outside_skill": true,
+    "skill_content_usage": "skill text was read only as the object under test for package loadability, frontmatter, hash, and local-link checks; task and expected results came from benchmarks/independent-runtime-readiness/batch-02/tasks.json and this runner",
+    "task_defined_outside_skill": true,
+    "uses_exact_skill_content_for_expected_result": false
+  },
+  "input_snapshot": {
+    "dataset_track_id": "coco-captions",
+    "dataset_url": "https://cocodataset.org/#download",
+    "identifier": "https://cocodataset.org/#download",
+    "is_real": true,
+    "kind": "real-url",
+    "mirrored_path": "included/skills/by-category/creative-media-design/latest-release-creative/vgl",
+    "resolved_commit": null,
+    "track_subpath": null,
+    "track_subpath_present": null,
+    "tree_path_count": null
+  },
+  "metrics": {
+    "benchmark_verdict": "failed",
+    "blocking_failure_count": 1,
+    "checks_passed": 9,
+    "checks_total": 10,
+    "dataset_tree_path_count": 0,
+    "missing_local_link_count": 1,
+    "score_percent": 90.0
+  },
+  "objective_checks": [
+    "real_dataset_snapshot_resolved",
+    "assigned_non_provenance_scenario",
+    "independent_task_brief_present",
+    "mirror_skill_file_exists",
+    "agent_ready_entrypoint_exists",
+    "source_hash_matches_catalog",
+    "required_frontmatter_present",
+    "local_markdown_links_resolve",
+    "single_session_entrypoint_clean",
+    "generic_workflow_schema_recorded"
+  ],
+  "outputs": {
+    "path": "result.json",
+    "result_sha256": "c96d4db3bbea4f155753ebb9ab3e1720b3501ee33e913d10aaa748a64cdb0231",
+    "schema": "evaluators/generic_workflow_result.schema.json"
+  },
+  "runner": {
+    "batch_name": "2026-04-18-independent-runtime-readiness-batch-02",
+    "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+    "timestamp_utc": "2026-04-18T11:14:45Z",
+    "tool": "tools/create_independent_runtime_batch.py"
+  },
+  "scenario_id": "creative-media-and-design-coco-captions",
+  "scenario_requirements": {
+    "context_memory": false,
+    "dataset_track_id": "coco-captions",
+    "real_repository_workflow": true,
+    "token_efficiency_claim": false,
+    "visual_or_browser": false
+  },
+  "skill_id": "bria-ai-bria-skill-skills-vgl-skill-md",
+  "source_commit": "b0e107b0f4667f0e1c9177bcd491b7d436c6932d",
+  "source_path": "skills/vgl/SKILL.md",
+  "source_repo": "Bria-AI/bria-skill"
+}

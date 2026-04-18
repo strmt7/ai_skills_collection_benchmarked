@@ -623,6 +623,378 @@
         "verdict": "artifact_complete",
         "warnings": []
       }
+    },
+    {
+      "artifact_kind": "independent_benchmark",
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/affaan-m-everything-claude-code-agents-skills-deep-research-skill-md/search-retrieval-and-web-automation-common-crawl-warc/artifact.json",
+      "benchmark_verdict": "failed",
+      "catalog_commit": "6cedc0a98916f91d3437370a7a4d12219fdd25f0",
+      "metrics": {
+        "benchmark_verdict": "failed",
+        "blocking_failure_count": 1,
+        "checks_passed": 9,
+        "checks_total": 10,
+        "dataset_tree_path_count": 0,
+        "missing_local_link_count": 1,
+        "score_percent": 90.0
+      },
+      "runner": {
+        "batch_name": "2026-04-18-independent-runtime-readiness-batch-02",
+        "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+        "timestamp_utc": "2026-04-18T11:14:45Z",
+        "tool": "tools/create_independent_runtime_batch.py"
+      },
+      "scenario_id": "search-retrieval-and-web-automation-common-crawl-warc",
+      "score_percent": 90.0,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-deep-research-skill-md",
+      "source_path": ".agents/skills/deep-research/SKILL.md",
+      "source_repo": "affaan-m/everything-claude-code",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": []
+      }
+    },
+    {
+      "artifact_kind": "independent_benchmark",
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/bria-ai-bria-skill-skills-vgl-skill-md/creative-media-and-design-coco-captions/artifact.json",
+      "benchmark_verdict": "failed",
+      "catalog_commit": "6cedc0a98916f91d3437370a7a4d12219fdd25f0",
+      "metrics": {
+        "benchmark_verdict": "failed",
+        "blocking_failure_count": 1,
+        "checks_passed": 9,
+        "checks_total": 10,
+        "dataset_tree_path_count": 0,
+        "missing_local_link_count": 1,
+        "score_percent": 90.0
+      },
+      "runner": {
+        "batch_name": "2026-04-18-independent-runtime-readiness-batch-02",
+        "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+        "timestamp_utc": "2026-04-18T11:14:45Z",
+        "tool": "tools/create_independent_runtime_batch.py"
+      },
+      "scenario_id": "creative-media-and-design-coco-captions",
+      "score_percent": 90.0,
+      "skill_id": "bria-ai-bria-skill-skills-vgl-skill-md",
+      "source_path": "skills/vgl/SKILL.md",
+      "source_repo": "Bria-AI/bria-skill",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": []
+      }
+    },
+    {
+      "artifact_kind": "independent_benchmark",
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/k-dense-ai-scientific-agent-skills-scientific-skills-datamol-skill-md/science-research-and-data-analysis-cellxgene-census/artifact.json",
+      "benchmark_verdict": "failed",
+      "catalog_commit": "6cedc0a98916f91d3437370a7a4d12219fdd25f0",
+      "metrics": {
+        "benchmark_verdict": "failed",
+        "blocking_failure_count": 1,
+        "checks_passed": 9,
+        "checks_total": 10,
+        "dataset_tree_path_count": 0,
+        "missing_local_link_count": 1,
+        "score_percent": 90.0
+      },
+      "runner": {
+        "batch_name": "2026-04-18-independent-runtime-readiness-batch-02",
+        "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+        "timestamp_utc": "2026-04-18T11:14:45Z",
+        "tool": "tools/create_independent_runtime_batch.py"
+      },
+      "scenario_id": "science-research-and-data-analysis-cellxgene-census",
+      "score_percent": 90.0,
+      "skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-datamol-skill-md",
+      "source_path": "scientific-skills/datamol/SKILL.md",
+      "source_repo": "K-Dense-AI/scientific-agent-skills",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": []
+      }
+    },
+    {
+      "artifact_kind": "independent_benchmark",
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/lackeyjb-playwright-skill-skills-playwright-skill-skill-md/testing-qa-and-benchmarking-swe-bench-lite/artifact.json",
+      "benchmark_verdict": "failed",
+      "catalog_commit": "6cedc0a98916f91d3437370a7a4d12219fdd25f0",
+      "metrics": {
+        "benchmark_verdict": "failed",
+        "blocking_failure_count": 1,
+        "checks_passed": 9,
+        "checks_total": 10,
+        "dataset_tree_path_count": 1206,
+        "missing_local_link_count": 1,
+        "score_percent": 90.0
+      },
+      "runner": {
+        "batch_name": "2026-04-18-independent-runtime-readiness-batch-02",
+        "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+        "timestamp_utc": "2026-04-18T11:14:45Z",
+        "tool": "tools/create_independent_runtime_batch.py"
+      },
+      "scenario_id": "testing-qa-and-benchmarking-swe-bench-lite",
+      "score_percent": 90.0,
+      "skill_id": "lackeyjb-playwright-skill-skills-playwright-skill-skill-md",
+      "source_path": "skills/playwright-skill/SKILL.md",
+      "source_repo": "lackeyjb/playwright-skill",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": []
+      }
+    },
+    {
+      "artifact_kind": "independent_benchmark",
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/microsoft-skills-github-plugins-deep-wiki-skills-wiki-ado-convert-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "catalog_commit": "6cedc0a98916f91d3437370a7a4d12219fdd25f0",
+      "metrics": {
+        "benchmark_verdict": "failed",
+        "blocking_failure_count": 1,
+        "checks_passed": 9,
+        "checks_total": 10,
+        "dataset_tree_path_count": 573,
+        "missing_local_link_count": 3,
+        "score_percent": 90.0
+      },
+      "runner": {
+        "batch_name": "2026-04-18-independent-runtime-readiness-batch-02",
+        "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+        "timestamp_utc": "2026-04-18T11:14:45Z",
+        "tool": "tools/create_independent_runtime_batch.py"
+      },
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-deep-wiki-skills-wiki-ado-convert-skill-md",
+      "source_path": ".github/plugins/deep-wiki/skills/wiki-ado-convert/SKILL.md",
+      "source_repo": "microsoft/skills",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": []
+      }
+    },
+    {
+      "artifact_kind": "independent_benchmark",
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/microsoft-skills-github-plugins-deep-wiki-skills-wiki-architect-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "catalog_commit": "6cedc0a98916f91d3437370a7a4d12219fdd25f0",
+      "metrics": {
+        "benchmark_verdict": "failed",
+        "blocking_failure_count": 1,
+        "checks_passed": 9,
+        "checks_total": 10,
+        "dataset_tree_path_count": 573,
+        "missing_local_link_count": 1,
+        "score_percent": 90.0
+      },
+      "runner": {
+        "batch_name": "2026-04-18-independent-runtime-readiness-batch-02",
+        "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+        "timestamp_utc": "2026-04-18T11:14:45Z",
+        "tool": "tools/create_independent_runtime_batch.py"
+      },
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-deep-wiki-skills-wiki-architect-skill-md",
+      "source_path": ".github/plugins/deep-wiki/skills/wiki-architect/SKILL.md",
+      "source_repo": "microsoft/skills",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": []
+      }
+    },
+    {
+      "artifact_kind": "independent_benchmark",
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/microsoft-skills-github-plugins-deep-wiki-skills-wiki-changelog-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "catalog_commit": "6cedc0a98916f91d3437370a7a4d12219fdd25f0",
+      "metrics": {
+        "benchmark_verdict": "failed",
+        "blocking_failure_count": 1,
+        "checks_passed": 9,
+        "checks_total": 10,
+        "dataset_tree_path_count": 573,
+        "missing_local_link_count": 2,
+        "score_percent": 90.0
+      },
+      "runner": {
+        "batch_name": "2026-04-18-independent-runtime-readiness-batch-02",
+        "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+        "timestamp_utc": "2026-04-18T11:14:45Z",
+        "tool": "tools/create_independent_runtime_batch.py"
+      },
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-deep-wiki-skills-wiki-changelog-skill-md",
+      "source_path": ".github/plugins/deep-wiki/skills/wiki-changelog/SKILL.md",
+      "source_repo": "microsoft/skills",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": []
+      }
+    },
+    {
+      "artifact_kind": "independent_benchmark",
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/microsoft-skills-github-plugins-deep-wiki-skills-wiki-llms-txt-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "catalog_commit": "6cedc0a98916f91d3437370a7a4d12219fdd25f0",
+      "metrics": {
+        "benchmark_verdict": "failed",
+        "blocking_failure_count": 1,
+        "checks_passed": 9,
+        "checks_total": 10,
+        "dataset_tree_path_count": 573,
+        "missing_local_link_count": 5,
+        "score_percent": 90.0
+      },
+      "runner": {
+        "batch_name": "2026-04-18-independent-runtime-readiness-batch-02",
+        "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+        "timestamp_utc": "2026-04-18T11:14:45Z",
+        "tool": "tools/create_independent_runtime_batch.py"
+      },
+      "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "microsoft-skills-github-plugins-deep-wiki-skills-wiki-llms-txt-skill-md",
+      "source_path": ".github/plugins/deep-wiki/skills/wiki-llms-txt/SKILL.md",
+      "source_repo": "microsoft/skills",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": []
+      }
+    },
+    {
+      "artifact_kind": "independent_benchmark",
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/trailofbits-skills-plugins-agentic-actions-auditor-skills-agentic-actions-auditor-skill-md/security-compliance-and-risk-owasp-benchmark/artifact.json",
+      "benchmark_verdict": "failed",
+      "catalog_commit": "6cedc0a98916f91d3437370a7a4d12219fdd25f0",
+      "metrics": {
+        "benchmark_verdict": "failed",
+        "blocking_failure_count": 1,
+        "checks_passed": 9,
+        "checks_total": 10,
+        "dataset_tree_path_count": 0,
+        "missing_local_link_count": 12,
+        "score_percent": 90.0
+      },
+      "runner": {
+        "batch_name": "2026-04-18-independent-runtime-readiness-batch-02",
+        "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+        "timestamp_utc": "2026-04-18T11:14:45Z",
+        "tool": "tools/create_independent_runtime_batch.py"
+      },
+      "scenario_id": "security-compliance-and-risk-owasp-benchmark",
+      "score_percent": 90.0,
+      "skill_id": "trailofbits-skills-plugins-agentic-actions-auditor-skills-agentic-actions-auditor-skill-md",
+      "source_path": "plugins/agentic-actions-auditor/skills/agentic-actions-auditor/SKILL.md",
+      "source_repo": "trailofbits/skills",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": []
+      }
+    },
+    {
+      "artifact_kind": "independent_benchmark",
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/trailofbits-skills-plugins-dimensional-analysis-skills-dimensional-analysis-skill-md/coding-refactoring-and-repository-automation-swe-bench-lite/artifact.json",
+      "benchmark_verdict": "failed",
+      "catalog_commit": "6cedc0a98916f91d3437370a7a4d12219fdd25f0",
+      "metrics": {
+        "benchmark_verdict": "failed",
+        "blocking_failure_count": 1,
+        "checks_passed": 9,
+        "checks_total": 10,
+        "dataset_tree_path_count": 1206,
+        "missing_local_link_count": 4,
+        "score_percent": 90.0
+      },
+      "runner": {
+        "batch_name": "2026-04-18-independent-runtime-readiness-batch-02",
+        "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+        "timestamp_utc": "2026-04-18T11:14:45Z",
+        "tool": "tools/create_independent_runtime_batch.py"
+      },
+      "scenario_id": "coding-refactoring-and-repository-automation-swe-bench-lite",
+      "score_percent": 90.0,
+      "skill_id": "trailofbits-skills-plugins-dimensional-analysis-skills-dimensional-analysis-skill-md",
+      "source_path": "plugins/dimensional-analysis/skills/dimensional-analysis/SKILL.md",
+      "source_repo": "trailofbits/skills",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": []
+      }
+    },
+    {
+      "artifact_kind": "independent_benchmark",
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md/communication-productivity-and-support-enron-email/artifact.json",
+      "benchmark_verdict": "failed",
+      "catalog_commit": "6cedc0a98916f91d3437370a7a4d12219fdd25f0",
+      "metrics": {
+        "benchmark_verdict": "failed",
+        "blocking_failure_count": 1,
+        "checks_passed": 9,
+        "checks_total": 10,
+        "dataset_tree_path_count": 0,
+        "missing_local_link_count": 1,
+        "score_percent": 90.0
+      },
+      "runner": {
+        "batch_name": "2026-04-18-independent-runtime-readiness-batch-02",
+        "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+        "timestamp_utc": "2026-04-18T11:14:45Z",
+        "tool": "tools/create_independent_runtime_batch.py"
+      },
+      "scenario_id": "communication-productivity-and-support-enron-email",
+      "score_percent": 90.0,
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md",
+      "source_path": "packages/cli/skills/newsletter-digest/SKILL.md",
+      "source_repo": "Varnan-Tech/opendirectory",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": []
+      }
+    },
+    {
+      "artifact_kind": "independent_benchmark",
+      "artifact_path": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/varnan-tech-opendirectory-packages-cli-skills-reddit-icp-monitor-skill-md/devops-cloud-and-operations-kubernetes-examples/artifact.json",
+      "benchmark_verdict": "failed",
+      "catalog_commit": "6cedc0a98916f91d3437370a7a4d12219fdd25f0",
+      "metrics": {
+        "benchmark_verdict": "failed",
+        "blocking_failure_count": 1,
+        "checks_passed": 9,
+        "checks_total": 10,
+        "dataset_tree_path_count": 573,
+        "missing_local_link_count": 1,
+        "score_percent": 90.0
+      },
+      "runner": {
+        "batch_name": "2026-04-18-independent-runtime-readiness-batch-02",
+        "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+        "timestamp_utc": "2026-04-18T11:14:45Z",
+        "tool": "tools/create_independent_runtime_batch.py"
+      },
+      "scenario_id": "devops-cloud-and-operations-kubernetes-examples",
+      "score_percent": 90.0,
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-reddit-icp-monitor-skill-md",
+      "source_path": "packages/cli/skills/reddit-icp-monitor/SKILL.md",
+      "source_repo": "Varnan-Tech/opendirectory",
+      "validation": {
+        "errors": [],
+        "verdict": "artifact_complete",
+        "warnings": []
+      }
     }
   ],
   "skills": [
@@ -9444,8 +9816,10 @@
         "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.",
         "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings."
       ],
-      "runtime_artifact_paths": [],
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifact_paths": [
+        "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/microsoft-skills-github-plugins-deep-wiki-skills-wiki-ado-convert-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json"
+      ],
+      "runtime_artifacts_recorded": 1,
       "skill_id": "microsoft-skills-github-plugins-deep-wiki-skills-wiki-ado-convert-skill-md",
       "source_path": ".github/plugins/deep-wiki/skills/wiki-ado-convert/SKILL.md",
       "source_repo": "microsoft/skills",
@@ -9516,8 +9890,10 @@
         "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.",
         "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings."
       ],
-      "runtime_artifact_paths": [],
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifact_paths": [
+        "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/microsoft-skills-github-plugins-deep-wiki-skills-wiki-architect-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json"
+      ],
+      "runtime_artifacts_recorded": 1,
       "skill_id": "microsoft-skills-github-plugins-deep-wiki-skills-wiki-architect-skill-md",
       "source_path": ".github/plugins/deep-wiki/skills/wiki-architect/SKILL.md",
       "source_repo": "microsoft/skills",
@@ -9552,8 +9928,10 @@
         "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.",
         "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings."
       ],
-      "runtime_artifact_paths": [],
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifact_paths": [
+        "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/microsoft-skills-github-plugins-deep-wiki-skills-wiki-changelog-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json"
+      ],
+      "runtime_artifacts_recorded": 1,
       "skill_id": "microsoft-skills-github-plugins-deep-wiki-skills-wiki-changelog-skill-md",
       "source_path": ".github/plugins/deep-wiki/skills/wiki-changelog/SKILL.md",
       "source_repo": "microsoft/skills",
@@ -9588,8 +9966,10 @@
         "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.",
         "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings."
       ],
-      "runtime_artifact_paths": [],
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifact_paths": [
+        "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/microsoft-skills-github-plugins-deep-wiki-skills-wiki-llms-txt-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json"
+      ],
+      "runtime_artifacts_recorded": 1,
       "skill_id": "microsoft-skills-github-plugins-deep-wiki-skills-wiki-llms-txt-skill-md",
       "source_path": ".github/plugins/deep-wiki/skills/wiki-llms-txt/SKILL.md",
       "source_repo": "microsoft/skills",
@@ -10883,8 +11263,10 @@
         "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.",
         "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings."
       ],
-      "runtime_artifact_paths": [],
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifact_paths": [
+        "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/trailofbits-skills-plugins-dimensional-analysis-skills-dimensional-analysis-skill-md/coding-refactoring-and-repository-automation-swe-bench-lite/artifact.json"
+      ],
+      "runtime_artifacts_recorded": 1,
       "skill_id": "trailofbits-skills-plugins-dimensional-analysis-skills-dimensional-analysis-skill-md",
       "source_path": "plugins/dimensional-analysis/skills/dimensional-analysis/SKILL.md",
       "source_repo": "trailofbits/skills",
@@ -11426,8 +11808,10 @@
         "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.",
         "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings."
       ],
-      "runtime_artifact_paths": [],
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifact_paths": [
+        "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md/communication-productivity-and-support-enron-email/artifact.json"
+      ],
+      "runtime_artifacts_recorded": 1,
       "skill_id": "varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md",
       "source_path": "packages/cli/skills/newsletter-digest/SKILL.md",
       "source_repo": "Varnan-Tech/opendirectory",
@@ -13547,8 +13931,10 @@
         "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.",
         "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings."
       ],
-      "runtime_artifact_paths": [],
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifact_paths": [
+        "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/bria-ai-bria-skill-skills-vgl-skill-md/creative-media-and-design-coco-captions/artifact.json"
+      ],
+      "runtime_artifacts_recorded": 1,
       "skill_id": "bria-ai-bria-skill-skills-vgl-skill-md",
       "source_path": "skills/vgl/SKILL.md",
       "source_repo": "Bria-AI/bria-skill",
@@ -14591,8 +14977,10 @@
         "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings.",
         "Add an executable validator or helper script so the workflow has objective checks."
       ],
-      "runtime_artifact_paths": [],
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifact_paths": [
+        "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/varnan-tech-opendirectory-packages-cli-skills-reddit-icp-monitor-skill-md/devops-cloud-and-operations-kubernetes-examples/artifact.json"
+      ],
+      "runtime_artifacts_recorded": 1,
       "skill_id": "varnan-tech-opendirectory-packages-cli-skills-reddit-icp-monitor-skill-md",
       "source_path": "packages/cli/skills/reddit-icp-monitor/SKILL.md",
       "source_repo": "Varnan-Tech/opendirectory",
@@ -17579,8 +17967,10 @@
         "Add an executable validator or helper script so the workflow has objective checks.",
         "Move long background material into references/ to keep SKILL.md concise."
       ],
-      "runtime_artifact_paths": [],
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifact_paths": [
+        "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/k-dense-ai-scientific-agent-skills-scientific-skills-datamol-skill-md/science-research-and-data-analysis-cellxgene-census/artifact.json"
+      ],
+      "runtime_artifacts_recorded": 1,
       "skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-datamol-skill-md",
       "source_path": "scientific-skills/datamol/SKILL.md",
       "source_repo": "K-Dense-AI/scientific-agent-skills",
@@ -21814,8 +22204,10 @@
         "Keep provenance and selected ref visible so agents can verify the source before use.",
         "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable."
       ],
-      "runtime_artifact_paths": [],
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifact_paths": [
+        "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/affaan-m-everything-claude-code-agents-skills-deep-research-skill-md/search-retrieval-and-web-automation-common-crawl-warc/artifact.json"
+      ],
+      "runtime_artifacts_recorded": 1,
       "skill_id": "affaan-m-everything-claude-code-agents-skills-deep-research-skill-md",
       "source_path": ".agents/skills/deep-research/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code",
@@ -23120,8 +23512,10 @@
         "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings.",
         "Add an executable validator or helper script so the workflow has objective checks."
       ],
-      "runtime_artifact_paths": [],
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifact_paths": [
+        "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/trailofbits-skills-plugins-agentic-actions-auditor-skills-agentic-actions-auditor-skill-md/security-compliance-and-risk-owasp-benchmark/artifact.json"
+      ],
+      "runtime_artifacts_recorded": 1,
       "skill_id": "trailofbits-skills-plugins-agentic-actions-auditor-skills-agentic-actions-auditor-skill-md",
       "source_path": "plugins/agentic-actions-auditor/skills/agentic-actions-auditor/SKILL.md",
       "source_repo": "trailofbits/skills",
@@ -24666,8 +25060,10 @@
         "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings.",
         "Add an executable validator or helper script so the workflow has objective checks."
       ],
-      "runtime_artifact_paths": [],
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifact_paths": [
+        "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/lackeyjb-playwright-skill-skills-playwright-skill-skill-md/testing-qa-and-benchmarking-swe-bench-lite/artifact.json"
+      ],
+      "runtime_artifacts_recorded": 1,
       "skill_id": "lackeyjb-playwright-skill-skills-playwright-skill-skill-md",
       "source_path": "skills/playwright-skill/SKILL.md",
       "source_repo": "lackeyjb/playwright-skill",
@@ -25054,9 +25450,9 @@
     "average_static_score_percent": 100.0,
     "provenance_artifacts_recorded": 10,
     "quality_fix_points": 2194,
-    "runtime_artifacts_failed": 10,
+    "runtime_artifacts_failed": 22,
     "runtime_artifacts_passed": 0,
-    "runtime_artifacts_recorded": 10,
+    "runtime_artifacts_recorded": 22,
     "skill_count": 673,
     "static_checks_passed": 8076,
     "static_checks_total": 8076
@@ -25071,7 +25467,7 @@
     {
       "assigned_scenarios": 57,
       "id": "swe-bench-lite",
-      "runtime_artifacts_recorded": 1,
+      "runtime_artifacts_recorded": 3,
       "title": "SWE-bench Lite"
     },
     {
@@ -25089,7 +25485,7 @@
     {
       "assigned_scenarios": 24,
       "id": "common-crawl-warc",
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifacts_recorded": 1,
       "title": "Common Crawl WARC"
     },
     {
@@ -25107,7 +25503,7 @@
     {
       "assigned_scenarios": 71,
       "id": "enron-email",
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifacts_recorded": 1,
       "title": "CMU Enron email dataset"
     },
     {
@@ -25125,7 +25521,7 @@
     {
       "assigned_scenarios": 148,
       "id": "cellxgene-census",
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifacts_recorded": 1,
       "title": "CZ CELLxGENE Census"
     },
     {
@@ -25137,7 +25533,7 @@
     {
       "assigned_scenarios": 76,
       "id": "owasp-benchmark",
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifacts_recorded": 1,
       "title": "OWASP Benchmark"
     },
     {
@@ -25149,7 +25545,7 @@
     {
       "assigned_scenarios": 305,
       "id": "kubernetes-examples",
-      "runtime_artifacts_recorded": 9,
+      "runtime_artifacts_recorded": 14,
       "title": "Kubernetes examples"
     },
     {
@@ -25161,7 +25557,7 @@
     {
       "assigned_scenarios": 58,
       "id": "coco-captions",
-      "runtime_artifacts_recorded": 0,
+      "runtime_artifacts_recorded": 1,
       "title": "COCO captions"
     },
     {
