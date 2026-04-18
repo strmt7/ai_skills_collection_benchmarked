@@ -1,0 +1,89 @@
+{
+  "artifact_kind": "independent_benchmark",
+  "artifact_version": "1.0",
+  "catalog_commit": "6cedc0a98916f91d3437370a7a4d12219fdd25f0",
+  "evidence": {
+    "artifact_paths": [
+      "result.json",
+      "transcript.txt",
+      "dataset_snapshot.json",
+      "benchmarks/independent-runtime-readiness/batch-02/tasks.json"
+    ],
+    "citations_or_paths": [
+      "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+      "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest/SKILL.md",
+      "included/agent-ready/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest/SKILL.md",
+      "data/benchmark_scenarios.json",
+      "data/benchmark_tracks.json",
+      "data/skill_risk_audit.json",
+      "https://www.cs.cmu.edu/~enron/"
+    ]
+  },
+  "execution": {
+    "commands_or_transcript_path": "transcript.txt",
+    "fresh_session": true
+  },
+  "independence": {
+    "evaluator_defined_outside_skill": true,
+    "expected_result_defined_outside_skill": true,
+    "skill_content_usage": "skill text was read only as the object under test for package loadability, frontmatter, hash, and local-link checks; task and expected results came from benchmarks/independent-runtime-readiness/batch-02/tasks.json and this runner",
+    "task_defined_outside_skill": true,
+    "uses_exact_skill_content_for_expected_result": false
+  },
+  "input_snapshot": {
+    "dataset_track_id": "enron-email",
+    "dataset_url": "https://www.cs.cmu.edu/~enron/",
+    "identifier": "https://www.cs.cmu.edu/~enron/",
+    "is_real": true,
+    "kind": "real-url",
+    "mirrored_path": "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest",
+    "resolved_commit": null,
+    "track_subpath": null,
+    "track_subpath_present": null,
+    "tree_path_count": null
+  },
+  "metrics": {
+    "benchmark_verdict": "failed",
+    "blocking_failure_count": 1,
+    "checks_passed": 9,
+    "checks_total": 10,
+    "dataset_tree_path_count": 0,
+    "missing_local_link_count": 1,
+    "score_percent": 90.0
+  },
+  "objective_checks": [
+    "real_dataset_snapshot_resolved",
+    "assigned_non_provenance_scenario",
+    "independent_task_brief_present",
+    "mirror_skill_file_exists",
+    "agent_ready_entrypoint_exists",
+    "source_hash_matches_catalog",
+    "required_frontmatter_present",
+    "local_markdown_links_resolve",
+    "single_session_entrypoint_clean",
+    "generic_workflow_schema_recorded"
+  ],
+  "outputs": {
+    "path": "result.json",
+    "result_sha256": "d7bf92675a243ae1b305fbd143eb02f4776e1ffd0d8f4bf8d9b12c2daa1d5770",
+    "schema": "evaluators/generic_workflow_result.schema.json"
+  },
+  "runner": {
+    "batch_name": "2026-04-18-independent-runtime-readiness-batch-02",
+    "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+    "timestamp_utc": "2026-04-18T11:14:45Z",
+    "tool": "tools/create_independent_runtime_batch.py"
+  },
+  "scenario_id": "communication-productivity-and-support-enron-email",
+  "scenario_requirements": {
+    "context_memory": false,
+    "dataset_track_id": "enron-email",
+    "real_repository_workflow": true,
+    "token_efficiency_claim": false,
+    "visual_or_browser": false
+  },
+  "skill_id": "varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md",
+  "source_commit": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4",
+  "source_path": "packages/cli/skills/newsletter-digest/SKILL.md",
+  "source_repo": "Varnan-Tech/opendirectory"
+}

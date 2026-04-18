@@ -2,7 +2,7 @@
 
 Scenario definitions live in `data/benchmark_scenarios.json`; per-skill assignments live in `data/benchmark_assignments.json`.
 
-The current suite contains `673` source-grounded skill-proof scenarios and `45` category workflow templates. A scenario is only a template until a runner records artifacts under the rules in [Benchmark runner requirements](benchmark-runner-requirements.md). Current measured outputs are summarized in [Benchmark results](benchmark-results.md), with the first independent runtime-readiness batch in [Runtime benchmark batch 01](runtime-benchmark-batch-01.md).
+The current suite contains `673` source-grounded skill-proof scenarios and `45` category workflow templates. A scenario is only a template until a runner records artifacts under the rules in [Benchmark runner requirements](benchmark-runner-requirements.md). Current measured outputs are summarized in [Benchmark results](benchmark-results.md), with independent runtime-readiness batches in [Runtime benchmark batch 01](runtime-benchmark-batch-01.md) and [Runtime benchmark batch 02](runtime-benchmark-batch-02.md).
 
 ## Scoring Rules
 

@@ -25,6 +25,7 @@ def test_generated_counts_are_documented():
     assert "[Benchmark runner requirements](docs/benchmark-runner-requirements.md)" in readme
     assert "[Benchmark results](docs/benchmark-results.md)" in readme
     assert "[Runtime benchmark batch 01](docs/runtime-benchmark-batch-01.md)" in readme
+    assert "[Runtime benchmark batch 02](docs/runtime-benchmark-batch-02.md)" in readme
     assert "[Skill risk findings](docs/skill-risk-findings.md)" in readme
     assert "[Immutable audit model](docs/immutable-audit-model.md)" in readme
     assert "[Included skill mirrors](included/skills/README.md)" in readme
