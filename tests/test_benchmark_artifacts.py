@@ -5,6 +5,7 @@ from pathlib import Path
 from helpers import ROOT, complete_artifacts, load
 
 import check_benchmark_artifact
+import report_local_markdown_link_failures
 
 
 def assert_real_dataset_snapshot_resolved(snapshot):
@@ -113,6 +114,55 @@ def test_independent_runtime_batch_02_is_category_spread_and_non_overlapping():
         assert result["metrics"]["score_percent"] == item["score_percent"]
         assert result["outputs"]["blocking_failures"] == item["blocking_failures"]
         assert_real_dataset_snapshot_resolved(result["inputs"]["dataset_snapshot"])
+
+
+def test_independent_runtime_batch_03_is_next_non_overlapping_group():
+    batch_01 = load("artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/manifest.json")
+    batch_02 = load("artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/manifest.json")
+    batch_03 = load("artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/manifest.json")
+    tasks = load("benchmarks/independent-runtime-readiness/batch-03/tasks.json")
+    scenarios = {item["id"]: item for item in load("data/benchmark_scenarios.json")}
+    earlier_skill_ids = {item["skill_id"] for item in batch_01["artifacts"] + batch_02["artifacts"]}
+    batch_03_skill_ids = {item["skill_id"] for item in batch_03["artifacts"]}
+
+    assert batch_03["artifact_kind"] == "independent_benchmark"
+    assert batch_03["summary"]["artifact_count"] == 12
+    assert batch_03["summary"]["passed"] == 0
+    assert batch_03["summary"]["failed"] == 12
+    assert tasks["task_count"] == batch_03["summary"]["artifact_count"]
+    assert "category-spread" in tasks["selection_policy"]
+    assert "excluding skills already covered" in tasks["selection_policy"]
+    assert not (earlier_skill_ids & batch_03_skill_ids)
+
+    task_by_id = {task["task_id"]: task for task in tasks["tasks"]}
+    blocking_failures = set()
+    for item in batch_03["artifacts"]:
+        artifact = load(item["artifact_path"])
+        result = load(item["result_path"])
+        task = task_by_id[result["inputs"]["task_id"]]
+        assert artifact["artifact_kind"] == "independent_benchmark"
+        assert artifact["runner"]["batch_name"] == batch_03["batch_name"]
+        assert artifact["independence"]["uses_exact_skill_content_for_expected_result"] is False
+        assert artifact["scenario_id"] == item["scenario_id"]
+        assert scenarios[item["scenario_id"]]["dataset_track_id"] != "source-skill-repository"
+        assert task["skill_id"] == item["skill_id"]
+        assert result["inputs"]["risk_level"] == "likely_non_working"
+        assert result["metrics"]["benchmark_verdict"] == item["benchmark_verdict"]
+        assert result["metrics"]["score_percent"] == item["score_percent"]
+        assert result["outputs"]["blocking_failures"] == item["blocking_failures"]
+        blocking_failures.update(item["blocking_failures"])
+        assert_real_dataset_snapshot_resolved(result["inputs"]["dataset_snapshot"])
+    assert blocking_failures == {"local_markdown_links_resolve", "required_frontmatter_present"}
+
+
+def test_local_markdown_link_failure_report_is_current():
+    report_text = (ROOT / "docs" / "local-markdown-link-failures.md").read_text(encoding="utf-8")
+    expected_text = report_local_markdown_link_failures.render_report()
+    assert report_text == expected_text
+    assert "Runtime artifacts scanned: `34`" in report_text
+    assert "Runtime artifacts with local-link failures: `31`" in report_text
+    assert "Unique missing targets: `70`" in report_text
+    assert "`REPO_URL/blob/BRANCH/file`" in report_text
 
 
 def test_benchmark_artifact_checker_accepts_complete_artifact_and_rejects_incomplete_visual():
