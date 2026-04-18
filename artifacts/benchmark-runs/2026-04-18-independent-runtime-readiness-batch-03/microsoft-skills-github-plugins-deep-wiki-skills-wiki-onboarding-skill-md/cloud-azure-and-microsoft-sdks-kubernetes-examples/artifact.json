@@ -1,0 +1,89 @@
+{
+  "artifact_kind": "independent_benchmark",
+  "artifact_version": "1.0",
+  "catalog_commit": "db975e0469786b93f2b2c15c7a16d6eda232ca1b",
+  "evidence": {
+    "artifact_paths": [
+      "result.json",
+      "transcript.txt",
+      "dataset_snapshot.json",
+      "benchmarks/independent-runtime-readiness/batch-03/tasks.json"
+    ],
+    "citations_or_paths": [
+      "benchmarks/independent-runtime-readiness/batch-03/tasks.json",
+      "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-onboarding/SKILL.md",
+      "included/agent-ready/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-onboarding/SKILL.md",
+      "data/benchmark_scenarios.json",
+      "data/benchmark_tracks.json",
+      "data/skill_risk_audit.json",
+      "https://github.com/kubernetes/examples"
+    ]
+  },
+  "execution": {
+    "commands_or_transcript_path": "transcript.txt",
+    "fresh_session": true
+  },
+  "independence": {
+    "evaluator_defined_outside_skill": true,
+    "expected_result_defined_outside_skill": true,
+    "skill_content_usage": "skill text was read only as the object under test for package loadability, frontmatter, hash, and local-link checks; task and expected results came from benchmarks/independent-runtime-readiness/batch-03/tasks.json and this runner",
+    "task_defined_outside_skill": true,
+    "uses_exact_skill_content_for_expected_result": false
+  },
+  "input_snapshot": {
+    "dataset_track_id": "kubernetes-examples",
+    "dataset_url": "https://github.com/kubernetes/examples",
+    "identifier": "https://github.com/kubernetes/examples",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-onboarding",
+    "resolved_commit": "d6b8cd27eacb51e651a1aa6f7c190a28713eff6e",
+    "track_subpath": null,
+    "track_subpath_present": true,
+    "tree_path_count": 573
+  },
+  "metrics": {
+    "benchmark_verdict": "failed",
+    "blocking_failure_count": 1,
+    "checks_passed": 9,
+    "checks_total": 10,
+    "dataset_tree_path_count": 573,
+    "missing_local_link_count": 5,
+    "score_percent": 90.0
+  },
+  "objective_checks": [
+    "real_dataset_snapshot_resolved",
+    "assigned_non_provenance_scenario",
+    "independent_task_brief_present",
+    "mirror_skill_file_exists",
+    "agent_ready_entrypoint_exists",
+    "source_hash_matches_catalog",
+    "required_frontmatter_present",
+    "local_markdown_links_resolve",
+    "single_session_entrypoint_clean",
+    "generic_workflow_schema_recorded"
+  ],
+  "outputs": {
+    "path": "result.json",
+    "result_sha256": "2f07d11eab774e2a294fea8b6207c4f8ebd356a63b855eb5f01de2c2a93f97c5",
+    "schema": "evaluators/generic_workflow_result.schema.json"
+  },
+  "runner": {
+    "batch_name": "2026-04-18-independent-runtime-readiness-batch-03",
+    "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+    "timestamp_utc": "2026-04-18T18:43:20Z",
+    "tool": "tools/create_independent_runtime_batch.py"
+  },
+  "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+  "scenario_requirements": {
+    "context_memory": false,
+    "dataset_track_id": "kubernetes-examples",
+    "real_repository_workflow": true,
+    "token_efficiency_claim": false,
+    "visual_or_browser": false
+  },
+  "skill_id": "microsoft-skills-github-plugins-deep-wiki-skills-wiki-onboarding-skill-md",
+  "source_commit": "a2c05249c4a20103dd954ca702467aa328aac031",
+  "source_path": ".github/plugins/deep-wiki/skills/wiki-onboarding/SKILL.md",
+  "source_repo": "microsoft/skills"
+}

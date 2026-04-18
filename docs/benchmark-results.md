@@ -7,9 +7,9 @@ This page reports measured results only. Offline static checks were run against 
 - Skills checked: `673`
 - Static checks passed: `8076` / `8076`
 - Average static score: `100.0`
-- Runtime scenario artifacts recorded: `22`
+- Runtime scenario artifacts recorded: `34`
 - Runtime scenario artifacts passed: `0`
-- Runtime scenario artifacts failed: `22`
+- Runtime scenario artifacts failed: `34`
 - Source-proof provenance artifacts recorded: `10`
 
 ## Benchmark Tracks
@@ -17,7 +17,7 @@ This page reports measured results only. Offline static checks were run against 
 | Track | Assigned scenarios | Runtime artifacts |
 |---|---:|---:|
 | `source-skill-repository` | 673 | 0 |
-| `swe-bench-lite` | 57 | 3 |
+| `swe-bench-lite` | 57 | 5 |
 | `nyc-tlc-trip-records` | 32 | 0 |
 | `sec-edgar-companyfacts` | 251 | 0 |
 | `common-crawl-warc` | 24 | 1 |
@@ -26,11 +26,11 @@ This page reports measured results only. Offline static checks were run against 
 | `enron-email` | 71 | 1 |
 | `stackoverflow-survey` | 14 | 0 |
 | `ome-ngff-samples` | 194 | 0 |
-| `cellxgene-census` | 148 | 1 |
+| `cellxgene-census` | 148 | 2 |
 | `chembl` | 148 | 0 |
-| `owasp-benchmark` | 76 | 1 |
+| `owasp-benchmark` | 76 | 2 |
 | `owasp-juice-shop` | 85 | 0 |
-| `kubernetes-examples` | 305 | 14 |
+| `kubernetes-examples` | 305 | 22 |
 | `opentelemetry-demo` | 294 | 0 |
 | `coco-captions` | 58 | 1 |
 | `local-omero-compose-workflows` | 105 | 0 |
@@ -289,22 +289,22 @@ This page reports measured results only. Offline static checks were run against 
 | `microsoft-skills-github-plugins-deep-wiki-skills-wiki-architect-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 1 | 3 | none |
 | `microsoft-skills-github-plugins-deep-wiki-skills-wiki-changelog-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 1 | 3 | none |
 | `microsoft-skills-github-plugins-deep-wiki-skills-wiki-llms-txt-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 1 | 3 | none |
-| `microsoft-skills-github-plugins-deep-wiki-skills-wiki-onboarding-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
-| `microsoft-skills-github-plugins-deep-wiki-skills-wiki-page-writer-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
-| `microsoft-skills-github-plugins-deep-wiki-skills-wiki-qa-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
-| `microsoft-skills-github-plugins-deep-wiki-skills-wiki-researcher-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
+| `microsoft-skills-github-plugins-deep-wiki-skills-wiki-onboarding-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 1 | 3 | none |
+| `microsoft-skills-github-plugins-deep-wiki-skills-wiki-page-writer-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 1 | 3 | none |
+| `microsoft-skills-github-plugins-deep-wiki-skills-wiki-qa-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 1 | 3 | none |
+| `microsoft-skills-github-plugins-deep-wiki-skills-wiki-researcher-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 1 | 3 | none |
 | `microsoft-skills-github-plugins-deep-wiki-skills-wiki-vitepress-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `microsoft-skills-github-skills-cloud-solution-architect-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `microsoft-skills-github-skills-continual-learning-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `microsoft-skills-github-skills-copilot-sdk-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 4 | none |
 | `microsoft-skills-github-skills-entra-agent-id-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `microsoft-skills-github-skills-frontend-design-review-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
-| `microsoft-skills-github-skills-github-issue-creator-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
+| `microsoft-skills-github-skills-github-issue-creator-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 1 | 3 | none |
 | `microsoft-skills-github-skills-kql-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `microsoft-skills-github-skills-mcp-builder-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `microsoft-skills-github-skills-microsoft-docs-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `microsoft-skills-github-skills-podcast-generation-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
-| `microsoft-skills-github-skills-skill-creator-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 4 | none |
+| `microsoft-skills-github-skills-skill-creator-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 1 | 4 | none |
 | `trailofbits-skills-plugins-building-secure-contracts-skills-cosmos-vulnerability-scanner-skill-md` | Cloud, Azure & Microsoft SDKs | 12/12 | 100.0 | 0 | 3 | none |
 | `varnan-tech-opendirectory-packages-cli-skills-claude-md-generator-skill-md` | Coding, refactoring & repository automation | 12/12 | 100.0 | 0 | 3 | none |
 | `varnan-tech-opendirectory-packages-cli-skills-explain-this-pr-skill-md` | Coding, refactoring & repository automation | 12/12 | 100.0 | 0 | 3 | none |
@@ -327,7 +327,7 @@ This page reports measured results only. Offline static checks were run against 
 | `trailofbits-skills-plugins-dimensional-analysis-skills-dimensional-analysis-skill-md` | Coding, refactoring & repository automation | 12/12 | 100.0 | 1 | 3 | none |
 | `trailofbits-skills-plugins-dwarf-expert-skills-dwarf-expert-skill-md` | Coding, refactoring & repository automation | 12/12 | 100.0 | 0 | 3 | none |
 | `trailofbits-skills-plugins-git-cleanup-skills-git-cleanup-skill-md` | Coding, refactoring & repository automation | 12/12 | 100.0 | 0 | 3 | none |
-| `trailofbits-skills-plugins-let-fate-decide-skills-let-fate-decide-skill-md` | Coding, refactoring & repository automation | 12/12 | 100.0 | 0 | 3 | none |
+| `trailofbits-skills-plugins-let-fate-decide-skills-let-fate-decide-skill-md` | Coding, refactoring & repository automation | 12/12 | 100.0 | 1 | 3 | none |
 | `trailofbits-skills-plugins-testing-handbook-skills-skills-address-sanitizer-skill-md` | Coding, refactoring & repository automation | 12/12 | 100.0 | 0 | 3 | none |
 | `trailofbits-skills-plugins-testing-handbook-skills-skills-aflpp-skill-md` | Coding, refactoring & repository automation | 12/12 | 100.0 | 0 | 4 | none |
 | `trailofbits-skills-plugins-testing-handbook-skills-skills-constant-time-testing-skill-md` | Coding, refactoring & repository automation | 12/12 | 100.0 | 0 | 4 | none |
@@ -445,7 +445,7 @@ This page reports measured results only. Offline static checks were run against 
 | `akin-ozer-cc-devops-skills-devops-skills-plugin-skills-jenkinsfile-generator-skill-md` | DevOps, cloud & operations | 12/12 | 100.0 | 0 | 3 | none |
 | `akin-ozer-cc-devops-skills-devops-skills-plugin-skills-k8s-debug-skill-md` | DevOps, cloud & operations | 12/12 | 100.0 | 0 | 3 | none |
 | `akin-ozer-cc-devops-skills-devops-skills-plugin-skills-logql-generator-skill-md` | DevOps, cloud & operations | 12/12 | 100.0 | 0 | 3 | none |
-| `akin-ozer-cc-devops-skills-devops-skills-plugin-skills-promql-generator-skill-md` | DevOps, cloud & operations | 12/12 | 100.0 | 0 | 5 | none |
+| `akin-ozer-cc-devops-skills-devops-skills-plugin-skills-promql-generator-skill-md` | DevOps, cloud & operations | 12/12 | 100.0 | 1 | 5 | none |
 | `akin-ozer-cc-devops-skills-devops-skills-plugin-skills-terraform-generator-skill-md` | DevOps, cloud & operations | 12/12 | 100.0 | 0 | 4 | none |
 | `akin-ozer-cc-devops-skills-devops-skills-plugin-skills-terragrunt-generator-skill-md` | DevOps, cloud & operations | 12/12 | 100.0 | 0 | 5 | none |
 | `anthropics-skills-skills-doc-coauthoring-skill-md` | DevOps, cloud & operations | 12/12 | 100.0 | 0 | 4 | none |
@@ -462,7 +462,7 @@ This page reports measured results only. Offline static checks were run against 
 | `composio-community-support-skills-refund-processor-skill-md` | DevOps, cloud & operations | 12/12 | 100.0 | 0 | 4 | none |
 | `trailofbits-skills-plugins-culture-index-skills-interpreting-culture-index-skill-md` | DevOps, cloud & operations | 12/12 | 100.0 | 0 | 3 | none |
 | `trailofbits-skills-plugins-workflow-skill-design-skills-designing-workflow-skills-skill-md` | DevOps, cloud & operations | 12/12 | 100.0 | 0 | 4 | none |
-| `twwch-comfyui-workflow-skill-skill-md` | DevOps, cloud & operations | 12/12 | 100.0 | 0 | 4 | none |
+| `twwch-comfyui-workflow-skill-skill-md` | DevOps, cloud & operations | 12/12 | 100.0 | 1 | 4 | none |
 | `ztj7728-gemini-image-generation-skill-md` | DevOps, cloud & operations | 12/12 | 100.0 | 0 | 3 | none |
 | `varnan-tech-opendirectory-packages-cli-skills-docs-from-code-skill-md` | Documents, spreadsheets & presentations | 12/12 | 100.0 | 0 | 3 | none |
 | `affaan-m-everything-claude-code-agents-skills-frontend-slides-skill-md` | Documents, spreadsheets & presentations | 12/12 | 100.0 | 0 | 2 | none |
@@ -559,7 +559,7 @@ This page reports measured results only. Offline static checks were run against 
 | `k-dense-ai-scientific-agent-skills-scientific-skills-opentrons-integration-skill-md` | Science, research & data analysis | 12/12 | 100.0 | 0 | 4 | none |
 | `k-dense-ai-scientific-agent-skills-scientific-skills-paper-lookup-skill-md` | Science, research & data analysis | 12/12 | 100.0 | 0 | 4 | none |
 | `k-dense-ai-scientific-agent-skills-scientific-skills-paperzilla-skill-md` | Science, research & data analysis | 12/12 | 100.0 | 0 | 4 | none |
-| `k-dense-ai-scientific-agent-skills-scientific-skills-parallel-web-skill-md` | Science, research & data analysis | 12/12 | 100.0 | 0 | 4 | none |
+| `k-dense-ai-scientific-agent-skills-scientific-skills-parallel-web-skill-md` | Science, research & data analysis | 12/12 | 100.0 | 1 | 4 | none |
 | `k-dense-ai-scientific-agent-skills-scientific-skills-pathml-skill-md` | Science, research & data analysis | 12/12 | 100.0 | 0 | 4 | none |
 | `k-dense-ai-scientific-agent-skills-scientific-skills-pdf-skill-md` | Science, research & data analysis | 12/12 | 100.0 | 0 | 3 | none |
 | `k-dense-ai-scientific-agent-skills-scientific-skills-peer-review-skill-md` | Science, research & data analysis | 12/12 | 100.0 | 0 | 4 | none |
@@ -672,7 +672,7 @@ This page reports measured results only. Offline static checks were run against 
 | `trailofbits-skills-plugins-burpsuite-project-parser-skills-burpsuite-project-parser-skill-md` | Security, compliance & risk | 12/12 | 100.0 | 0 | 3 | none |
 | `trailofbits-skills-plugins-constant-time-analysis-skills-constant-time-analysis-skill-md` | Security, compliance & risk | 12/12 | 100.0 | 0 | 4 | none |
 | `trailofbits-skills-plugins-differential-review-skills-differential-review-skill-md` | Security, compliance & risk | 12/12 | 100.0 | 0 | 4 | none |
-| `trailofbits-skills-plugins-entry-point-analyzer-skills-entry-point-analyzer-skill-md` | Security, compliance & risk | 12/12 | 100.0 | 0 | 4 | none |
+| `trailofbits-skills-plugins-entry-point-analyzer-skills-entry-point-analyzer-skill-md` | Security, compliance & risk | 12/12 | 100.0 | 1 | 4 | none |
 | `trailofbits-skills-plugins-fp-check-skills-fp-check-skill-md` | Security, compliance & risk | 12/12 | 100.0 | 0 | 4 | none |
 | `trailofbits-skills-plugins-insecure-defaults-skills-insecure-defaults-skill-md` | Security, compliance & risk | 12/12 | 100.0 | 0 | 4 | none |
 | `trailofbits-skills-plugins-seatbelt-sandboxer-skills-seatbelt-sandboxer-skill-md` | Security, compliance & risk | 12/12 | 100.0 | 0 | 4 | none |
@@ -705,7 +705,7 @@ This page reports measured results only. Offline static checks were run against 
 | `lackeyjb-playwright-skill-skills-playwright-skill-skill-md` | Testing, QA & benchmarking | 12/12 | 100.0 | 1 | 4 | none |
 | `trailofbits-skills-plugins-debug-buttercup-skills-debug-buttercup-skill-md` | Testing, QA & benchmarking | 12/12 | 100.0 | 0 | 3 | none |
 | `trailofbits-skills-plugins-mutation-testing-skills-mutation-testing-skill-md` | Testing, QA & benchmarking | 12/12 | 100.0 | 0 | 4 | none |
-| `trailofbits-skills-plugins-property-based-testing-skills-property-based-testing-skill-md` | Testing, QA & benchmarking | 12/12 | 100.0 | 0 | 4 | none |
+| `trailofbits-skills-plugins-property-based-testing-skills-property-based-testing-skill-md` | Testing, QA & benchmarking | 12/12 | 100.0 | 1 | 4 | none |
 | `trailofbits-skills-plugins-testing-handbook-skills-skills-atheris-skill-md` | Testing, QA & benchmarking | 12/12 | 100.0 | 0 | 5 | none |
 | `trailofbits-skills-plugins-testing-handbook-skills-skills-coverage-analysis-skill-md` | Testing, QA & benchmarking | 12/12 | 100.0 | 0 | 5 | none |
 | `trailofbits-skills-plugins-testing-handbook-skills-skills-libfuzzer-skill-md` | Testing, QA & benchmarking | 12/12 | 100.0 | 0 | 5 | none |
@@ -740,6 +740,18 @@ This page reports measured results only. Offline static checks were run against 
 | `artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/trailofbits-skills-plugins-dimensional-analysis-skills-dimensional-analysis-skill-md/coding-refactoring-and-repository-automation-swe-bench-lite/artifact.json` | `trailofbits-skills-plugins-dimensional-analysis-skills-dimensional-analysis-skill-md` | `coding-refactoring-and-repository-automation-swe-bench-lite` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
 | `artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md/communication-productivity-and-support-enron-email/artifact.json` | `varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md` | `communication-productivity-and-support-enron-email` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
 | `artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/varnan-tech-opendirectory-packages-cli-skills-reddit-icp-monitor-skill-md/devops-cloud-and-operations-kubernetes-examples/artifact.json` | `varnan-tech-opendirectory-packages-cli-skills-reddit-icp-monitor-skill-md` | `devops-cloud-and-operations-kubernetes-examples` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
+| `artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/akin-ozer-cc-devops-skills-devops-skills-plugin-skills-promql-generator-skill-md/devops-cloud-and-operations-kubernetes-examples/artifact.json` | `akin-ozer-cc-devops-skills-devops-skills-plugin-skills-promql-generator-skill-md` | `devops-cloud-and-operations-kubernetes-examples` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
+| `artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/k-dense-ai-scientific-agent-skills-scientific-skills-parallel-web-skill-md/science-research-and-data-analysis-cellxgene-census/artifact.json` | `k-dense-ai-scientific-agent-skills-scientific-skills-parallel-web-skill-md` | `science-research-and-data-analysis-cellxgene-census` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
+| `artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/microsoft-skills-github-plugins-deep-wiki-skills-wiki-onboarding-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json` | `microsoft-skills-github-plugins-deep-wiki-skills-wiki-onboarding-skill-md` | `cloud-azure-and-microsoft-sdks-kubernetes-examples` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
+| `artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/microsoft-skills-github-plugins-deep-wiki-skills-wiki-page-writer-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json` | `microsoft-skills-github-plugins-deep-wiki-skills-wiki-page-writer-skill-md` | `cloud-azure-and-microsoft-sdks-kubernetes-examples` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
+| `artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/microsoft-skills-github-plugins-deep-wiki-skills-wiki-qa-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json` | `microsoft-skills-github-plugins-deep-wiki-skills-wiki-qa-skill-md` | `cloud-azure-and-microsoft-sdks-kubernetes-examples` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
+| `artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/microsoft-skills-github-plugins-deep-wiki-skills-wiki-researcher-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json` | `microsoft-skills-github-plugins-deep-wiki-skills-wiki-researcher-skill-md` | `cloud-azure-and-microsoft-sdks-kubernetes-examples` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
+| `artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/microsoft-skills-github-skills-github-issue-creator-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json` | `microsoft-skills-github-skills-github-issue-creator-skill-md` | `cloud-azure-and-microsoft-sdks-kubernetes-examples` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
+| `artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/microsoft-skills-github-skills-skill-creator-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json` | `microsoft-skills-github-skills-skill-creator-skill-md` | `cloud-azure-and-microsoft-sdks-kubernetes-examples` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
+| `artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/trailofbits-skills-plugins-entry-point-analyzer-skills-entry-point-analyzer-skill-md/security-compliance-and-risk-owasp-benchmark/artifact.json` | `trailofbits-skills-plugins-entry-point-analyzer-skills-entry-point-analyzer-skill-md` | `security-compliance-and-risk-owasp-benchmark` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
+| `artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/trailofbits-skills-plugins-let-fate-decide-skills-let-fate-decide-skill-md/coding-refactoring-and-repository-automation-swe-bench-lite/artifact.json` | `trailofbits-skills-plugins-let-fate-decide-skills-let-fate-decide-skill-md` | `coding-refactoring-and-repository-automation-swe-bench-lite` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
+| `artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/trailofbits-skills-plugins-property-based-testing-skills-property-based-testing-skill-md/testing-qa-and-benchmarking-swe-bench-lite/artifact.json` | `trailofbits-skills-plugins-property-based-testing-skills-property-based-testing-skill-md` | `testing-qa-and-benchmarking-swe-bench-lite` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
+| `artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/twwch-comfyui-workflow-skill-skill-md/devops-cloud-and-operations-kubernetes-examples/artifact.json` | `twwch-comfyui-workflow-skill-skill-md` | `devops-cloud-and-operations-kubernetes-examples` | `failed` | 90.0 | tools/create_independent_runtime_batch.py |
 
 ## Source-Proof Provenance Artifacts
 
