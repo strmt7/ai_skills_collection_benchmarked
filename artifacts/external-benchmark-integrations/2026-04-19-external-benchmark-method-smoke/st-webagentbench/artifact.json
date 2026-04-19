@@ -1,0 +1,152 @@
+{
+  "artifact_kind": "external_benchmark_method_smoke",
+  "artifact_version": "1.0",
+  "checks": [
+    {
+      "evidence": "data/external_benchmark_methods.json",
+      "name": "adapter_spec_complete",
+      "passed": true
+    },
+    {
+      "evidence": "https://github.com/segev-shlomov/ST-WebAgentBench",
+      "name": "repository_head_resolves",
+      "passed": true
+    },
+    {
+      "evidence": 111,
+      "name": "repo_tree_sampled",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "task success",
+        "safety violation rate",
+        "trustworthiness score",
+        "modality challenge score"
+      ],
+      "name": "declares_objective_metrics",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "web task instance",
+        "browser trace",
+        "safety policy",
+        "evaluator result"
+      ],
+      "name": "declares_integration_requirements",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "Security, compliance & risk",
+        "Frontend, UI & browser automation"
+      ],
+      "name": "declares_category_fit",
+      "passed": true
+    },
+    {
+      "evidence": "repository root",
+      "name": "required_subpath_resolves",
+      "passed": true
+    }
+  ],
+  "evidence": {
+    "citations_or_paths": [
+      "https://github.com/segev-shlomov/ST-WebAgentBench",
+      "https://github.com/segev-shlomov/ST-WebAgentBench",
+      "data/external_benchmark_methods.json"
+    ]
+  },
+  "execution": {
+    "commands": [
+      {
+        "command": [
+          "git",
+          "ls-remote",
+          "https://github.com/segev-shlomov/ST-WebAgentBench",
+          "HEAD"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "67f56dd7df9eca1646c9e49407b087e950aa1e77\tHEAD"
+      }
+    ],
+    "fresh_session": true
+  },
+  "input_snapshot": {
+    "head_sha": "67f56dd7df9eca1646c9e49407b087e950aa1e77",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "repo_subpath": null,
+    "repo_subpath_present": true,
+    "repo_url": "https://github.com/segev-shlomov/ST-WebAgentBench",
+    "sampled_paths": [
+      ".env.example",
+      ".gitattributes",
+      ".github/workflows/keep-space-alive.yml",
+      ".gitignore",
+      "LICENSE",
+      "Makefile",
+      "README.md",
+      "assets/figures/logo.png",
+      "assets/figures/policy_dimensions.png",
+      "browsergym/stwebagentbench/README.md",
+      "browsergym/stwebagentbench/pyproject.toml",
+      "browsergym/stwebagentbench/requirements.txt",
+      "browsergym/stwebagentbench/src/browsergym/stwebagentbench/__init__.py",
+      "browsergym/stwebagentbench/src/browsergym/stwebagentbench/config.py",
+      "browsergym/stwebagentbench/src/browsergym/stwebagentbench/instance.py",
+      "browsergym/stwebagentbench/src/browsergym/stwebagentbench/task.py",
+      "browsergym/stwebagentbench/src/browsergym/stwebagentbench/test_data.json",
+      "croissant.json",
+      "examples/README.md",
+      "examples/output/STBenchDemo_agent_full_res.csv"
+    ],
+    "source_url": "https://github.com/segev-shlomov/ST-WebAgentBench",
+    "tree_error": "",
+    "tree_path_count": 111
+  },
+  "method": {
+    "adapter_stage": "implemented-smoke-adapter",
+    "category_fit": [
+      "Security, compliance & risk",
+      "Frontend, UI & browser automation"
+    ],
+    "id": "st-webagentbench",
+    "integration_requirements": [
+      "web task instance",
+      "browser trace",
+      "safety policy",
+      "evaluator result"
+    ],
+    "primary_metrics": [
+      "task success",
+      "safety violation rate",
+      "trustworthiness score",
+      "modality challenge score"
+    ],
+    "repo_url": "https://github.com/segev-shlomov/ST-WebAgentBench",
+    "scope": "Evaluates safety and trustworthiness for enterprise-oriented web agents.",
+    "source_url": "https://github.com/segev-shlomov/ST-WebAgentBench",
+    "title": "ST-WebAgentBench"
+  },
+  "method_id": "st-webagentbench",
+  "method_title": "ST-WebAgentBench",
+  "metrics": {
+    "blocking_failures": [],
+    "checks_passed": 7,
+    "checks_total": 7,
+    "integration_status": "adapter_ready",
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "schema": "evaluators/external_benchmark_method_smoke.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-integration-smoke",
+    "run_name": "2026-04-19-external-benchmark-method-smoke",
+    "timestamp_utc": "2026-04-19T12:43:21Z",
+    "tool": "tools/evaluate_external_benchmark_methods.py"
+  }
+}

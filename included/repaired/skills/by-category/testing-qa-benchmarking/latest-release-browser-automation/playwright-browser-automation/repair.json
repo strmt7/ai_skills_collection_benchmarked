@@ -1,0 +1,17 @@
+{
+  "actions": [
+    {
+      "label": "API_REFERENCE.md",
+      "target": "API_REFERENCE.md",
+      "type": "replaced-missing-markdown-link"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-browser-automation",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/lackeyjb-playwright-skill-skills-playwright-skill-skill-md/testing-qa-and-benchmarking-swe-bench-lite/artifact.json",
+  "original_skill_file_sha256": "7e0d1a74af4fdfcd30254feb1dee9455deffccc7270ba1f9137f0102431bde1a",
+  "original_skill_text_sha256": "7e0d1a74af4fdfcd30254feb1dee9455deffccc7270ba1f9137f0102431bde1a",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-browser-automation",
+  "repaired_skill_file_sha256": "bbf1e3602495e4c483fc17764113e578aea8bc2996401c7e28627965422e0ec3",
+  "skill_id": "lackeyjb-playwright-skill-skills-playwright-skill-skill-md"
+}

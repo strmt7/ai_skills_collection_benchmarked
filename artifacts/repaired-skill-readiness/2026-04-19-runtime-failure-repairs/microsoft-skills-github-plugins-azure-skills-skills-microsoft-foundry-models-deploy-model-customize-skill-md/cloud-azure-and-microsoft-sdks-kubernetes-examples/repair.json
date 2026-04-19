@@ -1,0 +1,25 @@
+{
+  "actions": [
+    {
+      "label": "quota",
+      "target": "../../../quota/quota.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "target": "references/customize-workflow.md",
+      "type": "copied-linked-local-target"
+    },
+    {
+      "target": "references/customize-guides.md",
+      "type": "copied-linked-local-target"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/customize",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-customize-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+  "original_skill_file_sha256": "6fd983a485307bffa00c52f91fdda3e68528cb5e9d4aaa8313e35531b362cc6d",
+  "original_skill_text_sha256": "6fd983a485307bffa00c52f91fdda3e68528cb5e9d4aaa8313e35531b362cc6d",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/customize",
+  "repaired_skill_file_sha256": "55c1a7cc948befe8787717877a95c6d1ff33f97deb4372aef2930cc51892c8a2",
+  "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-customize-skill-md"
+}

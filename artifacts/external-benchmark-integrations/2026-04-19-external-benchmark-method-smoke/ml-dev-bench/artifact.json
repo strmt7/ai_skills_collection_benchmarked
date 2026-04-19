@@ -1,0 +1,152 @@
+{
+  "artifact_kind": "external_benchmark_method_smoke",
+  "artifact_version": "1.0",
+  "checks": [
+    {
+      "evidence": "data/external_benchmark_methods.json",
+      "name": "adapter_spec_complete",
+      "passed": true
+    },
+    {
+      "evidence": "https://github.com/ml-dev-bench/ml-dev-bench",
+      "name": "repository_head_resolves",
+      "passed": true
+    },
+    {
+      "evidence": 374,
+      "name": "repo_tree_sampled",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "task success",
+        "model score",
+        "debugging correctness",
+        "implementation correctness"
+      ],
+      "name": "declares_objective_metrics",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "task repository",
+        "agent patch or outputs",
+        "training/evaluation logs",
+        "scoring script"
+      ],
+      "name": "declares_integration_requirements",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "Science, research & data analysis",
+        "Data, analytics & visualization"
+      ],
+      "name": "declares_category_fit",
+      "passed": true
+    },
+    {
+      "evidence": "repository root",
+      "name": "required_subpath_resolves",
+      "passed": true
+    }
+  ],
+  "evidence": {
+    "citations_or_paths": [
+      "https://github.com/ml-dev-bench/ml-dev-bench",
+      "https://github.com/ml-dev-bench/ml-dev-bench",
+      "data/external_benchmark_methods.json"
+    ]
+  },
+  "execution": {
+    "commands": [
+      {
+        "command": [
+          "git",
+          "ls-remote",
+          "https://github.com/ml-dev-bench/ml-dev-bench",
+          "HEAD"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "c2bd0c239f960368b11b2fd83d76f2ccfb69b7c4\tHEAD"
+      }
+    ],
+    "fresh_session": true
+  },
+  "input_snapshot": {
+    "head_sha": "c2bd0c239f960368b11b2fd83d76f2ccfb69b7c4",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "repo_subpath": null,
+    "repo_subpath_present": true,
+    "repo_url": "https://github.com/ml-dev-bench/ml-dev-bench",
+    "sampled_paths": [
+      ".env.runtime.template",
+      ".github/ISSUE_TEMPLATE/new_evaluation_task.yml",
+      ".github/PULL_REQUEST_TEMPLATE/new_evaluation_task.md",
+      ".github/workflows/openhands-resolver.yml",
+      ".github/workflows/pytest.yml",
+      ".gitignore",
+      "LICENSE",
+      "Makefile",
+      "README.md",
+      "agents/__init__.py",
+      "agents/aide_ml_agent/Dockerfile",
+      "agents/aide_ml_agent/__init__.py",
+      "agents/aide_ml_agent/aide_with_solution_helper.py",
+      "agents/aide_ml_agent/solution_helper.py",
+      "agents/codex_agent/__init__.py",
+      "agents/codex_agent/agent.py",
+      "agents/openhands_agent/Dockerfile",
+      "agents/openhands_agent/README.md",
+      "agents/openhands_agent/__init__.py",
+      "agents/openhands_agent/agent.py"
+    ],
+    "source_url": "https://github.com/ml-dev-bench/ml-dev-bench",
+    "tree_error": "",
+    "tree_path_count": 374
+  },
+  "method": {
+    "adapter_stage": "implemented-smoke-adapter",
+    "category_fit": [
+      "Science, research & data analysis",
+      "Data, analytics & visualization"
+    ],
+    "id": "ml-dev-bench",
+    "integration_requirements": [
+      "task repository",
+      "agent patch or outputs",
+      "training/evaluation logs",
+      "scoring script"
+    ],
+    "primary_metrics": [
+      "task success",
+      "model score",
+      "debugging correctness",
+      "implementation correctness"
+    ],
+    "repo_url": "https://github.com/ml-dev-bench/ml-dev-bench",
+    "scope": "Evaluates real-world ML development tasks such as dataset handling, debugging, training, and implementation.",
+    "source_url": "https://github.com/ml-dev-bench/ml-dev-bench",
+    "title": "ML-Dev-Bench"
+  },
+  "method_id": "ml-dev-bench",
+  "method_title": "ML-Dev-Bench",
+  "metrics": {
+    "blocking_failures": [],
+    "checks_passed": 7,
+    "checks_total": 7,
+    "integration_status": "adapter_ready",
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "schema": "evaluators/external_benchmark_method_smoke.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-integration-smoke",
+    "run_name": "2026-04-19-external-benchmark-method-smoke",
+    "timestamp_utc": "2026-04-19T12:43:21Z",
+    "tool": "tools/evaluate_external_benchmark_methods.py"
+  }
+}

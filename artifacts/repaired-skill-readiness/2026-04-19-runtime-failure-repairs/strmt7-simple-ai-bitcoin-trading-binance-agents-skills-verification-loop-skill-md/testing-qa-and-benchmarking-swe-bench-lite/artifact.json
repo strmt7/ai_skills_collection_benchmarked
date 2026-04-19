@@ -1,0 +1,84 @@
+{
+  "artifact_kind": "repaired_skill_readiness",
+  "artifact_version": "1.0",
+  "catalog_commit": "6e52c185bf83687bbf6e93d19e34fba297a0da00",
+  "evidence": {
+    "artifact_paths": [
+      "result.json",
+      "transcript.txt",
+      "repair.json"
+    ],
+    "citations_or_paths": [
+      "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md/testing-qa-and-benchmarking-swe-bench-lite/artifact.json",
+      "included/skills/by-category/testing-qa-benchmarking/selected-project-reference/verification-loop-simple-ai-bitcoin-trading-binance/SKILL.md",
+      "included/repaired/skills/by-category/testing-qa-benchmarking/selected-project-reference/verification-loop-simple-ai-bitcoin-trading-binance/SKILL.md",
+      "included/repaired/skills/by-category/testing-qa-benchmarking/selected-project-reference/verification-loop-simple-ai-bitcoin-trading-binance/provenance/original.SKILL.md",
+      "benchmarks/independent-runtime-readiness/batch-01/tasks.json",
+      "data/benchmark_scenarios.json",
+      "data/benchmark_tracks.json"
+    ]
+  },
+  "execution": {
+    "commands_or_transcript_path": "transcript.txt",
+    "fresh_session": true
+  },
+  "independence": {
+    "evaluator_defined_outside_skill": true,
+    "expected_result_defined_outside_skill": true,
+    "skill_content_usage": "skill text was the object under repair-readiness checks; task and expected checks were defined by the runner and original benchmark fixture",
+    "task_defined_outside_skill": true,
+    "uses_exact_skill_content_for_expected_result": false
+  },
+  "input_snapshot": {
+    "identifier": "https://github.com/SWE-bench/SWE-bench",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "original_mirrored_path": "included/skills/by-category/testing-qa-benchmarking/selected-project-reference/verification-loop-simple-ai-bitcoin-trading-binance",
+    "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md/testing-qa-and-benchmarking-swe-bench-lite/artifact.json",
+    "original_skill_file_sha256": "a5de5ed9f0088375c9237c86451a54bcf151571fb6bd314efdf6713198ab99cf",
+    "repaired_path": "included/repaired/skills/by-category/testing-qa-benchmarking/selected-project-reference/verification-loop-simple-ai-bitcoin-trading-binance",
+    "repaired_skill_file_sha256": "11359b0f9f89929474076cea28ef2645283430ce32c8d6539f5804c5206d0da5"
+  },
+  "metrics": {
+    "benchmark_verdict": "passed",
+    "blocking_failure_count": 0,
+    "checks_passed": 9,
+    "checks_total": 9,
+    "original_blocking_failures": [
+      "required_frontmatter_present"
+    ],
+    "original_score_percent": 90.0,
+    "repair_action_count": 1,
+    "repaired_missing_local_link_count": 0,
+    "score_percent": 100.0
+  },
+  "objective_checks": [
+    "real_dataset_snapshot_resolved",
+    "original_mirror_unchanged",
+    "repaired_skill_file_exists",
+    "source_text_preserved",
+    "required_frontmatter_present_after_repair",
+    "local_markdown_links_resolve_after_repair",
+    "same_independent_task_fixture",
+    "same_non_provenance_scenario",
+    "repair_actions_recorded"
+  ],
+  "outputs": {
+    "path": "result.json",
+    "repair_record_path": "repair.json",
+    "repair_sha256": "0565d5c4028f55decf5febf5b1d08756f8bb9c915a4348fb2231e6b084d68e0c",
+    "result_sha256": "0deed9fdfaeb6848f673b8b144b0673563bf02519e186145cef869848f2f2906",
+    "schema": "evaluators/repaired_skill_readiness.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-repair-readiness-runner",
+    "run_name": "2026-04-19-runtime-failure-repairs",
+    "timestamp_utc": "2026-04-19T12:42:40Z",
+    "tool": "tools/create_repaired_skill_overlays.py"
+  },
+  "scenario_id": "testing-qa-and-benchmarking-swe-bench-lite",
+  "skill_id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md",
+  "source_commit": "451d77df90621e3b666581d9835d246fb7147349",
+  "source_path": ".agents/skills/verification-loop/SKILL.md",
+  "source_repo": "strmt7/simple_ai_bitcoin_trading_binance"
+}

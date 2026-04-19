@@ -1,0 +1,118 @@
+{
+  "citations_or_paths": [
+    "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md/communication-productivity-and-support-enron-email/artifact.json",
+    "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest/SKILL.md",
+    "included/repaired/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest/SKILL.md",
+    "included/repaired/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest/provenance/original.SKILL.md",
+    "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+    "data/benchmark_scenarios.json",
+    "data/benchmark_tracks.json"
+  ],
+  "inputs": {
+    "dataset_snapshot": {
+      "kind": "real-url",
+      "resolved": true,
+      "status": 200,
+      "url": "https://www.cs.cmu.edu/~enron/"
+    },
+    "dataset_track_id": "enron-email",
+    "original_mirrored_path": "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest",
+    "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md/communication-productivity-and-support-enron-email/artifact.json",
+    "repaired_path": "included/repaired/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest",
+    "scenario_id": "communication-productivity-and-support-enron-email",
+    "skill_id": "varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md",
+    "skill_name": "newsletter-digest",
+    "task_brief_path": "benchmarks/independent-runtime-readiness/batch-02/tasks.json"
+  },
+  "metrics": {
+    "benchmark_verdict": "passed",
+    "blocking_failure_count": 0,
+    "checks_passed": 9,
+    "checks_total": 9,
+    "original_blocking_failures": [
+      "local_markdown_links_resolve"
+    ],
+    "original_score_percent": 90.0,
+    "repair_action_count": 1,
+    "repaired_missing_local_link_count": 0,
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "benchmark_verdict": "passed",
+    "blocking_failures": [],
+    "checks": [
+      {
+        "evidence": "https://www.cs.cmu.edu/~enron/",
+        "name": "real_dataset_snapshot_resolved",
+        "passed": true
+      },
+      {
+        "evidence": "1964a22798f3b34e06f37b158d64d7bd33c4c6ce6cb28677c37817663bb5bcde",
+        "name": "original_mirror_unchanged",
+        "passed": true
+      },
+      {
+        "evidence": "included/repaired/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest/SKILL.md",
+        "name": "repaired_skill_file_exists",
+        "passed": true
+      },
+      {
+        "evidence": "provenance/original.SKILL.md",
+        "name": "source_text_preserved",
+        "passed": true
+      },
+      {
+        "evidence": [
+          "author",
+          "compatibility",
+          "description",
+          "name",
+          "version"
+        ],
+        "name": "required_frontmatter_present_after_repair",
+        "passed": true
+      },
+      {
+        "evidence": [],
+        "name": "local_markdown_links_resolve_after_repair",
+        "passed": true
+      },
+      {
+        "evidence": "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+        "name": "same_independent_task_fixture",
+        "passed": true
+      },
+      {
+        "evidence": "communication-productivity-and-support-enron-email",
+        "name": "same_non_provenance_scenario",
+        "passed": true
+      },
+      {
+        "evidence": [
+          {
+            "label": "Source: Name",
+            "target": "URL",
+            "type": "replaced-missing-markdown-link"
+          }
+        ],
+        "name": "repair_actions_recorded",
+        "passed": true
+      }
+    ],
+    "repair_actions": [
+      {
+        "label": "Source: Name",
+        "target": "URL",
+        "type": "replaced-missing-markdown-link"
+      }
+    ],
+    "score_percent": 100.0
+  },
+  "steps": [
+    "Copied the immutable mirrored skill into a separate repaired overlay.",
+    "Preserved the original SKILL.md text under provenance/original.SKILL.md.",
+    "Added required frontmatter only when missing or incomplete.",
+    "Replaced unresolved local Markdown links in the repaired SKILL.md with explicit unavailable-target text.",
+    "Ran the same readiness checks against the repaired overlay without changing the original mirror."
+  ]
+}

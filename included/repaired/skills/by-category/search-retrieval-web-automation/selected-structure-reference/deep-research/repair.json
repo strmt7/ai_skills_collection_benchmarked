@@ -1,0 +1,27 @@
+{
+  "actions": [
+    {
+      "label": "Source Name",
+      "target": "url",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "Source Name",
+      "target": "url",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "Title",
+      "target": "url",
+      "type": "replaced-missing-markdown-link"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/search-retrieval-web-automation/selected-structure-reference/deep-research",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/affaan-m-everything-claude-code-agents-skills-deep-research-skill-md/search-retrieval-and-web-automation-common-crawl-warc/artifact.json",
+  "original_skill_file_sha256": "2d631427fc9aba27a318735f930bdb49f5c6ce416506340025eac01648f1df09",
+  "original_skill_text_sha256": "2d631427fc9aba27a318735f930bdb49f5c6ce416506340025eac01648f1df09",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/search-retrieval-web-automation/selected-structure-reference/deep-research",
+  "repaired_skill_file_sha256": "d1bf146c4f2186c9fed9f928bbf84c3af801ddcda836d00fc0471a1b78ac3f75",
+  "skill_id": "affaan-m-everything-claude-code-agents-skills-deep-research-skill-md"
+}

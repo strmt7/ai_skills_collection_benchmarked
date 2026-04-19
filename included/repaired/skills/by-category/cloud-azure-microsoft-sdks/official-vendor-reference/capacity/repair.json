@@ -1,0 +1,62 @@
+{
+  "actions": [
+    {
+      "label": "preset",
+      "target": "../preset/SKILL.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "customize",
+      "target": "../customize/SKILL.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "quota skill",
+      "target": "../../../quota/quota.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "preset",
+      "target": "../preset/SKILL.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "customize",
+      "target": "../customize/SKILL.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "Project Selection",
+      "target": "../SKILL.md#project-selection-all-modes",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "quota skill",
+      "target": "../../../quota/quota.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "preset",
+      "target": "../preset/SKILL.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "customize",
+      "target": "../customize/SKILL.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "quota",
+      "target": "../../../quota/quota.md",
+      "type": "replaced-missing-markdown-link"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/capacity",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-capacity-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+  "original_skill_file_sha256": "91b3ce958de44f728453572747504e8c9146f119892aa690546fd19f8d96a344",
+  "original_skill_text_sha256": "91b3ce958de44f728453572747504e8c9146f119892aa690546fd19f8d96a344",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/capacity",
+  "repaired_skill_file_sha256": "8f4e861b1ccd7625c0826b90ca8669434492093f097780be775d42a16debb89b",
+  "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-capacity-skill-md"
+}

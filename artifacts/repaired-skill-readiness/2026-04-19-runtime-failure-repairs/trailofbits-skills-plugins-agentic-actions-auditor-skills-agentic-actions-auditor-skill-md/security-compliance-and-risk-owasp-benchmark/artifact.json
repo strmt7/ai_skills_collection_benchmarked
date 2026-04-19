@@ -1,0 +1,84 @@
+{
+  "artifact_kind": "repaired_skill_readiness",
+  "artifact_version": "1.0",
+  "catalog_commit": "6e52c185bf83687bbf6e93d19e34fba297a0da00",
+  "evidence": {
+    "artifact_paths": [
+      "result.json",
+      "transcript.txt",
+      "repair.json"
+    ],
+    "citations_or_paths": [
+      "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/trailofbits-skills-plugins-agentic-actions-auditor-skills-agentic-actions-auditor-skill-md/security-compliance-and-risk-owasp-benchmark/artifact.json",
+      "included/skills/by-category/security-compliance-risk/security-reference/agentic-actions-auditor/SKILL.md",
+      "included/repaired/skills/by-category/security-compliance-risk/security-reference/agentic-actions-auditor/SKILL.md",
+      "included/repaired/skills/by-category/security-compliance-risk/security-reference/agentic-actions-auditor/provenance/original.SKILL.md",
+      "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+      "data/benchmark_scenarios.json",
+      "data/benchmark_tracks.json"
+    ]
+  },
+  "execution": {
+    "commands_or_transcript_path": "transcript.txt",
+    "fresh_session": true
+  },
+  "independence": {
+    "evaluator_defined_outside_skill": true,
+    "expected_result_defined_outside_skill": true,
+    "skill_content_usage": "skill text was the object under repair-readiness checks; task and expected checks were defined by the runner and original benchmark fixture",
+    "task_defined_outside_skill": true,
+    "uses_exact_skill_content_for_expected_result": false
+  },
+  "input_snapshot": {
+    "identifier": "https://owasp.org/www-project-benchmark/",
+    "is_real": true,
+    "kind": "real-url",
+    "original_mirrored_path": "included/skills/by-category/security-compliance-risk/security-reference/agentic-actions-auditor",
+    "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/trailofbits-skills-plugins-agentic-actions-auditor-skills-agentic-actions-auditor-skill-md/security-compliance-and-risk-owasp-benchmark/artifact.json",
+    "original_skill_file_sha256": "369b998e1d457c9c88fb9fff915b0b083c551e2c1d3e3d6baa6aa7310ac820d7",
+    "repaired_path": "included/repaired/skills/by-category/security-compliance-risk/security-reference/agentic-actions-auditor",
+    "repaired_skill_file_sha256": "a110562cf762317f39eda0d36cd785dc36a4049979d804f4f95d5476288355a9"
+  },
+  "metrics": {
+    "benchmark_verdict": "passed",
+    "blocking_failure_count": 0,
+    "checks_passed": 9,
+    "checks_total": 9,
+    "original_blocking_failures": [
+      "local_markdown_links_resolve"
+    ],
+    "original_score_percent": 90.0,
+    "repair_action_count": 15,
+    "repaired_missing_local_link_count": 0,
+    "score_percent": 100.0
+  },
+  "objective_checks": [
+    "real_dataset_snapshot_resolved",
+    "original_mirror_unchanged",
+    "repaired_skill_file_exists",
+    "source_text_preserved",
+    "required_frontmatter_present_after_repair",
+    "local_markdown_links_resolve_after_repair",
+    "same_independent_task_fixture",
+    "same_non_provenance_scenario",
+    "repair_actions_recorded"
+  ],
+  "outputs": {
+    "path": "result.json",
+    "repair_record_path": "repair.json",
+    "repair_sha256": "fac95b26051f26277489154b9ee31b96499a5e66c1000f485c85fc53df2762fc",
+    "result_sha256": "61374769790024f9b9f1d30897ba7532652415b5c175426caf81452db5699e75",
+    "schema": "evaluators/repaired_skill_readiness.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-repair-readiness-runner",
+    "run_name": "2026-04-19-runtime-failure-repairs",
+    "timestamp_utc": "2026-04-19T12:42:40Z",
+    "tool": "tools/create_repaired_skill_overlays.py"
+  },
+  "scenario_id": "security-compliance-and-risk-owasp-benchmark",
+  "skill_id": "trailofbits-skills-plugins-agentic-actions-auditor-skills-agentic-actions-auditor-skill-md",
+  "source_commit": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+  "source_path": "plugins/agentic-actions-auditor/skills/agentic-actions-auditor/SKILL.md",
+  "source_repo": "trailofbits/skills"
+}

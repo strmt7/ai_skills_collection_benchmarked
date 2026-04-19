@@ -1,0 +1,17 @@
+{
+  "actions": [
+    {
+      "label": "Smith et al., 2025",
+      "target": "url",
+      "type": "replaced-missing-markdown-link"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/parallel-web",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/k-dense-ai-scientific-agent-skills-scientific-skills-parallel-web-skill-md/science-research-and-data-analysis-cellxgene-census/artifact.json",
+  "original_skill_file_sha256": "5e14fc7509ff53d3ed1f5aab74db307c1fa9bf9baaa903841f15d2f6893dcdde",
+  "original_skill_text_sha256": "5e14fc7509ff53d3ed1f5aab74db307c1fa9bf9baaa903841f15d2f6893dcdde",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/parallel-web",
+  "repaired_skill_file_sha256": "7c0f4e8fdeb0b84687482a33524b7d0ad7bd8565f086d1004be7ba6738fc553a",
+  "skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-parallel-web-skill-md"
+}
