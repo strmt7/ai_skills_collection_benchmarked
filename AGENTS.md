@@ -41,6 +41,19 @@ Artifact and test loop:
 - Allowed transformations: adding evidence, validating artifacts, recomputing measured counts, and recording findings.
 - Forbidden: changing mirrored skills as part of artifact generation, changing test expectations to hide failures, inventing benchmark results, or converting an audit finding into a claimed pass without a validated artifact.
 
+Repair overlay loop:
+
+- Input: failed runtime-readiness artifacts and immutable mirrored source files.
+- Allowed output: explicit repaired overlays under `included/repaired/skills/`, repair manifests, and repaired-readiness artifacts.
+- Required: preserve the exact original `SKILL.md` text in the repaired overlay provenance directory and keep the original mirror unchanged.
+- Forbidden: replacing, deleting, or silently rewriting the mirrored source baseline under `included/skills/`.
+
+External benchmark adapter loop:
+
+- Input: selected external benchmark methods and their public repository or documentation endpoints.
+- Allowed output: adapter registry data, smoke artifacts proving repository resolution and objective metric definitions, and documentation.
+- Forbidden: presenting adapter smoke checks as full benchmark-suite scores or model/skill pass rates.
+
 Benchmark independence rule:
 
 - Benchmark tasks, fixtures, expected results, and evaluators must be authored independently from the exact text of the skill being evaluated.

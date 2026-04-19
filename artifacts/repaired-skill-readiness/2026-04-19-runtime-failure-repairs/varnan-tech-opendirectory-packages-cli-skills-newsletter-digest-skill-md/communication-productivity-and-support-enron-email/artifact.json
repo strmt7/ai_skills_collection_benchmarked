@@ -1,0 +1,84 @@
+{
+  "artifact_kind": "repaired_skill_readiness",
+  "artifact_version": "1.0",
+  "catalog_commit": "6e52c185bf83687bbf6e93d19e34fba297a0da00",
+  "evidence": {
+    "artifact_paths": [
+      "result.json",
+      "transcript.txt",
+      "repair.json"
+    ],
+    "citations_or_paths": [
+      "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md/communication-productivity-and-support-enron-email/artifact.json",
+      "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest/SKILL.md",
+      "included/repaired/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest/SKILL.md",
+      "included/repaired/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest/provenance/original.SKILL.md",
+      "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+      "data/benchmark_scenarios.json",
+      "data/benchmark_tracks.json"
+    ]
+  },
+  "execution": {
+    "commands_or_transcript_path": "transcript.txt",
+    "fresh_session": true
+  },
+  "independence": {
+    "evaluator_defined_outside_skill": true,
+    "expected_result_defined_outside_skill": true,
+    "skill_content_usage": "skill text was the object under repair-readiness checks; task and expected checks were defined by the runner and original benchmark fixture",
+    "task_defined_outside_skill": true,
+    "uses_exact_skill_content_for_expected_result": false
+  },
+  "input_snapshot": {
+    "identifier": "https://www.cs.cmu.edu/~enron/",
+    "is_real": true,
+    "kind": "real-url",
+    "original_mirrored_path": "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest",
+    "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md/communication-productivity-and-support-enron-email/artifact.json",
+    "original_skill_file_sha256": "1964a22798f3b34e06f37b158d64d7bd33c4c6ce6cb28677c37817663bb5bcde",
+    "repaired_path": "included/repaired/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest",
+    "repaired_skill_file_sha256": "a49b390d3921a57403e45b7789269346ebb8981d10c78bd78c8486fa1b36aa98"
+  },
+  "metrics": {
+    "benchmark_verdict": "passed",
+    "blocking_failure_count": 0,
+    "checks_passed": 9,
+    "checks_total": 9,
+    "original_blocking_failures": [
+      "local_markdown_links_resolve"
+    ],
+    "original_score_percent": 90.0,
+    "repair_action_count": 1,
+    "repaired_missing_local_link_count": 0,
+    "score_percent": 100.0
+  },
+  "objective_checks": [
+    "real_dataset_snapshot_resolved",
+    "original_mirror_unchanged",
+    "repaired_skill_file_exists",
+    "source_text_preserved",
+    "required_frontmatter_present_after_repair",
+    "local_markdown_links_resolve_after_repair",
+    "same_independent_task_fixture",
+    "same_non_provenance_scenario",
+    "repair_actions_recorded"
+  ],
+  "outputs": {
+    "path": "result.json",
+    "repair_record_path": "repair.json",
+    "repair_sha256": "ceed240e355bb7fcd775f544689eb74f4ca759afa57fffc20ce7f41c827ad6c3",
+    "result_sha256": "9abe39d59e59c5b8fecb3171cad72be6d12214688985f003061a14ec556569d8",
+    "schema": "evaluators/repaired_skill_readiness.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-repair-readiness-runner",
+    "run_name": "2026-04-19-runtime-failure-repairs",
+    "timestamp_utc": "2026-04-19T12:42:40Z",
+    "tool": "tools/create_repaired_skill_overlays.py"
+  },
+  "scenario_id": "communication-productivity-and-support-enron-email",
+  "skill_id": "varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md",
+  "source_commit": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4",
+  "source_path": "packages/cli/skills/newsletter-digest/SKILL.md",
+  "source_repo": "Varnan-Tech/opendirectory"
+}

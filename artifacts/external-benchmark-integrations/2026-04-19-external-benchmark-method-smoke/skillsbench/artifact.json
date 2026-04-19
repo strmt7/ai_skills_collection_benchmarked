@@ -1,0 +1,152 @@
+{
+  "artifact_kind": "external_benchmark_method_smoke",
+  "artifact_version": "1.0",
+  "checks": [
+    {
+      "evidence": "data/external_benchmark_methods.json",
+      "name": "adapter_spec_complete",
+      "passed": true
+    },
+    {
+      "evidence": "https://github.com/benchflow-ai/skillsbench",
+      "name": "repository_head_resolves",
+      "passed": true
+    },
+    {
+      "evidence": 6080,
+      "name": "repo_tree_sampled",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "task pass rate",
+        "skill gain",
+        "steps",
+        "token usage"
+      ],
+      "name": "declares_objective_metrics",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "task package",
+        "skill package",
+        "deterministic verifier",
+        "agent trajectory"
+      ],
+      "name": "declares_integration_requirements",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "Agent infrastructure & skill creation",
+        "Testing, QA & benchmarking"
+      ],
+      "name": "declares_category_fit",
+      "passed": true
+    },
+    {
+      "evidence": "repository root",
+      "name": "required_subpath_resolves",
+      "passed": true
+    }
+  ],
+  "evidence": {
+    "citations_or_paths": [
+      "https://github.com/benchflow-ai/skillsbench",
+      "https://www.skillsbench.ai/",
+      "data/external_benchmark_methods.json"
+    ]
+  },
+  "execution": {
+    "commands": [
+      {
+        "command": [
+          "git",
+          "ls-remote",
+          "https://github.com/benchflow-ai/skillsbench",
+          "HEAD"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "be06b4995c75b384b9295b94d18a4531400bb821\tHEAD"
+      }
+    ],
+    "fresh_session": true
+  },
+  "input_snapshot": {
+    "head_sha": "be06b4995c75b384b9295b94d18a4531400bb821",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "repo_subpath": null,
+    "repo_subpath_present": true,
+    "repo_url": "https://github.com/benchflow-ai/skillsbench",
+    "sampled_paths": [
+      ".claude/settings.local.json",
+      ".claude/skills/docs-to-skill/SKILL.md",
+      ".claude/skills/docs-to-skill/scripts/fetch_docs.py",
+      ".claude/skills/harbor/SKILL.md",
+      ".claude/skills/harbor/references/task-format.md",
+      ".claude/skills/skill-creator/LICENSE.txt",
+      ".claude/skills/skill-creator/SKILL.md",
+      ".claude/skills/skill-creator/references/output-patterns.md",
+      ".claude/skills/skill-creator/references/workflows.md",
+      ".claude/skills/skill-creator/scripts/init_skill.py",
+      ".claude/skills/skill-creator/scripts/package_skill.py",
+      ".claude/skills/skill-creator/scripts/quick_validate.py",
+      ".claude/skills/skillsbench/SKILL.md",
+      ".claude/skills/skillsbench/references/task-ideas.md",
+      ".github/PULL_REQUEST_TEMPLATE.md",
+      ".github/scripts/validate_skills.sh",
+      ".github/workflows/claude-code-review.yml",
+      ".github/workflows/claude.yml",
+      ".github/workflows/tasks-ci.yaml",
+      ".gitignore"
+    ],
+    "source_url": "https://www.skillsbench.ai/",
+    "tree_error": "",
+    "tree_path_count": 6080
+  },
+  "method": {
+    "adapter_stage": "implemented-smoke-adapter",
+    "category_fit": [
+      "Agent infrastructure & skill creation",
+      "Testing, QA & benchmarking"
+    ],
+    "id": "skillsbench",
+    "integration_requirements": [
+      "task package",
+      "skill package",
+      "deterministic verifier",
+      "agent trajectory"
+    ],
+    "primary_metrics": [
+      "task pass rate",
+      "skill gain",
+      "steps",
+      "token usage"
+    ],
+    "repo_url": "https://github.com/benchflow-ai/skillsbench",
+    "scope": "Evaluates agent skill use across diverse verifiable real-world tasks and deterministic verifiers.",
+    "source_url": "https://www.skillsbench.ai/",
+    "title": "SkillsBench"
+  },
+  "method_id": "skillsbench",
+  "method_title": "SkillsBench",
+  "metrics": {
+    "blocking_failures": [],
+    "checks_passed": 7,
+    "checks_total": 7,
+    "integration_status": "adapter_ready",
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "schema": "evaluators/external_benchmark_method_smoke.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-integration-smoke",
+    "run_name": "2026-04-19-external-benchmark-method-smoke",
+    "timestamp_utc": "2026-04-19T12:43:21Z",
+    "tool": "tools/evaluate_external_benchmark_methods.py"
+  }
+}

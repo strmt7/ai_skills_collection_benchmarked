@@ -1,0 +1,152 @@
+{
+  "artifact_kind": "external_benchmark_method_smoke",
+  "artifact_version": "1.0",
+  "checks": [
+    {
+      "evidence": "data/external_benchmark_methods.json",
+      "name": "adapter_spec_complete",
+      "passed": true
+    },
+    {
+      "evidence": "https://github.com/QuantaAlpha/GitTaskBench",
+      "name": "repository_head_resolves",
+      "passed": true
+    },
+    {
+      "evidence": 12046,
+      "name": "repo_tree_sampled",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "task success",
+        "setup success",
+        "cost-aware alpha",
+        "test result"
+      ],
+      "name": "declares_objective_metrics",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "repository task",
+        "environment setup log",
+        "agent patch",
+        "test/evaluator result"
+      ],
+      "name": "declares_integration_requirements",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "Coding, refactoring & repository automation",
+        "DevOps, cloud & operations"
+      ],
+      "name": "declares_category_fit",
+      "passed": true
+    },
+    {
+      "evidence": "repository root",
+      "name": "required_subpath_resolves",
+      "passed": true
+    }
+  ],
+  "evidence": {
+    "citations_or_paths": [
+      "https://github.com/QuantaAlpha/GitTaskBench",
+      "https://github.com/QuantaAlpha/GitTaskBench",
+      "data/external_benchmark_methods.json"
+    ]
+  },
+  "execution": {
+    "commands": [
+      {
+        "command": [
+          "git",
+          "ls-remote",
+          "https://github.com/QuantaAlpha/GitTaskBench",
+          "HEAD"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "df188a73013393d036442bfb0f323c4c995fa5e1\tHEAD"
+      }
+    ],
+    "fresh_session": true
+  },
+  "input_snapshot": {
+    "head_sha": "df188a73013393d036442bfb0f323c4c995fa5e1",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "repo_subpath": null,
+    "repo_subpath_present": true,
+    "repo_url": "https://github.com/QuantaAlpha/GitTaskBench",
+    "sampled_paths": [
+      "\"code_base/Trafilatura/tests/cache/kulinariaathome.com.mandelpl\\347\\233\\262tzchen.html\"",
+      "\"code_base/Trafilatura/tests/eval/Angus Barbieri. Nie jad\\350\\211\\202 przez 382 dni - Menway w INTERIA.PL.html\"",
+      "\"code_base/Trafilatura/tests/eval/Eurocash rusza z Innowacyjn\\350\\206\\256 Platform\\350\\206\\256 Handlu - Handel dystrybucja.html\"",
+      "\"code_base/Trafilatura/tests/eval/Eurostat_ Polska z najni\\345\\201\\266szym bezrobociem w ca\\350\\211\\202ej UE.html\"",
+      "\"code_base/Trafilatura/tests/eval/Finowie odkrywaj\\350\\206\\256 wino _ Res Publica Nowa.html\"",
+      "\"code_base/Trafilatura/tests/eval/Ile jest warta godzina pracy_ W tych krajach praca pop\\350\\211\\202aca - Forsal.pl.html\"",
+      "\"code_base/Trafilatura/tests/eval/Jest zgoda PE na umow\\350\\207\\213 handlow\\350\\206\\256 mi\\350\\207\\213dzy UE a Londynem.html\"",
+      "\"code_base/Trafilatura/tests/eval/Koncesjonowana opozycja -Leszek Ja\\345\\201\\266d\\345\\201\\266ewski - Libert\\350\\214\\205!.html\"",
+      "\"code_base/Trafilatura/tests/eval/Maciej Krzysztoszek rzecznik prasowy Amica mened\\345\\201\\266er komunikacji zewn\\350\\207\\213trznej.html\"",
+      "\"code_base/Trafilatura/tests/eval/Rosjanie sugeruj\\350\\206\\256 natychmiastowe odci\\350\\207\\213cie Polski od gazu - Energetyka24.html\"",
+      "\"code_base/Trafilatura/tests/eval/Unijne fundusze coraz bli\\345\\201\\266ej. Sejm zag\\350\\211\\202osowa\\350\\211\\202 _za_ - Polityka - rp.pl.html\"",
+      "\"code_base/Trafilatura/tests/eval/Windows 10 od lipca przestanie obs\\350\\211\\202ugiwa\\350\\206\\260 Adobe Flash.html\"",
+      "\"code_base/Trafilatura/tests/eval/\\351\\210\\245\\346\\277\\273ieci\\351\\210\\245\\346\\274\\230 IPN, czyli element infrastruktury krytycznej Tygodnik Sieci.html\"",
+      "\"code_base/Trafilatura/tests/eval/_Ziemniaki na sz\\350\\264\\270stej, sur\\350\\264\\270wka na dziesi\\350\\206\\256tej_. Jak pomaga\\350\\206\\260, \\345\\201\\266eby nie zaszkodzi\\350\\206\\260_ [PORADNIK W PIGU\\350\\211\\201CE].html\"",
+      "\"code_base/Trafilatura/tests/eval/boxen1.com-ring-r\\347\\234\\211ckkehr.html\"",
+      "\"code_base/Trafilatura/tests/eval/bummfilm.de.\\347\\234\\211ber.html\"",
+      "\"code_base/Trafilatura/tests/eval/bundesfeuerwehrverband.at-er\\346\\236\\232ffnet.html\"",
+      "\"code_base/Trafilatura/tests/eval/caritas.de-Pr\\347\\233\\262sidentin.html\"",
+      "\"code_base/Trafilatura/tests/eval/diakonie.de-Lebensgef\\347\\234\\211hl.html\"",
+      "\"code_base/Trafilatura/tests/eval/evref.ch-\\346\\236\\232kumene.html\""
+    ],
+    "source_url": "https://github.com/QuantaAlpha/GitTaskBench",
+    "tree_error": "",
+    "tree_path_count": 12046
+  },
+  "method": {
+    "adapter_stage": "implemented-smoke-adapter",
+    "category_fit": [
+      "Coding, refactoring & repository automation",
+      "DevOps, cloud & operations"
+    ],
+    "id": "gittaskbench",
+    "integration_requirements": [
+      "repository task",
+      "environment setup log",
+      "agent patch",
+      "test/evaluator result"
+    ],
+    "primary_metrics": [
+      "task success",
+      "setup success",
+      "cost-aware alpha",
+      "test result"
+    ],
+    "repo_url": "https://github.com/QuantaAlpha/GitTaskBench",
+    "scope": "Evaluates code agents on real repository tasks from setup through delivery with cost-aware metrics.",
+    "source_url": "https://github.com/QuantaAlpha/GitTaskBench",
+    "title": "GitTaskBench"
+  },
+  "method_id": "gittaskbench",
+  "method_title": "GitTaskBench",
+  "metrics": {
+    "blocking_failures": [],
+    "checks_passed": 7,
+    "checks_total": 7,
+    "integration_status": "adapter_ready",
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "schema": "evaluators/external_benchmark_method_smoke.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-integration-smoke",
+    "run_name": "2026-04-19-external-benchmark-method-smoke",
+    "timestamp_utc": "2026-04-19T12:43:21Z",
+    "tool": "tools/evaluate_external_benchmark_methods.py"
+  }
+}

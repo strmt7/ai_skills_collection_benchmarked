@@ -1,0 +1,16 @@
+{
+  "actions": [
+    {
+      "name": "verification-loop-simple-ai-bitcoin-trading-binance",
+      "type": "added-required-frontmatter"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/testing-qa-benchmarking/selected-project-reference/verification-loop-simple-ai-bitcoin-trading-binance",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md/testing-qa-and-benchmarking-swe-bench-lite/artifact.json",
+  "original_skill_file_sha256": "a5de5ed9f0088375c9237c86451a54bcf151571fb6bd314efdf6713198ab99cf",
+  "original_skill_text_sha256": "a5de5ed9f0088375c9237c86451a54bcf151571fb6bd314efdf6713198ab99cf",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/testing-qa-benchmarking/selected-project-reference/verification-loop-simple-ai-bitcoin-trading-binance",
+  "repaired_skill_file_sha256": "11359b0f9f89929474076cea28ef2645283430ce32c8d6539f5804c5206d0da5",
+  "skill_id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md"
+}

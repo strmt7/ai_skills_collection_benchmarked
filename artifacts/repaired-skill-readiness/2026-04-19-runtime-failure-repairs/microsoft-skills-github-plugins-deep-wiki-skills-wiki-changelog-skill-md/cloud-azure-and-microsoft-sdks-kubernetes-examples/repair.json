@@ -1,0 +1,22 @@
+{
+  "actions": [
+    {
+      "label": "abc1234",
+      "target": "REPO_URL/commit/abc1234",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "file_path",
+      "target": "REPO_URL/blob/BRANCH/file_path",
+      "type": "replaced-missing-markdown-link"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-changelog",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/microsoft-skills-github-plugins-deep-wiki-skills-wiki-changelog-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+  "original_skill_file_sha256": "c2c5da0e585855d44f831859a163ef1fa931df56ec3fb9d6d86ff6929f0a4e9a",
+  "original_skill_text_sha256": "c2c5da0e585855d44f831859a163ef1fa931df56ec3fb9d6d86ff6929f0a4e9a",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-changelog",
+  "repaired_skill_file_sha256": "24689a68621d2b33b096d5e28c4fb610497df5f190d647a911f9c7b98a036d59",
+  "skill_id": "microsoft-skills-github-plugins-deep-wiki-skills-wiki-changelog-skill-md"
+}

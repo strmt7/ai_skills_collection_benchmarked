@@ -18,6 +18,8 @@ def test_generated_counts_are_documented():
     assert f"- `{len(catalog)}` source-backed skill entries." in readme
     assert f"- `{len(catalog)}` written skill mirrors under `included/skills/`." in readme
     assert f"- `{len(catalog)}` compact agent-ready skill entrypoints under `included/agent-ready/`." in readme
+    assert "- `34` repaired skill overlays under `included/repaired/skills/`" in readme
+    assert "- `14` selected external benchmark method adapters with smoke artifacts." in readme
     assert f"- `{sum(1 for entry in catalog if entry['selected_subset'])}` selected repository entries." in readme
     assert f"- `{len({entry['category'] for entry in catalog})}` categories." in readme
     assert f"- `{len(scenarios)}` real-data scenario templates." in readme
@@ -28,6 +30,9 @@ def test_generated_counts_are_documented():
     assert "[Runtime benchmark batch 02](docs/runtime-benchmark-batch-02.md)" in readme
     assert "[Runtime benchmark batch 03](docs/runtime-benchmark-batch-03.md)" in readme
     assert "[Local Markdown link failures](docs/local-markdown-link-failures.md)" in readme
+    assert "[Repaired skill readiness](docs/repaired-skill-readiness.md)" in readme
+    assert "[Objective benchmark methods](docs/objective-benchmark-methods.md)" in readme
+    assert "[External benchmark adapter smoke](docs/external-benchmark-adapter-smoke.md)" in readme
     assert "[Skill risk findings](docs/skill-risk-findings.md)" in readme
     assert "[Immutable audit model](docs/immutable-audit-model.md)" in readme
     assert "[Included skill mirrors](included/skills/README.md)" in readme
@@ -89,5 +94,7 @@ def test_agent_instructions_forbid_subagents():
         "artifact and test loop",
         "benchmark independence rule",
         "must not be counted as runtime benchmark passes",
+        "repair overlay loop",
+        "external benchmark adapter loop",
     ]:
         assert phrase in text

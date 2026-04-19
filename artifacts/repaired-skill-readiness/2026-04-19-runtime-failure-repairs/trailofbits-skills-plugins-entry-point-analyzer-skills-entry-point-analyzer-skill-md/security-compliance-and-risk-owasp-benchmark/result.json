@@ -1,0 +1,176 @@
+{
+  "citations_or_paths": [
+    "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/trailofbits-skills-plugins-entry-point-analyzer-skills-entry-point-analyzer-skill-md/security-compliance-and-risk-owasp-benchmark/artifact.json",
+    "included/skills/by-category/security-compliance-risk/security-reference/entry-point-analyzer/SKILL.md",
+    "included/repaired/skills/by-category/security-compliance-risk/security-reference/entry-point-analyzer/SKILL.md",
+    "included/repaired/skills/by-category/security-compliance-risk/security-reference/entry-point-analyzer/provenance/original.SKILL.md",
+    "benchmarks/independent-runtime-readiness/batch-03/tasks.json",
+    "data/benchmark_scenarios.json",
+    "data/benchmark_tracks.json"
+  ],
+  "inputs": {
+    "dataset_snapshot": {
+      "kind": "real-url",
+      "resolved": true,
+      "status": 200,
+      "url": "https://owasp.org/www-project-benchmark/"
+    },
+    "dataset_track_id": "owasp-benchmark",
+    "original_mirrored_path": "included/skills/by-category/security-compliance-risk/security-reference/entry-point-analyzer",
+    "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/trailofbits-skills-plugins-entry-point-analyzer-skills-entry-point-analyzer-skill-md/security-compliance-and-risk-owasp-benchmark/artifact.json",
+    "repaired_path": "included/repaired/skills/by-category/security-compliance-risk/security-reference/entry-point-analyzer",
+    "scenario_id": "security-compliance-and-risk-owasp-benchmark",
+    "skill_id": "trailofbits-skills-plugins-entry-point-analyzer-skills-entry-point-analyzer-skill-md",
+    "skill_name": "entry-point-analyzer",
+    "task_brief_path": "benchmarks/independent-runtime-readiness/batch-03/tasks.json"
+  },
+  "metrics": {
+    "benchmark_verdict": "passed",
+    "blocking_failure_count": 0,
+    "checks_passed": 9,
+    "checks_total": 9,
+    "original_blocking_failures": [
+      "local_markdown_links_resolve"
+    ],
+    "original_score_percent": 90.0,
+    "repair_action_count": 7,
+    "repaired_missing_local_link_count": 0,
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "benchmark_verdict": "passed",
+    "blocking_failures": [],
+    "checks": [
+      {
+        "evidence": "https://owasp.org/www-project-benchmark/",
+        "name": "real_dataset_snapshot_resolved",
+        "passed": true
+      },
+      {
+        "evidence": "85aeeb1f275d2c033f97b51ba1cb2e30116390a65d7ae2be12b2e29f43c3608a",
+        "name": "original_mirror_unchanged",
+        "passed": true
+      },
+      {
+        "evidence": "included/repaired/skills/by-category/security-compliance-risk/security-reference/entry-point-analyzer/SKILL.md",
+        "name": "repaired_skill_file_exists",
+        "passed": true
+      },
+      {
+        "evidence": "provenance/original.SKILL.md",
+        "name": "source_text_preserved",
+        "passed": true
+      },
+      {
+        "evidence": [
+          "allowed-tools",
+          "description",
+          "name"
+        ],
+        "name": "required_frontmatter_present_after_repair",
+        "passed": true
+      },
+      {
+        "evidence": [],
+        "name": "local_markdown_links_resolve_after_repair",
+        "passed": true
+      },
+      {
+        "evidence": "benchmarks/independent-runtime-readiness/batch-03/tasks.json",
+        "name": "same_independent_task_fixture",
+        "passed": true
+      },
+      {
+        "evidence": "security-compliance-and-risk-owasp-benchmark",
+        "name": "same_non_provenance_scenario",
+        "passed": true
+      },
+      {
+        "evidence": [
+          {
+            "label": "{baseDir}/references/solidity.md",
+            "target": "{baseDir}/references/solidity.md",
+            "type": "replaced-missing-markdown-link"
+          },
+          {
+            "label": "{baseDir}/references/vyper.md",
+            "target": "{baseDir}/references/vyper.md",
+            "type": "replaced-missing-markdown-link"
+          },
+          {
+            "label": "{baseDir}/references/solana.md",
+            "target": "{baseDir}/references/solana.md",
+            "type": "replaced-missing-markdown-link"
+          },
+          {
+            "label": "{baseDir}/references/move-sui.md",
+            "target": "{baseDir}/references/move-sui.md",
+            "type": "replaced-missing-markdown-link"
+          },
+          {
+            "label": "{baseDir}/references/move-aptos.md",
+            "target": "{baseDir}/references/move-aptos.md",
+            "type": "replaced-missing-markdown-link"
+          },
+          {
+            "label": "{baseDir}/references/ton.md",
+            "target": "{baseDir}/references/ton.md",
+            "type": "replaced-missing-markdown-link"
+          },
+          {
+            "label": "{baseDir}/references/cosmwasm.md",
+            "target": "{baseDir}/references/cosmwasm.md",
+            "type": "replaced-missing-markdown-link"
+          }
+        ],
+        "name": "repair_actions_recorded",
+        "passed": true
+      }
+    ],
+    "repair_actions": [
+      {
+        "label": "{baseDir}/references/solidity.md",
+        "target": "{baseDir}/references/solidity.md",
+        "type": "replaced-missing-markdown-link"
+      },
+      {
+        "label": "{baseDir}/references/vyper.md",
+        "target": "{baseDir}/references/vyper.md",
+        "type": "replaced-missing-markdown-link"
+      },
+      {
+        "label": "{baseDir}/references/solana.md",
+        "target": "{baseDir}/references/solana.md",
+        "type": "replaced-missing-markdown-link"
+      },
+      {
+        "label": "{baseDir}/references/move-sui.md",
+        "target": "{baseDir}/references/move-sui.md",
+        "type": "replaced-missing-markdown-link"
+      },
+      {
+        "label": "{baseDir}/references/move-aptos.md",
+        "target": "{baseDir}/references/move-aptos.md",
+        "type": "replaced-missing-markdown-link"
+      },
+      {
+        "label": "{baseDir}/references/ton.md",
+        "target": "{baseDir}/references/ton.md",
+        "type": "replaced-missing-markdown-link"
+      },
+      {
+        "label": "{baseDir}/references/cosmwasm.md",
+        "target": "{baseDir}/references/cosmwasm.md",
+        "type": "replaced-missing-markdown-link"
+      }
+    ],
+    "score_percent": 100.0
+  },
+  "steps": [
+    "Copied the immutable mirrored skill into a separate repaired overlay.",
+    "Preserved the original SKILL.md text under provenance/original.SKILL.md.",
+    "Added required frontmatter only when missing or incomplete.",
+    "Replaced unresolved local Markdown links in the repaired SKILL.md with explicit unavailable-target text.",
+    "Ran the same readiness checks against the repaired overlay without changing the original mirror."
+  ]
+}

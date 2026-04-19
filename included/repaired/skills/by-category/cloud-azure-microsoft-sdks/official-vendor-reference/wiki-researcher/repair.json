@@ -1,0 +1,22 @@
+{
+  "actions": [
+    {
+      "label": "file:line",
+      "target": "REPO_URL/blob/BRANCH/file#Lline",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "file_path:line_number",
+      "target": "REPO_URL/blob/BRANCH/file_path#Lline_number",
+      "type": "replaced-missing-markdown-link"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-researcher",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/microsoft-skills-github-plugins-deep-wiki-skills-wiki-researcher-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+  "original_skill_file_sha256": "3793d737ccb3e2c24d2de919f19ef59c35cc73598be8fdc8eb69693820ae29b5",
+  "original_skill_text_sha256": "3793d737ccb3e2c24d2de919f19ef59c35cc73598be8fdc8eb69693820ae29b5",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-researcher",
+  "repaired_skill_file_sha256": "d594bc6112817af4a6ff48150ff25ff18aa28bf8bbbdab265ee8672b307afda5",
+  "skill_id": "microsoft-skills-github-plugins-deep-wiki-skills-wiki-researcher-skill-md"
+}

@@ -1,0 +1,117 @@
+{
+  "citations_or_paths": [
+    "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/k-dense-ai-scientific-agent-skills-scientific-skills-parallel-web-skill-md/science-research-and-data-analysis-cellxgene-census/artifact.json",
+    "included/skills/by-category/science-research-data-analysis/latest-release-community/parallel-web/SKILL.md",
+    "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/parallel-web/SKILL.md",
+    "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/parallel-web/provenance/original.SKILL.md",
+    "benchmarks/independent-runtime-readiness/batch-03/tasks.json",
+    "data/benchmark_scenarios.json",
+    "data/benchmark_tracks.json"
+  ],
+  "inputs": {
+    "dataset_snapshot": {
+      "kind": "real-url",
+      "resolved": true,
+      "status": 200,
+      "url": "https://chanzuckerberg.github.io/cellxgene-census/"
+    },
+    "dataset_track_id": "cellxgene-census",
+    "original_mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/parallel-web",
+    "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/k-dense-ai-scientific-agent-skills-scientific-skills-parallel-web-skill-md/science-research-and-data-analysis-cellxgene-census/artifact.json",
+    "repaired_path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/parallel-web",
+    "scenario_id": "science-research-and-data-analysis-cellxgene-census",
+    "skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-parallel-web-skill-md",
+    "skill_name": "parallel-web",
+    "task_brief_path": "benchmarks/independent-runtime-readiness/batch-03/tasks.json"
+  },
+  "metrics": {
+    "benchmark_verdict": "passed",
+    "blocking_failure_count": 0,
+    "checks_passed": 9,
+    "checks_total": 9,
+    "original_blocking_failures": [
+      "local_markdown_links_resolve"
+    ],
+    "original_score_percent": 90.0,
+    "repair_action_count": 1,
+    "repaired_missing_local_link_count": 0,
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "benchmark_verdict": "passed",
+    "blocking_failures": [],
+    "checks": [
+      {
+        "evidence": "https://chanzuckerberg.github.io/cellxgene-census/",
+        "name": "real_dataset_snapshot_resolved",
+        "passed": true
+      },
+      {
+        "evidence": "5e14fc7509ff53d3ed1f5aab74db307c1fa9bf9baaa903841f15d2f6893dcdde",
+        "name": "original_mirror_unchanged",
+        "passed": true
+      },
+      {
+        "evidence": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/parallel-web/SKILL.md",
+        "name": "repaired_skill_file_exists",
+        "passed": true
+      },
+      {
+        "evidence": "provenance/original.SKILL.md",
+        "name": "source_text_preserved",
+        "passed": true
+      },
+      {
+        "evidence": [
+          "compatibility",
+          "description",
+          "metadata",
+          "name"
+        ],
+        "name": "required_frontmatter_present_after_repair",
+        "passed": true
+      },
+      {
+        "evidence": [],
+        "name": "local_markdown_links_resolve_after_repair",
+        "passed": true
+      },
+      {
+        "evidence": "benchmarks/independent-runtime-readiness/batch-03/tasks.json",
+        "name": "same_independent_task_fixture",
+        "passed": true
+      },
+      {
+        "evidence": "science-research-and-data-analysis-cellxgene-census",
+        "name": "same_non_provenance_scenario",
+        "passed": true
+      },
+      {
+        "evidence": [
+          {
+            "label": "Smith et al., 2025",
+            "target": "url",
+            "type": "replaced-missing-markdown-link"
+          }
+        ],
+        "name": "repair_actions_recorded",
+        "passed": true
+      }
+    ],
+    "repair_actions": [
+      {
+        "label": "Smith et al., 2025",
+        "target": "url",
+        "type": "replaced-missing-markdown-link"
+      }
+    ],
+    "score_percent": 100.0
+  },
+  "steps": [
+    "Copied the immutable mirrored skill into a separate repaired overlay.",
+    "Preserved the original SKILL.md text under provenance/original.SKILL.md.",
+    "Added required frontmatter only when missing or incomplete.",
+    "Replaced unresolved local Markdown links in the repaired SKILL.md with explicit unavailable-target text.",
+    "Ran the same readiness checks against the repaired overlay without changing the original mirror."
+  ]
+}

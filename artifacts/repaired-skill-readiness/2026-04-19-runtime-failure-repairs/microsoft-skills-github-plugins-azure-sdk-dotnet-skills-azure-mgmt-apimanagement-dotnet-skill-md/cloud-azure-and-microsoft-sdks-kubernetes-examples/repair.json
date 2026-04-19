@@ -1,0 +1,29 @@
+{
+  "actions": [
+    {
+      "label": "references/policies.md",
+      "target": "references/policies.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "target": "references/service-management.md",
+      "type": "copied-linked-local-target"
+    },
+    {
+      "target": "references/apis-operations.md",
+      "type": "copied-linked-local-target"
+    },
+    {
+      "target": "references/products-subscriptions.md",
+      "type": "copied-linked-local-target"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-apimanagement-dotnet",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apimanagement-dotnet-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+  "original_skill_file_sha256": "8a5346da787096e4f785903619c94ba3b8273f4b30ef516b038479a58c00f89f",
+  "original_skill_text_sha256": "8a5346da787096e4f785903619c94ba3b8273f4b30ef516b038479a58c00f89f",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-mgmt-apimanagement-dotnet",
+  "repaired_skill_file_sha256": "815016a2853a0bd914adbe730a56b23f58140607b01f0d729cce57de0237fbe2",
+  "skill_id": "microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-mgmt-apimanagement-dotnet-skill-md"
+}

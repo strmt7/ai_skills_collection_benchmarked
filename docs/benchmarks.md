@@ -2,7 +2,9 @@
 
 Scenario definitions live in `data/benchmark_scenarios.json`; per-skill assignments live in `data/benchmark_assignments.json`.
 
-The current suite contains `673` source-grounded skill-proof scenarios and `45` category workflow templates. A scenario is only a template until a runner records artifacts under the rules in [Benchmark runner requirements](benchmark-runner-requirements.md). Current measured outputs are summarized in [Benchmark results](benchmark-results.md), with independent runtime-readiness batches in [Runtime benchmark batch 01](runtime-benchmark-batch-01.md), [Runtime benchmark batch 02](runtime-benchmark-batch-02.md), and [Runtime benchmark batch 03](runtime-benchmark-batch-03.md). Exact unresolved local Markdown targets are grouped in [Local Markdown link failures](local-markdown-link-failures.md).
+The current suite contains `673` source-grounded skill-proof scenarios and `45` category workflow templates. A scenario is only a template until a runner records artifacts under the rules in [Benchmark runner requirements](benchmark-runner-requirements.md). Current measured outputs are summarized in [Benchmark results](benchmark-results.md), with independent runtime-readiness batches in [Runtime benchmark batch 01](runtime-benchmark-batch-01.md), [Runtime benchmark batch 02](runtime-benchmark-batch-02.md), and [Runtime benchmark batch 03](runtime-benchmark-batch-03.md). Exact unresolved local Markdown targets are grouped in [Local Markdown link failures](local-markdown-link-failures.md); separate repaired overlay results are recorded in [Repaired skill readiness](repaired-skill-readiness.md).
+
+External benchmark method adapters are tracked separately in [Objective benchmark methods](objective-benchmark-methods.md), with repository-resolution smoke evidence in [External benchmark adapter smoke](external-benchmark-adapter-smoke.md). Those adapters prove integration readiness only; they do not count as full benchmark scores.
 
 ## Scoring Rules
 

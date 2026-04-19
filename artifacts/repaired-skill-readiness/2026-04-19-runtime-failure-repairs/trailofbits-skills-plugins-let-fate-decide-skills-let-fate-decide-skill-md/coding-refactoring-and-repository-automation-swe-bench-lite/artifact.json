@@ -1,0 +1,84 @@
+{
+  "artifact_kind": "repaired_skill_readiness",
+  "artifact_version": "1.0",
+  "catalog_commit": "6e52c185bf83687bbf6e93d19e34fba297a0da00",
+  "evidence": {
+    "artifact_paths": [
+      "result.json",
+      "transcript.txt",
+      "repair.json"
+    ],
+    "citations_or_paths": [
+      "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/trailofbits-skills-plugins-let-fate-decide-skills-let-fate-decide-skill-md/coding-refactoring-and-repository-automation-swe-bench-lite/artifact.json",
+      "included/skills/by-category/coding-refactoring-repository-automation/security-reference/let-fate-decide/SKILL.md",
+      "included/repaired/skills/by-category/coding-refactoring-repository-automation/security-reference/let-fate-decide/SKILL.md",
+      "included/repaired/skills/by-category/coding-refactoring-repository-automation/security-reference/let-fate-decide/provenance/original.SKILL.md",
+      "benchmarks/independent-runtime-readiness/batch-03/tasks.json",
+      "data/benchmark_scenarios.json",
+      "data/benchmark_tracks.json"
+    ]
+  },
+  "execution": {
+    "commands_or_transcript_path": "transcript.txt",
+    "fresh_session": true
+  },
+  "independence": {
+    "evaluator_defined_outside_skill": true,
+    "expected_result_defined_outside_skill": true,
+    "skill_content_usage": "skill text was the object under repair-readiness checks; task and expected checks were defined by the runner and original benchmark fixture",
+    "task_defined_outside_skill": true,
+    "uses_exact_skill_content_for_expected_result": false
+  },
+  "input_snapshot": {
+    "identifier": "https://github.com/SWE-bench/SWE-bench",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "original_mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/security-reference/let-fate-decide",
+    "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/trailofbits-skills-plugins-let-fate-decide-skills-let-fate-decide-skill-md/coding-refactoring-and-repository-automation-swe-bench-lite/artifact.json",
+    "original_skill_file_sha256": "f9fbff7b876f2dfeaae8c19ec62a65612f3fd012b9e86d6f92bde3f036cd15ae",
+    "repaired_path": "included/repaired/skills/by-category/coding-refactoring-repository-automation/security-reference/let-fate-decide",
+    "repaired_skill_file_sha256": "38d02ad83905ba46be97088252bd3b3a32c46f0409e850526c0f3578b66b57eb"
+  },
+  "metrics": {
+    "benchmark_verdict": "passed",
+    "blocking_failure_count": 0,
+    "checks_passed": 9,
+    "checks_total": 9,
+    "original_blocking_failures": [
+      "local_markdown_links_resolve"
+    ],
+    "original_score_percent": 90.0,
+    "repair_action_count": 2,
+    "repaired_missing_local_link_count": 0,
+    "score_percent": 100.0
+  },
+  "objective_checks": [
+    "real_dataset_snapshot_resolved",
+    "original_mirror_unchanged",
+    "repaired_skill_file_exists",
+    "source_text_preserved",
+    "required_frontmatter_present_after_repair",
+    "local_markdown_links_resolve_after_repair",
+    "same_independent_task_fixture",
+    "same_non_provenance_scenario",
+    "repair_actions_recorded"
+  ],
+  "outputs": {
+    "path": "result.json",
+    "repair_record_path": "repair.json",
+    "repair_sha256": "89b69ba4c47458124e04c361c14ade7c2def0b9f8e1eea449629a01daf461661",
+    "result_sha256": "2a1659985e28cdccd97d5940493221663b8b6d3edb8be875a9fabb740adac18a",
+    "schema": "evaluators/repaired_skill_readiness.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-repair-readiness-runner",
+    "run_name": "2026-04-19-runtime-failure-repairs",
+    "timestamp_utc": "2026-04-19T12:42:40Z",
+    "tool": "tools/create_repaired_skill_overlays.py"
+  },
+  "scenario_id": "coding-refactoring-and-repository-automation-swe-bench-lite",
+  "skill_id": "trailofbits-skills-plugins-let-fate-decide-skills-let-fate-decide-skill-md",
+  "source_commit": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+  "source_path": "plugins/let-fate-decide/skills/let-fate-decide/SKILL.md",
+  "source_repo": "trailofbits/skills"
+}

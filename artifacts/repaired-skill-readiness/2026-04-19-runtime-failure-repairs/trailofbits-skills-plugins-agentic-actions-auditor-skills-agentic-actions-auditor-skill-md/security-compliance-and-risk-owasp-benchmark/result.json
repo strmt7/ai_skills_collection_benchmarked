@@ -1,0 +1,256 @@
+{
+  "citations_or_paths": [
+    "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/trailofbits-skills-plugins-agentic-actions-auditor-skills-agentic-actions-auditor-skill-md/security-compliance-and-risk-owasp-benchmark/artifact.json",
+    "included/skills/by-category/security-compliance-risk/security-reference/agentic-actions-auditor/SKILL.md",
+    "included/repaired/skills/by-category/security-compliance-risk/security-reference/agentic-actions-auditor/SKILL.md",
+    "included/repaired/skills/by-category/security-compliance-risk/security-reference/agentic-actions-auditor/provenance/original.SKILL.md",
+    "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+    "data/benchmark_scenarios.json",
+    "data/benchmark_tracks.json"
+  ],
+  "inputs": {
+    "dataset_snapshot": {
+      "kind": "real-url",
+      "resolved": true,
+      "status": 200,
+      "url": "https://owasp.org/www-project-benchmark/"
+    },
+    "dataset_track_id": "owasp-benchmark",
+    "original_mirrored_path": "included/skills/by-category/security-compliance-risk/security-reference/agentic-actions-auditor",
+    "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/trailofbits-skills-plugins-agentic-actions-auditor-skills-agentic-actions-auditor-skill-md/security-compliance-and-risk-owasp-benchmark/artifact.json",
+    "repaired_path": "included/repaired/skills/by-category/security-compliance-risk/security-reference/agentic-actions-auditor",
+    "scenario_id": "security-compliance-and-risk-owasp-benchmark",
+    "skill_id": "trailofbits-skills-plugins-agentic-actions-auditor-skills-agentic-actions-auditor-skill-md",
+    "skill_name": "agentic-actions-auditor",
+    "task_brief_path": "benchmarks/independent-runtime-readiness/batch-02/tasks.json"
+  },
+  "metrics": {
+    "benchmark_verdict": "passed",
+    "blocking_failure_count": 0,
+    "checks_passed": 9,
+    "checks_total": 9,
+    "original_blocking_failures": [
+      "local_markdown_links_resolve"
+    ],
+    "original_score_percent": 90.0,
+    "repair_action_count": 15,
+    "repaired_missing_local_link_count": 0,
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "benchmark_verdict": "passed",
+    "blocking_failures": [],
+    "checks": [
+      {
+        "evidence": "https://owasp.org/www-project-benchmark/",
+        "name": "real_dataset_snapshot_resolved",
+        "passed": true
+      },
+      {
+        "evidence": "369b998e1d457c9c88fb9fff915b0b083c551e2c1d3e3d6baa6aa7310ac820d7",
+        "name": "original_mirror_unchanged",
+        "passed": true
+      },
+      {
+        "evidence": "included/repaired/skills/by-category/security-compliance-risk/security-reference/agentic-actions-auditor/SKILL.md",
+        "name": "repaired_skill_file_exists",
+        "passed": true
+      },
+      {
+        "evidence": "provenance/original.SKILL.md",
+        "name": "source_text_preserved",
+        "passed": true
+      },
+      {
+        "evidence": [
+          "allowed-tools",
+          "description",
+          "name"
+        ],
+        "name": "required_frontmatter_present_after_repair",
+        "passed": true
+      },
+      {
+        "evidence": [],
+        "name": "local_markdown_links_resolve_after_repair",
+        "passed": true
+      },
+      {
+        "evidence": "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+        "name": "same_independent_task_fixture",
+        "passed": true
+      },
+      {
+        "evidence": "security-compliance-and-risk-owasp-benchmark",
+        "name": "same_non_provenance_scenario",
+        "passed": true
+      },
+      {
+        "evidence": [
+          {
+            "label": "{baseDir}/references/cross-file-resolution.md",
+            "target": "{baseDir}/references/cross-file-resolution.md",
+            "type": "replaced-missing-markdown-link"
+          },
+          {
+            "label": "{baseDir}/references/foundations.md",
+            "target": "{baseDir}/references/foundations.md",
+            "type": "replaced-missing-markdown-link"
+          },
+          {
+            "label": "{baseDir}/references/vector-a-env-var-intermediary.md",
+            "target": "{baseDir}/references/vector-a-env-var-intermediary.md",
+            "type": "replaced-missing-markdown-link"
+          },
+          {
+            "label": "{baseDir}/references/vector-b-direct-expression-injection.md",
+            "target": "{baseDir}/references/vector-b-direct-expression-injection.md",
+            "type": "replaced-missing-markdown-link"
+          },
+          {
+            "label": "{baseDir}/references/vector-c-cli-data-fetch.md",
+            "target": "{baseDir}/references/vector-c-cli-data-fetch.md",
+            "type": "replaced-missing-markdown-link"
+          },
+          {
+            "label": "{baseDir}/references/vector-d-pr-target-checkout.md",
+            "target": "{baseDir}/references/vector-d-pr-target-checkout.md",
+            "type": "replaced-missing-markdown-link"
+          },
+          {
+            "label": "{baseDir}/references/vector-e-error-log-injection.md",
+            "target": "{baseDir}/references/vector-e-error-log-injection.md",
+            "type": "replaced-missing-markdown-link"
+          },
+          {
+            "label": "{baseDir}/references/vector-f-subshell-expansion.md",
+            "target": "{baseDir}/references/vector-f-subshell-expansion.md",
+            "type": "replaced-missing-markdown-link"
+          },
+          {
+            "label": "{baseDir}/references/vector-g-eval-of-ai-output.md",
+            "target": "{baseDir}/references/vector-g-eval-of-ai-output.md",
+            "type": "replaced-missing-markdown-link"
+          },
+          {
+            "label": "{baseDir}/references/vector-h-dangerous-sandbox-configs.md",
+            "target": "{baseDir}/references/vector-h-dangerous-sandbox-configs.md",
+            "type": "replaced-missing-markdown-link"
+          },
+          {
+            "label": "{baseDir}/references/vector-i-wildcard-allowlists.md",
+            "target": "{baseDir}/references/vector-i-wildcard-allowlists.md",
+            "type": "replaced-missing-markdown-link"
+          },
+          {
+            "label": "{baseDir}/references/action-profiles.md",
+            "target": "{baseDir}/references/action-profiles.md",
+            "type": "replaced-missing-markdown-link"
+          },
+          {
+            "label": "{baseDir}/references/action-profiles.md",
+            "target": "{baseDir}/references/action-profiles.md",
+            "type": "replaced-missing-markdown-link"
+          },
+          {
+            "label": "{baseDir}/references/foundations.md",
+            "target": "{baseDir}/references/foundations.md",
+            "type": "replaced-missing-markdown-link"
+          },
+          {
+            "label": "{baseDir}/references/cross-file-resolution.md",
+            "target": "{baseDir}/references/cross-file-resolution.md",
+            "type": "replaced-missing-markdown-link"
+          }
+        ],
+        "name": "repair_actions_recorded",
+        "passed": true
+      }
+    ],
+    "repair_actions": [
+      {
+        "label": "{baseDir}/references/cross-file-resolution.md",
+        "target": "{baseDir}/references/cross-file-resolution.md",
+        "type": "replaced-missing-markdown-link"
+      },
+      {
+        "label": "{baseDir}/references/foundations.md",
+        "target": "{baseDir}/references/foundations.md",
+        "type": "replaced-missing-markdown-link"
+      },
+      {
+        "label": "{baseDir}/references/vector-a-env-var-intermediary.md",
+        "target": "{baseDir}/references/vector-a-env-var-intermediary.md",
+        "type": "replaced-missing-markdown-link"
+      },
+      {
+        "label": "{baseDir}/references/vector-b-direct-expression-injection.md",
+        "target": "{baseDir}/references/vector-b-direct-expression-injection.md",
+        "type": "replaced-missing-markdown-link"
+      },
+      {
+        "label": "{baseDir}/references/vector-c-cli-data-fetch.md",
+        "target": "{baseDir}/references/vector-c-cli-data-fetch.md",
+        "type": "replaced-missing-markdown-link"
+      },
+      {
+        "label": "{baseDir}/references/vector-d-pr-target-checkout.md",
+        "target": "{baseDir}/references/vector-d-pr-target-checkout.md",
+        "type": "replaced-missing-markdown-link"
+      },
+      {
+        "label": "{baseDir}/references/vector-e-error-log-injection.md",
+        "target": "{baseDir}/references/vector-e-error-log-injection.md",
+        "type": "replaced-missing-markdown-link"
+      },
+      {
+        "label": "{baseDir}/references/vector-f-subshell-expansion.md",
+        "target": "{baseDir}/references/vector-f-subshell-expansion.md",
+        "type": "replaced-missing-markdown-link"
+      },
+      {
+        "label": "{baseDir}/references/vector-g-eval-of-ai-output.md",
+        "target": "{baseDir}/references/vector-g-eval-of-ai-output.md",
+        "type": "replaced-missing-markdown-link"
+      },
+      {
+        "label": "{baseDir}/references/vector-h-dangerous-sandbox-configs.md",
+        "target": "{baseDir}/references/vector-h-dangerous-sandbox-configs.md",
+        "type": "replaced-missing-markdown-link"
+      },
+      {
+        "label": "{baseDir}/references/vector-i-wildcard-allowlists.md",
+        "target": "{baseDir}/references/vector-i-wildcard-allowlists.md",
+        "type": "replaced-missing-markdown-link"
+      },
+      {
+        "label": "{baseDir}/references/action-profiles.md",
+        "target": "{baseDir}/references/action-profiles.md",
+        "type": "replaced-missing-markdown-link"
+      },
+      {
+        "label": "{baseDir}/references/action-profiles.md",
+        "target": "{baseDir}/references/action-profiles.md",
+        "type": "replaced-missing-markdown-link"
+      },
+      {
+        "label": "{baseDir}/references/foundations.md",
+        "target": "{baseDir}/references/foundations.md",
+        "type": "replaced-missing-markdown-link"
+      },
+      {
+        "label": "{baseDir}/references/cross-file-resolution.md",
+        "target": "{baseDir}/references/cross-file-resolution.md",
+        "type": "replaced-missing-markdown-link"
+      }
+    ],
+    "score_percent": 100.0
+  },
+  "steps": [
+    "Copied the immutable mirrored skill into a separate repaired overlay.",
+    "Preserved the original SKILL.md text under provenance/original.SKILL.md.",
+    "Added required frontmatter only when missing or incomplete.",
+    "Replaced unresolved local Markdown links in the repaired SKILL.md with explicit unavailable-target text.",
+    "Ran the same readiness checks against the repaired overlay without changing the original mirror."
+  ]
+}

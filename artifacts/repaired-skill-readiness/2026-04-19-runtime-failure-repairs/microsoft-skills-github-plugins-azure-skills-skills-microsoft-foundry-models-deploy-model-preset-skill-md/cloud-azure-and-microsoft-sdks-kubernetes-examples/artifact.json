@@ -1,0 +1,84 @@
+{
+  "artifact_kind": "repaired_skill_readiness",
+  "artifact_version": "1.0",
+  "catalog_commit": "6e52c185bf83687bbf6e93d19e34fba297a0da00",
+  "evidence": {
+    "artifact_paths": [
+      "result.json",
+      "transcript.txt",
+      "repair.json"
+    ],
+    "citations_or_paths": [
+      "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+      "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/preset/SKILL.md",
+      "included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/preset/SKILL.md",
+      "included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/preset/provenance/original.SKILL.md",
+      "benchmarks/independent-runtime-readiness/batch-01/tasks.json",
+      "data/benchmark_scenarios.json",
+      "data/benchmark_tracks.json"
+    ]
+  },
+  "execution": {
+    "commands_or_transcript_path": "transcript.txt",
+    "fresh_session": true
+  },
+  "independence": {
+    "evaluator_defined_outside_skill": true,
+    "expected_result_defined_outside_skill": true,
+    "skill_content_usage": "skill text was the object under repair-readiness checks; task and expected checks were defined by the runner and original benchmark fixture",
+    "task_defined_outside_skill": true,
+    "uses_exact_skill_content_for_expected_result": false
+  },
+  "input_snapshot": {
+    "identifier": "https://github.com/kubernetes/examples",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "original_mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/preset",
+    "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+    "original_skill_file_sha256": "e3d6313af788327dc409c1515029209a362db9ce7ace999b95653e85fa9b688e",
+    "repaired_path": "included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/preset",
+    "repaired_skill_file_sha256": "f16dce8353bbd0bcc252e23edd0e2830fe98640c6f4a71b2c616d07d41aa7440"
+  },
+  "metrics": {
+    "benchmark_verdict": "passed",
+    "blocking_failure_count": 0,
+    "checks_passed": 9,
+    "checks_total": 9,
+    "original_blocking_failures": [
+      "local_markdown_links_resolve"
+    ],
+    "original_score_percent": 90.0,
+    "repair_action_count": 3,
+    "repaired_missing_local_link_count": 0,
+    "score_percent": 100.0
+  },
+  "objective_checks": [
+    "real_dataset_snapshot_resolved",
+    "original_mirror_unchanged",
+    "repaired_skill_file_exists",
+    "source_text_preserved",
+    "required_frontmatter_present_after_repair",
+    "local_markdown_links_resolve_after_repair",
+    "same_independent_task_fixture",
+    "same_non_provenance_scenario",
+    "repair_actions_recorded"
+  ],
+  "outputs": {
+    "path": "result.json",
+    "repair_record_path": "repair.json",
+    "repair_sha256": "651cf2dbfc03481d3a168f14eac6facdf68c0c5fa613fcd6de5aa0dab9976340",
+    "result_sha256": "5be01c65e2f600252761aaf2e4f427a71181c4b7ff4b73da37adaa481858589d",
+    "schema": "evaluators/repaired_skill_readiness.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-repair-readiness-runner",
+    "run_name": "2026-04-19-runtime-failure-repairs",
+    "timestamp_utc": "2026-04-19T12:42:40Z",
+    "tool": "tools/create_repaired_skill_overlays.py"
+  },
+  "scenario_id": "cloud-azure-and-microsoft-sdks-kubernetes-examples",
+  "skill_id": "microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-preset-skill-md",
+  "source_commit": "a2c05249c4a20103dd954ca702467aa328aac031",
+  "source_path": ".github/plugins/azure-skills/skills/microsoft-foundry/models/deploy-model/preset/SKILL.md",
+  "source_repo": "microsoft/skills"
+}

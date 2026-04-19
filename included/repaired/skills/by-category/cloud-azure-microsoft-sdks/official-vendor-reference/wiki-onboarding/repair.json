@@ -1,0 +1,37 @@
+{
+  "actions": [
+    {
+      "label": "file:line",
+      "target": "REPO_URL/blob/BRANCH/file#Lline",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "Contributor Guide",
+      "target": "./contributor-guide.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "Staff Engineer Guide",
+      "target": "./staff-engineer-guide.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "Executive Guide",
+      "target": "./executive-guide.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "Product Manager Guide",
+      "target": "./product-manager-guide.md",
+      "type": "replaced-missing-markdown-link"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-onboarding",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/microsoft-skills-github-plugins-deep-wiki-skills-wiki-onboarding-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+  "original_skill_file_sha256": "5dde78db7c75f3265025c1410818d25abbed7a0bb3b5fa33c2c25ae0fbe7df50",
+  "original_skill_text_sha256": "5dde78db7c75f3265025c1410818d25abbed7a0bb3b5fa33c2c25ae0fbe7df50",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-onboarding",
+  "repaired_skill_file_sha256": "a8367cdb556920d9ed10327e641aff54370559769ab1ececf8763b9a8f7d671a",
+  "skill_id": "microsoft-skills-github-plugins-deep-wiki-skills-wiki-onboarding-skill-md"
+}

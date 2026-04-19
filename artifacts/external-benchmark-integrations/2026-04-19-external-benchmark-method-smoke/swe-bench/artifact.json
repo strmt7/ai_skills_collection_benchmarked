@@ -1,0 +1,152 @@
+{
+  "artifact_kind": "external_benchmark_method_smoke",
+  "artifact_version": "1.0",
+  "checks": [
+    {
+      "evidence": "data/external_benchmark_methods.json",
+      "name": "adapter_spec_complete",
+      "passed": true
+    },
+    {
+      "evidence": "https://github.com/SWE-bench/SWE-bench",
+      "name": "repository_head_resolves",
+      "passed": true
+    },
+    {
+      "evidence": 660,
+      "name": "repo_tree_sampled",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "resolved instances",
+        "patch applies",
+        "test pass rate",
+        "regression count"
+      ],
+      "name": "declares_objective_metrics",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "Docker-capable host",
+        "instance id",
+        "prediction patch",
+        "test harness output"
+      ],
+      "name": "declares_integration_requirements",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "Coding, refactoring & repository automation",
+        "Testing, QA & benchmarking"
+      ],
+      "name": "declares_category_fit",
+      "passed": true
+    },
+    {
+      "evidence": "repository root",
+      "name": "required_subpath_resolves",
+      "passed": true
+    }
+  ],
+  "evidence": {
+    "citations_or_paths": [
+      "https://github.com/SWE-bench/SWE-bench",
+      "https://github.com/SWE-bench/SWE-bench",
+      "data/external_benchmark_methods.json"
+    ]
+  },
+  "execution": {
+    "commands": [
+      {
+        "command": [
+          "git",
+          "ls-remote",
+          "https://github.com/SWE-bench/SWE-bench",
+          "HEAD"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "f7bbbb2ccdf479001d6467c9e34af59e44a840f9\tHEAD"
+      }
+    ],
+    "fresh_session": true
+  },
+  "input_snapshot": {
+    "head_sha": "f7bbbb2ccdf479001d6467c9e34af59e44a840f9",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "repo_subpath": null,
+    "repo_subpath_present": true,
+    "repo_url": "https://github.com/SWE-bench/SWE-bench",
+    "sampled_paths": [
+      ".github/ISSUE_TEMPLATE/bug_report.yml",
+      ".github/ISSUE_TEMPLATE/config.yml",
+      ".github/ISSUE_TEMPLATE/feature_request.yml",
+      ".github/ISSUE_TEMPLATE/question.yml",
+      ".github/PULL_REQUEST_TEMPLATE.md",
+      ".github/workflows/deploy-docs.yml",
+      ".github/workflows/pytest.yaml",
+      ".gitignore",
+      ".pre-commit-config.yaml",
+      "CHANGELOG.md",
+      "LICENSE",
+      "README.md",
+      "codecov.yml",
+      "docs/README.md",
+      "docs/api/harness.md",
+      "docs/api/inference.md",
+      "docs/api/versioning.md",
+      "docs/assets/build_deploy.sh",
+      "docs/assets/collection.md",
+      "docs/assets/evaluation.md"
+    ],
+    "source_url": "https://github.com/SWE-bench/SWE-bench",
+    "tree_error": "",
+    "tree_path_count": 660
+  },
+  "method": {
+    "adapter_stage": "implemented-smoke-adapter",
+    "category_fit": [
+      "Coding, refactoring & repository automation",
+      "Testing, QA & benchmarking"
+    ],
+    "id": "swe-bench",
+    "integration_requirements": [
+      "Docker-capable host",
+      "instance id",
+      "prediction patch",
+      "test harness output"
+    ],
+    "primary_metrics": [
+      "resolved instances",
+      "patch applies",
+      "test pass rate",
+      "regression count"
+    ],
+    "repo_url": "https://github.com/SWE-bench/SWE-bench",
+    "scope": "Evaluates repository issue resolution by applying patches and running project tests.",
+    "source_url": "https://github.com/SWE-bench/SWE-bench",
+    "title": "SWE-bench"
+  },
+  "method_id": "swe-bench",
+  "method_title": "SWE-bench",
+  "metrics": {
+    "blocking_failures": [],
+    "checks_passed": 7,
+    "checks_total": 7,
+    "integration_status": "adapter_ready",
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "schema": "evaluators/external_benchmark_method_smoke.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-integration-smoke",
+    "run_name": "2026-04-19-external-benchmark-method-smoke",
+    "timestamp_utc": "2026-04-19T12:43:21Z",
+    "tool": "tools/evaluate_external_benchmark_methods.py"
+  }
+}

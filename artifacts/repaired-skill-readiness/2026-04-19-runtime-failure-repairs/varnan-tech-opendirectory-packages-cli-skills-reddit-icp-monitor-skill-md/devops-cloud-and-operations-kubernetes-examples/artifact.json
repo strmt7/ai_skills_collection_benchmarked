@@ -1,0 +1,84 @@
+{
+  "artifact_kind": "repaired_skill_readiness",
+  "artifact_version": "1.0",
+  "catalog_commit": "6e52c185bf83687bbf6e93d19e34fba297a0da00",
+  "evidence": {
+    "artifact_paths": [
+      "result.json",
+      "transcript.txt",
+      "repair.json"
+    ],
+    "citations_or_paths": [
+      "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/varnan-tech-opendirectory-packages-cli-skills-reddit-icp-monitor-skill-md/devops-cloud-and-operations-kubernetes-examples/artifact.json",
+      "included/skills/by-category/devops-cloud-operations/reddit-verified-gtm-registry/reddit-icp-monitor/SKILL.md",
+      "included/repaired/skills/by-category/devops-cloud-operations/reddit-verified-gtm-registry/reddit-icp-monitor/SKILL.md",
+      "included/repaired/skills/by-category/devops-cloud-operations/reddit-verified-gtm-registry/reddit-icp-monitor/provenance/original.SKILL.md",
+      "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+      "data/benchmark_scenarios.json",
+      "data/benchmark_tracks.json"
+    ]
+  },
+  "execution": {
+    "commands_or_transcript_path": "transcript.txt",
+    "fresh_session": true
+  },
+  "independence": {
+    "evaluator_defined_outside_skill": true,
+    "expected_result_defined_outside_skill": true,
+    "skill_content_usage": "skill text was the object under repair-readiness checks; task and expected checks were defined by the runner and original benchmark fixture",
+    "task_defined_outside_skill": true,
+    "uses_exact_skill_content_for_expected_result": false
+  },
+  "input_snapshot": {
+    "identifier": "https://github.com/kubernetes/examples",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "original_mirrored_path": "included/skills/by-category/devops-cloud-operations/reddit-verified-gtm-registry/reddit-icp-monitor",
+    "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/varnan-tech-opendirectory-packages-cli-skills-reddit-icp-monitor-skill-md/devops-cloud-and-operations-kubernetes-examples/artifact.json",
+    "original_skill_file_sha256": "45ac8dbad3ea46b3346384a4166bfa5deb3aca47a0f51fdfaeb2dbb4cdd87f3b",
+    "repaired_path": "included/repaired/skills/by-category/devops-cloud-operations/reddit-verified-gtm-registry/reddit-icp-monitor",
+    "repaired_skill_file_sha256": "ea79d726aedb22478a52edaa6a2c32cbedeb3ae7d343a1d2aa83a60acdbd60ca"
+  },
+  "metrics": {
+    "benchmark_verdict": "passed",
+    "blocking_failure_count": 0,
+    "checks_passed": 9,
+    "checks_total": 9,
+    "original_blocking_failures": [
+      "local_markdown_links_resolve"
+    ],
+    "original_score_percent": 90.0,
+    "repair_action_count": 1,
+    "repaired_missing_local_link_count": 0,
+    "score_percent": 100.0
+  },
+  "objective_checks": [
+    "real_dataset_snapshot_resolved",
+    "original_mirror_unchanged",
+    "repaired_skill_file_exists",
+    "source_text_preserved",
+    "required_frontmatter_present_after_repair",
+    "local_markdown_links_resolve_after_repair",
+    "same_independent_task_fixture",
+    "same_non_provenance_scenario",
+    "repair_actions_recorded"
+  ],
+  "outputs": {
+    "path": "result.json",
+    "repair_record_path": "repair.json",
+    "repair_sha256": "37210ef4a77e6855ea40c53422f885e9bbd311c9e09ccca4882dedc8f68283e2",
+    "result_sha256": "d3afc1fa13c934338eae617e3f13b9865640fb544e1f3d8c843647de8075b5d9",
+    "schema": "evaluators/repaired_skill_readiness.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-repair-readiness-runner",
+    "run_name": "2026-04-19-runtime-failure-repairs",
+    "timestamp_utc": "2026-04-19T12:42:40Z",
+    "tool": "tools/create_repaired_skill_overlays.py"
+  },
+  "scenario_id": "devops-cloud-and-operations-kubernetes-examples",
+  "skill_id": "varnan-tech-opendirectory-packages-cli-skills-reddit-icp-monitor-skill-md",
+  "source_commit": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4",
+  "source_path": "packages/cli/skills/reddit-icp-monitor/SKILL.md",
+  "source_repo": "Varnan-Tech/opendirectory"
+}

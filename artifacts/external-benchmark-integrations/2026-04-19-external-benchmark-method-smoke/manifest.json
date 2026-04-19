@@ -1,0 +1,126 @@
+{
+  "artifact_kind": "external_benchmark_method_smoke",
+  "artifacts": [
+    {
+      "artifact_path": "artifacts/external-benchmark-integrations/2026-04-19-external-benchmark-method-smoke/swe-skills-bench/artifact.json",
+      "blocking_failures": [],
+      "head_sha": "95b3ce519fcb58d0b19e90a5b6e5165211dc6dd1",
+      "integration_status": "adapter_ready",
+      "method_id": "swe-skills-bench",
+      "score_percent": 100.0
+    },
+    {
+      "artifact_path": "artifacts/external-benchmark-integrations/2026-04-19-external-benchmark-method-smoke/skillsbench/artifact.json",
+      "blocking_failures": [],
+      "head_sha": "be06b4995c75b384b9295b94d18a4531400bb821",
+      "integration_status": "adapter_ready",
+      "method_id": "skillsbench",
+      "score_percent": 100.0
+    },
+    {
+      "artifact_path": "artifacts/external-benchmark-integrations/2026-04-19-external-benchmark-method-smoke/skill-bench/artifact.json",
+      "blocking_failures": [],
+      "head_sha": "68841d3b5ec3ea2658f74ca260d3c1088481928d",
+      "integration_status": "adapter_ready",
+      "method_id": "skill-bench",
+      "score_percent": 100.0
+    },
+    {
+      "artifact_path": "artifacts/external-benchmark-integrations/2026-04-19-external-benchmark-method-smoke/swe-bench/artifact.json",
+      "blocking_failures": [],
+      "head_sha": "f7bbbb2ccdf479001d6467c9e34af59e44a840f9",
+      "integration_status": "adapter_ready",
+      "method_id": "swe-bench",
+      "score_percent": 100.0
+    },
+    {
+      "artifact_path": "artifacts/external-benchmark-integrations/2026-04-19-external-benchmark-method-smoke/terminal-bench/artifact.json",
+      "blocking_failures": [],
+      "head_sha": "1a6ffa9674b571da0ed040c470cb40c4d85f9b9b",
+      "integration_status": "adapter_ready",
+      "method_id": "terminal-bench",
+      "score_percent": 100.0
+    },
+    {
+      "artifact_path": "artifacts/external-benchmark-integrations/2026-04-19-external-benchmark-method-smoke/browsergym/artifact.json",
+      "blocking_failures": [],
+      "head_sha": "9e779f087de9a65668b6974d11f9ce9816026e96",
+      "integration_status": "adapter_ready",
+      "method_id": "browsergym",
+      "score_percent": 100.0
+    },
+    {
+      "artifact_path": "artifacts/external-benchmark-integrations/2026-04-19-external-benchmark-method-smoke/webarena/artifact.json",
+      "blocking_failures": [],
+      "head_sha": "dce04686a56253aefba7b18a4fa0937cf1dc987b",
+      "integration_status": "adapter_ready",
+      "method_id": "webarena",
+      "score_percent": 100.0
+    },
+    {
+      "artifact_path": "artifacts/external-benchmark-integrations/2026-04-19-external-benchmark-method-smoke/webarena-verified/artifact.json",
+      "blocking_failures": [],
+      "head_sha": "6473f72db5dcefc97b5725b59e734504edc28a21",
+      "integration_status": "adapter_ready",
+      "method_id": "webarena-verified",
+      "score_percent": 100.0
+    },
+    {
+      "artifact_path": "artifacts/external-benchmark-integrations/2026-04-19-external-benchmark-method-smoke/st-webagentbench/artifact.json",
+      "blocking_failures": [],
+      "head_sha": "67f56dd7df9eca1646c9e49407b087e950aa1e77",
+      "integration_status": "adapter_ready",
+      "method_id": "st-webagentbench",
+      "score_percent": 100.0
+    },
+    {
+      "artifact_path": "artifacts/external-benchmark-integrations/2026-04-19-external-benchmark-method-smoke/osworld/artifact.json",
+      "blocking_failures": [],
+      "head_sha": "c7e54d24d136d52be0c6d5a7487a1a32f99e7017",
+      "integration_status": "adapter_ready",
+      "method_id": "osworld",
+      "score_percent": 100.0
+    },
+    {
+      "artifact_path": "artifacts/external-benchmark-integrations/2026-04-19-external-benchmark-method-smoke/bfcl/artifact.json",
+      "blocking_failures": [],
+      "head_sha": "6ea57973c7a6097fd7c5915698c54c17c5b1b6c8",
+      "integration_status": "adapter_ready",
+      "method_id": "bfcl",
+      "score_percent": 100.0
+    },
+    {
+      "artifact_path": "artifacts/external-benchmark-integrations/2026-04-19-external-benchmark-method-smoke/mle-bench/artifact.json",
+      "blocking_failures": [],
+      "head_sha": "2451bcbf0ed56ffbd82d518af6529fb71dea6e52",
+      "integration_status": "adapter_ready",
+      "method_id": "mle-bench",
+      "score_percent": 100.0
+    },
+    {
+      "artifact_path": "artifacts/external-benchmark-integrations/2026-04-19-external-benchmark-method-smoke/ml-dev-bench/artifact.json",
+      "blocking_failures": [],
+      "head_sha": "c2bd0c239f960368b11b2fd83d76f2ccfb69b7c4",
+      "integration_status": "adapter_ready",
+      "method_id": "ml-dev-bench",
+      "score_percent": 100.0
+    },
+    {
+      "artifact_path": "artifacts/external-benchmark-integrations/2026-04-19-external-benchmark-method-smoke/gittaskbench/artifact.json",
+      "blocking_failures": [],
+      "head_sha": "df188a73013393d036442bfb0f323c4c995fa5e1",
+      "integration_status": "adapter_ready",
+      "method_id": "gittaskbench",
+      "score_percent": 100.0
+    }
+  ],
+  "generated_at_utc": "2026-04-19T12:43:21Z",
+  "registry_path": "data/external_benchmark_methods.json",
+  "run_name": "2026-04-19-external-benchmark-method-smoke",
+  "runner": "tools/evaluate_external_benchmark_methods.py",
+  "summary": {
+    "adapter_incomplete": 0,
+    "adapter_ready": 14,
+    "method_count": 14
+  }
+}

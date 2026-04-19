@@ -1,0 +1,17 @@
+{
+  "actions": [
+    {
+      "label": "title",
+      "target": "url",
+      "type": "replaced-missing-markdown-link"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/devops-cloud-operations/reddit-verified-gtm-registry/reddit-icp-monitor",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/varnan-tech-opendirectory-packages-cli-skills-reddit-icp-monitor-skill-md/devops-cloud-and-operations-kubernetes-examples/artifact.json",
+  "original_skill_file_sha256": "45ac8dbad3ea46b3346384a4166bfa5deb3aca47a0f51fdfaeb2dbb4cdd87f3b",
+  "original_skill_text_sha256": "45ac8dbad3ea46b3346384a4166bfa5deb3aca47a0f51fdfaeb2dbb4cdd87f3b",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/devops-cloud-operations/reddit-verified-gtm-registry/reddit-icp-monitor",
+  "repaired_skill_file_sha256": "ea79d726aedb22478a52edaa6a2c32cbedeb3ae7d343a1d2aa83a60acdbd60ca",
+  "skill_id": "varnan-tech-opendirectory-packages-cli-skills-reddit-icp-monitor-skill-md"
+}

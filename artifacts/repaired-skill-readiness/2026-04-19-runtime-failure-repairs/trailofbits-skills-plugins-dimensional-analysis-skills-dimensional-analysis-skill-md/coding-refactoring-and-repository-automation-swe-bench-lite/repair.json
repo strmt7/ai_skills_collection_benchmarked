@@ -1,0 +1,57 @@
+{
+  "actions": [
+    {
+      "label": "{baseDir}/references/annotate.md",
+      "target": "{baseDir}/references/annotate.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/dimension-algebra.md",
+      "target": "{baseDir}/references/dimension-algebra.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/bug-patterns.md",
+      "target": "{baseDir}/references/bug-patterns.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/common-dimensions.md",
+      "target": "{baseDir}/references/common-dimensions.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/dimension-algebra.md",
+      "target": "{baseDir}/references/dimension-algebra.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/dimension-algebra.md",
+      "target": "{baseDir}/references/dimension-algebra.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/common-dimensions.md",
+      "target": "{baseDir}/references/common-dimensions.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/bug-patterns.md",
+      "target": "{baseDir}/references/bug-patterns.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/annotate.md",
+      "target": "{baseDir}/references/annotate.md",
+      "type": "replaced-missing-markdown-link"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/security-reference/dimensional-analysis",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/trailofbits-skills-plugins-dimensional-analysis-skills-dimensional-analysis-skill-md/coding-refactoring-and-repository-automation-swe-bench-lite/artifact.json",
+  "original_skill_file_sha256": "b242d48524650768e57d7a85f3a8ad2ec4f6680ca01a4eea357accc11f1696ac",
+  "original_skill_text_sha256": "b242d48524650768e57d7a85f3a8ad2ec4f6680ca01a4eea357accc11f1696ac",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/coding-refactoring-repository-automation/security-reference/dimensional-analysis",
+  "repaired_skill_file_sha256": "f6f35e96b62e24bbcaa987a016b7af9fce08584cde0ab2ead9089ad6d91718db",
+  "skill_id": "trailofbits-skills-plugins-dimensional-analysis-skills-dimensional-analysis-skill-md"
+}

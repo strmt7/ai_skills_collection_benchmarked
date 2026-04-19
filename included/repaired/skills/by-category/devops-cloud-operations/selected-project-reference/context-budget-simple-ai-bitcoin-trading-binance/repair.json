@@ -1,0 +1,16 @@
+{
+  "actions": [
+    {
+      "name": "context-budget-simple-ai-bitcoin-trading-binance",
+      "type": "added-required-frontmatter"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/devops-cloud-operations/selected-project-reference/context-budget-simple-ai-bitcoin-trading-binance",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md/devops-cloud-and-operations-kubernetes-examples/artifact.json",
+  "original_skill_file_sha256": "ae259dc7adb506e068e2361bb724e9bb603c3c9eed0d777b0e9cceb451777da4",
+  "original_skill_text_sha256": "ae259dc7adb506e068e2361bb724e9bb603c3c9eed0d777b0e9cceb451777da4",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/devops-cloud-operations/selected-project-reference/context-budget-simple-ai-bitcoin-trading-binance",
+  "repaired_skill_file_sha256": "bad69983814a27c4a15de65a9f0a144bc2983696e2a17d313b6fb992de64cffb",
+  "skill_id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md"
+}

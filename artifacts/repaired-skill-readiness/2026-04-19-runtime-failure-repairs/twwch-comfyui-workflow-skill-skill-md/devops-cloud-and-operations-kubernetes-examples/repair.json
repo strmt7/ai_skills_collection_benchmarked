@@ -1,0 +1,16 @@
+{
+  "actions": [
+    {
+      "name": "twwch-comfyui-workflow-skill",
+      "type": "added-required-frontmatter"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/devops-cloud-operations/creative-reference/twwch-comfyui-workflow-skill",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/twwch-comfyui-workflow-skill-skill-md/devops-cloud-and-operations-kubernetes-examples/artifact.json",
+  "original_skill_file_sha256": "1deff1940beaa6ea91ff3dfdb4ff85f68bdf1e64bdfa163415507ac0b9621ebf",
+  "original_skill_text_sha256": "1deff1940beaa6ea91ff3dfdb4ff85f68bdf1e64bdfa163415507ac0b9621ebf",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/devops-cloud-operations/creative-reference/twwch-comfyui-workflow-skill",
+  "repaired_skill_file_sha256": "7fa55fb1a4055aa7436acb9f697596fa3c19146927a402ffcb90d28dd1f7f884",
+  "skill_id": "twwch-comfyui-workflow-skill-skill-md"
+}

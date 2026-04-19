@@ -1,0 +1,152 @@
+{
+  "artifact_kind": "external_benchmark_method_smoke",
+  "artifact_version": "1.0",
+  "checks": [
+    {
+      "evidence": "data/external_benchmark_methods.json",
+      "name": "adapter_spec_complete",
+      "passed": true
+    },
+    {
+      "evidence": "https://github.com/ServiceNow/BrowserGym",
+      "name": "repository_head_resolves",
+      "passed": true
+    },
+    {
+      "evidence": 205,
+      "name": "repo_tree_sampled",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "task success",
+        "trace completeness",
+        "browser actions",
+        "wall time"
+      ],
+      "name": "declares_objective_metrics",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "Playwright browser",
+        "environment id",
+        "browser trace",
+        "task evaluator"
+      ],
+      "name": "declares_integration_requirements",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "Frontend, UI & browser automation",
+        "Search, retrieval & web automation"
+      ],
+      "name": "declares_category_fit",
+      "passed": true
+    },
+    {
+      "evidence": "repository root",
+      "name": "required_subpath_resolves",
+      "passed": true
+    }
+  ],
+  "evidence": {
+    "citations_or_paths": [
+      "https://github.com/ServiceNow/BrowserGym",
+      "https://github.com/ServiceNow/BrowserGym",
+      "data/external_benchmark_methods.json"
+    ]
+  },
+  "execution": {
+    "commands": [
+      {
+        "command": [
+          "git",
+          "ls-remote",
+          "https://github.com/ServiceNow/BrowserGym",
+          "HEAD"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "9e779f087de9a65668b6974d11f9ce9816026e96\tHEAD"
+      }
+    ],
+    "fresh_session": true
+  },
+  "input_snapshot": {
+    "head_sha": "9e779f087de9a65668b6974d11f9ce9816026e96",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "repo_subpath": null,
+    "repo_subpath_present": true,
+    "repo_url": "https://github.com/ServiceNow/BrowserGym",
+    "sampled_paths": [
+      ".github/actions/setup-python-uv/action.yml",
+      ".github/workflows/pypi.yml",
+      ".github/workflows/unit_tests.yml",
+      ".gitignore",
+      ".pre-commit-config.yaml",
+      ".readthedocs.yaml",
+      "LICENSE",
+      "Makefile",
+      "README.md",
+      "browsergym/assistantbench/README.md",
+      "browsergym/assistantbench/pyproject.toml",
+      "browsergym/assistantbench/requirements.txt",
+      "browsergym/assistantbench/src/browsergym/assistantbench/__init__.py",
+      "browsergym/assistantbench/src/browsergym/assistantbench/evaluation/evaluate_utils/evaluate_dicts.py",
+      "browsergym/assistantbench/src/browsergym/assistantbench/evaluation/evaluate_utils/evaluate_factory.py",
+      "browsergym/assistantbench/src/browsergym/assistantbench/evaluation/evaluate_utils/evaluate_numbers.py",
+      "browsergym/assistantbench/src/browsergym/assistantbench/evaluation/evaluate_utils/evaluate_strings.py",
+      "browsergym/assistantbench/src/browsergym/assistantbench/evaluation/evaluate_utils/utils.py",
+      "browsergym/assistantbench/src/browsergym/assistantbench/evaluation/evaluator.py",
+      "browsergym/assistantbench/src/browsergym/assistantbench/task.py"
+    ],
+    "source_url": "https://github.com/ServiceNow/BrowserGym",
+    "tree_error": "",
+    "tree_path_count": 205
+  },
+  "method": {
+    "adapter_stage": "implemented-smoke-adapter",
+    "category_fit": [
+      "Frontend, UI & browser automation",
+      "Search, retrieval & web automation"
+    ],
+    "id": "browsergym",
+    "integration_requirements": [
+      "Playwright browser",
+      "environment id",
+      "browser trace",
+      "task evaluator"
+    ],
+    "primary_metrics": [
+      "task success",
+      "trace completeness",
+      "browser actions",
+      "wall time"
+    ],
+    "repo_url": "https://github.com/ServiceNow/BrowserGym",
+    "scope": "Provides a unified browser-agent environment across MiniWoB, WebArena, VisualWebArena, WorkArena, and related suites.",
+    "source_url": "https://github.com/ServiceNow/BrowserGym",
+    "title": "BrowserGym"
+  },
+  "method_id": "browsergym",
+  "method_title": "BrowserGym",
+  "metrics": {
+    "blocking_failures": [],
+    "checks_passed": 7,
+    "checks_total": 7,
+    "integration_status": "adapter_ready",
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "schema": "evaluators/external_benchmark_method_smoke.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-integration-smoke",
+    "run_name": "2026-04-19-external-benchmark-method-smoke",
+    "timestamp_utc": "2026-04-19T12:43:21Z",
+    "tool": "tools/evaluate_external_benchmark_methods.py"
+  }
+}

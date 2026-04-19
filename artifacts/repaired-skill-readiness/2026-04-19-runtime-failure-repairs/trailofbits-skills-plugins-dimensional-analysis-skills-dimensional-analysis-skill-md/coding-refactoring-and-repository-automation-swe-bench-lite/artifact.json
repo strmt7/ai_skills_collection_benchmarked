@@ -1,0 +1,84 @@
+{
+  "artifact_kind": "repaired_skill_readiness",
+  "artifact_version": "1.0",
+  "catalog_commit": "6e52c185bf83687bbf6e93d19e34fba297a0da00",
+  "evidence": {
+    "artifact_paths": [
+      "result.json",
+      "transcript.txt",
+      "repair.json"
+    ],
+    "citations_or_paths": [
+      "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/trailofbits-skills-plugins-dimensional-analysis-skills-dimensional-analysis-skill-md/coding-refactoring-and-repository-automation-swe-bench-lite/artifact.json",
+      "included/skills/by-category/coding-refactoring-repository-automation/security-reference/dimensional-analysis/SKILL.md",
+      "included/repaired/skills/by-category/coding-refactoring-repository-automation/security-reference/dimensional-analysis/SKILL.md",
+      "included/repaired/skills/by-category/coding-refactoring-repository-automation/security-reference/dimensional-analysis/provenance/original.SKILL.md",
+      "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+      "data/benchmark_scenarios.json",
+      "data/benchmark_tracks.json"
+    ]
+  },
+  "execution": {
+    "commands_or_transcript_path": "transcript.txt",
+    "fresh_session": true
+  },
+  "independence": {
+    "evaluator_defined_outside_skill": true,
+    "expected_result_defined_outside_skill": true,
+    "skill_content_usage": "skill text was the object under repair-readiness checks; task and expected checks were defined by the runner and original benchmark fixture",
+    "task_defined_outside_skill": true,
+    "uses_exact_skill_content_for_expected_result": false
+  },
+  "input_snapshot": {
+    "identifier": "https://github.com/SWE-bench/SWE-bench",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "original_mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/security-reference/dimensional-analysis",
+    "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/trailofbits-skills-plugins-dimensional-analysis-skills-dimensional-analysis-skill-md/coding-refactoring-and-repository-automation-swe-bench-lite/artifact.json",
+    "original_skill_file_sha256": "b242d48524650768e57d7a85f3a8ad2ec4f6680ca01a4eea357accc11f1696ac",
+    "repaired_path": "included/repaired/skills/by-category/coding-refactoring-repository-automation/security-reference/dimensional-analysis",
+    "repaired_skill_file_sha256": "f6f35e96b62e24bbcaa987a016b7af9fce08584cde0ab2ead9089ad6d91718db"
+  },
+  "metrics": {
+    "benchmark_verdict": "passed",
+    "blocking_failure_count": 0,
+    "checks_passed": 9,
+    "checks_total": 9,
+    "original_blocking_failures": [
+      "local_markdown_links_resolve"
+    ],
+    "original_score_percent": 90.0,
+    "repair_action_count": 9,
+    "repaired_missing_local_link_count": 0,
+    "score_percent": 100.0
+  },
+  "objective_checks": [
+    "real_dataset_snapshot_resolved",
+    "original_mirror_unchanged",
+    "repaired_skill_file_exists",
+    "source_text_preserved",
+    "required_frontmatter_present_after_repair",
+    "local_markdown_links_resolve_after_repair",
+    "same_independent_task_fixture",
+    "same_non_provenance_scenario",
+    "repair_actions_recorded"
+  ],
+  "outputs": {
+    "path": "result.json",
+    "repair_record_path": "repair.json",
+    "repair_sha256": "49c77f19bbec3bd3566d02dbb9f4e64187c6215aadf94b0bb255e3188d8f17a8",
+    "result_sha256": "f10e070b40b668d4937b284c097c95715c9582145f647b47885fa12cfd8fe86c",
+    "schema": "evaluators/repaired_skill_readiness.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-repair-readiness-runner",
+    "run_name": "2026-04-19-runtime-failure-repairs",
+    "timestamp_utc": "2026-04-19T12:42:40Z",
+    "tool": "tools/create_repaired_skill_overlays.py"
+  },
+  "scenario_id": "coding-refactoring-and-repository-automation-swe-bench-lite",
+  "skill_id": "trailofbits-skills-plugins-dimensional-analysis-skills-dimensional-analysis-skill-md",
+  "source_commit": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+  "source_path": "plugins/dimensional-analysis/skills/dimensional-analysis/SKILL.md",
+  "source_repo": "trailofbits/skills"
+}
