@@ -1,0 +1,17 @@
+{
+  "actions": [
+    {
+      "label": "function_name",
+      "target": "[metric][time_range]",
+      "type": "replaced-missing-markdown-link"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/devops-cloud-operations/latest-release-devops/promql-generator",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/akin-ozer-cc-devops-skills-devops-skills-plugin-skills-promql-generator-skill-md/devops-cloud-and-operations-kubernetes-examples/artifact.json",
+  "original_skill_file_sha256": "e0ef53892d987ab969149a47499ea8fc205e467ccf20dc4dacb2df463ed06ba9",
+  "original_skill_text_sha256": "e0ef53892d987ab969149a47499ea8fc205e467ccf20dc4dacb2df463ed06ba9",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/promql-generator",
+  "repaired_skill_file_sha256": "fe4bb9c490085c94d8977116d050c625be82c345030d82b9f89957607ae7c919",
+  "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-promql-generator-skill-md"
+}

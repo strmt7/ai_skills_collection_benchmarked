@@ -1,0 +1,57 @@
+{
+  "actions": [
+    {
+      "label": "file:line",
+      "target": "REPO_URL/blob/BRANCH/file#Lline",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "src/path/file.ts:42",
+      "target": "REPO_URL/blob/BRANCH/src/path/file.ts#L42",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "src/path/file.ts:42-58",
+      "target": "REPO_URL/blob/BRANCH/src/path/file.ts#L42-L58",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "Component Name",
+      "target": "../NN-section/page-name.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "Section Title",
+      "target": "../NN-section/page-name.md#heading-anchor",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "Authentication",
+      "target": "../02-architecture/authentication.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "Data Models",
+      "target": "../03-data-layer/models.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "Contributor Guide",
+      "target": "../onboarding/contributor-guide.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "error handling",
+      "target": "../02-architecture/overview.md#error-handling",
+      "type": "replaced-missing-markdown-link"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-page-writer",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/microsoft-skills-github-plugins-deep-wiki-skills-wiki-page-writer-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+  "original_skill_file_sha256": "f1270ea4123116e846bf2dc7a53a9e396ed43d694cdb7be22b9a35da9a40feb6",
+  "original_skill_text_sha256": "f1270ea4123116e846bf2dc7a53a9e396ed43d694cdb7be22b9a35da9a40feb6",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-page-writer",
+  "repaired_skill_file_sha256": "b203dfd89686b8972fd1a732ac8e32a179f27351f1c4d83ec8287f0fb45e6613",
+  "skill_id": "microsoft-skills-github-plugins-deep-wiki-skills-wiki-page-writer-skill-md"
+}

@@ -1,0 +1,90 @@
+Run: 2026-04-19-runtime-failure-repairs
+Runner: tools/create_repaired_skill_overlays.py
+Skill: microsoft-skills-github-plugins-deep-wiki-skills-wiki-onboarding-skill-md
+
+Repair policy:
+- Original mirrored files were not edited.
+- The repaired overlay is separate from included/skills.
+- The exact original SKILL.md is preserved in the repaired overlay provenance directory.
+
+Repair actions:
+[
+  {
+    "label": "file:line",
+    "target": "REPO_URL/blob/BRANCH/file#Lline",
+    "type": "replaced-missing-markdown-link"
+  },
+  {
+    "label": "Contributor Guide",
+    "target": "./contributor-guide.md",
+    "type": "replaced-missing-markdown-link"
+  },
+  {
+    "label": "Staff Engineer Guide",
+    "target": "./staff-engineer-guide.md",
+    "type": "replaced-missing-markdown-link"
+  },
+  {
+    "label": "Executive Guide",
+    "target": "./executive-guide.md",
+    "type": "replaced-missing-markdown-link"
+  },
+  {
+    "label": "Product Manager Guide",
+    "target": "./product-manager-guide.md",
+    "type": "replaced-missing-markdown-link"
+  }
+]
+
+Dataset snapshot:
+{
+  "head_sha": "d6b8cd27eacb51e651a1aa6f7c190a28713eff6e",
+  "kind": "real-github-repository-tree",
+  "repo_url": "https://github.com/kubernetes/examples",
+  "resolved": true,
+  "reuse_reason": "fresh repository snapshot probe did not resolve during repaired overlay run",
+  "reused_from_original_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/microsoft-skills-github-plugins-deep-wiki-skills-wiki-onboarding-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+  "sampled_paths": [
+    ".gitignore",
+    "AI",
+    "AI/README.md",
+    "AI/model-serving-tensorflow",
+    "AI/model-serving-tensorflow/README.md",
+    "AI/model-serving-tensorflow/deployment.yaml",
+    "AI/model-serving-tensorflow/ingress.yaml",
+    "AI/model-serving-tensorflow/pv.yaml",
+    "AI/model-serving-tensorflow/pvc.yaml",
+    "AI/model-serving-tensorflow/service.yaml",
+    "AI/vllm-deployment",
+    "AI/vllm-deployment/README.md",
+    "AI/vllm-deployment/hpa",
+    "AI/vllm-deployment/hpa/.gitignore",
+    "AI/vllm-deployment/hpa/README.md",
+    "AI/vllm-deployment/hpa/gpu-dcgm-exporter-service-generic.yaml",
+    "AI/vllm-deployment/hpa/gpu-dcgm-exporter-service-gke.yaml",
+    "AI/vllm-deployment/hpa/gpu-horizontal-pod-autoscaler.yaml",
+    "AI/vllm-deployment/hpa/gpu-hpa.md",
+    "AI/vllm-deployment/hpa/gpu-service-monitor-generic.yaml"
+  ],
+  "track_subpath": null,
+  "track_subpath_present": true,
+  "tree_api_url": "https://api.github.com/repos/kubernetes/examples/git/trees/d6b8cd27eacb51e651a1aa6f7c190a28713eff6e?recursive=1",
+  "tree_path_count": 573,
+  "tree_truncated": false,
+  "url": "https://github.com/kubernetes/examples"
+}
+
+Result metrics:
+{
+  "benchmark_verdict": "passed",
+  "blocking_failure_count": 0,
+  "checks_passed": 9,
+  "checks_total": 9,
+  "original_blocking_failures": [
+    "local_markdown_links_resolve"
+  ],
+  "original_score_percent": 90.0,
+  "repair_action_count": 5,
+  "repaired_missing_local_link_count": 0,
+  "score_percent": 100.0
+}

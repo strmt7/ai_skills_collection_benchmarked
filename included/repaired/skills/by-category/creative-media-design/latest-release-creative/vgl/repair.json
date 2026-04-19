@@ -1,0 +1,26 @@
+{
+  "actions": [
+    {
+      "label": "bria-ai",
+      "target": "../bria-ai/SKILL.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "bria-ai",
+      "target": "../bria-ai/SKILL.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "target": "references/schema-reference.md",
+      "type": "copied-linked-local-target"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/creative-media-design/latest-release-creative/vgl",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/bria-ai-bria-skill-skills-vgl-skill-md/creative-media-and-design-coco-captions/artifact.json",
+  "original_skill_file_sha256": "36e0c57976d98c6f3be2a01ad94645918c3eff35422098364ae678639dbd829a",
+  "original_skill_text_sha256": "36e0c57976d98c6f3be2a01ad94645918c3eff35422098364ae678639dbd829a",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/creative-media-design/latest-release-creative/vgl",
+  "repaired_skill_file_sha256": "066d78df835f96ca340bfab2b1f9712c6028e38e2927a14563c90a925bccd50d",
+  "skill_id": "bria-ai-bria-skill-skills-vgl-skill-md"
+}

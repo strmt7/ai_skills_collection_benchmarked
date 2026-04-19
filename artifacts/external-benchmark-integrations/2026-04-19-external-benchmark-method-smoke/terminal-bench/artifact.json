@@ -1,0 +1,152 @@
+{
+  "artifact_kind": "external_benchmark_method_smoke",
+  "artifact_version": "1.0",
+  "checks": [
+    {
+      "evidence": "data/external_benchmark_methods.json",
+      "name": "adapter_spec_complete",
+      "passed": true
+    },
+    {
+      "evidence": "https://github.com/laude-institute/terminal-bench",
+      "name": "repository_head_resolves",
+      "passed": true
+    },
+    {
+      "evidence": 2474,
+      "name": "repo_tree_sampled",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "task success",
+        "command log completeness",
+        "execution time",
+        "resource use"
+      ],
+      "name": "declares_objective_metrics",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "task definition",
+        "container environment",
+        "command transcript",
+        "verifier result"
+      ],
+      "name": "declares_integration_requirements",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "DevOps, cloud & operations",
+        "Testing, QA & benchmarking"
+      ],
+      "name": "declares_category_fit",
+      "passed": true
+    },
+    {
+      "evidence": "repository root",
+      "name": "required_subpath_resolves",
+      "passed": true
+    }
+  ],
+  "evidence": {
+    "citations_or_paths": [
+      "https://github.com/laude-institute/terminal-bench",
+      "https://github.com/laude-institute/terminal-bench",
+      "data/external_benchmark_methods.json"
+    ]
+  },
+  "execution": {
+    "commands": [
+      {
+        "command": [
+          "git",
+          "ls-remote",
+          "https://github.com/laude-institute/terminal-bench",
+          "HEAD"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "1a6ffa9674b571da0ed040c470cb40c4d85f9b9b\tHEAD"
+      }
+    ],
+    "fresh_session": true
+  },
+  "input_snapshot": {
+    "head_sha": "1a6ffa9674b571da0ed040c470cb40c4d85f9b9b",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "repo_subpath": null,
+    "repo_subpath_present": true,
+    "repo_url": "https://github.com/laude-institute/terminal-bench",
+    "sampled_paths": [
+      "\"original-tasks/train-bpe-tokenizer/doc/Universit\\303\\251 de Californie.txt\"",
+      ".env.template",
+      ".gemini/config.yaml",
+      ".gemini/styleguide.md",
+      ".gitattributes",
+      ".github/copilot-instructions.md",
+      ".github/pull_request_template.md",
+      ".github/workflows/check-canary.yml",
+      ".github/workflows/check-dockerfile-references.yml",
+      ".github/workflows/check-dockerfile-sanity.yml",
+      ".github/workflows/check-run-tests-sh-sanity.yml",
+      ".github/workflows/check-task-absolute-path.yml",
+      ".github/workflows/check-test-file-references.yml",
+      ".github/workflows/claude-code-review.yml",
+      ".github/workflows/claude-code-task-review.yml",
+      ".github/workflows/claude.yml",
+      ".github/workflows/privileged-check.yaml",
+      ".github/workflows/push-base-images.yaml",
+      ".github/workflows/pytest.yaml",
+      ".github/workflows/ruff.yaml"
+    ],
+    "source_url": "https://github.com/laude-institute/terminal-bench",
+    "tree_error": "",
+    "tree_path_count": 2474
+  },
+  "method": {
+    "adapter_stage": "implemented-smoke-adapter",
+    "category_fit": [
+      "DevOps, cloud & operations",
+      "Testing, QA & benchmarking"
+    ],
+    "id": "terminal-bench",
+    "integration_requirements": [
+      "task definition",
+      "container environment",
+      "command transcript",
+      "verifier result"
+    ],
+    "primary_metrics": [
+      "task success",
+      "command log completeness",
+      "execution time",
+      "resource use"
+    ],
+    "repo_url": "https://github.com/laude-institute/terminal-bench",
+    "scope": "Evaluates terminal-native agent tasks with reproducible task containers and verifiers.",
+    "source_url": "https://github.com/laude-institute/terminal-bench",
+    "title": "Terminal-Bench"
+  },
+  "method_id": "terminal-bench",
+  "method_title": "Terminal-Bench",
+  "metrics": {
+    "blocking_failures": [],
+    "checks_passed": 7,
+    "checks_total": 7,
+    "integration_status": "adapter_ready",
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "schema": "evaluators/external_benchmark_method_smoke.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-integration-smoke",
+    "run_name": "2026-04-19-external-benchmark-method-smoke",
+    "timestamp_utc": "2026-04-19T12:43:21Z",
+    "tool": "tools/evaluate_external_benchmark_methods.py"
+  }
+}

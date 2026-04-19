@@ -18,6 +18,8 @@ Current snapshot:
 - `673` source-backed skill entries.
 - `673` written skill mirrors under `included/skills/`.
 - `673` compact agent-ready skill entrypoints under `included/agent-ready/`.
+- `34` repaired skill overlays under `included/repaired/skills/` for currently observed runtime-readiness packaging failures.
+- `14` selected external benchmark method adapters with smoke artifacts.
 - `80` selected repository entries.
 - `15` categories.
 - `718` real-data scenario templates.
@@ -37,6 +39,9 @@ Start here:
 - [Runtime benchmark batch 02](docs/runtime-benchmark-batch-02.md)
 - [Runtime benchmark batch 03](docs/runtime-benchmark-batch-03.md)
 - [Local Markdown link failures](docs/local-markdown-link-failures.md)
+- [Repaired skill readiness](docs/repaired-skill-readiness.md)
+- [Objective benchmark methods](docs/objective-benchmark-methods.md)
+- [External benchmark adapter smoke](docs/external-benchmark-adapter-smoke.md)
 - [Skill quality findings](docs/skill-quality-findings.md)
 - [Skill risk findings](docs/skill-risk-findings.md)
 - [Immutable audit model](docs/immutable-audit-model.md)

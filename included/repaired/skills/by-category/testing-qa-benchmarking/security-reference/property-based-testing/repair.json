@@ -1,0 +1,52 @@
+{
+  "actions": [
+    {
+      "label": "{baseDir}/references/generating.md",
+      "target": "{baseDir}/references/generating.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/strategies.md",
+      "target": "{baseDir}/references/strategies.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/design.md",
+      "target": "{baseDir}/references/design.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/refactoring.md",
+      "target": "{baseDir}/references/refactoring.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/reviewing.md",
+      "target": "{baseDir}/references/reviewing.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/interpreting-failures.md",
+      "target": "{baseDir}/references/interpreting-failures.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/libraries.md",
+      "target": "{baseDir}/references/libraries.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "interpreting-failures.md",
+      "target": "{baseDir}/references/interpreting-failures.md",
+      "type": "replaced-missing-markdown-link"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/testing-qa-benchmarking/security-reference/property-based-testing",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/trailofbits-skills-plugins-property-based-testing-skills-property-based-testing-skill-md/testing-qa-and-benchmarking-swe-bench-lite/artifact.json",
+  "original_skill_file_sha256": "f482f34ce65ec8801f4ee64c645418c0be9876d19ba8f856a28e0548cd949ebd",
+  "original_skill_text_sha256": "f482f34ce65ec8801f4ee64c645418c0be9876d19ba8f856a28e0548cd949ebd",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/testing-qa-benchmarking/security-reference/property-based-testing",
+  "repaired_skill_file_sha256": "dc2962ffd20d0720df2883b9eec9cda25197141716d9f9a5bdd140fe4c6ed128",
+  "skill_id": "trailofbits-skills-plugins-property-based-testing-skills-property-based-testing-skill-md"
+}

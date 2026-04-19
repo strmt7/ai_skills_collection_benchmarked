@@ -1,0 +1,47 @@
+{
+  "actions": [
+    {
+      "label": "{baseDir}/references/solidity.md",
+      "target": "{baseDir}/references/solidity.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/vyper.md",
+      "target": "{baseDir}/references/vyper.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/solana.md",
+      "target": "{baseDir}/references/solana.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/move-sui.md",
+      "target": "{baseDir}/references/move-sui.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/move-aptos.md",
+      "target": "{baseDir}/references/move-aptos.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/ton.md",
+      "target": "{baseDir}/references/ton.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/cosmwasm.md",
+      "target": "{baseDir}/references/cosmwasm.md",
+      "type": "replaced-missing-markdown-link"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/security-compliance-risk/security-reference/entry-point-analyzer",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/trailofbits-skills-plugins-entry-point-analyzer-skills-entry-point-analyzer-skill-md/security-compliance-and-risk-owasp-benchmark/artifact.json",
+  "original_skill_file_sha256": "85aeeb1f275d2c033f97b51ba1cb2e30116390a65d7ae2be12b2e29f43c3608a",
+  "original_skill_text_sha256": "85aeeb1f275d2c033f97b51ba1cb2e30116390a65d7ae2be12b2e29f43c3608a",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/security-compliance-risk/security-reference/entry-point-analyzer",
+  "repaired_skill_file_sha256": "d5e3bb3c51195cc9ddfdff751348ae6341e45cd8ebeebe423821b151943f63d2",
+  "skill_id": "trailofbits-skills-plugins-entry-point-analyzer-skills-entry-point-analyzer-skill-md"
+}

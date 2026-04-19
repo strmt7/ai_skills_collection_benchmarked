@@ -1,0 +1,344 @@
+{
+  "generated_on": "2026-04-19",
+  "method_count": 14,
+  "methods": [
+    {
+      "adapter_stage": "implemented-smoke-adapter",
+      "category_fit": [
+        "Coding, refactoring & repository automation",
+        "Agent infrastructure & skill creation"
+      ],
+      "id": "swe-skills-bench",
+      "integration_requirements": [
+        "pinned task repository",
+        "with-skill run",
+        "without-skill run",
+        "deterministic acceptance tests"
+      ],
+      "primary_metrics": [
+        "with-skill pass rate",
+        "without-skill pass rate",
+        "pass-rate delta",
+        "token overhead"
+      ],
+      "repo_url": "https://github.com/GeniusHTX/SWE-Skills-Bench",
+      "scope": "Measures skill utility on real software-engineering tasks by comparing paired runs with and without the skill.",
+      "source_url": "https://arxiv.org/abs/2603.15401",
+      "title": "SWE-Skills-Bench"
+    },
+    {
+      "adapter_stage": "implemented-smoke-adapter",
+      "category_fit": [
+        "Agent infrastructure & skill creation",
+        "Testing, QA & benchmarking"
+      ],
+      "id": "skillsbench",
+      "integration_requirements": [
+        "task package",
+        "skill package",
+        "deterministic verifier",
+        "agent trajectory"
+      ],
+      "primary_metrics": [
+        "task pass rate",
+        "skill gain",
+        "steps",
+        "token usage"
+      ],
+      "repo_url": "https://github.com/benchflow-ai/skillsbench",
+      "scope": "Evaluates agent skill use across diverse verifiable real-world tasks and deterministic verifiers.",
+      "source_url": "https://www.skillsbench.ai/",
+      "title": "SkillsBench"
+    },
+    {
+      "adapter_stage": "implemented-smoke-adapter",
+      "category_fit": [
+        "Agent infrastructure & skill creation",
+        "Testing, QA & benchmarking"
+      ],
+      "id": "skill-bench",
+      "integration_requirements": [
+        "eval case YAML",
+        "grader criteria",
+        "skill path",
+        "agent response transcript"
+      ],
+      "primary_metrics": [
+        "criterion score",
+        "evidence coverage",
+        "pass/fail",
+        "regression delta"
+      ],
+      "repo_url": "https://github.com/skill-bench/skill-eval-action",
+      "scope": "Runs evidence-graded skill eval cases in CI and reports regression-oriented skill scores.",
+      "source_url": "https://skill-bench.dev/",
+      "title": "Skill Bench"
+    },
+    {
+      "adapter_stage": "implemented-smoke-adapter",
+      "category_fit": [
+        "Coding, refactoring & repository automation",
+        "Testing, QA & benchmarking"
+      ],
+      "id": "swe-bench",
+      "integration_requirements": [
+        "Docker-capable host",
+        "instance id",
+        "prediction patch",
+        "test harness output"
+      ],
+      "primary_metrics": [
+        "resolved instances",
+        "patch applies",
+        "test pass rate",
+        "regression count"
+      ],
+      "repo_url": "https://github.com/SWE-bench/SWE-bench",
+      "scope": "Evaluates repository issue resolution by applying patches and running project tests.",
+      "source_url": "https://github.com/SWE-bench/SWE-bench",
+      "title": "SWE-bench"
+    },
+    {
+      "adapter_stage": "implemented-smoke-adapter",
+      "category_fit": [
+        "DevOps, cloud & operations",
+        "Testing, QA & benchmarking"
+      ],
+      "id": "terminal-bench",
+      "integration_requirements": [
+        "task definition",
+        "container environment",
+        "command transcript",
+        "verifier result"
+      ],
+      "primary_metrics": [
+        "task success",
+        "command log completeness",
+        "execution time",
+        "resource use"
+      ],
+      "repo_url": "https://github.com/laude-institute/terminal-bench",
+      "scope": "Evaluates terminal-native agent tasks with reproducible task containers and verifiers.",
+      "source_url": "https://github.com/laude-institute/terminal-bench",
+      "title": "Terminal-Bench"
+    },
+    {
+      "adapter_stage": "implemented-smoke-adapter",
+      "category_fit": [
+        "Frontend, UI & browser automation",
+        "Search, retrieval & web automation"
+      ],
+      "id": "browsergym",
+      "integration_requirements": [
+        "Playwright browser",
+        "environment id",
+        "browser trace",
+        "task evaluator"
+      ],
+      "primary_metrics": [
+        "task success",
+        "trace completeness",
+        "browser actions",
+        "wall time"
+      ],
+      "repo_url": "https://github.com/ServiceNow/BrowserGym",
+      "scope": "Provides a unified browser-agent environment across MiniWoB, WebArena, VisualWebArena, WorkArena, and related suites.",
+      "source_url": "https://github.com/ServiceNow/BrowserGym",
+      "title": "BrowserGym"
+    },
+    {
+      "adapter_stage": "implemented-smoke-adapter",
+      "category_fit": [
+        "Frontend, UI & browser automation",
+        "Search, retrieval & web automation"
+      ],
+      "id": "webarena",
+      "integration_requirements": [
+        "self-hosted sites",
+        "task id",
+        "browser trace",
+        "state evaluator"
+      ],
+      "primary_metrics": [
+        "end-to-end task success",
+        "site state correctness",
+        "action trace",
+        "human-baseline comparison"
+      ],
+      "repo_url": "https://github.com/web-arena-x/webarena",
+      "scope": "Measures realistic self-hosted web tasks with end-to-end web-agent success criteria.",
+      "source_url": "https://arxiv.org/abs/2307.13854",
+      "title": "WebArena"
+    },
+    {
+      "adapter_stage": "implemented-smoke-adapter",
+      "category_fit": [
+        "Frontend, UI & browser automation",
+        "Search, retrieval & web automation"
+      ],
+      "id": "webarena-verified",
+      "integration_requirements": [
+        "verified task set",
+        "captured browser/network trace",
+        "deterministic evaluator",
+        "site snapshot"
+      ],
+      "primary_metrics": [
+        "verified task success",
+        "network trace evidence",
+        "response evaluator result",
+        "state evaluator result"
+      ],
+      "repo_url": "https://github.com/ServiceNow/webarena-verified",
+      "scope": "Adds version-controlled verified web tasks and deterministic evaluators on top of WebArena-style environments.",
+      "source_url": "https://github.com/ServiceNow/webarena-verified",
+      "title": "WebArena-Verified"
+    },
+    {
+      "adapter_stage": "implemented-smoke-adapter",
+      "category_fit": [
+        "Security, compliance & risk",
+        "Frontend, UI & browser automation"
+      ],
+      "id": "st-webagentbench",
+      "integration_requirements": [
+        "web task instance",
+        "browser trace",
+        "safety policy",
+        "evaluator result"
+      ],
+      "primary_metrics": [
+        "task success",
+        "safety violation rate",
+        "trustworthiness score",
+        "modality challenge score"
+      ],
+      "repo_url": "https://github.com/segev-shlomov/ST-WebAgentBench",
+      "scope": "Evaluates safety and trustworthiness for enterprise-oriented web agents.",
+      "source_url": "https://github.com/segev-shlomov/ST-WebAgentBench",
+      "title": "ST-WebAgentBench"
+    },
+    {
+      "adapter_stage": "implemented-smoke-adapter",
+      "category_fit": [
+        "Frontend, UI & browser automation",
+        "Documents, spreadsheets & presentations"
+      ],
+      "id": "osworld",
+      "integration_requirements": [
+        "desktop environment",
+        "task config",
+        "screen/action trace",
+        "execution evaluator"
+      ],
+      "primary_metrics": [
+        "task success",
+        "execution evaluator result",
+        "screen trace",
+        "application state correctness"
+      ],
+      "repo_url": "https://github.com/xlang-ai/OSWorld",
+      "scope": "Evaluates multimodal computer-use agents across real desktop applications and operating-system workflows.",
+      "source_url": "https://os-world.github.io/",
+      "title": "OSWorld"
+    },
+    {
+      "adapter_stage": "implemented-smoke-adapter",
+      "category_fit": [
+        "Agent infrastructure & skill creation",
+        "Search, retrieval & web automation"
+      ],
+      "id": "bfcl",
+      "integration_requirements": [
+        "function schema",
+        "model/tool-call output",
+        "checker output",
+        "test split identifier"
+      ],
+      "primary_metrics": [
+        "AST match",
+        "execution accuracy",
+        "function relevance",
+        "multi-turn correctness"
+      ],
+      "repo_subpath": "berkeley-function-call-leaderboard",
+      "repo_url": "https://github.com/ShishirPatil/gorilla",
+      "scope": "Evaluates executable tool/function calling, including relevance detection and multi-turn/tool-call scenarios.",
+      "source_url": "https://gorilla.cs.berkeley.edu/blogs/8_berkeley_function_calling_leaderboard.html",
+      "title": "Berkeley Function Calling Leaderboard"
+    },
+    {
+      "adapter_stage": "implemented-smoke-adapter",
+      "category_fit": [
+        "Science, research & data analysis",
+        "Data, analytics & visualization"
+      ],
+      "id": "mle-bench",
+      "integration_requirements": [
+        "Kaggle credentials when needed",
+        "competition data",
+        "submission artifact",
+        "grading script output"
+      ],
+      "primary_metrics": [
+        "competition score",
+        "medal threshold",
+        "valid submission rate",
+        "runtime budget"
+      ],
+      "repo_url": "https://github.com/openai/mle-bench",
+      "scope": "Evaluates machine-learning engineering agents on Kaggle-style competitions with local grading scripts.",
+      "source_url": "https://github.com/openai/mle-bench",
+      "title": "MLE-bench"
+    },
+    {
+      "adapter_stage": "implemented-smoke-adapter",
+      "category_fit": [
+        "Science, research & data analysis",
+        "Data, analytics & visualization"
+      ],
+      "id": "ml-dev-bench",
+      "integration_requirements": [
+        "task repository",
+        "agent patch or outputs",
+        "training/evaluation logs",
+        "scoring script"
+      ],
+      "primary_metrics": [
+        "task success",
+        "model score",
+        "debugging correctness",
+        "implementation correctness"
+      ],
+      "repo_url": "https://github.com/ml-dev-bench/ml-dev-bench",
+      "scope": "Evaluates real-world ML development tasks such as dataset handling, debugging, training, and implementation.",
+      "source_url": "https://github.com/ml-dev-bench/ml-dev-bench",
+      "title": "ML-Dev-Bench"
+    },
+    {
+      "adapter_stage": "implemented-smoke-adapter",
+      "category_fit": [
+        "Coding, refactoring & repository automation",
+        "DevOps, cloud & operations"
+      ],
+      "id": "gittaskbench",
+      "integration_requirements": [
+        "repository task",
+        "environment setup log",
+        "agent patch",
+        "test/evaluator result"
+      ],
+      "primary_metrics": [
+        "task success",
+        "setup success",
+        "cost-aware alpha",
+        "test result"
+      ],
+      "repo_url": "https://github.com/QuantaAlpha/GitTaskBench",
+      "scope": "Evaluates code agents on real repository tasks from setup through delivery with cost-aware metrics.",
+      "source_url": "https://github.com/QuantaAlpha/GitTaskBench",
+      "title": "GitTaskBench"
+    }
+  ],
+  "registry_version": 1
+}

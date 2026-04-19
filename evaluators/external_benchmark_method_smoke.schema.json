@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "artifact_kind": {
+      "const": "external_benchmark_method_smoke"
+    },
+    "artifact_version": {
+      "type": "string"
+    },
+    "checks": {
+      "items": {
+        "additionalProperties": true,
+        "required": [
+          "name",
+          "passed",
+          "evidence"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "input_snapshot": {
+      "additionalProperties": true,
+      "required": [
+        "kind",
+        "repo_url",
+        "head_sha",
+        "tree_path_count",
+        "is_real"
+      ],
+      "type": "object"
+    },
+    "method": {
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "title",
+        "repo_url",
+        "primary_metrics",
+        "integration_requirements"
+      ],
+      "type": "object"
+    },
+    "method_id": {
+      "type": "string"
+    },
+    "metrics": {
+      "additionalProperties": true,
+      "required": [
+        "checks_passed",
+        "checks_total",
+        "score_percent",
+        "integration_status"
+      ],
+      "type": "object"
+    },
+    "runner": {
+      "additionalProperties": true,
+      "required": [
+        "timestamp_utc",
+        "tool",
+        "model_or_runtime",
+        "run_name"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "artifact_version",
+    "artifact_kind",
+    "method_id",
+    "runner",
+    "input_snapshot",
+    "execution",
+    "method",
+    "checks",
+    "metrics",
+    "evidence"
+  ],
+  "type": "object"
+}
