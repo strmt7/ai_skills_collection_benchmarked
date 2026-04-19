@@ -1,0 +1,17 @@
+{
+  "actions": [
+    {
+      "label": "azure-monitor-query",
+      "target": "../query/SKILL.md",
+      "type": "replaced-missing-markdown-link"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-ingestion-java",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-ingestion-java-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+  "original_skill_file_sha256": "df4cec69240236b5b59af69ef9696f255c2aa0ddd9aa0f3f510fb8a66e693ff9",
+  "original_skill_text_sha256": "df4cec69240236b5b59af69ef9696f255c2aa0ddd9aa0f3f510fb8a66e693ff9",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-monitor-ingestion-java",
+  "repaired_skill_file_sha256": "867a9deb01c5741cc7b29750141b8ad3478870597d494aa401e8934e337df45d",
+  "skill_id": "microsoft-skills-github-plugins-azure-sdk-java-skills-azure-monitor-ingestion-java-skill-md"
+}

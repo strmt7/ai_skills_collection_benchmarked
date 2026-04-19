@@ -1,0 +1,84 @@
+{
+  "artifact_kind": "repaired_skill_readiness",
+  "artifact_version": "1.0",
+  "catalog_commit": "6e52c185bf83687bbf6e93d19e34fba297a0da00",
+  "evidence": {
+    "artifact_paths": [
+      "result.json",
+      "transcript.txt",
+      "repair.json"
+    ],
+    "citations_or_paths": [
+      "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/akin-ozer-cc-devops-skills-devops-skills-plugin-skills-promql-generator-skill-md/devops-cloud-and-operations-kubernetes-examples/artifact.json",
+      "included/skills/by-category/devops-cloud-operations/latest-release-devops/promql-generator/SKILL.md",
+      "included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/promql-generator/SKILL.md",
+      "included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/promql-generator/provenance/original.SKILL.md",
+      "benchmarks/independent-runtime-readiness/batch-03/tasks.json",
+      "data/benchmark_scenarios.json",
+      "data/benchmark_tracks.json"
+    ]
+  },
+  "execution": {
+    "commands_or_transcript_path": "transcript.txt",
+    "fresh_session": true
+  },
+  "independence": {
+    "evaluator_defined_outside_skill": true,
+    "expected_result_defined_outside_skill": true,
+    "skill_content_usage": "skill text was the object under repair-readiness checks; task and expected checks were defined by the runner and original benchmark fixture",
+    "task_defined_outside_skill": true,
+    "uses_exact_skill_content_for_expected_result": false
+  },
+  "input_snapshot": {
+    "identifier": "https://github.com/kubernetes/examples",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "original_mirrored_path": "included/skills/by-category/devops-cloud-operations/latest-release-devops/promql-generator",
+    "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/akin-ozer-cc-devops-skills-devops-skills-plugin-skills-promql-generator-skill-md/devops-cloud-and-operations-kubernetes-examples/artifact.json",
+    "original_skill_file_sha256": "e0ef53892d987ab969149a47499ea8fc205e467ccf20dc4dacb2df463ed06ba9",
+    "repaired_path": "included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/promql-generator",
+    "repaired_skill_file_sha256": "fe4bb9c490085c94d8977116d050c625be82c345030d82b9f89957607ae7c919"
+  },
+  "metrics": {
+    "benchmark_verdict": "passed",
+    "blocking_failure_count": 0,
+    "checks_passed": 9,
+    "checks_total": 9,
+    "original_blocking_failures": [
+      "local_markdown_links_resolve"
+    ],
+    "original_score_percent": 90.0,
+    "repair_action_count": 1,
+    "repaired_missing_local_link_count": 0,
+    "score_percent": 100.0
+  },
+  "objective_checks": [
+    "real_dataset_snapshot_resolved",
+    "original_mirror_unchanged",
+    "repaired_skill_file_exists",
+    "source_text_preserved",
+    "required_frontmatter_present_after_repair",
+    "local_markdown_links_resolve_after_repair",
+    "same_independent_task_fixture",
+    "same_non_provenance_scenario",
+    "repair_actions_recorded"
+  ],
+  "outputs": {
+    "path": "result.json",
+    "repair_record_path": "repair.json",
+    "repair_sha256": "08b39921dcfe73b391bdcab397ccad690c2c826af8922be2e66d8f963ca4bb5e",
+    "result_sha256": "97cabd3566610027f327bb000111f384cb20562c1ffa9bc4f3673b3ae7a2d90e",
+    "schema": "evaluators/repaired_skill_readiness.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-repair-readiness-runner",
+    "run_name": "2026-04-19-runtime-failure-repairs",
+    "timestamp_utc": "2026-04-19T12:42:40Z",
+    "tool": "tools/create_repaired_skill_overlays.py"
+  },
+  "scenario_id": "devops-cloud-and-operations-kubernetes-examples",
+  "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-promql-generator-skill-md",
+  "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+  "source_path": "devops-skills-plugin/skills/promql-generator/SKILL.md",
+  "source_repo": "akin-ozer/cc-devops-skills"
+}

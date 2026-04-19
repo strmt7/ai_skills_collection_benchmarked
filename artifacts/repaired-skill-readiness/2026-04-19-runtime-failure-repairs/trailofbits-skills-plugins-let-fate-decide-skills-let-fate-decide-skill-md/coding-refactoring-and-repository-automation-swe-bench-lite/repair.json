@@ -1,0 +1,22 @@
+{
+  "actions": [
+    {
+      "label": "{baseDir}/references/INTERPRETATION_GUIDE.md",
+      "target": "{baseDir}/references/INTERPRETATION_GUIDE.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/INTERPRETATION_GUIDE.md",
+      "target": "{baseDir}/references/INTERPRETATION_GUIDE.md",
+      "type": "replaced-missing-markdown-link"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/security-reference/let-fate-decide",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/trailofbits-skills-plugins-let-fate-decide-skills-let-fate-decide-skill-md/coding-refactoring-and-repository-automation-swe-bench-lite/artifact.json",
+  "original_skill_file_sha256": "f9fbff7b876f2dfeaae8c19ec62a65612f3fd012b9e86d6f92bde3f036cd15ae",
+  "original_skill_text_sha256": "f9fbff7b876f2dfeaae8c19ec62a65612f3fd012b9e86d6f92bde3f036cd15ae",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/coding-refactoring-repository-automation/security-reference/let-fate-decide",
+  "repaired_skill_file_sha256": "38d02ad83905ba46be97088252bd3b3a32c46f0409e850526c0f3578b66b57eb",
+  "skill_id": "trailofbits-skills-plugins-let-fate-decide-skills-let-fate-decide-skill-md"
+}

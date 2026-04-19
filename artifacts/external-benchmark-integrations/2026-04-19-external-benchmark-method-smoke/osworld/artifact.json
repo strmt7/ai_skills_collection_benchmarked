@@ -1,0 +1,152 @@
+{
+  "artifact_kind": "external_benchmark_method_smoke",
+  "artifact_version": "1.0",
+  "checks": [
+    {
+      "evidence": "data/external_benchmark_methods.json",
+      "name": "adapter_spec_complete",
+      "passed": true
+    },
+    {
+      "evidence": "https://github.com/xlang-ai/OSWorld",
+      "name": "repository_head_resolves",
+      "passed": true
+    },
+    {
+      "evidence": 1103,
+      "name": "repo_tree_sampled",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "task success",
+        "execution evaluator result",
+        "screen trace",
+        "application state correctness"
+      ],
+      "name": "declares_objective_metrics",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "desktop environment",
+        "task config",
+        "screen/action trace",
+        "execution evaluator"
+      ],
+      "name": "declares_integration_requirements",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "Frontend, UI & browser automation",
+        "Documents, spreadsheets & presentations"
+      ],
+      "name": "declares_category_fit",
+      "passed": true
+    },
+    {
+      "evidence": "repository root",
+      "name": "required_subpath_resolves",
+      "passed": true
+    }
+  ],
+  "evidence": {
+    "citations_or_paths": [
+      "https://github.com/xlang-ai/OSWorld",
+      "https://os-world.github.io/",
+      "data/external_benchmark_methods.json"
+    ]
+  },
+  "execution": {
+    "commands": [
+      {
+        "command": [
+          "git",
+          "ls-remote",
+          "https://github.com/xlang-ai/OSWorld",
+          "HEAD"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "c7e54d24d136d52be0c6d5a7487a1a32f99e7017\tHEAD"
+      }
+    ],
+    "fresh_session": true
+  },
+  "input_snapshot": {
+    "head_sha": "c7e54d24d136d52be0c6d5a7487a1a32f99e7017",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "repo_subpath": null,
+    "repo_subpath_present": true,
+    "repo_url": "https://github.com/xlang-ai/OSWorld",
+    "sampled_paths": [
+      ".envrc",
+      ".gitignore",
+      ".mise.toml",
+      "LICENSE",
+      "README.md",
+      "SETUP_GUIDELINE.md",
+      "assets/authorization.png",
+      "assets/creategcp.png",
+      "assets/desktopapp.png",
+      "assets/developer.png",
+      "assets/enableapi.png",
+      "assets/googleidentity.png",
+      "assets/googlephonecode.png",
+      "assets/googleshutoff.png",
+      "assets/netsetting1.png",
+      "assets/netsetting2.png",
+      "assets/netsetting3.png",
+      "assets/netsetting4.png",
+      "assets/oauth2.0.png",
+      "assets/oauthapp.png"
+    ],
+    "source_url": "https://os-world.github.io/",
+    "tree_error": "",
+    "tree_path_count": 1103
+  },
+  "method": {
+    "adapter_stage": "implemented-smoke-adapter",
+    "category_fit": [
+      "Frontend, UI & browser automation",
+      "Documents, spreadsheets & presentations"
+    ],
+    "id": "osworld",
+    "integration_requirements": [
+      "desktop environment",
+      "task config",
+      "screen/action trace",
+      "execution evaluator"
+    ],
+    "primary_metrics": [
+      "task success",
+      "execution evaluator result",
+      "screen trace",
+      "application state correctness"
+    ],
+    "repo_url": "https://github.com/xlang-ai/OSWorld",
+    "scope": "Evaluates multimodal computer-use agents across real desktop applications and operating-system workflows.",
+    "source_url": "https://os-world.github.io/",
+    "title": "OSWorld"
+  },
+  "method_id": "osworld",
+  "method_title": "OSWorld",
+  "metrics": {
+    "blocking_failures": [],
+    "checks_passed": 7,
+    "checks_total": 7,
+    "integration_status": "adapter_ready",
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "schema": "evaluators/external_benchmark_method_smoke.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-integration-smoke",
+    "run_name": "2026-04-19-external-benchmark-method-smoke",
+    "timestamp_utc": "2026-04-19T12:43:21Z",
+    "tool": "tools/evaluate_external_benchmark_methods.py"
+  }
+}

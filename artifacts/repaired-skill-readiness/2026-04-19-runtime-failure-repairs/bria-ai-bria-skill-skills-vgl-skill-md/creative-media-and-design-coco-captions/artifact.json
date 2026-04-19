@@ -1,0 +1,84 @@
+{
+  "artifact_kind": "repaired_skill_readiness",
+  "artifact_version": "1.0",
+  "catalog_commit": "6e52c185bf83687bbf6e93d19e34fba297a0da00",
+  "evidence": {
+    "artifact_paths": [
+      "result.json",
+      "transcript.txt",
+      "repair.json"
+    ],
+    "citations_or_paths": [
+      "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/bria-ai-bria-skill-skills-vgl-skill-md/creative-media-and-design-coco-captions/artifact.json",
+      "included/skills/by-category/creative-media-design/latest-release-creative/vgl/SKILL.md",
+      "included/repaired/skills/by-category/creative-media-design/latest-release-creative/vgl/SKILL.md",
+      "included/repaired/skills/by-category/creative-media-design/latest-release-creative/vgl/provenance/original.SKILL.md",
+      "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+      "data/benchmark_scenarios.json",
+      "data/benchmark_tracks.json"
+    ]
+  },
+  "execution": {
+    "commands_or_transcript_path": "transcript.txt",
+    "fresh_session": true
+  },
+  "independence": {
+    "evaluator_defined_outside_skill": true,
+    "expected_result_defined_outside_skill": true,
+    "skill_content_usage": "skill text was the object under repair-readiness checks; task and expected checks were defined by the runner and original benchmark fixture",
+    "task_defined_outside_skill": true,
+    "uses_exact_skill_content_for_expected_result": false
+  },
+  "input_snapshot": {
+    "identifier": "https://cocodataset.org/#download",
+    "is_real": true,
+    "kind": "real-url",
+    "original_mirrored_path": "included/skills/by-category/creative-media-design/latest-release-creative/vgl",
+    "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/bria-ai-bria-skill-skills-vgl-skill-md/creative-media-and-design-coco-captions/artifact.json",
+    "original_skill_file_sha256": "36e0c57976d98c6f3be2a01ad94645918c3eff35422098364ae678639dbd829a",
+    "repaired_path": "included/repaired/skills/by-category/creative-media-design/latest-release-creative/vgl",
+    "repaired_skill_file_sha256": "066d78df835f96ca340bfab2b1f9712c6028e38e2927a14563c90a925bccd50d"
+  },
+  "metrics": {
+    "benchmark_verdict": "passed",
+    "blocking_failure_count": 0,
+    "checks_passed": 9,
+    "checks_total": 9,
+    "original_blocking_failures": [
+      "local_markdown_links_resolve"
+    ],
+    "original_score_percent": 90.0,
+    "repair_action_count": 3,
+    "repaired_missing_local_link_count": 0,
+    "score_percent": 100.0
+  },
+  "objective_checks": [
+    "real_dataset_snapshot_resolved",
+    "original_mirror_unchanged",
+    "repaired_skill_file_exists",
+    "source_text_preserved",
+    "required_frontmatter_present_after_repair",
+    "local_markdown_links_resolve_after_repair",
+    "same_independent_task_fixture",
+    "same_non_provenance_scenario",
+    "repair_actions_recorded"
+  ],
+  "outputs": {
+    "path": "result.json",
+    "repair_record_path": "repair.json",
+    "repair_sha256": "6cfaa6e136b95ac96996e4d0727505a6c4903819634a8d805c9975eee60cddb5",
+    "result_sha256": "ec97ea45344fec926d38767e6db5749fbb9399e3bccf77e3c0869a9c54fbbcf9",
+    "schema": "evaluators/repaired_skill_readiness.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-repair-readiness-runner",
+    "run_name": "2026-04-19-runtime-failure-repairs",
+    "timestamp_utc": "2026-04-19T12:42:40Z",
+    "tool": "tools/create_repaired_skill_overlays.py"
+  },
+  "scenario_id": "creative-media-and-design-coco-captions",
+  "skill_id": "bria-ai-bria-skill-skills-vgl-skill-md",
+  "source_commit": "b0e107b0f4667f0e1c9177bcd491b7d436c6932d",
+  "source_path": "skills/vgl/SKILL.md",
+  "source_repo": "Bria-AI/bria-skill"
+}

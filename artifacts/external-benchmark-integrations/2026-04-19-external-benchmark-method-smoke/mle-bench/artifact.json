@@ -1,0 +1,152 @@
+{
+  "artifact_kind": "external_benchmark_method_smoke",
+  "artifact_version": "1.0",
+  "checks": [
+    {
+      "evidence": "data/external_benchmark_methods.json",
+      "name": "adapter_spec_complete",
+      "passed": true
+    },
+    {
+      "evidence": "https://github.com/openai/mle-bench",
+      "name": "repository_head_resolves",
+      "passed": true
+    },
+    {
+      "evidence": 1015,
+      "name": "repo_tree_sampled",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "competition score",
+        "medal threshold",
+        "valid submission rate",
+        "runtime budget"
+      ],
+      "name": "declares_objective_metrics",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "Kaggle credentials when needed",
+        "competition data",
+        "submission artifact",
+        "grading script output"
+      ],
+      "name": "declares_integration_requirements",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "Science, research & data analysis",
+        "Data, analytics & visualization"
+      ],
+      "name": "declares_category_fit",
+      "passed": true
+    },
+    {
+      "evidence": "repository root",
+      "name": "required_subpath_resolves",
+      "passed": true
+    }
+  ],
+  "evidence": {
+    "citations_or_paths": [
+      "https://github.com/openai/mle-bench",
+      "https://github.com/openai/mle-bench",
+      "data/external_benchmark_methods.json"
+    ]
+  },
+  "execution": {
+    "commands": [
+      {
+        "command": [
+          "git",
+          "ls-remote",
+          "https://github.com/openai/mle-bench",
+          "HEAD"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "2451bcbf0ed56ffbd82d518af6529fb71dea6e52\tHEAD"
+      }
+    ],
+    "fresh_session": true
+  },
+  "input_snapshot": {
+    "head_sha": "2451bcbf0ed56ffbd82d518af6529fb71dea6e52",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "repo_subpath": null,
+    "repo_subpath_present": true,
+    "repo_url": "https://github.com/openai/mle-bench",
+    "sampled_paths": [
+      ".dockerignore",
+      ".gitattributes",
+      ".github/PULL_REQUEST_TEMPLATE.md",
+      ".gitignore",
+      ".pre-commit-config.yaml",
+      "LICENSE",
+      "README.md",
+      "SECURITY.md",
+      "agents/.shared_env",
+      "agents/README.md",
+      "agents/aide/Dockerfile",
+      "agents/aide/additional_notes.txt",
+      "agents/aide/config.yaml",
+      "agents/aide/requirements.txt",
+      "agents/aide/start.sh",
+      "agents/dummy/Dockerfile",
+      "agents/dummy/config.yaml",
+      "agents/dummy/main.py",
+      "agents/dummy/requirements.txt",
+      "agents/dummy/start.sh"
+    ],
+    "source_url": "https://github.com/openai/mle-bench",
+    "tree_error": "",
+    "tree_path_count": 1015
+  },
+  "method": {
+    "adapter_stage": "implemented-smoke-adapter",
+    "category_fit": [
+      "Science, research & data analysis",
+      "Data, analytics & visualization"
+    ],
+    "id": "mle-bench",
+    "integration_requirements": [
+      "Kaggle credentials when needed",
+      "competition data",
+      "submission artifact",
+      "grading script output"
+    ],
+    "primary_metrics": [
+      "competition score",
+      "medal threshold",
+      "valid submission rate",
+      "runtime budget"
+    ],
+    "repo_url": "https://github.com/openai/mle-bench",
+    "scope": "Evaluates machine-learning engineering agents on Kaggle-style competitions with local grading scripts.",
+    "source_url": "https://github.com/openai/mle-bench",
+    "title": "MLE-bench"
+  },
+  "method_id": "mle-bench",
+  "method_title": "MLE-bench",
+  "metrics": {
+    "blocking_failures": [],
+    "checks_passed": 7,
+    "checks_total": 7,
+    "integration_status": "adapter_ready",
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "schema": "evaluators/external_benchmark_method_smoke.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-integration-smoke",
+    "run_name": "2026-04-19-external-benchmark-method-smoke",
+    "timestamp_utc": "2026-04-19T12:43:21Z",
+    "tool": "tools/evaluate_external_benchmark_methods.py"
+  }
+}

@@ -1,0 +1,40 @@
+Run: 2026-04-19-runtime-failure-repairs
+Runner: tools/create_repaired_skill_overlays.py
+Skill: k-dense-ai-scientific-agent-skills-scientific-skills-parallel-web-skill-md
+
+Repair policy:
+- Original mirrored files were not edited.
+- The repaired overlay is separate from included/skills.
+- The exact original SKILL.md is preserved in the repaired overlay provenance directory.
+
+Repair actions:
+[
+  {
+    "label": "Smith et al., 2025",
+    "target": "url",
+    "type": "replaced-missing-markdown-link"
+  }
+]
+
+Dataset snapshot:
+{
+  "kind": "real-url",
+  "resolved": true,
+  "status": 200,
+  "url": "https://chanzuckerberg.github.io/cellxgene-census/"
+}
+
+Result metrics:
+{
+  "benchmark_verdict": "passed",
+  "blocking_failure_count": 0,
+  "checks_passed": 9,
+  "checks_total": 9,
+  "original_blocking_failures": [
+    "local_markdown_links_resolve"
+  ],
+  "original_score_percent": 90.0,
+  "repair_action_count": 1,
+  "repaired_missing_local_link_count": 0,
+  "score_percent": 100.0
+}

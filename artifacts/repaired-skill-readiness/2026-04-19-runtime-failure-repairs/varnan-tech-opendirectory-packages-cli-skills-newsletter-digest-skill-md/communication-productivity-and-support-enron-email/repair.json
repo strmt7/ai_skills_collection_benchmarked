@@ -1,0 +1,17 @@
+{
+  "actions": [
+    {
+      "label": "Source: Name",
+      "target": "URL",
+      "type": "replaced-missing-markdown-link"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md/communication-productivity-and-support-enron-email/artifact.json",
+  "original_skill_file_sha256": "1964a22798f3b34e06f37b158d64d7bd33c4c6ce6cb28677c37817663bb5bcde",
+  "original_skill_text_sha256": "1964a22798f3b34e06f37b158d64d7bd33c4c6ce6cb28677c37817663bb5bcde",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest",
+  "repaired_skill_file_sha256": "a49b390d3921a57403e45b7789269346ebb8981d10c78bd78c8486fa1b36aa98",
+  "skill_id": "varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md"
+}

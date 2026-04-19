@@ -1,0 +1,152 @@
+{
+  "artifact_kind": "external_benchmark_method_smoke",
+  "artifact_version": "1.0",
+  "checks": [
+    {
+      "evidence": "data/external_benchmark_methods.json",
+      "name": "adapter_spec_complete",
+      "passed": true
+    },
+    {
+      "evidence": "https://github.com/GeniusHTX/SWE-Skills-Bench",
+      "name": "repository_head_resolves",
+      "passed": true
+    },
+    {
+      "evidence": 1188,
+      "name": "repo_tree_sampled",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "with-skill pass rate",
+        "without-skill pass rate",
+        "pass-rate delta",
+        "token overhead"
+      ],
+      "name": "declares_objective_metrics",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "pinned task repository",
+        "with-skill run",
+        "without-skill run",
+        "deterministic acceptance tests"
+      ],
+      "name": "declares_integration_requirements",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "Coding, refactoring & repository automation",
+        "Agent infrastructure & skill creation"
+      ],
+      "name": "declares_category_fit",
+      "passed": true
+    },
+    {
+      "evidence": "repository root",
+      "name": "required_subpath_resolves",
+      "passed": true
+    }
+  ],
+  "evidence": {
+    "citations_or_paths": [
+      "https://github.com/GeniusHTX/SWE-Skills-Bench",
+      "https://arxiv.org/abs/2603.15401",
+      "data/external_benchmark_methods.json"
+    ]
+  },
+  "execution": {
+    "commands": [
+      {
+        "command": [
+          "git",
+          "ls-remote",
+          "https://github.com/GeniusHTX/SWE-Skills-Bench",
+          "HEAD"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "95b3ce519fcb58d0b19e90a5b6e5165211dc6dd1\tHEAD"
+      }
+    ],
+    "fresh_session": true
+  },
+  "input_snapshot": {
+    "head_sha": "95b3ce519fcb58d0b19e90a5b6e5165211dc6dd1",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "repo_subpath": null,
+    "repo_subpath_present": true,
+    "repo_url": "https://github.com/GeniusHTX/SWE-Skills-Bench",
+    "sampled_paths": [
+      ".DS_Store",
+      ".claude/.claude.json",
+      ".claude/.claudeignore",
+      ".claude/settings.json",
+      ".claude/settings.local.json",
+      ".env.example",
+      ".gitignore",
+      "LICENSE",
+      "README.md",
+      "config/benchmark_config.yaml",
+      "eval.py",
+      "main.py",
+      "requirements.txt",
+      "run_all_skills.py",
+      "run_all_skills_eval.py",
+      "scripts/analyze_tokens.py",
+      "scripts/clean_container.py",
+      "scripts/compare_pass_rate.py",
+      "scripts/extract_failed_tests.py",
+      "skills/add-admin-api-endpoint/SKILL.md"
+    ],
+    "source_url": "https://arxiv.org/abs/2603.15401",
+    "tree_error": "",
+    "tree_path_count": 1188
+  },
+  "method": {
+    "adapter_stage": "implemented-smoke-adapter",
+    "category_fit": [
+      "Coding, refactoring & repository automation",
+      "Agent infrastructure & skill creation"
+    ],
+    "id": "swe-skills-bench",
+    "integration_requirements": [
+      "pinned task repository",
+      "with-skill run",
+      "without-skill run",
+      "deterministic acceptance tests"
+    ],
+    "primary_metrics": [
+      "with-skill pass rate",
+      "without-skill pass rate",
+      "pass-rate delta",
+      "token overhead"
+    ],
+    "repo_url": "https://github.com/GeniusHTX/SWE-Skills-Bench",
+    "scope": "Measures skill utility on real software-engineering tasks by comparing paired runs with and without the skill.",
+    "source_url": "https://arxiv.org/abs/2603.15401",
+    "title": "SWE-Skills-Bench"
+  },
+  "method_id": "swe-skills-bench",
+  "method_title": "SWE-Skills-Bench",
+  "metrics": {
+    "blocking_failures": [],
+    "checks_passed": 7,
+    "checks_total": 7,
+    "integration_status": "adapter_ready",
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "schema": "evaluators/external_benchmark_method_smoke.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-integration-smoke",
+    "run_name": "2026-04-19-external-benchmark-method-smoke",
+    "timestamp_utc": "2026-04-19T12:43:21Z",
+    "tool": "tools/evaluate_external_benchmark_methods.py"
+  }
+}

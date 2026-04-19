@@ -1,0 +1,84 @@
+{
+  "artifact_kind": "repaired_skill_readiness",
+  "artifact_version": "1.0",
+  "catalog_commit": "6e52c185bf83687bbf6e93d19e34fba297a0da00",
+  "evidence": {
+    "artifact_paths": [
+      "result.json",
+      "transcript.txt",
+      "repair.json"
+    ],
+    "citations_or_paths": [
+      "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/k-dense-ai-scientific-agent-skills-scientific-skills-datamol-skill-md/science-research-and-data-analysis-cellxgene-census/artifact.json",
+      "included/skills/by-category/science-research-data-analysis/latest-release-community/datamol/SKILL.md",
+      "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/datamol/SKILL.md",
+      "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/datamol/provenance/original.SKILL.md",
+      "benchmarks/independent-runtime-readiness/batch-02/tasks.json",
+      "data/benchmark_scenarios.json",
+      "data/benchmark_tracks.json"
+    ]
+  },
+  "execution": {
+    "commands_or_transcript_path": "transcript.txt",
+    "fresh_session": true
+  },
+  "independence": {
+    "evaluator_defined_outside_skill": true,
+    "expected_result_defined_outside_skill": true,
+    "skill_content_usage": "skill text was the object under repair-readiness checks; task and expected checks were defined by the runner and original benchmark fixture",
+    "task_defined_outside_skill": true,
+    "uses_exact_skill_content_for_expected_result": false
+  },
+  "input_snapshot": {
+    "identifier": "https://chanzuckerberg.github.io/cellxgene-census/",
+    "is_real": true,
+    "kind": "real-url",
+    "original_mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/datamol",
+    "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/k-dense-ai-scientific-agent-skills-scientific-skills-datamol-skill-md/science-research-and-data-analysis-cellxgene-census/artifact.json",
+    "original_skill_file_sha256": "f685a31610997e174ebda5239cb7bc37e0b27ed4990dbaf97273b112c02e8848",
+    "repaired_path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/datamol",
+    "repaired_skill_file_sha256": "f8479d4f689844ef81f4d37f657a8294672d8503fcc5aa8f14828ea08542bb9f"
+  },
+  "metrics": {
+    "benchmark_verdict": "passed",
+    "blocking_failure_count": 0,
+    "checks_passed": 9,
+    "checks_total": 9,
+    "original_blocking_failures": [
+      "local_markdown_links_resolve"
+    ],
+    "original_score_percent": 90.0,
+    "repair_action_count": 2,
+    "repaired_missing_local_link_count": 0,
+    "score_percent": 100.0
+  },
+  "objective_checks": [
+    "real_dataset_snapshot_resolved",
+    "original_mirror_unchanged",
+    "repaired_skill_file_exists",
+    "source_text_preserved",
+    "required_frontmatter_present_after_repair",
+    "local_markdown_links_resolve_after_repair",
+    "same_independent_task_fixture",
+    "same_non_provenance_scenario",
+    "repair_actions_recorded"
+  ],
+  "outputs": {
+    "path": "result.json",
+    "repair_record_path": "repair.json",
+    "repair_sha256": "02899f7a70c04932fbfa013728ba20f2d0891978cfcaccd390d90b4dc83c5780",
+    "result_sha256": "4fd6b7d9ca12098100d1ca470662adcb8007ca75cd5d65ebbdbc222a332b9064",
+    "schema": "evaluators/repaired_skill_readiness.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-repair-readiness-runner",
+    "run_name": "2026-04-19-runtime-failure-repairs",
+    "timestamp_utc": "2026-04-19T12:42:40Z",
+    "tool": "tools/create_repaired_skill_overlays.py"
+  },
+  "scenario_id": "science-research-and-data-analysis-cellxgene-census",
+  "skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-datamol-skill-md",
+  "source_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+  "source_path": "scientific-skills/datamol/SKILL.md",
+  "source_repo": "K-Dense-AI/scientific-agent-skills"
+}

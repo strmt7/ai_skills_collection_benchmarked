@@ -1,0 +1,42 @@
+{
+  "actions": [
+    {
+      "label": "{Page Title}",
+      "target": "{relative-path-to-md}",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{Page Title}",
+      "target": "{relative-path-to-md}",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "Title",
+      "target": "url",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "file:line",
+      "target": "URL",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "Guide",
+      "target": "./wiki/onboarding/contributor-guide.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "Guide",
+      "target": "./onboarding/contributor-guide.md",
+      "type": "replaced-missing-markdown-link"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-llms-txt",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/microsoft-skills-github-plugins-deep-wiki-skills-wiki-llms-txt-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+  "original_skill_file_sha256": "62f14490deb8e0713eca06ab576f6fe45d081f1cbb9452a45389a9540f39ab69",
+  "original_skill_text_sha256": "62f14490deb8e0713eca06ab576f6fe45d081f1cbb9452a45389a9540f39ab69",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/wiki-llms-txt",
+  "repaired_skill_file_sha256": "c448c488eebe637d7fcc6cb987c00d3e36eb76902156a9d0409f2a4d712fe755",
+  "skill_id": "microsoft-skills-github-plugins-deep-wiki-skills-wiki-llms-txt-skill-md"
+}

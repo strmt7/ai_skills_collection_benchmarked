@@ -1,0 +1,153 @@
+{
+  "artifact_kind": "external_benchmark_method_smoke",
+  "artifact_version": "1.0",
+  "checks": [
+    {
+      "evidence": "data/external_benchmark_methods.json",
+      "name": "adapter_spec_complete",
+      "passed": true
+    },
+    {
+      "evidence": "https://github.com/ShishirPatil/gorilla",
+      "name": "repository_head_resolves",
+      "passed": true
+    },
+    {
+      "evidence": 534,
+      "name": "repo_tree_sampled",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "AST match",
+        "execution accuracy",
+        "function relevance",
+        "multi-turn correctness"
+      ],
+      "name": "declares_objective_metrics",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "function schema",
+        "model/tool-call output",
+        "checker output",
+        "test split identifier"
+      ],
+      "name": "declares_integration_requirements",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "Agent infrastructure & skill creation",
+        "Search, retrieval & web automation"
+      ],
+      "name": "declares_category_fit",
+      "passed": true
+    },
+    {
+      "evidence": "berkeley-function-call-leaderboard",
+      "name": "required_subpath_resolves",
+      "passed": true
+    }
+  ],
+  "evidence": {
+    "citations_or_paths": [
+      "https://github.com/ShishirPatil/gorilla",
+      "https://gorilla.cs.berkeley.edu/blogs/8_berkeley_function_calling_leaderboard.html",
+      "data/external_benchmark_methods.json"
+    ]
+  },
+  "execution": {
+    "commands": [
+      {
+        "command": [
+          "git",
+          "ls-remote",
+          "https://github.com/ShishirPatil/gorilla",
+          "HEAD"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "6ea57973c7a6097fd7c5915698c54c17c5b1b6c8\tHEAD"
+      }
+    ],
+    "fresh_session": true
+  },
+  "input_snapshot": {
+    "head_sha": "6ea57973c7a6097fd7c5915698c54c17c5b1b6c8",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "repo_subpath": "berkeley-function-call-leaderboard",
+    "repo_subpath_present": true,
+    "repo_url": "https://github.com/ShishirPatil/gorilla",
+    "sampled_paths": [
+      ".devcontainer/raft/Dockerfile",
+      ".devcontainer/raft/devcontainer.json",
+      ".devcontainer/raft/post-create.sh",
+      ".github/ISSUE_TEMPLATE/apibench.md",
+      ".github/ISSUE_TEMPLATE/bfcl.md",
+      ".github/ISSUE_TEMPLATE/custom-template.md",
+      ".github/ISSUE_TEMPLATE/feature_request.md",
+      ".github/ISSUE_TEMPLATE/hosted-gorilla-.md",
+      ".github/ISSUE_TEMPLATE/openfunctions-v2.md",
+      ".github/workflows/bfcl-pipy-release.yml",
+      ".github/workflows/push-apizoo-updates.yml",
+      ".github/workflows/validate-apizoo-contribution.yml",
+      ".gitignore",
+      "LICENSE",
+      "README.md",
+      "agent-arena/README.md",
+      "agent-arena/client/.gitignore",
+      "agent-arena/client/ThemeContext.js",
+      "agent-arena/client/package-lock.json",
+      "agent-arena/client/package.json"
+    ],
+    "source_url": "https://gorilla.cs.berkeley.edu/blogs/8_berkeley_function_calling_leaderboard.html",
+    "tree_error": "",
+    "tree_path_count": 534
+  },
+  "method": {
+    "adapter_stage": "implemented-smoke-adapter",
+    "category_fit": [
+      "Agent infrastructure & skill creation",
+      "Search, retrieval & web automation"
+    ],
+    "id": "bfcl",
+    "integration_requirements": [
+      "function schema",
+      "model/tool-call output",
+      "checker output",
+      "test split identifier"
+    ],
+    "primary_metrics": [
+      "AST match",
+      "execution accuracy",
+      "function relevance",
+      "multi-turn correctness"
+    ],
+    "repo_subpath": "berkeley-function-call-leaderboard",
+    "repo_url": "https://github.com/ShishirPatil/gorilla",
+    "scope": "Evaluates executable tool/function calling, including relevance detection and multi-turn/tool-call scenarios.",
+    "source_url": "https://gorilla.cs.berkeley.edu/blogs/8_berkeley_function_calling_leaderboard.html",
+    "title": "Berkeley Function Calling Leaderboard"
+  },
+  "method_id": "bfcl",
+  "method_title": "Berkeley Function Calling Leaderboard",
+  "metrics": {
+    "blocking_failures": [],
+    "checks_passed": 7,
+    "checks_total": 7,
+    "integration_status": "adapter_ready",
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "schema": "evaluators/external_benchmark_method_smoke.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-integration-smoke",
+    "run_name": "2026-04-19-external-benchmark-method-smoke",
+    "timestamp_utc": "2026-04-19T12:43:21Z",
+    "tool": "tools/evaluate_external_benchmark_methods.py"
+  }
+}

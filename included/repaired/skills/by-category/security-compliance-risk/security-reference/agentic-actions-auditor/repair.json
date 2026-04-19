@@ -1,0 +1,87 @@
+{
+  "actions": [
+    {
+      "label": "{baseDir}/references/cross-file-resolution.md",
+      "target": "{baseDir}/references/cross-file-resolution.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/foundations.md",
+      "target": "{baseDir}/references/foundations.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/vector-a-env-var-intermediary.md",
+      "target": "{baseDir}/references/vector-a-env-var-intermediary.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/vector-b-direct-expression-injection.md",
+      "target": "{baseDir}/references/vector-b-direct-expression-injection.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/vector-c-cli-data-fetch.md",
+      "target": "{baseDir}/references/vector-c-cli-data-fetch.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/vector-d-pr-target-checkout.md",
+      "target": "{baseDir}/references/vector-d-pr-target-checkout.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/vector-e-error-log-injection.md",
+      "target": "{baseDir}/references/vector-e-error-log-injection.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/vector-f-subshell-expansion.md",
+      "target": "{baseDir}/references/vector-f-subshell-expansion.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/vector-g-eval-of-ai-output.md",
+      "target": "{baseDir}/references/vector-g-eval-of-ai-output.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/vector-h-dangerous-sandbox-configs.md",
+      "target": "{baseDir}/references/vector-h-dangerous-sandbox-configs.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/vector-i-wildcard-allowlists.md",
+      "target": "{baseDir}/references/vector-i-wildcard-allowlists.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/action-profiles.md",
+      "target": "{baseDir}/references/action-profiles.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/action-profiles.md",
+      "target": "{baseDir}/references/action-profiles.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/foundations.md",
+      "target": "{baseDir}/references/foundations.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "{baseDir}/references/cross-file-resolution.md",
+      "target": "{baseDir}/references/cross-file-resolution.md",
+      "type": "replaced-missing-markdown-link"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/security-compliance-risk/security-reference/agentic-actions-auditor",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/trailofbits-skills-plugins-agentic-actions-auditor-skills-agentic-actions-auditor-skill-md/security-compliance-and-risk-owasp-benchmark/artifact.json",
+  "original_skill_file_sha256": "369b998e1d457c9c88fb9fff915b0b083c551e2c1d3e3d6baa6aa7310ac820d7",
+  "original_skill_text_sha256": "369b998e1d457c9c88fb9fff915b0b083c551e2c1d3e3d6baa6aa7310ac820d7",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/security-compliance-risk/security-reference/agentic-actions-auditor",
+  "repaired_skill_file_sha256": "a110562cf762317f39eda0d36cd785dc36a4049979d804f4f95d5476288355a9",
+  "skill_id": "trailofbits-skills-plugins-agentic-actions-auditor-skills-agentic-actions-auditor-skill-md"
+}

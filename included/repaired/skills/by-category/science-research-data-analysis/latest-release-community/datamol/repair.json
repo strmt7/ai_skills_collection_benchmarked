@@ -1,0 +1,22 @@
+{
+  "actions": [
+    {
+      "label": "C:1",
+      "target": "=[O:2]",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "C:1",
+      "target": "=[O:2]",
+      "type": "replaced-missing-markdown-link"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/datamol",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/k-dense-ai-scientific-agent-skills-scientific-skills-datamol-skill-md/science-research-and-data-analysis-cellxgene-census/artifact.json",
+  "original_skill_file_sha256": "f685a31610997e174ebda5239cb7bc37e0b27ed4990dbaf97273b112c02e8848",
+  "original_skill_text_sha256": "f685a31610997e174ebda5239cb7bc37e0b27ed4990dbaf97273b112c02e8848",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/datamol",
+  "repaired_skill_file_sha256": "f8479d4f689844ef81f4d37f657a8294672d8503fcc5aa8f14828ea08542bb9f",
+  "skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-datamol-skill-md"
+}

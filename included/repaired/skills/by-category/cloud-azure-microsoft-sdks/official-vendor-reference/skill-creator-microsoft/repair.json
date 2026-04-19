@@ -1,0 +1,32 @@
+{
+  "actions": [
+    {
+      "label": "references/tools.md",
+      "target": "references/tools.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "references/streaming.md",
+      "target": "references/streaming.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "references/streaming.md",
+      "target": "references/streaming.md",
+      "type": "replaced-missing-markdown-link"
+    },
+    {
+      "label": "references/tools.md",
+      "target": "references/tools.md",
+      "type": "replaced-missing-markdown-link"
+    }
+  ],
+  "original_mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/skill-creator-microsoft",
+  "original_runtime_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-03/microsoft-skills-github-skills-skill-creator-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
+  "original_skill_file_sha256": "e829b8a78c84ef9d7beab18956cc565a2bcd854e38aa12a8f91a20816d24fc08",
+  "original_skill_text_sha256": "e829b8a78c84ef9d7beab18956cc565a2bcd854e38aa12a8f91a20816d24fc08",
+  "repair_record_version": 1,
+  "repaired_path": "included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/skill-creator-microsoft",
+  "repaired_skill_file_sha256": "ec6557ea3bbb390f18969a9cba50a4739f5e9c281e808699222df9795605fffa",
+  "skill_id": "microsoft-skills-github-skills-skill-creator-skill-md"
+}

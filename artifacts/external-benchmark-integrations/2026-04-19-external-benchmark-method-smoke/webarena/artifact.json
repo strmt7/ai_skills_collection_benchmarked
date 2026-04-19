@@ -1,0 +1,152 @@
+{
+  "artifact_kind": "external_benchmark_method_smoke",
+  "artifact_version": "1.0",
+  "checks": [
+    {
+      "evidence": "data/external_benchmark_methods.json",
+      "name": "adapter_spec_complete",
+      "passed": true
+    },
+    {
+      "evidence": "https://github.com/web-arena-x/webarena",
+      "name": "repository_head_resolves",
+      "passed": true
+    },
+    {
+      "evidence": 88,
+      "name": "repo_tree_sampled",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "end-to-end task success",
+        "site state correctness",
+        "action trace",
+        "human-baseline comparison"
+      ],
+      "name": "declares_objective_metrics",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "self-hosted sites",
+        "task id",
+        "browser trace",
+        "state evaluator"
+      ],
+      "name": "declares_integration_requirements",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "Frontend, UI & browser automation",
+        "Search, retrieval & web automation"
+      ],
+      "name": "declares_category_fit",
+      "passed": true
+    },
+    {
+      "evidence": "repository root",
+      "name": "required_subpath_resolves",
+      "passed": true
+    }
+  ],
+  "evidence": {
+    "citations_or_paths": [
+      "https://github.com/web-arena-x/webarena",
+      "https://arxiv.org/abs/2307.13854",
+      "data/external_benchmark_methods.json"
+    ]
+  },
+  "execution": {
+    "commands": [
+      {
+        "command": [
+          "git",
+          "ls-remote",
+          "https://github.com/web-arena-x/webarena",
+          "HEAD"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "dce04686a56253aefba7b18a4fa0937cf1dc987b\tHEAD"
+      }
+    ],
+    "fresh_session": true
+  },
+  "input_snapshot": {
+    "head_sha": "dce04686a56253aefba7b18a4fa0937cf1dc987b",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "repo_subpath": null,
+    "repo_subpath_present": true,
+    "repo_url": "https://github.com/web-arena-x/webarena",
+    "sampled_paths": [
+      ".github/workflows/pre-commit.yml",
+      ".github/workflows/tests.yml",
+      ".gitignore",
+      ".pre-commit-config.yaml",
+      "CITATION.cff",
+      "LICENSE",
+      "README.md",
+      "agent/__init__.py",
+      "agent/agent.py",
+      "agent/prompts/README.md",
+      "agent/prompts/__init__.py",
+      "agent/prompts/prompt_constructor.py",
+      "agent/prompts/raw/p_cot_id_actree_2s.py",
+      "agent/prompts/raw/p_cot_id_actree_2s_no_na.py",
+      "agent/prompts/raw/p_direct_id_actree_2s.py",
+      "agent/prompts/raw/p_direct_id_actree_2s_no_na.py",
+      "agent/prompts/raw/p_direct_id_actree_3s_llama.py",
+      "agent/prompts/to_json.py",
+      "browser_env/__init__.py",
+      "browser_env/actions.py"
+    ],
+    "source_url": "https://arxiv.org/abs/2307.13854",
+    "tree_error": "",
+    "tree_path_count": 88
+  },
+  "method": {
+    "adapter_stage": "implemented-smoke-adapter",
+    "category_fit": [
+      "Frontend, UI & browser automation",
+      "Search, retrieval & web automation"
+    ],
+    "id": "webarena",
+    "integration_requirements": [
+      "self-hosted sites",
+      "task id",
+      "browser trace",
+      "state evaluator"
+    ],
+    "primary_metrics": [
+      "end-to-end task success",
+      "site state correctness",
+      "action trace",
+      "human-baseline comparison"
+    ],
+    "repo_url": "https://github.com/web-arena-x/webarena",
+    "scope": "Measures realistic self-hosted web tasks with end-to-end web-agent success criteria.",
+    "source_url": "https://arxiv.org/abs/2307.13854",
+    "title": "WebArena"
+  },
+  "method_id": "webarena",
+  "method_title": "WebArena",
+  "metrics": {
+    "blocking_failures": [],
+    "checks_passed": 7,
+    "checks_total": 7,
+    "integration_status": "adapter_ready",
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "schema": "evaluators/external_benchmark_method_smoke.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-integration-smoke",
+    "run_name": "2026-04-19-external-benchmark-method-smoke",
+    "timestamp_utc": "2026-04-19T12:43:21Z",
+    "tool": "tools/evaluate_external_benchmark_methods.py"
+  }
+}

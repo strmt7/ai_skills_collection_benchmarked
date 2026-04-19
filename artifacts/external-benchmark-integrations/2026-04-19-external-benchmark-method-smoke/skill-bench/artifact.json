@@ -1,0 +1,152 @@
+{
+  "artifact_kind": "external_benchmark_method_smoke",
+  "artifact_version": "1.0",
+  "checks": [
+    {
+      "evidence": "data/external_benchmark_methods.json",
+      "name": "adapter_spec_complete",
+      "passed": true
+    },
+    {
+      "evidence": "https://github.com/skill-bench/skill-eval-action",
+      "name": "repository_head_resolves",
+      "passed": true
+    },
+    {
+      "evidence": 23,
+      "name": "repo_tree_sampled",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "criterion score",
+        "evidence coverage",
+        "pass/fail",
+        "regression delta"
+      ],
+      "name": "declares_objective_metrics",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "eval case YAML",
+        "grader criteria",
+        "skill path",
+        "agent response transcript"
+      ],
+      "name": "declares_integration_requirements",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "Agent infrastructure & skill creation",
+        "Testing, QA & benchmarking"
+      ],
+      "name": "declares_category_fit",
+      "passed": true
+    },
+    {
+      "evidence": "repository root",
+      "name": "required_subpath_resolves",
+      "passed": true
+    }
+  ],
+  "evidence": {
+    "citations_or_paths": [
+      "https://github.com/skill-bench/skill-eval-action",
+      "https://skill-bench.dev/",
+      "data/external_benchmark_methods.json"
+    ]
+  },
+  "execution": {
+    "commands": [
+      {
+        "command": [
+          "git",
+          "ls-remote",
+          "https://github.com/skill-bench/skill-eval-action",
+          "HEAD"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "68841d3b5ec3ea2658f74ca260d3c1088481928d\tHEAD"
+      }
+    ],
+    "fresh_session": true
+  },
+  "input_snapshot": {
+    "head_sha": "68841d3b5ec3ea2658f74ca260d3c1088481928d",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "repo_subpath": null,
+    "repo_subpath_present": true,
+    "repo_url": "https://github.com/skill-bench/skill-eval-action",
+    "sampled_paths": [
+      ".github/CODEOWNERS",
+      ".github/ISSUE_TEMPLATE/bug_report.md",
+      ".github/dependabot.yml",
+      ".github/pull_request_template.md",
+      ".github/workflows/ci.yml",
+      ".github/workflows/release.yml",
+      ".gitignore",
+      "CHANGELOG.md",
+      "CLAUDE.md",
+      "CODE_OF_CONDUCT.md",
+      "CONTRIBUTING.md",
+      "LICENSE",
+      "README.md",
+      "action.yml",
+      "scripts/check_threshold.py",
+      "scripts/discover.py",
+      "scripts/eval.py",
+      "scripts/generate_viewer.py",
+      "scripts/post_comment.py",
+      "scripts/test_validation.py"
+    ],
+    "source_url": "https://skill-bench.dev/",
+    "tree_error": "",
+    "tree_path_count": 23
+  },
+  "method": {
+    "adapter_stage": "implemented-smoke-adapter",
+    "category_fit": [
+      "Agent infrastructure & skill creation",
+      "Testing, QA & benchmarking"
+    ],
+    "id": "skill-bench",
+    "integration_requirements": [
+      "eval case YAML",
+      "grader criteria",
+      "skill path",
+      "agent response transcript"
+    ],
+    "primary_metrics": [
+      "criterion score",
+      "evidence coverage",
+      "pass/fail",
+      "regression delta"
+    ],
+    "repo_url": "https://github.com/skill-bench/skill-eval-action",
+    "scope": "Runs evidence-graded skill eval cases in CI and reports regression-oriented skill scores.",
+    "source_url": "https://skill-bench.dev/",
+    "title": "Skill Bench"
+  },
+  "method_id": "skill-bench",
+  "method_title": "Skill Bench",
+  "metrics": {
+    "blocking_failures": [],
+    "checks_passed": 7,
+    "checks_total": 7,
+    "integration_status": "adapter_ready",
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "schema": "evaluators/external_benchmark_method_smoke.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-integration-smoke",
+    "run_name": "2026-04-19-external-benchmark-method-smoke",
+    "timestamp_utc": "2026-04-19T12:43:21Z",
+    "tool": "tools/evaluate_external_benchmark_methods.py"
+  }
+}

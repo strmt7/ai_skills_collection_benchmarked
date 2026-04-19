@@ -1,0 +1,152 @@
+{
+  "artifact_kind": "external_benchmark_method_smoke",
+  "artifact_version": "1.0",
+  "checks": [
+    {
+      "evidence": "data/external_benchmark_methods.json",
+      "name": "adapter_spec_complete",
+      "passed": true
+    },
+    {
+      "evidence": "https://github.com/ServiceNow/webarena-verified",
+      "name": "repository_head_resolves",
+      "passed": true
+    },
+    {
+      "evidence": 378,
+      "name": "repo_tree_sampled",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "verified task success",
+        "network trace evidence",
+        "response evaluator result",
+        "state evaluator result"
+      ],
+      "name": "declares_objective_metrics",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "verified task set",
+        "captured browser/network trace",
+        "deterministic evaluator",
+        "site snapshot"
+      ],
+      "name": "declares_integration_requirements",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "Frontend, UI & browser automation",
+        "Search, retrieval & web automation"
+      ],
+      "name": "declares_category_fit",
+      "passed": true
+    },
+    {
+      "evidence": "repository root",
+      "name": "required_subpath_resolves",
+      "passed": true
+    }
+  ],
+  "evidence": {
+    "citations_or_paths": [
+      "https://github.com/ServiceNow/webarena-verified",
+      "https://github.com/ServiceNow/webarena-verified",
+      "data/external_benchmark_methods.json"
+    ]
+  },
+  "execution": {
+    "commands": [
+      {
+        "command": [
+          "git",
+          "ls-remote",
+          "https://github.com/ServiceNow/webarena-verified",
+          "HEAD"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "6473f72db5dcefc97b5725b59e734504edc28a21\tHEAD"
+      }
+    ],
+    "fresh_session": true
+  },
+  "input_snapshot": {
+    "head_sha": "6473f72db5dcefc97b5725b59e734504edc28a21",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "repo_subpath": null,
+    "repo_subpath_present": true,
+    "repo_url": "https://github.com/ServiceNow/webarena-verified",
+    "sampled_paths": [
+      ".dockerignore",
+      ".github/CODEOWNERS",
+      ".github/actions/setup/action.yml",
+      ".github/workflows/copilot-setup-steps.yml",
+      ".github/workflows/dev-docs-publish.yml",
+      ".github/workflows/release-publish.yml",
+      ".github/workflows/test-env-ctrl.yml",
+      ".github/workflows/test-envs-docker.yml",
+      ".github/workflows/test.yml",
+      ".gitignore",
+      ".pre-commit-config.yaml",
+      ".python-version",
+      ".webarena_verified_root",
+      "CONTRIBUTING.md",
+      "Dockerfile",
+      "LICENSE",
+      "README.md",
+      "assets/dataset/subsets/.gitkeep",
+      "assets/dataset/subsets/webarena-verified-hard.json",
+      "assets/dataset/subsets/webarena-verified-non-hard.json"
+    ],
+    "source_url": "https://github.com/ServiceNow/webarena-verified",
+    "tree_error": "",
+    "tree_path_count": 378
+  },
+  "method": {
+    "adapter_stage": "implemented-smoke-adapter",
+    "category_fit": [
+      "Frontend, UI & browser automation",
+      "Search, retrieval & web automation"
+    ],
+    "id": "webarena-verified",
+    "integration_requirements": [
+      "verified task set",
+      "captured browser/network trace",
+      "deterministic evaluator",
+      "site snapshot"
+    ],
+    "primary_metrics": [
+      "verified task success",
+      "network trace evidence",
+      "response evaluator result",
+      "state evaluator result"
+    ],
+    "repo_url": "https://github.com/ServiceNow/webarena-verified",
+    "scope": "Adds version-controlled verified web tasks and deterministic evaluators on top of WebArena-style environments.",
+    "source_url": "https://github.com/ServiceNow/webarena-verified",
+    "title": "WebArena-Verified"
+  },
+  "method_id": "webarena-verified",
+  "method_title": "WebArena-Verified",
+  "metrics": {
+    "blocking_failures": [],
+    "checks_passed": 7,
+    "checks_total": 7,
+    "integration_status": "adapter_ready",
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "schema": "evaluators/external_benchmark_method_smoke.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-integration-smoke",
+    "run_name": "2026-04-19-external-benchmark-method-smoke",
+    "timestamp_utc": "2026-04-19T12:43:21Z",
+    "tool": "tools/evaluate_external_benchmark_methods.py"
+  }
+}
