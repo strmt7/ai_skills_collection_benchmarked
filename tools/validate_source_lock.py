@@ -243,7 +243,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--lock",
         default=str(DEFAULT_LOCK),
-        help=f"Path to source_lock.json (default: {DEFAULT_LOCK}).",
+        help="Path to source_lock.json (default: data/source_lock.json in the repo root).",
     )
     parser.add_argument(
         "--strict",
