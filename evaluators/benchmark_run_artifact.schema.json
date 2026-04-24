@@ -1,177 +1,10 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-skills-collection-benchmarked.invalid/schemas/benchmark_run_artifact.schema.json",
+  "title": "Benchmark run artifact",
+  "description": "Schema for provenance_check and independent_benchmark artifacts recorded under artifacts/benchmark-runs/<batch>/<skill>/<scenario>/artifact.json. Artifacts MUST NOT self-claim benchmark success; aggregate verdicts are computed out-of-band by tools/check_benchmark_artifact.py.",
+  "type": "object",
   "additionalProperties": true,
-  "properties": {
-    "artifact_kind": {
-      "enum": [
-        "provenance_check",
-        "independent_benchmark"
-      ],
-      "type": "string"
-    },
-    "artifact_version": {
-      "pattern": "^1\\.",
-      "type": "string"
-    },
-    "catalog_commit": {
-      "pattern": "^[0-9a-f]{40}$",
-      "type": "string"
-    },
-    "evidence": {
-      "additionalProperties": true,
-      "properties": {
-        "artifact_paths": {
-          "items": {
-            "type": "string"
-          },
-          "minItems": 1,
-          "type": "array"
-        },
-        "citations_or_paths": {
-          "items": {
-            "type": "string"
-          },
-          "minItems": 1,
-          "type": "array"
-        },
-        "context_memory": {
-          "type": "object"
-        },
-        "visual": {
-          "type": "object"
-        }
-      },
-      "required": [
-        "artifact_paths",
-        "citations_or_paths"
-      ],
-      "type": "object"
-    },
-    "execution": {
-      "additionalProperties": true,
-      "properties": {
-        "commands_or_transcript_path": {
-          "type": "string"
-        },
-        "fresh_session": {
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "fresh_session",
-        "commands_or_transcript_path"
-      ],
-      "type": "object"
-    },
-    "independence": {
-      "additionalProperties": true,
-      "properties": {
-        "evaluator_defined_outside_skill": {
-          "type": "boolean"
-        },
-        "expected_result_defined_outside_skill": {
-          "type": "boolean"
-        },
-        "skill_content_usage": {
-          "type": "string"
-        },
-        "task_defined_outside_skill": {
-          "type": "boolean"
-        },
-        "uses_exact_skill_content_for_expected_result": {
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "skill_content_usage"
-      ],
-      "type": "object"
-    },
-    "input_snapshot": {
-      "additionalProperties": true,
-      "properties": {
-        "identifier": {
-          "type": "string"
-        },
-        "is_real": {
-          "type": "boolean"
-        },
-        "kind": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "kind",
-        "identifier",
-        "is_real"
-      ],
-      "type": "object"
-    },
-    "metrics": {
-      "type": "object"
-    },
-    "objective_checks": {
-      "items": {
-        "type": "string"
-      },
-      "minItems": 1,
-      "type": "array"
-    },
-    "outputs": {
-      "type": "object"
-    },
-    "runner": {
-      "additionalProperties": true,
-      "properties": {
-        "model_or_runtime": {
-          "type": "string"
-        },
-        "timestamp_utc": {
-          "type": "string"
-        },
-        "tool": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "timestamp_utc",
-        "tool",
-        "model_or_runtime"
-      ],
-      "type": "object"
-    },
-    "scenario_id": {
-      "type": "string"
-    },
-    "scenario_requirements": {
-      "additionalProperties": true,
-      "properties": {
-        "context_memory": {
-          "type": "boolean"
-        },
-        "token_efficiency_claim": {
-          "type": "boolean"
-        },
-        "visual_or_browser": {
-          "type": "boolean"
-        }
-      },
-      "type": "object"
-    },
-    "skill_id": {
-      "type": "string"
-    },
-    "source_commit": {
-      "pattern": "^[0-9a-f]{40}$",
-      "type": "string"
-    },
-    "source_path": {
-      "type": "string"
-    },
-    "source_repo": {
-      "type": "string"
-    }
-  },
   "required": [
     "artifact_version",
     "artifact_kind",
@@ -191,6 +24,269 @@
     "evidence",
     "objective_checks"
   ],
-  "title": "Benchmark run artifact",
-  "type": "object"
+  "properties": {
+    "artifact_version": {
+      "description": "Schema-compatible artifact version. Currently the 1.x series.",
+      "type": "string",
+      "pattern": "^1\\."
+    },
+    "artifact_kind": {
+      "description": "Provenance checks are source-proof artifacts; independent_benchmark artifacts are scored against external fixtures.",
+      "type": "string",
+      "enum": [
+        "provenance_check",
+        "independent_benchmark"
+      ]
+    },
+    "skill_id": {
+      "description": "Catalog skill identifier. Must match data/skills_catalog.json.",
+      "type": "string",
+      "minLength": 1
+    },
+    "scenario_id": {
+      "description": "Benchmark scenario identifier. Must match data/benchmark_scenarios.json.",
+      "type": "string",
+      "minLength": 1
+    },
+    "catalog_commit": {
+      "description": "40-char lowercase git SHA of the catalog commit the artifact was produced against.",
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "source_commit": {
+      "description": "40-char lowercase git SHA of the upstream skill source commit.",
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "source_repo": {
+      "description": "owner/name form of the upstream source repository.",
+      "type": "string",
+      "minLength": 1
+    },
+    "source_path": {
+      "description": "Path to the SKILL.md inside the upstream source repository.",
+      "type": "string",
+      "minLength": 1
+    },
+    "runner": {
+      "description": "Information about the runtime that produced the artifact.",
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "timestamp_utc",
+        "tool",
+        "model_or_runtime"
+      ],
+      "properties": {
+        "timestamp_utc": {
+          "description": "ISO-8601 UTC timestamp (with trailing 'Z').",
+          "type": "string",
+          "minLength": 1
+        },
+        "tool": {
+          "description": "Path to the runner tool that produced this artifact.",
+          "type": "string",
+          "minLength": 1
+        },
+        "model_or_runtime": {
+          "description": "Name of the model or deterministic runtime used.",
+          "type": "string",
+          "minLength": 1
+        },
+        "batch_name": {
+          "description": "Optional batch label shared by all artifacts produced in one runner invocation.",
+          "type": "string"
+        }
+      }
+    },
+    "scenario_requirements": {
+      "description": "Capability flags copied from the scenario definition.",
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "context_memory": {
+          "type": "boolean"
+        },
+        "token_efficiency_claim": {
+          "type": "boolean"
+        },
+        "visual_or_browser": {
+          "type": "boolean"
+        }
+      }
+    },
+    "input_snapshot": {
+      "description": "Deterministic description of the input fixture that the skill was run against.",
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "kind",
+        "identifier",
+        "is_real"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "identifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "is_real": {
+          "type": "boolean"
+        }
+      }
+    },
+    "execution": {
+      "description": "How the artifact was produced.",
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "fresh_session",
+        "commands_or_transcript_path"
+      ],
+      "properties": {
+        "fresh_session": {
+          "type": "boolean"
+        },
+        "commands_or_transcript_path": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "outputs": {
+      "description": "Primary output payload references.",
+      "type": "object"
+    },
+    "metrics": {
+      "description": "Numeric metrics for the artifact. Verdicts recorded here are descriptive only.",
+      "type": "object"
+    },
+    "independence": {
+      "description": "Evidence that the task, evaluator, and expected result were authored independently of the skill text.",
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "skill_content_usage"
+      ],
+      "properties": {
+        "task_defined_outside_skill": {
+          "type": "boolean"
+        },
+        "evaluator_defined_outside_skill": {
+          "type": "boolean"
+        },
+        "expected_result_defined_outside_skill": {
+          "type": "boolean"
+        },
+        "uses_exact_skill_content_for_expected_result": {
+          "type": "boolean"
+        },
+        "skill_content_usage": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "evidence": {
+      "description": "Paths and citations that back the artifact's factual claims.",
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "artifact_paths",
+        "citations_or_paths"
+      ],
+      "properties": {
+        "artifact_paths": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "citations_or_paths": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "context_memory": {
+          "type": "object"
+        },
+        "visual": {
+          "type": "object"
+        }
+      }
+    },
+    "objective_checks": {
+      "description": "Ordered list of objective check identifiers performed by the runner.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "examples": [
+    {
+      "artifact_version": "1.0",
+      "artifact_kind": "provenance_check",
+      "skill_id": "example-skill-id",
+      "scenario_id": "skill-proof-example",
+      "catalog_commit": "0000000000000000000000000000000000000000",
+      "source_commit": "0000000000000000000000000000000000000000",
+      "source_repo": "example/repo",
+      "source_path": "SKILL.md",
+      "runner": {
+        "timestamp_utc": "2026-04-17T21:39:52Z",
+        "tool": "tools/create_source_proof_batch.py",
+        "model_or_runtime": "local-deterministic-source-proof-runner"
+      },
+      "scenario_requirements": {
+        "context_memory": false,
+        "token_efficiency_claim": false,
+        "visual_or_browser": false
+      },
+      "input_snapshot": {
+        "kind": "source-skill-repository",
+        "identifier": "https://example.invalid/SKILL.md",
+        "is_real": true
+      },
+      "execution": {
+        "fresh_session": true,
+        "commands_or_transcript_path": "transcript.txt"
+      },
+      "outputs": {
+        "path": "result.json"
+      },
+      "metrics": {
+        "proof_evidence_count": 3
+      },
+      "independence": {
+        "task_defined_outside_skill": false,
+        "evaluator_defined_outside_skill": true,
+        "expected_result_defined_outside_skill": false,
+        "uses_exact_skill_content_for_expected_result": true,
+        "skill_content_usage": "source text used only for provenance"
+      },
+      "evidence": {
+        "artifact_paths": [
+          "result.json",
+          "transcript.txt"
+        ],
+        "citations_or_paths": [
+          "SKILL.md"
+        ]
+      },
+      "objective_checks": [
+        "source citations present"
+      ]
+    }
+  ]
 }
