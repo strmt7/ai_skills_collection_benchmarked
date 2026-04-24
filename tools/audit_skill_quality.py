@@ -175,10 +175,21 @@ def run() -> dict[str, Any]:
     }
 
 
-def main() -> None:
+def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Audit mirrored skill quality and likely usability risks.")
     parser.add_argument("--check", action="store_true", help="Fail if generated audit artifacts are stale.")
-    args = parser.parse_args()
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Emit the audit results JSON envelope to stdout instead of the human summary line.",
+    )
+    parser.add_argument(
+        "--severity",
+        choices=["blocking", "warning", "info", "any"],
+        default="any",
+        help="When used with --json, restrict the 'skills' array to entries with a finding at or above this severity.",
+    )
+    args = parser.parse_args(argv)
     results = run()
     data_path = ROOT / "data" / "skill_risk_audit.json"
     doc_path = ROOT / "docs" / "skill-risk-findings.md"
@@ -191,13 +202,29 @@ def main() -> None:
     else:
         write_json(data_path, results)
         doc_path.write_text(rendered, encoding="utf-8")
-    print(
-        "Skill risk audit: "
-        f"{results['summary']['likely_non_working']} likely non-working, "
-        f"{results['summary']['subpar_needs_review']} subpar/needs review, "
-        f"{results['summary']['skill_count']} audited."
-    )
+
+    if args.json:
+        if args.severity != "any":
+            rank = {"blocking": 0, "warning": 1, "info": 2, "any": 3}
+            threshold = rank[args.severity]
+            filtered = [
+                item
+                for item in results["skills"]
+                if any(rank[f["severity"]] <= threshold for f in item["findings"])
+            ]
+            output = {**results, "skills": filtered}
+        else:
+            output = results
+        print(json.dumps(output, indent=2, sort_keys=True))
+    else:
+        print(
+            "Skill risk audit: "
+            f"{results['summary']['likely_non_working']} likely non-working, "
+            f"{results['summary']['subpar_needs_review']} subpar/needs review, "
+            f"{results['summary']['skill_count']} audited."
+        )
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
