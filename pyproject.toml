@@ -2,7 +2,18 @@
 name = "ai-skills-collection-benchmarked"
 version = "0.1.0"
 description = "Evidence-backed AI skills catalog with real workflow benchmark definitions."
+readme = "README.md"
 requires-python = ">=3.10"
+keywords = ["ai", "skills", "benchmarks", "catalog"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Operating System :: OS Independent",
+  "Topic :: Software Development :: Quality Assurance",
+]
 dependencies = [
   "PyYAML>=6.0.0",
 ]
@@ -10,10 +21,8 @@ dependencies = [
 [project.optional-dependencies]
 test = [
   "pytest>=7.4.0",
+  "pytest-xdist>=3.5.0",
 ]
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
 
 [build-system]
 requires = ["setuptools>=69", "wheel"]
@@ -22,3 +31,17 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools]
 packages = []
 py-modules = []
+
+[tool.pytest.ini_options]
+minversion = "7.4"
+testpaths = ["tests"]
+addopts = [
+  "-ra",
+  "--strict-markers",
+  "--strict-config",
+]
+filterwarnings = [
+  "error",
+  # Silence harmless third-party DeprecationWarnings that are outside this repo's control.
+  "ignore::DeprecationWarning:_pytest",
+]
