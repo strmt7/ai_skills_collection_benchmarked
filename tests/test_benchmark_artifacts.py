@@ -8,6 +8,58 @@ import check_benchmark_artifact
 import report_local_markdown_link_failures
 
 
+def _complete_provenance_fixture(tmp: Path):
+    catalog = load("data/skills_catalog.json")
+    entry = catalog[0]
+    scenario_id = entry["benchmark_scenarios"][0]
+    (tmp / "transcript.txt").write_text("commands and transcript", encoding="utf-8")
+    (tmp / "result.json").write_text("{}", encoding="utf-8")
+    artifact = {
+        "artifact_version": "1.0",
+        "artifact_kind": "provenance_check",
+        "skill_id": entry["id"],
+        "scenario_id": scenario_id,
+        "catalog_commit": "0" * 40,
+        "source_commit": entry["commit_sha"],
+        "source_repo": entry["source_repo"],
+        "source_path": entry["source_path"],
+        "runner": {
+            "timestamp_utc": "2026-04-17T00:00:00Z",
+            "tool": "pytest",
+            "model_or_runtime": "local",
+        },
+        "scenario_requirements": {
+            "visual_or_browser": False,
+            "context_memory": False,
+            "token_efficiency_claim": False,
+        },
+        "input_snapshot": {
+            "kind": "source",
+            "identifier": entry["immutable_source_url"],
+            "is_real": True,
+        },
+        "execution": {
+            "fresh_session": True,
+            "commands_or_transcript_path": "transcript.txt",
+        },
+        "outputs": {"path": "result.json"},
+        "metrics": {"checks": 1},
+        "independence": {
+            "task_defined_outside_skill": False,
+            "evaluator_defined_outside_skill": True,
+            "expected_result_defined_outside_skill": False,
+            "uses_exact_skill_content_for_expected_result": True,
+            "skill_content_usage": "source text used for provenance check only",
+        },
+        "evidence": {
+            "artifact_paths": ["result.json"],
+            "citations_or_paths": [entry["source_path"]],
+        },
+        "objective_checks": ["source citations present"],
+    }
+    return artifact
+
+
 def assert_real_dataset_snapshot_resolved(snapshot):
     assert snapshot["resolved"] is True
     if snapshot["kind"] == "real-github-repository-tree":
@@ -165,39 +217,56 @@ def test_local_markdown_link_failure_report_is_current():
     assert "`REPO_URL/blob/BRANCH/file`" in report_text
 
 
+def test_extract_local_links_finds_true_positives():
+    text = "See [guide](docs/guide.md) and [api](../api/index.md) for details."
+    assert report_local_markdown_link_failures.extract_local_links(text) == [
+        "docs/guide.md",
+        "../api/index.md",
+    ]
+
+
+def test_extract_local_links_strips_anchors_and_queries():
+    text = "[a](page.md#section) and [b](other.md?ref=1) and [c](t.md?x=1#y)"
+    assert report_local_markdown_link_failures.extract_local_links(text) == [
+        "page.md",
+        "other.md",
+        "t.md",
+    ]
+
+
+def test_extract_local_links_ignores_urls_images_and_mailto():
+    text = (
+        "[ext](https://example.com/x) and "
+        "![img](images/cover.png) and "
+        "[mail](mailto:user@example.com) and "
+        "[local](docs/ok.md)"
+    )
+    # Images and autolinks/URLs/mailto must not be reported as broken-local
+    # candidates. Only the final local link survives.
+    assert report_local_markdown_link_failures.extract_local_links(text) == ["docs/ok.md"]
+
+
+def test_extract_local_links_is_idempotent_and_deterministic():
+    text = "[one](a.md) [two](b.md) [one-again](a.md)"
+    first = report_local_markdown_link_failures.extract_local_links(text)
+    second = report_local_markdown_link_failures.extract_local_links(text)
+    assert first == second == ["a.md", "b.md", "a.md"]
+
+
+def test_render_report_is_deterministic_across_runs():
+    """Running render_report twice in the same process yields identical output."""
+    a = report_local_markdown_link_failures.render_report()
+    b = report_local_markdown_link_failures.render_report()
+    assert a == b
+    # The report must count real-on-disk artifacts, not hardcoded numbers.
+    runtime_results = report_local_markdown_link_failures.iter_runtime_results()
+    assert f"Runtime artifacts scanned: `{len(runtime_results)}`" in a
+
+
 def test_benchmark_artifact_checker_accepts_complete_artifact_and_rejects_incomplete_visual():
-    catalog = load("data/skills_catalog.json")
-    entry = catalog[0]
-    scenario_id = entry["benchmark_scenarios"][0]
     with tempfile.TemporaryDirectory() as tmp:
         base = Path(tmp)
-        (base / "transcript.txt").write_text("commands and transcript", encoding="utf-8")
-        (base / "result.json").write_text("{}", encoding="utf-8")
-        artifact = {
-            "artifact_version": "1.0",
-            "artifact_kind": "provenance_check",
-            "skill_id": entry["id"],
-            "scenario_id": scenario_id,
-            "catalog_commit": "0" * 40,
-            "source_commit": entry["commit_sha"],
-            "source_repo": entry["source_repo"],
-            "source_path": entry["source_path"],
-            "runner": {"timestamp_utc": "2026-04-17T00:00:00Z", "tool": "pytest", "model_or_runtime": "local"},
-            "scenario_requirements": {"visual_or_browser": False, "context_memory": False, "token_efficiency_claim": False},
-            "input_snapshot": {"kind": "source", "identifier": entry["immutable_source_url"], "is_real": True},
-            "execution": {"fresh_session": True, "commands_or_transcript_path": "transcript.txt"},
-            "outputs": {"path": "result.json"},
-            "metrics": {"checks": 1},
-            "independence": {
-                "task_defined_outside_skill": False,
-                "evaluator_defined_outside_skill": True,
-                "expected_result_defined_outside_skill": False,
-                "uses_exact_skill_content_for_expected_result": True,
-                "skill_content_usage": "source text used for provenance check only",
-            },
-            "evidence": {"artifact_paths": ["result.json"], "citations_or_paths": [entry["source_path"]]},
-            "objective_checks": ["source citations present"],
-        }
+        artifact = _complete_provenance_fixture(base)
         artifact_path = base / "artifact.json"
         artifact_path.write_text(json.dumps(artifact), encoding="utf-8")
         assert check_benchmark_artifact.validate_artifact(artifact_path)["verdict"] == "artifact_complete"
@@ -206,3 +275,91 @@ def test_benchmark_artifact_checker_accepts_complete_artifact_and_rejects_incomp
         result = check_benchmark_artifact.validate_artifact(artifact_path)
         assert result["verdict"] == "artifact_incomplete"
         assert any("visual" in error for error in result["errors"])
+
+
+def test_benchmark_artifact_checker_rejects_missing_required_field():
+    """True-positive: dropping a required top-level field must be flagged."""
+    with tempfile.TemporaryDirectory() as tmp:
+        base = Path(tmp)
+        artifact = _complete_provenance_fixture(base)
+        del artifact["metrics"]
+        artifact_path = base / "artifact.json"
+        artifact_path.write_text(json.dumps(artifact), encoding="utf-8")
+        result = check_benchmark_artifact.validate_artifact(artifact_path)
+        assert result["verdict"] == "artifact_invalid"
+        assert any("metrics" in error for error in result["errors"])
+
+
+def test_benchmark_artifact_checker_rejects_wrong_type_with_json_pointer():
+    """True-positive: wrong-typed field is reported with a JSON-Pointer path."""
+    with tempfile.TemporaryDirectory() as tmp:
+        base = Path(tmp)
+        artifact = _complete_provenance_fixture(base)
+        artifact["evidence"]["artifact_paths"] = "result.json"  # should be a list
+        artifact_path = base / "artifact.json"
+        artifact_path.write_text(json.dumps(artifact), encoding="utf-8")
+        result = check_benchmark_artifact.validate_artifact(artifact_path)
+        assert result["verdict"] == "artifact_incomplete"
+        assert any(
+            error.startswith("/evidence/artifact_paths:")
+            for error in result["errors"]
+        ), result["errors"]
+
+
+def test_benchmark_artifact_checker_rejects_bad_sha_pattern():
+    """True-positive: a catalog_commit that is not a 40-char hex SHA is rejected."""
+    with tempfile.TemporaryDirectory() as tmp:
+        base = Path(tmp)
+        artifact = _complete_provenance_fixture(base)
+        artifact["catalog_commit"] = "not-a-sha"
+        artifact_path = base / "artifact.json"
+        artifact_path.write_text(json.dumps(artifact), encoding="utf-8")
+        result = check_benchmark_artifact.validate_artifact(artifact_path)
+        assert result["verdict"] == "artifact_incomplete"
+        assert any("catalog_commit" in error for error in result["errors"])
+
+
+def test_benchmark_artifact_checker_accepts_lookalike_benign_extra_keys():
+    """True-negative: extra unknown keys at additionalProperties:true levels are fine."""
+    with tempfile.TemporaryDirectory() as tmp:
+        base = Path(tmp)
+        artifact = _complete_provenance_fixture(base)
+        artifact["notes"] = "human-readable context, not schema-defined"
+        artifact["metrics"]["custom_score"] = 0.0
+        artifact_path = base / "artifact.json"
+        artifact_path.write_text(json.dumps(artifact), encoding="utf-8")
+        result = check_benchmark_artifact.validate_artifact(artifact_path)
+        assert result["verdict"] == "artifact_complete", result
+
+
+def test_benchmark_artifact_checker_is_idempotent():
+    """Running the validator twice on the same artifact yields identical results."""
+    with tempfile.TemporaryDirectory() as tmp:
+        base = Path(tmp)
+        artifact = _complete_provenance_fixture(base)
+        artifact_path = base / "artifact.json"
+        artifact_path.write_text(json.dumps(artifact), encoding="utf-8")
+        a = check_benchmark_artifact.validate_artifact(artifact_path)
+        b = check_benchmark_artifact.validate_artifact(artifact_path)
+        assert a == b
+
+
+def test_benchmark_artifact_validate_all_passes_on_recorded_artifacts():
+    """All real artifacts under artifacts/benchmark-runs must validate."""
+    artifact_root = ROOT / "artifacts" / "benchmark-runs"
+    total, failed, failures = check_benchmark_artifact._validate_all(
+        artifact_root,
+        ROOT / "data" / "skills_catalog.json",
+        ROOT / "data" / "benchmark_scenarios.json",
+    )
+    assert failed == 0, failures
+    assert total >= 10
+
+
+def test_benchmark_artifact_all_real_artifacts_preserve_verdict_keys():
+    """Every returned verdict dict must carry the stable public keys."""
+    for path, _, result in complete_artifacts():
+        assert set(result.keys()) >= {"verdict", "errors", "warnings"}
+        assert result["verdict"] == "artifact_complete"
+        assert isinstance(result["errors"], list)
+        assert isinstance(result["warnings"], list)
