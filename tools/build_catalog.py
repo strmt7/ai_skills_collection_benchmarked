@@ -329,6 +329,15 @@ def is_under_nested_skill(root: Path, item: Path) -> bool:
     return False
 
 
+def _portable_mode(st_mode: int) -> int:
+    # Host-portable file mode (git-style): regular file is 0o100644; if any
+    # execute bit is set we record 0o100755. Umask and per-checkout permission
+    # drift (e.g. different clones on different systems) must not change the
+    # tree hash, so we never record the raw st_mode.
+    executable = bool(st_mode & 0o111)
+    return 0o100755 if executable else 0o100644
+
+
 def sha256_tree(path: Path) -> str:
     digest = hashlib.sha256()
     ignored_parts = {".git", "__pycache__"}
@@ -362,7 +371,8 @@ def sha256_tree(path: Path) -> str:
         stat = item.stat()
         data = sanitized_file_bytes(item)
         file_digest = hashlib.sha256(data).hexdigest()
-        digest.update(f"file\0{rel}\0{stat.st_mode:o}\0{len(data)}\0".encode())
+        mode = _portable_mode(stat.st_mode)
+        digest.update(f"file\0{rel}\0{mode:o}\0{len(data)}\0".encode())
         digest.update(file_digest.encode())
         digest.update(b"\n")
     return digest.hexdigest()
