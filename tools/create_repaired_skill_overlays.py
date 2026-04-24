@@ -11,11 +11,11 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import logging
 import re
 import shutil
 import subprocess
 import sys
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
@@ -26,34 +26,33 @@ sys.path.insert(0, str(ROOT / "tools"))
 import audit_skill_quality
 import build_catalog
 import create_independent_runtime_batch
+from _lib_b import determinism as _det
+from _lib_b import io_utils as _io
+from _lib_b import logging_utils as _logging
+from _lib_b.hashing import sha256_file as _sha256_file
+from _lib_b.hashing import sha256_text as _sha256_text
 
 RUNNER_ID = "tools/create_repaired_skill_overlays.py"
 RUN_NAME = "2026-04-19-runtime-failure-repairs"
 REPAIRED_ROOT = ROOT / "included" / "repaired" / "skills"
 ARTIFACT_ROOT = ROOT / "artifacts" / "repaired-skill-readiness" / RUN_NAME
+_LOG = logging.getLogger(RUNNER_ID)
 
 LOCAL_LINK = re.compile(r"(?P<image>!)?\[(?P<label>[^\]]+)\]\((?P<target>[^)]+)\)")
 
 
 def load_json(path: Path) -> Any:
-    return json.loads(path.read_text(encoding="utf-8"))
+    # Kept for backward compat with any external importers.
+    return _io.read_json(path)
 
 
 def write_json(path: Path, data: Any) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    _io.write_json(path, data)
 
 
-def sha256_text(text: str) -> str:
-    return hashlib.sha256(text.encode("utf-8")).hexdigest()
-
-
-def sha256_file(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for chunk in iter(lambda: handle.read(65536), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
+# Re-exported so existing callers keep working.
+sha256_text = _sha256_text
+sha256_file = _sha256_file
 
 
 def git_text(*args: str) -> str:
@@ -390,16 +389,78 @@ def render_manifest_doc(manifest: dict[str, Any]) -> str:
     return "\n".join(lines) + "\n"
 
 
+def _preserve_original_provenance(
+    *, original_skill: Path, repaired_dir: Path, skill_id: str
+) -> Path:
+    """Copy the exact original SKILL.md text to the provenance dir.
+
+    Refuses to overwrite an existing provenance copy with different bytes.
+    The repair-overlay loop rule in AGENTS.md requires that the original
+    SKILL.md text be preserved byte-for-byte; this helper enforces that
+    invariant at the writer boundary.
+    """
+    provenance_dir = repaired_dir / "provenance"
+    provenance_dir.mkdir(parents=True, exist_ok=True)
+    dest = provenance_dir / "original.SKILL.md"
+    original_hash = sha256_file(original_skill)
+    if dest.is_file():
+        existing_hash = sha256_file(dest)
+        if existing_hash != original_hash:
+            raise SystemExit(
+                f"refusing to overwrite provenance for {skill_id}: "
+                f"existing provenance sha256={existing_hash} differs from "
+                f"current upstream sha256={original_hash}; investigate before "
+                f"regenerating"
+            )
+    shutil.copy2(original_skill, dest)
+    # Sanity check: the copy must byte-match the source.
+    if sha256_file(dest) != original_hash:
+        raise SystemExit(
+            f"provenance copy for {skill_id} does not match upstream sha256; "
+            "filesystem corruption or race detected"
+        )
+    return dest
+
+
 def run() -> dict[str, Any]:
+    existing_manifest = REPAIRED_ROOT / "manifest.json"
+    existing_timestamp = _det.existing_field(existing_manifest, "generated_at_utc")
+    existing_commit = _det.existing_field(existing_manifest, "catalog_commit")
+
     clean_generated_outputs()
     catalog = {entry["id"]: entry for entry in load_json(ROOT / "data" / "skills_catalog.json")}
     scenarios = {item["id"]: item for item in load_json(ROOT / "data" / "benchmark_scenarios.json")}
     tracks = {item["id"]: item for item in load_json(ROOT / "data" / "benchmark_tracks.json")}
-    timestamp = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
-    catalog_commit = git_text("rev-parse", "HEAD")
+
+    # Deterministic timestamp & commit: prefer SOURCE_DATE_EPOCH / existing
+    # manifest values; fall back to the latest commit that touched the input
+    # artifact set so wall-clock noise cannot leak in.
+    failed_artifacts = failed_runtime_artifacts()
+    fallback_epoch = _det.git_latest_commit_epoch_for(
+        ROOT, [item["artifact_path"] for item in failed_artifacts]
+    )
+    timestamp = _det.resolve_timestamp(
+        existing_manifest_value=existing_timestamp,
+        fallback_epoch=fallback_epoch,
+    )
+    catalog_commit = _det.resolve_catalog_commit(
+        root=ROOT, existing_manifest_value=existing_commit
+    )
+    _LOG.info(
+        "repaired-overlay run: ts=%s commit=%s failed_inputs=%d",
+        timestamp,
+        catalog_commit,
+        len(failed_artifacts),
+    )
     repairs: list[dict[str, Any]] = []
 
-    for original in failed_runtime_artifacts():
+    # Sort explicitly by skill_id + scenario_id for stable output ordering.
+    sorted_failed = sorted(
+        failed_artifacts,
+        key=lambda item: (item["artifact"]["skill_id"], item["artifact"]["scenario_id"]),
+    )
+
+    for original in sorted_failed:
         skill_id = original["artifact"]["skill_id"]
         entry = catalog[skill_id]
         scenario = scenarios[original["artifact"]["scenario_id"]]
@@ -408,16 +469,18 @@ def run() -> dict[str, Any]:
         original_skill = original_dir / "SKILL.md"
         repaired_dir = repaired_path_for(entry)
         repaired_dir.mkdir(parents=True, exist_ok=True)
-        provenance_dir = repaired_dir / "provenance"
-        provenance_dir.mkdir(exist_ok=True)
-        shutil.copy2(original_skill, provenance_dir / "original.SKILL.md")
+        _preserve_original_provenance(
+            original_skill=original_skill,
+            repaired_dir=repaired_dir,
+            skill_id=skill_id,
+        )
 
         original_text = original_skill.read_text(encoding="utf-8", errors="replace")
         text, actions = ensure_frontmatter(original_text, entry)
         text, link_actions = repair_markdown_links(text, original_dir)
         actions.extend(link_actions)
         actions.extend(copy_linked_local_targets(text, original_dir, repaired_dir))
-        (repaired_dir / "SKILL.md").write_text(text, encoding="utf-8")
+        _io.write_text(repaired_dir / "SKILL.md", text)
 
         repair_record = {
             "repair_record_version": 1,
@@ -432,13 +495,26 @@ def run() -> dict[str, Any]:
         }
         write_json(repaired_dir / "repair.json", repair_record)
 
-        dataset_snapshot, _commands = create_independent_runtime_batch.resolve_dataset_snapshot(track)
-        if dataset_snapshot.get("resolved") is not True:
-            original_snapshot = original["result"]["inputs"].get("dataset_snapshot", {})
-            if original_snapshot.get("resolved") is True:
-                dataset_snapshot = dict(original_snapshot)
-                dataset_snapshot["reused_from_original_artifact"] = str(original["artifact_path"].relative_to(ROOT))
-                dataset_snapshot["reuse_reason"] = "fresh repository snapshot probe did not resolve during repaired overlay run"
+        # Always reuse the original benchmark's dataset snapshot. A fresh
+        # network probe cannot produce a deterministic artifact (remote HEAD
+        # moves). We record the reuse provenance in the snapshot itself.
+        original_snapshot = original["result"]["inputs"].get("dataset_snapshot", {})
+        if original_snapshot.get("resolved") is True:
+            dataset_snapshot = dict(original_snapshot)
+            dataset_snapshot["reused_from_original_artifact"] = str(
+                original["artifact_path"].relative_to(ROOT)
+            )
+            dataset_snapshot["reuse_reason"] = (
+                "deterministic regeneration: the repair-overlay loop pins to "
+                "the original benchmark's recorded snapshot instead of a new "
+                "live probe"
+            )
+        else:
+            # Last resort: live probe (only reachable if the original artifact
+            # itself did not resolve the snapshot).
+            dataset_snapshot, _commands = (
+                create_independent_runtime_batch.resolve_dataset_snapshot(track)
+            )
         task_path = original["result"]["inputs"].get("task_brief_path", "")
         result = evaluate_repaired_skill(entry, original, repaired_dir, scenario, dataset_snapshot, task_path, repair_record)
         artifact_dir = ARTIFACT_ROOT / build_catalog.slug(skill_id) / build_catalog.slug(scenario["id"])
@@ -462,6 +538,10 @@ def run() -> dict[str, Any]:
             }
         )
 
+    # Sort the manifest repair list for byte-stable output regardless of
+    # traversal order quirks on the input side.
+    repairs.sort(key=lambda item: (item["skill_id"], item["scenario_id"]))
+
     passed = sum(1 for item in repairs if item["benchmark_verdict"] == "passed")
     failed = len(repairs) - passed
     average = round(sum(item["score_percent"] for item in repairs) / len(repairs), 2) if repairs else 0
@@ -481,7 +561,7 @@ def run() -> dict[str, Any]:
     }
     write_json(REPAIRED_ROOT / "manifest.json", manifest)
     write_json(ARTIFACT_ROOT / "manifest.json", manifest)
-    (ROOT / "docs" / "repaired-skill-readiness.md").write_text(render_manifest_doc(manifest), encoding="utf-8")
+    _io.write_text(ROOT / "docs" / "repaired-skill-readiness.md", render_manifest_doc(manifest))
     return manifest
 
 
@@ -497,21 +577,54 @@ def check_outputs() -> None:
     original_count = len(failed_runtime_artifacts())
     if manifest["summary"]["overlay_count"] != original_count:
         raise SystemExit("repaired overlay count does not match failed runtime artifact count")
+    catalog = {entry["id"]: entry for entry in load_json(ROOT / "data" / "skills_catalog.json")}
     for item in manifest["repairs"]:
         repaired_dir = ROOT / item["repaired_path"]
         if not (repaired_dir / "SKILL.md").is_file():
             raise SystemExit(f"missing repaired SKILL.md for {item['skill_id']}")
-        if not (repaired_dir / "provenance" / "original.SKILL.md").is_file():
+        provenance_copy = repaired_dir / "provenance" / "original.SKILL.md"
+        if not provenance_copy.is_file():
             raise SystemExit(f"missing preserved original for {item['skill_id']}")
+        # Strict provenance integrity: the preserved copy MUST match the
+        # immutable upstream mirror byte-for-byte.
+        entry = catalog[item["skill_id"]]
+        original_skill = ROOT / entry["mirrored_path"] / "SKILL.md"
+        if sha256_file(original_skill) != sha256_file(provenance_copy):
+            raise SystemExit(
+                f"provenance integrity failure for {item['skill_id']}: "
+                "provenance/original.SKILL.md diverges from the mirrored upstream"
+            )
+        # The repair manifest must exist alongside the overlay.
+        if not (repaired_dir / "repair.json").is_file():
+            raise SystemExit(f"missing repair manifest for {item['skill_id']}")
         artifact = load_json(ROOT / item["artifact_path"])
         if artifact["metrics"]["benchmark_verdict"] != item["benchmark_verdict"]:
             raise SystemExit(f"stale repaired readiness summary for {item['skill_id']}")
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Create repaired skill overlays for failed runtime-readiness artifacts.")
-    parser.add_argument("--check", action="store_true", help="Validate generated repaired overlays without rewriting them.")
+    parser = argparse.ArgumentParser(
+        description=(
+            "Create repaired skill overlays for failed runtime-readiness "
+            "artifacts. Deterministic: rerunning with no input change "
+            "produces byte-identical output (set SOURCE_DATE_EPOCH / "
+            "CATALOG_COMMIT to pin, or let the tool reuse the existing "
+            "manifest's values)."
+        )
+    )
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help=(
+            "Read-only: validate generated repaired overlays, provenance "
+            "integrity, and rendered docs. Exits non-zero on drift."
+        ),
+    )
+    parser.add_argument(
+        "--verbose", action="store_true", help="Enable DEBUG-level logging."
+    )
     args = parser.parse_args()
+    _logging.setup_cli_logging(RUNNER_ID, verbose=args.verbose)
     if args.check:
         check_outputs()
         print("Repaired skill overlays are current.")
