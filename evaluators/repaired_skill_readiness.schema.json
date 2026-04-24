@@ -1,80 +1,10 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-skills-collection-benchmarked.invalid/schemas/repaired_skill_readiness.schema.json",
+  "title": "Repaired skill readiness artifact",
+  "description": "Schema for repair-overlay artifacts produced by tools/create_repaired_skill_overlays.py. A repaired artifact records that a repaired overlay under included/repaired/skills/ now passes the same objective checks that the original runtime artifact failed.",
+  "type": "object",
   "additionalProperties": true,
-  "properties": {
-    "artifact_kind": {
-      "const": "repaired_skill_readiness"
-    },
-    "artifact_version": {
-      "type": "string"
-    },
-    "catalog_commit": {
-      "pattern": "^[0-9a-f]{40}$",
-      "type": "string"
-    },
-    "evidence": {
-      "additionalProperties": true,
-      "required": [
-        "artifact_paths",
-        "citations_or_paths"
-      ],
-      "type": "object"
-    },
-    "independence": {
-      "additionalProperties": true,
-      "required": [
-        "task_defined_outside_skill",
-        "evaluator_defined_outside_skill",
-        "expected_result_defined_outside_skill",
-        "uses_exact_skill_content_for_expected_result"
-      ],
-      "type": "object"
-    },
-    "input_snapshot": {
-      "additionalProperties": true,
-      "required": [
-        "kind",
-        "identifier",
-        "is_real",
-        "original_runtime_artifact",
-        "original_mirrored_path",
-        "repaired_path"
-      ],
-      "type": "object"
-    },
-    "metrics": {
-      "additionalProperties": true,
-      "required": [
-        "checks_passed",
-        "checks_total",
-        "score_percent",
-        "benchmark_verdict",
-        "blocking_failure_count"
-      ],
-      "type": "object"
-    },
-    "outputs": {
-      "additionalProperties": true,
-      "required": [
-        "path",
-        "repair_record_path",
-        "result_sha256",
-        "repair_sha256",
-        "schema"
-      ],
-      "type": "object"
-    },
-    "runner": {
-      "additionalProperties": true,
-      "required": [
-        "timestamp_utc",
-        "tool",
-        "model_or_runtime",
-        "run_name"
-      ],
-      "type": "object"
-    }
-  },
   "required": [
     "artifact_version",
     "artifact_kind",
@@ -93,5 +23,237 @@
     "evidence",
     "objective_checks"
   ],
-  "type": "object"
+  "properties": {
+    "artifact_version": {
+      "description": "Schema-compatible artifact version. Currently the 1.x series.",
+      "type": "string",
+      "pattern": "^1\\."
+    },
+    "artifact_kind": {
+      "description": "Fixed discriminator for repaired skill readiness artifacts.",
+      "const": "repaired_skill_readiness"
+    },
+    "skill_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scenario_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "catalog_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "source_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "source_repo": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "runner": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "timestamp_utc",
+        "tool",
+        "model_or_runtime",
+        "run_name"
+      ],
+      "properties": {
+        "timestamp_utc": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tool": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_or_runtime": {
+          "type": "string",
+          "minLength": 1
+        },
+        "run_name": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "input_snapshot": {
+      "description": "Must reference the original runtime artifact and both the original and repaired mirrored paths.",
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "kind",
+        "identifier",
+        "is_real",
+        "original_runtime_artifact",
+        "original_mirrored_path",
+        "repaired_path"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "identifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "is_real": {
+          "type": "boolean"
+        },
+        "original_runtime_artifact": {
+          "type": "string",
+          "minLength": 1
+        },
+        "original_mirrored_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "repaired_path": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "checks_passed",
+        "checks_total",
+        "score_percent",
+        "benchmark_verdict",
+        "blocking_failure_count"
+      ],
+      "properties": {
+        "checks_passed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "checks_total": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "score_percent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "benchmark_verdict": {
+          "type": "string",
+          "enum": [
+            "passed",
+            "failed"
+          ]
+        },
+        "blocking_failure_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "path",
+        "repair_record_path",
+        "result_sha256",
+        "repair_sha256",
+        "schema"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "repair_record_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "result_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "repair_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "schema": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "independence": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "task_defined_outside_skill",
+        "evaluator_defined_outside_skill",
+        "expected_result_defined_outside_skill",
+        "uses_exact_skill_content_for_expected_result"
+      ],
+      "properties": {
+        "task_defined_outside_skill": {
+          "type": "boolean"
+        },
+        "evaluator_defined_outside_skill": {
+          "type": "boolean"
+        },
+        "expected_result_defined_outside_skill": {
+          "type": "boolean"
+        },
+        "uses_exact_skill_content_for_expected_result": {
+          "type": "boolean"
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "artifact_paths",
+        "citations_or_paths"
+      ],
+      "properties": {
+        "artifact_paths": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "citations_or_paths": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "objective_checks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
 }

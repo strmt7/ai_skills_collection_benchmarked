@@ -1,59 +1,10 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-skills-collection-benchmarked.invalid/schemas/source_grounded_skill_proof.schema.json",
+  "title": "Source-grounded skill proof",
+  "description": "Schema for proof-of-source payloads that cite the exact upstream SKILL.md lines that back the declared activation, context, boundaries, workflow, and evidence. Provenance proofs MUST NOT be counted as runtime benchmark passes.",
+  "type": "object",
   "additionalProperties": true,
-  "properties": {
-    "activation_conditions": {
-      "items": {
-        "type": "string"
-      },
-      "minItems": 1,
-      "type": "array"
-    },
-    "proof_evidence": {
-      "items": {
-        "additionalProperties": false,
-        "properties": {
-          "claim": {
-            "type": "string"
-          },
-          "line_or_section": {
-            "type": "string"
-          },
-          "source_path": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "source_path",
-          "line_or_section",
-          "claim"
-        ],
-        "type": "object"
-      },
-      "minItems": 1,
-      "type": "array"
-    },
-    "required_context": {
-      "items": {
-        "type": "string"
-      },
-      "type": "array"
-    },
-    "safe_boundaries": {
-      "items": {
-        "type": "string"
-      },
-      "minItems": 1,
-      "type": "array"
-    },
-    "workflow_steps": {
-      "items": {
-        "type": "string"
-      },
-      "minItems": 1,
-      "type": "array"
-    }
-  },
   "required": [
     "activation_conditions",
     "required_context",
@@ -61,6 +12,69 @@
     "workflow_steps",
     "proof_evidence"
   ],
-  "title": "Source-grounded skill proof",
-  "type": "object"
+  "properties": {
+    "activation_conditions": {
+      "description": "Conditions under which the skill is expected to activate.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "required_context": {
+      "description": "Contextual inputs the skill requires before it can safely run.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "safe_boundaries": {
+      "description": "Operational boundaries inside which the skill is expected to stay.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "workflow_steps": {
+      "description": "Ordered workflow steps declared by the skill.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "proof_evidence": {
+      "description": "Line- or section-level citations into the upstream source backing each declared claim.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_path",
+          "line_or_section",
+          "claim"
+        ],
+        "properties": {
+          "source_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "line_or_section": {
+            "type": "string",
+            "minLength": 1
+          },
+          "claim": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
 }

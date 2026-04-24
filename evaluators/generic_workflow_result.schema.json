@@ -1,34 +1,10 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-skills-collection-benchmarked.invalid/schemas/generic_workflow_result.schema.json",
+  "title": "Generic workflow benchmark result",
+  "description": "Schema for result.json payloads produced by deterministic benchmark runners. The result payload records inputs, steps, outputs, metrics, and supporting citations for a single scenario run.",
+  "type": "object",
   "additionalProperties": true,
-  "properties": {
-    "citations_or_paths": {
-      "items": {
-        "type": "string"
-      },
-      "minItems": 1,
-      "type": "array"
-    },
-    "inputs": {
-      "type": "object"
-    },
-    "metrics": {
-      "type": "object"
-    },
-    "outputs": {
-      "type": "object"
-    },
-    "runner_environment": {
-      "type": "object"
-    },
-    "steps": {
-      "items": {
-        "type": "string"
-      },
-      "minItems": 1,
-      "type": "array"
-    }
-  },
   "required": [
     "inputs",
     "steps",
@@ -36,6 +12,40 @@
     "metrics",
     "citations_or_paths"
   ],
-  "title": "Generic workflow benchmark result",
-  "type": "object"
+  "properties": {
+    "inputs": {
+      "description": "Inputs provided to the runner for this scenario (task, dataset snapshot, etc.).",
+      "type": "object"
+    },
+    "steps": {
+      "description": "Ordered human-readable description of the steps the runner performed.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "outputs": {
+      "description": "Outputs produced by the runner.",
+      "type": "object"
+    },
+    "metrics": {
+      "description": "Numeric metrics for the run. Verdicts recorded here are descriptive only.",
+      "type": "object"
+    },
+    "citations_or_paths": {
+      "description": "Paths or URLs supporting the recorded result.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "runner_environment": {
+      "description": "Optional runtime environment metadata (host, Python version, etc.).",
+      "type": "object"
+    }
+  }
 }

@@ -1,72 +1,10 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-skills-collection-benchmarked.invalid/schemas/external_benchmark_method_smoke.schema.json",
+  "title": "External benchmark method smoke artifact",
+  "description": "Schema for adapter-smoke artifacts that prove repository resolution and objective metric definitions for an external benchmark method. Smoke artifacts MUST NOT be presented as full benchmark-suite scores.",
+  "type": "object",
   "additionalProperties": true,
-  "properties": {
-    "artifact_kind": {
-      "const": "external_benchmark_method_smoke"
-    },
-    "artifact_version": {
-      "type": "string"
-    },
-    "checks": {
-      "items": {
-        "additionalProperties": true,
-        "required": [
-          "name",
-          "passed",
-          "evidence"
-        ],
-        "type": "object"
-      },
-      "minItems": 1,
-      "type": "array"
-    },
-    "input_snapshot": {
-      "additionalProperties": true,
-      "required": [
-        "kind",
-        "repo_url",
-        "head_sha",
-        "tree_path_count",
-        "is_real"
-      ],
-      "type": "object"
-    },
-    "method": {
-      "additionalProperties": true,
-      "required": [
-        "id",
-        "title",
-        "repo_url",
-        "primary_metrics",
-        "integration_requirements"
-      ],
-      "type": "object"
-    },
-    "method_id": {
-      "type": "string"
-    },
-    "metrics": {
-      "additionalProperties": true,
-      "required": [
-        "checks_passed",
-        "checks_total",
-        "score_percent",
-        "integration_status"
-      ],
-      "type": "object"
-    },
-    "runner": {
-      "additionalProperties": true,
-      "required": [
-        "timestamp_utc",
-        "tool",
-        "model_or_runtime",
-        "run_name"
-      ],
-      "type": "object"
-    }
-  },
   "required": [
     "artifact_version",
     "artifact_kind",
@@ -79,5 +17,206 @@
     "metrics",
     "evidence"
   ],
-  "type": "object"
+  "properties": {
+    "artifact_version": {
+      "description": "Schema-compatible artifact version. Currently the 1.x series.",
+      "type": "string",
+      "pattern": "^1\\."
+    },
+    "artifact_kind": {
+      "description": "Fixed discriminator for external benchmark method smoke artifacts.",
+      "const": "external_benchmark_method_smoke"
+    },
+    "method_id": {
+      "description": "Stable identifier of the external benchmark method (matches data/external_benchmark_methods.json).",
+      "type": "string",
+      "minLength": 1
+    },
+    "method_title": {
+      "description": "Human-readable method title.",
+      "type": "string"
+    },
+    "runner": {
+      "description": "Information about the runtime that produced the artifact.",
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "timestamp_utc",
+        "tool",
+        "model_or_runtime",
+        "run_name"
+      ],
+      "properties": {
+        "timestamp_utc": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tool": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_or_runtime": {
+          "type": "string",
+          "minLength": 1
+        },
+        "run_name": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "input_snapshot": {
+      "description": "Deterministic description of the external method's repository snapshot.",
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "kind",
+        "repo_url",
+        "head_sha",
+        "tree_path_count",
+        "is_real"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "repo_url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "head_sha": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "tree_path_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "is_real": {
+          "type": "boolean"
+        }
+      }
+    },
+    "execution": {
+      "description": "Commands executed to produce the smoke artifact.",
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "fresh_session"
+      ],
+      "properties": {
+        "fresh_session": {
+          "type": "boolean"
+        },
+        "commands": {
+          "type": "array"
+        }
+      }
+    },
+    "method": {
+      "description": "Declared method properties copied from the adapter registry.",
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "title",
+        "repo_url",
+        "primary_metrics",
+        "integration_requirements"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "repo_url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "primary_metrics": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "integration_requirements": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "checks": {
+      "description": "Smoke checks performed against the adapter. Each check records its evidence.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "name",
+          "passed",
+          "evidence"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "passed": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "metrics": {
+      "description": "Aggregate metrics. integration_status is advisory; adapter-ready does not imply a benchmark pass.",
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "checks_passed",
+        "checks_total",
+        "score_percent",
+        "integration_status"
+      ],
+      "properties": {
+        "checks_passed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "checks_total": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "score_percent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "integration_status": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "evidence": {
+      "description": "Paths and citations that back the smoke artifact.",
+      "type": "object",
+      "additionalProperties": true
+    },
+    "outputs": {
+      "description": "Optional output payload references.",
+      "type": "object"
+    }
+  }
 }
