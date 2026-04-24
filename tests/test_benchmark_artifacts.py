@@ -1,4 +1,3 @@
-import copy
 import json
 import tempfile
 from pathlib import Path
@@ -216,6 +215,52 @@ def test_local_markdown_link_failure_report_is_current():
     assert "Runtime artifacts with local-link failures: `31`" in report_text
     assert "Unique missing targets: `70`" in report_text
     assert "`REPO_URL/blob/BRANCH/file`" in report_text
+
+
+def test_extract_local_links_finds_true_positives():
+    text = "See [guide](docs/guide.md) and [api](../api/index.md) for details."
+    assert report_local_markdown_link_failures.extract_local_links(text) == [
+        "docs/guide.md",
+        "../api/index.md",
+    ]
+
+
+def test_extract_local_links_strips_anchors_and_queries():
+    text = "[a](page.md#section) and [b](other.md?ref=1) and [c](t.md?x=1#y)"
+    assert report_local_markdown_link_failures.extract_local_links(text) == [
+        "page.md",
+        "other.md",
+        "t.md",
+    ]
+
+
+def test_extract_local_links_ignores_urls_images_and_mailto():
+    text = (
+        "[ext](https://example.com/x) and "
+        "![img](images/cover.png) and "
+        "[mail](mailto:user@example.com) and "
+        "[local](docs/ok.md)"
+    )
+    # Images and autolinks/URLs/mailto must not be reported as broken-local
+    # candidates. Only the final local link survives.
+    assert report_local_markdown_link_failures.extract_local_links(text) == ["docs/ok.md"]
+
+
+def test_extract_local_links_is_idempotent_and_deterministic():
+    text = "[one](a.md) [two](b.md) [one-again](a.md)"
+    first = report_local_markdown_link_failures.extract_local_links(text)
+    second = report_local_markdown_link_failures.extract_local_links(text)
+    assert first == second == ["a.md", "b.md", "a.md"]
+
+
+def test_render_report_is_deterministic_across_runs():
+    """Running render_report twice in the same process yields identical output."""
+    a = report_local_markdown_link_failures.render_report()
+    b = report_local_markdown_link_failures.render_report()
+    assert a == b
+    # The report must count real-on-disk artifacts, not hardcoded numbers.
+    runtime_results = report_local_markdown_link_failures.iter_runtime_results()
+    assert f"Runtime artifacts scanned: `{len(runtime_results)}`" in a
 
 
 def test_benchmark_artifact_checker_accepts_complete_artifact_and_rejects_incomplete_visual():
