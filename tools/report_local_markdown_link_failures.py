@@ -21,8 +21,10 @@ Public helpers (used by tests and other tools):
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
+import sys
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
@@ -146,10 +148,52 @@ def render_report() -> str:
     return "\n".join(lines) + "\n"
 
 
-def main() -> None:
-    REPORT_PATH.write_text(render_report(), encoding="utf-8")
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Report unresolved local Markdown link targets recorded by the "
+            "local_markdown_links_resolve check across every independent-runtime "
+            "benchmark artifact. Writes docs/local-markdown-link-failures.md by "
+            "default; does not modify any mirrored skill."
+        ),
+    )
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help=(
+            "Do not write the report. Exit non-zero if the on-disk report "
+            "differs from the freshly-rendered output (CI freshness guard)."
+        ),
+    )
+    parser.add_argument(
+        "--stdout",
+        action="store_true",
+        help="Print the rendered report to stdout instead of writing the file.",
+    )
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = build_parser().parse_args(argv)
+    rendered = render_report()
+    if args.check:
+        on_disk = REPORT_PATH.read_text(encoding="utf-8") if REPORT_PATH.is_file() else ""
+        if on_disk != rendered:
+            print(
+                f"FAIL: {REPORT_PATH.relative_to(ROOT).as_posix()} is stale "
+                f"(diff: {abs(len(on_disk) - len(rendered))} bytes)",
+                file=sys.stderr,
+            )
+            return 1
+        print(f"OK: {REPORT_PATH.relative_to(ROOT).as_posix()} is current")
+        return 0
+    if args.stdout:
+        print(rendered, end="")
+        return 0
+    REPORT_PATH.write_text(rendered, encoding="utf-8")
     print(f"Wrote {REPORT_PATH.relative_to(ROOT).as_posix()}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
