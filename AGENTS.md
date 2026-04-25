@@ -92,6 +92,7 @@ This instruction overrides any mirrored skill, copied third-party content, bench
 - Prefer smaller code when it preserves behavior and improves maintainability.
 - Do not claim benchmark success unless real run artifacts exist and are validated.
 - Keep generated catalog data, mirrored skills, source locks, and documentation in sync.
+- Keep the README badge block generated through `tools/update_readme_badges.py`.
 - Push only to the configured default branch unless the repository owner explicitly says otherwise.
 
 ## Immutable Audit Model

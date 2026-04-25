@@ -1,0 +1,39 @@
+{
+  "host": "github.com",
+  "owner": "strmt7",
+  "repo": "ai_skills_collection_benchmarked",
+  "branch_name": "main",
+  "remote_name": "origin",
+  "badges": [
+    {
+      "alt": "Offline validation",
+      "image": "https://github.com/{repo_path}/actions/workflows/offline-validation.yml/badge.svg",
+      "target": "https://github.com/{repo_path}/actions/workflows/offline-validation.yml"
+    },
+    {
+      "alt": "Ruff",
+      "image": "https://github.com/{repo_path}/actions/workflows/ruff.yml/badge.svg",
+      "target": "https://github.com/{repo_path}/actions/workflows/ruff.yml"
+    },
+    {
+      "alt": "Mypy",
+      "image": "https://github.com/{repo_path}/actions/workflows/mypy.yml/badge.svg",
+      "target": "https://github.com/{repo_path}/actions/workflows/mypy.yml"
+    },
+    {
+      "alt": "Secret scan",
+      "image": "https://github.com/{repo_path}/actions/workflows/secret-scan.yml/badge.svg",
+      "target": "https://github.com/{repo_path}/actions/workflows/secret-scan.yml"
+    },
+    {
+      "alt": "Python 3.10\u20133.13",
+      "image": "https://img.shields.io/badge/python-3.10%20%E2%80%93%203.13-blue.svg",
+      "target": "https://devguide.python.org/versions/"
+    },
+    {
+      "alt": "andrej-karpathy-skills",
+      "image": "https://img.shields.io/static/v1?label=&message=andrej-karpathy-skills&color=555&logo=github&logoColor=white",
+      "target": "https://github.com/forrestchang/andrej-karpathy-skills"
+    }
+  ]
+}
