@@ -1,6 +1,8 @@
 {
   "kind": "real-url",
   "resolved": true,
+  "reuse_reason": "deterministic regeneration: the repair-overlay loop pins to the original benchmark's recorded snapshot instead of a new live probe",
+  "reused_from_original_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md/communication-productivity-and-support-enron-email/artifact.json",
   "status": 200,
   "url": "https://www.cs.cmu.edu/~enron/"
 }

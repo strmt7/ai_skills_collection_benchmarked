@@ -67,7 +67,7 @@
     "path": "result.json",
     "repair_record_path": "repair.json",
     "repair_sha256": "6fb26a6bf2700692f2c64a58987001fa7b2b6bd6d67438ebe1ec036a241fd846",
-    "result_sha256": "07cc572e72b341f03626f6227c9b9fc79d2bc43b5d3880f817c6f68ac4025b64",
+    "result_sha256": "e27eaa88319d6d9a961930ee2dda9d5c72692aa4ad12b78a8c4e4ffa61c86165",
     "schema": "evaluators/repaired_skill_readiness.schema.json"
   },
   "runner": {

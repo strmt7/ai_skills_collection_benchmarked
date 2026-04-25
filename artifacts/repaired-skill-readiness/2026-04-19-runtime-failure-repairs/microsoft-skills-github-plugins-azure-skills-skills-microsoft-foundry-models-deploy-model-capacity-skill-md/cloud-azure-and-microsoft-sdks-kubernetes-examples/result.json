@@ -14,7 +14,7 @@
       "kind": "real-github-repository-tree",
       "repo_url": "https://github.com/kubernetes/examples",
       "resolved": true,
-      "reuse_reason": "fresh repository snapshot probe did not resolve during repaired overlay run",
+      "reuse_reason": "deterministic regeneration: the repair-overlay loop pins to the original benchmark's recorded snapshot instead of a new live probe",
       "reused_from_original_artifact": "artifacts/benchmark-runs/2026-04-17-independent-runtime-readiness-batch-01/microsoft-skills-github-plugins-azure-skills-skills-microsoft-foundry-models-deploy-model-capacity-skill-md/cloud-azure-and-microsoft-sdks-kubernetes-examples/artifact.json",
       "sampled_paths": [
         ".gitignore",
