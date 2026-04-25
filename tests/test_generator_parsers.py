@@ -8,15 +8,10 @@ CI breaks.
 from __future__ import annotations
 
 import importlib
-import sys
 
 import pytest
 
-from tests.helpers import ROOT
-
-TOOLS = ROOT / "tools"
-if str(TOOLS) not in sys.path:
-    sys.path.insert(0, str(TOOLS))
+# tools/ on sys.path via tests/conftest.py
 
 
 @pytest.fixture(scope="module")
@@ -46,8 +41,16 @@ def _flag_names(parser):
 
 def test_runtime_batch_parser_keeps_documented_flags(runtime_batch):
     flags = _flag_names(runtime_batch.build_parser())
-    expected = {"--help", "--limit", "--batch-name", "--batch-slug", "--risk-level",
-                "--include-visual", "--category-spread", "--avoid-existing-independent"}
+    expected = {
+        "--help",
+        "--limit",
+        "--batch-name",
+        "--batch-slug",
+        "--risk-level",
+        "--include-visual",
+        "--category-spread",
+        "--avoid-existing-independent",
+    }
     assert expected <= flags, f"missing flags: {expected - flags}"
 
 

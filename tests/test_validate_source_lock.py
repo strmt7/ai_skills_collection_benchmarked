@@ -10,20 +10,9 @@ from __future__ import annotations
 import importlib
 import io
 import json
-import sys
-from contextlib import redirect_stdout, redirect_stderr
-from pathlib import Path
+from contextlib import redirect_stderr, redirect_stdout
 
-import pytest
-
-from tests.helpers import ROOT
-
-# Ensure tools/ is on the path the same way helpers does it.
-TOOLS = ROOT / "tools"
-if str(TOOLS) not in sys.path:
-    sys.path.insert(0, str(TOOLS))
-
-validate_source_lock = importlib.import_module("validate_source_lock")
+validate_source_lock = importlib.import_module("validate_source_lock")  # tools/ on sys.path via conftest
 
 
 def test_default_invocation_runs_clean():
@@ -43,8 +32,15 @@ def test_json_mode_emits_valid_envelope():
         rc = validate_source_lock.main(["--json"])
     assert rc == 0
     payload = json.loads(out.getvalue())
-    for key in ("mode", "ok", "errors", "checked_sources", "checked_source_skills",
-                "checked_mirror_skills", "source_root"):
+    for key in (
+        "mode",
+        "ok",
+        "errors",
+        "checked_sources",
+        "checked_source_skills",
+        "checked_mirror_skills",
+        "source_root",
+    ):
         assert key in payload, f"missing key {key!r} in JSON envelope"
     assert payload["ok"] is True
     assert payload["errors"] == []
@@ -89,13 +85,21 @@ def test_duplicate_skill_id_is_reported(tmp_path):
         "hash_algorithm": "sha256",
         "sources": [
             {
-                "repo": "a/a", "origin_url": "", "local_dir": "a", "commit_sha": "x",
-                "tree_sha": "y", "skill_count": 1,
+                "repo": "a/a",
+                "origin_url": "",
+                "local_dir": "a",
+                "commit_sha": "x",
+                "tree_sha": "y",
+                "skill_count": 1,
                 "skills": [{"id": "dup-id", "source_path": "p", "skill_file_sha256": "f", "skill_dir_sha256": "d"}],
             },
             {
-                "repo": "b/b", "origin_url": "", "local_dir": "b", "commit_sha": "x",
-                "tree_sha": "y", "skill_count": 1,
+                "repo": "b/b",
+                "origin_url": "",
+                "local_dir": "b",
+                "commit_sha": "x",
+                "tree_sha": "y",
+                "skill_count": 1,
                 "skills": [{"id": "dup-id", "source_path": "p", "skill_file_sha256": "f", "skill_dir_sha256": "d"}],
             },
         ],
@@ -116,8 +120,12 @@ def test_skill_count_mismatch_is_reported(tmp_path):
         "hash_algorithm": "sha256",
         "sources": [
             {
-                "repo": "a/a", "origin_url": "", "local_dir": "a", "commit_sha": "x",
-                "tree_sha": "y", "skill_count": 99,  # wrong
+                "repo": "a/a",
+                "origin_url": "",
+                "local_dir": "a",
+                "commit_sha": "x",
+                "tree_sha": "y",
+                "skill_count": 99,  # wrong
                 "skills": [{"id": "one", "source_path": "p", "skill_file_sha256": "f", "skill_dir_sha256": "d"}],
             },
         ],
@@ -138,8 +146,12 @@ def test_missing_required_skill_field_is_reported(tmp_path):
         "hash_algorithm": "sha256",
         "sources": [
             {
-                "repo": "a/a", "origin_url": "", "local_dir": "a", "commit_sha": "x",
-                "tree_sha": "y", "skill_count": 1,
+                "repo": "a/a",
+                "origin_url": "",
+                "local_dir": "a",
+                "commit_sha": "x",
+                "tree_sha": "y",
+                "skill_count": 1,
                 "skills": [{"id": "one", "source_path": "p"}],  # missing file/dir hashes
             },
         ],
@@ -157,6 +169,7 @@ def test_missing_required_skill_field_is_reported(tmp_path):
 def test_mirror_hash_check_is_stable_across_runs():
     """Running the validator twice must produce the same exit code and same JSON envelope
     (proves the lock + mirror + portable-hash triple is internally deterministic)."""
+
     def capture():
         out = io.StringIO()
         with redirect_stdout(out):

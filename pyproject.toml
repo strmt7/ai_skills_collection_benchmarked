@@ -15,17 +15,24 @@ classifiers = [
   "Topic :: Software Development :: Quality Assurance",
 ]
 dependencies = [
-  "PyYAML>=6.0.0",
+  "PyYAML>=6.0.2",
 ]
 
 [project.optional-dependencies]
 test = [
-  "pytest>=7.4.0",
-  "pytest-xdist>=3.5.0",
+  "pytest>=8.4.0",
+  "pytest-xdist>=3.6.0",
+  "coverage>=7.6.0",
+  "hypothesis>=6.115.0",
+]
+lint = [
+  "ruff>=0.15.0",
+  "mypy>=1.20.0",
+  "types-PyYAML>=6.0.12",
 ]
 
 [build-system]
-requires = ["setuptools>=69", "wheel"]
+requires = ["setuptools>=80", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
@@ -33,7 +40,7 @@ packages = []
 py-modules = []
 
 [tool.pytest.ini_options]
-minversion = "7.4"
+minversion = "8.4"
 testpaths = ["tests"]
 addopts = [
   "-ra",
@@ -45,3 +52,88 @@ filterwarnings = [
   # Silence harmless third-party DeprecationWarnings that are outside this repo's control.
   "ignore::DeprecationWarning:_pytest",
 ]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+extend-exclude = [
+  ".venv",
+  "build",
+  "included/skills",       # immutable upstream mirrors per AGENTS.md
+  "included/repaired",     # generated overlays (provenance copies are upstream text)
+  "included/agent-ready",  # generated entrypoints
+  "artifacts",             # recorded evidence
+]
+
+[tool.ruff.lint]
+# Start with a sensible high-signal set: pycodestyle errors (E), pyflakes (F),
+# bugbear (B), simplify (SIM), pyupgrade (UP), isort (I). No formatter conflicts.
+select = ["E", "F", "B", "SIM", "UP", "I"]
+ignore = [
+  "E501",   # line length handled by ruff format
+  "B008",   # function call in default arg (argparse defaults are common here)
+  "SIM108", # ternary preference (sometimes hurts readability)
+  "UP015",  # open() default mode "r" is fine and explicit
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["B011"]  # asserts are fine in tests
+"tools/build_catalog.py" = ["E741"]  # legacy single-char names in domain code
+# Tool scripts use a sys.path.insert(...) shim before importing sibling tools,
+# which is the established convention in this repo and is exercised by every
+# CI job. Allow E402 (module-import-not-at-top-of-file) on these files only.
+"tools/audit_skill_quality.py" = ["E402"]
+"tools/create_independent_runtime_batch.py" = ["E402"]
+"tools/create_repaired_skill_overlays.py" = ["E402"]
+"tools/create_source_proof_batch.py" = ["E402"]
+"tools/run_static_benchmarks.py" = ["E402"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+
+[tool.mypy]
+python_version = "3.10"
+files = ["tools", "tests"]
+exclude = [
+  "^\\.venv/",
+  "^build/",
+  "^included/",
+  "^artifacts/",
+]
+# tools/ is a flat directory of scripts and tests/ is a flat test package; we
+# avoid the "found twice" ambiguity by treating them as two namespace package
+# bases (no __init__.py needed in either).
+explicit_package_bases = true
+namespace_packages = true
+mypy_path = "tools"
+# Lenient on first pass: focus on *true* type errors, not gradual-typing noise.
+ignore_missing_imports = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+check_untyped_defs = true
+no_implicit_optional = true
+strict_equality = true
+# We are not adding annotations to every function in the legacy code; require
+# them only where the author has signalled types. Tighten over time.
+disallow_untyped_defs = false
+disallow_untyped_calls = false
+
+[tool.coverage.run]
+branch = true
+source = ["tools"]
+omit = [
+  "tools/_lib_b/__init__.py",  # re-export shim
+  "tools/_lib_c/__init__.py",
+]
+
+[tool.coverage.report]
+exclude_also = [
+  "raise NotImplementedError",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
+fail_under = 0  # report-only on first pass; raise the floor in a follow-up
+show_missing = true
+skip_covered = true
