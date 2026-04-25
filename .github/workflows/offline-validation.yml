@@ -69,7 +69,17 @@ jobs:
         run: python tools/run_static_benchmarks.py --check
       - name: Validate skill risk audit
         run: python tools/audit_skill_quality.py --check
-      - name: Run tests
+      - name: Run tests (with coverage)
         run: python -m pytest -q -n auto
+      - name: Upload coverage.xml
+        if: always()
+        # actions/upload-artifact v7.0.1 (latest stable April 2026).
+        # https://github.com/actions/upload-artifact/releases/tag/v7.0.1
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: coverage-${{ matrix.python-version }}
+          path: coverage.xml
+          if-no-files-found: error
+          retention-days: 14
       - name: Compile Python
         run: python -m compileall -q tools tests
