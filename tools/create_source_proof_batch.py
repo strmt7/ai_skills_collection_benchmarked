@@ -361,11 +361,7 @@ def main(argv: list[str] | None = None) -> int:
     }
     if not args.dry_run:
         write_json(batch_dir / "manifest.json", manifest)
-    incomplete = [
-        item
-        for item in results
-        if item["validation"]["verdict"] not in ("artifact_complete", "dry_run")
-    ]
+    incomplete = [item for item in results if item["validation"]["verdict"] not in ("artifact_complete", "dry_run")]
     if args.emit_json:
         print(
             json.dumps(

@@ -256,8 +256,14 @@ def validate_catalog(report: Report) -> None:
     if workers == 1:
         entry_errors = [
             _collect_entry_errors(
-                e, catalog_by_id, skills_manifest_by_id, agent_ready_by_id,
-                locked_skills, assignments, scenarios, tracks,
+                e,
+                catalog_by_id,
+                skills_manifest_by_id,
+                agent_ready_by_id,
+                locked_skills,
+                assignments,
+                scenarios,
+                tracks,
             )
             for e in catalog
         ]
@@ -266,8 +272,14 @@ def validate_catalog(report: Report) -> None:
             entry_errors = list(
                 pool.map(
                     lambda e: _collect_entry_errors(
-                        e, catalog_by_id, skills_manifest_by_id, agent_ready_by_id,
-                        locked_skills, assignments, scenarios, tracks,
+                        e,
+                        catalog_by_id,
+                        skills_manifest_by_id,
+                        agent_ready_by_id,
+                        locked_skills,
+                        assignments,
+                        scenarios,
+                        tracks,
                     ),
                     catalog,
                 )
