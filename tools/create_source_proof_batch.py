@@ -220,12 +220,16 @@ def write_artifact(
     }
 
 
-def main() -> int:
+def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Create source-grounded benchmark artifacts for a category-spread first batch.")
-    parser.add_argument("--batch-name", default="2026-04-17-first-source-proofs")
-    parser.add_argument("--limit", type=int, default=10)
-    parser.add_argument("--catalog-commit", default=None)
-    args = parser.parse_args()
+    parser.add_argument("--batch-name", default="2026-04-17-first-source-proofs", help="Calendar-qualified batch directory name.")
+    parser.add_argument("--limit", type=int, default=10, help="Maximum number of skills to include.")
+    parser.add_argument("--catalog-commit", default=None, help="Override the recorded catalog commit (defaults to HEAD).")
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = build_parser().parse_args(argv)
 
     catalog = load_json(ROOT / "data" / "skills_catalog.json")
     scenarios = {item["id"]: item for item in load_json(ROOT / "data" / "benchmark_scenarios.json")}
