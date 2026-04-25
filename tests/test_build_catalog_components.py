@@ -10,6 +10,7 @@ covers the riskiest internal logic without redirecting the writer.
 from __future__ import annotations
 
 import build_catalog
+import pytest
 from hypothesis import given, settings
 from hypothesis import strategies as st
 
@@ -140,3 +141,143 @@ def test_is_under_nested_skill_returns_false_for_top_level_files(tmp_path):
     f.parent.mkdir()
     f.write_text("#!/bin/sh\n", encoding="utf-8")
     assert build_catalog.is_under_nested_skill(root, f) is False
+
+
+# ---------------------------------------------------------------------------
+# keyword_matches + category_for — pure categorisation logic
+# ---------------------------------------------------------------------------
+
+
+def test_keyword_matches_word_boundary():
+    assert build_catalog.keyword_matches("docker patterns", "docker") is True
+    # Partial word must NOT match (substring "dock" inside "docker" should not
+    # trigger when keyword is "dock").
+    assert build_catalog.keyword_matches("docker patterns", "dock") is False
+
+
+def test_keyword_matches_multi_word_phrase():
+    assert build_catalog.keyword_matches("the visual-qa pipeline", "visual qa") is True
+    assert build_catalog.keyword_matches("qa visual", "visual qa") is False
+
+
+def test_keyword_matches_empty_keyword_returns_false():
+    assert build_catalog.keyword_matches("anything", "") is False
+    assert build_catalog.keyword_matches("", "docker") is False
+
+
+@pytest.fixture
+def _source_stub():
+    return {"repo": "example-org/example-repo"}
+
+
+def test_category_for_by_keyword_match(_source_stub):
+    cat = build_catalog.category_for(
+        _source_stub, "skills/gene/SKILL.md", "gene-analysis", "RDKit + scanpy pipeline"
+    )
+    assert cat == "Science, research & data analysis"
+
+
+def test_category_for_microsoft_special_case():
+    ms_source = {"repo": "microsoft/skills"}
+    cat = build_catalog.category_for(ms_source, "skills/foo", "foo", "foo")
+    assert cat == "Cloud, Azure & Microsoft SDKs"
+
+
+def test_category_for_kdense_special_case():
+    kd_source = {"repo": "K-Dense-AI/scientific-agent-skills"}
+    cat = build_catalog.category_for(kd_source, "whatever", "widget", "widget desc")
+    assert cat == "Science, research & data analysis"
+
+
+def test_category_for_fallback_to_coding(_source_stub):
+    cat = build_catalog.category_for(_source_stub, "rel", "unrelated", "does nothing special")
+    assert cat == "Coding, refactoring & repository automation"
+
+
+def test_scenario_ids_returns_three_distinct_tracks():
+    # category_scenario_id replaces "&" with "and" BEFORE slugging, so scenario
+    # IDs use "and" where skill paths do not — an intentional asymmetry between
+    # category-labelled URLs (scenarios) and directory layouts (mirrors).
+    ids = build_catalog.scenario_ids("Science, research & data analysis")
+    assert len(ids) == 3
+    assert len(set(ids)) == 3
+    for scenario_id in ids:
+        assert "-" in scenario_id
+        assert scenario_id.startswith("science-research-and-data-analysis-")
+
+
+def test_scenario_ids_unknown_category_falls_back_to_coding():
+    # Unknown category falls back to "Coding, refactoring & repository automation".
+    ids = build_catalog.scenario_ids("not a real category ever")
+    # Unknown category SLUG becomes "not-a-real-category-ever" (no "and" because
+    # & wasn't present); the track list mirrors Coding's defaults.
+    assert len(ids) == 3
+    assert all("not-a-real-category-ever-" in scenario_id for scenario_id in ids)
+
+
+# ---------------------------------------------------------------------------
+# flags — filesystem shape detection for resource flags
+# ---------------------------------------------------------------------------
+
+
+def test_flags_all_false_on_bare_skill(tmp_path):
+    skill = tmp_path / "SKILL.md"
+    skill.write_text("x", encoding="utf-8")
+    assert build_catalog.flags(skill) == {
+        "has_agents_metadata": False,
+        "has_scripts": False,
+        "has_references": False,
+        "has_assets": False,
+        "has_examples": False,
+    }
+
+
+def test_flags_detects_each_shape(tmp_path):
+    skill_dir = tmp_path
+    skill = skill_dir / "SKILL.md"
+    skill.write_text("x", encoding="utf-8")
+    (skill_dir / "scripts").mkdir()
+    (skill_dir / "references").mkdir()
+    (skill_dir / "assets").mkdir()
+    (skill_dir / "examples.md").write_text("e", encoding="utf-8")
+    (skill_dir / "agents").mkdir()
+    (skill_dir / "agents" / "openai.yaml").write_text("x", encoding="utf-8")
+    flags = build_catalog.flags(skill)
+    assert flags == {
+        "has_agents_metadata": True,
+        "has_scripts": True,
+        "has_references": True,
+        "has_assets": True,
+        "has_examples": True,
+    }
+
+
+# ---------------------------------------------------------------------------
+# skill_mirror_path / skill_agent_ready_path
+# ---------------------------------------------------------------------------
+
+
+def test_skill_mirror_path_layout():
+    # skill_mirror_path uses raw slug() (no "&"→"and" substitution), so "&"
+    # collapses out of the path.
+    path = build_catalog.skill_mirror_path(
+        "Science, research & data analysis",
+        "latest-release-community",
+        "demo-skill",
+    )
+    assert path == (
+        "included/skills/by-category/science-research-data-analysis/"
+        "latest-release-community/demo-skill"
+    )
+
+
+def test_skill_agent_ready_path_layout():
+    path = build_catalog.skill_agent_ready_path(
+        "DevOps, cloud & operations",
+        "selected-project-reference",
+        "devops-demo",
+    )
+    assert path == (
+        "included/agent-ready/by-category/devops-cloud-operations/"
+        "selected-project-reference/devops-demo/SKILL.md"
+    )
