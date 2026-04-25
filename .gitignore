@@ -1,4 +1,30 @@
+# pytest / mypy / coverage / ruff caches
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+
+# packaging
 *.egg-info/
+build/
+dist/
+
+# compiled / cache
 __pycache__/
 *.py[cod]
+
+# coverage artefacts (regenerated per run; uploaded in CI)
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# venvs (any name)
+.venv/
+venv/
+env/
+
+# editor / OS noise
+.vscode/
+.idea/
+.DS_Store
