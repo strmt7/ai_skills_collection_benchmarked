@@ -3,6 +3,11 @@ name: Offline validation
 on:
   push:
   pull_request:
+  workflow_dispatch:
+  # Catch upstream drift (CVE updates, action deprecations) without waiting
+  # for a push: weekly Monday 06:00 UTC, ahead of the Dependabot run.
+  schedule:
+    - cron: "0 6 * * 1"
 
 # Cancel superseded in-progress runs for the same ref so queued pushes do not
 # stack up in CI. See the concurrency docs:
