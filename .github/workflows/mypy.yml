@@ -1,0 +1,35 @@
+name: Mypy
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: mypy-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  type-check:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # Pin mypy's --python-version to each supported runtime so any
+        # version-conditional type errors (e.g. datetime.UTC, PEP 695 syntax)
+        # surface here instead of in production.
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v6.0.2
+      - uses: actions/setup-python@v6.2.0
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: "pip"
+          cache-dependency-path: pyproject.toml
+      - name: Install lint + test extras
+        run: python -m pip install --upgrade pip && python -m pip install -e '.[lint,test]'
+      - name: mypy
+        run: mypy --python-version ${{ matrix.python-version }} tools tests

@@ -1,0 +1,30 @@
+name: Ruff
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ruff-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6.0.2
+      - uses: actions/setup-python@v6.2.0
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: pyproject.toml
+      - name: Install lint extras
+        run: python -m pip install --upgrade pip && python -m pip install -e '.[lint]'
+      - name: ruff check
+        run: ruff check tools tests
+      - name: ruff format --check
+        run: ruff format --check tools tests
