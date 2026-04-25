@@ -1,0 +1,55 @@
+# Local quality gates mirroring the CI workflow set. Install with:
+#   pip install -e '.[lint,security]' && pre-commit install
+#
+# Hook versions are pinned and refreshed by Dependabot (see .github/dependabot.yml).
+
+default_language_version:
+  python: python3.12
+
+default_stages: [pre-commit]
+
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.12
+    hooks:
+      - id: ruff-check
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.20.2
+    hooks:
+      - id: mypy
+        files: ^(tools|tests)/
+        additional_dependencies:
+          - PyYAML>=6.0.2
+          - types-PyYAML>=6.0.12
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-added-large-files
+        args: [--maxkb=1024]
+      - id: check-merge-conflict
+      - id: check-yaml
+        args: [--allow-multiple-documents]
+      - id: check-toml
+      - id: check-json
+        # Skip generated catalog JSON (validated by tools/validate_catalog.py).
+        exclude: "^(data/skills_catalog\\.json|data/benchmark_scenarios\\.json|included/.*\\.json|artifacts/.*\\.json)$"
+      - id: end-of-file-fixer
+        exclude: "^(included/|artifacts/|data/|docs/)"
+      - id: trailing-whitespace
+        exclude: "^(included/|artifacts/|docs/.*\\.md)"
+      - id: mixed-line-ending
+        args: [--fix=lf]
+        exclude: "^(included/|artifacts/)"
+
+  - repo: local
+    hooks:
+      - id: in-repo-secret-scan
+        name: in-repo secret scan (fast)
+        entry: python3 tools/check_no_secret_patterns.py
+        language: system
+        pass_filenames: false
+        stages: [pre-commit]
