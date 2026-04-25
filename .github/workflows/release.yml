@@ -1,0 +1,94 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+      - "v[0-9]+.[0-9]+.[0-9]+-*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag to release (must already exist on origin/main)"
+        required: true
+
+concurrency:
+  group: release-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false  # never cancel a release mid-upload
+
+permissions:
+  contents: write  # required to create the GitHub Release
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6.0.2
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.inputs.tag || github.ref_name }}
+
+      - uses: actions/setup-python@v6.2.0
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: pyproject.toml
+
+      - name: Install validation extras
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e '.[test,lint]'
+
+      # Gate the tag on the same quality bar as main so a release cannot slip
+      # a regression past CI.
+      - name: Re-run gates on the tagged commit
+        run: |
+          ruff check tools tests
+          ruff format --check tools tests
+          mypy tools tests
+          python -m pytest -q -n auto
+          python tools/validate_catalog.py
+          python tools/run_static_benchmarks.py --check
+          python tools/audit_skill_quality.py --check
+          python -m compileall -q tools tests
+
+      - name: Build source + wheel distributions
+        run: |
+          python -m pip install build
+          python -m build --sdist --wheel --outdir dist/
+
+      - name: Extract changelog section for this tag
+        id: changelog
+        run: |
+          set -euo pipefail
+          TAG="${GITHUB_REF_NAME:-${{ github.event.inputs.tag }}}"
+          VERSION="${TAG#v}"
+          # Capture the lines between "## [VERSION]" and the next "## [" heading.
+          python - <<PY > release-notes.md
+          import re, pathlib, sys
+          text = pathlib.Path("CHANGELOG.md").read_text(encoding="utf-8")
+          m = re.search(
+              r"^##\s*\[${VERSION}\][^\n]*\n(?P<body>.*?)(?=^##\s*\[)",
+              text,
+              flags=re.M | re.S,
+          )
+          if not m:
+              sys.exit(f"no CHANGELOG section found for version ${VERSION}")
+          print(m.group("body").strip() + "\n")
+          PY
+
+      - name: Create GitHub Release
+        # softprops/action-gh-release v3.0.0 (latest stable, Apr 2026).
+        # https://github.com/softprops/action-gh-release/releases/tag/v3.0.0
+        uses: softprops/action-gh-release@v3.0.0
+        with:
+          tag_name: ${{ github.event.inputs.tag || github.ref_name }}
+          name: ${{ github.event.inputs.tag || github.ref_name }}
+          body_path: release-notes.md
+          draft: false
+          prerelease: ${{ contains(github.event.inputs.tag || github.ref_name, '-') }}
+          files: |
+            dist/*.tar.gz
+            dist/*.whl
+            requirements-lock.txt
+            coverage.xml
+          fail_on_unmatched_files: false
