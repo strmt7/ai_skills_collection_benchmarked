@@ -105,17 +105,15 @@ def render_report() -> str:
     runtime_results = iter_runtime_results()
     for artifact_path, artifact, result in runtime_results:
         for target in local_link_failures(result):
-            groups[target].append({
-                "skill_id": artifact["skill_id"],
-                "batch_name": artifact["runner"]["batch_name"],
-                "artifact_path": artifact_path.relative_to(ROOT).as_posix(),
-            })
+            groups[target].append(
+                {
+                    "skill_id": artifact["skill_id"],
+                    "batch_name": artifact["runner"]["batch_name"],
+                    "artifact_path": artifact_path.relative_to(ROOT).as_posix(),
+                }
+            )
 
-    failing_artifacts = {
-        item["artifact_path"]
-        for entries in groups.values()
-        for item in entries
-    }
+    failing_artifacts = {item["artifact_path"] for entries in groups.values() for item in entries}
 
     lines = [
         "# Local Markdown Link Failures",
@@ -138,12 +136,9 @@ def render_report() -> str:
         batches = ", ".join(sorted({entry["batch_name"] for entry in entries}))
         skills = "<br>".join(sorted({f"`{entry['skill_id']}`" for entry in entries}))
         artifacts = "<br>".join(
-            f"`{entry['artifact_path']}`"
-            for entry in sorted(entries, key=lambda entry: entry["artifact_path"])
+            f"`{entry['artifact_path']}`" for entry in sorted(entries, key=lambda entry: entry["artifact_path"])
         )
-        lines.append(
-            f"| `{table_cell(target)}` | {len(entries)} | {table_cell(batches)} | {skills} | {artifacts} |"
-        )
+        lines.append(f"| `{table_cell(target)}` | {len(entries)} | {table_cell(batches)} | {skills} | {artifacts} |")
 
     return "\n".join(lines) + "\n"
 

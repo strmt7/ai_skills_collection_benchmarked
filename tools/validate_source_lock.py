@@ -24,9 +24,10 @@ import json
 import os
 import subprocess
 import sys
+from collections.abc import Iterable
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
@@ -120,18 +121,10 @@ def validate_mirrors(lock: dict[str, Any], report: Report) -> None:
 
     Mirrors are always present (they are checked in), so this runs in both
     offline and live modes. This is where the integration-critical portable-hash
-    invariant is exercised end-to-end.
+    invariant is exercised end-to-end. Mirror paths are looked up in the catalog
+    (keyed by skill id), not the lock: the lock holds hashes, the catalog holds
+    the authoritative mirror layout.
     """
-    for source in lock.get("sources", []):
-        for skill in source.get("skills", []):
-            # The catalog is the authoritative source of the mirror path for a
-            # given skill id. The lock file carries hashes but not always a
-            # mirror path, so read the catalog once and index by id.
-            break
-        else:
-            continue
-        break
-
     catalog_path = ROOT / "data" / "skills_catalog.json"
     if not catalog_path.is_file():
         return  # catalog optional for offline lock structural check
@@ -152,10 +145,14 @@ def validate_mirrors(lock: dict[str, Any], report: Report) -> None:
                 continue
             actual_file = build_catalog.sha256_file(skill_md)
             if actual_file != skill["skill_file_sha256"]:
-                report.fail(f"{sid}: mirror SKILL.md hash mismatch (expected {skill['skill_file_sha256']}, got {actual_file})")
+                report.fail(
+                    f"{sid}: mirror SKILL.md hash mismatch (expected {skill['skill_file_sha256']}, got {actual_file})"
+                )
             actual_tree = build_catalog.sha256_tree(mirror)
             if actual_tree != skill["skill_dir_sha256"]:
-                report.fail(f"{sid}: mirror directory hash mismatch (expected {skill['skill_dir_sha256']}, got {actual_tree})")
+                report.fail(
+                    f"{sid}: mirror directory hash mismatch (expected {skill['skill_dir_sha256']}, got {actual_tree})"
+                )
             report.checked_mirror_skills += 1
 
 
@@ -274,15 +271,21 @@ def main(argv: list[str] | None = None) -> int:
         validate_live_checkouts(lock, source_root, strict=args.strict, report=report)
 
     if args.json:
-        print(json.dumps({
-            "mode": mode,
-            "ok": report.ok(),
-            "errors": report.errors,
-            "checked_sources": report.checked_sources,
-            "checked_source_skills": report.checked_source_skills,
-            "checked_mirror_skills": report.checked_mirror_skills,
-            "source_root": str(source_root) if source_root else None,
-        }, indent=2, sort_keys=True))
+        print(
+            json.dumps(
+                {
+                    "mode": mode,
+                    "ok": report.ok(),
+                    "errors": report.errors,
+                    "checked_sources": report.checked_sources,
+                    "checked_source_skills": report.checked_source_skills,
+                    "checked_mirror_skills": report.checked_mirror_skills,
+                    "source_root": str(source_root) if source_root else None,
+                },
+                indent=2,
+                sort_keys=True,
+            )
+        )
     else:
         if report.ok():
             parts = [f"mode={mode}"]

@@ -37,8 +37,9 @@ import argparse
 import json
 import re
 import sys
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_PATH = ROOT / "evaluators" / "benchmark_run_artifact.schema.json"
@@ -106,11 +107,7 @@ def resolve_artifact_path(base: Path, value: str) -> Path:
 
 
 def non_empty_list(value: Any) -> bool:
-    return (
-        isinstance(value, list)
-        and bool(value)
-        and all(isinstance(item, str) and item for item in value)
-    )
+    return isinstance(value, list) and bool(value) and all(isinstance(item, str) and item for item in value)
 
 
 def _pointer(parts: Iterable[str | int]) -> str:
@@ -161,28 +158,19 @@ def _schema_walk(
 ) -> None:
     declared_type = schema.get("type")
     if declared_type is not None and not _matches_type(instance, declared_type):
-        errors.append(
-            f"{_pointer(path) or '/'}: expected type {declared_type!r}, got {type(instance).__name__}"
-        )
+        errors.append(f"{_pointer(path) or '/'}: expected type {declared_type!r}, got {type(instance).__name__}")
         return
 
     if "enum" in schema and instance not in schema["enum"]:
-        errors.append(
-            f"{_pointer(path) or '/'}: value {instance!r} not in enum {schema['enum']}"
-        )
+        errors.append(f"{_pointer(path) or '/'}: value {instance!r} not in enum {schema['enum']}")
 
-    if "pattern" in schema and isinstance(instance, str):
-        if not re.search(schema["pattern"], instance):
-            errors.append(
-                f"{_pointer(path) or '/'}: value does not match pattern {schema['pattern']!r}"
-            )
+    if "pattern" in schema and isinstance(instance, str) and not re.search(schema["pattern"], instance):
+        errors.append(f"{_pointer(path) or '/'}: value does not match pattern {schema['pattern']!r}")
 
     if isinstance(instance, dict):
         for required in schema.get("required", []) or []:
             if required not in instance:
-                errors.append(
-                    f"{_pointer(path + [required])}: missing required field"
-                )
+                errors.append(f"{_pointer(path + [required])}: missing required field")
         for key, sub_schema in (schema.get("properties") or {}).items():
             if key in instance and isinstance(sub_schema, dict):
                 _schema_walk(sub_schema, instance[key], path + [key], errors)
@@ -190,9 +178,7 @@ def _schema_walk(
     if isinstance(instance, list):
         min_items = schema.get("minItems")
         if isinstance(min_items, int) and len(instance) < min_items:
-            errors.append(
-                f"{_pointer(path) or '/'}: expected at least {min_items} items, got {len(instance)}"
-            )
+            errors.append(f"{_pointer(path) or '/'}: expected at least {min_items} items, got {len(instance)}")
         item_schema = schema.get("items")
         if isinstance(item_schema, dict):
             for index, element in enumerate(instance):
@@ -314,14 +300,10 @@ def validate_artifact(
             if independence.get(key) is not True:
                 errors.append(f"independent_benchmark requires independence.{key} true")
         if independence.get("uses_exact_skill_content_for_expected_result") is not False:
-            errors.append(
-                "independent_benchmark requires uses_exact_skill_content_for_expected_result false"
-            )
+            errors.append("independent_benchmark requires uses_exact_skill_content_for_expected_result false")
         scenario = scenarios.get(artifact["scenario_id"])
         if scenario and scenario.get("dataset_track_id") == "source-skill-repository":
-            errors.append(
-                "source-skill-repository scenarios are provenance checks, not independent benchmarks"
-            )
+            errors.append("source-skill-repository scenarios are provenance checks, not independent benchmarks")
     elif artifact_kind == "provenance_check":
         warnings.append(
             "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
@@ -357,6 +339,7 @@ def validate_artifact(
     if not non_empty_list(artifact_paths):
         errors.append("evidence.artifact_paths must be a non-empty string list")
     else:
+        assert isinstance(artifact_paths, list)  # narrowed by non_empty_list
         missing = [path for path in artifact_paths if not resolve_artifact_path(base, path).exists()]
         if missing:
             errors.append(f"missing evidence artifact paths: {missing}")
@@ -379,6 +362,7 @@ def validate_artifact(
             if not non_empty_list(screenshot_paths):
                 errors.append("visual evidence requires screenshot_paths")
             else:
+                assert isinstance(screenshot_paths, list)  # narrowed by non_empty_list
                 missing_screenshots = [
                     path for path in screenshot_paths if not resolve_artifact_path(base, path).exists()
                 ]
@@ -399,15 +383,8 @@ def validate_artifact(
                 errors.append("context/memory evidence requires delayed_recall_probes")
             before = memory.get("token_usage_before")
             after = memory.get("token_usage_after")
-            if (
-                not isinstance(before, int)
-                or not isinstance(after, int)
-                or before <= 0
-                or after <= 0
-            ):
-                errors.append(
-                    "context/memory evidence requires positive integer token usage before and after"
-                )
+            if not isinstance(before, int) or not isinstance(after, int) or before <= 0 or after <= 0:
+                errors.append("context/memory evidence requires positive integer token usage before and after")
             elif after > before and not isinstance(memory.get("quality_delta"), (int, float)):
                 errors.append("token usage increased without numeric quality_delta")
             if (
@@ -416,9 +393,7 @@ def validate_artifact(
                 and isinstance(after, int)
                 and after > before
             ):
-                errors.append(
-                    "token_efficiency_claim requires token_usage_after <= token_usage_before"
-                )
+                errors.append("token_efficiency_claim requires token_usage_after <= token_usage_before")
 
     verdict = "artifact_complete" if not errors else "artifact_incomplete"
     return {"verdict": verdict, "errors": errors, "warnings": warnings}
