@@ -4,7 +4,64 @@ All notable changes to this project are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and this project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] — 2026-04-25
+## [Unreleased]
+
+### Added (enterprise-grade gates)
+
+- `pytest-cov` wired into CI with a `fail_under = 45` floor (matches current
+  measured ~55% coverage; raised per deep-rewrite pass). Coverage XML is
+  uploaded as an artifact per Python matrix leg.
+- `pip-audit` CVE gate (daily cron) against a new pip-compile
+  `requirements-lock.txt` (hashed, 781 pinned deps). The workflow also
+  diff-checks the lockfile against a fresh `pip-compile` so it cannot drift.
+- `.github/workflows/release.yml`: tag-triggered (`v*.*.*`) workflow that
+  re-runs every gate on the tagged commit, builds `sdist` + `wheel`, slices
+  the matching `CHANGELOG.md` section as release notes, and attaches
+  artefacts to a GitHub Release via `softprops/action-gh-release@v3.0.0`.
+- `.pre-commit-config.yaml` mirroring the CI gate set (ruff, mypy, built-in
+  hygiene hooks, in-repo secret scanner).
+- New `[lint]` and `[security]` extras in `pyproject.toml`.
+
+### Added (deep-rewrite pass on 3 generator tools + coverage lift)
+
+- `tools/create_source_proof_batch.py`: extracted pure helpers
+  (`build_result`, `build_transcript`, `build_artifact`,
+  `scenario_id_for`); `write_artifact` gains a `dry_run` path; CLI gains
+  `--dry-run` and `--json`. 8 new logic tests. Coverage 24.8% → 82.4%.
+  Verified byte-identical to committed artifacts on a real non-dry run.
+- `tools/evaluate_external_benchmark_methods.py`: `smoke_probe()` now
+  accepts `head_provider` / `tree_provider` callables so every code path
+  (including subpath-missing, unresolved HEAD, tree-fetch exception) is
+  exercised offline. 10 new logic tests. Coverage 43.2% → 61.8%.
+- `tools/create_independent_runtime_batch.py`: 21 new logic tests over
+  every pure helper (`github_repo_from_url`, `first_non_provenance_scenario`,
+  `batch_paths`, `build_task`, `check_single_session_entrypoint`) plus
+  monkeypatched coverage of `resolve_dataset_snapshot` non-github, github,
+  and HEAD-failure paths. Coverage 17.5% → 36.1% (helpers-only; full
+  main() path is network-backed and out of scope).
+- `tools/build_catalog.py`: 13 more component tests for
+  `keyword_matches`, `category_for` (incl. microsoft/k-dense special
+  cases and coding fallback), `scenario_ids`, `flags`,
+  `skill_mirror_path`, `skill_agent_ready_path`.
+
+### Changed
+
+- `tools/validate_catalog.py`: refactored to `_collect_entry_errors` for
+  thread-safe per-entry accumulation; benchmarked ThreadPoolExecutor
+  dispatch against sequential and **reverted to sequential** after
+  measuring a 2.3× regression (3.9 s seq vs 9.1 s cpu*2 workers). Opt-in
+  parallel path remains behind `VALIDATE_CATALOG_MAX_WORKERS`.
+- `SECURITY.md`: added disclosure contact, the full CI gate matrix,
+  supply-chain section, and gitleaks local-mirror instructions.
+
+### Test + coverage summary
+
+| Metric | Before this section | After |
+| --- | ---: | ---: |
+| Tests | 122 | **182+** |
+| Overall coverage | 0% (unwired) | **~55%** (fail_under=45) |
+
+## [0.2.0] — 2026-04-25
 
 This release is a deep-quality pass on the tooling, schemas, and CI surface.
 The cataloged skill mirrors are unchanged (Immutable Audit Model preserved).

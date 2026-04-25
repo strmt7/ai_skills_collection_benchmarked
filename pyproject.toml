@@ -1,6 +1,6 @@
 [project]
 name = "ai-skills-collection-benchmarked"
-version = "0.1.0"
+version = "0.2.0"
 description = "Evidence-backed AI skills catalog with real workflow benchmark definitions."
 readme = "README.md"
 requires-python = ">=3.10"
