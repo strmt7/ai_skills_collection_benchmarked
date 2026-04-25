@@ -106,3 +106,77 @@ def test_no_tool_leaks_host_paths_in_help():
         combined = result.stdout + result.stderr
         for forbidden in forbidden_prefixes:
             assert forbidden not in combined, f"{tool} help text contains host-specific path prefix: {forbidden}"
+
+
+# ---------------------------------------------------------------------------
+# In-process main(argv) tests so coverage tracks branches exercised by CI.
+# Subprocess tests above cover the shebang/entry-point contract; the tests
+# below cover the internal logic the way production code is actually invoked.
+# ---------------------------------------------------------------------------
+
+
+def _in_process(module_name: str, argv: list[str]) -> int:
+    import importlib
+
+    mod = importlib.import_module(module_name)
+    return mod.main(argv)
+
+
+def test_validate_catalog_main_in_process_passes():
+    assert _in_process("validate_catalog", []) == 0
+
+
+def test_validate_catalog_main_json_mode_in_process():
+    import io
+    import json as _json
+    from contextlib import redirect_stdout
+
+    out = io.StringIO()
+    with redirect_stdout(out):
+        rc = _in_process("validate_catalog", ["--json"])
+    assert rc == 0
+    payload = _json.loads(out.getvalue())
+    assert payload["ok"] is True
+    assert payload["catalog_entries"] > 0
+
+
+def test_run_static_benchmarks_check_in_process():
+    import importlib
+
+    mod = importlib.import_module("run_static_benchmarks")
+    # Some tools' main() uses raise SystemExit; tolerate either return-int or raise.
+    try:
+        rc = mod.main(["--check"]) if callable(getattr(mod, "main", None)) else 0
+    except SystemExit as exc:
+        rc = int(exc.code or 0)
+    assert rc == 0
+
+
+def test_audit_skill_quality_check_in_process():
+    assert _in_process("audit_skill_quality", ["--check"]) == 0
+
+
+def test_evaluate_external_benchmark_methods_check_in_process():
+    assert _in_process("evaluate_external_benchmark_methods", ["--check"]) == 0
+
+
+def test_report_local_markdown_link_failures_check_in_process():
+    assert _in_process("report_local_markdown_link_failures", ["--check"]) == 0
+
+
+def test_check_benchmark_artifact_validate_all_in_process():
+    assert _in_process(
+        "check_benchmark_artifact",
+        ["--validate-all", str(ROOT / "artifacts" / "benchmark-runs")],
+    ) == 0
+
+
+def test_check_no_secret_patterns_default_in_process():
+    import importlib
+
+    mod = importlib.import_module("check_no_secret_patterns")
+    try:
+        rc = mod.main([]) if callable(getattr(mod, "main", None)) else 0
+    except SystemExit as exc:
+        rc = int(exc.code or 0)
+    assert rc == 0

@@ -22,6 +22,7 @@ dependencies = [
 test = [
   "pytest>=8.4.0",
   "pytest-xdist>=3.6.0",
+  "pytest-cov>=7.0.0",
   "coverage>=7.6.0",
   "hypothesis>=6.115.0",
 ]
@@ -29,6 +30,10 @@ lint = [
   "ruff>=0.15.0",
   "mypy>=1.20.0",
   "types-PyYAML>=6.0.12",
+]
+security = [
+  "pip-audit>=2.10.0",
+  "pip-tools>=7.5.0",
 ]
 
 [build-system]
@@ -46,6 +51,9 @@ addopts = [
   "-ra",
   "--strict-markers",
   "--strict-config",
+  "--cov=tools",
+  "--cov-report=term-missing:skip-covered",
+  "--cov-report=xml:coverage.xml",
 ]
 filterwarnings = [
   "error",
@@ -127,13 +135,28 @@ omit = [
   "tools/_lib_b/__init__.py",  # re-export shim
   "tools/_lib_c/__init__.py",
 ]
+# parallel + concurrency multiprocessing lets pytest-xdist workers merge cleanly
+parallel = true
+concurrency = ["multiprocessing"]
+
+[tool.coverage.paths]
+# Make absolute paths from xdist workers collapse back onto the single repo view.
+source = [
+  "tools",
+  "*/ai_skills_collection_benchmarked/tools",
+]
 
 [tool.coverage.report]
 exclude_also = [
   "raise NotImplementedError",
   "if __name__ == .__main__.:",
   "if TYPE_CHECKING:",
+  "pragma: no cover",
 ]
-fail_under = 0  # report-only on first pass; raise the floor in a follow-up
+# Floor below the current measured coverage (49.2%) so CI enforces a
+# no-regression gate immediately while we raise the bar per deep-rewrite pass.
+# Re-measure and increase after each batch of rewrites.
+fail_under = 45
 show_missing = true
 skip_covered = true
+precision = 1
