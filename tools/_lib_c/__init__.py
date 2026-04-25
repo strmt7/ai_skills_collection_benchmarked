@@ -6,11 +6,11 @@ stdlib-only, deterministic, and network-free unless a caller explicitly opts
 in via an allow-network flag.
 """
 
-from ._io import load_json, write_json_canonical, read_text, write_text
-from ._diff import describe_data_drift, describe_text_drift, DriftReport
-from ._progress import progress_iter, log_progress
-from ._schema import validate_against_schema, SchemaError
 from ._catalog import load_catalog, load_manifest, load_scenarios
+from ._diff import DriftReport, describe_data_drift, describe_text_drift
+from ._io import load_json, read_text, write_json_canonical, write_text
+from ._progress import log_progress, progress_iter
+from ._schema import SchemaError, validate_against_schema
 
 __all__ = [
     "load_json",

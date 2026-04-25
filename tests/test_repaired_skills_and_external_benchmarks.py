@@ -1,17 +1,17 @@
 import json
 import re
-from pathlib import Path
-
-from helpers import ROOT, load
 
 import audit_skill_quality
 import create_repaired_skill_overlays
 import evaluate_external_benchmark_methods
+from helpers import ROOT, load
 
 
 def test_external_benchmark_registry_and_smoke_artifacts_cover_all_methods():
     registry = load("data/external_benchmark_methods.json")
-    manifest = load("artifacts/external-benchmark-integrations/2026-04-19-external-benchmark-method-smoke/manifest.json")
+    manifest = load(
+        "artifacts/external-benchmark-integrations/2026-04-19-external-benchmark-method-smoke/manifest.json"
+    )
     expected = evaluate_external_benchmark_methods.registry()
 
     assert registry == expected
@@ -39,9 +39,15 @@ def test_external_benchmark_registry_and_smoke_artifacts_cover_all_methods():
 
 def test_external_benchmark_docs_are_generated_from_registry_and_manifest():
     registry = load("data/external_benchmark_methods.json")
-    manifest = load("artifacts/external-benchmark-integrations/2026-04-19-external-benchmark-method-smoke/manifest.json")
-    assert (ROOT / "docs" / "objective-benchmark-methods.md").read_text(encoding="utf-8") == evaluate_external_benchmark_methods.render_methods_doc(registry)
-    assert (ROOT / "docs" / "external-benchmark-adapter-smoke.md").read_text(encoding="utf-8") == evaluate_external_benchmark_methods.render_smoke_report(manifest)
+    manifest = load(
+        "artifacts/external-benchmark-integrations/2026-04-19-external-benchmark-method-smoke/manifest.json"
+    )
+    assert (ROOT / "docs" / "objective-benchmark-methods.md").read_text(
+        encoding="utf-8"
+    ) == evaluate_external_benchmark_methods.render_methods_doc(registry)
+    assert (ROOT / "docs" / "external-benchmark-adapter-smoke.md").read_text(
+        encoding="utf-8"
+    ) == evaluate_external_benchmark_methods.render_smoke_report(manifest)
 
 
 def test_repaired_overlays_cover_failed_runtime_artifacts_without_changing_originals():
@@ -67,7 +73,9 @@ def test_repaired_overlays_cover_failed_runtime_artifacts_without_changing_origi
         assert original_skill.is_file()
         assert repaired_skill.is_file()
         assert original_copy.read_text(encoding="utf-8") == original_skill.read_text(encoding="utf-8")
-        assert audit_skill_quality.missing_markdown_links(repaired_dir, repaired_skill.read_text(encoding="utf-8")) == []
+        assert (
+            audit_skill_quality.missing_markdown_links(repaired_dir, repaired_skill.read_text(encoding="utf-8")) == []
+        )
         assert repair_record["original_skill_file_sha256"] == entry["skill_file_sha256"]
         assert repair_record["repaired_path"] == item["repaired_path"]
         assert repair_record["actions"]
@@ -78,7 +86,9 @@ def test_repaired_readiness_artifacts_are_complete_and_docs_current():
     artifact_manifest = load("artifacts/repaired-skill-readiness/2026-04-19-runtime-failure-repairs/manifest.json")
 
     assert artifact_manifest == manifest
-    assert (ROOT / "docs" / "repaired-skill-readiness.md").read_text(encoding="utf-8") == create_repaired_skill_overlays.render_manifest_doc(manifest)
+    assert (ROOT / "docs" / "repaired-skill-readiness.md").read_text(
+        encoding="utf-8"
+    ) == create_repaired_skill_overlays.render_manifest_doc(manifest)
     for item in manifest["repairs"]:
         artifact_path = ROOT / item["artifact_path"]
         assert artifact_path.is_file()

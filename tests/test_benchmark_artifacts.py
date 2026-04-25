@@ -2,10 +2,9 @@ import json
 import tempfile
 from pathlib import Path
 
-from helpers import ROOT, complete_artifacts, load
-
 import check_benchmark_artifact
 import report_local_markdown_link_failures
+from helpers import ROOT, complete_artifacts, load
 
 
 def _complete_provenance_fixture(tmp: Path):
@@ -72,12 +71,22 @@ def test_static_benchmark_results_are_real_and_current():
     results = load("data/static_benchmark_results.json")
     catalog = load("data/skills_catalog.json")
     artifacts = complete_artifacts()
-    runtime_paths = {path.relative_to(ROOT).as_posix() for path, artifact, _ in artifacts if artifact["artifact_kind"] == "independent_benchmark"}
-    provenance_paths = {path.relative_to(ROOT).as_posix() for path, artifact, _ in artifacts if artifact["artifact_kind"] == "provenance_check"}
+    runtime_paths = {
+        path.relative_to(ROOT).as_posix()
+        for path, artifact, _ in artifacts
+        if artifact["artifact_kind"] == "independent_benchmark"
+    }
+    provenance_paths = {
+        path.relative_to(ROOT).as_posix()
+        for path, artifact, _ in artifacts
+        if artifact["artifact_kind"] == "provenance_check"
+    }
     assert results["summary"]["skill_count"] == len(catalog)
     assert results["summary"]["runtime_artifacts_recorded"] == len(runtime_paths)
     assert results["summary"]["runtime_artifacts_recorded"] >= 10
-    assert results["summary"]["runtime_artifacts_passed"] + results["summary"]["runtime_artifacts_failed"] == len(runtime_paths)
+    assert results["summary"]["runtime_artifacts_passed"] + results["summary"]["runtime_artifacts_failed"] == len(
+        runtime_paths
+    )
     assert results["summary"]["provenance_artifacts_recorded"] == len(provenance_paths)
     assert results["summary"]["provenance_artifacts_recorded"] >= 10
     assert {item["artifact_path"] for item in results["runtime_artifacts"]} == runtime_paths
@@ -90,7 +99,9 @@ def test_static_benchmark_results_are_real_and_current():
     assert sum(item["runtime_artifacts_recorded"] for item in results["skills"]) == len(runtime_paths)
     assert {item["skill_id"] for item in results["skills"]} == {entry["id"] for entry in catalog}
     assert sum(item["static_checks_passed"] for item in results["skills"]) == results["summary"]["static_checks_passed"]
-    assert sum(item["quality_fix_point_count"] for item in results["skills"]) == results["summary"]["quality_fix_points"]
+    assert (
+        sum(item["quality_fix_point_count"] for item in results["skills"]) == results["summary"]["quality_fix_points"]
+    )
     text = (ROOT / "docs" / "benchmark-results.md").read_text(encoding="utf-8")
     assert "Static checks passed" in text
     assert "Runtime scenario artifacts passed" in text
@@ -300,10 +311,7 @@ def test_benchmark_artifact_checker_rejects_wrong_type_with_json_pointer():
         artifact_path.write_text(json.dumps(artifact), encoding="utf-8")
         result = check_benchmark_artifact.validate_artifact(artifact_path)
         assert result["verdict"] == "artifact_incomplete"
-        assert any(
-            error.startswith("/evidence/artifact_paths:")
-            for error in result["errors"]
-        ), result["errors"]
+        assert any(error.startswith("/evidence/artifact_paths:") for error in result["errors"]), result["errors"]
 
 
 def test_benchmark_artifact_checker_rejects_bad_sha_pattern():
@@ -358,7 +366,7 @@ def test_benchmark_artifact_validate_all_passes_on_recorded_artifacts():
 
 def test_benchmark_artifact_all_real_artifacts_preserve_verdict_keys():
     """Every returned verdict dict must carry the stable public keys."""
-    for path, _, result in complete_artifacts():
+    for _path, _, result in complete_artifacts():
         assert set(result.keys()) >= {"verdict", "errors", "warnings"}
         assert result["verdict"] == "artifact_complete"
         assert isinstance(result["errors"], list)
