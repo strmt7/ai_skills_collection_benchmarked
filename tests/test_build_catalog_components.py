@@ -9,10 +9,9 @@ covers the riskiest internal logic without redirecting the writer.
 
 from __future__ import annotations
 
-from hypothesis import given, settings, strategies as st
-
 import build_catalog
-
+from hypothesis import given, settings
+from hypothesis import strategies as st
 
 # ---------------------------------------------------------------------------
 # slug()
@@ -77,15 +76,11 @@ def test_parse_frontmatter_empty_yaml_block_returns_empty_meta():
     assert meta == {}
 
 
-def test_parse_frontmatter_handles_quoted_values_in_fallback():
+def test_parse_frontmatter_handles_quoted_values_in_fallback(monkeypatch):
     # Force the fallback parser by clobbering yaml; helpers strip surrounding quotes.
-    saved = build_catalog.yaml
-    build_catalog.yaml = None
-    try:
-        meta, _ = build_catalog.parse_frontmatter('---\nname: "quoted"\n---\nbody\n')
-        assert meta == {"name": "quoted"}
-    finally:
-        build_catalog.yaml = saved
+    monkeypatch.setattr(build_catalog, "yaml", None)
+    meta, _ = build_catalog.parse_frontmatter('---\nname: "quoted"\n---\nbody\n')
+    assert meta == {"name": "quoted"}
 
 
 # ---------------------------------------------------------------------------
