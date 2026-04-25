@@ -10,9 +10,8 @@ from __future__ import annotations
 import subprocess
 import sys
 
-from helpers import ROOT  # noqa: F401 -- import for sys.path side effect
-
 import check_no_secret_patterns
+from helpers import ROOT  # noqa: F401 -- import for sys.path side effect
 
 
 def _findings(text: str) -> list[str]:
@@ -64,10 +63,7 @@ def test_github_example_placeholder_is_rejected():
 
 
 def test_gitlab_and_slack_tokens_are_detected():
-    fixture = (
-        "GL=" + "glp" + "at-" + "a" * 25
-        + "\nSL=" + "xo" + "xb-12345-abcdefg-example"
-    )
+    fixture = "GL=" + "glp" + "at-" + "a" * 25 + "\nSL=" + "xo" + "xb-12345-abcdefg-example"
     out = _findings(fixture)
     assert any("gitlab_token" in f for f in out), out
     assert any("slack_token" in f for f in out), out

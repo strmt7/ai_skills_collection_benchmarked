@@ -12,10 +12,8 @@ surfaces here rather than in a human reviewer's terminal.
 
 from __future__ import annotations
 
-import os
 import subprocess
 import sys
-from pathlib import Path
 
 import pytest
 
@@ -25,11 +23,7 @@ PYTHON = sys.executable
 TOOL_DIR = ROOT / "tools"
 
 
-ALL_TOOLS = sorted(
-    p.name
-    for p in TOOL_DIR.glob("*.py")
-    if p.is_file() and not p.name.startswith("_")
-)
+ALL_TOOLS = sorted(p.name for p in TOOL_DIR.glob("*.py") if p.is_file() and not p.name.startswith("_"))
 
 # Tools that literally accept --check and must exit 0 on committed data.
 # Note: validate_catalog.py and validate_source_lock.py are always-check
@@ -72,7 +66,9 @@ def test_tool_check_mode_exits_zero(tool):
         cwd=ROOT,
         timeout=180,
     )
-    assert result.returncode == 0, f"--check returned {result.returncode}\nstdout={result.stdout[:800]}\nstderr={result.stderr[:800]}"
+    assert result.returncode == 0, (
+        f"--check returned {result.returncode}\nstdout={result.stdout[:800]}\nstderr={result.stderr[:800]}"
+    )
 
 
 @pytest.mark.parametrize("tool", TOOLS_NO_ARGS_RUN)

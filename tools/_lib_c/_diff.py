@@ -13,7 +13,6 @@ import difflib
 from dataclasses import dataclass, field
 from typing import Any
 
-
 _MAX_ENTRIES = 50  # cap shown diffs so CI logs stay bounded
 
 
@@ -70,7 +69,7 @@ def describe_data_drift(label: str, current: Any, fresh: Any) -> DriftReport:
         elif isinstance(a, list):
             if len(a) != len(b):
                 entries.append(f"{path or '<root>'}: list length {len(a)} -> {len(b)}")
-            for idx, (x, y) in enumerate(zip(a, b)):
+            for idx, (x, y) in enumerate(zip(a, b, strict=False)):
                 walk(x, y, f"{path}[{idx}]")
         else:
             if a != b:

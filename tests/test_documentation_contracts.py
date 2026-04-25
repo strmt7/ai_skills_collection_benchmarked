@@ -67,11 +67,13 @@ def test_benchmark_runner_requirements_are_explicit():
 def test_documentation_local_links_resolve():
     docs = [ROOT / "README.md"]
     docs.extend(sorted((ROOT / "docs").rglob("*.md")))
-    docs.extend([
-        ROOT / "included" / "skills" / "README.md",
-        ROOT / "included" / "agent-ready" / "README.md",
-        ROOT / "included" / "selected" / "README.md",
-    ])
+    docs.extend(
+        [
+            ROOT / "included" / "skills" / "README.md",
+            ROOT / "included" / "agent-ready" / "README.md",
+            ROOT / "included" / "selected" / "README.md",
+        ]
+    )
     broken = []
     for path in docs:
         text = path.read_text(encoding="utf-8")

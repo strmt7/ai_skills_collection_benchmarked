@@ -17,9 +17,7 @@ from typing import Any
 try:  # pragma: no cover - exercised implicitly by any YAML parse
     import yaml
 except ImportError as exc:  # pragma: no cover
-    raise ImportError(
-        "PyYAML is required for frontmatter parsing; install 'PyYAML'."
-    ) from exc
+    raise ImportError("PyYAML is required for frontmatter parsing; install 'PyYAML'.") from exc
 
 
 @dataclass(frozen=True)

@@ -50,9 +50,7 @@ def _validate(instance: Any, schema: Any, path: str) -> list[str]:
         if expected_type in {"integer", "number"} and isinstance(instance, bool):
             errors.append(f"{path or '<root>'}: expected {expected_type}, got boolean")
         elif not isinstance(instance, types):
-            errors.append(
-                f"{path or '<root>'}: expected {expected_type}, got {type(instance).__name__}"
-            )
+            errors.append(f"{path or '<root>'}: expected {expected_type}, got {type(instance).__name__}")
             return errors
     if "const" in schema and instance != schema["const"]:
         errors.append(f"{path or '<root>'}: expected const {schema['const']!r}, got {instance!r}")
