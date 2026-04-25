@@ -1,0 +1,38 @@
+# Gitleaks configuration for ai_skills_collection_benchmarked.
+#
+# This repo is governed by AGENTS.md's "Immutable Audit Model": the contents
+# of `included/skills/` are source-locked mirrors of pinned upstream commits
+# from public GitHub repositories. We are explicitly forbidden from rewriting
+# their text. As a consequence, any example secret strings, placeholder API
+# keys, or curl auth headers that appear in the upstream documentation are
+# preserved as-is and surface in gitleaks scans.
+#
+# The repo's own secret scanner (tools/check_no_secret_patterns.py) already
+# enforces a context-aware policy on the *new* content this repository
+# produces; gitleaks runs as a second-opinion gate over the same surface but
+# scoped to mirror-free paths.
+#
+# References:
+# - https://github.com/gitleaks/gitleaks#configuration
+# - AGENTS.md "Immutable Audit Model"
+
+# Inherit gitleaks' bundled default rule set; we only adjust the allowlist.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Skip immutable upstream mirrors and recorded benchmark artifacts."
+paths = [
+  # Source-locked upstream mirrors (AGENTS.md immutable audit model).
+  '''^included/skills/.*''',
+  # Generated agent-ready entrypoints derived from the immutable mirrors.
+  '''^included/agent-ready/.*''',
+  # Repaired-overlay provenance copies preserve upstream text byte-for-byte.
+  '''^included/repaired/skills/.*/provenance/.*''',
+  # Recorded run artifacts: any "secrets" inside are part of the immutable
+  # evidence we replay against, never live credentials.
+  '''^artifacts/.*''',
+  # Documentation pages that quote upstream skill content with citations.
+  '''^docs/skill-quality-findings\.md$''',
+  '''^docs/skill-risk-findings\.md$''',
+]
