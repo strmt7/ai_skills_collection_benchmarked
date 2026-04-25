@@ -78,8 +78,10 @@ def test_first_non_provenance_scenario_raises_when_all_are_provenance():
 def test_batch_paths_returns_repo_relative_layout():
     paths = crib.batch_paths("2026-04-18-independent-runtime-readiness-batch-02", "batch-02")
     assert paths["tasks"].as_posix().endswith("benchmarks/independent-runtime-readiness/batch-02/tasks.json")
-    assert paths["output"].as_posix().endswith(
-        "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02"
+    assert (
+        paths["output"]
+        .as_posix()
+        .endswith("artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02")
     )
     assert paths["report"].as_posix().endswith("docs/runtime-benchmark-batch-02.md")
 
@@ -159,7 +161,8 @@ def test_resolve_dataset_snapshot_non_github_url_uses_head(monkeypatch):
 
 def test_resolve_dataset_snapshot_github_subpath_reports_resolved(monkeypatch):
     monkeypatch.setattr(
-        crib, "run_command",
+        crib,
+        "run_command",
         lambda cmd, cwd=crib.ROOT: {  # noqa: ARG005
             "command": list(cmd),
             "returncode": 0,
@@ -168,12 +171,16 @@ def test_resolve_dataset_snapshot_github_subpath_reports_resolved(monkeypatch):
         },
     )
     monkeypatch.setattr(
-        crib, "fetch_json",
-        lambda url: {"tree": [  # noqa: ARG005
-            {"path": "benchmarks/metrics.py"},
-            {"path": "benchmarks/README.md"},
-            {"path": "LICENSE"},
-        ], "truncated": False},
+        crib,
+        "fetch_json",
+        lambda url: {
+            "tree": [  # noqa: ARG005
+                {"path": "benchmarks/metrics.py"},
+                {"path": "benchmarks/README.md"},
+                {"path": "LICENSE"},
+            ],
+            "truncated": False,
+        },
     )
     track = {"id": "t", "url": "https://github.com/ex/repo/tree/main/benchmarks"}
     snap, commands = crib.resolve_dataset_snapshot(track)
@@ -188,9 +195,13 @@ def test_resolve_dataset_snapshot_github_subpath_reports_resolved(monkeypatch):
 
 def test_resolve_dataset_snapshot_github_head_fail(monkeypatch):
     monkeypatch.setattr(
-        crib, "run_command",
+        crib,
+        "run_command",
         lambda cmd, cwd=crib.ROOT: {  # noqa: ARG005
-            "command": list(cmd), "returncode": 128, "stdout": "", "stderr": "network down",
+            "command": list(cmd),
+            "returncode": 128,
+            "stdout": "",
+            "stderr": "network down",
         },
     )
     snap, commands = crib.resolve_dataset_snapshot({"id": "t", "url": "https://github.com/ex/repo"})

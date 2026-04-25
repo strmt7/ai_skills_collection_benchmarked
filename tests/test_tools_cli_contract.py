@@ -165,10 +165,13 @@ def test_report_local_markdown_link_failures_check_in_process():
 
 
 def test_check_benchmark_artifact_validate_all_in_process():
-    assert _in_process(
-        "check_benchmark_artifact",
-        ["--validate-all", str(ROOT / "artifacts" / "benchmark-runs")],
-    ) == 0
+    assert (
+        _in_process(
+            "check_benchmark_artifact",
+            ["--validate-all", str(ROOT / "artifacts" / "benchmark-runs")],
+        )
+        == 0
+    )
 
 
 def test_check_no_secret_patterns_default_in_process():

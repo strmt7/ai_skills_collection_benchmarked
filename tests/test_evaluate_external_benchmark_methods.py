@@ -77,12 +77,16 @@ def test_smoke_probe_with_injected_providers_is_deterministic(complete_method):
         return ["README.md", "benchmarks/metrics.py", "benchmarks/run.py", "LICENSE"]
 
     a = eebm.smoke_probe(
-        complete_method, "2026-04-25T00:00:00Z",
-        head_provider=head_provider, tree_provider=tree_provider,
+        complete_method,
+        "2026-04-25T00:00:00Z",
+        head_provider=head_provider,
+        tree_provider=tree_provider,
     )
     b = eebm.smoke_probe(
-        complete_method, "2026-04-25T00:00:00Z",
-        head_provider=head_provider, tree_provider=tree_provider,
+        complete_method,
+        "2026-04-25T00:00:00Z",
+        head_provider=head_provider,
+        tree_provider=tree_provider,
     )
     assert a == b
     assert a["metrics"]["integration_status"] == "adapter_ready"
@@ -107,8 +111,10 @@ def test_smoke_probe_flags_missing_subpath(complete_method):
         return ["README.md", "benchmarks/present.py"]
 
     artifact = eebm.smoke_probe(
-        complete_method, "2026-04-25T00:00:00Z",
-        head_provider=head_provider, tree_provider=tree_provider,
+        complete_method,
+        "2026-04-25T00:00:00Z",
+        head_provider=head_provider,
+        tree_provider=tree_provider,
     )
     assert artifact["input_snapshot"]["repo_subpath_present"] is False
     assert "required_subpath_resolves" in artifact["metrics"]["blocking_failures"]
@@ -130,8 +136,10 @@ def test_smoke_probe_captures_unresolved_head(complete_method):
         raise AssertionError("tree_provider must not be called when head unresolved")
 
     artifact = eebm.smoke_probe(
-        complete_method, "2026-04-25T00:00:00Z",
-        head_provider=head_provider, tree_provider=tree_provider,
+        complete_method,
+        "2026-04-25T00:00:00Z",
+        head_provider=head_provider,
+        tree_provider=tree_provider,
     )
     assert artifact["input_snapshot"]["head_sha"] == ""
     assert artifact["input_snapshot"]["tree_path_count"] == 0
@@ -141,16 +149,22 @@ def test_smoke_probe_captures_unresolved_head(complete_method):
 def test_smoke_probe_captures_tree_exception_text(complete_method):
     def head_provider(_: str) -> dict[str, Any]:
         return {
-            "command": [], "returncode": 0, "stdout": "", "stderr": "",
-            "head_sha": "b" * 40, "resolved": True,
+            "command": [],
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "head_sha": "b" * 40,
+            "resolved": True,
         }
 
     def tree_provider(_url: str, _head: str) -> list[str]:
         raise RuntimeError("hypothetical clone failure")
 
     artifact = eebm.smoke_probe(
-        complete_method, "2026-04-25T00:00:00Z",
-        head_provider=head_provider, tree_provider=tree_provider,
+        complete_method,
+        "2026-04-25T00:00:00Z",
+        head_provider=head_provider,
+        tree_provider=tree_provider,
     )
     assert "hypothetical clone failure" in artifact["input_snapshot"]["tree_error"]
     assert artifact["metrics"]["integration_status"] == "adapter_incomplete"
