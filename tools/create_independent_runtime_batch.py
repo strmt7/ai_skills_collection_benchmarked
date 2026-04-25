@@ -18,7 +18,6 @@ import subprocess
 import sys
 import urllib.error
 import urllib.request
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -28,6 +27,7 @@ sys.path.insert(0, str(ROOT / "tools"))
 import audit_skill_quality
 import build_catalog
 import check_benchmark_artifact
+from _lib_b import determinism as _det
 
 BATCH_NAME = "2026-04-17-independent-runtime-readiness-batch-01"
 RUNNER_ID = "tools/create_independent_runtime_batch.py"
@@ -579,8 +579,17 @@ def run(
         category_spread=category_spread,
         exclude_skill_ids=excluded,
     )
-    catalog_commit = git_text("rev-parse", "HEAD")
-    timestamp = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    existing_manifest = paths["output"] / "manifest.json"
+    catalog_commit = _det.resolve_catalog_commit(
+        root=ROOT,
+        existing_manifest_value=_det.existing_field(existing_manifest, "catalog_commit"),
+    )
+    # Determinism: prefer SOURCE_DATE_EPOCH, then prior manifest, then the
+    # catalog's own commit time. Avoids wall-clock drift across reruns.
+    timestamp = _det.resolve_timestamp(
+        existing_manifest_value=_det.existing_field(existing_manifest, "generated_at_utc"),
+        fallback_epoch=_det.git_latest_commit_epoch_for(ROOT, [ROOT / "data" / "skills_catalog.json"]),
+    )
 
     selected: list[tuple[dict[str, Any], dict[str, Any], dict[str, Any], dict[str, Any]]] = []
     tasks: list[dict[str, Any]] = []
