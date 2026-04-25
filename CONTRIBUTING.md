@@ -77,7 +77,9 @@ email; the rule above applies **only** to AI-generated commits.
 ### Remediating a bad identity
 
 If an AI commit lands with the wrong author/committer (e.g. a named human,
-GitHub noreply, or a hyphenated `AI-agent`), rewrite history before push:
+GitHub noreply, `ai-agent@users.noreply.github.com`, `codex@openai.com`,
+`codex@openai.invalid`, or a hyphenated `AI-agent`), rewrite history before
+push:
 
 ```bash
 python3 -m pip install --user git-filter-repo  # once per machine
