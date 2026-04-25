@@ -105,9 +105,7 @@ ENTROPY_ASSIGNMENT_PATTERN = re.compile(
 )
 
 HEX_CHARSET = set("0123456789abcdefABCDEF")
-BASE64_CHARSET = set(
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="
-)
+BASE64_CHARSET = set("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=")
 
 # detect-secrets / trufflehog defaults: > 3.0 for hex, > 4.5 for base64.
 HEX_ENTROPY_THRESHOLD = 3.0
@@ -135,9 +133,7 @@ def shannon_entropy(value: str) -> float:
     counts: dict[str, int] = {}
     for char in value:
         counts[char] = counts.get(char, 0) + 1
-    return -sum(
-        (count / length) * math.log2(count / length) for count in counts.values()
-    )
+    return -sum((count / length) * math.log2(count / length) for count in counts.values())
 
 
 def _entropy_findings(line: str) -> list[str]:
@@ -157,11 +153,7 @@ def _entropy_findings(line: str) -> list[str]:
         charset = set(value)
         if charset <= HEX_CHARSET and len(value) >= 32 and entropy > HEX_ENTROPY_THRESHOLD:
             findings.append("high_entropy_hex_assignment")
-        elif (
-            charset <= BASE64_CHARSET
-            and len(value) >= 24
-            and entropy > BASE64_ENTROPY_THRESHOLD
-        ):
+        elif charset <= BASE64_CHARSET and len(value) >= 24 and entropy > BASE64_ENTROPY_THRESHOLD:
             findings.append("high_entropy_base64_assignment")
     return findings
 

@@ -81,20 +81,44 @@ def audit_entry(entry: dict[str, Any], manifest_entry: dict[str, Any]) -> dict[s
     if not skill_file.is_file():
         add("blocking", "missing-skill-file", "The mirrored directory has no root SKILL.md.")
     if not entry.get("has_required_frontmatter"):
-        add("blocking", "missing-required-frontmatter", "The source SKILL.md lacks required name/description frontmatter.")
+        add(
+            "blocking",
+            "missing-required-frontmatter",
+            "The source SKILL.md lacks required name/description frontmatter.",
+        )
     if manifest_entry.get("name_conflict_group"):
         add("warning", "duplicate-skill-name", "This skill name collides with another source; bulk install is unsafe.")
     missing_links = missing_markdown_links(mirror, text) if text else []
     if missing_links:
-        add("blocking", "missing-local-link", f"Markdown links point to missing local files: {', '.join(missing_links[:8])}.")
+        add(
+            "blocking",
+            "missing-local-link",
+            f"Markdown links point to missing local files: {', '.join(missing_links[:8])}.",
+        )
     if entry.get("line_count", 0) > 500:
-        add("warning", "oversized-skill", "SKILL.md exceeds 500 lines and may waste context unless split into references.")
+        add(
+            "warning",
+            "oversized-skill",
+            "SKILL.md exceeds 500 lines and may waste context unless split into references.",
+        )
     if entry["category"] in SCRIPT_EXPECTED_CATEGORIES and not resources.get("has_scripts"):
-        add("warning", "no-executable-validator", "This category benefits from executable validators, but no scripts/ directory was observed.")
+        add(
+            "warning",
+            "no-executable-validator",
+            "This category benefits from executable validators, but no scripts/ directory was observed.",
+        )
     if not resources.get("has_agents_metadata"):
-        add("info", "missing-agent-metadata", "No agents/openai.yaml metadata was observed for listing UI compatibility.")
+        add(
+            "info",
+            "missing-agent-metadata",
+            "No agents/openai.yaml metadata was observed for listing UI compatibility.",
+        )
     if any(pattern.search(text) for pattern in SUBAGENT_PATTERNS):
-        add("warning", "delegation-conflict-in-source", "Mirrored source mentions delegated AI work; repository AGENTS.md overrides it with single-session execution.")
+        add(
+            "warning",
+            "delegation-conflict-in-source",
+            "Mirrored source mentions delegated AI work; repository AGENTS.md overrides it with single-session execution.",
+        )
 
     blocking = sum(1 for item in findings if item["severity"] == "blocking")
     warnings = sum(1 for item in findings if item["severity"] == "warning")
@@ -208,9 +232,7 @@ def main(argv: list[str] | None = None) -> int:
             rank = {"blocking": 0, "warning": 1, "info": 2, "any": 3}
             threshold = rank[args.severity]
             filtered = [
-                item
-                for item in results["skills"]
-                if any(rank[f["severity"]] <= threshold for f in item["findings"])
+                item for item in results["skills"] if any(rank[f["severity"]] <= threshold for f in item["findings"])
             ]
             output = {**results, "skills": filtered}
         else:

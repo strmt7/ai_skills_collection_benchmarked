@@ -13,6 +13,7 @@ References:
 
 from __future__ import annotations
 
+import contextlib
 import json
 import os
 from pathlib import Path
@@ -30,11 +31,9 @@ def _atomic_write_bytes(path: Path, data: bytes) -> None:
     with open(tmp, "wb") as handle:
         handle.write(data)
         handle.flush()
-        try:
+        # Best-effort fsync: unsupported on some filesystems (e.g. tmpfs).
+        with contextlib.suppress(OSError):
             os.fsync(handle.fileno())
-        except OSError:
-            # Best-effort: fsync may be unsupported on some filesystems.
-            pass
     os.replace(tmp, path)
 
 

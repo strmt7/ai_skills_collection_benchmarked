@@ -6,9 +6,8 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import os
 import subprocess
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -96,11 +95,13 @@ def proof_for(entry: dict[str, Any], skill_text: str) -> dict[str, Any]:
         },
     ]
     if headings:
-        evidence.append({
-            "source_path": entry["source_path"],
-            "line_or_section": f"section {headings[0]}",
-            "claim": f"Observed workflow section: {headings[0]}.",
-        })
+        evidence.append(
+            {
+                "source_path": entry["source_path"],
+                "line_or_section": f"section {headings[0]}",
+                "claim": f"Observed workflow section: {headings[0]}.",
+            }
+        )
     return {
         "activation_conditions": [activation],
         "required_context": required_context,
@@ -134,24 +135,26 @@ def write_artifact(
         "skill_file_sha256": entry["skill_file_sha256"],
     }
     write_json(run_dir / "result.json", result)
-    transcript = "\n".join([
-        f"batch: {batch_name}",
-        f"timestamp_utc: {timestamp_utc}",
-        "runner: tools/create_source_proof_batch.py",
-        f"catalog_commit: {catalog_commit}",
-        f"skill_id: {entry['id']}",
-        f"scenario_id: {scenario['id']}",
-        f"read: {entry['mirrored_path']}/SKILL.md",
-        f"source: {entry['immutable_source_url']}",
-        f"skill_file_sha256: {entry['skill_file_sha256']}",
-        f"line_count: {skill_text.count(chr(10)) + 1}",
-        "checks:",
-        "- parsed SKILL.md frontmatter/body",
-        "- produced source-grounded proof JSON",
-        "- recorded source path citations",
-        "- validated artifact with tools/check_benchmark_artifact.py",
-        "",
-    ])
+    transcript = "\n".join(
+        [
+            f"batch: {batch_name}",
+            f"timestamp_utc: {timestamp_utc}",
+            "runner: tools/create_source_proof_batch.py",
+            f"catalog_commit: {catalog_commit}",
+            f"skill_id: {entry['id']}",
+            f"scenario_id: {scenario['id']}",
+            f"read: {entry['mirrored_path']}/SKILL.md",
+            f"source: {entry['immutable_source_url']}",
+            f"skill_file_sha256: {entry['skill_file_sha256']}",
+            f"line_count: {skill_text.count(chr(10)) + 1}",
+            "checks:",
+            "- parsed SKILL.md frontmatter/body",
+            "- produced source-grounded proof JSON",
+            "- recorded source path citations",
+            "- validated artifact with tools/check_benchmark_artifact.py",
+            "",
+        ]
+    )
     (run_dir / "transcript.txt").write_text(transcript, encoding="utf-8")
     artifact = {
         "artifact_version": "1.0",
@@ -221,10 +224,16 @@ def write_artifact(
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Create source-grounded benchmark artifacts for a category-spread first batch.")
-    parser.add_argument("--batch-name", default="2026-04-17-first-source-proofs", help="Calendar-qualified batch directory name.")
+    parser = argparse.ArgumentParser(
+        description="Create source-grounded benchmark artifacts for a category-spread first batch."
+    )
+    parser.add_argument(
+        "--batch-name", default="2026-04-17-first-source-proofs", help="Calendar-qualified batch directory name."
+    )
     parser.add_argument("--limit", type=int, default=10, help="Maximum number of skills to include.")
-    parser.add_argument("--catalog-commit", default=None, help="Override the recorded catalog commit (defaults to HEAD).")
+    parser.add_argument(
+        "--catalog-commit", default=None, help="Override the recorded catalog commit (defaults to HEAD)."
+    )
     return parser
 
 
@@ -234,20 +243,22 @@ def main(argv: list[str] | None = None) -> int:
     catalog = load_json(ROOT / "data" / "skills_catalog.json")
     scenarios = {item["id"]: item for item in load_json(ROOT / "data" / "benchmark_scenarios.json")}
     catalog_commit = args.catalog_commit or git_sha("HEAD")
-    timestamp = datetime.now(UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    timestamp = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
     batch_dir = ROOT / "artifacts" / "benchmark-runs" / args.batch_name
     selected = select_category_spread(catalog, args.limit)
     results = []
     for entry in selected:
         scenario_id = f"skill-proof-{entry['id']}"
-        results.append(write_artifact(
-            batch_dir=batch_dir,
-            batch_name=args.batch_name,
-            catalog_commit=catalog_commit,
-            entry=entry,
-            scenario=scenarios[scenario_id],
-            timestamp_utc=timestamp,
-        ))
+        results.append(
+            write_artifact(
+                batch_dir=batch_dir,
+                batch_name=args.batch_name,
+                catalog_commit=catalog_commit,
+                entry=entry,
+                scenario=scenarios[scenario_id],
+                timestamp_utc=timestamp,
+            )
+        )
     manifest = {
         "batch_name": args.batch_name,
         "catalog_commit": catalog_commit,
