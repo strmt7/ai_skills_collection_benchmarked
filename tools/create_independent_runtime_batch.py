@@ -651,16 +651,20 @@ def run(
     return manifest_data
 
 
-def main() -> None:
+def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Create independent runtime-readiness benchmark artifacts.")
-    parser.add_argument("--limit", type=int, default=10)
-    parser.add_argument("--batch-name", default=BATCH_NAME)
-    parser.add_argument("--batch-slug", default="batch-01")
-    parser.add_argument("--risk-level", default=RISK_LEVEL)
+    parser.add_argument("--limit", type=int, default=10, help="Maximum number of skills to evaluate in this batch.")
+    parser.add_argument("--batch-name", default=BATCH_NAME, help="Calendar-qualified batch identifier (e.g. 2026-04-17-…).")
+    parser.add_argument("--batch-slug", default="batch-01", help="Short slug appended to the batch directory name.")
+    parser.add_argument("--risk-level", default=RISK_LEVEL, help="Skill risk level filter (matches audit_skill_quality output).")
     parser.add_argument("--include-visual", action="store_true", help="Include visual/browser categories in this readiness batch.")
     parser.add_argument("--category-spread", action="store_true", help="Select across categories before filling remaining slots.")
     parser.add_argument("--avoid-existing-independent", action="store_true", help="Exclude skills already covered by earlier independent runtime artifacts.")
-    args = parser.parse_args()
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = build_parser().parse_args(argv)
     manifest = run(
         args.limit,
         batch_name=args.batch_name,
@@ -674,7 +678,8 @@ def main() -> None:
         f"Independent runtime readiness artifacts: {manifest['summary']['artifact_count']} "
         f"created, {manifest['summary']['passed']} passed, {manifest['summary']['failed']} failed."
     )
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
