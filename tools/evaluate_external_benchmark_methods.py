@@ -328,8 +328,31 @@ def adapter_complete(method: dict[str, Any]) -> bool:
     )
 
 
-def smoke_probe(method: dict[str, Any], timestamp: str) -> dict[str, Any]:
-    head = git_head(method["repo_url"])
+# Type aliases so tests can substitute in-memory providers without hitting the
+# network. Production code uses the module-level functions above; tests pass
+# pure-Python fakes that return fixture data.
+from collections.abc import Callable  # noqa: E402
+
+HeadProvider = Callable[[str], dict[str, Any]]
+TreeProvider = Callable[[str, str], list[str]]
+
+
+def smoke_probe(
+    method: dict[str, Any],
+    timestamp: str,
+    *,
+    head_provider: HeadProvider | None = None,
+    tree_provider: TreeProvider | None = None,
+) -> dict[str, Any]:
+    """Probe a single external-benchmark adapter definition.
+
+    ``head_provider`` and ``tree_provider`` default to the network-backed
+    ``git_head`` / ``github_tree_paths`` helpers above; tests inject
+    deterministic stand-ins.
+    """
+    get_head = head_provider or git_head
+    get_tree_paths = tree_provider or github_tree_paths
+    head = get_head(method["repo_url"])
     subpath = method.get("repo_subpath")
     sampled_paths: list[str] = []
     subpath_present: bool | None = None
@@ -337,7 +360,7 @@ def smoke_probe(method: dict[str, Any], timestamp: str) -> dict[str, Any]:
     tree_error = ""
     if head["resolved"]:
         try:
-            paths = github_tree_paths(method["repo_url"], head["head_sha"])
+            paths = get_tree_paths(method["repo_url"], head["head_sha"])
             tree_path_count = len(paths)
             sampled_paths = paths[:20]
             if subpath:
