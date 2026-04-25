@@ -132,7 +132,9 @@ def resolve_dataset_snapshot(track: dict[str, Any]) -> tuple[dict[str, Any], lis
         "head_sha": head_sha,
         "track_subpath": subpath,
         "resolved": bool(head_sha),
-        "tree_api_url": f"https://api.github.com/repos/{owner}/{repo}/git/trees/{head_sha}?recursive=1" if head_sha else "",
+        "tree_api_url": f"https://api.github.com/repos/{owner}/{repo}/git/trees/{head_sha}?recursive=1"
+        if head_sha
+        else "",
         "sampled_paths": [],
         "tree_path_count": 0,
         "tree_truncated": None,
@@ -302,12 +304,14 @@ def evaluate_skill(
         },
         {
             "name": "assigned_non_provenance_scenario",
-            "passed": scenario.get("dataset_track_id") != "source-skill-repository" and scenario["id"] in entry["benchmark_scenarios"],
+            "passed": scenario.get("dataset_track_id") != "source-skill-repository"
+            and scenario["id"] in entry["benchmark_scenarios"],
             "evidence": scenario["id"],
         },
         {
             "name": "independent_task_brief_present",
-            "passed": task["expected_result"]["all_required_checks_pass"] is True and task["required_checks"] == REQUIRED_CHECKS,
+            "passed": task["expected_result"]["all_required_checks_pass"] is True
+            and task["required_checks"] == REQUIRED_CHECKS,
             "evidence": tasks_path.relative_to(ROOT).as_posix(),
         },
         {
@@ -427,14 +431,16 @@ def render_transcript(
     ]
     for command in commands:
         lines.append(json.dumps(command, indent=2, sort_keys=True))
-    lines.extend([
-        "",
-        "Result metrics:",
-        json.dumps(result["metrics"], indent=2, sort_keys=True),
-        "",
-        "Blocking failures:",
-        json.dumps(result["outputs"]["blocking_failures"], indent=2, sort_keys=True),
-    ])
+    lines.extend(
+        [
+            "",
+            "Result metrics:",
+            json.dumps(result["metrics"], indent=2, sort_keys=True),
+            "",
+            "Blocking failures:",
+            json.dumps(result["outputs"]["blocking_failures"], indent=2, sort_keys=True),
+        ]
+    )
     return "\n".join(lines) + "\n"
 
 
@@ -585,18 +591,29 @@ def run(
         task = build_task(entry, scenario, track)
         selected.append((entry, scenario, track, task))
         tasks.append(task)
-    write_json(paths["tasks"], {
-        "batch_name": batch_name,
-        "task_count": len(tasks),
-        "selection_policy": (
-            ("category-spread " if category_spread else "first ")
-            + f"{limit} {risk_level} skills with assigned non-provenance repository workflows"
-            + (" including visual categories" if include_visual else " excluding visual/browser categories for this readiness batch")
-            + (" and excluding skills already covered by earlier independent runtime artifacts" if avoid_existing_independent else "")
-        ),
-        "required_checks": REQUIRED_CHECKS,
-        "tasks": tasks,
-    })
+    write_json(
+        paths["tasks"],
+        {
+            "batch_name": batch_name,
+            "task_count": len(tasks),
+            "selection_policy": (
+                ("category-spread " if category_spread else "first ")
+                + f"{limit} {risk_level} skills with assigned non-provenance repository workflows"
+                + (
+                    " including visual categories"
+                    if include_visual
+                    else " excluding visual/browser categories for this readiness batch"
+                )
+                + (
+                    " and excluding skills already covered by earlier independent runtime artifacts"
+                    if avoid_existing_independent
+                    else ""
+                )
+            ),
+            "required_checks": REQUIRED_CHECKS,
+            "tasks": tasks,
+        },
+    )
 
     artifact_summaries: list[dict[str, Any]] = []
     output_root = paths["output"]
@@ -606,27 +623,43 @@ def run(
         artifact_dir = output_root / build_catalog.slug(entry["id"]) / build_catalog.slug(scenario["id"])
         artifact_dir.mkdir(parents=True, exist_ok=True)
         write_json(artifact_dir / "dataset_snapshot.json", dataset_snapshot)
-        result = evaluate_skill(entry, manifest[entry["id"]], scenario, task, dataset_snapshot, paths["tasks"], risk_level)
+        result = evaluate_skill(
+            entry, manifest[entry["id"]], scenario, task, dataset_snapshot, paths["tasks"], risk_level
+        )
         write_json(artifact_dir / "result.json", result)
         (artifact_dir / "transcript.txt").write_text(
             render_transcript(entry, scenario, task, dataset_snapshot, commands, result, batch_name),
             encoding="utf-8",
         )
-        artifact = artifact_for(entry, scenario, track, task, dataset_snapshot, result, timestamp, catalog_commit, artifact_dir, batch_name, paths["tasks"])
+        artifact = artifact_for(
+            entry,
+            scenario,
+            track,
+            task,
+            dataset_snapshot,
+            result,
+            timestamp,
+            catalog_commit,
+            artifact_dir,
+            batch_name,
+            paths["tasks"],
+        )
         write_json(artifact_dir / "artifact.json", artifact)
         validation = check_benchmark_artifact.validate_artifact(artifact_dir / "artifact.json")
         if validation["verdict"] != "artifact_complete":
             raise SystemExit(f"incomplete artifact for {entry['id']}: {validation}")
-        artifact_summaries.append({
-            "skill_id": entry["id"],
-            "scenario_id": scenario["id"],
-            "dataset_track_id": track["id"],
-            "artifact_path": (artifact_dir / "artifact.json").relative_to(ROOT).as_posix(),
-            "result_path": (artifact_dir / "result.json").relative_to(ROOT).as_posix(),
-            "benchmark_verdict": result["metrics"]["benchmark_verdict"],
-            "score_percent": result["metrics"]["score_percent"],
-            "blocking_failures": result["outputs"]["blocking_failures"],
-        })
+        artifact_summaries.append(
+            {
+                "skill_id": entry["id"],
+                "scenario_id": scenario["id"],
+                "dataset_track_id": track["id"],
+                "artifact_path": (artifact_dir / "artifact.json").relative_to(ROOT).as_posix(),
+                "result_path": (artifact_dir / "result.json").relative_to(ROOT).as_posix(),
+                "benchmark_verdict": result["metrics"]["benchmark_verdict"],
+                "score_percent": result["metrics"]["score_percent"],
+                "blocking_failures": result["outputs"]["blocking_failures"],
+            }
+        )
 
     passed = sum(1 for item in artifact_summaries if item["benchmark_verdict"] == "passed")
     failed = sum(1 for item in artifact_summaries if item["benchmark_verdict"] == "failed")
@@ -654,12 +687,24 @@ def run(
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Create independent runtime-readiness benchmark artifacts.")
     parser.add_argument("--limit", type=int, default=10, help="Maximum number of skills to evaluate in this batch.")
-    parser.add_argument("--batch-name", default=BATCH_NAME, help="Calendar-qualified batch identifier (e.g. 2026-04-17-…).")
+    parser.add_argument(
+        "--batch-name", default=BATCH_NAME, help="Calendar-qualified batch identifier (e.g. 2026-04-17-…)."
+    )
     parser.add_argument("--batch-slug", default="batch-01", help="Short slug appended to the batch directory name.")
-    parser.add_argument("--risk-level", default=RISK_LEVEL, help="Skill risk level filter (matches audit_skill_quality output).")
-    parser.add_argument("--include-visual", action="store_true", help="Include visual/browser categories in this readiness batch.")
-    parser.add_argument("--category-spread", action="store_true", help="Select across categories before filling remaining slots.")
-    parser.add_argument("--avoid-existing-independent", action="store_true", help="Exclude skills already covered by earlier independent runtime artifacts.")
+    parser.add_argument(
+        "--risk-level", default=RISK_LEVEL, help="Skill risk level filter (matches audit_skill_quality output)."
+    )
+    parser.add_argument(
+        "--include-visual", action="store_true", help="Include visual/browser categories in this readiness batch."
+    )
+    parser.add_argument(
+        "--category-spread", action="store_true", help="Select across categories before filling remaining slots."
+    )
+    parser.add_argument(
+        "--avoid-existing-independent",
+        action="store_true",
+        help="Exclude skills already covered by earlier independent runtime artifacts.",
+    )
     return parser
 
 

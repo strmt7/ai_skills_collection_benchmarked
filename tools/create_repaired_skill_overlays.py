@@ -9,7 +9,6 @@ be fixed without hiding the original audit findings.
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import logging
 import re
@@ -106,10 +105,7 @@ def ensure_frontmatter(text: str, entry: dict[str, Any]) -> tuple[str, list[dict
         if meta.get("name") and meta.get("description"):
             return text, []
     frontmatter = (
-        "---\n"
-        f"name: {yaml_scalar(entry['install_name'])}\n"
-        f"description: {yaml_scalar(entry['description'])}\n"
-        "---\n\n"
+        f"---\nname: {yaml_scalar(entry['install_name'])}\ndescription: {yaml_scalar(entry['description'])}\n---\n\n"
     )
     return frontmatter + text, [{"type": "added-required-frontmatter", "name": entry["install_name"]}]
 
@@ -176,7 +172,13 @@ def copy_linked_local_targets(text: str, original_dir: Path, repaired_dir: Path)
 
 
 def repaired_path_for(entry: dict[str, Any]) -> Path:
-    return REPAIRED_ROOT / "by-category" / build_catalog.slug(entry["category"]) / build_catalog.slug(entry["subcategory"]) / entry["install_name"]
+    return (
+        REPAIRED_ROOT
+        / "by-category"
+        / build_catalog.slug(entry["category"])
+        / build_catalog.slug(entry["subcategory"])
+        / entry["install_name"]
+    )
 
 
 def evaluate_repaired_skill(
@@ -192,18 +194,54 @@ def evaluate_repaired_skill(
     original_skill = original_dir / "SKILL.md"
     repaired_skill = repaired_dir / "SKILL.md"
     repaired_text = repaired_skill.read_text(encoding="utf-8", errors="replace") if repaired_skill.is_file() else ""
-    repaired_missing_links = audit_skill_quality.missing_markdown_links(repaired_dir, repaired_text) if repaired_text else []
+    repaired_missing_links = (
+        audit_skill_quality.missing_markdown_links(repaired_dir, repaired_text) if repaired_text else []
+    )
     repaired_meta, _ = build_catalog.parse_frontmatter(repaired_text)
     checks = [
-        {"name": "real_dataset_snapshot_resolved", "passed": dataset_snapshot.get("resolved") is True, "evidence": dataset_snapshot.get("repo_url") or dataset_snapshot.get("url")},
-        {"name": "original_mirror_unchanged", "passed": original_skill.is_file() and build_catalog.sha256_file(original_skill) == entry["skill_file_sha256"], "evidence": entry["skill_file_sha256"]},
-        {"name": "repaired_skill_file_exists", "passed": repaired_skill.is_file(), "evidence": repaired_dir.relative_to(ROOT).as_posix() + "/SKILL.md"},
-        {"name": "source_text_preserved", "passed": (repaired_dir / "provenance" / "original.SKILL.md").is_file() and sha256_file(repaired_dir / "provenance" / "original.SKILL.md") == sha256_file(original_skill), "evidence": "provenance/original.SKILL.md"},
-        {"name": "required_frontmatter_present_after_repair", "passed": bool(repaired_meta.get("name") and repaired_meta.get("description")), "evidence": sorted(repaired_meta.keys())},
-        {"name": "local_markdown_links_resolve_after_repair", "passed": not repaired_missing_links, "evidence": repaired_missing_links},
+        {
+            "name": "real_dataset_snapshot_resolved",
+            "passed": dataset_snapshot.get("resolved") is True,
+            "evidence": dataset_snapshot.get("repo_url") or dataset_snapshot.get("url"),
+        },
+        {
+            "name": "original_mirror_unchanged",
+            "passed": original_skill.is_file()
+            and build_catalog.sha256_file(original_skill) == entry["skill_file_sha256"],
+            "evidence": entry["skill_file_sha256"],
+        },
+        {
+            "name": "repaired_skill_file_exists",
+            "passed": repaired_skill.is_file(),
+            "evidence": repaired_dir.relative_to(ROOT).as_posix() + "/SKILL.md",
+        },
+        {
+            "name": "source_text_preserved",
+            "passed": (repaired_dir / "provenance" / "original.SKILL.md").is_file()
+            and sha256_file(repaired_dir / "provenance" / "original.SKILL.md") == sha256_file(original_skill),
+            "evidence": "provenance/original.SKILL.md",
+        },
+        {
+            "name": "required_frontmatter_present_after_repair",
+            "passed": bool(repaired_meta.get("name") and repaired_meta.get("description")),
+            "evidence": sorted(repaired_meta.keys()),
+        },
+        {
+            "name": "local_markdown_links_resolve_after_repair",
+            "passed": not repaired_missing_links,
+            "evidence": repaired_missing_links,
+        },
         {"name": "same_independent_task_fixture", "passed": bool(task_path), "evidence": task_path},
-        {"name": "same_non_provenance_scenario", "passed": scenario.get("dataset_track_id") != "source-skill-repository", "evidence": scenario["id"]},
-        {"name": "repair_actions_recorded", "passed": bool(repair_record.get("actions")), "evidence": repair_record.get("actions", [])},
+        {
+            "name": "same_non_provenance_scenario",
+            "passed": scenario.get("dataset_track_id") != "source-skill-repository",
+            "evidence": scenario["id"],
+        },
+        {
+            "name": "repair_actions_recorded",
+            "passed": bool(repair_record.get("actions")),
+            "evidence": repair_record.get("actions", []),
+        },
     ]
     passed = sum(1 for check in checks if check["passed"])
     total = len(checks)
@@ -297,7 +335,7 @@ def write_artifact(
     catalog_commit: str,
 ) -> dict[str, Any]:
     result_path = artifact_dir / "result.json"
-    transcript_path = artifact_dir / "transcript.txt"
+    artifact_dir / "transcript.txt"
     repair_path = artifact_dir / "repair.json"
     artifact = {
         "artifact_version": "1.0",
@@ -316,7 +354,8 @@ def write_artifact(
         },
         "input_snapshot": {
             "kind": result["inputs"]["dataset_snapshot"]["kind"],
-            "identifier": result["inputs"]["dataset_snapshot"].get("repo_url") or result["inputs"]["dataset_snapshot"].get("url"),
+            "identifier": result["inputs"]["dataset_snapshot"].get("repo_url")
+            or result["inputs"]["dataset_snapshot"].get("url"),
             "is_real": True,
             "original_runtime_artifact": str(original["artifact_path"].relative_to(ROOT)),
             "original_mirrored_path": entry["mirrored_path"],
@@ -389,9 +428,7 @@ def render_manifest_doc(manifest: dict[str, Any]) -> str:
     return "\n".join(lines) + "\n"
 
 
-def _preserve_original_provenance(
-    *, original_skill: Path, repaired_dir: Path, skill_id: str
-) -> Path:
+def _preserve_original_provenance(*, original_skill: Path, repaired_dir: Path, skill_id: str) -> Path:
     """Copy the exact original SKILL.md text to the provenance dir.
 
     Refuses to overwrite an existing provenance copy with different bytes.
@@ -416,8 +453,7 @@ def _preserve_original_provenance(
     # Sanity check: the copy must byte-match the source.
     if sha256_file(dest) != original_hash:
         raise SystemExit(
-            f"provenance copy for {skill_id} does not match upstream sha256; "
-            "filesystem corruption or race detected"
+            f"provenance copy for {skill_id} does not match upstream sha256; filesystem corruption or race detected"
         )
     return dest
 
@@ -436,16 +472,12 @@ def run() -> dict[str, Any]:
     # manifest values; fall back to the latest commit that touched the input
     # artifact set so wall-clock noise cannot leak in.
     failed_artifacts = failed_runtime_artifacts()
-    fallback_epoch = _det.git_latest_commit_epoch_for(
-        ROOT, [item["artifact_path"] for item in failed_artifacts]
-    )
+    fallback_epoch = _det.git_latest_commit_epoch_for(ROOT, [item["artifact_path"] for item in failed_artifacts])
     timestamp = _det.resolve_timestamp(
         existing_manifest_value=existing_timestamp,
         fallback_epoch=fallback_epoch,
     )
-    catalog_commit = _det.resolve_catalog_commit(
-        root=ROOT, existing_manifest_value=existing_commit
-    )
+    catalog_commit = _det.resolve_catalog_commit(root=ROOT, existing_manifest_value=existing_commit)
     _LOG.info(
         "repaired-overlay run: ts=%s commit=%s failed_inputs=%d",
         timestamp,
@@ -501,9 +533,7 @@ def run() -> dict[str, Any]:
         original_snapshot = original["result"]["inputs"].get("dataset_snapshot", {})
         if original_snapshot.get("resolved") is True:
             dataset_snapshot = dict(original_snapshot)
-            dataset_snapshot["reused_from_original_artifact"] = str(
-                original["artifact_path"].relative_to(ROOT)
-            )
+            dataset_snapshot["reused_from_original_artifact"] = str(original["artifact_path"].relative_to(ROOT))
             dataset_snapshot["reuse_reason"] = (
                 "deterministic regeneration: the repair-overlay loop pins to "
                 "the original benchmark's recorded snapshot instead of a new "
@@ -512,11 +542,11 @@ def run() -> dict[str, Any]:
         else:
             # Last resort: live probe (only reachable if the original artifact
             # itself did not resolve the snapshot).
-            dataset_snapshot, _commands = (
-                create_independent_runtime_batch.resolve_dataset_snapshot(track)
-            )
+            dataset_snapshot, _commands = create_independent_runtime_batch.resolve_dataset_snapshot(track)
         task_path = original["result"]["inputs"].get("task_brief_path", "")
-        result = evaluate_repaired_skill(entry, original, repaired_dir, scenario, dataset_snapshot, task_path, repair_record)
+        result = evaluate_repaired_skill(
+            entry, original, repaired_dir, scenario, dataset_snapshot, task_path, repair_record
+        )
         artifact_dir = ARTIFACT_ROOT / build_catalog.slug(skill_id) / build_catalog.slug(scenario["id"])
         artifact_dir.mkdir(parents=True, exist_ok=True)
         write_json(artifact_dir / "dataset_snapshot.json", dataset_snapshot)
@@ -620,9 +650,7 @@ def main() -> int:
             "integrity, and rendered docs. Exits non-zero on drift."
         ),
     )
-    parser.add_argument(
-        "--verbose", action="store_true", help="Enable DEBUG-level logging."
-    )
+    parser.add_argument("--verbose", action="store_true", help="Enable DEBUG-level logging.")
     args = parser.parse_args()
     _logging.setup_cli_logging(RUNNER_ID, verbose=args.verbose)
     if args.check:

@@ -8,20 +8,20 @@ observed SKILL.md file and carry an immutable commit URL.
 
 from __future__ import annotations
 
-import json
+import argparse
 import hashlib
+import json
 import os
 import re
 import shutil
 import subprocess
-import argparse
 from pathlib import Path
 from typing import Any
 
 try:
     import yaml
 except Exception:  # pragma: no cover
-    yaml = None
+    yaml = None  # type: ignore[assignment]
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -29,12 +29,23 @@ SOURCE_ROOT = Path(os.environ.get("AI_SKILL_SOURCE_ROOT", "/tmp/ai_skill_sources
 BUILD_DATE = "2026-04-17"
 MIN_SCENARIOS = 3
 GENERIC_WORKFLOW_REQUIRED = ["inputs", "steps", "outputs", "metrics", "citations_or_paths"]
-SOURCE_PROOF_REQUIRED = ["activation_conditions", "required_context", "safe_boundaries", "workflow_steps", "proof_evidence"]
+SOURCE_PROOF_REQUIRED = [
+    "activation_conditions",
+    "required_context",
+    "safe_boundaries",
+    "workflow_steps",
+    "proof_evidence",
+]
 SECRET_PLACEHOLDERS = [
     (re.compile(r"AIza[0-9A-Za-z_-]{35}"), "<GOOGLE_API_KEY>"),
     (re.compile(r"(?:A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}"), "<AWS_ACCESS_KEY_ID>"),
     (re.compile(r"(?<![A-Za-z0-9_-])sk-(?:proj-)?[A-Za-z0-9_]{20,}(?![A-Za-z0-9_-])"), "<OPENAI_API_KEY>"),
-    (re.compile(r"(?<![A-Za-z0-9_-])sk-(?:proj-)?(?:[xX][xX-]{2,}|\.{3}|[A-Za-z0-9][A-Za-z0-9_.-]*\.{3})(?![A-Za-z0-9_-])"), "<API_KEY>"),
+    (
+        re.compile(
+            r"(?<![A-Za-z0-9_-])sk-(?:proj-)?(?:[xX][xX-]{2,}|\.{3}|[A-Za-z0-9][A-Za-z0-9_.-]*\.{3})(?![A-Za-z0-9_-])"
+        ),
+        "<API_KEY>",
+    ),
     (re.compile(r"(?:gh[pousr]_[A-Za-z0-9_]{30,}|github_pat_[A-Za-z0-9_]{20,})"), "<GITHUB_TOKEN>"),
     (re.compile(r"\bgh[pousr]_[A-Za-z0-9_.-]+"), "<GITHUB_TOKEN>"),
     (re.compile(r"\bgithub_pat_[A-Za-z0-9_.-]+"), "<GITHUB_TOKEN>"),
@@ -63,72 +74,426 @@ PACKAGE_LOCK_SECURITY_OVERRIDES = {
 
 
 SOURCES: list[dict[str, Any]] = [
-    {"repo": "strmt7/simple_ai_bitcoin_trading_binance", "dir": "strmt7__simple_ai_bitcoin_trading_binance", "tier": "selected-project-reference", "group": "selected project repository", "policy": "default-branch HEAD; GitHub API reported no latest release", "prefixes": [".agents/skills/"], "selected_subset": True},
-    {"repo": "strmt7/ome-zarr-C", "dir": "strmt7__ome-zarr-C", "tier": "selected-project-reference", "group": "selected project repository", "policy": "default-branch HEAD; GitHub API reported no latest release", "prefixes": [".agents/skills/"], "selected_subset": True},
-    {"repo": "strmt7/project_air_defense", "dir": "strmt7__project_air_defense", "tier": "selected-project-reference", "group": "selected project repository", "policy": "default-branch HEAD; GitHub API reported no latest release", "prefixes": [".agents/skills/", "skills/"], "selected_subset": True},
-    {"repo": "ZMB-UZH/omero-docker-extended", "dir": "ZMB-UZH__omero-docker-extended", "tier": "selected-omero-reference", "group": "selected OMERO repository", "policy": "default-branch HEAD; GitHub API reported no latest release", "prefixes": [".agents/skills/", "third_party/"], "selected_subset": True},
-    {"repo": "anthropics/skills", "dir": "anthropics__skills", "tier": "official-reference", "group": "official skill reference", "policy": "default-branch HEAD; GitHub API reported no latest release", "prefixes": ["skills/"], "exclude_prefixes": ["template/"]},
-    {"repo": "K-Dense-AI/scientific-agent-skills", "dir": "K-Dense-AI__scientific-agent-skills", "tier": "latest-release-community", "group": "latest release scientific skills", "policy": "latest GitHub release v2.37.1", "tag": "v2.37.1", "release_url": "https://github.com/K-Dense-AI/scientific-agent-skills/releases/tag/v2.37.1", "prefixes": ["scientific-skills/"]},
-    {"repo": "microsoft/skills", "dir": "microsoft__skills", "tier": "official-vendor-reference", "group": "Microsoft skills reference", "policy": "default-branch HEAD; GitHub API reported no latest release", "prefixes": [".github/plugins/", ".github/skills/"]},
-    {"repo": "trailofbits/skills", "dir": "trailofbits__skills", "tier": "security-reference", "group": "security and audit skills", "policy": "default-branch HEAD; GitHub API reported no latest release"},
-    {"repo": "ahmedasmar/devops-claude-skills", "dir": "ahmedasmar__devops-claude-skills", "tier": "devops-reference", "group": "DevOps skills", "policy": "default-branch HEAD; GitHub API reported no latest release"},
-    {"repo": "akin-ozer/cc-devops-skills", "dir": "akin-ozer__cc-devops-skills", "tier": "latest-release-devops", "group": "latest release DevOps skills", "policy": "latest GitHub release v1.0.0", "tag": "v1.0.0", "release_url": "https://github.com/akin-ozer/cc-devops-skills/releases/tag/v1.0.0"},
-    {"repo": "composio-community/support-skills", "dir": "composio-community__support-skills", "tier": "support-reference", "group": "customer support skills", "policy": "default-branch HEAD; GitHub API reported no latest release"},
-    {"repo": "browser-act/skills", "dir": "browser-act__skills", "tier": "browser-automation-reference", "group": "browser and web automation skills", "policy": "default-branch HEAD; GitHub API reported no latest release"},
-    {"repo": "lackeyjb/playwright-skill", "dir": "lackeyjb__playwright-skill", "tier": "latest-release-browser-automation", "group": "latest release browser automation skill", "policy": "latest GitHub release v4.1.0", "tag": "v4.1.0", "release_url": "https://github.com/lackeyjb/playwright-skill/releases/tag/v4.1.0"},
-    {"repo": "twwch/comfyui-workflow-skill", "dir": "twwch__comfyui-workflow-skill", "tier": "creative-reference", "group": "creative media skills", "policy": "default-branch HEAD; GitHub API reported no latest release"},
-    {"repo": "EvoLinkAI/video-generation-skill-for-openclaw", "dir": "EvoLinkAI__video-generation-skill-for-openclaw", "tier": "creative-reference", "group": "creative media skills", "policy": "default-branch HEAD; GitHub API reported no latest release"},
-    {"repo": "EvoLinkAI/music-generation-skill-for-openclaw", "dir": "EvoLinkAI__music-generation-skill-for-openclaw", "tier": "creative-reference", "group": "creative media skills", "policy": "default-branch HEAD; GitHub API reported no latest release"},
-    {"repo": "designrique/ai-graphic-design-skill", "dir": "designrique__ai-graphic-design-skill", "tier": "creative-reference", "group": "creative media skills", "policy": "default-branch HEAD; GitHub API reported no latest release"},
-    {"repo": "yuvalsuede/agent-media-skill", "dir": "yuvalsuede__agent-media-skill", "tier": "creative-reference", "group": "creative media skills", "policy": "default-branch HEAD; GitHub API reported no latest release"},
-    {"repo": "Raven7979/ai-video-editing-skill", "dir": "Raven7979__ai-video-editing-skill", "tier": "creative-reference", "group": "creative media skills", "policy": "default-branch HEAD; GitHub API reported no latest release"},
-    {"repo": "ztj7728/gemini-image-generation", "dir": "ztj7728__gemini-image-generation", "tier": "creative-reference", "group": "creative media skills", "policy": "default-branch HEAD; GitHub API reported no latest release"},
-    {"repo": "fruteroclub/marketing-designer", "dir": "fruteroclub__marketing-designer", "tier": "creative-reference", "group": "creative media skills", "policy": "default-branch HEAD; GitHub API reported no latest release"},
-    {"repo": "Bria-AI/bria-skill", "dir": "Bria-AI__bria-skill", "tier": "latest-release-creative", "group": "latest release creative media skills", "policy": "latest GitHub release v1.3.1", "tag": "v1.3.1", "release_url": "https://github.com/Bria-AI/bria-skill/releases/tag/v1.3.1"},
-    {"repo": "nextlevelbuilder/ui-ux-pro-max-skill", "dir": "nextlevelbuilder__ui-ux-pro-max-skill", "tier": "latest-release-creative", "group": "latest release UI/UX skills", "policy": "latest GitHub release v2.5.0", "tag": "v2.5.0", "release_url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/releases/tag/v2.5.0"},
-    {"repo": "guinacio/claude-image-gen", "dir": "guinacio__claude-image-gen", "tier": "latest-release-creative", "group": "latest release image generation skill", "policy": "latest GitHub release 1.0.2", "tag": "1.0.2", "release_url": "https://github.com/guinacio/claude-image-gen/releases/tag/1.0.2"},
-    {"repo": "hugohe3/ppt-master", "dir": "hugohe3__ppt-master", "tier": "latest-release-creative", "group": "latest release presentation skill", "policy": "latest GitHub release v2.3.0", "tag": "v2.3.0", "release_url": "https://github.com/hugohe3/ppt-master/releases/tag/v2.3.0"},
-    {"repo": "aizzaku/create-infographics", "dir": "aizzaku__create-infographics", "tier": "creative-reference", "group": "creative media skills", "policy": "default-branch HEAD; GitHub API reported no latest release"},
-    {"repo": "Varnan-Tech/opendirectory", "dir": "Varnan-Tech__opendirectory", "tier": "reddit-verified-gtm-registry", "group": "Reddit r/codex open-source Codex skills signal; GitHub SKILL.md files verified", "policy": "default-branch HEAD; GitHub API reported no latest release", "prefixes": ["packages/cli/skills/"], "max_path_parts": 5},
-    {"repo": "supermemoryai/skills", "dir": "supermemoryai__skills", "tier": "reddit-verified-creative-skill", "group": "Reddit r/codex linked skill; GitHub SKILL.md verified", "policy": "default-branch HEAD; GitHub API reported no latest release", "prefixes": ["svg-animations/"]},
-    {"repo": "hardikpandya/stop-slop", "dir": "hardikpandya__stop-slop", "tier": "reddit-verified-writing-skill", "group": "Reddit r/codex linked skill; GitHub SKILL.md verified", "policy": "default-branch HEAD; GitHub API reported no latest release"},
-    {"repo": "affaan-m/everything-claude-code", "dir": "affaan-m__everything-claude-code", "tier": "selected-structure-reference", "group": "selected repository structure reference", "policy": "latest GitHub release v1.10.0", "tag": "v1.10.0", "release_url": "https://github.com/affaan-m/everything-claude-code/releases/tag/v1.10.0", "prefixes": [".agents/skills/"]},
+    {
+        "repo": "strmt7/simple_ai_bitcoin_trading_binance",
+        "dir": "strmt7__simple_ai_bitcoin_trading_binance",
+        "tier": "selected-project-reference",
+        "group": "selected project repository",
+        "policy": "default-branch HEAD; GitHub API reported no latest release",
+        "prefixes": [".agents/skills/"],
+        "selected_subset": True,
+    },
+    {
+        "repo": "strmt7/ome-zarr-C",
+        "dir": "strmt7__ome-zarr-C",
+        "tier": "selected-project-reference",
+        "group": "selected project repository",
+        "policy": "default-branch HEAD; GitHub API reported no latest release",
+        "prefixes": [".agents/skills/"],
+        "selected_subset": True,
+    },
+    {
+        "repo": "strmt7/project_air_defense",
+        "dir": "strmt7__project_air_defense",
+        "tier": "selected-project-reference",
+        "group": "selected project repository",
+        "policy": "default-branch HEAD; GitHub API reported no latest release",
+        "prefixes": [".agents/skills/", "skills/"],
+        "selected_subset": True,
+    },
+    {
+        "repo": "ZMB-UZH/omero-docker-extended",
+        "dir": "ZMB-UZH__omero-docker-extended",
+        "tier": "selected-omero-reference",
+        "group": "selected OMERO repository",
+        "policy": "default-branch HEAD; GitHub API reported no latest release",
+        "prefixes": [".agents/skills/", "third_party/"],
+        "selected_subset": True,
+    },
+    {
+        "repo": "anthropics/skills",
+        "dir": "anthropics__skills",
+        "tier": "official-reference",
+        "group": "official skill reference",
+        "policy": "default-branch HEAD; GitHub API reported no latest release",
+        "prefixes": ["skills/"],
+        "exclude_prefixes": ["template/"],
+    },
+    {
+        "repo": "K-Dense-AI/scientific-agent-skills",
+        "dir": "K-Dense-AI__scientific-agent-skills",
+        "tier": "latest-release-community",
+        "group": "latest release scientific skills",
+        "policy": "latest GitHub release v2.37.1",
+        "tag": "v2.37.1",
+        "release_url": "https://github.com/K-Dense-AI/scientific-agent-skills/releases/tag/v2.37.1",
+        "prefixes": ["scientific-skills/"],
+    },
+    {
+        "repo": "microsoft/skills",
+        "dir": "microsoft__skills",
+        "tier": "official-vendor-reference",
+        "group": "Microsoft skills reference",
+        "policy": "default-branch HEAD; GitHub API reported no latest release",
+        "prefixes": [".github/plugins/", ".github/skills/"],
+    },
+    {
+        "repo": "trailofbits/skills",
+        "dir": "trailofbits__skills",
+        "tier": "security-reference",
+        "group": "security and audit skills",
+        "policy": "default-branch HEAD; GitHub API reported no latest release",
+    },
+    {
+        "repo": "ahmedasmar/devops-claude-skills",
+        "dir": "ahmedasmar__devops-claude-skills",
+        "tier": "devops-reference",
+        "group": "DevOps skills",
+        "policy": "default-branch HEAD; GitHub API reported no latest release",
+    },
+    {
+        "repo": "akin-ozer/cc-devops-skills",
+        "dir": "akin-ozer__cc-devops-skills",
+        "tier": "latest-release-devops",
+        "group": "latest release DevOps skills",
+        "policy": "latest GitHub release v1.0.0",
+        "tag": "v1.0.0",
+        "release_url": "https://github.com/akin-ozer/cc-devops-skills/releases/tag/v1.0.0",
+    },
+    {
+        "repo": "composio-community/support-skills",
+        "dir": "composio-community__support-skills",
+        "tier": "support-reference",
+        "group": "customer support skills",
+        "policy": "default-branch HEAD; GitHub API reported no latest release",
+    },
+    {
+        "repo": "browser-act/skills",
+        "dir": "browser-act__skills",
+        "tier": "browser-automation-reference",
+        "group": "browser and web automation skills",
+        "policy": "default-branch HEAD; GitHub API reported no latest release",
+    },
+    {
+        "repo": "lackeyjb/playwright-skill",
+        "dir": "lackeyjb__playwright-skill",
+        "tier": "latest-release-browser-automation",
+        "group": "latest release browser automation skill",
+        "policy": "latest GitHub release v4.1.0",
+        "tag": "v4.1.0",
+        "release_url": "https://github.com/lackeyjb/playwright-skill/releases/tag/v4.1.0",
+    },
+    {
+        "repo": "twwch/comfyui-workflow-skill",
+        "dir": "twwch__comfyui-workflow-skill",
+        "tier": "creative-reference",
+        "group": "creative media skills",
+        "policy": "default-branch HEAD; GitHub API reported no latest release",
+    },
+    {
+        "repo": "EvoLinkAI/video-generation-skill-for-openclaw",
+        "dir": "EvoLinkAI__video-generation-skill-for-openclaw",
+        "tier": "creative-reference",
+        "group": "creative media skills",
+        "policy": "default-branch HEAD; GitHub API reported no latest release",
+    },
+    {
+        "repo": "EvoLinkAI/music-generation-skill-for-openclaw",
+        "dir": "EvoLinkAI__music-generation-skill-for-openclaw",
+        "tier": "creative-reference",
+        "group": "creative media skills",
+        "policy": "default-branch HEAD; GitHub API reported no latest release",
+    },
+    {
+        "repo": "designrique/ai-graphic-design-skill",
+        "dir": "designrique__ai-graphic-design-skill",
+        "tier": "creative-reference",
+        "group": "creative media skills",
+        "policy": "default-branch HEAD; GitHub API reported no latest release",
+    },
+    {
+        "repo": "yuvalsuede/agent-media-skill",
+        "dir": "yuvalsuede__agent-media-skill",
+        "tier": "creative-reference",
+        "group": "creative media skills",
+        "policy": "default-branch HEAD; GitHub API reported no latest release",
+    },
+    {
+        "repo": "Raven7979/ai-video-editing-skill",
+        "dir": "Raven7979__ai-video-editing-skill",
+        "tier": "creative-reference",
+        "group": "creative media skills",
+        "policy": "default-branch HEAD; GitHub API reported no latest release",
+    },
+    {
+        "repo": "ztj7728/gemini-image-generation",
+        "dir": "ztj7728__gemini-image-generation",
+        "tier": "creative-reference",
+        "group": "creative media skills",
+        "policy": "default-branch HEAD; GitHub API reported no latest release",
+    },
+    {
+        "repo": "fruteroclub/marketing-designer",
+        "dir": "fruteroclub__marketing-designer",
+        "tier": "creative-reference",
+        "group": "creative media skills",
+        "policy": "default-branch HEAD; GitHub API reported no latest release",
+    },
+    {
+        "repo": "Bria-AI/bria-skill",
+        "dir": "Bria-AI__bria-skill",
+        "tier": "latest-release-creative",
+        "group": "latest release creative media skills",
+        "policy": "latest GitHub release v1.3.1",
+        "tag": "v1.3.1",
+        "release_url": "https://github.com/Bria-AI/bria-skill/releases/tag/v1.3.1",
+    },
+    {
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+        "dir": "nextlevelbuilder__ui-ux-pro-max-skill",
+        "tier": "latest-release-creative",
+        "group": "latest release UI/UX skills",
+        "policy": "latest GitHub release v2.5.0",
+        "tag": "v2.5.0",
+        "release_url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/releases/tag/v2.5.0",
+    },
+    {
+        "repo": "guinacio/claude-image-gen",
+        "dir": "guinacio__claude-image-gen",
+        "tier": "latest-release-creative",
+        "group": "latest release image generation skill",
+        "policy": "latest GitHub release 1.0.2",
+        "tag": "1.0.2",
+        "release_url": "https://github.com/guinacio/claude-image-gen/releases/tag/1.0.2",
+    },
+    {
+        "repo": "hugohe3/ppt-master",
+        "dir": "hugohe3__ppt-master",
+        "tier": "latest-release-creative",
+        "group": "latest release presentation skill",
+        "policy": "latest GitHub release v2.3.0",
+        "tag": "v2.3.0",
+        "release_url": "https://github.com/hugohe3/ppt-master/releases/tag/v2.3.0",
+    },
+    {
+        "repo": "aizzaku/create-infographics",
+        "dir": "aizzaku__create-infographics",
+        "tier": "creative-reference",
+        "group": "creative media skills",
+        "policy": "default-branch HEAD; GitHub API reported no latest release",
+    },
+    {
+        "repo": "Varnan-Tech/opendirectory",
+        "dir": "Varnan-Tech__opendirectory",
+        "tier": "reddit-verified-gtm-registry",
+        "group": "Reddit r/codex open-source Codex skills signal; GitHub SKILL.md files verified",
+        "policy": "default-branch HEAD; GitHub API reported no latest release",
+        "prefixes": ["packages/cli/skills/"],
+        "max_path_parts": 5,
+    },
+    {
+        "repo": "supermemoryai/skills",
+        "dir": "supermemoryai__skills",
+        "tier": "reddit-verified-creative-skill",
+        "group": "Reddit r/codex linked skill; GitHub SKILL.md verified",
+        "policy": "default-branch HEAD; GitHub API reported no latest release",
+        "prefixes": ["svg-animations/"],
+    },
+    {
+        "repo": "hardikpandya/stop-slop",
+        "dir": "hardikpandya__stop-slop",
+        "tier": "reddit-verified-writing-skill",
+        "group": "Reddit r/codex linked skill; GitHub SKILL.md verified",
+        "policy": "default-branch HEAD; GitHub API reported no latest release",
+    },
+    {
+        "repo": "affaan-m/everything-claude-code",
+        "dir": "affaan-m__everything-claude-code",
+        "tier": "selected-structure-reference",
+        "group": "selected repository structure reference",
+        "policy": "latest GitHub release v1.10.0",
+        "tag": "v1.10.0",
+        "release_url": "https://github.com/affaan-m/everything-claude-code/releases/tag/v1.10.0",
+        "prefixes": [".agents/skills/"],
+    },
 ]
 
 
 BEST_PRACTICE_SOURCES = [
-    {"id": "anthropic-skill-best-practices", "title": "Anthropic skill authoring best practices", "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices"},
+    {
+        "id": "anthropic-skill-best-practices",
+        "title": "Anthropic skill authoring best practices",
+        "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices",
+    },
     {"id": "mdskills-open-ecosystem", "title": "mdskills.ai open skills ecosystem", "url": "https://www.mdskills.ai/"},
-    {"id": "github-copilot-instructions", "title": "GitHub Copilot repository custom instructions", "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/configure-coding-guidelines"},
+    {
+        "id": "github-copilot-instructions",
+        "title": "GitHub Copilot repository custom instructions",
+        "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/configure-coding-guidelines",
+    },
     {"id": "skillsbench-paper", "title": "SkillsBench benchmark paper", "url": "https://arxiv.org/abs/2602.12670"},
-    {"id": "skill-usage-paper", "title": "Skill usage benchmark code", "url": "https://github.com/UCSB-NLP-Chang/Skill-Usage"},
-    {"id": "reddit-agent-skills-worth-installing", "title": "Forum signal: practical skill use", "url": "https://www.reddit.com/r/claude/comments/1s51b5u/the_claude_code_skills_actually_worth_installing/"},
-    {"id": "reddit-skills-subagents-patterns", "title": "Forum signal: skills and subagents", "url": "https://www.reddit.com/r/ClaudeAI/comments/1qbc30u/claude_code_skills_subagents_feel_misaligned_what/"},
-    {"id": "reddit-codex-open-source-skills", "title": "Forum signal: open-source Codex skills", "url": "https://www.reddit.com/r/codex/comments/1sns7hr/top_10_opensource_codex_skills/"},
-    {"id": "opendirectory-gtm-skills", "title": "OpenDirectory GTM skills registry", "url": "https://github.com/Varnan-Tech/opendirectory"},
+    {
+        "id": "skill-usage-paper",
+        "title": "Skill usage benchmark code",
+        "url": "https://github.com/UCSB-NLP-Chang/Skill-Usage",
+    },
+    {
+        "id": "reddit-agent-skills-worth-installing",
+        "title": "Forum signal: practical skill use",
+        "url": "https://www.reddit.com/r/claude/comments/1s51b5u/the_claude_code_skills_actually_worth_installing/",
+    },
+    {
+        "id": "reddit-skills-subagents-patterns",
+        "title": "Forum signal: skills and subagents",
+        "url": "https://www.reddit.com/r/ClaudeAI/comments/1qbc30u/claude_code_skills_subagents_feel_misaligned_what/",
+    },
+    {
+        "id": "reddit-codex-open-source-skills",
+        "title": "Forum signal: open-source Codex skills",
+        "url": "https://www.reddit.com/r/codex/comments/1sns7hr/top_10_opensource_codex_skills/",
+    },
+    {
+        "id": "opendirectory-gtm-skills",
+        "title": "OpenDirectory GTM skills registry",
+        "url": "https://github.com/Varnan-Tech/opendirectory",
+    },
 ]
 
 
 TRACKS = [
-    ("source-skill-repository", "Source skill repository proof", "https://github.com/strmt7/ai_skills_collection_benchmarked", "Use the skill source repository itself as the proof fixture: inspect SKILL.md, companion resources, and source path to verify trigger, constraints, and expected artifacts.", ["frontmatter valid", "trigger derivable", "proof artifact schema valid"]),
-    ("swe-bench-lite", "SWE-bench Lite", "https://github.com/SWE-bench/SWE-bench", "Patch real GitHub issue tasks and verify with repository tests.", ["patch applies", "test pass rate", "regression count"]),
-    ("nyc-tlc-trip-records", "NYC TLC trip records", "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page", "Clean, aggregate, and explain large real trip data.", ["schema correctness", "aggregation accuracy", "runtime budget"]),
-    ("sec-edgar-companyfacts", "SEC EDGAR company facts", "https://www.sec.gov/edgar/sec-api-documentation", "Extract and reconcile financial facts from filings.", ["citation coverage", "numeric reconciliation", "filing provenance"]),
-    ("common-crawl-warc", "Common Crawl WARC", "https://commoncrawl.org/", "Retrieve, parse, and cite web-scale documents.", ["source precision", "deduplication", "citation traceability"]),
-    ("beir-retrieval", "BEIR retrieval benchmark", "https://github.com/beir-cellar/beir", "Evaluate retrieval workflows across datasets.", ["nDCG@10", "recall@100", "query latency"]),
-    ("ms-marco", "MS MARCO", "https://microsoft.github.io/msmarco/", "Rank passages and support answer extraction.", ["MRR", "recall", "answer support"]),
-    ("enron-email", "CMU Enron email dataset", "https://www.cs.cmu.edu/~enron/", "Classify, summarize, and route real email threads.", ["routing accuracy", "PII handling", "summary faithfulness"]),
-    ("stackoverflow-survey", "Stack Overflow Developer Survey", "https://survey.stackoverflow.co/", "Analyze survey data and produce reproducible charts.", ["cleaning correctness", "chart reproducibility", "method clarity"]),
-    ("ome-ngff-samples", "OME-NGFF sample data", "https://idr.github.io/ome-ngff-samples/", "Read and validate multiscale microscopy data.", ["metadata validity", "chunk correctness", "shape parity"]),
-    ("cellxgene-census", "CZ CELLxGENE Census", "https://chanzuckerberg.github.io/cellxgene-census/", "Query and analyze single-cell expression data.", ["query correctness", "metadata filters", "reproducibility"]),
-    ("chembl", "ChEMBL", "https://www.ebi.ac.uk/chembl/", "Retrieve molecular bioactivity records.", ["identifier accuracy", "filter correctness", "citation provenance"]),
-    ("owasp-benchmark", "OWASP Benchmark", "https://owasp.org/www-project-benchmark/", "Find and classify vulnerability test cases.", ["true positives", "false positives", "CWE mapping"]),
-    ("owasp-juice-shop", "OWASP Juice Shop", "https://owasp.org/www-project-juice-shop/", "Run safe local security workflows against a known vulnerable app.", ["finding reproducibility", "risk classification", "remediation quality"]),
-    ("kubernetes-examples", "Kubernetes examples", "https://github.com/kubernetes/examples", "Validate manifests and operational runbooks.", ["schema validity", "least privilege", "rollout success"]),
-    ("opentelemetry-demo", "OpenTelemetry demo", "https://github.com/open-telemetry/opentelemetry-demo", "Debug telemetry across microservices.", ["trace completeness", "metric coverage", "diagnostic accuracy"]),
-    ("coco-captions", "COCO captions", "https://cocodataset.org/#download", "Evaluate image understanding and visual QA tasks.", ["caption faithfulness", "object coverage", "layout accuracy"]),
-    ("local-omero-compose-workflows", "ZMB-UZH OMERO workflows", "https://github.com/ZMB-UZH/omero-docker-extended", "Validate OMERO deployment, plugin, upload/import, and monitoring workflows.", ["compose health", "plugin workflow", "regression count"]),
-    ("air-defense-android-benchmarks", "Project Air Defense Android benchmarks", "https://github.com/strmt7/project_air_defense/tree/main/benchmarks", "Run startup, gameplay, and visual QA benchmark scenarios.", ["startup time", "frame stability", "visual regressions"]),
+    (
+        "source-skill-repository",
+        "Source skill repository proof",
+        "https://github.com/strmt7/ai_skills_collection_benchmarked",
+        "Use the skill source repository itself as the proof fixture: inspect SKILL.md, companion resources, and source path to verify trigger, constraints, and expected artifacts.",
+        ["frontmatter valid", "trigger derivable", "proof artifact schema valid"],
+    ),
+    (
+        "swe-bench-lite",
+        "SWE-bench Lite",
+        "https://github.com/SWE-bench/SWE-bench",
+        "Patch real GitHub issue tasks and verify with repository tests.",
+        ["patch applies", "test pass rate", "regression count"],
+    ),
+    (
+        "nyc-tlc-trip-records",
+        "NYC TLC trip records",
+        "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page",
+        "Clean, aggregate, and explain large real trip data.",
+        ["schema correctness", "aggregation accuracy", "runtime budget"],
+    ),
+    (
+        "sec-edgar-companyfacts",
+        "SEC EDGAR company facts",
+        "https://www.sec.gov/edgar/sec-api-documentation",
+        "Extract and reconcile financial facts from filings.",
+        ["citation coverage", "numeric reconciliation", "filing provenance"],
+    ),
+    (
+        "common-crawl-warc",
+        "Common Crawl WARC",
+        "https://commoncrawl.org/",
+        "Retrieve, parse, and cite web-scale documents.",
+        ["source precision", "deduplication", "citation traceability"],
+    ),
+    (
+        "beir-retrieval",
+        "BEIR retrieval benchmark",
+        "https://github.com/beir-cellar/beir",
+        "Evaluate retrieval workflows across datasets.",
+        ["nDCG@10", "recall@100", "query latency"],
+    ),
+    (
+        "ms-marco",
+        "MS MARCO",
+        "https://microsoft.github.io/msmarco/",
+        "Rank passages and support answer extraction.",
+        ["MRR", "recall", "answer support"],
+    ),
+    (
+        "enron-email",
+        "CMU Enron email dataset",
+        "https://www.cs.cmu.edu/~enron/",
+        "Classify, summarize, and route real email threads.",
+        ["routing accuracy", "PII handling", "summary faithfulness"],
+    ),
+    (
+        "stackoverflow-survey",
+        "Stack Overflow Developer Survey",
+        "https://survey.stackoverflow.co/",
+        "Analyze survey data and produce reproducible charts.",
+        ["cleaning correctness", "chart reproducibility", "method clarity"],
+    ),
+    (
+        "ome-ngff-samples",
+        "OME-NGFF sample data",
+        "https://idr.github.io/ome-ngff-samples/",
+        "Read and validate multiscale microscopy data.",
+        ["metadata validity", "chunk correctness", "shape parity"],
+    ),
+    (
+        "cellxgene-census",
+        "CZ CELLxGENE Census",
+        "https://chanzuckerberg.github.io/cellxgene-census/",
+        "Query and analyze single-cell expression data.",
+        ["query correctness", "metadata filters", "reproducibility"],
+    ),
+    (
+        "chembl",
+        "ChEMBL",
+        "https://www.ebi.ac.uk/chembl/",
+        "Retrieve molecular bioactivity records.",
+        ["identifier accuracy", "filter correctness", "citation provenance"],
+    ),
+    (
+        "owasp-benchmark",
+        "OWASP Benchmark",
+        "https://owasp.org/www-project-benchmark/",
+        "Find and classify vulnerability test cases.",
+        ["true positives", "false positives", "CWE mapping"],
+    ),
+    (
+        "owasp-juice-shop",
+        "OWASP Juice Shop",
+        "https://owasp.org/www-project-juice-shop/",
+        "Run safe local security workflows against a known vulnerable app.",
+        ["finding reproducibility", "risk classification", "remediation quality"],
+    ),
+    (
+        "kubernetes-examples",
+        "Kubernetes examples",
+        "https://github.com/kubernetes/examples",
+        "Validate manifests and operational runbooks.",
+        ["schema validity", "least privilege", "rollout success"],
+    ),
+    (
+        "opentelemetry-demo",
+        "OpenTelemetry demo",
+        "https://github.com/open-telemetry/opentelemetry-demo",
+        "Debug telemetry across microservices.",
+        ["trace completeness", "metric coverage", "diagnostic accuracy"],
+    ),
+    (
+        "coco-captions",
+        "COCO captions",
+        "https://cocodataset.org/#download",
+        "Evaluate image understanding and visual QA tasks.",
+        ["caption faithfulness", "object coverage", "layout accuracy"],
+    ),
+    (
+        "local-omero-compose-workflows",
+        "ZMB-UZH OMERO workflows",
+        "https://github.com/ZMB-UZH/omero-docker-extended",
+        "Validate OMERO deployment, plugin, upload/import, and monitoring workflows.",
+        ["compose health", "plugin workflow", "regression count"],
+    ),
+    (
+        "air-defense-android-benchmarks",
+        "Project Air Defense Android benchmarks",
+        "https://github.com/strmt7/project_air_defense/tree/main/benchmarks",
+        "Run startup, gameplay, and visual QA benchmark scenarios.",
+        ["startup time", "frame stability", "visual regressions"],
+    ),
 ]
 
 
@@ -147,26 +512,207 @@ SCENARIO_TRACKS = {
     "Communication, productivity & support": ["enron-email", "ms-marco", "sec-edgar-companyfacts"],
     "Finance, commerce & forecasting": ["sec-edgar-companyfacts", "nyc-tlc-trip-records", "stackoverflow-survey"],
     "Game, mobile & visual QA": ["air-defense-android-benchmarks", "coco-captions", "owasp-juice-shop"],
-    "OMERO, Django, Docker & lab infrastructure": ["local-omero-compose-workflows", "ome-ngff-samples", "opentelemetry-demo"],
+    "OMERO, Django, Docker & lab infrastructure": [
+        "local-omero-compose-workflows",
+        "ome-ngff-samples",
+        "opentelemetry-demo",
+    ],
     "Agent infrastructure & skill creation": ["beir-retrieval", "swe-bench-lite", "common-crawl-warc"],
 }
 
 
 CATEGORY_KEYWORDS = [
-    ("OMERO, Django, Docker & lab infrastructure", ["omero", "django", "postgres", "docker-patterns", "env-contract", "plugin-regression"]),
+    (
+        "OMERO, Django, Docker & lab infrastructure",
+        ["omero", "django", "postgres", "docker-patterns", "env-contract", "plugin-regression"],
+    ),
     ("Game, mobile & visual QA", ["ue5", "android", "mobile", "game", "city", "rendering", "visual-qa", "air-defense"]),
-    ("Science, research & data analysis", ["scientific", "science", "bio", "chem", "cell", "gene", "rdkit", "zarr", "scanpy", "pydicom", "molecular", "clinical", "lab"]),
-    ("Cloud, Azure & Microsoft SDKs", ["azure", "m365", "microsoft", "foundry", "eventhub", "cosmos", "servicebus", "keyvault", "webjobs"]),
-    ("Security, compliance & risk", ["security", "compliance", "secret", "rbac", "content-safety", "auth", "vulnerability", "audit", "semgrep", "codeql", "fuzz", "sarif", "sandbox", "risk", "yara", "zeroize"]),
-    ("Testing, QA & benchmarking", ["test", "qa", "benchmark", "regression", "playwright", "verification", "tdd", "parity", "mutation", "coverage", "wycheproof"]),
-    ("DevOps, cloud & operations", ["deploy", "kubernetes", "k8s", "cloud", "workflow", "supply-chain", "monitor", "monitoring", "observability", "diagnostic", "terraform", "terragrunt", "helm", "ansible", "promql", "logql", "jenkins", "gitlab", "ci", "ci-cd", "gitops", "dockerfile", "pipeline", "bash"]),
-    ("Documents, spreadsheets & presentations", ["pdf", "docx", "xlsx", "pptx", "slides", "poster", "document", "spreadsheet", "presentation"]),
-    ("Creative, media & design", ["image", "video", "music", "audio", "art", "gif", "podcast", "schematic", "visualization", "infographic", "brand", "designer", "figma", "comfyui", "bria", "ux", "svg", "animation", "logo", "icon", "illustration", "cover", "thumbnail"]),
-    ("Communication, productivity & support", ["support", "ticket", "customer", "zendesk", "intercom", "freshdesk", "sla", "refund", "response", "whatsapp", "csat", "nps", "inbox", "handoff", "call-summary", "slack", "internal-comms", "meeting", "writing", "prose", "blog", "newsletter", "linkedin", "twitter", "reddit", "hackernews", "outreach", "standup", "gtm"]),
-    ("Search, retrieval & web automation", ["search", "lookup", "retrieval", "web", "parallel-web", "database-lookup", "documentation-lookup", "site-extract", "browser-act", "scraper", "youtube", "google", "maps", "wechat", "zhihu", "seo", "trends", "keyword"]),
-    ("Finance, commerce & forecasting", ["finance", "fiscal", "trading", "market", "forecast", "cost", "amazon", "product", "sales", "commerce"]),
+    (
+        "Science, research & data analysis",
+        [
+            "scientific",
+            "science",
+            "bio",
+            "chem",
+            "cell",
+            "gene",
+            "rdkit",
+            "zarr",
+            "scanpy",
+            "pydicom",
+            "molecular",
+            "clinical",
+            "lab",
+        ],
+    ),
+    (
+        "Cloud, Azure & Microsoft SDKs",
+        ["azure", "m365", "microsoft", "foundry", "eventhub", "cosmos", "servicebus", "keyvault", "webjobs"],
+    ),
+    (
+        "Security, compliance & risk",
+        [
+            "security",
+            "compliance",
+            "secret",
+            "rbac",
+            "content-safety",
+            "auth",
+            "vulnerability",
+            "audit",
+            "semgrep",
+            "codeql",
+            "fuzz",
+            "sarif",
+            "sandbox",
+            "risk",
+            "yara",
+            "zeroize",
+        ],
+    ),
+    (
+        "Testing, QA & benchmarking",
+        [
+            "test",
+            "qa",
+            "benchmark",
+            "regression",
+            "playwright",
+            "verification",
+            "tdd",
+            "parity",
+            "mutation",
+            "coverage",
+            "wycheproof",
+        ],
+    ),
+    (
+        "DevOps, cloud & operations",
+        [
+            "deploy",
+            "kubernetes",
+            "k8s",
+            "cloud",
+            "workflow",
+            "supply-chain",
+            "monitor",
+            "monitoring",
+            "observability",
+            "diagnostic",
+            "terraform",
+            "terragrunt",
+            "helm",
+            "ansible",
+            "promql",
+            "logql",
+            "jenkins",
+            "gitlab",
+            "ci",
+            "ci-cd",
+            "gitops",
+            "dockerfile",
+            "pipeline",
+            "bash",
+        ],
+    ),
+    (
+        "Documents, spreadsheets & presentations",
+        ["pdf", "docx", "xlsx", "pptx", "slides", "poster", "document", "spreadsheet", "presentation"],
+    ),
+    (
+        "Creative, media & design",
+        [
+            "image",
+            "video",
+            "music",
+            "audio",
+            "art",
+            "gif",
+            "podcast",
+            "schematic",
+            "visualization",
+            "infographic",
+            "brand",
+            "designer",
+            "figma",
+            "comfyui",
+            "bria",
+            "ux",
+            "svg",
+            "animation",
+            "logo",
+            "icon",
+            "illustration",
+            "cover",
+            "thumbnail",
+        ],
+    ),
+    (
+        "Communication, productivity & support",
+        [
+            "support",
+            "ticket",
+            "customer",
+            "zendesk",
+            "intercom",
+            "freshdesk",
+            "sla",
+            "refund",
+            "response",
+            "whatsapp",
+            "csat",
+            "nps",
+            "inbox",
+            "handoff",
+            "call-summary",
+            "slack",
+            "internal-comms",
+            "meeting",
+            "writing",
+            "prose",
+            "blog",
+            "newsletter",
+            "linkedin",
+            "twitter",
+            "reddit",
+            "hackernews",
+            "outreach",
+            "standup",
+            "gtm",
+        ],
+    ),
+    (
+        "Search, retrieval & web automation",
+        [
+            "search",
+            "lookup",
+            "retrieval",
+            "web",
+            "parallel-web",
+            "database-lookup",
+            "documentation-lookup",
+            "site-extract",
+            "browser-act",
+            "scraper",
+            "youtube",
+            "google",
+            "maps",
+            "wechat",
+            "zhihu",
+            "seo",
+            "trends",
+            "keyword",
+        ],
+    ),
+    (
+        "Finance, commerce & forecasting",
+        ["finance", "fiscal", "trading", "market", "forecast", "cost", "amazon", "product", "sales", "commerce"],
+    ),
     ("Frontend, UI & browser automation", ["frontend", "browser", "ui", "webapp", "canvas", "theme", "react"]),
-    ("Agent infrastructure & skill creation", ["agent", "mcp", "context", "source-audit", "creator", "continual-learning"]),
+    (
+        "Agent infrastructure & skill creation",
+        ["agent", "mcp", "context", "source-audit", "creator", "continual-learning"],
+    ),
 ]
 
 
@@ -219,7 +765,9 @@ def unique_install_name(entry: dict[str, Any], used_names: set[str], base_counts
     base = base_install_name(entry["name"], entry["source_path"])
     source_identity = repo_identity_slug(entry["source_repo"])
     path_identity = source_path_slug(entry["source_path"])
-    full_source_identity = slug(f"{entry['source_repo']} {entry['source_path'].removesuffix('/SKILL.md').removesuffix('SKILL.md')}")
+    full_source_identity = slug(
+        f"{entry['source_repo']} {entry['source_path'].removesuffix('/SKILL.md').removesuffix('SKILL.md')}"
+    )
 
     if base_counts[base] == 1:
         candidates = [base, f"{base}--{source_identity}", f"{base}--{path_identity}"]
@@ -253,7 +801,9 @@ def assign_install_names(entries: list[dict[str, Any]]) -> None:
         entry["agent_ready_path"] = skill_agent_ready_path(entry["category"], entry["subcategory"], entry_install_name)
 
 
-def install_name(entry_or_repo: dict[str, Any] | str, source_path: str | None = None, skill_name: str | None = None) -> str:
+def install_name(
+    entry_or_repo: dict[str, Any] | str, source_path: str | None = None, skill_name: str | None = None
+) -> str:
     if isinstance(entry_or_repo, dict):
         return base_install_name(entry_or_repo["name"], entry_or_repo["source_path"])
     assert source_path is not None
@@ -420,7 +970,11 @@ def copy_sanitized_tree(src: Path, dst: Path) -> None:
         dirs[:] = kept_dirs
         for name in names:
             source_file = current_path / name
-            if ignored_parts.intersection(source_file.parts) or not source_file.is_file() or is_under_nested_skill(src, source_file):
+            if (
+                ignored_parts.intersection(source_file.parts)
+                or not source_file.is_file()
+                or is_under_nested_skill(src, source_file)
+            ):
                 continue
             target_file = target_dir / name
             target_file.write_bytes(sanitized_file_bytes(source_file))
@@ -435,16 +989,16 @@ def parse_frontmatter(text: str) -> tuple[dict[str, Any], str]:
         return {}, text
     if yaml:
         try:
-            data = yaml.safe_load(parts[1]) or {}
-            return data if isinstance(data, dict) else {}, parts[2]
+            parsed = yaml.safe_load(parts[1]) or {}
+            return parsed if isinstance(parsed, dict) else {}, parts[2]
         except Exception:
             pass
-    data: dict[str, str] = {}
+    fallback: dict[str, str] = {}
     for line in parts[1].splitlines():
         if ":" in line:
             key, val = line.split(":", 1)
-            data[key.strip()] = val.strip().strip("\"'")
-    return data, parts[2]
+            fallback[key.strip()] = val.strip().strip("\"'")
+    return fallback, parts[2]
 
 
 def compact(text: Any, limit: int = 420) -> str:
@@ -562,7 +1116,9 @@ def collect() -> list[dict[str, Any]]:
         if source.get("tag"):
             tag_commit = run_git(repo_dir, "rev-parse", f"{source['tag']}^{{commit}}")
             if tag_commit != commit:
-                raise ValueError(f"{source['repo']} checkout HEAD {commit} does not match tag {source['tag']} commit {tag_commit}")
+                raise ValueError(
+                    f"{source['repo']} checkout HEAD {commit} does not match tag {source['tag']} commit {tag_commit}"
+                )
         selected_ref = source.get("tag") or "default-branch HEAD"
         ref_url = source.get("tag") or commit
         skill_files = sorted(repo_dir.rglob("SKILL.md"))
@@ -626,8 +1182,15 @@ def collect() -> list[dict[str, Any]]:
                 f"Maintain at least {MIN_SCENARIOS} real workflow benchmark scenarios before treating the skill as deployable.",
             ]
             if not resource_flags["has_agents_metadata"]:
-                notes.append("Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings.")
-            if not resource_flags["has_scripts"] and category in {"Testing, QA & benchmarking", "Security, compliance & risk", "Science, research & data analysis", "DevOps, cloud & operations"}:
+                notes.append(
+                    "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings."
+                )
+            if not resource_flags["has_scripts"] and category in {
+                "Testing, QA & benchmarking",
+                "Security, compliance & risk",
+                "Science, research & data analysis",
+                "DevOps, cloud & operations",
+            }:
                 notes.append("Add an executable validator or helper script so the workflow has objective checks.")
             if item["line_count"] > 500:
                 notes.append("Move long background material into references/ to keep SKILL.md concise.")
@@ -636,7 +1199,9 @@ def collect() -> list[dict[str, Any]]:
                 "what_it_covers": f"Catalog summary: {description}",
                 "how_an_agent_should_use_it": "Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.",
                 "observed_structure": f"Headings: {', '.join(item['headings'][:5]) or 'none observed'}. Resources: {', '.join(k for k, v in resource_flags.items() if v) or 'none observed'}.",
-                "notability": "Selected source." if source.get("selected_subset") else f"Included from {source['group']} with explicit GitHub provenance.",
+                "notability": "Selected source."
+                if source.get("selected_subset")
+                else f"Included from {source['group']} with explicit GitHub provenance.",
             }
             item["benchmark_scenarios"] = [f"skill-proof-{item['id']}"] + scenario_ids(category)
             entries.append(item)
@@ -653,39 +1218,67 @@ def build_scenarios(entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
         track_ids = SCENARIO_TRACKS.get(category, SCENARIO_TRACKS["Coding, refactoring & repository automation"])
         for index, track_id in enumerate(track_ids, 1):
             _, title, _, problem, metrics = track_lookup[track_id]
-            scenarios.append({
-                "id": category_scenario_id(category, track_id),
-                "category": category,
-                "dataset_track_id": track_id,
-                "title": f"{category} scenario {index}: {title}",
-                "workflow": problem,
-                "agent_task": "Load the skill in a fresh agent session, solve the workflow using the cited dataset/repository, capture commands and files consulted, and produce machine-checkable output.",
-                "dataset_snapshot_policy": "Runner must record dataset release, crawl ID, tag, file date, or repository commit before scoring.",
-                "input_selector": {"mode": "runner-selected-real-instance", "selection_rule": "choose a non-trivial instance from the cited dataset or workflow and record its immutable identifier"},
-                "expected_output_schema": {"type": "object", "required": GENERIC_WORKFLOW_REQUIRED},
-                "environment_requirements": ["fresh agent session", "read-only source checkout unless task requires patching", "network only when dataset retrieval requires it"],
-                "evaluator_path": "evaluators/generic_workflow_result.schema.json",
-                "required_artifacts": ["agent transcript or command log", "dataset/version reference", "output artifact", "objective evaluator result"],
-                "objective_checks": metrics,
-                "real_data_or_workflow": True,
-            })
+            scenarios.append(
+                {
+                    "id": category_scenario_id(category, track_id),
+                    "category": category,
+                    "dataset_track_id": track_id,
+                    "title": f"{category} scenario {index}: {title}",
+                    "workflow": problem,
+                    "agent_task": "Load the skill in a fresh agent session, solve the workflow using the cited dataset/repository, capture commands and files consulted, and produce machine-checkable output.",
+                    "dataset_snapshot_policy": "Runner must record dataset release, crawl ID, tag, file date, or repository commit before scoring.",
+                    "input_selector": {
+                        "mode": "runner-selected-real-instance",
+                        "selection_rule": "choose a non-trivial instance from the cited dataset or workflow and record its immutable identifier",
+                    },
+                    "expected_output_schema": {"type": "object", "required": GENERIC_WORKFLOW_REQUIRED},
+                    "environment_requirements": [
+                        "fresh agent session",
+                        "read-only source checkout unless task requires patching",
+                        "network only when dataset retrieval requires it",
+                    ],
+                    "evaluator_path": "evaluators/generic_workflow_result.schema.json",
+                    "required_artifacts": [
+                        "agent transcript or command log",
+                        "dataset/version reference",
+                        "output artifact",
+                        "objective evaluator result",
+                    ],
+                    "objective_checks": metrics,
+                    "real_data_or_workflow": True,
+                }
+            )
     for entry in entries:
-        scenarios.append({
-            "id": f"skill-proof-{entry['id']}",
-            "category": entry["category"],
-            "dataset_track_id": "source-skill-repository",
-            "title": f"{entry['name']} source-grounded functionality proof",
-            "workflow": f"Use the immutable source file {entry['immutable_source_url']} as the fixture and prove the agent can understand when and how to use the skill.",
-            "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
-            "dataset_snapshot_policy": "Pinned by the catalog entry commit_sha and immutable_source_url.",
-            "input_selector": {"source_repo": entry["source_repo"], "source_path": entry["source_path"], "commit_sha": entry["commit_sha"]},
-            "expected_output_schema": {"type": "object", "required": SOURCE_PROOF_REQUIRED},
-            "environment_requirements": ["fresh agent session", "read-only access to mirrored or source skill directory", "no private credentials"],
-            "evaluator_path": "evaluators/source_grounded_skill_proof.schema.json",
-            "required_artifacts": ["source-grounded proof JSON", "source line/path citations", "agent transcript"],
-                "objective_checks": ["frontmatter or fallback source structure used", "source citations present", "no unsupported capability claims"],
-            "real_data_or_workflow": True,
-        })
+        scenarios.append(
+            {
+                "id": f"skill-proof-{entry['id']}",
+                "category": entry["category"],
+                "dataset_track_id": "source-skill-repository",
+                "title": f"{entry['name']} source-grounded functionality proof",
+                "workflow": f"Use the immutable source file {entry['immutable_source_url']} as the fixture and prove the agent can understand when and how to use the skill.",
+                "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
+                "dataset_snapshot_policy": "Pinned by the catalog entry commit_sha and immutable_source_url.",
+                "input_selector": {
+                    "source_repo": entry["source_repo"],
+                    "source_path": entry["source_path"],
+                    "commit_sha": entry["commit_sha"],
+                },
+                "expected_output_schema": {"type": "object", "required": SOURCE_PROOF_REQUIRED},
+                "environment_requirements": [
+                    "fresh agent session",
+                    "read-only access to mirrored or source skill directory",
+                    "no private credentials",
+                ],
+                "evaluator_path": "evaluators/source_grounded_skill_proof.schema.json",
+                "required_artifacts": ["source-grounded proof JSON", "source line/path citations", "agent transcript"],
+                "objective_checks": [
+                    "frontmatter or fallback source structure used",
+                    "source citations present",
+                    "no unsupported capability claims",
+                ],
+                "real_data_or_workflow": True,
+            }
+        )
     return scenarios
 
 
@@ -699,24 +1292,27 @@ def esc(text: Any) -> str:
 
 
 def skill_manifest_entry(entry: dict[str, Any], name_conflict_group: str | None) -> dict[str, Any]:
-    return {k: entry[k] for k in [
-        "id",
-        "name",
-        "category",
-        "subcategory",
-        "install_name",
-        "mirrored_path",
-        "agent_ready_path",
-        "source_repo",
-        "source_path",
-        "immutable_source_url",
-        "selected_ref",
-        "commit_sha",
-        "benchmark_scenarios",
-        "has_required_frontmatter",
-        "skill_file_sha256",
-        "skill_dir_sha256",
-    ]} | {
+    return {
+        k: entry[k]
+        for k in [
+            "id",
+            "name",
+            "category",
+            "subcategory",
+            "install_name",
+            "mirrored_path",
+            "agent_ready_path",
+            "source_repo",
+            "source_path",
+            "immutable_source_url",
+            "selected_ref",
+            "commit_sha",
+            "benchmark_scenarios",
+            "has_required_frontmatter",
+            "skill_file_sha256",
+            "skill_dir_sha256",
+        ]
+    } | {
         "name_conflict_group": name_conflict_group,
         "standalone_installable": bool(entry["has_required_frontmatter"]),
         "bulk_install_safe": bool(entry["has_required_frontmatter"] and name_conflict_group is None),
@@ -745,10 +1341,13 @@ def mirror_all_skills(entries: list[dict[str, Any]]) -> None:
         dst_dir = ROOT / entry["mirrored_path"]
         dst_dir.parent.mkdir(parents=True, exist_ok=True)
         copy_sanitized_tree(src_dir, dst_dir)
-        manifest.append(skill_manifest_entry(entry, conflicts[entry["id"]]) | {
-            "source_group": entry["source_group"],
-            "source_tier": entry["source_tier"],
-        })
+        manifest.append(
+            skill_manifest_entry(entry, conflicts[entry["id"]])
+            | {
+                "source_group": entry["source_group"],
+                "source_tier": entry["source_tier"],
+            }
+        )
     write_json(target / "manifest.json", manifest)
     (target / "README.md").write_text(
         f"# Included Skills\n\n"
@@ -802,16 +1401,18 @@ Use this skill when the task matches the description above or the source path cl
 Do not claim this skill passed a runtime benchmark until a validated artifact exists.
 """
         path.write_text(body, encoding="utf-8")
-        manifest.append({
-            "id": entry["id"],
-            "name": entry["name"],
-            "category": entry["category"],
-            "subcategory": entry["subcategory"],
-            "install_name": entry["install_name"],
-            "agent_ready_path": entry["agent_ready_path"],
-            "source_mirrored_path": entry["mirrored_path"],
-            "benchmark_status": entry["benchmark_status"],
-        })
+        manifest.append(
+            {
+                "id": entry["id"],
+                "name": entry["name"],
+                "category": entry["category"],
+                "subcategory": entry["subcategory"],
+                "install_name": entry["install_name"],
+                "agent_ready_path": entry["agent_ready_path"],
+                "source_mirrored_path": entry["mirrored_path"],
+                "benchmark_status": entry["benchmark_status"],
+            }
+        )
     write_json(target / "manifest.json", manifest)
     (target / "README.md").write_text(
         f"# Agent-Ready Skills\n\n"
@@ -855,26 +1456,28 @@ def build_source_lock(entries: list[dict[str, Any]]) -> dict[str, Any]:
             continue
         commit = run_git(repo_dir, "rev-parse", "HEAD")
         origin_url = run_git(repo_dir, "config", "--get", "remote.origin.url")
-        sources.append({
-            "repo": source["repo"],
-            "local_dir": source["dir"],
-            "origin_url": origin_url,
-            "selected_ref": source.get("tag") or "default-branch HEAD",
-            "selection_policy": source["policy"],
-            "commit_sha": commit,
-            "tree_sha": run_git(repo_dir, "rev-parse", "HEAD^{tree}"),
-            "skill_count": len(repo_entries),
-            "skills": [
-                {
-                    "id": entry["id"],
-                    "source_path": entry["source_path"],
-                    "install_name": entry["install_name"],
-                    "skill_file_sha256": entry["skill_file_sha256"],
-                    "skill_dir_sha256": entry["skill_dir_sha256"],
-                }
-                for entry in repo_entries
-            ],
-        })
+        sources.append(
+            {
+                "repo": source["repo"],
+                "local_dir": source["dir"],
+                "origin_url": origin_url,
+                "selected_ref": source.get("tag") or "default-branch HEAD",
+                "selection_policy": source["policy"],
+                "commit_sha": commit,
+                "tree_sha": run_git(repo_dir, "rev-parse", "HEAD^{tree}"),
+                "skill_count": len(repo_entries),
+                "skills": [
+                    {
+                        "id": entry["id"],
+                        "source_path": entry["source_path"],
+                        "install_name": entry["install_name"],
+                        "skill_file_sha256": entry["skill_file_sha256"],
+                        "skill_dir_sha256": entry["skill_dir_sha256"],
+                    }
+                    for entry in repo_entries
+                ],
+            }
+        )
     return {
         "lock_version": 1,
         "hash_algorithm": "sha256",
@@ -906,7 +1509,8 @@ def write_docs(entries: list[dict[str, Any]], scenarios: list[dict[str, Any]]) -
     if legacy_priority_doc.exists():
         legacy_priority_doc.unlink()
 
-    (ROOT / "README.md").write_text(f"""# AI Skills Collection Benchmarked
+    (ROOT / "README.md").write_text(
+        f"""# AI Skills Collection Benchmarked
 
 > Early alpha: this repository is experimental. Many entries may be incomplete, incompatible, stale, or unsuitable for a given environment. Use it at your own risk; the maintainers accept no responsibility for results, failures, or downstream use.
 
@@ -958,9 +1562,12 @@ Validation:
 python3 tools/validate_catalog.py
 python3 -m pytest
 ```
-""", encoding="utf-8")
+""",
+        encoding="utf-8",
+    )
 
-    (docs / "methodology.md").write_text(f"""# Methodology
+    (docs / "methodology.md").write_text(
+        f"""# Methodology
 
 Snapshot date: `{BUILD_DATE}`. Inputs are local checkouts of public GitHub repositories.
 
@@ -976,9 +1583,12 @@ Rules:
 8. Every cataloged skill also gets a compact agent-ready entrypoint under `included/agent-ready/`.
 
 The repository provides catalog and benchmark definitions. A skill is not marked as having passed until an external run artifact is recorded.
-""", encoding="utf-8")
+""",
+        encoding="utf-8",
+    )
 
-    (docs / "immutable-audit-model.md").write_text("""# Immutable Audit Model
+    (docs / "immutable-audit-model.md").write_text(
+        """# Immutable Audit Model
 
 This repository keeps skill mirroring and benchmark evaluation as separate loops.
 
@@ -1001,7 +1611,9 @@ Benchmark tasks, fixtures, expected results, and evaluators must be defined inde
 Source-grounded skill-proof artifacts are provenance checks. They are useful for confirming that a source file can be located and interpreted, but they are not runtime benchmark passes.
 
 A counted runtime benchmark artifact must record that its task, evaluator, and expected result were created outside the skill content.
-""", encoding="utf-8")
+""",
+        encoding="utf-8",
+    )
 
     source_doc = "# Source Policy\n\n## Skill Sources\n\n"
     for source in SOURCES:
@@ -1014,7 +1626,8 @@ A counted runtime benchmark artifact must record that its task, evaluator, and e
         source_doc += f"- [{source['title']}]({source['url']})\n"
     (docs / "source-policy.md").write_text(source_doc, encoding="utf-8")
 
-    (docs / "installation.md").write_text("""# Host-Agnostic Installation
+    (docs / "installation.md").write_text(
+        """# Host-Agnostic Installation
 
 Validation does not require the original source checkouts:
 
@@ -1032,7 +1645,9 @@ python3 tools/build_catalog.py --source-root /path/to/ai_skill_sources
 ```
 
 Validation does not depend on `/tmp`, a local username, a private absolute path, or a specific host. Network-heavy benchmark execution should be performed by a separate runner that records dataset versions and artifacts.
-""", encoding="utf-8")
+""",
+        encoding="utf-8",
+    )
 
     selected_doc = f"# Selected Skills\n\nSelected entries: `{len(selected)}`.\n\n| Skill | Category | Source | Ref | Scenarios |\n|---|---|---|---|---:|\n"
     for entry in selected:
@@ -1069,25 +1684,25 @@ Validation does not depend on `/tmp`, a local username, a private absolute path,
             for sid in entry["benchmark_scenarios"]:
                 doc += f"  - `{sid}`: {scenario_lookup[sid]['workflow']}\n"
             doc += "\n"
-            per_skill = f"""# {entry['name']}
+            per_skill = f"""# {entry["name"]}
 
-Category: {entry['category']}
+Category: {entry["category"]}
 
-Mirrored skill: `{entry['mirrored_path']}`
+Mirrored skill: `{entry["mirrored_path"]}`
 
-Agent-ready entrypoint: `{entry['agent_ready_path']}`
+Agent-ready entrypoint: `{entry["agent_ready_path"]}`
 
-Source: [{entry['source_repo']} `{entry['source_path']}`]({entry['immutable_source_url']})
+Source: [{entry["source_repo"]} `{entry["source_path"]}`]({entry["immutable_source_url"]})
 
-Selected ref: `{entry['selected_ref']}`; commit `{entry['commit_sha'][:12]}`
+Selected ref: `{entry["selected_ref"]}`; commit `{entry["commit_sha"][:12]}`
 
 ## Use
 
-{entry['explanation']['how_an_agent_should_use_it']}
+{entry["explanation"]["how_an_agent_should_use_it"]}
 
 ## Scope
 
-{entry['explanation']['what_it_covers']}
+{entry["explanation"]["what_it_covers"]}
 
 ## Verification
 
@@ -1101,7 +1716,9 @@ Assigned scenarios:
             per_skill += "\nImprovement notes:\n\n"
             for note in entry["improvement_notes"]:
                 per_skill += f"- {note}\n"
-            skill_path = skill_doc_dir / slug(entry["category"]) / slug(entry["subcategory"]) / f"{entry['install_name']}.md"
+            skill_path = (
+                skill_doc_dir / slug(entry["category"]) / slug(entry["subcategory"]) / f"{entry['install_name']}.md"
+            )
             skill_path.parent.mkdir(parents=True, exist_ok=True)
             skill_path.write_text(per_skill.rstrip() + "\n", encoding="utf-8")
         (cat_dir / f"{slug(category)}.md").write_text(doc.rstrip() + "\n", encoding="utf-8")
@@ -1114,7 +1731,8 @@ Assigned scenarios:
         benchmark_doc += f"## {title}\n\n- ID: `{track_id}`\n- URL: {url}\n- Workflow: {problem}\n- Metrics: {', '.join(metrics)}\n\n"
     (docs / "benchmarks.md").write_text(benchmark_doc.rstrip() + "\n", encoding="utf-8")
 
-    (docs / "benchmark-runner-requirements.md").write_text("""# Benchmark Runner Requirements
+    (docs / "benchmark-runner-requirements.md").write_text(
+        """# Benchmark Runner Requirements
 
 This repository defines benchmark scenarios. It does not mark a skill as passed until a separate runner records real artifacts for that skill and scenario.
 
@@ -1149,9 +1767,12 @@ Data, science, and document skills:
 - Use real public datasets, filings, papers, documents, or spreadsheets with immutable identifiers.
 - Record schema assumptions, cleaning decisions, row counts, units, citations, and reproducible analysis commands.
 - Validate numeric outputs against an independent calculation or dataset-provided ground truth where possible.
-""", encoding="utf-8")
+""",
+        encoding="utf-8",
+    )
 
-    (docs / "agent-consumability.md").write_text(f"""# Agent Consumability Checklist
+    (docs / "agent-consumability.md").write_text(
+        f"""# Agent Consumability Checklist
 
 Mechanical checks:
 
@@ -1162,7 +1783,9 @@ Mechanical checks:
 - Improvement notes are derived from observed file structure.
 
 Runtime proof requires running the scenario in the target agent environment and saving artifacts.
-""", encoding="utf-8")
+""",
+        encoding="utf-8",
+    )
 
 
 def write_evaluators() -> None:
@@ -1317,17 +1940,34 @@ def write_evaluators() -> None:
 def main() -> None:
     global SOURCE_ROOT
     parser = argparse.ArgumentParser(description="Build the AI skill catalog from local source checkouts.")
-    parser.add_argument("--source-root", default=str(SOURCE_ROOT), help="Directory containing source repo checkouts. Defaults to AI_SKILL_SOURCE_ROOT or /tmp/ai_skill_sources.")
+    parser.add_argument(
+        "--source-root",
+        default=str(SOURCE_ROOT),
+        help="Directory containing source repo checkouts. Defaults to AI_SKILL_SOURCE_ROOT or /tmp/ai_skill_sources.",
+    )
     args = parser.parse_args()
     SOURCE_ROOT = Path(args.source_root).expanduser().resolve()
     entries = collect()
     scenarios = build_scenarios(entries)
-    tracks = [{"id": t[0], "title": t[1], "url": t[2], "kind": "real dataset or repository workflow", "problem": t[3], "metrics": t[4]} for t in TRACKS]
+    tracks = [
+        {
+            "id": t[0],
+            "title": t[1],
+            "url": t[2],
+            "kind": "real dataset or repository workflow",
+            "problem": t[3],
+            "metrics": t[4],
+        }
+        for t in TRACKS
+    ]
     write_json(ROOT / "data" / "skills_catalog.json", entries)
     write_json(ROOT / "data" / "best_practice_sources.json", BEST_PRACTICE_SOURCES)
     write_json(ROOT / "data" / "benchmark_tracks.json", tracks)
     write_json(ROOT / "data" / "benchmark_scenarios.json", scenarios)
-    write_json(ROOT / "data" / "benchmark_assignments.json", [{"skill_id": e["id"], "scenario_ids": e["benchmark_scenarios"]} for e in entries])
+    write_json(
+        ROOT / "data" / "benchmark_assignments.json",
+        [{"skill_id": e["id"], "scenario_ids": e["benchmark_scenarios"]} for e in entries],
+    )
     write_json(ROOT / "data" / "source_lock.json", build_source_lock(entries))
     mirror_all_skills(entries)
     write_agent_ready_skills(entries)

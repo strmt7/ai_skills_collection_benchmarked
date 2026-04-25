@@ -13,7 +13,6 @@ import argparse
 import json
 import re
 import subprocess
-import sys
 import tempfile
 import urllib.request
 from datetime import datetime, timezone
@@ -35,7 +34,12 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "adapter_stage": "implemented-smoke-adapter",
         "primary_metrics": ["with-skill pass rate", "without-skill pass rate", "pass-rate delta", "token overhead"],
         "category_fit": ["Coding, refactoring & repository automation", "Agent infrastructure & skill creation"],
-        "integration_requirements": ["pinned task repository", "with-skill run", "without-skill run", "deterministic acceptance tests"],
+        "integration_requirements": [
+            "pinned task repository",
+            "with-skill run",
+            "without-skill run",
+            "deterministic acceptance tests",
+        ],
     },
     {
         "id": "skillsbench",
@@ -79,7 +83,12 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "adapter_stage": "implemented-smoke-adapter",
         "primary_metrics": ["task success", "command log completeness", "execution time", "resource use"],
         "category_fit": ["DevOps, cloud & operations", "Testing, QA & benchmarking"],
-        "integration_requirements": ["task definition", "container environment", "command transcript", "verifier result"],
+        "integration_requirements": [
+            "task definition",
+            "container environment",
+            "command transcript",
+            "verifier result",
+        ],
     },
     {
         "id": "browsergym",
@@ -99,7 +108,12 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "repo_url": "https://github.com/web-arena-x/webarena",
         "source_url": "https://arxiv.org/abs/2307.13854",
         "adapter_stage": "implemented-smoke-adapter",
-        "primary_metrics": ["end-to-end task success", "site state correctness", "action trace", "human-baseline comparison"],
+        "primary_metrics": [
+            "end-to-end task success",
+            "site state correctness",
+            "action trace",
+            "human-baseline comparison",
+        ],
         "category_fit": ["Frontend, UI & browser automation", "Search, retrieval & web automation"],
         "integration_requirements": ["self-hosted sites", "task id", "browser trace", "state evaluator"],
     },
@@ -110,9 +124,19 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "repo_url": "https://github.com/ServiceNow/webarena-verified",
         "source_url": "https://github.com/ServiceNow/webarena-verified",
         "adapter_stage": "implemented-smoke-adapter",
-        "primary_metrics": ["verified task success", "network trace evidence", "response evaluator result", "state evaluator result"],
+        "primary_metrics": [
+            "verified task success",
+            "network trace evidence",
+            "response evaluator result",
+            "state evaluator result",
+        ],
         "category_fit": ["Frontend, UI & browser automation", "Search, retrieval & web automation"],
-        "integration_requirements": ["verified task set", "captured browser/network trace", "deterministic evaluator", "site snapshot"],
+        "integration_requirements": [
+            "verified task set",
+            "captured browser/network trace",
+            "deterministic evaluator",
+            "site snapshot",
+        ],
     },
     {
         "id": "st-webagentbench",
@@ -121,7 +145,12 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "repo_url": "https://github.com/segev-shlomov/ST-WebAgentBench",
         "source_url": "https://github.com/segev-shlomov/ST-WebAgentBench",
         "adapter_stage": "implemented-smoke-adapter",
-        "primary_metrics": ["task success", "safety violation rate", "trustworthiness score", "modality challenge score"],
+        "primary_metrics": [
+            "task success",
+            "safety violation rate",
+            "trustworthiness score",
+            "modality challenge score",
+        ],
         "category_fit": ["Security, compliance & risk", "Frontend, UI & browser automation"],
         "integration_requirements": ["web task instance", "browser trace", "safety policy", "evaluator result"],
     },
@@ -132,9 +161,19 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "repo_url": "https://github.com/xlang-ai/OSWorld",
         "source_url": "https://os-world.github.io/",
         "adapter_stage": "implemented-smoke-adapter",
-        "primary_metrics": ["task success", "execution evaluator result", "screen trace", "application state correctness"],
+        "primary_metrics": [
+            "task success",
+            "execution evaluator result",
+            "screen trace",
+            "application state correctness",
+        ],
         "category_fit": ["Frontend, UI & browser automation", "Documents, spreadsheets & presentations"],
-        "integration_requirements": ["desktop environment", "task config", "screen/action trace", "execution evaluator"],
+        "integration_requirements": [
+            "desktop environment",
+            "task config",
+            "screen/action trace",
+            "execution evaluator",
+        ],
     },
     {
         "id": "bfcl",
@@ -146,7 +185,12 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "adapter_stage": "implemented-smoke-adapter",
         "primary_metrics": ["AST match", "execution accuracy", "function relevance", "multi-turn correctness"],
         "category_fit": ["Agent infrastructure & skill creation", "Search, retrieval & web automation"],
-        "integration_requirements": ["function schema", "model/tool-call output", "checker output", "test split identifier"],
+        "integration_requirements": [
+            "function schema",
+            "model/tool-call output",
+            "checker output",
+            "test split identifier",
+        ],
     },
     {
         "id": "mle-bench",
@@ -157,7 +201,12 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "adapter_stage": "implemented-smoke-adapter",
         "primary_metrics": ["competition score", "medal threshold", "valid submission rate", "runtime budget"],
         "category_fit": ["Science, research & data analysis", "Data, analytics & visualization"],
-        "integration_requirements": ["Kaggle credentials when needed", "competition data", "submission artifact", "grading script output"],
+        "integration_requirements": [
+            "Kaggle credentials when needed",
+            "competition data",
+            "submission artifact",
+            "grading script output",
+        ],
     },
     {
         "id": "ml-dev-bench",
@@ -168,7 +217,12 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "adapter_stage": "implemented-smoke-adapter",
         "primary_metrics": ["task success", "model score", "debugging correctness", "implementation correctness"],
         "category_fit": ["Science, research & data analysis", "Data, analytics & visualization"],
-        "integration_requirements": ["task repository", "agent patch or outputs", "training/evaluation logs", "scoring script"],
+        "integration_requirements": [
+            "task repository",
+            "agent patch or outputs",
+            "training/evaluation logs",
+            "scoring script",
+        ],
     },
     {
         "id": "gittaskbench",
@@ -179,7 +233,12 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "adapter_stage": "implemented-smoke-adapter",
         "primary_metrics": ["task success", "setup success", "cost-aware alpha", "test result"],
         "category_fit": ["Coding, refactoring & repository automation", "DevOps, cloud & operations"],
-        "integration_requirements": ["repository task", "environment setup log", "agent patch", "test/evaluator result"],
+        "integration_requirements": [
+            "repository task",
+            "environment setup log",
+            "agent patch",
+            "test/evaluator result",
+        ],
     },
 ]
 
@@ -232,7 +291,7 @@ def github_tree_paths(repo_url: str, head_sha: str) -> list[str]:
                 timeout=180,
             )
             if clone.returncode != 0:
-                raise RuntimeError(clone.stderr.strip() or "git clone tree fallback failed")
+                raise RuntimeError(clone.stderr.strip() or "git clone tree fallback failed") from None
             tree = subprocess.run(
                 ["git", "-C", tmp, "ls-tree", "-r", "--name-only", "HEAD"],
                 text=True,
@@ -241,7 +300,7 @@ def github_tree_paths(repo_url: str, head_sha: str) -> list[str]:
                 timeout=60,
             )
             if tree.returncode != 0:
-                raise RuntimeError(tree.stderr.strip() or "git ls-tree fallback failed")
+                raise RuntimeError(tree.stderr.strip() or "git ls-tree fallback failed") from None
             return sorted(path for path in tree.stdout.splitlines() if path)
 
 
@@ -289,13 +348,33 @@ def smoke_probe(method: dict[str, Any], timestamp: str) -> dict[str, Any]:
     if subpath is None:
         subpath_present = True
     checks = [
-        {"name": "adapter_spec_complete", "passed": adapter_complete(method), "evidence": "data/external_benchmark_methods.json"},
+        {
+            "name": "adapter_spec_complete",
+            "passed": adapter_complete(method),
+            "evidence": "data/external_benchmark_methods.json",
+        },
         {"name": "repository_head_resolves", "passed": head["resolved"], "evidence": method["repo_url"]},
         {"name": "repo_tree_sampled", "passed": tree_path_count > 0, "evidence": tree_path_count},
-        {"name": "declares_objective_metrics", "passed": len(method.get("primary_metrics", [])) >= 3, "evidence": method.get("primary_metrics", [])},
-        {"name": "declares_integration_requirements", "passed": len(method.get("integration_requirements", [])) >= 3, "evidence": method.get("integration_requirements", [])},
-        {"name": "declares_category_fit", "passed": bool(method.get("category_fit")), "evidence": method.get("category_fit", [])},
-        {"name": "required_subpath_resolves", "passed": subpath_present is True, "evidence": subpath or "repository root"},
+        {
+            "name": "declares_objective_metrics",
+            "passed": len(method.get("primary_metrics", [])) >= 3,
+            "evidence": method.get("primary_metrics", []),
+        },
+        {
+            "name": "declares_integration_requirements",
+            "passed": len(method.get("integration_requirements", [])) >= 3,
+            "evidence": method.get("integration_requirements", []),
+        },
+        {
+            "name": "declares_category_fit",
+            "passed": bool(method.get("category_fit")),
+            "evidence": method.get("category_fit", []),
+        },
+        {
+            "name": "required_subpath_resolves",
+            "passed": subpath_present is True,
+            "evidence": subpath or "repository root",
+        },
     ]
     passed = sum(1 for check in checks if check["passed"])
     total = len(checks)
@@ -485,8 +564,12 @@ def check_outputs() -> None:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Evaluate external benchmark method adapter readiness.")
-    parser.add_argument("--check", action="store_true", help="Validate generated registry and smoke outputs without network probes.")
-    parser.add_argument("--registry-only", action="store_true", help="Write only the method registry and registry documentation.")
+    parser.add_argument(
+        "--check", action="store_true", help="Validate generated registry and smoke outputs without network probes."
+    )
+    parser.add_argument(
+        "--registry-only", action="store_true", help="Write only the method registry and registry documentation."
+    )
     return parser
 
 
