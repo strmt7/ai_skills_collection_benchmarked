@@ -8,18 +8,10 @@ regress to host-sensitive behaviour.
 
 from __future__ import annotations
 
-import os
-import sys
 import stat
 from pathlib import Path
 
-from tests.helpers import ROOT
-
-TOOLS = ROOT / "tools"
-if str(TOOLS) not in sys.path:
-    sys.path.insert(0, str(TOOLS))
-
-import build_catalog  # noqa: E402
+import build_catalog  # tools/ on sys.path via conftest.py
 
 
 def _write_fixture(root: Path, mode_group_world: int) -> None:

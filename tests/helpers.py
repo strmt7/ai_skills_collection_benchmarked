@@ -19,9 +19,10 @@ Public surface (relied on by other test modules):
 from __future__ import annotations
 
 import json
-import sys
-from functools import lru_cache
+from functools import cache
 from pathlib import Path
+
+import check_benchmark_artifact  # tests/conftest.py puts tools/ on sys.path
 
 
 def _discover_root() -> Path:
@@ -40,14 +41,11 @@ def _discover_root() -> Path:
 
 
 ROOT = _discover_root()
-sys.path.insert(0, str(ROOT / "tools"))
-
-import check_benchmark_artifact  # noqa: E402  (path must be set first)
 
 MIN_SCENARIOS = 3
 
 
-@lru_cache(maxsize=None)
+@cache
 def _load_cached(relative: str) -> str:
     return (ROOT / relative).read_text(encoding="utf-8")
 
