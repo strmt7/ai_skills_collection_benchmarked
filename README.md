@@ -1,5 +1,11 @@
 # AI Skills Collection Benchmarked
 
+[![Offline validation](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/offline-validation.yml/badge.svg)](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/offline-validation.yml)
+[![Ruff](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/ruff.yml/badge.svg)](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/ruff.yml)
+[![Mypy](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/mypy.yml/badge.svg)](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/mypy.yml)
+[![Secret scan](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/secret-scan.yml/badge.svg)](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/secret-scan.yml)
+[![Python 3.10–3.13](https://img.shields.io/badge/python-3.10%20%E2%80%93%203.13-blue.svg)](https://devguide.python.org/versions/)
+
 > Early alpha: this repository is experimental. Many entries may be incomplete, incompatible, stale, or unsuitable for a given environment. Use it at your own risk; the maintainers accept no responsibility for results, failures, or downstream use.
 
 Evidence-backed catalog of AI agent skills, with benchmark scenarios tied to real datasets and real repository workflows.
@@ -48,10 +54,25 @@ Start here:
 - [Benchmark runner requirements](docs/benchmark-runner-requirements.md)
 - [Host-agnostic installation](docs/installation.md)
 - [Agent consumability checklist](docs/agent-consumability.md)
+- [Contributing guide](CONTRIBUTING.md)
+- [Changelog](CHANGELOG.md)
 
-Validation:
+Validation (offline; no source checkouts required):
 
 ```bash
-python3 tools/validate_catalog.py
-python3 -m pytest
+python3 -m pip install -e '.[test,lint]'
+python3 tools/validate_catalog.py            # cross-reference + mirror integrity
+python3 tools/validate_source_lock.py        # offline structural + mirror-hash check
+python3 tools/run_static_benchmarks.py --check
+python3 tools/audit_skill_quality.py --check
+python3 tools/check_no_secret_patterns.py --history
+ruff check tools tests
+ruff format --check tools tests
+mypy tools tests
+python3 -m pytest -q -n auto
+python3 -m compileall -q tools tests
 ```
+
+The same gates run in [GitHub Actions](.github/workflows/) on every push, on
+weekly cron, and on `workflow_dispatch`. See [docs/installation.md](docs/installation.md)
+for the full reproducible / `SOURCE_DATE_EPOCH`-anchored regeneration flow.
