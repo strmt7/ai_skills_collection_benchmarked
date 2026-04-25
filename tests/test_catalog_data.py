@@ -1,9 +1,8 @@
 import re
 from pathlib import Path
 
-from helpers import MIN_SCENARIOS, ROOT, assert_unique, load
-
 import build_catalog
+from helpers import MIN_SCENARIOS, ROOT, assert_unique, load
 
 
 def test_catalog_scale_and_unique_ids():
@@ -17,8 +16,12 @@ def test_entry_provenance():
         assert entry["name"]
         assert entry["description"]
         assert entry["install_name"]
-        assert entry["mirrored_path"] == build_catalog.skill_mirror_path(entry["category"], entry["subcategory"], entry["install_name"])
-        assert entry["agent_ready_path"] == build_catalog.skill_agent_ready_path(entry["category"], entry["subcategory"], entry["install_name"])
+        assert entry["mirrored_path"] == build_catalog.skill_mirror_path(
+            entry["category"], entry["subcategory"], entry["install_name"]
+        )
+        assert entry["agent_ready_path"] == build_catalog.skill_agent_ready_path(
+            entry["category"], entry["subcategory"], entry["install_name"]
+        )
         assert isinstance(entry["selected_subset"], bool)
         assert not entry["source_tier"].startswith("priority")
         assert "requested" not in entry["source_tier"]
@@ -27,10 +30,14 @@ def test_entry_provenance():
         assert re.fullmatch(r"[0-9a-f]{40}", entry["commit_sha"])
         assert re.fullmatch(r"[0-9a-f]{64}", entry["skill_file_sha256"])
         assert re.fullmatch(r"[0-9a-f]{64}", entry["skill_dir_sha256"])
-        expected_immutable = f"https://github.com/{entry['source_repo']}/blob/{entry['commit_sha']}/{entry['source_path']}"
+        expected_immutable = (
+            f"https://github.com/{entry['source_repo']}/blob/{entry['commit_sha']}/{entry['source_path']}"
+        )
         assert entry["immutable_source_url"] == expected_immutable
         if entry["latest_release_tag"]:
-            expected_source = f"https://github.com/{entry['source_repo']}/blob/{entry['latest_release_tag']}/{entry['source_path']}"
+            expected_source = (
+                f"https://github.com/{entry['source_repo']}/blob/{entry['latest_release_tag']}/{entry['source_path']}"
+            )
             assert entry["selected_ref"] == entry["latest_release_tag"]
             assert entry["source_url"] == expected_source
         else:
@@ -112,11 +119,7 @@ def test_source_lock_matches_catalog():
     lock = load("data/source_lock.json")
     assert lock["lock_version"] == 1
     assert lock["hash_algorithm"] == "sha256"
-    locked = {
-        skill["id"]: (source, skill)
-        for source in lock["sources"]
-        for skill in source["skills"]
-    }
+    locked = {skill["id"]: (source, skill) for source in lock["sources"] for skill in source["skills"]}
     assert set(locked) == set(catalog)
     for skill_id, (source, skill) in locked.items():
         entry = catalog[skill_id]
@@ -129,14 +132,42 @@ def test_source_lock_matches_catalog():
 
 
 def test_generated_files_match_generator_constants():
-    expected_tracks = [{"id": t[0], "title": t[1], "url": t[2], "kind": "real dataset or repository workflow", "problem": t[3], "metrics": t[4]} for t in build_catalog.TRACKS]
+    expected_tracks = [
+        {
+            "id": t[0],
+            "title": t[1],
+            "url": t[2],
+            "kind": "real dataset or repository workflow",
+            "problem": t[3],
+            "metrics": t[4],
+        }
+        for t in build_catalog.TRACKS
+    ]
     assert load("data/benchmark_tracks.json") == expected_tracks
     assert load("data/best_practice_sources.json") == build_catalog.BEST_PRACTICE_SOURCES
 
 
 def test_category_keyword_matching_uses_tokens():
     source = {"repo": "example/tools"}
-    assert build_catalog.category_for(source, "skills/dockerfile-generator/SKILL.md", "dockerfile-generator", "Generate Dockerfiles") == "DevOps, cloud & operations"
-    assert build_catalog.category_for(source, "skills/gitlab-helper/SKILL.md", "gitlab-helper", "Elaborate workflow generator") != "Science, research & data analysis"
-    assert build_catalog.category_for(source, "skills/bash-script-generator/SKILL.md", "bash-script-generator", "Generate shell scripts") != "Agent infrastructure & skill creation"
-    assert build_catalog.category_for(source, "skills/gene-analysis/SKILL.md", "gene-analysis", "Analyze gene expression") == "Science, research & data analysis"
+    assert (
+        build_catalog.category_for(
+            source, "skills/dockerfile-generator/SKILL.md", "dockerfile-generator", "Generate Dockerfiles"
+        )
+        == "DevOps, cloud & operations"
+    )
+    assert (
+        build_catalog.category_for(
+            source, "skills/gitlab-helper/SKILL.md", "gitlab-helper", "Elaborate workflow generator"
+        )
+        != "Science, research & data analysis"
+    )
+    assert (
+        build_catalog.category_for(
+            source, "skills/bash-script-generator/SKILL.md", "bash-script-generator", "Generate shell scripts"
+        )
+        != "Agent infrastructure & skill creation"
+    )
+    assert (
+        build_catalog.category_for(source, "skills/gene-analysis/SKILL.md", "gene-analysis", "Analyze gene expression")
+        == "Science, research & data analysis"
+    )

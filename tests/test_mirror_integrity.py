@@ -1,8 +1,7 @@
 import json
 
-from helpers import ROOT, load
-
 import build_catalog
+from helpers import ROOT, load
 
 
 def test_selected_manifest_matches_mirrors():
@@ -18,7 +17,9 @@ def test_selected_manifest_matches_mirrors():
         assert mirror_path.is_dir(), entry["id"]
         assert (mirror_path / "SKILL.md").is_file(), entry["id"]
         assert entry["standalone_installable"] == entry["has_required_frontmatter"]
-        assert entry["bulk_install_safe"] == (entry["has_required_frontmatter"] and entry["name_conflict_group"] is None)
+        assert entry["bulk_install_safe"] == (
+            entry["has_required_frontmatter"] and entry["name_conflict_group"] is None
+        )
 
 
 def test_all_skills_are_physically_mirrored_and_documented():
@@ -42,7 +43,16 @@ def test_all_skills_are_physically_mirrored_and_documented():
         assert build_catalog.sha256_tree(mirrored) == entry["skill_dir_sha256"]
         item = manifest_by_id[entry["id"]]
         assert item["mirrored_path"] == entry["mirrored_path"]
-        skill_doc = ROOT / "docs" / "catalog" / "skills" / "by-category" / build_catalog.slug(entry["category"]) / build_catalog.slug(entry["subcategory"]) / f"{entry['install_name']}.md"
+        skill_doc = (
+            ROOT
+            / "docs"
+            / "catalog"
+            / "skills"
+            / "by-category"
+            / build_catalog.slug(entry["category"])
+            / build_catalog.slug(entry["subcategory"])
+            / f"{entry['install_name']}.md"
+        )
         assert skill_doc.is_file(), entry["id"]
         agent_ready = ROOT / entry["agent_ready_path"]
         assert agent_ready.is_file(), entry["id"]

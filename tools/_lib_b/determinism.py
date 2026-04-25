@@ -30,10 +30,7 @@ _SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 
 def _iso_z(epoch_seconds: int) -> str:
     return (
-        datetime.fromtimestamp(epoch_seconds, tz=timezone.utc)
-        .replace(microsecond=0)
-        .isoformat()
-        .replace("+00:00", "Z")
+        datetime.fromtimestamp(epoch_seconds, tz=timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
     )
 
 
@@ -75,9 +72,7 @@ def resolve_catalog_commit(
         return pinned
     if existing_manifest_value and _SHA_RE.match(existing_manifest_value):
         return existing_manifest_value
-    head = subprocess.check_output(
-        ["git", "-C", str(root), "rev-parse", "HEAD"], text=True
-    ).strip()
+    head = subprocess.check_output(["git", "-C", str(root), "rev-parse", "HEAD"], text=True).strip()
     if not _SHA_RE.match(head):
         raise RuntimeError(f"git rev-parse HEAD returned unexpected value: {head!r}")
     return head
