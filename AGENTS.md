@@ -60,3 +60,44 @@ Benchmark independence rule:
 - Skill text may be used as provenance, activation context, or operating instructions, but it must not define the expected answer used for scoring that same skill.
 - Source-grounded skill-proof artifacts are provenance checks only. They must not be counted as runtime benchmark passes.
 - A counted runtime benchmark artifact must explicitly record that the task, evaluator, and expected result were defined outside the skill content.
+
+## CI Quality Gates
+
+Every pull request must pass the following gates before merge. Run any of
+them locally with `pip install -e '.[test,lint]'` and the commands listed in
+[`docs/installation.md`](docs/installation.md):
+
+- **Lint + format**: `ruff check tools tests` and `ruff format --check tools tests`. Configured in `pyproject.toml` (`[tool.ruff]`).
+- **Type check**: `mypy tools tests` runs in a Python 3.10/3.11/3.12/3.13 matrix so version-conditional bugs (e.g. `datetime.UTC` is 3.11+) surface in CI.
+- **Catalog**: `python3 tools/validate_catalog.py` collects every drift entry in a single run (no fail-fast).
+- **Static benchmarks freshness**: `python3 tools/run_static_benchmarks.py --check`.
+- **Skill risk audit freshness**: `python3 tools/audit_skill_quality.py --check`.
+- **Tests**: `python3 -m pytest -q -n auto` runs the full suite in parallel under `pytest-xdist`.
+- **Compile check**: `python3 -m compileall -q tools tests`.
+- **Secrets**: `python3 tools/check_no_secret_patterns.py --history` (in-repo regex + entropy) plus `gitleaks` v8.30.1 (MIT, pinned binary) as a second-opinion gate. The `.gitleaks.toml` allowlist documents why upstream-mirrored content is exempt.
+
+Workflows: `.github/workflows/{ruff,mypy,offline-validation,secret-scan}.yml`. All declare least-privilege `permissions: contents: read`, concurrency cancellation, pip caching keyed on `pyproject.toml`, and weekly cron triggers (alongside `workflow_dispatch`).
+
+## Determinism Invariants
+
+Generators that write dated artefacts (catalog, runtime batches, repaired
+overlays) must NOT call `datetime.now()` or any wall-clock API in their
+output paths. Use `tools/_lib_b/determinism.py` instead. Resolution
+precedence (highest first):
+
+1. `SOURCE_DATE_EPOCH` environment variable, per [reproducible-builds.org](https://reproducible-builds.org/docs/source-date-epoch/).
+2. The previous run's manifest value (idempotent regeneration).
+3. Input-anchored fallback (e.g. `git log -1 --format=%ct -- <input>`).
+
+`tools/build_catalog.py::sha256_tree` uses a git-style portable file mode
+(`0o100644` / `0o100755`) so tree hashes are identical across hosts
+regardless of umask. The invariant is locked in by
+`tests/test_hash_portability.py`; do not regress.
+
+## Tooling Reference
+
+- All tool scripts expose `build_parser() -> argparse.ArgumentParser` and `main(argv: list[str] | None = None) -> int` so they can be exercised from pytest without subprocesses.
+- Tools that publish a generated artefact also publish `--check` so CI can verify freshness without rewriting the on-disk state.
+- Validators emit `--json` envelopes for machine consumers. Errors are collected, not raised at the first miss.
+- Tests live under `tests/` with a single `tests/conftest.py` putting `tools/` on `sys.path`. Per-test-file path shims are not used.
+- A successful local pre-push run is the same set of commands CI runs; see [`CONTRIBUTING.md`](CONTRIBUTING.md).
