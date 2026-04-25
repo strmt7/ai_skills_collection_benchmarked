@@ -34,6 +34,7 @@ TOOLS_WITH_CHECK = (
     "run_static_benchmarks.py",
     "evaluate_external_benchmark_methods.py",
     "report_local_markdown_link_failures.py",
+    "update_readme_badges.py",
 )
 
 # Tools whose common invocation needs no arguments.
