@@ -112,21 +112,10 @@ def proof_for(entry: dict[str, Any], skill_text: str) -> dict[str, Any]:
     }
 
 
-def write_artifact(
-    *,
-    batch_dir: Path,
-    batch_name: str,
-    catalog_commit: str,
-    entry: dict[str, Any],
-    scenario: dict[str, Any],
-    timestamp_utc: str,
-) -> dict[str, Any]:
-    run_dir = batch_dir / entry["id"] / scenario["id"]
-    run_dir.mkdir(parents=True, exist_ok=True)
-    skill_path = ROOT / entry["mirrored_path"] / "SKILL.md"
-    skill_text = skill_path.read_text(encoding="utf-8")
+def build_result(entry: dict[str, Any], scenario: dict[str, Any], skill_text: str) -> dict[str, Any]:
+    """Pure: construct the source-proof result payload (no I/O)."""
     proof = proof_for(entry, skill_text)
-    result = proof | {
+    return proof | {
         "skill_id": entry["id"],
         "scenario_id": scenario["id"],
         "source_repo": entry["source_repo"],
@@ -134,15 +123,20 @@ def write_artifact(
         "source_commit": entry["commit_sha"],
         "skill_file_sha256": entry["skill_file_sha256"],
     }
-    write_json(run_dir / "result.json", result)
-    transcript = "\n".join(
+
+
+def build_transcript(
+    *, batch_name: str, timestamp_utc: str, catalog_commit: str, entry: dict[str, Any], skill_text: str
+) -> str:
+    """Pure: assemble the transcript.txt body (no I/O)."""
+    return "\n".join(
         [
             f"batch: {batch_name}",
             f"timestamp_utc: {timestamp_utc}",
             "runner: tools/create_source_proof_batch.py",
             f"catalog_commit: {catalog_commit}",
             f"skill_id: {entry['id']}",
-            f"scenario_id: {scenario['id']}",
+            f"scenario_id: {scenario_id_for(entry)}",
             f"read: {entry['mirrored_path']}/SKILL.md",
             f"source: {entry['immutable_source_url']}",
             f"skill_file_sha256: {entry['skill_file_sha256']}",
@@ -155,8 +149,31 @@ def write_artifact(
             "",
         ]
     )
-    (run_dir / "transcript.txt").write_text(transcript, encoding="utf-8")
-    artifact = {
+
+
+def scenario_id_for(entry: dict[str, Any]) -> str:
+    """Pure: the conventional source-proof scenario id for an entry."""
+    return f"skill-proof-{entry['id']}"
+
+
+def build_artifact(
+    *,
+    batch_name: str,
+    catalog_commit: str,
+    entry: dict[str, Any],
+    scenario: dict[str, Any],
+    timestamp_utc: str,
+    result: dict[str, Any],
+    skill_text: str,
+) -> dict[str, Any]:
+    """Pure: construct the artifact.json payload. Deterministic (no wall-clock)."""
+    proof = {
+        "observed_headings": result["observed_headings"],
+        "proof_evidence": result["proof_evidence"],
+        "activation_conditions": result["activation_conditions"],
+        "workflow_steps": result["workflow_steps"],
+    }
+    return {
         "artifact_version": "1.0",
         "artifact_kind": "provenance_check",
         "skill_id": entry["id"],
@@ -205,7 +222,10 @@ def write_artifact(
             "evaluator_defined_outside_skill": True,
             "expected_result_defined_outside_skill": False,
             "uses_exact_skill_content_for_expected_result": True,
-            "skill_content_usage": "source text used only for provenance and activation extraction; this artifact is not a counted runtime benchmark pass",
+            "skill_content_usage": (
+                "source text used only for provenance and activation extraction; this artifact is "
+                "not a counted runtime benchmark pass"
+            ),
         },
         "evidence": {
             "artifact_paths": ["result.json", "transcript.txt"],
@@ -213,19 +233,68 @@ def write_artifact(
         },
         "objective_checks": scenario["objective_checks"],
     }
+
+
+def write_artifact(
+    *,
+    batch_dir: Path,
+    batch_name: str,
+    catalog_commit: str,
+    entry: dict[str, Any],
+    scenario: dict[str, Any],
+    timestamp_utc: str,
+    dry_run: bool = False,
+) -> dict[str, Any]:
+    """Write the result/transcript/artifact triple for one skill. Idempotent.
+
+    With ``dry_run=True`` nothing is written; the returned dict still carries
+    the would-be paths and a synthetic ``"validation"`` entry so callers can
+    print a plan.
+    """
+    run_dir = batch_dir / entry["id"] / scenario["id"]
+    skill_path = ROOT / entry["mirrored_path"] / "SKILL.md"
+    skill_text = skill_path.read_text(encoding="utf-8")
+    result = build_result(entry, scenario, skill_text)
+    transcript = build_transcript(
+        batch_name=batch_name,
+        timestamp_utc=timestamp_utc,
+        catalog_commit=catalog_commit,
+        entry=entry,
+        skill_text=skill_text,
+    )
+    artifact = build_artifact(
+        batch_name=batch_name,
+        catalog_commit=catalog_commit,
+        entry=entry,
+        scenario=scenario,
+        timestamp_utc=timestamp_utc,
+        result=result,
+        skill_text=skill_text,
+    )
+    artifact_rel = (run_dir / "artifact.json").relative_to(ROOT).as_posix()
+    if dry_run:
+        return {
+            "skill_id": entry["id"],
+            "scenario_id": scenario["id"],
+            "artifact_path": artifact_rel,
+            "validation": {"verdict": "dry_run", "errors": []},
+        }
+    run_dir.mkdir(parents=True, exist_ok=True)
+    write_json(run_dir / "result.json", result)
+    (run_dir / "transcript.txt").write_text(transcript, encoding="utf-8")
     write_json(run_dir / "artifact.json", artifact)
     validation = check_benchmark_artifact.validate_artifact(run_dir / "artifact.json")
     return {
         "skill_id": entry["id"],
         "scenario_id": scenario["id"],
-        "artifact_path": (run_dir / "artifact.json").relative_to(ROOT).as_posix(),
+        "artifact_path": artifact_rel,
         "validation": validation,
     }
 
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Create source-grounded benchmark artifacts for a category-spread first batch."
+        description="Create source-grounded benchmark artifacts for a category-spread first batch.",
     )
     parser.add_argument(
         "--batch-name", default="2026-04-17-first-source-proofs", help="Calendar-qualified batch directory name."
@@ -233,6 +302,17 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--limit", type=int, default=10, help="Maximum number of skills to include.")
     parser.add_argument(
         "--catalog-commit", default=None, help="Override the recorded catalog commit (defaults to HEAD)."
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Compute would-be outputs but write nothing. Combined with --json, prints the plan.",
+    )
+    parser.add_argument(
+        "--json",
+        dest="emit_json",
+        action="store_true",
+        help="Emit a machine-readable JSON summary on stdout instead of the default line.",
     )
     return parser
 
@@ -257,9 +337,9 @@ def main(argv: list[str] | None = None) -> int:
         fallback_epoch=_det.git_latest_commit_epoch_for(ROOT, [ROOT / "data" / "skills_catalog.json"]),
     )
     selected = select_category_spread(catalog, args.limit)
-    results = []
+    results: list[dict[str, Any]] = []
     for entry in selected:
-        scenario_id = f"skill-proof-{entry['id']}"
+        scenario_id = scenario_id_for(entry)
         results.append(
             write_artifact(
                 batch_dir=batch_dir,
@@ -268,6 +348,7 @@ def main(argv: list[str] | None = None) -> int:
                 entry=entry,
                 scenario=scenarios[scenario_id],
                 timestamp_utc=timestamp,
+                dry_run=args.dry_run,
             )
         )
     manifest = {
@@ -278,13 +359,35 @@ def main(argv: list[str] | None = None) -> int:
         "artifact_count": len(results),
         "artifacts": results,
     }
-    write_json(batch_dir / "manifest.json", manifest)
-    incomplete = [item for item in results if item["validation"]["verdict"] != "artifact_complete"]
-    print(f"Wrote {len(results)} source-proof artifacts to {batch_dir.relative_to(ROOT)}")
-    if incomplete:
-        print(json.dumps(incomplete, indent=2, sort_keys=True))
-        return 1
-    return 0
+    if not args.dry_run:
+        write_json(batch_dir / "manifest.json", manifest)
+    incomplete = [
+        item
+        for item in results
+        if item["validation"]["verdict"] not in ("artifact_complete", "dry_run")
+    ]
+    if args.emit_json:
+        print(
+            json.dumps(
+                {
+                    "dry_run": args.dry_run,
+                    "batch_name": args.batch_name,
+                    "catalog_commit": catalog_commit,
+                    "generated_at_utc": timestamp,
+                    "artifact_count": len(results),
+                    "incomplete_count": len(incomplete),
+                    "incomplete": incomplete,
+                },
+                indent=2,
+                sort_keys=True,
+            )
+        )
+    else:
+        verb = "Would write" if args.dry_run else "Wrote"
+        print(f"{verb} {len(results)} source-proof artifacts to {batch_dir.relative_to(ROOT)}")
+        if incomplete:
+            print(json.dumps(incomplete, indent=2, sort_keys=True))
+    return 1 if incomplete else 0
 
 
 if __name__ == "__main__":
