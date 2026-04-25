@@ -2,10 +2,11 @@
 
 ## Reporting a vulnerability
 
-Email the repository owner at `thomdehoog@gmail.com` with the subject line
-`ai-skills-collection-benchmarked security: <short description>`. Include
-reproduction steps, the commit hash you observed the issue against, and any
-suggested remediation. Please do **not** open a public issue for an
+Report security issues **privately** via GitHub's built-in advisory workflow:
+open a new draft at
+<https://github.com/strmt7/ai_skills_collection_benchmarked/security/advisories/new>.
+Include reproduction steps, the commit hash you observed the issue against,
+and any suggested remediation. Please do **not** open a public issue for an
 exploitable vulnerability.
 
 Expected response: within 7 days. Coordinated disclosure window defaults to

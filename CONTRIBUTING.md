@@ -60,11 +60,45 @@ overlay* under `included/repaired/` whose generator preserves the original
 text byte-for-byte under `provenance/`. See [`AGENTS.md`](AGENTS.md) for the
 full rule set.
 
+## Commit identity (hard rule for AI agents)
+
+Every commit produced by an AI agent MUST use the identity `AI agent` with
+an **empty** email. The full rule, including forbidden variants and the
+rationale, lives in [`AGENTS.md` → "AI commit identity"](AGENTS.md#ai-commit-identity-hard-rule-immutable).
+Command-scoped identity keeps the value out of `git config`:
+
+```bash
+git -c user.name='AI agent' -c user.email= commit ...
+```
+
+Human contributors continue to commit under their real GitHub identity and
+email; the rule above applies **only** to AI-generated commits.
+
+### Remediating a bad identity
+
+If an AI commit lands with the wrong author/committer (e.g. a named human,
+GitHub noreply, or a hyphenated `AI-agent`), rewrite history before push:
+
+```bash
+python3 -m pip install --user git-filter-repo  # once per machine
+git filter-repo --force \
+  --email-callback 'return b"" if email == b"<BAD_EMAIL>" else email' \
+  --name-callback  'return b"AI agent" if email == b"<BAD_EMAIL>" else name'
+git remote add origin https://github.com/strmt7/ai_skills_collection_benchmarked.git
+git push --force-with-lease origin main
+```
+
+Re-run `gh api 'repos/strmt7/ai_skills_collection_benchmarked/contributors?anon=1'`
+and every CI workflow after the force-push, and delete/recreate any tags
+that pointed into the rewritten range.
+
 ## Commit messages
 
 * Use the imperative mood ("Add ruff CI gate", not "Added ruff CI gate").
 * If a commit touches more than one work loop, split it.
-* Co-author tags are accepted for genuine collaboration; do not invent them.
+* AI co-author trailers, if used at all, MUST be `Co-authored-by: AI agent`
+  with no email. Do not invent trailers; do not attribute AI work to a
+  named vendor, Claude, Codex, Copilot, or a human.
 
 ## Releases
 
