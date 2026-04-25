@@ -50,6 +50,7 @@ def test_every_tool_prints_help(tool):
     result = subprocess.run(
         [PYTHON, str(TOOL_DIR / tool), "--help"],
         capture_output=True,
+        check=False,
         text=True,
         cwd=ROOT,
         timeout=30,
@@ -63,6 +64,7 @@ def test_tool_check_mode_exits_zero(tool):
     result = subprocess.run(
         [PYTHON, str(TOOL_DIR / tool), "--check"],
         capture_output=True,
+        check=False,
         text=True,
         cwd=ROOT,
         timeout=180,
@@ -79,6 +81,7 @@ def test_tool_runs_without_arguments(tool):
     result = subprocess.run(
         [PYTHON, str(TOOL_DIR / tool)],
         capture_output=True,
+        check=False,
         text=True,
         cwd=ROOT,
         timeout=180,
@@ -100,6 +103,7 @@ def test_no_tool_leaks_host_paths_in_help():
         result = subprocess.run(
             [PYTHON, str(TOOL_DIR / tool), "--help"],
             capture_output=True,
+            check=False,
             text=True,
             cwd=ROOT,
             timeout=30,
