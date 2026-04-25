@@ -12,6 +12,8 @@
     "dataset_snapshot": {
       "kind": "real-url",
       "resolved": true,
+      "reuse_reason": "deterministic regeneration: the repair-overlay loop pins to the original benchmark's recorded snapshot instead of a new live probe",
+      "reused_from_original_artifact": "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/bria-ai-bria-skill-skills-vgl-skill-md/creative-media-and-design-coco-captions/artifact.json",
       "status": 200,
       "url": "https://cocodataset.org/#download"
     },
