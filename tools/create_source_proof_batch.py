@@ -248,12 +248,9 @@ def main(argv: list[str] | None = None) -> int:
     #   2. Existing manifest's generated_at_utc (idempotent regeneration)
     #   3. Latest commit time of the catalog (input-anchored fallback)
     existing_manifest = batch_dir / "manifest.json"
-    catalog_commit = (
-        args.catalog_commit
-        or _det.resolve_catalog_commit(
-            root=ROOT,
-            existing_manifest_value=_det.existing_field(existing_manifest, "catalog_commit"),
-        )
+    catalog_commit = args.catalog_commit or _det.resolve_catalog_commit(
+        root=ROOT,
+        existing_manifest_value=_det.existing_field(existing_manifest, "catalog_commit"),
     )
     timestamp = _det.resolve_timestamp(
         existing_manifest_value=_det.existing_field(existing_manifest, "generated_at_utc"),
