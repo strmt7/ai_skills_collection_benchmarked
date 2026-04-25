@@ -483,11 +483,15 @@ def check_outputs() -> None:
             raise SystemExit(f"stale external smoke summary for {item['method_id']}")
 
 
-def main() -> int:
+def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Evaluate external benchmark method adapter readiness.")
     parser.add_argument("--check", action="store_true", help="Validate generated registry and smoke outputs without network probes.")
     parser.add_argument("--registry-only", action="store_true", help="Write only the method registry and registry documentation.")
-    args = parser.parse_args()
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = build_parser().parse_args(argv)
     if args.check:
         check_outputs()
         print("External benchmark method outputs are current.")
@@ -505,4 +509,4 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    raise SystemExit(main())
