@@ -7,7 +7,6 @@ import argparse
 import hashlib
 import json
 import subprocess
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -19,6 +18,7 @@ sys.path.insert(0, str(ROOT / "tools"))
 
 import build_catalog
 import check_benchmark_artifact
+from _lib_b import determinism as _det
 
 
 def load_json(path: Path) -> Any:
@@ -242,9 +242,23 @@ def main(argv: list[str] | None = None) -> int:
 
     catalog = load_json(ROOT / "data" / "skills_catalog.json")
     scenarios = {item["id"]: item for item in load_json(ROOT / "data" / "benchmark_scenarios.json")}
-    catalog_commit = args.catalog_commit or git_sha("HEAD")
-    timestamp = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
     batch_dir = ROOT / "artifacts" / "benchmark-runs" / args.batch_name
+    # Determinism precedence:
+    #   1. SOURCE_DATE_EPOCH env (https://reproducible-builds.org/docs/source-date-epoch/)
+    #   2. Existing manifest's generated_at_utc (idempotent regeneration)
+    #   3. Latest commit time of the catalog (input-anchored fallback)
+    existing_manifest = batch_dir / "manifest.json"
+    catalog_commit = (
+        args.catalog_commit
+        or _det.resolve_catalog_commit(
+            root=ROOT,
+            existing_manifest_value=_det.existing_field(existing_manifest, "catalog_commit"),
+        )
+    )
+    timestamp = _det.resolve_timestamp(
+        existing_manifest_value=_det.existing_field(existing_manifest, "generated_at_utc"),
+        fallback_epoch=_det.git_latest_commit_epoch_for(ROOT, [ROOT / "data" / "skills_catalog.json"]),
+    )
     selected = select_category_spread(catalog, args.limit)
     results = []
     for entry in selected:
