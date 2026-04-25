@@ -171,9 +171,7 @@ def _source_stub():
 
 
 def test_category_for_by_keyword_match(_source_stub):
-    cat = build_catalog.category_for(
-        _source_stub, "skills/gene/SKILL.md", "gene-analysis", "RDKit + scanpy pipeline"
-    )
+    cat = build_catalog.category_for(_source_stub, "skills/gene/SKILL.md", "gene-analysis", "RDKit + scanpy pipeline")
     assert cat == "Science, research & data analysis"
 
 
@@ -265,10 +263,7 @@ def test_skill_mirror_path_layout():
         "latest-release-community",
         "demo-skill",
     )
-    assert path == (
-        "included/skills/by-category/science-research-data-analysis/"
-        "latest-release-community/demo-skill"
-    )
+    assert path == ("included/skills/by-category/science-research-data-analysis/latest-release-community/demo-skill")
 
 
 def test_skill_agent_ready_path_layout():
@@ -278,6 +273,5 @@ def test_skill_agent_ready_path_layout():
         "devops-demo",
     )
     assert path == (
-        "included/agent-ready/by-category/devops-cloud-operations/"
-        "selected-project-reference/devops-demo/SKILL.md"
+        "included/agent-ready/by-category/devops-cloud-operations/selected-project-reference/devops-demo/SKILL.md"
     )

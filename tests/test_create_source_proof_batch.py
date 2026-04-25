@@ -58,9 +58,7 @@ def fake_skill_text() -> str:
 
 
 def test_scenario_id_for_uses_skill_proof_prefix(fake_entry):
-    assert create_source_proof_batch.scenario_id_for(fake_entry) == (
-        "skill-proof-" + fake_entry["id"]
-    )
+    assert create_source_proof_batch.scenario_id_for(fake_entry) == ("skill-proof-" + fake_entry["id"])
 
 
 def test_build_result_is_deterministic(fake_entry, fake_scenario, fake_skill_text):
@@ -134,9 +132,7 @@ def test_build_artifact_is_byte_identical_on_rerun(fake_entry, fake_scenario, fa
         result=result,
         skill_text=fake_skill_text,
     )
-    assert create_source_proof_batch.build_artifact(**kwargs) == (
-        create_source_proof_batch.build_artifact(**kwargs)
-    )
+    assert create_source_proof_batch.build_artifact(**kwargs) == (create_source_proof_batch.build_artifact(**kwargs))
 
 
 def test_select_category_spread_distinct_categories_first():
