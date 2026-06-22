@@ -79,7 +79,7 @@ jobs:
       - name: Create GitHub Release
         # softprops/action-gh-release v3.0.0 (latest stable, Apr 2026).
         # https://github.com/softprops/action-gh-release/releases/tag/v3.0.0
-        uses: softprops/action-gh-release@v3.0.0
+        uses: softprops/action-gh-release@v3.0.1
         with:
           tag_name: ${{ github.event.inputs.tag || github.ref_name }}
           name: ${{ github.event.inputs.tag || github.ref_name }}
