@@ -36,7 +36,7 @@ jobs:
       # actions/setup-python v6.2.0 (latest as of 2026-01-22).
       # SHA: a309ff8b426b58ec0e2a45f0f869d46889d02405
       # https://github.com/actions/setup-python/releases/tag/v6.2.0
-      - uses: actions/setup-python@v6.2.0
+      - uses: actions/setup-python@v6.3.0
         with:
           python-version: ${{ matrix.python-version }}
           cache: "pip"
