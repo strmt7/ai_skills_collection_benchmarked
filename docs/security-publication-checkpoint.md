@@ -17,7 +17,7 @@ invented agreement. Seeded lock consistency also passes on Python 3.14.8. The
 legacy environment's earlier checks ran on Python 3.12.14; they must not be
 described as Python 3.14.8 results.
 
-The qualified Python 3.14.8 environment passes 568 tests with two documented
+The qualified Python 3.14.8 environment passes 570 tests with two documented
 NTFS/POSIX mode skips. Ruff, format and mypy pass. Catalog and overlay validation
 pass. Tool and workflow version qualification remains distinct from hosted CI.
 
@@ -34,7 +34,9 @@ findings: all 65 targeted source-example locations are gone. The residual
 locations concern two Key Vault version identifiers, one BuildKit file
 reference, and 61 recorded evidence identifier/hash contexts. These remain in
 the raw reports. The native Gitleaks command still exits 1, so its gate has not
-passed. No path exemptions, finding baseline or suppression was added.
+passed. A complete-patch history scan with rename detection disabled reports
+67 retained noncredential contexts, including earlier paths of those same
+source identifiers. No path exemptions, finding baseline or suppression was added.
 
 The independent curated worktree scanner reports zero findings and complete
 coverage of tracked and nonignored untracked files. Historical scanning of the
@@ -54,11 +56,15 @@ and the initial commit uses GitHub's web-flow service as committer. The literal
 human-identity rule therefore requires resolving that service committer before
 publication. The local preview gives rewritten commits the required AI
 identity. Original authorship mappings and messages must remain in the review
-record; identity normalization is not evidence that the original human-labelled
+record in `artifacts/research/2026-10-07/history-publication-review.json`;
+identity normalization is not evidence that the original human-labelled
 work was produced by an AI.
 
 Replacing public main with rewritten history requires a force-with-lease push
 and changes commit IDs. No such push has been made. The public v0.2.0 tag, old PR
 refs and GitHub-retained objects are separate historical surfaces; a default
-branch rewrite must not be presented as erasing them. The six dependency PRs
+branch rewrite must not be presented as erasing them. An isolated replacement
+`v0.2.0` tag points to the sanitized equivalent of its original release commit,
+preserving the annotation and timestamp. Changing that public release tag and
+removing superseded bot branches require explicit publication scope. The six dependency PRs
 remain open until their updates are reconciled with a verified published branch.
