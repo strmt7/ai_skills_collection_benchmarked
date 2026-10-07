@@ -1,0 +1,781 @@
+{
+  "schema_version": 1,
+  "evidence_class": "native-scan-context-triage-not-scanner-gate-pass",
+  "scan_receipt_sha256": "5dd2797b7bdaa0653ffa2c88f12b39b2884eca43f22f7b381aabec4b718c626c",
+  "finding_count": 76,
+  "context_counts": {
+    "ephemeral-container-ownership-identifier-not-provider-credential": 46,
+    "recorded-public-file-model-or-workflow-sha256-not-credential": 23,
+    "resource-size-exclusion-reason-not-credential": 4,
+    "public-example-key-vault-version-identifier-not-secret-value": 2,
+    "buildkit-secret-file-reference-with-no-credential-value": 1
+  },
+  "reviews": [
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 31,
+      "EndLine": 31,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/atheris-dependency-preparation.json:generic-api-key:31",
+      "File": "artifacts/research/2026-10-02/atheris-dependency-preparation.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 106,
+      "EndLine": 106,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/atheris-harness-runtime-controls-v2.json:generic-api-key:106",
+      "File": "artifacts/research/2026-10-02/atheris-harness-runtime-controls-v2.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 54,
+      "EndLine": 54,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/catalog-publication-linux-controls-v2.json:generic-api-key:54",
+      "File": "artifacts/research/2026-10-02/catalog-publication-linux-controls-v2.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 106,
+      "EndLine": 106,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/atheris-harness-runtime-controls-v5.json:generic-api-key:106",
+      "File": "artifacts/research/2026-10-02/atheris-harness-runtime-controls-v5.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 106,
+      "EndLine": 106,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/atheris-harness-runtime-controls-v3.json:generic-api-key:106",
+      "File": "artifacts/research/2026-10-02/atheris-harness-runtime-controls-v3.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 106,
+      "EndLine": 106,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/atheris-harness-runtime-controls-v4.json:generic-api-key:106",
+      "File": "artifacts/research/2026-10-02/atheris-harness-runtime-controls-v4.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 54,
+      "EndLine": 54,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/catalog-publication-linux-controls.json:generic-api-key:54",
+      "File": "artifacts/research/2026-10-02/catalog-publication-linux-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 64,
+      "EndLine": 64,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/catalog-publication-linux-controls.json:generic-api-key:64",
+      "File": "artifacts/research/2026-10-02/catalog-publication-linux-controls.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 5,
+      "EndLine": 5,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/credential-refresh-secret-checkpoint.json:generic-api-key:5",
+      "File": "artifacts/research/2026-10-02/credential-refresh-secret-checkpoint.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6,
+      "EndLine": 6,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/credential-refresh-secret-checkpoint.json:generic-api-key:6",
+      "File": "artifacts/research/2026-10-02/credential-refresh-secret-checkpoint.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 7,
+      "EndLine": 7,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/credential-refresh-secret-checkpoint.json:generic-api-key:7",
+      "File": "artifacts/research/2026-10-02/credential-refresh-secret-checkpoint.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 13,
+      "EndLine": 13,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/cocoindex-model-provision.json:generic-api-key:13",
+      "File": "artifacts/research/2026-10-02/cocoindex-model-provision.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 14,
+      "EndLine": 14,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/cocoindex-model-provision.json:generic-api-key:14",
+      "File": "artifacts/research/2026-10-02/cocoindex-model-provision.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 15,
+      "EndLine": 15,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/cocoindex-model-provision.json:generic-api-key:15",
+      "File": "artifacts/research/2026-10-02/cocoindex-model-provision.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 30,
+      "EndLine": 30,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/kubernetes-diagnosis-runtime-controls.json:generic-api-key:30",
+      "File": "artifacts/research/2026-10-02/kubernetes-diagnosis-runtime-controls.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 153,
+      "EndLine": 153,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/cocoindex-full-resources-current.json:generic-api-key:153",
+      "File": "artifacts/research/2026-10-02/cocoindex-full-resources-current.json",
+      "reviewed_context": "resource-size-exclusion-reason-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 5,
+      "EndLine": 5,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/expanded-secret-scan-observation.json:generic-api-key:5",
+      "File": "artifacts/research/2026-10-02/expanded-secret-scan-observation.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6,
+      "EndLine": 6,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/expanded-secret-scan-observation.json:generic-api-key:6",
+      "File": "artifacts/research/2026-10-02/expanded-secret-scan-observation.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 297,
+      "EndLine": 297,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/cocoindex-full-resource-coverage-and-retrieval.json:generic-api-key:297",
+      "File": "artifacts/research/2026-10-02/cocoindex-full-resource-coverage-and-retrieval.json",
+      "reviewed_context": "resource-size-exclusion-reason-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 297,
+      "EndLine": 297,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/cocoindex-query-prefix-corrected-retrieval.json:generic-api-key:297",
+      "File": "artifacts/research/2026-10-02/cocoindex-query-prefix-corrected-retrieval.json",
+      "reviewed_context": "resource-size-exclusion-reason-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 35,
+      "EndLine": 35,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/kubernetes-diagnosis-runtime-controls-v2.json:generic-api-key:35",
+      "File": "artifacts/research/2026-10-02/kubernetes-diagnosis-runtime-controls-v2.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 54,
+      "EndLine": 54,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/skill-creator-runtime-controls.json:generic-api-key:54",
+      "File": "artifacts/research/2026-10-02/skill-creator-runtime-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 64,
+      "EndLine": 64,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/skill-creator-runtime-controls.json:generic-api-key:64",
+      "File": "artifacts/research/2026-10-02/skill-creator-runtime-controls.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 29,
+      "EndLine": 29,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/isolated-backend-controls-v5.json:generic-api-key:29",
+      "File": "artifacts/research/2026-10-02/isolated-backend-controls-v5.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 108,
+      "EndLine": 108,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/isolated-backend-controls-v5.json:generic-api-key:108",
+      "File": "artifacts/research/2026-10-02/isolated-backend-controls-v5.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 267,
+      "EndLine": 267,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/isolated-backend-controls-v5.json:generic-api-key:267",
+      "File": "artifacts/research/2026-10-02/isolated-backend-controls-v5.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 343,
+      "EndLine": 343,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/isolated-backend-controls-v5.json:generic-api-key:343",
+      "File": "artifacts/research/2026-10-02/isolated-backend-controls-v5.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 417,
+      "EndLine": 417,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/isolated-backend-controls-v5.json:generic-api-key:417",
+      "File": "artifacts/research/2026-10-02/isolated-backend-controls-v5.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 491,
+      "EndLine": 491,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/isolated-backend-controls-v5.json:generic-api-key:491",
+      "File": "artifacts/research/2026-10-02/isolated-backend-controls-v5.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 644,
+      "EndLine": 644,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/isolated-backend-controls-v5.json:generic-api-key:644",
+      "File": "artifacts/research/2026-10-02/isolated-backend-controls-v5.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 54,
+      "EndLine": 54,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/skill-creator-runtime-controls-v2.json:generic-api-key:54",
+      "File": "artifacts/research/2026-10-02/skill-creator-runtime-controls-v2.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 64,
+      "EndLine": 64,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/skill-creator-runtime-controls-v2.json:generic-api-key:64",
+      "File": "artifacts/research/2026-10-02/skill-creator-runtime-controls-v2.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 45,
+      "EndLine": 45,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/tfidf-grader-runtime-controls-v2.json:generic-api-key:45",
+      "File": "artifacts/research/2026-10-02/tfidf-grader-runtime-controls-v2.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 54,
+      "EndLine": 54,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/skill-creator-runtime-controls-v3.json:generic-api-key:54",
+      "File": "artifacts/research/2026-10-02/skill-creator-runtime-controls-v3.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 64,
+      "EndLine": 64,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/skill-creator-runtime-controls-v3.json:generic-api-key:64",
+      "File": "artifacts/research/2026-10-02/skill-creator-runtime-controls-v3.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 24,
+      "EndLine": 24,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/verification-pipeline-controls.json:generic-api-key:24",
+      "File": "artifacts/research/2026-10-02/verification-pipeline-controls.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 29,
+      "EndLine": 29,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json:generic-api-key:29",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 187,
+      "EndLine": 187,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json:generic-api-key:187",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 267,
+      "EndLine": 267,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json:generic-api-key:267",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 343,
+      "EndLine": 343,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json:generic-api-key:343",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 417,
+      "EndLine": 417,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json:generic-api-key:417",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 565,
+      "EndLine": 565,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json:generic-api-key:565",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 644,
+      "EndLine": 644,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json:generic-api-key:644",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 29,
+      "EndLine": 29,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/webapp-server-runtime-controls-v2.json:generic-api-key:29",
+      "File": "artifacts/research/2026-10-02/webapp-server-runtime-controls-v2.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 43,
+      "EndLine": 43,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/tfidf-grader-runtime-controls-v3.json:generic-api-key:43",
+      "File": "artifacts/research/2026-10-02/tfidf-grader-runtime-controls-v3.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 43,
+      "EndLine": 43,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/tfidf-grader-runtime-controls.json:generic-api-key:43",
+      "File": "artifacts/research/2026-10-02/tfidf-grader-runtime-controls.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 28,
+      "EndLine": 28,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/isolated-python-backend-controls-v3.json:generic-api-key:28",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v3.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 184,
+      "EndLine": 184,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/isolated-python-backend-controls-v3.json:generic-api-key:184",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v3.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 411,
+      "EndLine": 411,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/isolated-python-backend-controls-v3.json:generic-api-key:411",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v3.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 557,
+      "EndLine": 557,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/isolated-python-backend-controls-v3.json:generic-api-key:557",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v3.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 635,
+      "EndLine": 635,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/isolated-python-backend-controls-v3.json:generic-api-key:635",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v3.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 178,
+      "EndLine": 178,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/workflow-stable-versions-after.json:generic-api-key:178",
+      "File": "artifacts/research/2026-10-02/workflow-stable-versions-after.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 178,
+      "EndLine": 178,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/workflow-stable-versions-current.json:generic-api-key:178",
+      "File": "artifacts/research/2026-10-02/workflow-stable-versions-current.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 178,
+      "EndLine": 178,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/workflow-stable-versions-before.json:generic-api-key:178",
+      "File": "artifacts/research/2026-10-02/workflow-stable-versions-before.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 208,
+      "EndLine": 208,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/workflow-stable-versions-reports.json:generic-api-key:208",
+      "File": "artifacts/research/2026-10-02/workflow-stable-versions-reports.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 20,
+      "EndLine": 20,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-07/llvm-base-environment-probe.json:generic-api-key:20",
+      "File": "artifacts/research/2026-10-07/llvm-base-environment-probe.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 25,
+      "EndLine": 25,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-07/cocoindex-stable-update-index.json:generic-api-key:25",
+      "File": "artifacts/research/2026-10-07/cocoindex-stable-update-index.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 26,
+      "EndLine": 26,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-07/cocoindex-stable-update-index.json:generic-api-key:26",
+      "File": "artifacts/research/2026-10-07/cocoindex-stable-update-index.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 27,
+      "EndLine": 27,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-07/cocoindex-stable-update-index.json:generic-api-key:27",
+      "File": "artifacts/research/2026-10-07/cocoindex-stable-update-index.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 194,
+      "EndLine": 194,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-07/cocoindex-stable-update-index.json:generic-api-key:194",
+      "File": "artifacts/research/2026-10-07/cocoindex-stable-update-index.json",
+      "reviewed_context": "resource-size-exclusion-reason-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 20,
+      "EndLine": 20,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-07/mutation-tool-configured-interface-runtime.json:generic-api-key:20",
+      "File": "artifacts/research/2026-10-07/mutation-tool-configured-interface-runtime.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 20,
+      "EndLine": 20,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-07/mutation-tool-interface-unconfigured-project-failure.json:generic-api-key:20",
+      "File": "artifacts/research/2026-10-07/mutation-tool-interface-unconfigured-project-failure.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 20,
+      "EndLine": 20,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-07/mutation-campaign-initial-isolation-failure.json:generic-api-key:20",
+      "File": "artifacts/research/2026-10-07/mutation-campaign-initial-isolation-failure.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 20,
+      "EndLine": 20,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-07/trailmark-graph-initial-runtime.json:generic-api-key:20",
+      "File": "artifacts/research/2026-10-07/trailmark-graph-initial-runtime.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 208,
+      "EndLine": 208,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-07/workflow-stable-version-review-v2.json:generic-api-key:208",
+      "File": "artifacts/research/2026-10-07/workflow-stable-version-review-v2.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 208,
+      "EndLine": 208,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-07/workflow-stable-version-review-unqualified-timestamp.json:generic-api-key:208",
+      "File": "artifacts/research/2026-10-07/workflow-stable-version-review-unqualified-timestamp.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 695,
+      "EndLine": 695,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-02/cocoindex-pilot.json:generic-api-key:695",
+      "File": "artifacts/research/2026-10-02/cocoindex-pilot.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 50,
+      "EndLine": 50,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-07/llvm-native-runtime-controls-v3.json:generic-api-key:50",
+      "File": "artifacts/research/2026-10-07/llvm-native-runtime-controls-v3.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 41,
+      "EndLine": 41,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-07/llvm-native-runtime-controls.json:generic-api-key:41",
+      "File": "artifacts/research/2026-10-07/llvm-native-runtime-controls.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 63,
+      "EndLine": 63,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-07/mutation-tool-runtime-controls.json:generic-api-key:63",
+      "File": "artifacts/research/2026-10-07/mutation-tool-runtime-controls.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 362,
+      "EndLine": 362,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-07/mutation-tool-runtime-controls.json:generic-api-key:362",
+      "File": "artifacts/research/2026-10-07/mutation-tool-runtime-controls.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 67,
+      "EndLine": 67,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-07/wycheproof-provider-runtime-controls-v2.json:generic-api-key:67",
+      "File": "artifacts/research/2026-10-07/wycheproof-provider-runtime-controls-v2.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 67,
+      "EndLine": 67,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/artifacts/research/2026-10-07/wycheproof-provider-runtime-controls.json:generic-api-key:67",
+      "File": "artifacts/research/2026-10-07/wycheproof-provider-runtime-controls.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 113,
+      "EndLine": 113,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-secrets-java/references/examples.md:generic-api-key:113",
+      "File": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-secrets-java/references/examples.md",
+      "reviewed_context": "public-example-key-vault-version-identifier-not-secret-value",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 124,
+      "EndLine": 124,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-secrets-java/references/examples.md:generic-api-key:124",
+      "File": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-secrets-java/references/examples.md",
+      "reviewed_context": "public-example-key-vault-version-identifier-not-secret-value",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 309,
+      "EndLine": 309,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-q_2jzpc5/included/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator/docs/security-guide.md:generic-api-key:309",
+      "File": "included/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator/docs/security-guide.md",
+      "reviewed_context": "buildkit-secret-file-reference-with-no-credential-value",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    }
+  ],
+  "native_gate_passed": false,
+  "gitleaks_exit_code": 1,
+  "allowlists_baselines_or_path_exemptions_added": false,
+  "github_alerts_dismissed": false,
+  "historical_credentials_resolved_by_this_worktree_review": false,
+  "scope": "exact 8002-file snapshot; later artifacts require a fresh native scan"
+}

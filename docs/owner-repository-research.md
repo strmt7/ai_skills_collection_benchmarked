@@ -154,3 +154,26 @@ Prospective quality controls also need malformed/duplicate manifest records,
 canonical contained paths, symlink behavior and interrupted publication. The
 archive UI extraction file has only an initial bounded read so far; core archive
 and filesystem claims still require their matching implementations and tests.
+
+## 7 October source and runtime refresh
+
+Fresh owner metadata still lists eleven repositories (eight public, three
+private), plus the external ZMB repository. This is inventory continuity,
+not complete code review. The scanner's current context-routing guide and
+M25 decision were inspected read-only after the recorded delay; they preserve
+the distinctions between internal concision, exact evidence, initial-route
+characters and full-task model usage.
+
+Caveman's stable source is now 3.1.0, with a complete source review and thirteen
+isolated snapshot-validator controls recorded in [the current review](research-caveman.md).
+The current generator isolates host settings; unequal snapshot counts now fail
+closed. The earlier 3.0.0 observations above remain historical. Fidelity,
+resolved model identity, complete provider usage and repeated comparisons remain
+unqualified. No new AI sessions or owner-repository writes were performed.
+
+CocoIndex 1.0.25 / Code 0.2.42 now indexes every selected nonblank skill/tool
+resource in a fresh corpus. The diagnosed Windows CLI wildcard expansion is
+avoided through the provider's literal client API, with source binding and
+returned-span checks in [the navigation adapter](semantic-navigation.md).
+Failed CLI queries and the corrected probe labels are retained. These are
+development-routing controls, not retrieval-quality or coding-agent scores.

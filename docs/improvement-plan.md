@@ -325,3 +325,105 @@ focused migration/serialization controls. No commit, push or PR disposition was
 performed during this checkpoint. Upstream version refresh, native campaigns,
 owner QC, independently matched agent trials, alert remediation and final
 refactoring/README remain unfinished.
+
+## 7 October publication and runtime checkpoint
+
+All 34 open Dependabot advisory ranges in the fresh snapshot map to locally
+fixed versions or an absent dependency. The full npm advisory graph is
+regenerated, qualified against its original public pin, and installed with zero
+known audit findings; individual lock records are no longer patched. The Python
+graph has zero known findings in both the exact CI audit path and the explicit
+complete pinned probe. GitHub still reports 34 open alerts and six PRs until
+publication and analysis. No alert has been dismissed or suppressed.
+
+Credential policy 3 neutralizes the 65 targeted public source-example finding
+locations through 66 exact hash-qualified replacement spans. Curated worktree
+scanning passes. The policy-3 Gitleaks snapshot retains 64 reviewed identifier/
+hash contexts in the worktree and 67 across complete historical patches; its
+gate is failing. Later artifacts need their own fresh scans. The original
+history's 22 credential-shaped examples are absent from a backed-up isolated
+history preview. It rewrites 62 commits with the required AI identity and
+preserves original human attribution in the publication review record. The
+proposed main/tag rewrite and superseded bot-branch cleanup require the pending
+explicit publication approval. Public refs remain unchanged.
+
+The exact committed checkpoint and a fresh LF checkout pass all 570 tests, with
+two documented Windows/POSIX mode skips. Research resources now use an explicit
+catalog canonical-byte hash policy while retaining original capture hashes.
+Subsequent local Wycheproof work also passes the complete suite, lint, formatting,
+type checks, compile checks, freshness checks, ledger and overlay validation.
+
+There are thirteen licensed experimental overlays. Wycheproof now has 21 actual
+provider/schema controls: all 151 Ed25519 cases and 283 eligible AES-GCM cases
+pass on cryptography 50.0.2/OpenSSL 4.0.3/Python 3.14.8. All 316 AES-GCM IDs are
+accounted for, including 33 explicit API-domain exclusions. These are external
+provider and source-example controls, not coding-agent scores. Native LLVM
+23.1.3 runtime qualification is recorded separately. Superiority remains
+unproved; final refactoring and the short README remain deferred until the
+requested research/evaluation stages are addressed.
+
+CocoIndex 1.0.25 and CocoIndex Code 0.2.42 were freshly resolved from PyPI. A
+separate provider directory and fresh selected-resource corpus preserve the
+previous runtime/index. Indexing and coverage/retrieval qualification are in
+progress; do not search the stale corpus or count installation as actual index
+coverage. Continue Caveman fidelity checks and read-only owner-repository QC.
+The remaining testing-package reviews are Genotoxic and Vector Forge; retain
+resource-level pending states until their references and runtime contracts are
+actually reviewed and tested. Hosted CodeQL currently reports no analysis;
+that is not evidence of zero code-scanning findings.
+
+## 7 October later research and navigation checkpoint
+
+This checkpoint supersedes the earlier remaining-reference and indexing states.
+All original Genotoxic and Vector Forge texts are fully reviewed. Their newer
+upstream deltas are separately bound, and 28 actual Python mutation/graph/source
+controls qualify the selected integration. Two more licensed overlays bring the
+total to fifteen. Weak and strong fixed test fixtures are research-authored;
+no evaluated coding agent generated them during a trial. Five untested mutants
+remain in both campaigns rather than disappearing from the denominator.
+
+All four catalog Caveman adaptations and their five original resources have
+complete read records. Stable 3.1.0 instructions and evaluation-source contracts
+were reviewed, and thirteen actual isolated validator controls retain both
+improvements and evidence limits. Research is started for 39 of 673 skills;
+634 remain pending. Complete original-resource review now covers 65 resources
+across nineteen packages. These counts establish review coverage, not efficacy
+or category completion. Testing-package entrypoint research is started for all
+nineteen packages; independent realistic evaluation remains open.
+
+The selected CocoIndex corpus has 5,662 hashed resources: 5,486 text files,
+176 explicit exclusions and fourteen blank text files. All 5,472 nonblank files
+are indexed in 66,983 chunks. The stock Windows CLI expands literal path globs
+before parsing, producing empty scoped queries. Actual dispatch controls prove
+the cause. A client-API adapter preserves literals, rejects stale source/model
+bindings and validates retrieved source spans. Earlier failures and three
+mislabeled CLI/client probe blocks remain recorded with a correction. Retrieval
+quality, token savings and coding gains are not established by these controls.
+
+The current complete suite passes 589 tests with two documented platform skips
+and 70.35% measured coverage. Lint/format/type checks pass across 87 files. The
+last complete native Gitleaks snapshot still fails on 76 individually reviewed
+noncredential contexts; later artifacts require fresh scanning. The selected
+mutation-provider audit finds no known advisories across its 26 exact packages.
+Hosted main, its 34 alerts and six bot PRs remain unchanged pending the concrete
+history/tag publication approval. No finding has been suppressed or alert
+dismissed. The final repository refactor and short README remain the last stage.
+
+The final adapter adds four malformed-data controls. Its 21 focused tests and
+the complete 593-test suite pass, with the same two platform skips and 70.36%
+coverage. A separately refreshed v8 corpus binds those final source bytes;
+v7 evidence remains preserved. The selected inventory/path/chunk counts above
+remain unchanged. Fresh GitHub checks still show the same main head, 34 alerts
+and six bot PR heads. The third-party Karpathy adaptation and all three checked
+official Karpathy source heads also remain unchanged.
+
+The subsequent unfiltered native scan covers 8,035 publishable files, with zero
+input drift and 305 generic-rule findings. All 305 exact snapshot contexts were
+individually classified as recorded digests/identifiers, inventory reasons or
+the previously reviewed BuildKit file reference. Newly published source-hash
+maps increase native matches; no credential or finding was hidden to reduce
+the count. The curated worktree check passes, but the native gate still fails.
+The context-review receipt explicitly preserves that failure and scope; it does
+not clear historical refs or GitHub alerts. Final source-lock verification
+checks all 673 mirror hashes offline with zero errors; live source checkout
+qualification remains a separate loop.

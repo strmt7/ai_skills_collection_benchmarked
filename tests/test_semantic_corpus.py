@@ -34,6 +34,32 @@ def test_selected_resources_preserve_bytes_and_exclude_unselected_files(reposito
     assert corpus.prepare(root, output, ["skills"], check=True)["ok"]
 
 
+def test_git_inventory_diagnostic_cannot_become_a_partial_corpus(repository, monkeypatch):
+    root, output = repository
+    calls = []
+
+    def diagnostic(command, **kwargs):
+        calls.append(command)
+        return subprocess.CompletedProcess(command, 0, b"skills/example/SKILL.md\0", b"warning: resource unreadable\n")
+
+    monkeypatch.setattr(corpus.subprocess, "run", diagnostic)
+    with pytest.raises(ValueError, match="incomplete Git file inventory"):
+        corpus.inventory(root, ["skills"])
+    assert calls[0][:4] == ["git", "-c", "core.longpaths=true", "-C"]
+    assert not output.exists()
+
+
+def test_tracked_deletion_is_excluded_but_remaining_sources_are_preserved(repository):
+    root, output = repository
+    subprocess.run(["git", "-C", str(root), "add", "skills"], check=True)
+    (root / "skills/example/reference.md").unlink()
+    result = corpus.prepare(root, output, ["skills"], check=False)
+    assert result["ok"] and result["selected_files"] == result["text_files"] == 2
+    manifest = json.loads((output / "manifest.json").read_text(encoding="utf-8"))
+    assert set(manifest["files"]) == {"skills/example/SKILL.md", "skills/example/run.sh"}
+    assert corpus.prepare(root, output, ["skills"], check=True)["ok"]
+
+
 def test_every_nontext_resource_has_explicit_hashed_exclusion(repository):
     root, output = repository
     (root / "skills/nul.bin").write_bytes(b"a\0b")

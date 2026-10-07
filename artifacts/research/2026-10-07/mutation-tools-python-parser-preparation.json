@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "evidence_class": "offline-exact-parser-provider-preparation-not-agent-benchmark",
+  "passed": false,
+  "image": null,
+  "parent_image": "sha256:10dd95746c4366664c4cd93c87c5767cc4adc65eec523b610322b39f3568b4ff",
+  "provider_receipt_sha256": "a27d270b885fd7c661333c0cd3b40c5c9c8ab44b10e773cc6a2ec2ca6b61a853",
+  "inputs": {
+    "parsers.json": {
+      "sha256": "a2d026f2908897195e69b81e8b1473ed7a692a2a40daf7c9c5c5909d46af9ec3",
+      "bytes": 30054
+    },
+    "parsers-linux-x86_64.tar.zst": {
+      "sha256": "579428269cf83f853bf42f647296588bb3864eab07d739495909b0ae49e310b5",
+      "bytes": 22729471
+    },
+    "libtree_sitter_python.so": {
+      "sha256": "0a39a054ae5e50132fbf969697e3e5932a9d5636db3e4810b829c95d8019a281",
+      "bytes": 826248
+    }
+  },
+  "parser_release_commit": "09a36885b33ab6e4b010cf04acbb9876ddfb52cc",
+  "parser_release_url": "https://github.com/xberg-io/tree-sitter-language-pack/releases/tag/v1.21.0",
+  "languages_provisioned": [
+    "python"
+  ],
+  "downloaded_bundle_other_languages_executed": false,
+  "dockerfile": "FROM sha256:10dd95746c4366664c4cd93c87c5767cc4adc65eec523b610322b39f3568b4ff\nLABEL ai-skills.dependency=mutation-tools-python-parser ai-skills.parser-sha256=0a39a054ae5e50132fbf969697e3e5932a9d5636db3e4810b829c95d8019a281\nENV TREE_SITTER_LANGUAGE_PACK_CACHE_DIR=/opt/parser-cache\nCOPY libtree_sitter_python.so /opt/parser-cache/tree-sitter-language-pack/v1.21.0/libs/libtree_sitter_python.so\nRUN python -c \"from tree_sitter_language_pack import get_language; print(get_language('python'))\"\n",
+  "build_output": "#0 building with \"desktop-linux\" instance using docker driver\n\n#1 [internal] load build definition from Dockerfile\n#1 transferring dockerfile: 529B 0.0s done\n#1 DONE 0.1s\n\n#2 [internal] load metadata for docker.io/library/sha256:10dd95746c4366664c4cd93c87c5767cc4adc65eec523b610322b39f3568b4ff\n#2 ...\n\n#3 [auth] library/sha256:pull token for registry-1.docker.io\n#3 DONE 0.0s\n\n#2 [internal] load metadata for docker.io/library/sha256:10dd95746c4366664c4cd93c87c5767cc4adc65eec523b610322b39f3568b4ff\n#2 ERROR: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed\n------\n > [internal] load metadata for docker.io/library/sha256:10dd95746c4366664c4cd93c87c5767cc4adc65eec523b610322b39f3568b4ff:\n------\nDockerfile:1\n--------------------\n   1 | >>> FROM sha256:10dd95746c4366664c4cd93c87c5767cc4adc65eec523b610322b39f3568b4ff\n   2 |     LABEL ai-skills.dependency=mutation-tools-python-parser ai-skills.parser-sha256=0a39a054ae5e50132fbf969697e3e5932a9d5636db3e4810b829c95d8019a281\n   3 |     ENV TREE_SITTER_LANGUAGE_PACK_CACHE_DIR=/opt/parser-cache\n--------------------\nERROR: failed to build: failed to solve: sha256:10dd95746c4366664c4cd93c87c5767cc4adc65eec523b610322b39f3568b4ff: failed to resolve source metadata for docker.io/library/sha256:10dd95746c4366664c4cd93c87c5767cc4adc65eec523b610322b39f3568b4ff: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed\n\nView build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/j23dmdkdevuwt4fr7y2pd0l77\n",
+  "reproducer_sha256": "eda53d64c35b4d5c61a0d3492101d6d9c604eb898aa69e6243734d1b5875f024",
+  "agent_efficacy_scored": false
+}

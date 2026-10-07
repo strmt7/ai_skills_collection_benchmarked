@@ -1,0 +1,3071 @@
+{
+  "schema_version": 1,
+  "evidence_class": "native-scan-context-triage-not-scanner-gate-pass",
+  "scan_receipt_sha256": "d30dd26b396648ff5c529e4d92275981ed7a8fe29e924d064c766b57fabb5d02",
+  "finding_count": 305,
+  "context_counts": {
+    "ephemeral-container-ownership-identifier-not-provider-credential": 54,
+    "recorded-public-file-model-or-workflow-sha256-not-credential": 244,
+    "resource-size-exclusion-reason-not-credential": 4,
+    "public-example-key-vault-version-identifier-not-secret-value": 2,
+    "buildkit-secret-file-reference-with-no-credential-value": 1
+  },
+  "reviews": [
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 31,
+      "EndLine": 31,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/atheris-dependency-preparation.json:generic-api-key:31",
+      "File": "artifacts/research/2026-10-02/atheris-dependency-preparation.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 54,
+      "EndLine": 54,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/catalog-publication-linux-controls-v2.json:generic-api-key:54",
+      "File": "artifacts/research/2026-10-02/catalog-publication-linux-controls-v2.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 54,
+      "EndLine": 54,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/catalog-publication-linux-controls.json:generic-api-key:54",
+      "File": "artifacts/research/2026-10-02/catalog-publication-linux-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 64,
+      "EndLine": 64,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/catalog-publication-linux-controls.json:generic-api-key:64",
+      "File": "artifacts/research/2026-10-02/catalog-publication-linux-controls.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 106,
+      "EndLine": 106,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/atheris-harness-runtime-controls-v3.json:generic-api-key:106",
+      "File": "artifacts/research/2026-10-02/atheris-harness-runtime-controls-v3.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 106,
+      "EndLine": 106,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/atheris-harness-runtime-controls-v5.json:generic-api-key:106",
+      "File": "artifacts/research/2026-10-02/atheris-harness-runtime-controls-v5.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 106,
+      "EndLine": 106,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/atheris-harness-runtime-controls-v4.json:generic-api-key:106",
+      "File": "artifacts/research/2026-10-02/atheris-harness-runtime-controls-v4.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 106,
+      "EndLine": 106,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/atheris-harness-runtime-controls-v2.json:generic-api-key:106",
+      "File": "artifacts/research/2026-10-02/atheris-harness-runtime-controls-v2.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 13,
+      "EndLine": 13,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/cocoindex-model-provision.json:generic-api-key:13",
+      "File": "artifacts/research/2026-10-02/cocoindex-model-provision.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 14,
+      "EndLine": 14,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/cocoindex-model-provision.json:generic-api-key:14",
+      "File": "artifacts/research/2026-10-02/cocoindex-model-provision.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 15,
+      "EndLine": 15,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/cocoindex-model-provision.json:generic-api-key:15",
+      "File": "artifacts/research/2026-10-02/cocoindex-model-provision.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 5,
+      "EndLine": 5,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/credential-refresh-secret-checkpoint.json:generic-api-key:5",
+      "File": "artifacts/research/2026-10-02/credential-refresh-secret-checkpoint.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6,
+      "EndLine": 6,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/credential-refresh-secret-checkpoint.json:generic-api-key:6",
+      "File": "artifacts/research/2026-10-02/credential-refresh-secret-checkpoint.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 7,
+      "EndLine": 7,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/credential-refresh-secret-checkpoint.json:generic-api-key:7",
+      "File": "artifacts/research/2026-10-02/credential-refresh-secret-checkpoint.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 5,
+      "EndLine": 5,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/expanded-secret-scan-observation.json:generic-api-key:5",
+      "File": "artifacts/research/2026-10-02/expanded-secret-scan-observation.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6,
+      "EndLine": 6,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/expanded-secret-scan-observation.json:generic-api-key:6",
+      "File": "artifacts/research/2026-10-02/expanded-secret-scan-observation.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 30,
+      "EndLine": 30,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/kubernetes-diagnosis-runtime-controls.json:generic-api-key:30",
+      "File": "artifacts/research/2026-10-02/kubernetes-diagnosis-runtime-controls.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 297,
+      "EndLine": 297,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/cocoindex-query-prefix-corrected-retrieval.json:generic-api-key:297",
+      "File": "artifacts/research/2026-10-02/cocoindex-query-prefix-corrected-retrieval.json",
+      "reviewed_context": "resource-size-exclusion-reason-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 297,
+      "EndLine": 297,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/cocoindex-full-resource-coverage-and-retrieval.json:generic-api-key:297",
+      "File": "artifacts/research/2026-10-02/cocoindex-full-resource-coverage-and-retrieval.json",
+      "reviewed_context": "resource-size-exclusion-reason-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 153,
+      "EndLine": 153,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/cocoindex-full-resources-current.json:generic-api-key:153",
+      "File": "artifacts/research/2026-10-02/cocoindex-full-resources-current.json",
+      "reviewed_context": "resource-size-exclusion-reason-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 35,
+      "EndLine": 35,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/kubernetes-diagnosis-runtime-controls-v2.json:generic-api-key:35",
+      "File": "artifacts/research/2026-10-02/kubernetes-diagnosis-runtime-controls-v2.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 54,
+      "EndLine": 54,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/skill-creator-runtime-controls-v2.json:generic-api-key:54",
+      "File": "artifacts/research/2026-10-02/skill-creator-runtime-controls-v2.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 64,
+      "EndLine": 64,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/skill-creator-runtime-controls-v2.json:generic-api-key:64",
+      "File": "artifacts/research/2026-10-02/skill-creator-runtime-controls-v2.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 29,
+      "EndLine": 29,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/isolated-backend-controls-v5.json:generic-api-key:29",
+      "File": "artifacts/research/2026-10-02/isolated-backend-controls-v5.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 108,
+      "EndLine": 108,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/isolated-backend-controls-v5.json:generic-api-key:108",
+      "File": "artifacts/research/2026-10-02/isolated-backend-controls-v5.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 267,
+      "EndLine": 267,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/isolated-backend-controls-v5.json:generic-api-key:267",
+      "File": "artifacts/research/2026-10-02/isolated-backend-controls-v5.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 343,
+      "EndLine": 343,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/isolated-backend-controls-v5.json:generic-api-key:343",
+      "File": "artifacts/research/2026-10-02/isolated-backend-controls-v5.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 417,
+      "EndLine": 417,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/isolated-backend-controls-v5.json:generic-api-key:417",
+      "File": "artifacts/research/2026-10-02/isolated-backend-controls-v5.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 491,
+      "EndLine": 491,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/isolated-backend-controls-v5.json:generic-api-key:491",
+      "File": "artifacts/research/2026-10-02/isolated-backend-controls-v5.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 644,
+      "EndLine": 644,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/isolated-backend-controls-v5.json:generic-api-key:644",
+      "File": "artifacts/research/2026-10-02/isolated-backend-controls-v5.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 54,
+      "EndLine": 54,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/skill-creator-runtime-controls.json:generic-api-key:54",
+      "File": "artifacts/research/2026-10-02/skill-creator-runtime-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 64,
+      "EndLine": 64,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/skill-creator-runtime-controls.json:generic-api-key:64",
+      "File": "artifacts/research/2026-10-02/skill-creator-runtime-controls.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 28,
+      "EndLine": 28,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/isolated-python-backend-controls-v3.json:generic-api-key:28",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v3.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 184,
+      "EndLine": 184,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/isolated-python-backend-controls-v3.json:generic-api-key:184",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v3.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 411,
+      "EndLine": 411,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/isolated-python-backend-controls-v3.json:generic-api-key:411",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v3.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 557,
+      "EndLine": 557,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/isolated-python-backend-controls-v3.json:generic-api-key:557",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v3.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 635,
+      "EndLine": 635,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/isolated-python-backend-controls-v3.json:generic-api-key:635",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v3.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 54,
+      "EndLine": 54,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/skill-creator-runtime-controls-v3.json:generic-api-key:54",
+      "File": "artifacts/research/2026-10-02/skill-creator-runtime-controls-v3.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 64,
+      "EndLine": 64,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/skill-creator-runtime-controls-v3.json:generic-api-key:64",
+      "File": "artifacts/research/2026-10-02/skill-creator-runtime-controls-v3.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 29,
+      "EndLine": 29,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json:generic-api-key:29",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 187,
+      "EndLine": 187,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json:generic-api-key:187",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 267,
+      "EndLine": 267,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json:generic-api-key:267",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 343,
+      "EndLine": 343,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json:generic-api-key:343",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 417,
+      "EndLine": 417,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json:generic-api-key:417",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 565,
+      "EndLine": 565,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json:generic-api-key:565",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 644,
+      "EndLine": 644,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json:generic-api-key:644",
+      "File": "artifacts/research/2026-10-02/isolated-python-backend-controls-v4.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 45,
+      "EndLine": 45,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/tfidf-grader-runtime-controls-v2.json:generic-api-key:45",
+      "File": "artifacts/research/2026-10-02/tfidf-grader-runtime-controls-v2.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 43,
+      "EndLine": 43,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/tfidf-grader-runtime-controls.json:generic-api-key:43",
+      "File": "artifacts/research/2026-10-02/tfidf-grader-runtime-controls.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 29,
+      "EndLine": 29,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/webapp-server-runtime-controls-v2.json:generic-api-key:29",
+      "File": "artifacts/research/2026-10-02/webapp-server-runtime-controls-v2.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 43,
+      "EndLine": 43,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/tfidf-grader-runtime-controls-v3.json:generic-api-key:43",
+      "File": "artifacts/research/2026-10-02/tfidf-grader-runtime-controls-v3.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 24,
+      "EndLine": 24,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/verification-pipeline-controls.json:generic-api-key:24",
+      "File": "artifacts/research/2026-10-02/verification-pipeline-controls.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 93,
+      "EndLine": 93,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/cocoindex-stable-source-refresh.json:generic-api-key:93",
+      "File": "artifacts/research/2026-10-07/cocoindex-stable-source-refresh.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 94,
+      "EndLine": 94,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/cocoindex-stable-source-refresh.json:generic-api-key:94",
+      "File": "artifacts/research/2026-10-07/cocoindex-stable-source-refresh.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 95,
+      "EndLine": 95,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/cocoindex-stable-source-refresh.json:generic-api-key:95",
+      "File": "artifacts/research/2026-10-07/cocoindex-stable-source-refresh.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 178,
+      "EndLine": 178,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/workflow-stable-versions-after.json:generic-api-key:178",
+      "File": "artifacts/research/2026-10-02/workflow-stable-versions-after.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 93,
+      "EndLine": 93,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/cocoindex-adapter-source-refresh-v8.json:generic-api-key:93",
+      "File": "artifacts/research/2026-10-07/cocoindex-adapter-source-refresh-v8.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 94,
+      "EndLine": 94,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/cocoindex-adapter-source-refresh-v8.json:generic-api-key:94",
+      "File": "artifacts/research/2026-10-07/cocoindex-adapter-source-refresh-v8.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 95,
+      "EndLine": 95,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/cocoindex-adapter-source-refresh-v8.json:generic-api-key:95",
+      "File": "artifacts/research/2026-10-07/cocoindex-adapter-source-refresh-v8.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 123,
+      "EndLine": 123,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/cocoindex-stable-source-refresh-and-retrieval.json:generic-api-key:123",
+      "File": "artifacts/research/2026-10-07/cocoindex-stable-source-refresh-and-retrieval.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 124,
+      "EndLine": 124,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/cocoindex-stable-source-refresh-and-retrieval.json:generic-api-key:124",
+      "File": "artifacts/research/2026-10-07/cocoindex-stable-source-refresh-and-retrieval.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 125,
+      "EndLine": 125,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/cocoindex-stable-source-refresh-and-retrieval.json:generic-api-key:125",
+      "File": "artifacts/research/2026-10-07/cocoindex-stable-source-refresh-and-retrieval.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 208,
+      "EndLine": 208,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/workflow-stable-versions-reports.json:generic-api-key:208",
+      "File": "artifacts/research/2026-10-02/workflow-stable-versions-reports.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 178,
+      "EndLine": 178,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/workflow-stable-versions-current.json:generic-api-key:178",
+      "File": "artifacts/research/2026-10-02/workflow-stable-versions-current.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 178,
+      "EndLine": 178,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/workflow-stable-versions-before.json:generic-api-key:178",
+      "File": "artifacts/research/2026-10-02/workflow-stable-versions-before.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 93,
+      "EndLine": 93,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/cocoindex-adapter-source-refresh-v7.json:generic-api-key:93",
+      "File": "artifacts/research/2026-10-07/cocoindex-adapter-source-refresh-v7.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 94,
+      "EndLine": 94,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/cocoindex-adapter-source-refresh-v7.json:generic-api-key:94",
+      "File": "artifacts/research/2026-10-07/cocoindex-adapter-source-refresh-v7.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 95,
+      "EndLine": 95,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/cocoindex-adapter-source-refresh-v7.json:generic-api-key:95",
+      "File": "artifacts/research/2026-10-07/cocoindex-adapter-source-refresh-v7.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 25,
+      "EndLine": 25,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/cocoindex-stable-update-index.json:generic-api-key:25",
+      "File": "artifacts/research/2026-10-07/cocoindex-stable-update-index.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 26,
+      "EndLine": 26,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/cocoindex-stable-update-index.json:generic-api-key:26",
+      "File": "artifacts/research/2026-10-07/cocoindex-stable-update-index.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 27,
+      "EndLine": 27,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/cocoindex-stable-update-index.json:generic-api-key:27",
+      "File": "artifacts/research/2026-10-07/cocoindex-stable-update-index.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 194,
+      "EndLine": 194,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/cocoindex-stable-update-index.json:generic-api-key:194",
+      "File": "artifacts/research/2026-10-07/cocoindex-stable-update-index.json",
+      "reviewed_context": "resource-size-exclusion-reason-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 20,
+      "EndLine": 20,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/llvm-base-environment-probe.json:generic-api-key:20",
+      "File": "artifacts/research/2026-10-07/llvm-base-environment-probe.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 20,
+      "EndLine": 20,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/mutation-tool-configured-interface-runtime.json:generic-api-key:20",
+      "File": "artifacts/research/2026-10-07/mutation-tool-configured-interface-runtime.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 20,
+      "EndLine": 20,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/mutation-tool-interface-unconfigured-project-failure.json:generic-api-key:20",
+      "File": "artifacts/research/2026-10-07/mutation-tool-interface-unconfigured-project-failure.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 17,
+      "EndLine": 17,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:17",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 40,
+      "EndLine": 40,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:40",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 41,
+      "EndLine": 41,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:41",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 20,
+      "EndLine": 20,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/mutation-campaign-initial-isolation-failure.json:generic-api-key:20",
+      "File": "artifacts/research/2026-10-07/mutation-campaign-initial-isolation-failure.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 29,
+      "EndLine": 29,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/isolated-backend-after-mutation-profile.json:generic-api-key:29",
+      "File": "artifacts/research/2026-10-07/isolated-backend-after-mutation-profile.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 108,
+      "EndLine": 108,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/isolated-backend-after-mutation-profile.json:generic-api-key:108",
+      "File": "artifacts/research/2026-10-07/isolated-backend-after-mutation-profile.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 187,
+      "EndLine": 187,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/isolated-backend-after-mutation-profile.json:generic-api-key:187",
+      "File": "artifacts/research/2026-10-07/isolated-backend-after-mutation-profile.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 267,
+      "EndLine": 267,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/isolated-backend-after-mutation-profile.json:generic-api-key:267",
+      "File": "artifacts/research/2026-10-07/isolated-backend-after-mutation-profile.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 343,
+      "EndLine": 343,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/isolated-backend-after-mutation-profile.json:generic-api-key:343",
+      "File": "artifacts/research/2026-10-07/isolated-backend-after-mutation-profile.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 491,
+      "EndLine": 491,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/isolated-backend-after-mutation-profile.json:generic-api-key:491",
+      "File": "artifacts/research/2026-10-07/isolated-backend-after-mutation-profile.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 565,
+      "EndLine": 565,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/isolated-backend-after-mutation-profile.json:generic-api-key:565",
+      "File": "artifacts/research/2026-10-07/isolated-backend-after-mutation-profile.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 644,
+      "EndLine": 644,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/isolated-backend-after-mutation-profile.json:generic-api-key:644",
+      "File": "artifacts/research/2026-10-07/isolated-backend-after-mutation-profile.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 20,
+      "EndLine": 20,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/trailmark-graph-initial-runtime.json:generic-api-key:20",
+      "File": "artifacts/research/2026-10-07/trailmark-graph-initial-runtime.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 208,
+      "EndLine": 208,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/workflow-stable-version-review-v2.json:generic-api-key:208",
+      "File": "artifacts/research/2026-10-07/workflow-stable-version-review-v2.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 537,
+      "EndLine": 537,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:537",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 540,
+      "EndLine": 540,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:540",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 546,
+      "EndLine": 546,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:546",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 695,
+      "EndLine": 695,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-02/cocoindex-pilot.json:generic-api-key:695",
+      "File": "artifacts/research/2026-10-02/cocoindex-pilot.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 50,
+      "EndLine": 50,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/llvm-native-runtime-controls-v3.json:generic-api-key:50",
+      "File": "artifacts/research/2026-10-07/llvm-native-runtime-controls-v3.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 208,
+      "EndLine": 208,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/workflow-stable-version-review-unqualified-timestamp.json:generic-api-key:208",
+      "File": "artifacts/research/2026-10-07/workflow-stable-version-review-unqualified-timestamp.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 41,
+      "EndLine": 41,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/llvm-native-runtime-controls.json:generic-api-key:41",
+      "File": "artifacts/research/2026-10-07/llvm-native-runtime-controls.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 869,
+      "EndLine": 869,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:869",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 870,
+      "EndLine": 870,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:870",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 871,
+      "EndLine": 871,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:871",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 872,
+      "EndLine": 872,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:872",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 873,
+      "EndLine": 873,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:873",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 879,
+      "EndLine": 879,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:879",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 880,
+      "EndLine": 880,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:880",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 881,
+      "EndLine": 881,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:881",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 882,
+      "EndLine": 882,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:882",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 63,
+      "EndLine": 63,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/mutation-tool-runtime-controls.json:generic-api-key:63",
+      "File": "artifacts/research/2026-10-07/mutation-tool-runtime-controls.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 362,
+      "EndLine": 362,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/mutation-tool-runtime-controls.json:generic-api-key:362",
+      "File": "artifacts/research/2026-10-07/mutation-tool-runtime-controls.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 67,
+      "EndLine": 67,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/wycheproof-provider-runtime-controls-v2.json:generic-api-key:67",
+      "File": "artifacts/research/2026-10-07/wycheproof-provider-runtime-controls-v2.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 914,
+      "EndLine": 914,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:914",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 915,
+      "EndLine": 915,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:915",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 916,
+      "EndLine": 916,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:916",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 942,
+      "EndLine": 942,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:942",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 973,
+      "EndLine": 973,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:973",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 996,
+      "EndLine": 996,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:996",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1002,
+      "EndLine": 1002,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1002",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1005,
+      "EndLine": 1005,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1005",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1006,
+      "EndLine": 1006,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1006",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 67,
+      "EndLine": 67,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/wycheproof-provider-runtime-controls.json:generic-api-key:67",
+      "File": "artifacts/research/2026-10-07/wycheproof-provider-runtime-controls.json",
+      "reviewed_context": "ephemeral-container-ownership-identifier-not-provider-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1061,
+      "EndLine": 1061,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1061",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1062,
+      "EndLine": 1062,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1062",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1064,
+      "EndLine": 1064,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1064",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1065,
+      "EndLine": 1065,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1065",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1066,
+      "EndLine": 1066,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1066",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1067,
+      "EndLine": 1067,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1067",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1068,
+      "EndLine": 1068,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1068",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1091,
+      "EndLine": 1091,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1091",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1092,
+      "EndLine": 1092,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1092",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1093,
+      "EndLine": 1093,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1093",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1094,
+      "EndLine": 1094,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1094",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1095,
+      "EndLine": 1095,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1095",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1096,
+      "EndLine": 1096,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1096",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1097,
+      "EndLine": 1097,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1097",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1098,
+      "EndLine": 1098,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1098",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1099,
+      "EndLine": 1099,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1099",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1100,
+      "EndLine": 1100,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1100",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1148,
+      "EndLine": 1148,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1148",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1149,
+      "EndLine": 1149,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1149",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1367,
+      "EndLine": 1367,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1367",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1370,
+      "EndLine": 1370,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1370",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1372,
+      "EndLine": 1372,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1372",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1373,
+      "EndLine": 1373,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1373",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1376,
+      "EndLine": 1376,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1376",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1437,
+      "EndLine": 1437,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1437",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1484,
+      "EndLine": 1484,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1484",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 1488,
+      "EndLine": 1488,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:1488",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2254,
+      "EndLine": 2254,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2254",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2522,
+      "EndLine": 2522,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2522",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2558,
+      "EndLine": 2558,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2558",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2566,
+      "EndLine": 2566,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2566",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2582,
+      "EndLine": 2582,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2582",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2587,
+      "EndLine": 2587,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2587",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2588,
+      "EndLine": 2588,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2588",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2628,
+      "EndLine": 2628,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2628",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2635,
+      "EndLine": 2635,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2635",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2636,
+      "EndLine": 2636,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2636",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2637,
+      "EndLine": 2637,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2637",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2638,
+      "EndLine": 2638,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2638",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2639,
+      "EndLine": 2639,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2639",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2640,
+      "EndLine": 2640,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2640",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2641,
+      "EndLine": 2641,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2641",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2642,
+      "EndLine": 2642,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2642",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2647,
+      "EndLine": 2647,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2647",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2653,
+      "EndLine": 2653,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2653",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2693,
+      "EndLine": 2693,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2693",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2714,
+      "EndLine": 2714,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2714",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2731,
+      "EndLine": 2731,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2731",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2826,
+      "EndLine": 2826,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2826",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2842,
+      "EndLine": 2842,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2842",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2843,
+      "EndLine": 2843,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2843",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2850,
+      "EndLine": 2850,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2850",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2851,
+      "EndLine": 2851,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2851",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2858,
+      "EndLine": 2858,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2858",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2859,
+      "EndLine": 2859,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2859",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2873,
+      "EndLine": 2873,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2873",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2889,
+      "EndLine": 2889,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2889",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2933,
+      "EndLine": 2933,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2933",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 2936,
+      "EndLine": 2936,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:2936",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3117,
+      "EndLine": 3117,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3117",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3119,
+      "EndLine": 3119,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3119",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3120,
+      "EndLine": 3120,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3120",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3129,
+      "EndLine": 3129,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3129",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3206,
+      "EndLine": 3206,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3206",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3219,
+      "EndLine": 3219,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3219",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3239,
+      "EndLine": 3239,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3239",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3285,
+      "EndLine": 3285,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3285",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3289,
+      "EndLine": 3289,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3289",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3290,
+      "EndLine": 3290,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3290",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3294,
+      "EndLine": 3294,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3294",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3300,
+      "EndLine": 3300,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3300",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3301,
+      "EndLine": 3301,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3301",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3321,
+      "EndLine": 3321,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3321",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3403,
+      "EndLine": 3403,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3403",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3473,
+      "EndLine": 3473,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3473",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3476,
+      "EndLine": 3476,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3476",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3478,
+      "EndLine": 3478,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3478",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3480,
+      "EndLine": 3480,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3480",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3484,
+      "EndLine": 3484,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3484",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3488,
+      "EndLine": 3488,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3488",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3493,
+      "EndLine": 3493,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3493",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3507,
+      "EndLine": 3507,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3507",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3651,
+      "EndLine": 3651,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3651",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3658,
+      "EndLine": 3658,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3658",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3660,
+      "EndLine": 3660,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3660",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3804,
+      "EndLine": 3804,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3804",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3806,
+      "EndLine": 3806,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3806",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3810,
+      "EndLine": 3810,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3810",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3812,
+      "EndLine": 3812,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3812",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3814,
+      "EndLine": 3814,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3814",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3816,
+      "EndLine": 3816,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3816",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3818,
+      "EndLine": 3818,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3818",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3853,
+      "EndLine": 3853,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3853",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3867,
+      "EndLine": 3867,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3867",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3892,
+      "EndLine": 3892,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3892",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3893,
+      "EndLine": 3893,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3893",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3894,
+      "EndLine": 3894,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3894",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3897,
+      "EndLine": 3897,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3897",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3898,
+      "EndLine": 3898,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3898",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3901,
+      "EndLine": 3901,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3901",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3902,
+      "EndLine": 3902,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3902",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3904,
+      "EndLine": 3904,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3904",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3906,
+      "EndLine": 3906,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3906",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 3907,
+      "EndLine": 3907,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:3907",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 4057,
+      "EndLine": 4057,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:4057",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 4059,
+      "EndLine": 4059,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:4059",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 4061,
+      "EndLine": 4061,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:4061",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 4063,
+      "EndLine": 4063,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:4063",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 4065,
+      "EndLine": 4065,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:4065",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 4067,
+      "EndLine": 4067,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:4067",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 4069,
+      "EndLine": 4069,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:4069",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 4071,
+      "EndLine": 4071,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:4071",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 4073,
+      "EndLine": 4073,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:4073",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 4075,
+      "EndLine": 4075,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:4075",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 4143,
+      "EndLine": 4143,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:4143",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 4197,
+      "EndLine": 4197,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:4197",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 4200,
+      "EndLine": 4200,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:4200",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 4290,
+      "EndLine": 4290,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:4290",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 4559,
+      "EndLine": 4559,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:4559",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 4561,
+      "EndLine": 4561,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:4561",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 4595,
+      "EndLine": 4595,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:4595",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 4596,
+      "EndLine": 4596,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:4596",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 4712,
+      "EndLine": 4712,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:4712",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 5049,
+      "EndLine": 5049,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:5049",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 5070,
+      "EndLine": 5070,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:5070",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 5071,
+      "EndLine": 5071,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:5071",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 5073,
+      "EndLine": 5073,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:5073",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 5812,
+      "EndLine": 5812,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:5812",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 5814,
+      "EndLine": 5814,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:5814",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 5890,
+      "EndLine": 5890,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:5890",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6008,
+      "EndLine": 6008,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6008",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6108,
+      "EndLine": 6108,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6108",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6200,
+      "EndLine": 6200,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6200",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6206,
+      "EndLine": 6206,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6206",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6300,
+      "EndLine": 6300,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6300",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6301,
+      "EndLine": 6301,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6301",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6302,
+      "EndLine": 6302,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6302",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6305,
+      "EndLine": 6305,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6305",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6320,
+      "EndLine": 6320,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6320",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6378,
+      "EndLine": 6378,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6378",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6380,
+      "EndLine": 6380,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6380",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6406,
+      "EndLine": 6406,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6406",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6425,
+      "EndLine": 6425,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6425",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6426,
+      "EndLine": 6426,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6426",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6483,
+      "EndLine": 6483,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6483",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6512,
+      "EndLine": 6512,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6512",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6534,
+      "EndLine": 6534,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6534",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6541,
+      "EndLine": 6541,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6541",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6545,
+      "EndLine": 6545,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6545",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6554,
+      "EndLine": 6554,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6554",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6560,
+      "EndLine": 6560,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6560",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6591,
+      "EndLine": 6591,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6591",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6601,
+      "EndLine": 6601,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6601",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6610,
+      "EndLine": 6610,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6610",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6751,
+      "EndLine": 6751,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6751",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6754,
+      "EndLine": 6754,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6754",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6757,
+      "EndLine": 6757,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6757",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6784,
+      "EndLine": 6784,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6784",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6839,
+      "EndLine": 6839,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6839",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6847,
+      "EndLine": 6847,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6847",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6851,
+      "EndLine": 6851,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6851",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6868,
+      "EndLine": 6868,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6868",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6899,
+      "EndLine": 6899,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6899",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 6970,
+      "EndLine": 6970,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:6970",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 7066,
+      "EndLine": 7066,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:7066",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 7091,
+      "EndLine": 7091,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:7091",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 7117,
+      "EndLine": 7117,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:7117",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 7119,
+      "EndLine": 7119,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:7119",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 7218,
+      "EndLine": 7218,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:7218",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 7245,
+      "EndLine": 7245,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:7245",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 7252,
+      "EndLine": 7252,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:7252",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 7256,
+      "EndLine": 7256,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:7256",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 7258,
+      "EndLine": 7258,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:7258",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 7316,
+      "EndLine": 7316,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:7316",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 7331,
+      "EndLine": 7331,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:7331",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 7524,
+      "EndLine": 7524,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:7524",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 7731,
+      "EndLine": 7731,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:7731",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 7734,
+      "EndLine": 7734,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:7734",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 7835,
+      "EndLine": 7835,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:7835",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 7935,
+      "EndLine": 7935,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:7935",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 7936,
+      "EndLine": 7936,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:7936",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 7966,
+      "EndLine": 7966,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:7966",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 7967,
+      "EndLine": 7967,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:7967",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 7985,
+      "EndLine": 7985,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:7985",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 7999,
+      "EndLine": 7999,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json:generic-api-key:7999",
+      "File": "artifacts/research/2026-10-07/gitleaks-worktree-after-mutation-controls.json",
+      "reviewed_context": "recorded-public-file-model-or-workflow-sha256-not-credential",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 113,
+      "EndLine": 113,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-secrets-java/references/examples.md:generic-api-key:113",
+      "File": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-secrets-java/references/examples.md",
+      "reviewed_context": "public-example-key-vault-version-identifier-not-secret-value",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 124,
+      "EndLine": 124,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-secrets-java/references/examples.md:generic-api-key:124",
+      "File": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-secrets-java/references/examples.md",
+      "reviewed_context": "public-example-key-vault-version-identifier-not-secret-value",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    },
+    {
+      "RuleID": "generic-api-key",
+      "StartLine": 309,
+      "EndLine": 309,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-current-secret-scan-_xbrl6jb/included/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator/docs/security-guide.md:generic-api-key:309",
+      "File": "included/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator/docs/security-guide.md",
+      "reviewed_context": "buildkit-secret-file-reference-with-no-credential-value",
+      "disposition": "noncredential-context",
+      "finding_suppressed": false
+    }
+  ],
+  "native_gate_passed": false,
+  "gitleaks_exit_code": 1,
+  "allowlists_baselines_or_path_exemptions_added": false,
+  "github_alerts_dismissed": false,
+  "historical_credentials_resolved_by_this_worktree_review": false,
+  "scope": "exact 8035-file snapshot; later artifacts require a fresh native scan"
+}

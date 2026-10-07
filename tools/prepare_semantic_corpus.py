@@ -54,13 +54,18 @@ def fingerprint(path: Path) -> tuple[str, int]:
 
 
 def git_files(root: Path) -> list[str]:
-    result = subprocess.run(
-        ["git", "-C", str(root), "ls-files", "-z", "--cached", "--others", "--exclude-standard"],
-        capture_output=True,
-        timeout=60,
-        check=True,
-    )
-    return sorted({canonical_name(name.decode("utf-8")) for name in result.stdout.split(b"\0") if name})
+    def listing(*args: str) -> set[str]:
+        result = subprocess.run(
+            ["git", "-c", "core.longpaths=true", "-C", str(root), "ls-files", "-z", *args],
+            capture_output=True,
+            timeout=60,
+            check=True,
+        )
+        if result.stderr.strip():
+            raise ValueError("incomplete Git file inventory: diagnostics reported; corpus preparation refused")
+        return {canonical_name(name.decode("utf-8")) for name in result.stdout.split(b"\0") if name}
+
+    return sorted(listing("--cached", "--others", "--exclude-standard") - listing("--deleted"))
 
 
 def inventory(root: Path, prefixes: list[str]) -> dict[str, Any]:

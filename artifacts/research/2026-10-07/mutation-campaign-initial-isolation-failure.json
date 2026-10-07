@@ -1,0 +1,179 @@
+{
+  "status": "completed",
+  "container_name": "skills-invoke-30aaef33dcb4471b802358d9a5a8a7b2",
+  "image": "sha256:10dd95746c4366664c4cd93c87c5767cc4adc65eec523b610322b39f3568b4ff",
+  "scored": false,
+  "candidate_response_is_untrusted": true,
+  "cleanup_verified": true,
+  "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+  "resource_profile": "python-small",
+  "submission_sha256": {
+    "candidate.py": "66e2651022e24256a09bc7a049863c3912df0c49e8b6a5f4011f0ad59f4f7b70"
+  },
+  "container_id": "eab0e441d155ba96c2b5f11020046fb4607d457ed38fb96fc1e58aa3317f0bbc",
+  "isolation_checks": {
+    "errors": [],
+    "passed": true,
+    "observed_user": "65534:65534",
+    "observed_image": "sha256:10dd95746c4366664c4cd93c87c5767cc4adc65eec523b610322b39f3568b4ff",
+    "observed_ownership_token": "30aaef33dcb4471b802358d9a5a8a7b2",
+    "resolved_image_id": "sha256:10dd95746c4366664c4cd93c87c5767cc4adc65eec523b610322b39f3568b4ff",
+    "observed_host_constraints": {
+      "NetworkMode": "none",
+      "IpcMode": "none",
+      "ReadonlyRootfs": true,
+      "Memory": 536870912,
+      "MemorySwap": 536870912,
+      "NanoCpus": 1000000000,
+      "PidsLimit": 64,
+      "Privileged": false,
+      "Init": true,
+      "CapDrop": [
+        "ALL"
+      ],
+      "CapAdd": null,
+      "SecurityOpt": [
+        "no-new-privileges"
+      ],
+      "LogConfig": {
+        "Type": "none",
+        "Config": {}
+      },
+      "Tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=128m"
+      },
+      "Devices": [],
+      "DeviceRequests": null,
+      "VolumesFrom": null
+    },
+    "observed_mounts": [
+      {
+        "Destination": "/submission",
+        "Type": "bind",
+        "RW": false
+      },
+      {
+        "Destination": "/worker",
+        "Type": "bind",
+        "RW": false
+      }
+    ]
+  },
+  "setup_elapsed_seconds": 0.3345325000118464,
+  "runtime_elapsed_seconds": 3.795696599991061,
+  "returncode": 0,
+  "candidate_response": {
+    "worker_status": "returned",
+    "result": {
+      "python": "3.14.8 (main, Oct  1 2026, 21:39:21) [GCC 14.2.0]",
+      "versions": {
+        "mutmut": "3.8.0",
+        "trailmark": "0.5.0",
+        "tree-sitter-language-pack": "1.21.0",
+        "tree-sitter": "0.25.2"
+      },
+      "source_sha256": "a1eba5c9b617e8fb8da74c4cc1861bfc1091b48d51119254d1109440e5dfab99",
+      "config_sha256": "4132167710c2230c64c8f9cdb039b87f6b9e755736fa6fa3c0ea3813942ffaac",
+      "campaigns": {
+        "weak": {
+          "tests_sha256": "0d42acfcbaf7d401e16450682a65ea61c2f7a9767a063bd3150c9338b080ca10",
+          "baseline": {
+            "args": [
+              "/usr/local/bin/python",
+              "-m",
+              "pytest",
+              "-q"
+            ],
+            "exit_code": 0,
+            "stdout": ".                                                                        [100%]\n1 passed in 0.00s\n",
+            "stderr": ""
+          },
+          "interfaces": [
+            {
+              "args": [
+                "mutmut",
+                "run",
+                "--paths-to-mutate",
+                "src"
+              ],
+              "exit_code": 2,
+              "stdout": "",
+              "stderr": "Usage: mutmut run [OPTIONS] [MUTANT_NAMES]...\nTry 'mutmut run --help' for help.\n\nError: No such option '--paths-to-mutate'.\n"
+            },
+            {
+              "args": [
+                "mutmut",
+                "run",
+                "--runner",
+                "pytest"
+              ],
+              "exit_code": 2,
+              "stdout": "",
+              "stderr": "Usage: mutmut run [OPTIONS] [MUTANT_NAMES]...\nTry 'mutmut run --help' for help.\n\nError: No such option '--runner'.\n"
+            },
+            {
+              "args": [
+                "mutmut",
+                "junitxml"
+              ],
+              "exit_code": 2,
+              "stdout": "",
+              "stderr": "Usage: mutmut [OPTIONS] COMMAND [ARGS]...\nTry 'mutmut --help' for help.\n\nError: No such command 'junitxml'.\n"
+            }
+          ],
+          "trailmark": {
+            "args": [
+              "trailmark",
+              "analyze",
+              "src"
+            ],
+            "exit_code": 1,
+            "stdout": "",
+            "stderr": "Traceback (most recent call last):\n  File \"/usr/local/bin/trailmark\", line 6, in <module>\n    sys.exit(main())\n             ~~~~^^\n  File \"/usr/local/lib/python3.14/site-packages/trailmark/cli.py\", line 161, in main\n    _run_analyze(args)\n    ~~~~~~~~~~~~^^^^^^\n  File \"/usr/local/lib/python3.14/site-packages/trailmark/cli.py\", line 174, in _run_analyze\n    engine = QueryEngine.from_directory(\n        args.path,\n        language=args.language,\n    )\n  File \"/usr/local/lib/python3.14/site-packages/trailmark/query/api.py\", line 57, in from_directory\n    graph = _parse_api.parse_directory(path, language=language)\n  File \"/usr/local/lib/python3.14/site-packages/trailmark/parse.py\", line 119, in parse_directory\n    return _parse_and_merge(path, languages)\n  File \"/usr/local/lib/python3.14/site-packages/trailmark/parse.py\", line 203, in _parse_and_merge\n    graph = _get_parser(languages[0]).parse_directory(path)\n            ~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/site-packages/trailmark/parse.py\", line 163, in _get_parser\n    return cls()\n  File \"/usr/local/lib/python3.14/site-packages/trailmark/parsers/python/parser.py\", line 58, in __init__\n    self._parser = Parser(get_language(\"python\"))\n                          ~~~~~~~~~~~~^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/site-packages/tree_sitter_language_pack/api.py\", line 188, in get_language\n    return cast(\"Language\", _rust.get_language(name=name))\n                            ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^\ntree_sitter_language_pack.DownloadError: Download error: Failed to fetch manifest from https://github.com/xberg-io/tree-sitter-language-pack/releases/download/v1.21.0/parsers.json: io: failed to lookup address information: Temporary failure in name resolution\n"
+          },
+          "run": {
+            "args": [
+              "mutmut",
+              "run",
+              "--max-children",
+              "1"
+            ],
+            "exit_code": 1,
+            "stdout": "\n\u280b Generating mutants\n\u2819 Generating mutants\n\u2839 Generating mutants\n\u2838 Generating mutants\n\u283c Generating mutants\n\u2834 Generating mutants\n\u2826 Generating mutants\n\u2827 Generating mutants\n\u2807 Generating mutants\n\u280f Generating mutants\n\u280b Generating mutants\n\u2819 Generating mutants\n\u2839 Generating mutants\n\u2838 Generating mutants\n\u283c Generating mutants\n\u2834 Generating mutants\n\u2826 Generating mutants\n\u2827 Generating mutants\n\u2807 Generating mutants\n\u280f Generating mutants\n\u280b Generating mutants\n\u2819 Generating mutants\n\u2839 Generating mutants\n\u2838 Generating mutants\n\u283c Generating mutants\n\u2834 Generating mutants\n\u2826 Generating mutants\n\u2827 Generating mutants\n\u2807 Generating mutants\n\u280f Generating mutants\n\u280b Generating mutants\n\u2819 Generating mutants\n\u2839 Generating mutants\n",
+            "stderr": "Traceback (most recent call last):\n  File \"/usr/local/bin/mutmut\", line 6, in <module>\n    sys.exit(cli())\n             ~~~^^\n  File \"/usr/local/lib/python3.14/site-packages/click/core.py\", line 1631, in __call__\n    return self.main(*args, **kwargs)\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/site-packages/click/core.py\", line 1552, in main\n    rv = self.invoke(ctx)\n  File \"/usr/local/lib/python3.14/site-packages/click/core.py\", line 2032, in invoke\n    return _process_result(sub_ctx.command.invoke(sub_ctx))\n                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/usr/local/lib/python3.14/site-packages/click/core.py\", line 1415, in invoke\n    return ctx.invoke(self.callback, **ctx.params)\n           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/site-packages/click/core.py\", line 910, in invoke\n    return callback(*args, **kwargs)\n  File \"/usr/local/lib/python3.14/site-packages/mutmut/__main__.py\", line 941, in run\n    _run(mutant_names, max_children)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/site-packages/mutmut/__main__.py\", line 960, in _run\n    stats = create_mutants(max_children)\n  File \"/usr/local/lib/python3.14/site-packages/mutmut/__main__.py\", line 116, in create_mutants\n    with Pool(processes=max_children) as p:\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/multiprocessing/context.py\", line 119, in Pool\n    return Pool(processes, initializer, initargs, maxtasksperchild,\n                context=self.get_context())\n  File \"/usr/local/lib/python3.14/multiprocessing/pool.py\", line 191, in __init__\n    self._setup_queues()\n    ~~~~~~~~~~~~~~~~~~^^\n  File \"/usr/local/lib/python3.14/multiprocessing/pool.py\", line 346, in _setup_queues\n    self._inqueue = self._ctx.SimpleQueue()\n                    ~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/usr/local/lib/python3.14/multiprocessing/context.py\", line 113, in SimpleQueue\n    return SimpleQueue(ctx=self.get_context())\n  File \"/usr/local/lib/python3.14/multiprocessing/queues.py\", line 361, in __init__\n    self._rlock = ctx.Lock()\n                  ~~~~~~~~^^\n  File \"/usr/local/lib/python3.14/multiprocessing/context.py\", line 68, in Lock\n    return Lock(ctx=self.get_context())\n  File \"/usr/local/lib/python3.14/multiprocessing/synchronize.py\", line 176, in __init__\n    SemLock.__init__(self, SEMAPHORE, 1, 1, ctx=ctx)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/multiprocessing/synchronize.py\", line 56, in __init__\n    sl = self._semlock = _multiprocessing.SemLock(\n                         ~~~~~~~~~~~~~~~~~~~~~~~~^\n        kind, value, maxvalue, self._make_name(),\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        unlink_now)\n        ^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory\n"
+          }
+        },
+        "strong": {
+          "tests_sha256": "68ee6be982ff0f9d99b59cd5c7723bb04c0d8ab9ffe307c56db4472282c3e073",
+          "baseline": {
+            "args": [
+              "/usr/local/bin/python",
+              "-m",
+              "pytest",
+              "-q"
+            ],
+            "exit_code": 0,
+            "stdout": "..                                                                       [100%]\n2 passed in 0.01s\n",
+            "stderr": ""
+          },
+          "interfaces": [],
+          "run": {
+            "args": [
+              "mutmut",
+              "run",
+              "--max-children",
+              "1"
+            ],
+            "exit_code": 1,
+            "stdout": "\n\u280b Generating mutants\n\u2819 Generating mutants\n\u2839 Generating mutants\n\u2838 Generating mutants\n\u283c Generating mutants\n\u2834 Generating mutants\n\u2826 Generating mutants\n\u2827 Generating mutants\n\u2807 Generating mutants\n\u280f Generating mutants\n\u280b Generating mutants\n\u2819 Generating mutants\n\u2839 Generating mutants\n\u2838 Generating mutants\n\u283c Generating mutants\n\u2834 Generating mutants\n\u2826 Generating mutants\n\u2827 Generating mutants\n\u2807 Generating mutants\n\u280f Generating mutants\n\u280b Generating mutants\n\u2819 Generating mutants\n\u2839 Generating mutants\n\u2838 Generating mutants\n\u283c Generating mutants\n\u2834 Generating mutants\n\u2826 Generating mutants\n\u2827 Generating mutants\n\u2807 Generating mutants\n\u280f Generating mutants\n\u280b Generating mutants\n\u2819 Generating mutants\n\u2839 Generating mutants\n",
+            "stderr": "Traceback (most recent call last):\n  File \"/usr/local/bin/mutmut\", line 6, in <module>\n    sys.exit(cli())\n             ~~~^^\n  File \"/usr/local/lib/python3.14/site-packages/click/core.py\", line 1631, in __call__\n    return self.main(*args, **kwargs)\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/site-packages/click/core.py\", line 1552, in main\n    rv = self.invoke(ctx)\n  File \"/usr/local/lib/python3.14/site-packages/click/core.py\", line 2032, in invoke\n    return _process_result(sub_ctx.command.invoke(sub_ctx))\n                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/usr/local/lib/python3.14/site-packages/click/core.py\", line 1415, in invoke\n    return ctx.invoke(self.callback, **ctx.params)\n           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/site-packages/click/core.py\", line 910, in invoke\n    return callback(*args, **kwargs)\n  File \"/usr/local/lib/python3.14/site-packages/mutmut/__main__.py\", line 941, in run\n    _run(mutant_names, max_children)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/site-packages/mutmut/__main__.py\", line 960, in _run\n    stats = create_mutants(max_children)\n  File \"/usr/local/lib/python3.14/site-packages/mutmut/__main__.py\", line 116, in create_mutants\n    with Pool(processes=max_children) as p:\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/multiprocessing/context.py\", line 119, in Pool\n    return Pool(processes, initializer, initargs, maxtasksperchild,\n                context=self.get_context())\n  File \"/usr/local/lib/python3.14/multiprocessing/pool.py\", line 191, in __init__\n    self._setup_queues()\n    ~~~~~~~~~~~~~~~~~~^^\n  File \"/usr/local/lib/python3.14/multiprocessing/pool.py\", line 346, in _setup_queues\n    self._inqueue = self._ctx.SimpleQueue()\n                    ~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/usr/local/lib/python3.14/multiprocessing/context.py\", line 113, in SimpleQueue\n    return SimpleQueue(ctx=self.get_context())\n  File \"/usr/local/lib/python3.14/multiprocessing/queues.py\", line 361, in __init__\n    self._rlock = ctx.Lock()\n                  ~~~~~~~~^^\n  File \"/usr/local/lib/python3.14/multiprocessing/context.py\", line 68, in Lock\n    return Lock(ctx=self.get_context())\n  File \"/usr/local/lib/python3.14/multiprocessing/synchronize.py\", line 176, in __init__\n    SemLock.__init__(self, SEMAPHORE, 1, 1, ctx=ctx)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.14/multiprocessing/synchronize.py\", line 56, in __init__\n    sl = self._semlock = _multiprocessing.SemLock(\n                         ~~~~~~~~~~~~~~~~~~~~~~~~^\n        kind, value, maxvalue, self._make_name(),\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        unlink_now)\n        ^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory\n"
+          }
+        }
+      }
+    }
+  },
+  "captured_bytes": 11477,
+  "stderr": "",
+  "elapsed_seconds": 4.369062000012491
+}

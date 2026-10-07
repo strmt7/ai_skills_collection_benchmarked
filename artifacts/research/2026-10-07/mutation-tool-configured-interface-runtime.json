@@ -1,0 +1,103 @@
+{
+  "status": "completed",
+  "container_name": "skills-invoke-f9a83d3a149e4c61b7eb80fc847a2f31",
+  "image": "sha256:10dd95746c4366664c4cd93c87c5767cc4adc65eec523b610322b39f3568b4ff",
+  "scored": false,
+  "candidate_response_is_untrusted": true,
+  "cleanup_verified": true,
+  "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+  "resource_profile": "python-small",
+  "submission_sha256": {
+    "candidate.py": "4f4fe624ef81c8e697b45666ffd5eb5e8e84b990bec0a5660ca88e1fd544ed75"
+  },
+  "container_id": "d2e0160f80f216fbe6ad568138ddb13ff37b68e267af085bfb7d58a2e5631ec1",
+  "isolation_checks": {
+    "errors": [],
+    "passed": true,
+    "observed_user": "65534:65534",
+    "observed_image": "sha256:10dd95746c4366664c4cd93c87c5767cc4adc65eec523b610322b39f3568b4ff",
+    "observed_ownership_token": "f9a83d3a149e4c61b7eb80fc847a2f31",
+    "resolved_image_id": "sha256:10dd95746c4366664c4cd93c87c5767cc4adc65eec523b610322b39f3568b4ff",
+    "observed_host_constraints": {
+      "NetworkMode": "none",
+      "IpcMode": "none",
+      "ReadonlyRootfs": true,
+      "Memory": 536870912,
+      "MemorySwap": 536870912,
+      "NanoCpus": 1000000000,
+      "PidsLimit": 64,
+      "Privileged": false,
+      "Init": true,
+      "CapDrop": [
+        "ALL"
+      ],
+      "CapAdd": null,
+      "SecurityOpt": [
+        "no-new-privileges"
+      ],
+      "LogConfig": {
+        "Type": "none",
+        "Config": {}
+      },
+      "Tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=128m"
+      },
+      "Devices": [],
+      "DeviceRequests": null,
+      "VolumesFrom": null
+    },
+    "observed_mounts": [
+      {
+        "Destination": "/submission",
+        "Type": "bind",
+        "RW": false
+      },
+      {
+        "Destination": "/worker",
+        "Type": "bind",
+        "RW": false
+      }
+    ]
+  },
+  "setup_elapsed_seconds": 0.20363370000268333,
+  "runtime_elapsed_seconds": 1.81086110000615,
+  "returncode": 0,
+  "candidate_response": {
+    "worker_status": "returned",
+    "result": {
+      "python": "3.14.8 (main, Oct  1 2026, 21:39:21) [GCC 14.2.0]",
+      "versions": {
+        "mutmut": "3.8.0",
+        "trailmark": "0.5.0",
+        "tree-sitter-language-pack": "1.21.0",
+        "tree-sitter": "0.25.2"
+      },
+      "interfaces": {
+        "mutmut --help": {
+          "exit_code": 0,
+          "stdout": "Usage: mutmut [OPTIONS] COMMAND [ARGS]...\n\nOptions:\n  --version  Show the version and exit.\n  --help     Show this message and exit.\n\nCommands:\n  apply\n  badge\n  browse\n  export-cicd-stats\n  print-time-estimates\n  results\n  run\n  show\n  tests-for-mutant\n",
+          "stderr": ""
+        },
+        "mutmut run --help": {
+          "exit_code": 0,
+          "stdout": "Usage: mutmut run [OPTIONS] [MUTANT_NAMES]...\n\nOptions:\n  --max-children INTEGER\n  --help                  Show this message and exit.\n",
+          "stderr": ""
+        },
+        "mutmut junitxml --help": {
+          "exit_code": 2,
+          "stdout": "",
+          "stderr": "Usage: mutmut [OPTIONS] COMMAND [ARGS]...\nTry 'mutmut --help' for help.\n\nError: No such command 'junitxml'.\n"
+        },
+        "trailmark --help": {
+          "exit_code": 0,
+          "stdout": "usage: trailmark [-h] [--version]\n                 {version,analyze,diff,entrypoints,augment,diagram} ...\n\nParse source code into queryable graphs (v0.5.0)\n\npositional arguments:\n  {version,analyze,diff,entrypoints,augment,diagram}\n    version             Print the Trailmark version and exit\n    analyze             Analyze a directory and output the code graph\n    diff                Structural diff between two code graphs\n    entrypoints         List detected entrypoints and their trust\n                        classification\n    augment             Augment a code graph with SARIF or weAudit findings\n    diagram             Generate a Mermaid diagram from the code graph\n\noptions:\n  -h, --help            show this help message and exit\n  --version, -V         show program's version number and exit\n",
+          "stderr": ""
+        }
+      }
+    }
+  },
+  "captured_bytes": 1856,
+  "stderr": "",
+  "elapsed_seconds": 2.2423579999885987
+}

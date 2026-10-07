@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "evidence_class": "selected-provider-known-advisory-audit-not-repository-alert-closure",
+  "package_count": 26,
+  "known_vulnerabilities": 0,
+  "packages": [
+    {
+      "name": "pyyaml",
+      "version": "6.0.3",
+      "vulns": []
+    },
+    {
+      "name": "pygments",
+      "version": "2.21.0",
+      "vulns": []
+    },
+    {
+      "name": "click",
+      "version": "8.5.0",
+      "vulns": []
+    },
+    {
+      "name": "colorama",
+      "version": "0.4.6",
+      "vulns": []
+    },
+    {
+      "name": "coverage",
+      "version": "7.16.2",
+      "vulns": []
+    },
+    {
+      "name": "iniconfig",
+      "version": "2.3.1",
+      "vulns": []
+    },
+    {
+      "name": "libcst",
+      "version": "1.9.0",
+      "vulns": []
+    },
+    {
+      "name": "linkify-it-py",
+      "version": "2.2.0",
+      "vulns": []
+    },
+    {
+      "name": "markdown-it-py",
+      "version": "4.2.0",
+      "vulns": []
+    },
+    {
+      "name": "mdit-py-plugins",
+      "version": "0.6.1",
+      "vulns": []
+    },
+    {
+      "name": "mdurl",
+      "version": "0.1.2",
+      "vulns": []
+    },
+    {
+      "name": "mutmut",
+      "version": "3.8.0",
+      "vulns": []
+    },
+    {
+      "name": "numpy",
+      "version": "2.5.3",
+      "vulns": []
+    },
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "vulns": []
+    },
+    {
+      "name": "platformdirs",
+      "version": "4.12.3",
+      "vulns": []
+    },
+    {
+      "name": "pluggy",
+      "version": "1.6.0",
+      "vulns": []
+    },
+    {
+      "name": "pytest",
+      "version": "9.1.1",
+      "vulns": []
+    },
+    {
+      "name": "rich",
+      "version": "15.0.0",
+      "vulns": []
+    },
+    {
+      "name": "rustworkx",
+      "version": "0.18.1",
+      "vulns": []
+    },
+    {
+      "name": "setproctitle",
+      "version": "1.3.8",
+      "vulns": []
+    },
+    {
+      "name": "textual",
+      "version": "8.2.8",
+      "vulns": []
+    },
+    {
+      "name": "trailmark",
+      "version": "0.5.0",
+      "vulns": []
+    },
+    {
+      "name": "tree-sitter",
+      "version": "0.25.2",
+      "vulns": []
+    },
+    {
+      "name": "tree-sitter-language-pack",
+      "version": "1.21.0",
+      "vulns": []
+    },
+    {
+      "name": "tree-sitter-sql",
+      "version": "0.3.11",
+      "vulns": []
+    },
+    {
+      "name": "typing-extensions",
+      "version": "4.16.0",
+      "vulns": []
+    }
+  ],
+  "wheel_manifest_sha256": "0463b5ab8cb97680c9004e6d3a86b8b1d10578a820d9ec8641db216d68a240b7",
+  "requirements_sha256": "d26eac7b033aea4e428e8655ccd8e305328cf99a4448816b9a30325eccd5f6c8",
+  "command": [
+    "python",
+    "-m",
+    "pip_audit",
+    "--strict",
+    "--disable-pip",
+    "--no-deps",
+    "-r",
+    "mutation-provider-requirements.txt",
+    "--format",
+    "json"
+  ],
+  "diagnostics": "Cache deserialization warnings were retained; invalid entries ignored and audit completed.",
+  "hosted_dependabot_alerts_closed": false
+}

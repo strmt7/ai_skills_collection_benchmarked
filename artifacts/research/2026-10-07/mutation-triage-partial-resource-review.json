@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "evidence_class": "partial-package-mutation-triage-source-and-current-contract-review",
+  "complete_package_review": false,
+  "runtime_tool_controls_executed": false,
+  "agent_efficacy_scored": false,
+  "packages": {
+    "trailofbits-skills-plugins-trailmark-skills-genotoxic-skill-md": {
+      "source_signature": {
+        "commit_sha": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+        "skill_dir_sha256": "df7415a46800e771cfdacafd01e35c1133083972ad407bea70fcebc05beedc59",
+        "skill_file_sha256": "6f6b735155dfd5982436254e1b7a06865306547a3fb68fbc38c8f56d519fe7b7"
+      },
+      "resources": {
+        "references/graph-analysis.md": {
+          "status": "reviewed",
+          "sha256": "fd382a64becd8bf30479f2826d8a4577e032f011434f1ce839805de8a3371ded",
+          "captured_raw_sha256": "a657d1acbec592da75a28d69ce19f6807fd26f1fb17f89c170abeef4d5fc9a54",
+          "bytes": 13512,
+          "review_scope": "Complete reference read: line/function mapping, graph queries, annotations, batch triage, performance, necessist mapping and merge behavior."
+        },
+        "references/mutation-frameworks.md": {
+          "status": "pending",
+          "sha256": "87b17aad65a9a9b1e337e67131c9d288239ca7f7254778b9a4890428d8cef0cd",
+          "captured_raw_sha256": "846914b397e7013858bad03c0ee5a9d1d83281596ba86e769d018181eebb9d18",
+          "bytes": 29812
+        },
+        "references/triage-methodology.md": {
+          "status": "reviewed",
+          "sha256": "f2e377f94794dce6e271c2c17b95cad9e3ac9cb5522654a57e1c664dab23408b",
+          "captured_raw_sha256": "404636793e7c2105a0b8ce683b265ee3e33ccd7eb6a314e4d25f1de756a9be9d",
+          "bytes": 12397,
+          "review_scope": "Complete reference read: purported equivalence, reachability, test-only/log/cleanup assumptions, fuzzing/unit-test priorities and both worked examples."
+        },
+        "SKILL.md": {
+          "status": "reviewed",
+          "sha256": "6f6b735155dfd5982436254e1b7a06865306547a3fb68fbc38c8f56d519fe7b7",
+          "captured_raw_sha256": "ae4431f2721039851eebda99fadbbfaa58d887769ed06657ea9232d3c248723a",
+          "bytes": 13110,
+          "review_scope": "Complete entrypoint read: setup, mutation/necessist workflow, false-positive buckets, graph heuristics, report and integration."
+        }
+      }
+    },
+    "trailofbits-skills-plugins-trailmark-skills-vector-forge-skill-md": {
+      "source_signature": {
+        "commit_sha": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+        "skill_dir_sha256": "d9cfb30c7f24c1732826e5abbb4ff1e57488bcec1eeca12900e4133cf27515bc",
+        "skill_file_sha256": "e10842ca76aed8eaf3990f34e2d99934ea5bc756a062568993558e804b42695c"
+      },
+      "resources": {
+        "references/fault-simulation.md": {
+          "status": "reviewed",
+          "sha256": "2e39c262e4cb1f7c8f9737e6ed02d45c3c69c556c7003b077a1aae24d06ea308",
+          "captured_raw_sha256": "2b5249d73dfc5a22482c66fdc28401e82ff21ce68e5e0d21bcc61c79395d3a71",
+          "bytes": 5982,
+          "review_scope": "Complete reference read: radix/model selection, fault catalog, distinguishing inputs, production interpretation and limb selection claims."
+        },
+        "references/lessons-learned.md": {
+          "status": "reviewed",
+          "sha256": "fa8ac0c803bcdb6208e36f3d1b84dd07ebdce12a8eb4d0d1f1e6a3141b3a2f4a",
+          "captured_raw_sha256": "837add81a036e06a310ed547e95475a6d94ba89b8073bfa5f6abcbfa46bbb513",
+          "bytes": 8374,
+          "review_scope": "Complete reference read: all fourteen case-study claims including FFI, timeout calibration, cross-package scope, equivalence, Montgomery reachability, vector value and Go formatting."
+        },
+        "references/mutation-frameworks.md": {
+          "status": "pending",
+          "sha256": "ae781ebc35637c0c46cdee448bc8bad98a7e3676007039c7ed1eca7f612e82d9",
+          "captured_raw_sha256": "4d091fcd0db7b9eafa7fd615ed60e9d136826fd6c2439c0528448bbe32d20825",
+          "bytes": 21059
+        },
+        "references/report-template.md": {
+          "status": "reviewed",
+          "sha256": "9fb727aa0f8f6dde0b4f533a0de0641848cdb0cffff2d47eba9c4335b6da9727",
+          "captured_raw_sha256": "a553ed4d3d5b2ed0ce493cc70cd295050135996dc21c47ab7978642155ec801c",
+          "bytes": 955,
+          "review_scope": "Complete template read: target/provider baseline, escapes, generated vectors, after comparison and conclusions."
+        },
+        "references/vector-patterns.md": {
+          "status": "reviewed",
+          "sha256": "641edba466cfdf0ae8cd93b5009b6861b1f6aaa593b84fd5abcd5b468a8b91b1",
+          "captured_raw_sha256": "be453d8918c3f8a33ed0f1bc384f3a8a72e0e3abfe3f6aa8b543336fd89aed9e",
+          "bytes": 10118,
+          "review_scope": "Complete reference read: crypto format/operation-specific result expectations, serialization, signatures/aggregation, hash-to-curve, pairings, KEM and mutation mappings."
+        },
+        "SKILL.md": {
+          "status": "reviewed",
+          "sha256": "e10842ca76aed8eaf3990f34e2d99934ea5bc756a062568993558e804b42695c",
+          "captured_raw_sha256": "60322be94575420953aef32b45269a14643463a42ff64ec4e9f2893c7b02f872",
+          "bytes": 19677,
+          "review_scope": "Complete entrypoint read: discovery, FFI/harness scope, three test conditions, mutation denominators, graph triage, vector generation, independent verification, after comparison and integration."
+        }
+      }
+    }
+  },
+  "primary_tool_pins": {
+    "trailmark": {
+      "version": "0.5.0",
+      "commit": "6ee0f2252d7d5ceed31210491332a553c1af4b23"
+    },
+    "mutmut": {
+      "version": "3.8.0",
+      "commit": "14a7230049a5c8abd90c2bb0f7438e30da6471f5"
+    }
+  },
+  "trailmark_source_file_sha256": "5a73338e908cae83d9045fe7e6c2f71f53e702f75233a7151ba87ed2ac56543f",
+  "failed_endpoint_attempts": [
+    "https://github.com/boxed/mutmut/blob/v3.8.0/README.rst",
+    "https://github.com/boxed/mutmut/blob/main/README.md"
+  ],
+  "working_mutmut_contract": "https://raw.githubusercontent.com/boxed/mutmut/14a7230049a5c8abd90c2bb0f7438e30da6471f5/README.rst"
+}

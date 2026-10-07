@@ -19620,7 +19620,7 @@
     },
     "id": "skill-proof-hugohe3-ppt-master-skills-ppt-master-skill-md",
     "input_selector": {
-      "commit_sha": "19297c51cce3361d55137f527c010a8886f88bda",
+      "commit_sha": "a50758ac29ec027e85966db33e2ae80031446756",
       "source_path": "skills/ppt-master/SKILL.md",
       "source_repo": "hugohe3/ppt-master"
     },
@@ -19636,7 +19636,7 @@
       "agent transcript"
     ],
     "title": "ppt-master source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/hugohe3/ppt-master/blob/19297c51cce3361d55137f527c010a8886f88bda/skills/ppt-master/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/hugohe3/ppt-master/blob/a50758ac29ec027e85966db33e2ae80031446756/skills/ppt-master/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",

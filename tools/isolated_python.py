@@ -29,6 +29,7 @@ MAX_STAGED_BYTES = 32 * 1024 * 1024
 MAX_REQUEST_BYTES = 16 * 1024 * 1024
 PROFILES = {
     "python-small": {"cpus": 1, "memory_mib": 512, "pids": 64},
+    "python-mutation": {"cpus": 1, "memory_mib": 512, "pids": 64, "shm_mib": 16},
     "skillsbench-tfidf": {"cpus": 8, "memory_mib": 4096, "pids": 256},
 }
 
@@ -117,8 +118,12 @@ def validate_inspection(
     if any(item.get("RW") is not False or item.get("Type") != "bind" for item in mounts):
         errors.append("unexpected writable or non-bind mount")
     temporary = host.get("Tmpfs", {})
-    if set(temporary) != {"/tmp"} or not {"noexec", "nosuid", "size=128m"}.issubset(
-        set(temporary.get("/tmp", "").split(","))
+    expected_tmpfs = {"/tmp": "size=128m"}
+    if resources.get("shm_mib"):
+        expected_tmpfs["/dev/shm"] = f"size={resources['shm_mib']}m"
+    if set(temporary) != set(expected_tmpfs) or any(
+        not {"noexec", "nosuid", size}.issubset(set(temporary.get(path, "").split(",")))
+        for path, size in expected_tmpfs.items()
     ):
         errors.append("unexpected temporary filesystem")
     if host.get("Devices") or host.get("DeviceRequests") or host.get("VolumesFrom"):
@@ -237,6 +242,11 @@ def run_isolated(
                     str(resources["pids"]),
                     "--tmpfs",
                     "/tmp:rw,noexec,nosuid,size=128m",
+                    *(
+                        ["--tmpfs", f"/dev/shm:rw,noexec,nosuid,size={resources['shm_mib']}m"]
+                        if resources.get("shm_mib")
+                        else []
+                    ),
                     "--init",
                     "--log-driver",
                     "none",

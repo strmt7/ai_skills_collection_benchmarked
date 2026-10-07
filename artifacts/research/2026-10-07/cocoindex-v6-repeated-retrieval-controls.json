@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "evidence_class": "source-bound-development-retrieval-controls-not-quality-benchmark",
+  "passed": false,
+  "errors": [
+    "cli-first: included/improved/skills/genotoxic-current/**: response did not return exactly three successful hits",
+    "cli-first: included/improved/skills/vector-forge-current/**: response did not return exactly three successful hits",
+    "cli-first: tools/**: response did not return exactly three successful hits",
+    "client-repeat: included/improved/skills/genotoxic-current/**: response did not return exactly three successful hits",
+    "client-repeat: included/improved/skills/vector-forge-current/**: response did not return exactly three successful hits",
+    "client-repeat: tools/**: response did not return exactly three successful hits",
+    "cli-repeat: included/improved/skills/genotoxic-current/**: response did not return exactly three successful hits",
+    "cli-repeat: included/improved/skills/vector-forge-current/**: response did not return exactly three successful hits",
+    "cli-repeat: tools/**: response did not return exactly three successful hits"
+  ],
+  "python_version": "3.14.8",
+  "cocoindex_version": "1.0.25",
+  "cocoindex_code_version": "0.2.42",
+  "manifest_sha256": "a3b6662dc3922465245c2f4d38ba82b3d7536329a2dcdc71137320c4adecc11a",
+  "prefixes": [
+    "included/improved",
+    "included/skills",
+    "tools"
+  ],
+  "observations": [
+    {
+      "round": 0,
+      "method": "cli-first",
+      "query": "ambiguous mutation mapping zero callers false positives",
+      "scope": "included/improved/skills/genotoxic-current/**",
+      "exit_code": 0,
+      "stderr": "",
+      "response": {
+        "type": "search",
+        "success": true,
+        "results": [],
+        "total_returned": 0,
+        "offset": 0,
+        "message": null
+      },
+      "source_span_checks": []
+    },
+    {
+      "round": 0,
+      "method": "cli-first",
+      "query": "Montgomery representation inverse mapping canonical public inputs",
+      "scope": "included/improved/skills/vector-forge-current/**",
+      "exit_code": 0,
+      "stderr": "",
+      "response": {
+        "type": "search",
+        "success": true,
+        "results": [],
+        "total_returned": 0,
+        "offset": 0,
+        "message": null
+      },
+      "source_span_checks": []
+    },
+    {
+      "round": 0,
+      "method": "cli-first",
+      "query": "private shared memory semaphore mutation tool container profile",
+      "scope": "tools/**",
+      "exit_code": 0,
+      "stderr": "",
+      "response": {
+        "type": "search",
+        "success": true,
+        "results": [],
+        "total_returned": 0,
+        "offset": 0,
+        "message": null
+      },
+      "source_span_checks": []
+    },
+    {
+      "round": 1,
+      "method": "client-repeat",
+      "query": "ambiguous mutation mapping zero callers false positives",
+      "scope": "included/improved/skills/genotoxic-current/**",
+      "exit_code": 0,
+      "stderr": "",
+      "response": {
+        "type": "search",
+        "success": true,
+        "results": [],
+        "total_returned": 0,
+        "offset": 0,
+        "message": null
+      },
+      "source_span_checks": []
+    },
+    {
+      "round": 1,
+      "method": "client-repeat",
+      "query": "Montgomery representation inverse mapping canonical public inputs",
+      "scope": "included/improved/skills/vector-forge-current/**",
+      "exit_code": 0,
+      "stderr": "",
+      "response": {
+        "type": "search",
+        "success": true,
+        "results": [],
+        "total_returned": 0,
+        "offset": 0,
+        "message": null
+      },
+      "source_span_checks": []
+    },
+    {
+      "round": 1,
+      "method": "client-repeat",
+      "query": "private shared memory semaphore mutation tool container profile",
+      "scope": "tools/**",
+      "exit_code": 0,
+      "stderr": "",
+      "response": {
+        "type": "search",
+        "success": true,
+        "results": [],
+        "total_returned": 0,
+        "offset": 0,
+        "message": null
+      },
+      "source_span_checks": []
+    },
+    {
+      "round": 2,
+      "method": "cli-repeat",
+      "query": "ambiguous mutation mapping zero callers false positives",
+      "scope": "included/improved/skills/genotoxic-current/**",
+      "exit_code": 0,
+      "stderr": "",
+      "response": {
+        "type": "search",
+        "success": true,
+        "results": [],
+        "total_returned": 0,
+        "offset": 0,
+        "message": null
+      },
+      "source_span_checks": []
+    },
+    {
+      "round": 2,
+      "method": "cli-repeat",
+      "query": "Montgomery representation inverse mapping canonical public inputs",
+      "scope": "included/improved/skills/vector-forge-current/**",
+      "exit_code": 0,
+      "stderr": "",
+      "response": {
+        "type": "search",
+        "success": true,
+        "results": [],
+        "total_returned": 0,
+        "offset": 0,
+        "message": null
+      },
+      "source_span_checks": []
+    },
+    {
+      "round": 2,
+      "method": "cli-repeat",
+      "query": "private shared memory semaphore mutation tool container profile",
+      "scope": "tools/**",
+      "exit_code": 0,
+      "stderr": "",
+      "response": {
+        "type": "search",
+        "success": true,
+        "results": [],
+        "total_returned": 0,
+        "offset": 0,
+        "message": null
+      },
+      "source_span_checks": []
+    }
+  ],
+  "status": {
+    "type": "project_status",
+    "indexing": false,
+    "total_chunks": 66971,
+    "total_files": 5471,
+    "languages": {
+      "markdown": 37772,
+      "text": 11089,
+      "python": 8214,
+      "json": 3397,
+      "csv": 1993,
+      "bash": 1198,
+      "html": 1077,
+      "yaml": 974,
+      "latex": 668,
+      "javascript": 236,
+      "hcl": 120,
+      "bicep": 61,
+      "powershell": 32,
+      "xml": 30,
+      "gitignore": 26,
+      "dockerfile": 22,
+      "typescript": 18,
+      "bibtex": 14,
+      "groovy": 9,
+      "tsx": 6,
+      "make": 6,
+      "toml": 3,
+      "ini": 3,
+      "cpp": 3
+    },
+    "progress": null,
+    "index_exists": true
+  },
+  "source_freshness_before": true,
+  "source_freshness_after": {
+    "ok": true,
+    "errors": []
+  },
+  "earlier_empty_result_observation_retained": "artifacts/research/2026-10-07/cocoindex-stable-source-refresh-and-retrieval.json",
+  "earlier_later_positive_probe_retained_locally": [
+    ".venv/research-state/cocoindex-query-route-probe.json",
+    ".venv/research-state/cocoindex-direct-client-filter-probe.json"
+  ],
+  "initial_empty_result_cause_resolved": false,
+  "query_scope_chosen_for_development_not_blind_retrieval_evaluation": true,
+  "line_coordinates": "one-based inclusive; exact UTF-8 source span comparison after newline normalization",
+  "local_model_hashes_verified": true,
+  "device": "cpu",
+  "remote_embeddings": false,
+  "usage_tracking": false,
+  "agent_efficacy_scored": false,
+  "retrieval_quality_established": false,
+  "reproducer_sha256": "8f240a332bec1def5c213bd8b6757c61b723535b8a699f94e3ee79c23b7aa9a2"
+}

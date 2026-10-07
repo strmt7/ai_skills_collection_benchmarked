@@ -200,6 +200,24 @@ def test_category_for_by_keyword_match(_source_stub):
     assert cat == "Science, research & data analysis"
 
 
+def test_reviewed_presentation_source_keeps_its_category_when_description_changes():
+    source = next(source for source in build_catalog.SOURCES if source["repo"] == "hugohe3/ppt-master")
+    assert (
+        build_catalog.category_for(
+            source,
+            "skills/ppt-master/SKILL.md",
+            "ppt-master",
+            "AI-driven presentation workflow for editable PPTX decks",
+        )
+        == "Documents, spreadsheets & presentations"
+    )
+
+
+def test_unknown_declared_category_is_rejected(_source_stub):
+    with pytest.raises(ValueError, match="unknown declared source category"):
+        build_catalog.category_for(_source_stub | {"category": "misspelled-category"}, "SKILL.md", "x", "workflow")
+
+
 def test_category_for_microsoft_special_case():
     ms_source = {"repo": "microsoft/skills"}
     cat = build_catalog.category_for(ms_source, "skills/foo", "foo", "foo")

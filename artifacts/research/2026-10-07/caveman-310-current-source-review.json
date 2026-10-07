@@ -1,0 +1,115 @@
+{
+  "adaptations": {
+    "strmt7-project-air-defense-agents-skills-caveman-help-skill-md": {
+      "original_commit": "77f082fe23a86ded15e696a22955b2a890da2fce",
+      "resources": {
+        "SKILL.md": {
+          "captured_raw_sha256": "e5bbdc9406eaf5814bdcdef950d09cb745911e5631cfc7dee3bfa54f3ca244b9",
+          "review_scope": "Complete adaptation entrypoint or complete activation-interface metadata read; pinned original remains unchanged.",
+          "sha256": "3089684e021e6c59bd7a8a5b0a0f1a0c926997e54983c1f5897637f9f58de200",
+          "status": "reviewed"
+        }
+      }
+    },
+    "strmt7-project-air-defense-agents-skills-caveman-skill-md": {
+      "original_commit": "77f082fe23a86ded15e696a22955b2a890da2fce",
+      "resources": {
+        "SKILL.md": {
+          "captured_raw_sha256": "7f0d2c2bad465bb84f6b4bff7b994763e7a779b2f82a285b094748216a69d270",
+          "review_scope": "Complete adaptation entrypoint or complete activation-interface metadata read; pinned original remains unchanged.",
+          "sha256": "9c2a5b75b15364ddfd570e53f3df4e4dfad51bfe88f022f95bdc72ee1b05bc9f",
+          "status": "reviewed"
+        }
+      }
+    },
+    "zmb-uzh-omero-docker-extended-agents-skills-caveman-skill-md": {
+      "original_commit": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+      "resources": {
+        "SKILL.md": {
+          "captured_raw_sha256": "5812db348b20509a30257f08ca64fd908b1af915a3d405909e669274b3d44e78",
+          "review_scope": "Complete adaptation entrypoint or complete activation-interface metadata read; pinned original remains unchanged.",
+          "sha256": "dd799a7089b136bc194ae0c8b1e203a6c0fb8f401ef7e71015130e76fb0e967e",
+          "status": "reviewed"
+        },
+        "agents/openai.yaml": {
+          "captured_raw_sha256": "e9146d7e071951f6b9477535c7d484722c2f4592886564143283070e16c03937",
+          "review_scope": "Complete adaptation entrypoint or complete activation-interface metadata read; pinned original remains unchanged.",
+          "sha256": "9a75a5bdee119119e3d00b76e6bbade32bee79943ecf98c8e6ee76c1983b7c88",
+          "status": "reviewed"
+        }
+      }
+    },
+    "zmb-uzh-omero-docker-extended-third-party-caveman-v1-6-0-skills-caveman-skill-md": {
+      "original_commit": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+      "resources": {
+        "SKILL.md": {
+          "captured_raw_sha256": "be6aacc091a7fbb373a3d0fb1de6d4ae1ff8a070d54e8777626342f6728d19c9",
+          "review_scope": "Complete adaptation entrypoint or complete activation-interface metadata read; pinned original remains unchanged.",
+          "sha256": "09ebdef35a85d058f8eba04c6a3d91079ac8dabc3d45d265694f128c808f7648",
+          "status": "reviewed"
+        }
+      }
+    }
+  },
+  "agent_efficacy_scored": false,
+  "annotated_tag_object": "63767f5e0e25368fbdbb16e416af1615d2efa6dc",
+  "commit": "8af1f1b9b1346bca0722a1556f119b4e6675cc96",
+  "current_upstream_resources": {
+    "LICENSE": {
+      "captured_raw_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "review_scope": "Complete pinned text read; snapshot answers are excluded from this complete-read claim.",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "docs/technical/three-skills-refactor.md": {
+      "captured_raw_sha256": "70057f22d4f23af548472e85e6fb929b093520d2d8159ef0d3a40658b556f33d",
+      "review_scope": "Complete pinned text read; snapshot answers are excluded from this complete-read claim.",
+      "sha256": "70057f22d4f23af548472e85e6fb929b093520d2d8159ef0d3a40658b556f33d"
+    },
+    "evals/README.md": {
+      "captured_raw_sha256": "741df4efb6c1a63f0484a6ea7ff467a56732c8a05b7042088c601f90921b30c9",
+      "review_scope": "Complete pinned text read; snapshot answers are excluded from this complete-read claim.",
+      "sha256": "741df4efb6c1a63f0484a6ea7ff467a56732c8a05b7042088c601f90921b30c9"
+    },
+    "evals/llm_run.py": {
+      "captured_raw_sha256": "e44fae52ce5f39fb69b72f301249758f6ead1443d97cefae55609363f7d5bde5",
+      "review_scope": "Complete pinned text read; snapshot answers are excluded from this complete-read claim.",
+      "sha256": "e44fae52ce5f39fb69b72f301249758f6ead1443d97cefae55609363f7d5bde5"
+    },
+    "evals/measure.py": {
+      "captured_raw_sha256": "549a4e7be54ff7c36397c240445c4f5887f2921f1c4193b1f06178ef6d7f658f",
+      "review_scope": "Complete pinned text read; snapshot answers are excluded from this complete-read claim.",
+      "sha256": "549a4e7be54ff7c36397c240445c4f5887f2921f1c4193b1f06178ef6d7f658f"
+    },
+    "evals/snapshot_contract.py": {
+      "captured_raw_sha256": "676a26f4f11ea6a1c23b2b54de945b7d60c9be2ce867f6341e0015a832ebfbb2",
+      "review_scope": "Complete pinned text read; snapshot answers are excluded from this complete-read claim.",
+      "sha256": "676a26f4f11ea6a1c23b2b54de945b7d60c9be2ce867f6341e0015a832ebfbb2"
+    },
+    "skills/caveman/SKILL.md": {
+      "captured_raw_sha256": "34255a0215a7701eb83d508d03bc9560dc7bffbeb95a145ad2921ad2598a03bf",
+      "review_scope": "Complete pinned text read; snapshot answers are excluded from this complete-read claim.",
+      "sha256": "34255a0215a7701eb83d508d03bc9560dc7bffbeb95a145ad2921ad2598a03bf"
+    },
+    "skills/megacave/SKILL.md": {
+      "captured_raw_sha256": "f25399c535a2f8f906e06cd0c5c52146b0e747abbf80e111c96f93adade04a69",
+      "review_scope": "Complete pinned text read; snapshot answers are excluded from this complete-read claim.",
+      "sha256": "f25399c535a2f8f906e06cd0c5c52146b0e747abbf80e111c96f93adade04a69"
+    },
+    "skills/ultracave/SKILL.md": {
+      "captured_raw_sha256": "8afefa7ae95bfb7fd080dac0ce95b09063cbe37ea9d78ef48662b2ec96884c6c",
+      "review_scope": "Complete pinned text read; snapshot answers are excluded from this complete-read claim.",
+      "sha256": "8afefa7ae95bfb7fd080dac0ce95b09063cbe37ea9d78ef48662b2ec96884c6c"
+    }
+  },
+  "evidence_class": "current-upstream-and-immutable-adaptation-source-review-not-efficacy",
+  "fresh_release_list_and_peeled_tag_agree": true,
+  "internal_only_concise_style_applied_with_payload_uncertainty_and_progress_requirements_preserved": true,
+  "mirrored_contents_changed": false,
+  "new_agent_calls_performed": false,
+  "owner_repositories_changed": false,
+  "published_answer_matrix_scope": "Executed structural validation only; no complete answer-content/fidelity review.",
+  "published_at": "2026-10-04T04:30:46Z",
+  "release": "v3.1.0",
+  "repository": "https://github.com/JuliusBrussee/caveman",
+  "schema_version": 1
+}

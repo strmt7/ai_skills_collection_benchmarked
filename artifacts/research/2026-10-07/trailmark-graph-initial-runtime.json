@@ -1,0 +1,332 @@
+{
+  "status": "completed",
+  "container_name": "skills-invoke-9087731de7de49eca0e7a2e8f73ba7d4",
+  "image": "sha256:d6e66ca1df12b2666a757a406782e8ee28d7d5b91a64b8cfb06b785eb20dd2ab",
+  "scored": false,
+  "candidate_response_is_untrusted": true,
+  "cleanup_verified": true,
+  "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+  "resource_profile": "python-small",
+  "submission_sha256": {
+    "candidate.py": "ce50a48af73b523b1c01f0b6af60ce24cf1722f36bb05eb7fe5583c823c61b4d"
+  },
+  "container_id": "976b861beb8163da5c0b08f79f0b6969a07600881c389500a7173af0403bae53",
+  "isolation_checks": {
+    "errors": [],
+    "passed": true,
+    "observed_user": "65534:65534",
+    "observed_image": "sha256:d6e66ca1df12b2666a757a406782e8ee28d7d5b91a64b8cfb06b785eb20dd2ab",
+    "observed_ownership_token": "9087731de7de49eca0e7a2e8f73ba7d4",
+    "resolved_image_id": "sha256:d6e66ca1df12b2666a757a406782e8ee28d7d5b91a64b8cfb06b785eb20dd2ab",
+    "observed_host_constraints": {
+      "NetworkMode": "none",
+      "IpcMode": "none",
+      "ReadonlyRootfs": true,
+      "Memory": 536870912,
+      "MemorySwap": 536870912,
+      "NanoCpus": 1000000000,
+      "PidsLimit": 64,
+      "Privileged": false,
+      "Init": true,
+      "CapDrop": [
+        "ALL"
+      ],
+      "CapAdd": null,
+      "SecurityOpt": [
+        "no-new-privileges"
+      ],
+      "LogConfig": {
+        "Type": "none",
+        "Config": {}
+      },
+      "Tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=128m"
+      },
+      "Devices": [],
+      "DeviceRequests": null,
+      "VolumesFrom": null
+    },
+    "observed_mounts": [
+      {
+        "Destination": "/submission",
+        "Type": "bind",
+        "RW": false
+      },
+      {
+        "Destination": "/worker",
+        "Type": "bind",
+        "RW": false
+      }
+    ]
+  },
+  "setup_elapsed_seconds": 0.32362489998922683,
+  "runtime_elapsed_seconds": 0.6163585000031162,
+  "returncode": 0,
+  "candidate_response": {
+    "worker_status": "returned",
+    "result": {
+      "source_sha256": "d5440ef6ddc933e67c6e5886309413493fe61f030755db543306754dfa4243fe",
+      "node_ids": {
+        "externally_called": [
+          "library:externally_called"
+        ],
+        "helper": [
+          "library:helper"
+        ],
+        "local_caller": [
+          "library:local_caller"
+        ]
+      },
+      "callers": {
+        "externally_called": [],
+        "helper": [
+          {
+            "id": "library:local_caller",
+            "name": "local_caller",
+            "kind": "function",
+            "location": {
+              "file_path": "/tmp/trailmark-graph-58z8672o/library.py",
+              "start_line": 7,
+              "end_line": 8,
+              "start_col": 0,
+              "end_col": 24
+            },
+            "parameters": [
+              {
+                "name": "value",
+                "type_ref": null,
+                "default": null
+              }
+            ],
+            "return_type": null,
+            "exception_types": [],
+            "cyclomatic_complexity": 1,
+            "branches": [],
+            "docstring": null
+          }
+        ],
+        "local_caller": []
+      },
+      "graph": {
+        "language": "python",
+        "root_path": "/tmp/trailmark-graph-58z8672o",
+        "summary": {
+          "total_nodes": 4,
+          "functions": 3,
+          "classes": 0,
+          "proxies": 0,
+          "call_edges": 1,
+          "dependencies": [],
+          "entrypoints": 0
+        },
+        "nodes": {
+          "library": {
+            "id": "library",
+            "name": "library",
+            "kind": "module",
+            "location": {
+              "file_path": "/tmp/trailmark-graph-58z8672o/library.py",
+              "start_line": 1,
+              "end_line": 9,
+              "start_col": 0,
+              "end_col": 0
+            },
+            "parameters": [],
+            "return_type": null,
+            "exception_types": [],
+            "cyclomatic_complexity": null,
+            "branches": [],
+            "docstring": null
+          },
+          "library:externally_called": {
+            "id": "library:externally_called",
+            "name": "externally_called",
+            "kind": "function",
+            "location": {
+              "file_path": "/tmp/trailmark-graph-58z8672o/library.py",
+              "start_line": 1,
+              "end_line": 2,
+              "start_col": 0,
+              "end_col": 20
+            },
+            "parameters": [
+              {
+                "name": "value",
+                "type_ref": null,
+                "default": null
+              }
+            ],
+            "return_type": null,
+            "exception_types": [],
+            "cyclomatic_complexity": 1,
+            "branches": [],
+            "docstring": null
+          },
+          "library:helper": {
+            "id": "library:helper",
+            "name": "helper",
+            "kind": "function",
+            "location": {
+              "file_path": "/tmp/trailmark-graph-58z8672o/library.py",
+              "start_line": 4,
+              "end_line": 5,
+              "start_col": 0,
+              "end_col": 20
+            },
+            "parameters": [
+              {
+                "name": "value",
+                "type_ref": null,
+                "default": null
+              }
+            ],
+            "return_type": null,
+            "exception_types": [],
+            "cyclomatic_complexity": 1,
+            "branches": [],
+            "docstring": null
+          },
+          "library:local_caller": {
+            "id": "library:local_caller",
+            "name": "local_caller",
+            "kind": "function",
+            "location": {
+              "file_path": "/tmp/trailmark-graph-58z8672o/library.py",
+              "start_line": 7,
+              "end_line": 8,
+              "start_col": 0,
+              "end_col": 24
+            },
+            "parameters": [
+              {
+                "name": "value",
+                "type_ref": null,
+                "default": null
+              }
+            ],
+            "return_type": null,
+            "exception_types": [],
+            "cyclomatic_complexity": 1,
+            "branches": [],
+            "docstring": null
+          }
+        },
+        "edges": [
+          {
+            "source": "library",
+            "target": "library:externally_called",
+            "kind": "contains",
+            "confidence": "certain"
+          },
+          {
+            "source": "library",
+            "target": "library:helper",
+            "kind": "contains",
+            "confidence": "certain"
+          },
+          {
+            "source": "library",
+            "target": "library:local_caller",
+            "kind": "contains",
+            "confidence": "certain"
+          },
+          {
+            "source": "library:local_caller",
+            "target": "library:helper",
+            "kind": "calls",
+            "confidence": "certain"
+          }
+        ],
+        "subgraphs": {
+          "high_blast_radius": [],
+          "entrypoints": [],
+          "entrypoint_reachable": [],
+          "privilege_boundary": [],
+          "tainted": []
+        }
+      },
+      "preanalysis_completed": true,
+      "attack_surface": [],
+      "complexity_hotspots": [
+        {
+          "id": "library:externally_called",
+          "name": "externally_called",
+          "kind": "function",
+          "location": {
+            "file_path": "/tmp/trailmark-graph-58z8672o/library.py",
+            "start_line": 1,
+            "end_line": 2,
+            "start_col": 0,
+            "end_col": 20
+          },
+          "parameters": [
+            {
+              "name": "value",
+              "type_ref": null,
+              "default": null
+            }
+          ],
+          "return_type": null,
+          "exception_types": [],
+          "cyclomatic_complexity": 1,
+          "branches": [],
+          "docstring": null
+        },
+        {
+          "id": "library:helper",
+          "name": "helper",
+          "kind": "function",
+          "location": {
+            "file_path": "/tmp/trailmark-graph-58z8672o/library.py",
+            "start_line": 4,
+            "end_line": 5,
+            "start_col": 0,
+            "end_col": 20
+          },
+          "parameters": [
+            {
+              "name": "value",
+              "type_ref": null,
+              "default": null
+            }
+          ],
+          "return_type": null,
+          "exception_types": [],
+          "cyclomatic_complexity": 1,
+          "branches": [],
+          "docstring": null
+        },
+        {
+          "id": "library:local_caller",
+          "name": "local_caller",
+          "kind": "function",
+          "location": {
+            "file_path": "/tmp/trailmark-graph-58z8672o/library.py",
+            "start_line": 7,
+            "end_line": 8,
+            "start_col": 0,
+            "end_col": 24
+          },
+          "parameters": [
+            {
+              "name": "value",
+              "type_ref": null,
+              "default": null
+            }
+          ],
+          "return_type": null,
+          "exception_types": [],
+          "cyclomatic_complexity": 1,
+          "branches": [],
+          "docstring": null
+        }
+      ],
+      "external_invocation_result": 42,
+      "library_internal_call_result": 42
+    }
+  },
+  "captured_bytes": 4357,
+  "stderr": "",
+  "elapsed_seconds": 1.1904456999909598
+}

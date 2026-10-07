@@ -10,6 +10,9 @@
     "bulk_install_safe": false,
     "category": "DevOps, cloud & operations",
     "commit_sha": "451d77df90621e3b666581d9835d246fb7147349",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": false,
     "id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md",
     "immutable_source_url": "https://github.com/strmt7/simple_ai_bitcoin_trading_binance/blob/451d77df90621e3b666581d9835d246fb7147349/.agents/skills/context-budget/SKILL.md",
@@ -36,6 +39,9 @@
     "bulk_install_safe": true,
     "category": "Game, mobile & visual QA",
     "commit_sha": "77f082fe23a86ded15e696a22955b2a890da2fce",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/android-visual-qa/SKILL.md",
@@ -62,6 +68,10 @@
     "bulk_install_safe": false,
     "category": "Game, mobile & visual QA",
     "commit_sha": "77f082fe23a86ded15e696a22955b2a890da2fce",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-browser-fallback-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/browser-fallback/SKILL.md",
@@ -88,6 +98,9 @@
     "bulk_install_safe": true,
     "category": "Game, mobile & visual QA",
     "commit_sha": "77f082fe23a86ded15e696a22955b2a890da2fce",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-caveman-help-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/caveman-help/SKILL.md",
@@ -114,6 +127,9 @@
     "bulk_install_safe": false,
     "category": "Game, mobile & visual QA",
     "commit_sha": "77f082fe23a86ded15e696a22955b2a890da2fce",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-caveman-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/caveman/SKILL.md",
@@ -140,6 +156,10 @@
     "bulk_install_safe": false,
     "category": "Game, mobile & visual QA",
     "commit_sha": "77f082fe23a86ded15e696a22955b2a890da2fce",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-compliance-and-rate-limit-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/compliance-and-rate-limit/SKILL.md",
@@ -166,6 +186,9 @@
     "bulk_install_safe": false,
     "category": "Game, mobile & visual QA",
     "commit_sha": "77f082fe23a86ded15e696a22955b2a890da2fce",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-context-budget-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/context-budget/SKILL.md",
@@ -192,6 +215,9 @@
     "bulk_install_safe": true,
     "category": "Game, mobile & visual QA",
     "commit_sha": "77f082fe23a86ded15e696a22955b2a890da2fce",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-level-asset-curation-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/level-asset-curation/SKILL.md",
@@ -218,6 +244,10 @@
     "bulk_install_safe": false,
     "category": "Game, mobile & visual QA",
     "commit_sha": "77f082fe23a86ded15e696a22955b2a890da2fce",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-site-extract-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/site-extract/SKILL.md",
@@ -244,6 +274,10 @@
     "bulk_install_safe": false,
     "category": "Game, mobile & visual QA",
     "commit_sha": "77f082fe23a86ded15e696a22955b2a890da2fce",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-source-audit-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/source-audit/SKILL.md",
@@ -270,6 +304,9 @@
     "bulk_install_safe": false,
     "category": "Game, mobile & visual QA",
     "commit_sha": "77f082fe23a86ded15e696a22955b2a890da2fce",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": false,
     "id": "strmt7-project-air-defense-agents-skills-ue5-city-pipeline-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/ue5-city-pipeline/SKILL.md",
@@ -296,6 +333,9 @@
     "bulk_install_safe": true,
     "category": "Game, mobile & visual QA",
     "commit_sha": "77f082fe23a86ded15e696a22955b2a890da2fce",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-ue5-commonui-menu-systems-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/ue5-commonui-menu-systems/SKILL.md",
@@ -322,6 +362,9 @@
     "bulk_install_safe": true,
     "category": "Game, mobile & visual QA",
     "commit_sha": "77f082fe23a86ded15e696a22955b2a890da2fce",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-ue5-mobile-gameplay-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/ue5-mobile-gameplay/SKILL.md",
@@ -348,6 +391,9 @@
     "bulk_install_safe": true,
     "category": "Game, mobile & visual QA",
     "commit_sha": "77f082fe23a86ded15e696a22955b2a890da2fce",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-ue5-mobile-rendering-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/ue5-mobile-rendering/SKILL.md",
@@ -374,6 +420,9 @@
     "bulk_install_safe": true,
     "category": "Game, mobile & visual QA",
     "commit_sha": "77f082fe23a86ded15e696a22955b2a890da2fce",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-ue5-mobile-ui-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/ue5-mobile-ui/SKILL.md",
@@ -400,6 +449,9 @@
     "bulk_install_safe": false,
     "category": "Game, mobile & visual QA",
     "commit_sha": "77f082fe23a86ded15e696a22955b2a890da2fce",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": false,
     "id": "strmt7-project-air-defense-agents-skills-ue5-photoreal-city-scene-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/ue5-photoreal-city-scene/SKILL.md",
@@ -426,6 +478,9 @@
     "bulk_install_safe": false,
     "category": "Game, mobile & visual QA",
     "commit_sha": "77f082fe23a86ded15e696a22955b2a890da2fce",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-verification-loop-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/verification-loop/SKILL.md",
@@ -452,6 +507,10 @@
     "bulk_install_safe": false,
     "category": "Game, mobile & visual QA",
     "commit_sha": "77f082fe23a86ded15e696a22955b2a890da2fce",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-agents-skills-web-discovery-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/.agents/skills/web-discovery/SKILL.md",
@@ -478,6 +537,13 @@
     "bulk_install_safe": true,
     "category": "Game, mobile & visual QA",
     "commit_sha": "77f082fe23a86ded15e696a22955b2a890da2fce",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "references/awesome-android-complete-reference-links.md": "100644",
+      "references/awesome-claude-skills-source-map.md": "100644",
+      "references/curated-skill-stack.md": "100644",
+      "references/source-map.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-project-air-defense-skills-android-3d-air-defense-skill-md",
     "immutable_source_url": "https://github.com/strmt7/project_air_defense/blob/77f082fe23a86ded15e696a22955b2a890da2fce/skills/android-3d-air-defense/SKILL.md",
@@ -504,6 +570,10 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-ai-regression-testing-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/ai-regression-testing/SKILL.md",
@@ -530,6 +600,10 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-browser-fallback-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/browser-fallback/SKILL.md",
@@ -556,6 +630,10 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-caveman-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/caveman/SKILL.md",
@@ -582,6 +660,10 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-compliance-and-rate-limit-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/compliance-and-rate-limit/SKILL.md",
@@ -608,6 +690,10 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-context-budget-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/context-budget/SKILL.md",
@@ -634,6 +720,10 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-deployment-patterns-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/deployment-patterns/SKILL.md",
@@ -660,6 +750,10 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-django-patterns-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/django-patterns/SKILL.md",
@@ -686,6 +780,10 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-django-security-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/django-security/SKILL.md",
@@ -712,6 +810,10 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-django-verification-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/django-verification/SKILL.md",
@@ -738,6 +840,10 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-docker-patterns-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/docker-patterns/SKILL.md",
@@ -764,6 +870,10 @@
     "bulk_install_safe": true,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-docs-knowledge-maintainer-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/docs-knowledge-maintainer/SKILL.md",
@@ -790,6 +900,10 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-documentation-lookup-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/documentation-lookup/SKILL.md",
@@ -816,6 +930,10 @@
     "bulk_install_safe": true,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-env-contract-reviewer-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/env-contract-reviewer/SKILL.md",
@@ -842,6 +960,12 @@
     "bulk_install_safe": true,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644",
+      "agents/vite_django_preview.config.mjs": "100644",
+      "agents/vitest_django_preview.config.mjs": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-frontend-preview-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/frontend-preview/SKILL.md",
@@ -868,6 +992,10 @@
     "bulk_install_safe": true,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-omero-runtime-verifier-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/omero-runtime-verifier/SKILL.md",
@@ -894,6 +1022,10 @@
     "bulk_install_safe": true,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-plugin-regression-triager-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/plugin-regression-triager/SKILL.md",
@@ -920,6 +1052,10 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-postgres-patterns-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/postgres-patterns/SKILL.md",
@@ -946,6 +1082,10 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-python-patterns-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/python-patterns/SKILL.md",
@@ -972,6 +1112,10 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-python-testing-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/python-testing/SKILL.md",
@@ -998,6 +1142,10 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-search-first-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/search-first/SKILL.md",
@@ -1024,6 +1172,10 @@
     "bulk_install_safe": true,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-security-finding-triager-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/security-finding-triager/SKILL.md",
@@ -1050,6 +1202,10 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-security-review-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/security-review/SKILL.md",
@@ -1076,6 +1232,10 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-site-extract-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/site-extract/SKILL.md",
@@ -1102,6 +1262,10 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-source-audit-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/source-audit/SKILL.md",
@@ -1128,6 +1292,10 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-tdd-workflow-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/tdd-workflow/SKILL.md",
@@ -1154,6 +1322,10 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-verification-loop-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/verification-loop/SKILL.md",
@@ -1180,6 +1352,10 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-agents-skills-web-discovery-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/web-discovery/SKILL.md",
@@ -1206,6 +1382,9 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-caveman-v1-6-0-skills-caveman-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/caveman-v1.6.0/skills/caveman/SKILL.md",
@@ -1232,6 +1411,9 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-ai-regression-testing-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/ai-regression-testing/SKILL.md",
@@ -1258,6 +1440,9 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-context-budget-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/context-budget/SKILL.md",
@@ -1284,6 +1469,9 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-deployment-patterns-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/deployment-patterns/SKILL.md",
@@ -1310,6 +1498,9 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-patterns-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/django-patterns/SKILL.md",
@@ -1336,6 +1527,9 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-security-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/django-security/SKILL.md",
@@ -1362,6 +1556,9 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-django-verification-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/django-verification/SKILL.md",
@@ -1388,6 +1585,9 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-docker-patterns-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/docker-patterns/SKILL.md",
@@ -1414,6 +1614,9 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-documentation-lookup-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/documentation-lookup/SKILL.md",
@@ -1440,6 +1643,9 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-postgres-patterns-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/postgres-patterns/SKILL.md",
@@ -1466,6 +1672,9 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-patterns-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/python-patterns/SKILL.md",
@@ -1492,6 +1701,9 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-python-testing-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/python-testing/SKILL.md",
@@ -1518,6 +1730,9 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-search-first-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/search-first/SKILL.md",
@@ -1544,6 +1759,10 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "cloud-infrastructure-security.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-security-review-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/security-review/SKILL.md",
@@ -1570,6 +1789,9 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/tdd-workflow/SKILL.md",
@@ -1596,6 +1818,9 @@
     "bulk_install_safe": false,
     "category": "OMERO, Django, Docker & lab infrastructure",
     "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-verification-loop-skill-md",
     "immutable_source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/verification-loop/SKILL.md",
@@ -1622,6 +1847,9 @@
     "bulk_install_safe": false,
     "category": "Science, research & data analysis",
     "commit_sha": "a9238a81742f96c89acf6d83fce6d6b882ac4d1c",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-ai-regression-testing-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/ai-regression-testing/SKILL.md",
@@ -1648,6 +1876,9 @@
     "bulk_install_safe": true,
     "category": "Science, research & data analysis",
     "commit_sha": "a9238a81742f96c89acf6d83fce6d6b882ac4d1c",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-benchmark-first-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/benchmark-first/SKILL.md",
@@ -1674,6 +1905,10 @@
     "bulk_install_safe": false,
     "category": "Science, research & data analysis",
     "commit_sha": "a9238a81742f96c89acf6d83fce6d6b882ac4d1c",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-browser-fallback-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/browser-fallback/SKILL.md",
@@ -1700,6 +1935,10 @@
     "bulk_install_safe": false,
     "category": "Science, research & data analysis",
     "commit_sha": "a9238a81742f96c89acf6d83fce6d6b882ac4d1c",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-compliance-and-rate-limit-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/compliance-and-rate-limit/SKILL.md",
@@ -1726,6 +1965,9 @@
     "bulk_install_safe": false,
     "category": "Science, research & data analysis",
     "commit_sha": "a9238a81742f96c89acf6d83fce6d6b882ac4d1c",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-context-budget-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/context-budget/SKILL.md",
@@ -1752,6 +1994,9 @@
     "bulk_install_safe": true,
     "category": "Science, research & data analysis",
     "commit_sha": "a9238a81742f96c89acf6d83fce6d6b882ac4d1c",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-cpp-parity-porting-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/cpp-parity-porting/SKILL.md",
@@ -1778,6 +2023,10 @@
     "bulk_install_safe": true,
     "category": "Science, research & data analysis",
     "commit_sha": "a9238a81742f96c89acf6d83fce6d6b882ac4d1c",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "references/official-guidance.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-cpp-performance-optimization-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/cpp-performance-optimization/SKILL.md",
@@ -1804,6 +2053,9 @@
     "bulk_install_safe": true,
     "category": "Science, research & data analysis",
     "commit_sha": "a9238a81742f96c89acf6d83fce6d6b882ac4d1c",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-immutable-parity-proof-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/immutable-parity-proof/SKILL.md",
@@ -1830,6 +2082,10 @@
     "bulk_install_safe": true,
     "category": "Science, research & data analysis",
     "commit_sha": "a9238a81742f96c89acf6d83fce6d6b882ac4d1c",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "references/official-guidance.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-pybind11-runtime-parity-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/pybind11-runtime-parity/SKILL.md",
@@ -1856,6 +2112,9 @@
     "bulk_install_safe": false,
     "category": "Science, research & data analysis",
     "commit_sha": "a9238a81742f96c89acf6d83fce6d6b882ac4d1c",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-python-testing-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/python-testing/SKILL.md",
@@ -1882,6 +2141,9 @@
     "bulk_install_safe": false,
     "category": "Science, research & data analysis",
     "commit_sha": "a9238a81742f96c89acf6d83fce6d6b882ac4d1c",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-search-first-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/search-first/SKILL.md",
@@ -1908,6 +2170,10 @@
     "bulk_install_safe": false,
     "category": "Science, research & data analysis",
     "commit_sha": "a9238a81742f96c89acf6d83fce6d6b882ac4d1c",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-site-extract-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/site-extract/SKILL.md",
@@ -1934,6 +2200,10 @@
     "bulk_install_safe": false,
     "category": "Science, research & data analysis",
     "commit_sha": "a9238a81742f96c89acf6d83fce6d6b882ac4d1c",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-source-audit-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/source-audit/SKILL.md",
@@ -1960,6 +2230,9 @@
     "bulk_install_safe": false,
     "category": "Science, research & data analysis",
     "commit_sha": "a9238a81742f96c89acf6d83fce6d6b882ac4d1c",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-tdd-workflow-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/tdd-workflow/SKILL.md",
@@ -1986,6 +2259,9 @@
     "bulk_install_safe": false,
     "category": "Science, research & data analysis",
     "commit_sha": "a9238a81742f96c89acf6d83fce6d6b882ac4d1c",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-verification-loop-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/verification-loop/SKILL.md",
@@ -2012,6 +2288,10 @@
     "bulk_install_safe": false,
     "category": "Science, research & data analysis",
     "commit_sha": "a9238a81742f96c89acf6d83fce6d6b882ac4d1c",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "agents/openai.yaml": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-web-discovery-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/web-discovery/SKILL.md",
@@ -2038,6 +2318,10 @@
     "bulk_install_safe": true,
     "category": "Science, research & data analysis",
     "commit_sha": "a9238a81742f96c89acf6d83fce6d6b882ac4d1c",
+    "file_modes": {
+      "SKILL.md": "100644",
+      "references/official-guidance.md": "100644"
+    },
     "has_required_frontmatter": true,
     "id": "strmt7-ome-zarr-c-agents-skills-workflow-supply-chain-maintenance-skill-md",
     "immutable_source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/workflow-supply-chain-maintenance/SKILL.md",
@@ -2064,6 +2348,9 @@
     "bulk_install_safe": false,
     "category": "Testing, QA & benchmarking",
     "commit_sha": "451d77df90621e3b666581d9835d246fb7147349",
+    "file_modes": {
+      "SKILL.md": "100644"
+    },
     "has_required_frontmatter": false,
     "id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md",
     "immutable_source_url": "https://github.com/strmt7/simple_ai_bitcoin_trading_binance/blob/451d77df90621e3b666581d9835d246fb7147349/.agents/skills/verification-loop/SKILL.md",

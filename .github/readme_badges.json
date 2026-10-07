@@ -26,8 +26,8 @@
       "target": "https://github.com/{repo_path}/actions/workflows/secret-scan.yml"
     },
     {
-      "alt": "Python 3.10\u20133.13",
-      "image": "https://img.shields.io/badge/python-3.10%20%E2%80%93%203.13-blue.svg",
+      "alt": "Python 3.11\u20133.14",
+      "image": "https://img.shields.io/badge/python-3.11%20%E2%80%93%203.14-blue.svg",
       "target": "https://devguide.python.org/versions/"
     },
     {

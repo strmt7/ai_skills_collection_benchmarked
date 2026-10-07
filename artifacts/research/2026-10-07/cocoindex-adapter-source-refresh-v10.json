@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "evidence_class": "fresh-source-bound-local-cocoindex-development-index-not-retrieval-benchmark",
+  "passed": true,
+  "python_version": "3.14.8",
+  "cocoindex_version": "1.0.25",
+  "cocoindex_code_version": "0.2.42",
+  "manifest_sha256": "f6c0a11ac916bf0ecdde39483e5ebb6bc422bb0d84b7b09b6cccca84c0fa01ff",
+  "prefixes": [
+    "included/improved",
+    "included/skills",
+    "tools"
+  ],
+  "selected_files": 17791,
+  "text_files": 17377,
+  "blank_file_paths": [
+    "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/microsoft-foundry/.gitignore",
+    "included/skills/by-category/communication-productivity-support/browser-automation-reference/browser-act/references/site-notes/.gitkeep",
+    "included/skills/by-category/devops-cloud-operations/latest-release-devops/ansible-generator/assets/templates/role/files/.gitkeep",
+    "included/skills/by-category/documents-spreadsheets-presentations/official-reference/docx-anthropics/scripts/__init__.py",
+    "included/skills/by-category/documents-spreadsheets-presentations/official-reference/docx-anthropics/scripts/office/helpers/__init__.py",
+    "included/skills/by-category/documents-spreadsheets-presentations/official-reference/pptx-anthropics/scripts/__init__.py",
+    "included/skills/by-category/documents-spreadsheets-presentations/official-reference/pptx-anthropics/scripts/office/helpers/__init__.py",
+    "included/skills/by-category/documents-spreadsheets-presentations/official-reference/xlsx-anthropics/scripts/office/helpers/__init__.py",
+    "included/skills/by-category/science-research-data-analysis/latest-release-community/docx-scientific-agent-skills/scripts/__init__.py",
+    "included/skills/by-category/science-research-data-analysis/latest-release-community/docx-scientific-agent-skills/scripts/office/helpers/__init__.py",
+    "included/skills/by-category/science-research-data-analysis/latest-release-community/pptx-scientific-agent-skills/scripts/__init__.py",
+    "included/skills/by-category/science-research-data-analysis/latest-release-community/pptx-scientific-agent-skills/scripts/office/helpers/__init__.py",
+    "included/skills/by-category/science-research-data-analysis/latest-release-community/xlsx-scientific-agent-skills/scripts/office/helpers/__init__.py",
+    "included/skills/by-category/testing-qa-benchmarking/official-reference/skill-creator-anthropics/scripts/__init__.py"
+  ],
+  "indexed_files": 17363,
+  "chunks": 99110,
+  "missing_indexed_paths": [],
+  "unexpected_indexed_paths": [],
+  "index_exit_code": 0,
+  "status": {
+    "type": "project_status",
+    "indexing": false,
+    "total_chunks": 99110,
+    "total_files": 17363,
+    "languages": {
+      "markdown": 40213,
+      "text": 27248,
+      "python": 17448,
+      "json": 6440,
+      "csv": 1993,
+      "bash": 1198,
+      "html": 1087,
+      "yaml": 974,
+      "javascript": 744,
+      "xml": 712,
+      "latex": 668,
+      "hcl": 120,
+      "css": 62,
+      "bicep": 61,
+      "powershell": 32,
+      "gitignore": 26,
+      "dockerfile": 22,
+      "typescript": 18,
+      "bibtex": 14,
+      "groovy": 9,
+      "tsx": 6,
+      "make": 6,
+      "toml": 3,
+      "ini": 3,
+      "cpp": 3
+    },
+    "progress": null,
+    "index_exists": true
+  },
+  "source_freshness_after": {
+    "ok": true,
+    "errors": []
+  },
+  "cache_provenance": {
+    "prior_manifest_sha256": "770a63df9021c6d68deb2401fb3932862752ce2f9e5dbde8e091eb8d4e2c86e5",
+    "cold_lmdb_and_read_only_sqlite_snapshots": {
+      "cold_lmdb_files": {
+        "mdb/data.mdb": "17992f1849d5ff205a963edb21637bbeead8e7cfb477ce6cc279e9944f43436f",
+        "mdb/lock.mdb": "758efb8706b618e9c2fda8fb7e5f14bf411d7ecfacf72b43c2cb63a67822aa98"
+      },
+      "target_sqlite.db": "756d849a9265b97fe7e3e6d685cbcceef9f99c4d6c64dd17b523b669d90d88df"
+    },
+    "prior_corpus_or_database_modified": false
+  },
+  "local_model_hashes": {
+    "config.json": "d7d071046ab952af96b7abad788db7ab3fc997b465e1b9914ff39707092254ec",
+    "config_sentence_transformers.json": "26a4caecbc808973e5b3b3a04484db1389078b0458254e4dd617ff361e2f378a",
+    "model.safetensors": "ee789e0b1d6ecbbd5ce37b474af556cc1a1319cee4417d9e3b11f82e90300706",
+    "modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+    "README.md": "6bfaf51250f5360e505272dde4a9ffcdc41bf66b090d68e8f9ecc4807ab80507",
+    "sentence_bert_config.json": "4dfc17a899f3ea25b5c8e9034a1d0d9ebd96eca0868b015a89d1d748c38e4b2f",
+    "special_tokens_map.json": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a",
+    "tokenizer.json": "91f1def9b9391fdabe028cd3f3fcc4efd34e5d1f08c3bf2de513ebb5911a1854",
+    "tokenizer_config.json": "9ca59277519f6e3692c8685e26b94d4afca2d5438deff66483db495e48735810",
+    "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+    "1_Pooling/config.json": "83eeb6d0c128b377a452f121f8c5a19bbbf9322092a87b856ef782f4ad2326b9"
+  },
+  "remote_embeddings": false,
+  "usage_tracking": false,
+  "device": "cpu",
+  "agent_efficacy_scored": false,
+  "retrieval_quality_established": false,
+  "reproducer_sha256": "b663e918be4a726820cf8c3c322ba5f7b2ae9b08723f5ce72e234325f447d6a0"
+}

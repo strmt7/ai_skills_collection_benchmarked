@@ -78,6 +78,31 @@ python3 tools/build_catalog.py
 python3 tools/validate_source_lock.py --source-root "$AI_SKILL_SOURCE_ROOT" --strict
 ```
 
+To update an already cataloged source without re-resolving unrelated repositories,
+first verify its stable upstream release, update its declaration in
+`tools/build_catalog.py`, and prepare a clean checkout at that exact pinned ref.
+Then stage a scoped refresh:
+
+```bash
+python3 tools/build_catalog.py --source-root /path/to/ai-skill-sources \
+  --credential-policy 3 --refresh-source hugohe3/ppt-master --check --json
+```
+
+An expected update makes `--check` report drift and exit nonzero; inspect the
+retained staging directory before publishing. Repeat without `--check` to
+publish the regenerated catalog through the recoverable publication journal,
+then run every applicable quality gate above. The tool verifies all existing
+locked mirrors, preserves unrelated source signatures and contents, and records
+legacy Git executable modes explicitly for portable staging. It refuses an
+update that would rename unrelated skills. Only selected repositories need
+source checkouts; retaining a mirror does not establish upstream freshness or
+runtime readiness for that source. Neither mode fetches upstream repositories.
+
+Evaluator schemas under `evaluators/` are maintained scoring inputs in the
+independent artifact loop; catalog generation never rewrites them. README
+packaging and adapter counts come from their existing manifests, which are
+also preserved rather than regenerated during a source refresh.
+
 ## Why the catalog is host-portable
 
 Tree hashes used in `data/skills_catalog.json`, the manifests, and

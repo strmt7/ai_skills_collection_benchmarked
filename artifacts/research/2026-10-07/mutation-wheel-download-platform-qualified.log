@@ -1,0 +1,69 @@
+Collecting mutmut==3.8.0
+  File was already downloaded c:\users\strat\documents\chatgpt\ai skills\.venv\research-state\mutmut-current-wheels-2026-10-07\mutmut-3.8.0-py3-none-any.whl
+Collecting trailmark==0.5.0
+  Using cached trailmark-0.5.0-py3-none-any.whl.metadata (23 kB)
+Collecting click>=8.4.2 (from mutmut==3.8.0)
+  File was already downloaded c:\users\strat\documents\chatgpt\ai skills\.venv\research-state\mutmut-current-wheels-2026-10-07\click-8.5.0-py3-none-any.whl
+Collecting coverage>=7.3.0 (from mutmut==3.8.0)
+  File was already downloaded c:\users\strat\documents\chatgpt\ai skills\.venv\research-state\mutmut-current-wheels-2026-10-07\coverage-7.16.2-cp314-cp314-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl
+Collecting libcst>=1.9.0 (from mutmut==3.8.0)
+  File was already downloaded c:\users\strat\documents\chatgpt\ai skills\.venv\research-state\mutmut-current-wheels-2026-10-07\libcst-1.9.0-cp314-cp314-manylinux_2_28_x86_64.whl
+Collecting pytest>=6.2.5 (from mutmut==3.8.0)
+  File was already downloaded c:\users\strat\documents\chatgpt\ai skills\.venv\research-state\mutmut-current-wheels-2026-10-07\pytest-9.1.1-py3-none-any.whl
+Collecting setproctitle>=1.3.7 (from mutmut==3.8.0)
+  File was already downloaded c:\users\strat\documents\chatgpt\ai skills\.venv\research-state\mutmut-current-wheels-2026-10-07\setproctitle-1.3.8-cp314-cp314-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl
+Collecting textual>=1.0.0 (from mutmut==3.8.0)
+  File was already downloaded c:\users\strat\documents\chatgpt\ai skills\.venv\research-state\mutmut-current-wheels-2026-10-07\textual-8.2.8-py3-none-any.whl
+Collecting rustworkx<1.0,>=0.17 (from trailmark==0.5.0)
+  Using cached rustworkx-0.18.1-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (10 kB)
+Collecting tree-sitter-language-pack<2.0,>=1.9 (from trailmark==0.5.0)
+  Downloading tree_sitter_language_pack-1.21.0-cp310-abi3-manylinux_2_34_x86_64.whl.metadata (713 bytes)
+Collecting tree-sitter-sql<0.4,>=0.3.11 (from trailmark==0.5.0)
+  Downloading tree_sitter_sql-0.3.11-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (4.0 kB)
+Collecting tree-sitter~=0.25.0 (from trailmark==0.5.0)
+  Downloading tree_sitter-0.25.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (10.0 kB)
+Collecting numpy<3,>=1.16.0 (from rustworkx<1.0,>=0.17->trailmark==0.5.0)
+  Downloading numpy-2.5.3-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting pyyaml>=6.0.3 (from libcst>=1.9.0->mutmut==3.8.0)
+  File was already downloaded c:\users\strat\documents\chatgpt\ai skills\.venv\research-state\mutmut-current-wheels-2026-10-07\pyyaml-6.0.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl
+Collecting colorama>=0.4 (from pytest>=6.2.5->mutmut==3.8.0)
+  File was already downloaded c:\users\strat\documents\chatgpt\ai skills\.venv\research-state\mutmut-current-wheels-2026-10-07\colorama-0.4.6-py2.py3-none-any.whl
+Collecting iniconfig>=1.0.1 (from pytest>=6.2.5->mutmut==3.8.0)
+  File was already downloaded c:\users\strat\documents\chatgpt\ai skills\.venv\research-state\mutmut-current-wheels-2026-10-07\iniconfig-2.3.1-py3-none-any.whl
+Collecting packaging>=22 (from pytest>=6.2.5->mutmut==3.8.0)
+  File was already downloaded c:\users\strat\documents\chatgpt\ai skills\.venv\research-state\mutmut-current-wheels-2026-10-07\packaging-26.3-py3-none-any.whl
+Collecting pluggy<2,>=1.5 (from pytest>=6.2.5->mutmut==3.8.0)
+  File was already downloaded c:\users\strat\documents\chatgpt\ai skills\.venv\research-state\mutmut-current-wheels-2026-10-07\pluggy-1.6.0-py3-none-any.whl
+Collecting pygments>=2.7.2 (from pytest>=6.2.5->mutmut==3.8.0)
+  File was already downloaded c:\users\strat\documents\chatgpt\ai skills\.venv\research-state\mutmut-current-wheels-2026-10-07\pygments-2.21.0-py3-none-any.whl
+Collecting markdown-it-py>=2.1.0 (from markdown-it-py[linkify]>=2.1.0->textual>=1.0.0->mutmut==3.8.0)
+  File was already downloaded c:\users\strat\documents\chatgpt\ai skills\.venv\research-state\mutmut-current-wheels-2026-10-07\markdown_it_py-4.2.0-py3-none-any.whl
+Collecting mdit-py-plugins (from textual>=1.0.0->mutmut==3.8.0)
+  File was already downloaded c:\users\strat\documents\chatgpt\ai skills\.venv\research-state\mutmut-current-wheels-2026-10-07\mdit_py_plugins-0.6.1-py3-none-any.whl
+Collecting platformdirs<5,>=3.6.0 (from textual>=1.0.0->mutmut==3.8.0)
+  File was already downloaded c:\users\strat\documents\chatgpt\ai skills\.venv\research-state\mutmut-current-wheels-2026-10-07\platformdirs-4.12.3-py3-none-any.whl
+Collecting rich>=14.2.0 (from textual>=1.0.0->mutmut==3.8.0)
+  File was already downloaded c:\users\strat\documents\chatgpt\ai skills\.venv\research-state\mutmut-current-wheels-2026-10-07\rich-15.0.0-py3-none-any.whl
+Collecting typing-extensions<5.0.0,>=4.4.0 (from textual>=1.0.0->mutmut==3.8.0)
+  File was already downloaded c:\users\strat\documents\chatgpt\ai skills\.venv\research-state\mutmut-current-wheels-2026-10-07\typing_extensions-4.16.0-py3-none-any.whl
+Collecting mdurl~=0.1 (from markdown-it-py>=2.1.0->markdown-it-py[linkify]>=2.1.0->textual>=1.0.0->mutmut==3.8.0)
+  File was already downloaded c:\users\strat\documents\chatgpt\ai skills\.venv\research-state\mutmut-current-wheels-2026-10-07\mdurl-0.1.2-py3-none-any.whl
+Collecting linkify-it-py<3,>=1 (from markdown-it-py[linkify]>=2.1.0->textual>=1.0.0->mutmut==3.8.0)
+  File was already downloaded c:\users\strat\documents\chatgpt\ai skills\.venv\research-state\mutmut-current-wheels-2026-10-07\linkify_it_py-2.2.0-py3-none-any.whl
+Downloading trailmark-0.5.0-py3-none-any.whl (284 kB)
+Downloading rustworkx-0.18.1-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.4 MB)
+   ---------------------------------------- 2.4/2.4 MB 36.3 MB/s  0:00:00
+Downloading numpy-2.5.3-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+   ---------------------------------------- 16.7/16.7 MB 131.7 MB/s  0:00:00
+Downloading tree_sitter-0.25.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (636 kB)
+   ---------------------------------------- 636.8/636.8 kB 36.5 MB/s  0:00:00
+Downloading tree_sitter_language_pack-1.21.0-cp310-abi3-manylinux_2_34_x86_64.whl (2.5 MB)
+   ---------------------------------------- 2.5/2.5 MB 63.5 MB/s  0:00:00
+Downloading tree_sitter_sql-0.3.11-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (380 kB)
+Saved .\.venv\research-state\mutmut-current-wheels-2026-10-07\trailmark-0.5.0-py3-none-any.whl
+Saved .\.venv\research-state\mutmut-current-wheels-2026-10-07\rustworkx-0.18.1-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl
+Saved .\.venv\research-state\mutmut-current-wheels-2026-10-07\numpy-2.5.3-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl
+Saved .\.venv\research-state\mutmut-current-wheels-2026-10-07\tree_sitter-0.25.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl
+Saved .\.venv\research-state\mutmut-current-wheels-2026-10-07\tree_sitter_language_pack-1.21.0-cp310-abi3-manylinux_2_34_x86_64.whl
+Saved .\.venv\research-state\mutmut-current-wheels-2026-10-07\tree_sitter_sql-0.3.11-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl
+Successfully downloaded mutmut trailmark rustworkx numpy tree-sitter tree-sitter-language-pack tree-sitter-sql click coverage libcst pytest pluggy colorama iniconfig packaging pygments pyyaml setproctitle textual platformdirs typing-extensions markdown-it-py mdurl linkify-it-py rich mdit-py-plugins

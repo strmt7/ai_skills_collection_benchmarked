@@ -62,3 +62,32 @@ execution is qualified by this review. Those checks, accepted-case controls,
 schema closure, JavaScript adapters and independently evaluated coding tasks
 remain required. Vector correctness does not test constant-time behavior or
 prove the absence of cryptographic vulnerabilities.
+
+## Executed provider qualification
+
+The later `wycheproof-provider-runtime-controls-v2.json` executes the selected
+external inputs against cryptography 50.0.2, OpenSSL 4.0.3 (29 Sep 2026),
+jsonschema 4.26.0 and Python 3.14.8. All 151 Ed25519 cases and 283 eligible
+AES-GCM cases pass. All 316 AES-GCM IDs are retained, including 33 exclusions
+for the declared 8..128-byte nonce API domain. This is a provider subset, not a
+full AES-GCM file pass. The selected files contain no acceptable cases.
+
+Twenty-one actual controls qualify the five-resource offline Draft 7 reference
+closure, custom formats, key representation agreement, count/ID/JSON/result
+validation and documented exception handling. Acceptable accept/reject and
+incorrect-output controls are explicitly synthetic. Missing-file empty success
+and the unimported InvalidTag handler are reproduced from unchanged original
+function bodies; only pytest registration and module-level fixture initialization
+are removed for the source controls. The first 18-control receipt and exact
+source reproducer remain under `wycheproof-eighteen-controls-reproducer/`.
+
+`benchmarks/dependency-regressions/wycheproof-inputs.json` binds nine exact public
+resources and eight stable provider/schema wheels to primary-source hashes.
+The trusted image installs offline and passes pip check. Runtime uses the
+inspected bounded, read-only, network-disabled backend with UID 65534; no coding
+agent is launched. The new `wycheproof-crypto-current` overlay preserves the
+original bytes and CC-BY-SA-4.0 license and remains efficacy-unbenchmarked.
+
+Other primitives, providers, operations and JavaScript adapters still need their
+own qualification. These checks do not measure constant-time behavior, establish
+crypto security completeness or demonstrate coding-agent improvement.

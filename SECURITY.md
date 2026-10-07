@@ -26,13 +26,13 @@ the value is intended as an example.
 python3 tools/check_no_secret_patterns.py --history     # in-repo regex + entropy
 ```
 
-Optionally mirror the CI's second-opinion gate locally:
+Run the CI's second-opinion gate locally with its pinned, SHA256-verified
+Gitleaks v8.30.1 binary. The download and digest verification commands are
+maintained in `.github/workflows/secret-scan.yml`; after verification, run:
 
 ```bash
-curl -fsSLo /tmp/gitleaks.tgz \
-  https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz
-tar -xzf /tmp/gitleaks.tgz -C /tmp gitleaks
-/tmp/gitleaks git --redact --no-banner --exit-code 1 .
+gitleaks git --log-opts="--all --full-history --no-renames" \
+  --redact --verbose --no-banner --exit-code 1 .
 ```
 
 ## CI security gates (runs automatically on push, pull_request, and weekly cron)
@@ -40,7 +40,7 @@ tar -xzf /tmp/gitleaks.tgz -C /tmp gitleaks
 | Gate | What it does |
 | --- | --- |
 | `tools/check_no_secret_patterns.py --history` | Context-aware regex + Shannon-entropy scan over the full git history |
-| `gitleaks git .` | Pinned MIT binary (v8.30.1, SHA256-verified) as a second-opinion scan |
+| `gitleaks git --log-opts="--all --full-history --no-renames" .` | Pinned MIT binary (v8.30.1, SHA256-verified), all fetched refs and complete patches |
 | `pip-audit --strict -r requirements-lock.txt` | Daily CVE scan against the pip-compile lockfile |
 | Dependabot weekly updates | Grouped minor+patch PRs for `github-actions` and `pip` ecosystems |
 | Workflow `permissions: contents: read` | Least-privilege default token on every workflow |
@@ -59,14 +59,29 @@ tar -xzf /tmp/gitleaks.tgz -C /tmp gitleaks
   hash verification. Re-generate via `pip-compile --generate-hashes` when
   bumping `pyproject.toml`. The `pip-audit` workflow verifies the lockfile is
   in sync with `pyproject.toml` on every push.
-- GitHub Action versions are pinned to a named stable tag plus a documented
-  SHA in workflow comments; Dependabot proposes updates weekly.
+- GitHub Actions use full immutable commit SHA pins with stable release names
+  in comments; Dependabot proposes updates weekly. Release resolution and
+  successful workflow execution are checked separately.
+- The standalone secret-scanner workflow installs the hash-locked minimal
+  runtime from `requirements-runtime-lock.txt` before invoking the scanner.
 
 ## What about the immutable mirrored skills?
 
 `included/skills/**` contains upstream public-GitHub source text mirrored at
 pinned commit SHAs. Those files are governed by the Immutable Audit Model in
-[`AGENTS.md`](AGENTS.md); the in-repo scanner and `gitleaks` both allowlist
-that subtree because we cannot patch upstream documentation. Any credential-
-shaped text inside those mirrors is provenance — report such findings upstream
-to the respective skill authors.
+[`AGENTS.md`](AGENTS.md) and are covered by both secret scanners and CodeQL.
+There are no mirror path exemptions in `.gitleaks.toml`. Public provenance
+does not make credential-shaped text acceptable: mirroring applies only the
+declared deterministic credential neutralizations and dependency advisory
+floors, with source hashes and transformation records retained.
+
+Preserve source defects as findings until a corrected upstream commit is
+qualified and the catalog is regenerated. Maintained improvements belong in
+licensed overlays with exact original provenance, not silent mirror edits.
+A repair overlay does not close a finding in the original mirror.
+
+Retain scanner results and source-grounded triage evidence. A public digest,
+path or synthetic test value can be a noncredential match, but an audit
+classification does not turn a failing native scanner into a passing gate.
+Do not suppress findings, add path exemptions, or claim zero findings without
+fresh results for the published revision and fetched history.
