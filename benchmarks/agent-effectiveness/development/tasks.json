@@ -1,0 +1,32 @@
+{
+  "protocol_version": 1,
+  "scope": "Development probes on pinned real-code repository subsets; not final holdouts or a full-suite result.",
+  "tasks": [
+    {
+      "id": "artifact-validator-robustness",
+      "partition": "development",
+      "source_repo": "strmt7/ai_skills_collection_benchmarked",
+      "source_commit": "4bd209752567f5c35074d4ee4a73600e1c45c283",
+      "fixture_kind": "pinned-repository-subset",
+      "files": [
+        "tools/check_benchmark_artifact.py",
+        "evaluators/benchmark_run_artifact.schema.json",
+        "data/skills_catalog.json",
+        "data/benchmark_scenarios.json"
+      ],
+      "brief": "Fix the benchmark artifact validator so malformed JSON fields return structured invalid or incomplete verdicts instead of crashing. Enforce the constraints declared by its bundled schema. If the schema is unavailable, reject the record rather than silently disabling validation. Transcript and evidence paths must identify files. Keep complete provenance records, permitted extra metadata, and complete recorded artifacts accepted. Add meaningful tests and run relevant checks. Work only in this task workspace; do not inspect other repositories, development logs, or external grader files.",
+      "allowed_changes": [
+        "tools/check_benchmark_artifact.py",
+        "tests/",
+        "action-log.json"
+      ],
+      "grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py",
+      "independence": "Acceptance contracts come from the original validator's declared schema and independently reproduced input-validation defects, not from evaluated skill instructions.",
+      "limitations": [
+        "One maintenance task cannot establish category-wide or collection-wide skill utility.",
+        "The fixture is a source subset, not a complete external issue-resolution checkout.",
+        "Process/workspace isolation must be distinguished from container-enforced isolation."
+      ]
+    }
+  ]
+}

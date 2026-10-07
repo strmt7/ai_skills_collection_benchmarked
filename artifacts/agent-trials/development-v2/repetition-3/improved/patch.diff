@@ -1,0 +1,150 @@
+--- a/tools/check_benchmark_artifact.py
++++ b/tools/check_benchmark_artifact.py
+@@ -6,7 +6,7 @@
+ 1. A structural pass driven by ``evaluators/benchmark_run_artifact.schema.json``
+    (JSON Schema Draft 2020-12). The implementation is pure Python and only
+    walks the subset of keywords that the schema actually uses:
+-   ``type``, ``enum``, ``pattern``, ``required``, ``properties``,
++   ``type``, ``enum``, ``pattern``, ``minLength``, ``required``, ``properties``,
+    ``additionalProperties``, ``items``, and ``minItems``. Each error carries
+    a JSON-Pointer style path (e.g. ``/evidence/artifact_paths/0``) so that
+    callers can pinpoint which field is broken.
+@@ -20,7 +20,7 @@
+ ``tests/helpers.py`` and the CI workflow. Its verdict set is stable:
+ 
+ - ``artifact_complete`` -- no errors
+-- ``artifact_incomplete`` -- domain-level problems
++- ``artifact_incomplete`` -- schema or domain-level problems
+ - ``artifact_invalid`` -- the file cannot be parsed or the root is wrong type
+ 
+ CLI:
+@@ -84,7 +84,12 @@
+         schema = load_json(SCHEMA_PATH)
+     except Exception:
+         return None
+-    if not isinstance(schema, dict):
++    if (
++        not isinstance(schema, dict)
++        or schema.get("type") != "object"
++        or not isinstance(schema.get("properties"), dict)
++        or not isinstance(schema.get("required"), list)
++    ):
+         return None
+     return schema
+ 
+@@ -108,6 +113,14 @@
+ 
+ def non_empty_list(value: Any) -> bool:
+     return isinstance(value, list) and bool(value) and all(isinstance(item, str) and item for item in value)
++
++
++def _is_artifact_file(base: Path, value: str) -> bool:
++    """Invalid filesystem paths and non-files are missing artifact evidence."""
++    try:
++        return resolve_artifact_path(base, value).is_file()
++    except (OSError, ValueError):
++        return False
+ 
+ 
+ def _pointer(parts: Iterable[str | int]) -> str:
+@@ -167,13 +180,27 @@
+     if "pattern" in schema and isinstance(instance, str) and not re.search(schema["pattern"], instance):
+         errors.append(f"{_pointer(path) or '/'}: value does not match pattern {schema['pattern']!r}")
+ 
++    if isinstance(instance, str):
++        min_length = schema.get("minLength")
++        if isinstance(min_length, int) and len(instance) < min_length:
++            errors.append(
++                f"{_pointer(path) or '/'}: expected at least {min_length} characters, got {len(instance)}"
++            )
++
+     if isinstance(instance, dict):
+         for required in schema.get("required", []) or []:
+             if required not in instance:
+                 errors.append(f"{_pointer(path + [required])}: missing required field")
+-        for key, sub_schema in (schema.get("properties") or {}).items():
++        properties = schema.get("properties") or {}
++        for key, sub_schema in properties.items():
+             if key in instance and isinstance(sub_schema, dict):
+                 _schema_walk(sub_schema, instance[key], path + [key], errors)
++        additional = schema.get("additionalProperties", True)
++        for key in instance.keys() - properties.keys():
++            if additional is False:
++                errors.append(f"{_pointer(path + [key])}: additional property is not allowed")
++            elif isinstance(additional, dict):
++                _schema_walk(additional, instance[key], path + [key], errors)
+ 
+     if isinstance(instance, list):
+         min_items = schema.get("minItems")
+@@ -188,7 +215,7 @@
+ def _schema_errors(artifact: Any) -> list[str]:
+     schema = _load_schema()
+     if schema is None:
+-        return []
++        return [f"cannot load artifact schema: {SCHEMA_PATH}"]
+     errors: list[str] = []
+     _schema_walk(schema, artifact, [], errors)
+     return errors
+@@ -227,9 +254,8 @@
+         }
+ 
+     # Layer 1: schema-driven structural pre-pass. Converts missing-required /
+-    # wrong-type problems into precise JSON-Pointer messages. We still need the
+-    # legacy top-level check below so that callers that skip the schema (e.g.
+-    # tests that run without an evaluators/ directory) still fail safely.
++    # wrong-type problems into precise JSON-Pointer messages. The schema must
++    # be available, and domain checks must only see structurally valid records.
+     errors: list[str] = []
+     errors.extend(_schema_errors(artifact))
+ 
+@@ -238,10 +264,11 @@
+         msg = f"missing required field: {key}"
+         if msg not in errors and f"/{key}: missing required field" not in errors:
+             errors.append(msg)
+-    # If the artifact is missing basic fields, stop before domain checks.
+-    if legacy_missing:
++    # Preserve the invalid verdict for missing top-level fields. Other schema
++    # failures are incomplete, and must also stop before unsafe domain lookups.
++    if errors:
+         return {
+-            "verdict": "artifact_invalid",
++            "verdict": "artifact_invalid" if legacy_missing else "artifact_incomplete",
+             "errors": errors,
+             "warnings": warnings,
+         }
+@@ -321,8 +348,8 @@
+     transcript = execution.get("commands_or_transcript_path") if isinstance(execution, dict) else None
+     if not isinstance(transcript, str) or not transcript:
+         errors.append("execution.commands_or_transcript_path must be a path")
+-    elif not resolve_artifact_path(base, transcript).exists():
+-        errors.append(f"missing transcript artifact: {transcript}")
++    elif not _is_artifact_file(base, transcript):
++        errors.append(f"missing transcript artifact: {transcript} (must be a file)")
+ 
+     input_snapshot = artifact["input_snapshot"]
+     if not isinstance(input_snapshot, dict) or input_snapshot.get("is_real") is not True:
+@@ -340,9 +367,9 @@
+         errors.append("evidence.artifact_paths must be a non-empty string list")
+     else:
+         assert isinstance(artifact_paths, list)  # narrowed by non_empty_list
+-        missing = [path for path in artifact_paths if not resolve_artifact_path(base, path).exists()]
++        missing = [path for path in artifact_paths if not _is_artifact_file(base, path)]
+         if missing:
+-            errors.append(f"missing evidence artifact paths: {missing}")
++            errors.append(f"missing evidence artifact paths: {missing} (paths must identify files)")
+     if not non_empty_list(citations_or_paths):
+         errors.append("evidence.citations_or_paths must be a non-empty string list")
+     if not non_empty_list(artifact.get("objective_checks")):
+@@ -364,10 +391,10 @@
+             else:
+                 assert isinstance(screenshot_paths, list)  # narrowed by non_empty_list
+                 missing_screenshots = [
+-                    path for path in screenshot_paths if not resolve_artifact_path(base, path).exists()
++                    path for path in screenshot_paths if not _is_artifact_file(base, path)
+                 ]
+                 if missing_screenshots:
+-                    errors.append(f"missing visual screenshot paths: {missing_screenshots}")
++                    errors.append(f"missing visual screenshot paths: {missing_screenshots} (paths must identify files)")
+             if not visual.get("website_url_or_mirror"):
+                 errors.append("visual evidence requires website_url_or_mirror")
+             if not isinstance(visual.get("viewport"), dict):

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "evidence_class": "offline_helper_contract_probe",
+  "python_version": "3.14.8",
+  "anthropic_version": "1.11.0",
+  "mcp_version": "2.2.0",
+  "input_sha256": {
+    "included/skills/by-category/agent-infrastructure-skill-creation/official-reference/mcp-builder-anthropics/scripts/connections.py": "9db2f1ff6442010b131817c1ec127dcf29949c787e7d7948049145c0a39627a9",
+    "included/skills/by-category/agent-infrastructure-skill-creation/official-reference/mcp-builder-anthropics/scripts/evaluation.py": "0797ae0f3c50bfa5d7281ebc8bc936ac89f33450aca6a36b95c4862ca8c21482"
+  },
+  "provider_requests": 0,
+  "external_mcp_connections": 0,
+  "additional_agent_probes_used_connection_import_shim": true,
+  "probes": [
+    {
+      "probe": "unchanged_helper_import_on_latest_stable_mcp",
+      "outcome": "compatibility_failure",
+      "error_type": "ImportError",
+      "detail": "cannot import name 'streamablehttp_client' from 'mcp.client.streamable_http'"
+    },
+    {
+      "probe": "multiple_tool_call_result_matching",
+      "outcome": "reproduced_failure",
+      "calls_requested": 2,
+      "calls_executed": 1,
+      "result_ids_sent": [
+        "call_0"
+      ],
+      "detail": "tool results must cover every preceding assistant tool call"
+    },
+    {
+      "probe": "actual_mcp_text_content_serialization",
+      "outcome": "reproduced_failure",
+      "mcp_content_type": "mcp.types.TextContent",
+      "successful_result_converted_to_error": true
+    },
+    {
+      "probe": "missing_text_response",
+      "outcome": "reproduced_failure",
+      "error_type": "TypeError"
+    },
+    {
+      "probe": "malformed_xml",
+      "outcome": "reproduced_empty_task_list",
+      "task_count": 0
+    }
+  ],
+  "scope": "Reproduced packaging/contract defects; not a model benchmark or completed skill repair",
+  "reproducer_sha256": "725fd09153111498be89e934c78f3adc7e45b135e97f2c257c564c186f66adf5"
+}

@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "evidence_class": "actual-webapp-server-helper-contract-controls",
+  "passed": true,
+  "project_file_sha256": {
+    "included/skills/by-category/testing-qa-benchmarking/official-reference/webapp-testing/scripts/with_server.py": "bad569c06e313d8a4290bbbef37bd53673ac7515754b04f5c67ddc55f7649094",
+    "benchmarks/dependency-regressions/webapp_server_fixture.py": "405e1ee4def09ce9212138c54dbf0a35fc9b3aa0a4f89a05b12586fb1a0e35c9"
+  },
+  "invocation": {
+    "status": "completed",
+    "container_name": "skills-invoke-0e36690b957747bcbba33dd6b9dda705",
+    "image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+    "scored": false,
+    "candidate_response_is_untrusted": true,
+    "cleanup_verified": true,
+    "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+    "resource_profile": "python-small",
+    "submission_sha256": {
+      "with_server.py": "bad569c06e313d8a4290bbbef37bd53673ac7515754b04f5c67ddc55f7649094",
+      "candidate.py": "405e1ee4def09ce9212138c54dbf0a35fc9b3aa0a4f89a05b12586fb1a0e35c9"
+    },
+    "container_id": "161abb3e4dcbe84b7663187728d228ce9b55e7118f99eada3b00363b8819281b",
+    "isolation_checks": {
+      "errors": [],
+      "passed": true,
+      "observed_user": "65534:65534",
+      "observed_image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+      "observed_ownership_token": "0e36690b957747bcbba33dd6b9dda705",
+      "resolved_image_id": "sha256:284cda8648f59f87e9468ec9d5652064dc2cd5b7d3fce342c2d3825ca1de6353",
+      "observed_host_constraints": {
+        "NetworkMode": "none",
+        "IpcMode": "none",
+        "ReadonlyRootfs": true,
+        "Memory": 536870912,
+        "MemorySwap": 536870912,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64,
+        "Privileged": false,
+        "Init": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "CapAdd": null,
+        "SecurityOpt": [
+          "no-new-privileges"
+        ],
+        "LogConfig": {
+          "Type": "none",
+          "Config": {}
+        },
+        "Tmpfs": {
+          "/tmp": "rw,noexec,nosuid,size=128m"
+        },
+        "Devices": [],
+        "DeviceRequests": null,
+        "VolumesFrom": null
+      },
+      "observed_mounts": [
+        {
+          "Destination": "/submission",
+          "Type": "bind",
+          "RW": false
+        },
+        {
+          "Destination": "/worker",
+          "Type": "bind",
+          "RW": false
+        }
+      ]
+    },
+    "setup_elapsed_seconds": 0.21801830000003974,
+    "runtime_elapsed_seconds": 2.128192799998942,
+    "returncode": 0,
+    "candidate_response": {
+      "worker_status": "returned",
+      "result": {
+        "platform": "linux",
+        "uid": 65534,
+        "controls": [
+          {
+            "control": "unrelated_open_port_accepts_failed_server",
+            "passed": true,
+            "outcome": {
+              "returncode": 0,
+              "stdout": "Starting server 1/1: exit 7\nWaiting for server on port 49105...\nServer ready on port 49105\n\nAll 1 server(s) ready\nRunning: /usr/local/bin/python -c from pathlib import Path; Path('client-ran').touch()\n\n\nStopping 1 server(s)...\nServer 1 stopped\nAll servers stopped\n",
+              "stderr": ""
+            }
+          },
+          {
+            "control": "client_failure_status_is_preserved",
+            "passed": true,
+            "outcome": {
+              "returncode": 11,
+              "stdout": "Starting server 1/1: exit 7\nWaiting for server on port 49105...\nServer ready on port 49105\n\nAll 1 server(s) ready\nRunning: /usr/local/bin/python -c raise SystemExit(11)\n\n\nStopping 1 server(s)...\nServer 1 stopped\nAll servers stopped\n",
+              "stderr": ""
+            }
+          },
+          {
+            "control": "undrained_server_output_blocks_readiness",
+            "passed": true,
+            "outcome": {
+              "returncode": 1,
+              "stdout": "Starting server 1/1: /usr/local/bin/python /tmp/server-control-aandh6x8/noisy.py\nWaiting for server on port 57077...\n\nStopping 1 server(s)...\nServer 1 stopped\nAll servers stopped\n",
+              "stderr": "Traceback (most recent call last):\n  File \"/submission/with_server.py\", line 106, in <module>\n    main()\n    ~~~~^^\n  File \"/submission/with_server.py\", line 80, in main\n    raise RuntimeError(f\"Server failed to start on port {server['port']} within {args.timeout}s\")\nRuntimeError: Server failed to start on port 57077 within 1s\n"
+            }
+          },
+          {
+            "control": "shell_child_survives_helper_cleanup",
+            "passed": true,
+            "fixture_process_group_killed_after_observation": true
+          }
+        ],
+        "scope": "Actual bounded processes and sockets in an owned network-isolated Linux container; negative findings are not repaired behavior"
+      }
+    },
+    "captured_bytes": 1788,
+    "stderr": "",
+    "elapsed_seconds": 2.4993055000013555
+  },
+  "reproducer_sha256": "b56c0e8895f3499a0ef58b41c3d5a9c6a3e75b2c2e0458a96895cb7510a50e49",
+  "agent_efficacy_scored": false,
+  "source_implementation_repaired": false
+}

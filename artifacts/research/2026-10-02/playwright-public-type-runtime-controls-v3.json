@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "evidence_class": "actual-playwright-types-contract-controls",
+  "passed": true,
+  "versions": {
+    "@playwright/test": "1.63.0",
+    "typescript": "7.0.2",
+    "@types/node": "26.6.4"
+  },
+  "node_version": "v26.10.0",
+  "fixture_sha256": {
+    "package.json": "4d0791eb9bc887272ab6426583e521e7742f51bb9d34f08f0385bbfa5215934d",
+    "package-lock.json": "1f7d4541b17b70c13bfd6de2d34631ebc70cdc9617d8f6e5278cca3dfda79783",
+    "negative.spec.ts": "80d1543fba6f805d5807bae22ae0d89485bf3bdc8c26116d6b5e89b23e837f44",
+    "positive.spec.ts": "7b8c4bd16bbef1e8f1f098b55b935b254840511a7bc9824db96c18259ada4850"
+  },
+  "controls": [
+    {
+      "control": "negative.spec.ts",
+      "passed": true,
+      "returncode": 1,
+      "signal": null,
+      "diagnostics": "negative.spec.ts(2,51): error TS2769: No overload matches this call.\n  The last overload gave the following error.\n    Object literal may only specify known properties, and 'videosPath' does not exist in type 'UseOptions<PlaywrightTestOptions & CustomProperties<unknown>, PlaywrightWorkerOptions & CustomProperties<unknown>>'.\nnegative.spec.ts(4,87): error TS2353: Object literal may only specify known properties, and 'snapshots' does not exist in type '{ categories?: string[] | undefined; path?: string | undefined; screenshots?: boolean | undefined; }'.\n",
+      "error": null,
+      "compiler_arguments": [
+        "--noEmit",
+        "--strict",
+        "--target",
+        "es2022",
+        "--module",
+        "node16",
+        "--moduleResolution",
+        "node16",
+        "--types",
+        "node",
+        "negative.spec.ts"
+      ]
+    },
+    {
+      "control": "positive.spec.ts",
+      "passed": true,
+      "returncode": 0,
+      "signal": null,
+      "diagnostics": "",
+      "error": null,
+      "compiler_arguments": [
+        "--noEmit",
+        "--strict",
+        "--target",
+        "es2022",
+        "--module",
+        "node16",
+        "--moduleResolution",
+        "node16",
+        "--types",
+        "node",
+        "positive.spec.ts"
+      ]
+    },
+    {
+      "control": "unsupported_test_cli_slowmo_flag",
+      "passed": true,
+      "returncode": 1,
+      "diagnostics": "error: unknown option '--slowmo=1000'\n",
+      "error": null
+    }
+  ],
+  "reproducer_sha256": "1c857a98225600bd70f6c6f043d9017d39b4926e0ab66b2c76d7289257c648b0",
+  "dependencies_installed_by_this_tool": false,
+  "browser_executed": false,
+  "agent_efficacy_scored": false
+}

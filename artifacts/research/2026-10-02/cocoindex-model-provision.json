@@ -1,0 +1,40 @@
+{
+  "model": "Snowflake/snowflake-arctic-embed-xs",
+  "revision": "d8c86521100d3556476a063fc2342036d45c106f",
+  "license": "Apache-2.0",
+  "license_source": "https://huggingface.co/Snowflake/snowflake-arctic-embed-xs/blob/d8c86521100d3556476a063fc2342036d45c106f/README.md#license",
+  "files": {
+    "config.json": "d7d071046ab952af96b7abad788db7ab3fc997b465e1b9914ff39707092254ec",
+    "config_sentence_transformers.json": "26a4caecbc808973e5b3b3a04484db1389078b0458254e4dd617ff361e2f378a",
+    "model.safetensors": "ee789e0b1d6ecbbd5ce37b474af556cc1a1319cee4417d9e3b11f82e90300706",
+    "modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+    "README.md": "6bfaf51250f5360e505272dde4a9ffcdc41bf66b090d68e8f9ecc4807ab80507",
+    "sentence_bert_config.json": "4dfc17a899f3ea25b5c8e9034a1d0d9ebd96eca0868b015a89d1d748c38e4b2f",
+    "special_tokens_map.json": "5d5b662e421ea9fac075174bb0688ee0d9431699900b90662acd44b2a350503a",
+    "tokenizer.json": "91f1def9b9391fdabe028cd3f3fcc4efd34e5d1f08c3bf2de513ebb5911a1854",
+    "tokenizer_config.json": "9ca59277519f6e3692c8685e26b94d4afca2d5438deff66483db495e48735810",
+    "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+    "1_Pooling/config.json": "83eeb6d0c128b377a452f121f8c5a19bbbf9322092a87b856ef782f4ad2326b9"
+  },
+  "modules": [
+    {
+      "idx": 0,
+      "name": "0",
+      "path": "",
+      "type": "sentence_transformers.models.Transformer"
+    },
+    {
+      "idx": 1,
+      "name": "1",
+      "path": "1_Pooling",
+      "type": "sentence_transformers.models.Pooling"
+    },
+    {
+      "idx": 2,
+      "name": "2",
+      "path": "2_Normalize",
+      "type": "sentence_transformers.models.Normalize"
+    }
+  ],
+  "custom_code_present": false
+}

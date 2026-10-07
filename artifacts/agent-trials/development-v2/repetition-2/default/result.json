@@ -1,0 +1,250 @@
+{
+  "changed_source_files": [
+    "tools/check_benchmark_artifact.py"
+  ],
+  "commands_completed": 8,
+  "condition": "default",
+  "elapsed_seconds": 460.31200000000536,
+  "evidence_collection_errors": [],
+  "evidence_sha256": {
+    "launch.json": "c2fb6a4d0921dcd42486f429293636448d8ef03b86e6cb5b506e3569a85781ea",
+    "patch.diff": "3447997d5790d968cb6e0bf16afe50f955de45a73641c03af462c6e6a7c9f902",
+    "prompt.txt": "8e95a3f1b3c0bbd0cd7a1e9c3c945173b32db1aa415e479efd0521e3227566f5",
+    "stderr.txt": "8d64be0785ee7760f7d769ef989c4c1ded05144f3f4c16889817fa6204d96660",
+    "submission/action-log.json": "3fab3f348b08be830c70428fc7f5a149d9dc926b39ca362ff23576cc53f39316",
+    "submission/data/benchmark_scenarios.json": "4aefc7f4530ddc2be09396c6bb378b88580301e61a67f579efe15a02c15ac49c",
+    "submission/data/skills_catalog.json": "26b5bb8a076a06d7749c92310ba4cacdd9b3013ea21b4fa38507d7dbbd2be583",
+    "submission/evaluators/benchmark_run_artifact.schema.json": "4512d69f042a4d4e3604fe8494db9fafe6d765e5edbf132546e5e622223631b9",
+    "submission/tests/test_regressions.py": "bba92ddc490ecd49796f6d7402856ed6a8c6977aa6c0f6c549ca3b211642efdd",
+    "submission/tools/__pycache__/check_benchmark_artifact.cpython-312.pyc": "59e841928f6ef217dd38eca1f109ccf9a7a0ce001ae44a7721198056c38a0de0",
+    "submission/tools/check_benchmark_artifact.py": "37b53e3f20f650662e0f75d581077de0227b348a5544f95932226a40a75096ac",
+    "transcript.jsonl": "36c6fdff1934e4a9fbffb69a18d38c698be251e2438d90376b1ffd350d4169bc"
+  },
+  "grader": {
+    "checks": [
+      {
+        "case": "valid_provenance",
+        "passed": true,
+        "validator_result": {
+          "errors": [],
+          "verdict": "artifact_complete",
+          "warnings": [
+            "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+          ]
+        }
+      },
+      {
+        "case": "valid_extra_metadata",
+        "passed": true,
+        "validator_result": {
+          "errors": [],
+          "verdict": "artifact_complete",
+          "warnings": [
+            "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+          ]
+        }
+      },
+      {
+        "case": "malformed_skill_id",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/skill_id: expected type 'string', got list"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "malformed_scenario_id",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/scenario_id: expected type 'string', got list"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "malformed_artifact_kind",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/artifact_kind: expected type 'string', got list"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "malformed_input_snapshot",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/input_snapshot: expected type 'object', got list"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "malformed_execution",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/execution: expected type 'object', got list"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "malformed_runner",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/runner: expected type 'object', got list"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "malformed_independence",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/independence: expected type 'object', got list"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "malformed_evidence",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/evidence: expected type 'object', got list"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "malformed_metrics",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/metrics: expected type 'object', got list"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "malformed_outputs",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/outputs: expected type 'object', got list"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "malformed_scenario_requirements",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/scenario_requirements: expected type 'object', got list"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "schema_minimum_string_length",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/input_snapshot/kind: expected at least 1 characters, got 0"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "transcript_must_be_file",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "missing transcript artifact or not a file: directory"
+          ],
+          "verdict": "artifact_incomplete",
+          "warnings": [
+            "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+          ]
+        }
+      },
+      {
+        "case": "evidence_must_be_file",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "missing evidence artifact paths or not files: ['directory']"
+          ],
+          "verdict": "artifact_incomplete",
+          "warnings": [
+            "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+          ]
+        }
+      },
+      {
+        "case": "missing_schema_rejected",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "cannot load usable artifact schema: C:\\Users\\strat\\AppData\\Local\\Temp\\tmp49bvb798\\unavailable.schema.json"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      }
+    ],
+    "checks_passed": 17,
+    "checks_total": 17,
+    "scope": "Validator behavior on an independent development probe; not a skill-performance claim",
+    "status": "task_passed"
+  },
+  "latency_claim_eligible": false,
+  "limitations": [
+    "One development maintenance task on a real pinned repository subset; not final holdouts or collection-wide utility.",
+    "Instructions are injected, not selected by natural skill discovery; this measures the two-skill bundle, not each skill individually.",
+    "Process and instruction scope isolation; not a container with sealed grader files.",
+    "Provider-resolved model snapshot is unavailable; requested CLI model and actual returned usage are recorded.",
+    "Latency is recorded for diagnostics only; concurrent owner workloads are not controlled.",
+    "The prior independent probe already reached 17/17, so this task may have a ceiling effect.",
+    "Karpathy-labelled instructions are a third-party adaptation with attribution, not a repository authored by Karpathy.",
+    "External score checks submitted validator behavior; agent-written regression tests are captured but are not a test-coverage or mutation-testing score."
+  ],
+  "model_requested": "gpt-6.1-sol",
+  "partition": "development",
+  "process_exit_code": 0,
+  "protocol_sha256": "a1f6cbd086680ca19c3a6a124b7739537a7ad38550de8b59b83ec1f8781fcda9",
+  "provider_model_snapshot": null,
+  "reasoning_effort_requested": "high",
+  "scope_violations": [],
+  "status": "task_passed",
+  "task_id": "artifact-validator-robustness",
+  "trial_version": 1,
+  "usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 320128,
+    "input_tokens": 353213,
+    "output_tokens": 12684,
+    "reasoning_output_tokens": 3036
+  }
+}

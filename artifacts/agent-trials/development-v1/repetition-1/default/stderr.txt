@@ -1,0 +1,3 @@
+2026-10-02T12:10:51.795433Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+2026-10-02T12:15:06.860521Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to read file to update C:\Users\strat\AppData\Local\Temp\skills-agent-trial-e7yw3vmf\action-log.json: Access is denied. (os error 5)
+2026-10-02T12:15:19.785402Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to read file to update C:\Users\strat\AppData\Local\Temp\skills-agent-trial-e7yw3vmf\action-log.json: Access is denied. (os error 5)

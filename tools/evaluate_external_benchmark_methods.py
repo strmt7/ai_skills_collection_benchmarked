@@ -15,7 +15,7 @@ import re
 import subprocess
 import tempfile
 import urllib.request
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -523,7 +523,7 @@ def write_registry_outputs() -> dict[str, Any]:
 
 def run_smoke() -> dict[str, Any]:
     data = write_registry_outputs()
-    timestamp = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    timestamp = datetime.now(UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z")
     output_root = ROOT / "artifacts" / "external-benchmark-integrations" / RUN_NAME
     output_root.mkdir(parents=True, exist_ok=True)
     summaries: list[dict[str, Any]] = []

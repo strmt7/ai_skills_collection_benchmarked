@@ -40,7 +40,7 @@ def test_all_skills_are_physically_mirrored_and_documented():
         assert (mirrored / "SKILL.md").is_file(), entry["id"]
         assert len(list(mirrored.rglob("SKILL.md"))) == 1
         assert build_catalog.sha256_file(mirrored / "SKILL.md") == entry["skill_file_sha256"]
-        assert build_catalog.sha256_tree(mirrored) == entry["skill_dir_sha256"]
+        assert build_catalog.sha256_tree(mirrored, file_modes=entry.get("file_modes")) == entry["skill_dir_sha256"]
         item = manifest_by_id[entry["id"]]
         assert item["mirrored_path"] == entry["mirrored_path"]
         skill_doc = (

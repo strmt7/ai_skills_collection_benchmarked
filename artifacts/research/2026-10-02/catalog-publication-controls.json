@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "evidence_class": "catalog-publication-contract-controls",
+  "input_file_sha256": {
+    "tools/build_catalog.py": "6978b114834e923550ef95251bcf5c88f2a9a034332257a7851e37d4e133e8a5",
+    "tools/_catalog_publication.py": "3be0d907c21004dd9e86cbbd01d12a043f80cffd9c76d3da3d43d64f8aef8a3a",
+    "tests/test_catalog_publication.py": "d444d39a1d0895bc74c8f5342d3327497072f9bcd6da56a811c570a9015f296b",
+    "tests/test_mirror_publication.py": "5c90884292875db7ec8fa50eafd4ccd814bab51e6e1a64b537a8c197d11f15c2",
+    "tests/test_build_catalog_components.py": "c98b95cfd8260acae89b6f6539123f1601073c0c948312897452d7cdbbb3a0a3"
+  },
+  "full_suite": {
+    "passed": 457,
+    "skipped": 2,
+    "elapsed_seconds": 32.84,
+    "log_sha256": "5b18709fd9b131a8563898fa3129f5c1fbb753cf971f853c6bed3ce77b9ba1b9",
+    "coverage_percent": 66.69
+  },
+  "lint": "passed",
+  "type_check": "passed",
+  "production_sources_refreshed": false,
+  "controls": [
+    "complete generator publication and repeated freshness",
+    "metadata/mirror/document rename rollback",
+    "journal failure rollback",
+    "rollback failure preserves lock and recovery files",
+    "dirty or changed source rejection",
+    "missing required/undeclared output rejection",
+    "concurrent target or stage changes rejected",
+    "canonical nonoverlapping paths",
+    "unreadable tree rejection",
+    "unrelated files and maintained installation preserved",
+    "deterministic date precedence"
+  ],
+  "limits": [
+    "filesystem renames are not atomic for readers",
+    "process interruption needs explicit journal/path recovery",
+    "power-loss and hosted POSIX execution not qualified",
+    "no coding-agent efficacy scored"
+  ]
+}

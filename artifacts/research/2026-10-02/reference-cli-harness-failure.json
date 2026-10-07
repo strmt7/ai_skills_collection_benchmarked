@@ -1,0 +1,21 @@
+{
+  "backend": "codex-cli",
+  "condition": "default",
+  "model_requested": "gpt-6.1-sol",
+  "performance_claim_eligible": false,
+  "raw_transcript_local": ".venv/research-state/default-agent.jsonl",
+  "raw_transcript_sha256": "233b96d0ea3774afb167c9281b2d129ecdde649608ed1dfab7deaa09654a8d6e",
+  "reason": "All command attempts were rejected by the execution policy before task files could be read or modified; not a coding-agent failure.",
+  "reasoning_effort_requested": "high",
+  "source_commit": "4bd209752567f5c35074d4ee4a73600e1c45c283",
+  "status": "harness_error",
+  "task_id": "artifact-validator-robustness",
+  "trial_kind": "harness_probe",
+  "usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 71680,
+    "input_tokens": 76701,
+    "output_tokens": 558,
+    "reasoning_output_tokens": 135
+  }
+}

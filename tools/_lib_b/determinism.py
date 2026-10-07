@@ -21,7 +21,7 @@ from __future__ import annotations
 import os
 import re
 import subprocess
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -29,9 +29,7 @@ _SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 
 
 def _iso_z(epoch_seconds: int) -> str:
-    return (
-        datetime.fromtimestamp(epoch_seconds, tz=timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
-    )
+    return datetime.fromtimestamp(epoch_seconds, tz=UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
 def source_date_epoch() -> int | None:

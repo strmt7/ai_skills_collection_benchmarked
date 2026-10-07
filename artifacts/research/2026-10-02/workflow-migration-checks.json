@@ -1,0 +1,176 @@
+{
+  "checks": [
+    {
+      "workflow": ".github/workflows/codeql.yml",
+      "action": "actions/checkout",
+      "before": "v6.0.2",
+      "after": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "stable_release": "v7.0.1",
+      "inputs_supported": true,
+      "runtime": "node24"
+    },
+    {
+      "workflow": ".github/workflows/codeql.yml",
+      "action": "github/codeql-action/init",
+      "before": "2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2",
+      "after": "2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2",
+      "stable_release": "v4.38.2",
+      "inputs_supported": true,
+      "runtime": "node24"
+    },
+    {
+      "workflow": ".github/workflows/codeql.yml",
+      "action": "github/codeql-action/analyze",
+      "before": "2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2",
+      "after": "2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2",
+      "stable_release": "v4.38.2",
+      "inputs_supported": true,
+      "runtime": "node24"
+    },
+    {
+      "workflow": ".github/workflows/mypy.yml",
+      "action": "actions/checkout",
+      "before": "v6.0.2",
+      "after": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "stable_release": "v7.0.1",
+      "inputs_supported": true,
+      "runtime": "node24"
+    },
+    {
+      "workflow": ".github/workflows/mypy.yml",
+      "action": "actions/setup-python",
+      "before": "v6.2.0",
+      "after": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+      "stable_release": "v7.0.0",
+      "inputs_supported": true,
+      "runtime": "node24"
+    },
+    {
+      "workflow": ".github/workflows/offline-validation.yml",
+      "action": "actions/checkout",
+      "before": "v6.0.2",
+      "after": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "stable_release": "v7.0.1",
+      "inputs_supported": true,
+      "runtime": "node24"
+    },
+    {
+      "workflow": ".github/workflows/offline-validation.yml",
+      "action": "actions/setup-python",
+      "before": "v6.2.0",
+      "after": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+      "stable_release": "v7.0.0",
+      "inputs_supported": true,
+      "runtime": "node24"
+    },
+    {
+      "workflow": ".github/workflows/offline-validation.yml",
+      "action": "actions/upload-artifact",
+      "before": "v7.0.1",
+      "after": "043fb46d1a93c77aae656e7c1c64a875d1fc6a0a",
+      "stable_release": "v7.0.1",
+      "inputs_supported": true,
+      "runtime": "node24"
+    },
+    {
+      "workflow": ".github/workflows/pip-audit.yml",
+      "action": "actions/checkout",
+      "before": "v6.0.2",
+      "after": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "stable_release": "v7.0.1",
+      "inputs_supported": true,
+      "runtime": "node24"
+    },
+    {
+      "workflow": ".github/workflows/pip-audit.yml",
+      "action": "actions/setup-python",
+      "before": "v6.2.0",
+      "after": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+      "stable_release": "v7.0.0",
+      "inputs_supported": true,
+      "runtime": "node24"
+    },
+    {
+      "workflow": ".github/workflows/pip-audit.yml",
+      "action": "actions/checkout",
+      "before": "v6.0.2",
+      "after": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "stable_release": "v7.0.1",
+      "inputs_supported": true,
+      "runtime": "node24"
+    },
+    {
+      "workflow": ".github/workflows/pip-audit.yml",
+      "action": "actions/setup-python",
+      "before": "v6.2.0",
+      "after": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+      "stable_release": "v7.0.0",
+      "inputs_supported": true,
+      "runtime": "node24"
+    },
+    {
+      "workflow": ".github/workflows/release.yml",
+      "action": "actions/checkout",
+      "before": "v6.0.2",
+      "after": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "stable_release": "v7.0.1",
+      "inputs_supported": true,
+      "runtime": "node24"
+    },
+    {
+      "workflow": ".github/workflows/release.yml",
+      "action": "actions/setup-python",
+      "before": "v6.2.0",
+      "after": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+      "stable_release": "v7.0.0",
+      "inputs_supported": true,
+      "runtime": "node24"
+    },
+    {
+      "workflow": ".github/workflows/release.yml",
+      "action": "softprops/action-gh-release",
+      "before": "3d0d9888cb7fd7b750713d6e236d1fcb99157228",
+      "after": "efb35369e0ad2afab669f228072c1b0d510eae64",
+      "stable_release": "v3.0.3",
+      "inputs_supported": true,
+      "runtime": "node24"
+    },
+    {
+      "workflow": ".github/workflows/ruff.yml",
+      "action": "actions/checkout",
+      "before": "v6.0.2",
+      "after": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "stable_release": "v7.0.1",
+      "inputs_supported": true,
+      "runtime": "node24"
+    },
+    {
+      "workflow": ".github/workflows/ruff.yml",
+      "action": "actions/setup-python",
+      "before": "v6.2.0",
+      "after": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+      "stable_release": "v7.0.0",
+      "inputs_supported": true,
+      "runtime": "node24"
+    },
+    {
+      "workflow": ".github/workflows/secret-scan.yml",
+      "action": "actions/checkout",
+      "before": "v6.0.2",
+      "after": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "stable_release": "v7.0.1",
+      "inputs_supported": true,
+      "runtime": "node24"
+    },
+    {
+      "workflow": ".github/workflows/secret-scan.yml",
+      "action": "actions/setup-python",
+      "before": "v6.2.0",
+      "after": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+      "stable_release": "v7.0.0",
+      "inputs_supported": true,
+      "runtime": "node24"
+    }
+  ],
+  "limitations": "Action manifests accept current workflow inputs and require Node 24. Successful hosted-runner CI remains pending."
+}

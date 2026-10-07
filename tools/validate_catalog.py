@@ -36,6 +36,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 
 import build_catalog  # noqa: E402
+from _lib_b import dependency_graphs  # noqa: E402
 
 MIN_CATALOG = 200
 MIN_SCENARIOS = 3
@@ -476,6 +477,21 @@ def _validate_entry(
     report.require(
         locked["skill"]["skill_dir_sha256"] == entry["skill_dir_sha256"], f"{entry['id']} source lock dir hash mismatch"
     )
+    policy = entry.get("credential_policy_version", 1)
+    valid_policy = type(policy) is int and policy in (1, 2, 3)
+    report.require(valid_policy, f"{entry['id']} unknown credential neutralization policy")
+    for label, record in (("source lock", locked["skill"]), ("manifest", manifest_entry)):
+        report.require(
+            record.get("credential_policy_version", 1) == policy,
+            f"{entry['id']} {label} credential neutralization policy mismatch",
+        )
+        report.require(
+            record.get("file_modes") == entry.get("file_modes"), f"{entry['id']} {label} file modes mismatch"
+        )
+        report.require(
+            record.get("dependency_graph") == entry.get("dependency_graph"),
+            f"{entry['id']} {label} dependency graph mismatch",
+        )
     mirror_path = ROOT / entry["mirrored_path"]
     report.require(mirror_path.is_dir(), f"{entry['id']} missing mirrored directory")
     report.require((mirror_path / "SKILL.md").is_file(), f"{entry['id']} mirrored directory missing SKILL.md")
@@ -484,14 +500,22 @@ def _validate_entry(
         f"{entry['id']} mirrored directory contains nested SKILL.md files",
     )
     if mirror_path.is_dir() and (mirror_path / "SKILL.md").is_file():
+        try:
+            dependency_graphs.validate_mirror(entry, mirror_path, root=ROOT)
+        except (OSError, ValueError, KeyError, TypeError) as exc:
+            report.fail(f"{entry['id']} dependency graph validation failed: {exc}")
         report.require(
-            build_catalog.sha256_file(mirror_path / "SKILL.md") == entry["skill_file_sha256"],
+            build_catalog.sha256_file(mirror_path / "SKILL.md", credential_policy=policy if valid_policy else 1)
+            == entry["skill_file_sha256"],
             f"{entry['id']} mirrored SKILL.md hash mismatch",
         )
-        report.require(
-            build_catalog.sha256_tree(mirror_path) == entry["skill_dir_sha256"],
-            f"{entry['id']} mirrored directory hash mismatch",
-        )
+        try:
+            tree_hash = build_catalog.sha256_tree(
+                mirror_path, file_modes=entry.get("file_modes"), credential_policy=policy if valid_policy else 1
+            )
+            report.require(tree_hash == entry["skill_dir_sha256"], f"{entry['id']} mirrored directory hash mismatch")
+        except (OSError, ValueError) as exc:
+            report.require(False, f"{entry['id']} mirrored resource/mode validation failed: {exc}")
     if entry["scenario_covered_candidate"]:
         scenario_ids = assignments.get(entry["id"], [])
         report.require(scenario_ids == entry["benchmark_scenarios"], f"{entry['id']} assignment does not match catalog")

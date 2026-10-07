@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "evidence_class": "shell-exit-status-controls",
+  "passed": true,
+  "execution": {
+    "status": "completed",
+    "container_name": "skills-invoke-bc4c8f659f634f4dbbea0ee6758f9325",
+    "image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+    "scored": false,
+    "candidate_response_is_untrusted": true,
+    "cleanup_verified": true,
+    "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+    "resource_profile": "python-small",
+    "submission_sha256": {
+      "candidate.py": "41651f6f57fc2750fc5152ee71ccd4da3ca50d7d103179c053f6431410767abb"
+    },
+    "container_id": "107af47238367468d7bd40e4e23ee142be8c1e144a994a0d8e4b8ac1fd7b6bf8",
+    "isolation_checks": {
+      "errors": [],
+      "passed": true,
+      "observed_user": "65534:65534",
+      "observed_image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+      "observed_ownership_token": "bc4c8f659f634f4dbbea0ee6758f9325",
+      "resolved_image_id": "sha256:284cda8648f59f87e9468ec9d5652064dc2cd5b7d3fce342c2d3825ca1de6353",
+      "observed_host_constraints": {
+        "NetworkMode": "none",
+        "IpcMode": "none",
+        "ReadonlyRootfs": true,
+        "Memory": 536870912,
+        "MemorySwap": 536870912,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64,
+        "Privileged": false,
+        "Init": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "CapAdd": null,
+        "SecurityOpt": [
+          "no-new-privileges"
+        ],
+        "LogConfig": {
+          "Type": "none",
+          "Config": {}
+        },
+        "Tmpfs": {
+          "/tmp": "rw,noexec,nosuid,size=128m"
+        },
+        "Devices": [],
+        "DeviceRequests": null,
+        "VolumesFrom": null
+      },
+      "observed_mounts": [
+        {
+          "Destination": "/submission",
+          "Type": "bind",
+          "RW": false
+        },
+        {
+          "Destination": "/worker",
+          "Type": "bind",
+          "RW": false
+        }
+      ]
+    },
+    "setup_elapsed_seconds": 0.3592228000002251,
+    "runtime_elapsed_seconds": 0.7502246999997624,
+    "returncode": 0,
+    "candidate_response": {
+      "worker_status": "returned",
+      "result": {
+        "failed_command_piped_to_tail": {
+          "returncode": 0,
+          "stdout": ""
+        },
+        "failed_command_without_pipeline": {
+          "returncode": 7,
+          "stdout": ""
+        },
+        "successful_command": {
+          "returncode": 0,
+          "stdout": ""
+        },
+        "misleading_success_text": {
+          "returncode": 9,
+          "stdout": "SUCCESS"
+        }
+      }
+    },
+    "captured_bytes": 297,
+    "stderr": "",
+    "elapsed_seconds": 1.3245202000002791
+  },
+  "reproducer_sha256": "18a4c39e67848babc90341c6d38f76229aeca109fe3fe155ba638789312e8f44",
+  "scope": "Actual POSIX default-pipeline behavior and known command outcomes; no Windows pipeline equivalence, agent score or performance claim. Command status must be preserved independently of displayed tail/grep text."
+}

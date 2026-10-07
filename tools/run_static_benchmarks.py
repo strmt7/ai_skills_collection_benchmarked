@@ -123,7 +123,7 @@ def _check_entry(
         "skill_file_hash_matches": skill_file.is_file()
         and build_catalog.sha256_file(skill_file) == entry["skill_file_sha256"],
         "skill_directory_hash_matches": mirror.is_dir()
-        and build_catalog.sha256_tree(mirror) == entry["skill_dir_sha256"],
+        and build_catalog.sha256_tree(mirror, file_modes=entry.get("file_modes")) == entry["skill_dir_sha256"],
         "agent_ready_skill_exists": agent_ready.is_file(),
         "agent_ready_frontmatter_present": agent_ready_text.startswith("---\n"),
         "agent_ready_markdown_concise": len(agent_ready_text.splitlines()) <= 120,

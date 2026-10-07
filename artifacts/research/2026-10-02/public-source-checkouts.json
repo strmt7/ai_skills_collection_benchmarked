@@ -1,0 +1,251 @@
+{
+  "note": "Verified checkout identity and license-file inventory do not establish review or redistribution permission.",
+  "report_version": 1,
+  "snapshot_sha256": "fe32b95e33c8f3feeda7603c8a54e0c47669fb2b42b584ebe36edd3fc0676f73",
+  "sources": [
+    {
+      "commit": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+      "license_paths": [
+        "LICENSE",
+        "pi/core/LICENSE",
+        "skills/taste-application/scripts/LICENSE"
+      ],
+      "repo": "affaan-m/everything-claude-code",
+      "skill_entrypoint_count": 1027,
+      "status": "verified"
+    },
+    {
+      "commit": "1489c33ad8829a11219e423327d6b59f8339cee4",
+      "license_paths": [],
+      "repo": "ahmedasmar/devops-claude-skills",
+      "skill_entrypoint_count": 6,
+      "status": "verified"
+    },
+    {
+      "commit": "8054906f52c2b499d39ea108f55d2ab5a171e25e",
+      "license_paths": [],
+      "repo": "aizzaku/create-infographics",
+      "skill_entrypoint_count": 1,
+      "status": "verified"
+    },
+    {
+      "commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+      "license_paths": [
+        "LICENSE",
+        "devops-skills-plugin/skills/ansible-validator/test/roles/geerlingguy.mysql/LICENSE"
+      ],
+      "repo": "akin-ozer/cc-devops-skills",
+      "skill_entrypoint_count": 31,
+      "status": "verified"
+    },
+    {
+      "commit": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
+      "license_paths": [
+        "skills/academy-guide/LICENSE.txt",
+        "skills/algorithmic-art/LICENSE.txt",
+        "skills/brand-guidelines/LICENSE.txt",
+        "skills/canvas-design/LICENSE.txt",
+        "skills/claude-api/LICENSE.txt",
+        "skills/discernment-nudge/LICENSE.txt",
+        "skills/docx/LICENSE.txt",
+        "skills/frontend-design/LICENSE.txt",
+        "skills/internal-comms/LICENSE.txt",
+        "skills/mcp-builder/LICENSE.txt",
+        "skills/pdf/LICENSE.txt",
+        "skills/pptx/LICENSE.txt",
+        "skills/skill-creator/LICENSE.txt",
+        "skills/slack-gif-creator/LICENSE.txt",
+        "skills/theme-factory/LICENSE.txt",
+        "skills/web-artifacts-builder/LICENSE.txt",
+        "skills/webapp-testing/LICENSE.txt",
+        "skills/xlsx/LICENSE.txt"
+      ],
+      "repo": "anthropics/skills",
+      "skill_entrypoint_count": 20,
+      "status": "verified"
+    },
+    {
+      "commit": "501fb1c445397bb1427571faf6f4e152ae039a15",
+      "license_paths": [
+        "bria-ai-openclaw/LICENSE",
+        "bria-ai-openclaw/skills/automotive/LICENSE.txt",
+        "bria-ai-openclaw/skills/bria-ai/LICENSE.txt",
+        "bria-ai-openclaw/skills/remove-background/LICENSE.txt",
+        "bria-ai-openclaw/skills/video-remove-background/LICENSE.txt",
+        "skills/bria-ai/LICENSE.txt",
+        "skills/ecommerce/LICENSE.txt",
+        "skills/remove-background/LICENSE.txt",
+        "skills/video-remove-background/LICENSE.txt"
+      ],
+      "repo": "Bria-AI/bria-skill",
+      "skill_entrypoint_count": 14,
+      "status": "verified"
+    },
+    {
+      "commit": "11c057b03f92101642cadc9f840564574120d184",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "repo": "browser-act/skills",
+      "skill_entrypoint_count": 103,
+      "status": "verified"
+    },
+    {
+      "commit": "83382c4b055fc4e5b055044adb5bfb7585484c9a",
+      "license_paths": [],
+      "repo": "composio-community/support-skills",
+      "skill_entrypoint_count": 40,
+      "status": "verified"
+    },
+    {
+      "commit": "7d9d03b290f076e51d0b574659cda2ca9347651e",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "repo": "designrique/ai-graphic-design-skill",
+      "skill_entrypoint_count": 1,
+      "status": "verified"
+    },
+    {
+      "commit": "c8f65f94fc3a1b99bafcfe334d3fae3347d94433",
+      "license_paths": [],
+      "repo": "fruteroclub/marketing-designer",
+      "skill_entrypoint_count": 1,
+      "status": "verified"
+    },
+    {
+      "commit": "1df535d5799c86193a5529b855afb5d6451c39e8",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "repo": "guinacio/claude-image-gen",
+      "skill_entrypoint_count": 2,
+      "status": "verified"
+    },
+    {
+      "commit": "8da1f030185bdfe8471220585162991eaeb970e9",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "repo": "hardikpandya/stop-slop",
+      "skill_entrypoint_count": 1,
+      "status": "verified"
+    },
+    {
+      "commit": "a50758ac29ec027e85966db33e2ae80031446756",
+      "license_paths": [
+        "LICENSE",
+        "skills/ppt-master/LICENSE",
+        "skills/ppt-master/scripts/pptx_shapes/data/LICENSE-APACHE-2.0.txt",
+        "skills/ppt-master/scripts/pptx_shapes/data/LICENSE-OPEN-XML-SDK-MIT.txt",
+        "skills/ppt-master/templates/icons/tabler-outline/license-off.svg",
+        "skills/ppt-master/templates/icons/tabler-outline/license.svg"
+      ],
+      "repo": "hugohe3/ppt-master",
+      "skill_entrypoint_count": 1,
+      "status": "verified"
+    },
+    {
+      "commit": "526ebce143bc326f44471554e33d66a19c840360",
+      "license_paths": [
+        "LICENSE.md",
+        "skills/pacsomatic/LICENSE",
+        "tests/flowkit/fixtures/LICENSE",
+        "tests/qiime2-amplicon/fixtures/LICENSE"
+      ],
+      "repo": "K-Dense-AI/scientific-agent-skills",
+      "skill_entrypoint_count": 177,
+      "status": "verified"
+    },
+    {
+      "commit": "289abdea7df857dc7a6ece937dbe0c5ecc964ccd",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "repo": "lackeyjb/playwright-skill",
+      "skill_entrypoint_count": 1,
+      "status": "verified"
+    },
+    {
+      "commit": "84d8eaa8ae95930f55cdceb3e27196c795dab038",
+      "license_paths": [
+        ".github/plugins/azure-cost/LICENSE",
+        ".github/plugins/azure-kusto-graph-skills/LICENSE",
+        ".github/plugins/azure-local-skills/LICENSE",
+        ".github/plugins/azure-skills/LICENSE",
+        ".github/plugins/azure-skills/skills/appinsights-instrumentation/LICENSE.txt",
+        ".github/plugins/foundry-iq-skills/LICENSE",
+        "LICENSE"
+      ],
+      "repo": "microsoft/skills",
+      "skill_entrypoint_count": 205,
+      "status": "verified"
+    },
+    {
+      "commit": "a38d04c3d5c298c851dbe5e6ee1965ee3de42cb5",
+      "license_paths": [
+        ".claude/skills/ui-styling/LICENSE.txt",
+        "LICENSE",
+        "cli/assets/skills/ui-styling/LICENSE.txt"
+      ],
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "skill_entrypoint_count": 13,
+      "status": "verified"
+    },
+    {
+      "commit": "9bf0a9c3396c181dca45ee969de72bfa57602d4c",
+      "license_paths": [],
+      "repo": "Raven7979/ai-video-editing-skill",
+      "skill_entrypoint_count": 1,
+      "status": "verified"
+    },
+    {
+      "commit": "10d5e16780b446c5ce58968bcde528766699cdf2",
+      "license_paths": [],
+      "repo": "supermemoryai/skills",
+      "skill_entrypoint_count": 4,
+      "status": "verified"
+    },
+    {
+      "commit": "82fe8226252622fa807643bdca1710901198553a",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "repo": "trailofbits/skills",
+      "skill_entrypoint_count": 85,
+      "status": "verified"
+    },
+    {
+      "commit": "61e6b7984de7f415a8df59c97522265cac6d3b1b",
+      "license_paths": [],
+      "repo": "twwch/comfyui-workflow-skill",
+      "skill_entrypoint_count": 1,
+      "status": "verified"
+    },
+    {
+      "commit": "62e437ab13408171805a87d16f5cb0151f96ea3c",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "repo": "Varnan-Tech/opendirectory",
+      "skill_entrypoint_count": 64,
+      "status": "verified"
+    },
+    {
+      "commit": "3896eddbc527fd5031c7ebb9f787748f1c070d28",
+      "license_paths": [
+        "LICENSE"
+      ],
+      "repo": "yuvalsuede/agent-media-skill",
+      "skill_entrypoint_count": 1,
+      "status": "verified"
+    },
+    {
+      "commit": "9d2727cab3ab9e50d20f4ba4ae57aa57755edecd",
+      "license_paths": [],
+      "repo": "ztj7728/gemini-image-generation",
+      "skill_entrypoint_count": 1,
+      "status": "verified"
+    }
+  ]
+}

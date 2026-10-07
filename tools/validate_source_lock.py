@@ -33,6 +33,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 
 import build_catalog  # noqa: E402  (sys.path must be extended first)
+from _lib_b import dependency_graphs  # noqa: E402
 
 DEFAULT_LOCK = ROOT / "data" / "source_lock.json"
 ENV_SOURCE_ROOT = "AI_SKILL_SOURCE_ROOT"
@@ -111,6 +112,10 @@ def validate_sources_structure(lock: dict[str, Any], report: Report) -> None:
         if source.get("skill_count") != len(source.get("skills", [])):
             report.fail(f"{source.get('repo')}: skill_count != len(skills)")
         for skill in source.get("skills", []):
+            try:
+                build_catalog.validate_credential_policy(skill.get("credential_policy_version", 1))
+            except ValueError as exc:
+                report.fail(f"{skill.get('id', '?')}: {exc}")
             for field_name in required_skill_fields:
                 if field_name not in skill:
                     report.fail(f"{skill.get('id', '?')}: missing field {field_name!r}")
@@ -143,12 +148,23 @@ def validate_mirrors(lock: dict[str, Any], report: Report) -> None:
             if not skill_md.is_file():
                 report.fail(f"{sid}: mirror SKILL.md missing at {skill_md}")
                 continue
-            actual_file = build_catalog.sha256_file(skill_md)
+            policy = skill.get("credential_policy_version", 1)
+            if catalog[sid].get("credential_policy_version", 1) != policy:
+                report.fail(f"{sid}: catalog and source lock credential policies differ")
+            actual_file = build_catalog.sha256_file(skill_md, credential_policy=policy)
             if actual_file != skill["skill_file_sha256"]:
                 report.fail(
                     f"{sid}: mirror SKILL.md hash mismatch (expected {skill['skill_file_sha256']}, got {actual_file})"
                 )
-            actual_tree = build_catalog.sha256_tree(mirror)
+            if skill.get("file_modes") != catalog[sid].get("file_modes"):
+                report.fail(f"{sid}: catalog and source lock file modes differ")
+            try:
+                actual_tree = build_catalog.sha256_tree(
+                    mirror, file_modes=skill.get("file_modes"), credential_policy=policy
+                )
+            except (OSError, ValueError) as exc:
+                report.fail(f"{sid}: mirrored resource/mode validation failed: {exc}")
+                continue
             if actual_tree != skill["skill_dir_sha256"]:
                 report.fail(
                     f"{sid}: mirror directory hash mismatch (expected {skill['skill_dir_sha256']}, got {actual_tree})"
@@ -201,10 +217,26 @@ def validate_live_checkouts(
             if not skill_file.is_file():
                 report.fail(f"{skill['id']}: missing SKILL.md at source path {skill['source_path']}")
                 continue
-            if build_catalog.sha256_file(skill_file) != skill["skill_file_sha256"]:
+            policy = skill.get("credential_policy_version", 1)
+            if build_catalog.sha256_file(skill_file, credential_policy=policy) != skill["skill_file_sha256"]:
                 report.fail(f"{skill['id']}: upstream SKILL.md hash mismatch")
-            if build_catalog.sha256_tree(skill_dir) != skill["skill_dir_sha256"]:
-                report.fail(f"{skill['id']}: upstream directory hash mismatch")
+            try:
+                if (
+                    build_catalog.sha256_tree(
+                        skill_dir,
+                        file_modes=skill.get("file_modes"),
+                        credential_policy=policy,
+                        replacements=dependency_graphs.for_entry(
+                            {**skill, "source_repo": source["repo"], "commit_sha": source["commit_sha"]},
+                            skill_dir,
+                            root=ROOT,
+                        ),
+                    )
+                    != skill["skill_dir_sha256"]
+                ):
+                    report.fail(f"{skill['id']}: upstream directory hash mismatch")
+            except (OSError, ValueError) as exc:
+                report.fail(f"{skill['id']}: upstream resource/mode validation failed: {exc}")
             report.checked_source_skills += 1
 
 

@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "evidence_class": "primary-release-metadata-not-runtime-readiness",
+  "atheris": {
+    "endpoint": "https://pypi.org/pypi/atheris/json",
+    "version": "3.1.0",
+    "wheel": {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "608de4afdf4ef4ffb47d91e864d6e244befdace1d0a48faf70bfffbd92640734"
+      },
+      "digests": {
+        "blake2b_256": "c3ffae7a5bfe99033e510bea4ed09934e636d93777317a48147369bc0dc2b71f",
+        "md5": "4ff323671bcfc4fae73fce3d5f5ef0a7",
+        "sha256": "315a0b5c819852b1ffe1ca72efc389c7724881f2c33e4aacb8c6bcec49bd5011"
+      },
+      "downloads": -1,
+      "filename": "atheris-3.1.0-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "has_sig": false,
+      "md5_digest": "4ff323671bcfc4fae73fce3d5f5ef0a7",
+      "packagetype": "bdist_wheel",
+      "python_version": "cp314",
+      "requires_python": null,
+      "size": 36772569,
+      "upload_time": "2026-06-17T00:04:07",
+      "upload_time_iso_8601": "2026-06-17T00:04:07.702206Z",
+      "url": "https://files.pythonhosted.org/packages/c3/ff/ae7a5bfe99033e510bea4ed09934e636d93777317a48147369bc0dc2b71f/atheris-3.1.0-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    "available_release_filenames": [
+      "atheris-3.1.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "atheris-3.1.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "atheris-3.1.0-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl"
+    ]
+  },
+  "ruzzy": {
+    "endpoint": "https://rubygems.org/api/v1/gems/ruzzy.json",
+    "metadata": {
+      "name": "ruzzy",
+      "downloads": 6368,
+      "version": "0.8.0",
+      "version_created_at": "2026-04-27T12:26:37.529Z",
+      "version_downloads": 3491,
+      "platform": "ruby",
+      "ruby_abi": null,
+      "authors": "Trail of Bits",
+      "info": "A coverage-guided fuzzer for pure Ruby code and Ruby C extensions",
+      "licenses": [
+        "AGPL-3.0-only"
+      ],
+      "metadata": {},
+      "yanked": false,
+      "sha": "29b9fc2e5e4bfdc349cdc5eb9bc7446b905eaadcea46501177a84fa68d872201",
+      "spec_sha": "7ba5d27f6b35bb404f3362d941d25534f6f9ac70be117cd8bddcdc82aa576d7b",
+      "project_uri": "https://rubygems.org/gems/ruzzy",
+      "gem_uri": "https://rubygems.org/gems/ruzzy-0.8.0.gem",
+      "homepage_uri": "https://rubygems.org/gems/ruzzy",
+      "wiki_uri": null,
+      "documentation_uri": "https://www.rubydoc.info/gems/ruzzy/0.8.0",
+      "mailing_list_uri": null,
+      "source_code_uri": null,
+      "bug_tracker_uri": null,
+      "changelog_uri": null,
+      "funding_uri": null,
+      "dependencies": {
+        "development": [
+          {
+            "name": "rake",
+            "requirements": "~> 13.0"
+          },
+          {
+            "name": "rake-compiler",
+            "requirements": "~> 1.2"
+          },
+          {
+            "name": "rake-release",
+            "requirements": "~> 1.3"
+          },
+          {
+            "name": "rubocop",
+            "requirements": "~> 1.60"
+          }
+        ],
+        "runtime": []
+      }
+    }
+  },
+  "upstream_heads": {
+    "google/atheris": "e36da74cf42b5834c4e31d7cabb58d796695d29f",
+    "trailofbits/ruzzy": "44bf09245e2612c8a97fee1be5573f8b2244784e"
+  },
+  "llvm_latest_stable": {
+    "tag": "llvmorg-23.1.2",
+    "published_at": "2026-09-22T06:49:10Z",
+    "prerelease": false
+  },
+  "agent_efficacy_scored": false,
+  "observation_window_utc_start": "2026-10-02T19:10:54Z"
+}

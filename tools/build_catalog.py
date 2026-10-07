@@ -14,9 +14,18 @@ import json
 import os
 import re
 import shutil
+import stat
 import subprocess
+import tempfile
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
+
+import _catalog_publication as publication
+import update_readme_badges
+from _lib_b import credential_neutralizations, dependency_graphs
+from _lib_b.credential_patterns import V2_NEUTRALIZATIONS
+from _lib_b.determinism import existing_field, git_latest_commit_epoch_for, resolve_timestamp
 
 try:
     import yaml
@@ -27,6 +36,7 @@ except Exception:  # pragma: no cover
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_ROOT = Path(os.environ.get("AI_SKILL_SOURCE_ROOT", "/tmp/ai_skill_sources"))
 BUILD_DATE = "2026-04-17"
+CREDENTIAL_POLICY_VERSION = 1
 MIN_SCENARIOS = 3
 GENERIC_WORKFLOW_REQUIRED = ["inputs", "steps", "outputs", "metrics", "citations_or_paths"]
 SOURCE_PROOF_REQUIRED = [
@@ -56,22 +66,6 @@ SECRET_PLACEHOLDERS = [
     (re.compile(r"\bxox[baprs]-[A-Za-z0-9_.-]+"), "<SLACK_TOKEN>"),
     (re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH |DSA |)?PRIVATE KEY-----"), "<PRIVATE_KEY_HEADER>"),
 ]
-
-PACKAGE_LOCK_SECURITY_OVERRIDES = {
-    "node_modules/brace-expansion": {
-        "version": "2.1.0",
-        "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-2.1.0.tgz",
-        "integrity": "sha512-TN1kCZAgdgweJhWWpgKYrQaMNHcDULHkWwQIspdtjV4Y5aurRdZpjAqn6yX3FPqTA9ngHCc4hJxMAMgGfve85w==",
-        "remove_keys": ["license"],
-    },
-    "node_modules/protobufjs": {
-        "version": "7.5.5",
-        "resolved": "https://registry.npmjs.org/protobufjs/-/protobufjs-7.5.5.tgz",
-        "integrity": "sha512-3wY1AxV+VBNW8Yypfd1yQY9pXnqTAN+KwQxL8iYm3/BjKYMNg4i0owhEe26PWDOMaIrzeeF98Lqd5NGz4omiIg==",
-        "remove_keys": ["license"],
-    },
-}
-
 
 SOURCES: list[dict[str, Any]] = [
     {
@@ -810,9 +804,18 @@ def install_name(
     return base_install_name(skill_name or Path(source_path).parent.name, source_path)
 
 
-def sanitize_secret_like_text(text: str) -> str:
+def validate_credential_policy(credential_policy: int) -> None:
+    if type(credential_policy) is not int or credential_policy not in {1, 2, 3}:
+        raise ValueError("unknown credential neutralization policy")
+
+
+def sanitize_secret_like_text(text: str, *, credential_policy: int = 1) -> str:
+    validate_credential_policy(credential_policy)
     for pattern, placeholder in SECRET_PLACEHOLDERS:
         text = pattern.sub(placeholder, text)
+    if credential_policy >= 2:
+        for pattern, placeholder in V2_NEUTRALIZATIONS:
+            text = pattern.sub(placeholder, text)
     return text
 
 
@@ -822,37 +825,8 @@ def normalize_text_file(text: str) -> str:
     return "\n".join(lines).rstrip("\n") + "\n"
 
 
-def patch_package_lock_text(path: Path, text: str) -> str:
-    if path.name != "package-lock.json":
-        return text
-    try:
-        data = json.loads(text)
-    except json.JSONDecodeError:
-        return text
-    packages = data.get("packages")
-    if not isinstance(packages, dict):
-        return text
-
-    changed = False
-    for package_path, override in PACKAGE_LOCK_SECURITY_OVERRIDES.items():
-        package_data = packages.get(package_path)
-        if not isinstance(package_data, dict):
-            continue
-        for key in ("version", "resolved", "integrity"):
-            if package_data.get(key) != override[key]:
-                package_data[key] = override[key]
-                changed = True
-        for key in override.get("remove_keys", []):
-            if key in package_data:
-                del package_data[key]
-                changed = True
-
-    if not changed:
-        return text
-    return json.dumps(data, indent=2) + "\n"
-
-
-def sanitized_file_bytes(path: Path) -> bytes:
+def sanitized_file_bytes(path: Path, *, credential_policy: int = 1) -> bytes:
+    validate_credential_policy(credential_policy)
     data = path.read_bytes()
     if b"\0" in data:
         return data
@@ -860,13 +834,18 @@ def sanitized_file_bytes(path: Path) -> bytes:
         text = data.decode("utf-8")
     except UnicodeDecodeError:
         return data
-    text = patch_package_lock_text(path, text)
-    return normalize_text_file(sanitize_secret_like_text(text)).encode("utf-8")
+    # Dependency remediation must replace a qualified complete graph in an
+    # explicit repair/source refresh. Never synthesize package resolutions while
+    # hashing or copying: doing so can downgrade versions and conceal real bytes.
+    text = normalize_text_file(sanitize_secret_like_text(text, credential_policy=credential_policy))
+    if credential_policy == 3:
+        text = credential_neutralizations.neutralize(text)
+    return text.encode("utf-8")
 
 
-def sha256_file(path: Path) -> str:
+def sha256_file(path: Path, *, credential_policy: int = 1) -> str:
     digest = hashlib.sha256()
-    digest.update(sanitized_file_bytes(path))
+    digest.update(sanitized_file_bytes(path, credential_policy=credential_policy))
     return digest.hexdigest()
 
 
@@ -888,24 +867,61 @@ def _portable_mode(st_mode: int) -> int:
     return 0o100755 if executable else 0o100644
 
 
-def sha256_tree(path: Path) -> str:
-    digest = hashlib.sha256()
+@lru_cache(maxsize=8)
+def _indexed_modes(root: Path, index_stamp: tuple[int, int]) -> dict[Path, int]:
+    """Git preserves executable bits that NTFS file stats cannot represent."""
+    output = subprocess.check_output(["git", "-C", str(root), "ls-files", "--stage", "-z"])
+    modes = {}
+    for record in output.split(b"\0"):
+        if not record:
+            continue
+        metadata, filename = record.split(b"\t", 1)
+        mode, _, stage = metadata.split()
+        if stage != b"0":
+            raise ValueError(f"cannot hash an unmerged Git index in {root}")
+        if mode in {b"100644", b"100755"}:
+            modes[root / os.fsdecode(filename)] = int(mode, 8)
+    return modes
+
+
+def _git_modes(path: Path) -> dict[Path, int]:
+    root = path.resolve()
+    while root != root.parent and not (root / ".git").exists():
+        root = root.parent
+    git_path = root / ".git"
+    if not git_path.exists():
+        return {}
+    if git_path.is_file():
+        location = git_path.read_text(encoding="utf-8").strip()
+        if not location.startswith("gitdir: "):
+            raise ValueError(f"invalid Git directory pointer in {root}")
+        git_path = (root / location.removeprefix("gitdir: ")).resolve()
+    index = git_path / "index"
+    if not index.is_file():
+        return {}
+    info = index.stat()
+    return _indexed_modes(root, (info.st_mtime_ns, info.st_size))
+
+
+def skill_tree_files(path: Path) -> list[Path]:
+    """Enumerate the same resource boundary for hashing and copying; fail on I/O errors."""
     ignored_parts = {".git", "__pycache__"}
     files: list[Path] = []
     root_stat = path.resolve().stat()
     seen_dirs = {(root_stat.st_dev, root_stat.st_ino)}
-    for current, dirs, names in os.walk(path, followlinks=True):
+
+    def raise_walk_error(error: OSError) -> None:
+        raise error
+
+    for current, dirs, names in os.walk(path, followlinks=True, onerror=raise_walk_error):
         current_path = Path(current)
         kept_dirs: list[str] = []
         for dirname in dirs:
             child = current_path / dirname
             if dirname in ignored_parts or (child != path and (child / "SKILL.md").is_file()):
                 continue
-            try:
-                stat = child.resolve().stat()
-            except OSError:
-                continue
-            key = (stat.st_dev, stat.st_ino)
+            child_stat = child.resolve().stat()
+            key = (child_stat.st_dev, child_stat.st_ino)
             if key in seen_dirs:
                 continue
             seen_dirs.add(key)
@@ -913,15 +929,64 @@ def sha256_tree(path: Path) -> str:
         dirs[:] = kept_dirs
         for name in names:
             item = current_path / name
-            if ignored_parts.intersection(item.parts) or not item.is_file() or is_under_nested_skill(path, item):
+            if ignored_parts.intersection(item.parts) or is_under_nested_skill(path, item):
                 continue
+            if not stat.S_ISREG(item.stat().st_mode):
+                raise ValueError(f"unsupported nonregular skill resource: {item.relative_to(path)}")
             files.append(item)
-    for item in sorted(files, key=lambda p: p.relative_to(path).as_posix()):
+    return sorted(files, key=lambda p: p.relative_to(path).as_posix())
+
+
+def skill_file_modes(path: Path) -> dict[str, str]:
+    """Persist source Git modes, including executable files copied onto NTFS."""
+    indexed_modes = _git_modes(path)
+    return {
+        item.relative_to(path).as_posix(): f"{indexed_modes.get(item.resolve(), _portable_mode(item.stat().st_mode)):o}"
+        for item in skill_tree_files(path)
+    }
+
+
+def checked_file_modes(path: Path, files: list[Path], file_modes: dict[str, str]) -> dict[str, int]:
+    observed = {item.relative_to(path).as_posix() for item in files}
+    if not isinstance(file_modes, dict) or set(file_modes) != observed:
+        raise ValueError("file mode manifest must cover exactly the enumerated skill resources")
+    if any(mode not in ("100644", "100755") for mode in file_modes.values()):
+        raise ValueError("file modes must be Git regular-file modes 100644 or 100755")
+    modes = {relative: int(mode, 8) for relative, mode in file_modes.items()}
+    if os.name != "nt":
+        for item in files:
+            relative = item.relative_to(path).as_posix()
+            if _portable_mode(item.stat().st_mode) != modes[relative]:
+                raise ValueError(f"filesystem executable mode differs from manifest: {relative}")
+    return modes
+
+
+def sha256_tree(
+    path: Path,
+    *,
+    file_modes: dict[str, str] | None = None,
+    credential_policy: int = 1,
+    replacements: dict[str, bytes] | None = None,
+) -> str:
+    validate_credential_policy(credential_policy)
+    digest = hashlib.sha256()
+    files = skill_tree_files(path)
+    if replacements and not set(replacements) <= {file.relative_to(path).as_posix() for file in files}:
+        raise ValueError("dependency replacements contain absent source resources")
+    declared_modes = checked_file_modes(path, files, file_modes) if file_modes is not None else None
+    indexed_modes = _git_modes(path) if os.name == "nt" and declared_modes is None else {}
+    for item in files:
         rel = item.relative_to(path).as_posix()
-        stat = item.stat()
-        data = sanitized_file_bytes(item)
+        file_stat = item.stat()
+        data = sanitized_file_bytes(item, credential_policy=credential_policy)
+        if replacements and rel in replacements:
+            data = replacements[rel]
         file_digest = hashlib.sha256(data).hexdigest()
-        mode = _portable_mode(stat.st_mode)
+        mode = (
+            declared_modes[rel]
+            if declared_modes is not None
+            else indexed_modes.get(item.resolve(), _portable_mode(file_stat.st_mode))
+        )
         digest.update(f"file\0{rel}\0{mode:o}\0{len(data)}\0".encode())
         digest.update(file_digest.encode())
         digest.update(b"\n")
@@ -943,42 +1008,30 @@ def ignore_non_root_skill_dirs(root: Path):
     return ignore
 
 
-def copy_sanitized_tree(src: Path, dst: Path) -> None:
-    ignored_parts = {".git", "__pycache__"}
+def copy_sanitized_tree(
+    src: Path,
+    dst: Path,
+    *,
+    file_modes: dict[str, str] | None = None,
+    credential_policy: int = 1,
+    replacements: dict[str, bytes] | None = None,
+) -> None:
+    validate_credential_policy(credential_policy)
+    files = skill_tree_files(src)
+    if replacements and not set(replacements) <= {file.relative_to(src).as_posix() for file in files}:
+        raise ValueError("dependency replacements contain absent source resources")
+    modes = checked_file_modes(src, files, file_modes) if file_modes is not None else None
     dst.mkdir(parents=True, exist_ok=True)
-    root_stat = src.resolve().stat()
-    seen_dirs = {(root_stat.st_dev, root_stat.st_ino)}
-    for current, dirs, names in os.walk(src, followlinks=True):
-        current_path = Path(current)
-        rel_dir = current_path.relative_to(src)
-        target_dir = dst / rel_dir
-        target_dir.mkdir(parents=True, exist_ok=True)
-        kept_dirs: list[str] = []
-        for dirname in dirs:
-            child = current_path / dirname
-            if dirname in ignored_parts or (child != src and (child / "SKILL.md").is_file()):
-                continue
-            try:
-                stat = child.resolve().stat()
-            except OSError:
-                continue
-            key = (stat.st_dev, stat.st_ino)
-            if key in seen_dirs:
-                continue
-            seen_dirs.add(key)
-            kept_dirs.append(dirname)
-        dirs[:] = kept_dirs
-        for name in names:
-            source_file = current_path / name
-            if (
-                ignored_parts.intersection(source_file.parts)
-                or not source_file.is_file()
-                or is_under_nested_skill(src, source_file)
-            ):
-                continue
-            target_file = target_dir / name
-            target_file.write_bytes(sanitized_file_bytes(source_file))
+    for source_file in files:
+        relative = source_file.relative_to(src).as_posix()
+        target_file = dst / relative
+        target_file.parent.mkdir(parents=True, exist_ok=True)
+        content = sanitized_file_bytes(source_file, credential_policy=credential_policy)
+        target_file.write_bytes(replacements[relative] if replacements and relative in replacements else content)
+        if modes is None:
             shutil.copymode(source_file, target_file, follow_symlinks=False)
+        else:
+            target_file.chmod(modes[relative] & 0o777)
 
 
 def parse_frontmatter(text: str) -> tuple[dict[str, Any], str]:
@@ -1112,6 +1165,8 @@ def collect() -> list[dict[str, Any]]:
                 f"missing source checkout for {source['repo']}: expected {repo_dir}. "
                 "Clone the source repo there or rerun with --source-root /path/to/checkouts."
             )
+        if run_git(repo_dir, "status", "--porcelain=v1", "--untracked-files=all"):
+            raise ValueError(f"source checkout contains uncommitted changes: {source['repo']}")
         commit = run_git(repo_dir, "rev-parse", "HEAD")
         if source.get("tag"):
             tag_commit = run_git(repo_dir, "rev-parse", f"{source['tag']}^{{commit}}")
@@ -1133,6 +1188,8 @@ def collect() -> list[dict[str, Any]]:
             if source.get("max_path_parts") and len(rel.split("/")) > source["max_path_parts"]:
                 continue
             text = skill_file.read_text(encoding="utf-8", errors="replace")
+            if CREDENTIAL_POLICY_VERSION >= 2:
+                text = sanitize_secret_like_text(text, credential_policy=2)
             skill_dir = skill_file.parent
             meta, body = parse_frontmatter(text)
             name = str(meta.get("name") or skill_file.parent.name)
@@ -1142,6 +1199,9 @@ def collect() -> list[dict[str, Any]]:
             resource_flags = flags(skill_file)
             has_required_frontmatter = all(key in meta for key in ("name", "description"))
             entry_install_name = install_name(source["repo"], rel, name)
+            file_modes = skill_file_modes(skill_dir)
+            graph = dependency_graphs.graph_for(source["repo"], commit, rel, root=ROOT)
+            graph_files = dependency_graphs.replacements(skill_dir, graph, root=ROOT) if graph else {}
             item = {
                 "id": slug(f"{source['repo']} {rel}"),
                 "name": name,
@@ -1163,8 +1223,14 @@ def collect() -> list[dict[str, Any]]:
                 "latest_release_tag": source.get("tag"),
                 "latest_release_url": source.get("release_url"),
                 "commit_sha": commit,
-                "skill_file_sha256": sha256_file(skill_file),
-                "skill_dir_sha256": sha256_tree(skill_dir),
+                "skill_file_sha256": sha256_file(skill_file, credential_policy=CREDENTIAL_POLICY_VERSION),
+                "skill_dir_sha256": sha256_tree(
+                    skill_dir,
+                    file_modes=file_modes,
+                    credential_policy=CREDENTIAL_POLICY_VERSION,
+                    replacements=graph_files,
+                ),
+                "file_modes": file_modes,
                 "line_count": text.count("\n") + 1,
                 "frontmatter_keys": sorted(meta.keys()),
                 "has_required_frontmatter": has_required_frontmatter,
@@ -1177,6 +1243,10 @@ def collect() -> list[dict[str, Any]]:
                 "benchmark_scenarios": [],
                 "best_practice_basis": [item["id"] for item in BEST_PRACTICE_SOURCES[:4]],
             }
+            if CREDENTIAL_POLICY_VERSION != 1:
+                item["credential_policy_version"] = CREDENTIAL_POLICY_VERSION
+            if graph:
+                item["dependency_graph"] = graph["id"]
             notes = [
                 "Keep provenance and selected ref visible so agents can verify the source before use.",
                 f"Maintain at least {MIN_SCENARIOS} real workflow benchmark scenarios before treating the skill as deployable.",
@@ -1292,31 +1362,41 @@ def esc(text: Any) -> str:
 
 
 def skill_manifest_entry(entry: dict[str, Any], name_conflict_group: str | None) -> dict[str, Any]:
-    return {
-        k: entry[k]
-        for k in [
-            "id",
-            "name",
-            "category",
-            "subcategory",
-            "install_name",
-            "mirrored_path",
-            "agent_ready_path",
-            "source_repo",
-            "source_path",
-            "immutable_source_url",
-            "selected_ref",
-            "commit_sha",
-            "benchmark_scenarios",
-            "has_required_frontmatter",
-            "skill_file_sha256",
-            "skill_dir_sha256",
-        ]
-    } | {
-        "name_conflict_group": name_conflict_group,
-        "standalone_installable": bool(entry["has_required_frontmatter"]),
-        "bulk_install_safe": bool(entry["has_required_frontmatter"] and name_conflict_group is None),
-    }
+    return (
+        {
+            k: entry[k]
+            for k in [
+                "id",
+                "name",
+                "category",
+                "subcategory",
+                "install_name",
+                "mirrored_path",
+                "agent_ready_path",
+                "source_repo",
+                "source_path",
+                "immutable_source_url",
+                "selected_ref",
+                "commit_sha",
+                "benchmark_scenarios",
+                "has_required_frontmatter",
+                "skill_file_sha256",
+                "skill_dir_sha256",
+            ]
+        }
+        | ({"file_modes": entry["file_modes"]} if "file_modes" in entry else {})
+        | ({"dependency_graph": entry["dependency_graph"]} if "dependency_graph" in entry else {})
+        | (
+            {"credential_policy_version": entry["credential_policy_version"]}
+            if "credential_policy_version" in entry
+            else {}
+        )
+        | {
+            "name_conflict_group": name_conflict_group,
+            "standalone_installable": bool(entry["has_required_frontmatter"]),
+            "bulk_install_safe": bool(entry["has_required_frontmatter"] and name_conflict_group is None),
+        }
+    )
 
 
 def name_conflict_groups(entries: list[dict[str, Any]]) -> dict[str, str | None]:
@@ -1327,20 +1407,58 @@ def name_conflict_groups(entries: list[dict[str, Any]]) -> dict[str, str | None]
 
 
 def mirror_all_skills(entries: list[dict[str, Any]]) -> None:
-    target = ROOT / "included" / "skills"
-    if target.exists():
-        shutil.rmtree(target)
-    target.mkdir(parents=True)
+    """Stage and verify a complete replacement; retain the previous tree for recovery.
+
+    Directory publication uses two renames, not an atomic multi-file transaction.
+    A failed build leaves the current tree untouched. A failed second rename rolls
+    back; a process crash leaves uniquely named staging/backup directories.
+    """
+    root = ROOT.resolve()
+    if not entries:
+        raise ValueError("refusing to publish an empty mirror collection")
+    target = root / "included" / "skills"
+    if target.resolve() != target or not target.resolve().is_relative_to(root):
+        raise ValueError("mirror publication target must be a real directory within the workspace")
+    relative_targets: list[Path] = []
+    for entry in entries:
+        destination = root / entry["mirrored_path"]
+        if "\\" in entry["mirrored_path"] or not destination.resolve().is_relative_to(target):
+            raise ValueError(f"mirror path escapes included/skills: {entry['mirrored_path']}")
+        if destination.resolve().relative_to(root).as_posix() != entry["mirrored_path"]:
+            raise ValueError(f"mirror path must be canonical and relative: {entry['mirrored_path']}")
+        relative = destination.resolve().relative_to(target)
+        if not relative.parts or relative.parts[0] != "by-category":
+            raise ValueError(f"invalid mirror directory: {relative}")
+        if any(
+            relative == other or relative in other.parents or other in relative.parents for other in relative_targets
+        ):
+            raise ValueError(f"overlapping mirror directories: {relative}")
+        relative_targets.append(relative)
+    staging_parent = root / ".venv" / "generation-staging"
+    if not staging_parent.resolve().is_relative_to(root):
+        raise ValueError("generation staging directory escapes the workspace")
+    staging_parent.mkdir(parents=True, exist_ok=True)
+    staged = Path(tempfile.mkdtemp(prefix="skill-mirrors-", dir=staging_parent))
     source_by_repo = {source["repo"]: source for source in SOURCES}
     conflicts = name_conflict_groups(entries)
     manifest = []
-    for entry in entries:
+    for entry, relative in zip(entries, relative_targets, strict=True):
         source = source_by_repo[entry["source_repo"]]
         repo_dir = SOURCE_ROOT / source["dir"]
         src_dir = (repo_dir / entry["source_path"]).parent
-        dst_dir = ROOT / entry["mirrored_path"]
+        if not src_dir.resolve().is_relative_to(repo_dir.resolve()):
+            raise ValueError(f"source path escapes checkout: {entry['source_path']}")
+        dst_dir = staged / relative
         dst_dir.parent.mkdir(parents=True, exist_ok=True)
-        copy_sanitized_tree(src_dir, dst_dir)
+        copy_sanitized_tree(
+            src_dir,
+            dst_dir,
+            file_modes=entry.get("file_modes"),
+            credential_policy=entry.get("credential_policy_version", 1),
+            replacements=dependency_graphs.for_entry(entry, src_dir, root=ROOT),
+        )
+        if sha256_tree(dst_dir, file_modes=entry.get("file_modes")) != entry["skill_dir_sha256"]:
+            raise ValueError(f"staged mirror hash differs from catalog: {entry['id']}")
         manifest.append(
             skill_manifest_entry(entry, conflicts[entry["id"]])
             | {
@@ -1348,8 +1466,8 @@ def mirror_all_skills(entries: list[dict[str, Any]]) -> None:
                 "source_tier": entry["source_tier"],
             }
         )
-    write_json(target / "manifest.json", manifest)
-    (target / "README.md").write_text(
+    write_json(staged / "manifest.json", manifest)
+    (staged / "README.md").write_text(
         f"# Included Skills\n\n"
         f"This directory contains one physical mirror for each of the `{len(entries)}` cataloged source-backed skills.\n\n"
         "Skill mirrors are grouped by category and source tier, then isolated in a stable `install_name` directory. "
@@ -1358,6 +1476,16 @@ def mirror_all_skills(entries: list[dict[str, Any]]) -> None:
         "Do not bulk-install entries where `bulk_install_safe` is false.\n",
         encoding="utf-8",
     )
+    target.parent.mkdir(parents=True, exist_ok=True)
+    backup = staged.with_name(staged.name + "-previous")
+    if target.exists():
+        target.rename(backup)
+    try:
+        staged.rename(target)
+    except OSError:
+        if backup.exists():
+            backup.rename(target)
+        raise
 
 
 def write_agent_ready_skills(entries: list[dict[str, Any]]) -> None:
@@ -1456,6 +1584,10 @@ def build_source_lock(entries: list[dict[str, Any]]) -> dict[str, Any]:
             continue
         commit = run_git(repo_dir, "rev-parse", "HEAD")
         origin_url = run_git(repo_dir, "config", "--get", "remote.origin.url")
+        if run_git(repo_dir, "status", "--porcelain=v1", "--untracked-files=all"):
+            raise ValueError(f"source checkout changed during collection: {source['repo']}")
+        if any(entry["commit_sha"] != commit for entry in repo_entries):
+            raise ValueError(f"source HEAD changed after collection: {source['repo']}")
         sources.append(
             {
                 "repo": source["repo"],
@@ -1474,6 +1606,13 @@ def build_source_lock(entries: list[dict[str, Any]]) -> dict[str, Any]:
                         "skill_file_sha256": entry["skill_file_sha256"],
                         "skill_dir_sha256": entry["skill_dir_sha256"],
                     }
+                    | ({"file_modes": entry["file_modes"]} if "file_modes" in entry else {})
+                    | ({"dependency_graph": entry["dependency_graph"]} if "dependency_graph" in entry else {})
+                    | (
+                        {"credential_policy_version": entry["credential_policy_version"]}
+                        if "credential_policy_version" in entry
+                        else {}
+                    )
                     for entry in repo_entries
                 ],
             }
@@ -1625,29 +1764,6 @@ A counted runtime benchmark artifact must record that its task, evaluator, and e
     for source in BEST_PRACTICE_SOURCES:
         source_doc += f"- [{source['title']}]({source['url']})\n"
     (docs / "source-policy.md").write_text(source_doc, encoding="utf-8")
-
-    (docs / "installation.md").write_text(
-        """# Host-Agnostic Installation
-
-Validation does not require the original source checkouts:
-
-```bash
-python3 -m pip install -e '.[test]'
-python3 tools/validate_catalog.py
-python3 -m pytest
-```
-
-Catalog refresh does require source repositories. Put checkouts anywhere and point `AI_SKILL_SOURCE_ROOT` at that directory:
-
-```bash
-python3 tools/fetch_sources.py --source-root /path/to/ai_skill_sources
-python3 tools/build_catalog.py --source-root /path/to/ai_skill_sources
-```
-
-Validation does not depend on `/tmp`, a local username, a private absolute path, or a specific host. Network-heavy benchmark execution should be performed by a separate runner that records dataset versions and artifacts.
-""",
-        encoding="utf-8",
-    )
 
     selected_doc = f"# Selected Skills\n\nSelected entries: `{len(selected)}`.\n\n| Skill | Category | Source | Ref | Scenarios |\n|---|---|---|---|---:|\n"
     for entry in selected:
@@ -1937,18 +2053,57 @@ def write_evaluators() -> None:
     write_json(directory / "benchmark_run_artifact.schema.json", benchmark_run)
 
 
-def main() -> None:
-    global SOURCE_ROOT
+GENERATED_OUTPUTS = (
+    "README.md",
+    "data/skills_catalog.json",
+    "data/best_practice_sources.json",
+    "data/benchmark_tracks.json",
+    "data/benchmark_scenarios.json",
+    "data/benchmark_assignments.json",
+    "data/source_lock.json",
+    "included/skills",
+    "included/agent-ready",
+    "included/selected",
+    "included/priority",  # retired output: retain its old contents in recovery storage
+    "docs/priority-skills.md",
+    "docs/methodology.md",
+    "docs/immutable-audit-model.md",
+    "docs/source-policy.md",
+    "docs/selected-skills.md",
+    "docs/catalog/index.md",
+    "docs/catalog/by-category",
+    "docs/catalog/skills",
+    "docs/benchmarks.md",
+    "docs/benchmark-runner-requirements.md",
+    "docs/agent-consumability.md",
+    "evaluators/generic_workflow_result.schema.json",
+    "evaluators/source_grounded_skill_proof.schema.json",
+    "evaluators/benchmark_run_artifact.schema.json",
+)
+
+
+def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Build the AI skill catalog from local source checkouts.")
     parser.add_argument(
         "--source-root",
         default=str(SOURCE_ROOT),
         help="Directory containing source repo checkouts. Defaults to AI_SKILL_SOURCE_ROOT or /tmp/ai_skill_sources.",
     )
-    args = parser.parse_args()
-    SOURCE_ROOT = Path(args.source_root).expanduser().resolve()
-    entries = collect()
-    scenarios = build_scenarios(entries)
+    parser.add_argument("--check", action="store_true", help="Stage and compare all outputs without publishing")
+    parser.add_argument("--json", action="store_true", help="Emit publication or freshness results as JSON")
+    parser.add_argument(
+        "--credential-policy",
+        type=int,
+        choices=(1, 2, 3),
+        default=1,
+        help="Declared credential neutralization policy: 1 replays old locks; 2 adds Stripe shapes; 3 adds hash-qualified examples",
+    )
+    return parser
+
+
+def write_catalog_outputs(
+    entries: list[dict[str, Any]], scenarios: list[dict[str, Any]], source_lock: dict[str, Any]
+) -> None:
     tracks = [
         {
             "id": t[0],
@@ -1968,7 +2123,7 @@ def main() -> None:
         ROOT / "data" / "benchmark_assignments.json",
         [{"skill_id": e["id"], "scenario_ids": e["benchmark_scenarios"]} for e in entries],
     )
-    write_json(ROOT / "data" / "source_lock.json", build_source_lock(entries))
+    write_json(ROOT / "data" / "source_lock.json", source_lock)
     mirror_all_skills(entries)
     write_agent_ready_skills(entries)
     write_selected_manifest(entries)
@@ -1976,8 +2131,86 @@ def main() -> None:
     write_evaluators()
     # Tests and validation are hand-maintained so they can check generated
     # outputs independently instead of being overwritten by the generator.
-    print(f"Generated {len(entries)} skills and {len(scenarios)} scenarios.")
+
+
+def verify_generated_outputs(root: Path, entries: list[dict[str, Any]], source_lock: dict[str, Any]) -> None:
+    """Validate newly generated cross-references independently of publication."""
+    load = lambda relative: json.loads((root / relative).read_text(encoding="utf-8"))  # noqa: E731
+    if load("data/skills_catalog.json") != entries or load("data/source_lock.json") != source_lock:
+        raise ValueError("staged catalog/source lock differs from collected inputs")
+    expected = {entry["id"] for entry in entries}
+    if len(expected) != len(entries) or not expected:
+        raise ValueError("staged catalog must have unique nonempty IDs")
+    retired_outputs = {"included/priority", "docs/priority-skills.md"}
+    for relative in set(GENERATED_OUTPUTS) - retired_outputs:
+        if not publication.checked_path(root, relative).exists():
+            raise ValueError(f"required generated output is missing: {relative}")
+    for relative in ("included/skills/manifest.json", "included/agent-ready/manifest.json"):
+        items = load(relative)
+        if len(items) != len(entries) or {item["id"] for item in items} != expected:
+            raise ValueError(f"staged manifest differs from catalog: {relative}")
+    if {item["id"] for item in load("included/selected/manifest.json")} != {
+        entry["id"] for entry in entries if entry["selected_subset"]
+    }:
+        raise ValueError("staged selected manifest differs from catalog")
+    for entry in entries:
+        mirror = publication.checked_path(root, entry["mirrored_path"])
+        if sha256_tree(mirror, file_modes=entry.get("file_modes")) != entry["skill_dir_sha256"]:
+            raise ValueError(f"staged mirror changed during generation: {entry['id']}")
+        if sha256_file(mirror / "SKILL.md") != entry["skill_file_sha256"]:
+            raise ValueError(f"staged entrypoint differs from catalog: {entry['id']}")
+        if not publication.checked_path(root, entry["agent_ready_path"]).is_file():
+            raise ValueError(f"staged agent entrypoint is missing: {entry['id']}")
+
+
+def main(argv: list[str] | None = None) -> int:
+    global ROOT, SOURCE_ROOT, BUILD_DATE, CREDENTIAL_POLICY_VERSION
+    args = build_parser().parse_args(argv)
+    original_root, original_source, original_date = ROOT, SOURCE_ROOT, BUILD_DATE
+    original_policy = CREDENTIAL_POLICY_VERSION
+    root = ROOT.resolve()
+    try:
+        SOURCE_ROOT = Path(args.source_root).expanduser().resolve()
+        CREDENTIAL_POLICY_VERSION = args.credential_policy
+        BUILD_DATE = resolve_timestamp(
+            existing_manifest_value=existing_field(root / "data/source_lock.json", "generated_on"),
+            fallback_epoch=git_latest_commit_epoch_for(root, [root / "tools/build_catalog.py"]),
+        )[:10]
+        entries = collect()
+        scenarios = build_scenarios(entries)
+        source_lock = build_source_lock(entries)
+        badge_block = update_readme_badges.render_badge_block(update_readme_badges.load_metadata(root))
+
+        def build(staged: Path) -> None:
+            global ROOT
+            ROOT = staged
+            try:
+                write_catalog_outputs(entries, scenarios, source_lock)
+                readme_path = staged / "README.md"
+                heading, body = readme_path.read_text(encoding="utf-8").split("\n", 1)
+                readme_path.write_text(f"{heading}\n\n{badge_block}\n{body}", encoding="utf-8", newline="\n")
+                verify_generated_outputs(staged, entries, source_lock)
+            finally:
+                ROOT = original_root
+
+        transaction, journal = publication.prepare(root, GENERATED_OUTPUTS, build)
+        drift = publication.differences(root, transaction, journal)
+        if not args.check:
+            publication.publish(root, transaction, journal)
+        result = {
+            "ok": not drift if args.check else True,
+            "mode": "check" if args.check else "publish",
+            "skills": len(entries),
+            "scenarios": len(scenarios),
+            "different_outputs": drift,
+            "recovery_directory": str(transaction),
+        }
+        print(json.dumps(result, indent=2) if args.json else result)
+        return int(args.check and bool(drift))
+    finally:
+        ROOT, SOURCE_ROOT, BUILD_DATE = original_root, original_source, original_date
+        CREDENTIAL_POLICY_VERSION = original_policy
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

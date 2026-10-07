@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fail if tracked files or branch history contain secret-shaped text.
+"""Fail if publishable worktree files or local-ref history contain secret-shaped text.
 
 This scanner is deliberately stricter than "real secret" detection: example
 values that *look like* provider tokens are blocked too. Use neutral
@@ -29,12 +29,17 @@ Exit code 0 means clean, 1 means at least one finding.
 from __future__ import annotations
 
 import argparse
+import json
 import math
 import re
 import subprocess
 import sys
+from collections.abc import Iterator
 from dataclasses import dataclass
 from pathlib import Path
+from typing import IO
+
+from _lib_b.credential_patterns import STRIPE_SERVER_KEY, STRIPE_WEBHOOK_SECRET
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -79,8 +84,11 @@ RULES: list[Rule] = [
     Rule("huggingface_token", re.compile(r"hf_[A-Za-z0-9]{30,}")),
     Rule("slack_token", re.compile(r"xox[baprs]-[A-Za-z0-9-]{10,}")),
     Rule("slack_token_example_shape", re.compile(r"\bxox[baprs]-[A-Za-z0-9_.-]+")),
+    Rule("stripe_secret_or_restricted_key_shape", STRIPE_SERVER_KEY),
+    Rule("stripe_webhook_secret_shape", STRIPE_WEBHOOK_SECRET),
     Rule("private_key", re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH |DSA |)?PRIVATE KEY-----")),
 ]
+SECRET_SHAPE = re.compile("|".join(f"(?:{rule.pattern.pattern})" for rule in RULES))
 
 
 # Entropy heuristic configuration. Triggers only when the line already contains
@@ -167,15 +175,18 @@ def git_bytes(*args: str) -> bytes:
 
 
 def tracked_files() -> list[Path]:
-    return [ROOT / line for line in git("ls-files").splitlines() if line]
+    names = git_bytes("ls-files", "-z", "--cached", "--others", "--exclude-standard")
+    return [ROOT / name.decode("utf-8", errors="surrogateescape") for name in names.split(b"\0") if name]
 
 
 def history_commits() -> list[str]:
-    return [line for line in git("rev-list", "HEAD").splitlines() if line]
+    return [line for line in git("rev-list", "--all").splitlines() if line]
 
 
 def commit_changed_names(commit: str) -> list[str]:
-    data = git_bytes("diff-tree", "-z", "--no-commit-id", "--name-status", "-r", "-M", commit)
+    data = git_bytes(
+        "diff-tree", "--root", "--diff-merges=first-parent", "-z", "--no-commit-id", "--name-status", "-r", "-M", commit
+    )
     items = [item.decode("utf-8", errors="surrogateescape") for item in data.split(b"\0") if item]
     paths: list[str] = []
     index = 0
@@ -225,9 +236,10 @@ def commit_file_text(commit: str, path: str) -> str | None:
 def scan_text(label: str, text: str) -> list[str]:
     findings: list[str] = []
     for line_number, line in enumerate(text.splitlines(), 1):
-        for rule in RULES:
-            if rule.pattern.search(line):
-                findings.append(f"{label}:{line_number}: {rule.name}")
+        if SECRET_SHAPE.search(line):
+            for rule in RULES:
+                if rule.pattern.search(line):
+                    findings.append(f"{label}:{line_number}: {rule.name}")
         for rule_name in _entropy_findings(line):
             findings.append(f"{label}:{line_number}: {rule_name}")
     return findings
@@ -245,30 +257,97 @@ def scan_worktree() -> list[str]:
 
 def scan_history() -> list[str]:
     findings: list[str] = []
-    for commit in history_commits():
-        for name in commit_changed_names(commit):
-            if not name or SKIP_PARTS.intersection(Path(name).parts):
-                continue
-            text = commit_file_text(commit, name)
-            if text is None:
-                continue
-            findings.extend(scan_text(f"{commit[:12]}:{name}", text))
+    for commit, name, text in history_file_texts():
+        findings.extend(scan_text(f"{commit[:12]}:{name}", text))
     return findings
 
 
-def main(argv: list[str] | None = None) -> int:
+def read_batch_header(stream: IO[bytes]) -> list[bytes]:
+    header = bytearray()
+    while len(header) < 65536:
+        byte = stream.read(1)
+        if byte == b"\0":
+            return bytes(header).split()
+        if not byte:
+            raise RuntimeError("Git object stream ended before its header")
+        header.extend(byte)
+    raise RuntimeError("Git object header exceeds the protocol bound")
+
+
+def history_file_texts() -> Iterator[tuple[str, str, str]]:
+    """Read changed blobs through one NUL-framed Git process, one object at a time."""
+    process = subprocess.Popen(
+        ["git", "-C", str(ROOT), "cat-file", "--batch", "-Z"],
+        stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.DEVNULL,
+    )
+    assert process.stdin is not None and process.stdout is not None
+    try:
+        for commit in history_commits():
+            for name in commit_changed_names(commit):
+                if not name or SKIP_PARTS.intersection(Path(name).parts):
+                    continue
+                process.stdin.write(f"{commit}:{name}".encode("utf-8", errors="surrogateescape") + b"\0")
+                process.stdin.flush()
+                header = read_batch_header(process.stdout)
+                if len(header) != 3 or header[1] != b"blob" or not header[2].isdigit():
+                    raise RuntimeError("Git returned an unavailable or non-blob history input")
+                size = int(header[2])
+                data = process.stdout.read(size)
+                if len(data) != size or process.stdout.read(1) != b"\0":
+                    raise RuntimeError("Git object body is incomplete")
+                if b"\0" not in data:
+                    yield commit, name, data.decode("utf-8", errors="replace")
+    finally:
+        process.stdin.close()
+        try:
+            process.wait(timeout=5)
+        except subprocess.TimeoutExpired:
+            process.kill()
+            process.wait(timeout=5)
+        process.stdout.close()
+    if process.returncode:
+        raise RuntimeError("Git object reader failed")
+
+
+def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="check_no_secret_patterns.py",
-        description="Check tracked files for secret-shaped text.",
+        description="Check publishable tracked/untracked files or local-ref history for secret-shaped text.",
     )
     parser.add_argument(
         "--history",
         action="store_true",
         help="Scan all commits reachable from local refs (needs full git fetch).",
     )
-    args = parser.parse_args(argv)
+    parser.add_argument("--json", action="store_true", help="Emit finding locations/rules, never credential values")
+    return parser
 
-    findings = scan_history() if args.history else scan_worktree()
+
+def main(argv: list[str] | None = None) -> int:
+    args = build_parser().parse_args(argv)
+
+    try:
+        findings = scan_history() if args.history else scan_worktree()
+    except (OSError, ValueError, RuntimeError, subprocess.SubprocessError) as exc:
+        failure = f"Secret scan incomplete: {type(exc).__name__}"
+        if args.json:
+            print(json.dumps({"errors": [failure], "complete": False}))
+        else:
+            print(failure, file=sys.stderr)
+        return 2
+    if args.json:
+        print(
+            json.dumps(
+                {
+                    "errors": findings,
+                    "scope": "all-local-refs-history" if args.history else "tracked-and-untracked-not-ignored",
+                    "complete": True,
+                }
+            )
+        )
+        return int(bool(findings))
     if findings:
         print(
             "Secret-shaped text found. Replace real or example-looking values with neutral placeholders.",

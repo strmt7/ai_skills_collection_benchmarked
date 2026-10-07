@@ -148,13 +148,13 @@ them locally with `pip install -e '.[test,lint]'` and the commands listed in
 [`docs/installation.md`](docs/installation.md):
 
 - **Lint + format**: `ruff check tools tests` and `ruff format --check tools tests`. Configured in `pyproject.toml` (`[tool.ruff]`).
-- **Type check**: `mypy tools tests` runs in a Python 3.10/3.11/3.12/3.13 matrix so version-conditional bugs (e.g. `datetime.UTC` is 3.11+) surface in CI.
+- **Type check**: `mypy tools tests` runs across supported Python 3.11/3.12/3.13/3.14 runtimes, pinned to their current security or maintenance patch releases. Python 3.10 reached end of life in October 2026 and is no longer a supported runtime.
 - **Catalog**: `python3 tools/validate_catalog.py` collects every drift entry in a single run (no fail-fast).
 - **Static benchmarks freshness**: `python3 tools/run_static_benchmarks.py --check`.
 - **Skill risk audit freshness**: `python3 tools/audit_skill_quality.py --check`.
 - **Tests**: `python3 -m pytest -q -n auto` runs the full suite in parallel under `pytest-xdist`.
 - **Compile check**: `python3 -m compileall -q tools tests`.
-- **Secrets**: `python3 tools/check_no_secret_patterns.py --history` (in-repo regex + entropy) plus `gitleaks` v8.30.1 (MIT, pinned binary) as a second-opinion gate. The `.gitleaks.toml` allowlist documents why upstream-mirrored content is exempt.
+- **Secrets**: `python3 tools/check_no_secret_patterns.py --history` (in-repo regex + entropy) plus `gitleaks` v8.30.1 (MIT, pinned binary) as a second-opinion gate. Both checks cover mirrored sources and recorded evidence; `.gitleaks.toml` contains no path exemptions.
 
 Workflows: `.github/workflows/{ruff,mypy,offline-validation,secret-scan}.yml`. All declare least-privilege `permissions: contents: read`, concurrency cancellation, pip caching keyed on `pyproject.toml`, and weekly cron triggers (alongside `workflow_dispatch`).
 

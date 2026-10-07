@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "evidence_class": "actual-skill-creator-package-contract-controls",
+  "passed": true,
+  "project_file_sha256": {
+    "included/skills/by-category/testing-qa-benchmarking/official-reference/skill-creator-anthropics/scripts/__init__.py": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+    "included/skills/by-category/testing-qa-benchmarking/official-reference/skill-creator-anthropics/scripts/aggregate_benchmark.py": "16c5a53e4cbf55a679a42c244cba39cee463d99ce507ecc9fafc4cb4e0a133e0",
+    "included/skills/by-category/testing-qa-benchmarking/official-reference/skill-creator-anthropics/scripts/generate_report.py": "d90ec4cfc2dd539564edd332880fb7561309a1f0097d082de88e3101d6c8031e",
+    "included/skills/by-category/testing-qa-benchmarking/official-reference/skill-creator-anthropics/scripts/improve_description.py": "a7968f851d1eeca91d325b7cf284ee8fdce9e408229c0578255fc85d859d495e",
+    "included/skills/by-category/testing-qa-benchmarking/official-reference/skill-creator-anthropics/scripts/package_skill.py": "2cd9a9891844516fd30466eae30e4a9b9a199802522de3fb12f59a063fba58ab",
+    "included/skills/by-category/testing-qa-benchmarking/official-reference/skill-creator-anthropics/scripts/quick_validate.py": "6bce45afbce7f8df3af8d7bc62aa41881bd242ac8a1cdcbae2d1cd044d3e2151",
+    "included/skills/by-category/testing-qa-benchmarking/official-reference/skill-creator-anthropics/scripts/run_eval.py": "252ac58feedf233673d6a605661158db20806f724c7d1dd32c92ae316b24ef67",
+    "included/skills/by-category/testing-qa-benchmarking/official-reference/skill-creator-anthropics/scripts/run_loop.py": "85b36782ec856e066257cf8e917606945e6df098428005e17f8d60a5b6789c29",
+    "included/skills/by-category/testing-qa-benchmarking/official-reference/skill-creator-anthropics/scripts/utils.py": "b396f920bfbb422822427d800656ab125876e1e42ae242ed3c9380338f9d0833",
+    "benchmarks/dependency-regressions/skill_creator_fixture.py": "ef0ab694c657a2d9bf8727b7280496f9d471cfba377096417ea3169e735c7b57"
+  },
+  "pyyaml_version": "6.0.3",
+  "reproducer_sha256": "3e0f41bf7ee43f51c912233737cf0a27641042ebee18ad46d2bfdefdd16c415f",
+  "invocation": {
+    "status": "completed",
+    "container_name": "skills-invoke-f8530289253246a49a7b1b3d85b61bf5",
+    "image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+    "scored": false,
+    "candidate_response_is_untrusted": true,
+    "cleanup_verified": true,
+    "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+    "resource_profile": "python-small",
+    "submission_sha256": {
+      "original/scripts/__init__.py": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "original/scripts/aggregate_benchmark.py": "16c5a53e4cbf55a679a42c244cba39cee463d99ce507ecc9fafc4cb4e0a133e0",
+      "original/scripts/generate_report.py": "d90ec4cfc2dd539564edd332880fb7561309a1f0097d082de88e3101d6c8031e",
+      "original/scripts/improve_description.py": "a7968f851d1eeca91d325b7cf284ee8fdce9e408229c0578255fc85d859d495e",
+      "original/scripts/package_skill.py": "2cd9a9891844516fd30466eae30e4a9b9a199802522de3fb12f59a063fba58ab",
+      "original/scripts/quick_validate.py": "6bce45afbce7f8df3af8d7bc62aa41881bd242ac8a1cdcbae2d1cd044d3e2151",
+      "original/scripts/run_eval.py": "252ac58feedf233673d6a605661158db20806f724c7d1dd32c92ae316b24ef67",
+      "original/scripts/run_loop.py": "85b36782ec856e066257cf8e917606945e6df098428005e17f8d60a5b6789c29",
+      "original/scripts/utils.py": "b396f920bfbb422822427d800656ab125876e1e42ae242ed3c9380338f9d0833",
+      "vendor/yaml/composer.py": "fcaa37d16afa783594794a5ab94193dcb720f503c19ce3d59539c8311189f453",
+      "vendor/yaml/constructor.py": "90d8247da78b524c10618fd0e857f54f3d97570fe91b5c5513d024ef3faf88b0",
+      "vendor/yaml/cyaml.py": "e99ac01bd7c062f7557b614aff0d21997a06ed962ca185306a91bc0a20bbd87d",
+      "vendor/yaml/dumper.py": "3cb72d66563064ba7b5e679477046ebf89d8399d940670c8532f3e94a7cb17ea",
+      "vendor/yaml/emitter.py": "8e086d694ede170837d5b1b407b45979aff6f40762f422a65eafd08e04290a44",
+      "vendor/yaml/error.py": "021f73fada072546c4f63f8cf18a7181244ce4280b09cc15cc980b2d1176171a",
+      "vendor/yaml/events.py": "e74fd392c810884e2ea7e94aa3f57e9c1cbeb402319083d0c58e6a0e1282787c",
+      "vendor/yaml/loader.py": "5156becc8aa6905482218abf3e04869b835226db4763645fff3438fdbd5f1cdd",
+      "vendor/yaml/nodes.py": "80f28d8fca4a09d87677882bde021820d9cf39a3b11a12405226211919cf13ce",
+      "vendor/yaml/parser.py": "8a55a9e6fbe0a07146cef3990c8b45a068c3e83e369e1959ad9ca30306b4a09a",
+      "vendor/yaml/reader.py": "d1d9b38ab3a20c6e17a38d519ee412ecaf6b918df18c78956ac7c330d4ea08dc",
+      "vendor/yaml/representer.py": "22e58ff9c016f6c1ca1274b4802a926bcf78935060e1c813c5a0f021c6d143e6",
+      "vendor/yaml/resolver.py": "f4bf9561f9b89961f1503d558385fbae30d12bfed565de9bf76c33abb63620a6",
+      "vendor/yaml/scanner.py": "60433788b652690c17710460da5d91e0c753d3318fd85f5e1e42862a71f25906",
+      "vendor/yaml/serializer.py": "0a1b85826854d35863e31808f0668abfabdf33606e8f06bd8bb7761401e3edc0",
+      "vendor/yaml/tokens.py": "953408cd2570f0c83dc2fe39f7e4e388e41eeb05738aa69196a5f6ffcf6ba79e",
+      "vendor/yaml/__init__.py": "b19dfcc333d6a75dfd73073901164507252f271b41d3b5f7d85510033a0547a7",
+      "candidate.py": "ef0ab694c657a2d9bf8727b7280496f9d471cfba377096417ea3169e735c7b57"
+    },
+    "container_id": "d278f99e8d1c043a22c1621bc2b9358bcdc874b5c58b98e5fd176af71b9c5860",
+    "isolation_checks": {
+      "errors": [],
+      "passed": true,
+      "observed_user": "65534:65534",
+      "observed_image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+      "observed_ownership_token": "f8530289253246a49a7b1b3d85b61bf5",
+      "resolved_image_id": "sha256:284cda8648f59f87e9468ec9d5652064dc2cd5b7d3fce342c2d3825ca1de6353",
+      "observed_host_constraints": {
+        "NetworkMode": "none",
+        "IpcMode": "none",
+        "ReadonlyRootfs": true,
+        "Memory": 536870912,
+        "MemorySwap": 536870912,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64,
+        "Privileged": false,
+        "Init": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "CapAdd": null,
+        "SecurityOpt": [
+          "no-new-privileges"
+        ],
+        "LogConfig": {
+          "Type": "none",
+          "Config": {}
+        },
+        "Tmpfs": {
+          "/tmp": "rw,noexec,nosuid,size=128m"
+        },
+        "Devices": [],
+        "DeviceRequests": null,
+        "VolumesFrom": null
+      },
+      "observed_mounts": [
+        {
+          "Destination": "/submission",
+          "Type": "bind",
+          "RW": false
+        },
+        {
+          "Destination": "/worker",
+          "Type": "bind",
+          "RW": false
+        }
+      ]
+    },
+    "setup_elapsed_seconds": 0.31578319999971427,
+    "runtime_elapsed_seconds": 1.050645399998757,
+    "returncode": 0,
+    "candidate_response": {
+      "worker_status": "returned",
+      "result": {
+        "platform": "linux",
+        "uid": 65534,
+        "checks": [
+          "ungraded_planned_run_omitted_from_denominator",
+          "entrypoint_direct_grading_layout_not_aggregated",
+          "output_characters_reported_as_tokens",
+          "nonzero_embedded_duration_discards_sibling_token_usage",
+          "contradictory_out_of_range_score_and_fixed_repetition_metadata_accepted",
+          "empty_required_frontmatter_values_accepted",
+          "literal_yaml_block_description_newlines_changed",
+          "packager_follows_link_outside_selected_package",
+          "reported_test_set_used_for_candidate_selection",
+          "duplicate_query_text_moves_declared_test_rows_into_training_results",
+          "small_stratified_split_leaves_no_training_rows",
+          "missing_model_cli_counted_as_correct_negative_trigger"
+        ],
+        "observations": {
+          "missing_run": {
+            "planned_directories": 2,
+            "counted_runs": 1,
+            "reported_pass_rate": 1.0
+          },
+          "invalid_score": {
+            "failed_expectations": 1,
+            "reported_pass_rate": 1.5,
+            "actual_runs": 1,
+            "metadata_runs_per_configuration": 3
+          },
+          "selection": {
+            "selected_candidate": 1,
+            "better_training_candidate": 2,
+            "selection_uses_repeated_validation_scores": true
+          }
+        },
+        "ai_processes_launched": 0,
+        "provider_calls": 0,
+        "failed_launch_dispatch_adapter": "native ThreadPoolExecutor; unchanged query and result accounting",
+        "fixture_temporary_directory_removed": true
+      }
+    },
+    "captured_bytes": 1291,
+    "stderr": "",
+    "elapsed_seconds": 1.5374520999994274
+  },
+  "agent_efficacy_scored": false,
+  "scope": "Actual original Python, owned filesystem fixtures and injected evaluator values; no AI/provider runs"
+}

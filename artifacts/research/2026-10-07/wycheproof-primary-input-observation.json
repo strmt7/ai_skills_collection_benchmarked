@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "evidence_class": "pinned-public-crypto-vector-and-documentation-input-observation",
+  "commit": "12fd3aaf33eb5fa1f52e026912ee00c054f9d984",
+  "resources": [
+    {
+      "path": "README.md",
+      "bytes": 7769,
+      "sha256": "cee1ce41f40e192fa2505058a0e22f7f3325ad816a2e6daffa3e5935541c08ab",
+      "url": "https://raw.githubusercontent.com/C2SP/wycheproof/12fd3aaf33eb5fa1f52e026912ee00c054f9d984/README.md",
+      "downloaded": true
+    },
+    {
+      "path": "doc/format.md",
+      "url": "https://raw.githubusercontent.com/C2SP/wycheproof/12fd3aaf33eb5fa1f52e026912ee00c054f9d984/doc/format.md",
+      "downloaded": false,
+      "http_status": 404
+    },
+    {
+      "path": "schemas/aead_test_schema_v1.json",
+      "bytes": 3353,
+      "sha256": "6c530fa1dc0376d3d1f826112383959a791d169ed31012ead30625b33e829a62",
+      "url": "https://raw.githubusercontent.com/C2SP/wycheproof/12fd3aaf33eb5fa1f52e026912ee00c054f9d984/schemas/aead_test_schema_v1.json",
+      "downloaded": true
+    },
+    {
+      "path": "testvectors_v1/aes_gcm_test.json",
+      "bytes": 213177,
+      "sha256": "985e5ecc172e181eaf49e89508b9470dcf478002eb7e8559c707eb42dc97dfe7",
+      "url": "https://raw.githubusercontent.com/C2SP/wycheproof/12fd3aaf33eb5fa1f52e026912ee00c054f9d984/testvectors_v1/aes_gcm_test.json",
+      "downloaded": true,
+      "algorithm": "AES-GCM",
+      "declared_tests": 316,
+      "actual_tests": 316,
+      "groups": 45,
+      "schema": "aead_test_schema_v1.json",
+      "results": {
+        "valid": 229,
+        "invalid": 87,
+        "acceptable": 0
+      }
+    },
+    {
+      "path": "testvectors_v1/ed25519_test.json",
+      "bytes": 126699,
+      "sha256": "752d2ea7d7c6cf4736381b6cbacb61f8182b126ab7cd9b058f00c50084975536",
+      "url": "https://raw.githubusercontent.com/C2SP/wycheproof/12fd3aaf33eb5fa1f52e026912ee00c054f9d984/testvectors_v1/ed25519_test.json",
+      "downloaded": true,
+      "algorithm": "EDDSA",
+      "declared_tests": 151,
+      "actual_tests": 151,
+      "groups": 78,
+      "schema": "eddsa_verify_schema_v1.json",
+      "results": {
+        "valid": 88,
+        "invalid": 63,
+        "acceptable": 0
+      }
+    }
+  ],
+  "release_endpoint_http_status": 404,
+  "stable_library_release_claimed": false,
+  "crypto_executed": false,
+  "agent_efficacy_scored": false
+}

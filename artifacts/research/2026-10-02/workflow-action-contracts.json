@@ -1,0 +1,187 @@
+[
+  {
+    "repo": "actions/checkout",
+    "tag": "v7.0.1",
+    "commit_sha": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+    "path": "action.yml",
+    "runs": {
+      "using": "node24",
+      "main": "dist/index.js",
+      "post": "dist/index.js"
+    },
+    "inputs": [
+      "repository",
+      "ref",
+      "token",
+      "ssh-key",
+      "ssh-known-hosts",
+      "ssh-strict",
+      "ssh-user",
+      "persist-credentials",
+      "path",
+      "clean",
+      "filter",
+      "sparse-checkout",
+      "sparse-checkout-cone-mode",
+      "fetch-depth",
+      "fetch-tags",
+      "show-progress",
+      "lfs",
+      "submodules",
+      "set-safe-directory",
+      "github-server-url",
+      "allow-unsafe-pr-checkout"
+    ],
+    "endpoint": "repos/actions/checkout/contents/action.yml?ref=3d3c42e5aac5ba805825da76410c181273ba90b1"
+  },
+  {
+    "repo": "actions/setup-python",
+    "tag": "v7.0.0",
+    "commit_sha": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+    "path": "action.yml",
+    "runs": {
+      "using": "node24",
+      "main": "dist/setup/index.js",
+      "post": "dist/cache-save/index.js",
+      "post-if": "success()"
+    },
+    "inputs": [
+      "python-version",
+      "python-version-file",
+      "cache",
+      "architecture",
+      "check-latest",
+      "token",
+      "cache-dependency-path",
+      "update-environment",
+      "allow-prereleases",
+      "freethreaded",
+      "pip-version"
+    ],
+    "endpoint": "repos/actions/setup-python/contents/action.yml?ref=5fda3b95a4ea91299a34e894583c3862153e4b97"
+  },
+  {
+    "repo": "actions/upload-artifact",
+    "tag": "v7.0.1",
+    "commit_sha": "043fb46d1a93c77aae656e7c1c64a875d1fc6a0a",
+    "path": "action.yml",
+    "runs": {
+      "using": "node24",
+      "main": "dist/upload/index.js"
+    },
+    "inputs": [
+      "name",
+      "path",
+      "if-no-files-found",
+      "retention-days",
+      "compression-level",
+      "overwrite",
+      "include-hidden-files",
+      "archive"
+    ],
+    "endpoint": "repos/actions/upload-artifact/contents/action.yml?ref=043fb46d1a93c77aae656e7c1c64a875d1fc6a0a"
+  },
+  {
+    "repo": "github/codeql-action",
+    "tag": "v4.38.2",
+    "commit_sha": "2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2",
+    "path": "init/action.yml",
+    "runs": {
+      "using": "node24",
+      "main": "../lib/init-entry.js",
+      "post": "../lib/init-post-entry.js"
+    },
+    "inputs": [
+      "tools",
+      "languages",
+      "build-mode",
+      "analysis-kinds",
+      "token",
+      "registries",
+      "matrix",
+      "config-file",
+      "db-location",
+      "config",
+      "queries",
+      "quality-queries",
+      "packs",
+      "external-repository-token",
+      "setup-python-dependencies",
+      "source-root",
+      "ram",
+      "threads",
+      "debug",
+      "debug-artifact-name",
+      "debug-database-name",
+      "trap-caching",
+      "dependency-caching",
+      "check-run-id",
+      "job-status"
+    ],
+    "endpoint": "repos/github/codeql-action/contents/init/action.yml?ref=2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2"
+  },
+  {
+    "repo": "github/codeql-action",
+    "tag": "v4.38.2",
+    "commit_sha": "2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2",
+    "path": "analyze/action.yml",
+    "runs": {
+      "using": "node24",
+      "main": "../lib/analyze-entry.js",
+      "post": "../lib/analyze-post-entry.js"
+    },
+    "inputs": [
+      "check_name",
+      "output",
+      "upload",
+      "cleanup-level",
+      "ram",
+      "add-snippets",
+      "skip-queries",
+      "threads",
+      "checkout_path",
+      "ref",
+      "sha",
+      "category",
+      "upload-database",
+      "post-processed-sarif-path",
+      "wait-for-processing",
+      "token",
+      "matrix",
+      "expect-error"
+    ],
+    "endpoint": "repos/github/codeql-action/contents/analyze/action.yml?ref=2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2"
+  },
+  {
+    "repo": "softprops/action-gh-release",
+    "tag": "v3.0.3",
+    "commit_sha": "efb35369e0ad2afab669f228072c1b0d510eae64",
+    "path": "action.yml",
+    "runs": {
+      "using": "node24",
+      "main": "dist/index.js"
+    },
+    "inputs": [
+      "body",
+      "body_path",
+      "name",
+      "tag_name",
+      "draft",
+      "prerelease",
+      "preserve_order",
+      "files",
+      "working_directory",
+      "overwrite_files",
+      "fail_on_unmatched_files",
+      "repository",
+      "token",
+      "target_commitish",
+      "discussion_category_name",
+      "generate_release_notes",
+      "previous_tag",
+      "append_body",
+      "make_latest"
+    ],
+    "endpoint": "repos/softprops/action-gh-release/contents/action.yml?ref=efb35369e0ad2afab669f228072c1b0d510eae64"
+  }
+]

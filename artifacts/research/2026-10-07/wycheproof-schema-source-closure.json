@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "evidence_class": "pinned-wycheproof-local-schema-closure-inventory",
+  "commit": "12fd3aaf33eb5fa1f52e026912ee00c054f9d984",
+  "schemas": {
+    "aead_test_schema_v1.json": {
+      "sha256": "6c530fa1dc0376d3d1f826112383959a791d169ed31012ead30625b33e829a62",
+      "bytes": 3353,
+      "references": [
+        "common.json#/definitions/Source",
+        "#/definitions/AeadTestVector",
+        "common.json#/definitions/Result",
+        "common.json#/definitions/Notes",
+        "#/definitions/AeadTestGroup"
+      ],
+      "reviewed": false
+    },
+    "eddsa_verify_schema_v1.json": {
+      "sha256": "f3e5678134d7b7331621206bf890912581971616df49c6f57d270e1625a62b24",
+      "bytes": 2752,
+      "references": [
+        "common.json#/definitions/Source",
+        "#/definitions/PublicKey",
+        "json_web_crypto_common.json#/definitions/JsonWebKey",
+        "signatures_common.json#/definitions/SignatureTestVector",
+        "common.json#/definitions/Notes",
+        "#/definitions/EddsaTestGroup"
+      ],
+      "reviewed": false
+    },
+    "common.json": {
+      "sha256": "d4944d217b04451aab6853c2772c966297543a2791277d32a9b43131d59e0b7f",
+      "bytes": 1547,
+      "references": [
+        "#/definitions/NoteEntry"
+      ],
+      "reviewed": false
+    },
+    "json_web_crypto_common.json": {
+      "sha256": "6f7893adaaf9c90a85568ef3188bfd249845c4bf7b8b39bcd78dd6b5fe020610",
+      "bytes": 3440,
+      "references": [
+        "#/definitions/JsonWebKey",
+        "#/definitions/JsonWebKeyset",
+        "#/definitions/JsonWebKey"
+      ],
+      "reviewed": false
+    },
+    "signatures_common.json": {
+      "sha256": "f9a0d013c593a29a13aef262001d00d81e72f3f402bc4cfd2a5e81d499a5bed1",
+      "bytes": 1997,
+      "references": [
+        "common.json#/definitions/Result",
+        "common.json#/definitions/Result"
+      ],
+      "reviewed": false
+    }
+  },
+  "all_references_downloaded": true,
+  "schema_validation_executed": false,
+  "crypto_executed": false,
+  "agent_efficacy_scored": false
+}

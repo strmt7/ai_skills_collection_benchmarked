@@ -1,0 +1,114 @@
+{
+  "conditions": {
+    "default": {
+      "injection": "no additional skill instructions",
+      "skills": []
+    },
+    "improved": {
+      "injection": "full draft instruction bundle in prompt",
+      "skills": [
+        {
+          "path": "included/improved/skills/eval-harness/SKILL.md",
+          "sha256": "c598eed23babdb8fcc2eea2498c5841516bd641e7d0e373aeadb504201daf1d9"
+        },
+        {
+          "path": "included/improved/skills/strategic-compact/SKILL.md",
+          "sha256": "3f53ae09458f05fd1938198c8266e578463eb68146ffeae8443f910b6ab1c875"
+        }
+      ]
+    },
+    "karpathy": {
+      "injection": "full pinned instructions in prompt",
+      "skills": [
+        {
+          "license_declared_in_skill": "MIT",
+          "path": ".venv/research-state/karpathy-baseline.md",
+          "sha256": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+          "source_url": "https://github.com/multica-ai/andrej-karpathy-skills/blob/2c606141936f1eeef17fa3043a72095b4765b9c2/skills/karpathy-guidelines/SKILL.md"
+        }
+      ]
+    }
+  },
+  "frozen_at_utc": "2026-10-02T12:28:05Z",
+  "grader_sha256": "6e507cffa902b802036c8f288729b4182463f2aff7045c5603e6ce38167ab8e2",
+  "grading_driver_sha256": "9b4e18561a98b5da8cda540ba728cbc92d199d1e5d2f9cb48fecaef4f5af0921",
+  "input_sha256": {
+    "data/benchmark_scenarios.json": "4aefc7f4530ddc2be09396c6bb378b88580301e61a67f579efe15a02c15ac49c",
+    "data/skills_catalog.json": "26b5bb8a076a06d7749c92310ba4cacdd9b3013ea21b4fa38507d7dbbd2be583",
+    "evaluators/benchmark_run_artifact.schema.json": "4512d69f042a4d4e3604fe8494db9fafe6d765e5edbf132546e5e622223631b9",
+    "tools/check_benchmark_artifact.py": "d117c39d63678fc2f88f02ae5d1f5279cae529f51d637f8cab274217e5f9c76b"
+  },
+  "limitations": [
+    "One development maintenance task on a real pinned repository subset; not final holdouts or collection-wide utility.",
+    "Instructions are injected, not selected by natural skill discovery; this measures the two-skill bundle, not each skill individually.",
+    "Process and instruction scope isolation; not a container with sealed grader files.",
+    "Provider-resolved model snapshot is unavailable; requested CLI model and actual returned usage are recorded.",
+    "Latency is recorded for diagnostics only; concurrent owner workloads are not controlled.",
+    "The prior independent probe already reached 17/17, so this task may have a ceiling effect.",
+    "Karpathy-labelled instructions are a third-party adaptation with attribution, not a repository authored by Karpathy.",
+    "External score checks submitted validator behavior; agent-written regression tests are captured but are not a test-coverage or mutation-testing score."
+  ],
+  "model": "gpt-6.1-sol",
+  "planned_order": [
+    {
+      "conditions": [
+        "default",
+        "karpathy",
+        "improved"
+      ],
+      "repetition": 1
+    },
+    {
+      "conditions": [
+        "karpathy",
+        "improved",
+        "default"
+      ],
+      "repetition": 2
+    },
+    {
+      "conditions": [
+        "improved",
+        "default",
+        "karpathy"
+      ],
+      "repetition": 3
+    }
+  ],
+  "prompt_template": "<TASK_BRIEF>\n\nUse this preinstalled Python runtime for checks: <PYTHON_RUNTIME>. Read and edit only this task workspace. Do not read user memory, user settings, installed skills, other repositories, external grader files, or prior agent logs. Do not access the network, spawn agents, change execution permissions, bypass policy, or commit changes. Record your commands, outcomes, and modified files in action-log.json. Add useful regression tests and run them. Finalize a complete working patch within this session. Report failures truthfully; task correctness will be checked externally.",
+  "protocol_version": 2,
+  "reasoning_effort": "high",
+  "revision_reason": "Windows sandbox-created new files could not be collected by the host. Pre-created output files and test directory passed a separate capability check without changing permissions. The v1 attempt remains a recorded harness error.",
+  "runner_sha256": "89d1fb7182c61331a2d40c56bb568dff322ce8fcb8dc7c65aff3482b48888d3f",
+  "task": {
+    "allowed_changes": [
+      "tools/check_benchmark_artifact.py",
+      "tests/",
+      "action-log.json"
+    ],
+    "brief": "Fix the benchmark artifact validator so malformed JSON fields return structured invalid or incomplete verdicts instead of crashing. Enforce the constraints declared by its bundled schema. If the schema is unavailable, reject the record rather than silently disabling validation. Transcript and evidence paths must identify files. Keep complete provenance records, permitted extra metadata, and complete recorded artifacts accepted. Add meaningful tests and run relevant checks. Work only in this task workspace; do not inspect other repositories, development logs, or external grader files. Write your regression tests in the pre-created tests/test_regressions.py file.",
+    "files": [
+      "tools/check_benchmark_artifact.py",
+      "evaluators/benchmark_run_artifact.schema.json",
+      "data/skills_catalog.json",
+      "data/benchmark_scenarios.json"
+    ],
+    "fixture_kind": "pinned-repository-subset",
+    "grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py",
+    "id": "artifact-validator-robustness",
+    "independence": "Acceptance contracts come from the original validator's declared schema and independently reproduced input-validation defects, not from evaluated skill instructions.",
+    "limitations": [
+      "One maintenance task cannot establish category-wide or collection-wide skill utility.",
+      "The fixture is a source subset, not a complete external issue-resolution checkout.",
+      "Process/workspace isolation must be distinguished from container-enforced isolation."
+    ],
+    "partition": "development",
+    "source_commit": "4bd209752567f5c35074d4ee4a73600e1c45c283",
+    "source_repo": "strmt7/ai_skills_collection_benchmarked"
+  },
+  "time_limit_seconds": 900,
+  "workspace_scaffold": {
+    "action-log.json": "{}\n",
+    "tests/test_regressions.py": ""
+  }
+}

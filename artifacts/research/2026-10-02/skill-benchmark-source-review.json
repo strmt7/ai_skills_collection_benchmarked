@@ -1,0 +1,96 @@
+{
+  "observed_at_utc": "2026-10-02T14:53:50.919564+00:00",
+  "benchmarks_executed": false,
+  "sources": [
+    {
+      "repo": "benchflow-ai/skillsbench",
+      "canonical_repo": "benchflow-ai/skillsbench",
+      "current_commit": "b63b7b2850226b6aa4fb5929a8c1ac7bc4d9a6af",
+      "selected_ref": "v1.1",
+      "license": "Apache-2.0",
+      "release_count": 2,
+      "excluded_tags": [],
+      "release_inventory_sha256": "f7e09b6ead3a0108a76f70bf725f25e285424a68b8fdb4aad3d36837dfa26ee2",
+      "selection_policy": "highest non-prerelease published version",
+      "release_url": "https://github.com/benchflow-ai/skillsbench/releases/tag/v1.1",
+      "status": "current",
+      "checkout": {
+        "repo": "benchflow-ai/skillsbench",
+        "commit": "b63b7b2850226b6aa4fb5929a8c1ac7bc4d9a6af",
+        "status": "verified",
+        "skill_entrypoint_count": 276,
+        "license_paths": [
+          ".agents/skills/skill-creator/LICENSE.txt",
+          "LICENSE",
+          "tasks-extra/find-topk-similiar-chemicals/environment/skills/pdf/LICENSE.txt",
+          "tasks/court-form-filling/environment/skills/pdf/LICENSE.txt",
+          "tasks/exceltable-in-ppt/environment/skills/pptx/LICENSE.txt",
+          "tasks/exceltable-in-ppt/environment/skills/xlsx/LICENSE.txt",
+          "tasks/financial-modeling-qa/environment/skills/pdf/references/LICENSE.txt",
+          "tasks/financial-modeling-qa/environment/skills/xlsx/LICENSE.txt",
+          "tasks/fix-visual-stability/environment/skills/web-interface-guidelines/LICENSE",
+          "tasks/flink-query/environment/skills/pdf/LICENSE.txt",
+          "tasks/invoice-fraud-detection/environment/skills/pdf/LICENSE.txt",
+          "tasks/invoice-fraud-detection/environment/skills/xlsx/LICENSE.txt",
+          "tasks/jpg-ocr-stat/environment/skills/pdf/LICENSE.txt",
+          "tasks/jpg-ocr-stat/environment/skills/xlsx/LICENSE.txt",
+          "tasks/latex-formula-extraction/environment/skills/pdf/LICENSE.txt",
+          "tasks/lean4-proof/environment/skills/LICENSE",
+          "tasks/organize-messy-files/environment/skills/docx/LICENSE.txt",
+          "tasks/organize-messy-files/environment/skills/pdf/LICENSE.txt",
+          "tasks/organize-messy-files/environment/skills/pptx/LICENSE.txt",
+          "tasks/paper-anonymizer/environment/skills/pdf/LICENSE.txt",
+          "tasks/pdf-excel-diff/environment/skills/pdf/LICENSE.txt",
+          "tasks/pdf-excel-diff/environment/skills/xlsx/LICENSE.txt",
+          "tasks/powerlifting-coef-calc/environment/skills/xlsx/LICENSE.txt",
+          "tasks/pptx-reference-formatting/environment/skills/pptx/LICENSE.txt",
+          "tasks/protein-expression-analysis/environment/skills/xlsx/LICENSE.txt",
+          "tasks/reserves-at-risk-calc/environment/skills/xlsx/LICENSE.txt",
+          "tasks/shock-analysis-demand/environment/skills/xlsx/LICENSE.txt",
+          "tasks/shock-analysis-supply/environment/skills/xlsx/LICENSE.txt",
+          "tasks/simpo-code-reproduction/environment/SimPO/LICENSE",
+          "tasks/simpo-code-reproduction/environment/skills/pdf/LICENSE.txt",
+          "tasks/weighted-gdp-calc/environment/skills/xlsx/LICENSE.txt",
+          "tasks/xlsx-recover-data/environment/skills/xlsx/LICENSE.txt"
+        ]
+      }
+    },
+    {
+      "repo": "GeniusHTX/SWE-Skills-Bench",
+      "status": "error",
+      "error": "gh: Not Found (HTTP 404)"
+    },
+    {
+      "repo": "benchflow-ai/benchflow",
+      "canonical_repo": "benchflow-ai/benchflow",
+      "current_commit": "6614f922ad49322386b9d6083a827a3d58126710",
+      "selected_ref": "v0.7.8",
+      "license": "Apache-2.0",
+      "release_count": 36,
+      "excluded_tags": [
+        "0.6.0-rc.6",
+        "0.6.0-rc.5",
+        "0.6.0-rc.4",
+        "0.6.0-rc.3",
+        "0.6.0-rc.2",
+        "0.6.0-rc.1"
+      ],
+      "release_inventory_sha256": "77292d19e3506ae3c11f64b6728524a3cb9a24b5b4a13a20aea407dfe11ed959",
+      "selection_policy": "highest non-prerelease published version",
+      "release_url": "https://github.com/benchflow-ai/benchflow/releases/tag/v0.7.8",
+      "status": "current",
+      "checkout": {
+        "repo": "benchflow-ai/benchflow",
+        "commit": "6614f922ad49322386b9d6083a827a3d58126710",
+        "status": "verified",
+        "skill_entrypoint_count": 37,
+        "license_paths": [
+          ".agents/skills/skill-creator/LICENSE.txt",
+          "LICENSE",
+          "docs/examples/task-md/real-skillsbench/weighted-gdp-calc/environment/skills/xlsx/LICENSE.txt",
+          "src/benchflow/trajectories/viewer/assets/vendor/LICENSE.highlight.js"
+        ]
+      }
+    }
+  ]
+}

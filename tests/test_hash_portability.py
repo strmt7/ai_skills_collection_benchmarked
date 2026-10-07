@@ -9,9 +9,11 @@ regress to host-sensitive behaviour.
 from __future__ import annotations
 
 import stat
+import subprocess
 from pathlib import Path
 
 import build_catalog  # tools/ on sys.path via conftest.py
+import pytest
 
 
 def _write_fixture(root: Path, mode_group_world: int) -> None:
@@ -50,6 +52,8 @@ def test_sha256_tree_independent_of_umask_group_world_bits(tmp_path):
 def test_sha256_tree_changes_when_executable_bit_is_added(tmp_path):
     a = tmp_path / "a"
     _write_fixture(a, mode_group_world=0o044)
+    if not (a / "scripts" / "run.sh").stat().st_mode & 0o111:
+        pytest.skip("filesystem cannot represent POSIX executable bits; Git-index mode is tested separately")
     before = build_catalog.sha256_tree(a)
     # Remove exec bit from the script, forcing the portable mode to flip.
     script = a / "scripts" / "run.sh"
@@ -82,9 +86,21 @@ def test_portable_mode_maps_regular_files_to_0644(tmp_path):
     assert build_catalog._portable_mode(st) == 0o100644
 
 
-def test_portable_mode_maps_any_exec_bit_to_0755(tmp_path):
-    path = tmp_path / "f"
-    path.write_text("x", encoding="utf-8")
+def test_portable_mode_maps_any_exec_bit_to_0755():
     for extra in (0o100, 0o010, 0o001):
-        path.chmod(0o600 | extra)
-        assert build_catalog._portable_mode(path.stat().st_mode) == 0o100755
+        assert build_catalog._portable_mode(stat.S_IFREG | 0o600 | extra) == 0o100755
+
+
+def test_git_index_preserves_modes_and_invalidates_cache_when_index_changes(tmp_path):
+    subprocess.run(["git", "init", str(tmp_path)], check=True, capture_output=True)
+    script = tmp_path / "script with spaces.py"
+    script.write_text("print('ok')\n", encoding="utf-8", newline="\n")
+    subprocess.run(["git", "-C", str(tmp_path), "add", "."], check=True)
+    subprocess.run(["git", "-C", str(tmp_path), "update-index", "--chmod=+x", script.name], check=True)
+    assert build_catalog._git_modes(tmp_path)[script.resolve()] == 0o100755
+    subprocess.run(["git", "-C", str(tmp_path), "update-index", "--chmod=-x", script.name], check=True)
+    assert build_catalog._git_modes(tmp_path)[script.resolve()] == 0o100644
+
+
+def test_git_modes_without_repository_are_empty(tmp_path):
+    assert build_catalog._git_modes(tmp_path) == {}

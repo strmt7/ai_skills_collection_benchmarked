@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "evidence_class": "actual-linux-publication-and-mode-controls",
+  "passed": true,
+  "project_file_sha256": {
+    "tools/build_catalog.py": "e80c65a8ed2bee776d8babb354af789f196545bd2bdc63c3e7313068cfbbde4a",
+    "tools/_catalog_publication.py": "3be0d907c21004dd9e86cbbd01d12a043f80cffd9c76d3da3d43d64f8aef8a3a",
+    "tools/update_readme_badges.py": "9d150dd352c413499a9a22516eb216ec169f3315a27dba7625c4a3d2c9057dfd",
+    "tools/_lib_b/determinism.py": "f16faa8f1f605cfe323fb139019f8bc94fe129940dd7bafb148eedba4ed413b9",
+    "tools/_lib_b/frontmatter_utils.py": "ce8dabc7321d6089628e42a1fdcda576a5f7b8657a2090718551191fad736165",
+    "tools/_lib_b/hashing.py": "7a19e225c3df4a18bd1b6447a7b13783f2169b9d9628fb6d85cda04429ce0c35",
+    "tools/_lib_b/io_utils.py": "b470b6a341006053110b53348d5a2322ea0d3d7995a8d99a7513e5fd59fcf376",
+    "tools/_lib_b/logging_utils.py": "e20db684564c57d2a4a0922e7797c5a4661fc74434b159bfd98f090cf41aea83",
+    "tools/_lib_b/__init__.py": "d5d2f451fd013d9c3848cf9ea24fbf1cb9f9aa6e3277440f7afda3fbfe3305e7",
+    "benchmarks/dependency-regressions/catalog_posix_fixture.py": "bb28b84209cb8e84b088fbcdeb0fc7ea8741690e6df852d5ea9fab8376cbd0e6"
+  },
+  "pyyaml_version": "6.0.3",
+  "reproducer_sha256": "4bb594056f5e66e1c5ac4c3d36d84d1e575730b0ce4a6d4fc2a028596d9119af",
+  "invocation": {
+    "status": "completed",
+    "container_name": "skills-invoke-a8938b1aa7f743d98030f9bd0ab1b0f1",
+    "image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+    "scored": false,
+    "candidate_response_is_untrusted": true,
+    "cleanup_verified": true,
+    "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+    "resource_profile": "python-small",
+    "submission_sha256": {
+      "tools/build_catalog.py": "e80c65a8ed2bee776d8babb354af789f196545bd2bdc63c3e7313068cfbbde4a",
+      "tools/_catalog_publication.py": "3be0d907c21004dd9e86cbbd01d12a043f80cffd9c76d3da3d43d64f8aef8a3a",
+      "tools/update_readme_badges.py": "9d150dd352c413499a9a22516eb216ec169f3315a27dba7625c4a3d2c9057dfd",
+      "tools/_lib_b/determinism.py": "f16faa8f1f605cfe323fb139019f8bc94fe129940dd7bafb148eedba4ed413b9",
+      "tools/_lib_b/frontmatter_utils.py": "ce8dabc7321d6089628e42a1fdcda576a5f7b8657a2090718551191fad736165",
+      "tools/_lib_b/hashing.py": "7a19e225c3df4a18bd1b6447a7b13783f2169b9d9628fb6d85cda04429ce0c35",
+      "tools/_lib_b/io_utils.py": "b470b6a341006053110b53348d5a2322ea0d3d7995a8d99a7513e5fd59fcf376",
+      "tools/_lib_b/logging_utils.py": "e20db684564c57d2a4a0922e7797c5a4661fc74434b159bfd98f090cf41aea83",
+      "tools/_lib_b/__init__.py": "d5d2f451fd013d9c3848cf9ea24fbf1cb9f9aa6e3277440f7afda3fbfe3305e7",
+      "vendor/yaml/composer.py": "fcaa37d16afa783594794a5ab94193dcb720f503c19ce3d59539c8311189f453",
+      "vendor/yaml/constructor.py": "90d8247da78b524c10618fd0e857f54f3d97570fe91b5c5513d024ef3faf88b0",
+      "vendor/yaml/cyaml.py": "e99ac01bd7c062f7557b614aff0d21997a06ed962ca185306a91bc0a20bbd87d",
+      "vendor/yaml/dumper.py": "3cb72d66563064ba7b5e679477046ebf89d8399d940670c8532f3e94a7cb17ea",
+      "vendor/yaml/emitter.py": "8e086d694ede170837d5b1b407b45979aff6f40762f422a65eafd08e04290a44",
+      "vendor/yaml/error.py": "021f73fada072546c4f63f8cf18a7181244ce4280b09cc15cc980b2d1176171a",
+      "vendor/yaml/events.py": "e74fd392c810884e2ea7e94aa3f57e9c1cbeb402319083d0c58e6a0e1282787c",
+      "vendor/yaml/loader.py": "5156becc8aa6905482218abf3e04869b835226db4763645fff3438fdbd5f1cdd",
+      "vendor/yaml/nodes.py": "80f28d8fca4a09d87677882bde021820d9cf39a3b11a12405226211919cf13ce",
+      "vendor/yaml/parser.py": "8a55a9e6fbe0a07146cef3990c8b45a068c3e83e369e1959ad9ca30306b4a09a",
+      "vendor/yaml/reader.py": "d1d9b38ab3a20c6e17a38d519ee412ecaf6b918df18c78956ac7c330d4ea08dc",
+      "vendor/yaml/representer.py": "22e58ff9c016f6c1ca1274b4802a926bcf78935060e1c813c5a0f021c6d143e6",
+      "vendor/yaml/resolver.py": "f4bf9561f9b89961f1503d558385fbae30d12bfed565de9bf76c33abb63620a6",
+      "vendor/yaml/scanner.py": "60433788b652690c17710460da5d91e0c753d3318fd85f5e1e42862a71f25906",
+      "vendor/yaml/serializer.py": "0a1b85826854d35863e31808f0668abfabdf33606e8f06bd8bb7761401e3edc0",
+      "vendor/yaml/tokens.py": "953408cd2570f0c83dc2fe39f7e4e388e41eeb05738aa69196a5f6ffcf6ba79e",
+      "vendor/yaml/__init__.py": "b19dfcc333d6a75dfd73073901164507252f271b41d3b5f7d85510033a0547a7",
+      "candidate.py": "bb28b84209cb8e84b088fbcdeb0fc7ea8741690e6df852d5ea9fab8376cbd0e6"
+    },
+    "container_id": "1028a4c0327fa4c519cc1452e92b9a40472bedc2c2eff2bbf93244ddebc65d8b",
+    "isolation_checks": {
+      "errors": [],
+      "passed": true,
+      "observed_user": "65534:65534",
+      "observed_image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+      "observed_ownership_token": "a8938b1aa7f743d98030f9bd0ab1b0f1",
+      "resolved_image_id": "sha256:284cda8648f59f87e9468ec9d5652064dc2cd5b7d3fce342c2d3825ca1de6353",
+      "observed_host_constraints": {
+        "NetworkMode": "none",
+        "IpcMode": "none",
+        "ReadonlyRootfs": true,
+        "Memory": 536870912,
+        "MemorySwap": 536870912,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64,
+        "Privileged": false,
+        "Init": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "CapAdd": null,
+        "SecurityOpt": [
+          "no-new-privileges"
+        ],
+        "LogConfig": {
+          "Type": "none",
+          "Config": {}
+        },
+        "Tmpfs": {
+          "/tmp": "rw,noexec,nosuid,size=128m"
+        },
+        "Devices": [],
+        "DeviceRequests": null,
+        "VolumesFrom": null
+      },
+      "observed_mounts": [
+        {
+          "Destination": "/submission",
+          "Type": "bind",
+          "RW": false
+        },
+        {
+          "Destination": "/worker",
+          "Type": "bind",
+          "RW": false
+        }
+      ]
+    },
+    "setup_elapsed_seconds": 0.288467600000331,
+    "runtime_elapsed_seconds": 0.9166753999998036,
+    "returncode": 0,
+    "candidate_response": {
+      "worker_status": "returned",
+      "result": {
+        "platform": "linux",
+        "uid": 65534,
+        "checks": [
+          "publication_preserves_posix_executable_mode_and_previous_files",
+          "repeated_posix_stage_has_no_drift",
+          "later_posix_rename_failure_restores_earlier_outputs",
+          "posix_symlink_publication_target_rejected",
+          "portable_tree_hash_copy_and_posix_mode_tamper_detection"
+        ],
+        "fixture_temporary_directory_removed": true,
+        "scope": "POSIX filesystem contracts only; not the complete Linux suite or agent efficacy"
+      }
+    },
+    "captured_bytes": 488,
+    "stderr": "",
+    "elapsed_seconds": 1.3762433000001693
+  },
+  "agent_efficacy_scored": false,
+  "scope": "Qualified Linux image, actual filesystem/mode contracts; not the full Linux suite"
+}

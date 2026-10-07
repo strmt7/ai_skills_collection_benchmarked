@@ -1,9 +1,17 @@
 # Host-, Agent-, and Installation-Agnostic Setup
 
 This repository is designed so that *validation* of the catalog and *every
-quality gate run by CI* works on any POSIX-like host, on Python 3.10–3.13,
+quality gate run by CI* targets Python 3.11–3.14 on Linux and current Python
+on Windows,
 without root, without a specific username, and without referencing any path
 under `/tmp` or `/home/<user>/`.
+
+Use Python 3.14.8 for the current validation environment. Compatibility CI also
+selects current security patches for supported older Python series. Python 3.10
+has reached end of life. Live services, devices, GPUs, external data sources,
+and installed agent runtimes need separate qualification; an offline catalog
+check does not prove their behavior. On Windows, use the active environment's
+`Scripts/python.exe` in place of `python3` in the commands below.
 
 ## Validate from a fresh clone
 

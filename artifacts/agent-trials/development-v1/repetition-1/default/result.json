@@ -1,0 +1,218 @@
+{
+  "condition": "default",
+  "evidence_collection_error": "Windows sandbox-created action-log.json was inaccessible to the collecting host; no permissions were relaxed.",
+  "grader": {
+    "checks": [
+      {
+        "case": "valid_provenance",
+        "passed": true,
+        "validator_result": {
+          "errors": [],
+          "verdict": "artifact_complete",
+          "warnings": [
+            "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+          ]
+        }
+      },
+      {
+        "case": "valid_extra_metadata",
+        "passed": true,
+        "validator_result": {
+          "errors": [],
+          "verdict": "artifact_complete",
+          "warnings": [
+            "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+          ]
+        }
+      },
+      {
+        "case": "malformed_skill_id",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/skill_id: expected type 'string', got list"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "malformed_scenario_id",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/scenario_id: expected type 'string', got list"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "malformed_artifact_kind",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/artifact_kind: expected type 'string', got list"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "malformed_input_snapshot",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/input_snapshot: expected type 'object', got list"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "malformed_execution",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/execution: expected type 'object', got list"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "malformed_runner",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/runner: expected type 'object', got list"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "malformed_independence",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/independence: expected type 'object', got list"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "malformed_evidence",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/evidence: expected type 'object', got list"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "malformed_metrics",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/metrics: expected type 'object', got list"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "malformed_outputs",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/outputs: expected type 'object', got list"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "malformed_scenario_requirements",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/scenario_requirements: expected type 'object', got list"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "schema_minimum_string_length",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "/input_snapshot/kind: expected at least 1 characters, got 0"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      },
+      {
+        "case": "transcript_must_be_file",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "missing transcript artifact (must be a file): directory"
+          ],
+          "verdict": "artifact_incomplete",
+          "warnings": [
+            "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+          ]
+        }
+      },
+      {
+        "case": "evidence_must_be_file",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "missing evidence artifact paths (must be files): ['directory']"
+          ],
+          "verdict": "artifact_incomplete",
+          "warnings": [
+            "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+          ]
+        }
+      },
+      {
+        "case": "missing_schema_rejected",
+        "passed": true,
+        "validator_result": {
+          "errors": [
+            "cannot load artifact schema: schema is unavailable or invalid"
+          ],
+          "verdict": "artifact_invalid",
+          "warnings": []
+        }
+      }
+    ],
+    "checks_passed": 17,
+    "checks_total": 17,
+    "scope": "Validator behavior on an independent development probe; not a skill-performance claim",
+    "status": "task_passed"
+  },
+  "limits": "The source patch was independently graded, but complete required evidence was not collected. This attempt remains in failure accounting.",
+  "matched_comparison_eligible": false,
+  "model_requested": "gpt-6.1-sol",
+  "protocol_sha256": "3f2f03b100f4bb8df72d7a681277574ae30a18db9fdfe6860735e4260047e5e0",
+  "reasoning_effort_requested": "high",
+  "status": "harness_error",
+  "task_id": "artifact-validator-robustness",
+  "trial_version": 1,
+  "usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 367488,
+    "input_tokens": 415398,
+    "output_tokens": 16414,
+    "reasoning_output_tokens": 3648
+  }
+}

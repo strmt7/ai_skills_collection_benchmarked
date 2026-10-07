@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "evidence_class": "complete-original-kubernetes-diagnostic-package-resource-review",
+  "skill_id": "trailofbits-skills-plugins-debug-buttercup-skills-debug-buttercup-skill-md",
+  "original_source_commit": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+  "reviewed_resources": {
+    "SKILL.md": {
+      "status": "reviewed",
+      "sha256": "84f55237bee765ad6f97d943d08e7810ea56296babb17c93ae455d1baa817416",
+      "bytes": 10202,
+      "review_scope": "Complete read: incident activation, namespace/service contracts, container selection, temporal/cascade evidence, Redis stream semantics and diagnostic scope."
+    },
+    "references/failure-patterns.md": {
+      "status": "reviewed",
+      "sha256": "8400833e7f81a8991c88ff52422ab9433a649f8e5f2836b8b11f6d8b8e332308",
+      "bytes": 5812,
+      "review_scope": "Complete read: AOF/disk/DinD/OOM/queue/probe/init failure hypotheses, persistence/retention/pruning/acknowledgement risks and deployment-specific fixes."
+    },
+    "scripts/diagnose.sh": {
+      "status": "reviewed",
+      "sha256": "a259d7b5bd615806f0a5003b874f66d0bd116f5e8c8a7258db11bbf50fbb06d1",
+      "bytes": 4320,
+      "review_scope": "Complete read: first-container indexing, selectors, stderr masking, pipeline failure, namespace/node scope, absent request timeouts and boundedness; actual six isolated command-spy controls."
+    }
+  },
+  "fetched_upstream_commit": "82fe8226252622fa807643bdca1710901198553a",
+  "original_package_present_at_fetched_upstream_commit": false,
+  "absence_reason_verified": false,
+  "coding_agent_score_measured": false,
+  "live_cluster_contacted": false,
+  "primary_sources": [
+    "https://kubernetes.io/docs/tasks/debug/debug-application/debug-pods/",
+    "https://kubernetes.io/docs/concepts/storage/volumes/",
+    "https://redis.io/docs/latest/commands/xlen/",
+    "https://redis.io/docs/latest/commands/xpending/"
+  ]
+}

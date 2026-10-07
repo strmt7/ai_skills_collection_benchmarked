@@ -1,0 +1,790 @@
+{
+  "schema_version": 1,
+  "evidence_class": "actual-original-kubernetes-diagnostic-helper-command-spy-controls",
+  "passed": true,
+  "project_file_sha256": {
+    "included/skills/by-category/testing-qa-benchmarking/security-reference/debug-buttercup/scripts/diagnose.sh": "a259d7b5bd615806f0a5003b874f66d0bd116f5e8c8a7258db11bbf50fbb06d1",
+    "benchmarks/dependency-regressions/kubernetes_diagnosis_fixture.py": "e3555ab6ee9f5452f4d9fbc33954b824a4300462bf8f581097f0666be6a365a1"
+  },
+  "reproducer_sha256": "12f9fbde9138c506abd804126c2a1479e35967a2909c4c1f5359ec4b93978981",
+  "staged_script_canonical_sha256": "205fc017e4b1a4c0c5063e07ade018928b6b1242fb5d10dd329b920f10e17ef5",
+  "fixture_adaptations": [
+    "Apply existing canonical LF policy to the private script copy",
+    "Inject an owned Bash function invoking a Python command spy; /tmp remains noexec"
+  ],
+  "invocation": {
+    "status": "completed",
+    "container_name": "skills-invoke-cd7b97236e2a4933ab4853a78bea5e47",
+    "image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+    "scored": false,
+    "candidate_response_is_untrusted": true,
+    "cleanup_verified": true,
+    "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+    "resource_profile": "python-small",
+    "submission_sha256": {
+      "original-diagnose.sh": "205fc017e4b1a4c0c5063e07ade018928b6b1242fb5d10dd329b920f10e17ef5",
+      "candidate.py": "e3555ab6ee9f5452f4d9fbc33954b824a4300462bf8f581097f0666be6a365a1"
+    },
+    "container_id": "bceac5b0c7fd6732009e57031267909e56ecca5106bab4cbe212fbba972b9c08",
+    "isolation_checks": {
+      "errors": [],
+      "passed": true,
+      "observed_user": "65534:65534",
+      "observed_image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+      "observed_ownership_token": "cd7b97236e2a4933ab4853a78bea5e47",
+      "resolved_image_id": "sha256:284cda8648f59f87e9468ec9d5652064dc2cd5b7d3fce342c2d3825ca1de6353",
+      "observed_host_constraints": {
+        "NetworkMode": "none",
+        "IpcMode": "none",
+        "ReadonlyRootfs": true,
+        "Memory": 536870912,
+        "MemorySwap": 536870912,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64,
+        "Privileged": false,
+        "Init": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "CapAdd": null,
+        "SecurityOpt": [
+          "no-new-privileges"
+        ],
+        "LogConfig": {
+          "Type": "none",
+          "Config": {}
+        },
+        "Tmpfs": {
+          "/tmp": "rw,noexec,nosuid,size=128m"
+        },
+        "Devices": [],
+        "DeviceRequests": null,
+        "VolumesFrom": null
+      },
+      "observed_mounts": [
+        {
+          "Destination": "/submission",
+          "Type": "bind",
+          "RW": false
+        },
+        {
+          "Destination": "/worker",
+          "Type": "bind",
+          "RW": false
+        }
+      ]
+    },
+    "setup_elapsed_seconds": 0.2580847999997786,
+    "runtime_elapsed_seconds": 4.227706199999375,
+    "returncode": 0,
+    "candidate_response": {
+      "worker_status": "returned",
+      "result": {
+        "checks": [
+          "original_helper_completes_against_owned_command_spy",
+          "warning_events_permission_failure_aborts_snapshot",
+          "redis_permission_failure_is_misreported_as_missing_pod",
+          "metrics_permission_failure_is_misreported_as_unavailable_server",
+          "helper_requests_have_no_explicit_api_timeout",
+          "namespace_override_is_used_except_cluster_scoped_node_metrics"
+        ],
+        "cases": {
+          "healthy": {
+            "returncode": 0,
+            "stdout": "\n===== Pod Status =====\nowned diagnostic fixture\n\n===== Pods with Restarts (termination reasons) =====\n\n===== Recent Warning Events =====\nowned diagnostic fixture\n\n===== Resource Usage (pods) =====\nowned diagnostic fixture\n\n===== Resource Usage (nodes) =====\nowned diagnostic fixture\n\n===== PVC Status =====\nowned diagnostic fixture\n\n===== Redis Health =====\nused_memory_human:1M\naof_enabled:1\nconnected_clients:1\n0\n  AOF config: 0 \n  /data mount: /data\n  /data size: 0\n\n===== Queue Depths =====\n  fuzzer_build_queue                            14\n  fuzzer_build_output_queue                     14\n  fuzzer_crash_queue                            14\n  confirmed_vulnerabilities_queue               14\n  orchestrator_download_tasks_queue             14\n  tasks_ready_queue                             14\n  patches_queue                                 14\n  index_queue                                   14\n  index_output_queue                            14\n  traced_vulnerabilities_queue                  14\n  pov_reproducer_requests_queue                 14\n  pov_reproducer_responses_queue                14\n  orchestrator_delete_task_queue                14\n\n===== Task Registry =====\n0\n  cancelled: 0\n  succeeded: 0\n  errored:   0\n\n===== Diagnosis complete =====\n",
+            "stderr": "",
+            "calls": [
+              [
+                "get",
+                "pods",
+                "-n",
+                "owned-control",
+                "-o",
+                "wide"
+              ],
+              [
+                "get",
+                "pods",
+                "-n",
+                "owned-control",
+                "-o",
+                "jsonpath={range .items[?(@.status.containerStatuses[0].restartCount > 0)]}{.metadata.name}{\"\\n\"}{end}"
+              ],
+              [
+                "get",
+                "events",
+                "-n",
+                "owned-control",
+                "--field-selector",
+                "type=Warning",
+                "--sort-by=.lastTimestamp"
+              ],
+              [
+                "top",
+                "pods",
+                "-n",
+                "owned-control"
+              ],
+              [
+                "top",
+                "nodes"
+              ],
+              [
+                "get",
+                "pvc",
+                "-n",
+                "owned-control"
+              ],
+              [
+                "get",
+                "pods",
+                "-n",
+                "owned-control",
+                "-l",
+                "app.kubernetes.io/name=redis",
+                "-o",
+                "jsonpath={.items[0].metadata.name}"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "INFO",
+                "memory"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "INFO",
+                "persistence"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "INFO",
+                "clients"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "DBSIZE"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "CONFIG",
+                "GET",
+                "appendonly"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "mount"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "du",
+                "-sh",
+                "/data/"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "fuzzer_build_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "fuzzer_build_output_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "fuzzer_crash_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "confirmed_vulnerabilities_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "orchestrator_download_tasks_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "tasks_ready_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "patches_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "index_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "index_output_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "traced_vulnerabilities_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "pov_reproducer_requests_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "pov_reproducer_responses_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "orchestrator_delete_task_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "HLEN",
+                "tasks_registry"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "SCARD",
+                "cancelled_tasks"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "SCARD",
+                "succeeded_tasks"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "SCARD",
+                "errored_tasks"
+              ]
+            ]
+          },
+          "events-denied": {
+            "returncode": 23,
+            "stdout": "\n===== Pod Status =====\nowned diagnostic fixture\n\n===== Pods with Restarts (termination reasons) =====\n\n===== Recent Warning Events =====\n",
+            "stderr": "",
+            "calls": [
+              [
+                "get",
+                "pods",
+                "-n",
+                "owned-control",
+                "-o",
+                "wide"
+              ],
+              [
+                "get",
+                "pods",
+                "-n",
+                "owned-control",
+                "-o",
+                "jsonpath={range .items[?(@.status.containerStatuses[0].restartCount > 0)]}{.metadata.name}{\"\\n\"}{end}"
+              ],
+              [
+                "get",
+                "events",
+                "-n",
+                "owned-control",
+                "--field-selector",
+                "type=Warning",
+                "--sort-by=.lastTimestamp"
+              ]
+            ]
+          },
+          "redis-denied": {
+            "returncode": 0,
+            "stdout": "\n===== Pod Status =====\nowned diagnostic fixture\n\n===== Pods with Restarts (termination reasons) =====\n\n===== Recent Warning Events =====\nowned diagnostic fixture\n\n===== Resource Usage (pods) =====\nowned diagnostic fixture\n\n===== Resource Usage (nodes) =====\nowned diagnostic fixture\n\n===== PVC Status =====\nowned diagnostic fixture\n\n===== Redis =====\nWARNING: No redis pod found in namespace owned-control\n\n===== Diagnosis complete =====\n",
+            "stderr": "",
+            "calls": [
+              [
+                "get",
+                "pods",
+                "-n",
+                "owned-control",
+                "-o",
+                "wide"
+              ],
+              [
+                "get",
+                "pods",
+                "-n",
+                "owned-control",
+                "-o",
+                "jsonpath={range .items[?(@.status.containerStatuses[0].restartCount > 0)]}{.metadata.name}{\"\\n\"}{end}"
+              ],
+              [
+                "get",
+                "events",
+                "-n",
+                "owned-control",
+                "--field-selector",
+                "type=Warning",
+                "--sort-by=.lastTimestamp"
+              ],
+              [
+                "top",
+                "pods",
+                "-n",
+                "owned-control"
+              ],
+              [
+                "top",
+                "nodes"
+              ],
+              [
+                "get",
+                "pvc",
+                "-n",
+                "owned-control"
+              ],
+              [
+                "get",
+                "pods",
+                "-n",
+                "owned-control",
+                "-l",
+                "app.kubernetes.io/name=redis",
+                "-o",
+                "jsonpath={.items[0].metadata.name}"
+              ]
+            ]
+          },
+          "metrics-denied": {
+            "returncode": 0,
+            "stdout": "\n===== Pod Status =====\nowned diagnostic fixture\n\n===== Pods with Restarts (termination reasons) =====\n\n===== Recent Warning Events =====\nowned diagnostic fixture\n\n===== Resource Usage (pods) =====\n(metrics-server not available)\n\n===== Resource Usage (nodes) =====\n(metrics-server not available)\n\n===== PVC Status =====\nowned diagnostic fixture\n\n===== Redis Health =====\nused_memory_human:1M\naof_enabled:1\nconnected_clients:1\n0\n  AOF config: 0 \n  /data mount: /data\n  /data size: 0\n\n===== Queue Depths =====\n  fuzzer_build_queue                            14\n  fuzzer_build_output_queue                     14\n  fuzzer_crash_queue                            14\n  confirmed_vulnerabilities_queue               14\n  orchestrator_download_tasks_queue             14\n  tasks_ready_queue                             14\n  patches_queue                                 14\n  index_queue                                   14\n  index_output_queue                            14\n  traced_vulnerabilities_queue                  14\n  pov_reproducer_requests_queue                 14\n  pov_reproducer_responses_queue                14\n  orchestrator_delete_task_queue                14\n\n===== Task Registry =====\n0\n  cancelled: 0\n  succeeded: 0\n  errored:   0\n\n===== Diagnosis complete =====\n",
+            "stderr": "",
+            "calls": [
+              [
+                "get",
+                "pods",
+                "-n",
+                "owned-control",
+                "-o",
+                "wide"
+              ],
+              [
+                "get",
+                "pods",
+                "-n",
+                "owned-control",
+                "-o",
+                "jsonpath={range .items[?(@.status.containerStatuses[0].restartCount > 0)]}{.metadata.name}{\"\\n\"}{end}"
+              ],
+              [
+                "get",
+                "events",
+                "-n",
+                "owned-control",
+                "--field-selector",
+                "type=Warning",
+                "--sort-by=.lastTimestamp"
+              ],
+              [
+                "top",
+                "pods",
+                "-n",
+                "owned-control"
+              ],
+              [
+                "top",
+                "nodes"
+              ],
+              [
+                "get",
+                "pvc",
+                "-n",
+                "owned-control"
+              ],
+              [
+                "get",
+                "pods",
+                "-n",
+                "owned-control",
+                "-l",
+                "app.kubernetes.io/name=redis",
+                "-o",
+                "jsonpath={.items[0].metadata.name}"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "INFO",
+                "memory"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "INFO",
+                "persistence"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "INFO",
+                "clients"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "DBSIZE"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "CONFIG",
+                "GET",
+                "appendonly"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "mount"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "du",
+                "-sh",
+                "/data/"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "fuzzer_build_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "fuzzer_build_output_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "fuzzer_crash_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "confirmed_vulnerabilities_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "orchestrator_download_tasks_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "tasks_ready_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "patches_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "index_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "index_output_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "traced_vulnerabilities_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "pov_reproducer_requests_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "pov_reproducer_responses_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "XLEN",
+                "orchestrator_delete_task_queue"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "HLEN",
+                "tasks_registry"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "SCARD",
+                "cancelled_tasks"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "SCARD",
+                "succeeded_tasks"
+              ],
+              [
+                "exec",
+                "-n",
+                "owned-control",
+                "redis-owned",
+                "--",
+                "redis-cli",
+                "SCARD",
+                "errored_tasks"
+              ]
+            ]
+          }
+        },
+        "uid": 65534,
+        "platform": "linux",
+        "python_version": "3.14.8",
+        "temporary_directory_removed": true,
+        "cluster_contacted": false,
+        "agent_processes": 0
+      }
+    },
+    "captured_bytes": 10575,
+    "stderr": "",
+    "elapsed_seconds": 4.645418100000825
+  },
+  "agent_efficacy_scored": false,
+  "scope": "Source-grounded helper contracts with owned kubectl spies; no cluster, live authorization or coding-agent score"
+}

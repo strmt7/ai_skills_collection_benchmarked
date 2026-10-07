@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "evidence_class": "local-playwright-scheduling-controls",
+  "node_version": "v26.10.0",
+  "playwright_version": "1.63.0",
+  "browser_version": "153.0.8010.12",
+  "checks": {
+    "late_subscription_misses_completed_response": true,
+    "prearmed_query_matched_response_and_ui": true,
+    "immediate_count_is_stale": true,
+    "web_assertion_waits_for_complete_results": true,
+    "network_idle_fails_while_ui_ready": true,
+    "no_external_requests": true
+  },
+  "all_controls_passed": true,
+  "reproducer_sha256": "c527fd91aa746c22d2b7d44a53f92074d0e6a39255973568b80846d92027b0ac",
+  "scope": "Actual headless Chromium and localhost scheduling controls. Late subscription is tested after known response completion; it demonstrates a valid missed-event schedule, not universal failure of every fill-then-wait sequence. No production operations, browser benchmark or agent efficacy score."
+}

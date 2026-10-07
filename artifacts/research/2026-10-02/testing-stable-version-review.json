@@ -1,0 +1,20 @@
+{
+  "playwright_test": {
+    "endpoint": "https://registry.npmjs.org/@playwright%2ftest",
+    "stable_tag": "1.63.0",
+    "published": "2026-09-04T22:44:00.304Z",
+    "integrity": "sha512-oxMK4vllB9RK5NQ2l1pq1IfOf2AvnEuj/vYGDj0H2nMtmtZpKtCwt/l00GEO6xjGfpBNAvjovvYdCm50dRQkpQ==",
+    "node_engine": {
+      "node": ">=20"
+    }
+  },
+  "bun": {
+    "endpoint": "https://api.github.com/repos/oven-sh/bun/releases/latest",
+    "tag": "bun-v1.4.2",
+    "prerelease": false,
+    "draft": false,
+    "published_at": "2026-09-05T05:55:48Z",
+    "release_url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.4.2"
+  },
+  "scope": "Primary release metadata observations; runtime compatibility and benchmark efficacy are not established."
+}

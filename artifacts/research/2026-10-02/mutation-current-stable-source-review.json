@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "evidence_class": "mutation-stable-release-and-source-review",
+  "release_api_endpoints": [
+    "https://api.github.com/repos/trailofbits/mewt/releases/latest",
+    "https://api.github.com/repos/trailofbits/muton/releases/latest"
+  ],
+  "releases": [
+    {
+      "tag_name": "v4.0.0",
+      "published_at": "2026-06-18T21:50:28Z",
+      "prerelease": false,
+      "draft": false,
+      "html_url": "https://github.com/trailofbits/mewt/releases/tag/v4.0.0"
+    },
+    {
+      "tag_name": "v3.1.0",
+      "published_at": "2026-04-20T20:02:56Z",
+      "prerelease": false,
+      "draft": false,
+      "html_url": "https://github.com/trailofbits/muton/releases/tag/v3.1.0"
+    }
+  ],
+  "mewt_peeled_commit": "53b5d0798b5db725fafe6ca282cbf0d886b0162c",
+  "mewt_reviewed_source_file_sha256": {
+    "README.md": "302b5bba2822c64d3ffe45c076045ca6f41a76213fe404e52db98037b9456c9b",
+    "docs/configuration.md": "3fe60e53865fc7d2e1924ed1ba1c9ed738b408b9b3eb29c2203ce54619ab7c99",
+    "docs/how-it-works.md": "d8dc6d8cf5b3addc97b8d8ceeb96187610b5b1f4d8e7a3201b400db1513e17b2",
+    "src/core/types/outcome.rs": "eedb12453176fc335f1d91349cb0550b657fb0ed576001528ed5c8eaea6e9655",
+    "src/core/cmds/results.rs": "7091c63e8b668e0c3fc85668f44605b3735cfe546222a6942b4890965d4fc6f1",
+    "src/core/cli.rs": "7d4c8990582679e6bf929dcefdede6cfc14789acb2254f01576a67e98cc3a953"
+  },
+  "source_read_scope": "Three complete docs and status types; selected CLI/result definitions, not every engine source line",
+  "tool_campaign_executed": false,
+  "agent_efficacy_scored": false,
+  "skill_license": {
+    "locked_source_commit": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+    "source_url": "https://raw.githubusercontent.com/trailofbits/skills/e8cc5baf9329ccb491bfa200e82eacbac83b1ead/LICENSE",
+    "raw_sha256": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
+    "license": "CC-BY-SA-4.0"
+  }
+}

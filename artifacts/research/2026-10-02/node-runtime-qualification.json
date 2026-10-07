@@ -1,0 +1,74 @@
+{
+  "observed_at_utc": "2026-10-02T13:36:05.632908+00:00",
+  "index_url": "https://nodejs.org/dist/index.json",
+  "selected_release": {
+    "version": "v26.10.0",
+    "date": "2026-09-21",
+    "files": [
+      "aix-ppc64",
+      "headers",
+      "linux-arm64",
+      "linux-ppc64le",
+      "linux-s390x",
+      "linux-x64",
+      "linux-x64-musl",
+      "osx-arm64-tar",
+      "osx-x64-pkg",
+      "osx-x64-tar",
+      "src",
+      "win-arm64-7z",
+      "win-arm64-zip",
+      "win-x64-7z",
+      "win-x64-exe",
+      "win-x64-msi",
+      "win-x64-zip"
+    ],
+    "npm": "11.19.1",
+    "v8": "14.6.202.34",
+    "uv": "1.52.1",
+    "zlib": "1.3.2.1-motley",
+    "openssl": "3.5.8",
+    "modules": "147",
+    "lts": false,
+    "security": false
+  },
+  "archive_url": "https://nodejs.org/dist/v26.10.0/node-v26.10.0-win-x64.zip",
+  "checksum_url": "https://nodejs.org/dist/v26.10.0/SHASUMS256.txt",
+  "archive_sha256": "9fef7eca6743a6b910989cd8e78712376b394fcb9b6e1e9c44a0799a287f90c5",
+  "node_sha256": "cea6ac365f9bb9586dafd2084d996e092e7d3e7d07ab52d1f76bf53d1fca9bc4",
+  "actual_node": "v26.10.0",
+  "actual_bundled_npm": "11.19.1",
+  "latest_npm": "12.2.0",
+  "npm_registry_url": "https://registry.npmjs.org/npm/latest",
+  "runtime_path": ".venv/runtimes/node-v26.10.0-win-x64",
+  "limitations": "Archive digest checked against official TLS-delivered checksum; detached OpenPGP signature not yet independently verified. No system installation, registry or PATH changes.",
+  "actual_current_npm": "12.2.0",
+  "npm_engines": {
+    "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
+  },
+  "npm_dist": {
+    "shasum": "9b58e3add8a0ad8c87c927f1a988f41435f4ffad",
+    "tarball": "https://registry.npmjs.org/npm/-/npm-12.2.0.tgz",
+    "fileCount": 1942,
+    "integrity": "sha512-ZsJjKpTnlmSXOLLXiU1xDCzC4Wlok4IwZmh/aw2KUuXytU7q6qMv/cUT7MoeSf95Slwuw/lRXYefGzGCspHPNQ==",
+    "signatures": [
+      {
+        "sig": "MEYCIQCXvXZm01EiQIfCOjMbCna9ATH8xNjCbTX7B6rGjB8USgIhAPKM2KBQSm3OwLzM4Ayj4PxP5emDpys9665mIf2vokPO",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      },
+      {
+        "sig": "MEYCIQDE/ZBPO+IrWRblLzFc4tZqXE3CvPyOJc4t1t6GiN9raAIhAKPeEeEUqZfTFxCFVEYgSAvFiFwEjtSkImzKqv9bw1GF",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      }
+    ],
+    "unpackedSize": 12397700
+  },
+  "npm_cli_sha256": "8e5f6f3429f8cdbe693cdc29904e9d5a7b127a494bd15c804bd54c7403bfcbe7",
+  "authenticode": {
+    "Status": "Valid",
+    "Subject": "CN=OpenJS Foundation, O=OpenJS Foundation, L=San Francisco, S=California, C=US",
+    "Thumbprint": "B4864735DB399087F73FE798FE0D68A21074FC65"
+  },
+  "image_regression_artifact": "artifacts/research/2026-10-02/image-cli-node-current-checks.json",
+  "image_regression_sha256": "0d9a6ab1d8e4f94ad69b1bd0152cad280d338e2eae4b04f8a7752bedbd910142"
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "evidence_class": "playwright-helper-api-doubles-and-actual-executor-controls",
+  "passed": true,
+  "node_version": "v26.10.0",
+  "playwright_version": "1.63.0",
+  "source_file_sha256": {
+    "original": {
+      "SKILL.md": "dfd9b84ab752b59e26d71b20d7e780abb192f9dea412bac267c5cb46f5b1dd87",
+      "run.js": "aa4749433da16fc66752306477fe5d6ddedfe1b3faf1588d80f0e7968aa5c139",
+      "lib/helpers.js": "fb29ccdd7a3a64bce57bdd2aaf852ecfbdd29de25a17a5c878277e693a7826e5",
+      "package.json": "e7986ac876d69d96d5ff1044bea8b38dfdd3079bd130ec88b55b7134eac22bb0"
+    },
+    "upstream": {
+      "SKILL.md": "746a885d19ce9fc027c376f30bab4c86907e7ab956366c242ccdb4cf20eb8a9b",
+      "run.js": "f2afe1a17379548abee60e91c9cee9a3907ff5ae9a2423d9190e45ace761399d",
+      "lib/helpers.js": "b837864b43126da1c0fc216b4d555b14a52c78bd78e0075af0c6acd1efa0e010",
+      "package.json": "8f1870c8f1124cadae0bf493eccdbc8e2df48124f90d2eecaef0c43638906d8e"
+    }
+  },
+  "controls": [
+    {
+      "control": "old_readiness_swallows_failed_wait",
+      "passed": true,
+      "execution": "actual helper source with a rejecting page API double",
+      "detail": {
+        "rejected_api_wait": true,
+        "helper_resolved": true
+      }
+    },
+    {
+      "control": "old_authentication_swallows_both_failed_success_checks",
+      "passed": true,
+      "execution": "actual helper source with controlled failed navigation and success checks",
+      "detail": {
+        "navigation_failed": true,
+        "success_selector_failed": true,
+        "helper_resolved": true
+      }
+    },
+    {
+      "control": "old_context_options_drop_environment_headers_when_custom_headers_present",
+      "passed": true,
+      "execution": "actual old and current helper source with a context API double",
+      "detail": {
+        "original_dropped_header": true,
+        "upstream_preserved_both": true
+      }
+    },
+    {
+      "control": "upstream_removes_unconditional_sandbox_flags_for_nonroot",
+      "passed": true,
+      "execution": "actual launch option construction with browser API doubles",
+      "detail": {
+        "original_unconditional_flag": true,
+        "upstream_nonroot_flag_absent": true,
+        "actual_browser_launched": false
+      }
+    },
+    {
+      "control": "old_click_retry_repeats_effect_after_ambiguous_failure",
+      "passed": true,
+      "execution": "actual retry helper with a controlled effect-then-error API double",
+      "detail": {
+        "effects": 2,
+        "scope": "One valid ambiguous-failure schedule; not a claim about all Playwright clicks"
+      }
+    },
+    {
+      "control": "current_executor_preserves_caller_directory_while_original_changes_it",
+      "passed": true,
+      "execution": "actual Node executor child processes with copied unchanged source; no browser or installer",
+      "detail": {
+        "original": {
+          "returncode": 1,
+          "stdout": "🎭 Playwright Skill - Universal Executor\n\n📄 Executing file: C:\\Users\\strat\\AppData\\Local\\Temp\\playwright-executor-controls-rWaFQq\\caller\\check.cjs\n🚀 Starting automation...\n\n",
+          "stderr": "❌ Automation error: ENOENT: no such file or directory, open 'C:\\Users\\strat\\AppData\\Local\\Temp\\playwright-executor-controls-rWaFQq\\original\\sentinel.txt'\nError: ENOENT: no such file or directory, open 'C:\\Users\\strat\\AppData\\Local\\Temp\\playwright-executor-controls-rWaFQq\\original\\sentinel.txt'\n    at Object.readFileSync (node:fs:620:20)\n    at C:\\Users\\strat\\AppData\\Local\\Temp\\playwright-executor-controls-rWaFQq\\original\\.temp-execution-1790964866842.js:4:51\n    at Object.<anonymous> (C:\\Users\\strat\\AppData\\Local\\Temp\\playwright-executor-controls-rWaFQq\\original\\.temp-execution-1790964866842.js:13:3)\n    at Module._compile (node:internal/modules/cjs/loader:1956:14)\n    at Object..js (node:internal/modules/cjs/loader:2096:10)\n    at Module.load (node:internal/modules/cjs/loader:1678:32)\n    at Module._load (node:internal/modules/cjs/loader:1470:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.require (node:internal/modules/cjs/loader:1701:12)\n    at require (node:internal/modules/helpers:318:16)\n"
+        },
+        "upstream": {
+          "returncode": 0,
+          "stdout": "caller fixture\n",
+          "stderr": ""
+        }
+      }
+    }
+  ],
+  "reproducer_sha256": "95e11b70369b93985e53085c3c13d61f33046cfc48b74e84fd050c46b72aaa46",
+  "browser_executed": false,
+  "network_requests_made": false,
+  "agent_efficacy_scored": false,
+  "scope": "Helper doubles reproduce logic contracts; copied executor processes exercise real cwd behavior. Negative controls do not claim repaired mirrors or agent gains."
+}

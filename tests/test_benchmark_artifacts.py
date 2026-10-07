@@ -3,6 +3,7 @@ import tempfile
 from pathlib import Path
 
 import check_benchmark_artifact
+import pytest
 import report_local_markdown_link_failures
 from helpers import ROOT, complete_artifacts, load
 
@@ -349,7 +350,52 @@ def test_benchmark_artifact_checker_is_idempotent():
         artifact_path.write_text(json.dumps(artifact), encoding="utf-8")
         a = check_benchmark_artifact.validate_artifact(artifact_path)
         b = check_benchmark_artifact.validate_artifact(artifact_path)
-        assert a == b
+    assert a == b
+
+
+@pytest.mark.parametrize(
+    "field",
+    [
+        "skill_id",
+        "scenario_id",
+        "artifact_kind",
+        "input_snapshot",
+        "execution",
+        "runner",
+        "independence",
+        "evidence",
+        "metrics",
+        "outputs",
+        "scenario_requirements",
+    ],
+)
+def test_artifact_malformed_field_is_rejected_without_crashing(tmp_path, field):
+    artifact = _complete_provenance_fixture(tmp_path)
+    artifact[field] = []
+    path = tmp_path / "artifact.json"
+    path.write_text(json.dumps(artifact), encoding="utf-8")
+    result = check_benchmark_artifact.validate_artifact(path)
+    assert result["verdict"] != "artifact_complete"
+    assert result["errors"]
+
+
+def test_artifact_empty_required_source_path_rejected(tmp_path):
+    artifact = _complete_provenance_fixture(tmp_path)
+    artifact["source_path"] = ""
+    path = tmp_path / "artifact.json"
+    path.write_text(json.dumps(artifact), encoding="utf-8")
+    result = check_benchmark_artifact.validate_artifact(path)
+    assert any(error.startswith("/source_path:") for error in result["errors"])
+
+
+def test_artifact_missing_schema_fails_closed(tmp_path, monkeypatch):
+    artifact = _complete_provenance_fixture(tmp_path)
+    path = tmp_path / "artifact.json"
+    path.write_text(json.dumps(artifact), encoding="utf-8")
+    monkeypatch.setattr(check_benchmark_artifact, "SCHEMA_PATH", tmp_path / "missing.schema.json")
+    result = check_benchmark_artifact.validate_artifact(path)
+    assert result["verdict"] != "artifact_complete"
+    assert any("schema" in error for error in result["errors"])
 
 
 def test_benchmark_artifact_validate_all_passes_on_recorded_artifacts():

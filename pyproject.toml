@@ -3,14 +3,14 @@ name = "ai-skills-collection-benchmarked"
 version = "0.2.0"
 description = "Evidence-backed AI skills catalog with real workflow benchmark definitions."
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 keywords = ["ai", "skills", "benchmarks", "catalog"]
 classifiers = [
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
   "Operating System :: OS Independent",
   "Topic :: Software Development :: Quality Assurance",
 ]
@@ -34,6 +34,9 @@ lint = [
 security = [
   "pip-audit>=2.10.0",
   "pip-tools>=7.5.0",
+]
+reports = [
+  "matplotlib==3.11.2",
 ]
 
 [build-system]
@@ -62,7 +65,7 @@ filterwarnings = [
 ]
 
 [tool.ruff]
-target-version = "py310"
+target-version = "py311"
 line-length = 120
 extend-exclude = [
   ".venv",
@@ -102,7 +105,7 @@ indent-style = "space"
 line-ending = "lf"
 
 [tool.mypy]
-python_version = "3.10"
+python_version = "3.11"
 files = ["tools", "tests"]
 exclude = [
   "^\\.venv/",

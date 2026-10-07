@@ -1,16 +1,19 @@
 """Behavioural tests for check_no_secret_patterns.
 
-These are pure logic tests that exercise ``scan_text``, the entropy helper and
-the regex catalog against known-bad / known-benign fixtures. They do not touch
-git history or the filesystem so they stay fast and deterministic.
+Pattern tests use deterministic inert fixtures. History controls create only
+owned temporary Git repositories, including root, separate-ref and merge cases.
 """
 
 from __future__ import annotations
 
+import io
+import json
 import subprocess
 import sys
+from pathlib import Path
 
 import check_no_secret_patterns
+import pytest
 from helpers import ROOT  # noqa: F401 -- import for sys.path side effect
 
 
@@ -79,6 +82,147 @@ def test_private_key_block_is_detected():
     fixture = "-----" + "BEGIN OPENSSH PRIVATE KEY" + "-----\ndata"
     out = _findings(fixture)
     assert any("private_key" in f for f in out), out
+
+
+@pytest.mark.parametrize("prefix", ["sk_" + "live_", "sk_" + "test_", "rk_" + "live_", "rk_" + "test_", "sk_" + "org_"])
+def test_stripe_secret_and_restricted_examples_are_detected(prefix):
+    assert any("stripe_secret_or_restricted_key_shape" in f for f in _findings(prefix + "exampleValue123"))
+
+
+def test_stripe_webhook_secret_shape_is_detected():
+    assert any("stripe_webhook_secret_shape" in f for f in _findings("wh" + "sec_" + "exampleValue123"))
+
+
+def test_prefilter_preserves_multiple_and_overlapping_rules_on_one_line():
+    text = "sk-" + "x" * 30 + " and " + "rk_" + "live_" + "exampleValue123"
+    out = _findings(text)
+    assert [finding.rsplit(": ", 1)[1] for finding in out] == [
+        "openai_api_key",
+        "provider_api_key_example_shape",
+        "stripe_secret_or_restricted_key_shape",
+    ]
+
+
+def test_stripe_public_keys_and_neutral_placeholders_are_not_secret_keys():
+    assert _findings("pk_" + "live_" + "publicValue123") == []
+    assert _findings("STRIPE_SECRET_KEY=<STRIPE_SECRET_KEY>\nWEBHOOK_SECRET=<WEBHOOK_SECRET>") == []
+
+
+def test_worktree_includes_untracked_files_and_preserves_newlines(monkeypatch):
+    def listing(*args):
+        assert args == ("ls-files", "-z", "--cached", "--others", "--exclude-standard")
+        return b"tracked.md\0new-artifact.json\0line\nbreak.md\0"
+
+    monkeypatch.setattr(check_no_secret_patterns, "git_bytes", listing)
+    assert check_no_secret_patterns.tracked_files() == [
+        check_no_secret_patterns.ROOT / name for name in ["tracked.md", "new-artifact.json", "line\nbreak.md"]
+    ]
+
+
+def test_history_includes_root_commit_and_other_local_refs(tmp_path, monkeypatch):
+    subprocess.run(["git", "init", "--initial-branch=main", str(tmp_path)], check=True, capture_output=True)
+    commands = [
+        ["add", "fixture.md"],
+        ["-c", "user.name=AI agent", "-c", "user.email=", "commit", "-m", "owned root control"],
+        ["checkout", "-b", "owned-reference"],
+    ]
+    (tmp_path / "fixture.md").write_text("root " + "sk_" + "live_" + "exampleValue123\n", encoding="utf-8")
+    for command in commands:
+        subprocess.run(["git", "-C", str(tmp_path), *command], check=True, capture_output=True)
+    (tmp_path / "other.md").write_text("ref " + "wh" + "sec_" + "exampleValue123\n", encoding="utf-8")
+    for command in [
+        ["add", "other.md"],
+        ["-c", "user.name=AI agent", "-c", "user.email=", "commit", "-m", "owned separate-ref control"],
+        ["checkout", "main"],
+    ]:
+        subprocess.run(["git", "-C", str(tmp_path), *command], check=True, capture_output=True)
+    monkeypatch.setattr(check_no_secret_patterns, "ROOT", Path(tmp_path))
+    findings = check_no_secret_patterns.scan_history()
+    assert any("fixture.md:1: stripe_secret_or_restricted_key_shape" in finding for finding in findings)
+    assert any("other.md:1: stripe_webhook_secret_shape" in finding for finding in findings)
+    subprocess.run(
+        [
+            "git",
+            "-C",
+            str(tmp_path),
+            "-c",
+            "user.name=AI agent",
+            "-c",
+            "user.email=",
+            "merge",
+            "--no-ff",
+            "--no-commit",
+            "owned-reference",
+        ],
+        check=True,
+        capture_output=True,
+    )
+    (tmp_path / "merge-only.md").write_text("merge " + "rk_" + "live_" + "exampleValue123\n", encoding="utf-8")
+    for command in [
+        ["add", "merge-only.md"],
+        ["-c", "user.name=AI agent", "-c", "user.email=", "commit", "-m", "owned merge-only control"],
+    ]:
+        subprocess.run(["git", "-C", str(tmp_path), *command], check=True, capture_output=True)
+    assert any(
+        "merge-only.md:1: stripe_secret_or_restricted_key_shape" in f for f in check_no_secret_patterns.scan_history()
+    )
+    blob = subprocess.run(
+        ["git", "-C", str(tmp_path), "hash-object", "-w", "--stdin"],
+        input=("sk_" + "org_" + "exampleValue123\n").encode(),
+        check=True,
+        capture_output=True,
+    ).stdout.strip()
+    tree = (
+        subprocess.run(
+            ["git", "-C", str(tmp_path), "mktree", "-z"],
+            input=b"100644 blob " + blob + b"\tline\nbreak.md\0",
+            check=True,
+            capture_output=True,
+        )
+        .stdout.strip()
+        .decode()
+    )
+    commit = (
+        subprocess.run(
+            [
+                "git",
+                "-C",
+                str(tmp_path),
+                "-c",
+                "user.name=AI agent",
+                "-c",
+                "user.email=",
+                "commit-tree",
+                tree,
+                "-m",
+                "owned newline-name control",
+            ],
+            check=True,
+            capture_output=True,
+        )
+        .stdout.strip()
+        .decode()
+    )
+    subprocess.run(["git", "-C", str(tmp_path), "update-ref", "refs/heads/owned-newline", commit], check=True)
+    assert any(
+        "line\nbreak.md:1: stripe_secret_or_restricted_key_shape" in f for f in check_no_secret_patterns.scan_history()
+    )
+
+
+def test_incomplete_history_is_an_infrastructure_failure_not_a_clean_scan(monkeypatch, capsys):
+    def fail():
+        raise RuntimeError("owned unavailable blob")
+
+    monkeypatch.setattr(check_no_secret_patterns, "scan_history", fail)
+    assert check_no_secret_patterns.main(["--history", "--json"]) == 2
+    report = json.loads(capsys.readouterr().out)
+    assert report["complete"] is False and report["errors"]
+
+
+@pytest.mark.parametrize("header", [b"", b"partial", b"x" * 65536], ids=("empty", "truncated", "over-limit"))
+def test_incomplete_or_unbounded_git_headers_fail_closed(header):
+    with pytest.raises(RuntimeError):
+        check_no_secret_patterns.read_batch_header(io.BytesIO(header))
 
 
 # ---------------------------------------------------------------------------

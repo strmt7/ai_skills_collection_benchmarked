@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "evidence_class": "independent-property-oracle-contract-controls",
+  "passed": true,
+  "controls": [
+    {
+      "control": "independent_simple_expression_is_not_a_tautology",
+      "passed": true,
+      "detail": {
+        "counterexample": [
+          0,
+          1
+        ],
+        "expected": 1,
+        "mutated_actual": -1,
+        "correct_reference_actual": 1
+      }
+    },
+    {
+      "control": "roundtrip_can_hide_shared_codec_defects",
+      "passed": true,
+      "detail": {
+        "roundtrip_inputs_checked": 401,
+        "roundtrip_passed": true,
+        "independent_zero_vector_expected": "0000000000000000",
+        "actual": "0000000000000007",
+        "format_defect_detected_by_independent_vector": true
+      }
+    },
+    {
+      "control": "idempotence_is_not_a_full_normalization_specification",
+      "passed": true,
+      "detail": {
+        "idempotence_passed": true,
+        "expected": "content",
+        "mutated_actual": "",
+        "content_preservation_detects_defect": true
+      }
+    },
+    {
+      "control": "set_plus_length_does_not_preserve_duplicate_multiplicity",
+      "passed": true,
+      "detail": {
+        "input": [
+          1,
+          1,
+          2
+        ],
+        "mutated_output": [
+          1,
+          2,
+          2
+        ],
+        "set_and_length_checks_passed": true,
+        "multiset_check_detected_duplicate_loss": true
+      }
+    },
+    {
+      "control": "regex_strategy_search_and_fullmatch_domains_differ",
+      "passed": true,
+      "detail": {
+        "default_search_counterexample": "'0a0'",
+        "fullmatch_fixture": "a0",
+        "default_strategy_can_generate_outside_fullmatch_domain": true
+      }
+    },
+    {
+      "control": "set_and_frozenset_strategies_have_distinct_output_types",
+      "passed": true,
+      "detail": {
+        "sets_type": "set",
+        "frozensets_type": "frozenset"
+      }
+    },
+    {
+      "control": "a_seed_does_not_request_more_examples",
+      "passed": true,
+      "detail": {
+        "configured_max_examples": 7,
+        "observed_examples": 7,
+        "seed_does_not_increase_example_budget": true
+      }
+    },
+    {
+      "control": "contradictory_assumptions_fail_instead_of_passing_vacuously",
+      "passed": true,
+      "detail": {
+        "observed_exception": "FailedHealthCheck",
+        "successful_examples": 0,
+        "test_passed": false,
+        "health_checks_suppressed": false
+      }
+    }
+  ],
+  "python_version": "3.14.8 (tags/v3.14.8:8e6e75d, Sep 30 2026, 18:19:33) [MSC v.1944 64 bit (AMD64)]",
+  "hypothesis_version": "6.168.3",
+  "reproducer_sha256": "d644aa2cf1147f1a5957bfd0f7d07101dfc16c3d24ee0827c64498cc8748dbab",
+  "settings": {
+    "max_examples": 200,
+    "derandomize": true,
+    "database": null,
+    "deadline": null
+  },
+  "skill_text_used_to_define_expected_answers": false,
+  "mutation_tool_campaign_executed": false,
+  "agent_efficacy_scored": false,
+  "scope": "Independent fixture specifications expose oracle weaknesses; finite examples do not prove correctness or an efficacy gain"
+}

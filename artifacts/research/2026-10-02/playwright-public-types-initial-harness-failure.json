@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "evidence_class": "harness-infrastructure-failure",
+  "passed": false,
+  "agent_efficacy_scored": false,
+  "observed_error_code": "ERR_PACKAGE_PATH_NOT_EXPORTED",
+  "detail": "TypeScript 7.0.2 does not export lib/tsc.js; initial driver failed before compiling either fixture. Corrected driver resolves the declared package bin entry.",
+  "receipt_created_for_compilation": false
+}

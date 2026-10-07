@@ -1,0 +1,326 @@
+{
+  "schema_version": 1,
+  "evidence_class": "pinned-external-verifier-and-new-comparator-controls",
+  "task_commit": "55bfe693f2a19f6b2f29aca3f54fe98b9d994668",
+  "source_sha256": {
+    "environment/workspace/sequential.py": "c4db418799f1b90804df928acfadc0f5ef479c11cfee9aa1ae778691cc30b697",
+    "environment/workspace/document_generator.py": "ae5347801de8f6d60b5337de46b8f2269784613a0fa92c7f6ec8c1445a8c59ee",
+    "verifier/test_outputs.py": "3de14cb18c18d2c4afdfee4cf70809acb866aa67c13d8d6f4bc67d7f44e26c20"
+  },
+  "original_unchanged_verifier_accepted_empty_results": true,
+  "new_comparator_rejected_empty_results": true,
+  "empty_output_differences": [
+    "$.search_results: list length differs (5 expected, 0 actual)"
+  ],
+  "reference_control_cases": [
+    "noncontiguous-empty-unknown-stopword-queries",
+    "zero-top-k",
+    "empty-corpus",
+    "empty-query-batch"
+  ],
+  "reference_control_differences": [],
+  "execution": {
+    "status": "completed",
+    "container_name": "skills-invoke-6ff89d8f4f1d45b193bc2a74ace85733",
+    "image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+    "scored": false,
+    "candidate_response_is_untrusted": true,
+    "cleanup_verified": true,
+    "request_sha256": "1501d76b8f252cab822114426eb8b0e9085f9a807c02b97ef049a83a37bdf893",
+    "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+    "resource_profile": "skillsbench-tfidf",
+    "submission_sha256": {
+      "candidate.py": "09ca54e7028f3c6bf4719b029e8813a2955bb9152888345b130d0bcb228dd357",
+      "sequential.py": "c4db418799f1b90804df928acfadc0f5ef479c11cfee9aa1ae778691cc30b697",
+      "document_generator.py": "ae5347801de8f6d60b5337de46b8f2269784613a0fa92c7f6ec8c1445a8c59ee"
+    },
+    "container_id": "4cce2e1beb3875fb80eca2e1caacf9c25963e60412bf5136bcfed5099819d4b9",
+    "isolation_checks": {
+      "errors": [],
+      "passed": true,
+      "observed_user": "65534:65534",
+      "observed_image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+      "observed_ownership_token": "6ff89d8f4f1d45b193bc2a74ace85733",
+      "resolved_image_id": "sha256:284cda8648f59f87e9468ec9d5652064dc2cd5b7d3fce342c2d3825ca1de6353",
+      "observed_host_constraints": {
+        "NetworkMode": "none",
+        "IpcMode": "none",
+        "ReadonlyRootfs": true,
+        "Memory": 4294967296,
+        "MemorySwap": 4294967296,
+        "NanoCpus": 8000000000,
+        "PidsLimit": 256,
+        "Privileged": false,
+        "Init": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "CapAdd": null,
+        "SecurityOpt": [
+          "no-new-privileges"
+        ],
+        "LogConfig": {
+          "Type": "none",
+          "Config": {}
+        },
+        "Tmpfs": {
+          "/tmp": "rw,noexec,nosuid,size=128m"
+        },
+        "Devices": [],
+        "DeviceRequests": null,
+        "VolumesFrom": null
+      },
+      "observed_mounts": [
+        {
+          "Destination": "/submission",
+          "Type": "bind",
+          "RW": false
+        },
+        {
+          "Destination": "/worker",
+          "Type": "bind",
+          "RW": false
+        }
+      ]
+    },
+    "setup_elapsed_seconds": 0.2659965000000284,
+    "runtime_elapsed_seconds": 0.5587586999999985,
+    "returncode": 0,
+    "candidate_response": {
+      "worker_status": "returned",
+      "result": [
+        {
+          "index": {
+            "num_documents": 3,
+            "vocabulary": [
+              "alpha",
+              "beta",
+              "gamma"
+            ],
+            "document_frequencies": {
+              "gamma": 1,
+              "beta": 2,
+              "alpha": 1
+            },
+            "idf": {
+              "gamma": 2.09861228866811,
+              "beta": 1.4054651081081644,
+              "alpha": 2.09861228866811
+            },
+            "inverted_index": {
+              "gamma": [
+                [
+                  42,
+                  1.049306144334055
+                ]
+              ],
+              "beta": [
+                [
+                  42,
+                  0.7027325540540822
+                ],
+                [
+                  7,
+                  0.3513662770270411
+                ]
+              ],
+              "alpha": [
+                [
+                  7,
+                  1.5739592165010825
+                ]
+              ]
+            },
+            "doc_vectors": {
+              "7": {
+                "alpha": 1.5739592165010825,
+                "beta": 0.3513662770270411
+              },
+              "42": {
+                "beta": 0.7027325540540822,
+                "gamma": 1.049306144334055
+              },
+              "91": {}
+            },
+            "doc_norms": {
+              "7": 1.6127014217890878,
+              "42": 1.2628841700902638,
+              "91": 0.0
+            }
+          },
+          "search_results": [
+            [
+              {
+                "doc_id": 7,
+                "score": 0.9759768269782848,
+                "title": "Alpha"
+              }
+            ],
+            [
+              {
+                "doc_id": 42,
+                "score": 1.0,
+                "title": "Beta"
+              },
+              {
+                "doc_id": 7,
+                "score": 0.12123629654754826,
+                "title": "Alpha"
+              }
+            ],
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "index": {
+            "num_documents": 3,
+            "vocabulary": [
+              "alpha",
+              "beta",
+              "gamma"
+            ],
+            "document_frequencies": {
+              "gamma": 1,
+              "beta": 2,
+              "alpha": 1
+            },
+            "idf": {
+              "gamma": 2.09861228866811,
+              "beta": 1.4054651081081644,
+              "alpha": 2.09861228866811
+            },
+            "inverted_index": {
+              "gamma": [
+                [
+                  42,
+                  1.049306144334055
+                ]
+              ],
+              "beta": [
+                [
+                  42,
+                  0.7027325540540822
+                ],
+                [
+                  7,
+                  0.3513662770270411
+                ]
+              ],
+              "alpha": [
+                [
+                  7,
+                  1.5739592165010825
+                ]
+              ]
+            },
+            "doc_vectors": {
+              "7": {
+                "alpha": 1.5739592165010825,
+                "beta": 0.3513662770270411
+              },
+              "42": {
+                "beta": 0.7027325540540822,
+                "gamma": 1.049306144334055
+              },
+              "91": {}
+            },
+            "doc_norms": {
+              "7": 1.6127014217890878,
+              "42": 1.2628841700902638,
+              "91": 0.0
+            }
+          },
+          "search_results": [
+            [],
+            []
+          ]
+        },
+        {
+          "index": {
+            "num_documents": 0,
+            "vocabulary": [],
+            "document_frequencies": {},
+            "idf": {},
+            "inverted_index": {},
+            "doc_vectors": {},
+            "doc_norms": {}
+          },
+          "search_results": [
+            [],
+            []
+          ]
+        },
+        {
+          "index": {
+            "num_documents": 3,
+            "vocabulary": [
+              "alpha",
+              "beta",
+              "gamma"
+            ],
+            "document_frequencies": {
+              "gamma": 1,
+              "beta": 2,
+              "alpha": 1
+            },
+            "idf": {
+              "gamma": 2.09861228866811,
+              "beta": 1.4054651081081644,
+              "alpha": 2.09861228866811
+            },
+            "inverted_index": {
+              "gamma": [
+                [
+                  42,
+                  1.049306144334055
+                ]
+              ],
+              "beta": [
+                [
+                  42,
+                  0.7027325540540822
+                ],
+                [
+                  7,
+                  0.3513662770270411
+                ]
+              ],
+              "alpha": [
+                [
+                  7,
+                  1.5739592165010825
+                ]
+              ]
+            },
+            "doc_vectors": {
+              "7": {
+                "alpha": 1.5739592165010825,
+                "beta": 0.3513662770270411
+              },
+              "42": {
+                "beta": 0.7027325540540822,
+                "gamma": 1.049306144334055
+              },
+              "91": {}
+            },
+            "doc_norms": {
+              "7": 1.6127014217890878,
+              "42": 1.2628841700902638,
+              "91": 0.0
+            }
+          },
+          "search_results": []
+        }
+      ]
+    },
+    "captured_bytes": 2312,
+    "stderr": "",
+    "elapsed_seconds": 0.9857110000000375
+  },
+  "comparator_sha256": "f8ef752762a55dcb92b66bb3aa7c635d71d321cbfe2159342d4d7e12908f39a3",
+  "scope": "Known-good sequential reference and known-bad empty-output controls, not an agent result or performance score. Expectations computed outside candidate container; original task skill text and oracle solution remain unread.",
+  "all_controls_passed": true,
+  "reproducer_sha256": "c646931b95a3ecbf178a16dbd45b7a3990b0f3b76fc0b44b2a3f4e6ea0ab8c4c"
+}

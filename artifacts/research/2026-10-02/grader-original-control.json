@@ -1,0 +1,194 @@
+{
+  "status": "task_failed",
+  "checks_passed": 9,
+  "checks_total": 17,
+  "checks": [
+    {
+      "case": "valid_provenance",
+      "passed": true,
+      "validator_result": {
+        "verdict": "artifact_complete",
+        "errors": [],
+        "warnings": [
+          "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+        ]
+      }
+    },
+    {
+      "case": "valid_extra_metadata",
+      "passed": true,
+      "validator_result": {
+        "verdict": "artifact_complete",
+        "errors": [],
+        "warnings": [
+          "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+        ]
+      }
+    },
+    {
+      "case": "malformed_skill_id",
+      "passed": false,
+      "exception": "TypeError: unhashable type: 'list'"
+    },
+    {
+      "case": "malformed_scenario_id",
+      "passed": false,
+      "exception": "TypeError: unhashable type: 'list'"
+    },
+    {
+      "case": "malformed_artifact_kind",
+      "passed": false,
+      "exception": "TypeError: unhashable type: 'list'"
+    },
+    {
+      "case": "malformed_input_snapshot",
+      "passed": false,
+      "exception": "AttributeError: 'list' object has no attribute 'get'"
+    },
+    {
+      "case": "malformed_execution",
+      "passed": true,
+      "validator_result": {
+        "verdict": "artifact_incomplete",
+        "errors": [
+          "/execution: expected type 'object', got list",
+          "execution.fresh_session must be true",
+          "execution.commands_or_transcript_path must be a path"
+        ],
+        "warnings": [
+          "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+        ]
+      }
+    },
+    {
+      "case": "malformed_runner",
+      "passed": true,
+      "validator_result": {
+        "verdict": "artifact_incomplete",
+        "errors": [
+          "/runner: expected type 'object', got list",
+          "runner must include timestamp_utc, tool, and model_or_runtime"
+        ],
+        "warnings": [
+          "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+        ]
+      }
+    },
+    {
+      "case": "malformed_independence",
+      "passed": true,
+      "validator_result": {
+        "verdict": "artifact_incomplete",
+        "errors": [
+          "/independence: expected type 'object', got list",
+          "independence must be an object",
+          "independence.skill_content_usage is required"
+        ],
+        "warnings": [
+          "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+        ]
+      }
+    },
+    {
+      "case": "malformed_evidence",
+      "passed": true,
+      "validator_result": {
+        "verdict": "artifact_incomplete",
+        "errors": [
+          "/evidence: expected type 'object', got list",
+          "evidence must be an object",
+          "evidence.artifact_paths must be a non-empty string list",
+          "evidence.citations_or_paths must be a non-empty string list"
+        ],
+        "warnings": [
+          "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+        ]
+      }
+    },
+    {
+      "case": "malformed_metrics",
+      "passed": true,
+      "validator_result": {
+        "verdict": "artifact_incomplete",
+        "errors": [
+          "/metrics: expected type 'object', got list"
+        ],
+        "warnings": [
+          "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+        ]
+      }
+    },
+    {
+      "case": "malformed_outputs",
+      "passed": true,
+      "validator_result": {
+        "verdict": "artifact_incomplete",
+        "errors": [
+          "/outputs: expected type 'object', got list"
+        ],
+        "warnings": [
+          "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+        ]
+      }
+    },
+    {
+      "case": "malformed_scenario_requirements",
+      "passed": true,
+      "validator_result": {
+        "verdict": "artifact_incomplete",
+        "errors": [
+          "/scenario_requirements: expected type 'object', got list",
+          "scenario_requirements must be an object"
+        ],
+        "warnings": [
+          "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+        ]
+      }
+    },
+    {
+      "case": "schema_minimum_string_length",
+      "passed": false,
+      "validator_result": {
+        "verdict": "artifact_complete",
+        "errors": [],
+        "warnings": [
+          "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+        ]
+      }
+    },
+    {
+      "case": "transcript_must_be_file",
+      "passed": false,
+      "validator_result": {
+        "verdict": "artifact_complete",
+        "errors": [],
+        "warnings": [
+          "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+        ]
+      }
+    },
+    {
+      "case": "evidence_must_be_file",
+      "passed": false,
+      "validator_result": {
+        "verdict": "artifact_complete",
+        "errors": [],
+        "warnings": [
+          "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+        ]
+      }
+    },
+    {
+      "case": "missing_schema_rejected",
+      "passed": false,
+      "validator_result": {
+        "verdict": "artifact_complete",
+        "errors": [],
+        "warnings": [
+          "provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes"
+        ]
+      }
+    }
+  ],
+  "scope": "Validator behavior on an independent development probe; not a skill-performance claim"
+}

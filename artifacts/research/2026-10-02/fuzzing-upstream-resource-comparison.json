@@ -1,0 +1,99 @@
+{
+  "agent_efficacy_scored": false,
+  "comparison_method": "build_catalog.sanitized_file_bytes: declared secret neutralization and text/LF formatting; raw bytes also hashed",
+  "current_commit": "82fe8226252622fa807643bdca1710901198553a",
+  "evidence_class": "complete-source-resource-review-not-runtime-readiness",
+  "license": {
+    "current_identical_raw_blob": true,
+    "sha256": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
+    "source_commit": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead"
+  },
+  "original_commit": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+  "packages": {
+    "atheris": {
+      "added_resources": [
+        "agents/openai.yaml",
+        "assets/trail-of-bits-mark.svg",
+        "examples.md",
+        "structured-input.md"
+      ],
+      "changed_common_resources": [
+        "SKILL.md"
+      ],
+      "current": {
+        "SKILL.md": {
+          "canonical_sha256": "133306875d88bb063636a9165c56141ac8b30d3b993db3740f166693dfeecbb5",
+          "raw_sha256": "133306875d88bb063636a9165c56141ac8b30d3b993db3740f166693dfeecbb5",
+          "review_status": "reviewed"
+        },
+        "agents/openai.yaml": {
+          "canonical_sha256": "6f27be8bad0d46dae80d0bab910a0b649e22e6b4cbb85797b3edbee73b4dcbf5",
+          "raw_sha256": "6f27be8bad0d46dae80d0bab910a0b649e22e6b4cbb85797b3edbee73b4dcbf5",
+          "review_status": "reviewed"
+        },
+        "assets/trail-of-bits-mark.svg": {
+          "canonical_sha256": "4bf74c789b38dcf6ad762c136b6832363d27ae19fbaa9a18ec18d66ecce6ca05",
+          "raw_sha256": "4bf74c789b38dcf6ad762c136b6832363d27ae19fbaa9a18ec18d66ecce6ca05",
+          "review_status": "reviewed"
+        },
+        "examples.md": {
+          "canonical_sha256": "e5ed1413286ca10ea238b9952a3ef19db13e2f4b24b2aaf18ec908bfaacfc815",
+          "raw_sha256": "e5ed1413286ca10ea238b9952a3ef19db13e2f4b24b2aaf18ec908bfaacfc815",
+          "review_status": "reviewed"
+        },
+        "structured-input.md": {
+          "canonical_sha256": "0f33bf58db91eaabc2bbff2e4eec5c3811ab5a74866ce4698320dfa384d76f4b",
+          "raw_sha256": "0f33bf58db91eaabc2bbff2e4eec5c3811ab5a74866ce4698320dfa384d76f4b",
+          "review_status": "reviewed"
+        }
+      },
+      "original": {
+        "SKILL.md": {
+          "canonical_sha256": "54ffc20eacc05ef263085a5d17a49c93a8e6eb3499ad2f9ccbdcf86dae7baffe",
+          "raw_sha256": "cdb6df0b5cf6e14f1f0f8435a4dc9a8c6c40dd40bb62ca8ef85b9eea497d0d64",
+          "review_status": "reviewed"
+        }
+      },
+      "removed_resources": []
+    },
+    "ruzzy": {
+      "added_resources": [
+        "agents/openai.yaml",
+        "assets/trail-of-bits-mark.svg"
+      ],
+      "changed_common_resources": [
+        "SKILL.md"
+      ],
+      "current": {
+        "SKILL.md": {
+          "canonical_sha256": "46374463b7ff99b028692ed8d30f1c9f488597597e5a2af4ad3919e2a47d6ce9",
+          "raw_sha256": "46374463b7ff99b028692ed8d30f1c9f488597597e5a2af4ad3919e2a47d6ce9",
+          "review_status": "reviewed"
+        },
+        "agents/openai.yaml": {
+          "canonical_sha256": "5d5268e23a94e15dcbab8604066a3b00e4ab4fde60c666c763e035567b85d8af",
+          "raw_sha256": "5d5268e23a94e15dcbab8604066a3b00e4ab4fde60c666c763e035567b85d8af",
+          "review_status": "reviewed"
+        },
+        "assets/trail-of-bits-mark.svg": {
+          "canonical_sha256": "4bf74c789b38dcf6ad762c136b6832363d27ae19fbaa9a18ec18d66ecce6ca05",
+          "raw_sha256": "4bf74c789b38dcf6ad762c136b6832363d27ae19fbaa9a18ec18d66ecce6ca05",
+          "review_status": "reviewed"
+        }
+      },
+      "original": {
+        "SKILL.md": {
+          "canonical_sha256": "603cde0d4592b4d4b81de645c05c7429969923dff290b4be2dd0b8614e2a6876",
+          "raw_sha256": "d33a591fa430fc85c647f566733146e86df2ef2126e989621fe950b91672375c",
+          "review_status": "reviewed"
+        }
+      },
+      "removed_resources": []
+    }
+  },
+  "primary_tool_documents": {
+    "atheris-native-extension-guide.md": "a0e6d407dee1c72505af1c5349a58c29b71dfa3c092f55ecc3b6108278b1b58b",
+    "ruzzy-current-readme.md": "ce33fbdd0c996617786ea25c3232e7f97c8042f74c37d357b2b4bae9ebc88c69"
+  },
+  "schema_version": 1
+}

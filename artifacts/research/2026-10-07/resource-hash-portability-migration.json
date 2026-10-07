@@ -1,0 +1,359 @@
+{
+  "evidence_class": "research-resource-hash-policy-portability-migration",
+  "resource_hash_policy": "catalog-canonical-v1",
+  "historical_capture_hashes_retained": true,
+  "source_mirrors_modified": false,
+  "review_statuses_changed": false,
+  "resources": [
+    {
+      "skill_id": "anthropics-skills-skills-skill-creator-skill-md",
+      "resource": "LICENSE.txt",
+      "captured_raw_sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5",
+      "canonical_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "anthropics-skills-skills-skill-creator-skill-md",
+      "resource": "SKILL.md",
+      "captured_raw_sha256": "e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "canonical_sha256": "dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "anthropics-skills-skills-skill-creator-skill-md",
+      "resource": "agents/analyzer.md",
+      "captured_raw_sha256": "8ccce0d9755f7684277870e791ffb643b026d5dd4508e5c1bdc8dfec9e8532b5",
+      "canonical_sha256": "bf68f4cac5a56c673a928c2e6d619586c5b93ea364026ab37547772cb45a663a",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "anthropics-skills-skills-skill-creator-skill-md",
+      "resource": "agents/comparator.md",
+      "captured_raw_sha256": "ee90af43eb0dbe2fdadbb96d01f9776f387ed5c529ce083c22b8bec4e3ae10d3",
+      "canonical_sha256": "fe1fc9787c495d864c5d6eada47396478572325fde1b33a96d78bf4b849b7a3e",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "anthropics-skills-skills-skill-creator-skill-md",
+      "resource": "agents/grader.md",
+      "captured_raw_sha256": "6ec1c6950fcafa3e00d5e845b2498c5ea3e8f7f012bd9c6abad25425f3ee619c",
+      "canonical_sha256": "57134da0c1a4eea33fbd74a1c9c44aa814f07d6bc64de303edb586f941e5d21a",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "anthropics-skills-skills-skill-creator-skill-md",
+      "resource": "assets/eval_review.html",
+      "captured_raw_sha256": "2cc6071b35ac897b17cf0388ce240fd959396f35f95a1f7d3e74a248dd060d0f",
+      "canonical_sha256": "ce477dcc74dc1c0d1d3352646a79167b5a63634e936b1019160025065974e452",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "anthropics-skills-skills-skill-creator-skill-md",
+      "resource": "eval-viewer/generate_review.py",
+      "captured_raw_sha256": "44d97a35be977331b13b04932927b3beb285862a173f0f15dd052d4f31de5c76",
+      "canonical_sha256": "fc9d1b9243fe5ab6012ebd579bd76d0035de1b79fd3b969de114defab26478fb",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "anthropics-skills-skills-skill-creator-skill-md",
+      "resource": "eval-viewer/viewer.html",
+      "captured_raw_sha256": "46abd4e19e482b4aeebea24b135c2d88fb122a63346dbeab7fcecd83828a826d",
+      "canonical_sha256": "a53213426ee1100441d701a3a0d49cda7a842f992d2c36463f4d3cc0258575fa",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "anthropics-skills-skills-skill-creator-skill-md",
+      "resource": "references/schemas.md",
+      "captured_raw_sha256": "5ef5fd3c1ac7baae965b5bda6b4f2cf6a191a2d712c7fef2a12dde84573b4833",
+      "canonical_sha256": "8e8876180a8989b406a4d3edddf875b04cdfd5805cc8616686d552b11ce4455f",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "anthropics-skills-skills-skill-creator-skill-md",
+      "resource": "scripts/__init__.py",
+      "captured_raw_sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "canonical_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "anthropics-skills-skills-skill-creator-skill-md",
+      "resource": "scripts/aggregate_benchmark.py",
+      "captured_raw_sha256": "16c5a53e4cbf55a679a42c244cba39cee463d99ce507ecc9fafc4cb4e0a133e0",
+      "canonical_sha256": "123ef128ea5ccc01a4b1ac212ef5567f21e9c13d3d240609780beeb3200c49aa",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "anthropics-skills-skills-skill-creator-skill-md",
+      "resource": "scripts/generate_report.py",
+      "captured_raw_sha256": "d90ec4cfc2dd539564edd332880fb7561309a1f0097d082de88e3101d6c8031e",
+      "canonical_sha256": "13df7118a3c50c83c4c3250a606d5f2b20b25a3d44cbc392b3d669ec75281453",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "anthropics-skills-skills-skill-creator-skill-md",
+      "resource": "scripts/improve_description.py",
+      "captured_raw_sha256": "a7968f851d1eeca91d325b7cf284ee8fdce9e408229c0578255fc85d859d495e",
+      "canonical_sha256": "686f346cd682687f16350aa509982f8c7dbc6d9b3bb8a3ad044d565ea21aef24",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "anthropics-skills-skills-skill-creator-skill-md",
+      "resource": "scripts/package_skill.py",
+      "captured_raw_sha256": "2cd9a9891844516fd30466eae30e4a9b9a199802522de3fb12f59a063fba58ab",
+      "canonical_sha256": "1a33059b0db1ef73375d46d513e5ea81369d2e8838c970597b0d52ddef8d1c0f",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "anthropics-skills-skills-skill-creator-skill-md",
+      "resource": "scripts/quick_validate.py",
+      "captured_raw_sha256": "6bce45afbce7f8df3af8d7bc62aa41881bd242ac8a1cdcbae2d1cd044d3e2151",
+      "canonical_sha256": "faf8532dbfa0cb55780a126213ce0017a6790afe26667ccd5b33a12a742e183e",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "anthropics-skills-skills-skill-creator-skill-md",
+      "resource": "scripts/run_eval.py",
+      "captured_raw_sha256": "252ac58feedf233673d6a605661158db20806f724c7d1dd32c92ae316b24ef67",
+      "canonical_sha256": "43e3b8f80dbf69c343967ba77e268fae991d9fa3ed68b32a0ff02532cd48657f",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "anthropics-skills-skills-skill-creator-skill-md",
+      "resource": "scripts/run_loop.py",
+      "captured_raw_sha256": "85b36782ec856e066257cf8e917606945e6df098428005e17f8d60a5b6789c29",
+      "canonical_sha256": "7bd6f674203168520517eec94c55f493c0d154339b061b4d7c0f0dad187d0f21",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "anthropics-skills-skills-skill-creator-skill-md",
+      "resource": "scripts/utils.py",
+      "captured_raw_sha256": "b396f920bfbb422822427d800656ab125876e1e42ae242ed3c9380338f9d0833",
+      "canonical_sha256": "3af8ae62c40c73ab712207436a0d9a981e845f25c5a7040229eb189cc8e45bb1",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "anthropics-skills-skills-webapp-testing-skill-md",
+      "resource": "LICENSE.txt",
+      "captured_raw_sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5",
+      "canonical_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "anthropics-skills-skills-webapp-testing-skill-md",
+      "resource": "SKILL.md",
+      "captured_raw_sha256": "4f50750c77f8c7972da336df8ac892943745a3fdbd739c55a8627949839cd340",
+      "canonical_sha256": "1f77d7de1954dd311fbd319e993f54ce8de4f5855e59289630adb414d9bfdabc",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "anthropics-skills-skills-webapp-testing-skill-md",
+      "resource": "examples/console_logging.py",
+      "captured_raw_sha256": "e4236735be7684dd66817881ed9e25b508d1fb602f3635fc8fe4489a08ce5d14",
+      "canonical_sha256": "d0f24ba7d23ec82cf9e8fe70c912826c0f67955e395bcd6a433d8c396ee57a7b",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "anthropics-skills-skills-webapp-testing-skill-md",
+      "resource": "examples/element_discovery.py",
+      "captured_raw_sha256": "aca3ffbf6d6f0692395d111c1cc2f61a5d952bb2a0fbab6c8d00514219912691",
+      "canonical_sha256": "d5e9d1aca53e69a730cd11adec008ee7107cb172686b676fe18a96bc274e6667",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "anthropics-skills-skills-webapp-testing-skill-md",
+      "resource": "examples/static_html_automation.py",
+      "captured_raw_sha256": "3ca15c3aab69693e5f02c554b8bd501bd8134ff1d82136466f23369b5cf348b2",
+      "canonical_sha256": "3cc4a8cc4b8c9142a15f3a9b517eafabf1496541539b0fed2c25434f4189377b",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "anthropics-skills-skills-webapp-testing-skill-md",
+      "resource": "scripts/with_server.py",
+      "captured_raw_sha256": "bad569c06e313d8a4290bbbef37bd53673ac7515754b04f5c67ddc55f7649094",
+      "canonical_sha256": "c558ba21a3cea020cdf9c059e9c1e3119e01c23509227ee23fb4ae4f556e1373",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "composio-community-support-skills-qa-response-skill-md",
+      "resource": "SKILL.md",
+      "captured_raw_sha256": "47b074d08f201a7a154ac9dfaad1bb40ca87dad61273d0d28ee6821f925a7335",
+      "canonical_sha256": "b74954fe239796f8d28c0f189311b7cb7c7a6131660df07da9c8f916edb21538",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "lackeyjb-playwright-skill-skills-playwright-skill-skill-md",
+      "resource": "SKILL.md",
+      "captured_raw_sha256": "dfd9b84ab752b59e26d71b20d7e780abb192f9dea412bac267c5cb46f5b1dd87",
+      "canonical_sha256": "7e0d1a74af4fdfcd30254feb1dee9455deffccc7270ba1f9137f0102431bde1a",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "lackeyjb-playwright-skill-skills-playwright-skill-skill-md",
+      "resource": "lib/helpers.js",
+      "captured_raw_sha256": "fb29ccdd7a3a64bce57bdd2aaf852ecfbdd29de25a17a5c878277e693a7826e5",
+      "canonical_sha256": "236c2211a11112a8fd762e8a97344d6ca47f1347ddac6f19233a414d020cd35d",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "lackeyjb-playwright-skill-skills-playwright-skill-skill-md",
+      "resource": "package.json",
+      "captured_raw_sha256": "e7986ac876d69d96d5ff1044bea8b38dfdd3079bd130ec88b55b7134eac22bb0",
+      "canonical_sha256": "b22d10a10dfff4770cb1e35e5f52a9fa78b0f05717a7f2d4e598930ef149262a",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "lackeyjb-playwright-skill-skills-playwright-skill-skill-md",
+      "resource": "run.js",
+      "captured_raw_sha256": "aa4749433da16fc66752306477fe5d6ddedfe1b3faf1588d80f0e7968aa5c139",
+      "canonical_sha256": "41b130999c784120b0d94f66de8e44ee83908a99c5bc84aa9f314e28400b909e",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "strmt7-simple-ai-bitcoin-trading-binance-agents-skills-verification-loop-skill-md",
+      "resource": "SKILL.md",
+      "captured_raw_sha256": "1f5e4884ced911fb65c11ed5c384b4f8ab64de0d4e3eabce243801e0f9b94bc1",
+      "canonical_sha256": "a5de5ed9f0088375c9237c86451a54bcf151571fb6bd314efdf6713198ab99cf",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "trailofbits-skills-plugins-debug-buttercup-skills-debug-buttercup-skill-md",
+      "resource": "SKILL.md",
+      "captured_raw_sha256": "84f55237bee765ad6f97d943d08e7810ea56296babb17c93ae455d1baa817416",
+      "canonical_sha256": "a8b043f5b6cc44657192f10fc6914a2f65402878e4a62eb7bd5e9bfe9b5e8e4f",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "trailofbits-skills-plugins-debug-buttercup-skills-debug-buttercup-skill-md",
+      "resource": "references/failure-patterns.md",
+      "captured_raw_sha256": "8400833e7f81a8991c88ff52422ab9433a649f8e5f2836b8b11f6d8b8e332308",
+      "canonical_sha256": "d31f0f5b3681ae5407805840b2514a72e8f9b9c947eb35aed1384c6533284c97",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "trailofbits-skills-plugins-debug-buttercup-skills-debug-buttercup-skill-md",
+      "resource": "scripts/diagnose.sh",
+      "captured_raw_sha256": "a259d7b5bd615806f0a5003b874f66d0bd116f5e8c8a7258db11bbf50fbb06d1",
+      "canonical_sha256": "205fc017e4b1a4c0c5063e07ade018928b6b1242fb5d10dd329b920f10e17ef5",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "trailofbits-skills-plugins-mutation-testing-skills-mutation-testing-skill-md",
+      "resource": "SKILL.md",
+      "captured_raw_sha256": "4e41789d1ef2c1fa4d480f6a1b04a5ec99de075464cf1a20e5c46acf8ebd92a4",
+      "canonical_sha256": "24d6ac24476bd5f554e78dd0f6f73f781d1478b2a220989d78a8dc1283701ac5",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "trailofbits-skills-plugins-mutation-testing-skills-mutation-testing-skill-md",
+      "resource": "references/optimization-strategies.md",
+      "captured_raw_sha256": "488fb69d5e96bacbeef01d964f3ef3b3f8b67b32aa7389937123a84fa1f12b22",
+      "canonical_sha256": "b356e8f2a4ae8630e949d8a62caf5aa5875fcaf4c8bfc32b8bc48dc64a5dee4f",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "trailofbits-skills-plugins-mutation-testing-skills-mutation-testing-skill-md",
+      "resource": "workflows/configuration.md",
+      "captured_raw_sha256": "04c9e75c39103d6772d2a469525eb868f0183af2211a2dcc2134227edd721fc0",
+      "canonical_sha256": "006e96840831e5b10650d059dde898cd5e00082e3356be9b1c005d93ca358d60",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "trailofbits-skills-plugins-property-based-testing-skills-property-based-testing-skill-md",
+      "resource": "README.md",
+      "captured_raw_sha256": "428667e7375beec4f19fcb9b758521d28fd449405c0921427831e00cf8a15e7c",
+      "canonical_sha256": "f2587bdeb29c2270edd74dab05588300cb5db157c48c7396268f93a4aa5c5c80",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "trailofbits-skills-plugins-property-based-testing-skills-property-based-testing-skill-md",
+      "resource": "SKILL.md",
+      "captured_raw_sha256": "e8cd955e7a413f3c14632d166a9544a9c5de99cf6f690c692ac901ebbf336794",
+      "canonical_sha256": "f482f34ce65ec8801f4ee64c645418c0be9876d19ba8f856a28e0548cd949ebd",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "trailofbits-skills-plugins-property-based-testing-skills-property-based-testing-skill-md",
+      "resource": "references/design.md",
+      "captured_raw_sha256": "b1c4f1a8b88e1a10e9b0b903d7a9d553139a7d42a5a4708c6e2c40b3422a0de5",
+      "canonical_sha256": "2f3108e3c05250aeab6d2fab76f4806f5653a4b44ad992f2fd7301567d933075",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "trailofbits-skills-plugins-property-based-testing-skills-property-based-testing-skill-md",
+      "resource": "references/generating.md",
+      "captured_raw_sha256": "b506ec8bedd470a9fde448ae0703b465bab2cf53c3d929adb374efb83f1c150b",
+      "canonical_sha256": "0025d3bb7a94937e44a734fc5f0017596f1d318677c28d465250be4bd8f920b4",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "trailofbits-skills-plugins-property-based-testing-skills-property-based-testing-skill-md",
+      "resource": "references/interpreting-failures.md",
+      "captured_raw_sha256": "da0fded4b21b72c916d95bb7f982a56373bb189b5dd105ec181f42e09e99cefe",
+      "canonical_sha256": "e13846787c0cff9dbb979e94a882f7462766305f40b052f50826e0e1f3bc7037",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "trailofbits-skills-plugins-property-based-testing-skills-property-based-testing-skill-md",
+      "resource": "references/libraries.md",
+      "captured_raw_sha256": "09082ee58054426062265098599e30571bc9e07d53fe51a3cec5aa8ee4893dd2",
+      "canonical_sha256": "bc64561665fab68a288fe99762e31cdab29958631f29863e470d6562a2d9ab58",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "trailofbits-skills-plugins-property-based-testing-skills-property-based-testing-skill-md",
+      "resource": "references/refactoring.md",
+      "captured_raw_sha256": "00807b904f4c3a3ddf4bcfe906c80e0a55300b48c70ac39e5428fe63e3b19a04",
+      "canonical_sha256": "be1182043793395bf3bd7d89b190f4b24156576a7b69ed11aaef3d3942446f68",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "trailofbits-skills-plugins-property-based-testing-skills-property-based-testing-skill-md",
+      "resource": "references/reviewing.md",
+      "captured_raw_sha256": "1b06cdb74a48b8923b942ce33e8f2a0b6ff7a19070430140e7dd92a9a2640fac",
+      "canonical_sha256": "3552da15e1bbe3e7ec1b261ebeba3879ee3ef90e4c106476fdac9a3eee707907",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "trailofbits-skills-plugins-property-based-testing-skills-property-based-testing-skill-md",
+      "resource": "references/strategies.md",
+      "captured_raw_sha256": "35b9ed28e22b412285e238b8dfab1bcbc91eb1f17b264c9280d36ce3293d002c",
+      "canonical_sha256": "1842170942163ad9ccf6cbf28973c2ccb5c6ad60833831029623fa61610c5122",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "trailofbits-skills-plugins-testing-handbook-skills-skills-atheris-skill-md",
+      "resource": "SKILL.md",
+      "captured_raw_sha256": "cdb6df0b5cf6e14f1f0f8435a4dc9a8c6c40dd40bb62ca8ef85b9eea497d0d64",
+      "canonical_sha256": "54ffc20eacc05ef263085a5d17a49c93a8e6eb3499ad2f9ccbdcf86dae7baffe",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "trailofbits-skills-plugins-testing-handbook-skills-skills-coverage-analysis-skill-md",
+      "resource": "SKILL.md",
+      "captured_raw_sha256": "89a1575e063e97befafab9fdc9544335cccc9b3e193e846e0d11235aaa864880",
+      "canonical_sha256": "9c98ce71f20970424a26ee28095f942d406b7c68135319e30eb47baac420ea00",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "trailofbits-skills-plugins-testing-handbook-skills-skills-libfuzzer-skill-md",
+      "resource": "SKILL.md",
+      "captured_raw_sha256": "a3f695f7a81a406ac60609d4262a7e2afe4355a665c79545d0d3b745dd875cde",
+      "canonical_sha256": "dc67b83f276991f6f7d3050119389af5a2bec70a1e8ceaa56ee875ddc0d233b4",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "trailofbits-skills-plugins-testing-handbook-skills-skills-ruzzy-skill-md",
+      "resource": "SKILL.md",
+      "captured_raw_sha256": "d33a591fa430fc85c647f566733146e86df2ef2126e989621fe950b91672375c",
+      "canonical_sha256": "603cde0d4592b4d4b81de645c05c7429969923dff290b4be2dd0b8614e2a6876",
+      "line_endings_normalized": true
+    },
+    {
+      "skill_id": "trailofbits-skills-plugins-testing-handbook-skills-skills-wycheproof-skill-md",
+      "resource": "SKILL.md",
+      "captured_raw_sha256": "596cf661913180d2e87574fec99c13de3d4c827823cfea4d4131a858cd0b9340",
+      "canonical_sha256": "f545b71bd68a8575c750af2cbe667703e9a40ae122bf298bbbe330e17b2d1271",
+      "line_endings_normalized": true
+    }
+  ]
+}
