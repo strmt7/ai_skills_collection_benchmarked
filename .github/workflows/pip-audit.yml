@@ -38,6 +38,11 @@ jobs:
     # Its seeded consistency is verified on Windows with Python 3.14.8;
     # Linux audits the locked package graph above.
     runs-on: windows-latest
+    # Apply before checkout; configuring Git in a later step is too late.
+    env:
+      GIT_CONFIG_COUNT: "1"
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: "true"
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0

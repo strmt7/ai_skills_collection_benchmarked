@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "evidence_class": "verified-publication-and-superseded-pr-reconciliation",
+  "observed_at": "2026-10-07T11:34:47.654686+00:00",
+  "human_publication_authorized": true,
+  "published_main": "1c3b1fa1ea76b4aed0d650e42ed5b9d7cb9eb539",
+  "published_tag_object": "64e7c28877d79e28d8411ee1d241842f054eecb4",
+  "published_tag_target": "b9440447efa67113421e2b21c15c7e196696458a",
+  "original_backup_preserved": true,
+  "default_branch_only": true,
+  "open_pr_count": 0,
+  "dependabot_branches_remaining": [],
+  "dependabot_open_alert_count": 34,
+  "alerts_dismissed_by_agent": false,
+  "prs": [
+    {
+      "number": 20,
+      "original_head": "ddb54e15642bed46b80c8b86470f8b35910e59bd",
+      "state": "closed",
+      "closed_at": "2026-10-07T11:28:59Z",
+      "closed_by_this_agent": false,
+      "merged": false,
+      "changes": [
+        {
+          "package": "build",
+          "proposed_version": "1.5.0",
+          "published_version": "1.6.1",
+          "superseded": true
+        },
+        {
+          "package": "certifi",
+          "proposed_version": "2026.6.17",
+          "published_version": "2026.7.22",
+          "superseded": true
+        },
+        {
+          "package": "charset-normalizer",
+          "proposed_version": "3.4.9",
+          "published_version": "3.5.2",
+          "superseded": true
+        },
+        {
+          "package": "click",
+          "proposed_version": "8.4.2",
+          "published_version": "8.5.0",
+          "superseded": true
+        },
+        {
+          "package": "coverage",
+          "proposed_version": "7.15.2",
+          "published_version": "7.16.2",
+          "superseded": true
+        },
+        {
+          "package": "cyclonedx-python-lib",
+          "proposed_version": "11.11.0",
+          "published_version": "11.12.0",
+          "superseded": true
+        },
+        {
+          "package": "filelock",
+          "proposed_version": "3.31.1",
+          "published_version": "4.0.9",
+          "superseded": true
+        },
+        {
+          "package": "hypothesis",
+          "proposed_version": "6.157.0",
+          "published_version": "6.168.3",
+          "superseded": true
+        },
+        {
+          "package": "idna",
+          "proposed_version": "3.18",
+          "published_version": "3.20",
+          "superseded": true
+        },
+        {
+          "package": "librt",
+          "proposed_version": "0.13.0",
+          "published_version": "0.16.0",
+          "superseded": true
+        },
+        {
+          "package": "markdown-it-py",
+          "proposed_version": "4.2.0",
+          "published_version": "4.2.0",
+          "superseded": true
+        },
+        {
+          "package": "msgpack",
+          "proposed_version": "1.2.1",
+          "published_version": "1.2.3",
+          "superseded": true
+        },
+        {
+          "package": "pathspec",
+          "proposed_version": "1.1.1",
+          "published_version": "1.1.1",
+          "superseded": true
+        },
+        {
+          "package": "pip-audit",
+          "proposed_version": "2.10.1",
+          "published_version": "2.10.1",
+          "superseded": true
+        },
+        {
+          "package": "pip-tools",
+          "proposed_version": "7.6.0",
+          "published_version": "7.6.1",
+          "superseded": true
+        },
+        {
+          "package": "platformdirs",
+          "proposed_version": "4.10.1",
+          "published_version": "4.12.2",
+          "superseded": true
+        },
+        {
+          "package": "pytest",
+          "proposed_version": "9.1.1",
+          "published_version": "9.1.1",
+          "superseded": true
+        },
+        {
+          "package": "requests",
+          "proposed_version": "2.34.2",
+          "published_version": "2.34.2",
+          "superseded": true
+        },
+        {
+          "package": "ruff",
+          "proposed_version": "0.15.22",
+          "published_version": "0.16.10",
+          "superseded": true
+        },
+        {
+          "package": "typing-extensions",
+          "proposed_version": "4.16.0",
+          "published_version": "4.16.0",
+          "superseded": true
+        },
+        {
+          "package": "urllib3",
+          "proposed_version": "2.7.0",
+          "published_version": "2.8.0",
+          "superseded": true
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "original_head": "b055b4ebf462641139c5b88f8cc12262ee8aeba1",
+      "state": "closed",
+      "closed_at": "2026-10-07T11:28:59Z",
+      "closed_by_this_agent": false,
+      "merged": false,
+      "changes": [
+        {
+          "action": "softprops/action-gh-release",
+          "proposed_version": "3.0.2",
+          "published_version": "3.0.3",
+          "superseded": true
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "original_head": "b140b6ef9fa72e8ee9330870d6c9ae1d23fd00ae",
+      "state": "closed",
+      "closed_at": "2026-10-07T11:28:59Z",
+      "closed_by_this_agent": false,
+      "merged": false,
+      "changes": [
+        {
+          "package": "msgpack",
+          "proposed_version": "1.2.1",
+          "published_version": "1.2.3",
+          "superseded": true
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "original_head": "b2a0aec4f30647bc864ca12bf0b6cc8e56799fce",
+      "state": "closed",
+      "closed_at": "2026-10-07T11:28:59Z",
+      "closed_by_this_agent": false,
+      "merged": false,
+      "changes": [
+        {
+          "package": "idna",
+          "proposed_version": "3.15",
+          "published_version": "3.20",
+          "superseded": true
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "original_head": "32f4873223fab5f60d32328d0ed1124bc8c2cc03",
+      "state": "closed",
+      "closed_at": "2026-10-07T11:28:59Z",
+      "closed_by_this_agent": false,
+      "merged": false,
+      "changes": [
+        {
+          "package": "urllib3",
+          "proposed_version": "2.7.0",
+          "published_version": "2.8.0",
+          "superseded": true
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "original_head": "2424ff06171e774e9422fe5d40d95b18d288a735",
+      "state": "closed",
+      "closed_at": "2026-10-07T11:28:59Z",
+      "closed_by_this_agent": false,
+      "merged": false,
+      "changes": [
+        {
+          "package": "fast-uri",
+          "proposed_version": "3.1.2",
+          "published_versions": [
+            "3.1.8"
+          ],
+          "superseded": true
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Hosted dependency rescanning is separate from the verified updated manifest contents.",
+    "Closed PR refs and retained GitHub objects are not erased by replacing main and the release tag.",
+    "Initial hosted CI has concrete failures being repaired; this receipt is not a CI success claim."
+  ]
+}

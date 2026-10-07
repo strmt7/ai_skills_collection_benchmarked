@@ -32,7 +32,7 @@ def test_history_secret_scan_rename_parser_uses_existing_commit_paths(monkeypatc
             "--no-commit-id",
             "--name-status",
             "-r",
-            "-M",
+            "--no-renames",
             "commit",
         )
         return b"R100\0old/path.txt\0new/path.txt\0D\0removed/path.txt\0M\0kept/path.txt\0A\0added/path.txt\0"
