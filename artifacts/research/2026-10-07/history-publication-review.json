@@ -1,0 +1,1456 @@
+{
+  "schema_version": 1,
+  "evidence_class": "unpublished-history-rewrite-review-record",
+  "recorded_at": "2026-10-07T09:01:33.720191+00:00",
+  "original_default_head": "4bd209752567f5c35074d4ee4a73600e1c45c283",
+  "rewritten_baseline_head": "c1336d3f039cf9dbcaaa9acbb5361af4c54670b0",
+  "checkpoint_head": "97e03e4696a470a8ba166c396ec7e54f5cacfc85",
+  "original_commit_count": 62,
+  "original_owner_attributed_author_count": 12,
+  "backup_bundle_sha256": "c6b79c19e8781c935cee90e8ea19bf9c90245f6ce214dcbd7aca83b937960bde",
+  "backup_bundle_local_path": ".venv/research-state/pre-publication-all-refs-2026-10-07.bundle",
+  "remote_push_performed": false,
+  "original_worktree_changed_by_history_preview": false,
+  "human_attribution_is_preserved_in_this_record": true,
+  "identity_rewrite_does_not_prove_original_work_was_ai_generated": true,
+  "old_public_tag_and_pr_refs_are_outside_default_branch_preview": true,
+  "commits": [
+    {
+      "original_sha": "a26d27bd32f29fe9742e044ce4f3b4b41dcab915",
+      "preview_sha": "be14b3d529cba5e7d7aae4e035f8a8dcea555d47",
+      "original_author": {
+        "name": "Stratos",
+        "email": "28989754+strmt7@users.noreply.github.com",
+        "date": "2026-04-17T14:28:56Z"
+      },
+      "original_committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-04-17T14:28:56Z"
+      },
+      "original_author_github_login": "strmt7",
+      "original_committer_github_login": "web-flow",
+      "original_message": "Initial commit",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "399e6af52a0823de96ae22524952ca21f56c185c",
+      "preview_sha": "918745573418e5a135aa71726b832a75565e529d",
+      "original_author": {
+        "name": "Stratos",
+        "email": "28989754+strmt7@users.noreply.github.com",
+        "date": "2026-04-17T17:02:46Z"
+      },
+      "original_committer": {
+        "name": "Stratos",
+        "email": "28989754+strmt7@users.noreply.github.com",
+        "date": "2026-04-17T17:02:46Z"
+      },
+      "original_author_github_login": "strmt7",
+      "original_committer_github_login": "strmt7",
+      "original_message": "Reset repository to clean baseline",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "f61f348371a7986594399b31abf711f09a549169",
+      "preview_sha": "197515fdc43bd62e57c8a4439f9b8567ee97ad59",
+      "original_author": {
+        "name": "Stratos",
+        "email": "28989754+strmt7@users.noreply.github.com",
+        "date": "2026-04-17T17:05:50Z"
+      },
+      "original_committer": {
+        "name": "Stratos",
+        "email": "28989754+strmt7@users.noreply.github.com",
+        "date": "2026-04-17T17:05:50Z"
+      },
+      "original_author_github_login": "strmt7",
+      "original_committer_github_login": "strmt7",
+      "original_message": "Enforce secret scanning guardrails",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "56c354d1af33a24b513e3b35611a6b702cb3de16",
+      "preview_sha": "0c620c793eeefd2537897dd0f886d64d2dea97a9",
+      "original_author": {
+        "name": "Stratos",
+        "email": "28989754+strmt7@users.noreply.github.com",
+        "date": "2026-04-17T17:48:50Z"
+      },
+      "original_committer": {
+        "name": "Stratos",
+        "email": "28989754+strmt7@users.noreply.github.com",
+        "date": "2026-04-17T17:50:03Z"
+      },
+      "original_author_github_login": "strmt7",
+      "original_committer_github_login": "strmt7",
+      "original_message": "Add sanitized skill catalog and benchmark evidence",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "34a2f4e45a468517ebfc62f154c12a205285c5c9",
+      "preview_sha": "640121e13b3b89e34a65d3d79c75aecc704b50d8",
+      "original_author": {
+        "name": "Stratos",
+        "email": "28989754+strmt7@users.noreply.github.com",
+        "date": "2026-04-17T18:04:41Z"
+      },
+      "original_committer": {
+        "name": "Stratos",
+        "email": "28989754+strmt7@users.noreply.github.com",
+        "date": "2026-04-17T18:04:41Z"
+      },
+      "original_author_github_login": "strmt7",
+      "original_committer_github_login": "strmt7",
+      "original_message": "Align catalog title and history scanner",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "92776ab94ce915f366f7b2038a8548ce4171b983",
+      "preview_sha": "b7d697ef986614ada438230f6cdf4fefd2054d69",
+      "original_author": {
+        "name": "Stratos",
+        "email": "28989754+strmt7@users.noreply.github.com",
+        "date": "2026-04-17T18:23:05Z"
+      },
+      "original_committer": {
+        "name": "Stratos",
+        "email": "28989754+strmt7@users.noreply.github.com",
+        "date": "2026-04-17T18:25:24Z"
+      },
+      "original_author_github_login": "strmt7",
+      "original_committer_github_login": "strmt7",
+      "original_message": "Enforce sanitized catalog consistency",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "a0cf8ca5ec630530f529c89d414b9abd4663d123",
+      "preview_sha": "dccd7bbc18d82c8e080314f28e3a9c775097b24c",
+      "original_author": {
+        "name": "Stratos",
+        "email": "28989754+strmt7@users.noreply.github.com",
+        "date": "2026-04-17T19:12:33Z"
+      },
+      "original_committer": {
+        "name": "Stratos",
+        "email": "28989754+strmt7@users.noreply.github.com",
+        "date": "2026-04-17T19:15:51Z"
+      },
+      "original_author_github_login": "strmt7",
+      "original_committer_github_login": "strmt7",
+      "original_message": "Add immutable benchmark artifact audit layer",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "2e7cbc463a7ea56eaee5d691507fdfbcd3c47a52",
+      "preview_sha": "5d2ba5f4cdd13964bec157590b6c72aa95934e9a",
+      "original_author": {
+        "name": "Stratos",
+        "email": "28989754+strmt7@users.noreply.github.com",
+        "date": "2026-04-17T20:39:55Z"
+      },
+      "original_committer": {
+        "name": "Stratos",
+        "email": "28989754+strmt7@users.noreply.github.com",
+        "date": "2026-04-17T20:39:55Z"
+      },
+      "original_author_github_login": "strmt7",
+      "original_committer_github_login": "strmt7",
+      "original_message": "Add independent runtime readiness benchmark batch",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "ed0235bbb62b650ff9fe4eabfbd0aeb5d8e8effc",
+      "preview_sha": "29ece064d20e3bfaf53515fb5213b836b5d3ddb6",
+      "original_author": {
+        "name": "Stratos",
+        "email": "28989754+strmt7@users.noreply.github.com",
+        "date": "2026-04-17T21:49:15Z"
+      },
+      "original_committer": {
+        "name": "Stratos",
+        "email": "28989754+strmt7@users.noreply.github.com",
+        "date": "2026-04-17T21:49:15Z"
+      },
+      "original_author_github_login": "strmt7",
+      "original_committer_github_login": "strmt7",
+      "original_message": "Refactor skill path layout and verification tests",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "beaf7d1b5bdefce9d23d54967db280df0f77e21b",
+      "preview_sha": "487983eea36c528b92e3a1e7b69c660d5c4759c8",
+      "original_author": {
+        "name": "Stratos",
+        "email": "28989754+strmt7@users.noreply.github.com",
+        "date": "2026-04-18T11:27:27Z"
+      },
+      "original_committer": {
+        "name": "Stratos",
+        "email": "28989754+strmt7@users.noreply.github.com",
+        "date": "2026-04-18T11:27:27Z"
+      },
+      "original_author_github_login": "strmt7",
+      "original_committer_github_login": "strmt7",
+      "original_message": "Add independent runtime benchmark batch 02",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "d20c738ff01887ad7641df396c818ceb3e7f9596",
+      "preview_sha": "838d63ebc9dce70b8477f848d80de6d42536247c",
+      "original_author": {
+        "name": "Stratos",
+        "email": "28989754+strmt7@users.noreply.github.com",
+        "date": "2026-04-18T18:48:51Z"
+      },
+      "original_committer": {
+        "name": "Stratos",
+        "email": "28989754+strmt7@users.noreply.github.com",
+        "date": "2026-04-18T18:48:51Z"
+      },
+      "original_author_github_login": "strmt7",
+      "original_committer_github_login": "strmt7",
+      "original_message": "Add runtime batch 03 and link failure report",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "d0e4907c89a8a5ca8cd517410436b86c62e0abde",
+      "preview_sha": "44a4c19813f69289c6333e3dffe8836f5c7e2204",
+      "original_author": {
+        "name": "Stratos",
+        "email": "28989754+strmt7@users.noreply.github.com",
+        "date": "2026-04-19T12:51:04Z"
+      },
+      "original_committer": {
+        "name": "Stratos",
+        "email": "28989754+strmt7@users.noreply.github.com",
+        "date": "2026-04-19T12:51:04Z"
+      },
+      "original_author_github_login": "strmt7",
+      "original_committer_github_login": "strmt7",
+      "original_message": "Add repaired skill overlays and benchmark adapters",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "d2491b22323f95d0bf8617379f76c73ac25e02ca",
+      "preview_sha": "700c7b3250b063a8f2b00648db06081c2d2f20da",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:06:54Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:06:54Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Rewrite benchmark artifact validator with schema pass and batch mode\n\n- Add JSON-Pointer paths to structural errors by walking the Draft 2020-12\n  schema file directly (type/enum/pattern/required/properties/items/minItems).\n- Preserve validate_artifact public API and verdict set\n  (artifact_complete / artifact_incomplete / artifact_invalid).\n- Add --validate-all DIR CLI mode so CI can replace the inline-python block\n  with a single command; --help now documents both modes.\n- Extend tests with true-positive (missing field, wrong type, bad SHA),\n  true-negative (extra additionalProperties keys), idempotence,\n  and a full sweep over every recorded artifact.",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "614fa03e56f43e0a3dbbf03504ee860df31a02b9",
+      "preview_sha": "2fd492cc8039e797b4dd82245b2595a6dae6b000",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:11:03Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:11:03Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Add Shannon-entropy heuristic to secret scanner without weakening rules\n\n- Keep every curated regex from the previous catalog (google/aws/openai/\n  github/gitlab/huggingface/slack/private-key) and the broad \"example_shape\"\n  rules that block provider-shaped placeholders.\n- Add a high-entropy assignment heuristic tuned against detect-secrets and\n  trufflehog thresholds (hex >3.0 bits, base64 >4.5 bits). It triggers only\n  when the line also contains a credential-like variable name, so git SHAs\n  and skill identifiers in JSON blobs stay benign.\n- New tests/test_security_patterns.py: 21 cases covering every rule, the\n  entropy heuristic, false-positive guards (SHA, placeholders, URLs, skill\n  IDs), mathematical guarantees on entropy, and CLI determinism.",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "92422a67d3f434c2d8a5d6e3195ce18d7934847a",
+      "preview_sha": "b4cfcb8976ed226c2b2c5eeeaa713e50dc87243f",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:12:21Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:12:21Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Document link reporter helpers and add behavioural tests\n\n- Expose extract_local_links() as a reusable helper that strips anchors and\n  query strings and skips images / URLs / mailto targets. Keeps render_report\n  output byte-for-byte identical (the lock-in test still passes).\n- Document the CommonMark-level regex approach so future readers understand\n  why no markdown-it-py / mistune dependency is pulled in.\n- Add true-positive, true-negative (images/URLs/mailto) and idempotence\n  tests for extract_local_links; add a determinism test for render_report.",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "3e4d90e1032abccc6830fb0d1bc61367adffcb36",
+      "preview_sha": "c6608aa03a516329ee3f8226a05ed64a2652c892",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:14:22Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:14:22Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Integrate Batch D: benchmark artifact validator + entropy-gated secret scanner + markdown link reporter tests",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "94b530fb5ee696beb32f7ae645ef3d00c8a69398",
+      "preview_sha": "1999164ad31485eb5ed429623dadccd2f836ccc7",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:15:16Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:15:16Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Consolidate pytest config in pyproject.toml; add Python 3.10-3.13 classifiers\n\n- Drop redundant pytest.ini (was causing pytest warning about ignored pyproject config)\n- Add [tool.pytest.ini_options] with strict-markers, strict-config, -ra\n- Add filterwarnings = error to catch deprecation drift\n- Add Python 3.10/3.11/3.12/3.13 + OS-independent classifiers\n- Add pytest-xdist>=3.5.0 for parallel test runs (used by CI -n auto)",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "c43dc01b7a958838efbd0f4dbcd69fe054d08824",
+      "preview_sha": "291d0a4a9ed50ba95f352c594e7d22451897318c",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:15:16Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:15:16Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "tests/helpers.py: robust ROOT discovery + cached JSON loads\n\n- _discover_root() walks up from __file__ looking for pyproject.toml so tests work from any cwd\n- lru_cache on raw file reads; json.loads still runs fresh per call so callers can mutate safely\n- Add module-level and function docstrings",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "acb3a794074e69ef94c242a83836e32ea7885f66",
+      "preview_sha": "8a9a9eba830f0f4df41a62bda3c596da9c2ffe82",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:15:16Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:15:16Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Tighten evaluator JSON Schemas (draft 2020-12; $id/title/description; additionalProperties: false)\n\nCovers all 5 evaluator schemas. Real artifact validation is enforced by tools/check_benchmark_artifact.py, so regressions surface in pytest.",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "da72ceb76ee0938b021d4b477337df9b80f4ac3c",
+      "preview_sha": "f7f78118379a693d53f7e92412fa81d8b9c8917a",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:15:16Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:15:16Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "CI: concurrency, least-privilege permissions, Python 3.10-3.13 matrix, pip cache, pytest-xdist -n auto\n\n- concurrency groups cancel superseded runs on the same ref\n- permissions: contents: read (least privilege) on both workflows\n- matrix over Python 3.10/3.11/3.12/3.13 on offline-validation\n- pip cache keyed on pyproject.toml\n- pytest -n auto for parallel test execution\n- Action versions actions/checkout@v6.0.2 and actions/setup-python@v6.2.0 verified as current latest (Jan 2026)",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "966e575e5b7dcc21b7355b4b7f3c352be4058cf7",
+      "preview_sha": "d08fbc8013905dbe3224c599aca4e248964fa9a8",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:15:30Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:15:30Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Integrate Batch E: pyproject-only pytest config, tightened JSON Schemas, CI hardening (concurrency/permissions/py3.10-3.13 matrix)",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "ee227ec2f388b8815f0d4b04c55d4c19073c15af",
+      "preview_sha": "73f05843c3bc21986e664b179b61a46665382123",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:22:07Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:22:07Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "create_repaired_skill_overlays: extract _lib_b helpers, enforce provenance invariant\n\nSplit determinism/io/hashing/logging helpers into tools/_lib_b/.\n_preserve_original_provenance() refuses to overwrite provenance bytes, making the\nAGENTS.md repair-overlay rule an in-code invariant rather than a procedural ask.\nKnown issue: rerunning the tool currently adds reuse_reason metadata on the\nsecond pass â€” full idempotence work is deferred to a follow-up; see the\nregenerated artifacts below.",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "95cb0fecb9a3a3b6ebb789f13f9e9c0ce0bba3b1",
+      "preview_sha": "ad5e3633711dd5f4d86fdb5842da44b3dc05ac22",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:22:07Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:22:07Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Regenerate repaired-skill-readiness artifacts and manifest from improved generator",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "13c645a57efe10fbb315e6d5d8ba00d8a2cfd66c",
+      "preview_sha": "0ac07616307af877b7453071fdc62308c7af2029",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:27:26Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:27:26Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Integrate Batch B: _lib_b helpers + provenance-invariant enforcement in repaired-overlay generator",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "2b5b46a802f7a0eed27fba585f42fa3e0995f4cc",
+      "preview_sha": "e73eecf99f2678ffc5107efc65fd7cd69c9a1b62",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:27:44Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:27:44Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Revert \"Regenerate repaired-skill-readiness artifacts and manifest from improved generator\"\n\nThis reverts commit 95cb0fecb9a3a3b6ebb789f13f9e9c0ce0bba3b1.",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "f2a5c047c4aa9487189634268c2f019f8d1468a9",
+      "preview_sha": "4659625af5fc1ffa5df5dd9e0a98b06d6fc250b2",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:28:14Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:28:14Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "run_static_benchmarks: extract _lib_c helpers (schema/io/diff/progress/catalog)\n\n408-line main (down from a monolithic single file) with small single-purpose modules under tools/_lib_c/. Idempotent rerun verified (zero diff on repeat).\nResolves the pre-existing stale data/static_benchmark_results.json detected by --check.",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "ed9292c74acae417ed4f909c40ffef1ecadc1ff6",
+      "preview_sha": "742af87db5836b53dd6f17e78aff8ea200a647b1",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:28:14Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:28:14Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Refresh static benchmark results + derived docs",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "843009b2c697741950051602adc43efdbf3c919e",
+      "preview_sha": "97912ddbead69256c48990d2105cb694b8c0e7a6",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:28:24Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:28:24Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Integrate Batch C: modularized run_static_benchmarks.py + refreshed benchmark result & docs",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "4383ff8b7899506713fb2a7ee47e43c076b931b5",
+      "preview_sha": "2545352486c18df473a403bc4544767ca418914d",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:31:04Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:31:04Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "sha256_tree: use git-style normalized mode for host-agnostic hashing\n\nThe previous implementation hashed the raw stat.st_mode, which embeds the local umask into every tree hash. A clone made with umask 0002 would produce a hash different from one made with umask 0022 even though the file contents are byte-identical. This is the root cause of the pre-existing test_mirror_integrity failure seen on fresh clones.\n\nFix: _portable_mode() clamps to 0o100644 for regular files, 0o100755 if any execute bit is set (git's own canonicalisation). Tree hashes are now reproducible across any Linux/macOS/WSL host regardless of umask, cluster permissions, or tar preservation.\n\nValidation: on this worktree all 673 tree hashes match the stored catalog values without touching any catalog JSON. The test_all_skills_are_physically_mirrored_and_documented test now passes for the first time on a fresh clone.",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "91d7d76d2ea75509fa2703bd9b3540a1e5785b54",
+      "preview_sha": "e3732dcf202b22019b7edf5ace486dc780531c88",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:41:52Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:41:52Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Regenerate static benchmark snapshot after host-agnostic hash fix\n\nWith sha256_tree now using git-style portable modes, every skill's\nskill_directory_hash_matches check passes. Score: 7403/8076 -> 8076/8076\nstatic checks across all 673 skills. Pre-existing drift closed.",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "291da7432f134cd174f5090daacae3702e195718",
+      "preview_sha": "bbe83054562c57ccf1edf3df121ac85f78c6c4e5",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:44:34Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:44:34Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "validate_source_lock: offline-by-default, no required flags; add 10 logic tests\n\n- Runs with zero arguments: structural + mirror-hash validation against committed mirrors.\n- --source-root now optional; falls back to AI_SKILL_SOURCE_ROOT env var; if neither resolves to a directory, skips live-checkout validation so CI can run the tool.\n- Collects all errors (no more fail-fast on first issue) and writes them to stderr.\n- Adds --json for machine-readable output.\n- Stricter structural checks: duplicate skill-id detection, required-field checks, skill_count coherence.\n- 10 new tests (negative + positive + determinism) parametrized against the real source_lock.json.",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "69326a7060680d03dcb0f3a83134b0e31f75bede",
+      "preview_sha": "8e680e231a5ad70da3ba9feb163c1fd97bbf9d23",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:46:55Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:46:55Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "validate_catalog: collect all errors (no more fail-fast), add --json, testable main()\n\nPreviously the tool exited on the first sys.exit(1) encountered, forcing\nmaintainers to fix issues one at a time. Now validate_catalog() populates a\nReport dataclass and main() returns an exit code, so CI and human users see\nthe full drift list in a single run.\n\n- Preserves every existing invariant check (one for one).\n- --json emits a machine-readable envelope with error count and list.\n- --max-errors caps human output to 50 by default.\n- Graceful handling of missing/malformed input files.\n- All 75 tests still pass; 673-entry validation unchanged at ~4s wall-clock.",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "454534c3a6960b7e9fea45bdaad82590b2e3ad16",
+      "preview_sha": "3b53e5f6f149341290a27b6b8372f82b2eed4294",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:47:56Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:47:56Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "audit_skill_quality: --json stdout + --severity filter\n\nAdds --json (emits the audit envelope on stdout) and --severity blocking|warning|info|any (filters skills to those with a finding at or above the chosen severity in JSON mode). --check behaviour unchanged. main() now returns an int exit code for testability.",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "a669ecec3d31618346a2585d12deea44dfc3342d",
+      "preview_sha": "dc4f8943e4a2cef778e3d22fc709687a9d41e3b8",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:51:10Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-24T22:51:10Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Add hash-portability & cross-tool CLI-contract logic tests; fix link-reporter CLI\n\ntests/test_hash_portability.py (6 tests):\n- umask bits must not change the tree hash (proves the host-agnostic fix)\n- executable bit must still differentiate tree hashes (preserves exec semantics)\n- content change must still change the tree hash (no false aliasing)\n- repeat runs produce identical hashes (determinism)\n- _portable_mode() maps 0o600/0o664 -> 0o100644 and exec -> 0o100755\n\ntests/test_tools_cli_contract.py (20 tests):\n- every tool under tools/ has a working --help exiting 0 with 'usage:'\n- every tool advertising --check exits 0 against committed data\n- every no-arg tool runs without crashing on committed data\n- no tool leaks a host-specific path prefix (e.g. /home/berfarto54/) in help\n\nFixes surfaced by the contract tests:\n- report_local_markdown_link_failures.py: add argparse, --check (freshness guard for CI), --stdout\n- validate_source_lock.py: remove absolute DEFAULT_LOCK path leak from --lock help",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "67f755f5b2817c6f3d8964908b393a0154cf9fc8",
+      "preview_sha": "ccfbe2389458db6de3bfb1e2f0f9ee3a512310aa",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T01:14:43Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T01:14:43Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Generator/evaluator tools: testable main(argv) -> int + build_parser; add 7 contract tests\n\nLifts the parser construction into build_parser() and converts main() into a\ntestable main(argv: list[str] | None = None) -> int across:\n- create_independent_runtime_batch.py\n- create_source_proof_batch.py\n- evaluate_external_benchmark_methods.py\n\nThe new tests/test_generator_parsers.py locks in the public flag set for each\ntool plus the offline --check path of the external-benchmark evaluator and\naudit_skill_quality so future renames trip the suite, not CI.",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "3bf342444a2492e8a1544a58e2b50c8c717b64b7",
+      "preview_sha": "fee1d3b15456d60d7c06982cedc9f71a449b35dc",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T01:57:51Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T01:57:51Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Regenerate repaired-skill-readiness artifacts (idempotent under improved generator)\n\nConfirmed byte-identical across 3 consecutive runs (297 files, 0 diff). The earlier\n'non-idempotence' was a worktree-state artifact, not a tool bug. Provenance is\npreserved per AGENTS.md repair-overlay loop. The dataset_snapshot now records\nreuse_reason + reused_from_original_artifact for every repair (was missing\nbefore).",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "df0de6f3f0ca718705a7041a1f774c64fd13803e",
+      "preview_sha": "f4fbccc3b34f425aea75ec7bb63aaeb7d7a2a34c",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T01:58:18Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T01:58:18Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Add ruff + mypy + coverage + hypothesis dev deps; conftest hosts sys.path shim\n\n- pyproject: bump pytest>=8.4, pytest-xdist>=3.6, PyYAML>=6.0.2; add coverage>=7.6, hypothesis>=6.115; new [lint] extras (ruff>=0.15, mypy>=1.20, types-PyYAML)\n- ruff config: target-py310, line=120, [E F B SIM UP I] selected; per-file-ignores for sys.path-shim tools\n- mypy config: explicit_package_bases, mypy_path=tools, lenient on first pass (check_untyped_defs but not disallow_untyped_defs)\n- coverage config: branch=true, source=tools, fail_under=0 (report-only first pass)\n- tests/conftest.py: centralised sys.path insert for tools/, removes the per-test-file shim\n- tests/helpers.py + 3 test files: drop now-redundant per-file sys.path inserts",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "af66f5c7f696853026f72a0ed6b7e8550cd33872",
+      "preview_sha": "2902287fde6520b13dbbde2ee7f918d7a608e14c",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T01:58:18Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T01:58:18Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Apply ruff auto-fixes + format; clear remaining mypy errors\n\n- ruff format normalised quote style and trailing commas across tool scripts\n- type fixes: build_catalog yaml shadowing, check_benchmark_artifact assert isinstance after non_empty_list, validate_catalog url cast, validate_source_lock dead-code loop removed\n- 3.10 portability: create_source_proof_batch swapped datetime.UTC -> datetime.timezone.utc (UTC alias was 3.11+)\n- B904 (raise-without-from): explicit from None in evaluate_external_benchmark_methods git fallback errors\n- SIM105: replaced try/except/pass with contextlib.suppress in _lib_b/io_utils fsync",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "3910b22b35a14268e2d8f50742422e44e31f9caa",
+      "preview_sha": "738db7cd087e9b79390afb7bb30955fa22de1bad",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T01:58:18Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T01:58:18Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Add Ruff + Mypy GitHub Actions workflows (mypy across py 3.10-3.13 matrix)",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "1d67be164a28a9e19855265752b7ae0b4b04d096",
+      "preview_sha": "2a3b9cbffcb0d697a707f5ce9bdd8cb80069d2c1",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T01:58:31Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T01:58:31Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Apply ruff format normalisations across remaining tool/_lib + test modules",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "789c39b46ea4d92bc4157b781a3c2b348250daf9",
+      "preview_sha": "cabc7e3454b5aa1e97a3cb62b023382797956081",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T01:59:59Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T01:59:59Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Generators: drop datetime.now wall-clock; reuse _lib_b/determinism for SOURCE_DATE_EPOCH path\n\nBoth create_independent_runtime_batch.py and create_source_proof_batch.py now resolve their generated_at_utc via the documented precedence (SOURCE_DATE_EPOCH > existing manifest > git_latest_commit_epoch_for(catalog)).  catalog_commit follows the same pattern (CATALOG_COMMIT > existing manifest > git rev-parse HEAD).\nResult: rerunning a generator with no input changes produces byte-identical artifacts even across days, hosts, and CI runners.",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "13c187baf784aad5481035f90d674db39b123dac",
+      "preview_sha": "3145a28e7c55dc0f4e1b88b218e753f84c4d92df",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:09:43Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:09:43Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Add 14 build_catalog component tests (slug/parse_frontmatter/install_name/nested-skill detection)\n\nIncludes Hypothesis property tests for slug() idempotence and output charset.\nAvoids invoking build_catalog.main() since it writes to repo-relative paths\nand would clobber the committed catalog.",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "34515c144bc7b2e55e62f14d220d4c836abcefbf",
+      "preview_sha": "9bbd5ad4510d4bfe764ba0d83be57e73951d7db1",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:09:43Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:09:43Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Dependabot weekly + scheduled CI runs (catch upstream drift without a push)\n\n- .github/dependabot.yml: weekly grouped updates for github-actions and pip ecosystems\n- offline-validation: cron 06:00 UTC Mondays + workflow_dispatch\n- secret-scan: cron 06:30 UTC Mondays + workflow_dispatch",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "52f23b429e6d7992cf166e8a2b9aa3783c39f5f6",
+      "preview_sha": "03188744510b5558469a2cdc7b15fd3d144156fd",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:09:43Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:09:43Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Secret-scan: add gitleaks v8.30.1 (MIT) as second-opinion gate\n\n- Pinned binary download with SHA256 verified against the v8.30.1 release (2026-03-21)\n- Avoids gitleaks-action v2 which carries a commercial licence\n- .gitleaks.toml allowlists immutable upstream mirrors (included/skills/**) and recorded artifacts (artifacts/**) per AGENTS.md immutable-audit-model\n- Verified locally: 73 hits without allowlist (all in immutable mirrors), 0 hits with allowlist",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "755c51bcbb2e8bd5708a11eb124b1370bf42b32c",
+      "preview_sha": "ce92c0e552d29d0d980002dbbaf5388b7eca71d8",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:14:30Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:14:30Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Lint cleanup: monkeypatch fixture replaces try/finally; ruff format pass",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "74902f4342b58158af10abbe58a90449e8dd23db",
+      "preview_sha": "50c684f2bd4e12c1736bd9a2555504293199d6f2",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:14:30Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:14:30Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Modernise docs: CHANGELOG.md + CONTRIBUTING.md; refresh AGENTS.md, README.md, installation guide\n\n- New CHANGELOG.md (Keep a Changelog format) summarising every change in this branch\n- New CONTRIBUTING.md documenting the full quality-gate matrix (ruff/mypy/pytest/gitleaks)\n- AGENTS.md: append CI Quality Gates, Determinism Invariants, Tooling Reference sections (existing single-session rule preserved verbatim for the validate_catalog phrase check)\n- README.md: add CI badges and a complete pre-push command set; link to CHANGELOG/CONTRIBUTING\n- docs/installation.md: replace stale tools/fetch_sources.py reference; document SOURCE_DATE_EPOCH precedence and the host-portable hash invariant",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "ebf6eb532b74f46af17622e923310d9eefc79438",
+      "preview_sha": "c98d40a09dee6967da8382bd1e31e78988034e86",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:31:44Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:31:44Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Wire pytest-cov to CI with a 45% fail-under floor + coverage.xml artifact\n\n- pyproject: add pytest-cov>=7.0 to the test extra; pytest addopts now run --cov=tools with term-missing and coverage.xml reports\n- coverage.run gets parallel=true/concurrency=multiprocessing for pytest-xdist compatibility\n- [tool.coverage.paths] maps xdist worker tempdirs back onto the single repo view\n- fail_under=45 enforces no-regression while matching current measured 49.2%\n- offline-validation workflow uploads coverage.xml as an artifact (retention 14d) per Python matrix leg\n- test_tools_cli_contract: adds 8 in-process main(argv) tests so coverage sees modules invoked through the public API, not just via subprocess; lifts 4 tools from 0%% â†’ 75-90%%",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "0dfb7877473cf08c77f6dd0401570f24b93faa38",
+      "preview_sha": "d41e7bb71893b11831c71c5f9dc66ef34e7797c5",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:31:44Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:31:44Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Supply chain: pip-audit workflow + hashed requirements-lock.txt\n\n- new [security] extra ships pip-audit>=2.10 and pip-tools>=7.5\n- requirements-lock.txt: pip-compile --generate-hashes against pyproject.toml[test,lint,security], 781 pinned deps with SHA256 hashes\n- .github/workflows/pip-audit.yml: daily cron CVE scan; also diffs the committed lockfile against a fresh pip-compile to keep them in sync\n- Current audit: no known vulnerabilities",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "6a403797fbc6c138a8032937bed6b2c6f7856987",
+      "preview_sha": "ea14ee6c763274da9885ac6094e15036dfc76855",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:31:44Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:31:44Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "validate_catalog: refactor to _collect_entry_errors; sequential by default after measured regression from threads\n\nMeasured wall-clock on 673-entry catalog:\n- sequential: 3.95 s (3 runs avg)\n- ThreadPoolExecutor cpu*2 workers: 9.14 s (2.3x regression)\n- ThreadPoolExecutor 8 workers: 9.57 s\nThe per-entry validation is dominated by pure-Python string/dict work (GIL-bound) with only brief hashlib segments; pool dispatch of ~673 tiny tasks dwarfs the <1 ms work unit. Kept the _collect_entry_errors refactor and threadpool path behind an opt-in VALIDATE_CATALOG_MAX_WORKERS env var for future I/O-bound workloads.",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "b4bdb4b85aba3b3dacf3af8a1690e51908cba3e0",
+      "preview_sha": "67bc1ed67e2a16034ac5b39b32d7bbdaa204f955",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:32:49Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:32:49Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Release automation: tag-triggered workflow (re-runs all gates, builds sdist+wheel, extracts CHANGELOG, creates GitHub Release)\n\nTriggers on v*.*.* tags (SemVer + pre-release suffixes). Before publishing the Release, re-runs: ruff, mypy, pytest, validate_catalog, run_static_benchmarks --check, audit_skill_quality --check, compileall. Attaches dist/*.tar.gz, dist/*.whl, requirements-lock.txt, coverage.xml to the Release.\nAlso supports workflow_dispatch for manual retriggers on an existing tag.",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "18437829a29a0d90ff9fd0c9ea4cdc9f8cf0f90f",
+      "preview_sha": "d323822b5ab836d0fbb28ebd88bbb892690cb5a9",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:32:49Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:32:49Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "pre-commit: mirror the CI gate set (ruff, mypy, json/toml/yaml checks, secret scan)\n\npre-commit hook versions pinned and refreshed by Dependabot. Install locally with: pip install -e .[lint,security] && pre-commit install",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "4f34d61698695861ea5b4dbdf679e6f881289c54",
+      "preview_sha": "f467d65cc9763bb51ead9b3916ceae99ad771623",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:42:07Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:42:07Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "create_source_proof_batch: extract pure helpers + --dry-run + --json; add 8 logic tests\n\nSplit the previous monolithic write_artifact() into:\n- build_result(entry, scenario, skill_text) -> dict    (pure)\n- build_transcript(...) -> str                          (pure)\n- build_artifact(..., result, skill_text) -> dict       (pure)\n- scenario_id_for(entry) -> str                         (pure)\n- write_artifact(..., dry_run=False)                    (I/O, idempotent)\n\nCLI gains --dry-run (compute-only) and --json (machine-readable envelope).\nwrite_artifact output is byte-identical to the committed artifacts under\nartifacts/benchmark-runs/2026-04-17-first-source-proofs/ (verified via\ngit diff --stat after a fresh run). Tool coverage: 24.8% -> 82.4%.",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "9e4c3c73f759bdaa4e4e565aca42866ac1a5c168",
+      "preview_sha": "856dae7f8d9587915abde8168709ca89f56e026c",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:43:36Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:43:36Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "evaluate_external_benchmark_methods: inject head/tree providers; add 10 offline logic tests\n\nsmoke_probe() now accepts optional head_provider and tree_provider callables, defaulting to the existing network-backed helpers. Tests inject pure-Python fakes so the full smoke_probe code path can be exercised without network, including subpath-missing, unresolved-HEAD, and tree-fetch-exception branches.\nadapter_complete, slug, registry are exercised directly.\nTool coverage: 43.2% -> 61.8%.",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "993c4e1f747f68722763d4f309a0613cb09c0d96",
+      "preview_sha": "037be5bade3ae2d19c76789fd2ff4a9f0e223092",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:44:53Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:44:53Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "create_independent_runtime_batch: 21 logic tests for every pure helper + monkeypatched network paths\n\nCovers github_repo_from_url (parametrized happy+reject), first_non_provenance_scenario, batch_paths, build_task determinism, check_single_session_entrypoint (including every delegation-wording regex), resolve_dataset_snapshot for non-github/github-subpath/head-fail paths via monkeypatched urlopen and run_command. Lifts this tool's coverage from 17.5% -> 36.1% without touching its real-network main() path.",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "2f99823973da2ea434b7646659d7b588d1647db8",
+      "preview_sha": "8b141da61cefcd7ce2aad8cef32b2ea7573e52e7",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:47:33Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:47:33Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Expand build_catalog component coverage: keyword_matches, category_for, flags, path layout\n\nbuild_catalog.py coverage in the full suite: 34.0% -> (measured after merge). End-to-end main() smoke was out of scope; see CHANGELOG for scope note. Added 13 more component tests including:\n- keyword_matches word-boundary and multi-word invariants\n- category_for fallback + microsoft/kdense special cases\n- scenario_ids track count and fallback behaviour (documents the '&'-to-'and' asymmetry between scenario IDs and mirror paths)\n- flags() filesystem-shape detection on synthetic skill directories\n- skill_mirror_path / skill_agent_ready_path layout regression guards",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "667d70b1beb60ee3ade8a89645c6b58a6ebd76c7",
+      "preview_sha": "2ae9e93cc11b6903417f3d5984dd1ba82fc2f275",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:59:17Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T02:59:17Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Docs: SECURITY.md enterprise rewrite + CHANGELOG 0.2.0 cut + bump project version\n\n- SECURITY.md: disclosure channel, CI gate matrix, supply-chain section, gitleaks local-mirror instructions (pinned SHA256)\n- CHANGELOG: close out 0.2.0 with coverage/pip-audit/release/pre-commit/deep-rewrite entries\n- pyproject.toml: 0.1.0 -> 0.2.0",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "adde462580b28c9003c5d6ffa2c5e6b1124ccbf2",
+      "preview_sha": "ea55d36eb2d5e4984c0e87d6cbcf02ff9ec8cbab",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T03:01:03Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T03:01:03Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Apply ruff format normalisation across rewritten tools + tests",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "ce8a85359ac32c3a7a51c8a5a5bd26e69d5b7ef3",
+      "preview_sha": "86889b551bde1774bcfaee71a9bd0c1c48bc124e",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T03:01:16Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T03:01:16Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": ".gitignore: exclude coverage/mypy/ruff/hypothesis caches + build artefacts + venvs; drop accidentally committed .coverage and coverage.xml",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "35d366369f158fbd3d9286377652c021a117c4e3",
+      "preview_sha": "b9440447efa67113421e2b21c15c7e196696458a",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T03:16:38Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T03:43:16Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "AI commit identity: immutable enforcement rule\n\nEvery commit produced by an AI agent in this repository must use Author =\nCommitter = 'AI agent' with an empty email, and any AI co-author trailer\nmust be 'Co-authored-by: AI agent' with no email. Human contributors keep\ntheir real GitHub identities. The full rule set lives at the top of\nAGENTS.md.",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "1105b8f1e6af643b8fceba94db29e5c330c7af8d",
+      "preview_sha": "edcd01d09063182706856811878a417ae9b6ec6b",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T09:26:57Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T09:26:57Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Integrate Karpathy agent baseline",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "d78dd36cc6be40759a6c595c1e9836869dc18f23",
+      "preview_sha": "0a39e0c352deb48b4aa62a2c9b5dfa8d4ecab286",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T09:56:54Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T09:56:54Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Homogenize README badge generation",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    },
+    {
+      "original_sha": "4bd209752567f5c35074d4ee4a73600e1c45c283",
+      "preview_sha": "c1336d3f039cf9dbcaaa9acbb5361af4c54670b0",
+      "original_author": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T10:31:44Z"
+      },
+      "original_committer": {
+        "name": "AI agent",
+        "email": "",
+        "date": "2026-04-25T10:31:44Z"
+      },
+      "original_author_github_login": null,
+      "original_committer_github_login": null,
+      "original_message": "Fix badge generator scanner findings",
+      "preview_identity": {
+        "author_name": "AI agent",
+        "author_email": "",
+        "committer_name": "AI agent",
+        "committer_email": ""
+      }
+    }
+  ],
+  "release_tag_preview": {
+    "name": "v0.2.0",
+    "original_tag_object": "dba4238c9182e97fdfbcf026943580ce178faab6",
+    "preview_tag_object": "64e7c28877d79e28d8411ee1d241842f054eecb4",
+    "original_commit": "35d366369f158fbd3d9286377652c021a117c4e3",
+    "preview_commit": "b9440447efa67113421e2b21c15c7e196696458a",
+    "message_and_timestamp_preserved": true,
+    "tagger": "AI agent <>",
+    "public_tag_modified": false,
+    "signed_original": false
+  }
+}
