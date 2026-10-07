@@ -219,6 +219,37 @@ def test_incomplete_history_is_an_infrastructure_failure_not_a_clean_scan(monkey
     assert report["complete"] is False and report["errors"]
 
 
+def test_worktree_detects_untracked_long_path_with_git_longpaths_disabled(tmp_path, monkeypatch):
+    subprocess.run(["git", "init", "--initial-branch=main", str(tmp_path)], check=True, capture_output=True)
+    subprocess.run(["git", "-C", str(tmp_path), "config", "core.longpaths", "false"], check=True, capture_output=True)
+    path = tmp_path.joinpath(*[f"segment-{index:02d}-abcdefghijkl" for index in range(14)], "fixture.txt")
+    path.parent.mkdir(parents=True)
+    path.write_text("key=" + "sk_" + "live_" + "exampleValue123\n", encoding="utf-8")
+    assert len(str(path)) > 260
+    monkeypatch.setattr(check_no_secret_patterns, "ROOT", tmp_path)
+    findings = check_no_secret_patterns.scan_worktree()
+    assert any("fixture.txt:1: stripe_secret_or_restricted_key_shape" in item for item in findings)
+
+
+def test_git_diagnostics_do_not_become_a_complete_worktree_scan(monkeypatch, capsys):
+    def warning(*args, **kwargs):
+        return subprocess.CompletedProcess(args[0], 0, stdout=b"", stderr=b"warning: incomplete enumeration")
+
+    monkeypatch.setattr(check_no_secret_patterns.subprocess, "run", warning)
+    assert check_no_secret_patterns.main(["--json"]) == 2
+    assert json.loads(capsys.readouterr().out)["complete"] is False
+
+
+def test_unreadable_worktree_file_is_not_silently_skipped(tmp_path, monkeypatch, capsys):
+    def unreadable(path):
+        raise PermissionError("owned unreadable file")
+
+    monkeypatch.setattr(check_no_secret_patterns, "tracked_files", lambda: [tmp_path / "fixture.txt"])
+    monkeypatch.setattr(Path, "read_bytes", unreadable)
+    assert check_no_secret_patterns.main(["--json"]) == 2
+    assert json.loads(capsys.readouterr().out)["complete"] is False
+
+
 @pytest.mark.parametrize("header", [b"", b"partial", b"x" * 65536], ids=("empty", "truncated", "over-limit"))
 def test_incomplete_or_unbounded_git_headers_fail_closed(header):
     with pytest.raises(RuntimeError):

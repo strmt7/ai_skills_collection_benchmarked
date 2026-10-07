@@ -167,11 +167,18 @@ def _entropy_findings(line: str) -> list[str]:
 
 
 def git(*args: str) -> str:
-    return subprocess.check_output(["git", "-C", str(ROOT), *args], text=True)
+    return git_bytes(*args).decode("utf-8")
+
+
+def git_command(*args: str) -> list[str]:
+    return ["git", "-c", "core.longpaths=true", "-C", str(ROOT), *args]
 
 
 def git_bytes(*args: str) -> bytes:
-    return subprocess.check_output(["git", "-C", str(ROOT), *args])
+    result = subprocess.run(git_command(*args), check=True, capture_output=True)
+    if result.stderr:
+        raise RuntimeError("Git reported diagnostics; scan enumeration is not qualified")
+    return result.stdout
 
 
 def tracked_files() -> list[Path]:
@@ -185,7 +192,15 @@ def history_commits() -> list[str]:
 
 def commit_changed_names(commit: str) -> list[str]:
     data = git_bytes(
-        "diff-tree", "--root", "--diff-merges=first-parent", "-z", "--no-commit-id", "--name-status", "-r", "-M", commit
+        "diff-tree",
+        "--root",
+        "--diff-merges=first-parent",
+        "-z",
+        "--no-commit-id",
+        "--name-status",
+        "-r",
+        "--no-renames",
+        commit,
     )
     items = [item.decode("utf-8", errors="surrogateescape") for item in data.split(b"\0") if item]
     paths: list[str] = []
@@ -213,7 +228,7 @@ def file_text(path: Path) -> str | None:
         return None
     try:
         data = path.read_bytes()
-    except OSError:
+    except FileNotFoundError:
         return None
     if b"\0" in data:
         return None
@@ -223,7 +238,7 @@ def file_text(path: Path) -> str | None:
 def commit_file_text(commit: str, path: str) -> str | None:
     try:
         data = subprocess.check_output(
-            ["git", "-C", str(ROOT), "show", f"{commit}:{path}"],
+            git_command("show", f"{commit}:{path}"),
             stderr=subprocess.DEVNULL,
         )
     except subprocess.CalledProcessError:
@@ -277,7 +292,7 @@ def read_batch_header(stream: IO[bytes]) -> list[bytes]:
 def history_file_texts() -> Iterator[tuple[str, str, str]]:
     """Read changed blobs through one NUL-framed Git process, one object at a time."""
     process = subprocess.Popen(
-        ["git", "-C", str(ROOT), "cat-file", "--batch", "-Z"],
+        git_command("cat-file", "--batch", "-Z"),
         stdin=subprocess.PIPE,
         stdout=subprocess.PIPE,
         stderr=subprocess.DEVNULL,

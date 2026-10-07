@@ -6,6 +6,8 @@
 /data/*.json text eol=lf
 /included/improved/** text eol=lf
 /benchmarks/agent-effectiveness/** text eol=lf
+# A frozen protocol is exact-byte evidence already bound into recorded trials.
+/benchmarks/agent-effectiveness/development/protocol-v2.json -text
 /benchmarks/dependency-regressions/** text eol=lf
 # Trial evidence hashes describe exact captured bytes, including Windows logs.
 # Preserve them across Git transports instead of converting line endings.

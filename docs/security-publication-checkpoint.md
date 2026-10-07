@@ -68,3 +68,40 @@ branch rewrite must not be presented as erasing them. An isolated replacement
 preserving the annotation and timestamp. Changing that public release tag and
 removing superseded bot branches require explicit publication scope. The six dependency PRs
 remain open until their updates are reconciled with a verified published branch.
+
+## Approved publication and first hosted checks
+
+The owner subsequently approved the concrete history and publication scope.
+An atomic force-with-lease push published main at
+`1c3b1fa1ea76b4aed0d650e42ed5b9d7cb9eb539` and replaced the annotated
+`v0.2.0` tag with its sanitized equivalent. The verified original all-ref backup
+remains local. The preceding sections describe the prepublication snapshot;
+the main and tag are now published.
+
+GitHub closed the six superseded Dependabot PRs and removed their bot branches
+without an agent closure or deletion command. All 26 proposed dependency/action
+updates across those PRs are satisfied or exceeded by the published versions.
+The publication receipt preserves the observed alert state separately; no alert
+was dismissed. Hosted rescanning must confirm fixes before closure is claimed.
+
+Ruff and the four-runtime mypy matrix passed on that exact published commit.
+The first hosted execution exposed Windows checkout failures on long paths,
+a missing PyYAML dependency in the secret-scanner environment, and Git LF
+normalization of the already frozen trial protocol. Repairs configure Git
+before checkout, install hash-locked scanner dependencies, and preserve the
+protocol's original bytes. Recorded attempts and hashes are unchanged.
+The stable-action check also detected upload-artifact 7.0.2, released on
+2026-10-07; its verified immutable commit replaces 7.0.1.
+
+CodeQL successfully uploaded all three language analyses and returned 54 open
+findings. Their complete initial responses are retained in
+`artifacts/research/2026-10-07/codeql-first-hosted-findings.json`. They require
+individual source and policy review. Successful scanner execution does not
+mean zero findings, and immutable mirrors must not be rewritten to hide them.
+
+The scanner itself now applies long-path support to each Git command. A zero
+Git exit with enumeration warnings is an incomplete scan, and unreadable files
+produce an infrastructure failure instead of being skipped. A real untracked
+file beyond 260 characters is detected with the temporary repository's Git
+long-path setting disabled. Historical enumeration uses complete changed paths
+without rename heuristics. These fixes preserve the detection rules.
