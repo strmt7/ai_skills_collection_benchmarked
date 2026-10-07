@@ -10,9 +10,37 @@ from __future__ import annotations
 import importlib
 import io
 import json
+import subprocess
 from contextlib import redirect_stderr, redirect_stdout
+from pathlib import Path
+
+import pytest
 
 validate_source_lock = importlib.import_module("validate_source_lock")  # tools/ on sys.path via conftest
+
+
+def test_git_source_read_enables_long_paths(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
+    commands: list[list[str]] = []
+
+    def run(command, **kwargs):
+        commands.append(command)
+        return subprocess.CompletedProcess(command, 0, "clean\n", "")
+
+    monkeypatch.setattr(validate_source_lock.subprocess, "run", run)
+    assert validate_source_lock.run_git(tmp_path, "status", "--short") == "clean"
+    assert commands[0][:3] == ["git", "-c", "core.longpaths=true"]
+
+
+def test_git_source_read_rejects_success_with_diagnostics(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
+    monkeypatch.setattr(
+        validate_source_lock.subprocess,
+        "run",
+        lambda command, **kwargs: subprocess.CompletedProcess(
+            command, 0, "partial\n", "warning: cannot read attributes"
+        ),
+    )
+    with pytest.raises(RuntimeError, match="diagnostics"):
+        validate_source_lock.run_git(tmp_path, "status", "--short")
 
 
 def test_default_invocation_runs_clean():

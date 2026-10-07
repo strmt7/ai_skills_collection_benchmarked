@@ -9,6 +9,8 @@
 # A frozen protocol is exact-byte evidence already bound into recorded trials.
 /benchmarks/agent-effectiveness/development/protocol-v2.json -text
 /benchmarks/dependency-regressions/** text eol=lf
+# Captured crypto inputs are already bound by exact-byte research receipts.
+/benchmarks/dependency-regressions/wycheproof-inputs.json -text
 # Trial evidence hashes describe exact captured bytes, including Windows logs.
 # Preserve them across Git transports instead of converting line endings.
 /artifacts/agent-trials/** -text
