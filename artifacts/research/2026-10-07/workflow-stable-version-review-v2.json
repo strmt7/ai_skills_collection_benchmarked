@@ -1,0 +1,214 @@
+{
+  "actions": [
+    {
+      "commit_sha": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "published_at": "2026-07-20T15:10:05Z",
+      "release_notes": "## What's Changed\r\n* skip running unsafe pr check if input is default by @aiqiaoy in https://github.com/actions/checkout/pull/2518\r\n* trim only ascii whitespace for branch by @aiqiaoy in https://github.com/actions/checkout/pull/2521\r\n* escape values passed to --unset by @aiqiaoy in https://github.com/actions/checkout/pull/2530\r\n* Various dependency updates \r\n\r\n**Full Changelog**: https://github.com/actions/checkout/compare/v7...v7.0.1",
+      "release_url": "https://github.com/actions/checkout/releases/tag/v7.0.1",
+      "repo": "actions/checkout",
+      "selection": "highest published non-prerelease semantic version; all release pages inspected",
+      "stable_tag": "v7.0.1",
+      "status": "resolved"
+    },
+    {
+      "commit_sha": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+      "published_at": "2026-07-20T03:15:01Z",
+      "release_notes": "## What's Changed\r\n\r\n### Enhancements\r\n* Migrate to ESM and upgrade dependencies by @priyagupta108 in https://github.com/actions/setup-python/pull/1330\r\n* Pin SHA commits and update docs with latest versions by @HarithaVattikuti in https://github.com/actions/setup-python/pull/1338\r\n* Remove the pip-install input by @gowridurgad in https://github.com/actions/setup-python/pull/1336\r\n\r\n### Bug Fix\r\n* Fix to Classify stderr warning messages as warnings instead of errors in annotations by @lmvysakh in https://github.com/actions/setup-python/pull/1335\r\n* Validate and retry manifest fetch to prevent silent failures by @priyagupta108 in https://github.com/actions/setup-python/pull/1332\r\n\r\n### Dependency Upgrade\r\n* Bump certifi from 2020.6.20 to 2024.7.4 in /__tests__/data by @dependabot in https://github.com/actions/setup-python/pull/1328\r\n* Remove EOL Python versions and Bumps numpy text fixture by @priya-kinthali in https://github.com/actions/setup-python/pull/1333\r\n* Upgrade @actions/cache to 6.2.0 by @philip-gai in https://github.com/actions/setup-python/pull/1337\r\n\r\n## New Contributors\r\n* @lmvysakh made their first contribution in https://github.com/actions/setup-python/pull/1335\r\n* @philip-gai made their first contribution in https://github.com/actions/setup-python/pull/1337\r\n\r\n**Full Changelog**: https://github.com/actions/setup-python/compare/v6...v7.0.0",
+      "release_url": "https://github.com/actions/setup-python/releases/tag/v7.0.0",
+      "repo": "actions/setup-python",
+      "selection": "highest published non-prerelease semantic version; all release pages inspected",
+      "stable_tag": "v7.0.0",
+      "status": "resolved"
+    },
+    {
+      "commit_sha": "043fb46d1a93c77aae656e7c1c64a875d1fc6a0a",
+      "published_at": "2026-04-10T17:31:14Z",
+      "release_notes": "## What's Changed\r\n* Update the readme with direct upload details by @danwkennedy in https://github.com/actions/upload-artifact/pull/795\r\n* Readme: bump all the example versions to v7 by @danwkennedy in https://github.com/actions/upload-artifact/pull/796\r\n* Include changes in typespec/ts-http-runtime 0.3.5 by @yacaovsnc in https://github.com/actions/upload-artifact/pull/797\r\n\r\n\r\n**Full Changelog**: https://github.com/actions/upload-artifact/compare/v7...v7.0.1",
+      "release_url": "https://github.com/actions/upload-artifact/releases/tag/v7.0.1",
+      "repo": "actions/upload-artifact",
+      "selection": "highest published non-prerelease semantic version; all release pages inspected",
+      "stable_tag": "v7.0.1",
+      "status": "resolved"
+    },
+    {
+      "commit_sha": "2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2",
+      "published_at": "2026-09-24T10:27:53Z",
+      "release_notes": "- Update default CodeQL bundle version to [2.27.1](https://github.com/github/codeql-action/releases/tag/codeql-bundle-v2.27.1). [#4160](https://github.com/github/codeql-action/pull/4160)",
+      "release_url": "https://github.com/github/codeql-action/releases/tag/v4.38.2",
+      "repo": "github/codeql-action",
+      "selection": "highest published non-prerelease semantic version; all release pages inspected",
+      "stable_tag": "v4.38.2",
+      "status": "resolved"
+    },
+    {
+      "commit_sha": "efb35369e0ad2afab669f228072c1b0d510eae64",
+      "published_at": "2026-08-30T00:30:08Z",
+      "release_notes": "\n`3.0.3` is a maintenance release with updated dependencies. It also safely\nclassifies malformed GitHub API errors to avoid secondary failures (#822).\n\n## What's Changed\n\n### Bug fixes 🐛\n\n* fix: safely classify GitHub API errors by @chenrui333 in https://github.com/softprops/action-gh-release/pull/822\n\n### Other Changes 🔄\n\n* dependency updates\n\n",
+      "release_url": "https://github.com/softprops/action-gh-release/releases/tag/v3.0.3",
+      "repo": "softprops/action-gh-release",
+      "selection": "highest published non-prerelease semantic version; all release pages inspected",
+      "stable_tag": "v3.0.3",
+      "status": "resolved"
+    }
+  ],
+  "inputs": {
+    "uses": [
+      {
+        "ref": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+        "repo": "actions/checkout",
+        "subpath": "",
+        "workflow": ".github/workflows/codeql.yml"
+      },
+      {
+        "ref": "2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2",
+        "repo": "github/codeql-action",
+        "subpath": "/init",
+        "workflow": ".github/workflows/codeql.yml"
+      },
+      {
+        "ref": "2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2",
+        "repo": "github/codeql-action",
+        "subpath": "/analyze",
+        "workflow": ".github/workflows/codeql.yml"
+      },
+      {
+        "ref": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+        "repo": "actions/checkout",
+        "subpath": "",
+        "workflow": ".github/workflows/mypy.yml"
+      },
+      {
+        "ref": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+        "repo": "actions/setup-python",
+        "subpath": "",
+        "workflow": ".github/workflows/mypy.yml"
+      },
+      {
+        "ref": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+        "repo": "actions/checkout",
+        "subpath": "",
+        "workflow": ".github/workflows/offline-validation.yml"
+      },
+      {
+        "ref": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+        "repo": "actions/setup-python",
+        "subpath": "",
+        "workflow": ".github/workflows/offline-validation.yml"
+      },
+      {
+        "ref": "043fb46d1a93c77aae656e7c1c64a875d1fc6a0a",
+        "repo": "actions/upload-artifact",
+        "subpath": "",
+        "workflow": ".github/workflows/offline-validation.yml"
+      },
+      {
+        "ref": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+        "repo": "actions/checkout",
+        "subpath": "",
+        "workflow": ".github/workflows/offline-validation.yml"
+      },
+      {
+        "ref": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+        "repo": "actions/setup-python",
+        "subpath": "",
+        "workflow": ".github/workflows/offline-validation.yml"
+      },
+      {
+        "ref": "043fb46d1a93c77aae656e7c1c64a875d1fc6a0a",
+        "repo": "actions/upload-artifact",
+        "subpath": "",
+        "workflow": ".github/workflows/offline-validation.yml"
+      },
+      {
+        "ref": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+        "repo": "actions/checkout",
+        "subpath": "",
+        "workflow": ".github/workflows/offline-validation.yml"
+      },
+      {
+        "ref": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+        "repo": "actions/setup-python",
+        "subpath": "",
+        "workflow": ".github/workflows/offline-validation.yml"
+      },
+      {
+        "ref": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+        "repo": "actions/checkout",
+        "subpath": "",
+        "workflow": ".github/workflows/pip-audit.yml"
+      },
+      {
+        "ref": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+        "repo": "actions/setup-python",
+        "subpath": "",
+        "workflow": ".github/workflows/pip-audit.yml"
+      },
+      {
+        "ref": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+        "repo": "actions/checkout",
+        "subpath": "",
+        "workflow": ".github/workflows/pip-audit.yml"
+      },
+      {
+        "ref": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+        "repo": "actions/setup-python",
+        "subpath": "",
+        "workflow": ".github/workflows/pip-audit.yml"
+      },
+      {
+        "ref": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+        "repo": "actions/checkout",
+        "subpath": "",
+        "workflow": ".github/workflows/release.yml"
+      },
+      {
+        "ref": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+        "repo": "actions/setup-python",
+        "subpath": "",
+        "workflow": ".github/workflows/release.yml"
+      },
+      {
+        "ref": "efb35369e0ad2afab669f228072c1b0d510eae64",
+        "repo": "softprops/action-gh-release",
+        "subpath": "",
+        "workflow": ".github/workflows/release.yml"
+      },
+      {
+        "ref": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+        "repo": "actions/checkout",
+        "subpath": "",
+        "workflow": ".github/workflows/ruff.yml"
+      },
+      {
+        "ref": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+        "repo": "actions/setup-python",
+        "subpath": "",
+        "workflow": ".github/workflows/ruff.yml"
+      },
+      {
+        "ref": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+        "repo": "actions/checkout",
+        "subpath": "",
+        "workflow": ".github/workflows/secret-scan.yml"
+      },
+      {
+        "ref": "5fda3b95a4ea91299a34e894583c3862153e4b97",
+        "repo": "actions/setup-python",
+        "subpath": "",
+        "workflow": ".github/workflows/secret-scan.yml"
+      }
+    ],
+    "workflow_sha256": {
+      ".github/workflows/codeql.yml": "46948f5afc64674c0d2867de5140a301041643aabe3b0f32d612182eff91921f",
+      ".github/workflows/mypy.yml": "20efcc81c5503849d892840175458b845bddafd5d5422072b8e0f6b285258600",
+      ".github/workflows/offline-validation.yml": "30810d1876fc43f53a43c501a931dc9b3a7764dc3a27289ca58b497286d513b1",
+      ".github/workflows/pip-audit.yml": "8f8b88a927e99bb2f50d849a4ac57a3f8d0b32d0afdec9470d7e30842c0b91eb",
+      ".github/workflows/release.yml": "1e8599155f7343b44ec4e5ab04d0e65e0ea0b6f634fdd4fbd75e8c0afc9d8c06",
+      ".github/workflows/ruff.yml": "a66044675f6fbd2c15fbb2609d2082b839e18d643fe36f3af09bf0b5899f0f02",
+      ".github/workflows/secret-scan.yml": "085356984ce81200773e419469a00765bf867ac085a8f460ad63a3095ac28aaa"
+    }
+  },
+  "limitations": "Release resolution does not prove migration compatibility or successful CI execution.",
+  "observed_at_utc": "2026-10-07T07:41:48Z",
+  "snapshot_version": 1
+}

@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "evidence_class": "pinned-external-verifier-and-new-comparator-controls",
+  "task_commit": "55bfe693f2a19f6b2f29aca3f54fe98b9d994668",
+  "source_sha256": {
+    "environment/workspace/sequential.py": "c4db418799f1b90804df928acfadc0f5ef479c11cfee9aa1ae778691cc30b697",
+    "environment/workspace/document_generator.py": "ae5347801de8f6d60b5337de46b8f2269784613a0fa92c7f6ec8c1445a8c59ee",
+    "verifier/test_outputs.py": "3de14cb18c18d2c4afdfee4cf70809acb866aa67c13d8d6f4bc67d7f44e26c20"
+  },
+  "original_unchanged_verifier_accepted_empty_results": true,
+  "new_comparator_rejected_empty_results": true,
+  "empty_output_differences": [
+    "$.search_results: list length differs (5 expected, 0 actual)"
+  ],
+  "reference_control_cases": [
+    "noncontiguous-empty-unknown-stopword-queries",
+    "zero-top-k",
+    "empty-corpus",
+    "empty-query-batch"
+  ],
+  "reference_control_differences": [
+    "missing or incomplete reference-control output"
+  ],
+  "execution": {
+    "status": "worker_error",
+    "container_name": "skills-invoke-b9d962e3adbe47a28581b625ef8743a5",
+    "image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+    "scored": false,
+    "candidate_response_is_untrusted": true,
+    "cleanup_verified": true,
+    "request_sha256": "1501d76b8f252cab822114426eb8b0e9085f9a807c02b97ef049a83a37bdf893",
+    "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+    "resource_profile": "skillsbench-tfidf",
+    "submission_sha256": {
+      "candidate.py": "a9087f825bfea5442a363f554f95eebefab783cd3c6e5b14ad1382daa579524d",
+      "sequential.py": "c4db418799f1b90804df928acfadc0f5ef479c11cfee9aa1ae778691cc30b697",
+      "document_generator.py": "ae5347801de8f6d60b5337de46b8f2269784613a0fa92c7f6ec8c1445a8c59ee"
+    },
+    "container_id": "15ce5de96c9b1986f82f8f06e9c8bf3c0a57ec7304f081f539dc14da137fc10e",
+    "isolation_checks": {
+      "errors": [],
+      "passed": true,
+      "observed_user": "65534:65534",
+      "observed_image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+      "observed_ownership_token": "b9d962e3adbe47a28581b625ef8743a5",
+      "resolved_image_id": "sha256:284cda8648f59f87e9468ec9d5652064dc2cd5b7d3fce342c2d3825ca1de6353",
+      "observed_host_constraints": {
+        "NetworkMode": "none",
+        "IpcMode": "none",
+        "ReadonlyRootfs": true,
+        "Memory": 4294967296,
+        "MemorySwap": 4294967296,
+        "NanoCpus": 8000000000,
+        "PidsLimit": 256,
+        "Privileged": false,
+        "Init": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "CapAdd": null,
+        "SecurityOpt": [
+          "no-new-privileges"
+        ],
+        "LogConfig": {
+          "Type": "none",
+          "Config": {}
+        },
+        "Tmpfs": {
+          "/tmp": "rw,noexec,nosuid,size=128m"
+        },
+        "Devices": [],
+        "DeviceRequests": null,
+        "VolumesFrom": null
+      },
+      "observed_mounts": [
+        {
+          "Destination": "/submission",
+          "Type": "bind",
+          "RW": false
+        },
+        {
+          "Destination": "/worker",
+          "Type": "bind",
+          "RW": false
+        }
+      ]
+    },
+    "setup_elapsed_seconds": 0.2941158999999516,
+    "runtime_elapsed_seconds": 0.5577800999999454,
+    "returncode": 0,
+    "candidate_response": {
+      "worker_status": "error",
+      "error_type": "IndentationError",
+      "detail": "unexpected indent (candidate.py, line 2)"
+    },
+    "captured_bytes": 115,
+    "stderr": "",
+    "elapsed_seconds": 1.0180968999998186
+  },
+  "comparator_sha256": "f8ef752762a55dcb92b66bb3aa7c635d71d321cbfe2159342d4d7e12908f39a3",
+  "scope": "Known-good sequential reference and known-bad empty-output controls, not an agent result or performance score. Expectations computed outside candidate container; original task skill text and oracle solution remain unread.",
+  "all_controls_passed": false,
+  "reproducer_sha256": "1df2c3158bd317c0cb6fcffa2e27dd06f9efb9fd5cbe12537e07eafaa71b45b6"
+}

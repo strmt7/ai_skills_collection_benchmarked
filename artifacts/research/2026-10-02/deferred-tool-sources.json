@@ -1,0 +1,31 @@
+{
+  "observed_at_utc": "2026-10-02T12:49:27.920013+00:00",
+  "sources": [
+    {
+      "repo": "cocoindex-io/cocoindex-code",
+      "pinned_commit": "0000000000000000000000000000000000000000",
+      "canonical_repo": "cocoindex-io/cocoindex-code",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "archived": false,
+      "selected_ref": "v0.2.41",
+      "selection_policy": "latest release",
+      "current_commit": "9fd2e7470a8b042a338dc3cc47fb9940ac5ebb59",
+      "changed": true,
+      "status": "update_available"
+    },
+    {
+      "repo": "JuliusBrussee/caveman",
+      "pinned_commit": "0000000000000000000000000000000000000000",
+      "canonical_repo": "JuliusBrussee/caveman",
+      "default_branch": "main",
+      "license": "Apache-2.0",
+      "archived": false,
+      "selected_ref": "v3.0.0",
+      "selection_policy": "latest release",
+      "current_commit": "b33a39554ed06cbc7d7d3198ff90c171e8043b69",
+      "changed": true,
+      "status": "update_available"
+    }
+  ]
+}

@@ -7,7 +7,7 @@ This validator performs two layers of checks on a ``artifact.json`` file:
    (JSON Schema Draft 2020-12). The implementation is pure Python and only
    walks the subset of keywords that the schema actually uses:
    ``type``, ``enum``, ``pattern``, ``required``, ``properties``,
-   ``additionalProperties``, ``items``, and ``minItems``. Each error carries
+   ``additionalProperties``, ``items``, ``minItems``, and ``minLength``. Each error carries
    a JSON-Pointer style path (e.g. ``/evidence/artifact_paths/0``) so that
    callers can pinpoint which field is broken.
 
@@ -167,6 +167,9 @@ def _schema_walk(
     if "pattern" in schema and isinstance(instance, str) and not re.search(schema["pattern"], instance):
         errors.append(f"{_pointer(path) or '/'}: value does not match pattern {schema['pattern']!r}")
 
+    if isinstance(instance, str) and len(instance) < schema.get("minLength", 0):
+        errors.append(f"{_pointer(path) or '/'}: expected at least {schema['minLength']} characters")
+
     if isinstance(instance, dict):
         for required in schema.get("required", []) or []:
             if required not in instance:
@@ -174,6 +177,9 @@ def _schema_walk(
         for key, sub_schema in (schema.get("properties") or {}).items():
             if key in instance and isinstance(sub_schema, dict):
                 _schema_walk(sub_schema, instance[key], path + [key], errors)
+        if schema.get("additionalProperties") is False:
+            for key in instance.keys() - (schema.get("properties") or {}).keys():
+                errors.append(f"{_pointer(path + [key])}: unexpected field")
 
     if isinstance(instance, list):
         min_items = schema.get("minItems")
@@ -188,7 +194,7 @@ def _schema_walk(
 def _schema_errors(artifact: Any) -> list[str]:
     schema = _load_schema()
     if schema is None:
-        return []
+        return ["cannot load benchmark artifact schema; structural validation is unavailable"]
     errors: list[str] = []
     _schema_walk(schema, artifact, [], errors)
     return errors
@@ -245,6 +251,10 @@ def validate_artifact(
             "errors": errors,
             "warnings": warnings,
         }
+    if errors:
+        # Domain checks assume schema-validated types. Malformed identifiers
+        # otherwise crash dict lookups; malformed snapshots crash .get calls.
+        return {"verdict": "artifact_incomplete", "errors": errors, "warnings": warnings}
 
     # Layer 2: domain checks (catalog/scenarios cross-reference, evidence
     # existence on disk, independence invariants, visual/context-memory).
@@ -321,7 +331,7 @@ def validate_artifact(
     transcript = execution.get("commands_or_transcript_path") if isinstance(execution, dict) else None
     if not isinstance(transcript, str) or not transcript:
         errors.append("execution.commands_or_transcript_path must be a path")
-    elif not resolve_artifact_path(base, transcript).exists():
+    elif not resolve_artifact_path(base, transcript).is_file():
         errors.append(f"missing transcript artifact: {transcript}")
 
     input_snapshot = artifact["input_snapshot"]
@@ -340,7 +350,7 @@ def validate_artifact(
         errors.append("evidence.artifact_paths must be a non-empty string list")
     else:
         assert isinstance(artifact_paths, list)  # narrowed by non_empty_list
-        missing = [path for path in artifact_paths if not resolve_artifact_path(base, path).exists()]
+        missing = [path for path in artifact_paths if not resolve_artifact_path(base, path).is_file()]
         if missing:
             errors.append(f"missing evidence artifact paths: {missing}")
     if not non_empty_list(citations_or_paths):
@@ -364,7 +374,7 @@ def validate_artifact(
             else:
                 assert isinstance(screenshot_paths, list)  # narrowed by non_empty_list
                 missing_screenshots = [
-                    path for path in screenshot_paths if not resolve_artifact_path(base, path).exists()
+                    path for path in screenshot_paths if not resolve_artifact_path(base, path).is_file()
                 ]
                 if missing_screenshots:
                     errors.append(f"missing visual screenshot paths: {missing_screenshots}")

@@ -1,0 +1,89 @@
+{
+  "status": "completed",
+  "container_name": "skills-invoke-bd98559b81544a3bb631da2e1730a772",
+  "image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+  "scored": false,
+  "candidate_response_is_untrusted": true,
+  "cleanup_verified": true,
+  "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+  "resource_profile": "python-small",
+  "submission_sha256": {
+    "candidate.py": "3b408204339a292613b4fdcd9d9bcd02a8d44e7cd24869acfa5733ffeaf41328"
+  },
+  "container_id": "8e4140fef833a45d4f43535d4f7d6740fb54a39f73efe41967ddfbd6c704542a",
+  "isolation_checks": {
+    "errors": [],
+    "passed": true,
+    "observed_user": "65534:65534",
+    "observed_image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+    "observed_ownership_token": "bd98559b81544a3bb631da2e1730a772",
+    "resolved_image_id": "sha256:284cda8648f59f87e9468ec9d5652064dc2cd5b7d3fce342c2d3825ca1de6353",
+    "observed_host_constraints": {
+      "NetworkMode": "none",
+      "IpcMode": "none",
+      "ReadonlyRootfs": true,
+      "Memory": 536870912,
+      "MemorySwap": 536870912,
+      "NanoCpus": 1000000000,
+      "PidsLimit": 64,
+      "Privileged": false,
+      "Init": true,
+      "CapDrop": [
+        "ALL"
+      ],
+      "CapAdd": null,
+      "SecurityOpt": [
+        "no-new-privileges"
+      ],
+      "LogConfig": {
+        "Type": "none",
+        "Config": {}
+      },
+      "Tmpfs": {
+        "/tmp": "rw,noexec,nosuid,size=128m"
+      },
+      "Devices": [],
+      "DeviceRequests": null,
+      "VolumesFrom": null
+    },
+    "observed_mounts": [
+      {
+        "Destination": "/submission",
+        "Type": "bind",
+        "RW": false
+      },
+      {
+        "Destination": "/worker",
+        "Type": "bind",
+        "RW": false
+      }
+    ]
+  },
+  "setup_elapsed_seconds": 0.21391510000103153,
+  "runtime_elapsed_seconds": 0.4910819999931846,
+  "returncode": 0,
+  "candidate_response": {
+    "worker_status": "returned",
+    "result": {
+      "os_release": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"\nNAME=\"Debian GNU/Linux\"\nVERSION_ID=\"13\"\nVERSION=\"13 (trixie)\"\nVERSION_CODENAME=trixie\nDEBIAN_VERSION_FULL=13.7\nID=debian\nHOME_URL=\"https://www.debian.org/\"\nSUPPORT_URL=\"https://www.debian.org/support\"\nBUG_REPORT_URL=\"https://bugs.debian.org/\"\n",
+      "tools": {
+        "ld": null,
+        "gcc": null,
+        "g++": null,
+        "bash": "/usr/bin/bash",
+        "ld.lld": null
+      },
+      "path": "/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "crt": [],
+      "cpp": [
+        "/usr/lib/x86_64-linux-gnu/libstdc++.so.6",
+        "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33"
+      ],
+      "uid": 65534
+    }
+  },
+  "captured_bytes": 674,
+  "stderr": "",
+  "elapsed_seconds": 0.9037274000002071
+}

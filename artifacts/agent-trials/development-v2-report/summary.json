@@ -1,0 +1,274 @@
+{
+  "attempts": [
+    {
+      "bytecode_transport_sha256": "a87130ea855cf1b4722fd169e723fad98c7d517a5405e77ace118d58a908c6d2",
+      "checks_passed": 17,
+      "checks_total": 17,
+      "condition": "default",
+      "elapsed_seconds_diagnostic_only": 435.81299999999464,
+      "provider_model_snapshot": null,
+      "repetition": 1,
+      "result_path": "repetition-1/default/result.json",
+      "result_sha256": "186b10927a66bede61c82af0b67554cea403955a1ee780bcfb00672db79040e0",
+      "status": "task_passed",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 286208,
+        "input_tokens": 341027,
+        "output_tokens": 12486,
+        "reasoning_output_tokens": 2761
+      }
+    },
+    {
+      "bytecode_transport_sha256": "aa4942945c9a5265d77041c1564e3b98ca48771d237a2f3f7bc8d8611051664d",
+      "checks_passed": 17,
+      "checks_total": 17,
+      "condition": "karpathy",
+      "elapsed_seconds_diagnostic_only": 378.95299999999406,
+      "provider_model_snapshot": null,
+      "repetition": 1,
+      "result_path": "repetition-1/karpathy/result.json",
+      "result_sha256": "7dbd93e7d8be55ef444195039781de58d7af70acba2165dfbf05e72f37a6d014",
+      "status": "task_passed",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 234240,
+        "input_tokens": 263635,
+        "output_tokens": 10787,
+        "reasoning_output_tokens": 2824
+      }
+    },
+    {
+      "bytecode_transport_sha256": "e7c17799ad1d6cbd0c63c1dd8b0405ee41eca657763907ab9b0813e0fa630305",
+      "checks_passed": 17,
+      "checks_total": 17,
+      "condition": "improved",
+      "elapsed_seconds_diagnostic_only": 374.5,
+      "provider_model_snapshot": null,
+      "repetition": 1,
+      "result_path": "repetition-1/improved/result.json",
+      "result_sha256": "d186911531e702a67835e5aeee78a96e426b1e0052d149c3346308964cc77456",
+      "status": "task_passed",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 217600,
+        "input_tokens": 248768,
+        "output_tokens": 10714,
+        "reasoning_output_tokens": 1828
+      }
+    },
+    {
+      "bytecode_transport_sha256": "af9cd6e53e8dc57fd41558aee8002282242a1c370d149fe3733ad104a09d7955",
+      "checks_passed": 17,
+      "checks_total": 17,
+      "condition": "karpathy",
+      "elapsed_seconds_diagnostic_only": 392.5460000000021,
+      "provider_model_snapshot": null,
+      "repetition": 2,
+      "result_path": "repetition-2/karpathy/result.json",
+      "result_sha256": "8dbe68b3c3e9ada063519fedee384f6e919a135251727ca37733ad775da065ac",
+      "status": "task_passed",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 292992,
+        "input_tokens": 337260,
+        "output_tokens": 10911,
+        "reasoning_output_tokens": 2869
+      }
+    },
+    {
+      "bytecode_transport_sha256": "b1fc207bf320402712b4518380484f2844af5c32a2390fd4a3b5702851c0c0eb",
+      "checks_passed": 17,
+      "checks_total": 17,
+      "condition": "improved",
+      "elapsed_seconds_diagnostic_only": 394.9690000000119,
+      "provider_model_snapshot": null,
+      "repetition": 2,
+      "result_path": "repetition-2/improved/result.json",
+      "result_sha256": "e6da94a4d2233f60f3154d371e8980481fd55547b72657d44b320d3a9b3454a2",
+      "status": "task_passed",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 360064,
+        "input_tokens": 402912,
+        "output_tokens": 11499,
+        "reasoning_output_tokens": 2051
+      }
+    },
+    {
+      "bytecode_transport_sha256": "c9339aa7874796234e5c749cfccac610e00775d46fe553695f919534bc8a0e6f",
+      "checks_passed": 17,
+      "checks_total": 17,
+      "condition": "default",
+      "elapsed_seconds_diagnostic_only": 460.31200000000536,
+      "provider_model_snapshot": null,
+      "repetition": 2,
+      "result_path": "repetition-2/default/result.json",
+      "result_sha256": "adfa35cbd193616d5317a4ac0079485630c19f6e9ab428e21d8135a1a8be938c",
+      "status": "task_passed",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 320128,
+        "input_tokens": 353213,
+        "output_tokens": 12684,
+        "reasoning_output_tokens": 3036
+      }
+    },
+    {
+      "bytecode_transport_sha256": "6096051c16f7a9e9504022b658d7083cc423b134816d8ff1a8516b5acde0b83a",
+      "checks_passed": 17,
+      "checks_total": 17,
+      "condition": "improved",
+      "elapsed_seconds_diagnostic_only": 457.85899999999674,
+      "provider_model_snapshot": null,
+      "repetition": 3,
+      "result_path": "repetition-3/improved/result.json",
+      "result_sha256": "e070e11a4cb6ce5eaebb61b026bd3fe56593e3576992bdad234a0650bf6d0dff",
+      "status": "task_passed",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 348032,
+        "input_tokens": 382866,
+        "output_tokens": 12233,
+        "reasoning_output_tokens": 3002
+      }
+    },
+    {
+      "bytecode_transport_sha256": "555914eb8a1cd9f08cddfae23a2b16434c97a0d5c2b7b212bc65f5ca0ce252b0",
+      "checks_passed": 17,
+      "checks_total": 17,
+      "condition": "default",
+      "elapsed_seconds_diagnostic_only": 382.67200000000594,
+      "provider_model_snapshot": null,
+      "repetition": 3,
+      "result_path": "repetition-3/default/result.json",
+      "result_sha256": "c7e6af421d881191dce730b61b65d60c534e3c934d86a7e19687423737d130a3",
+      "status": "task_passed",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 263680,
+        "input_tokens": 297738,
+        "output_tokens": 10279,
+        "reasoning_output_tokens": 1821
+      }
+    },
+    {
+      "bytecode_transport_sha256": "1fee775bf5939f3a1bb48ede76b2bf256f1a98888d7a1f424dbb1ecfefd36911",
+      "checks_passed": 17,
+      "checks_total": 17,
+      "condition": "karpathy",
+      "elapsed_seconds_diagnostic_only": 350.1719999999914,
+      "provider_model_snapshot": null,
+      "repetition": 3,
+      "result_path": "repetition-3/karpathy/result.json",
+      "result_sha256": "d6c9b6cfaed055c47dc23c8df6636253547583edc9cf45a30272bf28fa305625",
+      "status": "task_passed",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 272896,
+        "input_tokens": 310364,
+        "output_tokens": 9557,
+        "reasoning_output_tokens": 2463
+      }
+    }
+  ],
+  "completed_attempts": 9,
+  "conditions": {
+    "default": {
+      "planned_attempts": 3,
+      "status_counts": {
+        "task_passed": 3
+      },
+      "task_passes": 3,
+      "token_statistics": {
+        "input_tokens": {
+          "max": 353213,
+          "median": 341027,
+          "min": 297738,
+          "sum": 991978
+        },
+        "output_tokens": {
+          "max": 12684,
+          "median": 12486,
+          "min": 10279,
+          "sum": 35449
+        }
+      },
+      "usage_observed_attempts": 3,
+      "usage_unavailable_attempts": 0
+    },
+    "improved": {
+      "planned_attempts": 3,
+      "status_counts": {
+        "task_passed": 3
+      },
+      "task_passes": 3,
+      "token_statistics": {
+        "input_tokens": {
+          "max": 402912,
+          "median": 382866,
+          "min": 248768,
+          "sum": 1034546
+        },
+        "output_tokens": {
+          "max": 12233,
+          "median": 11499,
+          "min": 10714,
+          "sum": 34446
+        }
+      },
+      "usage_observed_attempts": 3,
+      "usage_unavailable_attempts": 0
+    },
+    "karpathy": {
+      "planned_attempts": 3,
+      "status_counts": {
+        "task_passed": 3
+      },
+      "task_passes": 3,
+      "token_statistics": {
+        "input_tokens": {
+          "max": 337260,
+          "median": 310364,
+          "min": 263635,
+          "sum": 911259
+        },
+        "output_tokens": {
+          "max": 10911,
+          "median": 10787,
+          "min": 9557,
+          "sum": 31255
+        }
+      },
+      "usage_observed_attempts": 3,
+      "usage_unavailable_attempts": 0
+    }
+  },
+  "limitations": [
+    "One development task and three matched attempts per condition do not establish collection-wide effectiveness.",
+    "Quality is checked externally; agent-written regression tests are not a coverage or mutation score.",
+    "Token statistics are descriptive actual CLI usage, not priced cost, significance, or general efficiency claims.",
+    "Input tokens include cached input; reasoning usage is retained separately, not added again to output tokens.",
+    "Elapsed time is diagnostic only; unrelated host workloads were not controlled.",
+    "Provider-resolved model snapshots are unavailable; the requested model is not a verified backend revision.",
+    "This frozen block does not pool earlier exploratory probes or harness versions; their failures remain recorded separately.",
+    "The grading process executes submitted Python on the host; it is not a hardened service for arbitrary untrusted submissions.",
+    "One development maintenance task on a real pinned repository subset; not final holdouts or collection-wide utility.",
+    "Instructions are injected, not selected by natural skill discovery; this measures the two-skill bundle, not each skill individually.",
+    "Process and instruction scope isolation; not a container with sealed grader files.",
+    "Provider-resolved model snapshot is unavailable; requested CLI model and actual returned usage are recorded.",
+    "Latency is recorded for diagnostics only; concurrent owner workloads are not controlled.",
+    "The prior independent probe already reached 17/17, so this task may have a ceiling effect.",
+    "Karpathy-labelled instructions are a third-party adaptation with attribution, not a repository authored by Karpathy.",
+    "External score checks submitted validator behavior; agent-written regression tests are captured but are not a test-coverage or mutation-testing score."
+  ],
+  "model_requested": "gpt-6.1-sol",
+  "partition": "development",
+  "planned_attempts": 9,
+  "protocol_sha256": "a1f6cbd086680ca19c3a6a124b7739537a7ad38550de8b59b83ec1f8781fcda9",
+  "quality_superiority_established": false,
+  "reasoning_effort_requested": "high",
+  "report_version": 1,
+  "task_count": 1,
+  "task_id": "artifact-validator-robustness"
+}

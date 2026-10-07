@@ -13,11 +13,11 @@ locally with the toolchain installed via `pip install -e '.[test,lint]'`:
 | --- | --- | --- |
 | Lint | `ruff check tools tests` | `.github/workflows/ruff.yml` |
 | Format | `ruff format --check tools tests` | `.github/workflows/ruff.yml` |
-| Types | `mypy tools tests` (matrix: 3.10/3.11/3.12/3.13) | `.github/workflows/mypy.yml` |
+| Types | `mypy tools tests` (supported matrix: 3.11/3.12/3.13/3.14) | `.github/workflows/mypy.yml` |
 | Catalog | `python3 tools/validate_catalog.py` | `.github/workflows/offline-validation.yml` |
 | Static benchmarks | `python3 tools/run_static_benchmarks.py --check` | `.github/workflows/offline-validation.yml` |
 | Risk audit | `python3 tools/audit_skill_quality.py --check` | `.github/workflows/offline-validation.yml` |
-| Tests | `python3 -m pytest -q -n auto` (matrix: 3.10/3.11/3.12/3.13) | `.github/workflows/offline-validation.yml` |
+| Tests | `python3 -m pytest -q -n auto` (supported matrix: 3.11/3.12/3.13/3.14) | `.github/workflows/offline-validation.yml` |
 | Compile | `python3 -m compileall -q tools tests` | `.github/workflows/offline-validation.yml` |
 | Secrets (in-repo) | `python3 tools/check_no_secret_patterns.py --history` | `.github/workflows/secret-scan.yml` |
 | Secrets (gitleaks) | `gitleaks git --exit-code 1 .` | `.github/workflows/secret-scan.yml` |
@@ -31,10 +31,11 @@ can rerun them manually from the Actions tab.
 * `ruff` (`>=0.15`) is the single source of truth for both lint and format.
   We enable `E F B SIM UP I` and ignore `E501` (handled by the formatter),
   `B008`, `SIM108`, `UP015`. Per-file ignores live in `pyproject.toml`.
-* Target version is **Python 3.10**; `from __future__ import annotations` is
-  required where a module uses `X | Y` in annotations, and the `mypy` matrix
-  exercises 3.10 → 3.13 so version-conditional bugs (e.g. `datetime.UTC` is
-  3.11+) surface in CI.
+* The minimum supported runtime is **Python 3.11**; production validation uses
+  Python 3.14.8 and the matrix exercises current patches of 3.11–3.14. Keep
+  annotations and APIs compatible with that support range. The formatter's
+  older syntax target remains fixed while independent trials are frozen;
+  do not rewrite experimental inputs during a matched comparison block.
 * All scripts use a testable `main(argv: list[str] | None = None) -> int`
   signature so they can be exercised from pytest without a subprocess.
 

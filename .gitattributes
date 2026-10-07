@@ -1,0 +1,19 @@
+# Owned tooling and generated metadata must satisfy the same LF checks on
+# Windows and Linux. Do not apply repository-wide conversions to source mirrors.
+/tools/** text eol=lf
+/tests/** text eol=lf
+/.github/** text eol=lf
+/data/*.json text eol=lf
+/included/improved/** text eol=lf
+/benchmarks/agent-effectiveness/** text eol=lf
+/benchmarks/dependency-regressions/** text eol=lf
+# Trial evidence hashes describe exact captured bytes, including Windows logs.
+# Preserve them across Git transports instead of converting line endings.
+/artifacts/agent-trials/** -text
+/artifacts/research/** -text
+# Original provenance is an exact captured input, not authored source formatting.
+/included/improved/**/provenance/** -text
+/docs/** text eol=lf
+/README.md text eol=lf
+/AGENTS.md text eol=lf
+/pyproject.toml text eol=lf

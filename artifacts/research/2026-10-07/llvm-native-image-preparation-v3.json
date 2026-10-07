@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "evidence_class": "offline-trusted-native-source-fixture-image-preparation",
+  "passed": true,
+  "base_image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+  "trusted_build_image": "python@sha256:c23ebccb22bca6335521be462d1d4a3449a623c5ca8ce513d163c79c636dae79",
+  "image": "sha256:d785764c1e556472da1ae7b80e317a4a89fe0a528526616a126786fd67d9f86f",
+  "release_url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.3/LLVM-23.1.3-Linux-X64.tar.zst",
+  "archive_size": 1188398549,
+  "archive_sha256": "14d2f701eb68fb799001bdea6231048f3990690fa2f406d563555ff8f744daba",
+  "project_file_sha256": {
+    "included/skills/by-category/testing-qa-benchmarking/security-reference/libfuzzer/SKILL.md": "a3f695f7a81a406ac60609d4262a7e2afe4355a665c79545d0d3b745dd875cde",
+    "included/skills/by-category/testing-qa-benchmarking/security-reference/coverage-analysis/SKILL.md": "89a1575e063e97befafab9fdc9544335cccc9b3e193e846e0d11235aaa864880",
+    "benchmarks/dependency-regressions/llvm_image_fixture.py": "cb56b1784f0e616f09ca827e13ef4c1515e3ec4737030327872247e3777757c3",
+    "included/improved/skills/coverage-analysis-current/scripts/replay.cc": "bf94d5d172e7533dc199e47318f862deebb0fdb67c30b905b10f761e9bd71d9a"
+  },
+  "dockerfile": "FROM python@sha256:c23ebccb22bca6335521be462d1d4a3449a623c5ca8ce513d163c79c636dae79 AS builder\nCOPY llvm.tar.zst libfuzzer.md coverage.md fixture.py overlay-replay.cc /tmp/\nRUN python /tmp/fixture.py\nFROM python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e\nLABEL ai-skills.dependency=llvm-native-controls ai-skills.release-sha256=14d2f701eb68fb799001bdea6231048f3990690fa2f406d563555ff8f744daba\nCOPY --from=builder /opt/LLVM-23.1.3-Linux-X64 /opt/LLVM-23.1.3-Linux-X64\nCOPY --from=builder /opt/llvm-controls /opt/llvm-controls\n",
+  "dockerfile_sha256": "64f7241bc7d8dac0a0ad3a0b4c73b115f606658c215148c73a0068404d24df8d",
+  "reproducer_sha256": "46c97d0b36851c050e380398bea675e27cebc87703aa01c9dcaca7e808e4178d",
+  "build_returncode": 0,
+  "build_output": "#0 building with \"desktop-linux\" instance using docker driver\n\n#1 [internal] load build definition from Dockerfile\n#1 transferring dockerfile: 593B 0.0s done\n#1 DONE 0.0s\n\n#2 [internal] load metadata for docker.io/library/python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e\n#2 DONE 0.0s\n\n#3 [internal] load metadata for docker.io/library/python@sha256:c23ebccb22bca6335521be462d1d4a3449a623c5ca8ce513d163c79c636dae79\n#3 DONE 0.0s\n\n#4 [internal] load .dockerignore\n#4 transferring context: 2B done\n#4 DONE 0.0s\n\n#5 [stage-1 1/3] FROM docker.io/library/python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e\n#5 DONE 0.0s\n\n#6 [builder 1/3] FROM docker.io/library/python@sha256:c23ebccb22bca6335521be462d1d4a3449a623c5ca8ce513d163c79c636dae79\n#6 CACHED\n\n#7 [internal] load build context\n#7 transferring context: 93.10MB 5.1s\n#7 transferring context: 217.19MB 10.2s\n#7 transferring context: 352.63MB 15.2s\n#7 transferring context: 485.40MB 20.4s\n#7 transferring context: 609.56MB 25.4s\n#7 transferring context: 736.53MB 30.5s\n#7 transferring context: 886.35MB 35.6s\n#7 transferring context: 1.05GB 40.7s\n#7 transferring context: 1.15GB 45.8s\n#7 transferring context: 1.19GB 47.4s done\n#7 DONE 47.5s\n\n#8 [builder 2/3] COPY llvm.tar.zst libfuzzer.md coverage.md fixture.py overlay-replay.cc /tmp/\n#8 DONE 1.7s\n\n#9 [builder 3/3] RUN python /tmp/fixture.py\n#9 DONE 14.9s\n\n#10 [stage-1 2/3] COPY --from=builder /opt/LLVM-23.1.3-Linux-X64 /opt/LLVM-23.1.3-Linux-X64\n#10 CACHED\n\n#11 [stage-1 3/3] COPY --from=builder /opt/llvm-controls /opt/llvm-controls\n#11 DONE 0.1s\n\n#12 exporting to image\n#12 exporting layers 0.0s done\n#12 writing image sha256:d785764c1e556472da1ae7b80e317a4a89fe0a528526616a126786fd67d9f86f done\n#12 DONE 0.1s\n\nView build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/hhcav3dmqnyfgb5lc8aiqiehb\n",
+  "release_subset_unmodified": true,
+  "runtime_constraints_weakened": false,
+  "agent_efficacy_scored": false
+}

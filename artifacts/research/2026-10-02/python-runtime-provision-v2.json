@@ -1,0 +1,8 @@
+{
+  "version": "Python 3.14.8",
+  "manifest_url": "https://www.python.org/ftp/python/3.14.8/windows-3.14.8.json",
+  "manifest_sha256": "2872929c05697db23bd9d79d2c15df1031b82d853f530d69f1e7f89570419314",
+  "archive_url": "https://www.python.org/ftp/python/3.14.8/python-3.14.8-amd64.zip",
+  "archive_sha256": "4873947a8afc037846b180312b83c744a4146a851cfd316a75c3125a4d8299da",
+  "method": "official full runtime ZIP; no host installer, registry, PATH, or launcher changes"
+}

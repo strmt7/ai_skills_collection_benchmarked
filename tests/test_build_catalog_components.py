@@ -23,6 +23,31 @@ def test_slug_lowercases_and_dashes():
     assert build_catalog.slug("Hello World!") == "hello-world"
 
 
+def test_versioned_credentials_preserve_legacy_hashes_and_neutralize_new_policy(tmp_path):
+    import hashlib
+
+    import check_no_secret_patterns
+
+    text = "credential: " + "sk_" + "live_" + "exampleValue123\n"
+    source = tmp_path / "SKILL.md"
+    source.write_text(text, encoding="utf-8", newline="\n")
+    assert build_catalog.sha256_file(source) == hashlib.sha256(text.encode()).hexdigest()
+    neutral = "credential: <STRIPE_SERVER_KEY>\n"
+    assert build_catalog.sanitized_file_bytes(source, credential_policy=2) == neutral.encode()
+    assert build_catalog.sha256_file(source, credential_policy=2) == hashlib.sha256(neutral.encode()).hexdigest()
+    assert not check_no_secret_patterns.scan_text("fixture", neutral)
+    assert build_catalog.sanitize_secret_like_text(neutral, credential_policy=2) == neutral
+    assert source.read_text("utf-8") == text
+
+
+@pytest.mark.parametrize("policy", [0, 4, True, "2", None])
+def test_unknown_credential_policies_fail_closed_even_for_binary_input(tmp_path, policy):
+    source = tmp_path / "binary.bin"
+    source.write_bytes(b"\0non-text")
+    with pytest.raises(ValueError, match="unknown credential"):
+        build_catalog.sanitized_file_bytes(source, credential_policy=policy)
+
+
 def test_slug_collapses_repeated_separators():
     assert build_catalog.slug("foo--bar  baz__qux") == "foo-bar-baz-qux"
 

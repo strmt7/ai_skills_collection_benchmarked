@@ -24,7 +24,17 @@ def test_skill_risk_audit_covers_every_skill():
 
 def test_history_secret_scan_rename_parser_uses_existing_commit_paths(monkeypatch):
     def fake_git_bytes(*args):
-        assert args == ("diff-tree", "-z", "--no-commit-id", "--name-status", "-r", "-M", "commit")
+        assert args == (
+            "diff-tree",
+            "--root",
+            "--diff-merges=first-parent",
+            "-z",
+            "--no-commit-id",
+            "--name-status",
+            "-r",
+            "-M",
+            "commit",
+        )
         return b"R100\0old/path.txt\0new/path.txt\0D\0removed/path.txt\0M\0kept/path.txt\0A\0added/path.txt\0"
 
     monkeypatch.setattr(check_no_secret_patterns, "git_bytes", fake_git_bytes)

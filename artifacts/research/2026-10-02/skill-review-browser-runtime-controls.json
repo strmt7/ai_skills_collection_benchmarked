@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "evidence_class": "actual-local-skill-review-browser-controls",
+  "node_version": "v26.10.0",
+  "playwright_version": "1.63.0",
+  "browser_version": "153.0.8010.12",
+  "checks": {
+    "normal_text_rendered_literally": true,
+    "script_boundary_executes_owned_sentinel": true,
+    "metadata_executes_owned_sentinel": true,
+    "grading_count_executes_owned_sentinel": true,
+    "evidence_attribute_executes_owned_sentinel": true,
+    "http_error_feedback_claims_saved": true,
+    "unvisited_run_marked_complete_with_empty_feedback": true
+  },
+  "all_controls_passed": true,
+  "blocked_external_resource_requests": 14,
+  "external_requests_allowed": 0,
+  "fixture_manifest": {
+    "schema_version": 1,
+    "scope": "Owned fixtures only; no viewer server or port-killing helper invoked",
+    "original_input_sha256": {
+      "included/skills/by-category/testing-qa-benchmarking/official-reference/skill-creator-anthropics/eval-viewer/generate_review.py": "44d97a35be977331b13b04932927b3beb285862a173f0f15dd052d4f31de5c76",
+      "included/skills/by-category/testing-qa-benchmarking/official-reference/skill-creator-anthropics/eval-viewer/viewer.html": "46abd4e19e482b4aeebea24b135c2d88fb122a63346dbeab7fcecd83828a826d",
+      "benchmarks/dependency-regressions/prepare_skill_review_controls.py": "f3a4a60d2250f428e1217b191de0e3b67c8c0406ea457f57ce32d2920adb1f48"
+    },
+    "fixture_sha256": {
+      "normal.html": "c82a2dc93fe8e21fdbb22c3d0935b3d5fb38b897b8904ede5f76fe687ca0b300",
+      "script-boundary.html": "85daec3e97af99bcd935ea71a863985d3ae22fa60796472127a1558f67f0ae06",
+      "metadata.html": "033f7a4c6207a3b7a68602568d9f8a6b6f2e3d9f251c290b9b6107b0d9dbcc64",
+      "grading-count.html": "580bdd26382c811b72a7ba24a9a99ff6c19b42751dea63760f6029a0213ccb19",
+      "evidence-attribute.html": "244caff55bb875c9ffea2da17b0b95711f3966d21de97f6bbcf725ec2eb8ef80",
+      "two-runs.html": "2580e58d60636efd34b089e2899db82d8e7c078cd9b736f9e7dae65b3d530e05"
+    },
+    "ai_processes_launched": 0
+  },
+  "reproducer_sha256": "e66d1727288897fe50d1d82a6faed93ccd2a241ff8b5fb7aafb85b1287c404a8",
+  "agent_efficacy_scored": false,
+  "scope": "Owned localhost fixture, real Chromium, inert sentinels and controlled feedback server. No original port-killing helper, credentials, live providers or model sessions."
+}

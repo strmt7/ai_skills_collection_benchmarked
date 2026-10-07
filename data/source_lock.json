@@ -846,9 +846,16 @@
         {
           "id": "k-dense-ai-scientific-agent-skills-scientific-skills-benchling-integration-skill-md",
           "install_name": "benchling-integration",
-          "skill_dir_sha256": "eb1163331eeca9a00b9173ba4ded304718f2226a54cec8217e8c54394d15afd0",
+          "skill_dir_sha256": "2e4237ec2fb72d857975830b1a7f1ef97fe8e5a71444636ab68bef6101dbab69",
           "skill_file_sha256": "4305f084ed93ac4efc47a74e31331adeabda692851d087eabe056605ca84cdea",
-          "source_path": "scientific-skills/benchling-integration/SKILL.md"
+          "source_path": "scientific-skills/benchling-integration/SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            "SKILL.md": "100644",
+            "references/api_endpoints.md": "100644",
+            "references/authentication.md": "100644",
+            "references/sdk_reference.md": "100644"
+          }
         },
         {
           "id": "k-dense-ai-scientific-agent-skills-scientific-skills-bgpt-paper-search-skill-md",
@@ -930,9 +937,91 @@
         {
           "id": "k-dense-ai-scientific-agent-skills-scientific-skills-database-lookup-skill-md",
           "install_name": "database-lookup",
-          "skill_dir_sha256": "2dbab133e8470cac8ee00e4466e907204908560b9d03dddabdfbd0978e0db212",
+          "skill_dir_sha256": "0944d92ee267812e8f4c8ccf1ca0f52d6edd223146ba18587363f91d64641807",
           "skill_file_sha256": "748213c9d68aef49d9c3b1c8058aed5c4d5f4b6551836990cf8d36b6703859ee",
-          "source_path": "scientific-skills/database-lookup/SKILL.md"
+          "source_path": "scientific-skills/database-lookup/SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            "SKILL.md": "100644",
+            "references/addgene.md": "100644",
+            "references/alphafold.md": "100644",
+            "references/alphavantage.md": "100644",
+            "references/bea.md": "100644",
+            "references/bindingdb.md": "100644",
+            "references/biogrid.md": "100644",
+            "references/bls.md": "100644",
+            "references/brenda.md": "100644",
+            "references/cbioportal.md": "100644",
+            "references/census.md": "100644",
+            "references/chebi.md": "100644",
+            "references/chembl.md": "100644",
+            "references/clinicaltrials.md": "100644",
+            "references/clinpgx.md": "100644",
+            "references/clinvar.md": "100644",
+            "references/cod.md": "100644",
+            "references/cosmic.md": "100644",
+            "references/dailymed.md": "100644",
+            "references/datacommons.md": "100644",
+            "references/dbsnp.md": "100644",
+            "references/disgenet.md": "100644",
+            "references/drugbank.md": "100644",
+            "references/ecb.md": "100644",
+            "references/emdb.md": "100644",
+            "references/ena.md": "100644",
+            "references/encode.md": "100644",
+            "references/ensembl.md": "100644",
+            "references/epa.md": "100644",
+            "references/eurostat.md": "100644",
+            "references/fda.md": "100644",
+            "references/federal-reserve.md": "100644",
+            "references/fred.md": "100644",
+            "references/gene-ontology.md": "100644",
+            "references/geo.md": "100644",
+            "references/gnomad.md": "100644",
+            "references/gtex.md": "100644",
+            "references/gwas-catalog.md": "100644",
+            "references/hca.md": "100644",
+            "references/hpo.md": "100644",
+            "references/human-protein-atlas.md": "100644",
+            "references/interpro.md": "100644",
+            "references/jaspar.md": "100644",
+            "references/kegg.md": "100644",
+            "references/lincs-l1000.md": "100644",
+            "references/materials-project.md": "100644",
+            "references/metabolomics-workbench.md": "100644",
+            "references/monarch.md": "100644",
+            "references/mousemine.md": "100644",
+            "references/nasa-exoplanet-archive.md": "100644",
+            "references/nasa.md": "100644",
+            "references/ncbi-gene.md": "100644",
+            "references/ncbi-protein.md": "100644",
+            "references/ncbi-taxonomy.md": "100644",
+            "references/nist.md": "100644",
+            "references/noaa.md": "100644",
+            "references/omim.md": "100644",
+            "references/opentargets.md": "100644",
+            "references/openweathermap.md": "100644",
+            "references/pdb.md": "100644",
+            "references/pride.md": "100644",
+            "references/pubchem.md": "100644",
+            "references/quickgo.md": "100644",
+            "references/reactome.md": "100644",
+            "references/rummageo.md": "100644",
+            "references/sdss.md": "100644",
+            "references/sec-edgar.md": "100644",
+            "references/simbad.md": "100644",
+            "references/sra.md": "100644",
+            "references/string.md": "100644",
+            "references/tcga-gdc.md": "100644",
+            "references/treasury.md": "100644",
+            "references/ucsc-genome.md": "100644",
+            "references/uniprot.md": "100644",
+            "references/usgs.md": "100644",
+            "references/uspto.md": "100644",
+            "references/who.md": "100644",
+            "references/worldbank.md": "100644",
+            "references/zinc.md": "100644"
+          }
         },
         {
           "id": "k-dense-ai-scientific-agent-skills-scientific-skills-datamol-skill-md",
@@ -1378,9 +1467,19 @@
         {
           "id": "k-dense-ai-scientific-agent-skills-scientific-skills-protocolsio-integration-skill-md",
           "install_name": "protocolsio-integration",
-          "skill_dir_sha256": "53fdf68a8680e5e065f454535160523b8393700885750c5e397e0446c2b83441",
+          "skill_dir_sha256": "b6341fb99f5663437a26d78a10c09230a7381bed90ce17a45ffa9498f56cfcf9",
           "skill_file_sha256": "f7d45c56cce49276a26814e387245bdf1ff0f976d251d544f444517660632402",
-          "source_path": "scientific-skills/protocolsio-integration/SKILL.md"
+          "source_path": "scientific-skills/protocolsio-integration/SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            "SKILL.md": "100644",
+            "references/additional_features.md": "100644",
+            "references/authentication.md": "100644",
+            "references/discussions.md": "100644",
+            "references/file_manager.md": "100644",
+            "references/protocols_api.md": "100644",
+            "references/workspaces.md": "100644"
+          }
         },
         {
           "id": "k-dense-ai-scientific-agent-skills-scientific-skills-pufferlib-skill-md",
@@ -1810,9 +1909,14 @@
         {
           "id": "microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-identity-dotnet-skill-md",
           "install_name": "azure-identity-dotnet",
-          "skill_dir_sha256": "28aad6d4a858995ef460842fb65d46b53c1dec10f6080fdac0f5c8b32cc43d60",
+          "skill_dir_sha256": "4068765734765a8a28fddc7a7380d9b74c5e52861a6f284f286c8f78f980a2aa",
           "skill_file_sha256": "e2144d74b47ae690fe9414375a680304baa22b47a6460ab84d7f4d9143b6a2fc",
-          "source_path": ".github/plugins/azure-sdk-dotnet/skills/azure-identity-dotnet/SKILL.md"
+          "source_path": ".github/plugins/azure-sdk-dotnet/skills/azure-identity-dotnet/SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            "SKILL.md": "100644",
+            "references/acceptance-criteria.md": "100644"
+          }
         },
         {
           "id": "microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-maps-search-dotnet-skill-md",
@@ -2132,9 +2236,15 @@
         {
           "id": "microsoft-skills-github-plugins-azure-sdk-java-skills-azure-security-keyvault-secrets-java-skill-md",
           "install_name": "azure-security-keyvault-secrets-java",
-          "skill_dir_sha256": "2b8517d81353b28dabbdb3226902adf936d7aa8d755e6b295a7872b357f73b6f",
-          "skill_file_sha256": "a2561c58ff71963e27f60ca05f09a43fbd2abcf3449d7cd03d3e89398bd18f29",
-          "source_path": ".github/plugins/azure-sdk-java/skills/azure-security-keyvault-secrets-java/SKILL.md"
+          "skill_dir_sha256": "af9e840975efd1efec15f6cb93126aa694360b7a5ee78b2422717c8d788d1f44",
+          "skill_file_sha256": "e342ddc69582bf30df5ebf2091531ecb29a4a681492543b42eb37d96c778406e",
+          "source_path": ".github/plugins/azure-sdk-java/skills/azure-security-keyvault-secrets-java/SKILL.md",
+          "credential_policy_version": 2,
+          "file_modes": {
+            "SKILL.md": "100644",
+            "references/acceptance-criteria.md": "100644",
+            "references/examples.md": "100644"
+          }
         },
         {
           "id": "microsoft-skills-github-plugins-azure-sdk-java-skills-azure-storage-blob-java-skill-md",
@@ -2153,9 +2263,14 @@
         {
           "id": "microsoft-skills-github-plugins-azure-sdk-python-skills-agents-v2-py-skill-md",
           "install_name": "agents-v2-py",
-          "skill_dir_sha256": "284a2a27f851cf8438cf46edced19a0fca0b9242dc56b466d2c09c681b52c964",
+          "skill_dir_sha256": "643653dc7572dbe2d9ddcba32773a3a160c86c3032123b2b6c8c0111ca22cd40",
           "skill_file_sha256": "52ce40fc1cc2518d6d08a74a3c44e2ce3f13a2a81ea9f840040fed8175fd8e4a",
-          "source_path": ".github/plugins/azure-sdk-python/skills/agents-v2-py/SKILL.md"
+          "source_path": ".github/plugins/azure-sdk-python/skills/agents-v2-py/SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            "SKILL.md": "100644",
+            "references/acceptance-criteria.md": "100644"
+          }
         },
         {
           "id": "microsoft-skills-github-plugins-azure-sdk-python-skills-azure-ai-contentsafety-py-skill-md",
@@ -2251,9 +2366,22 @@
         {
           "id": "microsoft-skills-github-plugins-azure-sdk-python-skills-azure-cosmos-db-py-skill-md",
           "install_name": "azure-cosmos-db-py",
-          "skill_dir_sha256": "c13e708480951f3d175dd305cda3ff34999bc46d3c0ed0455336937d0a9c252c",
+          "skill_dir_sha256": "f2a6cdf329796a70d2479b6aecc781606b2c5afea260dfd71a39c9fa6d5cfb67",
           "skill_file_sha256": "98f0464a762915cb0393065fd104f3f7a244f775b1574f0dd5796645449cf405",
-          "source_path": ".github/plugins/azure-sdk-python/skills/azure-cosmos-db-py/SKILL.md"
+          "source_path": ".github/plugins/azure-sdk-python/skills/azure-cosmos-db-py/SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            "SKILL.md": "100644",
+            "assets/conftest_template.py": "100644",
+            "assets/cosmos_client_template.py": "100644",
+            "assets/service_template.py": "100644",
+            "references/acceptance-criteria.md": "100644",
+            "references/client-setup.md": "100644",
+            "references/error-handling.md": "100644",
+            "references/partitioning.md": "100644",
+            "references/service-layer.md": "100644",
+            "references/testing.md": "100644"
+          }
         },
         {
           "id": "microsoft-skills-github-plugins-azure-sdk-python-skills-azure-cosmos-py-skill-md",
@@ -2286,9 +2414,14 @@
         {
           "id": "microsoft-skills-github-plugins-azure-sdk-python-skills-azure-identity-py-skill-md",
           "install_name": "azure-identity-py",
-          "skill_dir_sha256": "242eea910b8de6249c225d98df5fa8f8523a274d9b3f5eceac7e5faf3d0977f8",
+          "skill_dir_sha256": "6c6731d6d0d66299ec06b953f1184bb8093bc64936c7ccfa259f882a84d1129a",
           "skill_file_sha256": "895e3910af8c88471370db40e2ef3d3604fcc9fa03cb8b2911247f404652e2de",
-          "source_path": ".github/plugins/azure-sdk-python/skills/azure-identity-py/SKILL.md"
+          "source_path": ".github/plugins/azure-sdk-python/skills/azure-identity-py/SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            "SKILL.md": "100644",
+            "references/acceptance-criteria.md": "100644"
+          }
         },
         {
           "id": "microsoft-skills-github-plugins-azure-sdk-python-skills-azure-keyvault-py-skill-md",
@@ -2419,9 +2552,14 @@
         {
           "id": "microsoft-skills-github-plugins-azure-sdk-python-skills-hosted-agents-v2-py-skill-md",
           "install_name": "hosted-agents-v2-py",
-          "skill_dir_sha256": "88bcb3178322b18621b325e3e936849e73523bb0c27909d0de7f1c6b779761f1",
+          "skill_dir_sha256": "37be68fff381d7c214121663ccdb80b6a0816fe3f5c5f4a99abf68f0e3d4d5a1",
           "skill_file_sha256": "6f54a8935f7cdf1c8c7d6c0866cb649f7a5c2ca991868d15f723c306a1ec7733",
-          "source_path": ".github/plugins/azure-sdk-python/skills/hosted-agents-v2-py/SKILL.md"
+          "source_path": ".github/plugins/azure-sdk-python/skills/hosted-agents-v2-py/SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            "SKILL.md": "100644",
+            "references/acceptance-criteria.md": "100644"
+          }
         },
         {
           "id": "microsoft-skills-github-plugins-azure-sdk-python-skills-m365-agents-py-skill-md",
@@ -2510,9 +2648,14 @@
         {
           "id": "microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-ai-translation-ts-skill-md",
           "install_name": "azure-ai-translation-ts",
-          "skill_dir_sha256": "82d4299c9eea6d7bc8b3c59de794a5d56b643c37a59c33a80758447c3ff550ff",
+          "skill_dir_sha256": "ca48d28dd70650096434ae27b7122da0bb8b729eaabd0604df3a2dbb21f04283",
           "skill_file_sha256": "27e270333373c393fb7e4217dbb9fcc80d9fae5e74147fbaa009e955bb126a42",
-          "source_path": ".github/plugins/azure-sdk-typescript/skills/azure-ai-translation-ts/SKILL.md"
+          "source_path": ".github/plugins/azure-sdk-typescript/skills/azure-ai-translation-ts/SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            "SKILL.md": "100644",
+            "references/acceptance-criteria.md": "100644"
+          }
         },
         {
           "id": "microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-ai-voicelive-ts-skill-md",
@@ -2545,9 +2688,16 @@
         {
           "id": "microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-identity-ts-skill-md",
           "install_name": "azure-identity-ts",
-          "skill_dir_sha256": "659e9a69f8f4cd2c391baa4b7314fc87d12639d6cd72a57efeed2b9b91a1d661",
+          "skill_dir_sha256": "673abd8305aaeb9adc3b252922a79ab8129e01980ca8a1a6bd8bdf6ecc5d5905",
           "skill_file_sha256": "78baef88fb66c560e3d3271c5bff8c241feb93e4d4e789388d3590f891284543",
-          "source_path": ".github/plugins/azure-sdk-typescript/skills/azure-identity-ts/SKILL.md"
+          "source_path": ".github/plugins/azure-sdk-typescript/skills/azure-identity-ts/SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            "SKILL.md": "100644",
+            "references/acceptance-criteria.md": "100644",
+            "references/browser-auth.md": "100644",
+            "references/credential-types.md": "100644"
+          }
         },
         {
           "id": "microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-keyvault-keys-ts-skill-md",
@@ -2937,9 +3087,14 @@
         {
           "id": "microsoft-skills-github-skills-copilot-sdk-skill-md",
           "install_name": "copilot-sdk",
-          "skill_dir_sha256": "d512705dbd18f9ac999d99478308dd30a6031e9aff818b4e079d59e9e7d82920",
+          "skill_dir_sha256": "7773ab28c1e8e456bed8121d8804e5ae83b50506e3633ddd35207a4c2b12ff55",
           "skill_file_sha256": "9bec8025d0ccf14b3c2f66754966781ba42d08a57b86b103bb9ef98d9f05c58b",
-          "source_path": ".github/skills/copilot-sdk/SKILL.md"
+          "source_path": ".github/skills/copilot-sdk/SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            "SKILL.md": "100644",
+            "references/acceptance-criteria.md": "100644"
+          }
         },
         {
           "id": "microsoft-skills-github-skills-entra-agent-id-skill-md",
@@ -2958,9 +3113,14 @@
         {
           "id": "microsoft-skills-github-skills-github-issue-creator-skill-md",
           "install_name": "github-issue-creator",
-          "skill_dir_sha256": "885aa499eff925af9de68db946403cf64fa25b00e64f0609b59ba59bdcac2ec8",
+          "skill_dir_sha256": "bb4e6040ae34e3e85376854594062e7431867dd082a1312c9d3da488d32c0c69",
           "skill_file_sha256": "2a2ebc85ef158cd190563434119d8424884569fb3d4f1154f6bd084cda583758",
-          "source_path": ".github/skills/github-issue-creator/SKILL.md"
+          "source_path": ".github/skills/github-issue-creator/SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            "SKILL.md": "100644",
+            "references/acceptance-criteria.md": "100644"
+          }
         },
         {
           "id": "microsoft-skills-github-skills-kql-skill-md",
@@ -3187,9 +3347,14 @@
         {
           "id": "trailofbits-skills-plugins-firebase-apk-scanner-skills-firebase-apk-scanner-skill-md",
           "install_name": "firebase-apk-scanner",
-          "skill_dir_sha256": "4fd7e11dd9300c6b73ed41db462b00e19d2d603a2e091c40672e431a172acd47",
+          "skill_dir_sha256": "fc1c2cd2d7b578be534fb809a46c2b1326b7501f93f9f06abd25b642b6a5fc7f",
           "skill_file_sha256": "a1bc78a5e7e7c7fc70db18dade432373b683081e43863e0db297110dd392e55b",
-          "source_path": "plugins/firebase-apk-scanner/skills/firebase-apk-scanner/SKILL.md"
+          "source_path": "plugins/firebase-apk-scanner/skills/firebase-apk-scanner/SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            "SKILL.md": "100644",
+            "references/vulnerabilities.md": "100644"
+          }
         },
         {
           "id": "trailofbits-skills-plugins-fp-check-skills-fp-check-skill-md",
@@ -3271,9 +3436,29 @@
         {
           "id": "trailofbits-skills-plugins-sharp-edges-skills-sharp-edges-skill-md",
           "install_name": "sharp-edges",
-          "skill_dir_sha256": "42203c4c80c19f797efab866167b1532da2c4fae5c9f5ef3efd918a409ead524",
+          "skill_dir_sha256": "295e5a45d2e075b540f3cf414d59b297adccbb2aba4b9fb420c6716856227be9",
           "skill_file_sha256": "38e1aca2a4188c3b8b3a7b452b6a83280dc06bcbb41309113be83e732ff25b22",
-          "source_path": "plugins/sharp-edges/skills/sharp-edges/SKILL.md"
+          "source_path": "plugins/sharp-edges/skills/sharp-edges/SKILL.md",
+          "credential_policy_version": 2,
+          "file_modes": {
+            "SKILL.md": "100644",
+            "references/auth-patterns.md": "100644",
+            "references/case-studies.md": "100644",
+            "references/config-patterns.md": "100644",
+            "references/crypto-apis.md": "100644",
+            "references/lang-c.md": "100644",
+            "references/lang-csharp.md": "100644",
+            "references/lang-go.md": "100644",
+            "references/lang-java.md": "100644",
+            "references/lang-javascript.md": "100644",
+            "references/lang-kotlin.md": "100644",
+            "references/lang-php.md": "100644",
+            "references/lang-python.md": "100644",
+            "references/lang-ruby.md": "100644",
+            "references/lang-rust.md": "100644",
+            "references/lang-swift.md": "100644",
+            "references/language-specific.md": "100644"
+          }
         },
         {
           "id": "trailofbits-skills-plugins-skill-improver-skills-skill-improver-skill-md",
@@ -3563,9 +3748,18 @@
         {
           "id": "ahmedasmar-devops-claude-skills-k8s-troubleshooter-skills-skill-md",
           "install_name": "k8s-troubleshooter",
-          "skill_dir_sha256": "513deff5bd0ae7f0a50a93d7f9813be9bcf50fda9c4665ef1dc33dd534c08a94",
+          "skill_dir_sha256": "5d0af061965ac8bd22f30ac647b4816b91e5df5369f8d16ae1ef4cf2625706f7",
           "skill_file_sha256": "7fc3d0ac3ba92eec76acb9341fbe744e6813b56888db562bf8daad3bec3b9eab",
-          "source_path": "k8s-troubleshooter/skills/SKILL.md"
+          "source_path": "k8s-troubleshooter/skills/SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            "SKILL.md": "100644",
+            "references/common_issues.md": "100644",
+            "references/helm_troubleshooting.md": "100644",
+            "references/incident_response.md": "100644",
+            "references/performance_troubleshooting.md": "100644",
+            "scripts/check_namespace.py": "100755"
+          }
         },
         {
           "id": "ahmedasmar-devops-claude-skills-monitoring-observability-skills-skill-md",
@@ -3596,23 +3790,135 @@
         {
           "id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-ansible-validator-skill-md",
           "install_name": "ansible-validator",
-          "skill_dir_sha256": "3dc4fe268fb6b7a7bb6fa0b1620b9d350732963eedcc6daed814f4ad9bc400ed",
+          "skill_dir_sha256": "e2d79b0fd3eb2cef60424211a6468e53a3829cfa5d0a66abdcf77e8da2b6a7c1",
           "skill_file_sha256": "7fe3137edee6841cbd4b1714e9674ef0f176ce376e611ec058cbc3570955fad9",
-          "source_path": "devops-skills-plugin/skills/ansible-validator/SKILL.md"
+          "source_path": "devops-skills-plugin/skills/ansible-validator/SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            ".gitignore": "100644",
+            "SKILL.md": "100644",
+            "assets/.ansible-lint": "100644",
+            "assets/.yamllint": "100644",
+            "assets/molecule.yml.template": "100644",
+            "references/best_practices.md": "100644",
+            "references/common_errors.md": "100644",
+            "references/module_alternatives.md": "100644",
+            "references/security_checklist.md": "100644",
+            "scripts/check_fqcn.sh": "100755",
+            "scripts/extract_ansible_info.py": "100755",
+            "scripts/extract_ansible_info_wrapper.sh": "100755",
+            "scripts/scan_secrets.sh": "100755",
+            "scripts/setup_tools.sh": "100755",
+            "scripts/test_role.sh": "100755",
+            "scripts/validate_inventory.sh": "100755",
+            "scripts/validate_playbook.sh": "100755",
+            "scripts/validate_playbook_security.sh": "100755",
+            "scripts/validate_role.sh": "100755",
+            "scripts/validate_role_security.sh": "100755",
+            "test/README.md": "100644",
+            "test/inventory/localhost-nested.yml": "100644",
+            "test/playbooks/bad-playbook.yml": "100644",
+            "test/playbooks/good-playbook.yml": "100644",
+            "test/playbooks/regression-inline-fqcn.yml": "100644",
+            "test/playbooks/regression-mixed-import.yml": "100644",
+            "test/roles/geerlingguy.mysql/.ansible-lint": "100644",
+            "test/roles/geerlingguy.mysql/.github/FUNDING.yml": "100644",
+            "test/roles/geerlingguy.mysql/.github/workflows/ci.yml": "100644",
+            "test/roles/geerlingguy.mysql/.github/workflows/release.yml": "100644",
+            "test/roles/geerlingguy.mysql/.github/workflows/stale.yml": "100644",
+            "test/roles/geerlingguy.mysql/.gitignore": "100644",
+            "test/roles/geerlingguy.mysql/.yamllint": "100644",
+            "test/roles/geerlingguy.mysql/LICENSE": "100644",
+            "test/roles/geerlingguy.mysql/README.md": "100644",
+            "test/roles/geerlingguy.mysql/defaults/main.yml": "100644",
+            "test/roles/geerlingguy.mysql/handlers/main.yml": "100644",
+            "test/roles/geerlingguy.mysql/meta/main.yml": "100644",
+            "test/roles/geerlingguy.mysql/molecule/default/converge.yml": "100644",
+            "test/roles/geerlingguy.mysql/molecule/default/molecule.yml": "100644",
+            "test/roles/geerlingguy.mysql/tasks/configure.yml": "100644",
+            "test/roles/geerlingguy.mysql/tasks/databases.yml": "100644",
+            "test/roles/geerlingguy.mysql/tasks/main.yml": "100644",
+            "test/roles/geerlingguy.mysql/tasks/replication.yml": "100644",
+            "test/roles/geerlingguy.mysql/tasks/secure-installation.yml": "100644",
+            "test/roles/geerlingguy.mysql/tasks/setup-Archlinux.yml": "100644",
+            "test/roles/geerlingguy.mysql/tasks/setup-Debian.yml": "100644",
+            "test/roles/geerlingguy.mysql/tasks/setup-RedHat.yml": "100644",
+            "test/roles/geerlingguy.mysql/tasks/users.yml": "100644",
+            "test/roles/geerlingguy.mysql/tasks/variables.yml": "100644",
+            "test/roles/geerlingguy.mysql/templates/my.cnf.j2": "100644",
+            "test/roles/geerlingguy.mysql/templates/root-my.cnf.j2": "100644",
+            "test/roles/geerlingguy.mysql/templates/user-my.cnf.j2": "100644",
+            "test/roles/geerlingguy.mysql/vars/Archlinux.yml": "100644",
+            "test/roles/geerlingguy.mysql/vars/Debian-10.yml": "100644",
+            "test/roles/geerlingguy.mysql/vars/Debian-11.yml": "100644",
+            "test/roles/geerlingguy.mysql/vars/Debian-12.yml": "100644",
+            "test/roles/geerlingguy.mysql/vars/Debian-13.yml": "100644",
+            "test/roles/geerlingguy.mysql/vars/Debian.yml": "100644",
+            "test/roles/geerlingguy.mysql/vars/RedHat-10.yml": "100644",
+            "test/roles/geerlingguy.mysql/vars/RedHat-7.yml": "100644",
+            "test/roles/geerlingguy.mysql/vars/RedHat-8.yml": "100644",
+            "test/roles/geerlingguy.mysql/vars/RedHat-9.yml": "100644",
+            "test/roles/geerlingguy.mysql/vars/Ubuntu.yml": "100644",
+            "test/test_regressions.sh": "100755"
+          }
         },
         {
           "id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator-skill-md",
           "install_name": "azure-pipelines-generator",
-          "skill_dir_sha256": "f607a8f94571b0155090d184a79951642d168d815eb4d09146ee6a1436b16d77",
+          "skill_dir_sha256": "e8abe0a3f1d88d67fbc00a1ad890faa4216a2ec84a80ba36493a15edd36c2fa5",
           "skill_file_sha256": "99e7ae998f87bb6a54ee543f84539efe8e1bc46a9da3bb7a8ed584d1f5c96428",
-          "source_path": "devops-skills-plugin/skills/azure-pipelines-generator/SKILL.md"
+          "source_path": "devops-skills-plugin/skills/azure-pipelines-generator/SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            ".gitignore": "100644",
+            "SKILL.md": "100644",
+            "docs/best-practices.md": "100644",
+            "docs/tasks-reference.md": "100644",
+            "docs/templates-guide.md": "100644",
+            "docs/yaml-schema.md": "100644",
+            "examples/basic-ci.yml": "100644",
+            "examples/dotnet-cicd.yml": "100644",
+            "examples/go-cicd.yml": "100644",
+            "examples/kubernetes-deploy.yml": "100644",
+            "examples/multi-stage-cicd.yml": "100644",
+            "examples/python-cicd.yml": "100644",
+            "examples/template-usage.yml": "100644",
+            "examples/templates/build-template.yml": "100644",
+            "examples/templates/deploy-template.yml": "100644",
+            "tests/test_template_regressions.py": "100644"
+          }
         },
         {
           "id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-validator-skill-md",
           "install_name": "azure-pipelines-validator",
-          "skill_dir_sha256": "105d13ec900f5ea4a0d535c7a512fd58d734f114984ec7e8783e4ad6cb8e8051",
+          "skill_dir_sha256": "1693f65e6940adeb8dc37f9aaf2b6375134eb608544f7a9c03e4495ba3ac4cf7",
           "skill_file_sha256": "6f2971f08868e27feab7593c9487841a3d483c1c1cea2cd3b9e7dc63a77b1f6e",
-          "source_path": "devops-skills-plugin/skills/azure-pipelines-validator/SKILL.md"
+          "source_path": "devops-skills-plugin/skills/azure-pipelines-validator/SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            ".gitignore": "100644",
+            "SKILL.md": "100644",
+            "assets/.yamllint": "100644",
+            "docs/azure-pipelines-reference.md": "100644",
+            "examples/basic-pipeline.yml": "100644",
+            "examples/deployment-pipeline.yml": "100644",
+            "examples/docker-build.yml": "100644",
+            "examples/multi-platform.yml": "100644",
+            "examples/regression-conditional-danger.yml": "100644",
+            "examples/regression-runonce-on-failure.yml": "100644",
+            "examples/template-conditional-stages.yml": "100644",
+            "examples/template-conditional-steps.yml": "100644",
+            "examples/template-example.yml": "100644",
+            "examples/test-with-issues.yml": "100644",
+            "scripts/check_best_practices.py": "100755",
+            "scripts/check_security.py": "100755",
+            "scripts/python_wrapper.sh": "100755",
+            "scripts/step_walker.py": "100644",
+            "scripts/test_regressions.py": "100644",
+            "scripts/validate_azure_pipelines.sh": "100755",
+            "scripts/validate_syntax.py": "100755",
+            "scripts/yamllint_check.sh": "100755"
+          }
         },
         {
           "id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-bash-script-generator-skill-md",
@@ -3631,16 +3937,56 @@
         {
           "id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-dockerfile-generator-skill-md",
           "install_name": "dockerfile-generator",
-          "skill_dir_sha256": "2861427ff48cc99c0134c6267062fbb3798d0d09a34e31b770ccffb7e200a639",
+          "skill_dir_sha256": "8efd7c8c0d58b81b9b7a9236382e01427ed31d6869164d4729b360054e59f7e4",
           "skill_file_sha256": "b7fc8d970fbe864e8c0fb7025655375fb338b3f309b84c72c4c8cfa52c0d4499",
-          "source_path": "devops-skills-plugin/skills/dockerfile-generator/SKILL.md"
+          "source_path": "devops-skills-plugin/skills/dockerfile-generator/SKILL.md",
+          "credential_policy_version": 2,
+          "file_modes": {
+            "SKILL.md": "100644",
+            "examples/example.dockerignore": "100644",
+            "examples/golang-distroless.Dockerfile": "100644",
+            "examples/java-springboot.Dockerfile": "100644",
+            "examples/nextjs-production.Dockerfile": "100644",
+            "examples/nodejs-multistage.Dockerfile": "100644",
+            "examples/python-fastapi.Dockerfile": "100644",
+            "references/language_specific_guides.md": "100644",
+            "references/multistage_builds.md": "100644",
+            "references/optimization_patterns.md": "100644",
+            "references/security_best_practices.md": "100644",
+            "scripts/generate_dockerignore.sh": "100755",
+            "scripts/generate_golang.sh": "100755",
+            "scripts/generate_java.sh": "100755",
+            "scripts/generate_nodejs.sh": "100755",
+            "scripts/generate_python.sh": "100755",
+            "scripts/test_generator.sh": "100755"
+          }
         },
         {
           "id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-dockerfile-validator-skill-md",
           "install_name": "dockerfile-validator",
-          "skill_dir_sha256": "4a8baaeb60a0fec47c8ce9a547ff1bfc877c4c4f623788e63c762067f4254e70",
+          "skill_dir_sha256": "01ad4cf849de433626323e5fcc321217724398942bcc7ed6617eacd838f360f1",
           "skill_file_sha256": "6b02fd078c813e49c11bc1ad6e1c82bdbe11c65ec2c54fb7c9b0ba1ea6a209d9",
-          "source_path": "devops-skills-plugin/skills/dockerfile-validator/SKILL.md"
+          "source_path": "devops-skills-plugin/skills/dockerfile-validator/SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            ".gitignore": "100644",
+            "SKILL.md": "100644",
+            "examples/.dockerignore.example": "100644",
+            "examples/bad-example.Dockerfile": "100644",
+            "examples/golang-distroless.Dockerfile": "100644",
+            "examples/good-example.Dockerfile": "100644",
+            "examples/python-optimized.Dockerfile": "100644",
+            "examples/security-issues.Dockerfile": "100644",
+            "references/docker_best_practices.md": "100644",
+            "references/optimization_guide.md": "100644",
+            "references/security_checklist.md": "100644",
+            "scripts/dockerfile-validate.sh": "100755",
+            "scripts/test_validate.sh": "100755",
+            "tests/fixtures/copy-before-yarn-lock-read.Dockerfile": "100644",
+            "tests/fixtures/copy-before-yarn.Dockerfile": "100644",
+            "tests/fixtures/from-platform-nonroot.Dockerfile": "100644",
+            "tests/test_regression.sh": "100755"
+          }
         },
         {
           "id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-fluentbit-generator-skill-md",
@@ -3673,16 +4019,54 @@
         {
           "id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-gitlab-ci-generator-skill-md",
           "install_name": "gitlab-ci-generator",
-          "skill_dir_sha256": "2a6c764ebf86d8e91b8d2844c27e7654d510d18bcf9a9dbc469809145ef9a791",
+          "skill_dir_sha256": "631d23618023e2ab5ca74dfac823c26648811158c12fa3f938954991f0319c36",
           "skill_file_sha256": "5933f0ba4ba588c832a1ec0ec7c9db58f95c95c770940e909240bd5cbdb92509",
-          "source_path": "devops-skills-plugin/skills/gitlab-ci-generator/SKILL.md"
+          "source_path": "devops-skills-plugin/skills/gitlab-ci-generator/SKILL.md",
+          "credential_policy_version": 2,
+          "file_modes": {
+            ".gitignore": "100644",
+            "SKILL.md": "100644",
+            "assets/templates/basic-pipeline.yml": "100644",
+            "assets/templates/docker-build.yml": "100644",
+            "assets/templates/kubernetes-deploy.yml": "100644",
+            "assets/templates/multi-project.yml": "100644",
+            "references/best-practices.md": "100644",
+            "references/common-patterns.md": "100644",
+            "references/gitlab-ci-reference.md": "100644",
+            "references/security-guidelines.md": "100644",
+            "tests/test_skill_contract.py": "100644"
+          }
         },
         {
           "id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-gitlab-ci-validator-skill-md",
           "install_name": "gitlab-ci-validator",
-          "skill_dir_sha256": "63e76cda3f311c0d76b791a19bbf7523da2065a34b8ff3449c15c1365d875d62",
+          "skill_dir_sha256": "e92a779c207cd900b93400911dbd6bd5a6789eed0c7dc50cb05d35323924e016",
           "skill_file_sha256": "0cbfbb1431311c9d9e2c8da27944ad30ec66cad31e9741740539f0c5d4648333",
-          "source_path": "devops-skills-plugin/skills/gitlab-ci-validator/SKILL.md"
+          "source_path": "devops-skills-plugin/skills/gitlab-ci-validator/SKILL.md",
+          "credential_policy_version": 2,
+          "file_modes": {
+            ".gitignore": "100644",
+            "SKILL.md": "100644",
+            "docs/best-practices.md": "100644",
+            "docs/common-issues.md": "100644",
+            "docs/gitlab-ci-reference.md": "100644",
+            "examples/.gitlab-ci-local/expanded-gitlab-ci.yml": "100644",
+            "examples/.gitlab-ci-local/includes/gitlab.com/gitlab-org/gitlab/-/raw/HEAD/lib/gitlab/ci/templates/Jobs/Dependency-Scanning.gitlab-ci.yml": "100644",
+            "examples/.gitlab-ci-local/includes/gitlab.com/gitlab-org/gitlab/-/raw/HEAD/lib/gitlab/ci/templates/Jobs/SAST.gitlab-ci.yml": "100644",
+            "examples/.gitlab-ci-local/includes/gitlab.com/gitlab-org/gitlab/-/raw/HEAD/lib/gitlab/ci/templates/Jobs/Secret-Detection.gitlab-ci.yml": "100644",
+            "examples/basic-pipeline.gitlab-ci.yml": "100644",
+            "examples/complex-workflow.gitlab-ci.yml": "100644",
+            "examples/component-pipeline.gitlab-ci.yml": "100644",
+            "examples/docker-build.gitlab-ci.yml": "100644",
+            "examples/multi-stage.gitlab-ci.yml": "100644",
+            "scripts/check_best_practices.py": "100755",
+            "scripts/check_security.py": "100755",
+            "scripts/install_tools.sh": "100755",
+            "scripts/python_wrapper.sh": "100755",
+            "scripts/validate_gitlab_ci.sh": "100755",
+            "scripts/validate_syntax.py": "100755",
+            "tests/test_validators.py": "100644"
+          }
         },
         {
           "id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-helm-generator-skill-md",
@@ -3701,16 +4085,72 @@
         {
           "id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-jenkinsfile-generator-skill-md",
           "install_name": "jenkinsfile-generator",
-          "skill_dir_sha256": "b7def73b9475270f7f6b87eb1290bcc72e9a61119040f4bf6decc33c3860d33d",
+          "skill_dir_sha256": "a564330389c7be03a37524bc53bc31477e19691910166d073f096d61c1895d62",
           "skill_file_sha256": "eebcb2680fbb4a7462d676aff066d154782a4139aab02d58bb52c66d2d3fec5c",
-          "source_path": "devops-skills-plugin/skills/jenkinsfile-generator/SKILL.md"
+          "source_path": "devops-skills-plugin/skills/jenkinsfile-generator/SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            ".gitignore": "100644",
+            "SKILL.md": "100644",
+            "assets/templates/declarative/basic.Jenkinsfile": "100644",
+            "assets/templates/scripted/basic.Jenkinsfile": "100644",
+            "examples/declarative-ci-basic.Jenkinsfile": "100644",
+            "examples/declarative-docker.Jenkinsfile": "100644",
+            "examples/declarative-kubernetes.Jenkinsfile": "100644",
+            "examples/declarative-matrix.Jenkinsfile": "100644",
+            "examples/declarative-parallel.Jenkinsfile": "100644",
+            "examples/declarative-security-scan.Jenkinsfile": "100644",
+            "examples/declarative-shared-library.Jenkinsfile": "100644",
+            "examples/scripted-basic.Jenkinsfile": "100644",
+            "examples/scripted-conditional.Jenkinsfile": "100644",
+            "examples/scripted-docker.Jenkinsfile": "100644",
+            "references/best_practices.md": "100644",
+            "references/common_plugins.md": "100644",
+            "scripts/generate_declarative.py": "100755",
+            "scripts/generate_scripted.py": "100755",
+            "scripts/generate_shared_library.py": "100644",
+            "scripts/lib/__init__.py": "100644",
+            "scripts/lib/common_patterns.py": "100644",
+            "scripts/lib/syntax_helpers.py": "100644",
+            "scripts/test_generate_declarative.py": "100644",
+            "scripts/test_generate_shared_library.py": "100644"
+          }
         },
         {
           "id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-jenkinsfile-validator-skill-md",
           "install_name": "jenkinsfile-validator",
-          "skill_dir_sha256": "2a5302519a0863de22ec21b821fe20699f475f899124227cadb8f997948de0f3",
+          "skill_dir_sha256": "2d4b194667b5caa0302759c7938cf562704117725f446b1af7496604943aad29",
           "skill_file_sha256": "4df986b225021446a385de26fb6b42829454e79f1062a317602566231d5b594e",
-          "source_path": "devops-skills-plugin/skills/jenkinsfile-validator/SKILL.md"
+          "source_path": "devops-skills-plugin/skills/jenkinsfile-validator/SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            ".gitignore": "100644",
+            "SKILL.md": "100644",
+            "examples/bad-declarative-pipeline.Jenkinsfile": "100644",
+            "examples/bad-scripted-pipeline.Jenkinsfile": "100644",
+            "examples/declarative-docker.Jenkinsfile": "100644",
+            "examples/declarative-kubernetes.Jenkinsfile": "100644",
+            "examples/declarative-parallel.Jenkinsfile": "100644",
+            "examples/declarative-unknown-plugins.Jenkinsfile": "100644",
+            "examples/scripted-basic.Jenkinsfile": "100644",
+            "examples/scripted-conditional.Jenkinsfile": "100644",
+            "examples/scripted-docker.Jenkinsfile": "100644",
+            "examples/shared-library/src/com/example/BuildConfig.groovy": "100644",
+            "examples/shared-library/vars/BadStep.groovy": "100644",
+            "examples/shared-library/vars/buildApp.groovy": "100644",
+            "references/best_practices.md": "100644",
+            "references/common_plugins.md": "100644",
+            "references/declarative_syntax.md": "100644",
+            "references/scripted_syntax.md": "100644",
+            "scripts/best_practices.sh": "100755",
+            "scripts/common_validation.sh": "100755",
+            "scripts/validate_declarative.sh": "100755",
+            "scripts/validate_jenkinsfile.sh": "100755",
+            "scripts/validate_scripted.sh": "100755",
+            "scripts/validate_shared_library.sh": "100755",
+            "tests/run_local_ci.sh": "100755",
+            "tests/test_validate_jenkinsfile.sh": "100755"
+          }
         },
         {
           "id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-k8s-debug-skill-md",
@@ -3722,9 +4162,23 @@
         {
           "id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-k8s-yaml-generator-skill-md",
           "install_name": "k8s-yaml-generator",
-          "skill_dir_sha256": "5ba6a7fbb6441dbfb3be30bf67e4f737614e7d039d264f6a5bc2c4c9b203f516",
+          "skill_dir_sha256": "033eb5459f7e28bb305ac869c660033ec6a9b0c945dda4cf227d883cabbaed26",
           "skill_file_sha256": "f8133da33f1cae792e57399d2dcc0d700e05ce8819cce4047a0fb4a226432efb",
-          "source_path": "devops-skills-plugin/skills/k8s-yaml-generator/SKILL.md"
+          "source_path": "devops-skills-plugin/skills/k8s-yaml-generator/SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            "SKILL.md": "100644",
+            "examples/configmap-secret.yaml": "100644",
+            "examples/deployment-service.yaml": "100644",
+            "examples/hpa-pdb.yaml": "100644",
+            "examples/ingress.yaml": "100644",
+            "examples/rbac-cluster-reader-optional.yaml": "100644",
+            "examples/rbac.yaml": "100644",
+            "examples/statefulset.yaml": "100644",
+            "references/resource_patterns.md": "100644",
+            "references/security_patterns.md": "100644",
+            "tests/test_regression.sh": "100755"
+          }
         },
         {
           "id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-k8s-yaml-validator-skill-md",
@@ -3757,9 +4211,20 @@
         {
           "id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-makefile-validator-skill-md",
           "install_name": "makefile-validator",
-          "skill_dir_sha256": "35e611a41738030c42103e43a3163152a750885fa08d3625ce4ce06b8ec6dcad",
+          "skill_dir_sha256": "ab024bfa8adfc14c18cd105cf087ab6dbcc4d753d134294452c7112d11519985",
           "skill_file_sha256": "758d3db075a39e71f878dc843cffe4e7c775c90def3de9938880146abb4ecde5",
-          "source_path": "devops-skills-plugin/skills/makefile-validator/SKILL.md"
+          "source_path": "devops-skills-plugin/skills/makefile-validator/SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            "SKILL.md": "100644",
+            "docs/bake-tool.md": "100644",
+            "docs/best-practices.md": "100644",
+            "docs/common-mistakes.md": "100644",
+            "examples/bad-makefile.mk": "100644",
+            "examples/good-makefile.mk": "100644",
+            "scripts/test_validate.sh": "100755",
+            "scripts/validate_makefile.sh": "100755"
+          }
         },
         {
           "id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-promql-generator-skill-md",
@@ -4441,9 +4906,20 @@
         {
           "id": "yuvalsuede-agent-media-skill-skill-md",
           "install_name": "agent-media",
-          "skill_dir_sha256": "2c23bb71caef59e98486208e00bc5bba40789fc281bdf00bcb15600f542b2f2b",
-          "skill_file_sha256": "155d497a282e54f8b6b24c48ba828b6b50dc04c1e7c8b40544a4eb03582eb3f7",
-          "source_path": "SKILL.md"
+          "skill_dir_sha256": "16d6838593d08d5294c8c9ad0c5d87c123f9e34a63457326c562b57f7caf1fac",
+          "skill_file_sha256": "acf5437769ed258a9e4a6cb2c8c178baf1ea2e178c6cd58b606aecdade6996dc",
+          "source_path": "SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            ".claude-plugin/marketplace.json": "100644",
+            "LICENSE": "100644",
+            "README.md": "100644",
+            "SKILL.md": "100644",
+            "workflows/README.md": "100644",
+            "workflows/batch-generate.lobster": "100644",
+            "workflows/generate.lobster": "100644",
+            "workflows/pip-generate.lobster": "100644"
+          }
         }
       ],
       "tree_sha": "b5e9e8231aa8ca799ace342f83d4f7797a7209b5"
@@ -4675,9 +5151,32 @@
         {
           "id": "varnan-tech-opendirectory-packages-cli-skills-blog-cover-image-cli-skill-md",
           "install_name": "blog-cover-image-cli",
-          "skill_dir_sha256": "7bc344d6c4cba207ef77331f3cf3aa13164121f1e4823e25c383c241a3b6101d",
+          "skill_dir_sha256": "9d9154d482b45fb4f8bf9865d8a67b7230e13d732d0225560362a6c00ea16645",
           "skill_file_sha256": "f5ab67d3ed7b80e1e7ad7dc34175633f28b3acf053f7a4366fc4b76960587fcc",
-          "source_path": "packages/cli/skills/blog-cover-image-cli/SKILL.md"
+          "source_path": "packages/cli/skills/blog-cover-image-cli/SKILL.md",
+          "dependency_graph": "blog-cover-image-cli-advisories-2026-10-07",
+          "file_modes": {
+            ".github/workflows/publish.yml": "100644",
+            ".gitignore": "100644",
+            "LICENSE": "100644",
+            "README.md": "100644",
+            "SKILL.md": "100644",
+            "bin/cli.js": "100644",
+            "examples/100x_UX_Research_AI_Agent.png": "100644",
+            "examples/Firecrawl-supabase-bolt.png": "100644",
+            "examples/Git-City_Case_study_Cover_Image.jpg": "100644",
+            "examples/THE DISTRIBUTION LAYER (2).png": "100644",
+            "examples/canva-perplexity-duolingo-cover-image.png": "100644",
+            "examples/gamma-mistral-veed.png": "100644",
+            "examples/server-survival-case-study-cover-image(1).png": "100644",
+            "examples/viral-meme-automation.png": "100644",
+            "index.js": "100644",
+            "package-lock.json": "100644",
+            "package.json": "100644",
+            "src/geminiGenerator.js": "100644",
+            "src/imageValidator.js": "100644",
+            "src/logoFetcher.js": "100644"
+          }
         },
         {
           "id": "varnan-tech-opendirectory-packages-cli-skills-claude-md-generator-skill-md",
@@ -4703,9 +5202,21 @@
         {
           "id": "varnan-tech-opendirectory-packages-cli-skills-docs-from-code-skill-md",
           "install_name": "docs-from-code",
-          "skill_dir_sha256": "fca3d48e2b5b56915dcdd16c9eb28a884b78fd41cec7ac5af8a14d65d950cb98",
+          "skill_dir_sha256": "ecd7305e8f4522591ee92e98e46f27a07b7db7e38a17a6f096aa603c9193a80e",
           "skill_file_sha256": "5d14fa7f29a9e3d8b572e370052ecbd295b81c7f5ec19ac95d619b6f691a000e",
-          "source_path": "packages/cli/skills/docs-from-code/SKILL.md"
+          "source_path": "packages/cli/skills/docs-from-code/SKILL.md",
+          "credential_policy_version": 3,
+          "file_modes": {
+            ".env.example": "100644",
+            "README.md": "100644",
+            "SKILL.md": "100644",
+            "evals/evals.json": "100644",
+            "references/extraction-guide.md": "100644",
+            "references/output-template.md": "100644",
+            "scripts/extract_py.py": "100644",
+            "scripts/extract_ts.ts": "100644",
+            "scripts/package.json": "100644"
+          }
         },
         {
           "id": "varnan-tech-opendirectory-packages-cli-skills-explain-this-pr-skill-md",
@@ -4921,9 +5432,14 @@
         {
           "id": "affaan-m-everything-claude-code-agents-skills-api-design-skill-md",
           "install_name": "api-design",
-          "skill_dir_sha256": "5b13d92e4be850cf23bc893dcbdbea1a971b8d7a79d4e51ae701e92a88c2a74e",
-          "skill_file_sha256": "d2b090c4319e030fddb576950400724ff12ccb285083a540b6afb62431185d25",
-          "source_path": ".agents/skills/api-design/SKILL.md"
+          "skill_dir_sha256": "7d58157146bcc1479c7501ec5d729d7a4961cef054ae79800d07d4125251a895",
+          "skill_file_sha256": "de3be9cde47bd707b2a8af79254915ed03bfcd1b2aeb187f1d889597e8cbb76d",
+          "source_path": ".agents/skills/api-design/SKILL.md",
+          "credential_policy_version": 2,
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          }
         },
         {
           "id": "affaan-m-everything-claude-code-agents-skills-article-writing-skill-md",

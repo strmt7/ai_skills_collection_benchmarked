@@ -1,0 +1,517 @@
+{
+  "files_scanned": 7528,
+  "exit_code": 1,
+  "findings": [
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-generator/docs/best-practices.md",
+      "StartLine": 28,
+      "EndLine": 28,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-generator/docs/best-practices.md:generic-api-key:28"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-validator/examples/test-with-issues.yml",
+      "StartLine": 11,
+      "EndLine": 11,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-validator/examples/test-with-issues.yml:generic-api-key:11"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/agents-v2-py/references/acceptance-criteria.md",
+      "StartLine": 435,
+      "EndLine": 435,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/agents-v2-py/references/acceptance-criteria.md:generic-api-key:435"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-translation-ts/references/acceptance-criteria.md",
+      "StartLine": 84,
+      "EndLine": 84,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-translation-ts/references/acceptance-criteria.md:generic-api-key:84"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-cosmos-db-py/references/client-setup.md",
+      "StartLine": 181,
+      "EndLine": 181,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-cosmos-db-py/references/client-setup.md:generic-api-key:181"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-identity-dotnet/references/acceptance-criteria.md",
+      "StartLine": 83,
+      "EndLine": 83,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-identity-dotnet/references/acceptance-criteria.md:generic-api-key:83"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-identity-ts/references/acceptance-criteria.md",
+      "StartLine": 94,
+      "EndLine": 94,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-identity-ts/references/acceptance-criteria.md:generic-api-key:94"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-identity-py/references/acceptance-criteria.md",
+      "StartLine": 98,
+      "EndLine": 98,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-identity-py/references/acceptance-criteria.md:generic-api-key:98"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-secrets-java/references/acceptance-criteria.md",
+      "StartLine": 69,
+      "EndLine": 69,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-secrets-java/references/acceptance-criteria.md:generic-api-key:69"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-secrets-java/SKILL.md",
+      "StartLine": 57,
+      "EndLine": 57,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-secrets-java/SKILL.md:generic-api-key:57"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/copilot-sdk/references/acceptance-criteria.md",
+      "StartLine": 209,
+      "EndLine": 209,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/copilot-sdk/references/acceptance-criteria.md:generic-api-key:209"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-secrets-java/references/examples.md",
+      "StartLine": 113,
+      "EndLine": 113,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-secrets-java/references/examples.md:generic-api-key:113"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-secrets-java/references/examples.md",
+      "StartLine": 124,
+      "EndLine": 124,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-secrets-java/references/examples.md:generic-api-key:124"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/hosted-agents-v2-py/references/acceptance-criteria.md",
+      "StartLine": 435,
+      "EndLine": 435,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/hosted-agents-v2-py/references/acceptance-criteria.md:generic-api-key:435"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/github-issue-creator/references/acceptance-criteria.md",
+      "StartLine": 336,
+      "EndLine": 336,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/github-issue-creator/references/acceptance-criteria.md:generic-api-key:336"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator/docs/security-guide.md",
+      "StartLine": 309,
+      "EndLine": 309,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator/docs/security-guide.md:generic-api-key:309"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/api-design/SKILL.md",
+      "StartLine": 306,
+      "EndLine": 306,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/api-design/SKILL.md:generic-api-key:306"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/creative-media-design/creative-reference/agent-media/SKILL.md",
+      "StartLine": 366,
+      "EndLine": 371,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/creative-media-design/creative-reference/agent-media/SKILL.md:curl-auth-header:366"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/creative-media-design/creative-reference/agent-media/SKILL.md",
+      "StartLine": 380,
+      "EndLine": 381,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/creative-media-design/creative-reference/agent-media/SKILL.md:curl-auth-header:380"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/devops-cloud-operations/devops-reference/k8s-troubleshooter/references/helm_troubleshooting.md",
+      "StartLine": 359,
+      "EndLine": 359,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/devops-cloud-operations/devops-reference/k8s-troubleshooter/references/helm_troubleshooting.md:generic-api-key:359"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/devops-cloud-operations/latest-release-devops/dockerfile-generator/references/security_best_practices.md",
+      "StartLine": 127,
+      "EndLine": 127,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/devops-cloud-operations/latest-release-devops/dockerfile-generator/references/security_best_practices.md:generic-api-key:127"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/devops-cloud-operations/latest-release-devops/jenkinsfile-generator/references/best_practices.md",
+      "StartLine": 61,
+      "EndLine": 61,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/devops-cloud-operations/latest-release-devops/jenkinsfile-generator/references/best_practices.md:curl-auth-header:61"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code/references/output-template.md",
+      "StartLine": 104,
+      "EndLine": 105,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code/references/output-template.md:curl-auth-header:104"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/game-mobile-visual-qa/security-reference/firebase-apk-scanner/references/vulnerabilities.md",
+      "StartLine": 28,
+      "EndLine": 28,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/game-mobile-visual-qa/security-reference/firebase-apk-scanner/references/vulnerabilities.md:generic-api-key:28"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/game-mobile-visual-qa/security-reference/firebase-apk-scanner/references/vulnerabilities.md",
+      "StartLine": 88,
+      "EndLine": 88,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/game-mobile-visual-qa/security-reference/firebase-apk-scanner/references/vulnerabilities.md:generic-api-key:88"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/game-mobile-visual-qa/security-reference/firebase-apk-scanner/references/vulnerabilities.md",
+      "StartLine": 109,
+      "EndLine": 109,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/game-mobile-visual-qa/security-reference/firebase-apk-scanner/references/vulnerabilities.md:generic-api-key:109"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/benchling-integration/references/api_endpoints.md",
+      "StartLine": 31,
+      "EndLine": 33,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/benchling-integration/references/api_endpoints.md:curl-auth-header:31"
+    },
+    {
+      "RuleID": "curl-auth-user",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/benchling-integration/references/api_endpoints.md",
+      "StartLine": 24,
+      "EndLine": 26,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/benchling-integration/references/api_endpoints.md:curl-auth-user:24"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/benchling-integration/references/authentication.md",
+      "StartLine": 112,
+      "EndLine": 114,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/benchling-integration/references/authentication.md:curl-auth-header:112"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/benchling-integration/references/authentication.md",
+      "StartLine": 155,
+      "EndLine": 157,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/benchling-integration/references/authentication.md:curl-auth-header:155"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/benchling-integration/references/authentication.md",
+      "StartLine": 297,
+      "EndLine": 299,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/benchling-integration/references/authentication.md:curl-auth-header:297"
+    },
+    {
+      "RuleID": "curl-auth-user",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/benchling-integration/references/authentication.md",
+      "StartLine": 36,
+      "EndLine": 38,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/benchling-integration/references/authentication.md:curl-auth-user:36"
+    },
+    {
+      "RuleID": "curl-auth-user",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/benchling-integration/references/authentication.md",
+      "StartLine": 288,
+      "EndLine": 293,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/benchling-integration/references/authentication.md:curl-auth-user:288"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/database-lookup/references/noaa.md",
+      "StartLine": 47,
+      "EndLine": 47,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/database-lookup/references/noaa.md:curl-auth-header:47"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/database-lookup/references/noaa.md",
+      "StartLine": 90,
+      "EndLine": 90,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/database-lookup/references/noaa.md:curl-auth-header:90"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/database-lookup/references/noaa.md",
+      "StartLine": 114,
+      "EndLine": 114,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/database-lookup/references/noaa.md:curl-auth-header:114"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/database-lookup/references/noaa.md",
+      "StartLine": 144,
+      "EndLine": 144,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/database-lookup/references/noaa.md:curl-auth-header:144"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/database-lookup/references/noaa.md",
+      "StartLine": 179,
+      "EndLine": 179,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/database-lookup/references/noaa.md:curl-auth-header:179"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/workspaces.md",
+      "StartLine": 32,
+      "EndLine": 32,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/workspaces.md:curl-auth-header:32"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/workspaces.md",
+      "StartLine": 80,
+      "EndLine": 81,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/workspaces.md:curl-auth-header:80"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/workspaces.md",
+      "StartLine": 119,
+      "EndLine": 119,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/workspaces.md:curl-auth-header:119"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/discussions.md",
+      "StartLine": 44,
+      "EndLine": 45,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/discussions.md:curl-auth-header:44"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/discussions.md",
+      "StartLine": 58,
+      "EndLine": 59,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/discussions.md:curl-auth-header:58"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/discussions.md",
+      "StartLine": 117,
+      "EndLine": 118,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/discussions.md:curl-auth-header:117"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/file_manager.md",
+      "StartLine": 41,
+      "EndLine": 41,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/file_manager.md:curl-auth-header:41"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/file_manager.md",
+      "StartLine": 63,
+      "EndLine": 63,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/file_manager.md:curl-auth-header:63"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/file_manager.md",
+      "StartLine": 86,
+      "EndLine": 87,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/file_manager.md:curl-auth-header:86"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/file_manager.md",
+      "StartLine": 122,
+      "EndLine": 122,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/file_manager.md:curl-auth-header:122"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/file_manager.md",
+      "StartLine": 155,
+      "EndLine": 156,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/file_manager.md:curl-auth-header:155"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/file_manager.md",
+      "StartLine": 194,
+      "EndLine": 195,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/file_manager.md:curl-auth-header:194"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/file_manager.md",
+      "StartLine": 238,
+      "EndLine": 239,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/file_manager.md:curl-auth-header:238"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/protocols_api.md",
+      "StartLine": 45,
+      "EndLine": 45,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/protocols_api.md:curl-auth-header:45"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/protocols_api.md",
+      "StartLine": 97,
+      "EndLine": 98,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/protocols_api.md:curl-auth-header:97"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/protocols_api.md",
+      "StartLine": 135,
+      "EndLine": 136,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/protocols_api.md:curl-auth-header:135"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/protocols_api.md",
+      "StartLine": 200,
+      "EndLine": 201,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/protocols_api.md:curl-auth-header:200"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/additional_features.md",
+      "StartLine": 31,
+      "EndLine": 31,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/additional_features.md:curl-auth-header:31"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/additional_features.md",
+      "StartLine": 54,
+      "EndLine": 55,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/additional_features.md:curl-auth-header:54"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/additional_features.md",
+      "StartLine": 103,
+      "EndLine": 103,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/additional_features.md:curl-auth-header:103"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/additional_features.md",
+      "StartLine": 142,
+      "EndLine": 143,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/additional_features.md:curl-auth-header:142"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/additional_features.md",
+      "StartLine": 217,
+      "EndLine": 217,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/additional_features.md:curl-auth-header:217"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/additional_features.md",
+      "StartLine": 266,
+      "EndLine": 266,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration/references/additional_features.md:curl-auth-header:266"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/security-compliance-risk/latest-release-devops/ansible-validator/references/security_checklist.md",
+      "StartLine": 24,
+      "EndLine": 24,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/security-compliance-risk/latest-release-devops/ansible-validator/references/security_checklist.md:generic-api-key:24"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/security-compliance-risk/latest-release-devops/dockerfile-validator/examples/security-issues.Dockerfile",
+      "StartLine": 13,
+      "EndLine": 13,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/security-compliance-risk/latest-release-devops/dockerfile-validator/examples/security-issues.Dockerfile:generic-api-key:13"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/security-compliance-risk/latest-release-devops/jenkinsfile-validator/examples/shared-library/vars/BadStep.groovy",
+      "StartLine": 13,
+      "EndLine": 13,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/security-compliance-risk/latest-release-devops/jenkinsfile-validator/examples/shared-library/vars/BadStep.groovy:generic-api-key:13"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/security-compliance-risk/latest-release-devops/jenkinsfile-validator/examples/bad-declarative-pipeline.Jenkinsfile",
+      "StartLine": 25,
+      "EndLine": 25,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/security-compliance-risk/latest-release-devops/jenkinsfile-validator/examples/bad-declarative-pipeline.Jenkinsfile:curl-auth-header:25"
+    },
+    {
+      "RuleID": "stripe-access-token",
+      "File": "included/skills/by-category/security-compliance-risk/latest-release-devops/gitlab-ci-validator/docs/common-issues.md",
+      "StartLine": 230,
+      "EndLine": 230,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/security-compliance-risk/latest-release-devops/gitlab-ci-validator/docs/common-issues.md:stripe-access-token:230"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/security-compliance-risk/latest-release-devops/k8s-yaml-generator/examples/configmap-secret.yaml",
+      "StartLine": 40,
+      "EndLine": 40,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/security-compliance-risk/latest-release-devops/k8s-yaml-generator/examples/configmap-secret.yaml:generic-api-key:40"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/security-compliance-risk/latest-release-devops/k8s-yaml-generator/examples/configmap-secret.yaml",
+      "StartLine": 41,
+      "EndLine": 41,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/security-compliance-risk/latest-release-devops/k8s-yaml-generator/examples/configmap-secret.yaml:generic-api-key:41"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/security-compliance-risk/latest-release-devops/makefile-validator/examples/bad-makefile.mk",
+      "StartLine": 10,
+      "EndLine": 10,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/security-compliance-risk/latest-release-devops/makefile-validator/examples/bad-makefile.mk:generic-api-key:10"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/security-compliance-risk/latest-release-devops/makefile-validator/scripts/test_validate.sh",
+      "StartLine": 222,
+      "EndLine": 222,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/security-compliance-risk/latest-release-devops/makefile-validator/scripts/test_validate.sh:generic-api-key:222"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/security-compliance-risk/latest-release-devops/jenkinsfile-validator/references/best_practices.md",
+      "StartLine": 76,
+      "EndLine": 76,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/security-compliance-risk/latest-release-devops/jenkinsfile-validator/references/best_practices.md:curl-auth-header:76"
+    },
+    {
+      "RuleID": "curl-auth-header",
+      "File": "included/skills/by-category/security-compliance-risk/latest-release-devops/makefile-validator/docs/best-practices.md",
+      "StartLine": 703,
+      "EndLine": 703,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/security-compliance-risk/latest-release-devops/makefile-validator/docs/best-practices.md:curl-auth-header:703"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "included/skills/by-category/security-compliance-risk/latest-release-devops/makefile-validator/docs/common-mistakes.md",
+      "StartLine": 497,
+      "EndLine": 497,
+      "Fingerprint": "C:/Users/strat/AppData/Local/Temp/skills-secret-scan-dupnz8g0/included/skills/by-category/security-compliance-risk/latest-release-devops/makefile-validator/docs/common-mistakes.md:generic-api-key:497"
+    }
+  ]
+}

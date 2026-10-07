@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "evidence_class": "actual-original-kubernetes-diagnostic-helper-command-spy-controls",
+  "passed": false,
+  "project_file_sha256": {
+    "included/skills/by-category/testing-qa-benchmarking/security-reference/debug-buttercup/scripts/diagnose.sh": "a259d7b5bd615806f0a5003b874f66d0bd116f5e8c8a7258db11bbf50fbb06d1",
+    "benchmarks/dependency-regressions/kubernetes_diagnosis_fixture.py": "95b8b2450ddc329461b5c09d02627583efdd8e95964aea21d46b1a9ea7f3eaa5"
+  },
+  "reproducer_sha256": "1f4a34020234d62db2a8d9a4149612b4b8ea4fcbaade39baf8e66ad0051ce99a",
+  "invocation": {
+    "status": "worker_error",
+    "container_name": "skills-invoke-696e3833d74e4dd697c5014c62261e5e",
+    "image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+    "scored": false,
+    "candidate_response_is_untrusted": true,
+    "cleanup_verified": true,
+    "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+    "resource_profile": "python-small",
+    "submission_sha256": {
+      "original-diagnose.sh": "a259d7b5bd615806f0a5003b874f66d0bd116f5e8c8a7258db11bbf50fbb06d1",
+      "candidate.py": "95b8b2450ddc329461b5c09d02627583efdd8e95964aea21d46b1a9ea7f3eaa5"
+    },
+    "container_id": "12ca6694d615e4e2925a268b914b79b839a6f9e266972010e3094b315b22a5e5",
+    "isolation_checks": {
+      "errors": [],
+      "passed": true,
+      "observed_user": "65534:65534",
+      "observed_image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+      "observed_ownership_token": "696e3833d74e4dd697c5014c62261e5e",
+      "resolved_image_id": "sha256:284cda8648f59f87e9468ec9d5652064dc2cd5b7d3fce342c2d3825ca1de6353",
+      "observed_host_constraints": {
+        "NetworkMode": "none",
+        "IpcMode": "none",
+        "ReadonlyRootfs": true,
+        "Memory": 536870912,
+        "MemorySwap": 536870912,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64,
+        "Privileged": false,
+        "Init": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "CapAdd": null,
+        "SecurityOpt": [
+          "no-new-privileges"
+        ],
+        "LogConfig": {
+          "Type": "none",
+          "Config": {}
+        },
+        "Tmpfs": {
+          "/tmp": "rw,noexec,nosuid,size=128m"
+        },
+        "Devices": [],
+        "DeviceRequests": null,
+        "VolumesFrom": null
+      },
+      "observed_mounts": [
+        {
+          "Destination": "/submission",
+          "Type": "bind",
+          "RW": false
+        },
+        {
+          "Destination": "/worker",
+          "Type": "bind",
+          "RW": false
+        }
+      ]
+    },
+    "setup_elapsed_seconds": 0.2819595000000845,
+    "runtime_elapsed_seconds": 0.4917496999987634,
+    "returncode": 0,
+    "candidate_response": {
+      "worker_status": "error",
+      "error_type": "FileNotFoundError",
+      "detail": "[Errno 2] No such file or directory: '/tmp/diagnosis-spies-sllngt61/healthy.jsonl'"
+    },
+    "captured_bytes": 158,
+    "stderr": "",
+    "elapsed_seconds": 0.9331890999983443
+  },
+  "agent_efficacy_scored": false,
+  "scope": "Source-grounded helper contracts with owned kubectl spies; no cluster, live authorization or coding-agent score"
+}

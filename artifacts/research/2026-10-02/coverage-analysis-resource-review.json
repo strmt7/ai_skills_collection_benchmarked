@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "evidence_class": "complete-coverage-analysis-resource-and-primary-documentation-review",
+  "skill_id": "trailofbits-skills-plugins-testing-handbook-skills-skills-coverage-analysis-skill-md",
+  "original_source_commit": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+  "original_resources": {
+    "SKILL.md": {
+      "status": "reviewed",
+      "sha256": "89a1575e063e97befafab9fdc9544335cccc9b3e193e846e0d11235aaa864880",
+      "bytes": 21303,
+      "review_scope": "Complete read: instrumentation, C/C++ corpus replay, fork/profile handling, LLVM/GCC/Rust/AFL/honggfuzz examples, differential/export/report commands, optimization and coverage interpretation."
+    }
+  },
+  "fetched_upstream_commit": "82fe8226252622fa807643bdca1710901198553a",
+  "upstream_resources": [
+    {
+      "path": "SKILL.md",
+      "sha256": "9f71cfaffec44f159aa333924a25cdbe3eebd221cc7c0b0175fb93794d3ecacc",
+      "bytes": 21004,
+      "reviewed": true
+    },
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "8d2c04a218973d10ece0de787836ade740f6c6a72a5dbbe471c472e58912e72a",
+      "bytes": 238,
+      "reviewed": true
+    },
+    {
+      "path": "assets/trail-of-bits-mark.svg",
+      "sha256": "4bf74c789b38dcf6ad762c136b6832363d27ae19fbaa9a18ec18d66ecce6ca05",
+      "bytes": 3084,
+      "reviewed": true
+    }
+  ],
+  "original_to_fetched_changes": [
+    "Expanded activation description",
+    "gcovr installation switches to uv",
+    "Added agent metadata and vendor SVG"
+  ],
+  "native_replay_executed": false,
+  "coverage_campaign_executed": false,
+  "agent_efficacy_scored": false,
+  "primary_release_observations": [
+    {
+      "project": "gcovr",
+      "version": "8.6",
+      "endpoint": "https://pypi.org/pypi/gcovr/json",
+      "runtime_qualified": false
+    },
+    {
+      "project": "cmake",
+      "version": "4.4.3",
+      "endpoint": "https://pypi.org/pypi/cmake/json",
+      "runtime_qualified": false
+    }
+  ]
+}

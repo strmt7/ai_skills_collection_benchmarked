@@ -1,0 +1,117 @@
+{
+  "source_repo": "anthropics/skills",
+  "original_commit": "2c7ec5e78b8e5d43ea02e90bb8826f6b9f147b0c",
+  "current_commit": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
+  "method": "build_catalog.sanitized_file_bytes: declared credential neutralization and stable whitespace/newline formatting",
+  "files": [
+    {
+      "path": "agents/analyzer.md",
+      "original_sha256": "8ccce0d9755f7684277870e791ffb643b026d5dd4508e5c1bdc8dfec9e8532b5",
+      "current_sha256": "bf68f4cac5a56c673a928c2e6d619586c5b93ea364026ab37547772cb45a663a",
+      "canonical_same": true
+    },
+    {
+      "path": "agents/comparator.md",
+      "original_sha256": "ee90af43eb0dbe2fdadbb96d01f9776f387ed5c529ce083c22b8bec4e3ae10d3",
+      "current_sha256": "fe1fc9787c495d864c5d6eada47396478572325fde1b33a96d78bf4b849b7a3e",
+      "canonical_same": true
+    },
+    {
+      "path": "agents/grader.md",
+      "original_sha256": "6ec1c6950fcafa3e00d5e845b2498c5ea3e8f7f012bd9c6abad25425f3ee619c",
+      "current_sha256": "57134da0c1a4eea33fbd74a1c9c44aa814f07d6bc64de303edb586f941e5d21a",
+      "canonical_same": true
+    },
+    {
+      "path": "assets/eval_review.html",
+      "original_sha256": "2cc6071b35ac897b17cf0388ce240fd959396f35f95a1f7d3e74a248dd060d0f",
+      "current_sha256": "ce477dcc74dc1c0d1d3352646a79167b5a63634e936b1019160025065974e452",
+      "canonical_same": true
+    },
+    {
+      "path": "eval-viewer/generate_review.py",
+      "original_sha256": "44d97a35be977331b13b04932927b3beb285862a173f0f15dd052d4f31de5c76",
+      "current_sha256": "fc9d1b9243fe5ab6012ebd579bd76d0035de1b79fd3b969de114defab26478fb",
+      "canonical_same": true
+    },
+    {
+      "path": "eval-viewer/viewer.html",
+      "original_sha256": "46abd4e19e482b4aeebea24b135c2d88fb122a63346dbeab7fcecd83828a826d",
+      "current_sha256": "a53213426ee1100441d701a3a0d49cda7a842f992d2c36463f4d3cc0258575fa",
+      "canonical_same": true
+    },
+    {
+      "path": "LICENSE.txt",
+      "original_sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5",
+      "current_sha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+      "canonical_same": false
+    },
+    {
+      "path": "references/schemas.md",
+      "original_sha256": "5ef5fd3c1ac7baae965b5bda6b4f2cf6a191a2d712c7fef2a12dde84573b4833",
+      "current_sha256": "8e8876180a8989b406a4d3edddf875b04cdfd5805cc8616686d552b11ce4455f",
+      "canonical_same": true
+    },
+    {
+      "path": "scripts/__init__.py",
+      "original_sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "canonical_same": true
+    },
+    {
+      "path": "scripts/aggregate_benchmark.py",
+      "original_sha256": "16c5a53e4cbf55a679a42c244cba39cee463d99ce507ecc9fafc4cb4e0a133e0",
+      "current_sha256": "123ef128ea5ccc01a4b1ac212ef5567f21e9c13d3d240609780beeb3200c49aa",
+      "canonical_same": true
+    },
+    {
+      "path": "scripts/generate_report.py",
+      "original_sha256": "d90ec4cfc2dd539564edd332880fb7561309a1f0097d082de88e3101d6c8031e",
+      "current_sha256": "13df7118a3c50c83c4c3250a606d5f2b20b25a3d44cbc392b3d669ec75281453",
+      "canonical_same": true
+    },
+    {
+      "path": "scripts/improve_description.py",
+      "original_sha256": "a7968f851d1eeca91d325b7cf284ee8fdce9e408229c0578255fc85d859d495e",
+      "current_sha256": "87d864570220b699fac52da309d2d6efdb060647bfebc74f768128e646accf80",
+      "canonical_same": true
+    },
+    {
+      "path": "scripts/package_skill.py",
+      "original_sha256": "2cd9a9891844516fd30466eae30e4a9b9a199802522de3fb12f59a063fba58ab",
+      "current_sha256": "1a33059b0db1ef73375d46d513e5ea81369d2e8838c970597b0d52ddef8d1c0f",
+      "canonical_same": true
+    },
+    {
+      "path": "scripts/quick_validate.py",
+      "original_sha256": "6bce45afbce7f8df3af8d7bc62aa41881bd242ac8a1cdcbae2d1cd044d3e2151",
+      "current_sha256": "67cf5703402013936c8fb75ad6a1afecd8841d45cc5e606b634eb05825fde365",
+      "canonical_same": true
+    },
+    {
+      "path": "scripts/run_eval.py",
+      "original_sha256": "252ac58feedf233673d6a605661158db20806f724c7d1dd32c92ae316b24ef67",
+      "current_sha256": "43e3b8f80dbf69c343967ba77e268fae991d9fa3ed68b32a0ff02532cd48657f",
+      "canonical_same": true
+    },
+    {
+      "path": "scripts/run_loop.py",
+      "original_sha256": "85b36782ec856e066257cf8e917606945e6df098428005e17f8d60a5b6789c29",
+      "current_sha256": "7bd6f674203168520517eec94c55f493c0d154339b061b4d7c0f0dad187d0f21",
+      "canonical_same": true
+    },
+    {
+      "path": "scripts/utils.py",
+      "original_sha256": "b396f920bfbb422822427d800656ab125876e1e42ae242ed3c9380338f9d0833",
+      "current_sha256": "3af8ae62c40c73ab712207436a0d9a981e845f25c5a7040229eb189cc8e45bb1",
+      "canonical_same": true
+    },
+    {
+      "path": "SKILL.md",
+      "original_sha256": "e030e7685e26283b4a76f5202aa3ae8516fb41dde799be5ae8ea6393ec009fe9",
+      "current_sha256": "dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf",
+      "canonical_same": true
+    }
+  ],
+  "added_files": []
+}

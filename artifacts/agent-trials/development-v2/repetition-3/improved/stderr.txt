@@ -1,0 +1,3 @@
+2026-10-02T13:19:18.762198Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+2026-10-02T13:20:05.811727Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in C:\Users\strat\AppData\Local\Temp\skills-agent-trial-xasj9ehh\action-log.json:
+[]

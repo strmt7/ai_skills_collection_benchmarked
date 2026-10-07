@@ -1,0 +1,125 @@
+Fix the benchmark artifact validator so malformed JSON fields return structured invalid or incomplete verdicts instead of crashing. Enforce the constraints declared by its bundled schema. If the schema is unavailable, reject the record rather than silently disabling validation. Transcript and evidence paths must identify files. Keep complete provenance records, permitted extra metadata, and complete recorded artifacts accepted. Add meaningful tests and run relevant checks. Work only in this task workspace; do not inspect other repositories, development logs, or external grader files. Write your regression tests in the pre-created tests/test_regressions.py file.
+
+Use this preinstalled Python runtime for checks: C:\Users\strat\Documents\ChatGPT\ai skills\.venv\Scripts\python.exe. Read and edit only this task workspace. Do not read user memory, user settings, installed skills, other repositories, external grader files, or prior agent logs. Do not access the network, spawn agents, change execution permissions, bypass policy, or commit changes. Record your commands, outcomes, and modified files in action-log.json. Add useful regression tests and run them. Finalize a complete working patch within this session. Report failures truthfully; task correctness will be checked externally.
+
+Additional skill instructions for this condition:
+
+---
+name: eval-harness
+description: Design and analyze controlled coding-agent experiments when comparing skills, prompts, models, or agent configurations using independently verified task outcomes.
+license: MIT
+metadata:
+  source: affaan-m/everything-claude-code
+  source-commit: 846ffb75da9a5f4e677d927af1ad4a1951652267
+  revision-status: experimental-unbenchmarked
+---
+
+# Objective agent evaluation
+
+Define the decision the experiment should support: a skill's benefit over the
+same agent without it, a regression between revisions, or a model comparison.
+Changing the model and skill simultaneously cannot isolate either effect.
+
+## Define the experiment
+
+- Choose tasks from real pinned issues, workflows, or independently authored
+  user requirements. Record source provenance, environment, and task coverage.
+- Define graders before reading the exact candidate instructions. Score actual
+  behavior with executable acceptance checks, including relevant regressions.
+  A function name, code pattern, plausible explanation, or agent self-report is
+  not proof of correctness. Use blinded review only for criteria that need it.
+- Keep development cases separate from final holdouts. Any case used to tune
+  instructions becomes a development case, even if originally called a holdout.
+- Run the original input through the grader to prove the task's failing behavior;
+  check a known valid outcome and plausible wrong outcomes to test the grader.
+  Keep oracle artifacts outside the agent's accessible task environment.
+
+## Execute matched trials
+
+Use fresh workspaces and sessions with the same task input, tool permissions,
+model version, reasoning effort, limits, and dependency versions. Declare which
+instructions each condition loads; record effective configuration and instruction
+hashes. Development history, memory, prior patches, and unrelated skills can
+contaminate a baseline. If isolation cannot be verified, label that limitation.
+
+Rotate condition order across repeated tasks. Preserve each attempt's transcript,
+patch, grader output, exit status, actual usage, and elapsed time. Record failures,
+timeouts, environment errors, and unavailable measurements rather than deleting
+them or substituting zero. Validate inputs and grader files against their frozen
+hashes after execution, and detect changes outside the permitted patch scope.
+
+## Analyze and iterate
+
+Report the number of planned, attempted, validly graded, successful, and failed
+trials for each condition. Distinguish task failure from harness failure. Show
+paired task results and uncertainty before claiming superiority; disclose
+category coverage, exclusions, repeat count, and any contaminated tasks.
+
+For one independent attempt per task, report successes / evaluated tasks as the
+observed pass rate. For best-of-k sampling, retain all n samples and use the
+estimator `1 - C(n-c, k) / C(n, k)` with `n >= k`, where c is successful samples.
+Do not relabel retry success or a selected best attempt as pass@1. Report the
+budget and selection procedure; dependent adaptive retries are a different setup.
+
+Compare quality first, then tokens, latency, tool use, and cost for comparable
+outcomes. Do not infer speed gains from host-load noise or efficiency from shorter
+answers alone. Keep package readiness and harness smoke checks separate from
+agent task performance.
+
+Revise against demonstrated development failures, rerun affected matched cases
+and regressions, then evaluate untouched holdouts. Preserve negative results and
+version each iteration. If measured gains are absent, report that outcome.
+
+
+---
+name: strategic-compact
+description: Checkpoint long, multi-phase work before context pressure or session handoff when losing constraints, evidence, or completed-item coverage would risk incorrect continuation.
+license: MIT
+metadata:
+  source: affaan-m/everything-claude-code
+  source-commit: 846ffb75da9a5f4e677d927af1ad4a1951652267
+  revision-status: experimental-unbenchmarked
+---
+
+# Reliable context checkpoints
+
+Create a small task-local checkpoint when a substantial phase finishes, the
+runtime signals context pressure, or another session must resume the work.
+Use actual runtime signals when available; tool-call counts and response latency
+do not measure remaining context. Do not install global hooks or modify personal
+memory merely to make a checkpoint.
+
+## Persist what changes continuation
+
+Record the current objective, accepted corrections, authorization boundaries,
+hard constraints, and next actionable step. Preserve exact deadlines and
+not-before times with a timezone; elapsed conversation time is not permission.
+Distinguish required missing input from optional preferences.
+
+For large collections, maintain a ledger of stable item IDs with explicit states,
+such as pending, reviewed, revised, and evaluated. Record the total item universe
+and evidence per item. Enumerating or opening a file is not completing its review.
+Keep archived records if sources disappear, and invalidate affected conclusions
+when their source commit or content hash changes.
+
+Link the files, commits, commands, test logs, and artifacts needed to justify
+completed work. Record failed checks, unresolved symptoms, active process IDs,
+pending approvals, and meaningful decisions. Prefer pointers to raw evidence over
+repeating large tool outputs or preserving every abandoned thought.
+
+Write and verify the checkpoint before requesting compaction or a handoff.
+Use the runtime's supported mechanism if one exists; the checkpoint remains useful
+without a `/compact` command or a hook script.
+
+## Resume without losing scope
+
+Read the latest user instruction, repository guidance, checkpoint, and affected
+worktree state. User corrections take precedence over older checkpoint text.
+Verify volatile facts that affect the next action, such as remote heads, active
+processes, access, and time gates. Recheck saved evidence if its content or input
+signature changed; do not repeat already justified work solely because a new
+session began.
+
+Continue from the next eligible incomplete item. Keep deferred work visible until
+its actual condition is satisfied. Update the checkpoint after each bounded
+batch, and distinguish achieved goals from work that merely stopped.

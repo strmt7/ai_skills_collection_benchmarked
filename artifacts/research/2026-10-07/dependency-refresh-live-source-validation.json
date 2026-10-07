@@ -1,0 +1,8 @@
+{
+  "evidence_class": "exact-locked-upstream-dependency-graph-replay",
+  "errors": [
+    "Varnan-Tech/opendirectory: origin mismatch"
+  ],
+  "checked_sources": 1,
+  "checked_source_skills": 28
+}

@@ -1,0 +1,91 @@
+# Token integration analyzer: resource review, 2 October 2026
+
+Scope: the original mirrored `token-integration-analyzer/SKILL.md`, both complete
+assessment/report resources, and the current Trail of Bits entrypoint at
+`82fe8226252622fa807643bdca1710901198553a`. The source package contains three
+files. This is a partial research record: tool qualification, an authored
+correction, and independent agent trials remain pending. No efficacy claim.
+
+The skill concerns smart-contract assets, not model context tokens. Its present
+agent-infrastructure category is wrong. Correct the generator's semantic routing
+when the final folder refactor is authorized by the work plan. The current
+upstream description makes ERC20/ERC721 activation clearer, but the substantive
+example and assessment criteria still need the following corrections.
+
+## Standards and accounting
+
+[ERC-20](https://eips.ethereum.org/EIPS/eip-20) makes `name`, `symbol`, and
+`decimals` optional. Missing metadata is not itself a standards violation.
+`decimals` has a `uint8` return type; a policy requiring less than 255 must be
+explained as an application's arithmetic limit, not a standard requirement.
+Callers must handle a false transfer result. Zero-value transfers also have
+specified event behavior. Separate a token's standard compliance from a
+protocol's supported asset policy.
+
+[ERC-721](https://eips.ethereum.org/EIPS/eip-721) has optional metadata and
+enumeration extensions. It does not require `decimals`; an implementation may
+offer zero decimals for ERC20 compatibility. Treat identifiers as opaque,
+verify approved-operator behavior and receiver callbacks, and evaluate each
+integration's actual reachability and accounting requirements.
+
+[SafeERC20](https://docs.openzeppelin.com/contracts/5.x/api/token/erc20)
+supports false-return detection and tokens returning no value. A non-reverting
+empty-return call is assumed successful by the wrapper. This does not prove
+receipt of the requested amount or protect against hooks, rebases, fees,
+blocklists, or changing implementations. Temporary allowances require special
+care; `forceApprove` changes the standard allowance while a temporary allowance
+can remain active. Use the exact installed library behavior.
+
+The entrypoint's bare `IERC20(usdt).transferFrom(...)` example claims a silent
+deposit failure from missing return data. That conclusion needs a concrete
+compiler, contract implementation, and execution trace: ABI decoding can revert
+on missing data. Distinguish false, empty, malformed, and reverting return paths
+in an executable fixture; do not infer them from a ticker.
+
+Balance-delta accounting is a useful probe, not a universal repair. Verify
+incoming and outgoing fees, negative/positive rebases, rounding, share issuance,
+callbacks, reentrancy and transaction rollback. If the protocol does not support
+an asset property, enforce its documented rejection policy rather than claiming
+arbitrary-token compatibility.
+
+## Evidence and current behavior
+
+The example report simultaneously claims there is no proxy and describes a
+TransparentUpgradeableProxy. It gives audit/team assertions, file locations,
+test counts and fuzzing outcomes without supplied evidence. Replace these with
+an empty evidence-driven template; never repeat fictional counts as findings.
+Tool-generated properties are not completed fuzz campaigns. Report actual
+commands, versions, contracts covered, limits, exit status and reproducible
+counterexamples. Unsupported checks remain explicitly unverified.
+
+Preassigned critical severity for unlimited minting or blacklisting ignores
+intended privileges, attacker reachability and the consuming protocol's policy.
+Describe the capability, authorized principal, exploit conditions and impact
+before assigning severity. Jurisdiction or team reputation is not technical
+proof of contract safety. Holder distribution requires an identified data source,
+sampling block, denominator and concentration method; an ERC20 interface alone
+does not enumerate all holders.
+
+Ticker lists are discovery leads, not current contract facts. Bind chain ID,
+asset address, block/hash, bytecode, implementation and administrator to every
+on-chain conclusion. Verify caller assumptions against that implementation.
+Read-only inspection is the default; broadcasts require task authorization.
+Resolve compiler, Slither/property generator, library and RPC/client versions
+before invoking tools. The legacy Web3 constructor example still needs current
+SDK qualification.
+
+## Independent evaluation design still to implement
+
+Define task outcomes before writing an overlay: standards-conforming missing
+metadata and optional NFT extensions; false/no-return/malformed/revert transfer
+paths; fee accounting and reentrancy rollback; explicit asset rejection; proxy
+identity at a pinned block; incomplete audit evidence and contradictory reports.
+Use executable contracts and objectively checked accounting/state invariants.
+Keep hostile grader submissions outside the trusted oracle process. Pair fresh
+default/original/current-upstream/revised trials and record every attempt.
+
+Retain Trail of Bits attribution and its CC-BY-SA-4.0 license for any derivative
+overlay. The reviewed current source license SHA-256 is
+`7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297`;
+component/license scope and complete source provenance must be retained when
+publishing. Do not relabel the derivative MIT.

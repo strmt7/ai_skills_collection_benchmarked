@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "source_commit": "2c7ec5e78b8e5d43ea02e90bb8826f6b9f147b0c",
+  "reviewed_upstream_commit": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
+  "resources": [
+    {
+      "resource": "examples/console_logging.py",
+      "mirror_raw_sha256": "e4236735be7684dd66817881ed9e25b508d1fb602f3635fc8fe4489a08ce5d14",
+      "latest_raw_sha256": "ea46877289acb82da7e7ce59d0bc37c8977cd57e2a006d0c88d7a1c625bf95da",
+      "normalized_text_equal": false,
+      "canonical_format_text_equal": true
+    },
+    {
+      "resource": "examples/element_discovery.py",
+      "mirror_raw_sha256": "aca3ffbf6d6f0692395d111c1cc2f61a5d952bb2a0fbab6c8d00514219912691",
+      "latest_raw_sha256": "d63c89604a22f8845d724e95dda45db49b1bf57c25ce0a83afbb7b8da3d402f0",
+      "normalized_text_equal": false,
+      "canonical_format_text_equal": true
+    },
+    {
+      "resource": "examples/static_html_automation.py",
+      "mirror_raw_sha256": "3ca15c3aab69693e5f02c554b8bd501bd8134ff1d82136466f23369b5cf348b2",
+      "latest_raw_sha256": "9d533aafb875ee3ab8b8ebf8f5b9003ac8d999da3d09b285cce252e623140064",
+      "normalized_text_equal": false,
+      "canonical_format_text_equal": true
+    },
+    {
+      "resource": "LICENSE.txt",
+      "mirror_raw_sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5",
+      "latest_raw_sha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+      "normalized_text_equal": false,
+      "canonical_format_text_equal": false
+    },
+    {
+      "resource": "scripts/with_server.py",
+      "mirror_raw_sha256": "bad569c06e313d8a4290bbbef37bd53673ac7515754b04f5c67ddc55f7649094",
+      "latest_raw_sha256": "b0dcf4918935b795f4eda9821579b9902119235ff4447f687a30286e7d0925fd",
+      "normalized_text_equal": false,
+      "canonical_format_text_equal": true
+    },
+    {
+      "resource": "SKILL.md",
+      "mirror_raw_sha256": "4f50750c77f8c7972da336df8ac892943745a3fdbd739c55a8627949839cd340",
+      "latest_raw_sha256": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2",
+      "normalized_text_equal": false,
+      "canonical_format_text_equal": true
+    }
+  ],
+  "additional_upstream_resources": [],
+  "agent_efficacy_scored": false,
+  "comparison_note": "Raw bytes and universal-newline-only comparison retained. Canonical formatting additionally normalizes trailing whitespace and final newline, exactly as declared by mirroring. License attribution is the only semantic difference."
+}

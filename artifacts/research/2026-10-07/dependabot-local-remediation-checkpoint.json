@@ -1,0 +1,753 @@
+{
+  "schema_version": 1,
+  "evidence_class": "open-alert-to-local-lock-advisory-range-crosscheck",
+  "hosted_open_alerts": 34,
+  "locally_vulnerable_alerts": 0,
+  "findings_suppressed": false,
+  "github_fix_closure_verified": false,
+  "source_snapshot_sha256": "72df163a8fd2604575daf8abecac6b5c58760bb32f73fb8271d79444c318ca53",
+  "rows": [
+    {
+      "number": 39,
+      "advisory": "GHSA-gh4c-6fx4-qh6g",
+      "severity": "medium",
+      "package": {
+        "ecosystem": "pip",
+        "name": "urllib3"
+      },
+      "manifest_path": "requirements-lock.txt",
+      "vulnerable_version_range": ">= 2.6.2, < 2.8.0",
+      "first_patched_version": {
+        "identifier": "2.8.0"
+      },
+      "local_locked_versions": [
+        "2.8.0"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/39"
+    },
+    {
+      "number": 38,
+      "advisory": "GHSA-qw65-cvwx-89v3",
+      "severity": "high",
+      "package": {
+        "ecosystem": "npm",
+        "name": "fast-uri"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": ">= 3.0.0, < 3.1.7",
+      "first_patched_version": {
+        "identifier": "3.1.7"
+      },
+      "local_locked_versions": [
+        "3.1.8"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/38"
+    },
+    {
+      "number": 37,
+      "advisory": "GHSA-rgj7-g3m4-5g8c",
+      "severity": "high",
+      "package": {
+        "ecosystem": "npm",
+        "name": "sharp"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": "< 0.35.4",
+      "first_patched_version": {
+        "identifier": "0.35.4"
+      },
+      "local_locked_versions": [
+        "0.35.5"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/37"
+    },
+    {
+      "number": 36,
+      "advisory": "GHSA-rgj7-g3m4-5g8c",
+      "severity": "high",
+      "package": {
+        "ecosystem": "npm",
+        "name": "sharp"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package.json",
+      "vulnerable_version_range": "< 0.35.4",
+      "first_patched_version": {
+        "identifier": "0.35.4"
+      },
+      "local_locked_versions": [
+        "0.35.5"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/36"
+    },
+    {
+      "number": 35,
+      "advisory": "GHSA-jqff-g426-hqxp",
+      "severity": "high",
+      "package": {
+        "ecosystem": "npm",
+        "name": "fast-uri"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": ">= 3.0.0, < 3.1.6",
+      "first_patched_version": {
+        "identifier": "3.1.6"
+      },
+      "local_locked_versions": [
+        "3.1.8"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/35"
+    },
+    {
+      "number": 34,
+      "advisory": "GHSA-f65p-4m7j-42xc",
+      "severity": "high",
+      "package": {
+        "ecosystem": "npm",
+        "name": "fast-uri"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": ">= 3.0.0, < 3.1.6",
+      "first_patched_version": {
+        "identifier": "3.1.6"
+      },
+      "local_locked_versions": [
+        "3.1.8"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/34"
+    },
+    {
+      "number": 33,
+      "advisory": "GHSA-rgw5-rvv9-x895",
+      "severity": "high",
+      "package": {
+        "ecosystem": "npm",
+        "name": "brace-expansion"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": ">= 2.0.0, < 2.1.4",
+      "first_patched_version": {
+        "identifier": "2.1.4"
+      },
+      "local_locked_versions": [],
+      "local_vulnerable": false,
+      "local_resolution": "package-absent",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/33"
+    },
+    {
+      "number": 32,
+      "advisory": "GHSA-3jxr-9vmj-r5cp",
+      "severity": "high",
+      "package": {
+        "ecosystem": "npm",
+        "name": "brace-expansion"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": ">= 2.0.0, < 2.1.2",
+      "first_patched_version": {
+        "identifier": "2.1.2"
+      },
+      "local_locked_versions": [],
+      "local_vulnerable": false,
+      "local_resolution": "package-absent",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/32"
+    },
+    {
+      "number": 31,
+      "advisory": "GHSA-q3j6-qgpj-74h6",
+      "severity": "high",
+      "package": {
+        "ecosystem": "npm",
+        "name": "fast-uri"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": ">= 3.0.0, <= 3.1.0",
+      "first_patched_version": {
+        "identifier": "3.1.1"
+      },
+      "local_locked_versions": [
+        "3.1.8"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/31"
+    },
+    {
+      "number": 30,
+      "advisory": "GHSA-v39h-62p7-jpjc",
+      "severity": "high",
+      "package": {
+        "ecosystem": "npm",
+        "name": "fast-uri"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": ">= 3.0.0, <= 3.1.1",
+      "first_patched_version": {
+        "identifier": "3.1.2"
+      },
+      "local_locked_versions": [
+        "3.1.8"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/30"
+    },
+    {
+      "number": 29,
+      "advisory": "GHSA-7p8r-x3mc-p8w7",
+      "severity": "high",
+      "package": {
+        "ecosystem": "npm",
+        "name": "fast-uri"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": ">= 3.0.0, < 3.1.5",
+      "first_patched_version": {
+        "identifier": "3.1.5"
+      },
+      "local_locked_versions": [
+        "3.1.8"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/29"
+    },
+    {
+      "number": 28,
+      "advisory": "GHSA-mh99-v99m-4gvg",
+      "severity": "high",
+      "package": {
+        "ecosystem": "npm",
+        "name": "brace-expansion"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": ">= 2.0.0, < 2.1.3",
+      "first_patched_version": {
+        "identifier": "2.1.3"
+      },
+      "local_locked_versions": [],
+      "local_vulnerable": false,
+      "local_resolution": "package-absent",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/28"
+    },
+    {
+      "number": 26,
+      "advisory": "GHSA-f88m-g3jw-g9cj",
+      "severity": "high",
+      "package": {
+        "ecosystem": "npm",
+        "name": "sharp"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": "< 0.35.0",
+      "first_patched_version": {
+        "identifier": "0.35.0"
+      },
+      "local_locked_versions": [
+        "0.35.5"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/26"
+    },
+    {
+      "number": 25,
+      "advisory": "GHSA-v2hh-gcrm-f6hx",
+      "severity": "high",
+      "package": {
+        "ecosystem": "npm",
+        "name": "fast-uri"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": ">= 3.0.0, <= 3.1.3",
+      "first_patched_version": {
+        "identifier": "3.1.4"
+      },
+      "local_locked_versions": [
+        "3.1.8"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/25"
+    },
+    {
+      "number": 24,
+      "advisory": "GHSA-4c8g-83qw-93j6",
+      "severity": "high",
+      "package": {
+        "ecosystem": "npm",
+        "name": "fast-uri"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": ">= 3.0.0, < 3.1.3",
+      "first_patched_version": {
+        "identifier": "3.1.3"
+      },
+      "local_locked_versions": [
+        "3.1.8"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/24"
+    },
+    {
+      "number": 23,
+      "advisory": "GHSA-f88m-g3jw-g9cj",
+      "severity": "high",
+      "package": {
+        "ecosystem": "npm",
+        "name": "sharp"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package.json",
+      "vulnerable_version_range": "< 0.35.0",
+      "first_patched_version": {
+        "identifier": "0.35.0"
+      },
+      "local_locked_versions": [
+        "0.35.5"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/23"
+    },
+    {
+      "number": 22,
+      "advisory": "GHSA-j3f2-48v5-ccww",
+      "severity": "medium",
+      "package": {
+        "ecosystem": "npm",
+        "name": "protobufjs"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": ">= 7.5.0, <= 7.6.4",
+      "first_patched_version": {
+        "identifier": "7.6.5"
+      },
+      "local_locked_versions": [
+        "7.6.6"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/22"
+    },
+    {
+      "number": 21,
+      "advisory": "GHSA-96hv-2xvq-fx4p",
+      "severity": "high",
+      "package": {
+        "ecosystem": "npm",
+        "name": "ws"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": ">= 8.0.0, < 8.21.0",
+      "first_patched_version": {
+        "identifier": "8.21.0"
+      },
+      "local_locked_versions": [
+        "8.22.0"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/21"
+    },
+    {
+      "number": 20,
+      "advisory": "GHSA-6v7p-g79w-8964",
+      "severity": "high",
+      "package": {
+        "ecosystem": "pip",
+        "name": "msgpack"
+      },
+      "manifest_path": "requirements-lock.txt",
+      "vulnerable_version_range": "<= 1.2.0",
+      "first_patched_version": {
+        "identifier": "1.2.1"
+      },
+      "local_locked_versions": [
+        "1.2.3"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/20"
+    },
+    {
+      "number": 19,
+      "advisory": "GHSA-wcpc-wj8m-hjx6",
+      "severity": "high",
+      "package": {
+        "ecosystem": "npm",
+        "name": "protobufjs"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": "<= 7.6.0",
+      "first_patched_version": {
+        "identifier": "7.6.1"
+      },
+      "local_locked_versions": [
+        "7.6.6"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/19"
+    },
+    {
+      "number": 18,
+      "advisory": "GHSA-f38q-mgvj-vph7",
+      "severity": "medium",
+      "package": {
+        "ecosystem": "npm",
+        "name": "protobufjs"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": "<= 7.6.2",
+      "first_patched_version": {
+        "identifier": "7.6.3"
+      },
+      "local_locked_versions": [
+        "7.6.6"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/18"
+    },
+    {
+      "number": 17,
+      "advisory": "GHSA-jggg-4jg4-v7c6",
+      "severity": "medium",
+      "package": {
+        "ecosystem": "npm",
+        "name": "protobufjs"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": "<= 7.5.7",
+      "first_patched_version": {
+        "identifier": "7.5.8"
+      },
+      "local_locked_versions": [
+        "7.6.6"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/17"
+    },
+    {
+      "number": 16,
+      "advisory": "GHSA-58qx-3vcg-4xpx",
+      "severity": "medium",
+      "package": {
+        "ecosystem": "npm",
+        "name": "ws"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": ">= 8.0.0, < 8.20.1",
+      "first_patched_version": {
+        "identifier": "8.20.1"
+      },
+      "local_locked_versions": [
+        "8.22.0"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/16"
+    },
+    {
+      "number": 15,
+      "advisory": "GHSA-65pc-fj4g-8rjx",
+      "severity": "medium",
+      "package": {
+        "ecosystem": "pip",
+        "name": "idna"
+      },
+      "manifest_path": "requirements-lock.txt",
+      "vulnerable_version_range": "< 3.15",
+      "first_patched_version": {
+        "identifier": "3.15"
+      },
+      "local_locked_versions": [
+        "3.20"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/15"
+    },
+    {
+      "number": 14,
+      "advisory": "GHSA-2pr8-phx7-x9h3",
+      "severity": "medium",
+      "package": {
+        "ecosystem": "npm",
+        "name": "protobufjs"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": "<= 7.5.5",
+      "first_patched_version": {
+        "identifier": "7.5.6"
+      },
+      "local_locked_versions": [
+        "7.6.6"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/14"
+    },
+    {
+      "number": 13,
+      "advisory": "GHSA-66ff-xgx4-vchm",
+      "severity": "high",
+      "package": {
+        "ecosystem": "npm",
+        "name": "protobufjs"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": "<= 7.5.5",
+      "first_patched_version": {
+        "identifier": "7.5.6"
+      },
+      "local_locked_versions": [
+        "7.6.6"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/13"
+    },
+    {
+      "number": 12,
+      "advisory": "GHSA-fx83-v9x8-x52w",
+      "severity": "medium",
+      "package": {
+        "ecosystem": "npm",
+        "name": "protobufjs"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": "<= 7.5.5",
+      "first_patched_version": {
+        "identifier": "7.5.6"
+      },
+      "local_locked_versions": [
+        "7.6.6"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/12"
+    },
+    {
+      "number": 11,
+      "advisory": "GHSA-75px-5xx7-5xc7",
+      "severity": "high",
+      "package": {
+        "ecosystem": "npm",
+        "name": "protobufjs"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": "<= 7.5.5",
+      "first_patched_version": {
+        "identifier": "7.5.6"
+      },
+      "local_locked_versions": [
+        "7.6.6"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/11"
+    },
+    {
+      "number": 10,
+      "advisory": "GHSA-jvwf-75h9-cwgg",
+      "severity": "high",
+      "package": {
+        "ecosystem": "npm",
+        "name": "protobufjs"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": "<= 7.5.5",
+      "first_patched_version": {
+        "identifier": "7.5.6"
+      },
+      "local_locked_versions": [
+        "7.6.6"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/10"
+    },
+    {
+      "number": 9,
+      "advisory": "GHSA-685m-2w69-288q",
+      "severity": "high",
+      "package": {
+        "ecosystem": "npm",
+        "name": "protobufjs"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": "<= 7.5.5",
+      "first_patched_version": {
+        "identifier": "7.5.6"
+      },
+      "local_locked_versions": [
+        "7.6.6"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/9"
+    },
+    {
+      "number": 8,
+      "advisory": "GHSA-q6x5-8v7m-xcrf",
+      "severity": "medium",
+      "package": {
+        "ecosystem": "npm",
+        "name": "@protobufjs/utf8"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": "<= 1.1.0",
+      "first_patched_version": {
+        "identifier": "1.1.1"
+      },
+      "local_locked_versions": [
+        "1.1.2"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/8"
+    },
+    {
+      "number": 7,
+      "advisory": "GHSA-q6x5-8v7m-xcrf",
+      "severity": "medium",
+      "package": {
+        "ecosystem": "npm",
+        "name": "protobufjs"
+      },
+      "manifest_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json",
+      "vulnerable_version_range": "<= 7.5.5",
+      "first_patched_version": {
+        "identifier": "7.5.6"
+      },
+      "local_locked_versions": [
+        "7.6.6"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/7"
+    },
+    {
+      "number": 6,
+      "advisory": "GHSA-qccp-gfcp-xxvc",
+      "severity": "high",
+      "package": {
+        "ecosystem": "pip",
+        "name": "urllib3"
+      },
+      "manifest_path": "requirements-lock.txt",
+      "vulnerable_version_range": ">= 1.23, < 2.7.0",
+      "first_patched_version": {
+        "identifier": "2.7.0"
+      },
+      "local_locked_versions": [
+        "2.8.0"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/6"
+    },
+    {
+      "number": 5,
+      "advisory": "GHSA-mf9v-mfxr-j63j",
+      "severity": "high",
+      "package": {
+        "ecosystem": "pip",
+        "name": "urllib3"
+      },
+      "manifest_path": "requirements-lock.txt",
+      "vulnerable_version_range": ">= 2.6.0, < 2.7.0",
+      "first_patched_version": {
+        "identifier": "2.7.0"
+      },
+      "local_locked_versions": [
+        "2.8.0"
+      ],
+      "local_vulnerable": false,
+      "local_resolution": "outside-advisory-range",
+      "hosted_state_at_snapshot": "open",
+      "alert_dismissed": false,
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/security/dependabot/5"
+    }
+  ]
+}

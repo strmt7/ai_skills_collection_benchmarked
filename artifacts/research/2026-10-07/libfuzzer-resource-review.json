@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "evidence_class": "complete-libfuzzer-resource-and-selected-stable-contract-review",
+  "skill_id": "trailofbits-skills-plugins-testing-handbook-skills-skills-libfuzzer-skill-md",
+  "original_source_commit": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+  "original_resources": {
+    "SKILL.md": {
+      "status": "reviewed",
+      "bytes": 24720,
+      "sha256": "a3f695f7a81a406ac60609d4262a7e2afe4355a665c79545d0d3b745dd875cde",
+      "review_scope": "Complete read: entrypoint and byte domain, provider contracts, compiler/library/CMake builds, corpus/minimization/dictionaries, fork/jobs/resource bounds, sanitizer and source coverage examples, libpng/division examples, mutator/performance/troubleshooting and all links."
+    }
+  },
+  "fetched_upstream_commit": "82fe8226252622fa807643bdca1710901198553a",
+  "fresh_remote_head_matches": true,
+  "upstream_resources": [
+    {
+      "path": "agents/openai.yaml",
+      "sha256": "0edbd68f53abc679b392ac26315d4b3fb0647119a27babeba05b59120f806cb7",
+      "bytes": 234,
+      "reviewed": true
+    },
+    {
+      "path": "assets/trail-of-bits-mark.svg",
+      "sha256": "4bf74c789b38dcf6ad762c136b6832363d27ae19fbaa9a18ec18d66ecce6ca05",
+      "bytes": 3084,
+      "reviewed": true
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "56b2c68b193f7fed4ae00ade6c6395196d44612d140ad51de43d150404dde2eb",
+      "bytes": 24234,
+      "reviewed": true
+    }
+  ],
+  "upstream_technical_body_unchanged": true,
+  "stable_contracts": [
+    {
+      "path": "FuzzedDataProvider.h",
+      "sha256": "a861868b3c170eb7e751d63024028bf2ee2d9c8faec6b38ec4b434c2d736f5b2",
+      "bytes": 16093,
+      "review_scope": "Inspected provider terminator/includes and stable RSS/stack/job/worker flag declarations, not a complete implementation audit.",
+      "source_commit": "0d261d1ca552c95a8f007e061c787ac7132fbcbc"
+    },
+    {
+      "path": "FuzzerFlags.def",
+      "sha256": "fd1bb22acad5dd8d4c45c993f4ac5d1c7606de5c846d2df455a537a239448f6c",
+      "bytes": 13148,
+      "review_scope": "Inspected provider terminator/includes and stable RSS/stack/job/worker flag declarations, not a complete implementation audit.",
+      "source_commit": "0d261d1ca552c95a8f007e061c787ac7132fbcbc"
+    },
+    {
+      "path": "sanitizer_flags.inc",
+      "sha256": "20bd3d717e3a2c6fd10c6a1e586b015372df72def8b6327a63fc4b754f6d8f88",
+      "bytes": 15318,
+      "review_scope": "Inspected provider terminator/includes and stable RSS/stack/job/worker flag declarations, not a complete implementation audit.",
+      "source_commit": "0d261d1ca552c95a8f007e061c787ac7132fbcbc"
+    }
+  ],
+  "primary_release": {
+    "release": "llvmorg-23.1.3",
+    "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.3/LLVM-23.1.3-Linux-X64.tar.zst",
+    "file": "LLVM-23.1.3-Linux-X64.tar.zst",
+    "size": 1188398549,
+    "sha256": "14d2f701eb68fb799001bdea6231048f3990690fa2f406d563555ff8f744daba",
+    "passed": true,
+    "executed": false,
+    "agent_efficacy_scored": false
+  },
+  "native_runtime_qualified_by_this_review": false,
+  "agent_efficacy_scored": false
+}

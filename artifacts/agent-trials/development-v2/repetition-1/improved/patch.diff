@@ -1,0 +1,141 @@
+--- a/tools/check_benchmark_artifact.py
++++ b/tools/check_benchmark_artifact.py
+@@ -6,7 +6,7 @@
+ 1. A structural pass driven by ``evaluators/benchmark_run_artifact.schema.json``
+    (JSON Schema Draft 2020-12). The implementation is pure Python and only
+    walks the subset of keywords that the schema actually uses:
+-   ``type``, ``enum``, ``pattern``, ``required``, ``properties``,
++   ``type``, ``enum``, ``pattern``, ``minLength``, ``required``, ``properties``,
+    ``additionalProperties``, ``items``, and ``minItems``. Each error carries
+    a JSON-Pointer style path (e.g. ``/evidence/artifact_paths/0``) so that
+    callers can pinpoint which field is broken.
+@@ -21,7 +21,7 @@
+ 
+ - ``artifact_complete`` -- no errors
+ - ``artifact_incomplete`` -- domain-level problems
+-- ``artifact_invalid`` -- the file cannot be parsed or the root is wrong type
++- ``artifact_invalid`` -- unreadable JSON/schema or schema constraint violations
+ 
+ CLI:
+ 
+@@ -110,6 +110,14 @@
+     return isinstance(value, list) and bool(value) and all(isinstance(item, str) and item for item in value)
+ 
+ 
++def _artifact_file_exists(base: Path, value: str) -> bool:
++    """Reject directories and malformed paths as missing file evidence."""
++    try:
++        return resolve_artifact_path(base, value).is_file()
++    except (OSError, ValueError):
++        return False
++
++
+ def _pointer(parts: Iterable[str | int]) -> str:
+     out = []
+     for part in parts:
+@@ -167,13 +175,23 @@
+     if "pattern" in schema and isinstance(instance, str) and not re.search(schema["pattern"], instance):
+         errors.append(f"{_pointer(path) or '/'}: value does not match pattern {schema['pattern']!r}")
+ 
++    if isinstance(instance, str) and "minLength" in schema and len(instance) < schema["minLength"]:
++        errors.append(f"{_pointer(path) or '/'}: expected at least {schema['minLength']} characters, got {len(instance)}")
++
+     if isinstance(instance, dict):
+         for required in schema.get("required", []) or []:
+             if required not in instance:
+                 errors.append(f"{_pointer(path + [required])}: missing required field")
+-        for key, sub_schema in (schema.get("properties") or {}).items():
++        properties = schema.get("properties") or {}
++        for key, sub_schema in properties.items():
+             if key in instance and isinstance(sub_schema, dict):
+                 _schema_walk(sub_schema, instance[key], path + [key], errors)
++        additional = schema.get("additionalProperties", True)
++        for key in instance.keys() - properties.keys():
++            if additional is False:
++                errors.append(f"{_pointer(path + [key])}: additional property is not allowed")
++            elif isinstance(additional, dict):
++                _schema_walk(additional, instance[key], path + [key], errors)
+ 
+     if isinstance(instance, list):
+         min_items = schema.get("minItems")
+@@ -188,7 +206,7 @@
+ def _schema_errors(artifact: Any) -> list[str]:
+     schema = _load_schema()
+     if schema is None:
+-        return []
++        return [f"cannot load artifact schema: {SCHEMA_PATH}"]
+     errors: list[str] = []
+     _schema_walk(schema, artifact, [], errors)
+     return errors
+@@ -226,10 +244,10 @@
+             "warnings": warnings,
+         }
+ 
+-    # Layer 1: schema-driven structural pre-pass. Converts missing-required /
+-    # wrong-type problems into precise JSON-Pointer messages. We still need the
+-    # legacy top-level check below so that callers that skip the schema (e.g.
+-    # tests that run without an evaluators/ directory) still fail safely.
++    # Layer 1: schema-driven structural pre-pass. Domain checks may only run on
++    # structurally valid records: malformed fields cannot safely be used as
++    # dictionary keys, mappings, or filesystem paths. An unavailable schema
++    # produces an error instead of silently disabling this gate.
+     errors: list[str] = []
+     errors.extend(_schema_errors(artifact))
+ 
+@@ -238,8 +256,8 @@
+         msg = f"missing required field: {key}"
+         if msg not in errors and f"/{key}: missing required field" not in errors:
+             errors.append(msg)
+-    # If the artifact is missing basic fields, stop before domain checks.
+-    if legacy_missing:
++    # Keep the legacy required-field check, but stop on any structural error.
++    if errors:
+         return {
+             "verdict": "artifact_invalid",
+             "errors": errors,
+@@ -321,7 +339,7 @@
+     transcript = execution.get("commands_or_transcript_path") if isinstance(execution, dict) else None
+     if not isinstance(transcript, str) or not transcript:
+         errors.append("execution.commands_or_transcript_path must be a path")
+-    elif not resolve_artifact_path(base, transcript).exists():
++    elif not _artifact_file_exists(base, transcript):
+         errors.append(f"missing transcript artifact: {transcript}")
+ 
+     input_snapshot = artifact["input_snapshot"]
+@@ -340,7 +358,7 @@
+         errors.append("evidence.artifact_paths must be a non-empty string list")
+     else:
+         assert isinstance(artifact_paths, list)  # narrowed by non_empty_list
+-        missing = [path for path in artifact_paths if not resolve_artifact_path(base, path).exists()]
++        missing = [path for path in artifact_paths if not _artifact_file_exists(base, path)]
+         if missing:
+             errors.append(f"missing evidence artifact paths: {missing}")
+     if not non_empty_list(citations_or_paths):
+@@ -364,7 +382,7 @@
+             else:
+                 assert isinstance(screenshot_paths, list)  # narrowed by non_empty_list
+                 missing_screenshots = [
+-                    path for path in screenshot_paths if not resolve_artifact_path(base, path).exists()
++                    path for path in screenshot_paths if not _artifact_file_exists(base, path)
+                 ]
+                 if missing_screenshots:
+                     errors.append(f"missing visual screenshot paths: {missing_screenshots}")
+@@ -383,14 +401,14 @@
+                 errors.append("context/memory evidence requires delayed_recall_probes")
+             before = memory.get("token_usage_before")
+             after = memory.get("token_usage_after")
+-            if not isinstance(before, int) or not isinstance(after, int) or before <= 0 or after <= 0:
++            if type(before) is not int or type(after) is not int or before <= 0 or after <= 0:
+                 errors.append("context/memory evidence requires positive integer token usage before and after")
+-            elif after > before and not isinstance(memory.get("quality_delta"), (int, float)):
++            elif after > before and type(memory.get("quality_delta")) not in (int, float):
+                 errors.append("token usage increased without numeric quality_delta")
+             if (
+                 requirements.get("token_efficiency_claim") is True
+-                and isinstance(before, int)
+-                and isinstance(after, int)
++                and type(before) is int
++                and type(after) is int
+                 and after > before
+             ):
+                 errors.append("token_efficiency_claim requires token_usage_after <= token_usage_before")

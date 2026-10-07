@@ -1,0 +1,723 @@
+{
+  "schema_version": 1,
+  "evidence_class": "independent-container-backend-controls",
+  "controls": [
+    {
+      "control": "known-good",
+      "passed": true,
+      "code_sha256": "ce414210173cb42fa0193e5307ef707bbbb4db727e033f57edbf84a15a1087f0",
+      "expected_execution_status": "completed",
+      "execution": {
+        "status": "completed",
+        "container_name": "skills-invoke-41f7625bebbd4ad2834048d72d6a70d7",
+        "image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+        "scored": false,
+        "candidate_response_is_untrusted": true,
+        "cleanup_verified": true,
+        "request_sha256": "aa189c0a9d63b001fcd707412db62cf4f6336df77c5c497f971afc80bc102819",
+        "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+        "resource_profile": "python-small",
+        "submission_sha256": {
+          "candidate.py": "4e77b31b47d6855f1d6da4ff447df22001e761254a1c073ca3c53357b9a84341"
+        },
+        "container_id": "7f192e76c43003a08b1cb403c8101ef31e06c9cea95f176978c8608f01d92246",
+        "isolation_checks": {
+          "errors": [],
+          "passed": true,
+          "observed_user": "65534:65534",
+          "observed_image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+          "observed_ownership_token": "41f7625bebbd4ad2834048d72d6a70d7",
+          "resolved_image_id": "sha256:284cda8648f59f87e9468ec9d5652064dc2cd5b7d3fce342c2d3825ca1de6353",
+          "observed_host_constraints": {
+            "NetworkMode": "none",
+            "IpcMode": "none",
+            "ReadonlyRootfs": true,
+            "Memory": 536870912,
+            "MemorySwap": 536870912,
+            "NanoCpus": 1000000000,
+            "PidsLimit": 64,
+            "Privileged": false,
+            "Init": true,
+            "CapDrop": [
+              "ALL"
+            ],
+            "CapAdd": null,
+            "SecurityOpt": [
+              "no-new-privileges"
+            ],
+            "LogConfig": {
+              "Type": "none",
+              "Config": {}
+            },
+            "Tmpfs": {
+              "/tmp": "rw,noexec,nosuid,size=128m"
+            },
+            "Devices": [],
+            "DeviceRequests": null,
+            "VolumesFrom": null
+          },
+          "observed_mounts": [
+            {
+              "Destination": "/submission",
+              "Type": "bind",
+              "RW": false
+            },
+            {
+              "Destination": "/worker",
+              "Type": "bind",
+              "RW": false
+            }
+          ]
+        },
+        "setup_elapsed_seconds": 0.36310019999996257,
+        "runtime_elapsed_seconds": 1.1120745000000625,
+        "returncode": 0,
+        "candidate_response": {
+          "worker_status": "returned",
+          "result": 4
+        },
+        "captured_bytes": 43,
+        "stderr": "",
+        "elapsed_seconds": 1.6450737000000117
+      }
+    },
+    {
+      "control": "known-bad",
+      "passed": true,
+      "code_sha256": "57ff791f5415cfc060e5a551577eaee9ccd986785bdfdd78de0246f391f4ee45",
+      "expected_execution_status": "completed",
+      "execution": {
+        "status": "completed",
+        "container_name": "skills-invoke-7b73676d64064a498db386657de34a29",
+        "image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+        "scored": false,
+        "candidate_response_is_untrusted": true,
+        "cleanup_verified": true,
+        "request_sha256": "aa189c0a9d63b001fcd707412db62cf4f6336df77c5c497f971afc80bc102819",
+        "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+        "resource_profile": "python-small",
+        "submission_sha256": {
+          "candidate.py": "748cb2f0277d59d12752b9ece176b452aab1ddc789f06a720596239bb10493bb"
+        },
+        "container_id": "c9d5fcf30bf8c8cc381090ec4dee9448d5d9faace1b5fc525f2775898a715891",
+        "isolation_checks": {
+          "errors": [],
+          "passed": true,
+          "observed_user": "65534:65534",
+          "observed_image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+          "observed_ownership_token": "7b73676d64064a498db386657de34a29",
+          "resolved_image_id": "sha256:284cda8648f59f87e9468ec9d5652064dc2cd5b7d3fce342c2d3825ca1de6353",
+          "observed_host_constraints": {
+            "NetworkMode": "none",
+            "IpcMode": "none",
+            "ReadonlyRootfs": true,
+            "Memory": 536870912,
+            "MemorySwap": 536870912,
+            "NanoCpus": 1000000000,
+            "PidsLimit": 64,
+            "Privileged": false,
+            "Init": true,
+            "CapDrop": [
+              "ALL"
+            ],
+            "CapAdd": null,
+            "SecurityOpt": [
+              "no-new-privileges"
+            ],
+            "LogConfig": {
+              "Type": "none",
+              "Config": {}
+            },
+            "Tmpfs": {
+              "/tmp": "rw,noexec,nosuid,size=128m"
+            },
+            "Devices": [],
+            "DeviceRequests": null,
+            "VolumesFrom": null
+          },
+          "observed_mounts": [
+            {
+              "Destination": "/submission",
+              "Type": "bind",
+              "RW": false
+            },
+            {
+              "Destination": "/worker",
+              "Type": "bind",
+              "RW": false
+            }
+          ]
+        },
+        "setup_elapsed_seconds": 0.3595795999999609,
+        "runtime_elapsed_seconds": 0.4234483000000182,
+        "returncode": 0,
+        "candidate_response": {
+          "worker_status": "returned",
+          "result": 999
+        },
+        "captured_bytes": 45,
+        "stderr": "",
+        "elapsed_seconds": 0.9563485999999557
+      }
+    },
+    {
+      "control": "missing-function",
+      "passed": true,
+      "code_sha256": "585c93666fcb046b7b264d3fa73202aa2a38254ae82a4b3ba19e873c2d5a9886",
+      "expected_execution_status": "worker_error",
+      "execution": {
+        "status": "worker_error",
+        "container_name": "skills-invoke-a11beee385534c74b1afb5b7c9b7b607",
+        "image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+        "scored": false,
+        "candidate_response_is_untrusted": true,
+        "cleanup_verified": true,
+        "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+        "resource_profile": "python-small",
+        "submission_sha256": {
+          "candidate.py": "f05a65413338d4d74cc2e7115db156601cfcb7838936e091cb74c7ecf0609277"
+        },
+        "container_id": "d3dc922e0fbdda4f8dd3a9fa41ec1f367c392bd82c67e074876c723bb1ca0b69",
+        "isolation_checks": {
+          "errors": [],
+          "passed": true,
+          "observed_user": "65534:65534",
+          "observed_image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+          "observed_ownership_token": "a11beee385534c74b1afb5b7c9b7b607",
+          "resolved_image_id": "sha256:284cda8648f59f87e9468ec9d5652064dc2cd5b7d3fce342c2d3825ca1de6353",
+          "observed_host_constraints": {
+            "NetworkMode": "none",
+            "IpcMode": "none",
+            "ReadonlyRootfs": true,
+            "Memory": 536870912,
+            "MemorySwap": 536870912,
+            "NanoCpus": 1000000000,
+            "PidsLimit": 64,
+            "Privileged": false,
+            "Init": true,
+            "CapDrop": [
+              "ALL"
+            ],
+            "CapAdd": null,
+            "SecurityOpt": [
+              "no-new-privileges"
+            ],
+            "LogConfig": {
+              "Type": "none",
+              "Config": {}
+            },
+            "Tmpfs": {
+              "/tmp": "rw,noexec,nosuid,size=128m"
+            },
+            "Devices": [],
+            "DeviceRequests": null,
+            "VolumesFrom": null
+          },
+          "observed_mounts": [
+            {
+              "Destination": "/submission",
+              "Type": "bind",
+              "RW": false
+            },
+            {
+              "Destination": "/worker",
+              "Type": "bind",
+              "RW": false
+            }
+          ]
+        },
+        "setup_elapsed_seconds": 0.15574979999996685,
+        "runtime_elapsed_seconds": 0.4236803000001146,
+        "returncode": 0,
+        "candidate_response": {
+          "worker_status": "error",
+          "error_type": "AttributeError",
+          "detail": "module 'candidate' has no attribute 'run'"
+        },
+        "captured_bytes": 114,
+        "stderr": "",
+        "elapsed_seconds": 0.7545588999998927
+      }
+    },
+    {
+      "control": "malformed-output",
+      "passed": true,
+      "code_sha256": "36a35e71ada70fa978126ad3790ee4d5d102174490203959354a6933c561131b",
+      "expected_execution_status": "invalid_response",
+      "execution": {
+        "status": "invalid_response",
+        "container_name": "skills-invoke-182e29303dc644a2b06d0b3f3b24b352",
+        "image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+        "scored": false,
+        "candidate_response_is_untrusted": true,
+        "cleanup_verified": true,
+        "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+        "resource_profile": "python-small",
+        "submission_sha256": {
+          "candidate.py": "459a666ebe900382067ed9374a19f0952ab553da9476569d71ce49fcd92a8d03"
+        },
+        "container_id": "d88849b09c6ec8b36fad280e9a056ed4cb9e93456c0c86ef8b72d1deda2a58fd",
+        "isolation_checks": {
+          "errors": [],
+          "passed": true,
+          "observed_user": "65534:65534",
+          "observed_image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+          "observed_ownership_token": "182e29303dc644a2b06d0b3f3b24b352",
+          "resolved_image_id": "sha256:284cda8648f59f87e9468ec9d5652064dc2cd5b7d3fce342c2d3825ca1de6353",
+          "observed_host_constraints": {
+            "NetworkMode": "none",
+            "IpcMode": "none",
+            "ReadonlyRootfs": true,
+            "Memory": 536870912,
+            "MemorySwap": 536870912,
+            "NanoCpus": 1000000000,
+            "PidsLimit": 64,
+            "Privileged": false,
+            "Init": true,
+            "CapDrop": [
+              "ALL"
+            ],
+            "CapAdd": null,
+            "SecurityOpt": [
+              "no-new-privileges"
+            ],
+            "LogConfig": {
+              "Type": "none",
+              "Config": {}
+            },
+            "Tmpfs": {
+              "/tmp": "rw,noexec,nosuid,size=128m"
+            },
+            "Devices": [],
+            "DeviceRequests": null,
+            "VolumesFrom": null
+          },
+          "observed_mounts": [
+            {
+              "Destination": "/submission",
+              "Type": "bind",
+              "RW": false
+            },
+            {
+              "Destination": "/worker",
+              "Type": "bind",
+              "RW": false
+            }
+          ]
+        },
+        "setup_elapsed_seconds": 0.1663415000000441,
+        "runtime_elapsed_seconds": 0.42995169999994687,
+        "returncode": 0,
+        "detail": "Expecting value: line 1 column 1 (char 0)",
+        "captured_bytes": 61,
+        "stderr": "",
+        "elapsed_seconds": 0.7681422000000566
+      }
+    },
+    {
+      "control": "nonterminating",
+      "passed": true,
+      "code_sha256": "0211784d4a5e3cdb62b3a5a3b87659d39dacfefac164454b3aae8434ca57182e",
+      "expected_execution_status": "timeout",
+      "execution": {
+        "status": "timeout",
+        "container_name": "skills-invoke-95b6901525ed4af78c358f966e71720f",
+        "image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+        "scored": false,
+        "candidate_response_is_untrusted": true,
+        "cleanup_verified": true,
+        "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+        "resource_profile": "python-small",
+        "submission_sha256": {
+          "candidate.py": "4e9e0937cc54cdd9ab1c7baee634ebdefe7761b4b11a41b4165cbda3b32956ba"
+        },
+        "container_id": "da315c7ecd3274ed01462f8a79d149d21b2c80716a68877cdbf0f7f47f5d0b3f",
+        "isolation_checks": {
+          "errors": [],
+          "passed": true,
+          "observed_user": "65534:65534",
+          "observed_image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+          "observed_ownership_token": "95b6901525ed4af78c358f966e71720f",
+          "resolved_image_id": "sha256:284cda8648f59f87e9468ec9d5652064dc2cd5b7d3fce342c2d3825ca1de6353",
+          "observed_host_constraints": {
+            "NetworkMode": "none",
+            "IpcMode": "none",
+            "ReadonlyRootfs": true,
+            "Memory": 536870912,
+            "MemorySwap": 536870912,
+            "NanoCpus": 1000000000,
+            "PidsLimit": 64,
+            "Privileged": false,
+            "Init": true,
+            "CapDrop": [
+              "ALL"
+            ],
+            "CapAdd": null,
+            "SecurityOpt": [
+              "no-new-privileges"
+            ],
+            "LogConfig": {
+              "Type": "none",
+              "Config": {}
+            },
+            "Tmpfs": {
+              "/tmp": "rw,noexec,nosuid,size=128m"
+            },
+            "Devices": [],
+            "DeviceRequests": null,
+            "VolumesFrom": null
+          },
+          "observed_mounts": [
+            {
+              "Destination": "/submission",
+              "Type": "bind",
+              "RW": false
+            },
+            {
+              "Destination": "/worker",
+              "Type": "bind",
+              "RW": false
+            }
+          ]
+        },
+        "setup_elapsed_seconds": 0.16630460000010316,
+        "runtime_elapsed_seconds": 3.0045961000000716,
+        "captured_bytes": 0,
+        "stderr": "",
+        "elapsed_seconds": 3.4072702000000845
+      }
+    },
+    {
+      "control": "stdout-flood",
+      "passed": true,
+      "code_sha256": "a76f4264b45dfa0d44ca89674f5e8e72e62546e3f2ae006925b9eddceb144a12",
+      "expected_execution_status": "output_limit",
+      "execution": {
+        "status": "output_limit",
+        "container_name": "skills-invoke-13dd3e295809474b92d42b68ae790b2a",
+        "image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+        "scored": false,
+        "candidate_response_is_untrusted": true,
+        "cleanup_verified": true,
+        "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+        "resource_profile": "python-small",
+        "submission_sha256": {
+          "candidate.py": "5ad511b67ec4995f9f702d73ec1c0f1a0b221b4f02809524a11ec7e894956178"
+        },
+        "container_id": "38f8053b267502ef7e246330517076f7f8e0f530addd07510594ce12a383a560",
+        "isolation_checks": {
+          "errors": [],
+          "passed": true,
+          "observed_user": "65534:65534",
+          "observed_image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+          "observed_ownership_token": "13dd3e295809474b92d42b68ae790b2a",
+          "resolved_image_id": "sha256:284cda8648f59f87e9468ec9d5652064dc2cd5b7d3fce342c2d3825ca1de6353",
+          "observed_host_constraints": {
+            "NetworkMode": "none",
+            "IpcMode": "none",
+            "ReadonlyRootfs": true,
+            "Memory": 536870912,
+            "MemorySwap": 536870912,
+            "NanoCpus": 1000000000,
+            "PidsLimit": 64,
+            "Privileged": false,
+            "Init": true,
+            "CapDrop": [
+              "ALL"
+            ],
+            "CapAdd": null,
+            "SecurityOpt": [
+              "no-new-privileges"
+            ],
+            "LogConfig": {
+              "Type": "none",
+              "Config": {}
+            },
+            "Tmpfs": {
+              "/tmp": "rw,noexec,nosuid,size=128m"
+            },
+            "Devices": [],
+            "DeviceRequests": null,
+            "VolumesFrom": null
+          },
+          "observed_mounts": [
+            {
+              "Destination": "/submission",
+              "Type": "bind",
+              "RW": false
+            },
+            {
+              "Destination": "/worker",
+              "Type": "bind",
+              "RW": false
+            }
+          ]
+        },
+        "setup_elapsed_seconds": 0.15944379999996272,
+        "runtime_elapsed_seconds": 0.31751900000017486,
+        "captured_bytes": 16384,
+        "stderr": "",
+        "elapsed_seconds": 0.7420614000000114
+      }
+    },
+    {
+      "control": "stderr-flood",
+      "passed": true,
+      "code_sha256": "d541df6b0734a2467594e78d381d9e698c589484f660760d2c628b32a7281659",
+      "expected_execution_status": "output_limit",
+      "execution": {
+        "status": "output_limit",
+        "container_name": "skills-invoke-ed409687a0954dc691049b645d50a8d4",
+        "image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+        "scored": false,
+        "candidate_response_is_untrusted": true,
+        "cleanup_verified": true,
+        "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+        "resource_profile": "python-small",
+        "submission_sha256": {
+          "candidate.py": "9b3835b12899193af4b68fdb807235731092d50d757a87cb544d31ad646cd208"
+        },
+        "container_id": "9f0abe994b884c4ad51d5cdd8fd6c2821dbbfd9ee17bb42e8967ab86e06648c0",
+        "isolation_checks": {
+          "errors": [],
+          "passed": true,
+          "observed_user": "65534:65534",
+          "observed_image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+          "observed_ownership_token": "ed409687a0954dc691049b645d50a8d4",
+          "resolved_image_id": "sha256:284cda8648f59f87e9468ec9d5652064dc2cd5b7d3fce342c2d3825ca1de6353",
+          "observed_host_constraints": {
+            "NetworkMode": "none",
+            "IpcMode": "none",
+            "ReadonlyRootfs": true,
+            "Memory": 536870912,
+            "MemorySwap": 536870912,
+            "NanoCpus": 1000000000,
+            "PidsLimit": 64,
+            "Privileged": false,
+            "Init": true,
+            "CapDrop": [
+              "ALL"
+            ],
+            "CapAdd": null,
+            "SecurityOpt": [
+              "no-new-privileges"
+            ],
+            "LogConfig": {
+              "Type": "none",
+              "Config": {}
+            },
+            "Tmpfs": {
+              "/tmp": "rw,noexec,nosuid,size=128m"
+            },
+            "Devices": [],
+            "DeviceRequests": null,
+            "VolumesFrom": null
+          },
+          "observed_mounts": [
+            {
+              "Destination": "/submission",
+              "Type": "bind",
+              "RW": false
+            },
+            {
+              "Destination": "/worker",
+              "Type": "bind",
+              "RW": false
+            }
+          ]
+        },
+        "setup_elapsed_seconds": 0.16670419999991282,
+        "runtime_elapsed_seconds": 0.3115119000001414,
+        "captured_bytes": 16384,
+        "stderr": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "elapsed_seconds": 0.7346061000000645
+      }
+    },
+    {
+      "control": "leftover-child",
+      "passed": true,
+      "code_sha256": "0ee4387ac0e866172d1aa9db276a02df24ed0cbf2572db6d42e371c224f6a32e",
+      "expected_execution_status": "completed-or-timeout",
+      "execution": {
+        "status": "completed",
+        "container_name": "skills-invoke-e57909d3db9a4d1cbc7a32b7ce57eb2b",
+        "image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+        "scored": false,
+        "candidate_response_is_untrusted": true,
+        "cleanup_verified": true,
+        "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+        "resource_profile": "python-small",
+        "submission_sha256": {
+          "candidate.py": "84c5c63f68e0c4a8bf6b7174cade7077be28ed4dbb33e05e07414fb586b21e74"
+        },
+        "container_id": "5895e74b5e87ab89cb1170d1237754b6a8fc4b717704f3e449e68b5d4ebaf324",
+        "isolation_checks": {
+          "errors": [],
+          "passed": true,
+          "observed_user": "65534:65534",
+          "observed_image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+          "observed_ownership_token": "e57909d3db9a4d1cbc7a32b7ce57eb2b",
+          "resolved_image_id": "sha256:284cda8648f59f87e9468ec9d5652064dc2cd5b7d3fce342c2d3825ca1de6353",
+          "observed_host_constraints": {
+            "NetworkMode": "none",
+            "IpcMode": "none",
+            "ReadonlyRootfs": true,
+            "Memory": 536870912,
+            "MemorySwap": 536870912,
+            "NanoCpus": 1000000000,
+            "PidsLimit": 64,
+            "Privileged": false,
+            "Init": true,
+            "CapDrop": [
+              "ALL"
+            ],
+            "CapAdd": null,
+            "SecurityOpt": [
+              "no-new-privileges"
+            ],
+            "LogConfig": {
+              "Type": "none",
+              "Config": {}
+            },
+            "Tmpfs": {
+              "/tmp": "rw,noexec,nosuid,size=128m"
+            },
+            "Devices": [],
+            "DeviceRequests": null,
+            "VolumesFrom": null
+          },
+          "observed_mounts": [
+            {
+              "Destination": "/submission",
+              "Type": "bind",
+              "RW": false
+            },
+            {
+              "Destination": "/worker",
+              "Type": "bind",
+              "RW": false
+            }
+          ]
+        },
+        "setup_elapsed_seconds": 0.15533300000015515,
+        "runtime_elapsed_seconds": 0.4300247000001036,
+        "returncode": 0,
+        "candidate_response": {
+          "worker_status": "returned",
+          "result": 4
+        },
+        "captured_bytes": 43,
+        "stderr": "",
+        "elapsed_seconds": 0.7542508000001362
+      }
+    },
+    {
+      "control": "filesystem-network-and-identity",
+      "passed": true,
+      "code_sha256": "e85cf5dddd53a81d04590fd72d3b4729e4d32331cdb2757962b6f6c30b261895",
+      "expected_execution_status": "completed",
+      "execution": {
+        "status": "completed",
+        "container_name": "skills-invoke-7d0eb5bbd8a34494a0504cf63ff66a77",
+        "image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+        "scored": false,
+        "candidate_response_is_untrusted": true,
+        "cleanup_verified": true,
+        "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+        "resource_profile": "python-small",
+        "submission_sha256": {
+          "candidate.py": "7ee73dc562378e34c78048e47b9e4475de7b7cdef0c159c893c3ad4dc7328d66"
+        },
+        "container_id": "9dd67bb8a9916c7b9a68b29e5decf9306955f8c8f640fa0b0fa388253255432b",
+        "isolation_checks": {
+          "errors": [],
+          "passed": true,
+          "observed_user": "65534:65534",
+          "observed_image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+          "observed_ownership_token": "7d0eb5bbd8a34494a0504cf63ff66a77",
+          "resolved_image_id": "sha256:284cda8648f59f87e9468ec9d5652064dc2cd5b7d3fce342c2d3825ca1de6353",
+          "observed_host_constraints": {
+            "NetworkMode": "none",
+            "IpcMode": "none",
+            "ReadonlyRootfs": true,
+            "Memory": 536870912,
+            "MemorySwap": 536870912,
+            "NanoCpus": 1000000000,
+            "PidsLimit": 64,
+            "Privileged": false,
+            "Init": true,
+            "CapDrop": [
+              "ALL"
+            ],
+            "CapAdd": null,
+            "SecurityOpt": [
+              "no-new-privileges"
+            ],
+            "LogConfig": {
+              "Type": "none",
+              "Config": {}
+            },
+            "Tmpfs": {
+              "/tmp": "rw,noexec,nosuid,size=128m"
+            },
+            "Devices": [],
+            "DeviceRequests": null,
+            "VolumesFrom": null
+          },
+          "observed_mounts": [
+            {
+              "Destination": "/submission",
+              "Type": "bind",
+              "RW": false
+            },
+            {
+              "Destination": "/worker",
+              "Type": "bind",
+              "RW": false
+            }
+          ]
+        },
+        "setup_elapsed_seconds": 0.1569811000001664,
+        "runtime_elapsed_seconds": 0.430352399999947,
+        "returncode": 0,
+        "candidate_response": {
+          "worker_status": "returned",
+          "result": {
+            "uid": 65534,
+            "gid": 65534,
+            "writes": {
+              "/submission/candidate.py": "denied",
+              "/worker/invoke.py": "denied",
+              "/etc/isolation-probe": "denied"
+            },
+            "temporary_write": true,
+            "unstaged_sentinel_visible": false,
+            "docker_socket_visible": false,
+            "oracle_visible": false,
+            "external_connection": false,
+            "no_new_privileges": true,
+            "capabilities_dropped": true
+          }
+        },
+        "captured_bytes": 390,
+        "stderr": "",
+        "elapsed_seconds": 0.7526409000001877
+      }
+    }
+  ],
+  "all_controls_passed": true,
+  "input_sha256": {
+    "tools/isolated_python.py": "5bac5a5ad881618445700608ec78920b2a2e041aede55a82da19dfbea02411fd",
+    "tools/_isolated_worker.py": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+    "tools/qualify_isolated_python.py": "d90841c45c15186f67577cd31a8c258bd97dde335630ad9bc3fc226e5223f301"
+  },
+  "docker_engine_version": "29.8.1",
+  "scope": "Actual engine controls; no agent trials, model efficacy scores, or container escape certification. Expectations stay outside the container. Child control requires verified cleanup, allowing completion or timeout."
+}

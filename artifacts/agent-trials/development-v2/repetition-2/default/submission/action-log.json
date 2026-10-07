@@ -1,0 +1,132 @@
+{
+  "commands": [
+    {
+      "command": "Get-Location; rg --files -g '!action-log.json' -g '!**/.git/**' -g '!**/__pycache__/**'",
+      "outcome": "Exit 0. Located the validator, bundled schema and data, and empty regression test file in the task workspace."
+    },
+    {
+      "command": "Get-Content -Raw tools/check_benchmark_artifact.py",
+      "outcome": "Exit 0. Inspected validator implementation."
+    },
+    {
+      "command": "Get-Content -Raw evaluators/benchmark_run_artifact.schema.json; Get-Content -Raw tests/test_regressions.py",
+      "outcome": "Exit 0. Inspected schema and pre-created test file."
+    },
+    {
+      "command": "rg --files --hidden -g AGENTS.md -g '*pytest*' -g '*requirements*' -g 'pyproject.toml' -g 'README*' -g 'action-log.json' -g '!**/.git/**'; Get-Content -Raw data/benchmark_scenarios.json; Get-Content -Raw data/skills_catalog.json",
+      "outcome": "Exit 0. No matching instruction/configuration files found. Read bundled workspace data; combined tool output was truncated."
+    },
+    {
+      "command": "Get-Content -Raw evaluators/benchmark_run_artifact.schema.json; Get-Content -Raw tests/test_regressions.py; Get-Content tools/check_benchmark_artifact.py -Tail 25",
+      "outcome": "Exit 0. Read complete schema and CLI verdict-to-exit-code handling. Regression file is empty."
+    },
+    {
+      "command": [
+        "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_regressions.py",
+        "-v"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "test_absolute_and_repo_relative_files_are_accepted (test_regressions.ArtifactValidationTests.test_absolute_and_repo_relative_files_are_accepted) ... ok\ntest_additional_properties_constraints_and_pointer_escaping (test_regressions.ArtifactValidationTests.test_additional_properties_constraints_and_pointer_escaping) ... ok\ntest_batch_validation_continues_after_malformed_record (test_regressions.ArtifactValidationTests.test_batch_validation_continues_after_malformed_record) ... ok\ntest_cli_reports_structured_verdicts_and_exit_codes (test_regressions.ArtifactValidationTests.test_cli_reports_structured_verdicts_and_exit_codes) ... ok\ntest_complete_independent_benchmark_with_visual_and_memory_evidence (test_regressions.ArtifactValidationTests.test_complete_independent_benchmark_with_visual_and_memory_evidence) ... ok\ntest_complete_provenance_and_permitted_extra_metadata (test_regressions.ArtifactValidationTests.test_complete_provenance_and_permitted_extra_metadata) ... ok\ntest_complete_record_matches_bundled_catalog_and_scenarios (test_regressions.ArtifactValidationTests.test_complete_record_matches_bundled_catalog_and_scenarios) ... ok\ntest_context_memory_nested_malformed_values_and_booleans (test_regressions.ArtifactValidationTests.test_context_memory_nested_malformed_values_and_booleans) ... ok\ntest_directory_missing_and_unusable_paths_are_rejected (test_regressions.ArtifactValidationTests.test_directory_missing_and_unusable_paths_are_rejected) ... ok\ntest_domain_independence_self_claims_and_cross_references (test_regressions.ArtifactValidationTests.test_domain_independence_self_claims_and_cross_references) ... ok\ntest_invalid_json_roots_and_unreadable_artifacts (test_regressions.ArtifactValidationTests.test_invalid_json_roots_and_unreadable_artifacts) ... ok\ntest_malformed_field_types_never_crash (test_regressions.ArtifactValidationTests.test_malformed_field_types_never_crash) ... ok\ntest_min_length_enforced_for_every_declared_string (test_regressions.ArtifactValidationTests.test_min_length_enforced_for_every_declared_string) ... ok\ntest_optional_empty_string_without_min_length_is_allowed (test_regressions.ArtifactValidationTests.test_optional_empty_string_without_min_length_is_allowed) ... ok\ntest_patterns_enum_and_min_items_are_enforced (test_regressions.ArtifactValidationTests.test_patterns_enum_and_min_items_are_enforced) ... \n  test_patterns_enum_and_min_items_are_enforced (test_regressions.ArtifactValidationTests.test_patterns_enum_and_min_items_are_enforced) (path=('source_commit',), value='0000000000000000000000000000000000000000\\n') ... FAIL\ntest_required_fields_report_precise_paths (test_regressions.ArtifactValidationTests.test_required_fields_report_precise_paths) ... ok\ntest_unavailable_or_unusable_schema_rejects_record (test_regressions.ArtifactValidationTests.test_unavailable_or_unusable_schema_rejects_record) ... ok\n\n======================================================================\nFAIL: test_patterns_enum_and_min_items_are_enforced (test_regressions.ArtifactValidationTests.test_patterns_enum_and_min_items_are_enforced) (path=('source_commit',), value='0000000000000000000000000000000000000000\\n')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\strat\\AppData\\Local\\Temp\\skills-agent-trial-qgxl7b5h\\tests\\test_regressions.py\", line 197, in test_patterns_enum_and_min_items_are_enforced\n    self.assert_rejected(self.validate(artifact), validator._pointer(path))\n  File \"C:\\Users\\strat\\AppData\\Local\\Temp\\skills-agent-trial-qgxl7b5h\\tests\\test_regressions.py\", line 63, in assert_rejected\n    self.assertTrue(any(diagnostic in error for error in result[\"errors\"]), result)\nAssertionError: False is not true : {'verdict': 'artifact_incomplete', 'errors': ['source_commit must be a 40-character lowercase git SHA', 'source_commit does not match catalog commit_sha'], 'warnings': ['provenance_check artifacts are complete evidence records but do not count as runtime benchmark passes']}\n\n----------------------------------------------------------------------\nRan 17 tests in 1.930s\n\nFAILED (failures=1)\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_regressions.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_absolute_and_repo_relative_files_are_accepted (test_regressions.ArtifactValidationTests.test_absolute_and_repo_relative_files_are_accepted) ... ok\ntest_additional_properties_constraints_and_pointer_escaping (test_regressions.ArtifactValidationTests.test_additional_properties_constraints_and_pointer_escaping) ... ok\ntest_batch_validation_continues_after_malformed_record (test_regressions.ArtifactValidationTests.test_batch_validation_continues_after_malformed_record) ... ok\ntest_cli_reports_structured_verdicts_and_exit_codes (test_regressions.ArtifactValidationTests.test_cli_reports_structured_verdicts_and_exit_codes) ... ok\ntest_complete_independent_benchmark_with_visual_and_memory_evidence (test_regressions.ArtifactValidationTests.test_complete_independent_benchmark_with_visual_and_memory_evidence) ... ok\ntest_complete_provenance_and_permitted_extra_metadata (test_regressions.ArtifactValidationTests.test_complete_provenance_and_permitted_extra_metadata) ... ok\ntest_complete_record_matches_bundled_catalog_and_scenarios (test_regressions.ArtifactValidationTests.test_complete_record_matches_bundled_catalog_and_scenarios) ... ok\ntest_context_memory_nested_malformed_values_and_booleans (test_regressions.ArtifactValidationTests.test_context_memory_nested_malformed_values_and_booleans) ... ok\ntest_directory_missing_and_unusable_paths_are_rejected (test_regressions.ArtifactValidationTests.test_directory_missing_and_unusable_paths_are_rejected) ... ok\ntest_domain_independence_self_claims_and_cross_references (test_regressions.ArtifactValidationTests.test_domain_independence_self_claims_and_cross_references) ... ok\ntest_invalid_json_roots_and_unreadable_artifacts (test_regressions.ArtifactValidationTests.test_invalid_json_roots_and_unreadable_artifacts) ... ok\ntest_malformed_field_types_never_crash (test_regressions.ArtifactValidationTests.test_malformed_field_types_never_crash) ... ok\ntest_min_length_enforced_for_every_declared_string (test_regressions.ArtifactValidationTests.test_min_length_enforced_for_every_declared_string) ... ok\ntest_optional_empty_string_without_min_length_is_allowed (test_regressions.ArtifactValidationTests.test_optional_empty_string_without_min_length_is_allowed) ... ok\ntest_patterns_enum_and_min_items_are_enforced (test_regressions.ArtifactValidationTests.test_patterns_enum_and_min_items_are_enforced) ... ok\ntest_required_fields_report_precise_paths (test_regressions.ArtifactValidationTests.test_required_fields_report_precise_paths) ... ok\ntest_unavailable_or_unusable_schema_rejects_record (test_regressions.ArtifactValidationTests.test_unavailable_or_unusable_schema_rejects_record) ... ok\n\n----------------------------------------------------------------------\nRan 17 tests in 0.897s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\Scripts\\python.exe",
+        "-c",
+        "import ast\nimport json\nfrom pathlib import Path\nfiles = [Path(\"tools/check_benchmark_artifact.py\"), Path(\"tests/test_regressions.py\")]\nfor path in files:\n    source = path.read_text(encoding=\"utf-8\")\n    ast.parse(source, filename=str(path))\n    for number, line in enumerate(source.splitlines(), 1):\n        if line.rstrip() != line:\n            raise SystemExit(f\"{path}:{number}: trailing whitespace\")\nfor name in (\"action-log.json\", \"evaluators/benchmark_run_artifact.schema.json\"):\n    json.loads(Path(name).read_text(encoding=\"utf-8\"))\nprint(\"Python syntax, patch whitespace, and JSON checks passed\")\n"
+      ],
+      "exit_code": 0,
+      "stdout": "Python syntax, patch whitespace, and JSON checks passed\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\Scripts\\python.exe",
+        "-",
+        "workspace-only final log and generated bytecode cleanup"
+      ],
+      "outcome": "Removed only generated bytecode for the two changed Python files and empty cache directories; recorded final results.",
+      "exit_code": 0
+    }
+  ],
+  "changes": [
+    {
+      "tool": "apply_patch",
+      "file": "action-log.json",
+      "outcome": "Created task-local command and outcome log."
+    },
+    {
+      "tool": "apply_patch",
+      "file": "tools/check_benchmark_artifact.py",
+      "outcome": "Reject unavailable schemas and structural errors before domain checks; enforce minLength and additionalProperties; require recorded file paths; reject boolean context-memory numeric values."
+    },
+    {
+      "tool": "apply_patch",
+      "file": "tests/test_regressions.py",
+      "outcome": "Added schema, malformed-field, provenance, independent benchmark, path, domain, and CLI regressions."
+    },
+    {
+      "tool": "apply_patch",
+      "file": "tests/test_regressions.py",
+      "outcome": "Moved trailing-newline SHA case to domain checks to match its diagnostic contract; verified batch validation reaches complete records after malformed ones."
+    }
+  ],
+  "modified_files": [
+    "tools/check_benchmark_artifact.py",
+    "tests/test_regressions.py",
+    "action-log.json"
+  ],
+  "checks": [
+    {
+      "check": "regression unittest discovery",
+      "exit_code": 1,
+      "outcome": "failed; see command output"
+    },
+    {
+      "check": "regression unittest discovery",
+      "exit_code": 0,
+      "outcome": "passed"
+    },
+    {
+      "check": "syntax, whitespace, and JSON",
+      "exit_code": 0,
+      "outcome": "passed"
+    }
+  ],
+  "summary": {
+    "source_files": [
+      "tools/check_benchmark_artifact.py",
+      "tests/test_regressions.py"
+    ],
+    "regression_tests_passed": 17,
+    "final_checks": "Regression suite and syntax/whitespace/JSON checks passed using the requested runtime.",
+    "initial_failure": "One test expected a schema pointer for a domain-level trailing-newline SHA rejection; corrected the assertion placement and reran successfully.",
+    "removed_generated_bytecode": [
+      "tools\\__pycache__\\check_benchmark_artifact.cpython-312.pyc",
+      "tests\\__pycache__\\test_regressions.cpython-312.pyc"
+    ]
+  }
+}

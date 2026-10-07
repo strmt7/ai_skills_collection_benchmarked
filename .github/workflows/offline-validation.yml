@@ -23,20 +23,18 @@ permissions:
 
 jobs:
   validate:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.10", "3.11", "3.12", "3.13"]
+        os: [ubuntu-latest]
+        python-version: ["3.11.17", "3.12.15", "3.13.16", "3.14.8"]
+        include:
+          - os: windows-latest
+            python-version: "3.14.8"
     steps:
-      # actions/checkout v6.0.2 (latest as of 2026-01-09).
-      # SHA: de0fac2e4500dabe0009e67214ff5f5447ce83dd
-      # https://github.com/actions/checkout/releases/tag/v6.0.2
-      - uses: actions/checkout@v6.0.2
-      # actions/setup-python v6.2.0 (latest as of 2026-01-22).
-      # SHA: a309ff8b426b58ec0e2a45f0f869d46889d02405
-      # https://github.com/actions/setup-python/releases/tag/v6.2.0
-      - uses: actions/setup-python@v6.2.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: ${{ matrix.python-version }}
           cache: "pip"
@@ -44,10 +42,16 @@ jobs:
       - name: Install test dependencies
         run: python -m pip install -e '.[test]'
       - name: Validate generated JSON
-        run: python -m json.tool data/skills_catalog.json >/dev/null
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+          data = json.loads(Path("data/skills_catalog.json").read_text(encoding="utf-8"))
+          print(f"Validated {len(data)} catalog records")
       - name: Validate catalog and mirrors
         run: python tools/validate_catalog.py
       - name: Validate benchmark and provenance artifacts
+        shell: bash
         run: |
           python - <<'PY'
           import sys
@@ -69,17 +73,67 @@ jobs:
         run: python tools/run_static_benchmarks.py --check
       - name: Validate skill risk audit
         run: python tools/audit_skill_quality.py --check
+      - name: Validate complete improvement coverage and evidence
+        run: python tools/manage_improvement_ledger.py --check --json
+      - name: Validate improved overlays and original provenance
+        run: python tools/validate_improved_skills.py --json
+      - name: Verify all matched development trials and report
+        run: >-
+          python tools/summarize_agent_trials.py
+          --protocol benchmarks/agent-effectiveness/development/protocol-v2.json
+          --trials artifacts/agent-trials/development-v2
+          --output-dir artifacts/agent-trials/development-v2-report --check --json
       - name: Run tests (with coverage)
         run: python -m pytest -q -n auto
       - name: Upload coverage.xml
         if: always()
         # actions/upload-artifact v7.0.1 (latest stable April 2026).
         # https://github.com/actions/upload-artifact/releases/tag/v7.0.1
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: coverage-${{ matrix.python-version }}
+          name: coverage-${{ matrix.os }}-${{ matrix.python-version }}
           path: coverage.xml
           if-no-files-found: error
           retention-days: 14
       - name: Compile Python
-        run: python -m compileall -q tools tests
+        run: python -m compileall -q tools tests benchmarks/agent-effectiveness/graders
+
+  trial-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.14.8"
+      - name: Install hashed report dependencies
+        run: python -m pip install --require-hashes -r requirements-reports-lock.txt
+      - name: Reverify and render recorded comparisons
+        run: >-
+          python tools/summarize_agent_trials.py
+          --protocol benchmarks/agent-effectiveness/development/protocol-v2.json
+          --trials artifacts/agent-trials/development-v2
+          --output-dir "$RUNNER_TEMP/matched-development-report" --plots --json
+      - name: Upload verified tables and graphs
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: matched-development-report
+          path: ${{ runner.temp }}/matched-development-report
+          if-no-files-found: error
+          retention-days: 30
+
+  stable-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.14.8"
+      - name: Install hashed audit dependencies
+        run: python -m pip install --require-hashes -r requirements-reports-lock.txt
+      - name: Recheck latest stable release commits against workflow pins
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          python tools/audit_workflow_versions.py
+          --output "$RUNNER_TEMP/workflow-stable-versions.json"
+          --observed-at-utc "$(date -u +%Y-%m-%dT%H:%M:%SZ)" --json

@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "evidence_class": "image-cli-current-dependency-and-negative-contract-controls",
+  "node": "v26.10.0",
+  "direct_dependencies": {
+    "@google/genai": "^1.44.0",
+    "@inquirer/prompts": "^8.3.0",
+    "chalk": "^5.6.2",
+    "commander": "^14.0.3",
+    "conf": "^15.1.0",
+    "dotenv": "^17.3.1",
+    "figlet": "^1.11.0",
+    "gradient-string": "^3.0.0",
+    "sharp": "^0.35.5"
+  },
+  "sharp": {
+    "aom": "3.15.1",
+    "archive": "3.8.9",
+    "cairo": "1.18.6",
+    "cgif": "0.5.4",
+    "exif": "0.6.26",
+    "expat": "2.8.5",
+    "ffi": "3.8.0",
+    "fontconfig": "2.18.3",
+    "freetype": "2.14.3",
+    "fribidi": "1.0.17",
+    "glib": "2.90.0",
+    "harfbuzz": "14.5.0",
+    "heif": "1.23.5",
+    "highway": "1.4.0",
+    "imagequant": "2.4.1",
+    "lcms": "2.19.1",
+    "mozjpeg": "0826579",
+    "pango": "1.58.2",
+    "pixman": "0.46.4",
+    "png": "1.6.58",
+    "proxy-libintl": "0.5",
+    "rsvg": "2.63.2",
+    "tiff": "4.7.2",
+    "uhdr": "2.0.2",
+    "vips": "8.18.7",
+    "webp": "1.6.0",
+    "xml2": "2.15.4",
+    "zlib-ng": "2.3.3",
+    "sharp": "0.35.5"
+  },
+  "source_file_sha256": {
+    "package.json": "f2d207d6dab53be002f7e12e58b4ac65a9d21945a07812adc25a547af4de32d7",
+    "package-lock.json": "d6914de6c8bec49d7d6ce61d210fff9ea31f1bbd252872771e48ff6d4f74e596",
+    "bin/cli.js": "e33c65df71c5ff56673c741c5ec0d2b57e2d079ca49db35ba843ee58720837d2",
+    "src/logoFetcher.js": "d57e643d99801b4d74a19ff687273416f968545d7cb4f62cd315b53a0d25562d",
+    "src/geminiGenerator.js": "ee64cce690ec4e07e3bfbe9b7d7e1aa359f0c466c1748301e04da9ad75c04d7b",
+    "src/imageValidator.js": "9a59b87d332d2f50b87c31deceaaf0d028b0aa8433099cad546836b5559e2e3b"
+  },
+  "reproducer_sha256": "d16c87addaa60b2c2c8c0b6bd4f6fe1bd9db9db5d3bbce8a706785b89f23db75",
+  "checks": [
+    {
+      "name": "svg_to_png_dimensions",
+      "passed": true,
+      "observed": {
+        "width": 23,
+        "height": 11
+      }
+    },
+    {
+      "name": "jpeg_to_png_dimensions",
+      "passed": true,
+      "observed": {
+        "width": 23,
+        "height": 11
+      }
+    },
+    {
+      "name": "non_image_response_returns_null",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "all_logo_fallbacks_are_observed",
+      "passed": true,
+      "observed": {
+        "intercepted_requests": 3
+      }
+    },
+    {
+      "name": "current_google_sdk_image_response",
+      "passed": true,
+      "observed": {
+        "intercepted_requests": 1,
+        "response_bytes": 103
+      }
+    },
+    {
+      "name": "current_google_sdk_validation_response",
+      "passed": true,
+      "observed": {
+        "intercepted_requests": 1
+      }
+    },
+    {
+      "name": "cli_help_with_current_dependencies",
+      "passed": true,
+      "observed": {
+        "exit_code": 0
+      }
+    },
+    {
+      "name": "short_key_masking_defect_reproduced",
+      "passed": true,
+      "observed": {
+        "exit_code": 1,
+        "defect": "short key crashes mask"
+      }
+    },
+    {
+      "name": "failed_qa_reported_as_success_defect_reproduced",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "qa_passed": false,
+        "image_saved": true
+      }
+    }
+  ],
+  "passed": true,
+  "external_requests": 0,
+  "provider_responses": "intercepted controlled fixtures",
+  "limits": [
+    "No real provider generation/model availability assessed",
+    "No coding-agent efficacy scored",
+    "Successful defect reproduction does not mark original behavior correct",
+    "Configuration/output fixtures retained in temporary directory"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "requested_child_interpreter": "3.14.8",
+  "observed_child_interpreter": "3.12.14",
+  "status": "qualification_failed",
+  "cause": "The full runtime was placed directly under an existing virtual environment. CPython found its parent pyvenv.cfg and venv inherited that older base executable.",
+  "scope": "Local setup failure; no benchmark model or frozen interpreter changed.",
+  "repair": "Provision a new full runtime under a separate parent without pyvenv.cfg, verify prefix and base executable, and create a new child environment.",
+  "repaired_child_version_verified": "3.14.8",
+  "repaired_runtime_receipt": "artifacts/research/2026-10-02/python-runtime-provision-v2.json"
+}

@@ -1,0 +1,171 @@
+{
+  "protocol_status": "task-partition preregistration; execution protocol not qualified",
+  "seed": "skillsbench-1.1-gpt-6.1-sol-high-2026-10-02",
+  "task_source_commit": "55bfe693f2a19f6b2f29aca3f54fe98b9d994668",
+  "task_identity_review_sha256": "79ac2525789c6fabc8470834250e2fc54230efa8167a106642fbfc0ec1c48592",
+  "selection_policy": "All primary software-engineering and cybersecurity tasks; first ceiling half of SHA256(seed NUL name) ranking within category is development, remaining tasks are holdouts; no model outcomes observed",
+  "holdout_access_policy": "Metadata and byte hashes have been inspected; prompts, skill text, oracles and verifier semantics must stay outside development access until final evaluation. Public availability prevents a claim of training-data decontamination.",
+  "tasks": [
+    {
+      "name": "syzkaller-ppdev-syzlang",
+      "category": "cybersecurity",
+      "partition": "development",
+      "task_digest": "sha256:428a0a71086a6e1f537e0da43a65fa64d2c7e5545777cddbac611de90ad1b133",
+      "ranking_sha256": "24a04672462d6bc1bcdc5e860cde4396bcea59947f384d1d37d0c107949ca3bc"
+    },
+    {
+      "name": "suricata-custom-exfil",
+      "category": "cybersecurity",
+      "partition": "development",
+      "task_digest": "sha256:1a282d9d2283b8def6105a1e9e2ac1eb8eb30eeba79b452f6276d77a2197c986",
+      "ranking_sha256": "2dc8d76a606caaee98bea7988f63dde8891d91235587955c875c33ee8caa98a5"
+    },
+    {
+      "name": "dapt-intrusion-detection",
+      "category": "cybersecurity",
+      "partition": "development",
+      "task_digest": "sha256:1d94af9e3b2e1c6703be4fa53b9f982a86ee45e39a7619bd07d04d6690870d24",
+      "ranking_sha256": "495ff1c643e2315b3423f0cc01c7f55fcb5b5da76d3bab67d173637c5013d185"
+    },
+    {
+      "name": "setup-fuzzing-py",
+      "category": "cybersecurity",
+      "partition": "development",
+      "task_digest": "sha256:ac70897b525ee19474225247a9132f4beaa9365ad8a4af064305321997147c0d",
+      "ranking_sha256": "bfe5001fa83ce17ba6d8f6be1374ef3a2fa6c1d99d2f49c14f83498d47b9dba5"
+    },
+    {
+      "name": "fix-druid-loophole-cve",
+      "category": "cybersecurity",
+      "partition": "holdout",
+      "task_digest": "sha256:a53aaa226bfcd53b928ef19364d7bec5da8e49f072c5ea71a323364bf07e3412",
+      "ranking_sha256": "cb5dbda85ad6bcc124d83d5f521a706988fb61009da49d386809331d2f5df866"
+    },
+    {
+      "name": "software-dependency-audit",
+      "category": "cybersecurity",
+      "partition": "holdout",
+      "task_digest": "sha256:806b47bea8b86a370c18dee279f6322da3a9b23026287876c2e9ffbfac855ec3",
+      "ranking_sha256": "ec695ca0098b5397031eb39aa6675260553e1f4f3f1352e87b8009a96845b3cd"
+    },
+    {
+      "name": "fix-erlang-ssh-cve",
+      "category": "cybersecurity",
+      "partition": "holdout",
+      "task_digest": "sha256:81b3e7cdf8d40c99ecb6321e24759b0a3e78d136ab4fe83a8fec85197586e27c",
+      "ranking_sha256": "f3f2224e301fe82879e2ba11a5f892f9e1c5089b7f3130f5e0c8626bae30ebac"
+    },
+    {
+      "name": "azure-bgp-oscillation-route-leak",
+      "category": "software-engineering",
+      "partition": "development",
+      "task_digest": "sha256:58a862b7c0704fbe5ca545f18eeabac39599be94c857e0a7d80781dbbc0a52ef",
+      "ranking_sha256": "01af3d4f64b95e0421e0d991f6d4124c0a90939acb930400e1ccd8f9b9dd2f1b"
+    },
+    {
+      "name": "spring-boot-jakarta-migration",
+      "category": "software-engineering",
+      "partition": "development",
+      "task_digest": "sha256:2f5a32911b6e7bba86a6eb94e012e088f536d13ea823e7d0760b6ea93de51fba",
+      "ranking_sha256": "02c10e02b30d5406bc5760e7651715bb8f3243e6004752d982cc70ff000ab3e8"
+    },
+    {
+      "name": "parallel-tfidf-search",
+      "category": "software-engineering",
+      "partition": "development",
+      "task_digest": "sha256:482f37d1b1cb39de2c6dcfe36ad1db5b5594ebf0ca76abb9c504d061a27e3b02",
+      "ranking_sha256": "074a6ac7a9c1f15e5d6e6ed4bef53182cfab3f4f8d7bc3a7f308b1743124e058"
+    },
+    {
+      "name": "python-scala-translation",
+      "category": "software-engineering",
+      "partition": "development",
+      "task_digest": "sha256:d84a2aae85cce5480402fed5095a06495efa07a4ca458505171515d7707fc013",
+      "ranking_sha256": "1c9aa0e6e2d0c1491a6ad33d50fa1051b2fa3e43a6eb7a0ec47de48c77b579c8"
+    },
+    {
+      "name": "fix-visual-stability",
+      "category": "software-engineering",
+      "partition": "development",
+      "task_digest": "sha256:6f4f0977e3f06e6d3fb9b903966e1c1f0b3d1f9b2e3ac60aa7ed27f478a5252d",
+      "ranking_sha256": "59314a2ae6ad6ebd27a10260ad91ff25ed0fd487b29af7ea278733c8c1b3ab7e"
+    },
+    {
+      "name": "flink-query",
+      "category": "software-engineering",
+      "partition": "development",
+      "task_digest": "sha256:9c47e12a691f2bc0b94941962ee9b7878b2a2f8edf6aec30f02dd602cdc81850",
+      "ranking_sha256": "7bad19f0f0ef73566abcebd046b00197fc87afba53d73696843920b067fa4fb0"
+    },
+    {
+      "name": "dialogue-parser",
+      "category": "software-engineering",
+      "partition": "development",
+      "task_digest": "sha256:4d48e3b0e7146cb3596bf3f56f9d37cecab57fcbb32058f229e5401182cd191d",
+      "ranking_sha256": "805f723fdfde941cd682b153d180ca9eae35d8a6809b3ff65568306c35407161"
+    },
+    {
+      "name": "simpo-code-reproduction",
+      "category": "software-engineering",
+      "partition": "development",
+      "task_digest": "sha256:a436e280e9d3aabba9486530d1c10fc1ebcfa4f883bc4b9765259300767568af",
+      "ranking_sha256": "849de3cd5b407ca9a8538a76a2fb3d9011a4121c3afaa71037a3f38ba0b5915c"
+    },
+    {
+      "name": "fix-build-agentops",
+      "category": "software-engineering",
+      "partition": "holdout",
+      "task_digest": "sha256:f03d658eee4f3f1e3ac7d91ad41cd63a8145759dc06281482efa7fe671d48edf",
+      "ranking_sha256": "8f4bff6a85f44c303fec07fb1c72b12c95e4cda5953b06a1308574b73140dfa4"
+    },
+    {
+      "name": "debug-trl-grpo",
+      "category": "software-engineering",
+      "partition": "holdout",
+      "task_digest": "sha256:6224b1d6251416451c50c5f32436299d251945cd33bd5331c85bac9acb3b4dce",
+      "ranking_sha256": "b8215aea9561b17dfac591048051fed98d3c630e6cf89ad4bee747fa79a0ed65"
+    },
+    {
+      "name": "react-performance-debugging",
+      "category": "software-engineering",
+      "partition": "holdout",
+      "task_digest": "sha256:598d880dbacaa43e05cd93786ab88d424690c47fd2636b41f2e6602fb385d4d8",
+      "ranking_sha256": "c71d7a52932b595c35190b96b9e97784ca2a545aad33bdb506d15c7c43a49375"
+    },
+    {
+      "name": "jax-computing-basics",
+      "category": "software-engineering",
+      "partition": "holdout",
+      "task_digest": "sha256:85f8adc808c68bfacd1fa06b17b91bb82b09aac0848c2ba55e512feb84137b35",
+      "ranking_sha256": "c7e3cc18d49a79858a81b0838ddb4fe2581864dd8754273a86cecba2932b2755"
+    },
+    {
+      "name": "tictoc-unnecessary-abort-detection",
+      "category": "software-engineering",
+      "partition": "holdout",
+      "task_digest": "sha256:2142ae37cde1142f7ffbe4be59107d94171221d28ed6d390c4ec736bf26d2906",
+      "ranking_sha256": "c8214a1f309d4cd8731b8d1a94f83c894cb74f9be60cbebd66b3e44f16d3f930"
+    },
+    {
+      "name": "llm-prefix-cache-replay",
+      "category": "software-engineering",
+      "partition": "holdout",
+      "task_digest": "sha256:ac5d31f79c6fb25306e9e7216ccf56407f637a12097f31930ed494c0cada5deb",
+      "ranking_sha256": "cc91e68ce28c5b7947a0b10691a53f1f2821991c94a7b7224295de0f49a1f49e"
+    },
+    {
+      "name": "fix-build-google-auto",
+      "category": "software-engineering",
+      "partition": "holdout",
+      "task_digest": "sha256:a71d138003aa4c28222d6877e0dd65c3ddfbd9f407d5878fd0a235a32e9df8a4",
+      "ranking_sha256": "dbd45a435634bdf3c808808db06de69991af0df6f763a9e8cd4e9e9e811abf1d"
+    },
+    {
+      "name": "data-to-d3",
+      "category": "software-engineering",
+      "partition": "holdout",
+      "task_digest": "sha256:6bd955ce55b21352a441a5706b0e3faaad42b37891145e614b27387f44d38808",
+      "ranking_sha256": "e5d839a44f8109fa6071e3dbd1fa430b6709ad34fea05e321e6e5b3bda03eb29"
+    }
+  ]
+}

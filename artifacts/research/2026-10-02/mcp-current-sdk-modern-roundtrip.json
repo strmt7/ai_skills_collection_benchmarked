@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "evidence_class": "current-sdk-local-transport-controls",
+  "python_version": "3.14.8",
+  "mcp_version": "2.2.0",
+  "reproducer_sha256": "6467717e25b7550e6fcbb912153ce061c054a95757457e7198bd17a6a1f8ff11",
+  "negotiation_mode": "modern",
+  "protocol_version": "2026-07-28",
+  "checks": {
+    "protocol_negotiation": true,
+    "actual_local_tool_listing": true,
+    "structured_and_text_result": true,
+    "typed_error_status_preserved": true,
+    "progress_notification": true,
+    "request_timeout": true,
+    "lifespan_finally_cleanup": true,
+    "typed_multi_page_listing": true,
+    "pagination_cycle_rejected": true
+  },
+  "all_controls_passed": true,
+  "provider_requests": 0,
+  "external_mcp_connections": 0,
+  "local_stdio_fixture_connections": 1,
+  "success_envelope": {
+    "_meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "current-sdk-fixture",
+        "version": ""
+      }
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"values\": [\n    2,\n    3,\n    -1\n  ],\n  \"sum\": 4,\n  \"lifespan_ready\": true\n}",
+        "annotations": null,
+        "_meta": null
+      }
+    ],
+    "structuredContent": {
+      "values": [
+        2,
+        3,
+        -1
+      ],
+      "sum": 4,
+      "lifespan_ready": true
+    },
+    "isError": false,
+    "resultType": "complete"
+  },
+  "failure_envelope": {
+    "_meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "current-sdk-fixture",
+        "version": ""
+      }
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "Error executing tool fail",
+        "annotations": null,
+        "_meta": null
+      }
+    ],
+    "structuredContent": null,
+    "isError": true,
+    "resultType": "complete"
+  },
+  "server_log_bytes": 4159,
+  "scope": "Actual initialization, listing, structured result, error, progress, timeout and lifespan cleanup over local stdio. Typed pagination uses explicit two-page/cycle fixtures. No remote transport/security or model efficacy claim."
+}

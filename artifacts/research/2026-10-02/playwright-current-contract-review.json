@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "evidence_class": "current-playwright-types-and-dependency-controls",
+  "versions": {
+    "node": "26.10.0",
+    "npm": "12.2.0",
+    "playwright_test": "1.63.0",
+    "typescript": "7.0.2",
+    "node_types": "26.6.4"
+  },
+  "package_lock_sha256": "1f7d4541b17b70c13bfd6de2d34631ebc70cdc9617d8f6e5278cca3dfda79783",
+  "advisory_audit": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "dependencies": {
+      "prod": 1,
+      "dev": 26,
+      "optional": 20,
+      "peer": 0,
+      "peerOptional": 0,
+      "total": 26
+    }
+  },
+  "negative_fixture": {
+    "exit_code": 1,
+    "diagnostics": "negative.spec.ts(2,51): error TS2769: No overload matches this call.\n  The last overload gave the following error.\n    Object literal may only specify known properties, and 'videosPath' does not exist in type 'UseOptions<PlaywrightTestOptions & CustomProperties<unknown>, PlaywrightWorkerOptions & CustomProperties<unknown>>'.\nnegative.spec.ts(4,87): error TS2353: Object literal may only specify known properties, and 'snapshots' does not exist in type '{ categories?: string[] | undefined; path?: string | undefined; screenshots?: boolean | undefined; }'.\n",
+    "sha256": "80d1543fba6f805d5807bae22ae0d89485bf3bdc8c26116d6b5e89b23e837f44"
+  },
+  "positive_fixture": {
+    "exit_code": 0,
+    "diagnostics": "",
+    "sha256": "7b8c4bd16bbef1e8f1f098b55b935b254840511a7bc9824db96c18259ada4850"
+  },
+  "initial_harness_failure": "Both initial compilations failed TS2688 because root cwd did not resolve staged Node types; raw logs retained. Re-running from the isolated package directory qualified actual API diagnostics.",
+  "scope": "Current stable package compilation/advisory controls; not model efficacy or browser release certification."
+}

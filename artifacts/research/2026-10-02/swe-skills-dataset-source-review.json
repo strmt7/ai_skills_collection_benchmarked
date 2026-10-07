@@ -1,0 +1,29 @@
+{
+  "observed_at_utc": "2026-10-02T14:58:45.988112+00:00",
+  "endpoint": "https://huggingface.co/api/datasets/GeniusHTX/SWE-Skills-Bench",
+  "metadata_sha256": "62118e6b215166b3d0eab5b692e9f953c786abe7173247a941e189f9b5dedb7c",
+  "revision": "a111a9d9e53722c7aafd951830b459b08439f2da",
+  "selection_policy": "current dataset HEAD; not a published stable release",
+  "declared_license": "mit",
+  "files": [
+    ".gitattributes",
+    "README.md",
+    "swe_skills_bench.jsonl"
+  ],
+  "private": false,
+  "gated": false,
+  "benchmark_executed": false,
+  "verifiers_qualified": false,
+  "component_rights_verified": false,
+  "source_acquisition_failure_retained": "GitHub paper-linked repository HTTP 404",
+  "already_exposed_development_ids": [
+    "add-uint-support",
+    "fix",
+    "springboot-tdd",
+    "add-admin-api-endpoint",
+    "mcp-builder",
+    "python-resilience",
+    "xlsx",
+    "turborepo"
+  ]
+}

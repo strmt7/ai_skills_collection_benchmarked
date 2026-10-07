@@ -1,0 +1,73 @@
+{
+  "agent_efficacy_scored": false,
+  "evidence_class": "locked-public-source-complete-dependency-graph-refresh",
+  "findings_suppressed": false,
+  "graph": {
+    "audit_path": "artifacts/research/2026-10-07/image-cli-advisory-npm-audit.json",
+    "direct_floors": {
+      "sharp": "^0.35.5"
+    },
+    "files": {
+      "package-lock.json": {
+        "replacement_path": "benchmarks/dependency-regressions/fixtures/image-cli-advisory-floor/package-lock.json",
+        "replacement_sha256": "d6914de6c8bec49d7d6ce61d210fff9ea31f1bbd252872771e48ff6d4f74e596",
+        "source_sha256": "e0bcd3bc94635b667f848b3d3b903ebb69773e2393debe5c1634e9824e936ce0"
+      },
+      "package.json": {
+        "replacement_path": "benchmarks/dependency-regressions/fixtures/image-cli-advisory-floor/package.json",
+        "replacement_sha256": "f2d207d6dab53be002f7e12e58b4ac65a9d21945a07812adc25a547af4de32d7",
+        "source_sha256": "a6935eccb39313f74cb9aa20679f6ed8c634fe0e7c23a9be7b0121fead76a92c"
+      }
+    },
+    "id": "blog-cover-image-cli-advisories-2026-10-07",
+    "limitations": [
+      "Known-advisory scan and trusted runtime controls only; no agent efficacy or provider availability scored",
+      "Unaffected direct dependency version ranges remain the original declaration"
+    ],
+    "previous_mirror_sha256": "7bc344d6c4cba207ef77331f3cf3aa13164121f1e4823e25c383c241a3b6101d",
+    "runtime_controls_path": "artifacts/research/2026-10-07/image-cli-advisory-runtime-controls.json",
+    "source_commit": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4",
+    "source_path": "packages/cli/skills/blog-cover-image-cli/SKILL.md",
+    "source_repo": "Varnan-Tech/opendirectory",
+    "source_tree_sha256": "cb044c7087c8d2ddde5164ce183ec6e8cc22d419e4f5b0411d06ff014f44e092"
+  },
+  "previous": {
+    "dependency_graph": null,
+    "file_modes": null,
+    "skill_dir_sha256": "7bc344d6c4cba207ef77331f3cf3aa13164121f1e4823e25c383c241a3b6101d"
+  },
+  "previous_graph_sha256": {
+    "package-lock.json": "12af18d32f5cade88dc597065dcd555cd5be145ef123a3ac5233694d989a41d9",
+    "package.json": "a6935eccb39313f74cb9aa20679f6ed8c634fe0e7c23a9be7b0121fead76a92c"
+  },
+  "schema_version": 1,
+  "skill_id": "varnan-tech-opendirectory-packages-cli-skills-blog-cover-image-cli-skill-md",
+  "skill_text_changed": false,
+  "sources_upgraded": false,
+  "updated": {
+    "dependency_graph": "blog-cover-image-cli-advisories-2026-10-07",
+    "file_modes": {
+      ".github/workflows/publish.yml": "100644",
+      ".gitignore": "100644",
+      "LICENSE": "100644",
+      "README.md": "100644",
+      "SKILL.md": "100644",
+      "bin/cli.js": "100644",
+      "examples/100x_UX_Research_AI_Agent.png": "100644",
+      "examples/Firecrawl-supabase-bolt.png": "100644",
+      "examples/Git-City_Case_study_Cover_Image.jpg": "100644",
+      "examples/THE DISTRIBUTION LAYER (2).png": "100644",
+      "examples/canva-perplexity-duolingo-cover-image.png": "100644",
+      "examples/gamma-mistral-veed.png": "100644",
+      "examples/server-survival-case-study-cover-image(1).png": "100644",
+      "examples/viral-meme-automation.png": "100644",
+      "index.js": "100644",
+      "package-lock.json": "100644",
+      "package.json": "100644",
+      "src/geminiGenerator.js": "100644",
+      "src/imageValidator.js": "100644",
+      "src/logoFetcher.js": "100644"
+    },
+    "skill_dir_sha256": "9d9154d482b45fb4f8bf9865d8a67b7230e13d732d0225560362a6c00ea16645"
+  }
+}
