@@ -66,14 +66,18 @@ def load_json(path: Path) -> Any:
 
 def run_git(path: Path, *args: str) -> str:
     try:
-        return subprocess.check_output(
-            ["git", "-C", str(path), *args],
+        result = subprocess.run(
+            ["git", "-c", "core.longpaths=true", "-C", str(path), *args],
             text=True,
-            stderr=subprocess.PIPE,
-        ).strip()
+            capture_output=True,
+            check=True,
+        )
     except subprocess.CalledProcessError as exc:
         stderr = (exc.stderr or "").strip()
         raise RuntimeError(f"git {' '.join(args)} failed in {path}: {stderr}") from None
+    if result.stderr.strip():
+        raise RuntimeError(f"git {' '.join(args)} reported diagnostics in {path}: {result.stderr.strip()}")
+    return result.stdout.strip()
 
 
 def validate_top_level(lock: dict[str, Any], report: Report) -> None:

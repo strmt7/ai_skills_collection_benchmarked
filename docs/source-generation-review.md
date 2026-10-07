@@ -143,3 +143,16 @@ Gitleaks history pass.
 The recoverable source publication is local at this point. Its completion does
 not establish full PPT rendering compatibility, all-source upstream freshness,
 repository-wide security clearance or improved coding-agent effectiveness.
+
+The subsequent hosted ledger gate exposed one transport defect: Git normalized
+the captured Wycheproof input JSON, whose original CRLF bytes were bound into
+research receipts. Its exact path now disables text conversion, preserving the
+original input and expected hash. A regression check compares raw and filtered
+Git object hashes for every ledger evidence path; it reproduced this mismatch
+before the fix. No fixture value, evaluator or expected hash was changed.
+
+Live source qualification also now enables long paths for every Git read and
+rejects diagnostics even when Git exits successfully. This prevents unreadable
+paths from being misreported as source edits. The selected PPT checkout passes
+strict commit, tree, origin, clean-status and resource checks; the other 26
+source repositories are outside this live qualification.
