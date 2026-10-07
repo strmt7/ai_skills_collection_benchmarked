@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "evidence_class": "upstream-evaluation-contract-controls-not-skill-effectiveness",
+  "passed": true,
+  "checks": {
+    "bounded_execution_and_verified_cleanup": true,
+    "complete_matrix": true,
+    "unequal_skill_count_rejected": true,
+    "unequal_control_count_rejected": true,
+    "missing_control_rejected": true,
+    "boolean_prompt_count_rejected": true,
+    "nonstring_output_rejected": true,
+    "empty_skill_responses_accepted_but_no_fidelity_proof": true,
+    "whitespace_skill_responses_accepted_but_no_fidelity_proof": true,
+    "unknown_model_metadata_accepted_but_not_resolved_identity": true,
+    "empty_controls_accepted_but_no_success_proof": true,
+    "published_complete_10_prompt_5_arm_matrix_validates": true,
+    "duplicate_json_count_key_last_value_accepted": true
+  },
+  "repository": "https://github.com/JuliusBrussee/caveman",
+  "release": "v3.1.0",
+  "commit": "8af1f1b9b1346bca0722a1556f119b4e6675cc96",
+  "image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+  "source_sha256": {
+    "evals/snapshot_contract.py": "676a26f4f11ea6a1c23b2b54de945b7d60c9be2ce867f6341e0015a832ebfbb2",
+    "evals/snapshots/results.json": "3f5e79f40b703ede892a6a3e88a2601c2184562bb47a92ca0ef414c684162be1"
+  },
+  "fixture_sha256": "8a07391ba68286ce10ad1c7d39e029e2fe1e579786368bc35947db109a79eac0",
+  "fixture_input_sha256": "d0d1a03115a51b1443ff239c320afcda9411c439c1e27170cfe3879896b50c03",
+  "execution": {
+    "status": "completed",
+    "container_name": "skills-invoke-fb950ccf50804cd18dd8acba55bb2350",
+    "image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+    "scored": false,
+    "candidate_response_is_untrusted": true,
+    "cleanup_verified": true,
+    "request_sha256": "e6f2f6341e482851279b6f63aaa29839225d723a8aaab11071114c622274e053",
+    "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+    "resource_profile": "python-small",
+    "submission_sha256": {
+      "candidate.py": "8a07391ba68286ce10ad1c7d39e029e2fe1e579786368bc35947db109a79eac0",
+      "snapshot_contract.py": "676a26f4f11ea6a1c23b2b54de945b7d60c9be2ce867f6341e0015a832ebfbb2",
+      "results.json": "3f5e79f40b703ede892a6a3e88a2601c2184562bb47a92ca0ef414c684162be1"
+    },
+    "container_id": "40ecf568008312c1fd2b020b04903eca0d68405ade540a3a18393cf11a475393",
+    "isolation_checks": {
+      "errors": [],
+      "passed": true,
+      "observed_user": "65534:65534",
+      "observed_image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+      "observed_ownership_token": "fb950ccf50804cd18dd8acba55bb2350",
+      "resolved_image_id": "sha256:284cda8648f59f87e9468ec9d5652064dc2cd5b7d3fce342c2d3825ca1de6353",
+      "observed_host_constraints": {
+        "NetworkMode": "none",
+        "IpcMode": "none",
+        "ReadonlyRootfs": true,
+        "Memory": 536870912,
+        "MemorySwap": 536870912,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64,
+        "Privileged": false,
+        "Init": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "CapAdd": null,
+        "SecurityOpt": [
+          "no-new-privileges"
+        ],
+        "LogConfig": {
+          "Type": "none",
+          "Config": {}
+        },
+        "Tmpfs": {
+          "/tmp": "rw,noexec,nosuid,size=128m"
+        },
+        "Devices": [],
+        "DeviceRequests": null,
+        "VolumesFrom": null
+      },
+      "observed_mounts": [
+        {
+          "Destination": "/submission",
+          "Type": "bind",
+          "RW": false
+        },
+        {
+          "Destination": "/worker",
+          "Type": "bind",
+          "RW": false
+        }
+      ]
+    },
+    "setup_elapsed_seconds": 0.21168910001870245,
+    "runtime_elapsed_seconds": 0.4943796999868937,
+    "returncode": 0,
+    "candidate_response": {
+      "worker_status": "returned",
+      "result": {
+        "outcomes": [
+          {
+            "name": "complete_matrix",
+            "accepted": true,
+            "error": null
+          },
+          {
+            "name": "unequal_skill_count_rejected",
+            "accepted": false,
+            "error": "arm caveman contains 1 outputs; expected 2"
+          },
+          {
+            "name": "unequal_control_count_rejected",
+            "accepted": false,
+            "error": "arm __terse__ contains 1 outputs; expected 2"
+          },
+          {
+            "name": "missing_control_rejected",
+            "accepted": false,
+            "error": "required control arms missing: __baseline__"
+          },
+          {
+            "name": "boolean_prompt_count_rejected",
+            "accepted": false,
+            "error": "metadata.n_prompts must be a positive integer"
+          },
+          {
+            "name": "nonstring_output_rejected",
+            "accepted": false,
+            "error": "arm caveman output 0 must be a string"
+          },
+          {
+            "name": "empty_skill_responses_accepted_but_no_fidelity_proof",
+            "accepted": true,
+            "error": null
+          },
+          {
+            "name": "whitespace_skill_responses_accepted_but_no_fidelity_proof",
+            "accepted": true,
+            "error": null
+          },
+          {
+            "name": "unknown_model_metadata_accepted_but_not_resolved_identity",
+            "accepted": true,
+            "error": null
+          },
+          {
+            "name": "empty_controls_accepted_but_no_success_proof",
+            "accepted": true,
+            "error": null
+          }
+        ],
+        "published_matrix_prompts": 10,
+        "published_matrix_arms": [
+          "__baseline__",
+          "__terse__",
+          "caveman",
+          "megacave",
+          "ultracave"
+        ],
+        "duplicate_key_accepted": true
+      }
+    },
+    "captured_bytes": 1249,
+    "stderr": "",
+    "elapsed_seconds": 0.9114758000068832
+  },
+  "observed_gaps": [
+    "Empty or whitespace responses and empty controls satisfy the shape validator; no correctness or successful generation is proved.",
+    "Model name unknown satisfies metadata validation; resolved provider identity is not bound.",
+    "Duplicate JSON keys use last-value parsing; no unique-key artifact integrity guarantee is proved."
+  ],
+  "upstream_improvements_verified": [
+    "Unequal matrix counts fail before zip-based measurement.",
+    "Published pinned snapshot has ten prompts and five complete arms."
+  ],
+  "new_agent_calls_performed": false,
+  "agent_efficacy_scored": false,
+  "skill_runtime_benchmark_passes": 0,
+  "controls_use_synthetic_fixed_inputs_not_model_outputs_except_validation_of_the_published_snapshot": true,
+  "reproducer_sha256": "3ff4ee34a73cd0d3443a00555206a01aceaa87d68c41b2a08ff1743a29f1f318"
+}

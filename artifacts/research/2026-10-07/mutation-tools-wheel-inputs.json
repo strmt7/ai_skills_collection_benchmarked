@@ -1,0 +1,410 @@
+{
+  "base_image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+  "wheels": {
+    "click": {
+      "version": "8.5.0",
+      "filename": "click-8.5.0-py3-none-any.whl",
+      "sha256": "255bc9599cf7748b4b1a446ccc735421bd08a2ae529a8b88597d3de5664ee360",
+      "bytes": 125251,
+      "url": "https://files.pythonhosted.org/packages/58/50/6c0d534c5f134586a8e1ba4e330569e32f057e33372ae556463212fb4cd3/click-8.5.0-py3-none-any.whl",
+      "requires_python": ">=3.10",
+      "upload_time": "2026-08-26T13:33:12.928043Z",
+      "requires_dist": null
+    },
+    "colorama": {
+      "version": "0.4.6",
+      "filename": "colorama-0.4.6-py2.py3-none-any.whl",
+      "sha256": "4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6",
+      "bytes": 25335,
+      "url": "https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl",
+      "requires_python": "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7",
+      "upload_time": "2022-10-25T02:36:20.889702Z",
+      "requires_dist": null
+    },
+    "coverage": {
+      "version": "7.16.2",
+      "filename": "coverage-7.16.2-cp314-cp314-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+      "sha256": "35f37886699cb9abd29958247d718628d5bc6f39e623dff66a09e546c42a7e03",
+      "bytes": 258727,
+      "url": "https://files.pythonhosted.org/packages/a8/d4/a306940c81c6ae759e82fff27d20b7fdc6896e422b821f51313cce212b6c/coverage-7.16.2-cp314-cp314-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+      "requires_python": ">=3.10",
+      "upload_time": "2026-09-27T12:27:09.927102Z",
+      "requires_dist": [
+        "tomli; python_full_version <= \"3.11.0a6\" and extra == \"toml\""
+      ]
+    },
+    "iniconfig": {
+      "version": "2.3.1",
+      "filename": "iniconfig-2.3.1-py3-none-any.whl",
+      "sha256": "9121e2c1fdb355232495be3194c8dfe87ccc2d5dee45947b78e68f499790d7a7",
+      "bytes": 7552,
+      "url": "https://files.pythonhosted.org/packages/56/43/4ca9e49d27a1fcf6bece6f6aec0ea46bb9112489b93d4b688fb415457bdb/iniconfig-2.3.1-py3-none-any.whl",
+      "requires_python": ">=3.10",
+      "upload_time": "2026-10-06T22:48:36.959685Z",
+      "requires_dist": null
+    },
+    "libcst": {
+      "version": "1.9.0",
+      "filename": "libcst-1.9.0-cp314-cp314-manylinux_2_28_x86_64.whl",
+      "sha256": "444e84c76cd035cd2fe136838c1a524d34b08216521f6f5093df8a6f6cfa5799",
+      "bytes": 2255879,
+      "url": "https://files.pythonhosted.org/packages/25/7d/2eaa697a80f899bcf2245680bbfcc1e478eb3b3328c21d4b2880bdf00dac/libcst-1.9.0-cp314-cp314-manylinux_2_28_x86_64.whl",
+      "requires_python": ">=3.9",
+      "upload_time": "2026-07-29T19:25:14.137162Z",
+      "requires_dist": [
+        "pyyaml>=5.2; python_version < \"3.13\"",
+        "pyyaml-ft>=8.0.0; python_version == \"3.13\"",
+        "pyyaml>=6.0.3; python_version >= \"3.14\"",
+        "typing-extensions; python_version < \"3.10\""
+      ]
+    },
+    "linkify-it-py": {
+      "version": "2.2.0",
+      "filename": "linkify_it_py-2.2.0-py3-none-any.whl",
+      "sha256": "3adc40eb5af300b2605fcfdb968c24e1d780a90f1f2221af7c15e5111e94d443",
+      "bytes": 21971,
+      "url": "https://files.pythonhosted.org/packages/13/d4/1152d1c7ab42d8b908be64fd200ddc870dc9d4925e951198702084aa1a7d/linkify_it_py-2.2.0-py3-none-any.whl",
+      "requires_python": ">=3.10",
+      "upload_time": "2026-08-29T07:07:07.164840Z",
+      "requires_dist": [
+        "pytest; extra == \"test\"",
+        "coverage; extra == \"test\"",
+        "pytest-cov; extra == \"test\"",
+        "pytest-timeout; extra == \"test\"",
+        "pre-commit; extra == \"dev\"",
+        "isort; extra == \"dev\"",
+        "flake8; extra == \"dev\"",
+        "black; extra == \"dev\"",
+        "pyproject-flake8; extra == \"dev\"",
+        "pytest; extra == \"benchmark\"",
+        "pytest-benchmark; extra == \"benchmark\"",
+        "sphinx; extra == \"doc\"",
+        "sphinx_book_theme; extra == \"doc\"",
+        "myst-parser; extra == \"doc\""
+      ]
+    },
+    "markdown-it-py": {
+      "version": "4.2.0",
+      "filename": "markdown_it_py-4.2.0-py3-none-any.whl",
+      "sha256": "9f7ebbcd14fe59494226453aed97c1070d83f8d24b6fc3a3bcf9a38092641c4a",
+      "bytes": 91687,
+      "url": "https://files.pythonhosted.org/packages/b3/81/4da04ced5a082363ecfa159c010d200ecbd959ae410c10c0264a38cac0f5/markdown_it_py-4.2.0-py3-none-any.whl",
+      "requires_python": ">=3.10",
+      "upload_time": "2026-05-07T12:08:27.182789Z",
+      "requires_dist": [
+        "mdurl~=0.1",
+        "psutil; extra == \"benchmarking\"",
+        "pytest; extra == \"benchmarking\"",
+        "pytest-benchmark; extra == \"benchmarking\"",
+        "commonmark~=0.9; extra == \"compare\"",
+        "markdown~=3.4; extra == \"compare\"",
+        "mistletoe~=1.0; extra == \"compare\"",
+        "mistune~=3.0; extra == \"compare\"",
+        "panflute~=2.3; extra == \"compare\"",
+        "markdown-it-pyrs; extra == \"compare\"",
+        "linkify-it-py<3,>=1; extra == \"linkify\"",
+        "mdit-py-plugins>=0.5.0; extra == \"plugins\"",
+        "gprof2dot; extra == \"profiling\"",
+        "mdit-py-plugins>=0.5.0; extra == \"rtd\"",
+        "myst-parser; extra == \"rtd\"",
+        "pyyaml; extra == \"rtd\"",
+        "sphinx; extra == \"rtd\"",
+        "sphinx-copybutton; extra == \"rtd\"",
+        "sphinx-design; extra == \"rtd\"",
+        "sphinx-book-theme~=1.0; extra == \"rtd\"",
+        "jupyter_sphinx; extra == \"rtd\"",
+        "ipykernel; extra == \"rtd\"",
+        "coverage; extra == \"testing\"",
+        "pytest; extra == \"testing\"",
+        "pytest-cov; extra == \"testing\"",
+        "pytest-regressions; extra == \"testing\"",
+        "pytest-timeout; extra == \"testing\"",
+        "requests; extra == \"testing\""
+      ]
+    },
+    "mdit-py-plugins": {
+      "version": "0.6.1",
+      "filename": "mdit_py_plugins-0.6.1-py3-none-any.whl",
+      "sha256": "214c82fb2ac524472ab6a5bcab1de80f73b50443e187f401bfd77efbc7c6481d",
+      "bytes": 66663,
+      "url": "https://files.pythonhosted.org/packages/a5/69/6da5581c6a7fede7dc261bf4e67d6adca4196f176b43288b55b3db395b6e/mdit_py_plugins-0.6.1-py3-none-any.whl",
+      "requires_python": ">=3.10",
+      "upload_time": "2026-05-13T09:03:37.760000Z",
+      "requires_dist": [
+        "markdown-it-py<5.0.0,>=2.0.0",
+        "pre-commit; extra == \"code-style\"",
+        "myst-parser; extra == \"rtd\"",
+        "sphinx-book-theme; extra == \"rtd\"",
+        "coverage; extra == \"testing\"",
+        "pytest; extra == \"testing\"",
+        "pytest-cov; extra == \"testing\"",
+        "pytest-regressions; extra == \"testing\"",
+        "pytest-timeout; extra == \"testing\""
+      ]
+    },
+    "mdurl": {
+      "version": "0.1.2",
+      "filename": "mdurl-0.1.2-py3-none-any.whl",
+      "sha256": "84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8",
+      "bytes": 9979,
+      "url": "https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl",
+      "requires_python": ">=3.7",
+      "upload_time": "2022-08-14T12:40:09.779676Z",
+      "requires_dist": null
+    },
+    "mutmut": {
+      "version": "3.8.0",
+      "filename": "mutmut-3.8.0-py3-none-any.whl",
+      "sha256": "4c0abcef6b8d1116f2adfaad19df12e1c621e4a402d4367ef15bf8cba497b91d",
+      "bytes": 81469,
+      "url": "https://files.pythonhosted.org/packages/66/2a/a9904a45804c1de50c0c3baad1512b78d5b66d2befd841104b8a62bf0f35/mutmut-3.8.0-py3-none-any.whl",
+      "requires_python": ">=3.10",
+      "upload_time": "2026-09-12T16:53:56.906889Z",
+      "requires_dist": [
+        "click>=8.4.2",
+        "coverage>=7.3.0",
+        "libcst>=1.9.0",
+        "pytest>=6.2.5",
+        "setproctitle>=1.3.7",
+        "textual>=1.0.0",
+        "toml>=0.10.2; python_full_version < \"3.11\""
+      ]
+    },
+    "numpy": {
+      "version": "2.5.3",
+      "filename": "numpy-2.5.3-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "b0521d0f4aebb6e06189451025fa17a913287b13c03d5fe05c017333b654ea5b",
+      "bytes": 16711928,
+      "url": "https://files.pythonhosted.org/packages/45/8f/9beacf79ca7c650688ad0baa80931adb988fe6e6e5d5903c23cc3dbd70eb/numpy-2.5.3-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "requires_python": ">=3.12",
+      "upload_time": "2026-09-06T16:25:48.461222Z",
+      "requires_dist": null
+    },
+    "packaging": {
+      "version": "26.3",
+      "filename": "packaging-26.3-py3-none-any.whl",
+      "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+      "bytes": 129956,
+      "url": "https://files.pythonhosted.org/packages/63/34/ba1c580383c9eada3711951fef0795c80b829a078d72188184bcab9dd527/packaging-26.3-py3-none-any.whl",
+      "requires_python": ">=3.9",
+      "upload_time": "2026-08-04T18:15:27.159957Z",
+      "requires_dist": null
+    },
+    "platformdirs": {
+      "version": "4.12.3",
+      "filename": "platformdirs-4.12.3-py3-none-any.whl",
+      "sha256": "080f3b39423b5abfca9a23d84c4e9795f54d395cd8459867a8ded44084fcd5f8",
+      "bytes": 32493,
+      "url": "https://files.pythonhosted.org/packages/c5/9b/6ce1ead737fe496611bda600c263b9a11ae7bd8f41bb13f9bd7e0a2c37a4/platformdirs-4.12.3-py3-none-any.whl",
+      "requires_python": ">=3.10",
+      "upload_time": "2026-10-03T23:40:45.104725Z",
+      "requires_dist": null
+    },
+    "pluggy": {
+      "version": "1.6.0",
+      "filename": "pluggy-1.6.0-py3-none-any.whl",
+      "sha256": "e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746",
+      "bytes": 20538,
+      "url": "https://files.pythonhosted.org/packages/54/20/4d324d65cc6d9205fabedc306948156824eb9f0ee1633355a8f7ec5c66bf/pluggy-1.6.0-py3-none-any.whl",
+      "requires_python": ">=3.9",
+      "upload_time": "2025-05-15T12:30:06.134003Z",
+      "requires_dist": [
+        "pre-commit; extra == \"dev\"",
+        "tox; extra == \"dev\"",
+        "pytest; extra == \"testing\"",
+        "pytest-benchmark; extra == \"testing\"",
+        "coverage; extra == \"testing\""
+      ]
+    },
+    "Pygments": {
+      "version": "2.21.0",
+      "filename": "pygments-2.21.0-py3-none-any.whl",
+      "sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9",
+      "bytes": 1250147,
+      "url": "https://files.pythonhosted.org/packages/71/46/17f022dd3e953bf20a04a028a21ec746d942f8d2af30fa0f124fa0e6a684/pygments-2.21.0-py3-none-any.whl",
+      "requires_python": ">=3.9",
+      "upload_time": "2026-08-17T08:02:44.912148Z",
+      "requires_dist": [
+        "colorama>=0.4.6; extra == \"windows-terminal\""
+      ]
+    },
+    "pytest": {
+      "version": "9.1.1",
+      "filename": "pytest-9.1.1-py3-none-any.whl",
+      "sha256": "37a86b45efb9a47a61a36449063e8e18d0cab3161329fc099eb21783169c4f0c",
+      "bytes": 386536,
+      "url": "https://files.pythonhosted.org/packages/24/25/1de2678b631f5a49215c6c96fff41ba892b0a34df68d6d80292b1b48aa7f/pytest-9.1.1-py3-none-any.whl",
+      "requires_python": ">=3.10",
+      "upload_time": "2026-06-19T10:58:31.347074Z",
+      "requires_dist": [
+        "colorama>=0.4; sys_platform == \"win32\"",
+        "exceptiongroup>=1; python_version < \"3.11\"",
+        "iniconfig>=1.0.1",
+        "packaging>=22",
+        "pluggy<2,>=1.5",
+        "pygments>=2.7.2",
+        "tomli>=1; python_version < \"3.11\"",
+        "argcomplete; extra == \"dev\"",
+        "attrs>=19.2; extra == \"dev\"",
+        "hypothesis>=3.56; extra == \"dev\"",
+        "mock; extra == \"dev\"",
+        "requests; extra == \"dev\"",
+        "setuptools; extra == \"dev\"",
+        "xmlschema; extra == \"dev\""
+      ]
+    },
+    "PyYAML": {
+      "version": "6.0.3",
+      "filename": "pyyaml-6.0.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "c458b6d084f9b935061bc36216e8a69a7e293a2f1e68bf956dcd9e6cbcd143f5",
+      "bytes": 794175,
+      "url": "https://files.pythonhosted.org/packages/88/f9/16491d7ed2a919954993e48aa941b200f38040928474c9e85ea9e64222c3/pyyaml-6.0.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "requires_python": ">=3.8",
+      "upload_time": "2025-09-25T21:32:40.865549Z",
+      "requires_dist": null
+    },
+    "rich": {
+      "version": "15.0.0",
+      "filename": "rich-15.0.0-py3-none-any.whl",
+      "sha256": "33bd4ef74232fb73fe9279a257718407f169c09b78a87ad3d296f548e27de0bb",
+      "bytes": 310654,
+      "url": "https://files.pythonhosted.org/packages/82/3b/64d4899d73f91ba49a8c18a8ff3f0ea8f1c1d75481760df8c68ef5235bf5/rich-15.0.0-py3-none-any.whl",
+      "requires_python": ">=3.9.0",
+      "upload_time": "2026-04-12T08:24:02.830783Z",
+      "requires_dist": [
+        "ipywidgets<9,>=7.5.1; extra == \"jupyter\"",
+        "markdown-it-py>=2.2.0",
+        "pygments<3.0.0,>=2.13.0"
+      ]
+    },
+    "rustworkx": {
+      "version": "0.18.1",
+      "filename": "rustworkx-0.18.1-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "sha256": "1ebd2441a51c68a784df8c62dc2e6f1a9f58c0eb1c2e21fd59776e08f55c0c0b",
+      "bytes": 2366881,
+      "url": "https://files.pythonhosted.org/packages/a2/ec/80ffcc38ffd28798a31563485a7c35d7d7ccebad83d388717442731e7477/rustworkx-0.18.1-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "requires_python": ">=3.10",
+      "upload_time": "2026-07-30T00:18:00.777532Z",
+      "requires_dist": [
+        "numpy<3,>=1.16.0",
+        "matplotlib>=3.0; extra == \"all\"",
+        "pillow>=5.4; extra == \"all\"",
+        "pillow>=5.4; extra == \"graphviz\"",
+        "matplotlib>=3.0; extra == \"mpl\""
+      ]
+    },
+    "setproctitle": {
+      "version": "1.3.8",
+      "filename": "setproctitle-1.3.8-cp314-cp314-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+      "sha256": "4d6a0245679b74e0fda974edb672cd1f2351b0d762279b6776ca3a065c9322a4",
+      "bytes": 33180,
+      "url": "https://files.pythonhosted.org/packages/a7/96/6b3818e7f63a30f13bbe97b1ea0a51509a20b5b2d48c95e526c3054343d5/setproctitle-1.3.8-cp314-cp314-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+      "requires_python": ">=3.8",
+      "upload_time": "2026-10-01T21:04:02.137972Z",
+      "requires_dist": [
+        "pytest; extra == \"test\""
+      ]
+    },
+    "textual": {
+      "version": "8.2.8",
+      "filename": "textual-8.2.8-py3-none-any.whl",
+      "sha256": "267375fd402dc8d981457212efa71f0e3365fd17bba144ba9bb3ed7563cb374a",
+      "bytes": 731418,
+      "url": "https://files.pythonhosted.org/packages/fb/be/35261223d9416a0751cdff1c7b4a6f881387218a12d439fe22fefebc8c04/textual-8.2.8-py3-none-any.whl",
+      "requires_python": "<4.0,>=3.9",
+      "upload_time": "2026-06-30T06:51:26.364743Z",
+      "requires_dist": [
+        "markdown-it-py[linkify]>=2.1.0",
+        "mdit-py-plugins",
+        "platformdirs<5,>=3.6.0",
+        "pygments<3.0.0,>=2.19.2",
+        "rich>=14.2.0",
+        "tree-sitter>=0.25.0; python_version >= \"3.10\" and extra == \"syntax\"",
+        "tree-sitter-bash>=0.23.0; python_version >= \"3.10\" and extra == \"syntax\"",
+        "tree-sitter-css>=0.23.0; python_version >= \"3.10\" and extra == \"syntax\"",
+        "tree-sitter-go>=0.23.0; python_version >= \"3.10\" and extra == \"syntax\"",
+        "tree-sitter-html>=0.23.0; python_version >= \"3.10\" and extra == \"syntax\"",
+        "tree-sitter-java>=0.23.0; python_version >= \"3.10\" and extra == \"syntax\"",
+        "tree-sitter-javascript>=0.23.0; python_version >= \"3.10\" and extra == \"syntax\"",
+        "tree-sitter-json>=0.24.0; python_version >= \"3.10\" and extra == \"syntax\"",
+        "tree-sitter-markdown>=0.3.0; python_version >= \"3.10\" and extra == \"syntax\"",
+        "tree-sitter-python>=0.23.0; python_version >= \"3.10\" and extra == \"syntax\"",
+        "tree-sitter-regex>=0.24.0; python_version >= \"3.10\" and extra == \"syntax\"",
+        "tree-sitter-rust>=0.23.0; python_version >= \"3.10\" and extra == \"syntax\"",
+        "tree-sitter-sql>=0.3.11; python_version >= \"3.10\" and extra == \"syntax\"",
+        "tree-sitter-toml>=0.6.0; python_version >= \"3.10\" and extra == \"syntax\"",
+        "tree-sitter-xml>=0.7.0; python_version >= \"3.10\" and extra == \"syntax\"",
+        "tree-sitter-yaml>=0.6.0; python_version >= \"3.10\" and extra == \"syntax\"",
+        "typing-extensions<5.0.0,>=4.4.0"
+      ]
+    },
+    "trailmark": {
+      "version": "0.5.0",
+      "filename": "trailmark-0.5.0-py3-none-any.whl",
+      "sha256": "7167fd1d80aaa21830e135e1532989779d262655852a5cab2f46604c2aa841ba",
+      "bytes": 284873,
+      "url": "https://files.pythonhosted.org/packages/12/a3/4d41d55ee94764447b768f50506a7f7add49d955bfd0fbd8c4833d02f4b9/trailmark-0.5.0-py3-none-any.whl",
+      "requires_python": ">=3.12",
+      "upload_time": "2026-07-17T15:00:23.453432Z",
+      "requires_dist": [
+        "rustworkx<1.0,>=0.17",
+        "tree-sitter-language-pack<2.0,>=1.9",
+        "tree-sitter-sql<0.4,>=0.3.11",
+        "tree-sitter~=0.25.0"
+      ]
+    },
+    "tree-sitter": {
+      "version": "0.25.2",
+      "filename": "tree_sitter-0.25.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "260586381b23be33b6191a07cea3d44ecbd6c01aa4c6b027a0439145fcbc3358",
+      "bytes": 636772,
+      "url": "https://files.pythonhosted.org/packages/48/b6/cf08f4f20f4c9094006ef8828555484e842fc468827ad6e56011ab668dbd/tree_sitter-0.25.2-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "requires_python": ">=3.10",
+      "upload_time": "2025-09-25T17:37:54.647219Z",
+      "requires_dist": [
+        "sphinx~=8.1; extra == \"docs\"",
+        "sphinx-book-theme; extra == \"docs\"",
+        "tree-sitter-html>=0.23.2; extra == \"tests\"",
+        "tree-sitter-javascript>=0.23.1; extra == \"tests\"",
+        "tree-sitter-json>=0.24.8; extra == \"tests\"",
+        "tree-sitter-python>=0.23.6; extra == \"tests\"",
+        "tree-sitter-rust>=0.23.2; extra == \"tests\""
+      ]
+    },
+    "tree-sitter-language-pack": {
+      "version": "1.21.0",
+      "filename": "tree_sitter_language_pack-1.21.0-cp310-abi3-manylinux_2_34_x86_64.whl",
+      "sha256": "9b269bc3b1a3a7849c8c2dc92805c2cabf7d15729294bc77e047b320e12fb4a6",
+      "bytes": 2466248,
+      "url": "https://files.pythonhosted.org/packages/df/7b/7df05c03f6434e9b0a5118118f21ab49224a5b19dc4734d879d51a525196/tree_sitter_language_pack-1.21.0-cp310-abi3-manylinux_2_34_x86_64.whl",
+      "requires_python": ">=3.10",
+      "upload_time": "2026-10-04T20:40:27.837497Z",
+      "requires_dist": [
+        "tree-sitter>=0.23"
+      ]
+    },
+    "tree-sitter-sql": {
+      "version": "0.3.11",
+      "filename": "tree_sitter_sql-0.3.11-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "5128b12f71ac0f5ebcc607f67a62cdc56a187c1a5ba7553feeb9c5f6f9bc3c72",
+      "bytes": 380606,
+      "url": "https://files.pythonhosted.org/packages/1d/c1/eec7c09a9c94436ea4c56d096feba815e42b209b3d41a17532f99ecf0c67/tree_sitter_sql-0.3.11-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "requires_python": ">=3.10",
+      "upload_time": "2025-10-01T13:44:11.135438Z",
+      "requires_dist": [
+        "tree-sitter~=0.24; extra == \"core\""
+      ]
+    },
+    "typing_extensions": {
+      "version": "4.16.0",
+      "filename": "typing_extensions-4.16.0-py3-none-any.whl",
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+      "bytes": 45571,
+      "url": "https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl",
+      "requires_python": ">=3.9",
+      "upload_time": "2026-07-02T08:40:04.659120Z",
+      "requires_dist": null
+    }
+  },
+  "resolution_scope": "latest released primary tools with compatible binary transitive requirements; not an assertion that every constrained transitive is globally latest"
+}

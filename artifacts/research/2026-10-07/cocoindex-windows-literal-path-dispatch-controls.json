@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "evidence_class": "actual-upstream-cli-dispatch-controls-not-retrieval-quality",
+  "passed": true,
+  "checks": {
+    "default_cli_changes_literal_glob": true,
+    "default_cli_appends_expanded_paths_to_query": true,
+    "explicit_args_preserve_path_and_query": true
+  },
+  "observations": [
+    {
+      "mode": "default",
+      "request": {
+        "request": {
+          "project_root": "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\semantic-corpus\\full-resources-v6\\tree",
+          "query": "ambiguous mutation mapping zero callers false positives included/improved/skills/genotoxic-current\\LICENSE included/improved/skills/genotoxic-current\\NOTICE.md included/improved/skills/genotoxic-current\\provenance included/improved/skills/genotoxic-current\\provenance\\original-SKILL.md included/improved/skills/genotoxic-current\\references included/improved/skills/genotoxic-current\\references\\qualification.md included/improved/skills/genotoxic-current\\SKILL.md",
+          "languages": null,
+          "paths": [
+            "included/improved/skills/genotoxic-current\\"
+          ],
+          "limit": 3,
+          "offset": 0
+        },
+        "click_version": "8.5.0"
+      },
+      "stderr": ""
+    },
+    {
+      "mode": "literal",
+      "request": {
+        "request": {
+          "project_root": "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\semantic-corpus\\full-resources-v6\\tree",
+          "query": "ambiguous mutation mapping zero callers false positives",
+          "languages": null,
+          "paths": [
+            "included/improved/skills/genotoxic-current/**"
+          ],
+          "limit": 3,
+          "offset": 0
+        },
+        "click_version": "8.5.0"
+      },
+      "stderr": ""
+    }
+  ],
+  "source_sha256": {
+    "cocoindex_code/cli.py": "7567ce81690d42babec17c79e6aeb7da0f0cae2647685a3e903b85f302e39ca2"
+  },
+  "mechanism": "Click Command.main expands Windows sys.argv glob patterns before option parsing; explicitly supplied args and the client API retain literals.",
+  "network_or_model_calls_in_dispatch_probe": false,
+  "real_retrieval_evidence": "artifacts/research/2026-10-07/cocoindex-v6-cli-versus-true-client-retrieval.json",
+  "correction_to_previous_labels": "The client-repeat blocks in three earlier v6 receipts actually ran the CLI because startswith(cli) also matches client-repeat. Their execution outcomes are retained; this is not a client-API failure.",
+  "affected_receipts": [
+    "cocoindex-v6-repeated-retrieval-controls.json",
+    "cocoindex-v6-repeated-retrieval-after-route-probe.json",
+    "cocoindex-v6-retrieval-after-owned-restart.json"
+  ],
+  "agent_efficacy_scored": false,
+  "reproducer_sha256": "a3c3eed500634a2e41e3a0c850fbca0af8983575c2e3d2a6b7c7926f5a35cbc1"
+}

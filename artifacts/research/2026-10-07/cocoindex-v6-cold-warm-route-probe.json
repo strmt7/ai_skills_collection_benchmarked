@@ -1,0 +1,264 @@
+{
+  "exit_code": 0,
+  "stderr": "{\"paths\": [\"included/improved/skills/genotoxic-current/**\"], \"hits\": 3, \"pid\": \"60976\"}\n{\"paths\": null, \"hits\": 3, \"pid\": \"60976\"}\n{\"paths\": [\"included/improved/skills/genotoxic-current/**\"], \"hits\": 3, \"pid\": \"60976\"}\n{\"paths\": [\"tools/**\"], \"hits\": 3, \"pid\": \"60976\"}\n{\"paths\": [\"included/improved/skills/vector-forge-current/**\"], \"hits\": 3, \"pid\": \"60976\"}\n",
+  "observations": [
+    {
+      "paths": [
+        "included/improved/skills/genotoxic-current/**"
+      ],
+      "response": {
+        "type": "search",
+        "success": true,
+        "results": [
+          {
+            "file_path": "included/improved/skills/genotoxic-current/SKILL.md",
+            "language": "markdown",
+            "content": "Use callers, entrypoint paths, ancestors and complexity as prioritization\nevidence. Zero callers can mean an exported API, dynamic callback or incomplete\ngraph. An unmapped finding is unresolved. Neither condition establishes dead\ncode, equivalence or a false positive. Inspect the actual call boundary and\ncontract before recommending removal or dismissal.\n\nFor each survivor, inspect its exact edit and rerun the relevant test against\nthat mutant. Distinguish a reproducible behavior gap, a proven equivalent edit,\nan excluded API/input domain, inadequate test selection, and unresolved or\ninfrastructure outcomes. Equivalence needs type, input and side-effect evidence;\nlogging, errors and cleanup may be externally observable contracts. Complexity\nthresholds are heuristics, not severity assessments.",
+            "start_line": 58,
+            "end_line": 69,
+            "score": 0.6908263138795103
+          },
+          {
+            "file_path": "included/improved/skills/genotoxic-current/references/qualification.md",
+            "language": "markdown",
+            "content": "The threshold fixture generated six identical mutant IDs in both campaigns.\nWeak tests left one survivor and five untested mutants. Adding boundary tests\nkilled that survivor while the same five remained untested. This is a controlled\ntool integration demonstration. The assertions were authored as fixed research\nfixtures; no evaluated agent generated them during a trial.\n\nThe real graph fixture resolves an internal call and an externally invoked\nfunction with zero local callers. Executed original source functions dismiss\nthat function and an unmapped case as false positives, choose ambiguous names\nby insertion order, exclude `src/contest.py`, and associate a removal with only\nthe first of two mutants. These are source-example reproductions, not skill\nruntime benchmark passes. Forged totals and unverified cleanup fail controls.",
+            "start_line": 12,
+            "end_line": 23,
+            "score": 0.6349773188359489
+          },
+          {
+            "file_path": "included/improved/skills/genotoxic-current/provenance/original-SKILL.md",
+            "language": "markdown",
+            "content": "# Genotoxic\r\n\r\nCombines mutation testing and necessist (test statement removal) with\r\ncode graph analysis to triage findings into actionable categories:\r\nfalse positives, missing unit tests, and fuzzing targets.\r\n\r\n## When to Use\r\n\r\n- After mutation testing reveals survived mutants that need triage\r\n- Identifying where unit tests would have the highest impact\r\n- Finding functions that need fuzz harnesses instead of unit tests\r\n- Prioritizing test improvements using data flow context\r\n- Filtering out harmless mutants from actionable ones\r\n- Finding unnecessary test statements that indicate weak assertions (necessist)\r\n\r\n## When NOT to Use\r\n\r\n- Codebase has no existing test suite (write tests first)\r\n- Pure documentation or configuration changes\r\n- Single-file scripts with trivial logic\r\n\r\n## Prerequisites",
+            "start_line": 6,
+            "end_line": 27,
+            "score": 0.6094392188204392
+          }
+        ],
+        "total_returned": 3,
+        "offset": 0,
+        "message": null
+      },
+      "daemon_status": {
+        "type": "daemon_status",
+        "version": "0.2.42",
+        "uptime_seconds": 12.35097540001152,
+        "projects": [
+          {
+            "project_root": "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\semantic-corpus\\full-resources-v6\\tree",
+            "indexing": false
+          }
+        ],
+        "idle_seconds": 0.0006673000170849264,
+        "idle_timeout_minutes": 1
+      },
+      "pid": "60976"
+    },
+    {
+      "paths": null,
+      "response": {
+        "type": "search",
+        "success": true,
+        "results": [
+          {
+            "file_path": "included/skills/by-category/testing-qa-benchmarking/security-reference/genotoxic/references/triage-methodology.md",
+            "language": "markdown",
+            "content": "## False Positive Detection\r\n\r\nA mutant is a false positive when killing it would not improve code\r\nquality or catch real bugs. Classify as false positive when ANY of\r\nthese conditions hold:\r\n\r\n### Dead Code\r\n\r\nThe mutated function has zero callers in the trailmark graph.\r\n\r\n```python\r\ncallers = engine.callers_of(node_id)\r\nif not callers:\r\n    # Dead code. The mutant is unreachable in production.\r\n    # Action: flag function for removal, not testing.\r\n```\r\n\r\n**Subtlety:** A function with no *direct* callers may still be reachable\r\nvia dynamic dispatch (reflection, callbacks, decorators). Check edge\r\nconfidence: if all edges to the function are `uncertain`, investigate\r\nbefore dismissing.",
+            "start_line": 16,
+            "end_line": 36,
+            "score": 0.6969497874263126
+          },
+          {
+            "file_path": "included/improved/skills/genotoxic-current/SKILL.md",
+            "language": "markdown",
+            "content": "Use callers, entrypoint paths, ancestors and complexity as prioritization\nevidence. Zero callers can mean an exported API, dynamic callback or incomplete\ngraph. An unmapped finding is unresolved. Neither condition establishes dead\ncode, equivalence or a false positive. Inspect the actual call boundary and\ncontract before recommending removal or dismissal.\n\nFor each survivor, inspect its exact edit and rerun the relevant test against\nthat mutant. Distinguish a reproducible behavior gap, a proven equivalent edit,\nan excluded API/input domain, inadequate test selection, and unresolved or\ninfrastructure outcomes. Equivalence needs type, input and side-effect evidence;\nlogging, errors and cleanup may be externally observable contracts. Complexity\nthresholds are heuristics, not severity assessments.",
+            "start_line": 58,
+            "end_line": 69,
+            "score": 0.6908263138795103
+          },
+          {
+            "file_path": "included/improved/skills/vector-forge-current/provenance/original-SKILL.md",
+            "language": "markdown",
+            "content": "| Only test callers | **False Positive** | Test infrastructure |\r\n| Logging/display/formatting | **False Positive** | Cosmetic |\r\n| Cross-package callers but NOT COVERED | **Cross-Package Gap** | See below |\r\n| Reachable from public API, low CC | **Missing Vector** | Design targeted vector |\r\n| Reachable from public API, high CC (>10) | **Fuzzing Target** | Both vector + fuzz harness |\r\n| Validation/error-handling path | **Negative Vector** | Craft invalid input that triggers path |\r\n| Optimization path (GLV, SIMD, batch) | **Edge-Case Vector** | Input that triggers optimization threshold |\r\n| `\\|`\u2192`^` after left shift (e.g. `(t<<1) \\| carry`) | **Equivalent Mutant** | Skip \u2014 bit 0 always 0, OR=XOR |\r\n| ct_eq `&`\u2192`\\|` on Montgomery limbs | **API-Unreachable** | Needs library-internal tests, not vectors |\r\n| Equivalent mutation (behavior unchanged) | **False Positive** | Skip |",
+            "start_line": 251,
+            "end_line": 260,
+            "score": 0.6723869291733706
+          }
+        ],
+        "total_returned": 3,
+        "offset": 0,
+        "message": null
+      },
+      "daemon_status": {
+        "type": "daemon_status",
+        "version": "0.2.42",
+        "uptime_seconds": 12.458773499995004,
+        "projects": [
+          {
+            "project_root": "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\semantic-corpus\\full-resources-v6\\tree",
+            "indexing": false
+          }
+        ],
+        "idle_seconds": 0.0007779999868944287,
+        "idle_timeout_minutes": 1
+      },
+      "pid": "60976"
+    },
+    {
+      "paths": [
+        "included/improved/skills/genotoxic-current/**"
+      ],
+      "response": {
+        "type": "search",
+        "success": true,
+        "results": [
+          {
+            "file_path": "included/improved/skills/genotoxic-current/SKILL.md",
+            "language": "markdown",
+            "content": "Use callers, entrypoint paths, ancestors and complexity as prioritization\nevidence. Zero callers can mean an exported API, dynamic callback or incomplete\ngraph. An unmapped finding is unresolved. Neither condition establishes dead\ncode, equivalence or a false positive. Inspect the actual call boundary and\ncontract before recommending removal or dismissal.\n\nFor each survivor, inspect its exact edit and rerun the relevant test against\nthat mutant. Distinguish a reproducible behavior gap, a proven equivalent edit,\nan excluded API/input domain, inadequate test selection, and unresolved or\ninfrastructure outcomes. Equivalence needs type, input and side-effect evidence;\nlogging, errors and cleanup may be externally observable contracts. Complexity\nthresholds are heuristics, not severity assessments.",
+            "start_line": 58,
+            "end_line": 69,
+            "score": 0.6908263138795103
+          },
+          {
+            "file_path": "included/improved/skills/genotoxic-current/references/qualification.md",
+            "language": "markdown",
+            "content": "The threshold fixture generated six identical mutant IDs in both campaigns.\nWeak tests left one survivor and five untested mutants. Adding boundary tests\nkilled that survivor while the same five remained untested. This is a controlled\ntool integration demonstration. The assertions were authored as fixed research\nfixtures; no evaluated agent generated them during a trial.\n\nThe real graph fixture resolves an internal call and an externally invoked\nfunction with zero local callers. Executed original source functions dismiss\nthat function and an unmapped case as false positives, choose ambiguous names\nby insertion order, exclude `src/contest.py`, and associate a removal with only\nthe first of two mutants. These are source-example reproductions, not skill\nruntime benchmark passes. Forged totals and unverified cleanup fail controls.",
+            "start_line": 12,
+            "end_line": 23,
+            "score": 0.6349773188359489
+          },
+          {
+            "file_path": "included/improved/skills/genotoxic-current/provenance/original-SKILL.md",
+            "language": "markdown",
+            "content": "# Genotoxic\r\n\r\nCombines mutation testing and necessist (test statement removal) with\r\ncode graph analysis to triage findings into actionable categories:\r\nfalse positives, missing unit tests, and fuzzing targets.\r\n\r\n## When to Use\r\n\r\n- After mutation testing reveals survived mutants that need triage\r\n- Identifying where unit tests would have the highest impact\r\n- Finding functions that need fuzz harnesses instead of unit tests\r\n- Prioritizing test improvements using data flow context\r\n- Filtering out harmless mutants from actionable ones\r\n- Finding unnecessary test statements that indicate weak assertions (necessist)\r\n\r\n## When NOT to Use\r\n\r\n- Codebase has no existing test suite (write tests first)\r\n- Pure documentation or configuration changes\r\n- Single-file scripts with trivial logic\r\n\r\n## Prerequisites",
+            "start_line": 6,
+            "end_line": 27,
+            "score": 0.6094392188204392
+          }
+        ],
+        "total_returned": 3,
+        "offset": 0,
+        "message": null
+      },
+      "daemon_status": {
+        "type": "daemon_status",
+        "version": "0.2.42",
+        "uptime_seconds": 12.686349099996733,
+        "projects": [
+          {
+            "project_root": "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\semantic-corpus\\full-resources-v6\\tree",
+            "indexing": false
+          }
+        ],
+        "idle_seconds": 0.0005714999861083925,
+        "idle_timeout_minutes": 1
+      },
+      "pid": "60976"
+    },
+    {
+      "paths": [
+        "tools/**"
+      ],
+      "response": {
+        "type": "search",
+        "success": true,
+        "results": [
+          {
+            "file_path": "tools/summarize_agent_trials.py",
+            "language": "python",
+            "content": "LIMITATIONS = [\n    \"One development task and three matched attempts per condition do not establish collection-wide effectiveness.\",\n    \"Quality is checked externally; agent-written regression tests are not a coverage or mutation score.\",\n    \"Token statistics are descriptive actual CLI usage, not priced cost, significance, or general efficiency claims.\",\n    \"Input tokens include cached input; reasoning usage is retained separately, not added again to output tokens.\",\n    \"Elapsed time is diagnostic only; unrelated host workloads were not controlled.\",\n    \"Provider-resolved model snapshots are unavailable; the requested model is not a verified backend revision.\",\n    \"This frozen block does not pool earlier exploratory probes or harness versions; their failures remain recorded separately.\",\n    \"The grading process executes submitted Python on the host; it is not a hardened service for arbitrary untrusted submissions.\",\n]",
+            "start_line": 18,
+            "end_line": 27,
+            "score": 0.6003351652900548
+          },
+          {
+            "file_path": "tools/validate_catalog.py",
+            "language": "python",
+            "content": "    # Each entry is validated in isolation; _collect_entry_errors returns a\n    # local list we merge in catalog order. Sequential is deliberate: the\n    # per-entry work is dominated by pure-Python string/dict validation\n    # (GIL-bound) with only brief hashlib segments; measured benchmarks show\n    # ThreadPoolExecutor dispatch of ~673 tiny tasks *regresses* wall-clock\n    # from ~3.9 s (sequential) to ~9.1 s (cpu*2 workers) because pool\n    # overhead dwarfs the <1 ms-per-call work unit. Set the opt-in env var\n    # VALIDATE_CATALOG_MAX_WORKERS if the workload ever shifts to be\n    # IO-bound (larger mirror trees, network hashes, etc.).\n    env_workers = os.environ.get(\"VALIDATE_CATALOG_MAX_WORKERS\", \"\").strip()\n    workers = int(env_workers) if env_workers.isdigit() and int(env_workers) > 1 else 1",
+            "start_line": 246,
+            "end_line": 256,
+            "score": 0.5785292312170895
+          },
+          {
+            "file_path": "tools/build_catalog.py",
+            "language": "python",
+            "content": ",\n    (\n        \"ome-ngff-samples\",\n        \"OME-NGFF sample data\",\n        \"https://idr.github.io/ome-ngff-samples/\",\n        \"Read and validate multiscale microscopy data.\",\n        [\"metadata validity\", \"chunk correctness\", \"shape parity\"],\n    ),\n    (\n        \"cellxgene-census\",\n        \"CZ CELLxGENE Census\",\n        \"https://chanzuckerberg.github.io/cellxgene-census/\",\n        \"Query and analyze single-cell expression data.\",\n        [\"query correctness\", \"metadata filters\", \"reproducibility\"],\n    ),\n    (\n        \"chembl\",\n        \"ChEMBL\",\n        \"https://www.ebi.ac.uk/chembl/\",\n        \"Retrieve molecular bioactivity records.\",\n        [\"identifier accuracy\", \"filter correctness\", \"citation provenance\"],\n    ),\n    (\n        \"owasp-benchmark\",\n        \"OWASP Benchmark\",\n        \"https://owasp.org/www-project-benchmark/\",\n        \"Find and classify vulnerability test cases.\",\n        [\"true positives\", \"false positives\", \"CWE mapping\"],\n    ),",
+            "start_line": 420,
+            "end_line": 448,
+            "score": 0.5763663380312192
+          }
+        ],
+        "total_returned": 3,
+        "offset": 0,
+        "message": null
+      },
+      "daemon_status": {
+        "type": "daemon_status",
+        "version": "0.2.42",
+        "uptime_seconds": 12.921814100001939,
+        "projects": [
+          {
+            "project_root": "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\semantic-corpus\\full-resources-v6\\tree",
+            "indexing": false
+          }
+        ],
+        "idle_seconds": 0.000607299996772781,
+        "idle_timeout_minutes": 1
+      },
+      "pid": "60976"
+    },
+    {
+      "paths": [
+        "included/improved/skills/vector-forge-current/**"
+      ],
+      "response": {
+        "type": "search",
+        "success": true,
+        "results": [
+          {
+            "file_path": "included/improved/skills/vector-forge-current/provenance/original-SKILL.md",
+            "language": "markdown",
+            "content": "| Only test callers | **False Positive** | Test infrastructure |\r\n| Logging/display/formatting | **False Positive** | Cosmetic |\r\n| Cross-package callers but NOT COVERED | **Cross-Package Gap** | See below |\r\n| Reachable from public API, low CC | **Missing Vector** | Design targeted vector |\r\n| Reachable from public API, high CC (>10) | **Fuzzing Target** | Both vector + fuzz harness |\r\n| Validation/error-handling path | **Negative Vector** | Craft invalid input that triggers path |\r\n| Optimization path (GLV, SIMD, batch) | **Edge-Case Vector** | Input that triggers optimization threshold |\r\n| `\\|`\u2192`^` after left shift (e.g. `(t<<1) \\| carry`) | **Equivalent Mutant** | Skip \u2014 bit 0 always 0, OR=XOR |\r\n| ct_eq `&`\u2192`\\|` on Montgomery limbs | **API-Unreachable** | Needs library-internal tests, not vectors |\r\n| Equivalent mutation (behavior unchanged) | **False Positive** | Skip |",
+            "start_line": 251,
+            "end_line": 260,
+            "score": 0.6723869291733706
+          },
+          {
+            "file_path": "included/improved/skills/vector-forge-current/SKILL.md",
+            "language": "markdown",
+            "content": "Freeze mutant identities and exact edits for before/after comparisons. Keep all\ngenerated, excluded, attempted, completed, killed, survived, untested and failed\ncounts. A tested-only kill rate is not source coverage or a full campaign pass.\nThe qualified Python path and uncertainty-aware triage are described in the\nGenotoxic improvement overlay; other language integrations need their own\nreleased CLI/schema and runtime qualification.\n\nMap edits to frozen source locations and mathematical operations. Use graph\ncontext to prioritize investigation; zero callers or an unmapped location does\nnot establish dead code or a false positive. Preserve ambiguous mappings and\nevery related mutant/removal record. Establish equivalence from the operation's\ntypes, input domain and side effects rather than a syntactic heuristic.",
+            "start_line": 24,
+            "end_line": 35,
+            "score": 0.640484349239955
+          },
+          {
+            "file_path": "included/improved/skills/vector-forge-current/provenance/original-SKILL.md",
+            "language": "markdown",
+            "content": "## Quality Checklist\r\n\r\nBefore delivering:\r\n\r\n- [ ] At least one pure implementation mutation-tested (not just FFI wrappers)\r\n- [ ] Baseline run completed with existing vectors\r\n- [ ] Trailmark call graph built for each implementation\r\n- [ ] All escaped mutants triaged using graph-informed classification\r\n- [ ] Cross-package false positives identified and documented\r\n- [ ] Security-critical mutations (ct_eq, validation, auth) prioritized as P0/P1\r\n- [ ] Fault simulation and mutation-derived vectors cross-verified against 2+ implementations\r\n- [ ] After run completed with new vectors included\r\n- [ ] Before/after delta computed and explained\r\n- [ ] Report written to `VECTOR_FORGE_REPORT.md`\r\n- [ ] New test vectors saved in standard format (Wycheproof JSON)\r\n\r\n---",
+            "start_line": 437,
+            "end_line": 453,
+            "score": 0.6313313518265815
+          }
+        ],
+        "total_returned": 3,
+        "offset": 0,
+        "message": null
+      },
+      "daemon_status": {
+        "type": "daemon_status",
+        "version": "0.2.42",
+        "uptime_seconds": 13.147113000013633,
+        "projects": [
+          {
+            "project_root": "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\semantic-corpus\\full-resources-v6\\tree",
+            "indexing": false
+          }
+        ],
+        "idle_seconds": 0.0009736000210978091,
+        "idle_timeout_minutes": 1
+      },
+      "pid": "60976"
+    }
+  ]
+}

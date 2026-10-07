@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "evidence_class": "offline-exact-parser-provider-preparation-not-agent-benchmark",
+  "passed": true,
+  "image": "sha256:d6e66ca1df12b2666a757a406782e8ee28d7d5b91a64b8cfb06b785eb20dd2ab",
+  "parent_image": "sha256:10dd95746c4366664c4cd93c87c5767cc4adc65eec523b610322b39f3568b4ff",
+  "provider_receipt_sha256": "a27d270b885fd7c661333c0cd3b40c5c9c8ab44b10e773cc6a2ec2ca6b61a853",
+  "inputs": {
+    "parsers.json": {
+      "sha256": "a2d026f2908897195e69b81e8b1473ed7a692a2a40daf7c9c5c5909d46af9ec3",
+      "bytes": 30054
+    },
+    "parsers-linux-x86_64.tar.zst": {
+      "sha256": "579428269cf83f853bf42f647296588bb3864eab07d739495909b0ae49e310b5",
+      "bytes": 22729471
+    },
+    "libtree_sitter_python.so": {
+      "sha256": "0a39a054ae5e50132fbf969697e3e5932a9d5636db3e4810b829c95d8019a281",
+      "bytes": 826248
+    }
+  },
+  "parser_release_commit": "09a36885b33ab6e4b010cf04acbb9876ddfb52cc",
+  "parser_release_url": "https://github.com/xberg-io/tree-sitter-language-pack/releases/tag/v1.21.0",
+  "languages_provisioned": [
+    "python"
+  ],
+  "downloaded_bundle_other_languages_executed": false,
+  "dockerfile": "FROM python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e\nLABEL ai-skills.dependency=mutation-tool-controls ai-skills.inputs-sha256=0463b5ab8cb97680c9004e6d3a86b8b1d10578a820d9ec8641db216d68a240b7\nCOPY *.whl /tmp/wheels/\nRUN python -m pip install --no-cache-dir --disable-pip-version-check --no-index /tmp/wheels/*.whl && python -m pip check\nLABEL ai-skills.dependency=mutation-tools-python-parser ai-skills.parser-sha256=0a39a054ae5e50132fbf969697e3e5932a9d5636db3e4810b829c95d8019a281\nENV TREE_SITTER_LANGUAGE_PACK_CACHE_DIR=/opt/parser-cache\nCOPY libtree_sitter_python.so /opt/parser-cache/tree-sitter-language-pack/v1.21.0/libs/libtree_sitter_python.so\nRUN python -c \"from tree_sitter_language_pack import get_language; print(get_language('python'))\"\n",
+  "build_output": "#0 building with \"desktop-linux\" instance using docker driver\n\n#1 [internal] load build definition from Dockerfile\n#1 transferring dockerfile: 820B 0.0s done\n#1 DONE 0.0s\n\n#2 [internal] load metadata for docker.io/library/python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e\n#2 DONE 0.0s\n\n#3 [internal] load .dockerignore\n#3 transferring context: 2B done\n#3 DONE 0.0s\n\n#4 [1/5] FROM docker.io/library/python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e\n#4 DONE 0.0s\n\n#5 [internal] load build context\n#5 transferring context: 30.36MB 1.1s done\n#5 DONE 1.2s\n\n#6 [2/5] COPY *.whl /tmp/wheels/\n#6 CACHED\n\n#7 [3/5] RUN python -m pip install --no-cache-dir --disable-pip-version-check --no-index /tmp/wheels/*.whl && python -m pip check\n#7 CACHED\n\n#8 [4/5] COPY libtree_sitter_python.so /opt/parser-cache/tree-sitter-language-pack/v1.21.0/libs/libtree_sitter_python.so\n#8 DONE 0.1s\n\n#9 [5/5] RUN python -c \"from tree_sitter_language_pack import get_language; print(get_language('python'))\"\n#9 0.203 <Language id=138941604703456, version=14, name=None>\n#9 DONE 0.2s\n\n#10 exporting to image\n#10 exporting layers 0.0s done\n#10 writing image sha256:d6e66ca1df12b2666a757a406782e8ee28d7d5b91a64b8cfb06b785eb20dd2ab done\n#10 DONE 0.1s\n\nView build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/w31bijsgagldb8a6o3dmxgppu\n",
+  "reproducer_sha256": "00e99303c86855a3263a8a4c805762bbbbd90281d9ed9ce1019a26adc5ec0850",
+  "agent_efficacy_scored": false
+}

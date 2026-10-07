@@ -72,6 +72,20 @@ def test_tfidf_profile_requires_task_resources() -> None:
     assert backend.validate_inspection(record, "owned")
 
 
+def test_mutation_profile_requires_bounded_private_semaphore_filesystem() -> None:
+    record = valid_inspection()
+    assert backend.validate_inspection(record, "owned", "python-mutation")
+    record["HostConfig"]["Tmpfs"]["/dev/shm"] = "rw,noexec,nosuid,size=16m"
+    assert backend.validate_inspection(record, "owned", "python-mutation") == []
+    assert backend.validate_inspection(record, "owned")
+    for value in ("rw,noexec,nosuid,size=128m", "rw,nosuid,size=16m", "rw,noexec,size=16m"):
+        record["HostConfig"]["Tmpfs"]["/dev/shm"] = value
+        assert backend.validate_inspection(record, "owned", "python-mutation")
+    record["HostConfig"]["Tmpfs"]["/dev/shm"] = "rw,noexec,nosuid,size=16m"
+    record["HostConfig"]["IpcMode"] = "host"
+    assert backend.validate_inspection(record, "owned", "python-mutation")
+
+
 @pytest.mark.parametrize(
     ("key", "value"),
     [

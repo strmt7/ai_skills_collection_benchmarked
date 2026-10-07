@@ -1,0 +1,98 @@
+{
+  "agent_efficacy_scored": false,
+  "commit": "82fe8226252622fa807643bdca1710901198553a",
+  "evidence_class": "current-upstream-package-delta-review-not-runtime-readiness",
+  "locked_mirror_commit": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+  "packages": {
+    "trailofbits-skills-plugins-trailmark-skills-genotoxic-skill-md": {
+      "current_runtime_readiness_complete": false,
+      "resources": {
+        "SKILL.md": {
+          "captured_raw_sha256": "cfbb30f69e91f2b04a14f426ef4442164edeea8c00041692067121b7baae6e09",
+          "review_scope": "Complete pinned-original text plus complete newer delta, or complete added metadata/SVG read.",
+          "sha256": "cfbb30f69e91f2b04a14f426ef4442164edeea8c00041692067121b7baae6e09"
+        },
+        "agents/openai.yaml": {
+          "captured_raw_sha256": "122468bcf61b2c44fb026a8786bfcc037e650c428ae7f7fe487692a03717d39a",
+          "review_scope": "Complete pinned-original text plus complete newer delta, or complete added metadata/SVG read.",
+          "sha256": "122468bcf61b2c44fb026a8786bfcc037e650c428ae7f7fe487692a03717d39a"
+        },
+        "assets/trail-of-bits-mark.svg": {
+          "captured_raw_sha256": "4bf74c789b38dcf6ad762c136b6832363d27ae19fbaa9a18ec18d66ecce6ca05",
+          "review_scope": "Complete pinned-original text plus complete newer delta, or complete added metadata/SVG read.",
+          "sha256": "4bf74c789b38dcf6ad762c136b6832363d27ae19fbaa9a18ec18d66ecce6ca05"
+        },
+        "references/graph-analysis.md": {
+          "captured_raw_sha256": "6a4a8d1a2438ad67381a51d1da258ca3e1af37ad56158385f878ca86c746ec00",
+          "review_scope": "Complete pinned-original text plus complete newer delta, or complete added metadata/SVG read.",
+          "sha256": "6a4a8d1a2438ad67381a51d1da258ca3e1af37ad56158385f878ca86c746ec00"
+        },
+        "references/mutation-frameworks.md": {
+          "captured_raw_sha256": "87b17aad65a9a9b1e337e67131c9d288239ca7f7254778b9a4890428d8cef0cd",
+          "review_scope": "Complete pinned-original text plus complete newer delta, or complete added metadata/SVG read.",
+          "sha256": "87b17aad65a9a9b1e337e67131c9d288239ca7f7254778b9a4890428d8cef0cd"
+        },
+        "references/triage-methodology.md": {
+          "captured_raw_sha256": "f2e377f94794dce6e271c2c17b95cad9e3ac9cb5522654a57e1c664dab23408b",
+          "review_scope": "Complete pinned-original text plus complete newer delta, or complete added metadata/SVG read.",
+          "sha256": "f2e377f94794dce6e271c2c17b95cad9e3ac9cb5522654a57e1c664dab23408b"
+        }
+      },
+      "upstream_delta_review_complete": true
+    },
+    "trailofbits-skills-plugins-trailmark-skills-vector-forge-skill-md": {
+      "current_runtime_readiness_complete": false,
+      "resources": {
+        "SKILL.md": {
+          "captured_raw_sha256": "aca07e846ce5615031e9df0faca3537f4796f72997dcece53c9e389cf9d9d132",
+          "review_scope": "Complete pinned-original text plus complete newer delta, or complete added metadata/SVG read.",
+          "sha256": "aca07e846ce5615031e9df0faca3537f4796f72997dcece53c9e389cf9d9d132"
+        },
+        "agents/openai.yaml": {
+          "captured_raw_sha256": "3ce59e0322a4dfe1ab64b9a0dc21e7f9be896cba2f9b1abe6dc5cf7a2f4a5173",
+          "review_scope": "Complete pinned-original text plus complete newer delta, or complete added metadata/SVG read.",
+          "sha256": "3ce59e0322a4dfe1ab64b9a0dc21e7f9be896cba2f9b1abe6dc5cf7a2f4a5173"
+        },
+        "assets/trail-of-bits-mark.svg": {
+          "captured_raw_sha256": "4bf74c789b38dcf6ad762c136b6832363d27ae19fbaa9a18ec18d66ecce6ca05",
+          "review_scope": "Complete pinned-original text plus complete newer delta, or complete added metadata/SVG read.",
+          "sha256": "4bf74c789b38dcf6ad762c136b6832363d27ae19fbaa9a18ec18d66ecce6ca05"
+        },
+        "references/fault-simulation.md": {
+          "captured_raw_sha256": "2e39c262e4cb1f7c8f9737e6ed02d45c3c69c556c7003b077a1aae24d06ea308",
+          "review_scope": "Complete pinned-original text plus complete newer delta, or complete added metadata/SVG read.",
+          "sha256": "2e39c262e4cb1f7c8f9737e6ed02d45c3c69c556c7003b077a1aae24d06ea308"
+        },
+        "references/lessons-learned.md": {
+          "captured_raw_sha256": "bb92f8744839a60afb2d3c8a5ba3704f0db48fc2dbac019e00946e7f7359026f",
+          "review_scope": "Complete pinned-original text plus complete newer delta, or complete added metadata/SVG read.",
+          "sha256": "bb92f8744839a60afb2d3c8a5ba3704f0db48fc2dbac019e00946e7f7359026f"
+        },
+        "references/mutation-frameworks.md": {
+          "captured_raw_sha256": "ae781ebc35637c0c46cdee448bc8bad98a7e3676007039c7ed1eca7f612e82d9",
+          "review_scope": "Complete pinned-original text plus complete newer delta, or complete added metadata/SVG read.",
+          "sha256": "ae781ebc35637c0c46cdee448bc8bad98a7e3676007039c7ed1eca7f612e82d9"
+        },
+        "references/report-template.md": {
+          "captured_raw_sha256": "9fb727aa0f8f6dde0b4f533a0de0641848cdb0cffff2d47eba9c4335b6da9727",
+          "review_scope": "Complete pinned-original text plus complete newer delta, or complete added metadata/SVG read.",
+          "sha256": "9fb727aa0f8f6dde0b4f533a0de0641848cdb0cffff2d47eba9c4335b6da9727"
+        },
+        "references/vector-patterns.md": {
+          "captured_raw_sha256": "641edba466cfdf0ae8cd93b5009b6861b1f6aaa593b84fd5abcd5b468a8b91b1",
+          "review_scope": "Complete pinned-original text plus complete newer delta, or complete added metadata/SVG read.",
+          "sha256": "641edba466cfdf0ae8cd93b5009b6861b1f6aaa593b84fd5abcd5b468a8b91b1"
+        }
+      },
+      "upstream_delta_review_complete": true
+    }
+  },
+  "repository": "https://github.com/trailofbits/skills",
+  "schema_version": 1,
+  "wycheproof_vectorgen_guide": {
+    "complete_text_read": true,
+    "go_cli_executed": false,
+    "sha256": "9bbe78d4602115d38c1c85217ca199c2aa59555ccd4e4eeb1bc735147a4cfa7b",
+    "url": "https://raw.githubusercontent.com/C2SP/wycheproof/12fd3aaf33eb5fa1f52e026912ee00c054f9d984/doc/vectorgen.md"
+  }
+}

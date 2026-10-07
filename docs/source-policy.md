@@ -26,7 +26,7 @@
 - `Bria-AI/bria-skill`: latest GitHub release v1.3.1 ([release](https://github.com/Bria-AI/bria-skill/releases/tag/v1.3.1))
 - `nextlevelbuilder/ui-ux-pro-max-skill`: latest GitHub release v2.5.0 ([release](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/releases/tag/v2.5.0))
 - `guinacio/claude-image-gen`: latest GitHub release 1.0.2 ([release](https://github.com/guinacio/claude-image-gen/releases/tag/1.0.2))
-- `hugohe3/ppt-master`: latest GitHub release v2.3.0 ([release](https://github.com/hugohe3/ppt-master/releases/tag/v2.3.0))
+- `hugohe3/ppt-master`: latest GitHub release v6.6.0 ([release](https://github.com/hugohe3/ppt-master/releases/tag/v6.6.0))
 - `aizzaku/create-infographics`: default-branch HEAD; GitHub API reported no latest release
 - `Varnan-Tech/opendirectory`: default-branch HEAD; GitHub API reported no latest release
 - `supermemoryai/skills`: default-branch HEAD; GitHub API reported no latest release

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "evidence_class": "fresh-primary-ref-resolution-not-comprehensive-content-review",
+  "repositories": [
+    {
+      "requested_repository": "karpathy/autoresearch",
+      "metadata": {
+        "archived": false,
+        "default_branch": "master",
+        "full_name": "karpathy/autoresearch",
+        "html_url": "https://github.com/karpathy/autoresearch",
+        "pushed_at": "2026-03-26T00:07:37Z"
+      },
+      "resolved_default_head": {
+        "commit_date": "2026-03-26T00:07:37Z",
+        "html_url": "https://github.com/karpathy/autoresearch/commit/228791fb499afffb54b46200aca536f79142f117",
+        "sha": "228791fb499afffb54b46200aca536f79142f117"
+      }
+    },
+    {
+      "requested_repository": "karpathy/nanochat",
+      "metadata": {
+        "archived": false,
+        "default_branch": "master",
+        "full_name": "karpathy/nanochat",
+        "html_url": "https://github.com/karpathy/nanochat",
+        "pushed_at": "2026-09-07T20:06:43Z"
+      },
+      "resolved_default_head": {
+        "commit_date": "2026-07-03T22:54:57Z",
+        "html_url": "https://github.com/karpathy/nanochat/commit/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+        "sha": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd"
+      }
+    },
+    {
+      "requested_repository": "karpathy/karpathy.github.io",
+      "metadata": {
+        "archived": false,
+        "default_branch": "master",
+        "full_name": "karpathy/karpathy.github.io",
+        "html_url": "https://github.com/karpathy/karpathy.github.io",
+        "pushed_at": "2026-04-10T23:50:09Z"
+      },
+      "resolved_default_head": {
+        "commit_date": "2026-04-10T23:50:07Z",
+        "html_url": "https://github.com/karpathy/karpathy.github.io/commit/717b06d57b7834e27ca4bd55bda0a79d16dddeca",
+        "sha": "717b06d57b7834e27ca4bd55bda0a79d16dddeca"
+      }
+    },
+    {
+      "requested_repository": "forrestchang/andrej-karpathy-skills",
+      "metadata": {
+        "archived": false,
+        "default_branch": "main",
+        "full_name": "multica-ai/andrej-karpathy-skills",
+        "html_url": "https://github.com/multica-ai/andrej-karpathy-skills",
+        "pushed_at": "2026-04-20T10:05:04Z"
+      },
+      "resolved_default_head": {
+        "commit_date": "2026-04-20T10:05:04Z",
+        "html_url": "https://github.com/multica-ai/andrej-karpathy-skills/commit/2c606141936f1eeef17fa3043a72095b4765b9c2",
+        "sha": "2c606141936f1eeef17fa3043a72095b4765b9c2"
+      }
+    }
+  ],
+  "earlier_review": "docs/karpathy-upstream-review.md",
+  "original_x_post_reverified": false,
+  "agent_efficacy_scored": false
+}

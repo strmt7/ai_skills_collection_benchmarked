@@ -1,0 +1,3451 @@
+{
+  "schema_version": 1,
+  "evidence_class": "actual-pinned-wycheproof-provider-schema-and-source-example-controls",
+  "passed": true,
+  "errors": [],
+  "project_file_sha256": {
+    "included/skills/by-category/testing-qa-benchmarking/security-reference/wycheproof/SKILL.md": "596cf661913180d2e87574fec99c13de3d4c827823cfea4d4131a858cd0b9340",
+    "benchmarks/dependency-regressions/wycheproof_provider_fixture.py": "304157ace3954d4b1ad6267126bdbef3872a30da7262c2ce7fd9b47bbb56ab8e",
+    "benchmarks/dependency-regressions/wycheproof-inputs.json": "26658afe868c2b0b67e80217cda909d3e9929ec5311a62d10d1e0e686fa93f79"
+  },
+  "external_input_sha256": {
+    "LICENSE": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+    "README.md": "cee1ce41f40e192fa2505058a0e22f7f3325ad816a2e6daffa3e5935541c08ab",
+    "schemas/aead_test_schema_v1.json": "6c530fa1dc0376d3d1f826112383959a791d169ed31012ead30625b33e829a62",
+    "schemas/common.json": "d4944d217b04451aab6853c2772c966297543a2791277d32a9b43131d59e0b7f",
+    "schemas/eddsa_verify_schema_v1.json": "f3e5678134d7b7331621206bf890912581971616df49c6f57d270e1625a62b24",
+    "schemas/json_web_crypto_common.json": "6f7893adaaf9c90a85568ef3188bfd249845c4bf7b8b39bcd78dd6b5fe020610",
+    "schemas/signatures_common.json": "f9a0d013c593a29a13aef262001d00d81e72f3f402bc4cfd2a5e81d499a5bed1",
+    "testvectors_v1/aes_gcm_test.json": "985e5ecc172e181eaf49e89508b9470dcf478002eb7e8559c707eb42dc97dfe7",
+    "testvectors_v1/ed25519_test.json": "752d2ea7d7c6cf4736381b6cbacb61f8182b126ab7cd9b058f00c50084975536"
+  },
+  "image_preparation_sha256": "cb183909dd0d6085657adc62ec7b1c10906769e42f2e1a1f8b7ed1f0c660ee96",
+  "reproducer_sha256": "aee46b7cf602cfe26bc1ad400a044dde6d0c2d9f488b1a52e0fe50a2fd1b798f",
+  "independent_expected_counts": {
+    "AES-GCM": {
+      "selected": 316,
+      "eligible": 283,
+      "excluded": 33
+    },
+    "EDDSA": {
+      "selected": 151,
+      "eligible": 151,
+      "excluded": 0
+    }
+  },
+  "expectations_from_external_vector_and_provider_contracts": true,
+  "source_example_checks_are_provenance_controls_only": true,
+  "invocation": {
+    "status": "completed",
+    "container_name": "skills-invoke-01e57e52a60d40efadb17589261b29d2",
+    "image": "sha256:27224bdf1729386a33fd395e8f697838703ae7b891b02c32ac021b02c2fc0691",
+    "scored": false,
+    "candidate_response_is_untrusted": true,
+    "cleanup_verified": true,
+    "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+    "resource_profile": "python-small",
+    "submission_sha256": {
+      "original-SKILL.md": "596cf661913180d2e87574fec99c13de3d4c827823cfea4d4131a858cd0b9340",
+      "candidate.py": "304157ace3954d4b1ad6267126bdbef3872a30da7262c2ce7fd9b47bbb56ab8e",
+      "LICENSE": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+      "README.md": "cee1ce41f40e192fa2505058a0e22f7f3325ad816a2e6daffa3e5935541c08ab",
+      "schemas/aead_test_schema_v1.json": "6c530fa1dc0376d3d1f826112383959a791d169ed31012ead30625b33e829a62",
+      "schemas/common.json": "d4944d217b04451aab6853c2772c966297543a2791277d32a9b43131d59e0b7f",
+      "schemas/eddsa_verify_schema_v1.json": "f3e5678134d7b7331621206bf890912581971616df49c6f57d270e1625a62b24",
+      "schemas/json_web_crypto_common.json": "6f7893adaaf9c90a85568ef3188bfd249845c4bf7b8b39bcd78dd6b5fe020610",
+      "schemas/signatures_common.json": "f9a0d013c593a29a13aef262001d00d81e72f3f402bc4cfd2a5e81d499a5bed1",
+      "testvectors_v1/aes_gcm_test.json": "985e5ecc172e181eaf49e89508b9470dcf478002eb7e8559c707eb42dc97dfe7",
+      "testvectors_v1/ed25519_test.json": "752d2ea7d7c6cf4736381b6cbacb61f8182b126ab7cd9b058f00c50084975536"
+    },
+    "container_id": "59b3686cc2a5a97f9ade9da29840c933790ed63c48b9285ec23922ca05768304",
+    "isolation_checks": {
+      "errors": [],
+      "passed": true,
+      "observed_user": "65534:65534",
+      "observed_image": "sha256:27224bdf1729386a33fd395e8f697838703ae7b891b02c32ac021b02c2fc0691",
+      "observed_ownership_token": "01e57e52a60d40efadb17589261b29d2",
+      "resolved_image_id": "sha256:27224bdf1729386a33fd395e8f697838703ae7b891b02c32ac021b02c2fc0691",
+      "observed_host_constraints": {
+        "NetworkMode": "none",
+        "IpcMode": "none",
+        "ReadonlyRootfs": true,
+        "Memory": 536870912,
+        "MemorySwap": 536870912,
+        "NanoCpus": 1000000000,
+        "PidsLimit": 64,
+        "Privileged": false,
+        "Init": true,
+        "CapDrop": [
+          "ALL"
+        ],
+        "CapAdd": null,
+        "SecurityOpt": [
+          "no-new-privileges"
+        ],
+        "LogConfig": {
+          "Type": "none",
+          "Config": {}
+        },
+        "Tmpfs": {
+          "/tmp": "rw,noexec,nosuid,size=128m"
+        },
+        "Devices": [],
+        "DeviceRequests": null,
+        "VolumesFrom": null
+      },
+      "observed_mounts": [
+        {
+          "Destination": "/submission",
+          "Type": "bind",
+          "RW": false
+        },
+        {
+          "Destination": "/worker",
+          "Type": "bind",
+          "RW": false
+        }
+      ]
+    },
+    "setup_elapsed_seconds": 0.24818019999656826,
+    "runtime_elapsed_seconds": 0.6153233000077307,
+    "returncode": 0,
+    "candidate_response": {
+      "worker_status": "returned",
+      "result": {
+        "checks": [
+          "five_schema_resources_validate_offline",
+          "selected_vector_structures_and_custom_formats_validate",
+          "declared_count_mismatch_fails",
+          "empty_selection_fails",
+          "duplicate_case_id_fails",
+          "unknown_result_fails_schema",
+          "odd_hex_fails_custom_format",
+          "wrong_algorithm_fails",
+          "missing_vector_file_fails",
+          "duplicate_json_member_fails",
+          "nonfinite_json_fails",
+          "acceptable_accept_and_reject_policies_require_correct_accepted_output",
+          "unknown_result_policy_fails",
+          "unexpected_provider_failure_propagates",
+          "original_missing_file_loader_returns_empty_success_candidate",
+          "original_decryption_handler_uses_missing_InvalidTag",
+          "eligible_aes_gcm_vectors_execute_against_real_provider",
+          "all_ed25519_vectors_execute_against_real_provider"
+        ],
+        "algorithms": {
+          "AES-GCM": {
+            "selected": 316,
+            "summary": {
+              "passed": 283,
+              "excluded": 33
+            },
+            "cases": [
+              {
+                "tcId": 1,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 2,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 3,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 4,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 5,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 6,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 7,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 8,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 9,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 10,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 11,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 12,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 13,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 14,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 15,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 16,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 17,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 18,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 19,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 20,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 21,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 22,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 23,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 24,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 25,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 26,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 27,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 28,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 29,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 30,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 31,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 32,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 33,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 34,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 35,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 36,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 37,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 38,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 39,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 40,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 41,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 42,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 43,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 44,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 45,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 46,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 47,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 48,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 49,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 50,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 51,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 52,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 53,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 54,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 55,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 56,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 57,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 58,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 59,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 60,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 61,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 62,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 63,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 64,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 65,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 66,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 67,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 68,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 69,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 70,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 71,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 72,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 73,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 74,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 75,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 76,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 77,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 78,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 79,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 80,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 81,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 82,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 83,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 84,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 85,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 86,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 87,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 88,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 89,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 90,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 91,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 92,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 93,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 94,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 95,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 96,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 97,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 98,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 99,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 100,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 101,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 102,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 103,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 104,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 105,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 106,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 107,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 108,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 109,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 110,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 111,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 112,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 113,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 114,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 115,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 116,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 117,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 118,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 119,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 120,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 121,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 122,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 123,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 124,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 125,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 126,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 127,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 128,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 129,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 130,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 131,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 132,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 133,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 134,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 135,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 136,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 137,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 138,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 139,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 140,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 141,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 142,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 143,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 144,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 145,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 146,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 147,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 148,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 149,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 150,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 151,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 152,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 153,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 154,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 155,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 156,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 157,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 158,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 159,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 160,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 161,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 162,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 163,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 164,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 165,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 166,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 167,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 168,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 169,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 170,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 171,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 172,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 173,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 174,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 175,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 176,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 177,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 178,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 179,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 180,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 181,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 182,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 183,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 184,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 185,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 186,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 187,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 188,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 189,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 190,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 191,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 192,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 193,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 194,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 195,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 196,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 197,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 198,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 199,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 200,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 201,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 202,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 203,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 204,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 205,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 206,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 207,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 208,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 209,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 210,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 211,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 212,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 213,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 214,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 215,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 216,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 217,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 218,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 219,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 220,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 221,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 222,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 223,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 224,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 225,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 226,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 227,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 228,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 229,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 230,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 231,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 232,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 233,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 234,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 235,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 236,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 237,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 238,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 239,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 240,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 241,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 242,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 243,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 244,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 245,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 246,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 247,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 248,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 249,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 250,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 251,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 252,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 253,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 254,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 255,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 256,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 257,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 258,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 259,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 260,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 261,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 262,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 263,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 264,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 265,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 266,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 267,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 268,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 269,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 270,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 271,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 272,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 273,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 274,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 275,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 276,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 277,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 278,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 279,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 280,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 281,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 282,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 283,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 284,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 285,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 286,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 287,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 288,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 289,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 290,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 291,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 292,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 293,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 294,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 295,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 296,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 297,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 298,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 299,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 300,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 301,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 302,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 303,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 304,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 305,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 306,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 307,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 308,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 309,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 310,
+                "expected": "valid",
+                "operation": "authenticated-decryption",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 311,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 312,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 313,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 314,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 315,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              },
+              {
+                "tcId": 316,
+                "expected": "invalid",
+                "operation": "authenticated-decryption",
+                "status": "excluded",
+                "reason": "AESGCM API domain: 8..128-byte nonce and 128-bit tag"
+              }
+            ]
+          },
+          "EDDSA": {
+            "selected": 151,
+            "summary": {
+              "passed": 151
+            },
+            "cases": [
+              {
+                "tcId": 1,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 2,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 3,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 4,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 5,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 6,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 7,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 8,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 9,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 10,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 11,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 12,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 13,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 14,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 15,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 16,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 17,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 18,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 19,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 20,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 21,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 22,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 23,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 24,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 25,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 26,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 27,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 28,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 29,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 30,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 31,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 32,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 33,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 34,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 35,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 36,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 37,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 38,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 39,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 40,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 41,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 42,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 43,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 44,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 45,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 46,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 47,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 48,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 49,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 50,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 51,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 52,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 53,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 54,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 55,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 56,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 57,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 58,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 59,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 60,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 61,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 62,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 63,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 64,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 65,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 66,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 67,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 68,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 69,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 70,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 71,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 72,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 73,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 74,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 75,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 76,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 77,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 78,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 79,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 80,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 81,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 82,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 83,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 84,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 85,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              },
+              {
+                "tcId": 86,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 87,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 88,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 89,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 90,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 91,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 92,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 93,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 94,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 95,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 96,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 97,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 98,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 99,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 100,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 101,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 102,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 103,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 104,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 105,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 106,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 107,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 108,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 109,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 110,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 111,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 112,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 113,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 114,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 115,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 116,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 117,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 118,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 119,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 120,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 121,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 122,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 123,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 124,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 125,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 126,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 127,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 128,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 129,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 130,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 131,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 132,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 133,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 134,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 135,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 136,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 137,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 138,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 139,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 140,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 141,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 142,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 143,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 144,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 145,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 146,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 147,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 148,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 149,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 150,
+                "expected": "valid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": false
+              },
+              {
+                "tcId": 151,
+                "expected": "invalid",
+                "operation": "signature-verification",
+                "status": "passed",
+                "rejected": true
+              }
+            ]
+          }
+        },
+        "provider_versions": {
+          "cryptography": "50.0.2",
+          "cffi": "2.1.1",
+          "pycparser": "3.0",
+          "jsonschema": "4.26.0",
+          "referencing": "0.37.0",
+          "attrs": "26.1.0",
+          "rpds-py": "2026.9.1",
+          "jsonschema-specifications": "2025.9.1"
+        },
+        "openssl_version": "OpenSSL 4.0.3 29 Sep 2026",
+        "python_version": "3.14.8",
+        "platform": "linux",
+        "uid": 65534,
+        "agent_processes": 0,
+        "acceptable_cases_in_real_selected_vectors": 0,
+        "acceptable_policy_controls_are_synthetic": true,
+        "original_missing_file_stdout": "No Wycheproof file found at: /submission/missing-vectors.json\n",
+        "original_example_registration_removed_function_bodies_preserved": true
+      }
+    },
+    "captured_bytes": 57002,
+    "stderr": "",
+    "elapsed_seconds": 1.0726265999837779
+  },
+  "agent_efficacy_scored": false,
+  "constant_time_behavior_qualified": false
+}

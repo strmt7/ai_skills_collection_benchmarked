@@ -38,8 +38,9 @@ lock checks and static-output freshness pass. No source refresh has been publish
 ## Whole-generator publication
 
 The generator now collects inputs before writing any production output and stages
-the complete declared catalog, mirror, entrypoint, selected manifest, documentation
-and evaluator set. It validates required outputs and mirror hashes before replacing
+the complete declared catalog, mirror, entrypoint, selected manifest and documentation
+set. Evaluator schemas remain independent, maintained scoring inputs and are never
+rewritten by catalog generation. It validates required outputs and mirror hashes before replacing
 anything. Source HEAD changes and uncommitted source changes reject collection.
 Missing required output files cannot silently delete existing outputs. Undeclared
 generated files also reject publication.
@@ -107,3 +108,38 @@ The recoverable publisher retains every replaced tree and metadata file.
 Sixteen migration/serialization controls pass, and live qualification checks the seven
 refreshed originals. This does not upgrade upstream versions or remediate Git
 history. See `docs/research-secret-scan-coverage.md` for the exact remaining scope.
+
+## Scoped upstream release refresh (2026-10-07)
+
+The later source loop advances `hugohe3/ppt-master` from v2.3.0 at
+`19297c51cce3361d55137f527c010a8886f88bda` to the verified stable v6.6.0
+release at `a50758ac29ec027e85966db33e2ae80031446756`. The other 672
+skill mirrors retain their source signatures and contents. Legacy file-mode
+maps are derived from the existing Git index and recorded explicitly in the
+catalog and lock without changing their tree hashes.
+
+The staged update exposed two generator defects: an outdated evaluator writer
+would remove existing nonempty-string constraints, and a generic `workflow`
+keyword would move the presentation skill into DevOps. Evaluators are now
+excluded from catalog publication; this single-purpose presentation source has
+an explicit reviewed category. All 673 skill IDs and all benchmark assignments
+are preserved. Only its source-grounded provenance scenario changes with the
+new source; those provenance records remain separate from runtime scores.
+
+README inventory counts are read from existing repair and adapter manifests.
+Generation preserves their documentation links and the complete offline quality
+commands. A regression test verifies unchanged evaluator bytes, independent
+artifact inventories and repeatable generation. Malformed inventory JSON aborts
+publication before any catalog output is replaced. The full local Windows
+suite after the source update passed 616 tests with two NTFS mode skips.
+After fixing incomplete Windows Git listings and tracked-deletion handling,
+the final full local suite passed 619 tests with two NTFS mode skips. The badge
+writer now detects and normalizes CRLF byte drift; its check does not mutate the
+README. Scoped regeneration reports no output drift. Ruff, formatting, mypy,
+compilation, catalog, source-lock, static-artifact, risk-audit and curated
+worktree secret checks also pass. These checks do not establish a native
+Gitleaks history pass.
+
+The recoverable source publication is local at this point. Its completion does
+not establish full PPT rendering compatibility, all-source upstream freshness,
+repository-wide security clearance or improved coding-agent effectiveness.

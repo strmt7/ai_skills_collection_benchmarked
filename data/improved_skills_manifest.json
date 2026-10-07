@@ -238,6 +238,66 @@
       "source_commit": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
       "source_file_sha256": "9c98ce71f20970424a26ee28095f942d406b7c68135319e30eb47baac420ea00",
       "source_url": "https://github.com/trailofbits/skills/blob/e8cc5baf9329ccb491bfa200e82eacbac83b1ead/plugins/testing-handbook-skills/skills/coverage-analysis/SKILL.md"
+    },
+    {
+      "license": "CC-BY-SA-4.0",
+      "license_file_sha256": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
+      "license_source_sha": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+      "original_path": "included/improved/skills/wycheproof-crypto-current/provenance/original-SKILL.md",
+      "overlay_path": "included/improved/skills/wycheproof-crypto-current",
+      "overlay_sha256": "c497eddbdba6cdffeb7c980ec950a90395e428ee03773138ec275a996292923f",
+      "package_file_sha256": {
+        "LICENSE": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
+        "NOTICE.md": "ba685a0ebc030d892feb9740618fd5b82a35f4451632b9af5d6ac8b8f998e91f",
+        "SKILL.md": "c497eddbdba6cdffeb7c980ec950a90395e428ee03773138ec275a996292923f",
+        "provenance/original-SKILL.md": "f545b71bd68a8575c750af2cbe667703e9a40ae122bf298bbbe330e17b2d1271",
+        "references/qualification.md": "c093b4fd87dfe720d6a03aee9a50471389e2e59377c5ff0ff14eed6850be5d8f"
+      },
+      "performance_status": "unbenchmarked",
+      "skill_id": "trailofbits-skills-plugins-testing-handbook-skills-skills-wycheproof-skill-md",
+      "source_commit": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+      "source_file_sha256": "f545b71bd68a8575c750af2cbe667703e9a40ae122bf298bbbe330e17b2d1271",
+      "source_url": "https://github.com/trailofbits/skills/blob/e8cc5baf9329ccb491bfa200e82eacbac83b1ead/plugins/testing-handbook-skills/skills/wycheproof/SKILL.md"
+    },
+    {
+      "license": "CC-BY-SA-4.0",
+      "license_file_sha256": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
+      "license_source_sha": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+      "original_path": "included/improved/skills/genotoxic-current/provenance/original-SKILL.md",
+      "overlay_path": "included/improved/skills/genotoxic-current",
+      "overlay_sha256": "5e268c9ef410e10d26025495de6d73689f57076e2768bd12afdc715c15d635dc",
+      "package_file_sha256": {
+        "LICENSE": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
+        "NOTICE.md": "a84d32aa4070518648bf92e819bd89ba0b35dd698923c53d4a2ca7358426fd3b",
+        "SKILL.md": "5e268c9ef410e10d26025495de6d73689f57076e2768bd12afdc715c15d635dc",
+        "provenance/original-SKILL.md": "6f6b735155dfd5982436254e1b7a06865306547a3fb68fbc38c8f56d519fe7b7",
+        "references/qualification.md": "8e9eb4c505632bcdade17b68be7d75566e9207676c8c23c6f61a9dd9cc6f1a7b"
+      },
+      "performance_status": "unbenchmarked",
+      "skill_id": "trailofbits-skills-plugins-trailmark-skills-genotoxic-skill-md",
+      "source_commit": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+      "source_file_sha256": "6f6b735155dfd5982436254e1b7a06865306547a3fb68fbc38c8f56d519fe7b7",
+      "source_url": "https://github.com/trailofbits/skills/blob/e8cc5baf9329ccb491bfa200e82eacbac83b1ead/plugins/trailmark/skills/genotoxic/SKILL.md"
+    },
+    {
+      "license": "CC-BY-SA-4.0",
+      "license_file_sha256": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
+      "license_source_sha": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+      "original_path": "included/improved/skills/vector-forge-current/provenance/original-SKILL.md",
+      "overlay_path": "included/improved/skills/vector-forge-current",
+      "overlay_sha256": "bbd45b25b9eac44acfb494bf55c9b086b1413895c272d9fed8110d176897a498",
+      "package_file_sha256": {
+        "LICENSE": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
+        "NOTICE.md": "537af2e39d93ba4f72daedddbba66c1c4cc5edb11cb80be5334ecae304f4e0e6",
+        "SKILL.md": "bbd45b25b9eac44acfb494bf55c9b086b1413895c272d9fed8110d176897a498",
+        "provenance/original-SKILL.md": "e10842ca76aed8eaf3990f34e2d99934ea5bc756a062568993558e804b42695c",
+        "references/qualification.md": "328595530008491b954e425df23afcc2c125d220353c39104ac352d9a4930955"
+      },
+      "performance_status": "unbenchmarked",
+      "skill_id": "trailofbits-skills-plugins-trailmark-skills-vector-forge-skill-md",
+      "source_commit": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+      "source_file_sha256": "e10842ca76aed8eaf3990f34e2d99934ea5bc756a062568993558e804b42695c",
+      "source_url": "https://github.com/trailofbits/skills/blob/e8cc5baf9329ccb491bfa200e82eacbac83b1ead/plugins/trailmark/skills/vector-forge/SKILL.md"
     }
   ]
 }

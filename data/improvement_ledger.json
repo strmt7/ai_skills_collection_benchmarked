@@ -4116,9 +4116,9 @@
       },
       "source_repo": "hugohe3/ppt-master",
       "source_signature": {
-        "commit_sha": "19297c51cce3361d55137f527c010a8886f88bda",
-        "skill_dir_sha256": "91b69eca474534ade7263e6fa29f66cc89da3857a6ac3f7f266f4ae20d8bd814",
-        "skill_file_sha256": "01ed250bf3929993c865940af4945983dbe4c05f081596e4df72c8fc00f79db0"
+        "commit_sha": "a50758ac29ec027e85966db33e2ae80031446756",
+        "skill_dir_sha256": "875410619eee330cedb49cab986adbc0fa0722c62bfc0a584352b5b678d6ed76",
+        "skill_file_sha256": "6b568cfa5b17229f264c3366c5e07844df5749b243c31af15e12424d75c30185"
       }
     },
     "k-dense-ai-scientific-agent-skills-scientific-skills-adaptyv-skill-md": {
@@ -11631,8 +11631,35 @@
       },
       "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/caveman-help",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-caveman.md",
+            "sha256": "cb401c3367ce20e4ff453194cbf4a81e598b593ecef275b568d0c7983a99172c"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/caveman-310-snapshot-contract-controls.json",
+            "sha256": "9dcfaf43fdab8497d0fd79720c0e2fe3cb075b3dcd5eb23798b1b60f00ce49ef"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/caveman-310-current-source-review.json",
+            "sha256": "2bfc1b1807c33b0bd81d0aed7a16cc6a270a989be13f4acc963e8726bd5032a5"
+          }
+        ],
+        "remaining_work": [
+          "Independently evaluate default, concise-control and current Caveman outcomes under an authorized session protocol.",
+          "Score required-fact fidelity and complete provider usage rather than shape or output length alone.",
+          "Resolve redistribution and generic overlay/source-refresh disposition separately from immutable mirror audits."
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "captured_raw_sha256": "e5bbdc9406eaf5814bdcdef950d09cb745911e5631cfc7dee3bfa54f3ca244b9",
+            "review_scope": "Complete adaptation entrypoint or complete activation-interface metadata read; pinned original remains unchanged.",
+            "sha256": "3089684e021e6c59bd7a8a5b0a0f1a0c926997e54983c1f5897637f9f58de200",
+            "status": "reviewed"
+          }
+        },
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -11653,8 +11680,35 @@
       },
       "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/selected-project-reference/caveman-project-air-defense",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-caveman.md",
+            "sha256": "cb401c3367ce20e4ff453194cbf4a81e598b593ecef275b568d0c7983a99172c"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/caveman-310-snapshot-contract-controls.json",
+            "sha256": "9dcfaf43fdab8497d0fd79720c0e2fe3cb075b3dcd5eb23798b1b60f00ce49ef"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/caveman-310-current-source-review.json",
+            "sha256": "2bfc1b1807c33b0bd81d0aed7a16cc6a270a989be13f4acc963e8726bd5032a5"
+          }
+        ],
+        "remaining_work": [
+          "Independently evaluate default, concise-control and current Caveman outcomes under an authorized session protocol.",
+          "Score required-fact fidelity and complete provider usage rather than shape or output length alone.",
+          "Resolve redistribution and generic overlay/source-refresh disposition separately from immutable mirror audits."
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "captured_raw_sha256": "7f0d2c2bad465bb84f6b4bff7b994763e7a779b2f82a285b094748216a69d270",
+            "review_scope": "Complete adaptation entrypoint or complete activation-interface metadata read; pinned original remains unchanged.",
+            "sha256": "9c2a5b75b15364ddfd570e53f3df4e4dfad51bfe88f022f95bdc72ee1b05bc9f",
+            "status": "reviewed"
+          }
+        },
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -13406,7 +13460,7 @@
       "revision": {
         "evidence": [
           {
-            "path": "data/improved_skills_manifest.json",
+            "path": "artifacts/research/2026-10-07/improved-skills-manifest-twelve-overlays.json",
             "sha256": "3bae55a6ce2a3e02a706e26ee8cda6561fd850cf8a9378a8ad2713c4e07e77a9"
           }
         ],
@@ -13552,7 +13606,7 @@
       "revision": {
         "evidence": [
           {
-            "path": "data/improved_skills_manifest.json",
+            "path": "artifacts/research/2026-10-07/improved-skills-manifest-twelve-overlays.json",
             "sha256": "3bae55a6ce2a3e02a706e26ee8cda6561fd850cf8a9378a8ad2713c4e07e77a9"
           }
         ],
@@ -13672,18 +13726,37 @@
             "sha256": "a81828e2a6769099017e40ba7ce575a65d0fd44c05ae8dc94286a7d710933223"
           },
           {
-            "path": "docs/research-wycheproof.md",
+            "path": "artifacts/research/2026-10-07/wycheproof-text-review-document.md",
             "sha256": "9ff9a1b0aaf3ed9300c00ffdfa1c467679d1463228a683a4ef6ab511a6b3104f"
           },
           {
             "path": "artifacts/research/2026-10-07/wycheproof-primary-input-observation.json",
             "sha256": "5aa7c11b1e5e65cdc801e8c77d0f03420fb0c9acdfd8c473835fea91d717ff78"
+          },
+          {
+            "path": "benchmarks/dependency-regressions/wycheproof-inputs.json",
+            "sha256": "26658afe868c2b0b67e80217cda909d3e9929ec5311a62d10d1e0e686fa93f79"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/wycheproof-provider-preparation.json",
+            "sha256": "cb183909dd0d6085657adc62ec7b1c10906769e42f2e1a1f8b7ed1f0c660ee96"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/wycheproof-provider-runtime-controls.json",
+            "sha256": "f5f70278443860e263f6b906f35a679713c9c9038086cb25344979d5bf1f42c5"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/wycheproof-provider-runtime-controls-v2.json",
+            "sha256": "c346b09ae95029b9cc8b506ee275709d7938a62480dc52753e0c33a4e7b85663"
+          },
+          {
+            "path": "docs/research-wycheproof.md",
+            "sha256": "3ecab3c147f538593bcbfbabb49180715bca6a459311f61569cfd40fb0a5ae7c"
           }
         ],
         "remaining_work": [
-          "Qualify fail-closed schema/loader and real current crypto-provider vector controls.",
-          "Implement explicit acceptable-case and operation-specific policies with complete denominator/exclusion reporting.",
-          "Publish licensed reusable overlay and independently evaluated coding tasks."
+          "Independently evaluate realistic coding tasks and sealed holdouts.",
+          "Qualify other primitives/providers/operations and JavaScript adapters; constant-time behavior is outside these vector controls."
         ],
         "resource_hash_policy": "catalog-canonical-v1",
         "resources": {
@@ -13698,8 +13771,13 @@
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-07/improved-skills-manifest-thirteen-overlays.json",
+            "sha256": "bf2bb77db5b694dddb58662a8c023acecc9e310d0ba3460f1c60dbf8ce4d832e"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "trailofbits/skills",
       "source_signature": {
@@ -13782,12 +13860,118 @@
       },
       "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/security-reference/genotoxic",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "current_upstream_review": {
+          "commit": "82fe8226252622fa807643bdca1710901198553a",
+          "evidence": "artifacts/research/2026-10-07/mutation-triage-current-upstream-review.json",
+          "status": "delta_reviewed"
+        },
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-07/mutation-triage-entrypoint-review-document.md",
+            "sha256": "a79ad685f17c1d0f0fee55c47fcb54427e10c74574988d36ec2400a830b49594"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-triage-partial-resource-review.json",
+            "sha256": "83a108d3bc130d88c9cf7747631d6c66f1a1c781ea14e318889aaafc1b26f760"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-triage-complete-text-review-document.md",
+            "sha256": "f7177bc07039fb8992b03bc7dc9b74a0008d386d78999fa655234dd8b8376153"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-triage-resource-review.json",
+            "sha256": "a844a6160d840c18c081c9e0dbbf69b2e93a4dc4801506239084c700b9976174"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-tool-runtime-controls.json",
+            "sha256": "a90a9c68aca1627cd2e5771e1298023136aefeca7f97351fd25d8afefc5b86d9"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-tools-wheel-inputs.json",
+            "sha256": "0463b5ab8cb97680c9004e6d3a86b8b1d10578a820d9ec8641db216d68a240b7"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-tools-provider-preparation.json",
+            "sha256": "a27d270b885fd7c661333c0cd3b40c5c9c8ab44b10e773cc6a2ec2ca6b61a853"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-tools-python-parser-preparation.json",
+            "sha256": "cf46241e7a54d44b3e2d7ac68b69aa02d9fa6a278ee1560e2c73768067c56a33"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-tools-python-parser-preparation-v2.json",
+            "sha256": "fa32847ff50e84a7c65ddf7d17685761dc575b2da30356e29dc7af7808be2a08"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-campaign-initial-isolation-failure.json",
+            "sha256": "c1b588ac830be928c3b536df5dc3b5ed9da088b7400d77382479442fd9b4c998"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-tool-interface-unconfigured-project-failure.json",
+            "sha256": "74bdb52b38acda859830bc0aa0abdae64ea57cc026fb8bfafe02953e9b989e1e"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-runtime-document-before-fixture-authorship-clarification.md",
+            "sha256": "3cc62c359d4480d59982c5c8ea3e1f9b80d5bf7709e5aca83630fbefd808a727"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-triage-current-upstream-review.json",
+            "sha256": "48dc54c24b7499396dd2d5af0cd85f2622b964d777f09a87ae90ca89275fa4c9"
+          },
+          {
+            "path": "docs/research-mutation-triage.md",
+            "sha256": "23cb993aa9d5e1d05e7918f6931d9fde0aeb9d193a1fa6e296ad78400bbd0008"
+          }
+        ],
+        "remaining_work": [
+          "Independently evaluate realistic coding tasks and sealed holdouts.",
+          "Qualify other language tools and Necessist runtime; do not infer whole-project graph completeness."
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "bytes": 13110,
+            "captured_raw_sha256": "ae4431f2721039851eebda99fadbbfaa58d887769ed06657ea9232d3c248723a",
+            "review_scope": "Complete entrypoint read: setup, mutation/necessist workflow, false-positive buckets, graph heuristics, report and integration.",
+            "sha256": "6f6b735155dfd5982436254e1b7a06865306547a3fb68fbc38c8f56d519fe7b7",
+            "status": "reviewed"
+          },
+          "references/graph-analysis.md": {
+            "bytes": 13512,
+            "captured_raw_sha256": "a657d1acbec592da75a28d69ce19f6807fd26f1fb17f89c170abeef4d5fc9a54",
+            "review_scope": "Complete reference read: line/function mapping, graph queries, annotations, batch triage, performance, necessist mapping and merge behavior.",
+            "sha256": "fd382a64becd8bf30479f2826d8a4577e032f011434f1ce839805de8a3371ded",
+            "status": "reviewed"
+          },
+          "references/mutation-frameworks.md": {
+            "bytes": 29812,
+            "captured_raw_sha256": "846914b397e7013858bad03c0ee5a9d1d83281596ba86e769d018181eebb9d18",
+            "review_scope": "Complete bounded read of every line: Python, JavaScript, Rust, Go, Java, native Mull, .NET, Ruby, PHP, Haskell, Necessist and (Genotoxic only) Circom, Cairo, Solidity; installation policy, statuses, result parsing and mapping reviewed.",
+            "sha256": "87b17aad65a9a9b1e337e67131c9d288239ca7f7254778b9a4890428d8cef0cd",
+            "status": "reviewed"
+          },
+          "references/triage-methodology.md": {
+            "bytes": 12397,
+            "captured_raw_sha256": "404636793e7c2105a0b8ce683b265ee3e33ccd7eb6a314e4d25f1de756a9be9d",
+            "review_scope": "Complete reference read: purported equivalence, reachability, test-only/log/cleanup assumptions, fuzzing/unit-test priorities and both worked examples.",
+            "sha256": "f2e377f94794dce6e271c2c17b95cad9e3ac9cb5522654a57e1c664dab23408b",
+            "status": "reviewed"
+          }
+        },
+        "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-07/improved-skills-manifest-before-fixture-authorship-clarification.json",
+            "sha256": "4314d3eb71bd65594c696964ddcd30095a92bcf801f0c693313c6ca5e906e11e"
+          },
+          {
+            "path": "data/improved_skills_manifest.json",
+            "sha256": "f8bf59149ada1c44c0d302e55b4d48e4a8273d03de80de86b061c0f06495b3de"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "trailofbits/skills",
       "source_signature": {
@@ -13914,12 +14098,133 @@
       },
       "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/security-reference/vector-forge",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "current_upstream_review": {
+          "commit": "82fe8226252622fa807643bdca1710901198553a",
+          "evidence": "artifacts/research/2026-10-07/mutation-triage-current-upstream-review.json",
+          "status": "delta_reviewed"
+        },
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-07/mutation-triage-entrypoint-review-document.md",
+            "sha256": "a79ad685f17c1d0f0fee55c47fcb54427e10c74574988d36ec2400a830b49594"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-triage-partial-resource-review.json",
+            "sha256": "83a108d3bc130d88c9cf7747631d6c66f1a1c781ea14e318889aaafc1b26f760"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-triage-complete-text-review-document.md",
+            "sha256": "f7177bc07039fb8992b03bc7dc9b74a0008d386d78999fa655234dd8b8376153"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-triage-resource-review.json",
+            "sha256": "a844a6160d840c18c081c9e0dbbf69b2e93a4dc4801506239084c700b9976174"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-tool-runtime-controls.json",
+            "sha256": "a90a9c68aca1627cd2e5771e1298023136aefeca7f97351fd25d8afefc5b86d9"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-tools-wheel-inputs.json",
+            "sha256": "0463b5ab8cb97680c9004e6d3a86b8b1d10578a820d9ec8641db216d68a240b7"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-tools-provider-preparation.json",
+            "sha256": "a27d270b885fd7c661333c0cd3b40c5c9c8ab44b10e773cc6a2ec2ca6b61a853"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-tools-python-parser-preparation.json",
+            "sha256": "cf46241e7a54d44b3e2d7ac68b69aa02d9fa6a278ee1560e2c73768067c56a33"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-tools-python-parser-preparation-v2.json",
+            "sha256": "fa32847ff50e84a7c65ddf7d17685761dc575b2da30356e29dc7af7808be2a08"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-campaign-initial-isolation-failure.json",
+            "sha256": "c1b588ac830be928c3b536df5dc3b5ed9da088b7400d77382479442fd9b4c998"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-tool-interface-unconfigured-project-failure.json",
+            "sha256": "74bdb52b38acda859830bc0aa0abdae64ea57cc026fb8bfafe02953e9b989e1e"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-runtime-document-before-fixture-authorship-clarification.md",
+            "sha256": "3cc62c359d4480d59982c5c8ea3e1f9b80d5bf7709e5aca83630fbefd808a727"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/mutation-triage-current-upstream-review.json",
+            "sha256": "48dc54c24b7499396dd2d5af0cd85f2622b964d777f09a87ae90ca89275fa4c9"
+          },
+          {
+            "path": "docs/research-mutation-triage.md",
+            "sha256": "23cb993aa9d5e1d05e7918f6931d9fde0aeb9d193a1fa6e296ad78400bbd0008"
+          }
+        ],
+        "remaining_work": [
+          "Independently evaluate realistic coding tasks and sealed holdouts.",
+          "Qualify other language tools and Necessist runtime; do not infer whole-project graph completeness.",
+          "Execute actual full-width cryptographic-library conversion/vector campaigns; generic math and Python threshold examples are not that evidence."
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "bytes": 19677,
+            "captured_raw_sha256": "60322be94575420953aef32b45269a14643463a42ff64ec4e9f2893c7b02f872",
+            "review_scope": "Complete entrypoint read: discovery, FFI/harness scope, three test conditions, mutation denominators, graph triage, vector generation, independent verification, after comparison and integration.",
+            "sha256": "e10842ca76aed8eaf3990f34e2d99934ea5bc756a062568993558e804b42695c",
+            "status": "reviewed"
+          },
+          "references/fault-simulation.md": {
+            "bytes": 5982,
+            "captured_raw_sha256": "2b5249d73dfc5a22482c66fdc28401e82ff21ce68e5e0d21bcc61c79395d3a71",
+            "review_scope": "Complete reference read: radix/model selection, fault catalog, distinguishing inputs, production interpretation and limb selection claims.",
+            "sha256": "2e39c262e4cb1f7c8f9737e6ed02d45c3c69c556c7003b077a1aae24d06ea308",
+            "status": "reviewed"
+          },
+          "references/lessons-learned.md": {
+            "bytes": 8374,
+            "captured_raw_sha256": "837add81a036e06a310ed547e95475a6d94ba89b8073bfa5f6abcbfa46bbb513",
+            "review_scope": "Complete reference read: all fourteen case-study claims including FFI, timeout calibration, cross-package scope, equivalence, Montgomery reachability, vector value and Go formatting.",
+            "sha256": "fa8ac0c803bcdb6208e36f3d1b84dd07ebdce12a8eb4d0d1f1e6a3141b3a2f4a",
+            "status": "reviewed"
+          },
+          "references/mutation-frameworks.md": {
+            "bytes": 21059,
+            "captured_raw_sha256": "4d091fcd0db7b9eafa7fd615ed60e9d136826fd6c2439c0528448bbe32d20825",
+            "review_scope": "Complete bounded read of every line: Python, JavaScript, Rust, Go, Java, native Mull, .NET, Ruby, PHP, Haskell, Necessist and (Genotoxic only) Circom, Cairo, Solidity; installation policy, statuses, result parsing and mapping reviewed.",
+            "sha256": "ae781ebc35637c0c46cdee448bc8bad98a7e3676007039c7ed1eca7f612e82d9",
+            "status": "reviewed"
+          },
+          "references/report-template.md": {
+            "bytes": 955,
+            "captured_raw_sha256": "a553ed4d3d5b2ed0ce493cc70cd295050135996dc21c47ab7978642155ec801c",
+            "review_scope": "Complete template read: target/provider baseline, escapes, generated vectors, after comparison and conclusions.",
+            "sha256": "9fb727aa0f8f6dde0b4f533a0de0641848cdb0cffff2d47eba9c4335b6da9727",
+            "status": "reviewed"
+          },
+          "references/vector-patterns.md": {
+            "bytes": 10118,
+            "captured_raw_sha256": "be453d8918c3f8a33ed0f1bc384f3a8a72e0e3abfe3f6aa8b543336fd89aed9e",
+            "review_scope": "Complete reference read: crypto format/operation-specific result expectations, serialization, signatures/aggregation, hash-to-curve, pairings, KEM and mutation mappings.",
+            "sha256": "641edba466cfdf0ae8cd93b5009b6861b1f6aaa593b84fd5abcd5b468a8b91b1",
+            "status": "reviewed"
+          }
+        },
+        "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-07/improved-skills-manifest-before-fixture-authorship-clarification.json",
+            "sha256": "4314d3eb71bd65594c696964ddcd30095a92bcf801f0c693313c6ca5e906e11e"
+          },
+          {
+            "path": "data/improved_skills_manifest.json",
+            "sha256": "f8bf59149ada1c44c0d302e55b4d48e4a8273d03de80de86b061c0f06495b3de"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "trailofbits/skills",
       "source_signature": {
@@ -14774,8 +15079,41 @@
       },
       "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/caveman-omero-docker-extended",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-caveman.md",
+            "sha256": "cb401c3367ce20e4ff453194cbf4a81e598b593ecef275b568d0c7983a99172c"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/caveman-310-snapshot-contract-controls.json",
+            "sha256": "9dcfaf43fdab8497d0fd79720c0e2fe3cb075b3dcd5eb23798b1b60f00ce49ef"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/caveman-310-current-source-review.json",
+            "sha256": "2bfc1b1807c33b0bd81d0aed7a16cc6a270a989be13f4acc963e8726bd5032a5"
+          }
+        ],
+        "remaining_work": [
+          "Independently evaluate default, concise-control and current Caveman outcomes under an authorized session protocol.",
+          "Score required-fact fidelity and complete provider usage rather than shape or output length alone.",
+          "Resolve redistribution and generic overlay/source-refresh disposition separately from immutable mirror audits."
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "captured_raw_sha256": "5812db348b20509a30257f08ca64fd908b1af915a3d405909e669274b3d44e78",
+            "review_scope": "Complete adaptation entrypoint or complete activation-interface metadata read; pinned original remains unchanged.",
+            "sha256": "dd799a7089b136bc194ae0c8b1e203a6c0fb8f401ef7e71015130e76fb0e967e",
+            "status": "reviewed"
+          },
+          "agents/openai.yaml": {
+            "captured_raw_sha256": "e9146d7e071951f6b9477535c7d484722c2f4592886564143283070e16c03937",
+            "review_scope": "Complete adaptation entrypoint or complete activation-interface metadata read; pinned original remains unchanged.",
+            "sha256": "9a75a5bdee119119e3d00b76e6bbade32bee79943ecf98c8e6ee76c1983b7c88",
+            "status": "reviewed"
+          }
+        },
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -15324,8 +15662,35 @@
       },
       "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/caveman-third-party-caveman-v1-6-0-caveman",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-caveman.md",
+            "sha256": "cb401c3367ce20e4ff453194cbf4a81e598b593ecef275b568d0c7983a99172c"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/caveman-310-snapshot-contract-controls.json",
+            "sha256": "9dcfaf43fdab8497d0fd79720c0e2fe3cb075b3dcd5eb23798b1b60f00ce49ef"
+          },
+          {
+            "path": "artifacts/research/2026-10-07/caveman-310-current-source-review.json",
+            "sha256": "2bfc1b1807c33b0bd81d0aed7a16cc6a270a989be13f4acc963e8726bd5032a5"
+          }
+        ],
+        "remaining_work": [
+          "Independently evaluate default, concise-control and current Caveman outcomes under an authorized session protocol.",
+          "Score required-fact fidelity and complete provider usage rather than shape or output length alone.",
+          "Resolve redistribution and generic overlay/source-refresh disposition separately from immutable mirror audits."
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "captured_raw_sha256": "be6aacc091a7fbb373a3d0fb1de6d4ae1ff8a070d54e8777626342f6728d19c9",
+            "review_scope": "Complete adaptation entrypoint or complete activation-interface metadata read; pinned original remains unchanged.",
+            "sha256": "09ebdef35a85d058f8eba04c6a3d91079ac8dabc3d45d265694f128c808f7648",
+            "status": "reviewed"
+          }
+        },
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -16515,6 +16880,31 @@
         }
       },
       "skill_id": "yuvalsuede-agent-media-skill-skill-md"
+    },
+    {
+      "review": {
+        "category": "Documents, spreadsheets & presentations",
+        "evaluation": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "mirrored_path": "included/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ppt-master",
+        "research": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "revision": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "source_repo": "hugohe3/ppt-master",
+        "source_signature": {
+          "commit_sha": "19297c51cce3361d55137f527c010a8886f88bda",
+          "skill_dir_sha256": "91b69eca474534ade7263e6fa29f66cc89da3857a6ac3f7f266f4ae20d8bd814",
+          "skill_file_sha256": "01ed250bf3929993c865940af4945983dbe4c05f081596e4df72c8fc00f79db0"
+        }
+      },
+      "skill_id": "hugohe3-ppt-master-skills-ppt-master-skill-md"
     }
   ],
   "time_gates": [

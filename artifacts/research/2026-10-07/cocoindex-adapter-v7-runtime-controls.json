@@ -1,0 +1,399 @@
+{
+  "schema_version": 1,
+  "evidence_class": "source-bound-selected-development-retrieval-controls-not-efficacy-benchmark",
+  "passed": true,
+  "checks": {
+    "query_0_actual_client_returned_three_hits": true,
+    "query_0_current_provider_runtime_and_manifest": true,
+    "query_0_exact_source_scope_and_spans_rechecked": true,
+    "query_1_actual_client_returned_three_hits": true,
+    "query_1_current_provider_runtime_and_manifest": true,
+    "query_1_exact_source_scope_and_spans_rechecked": true,
+    "query_2_actual_client_returned_three_hits": true,
+    "query_2_current_provider_runtime_and_manifest": true,
+    "query_2_exact_source_scope_and_spans_rechecked": true,
+    "source_inventory_still_fresh": true
+  },
+  "observations": [
+    {
+      "query": "ambiguous mutation mapping zero callers false positives",
+      "scope": "included/improved/skills/genotoxic-current/**",
+      "response": {
+        "response": {
+          "type": "search",
+          "success": true,
+          "results": [
+            {
+              "file_path": "included/improved/skills/genotoxic-current/SKILL.md",
+              "language": "markdown",
+              "content": "Use callers, entrypoint paths, ancestors and complexity as prioritization\nevidence. Zero callers can mean an exported API, dynamic callback or incomplete\ngraph. An unmapped finding is unresolved. Neither condition establishes dead\ncode, equivalence or a false positive. Inspect the actual call boundary and\ncontract before recommending removal or dismissal.\n\nFor each survivor, inspect its exact edit and rerun the relevant test against\nthat mutant. Distinguish a reproducible behavior gap, a proven equivalent edit,\nan excluded API/input domain, inadequate test selection, and unresolved or\ninfrastructure outcomes. Equivalence needs type, input and side-effect evidence;\nlogging, errors and cleanup may be externally observable contracts. Complexity\nthresholds are heuristics, not severity assessments.",
+              "start_line": 58,
+              "end_line": 69,
+              "score": 0.6908263138795103
+            },
+            {
+              "file_path": "included/improved/skills/genotoxic-current/references/qualification.md",
+              "language": "markdown",
+              "content": "The threshold fixture generated six identical mutant IDs in both campaigns.\nWeak tests left one survivor and five untested mutants. Adding boundary tests\nkilled that survivor while the same five remained untested. This is a controlled\ntool integration demonstration. The assertions were authored as fixed research\nfixtures; no evaluated agent generated them during a trial.\n\nThe real graph fixture resolves an internal call and an externally invoked\nfunction with zero local callers. Executed original source functions dismiss\nthat function and an unmapped case as false positives, choose ambiguous names\nby insertion order, exclude `src/contest.py`, and associate a removal with only\nthe first of two mutants. These are source-example reproductions, not skill\nruntime benchmark passes. Forged totals and unverified cleanup fail controls.",
+              "start_line": 12,
+              "end_line": 23,
+              "score": 0.6349773188359489
+            },
+            {
+              "file_path": "included/improved/skills/genotoxic-current/provenance/original-SKILL.md",
+              "language": "markdown",
+              "content": "# Genotoxic\r\n\r\nCombines mutation testing and necessist (test statement removal) with\r\ncode graph analysis to triage findings into actionable categories:\r\nfalse positives, missing unit tests, and fuzzing targets.\r\n\r\n## When to Use\r\n\r\n- After mutation testing reveals survived mutants that need triage\r\n- Identifying where unit tests would have the highest impact\r\n- Finding functions that need fuzz harnesses instead of unit tests\r\n- Prioritizing test improvements using data flow context\r\n- Filtering out harmless mutants from actionable ones\r\n- Finding unnecessary test statements that indicate weak assertions (necessist)\r\n\r\n## When NOT to Use\r\n\r\n- Codebase has no existing test suite (write tests first)\r\n- Pure documentation or configuration changes\r\n- Single-file scripts with trivial logic\r\n\r\n## Prerequisites",
+              "start_line": 6,
+              "end_line": 27,
+              "score": 0.6094392188204392
+            }
+          ],
+          "total_returned": 3,
+          "offset": 0,
+          "message": null
+        },
+        "project_status": {
+          "type": "project_status",
+          "indexing": false,
+          "total_chunks": 66983,
+          "total_files": 5472,
+          "languages": {
+            "markdown": 37772,
+            "text": 11089,
+            "python": 8226,
+            "json": 3397,
+            "csv": 1993,
+            "bash": 1198,
+            "html": 1077,
+            "yaml": 974,
+            "latex": 668,
+            "javascript": 236,
+            "hcl": 120,
+            "bicep": 61,
+            "powershell": 32,
+            "xml": 30,
+            "gitignore": 26,
+            "dockerfile": 22,
+            "typescript": 18,
+            "bibtex": 14,
+            "groovy": 9,
+            "tsx": 6,
+            "make": 6,
+            "toml": 3,
+            "ini": 3,
+            "cpp": 3
+          },
+          "progress": null,
+          "index_exists": true
+        },
+        "daemon_status": {
+          "type": "daemon_status",
+          "version": "0.2.42",
+          "uptime_seconds": 14.895010100008221,
+          "projects": [
+            {
+              "project_root": "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\semantic-corpus\\full-resources-v7\\tree",
+              "indexing": false
+            }
+          ],
+          "idle_seconds": 0.0005672000115737319,
+          "idle_timeout_minutes": 1
+        },
+        "versions": {
+          "cocoindex": "1.0.25",
+          "cocoindex-code": "0.2.42"
+        },
+        "python_version": "3.14.8",
+        "ok": true,
+        "source_checks": [
+          {
+            "path": "included/improved/skills/genotoxic-current/SKILL.md",
+            "sha256": "5e268c9ef410e10d26025495de6d73689f57076e2768bd12afdc715c15d635dc",
+            "source_span_verified": true
+          },
+          {
+            "path": "included/improved/skills/genotoxic-current/references/qualification.md",
+            "sha256": "8e9eb4c505632bcdade17b68be7d75566e9207676c8c23c6f61a9dd9cc6f1a7b",
+            "source_span_verified": true
+          },
+          {
+            "path": "included/improved/skills/genotoxic-current/provenance/original-SKILL.md",
+            "sha256": "ae4431f2721039851eebda99fadbbfaa58d887769ed06657ea9232d3c248723a",
+            "source_span_verified": true
+          }
+        ],
+        "manifest_sha256": "13c4140c4c496525a0b3bd318e6603fffe4f92421d7d246659142f09867eb6c1",
+        "query": {
+          "project_root": "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\semantic-corpus\\full-resources-v7\\tree",
+          "query": "ambiguous mutation mapping zero callers false positives",
+          "paths": [
+            "included/improved/skills/genotoxic-current/**"
+          ],
+          "limit": 3,
+          "offset": 0
+        },
+        "stderr": "",
+        "retrieval_quality_established": false,
+        "agent_efficacy_scored": false
+      },
+      "exit_code": 0
+    },
+    {
+      "query": "Montgomery representation inverse mapping canonical public inputs",
+      "scope": "included/improved/skills/vector-forge-current/**",
+      "response": {
+        "response": {
+          "type": "search",
+          "success": true,
+          "results": [
+            {
+              "file_path": "included/improved/skills/vector-forge-current/SKILL.md",
+              "language": "markdown",
+              "content": "For a reduced limb model, specify the full-width field/order, radix, reduction\nand operation first. Demonstrate that the reduction preserves the property\nbeing tested. Retest exported cases against the actual full-width API and an\nappropriate independent oracle. A distinguisher for one injected model fault\ndoes not prove coverage of every implementation of that fault class.\n\nDo not assume Montgomery representation makes selected internal residues\nunreachable. When the public API represents every canonical field/scalar value\nand the internal mapping is `m = x * R mod q` with invertible `R`, choose\n`x = m * R^-1 mod q` and verify conversion through the actual API. Inspect its\nnormalization, endian, representation and domain contracts first. A mathematical\nconstruction is not evidence that a particular library exposed or executed it.",
+              "start_line": 52,
+              "end_line": 63,
+              "score": 0.6413083206862211
+            },
+            {
+              "file_path": "included/improved/skills/vector-forge-current/NOTICE.md",
+              "language": "markdown",
+              "content": "# Attribution and changes\n\nAdapted by AI agent from Trail of Bits' Vector Forge skill at\n[e8cc5baf9329ccb491bfa200e82eacbac83b1ead](https://github.com/trailofbits/skills/blob/e8cc5baf9329ccb491bfa200e82eacbac83b1ead/plugins/trailmark/skills/vector-forge/SKILL.md).\nThe original entrypoint is preserved byte-for-byte in `provenance/original-SKILL.md`.\nThis derivative uses CC-BY-SA-4.0, included as `LICENSE`.\n\nChanges: qualify actual harness/tool scope; retain complete mutation denominators;\nuse operation-specific vector contracts and independent oracles; distinguish\nreduced mathematical models from executed full-width APIs; replace blanket\nMontgomery unreachability claims with conditional inverse mapping; reflect the\ncurrent upstream `vectorgen` contribution workflow. Newer upstream deltas at\n`82fe8226252622fa807643bdca1710901198553a` were reviewed separately.\nNo coding-agent efficacy improvement is claimed.",
+              "start_line": 1,
+              "end_line": 14,
+              "score": 0.5824511178400869
+            },
+            {
+              "file_path": "included/improved/skills/vector-forge-current/SKILL.md",
+              "language": "markdown",
+              "content": "Choose vector families from the actual defect and specification: carry/borrow\nboundaries, modulus and order boundaries, reduction, aliasing, malformed\nencodings, validation ordering and supported key/message representations.\nUse integer, algebraic or independently implemented reference operations to\ncompute expected results. Identify shared backends and algorithms between\nreferences; agreement between two wrappers over one backend is weak evidence.\n\nState expected acceptance, rejection and output separately for each operation.\nIdentity points, zero scalars, duplicate aggregate messages and noncanonical\nencodings depend on the protocol and API. KEM implicit rejection may return a\ndefined output rather than an exception. Roundtrip byte equality is appropriate\nonly for an encoding/API with a canonical roundtrip contract. Assert correct\naccepted outputs and documented rejection; unexpected setup/internal failures\nremain harness errors, including on malformed inputs.",
+              "start_line": 37,
+              "end_line": 50,
+              "score": 0.5801419378113266
+            }
+          ],
+          "total_returned": 3,
+          "offset": 0,
+          "message": null
+        },
+        "project_status": {
+          "type": "project_status",
+          "indexing": false,
+          "total_chunks": 66983,
+          "total_files": 5472,
+          "languages": {
+            "markdown": 37772,
+            "text": 11089,
+            "python": 8226,
+            "json": 3397,
+            "csv": 1993,
+            "bash": 1198,
+            "html": 1077,
+            "yaml": 974,
+            "latex": 668,
+            "javascript": 236,
+            "hcl": 120,
+            "bicep": 61,
+            "powershell": 32,
+            "xml": 30,
+            "gitignore": 26,
+            "dockerfile": 22,
+            "typescript": 18,
+            "bibtex": 14,
+            "groovy": 9,
+            "tsx": 6,
+            "make": 6,
+            "toml": 3,
+            "ini": 3,
+            "cpp": 3
+          },
+          "progress": null,
+          "index_exists": true
+        },
+        "daemon_status": {
+          "type": "daemon_status",
+          "version": "0.2.42",
+          "uptime_seconds": 12.043353899993235,
+          "projects": [
+            {
+              "project_root": "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\semantic-corpus\\full-resources-v7\\tree",
+              "indexing": false
+            }
+          ],
+          "idle_seconds": 0.0004991999885533005,
+          "idle_timeout_minutes": 1
+        },
+        "versions": {
+          "cocoindex": "1.0.25",
+          "cocoindex-code": "0.2.42"
+        },
+        "python_version": "3.14.8",
+        "ok": true,
+        "source_checks": [
+          {
+            "path": "included/improved/skills/vector-forge-current/SKILL.md",
+            "sha256": "bbd45b25b9eac44acfb494bf55c9b086b1413895c272d9fed8110d176897a498",
+            "source_span_verified": true
+          },
+          {
+            "path": "included/improved/skills/vector-forge-current/NOTICE.md",
+            "sha256": "537af2e39d93ba4f72daedddbba66c1c4cc5edb11cb80be5334ecae304f4e0e6",
+            "source_span_verified": true
+          },
+          {
+            "path": "included/improved/skills/vector-forge-current/SKILL.md",
+            "sha256": "bbd45b25b9eac44acfb494bf55c9b086b1413895c272d9fed8110d176897a498",
+            "source_span_verified": true
+          }
+        ],
+        "manifest_sha256": "13c4140c4c496525a0b3bd318e6603fffe4f92421d7d246659142f09867eb6c1",
+        "query": {
+          "project_root": "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\semantic-corpus\\full-resources-v7\\tree",
+          "query": "Montgomery representation inverse mapping canonical public inputs",
+          "paths": [
+            "included/improved/skills/vector-forge-current/**"
+          ],
+          "limit": 3,
+          "offset": 0
+        },
+        "stderr": "",
+        "retrieval_quality_established": false,
+        "agent_efficacy_scored": false
+      },
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "query": "private shared memory semaphore mutation tool container profile",
+      "scope": "tools/**",
+      "response": {
+        "response": {
+          "type": "search",
+          "success": true,
+          "results": [
+            {
+              "file_path": "tools/_lib_b/__init__.py",
+              "language": "python",
+              "content": "\"\"\"Shared helpers for Batch B generators (runtime/repaired/source-proof).\n\nThis namespace is intentionally distinct from any Batch A shared library to\navoid cross-branch merge conflicts. It may be consolidated later.\n\nModules:\n    io_utils      - atomic JSON/text writers with deterministic formatting\n    hashing       - SHA-256 helpers for files, text, and sorted trees\n    determinism   - stable timestamp and catalog-commit resolvers\n    logging_utils - structured stdlib logging configuration for CLI tools\n    frontmatter_utils - YAML frontmatter parser with line-aware errors\n\"\"\"\n\nfrom . import determinism, frontmatter_utils, hashing, io_utils, logging_utils\n\n__all__ = [\n    \"determinism\",\n    \"frontmatter_utils\",\n    \"hashing\",\n    \"io_utils\",\n    \"logging_utils\",\n]",
+              "start_line": 1,
+              "end_line": 22,
+              "score": 0.5896370095825727
+            },
+            {
+              "file_path": "tools/isolated_python.py",
+              "language": "python",
+              "content": ",\n                    \"--label\",\n                    OWNER_LABEL + \"=\" + token,\n                    \"--interactive\",\n                    \"--network\",\n                    \"none\",\n                    \"--ipc\",\n                    \"none\",\n                    \"--read-only\",\n                    \"--user\",\n                    \"65534:65534\",\n                    \"--cap-drop\",\n                    \"ALL\",\n                    \"--security-opt\",\n                    \"no-new-privileges\",\n                    \"--cpus\",\n                    str(resources[\"cpus\"]),\n                    \"--memory\"",
+              "start_line": 220,
+              "end_line": 237,
+              "score": 0.5806917743102531
+            },
+            {
+              "file_path": "tools/validate_catalog.py",
+              "language": "python",
+              "content": "PACKAGE_LOCK_MINIMUMS = {\n    \"node_modules/brace-expansion\": (2, 0, 3),\n    \"node_modules/protobufjs\": (7, 5, 5),\n}\nREQUIRED_REPOS = {\n    \"strmt7/simple_ai_bitcoin_trading_binance\",\n    \"strmt7/ome-zarr-C\",\n    \"strmt7/project_air_defense\",\n    \"ZMB-UZH/omero-docker-extended\",\n    \"Varnan-Tech/opendirectory\",\n    \"supermemoryai/skills\",\n    \"hardikpandya/stop-slop\",\n}\n# Direct-source repo references that MUST NOT appear in the README (privacy / scope policy).\nREADME_FORBIDDEN_SOURCES = {\n    \"strmt7/simple_ai_bitcoin_trading_binance\",\n    \"strmt7/ome-zarr-C\",\n    \"strmt7/project_air_defense\",\n    \"ZMB-UZH/omero-docker-extended\",\n}\nREADME_OVERCLAIM_PHRASES = (\"bug-free\", \"error-free\", \"guaranteed\", \"best skills\", \"fully proven\")\nAGENTS_SINGLE_SESSION_PHRASES = (\n    \"mandatory single-session rule\",\n    \"do not spawn\",\n    \"subagents\",\n    \"one ai session only\",\n)\nDELEGATION_FORBIDDEN_PHRASES = (\"subagent\", \"parallel agent\", \"multi-agent orchestration\")",
+              "start_line": 45,
+              "end_line": 72,
+              "score": 0.5780668497812353
+            }
+          ],
+          "total_returned": 3,
+          "offset": 0,
+          "message": null
+        },
+        "project_status": {
+          "type": "project_status",
+          "indexing": false,
+          "total_chunks": 66983,
+          "total_files": 5472,
+          "languages": {
+            "markdown": 37772,
+            "text": 11089,
+            "python": 8226,
+            "json": 3397,
+            "csv": 1993,
+            "bash": 1198,
+            "html": 1077,
+            "yaml": 974,
+            "latex": 668,
+            "javascript": 236,
+            "hcl": 120,
+            "bicep": 61,
+            "powershell": 32,
+            "xml": 30,
+            "gitignore": 26,
+            "dockerfile": 22,
+            "typescript": 18,
+            "bibtex": 14,
+            "groovy": 9,
+            "tsx": 6,
+            "make": 6,
+            "toml": 3,
+            "ini": 3,
+            "cpp": 3
+          },
+          "progress": null,
+          "index_exists": true
+        },
+        "daemon_status": {
+          "type": "daemon_status",
+          "version": "0.2.42",
+          "uptime_seconds": 38.403777899977285,
+          "projects": [
+            {
+              "project_root": "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\semantic-corpus\\full-resources-v7\\tree",
+              "indexing": false
+            }
+          ],
+          "idle_seconds": 0.0006543999770656228,
+          "idle_timeout_minutes": 1
+        },
+        "versions": {
+          "cocoindex": "1.0.25",
+          "cocoindex-code": "0.2.42"
+        },
+        "python_version": "3.14.8",
+        "ok": true,
+        "source_checks": [
+          {
+            "path": "tools/_lib_b/__init__.py",
+            "sha256": "d5d2f451fd013d9c3848cf9ea24fbf1cb9f9aa6e3277440f7afda3fbfe3305e7",
+            "source_span_verified": true
+          },
+          {
+            "path": "tools/isolated_python.py",
+            "sha256": "fb9c34345bdf6c8d7cb5f49a002ececeaa982d5c6143b487b26894665f03f807",
+            "source_span_verified": true
+          },
+          {
+            "path": "tools/validate_catalog.py",
+            "sha256": "019e22f1cd7be19731e487aa211beb9b0b28aaed69ea49efd6963a0717294d70",
+            "source_span_verified": true
+          }
+        ],
+        "manifest_sha256": "13c4140c4c496525a0b3bd318e6603fffe4f92421d7d246659142f09867eb6c1",
+        "query": {
+          "project_root": "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\semantic-corpus\\full-resources-v7\\tree",
+          "query": "private shared memory semaphore mutation tool container profile",
+          "paths": [
+            "tools/**"
+          ],
+          "limit": 3,
+          "offset": 0
+        },
+        "stderr": "",
+        "retrieval_quality_established": false,
+        "agent_efficacy_scored": false
+      },
+      "exit_code": 0,
+      "stderr": ""
+    }
+  ],
+  "manifest_sha256": "13c4140c4c496525a0b3bd318e6603fffe4f92421d7d246659142f09867eb6c1",
+  "adapter_sha256": "e05442ba4c2f0ef3faa2b870c32029a9aa491e60503e7e835efa307aa8d3581d",
+  "initial_cli_failures_and_probe_label_correction_retained": true,
+  "windows_cli_expansion_cause_verified": true,
+  "query_scope_chosen_for_development_not_blind_evaluation": true,
+  "retrieval_quality_established": false,
+  "agent_efficacy_scored": false,
+  "skill_runtime_benchmark_passes": 0,
+  "reproducer_sha256": "bbef44293355b892df3d1110e64090a07419e30b9a4d482dbe41aa22cd310c3f"
+}

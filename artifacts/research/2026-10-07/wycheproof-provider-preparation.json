@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "evidence_class": "offline-trusted-provider-and-schema-image-preparation-not-runtime-readiness",
+  "passed": true,
+  "base_image": "python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e",
+  "image": "sha256:27224bdf1729386a33fd395e8f697838703ae7b891b02c32ac021b02c2fc0691",
+  "inputs_manifest_sha256": "26658afe868c2b0b67e80217cda909d3e9929ec5311a62d10d1e0e686fa93f79",
+  "wheels": {
+    "cryptography": {
+      "version": "50.0.2",
+      "filename": "cryptography-50.0.2-cp311-abi3-manylinux_2_28_x86_64.whl",
+      "sha256": "4061c0079120205fb760c58acab6443e217307dcf05e3702cf970e0689972856",
+      "bytes": 4753050,
+      "url": "https://files.pythonhosted.org/packages/1a/f1/b474e930c4d910328780e3940da76f5aa5cbc48ce1fc14e44d239d9ea9db/cryptography-50.0.2-cp311-abi3-manylinux_2_28_x86_64.whl",
+      "uploaded_at": "2026-09-30T14:43:55.272150Z",
+      "requires_dist": [
+        "cffi>=2.0.0; platform_python_implementation != \"PyPy\"",
+        "typing-extensions>=4.13.2; python_full_version < \"3.11\"",
+        "bcrypt>=3.1.5; extra == \"ssh\""
+      ]
+    },
+    "cffi": {
+      "version": "2.1.1",
+      "filename": "cffi-2.1.1-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "sha256": "b0431303acaea1089ad4b3e9ce4e6518193def1118d4073ca848635ee4ea2e96",
+      "bytes": 221525,
+      "url": "https://files.pythonhosted.org/packages/e9/02/4e7d553a7ac4b4238b38b3c1b80d486e9d4436f8d2acbf87a0997fe3f402/cffi-2.1.1-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "uploaded_at": "2026-08-03T21:20:25.758239Z",
+      "requires_dist": [
+        "pycparser; implementation_name != \"PyPy\""
+      ]
+    },
+    "pycparser": {
+      "version": "3.0",
+      "filename": "pycparser-3.0-py3-none-any.whl",
+      "sha256": "b727414169a36b7d524c1c3e31839a521725078d7b2ff038656844266160a992",
+      "bytes": 48172,
+      "url": "https://files.pythonhosted.org/packages/0c/c3/44f3fbbfa403ea2a7c779186dc20772604442dde72947e7d01069cbe98e3/pycparser-3.0-py3-none-any.whl",
+      "uploaded_at": "2026-01-21T14:26:50.693739Z",
+      "requires_dist": null
+    },
+    "jsonschema": {
+      "version": "4.26.0",
+      "filename": "jsonschema-4.26.0-py3-none-any.whl",
+      "sha256": "d489f15263b8d200f8387e64b4c3a75f06629559fb73deb8fdfb525f2dab50ce",
+      "bytes": 90630,
+      "url": "https://files.pythonhosted.org/packages/69/90/f63fb5873511e014207a475e2bb4e8b2e570d655b00ac19a9a0ca0a385ee/jsonschema-4.26.0-py3-none-any.whl",
+      "uploaded_at": "2026-01-07T13:41:05.306692Z",
+      "requires_dist": [
+        "attrs>=22.2.0",
+        "jsonschema-specifications>=2023.03.6",
+        "referencing>=0.28.4",
+        "rpds-py>=0.25.0",
+        "fqdn; extra == \"format\"",
+        "idna; extra == \"format\"",
+        "isoduration; extra == \"format\"",
+        "jsonpointer>1.13; extra == \"format\"",
+        "rfc3339-validator; extra == \"format\"",
+        "rfc3987; extra == \"format\"",
+        "uri-template; extra == \"format\"",
+        "webcolors>=1.11; extra == \"format\"",
+        "fqdn; extra == \"format-nongpl\"",
+        "idna; extra == \"format-nongpl\"",
+        "isoduration; extra == \"format-nongpl\"",
+        "jsonpointer>1.13; extra == \"format-nongpl\"",
+        "rfc3339-validator; extra == \"format-nongpl\"",
+        "rfc3986-validator>0.1.0; extra == \"format-nongpl\"",
+        "rfc3987-syntax>=1.1.0; extra == \"format-nongpl\"",
+        "uri-template; extra == \"format-nongpl\"",
+        "webcolors>=24.6.0; extra == \"format-nongpl\""
+      ]
+    },
+    "referencing": {
+      "version": "0.37.0",
+      "filename": "referencing-0.37.0-py3-none-any.whl",
+      "sha256": "381329a9f99628c9069361716891d34ad94af76e461dcb0335825aecc7692231",
+      "bytes": 26766,
+      "url": "https://files.pythonhosted.org/packages/2c/58/ca301544e1fa93ed4f80d724bf5b194f6e4b945841c5bfd555878eea9fcb/referencing-0.37.0-py3-none-any.whl",
+      "uploaded_at": "2025-10-13T15:30:47.625937Z",
+      "requires_dist": [
+        "attrs>=22.2.0",
+        "rpds-py>=0.7.0",
+        "typing-extensions>=4.4.0; python_version < \"3.13\""
+      ]
+    },
+    "attrs": {
+      "version": "26.1.0",
+      "filename": "attrs-26.1.0-py3-none-any.whl",
+      "sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309",
+      "bytes": 67548,
+      "url": "https://files.pythonhosted.org/packages/64/b4/17d4b0b2a2dc85a6df63d1157e028ed19f90d4cd97c36717afef2bc2f395/attrs-26.1.0-py3-none-any.whl",
+      "uploaded_at": "2026-03-19T14:22:23.645947Z",
+      "requires_dist": null
+    },
+    "rpds-py": {
+      "version": "2026.9.1",
+      "filename": "rpds_py-2026.9.1-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "eac2f5dbafd585dfe31f86a23ebf0d3ba480a9d49ebc87947267b5608d4ea0cd",
+      "bytes": 371623,
+      "url": "https://files.pythonhosted.org/packages/22/9d/d08a1128ab199b2f0cf25bfeb0639bd05119fff4b7c47bec24ef9a8ec23f/rpds_py-2026.9.1-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "uploaded_at": "2026-10-04T16:30:10.501356Z",
+      "requires_dist": null
+    },
+    "jsonschema-specifications": {
+      "version": "2025.9.1",
+      "filename": "jsonschema_specifications-2025.9.1-py3-none-any.whl",
+      "sha256": "98802fee3a11ee76ecaca44429fda8a41bff98b00a0f2838151b113f210cc6fe",
+      "bytes": 18437,
+      "url": "https://files.pythonhosted.org/packages/41/45/1a4ed80516f02155c51f51e8cedb3c1902296743db0bbc66608a0db2814f/jsonschema_specifications-2025.9.1-py3-none-any.whl",
+      "uploaded_at": "2025-09-08T01:34:57.871954Z",
+      "requires_dist": [
+        "referencing>=0.31.0"
+      ]
+    }
+  },
+  "dockerfile": "FROM python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e\nLABEL ai-skills.dependency=wycheproof-provider ai-skills.inputs-sha256=26658afe868c2b0b67e80217cda909d3e9929ec5311a62d10d1e0e686fa93f79\nCOPY *.whl /tmp/wheels/\nRUN python -m pip install --disable-pip-version-check --no-cache-dir --no-index /tmp/wheels/*.whl && python -m pip check\n",
+  "dockerfile_sha256": "cd73b7b017cfa967f7c9a658ae481129b0946033e69215e8aeafe81afabecd46",
+  "reproducer_sha256": "9e4aab3ef35b69e100403b386718a7a0566c358450a80cbc8e11d6cf4fe748ce",
+  "build_returncode": 0,
+  "build_output": "#0 building with \"desktop-linux\" instance using docker driver\n\n#1 [internal] load build definition from Dockerfile\n#1 transferring dockerfile: 404B 0.0s done\n#1 DONE 0.0s\n\n#2 [internal] load metadata for docker.io/library/python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e\n#2 DONE 0.0s\n\n#3 [internal] load .dockerignore\n#3 transferring context: 2B done\n#3 DONE 0.0s\n\n#4 [1/3] FROM docker.io/library/python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e\n#4 CACHED\n\n#5 [internal] load build context\n#5 transferring context: 5.60MB 0.2s done\n#5 DONE 0.3s\n\n#6 [2/3] COPY *.whl /tmp/wheels/\n#6 DONE 0.1s\n\n#7 [3/3] RUN python -m pip install --disable-pip-version-check --no-cache-dir --no-index /tmp/wheels/*.whl && python -m pip check\n#7 1.270 Processing ./tmp/wheels/attrs-26.1.0-py3-none-any.whl\n#7 1.277 Processing ./tmp/wheels/cffi-2.1.1-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.whl\n#7 1.278 Processing ./tmp/wheels/cryptography-50.0.2-cp311-abi3-manylinux_2_28_x86_64.whl\n#7 1.283 Processing ./tmp/wheels/jsonschema-4.26.0-py3-none-any.whl\n#7 1.284 Processing ./tmp/wheels/jsonschema_specifications-2025.9.1-py3-none-any.whl\n#7 1.285 Processing ./tmp/wheels/pycparser-3.0-py3-none-any.whl\n#7 1.286 Processing ./tmp/wheels/referencing-0.37.0-py3-none-any.whl\n#7 1.287 Processing ./tmp/wheels/rpds_py-2026.9.1-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.whl\n#7 1.358 Installing collected packages: rpds-py, pycparser, attrs, referencing, cffi, jsonschema-specifications, cryptography, jsonschema\n#7 1.741 \n#7 1.742 Successfully installed attrs-26.1.0 cffi-2.1.1 cryptography-50.0.2 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 pycparser-3.0 referencing-0.37.0 rpds-py-2026.9.1\n#7 1.743 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.\n#7 1.935 No broken requirements found.\n#7 DONE 2.0s\n\n#8 exporting to image\n#8 exporting layers\n#8 exporting layers 0.2s done\n#8 writing image sha256:27224bdf1729386a33fd395e8f697838703ae7b891b02c32ac021b02c2fc0691 done\n#8 DONE 0.2s\n\nView build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/8btgogmqllye9fdbfy5nkx4gp\n",
+  "agent_efficacy_scored": false,
+  "runtime_constraints_weakened": false
+}

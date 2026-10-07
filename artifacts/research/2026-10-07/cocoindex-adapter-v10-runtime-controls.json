@@ -1,0 +1,529 @@
+{
+  "schema_version": 1,
+  "evidence_class": "source-bound-selected-development-retrieval-controls-not-efficacy-benchmark",
+  "passed": true,
+  "checks": {
+    "query_0_actual_client_returned_three_hits": true,
+    "query_0_current_provider_runtime_and_manifest": true,
+    "query_0_exact_source_scope_and_spans_rechecked": true,
+    "query_1_actual_client_returned_three_hits": true,
+    "query_1_current_provider_runtime_and_manifest": true,
+    "query_1_exact_source_scope_and_spans_rechecked": true,
+    "query_2_actual_client_returned_three_hits": true,
+    "query_2_current_provider_runtime_and_manifest": true,
+    "query_2_exact_source_scope_and_spans_rechecked": true,
+    "query_3_actual_client_returned_three_hits": true,
+    "query_3_current_provider_runtime_and_manifest": true,
+    "query_3_exact_source_scope_and_spans_rechecked": true,
+    "source_inventory_still_fresh": true
+  },
+  "observations": [
+    {
+      "query": "ambiguous mutation mapping zero callers false positives",
+      "scope": "included/improved/skills/genotoxic-current/**",
+      "response": {
+        "response": {
+          "type": "search",
+          "success": true,
+          "results": [
+            {
+              "file_path": "included/improved/skills/genotoxic-current/SKILL.md",
+              "language": "markdown",
+              "content": "Use callers, entrypoint paths, ancestors and complexity as prioritization\nevidence. Zero callers can mean an exported API, dynamic callback or incomplete\ngraph. An unmapped finding is unresolved. Neither condition establishes dead\ncode, equivalence or a false positive. Inspect the actual call boundary and\ncontract before recommending removal or dismissal.\n\nFor each survivor, inspect its exact edit and rerun the relevant test against\nthat mutant. Distinguish a reproducible behavior gap, a proven equivalent edit,\nan excluded API/input domain, inadequate test selection, and unresolved or\ninfrastructure outcomes. Equivalence needs type, input and side-effect evidence;\nlogging, errors and cleanup may be externally observable contracts. Complexity\nthresholds are heuristics, not severity assessments.",
+              "start_line": 58,
+              "end_line": 69,
+              "score": 0.6908263138795103
+            },
+            {
+              "file_path": "included/improved/skills/genotoxic-current/references/qualification.md",
+              "language": "markdown",
+              "content": "The threshold fixture generated six identical mutant IDs in both campaigns.\nWeak tests left one survivor and five untested mutants. Adding boundary tests\nkilled that survivor while the same five remained untested. This is a controlled\ntool integration demonstration. The assertions were authored as fixed research\nfixtures; no evaluated agent generated them during a trial.\n\nThe real graph fixture resolves an internal call and an externally invoked\nfunction with zero local callers. Executed original source functions dismiss\nthat function and an unmapped case as false positives, choose ambiguous names\nby insertion order, exclude `src/contest.py`, and associate a removal with only\nthe first of two mutants. These are source-example reproductions, not skill\nruntime benchmark passes. Forged totals and unverified cleanup fail controls.",
+              "start_line": 12,
+              "end_line": 23,
+              "score": 0.6349773188359489
+            },
+            {
+              "file_path": "included/improved/skills/genotoxic-current/provenance/original-SKILL.md",
+              "language": "markdown",
+              "content": "# Genotoxic\r\n\r\nCombines mutation testing and necessist (test statement removal) with\r\ncode graph analysis to triage findings into actionable categories:\r\nfalse positives, missing unit tests, and fuzzing targets.\r\n\r\n## When to Use\r\n\r\n- After mutation testing reveals survived mutants that need triage\r\n- Identifying where unit tests would have the highest impact\r\n- Finding functions that need fuzz harnesses instead of unit tests\r\n- Prioritizing test improvements using data flow context\r\n- Filtering out harmless mutants from actionable ones\r\n- Finding unnecessary test statements that indicate weak assertions (necessist)\r\n\r\n## When NOT to Use\r\n\r\n- Codebase has no existing test suite (write tests first)\r\n- Pure documentation or configuration changes\r\n- Single-file scripts with trivial logic\r\n\r\n## Prerequisites",
+              "start_line": 6,
+              "end_line": 27,
+              "score": 0.6094392188204392
+            }
+          ],
+          "total_returned": 3,
+          "offset": 0,
+          "message": null
+        },
+        "project_status": {
+          "type": "project_status",
+          "indexing": false,
+          "total_chunks": 99110,
+          "total_files": 17363,
+          "languages": {
+            "markdown": 40213,
+            "text": 27248,
+            "python": 17448,
+            "json": 6440,
+            "csv": 1993,
+            "bash": 1198,
+            "html": 1087,
+            "yaml": 974,
+            "javascript": 744,
+            "xml": 712,
+            "latex": 668,
+            "hcl": 120,
+            "css": 62,
+            "bicep": 61,
+            "powershell": 32,
+            "gitignore": 26,
+            "dockerfile": 22,
+            "typescript": 18,
+            "bibtex": 14,
+            "groovy": 9,
+            "tsx": 6,
+            "make": 6,
+            "toml": 3,
+            "ini": 3,
+            "cpp": 3
+          },
+          "progress": null,
+          "index_exists": true
+        },
+        "daemon_status": {
+          "type": "daemon_status",
+          "version": "0.2.42",
+          "uptime_seconds": 18.066317199991317,
+          "projects": [
+            {
+              "project_root": "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\semantic-corpus\\full-resources-v10\\tree",
+              "indexing": false
+            }
+          ],
+          "idle_seconds": 0.0005620000010821968,
+          "idle_timeout_minutes": 1
+        },
+        "versions": {
+          "cocoindex": "1.0.25",
+          "cocoindex-code": "0.2.42"
+        },
+        "python_version": "3.14.8",
+        "ok": true,
+        "source_checks": [
+          {
+            "path": "included/improved/skills/genotoxic-current/SKILL.md",
+            "sha256": "5e268c9ef410e10d26025495de6d73689f57076e2768bd12afdc715c15d635dc",
+            "source_span_verified": true
+          },
+          {
+            "path": "included/improved/skills/genotoxic-current/references/qualification.md",
+            "sha256": "8e9eb4c505632bcdade17b68be7d75566e9207676c8c23c6f61a9dd9cc6f1a7b",
+            "source_span_verified": true
+          },
+          {
+            "path": "included/improved/skills/genotoxic-current/provenance/original-SKILL.md",
+            "sha256": "ae4431f2721039851eebda99fadbbfaa58d887769ed06657ea9232d3c248723a",
+            "source_span_verified": true
+          }
+        ],
+        "manifest_sha256": "f6c0a11ac916bf0ecdde39483e5ebb6bc422bb0d84b7b09b6cccca84c0fa01ff",
+        "query": {
+          "project_root": "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\semantic-corpus\\full-resources-v10\\tree",
+          "query": "ambiguous mutation mapping zero callers false positives",
+          "paths": [
+            "included/improved/skills/genotoxic-current/**"
+          ],
+          "limit": 3,
+          "offset": 0
+        },
+        "stderr": "",
+        "retrieval_quality_established": false,
+        "agent_efficacy_scored": false
+      },
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "query": "Montgomery representation inverse mapping canonical public inputs",
+      "scope": "included/improved/skills/vector-forge-current/**",
+      "response": {
+        "response": {
+          "type": "search",
+          "success": true,
+          "results": [
+            {
+              "file_path": "included/improved/skills/vector-forge-current/SKILL.md",
+              "language": "markdown",
+              "content": "For a reduced limb model, specify the full-width field/order, radix, reduction\nand operation first. Demonstrate that the reduction preserves the property\nbeing tested. Retest exported cases against the actual full-width API and an\nappropriate independent oracle. A distinguisher for one injected model fault\ndoes not prove coverage of every implementation of that fault class.\n\nDo not assume Montgomery representation makes selected internal residues\nunreachable. When the public API represents every canonical field/scalar value\nand the internal mapping is `m = x * R mod q` with invertible `R`, choose\n`x = m * R^-1 mod q` and verify conversion through the actual API. Inspect its\nnormalization, endian, representation and domain contracts first. A mathematical\nconstruction is not evidence that a particular library exposed or executed it.",
+              "start_line": 52,
+              "end_line": 63,
+              "score": 0.6413083206862211
+            },
+            {
+              "file_path": "included/improved/skills/vector-forge-current/NOTICE.md",
+              "language": "markdown",
+              "content": "# Attribution and changes\n\nAdapted by AI agent from Trail of Bits' Vector Forge skill at\n[e8cc5baf9329ccb491bfa200e82eacbac83b1ead](https://github.com/trailofbits/skills/blob/e8cc5baf9329ccb491bfa200e82eacbac83b1ead/plugins/trailmark/skills/vector-forge/SKILL.md).\nThe original entrypoint is preserved byte-for-byte in `provenance/original-SKILL.md`.\nThis derivative uses CC-BY-SA-4.0, included as `LICENSE`.\n\nChanges: qualify actual harness/tool scope; retain complete mutation denominators;\nuse operation-specific vector contracts and independent oracles; distinguish\nreduced mathematical models from executed full-width APIs; replace blanket\nMontgomery unreachability claims with conditional inverse mapping; reflect the\ncurrent upstream `vectorgen` contribution workflow. Newer upstream deltas at\n`82fe8226252622fa807643bdca1710901198553a` were reviewed separately.\nNo coding-agent efficacy improvement is claimed.",
+              "start_line": 1,
+              "end_line": 14,
+              "score": 0.5824511178400869
+            },
+            {
+              "file_path": "included/improved/skills/vector-forge-current/SKILL.md",
+              "language": "markdown",
+              "content": "Choose vector families from the actual defect and specification: carry/borrow\nboundaries, modulus and order boundaries, reduction, aliasing, malformed\nencodings, validation ordering and supported key/message representations.\nUse integer, algebraic or independently implemented reference operations to\ncompute expected results. Identify shared backends and algorithms between\nreferences; agreement between two wrappers over one backend is weak evidence.\n\nState expected acceptance, rejection and output separately for each operation.\nIdentity points, zero scalars, duplicate aggregate messages and noncanonical\nencodings depend on the protocol and API. KEM implicit rejection may return a\ndefined output rather than an exception. Roundtrip byte equality is appropriate\nonly for an encoding/API with a canonical roundtrip contract. Assert correct\naccepted outputs and documented rejection; unexpected setup/internal failures\nremain harness errors, including on malformed inputs.",
+              "start_line": 37,
+              "end_line": 50,
+              "score": 0.5801419378113266
+            }
+          ],
+          "total_returned": 3,
+          "offset": 0,
+          "message": null
+        },
+        "project_status": {
+          "type": "project_status",
+          "indexing": false,
+          "total_chunks": 99110,
+          "total_files": 17363,
+          "languages": {
+            "markdown": 40213,
+            "text": 27248,
+            "python": 17448,
+            "json": 6440,
+            "csv": 1993,
+            "bash": 1198,
+            "html": 1087,
+            "yaml": 974,
+            "javascript": 744,
+            "xml": 712,
+            "latex": 668,
+            "hcl": 120,
+            "css": 62,
+            "bicep": 61,
+            "powershell": 32,
+            "gitignore": 26,
+            "dockerfile": 22,
+            "typescript": 18,
+            "bibtex": 14,
+            "groovy": 9,
+            "tsx": 6,
+            "make": 6,
+            "toml": 3,
+            "ini": 3,
+            "cpp": 3
+          },
+          "progress": null,
+          "index_exists": true
+        },
+        "daemon_status": {
+          "type": "daemon_status",
+          "version": "0.2.42",
+          "uptime_seconds": 105.64813539999886,
+          "projects": [
+            {
+              "project_root": "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\semantic-corpus\\full-resources-v10\\tree",
+              "indexing": false
+            }
+          ],
+          "idle_seconds": 0.0005822000093758106,
+          "idle_timeout_minutes": 1
+        },
+        "versions": {
+          "cocoindex": "1.0.25",
+          "cocoindex-code": "0.2.42"
+        },
+        "python_version": "3.14.8",
+        "ok": true,
+        "source_checks": [
+          {
+            "path": "included/improved/skills/vector-forge-current/SKILL.md",
+            "sha256": "bbd45b25b9eac44acfb494bf55c9b086b1413895c272d9fed8110d176897a498",
+            "source_span_verified": true
+          },
+          {
+            "path": "included/improved/skills/vector-forge-current/NOTICE.md",
+            "sha256": "537af2e39d93ba4f72daedddbba66c1c4cc5edb11cb80be5334ecae304f4e0e6",
+            "source_span_verified": true
+          },
+          {
+            "path": "included/improved/skills/vector-forge-current/SKILL.md",
+            "sha256": "bbd45b25b9eac44acfb494bf55c9b086b1413895c272d9fed8110d176897a498",
+            "source_span_verified": true
+          }
+        ],
+        "manifest_sha256": "f6c0a11ac916bf0ecdde39483e5ebb6bc422bb0d84b7b09b6cccca84c0fa01ff",
+        "query": {
+          "project_root": "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\semantic-corpus\\full-resources-v10\\tree",
+          "query": "Montgomery representation inverse mapping canonical public inputs",
+          "paths": [
+            "included/improved/skills/vector-forge-current/**"
+          ],
+          "limit": 3,
+          "offset": 0
+        },
+        "stderr": "",
+        "retrieval_quality_established": false,
+        "agent_efficacy_scored": false
+      },
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "query": "badge writer UTF8 LF CRLF freshness bytes",
+      "scope": "tools/update_readme_badges.py",
+      "response": {
+        "response": {
+          "type": "search",
+          "success": true,
+          "results": [
+            {
+              "file_path": "tools/update_readme_badges.py",
+              "language": "python",
+              "content": "def update_readme(repo_root: Path, write: bool) -> int:\n    readme_path = repo_root / README_PATH\n    original_text = readme_path.read_text(encoding=\"utf-8\")\n    badge_block = render_badge_block(load_metadata(repo_root))\n    updated_text = original_text.replace(extract_badge_block(original_text), badge_block)\n    updated_bytes = (updated_text + (\"\" if updated_text.endswith(\"\\n\") else \"\\n\")).encode(\"utf-8\")\n\n    if updated_bytes == readme_path.read_bytes():\n        return 0\n    if not write:\n        sys.stderr.write(\"README.md badge block is out of date. Run `python3 tools/update_readme_badges.py --write`.\\n\")\n        return 1\n    readme_path.write_bytes(updated_bytes)\n    return 0",
+              "start_line": 238,
+              "end_line": 251,
+              "score": 0.5756350099178871
+            },
+            {
+              "file_path": "tools/update_readme_badges.py",
+              "language": "python",
+              "content": "@dataclass(frozen=True)\nclass RepoMetadata:\n    \"\"\"Repository details needed to render badge URLs.\"\"\"\n\n    host: str\n    owner: str\n    repo: str\n    remote_name: str\n    branch_name: str\n\n    @property\n    def github_path(self) -> str:\n        return f\"{self.owner}/{self.repo}\"\n\n    @property\n    def branch_query_value(self) -> str:\n        return quote(self.branch_name, safe=\"\")\n\n\n@dataclass(frozen=True)\nclass BadgeTemplate:\n    \"\"\"One README badge template loaded from metadata.\"\"\"\n\n    alt: str\n    image: str\n    target: str\n\n\n@dataclass(frozen=True)\nclass BadgeMetadata:\n    \"\"\"Badge metadata plus the repository fields used by badge templates.\"\"\"\n\n    repo: RepoMetadata\n    badges: tuple[BadgeTemplate, ...]\n\n\ndef _required_text(payload: dict[str, object], key: str) -> str:\n    value = payload.get(key)\n    if not isinstance(value, str) or not value.strip():\n        raise RuntimeError(f\"{CANONICAL_METADATA_PATH} is missing `{key}`.\")\n    return value.strip()",
+              "start_line": 20,
+              "end_line": 60,
+              "score": 0.5570874758457887
+            },
+            {
+              "file_path": "tools/update_readme_badges.py",
+              "language": "python",
+              "content": "def _load_badges(payload: dict[str, object]) -> tuple[BadgeTemplate, ...]:\n    raw_badges = payload.get(\"badges\")\n    if not isinstance(raw_badges, list) or not raw_badges:\n        raise RuntimeError(f\"{CANONICAL_METADATA_PATH} must define non-empty `badges`.\")\n\n    badges: list[BadgeTemplate] = []\n    for index, raw_badge in enumerate(raw_badges):\n        if not isinstance(raw_badge, dict):\n            raise RuntimeError(f\"Badge entry {index} must be an object.\")\n        badge_payload = {str(key): value for key, value in raw_badge.items()}\n        badges.append(\n            BadgeTemplate(\n                alt=_required_text(badge_payload, \"alt\"),\n                image=_required_text(badge_payload, \"image\"),\n                target=_required_text(badge_payload, \"target\"),\n            )\n        )\n    return tuple(badges)",
+              "start_line": 81,
+              "end_line": 98,
+              "score": 0.5475573370469817
+            }
+          ],
+          "total_returned": 3,
+          "offset": 0,
+          "message": null
+        },
+        "project_status": {
+          "type": "project_status",
+          "indexing": false,
+          "total_chunks": 99110,
+          "total_files": 17363,
+          "languages": {
+            "markdown": 40213,
+            "text": 27248,
+            "python": 17448,
+            "json": 6440,
+            "csv": 1993,
+            "bash": 1198,
+            "html": 1087,
+            "yaml": 974,
+            "javascript": 744,
+            "xml": 712,
+            "latex": 668,
+            "hcl": 120,
+            "css": 62,
+            "bicep": 61,
+            "powershell": 32,
+            "gitignore": 26,
+            "dockerfile": 22,
+            "typescript": 18,
+            "bibtex": 14,
+            "groovy": 9,
+            "tsx": 6,
+            "make": 6,
+            "toml": 3,
+            "ini": 3,
+            "cpp": 3
+          },
+          "progress": null,
+          "index_exists": true
+        },
+        "daemon_status": {
+          "type": "daemon_status",
+          "version": "0.2.42",
+          "uptime_seconds": 24.05213920000824,
+          "projects": [
+            {
+              "project_root": "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\semantic-corpus\\full-resources-v10\\tree",
+              "indexing": false
+            }
+          ],
+          "idle_seconds": 0.0007810000097379088,
+          "idle_timeout_minutes": 1
+        },
+        "versions": {
+          "cocoindex": "1.0.25",
+          "cocoindex-code": "0.2.42"
+        },
+        "python_version": "3.14.8",
+        "ok": true,
+        "source_checks": [
+          {
+            "path": "tools/update_readme_badges.py",
+            "sha256": "4df117d6c242f65ca0262d4c827230d223ee3371b9d5e32ba169ca6d8c8b3d96",
+            "source_span_verified": true
+          },
+          {
+            "path": "tools/update_readme_badges.py",
+            "sha256": "4df117d6c242f65ca0262d4c827230d223ee3371b9d5e32ba169ca6d8c8b3d96",
+            "source_span_verified": true
+          },
+          {
+            "path": "tools/update_readme_badges.py",
+            "sha256": "4df117d6c242f65ca0262d4c827230d223ee3371b9d5e32ba169ca6d8c8b3d96",
+            "source_span_verified": true
+          }
+        ],
+        "manifest_sha256": "f6c0a11ac916bf0ecdde39483e5ebb6bc422bb0d84b7b09b6cccca84c0fa01ff",
+        "query": {
+          "project_root": "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\semantic-corpus\\full-resources-v10\\tree",
+          "query": "badge writer UTF8 LF CRLF freshness bytes",
+          "paths": [
+            "tools/update_readme_badges.py"
+          ],
+          "limit": 3,
+          "offset": 0
+        },
+        "stderr": "",
+        "retrieval_quality_established": false,
+        "agent_efficacy_scored": false
+      },
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "query": "TLS certificate verify private hostname redirect pinned resolved address",
+      "scope": "included/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ppt-master/scripts/source_to_md/web_to_md.py",
+      "response": {
+        "response": {
+          "type": "search",
+          "success": true,
+          "results": [
+            {
+              "file_path": "included/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ppt-master/scripts/source_to_md/web_to_md.py",
+              "language": "python",
+              "content": "    parser.add_argument(\n        \"--allow-private-hosts\",\n        action=\"store_true\",\n        help=\"Allow pages, images, and redirect targets on loopback, link-local, \"\n             \"and private networks (intranet or localhost pages you trust)\",\n    )\n\n    args = parser.parse_args(argv)\n    CONFIG[\"insecure\"] = args.insecure\n    CONFIG[\"allow_private_hosts\"] = args.allow_private_hosts\n    if args.insecure:\n        print(\"[WARN] TLS certificate verification disabled (--insecure)\", file=sys.stderr)\n\n    if args.dir:\n        CONFIG[\"output_dir\"] = args.dir\n\n    targets = []\n    if args.urls:\n        targets.extend(args.urls)",
+              "start_line": 1505,
+              "end_line": 1523,
+              "score": 0.6068361768830073
+            },
+            {
+              "file_path": "included/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ppt-master/scripts/source_to_md/web_to_md.py",
+              "language": "python",
+              "content": "def _resolve_public_addresses(hostname: str) -> list:\n    \"\"\"Resolve once and validate every address before any socket is created.\"\"\"\n    try:\n        addresses = [ipaddress.ip_address(hostname)]\n    except ValueError:\n        try:\n            addresses = [\n                ipaddress.ip_address(info[4][0])\n                for info in socket.getaddrinfo(hostname, None, type=socket.SOCK_STREAM)\n            ]\n        except (OSError, ValueError) as exc:\n            raise _UnsafeUrlError(f\"Cannot validate URL hostname {hostname}: {exc}\") from exc\n    if not addresses:\n        raise _UnsafeUrlError(f\"Cannot resolve URL hostname {hostname}\")\n    if CONFIG[\"allow_private_hosts\"]:\n        return addresses",
+              "start_line": 147,
+              "end_line": 162,
+              "score": 0.5644530078678951
+            },
+            {
+              "file_path": "included/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ppt-master/scripts/source_to_md/web_to_md.py",
+              "language": "python",
+              "content": "    if CONFIG[\"allow_private_hosts\"]:\n        return addresses\n    for address in addresses:\n        scoped = getattr(address, \"scope_id\", None)\n        if isinstance(address, ipaddress.IPv6Address) and address.ipv4_mapped:\n            address = address.ipv4_mapped\n        if (address.is_loopback or address.is_link_local\n                or address.is_private or address.is_unspecified\n                or address.is_multicast or address.is_reserved\n                or scoped\n                or any(address in network for network in _NON_PUBLIC_IPV4_NETWORKS)):\n            raise _UnsafeUrlError(\n                f\"Refusing non-public URL target: {hostname} resolves to {address} \"\n                \"(pass --allow-private-hosts for intranet or localhost pages)\"\n            )\n    return list(dict.fromkeys(addresses))",
+              "start_line": 161,
+              "end_line": 176,
+              "score": 0.5567489106127095
+            }
+          ],
+          "total_returned": 3,
+          "offset": 0,
+          "message": null
+        },
+        "project_status": {
+          "type": "project_status",
+          "indexing": false,
+          "total_chunks": 99110,
+          "total_files": 17363,
+          "languages": {
+            "markdown": 40213,
+            "text": 27248,
+            "python": 17448,
+            "json": 6440,
+            "csv": 1993,
+            "bash": 1198,
+            "html": 1087,
+            "yaml": 974,
+            "javascript": 744,
+            "xml": 712,
+            "latex": 668,
+            "hcl": 120,
+            "css": 62,
+            "bicep": 61,
+            "powershell": 32,
+            "gitignore": 26,
+            "dockerfile": 22,
+            "typescript": 18,
+            "bibtex": 14,
+            "groovy": 9,
+            "tsx": 6,
+            "make": 6,
+            "toml": 3,
+            "ini": 3,
+            "cpp": 3
+          },
+          "progress": null,
+          "index_exists": true
+        },
+        "daemon_status": {
+          "type": "daemon_status",
+          "version": "0.2.42",
+          "uptime_seconds": 22.11167569999816,
+          "projects": [
+            {
+              "project_root": "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\semantic-corpus\\full-resources-v10\\tree",
+              "indexing": false
+            }
+          ],
+          "idle_seconds": 0.0006170999840833247,
+          "idle_timeout_minutes": 1
+        },
+        "versions": {
+          "cocoindex": "1.0.25",
+          "cocoindex-code": "0.2.42"
+        },
+        "python_version": "3.14.8",
+        "ok": true,
+        "source_checks": [
+          {
+            "path": "included/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ppt-master/scripts/source_to_md/web_to_md.py",
+            "sha256": "36256283cca9047f4ea0254f130ae4bfa6914ed538afed1971afc2ccf2a9e522",
+            "source_span_verified": true
+          },
+          {
+            "path": "included/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ppt-master/scripts/source_to_md/web_to_md.py",
+            "sha256": "36256283cca9047f4ea0254f130ae4bfa6914ed538afed1971afc2ccf2a9e522",
+            "source_span_verified": true
+          },
+          {
+            "path": "included/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ppt-master/scripts/source_to_md/web_to_md.py",
+            "sha256": "36256283cca9047f4ea0254f130ae4bfa6914ed538afed1971afc2ccf2a9e522",
+            "source_span_verified": true
+          }
+        ],
+        "manifest_sha256": "f6c0a11ac916bf0ecdde39483e5ebb6bc422bb0d84b7b09b6cccca84c0fa01ff",
+        "query": {
+          "project_root": "C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\semantic-corpus\\full-resources-v10\\tree",
+          "query": "TLS certificate verify private hostname redirect pinned resolved address",
+          "paths": [
+            "included/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ppt-master/scripts/source_to_md/web_to_md.py"
+          ],
+          "limit": 3,
+          "offset": 0
+        },
+        "stderr": "",
+        "retrieval_quality_established": false,
+        "agent_efficacy_scored": false
+      },
+      "exit_code": 0,
+      "stderr": ""
+    }
+  ],
+  "manifest_sha256": "f6c0a11ac916bf0ecdde39483e5ebb6bc422bb0d84b7b09b6cccca84c0fa01ff",
+  "adapter_sha256": "31363da3c1a8ab02a13fc528afc1d8c65401414dd5895c947cc6dc51badacbb9",
+  "query_scope_chosen_for_development_not_blind_evaluation": true,
+  "retrieval_quality_established": false,
+  "agent_efficacy_scored": false,
+  "skill_runtime_benchmark_passes": 0,
+  "reproducer_sha256": "832f92d2b02861423aa81ef2c780199297f48ad4f20148a154b74de8d0f70980"
+}

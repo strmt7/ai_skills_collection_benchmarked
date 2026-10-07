@@ -240,16 +240,14 @@ def update_readme(repo_root: Path, write: bool) -> int:
     original_text = readme_path.read_text(encoding="utf-8")
     badge_block = render_badge_block(load_metadata(repo_root))
     updated_text = original_text.replace(extract_badge_block(original_text), badge_block)
+    updated_bytes = (updated_text + ("" if updated_text.endswith("\n") else "\n")).encode("utf-8")
 
-    if updated_text == original_text:
+    if updated_bytes == readme_path.read_bytes():
         return 0
     if not write:
         sys.stderr.write("README.md badge block is out of date. Run `python3 tools/update_readme_badges.py --write`.\n")
         return 1
-    readme_path.write_text(
-        updated_text + ("" if updated_text.endswith("\n") else "\n"),
-        encoding="utf-8",
-    )
+    readme_path.write_bytes(updated_bytes)
     return 0
 
 

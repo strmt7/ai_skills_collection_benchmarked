@@ -5,7 +5,7 @@
 [![Ruff](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/ruff.yml/badge.svg)](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/ruff.yml)
 [![Mypy](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/mypy.yml/badge.svg)](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/mypy.yml)
 [![Secret scan](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/secret-scan.yml/badge.svg)](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/secret-scan.yml)
-[![Python 3.10–3.13](https://img.shields.io/badge/python-3.10%20%E2%80%93%203.13-blue.svg)](https://devguide.python.org/versions/)
+[![Python 3.11–3.14](https://img.shields.io/badge/python-3.11%20%E2%80%93%203.14-blue.svg)](https://devguide.python.org/versions/)
 [![andrej-karpathy-skills](https://img.shields.io/static/v1?label=&message=andrej-karpathy-skills&color=555&logo=github&logoColor=white)](https://github.com/forrestchang/andrej-karpathy-skills)
 <!-- END GENERATED BADGES -->
 

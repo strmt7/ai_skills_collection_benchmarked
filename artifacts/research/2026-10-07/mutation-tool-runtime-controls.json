@@ -1,0 +1,796 @@
+{
+  "schema_version": 1,
+  "evidence_class": "selected-tool-runtime-and-source-example-controls-not-skill-benchmark",
+  "passed": true,
+  "checks": {
+    "campaign_bounded_inspection_execution_and_cleanup": true,
+    "selected_tool_versions_and_python_3148": true,
+    "frozen_source_and_configuration": true,
+    "weak_unmodified_baseline_and_campaign_complete": true,
+    "weak_complete_status_denominator": true,
+    "weak_raw_outcomes_agree_with_results_command": true,
+    "strong_unmodified_baseline_and_campaign_complete": true,
+    "strong_complete_status_denominator": true,
+    "strong_raw_outcomes_agree_with_results_command": true,
+    "identical_generated_mutant_ids_and_function_hashes": true,
+    "boundary_assertion_kills_previous_survivor": true,
+    "five_untested_mutants_retained_in_both_campaigns": true,
+    "legacy_--paths-to-mutate_is_rejected_by_released_cli": true,
+    "legacy_--runner_is_rejected_by_released_cli": true,
+    "legacy_junitxml_is_rejected_by_released_cli": true,
+    "offline_python_grammar_parses_campaign_source": true,
+    "graph_bounded_inspection_execution_and_cleanup": true,
+    "graph_fixture_source_frozen": true,
+    "graph_preanalysis_and_local_call_resolve": true,
+    "zero_static_callers_does_not_prevent_external_invocation": true,
+    "original_triage_dismisses_externally_invoked_and_unmapped_cases": true,
+    "original_ambiguous_mapping_changes_with_insertion_order": true,
+    "original_test_substring_filter_excludes_production_contest_path": true,
+    "original_merge_shares_removal_with_only_first_mutant": true,
+    "nontrivial_montgomery_inverse_mapping_and_shared_limb_cases": true,
+    "generic_math_does_not_claim_case_study_library_execution": true,
+    "incomplete_denominator_is_rejected": true,
+    "unverified_cleanup_is_rejected": true
+  },
+  "source_sha256": {
+    "benchmarks/dependency-regressions/mutation_runtime_controls.py": "e00a30f09ca2000dd0e285d9d2585cdd7b8b9c117fbe28b89f144663181f63a2",
+    "benchmarks/dependency-regressions/mutation_campaign_fixture.py": "c51c10e0fa533996b06eca9f9c6514177ff3efba1d9cd218de4456b665c070b2",
+    "benchmarks/dependency-regressions/mutation_graph_fixture.py": "b489eb74229fd5890609907a209c0737d9debea81d8e901f8249d36360362d56",
+    "tools/isolated_python.py": "fb9c34345bdf6c8d7cb5f49a002ececeaa982d5c6143b487b26894665f03f807",
+    "included/skills/by-category/testing-qa-benchmarking/security-reference/genotoxic/references/graph-analysis.md": "a657d1acbec592da75a28d69ce19f6807fd26f1fb17f89c170abeef4d5fc9a54"
+  },
+  "provider_preparation_sha256": "fa32847ff50e84a7c65ddf7d17685761dc575b2da30356e29dc7af7808be2a08",
+  "executions": {
+    "campaign": {
+      "status": "completed",
+      "container_name": "skills-invoke-f94007a9d542463fb0ad80a7bbde0352",
+      "image": "sha256:d6e66ca1df12b2666a757a406782e8ee28d7d5b91a64b8cfb06b785eb20dd2ab",
+      "scored": false,
+      "candidate_response_is_untrusted": true,
+      "cleanup_verified": true,
+      "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+      "resource_profile": "python-mutation",
+      "submission_sha256": {
+        "candidate.py": "c51c10e0fa533996b06eca9f9c6514177ff3efba1d9cd218de4456b665c070b2"
+      },
+      "container_id": "206ddce4fd5e6e30a3b16d1fd39b7bbcb579ce4fbb675afaec2557523d5a3679",
+      "isolation_checks": {
+        "errors": [],
+        "passed": true,
+        "observed_user": "65534:65534",
+        "observed_image": "sha256:d6e66ca1df12b2666a757a406782e8ee28d7d5b91a64b8cfb06b785eb20dd2ab",
+        "observed_ownership_token": "f94007a9d542463fb0ad80a7bbde0352",
+        "resolved_image_id": "sha256:d6e66ca1df12b2666a757a406782e8ee28d7d5b91a64b8cfb06b785eb20dd2ab",
+        "observed_host_constraints": {
+          "NetworkMode": "none",
+          "IpcMode": "none",
+          "ReadonlyRootfs": true,
+          "Memory": 536870912,
+          "MemorySwap": 536870912,
+          "NanoCpus": 1000000000,
+          "PidsLimit": 64,
+          "Privileged": false,
+          "Init": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "CapAdd": null,
+          "SecurityOpt": [
+            "no-new-privileges"
+          ],
+          "LogConfig": {
+            "Type": "none",
+            "Config": {}
+          },
+          "Tmpfs": {
+            "/dev/shm": "rw,noexec,nosuid,size=16m",
+            "/tmp": "rw,noexec,nosuid,size=128m"
+          },
+          "Devices": [],
+          "DeviceRequests": null,
+          "VolumesFrom": null
+        },
+        "observed_mounts": [
+          {
+            "Destination": "/submission",
+            "Type": "bind",
+            "RW": false
+          },
+          {
+            "Destination": "/worker",
+            "Type": "bind",
+            "RW": false
+          }
+        ]
+      },
+      "setup_elapsed_seconds": 0.2270616999885533,
+      "runtime_elapsed_seconds": 6.345629200019175,
+      "returncode": 0,
+      "candidate_response": {
+        "worker_status": "returned",
+        "result": {
+          "python": "3.14.8 (main, Oct  1 2026, 21:39:21) [GCC 14.2.0]",
+          "versions": {
+            "mutmut": "3.8.0",
+            "trailmark": "0.5.0",
+            "tree-sitter-language-pack": "1.21.0",
+            "tree-sitter": "0.25.2"
+          },
+          "source_sha256": "a1eba5c9b617e8fb8da74c4cc1861bfc1091b48d51119254d1109440e5dfab99",
+          "config_sha256": "4132167710c2230c64c8f9cdb039b87f6b9e755736fa6fa3c0ea3813942ffaac",
+          "campaigns": {
+            "weak": {
+              "tests_sha256": "0d42acfcbaf7d401e16450682a65ea61c2f7a9767a063bd3150c9338b080ca10",
+              "baseline": {
+                "args": [
+                  "/usr/local/bin/python",
+                  "-m",
+                  "pytest",
+                  "-q"
+                ],
+                "exit_code": 0,
+                "stdout": ".                                                                        [100%]\n1 passed in 0.00s\n",
+                "stderr": ""
+              },
+              "interfaces": [
+                {
+                  "args": [
+                    "mutmut",
+                    "run",
+                    "--paths-to-mutate",
+                    "src"
+                  ],
+                  "exit_code": 2,
+                  "stdout": "",
+                  "stderr": "Usage: mutmut run [OPTIONS] [MUTANT_NAMES]...\nTry 'mutmut run --help' for help.\n\nError: No such option '--paths-to-mutate'.\n"
+                },
+                {
+                  "args": [
+                    "mutmut",
+                    "run",
+                    "--runner",
+                    "pytest"
+                  ],
+                  "exit_code": 2,
+                  "stdout": "",
+                  "stderr": "Usage: mutmut run [OPTIONS] [MUTANT_NAMES]...\nTry 'mutmut run --help' for help.\n\nError: No such option '--runner'.\n"
+                },
+                {
+                  "args": [
+                    "mutmut",
+                    "junitxml"
+                  ],
+                  "exit_code": 2,
+                  "stdout": "",
+                  "stderr": "Usage: mutmut [OPTIONS] COMMAND [ARGS]...\nTry 'mutmut --help' for help.\n\nError: No such command 'junitxml'.\n"
+                }
+              ],
+              "trailmark": {
+                "args": [
+                  "trailmark",
+                  "analyze",
+                  "src"
+                ],
+                "exit_code": 0,
+                "stdout": "{\n  \"language\": \"python\",\n  \"root_path\": \"src\",\n  \"summary\": {\n    \"total_nodes\": 3,\n    \"functions\": 2,\n    \"classes\": 0,\n    \"proxies\": 0,\n    \"call_edges\": 1,\n    \"dependencies\": [],\n    \"entrypoints\": 0\n  },\n  \"nodes\": {\n    \"gate\": {\n      \"id\": \"gate\",\n      \"name\": \"gate\",\n      \"kind\": \"module\",\n      \"location\": {\n        \"file_path\": \"src/gate.py\",\n        \"start_line\": 1,\n        \"end_line\": 6,\n        \"start_col\": 0,\n        \"end_col\": 0\n      },\n      \"parameters\": [],\n      \"return_type\": null,\n      \"exception_types\": [],\n      \"cyclomatic_complexity\": null,\n      \"branches\": [],\n      \"docstring\": null\n    },\n    \"gate:eligible\": {\n      \"id\": \"gate:eligible\",\n      \"name\": \"eligible\",\n      \"kind\": \"function\",\n      \"location\": {\n        \"file_path\": \"src/gate.py\",\n        \"start_line\": 1,\n        \"end_line\": 2,\n        \"start_col\": 0,\n        \"end_col\": 27\n      },\n      \"parameters\": [\n        {\n          \"name\": \"value\",\n          \"type_ref\": null,\n          \"default\": null\n        },\n        {\n          \"name\": \"minimum\",\n          \"type_ref\": null,\n          \"default\": null\n        }\n      ],\n      \"return_type\": null,\n      \"exception_types\": [],\n      \"cyclomatic_complexity\": 1,\n      \"branches\": [],\n      \"docstring\": null\n    },\n    \"gate:public_entrypoint\": {\n      \"id\": \"gate:public_entrypoint\",\n      \"name\": \"public_entrypoint\",\n      \"kind\": \"function\",\n      \"location\": {\n        \"file_path\": \"src/gate.py\",\n        \"start_line\": 4,\n        \"end_line\": 5,\n        \"start_col\": 0,\n        \"end_col\": 30\n      },\n      \"parameters\": [\n        {\n          \"name\": \"value\",\n          \"type_ref\": null,\n          \"default\": null\n        }\n      ],\n      \"return_type\": null,\n      \"exception_types\": [],\n      \"cyclomatic_complexity\": 1,\n      \"branches\": [],\n      \"docstring\": null\n    }\n  },\n  \"edges\": [\n    {\n      \"source\": \"gate\",\n      \"target\": \"gate:eligible\",\n      \"kind\": \"contains\",\n      \"confidence\": \"certain\"\n    },\n    {\n      \"source\": \"gate\",\n      \"target\": \"gate:public_entrypoint\",\n      \"kind\": \"contains\",\n      \"confidence\": \"certain\"\n    },\n    {\n      \"source\": \"gate:public_entrypoint\",\n      \"target\": \"gate:eligible\",\n      \"kind\": \"calls\",\n      \"confidence\": \"certain\"\n    }\n  ],\n  \"subgraphs\": {}\n}\n",
+                "stderr": ""
+              },
+              "run": {
+                "args": [
+                  "mutmut",
+                  "run",
+                  "--max-children",
+                  "1"
+                ],
+                "exit_code": 0,
+                "stdout": "\n\u280b Generating mutants\n\u2819 Generating mutants\n\u2839 Generating mutants\n\u2838 Generating mutants\n\u283c Generating mutants\n\u2834 Generating mutants\n\u2826 Generating mutants\n\u2827 Generating mutants\n\u2807 Generating mutants\n\u280f Generating mutants\n\u280b Generating mutants\n\u2819 Generating mutants\n\u2839 Generating mutants\n\u2838 Generating mutants\n\u283c Generating mutants\n\u2834 Generating mutants\n\u2826 Generating mutants\n\u2827 Generating mutants\n\u2807 Generating mutants\n\u280f Generating mutants\n\u280b Generating mutants\n\u2819 Generating mutants\n\u2839 Generating mutants\n\u2838 Generating mutants\n\u283c Generating mutants\n\u2834 Generating mutants\n\u2826 Generating mutants\n\u2827 Generating mutants\n\u2807 Generating mutants\n\u280f Generating mutants\n\u280b Generating mutants\n\u2819 Generating mutants\n\u2839 Generating mutants\n\u2838 Generating mutants\n\u283c Generating mutants\n    done in 49ms (1 files mutated, 0 ignored, 0 unmodified)\n\n\u2838 Running stats     \n\u283c Running stats\n\u2834 Running stats\n\u2826 Running stats\n\u2827 Running stats\n\u2807 Running stats\n    done\n\n\u280f Running clean tests\n\u280b Running clean tests\n\u2819 Running clean tests\n\u2839 Running clean tests\n\u2838 Running clean tests\n\u283c Running clean tests\n    done\n\n\u2834 Running forced fail test\n\u2826 Running forced fail test\n\u2827 Running forced fail test\n\u2807 Running forced fail test\n\u280f Running forced fail test\n\u280b Running forced fail test\n\u2819 Running forced fail test\n\u2839 Running forced fail test\n\u2838 Running forced fail test\n\u283c Running forced fail test\n\u2834 Running forced fail test\n\u2826 Running forced fail test\n\u2827 Running forced fail test\n\u2807 Running forced fail test\n\u280f Running forced fail test\n\u280b Running forced fail test\n    done\nRunning mutation testing\n\n\u2819 0/6  \ud83c\udf89 0 \ud83e\udee5 0  \u23f0 0  \ud83e\udd14 0  \ud83d\ude41 0  \ud83d\udd07 0  \ud83e\uddd9 0\n\u2839 1/6  \ud83c\udf89 0 \ud83e\udee5 1  \u23f0 0  \ud83e\udd14 0  \ud83d\ude41 0  \ud83d\udd07 0  \ud83e\uddd9 0\n\u2838 2/6  \ud83c\udf89 0 \ud83e\udee5 2  \u23f0 0  \ud83e\udd14 0  \ud83d\ude41 0  \ud83d\udd07 0  \ud83e\uddd9 0\n\u283c 3/6  \ud83c\udf89 0 \ud83e\udee5 3  \u23f0 0  \ud83e\udd14 0  \ud83d\ude41 0  \ud83d\udd07 0  \ud83e\uddd9 0\n\u2834 4/6  \ud83c\udf89 0 \ud83e\udee5 4  \u23f0 0  \ud83e\udd14 0  \ud83d\ude41 0  \ud83d\udd07 0  \ud83e\uddd9 0\n\u2826 5/6  \ud83c\udf89 0 \ud83e\udee5 5  \u23f0 0  \ud83e\udd14 0  \ud83d\ude41 0  \ud83d\udd07 0  \ud83e\uddd9 0\n\u2827 6/6  \ud83c\udf89 0 \ud83e\udee5 5  \u23f0 0  \ud83e\udd14 0  \ud83d\ude41 1  \ud83d\udd07 0  \ud83e\uddd9 0\n41.51 mutations/second\n",
+                "stderr": ""
+              },
+              "results": {
+                "args": [
+                  "mutmut",
+                  "results",
+                  "--all",
+                  "true"
+                ],
+                "exit_code": 0,
+                "stdout": "    gate.x_eligible__mutmut_1: survived\n    gate.x_public_entrypoint__mutmut_1: no tests\n    gate.x_public_entrypoint__mutmut_2: no tests\n    gate.x_public_entrypoint__mutmut_3: no tests\n    gate.x_public_entrypoint__mutmut_4: no tests\n    gate.x_public_entrypoint__mutmut_5: no tests\n",
+                "stderr": ""
+              },
+              "export": {
+                "args": [
+                  "mutmut",
+                  "export-cicd-stats"
+                ],
+                "exit_code": 0,
+                "stdout": "Saved CI/CD stats to mutants/mutmut-cicd-stats.json\n",
+                "stderr": ""
+              },
+              "stats": {
+                "killed": 0,
+                "survived": 1,
+                "total": 6,
+                "no_tests": 5,
+                "skipped": 0,
+                "suspicious": 0,
+                "timeout": 0,
+                "check_was_interrupted_by_user": 0,
+                "segfault": 0
+              },
+              "metadata": {
+                "mutants/src/gate.py.meta": {
+                  "exit_code_by_key": {
+                    "gate.x_eligible__mutmut_1": 0,
+                    "gate.x_public_entrypoint__mutmut_1": 33,
+                    "gate.x_public_entrypoint__mutmut_2": 33,
+                    "gate.x_public_entrypoint__mutmut_3": 33,
+                    "gate.x_public_entrypoint__mutmut_4": 33,
+                    "gate.x_public_entrypoint__mutmut_5": 33
+                  },
+                  "hash_by_function_name": {
+                    "x_eligible": "a6bec6b5ee33",
+                    "x_public_entrypoint": "c70c81532c7f"
+                  },
+                  "type_check_error_by_key": {},
+                  "durations_by_key": {
+                    "gate.x_eligible__mutmut_1": 0.020526
+                  },
+                  "estimated_durations_by_key": {
+                    "gate.x_public_entrypoint__mutmut_1": 0,
+                    "gate.x_public_entrypoint__mutmut_2": 0,
+                    "gate.x_public_entrypoint__mutmut_3": 0,
+                    "gate.x_public_entrypoint__mutmut_4": 0,
+                    "gate.x_public_entrypoint__mutmut_5": 0,
+                    "gate.x_eligible__mutmut_1": 0.00014058599481359124
+                  }
+                }
+              }
+            },
+            "strong": {
+              "tests_sha256": "68ee6be982ff0f9d99b59cd5c7723bb04c0d8ab9ffe307c56db4472282c3e073",
+              "baseline": {
+                "args": [
+                  "/usr/local/bin/python",
+                  "-m",
+                  "pytest",
+                  "-q"
+                ],
+                "exit_code": 0,
+                "stdout": "..                                                                       [100%]\n2 passed in 0.01s\n",
+                "stderr": ""
+              },
+              "interfaces": [],
+              "run": {
+                "args": [
+                  "mutmut",
+                  "run",
+                  "--max-children",
+                  "1"
+                ],
+                "exit_code": 0,
+                "stdout": "\n\u280b Generating mutants\n\u2819 Generating mutants\n\u2839 Generating mutants\n\u2838 Generating mutants\n\u283c Generating mutants\n\u2834 Generating mutants\n\u2826 Generating mutants\n\u2827 Generating mutants\n\u2807 Generating mutants\n\u280f Generating mutants\n\u280b Generating mutants\n\u2819 Generating mutants\n\u2839 Generating mutants\n\u2838 Generating mutants\n\u283c Generating mutants\n\u2834 Generating mutants\n\u2826 Generating mutants\n\u2827 Generating mutants\n\u2807 Generating mutants\n\u280f Generating mutants\n\u280b Generating mutants\n\u2819 Generating mutants\n\u2839 Generating mutants\n\u2838 Generating mutants\n\u283c Generating mutants\n\u2834 Generating mutants\n\u2826 Generating mutants\n\u2827 Generating mutants\n\u2807 Generating mutants\n\u280f Generating mutants\n\u280b Generating mutants\n\u2819 Generating mutants\n\u2839 Generating mutants\n\u2838 Generating mutants\n\u283c Generating mutants\n    done in 49ms (1 files mutated, 0 ignored, 0 unmodified)\n\n\u2838 Running stats     \n\u283c Running stats\n\u2834 Running stats\n\u2826 Running stats\n\u2827 Running stats\n\u2807 Running stats\n\u280f Running stats\n    done\n\n\u280b Running clean tests\n\u2819 Running clean tests\n\u2839 Running clean tests\n\u2838 Running clean tests\n\u283c Running clean tests\n\u2834 Running clean tests\n\u2826 Running clean tests\n    done\n\n\u2827 Running forced fail test\n\u2807 Running forced fail test\n\u280f Running forced fail test\n\u280b Running forced fail test\n\u2819 Running forced fail test\n\u2839 Running forced fail test\n\u2838 Running forced fail test\n\u283c Running forced fail test\n\u2834 Running forced fail test\n\u2826 Running forced fail test\n\u2827 Running forced fail test\n\u2807 Running forced fail test\n\u280f Running forced fail test\n\u280b Running forced fail test\n\u2819 Running forced fail test\n\u2839 Running forced fail test\n    done\nRunning mutation testing\n\n\u2838 0/6  \ud83c\udf89 0 \ud83e\udee5 0  \u23f0 0  \ud83e\udd14 0  \ud83d\ude41 0  \ud83d\udd07 0  \ud83e\uddd9 0\n\u283c 1/6  \ud83c\udf89 0 \ud83e\udee5 1  \u23f0 0  \ud83e\udd14 0  \ud83d\ude41 0  \ud83d\udd07 0  \ud83e\uddd9 0\n\u2834 2/6  \ud83c\udf89 0 \ud83e\udee5 2  \u23f0 0  \ud83e\udd14 0  \ud83d\ude41 0  \ud83d\udd07 0  \ud83e\uddd9 0\n\u2826 3/6  \ud83c\udf89 0 \ud83e\udee5 3  \u23f0 0  \ud83e\udd14 0  \ud83d\ude41 0  \ud83d\udd07 0  \ud83e\uddd9 0\n\u2827 4/6  \ud83c\udf89 0 \ud83e\udee5 4  \u23f0 0  \ud83e\udd14 0  \ud83d\ude41 0  \ud83d\udd07 0  \ud83e\uddd9 0\n\u2807 5/6  \ud83c\udf89 0 \ud83e\udee5 5  \u23f0 0  \ud83e\udd14 0  \ud83d\ude41 0  \ud83d\udd07 0  \ud83e\uddd9 0\n\u280f 6/6  \ud83c\udf89 1 \ud83e\udee5 5  \u23f0 0  \ud83e\udd14 0  \ud83d\ude41 0  \ud83d\udd07 0  \ud83e\uddd9 0\n42.01 mutations/second\n",
+                "stderr": ""
+              },
+              "results": {
+                "args": [
+                  "mutmut",
+                  "results",
+                  "--all",
+                  "true"
+                ],
+                "exit_code": 0,
+                "stdout": "    gate.x_eligible__mutmut_1: killed\n    gate.x_public_entrypoint__mutmut_1: no tests\n    gate.x_public_entrypoint__mutmut_2: no tests\n    gate.x_public_entrypoint__mutmut_3: no tests\n    gate.x_public_entrypoint__mutmut_4: no tests\n    gate.x_public_entrypoint__mutmut_5: no tests\n",
+                "stderr": ""
+              },
+              "export": {
+                "args": [
+                  "mutmut",
+                  "export-cicd-stats"
+                ],
+                "exit_code": 0,
+                "stdout": "Saved CI/CD stats to mutants/mutmut-cicd-stats.json\n",
+                "stderr": ""
+              },
+              "stats": {
+                "killed": 1,
+                "survived": 0,
+                "total": 6,
+                "no_tests": 5,
+                "skipped": 0,
+                "suspicious": 0,
+                "timeout": 0,
+                "check_was_interrupted_by_user": 0,
+                "segfault": 0
+              },
+              "metadata": {
+                "mutants/src/gate.py.meta": {
+                  "exit_code_by_key": {
+                    "gate.x_eligible__mutmut_1": 1,
+                    "gate.x_public_entrypoint__mutmut_1": 33,
+                    "gate.x_public_entrypoint__mutmut_2": 33,
+                    "gate.x_public_entrypoint__mutmut_3": 33,
+                    "gate.x_public_entrypoint__mutmut_4": 33,
+                    "gate.x_public_entrypoint__mutmut_5": 33
+                  },
+                  "hash_by_function_name": {
+                    "x_eligible": "a6bec6b5ee33",
+                    "x_public_entrypoint": "c70c81532c7f"
+                  },
+                  "type_check_error_by_key": {},
+                  "durations_by_key": {
+                    "gate.x_eligible__mutmut_1": 0.020526
+                  },
+                  "estimated_durations_by_key": {
+                    "gate.x_public_entrypoint__mutmut_1": 0,
+                    "gate.x_public_entrypoint__mutmut_2": 0,
+                    "gate.x_public_entrypoint__mutmut_3": 0,
+                    "gate.x_public_entrypoint__mutmut_4": 0,
+                    "gate.x_public_entrypoint__mutmut_5": 0,
+                    "gate.x_eligible__mutmut_1": 0.0001816480071283877
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "captured_bytes": 13145,
+      "stderr": "",
+      "elapsed_seconds": 6.824000499997055
+    },
+    "graph": {
+      "status": "completed",
+      "container_name": "skills-invoke-9fa7dbcdd6284c87b967155c6511be99",
+      "image": "sha256:d6e66ca1df12b2666a757a406782e8ee28d7d5b91a64b8cfb06b785eb20dd2ab",
+      "scored": false,
+      "candidate_response_is_untrusted": true,
+      "cleanup_verified": true,
+      "request_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "worker_sha256": "a3071798025e1cbf2e0136090b4c6199b78d962cb85cbb29e0e8688b9abbb8d4",
+      "resource_profile": "python-small",
+      "submission_sha256": {
+        "candidate.py": "b489eb74229fd5890609907a209c0737d9debea81d8e901f8249d36360362d56",
+        "original-graph-analysis.md": "a657d1acbec592da75a28d69ce19f6807fd26f1fb17f89c170abeef4d5fc9a54"
+      },
+      "container_id": "b774219a8a21d68985deed6ecacbc710d9ce140882721bdad4d56fe1e589fe9c",
+      "isolation_checks": {
+        "errors": [],
+        "passed": true,
+        "observed_user": "65534:65534",
+        "observed_image": "sha256:d6e66ca1df12b2666a757a406782e8ee28d7d5b91a64b8cfb06b785eb20dd2ab",
+        "observed_ownership_token": "9fa7dbcdd6284c87b967155c6511be99",
+        "resolved_image_id": "sha256:d6e66ca1df12b2666a757a406782e8ee28d7d5b91a64b8cfb06b785eb20dd2ab",
+        "observed_host_constraints": {
+          "NetworkMode": "none",
+          "IpcMode": "none",
+          "ReadonlyRootfs": true,
+          "Memory": 536870912,
+          "MemorySwap": 536870912,
+          "NanoCpus": 1000000000,
+          "PidsLimit": 64,
+          "Privileged": false,
+          "Init": true,
+          "CapDrop": [
+            "ALL"
+          ],
+          "CapAdd": null,
+          "SecurityOpt": [
+            "no-new-privileges"
+          ],
+          "LogConfig": {
+            "Type": "none",
+            "Config": {}
+          },
+          "Tmpfs": {
+            "/tmp": "rw,noexec,nosuid,size=128m"
+          },
+          "Devices": [],
+          "DeviceRequests": null,
+          "VolumesFrom": null
+        },
+        "observed_mounts": [
+          {
+            "Destination": "/submission",
+            "Type": "bind",
+            "RW": false
+          },
+          {
+            "Destination": "/worker",
+            "Type": "bind",
+            "RW": false
+          }
+        ]
+      },
+      "setup_elapsed_seconds": 0.22316749999299645,
+      "runtime_elapsed_seconds": 0.48963549998006783,
+      "returncode": 0,
+      "candidate_response": {
+        "worker_status": "returned",
+        "result": {
+          "source_sha256": "d5440ef6ddc933e67c6e5886309413493fe61f030755db543306754dfa4243fe",
+          "node_ids": {
+            "externally_called": [
+              "library:externally_called"
+            ],
+            "helper": [
+              "library:helper"
+            ],
+            "local_caller": [
+              "library:local_caller"
+            ]
+          },
+          "callers": {
+            "externally_called": [],
+            "helper": [
+              {
+                "id": "library:local_caller",
+                "name": "local_caller",
+                "kind": "function",
+                "location": {
+                  "file_path": "/tmp/trailmark-graph-_mz3qssx/library.py",
+                  "start_line": 7,
+                  "end_line": 8,
+                  "start_col": 0,
+                  "end_col": 24
+                },
+                "parameters": [
+                  {
+                    "name": "value",
+                    "type_ref": null,
+                    "default": null
+                  }
+                ],
+                "return_type": null,
+                "exception_types": [],
+                "cyclomatic_complexity": 1,
+                "branches": [],
+                "docstring": null
+              }
+            ],
+            "local_caller": []
+          },
+          "graph": {
+            "language": "python",
+            "root_path": "/tmp/trailmark-graph-_mz3qssx",
+            "summary": {
+              "total_nodes": 4,
+              "functions": 3,
+              "classes": 0,
+              "proxies": 0,
+              "call_edges": 1,
+              "dependencies": [],
+              "entrypoints": 0
+            },
+            "nodes": {
+              "library": {
+                "id": "library",
+                "name": "library",
+                "kind": "module",
+                "location": {
+                  "file_path": "/tmp/trailmark-graph-_mz3qssx/library.py",
+                  "start_line": 1,
+                  "end_line": 9,
+                  "start_col": 0,
+                  "end_col": 0
+                },
+                "parameters": [],
+                "return_type": null,
+                "exception_types": [],
+                "cyclomatic_complexity": null,
+                "branches": [],
+                "docstring": null
+              },
+              "library:externally_called": {
+                "id": "library:externally_called",
+                "name": "externally_called",
+                "kind": "function",
+                "location": {
+                  "file_path": "/tmp/trailmark-graph-_mz3qssx/library.py",
+                  "start_line": 1,
+                  "end_line": 2,
+                  "start_col": 0,
+                  "end_col": 20
+                },
+                "parameters": [
+                  {
+                    "name": "value",
+                    "type_ref": null,
+                    "default": null
+                  }
+                ],
+                "return_type": null,
+                "exception_types": [],
+                "cyclomatic_complexity": 1,
+                "branches": [],
+                "docstring": null
+              },
+              "library:helper": {
+                "id": "library:helper",
+                "name": "helper",
+                "kind": "function",
+                "location": {
+                  "file_path": "/tmp/trailmark-graph-_mz3qssx/library.py",
+                  "start_line": 4,
+                  "end_line": 5,
+                  "start_col": 0,
+                  "end_col": 20
+                },
+                "parameters": [
+                  {
+                    "name": "value",
+                    "type_ref": null,
+                    "default": null
+                  }
+                ],
+                "return_type": null,
+                "exception_types": [],
+                "cyclomatic_complexity": 1,
+                "branches": [],
+                "docstring": null
+              },
+              "library:local_caller": {
+                "id": "library:local_caller",
+                "name": "local_caller",
+                "kind": "function",
+                "location": {
+                  "file_path": "/tmp/trailmark-graph-_mz3qssx/library.py",
+                  "start_line": 7,
+                  "end_line": 8,
+                  "start_col": 0,
+                  "end_col": 24
+                },
+                "parameters": [
+                  {
+                    "name": "value",
+                    "type_ref": null,
+                    "default": null
+                  }
+                ],
+                "return_type": null,
+                "exception_types": [],
+                "cyclomatic_complexity": 1,
+                "branches": [],
+                "docstring": null
+              }
+            },
+            "edges": [
+              {
+                "source": "library",
+                "target": "library:externally_called",
+                "kind": "contains",
+                "confidence": "certain"
+              },
+              {
+                "source": "library",
+                "target": "library:helper",
+                "kind": "contains",
+                "confidence": "certain"
+              },
+              {
+                "source": "library",
+                "target": "library:local_caller",
+                "kind": "contains",
+                "confidence": "certain"
+              },
+              {
+                "source": "library:local_caller",
+                "target": "library:helper",
+                "kind": "calls",
+                "confidence": "certain"
+              }
+            ],
+            "subgraphs": {
+              "high_blast_radius": [],
+              "entrypoints": [],
+              "entrypoint_reachable": [],
+              "privilege_boundary": [],
+              "tainted": []
+            }
+          },
+          "preanalysis_completed": true,
+          "attack_surface": [],
+          "complexity_hotspots": [
+            {
+              "id": "library:externally_called",
+              "name": "externally_called",
+              "kind": "function",
+              "location": {
+                "file_path": "/tmp/trailmark-graph-_mz3qssx/library.py",
+                "start_line": 1,
+                "end_line": 2,
+                "start_col": 0,
+                "end_col": 20
+              },
+              "parameters": [
+                {
+                  "name": "value",
+                  "type_ref": null,
+                  "default": null
+                }
+              ],
+              "return_type": null,
+              "exception_types": [],
+              "cyclomatic_complexity": 1,
+              "branches": [],
+              "docstring": null
+            },
+            {
+              "id": "library:helper",
+              "name": "helper",
+              "kind": "function",
+              "location": {
+                "file_path": "/tmp/trailmark-graph-_mz3qssx/library.py",
+                "start_line": 4,
+                "end_line": 5,
+                "start_col": 0,
+                "end_col": 20
+              },
+              "parameters": [
+                {
+                  "name": "value",
+                  "type_ref": null,
+                  "default": null
+                }
+              ],
+              "return_type": null,
+              "exception_types": [],
+              "cyclomatic_complexity": 1,
+              "branches": [],
+              "docstring": null
+            },
+            {
+              "id": "library:local_caller",
+              "name": "local_caller",
+              "kind": "function",
+              "location": {
+                "file_path": "/tmp/trailmark-graph-_mz3qssx/library.py",
+                "start_line": 7,
+                "end_line": 8,
+                "start_col": 0,
+                "end_col": 24
+              },
+              "parameters": [
+                {
+                  "name": "value",
+                  "type_ref": null,
+                  "default": null
+                }
+              ],
+              "return_type": null,
+              "exception_types": [],
+              "cyclomatic_complexity": 1,
+              "branches": [],
+              "docstring": null
+            }
+          ],
+          "external_invocation_result": 42,
+          "library_internal_call_result": 42,
+          "original_batch_triage": {
+            "false_positives": [
+              {
+                "file_path": "/tmp/trailmark-graph-_mz3qssx/library.py",
+                "line": 2,
+                "mutant_id": "external-return-change",
+                "reason": "no callers (dead code)",
+                "node_id": "library:externally_called"
+              },
+              {
+                "file_path": "outside_graph.py",
+                "line": 1,
+                "mutant_id": "unmapped",
+                "reason": "no containing function in graph"
+              }
+            ],
+            "missing_tests": [],
+            "fuzzing_targets": []
+          },
+          "original_ambiguous_choices": [
+            {
+              "id": "a",
+              "name": "parse",
+              "location": {
+                "file_path": "src/a.py"
+              }
+            },
+            {
+              "id": "b",
+              "name": "parse",
+              "location": {
+                "file_path": "src/b.py"
+              }
+            }
+          ],
+          "original_production_substring_exclusion": null,
+          "original_many_mutations_one_removal_merge": {
+            "corroborated": [
+              {
+                "node_id": "shared",
+                "mutation": {
+                  "node_id": "shared",
+                  "mutant_id": "one"
+                },
+                "necessist": [
+                  {
+                    "node_id": "shared",
+                    "removal_id": "test-check"
+                  }
+                ]
+              }
+            ],
+            "false_positives": [],
+            "missing_tests": [
+              {
+                "node_id": "shared",
+                "mutant_id": "two"
+              }
+            ],
+            "fuzzing_targets": []
+          },
+          "generic_montgomery_bijection_cases": [
+            {
+              "modulus": 19,
+              "radix": 65536,
+              "canonical_inputs": [
+                4,
+                8
+              ],
+              "internal_residues": [
+                1,
+                2
+              ],
+              "limbs": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  0
+                ]
+              ],
+              "limb_AND_equal": false,
+              "limb_OR_equal": true
+            },
+            {
+              "modulus": 65521,
+              "radix": 4294967296,
+              "canonical_inputs": [
+                12813,
+                25626
+              ],
+              "internal_residues": [
+                1,
+                2
+              ],
+              "limbs": [
+                [
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  2,
+                  0,
+                  0,
+                  0
+                ]
+              ],
+              "limb_AND_equal": false,
+              "limb_OR_equal": true
+            }
+          ],
+          "case_study_rust_library_executed": false
+        }
+      },
+      "captured_bytes": 5727,
+      "stderr": "",
+      "elapsed_seconds": 0.9727013999945484
+    }
+  },
+  "agent_efficacy_scored": false,
+  "skill_runtime_benchmark_passes": 0,
+  "untested_mutants_are_not_passes": true,
+  "other_languages_qualified": false
+}
