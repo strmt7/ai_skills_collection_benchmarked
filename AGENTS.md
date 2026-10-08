@@ -10,7 +10,8 @@ precede broad conceptual repository navigation; Crawl4AI must perform web-page
 research and source-content reading. These are requirements, not preferences.
 Retain actual source-bound search and crawl receipts. Installation, a marker or
 a written plan does not prove use. Missing tooling requires diagnosis and
-disclosure, never an invented pass. Preserve the single-session rule, immutable
+disclosure; restore it before dependent work. Do not bypass a required tool or
+substitute another tool for its required operation. Preserve the single-session rule, immutable
 mirrors, independent benchmarks and all access boundaries.
 Before accepting task completion, validate its classified execution receipt with
 `python tools/validate_agent_tool_policy.py --check --execution-receipt <receipt> --json`.

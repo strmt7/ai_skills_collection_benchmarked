@@ -67,6 +67,7 @@ def validate(root: Path) -> dict[str, Any]:
             elif (
                 not isinstance(frontmatter.get("metadata"), dict)
                 or frontmatter["metadata"].get("mandatory") is not True
+                or frontmatter["metadata"].get("bypass_allowed") is not False
                 or frontmatter["metadata"].get("trigger") != TRIGGERS[name]
             ):
                 errors.append(f"{path}: mandatory activation contract changed")

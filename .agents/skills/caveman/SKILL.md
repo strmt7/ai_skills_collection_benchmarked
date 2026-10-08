@@ -2,6 +2,7 @@
 name: caveman
 metadata:
   mandatory: true
+  bypass_allowed: false
   trigger: every_task
 description: Apply mandatory lite compression to internal AI communication without losing technical meaning or public clarity.
 ---

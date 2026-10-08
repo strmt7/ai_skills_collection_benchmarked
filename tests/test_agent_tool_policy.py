@@ -58,6 +58,13 @@ def test_optional_activation_cannot_replace_requirement(contract, name):
     assert any("mandatory activation" in error for error in policy.validate(contract)["errors"])
 
 
+@pytest.mark.parametrize("name", ["caveman", "cocoindex-code-search", "crawl4ai-research"])
+def test_required_tool_cannot_enable_bypass(contract, name):
+    path = contract / policy.TOOLS[name]
+    path.write_text(path.read_text().replace("bypass_allowed: false", "bypass_allowed: true"), encoding="utf-8")
+    assert any("mandatory activation" in error for error in policy.validate(contract)["errors"])
+
+
 def test_every_missing_entrypoint_is_reported(contract):
     entries = json.loads((contract / "data/skills_catalog.json").read_text())
     for entry in entries:
