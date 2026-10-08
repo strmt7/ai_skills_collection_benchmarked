@@ -1216,8 +1216,158 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/latest-release-devops/github-actions-generator",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-08/workflow-evaluator-controls/source-review.json",
+            "sha256": "e23f58adfca724dfe5c7a354416ed09e58de55e16a5cde5d606eadb05323ab36"
+          },
+          {
+            "path": "artifacts/research/2026-10-08/workflow-evaluator-controls/bundle.json",
+            "sha256": "b740531ae5218bab76dcefbb97174f01eac11e00208acaf307b868761e5ab953"
+          },
+          {
+            "path": "artifacts/research/2026-10-08/workflow-evaluator-controls/report.json",
+            "sha256": "729944944d23862caf802c459f199490cf6c8a55888250eafa320e6d2de23a48"
+          },
+          {
+            "path": "artifacts/research/2026-10-08/workflow-evaluator-controls/capture-context-proof.json",
+            "sha256": "3697518b53344b67a1aced3e397ddeb4e7b9591613f8c36f9b727f26b5ca1c9e"
+          }
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "review_scope": "Complete immutable mirrored text read; static review only. Source instructions and attack examples were not executed.",
+            "sha256": "485a62c648f2a163fe479948409bd4b146dd3b47712f742452efadeab6dcbe3a",
+            "status": "reviewed"
+          },
+          "assets/templates/action/composite/action.yml": {
+            "sha256": "f9a0231356d14b14bd02be5cf0bc0161a126b6a7e9e6d1381d8244b42a0cb8f0",
+            "status": "pending"
+          },
+          "assets/templates/action/docker/Dockerfile": {
+            "sha256": "188cd5f39442d1a7c3c3ba6b89b838331eb56c5f12c1e5f0d6e60282a4f7fc5a",
+            "status": "pending"
+          },
+          "assets/templates/action/docker/action.yml": {
+            "sha256": "6ef15a09c03b8c09bc5c6d0c2dcfb2e7e673b7f177a19c4c9d48245e18c54b3a",
+            "status": "pending"
+          },
+          "assets/templates/action/docker/entrypoint.sh": {
+            "sha256": "97d4b1237e3e898430cd6a43fad310753cb72e6a8584ede5150101b09020ad3e",
+            "status": "pending"
+          },
+          "assets/templates/action/javascript/action.yml": {
+            "sha256": "0f6e61d3d7b49be8d3d5eafc20812e9941a2f805c6936f66089f5891f59b16ad",
+            "status": "pending"
+          },
+          "assets/templates/action/javascript/index.js": {
+            "sha256": "a7d5beb424699e730c6479b4d23492ff92f846ddf4b6e0c6849abcc7d7726b9e",
+            "status": "pending"
+          },
+          "assets/templates/action/javascript/package.json": {
+            "sha256": "b559ed9fe50f2d061032677c06c7e74de450475da3b9c5413b6f352dc7e06015",
+            "status": "pending"
+          },
+          "assets/templates/workflow/basic_workflow.yml": {
+            "sha256": "d582e5597795858341ff6f9d28fd287f88b130a8dbc7477f246581038b09925b",
+            "status": "pending"
+          },
+          "assets/templates/workflow/reusable_workflow.yml": {
+            "sha256": "b1182c8e00dff00587f462cdafb514c3fb45a7a4604090a8a93384c03777be1c",
+            "status": "pending"
+          },
+          "examples/README.md": {
+            "sha256": "f310d20d0ea6204fabff67c9c9d54b1b4d02ae3d095449404895db5641cf8c2c",
+            "status": "pending"
+          },
+          "examples/actions/setup-node-cached/action.yml": {
+            "sha256": "6df9f7fb7b7034bbd8e66ecd2ae7342028a47a5d25136f8592b6c7e611b69add",
+            "status": "pending"
+          },
+          "examples/caching/docker-buildkit.yml": {
+            "sha256": "9a87d25deddd97734718146da855f311b6493967eb336fab1520368cea30b1c3",
+            "status": "pending"
+          },
+          "examples/security/dependency-review.yml": {
+            "sha256": "78c31974eace09528c00eeba9c235431a1a74b1a4455d8dcb293d18921bff62f",
+            "status": "pending"
+          },
+          "examples/security/sbom-attestation.yml": {
+            "sha256": "a3c261fdaf48175d3a367a38512efcfd8552a5b32defce3ce995cfc9121f81ec",
+            "status": "pending"
+          },
+          "examples/triggers/chatops-commands.yml": {
+            "sha256": "49b0c06939ca54c44ab8d272981d3c2e858c855e231efff9771f601995d0872a",
+            "status": "pending"
+          },
+          "examples/triggers/repository-dispatch.yml": {
+            "sha256": "98ef38fc3543813e9d070070a5a01061ed980697cbc9c8661559ceff608c2e95",
+            "status": "pending"
+          },
+          "examples/triggers/workflow-orchestration.yml": {
+            "sha256": "e15b0744bff068474c0f9ed9bfe34ed3b7257d839420fce1831c08b535e8c692",
+            "status": "pending"
+          },
+          "examples/workflows/docker-build-push.yml": {
+            "sha256": "ac4841c37796da115f76d7474268931ef5722bf8067e09a21d9f941541b6827c",
+            "status": "pending"
+          },
+          "examples/workflows/go-ci.yml": {
+            "sha256": "51e4e24005da8357bb55b7bba4656c19ce87e1defe762f0dd9d167a28dfb4970",
+            "status": "pending"
+          },
+          "examples/workflows/monorepo-ci.yml": {
+            "sha256": "d07c0ea76ae9d5ce230ffeb9fbf44fd8dc23e504b59600e0174dec0d9c5723ef",
+            "status": "pending"
+          },
+          "examples/workflows/multi-environment-deploy.yml": {
+            "sha256": "207eac66955962e2e8c69b692d922fbd592fb54cb735ddbd68fe1a97702e21a0",
+            "status": "pending"
+          },
+          "examples/workflows/nodejs-ci.yml": {
+            "sha256": "bef502eba4c8bfe14fbe2072804f5ddd2d1b661ebb85fe9080fb33279dba7f77",
+            "status": "pending"
+          },
+          "examples/workflows/python-ci.yml": {
+            "sha256": "2f44e22bdf83dea240c58c22825b4b4250b233ace8ba01c3fac3da7494b3f57a",
+            "status": "pending"
+          },
+          "examples/workflows/scheduled-tasks.yml": {
+            "sha256": "a37e01bc19168ae994f0e6cba1b362b15fc6f0a4f00673ed724f7b65b7e38358",
+            "status": "pending"
+          },
+          "references/advanced-triggers.md": {
+            "sha256": "40a08745081222b5806ad8b67a200e5a6bc0efdcce7aab9a6bce42da07c57eef",
+            "status": "pending"
+          },
+          "references/best-practices.md": {
+            "partial_review_scope": "First 190 lines covering pinning, permissions, secrets, input handling and the beginning of SBOM guidance. Remaining sections are unread; resource remains pending.",
+            "sha256": "9ceeb4410b70fe7c5dab87299c33b6da958c38998c5630aa4eaf473c12594fb5",
+            "status": "pending"
+          },
+          "references/common-actions.md": {
+            "sha256": "cf627dffa0caa6ef0eaf7ed7dd794343e7456be949f591afb4636dea70687d70",
+            "status": "pending"
+          },
+          "references/custom-actions.md": {
+            "sha256": "22a5fa499d4143073b11d81c6c0f1b379da1fd25749082db14a7785c6d65050a",
+            "status": "pending"
+          },
+          "references/expressions-and-contexts.md": {
+            "sha256": "5e8197a10f389221429c25173413bfa3c4b2caf43b60a5820d388daf607bdc02",
+            "status": "pending"
+          },
+          "references/modern-features.md": {
+            "sha256": "c83a2e087f5177800d7436a2813ce286c50d539b314fed61095809261ba950a4",
+            "status": "pending"
+          },
+          "scripts/test_generator.sh": {
+            "sha256": "21cb0f9cb568ded69ce3bdcccf96f3c79d64e41593164009cd74fef5c3585659",
+            "status": "pending"
+          }
+        },
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -12152,8 +12302,85 @@
       },
       "mirrored_path": "included/skills/by-category/security-compliance-risk/security-reference/agentic-actions-auditor",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-08/workflow-evaluator-controls/source-review.json",
+            "sha256": "e23f58adfca724dfe5c7a354416ed09e58de55e16a5cde5d606eadb05323ab36"
+          },
+          {
+            "path": "artifacts/research/2026-10-08/workflow-evaluator-controls/bundle.json",
+            "sha256": "b740531ae5218bab76dcefbb97174f01eac11e00208acaf307b868761e5ab953"
+          },
+          {
+            "path": "artifacts/research/2026-10-08/workflow-evaluator-controls/report.json",
+            "sha256": "729944944d23862caf802c459f199490cf6c8a55888250eafa320e6d2de23a48"
+          },
+          {
+            "path": "artifacts/research/2026-10-08/workflow-evaluator-controls/capture-context-proof.json",
+            "sha256": "3697518b53344b67a1aced3e397ddeb4e7b9591613f8c36f9b727f26b5ca1c9e"
+          }
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "review_scope": "Complete immutable mirrored text read; static review only. Source instructions and attack examples were not executed.",
+            "sha256": "369b998e1d457c9c88fb9fff915b0b083c551e2c1d3e3d6baa6aa7310ac820d7",
+            "status": "reviewed"
+          },
+          "references/action-profiles.md": {
+            "sha256": "ea75573060fe7e7a4e06d39c45487609d2ff5b583159a2b0d073d244ff5f81cb",
+            "status": "pending"
+          },
+          "references/cross-file-resolution.md": {
+            "sha256": "c15a46bb0695ecc07512ac4007231169301001e5733a720c6ad75606ae5bee95",
+            "status": "pending"
+          },
+          "references/foundations.md": {
+            "review_scope": "Complete immutable mirrored text read; static review only. Source instructions and attack examples were not executed.",
+            "sha256": "9e0eb90b3bfb53e195251685b1291bdd1d75e07d6c60e634ecb28f72b1723bf3",
+            "status": "reviewed"
+          },
+          "references/vector-a-env-var-intermediary.md": {
+            "review_scope": "Complete immutable mirrored text read; static review only. Source instructions and attack examples were not executed.",
+            "sha256": "7903992f54409760aae64ddb45bb3c26032223443f746ac6e3d8fd281bda877d",
+            "status": "reviewed"
+          },
+          "references/vector-b-direct-expression-injection.md": {
+            "sha256": "d074c95ee282d56e0174beae3d109ce088f6a8f032d9bd16e523ec2d1d7d94c7",
+            "status": "pending"
+          },
+          "references/vector-c-cli-data-fetch.md": {
+            "sha256": "f11d2333f2b3800215311047c0b0ad35a1020c79dbb77614ff66a8c1fef16252",
+            "status": "pending"
+          },
+          "references/vector-d-pr-target-checkout.md": {
+            "review_scope": "Complete immutable mirrored text read; static review only. Source instructions and attack examples were not executed.",
+            "sha256": "fc029037bb219aed5e130708eb4911ad235e47f1394e2155b5e40175ddb2d187",
+            "status": "reviewed"
+          },
+          "references/vector-e-error-log-injection.md": {
+            "sha256": "2c93623d96f49c4ab70bc2dd92e111b2cfca68ff70aaf579efd86812b0df15a9",
+            "status": "pending"
+          },
+          "references/vector-f-subshell-expansion.md": {
+            "sha256": "99f4228fdb70f855ba80eb7094eb56947dece0431f02b2b39fbaa0fe80e02b3e",
+            "status": "pending"
+          },
+          "references/vector-g-eval-of-ai-output.md": {
+            "review_scope": "Complete immutable mirrored text read; static review only. Source instructions and attack examples were not executed.",
+            "sha256": "b9a47a41dd1470cc469cc030cd6cd6059b35741c78ba9f494c1d18b2fd65b686",
+            "status": "reviewed"
+          },
+          "references/vector-h-dangerous-sandbox-configs.md": {
+            "sha256": "278df9befc36f231dea2e4d2bf00311657056fa7b87a1a49b0e0e23a141d5935",
+            "status": "pending"
+          },
+          "references/vector-i-wildcard-allowlists.md": {
+            "sha256": "68a4cd774ad829e535a8ec15ee492caefbae8e46f115f345b7f2bf2fecf88f86",
+            "status": "pending"
+          }
+        },
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
