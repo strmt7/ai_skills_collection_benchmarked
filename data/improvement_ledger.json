@@ -11643,6 +11643,10 @@
           {
             "path": "artifacts/research/2026-10-07/caveman-310-current-source-review.json",
             "sha256": "2bfc1b1807c33b0bd81d0aed7a16cc6a270a989be13f4acc963e8726bd5032a5"
+          },
+          {
+            "path": "artifacts/research/2026-10-08/caveman-320-current-source-review.json",
+            "sha256": "c82985e24867eea69ed931aa9b78cc98d6771ef4e5d46694468ebb302670eff1"
           }
         ],
         "remaining_work": [
@@ -11692,6 +11696,10 @@
           {
             "path": "artifacts/research/2026-10-07/caveman-310-current-source-review.json",
             "sha256": "2bfc1b1807c33b0bd81d0aed7a16cc6a270a989be13f4acc963e8726bd5032a5"
+          },
+          {
+            "path": "artifacts/research/2026-10-08/caveman-320-current-source-review.json",
+            "sha256": "c82985e24867eea69ed931aa9b78cc98d6771ef4e5d46694468ebb302670eff1"
           }
         ],
         "remaining_work": [
@@ -15091,6 +15099,10 @@
           {
             "path": "artifacts/research/2026-10-07/caveman-310-current-source-review.json",
             "sha256": "2bfc1b1807c33b0bd81d0aed7a16cc6a270a989be13f4acc963e8726bd5032a5"
+          },
+          {
+            "path": "artifacts/research/2026-10-08/caveman-320-current-source-review.json",
+            "sha256": "c82985e24867eea69ed931aa9b78cc98d6771ef4e5d46694468ebb302670eff1"
           }
         ],
         "remaining_work": [
@@ -15674,6 +15686,10 @@
           {
             "path": "artifacts/research/2026-10-07/caveman-310-current-source-review.json",
             "sha256": "2bfc1b1807c33b0bd81d0aed7a16cc6a270a989be13f4acc963e8726bd5032a5"
+          },
+          {
+            "path": "artifacts/research/2026-10-08/caveman-320-current-source-review.json",
+            "sha256": "c82985e24867eea69ed931aa9b78cc98d6771ef4e5d46694468ebb302670eff1"
           }
         ],
         "remaining_work": [
