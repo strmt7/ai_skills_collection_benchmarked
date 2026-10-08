@@ -1,0 +1,130 @@
+{
+  "adaptation_ids": [
+    "strmt7-project-air-defense-agents-skills-caveman-help-skill-md",
+    "strmt7-project-air-defense-agents-skills-caveman-skill-md",
+    "zmb-uzh-omero-docker-extended-agents-skills-caveman-skill-md",
+    "zmb-uzh-omero-docker-extended-third-party-caveman-v1-6-0-skills-caveman-skill-md"
+  ],
+  "agent_efficacy_scored": false,
+  "annotated_tag_object": "4192fb38ae0921c7b4baa9c5fa6fa1b90dbcdaf4",
+  "api_comparison_limits": {
+    "commit_inventory_complete": false,
+    "file_inventory_at_300_file_cap": false,
+    "returned_commits": 250,
+    "returned_files": 285,
+    "total_commits": 277
+  },
+  "commit": "e20f07e8152a0c0360f58c09e79d30ac94329991",
+  "current_upstream_resources": {
+    "LICENSE": {
+      "bytes": 11358,
+      "git_blob_oid": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "review_scope": "Reuse prior complete license review after verifying byte-identical current pinned SHA-256.",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "evals/README.md": {
+      "bytes": 11070,
+      "git_blob_oid": "3eb54368c0f4f9e271d949df26e1de1b8ad003bf",
+      "lines": 235,
+      "review_scope": "Complete current pinned text read; no evaluator prompts or answer snapshots read.",
+      "sha256": "966239159e58df5c9069308be7b4acf21796c2ba94e6557a8d1c44283f307918"
+    },
+    "evals/score_fidelity.py": {
+      "bytes": 4839,
+      "git_blob_oid": "a5930224040dd4ae1e1ebf5b1acd0df8fb508498",
+      "lines": 137,
+      "review_scope": "Complete current pinned text read; no evaluator prompts or answer snapshots read.",
+      "sha256": "dce884655413784f6a10b0aa69970e1ebdf4358bef723acb5e1bdb38da27a98f"
+    },
+    "skills/caveman-help/SKILL.md": {
+      "bytes": 2771,
+      "git_blob_oid": "7805b3748cb95baca18a8be324f8d8597216e947",
+      "review_scope": "Complete current pinned text read; no evaluator prompts or answer snapshots read.",
+      "sha256": "0bf9ee3fc8a9258b2d5f6b8bf24ac21f0bf2e4b9b4641dbc426b74f18186f81d"
+    },
+    "skills/caveman/SKILL.md": {
+      "bytes": 4678,
+      "git_blob_oid": "9a94044529e5ee1576361c891b4a271504518e6f",
+      "review_scope": "Complete current pinned text read; no evaluator prompts or answer snapshots read.",
+      "sha256": "415d43518f2b1a9498c15a445d4657117b129ee5e81b19454ce348439cc6672b"
+    },
+    "skills/megacave/SKILL.md": {
+      "bytes": 2858,
+      "git_blob_oid": "e26ef7305706dbc4ae4fe8a1c14a6f9fdce574bc",
+      "review_scope": "Complete current pinned text read; no evaluator prompts or answer snapshots read.",
+      "sha256": "139105296c0686c1ee24610caca1db293ab84162beb0d94aa7a9ad7cbc3352bf"
+    },
+    "skills/ultracave/SKILL.md": {
+      "bytes": 2513,
+      "git_blob_oid": "136db7e5c8804043c5329df8f767789b7d30228f",
+      "review_scope": "Complete current pinned text read; no evaluator prompts or answer snapshots read.",
+      "sha256": "a8da5b0b3501b853e1b98f2ae09fe8dc9c0edf481b1d3fa9529f8557011c1ef8"
+    }
+  },
+  "eval_prompts_or_answer_snapshots_inspected": false,
+  "evidence_class": "current-upstream-voice-and-evaluator-source-review-not-agent-efficacy",
+  "mirrored_contents_changed": false,
+  "native_runtime_installed": false,
+  "native_web_research": {
+    "external_llm": false,
+    "markdown_characters": 13430,
+    "native_result_sha256": "0a8896622cc54aab2e7dd79610ac1c09ef92c5278833b4a2bdc53be5072ec24b",
+    "provider_source_changed_during_execution": false,
+    "provider_version": "0.9.4+superzip.portable2",
+    "release_body_scope_reviewed": true,
+    "robots_checks": true,
+    "status_code": 200,
+    "success": true,
+    "tool": "Crawl4AI",
+    "url": "https://github.com/JuliusBrussee/caveman/releases/tag/v3.2.0"
+  },
+  "new_agent_calls_performed": false,
+  "open_scope": [
+    "Native proxy, installers, companion artifacts and compression engine are release descriptions, not completely reviewed or installed here.",
+    "The new fidelity evaluator is inspected source, not an executed current runtime benchmark.",
+    "Four immutable adaptation research phases remain in_progress; this receipt does not complete all package-resource review."
+  ],
+  "owner_repositories_modified": false,
+  "published_at": "2026-10-08T05:42:14Z",
+  "release": "v3.2.0",
+  "repository": "https://github.com/JuliusBrussee/caveman",
+  "review_findings": [
+    {
+      "evidence": [
+        "skills/caveman/SKILL.md",
+        "skills/ultracave/SKILL.md",
+        "skills/megacave/SKILL.md"
+      ],
+      "finding": "Upstream voice modes apply throughout user-facing conversation. This repository requires mandatory internal-only lite compression and normal public prose. Existing local instructions preserve exact payload, uncertainty and required harness progress; importing whole-session voice or Classical Chinese instructions would violate that scope.",
+      "id": "voice-scope",
+      "status": "policy-adaptation-required"
+    },
+    {
+      "evidence": [
+        "https://github.com/JuliusBrussee/caveman/releases/tag/v3.2.0"
+      ],
+      "finding": "Release describes inherited subagent modes and cavecrew installation. The repository single-session rule prohibits these operations; source descriptions remain research material only.",
+      "id": "multi-agent-boundary",
+      "status": "excluded-by-controlling-policy"
+    },
+    {
+      "evidence": [
+        "evals/README.md",
+        "evals/score_fidelity.py"
+      ],
+      "finding": "The added scorer uses case-insensitive required/forbidden regexes with exact prompt-set matching through snapshot_contract. Documentation explicitly reports one run per arm, no committed fidelity snapshot, and no reviewed quality-equivalence claim. Pattern presence cannot establish semantic correctness, repository task success or cross-model superiority. No upstream scoring rates are imported.",
+      "id": "new-fidelity-method",
+      "status": "reviewed-not-qualified-as-coding-benchmark"
+    },
+    {
+      "evidence": [
+        "evals/README.md"
+      ],
+      "finding": "Upstream separates no-instruction and concise-instruction controls; its documentation identifies the latter as the incremental skill comparison. Skill-added input and provider usage are separate costs. The published length snapshot predates usage capture and cannot establish total savings or GPT-6.1 Sol results.",
+      "id": "control-selection",
+      "status": "retained-methodological-requirement"
+    }
+  ],
+  "schema_version": 1,
+  "tag_api_verified": true
+}
