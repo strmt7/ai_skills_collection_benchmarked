@@ -1529,6 +1529,7 @@ def write_agent_ready_skills(entries: list[dict[str, Any]]) -> None:
         path = ROOT / entry["agent_ready_path"]
         path.parent.mkdir(parents=True, exist_ok=True)
         rel_source = os.path.relpath(ROOT / entry["mirrored_path"] / "SKILL.md", path.parent).replace(os.sep, "/")
+        rel_policy = os.path.relpath(ROOT / "docs/agent-tools.md", path.parent).replace(os.sep, "/")
         body = f"""---
 name: {json.dumps(entry["name"])}
 description: {json.dumps(entry["description"])}
@@ -1541,6 +1542,8 @@ benchmark_status: "artifact_gated"
 # {entry["name"]}
 
 Use this skill when the task matches the description above or the source path clearly applies. Start with this concise entrypoint; open `{rel_source}` only when implementation details, commands, assets, or references are needed.
+
+Before repository work, read and apply [Mandatory agent tools]({rel_policy}): Caveman for every task, CocoIndex Code before broad code navigation, and Crawl4AI for web-page research. Retain actual execution evidence; do not claim unavailable tools ran. Repository-level rules remain controlling.
 
 ## Workflow
 
@@ -1576,7 +1579,8 @@ Do not claim this skill passed a runtime benchmark until a validated artifact ex
     (target / "README.md").write_text(
         f"# Agent-Ready Skills\n\n"
         f"This directory contains `{len(entries)}` compact skill entrypoints, grouped by category and source tier. Each entrypoint is a separate `SKILL.md` file with frontmatter and a local pointer to the audited source mirror under `included/skills/`.\n\n"
-        "Use these files when an agent needs a concise starting point. Use the source mirrors when full upstream detail is required.\n",
+        "Use these files when an agent needs a concise starting point. Use the source mirrors when full upstream detail is required.\n\n"
+        "Every agent working in this repository must apply [Mandatory agent tools](../../docs/agent-tools.md): Caveman, CocoIndex Code and Crawl4AI, within their required task scopes.\n",
         encoding="utf-8",
     )
 

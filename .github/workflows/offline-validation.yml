@@ -55,6 +55,8 @@ jobs:
           print(f"Validated {len(data)} catalog records")
       - name: Validate catalog and mirrors
         run: python tools/validate_catalog.py
+      - name: Enforce mandatory agent-tool routing
+        run: python tools/validate_agent_tool_policy.py --check --json
       - name: Validate benchmark and provenance artifacts
         shell: bash
         run: |

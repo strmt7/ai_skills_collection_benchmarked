@@ -1,5 +1,25 @@
 # Repository Agent Instructions
 
+## Mandatory agent tools
+
+Caveman, CocoIndex Code and Crawl4AI are mandatory for every AI agent working
+in this repository, including agents entering through a generated skill.
+Read and apply [Mandatory agent tools](docs/agent-tools.md) and its three local
+skills before relevant work. Caveman applies to every task; CocoIndex Code must
+precede broad conceptual repository navigation; Crawl4AI must perform web-page
+research and source-content reading. These are requirements, not preferences.
+Retain actual source-bound search and crawl receipts. Installation, a marker or
+a written plan does not prove use. Missing tooling requires diagnosis and
+disclosure, never an invented pass. Preserve the single-session rule, immutable
+mirrors, independent benchmarks and all access boundaries.
+Before accepting task completion, validate its classified execution receipt with
+`python tools/validate_agent_tool_policy.py --check --execution-receipt <receipt> --json`.
+
+CI enforces the policy's presence, linked skills and every catalog entrypoint
+with `python tools/validate_agent_tool_policy.py --check --json`. This checks
+repository routing; it cannot independently prove an external agent followed
+the instructions. Actual execution evidence remains mandatory.
+
 ## Pinned Karpathy agent baseline
 
 Adapted from
@@ -150,6 +170,7 @@ them locally with `pip install -e '.[test,lint]'` and the commands listed in
 - **Lint + format**: `ruff check tools tests` and `ruff format --check tools tests`. Configured in `pyproject.toml` (`[tool.ruff]`).
 - **Type check**: `mypy tools tests` runs across supported Python 3.11/3.12/3.13/3.14 runtimes, pinned to their current security or maintenance patch releases. Python 3.10 reached end of life in October 2026 and is no longer a supported runtime.
 - **Catalog**: `python3 tools/validate_catalog.py` collects every drift entry in a single run (no fail-fast).
+- **Mandatory agent tools**: `python3 tools/validate_agent_tool_policy.py --check --json` verifies all three local skills, policy links and every generated entrypoint.
 - **Static benchmarks freshness**: `python3 tools/run_static_benchmarks.py --check`.
 - **Skill risk audit freshness**: `python3 tools/audit_skill_quality.py --check`.
 - **Tests**: `python3 -m pytest -q -n auto` runs the full suite in parallel under `pytest-xdist`.

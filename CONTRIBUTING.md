@@ -15,6 +15,7 @@ locally with the toolchain installed via `pip install -e '.[test,lint]'`:
 | Format | `ruff format --check tools tests` | `.github/workflows/ruff.yml` |
 | Types | `mypy tools tests` (supported matrix: 3.11/3.12/3.13/3.14) | `.github/workflows/mypy.yml` |
 | Catalog | `python3 tools/validate_catalog.py` | `.github/workflows/offline-validation.yml` |
+| Mandatory agent tools | `python3 tools/validate_agent_tool_policy.py --check --json` | `.github/workflows/offline-validation.yml` |
 | Static benchmarks | `python3 tools/run_static_benchmarks.py --check` | `.github/workflows/offline-validation.yml` |
 | Risk audit | `python3 tools/audit_skill_quality.py --check` | `.github/workflows/offline-validation.yml` |
 | Tests | `python3 -m pytest -q -n auto` (supported matrix: 3.11/3.12/3.13/3.14) | `.github/workflows/offline-validation.yml` |
