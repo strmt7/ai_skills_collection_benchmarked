@@ -2,6 +2,7 @@
 name: cocoindex-code-search
 metadata:
   mandatory: true
+  bypass_allowed: false
   trigger: broad_navigation
 description: Require current-root-bound CocoIndex Code retrieval before broad conceptual navigation and confirm hits in live source.
 ---
@@ -22,6 +23,8 @@ confirm relevant hits with exact live source reads. A ranking is not completenes
 Use isolated reviewed provider and cache paths explicitly. Refresh only for a
 relevant source change. Never index secrets or unrelated ignored input, upload
 private source, overwrite another repository's MCP registration, or interfere
-with its daemon/index. If unavailable, diagnose and disclose the exact failure
-before bounded `rg`; never claim an unexecuted search. This is a development tool,
-not a runtime dependency, agent efficacy benchmark or delegation permission.
+with its daemon/index. If unavailable or stale, diagnose and disclose the exact
+failure, then restore the tool before broad navigation. Do not bypass it with
+`rg` or another search tool; exact known-scope `rg` remains appropriate. Never
+claim an unexecuted search. This is a development tool, not a runtime dependency,
+agent efficacy benchmark or delegation permission.
