@@ -23,6 +23,7 @@ python3 -m pip install -e '.[test,lint]'
 # 1. Catalog & cross-reference validation (collects all errors, exits non-zero
 #    on any drift). Runs offline; no source checkouts required.
 python3 tools/validate_catalog.py
+python3 tools/validate_agent_tool_policy.py --check --json
 
 # 2. Source-lock validator (offline by default; falls back to env-driven live
 #    mode when AI_SKILL_SOURCE_ROOT points at a real directory).
