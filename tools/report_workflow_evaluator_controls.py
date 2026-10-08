@@ -283,8 +283,8 @@ def main(argv: list[str] | None = None) -> int:
             if args.check:
                 if json.loads(output.read_bytes()) != result:
                     result["errors"].append("derived report differs from retained native evidence")
-            else:
-                output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+            elif not output.exists() or json.loads(output.read_bytes()) != result:
+                output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8", newline="\n")
     except (OSError, ValueError, TypeError, KeyError) as exc:
         result = {"ok": False, "errors": [str(exc)]}
     result["ok"] = not result["errors"]

@@ -133,6 +133,25 @@ def test_cli_checks_without_running_providers_and_rejects_report_tampering(tmp_p
     assert "differs" in capsys.readouterr().out
 
 
+@pytest.mark.parametrize("newline", ["\n", "\r\n"])
+def test_regeneration_preserves_equivalent_evidence_bytes(tmp_path: Path, bundle, newline, capsys):
+    (tmp_path / "bundle.json").write_text(json.dumps(bundle), encoding="utf-8")
+    output = tmp_path / "report.json"
+    text = json.dumps(controls.inspect(bundle), indent=2) + "\n"
+    original = text.replace("\n", newline).encode("utf-8")
+    output.write_bytes(original)
+    assert controls.main(["--evidence-dir", str(tmp_path)]) == 0
+    assert output.read_bytes() == original
+
+
+def test_new_report_has_portable_utf8_lf_bytes(tmp_path: Path, bundle, capsys):
+    (tmp_path / "bundle.json").write_text(json.dumps(bundle), encoding="utf-8")
+    assert controls.main(["--evidence-dir", str(tmp_path)]) == 0
+    raw = (tmp_path / "report.json").read_bytes()
+    assert b"\r" not in raw
+    assert json.loads(raw) == controls.inspect(bundle)
+
+
 @pytest.mark.parametrize("value", [None, {}, [], {"schema_version": True}])
 def test_invalid_envelopes_fail_closed(value):
     assert not controls.inspect(copy.deepcopy(value))["ok"]
