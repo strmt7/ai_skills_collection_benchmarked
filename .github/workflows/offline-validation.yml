@@ -82,6 +82,8 @@ jobs:
         run: python tools/audit_skill_quality.py --check
       - name: Validate complete improvement coverage and evidence
         run: python tools/manage_improvement_ledger.py --check --json
+      - name: Verify native workflow evaluator controls and retained misses
+        run: python tools/report_workflow_evaluator_controls.py --check --json
       - name: Validate improved overlays and original provenance
         run: python tools/validate_improved_skills.py --json
       - name: Verify all matched development trials and report

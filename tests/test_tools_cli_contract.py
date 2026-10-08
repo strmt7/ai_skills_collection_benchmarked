@@ -34,6 +34,7 @@ TOOLS_WITH_CHECK = (
     "run_static_benchmarks.py",
     "evaluate_external_benchmark_methods.py",
     "report_local_markdown_link_failures.py",
+    "report_workflow_evaluator_controls.py",
     "update_readme_badges.py",
 )
 

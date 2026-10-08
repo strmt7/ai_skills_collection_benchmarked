@@ -1,0 +1,50 @@
+{
+  "capture_proofs": [
+    {
+      "capture_bytes": 18148,
+      "capture_sha256": "8dbdc6cbff8de9ffc2d6c40a001b8469060a02e3ca78006115f727be32a0d839",
+      "disposition": "verified-public-source-capture-digest-not-a-credential",
+      "git_blob_oid": "8068c6106dc8e7ec7c17fba3ab9a2d101b37494c",
+      "revision": "current",
+      "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-github-actions-generator-skill-md",
+      "source_sha256": "485a62c648f2a163fe479948409bd4b146dd3b47712f742452efadeab6dcbe3a"
+    },
+    {
+      "capture_bytes": 18148,
+      "capture_sha256": "54709f1f0e224d8487e32a3070679ce2157ccfef280e9b742def439aa7adcf88",
+      "disposition": "verified-public-source-capture-digest-not-a-credential",
+      "git_blob_oid": "8068c6106dc8e7ec7c17fba3ab9a2d101b37494c",
+      "revision": "pinned",
+      "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-github-actions-generator-skill-md",
+      "source_sha256": "485a62c648f2a163fe479948409bd4b146dd3b47712f742452efadeab6dcbe3a"
+    },
+    {
+      "capture_bytes": 31280,
+      "capture_sha256": "0b2429a83bb92327c260ae0f4176b867f3a481b0e56ef51cb20dc19739221bb8",
+      "disposition": "verified-public-source-capture-digest-not-a-credential",
+      "git_blob_oid": "efdeacdf470d5bd1d714ca231d6276f086214971",
+      "revision": "current",
+      "skill_id": "trailofbits-skills-plugins-agentic-actions-auditor-skills-agentic-actions-auditor-skill-md",
+      "source_sha256": "b2bdb88d559bc37e6c2c8314e28e7a2eb47e7cdd9da51e77da347d3517326dc0"
+    },
+    {
+      "capture_bytes": 31002,
+      "capture_sha256": "543c380492de03340e001be676a8ff7a079a910e935d9722f00da43be1eb1ff8",
+      "disposition": "verified-public-source-capture-digest-not-a-credential",
+      "git_blob_oid": "50f44c1eb1768470895a2600097245ca5bc4b5ae",
+      "revision": "pinned",
+      "skill_id": "trailofbits-skills-plugins-agentic-actions-auditor-skills-agentic-actions-auditor-skill-md",
+      "source_sha256": "369b998e1d457c9c88fb9fff915b0b083c551e2c1d3e3d6baa6aa7310ac820d7"
+    }
+  ],
+  "change": "Use capture_sha256 consistently for the digest field. Values, source OIDs, byte captures and native benchmark outcomes are unchanged.",
+  "complete_repository_or_history_security_clean_claim": false,
+  "detector_rules_or_exclusions_changed": false,
+  "evidence_class": "native-scan-noncredential-capture-context-proof",
+  "findings_dismissed_or_allowlisted": false,
+  "initial_native_findings": 4,
+  "initial_native_report_sha256": "72991bf9c4fc9c7c64f6aeb60be6f44b24a579db07a3843de3d145901a4a185a",
+  "initial_native_rule": "generic-api-key",
+  "original_source_review_sha256": "4a07e8042b00f390267ca3cccbb61ade98e189886309966e2e7f78f56ffe004b",
+  "schema_version": 1
+}
