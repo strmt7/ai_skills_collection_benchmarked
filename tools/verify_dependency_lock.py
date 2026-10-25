@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check the Windows/Python 3.12 lock against project requirements without upgrading it."""
+"""Check a lock against selected project extras in this interpreter without upgrading it."""
 
 from __future__ import annotations
 
@@ -19,7 +19,7 @@ def requirement_lines(text: str) -> list[str]:
     return [line.strip() for line in text.splitlines() if line.strip() and not line.lstrip().startswith("#")]
 
 
-def verify(project: Path, lock: Path) -> dict:
+def verify(project: Path, lock: Path, extras: tuple[str, ...] = ("test", "lint", "security")) -> dict:
     # Seed the resolver with the actual lock. Resolving an empty output instead
     # silently upgrades dependencies and confuses new releases with stale inputs.
     with tempfile.TemporaryDirectory(prefix="skills-lock-check-") as directory:
@@ -35,9 +35,7 @@ def verify(project: Path, lock: Path) -> dict:
                 "--allow-unsafe",
                 "--no-emit-index-url",
                 "--no-emit-trusted-host",
-                "--extra=test",
-                "--extra=lint",
-                "--extra=security",
+                *(f"--extra={extra}" for extra in extras),
                 f"--output-file={candidate}",
                 str(project.resolve()),
             ],
@@ -59,6 +57,9 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--project", type=Path, default=ROOT / "pyproject.toml")
     parser.add_argument("--lock", type=Path, default=ROOT / "requirements-lock.txt")
+    parser.add_argument(
+        "--extra", action="append", help="Project extra to verify; repeatable (default: test, lint, security)"
+    )
     parser.add_argument("--json", action="store_true")
     return parser
 
@@ -66,7 +67,7 @@ def build_parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
-        result = verify(args.project, args.lock)
+        result = verify(args.project, args.lock, tuple(args.extra) if args.extra else ("test", "lint", "security"))
     except (OSError, subprocess.TimeoutExpired) as exc:
         result = {"valid": False, "errors": [str(exc)]}
     print(json.dumps(result, sort_keys=True) if args.json else result)

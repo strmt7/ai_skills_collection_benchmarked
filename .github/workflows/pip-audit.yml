@@ -20,9 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
-          python-version: "3.14.8"
+          python-version: "3.14.9"
           cache: "pip"
           cache-dependency-path: pyproject.toml
       - name: Install pip-audit
@@ -30,12 +30,12 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -e '.[security]'
 
-      - name: Audit pyproject (all extras)
-        run: pip-audit --strict --requirement requirements-lock.txt
+      - name: Audit validation and report dependency graphs
+        run: pip-audit --strict --requirement requirements-lock.txt --requirement requirements-reports-lock.txt
 
   lock-consistency:
     # pip-tools locks one environment, not a universal cross-platform graph.
-    # Its seeded consistency is verified on Windows with Python 3.14.8;
+    # Its seeded consistency is verified on Windows with Python 3.14.9;
     # Linux audits the locked package graph above.
     runs-on: windows-latest
     # Apply before checkout; configuring Git in a later step is too late.
@@ -45,12 +45,14 @@ jobs:
       GIT_CONFIG_VALUE_0: "true"
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
-          python-version: "3.14.8"
+          python-version: "3.14.9"
           cache: "pip"
           cache-dependency-path: requirements-lock.txt
       - name: Install hashed validation environment
         run: python -m pip install --require-hashes -r requirements-lock.txt
       - name: Verify seeded lock against project requirements
         run: python tools/verify_dependency_lock.py --json
+      - name: Verify seeded report lock against report requirements
+        run: python tools/verify_dependency_lock.py --lock requirements-reports-lock.txt --extra reports --json
