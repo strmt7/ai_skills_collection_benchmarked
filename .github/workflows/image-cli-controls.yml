@@ -1,0 +1,67 @@
+name: Image CLI acceptance controls
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 7 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: image-cli-controls-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  repaired-cli:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    env:
+      GIT_CONFIG_COUNT: "1"
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: "true"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.14.9"
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "26.12.1"
+          cache: npm
+          cache-dependency-path: included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json
+      - name: Select the qualified npm release
+        run: npm install --global npm@12.2.1 --ignore-scripts --no-fund
+      - name: Prepare the source-locked repair without changing the mirror
+        shell: bash
+        run: >-
+          python included/improved/skills/cover-image-workflow-current/scripts/prepare_cli.py
+          --source included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli
+          --output "$RUNNER_TEMP/repaired-image-cli"
+      - name: Install the complete locked graph without lifecycle scripts
+        shell: bash
+        run: npm ci --ignore-scripts --no-fund --prefix "$RUNNER_TEMP/repaired-image-cli"
+      - name: Audit the installed graph
+        shell: bash
+        run: npm audit --prefix "$RUNNER_TEMP/repaired-image-cli"
+      - name: Run independent acceptance checks with intercepted provider responses
+        shell: bash
+        run: >-
+          node benchmarks/dependency-regressions/image_cli_acceptance_controls.mjs
+          --package-root "$RUNNER_TEMP/repaired-image-cli"
+          --output "$RUNNER_TEMP/image-cli-acceptance.json"
+      - name: Retain actual acceptance and preparation receipts
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: image-cli-acceptance-${{ matrix.os }}
+          path: |
+            ${{ runner.temp }}/image-cli-acceptance.json
+            ${{ runner.temp }}/repaired-image-cli/repair-preparation.json
+          if-no-files-found: error
+          retention-days: 30

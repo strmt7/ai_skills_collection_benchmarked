@@ -84,13 +84,18 @@
       "license_source_sha": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4",
       "original_path": "included/improved/skills/cover-image-workflow-current/provenance/original-SKILL.md",
       "overlay_path": "included/improved/skills/cover-image-workflow-current",
-      "overlay_sha256": "a1ef616b2475af6802d217deaf33ccc3cb5ec65d73845461b236d7f6f8dcb4f9",
+      "overlay_sha256": "44f0bac52d1cd7b9bb23bdcd588bcba22ded2a1d0b32a192c6439e924899b12b",
       "package_file_sha256": {
         "LICENSE": "8b1855650f4439f83e80337656bf960fe5e06e6d8812ea30cae166e613d57304",
-        "NOTICE.md": "799c04989371130d09e015bb71502cd82e08255e01c69887342f51de0b081a3c",
-        "SKILL.md": "a1ef616b2475af6802d217deaf33ccc3cb5ec65d73845461b236d7f6f8dcb4f9",
+        "NOTICE.md": "0a394fedc38c713d49b70b645015791e0cb52e53e737bbd0330f13047d95b283",
+        "SKILL.md": "44f0bac52d1cd7b9bb23bdcd588bcba22ded2a1d0b32a192c6439e924899b12b",
+        "assets/cli.js": "3f8feabfbcd3d58b5dbe2c161348c28cdec393eb521f5daaabf77564ce5acd71",
+        "assets/imageValidator.js": "70643e57021b25098716d79acd699ad727c8922e0fd28b9f9f104a6848d31f47",
         "provenance/original-SKILL.md": "f5ab67d3ed7b80e1e7ad7dc34175633f28b3acf053f7a4366fc4b76960587fcc",
-        "references/qualified-implementation.md": "ad2c3e4cd0a3eec20e68195ed4085b962450a72cbe45b357cda1a78a07145c47"
+        "references/cli-repair.md": "27326a23006678820031656f2ebb5b363be42c27191585b47247d16cccb06fa4",
+        "references/qualified-implementation.md": "ad2c3e4cd0a3eec20e68195ed4085b962450a72cbe45b357cda1a78a07145c47",
+        "references/source-files.json": "9d0637ea89bf43a32592a8f7c34b63f12c1147181fb2a8bbff7050c5ef0a1021",
+        "scripts/prepare_cli.py": "00216393e2f046100eea1fb125b14dc62fb79e4a57f607fd52e8727c3dc47272"
       },
       "performance_status": "unbenchmarked",
       "skill_id": "varnan-tech-opendirectory-packages-cli-skills-blog-cover-image-cli-skill-md",

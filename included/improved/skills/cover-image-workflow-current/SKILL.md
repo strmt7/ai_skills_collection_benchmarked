@@ -23,6 +23,9 @@ preview endpoint current. For a custom implementation, consult
 [qualified implementation notes](references/qualified-implementation.md).
 Keep an exact dependency graph and reproduce local response/image controls
 before relying on it. An advisory audit is one check, not proof of correct output.
+For a task specifically maintaining the historical CLI, use the explicit
+[source-locked acceptance repair](references/cli-repair.md). Its component
+controls qualify only the documented repair boundary.
 
 Keep credentials out of command arguments, logs, prompts, screenshots and source.
 Prefer the configured connector or process-scoped credentials. Do not call a
