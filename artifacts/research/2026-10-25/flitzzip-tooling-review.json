@@ -1,0 +1,68 @@
+{
+  "source_repo": "strmt7/FlitzZip",
+  "head_at_inspection": "0429b39afbfb222419136d0fba50b81b07d36402",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "ee7260aa4acc2802203b5d164893260735cb8e83d8d494976e9208c6167ce5a6",
+      "changed_from_head": false,
+      "scope_reviewed": "complete"
+    },
+    {
+      "path": ".agents/skills/caveman/SKILL.md",
+      "sha256": "9170b54be30f2896ae97eaf9c536e1c4856826a14d5726cc551113646e222f08",
+      "changed_from_head": false,
+      "scope_reviewed": "complete"
+    },
+    {
+      "path": ".agents/skills/cocoindex-code-search/SKILL.md",
+      "sha256": "4dfb900e30bcaa9628d930a26c2c1376679439d236a0f877bdac1785cf29d6f1",
+      "changed_from_head": false,
+      "scope_reviewed": "complete"
+    },
+    {
+      "path": "docs/crawl4ai.md",
+      "sha256": "8ca0cee95d852f94ccb655d3594d8f460a799300cdcff94796229f6d35de686c",
+      "changed_from_head": false,
+      "scope_reviewed": "selected_lines_1_to_220"
+    },
+    {
+      "path": "docs/development-context.md",
+      "sha256": "8f8cec99102a141b21033c811ecabcfb4dd4ab693749a980f94e9666bb6c529d",
+      "changed_from_head": false,
+      "scope_reviewed": "selected_lines_1_to_130"
+    },
+    {
+      "path": "tools/crawl4ai_tool.py",
+      "sha256": "7d021cc792df314ea8426ee255e6e1f9cbb0c2bc638bc9f5fe6d70875416729a",
+      "changed_from_head": false,
+      "scope_reviewed": "selected_sections_only"
+    },
+    {
+      "path": "tools/cocoindex_agent_search.py",
+      "sha256": "4cc402c2c7a1f06ec4558b3eb33dc59c6ebd283585fb5526f8d23295fdbcd392",
+      "changed_from_head": false,
+      "scope_reviewed": "selected_sections_only"
+    },
+    {
+      "path": "tools/agent_context.py",
+      "sha256": "d3d6b1a0db06912d8322271e79b7e74e9efdb2b6c3f9aabb35507ba69731ff29",
+      "changed_from_head": false,
+      "scope_reviewed": "selected_sections_only"
+    }
+  ],
+  "other_repository_modified": false,
+  "latest_upstream_release_claim": false,
+  "applicable_findings": [
+    "Bound exact source windows and report fields before loading long content",
+    "Do not reuse read caches after context loss",
+    "Per-checkout CPU index and before/after freshness",
+    "Verify normal dependency resolution and live consumers after tool upgrades",
+    "Preserve native redirects and extraction failures separately"
+  ],
+  "not_adopted": [
+    "Fallback to another web reader: this repository forbids it",
+    "Older CocoIndex Code0.2.41 pin: reviewed current0.2.42 already installed",
+    "Caveman runtime/cloud synchronization hooks: not required by internal-only overlay"
+  ]
+}
