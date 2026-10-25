@@ -33,6 +33,16 @@ jobs:
       - name: Audit validation and report dependency graphs
         run: pip-audit --strict --requirement requirements-lock.txt --requirement requirements-reports-lock.txt
 
+      - name: Audit all pinned Crawl4AI runtime and build records
+        # Native hash installs + pip check in crawl4ai-provider.yml prove graph
+        # completeness on Windows CPython 3.13.17. Audit their exact public
+        # coordinates here without attempting Linux installation of Windows wheels.
+        run: >-
+          pip-audit --strict --disable-pip --no-deps
+          --requirement toolchains/crawl4ai/requirements.txt
+          --requirement toolchains/crawl4ai/requirements-build.txt
+          --requirement toolchains/crawl4ai/requirements-bootstrap.txt
+
   lock-consistency:
     # pip-tools locks one environment, not a universal cross-platform graph.
     # Its seeded consistency is verified on Windows with Python 3.14.9;

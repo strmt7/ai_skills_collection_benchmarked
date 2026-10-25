@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "evidence_class": "crawl4ai-native-component-controls",
+  "provider_version": "0.9.5",
+  "pydantic_version": "2.14.1",
+  "nltk_version": "3.10.4",
+  "evaluator_sha256": "56ce398e74626fff0b69452a8f0924db745bd74e265f3899cc871c63488d24ee",
+  "checks": [
+    {
+      "name": "native_failure_json",
+      "passed": false,
+      "error_type": "PydanticSerializationError",
+      "error": "Unable to serialize unknown type: <class 'property'>"
+    },
+    {
+      "name": "cli_style_failure_json",
+      "passed": false,
+      "error_type": "ValueError",
+      "error": "property descriptor entered CLI-style JSON"
+    },
+    {
+      "name": "explicit_fit_html",
+      "passed": true
+    },
+    {
+      "name": "assigned_fit_html",
+      "passed": true
+    },
+    {
+      "name": "null_field_default",
+      "passed": false,
+      "error_type": "ValueError",
+      "error": "data-field default is not null"
+    },
+    {
+      "name": "markdown_and_preprocessed_data",
+      "passed": true
+    },
+    {
+      "name": "managed_explicit_stealth_False",
+      "passed": false,
+      "error_type": "ValueError",
+      "error": "automation hiding does not follow explicit stealth mode"
+    },
+    {
+      "name": "ordinary_explicit_stealth_False",
+      "passed": false,
+      "error_type": "ValueError",
+      "error": "automation hiding does not follow explicit stealth mode"
+    },
+    {
+      "name": "managed_explicit_stealth_True",
+      "passed": true
+    },
+    {
+      "name": "ordinary_explicit_stealth_True",
+      "passed": true
+    },
+    {
+      "name": "http_exact_binary_download",
+      "passed": false,
+      "error_type": "HTTPCrawlerError",
+      "error": "HTTP request failed: module 'os' has no attribute 'O_NOFOLLOW'"
+    },
+    {
+      "name": "binary_write_and_read",
+      "passed": false,
+      "error_type": "AttributeError",
+      "error": "module 'os' has no attribute 'O_NOFOLLOW'"
+    },
+    {
+      "name": "append_keeps_prefix",
+      "passed": false,
+      "error_type": "AttributeError",
+      "error": "module 'os' has no attribute 'O_NOFOLLOW'"
+    },
+    {
+      "name": "unicode_destination",
+      "passed": false,
+      "error_type": "AttributeError",
+      "error": "module 'os' has no attribute 'O_NOFOLLOW'"
+    },
+    {
+      "name": "reserved_NUL",
+      "passed": false,
+      "error_type": "ValueError",
+      "error": "download failed without reserved-name admission"
+    },
+    {
+      "name": "reserved_CON",
+      "passed": false,
+      "error_type": "ValueError",
+      "error": "download failed without reserved-name admission"
+    },
+    {
+      "name": "reserved_AUX",
+      "passed": false,
+      "error_type": "ValueError",
+      "error": "download failed without reserved-name admission"
+    },
+    {
+      "name": "reserved_COM1",
+      "passed": false,
+      "error_type": "ValueError",
+      "error": "download failed without reserved-name admission"
+    },
+    {
+      "name": "hardlink_target_preserved",
+      "passed": false,
+      "error_type": "ValueError",
+      "error": "download failed without enforcing the hardlink contract"
+    },
+    {
+      "name": "failure_path_handle_cleanup",
+      "passed": false,
+      "error_type": "AttributeError",
+      "error": "module 'os' has no attribute 'O_NOFOLLOW'"
+    }
+  ],
+  "passed": false,
+  "capability_probe": {
+    "whole_result_json_schema_supported": false,
+    "error_type": "PydanticInvalidForJsonSchema",
+    "error": "Cannot generate a JsonSchema for core_schema.IsInstanceSchema (<class 'crawl4ai.ssl_certificate.SSLCertificate'>)\n\nFor further information visit https://errors.pydantic.dev/2.14/u/invalid-for-json-schema"
+  },
+  "loopback_requests": [
+    "/fixture.bin",
+    "/NUL",
+    "/CON",
+    "/AUX",
+    "/COM1",
+    "/linked.bin"
+  ],
+  "external_pages_requested_by_evaluator": 0,
+  "browser_launches": 0,
+  "browser_or_external_page_qualified": false,
+  "agent_efficacy_scored": false
+}

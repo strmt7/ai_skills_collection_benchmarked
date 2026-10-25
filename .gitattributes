@@ -21,3 +21,6 @@
 /README.md text eol=lf
 /AGENTS.md text eol=lf
 /pyproject.toml text eol=lf
+# Licensed build inputs and qualified wheel hashes require exact source bytes.
+/toolchains/crawl4ai/** text eol=lf
+/toolchains/crawl4ai/vendor/** -text
