@@ -14218,7 +14218,7 @@
             "sha256": "4314d3eb71bd65594c696964ddcd30095a92bcf801f0c693313c6ca5e906e11e"
           },
           {
-            "path": "data/improved_skills_manifest.json",
+            "path": "artifacts/research/2026-10-25/improved-skills-manifest-before-image-cli-repair.json",
             "sha256": "f8bf59149ada1c44c0d302e55b4d48e4a8273d03de80de86b061c0f06495b3de"
           }
         ],
@@ -14471,7 +14471,7 @@
             "sha256": "4314d3eb71bd65594c696964ddcd30095a92bcf801f0c693313c6ca5e906e11e"
           },
           {
-            "path": "data/improved_skills_manifest.json",
+            "path": "artifacts/research/2026-10-25/improved-skills-manifest-before-image-cli-repair.json",
             "sha256": "f8bf59149ada1c44c0d302e55b4d48e4a8273d03de80de86b061c0f06495b3de"
           }
         ],
@@ -14610,6 +14610,22 @@
           {
             "path": "artifacts/research/2026-10-25/image-cli-fast-uri-mirror-refresh.json",
             "sha256": "ab5da4223c7b33f4edb791df07359f976b9b216c47f05316b533df1d81abd7b9"
+          },
+          {
+            "path": "artifacts/research/2026-10-25/image-cli-original-acceptance.json",
+            "sha256": "456d28487721a50cfa9a73d82a0abde0a371dad1580a33a0d5404b846ed493e3"
+          },
+          {
+            "path": "artifacts/research/2026-10-25/image-cli-repaired-acceptance.json",
+            "sha256": "428b591848e55cb22465bc73cebcbf8ae063e16ace7410afac18c778bbb4093a"
+          },
+          {
+            "path": "artifacts/research/2026-10-25/image-cli-repair-preparation.json",
+            "sha256": "c7eff254d10959d8afab799cf5eaf36939f8aa2aa1d0efb954ce3f1d3d3318f2"
+          },
+          {
+            "path": "docs/research-image-cli-acceptance.md",
+            "sha256": "6d559d80d8aeec547526dbc2dc781a978577752a5e15b0e6f3ac020f7efcbfe6"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -14623,20 +14639,23 @@
             "status": "pending"
           },
           "LICENSE": {
+            "review_scope": "Complete ISC copyright, permission and disclaimer read; unchanged notice retained in the explicit repair overlay",
             "sha256": "8b1855650f4439f83e80337656bf960fe5e06e6d8812ea30cae166e613d57304",
-            "status": "pending"
+            "status": "reviewed"
           },
           "README.md": {
             "sha256": "7c31928d79f856d5e08efc1a1931bafe46045d4f171a15cb6b523680f215821b",
             "status": "pending"
           },
           "SKILL.md": {
+            "review_scope": "Complete descriptive-only source entrypoint read; task/evaluator/expected outcomes independently specified outside its text",
             "sha256": "f5ab67d3ed7b80e1e7ad7dc34175633f28b3acf053f7a4366fc4b76960587fcc",
-            "status": "pending"
+            "status": "reviewed"
           },
           "bin/cli.js": {
+            "review_scope": "Complete source and credential source-to-log trace read; native original/repaired identical acceptance controls cover getters, retries, schema consumption and file preservation; provider and storage readiness remain unqualified",
             "sha256": "16fbfdb28741832cf896ae6817cd98c0cf99372cdd9f04f80b0fcd4e260bf1cd",
-            "status": "pending"
+            "status": "reviewed"
           },
           "examples/100x_UX_Research_AI_Agent.png": {
             "sha256": "f6d2280ee17c810067e7c8b8612336f8aae0fd8b8e9e8255547cf5c977817bf9",
@@ -14685,12 +14704,14 @@
             "status": "reviewed"
           },
           "src/geminiGenerator.js": {
+            "review_scope": "Complete request/response source read; intercepted valid generation and feedback propagation exercised; obsolete preview configuration retained and real provider/image quality unqualified",
             "sha256": "113b89e8c8e8fb2514dc05fa12ee731fdc5d067539b97c775fa29b95c3dfd274",
-            "status": "pending"
+            "status": "reviewed"
           },
           "src/imageValidator.js": {
+            "review_scope": "Complete critic request/parse source read; native malformed/type-invalid response controls reproduce defects and qualify a separate schema repair; no model-fidelity claim",
             "sha256": "e8c7e925c341b7a3f7a6237c5c2c7212ddcf9875c1921f2cdeb9b215e44f7fad",
-            "status": "pending"
+            "status": "reviewed"
           },
           "src/logoFetcher.js": {
             "sha256": "882c5e1001dbe84ffcb0d001863742be1e344e1b3a7d84d3b6c343e463de695e",
@@ -14708,9 +14729,25 @@
           {
             "path": "artifacts/research/2026-10-25/image-cli-fast-uri-mirror-refresh.json",
             "sha256": "ab5da4223c7b33f4edb791df07359f976b9b216c47f05316b533df1d81abd7b9"
+          },
+          {
+            "path": "artifacts/research/2026-10-25/image-cli-original-acceptance.json",
+            "sha256": "456d28487721a50cfa9a73d82a0abde0a371dad1580a33a0d5404b846ed493e3"
+          },
+          {
+            "path": "artifacts/research/2026-10-25/image-cli-repaired-acceptance.json",
+            "sha256": "428b591848e55cb22465bc73cebcbf8ae063e16ace7410afac18c778bbb4093a"
+          },
+          {
+            "path": "artifacts/research/2026-10-25/image-cli-repair-preparation.json",
+            "sha256": "c7eff254d10959d8afab799cf5eaf36939f8aa2aa1d0efb954ce3f1d3d3318f2"
+          },
+          {
+            "path": "docs/research-image-cli-acceptance.md",
+            "sha256": "6d559d80d8aeec547526dbc2dc781a978577752a5e15b0e6f3ac020f7efcbfe6"
           }
         ],
-        "scope": "Declared dependency advisory update only; existing masking and false-success defects remain",
+        "scope": "Declared advisory graph retained; separate licensed source-locked overlay repairs credential display, QA schema, retry exhaustion and explicit overwrite. Immutable original defects and unqualified provider/storage/resource boundaries remain; no agent efficacy claim.",
         "status": "in_progress"
       },
       "source_repo": "Varnan-Tech/opendirectory",

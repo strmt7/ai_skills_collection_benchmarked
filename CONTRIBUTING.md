@@ -21,6 +21,7 @@ locally with the toolchain installed via `pip install -e '.[test,lint]'`:
 | Workflow evaluator controls | `python3 tools/report_workflow_evaluator_controls.py --check --json` | `.github/workflows/offline-validation.yml` |
 | Tests | `python3 -m pytest -q -n auto` (supported matrix: 3.11/3.12/3.13/3.14) | `.github/workflows/offline-validation.yml` |
 | Compile | `python3 -m compileall -q tools tests` | `.github/workflows/offline-validation.yml` |
+| Image CLI acceptance | Source-locked preparation, `npm ci --ignore-scripts`, audit and independent intercepted controls; see [`repair evidence`](docs/research-image-cli-acceptance.md) | `.github/workflows/image-cli-controls.yml` |
 | Secrets (in-repo) | `python3 tools/check_no_secret_patterns.py --history` | `.github/workflows/secret-scan.yml` |
 | Secrets (gitleaks) | `gitleaks git --exit-code 1 .` | `.github/workflows/secret-scan.yml` |
 
