@@ -1,0 +1,139 @@
+name: Crawl4AI source build controls
+
+on:
+  push:
+    paths:
+      - "toolchains/crawl4ai/**"
+      - "tools/*crawl4ai*.py"
+      - "tools/_catalog_publication.py"
+      - "tests/test_crawl4ai_source.py"
+      - ".github/workflows/crawl4ai-provider.yml"
+  pull_request:
+    paths:
+      - "toolchains/crawl4ai/**"
+      - "tools/*crawl4ai*.py"
+      - "tests/test_crawl4ai_source.py"
+      - ".github/workflows/crawl4ai-provider.yml"
+  workflow_dispatch:
+  schedule:
+    - cron: "35 7 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: crawl4ai-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  native-controls:
+    runs-on: windows-latest
+    timeout-minutes: 25
+    env:
+      GIT_CONFIG_COUNT: "1"
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: "true"
+      PYTHONUTF8: "1"
+      PYTHONNOUSERSITE: "1"
+      PYTHONHASHSEED: "0"
+      PIP_CONFIG_FILE: "nul"
+      PIP_DISABLE_PIP_VERSION_CHECK: "1"
+      DO_NOT_TRACK: "1"
+      LITELLM_TELEMETRY: "False"
+      HF_HUB_DISABLE_TELEMETRY: "1"
+      TOKENIZERS_PARALLELISM: "false"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.13.17"
+          cache: "pip"
+          cache-dependency-path: "toolchains/crawl4ai/requirements*.txt"
+
+      - name: Create private disposable build caches
+        shell: pwsh
+        run: |
+          $privateRoot = Join-Path $env:RUNNER_TEMP ("crawl4ai-" + [guid]::NewGuid().ToString("N"))
+          New-Item -ItemType Directory -Path $privateRoot -ErrorAction Stop | Out-Null
+          $paths = @{
+            HOME = "profile"; USERPROFILE = "profile"; APPDATA = "appdata"; LOCALAPPDATA = "localappdata"
+            TEMP = "temporary"; TMP = "temporary"; NLTK_DATA = "nltk"
+            CRAWL4AI_BASE_DIRECTORY = "runtime-data"; CRAWL4_AI_BASE_DIRECTORY = "setup-data"
+          }
+          foreach ($entry in $paths.GetEnumerator()) {
+            $value = Join-Path $privateRoot $entry.Value
+            New-Item -ItemType Directory -Force -Path $value | Out-Null
+            Add-Content -LiteralPath $env:GITHUB_ENV -Value ($entry.Key + "=" + $value)
+          }
+          # Upstream setup.py clears CRAWL4_AI_BASE_DIRECTORY/.crawl4ai/cache.
+          # Both distinct spellings are confined to this new job-owned tree.
+          $canary = Join-Path $privateRoot "profile/.crawl4ai/cache"
+          New-Item -ItemType Directory -Force -Path $canary | Out-Null
+          Set-Content -LiteralPath (Join-Path $canary "preserve") -Value "unrelated profile cache"
+
+      - name: Admit source archive and prepare independent adaptations
+        shell: pwsh
+        run: |
+          $pin = Get-Content -Raw -LiteralPath toolchains/crawl4ai/source.json | ConvertFrom-Json
+          New-Item -ItemType Directory -Path .venv -ErrorAction Stop | Out-Null
+          Invoke-WebRequest -Uri $pin.archive_url -OutFile .venv/crawl4ai-source.tar.gz -TimeoutSec 60
+          python tools/prepare_crawl4ai_source.py --archive .venv/crawl4ai-source.tar.gz --stage .venv/crawl4ai-source-a --json > .venv/crawl4ai-source-a.json
+          if ($LASTEXITCODE -ne 0) { throw "Source adaptation A failed" }
+          python tools/prepare_crawl4ai_source.py --archive .venv/crawl4ai-source.tar.gz --stage .venv/crawl4ai-source-b --json > .venv/crawl4ai-source-b.json
+          if ($LASTEXITCODE -ne 0) { throw "Source adaptation B failed" }
+
+      - name: Build twice using the complete hashed build graph
+        shell: pwsh
+        run: |
+          python -m venv .venv/crawl4ai-build
+          if ($LASTEXITCODE -ne 0) { throw "Build environment creation failed" }
+          $buildPython = Join-Path $PWD ".venv/crawl4ai-build/Scripts/python.exe"
+          & $buildPython -I -m pip install --require-hashes -r toolchains/crawl4ai/requirements-build.txt
+          if ($LASTEXITCODE -ne 0) { throw "Hashed build installation failed" }
+          & $buildPython -I -m pip check
+          if ($LASTEXITCODE -ne 0) { throw "Build graph is inconsistent" }
+          $env:SOURCE_DATE_EPOCH = (Get-Content -Raw toolchains/crawl4ai/source.json | ConvertFrom-Json).source_date_epoch
+          foreach ($suffix in @("a", "b")) {
+            & $buildPython -I -B -m build --wheel --no-isolation --outdir ".venv/crawl4ai-wheels-$suffix" ".venv/crawl4ai-source-$suffix"
+            if ($LASTEXITCODE -ne 0) { throw "Wheel build failed" }
+            $wheel = @(Get-ChildItem -LiteralPath ".venv/crawl4ai-wheels-$suffix" -Filter *.whl)
+            if ($wheel.Count -ne 1) { throw "Expected one wheel" }
+            python tools/verify_crawl4ai_wheel.py --wheel $wheel[0].FullName --stage ".venv/crawl4ai-admission-$suffix" --json > ".venv/crawl4ai-admission-$suffix.json"
+            if ($LASTEXITCODE -ne 0) { throw "Wheel does not match qualified bytes" }
+          }
+          if ((Get-Content -Raw -LiteralPath (Join-Path $env:HOME ".crawl4ai/cache/preserve")).Trim() -ne "unrelated profile cache") { throw "Upstream setup modified the private profile canary" }
+
+      - name: Run identical evaluator against original and repaired packages
+        shell: pwsh
+        run: |
+          foreach ($candidate in @("original", "repaired")) {
+            python -m venv ".venv/crawl4ai-$candidate"
+            if ($LASTEXITCODE -ne 0) { throw "Runtime creation failed" }
+            $nativePython = Join-Path $PWD ".venv/crawl4ai-$candidate/Scripts/python.exe"
+            & $nativePython -I -m pip install --require-hashes -r toolchains/crawl4ai/requirements-bootstrap.txt
+            if ($LASTEXITCODE -ne 0) { throw "Pinned pip installation failed" }
+            $lock = if ($candidate -eq "original") { "toolchains/crawl4ai/requirements.txt" } else { ".venv/crawl4ai-admission-a/requirements.txt" }
+            & $nativePython -I -m pip install --require-hashes --find-links .venv/crawl4ai-wheels-a -r $lock
+            if ($LASTEXITCODE -ne 0) { throw "Complete hashed runtime installation failed" }
+            & $nativePython -I -m pip check
+            if ($LASTEXITCODE -ne 0) { throw "Runtime graph is inconsistent" }
+            if ($candidate -eq "repaired") {
+              $wheel = Get-ChildItem -LiteralPath .venv/crawl4ai-wheels-a -Filter *.whl
+              & $nativePython tools/verify_crawl4ai_wheel.py --wheel $wheel.FullName --stage .venv/crawl4ai-admission-a --check --installed --json > .venv/crawl4ai-installed.json
+              if ($LASTEXITCODE -ne 0) { throw "Installed source admission failed" }
+            }
+            & $nativePython -I -B tools/check_crawl4ai_contracts.py --fixture-root ".venv/crawl4ai-fixture-$candidate" --output ".venv/crawl4ai-controls-$candidate.json"
+            $status = $LASTEXITCODE
+            $receipt = Get-Content -Raw -LiteralPath ".venv/crawl4ai-controls-$candidate.json" | ConvertFrom-Json
+            if (@($receipt.checks).Count -ne 20) { throw "Incomplete native control execution" }
+            if ($candidate -eq "repaired" -and ($status -ne 0 -or $receipt.passed -ne $true)) { throw "Repaired native controls failed" }
+            if ($candidate -eq "original" -and $status -notin @(0, 1)) { throw "Original native control process failed" }
+          }
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: crawl4ai-native-build-controls
+          path: .venv/crawl4ai-*.json
+          include-hidden-files: true
+          if-no-files-found: error

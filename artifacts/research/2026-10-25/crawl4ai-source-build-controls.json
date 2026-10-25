@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "evidence_class": "crawl4ai-native-source-build-controls",
+  "source_pin_sha256": "5819ccfc43eeaafc4e35aa380d8bb5687141a279ce3a7169e8aa7a9c81dd22f6",
+  "source_date_epoch": 1791973534,
+  "qualified_platform": "Windows x64 CPython 3.13.17",
+  "downstream_version": "0.9.5+catalog.portable3",
+  "upstream_archive_sha256": "84fa6f4970fbb086a68893c9fb18605a93fcd609c72bee6fbb1d2715924afbff",
+  "independent_wheel_builds": [
+    {
+      "build": "a",
+      "wheel_sha256": "a71bec908f46d6c6ebb3c9f34f10a1fb04b15133eab90f50e6e08542aa239706"
+    },
+    {
+      "build": "b",
+      "wheel_sha256": "a71bec908f46d6c6ebb3c9f34f10a1fb04b15133eab90f50e6e08542aa239706"
+    }
+  ],
+  "independent_wheel_builds_byte_identical": true,
+  "native_evaluator_sha256": "56ce398e74626fff0b69452a8f0924db745bd74e265f3899cc871c63488d24ee",
+  "candidate_controls": [
+    {
+      "candidate": "original",
+      "passed": false,
+      "checks": 20,
+      "passing": 5,
+      "evaluator_sha256": "56ce398e74626fff0b69452a8f0924db745bd74e265f3899cc871c63488d24ee"
+    },
+    {
+      "candidate": "portable3",
+      "passed": true,
+      "checks": 20,
+      "passing": 20,
+      "evaluator_sha256": "56ce398e74626fff0b69452a8f0924db745bd74e265f3899cc871c63488d24ee"
+    }
+  ],
+  "capture_sha256": {
+    "crawl4ai-original-controls.json": "b37eecf51946f9cc1b98e438bcddeff3c44e7bbb4ae5f2a0274e195e13d0783a",
+    "crawl4ai-repaired-controls.json": "75ccb1400c3fa9a8d7e40aa02e6e6badeda703e8860fe1b26e6a8a0e35be5a9f",
+    "crawl4ai-complete-lock-audit.json": "c0a3ab8b5ed2ec566979dcecd8acc34df18857370d9d9d165f39f6ce760ab7cb"
+  },
+  "dependency_input_sha256": {
+    "requirements.txt": "3852ff2d1e3c104281aa40857036662deef86ea775d6b7af1e5c5c98225f51a9",
+    "requirements-build.txt": "598c137cde815bcc17fb75f786cd06f3ab08cda0b11b62f1a92491a39783367f",
+    "requirements-bootstrap.txt": "f409e9c999da22f4920b4724c68adadb416a515f38d760dfd34ae6382d43df04"
+  },
+  "external_page_qualified_by_these_controls": false,
+  "agent_efficacy_scored": false,
+  "limits": [
+    "Twenty correlated component controls are not independent coding tasks or statistical effect sizes",
+    "Whole-result JSON-schema generation remains unsupported",
+    "No platform beyond Windows x64 CPython 3.13.17 is qualified",
+    "Original source and failed controls preserved",
+    "Earlier loose failure-classification captures retained privately and superseded by root-cause rejection checks"
+  ]
+}

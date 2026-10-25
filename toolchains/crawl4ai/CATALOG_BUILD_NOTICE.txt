@@ -1,0 +1,21 @@
+AI skills collection Crawl4AI portable source build
+
+Upstream Crawl4AI 0.9.5 source archive, SHA256 84fa6f4970fbb086a68893c9fb18605a93fcd609c72bee6fbb1d2715924afbff.
+Downstream version: 0.9.5+catalog.portable3. This is not an upstream published release.
+Modified 25 October 2026: async_crawler_strategy.py delegates download opening
+and pre-normalization filename admission to catalog_download.py. The module is
+an unchanged Apache-2.0 source file from FlitzZip contributors:
+https://github.com/strmt7/FlitzZip/blob/69580f97f7d360f92fe20f40aedabede811b3e01/tools/crawl4ai_download_opener.py
+SHA256 a289fe4e7f42f46f639dc0090f25c9d72f16dc5c8888906d8b22e60ebd8e4717.
+Its original copyright and license identifier are preserved in the module.
+models.py removes the conflicting fit_html property descriptor while preserving
+the actual optional data field, explicit values, schema and preprocessed HTML.
+Native failure results now serialize their optional default as null.
+__version__.py and license-file packaging identify this source adaptation.
+browser_manager.py now adds the automation-hiding Chromium switch only when
+enable_stealth is explicitly true, preserving that optional SDK mode. The strict
+research configuration uses false and must expose native navigator.webdriver.
+No robots, network, extraction, external-LLM or dependency rule is changed.
+
+This product includes software developed by UncleCode (https://x.com/unclecode)
+as part of the Crawl4AI project (https://github.com/unclecode/crawl4ai).

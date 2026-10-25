@@ -21,6 +21,23 @@ updates:
     open-pull-requests-limit: 5
 
   - package-ecosystem: "pip"
+    directory: "/toolchains/crawl4ai"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "08:00"
+      timezone: "UTC"
+    groups:
+      crawl4ai-minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: "pip"
     directory: "/"
     schedule:
       interval: "weekly"
