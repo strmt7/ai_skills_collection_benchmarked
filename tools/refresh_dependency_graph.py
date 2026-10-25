@@ -57,7 +57,10 @@ def prepare(root: Path, source_root: Path, skill_id: str, receipt_path: str) -> 
         raise ValueError("existing mirror differs from catalog")
     if entry.get("dependency_graph") == graph["id"] and entry["skill_dir_sha256"] == updated_hash:
         return root, {}, 0
-    if entry.get("dependency_graph") is not None or entry["skill_dir_sha256"] != graph["previous_mirror_sha256"]:
+    if (
+        entry.get("dependency_graph") != graph.get("previous_dependency_graph")
+        or entry["skill_dir_sha256"] != graph["previous_mirror_sha256"]
+    ):
         raise ValueError("previous mirror differs from qualified migration baseline")
     for file in catalog.skill_tree_files(original):
         relative = file.relative_to(original).as_posix()

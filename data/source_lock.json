@@ -23378,7 +23378,7 @@
       "skill_count": 28,
       "skills": [
         {
-          "dependency_graph": "blog-cover-image-cli-advisories-2026-10-07",
+          "dependency_graph": "blog-cover-image-cli-advisories-2026-10-25",
           "file_modes": {
             ".github/workflows/publish.yml": "100644",
             ".gitignore": "100644",
@@ -23403,7 +23403,7 @@
           },
           "id": "varnan-tech-opendirectory-packages-cli-skills-blog-cover-image-cli-skill-md",
           "install_name": "blog-cover-image-cli",
-          "skill_dir_sha256": "9d9154d482b45fb4f8bf9865d8a67b7230e13d732d0225560362a6c00ea16645",
+          "skill_dir_sha256": "061f1aa5b361855039ea33b9e8d8bf05e5a56e425316d65bcacafb4953c92948",
           "skill_file_sha256": "f5ab67d3ed7b80e1e7ad7dc34175633f28b3acf053f7a4366fc4b76960587fcc",
           "source_path": "packages/cli/skills/blog-cover-image-cli/SKILL.md"
         },

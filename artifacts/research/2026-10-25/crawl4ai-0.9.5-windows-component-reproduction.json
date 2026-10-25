@@ -1,0 +1,17 @@
+{
+  "evidence_class": "exact-upstream-function-component-reproduction-not-full-crawler-qualification",
+  "package": "crawl4ai",
+  "version": "0.9.5",
+  "wheel_strategy_sha256": "20e1b1d1303ce948397797c23f7c9e5c8daab399edf759686863c60b9c722e9e",
+  "scope": "Only the native upstream _nofollow_opener AST function compiled, without importing or executing the complete provider package",
+  "os_name": "nt",
+  "runtime_result": {
+    "failed_as_expected_on_windows": true,
+    "exception_type": "AttributeError",
+    "message": "module 'os' has no attribute 'O_NOFOLLOW'",
+    "file_created": false
+  },
+  "provider_qualified": false,
+  "existing_repaired_provider_modified": false,
+  "required_action": "Review and qualify the portable no-follow source repair against0.9.5; no global monkeypatch or access-boundary bypass"
+}

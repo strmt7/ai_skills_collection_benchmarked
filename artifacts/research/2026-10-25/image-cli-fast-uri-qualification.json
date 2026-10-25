@@ -1,0 +1,43 @@
+{
+  "agent_efficacy_scored": false,
+  "graph": "blog-cover-image-cli-advisories-2026-10-25",
+  "graph_refresh_replay_idempotent": true,
+  "graphs": {
+    "advisory": {
+      "agent_efficacy_scored": false,
+      "audit_sha256": "e1c60d03681637d06775f69615a894ecbdd4eafdb24efc6cf91df4078e6631fc",
+      "fast_uri": "3.1.9",
+      "files": {
+        "package-lock.json": "68ee0b3318f231e03b1b105b93e758bfcced4afdd9cbec7cd0fb1e82dbaa442f",
+        "package.json": "f2d207d6dab53be002f7e12e58b4ac65a9d21945a07812adc25a547af4de32d7"
+      },
+      "known_advisories": 0,
+      "negative_defects_still_reproduced": true,
+      "runtime_controls": 9,
+      "runtime_sha256": "b08abae3511667eff3c10459c9ce10dc45526bbd60ae918ea0b1f9ef53b8dd92",
+      "source_fixture": "benchmarks/dependency-regressions/fixtures/image-cli-advisory-floor"
+    },
+    "control": {
+      "agent_efficacy_scored": false,
+      "audit_sha256": "8380e4a4e9a28e3bd82bb4dc71e364b2d8db5a8638e01ff2c3640727a4ccd6ae",
+      "fast_uri": "3.1.9",
+      "files": {
+        "package-lock.json": "a466003cd8fed7d2493c54fc9d0cc790146ccc3146647910fe1ea1b01c624368",
+        "package.json": "9a01ea580438a68ab251460d110bf74da1800873eae2b8a2cf6b98e8cb93941b"
+      },
+      "known_advisories": 0,
+      "negative_defects_still_reproduced": true,
+      "runtime_controls": 9,
+      "runtime_sha256": "f0dccc3cb04a1512a23ae0405713c56696c7f30f0906da0b626ba07565c3fbf9",
+      "source_fixture": "benchmarks/dependency-regressions/fixtures/image-cli-current"
+    }
+  },
+  "historical_runtime_artifacts_rewritten": false,
+  "mirrored_skill_text_unchanged": true,
+  "node": "v26.12.1",
+  "npm": "12.2.1",
+  "passed": true,
+  "previous_fixture_bytes_preserved_in": "artifacts/research/2026-10-25/image-cli-prior-graph-bytes.json",
+  "previous_graph": "blog-cover-image-cli-advisories-2026-10-07",
+  "scanners_or_alerts_suppressed": false
+}
