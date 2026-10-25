@@ -263,7 +263,7 @@ def slug(text: str) -> str:
 def git_head(repo_url: str) -> dict[str, Any]:
     command = ["git", "ls-remote", repo_url, "HEAD"]
     try:
-        completed = subprocess.run(command, text=True, capture_output=True, check=False, timeout=60)
+        completed = subprocess.run(command, text=True, encoding="utf-8", capture_output=True, check=False, timeout=60)
         returncode, stdout, stderr = completed.returncode, completed.stdout.strip(), completed.stderr.strip()
     except subprocess.TimeoutExpired as exc:
         output = exc.stdout or b""
@@ -332,7 +332,9 @@ def github_tree_paths(repo_url: str, head_sha: str, *, receipt: dict[str, Any] |
                 ["git", "-C", str(temporary), "rev-parse", "--verify", "FETCH_HEAD^{commit}"],
             ]
             for command in commands:
-                completed = subprocess.run(command, text=True, capture_output=True, check=False, timeout=180)
+                completed = subprocess.run(
+                    command, text=True, encoding="utf-8", capture_output=True, check=False, timeout=180
+                )
                 evidence["commands"].append(
                     {
                         "command": command,
@@ -345,27 +347,31 @@ def github_tree_paths(repo_url: str, head_sha: str, *, receipt: dict[str, Any] |
                     raise RuntimeError(completed.stderr.strip() or "pinned repository tree resolution failed") from None
             if completed.stdout.strip() != head_sha:
                 raise RuntimeError("fetched repository identity differs from requested commit") from api_error
-            tree_command = ["git", "-C", str(temporary), "ls-tree", "-r", "--name-only", head_sha]
+            # Match recursive API paths, including directory entries. NUL
+            # framing preserves Unicode, quotes and embedded newlines exactly.
+            tree_command = ["git", "-C", str(temporary), "ls-tree", "-r", "-t", "--name-only", "-z", head_sha]
             tree = subprocess.run(
                 tree_command,
-                text=True,
+                text=False,
                 capture_output=True,
                 check=False,
                 timeout=60,
             )
+            stdout = tree.stdout.decode("utf-8")
+            stderr = tree.stderr.decode("utf-8", errors="replace")
             evidence["commands"].append(
                 {
                     "command": tree_command,
                     "returncode": tree.returncode,
-                    "stdout": tree.stdout,
-                    "stderr": tree.stderr,
+                    "stdout": stdout,
+                    "stderr": stderr,
                 }
             )
             if tree.returncode != 0:
-                raise RuntimeError(tree.stderr.strip() or "git ls-tree fallback failed") from None
+                raise RuntimeError(stderr.strip() or "git ls-tree fallback failed") from None
             evidence["transport"] = "pinned-git-tree"
             evidence["verified_commit"] = head_sha
-            return sorted(path for path in tree.stdout.splitlines() if path)
+            return sorted(path for path in stdout.split("\0") if path)
 
 
 def registry() -> dict[str, Any]:

@@ -26,5 +26,6 @@
 /toolchains/crawl4ai/vendor/** -text
 # Frozen source-resolution evidence is hashed as exact published bytes.
 /artifacts/external-benchmark-integrations/skillsbench-source-resolution-v3/** -text
+/artifacts/external-benchmark-integrations/skillsbench-source-resolution-v6/** -text
 # This authored schema is bound by the native schema-validation receipt.
 /evaluators/external_benchmark_method_smoke.schema.json text eol=lf

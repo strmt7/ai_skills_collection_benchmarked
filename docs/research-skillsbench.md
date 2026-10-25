@@ -37,6 +37,15 @@ commit identity and reads that exact tree. Truncated API trees require complete
 pinned resolution; malformed heads and timeouts remain failures. API refusals
 and fallback commands are retained in the new receipt.
 
+A second native fixture exposed quoted Unicode paths and missing directory
+entries in the fallback. Git now uses recursive tree entries and NUL framing
+with explicit UTF-8 decoding, preserving the API path representation. The
+[native path-transport control](../artifacts/research/2026-10-25/external-benchmark-unicode-tree-controls.json)
+records the old and corrected paths; unit controls also cover quotes and
+embedded newlines. A native bare Git object containing a CR/LF path proves
+that binary capture preserves those bytes while text-mode capture changes
+them. Neither control creates unsupported Windows filenames.
+
 The [native regression record](../artifacts/research/2026-10-25/external-benchmark-source-binding-controls.json)
 preserves the original incorrect tree and corrected result. Earlier smoke
 artifacts remain unchanged. Their percentages count metadata checks and cannot

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "evidence_class": "native-git-recursive-path-transport-controls",
+  "previous_source_commit": "de2352142f0811068928f1b6b266a919e822d14e",
+  "current_probe_sha256": "808148a77704b5326eeeadaa2f1e385127102c228f5a02cb577e8c5b62b845dc",
+  "requested_commit": "39eb8a8a59736544a449aa7a678b3029180b63fb",
+  "different_default_branch_commit": "63927c502759d594b5bdc6a576a5e9fe25dc2f2f",
+  "api_unavailability_is_controlled": true,
+  "actual_native_git_used": true,
+  "before_paths": [
+    "\"\\350\\265\\204\\346\\226\\231/r\\303\\251sum\\303\\251.txt\"",
+    "pinned-only.txt"
+  ],
+  "after_paths": [
+    "pinned-only.txt",
+    "资料",
+    "资料/résumé.txt"
+  ],
+  "directory_entries_preserved": true,
+  "unicode_names_preserved": true,
+  "requested_commit_verified": true,
+  "crlf_control": {
+    "fixture_commit": "756e8e566c814e42d9b214fe196d9a31adb737e5",
+    "git_tree": "f323e854bc851b0fd2c7a51da0b39840f6e496a2",
+    "git_blob": "ee8c1ee49b4799bbd170233915a897c19e3b55e1",
+    "expected_paths": [
+      "line\r\nbreak.txt"
+    ],
+    "observed_paths": [
+      "line\r\nbreak.txt"
+    ],
+    "text_mode_stdout": "line\nbreak.txt\u0000",
+    "binary_mode_preserves_crlf": true,
+    "unsupported_windows_filenames_created": false
+  },
+  "fixture_commit_identities_verified": 3,
+  "model_or_agent_started": false,
+  "agent_efficacy_scored": false
+}

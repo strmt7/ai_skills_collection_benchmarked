@@ -58,7 +58,8 @@ an isolated admitted runtime and actual native crawl receipts. The 20 CI control
 launch no browser and qualify no external page. Separate local qualification
 also exercised eight actual headless-browser controls and nine NLTK controls,
 and three official pages were captured with the repaired provider. These local
-records do not constitute hosted cross-platform qualification.
+records do not constitute hosted browser qualification. This provider's
+qualified target remains Windows x64.
 
 Strict research uses robots checks, TLS verification, Chromium sandbox opt-in,
 `enable_stealth=False`, an identifying user agent, no personal/persistent profile,

@@ -1,5 +1,11 @@
 # Host-, Agent-, and Installation-Agnostic Setup
 
+Host-agnostic means no dependency on a particular machine, user profile,
+installation path or AI agent. Operating-system requirements remain explicit
+for each component. The qualified [Crawl4AI provider](../toolchains/crawl4ai/README.md)
+targets Windows x64; host independence does not require porting it to other
+operating systems.
+
 This repository is designed so that *validation* of the catalog and *every
 quality gate run by CI* targets Python 3.11–3.14 on Linux and current Python
 on Windows,

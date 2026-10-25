@@ -27,7 +27,7 @@ def test_tree_fallback_fetches_the_requested_commit_instead_of_default_branch(mo
         if "rev-parse" in command:
             return SimpleNamespace(returncode=0, stdout=PIN + "\n", stderr="")
         if "ls-tree" in command:
-            return SimpleNamespace(returncode=0, stdout="pinned-only.py\n", stderr="")
+            return SimpleNamespace(returncode=0, stdout=b"pinned-only.py\0", stderr=b"")
         return SimpleNamespace(returncode=0, stdout="", stderr="")
 
     monkeypatch.setattr(methods.urllib.request, "urlopen", unavailable)
@@ -55,6 +55,29 @@ def test_wrong_fetched_identity_cannot_be_reported_as_requested_tree(monkeypatch
     monkeypatch.setattr(methods.subprocess, "run", native)
     with pytest.raises(RuntimeError, match="identity"):
         methods.github_tree_paths(REPO, PIN)
+
+
+def test_fallback_preserves_unicode_directories_and_nul_framed_paths(monkeypatch):
+    def unavailable(*_args, **_kwargs):
+        raise urllib.error.URLError("controlled API refusal")
+
+    def native(command, **kwargs):
+        if "ls-tree" in command:
+            assert "-z" in command and "-t" in command
+            assert kwargs["text"] is False
+            return SimpleNamespace(
+                returncode=0,
+                stdout='资料\0资料/résumé.txt\0line\r\nbreak.txt\0quote".txt\0'.encode(),
+                stderr=b"",
+            )
+        assert kwargs["encoding"] == "utf-8"
+        if "rev-parse" in command:
+            return SimpleNamespace(returncode=0, stdout=PIN + "\n", stderr="")
+        return SimpleNamespace(returncode=0, stdout="", stderr="")
+
+    monkeypatch.setattr(methods.urllib.request, "urlopen", unavailable)
+    monkeypatch.setattr(methods.subprocess, "run", native)
+    assert methods.github_tree_paths(REPO, PIN) == ["line\r\nbreak.txt", 'quote".txt', "资料", "资料/résumé.txt"]
 
 
 def test_truncated_api_tree_requires_complete_pinned_resolution(monkeypatch):
