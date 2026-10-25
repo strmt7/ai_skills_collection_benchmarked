@@ -1,0 +1,226 @@
+{
+  "schema_version": 1,
+  "evidence_class": "complete-pinned-package-reading-and-native-upstream-diff-not-agent-effectiveness",
+  "source_repo": "trailofbits/skills",
+  "pinned_commit": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+  "current_commit": "196a9073ab10d35bacf111f945e02c00b2c6883a",
+  "source_path": "plugins/agentic-actions-auditor/skills/agentic-actions-auditor",
+  "pinned_resource_count": 13,
+  "pinned_resources_read": 13,
+  "current_resource_count": 13,
+  "upstream_changed_resources": 7,
+  "full_native_package_comparison": true,
+  "all_changed_diffs_read": true,
+  "resources": [
+    {
+      "path": "SKILL.md",
+      "pinned_mirror_sha256": "369b998e1d457c9c88fb9fff915b0b083c551e2c1d3e3d6baa6aa7310ac820d7",
+      "pinned_upstream_sha256": "369b998e1d457c9c88fb9fff915b0b083c551e2c1d3e3d6baa6aa7310ac820d7",
+      "pinned_blob_oid": "50f44c1eb1768470895a2600097245ca5bc4b5ae",
+      "pinned_capture_sha256": "543c380492de03340e001be676a8ff7a079a910e935d9722f00da43be1eb1ff8",
+      "current_upstream_sha256": "b2bdb88d559bc37e6c2c8314e28e7a2eb47e7cdd9da51e77da347d3517326dc0",
+      "current_blob_oid": "efdeacdf470d5bd1d714ca231d6276f086214971",
+      "current_capture_sha256": "a61ef7bed8947800e063beb42d7f8ed7a5ef00122c1874c44f190a3b2db4eb9f",
+      "upstream_changed": true,
+      "mirror_read_scope": "Complete entrypoint, action detection order, classification and reporting instructions"
+    },
+    {
+      "path": "references/action-profiles.md",
+      "pinned_mirror_sha256": "ea75573060fe7e7a4e06d39c45487609d2ff5b583159a2b0d073d244ff5f81cb",
+      "pinned_upstream_sha256": "ea75573060fe7e7a4e06d39c45487609d2ff5b583159a2b0d073d244ff5f81cb",
+      "pinned_blob_oid": "74eaeb1c345713bed1e14a2c04f3f98094363367",
+      "pinned_capture_sha256": "a7bd907401a288420bc360792fdfac0934777dc522e05a5eca9080cd51431cba",
+      "current_upstream_sha256": "bbfaf6abe69b57e6289948340aa649482378b53f752a25cba92e7d4a740c4324",
+      "current_blob_oid": "8b6afc4920e4a71802764e72f3ec7f83f0e530ce",
+      "current_capture_sha256": "c338e735b24b184be241c752f4ca8ab4152e0c6ca0ce9c24ce84e4a265a44525",
+      "upstream_changed": true,
+      "mirror_read_scope": "Complete provider profiles; version/default assertions and directly interpolated shell-output example identified for correction or verification"
+    },
+    {
+      "path": "references/cross-file-resolution.md",
+      "pinned_mirror_sha256": "c15a46bb0695ecc07512ac4007231169301001e5733a720c6ad75606ae5bee95",
+      "pinned_upstream_sha256": "c15a46bb0695ecc07512ac4007231169301001e5733a720c6ad75606ae5bee95",
+      "pinned_blob_oid": "18c4d79edc6367be6d3428016cd576176cfe496d",
+      "pinned_capture_sha256": "47c458aedc161fd412cad794e9fdb827fcdd75bf4a7b29325a83ab3a48d3e3ec",
+      "current_upstream_sha256": "b7d0d31fa24f1b987953ef0c11dc22ad48e81675b34de65c65ff79a74a3e6084",
+      "current_blob_oid": "1ec95b5505f71def1c5f9895493bf87e719264c5",
+      "current_capture_sha256": "d0d23ba90d204b480a3b25f522b495e27302eb4319fd8efee1cf0f970281a73e",
+      "upstream_changed": true,
+      "mirror_read_scope": "Complete composite/reusable resolution, one-level depth cap, input/secret boundary and unresolved-reference rules"
+    },
+    {
+      "path": "references/foundations.md",
+      "pinned_mirror_sha256": "9e0eb90b3bfb53e195251685b1291bdd1d75e07d6c60e634ecb28f72b1723bf3",
+      "pinned_upstream_sha256": "9e0eb90b3bfb53e195251685b1291bdd1d75e07d6c60e634ecb28f72b1723bf3",
+      "pinned_blob_oid": "e8dbf34684590ece8c3fe96cfa109f9e76aa8ac3",
+      "pinned_capture_sha256": "8d1817adbbb9af06789764cccec93de33aa80bf30a0dfb10ca7e1762bd4da55e",
+      "current_upstream_sha256": "722ee7ea1dc06af8fa8cbb6cacb62f3c7c70139c8ed402752dd12c851a195d0e",
+      "current_blob_oid": "a8a7397da09643dce6211739602549bf247fa414",
+      "current_capture_sha256": "1f1b23981e4db8f867303e78ebc49a3a534d25c5086c66e613f0a4e47c570d80",
+      "upstream_changed": true,
+      "mirror_read_scope": "Complete trust-source, event and prompt-field foundations; vendor-specific assertions remain separately unverified"
+    },
+    {
+      "path": "references/vector-a-env-var-intermediary.md",
+      "pinned_mirror_sha256": "7903992f54409760aae64ddb45bb3c26032223443f746ac6e3d8fd281bda877d",
+      "pinned_upstream_sha256": "7903992f54409760aae64ddb45bb3c26032223443f746ac6e3d8fd281bda877d",
+      "pinned_blob_oid": "77388fc7ae219976adc2cb4ca5719f6664db3ef5",
+      "pinned_capture_sha256": "e530ee383c0e7bf0319a53b9170bffd53bb842c6196c96df0443c9c3a5faf38a",
+      "current_upstream_sha256": "7903992f54409760aae64ddb45bb3c26032223443f746ac6e3d8fd281bda877d",
+      "current_blob_oid": "77388fc7ae219976adc2cb4ca5719f6664db3ef5",
+      "current_capture_sha256": "5bb01fc5e25ebbe88002ef29f7021ab96ea24c47b72172bf7d48cccb433bba91",
+      "upstream_changed": false,
+      "mirror_read_scope": "Complete environment-to-prompt trust-flow reference"
+    },
+    {
+      "path": "references/vector-b-direct-expression-injection.md",
+      "pinned_mirror_sha256": "d074c95ee282d56e0174beae3d109ce088f6a8f032d9bd16e523ec2d1d7d94c7",
+      "pinned_upstream_sha256": "d074c95ee282d56e0174beae3d109ce088f6a8f032d9bd16e523ec2d1d7d94c7",
+      "pinned_blob_oid": "9e8cc4825fef789cea9f704ca049d35c1574bc4e",
+      "pinned_capture_sha256": "e0d58ab6995a127145c11b5ed87f3d842aeab68ba491aefd1cb7fa4f8d90decd",
+      "current_upstream_sha256": "be6e5baff68d6770665ce6c7b7995c92dfdec3866b96ea21330c94b340499631",
+      "current_blob_oid": "75e6a7fd961a74937d6e4bdf3b3a611978a8b5dc",
+      "current_capture_sha256": "f009a2daf7bcb09ed3d3a45db93eab1a9353f54ad464e160cbbb6489f766d023",
+      "upstream_changed": true,
+      "mirror_read_scope": "Complete expression/prompt injection reference; instruction influence is not automatic command execution"
+    },
+    {
+      "path": "references/vector-c-cli-data-fetch.md",
+      "pinned_mirror_sha256": "f11d2333f2b3800215311047c0b0ad35a1020c79dbb77614ff66a8c1fef16252",
+      "pinned_upstream_sha256": "f11d2333f2b3800215311047c0b0ad35a1020c79dbb77614ff66a8c1fef16252",
+      "pinned_blob_oid": "630d9e4f14d22fb7adf810176d8436546333f72b",
+      "pinned_capture_sha256": "c1c01b20967b33f4f18ddfc4e57249236316e95a0664745d6d2979bce01be0d3",
+      "current_upstream_sha256": "f11d2333f2b3800215311047c0b0ad35a1020c79dbb77614ff66a8c1fef16252",
+      "current_blob_oid": "630d9e4f14d22fb7adf810176d8436546333f72b",
+      "current_capture_sha256": "5d0bba78546a58201e17c226da920b5345e6c84e8b6b029a6f22ec4cd4c9a8d0",
+      "upstream_changed": false,
+      "mirror_read_scope": "Complete runtime data-fetch reference; fetched metadata is not categorically trusted"
+    },
+    {
+      "path": "references/vector-d-pr-target-checkout.md",
+      "pinned_mirror_sha256": "fc029037bb219aed5e130708eb4911ad235e47f1394e2155b5e40175ddb2d187",
+      "pinned_upstream_sha256": "fc029037bb219aed5e130708eb4911ad235e47f1394e2155b5e40175ddb2d187",
+      "pinned_blob_oid": "659d2f60fc9b9b7b2a847e625b5307308e281d86",
+      "pinned_capture_sha256": "fed58723c6243bb2e98c3bd5b8561af5833c51fa3eb0cd48e8fafc2b90b02e67",
+      "current_upstream_sha256": "fc029037bb219aed5e130708eb4911ad235e47f1394e2155b5e40175ddb2d187",
+      "current_blob_oid": "659d2f60fc9b9b7b2a847e625b5307308e281d86",
+      "current_capture_sha256": "63dc167e776403c62b273e74e39d4d11294efad71d92d00c68633dd1bcca6b98",
+      "upstream_changed": false,
+      "mirror_read_scope": "Complete privileged trigger/checkout reference; platform policies remain dated observations"
+    },
+    {
+      "path": "references/vector-e-error-log-injection.md",
+      "pinned_mirror_sha256": "2c93623d96f49c4ab70bc2dd92e111b2cfca68ff70aaf579efd86812b0df15a9",
+      "pinned_upstream_sha256": "2c93623d96f49c4ab70bc2dd92e111b2cfca68ff70aaf579efd86812b0df15a9",
+      "pinned_blob_oid": "681dd7ae2485c031fd5210cacd42e6b5562cb109",
+      "pinned_capture_sha256": "225dc0ce28a023d4074d9418674c9165a7373a359804db5f7397990f871140cc",
+      "current_upstream_sha256": "2c93623d96f49c4ab70bc2dd92e111b2cfca68ff70aaf579efd86812b0df15a9",
+      "current_blob_oid": "681dd7ae2485c031fd5210cacd42e6b5562cb109",
+      "current_capture_sha256": "af3225d3261b0b4e5a7df6b6188612de3fa83a594c7f04b37716737d841a22ef",
+      "upstream_changed": false,
+      "mirror_read_scope": "Complete log/error provenance reference; prompt framing alone is not a proven security boundary"
+    },
+    {
+      "path": "references/vector-f-subshell-expansion.md",
+      "pinned_mirror_sha256": "99f4228fdb70f855ba80eb7094eb56947dece0431f02b2b39fbaa0fe80e02b3e",
+      "pinned_upstream_sha256": "a9345ace4af2dd167b4bcbeb1864c5883e6186752ded08bcefa9c0182f514dc3",
+      "pinned_blob_oid": "cf98b91c375421854e61e4a65a044d7aeec8adcb",
+      "pinned_capture_sha256": "91ca4b05a057b9a08255cb7d4575037930ef5ef018f87af3d91a42ff0c69240f",
+      "current_upstream_sha256": "d6ede1d6a7769e1b75faed3dfeba7d212e0115fb9ddb09d39145bf65d062ba7f",
+      "current_blob_oid": "5ca7365843780b0d50cecd22154efcfa99c4c9d8",
+      "current_capture_sha256": "fcafb62b07c3f78dc354ca579755c76a60fc21973209d20dd692b00aebe5d358",
+      "upstream_changed": true,
+      "mirror_read_scope": "Complete shell/allowlist reference; upstream proof statements are not independently executed proofs and utilities do not intrinsically interpret shell syntax"
+    },
+    {
+      "path": "references/vector-g-eval-of-ai-output.md",
+      "pinned_mirror_sha256": "b9a47a41dd1470cc469cc030cd6cd6059b35741c78ba9f494c1d18b2fd65b686",
+      "pinned_upstream_sha256": "b9a47a41dd1470cc469cc030cd6cd6059b35741c78ba9f494c1d18b2fd65b686",
+      "pinned_blob_oid": "7e2bbfb63819ac5a25a61695fc594493a17207cf",
+      "pinned_capture_sha256": "6724a6b94ac2416b3ba120029245c7335c70e917b6ef29df94050f2b1233dfb0",
+      "current_upstream_sha256": "b9a47a41dd1470cc469cc030cd6cd6059b35741c78ba9f494c1d18b2fd65b686",
+      "current_blob_oid": "7e2bbfb63819ac5a25a61695fc594493a17207cf",
+      "current_capture_sha256": "b4391619edb4152e3d8c430d95e617141fa585050d07704a73fb8b09ec524cc6",
+      "upstream_changed": false,
+      "mirror_read_scope": "Complete AI-output-to-interpreter flow reference"
+    },
+    {
+      "path": "references/vector-h-dangerous-sandbox-configs.md",
+      "pinned_mirror_sha256": "278df9befc36f231dea2e4d2bf00311657056fa7b87a1a49b0e0e23a141d5935",
+      "pinned_upstream_sha256": "278df9befc36f231dea2e4d2bf00311657056fa7b87a1a49b0e0e23a141d5935",
+      "pinned_blob_oid": "745f256fa37ab630450a9be76b21b7a211f7a906",
+      "pinned_capture_sha256": "e2380ea1970ac4e95049f40ea6ea8ce66d1489f3b5daac0c09db0900edfa85f7",
+      "current_upstream_sha256": "892cb478d91c2e155b4084c5cf707bea5045bb4e2a11c7a5a1131b6212690b86",
+      "current_blob_oid": "e28e4ace81fb01346a8984100f53c2dac7d2b9e6",
+      "current_capture_sha256": "4c176ab3c815925d4bea6e79a1e1573c83b0874448a2337daf47c04e57383735",
+      "upstream_changed": true,
+      "mirror_read_scope": "Complete configuration reference; approval policy, tool authorization, OS sandbox and credential availability require separate analysis"
+    },
+    {
+      "path": "references/vector-i-wildcard-allowlists.md",
+      "pinned_mirror_sha256": "68a4cd774ad829e535a8ec15ee492caefbae8e46f115f345b7f2bf2fecf88f86",
+      "pinned_upstream_sha256": "68a4cd774ad829e535a8ec15ee492caefbae8e46f115f345b7f2bf2fecf88f86",
+      "pinned_blob_oid": "881ee57e23a8bb6dee9b00b53838d727a8e3abb0",
+      "pinned_capture_sha256": "9f7324ded7c12d5717834f7472db8c31617d99135592f1d6d9674d5f96faea49",
+      "current_upstream_sha256": "68a4cd774ad829e535a8ec15ee492caefbae8e46f115f345b7f2bf2fecf88f86",
+      "current_blob_oid": "881ee57e23a8bb6dee9b00b53838d727a8e3abb0",
+      "current_capture_sha256": "baf1efb42dce30f049471e1a4bd7751de02f8b24836381aa58203239fd2bec60",
+      "upstream_changed": false,
+      "mirror_read_scope": "Complete actor reference; correlate action authorization with event/job gates, and treat bot-relayed data by provenance"
+    }
+  ],
+  "license": {
+    "id": "CC-BY-SA-4.0",
+    "path": "artifacts/research/2026-10-25/agentic-workflow-auditor-source-LICENSE.txt",
+    "sha256": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
+    "pinned_and_current_identical": true,
+    "complete_text_read": true
+  },
+  "mirror_to_upstream_comparison_note": "The neutralized mirror differs in an example placeholder in vector F; native pin-to-current comparison excludes that deterministic transformation from upstream semantic changes.",
+  "findings": [
+    {
+      "id": "wrapper-only-early-exit",
+      "pinned_location": "SKILL.md:154",
+      "current_location": "SKILL.md:150",
+      "status": "source-ordering-defect-not-runtime-exploit-proof"
+    },
+    {
+      "id": "unsafe-ai-output-example-labeled-safe",
+      "pinned_location": "references/action-profiles.md:171",
+      "current_location": "references/action-profiles.md:172",
+      "status": "unsafe-pre-shell-template-substitution-remains-upstream"
+    },
+    {
+      "id": "configuration-boundary-conflation",
+      "locations": [
+        "references/action-profiles.md:20",
+        "references/vector-h-dangerous-sandbox-configs.md"
+      ],
+      "status": "approval-tool-and-sandbox-layers-and-credentials-must-be-analyzed-separately"
+    },
+    {
+      "id": "utility-versus-shell-interpretation",
+      "location": "references/vector-f-subshell-expansion.md",
+      "status": "verify-parser-and-invocation-not-program-name"
+    },
+    {
+      "id": "actor-admission-and-data-provenance",
+      "location": "references/vector-i-wildcard-allowlists.md",
+      "status": "event-and-job-gates-and-bot-relayed-inputs-must-be-correlated"
+    }
+  ],
+  "remaining_research": [
+    "Verify current provider defaults and option meanings against pinned action implementations",
+    "Validate nested wrapper coverage and authorization/secret propagation against independently specified tasks",
+    "Qualify any adapted package under the source license in a separate overlay loop"
+  ],
+  "reading_step_complete": true,
+  "overall_research_complete": false,
+  "runtime_security_audit_complete": false,
+  "mirrored_skill_changed": false,
+  "upstream_source_lock_advanced": false,
+  "frozen_evaluators_or_expected_results_changed": false,
+  "new_agent_calls_performed": false,
+  "agent_efficacy_scored": false,
+  "quality_superiority_claim_permitted": false
+}

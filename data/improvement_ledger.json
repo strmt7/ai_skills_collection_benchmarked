@@ -12318,66 +12318,82 @@
           {
             "path": "artifacts/research/2026-10-08/workflow-evaluator-controls/capture-context-proof.json",
             "sha256": "3697518b53344b67a1aced3e397ddeb4e7b9591613f8c36f9b727f26b5ca1c9e"
+          },
+          {
+            "path": "artifacts/research/2026-10-25/agentic-workflow-auditor-review.json",
+            "sha256": "987a7f860f9e6140c95ecb26a78ae4f7bb88794e6757bcc49c3f4de2337bd82b"
+          },
+          {
+            "path": "docs/research-agentic-workflow-auditor.md",
+            "sha256": "80be5b687134e5fe7639610267815e957bb2fdece51347a0066412e595195c39"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
         "resources": {
           "SKILL.md": {
-            "review_scope": "Complete immutable mirrored text read; static review only. Source instructions and attack examples were not executed.",
+            "review_scope": "Complete entrypoint, action detection order, classification and reporting instructions",
             "sha256": "369b998e1d457c9c88fb9fff915b0b083c551e2c1d3e3d6baa6aa7310ac820d7",
             "status": "reviewed"
           },
           "references/action-profiles.md": {
+            "review_scope": "Complete provider profiles; version/default assertions and directly interpolated shell-output example identified for correction or verification",
             "sha256": "ea75573060fe7e7a4e06d39c45487609d2ff5b583159a2b0d073d244ff5f81cb",
-            "status": "pending"
+            "status": "reviewed"
           },
           "references/cross-file-resolution.md": {
+            "review_scope": "Complete composite/reusable resolution, one-level depth cap, input/secret boundary and unresolved-reference rules",
             "sha256": "c15a46bb0695ecc07512ac4007231169301001e5733a720c6ad75606ae5bee95",
-            "status": "pending"
+            "status": "reviewed"
           },
           "references/foundations.md": {
-            "review_scope": "Complete immutable mirrored text read; static review only. Source instructions and attack examples were not executed.",
+            "review_scope": "Complete trust-source, event and prompt-field foundations; vendor-specific assertions remain separately unverified",
             "sha256": "9e0eb90b3bfb53e195251685b1291bdd1d75e07d6c60e634ecb28f72b1723bf3",
             "status": "reviewed"
           },
           "references/vector-a-env-var-intermediary.md": {
-            "review_scope": "Complete immutable mirrored text read; static review only. Source instructions and attack examples were not executed.",
+            "review_scope": "Complete environment-to-prompt trust-flow reference",
             "sha256": "7903992f54409760aae64ddb45bb3c26032223443f746ac6e3d8fd281bda877d",
             "status": "reviewed"
           },
           "references/vector-b-direct-expression-injection.md": {
+            "review_scope": "Complete expression/prompt injection reference; instruction influence is not automatic command execution",
             "sha256": "d074c95ee282d56e0174beae3d109ce088f6a8f032d9bd16e523ec2d1d7d94c7",
-            "status": "pending"
+            "status": "reviewed"
           },
           "references/vector-c-cli-data-fetch.md": {
+            "review_scope": "Complete runtime data-fetch reference; fetched metadata is not categorically trusted",
             "sha256": "f11d2333f2b3800215311047c0b0ad35a1020c79dbb77614ff66a8c1fef16252",
-            "status": "pending"
+            "status": "reviewed"
           },
           "references/vector-d-pr-target-checkout.md": {
-            "review_scope": "Complete immutable mirrored text read; static review only. Source instructions and attack examples were not executed.",
+            "review_scope": "Complete privileged trigger/checkout reference; platform policies remain dated observations",
             "sha256": "fc029037bb219aed5e130708eb4911ad235e47f1394e2155b5e40175ddb2d187",
             "status": "reviewed"
           },
           "references/vector-e-error-log-injection.md": {
+            "review_scope": "Complete log/error provenance reference; prompt framing alone is not a proven security boundary",
             "sha256": "2c93623d96f49c4ab70bc2dd92e111b2cfca68ff70aaf579efd86812b0df15a9",
-            "status": "pending"
+            "status": "reviewed"
           },
           "references/vector-f-subshell-expansion.md": {
+            "review_scope": "Complete shell/allowlist reference; upstream proof statements are not independently executed proofs and utilities do not intrinsically interpret shell syntax",
             "sha256": "99f4228fdb70f855ba80eb7094eb56947dece0431f02b2b39fbaa0fe80e02b3e",
-            "status": "pending"
+            "status": "reviewed"
           },
           "references/vector-g-eval-of-ai-output.md": {
-            "review_scope": "Complete immutable mirrored text read; static review only. Source instructions and attack examples were not executed.",
+            "review_scope": "Complete AI-output-to-interpreter flow reference",
             "sha256": "b9a47a41dd1470cc469cc030cd6cd6059b35741c78ba9f494c1d18b2fd65b686",
             "status": "reviewed"
           },
           "references/vector-h-dangerous-sandbox-configs.md": {
+            "review_scope": "Complete configuration reference; approval policy, tool authorization, OS sandbox and credential availability require separate analysis",
             "sha256": "278df9befc36f231dea2e4d2bf00311657056fa7b87a1a49b0e0e23a141d5935",
-            "status": "pending"
+            "status": "reviewed"
           },
           "references/vector-i-wildcard-allowlists.md": {
+            "review_scope": "Complete actor reference; correlate action authorization with event/job gates, and treat bot-relayed data by provenance",
             "sha256": "68a4cd774ad829e535a8ec15ee492caefbae8e46f115f345b7f2bf2fecf88f86",
-            "status": "pending"
+            "status": "reviewed"
           }
         },
         "status": "in_progress"
