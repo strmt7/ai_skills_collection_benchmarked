@@ -17,6 +17,7 @@ concurrency:
 jobs:
   repaired-cli:
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
     strategy:
       fail-fast: false
       matrix:
@@ -34,7 +35,7 @@ jobs:
         with:
           node-version: "26.12.1"
           cache: npm
-          cache-dependency-path: included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli/package-lock.json
+          cache-dependency-path: included/improved/skills/cover-image-workflow-current/assets/package-lock.json
       - name: Select the qualified npm release
         run: npm install --global npm@12.2.1 --ignore-scripts --no-fund
       - name: Prepare the source-locked repair without changing the mirror
@@ -55,6 +56,12 @@ jobs:
           node benchmarks/dependency-regressions/image_cli_acceptance_controls.mjs
           --package-root "$RUNNER_TEMP/repaired-image-cli"
           --output "$RUNNER_TEMP/image-cli-acceptance.json"
+      - name: Run independent download and image-resource controls
+        shell: bash
+        run: >-
+          node benchmarks/dependency-regressions/image_logo_resource_controls.mjs
+          --package-root "$RUNNER_TEMP/repaired-image-cli"
+          --output "$RUNNER_TEMP/image-logo-resources.json"
       - name: Retain actual acceptance and preparation receipts
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
@@ -62,6 +69,7 @@ jobs:
           name: image-cli-acceptance-${{ matrix.os }}
           path: |
             ${{ runner.temp }}/image-cli-acceptance.json
+            ${{ runner.temp }}/image-logo-resources.json
             ${{ runner.temp }}/repaired-image-cli/repair-preparation.json
           if-no-files-found: error
           retention-days: 30

@@ -18,7 +18,7 @@ def source_copy(tmp_path: Path) -> Path:
     return source
 
 
-def test_repair_preserves_source_and_changes_only_declared_code(tmp_path):
+def test_repair_preserves_source_and_changes_only_declared_package_files(tmp_path):
     source = source_copy(tmp_path)
     original = {file.relative_to(source): file.read_bytes() for file in source.rglob("*") if file.is_file()}
     output = tmp_path / "prepared"
@@ -31,7 +31,7 @@ def test_repair_preserves_source_and_changes_only_declared_code(tmp_path):
         assert (source / relative).read_bytes() == data
         if (output / relative).read_bytes() != data:
             changed.add(relative.as_posix())
-    assert changed == {"bin/cli.js", "src/imageValidator.js"}
+    assert changed == {"bin/cli.js", "src/imageValidator.js", "src/logoFetcher.js", "package.json", "package-lock.json"}
     assert (output / "repair-preparation.json").is_file()
 
 
@@ -86,11 +86,14 @@ def test_preparer_cli_returns_failure_for_incomplete_source(tmp_path, capsys):
     assert not (tmp_path / "prepared").exists()
 
 
-def test_changed_replacement_fails_before_output_is_created(tmp_path, monkeypatch):
+@pytest.mark.parametrize(
+    "filename", ["cli.js", "imageValidator.js", "logoFetcher.js", "package.json", "package-lock.json"]
+)
+def test_changed_replacement_fails_before_output_is_created(tmp_path, monkeypatch, filename):
     source = source_copy(tmp_path)
     overlay = tmp_path / "overlay"
     shutil.copytree(OVERLAY, overlay)
-    asset = overlay / "assets/cli.js"
+    asset = overlay / "assets" / filename
     asset.write_bytes(asset.read_bytes() + b"\n// changed\n")
     monkeypatch.setitem(HELPER["prepare"].__globals__, "OVERLAY", overlay)
     with pytest.raises(ValueError, match="replacement hash mismatch"):

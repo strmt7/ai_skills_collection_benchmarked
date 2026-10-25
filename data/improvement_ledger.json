@@ -14626,17 +14626,55 @@
           {
             "path": "docs/research-image-cli-acceptance.md",
             "sha256": "6d559d80d8aeec547526dbc2dc781a978577752a5e15b0e6f3ac020f7efcbfe6"
+          },
+          {
+            "path": "artifacts/research/2026-10-25/image-logo-original-current-controls.json",
+            "sha256": "5789e8522afa1863c21fd63a81441c2fe62051d642381c53a68d4f7843e13562"
+          },
+          {
+            "path": "artifacts/research/2026-10-25/image-logo-repaired-current-controls.json",
+            "sha256": "f27a5fff29d171215d97c0a29e82769b62bf7865060c871bd38151f56d56f65b"
+          },
+          {
+            "path": "artifacts/research/2026-10-25/image-cli-original-current-graph-controls.json",
+            "sha256": "3eb155b02934f6bf3c91c4673ae69855654e02754a55fb78c1de32144a6009b9"
+          },
+          {
+            "path": "artifacts/research/2026-10-25/image-cli-repaired-current-graph-controls.json",
+            "sha256": "45cc490fa71aa9499cfd765c58e25262228f591ab9bfef8fe344ca5c8246c10e"
+          },
+          {
+            "path": "artifacts/research/2026-10-25/image-source-lock-before-resource-repair.json",
+            "sha256": "9d0637ea89bf43a32592a8f7c34b63f12c1147181fb2a8bbff7050c5ef0a1021"
+          },
+          {
+            "path": "artifacts/research/2026-10-25/image-resource-repair-preparation.json",
+            "sha256": "22decd5277576a410b5ff2e0c8cd907568239b4646ca89b17925a4b6599ba0d2"
+          },
+          {
+            "path": "artifacts/research/2026-10-25/image-current-published-source-comparison.json",
+            "sha256": "164fd17fa034c8f3a0f3da7ae4193a3b5830f1708fcb74e57adb8745a9461247"
+          },
+          {
+            "path": "artifacts/research/2026-10-25/image-cli-complete-resource-review.json",
+            "sha256": "4a68ca8a90a6f2b41422ed5b5c1dcb88aada451a1ec1289791547a15d9138df7"
+          },
+          {
+            "path": "docs/research-image-cli-resources.md",
+            "sha256": "798eef99da3f05901bb24242a260199cef755cb6542e3cc06e7679bff55f3721"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
         "resources": {
           ".github/workflows/publish.yml": {
+            "review_scope": "Complete archived workflow reviewed: unpinned v4 actions, Node20 and npm token; no execution or qualified release claim",
             "sha256": "84d8aeaf9bcc177fcbc3452612e5b5cc549deda560b1b646bce52e4ac5e1c911",
-            "status": "pending"
+            "status": "reviewed"
           },
           ".gitignore": {
+            "review_scope": "Complete ignore policy reviewed; environment exclusions do not secure external Conf files or command arguments",
             "sha256": "c1b34902cbb3180032b6f8acba1d7eb77f86ab852d24c72c8c63f95d0de4cae9",
-            "status": "pending"
+            "status": "reviewed"
           },
           "LICENSE": {
             "review_scope": "Complete ISC copyright, permission and disclaimer read; unchanged notice retained in the explicit repair overlay",
@@ -14644,8 +14682,9 @@
             "status": "reviewed"
           },
           "README.md": {
+            "review_scope": "Complete README reviewed against code and observed controls; unsupported secure-storage, exact-text and guaranteed-QA claims recorded; provider model and publishing advice are historical",
             "sha256": "7c31928d79f856d5e08efc1a1931bafe46045d4f171a15cb6b523680f215821b",
-            "status": "pending"
+            "status": "reviewed"
           },
           "SKILL.md": {
             "review_scope": "Complete descriptive-only source entrypoint read; task/evaluator/expected outcomes independently specified outside its text",
@@ -14658,40 +14697,49 @@
             "status": "reviewed"
           },
           "examples/100x_UX_Research_AI_Agent.png": {
+            "review_scope": "Full image visually inspected and actual pixels decoded with Sharp; 1200x630 style reference, not independent title/logo ground truth; no generation-quality score",
             "sha256": "f6d2280ee17c810067e7c8b8612336f8aae0fd8b8e9e8255547cf5c977817bf9",
-            "status": "pending"
+            "status": "reviewed"
           },
           "examples/Firecrawl-supabase-bolt.png": {
+            "review_scope": "Full image visually inspected and actual pixels decoded with Sharp; 1200x630 style reference, not independent title/logo ground truth; no generation-quality score",
             "sha256": "65718eb09a11090541e4a298ce9dd6bed58bed4d96681f9e105f88a4ca410cc3",
-            "status": "pending"
+            "status": "reviewed"
           },
           "examples/Git-City_Case_study_Cover_Image.jpg": {
+            "review_scope": "Full image visually inspected and actual pixels decoded with Sharp; 1200x630 style reference, not independent title/logo ground truth; no generation-quality score",
             "sha256": "4a5b93bef8f6d6ac12a75bc175492bf0af6e0d834355a17f8522e42b70892399",
-            "status": "pending"
+            "status": "reviewed"
           },
           "examples/THE DISTRIBUTION LAYER (2).png": {
+            "review_scope": "Full image visually inspected and actual pixels decoded with Sharp; 1200x630 style reference, not independent title/logo ground truth; no generation-quality score",
             "sha256": "8b8bf46edfb43a5a1d9f66d79ec8d306aa81db7544cab82ef005e53121b19667",
-            "status": "pending"
+            "status": "reviewed"
           },
           "examples/canva-perplexity-duolingo-cover-image.png": {
+            "review_scope": "Full image visually inspected and actual pixels decoded with Sharp; 1200x630 style reference, not independent title/logo ground truth; no generation-quality score",
             "sha256": "56cb3d1ee006674d47b41c4b6a9e3ba01c511fcb30d9613ab1eec9483dd3c36f",
-            "status": "pending"
+            "status": "reviewed"
           },
           "examples/gamma-mistral-veed.png": {
+            "review_scope": "Full image visually inspected and actual pixels decoded with Sharp; 1200x630 style reference, not independent title/logo ground truth; no generation-quality score",
             "sha256": "1561e3ce0c1931f9b324399e235e58921a827e57e121ac24b6789f2f4089bce8",
-            "status": "pending"
+            "status": "reviewed"
           },
           "examples/server-survival-case-study-cover-image(1).png": {
+            "review_scope": "Full image visually inspected and actual pixels decoded with Sharp; 1200x630 style reference, not independent title/logo ground truth; no generation-quality score",
             "sha256": "9e79950236f6b0bf426a48b4d05f72200e3826f42e80d2bb580e70db62256cd1",
-            "status": "pending"
+            "status": "reviewed"
           },
           "examples/viral-meme-automation.png": {
+            "review_scope": "Full image visually inspected and actual pixels decoded with Sharp; 1200x630 style reference, not independent title/logo ground truth; no generation-quality score",
             "sha256": "159d685cc72a197db191f23073a35e08e0f818978dfb1740d4cd8e1d46d13006",
-            "status": "pending"
+            "status": "reviewed"
           },
           "index.js": {
+            "review_scope": "Complete two-export API entrypoint reviewed; it exports generator and logo fetcher without extra execution",
             "sha256": "08ca45833376d428ceed6f75bba6ab6409c384afbcb5e35312b3c646fd49ec6d",
-            "status": "pending"
+            "status": "reviewed"
           },
           "package-lock.json": {
             "review_scope": "Complete declaration and resolved graph: normal npm resolution, hash/integrity-checked installation, zero known advisories and nine runtime controls; dependency source code and real providers are not fully audited",
@@ -14714,11 +14762,13 @@
             "status": "reviewed"
           },
           "src/logoFetcher.js": {
+            "review_scope": "Complete source reviewed; original failures and separately repaired download, redirect, byte, pixel, MIME, input and privacy contracts measured with identical evaluator/current graph; no DNS isolation or real provider qualification",
             "sha256": "882c5e1001dbe84ffcb0d001863742be1e344e1b3a7d84d3b6c343e463de695e",
-            "status": "pending"
+            "status": "reviewed"
           }
         },
-        "status": "in_progress"
+        "scope": "All locked source resources, current provider/SDK documentation, package publication and independent component controls; provider access, credential storage and agent efficacy remain separately unqualified",
+        "status": "complete"
       },
       "revision": {
         "evidence": [
@@ -14745,9 +14795,45 @@
           {
             "path": "docs/research-image-cli-acceptance.md",
             "sha256": "6d559d80d8aeec547526dbc2dc781a978577752a5e15b0e6f3ac020f7efcbfe6"
+          },
+          {
+            "path": "artifacts/research/2026-10-25/image-logo-original-current-controls.json",
+            "sha256": "5789e8522afa1863c21fd63a81441c2fe62051d642381c53a68d4f7843e13562"
+          },
+          {
+            "path": "artifacts/research/2026-10-25/image-logo-repaired-current-controls.json",
+            "sha256": "f27a5fff29d171215d97c0a29e82769b62bf7865060c871bd38151f56d56f65b"
+          },
+          {
+            "path": "artifacts/research/2026-10-25/image-cli-original-current-graph-controls.json",
+            "sha256": "3eb155b02934f6bf3c91c4673ae69855654e02754a55fb78c1de32144a6009b9"
+          },
+          {
+            "path": "artifacts/research/2026-10-25/image-cli-repaired-current-graph-controls.json",
+            "sha256": "45cc490fa71aa9499cfd765c58e25262228f591ab9bfef8fe344ca5c8246c10e"
+          },
+          {
+            "path": "artifacts/research/2026-10-25/image-source-lock-before-resource-repair.json",
+            "sha256": "9d0637ea89bf43a32592a8f7c34b63f12c1147181fb2a8bbff7050c5ef0a1021"
+          },
+          {
+            "path": "artifacts/research/2026-10-25/image-resource-repair-preparation.json",
+            "sha256": "22decd5277576a410b5ff2e0c8cd907568239b4646ca89b17925a4b6599ba0d2"
+          },
+          {
+            "path": "artifacts/research/2026-10-25/image-current-published-source-comparison.json",
+            "sha256": "164fd17fa034c8f3a0f3da7ae4193a3b5830f1708fcb74e57adb8745a9461247"
+          },
+          {
+            "path": "artifacts/research/2026-10-25/image-cli-complete-resource-review.json",
+            "sha256": "4a68ca8a90a6f2b41422ed5b5c1dcb88aada451a1ec1289791547a15d9138df7"
+          },
+          {
+            "path": "docs/research-image-cli-resources.md",
+            "sha256": "798eef99da3f05901bb24242a260199cef755cb6542e3cc06e7679bff55f3721"
           }
         ],
-        "scope": "Declared advisory graph retained; separate licensed source-locked overlay repairs credential display, QA schema, retry exhaustion and explicit overwrite. Immutable original defects and unqualified provider/storage/resource boundaries remain; no agent efficacy claim.",
+        "scope": "Explicit licensed overlay retains immutable provenance; current graph and bounded logo repair pass component controls; provider configuration and credential storage remain unqualified, with no agent efficacy claim",
         "status": "in_progress"
       },
       "source_repo": "Varnan-Tech/opendirectory",

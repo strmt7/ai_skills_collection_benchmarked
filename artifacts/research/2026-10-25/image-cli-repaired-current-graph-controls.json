@@ -1,0 +1,522 @@
+{
+  "schema_version": 1,
+  "evidence_class": "image-cli-independent-acceptance-controls",
+  "node": "v26.12.1",
+  "source_file_sha256": {
+    "package.json": "a9785c35344878f6264a05a7e891275a5f620bb3aa3aeefbb41f135b3322898a",
+    "package-lock.json": "f52c586fde6c3bcc55b2ff4a59c848115e5ff583ca0605626546b9d51b7fe765",
+    "bin/cli.js": "3f8feabfbcd3d58b5dbe2c161348c28cdec393eb521f5daaabf77564ce5acd71",
+    "src/logoFetcher.js": "783a2d9b2f05333e3e286e3866ff2f92963a9f6a7722db5ad01f2fb22d193d24",
+    "src/geminiGenerator.js": "113b89e8c8e8fb2514dc05fa12ee731fdc5d067539b97c775fa29b95c3dfd274",
+    "src/imageValidator.js": "70643e57021b25098716d79acd699ad727c8922e0fd28b9f9f104a6848d31f47"
+  },
+  "evaluator_sha256": "c25fa28fe61d76f8d26bd6ca2be69612bec1cdfb08f272c7d71691d83b4d848c",
+  "independence": {
+    "task_defined_outside_skill": true,
+    "evaluator_defined_outside_skill": true,
+    "expected_result_defined_outside_skill": true,
+    "basis": "CLI privacy, exit-status, structured-output and file-preservation contracts; identical expectations for all candidates"
+  },
+  "checks": [
+    {
+      "name": "unset_key_is_nonfatal",
+      "passed": true,
+      "observed": {
+        "exit_code": 0
+      }
+    },
+    {
+      "name": "key_configured_value_private_1_bytes_1_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "key_configured_value_private_2_bytes_2_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "key_configured_value_private_3_bytes_3_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "key_configured_value_private_4_bytes_4_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "key_configured_value_private_5_bytes_5_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "key_configured_value_private_6_bytes_6_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "key_configured_value_private_7_bytes_7_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "key_configured_value_private_8_bytes_8_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "key_configured_value_private_9_bytes_9_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "key_configured_value_private_10_bytes_10_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "key_configured_value_private_11_bytes_11_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "key_configured_value_private_12_bytes_12_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "key_configured_value_private_10_bytes_4_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "unset_brandfetch-id_is_nonfatal",
+      "passed": true,
+      "observed": {
+        "exit_code": 0
+      }
+    },
+    {
+      "name": "brandfetch-id_configured_value_private_1_bytes_1_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "brandfetch-id_configured_value_private_2_bytes_2_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "brandfetch-id_configured_value_private_3_bytes_3_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "brandfetch-id_configured_value_private_4_bytes_4_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "brandfetch-id_configured_value_private_5_bytes_5_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "brandfetch-id_configured_value_private_6_bytes_6_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "brandfetch-id_configured_value_private_7_bytes_7_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "brandfetch-id_configured_value_private_8_bytes_8_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "brandfetch-id_configured_value_private_9_bytes_9_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "brandfetch-id_configured_value_private_10_bytes_10_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "brandfetch-id_configured_value_private_11_bytes_11_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "brandfetch-id_configured_value_private_12_bytes_12_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "brandfetch-id_configured_value_private_10_bytes_4_units",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "value_disclosed": false
+      }
+    },
+    {
+      "name": "missing_title_fails_without_provider_request",
+      "passed": true,
+      "observed": {
+        "exit_code": 1
+      }
+    },
+    {
+      "name": "accepted_image_writes_exact_bytes",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "bytes": 118,
+        "calls": [
+          {
+            "kind": "generate",
+            "previous_feedback": false
+          },
+          {
+            "kind": "qa",
+            "previous_feedback": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "exhausted_qa_fails_and_creates_no_output",
+      "passed": true,
+      "observed": {
+        "exit_code": 1,
+        "calls": [
+          {
+            "kind": "generate",
+            "previous_feedback": false
+          },
+          {
+            "kind": "qa",
+            "previous_feedback": false
+          },
+          {
+            "kind": "generate",
+            "previous_feedback": true
+          },
+          {
+            "kind": "qa",
+            "previous_feedback": false
+          },
+          {
+            "kind": "generate",
+            "previous_feedback": true
+          },
+          {
+            "kind": "qa",
+            "previous_feedback": false
+          }
+        ],
+        "existing_output_preserved": false
+      }
+    },
+    {
+      "name": "exhausted_qa_fails_and_preserves_existing_output",
+      "passed": true,
+      "observed": {
+        "exit_code": 1,
+        "calls": [
+          {
+            "kind": "generate",
+            "previous_feedback": false
+          },
+          {
+            "kind": "qa",
+            "previous_feedback": false
+          },
+          {
+            "kind": "generate",
+            "previous_feedback": true
+          },
+          {
+            "kind": "qa",
+            "previous_feedback": false
+          },
+          {
+            "kind": "generate",
+            "previous_feedback": true
+          },
+          {
+            "kind": "qa",
+            "previous_feedback": false
+          }
+        ],
+        "existing_output_preserved": true
+      }
+    },
+    {
+      "name": "rejected_then_accepted_retries_with_feedback",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "calls": [
+          {
+            "kind": "generate",
+            "previous_feedback": false
+          },
+          {
+            "kind": "qa",
+            "previous_feedback": false
+          },
+          {
+            "kind": "generate",
+            "previous_feedback": true
+          },
+          {
+            "kind": "qa",
+            "previous_feedback": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "invalid_qa_schema_string_false_fails_without_output",
+      "passed": true,
+      "observed": {
+        "exit_code": 1,
+        "calls": [
+          {
+            "kind": "generate",
+            "previous_feedback": false
+          },
+          {
+            "kind": "qa",
+            "previous_feedback": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "invalid_qa_schema_numeric_one_fails_without_output",
+      "passed": true,
+      "observed": {
+        "exit_code": 1,
+        "calls": [
+          {
+            "kind": "generate",
+            "previous_feedback": false
+          },
+          {
+            "kind": "qa",
+            "previous_feedback": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "invalid_qa_schema_missing_issues_fails_without_output",
+      "passed": true,
+      "observed": {
+        "exit_code": 1,
+        "calls": [
+          {
+            "kind": "generate",
+            "previous_feedback": false
+          },
+          {
+            "kind": "qa",
+            "previous_feedback": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "invalid_qa_schema_missing_decision_fails_without_output",
+      "passed": true,
+      "observed": {
+        "exit_code": 1,
+        "calls": [
+          {
+            "kind": "generate",
+            "previous_feedback": false
+          },
+          {
+            "kind": "qa",
+            "previous_feedback": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "invalid_qa_schema_array_fails_without_output",
+      "passed": true,
+      "observed": {
+        "exit_code": 1,
+        "calls": [
+          {
+            "kind": "generate",
+            "previous_feedback": false
+          },
+          {
+            "kind": "qa",
+            "previous_feedback": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "invalid_qa_schema_null_fails_without_output",
+      "passed": true,
+      "observed": {
+        "exit_code": 1,
+        "calls": [
+          {
+            "kind": "generate",
+            "previous_feedback": false
+          },
+          {
+            "kind": "qa",
+            "previous_feedback": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "invalid_qa_schema_numeric_issues_fails_without_output",
+      "passed": true,
+      "observed": {
+        "exit_code": 1,
+        "calls": [
+          {
+            "kind": "generate",
+            "previous_feedback": false
+          },
+          {
+            "kind": "qa",
+            "previous_feedback": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "invalid_qa_schema_malformed_fails_without_output",
+      "passed": true,
+      "observed": {
+        "exit_code": 1,
+        "calls": [
+          {
+            "kind": "generate",
+            "previous_feedback": false
+          },
+          {
+            "kind": "qa",
+            "previous_feedback": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "accepted_image_preserves_existing_destination_by_default",
+      "passed": true,
+      "observed": {
+        "exit_code": 1
+      }
+    },
+    {
+      "name": "explicit_overwrite_accepts_valid_output",
+      "passed": true,
+      "observed": {
+        "exit_code": 0,
+        "bytes": 118
+      }
+    }
+  ],
+  "passed": true,
+  "external_requests": 0,
+  "agent_efficacy_scored": false,
+  "provider_responses": "all fetch requests intercepted by deterministic fixtures",
+  "limits": [
+    "No real provider/model availability, visual fidelity or coding-agent efficacy assessed",
+    "Controls are correlated component checks, not independent tasks or a statistical skill effect",
+    "Existing storage and provider configuration remain outside the repaired boundary"
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "evidence_class": "independent-logo-resource-controls",
+  "node_version": "v26.12.1",
+  "evaluator_sha256": "222712ad20a92da31b0a4d6e1fc5c92b5bf5217f785a94d2e8da5e4eb4f8f1fc",
+  "source_file_sha256": {
+    "package.json": "a9785c35344878f6264a05a7e891275a5f620bb3aa3aeefbb41f135b3322898a",
+    "package-lock.json": "f52c586fde6c3bcc55b2ff4a59c848115e5ff583ca0605626546b9d51b7fe765",
+    "src/logoFetcher.js": "783a2d9b2f05333e3e286e3866ff2f92963a9f6a7722db5ad01f2fb22d193d24"
+  },
+  "checks": [
+    {
+      "name": "native_http_png_normalizes_to_png",
+      "passed": true,
+      "observed": {
+        "format": "png",
+        "width": 32,
+        "height": 18
+      }
+    },
+    {
+      "name": "native_http_jpeg_normalizes_to_png",
+      "passed": true,
+      "observed": {
+        "format": "png",
+        "width": 32,
+        "height": 18
+      }
+    },
+    {
+      "name": "native_http_svg_normalizes_to_png",
+      "passed": true,
+      "observed": {
+        "format": "png",
+        "width": 32,
+        "height": 18
+      }
+    },
+    {
+      "name": "native_http_finite_redirects_preserve_valid_logo",
+      "passed": true,
+      "observed": {
+        "format": "png",
+        "width": 32,
+        "height": 18,
+        "requests": 3
+      }
+    },
+    {
+      "name": "native_http_redirect_loop_is_bounded",
+      "passed": true,
+      "observed": {
+        "requests": 4
+      }
+    },
+    {
+      "name": "native_http_deadline_is_propagated",
+      "passed": true,
+      "observed": {
+        "production_deadline_ms": 10000,
+        "control_deadline_ms": 25,
+        "real_loopback_http": true
+      }
+    },
+    {
+      "name": "declared_oversized_body_is_cancelled_before_buffering",
+      "passed": true,
+      "observed": {
+        "cancelled": true,
+        "array_buffer_calls": 0
+      }
+    },
+    {
+      "name": "streamed_oversized_body_is_cancelled",
+      "passed": true,
+      "observed": {
+        "cancelled": true,
+        "array_buffer_calls": 0
+      }
+    },
+    {
+      "name": "large_decoded_dimensions_are_rejected",
+      "passed": true,
+      "observed": {
+        "source_width": 5000,
+        "source_height": 5000,
+        "image_rejected": true
+      }
+    },
+    {
+      "name": "non_image_media_type_is_rejected",
+      "passed": true,
+      "observed": {
+        "image_rejected": true
+      }
+    },
+    {
+      "name": "credential_urls_do_not_disclose_values",
+      "passed": true,
+      "observed": {
+        "value_disclosed": false,
+        "requests": 0
+      }
+    },
+    {
+      "name": "missing_input_is_nonfatal_and_performs_no_request",
+      "passed": true,
+      "observed": {
+        "requests": 0
+      }
+    },
+    {
+      "name": "domain_query_injection_is_rejected_before_request",
+      "passed": true,
+      "observed": {
+        "requests": 0
+      }
+    },
+    {
+      "name": "domain_fallbacks_and_client_id_encoding",
+      "passed": true,
+      "observed": {
+        "format": "png",
+        "width": 32,
+        "height": 18,
+        "requests": 3,
+        "client_id_encoded": true
+      }
+    }
+  ],
+  "examples": [
+    {
+      "path": "examples/100x_UX_Research_AI_Agent.png",
+      "sha256": "f6d2280ee17c810067e7c8b8612336f8aae0fd8b8e9e8255547cf5c977817bf9",
+      "format": "png",
+      "width": 1200,
+      "height": 630,
+      "pixels_decoded": true,
+      "visual_quality_scored": false
+    },
+    {
+      "path": "examples/Firecrawl-supabase-bolt.png",
+      "sha256": "65718eb09a11090541e4a298ce9dd6bed58bed4d96681f9e105f88a4ca410cc3",
+      "format": "png",
+      "width": 1200,
+      "height": 630,
+      "pixels_decoded": true,
+      "visual_quality_scored": false
+    },
+    {
+      "path": "examples/Git-City_Case_study_Cover_Image.jpg",
+      "sha256": "4a5b93bef8f6d6ac12a75bc175492bf0af6e0d834355a17f8522e42b70892399",
+      "format": "jpeg",
+      "width": 1200,
+      "height": 630,
+      "pixels_decoded": true,
+      "visual_quality_scored": false
+    },
+    {
+      "path": "examples/THE DISTRIBUTION LAYER (2).png",
+      "sha256": "8b8bf46edfb43a5a1d9f66d79ec8d306aa81db7544cab82ef005e53121b19667",
+      "format": "png",
+      "width": 1200,
+      "height": 630,
+      "pixels_decoded": true,
+      "visual_quality_scored": false
+    },
+    {
+      "path": "examples/canva-perplexity-duolingo-cover-image.png",
+      "sha256": "56cb3d1ee006674d47b41c4b6a9e3ba01c511fcb30d9613ab1eec9483dd3c36f",
+      "format": "png",
+      "width": 1200,
+      "height": 630,
+      "pixels_decoded": true,
+      "visual_quality_scored": false
+    },
+    {
+      "path": "examples/gamma-mistral-veed.png",
+      "sha256": "1561e3ce0c1931f9b324399e235e58921a827e57e121ac24b6789f2f4089bce8",
+      "format": "png",
+      "width": 1200,
+      "height": 630,
+      "pixels_decoded": true,
+      "visual_quality_scored": false
+    },
+    {
+      "path": "examples/server-survival-case-study-cover-image(1).png",
+      "sha256": "9e79950236f6b0bf426a48b4d05f72200e3826f42e80d2bb580e70db62256cd1",
+      "format": "png",
+      "width": 1200,
+      "height": 630,
+      "pixels_decoded": true,
+      "visual_quality_scored": false
+    },
+    {
+      "path": "examples/viral-meme-automation.png",
+      "sha256": "159d685cc72a197db191f23073a35e08e0f818978dfb1740d4cd8e1d46d13006",
+      "format": "png",
+      "width": 1200,
+      "height": 630,
+      "pixels_decoded": true,
+      "visual_quality_scored": false
+    }
+  ],
+  "passed": true,
+  "task_evaluator_and_expected_results_defined_outside_skill_content": true,
+  "real_loopback_http_used": true,
+  "external_provider_requests_requested_by_evaluator": 0,
+  "process_wide_network_egress_monitored": false,
+  "timer_acceleration_disclosed": true,
+  "real_provider_qualified": false,
+  "agent_efficacy_scored": false
+}

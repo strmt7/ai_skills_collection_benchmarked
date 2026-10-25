@@ -1,0 +1,49 @@
+{
+  "package": "blog-cover-image-cli",
+  "latest_published_version": "1.0.17",
+  "archive_integrity_verified": true,
+  "archive_sha256": "d10885e384e609e0a7a2fbae8c9c7fe63de39ba95a46bb9aed5fba9a3f5baf36",
+  "source_files": {
+    "bin/cli.js": {
+      "published_sha256": "d78e447c84c953f00e91513380e079af72bf7d7d8b13bfa52b995edc4d8e4e1c",
+      "catalog_text_formatting_alone_matches": true,
+      "credential_neutralization_required": false,
+      "newline_normalized_bytes_match_mirror": false
+    },
+    "index.js": {
+      "published_sha256": "08ca45833376d428ceed6f75bba6ab6409c384afbcb5e35312b3c646fd49ec6d",
+      "catalog_text_formatting_alone_matches": true,
+      "credential_neutralization_required": false,
+      "newline_normalized_bytes_match_mirror": true
+    },
+    "src/geminiGenerator.js": {
+      "published_sha256": "b63ab9f7849f6fe6b82a168ce969d3ed973a9160a0bccbfb3fc131a96a845532",
+      "catalog_text_formatting_alone_matches": true,
+      "credential_neutralization_required": false,
+      "newline_normalized_bytes_match_mirror": false
+    },
+    "src/imageValidator.js": {
+      "published_sha256": "374063f5231aefce5db3d4c172db745fd169d65344b034584f14ae66726e8ce6",
+      "catalog_text_formatting_alone_matches": true,
+      "credential_neutralization_required": false,
+      "newline_normalized_bytes_match_mirror": false
+    },
+    "src/logoFetcher.js": {
+      "published_sha256": "882c5e1001dbe84ffcb0d001863742be1e344e1b3a7d84d3b6c343e463de695e",
+      "catalog_text_formatting_alone_matches": true,
+      "credential_neutralization_required": false,
+      "newline_normalized_bytes_match_mirror": true
+    }
+  },
+  "package_code_executed": false,
+  "archive_extracted_to_filesystem": false,
+  "credential_policy_3_canonical_matches": {
+    "bin/cli.js": true,
+    "index.js": true,
+    "src/geminiGenerator.js": true,
+    "src/imageValidator.js": true,
+    "src/logoFetcher.js": true
+  },
+  "literal_bytes_are_distinguished_from_catalog_canonical_bytes": true,
+  "catalog_canonical_formatting": "build_catalog.normalize_text_file; credential policy 3 is also checked but introduces no change in these files"
+}

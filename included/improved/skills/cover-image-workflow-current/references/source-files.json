@@ -115,6 +115,21 @@
       "path": "src/imageValidator.js",
       "sha256": "70643e57021b25098716d79acd699ad727c8922e0fd28b9f9f104a6848d31f47",
       "text": true
+    },
+    {
+      "path": "src/logoFetcher.js",
+      "sha256": "783a2d9b2f05333e3e286e3866ff2f92963a9f6a7722db5ad01f2fb22d193d24",
+      "text": true
+    },
+    {
+      "path": "package.json",
+      "sha256": "a9785c35344878f6264a05a7e891275a5f620bb3aa3aeefbb41f135b3322898a",
+      "text": true
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "f52c586fde6c3bcc55b2ff4a59c848115e5ff583ca0605626546b9d51b7fe765",
+      "text": true
     }
   ]
 }

@@ -10,6 +10,9 @@ metadata:
 
 # Generate and verify the requested image
 
+Apply the collection's [mandatory agent tools](../../../../docs/agent-tools.md)
+before relevant work.
+
 Capture the exact title, intended dimensions, logos/assets, destination and any
 visual constraints. Use the user's existing choices and authorization. Inspect
 supplied assets and preserve their permitted use; ask only for missing inputs
@@ -20,7 +23,7 @@ that materially affect the result. Use the available qualified image tool.
 Check the actual runtime, package lock, installed API and provider's model status.
 Use current stable model identifiers; a current SDK does not make a retired
 preview endpoint current. For a custom implementation, consult
-[qualified implementation notes](references/qualified-implementation.md).
+[current qualification record](references/qualification-2026-10-25.md).
 Keep an exact dependency graph and reproduce local response/image controls
 before relying on it. An advisory audit is one check, not proof of correct output.
 For a task specifically maintaining the historical CLI, use the explicit

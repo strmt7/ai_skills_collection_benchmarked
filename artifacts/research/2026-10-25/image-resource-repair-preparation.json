@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "source_commit": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4",
+  "source_files": [
+    {
+      "path": ".github/workflows/publish.yml",
+      "sha256": "84d8aeaf9bcc177fcbc3452612e5b5cc549deda560b1b646bce52e4ac5e1c911"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "c1b34902cbb3180032b6f8acba1d7eb77f86ab852d24c72c8c63f95d0de4cae9"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "8b1855650f4439f83e80337656bf960fe5e06e6d8812ea30cae166e613d57304"
+    },
+    {
+      "path": "README.md",
+      "sha256": "7c31928d79f856d5e08efc1a1931bafe46045d4f171a15cb6b523680f215821b"
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "f5ab67d3ed7b80e1e7ad7dc34175633f28b3acf053f7a4366fc4b76960587fcc"
+    },
+    {
+      "path": "bin/cli.js",
+      "sha256": "16fbfdb28741832cf896ae6817cd98c0cf99372cdd9f04f80b0fcd4e260bf1cd"
+    },
+    {
+      "path": "examples/100x_UX_Research_AI_Agent.png",
+      "sha256": "f6d2280ee17c810067e7c8b8612336f8aae0fd8b8e9e8255547cf5c977817bf9"
+    },
+    {
+      "path": "examples/Firecrawl-supabase-bolt.png",
+      "sha256": "65718eb09a11090541e4a298ce9dd6bed58bed4d96681f9e105f88a4ca410cc3"
+    },
+    {
+      "path": "examples/Git-City_Case_study_Cover_Image.jpg",
+      "sha256": "4a5b93bef8f6d6ac12a75bc175492bf0af6e0d834355a17f8522e42b70892399"
+    },
+    {
+      "path": "examples/THE DISTRIBUTION LAYER (2).png",
+      "sha256": "8b8bf46edfb43a5a1d9f66d79ec8d306aa81db7544cab82ef005e53121b19667"
+    },
+    {
+      "path": "examples/canva-perplexity-duolingo-cover-image.png",
+      "sha256": "56cb3d1ee006674d47b41c4b6a9e3ba01c511fcb30d9613ab1eec9483dd3c36f"
+    },
+    {
+      "path": "examples/gamma-mistral-veed.png",
+      "sha256": "1561e3ce0c1931f9b324399e235e58921a827e57e121ac24b6789f2f4089bce8"
+    },
+    {
+      "path": "examples/server-survival-case-study-cover-image(1).png",
+      "sha256": "9e79950236f6b0bf426a48b4d05f72200e3826f42e80d2bb580e70db62256cd1"
+    },
+    {
+      "path": "examples/viral-meme-automation.png",
+      "sha256": "159d685cc72a197db191f23073a35e08e0f818978dfb1740d4cd8e1d46d13006"
+    },
+    {
+      "path": "index.js",
+      "sha256": "08ca45833376d428ceed6f75bba6ab6409c384afbcb5e35312b3c646fd49ec6d"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "68ee0b3318f231e03b1b105b93e758bfcced4afdd9cbec7cd0fb1e82dbaa442f"
+    },
+    {
+      "path": "package.json",
+      "sha256": "f2d207d6dab53be002f7e12e58b4ac65a9d21945a07812adc25a547af4de32d7"
+    },
+    {
+      "path": "src/geminiGenerator.js",
+      "sha256": "113b89e8c8e8fb2514dc05fa12ee731fdc5d067539b97c775fa29b95c3dfd274"
+    },
+    {
+      "path": "src/imageValidator.js",
+      "sha256": "e8c7e925c341b7a3f7a6237c5c2c7212ddcf9875c1921f2cdeb9b215e44f7fad"
+    },
+    {
+      "path": "src/logoFetcher.js",
+      "sha256": "882c5e1001dbe84ffcb0d001863742be1e344e1b3a7d84d3b6c343e463de695e"
+    }
+  ],
+  "replacements": [
+    {
+      "path": "bin/cli.js",
+      "sha256": "3f8feabfbcd3d58b5dbe2c161348c28cdec393eb521f5daaabf77564ce5acd71",
+      "text": true
+    },
+    {
+      "path": "src/imageValidator.js",
+      "sha256": "70643e57021b25098716d79acd699ad727c8922e0fd28b9f9f104a6848d31f47",
+      "text": true
+    },
+    {
+      "path": "src/logoFetcher.js",
+      "sha256": "783a2d9b2f05333e3e286e3866ff2f92963a9f6a7722db5ad01f2fb22d193d24",
+      "text": true
+    },
+    {
+      "path": "package.json",
+      "sha256": "a9785c35344878f6264a05a7e891275a5f620bb3aa3aeefbb41f135b3322898a",
+      "text": true
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "f52c586fde6c3bcc55b2ff4a59c848115e5ff583ca0605626546b9d51b7fe765",
+      "text": true
+    }
+  ],
+  "preparer_sha256": "00216393e2f046100eea1fb125b14dc62fb79e4a57f607fd52e8727c3dc47272",
+  "source_lock_sha256": "8163d95000a80975057fef2cf905fa2387613a817ce55131c4b2ba6563c2bbd6",
+  "dependencies_installed": false,
+  "real_provider_qualified": false,
+  "agent_efficacy_scored": false
+}
