@@ -373,12 +373,18 @@ def test_scoped_refresh_rejects_modified_retained_mirror(scoped_generator):
 
 def test_scoped_refresh_does_not_silently_rename_retained_skills(scoped_generator):
     root, sources = scoped_generator
+    old_catalog = json.loads((root / "data/skills_catalog.json").read_text())
+    retained = next(entry for entry in old_catalog if entry["source_repo"] == "fixture/other")
+    before = publication.signature(root / retained["mirrored_path"])
     path = sources / "fixture/skills/example/SKILL.md"
     path.write_text(path.read_text().replace("name: example", "name: unrelated"), encoding="utf-8")
-    before = publication.signature(root / "included/skills")
-    with pytest.raises(ValueError, match="rename retained"):
-        catalog.main(["--source-root", str(sources), "--refresh-source", "fixture/example"])
-    assert publication.signature(root / "included/skills") == before
+    assert catalog.main(["--source-root", str(sources), "--refresh-source", "fixture/example"]) == 0
+    updated = json.loads((root / "data/skills_catalog.json").read_text())
+    assert next(entry for entry in updated if entry["source_repo"] == "fixture/other") == retained
+    assert publication.signature(root / retained["mirrored_path"]) == before
+    refreshed = next(entry for entry in updated if entry["source_repo"] == "fixture/example")
+    assert refreshed["name"] == "unrelated"
+    assert refreshed["install_name"] != retained["install_name"]
     assert len(catalog.SOURCES) == 2
 
 

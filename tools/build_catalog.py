@@ -27,6 +27,7 @@ import update_readme_badges
 from _lib_b import credential_neutralizations, dependency_graphs
 from _lib_b.credential_patterns import V2_NEUTRALIZATIONS
 from _lib_b.determinism import existing_field, git_latest_commit_epoch_for, resolve_timestamp
+from _source_admission import require_admitted_source
 
 try:
     import yaml
@@ -789,15 +790,44 @@ def unique_install_name(entry: dict[str, Any], used_names: set[str], base_counts
     raise ValueError(f"could not allocate unique install_name for {entry['id']}")
 
 
-def assign_install_names(entries: list[dict[str, Any]]) -> None:
+def locked_install_names(root: Path) -> dict[str, str]:
+    path = root / "data/source_lock.json"
+    if not path.is_file():
+        return {}
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if isinstance(data, dict) and set(data) <= {"generated_on"}:
+        return {}  # A first-build timestamp seed has no locked installation names.
+    if not isinstance(data, dict) or not isinstance(data.get("sources"), list):
+        raise ValueError("source lock must contain source records")
+    names: dict[str, str] = {}
+    for source in data["sources"]:
+        for entry in source["skills"]:
+            if entry["id"] in names:
+                raise ValueError("duplicate source-lock skill identity")
+            names[entry["id"]] = entry["install_name"]
+    return names
+
+
+def assign_install_names(entries: list[dict[str, Any]], *, preserved_names: dict[str, str] | None = None) -> None:
     base_counts: dict[str, int] = {}
     for entry in entries:
         base = base_install_name(entry["name"], entry["source_path"])
         base_counts[base] = base_counts.get(base, 0) + 1
 
-    used_names: set[str] = set()
+    preserved = {
+        entry["id"]: preserved_names[entry["id"]]
+        for entry in entries
+        if preserved_names and entry["id"] in preserved_names
+    }
+    if any(
+        not isinstance(name, str) or not name or slug(name) != name or len(name) > 80 for name in preserved.values()
+    ):
+        raise ValueError("source-lock installation name is not canonical")
+    used_names = set(preserved.values())
+    if len(used_names) != len(preserved):
+        raise ValueError("duplicate source-lock installation name")
     for entry in sorted(entries, key=lambda item: item["id"]):
-        entry_install_name = unique_install_name(entry, used_names, base_counts)
+        entry_install_name = preserved.get(entry["id"]) or unique_install_name(entry, used_names, base_counts)
         entry["install_name"] = entry_install_name
         entry["mirrored_path"] = skill_mirror_path(entry["category"], entry["subcategory"], entry_install_name)
         entry["agent_ready_path"] = skill_agent_ready_path(entry["category"], entry["subcategory"], entry_install_name)
@@ -1220,6 +1250,7 @@ def collect() -> list[dict[str, Any]]:
         if run_git(repo_dir, "status", "--porcelain=v1", "--untracked-files=all"):
             raise ValueError(f"source checkout contains uncommitted changes: {source['repo']}")
         commit = run_git(repo_dir, "rev-parse", "HEAD")
+        require_admitted_source(ROOT, source["repo"], commit)
         notice = validate_preserved_notice(ROOT, source.get("preserved_notice"), commit)
         if notice is not None:
             original_notice = subprocess.run(
@@ -2220,7 +2251,7 @@ def scoped_refresh_inputs(root: Path, repos: set[str]) -> tuple[list[dict[str, A
                 entry["source_path"],
             )
         )
-        assign_install_names(entries)
+        assign_install_names(entries, preserved_names=locked_install_names(root))
         if any(
             {key: value for key, value in entry.items() if key != "file_modes"}
             != {key: value for key, value in by_id[entry["id"]].items() if key != "file_modes"}
@@ -2242,6 +2273,26 @@ def scoped_refresh_inputs(root: Path, repos: set[str]) -> tuple[list[dict[str, A
     return entries, lock
 
 
+def require_source_history(root: Path, entries: list[dict[str, Any]]) -> None:
+    """Refuse to orphan recorded evidence before publishing a changed catalog."""
+    target_versions = {(entry["id"], entry["commit_sha"]) for entry in entries}
+    required = set()
+    for path in sorted((root / "artifacts/benchmark-runs").rglob("artifact.json")):
+        artifact = json.loads(path.read_text(encoding="utf-8"))
+        required.add((artifact["skill_id"], artifact["source_commit"]))
+    missing = required - target_versions
+    if not missing:
+        return
+    from _source_history import historical_entries
+
+    archived = {(entry["id"], entry["commit_sha"]) for entry in historical_entries(root)}
+    if unavailable := sorted(missing - archived):
+        raise ValueError(
+            "source refresh would orphan recorded evidence; use tools/archive_catalog_source.py first: "
+            + ", ".join(f"{skill_id}@{commit}" for skill_id, commit in unavailable)
+        )
+
+
 def main(argv: list[str] | None = None) -> int:
     global ROOT, SOURCE_ROOT, BUILD_DATE, CREDENTIAL_POLICY_VERSION
     args = build_parser().parse_args(argv)
@@ -2261,7 +2312,9 @@ def main(argv: list[str] | None = None) -> int:
             entries, source_lock = scoped_refresh_inputs(root, refreshed_repos)
         else:
             entries = collect()
+            assign_install_names(entries, preserved_names=locked_install_names(root))
             source_lock = build_source_lock(entries)
+        require_source_history(root, entries)
         scenarios = build_scenarios(entries)
         badge_block = update_readme_badges.render_badge_block(update_readme_badges.load_metadata(root))
 
@@ -2302,6 +2355,12 @@ def main(argv: list[str] | None = None) -> int:
         }
         print(json.dumps(result, indent=2) if args.json else result)
         return int(args.check and bool(drift))
+    except (OSError, ValueError, subprocess.SubprocessError) as exc:
+        if not args.json:
+            raise
+        error = {"ok": False, "mode": "check" if args.check else "publish", "errors": [str(exc)]}
+        print(json.dumps(error, indent=2) if args.json else error)
+        return 2
     finally:
         ROOT, SOURCE_ROOT, BUILD_DATE = original_root, original_source, original_date
         CREDENTIAL_POLICY_VERSION = original_policy

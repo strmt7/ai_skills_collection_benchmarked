@@ -186,6 +186,7 @@ def render_results(results: dict[str, Any]) -> str:
         f"- Runtime scenario artifacts recorded: `{results['summary']['runtime_artifacts_recorded']}`",
         f"- Runtime scenario artifacts passed: `{results['summary']['runtime_artifacts_passed']}`",
         f"- Runtime scenario artifacts failed: `{results['summary']['runtime_artifacts_failed']}`",
+        f"- Runtime artifacts attached to retired skill identifiers: `{len(results['retired_skill_runtime_artifacts'])}`",
         "- Per-skill runtime counts below apply only to the current source commit; historical artifacts remain in the dated evidence table.",
         f"- Source-proof provenance artifacts recorded: `{results['summary']['provenance_artifacts_recorded']}`",
         "",
@@ -280,6 +281,7 @@ def render_quality_findings(results: dict[str, Any]) -> str:
 
 def run(*, verbose: bool = False) -> dict[str, Any]:
     catalog = load_json(ROOT / "data" / "skills_catalog.json")
+    catalog_ids = {entry["id"] for entry in catalog}
     scenarios = {item["id"]: item for item in load_json(ROOT / "data" / "benchmark_scenarios.json")}
     assignments = load_json(ROOT / "data" / "benchmark_assignments.json")
     tracks = load_json(ROOT / "data" / "benchmark_tracks.json")
@@ -341,6 +343,7 @@ def run(*, verbose: bool = False) -> dict[str, Any]:
         },
         "tracks": track_results,
         "runtime_artifacts": runtime_artifacts,
+        "retired_skill_runtime_artifacts": [item for item in runtime_artifacts if item["skill_id"] not in catalog_ids],
         "provenance_artifacts": provenance_artifacts,
         "skills": skill_results,
     }

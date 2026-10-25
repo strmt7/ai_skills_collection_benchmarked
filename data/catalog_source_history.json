@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "scope": "Recorded catalog source identities and exact SKILL bytes only; not a complete historical package or a reconstructed original benchmark execution.",
+  "scope": "Published source metadata, assigned scenarios and exact SKILL bytes; not complete historical packages or reconstructed benchmark sessions.",
   "versions": [
     {
       "entry": {
@@ -97,6 +97,543 @@
       },
       "skill_snapshot": "artifacts/source-history/lackeyjb-playwright-skill-skills-playwright-skill-skill-md/c82d6e5a3963838bc1195637b83e7a030c757595/SKILL.md",
       "skill_snapshot_sha256": "7e0d1a74af4fdfcd30254feb1dee9455deffccc7270ba1f9137f0102431bde1a"
+    },
+    {
+      "entry": {
+        "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/latest-release-community/datamol/SKILL.md",
+        "benchmark_scenarios": [
+          "skill-proof-k-dense-ai-scientific-agent-skills-scientific-skills-datamol-skill-md",
+          "science-research-and-data-analysis-cellxgene-census",
+          "science-research-and-data-analysis-chembl",
+          "science-research-and-data-analysis-ome-ngff-samples"
+        ],
+        "benchmark_status": "artifact_gated",
+        "best_practice_basis": [
+          "anthropic-skill-best-practices",
+          "mdskills-open-ecosystem",
+          "github-copilot-instructions",
+          "skillsbench-paper"
+        ],
+        "category": "Science, research & data analysis",
+        "commit_sha": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+        "description": "Pythonic wrapper around RDKit with simplified interface and sensible defaults. Preferred for standard drug discovery including SMILES parsing, standardization, descriptors, fingerprints, clustering, 3D conformers, parallel processing. Returns native rdkit.Chem.Mol objects. For advanced control or custom parameters, use rdkit directly.",
+        "explanation": {
+          "how_an_agent_should_use_it": "Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.",
+          "notability": "Included from latest release scientific skills with explicit GitHub provenance.",
+          "observed_structure": "Headings: Datamol Cheminformatics Skill, Overview, Installation and Setup, Core Workflows, 1. Basic Molecule Handling. Resources: has_references.",
+          "what_it_covers": "Catalog summary: Pythonic wrapper around RDKit with simplified interface and sensible defaults. Preferred for standard drug discovery including SMILES parsing, standardization, descriptors, fingerprints, clustering, 3D conformers, parallel processing. Returns native rdkit.Chem.Mol objects. For advanced control or custom parameters, use rdkit directly."
+        },
+        "file_modes": {
+          "SKILL.md": "100644",
+          "references/conformers_module.md": "100644",
+          "references/core_api.md": "100644",
+          "references/descriptors_viz.md": "100644",
+          "references/fragments_scaffolds.md": "100644",
+          "references/io_module.md": "100644",
+          "references/reactions_data.md": "100644"
+        },
+        "frontmatter_keys": [
+          "description",
+          "license",
+          "metadata",
+          "name"
+        ],
+        "has_required_frontmatter": true,
+        "headings": [
+          "Datamol Cheminformatics Skill",
+          "Overview",
+          "Installation and Setup",
+          "Core Workflows",
+          "1. Basic Molecule Handling",
+          "Single molecule",
+          "From list of SMILES",
+          "Error handling"
+        ],
+        "id": "k-dense-ai-scientific-agent-skills-scientific-skills-datamol-skill-md",
+        "immutable_source_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/eb20fb0dcb0b1dadaa3db2737188f0755bbc4770/scientific-skills/datamol/SKILL.md",
+        "improvement_notes": [
+          "Keep provenance and selected ref visible so agents can verify the source before use.",
+          "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.",
+          "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings.",
+          "Add an executable validator or helper script so the workflow has objective checks.",
+          "Move long background material into references/ to keep SKILL.md concise."
+        ],
+        "install_name": "datamol",
+        "latest_release_tag": "v2.37.1",
+        "latest_release_url": "https://github.com/K-Dense-AI/scientific-agent-skills/releases/tag/v2.37.1",
+        "line_count": 705,
+        "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/datamol",
+        "name": "datamol",
+        "readiness_basis": "Actual SKILL.md found at selected release tag or default HEAD; deployment still requires running assigned scenarios in the target agent runtime.",
+        "resources": {
+          "has_agents_metadata": false,
+          "has_assets": false,
+          "has_examples": false,
+          "has_references": true,
+          "has_scripts": false
+        },
+        "runtime_artifacts_recorded": false,
+        "scenario_covered_candidate": true,
+        "selected_ref": "v2.37.1",
+        "selected_subset": false,
+        "selection_policy": "latest GitHub release v2.37.1",
+        "skill_dir_sha256": "f0c75aaf2ed983f45becdc1346296f63cf0f36e8d4c32ee43bede51f43c9ecaf",
+        "skill_file_sha256": "f685a31610997e174ebda5239cb7bc37e0b27ed4990dbaf97273b112c02e8848",
+        "source_group": "latest release scientific skills",
+        "source_path": "scientific-skills/datamol/SKILL.md",
+        "source_repo": "K-Dense-AI/scientific-agent-skills",
+        "source_tier": "latest-release-community",
+        "source_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/v2.37.1/scientific-skills/datamol/SKILL.md",
+        "subcategory": "latest-release-community"
+      },
+      "license_texts": [
+        {
+          "declared_license": "Apache-2.0",
+          "path": "artifacts/source-notices/licenses/Apache-2.0.txt",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "source_url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "observed_catalog_revision": "f463549e429aa5f6c830f6fe870b863262ef6d2d",
+      "observed_catalog_sha256": "befada014a8adf1cbb5f49049829783640725551a08862b17c22488b6fec106b",
+      "observed_scenarios_sha256": "ee40473754b9a283443eb4becb33d401751c161ea502b74fed37ef6023b8beff",
+      "preserved_notice": {
+        "commit_sha": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+        "path": "artifacts/source-notices/k-dense-scientific-agent-skills/eb20fb0dcb0b1dadaa3db2737188f0755bbc4770/LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1",
+        "source_path": "LICENSE.md"
+      },
+      "scenarios": [
+        {
+          "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
+          "category": "Science, research & data analysis",
+          "dataset_snapshot_policy": "Pinned by the catalog entry commit_sha and immutable_source_url.",
+          "dataset_track_id": "source-skill-repository",
+          "environment_requirements": [
+            "fresh agent session",
+            "read-only access to mirrored or source skill directory",
+            "no private credentials"
+          ],
+          "evaluator_path": "evaluators/source_grounded_skill_proof.schema.json",
+          "expected_output_schema": {
+            "required": [
+              "activation_conditions",
+              "required_context",
+              "safe_boundaries",
+              "workflow_steps",
+              "proof_evidence"
+            ],
+            "type": "object"
+          },
+          "id": "skill-proof-k-dense-ai-scientific-agent-skills-scientific-skills-datamol-skill-md",
+          "input_selector": {
+            "commit_sha": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+            "source_path": "scientific-skills/datamol/SKILL.md",
+            "source_repo": "K-Dense-AI/scientific-agent-skills"
+          },
+          "objective_checks": [
+            "frontmatter or fallback source structure used",
+            "source citations present",
+            "no unsupported capability claims"
+          ],
+          "real_data_or_workflow": true,
+          "required_artifacts": [
+            "source-grounded proof JSON",
+            "source line/path citations",
+            "agent transcript"
+          ],
+          "title": "datamol source-grounded functionality proof",
+          "workflow": "Use the immutable source file https://github.com/K-Dense-AI/scientific-agent-skills/blob/eb20fb0dcb0b1dadaa3db2737188f0755bbc4770/scientific-skills/datamol/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+        },
+        {
+          "agent_task": "Load the skill in a fresh agent session, solve the workflow using the cited dataset/repository, capture commands and files consulted, and produce machine-checkable output.",
+          "category": "Science, research & data analysis",
+          "dataset_snapshot_policy": "Runner must record dataset release, crawl ID, tag, file date, or repository commit before scoring.",
+          "dataset_track_id": "cellxgene-census",
+          "environment_requirements": [
+            "fresh agent session",
+            "read-only source checkout unless task requires patching",
+            "network only when dataset retrieval requires it"
+          ],
+          "evaluator_path": "evaluators/generic_workflow_result.schema.json",
+          "expected_output_schema": {
+            "required": [
+              "inputs",
+              "steps",
+              "outputs",
+              "metrics",
+              "citations_or_paths"
+            ],
+            "type": "object"
+          },
+          "id": "science-research-and-data-analysis-cellxgene-census",
+          "input_selector": {
+            "mode": "runner-selected-real-instance",
+            "selection_rule": "choose a non-trivial instance from the cited dataset or workflow and record its immutable identifier"
+          },
+          "objective_checks": [
+            "query correctness",
+            "metadata filters",
+            "reproducibility"
+          ],
+          "real_data_or_workflow": true,
+          "required_artifacts": [
+            "agent transcript or command log",
+            "dataset/version reference",
+            "output artifact",
+            "objective evaluator result"
+          ],
+          "title": "Science, research & data analysis scenario 1: CZ CELLxGENE Census",
+          "workflow": "Query and analyze single-cell expression data."
+        },
+        {
+          "agent_task": "Load the skill in a fresh agent session, solve the workflow using the cited dataset/repository, capture commands and files consulted, and produce machine-checkable output.",
+          "category": "Science, research & data analysis",
+          "dataset_snapshot_policy": "Runner must record dataset release, crawl ID, tag, file date, or repository commit before scoring.",
+          "dataset_track_id": "chembl",
+          "environment_requirements": [
+            "fresh agent session",
+            "read-only source checkout unless task requires patching",
+            "network only when dataset retrieval requires it"
+          ],
+          "evaluator_path": "evaluators/generic_workflow_result.schema.json",
+          "expected_output_schema": {
+            "required": [
+              "inputs",
+              "steps",
+              "outputs",
+              "metrics",
+              "citations_or_paths"
+            ],
+            "type": "object"
+          },
+          "id": "science-research-and-data-analysis-chembl",
+          "input_selector": {
+            "mode": "runner-selected-real-instance",
+            "selection_rule": "choose a non-trivial instance from the cited dataset or workflow and record its immutable identifier"
+          },
+          "objective_checks": [
+            "identifier accuracy",
+            "filter correctness",
+            "citation provenance"
+          ],
+          "real_data_or_workflow": true,
+          "required_artifacts": [
+            "agent transcript or command log",
+            "dataset/version reference",
+            "output artifact",
+            "objective evaluator result"
+          ],
+          "title": "Science, research & data analysis scenario 2: ChEMBL",
+          "workflow": "Retrieve molecular bioactivity records."
+        },
+        {
+          "agent_task": "Load the skill in a fresh agent session, solve the workflow using the cited dataset/repository, capture commands and files consulted, and produce machine-checkable output.",
+          "category": "Science, research & data analysis",
+          "dataset_snapshot_policy": "Runner must record dataset release, crawl ID, tag, file date, or repository commit before scoring.",
+          "dataset_track_id": "ome-ngff-samples",
+          "environment_requirements": [
+            "fresh agent session",
+            "read-only source checkout unless task requires patching",
+            "network only when dataset retrieval requires it"
+          ],
+          "evaluator_path": "evaluators/generic_workflow_result.schema.json",
+          "expected_output_schema": {
+            "required": [
+              "inputs",
+              "steps",
+              "outputs",
+              "metrics",
+              "citations_or_paths"
+            ],
+            "type": "object"
+          },
+          "id": "science-research-and-data-analysis-ome-ngff-samples",
+          "input_selector": {
+            "mode": "runner-selected-real-instance",
+            "selection_rule": "choose a non-trivial instance from the cited dataset or workflow and record its immutable identifier"
+          },
+          "objective_checks": [
+            "metadata validity",
+            "chunk correctness",
+            "shape parity"
+          ],
+          "real_data_or_workflow": true,
+          "required_artifacts": [
+            "agent transcript or command log",
+            "dataset/version reference",
+            "output artifact",
+            "objective evaluator result"
+          ],
+          "title": "Science, research & data analysis scenario 3: OME-NGFF sample data",
+          "workflow": "Read and validate multiscale microscopy data."
+        }
+      ],
+      "skill_snapshot": "artifacts/source-history/k-dense-ai-scientific-agent-skills-scientific-skills-datamol-skill-md/eb20fb0dcb0b1dadaa3db2737188f0755bbc4770/SKILL.md",
+      "skill_snapshot_sha256": "f685a31610997e174ebda5239cb7bc37e0b27ed4990dbaf97273b112c02e8848"
+    },
+    {
+      "entry": {
+        "agent_ready_path": "included/agent-ready/by-category/science-research-data-analysis/latest-release-community/parallel-web/SKILL.md",
+        "benchmark_scenarios": [
+          "skill-proof-k-dense-ai-scientific-agent-skills-scientific-skills-parallel-web-skill-md",
+          "science-research-and-data-analysis-cellxgene-census",
+          "science-research-and-data-analysis-chembl",
+          "science-research-and-data-analysis-ome-ngff-samples"
+        ],
+        "benchmark_status": "artifact_gated",
+        "best_practice_basis": [
+          "anthropic-skill-best-practices",
+          "mdskills-open-ecosystem",
+          "github-copilot-instructions",
+          "skillsbench-paper"
+        ],
+        "category": "Science, research & data analysis",
+        "commit_sha": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+        "description": "All-in-one web toolkit powered by parallel-cli, with a strong emphasis on academic and scientific sources. Use this skill whenever the user needs to search the web, fetch/extract URL content, enrich data with web-sourced fields, or run deep research reports. Covers: web search (fast lookups, research, current info \u2014 prioritizing peer-reviewed papers, preprints, and scholarly databases), URL extraction (fetching.",
+        "explanation": {
+          "how_an_agent_should_use_it": "Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.",
+          "notability": "Included from latest release scientific skills with explicit GitHub provenance.",
+          "observed_structure": "Headings: Parallel Web Toolkit, Routing \u2014 pick the right capability, Decision guide, Academic source priority, Context chaining. Resources: has_references.",
+          "what_it_covers": "Catalog summary: All-in-one web toolkit powered by parallel-cli, with a strong emphasis on academic and scientific sources. Use this skill whenever the user needs to search the web, fetch/extract URL content, enrich data with web-sourced fields, or run deep research reports. Covers: web search (fast lookups, research, current info \u2014 prioritizing peer-reviewed papers, preprints, and scholarly databases), URL extraction (fetching."
+        },
+        "file_modes": {
+          "SKILL.md": "100644",
+          "references/data-enrichment.md": "100644",
+          "references/deep-research.md": "100644",
+          "references/web-extract.md": "100644",
+          "references/web-search.md": "100644"
+        },
+        "frontmatter_keys": [
+          "compatibility",
+          "description",
+          "metadata",
+          "name"
+        ],
+        "has_required_frontmatter": true,
+        "headings": [
+          "Parallel Web Toolkit",
+          "Routing \u2014 pick the right capability",
+          "Decision guide",
+          "Academic source priority",
+          "Context chaining",
+          "Setup",
+          "Check task status",
+          "Get completed result"
+        ],
+        "id": "k-dense-ai-scientific-agent-skills-scientific-skills-parallel-web-skill-md",
+        "immutable_source_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/eb20fb0dcb0b1dadaa3db2737188f0755bbc4770/scientific-skills/parallel-web/SKILL.md",
+        "improvement_notes": [
+          "Keep provenance and selected ref visible so agents can verify the source before use.",
+          "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.",
+          "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings.",
+          "Add an executable validator or helper script so the workflow has objective checks."
+        ],
+        "install_name": "parallel-web",
+        "latest_release_tag": "v2.37.1",
+        "latest_release_url": "https://github.com/K-Dense-AI/scientific-agent-skills/releases/tag/v2.37.1",
+        "line_count": 104,
+        "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/parallel-web",
+        "name": "parallel-web",
+        "readiness_basis": "Actual SKILL.md found at selected release tag or default HEAD; deployment still requires running assigned scenarios in the target agent runtime.",
+        "resources": {
+          "has_agents_metadata": false,
+          "has_assets": false,
+          "has_examples": false,
+          "has_references": true,
+          "has_scripts": false
+        },
+        "runtime_artifacts_recorded": false,
+        "scenario_covered_candidate": true,
+        "selected_ref": "v2.37.1",
+        "selected_subset": false,
+        "selection_policy": "latest GitHub release v2.37.1",
+        "skill_dir_sha256": "a1d8797404e9d79c9ba7bcb8601b9a8c1db16255660e7c0c8e41b1da3c09c76c",
+        "skill_file_sha256": "5e14fc7509ff53d3ed1f5aab74db307c1fa9bf9baaa903841f15d2f6893dcdde",
+        "source_group": "latest release scientific skills",
+        "source_path": "scientific-skills/parallel-web/SKILL.md",
+        "source_repo": "K-Dense-AI/scientific-agent-skills",
+        "source_tier": "latest-release-community",
+        "source_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/v2.37.1/scientific-skills/parallel-web/SKILL.md",
+        "subcategory": "latest-release-community"
+      },
+      "observed_catalog_revision": "f463549e429aa5f6c830f6fe870b863262ef6d2d",
+      "observed_catalog_sha256": "befada014a8adf1cbb5f49049829783640725551a08862b17c22488b6fec106b",
+      "observed_scenarios_sha256": "ee40473754b9a283443eb4becb33d401751c161ea502b74fed37ef6023b8beff",
+      "preserved_notice": {
+        "commit_sha": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+        "path": "artifacts/source-notices/k-dense-scientific-agent-skills/eb20fb0dcb0b1dadaa3db2737188f0755bbc4770/LICENSE.md",
+        "sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1",
+        "source_path": "LICENSE.md"
+      },
+      "scenarios": [
+        {
+          "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
+          "category": "Science, research & data analysis",
+          "dataset_snapshot_policy": "Pinned by the catalog entry commit_sha and immutable_source_url.",
+          "dataset_track_id": "source-skill-repository",
+          "environment_requirements": [
+            "fresh agent session",
+            "read-only access to mirrored or source skill directory",
+            "no private credentials"
+          ],
+          "evaluator_path": "evaluators/source_grounded_skill_proof.schema.json",
+          "expected_output_schema": {
+            "required": [
+              "activation_conditions",
+              "required_context",
+              "safe_boundaries",
+              "workflow_steps",
+              "proof_evidence"
+            ],
+            "type": "object"
+          },
+          "id": "skill-proof-k-dense-ai-scientific-agent-skills-scientific-skills-parallel-web-skill-md",
+          "input_selector": {
+            "commit_sha": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+            "source_path": "scientific-skills/parallel-web/SKILL.md",
+            "source_repo": "K-Dense-AI/scientific-agent-skills"
+          },
+          "objective_checks": [
+            "frontmatter or fallback source structure used",
+            "source citations present",
+            "no unsupported capability claims"
+          ],
+          "real_data_or_workflow": true,
+          "required_artifacts": [
+            "source-grounded proof JSON",
+            "source line/path citations",
+            "agent transcript"
+          ],
+          "title": "parallel-web source-grounded functionality proof",
+          "workflow": "Use the immutable source file https://github.com/K-Dense-AI/scientific-agent-skills/blob/eb20fb0dcb0b1dadaa3db2737188f0755bbc4770/scientific-skills/parallel-web/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+        },
+        {
+          "agent_task": "Load the skill in a fresh agent session, solve the workflow using the cited dataset/repository, capture commands and files consulted, and produce machine-checkable output.",
+          "category": "Science, research & data analysis",
+          "dataset_snapshot_policy": "Runner must record dataset release, crawl ID, tag, file date, or repository commit before scoring.",
+          "dataset_track_id": "cellxgene-census",
+          "environment_requirements": [
+            "fresh agent session",
+            "read-only source checkout unless task requires patching",
+            "network only when dataset retrieval requires it"
+          ],
+          "evaluator_path": "evaluators/generic_workflow_result.schema.json",
+          "expected_output_schema": {
+            "required": [
+              "inputs",
+              "steps",
+              "outputs",
+              "metrics",
+              "citations_or_paths"
+            ],
+            "type": "object"
+          },
+          "id": "science-research-and-data-analysis-cellxgene-census",
+          "input_selector": {
+            "mode": "runner-selected-real-instance",
+            "selection_rule": "choose a non-trivial instance from the cited dataset or workflow and record its immutable identifier"
+          },
+          "objective_checks": [
+            "query correctness",
+            "metadata filters",
+            "reproducibility"
+          ],
+          "real_data_or_workflow": true,
+          "required_artifacts": [
+            "agent transcript or command log",
+            "dataset/version reference",
+            "output artifact",
+            "objective evaluator result"
+          ],
+          "title": "Science, research & data analysis scenario 1: CZ CELLxGENE Census",
+          "workflow": "Query and analyze single-cell expression data."
+        },
+        {
+          "agent_task": "Load the skill in a fresh agent session, solve the workflow using the cited dataset/repository, capture commands and files consulted, and produce machine-checkable output.",
+          "category": "Science, research & data analysis",
+          "dataset_snapshot_policy": "Runner must record dataset release, crawl ID, tag, file date, or repository commit before scoring.",
+          "dataset_track_id": "chembl",
+          "environment_requirements": [
+            "fresh agent session",
+            "read-only source checkout unless task requires patching",
+            "network only when dataset retrieval requires it"
+          ],
+          "evaluator_path": "evaluators/generic_workflow_result.schema.json",
+          "expected_output_schema": {
+            "required": [
+              "inputs",
+              "steps",
+              "outputs",
+              "metrics",
+              "citations_or_paths"
+            ],
+            "type": "object"
+          },
+          "id": "science-research-and-data-analysis-chembl",
+          "input_selector": {
+            "mode": "runner-selected-real-instance",
+            "selection_rule": "choose a non-trivial instance from the cited dataset or workflow and record its immutable identifier"
+          },
+          "objective_checks": [
+            "identifier accuracy",
+            "filter correctness",
+            "citation provenance"
+          ],
+          "real_data_or_workflow": true,
+          "required_artifacts": [
+            "agent transcript or command log",
+            "dataset/version reference",
+            "output artifact",
+            "objective evaluator result"
+          ],
+          "title": "Science, research & data analysis scenario 2: ChEMBL",
+          "workflow": "Retrieve molecular bioactivity records."
+        },
+        {
+          "agent_task": "Load the skill in a fresh agent session, solve the workflow using the cited dataset/repository, capture commands and files consulted, and produce machine-checkable output.",
+          "category": "Science, research & data analysis",
+          "dataset_snapshot_policy": "Runner must record dataset release, crawl ID, tag, file date, or repository commit before scoring.",
+          "dataset_track_id": "ome-ngff-samples",
+          "environment_requirements": [
+            "fresh agent session",
+            "read-only source checkout unless task requires patching",
+            "network only when dataset retrieval requires it"
+          ],
+          "evaluator_path": "evaluators/generic_workflow_result.schema.json",
+          "expected_output_schema": {
+            "required": [
+              "inputs",
+              "steps",
+              "outputs",
+              "metrics",
+              "citations_or_paths"
+            ],
+            "type": "object"
+          },
+          "id": "science-research-and-data-analysis-ome-ngff-samples",
+          "input_selector": {
+            "mode": "runner-selected-real-instance",
+            "selection_rule": "choose a non-trivial instance from the cited dataset or workflow and record its immutable identifier"
+          },
+          "objective_checks": [
+            "metadata validity",
+            "chunk correctness",
+            "shape parity"
+          ],
+          "real_data_or_workflow": true,
+          "required_artifacts": [
+            "agent transcript or command log",
+            "dataset/version reference",
+            "output artifact",
+            "objective evaluator result"
+          ],
+          "title": "Science, research & data analysis scenario 3: OME-NGFF sample data",
+          "workflow": "Read and validate multiscale microscopy data."
+        }
+      ],
+      "skill_snapshot": "artifacts/source-history/k-dense-ai-scientific-agent-skills-scientific-skills-parallel-web-skill-md/eb20fb0dcb0b1dadaa3db2737188f0755bbc4770/SKILL.md",
+      "skill_snapshot_sha256": "5e14fc7509ff53d3ed1f5aab74db307c1fa9bf9baaa903841f15d2f6893dcdde"
     }
   ]
 }

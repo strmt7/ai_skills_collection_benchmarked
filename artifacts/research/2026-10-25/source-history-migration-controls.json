@@ -1,0 +1,122 @@
+{
+  "apache_license_text": {
+    "bytes": 11358,
+    "entire_crawl_text_reviewed": true,
+    "native_crawl_sha256": "e3cff9ac415b2b65c50c5364f92b31f2a0e9f1f9501d01679ada698eff610193",
+    "path": "artifacts/source-notices/licenses/Apache-2.0.txt",
+    "purpose": "Provide the complete declared Apache-2.0 terms alongside archived Datamol skill bytes; not a clearance of other candidate skills.",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "status_code": 200,
+    "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+    "wire_text_matches_rendered_text_except_markdown_wrapper": true
+  },
+  "archive_input_revision": "f463549e429aa5f6c830f6fe870b863262ef6d2d",
+  "archived_source_ids": [
+    "k-dense-ai-scientific-agent-skills-scientific-skills-datamol-skill-md",
+    "k-dense-ai-scientific-agent-skills-scientific-skills-parallel-web-skill-md"
+  ],
+  "corrected_preview": {
+    "applied": false,
+    "scenarios": 761,
+    "skills": 716,
+    "unrelated_catalog_records_exactly_unchanged": 539,
+    "unrelated_source_lock_records_exactly_unchanged": 29
+  },
+  "karpathy_derived_baseline_review": {
+    "changed": false,
+    "current_commit": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+    "default_branch": "main",
+    "native_commit_capture_sha256": "3cd0c4c956d7d5d36c62a6fc191081c6318452576c3a84964636fd75b59fb8df",
+    "native_repo_capture_sha256": "e849fa77ba8989aa20a2db02c742fa373809021b0e8d0e2788d72d3303c2f64f",
+    "pinned_commit": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+    "repository": "multica-ai/andrej-karpathy-skills"
+  },
+  "notices_do_not_relicense_other_sources": true,
+  "old_benchmark_and_repair_artifacts_rewritten": false,
+  "retained_name_counterexample": {
+    "refreshed_skills": 177,
+    "retained_name_changes": [
+      {
+        "id": "anthropics-skills-skills-docx-skill-md",
+        "new_name": "docx",
+        "old_name": "docx-anthropics",
+        "source_repo": "anthropics/skills"
+      },
+      {
+        "id": "anthropics-skills-skills-pdf-skill-md",
+        "new_name": "pdf",
+        "old_name": "pdf-anthropics",
+        "source_repo": "anthropics/skills"
+      },
+      {
+        "id": "anthropics-skills-skills-pptx-skill-md",
+        "new_name": "pptx",
+        "old_name": "pptx-anthropics",
+        "source_repo": "anthropics/skills"
+      },
+      {
+        "id": "anthropics-skills-skills-xlsx-skill-md",
+        "new_name": "xlsx",
+        "old_name": "xlsx-anthropics",
+        "source_repo": "anthropics/skills"
+      },
+      {
+        "id": "affaan-m-everything-claude-code-agents-skills-exa-search-skill-md",
+        "new_name": "exa-search-everything-claude-code",
+        "old_name": "exa-search",
+        "source_repo": "affaan-m/everything-claude-code"
+      }
+    ],
+    "source_mirror_changes_applied": false
+  },
+  "root_lock_preserves_installation_names": true,
+  "schema_version": 1,
+  "scoped_guard_weakened": false,
+  "source_admission_guard": {
+    "candidate_applied": false,
+    "collector_refused_private_candidate": true,
+    "message": "source admission held for K-Dense-AI/scientific-agent-skills@526ebce143bc326f44471554e33d66a19c840360: Individual skill declarations require admission review; root MIT is not a blanket clearance.",
+    "source_programs_executed": false
+  },
+  "source_snapshot_checks_before_after": [
+    {
+      "exit_code": 1,
+      "result": {
+        "different_outputs": [
+          "artifacts/source-history/k-dense-ai-scientific-agent-skills-scientific-skills-datamol-skill-md/eb20fb0dcb0b1dadaa3db2737188f0755bbc4770/SKILL.md",
+          "artifacts/source-history/k-dense-ai-scientific-agent-skills-scientific-skills-parallel-web-skill-md/eb20fb0dcb0b1dadaa3db2737188f0755bbc4770/SKILL.md",
+          "data/catalog_source_history.json"
+        ],
+        "mode": "check",
+        "ok": false,
+        "selected_skills": 2
+      },
+      "step": "archive-before-check"
+    },
+    {
+      "exit_code": 0,
+      "result": {
+        "different_outputs": [
+          "artifacts/source-history/k-dense-ai-scientific-agent-skills-scientific-skills-datamol-skill-md/eb20fb0dcb0b1dadaa3db2737188f0755bbc4770/SKILL.md",
+          "artifacts/source-history/k-dense-ai-scientific-agent-skills-scientific-skills-parallel-web-skill-md/eb20fb0dcb0b1dadaa3db2737188f0755bbc4770/SKILL.md",
+          "data/catalog_source_history.json"
+        ],
+        "mode": "publish",
+        "ok": true,
+        "selected_skills": 2
+      },
+      "step": "archive-publish"
+    },
+    {
+      "exit_code": 0,
+      "result": {
+        "different_outputs": [],
+        "mode": "check",
+        "ok": true,
+        "selected_skills": 2
+      },
+      "step": "archive-after-check"
+    }
+  ],
+  "source_snapshot_scope": "Recorded catalog entry, assigned scenarios and exact SKILL bytes only; not full packages or reconstructed benchmark sessions."
+}

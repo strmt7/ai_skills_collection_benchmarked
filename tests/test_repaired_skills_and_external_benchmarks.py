@@ -65,7 +65,7 @@ def test_repaired_overlays_cover_failed_runtime_artifacts_without_changing_origi
     failed_skill_ids = {item["artifact"]["skill_id"] for item in failed_runtime}
     assert {item["skill_id"] for item in manifest["repairs"]} == failed_skill_ids
     for item in manifest["repairs"]:
-        entry = catalog[item["skill_id"]]
+        entry = catalog.get(item["skill_id"])
         original_artifact = load(item["original_runtime_artifact"])
         entry, historical = resolve_entry(ROOT, entry, item["skill_id"], original_artifact["source_commit"])
         repaired_dir = ROOT / item["repaired_path"]

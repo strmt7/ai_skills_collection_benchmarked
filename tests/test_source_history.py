@@ -3,6 +3,7 @@ import hashlib
 import json
 
 import _source_history as history
+import build_catalog
 import check_benchmark_artifact
 import create_repaired_skill_overlays
 import pytest
@@ -99,3 +100,44 @@ def test_historical_failure_cannot_trigger_destructive_repair_regeneration(monke
     monkeypatch.setattr(create_repaired_skill_overlays, "clean_generated_outputs", forbidden_cleanup)
     with pytest.raises(ValueError, match="requires reevaluation"):
         create_repaired_skill_overlays.run()
+
+
+def test_catalog_refresh_requires_archival_before_a_recorded_version_disappears(tmp_path):
+    entry, record, registry, _ = history_fixture(tmp_path)
+    artifact = tmp_path / "artifacts/benchmark-runs/prior/artifact.json"
+    artifact.parent.mkdir(parents=True)
+    artifact.write_text(json.dumps({"skill_id": entry["id"], "source_commit": entry["commit_sha"]}), encoding="utf-8")
+    registry.unlink()
+    build_catalog.require_source_history(tmp_path, [entry])
+    with pytest.raises(ValueError, match="would orphan recorded evidence"):
+        build_catalog.require_source_history(tmp_path, [])
+    with pytest.raises(ValueError, match="would orphan recorded evidence"):
+        build_catalog.require_source_history(tmp_path, [{**entry, "commit_sha": "e" * 40}])
+    registry.write_text(json.dumps({"schema_version": 1, "versions": [record]}), encoding="utf-8")
+    build_catalog.require_source_history(tmp_path, [])
+    build_catalog.require_source_history(tmp_path, [{**entry, "commit_sha": "e" * 40}])
+
+
+@pytest.mark.parametrize("mutation", ["bytes", "external"])
+def test_declared_license_text_is_hash_bound_and_cannot_escape(tmp_path, mutation):
+    _, record, registry, _ = history_fixture(tmp_path)
+    name = "artifacts/source-notices/licenses/terms.txt"
+    file = tmp_path / name
+    file.parent.mkdir(parents=True)
+    file.write_bytes(b"Complete license terms\n")
+    record["license_texts"] = [
+        {
+            "path": name,
+            "source_url": "https://example.org/license.txt",
+            "sha256": hashlib.sha256(file.read_bytes()).hexdigest(),
+        }
+    ]
+    registry.write_text(json.dumps({"schema_version": 1, "versions": [record]}), encoding="utf-8")
+    assert history.historical_entries(tmp_path)
+    if mutation == "bytes":
+        file.write_bytes(b"Altered terms\n")
+    else:
+        record["license_texts"][0]["path"] = "../outside"
+        registry.write_text(json.dumps({"schema_version": 1, "versions": [record]}), encoding="utf-8")
+    with pytest.raises(ValueError, match="license text"):
+        history.historical_entries(tmp_path)

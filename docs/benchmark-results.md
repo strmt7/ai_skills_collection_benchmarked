@@ -10,6 +10,7 @@ This page reports measured results only. Offline static checks were run against 
 - Runtime scenario artifacts recorded: `34`
 - Runtime scenario artifacts passed: `0`
 - Runtime scenario artifacts failed: `34`
+- Runtime artifacts attached to retired skill identifiers: `0`
 - Per-skill runtime counts below apply only to the current source commit; historical artifacts remain in the dated evidence table.
 - Source-proof provenance artifacts recorded: `10`
 

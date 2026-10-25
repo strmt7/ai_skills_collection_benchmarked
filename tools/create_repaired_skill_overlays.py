@@ -467,7 +467,8 @@ def run() -> dict[str, Any]:
     catalog = {entry["id"]: entry for entry in load_json(ROOT / "data" / "skills_catalog.json")}
     for item in failed_runtime_artifacts():
         artifact = item["artifact"]
-        if artifact["source_commit"] != catalog[artifact["skill_id"]]["commit_sha"]:
+        entry = catalog.get(artifact["skill_id"])
+        if entry is None or artifact["source_commit"] != entry["commit_sha"]:
             raise ValueError("historical runtime failure requires reevaluation before regenerating repairs")
     clean_generated_outputs()
     scenarios = {item["id"]: item for item in load_json(ROOT / "data" / "benchmark_scenarios.json")}

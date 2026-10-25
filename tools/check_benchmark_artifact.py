@@ -41,7 +41,7 @@ from collections.abc import Iterable
 from pathlib import Path
 from typing import Any
 
-from _source_history import resolve_entry
+from _source_history import resolve_version
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_PATH = ROOT / "evaluators" / "benchmark_run_artifact.schema.json"
@@ -282,9 +282,12 @@ def validate_artifact(
         scenarios = {}
 
     try:
-        skill, historical = resolve_entry(
+        version, historical = resolve_version(
             ROOT, catalog.get(artifact["skill_id"]), artifact["skill_id"], artifact["source_commit"]
         )
+        skill = version["entry"]
+        if historical and "scenarios" in version:
+            scenarios.update({item["id"]: item for item in version["scenarios"]})
     except (OSError, ValueError) as exc:
         errors.append(f"source identity: {exc}")
         skill = None

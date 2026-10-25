@@ -1,3 +1,4 @@
+import copy
 import json
 import tempfile
 from pathlib import Path
@@ -5,6 +6,7 @@ from pathlib import Path
 import check_benchmark_artifact
 import pytest
 import report_local_markdown_link_failures
+from _source_history import resolve_entry
 from helpers import ROOT, complete_artifacts, load
 
 
@@ -68,6 +70,55 @@ def assert_real_dataset_snapshot_resolved(snapshot):
         assert 200 <= snapshot["status"] < 400
 
 
+def test_deleted_skill_and_scenario_use_exact_historical_definitions(tmp_path, monkeypatch):
+    import hashlib
+
+    artifact = _complete_provenance_fixture(tmp_path)
+    entry = copy.deepcopy(load("data/skills_catalog.json")[0])
+    entry.update(commit_sha="a" * 40, benchmark_scenarios=["retired-proof"])
+    content = b"Historical instructions for integrity checks only\n"
+    entry["skill_file_sha256"] = hashlib.sha256(content).hexdigest()
+    name = "artifacts/source-history/retired/SKILL.md"
+    snapshot = tmp_path / name
+    snapshot.parent.mkdir(parents=True)
+    snapshot.write_bytes(content)
+    data = tmp_path / "data"
+    data.mkdir()
+    record = {
+        "entry": entry,
+        "observed_catalog_revision": "b" * 40,
+        "observed_catalog_sha256": "c" * 64,
+        "observed_scenarios_sha256": "d" * 64,
+        "skill_snapshot": name,
+        "skill_snapshot_sha256": hashlib.sha256(content).hexdigest(),
+        "scenarios": [{"id": "retired-proof", "dataset_track_id": "source-skill-repository"}],
+    }
+    (data / "catalog_source_history.json").write_text(
+        json.dumps({"schema_version": 1, "versions": [record]}), encoding="utf-8"
+    )
+    catalog_file, scenario_file = data / "skills_catalog.json", data / "benchmark_scenarios.json"
+    catalog_file.write_text("[]", encoding="utf-8")
+    scenario_file.write_text("[]", encoding="utf-8")
+    artifact.update(source_commit=entry["commit_sha"], scenario_id="retired-proof")
+    path = tmp_path / "artifact.json"
+    path.write_text(json.dumps(artifact), encoding="utf-8")
+    monkeypatch.setattr(check_benchmark_artifact, "ROOT", tmp_path)
+    result = check_benchmark_artifact.validate_artifact(path, catalog_file, scenario_file)
+    assert result["verdict"] == "artifact_complete", result
+    assert any("historical source" in item for item in result["warnings"])
+    artifact["artifact_kind"] = "independent_benchmark"
+    artifact["independence"].update(
+        task_defined_outside_skill=True,
+        evaluator_defined_outside_skill=True,
+        expected_result_defined_outside_skill=True,
+        uses_exact_skill_content_for_expected_result=False,
+    )
+    path.write_text(json.dumps(artifact), encoding="utf-8")
+    result = check_benchmark_artifact.validate_artifact(path, catalog_file, scenario_file)
+    assert result["verdict"] == "artifact_incomplete"
+    assert "source-skill-repository scenarios are provenance checks, not independent benchmarks" in result["errors"]
+
+
 def test_static_benchmark_results_are_real_and_current():
     results = load("data/static_benchmark_results.json")
     catalog = load("data/skills_catalog.json")
@@ -99,7 +150,7 @@ def test_static_benchmark_results_are_real_and_current():
     assert sum(track["runtime_artifacts_recorded"] for track in results["tracks"]) == len(runtime_paths)
     assert sum(
         item["runtime_artifacts_recorded"] + item["historical_runtime_artifacts_recorded"] for item in results["skills"]
-    ) == len(runtime_paths)
+    ) + len(results["retired_skill_runtime_artifacts"]) == len(runtime_paths)
     assert {item["skill_id"] for item in results["skills"]} == {entry["id"] for entry in catalog}
     assert sum(item["static_checks_passed"] for item in results["skills"]) == results["summary"]["static_checks_passed"]
     assert (
@@ -163,7 +214,17 @@ def test_independent_runtime_batch_02_is_category_spread_and_non_overlapping():
     assert "category-spread" in tasks["selection_policy"]
     assert "excluding skills already covered" in tasks["selection_policy"]
     assert not (batch_01_skill_ids & batch_02_skill_ids)
-    assert len({catalog[skill_id]["category"] for skill_id in batch_02_skill_ids}) >= 8
+    assert (
+        len(
+            {
+                resolve_entry(
+                    ROOT, catalog.get(item["skill_id"]), item["skill_id"], load(item["artifact_path"])["source_commit"]
+                )[0]["category"]
+                for item in batch_02["artifacts"]
+            }
+        )
+        >= 8
+    )
 
     task_by_id = {task["task_id"]: task for task in tasks["tasks"]}
     for item in batch_02["artifacts"]:

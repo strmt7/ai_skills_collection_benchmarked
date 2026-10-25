@@ -1,0 +1,12 @@
+{
+  "holds": [
+    {
+      "evidence_path": "artifacts/research/2026-10-25/kdense-v272-source-candidate-review.json",
+      "reason": "Individual skill declarations require admission review; root MIT is not a blanket clearance.",
+      "sha256": "5e3171b5dd8a87b37914e8b302596c6598354dc8fbd81e58414296ef0eecdc9c",
+      "source_commit": "526ebce143bc326f44471554e33d66a19c840360",
+      "source_repo": "K-Dense-AI/scientific-agent-skills"
+    }
+  ],
+  "schema_version": 1
+}
