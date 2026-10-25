@@ -76,6 +76,7 @@ def _iter_artifacts(artifact_kind: str | None) -> list[dict[str, Any]]:
                 "scenario_id": artifact["scenario_id"],
                 "source_repo": artifact["source_repo"],
                 "source_path": artifact["source_path"],
+                "source_commit": artifact["source_commit"],
                 "catalog_commit": artifact["catalog_commit"],
                 "runner": artifact["runner"],
                 "metrics": artifact.get("metrics", {}),
@@ -133,6 +134,9 @@ def _check_entry(
         "all_assigned_scenarios_exist": all(s in scenarios for s in entry["benchmark_scenarios"]),
         "human_skill_page_exists": skill_doc.is_file(),
     }
+    source_artifacts = artifacts_by_skill.get(entry["id"], [])
+    current_artifacts = [item for item in source_artifacts if item["source_commit"] == entry["commit_sha"]]
+    historical_artifacts = [item for item in source_artifacts if item["source_commit"] != entry["commit_sha"]]
     passed = sum(1 for value in checks.values() if value)
     total = len(checks)
     failed = [name for name, value in checks.items() if not value]
@@ -145,8 +149,10 @@ def _check_entry(
         "source_path": entry["source_path"],
         "mirrored_path": entry["mirrored_path"],
         "agent_ready_path": entry["agent_ready_path"],
-        "runtime_artifacts_recorded": len(artifacts_by_skill.get(entry["id"], [])),
-        "runtime_artifact_paths": [item["artifact_path"] for item in artifacts_by_skill.get(entry["id"], [])],
+        "runtime_artifacts_recorded": len(current_artifacts),
+        "runtime_artifact_paths": [item["artifact_path"] for item in current_artifacts],
+        "historical_runtime_artifacts_recorded": len(historical_artifacts),
+        "historical_runtime_artifact_paths": [item["artifact_path"] for item in historical_artifacts],
         "static_checks_passed": passed,
         "static_checks_total": total,
         "static_score_percent": round((passed / total) * 100, 2),
@@ -180,6 +186,7 @@ def render_results(results: dict[str, Any]) -> str:
         f"- Runtime scenario artifacts recorded: `{results['summary']['runtime_artifacts_recorded']}`",
         f"- Runtime scenario artifacts passed: `{results['summary']['runtime_artifacts_passed']}`",
         f"- Runtime scenario artifacts failed: `{results['summary']['runtime_artifacts_failed']}`",
+        "- Per-skill runtime counts below apply only to the current source commit; historical artifacts remain in the dated evidence table.",
         f"- Source-proof provenance artifacts recorded: `{results['summary']['provenance_artifacts_recorded']}`",
         "",
         "## Benchmark Tracks",
@@ -194,7 +201,7 @@ def render_results(results: dict[str, Any]) -> str:
             "",
             "## Skill Scores",
             "",
-            "| Skill | Category | Static checks | Static score | Runtime artifacts | Fix points | Failed static checks |",
+            "| Skill | Category | Static checks | Static score | Current-source runtime artifacts | Fix points | Failed static checks |",
             "|---|---|---:|---:|---:|---:|---|",
         ]
     )

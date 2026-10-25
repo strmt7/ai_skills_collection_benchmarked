@@ -97,7 +97,9 @@ def test_static_benchmark_results_are_real_and_current():
         assert item["benchmark_verdict"] in {"passed", "failed"}
         assert isinstance(item["score_percent"], (int, float))
     assert sum(track["runtime_artifacts_recorded"] for track in results["tracks"]) == len(runtime_paths)
-    assert sum(item["runtime_artifacts_recorded"] for item in results["skills"]) == len(runtime_paths)
+    assert sum(
+        item["runtime_artifacts_recorded"] + item["historical_runtime_artifacts_recorded"] for item in results["skills"]
+    ) == len(runtime_paths)
     assert {item["skill_id"] for item in results["skills"]} == {entry["id"] for entry in catalog}
     assert sum(item["static_checks_passed"] for item in results["skills"]) == results["summary"]["static_checks_passed"]
     assert (

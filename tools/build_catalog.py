@@ -19,7 +19,7 @@ import stat
 import subprocess
 import tempfile
 from functools import lru_cache
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Any
 
 import _catalog_publication as publication
@@ -174,9 +174,15 @@ SOURCES: list[dict[str, Any]] = [
         "dir": "lackeyjb__playwright-skill",
         "tier": "latest-release-browser-automation",
         "group": "latest release browser automation skill",
-        "policy": "latest GitHub release v4.1.0",
-        "tag": "v4.1.0",
-        "release_url": "https://github.com/lackeyjb/playwright-skill/releases/tag/v4.1.0",
+        "policy": "latest GitHub release v5.0.0",
+        "tag": "v5.0.0",
+        "release_url": "https://github.com/lackeyjb/playwright-skill/releases/tag/v5.0.0",
+        "preserved_notice": {
+            "path": "artifacts/source-notices/lackeyjb-playwright-skill/289abdea7df857dc7a6ece937dbe0c5ecc964ccd/LICENSE",
+            "source_path": "LICENSE",
+            "commit_sha": "289abdea7df857dc7a6ece937dbe0c5ecc964ccd",
+            "sha256": "c9104b65859edbe0df0255c2adbad01b147b58a02fa2aff1c2e5736512e8a143",
+        },
     },
     {
         "repo": "twwch/comfyui-workflow-skill",
@@ -1165,6 +1171,43 @@ def skill_agent_ready_path(category: str, source_tier: str, entry_install_name: 
     return f"included/agent-ready/by-category/{slug(category)}/{slug(source_tier)}/{entry_install_name}/SKILL.md"
 
 
+def validate_preserved_notice(root: Path, notice: Any, commit: str) -> dict[str, str] | None:
+    """Admit an optional verbatim source notice without changing mirror bytes."""
+    if notice is None:
+        return None
+    required = {"path", "source_path", "commit_sha", "sha256"}
+    if (
+        not isinstance(notice, dict)
+        or set(notice) != required
+        or any(not isinstance(value, str) for value in notice.values())
+    ):
+        raise ValueError("source notice must contain four string provenance fields")
+    if (
+        notice["commit_sha"] != commit
+        or not re.fullmatch(r"[0-9a-f]{40}", commit)
+        or not re.fullmatch(r"[0-9a-f]{64}", notice["sha256"])
+    ):
+        raise ValueError("source notice commit or SHA-256 differs from its source")
+    if not notice["path"].startswith("artifacts/source-notices/"):
+        raise ValueError("source notice must be inside artifacts/source-notices")
+    file = publication.checked_path(root, notice["path"])
+    source = PurePosixPath(notice["source_path"])
+    if (
+        source.as_posix() == "."
+        or source.is_absolute()
+        or ".." in source.parts
+        or ":" in notice["source_path"]
+        or "\\" in notice["source_path"]
+        or source.as_posix() != notice["source_path"]
+    ):
+        raise ValueError("source notice path must be canonical and relative")
+    if not file.is_file() or file.stat().st_size > 1024 * 1024:
+        raise ValueError("source notice is missing or exceeds the byte budget")
+    if hashlib.sha256(file.read_bytes()).hexdigest() != notice["sha256"]:
+        raise ValueError("preserved source notice bytes differ from its digest")
+    return dict(notice)
+
+
 def collect() -> list[dict[str, Any]]:
     entries: list[dict[str, Any]] = []
     for source in SOURCES:
@@ -1177,6 +1220,19 @@ def collect() -> list[dict[str, Any]]:
         if run_git(repo_dir, "status", "--porcelain=v1", "--untracked-files=all"):
             raise ValueError(f"source checkout contains uncommitted changes: {source['repo']}")
         commit = run_git(repo_dir, "rev-parse", "HEAD")
+        notice = validate_preserved_notice(ROOT, source.get("preserved_notice"), commit)
+        if notice is not None:
+            original_notice = subprocess.run(
+                ["git", "-c", "core.longpaths=true", "-C", str(repo_dir), "show", f"{commit}:{notice['source_path']}"],
+                capture_output=True,
+                timeout=30,
+                check=True,
+            )
+            if (
+                original_notice.stderr
+                or original_notice.stdout != publication.checked_path(ROOT, notice["path"]).read_bytes()
+            ):
+                raise ValueError(f"preserved notice differs from upstream Git bytes: {source['repo']}")
         if source.get("tag"):
             tag_commit = run_git(repo_dir, "rev-parse", f"{source['tag']}^{{commit}}")
             if tag_commit != commit:
@@ -1633,6 +1689,11 @@ def build_source_lock(entries: list[dict[str, Any]]) -> dict[str, Any]:
                 "commit_sha": commit,
                 "tree_sha": run_git(repo_dir, "rev-parse", "HEAD^{tree}"),
                 "skill_count": len(repo_entries),
+                **(
+                    {"preserved_notice": validate_preserved_notice(ROOT, source["preserved_notice"], commit)}
+                    if source.get("preserved_notice") is not None
+                    else {}
+                ),
                 "skills": [
                     {
                         "id": entry["id"],
@@ -1832,6 +1893,8 @@ A counted runtime benchmark artifact must record that its task, evaluator, and e
         source_doc += f"- `{source['repo']}`: {source['policy']}"
         if source.get("release_url"):
             source_doc += f" ([release]({source['release_url']}))"
+        if source.get("preserved_notice"):
+            source_doc += f" ([verbatim source notice](../{source['preserved_notice']['path']}))"
         source_doc += "\n"
     source_doc += "\n## Best-Practice Sources Reviewed\n\n"
     for source in BEST_PRACTICE_SOURCES:

@@ -37,6 +37,7 @@ sys.path.insert(0, str(ROOT / "tools"))
 
 import build_catalog  # noqa: E402
 from _lib_b import dependency_graphs  # noqa: E402
+from _source_history import historical_entries  # noqa: E402
 
 MIN_CATALOG = 200
 MIN_SCENARIOS = 3
@@ -214,7 +215,16 @@ def validate_catalog(report: Report) -> None:
     }
     report.require(source_lock.get("lock_version") == 1, "source lock version mismatch")
     report.require(source_lock.get("hash_algorithm") == "sha256", "source lock hash algorithm mismatch")
+    try:
+        historical_entries(ROOT)
+    except (OSError, ValueError) as exc:
+        report.require(False, f"source history: {exc}")
     report.require(set(locked_skills) == set(catalog_by_id), "source lock skills do not match catalog")
+    for source in source_lock.get("sources", []):
+        try:
+            build_catalog.validate_preserved_notice(ROOT, source.get("preserved_notice"), source["commit_sha"])
+        except (OSError, ValueError) as error:
+            report.require(False, f"{source.get('repo')}: {error}")
 
     agents_text = (ROOT / "AGENTS.md").read_text(encoding="utf-8").lower()
     for phrase in AGENTS_SINGLE_SESSION_PHRASES:

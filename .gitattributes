@@ -15,6 +15,8 @@
 # Preserve them across Git transports instead of converting line endings.
 /artifacts/agent-trials/** -text
 /artifacts/research/** -text
+/artifacts/source-notices/** -text
+/artifacts/source-history/** -text
 # Original provenance is an exact captured input, not authored source formatting.
 /included/improved/**/provenance/** -text
 /docs/** text eol=lf

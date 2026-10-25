@@ -1,0 +1,286 @@
+{
+  "actual_git_tree": "93d82c1ba05d02035591027cfb4c4b547828611a",
+  "response_commit": "289abdea7df857dc7a6ece937dbe0c5ecc964ccd",
+  "commit_sha": "289abdea7df857dc7a6ece937dbe0c5ecc964ccd",
+  "mirror_resources": 6,
+  "native_capture_digests": {
+    "playwright-latest-audit.stdout.log": {
+      "bytes": 358,
+      "sha256": "12931fe186a1d5341d0bd56a90726249c7208945f5b9168701ba8b1af5ce8dc3"
+    },
+    "playwright-latest-install.stdout.log": {
+      "bytes": 73,
+      "sha256": "ce88e3afab4ad04515c8963eec844e6de959e99fcff3fe388d7dabce7eddd242"
+    },
+    "playwright-latest-native-registry.json": {
+      "bytes": 2626,
+      "sha256": "07bb016590a3110317c1798c54f16c9877835cdffc47075876ae714ac052226c"
+    },
+    "playwright-mirror-lock-audit.stdout.json": {
+      "bytes": 358,
+      "sha256": "45ba248fc6956a03da77702dfd95087741de1cde5b4d698baf9a97a2b0ae69bd"
+    },
+    "playwright-owned-browser-smoke-resume2.stdout.log": {
+      "bytes": 220,
+      "sha256": "7d55d37f56e446efe2096607d3c7e19a533d89128598382ae0db286ec82ad705"
+    },
+    "playwright-upstream-tests-guarded-resume2.stdout.log": {
+      "bytes": 1041,
+      "sha256": "1cb1e4f88f57d436bd61f370807412d1bf0ac06ef0587de2cbd834c2b9e013ff"
+    },
+    "playwright-upstream-tests-guarded.stderr.log": {
+      "bytes": 1008,
+      "sha256": "2e4adf80597c60eb8f6faead15f42e7ae2b892a064883e963d6812b23496e6ed"
+    }
+  },
+  "not_measured": [
+    "coding-agent effectiveness",
+    "real-world suite pass rates",
+    "performance superiority",
+    "cross-agent behavior",
+    "external website or provider integration"
+  ],
+  "notice": {
+    "license": "MIT",
+    "path": "artifacts/source-notices/lackeyjb-playwright-skill/289abdea7df857dc7a6ece937dbe0c5ecc964ccd/LICENSE",
+    "sha256": "c9104b65859edbe0df0255c2adbad01b147b58a02fa2aff1c2e5736512e8a143"
+  },
+  "open_findings": [
+    "SKILL.md contains fixed /tmp and agent-specific paths; those are immutable upstream instructions, not provider platform requirements.",
+    "API_REFERENCE.md retains older selector guidance and an Actions v3 example inconsistent with current upstream instructions/workflow.",
+    "Header parse warnings may echo malformed input; diagnostic privacy needs a separate repair assessment.",
+    "Helper context locale/timezone defaults are fixed, so arbitrary application localization is unqualified.",
+    "The browser smoke explicitly requests Chromium sandboxing; it does not independently attest every Chromium subprocess flag or all sandbox mechanisms.",
+    "The source package lock remains 1.62.1; latest compatible 1.64.1 was installed and audited only in an isolated consumer stage."
+  ],
+  "other_catalog_records_unchanged": 672,
+  "other_source_lock_records_unchanged": 29,
+  "qualification": {
+    "blocked_unowned_http_probes": 10,
+    "browser_cache_modified": false,
+    "browser_smoke": {
+      "browser": "156.0.8078.4",
+      "chromiumSandboxRequested": true,
+      "fixture": "local file URLs only",
+      "helperCookieBanner": true,
+      "loginRedirect": true,
+      "roleLabelLocators": true,
+      "success": true,
+      "webdriver": true
+    },
+    "consumer_known_advisories": 0,
+    "consumer_playwright": "1.64.1",
+    "delete_scope": "resolved owned TEMP child only",
+    "guard": "only listener ports created by this same test process allowed; ten default probes rejected before transport",
+    "initial_harness_failure": "NODE_OPTIONS quoted backslash path consumed escapes; original failure retained; resumed using slash-separated path, without reinstalling or changing upstream tests",
+    "mirror_lock_known_advisories": 0,
+    "mirror_lock_playwright": "1.62.1",
+    "node": "26.12.1",
+    "npm": "12.2.1",
+    "os": "Windows x64",
+    "source_and_mirror_modified_for_testing": false,
+    "upstream_tests": {
+      "failed": 0,
+      "passed": 12,
+      "tests_unchanged": true
+    }
+  },
+  "ref": "v5.0.0",
+  "schema_version": 1,
+  "source_files": {
+    ".claude-plugin/marketplace.json": {
+      "git_blob": "79d5931aa5872859d6c7f33b00d1f809121c86dd",
+      "mode": "100644",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "c2ec664debbcfdca0b72fa6fac114c47245a98d6a187ec3ee1de7de01a84deb6",
+      "working_sha256": "7afc77e76b2738b4589a001f7a6ff40cedac156e7406ec07fb34a4d482d9d8a0"
+    },
+    ".claude-plugin/plugin.json": {
+      "git_blob": "746a7d81083388fafb0c59716a33f9f65f04710c",
+      "mode": "100644",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "76d018eae25b5bfedf8f82d4b639f4a117b4b304c2eeba4b75dd911e67981fdf",
+      "working_sha256": "d39c0dbc121eea3747bfd1f72ae8b9d0a091a56a774a2ce0c8cd44b5535dffba"
+    },
+    ".github/CODEOWNERS": {
+      "git_blob": "99a3f51f5f38dd435a4760ee9a43d719358c007c",
+      "mode": "100644",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "0b9bf21764c1fa2df584050b441c438b628fc89cb8bb052d988265d5eb421e97",
+      "working_sha256": "475c0068e83886be00fe6595fb83e4161609545b311dc124a04a3f5fbd211da3"
+    },
+    ".github/ISSUE_TEMPLATE/bug_report.yml": {
+      "git_blob": "f8b4f80143f0600b14616abecdd04d96d3c53c0c",
+      "mode": "100644",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "d899b944a4c77521d69cc0a6a22724224a3e58ec4d0705a31dceb56434c0f511",
+      "working_sha256": "f6ffe289eda1e018e4e8fa2d906de8aa74e2a38f6dc03c9f7a5bc8b5b9fddd4b"
+    },
+    ".github/ISSUE_TEMPLATE/feature_request.yml": {
+      "git_blob": "c767f9fbee5d4dec60dc984cd010397d2836501a",
+      "mode": "100644",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "fce005d763deac1eda2e9d75e894904abc4d40e1d49867957e52b1ada656b132",
+      "working_sha256": "a1c5321c432855f52fbd7fac5d46d3a48b78f2f3a4c97afb85679a489700775f"
+    },
+    ".github/dependabot.yml": {
+      "git_blob": "293148697a2b4d76bca4efb50a785b51d78d77ee",
+      "mode": "100644",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "6389a0901dce616a9cb67f28916a4cc9006315585974719d7dd09396de41b114",
+      "working_sha256": "3a4219e0dc0f8ebba0d8e4b8e5d7f6206dd0da669123d8d5710113d067afdb50"
+    },
+    ".github/pull_request_template.md": {
+      "git_blob": "9f47bb905ae4ec9a18f8978d525429be1c0298b1",
+      "mode": "100644",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "2de8f2faba8858c0b2e1b10989062699b834531d8778e1b26bbb95c41382f662",
+      "working_sha256": "ee14b638f17ea0950a38adc4c41c272d5eca7a359fc0987f3b25fb572568f410"
+    },
+    ".github/workflows/ci.yml": {
+      "git_blob": "ab3b58d5e9cef8737e7c4d2407dac92493d9a395",
+      "mode": "100644",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "8944a30c12f55cbeb13b2869949a5bf5b10144957fe80b876aae9a25f8ad7b8d",
+      "working_sha256": "239335b5d51ac2f34110d37cdb6df9303e43c7f8c7e17ea033ae0486d47ff0c7"
+    },
+    ".gitignore": {
+      "git_blob": "dd45e757c712fd22ce88e45917440aecf589f0d8",
+      "mode": "100644",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "bc272d1ba73da218851f52283d57757af5f041396e53140d1e5980e1eac2fe37",
+      "working_sha256": "43b37e288f16c23fc78733b5b5ae4d508be63ed5c3dd54d0e84bb7b0a4cc6115"
+    },
+    "CHANGELOG.md": {
+      "git_blob": "f6b90212d1c1041b97efcb0ee438bee113987705",
+      "mode": "100644",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "fc9a877de5072a4834ed826fb31c767b4d441e44fb02863505515a3b25a59b5e",
+      "working_sha256": "d09a1295abce3f3090efd511b900d32311f105b8beaae90382f1ee25401b138f"
+    },
+    "CONTRIBUTING.md": {
+      "git_blob": "c2051648c0d9e4e32dd3a890ded44d6d32c5c8e5",
+      "mode": "100644",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "d5c1fadba1d1130a61f8120c5a103803505f81f44172d462383d5587d94a5894",
+      "working_sha256": "1ad1c22b26e4589792ed3d987667fb6bc5edd70a12291309a066c232f3a4be33"
+    },
+    "LICENSE": {
+      "git_blob": "5d40ba0e4e8be1cf170fb43e41ab5991ad7012b2",
+      "mode": "100644",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "c9104b65859edbe0df0255c2adbad01b147b58a02fa2aff1c2e5736512e8a143",
+      "working_sha256": "62f2eaec47bf98a26fe477350f5bcf775dd9164597001568ada3379c07de14cf"
+    },
+    "README.md": {
+      "git_blob": "fb30f5116a055de7a4555aac0247faf1eec773fa",
+      "mode": "100644",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "52008f1aa357ef27a73e3d42da981f3bb1b8d1bc461fdf2c60f0c136d0b83215",
+      "working_sha256": "7355a3e9acb0ded00624b508fb8b077e12b04f9d2a8988f3b09e694c1edb6995"
+    },
+    "skills/playwright-skill/API_REFERENCE.md": {
+      "git_blob": "6d4b74fb2b51bf1153cb9b02c1cd76659bafe3d0",
+      "mode": "100644",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "948e778e15e24d453219be6e05889416f088b59469818875f728d97a4ad17603",
+      "working_sha256": "6669733902c97e252c4ae4a1832dfdcb46e91a1389fc84e1d5afe2ac7f63061a"
+    },
+    "skills/playwright-skill/SKILL.md": {
+      "git_blob": "83ad831771e8b4046a88e83981438fbc3f5eb162",
+      "mode": "100644",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "746a885d19ce9fc027c376f30bab4c86907e7ab956366c242ccdb4cf20eb8a9b",
+      "working_sha256": "14df206b3c2438452b68c009bde1315e3d7e873ade26769ea345a8304ba88907"
+    },
+    "skills/playwright-skill/lib/helpers.js": {
+      "git_blob": "dadda5789af2e9cdf0e98c9564fe3018073d4767",
+      "mode": "100644",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "b837864b43126da1c0fc216b4d555b14a52c78bd78e0075af0c6acd1efa0e010",
+      "working_sha256": "2dfae04d46e60fb2f1c4ef67e9c106df137aa729360ca9706619f7459628b6c9"
+    },
+    "skills/playwright-skill/package-lock.json": {
+      "git_blob": "394a373178a2c23f1b905186a1f9cb3e7c2efaa0",
+      "mode": "100644",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "a0502f20d5c475c9654b8a6faa69263d2eb7ab0c7898c3c0a2490ddc75316df3",
+      "working_sha256": "4bd64ace3ab3ce0b0297f8b6a7b4a647e973d00fee32c7e4267033a72e1cbd64"
+    },
+    "skills/playwright-skill/package.json": {
+      "git_blob": "ca53adefa033247185059bec7b89a0449577a874",
+      "mode": "100644",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "8f1870c8f1124cadae0bf493eccdbc8e2df48124f90d2eecaef0c43638906d8e",
+      "working_sha256": "6af1e007dda8cc673af382081b38eaca25de3c8b05235bbe84fd1b543e7c7918"
+    },
+    "skills/playwright-skill/run.js": {
+      "git_blob": "55ef973701fee172d3592fdcf4c7f6e90c0b5682",
+      "mode": "100755",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "f2afe1a17379548abee60e91c9cee9a3907ff5ae9a2423d9190e45ace761399d",
+      "working_sha256": "eee1c954d34e068ddee3573d9869294dda3c9c381904d20471027b27f3912443"
+    },
+    "tests/executor.test.js": {
+      "git_blob": "5f34b6d6edc123bf4df64b8ca202a43a35ddb076",
+      "mode": "100644",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "3de1d9e20bc5e1451b1ccd1b7d0bf1bda415c9bc14796cb15b204fd37f7d2a54",
+      "working_sha256": "c6e1663aea77ed1e8b3b9dc0b337d83ca0a9fc5efd21595dcb8c4cad2311b493"
+    },
+    "tests/fixtures/dashboard.html": {
+      "git_blob": "01bebd97b0307970ba1e81eb44d3dd4979793aa9",
+      "mode": "100644",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "b55aacd00e9748f70ebed2b503cd7095f1afeb73a40896361ff01db5d8f00dee",
+      "working_sha256": "7f29c2ecaaa43d44b4b21e9ba1d33ab4ca15ce485fc80d95176b3046f567c108"
+    },
+    "tests/fixtures/login.html": {
+      "git_blob": "93e4419ef5c47b7236ee4545ac4e333fe58a4fe1",
+      "mode": "100644",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "d378a50162b9184d16a9757d909993296409cc5407174a165575136b9b291cf8",
+      "working_sha256": "0c8bc3f99fdd41e18dec1a914b92627367a447d960e028a24ad4857ecdd5bcdd"
+    },
+    "tests/helpers.test.js": {
+      "git_blob": "e1079f55e466948e95bbe03918b0724c8028fb2a",
+      "mode": "100644",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "3f9ab7c202a726806b08da9e4c942dacc234db8ea55fb7561219496102020ab5",
+      "working_sha256": "1edaaa1f4cdcb6f918abc2303c063d67ed33d084e1f497f796782e27b8fbd9d9"
+    },
+    "tests/smoke.js": {
+      "git_blob": "3d30195800c00b7ded8ae1ed12db57a667759d93",
+      "mode": "100644",
+      "portable_newline_equivalent": true,
+      "raw_bytes_equal": false,
+      "upstream_sha256": "6a20c5cf868729f5b57eabae70c38fc705d415bcd0bf0ebe320ff4a7577d87f0",
+      "working_sha256": "961267765a09966d4a7a53579f08421d7944de5c7950717b05149515a987ac4d"
+    }
+  },
+  "source_files_verified_against_git_objects": 24,
+  "source_repo": "lackeyjb/playwright-skill"
+}

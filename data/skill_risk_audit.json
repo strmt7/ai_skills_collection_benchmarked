@@ -14709,15 +14709,10 @@
       "warning_count": 1
     },
     {
-      "agent_ready_path": "included/agent-ready/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-browser-automation/SKILL.md",
-      "blocking_count": 1,
+      "agent_ready_path": "included/agent-ready/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill/SKILL.md",
+      "blocking_count": 0,
       "category": "Testing, QA & benchmarking",
       "findings": [
-        {
-          "code": "missing-local-link",
-          "detail": "Markdown links point to missing local files: API_REFERENCE.md.",
-          "severity": "blocking"
-        },
         {
           "code": "no-executable-validator",
           "detail": "This category benefits from executable validators, but no scripts/ directory was observed.",
@@ -14730,9 +14725,9 @@
         }
       ],
       "info_count": 1,
-      "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-browser-automation",
-      "name": "Playwright Browser Automation",
-      "risk_level": "likely_non_working",
+      "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill",
+      "name": "playwright-skill",
+      "risk_level": "subpar_needs_review",
       "skill_id": "lackeyjb-playwright-skill-skills-playwright-skill-skill-md",
       "source_path": "skills/playwright-skill/SKILL.md",
       "source_repo": "lackeyjb/playwright-skill",
@@ -15010,10 +15005,10 @@
     }
   ],
   "summary": {
-    "likely_non_working": 45,
+    "likely_non_working": 44,
     "no_static_risk_found": 19,
     "skill_count": 673,
-    "subpar_needs_review": 261,
+    "subpar_needs_review": 262,
     "usable_with_listing_gaps": 348
   }
 }

@@ -30,6 +30,7 @@ from _lib_b import io_utils as _io
 from _lib_b import logging_utils as _logging
 from _lib_b.hashing import sha256_file as _sha256_file
 from _lib_b.hashing import sha256_text as _sha256_text
+from _source_history import resolve_entry
 
 RUNNER_ID = "tools/create_repaired_skill_overlays.py"
 RUN_NAME = "2026-04-19-runtime-failure-repairs"
@@ -463,8 +464,12 @@ def run() -> dict[str, Any]:
     existing_timestamp = _det.existing_field(existing_manifest, "generated_at_utc")
     existing_commit = _det.existing_field(existing_manifest, "catalog_commit")
 
-    clean_generated_outputs()
     catalog = {entry["id"]: entry for entry in load_json(ROOT / "data" / "skills_catalog.json")}
+    for item in failed_runtime_artifacts():
+        artifact = item["artifact"]
+        if artifact["source_commit"] != catalog[artifact["skill_id"]]["commit_sha"]:
+            raise ValueError("historical runtime failure requires reevaluation before regenerating repairs")
+    clean_generated_outputs()
     scenarios = {item["id"]: item for item in load_json(ROOT / "data" / "benchmark_scenarios.json")}
     tracks = {item["id"]: item for item in load_json(ROOT / "data" / "benchmark_tracks.json")}
 
@@ -615,11 +620,11 @@ def check_outputs() -> None:
         provenance_copy = repaired_dir / "provenance" / "original.SKILL.md"
         if not provenance_copy.is_file():
             raise SystemExit(f"missing preserved original for {item['skill_id']}")
-        # Strict provenance integrity: the preserved copy MUST match the
-        # immutable upstream mirror byte-for-byte.
-        entry = catalog[item["skill_id"]]
-        original_skill = ROOT / entry["mirrored_path"] / "SKILL.md"
-        if sha256_file(original_skill) != sha256_file(provenance_copy):
+        original_artifact = load_json(ROOT / item["original_runtime_artifact"])
+        entry, _ = resolve_entry(
+            ROOT, catalog.get(item["skill_id"]), item["skill_id"], original_artifact["source_commit"]
+        )
+        if entry["skill_file_sha256"] != build_catalog.sha256_file(provenance_copy):
             raise SystemExit(
                 f"provenance integrity failure for {item['skill_id']}: "
                 "provenance/original.SKILL.md diverges from the mirrored upstream"

@@ -2,8 +2,10 @@ import json
 import re
 
 import audit_skill_quality
+import build_catalog
 import create_repaired_skill_overlays
 import evaluate_external_benchmark_methods
+from _source_history import resolve_entry
 from helpers import ROOT, load
 
 
@@ -64,15 +66,19 @@ def test_repaired_overlays_cover_failed_runtime_artifacts_without_changing_origi
     assert {item["skill_id"] for item in manifest["repairs"]} == failed_skill_ids
     for item in manifest["repairs"]:
         entry = catalog[item["skill_id"]]
-        original_skill = ROOT / entry["mirrored_path"] / "SKILL.md"
+        original_artifact = load(item["original_runtime_artifact"])
+        entry, historical = resolve_entry(ROOT, entry, item["skill_id"], original_artifact["source_commit"])
         repaired_dir = ROOT / item["repaired_path"]
         repaired_skill = repaired_dir / "SKILL.md"
         original_copy = repaired_dir / "provenance" / "original.SKILL.md"
         repair_record = json.loads((repaired_dir / "repair.json").read_text(encoding="utf-8"))
 
-        assert original_skill.is_file()
         assert repaired_skill.is_file()
-        assert original_copy.read_text(encoding="utf-8") == original_skill.read_text(encoding="utf-8")
+        assert build_catalog.sha256_file(original_copy) == entry["skill_file_sha256"]
+        if not historical:
+            assert original_copy.read_text(encoding="utf-8") == (ROOT / entry["mirrored_path"] / "SKILL.md").read_text(
+                encoding="utf-8"
+            )
         assert (
             audit_skill_quality.missing_markdown_links(repaired_dir, repaired_skill.read_text(encoding="utf-8")) == []
         )

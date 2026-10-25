@@ -9562,29 +9562,38 @@
       "tree_sha": "d858a0010fea64b8f735b4854aeec045e87eb63a"
     },
     {
-      "commit_sha": "c82d6e5a3963838bc1195637b83e7a030c757595",
+      "commit_sha": "289abdea7df857dc7a6ece937dbe0c5ecc964ccd",
       "local_dir": "lackeyjb__playwright-skill",
-      "origin_url": "https://github.com/lackeyjb/playwright-skill.git",
+      "origin_url": "https://github.com/lackeyjb/playwright-skill",
+      "preserved_notice": {
+        "commit_sha": "289abdea7df857dc7a6ece937dbe0c5ecc964ccd",
+        "path": "artifacts/source-notices/lackeyjb-playwright-skill/289abdea7df857dc7a6ece937dbe0c5ecc964ccd/LICENSE",
+        "sha256": "c9104b65859edbe0df0255c2adbad01b147b58a02fa2aff1c2e5736512e8a143",
+        "source_path": "LICENSE"
+      },
       "repo": "lackeyjb/playwright-skill",
-      "selected_ref": "v4.1.0",
-      "selection_policy": "latest GitHub release v4.1.0",
+      "selected_ref": "v5.0.0",
+      "selection_policy": "latest GitHub release v5.0.0",
       "skill_count": 1,
       "skills": [
         {
+          "credential_policy_version": 3,
           "file_modes": {
+            "API_REFERENCE.md": "100644",
             "SKILL.md": "100644",
             "lib/helpers.js": "100644",
+            "package-lock.json": "100644",
             "package.json": "100644",
             "run.js": "100755"
           },
           "id": "lackeyjb-playwright-skill-skills-playwright-skill-skill-md",
-          "install_name": "playwright-browser-automation",
-          "skill_dir_sha256": "567513c7553e37c68b54b5e1813e387233036cf280ab8aac456a30a9c6d338ba",
-          "skill_file_sha256": "7e0d1a74af4fdfcd30254feb1dee9455deffccc7270ba1f9137f0102431bde1a",
+          "install_name": "playwright-skill",
+          "skill_dir_sha256": "050d832718bd16b276385cab33564d231e0a728ac1f82ce4e00e4e80461ede13",
+          "skill_file_sha256": "746a885d19ce9fc027c376f30bab4c86907e7ab956366c242ccdb4cf20eb8a9b",
           "source_path": "skills/playwright-skill/SKILL.md"
         }
       ],
-      "tree_sha": "1dab2781f7b9b76b4ed7193585d8064fddfbd124"
+      "tree_sha": "93d82c1ba05d02035591027cfb4c4b547828611a"
     },
     {
       "commit_sha": "61e6b7984de7f415a8df59c97522265cac6d3b1b",

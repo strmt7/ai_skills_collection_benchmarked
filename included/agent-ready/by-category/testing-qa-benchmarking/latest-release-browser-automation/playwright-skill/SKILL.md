@@ -1,15 +1,15 @@
 ---
-name: "Playwright Browser Automation"
-description: "Complete browser automation with Playwright. Auto-detects dev servers, writes clean test scripts to /tmp. Test pages, fill forms, take screenshots, check responsive design, validate UX, test login flows, check links, automate any browser task. Use when user wants to test websites, automate browser interactions, validate web functionality, or perform any browser-based testing."
+name: "playwright-skill"
+description: "Complete browser automation with Playwright. Auto-detects dev servers, writes reusable test scripts, and supports screenshots, responsive checks, UX validation, login flows, link checks, and arbitrary browser automation. Use when the user wants to test a website, automate browser interactions, validate web functionality, or perform browser-based testing."
 source_skill_id: "lackeyjb-playwright-skill-skills-playwright-skill-skill-md"
 category: "Testing, QA & benchmarking"
-source_mirror: "../../../../../skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-browser-automation/SKILL.md"
+source_mirror: "../../../../../skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill/SKILL.md"
 benchmark_status: "artifact_gated"
 ---
 
-# Playwright Browser Automation
+# playwright-skill
 
-Use this skill when the task matches the description above or the source path clearly applies. Start with this concise entrypoint; open `../../../../../skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-browser-automation/SKILL.md` only when implementation details, commands, assets, or references are needed.
+Use this skill when the task matches the description above or the source path clearly applies. Start with this concise entrypoint; open `../../../../../skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill/SKILL.md` only when implementation details, commands, assets, or references are needed.
 
 Before repository work, read and apply [Mandatory agent tools](../../../../../../docs/agent-tools.md): Caveman for every task, CocoIndex Code before broad code navigation, and Crawl4AI for web-page research. Retain actual execution evidence; do not claim unavailable tools ran. Repository-level rules remain controlling.
 
@@ -22,8 +22,8 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 
 ## Verification
 
-- Source mirror: `../../../../../skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-browser-automation/SKILL.md`
-- Source commit: `c82d6e5a3963838bc1195637b83e7a030c757595`
+- Source mirror: `../../../../../skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill/SKILL.md`
+- Source commit: `289abdea7df857dc7a6ece937dbe0c5ecc964ccd`
 - Static benchmark results: see `docs/benchmark-results.md`
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-lackeyjb-playwright-skill-skills-playwright-skill-skill-md`, `testing-qa-and-benchmarking-swe-bench-lite`, `testing-qa-and-benchmarking-owasp-benchmark`, `testing-qa-and-benchmarking-local-omero-compose-workflows`

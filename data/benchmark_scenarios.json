@@ -29009,7 +29009,7 @@
     },
     "id": "skill-proof-lackeyjb-playwright-skill-skills-playwright-skill-skill-md",
     "input_selector": {
-      "commit_sha": "c82d6e5a3963838bc1195637b83e7a030c757595",
+      "commit_sha": "289abdea7df857dc7a6ece937dbe0c5ecc964ccd",
       "source_path": "skills/playwright-skill/SKILL.md",
       "source_repo": "lackeyjb/playwright-skill"
     },
@@ -29024,8 +29024,8 @@
       "source line/path citations",
       "agent transcript"
     ],
-    "title": "Playwright Browser Automation source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/lackeyjb/playwright-skill/blob/c82d6e5a3963838bc1195637b83e7a030c757595/skills/playwright-skill/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "title": "playwright-skill source-grounded functionality proof",
+    "workflow": "Use the immutable source file https://github.com/lackeyjb/playwright-skill/blob/289abdea7df857dc7a6ece937dbe0c5ecc964ccd/skills/playwright-skill/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",

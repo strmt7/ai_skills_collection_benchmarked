@@ -41,6 +41,8 @@ from collections.abc import Iterable
 from pathlib import Path
 from typing import Any
 
+from _source_history import resolve_entry
+
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_PATH = ROOT / "evaluators" / "benchmark_run_artifact.schema.json"
 
@@ -279,12 +281,16 @@ def validate_artifact(
         catalog = {}
         scenarios = {}
 
-    skill = catalog.get(artifact["skill_id"])
-    if not skill:
-        errors.append(f"unknown skill_id: {artifact['skill_id']}")
-    else:
-        if artifact["source_commit"] != skill["commit_sha"]:
-            errors.append("source_commit does not match catalog commit_sha")
+    try:
+        skill, historical = resolve_entry(
+            ROOT, catalog.get(artifact["skill_id"]), artifact["skill_id"], artifact["source_commit"]
+        )
+    except (OSError, ValueError) as exc:
+        errors.append(f"source identity: {exc}")
+        skill = None
+    if skill:
+        if historical:
+            warnings.append("historical source version: this artifact does not qualify the current catalog pin")
         if artifact["source_repo"] != skill["source_repo"]:
             errors.append("source_repo does not match catalog")
         if artifact["source_path"] != skill["source_path"]:

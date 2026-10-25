@@ -10,6 +10,7 @@ This page reports measured results only. Offline static checks were run against 
 - Runtime scenario artifacts recorded: `34`
 - Runtime scenario artifacts passed: `0`
 - Runtime scenario artifacts failed: `34`
+- Per-skill runtime counts below apply only to the current source commit; historical artifacts remain in the dated evidence table.
 - Source-proof provenance artifacts recorded: `10`
 
 ## Benchmark Tracks
@@ -38,7 +39,7 @@ This page reports measured results only. Offline static checks were run against 
 
 ## Skill Scores
 
-| Skill | Category | Static checks | Static score | Runtime artifacts | Fix points | Failed static checks |
+| Skill | Category | Static checks | Static score | Current-source runtime artifacts | Fix points | Failed static checks |
 |---|---|---:|---:|---:|---:|---|
 | `strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md` | DevOps, cloud & operations | 12/12 | 100.0 | 1 | 4 | none |
 | `strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md` | Game, mobile & visual QA | 12/12 | 100.0 | 0 | 3 | none |
@@ -702,7 +703,7 @@ This page reports measured results only. Offline static checks were run against 
 | `anthropics-skills-skills-skill-creator-skill-md` | Testing, QA & benchmarking | 12/12 | 100.0 | 0 | 3 | none |
 | `anthropics-skills-skills-webapp-testing-skill-md` | Testing, QA & benchmarking | 12/12 | 100.0 | 0 | 3 | none |
 | `composio-community-support-skills-qa-response-skill-md` | Testing, QA & benchmarking | 12/12 | 100.0 | 0 | 4 | none |
-| `lackeyjb-playwright-skill-skills-playwright-skill-skill-md` | Testing, QA & benchmarking | 12/12 | 100.0 | 1 | 4 | none |
+| `lackeyjb-playwright-skill-skills-playwright-skill-skill-md` | Testing, QA & benchmarking | 12/12 | 100.0 | 0 | 4 | none |
 | `trailofbits-skills-plugins-debug-buttercup-skills-debug-buttercup-skill-md` | Testing, QA & benchmarking | 12/12 | 100.0 | 0 | 3 | none |
 | `trailofbits-skills-plugins-mutation-testing-skills-mutation-testing-skill-md` | Testing, QA & benchmarking | 12/12 | 100.0 | 0 | 4 | none |
 | `trailofbits-skills-plugins-property-based-testing-skills-property-based-testing-skill-md` | Testing, QA & benchmarking | 12/12 | 100.0 | 1 | 4 | none |

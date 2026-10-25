@@ -5,8 +5,8 @@ This report flags likely subpar or non-working skills from static, source-backed
 ## Summary
 
 - Skills audited: `673`
-- Likely non-working: `45`
-- Subpar / needs review: `261`
+- Likely non-working: `44`
+- Subpar / needs review: `262`
 - Usable with listing gaps: `348`
 - No static risk found: `19`
 
@@ -657,7 +657,7 @@ This report flags likely subpar or non-working skills from static, source-backed
 | `subpar_needs_review` | `anthropics-skills-skills-skill-creator-skill-md` | Testing, QA & benchmarking | 0 | 2 | duplicate-skill-name: This skill name collides with another source; bulk install is unsafe.; missing-agent-metadata: No agents/openai.yaml metadata was observed for listing UI compatibility.; delegation-conflict-in-source: Mirrored source mentions delegated AI work; repository AGENTS.md overrides it with single-session execution. |
 | `usable_with_listing_gaps` | `anthropics-skills-skills-webapp-testing-skill-md` | Testing, QA & benchmarking | 0 | 0 | missing-agent-metadata: No agents/openai.yaml metadata was observed for listing UI compatibility. |
 | `subpar_needs_review` | `composio-community-support-skills-qa-response-skill-md` | Testing, QA & benchmarking | 0 | 1 | no-executable-validator: This category benefits from executable validators, but no scripts/ directory was observed.; missing-agent-metadata: No agents/openai.yaml metadata was observed for listing UI compatibility. |
-| `likely_non_working` | `lackeyjb-playwright-skill-skills-playwright-skill-skill-md` | Testing, QA & benchmarking | 1 | 1 | missing-local-link: Markdown links point to missing local files: API_REFERENCE.md.; no-executable-validator: This category benefits from executable validators, but no scripts/ directory was observed.; missing-agent-metadata: No agents/openai.yaml metadata was observed for listing UI compatibility. |
+| `subpar_needs_review` | `lackeyjb-playwright-skill-skills-playwright-skill-skill-md` | Testing, QA & benchmarking | 0 | 1 | no-executable-validator: This category benefits from executable validators, but no scripts/ directory was observed.; missing-agent-metadata: No agents/openai.yaml metadata was observed for listing UI compatibility. |
 | `usable_with_listing_gaps` | `trailofbits-skills-plugins-debug-buttercup-skills-debug-buttercup-skill-md` | Testing, QA & benchmarking | 0 | 0 | missing-agent-metadata: No agents/openai.yaml metadata was observed for listing UI compatibility. |
 | `subpar_needs_review` | `trailofbits-skills-plugins-mutation-testing-skills-mutation-testing-skill-md` | Testing, QA & benchmarking | 0 | 1 | no-executable-validator: This category benefits from executable validators, but no scripts/ directory was observed.; missing-agent-metadata: No agents/openai.yaml metadata was observed for listing UI compatibility. |
 | `likely_non_working` | `trailofbits-skills-plugins-property-based-testing-skills-property-based-testing-skill-md` | Testing, QA & benchmarking | 1 | 1 | missing-local-link: Markdown links point to missing local files: {baseDir}/references/design.md, {baseDir}/references/generating.md, {baseDir}/references/interpreting-failures.md, {baseDir}/references/libraries.md, {baseDir}/references/refactoring.md, {baseDir}/references/reviewing.md, {baseDir}/references/strategies.md.; no-executable-validator: This category benefits from executable validators, but no scripts/ directory was observed.; missing-agent-metadata: No agents/openai.yaml metadata was observed for listing UI compatibility. |

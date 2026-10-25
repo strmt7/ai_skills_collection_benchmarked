@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "scope": "Recorded catalog source identities and exact SKILL bytes only; not a complete historical package or a reconstructed original benchmark execution.",
+  "versions": [
+    {
+      "entry": {
+        "agent_ready_path": "included/agent-ready/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-browser-automation/SKILL.md",
+        "benchmark_scenarios": [
+          "skill-proof-lackeyjb-playwright-skill-skills-playwright-skill-skill-md",
+          "testing-qa-and-benchmarking-swe-bench-lite",
+          "testing-qa-and-benchmarking-owasp-benchmark",
+          "testing-qa-and-benchmarking-local-omero-compose-workflows"
+        ],
+        "benchmark_status": "artifact_gated",
+        "best_practice_basis": [
+          "anthropic-skill-best-practices",
+          "mdskills-open-ecosystem",
+          "github-copilot-instructions",
+          "skillsbench-paper"
+        ],
+        "category": "Testing, QA & benchmarking",
+        "commit_sha": "c82d6e5a3963838bc1195637b83e7a030c757595",
+        "description": "Complete browser automation with Playwright. Auto-detects dev servers, writes clean test scripts to /tmp. Test pages, fill forms, take screenshots, check responsive design, validate UX, test login flows, check links, automate any browser task. Use when user wants to test websites, automate browser interactions, validate web functionality, or perform any browser-based testing.",
+        "explanation": {
+          "how_an_agent_should_use_it": "Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.",
+          "notability": "Included from latest release browser automation skill with explicit GitHub provenance.",
+          "observed_structure": "Headings: Playwright Browser Automation, How It Works, Setup (First Time), Execution Pattern, Common Patterns. Resources: none observed.",
+          "what_it_covers": "Catalog summary: Complete browser automation with Playwright. Auto-detects dev servers, writes clean test scripts to /tmp. Test pages, fill forms, take screenshots, check responsive design, validate UX, test login flows, check links, automate any browser task. Use when user wants to test websites, automate browser interactions, validate web functionality, or perform any browser-based testing."
+        },
+        "file_modes": {
+          "SKILL.md": "100644",
+          "lib/helpers.js": "100644",
+          "package.json": "100644",
+          "run.js": "100755"
+        },
+        "frontmatter_keys": [
+          "author",
+          "description",
+          "name",
+          "tags",
+          "version"
+        ],
+        "has_required_frontmatter": true,
+        "headings": [
+          "Playwright Browser Automation",
+          "How It Works",
+          "Setup (First Time)",
+          "Execution Pattern",
+          "Common Patterns",
+          "Test a Page (Multiple Viewports)",
+          "Test Login Flow",
+          "Fill and Submit Form"
+        ],
+        "id": "lackeyjb-playwright-skill-skills-playwright-skill-skill-md",
+        "immutable_source_url": "https://github.com/lackeyjb/playwright-skill/blob/c82d6e5a3963838bc1195637b83e7a030c757595/skills/playwright-skill/SKILL.md",
+        "improvement_notes": [
+          "Keep provenance and selected ref visible so agents can verify the source before use.",
+          "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.",
+          "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings.",
+          "Add an executable validator or helper script so the workflow has objective checks."
+        ],
+        "install_name": "playwright-browser-automation",
+        "latest_release_tag": "v4.1.0",
+        "latest_release_url": "https://github.com/lackeyjb/playwright-skill/releases/tag/v4.1.0",
+        "line_count": 447,
+        "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-browser-automation",
+        "name": "Playwright Browser Automation",
+        "readiness_basis": "Actual SKILL.md found at selected release tag or default HEAD; deployment still requires running assigned scenarios in the target agent runtime.",
+        "resources": {
+          "has_agents_metadata": false,
+          "has_assets": false,
+          "has_examples": false,
+          "has_references": false,
+          "has_scripts": false
+        },
+        "runtime_artifacts_recorded": false,
+        "scenario_covered_candidate": true,
+        "selected_ref": "v4.1.0",
+        "selected_subset": false,
+        "selection_policy": "latest GitHub release v4.1.0",
+        "skill_dir_sha256": "567513c7553e37c68b54b5e1813e387233036cf280ab8aac456a30a9c6d338ba",
+        "skill_file_sha256": "7e0d1a74af4fdfcd30254feb1dee9455deffccc7270ba1f9137f0102431bde1a",
+        "source_group": "latest release browser automation skill",
+        "source_path": "skills/playwright-skill/SKILL.md",
+        "source_repo": "lackeyjb/playwright-skill",
+        "source_tier": "latest-release-browser-automation",
+        "source_url": "https://github.com/lackeyjb/playwright-skill/blob/v4.1.0/skills/playwright-skill/SKILL.md",
+        "subcategory": "latest-release-browser-automation"
+      },
+      "observed_catalog_revision": "8aec4c3c127cb8a3d2a9b24627445b89fe2a2242",
+      "observed_catalog_sha256": "95e60400e1e1e151cf4d60904c9e28bbc1fc59868036431c730472b087b15aeb",
+      "preserved_notice": {
+        "commit_sha": "c82d6e5a3963838bc1195637b83e7a030c757595",
+        "path": "artifacts/source-notices/lackeyjb-playwright-skill/c82d6e5a3963838bc1195637b83e7a030c757595/LICENSE",
+        "sha256": "c9104b65859edbe0df0255c2adbad01b147b58a02fa2aff1c2e5736512e8a143",
+        "source_path": "LICENSE"
+      },
+      "skill_snapshot": "artifacts/source-history/lackeyjb-playwright-skill-skills-playwright-skill-skill-md/c82d6e5a3963838bc1195637b83e7a030c757595/SKILL.md",
+      "skill_snapshot_sha256": "7e0d1a74af4fdfcd30254feb1dee9455deffccc7270ba1f9137f0102431bde1a"
+    }
+  ]
+}

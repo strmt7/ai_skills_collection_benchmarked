@@ -6620,13 +6620,13 @@
     "subcategory": "support-reference"
   },
   {
-    "agent_ready_path": "included/agent-ready/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-browser-automation/SKILL.md",
+    "agent_ready_path": "included/agent-ready/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill/SKILL.md",
     "benchmark_status": "artifact_gated",
     "category": "Testing, QA & benchmarking",
     "id": "lackeyjb-playwright-skill-skills-playwright-skill-skill-md",
-    "install_name": "playwright-browser-automation",
-    "name": "Playwright Browser Automation",
-    "source_mirrored_path": "included/skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-browser-automation",
+    "install_name": "playwright-skill",
+    "name": "playwright-skill",
+    "source_mirrored_path": "included/skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill",
     "subcategory": "latest-release-browser-automation"
   },
   {

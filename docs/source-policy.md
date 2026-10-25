@@ -14,7 +14,7 @@
 - `akin-ozer/cc-devops-skills`: latest GitHub release v1.0.0 ([release](https://github.com/akin-ozer/cc-devops-skills/releases/tag/v1.0.0))
 - `composio-community/support-skills`: default-branch HEAD; GitHub API reported no latest release
 - `browser-act/skills`: default-branch HEAD; GitHub API reported no latest release
-- `lackeyjb/playwright-skill`: latest GitHub release v4.1.0 ([release](https://github.com/lackeyjb/playwright-skill/releases/tag/v4.1.0))
+- `lackeyjb/playwright-skill`: latest GitHub release v5.0.0 ([release](https://github.com/lackeyjb/playwright-skill/releases/tag/v5.0.0)) ([verbatim source notice](../artifacts/source-notices/lackeyjb-playwright-skill/289abdea7df857dc7a6ece937dbe0c5ecc964ccd/LICENSE))
 - `twwch/comfyui-workflow-skill`: default-branch HEAD; GitHub API reported no latest release
 - `EvoLinkAI/video-generation-skill-for-openclaw`: default-branch HEAD; GitHub API reported no latest release
 - `EvoLinkAI/music-generation-skill-for-openclaw`: default-branch HEAD; GitHub API reported no latest release

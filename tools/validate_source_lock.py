@@ -299,6 +299,11 @@ def main(argv: list[str] | None = None) -> int:
     validate_top_level(lock, report)
     validate_sources_structure(lock, report)
     validate_unique_skill_ids(lock.get("sources", []), report)
+    for source in lock.get("sources", []):
+        try:
+            build_catalog.validate_preserved_notice(ROOT, source.get("preserved_notice"), source.get("commit_sha", ""))
+        except (OSError, ValueError) as error:
+            report.fail(f"{source.get('repo')}: {error}")
     validate_mirrors(lock, report)
 
     source_root = resolve_source_root(args.source_root)
