@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "evidence_class": "mandatory-tool-release-and-local-consumer-review-not-agent-effectiveness",
+  "release_observations": {
+    "caveman": {
+      "tag_name": "v4.0.1",
+      "published_at": "2026-10-13T18:34:04Z"
+    },
+    "crawl4ai": {
+      "tag_name": "v0.9.5",
+      "published_at": "2026-10-14T10:25:39Z"
+    },
+    "cocoindex": "1.0.26",
+    "cocoindex_code": "0.2.42"
+  },
+  "cocoindex_native_wheel_sha256": "fa3d72a0b4a8cc02c8174220f2d7d38590707f8c9bfc92945d9fc3c0ececd678",
+  "actual_search": {
+    "query": "Update chained advisory dependency graphs from immutable sources while preserving provenance and frozen benchmark fixtures",
+    "versions": {
+      "cocoindex": "1.0.26",
+      "cocoindex-code": "0.2.42"
+    },
+    "success": true,
+    "source_spans_verified": 5,
+    "selected_files": 63,
+    "index_chunks": 883,
+    "manifest_sha256": "adc3ae4ed660a5fec8878a795c5b021d9209f91102b8c6c865ffdcbe852453e8",
+    "raw_search_sha256": "89cbb261e24082b0634bf64d10d05f7b8af0520d3f31c6b4392951a2b1fa10ba"
+  },
+  "cocoindex_installation_diagnostic": "Base environment retained older distribution metadata; original isolated provider shadowed the upgrade. New explicitly selected provider imports and metadata both verify1.0.26; old provider preserved. Successful pip exit alone was insufficient.",
+  "crawl4ai_current_release_qualification": {
+    "version": "0.9.5",
+    "status": "not_qualified",
+    "scope": "Exact upstream download-opener component reproduces AttributeError on Windows; not a full provider installation",
+    "evidence": "artifacts/research/2026-10-25/crawl4ai-0.9.5-windows-component-reproduction.json"
+  },
+  "caveman_runtime_status": "No new upstream hooks, cloud synchronization, proxy or model worker installed; mandatory internal-only local overlay remains applied",
+  "source_findings_suppressed": false,
+  "agent_efficacy_scored": false
+}

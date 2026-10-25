@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import copy
 import hashlib
 import json
 import subprocess
@@ -161,3 +162,46 @@ def test_unknown_graph_metadata_fails(fixture):
     root, _, _, source, entry, _ = fixture
     with pytest.raises(ValueError, match="metadata"):
         dependency_graphs.for_entry({**entry, "dependency_graph": "unknown"}, source, root=root)
+
+
+@pytest.mark.parametrize("previous_id", ["fixture-floor", None, "unknown"])
+def test_successive_advisory_graph_requires_exact_predecessor(fixture, previous_id):
+    root, sources, _, _, _, graph = fixture
+    stage, journal, _ = refresh.prepare(root, sources, "fixture", "artifacts/first-refresh.json")
+    publication.publish(root, stage, journal)
+    entry = json.loads((root / METADATA[0]).read_bytes())[0]
+    original_skill = (root / entry["mirrored_path"] / "SKILL.md").read_bytes()
+    updated = copy.deepcopy(graph)
+    updated.update(
+        id="fixture-floor-second",
+        previous_dependency_graph=previous_id,
+        previous_mirror_sha256=entry["skill_dir_sha256"],
+        direct_floors={"fixture": "^1.2.0"},
+    )
+    for name in ("package.json", "package-lock.json"):
+        previous = root / graph["files"][name]["replacement_path"]
+        value = json.loads(previous.read_bytes())
+        if name == "package.json":
+            value["dependencies"]["fixture"] = "^1.2.0"
+        else:
+            value["packages"][""]["dependencies"]["fixture"] = "^1.2.0"
+            value["packages"]["node_modules/fixture"]["version"] = "1.2.0"
+        destination = root / "second-graph" / name
+        catalog.write_json(destination, value)
+        updated["files"][name].update(
+            replacement_path=destination.relative_to(root).as_posix(),
+            replacement_sha256=hashlib.sha256(destination.read_bytes().replace(b"\r\n", b"\n")).hexdigest(),
+        )
+    catalog.write_json(root / "data/dependency_graphs.json", {"graphs": [updated]})
+    before = publication.signature(root / entry["mirrored_path"])
+    if previous_id != graph["id"]:
+        with pytest.raises(ValueError, match="previous mirror"):
+            refresh.prepare(root, sources, "fixture", "artifacts/second-refresh.json")
+        assert publication.signature(root / entry["mirrored_path"]) == before
+        return
+    stage, journal, count = refresh.prepare(root, sources, "fixture", "artifacts/second-refresh.json")
+    assert count == 1
+    publication.publish(root, stage, journal)
+    assert (root / entry["mirrored_path"] / "SKILL.md").read_bytes() == original_skill
+    assert json.loads((root / METADATA[0]).read_bytes())[0]["dependency_graph"] == updated["id"]
+    assert refresh.prepare(root, sources, "fixture", "artifacts/second-refresh.json")[2] == 0

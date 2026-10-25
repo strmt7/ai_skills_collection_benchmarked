@@ -1,14 +1,14 @@
 {
   "graphs": [
     {
-      "audit_path": "artifacts/research/2026-10-07/image-cli-advisory-npm-audit.json",
+      "audit_path": "artifacts/research/2026-10-25/image-cli-fast-uri-advisory-npm-audit.json",
       "direct_floors": {
         "sharp": "^0.35.5"
       },
       "files": {
         "package-lock.json": {
           "replacement_path": "benchmarks/dependency-regressions/fixtures/image-cli-advisory-floor/package-lock.json",
-          "replacement_sha256": "d6914de6c8bec49d7d6ce61d210fff9ea31f1bbd252872771e48ff6d4f74e596",
+          "replacement_sha256": "68ee0b3318f231e03b1b105b93e758bfcced4afdd9cbec7cd0fb1e82dbaa442f",
           "source_sha256": "e0bcd3bc94635b667f848b3d3b903ebb69773e2393debe5c1634e9824e936ce0"
         },
         "package.json": {
@@ -17,13 +17,15 @@
           "source_sha256": "a6935eccb39313f74cb9aa20679f6ed8c634fe0e7c23a9be7b0121fead76a92c"
         }
       },
-      "id": "blog-cover-image-cli-advisories-2026-10-07",
+      "id": "blog-cover-image-cli-advisories-2026-10-25",
       "limitations": [
         "Known-advisory scan and trusted runtime controls only; no agent efficacy or provider availability scored",
-        "Unaffected direct dependency version ranges remain the original declaration"
+        "Unaffected direct dependency version ranges remain the original declaration",
+        "Previous source/fixture bytes and dated controls remain historical evidence; this new graph is not an agent-effectiveness score"
       ],
-      "previous_mirror_sha256": "7bc344d6c4cba207ef77331f3cf3aa13164121f1e4823e25c383c241a3b6101d",
-      "runtime_controls_path": "artifacts/research/2026-10-07/image-cli-advisory-runtime-controls.json",
+      "previous_dependency_graph": "blog-cover-image-cli-advisories-2026-10-07",
+      "previous_mirror_sha256": "9d9154d482b45fb4f8bf9865d8a67b7230e13d732d0225560362a6c00ea16645",
+      "runtime_controls_path": "artifacts/research/2026-10-25/image-cli-fast-uri-advisory-runtime-controls.json",
       "source_commit": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4",
       "source_path": "packages/cli/skills/blog-cover-image-cli/SKILL.md",
       "source_repo": "Varnan-Tech/opendirectory",

@@ -29312,7 +29312,7 @@
     ],
     "category": "Creative, media & design",
     "commit_sha": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4",
-    "dependency_graph": "blog-cover-image-cli-advisories-2026-10-07",
+    "dependency_graph": "blog-cover-image-cli-advisories-2026-10-25",
     "description": "A skill for blog-cover-image-cli",
     "explanation": {
       "how_an_agent_should_use_it": "Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.",
@@ -29376,7 +29376,7 @@
     "selected_ref": "default-branch HEAD",
     "selected_subset": false,
     "selection_policy": "default-branch HEAD; GitHub API reported no latest release",
-    "skill_dir_sha256": "9d9154d482b45fb4f8bf9865d8a67b7230e13d732d0225560362a6c00ea16645",
+    "skill_dir_sha256": "061f1aa5b361855039ea33b9e8d8bf05e5a56e425316d65bcacafb4953c92948",
     "skill_file_sha256": "f5ab67d3ed7b80e1e7ad7dc34175633f28b3acf053f7a4366fc4b76960587fcc",
     "source_group": "Reddit r/codex open-source Codex skills signal; GitHub SKILL.md files verified",
     "source_path": "packages/cli/skills/blog-cover-image-cli/SKILL.md",
