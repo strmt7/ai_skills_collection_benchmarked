@@ -52,5 +52,7 @@
     "No platform beyond Windows x64 CPython 3.13.17 is qualified",
     "Original source and failed controls preserved",
     "Earlier loose failure-classification captures retained privately and superseded by root-cause rejection checks"
-  ]
+  ],
+  "source_pin_path": "artifacts/research/2026-10-25/crawl4ai-portable3-source-pin.json",
+  "source_build_commit": "567da7465aeaee6d7c9ab5b9e8ef9e1a2b31c56c"
 }

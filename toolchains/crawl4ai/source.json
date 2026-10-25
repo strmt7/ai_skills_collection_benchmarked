@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "upstream_version": "0.9.5",
-  "version": "0.9.5+catalog.portable3",
+  "version": "0.9.5+catalog.portable4",
   "archive_url": "https://files.pythonhosted.org/packages/ea/ad/44b57b650c3c0afaeea917bd7e6b87a64cd1108be53431690483cde0eb2d/crawl4ai-0.9.5.tar.gz",
   "archive_sha256": "84fa6f4970fbb086a68893c9fb18605a93fcd609c72bee6fbb1d2715924afbff",
   "archive_bytes": 577411,
@@ -12,17 +12,17 @@
   "source_date_epoch": 1791973534,
   "vendor_url": "https://github.com/strmt7/FlitzZip/blob/69580f97f7d360f92fe20f40aedabede811b3e01/tools/crawl4ai_download_opener.py",
   "vendor_sha256": "a289fe4e7f42f46f639dc0090f25c9d72f16dc5c8888906d8b22e60ebd8e4717",
-  "notice_sha256": "74951fad40cd9d38bb12c81857cd9b28c90e23af52c90afacb6c035905a580ee",
+  "notice_sha256": "de85bf2754a67294cac7f62184333cf8f6c99c3a2e019f1f8ef0c2004c1c5d4d",
   "changed_file_sha256": {
-    "crawl4ai/async_crawler_strategy.py": "c0318f8884aa34871fae2b4a46b37d737dd595dc6451da5a7baa2d1024921d57",
-    "crawl4ai/models.py": "5070b3ae49cfb0fc5f0189348629073d05f235d16323040046e954350531a11a",
-    "crawl4ai/browser_manager.py": "e68cf1d20d9cdd9c99c4a0d89668bf569526b601f8c2184f363df404e13b4d8d",
-    "crawl4ai/__version__.py": "67e9de516881fd472eed54097da5a0db98ab85e0b721d343c52a906c75dbf1f3",
+    "crawl4ai/async_crawler_strategy.py": "a9f440b4b582a06c7f579d9e3d533efaf8c05fbfe03806f6edc8908be37b4400",
+    "crawl4ai/models.py": "62947f54ce386d80546b8f70b9ef66c0fa7f47235c63ebd9170f1939565584b5",
+    "crawl4ai/browser_manager.py": "58b26bb5e6839011d10d7eb139b2f4d1efcb3303592ea20151e9496505b566bc",
+    "crawl4ai/__version__.py": "ee2076220bf186d176b8a36fd8d7af5fd608e08548ee8512901c0c16841a1558",
     "crawl4ai/catalog_download.py": "a289fe4e7f42f46f639dc0090f25c9d72f16dc5c8888906d8b22e60ebd8e4717",
-    "pyproject.toml": "bb50c34cc82d04619cdecf3754a219ef7e6ea14b00e6451bbd81322143e8c31d",
-    "CATALOG_BUILD_NOTICE.txt": "74951fad40cd9d38bb12c81857cd9b28c90e23af52c90afacb6c035905a580ee"
+    "pyproject.toml": "4389ce44fba965c7274278b6f999f74152db6d12993eba9bc7110f5b85974aad",
+    "CATALOG_BUILD_NOTICE.txt": "de85bf2754a67294cac7f62184333cf8f6c99c3a2e019f1f8ef0c2004c1c5d4d"
   },
-  "qualified_wheel_sha256": "a71bec908f46d6c6ebb3c9f34f10a1fb04b15133eab90f50e6e08542aa239706",
+  "qualified_wheel_sha256": "89ec8a5f2d95cc25d637dc8ae21726c6dff2c16f33979a002ebba53b7e1f0adc",
   "qualified_platform": "Windows x64 CPython 3.13.17",
   "qualification_scope": "Native component controls; no coding-agent efficacy score",
   "runtime_files": [
@@ -32,7 +32,7 @@
     },
     {
       "path": "crawl4ai/__version__.py",
-      "sha256": "67e9de516881fd472eed54097da5a0db98ab85e0b721d343c52a906c75dbf1f3"
+      "sha256": "ee2076220bf186d176b8a36fd8d7af5fd608e08548ee8512901c0c16841a1558"
     },
     {
       "path": "crawl4ai/adaptive_crawler.py",
@@ -48,7 +48,7 @@
     },
     {
       "path": "crawl4ai/async_crawler_strategy.py",
-      "sha256": "c0318f8884aa34871fae2b4a46b37d737dd595dc6451da5a7baa2d1024921d57"
+      "sha256": "a9f440b4b582a06c7f579d9e3d533efaf8c05fbfe03806f6edc8908be37b4400"
     },
     {
       "path": "crawl4ai/async_database.py",
@@ -76,7 +76,7 @@
     },
     {
       "path": "crawl4ai/browser_manager.py",
-      "sha256": "e68cf1d20d9cdd9c99c4a0d89668bf569526b601f8c2184f363df404e13b4d8d"
+      "sha256": "58b26bb5e6839011d10d7eb139b2f4d1efcb3303592ea20151e9496505b566bc"
     },
     {
       "path": "crawl4ai/browser_profiler.py",
@@ -164,7 +164,7 @@
     },
     {
       "path": "crawl4ai/models.py",
-      "sha256": "5070b3ae49cfb0fc5f0189348629073d05f235d16323040046e954350531a11a"
+      "sha256": "62947f54ce386d80546b8f70b9ef66c0fa7f47235c63ebd9170f1939565584b5"
     },
     {
       "path": "crawl4ai/prompts.py",

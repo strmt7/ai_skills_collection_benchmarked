@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "evidence_class": "crawl4ai-native-source-build-controls",
+  "source_pin_path": "artifacts/research/2026-10-25/crawl4ai-portable4-source-pin.json",
+  "source_pin_sha256": "97e3fef112e93c65de6032a155d0d79d2e9d8a6634b94da7450027c1834f5c86",
+  "upstream_archive_sha256": "84fa6f4970fbb086a68893c9fb18605a93fcd609c72bee6fbb1d2715924afbff",
+  "source_date_epoch": 1791973534,
+  "downstream_version": "0.9.5+catalog.portable4",
+  "qualified_platform": "Windows x64 CPython 3.13.17",
+  "independent_wheel_builds": [
+    {
+      "build": "a",
+      "wheel_sha256": "89ec8a5f2d95cc25d637dc8ae21726c6dff2c16f33979a002ebba53b7e1f0adc"
+    },
+    {
+      "build": "b",
+      "wheel_sha256": "89ec8a5f2d95cc25d637dc8ae21726c6dff2c16f33979a002ebba53b7e1f0adc"
+    }
+  ],
+  "independent_wheel_builds_byte_identical": true,
+  "all_five_modified_upstream_files_have_prominent_notices": true,
+  "installed_runtime_files_admitted": 87,
+  "normal_complete_hashed_install_and_pip_check": true,
+  "local_required_qualification_checks": {
+    "models": 6,
+    "http": 10,
+    "browser_flags": 4,
+    "live_browser": 8,
+    "borrowed_nltk": 9
+  },
+  "local_public_consumer_controls": {
+    "passing": 20,
+    "total": 20,
+    "evaluator_sha256": "56ce398e74626fff0b69452a8f0924db745bd74e265f3899cc871c63488d24ee",
+    "native_path": "artifacts/research/2026-10-25/crawl4ai-portable4-controls.json",
+    "native_sha256": "84256485218fb557c1e591d9915e89aade6fe018d970d4f63aa5c9b91fe63b99"
+  },
+  "comparison_original_controls": {
+    "passing": 5,
+    "total": 20,
+    "path": "artifacts/research/2026-10-25/crawl4ai-original-controls.json",
+    "sha256": "b37eecf51946f9cc1b98e438bcddeff3c44e7bbb4ae5f2a0274e195e13d0783a",
+    "same_evaluator": true
+  },
+  "dependency_graphs_unchanged": {
+    "requirements.txt": "3852ff2d1e3c104281aa40857036662deef86ea775d6b7af1e5c5c98225f51a9",
+    "requirements-build.txt": "598c137cde815bcc17fb75f786cd06f3ab08cda0b11b62f1a92491a39783367f",
+    "requirements-bootstrap.txt": "f409e9c999da22f4920b4724c68adadb416a515f38d760dfd34ae6382d43df04"
+  },
+  "browser_captures_retained_locally": true,
+  "external_pages_qualified_by_public_controls": false,
+  "agent_efficacy_scored": false,
+  "limits": [
+    "Twenty public component controls are correlated and are not coding tasks or statistical effect sizes",
+    "Whole-result JSON-schema generation remains unsupported",
+    "Native browser and borrowed AGPL NLTK control source/results remain local; public CI executes twenty source-bound consumer controls"
+  ]
+}

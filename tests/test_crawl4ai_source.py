@@ -93,6 +93,9 @@ def test_repairs_preserve_data_field_unrelated_bytes_and_explicit_modes(adaptati
         assert bool(instance.ordinary()) is mode
     assert result["crawl4ai/catalog_download.py"] == b"licensed source"
     assert result["CATALOG_BUILD_NOTICE.txt"] == b"full notice"
+    for name in adaptation:
+        if result[name] != before[name]:
+            assert result[name].startswith(b"# Modified for AI skills collection (")
 
 
 @pytest.mark.parametrize(

@@ -123,6 +123,10 @@ def adapt(source: dict[str, bytes], vendor: bytes, notice: bytes, version: str) 
         'license = "Apache-2.0"\nlicense-files = ["LICENSE", "CATALOG_BUILD_NOTICE.txt"]',
     ).encode("utf-8")
     result["CATALOG_BUILD_NOTICE.txt"] = notice
+    for name in source:
+        if result[name] != source[name]:
+            marker = f"# Modified for AI skills collection ({version}). See CATALOG_BUILD_NOTICE.txt.\n"
+            result[name] = marker.encode("utf-8") + result[name]
     return result
 
 

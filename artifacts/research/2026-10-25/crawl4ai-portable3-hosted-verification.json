@@ -1,0 +1,26 @@
+{
+  "verified": true,
+  "revision": "567da7465aeaee6d7c9ab5b9e8ef9e1a2b31c56c",
+  "run_id": 40217649218,
+  "job_id": 121242174549,
+  "archive_sha256": "2933096dfe73735baddcf274f6bc8eb4c47abcb400c275c7991205bfc3a1abff",
+  "advertised_archive_digest_matches": true,
+  "independent_wheels_match_qualified_hash": "a71bec908f46d6c6ebb3c9f34f10a1fb04b15133eab90f50e6e08542aa239706",
+  "source_files_admitted": 87,
+  "same_native_evaluator_sha256": "56ce398e74626fff0b69452a8f0924db745bd74e265f3899cc871c63488d24ee",
+  "controls": [
+    {
+      "candidate": "original",
+      "passing": 5,
+      "total": 20,
+      "native_result_sha256": "b37eecf51946f9cc1b98e438bcddeff3c44e7bbb4ae5f2a0274e195e13d0783a"
+    },
+    {
+      "candidate": "repaired",
+      "passing": 20,
+      "total": 20,
+      "native_result_sha256": "afe870551eac6e5b3c14fd1b0f9a724dd8716f8f3105136212e3d58c97ee9f7f"
+    }
+  ],
+  "agent_efficacy_scored": false
+}

@@ -1,6 +1,6 @@
 # Crawl4AI research-provider source build
 
-This identifies an explicit downstream build, **0.9.5+catalog.portable3**, from
+This identifies an explicit downstream build, **0.9.5+catalog.portable4**, from
 the latest non-prerelease Crawl4AI release checked on 25 October 2026 (0.9.5).
 Upstream classifies it as beta. It is not an official upstream release.
 
@@ -10,6 +10,8 @@ that was active even with `enable_stealth=False`. Original upstream archives and
 catalog skill mirrors remain unchanged. The download helper has an explicit
 Apache-2.0 license from its pinned source; its copyright, full license and source
 URL are preserved in `vendor/`, `source.json` and `CATALOG_BUILD_NOTICE.txt`.
+Every modified upstream file also carries its own change notice. Earlier
+portable3 source pins and native results remain recorded separately.
 
 ## Reproduction and checks
 
@@ -33,6 +35,14 @@ Paths are resolved from the current checkout and explicit stage arguments.
 The tools require no fixed drive, user account, global package installation,
 browser profile, MCP registration or particular AI agent. Windows is the
 qualified operating-system target for this provider.
+
+The current major upgrades proposed in Dependabot PRs 29–31 are incompatible:
+Patchright 1.64.3 requires `pyee<15,>=13`; Crawl4AI 0.9.5 requires
+`xxhash~=3.4` and `snowballstemmer~=2.2`. Normal pip dry runs on each exact PR
+lock return `ResolutionImpossible`. Keep the newest compatible releases until
+upstream supports a newer graph and native qualification passes. No dependency
+ignore rule or advisory exclusion is added. The [resolver review](../../artifacts/research/2026-10-25/crawl4ai-dependency-pr-review.json)
+records exact PR heads, lock digests and native failure evidence.
 
 **Build isolation matters:** upstream `setup.py` clears the cache under
 `CRAWL4_AI_BASE_DIRECTORY`, a different spelling from `CRAWL4AI_BASE_DIRECTORY`.

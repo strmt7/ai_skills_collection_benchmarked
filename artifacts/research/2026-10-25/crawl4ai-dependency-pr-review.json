@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "all_three_proposals_incompatible": true,
+  "controls": [
+    {
+      "number": 29,
+      "head_sha": "25c19ac716a0e44278851d35626d494474c9351d",
+      "lock_sha256": "adb2529ed56630033645db8fd061e9db5c6f6bca06276688918426234405af01",
+      "native_content_blob_sha": "baeb48b00cab7bab2285c20b158930e716404420",
+      "normal_pip_dry_run_exit_code": 1,
+      "resolution_impossible": true,
+      "constraints": [
+        "The user requested pyee==15.0.0",
+        "patchright 1.64.3 depends on pyee<15 and >=13"
+      ],
+      "installed_environment_modified": false,
+      "native_stdout_sha256": "3dc65b14762e78b8680a5de47a3eae6bf89c770c98997fb677e543cf32afa58e",
+      "native_stderr_sha256": "de6fa37fe026badb32a87d785494e777df068486c836820b45b3bdf9c360f776",
+      "pr_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/pull/29",
+      "public_stdout_path": "artifacts/research/2026-10-25/crawl4ai-pr-29-resolver-stdout.log",
+      "public_stdout_sha256": "5a0d2af7885084df5b7ceefd7d70fa5f032f19978cb25f7e2586c9b2987216f1",
+      "public_stdout_host_paths_replaced": true,
+      "public_stderr_path": "artifacts/research/2026-10-25/crawl4ai-pr-29-resolver-stderr.log",
+      "public_stderr_sha256": "1de902080721300103110bd5af1275b57f6557bae3f9f463f6d3e820612f5027",
+      "public_stderr_host_paths_replaced": true,
+      "public_stdout_terminal_blank_lines_removed": true,
+      "public_stderr_terminal_blank_lines_removed": false
+    },
+    {
+      "number": 30,
+      "head_sha": "7a2285e5f620c62821c88a931be9043d28e54725",
+      "lock_sha256": "3faee1c89859fd4481016f9de9aff8a213e51ecce82c11e40710e968cef8c699",
+      "native_content_blob_sha": "cf758a7ef5221f6593a46aa57a904d26b254b770",
+      "normal_pip_dry_run_exit_code": 1,
+      "resolution_impossible": true,
+      "constraints": [
+        "The user requested xxhash==4.0.2",
+        "crawl4ai 0.9.5 depends on xxhash~=3.4"
+      ],
+      "installed_environment_modified": false,
+      "native_stdout_sha256": "304515d8dfc068b4c8400fa0cadb38fe8fa9d6f87e20c0ec705c1f22619d55b4",
+      "native_stderr_sha256": "fb86f6572e08a3dacc0a4b2a078819fc7cb840bbe44600a5ad5cfcfd2e99f517",
+      "pr_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/pull/30",
+      "public_stdout_path": "artifacts/research/2026-10-25/crawl4ai-pr-30-resolver-stdout.log",
+      "public_stdout_sha256": "7891ffa78c65ad3c63926665bfdfb7871c01879e3cce010c3579745861b240ea",
+      "public_stdout_host_paths_replaced": true,
+      "public_stderr_path": "artifacts/research/2026-10-25/crawl4ai-pr-30-resolver-stderr.log",
+      "public_stderr_sha256": "f735aa57ddf5befcc3257bbaab41044a3a5ce03e7a84e1897c87705d95836fa3",
+      "public_stderr_host_paths_replaced": true,
+      "public_stdout_terminal_blank_lines_removed": true,
+      "public_stderr_terminal_blank_lines_removed": false
+    },
+    {
+      "number": 31,
+      "head_sha": "6f547869146803d7f16e220aad8570b39f1e36d6",
+      "lock_sha256": "85db40ad4665f1a44bc9eaa141c3d8990d4da23d72165ba9306e008e74f00582",
+      "native_content_blob_sha": "652a4a0f9242c7877581b14ad9407e2c9c57f04c",
+      "normal_pip_dry_run_exit_code": 1,
+      "resolution_impossible": true,
+      "constraints": [
+        "The user requested snowballstemmer==3.1.1",
+        "crawl4ai 0.9.5 depends on snowballstemmer~=2.2"
+      ],
+      "installed_environment_modified": false,
+      "native_stdout_sha256": "34f6924691c5fb80c55a92e4729979f48070d37ee093172eeca7231875a52be1",
+      "native_stderr_sha256": "5cde94023ce85c3fbebfc98298d452f8f7458f3920ea996df0b9f3106b8cef85",
+      "pr_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/pull/31",
+      "public_stdout_path": "artifacts/research/2026-10-25/crawl4ai-pr-31-resolver-stdout.log",
+      "public_stdout_sha256": "2dffeb2cd1794d1de5b0b6c14b063f1a3bd81755401b8b074254227895a7033d",
+      "public_stdout_host_paths_replaced": true,
+      "public_stderr_path": "artifacts/research/2026-10-25/crawl4ai-pr-31-resolver-stderr.log",
+      "public_stderr_sha256": "6f0788c46ceca62a077472bae9c5eed2efdc8f234f1be184ec9b092841551a88",
+      "public_stderr_host_paths_replaced": true,
+      "public_stdout_terminal_blank_lines_removed": true,
+      "public_stderr_terminal_blank_lines_removed": false
+    }
+  ],
+  "alerts_suppressed": false,
+  "dependency_exclusions_added": false,
+  "result": "Decline these unresolvable version proposals after preserving evidence; keep compatible current graph, no exclusions or alert dismissals",
+  "context": "Latest means latest compatible tested versions; no --no-deps installation or constraint override was used",
+  "public_log_export": "Native originals retained unchanged locally; host paths replaced and redundant terminal blank lines removed in public copies; native and exported byte digests recorded separately"
+}

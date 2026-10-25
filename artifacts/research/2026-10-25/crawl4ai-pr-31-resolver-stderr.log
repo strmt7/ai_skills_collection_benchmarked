@@ -1,0 +1,2 @@
+ERROR: Cannot install -r <research-records>\dependency-pr-31-requirements.txt (line 20) and snowballstemmer==3.1.1 because these package versions have conflicting dependencies.
+ERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts

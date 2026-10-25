@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "evidence_class": "crawl4ai-native-component-controls",
+  "provider_version": "0.9.5+catalog.portable4",
+  "pydantic_version": "2.14.1",
+  "nltk_version": "3.10.4",
+  "evaluator_sha256": "56ce398e74626fff0b69452a8f0924db745bd74e265f3899cc871c63488d24ee",
+  "checks": [
+    {
+      "name": "native_failure_json",
+      "passed": true
+    },
+    {
+      "name": "cli_style_failure_json",
+      "passed": true
+    },
+    {
+      "name": "explicit_fit_html",
+      "passed": true
+    },
+    {
+      "name": "assigned_fit_html",
+      "passed": true
+    },
+    {
+      "name": "null_field_default",
+      "passed": true
+    },
+    {
+      "name": "markdown_and_preprocessed_data",
+      "passed": true
+    },
+    {
+      "name": "managed_explicit_stealth_False",
+      "passed": true
+    },
+    {
+      "name": "ordinary_explicit_stealth_False",
+      "passed": true
+    },
+    {
+      "name": "managed_explicit_stealth_True",
+      "passed": true
+    },
+    {
+      "name": "ordinary_explicit_stealth_True",
+      "passed": true
+    },
+    {
+      "name": "http_exact_binary_download",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "binary_write_and_read",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "append_keeps_prefix",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "unicode_destination",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "reserved_NUL",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "reserved_CON",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "reserved_AUX",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "reserved_COM1",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "hardlink_target_preserved",
+      "passed": true,
+      "observed": null
+    },
+    {
+      "name": "failure_path_handle_cleanup",
+      "passed": true,
+      "observed": {
+        "failed_operations": 100,
+        "handles_before": 303,
+        "handles_after": 303
+      }
+    }
+  ],
+  "passed": true,
+  "capability_probe": {
+    "whole_result_json_schema_supported": false,
+    "error_type": "PydanticInvalidForJsonSchema",
+    "error": "Cannot generate a JsonSchema for core_schema.IsInstanceSchema (<class 'crawl4ai.ssl_certificate.SSLCertificate'>)\n\nFor further information visit https://errors.pydantic.dev/2.14/u/invalid-for-json-schema"
+  },
+  "loopback_requests": [
+    "/fixture.bin",
+    "/NUL",
+    "/CON",
+    "/AUX",
+    "/COM1",
+    "/linked.bin"
+  ],
+  "external_pages_requested_by_evaluator": 0,
+  "browser_launches": 0,
+  "browser_or_external_page_qualified": false,
+  "agent_efficacy_scored": false
+}

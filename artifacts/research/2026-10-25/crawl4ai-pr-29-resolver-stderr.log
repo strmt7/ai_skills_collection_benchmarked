@@ -1,0 +1,2 @@
+ERROR: Cannot install -r <research-records>\dependency-pr-29-requirements.txt (line 59) and pyee==15.0.0 because these package versions have conflicting dependencies.
+ERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts
