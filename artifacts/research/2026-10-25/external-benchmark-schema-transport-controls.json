@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "evidence_class": "native-git-schema-checkout-transport-control",
+  "source_commit_before_attribute_fix": "c5ffa335f84a9954b140997b14ca97e75ba9b998",
+  "path": "evaluators/external_benchmark_method_smoke.schema.json",
+  "git_version": "git version 2.56.0.windows.1",
+  "command_template": [
+    "git",
+    "-c",
+    "core.autocrlf=<true|false>",
+    "cat-file",
+    "--filters",
+    "HEAD:evaluators/external_benchmark_method_smoke.schema.json"
+  ],
+  "before": {
+    "path": "evaluators/external_benchmark_method_smoke.schema.json",
+    "autocrlf_true_sha256": "32f8aa1e4e0d5b084298c835c9a8028f7e3bcc4a68f2d6b57645b40ee54e7221",
+    "autocrlf_false_sha256": "33e8076662b62b0d8a2d1867a7404de3cbfc83947f2d8e8696482fbbb2be0cbe",
+    "same_bytes": false,
+    "crlf_count_true": 257
+  },
+  "after": {
+    "passed": true,
+    "sha256": "33e8076662b62b0d8a2d1867a7404de3cbfc83947f2d8e8696482fbbb2be0cbe",
+    "autocrlf_modes": [
+      "true",
+      "false"
+    ]
+  },
+  "schema_content_changed": false,
+  "metadata_rehashed_to_hide_drift": false,
+  "model_or_agent_started": false,
+  "agent_efficacy_scored": false
+}
