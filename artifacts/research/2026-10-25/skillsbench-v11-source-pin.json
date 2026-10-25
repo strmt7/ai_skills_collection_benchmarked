@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "evidence_class": "external-benchmark-release-and-registry-inspection",
+  "repository": "https://github.com/benchflow-ai/skillsbench",
+  "release_tag": "v1.1",
+  "release_published_at": "2026-06-14T23:16:44Z",
+  "release_tag_object": "a30b2ac88c8f1fd1c77385be6b4dea204ca9eb69",
+  "release_commit": "b63b7b2850226b6aa4fb5929a8c1ac7bc4d9a6af",
+  "registry_blob_sha": "e0b643d8a3579b5f8a6366411090f59f4f946d20",
+  "registry_sha256": "ade4beaad3092cdbe9870f54e6a3e222e71f53be3527ec539ae002e1d6e5f6dc",
+  "registry_url": "https://github.com/benchflow-ai/skillsbench/blob/b63b7b2850226b6aa4fb5929a8c1ac7bc4d9a6af/registry.json",
+  "registered_versions": [
+    "1.0",
+    "1.1"
+  ],
+  "selected_version": "1.1",
+  "selected_task_descriptors": 87,
+  "unique_task_names": 87,
+  "task_repository_commits": [
+    "55bfe693f2a19f6b2f29aca3f54fe98b9d994668"
+  ],
+  "task_repository_urls": [
+    "https://github.com/benchflow-ai/skillsbench.git"
+  ],
+  "declared_bench_version": ">=0.6.3,<0.7",
+  "descriptor_digests_well_formed": true,
+  "task_package_digests_recomputed": false,
+  "task_oracle_or_verifier_content_reviewed": false,
+  "model_or_agent_started": false,
+  "suite_executed": false,
+  "our_skill_gain_established": false,
+  "pages": [
+    {
+      "provider_version": "0.9.5+catalog.portable4",
+      "intended_url": "https://www.skillsbench.ai/",
+      "status_code": 200,
+      "success": true,
+      "native_result_sha256": "65e6755f8eacb9fdf74bf110919e7753406c941de2c96fc8d6097e578123daa2",
+      "markdown_characters": 20648
+    },
+    {
+      "provider_version": "0.9.5+catalog.portable4",
+      "intended_url": "https://www.skillsbench.ai/blogs/skillsbench-1-1",
+      "status_code": 200,
+      "success": true,
+      "native_result_sha256": "07742f28ebc7291e38e5c51f63b3a5ccc711b95504e1782f017e6bab552335fe",
+      "markdown_characters": 19084
+    },
+    {
+      "provider_version": "0.9.5+catalog.portable4",
+      "intended_url": "https://www.skillsbench.ai/leaderboard",
+      "status_code": 200,
+      "success": true,
+      "native_result_sha256": "0058faf658150bea2f6feca1194606d5f7b3101956e6c1fbc654809441d9a2aa",
+      "markdown_characters": 8069
+    }
+  ],
+  "research_exposure": "Homepage displays task previews. Reviewed preview tasks are development-exposed in this session; no blind held-out performance claim is made."
+}

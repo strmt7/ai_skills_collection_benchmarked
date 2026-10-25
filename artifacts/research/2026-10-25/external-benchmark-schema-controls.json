@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "evidence_class": "native-external-probe-schema-controls",
+  "schema_sha256": "33e8076662b62b0d8a2d1867a7404de3cbfc83947f2d8e8696482fbbb2be0cbe",
+  "jsonschema_version": "4.26.0",
+  "native_source_artifact_sha256": "b0c143292cdbc296f7805349072e6261b551fcf9adefb87cfcaa734ee096a2fa",
+  "checks": [
+    {
+      "name": "legacy-swe-skills-bench",
+      "passed": true
+    },
+    {
+      "name": "legacy-skillsbench",
+      "passed": true
+    },
+    {
+      "name": "legacy-skill-bench",
+      "passed": true
+    },
+    {
+      "name": "legacy-swe-bench",
+      "passed": true
+    },
+    {
+      "name": "legacy-terminal-bench",
+      "passed": true
+    },
+    {
+      "name": "legacy-browsergym",
+      "passed": true
+    },
+    {
+      "name": "legacy-webarena",
+      "passed": true
+    },
+    {
+      "name": "legacy-webarena-verified",
+      "passed": true
+    },
+    {
+      "name": "legacy-st-webagentbench",
+      "passed": true
+    },
+    {
+      "name": "legacy-osworld",
+      "passed": true
+    },
+    {
+      "name": "legacy-bfcl",
+      "passed": true
+    },
+    {
+      "name": "legacy-mle-bench",
+      "passed": true
+    },
+    {
+      "name": "legacy-ml-dev-bench",
+      "passed": true
+    },
+    {
+      "name": "legacy-gittaskbench",
+      "passed": true
+    },
+    {
+      "name": "current-native-source-resolution",
+      "passed": true
+    },
+    {
+      "name": "failed-head-record-remains-schema-valid",
+      "passed": true
+    },
+    {
+      "name": "ready-status-without-source-identity-is-rejected",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "model_or_agent_started": false,
+  "agent_efficacy_scored": false
+}

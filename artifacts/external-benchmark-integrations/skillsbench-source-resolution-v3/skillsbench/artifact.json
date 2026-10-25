@@ -1,0 +1,164 @@
+{
+  "artifact_kind": "external_benchmark_method_smoke",
+  "artifact_version": "1.1",
+  "checks": [
+    {
+      "evidence": "data/external_benchmark_methods.json",
+      "name": "adapter_spec_complete",
+      "passed": true
+    },
+    {
+      "evidence": "https://github.com/benchflow-ai/skillsbench",
+      "name": "repository_head_resolves",
+      "passed": true
+    },
+    {
+      "evidence": 4079,
+      "name": "repo_tree_sampled",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "task pass rate",
+        "skill gain",
+        "steps",
+        "token usage"
+      ],
+      "name": "declares_objective_metrics",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "task package",
+        "skill package",
+        "deterministic verifier",
+        "agent trajectory"
+      ],
+      "name": "declares_integration_requirements",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "Agent infrastructure & skill creation",
+        "Testing, QA & benchmarking"
+      ],
+      "name": "declares_category_fit",
+      "passed": true
+    },
+    {
+      "evidence": "repository root",
+      "name": "required_subpath_resolves",
+      "passed": true
+    }
+  ],
+  "evidence": {
+    "citations_or_paths": [
+      "https://github.com/benchflow-ai/skillsbench",
+      "https://www.skillsbench.ai/",
+      "data/external_benchmark_methods.json"
+    ]
+  },
+  "execution": {
+    "agent_session_started": false,
+    "commands": [
+      {
+        "command": [
+          "git",
+          "ls-remote",
+          "https://github.com/benchflow-ai/skillsbench",
+          "HEAD"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "f860ecf02ef53412a030f8661c83d644b739ff01\tHEAD"
+      }
+    ],
+    "fresh_session": true,
+    "full_benchmark_suite_executed": false,
+    "model_invoked": false
+  },
+  "input_snapshot": {
+    "head_sha": "f860ecf02ef53412a030f8661c83d644b739ff01",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "repo_subpath": null,
+    "repo_subpath_present": true,
+    "repo_url": "https://github.com/benchflow-ai/skillsbench",
+    "sampled_paths": [
+      ".agents",
+      ".agents/skills",
+      ".agents/skills/skill-creator",
+      ".agents/skills/skill-creator/LICENSE.txt",
+      ".agents/skills/skill-creator/SKILL.md",
+      ".agents/skills/skill-creator/references",
+      ".agents/skills/skill-creator/references/output-patterns.md",
+      ".agents/skills/skill-creator/references/workflows.md",
+      ".agents/skills/skill-creator/scripts",
+      ".agents/skills/skill-creator/scripts/init_skill.py",
+      ".agents/skills/skill-creator/scripts/package_skill.py",
+      ".agents/skills/skill-creator/scripts/quick_validate.py",
+      ".agents/skills/skillsbench",
+      ".agents/skills/skillsbench/SKILL.md",
+      ".agents/skills/task-creator",
+      ".agents/skills/task-creator/SKILL.md",
+      ".agents/skills/task-creator/assets",
+      ".agents/skills/task-creator/assets/Dockerfile.template",
+      ".agents/skills/task-creator/assets/task.md.template",
+      ".agents/skills/task-creator/assets/test.sh.template"
+    ],
+    "source_url": "https://www.skillsbench.ai/",
+    "tree_error": "",
+    "tree_path_count": 4079,
+    "tree_resolution": {
+      "api_failure": null,
+      "api_url": "https://api.github.com/repos/benchflow-ai/skillsbench/git/trees/f860ecf02ef53412a030f8661c83d644b739ff01?recursive=1",
+      "commands": [],
+      "requested_commit": "f860ecf02ef53412a030f8661c83d644b739ff01",
+      "transport": "github-tree-api"
+    }
+  },
+  "method": {
+    "adapter_stage": "implemented-smoke-adapter",
+    "category_fit": [
+      "Agent infrastructure & skill creation",
+      "Testing, QA & benchmarking"
+    ],
+    "id": "skillsbench",
+    "integration_requirements": [
+      "task package",
+      "skill package",
+      "deterministic verifier",
+      "agent trajectory"
+    ],
+    "primary_metrics": [
+      "task pass rate",
+      "skill gain",
+      "steps",
+      "token usage"
+    ],
+    "repo_url": "https://github.com/benchflow-ai/skillsbench",
+    "scope": "Evaluates agent skill use across diverse verifiable real-world tasks and deterministic verifiers.",
+    "source_url": "https://www.skillsbench.ai/",
+    "title": "SkillsBench"
+  },
+  "method_id": "skillsbench",
+  "method_title": "SkillsBench",
+  "metrics": {
+    "blocking_failures": [],
+    "checks_passed": 7,
+    "checks_total": 7,
+    "integration_status": "adapter_ready",
+    "measurement_scope": "registry declarations and repository resolution only",
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "schema": "evaluators/external_benchmark_method_smoke.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-integration-smoke",
+    "run_name": "skillsbench-source-resolution-v3",
+    "timestamp_utc": "2026-10-25T18:50:01Z",
+    "tool": "tools/evaluate_external_benchmark_methods.py",
+    "tool_sha256": "49b6ca17a9700ce67c1a49d36c65fe2a6b9822db3ad3e6df52c813a69fa00362"
+  }
+}

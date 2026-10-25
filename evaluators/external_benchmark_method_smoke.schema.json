@@ -87,7 +87,7 @@
         },
         "head_sha": {
           "type": "string",
-          "pattern": "^[0-9a-f]{40}$"
+          "pattern": "^([0-9a-f]{40})?$"
         },
         "tree_path_count": {
           "type": "integer",
@@ -218,5 +218,40 @@
       "description": "Optional output payload references.",
       "type": "object"
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "metrics": {
+            "properties": {
+              "integration_status": {
+                "const": "adapter_ready"
+              }
+            },
+            "required": [
+              "integration_status"
+            ]
+          }
+        },
+        "required": [
+          "metrics"
+        ]
+      },
+      "then": {
+        "properties": {
+          "input_snapshot": {
+            "properties": {
+              "head_sha": {
+                "pattern": "^[0-9a-f]{40}$"
+              },
+              "tree_path_count": {
+                "minimum": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
 }

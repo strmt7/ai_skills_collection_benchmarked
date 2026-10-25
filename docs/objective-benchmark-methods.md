@@ -1,6 +1,6 @@
 # Objective Benchmark Methods
 
-This registry maps selected external benchmark methods to the skill catalog without claiming benchmark scores. A method is usable here only after it has a concrete adapter definition, objective metrics, integration requirements, and a recorded repository-resolution artifact.
+This registry records declared metrics, integration requirements and historical repository-resolution checks. The declared smoke-adapter stage does not establish that a native task package, harness or verifier has been executed.
 
 Full-suite execution remains separate from adapter smoke checks. Any future score must include task inputs, environment details, command logs, output artifacts, and evaluator results.
 
@@ -26,3 +26,5 @@ Full-suite execution remains separate from adapter smoke checks. Any future scor
 ## Adapter Rule
 
 A smoke adapter proves only that the external method can be addressed objectively from this repository. It is not a task pass, not a model score, and not a substitute for running the external suite.
+
+Current source research and immutable release pins for SkillsBench are recorded in [the SkillsBench review](research-skillsbench.md). Historical probes remain unchanged; no agent-efficacy result is inferred from them.

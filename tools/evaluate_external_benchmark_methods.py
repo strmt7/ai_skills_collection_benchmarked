@@ -10,17 +10,21 @@ recorded integration artifact that can be reviewed later.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import subprocess
 import tempfile
 import urllib.request
-from datetime import UTC, datetime
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
+from _catalog_publication import checked_path
+
 ROOT = Path(__file__).resolve().parents[1]
 RUNNER_ID = "tools/evaluate_external_benchmark_methods.py"
+RUNNER_SOURCE_SHA256 = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
 RUN_NAME = "2026-04-19-external-benchmark-method-smoke"
 
 
@@ -249,7 +253,7 @@ def load_json(path: Path) -> Any:
 
 def write_json(path: Path, data: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    path.write_text(json.dumps(data, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
 
 
 def slug(text: str) -> str:
@@ -257,50 +261,110 @@ def slug(text: str) -> str:
 
 
 def git_head(repo_url: str) -> dict[str, Any]:
-    completed = subprocess.run(["git", "ls-remote", repo_url, "HEAD"], text=True, capture_output=True, check=False)
-    stdout = completed.stdout.strip()
-    head_sha = stdout.split()[0] if completed.returncode == 0 and stdout else ""
+    command = ["git", "ls-remote", repo_url, "HEAD"]
+    try:
+        completed = subprocess.run(command, text=True, capture_output=True, check=False, timeout=60)
+        returncode, stdout, stderr = completed.returncode, completed.stdout.strip(), completed.stderr.strip()
+    except subprocess.TimeoutExpired as exc:
+        output = exc.stdout or b""
+        stdout = output.decode("utf-8", errors="replace") if isinstance(output, bytes) else output
+        error = exc.stderr or b""
+        detail = error.decode("utf-8", errors="replace") if isinstance(error, bytes) else error
+        returncode, stderr = 124, "repository head resolution timeout after 60 seconds\n" + detail
+    except OSError as exc:
+        returncode, stdout, stderr = 127, "", str(exc)
+    matched = re.fullmatch(r"([0-9a-f]{40})\s+HEAD", stdout) if returncode == 0 else None
+    head_sha = matched.group(1) if matched else ""
     return {
-        "command": ["git", "ls-remote", repo_url, "HEAD"],
-        "returncode": completed.returncode,
+        "command": command,
+        "returncode": returncode,
         "stdout": stdout,
-        "stderr": completed.stderr.strip(),
+        "stderr": stderr,
         "head_sha": head_sha,
         "resolved": bool(head_sha),
     }
 
 
-def github_tree_paths(repo_url: str, head_sha: str) -> list[str]:
+def github_tree_paths(repo_url: str, head_sha: str, *, receipt: dict[str, Any] | None = None) -> list[str]:
+    evidence = receipt if receipt is not None else {}
+    evidence.update(requested_commit=head_sha, api_failure=None, transport=None, commands=[])
     match = re.fullmatch(r"https://github\.com/([^/]+)/([^/]+)", repo_url.rstrip("/"))
-    if not match or not head_sha:
+    if not match or not re.fullmatch(r"[0-9a-f]{40}", head_sha):
         return []
     owner, repo = match.groups()
     api_url = f"https://api.github.com/repos/{owner}/{repo}/git/trees/{head_sha}?recursive=1"
+    evidence["api_url"] = api_url
     request = urllib.request.Request(api_url, headers={"User-Agent": "ai-skills-external-benchmark-smoke/1.0"})
     try:
         with urllib.request.urlopen(request, timeout=30) as response:
             data = json.loads(response.read().decode("utf-8"))
-        return sorted(item["path"] for item in data.get("tree", []) if item.get("path"))
-    except Exception:
+        if data.get("truncated") is not False or not isinstance(data.get("tree"), list):
+            raise ValueError("repository tree response is incomplete")
+        paths = [item["path"] for item in data["tree"]]
+        if any(not isinstance(path, str) or not path for path in paths):
+            raise ValueError("repository tree paths are invalid")
+        evidence["transport"] = "github-tree-api"
+        return sorted(paths)
+    except Exception as api_error:
+        evidence["api_failure"] = {"type": type(api_error).__name__, "message": str(api_error)}
         with tempfile.TemporaryDirectory(prefix="external-benchmark-tree-") as tmp:
-            clone = subprocess.run(
-                ["git", "clone", "--filter=blob:none", "--no-checkout", "--depth", "1", repo_url, tmp],
-                text=True,
-                capture_output=True,
-                check=False,
-                timeout=180,
-            )
-            if clone.returncode != 0:
-                raise RuntimeError(clone.stderr.strip() or "git clone tree fallback failed") from None
+            temporary = Path(tmp).resolve()
+            if temporary == Path(tempfile.gettempdir()).resolve() or not temporary.is_relative_to(
+                Path(tempfile.gettempdir()).resolve()
+            ):
+                raise RuntimeError("temporary tree stage is outside the owned temporary directory") from api_error
+            # A new default-branch clone cannot substantiate a previously
+            # resolved head. Fetch the requested object without a checkout.
+            commands = [
+                ["git", "init", "--bare", str(temporary)],
+                [
+                    "git",
+                    "-C",
+                    str(temporary),
+                    "fetch",
+                    "--no-tags",
+                    "--filter=blob:none",
+                    "--depth",
+                    "1",
+                    repo_url,
+                    head_sha,
+                ],
+                ["git", "-C", str(temporary), "rev-parse", "--verify", "FETCH_HEAD^{commit}"],
+            ]
+            for command in commands:
+                completed = subprocess.run(command, text=True, capture_output=True, check=False, timeout=180)
+                evidence["commands"].append(
+                    {
+                        "command": command,
+                        "returncode": completed.returncode,
+                        "stdout": completed.stdout,
+                        "stderr": completed.stderr,
+                    }
+                )
+                if completed.returncode != 0:
+                    raise RuntimeError(completed.stderr.strip() or "pinned repository tree resolution failed") from None
+            if completed.stdout.strip() != head_sha:
+                raise RuntimeError("fetched repository identity differs from requested commit") from api_error
+            tree_command = ["git", "-C", str(temporary), "ls-tree", "-r", "--name-only", head_sha]
             tree = subprocess.run(
-                ["git", "-C", tmp, "ls-tree", "-r", "--name-only", "HEAD"],
+                tree_command,
                 text=True,
                 capture_output=True,
                 check=False,
                 timeout=60,
             )
+            evidence["commands"].append(
+                {
+                    "command": tree_command,
+                    "returncode": tree.returncode,
+                    "stdout": tree.stdout,
+                    "stderr": tree.stderr,
+                }
+            )
             if tree.returncode != 0:
                 raise RuntimeError(tree.stderr.strip() or "git ls-tree fallback failed") from None
+            evidence["transport"] = "pinned-git-tree"
+            evidence["verified_commit"] = head_sha
             return sorted(path for path in tree.stdout.splitlines() if path)
 
 
@@ -343,6 +407,7 @@ def smoke_probe(
     *,
     head_provider: HeadProvider | None = None,
     tree_provider: TreeProvider | None = None,
+    run_name: str = RUN_NAME,
 ) -> dict[str, Any]:
     """Probe a single external-benchmark adapter definition.
 
@@ -358,9 +423,14 @@ def smoke_probe(
     subpath_present: bool | None = None
     tree_path_count = 0
     tree_error = ""
+    tree_resolution: dict[str, Any] = {}
     if head["resolved"]:
         try:
-            paths = get_tree_paths(method["repo_url"], head["head_sha"])
+            paths = (
+                get_tree_paths(method["repo_url"], head["head_sha"])
+                if tree_provider is not None
+                else github_tree_paths(method["repo_url"], head["head_sha"], receipt=tree_resolution)
+            )
             tree_path_count = len(paths)
             sampled_paths = paths[:20]
             if subpath:
@@ -403,15 +473,16 @@ def smoke_probe(
     total = len(checks)
     failures = [check["name"] for check in checks if not check["passed"]]
     return {
-        "artifact_version": "1.0",
+        "artifact_version": "1.1",
         "artifact_kind": "external_benchmark_method_smoke",
         "method_id": method["id"],
         "method_title": method["title"],
         "runner": {
             "timestamp_utc": timestamp,
             "tool": RUNNER_ID,
+            "tool_sha256": RUNNER_SOURCE_SHA256,
             "model_or_runtime": "local-deterministic-integration-smoke",
-            "run_name": RUN_NAME,
+            "run_name": run_name,
         },
         "input_snapshot": {
             "kind": "real-github-repository-tree",
@@ -423,10 +494,14 @@ def smoke_probe(
             "repo_subpath": subpath,
             "repo_subpath_present": subpath_present,
             "tree_error": tree_error,
-            "is_real": True,
+            "tree_resolution": tree_resolution,
+            "is_real": head_provider is None and tree_provider is None,
         },
         "execution": {
             "fresh_session": True,
+            "agent_session_started": False,
+            "model_invoked": False,
+            "full_benchmark_suite_executed": False,
             "commands": [
                 {
                     "command": head["command"],
@@ -442,6 +517,7 @@ def smoke_probe(
         "method": method,
         "checks": checks,
         "metrics": {
+            "measurement_scope": "registry declarations and repository resolution only",
             "checks_passed": passed,
             "checks_total": total,
             "score_percent": round((passed / total) * 100, 2),
@@ -462,7 +538,7 @@ def render_methods_doc(data: dict[str, Any]) -> str:
     lines = [
         "# Objective Benchmark Methods",
         "",
-        "This registry maps selected external benchmark methods to the skill catalog without claiming benchmark scores. A method is usable here only after it has a concrete adapter definition, objective metrics, integration requirements, and a recorded repository-resolution artifact.",
+        "This registry records declared metrics, integration requirements and historical repository-resolution checks. The declared smoke-adapter stage does not establish that a native task package, harness or verifier has been executed.",
         "",
         "Full-suite execution remains separate from adapter smoke checks. Any future score must include task inputs, environment details, command logs, output artifacts, and evaluator results.",
         "",
@@ -483,6 +559,8 @@ def render_methods_doc(data: dict[str, Any]) -> str:
             "## Adapter Rule",
             "",
             "A smoke adapter proves only that the external method can be addressed objectively from this repository. It is not a task pass, not a model score, and not a substitute for running the external suite.",
+            "",
+            "Current source research and immutable release pins for SkillsBench are recorded in [the SkillsBench review](research-skillsbench.md). Historical probes remain unchanged; no agent-efficacy result is inferred from them.",
         ]
     )
     return "\n".join(lines) + "\n"
@@ -492,18 +570,20 @@ def render_smoke_report(manifest: dict[str, Any]) -> str:
     lines = [
         "# External Benchmark Adapter Smoke Results",
         "",
-        "These are real repository-resolution probes for the registered external benchmark methods. They verify adapter readiness only; no full benchmark suite score is claimed here.",
+        "These historical probes checked registry declarations and repository resolution. Their percentages count those checks; they do not measure task success, native adapter execution or model performance.",
+        "",
+        "The old `adapter_ready` status is retained verbatim. Older captures did not record the successful tree transport, so their commit-to-tree binding cannot be retrospectively established from those records alone. New probes retain transport evidence and verify the requested commit when using Git fallback.",
         "",
         "## Summary",
         "",
         f"- Run: `{manifest['run_name']}`",
         f"- Methods checked: `{manifest['summary']['method_count']}`",
-        f"- Adapter-ready methods: `{manifest['summary']['adapter_ready']}`",
-        f"- Incomplete adapters: `{manifest['summary']['adapter_incomplete']}`",
+        f"- Methods passing declaration/source checks: `{manifest['summary']['adapter_ready']}`",
+        f"- Methods with failed checks: `{manifest['summary']['adapter_incomplete']}`",
         "",
         "## Results",
         "",
-        "| Method | Status | Score | Upstream HEAD | Artifact |",
+        "| Method | Legacy status | Metadata checks (%) | Recorded HEAD | Artifact |",
         "|---|---|---:|---|---|",
     ]
     for item in manifest["artifacts"]:
@@ -521,14 +601,25 @@ def write_registry_outputs() -> dict[str, Any]:
     return data
 
 
-def run_smoke() -> dict[str, Any]:
-    data = write_registry_outputs()
-    timestamp = datetime.now(UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z")
-    output_root = ROOT / "artifacts" / "external-benchmark-integrations" / RUN_NAME
-    output_root.mkdir(parents=True, exist_ok=True)
+def run_smoke(
+    run_name: str = RUN_NAME, timestamp: str | None = None, method_ids: list[str] | None = None
+) -> dict[str, Any]:
+    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,127}", run_name):
+        raise ValueError("probe run name must be a single canonical path component")
+    output_root = checked_path(ROOT, f"artifacts/external-benchmark-integrations/{run_name}")
+    if output_root.exists():
+        raise FileExistsError("probe run already exists; historical evidence will not be replaced")
+    if timestamp is None or not re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z", timestamp):
+        raise ValueError("fresh probes require an explicit UTC observation timestamp")
+    datetime.fromisoformat(timestamp.replace("Z", "+00:00"))
+    data = registry()
+    selected = [method for method in data["methods"] if method_ids is None or method["id"] in method_ids]
+    if not selected or (method_ids is not None and {method["id"] for method in selected} != set(method_ids)):
+        raise ValueError("probe methods must be declared in the registry")
+    output_root.mkdir(parents=True)
     summaries: list[dict[str, Any]] = []
-    for method in data["methods"]:
-        artifact = smoke_probe(method, timestamp)
+    for method in selected:
+        artifact = smoke_probe(method, timestamp, run_name=run_name)
         method_dir = output_root / slug(method["id"])
         method_dir.mkdir(parents=True, exist_ok=True)
         write_json(method_dir / "artifact.json", artifact)
@@ -544,7 +635,7 @@ def run_smoke() -> dict[str, Any]:
         )
     ready = sum(1 for item in summaries if item["integration_status"] == "adapter_ready")
     manifest = {
-        "run_name": RUN_NAME,
+        "run_name": run_name,
         "artifact_kind": "external_benchmark_method_smoke",
         "runner": RUNNER_ID,
         "generated_at_utc": timestamp,
@@ -557,7 +648,7 @@ def run_smoke() -> dict[str, Any]:
         "artifacts": summaries,
     }
     write_json(output_root / "manifest.json", manifest)
-    (ROOT / "docs" / "external-benchmark-adapter-smoke.md").write_text(render_smoke_report(manifest), encoding="utf-8")
+    (output_root / "report.md").write_text(render_smoke_report(manifest), encoding="utf-8", newline="\n")
     return manifest
 
 
@@ -586,13 +677,19 @@ def check_outputs() -> None:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Evaluate external benchmark method adapter readiness.")
+    parser = argparse.ArgumentParser(
+        description="Record benchmark registry declarations and immutable repository resolution."
+    )
     parser.add_argument(
         "--check", action="store_true", help="Validate generated registry and smoke outputs without network probes."
     )
     parser.add_argument(
         "--registry-only", action="store_true", help="Write only the method registry and registry documentation."
     )
+    parser.add_argument("--run-name", help="Fresh run identifier; existing evidence is never replaced")
+    parser.add_argument("--observed-at-utc", help="Actual observation time as YYYY-MM-DDTHH:MM:SSZ")
+    parser.add_argument("--method", action="append", choices=[method["id"] for method in EXTERNAL_METHODS])
+    parser.add_argument("--json", action="store_true")
     return parser
 
 
@@ -600,18 +697,36 @@ def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     if args.check:
         check_outputs()
-        print("External benchmark method outputs are current.")
+        print(
+            json.dumps({"ok": True, "recorded_outputs_current": True})
+            if args.json
+            else "External benchmark method outputs are current."
+        )
         return 0
     if args.registry_only:
         data = write_registry_outputs()
-        print(f"External benchmark methods registered: {data['method_count']}")
+        print(
+            json.dumps({"ok": True, "method_count": data["method_count"]})
+            if args.json
+            else f"External benchmark methods registered: {data['method_count']}"
+        )
         return 0
-    manifest = run_smoke()
+    if not args.run_name or not args.observed_at_utc:
+        raise SystemExit("fresh probes require --run-name and --observed-at-utc; use --check for recorded outputs")
+    try:
+        manifest = run_smoke(args.run_name, args.observed_at_utc, args.method)
+    except (OSError, ValueError) as exc:
+        print(json.dumps({"ok": False, "errors": [str(exc)]}) if args.json else str(exc))
+        return 1
     print(
-        "External benchmark adapter smoke: "
-        f"{manifest['summary']['adapter_ready']}/{manifest['summary']['method_count']} adapter-ready."
+        json.dumps(manifest, indent=2)
+        if args.json
+        else (
+            "External benchmark adapter smoke: "
+            f"{manifest['summary']['adapter_ready']}/{manifest['summary']['method_count']} declaration/source checks complete."
+        )
     )
-    return 0
+    return int(manifest["summary"]["adapter_incomplete"] > 0)
 
 
 if __name__ == "__main__":

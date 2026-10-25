@@ -89,6 +89,7 @@ def test_smoke_probe_with_injected_providers_is_deterministic(complete_method):
         tree_provider=tree_provider,
     )
     assert a == b
+    assert a["input_snapshot"]["is_real"] is False
     assert a["metrics"]["integration_status"] == "adapter_ready"
     assert a["metrics"]["checks_passed"] == a["metrics"]["checks_total"]
     assert head_calls == [complete_method["repo_url"], complete_method["repo_url"]]

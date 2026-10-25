@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "evidence_class": "native-immutable-source-resolution-regression",
+  "previous_source_commit": "fc6812303613037bbffbc1e135d1481cca9f1db5",
+  "previous_probe_sha256": "fa432dd93492dd1390b1602639f2d7ebf9e263d28c8a5c7e4c30056855ea21dc",
+  "current_probe_sha256": "49b6ca17a9700ce67c1a49d36c65fe2a6b9822db3ad3e6df52c813a69fa00362",
+  "requested_fixture_commit": "6a36c6762c877034acb99eca79ea3b014577fd22",
+  "later_default_branch_commit": "3e74027115ceedfde534ba0c372e5f940d742320",
+  "api_unavailability_is_controlled_fixture": true,
+  "actual_native_git_used": true,
+  "original_returned_tree": [
+    "future-only.txt",
+    "pinned-only.txt"
+  ],
+  "repaired_returned_tree": [
+    "pinned-only.txt"
+  ],
+  "original_provenance_correct": false,
+  "repaired_provenance_correct": true,
+  "api_failure_retained": true,
+  "agent_run_performed": false,
+  "model_or_skill_score_claimed": false,
+  "other_repositories_modified": false
+}

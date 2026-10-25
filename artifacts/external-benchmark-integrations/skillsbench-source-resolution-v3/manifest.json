@@ -1,0 +1,22 @@
+{
+  "artifact_kind": "external_benchmark_method_smoke",
+  "artifacts": [
+    {
+      "artifact_path": "artifacts/external-benchmark-integrations/skillsbench-source-resolution-v3/skillsbench/artifact.json",
+      "blocking_failures": [],
+      "head_sha": "f860ecf02ef53412a030f8661c83d644b739ff01",
+      "integration_status": "adapter_ready",
+      "method_id": "skillsbench",
+      "score_percent": 100.0
+    }
+  ],
+  "generated_at_utc": "2026-10-25T18:50:01Z",
+  "registry_path": "data/external_benchmark_methods.json",
+  "run_name": "skillsbench-source-resolution-v3",
+  "runner": "tools/evaluate_external_benchmark_methods.py",
+  "summary": {
+    "adapter_incomplete": 0,
+    "adapter_ready": 1,
+    "method_count": 1
+  }
+}

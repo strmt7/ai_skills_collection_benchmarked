@@ -1,17 +1,19 @@
 # External Benchmark Adapter Smoke Results
 
-These are real repository-resolution probes for the registered external benchmark methods. They verify adapter readiness only; no full benchmark suite score is claimed here.
+These historical probes checked registry declarations and repository resolution. Their percentages count those checks; they do not measure task success, native adapter execution or model performance.
+
+The old `adapter_ready` status is retained verbatim. Older captures did not record the successful tree transport, so their commit-to-tree binding cannot be retrospectively established from those records alone. New probes retain transport evidence and verify the requested commit when using Git fallback.
 
 ## Summary
 
 - Run: `2026-04-19-external-benchmark-method-smoke`
 - Methods checked: `14`
-- Adapter-ready methods: `14`
-- Incomplete adapters: `0`
+- Methods passing declaration/source checks: `14`
+- Methods with failed checks: `0`
 
 ## Results
 
-| Method | Status | Score | Upstream HEAD | Artifact |
+| Method | Legacy status | Metadata checks (%) | Recorded HEAD | Artifact |
 |---|---|---:|---|---|
 | `swe-skills-bench` | `adapter_ready` | 100.0 | `95b3ce519fcb58d0b19e90a5b6e5165211dc6dd1` | `artifacts/external-benchmark-integrations/2026-04-19-external-benchmark-method-smoke/swe-skills-bench/artifact.json` |
 | `skillsbench` | `adapter_ready` | 100.0 | `be06b4995c75b384b9295b94d18a4531400bb821` | `artifacts/external-benchmark-integrations/2026-04-19-external-benchmark-method-smoke/skillsbench/artifact.json` |

@@ -36,7 +36,7 @@ can rerun them manually from the Actions tab.
   We enable `E F B SIM UP I` and ignore `E501` (handled by the formatter),
   `B008`, `SIM108`, `UP015`. Per-file ignores live in `pyproject.toml`.
 * The minimum supported runtime is **Python 3.11**; production validation uses
-  Python 3.14.8 and the matrix exercises current patches of 3.11–3.14. Keep
+  Python 3.14.9 and the matrix exercises current patches of 3.11–3.14. Keep
   annotations and APIs compatible with that support range. The formatter's
   older syntax target remains fixed while independent trials are frozen;
   do not rewrite experimental inputs during a matched comparison block.
