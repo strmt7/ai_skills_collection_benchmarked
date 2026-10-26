@@ -5739,8 +5739,13 @@
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "status": "in_progress",
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/latex-posters/repair.json",
+            "sha256": "c5b0ff47432d9efac15fed6e1d74f0cd5cb3b0f044c55f66d1dee7486cf4424e"
+          }
+        ]
       },
       "source_repo": "K-Dense-AI/scientific-agent-skills",
       "source_signature": {

@@ -1,0 +1,65 @@
+{
+  "artifact_kind": "independent_runtime_readiness_component",
+  "source_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+  "catalog_commit": "df087e93f2fa15bf323375ac7d0e1fe15b6d1a08",
+  "original_script_sha256": "1d630ddcccd87a83be11f9cda7e3873e4567143c3b44144bcd68bc098fe502be",
+  "repair_script_sha256": "3cb2f2bcb9f9cec6b630cca9a6bb01db8cdf1866a3cc30896725d14c7e0069be",
+  "original_control_cases": [
+    {
+      "case": "ordinary",
+      "passed": true,
+      "exit": 0,
+      "stdout_sha256": "900946995edcb85ba47fb79b77f49907e61d3026312d71410cf5b756ac68d9c8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "leading_hyphen",
+      "passed": false,
+      "exit": 0,
+      "stdout_sha256": "d9da5ee34dadf3b8ccc07abc26c30369df7cc3ec9ac2cb820a683858a511a6b7",
+      "stderr_sha256": "4377ff13b74d4ccbe5e9c59511c474a03a5b576fadc178c4da6fca105b0cf063"
+    },
+    {
+      "case": "multipage",
+      "passed": false,
+      "exit": 0,
+      "stdout_sha256": "4345c551147d011a38274034a0d1694aeb7fc9c389ef3f1208a2cf4bd53240e4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "inspector_failure",
+      "passed": false,
+      "exit": 0,
+      "stdout_sha256": "2c875df5862e3105eb5129fc5d1cd8ebba828a4949ee6faf0aab432c1c7041a0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "unembedded_font",
+      "passed": false,
+      "exit": 0,
+      "stdout_sha256": "39c207a5b7a419842d55b2822f9af5b3b6640318f324ae194d930ba99e104a32",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "low_ppi",
+      "passed": false,
+      "exit": 0,
+      "stdout_sha256": "159ba8609f4ce5190fcaf604bb37aa5ae5f9395958ee5e90ecba146b3f0cd2dc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "repaired_controls": {
+    "passed": 41,
+    "total": 41,
+    "runner_stdout_sha256": "2b0e40eec927eea9a3a1192d8b84cccaba3e5ec52ceda803ffa52682de52ea45",
+    "shellcheck_version": "0.11.0",
+    "shellcheck_exit": 0,
+    "poppler_version": "26.09.0",
+    "poppler_build_source": "oschwartz10612/poppler-windows",
+    "poppler_archive_sha256": "7a6f256a0ddf7536182246a5733331bf4677cbcc34f4663774947ad34556c8d0"
+  },
+  "method": "Independent owned fixture contracts and local command-spy controls, plus real Poppler tests; not coding-agent performance.",
+  "model_performance_claim": false,
+  "original_scanning_alerts_closed": false,
+  "schema_version": 1
+}

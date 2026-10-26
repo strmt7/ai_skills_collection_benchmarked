@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-latex-posters-skill-md",
+  "source_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+  "catalog_commit": "df087e93f2fa15bf323375ac7d0e1fe15b6d1a08",
+  "source_mirror": "included/skills/by-category/science-research-data-analysis/latest-release-community/latex-posters",
+  "original_skill_sha256": "33f84731dd77220a415f14ce8acfce96c40c17456386849b8f0e472cc701356b",
+  "original_script_sha256": "1d630ddcccd87a83be11f9cda7e3873e4567143c3b44144bcd68bc098fe502be",
+  "repaired_script_sha256": "3cb2f2bcb9f9cec6b630cca9a6bb01db8cdf1866a3cc30896725d14c7e0069be",
+  "provenance_skill": "provenance/original.SKILL.md",
+  "license_file": "LICENSE",
+  "scope": "Read-only PDF preflight; manual review remains required.",
+  "model_performance_claim": false,
+  "original_scanning_alerts_closed": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/poster-preflight-v1/qualification.json",
+  "license_sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1",
+  "repaired_skill_sha256": "7bee5b4a25d66b86147d88b0714166867902a85bc9131b6565d51810f1282d8a",
+  "documented_repairs": [
+    "Provide a focused preflight entrypoint and direct poster-design work to the immutable original skill.",
+    "Preserve the original skill text and record the original script hash."
+  ]
+}

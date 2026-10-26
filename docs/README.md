@@ -22,6 +22,8 @@ their tested boundaries and remaining limits.
 For native memory testing and fuzzing dictionaries, see the
 [qualified LLVM contracts and experimental overlays](research-native-testing-contracts.md).
 
+For research posters, see the [maintained PDF preflight repair](poster-preflight-repair.md).
+
 To improve this collection, use the separate
 [contributor guide](../CONTRIBUTING.md) and
 [development setup](development.md). Research records, test harnesses and source
