@@ -6,6 +6,13 @@
       "sha256": "5e3171b5dd8a87b37914e8b302596c6598354dc8fbd81e58414296ef0eecdc9c",
       "source_commit": "526ebce143bc326f44471554e33d66a19c840360",
       "source_repo": "K-Dense-AI/scientific-agent-skills"
+    },
+    {
+      "evidence_path": "artifacts/research/2026-10-26/ppt-v673-source-candidate-review.json",
+      "reason": "Unresolved new static result and incomplete package review; a component retention improvement does not clear source admission.",
+      "sha256": "d1b182b576d5aee9bf5b32e763c941d24dfa9bf4d9d91b3d094f2b1c7a8d8b9a",
+      "source_commit": "622bf0148bca4f697b0184322c7e2aa2a04520a2",
+      "source_repo": "hugohe3/ppt-master"
     }
   ],
   "schema_version": 1

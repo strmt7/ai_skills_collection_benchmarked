@@ -43,6 +43,11 @@ jobs:
           --requirement toolchains/crawl4ai/requirements-build.txt
           --requirement toolchains/crawl4ai/requirements-bootstrap.txt
 
+      - name: Audit the complete Windows PPTX consumer graph
+        run: >-
+          pip-audit --strict --disable-pip --no-deps
+          --requirement toolchains/pptx-native/requirements.txt
+
   lock-consistency:
     # pip-tools locks one environment, not a universal cross-platform graph.
     # Its seeded consistency is verified on Windows with Python 3.14.9;

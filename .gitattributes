@@ -26,6 +26,7 @@
 # Licensed build inputs and qualified wheel hashes require exact source bytes.
 /toolchains/crawl4ai/** text eol=lf
 /toolchains/crawl4ai/vendor/** -text
+/toolchains/pptx-native/** text eol=lf
 # Frozen source-resolution evidence is hashed as exact published bytes.
 /artifacts/external-benchmark-integrations/skillsbench-source-resolution-v3/** -text
 /artifacts/external-benchmark-integrations/skillsbench-source-resolution-v6/** -text

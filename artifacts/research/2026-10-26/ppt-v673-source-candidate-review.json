@@ -1,0 +1,124 @@
+{
+  "candidate_selected_bytes": 39138884,
+  "catalog_or_mirrors_changed": false,
+  "codeql": {
+    "admission_decision": "Keep this exact candidate held pending the unresolved new result and wider package review. Static triage does not erase native results or approve other findings. Potentially sensitive source-to-sink details remain private.",
+    "bundle_version": "2.27.3",
+    "extraction_coverage": {
+      "new": {
+        "javascript": [
+          3,
+          3
+        ],
+        "python": [
+          310,
+          310
+        ]
+      },
+      "old": {
+        "javascript": [
+          2,
+          2
+        ],
+        "python": [
+          284,
+          284
+        ]
+      }
+    },
+    "native_analysis_error_notifications": 0,
+    "native_commands_completed": 8,
+    "query_versions": {
+      "javascript": "2.4.8",
+      "python": "1.8.13"
+    },
+    "scans": [
+      {
+        "findings": 49,
+        "language": "python",
+        "native_sha256": "985f02e8aa9f7b6aad130e77c1a89de9c2bc075f5d83ddc0abe6b62f44b532c6",
+        "source_version": "old"
+      },
+      {
+        "findings": 1,
+        "language": "javascript",
+        "native_sha256": "f3a959f53fb3906131e88d9519591b1c4c5791c2ee73e45c3a3311a432efa5d1",
+        "source_version": "old"
+      },
+      {
+        "findings": 51,
+        "language": "python",
+        "native_sha256": "bdb88806a3315017aee42bdf9c186522f3bda819bd5e9059edf290b0ae09985a",
+        "source_version": "new"
+      },
+      {
+        "findings": 1,
+        "language": "javascript",
+        "native_sha256": "cc53184a3464a8e08f55bec5f476f8bfbf8835ed0eeb24d9d2025cf24ca4ea27",
+        "source_version": "new"
+      }
+    ],
+    "scope": "Raw pinned source, before catalog transformations; findings are native scanner results, not confirmed vulnerabilities or a whole-catalog count.",
+    "selected_triage": {
+      "needs_further_boundary_review": 1,
+      "not_actionable_for_exact_reported_flow": 1,
+      "private_managed_result_sha256": "53ee9378ac1889a1764b132bab123e54f3821b7164696fc79b4fddbf361ae5a6",
+      "selected_results": 2
+    },
+    "suite": "security-extended"
+  },
+  "coding_agent_efficacy_scored": false,
+  "component_controls": {
+    "path": "artifacts/research/2026-10-26/ppt-native-retention-controls.json",
+    "sha256": "a8f2658d76a5eb68f1e90a1ad5bef15a138b4e9dfa822241f2ae194a83e9c963"
+  },
+  "counted_runtime_benchmark_artifact": false,
+  "crawl4ai_platform": "Windows x64",
+  "current_catalog_commit": "a50758ac29ec027e85966db33e2ae80031446756",
+  "current_catalog_release": "v6.6.0",
+  "git_root_trees": {
+    "new": "41f80adcb20c6d84cbd0d29a569c9581799a06fc",
+    "old": "dbb877cc24332a70613cf62b96e489e781aee3cd"
+  },
+  "os_support_expanded": false,
+  "release_page": {
+    "intended_url": "https://github.com/hugohe3/ppt-master/releases/tag/v6.7.3",
+    "markdown_characters": 11968,
+    "native_result_bytes": 439460,
+    "native_result_sha256": "569c89e759f48aa989d5771868df65448fa7b41f31f48bbc0122174a418d9617",
+    "provider_version": "0.9.5+catalog.portable4",
+    "status_code": 200,
+    "strict_policy": {
+      "automation_disclosed": true,
+      "external_llm": false,
+      "fallback": false,
+      "max_retries": 0,
+      "personal_profile": false,
+      "robots": true,
+      "sandbox": true,
+      "stealth": false,
+      "tls_verification": true
+    },
+    "success": true
+  },
+  "release_scope_reviewed": true,
+  "review_limit": "The complete package was not reviewed. Other major module bodies were only partly read; a successful converter component does not qualify the whole presentation skill.",
+  "schema_version": 1,
+  "source_candidate_state": "held_before_publication",
+  "source_commit": "622bf0148bca4f697b0184322c7e2aa2a04520a2",
+  "source_files_verified": {
+    "new": 13025,
+    "old": 12994
+  },
+  "source_release": "v6.7.3",
+  "source_repo": "hugohe3/ppt-master",
+  "source_verification": "Every selected raw working file matched its Git blob; complete canonical native API selected mode/blob/size sets matched Git. Commit-addressed API alias responses and newline-converted archive attempts were rejected and retained before restoration.",
+  "whole_candidate_resources_read": [
+    "skills/ppt-master/SKILL.md",
+    "LICENSE",
+    "skills/ppt-master/scripts/attribution_guard.py",
+    "skills/ppt-master/scripts/console_encoding.py",
+    "skills/ppt-master/scripts/workflow_transcript.py",
+    "skills/ppt-master/scripts/source_to_md/_batch.py"
+  ]
+}

@@ -92,3 +92,37 @@ artifacts remain unchanged. These checks establish source and evidence handling;
 they do not establish coding-agent superiority. Crawl4AI remains Windows x64.
 The Karpathy-derived baseline was also rechecked: the canonical repository still
 resolves to the pinned `2c606141936f1eeef17fa3043a72095b4765b9c2` commit.
+
+## PPT Master candidate and native retention controls
+
+The [PPT Master review](../artifacts/research/2026-10-26/ppt-v673-source-candidate-review.json)
+compares locked v6.6.0 with stable v6.7.3 at
+`622bf0148bca4f697b0184322c7e2aa2a04520a2`. All 13,025 selected candidate files
+were checked against native Git blobs and canonical API tree entries. Paired
+CodeQL 2.27.3 security-extended scans produced 50 findings for the old raw source
+and 52 for the candidate. These are scanner results, not confirmed vulnerabilities.
+Two selected new results received static review; one remains unresolved. The exact
+candidate is held in the admission registry while that result and the wider package
+remain under review. Current catalog source and mirrors are unchanged.
+
+The separate [native component scorecard](../artifacts/research/2026-10-26/ppt-native-retention-controls.json)
+records one SDK-authored three-slide fixture, with the same interpreter and
+dependencies for both actual converters and their intact attribution guards:
+
+| Component controls | v6.6.0 | v6.7.3 |
+| --- | ---: | ---: |
+| Passed | 10/11 | 11/11 |
+| Office14 Choice plain text retained | No | Yes |
+| Both native guards and converters completed | Yes | Yes |
+
+The evaluator checks slide-local content and chart-value associations, including
+zero values. Corrupt associations, displaced tokens and tampered evidence are
+rejected by negative controls. This tests plain text in an Office14 Choice shape;
+it does not test equation semantics, rendering or the complete presentation
+workflow. The [reproduction instructions](../toolchains/pptx-native/README.md)
+and Windows workflow accept caller-selected paths and preserve full native logs.
+The five-package wheel cohort has hash-checked installation, dependency audits
+and Dependabot coverage. These component results do not establish a skill or
+coding-agent advantage over default GPT-6.1 Sol or Karpathy instructions, and they
+do not override the source admission hold. Host independence changes no OS target;
+Crawl4AI remains Windows x64.

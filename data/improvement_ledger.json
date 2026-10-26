@@ -4257,8 +4257,14 @@
       },
       "mirrored_path": "included/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ppt-master",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-26/ppt-v673-source-candidate-review.json",
+            "sha256": "d1b182b576d5aee9bf5b32e763c941d24dfa9bf4d9d91b3d094f2b1c7a8d8b9a"
+          }
+        ],
+        "scope": "Contextual review of the pinned baseline and v6.7.3 candidate; byte verification, paired static scans and one native converter fixture. Whole-package review and agent efficacy remain incomplete.",
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],

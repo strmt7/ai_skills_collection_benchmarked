@@ -1,0 +1,95 @@
+name: Native PPTX retention controls
+
+on:
+  push:
+    paths:
+      - "tools/*pptx_retention*.py"
+      - "tools/_catalog_publication.py"
+      - "tools/_windows_owned_python.py"
+      - "tests/test_pptx_retention*.py"
+      - "toolchains/pptx-native/**"
+      - ".github/workflows/pptx-retention-controls.yml"
+  pull_request:
+    paths:
+      - "tools/*pptx_retention*.py"
+      - "tools/_catalog_publication.py"
+      - "tools/_windows_owned_python.py"
+      - "tests/test_pptx_retention*.py"
+      - "toolchains/pptx-native/**"
+      - ".github/workflows/pptx-retention-controls.yml"
+  workflow_dispatch:
+  schedule:
+    - cron: "45 7 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pptx-retention-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  native-controls:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    env:
+      GIT_CONFIG_COUNT: "1"
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: "true"
+      PYTHONUTF8: "1"
+      PYTHONNOUSERSITE: "1"
+      PIP_CONFIG_FILE: "nul"
+      PIP_DISABLE_PIP_VERSION_CHECK: "1"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.14.9"
+          cache: "pip"
+          cache-dependency-path: toolchains/pptx-native/requirements.txt
+      - name: Install complete hashed consumer graph
+        run: |
+          python -m pip install --require-hashes --only-binary=:all: -r toolchains/pptx-native/requirements.txt
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m pip check
+      - name: Prepare both immutable public source checkouts
+        shell: pwsh
+        run: |
+          $sourceRoot = Join-Path $env:RUNNER_TEMP ("pptx-sources-" + [guid]::NewGuid().ToString("N"))
+          New-Item -ItemType Directory -Path $sourceRoot -ErrorAction Stop | Out-Null
+          $commits = @{
+            old = "a50758ac29ec027e85966db33e2ae80031446756"
+            new = "622bf0148bca4f697b0184322c7e2aa2a04520a2"
+          }
+          foreach ($label in @("old", "new")) {
+            $destination = Join-Path $sourceRoot $label
+            git init $destination
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+            git -C $destination fetch --no-tags --depth=1 https://github.com/hugohe3/ppt-master.git $commits[$label]
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+            git -C $destination sparse-checkout init --cone
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+            git -C $destination sparse-checkout set skills/ppt-master
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+            git -c core.autocrlf=false -c core.hooksPath=NUL -C $destination checkout --detach $commits[$label]
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
+          "PPTX_SOURCE_ROOT=$sourceRoot" >> $env:GITHUB_ENV
+          "PPTX_RESULT_ROOT=$(Join-Path $env:RUNNER_TEMP ('pptx-results-' + [guid]::NewGuid().ToString('N')))" >> $env:GITHUB_ENV
+      - name: Execute both guards and native converters
+        shell: pwsh
+        run: |
+          python tools/run_pptx_retention_controls.py `
+            --baseline-source "$env:PPTX_SOURCE_ROOT/old" --baseline-commit a50758ac29ec027e85966db33e2ae80031446756 `
+            --candidate-source "$env:PPTX_SOURCE_ROOT/new" --candidate-commit 622bf0148bca4f697b0184322c7e2aa2a04520a2 `
+            --output "$env:PPTX_RESULT_ROOT" --json
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python tools/run_pptx_retention_controls.py --check --output "$env:PPTX_RESULT_ROOT" --json
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always() && env.PPTX_RESULT_ROOT != ''
+        with:
+          name: native-pptx-component-controls
+          path: ${{ env.PPTX_RESULT_ROOT }}
+          if-no-files-found: warn

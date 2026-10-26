@@ -1,0 +1,150 @@
+{
+  "coding_agent_efficacy_scored": false,
+  "consumer_versions": {
+    "lxml": "6.1.3",
+    "pillow": "13.0.0",
+    "python-pptx": "1.0.2",
+    "typing-extensions": "4.16.0",
+    "xlsxwriter": "3.3.0"
+  },
+  "counted_runtime_benchmark_artifact": false,
+  "evidence_class": "native-component-content-retention-controls",
+  "fixture_reproducibility": {
+    "coding_agent_efficacy_scored": false,
+    "generations_separated_by_more_than_one_second": true,
+    "normalized_bytes_equal": true,
+    "normalized_fixture_hashes": [
+      "afc68b8a0cba517bd936aeffe1c43afa641d87fc242b3033c276324792951309",
+      "afc68b8a0cba517bd936aeffe1c43afa641d87fc242b3033c276324792951309"
+    ],
+    "raw_sdk_output_hashes": [
+      "942b4524097fb0b17340575d715aeb60ae6d99a33e44cbaa68d776ba6a95e0f3",
+      "552ebf1d8820435b1911218d5c0f8ab7ec87b7a673634654389f64ec72aaac5e"
+    ]
+  },
+  "frozen_inputs": {
+    "controller-before-execution.py": "1c782403f52e29d8a850208cabdaf60466ed462b69b6cfaa1c8e0570ad946cc4",
+    "evaluator-before-execution.py": "ad3b652ad2bb4b7eba7a9ae948a8189035bd513150a3c0123d07cc33ad4a495d",
+    "new-source-manifest.json": "1a52c750598e31d090ed97019277decdb555ff508caa23bf7569f383315ff224",
+    "old-source-manifest.json": "3c3d015bb810f256197ccc25b10f6c793656c7f86f342fa4637fb2c1242e7551",
+    "process-control-before-execution.py": "acf5b4e2d94758065cef125e5d6386ff741fe75e80bde2e66e0e67ac5e4a2651",
+    "requirements.txt": "96678b39b8b37f08b0ec4f7115dcd7e361c242d663f17a5b6be3fce80e2e5c0b",
+    "retention.pptx": "afc68b8a0cba517bd936aeffe1c43afa641d87fc242b3033c276324792951309",
+    "task-before-execution.json": "9ac567c50a88471ad53bb3742246c6dc3db16b946b67d3f6ac433191b1ff0e7d"
+  },
+  "guards_bypassed": false,
+  "limits": "One synthetic three-slide fixture and eleven component controls; no rendering, Office certification, performance or coding-agent score.",
+  "native_result_check_passed": true,
+  "native_result_sha256": "4a7b6b099250854507323be6807bac367ca6e4bb38e5b967b70f86cb26fc901d",
+  "paid_jobs_executed": 0,
+  "python_version": "3.14.8",
+  "results": [
+    {
+      "checks": {
+        "category_numeric_value": true,
+        "cli_completes": true,
+        "grouped_text": true,
+        "hyperlink": true,
+        "input_bytes_unchanged": true,
+        "office14_choice_text": false,
+        "slide_heading_count": true,
+        "speaker_notes": true,
+        "table_cells": true,
+        "unicode_text": true,
+        "xy_coordinates": true
+      },
+      "exit_code": 0,
+      "guard_exit_code": 0,
+      "markdown_sha256": "5bb37b75d222907260b559e300085cfa0170c4dc49d3f791b6296b48346d5b28",
+      "native_logs": {
+        "converter.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "converter.stdout.log": "9a32877e01a0f0607bfdc476d0178c70c1044379487cc39e04cc1c57fab1e216",
+        "integrity-guard.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "integrity-guard.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "owned_processes": {
+        "converter": {
+          "active_processes_after_cleanup": 0,
+          "kill_on_close": true,
+          "real_interpreter_gated_before_site": true,
+          "termination_reason": null,
+          "windows_job": true
+        },
+        "guard": {
+          "active_processes_after_cleanup": 0,
+          "kill_on_close": true,
+          "real_interpreter_gated_before_site": true,
+          "termination_reason": null,
+          "windows_job": true
+        }
+      },
+      "passed": 10,
+      "source_commit": "a50758ac29ec027e85966db33e2ae80031446756",
+      "total": 11,
+      "version": "old"
+    },
+    {
+      "checks": {
+        "category_numeric_value": true,
+        "cli_completes": true,
+        "grouped_text": true,
+        "hyperlink": true,
+        "input_bytes_unchanged": true,
+        "office14_choice_text": true,
+        "slide_heading_count": true,
+        "speaker_notes": true,
+        "table_cells": true,
+        "unicode_text": true,
+        "xy_coordinates": true
+      },
+      "exit_code": 0,
+      "guard_exit_code": 0,
+      "markdown_sha256": "ecd04e40bec27f6bdab2867d057aec28d7b97cf786ed0176e80c88d94217070b",
+      "native_logs": {
+        "converter.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "converter.stdout.log": "935912e87fc1fc86fbeee43f70cb780ef4db7b320046cdbf3069e1dc120950d1",
+        "integrity-guard.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "integrity-guard.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "owned_processes": {
+        "converter": {
+          "active_processes_after_cleanup": 0,
+          "kill_on_close": true,
+          "real_interpreter_gated_before_site": true,
+          "termination_reason": null,
+          "windows_job": true
+        },
+        "guard": {
+          "active_processes_after_cleanup": 0,
+          "kill_on_close": true,
+          "real_interpreter_gated_before_site": true,
+          "termination_reason": null,
+          "windows_job": true
+        }
+      },
+      "passed": 11,
+      "source_commit": "622bf0148bca4f697b0184322c7e2aa2a04520a2",
+      "total": 11,
+      "version": "new"
+    }
+  ],
+  "retention": "Full native captures and frozen manifests are retained privately; the reproducible Windows workflow uploads a complete independent capture for its own execution. This public scorecard records only the local execution and its digests, not a hosted-run result.",
+  "schema_version": 1,
+  "source_manifests": {
+    "new": {
+      "bytes": 39138884,
+      "commit": "622bf0148bca4f697b0184322c7e2aa2a04520a2",
+      "file_count": 13025,
+      "package": "skills/ppt-master",
+      "tree": "cc4389abfe17ffeeba562da9db9eeac459cd41b0"
+    },
+    "old": {
+      "bytes": 84030293,
+      "commit": "a50758ac29ec027e85966db33e2ae80031446756",
+      "file_count": 12994,
+      "package": "skills/ppt-master",
+      "tree": "e2d34480203f71c44b5465e194a8d232c6e5c8be"
+    }
+  },
+  "source_workflow_completion_scored": false
+}
