@@ -50,7 +50,7 @@ gitleaks git --log-opts="--all --full-history --no-renames" \
 | `tools/check_no_secret_patterns.py --history` | Context-aware regex + Shannon-entropy scan over the full git history |
 | `gitleaks git --log-opts="--all --full-history --no-renames" .` | Pinned MIT binary (v8.30.1, SHA256-verified), all fetched refs and complete patches |
 | `pip-audit --strict -r requirements-lock.txt` | Daily CVE scan against the pip-compile lockfile |
-| Dependabot weekly updates | Grouped minor+patch PRs for `github-actions` and `pip` ecosystems |
+| Dependency monitoring | Vulnerability alerts remain enabled; automated version-update PR creation is disabled under the main-only maintenance policy |
 | Workflow `permissions: contents: read` | Least-privilege default token on every workflow |
 
 ## Token / secret handling for maintainers
@@ -68,8 +68,10 @@ gitleaks git --log-opts="--all --full-history --no-renames" \
   bumping `pyproject.toml`. The `pip-audit` workflow verifies the lockfile is
   in sync with `pyproject.toml` on every push.
 - GitHub Actions use full immutable commit SHA pins with stable release names
-  in comments; Dependabot proposes updates weekly. Release resolution and
-  successful workflow execution are checked separately.
+  in comments. Qualified dependency and Action updates are published on `main`;
+  automated version-update and security-fix PR creation is disabled. Vulnerability
+  alerts remain enabled. Release resolution and successful workflow execution
+  are checked separately.
 - The standalone secret-scanner workflow installs the hash-locked minimal
   runtime from `requirements-runtime-lock.txt` before invoking the scanner.
 

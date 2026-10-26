@@ -11895,8 +11895,32 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/cpp-parity-porting",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/cpp-contracts/cpp-review.json",
+            "sha256": "e49d6809e124f72c5e106e7e4164ba0354e0205dcc47d5ec7b357d0830084a2d"
+          },
+          {
+            "path": "docs/research-cpp-contracts.md",
+            "sha256": "2f56a60434c845bfd8e071794819830d9164c9db533023e01ce731e684806465"
+          }
+        ],
+        "open_work": [
+          "Resolve original-layout and cross-skill dependencies for portable reuse.",
+          "Record the applicable redistribution basis before publishing a derivative overlay.",
+          "Qualify independent correctness and measurement contracts; no instruction-derived expected answers.",
+          "Run permitted independent efficacy trials only under the controlling agent-session policy."
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "review_scope": "Complete original entrypoint, repository-coupled paths, referenced skills, observable behavior requirements and performance-claim constraints",
+            "sha256": "efe94ccbce8105763d9c44153eff46fdc74dee45206abd3f27e3b01e294e77ec",
+            "status": "reviewed"
+          }
+        },
+        "scope": "Complete original packages and exact upstream differences; four current reference captures; no runtime or agent-efficacy qualification",
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -11917,8 +11941,37 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/cpp-performance-optimization",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/cpp-contracts/cpp-review.json",
+            "sha256": "e49d6809e124f72c5e106e7e4164ba0354e0205dcc47d5ec7b357d0830084a2d"
+          },
+          {
+            "path": "docs/research-cpp-contracts.md",
+            "sha256": "2f56a60434c845bfd8e071794819830d9164c9db533023e01ce731e684806465"
+          }
+        ],
+        "open_work": [
+          "Resolve original-layout and cross-skill dependencies for portable reuse.",
+          "Record the applicable redistribution basis before publishing a derivative overlay.",
+          "Qualify independent correctness and measurement contracts; no instruction-derived expected answers.",
+          "Run permitted independent efficacy trials only under the controlling agent-session policy."
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "review_scope": "Complete original entrypoint, repository-coupled paths, referenced skills, observable behavior requirements and performance-claim constraints",
+            "sha256": "811d86c14ade8146b73af7b113516fb8090c3cc633e0dcaf2630a3cdddf74bf9",
+            "status": "reviewed"
+          },
+          "references/official-guidance.md": {
+            "review_scope": "Complete original guidance and all four cited references; canonical URL redirects and platform-specific benchmark advice checked",
+            "sha256": "18f01fcd0521eecbf16ab8a85127260601b479757136f86e61bea42bd96cec86",
+            "status": "reviewed"
+          }
+        },
+        "scope": "Complete original packages and exact upstream differences; four current reference captures; no runtime or agent-efficacy qualification",
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],

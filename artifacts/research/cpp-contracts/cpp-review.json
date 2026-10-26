@@ -1,0 +1,216 @@
+{
+  "boundary": {
+    "agent_efficacy_claim": false,
+    "compiled_examples": 0,
+    "independent_model_trials": 0,
+    "other_repository_writes": false,
+    "runtime_benchmark_passes": 0,
+    "source_mirrors_modified": false,
+    "whole_skill_research_complete": false
+  },
+  "evidence_class": "complete-resource-review-with-scoped-primary-reference-research",
+  "initial_redirect_captures": [
+    {
+      "admitted_as_reference": false,
+      "native_sha256": "96088d84bb923942ad91ecf7a8fb22d39c35fbdfb5824bcc705f892f42dc9fba",
+      "native_status_code": 301,
+      "redirected_url": "https://en.cppreference.com/cpp/container/vector/reserve",
+      "requested_url": "https://en.cppreference.com/w/cpp/container/vector/reserve",
+      "resolution": "Explicit new canonical URL captured with the same strict provider"
+    },
+    {
+      "admitted_as_reference": false,
+      "native_sha256": "f15cf1541a0af0723a863193a39a2d568d2b7617acaeb09d7aac5545c0da172a",
+      "native_status_code": 301,
+      "redirected_url": "https://en.cppreference.com/cpp/language/move_constructor",
+      "requested_url": "https://en.cppreference.com/w/cpp/language/move_constructor",
+      "resolution": "Explicit new canonical URL captured with the same strict provider"
+    }
+  ],
+  "observations": [
+    "The parity entrypoint is unchanged upstream and explicitly preserves its frozen reference; newer upstream package versions do not justify silently changing its oracle.",
+    "Current performance guidance clarifies Python/native speedup ratios, values below one and the order of absolute/relative measurements; it also requires a registered parity-qualified create entrypoint for that specific claim.",
+    "Both packages depend on their original repository layout and other named skills outside the three packaged resources. Independent reuse must resolve those contracts explicitly.",
+    "The instruction bodies already condition views, moves and concurrency on behavior/lifetime requirements; these are strengths, not independently measured performance results.",
+    "Same machine class alone is insufficient to bind a comparison to exact code, builds, inputs, timing boundaries and repeated observations. A maintained general guide should require those receipts and preserve inconclusive results.",
+    "Benchmark tuning guidance is platform-specific. No system power policy, affinity, priority, boot setting, external repository or live workload was changed during this review."
+  ],
+  "open_work": [
+    "Resolve original-layout and cross-skill dependencies for portable reuse.",
+    "Record the applicable redistribution basis before publishing a derivative overlay.",
+    "Qualify independent correctness and measurement contracts; no instruction-derived expected answers.",
+    "Run permitted independent efficacy trials only under the controlling agent-session policy."
+  ],
+  "redistribution_review": {
+    "github_detected_repository_license": null,
+    "inspected_directories_at_both_commits": [
+      "/",
+      ".agents/",
+      ".agents/skills/"
+    ],
+    "license_named_entries_in_those_directories": 0,
+    "new_overlay_published": false,
+    "permission_or_licence_inferred_from_public_visibility": false,
+    "readme_observation": "The current README credits the frozen upstream Python snapshot under BSD-2-Clause and points to its licence file; no explicit scoped licence for these skill resources was identified in the inspected material.",
+    "status": "unresolved_scope"
+  },
+  "references": [
+    {
+      "markdown_characters": 947433,
+      "native_sha256": "2b909811bcceec91bf13232768d6893e0bb0b31c855d2616876a6ee22aeea441",
+      "provider_version": "0.9.5+catalog.portable4",
+      "review_scope": "Performance guidance Per.1, Per.6, Per.14, Per.16, Per.19; range/lifetime guidance F.24 and F.43",
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "success": true,
+      "url": "https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines"
+    },
+    {
+      "markdown_characters": 24972,
+      "native_sha256": "2e59adcde65e708c591b1c810dce31b3113410a26a8dd7e3ce3a26f5ad165ce5",
+      "provider_version": "0.9.5+catalog.portable4",
+      "review_scope": "Reserve capacity versus size, reference invalidation, unsuitable repeated reservation and exception guarantees",
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "success": true,
+      "url": "https://en.cppreference.com/cpp/container/vector/reserve"
+    },
+    {
+      "markdown_characters": 40921,
+      "native_sha256": "ee09b2325af9e49608d03680d1147d9c9d741a3e73e377924c4050d38ff2678b",
+      "provider_version": "0.9.5+catalog.portable4",
+      "review_scope": "Move/copy selection and conditional exception guarantees",
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "success": true,
+      "url": "https://en.cppreference.com/cpp/language/move_constructor"
+    },
+    {
+      "markdown_characters": 14572,
+      "native_sha256": "2433dd4f1bbf2cf53f4f710f01ee097c0d5acfd288e634bf8bc15c46653cf091",
+      "provider_version": "0.9.5+catalog.portable4",
+      "review_scope": "System noise, clock/frequency conditions and platform-specific priority/tuning advice; no tuning executed",
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "success": true,
+      "url": "https://pyperf.readthedocs.io/en/latest/system.html"
+    }
+  ],
+  "resources_reviewed": 3,
+  "schema_version": 1,
+  "skills": [
+    {
+      "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/cpp-parity-porting",
+      "resources": {
+        "SKILL.md": {
+          "review_scope": "Complete original entrypoint, repository-coupled paths, referenced skills, observable behavior requirements and performance-claim constraints",
+          "sha256": "efe94ccbce8105763d9c44153eff46fdc74dee45206abd3f27e3b01e294e77ec",
+          "status": "reviewed"
+        }
+      },
+      "skill_id": "strmt7-ome-zarr-c-agents-skills-cpp-parity-porting-skill-md",
+      "source_signature": {
+        "commit_sha": "a9238a81742f96c89acf6d83fce6d6b882ac4d1c",
+        "skill_dir_sha256": "4693ff2f8c167338fb0cf76392783258a90f443042e408a5647388cdec994edd",
+        "skill_file_sha256": "efe94ccbce8105763d9c44153eff46fdc74dee45206abd3f27e3b01e294e77ec"
+      }
+    },
+    {
+      "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/cpp-performance-optimization",
+      "resources": {
+        "SKILL.md": {
+          "review_scope": "Complete original entrypoint, repository-coupled paths, referenced skills, observable behavior requirements and performance-claim constraints",
+          "sha256": "811d86c14ade8146b73af7b113516fb8090c3cc633e0dcaf2630a3cdddf74bf9",
+          "status": "reviewed"
+        },
+        "references/official-guidance.md": {
+          "review_scope": "Complete original guidance and all four cited references; canonical URL redirects and platform-specific benchmark advice checked",
+          "sha256": "18f01fcd0521eecbf16ab8a85127260601b479757136f86e61bea42bd96cec86",
+          "status": "reviewed"
+        }
+      },
+      "skill_id": "strmt7-ome-zarr-c-agents-skills-cpp-performance-optimization-skill-md",
+      "source_signature": {
+        "commit_sha": "a9238a81742f96c89acf6d83fce6d6b882ac4d1c",
+        "skill_dir_sha256": "a01215ff3b4b74dc2d22ef9ec176ab5813bc9992ed321dba6a8777639953d532",
+        "skill_file_sha256": "811d86c14ade8146b73af7b113516fb8090c3cc633e0dcaf2630a3cdddf74bf9"
+      }
+    }
+  ],
+  "skills_in_batch": 2,
+  "source_parent": "8c2c4a1ab760c5d328505cc1c43f72f9b3bf2f51",
+  "upstream": {
+    "mirror_updates_applied": false,
+    "observed_main_commit": "ef09a573eddb9197bc656e1954e3dbaf083e172b",
+    "pinned_commit": "a9238a81742f96c89acf6d83fce6d6b882ac4d1c",
+    "repository": "strmt7/ome-zarr-C",
+    "resources": [
+      {
+        "changed": false,
+        "current_raw_sha256": "efe94ccbce8105763d9c44153eff46fdc74dee45206abd3f27e3b01e294e77ec",
+        "pinned_raw_sha256": "efe94ccbce8105763d9c44153eff46fdc74dee45206abd3f27e3b01e294e77ec",
+        "resource": "parity"
+      },
+      {
+        "changed": true,
+        "current_raw_sha256": "3354595c55e042a53c62aee8e1384f2639bb57ec9a05b03d7f3a6409d1a7cf3b",
+        "pinned_raw_sha256": "811d86c14ade8146b73af7b113516fb8090c3cc633e0dcaf2630a3cdddf74bf9",
+        "resource": "performance"
+      },
+      {
+        "changed": true,
+        "current_raw_sha256": "67b40349fc66f0c606636239fce910e7aff7683f4611fd1c2d2323ca4eca3971",
+        "pinned_raw_sha256": "18f01fcd0521eecbf16ab8a85127260601b479757136f86e61bea42bd96cec86",
+        "resource": "guidance"
+      }
+    ]
+  }
+}

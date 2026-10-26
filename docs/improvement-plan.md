@@ -27,6 +27,10 @@ source defects and qualify maintained examples. They do not satisfy the agent
 benefit requirement. CI retains actual observations and
 [Python tooling coverage](coverage.md); neither replaces those trials.
 
+A bounded [C++ reference review](research-cpp-contracts.md) covers two packages
+and all three bundled resources. Their project dependencies, redistribution
+basis and independent runtime/effectiveness evidence still require qualification.
+
 Owner repositories are read-only references for general requirements and quality
 control. Maintained skills remain independent of their names and installations.
 The earlier two-hour restriction has expired; access boundaries and each
