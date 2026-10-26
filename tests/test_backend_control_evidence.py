@@ -108,3 +108,11 @@ def test_preparation_loads_actual_profile_and_go_reference():
         encoding="utf-8"
     )
     assert modules["maintained-go/decode.go"].replace("package bodycontrols", "package httpjson", 1) == reference
+
+
+def test_compiler_cache_cannot_be_published_as_evidence(evidence):
+    validate, result, bindings, root = evidence
+    cache = root / "native/go-state/cache"
+    cache.mkdir(parents=True)
+    (cache / "compiler-output").write_bytes(b"controlled compiler cache fixture")
+    assert any("outside evidence" in error for error in validate(result, bindings, root))

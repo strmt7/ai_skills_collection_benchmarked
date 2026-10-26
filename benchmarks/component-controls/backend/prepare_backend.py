@@ -86,6 +86,8 @@ def modules() -> tuple[dict[str, str], dict[str, str]]:
 
 
 def observations(native: Path) -> dict:
+    if any(path.is_dir() for path in native.iterdir()):
+        raise ValueError("Compiler and installation state must stay outside evidence output")
     contract = json.loads((HERE / "contract.json").read_text(encoding="utf-8"))
     processes = json.loads((native / "processes.json").read_text(encoding="utf-8"))
     expected_phases = {"node-version", "go-version", "go-telemetry-off", "qualification", "maintained-go-vet"}

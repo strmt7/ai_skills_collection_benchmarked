@@ -49,7 +49,7 @@ def main(argv: list[str] | None = None) -> int:
     prepare.main(["--workspace", str(workspace)])
     allowed = {"SYSTEMROOT", "WINDIR", "COMSPEC", "TEMP", "TMP", "PATH", "PATHEXT"}
     environment = {key: value for key, value in os.environ.items() if key.upper() in allowed}
-    state = output / "go-state"
+    state = workspace / "go-state"
     for name in ["config", "local", "gopath", "cache"]:
         (state / name).mkdir(parents=True)
     environment.update(

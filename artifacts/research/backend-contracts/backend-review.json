@@ -1,6 +1,18 @@
 {
   "additional_maintained_boundary_checks": 8,
   "agent_performance_claim": false,
+  "artifact_output_contract": {
+    "comparative_contract_results_unchanged": true,
+    "compiler_state": "separate workspace; never the evidence output",
+    "original_oracle_unchanged": true,
+    "previous_hosted_artifact_bytes": 28135866,
+    "previous_hosted_artifact_revision": "053e77ed9454dc63be3dea3f7b7becaa27600153",
+    "previous_unnecessary_go_state_entries": 1981,
+    "prior_failed_freshness_check_retained": "New native run correctly rejected old source-input hashes before this evidence rebind",
+    "qualified_output_directories": 0,
+    "qualified_output_files": 24,
+    "qualified_raw_output_bytes": 33691
+  },
   "canonical_upstream": "affaan-m/ECC",
   "component_observations": {
     "maintained": {
@@ -257,7 +269,7 @@
       "skill_id": "affaan-m-everything-claude-code-agents-skills-investor-materials-skill-md"
     }
   ],
-  "result_sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744",
+  "result_sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad",
   "retained_failures": [
     "Raw Git/mirror assertion exposed existing credential normalization; diagnosis retained and no raw unsafe fixture published",
     "Old conventions path 404 resolved as a verified rename; not retirement",

@@ -39,7 +39,7 @@
         "evidence": [
           {
             "path": "artifacts/research/backend-contracts/backend-review.json",
-            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+            "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
           },
           {
             "path": "docs/research-backend-contracts.md",
@@ -47,7 +47,7 @@
           },
           {
             "path": "benchmarks/component-controls/backend/result.json",
-            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+            "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
           }
         ],
         "scope": "Selected source-bound component controls only; no whole-skill or model-efficacy claim",
@@ -58,7 +58,7 @@
         "evidence": [
           {
             "path": "artifacts/research/backend-contracts/backend-review.json",
-            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+            "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
           },
           {
             "path": "docs/research-backend-contracts.md",
@@ -66,7 +66,7 @@
           },
           {
             "path": "benchmarks/component-controls/backend/result.json",
-            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+            "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
           }
         ],
         "open_work": [
@@ -91,7 +91,7 @@
         "evidence": [
           {
             "path": "artifacts/research/backend-contracts/backend-review.json",
-            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+            "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
           },
           {
             "path": "docs/research-backend-contracts.md",
@@ -99,7 +99,7 @@
           },
           {
             "path": "benchmarks/component-controls/backend/result.json",
-            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+            "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
           }
         ],
         "scope": "Licensed experimental overlay with complete original provenance; immutable mirror unchanged",
@@ -140,7 +140,7 @@
         "evidence": [
           {
             "path": "artifacts/research/backend-contracts/backend-review.json",
-            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+            "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
           },
           {
             "path": "docs/research-backend-contracts.md",
@@ -148,7 +148,7 @@
           },
           {
             "path": "benchmarks/component-controls/backend/result.json",
-            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+            "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
           }
         ],
         "scope": "Selected source-bound component controls only; no whole-skill or model-efficacy claim",
@@ -159,7 +159,7 @@
         "evidence": [
           {
             "path": "artifacts/research/backend-contracts/backend-review.json",
-            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+            "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
           },
           {
             "path": "docs/research-backend-contracts.md",
@@ -167,7 +167,7 @@
           },
           {
             "path": "benchmarks/component-controls/backend/result.json",
-            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+            "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
           }
         ],
         "open_work": [
@@ -192,7 +192,7 @@
         "evidence": [
           {
             "path": "artifacts/research/backend-contracts/backend-review.json",
-            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+            "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
           },
           {
             "path": "docs/research-backend-contracts.md",
@@ -200,7 +200,7 @@
           },
           {
             "path": "benchmarks/component-controls/backend/result.json",
-            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+            "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
           }
         ],
         "scope": "Licensed experimental overlay with complete original provenance; immutable mirror unchanged",
@@ -586,7 +586,7 @@
         "evidence": [
           {
             "path": "artifacts/research/backend-contracts/backend-review.json",
-            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+            "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
           },
           {
             "path": "docs/research-backend-contracts.md",
@@ -594,7 +594,7 @@
           },
           {
             "path": "benchmarks/component-controls/backend/result.json",
-            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+            "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
           }
         ],
         "scope": "Selected source-bound component controls only; no whole-skill or model-efficacy claim",
@@ -605,7 +605,7 @@
         "evidence": [
           {
             "path": "artifacts/research/backend-contracts/backend-review.json",
-            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+            "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
           },
           {
             "path": "docs/research-backend-contracts.md",
@@ -613,7 +613,7 @@
           },
           {
             "path": "benchmarks/component-controls/backend/result.json",
-            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+            "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
           }
         ],
         "open_work": [
@@ -638,7 +638,7 @@
         "evidence": [
           {
             "path": "artifacts/research/backend-contracts/backend-review.json",
-            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+            "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
           },
           {
             "path": "docs/research-backend-contracts.md",
@@ -646,7 +646,7 @@
           },
           {
             "path": "benchmarks/component-controls/backend/result.json",
-            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+            "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
           }
         ],
         "scope": "Licensed experimental overlay with complete original provenance; immutable mirror unchanged",
@@ -810,7 +810,7 @@
         "evidence": [
           {
             "path": "artifacts/research/backend-contracts/backend-review.json",
-            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+            "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
           },
           {
             "path": "docs/research-backend-contracts.md",
@@ -818,7 +818,7 @@
           },
           {
             "path": "benchmarks/component-controls/backend/result.json",
-            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+            "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
           }
         ],
         "scope": "Selected source-bound component controls only; no whole-skill or model-efficacy claim",
@@ -829,7 +829,7 @@
         "evidence": [
           {
             "path": "artifacts/research/backend-contracts/backend-review.json",
-            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+            "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
           },
           {
             "path": "docs/research-backend-contracts.md",
@@ -837,7 +837,7 @@
           },
           {
             "path": "benchmarks/component-controls/backend/result.json",
-            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+            "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
           }
         ],
         "open_work": [
@@ -862,7 +862,7 @@
         "evidence": [
           {
             "path": "artifacts/research/backend-contracts/backend-review.json",
-            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+            "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
           },
           {
             "path": "docs/research-backend-contracts.md",
@@ -870,7 +870,7 @@
           },
           {
             "path": "benchmarks/component-controls/backend/result.json",
-            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+            "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
           }
         ],
         "scope": "Instructions retained; finance/documentation routing change reserved for final layout",
