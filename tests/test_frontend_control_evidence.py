@@ -5,6 +5,7 @@ import hashlib
 import json
 import runpy
 import shutil
+import subprocess
 from pathlib import Path
 
 import pytest
@@ -57,3 +58,29 @@ def test_unrecognized_arm_is_rejected_without_reading_outside_evidence(evidence)
     validate, result, bindings, root = evidence
     result["arms"]["../../outside"] = {}
     assert "Exactly three source-bound arms required" in validate(result, bindings, root)
+
+
+def test_git_transport_preserves_native_npm_capture_bytes(tmp_path):
+    repository = METHOD.parents[2]
+    subprocess.run(["git", "init", str(tmp_path)], check=True, capture_output=True)
+    shutil.copyfile(repository / ".gitattributes", tmp_path / ".gitattributes")
+    for name in ("package.json", "package-lock.json"):
+        relative = "benchmarks/component-controls/frontend/" + name
+        target = tmp_path / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        # Reproduce npm's Windows capture even when this test runs on Linux.
+        captured = (METHOD / name).read_bytes().replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+        target.write_bytes(captured)
+        subprocess.run(
+            ["git", "-c", "core.longpaths=true", "-c", "core.autocrlf=true", "add", "--", relative],
+            cwd=tmp_path,
+            check=True,
+            capture_output=True,
+        )
+        committed = subprocess.run(
+            ["git", "-c", "core.longpaths=true", "show", ":" + relative],
+            cwd=tmp_path,
+            check=True,
+            capture_output=True,
+        ).stdout
+        assert committed == captured, f"Git altered the frozen npm capture: {name}"
