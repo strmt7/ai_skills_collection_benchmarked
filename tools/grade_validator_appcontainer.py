@@ -15,7 +15,7 @@ from typing import Any
 
 import appcontainer_runtime
 from _validator_cases import accepted, cases
-from _windows_appcontainer import checked_path, checked_tree, run_appcontainer
+from _windows_appcontainer import Native, checked_path, checked_tree, run_appcontainer
 
 ROOT = Path(__file__).resolve().parents[1]
 WORKER = ROOT / "tools/appcontainer_validator_worker.py"
@@ -24,7 +24,7 @@ TASK_FILES = (
     "data/benchmark_scenarios.json",
     "evaluators/benchmark_run_artifact.schema.json",
 )
-TRUSTED_FILES = (
+EVALUATOR_FILES = (
     "tools/grade_validator_appcontainer.py",
     "tools/_validator_cases.py",
     "tools/appcontainer_validator_worker.py",
@@ -66,12 +66,15 @@ def grade(submission: Path, fixture: Path, runtime_home: Path, output: Path, rev
     if sys.platform != "win32":
         raise ValueError("The confined evaluator requires Windows x64")
     workspace = common_workspace(runtime_home, output)
-    trusted = {name: appcontainer_runtime.digest(ROOT / name) for name in TRUSTED_FILES}
+    evaluator_files = evaluator_fingerprints()
     specification = json.loads(appcontainer_runtime.SOURCE.read_bytes())
     errors = appcontainer_runtime.verify(runtime_home, specification)
     if errors:
         raise ValueError("; ".join(errors))
     output.mkdir(parents=True, exist_ok=False)
+    native = Native()
+    native.grant(output, native.owner_sid(), None)
+    (output / "controller-sentinel.txt").write_text("controller-owned sentinel\n", encoding="utf-8")
     # Oracle data is loaded before any submitted code is executed. Only the
     # copied API inputs and the small worker adapter are ever mounted.
     candidate = output / "candidate"
@@ -102,7 +105,7 @@ def grade(submission: Path, fixture: Path, runtime_home: Path, output: Path, rev
         (output / "checks.json").write_text(json.dumps(observations, indent=2) + "\n", encoding="utf-8")
     if appcontainer_runtime.verify(runtime_home, specification):
         raise ValueError("Runtime source graph changed during grading")
-    if trusted != {name: appcontainer_runtime.digest(ROOT / name) for name in TRUSTED_FILES}:
+    if evaluator_files != evaluator_fingerprints():
         raise ValueError("Trusted evaluator source changed during grading")
     count = sum(row["passed"] for row in observations)
     result = {
@@ -114,7 +117,8 @@ def grade(submission: Path, fixture: Path, runtime_home: Path, output: Path, rev
         "runtime_version": specification["version"],
         "candidate_file_sha256": collected,
         "worker_sha256": worker_hash,
-        "trusted_source_sha256": trusted,
+        "evaluator_files": evaluator_files,
+        "controller_output_sealed": True,
         "fixture_commit": revision,
         "oracle_process_separate": True,
         "independent_model_trials": 0,
@@ -123,6 +127,10 @@ def grade(submission: Path, fixture: Path, runtime_home: Path, output: Path, rev
     }
     (output / "result.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     return result
+
+
+def evaluator_fingerprints() -> list[dict[str, str]]:
+    return [{"path": name, "sha256": appcontainer_runtime.digest(ROOT / name)} for name in EVALUATOR_FILES]
 
 
 def evaluate_case(

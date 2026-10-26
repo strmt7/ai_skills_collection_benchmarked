@@ -12,6 +12,7 @@ import appcontainer_runtime as runtime
 import appcontainer_validator_worker as worker
 import grade_validator_appcontainer as grader
 import pytest
+import qualify_appcontainer as qualification
 from _validator_cases import accepted
 from _windows_appcontainer import checked_mounts, checked_path, checked_tree
 
@@ -164,3 +165,35 @@ def test_invalid_runtime_location_has_no_output_side_effects(tmp_path, monkeypat
     )
     assert not output.exists()
     assert json.loads(capsys.readouterr().out)["status"] == "harness_error"
+
+
+def test_qualification_binds_git_fixture_bytes_across_line_endings(tmp_path, monkeypatch):
+    subprocess.run(["git", "init", "--quiet", str(tmp_path)], check=True)
+    name = "data/skills_catalog.json"
+    path = tmp_path / name
+    path.parent.mkdir()
+    path.write_bytes(b"[]\n")
+    (tmp_path / ".gitattributes").write_bytes(b"data/*.json text eol=lf\n")
+    subprocess.run(["git", "-C", str(tmp_path), "add", "."], check=True)
+    subprocess.run(
+        ["git", "-C", str(tmp_path), "-c", "user.name=AI agent", "-c", "user.email=", "commit", "-qm", "fixture"],
+        check=True,
+    )
+    path.write_bytes(b"[]\r\n")
+    monkeypatch.setattr(qualification, "ROOT", tmp_path)
+    monkeypatch.setattr(qualification, "SOURCE_FILES", (name,))
+    assert qualification.source_graph() == [
+        {"path": name, "sha256": hashlib.sha256(b"[]\n").hexdigest(), "source_kind": "git_fixture_blob"}
+    ]
+
+
+def test_evaluator_fingerprints_detect_changed_source_bytes(tmp_path, monkeypatch):
+    source = tmp_path / "tools/public.py"
+    source.parent.mkdir()
+    source.write_bytes(b"first version\n")
+    monkeypatch.setattr(grader, "ROOT", tmp_path)
+    monkeypatch.setattr(grader, "EVALUATOR_FILES", ("tools/public.py",))
+    original = grader.evaluator_fingerprints()
+    assert original == [{"path": "tools/public.py", "sha256": hashlib.sha256(source.read_bytes()).hexdigest()}]
+    source.write_bytes(b"changed version\n")
+    assert grader.evaluator_fingerprints()[0]["sha256"] != original[0]["sha256"]

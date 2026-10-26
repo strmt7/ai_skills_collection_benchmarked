@@ -6,12 +6,15 @@ import argparse
 import ctypes as c
 import json
 import socket
+import sys
 from ctypes import wintypes as w
 from pathlib import Path
 from typing import Any
 
 
 def probe(allowed: Path, sealed: Path, scratch: Path, parent: int, port: int) -> dict[str, Any]:
+    if sys.platform != "win32":
+        raise ValueError("The native access probe requires Windows")
     kernel, security = c.WinDLL("kernel32", use_last_error=True), c.WinDLL("advapi32", use_last_error=True)
     open_process = kernel.OpenProcess
     open_process.argtypes, open_process.restype = (w.DWORD, w.BOOL, w.DWORD), w.HANDLE

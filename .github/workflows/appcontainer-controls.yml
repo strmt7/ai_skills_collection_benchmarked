@@ -54,12 +54,14 @@ jobs:
           path: |
             .venv/appcontainer-evidence/result.json
             .venv/appcontainer-evidence/access/*.native
+            .venv/appcontainer-evidence/access/runtime-acls.*.json
             .venv/appcontainer-evidence/access/confined/*
             .venv/appcontainer-evidence/limits/*/process.json
             .venv/appcontainer-evidence/limits/*/profile.json
             .venv/appcontainer-evidence/limits/*/*.native
             .venv/appcontainer-evidence/validators/*/result.json
             .venv/appcontainer-evidence/validators/*/checks.json
+            .venv/appcontainer-evidence/validators/*/controller-sentinel.txt
             .venv/appcontainer-evidence/validators/*/case-*/observations/*
           if-no-files-found: error
           retention-days: 14

@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import argparse
+import base64
+import hashlib
 import json
 import os
 import re
@@ -21,7 +23,7 @@ REFERENCE = ROOT / "artifacts/agent-trials/development-v2/repetition-1/default/s
 PROBE = ROOT / "tools/appcontainer_access_probe.py"
 PUBLISHED = ROOT / "artifacts/component-controls/appcontainer"
 SOURCE_FILES = (
-    *grader.TRUSTED_FILES,
+    *grader.EVALUATOR_FILES,
     *grader.TASK_FILES,
     "tools/qualify_appcontainer.py",
     "tools/appcontainer_access_probe.py",
@@ -54,6 +56,7 @@ def access_controls(home: Path, output: Path) -> dict[str, Any]:
     native = Native()
     owner = native.owner_sid()
     original = {p: native.descriptor(p) for p in [home / "runtime", *checked_tree(home / "runtime")]}
+    write_acls(output / "runtime-acls.before.json", home, original)
     with socket.socket() as listener:
         listener.bind(("127.0.0.1", 0))
         listener.listen(2)
@@ -119,9 +122,19 @@ def access_controls(home: Path, output: Path) -> dict[str, Any]:
         raise ValueError("A confined connection reached the owned loopback listener")
     if oracle.read_text() != "owned sealed sentinel" or allowed.read_text() != "permitted":
         raise ValueError("A read-only sentinel changed")
-    if any(native.descriptor(path) != value for path, value in original.items()):
+    restored = {path: native.descriptor(path) for path in original}
+    write_acls(output / "runtime-acls.after.json", home, restored)
+    if restored != original:
         raise ValueError("Runtime ACLs were not restored exactly")
     return {"normal": reference, "confined": actual, "process": process, "connection_received": network_received}
+
+
+def write_acls(path: Path, home: Path, descriptors: dict[Path, bytes]) -> None:
+    records = [
+        {"path": p.relative_to(home).as_posix(), "descriptor_base64": base64.b64encode(raw).decode("ascii")}
+        for p, raw in descriptors.items()
+    ]
+    path.write_text(json.dumps(records, indent=2) + "\n", encoding="utf-8")
 
 
 def limit_controls(home: Path, output: Path) -> dict[str, Any]:
@@ -160,8 +173,18 @@ def candidate_controls(home: Path, output: Path, revision: str) -> dict[str, Any
         "'errors':[] if expected else ['oracle'],'warnings':[]}\n"
     )
     stub = "def validate_artifact(path):\n return {'verdict':'artifact_complete','errors':[],'warnings':[]}\n"
+    file_oracle = (
+        "from pathlib import Path\ndef validate_artifact(path):\n"
+        " (Path(path).parents[2]/'controller-sentinel.txt').read_text()\n"
+        " return {'verdict':'artifact_complete','errors':[],'warnings':[]}\n"
+    )
     result = {}
-    for name, source, expected in [("reference", None, 17), ("frame_oracle", frame, 0), ("always_complete", stub, 2)]:
+    for name, source, expected in [
+        ("reference", None, 17),
+        ("frame_oracle", frame, 0),
+        ("file_oracle", file_oracle, 0),
+        ("always_complete", stub, 2),
+    ]:
         submission = REFERENCE
         if source is not None:
             submission = output / (name + "-submission")
@@ -173,6 +196,13 @@ def candidate_controls(home: Path, output: Path, revision: str) -> dict[str, Any
         }
         if observed["checks_passed"] != expected or observed["checks_total"] != 17:
             raise ValueError(f"Validator control failed: {name}")
+        if (output / name / "controller-sentinel.txt").read_text(encoding="utf-8") != "controller-owned sentinel\n":
+            raise ValueError("The controller cannot read its own sealed sentinel")
+        if name == "file_oracle" and any(
+            row["response"] != {"kind": "candidate_error", "exception_type": "PermissionError"}
+            for row in observed["checks"]
+        ):
+            raise ValueError("The file-oracle control did not observe an access denial for every case")
     return result
 
 
@@ -180,6 +210,8 @@ def qualify(home: Path, output: Path, revision: str) -> dict[str, Any]:
     grader.common_workspace(home, output)
     sources = source_graph()
     output.mkdir(parents=True, exist_ok=False)
+    native = Native()
+    native.grant(output, native.owner_sid(), None)
     pin = json.loads(runtime.SOURCE.read_bytes())
     if errors := runtime.verify(home, pin):
         raise ValueError("; ".join(errors))
@@ -194,6 +226,13 @@ def qualify(home: Path, output: Path, revision: str) -> dict[str, Any]:
         "source_sha256": sources,
         "fixture_commit": revision,
     }
+    reference = json.loads((output / "validators/reference/result.json").read_bytes())
+    for row in sources:
+        if (
+            row["source_kind"] == "git_fixture_blob"
+            and reference["candidate_file_sha256"][row["path"]] != row["sha256"]
+        ):
+            raise ValueError("Qualification must use the current committed fixture bytes")
     if sources != source_graph() or runtime.verify(home, pin):
         raise ValueError("Qualification inputs changed during the control campaign")
     (output / "result.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
@@ -201,16 +240,36 @@ def qualify(home: Path, output: Path, revision: str) -> dict[str, Any]:
 
 
 def source_graph() -> list[dict[str, str]]:
-    return [{"path": name, "sha256": runtime.digest(ROOT / name)} for name in SOURCE_FILES]
+    records = []
+    for name in SOURCE_FILES:
+        if name in grader.TASK_FILES:
+            raw = subprocess.run(
+                ["git", "-c", "core.longpaths=true", "show", "HEAD:" + name],
+                cwd=ROOT,
+                capture_output=True,
+                check=True,
+                timeout=15,
+            ).stdout
+            digest, kind = hashlib.sha256(raw).hexdigest(), "git_fixture_blob"
+        else:
+            digest, kind = runtime.digest(ROOT / name), "executed_source_file"
+        records.append({"path": name, "sha256": digest, "source_kind": kind})
+    return records
 
 
 def observed_files(output: Path) -> list[Path]:
     """Select trusted observations explicitly; never enumerate candidate scratch."""
-    files = [output / "result.json", output / "access/normal.stdout.native", output / "access/normal.stderr.native"]
+    files = [
+        output / "result.json",
+        output / "access/normal.stdout.native",
+        output / "access/normal.stderr.native",
+        output / "access/runtime-acls.before.json",
+        output / "access/runtime-acls.after.json",
+    ]
     native = [output / "access/confined", *[output / "limits" / name for name in LIMITS]]
-    for control in ("reference", "frame_oracle", "always_complete"):
+    for control in ("reference", "frame_oracle", "file_oracle", "always_complete"):
         directory = output / "validators" / control
-        files.extend([directory / "result.json", directory / "checks.json"])
+        files.extend([directory / "result.json", directory / "checks.json", directory / "controller-sentinel.txt"])
         checks = json.loads((directory / "checks.json").read_bytes())
         for check in checks:
             name = check["observation_directory"]
@@ -263,10 +322,14 @@ def verify_scores(directory: Path) -> list[str]:
     errors = []
     catalog = json.loads((ROOT / "data/skills_catalog.json").read_bytes())[0]
     expected_cases = {name: expected for name, _, expected, _ in grader.cases(catalog, "0" * 40)}
-    for name, total in [("reference", 17), ("frame_oracle", 0), ("always_complete", 2)]:
+    for name, total in [("reference", 17), ("frame_oracle", 0), ("file_oracle", 0), ("always_complete", 2)]:
         control = directory / "validators" / name
         result = json.loads((control / "result.json").read_bytes())
         checks = json.loads((control / "checks.json").read_bytes())
+        if (control / "controller-sentinel.txt").read_text(encoding="utf-8") != "controller-owned sentinel\n":
+            errors.append(f"Controller sentinel differs: {name}")
+        if result.get("controller_output_sealed") is not True:
+            errors.append(f"Controller output was not sealed: {name}")
         if {row["case"] for row in checks} != expected_cases.keys() or len(checks) != len(expected_cases):
             errors.append(f"Validator case graph differs: {name}")
             continue
@@ -275,6 +338,8 @@ def verify_scores(directory: Path) -> list[str]:
             native = control / row["observation_directory"]
             process = json.loads((native / "process.json").read_bytes())
             response = grader.parse_response(native / "stdout.native")
+            if name == "file_oracle" and response != {"kind": "candidate_error", "exception_type": "PermissionError"}:
+                errors.append(f"File-oracle access denial was not observed: {row['case']}")
             passed = (
                 process["exit_code"] == 0
                 and process["termination_reason"] is None

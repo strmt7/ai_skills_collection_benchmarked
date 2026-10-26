@@ -1,0 +1,630 @@
+{
+  "measurement_kind": "confined_validator_contract_evaluation",
+  "status": "task_failed",
+  "checks_passed": 0,
+  "checks_total": 17,
+  "checks": [
+    {
+      "response": {
+        "kind": "candidate_error",
+        "exception_type": "PermissionError"
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-2085267819-791048960-3751798777-1250710844-3886909606-121456285-876802725",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 66,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-2c19afa0e75e420a9ae746d8f92daa70/observations",
+      "stdout_sha256": "77bea98ab51611e907f89b14ec72877e2b008069d62a38422884f01ce7cfc57a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "valid_provenance",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_error",
+        "exception_type": "PermissionError"
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-693233691-771628319-3058634138-1740747823-3550389288-3757281290-372878883",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 66,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-a0a9c2c39eab41a2b3f9f02a954777ba/observations",
+      "stdout_sha256": "77bea98ab51611e907f89b14ec72877e2b008069d62a38422884f01ce7cfc57a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "valid_extra_metadata",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_error",
+        "exception_type": "PermissionError"
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-1366803879-2229116677-989651651-2749537562-3724687966-217250135-258018417",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 66,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-bf38a920dd14449e84cccc5e1a5aba94/observations",
+      "stdout_sha256": "77bea98ab51611e907f89b14ec72877e2b008069d62a38422884f01ce7cfc57a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "malformed_skill_id",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_error",
+        "exception_type": "PermissionError"
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-1044138420-2414994668-2290382812-2117240569-1940045033-3064551938-1987983745",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 66,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-39ef5baba14a49feb485b6f74afcbd86/observations",
+      "stdout_sha256": "77bea98ab51611e907f89b14ec72877e2b008069d62a38422884f01ce7cfc57a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "malformed_scenario_id",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_error",
+        "exception_type": "PermissionError"
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-4151853359-349369197-1953857244-458378755-472940037-4102490173-412099227",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 66,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-1f76c7614c4d4430a76ce86a730ea4bb/observations",
+      "stdout_sha256": "77bea98ab51611e907f89b14ec72877e2b008069d62a38422884f01ce7cfc57a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "malformed_artifact_kind",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_error",
+        "exception_type": "PermissionError"
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-2660766752-3719052536-1619008845-573367248-803652302-1223427201-731183323",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 66,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-22be79b2fa57421aa2fa22c0368f707d/observations",
+      "stdout_sha256": "77bea98ab51611e907f89b14ec72877e2b008069d62a38422884f01ce7cfc57a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "malformed_input_snapshot",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_error",
+        "exception_type": "PermissionError"
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-3950157062-2285453945-2184645546-3364732071-3208210256-825507943-3347003340",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 66,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-c981f50fc05b44c9b1e8a2a7f798f3c7/observations",
+      "stdout_sha256": "77bea98ab51611e907f89b14ec72877e2b008069d62a38422884f01ce7cfc57a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "malformed_execution",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_error",
+        "exception_type": "PermissionError"
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-991219464-521055970-2702574276-472932226-1031535474-1041405372-3438116068",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 66,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-bac990e5b9de401db57f705f505656a2/observations",
+      "stdout_sha256": "77bea98ab51611e907f89b14ec72877e2b008069d62a38422884f01ce7cfc57a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "malformed_runner",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_error",
+        "exception_type": "PermissionError"
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-2589048745-4988762-1488934732-3359111686-4140067887-2876282556-681588612",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 66,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-7a39ea066fd5482fbf0a458284c2817f/observations",
+      "stdout_sha256": "77bea98ab51611e907f89b14ec72877e2b008069d62a38422884f01ce7cfc57a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "malformed_independence",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_error",
+        "exception_type": "PermissionError"
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-2905554620-593562409-3493642008-1468715123-2618635621-533044232-2929337711",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 66,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-2cf682c5d76041dc89414205ea977f9c/observations",
+      "stdout_sha256": "77bea98ab51611e907f89b14ec72877e2b008069d62a38422884f01ce7cfc57a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "malformed_evidence",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_error",
+        "exception_type": "PermissionError"
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-1438973740-2472438049-3666704716-1204384740-3727510519-1423063006-208464756",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 66,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-ce534b2ae3984b0b90353a6555458ff4/observations",
+      "stdout_sha256": "77bea98ab51611e907f89b14ec72877e2b008069d62a38422884f01ce7cfc57a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "malformed_metrics",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_error",
+        "exception_type": "PermissionError"
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-2176201460-4246912375-3504558358-759692784-2943083881-81760346-4293790207",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 66,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-3a377d623d2e466589a15ac42c70bc94/observations",
+      "stdout_sha256": "77bea98ab51611e907f89b14ec72877e2b008069d62a38422884f01ce7cfc57a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "malformed_outputs",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_error",
+        "exception_type": "PermissionError"
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-3552216503-2418173944-2099099314-3613109207-1348386889-3155276200-2480842002",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 66,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-52dc6de8e57d4fae8e19d3d235bbc296/observations",
+      "stdout_sha256": "77bea98ab51611e907f89b14ec72877e2b008069d62a38422884f01ce7cfc57a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "malformed_scenario_requirements",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_error",
+        "exception_type": "PermissionError"
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-3531258107-1780714207-779128523-2786747439-3005415201-1641154457-3979946308",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 66,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-684c17fae61f45d1adedd4970bb48593/observations",
+      "stdout_sha256": "77bea98ab51611e907f89b14ec72877e2b008069d62a38422884f01ce7cfc57a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "schema_minimum_string_length",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_error",
+        "exception_type": "PermissionError"
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-3456659553-1172720258-2180516816-3118918808-3784631185-611211820-3724413531",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 66,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-cb083ebaa9964b059a5a2f4f618066fd/observations",
+      "stdout_sha256": "77bea98ab51611e907f89b14ec72877e2b008069d62a38422884f01ce7cfc57a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "transcript_must_be_file",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_error",
+        "exception_type": "PermissionError"
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-567689830-3029105733-1344652734-1028914183-2253949025-2712042209-2807440070",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 66,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-b774159f3e224a9089ed61a26bfc8940/observations",
+      "stdout_sha256": "77bea98ab51611e907f89b14ec72877e2b008069d62a38422884f01ce7cfc57a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "evidence_must_be_file",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_error",
+        "exception_type": "PermissionError"
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-528573318-3196625068-2169398831-357780527-1157002893-3520192530-1940617935",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 66,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-8c4cc5838ce54af681b848e8c28d3d64/observations",
+      "stdout_sha256": "77bea98ab51611e907f89b14ec72877e2b008069d62a38422884f01ce7cfc57a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "missing_schema_rejected",
+      "passed": false
+    }
+  ],
+  "runtime_version": "3.15.2",
+  "candidate_file_sha256": {
+    "data/benchmark_scenarios.json": "ee40473754b9a283443eb4becb33d401751c161ea502b74fed37ef6023b8beff",
+    "data/skills_catalog.json": "befada014a8adf1cbb5f49049829783640725551a08862b17c22488b6fec106b",
+    "evaluators/benchmark_run_artifact.schema.json": "4512d69f042a4d4e3604fe8494db9fafe6d765e5edbf132546e5e622223631b9",
+    "tools/check_benchmark_artifact.py": "6c7895777791bb3fa5291af446ff4bd367d00fd12443c92c5670cbab8f6cccf9"
+  },
+  "worker_sha256": "e333bff3e8d40c07c8e2623a4d00d25e7f0f729251f02d7ec07fe93b494b5ab9",
+  "evaluator_files": [
+    {
+      "path": "tools/grade_validator_appcontainer.py",
+      "sha256": "984b3ff76a9f9d7eed5be787e28eb4133b589d0e997a9df1dc8423d5f5f565a2"
+    },
+    {
+      "path": "tools/_validator_cases.py",
+      "sha256": "c42df082de8ad465b56c5a61c67e6a8f2a8b1b711ac68b77ef969988bd159def"
+    },
+    {
+      "path": "tools/appcontainer_validator_worker.py",
+      "sha256": "e333bff3e8d40c07c8e2623a4d00d25e7f0f729251f02d7ec07fe93b494b5ab9"
+    },
+    {
+      "path": "tools/appcontainer_runtime.py",
+      "sha256": "a4a13e1d61177943e79c69156ab8e38eadd190b795422b8bbe77e8d9d2201e37"
+    },
+    {
+      "path": "tools/_windows_appcontainer.py",
+      "sha256": "8b94b6bee9dcbeeeee295a71fb156eff66083f42fb3e17c52553baff57d23c6b"
+    },
+    {
+      "path": "tools/_windows_owned_python.py",
+      "sha256": "acf5b4e2d94758065cef125e5d6386ff741fe75e80bde2e66e0e67ac5e4a2651"
+    },
+    {
+      "path": "toolchains/appcontainer/source.json",
+      "sha256": "74aa8e69784119f58a9d443a7b004d9d2572da79541fb26e75aeb50ed2391ff3"
+    }
+  ],
+  "controller_output_sealed": true,
+  "fixture_commit": "85763c055a15c7bf57dd1bbaba8c7585005fa6cb",
+  "oracle_process_separate": true,
+  "independent_model_trials": 0,
+  "agent_performance_claim": false,
+  "scope": "Windows x64 stdlib-only validator API fixture; no coding-agent superiority or collection-wide score"
+}

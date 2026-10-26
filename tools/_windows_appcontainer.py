@@ -51,9 +51,21 @@ class SecurityAttributes(c.Structure):
     _fields_ = [("length", w.DWORD), ("descriptor", c.c_void_p), ("inherit", w.BOOL)]
 
 
+def win_error(code: int | None = None) -> OSError:
+    if sys.platform != "win32":
+        raise ValueError("Windows error decoding requires Windows")
+    return c.WinError(code)
+
+
+def last_error() -> int:
+    if sys.platform != "win32":
+        raise ValueError("Windows error state requires Windows")
+    return c.get_last_error()
+
+
 def require(value: Any) -> None:
     if not value:
-        raise c.WinError(c.get_last_error())
+        raise win_error(last_error())
 
 
 class Native:
@@ -84,7 +96,7 @@ class Native:
         size = w.DWORD()
         get(token, kind, None, 0, c.byref(size))
         if not size.value:
-            raise c.WinError(c.get_last_error())
+            raise win_error(last_error())
         buffer = c.create_string_buffer(size.value)
         require(get(token, kind, buffer, size.value, c.byref(size)))
         return buffer
@@ -130,7 +142,7 @@ class Native:
             w.DWORD,
         )(str(path), 1, 4, None, None, None, None, c.byref(descriptor))
         if code:
-            raise c.WinError(code)
+            raise win_error(code)
         try:
             size = self.function("security", "GetSecurityDescriptorLength", [c.c_void_p], w.DWORD)(descriptor)
             return c.string_at(descriptor, size)
@@ -163,7 +175,7 @@ class Native:
             w.DWORD,
         )(str(path), 1, 4 | protection, None, None, acl, None)
         if code:
-            raise c.WinError(code)
+            raise win_error(code)
 
     def grant(self, path: Path, owner: str, package: str | None, *, writable: bool = False) -> None:
         extra = "" if package is None else f"(A;OICI;{'0x1301bf' if writable else 'GRGX'};;;{package})"
@@ -286,9 +298,9 @@ class Pipe:
             w.BOOL,
         )
         if not peek(self.read, None, 0, None, c.byref(available), None):
-            if c.get_last_error() == 109:
+            if last_error() == 109:
                 return b""
-            raise c.WinError(c.get_last_error())
+            raise win_error(last_error())
         if not available.value:
             return b""
         size = min(available.value, 65536, limit)
@@ -331,6 +343,8 @@ def execute(
     output_limit: int,
     memory_limit: int,
 ) -> dict[str, Any]:
+    if sys.platform != "win32":
+        raise ValueError("AppContainer execution requires Windows")
     size, process = c.c_size_t(), Process()
     initialize = native.function(
         "kernel", "InitializeProcThreadAttributeList", [c.c_void_p, w.DWORD, w.DWORD, c.POINTER(c.c_size_t)], w.BOOL
@@ -421,7 +435,7 @@ def execute(
         receipt = native.attest(process.process, native.sid_text(sid))
         resume = native.function("kernel", "ResumeThread", [w.HANDLE], w.DWORD)(process.thread)
         if resume == 0xFFFFFFFF:
-            raise c.WinError(c.get_last_error())
+            raise win_error(last_error())
         with (output / "stdout.native").open("xb") as stdout, (output / "stderr.native").open("xb") as stderr:
             reason, total = collect(native, process.process, pipes, [stdout, stderr], timeout, output_limit)
         status = w.DWORD()
@@ -468,11 +482,11 @@ def stop_process(native: Native, process: Any) -> None:
     if state == 0:
         return
     if state != 0x102:
-        raise c.WinError(c.get_last_error())
+        raise win_error(last_error())
     terminated = native.function("kernel", "TerminateProcess", [w.HANDLE, w.UINT], w.BOOL)(process, 126)
-    error = c.get_last_error()
+    error = last_error()
     if not terminated and error != 5:
-        raise c.WinError(error)
+        raise win_error(error)
     # ERROR_ACCESS_DENIED also occurs when termination has already begun.
     # Accept it only after independently observing process completion.
     if wait(process, 5000) != 0:
@@ -496,7 +510,7 @@ def collect(
                     return "output_limit", total
         state = wait(process, 0)
         if state not in {0, 0x102}:
-            raise c.WinError(c.get_last_error())
+            raise win_error(last_error())
         if state == 0 and not received:
             return None, total
         if time.monotonic() > deadline:

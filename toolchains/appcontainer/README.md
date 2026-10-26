@@ -36,12 +36,18 @@ Read-only mounts, a separate writable scratch directory, one active process,
 execution. Only NUL input and two pipes are inherited. The controller verifies
 source integrity, records native output and restores read-only ACLs.
 
+Fixture hashes describe the Git blobs actually collected, independently of a
+working tree's CRLF settings. Qualification requires the selected fixture to
+match the current committed fixture. Executed controller and worker hashes bind
+their actual source bytes. ACL diagnostics retain before/after descriptors so a
+host-specific restoration failure remains inspectable.
+
 The [native workflow](../../.github/workflows/appcontainer-controls.yml) exercises
 matched normal/confined file, ACL, parent-memory and loopback controls; timeout,
-output, memory and child-process limits; a reference validator and two deliberately
+output, memory and child-process limits; a reference validator and three deliberately
 invalid candidates. [Retained evidence](../../artifacts/component-controls/appcontainer/result.json)
-records the reference at 17/17, the caller-frame oracle probe at 0/17 and the
-always-success stub at 2/17. These are component controls, **not model trials or
+records the reference at 17/17, the caller-frame and sealed-file oracle probes at
+0/17 each, and the always-success stub at 2/17. These are component controls, **not model trials or
 evidence of a skill advantage**. Earlier frozen graders and trial results retain
 their original behavior and limitations.
 
