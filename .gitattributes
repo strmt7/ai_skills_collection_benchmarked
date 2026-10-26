@@ -27,6 +27,10 @@
 /included/repaired/skills/fuzzing-dictionary-current/** text eol=lf
 /included/repaired/skills/address-sanitizer-current/provenance/** -text
 /included/repaired/skills/fuzzing-dictionary-current/provenance/** -text
+# The poster repair manifest is hash-bound; preserve original provenance bytes.
+/included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/latex-posters/** text eol=lf
+/included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/latex-posters/provenance/** -text !eol
+/artifacts/repaired-skill-readiness/poster-preflight-v1/** text eol=lf
 # Trial evidence hashes describe exact captured bytes, including Windows logs.
 # Preserve them across Git transports instead of converting line endings.
 /artifacts/agent-trials/** -text

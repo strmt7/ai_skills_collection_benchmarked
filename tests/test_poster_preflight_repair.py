@@ -195,3 +195,41 @@ def test_provenance_and_unmodified_resources() -> None:
     assert evidence["repaired_controls"]["passed"] == evidence["repaired_controls"]["total"]
     assert evidence["model_performance_claim"] is False
     assert evidence["original_scanning_alerts_closed"] is False
+
+
+def test_checkout_preserves_hash_bound_bytes(tmp_path: Path) -> None:
+    """Exercise the actual Git conversion rules in an isolated repository."""
+    git = shutil.which("git")
+    assert git is not None
+    paths = [
+        OVERLAY / "repair.json",
+        OVERLAY / "provenance/original.SKILL.md",
+        SCRIPT,
+        ROOT / "artifacts/repaired-skill-readiness/poster-preflight-v1/qualification.json",
+    ]
+    expected = {path.relative_to(ROOT).as_posix(): canonical(path) for path in paths}
+    synthetic = (OVERLAY / "provenance/synthetic-crlf.txt").relative_to(ROOT).as_posix()
+    expected[synthetic] = b"original line one\r\noriginal line two\r\n"
+
+    def run(*args: str) -> None:
+        subprocess.run(
+            [git, "-c", "core.longpaths=true", *args],
+            cwd=tmp_path,
+            capture_output=True,
+            timeout=20,
+            check=True,
+        )
+
+    run("init", "--initial-branch=main")
+    (tmp_path / ".gitattributes").write_bytes(canonical(ROOT / ".gitattributes"))
+    for name, data in expected.items():
+        target = tmp_path / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(data)
+    run("-c", "core.autocrlf=false", "add", "--", ".gitattributes", *expected)
+    for setting in ("true", "false"):
+        for name, data in expected.items():
+            target = tmp_path / name
+            target.unlink()
+            run("-c", f"core.autocrlf={setting}", "checkout-index", "--", name)
+            assert target.read_bytes() == data
