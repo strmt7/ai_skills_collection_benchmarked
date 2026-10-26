@@ -1,14 +1,12 @@
 name: Release
 
 on:
-  push:
-    tags:
-      - "v[0-9]+.[0-9]+.[0-9]+"
-      - "v[0-9]+.[0-9]+.[0-9]+-*"
+  # Disabled in repository settings during the owner-directed release hold.
+  # Re-enable and dispatch only after explicit authorization for a new release.
   workflow_dispatch:
     inputs:
       tag:
-        description: "Tag to release (must already exist on origin/main)"
+        description: "Owner-authorized tag to release (must already exist on origin/main)"
         required: true
 
 concurrency:

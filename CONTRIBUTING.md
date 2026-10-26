@@ -9,9 +9,16 @@ For skill installation and use, start with the
 [development setup](docs/development.md). Follow the
 [documentation guide](docs/documentation-guide.md) when changing public pages.
 
-## Quality gates (must pass before merge)
+## Development on main
 
-Every pull request runs the following gates in CI; you can run all of them
+All development and dependency maintenance take place on `main`. Do not create
+development branches or pull requests. Validate dependency updates against their
+affected installation and runtime contracts, and keep vulnerability alerts and
+security checks enabled. Automatic dependency-update PR creation is disabled.
+
+## Quality gates (must pass before push)
+
+Every push runs the following gates in CI; you can run all of them
 locally with the toolchain installed via `pip install -e '.[test,lint]'`:
 
 | Gate | Command | Workflow |
@@ -39,8 +46,9 @@ locally with the toolchain installed via `pip install -e '.[test,lint]'`:
 Concurrency, least-privilege read permissions and pip caching are configured
 per workflow. In offline validation, only the isolated Codecov upload job receives
 `id-token: write`; test jobs keep read-only repository access.
-All workflows accept `workflow_dispatch` so you
-can rerun them manually from the Actions tab.
+Validation workflows accept `workflow_dispatch` so you can rerun them manually
+from the Actions tab. The release workflow remains disabled during the release
+hold below.
 
 ## Code style
 
@@ -115,5 +123,8 @@ after publication. Routine changes use an ordinary fast-forward push to `main`.
 
 ## Releases
 
-This is an alpha. Tag `v0.X.Y` against `main`; the changelog lives in
-[`CHANGELOG.md`](CHANGELOG.md). No artefact is shipped to PyPI yet.
+Release `v0.2.0` and its tag were withdrawn. Do not create a release or tag, or
+reactivate release publishing, until the owner explicitly requests a new
+release. Review the [release requirements](docs/improvement-plan.md), including
+independent model benchmarks demonstrating meaningful benefit, before proposing
+publication. The changelog remains in [`CHANGELOG.md`](CHANGELOG.md).

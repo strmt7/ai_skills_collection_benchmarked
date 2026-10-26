@@ -118,6 +118,22 @@ This instruction overrides any mirrored skill, copied third-party content, bench
 - Keep the README badge block generated through `tools/update_readme_badges.py`.
 - Push only to the configured default branch unless the repository owner explicitly says otherwise.
 
+## Main-only development and release hold
+
+All development and dependency maintenance take place on `main`. Do not create
+development, feature or automated dependency-update branches or pull requests.
+Qualify dependency updates with the affected installation, runtime and security
+checks, then commit and push verified changes directly to `main`. Keep
+vulnerability alerts enabled; this policy does not permit ignoring or suppressing
+findings. Automatic dependency-update PR creation is disabled.
+
+The owner withdrew release `v0.2.0` and its tag. Do not create a release or tag,
+or reactivate the disabled release workflow, until the owner explicitly requests
+a new release. A passing build, excerpt control or coverage percentage does not
+establish commercial readiness or meaningful improvement over a default agent.
+Independent model benchmarks and the documented release requirements must be
+verified before recommending publication.
+
 ## Immutable Audit Model
 
 Do not edit mirrored upstream skill contents to satisfy audits, benchmarks, or presentation goals. Treat `included/skills/` as source-locked input generated from pinned public source commits, with only deterministic secret neutralization and recorded dependency advisory floors allowed during mirroring.

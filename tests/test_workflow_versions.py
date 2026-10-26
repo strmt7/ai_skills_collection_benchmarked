@@ -1,7 +1,25 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 import audit_workflow_versions as audit
 import pytest
+import yaml
+
+
+def test_release_publishing_requires_manual_dispatch():
+    path = Path(__file__).resolve().parents[1] / ".github/workflows/release.yml"
+    workflow = yaml.load(path.read_text(encoding="utf-8"), Loader=yaml.BaseLoader)
+    assert set(workflow["on"]) == {"workflow_dispatch"}
+
+
+def test_dependency_maintenance_cannot_create_version_update_prs():
+    path = Path(__file__).resolve().parents[1] / ".github/dependabot.yml"
+    configuration = yaml.safe_load(path.read_text(encoding="utf-8"))
+    assert configuration["updates"]
+    for update in configuration["updates"]:
+        assert update["open-pull-requests-limit"] == 0
+        assert not update.get("ignore"), "Findings must be reviewed rather than ignored"
 
 
 def release(tag, **flags):

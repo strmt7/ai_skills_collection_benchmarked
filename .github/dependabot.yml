@@ -1,5 +1,5 @@
-# Dependabot keeps GitHub Actions and Python dependencies aligned with
-# upstream stable releases without surprising the maintainer with daily PRs.
+# Main-only maintenance: no automated version-update branches or PRs.
+# Vulnerability alerts stay enabled; qualify and apply updates directly on main.
 # Reference: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
 version: 2
 updates:
@@ -18,7 +18,7 @@ updates:
     commit-message:
       prefix: "deps"
       include: "scope"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 0
 
   - package-ecosystem: "npm"
     directory: "/included/improved/skills/cover-image-workflow-current/assets"
@@ -35,7 +35,7 @@ updates:
     commit-message:
       prefix: "deps"
       include: "scope"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 0
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -52,7 +52,7 @@ updates:
     commit-message:
       prefix: "ci"
       include: "scope"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 0
 
   - package-ecosystem: "npm"
     directory: "/benchmarks/component-controls/frontend"
@@ -69,7 +69,7 @@ updates:
     commit-message:
       prefix: "deps"
       include: "scope"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 0
 
   - package-ecosystem: "pip"
     directory: "/toolchains/crawl4ai"
@@ -86,7 +86,7 @@ updates:
     commit-message:
       prefix: "deps"
       include: "scope"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 0
 
   - package-ecosystem: "pip"
     directory: "/"
@@ -103,4 +103,4 @@ updates:
     commit-message:
       prefix: "deps"
       include: "scope"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 0
