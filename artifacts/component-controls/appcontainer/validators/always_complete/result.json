@@ -1,0 +1,676 @@
+{
+  "measurement_kind": "confined_validator_contract_evaluation",
+  "status": "task_failed",
+  "checks_passed": 2,
+  "checks_total": 17,
+  "checks": [
+    {
+      "response": {
+        "kind": "candidate_result",
+        "value": {
+          "verdict": "artifact_complete",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-3465288206-3760516870-2245424254-3847121961-2472270242-329294753-2399602659",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 103,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-e2bd86e1d265492b9121c9e6be1dfd9c/observations",
+      "stdout_sha256": "18ace30b33d6fc02160af26d1095ad839a1730d89802e6f8c5eb792707bd15a9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "valid_provenance",
+      "passed": true
+    },
+    {
+      "response": {
+        "kind": "candidate_result",
+        "value": {
+          "verdict": "artifact_complete",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-1640091602-307409414-662406122-734692779-2934776612-2448805378-1888127063",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 103,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-af4f4dfa31984ba0bdea49d792c38938/observations",
+      "stdout_sha256": "18ace30b33d6fc02160af26d1095ad839a1730d89802e6f8c5eb792707bd15a9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "valid_extra_metadata",
+      "passed": true
+    },
+    {
+      "response": {
+        "kind": "candidate_result",
+        "value": {
+          "verdict": "artifact_complete",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-1434346224-2582708259-662098676-511974262-221584170-3858747554-3449407696",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 103,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-c52f812a3d0b4229a6d2b26aa672149a/observations",
+      "stdout_sha256": "18ace30b33d6fc02160af26d1095ad839a1730d89802e6f8c5eb792707bd15a9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "malformed_skill_id",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_result",
+        "value": {
+          "verdict": "artifact_complete",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-508402121-3858962384-3137657593-2141323885-4291029046-3798780816-62745913",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 103,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-2fce64682ae34ae5a30bc05af4a89f77/observations",
+      "stdout_sha256": "18ace30b33d6fc02160af26d1095ad839a1730d89802e6f8c5eb792707bd15a9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "malformed_scenario_id",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_result",
+        "value": {
+          "verdict": "artifact_complete",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-1405589129-1226209070-2675615277-3483204847-2931230912-3628391103-1078717617",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 103,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-9dc12c5a1f71476fa283c04470d5a809/observations",
+      "stdout_sha256": "18ace30b33d6fc02160af26d1095ad839a1730d89802e6f8c5eb792707bd15a9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "malformed_artifact_kind",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_result",
+        "value": {
+          "verdict": "artifact_complete",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-4021470710-2204051795-4014186192-3708697570-2397810816-2295046893-3999541845",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 103,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-a9debab7d3c341b98bce5b473e22ef40/observations",
+      "stdout_sha256": "18ace30b33d6fc02160af26d1095ad839a1730d89802e6f8c5eb792707bd15a9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "malformed_input_snapshot",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_result",
+        "value": {
+          "verdict": "artifact_complete",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-795156100-3988542347-352979113-2831844335-3096785645-4050095-3151334612",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 103,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-57a90b8307314f108631ce67403b2b2f/observations",
+      "stdout_sha256": "18ace30b33d6fc02160af26d1095ad839a1730d89802e6f8c5eb792707bd15a9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "malformed_execution",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_result",
+        "value": {
+          "verdict": "artifact_complete",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-917487416-2873226511-631351584-425278162-2843140891-3181649209-1863840304",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 103,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-56b0aa04e5ee4ee2a45b552003e7b31d/observations",
+      "stdout_sha256": "18ace30b33d6fc02160af26d1095ad839a1730d89802e6f8c5eb792707bd15a9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "malformed_runner",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_result",
+        "value": {
+          "verdict": "artifact_complete",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-2903357413-1031700427-3130178392-3827998576-2943865954-2696368849-2531614536",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 103,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-b150a88fb96d44d29adc0f12410b498a/observations",
+      "stdout_sha256": "18ace30b33d6fc02160af26d1095ad839a1730d89802e6f8c5eb792707bd15a9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "malformed_independence",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_result",
+        "value": {
+          "verdict": "artifact_complete",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-2759757702-3812925722-2103055314-510772937-3555162841-3594137824-4127943670",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 103,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-277f959442474baf8c7395e3acd01eaa/observations",
+      "stdout_sha256": "18ace30b33d6fc02160af26d1095ad839a1730d89802e6f8c5eb792707bd15a9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "malformed_evidence",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_result",
+        "value": {
+          "verdict": "artifact_complete",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-2223503421-2164445706-3715538-1220131020-3620480027-28160549-2774895037",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 103,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-c594ae7ebaea42aea7eb360043280ae0/observations",
+      "stdout_sha256": "18ace30b33d6fc02160af26d1095ad839a1730d89802e6f8c5eb792707bd15a9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "malformed_metrics",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_result",
+        "value": {
+          "verdict": "artifact_complete",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-1873051386-743321179-1344147453-1492050922-2674281097-2219160495-3456453984",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 103,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-13a37e372b58409ea7052761db6dc2ea/observations",
+      "stdout_sha256": "18ace30b33d6fc02160af26d1095ad839a1730d89802e6f8c5eb792707bd15a9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "malformed_outputs",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_result",
+        "value": {
+          "verdict": "artifact_complete",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-2707381077-942052009-3847655050-3464369526-804893188-2131741904-4221456889",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 103,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-e0c865dee31d46af97d21dd0d472a764/observations",
+      "stdout_sha256": "18ace30b33d6fc02160af26d1095ad839a1730d89802e6f8c5eb792707bd15a9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "malformed_scenario_requirements",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_result",
+        "value": {
+          "verdict": "artifact_complete",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-1251099259-3704743979-1996859257-3878535181-3718170309-901418591-1715848905",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 103,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-efb6af1fbd7b41fd86e74bad844301e6/observations",
+      "stdout_sha256": "18ace30b33d6fc02160af26d1095ad839a1730d89802e6f8c5eb792707bd15a9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "schema_minimum_string_length",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_result",
+        "value": {
+          "verdict": "artifact_complete",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-577708589-694359438-2649576136-1828102590-3077064650-1022649083-1475868824",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 103,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-99cd1bb6c23342d28412f1606013832b/observations",
+      "stdout_sha256": "18ace30b33d6fc02160af26d1095ad839a1730d89802e6f8c5eb792707bd15a9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "transcript_must_be_file",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_result",
+        "value": {
+          "verdict": "artifact_complete",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-3026636291-2471400295-2974196723-2979537079-1355659834-3488548986-2185827980",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 103,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-dcca73a0156042b299896b4ee6f08ae4/observations",
+      "stdout_sha256": "18ace30b33d6fc02160af26d1095ad839a1730d89802e6f8c5eb792707bd15a9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "evidence_must_be_file",
+      "passed": false
+    },
+    {
+      "response": {
+        "kind": "candidate_result",
+        "value": {
+          "verdict": "artifact_complete",
+          "errors": [],
+          "warnings": []
+        }
+      },
+      "process": {
+        "appcontainer": true,
+        "capability_count": 0,
+        "appcontainer_sid": "S-1-15-2-913152882-811129161-2062877718-1417749812-1515051680-3270956961-1508736708",
+        "integrity_sid": "S-1-16-4096",
+        "attested_while_suspended": true,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "active_process_limit": 1,
+        "process_memory_limit_bytes": 268435456,
+        "cpu_time_limit_seconds": 10,
+        "wall_time_limit_seconds": 10,
+        "output_limit_bytes": 2097152,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 103,
+        "active_processes_after_cleanup": 0,
+        "profile_deleted": true,
+        "readonly_acls_restored": true,
+        "scratch_retained_without_traversal": true,
+        "cleanup_errors": []
+      },
+      "observation_directory": "case-8c462afcb5484ee784976a82cd2fe514/observations",
+      "stdout_sha256": "18ace30b33d6fc02160af26d1095ad839a1730d89802e6f8c5eb792707bd15a9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "case": "missing_schema_rejected",
+      "passed": false
+    }
+  ],
+  "runtime_version": "3.15.2",
+  "candidate_file_sha256": {
+    "data/benchmark_scenarios.json": "ee40473754b9a283443eb4becb33d401751c161ea502b74fed37ef6023b8beff",
+    "data/skills_catalog.json": "befada014a8adf1cbb5f49049829783640725551a08862b17c22488b6fec106b",
+    "evaluators/benchmark_run_artifact.schema.json": "4512d69f042a4d4e3604fe8494db9fafe6d765e5edbf132546e5e622223631b9",
+    "tools/check_benchmark_artifact.py": "0e8bbfcdb08410d5b7cd6da6d28d7609279ced9f9f2af307e2e6c6275df6ae98"
+  },
+  "worker_sha256": "e333bff3e8d40c07c8e2623a4d00d25e7f0f729251f02d7ec07fe93b494b5ab9",
+  "trusted_source_sha256": {
+    "tools/grade_validator_appcontainer.py": "ff11f267b68815a78bcb96eb4b70c6210c8410552a7c15ce752bb7ef2631bd9a",
+    "tools/_validator_cases.py": "c42df082de8ad465b56c5a61c67e6a8f2a8b1b711ac68b77ef969988bd159def",
+    "tools/appcontainer_validator_worker.py": "e333bff3e8d40c07c8e2623a4d00d25e7f0f729251f02d7ec07fe93b494b5ab9",
+    "tools/appcontainer_runtime.py": "a4a13e1d61177943e79c69156ab8e38eadd190b795422b8bbe77e8d9d2201e37",
+    "tools/_windows_appcontainer.py": "12860a8c6d5eb1aca8b0fcf63c89f70edeefc001347f53d51982b23ef5b2eb83",
+    "tools/_windows_owned_python.py": "acf5b4e2d94758065cef125e5d6386ff741fe75e80bde2e66e0e67ac5e4a2651",
+    "toolchains/appcontainer/source.json": "74aa8e69784119f58a9d443a7b004d9d2572da79541fb26e75aeb50ed2391ff3"
+  },
+  "fixture_commit": "cd31532f7b0af91bf0b72e3660af26157f42b4a3",
+  "oracle_process_separate": true,
+  "independent_model_trials": 0,
+  "agent_performance_claim": false,
+  "scope": "Windows x64 stdlib-only validator API fixture; no coding-agent superiority or collection-wide score"
+}

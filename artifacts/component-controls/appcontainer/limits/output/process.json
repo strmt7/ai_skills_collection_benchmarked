@@ -1,0 +1,23 @@
+{
+  "appcontainer": true,
+  "capability_count": 0,
+  "appcontainer_sid": "S-1-15-2-2876119452-3806499333-2952468307-2912285557-681958658-4066343320-1026226333",
+  "integrity_sid": "S-1-16-4096",
+  "attested_while_suspended": true,
+  "windows_job": true,
+  "assigned_before_resume": true,
+  "kill_on_close": true,
+  "active_process_limit": 1,
+  "process_memory_limit_bytes": 268435456,
+  "cpu_time_limit_seconds": 5,
+  "wall_time_limit_seconds": 5,
+  "output_limit_bytes": 65536,
+  "termination_reason": "output_limit",
+  "exit_code": 125,
+  "output_bytes": 65537,
+  "active_processes_after_cleanup": 0,
+  "profile_deleted": true,
+  "readonly_acls_restored": true,
+  "scratch_retained_without_traversal": true,
+  "cleanup_errors": []
+}

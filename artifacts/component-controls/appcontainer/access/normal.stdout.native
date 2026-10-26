@@ -1,0 +1,1 @@
+{"allowed_read": true, "readonly_write_denied": false, "sealed_read_denied": false, "sealed_dacl_change_status": 0, "parent_memory_access_denied": false, "parent_open_error": 1008, "network_connect_status": 0, "scratch_write": true}

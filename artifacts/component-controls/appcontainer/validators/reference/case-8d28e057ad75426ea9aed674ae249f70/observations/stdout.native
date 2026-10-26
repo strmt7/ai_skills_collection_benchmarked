@@ -1,0 +1,1 @@
+{"kind": "candidate_result", "value": {"verdict": "artifact_invalid", "errors": ["/input_snapshot/kind: expected at least 1 characters, got 0"], "warnings": []}}

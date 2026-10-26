@@ -65,6 +65,13 @@ hold below.
 * All scripts use a testable `main(argv: list[str] | None = None) -> int`
   signature so they can be exercised from pytest without a subprocess.
 
+## Confined evaluator controls
+
+The [Windows evaluator guide](toolchains/appcontainer/README.md) explains private
+runtime setup, native qualification and evaluation of collected validator patches.
+Run `python tools/qualify_appcontainer.py --check` with the other local gates.
+Its source-bound component evidence does not establish a model or skill advantage.
+
 ## Determinism
 
 If you add or change a generator, it MUST resolve dated artefacts via

@@ -1,0 +1,65 @@
+name: Confined evaluator controls
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/appcontainer-controls.yml"
+      - "tools/*appcontainer*.py"
+      - "tools/_validator_cases.py"
+      - "tools/_windows_owned_python.py"
+      - "toolchains/appcontainer/**"
+      - "tests/test_appcontainer_evaluator.py"
+      - "data/skills_catalog.json"
+      - "data/benchmark_scenarios.json"
+      - "evaluators/benchmark_run_artifact.schema.json"
+  workflow_dispatch:
+  schedule:
+    - cron: "40 7 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: appcontainer-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  native-controls:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    env:
+      GIT_CONFIG_COUNT: "1"
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: "true"
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.14.9"
+      - name: Install the hash-locked private CPython 3.15.2 runtime
+        run: python tools/appcontainer_runtime.py setup --home .venv/appcontainer-native
+      - name: Run matched access, resource and validator controls
+        run: >-
+          python tools/qualify_appcontainer.py
+          --runtime-home .venv/appcontainer-native
+          --output .venv/appcontainer-evidence
+          --revision ${{ github.sha }}
+      - name: Retain native observations and failures
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: appcontainer-evaluator-windows
+          path: |
+            .venv/appcontainer-evidence/result.json
+            .venv/appcontainer-evidence/access/*.native
+            .venv/appcontainer-evidence/access/confined/*
+            .venv/appcontainer-evidence/limits/*/process.json
+            .venv/appcontainer-evidence/limits/*/profile.json
+            .venv/appcontainer-evidence/limits/*/*.native
+            .venv/appcontainer-evidence/validators/*/result.json
+            .venv/appcontainer-evidence/validators/*/checks.json
+            .venv/appcontainer-evidence/validators/*/case-*/observations/*
+          if-no-files-found: error
+          retention-days: 14
