@@ -46,7 +46,39 @@
     "secret_rule_or_path_suppressions_added": false,
     "staged_secret_findings_after_correction": 0
   },
-  "hosted_confirmation_pending": true,
+  "hosted_confirmation": {
+    "coco": {
+      "agent_efficacy_claim": false,
+      "archive_sha256": "483c58c446ab5c5b40ef096e7f063f2054a23411c98fd69f5dd4be36e8308624",
+      "model_files_admitted": 11,
+      "native_search_sha256": "806e9c33b8579e643dd660bb1fa0e2d91207b25041818261714f2aba32a65336",
+      "normal_complete_hashed_install": true,
+      "owned_process_receipts": 26,
+      "owned_processes_after_cleanup": 0,
+      "runtime_distributions": 76,
+      "setup_phases": 11,
+      "source_files_admitted": 125,
+      "source_revision": "23ef0af4ad61903c50bbf8a2783e02114594cb9c",
+      "verified_search_spans": 5
+    },
+    "coverage_and_model_efficacy_are_separate_measurements": true,
+    "crawl": {
+      "agent_efficacy_claim": false,
+      "archive_sha256": "4b4a987b1e26ce61f2e2141f6bacb02d3544bb22d36bd98bfd970d6286621883",
+      "component_controls_passed": 20,
+      "external_page_qualified_by_this_artifact": false,
+      "owned_process_receipts": 15,
+      "owned_processes_after_cleanup": 0,
+      "provider_version": "0.9.5+catalog.portable4",
+      "source_files_admitted": 87,
+      "source_revision": "23ef0af4ad61903c50bbf8a2783e02114594cb9c"
+    },
+    "workflow_runs": {
+      "cocoindex": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/40347653397",
+      "crawl4ai": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/40347653377"
+    }
+  },
+  "hosted_confirmation_pending": false,
   "hosted_workflow": ".github/workflows/cocoindex-provider.yml",
   "independent_model_trials": 0,
   "local_model": {
@@ -110,6 +142,28 @@
     "Component qualification does not establish coding-agent superiority."
   ],
   "schema_version": 1,
+  "search_validation_followup": {
+    "agent_efficacy_claim": false,
+    "deepsource_findings_targeted": [
+      "PYL-W0108",
+      "PYL-W1510",
+      "PY-R1000"
+    ],
+    "hosted_analysis_pending": true,
+    "local_gates_passed": 30,
+    "native_search_sha256": "7a113e27cae2edae57499a3c51515346088c7ac3b9d456e915a25bf122807e57",
+    "provider_build_and_model_inputs_unchanged": true,
+    "source_parent": "23ef0af4ad61903c50bbf8a2783e02114594cb9c",
+    "source_sha256": {
+      "tests/test_cocoindex_provider.py": "e96be59a20f9fc1fe73886080e3b841243f2f44788b6d57fac62cefa0d241214",
+      "tests/test_semantic_search.py": "5acf82eec18003900b0680718c062c863ab5a02c260f1e4672778a3beb6f52de",
+      "tools/search_semantic_corpus.py": "ffe208259016fef929879d0c8cd092a98a3243dc91357285376aff4917b59bee"
+    },
+    "tests_passed": 964,
+    "tests_skipped": 2,
+    "typed_source_files": 128,
+    "verified_current_source_spans": 5
+  },
   "source_input_transport": {
     "cases": [
       {
@@ -167,6 +221,7 @@
     "tools/search_semantic_corpus.py": "99894cd2a207135e9da05c8d19829a1ca3bd56821204f341fb5d0532470c0a02",
     "tools/verify_cocoindex_wheel.py": "d12903f5b9189ffadb854c21efd13138b46c8b6698281aaa1f41f3c47aebb873"
   },
+  "source_snapshot_commit": "23ef0af4ad61903c50bbf8a2783e02114594cb9c",
   "suppressions_added": false,
   "workflow_versions": {
     "action_repositories_resolved": 9,

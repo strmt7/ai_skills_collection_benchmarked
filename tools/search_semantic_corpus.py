@@ -31,6 +31,40 @@ print(json.dumps({'response':msgspec.to_builtins(response),
 """
 
 
+def _verify_source_span(hit: dict[str, Any], raw: bytes) -> None:
+    lines = raw.decode("utf-8").replace("\r\n", "\n").replace("\r", "\n").splitlines()
+    start, end = hit["start_line"], hit["end_line"]
+    if any(type(value) is not int for value in (start, end)) or not 1 <= start <= end <= len(lines):
+        raise ValueError("invalid one-based source coordinates")
+    content = hit["content"].replace("\r\n", "\n").replace("\r", "\n").rstrip("\n")
+    if not content or content not in "\n".join(lines[start - 1 : end]):
+        raise ValueError("retrieved content differs from its source span")
+
+
+def _verify_hit(
+    hit: Any, base: Path, manifest: dict[str, Any], paths: list[str], matcher: sqlite3.Connection
+) -> dict[str, Any]:
+    if (
+        not isinstance(hit, dict)
+        or not isinstance(hit.get("file_path"), str)
+        or not isinstance(hit.get("content"), str)
+    ):
+        raise ValueError("malformed search hit")
+    name = hit["file_path"]
+    if name not in manifest["files"] or manifest["files"][name]["excluded_reason"] is not None:
+        raise ValueError("result is outside the selected text corpus")
+    if paths and not any(matcher.execute("SELECT ? GLOB ?", (name, pattern)).fetchone()[0] for pattern in paths):
+        raise ValueError("result is outside the requested path scope")
+    raw = corpus.regular_file(base / "tree", name).read_bytes()
+    digest = hashlib.sha256(raw).hexdigest()
+    if digest != manifest["files"][name]["sha256"]:
+        raise ValueError("retrieved file differs from its source binding")
+    _verify_source_span(hit, raw)
+    if type(hit["score"]) not in (float, int) or not math.isfinite(hit["score"]):
+        raise ValueError("nonfinite or invalid similarity score")
+    return {"path": name, "sha256": digest, "source_span_verified": True}
+
+
 def verify_response(
     response: dict[str, Any], base: Path, manifest: dict[str, Any], paths: list[str], limit: int
 ) -> list[dict[str, Any]]:
@@ -45,36 +79,8 @@ def verify_response(
         or response["offset"] != 0
     ):
         raise ValueError("inconsistent search counts or offset")
-    checks = []
     with closing(sqlite3.connect(":memory:")) as matcher:
-        for hit in hits:
-            if (
-                not isinstance(hit, dict)
-                or not isinstance(hit.get("file_path"), str)
-                or not isinstance(hit.get("content"), str)
-            ):
-                raise ValueError("malformed search hit")
-            name = hit["file_path"]
-            if name not in manifest["files"] or manifest["files"][name]["excluded_reason"] is not None:
-                raise ValueError("result is outside the selected text corpus")
-            if paths and not any(
-                matcher.execute("SELECT ? GLOB ?", (name, pattern)).fetchone()[0] for pattern in paths
-            ):
-                raise ValueError("result is outside the requested path scope")
-            raw = corpus.regular_file(base / "tree", name).read_bytes()
-            if hashlib.sha256(raw).hexdigest() != manifest["files"][name]["sha256"]:
-                raise ValueError("retrieved file differs from its source binding")
-            lines = raw.decode("utf-8").replace("\r\n", "\n").replace("\r", "\n").splitlines()
-            start, end = hit["start_line"], hit["end_line"]
-            if any(type(value) is not int for value in (start, end)) or not 1 <= start <= end <= len(lines):
-                raise ValueError("invalid one-based source coordinates")
-            content = hit["content"].replace("\r\n", "\n").replace("\r", "\n").rstrip("\n")
-            if not content or content not in "\n".join(lines[start - 1 : end]):
-                raise ValueError("retrieved content differs from its source span")
-            if type(hit["score"]) not in (float, int) or not math.isfinite(hit["score"]):
-                raise ValueError("nonfinite or invalid similarity score")
-            checks.append({"path": name, "sha256": hashlib.sha256(raw).hexdigest(), "source_span_verified": True})
-    return checks
+        return [_verify_hit(hit, base, manifest, paths, matcher) for hit in hits]
 
 
 def local_environment(root: Path, base: Path, python: Path, providers: Path, proof: Path) -> dict[str, str]:

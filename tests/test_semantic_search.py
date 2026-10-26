@@ -238,7 +238,7 @@ def test_literal_request_transport_and_source_change_during_query(bound, monkeyp
 
     def provider_run(command, **kwargs):
         if command[0] != str(python):
-            return real_run(command, **kwargs)
+            return real_run(command, check=kwargs.pop("check", False), **kwargs)
         request = json.loads(kwargs["input"])
         assert request["paths"] == ["skills/**"]
         assert request["query"] == "$UNCHANGED precise evidence"

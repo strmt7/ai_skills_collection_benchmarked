@@ -253,7 +253,7 @@ def test_index_check_waits_for_the_native_startup_scan(monkeypatch):
     monkeypatch.setitem(sys.modules, "msgspec", SimpleNamespace(to_builtins=lambda value: value))
     monkeypatch.setitem(sys.modules, "cocoindex_code", SimpleNamespace(client=client))
     monkeypatch.setitem(sys.modules, "cocoindex_code.client", client)
-    monkeypatch.setattr(runtime.time, "sleep", lambda delay: observed.append(delay))
+    monkeypatch.setattr(runtime.time, "sleep", observed.append)
     result = runtime.wait_for_index(Path("fixture-tree"))
     assert result["index_exists"] and result["indexing"] is False
     assert observed == ["fixture-tree", 0.1, "fixture-tree"]
