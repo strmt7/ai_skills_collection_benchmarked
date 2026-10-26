@@ -412,6 +412,46 @@
       "source_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
       "source_file_sha256": "f3d3984ea3d05a632379408dfe91974ab0c7d890e0a86115650b48b47274cbfc",
       "source_url": "https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/everything-claude-code/SKILL.md"
+    },
+    {
+      "license": "CC-BY-SA-4.0",
+      "license_file_sha256": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
+      "license_source_sha": "3b7b82d0da2db857eda1a798dbd908ea136f07b5",
+      "original_path": "included/repaired/skills/address-sanitizer-current/provenance/original.SKILL.md",
+      "overlay_path": "included/repaired/skills/address-sanitizer-current",
+      "overlay_sha256": "d7ac89b75a15258a6c578dcdbea70dcb49d5aef7afb76c720bcce324209a6d1e",
+      "package_file_sha256": {
+        "LICENSE": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
+        "NOTICE.md": "894f86385a0b78eac31ab2e7859bd64783e54444d1afc92efbca747b9c4299fd",
+        "SKILL.md": "d7ac89b75a15258a6c578dcdbea70dcb49d5aef7afb76c720bcce324209a6d1e",
+        "provenance/original.SKILL.md": "5404e73526105c064eb051abe726097a9699ba39a2aaa23fb1b195d2835bd9c4",
+        "references/qualification.md": "54b4484e3aa20adce550e52d723f8a697d7accb9a39e95df36467c2e010b819f"
+      },
+      "performance_status": "unbenchmarked",
+      "skill_id": "trailofbits-skills-plugins-testing-handbook-skills-skills-address-sanitizer-skill-md",
+      "source_commit": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+      "source_file_sha256": "5404e73526105c064eb051abe726097a9699ba39a2aaa23fb1b195d2835bd9c4",
+      "source_url": "https://github.com/trailofbits/skills/blob/e8cc5baf9329ccb491bfa200e82eacbac83b1ead/plugins/testing-handbook-skills/skills/address-sanitizer/SKILL.md"
+    },
+    {
+      "license": "CC-BY-SA-4.0",
+      "license_file_sha256": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
+      "license_source_sha": "3b7b82d0da2db857eda1a798dbd908ea136f07b5",
+      "original_path": "included/repaired/skills/fuzzing-dictionary-current/provenance/original.SKILL.md",
+      "overlay_path": "included/repaired/skills/fuzzing-dictionary-current",
+      "overlay_sha256": "c1cd3f868ca4910cac32ce79d7863d768701b225ebaa8d9268148d7e96900ddd",
+      "package_file_sha256": {
+        "LICENSE": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
+        "NOTICE.md": "397eeffbe81c6e9e16fe840a5788a01d7d6340e4f8e029303db4ee664d1cfc60",
+        "SKILL.md": "c1cd3f868ca4910cac32ce79d7863d768701b225ebaa8d9268148d7e96900ddd",
+        "provenance/original.SKILL.md": "3247064b931fdc5b259e9d7786a7e50858cde27cedbf6bef873a5d77827efed8",
+        "references/qualification.md": "e5ffb438c0ecdd26039adf27f59be89c82d95bfe881b72fb7c89817f2461bad5"
+      },
+      "performance_status": "unbenchmarked",
+      "skill_id": "trailofbits-skills-plugins-testing-handbook-skills-skills-fuzzing-dictionary-skill-md",
+      "source_commit": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+      "source_file_sha256": "3247064b931fdc5b259e9d7786a7e50858cde27cedbf6bef873a5d77827efed8",
+      "source_url": "https://github.com/trailofbits/skills/blob/e8cc5baf9329ccb491bfa200e82eacbac83b1ead/plugins/testing-handbook-skills/skills/fuzzing-dictionary/SKILL.md"
     }
   ]
 }

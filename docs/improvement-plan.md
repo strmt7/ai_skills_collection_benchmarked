@@ -31,6 +31,10 @@ A bounded [C++ reference review](research-cpp-contracts.md) covers two packages
 and all three bundled resources. Their project dependencies, redistribution
 basis and independent runtime/effectiveness evidence still require qualification.
 
+Two [native-testing overlays](research-native-testing-contracts.md) correct
+ASan platform/memory guidance and dictionary escaping. Their bounded LLVM
+controls establish component compatibility; agent effectiveness remains open.
+
 Owner repositories are read-only references for general requirements and quality
 control. Maintained skills remain independent of their names and installations.
 The earlier two-hour restriction has expired; access boundaries and each

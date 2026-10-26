@@ -92,6 +92,8 @@ jobs:
         run: python benchmarks/component-controls/frontend/prepare.py --check
       - name: Verify API and backend component evidence and input freshness
         run: python benchmarks/component-controls/backend/prepare_backend.py --check
+      - name: Verify native fuzzing evidence and collector input freshness
+        run: python benchmarks/component-controls/native-testing/run_native.py --check
       - name: Verify all matched development trials and report
         run: >-
           python tools/summarize_agent_trials.py

@@ -34,6 +34,7 @@ locally with the toolchain installed via `pip install -e '.[test,lint]'`:
 | Workflow evaluator controls | `python3 tools/report_workflow_evaluator_controls.py --check --json` | `.github/workflows/offline-validation.yml` |
 | Frontend component evidence | `python3 benchmarks/component-controls/frontend/prepare.py --check` | `.github/workflows/offline-validation.yml` |
 | API/backend component evidence | `python3 benchmarks/component-controls/backend/prepare_backend.py --check` | `.github/workflows/offline-validation.yml` |
+| Native fuzzing evidence | `python3 benchmarks/component-controls/native-testing/run_native.py --check`; [Windows runtime controls](docs/research-native-testing-contracts.md) | `.github/workflows/{offline-validation,native-fuzzing-controls}.yml` |
 | Measured Python coverage | Complete matrix XML bundle, source hashes and Codecov OIDC; see [coverage scope](docs/coverage.md) | `.github/workflows/offline-validation.yml` |
 | Tests | `python3 -m pytest -q -n auto` (supported matrix: 3.11/3.12/3.13/3.14) | `.github/workflows/offline-validation.yml` |
 | Compile | `python3 -m compileall -q tools tests` | `.github/workflows/offline-validation.yml` |

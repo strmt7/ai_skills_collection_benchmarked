@@ -1,0 +1,63 @@
+name: Native fuzzing contracts
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/native-fuzzing-controls.yml"
+      - "benchmarks/component-controls/native-testing/**"
+      - "included/repaired/skills/address-sanitizer-current/**"
+      - "included/repaired/skills/fuzzing-dictionary-current/**"
+      - "tools/_windows_owned_python.py"
+  workflow_dispatch:
+  schedule:
+    - cron: "10 7 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: native-fuzzing-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  native-controls:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    env:
+      GIT_CONFIG_COUNT: "1"
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: "true"
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.14.9"
+      - name: Capture latest stable identity and download the pinned official archive
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $spec = Get-Content benchmarks/component-controls/native-testing/source.json -Raw | ConvertFrom-Json
+          $evidenceRoot = Join-Path $env:RUNNER_TEMP 'native-fuzzing-evidence'
+          New-Item -ItemType Directory -Path $evidenceRoot | Out-Null
+          gh api repos/llvm/llvm-project/releases/latest > (Join-Path $evidenceRoot 'llvm-latest.native.json')
+          if ($LASTEXITCODE -ne 0) { throw 'LLVM release identity capture failed' }
+          $latest = Get-Content (Join-Path $evidenceRoot 'llvm-latest.native.json') -Raw | ConvertFrom-Json
+          if ($latest.draft -or $latest.prerelease -or $latest.tag_name -ne $spec.release) { throw 'Pinned LLVM is no longer the latest non-prerelease release; requalification required' }
+          Invoke-WebRequest -Uri $spec.archive_url -OutFile (Join-Path $env:RUNNER_TEMP 'llvm-native.tar.zst') -TimeoutSec 180
+      - name: Verify and extract the archive, then run bounded native controls
+        shell: pwsh
+        run: |
+          python -I -B benchmarks/component-controls/native-testing/run_native.py --archive (Join-Path $env:RUNNER_TEMP 'llvm-native.tar.zst') --toolchain (Join-Path $env:RUNNER_TEMP 'llvm-native') --workspace (Join-Path $env:RUNNER_TEMP 'native-fuzzing-workspace') --output (Join-Path $env:RUNNER_TEMP 'native-fuzzing-evidence/controls')
+          exit $LASTEXITCODE
+      - name: Retain actual native observations and failures
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: native-fuzzing-contracts-windows
+          path: ${{ runner.temp }}/native-fuzzing-evidence
+          if-no-files-found: error
+          retention-days: 14

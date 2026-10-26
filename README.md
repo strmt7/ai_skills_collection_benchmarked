@@ -31,7 +31,7 @@ Current snapshot:
 - `673` source-backed skill entries.
 - `673` written skill mirrors under `included/skills/`.
 - `673` compact agent-ready skill entrypoints under `included/agent-ready/`.
-- `34` repaired skill overlays under `included/repaired/skills/` for currently observed runtime-readiness packaging failures.
+- `34` repaired skill overlays under `included/repaired/skills/` address packaging-readiness failures; `2` additional experimental [native-testing overlays](docs/research-native-testing-contracts.md) address qualified LLVM contracts.
 - `14` selected external benchmark method adapters with smoke artifacts.
 - `80` selected repository entries.
 - `15` categories.

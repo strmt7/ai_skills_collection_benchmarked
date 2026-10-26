@@ -14017,17 +14017,52 @@
     "trailofbits-skills-plugins-testing-handbook-skills-skills-address-sanitizer-skill-md": {
       "category": "Coding, refactoring & repository automation",
       "evaluation": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "benchmarks/component-controls/native-testing/result.json",
+            "sha256": "e6125f8023c71ce9cb2c362cf101e3342eb415cb81e0ada21d23b3971b121fa7"
+          },
+          {
+            "path": "artifacts/research/native-testing/review.json",
+            "sha256": "aea83b4d908a2453de85a1661f8fefbe7240b77f16590ab3b41d75d116ea39f6"
+          }
+        ],
+        "status": "in_progress"
       },
       "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/security-reference/address-sanitizer",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/native-testing/review.json",
+            "sha256": "aea83b4d908a2453de85a1661f8fefbe7240b77f16590ab3b41d75d116ea39f6"
+          },
+          {
+            "path": "docs/research-native-testing-contracts.md",
+            "sha256": "4f86b9ac97538f09cdef2f56a2bf0ac8af4c48a6e8be3ab550325fc858116957"
+          }
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "review_scope": "Complete instruction body, pinned/current source comparison, applicable licence, primary LLVM/MSVC contracts and bounded Windows LLVM runtime controls; other advertised modes and agent efficacy remain open.",
+            "sha256": "5404e73526105c064eb051abe726097a9699ba39a2aaa23fb1b195d2835bd9c4",
+            "status": "reviewed"
+          }
+        },
+        "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/address-sanitizer-current/SKILL.md",
+            "sha256": "d7ac89b75a15258a6c578dcdbea70dcb49d5aef7afb76c720bcce324209a6d1e"
+          },
+          {
+            "path": "artifacts/research/native-testing/review.json",
+            "sha256": "aea83b4d908a2453de85a1661f8fefbe7240b77f16590ab3b41d75d116ea39f6"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "trailofbits/skills",
       "source_signature": {
@@ -14226,17 +14261,52 @@
     "trailofbits-skills-plugins-testing-handbook-skills-skills-fuzzing-dictionary-skill-md": {
       "category": "Coding, refactoring & repository automation",
       "evaluation": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "benchmarks/component-controls/native-testing/result.json",
+            "sha256": "e6125f8023c71ce9cb2c362cf101e3342eb415cb81e0ada21d23b3971b121fa7"
+          },
+          {
+            "path": "artifacts/research/native-testing/review.json",
+            "sha256": "aea83b4d908a2453de85a1661f8fefbe7240b77f16590ab3b41d75d116ea39f6"
+          }
+        ],
+        "status": "in_progress"
       },
       "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/security-reference/fuzzing-dictionary",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/native-testing/review.json",
+            "sha256": "aea83b4d908a2453de85a1661f8fefbe7240b77f16590ab3b41d75d116ea39f6"
+          },
+          {
+            "path": "docs/research-native-testing-contracts.md",
+            "sha256": "4f86b9ac97538f09cdef2f56a2bf0ac8af4c48a6e8be3ab550325fc858116957"
+          }
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "review_scope": "Complete instruction body, pinned/current source comparison, applicable licence, primary LLVM/MSVC contracts and bounded Windows LLVM runtime controls; other advertised modes and agent efficacy remain open.",
+            "sha256": "3247064b931fdc5b259e9d7786a7e50858cde27cedbf6bef873a5d77827efed8",
+            "status": "reviewed"
+          }
+        },
+        "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/fuzzing-dictionary-current/SKILL.md",
+            "sha256": "c1cd3f868ca4910cac32ce79d7863d768701b225ebaa8d9268148d7e96900ddd"
+          },
+          {
+            "path": "artifacts/research/native-testing/review.json",
+            "sha256": "aea83b4d908a2453de85a1661f8fefbe7240b77f16590ab3b41d75d116ea39f6"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "trailofbits/skills",
       "source_signature": {

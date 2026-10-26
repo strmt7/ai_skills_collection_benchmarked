@@ -15,7 +15,7 @@ import re
 import shutil
 import subprocess
 import sys
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Any
 from urllib.parse import urlparse
 
@@ -132,8 +132,37 @@ def failed_runtime_artifacts() -> list[dict[str, Any]]:
 
 
 def clean_generated_outputs() -> None:
-    if REPAIRED_ROOT.exists():
-        shutil.rmtree(REPAIRED_ROOT)
+    # This generator owns only the overlays in its previous manifest. Other
+    # maintained repairs share the parent and must survive regeneration.
+    targets = set()
+    manifest_path = REPAIRED_ROOT / "manifest.json"
+    if manifest_path.exists():
+        manifest = load_json(manifest_path)
+        if manifest.get("runner") != RUNNER_ID or manifest.get("run_name") != RUN_NAME:
+            raise ValueError("repair cleanup requires this generator's ownership manifest")
+        for item in manifest["repairs"]:
+            name = item["repaired_path"]
+            relative = PurePosixPath(name)
+            target = ROOT / name
+            if (
+                "\\" in name
+                or ":" in name
+                or relative.is_absolute()
+                or relative.as_posix() != name
+                or ".." in relative.parts
+                or target.resolve() == REPAIRED_ROOT.resolve()
+                or not target.resolve().is_relative_to(REPAIRED_ROOT.resolve())
+            ):
+                raise ValueError("repair cleanup target escapes the owned overlay directory")
+            targets.add(target)
+    if ARTIFACT_ROOT.resolve() != (ROOT / "artifacts" / "repaired-skill-readiness" / RUN_NAME).resolve():
+        raise ValueError("repair artifact cleanup target escapes its output directory")
+    if ARTIFACT_ROOT.exists() and not manifest_path.exists():
+        raise ValueError("existing repair artifacts require an ownership manifest before cleanup")
+    # Validate every target before deleting any of them.
+    for target in targets:
+        if target.exists():
+            shutil.rmtree(target)
     if ARTIFACT_ROOT.exists():
         shutil.rmtree(ARTIFACT_ROOT)
     REPAIRED_ROOT.mkdir(parents=True, exist_ok=True)

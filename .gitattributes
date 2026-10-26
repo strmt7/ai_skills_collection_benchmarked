@@ -21,6 +21,12 @@
 # Backend controllers are authored text; retained native streams are exact bytes.
 /benchmarks/component-controls/backend/** text eol=lf
 /benchmarks/component-controls/backend/native/** -text
+# Native fixtures and summaries are authored text; upstream provenance stays exact.
+/benchmarks/component-controls/native-testing/** text eol=lf
+/included/repaired/skills/address-sanitizer-current/** text eol=lf
+/included/repaired/skills/fuzzing-dictionary-current/** text eol=lf
+/included/repaired/skills/address-sanitizer-current/provenance/** -text
+/included/repaired/skills/fuzzing-dictionary-current/provenance/** -text
 # Trial evidence hashes describe exact captured bytes, including Windows logs.
 # Preserve them across Git transports instead of converting line endings.
 /artifacts/agent-trials/** -text

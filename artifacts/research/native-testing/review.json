@@ -1,0 +1,133 @@
+{
+  "agent_performance_claim": false,
+  "artifact_kind": "native_testing_research",
+  "independent_model_trials": 0,
+  "llvm_source_commit": "7a941dfb2877a0b8cf30323fefa85ad019e0b0f5",
+  "llvm_source_ref": "llvmorg-23.1.4",
+  "mirror_contents_changed": false,
+  "native_result": {
+    "all_contracts_observed": true,
+    "controls": 11,
+    "path": "benchmarks/component-controls/native-testing/result.json",
+    "sha256": "e6125f8023c71ce9cb2c362cf101e3342eb415cb81e0ada21d23b3971b121fa7"
+  },
+  "oracle_basis": "C++ allocation bounds; LLVM versioned parser and flag contracts; W3C PNG byte specification. Mirror example checks are component-readiness checks, not independently counted agent benchmark tasks.",
+  "primary_captures": [
+    {
+      "complete_document_review_claim": false,
+      "extracted_characters": 39941,
+      "native_sha256": "586ed6989ede99ccc5816356eb2a1f4e233babb65069793619f47c282ff4c940",
+      "provider_version": "0.9.5+catalog.portable4",
+      "reviewed_scope": "ASan platform support, leak detection and virtual versus physical memory limits",
+      "scope_reviewed": true,
+      "status_code": 200,
+      "success": true,
+      "url": "https://clang.llvm.org/docs/AddressSanitizer.html"
+    },
+    {
+      "complete_document_review_claim": false,
+      "extracted_characters": 43473,
+      "native_sha256": "c53a28f45b9880c9d5a8a3c3cb847bcb20e52309e2b0a5d23729464e251fba30",
+      "provider_version": "0.9.5+catalog.portable4",
+      "reviewed_scope": "MSVC native Windows ASan support, flags and incompatible compiler options",
+      "scope_reviewed": true,
+      "status_code": 200,
+      "success": true,
+      "url": "https://learn.microsoft.com/en-us/cpp/sanitizers/asan?view=msvc-170"
+    },
+    {
+      "complete_document_review_claim": false,
+      "extracted_characters": 72362,
+      "native_sha256": "998eb8aaa6bedf64fd36723efabb7e433207f1de66c3004163f3eb20cdfc0679",
+      "provider_version": "0.9.5+catalog.portable4",
+      "reviewed_scope": "Dictionary escape syntax, RSS/malloc limits and leak checks",
+      "scope_reviewed": true,
+      "status_code": 200,
+      "success": true,
+      "url": "https://llvm.org/docs/LibFuzzer.html"
+    },
+    {
+      "complete_document_review_claim": false,
+      "extracted_characters": 399784,
+      "native_sha256": "4228ea9d88141eb96af6d66eb17f82256f982e72ca88bed838fca94b28adfe4c",
+      "provider_version": "0.9.5+catalog.portable4",
+      "reviewed_scope": "Section 5.2, eight-byte PNG signature only",
+      "scope_reviewed": true,
+      "status_code": 200,
+      "success": true,
+      "url": "https://www.w3.org/TR/png-3/"
+    }
+  ],
+  "retained_failures": [
+    "Default decoder window rejected the admitted archive; recovered with explicit bounded decoder settings.",
+    "Initial ASan clean control failed with Windows loader 0xC0000135; restored the matching process-local runtime path.",
+    "Restricted environment omitted Windows program-location discovery variables; restored those variables without inheriting compiler overrides.",
+    "Native dictionary parser rejects the source C-escape example and a separate unterminated quote."
+  ],
+  "rights": {
+    "applicable_pinned_license_paths": [
+      "LICENSE"
+    ],
+    "attribution_and_share_alike_retained": true,
+    "license": "CC-BY-SA-4.0",
+    "license_git_blob": "3b7b82d0da2db857eda1a798dbd908ea136f07b5",
+    "license_sha256": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297"
+  },
+  "skills": [
+    {
+      "canonical_skill_sha256": "5404e73526105c064eb051abe726097a9699ba39a2aaa23fb1b195d2835bd9c4",
+      "current_git_blob": "d63e7624542dff969568452c2e4e072cf75e5b85",
+      "current_source_commit": "196a9073ab10d35bacf111f945e02c00b2c6883a",
+      "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/security-reference/address-sanitizer",
+      "overlay_path": "included/repaired/skills/address-sanitizer-current",
+      "overlay_sha256": "d7ac89b75a15258a6c578dcdbea70dcb49d5aef7afb76c720bcce324209a6d1e",
+      "pinned_git_blob": "58eef02fcdab8cccc1c4379c770e313a2de3d579",
+      "remaining": [
+        "Full advertised fuzzer/language/platform matrix was not executed.",
+        "Paired held-out coding-agent efficacy trials are not established."
+      ],
+      "resource_count": 1,
+      "resources_reviewed": [
+        "SKILL.md"
+      ],
+      "skill_id": "trailofbits-skills-plugins-testing-handbook-skills-skills-address-sanitizer-skill-md",
+      "source_commit": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+      "upstream_change": "Activation description only; complete instruction body is unchanged."
+    },
+    {
+      "canonical_skill_sha256": "3247064b931fdc5b259e9d7786a7e50858cde27cedbf6bef873a5d77827efed8",
+      "current_git_blob": "17eb319cd9a8ced92444bf8bd534c01d09b21d97",
+      "current_source_commit": "196a9073ab10d35bacf111f945e02c00b2c6883a",
+      "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/security-reference/fuzzing-dictionary",
+      "overlay_path": "included/repaired/skills/fuzzing-dictionary-current",
+      "overlay_sha256": "c1cd3f868ca4910cac32ce79d7863d768701b225ebaa8d9268148d7e96900ddd",
+      "pinned_git_blob": "318d241b861f1c2d050561b92d03164e6a11cf0b",
+      "remaining": [
+        "Full advertised fuzzer/language/platform matrix was not executed.",
+        "Paired held-out coding-agent efficacy trials are not established."
+      ],
+      "resource_count": 1,
+      "resources_reviewed": [
+        "SKILL.md"
+      ],
+      "skill_id": "trailofbits-skills-plugins-testing-handbook-skills-skills-fuzzing-dictionary-skill-md",
+      "source_commit": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+      "upstream_change": "Activation description only; complete instruction body is unchanged."
+    }
+  ],
+  "source_parent": "db0fcc4f3273f55dba68304846128b2f6af80b31",
+  "versioned_llvm_sources": [
+    {
+      "path": "compiler-rt/lib/fuzzer/FuzzerFlags.def",
+      "sha256": "fd1bb22acad5dd8d4c45c993f4ac5d1c7606de5c846d2df455a537a239448f6c"
+    },
+    {
+      "path": "compiler-rt/lib/fuzzer/FuzzerUtil.cpp",
+      "sha256": "cf0e9217539c77117a739e47e9e9f35e43141db291ab6167deae365b3ef496be"
+    },
+    {
+      "path": "compiler-rt/lib/fuzzer/FuzzerDriver.cpp",
+      "sha256": "9f0ff17b5ede0670ea5c23e4eaef96e28af6d9744ea085c9701077968562034e"
+    }
+  ]
+}
