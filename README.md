@@ -1,6 +1,7 @@
 # AI Skills Collection Benchmarked
 
 <!-- BEGIN GENERATED BADGES -->
+[![Codecov: Python tooling coverage](https://img.shields.io/codecov/c/github/strmt7/ai_skills_collection_benchmarked?label=Python%20tooling%20coverage&logo=codecov)](https://codecov.io/gh/strmt7/ai_skills_collection_benchmarked)
 [![Offline validation](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/offline-validation.yml/badge.svg)](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/offline-validation.yml)
 [![Ruff](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/ruff.yml/badge.svg)](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/ruff.yml)
 [![Mypy](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/mypy.yml/badge.svg)](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/mypy.yml)
@@ -36,6 +37,8 @@ Current snapshot:
 
 Start here:
 
+- [Install and use a skill](docs/installation.md)
+- [User documentation](docs/README.md)
 - [Methodology](docs/methodology.md)
 - [Source policy](docs/source-policy.md)
 - [Included skill mirrors](included/skills/README.md)

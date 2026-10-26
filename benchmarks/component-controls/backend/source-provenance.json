@@ -1,0 +1,92 @@
+{
+  "source_arm_count": 1,
+  "aliases_are_not_independent_samples": true,
+  "source_excerpts_equal_after_frontmatter_and_branding_changes": true,
+  "raw_upstream_examples_not_distributed": "Existing catalog credential normalization is retained; raw Git digests identify upstream captures.",
+  "source_aliases": [
+    {
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-api-design-skill-md",
+      "locked_catalog_text_sha256": "de3be9cde47bd707b2a8af79254915ed03bfcd1b2aeb187f1d889597e8cbb76d",
+      "raw_git_source_captures": [
+        {
+          "path": ".agents/skills/api-design/SKILL.md",
+          "ref": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "git_blob": "a45aca06d84dfd2a5297ba162704d456574a6df8",
+          "sha256": "d2b090c4319e030fddb576950400724ff12ccb285083a540b6afb62431185d25",
+          "bytes": 13110,
+          "git_blob_verified": true
+        },
+        {
+          "path": ".agents/skills/api-design/SKILL.md",
+          "ref": "25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b",
+          "git_blob": "98738177f210373a352dc6b83143be793588ef96",
+          "sha256": "5568a8b1e2e9ea1cc1433535ba8fcf9c21309b996108887343150d4fc76992e6",
+          "bytes": 13216,
+          "git_blob_verified": true
+        }
+      ]
+    },
+    {
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-backend-patterns-skill-md",
+      "locked_catalog_text_sha256": "952e95fd7e8d0b17f13835dde8067d7dd2abd019e6e17821d5ebf913113c589e",
+      "raw_git_source_captures": [
+        {
+          "path": ".agents/skills/backend-patterns/SKILL.md",
+          "ref": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "git_blob": "30898b4d405df43ca9058ca8730a77d90cda3612",
+          "sha256": "952e95fd7e8d0b17f13835dde8067d7dd2abd019e6e17821d5ebf913113c589e",
+          "bytes": 13837,
+          "git_blob_verified": true
+        },
+        {
+          "path": ".agents/skills/backend-patterns/SKILL.md",
+          "ref": "25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b",
+          "git_blob": "721b67a3ec36f15dee14daae4ef2cbe4aa5e986d",
+          "sha256": "d4d3c9c54b5bf5af3c1711fe16ef28db1538d4c272cfa0e4420da60c368fef02",
+          "bytes": 13932,
+          "git_blob_verified": true
+        }
+      ]
+    },
+    {
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-everything-claude-code-skill-md",
+      "locked_catalog_text_sha256": "f3d3984ea3d05a632379408dfe91974ab0c7d890e0a86115650b48b47274cbfc",
+      "raw_git_source_captures": [
+        {
+          "path": ".agents/skills/everything-claude-code/SKILL.md",
+          "ref": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "git_blob": "173826a88df389914acb726897957f0162fe7cb5",
+          "sha256": "f3d3984ea3d05a632379408dfe91974ab0c7d890e0a86115650b48b47274cbfc",
+          "bytes": 11348,
+          "git_blob_verified": true
+        }
+      ]
+    }
+  ],
+  "conventions_successor": [
+    {
+      "path": ".agents/skills/ecc-conventions/SKILL.md",
+      "git_blob": "3ff05dd06c5f1d43825c43e47ca6397d97706037",
+      "sha256": "d52acc0f98017c9de571520f1f4877394309cac181a4048e48dbd924ff77d6b9"
+    },
+    {
+      "path": ".agents/skills/ecc-conventions/agents/openai.yaml",
+      "git_blob": "8e8303c04bf93f42e45efbbb6cd8ea66d8e38c81",
+      "sha256": "6689b86ea5b4d89880d595ef0d33f249e85056dc8546e431b0f6435466e6a887"
+    }
+  ],
+  "development_order": {
+    "blind_evaluation": false,
+    "candidate_written_when_oracle_frozen": false,
+    "source_observations_before_candidate_sha256": "ca3f5606a4e38975c8c62d917fb056b74908b6dcda191126dd7c6f2d757ecbe4",
+    "limitation": "Targeted regressions authored after reading source examples; independent model efficacy is not evaluated.",
+    "initial_oracle_freeze": {
+      "candidate_code_written": false,
+      "blind_authoring": false,
+      "hashes": {
+        "contract.json": "b2dc2cd52af270e76975c78f642bf79733e0fa958474dfaea18c006109529b36",
+        "go-cases.json": "a06e60035747563b61b756cf94e4cdf9f81263e86c19d90bd2eccff773c8e587"
+      }
+    }
+  }
+}

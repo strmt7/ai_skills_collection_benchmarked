@@ -1,0 +1,360 @@
+{
+  "additional_maintained_boundary_checks": 8,
+  "agent_performance_claim": false,
+  "canonical_upstream": "affaan-m/ECC",
+  "component_observations": {
+    "maintained": {
+      "go": {
+        "body-budget": true,
+        "concatenated-values": true,
+        "trailing-garbage": true,
+        "trailing-whitespace": true,
+        "valid-object": true,
+        "wrong-field-type": true
+      },
+      "node": {
+        "auth-challenge": true,
+        "auth-downstream-async": true,
+        "auth-downstream-sync": true,
+        "auth-invalid": true,
+        "auth-scheme-case": true,
+        "auth-valid": true,
+        "auth-verifier-unavailable": true,
+        "exception-provenance": true,
+        "log-context-integrity": true,
+        "post-malformed-json": true,
+        "post-schema-rejected": true,
+        "post-valid-created": true,
+        "retry-cancelled-before-start": true,
+        "retry-permanent-stop": true,
+        "retry-transient-recovery": true,
+        "zod4-error-issues": true
+      },
+      "typecheck_exit_code": 0
+    },
+    "source": {
+      "go": {
+        "body-budget": false,
+        "concatenated-values": false,
+        "trailing-garbage": false,
+        "trailing-whitespace": true,
+        "valid-object": true,
+        "wrong-field-type": true
+      },
+      "node": {
+        "auth-challenge": false,
+        "auth-downstream-async": true,
+        "auth-downstream-sync": false,
+        "auth-invalid": true,
+        "auth-scheme-case": false,
+        "auth-valid": true,
+        "auth-verifier-unavailable": false,
+        "exception-provenance": false,
+        "log-context-integrity": false,
+        "post-malformed-json": false,
+        "post-schema-rejected": true,
+        "post-valid-created": true,
+        "retry-cancelled-before-start": false,
+        "retry-permanent-stop": false,
+        "retry-transient-recovery": true,
+        "zod4-error-issues": false
+      },
+      "typecheck_exit_code": 2
+    }
+  },
+  "decisions": {
+    "api-design": "Maintain explicit API contract overlay",
+    "backend-patterns": "Maintain authentication, retry and logging boundaries",
+    "everything-claude-code-conventions": "Scope imported conventions to their real origin and require measured support for metrics",
+    "investor-materials": "Retain instructions; record finance/documentation taxonomy issue for final routing pass"
+  },
+  "go_vet_exit_code": 0,
+  "inspected_upstream_commit": "25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b",
+  "karpathy_commit_reconfirmed": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+  "locked_source_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+  "measurement_kind": "targeted_component_contract_review",
+  "method": "benchmarks/component-controls/backend/README.md",
+  "open_work": [
+    "Whole-framework and domain runtime qualification",
+    "Independent held-out coding-agent comparisons",
+    "Final catalog taxonomy and layout pass"
+  ],
+  "overlay_count_added": 3,
+  "primary_page_scope_reviews": [
+    {
+      "eligible_for_scope_review": true,
+      "error": "",
+      "intended_url": "https://httpwg.org/specs/rfc9110.html",
+      "markdown_characters": 820733,
+      "native_result_bytes": 4029557,
+      "native_result_sha256": "1a99c3634b92ac9d3498457647d2b267d2b0bc2e57140da28e24b40ee25f586c",
+      "native_url": "https://httpwg.org/specs/rfc9110.html",
+      "provider_version": "0.9.5+catalog.portable4",
+      "review_scope": "Authentication scheme and parameters, idempotent methods, 401, WWW-Authenticate and Retry-After sections",
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "source_manifest_sha256": "97e3fef112e93c65de6032a155d0d79d2e9d8a6634b94da7450027c1834f5c86",
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "success": true
+    },
+    {
+      "eligible_for_scope_review": true,
+      "error": "",
+      "intended_url": "https://httpwg.org/specs/rfc9111.html",
+      "markdown_characters": 152987,
+      "native_result_bytes": 780052,
+      "native_result_sha256": "d6b129cea03ec59b231fccd0b00c45946911031e7cd85369a683b6aa0e17191c",
+      "native_url": "https://httpwg.org/specs/rfc9111.html",
+      "provider_version": "0.9.5+catalog.portable4",
+      "review_scope": "Authenticated responses, invalidation, no-store and Vary sections",
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "source_manifest_sha256": "97e3fef112e93c65de6032a155d0d79d2e9d8a6634b94da7450027c1834f5c86",
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "success": true
+    },
+    {
+      "eligible_for_scope_review": true,
+      "error": "",
+      "intended_url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/cache-aside",
+      "markdown_characters": 34039,
+      "native_result_bytes": 462744,
+      "native_result_sha256": "1d55fd1afa40ceb04de7572a1b583e4b4d125a50eb22c19f9a6f09fabdd3df9c",
+      "native_url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/cache-aside",
+      "provider_version": "0.9.5+catalog.portable4",
+      "review_scope": "Problems and considerations section",
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "source_manifest_sha256": "97e3fef112e93c65de6032a155d0d79d2e9d8a6634b94da7450027c1834f5c86",
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "success": true
+    },
+    {
+      "eligible_for_scope_review": true,
+      "error": "",
+      "intended_url": "https://expressjs.com/en/guide/behind-proxies/",
+      "markdown_characters": 11867,
+      "native_result_bytes": 228949,
+      "native_result_sha256": "526706f64e1b95f04cbfc4ae032d88eb38ecb2171d8880025ed9e6575f35c00c",
+      "native_url": "https://expressjs.com/en/guide/behind-proxies/",
+      "provider_version": "0.9.5+catalog.portable4",
+      "review_scope": "Complete relevant guide main body",
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "source_manifest_sha256": "97e3fef112e93c65de6032a155d0d79d2e9d8a6634b94da7450027c1834f5c86",
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "success": true
+    }
+  ],
+  "resource_count": 8,
+  "resources": [
+    {
+      "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/api-design",
+      "resources": {
+        "SKILL.md": {
+          "review_scope": "Complete original instruction body and all examples",
+          "sha256": "de3be9cde47bd707b2a8af79254915ed03bfcd1b2aeb187f1d889597e8cbb76d",
+          "status": "reviewed"
+        },
+        "agents/openai.yaml": {
+          "review_scope": "Complete UI, activation policy and default prompt; not installed",
+          "sha256": "e823a4342b02b5410aae18a3c3ad351d8a73b206b59f1446dc04c43c4944c2dd",
+          "status": "reviewed"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-api-design-skill-md"
+    },
+    {
+      "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/backend-patterns",
+      "resources": {
+        "SKILL.md": {
+          "review_scope": "Complete original instruction body and all examples",
+          "sha256": "952e95fd7e8d0b17f13835dde8067d7dd2abd019e6e17821d5ebf913113c589e",
+          "status": "reviewed"
+        },
+        "agents/openai.yaml": {
+          "review_scope": "Complete UI, activation policy and default prompt; not installed",
+          "sha256": "6a56b16e6ea055931bc38979c12279e7cd3ac7d3440bdd8fa1dc3152d003d36b",
+          "status": "reviewed"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-backend-patterns-skill-md"
+    },
+    {
+      "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/everything-claude-code-conventions",
+      "resources": {
+        "SKILL.md": {
+          "review_scope": "Complete original instruction body and all examples",
+          "sha256": "f3d3984ea3d05a632379408dfe91974ab0c7d890e0a86115650b48b47274cbfc",
+          "status": "reviewed"
+        },
+        "agents/openai.yaml": {
+          "review_scope": "Complete UI, activation policy and default prompt; not installed",
+          "sha256": "595da338b7ad5a3c3631db8367ada185bb15ddbd86c5c08a85bfcc9885c651e1",
+          "status": "reviewed"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-everything-claude-code-skill-md"
+    },
+    {
+      "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/investor-materials",
+      "resources": {
+        "SKILL.md": {
+          "review_scope": "Complete original instruction body and all examples",
+          "sha256": "0541ac8ede8d39c59a646834481d0de86312e598331b86dc7027ece0def3c193",
+          "status": "reviewed"
+        },
+        "agents/openai.yaml": {
+          "review_scope": "Complete UI, activation policy and default prompt; not installed",
+          "sha256": "fae8c572e0edc7110f692e115d4ad7fa20d2d2852dead8dc366bfebdbf29b041",
+          "status": "reviewed"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-investor-materials-skill-md"
+    }
+  ],
+  "result_sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744",
+  "retained_failures": [
+    "Raw Git/mirror assertion exposed existing credential normalization; diagnosis retained and no raw unsafe fixture published",
+    "Old conventions path 404 resolved as a verified rename; not retirement",
+    "Express .html URL 301 excluded, canonical slash URL recrawled under the same strict provider",
+    "Original compiler and contract failures remain in native evidence"
+  ],
+  "source_aliases": {
+    "aliases_are_not_independent_samples": true,
+    "conventions_successor": [
+      {
+        "git_blob": "3ff05dd06c5f1d43825c43e47ca6397d97706037",
+        "path": ".agents/skills/ecc-conventions/SKILL.md",
+        "sha256": "d52acc0f98017c9de571520f1f4877394309cac181a4048e48dbd924ff77d6b9"
+      },
+      {
+        "git_blob": "8e8303c04bf93f42e45efbbb6cd8ea66d8e38c81",
+        "path": ".agents/skills/ecc-conventions/agents/openai.yaml",
+        "sha256": "6689b86ea5b4d89880d595ef0d33f249e85056dc8546e431b0f6435466e6a887"
+      }
+    ],
+    "development_order": {
+      "blind_evaluation": false,
+      "candidate_written_when_oracle_frozen": false,
+      "initial_oracle_freeze": {
+        "blind_authoring": false,
+        "candidate_code_written": false,
+        "hashes": {
+          "contract.json": "b2dc2cd52af270e76975c78f642bf79733e0fa958474dfaea18c006109529b36",
+          "go-cases.json": "a06e60035747563b61b756cf94e4cdf9f81263e86c19d90bd2eccff773c8e587"
+        }
+      },
+      "limitation": "Targeted regressions authored after reading source examples; independent model efficacy is not evaluated.",
+      "source_observations_before_candidate_sha256": "ca3f5606a4e38975c8c62d917fb056b74908b6dcda191126dd7c6f2d757ecbe4"
+    },
+    "raw_upstream_examples_not_distributed": "Existing catalog credential normalization is retained; raw Git digests identify upstream captures.",
+    "source_aliases": [
+      {
+        "locked_catalog_text_sha256": "de3be9cde47bd707b2a8af79254915ed03bfcd1b2aeb187f1d889597e8cbb76d",
+        "raw_git_source_captures": [
+          {
+            "bytes": 13110,
+            "git_blob": "a45aca06d84dfd2a5297ba162704d456574a6df8",
+            "git_blob_verified": true,
+            "path": ".agents/skills/api-design/SKILL.md",
+            "ref": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+            "sha256": "d2b090c4319e030fddb576950400724ff12ccb285083a540b6afb62431185d25"
+          },
+          {
+            "bytes": 13216,
+            "git_blob": "98738177f210373a352dc6b83143be793588ef96",
+            "git_blob_verified": true,
+            "path": ".agents/skills/api-design/SKILL.md",
+            "ref": "25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b",
+            "sha256": "5568a8b1e2e9ea1cc1433535ba8fcf9c21309b996108887343150d4fc76992e6"
+          }
+        ],
+        "skill_id": "affaan-m-everything-claude-code-agents-skills-api-design-skill-md"
+      },
+      {
+        "locked_catalog_text_sha256": "952e95fd7e8d0b17f13835dde8067d7dd2abd019e6e17821d5ebf913113c589e",
+        "raw_git_source_captures": [
+          {
+            "bytes": 13837,
+            "git_blob": "30898b4d405df43ca9058ca8730a77d90cda3612",
+            "git_blob_verified": true,
+            "path": ".agents/skills/backend-patterns/SKILL.md",
+            "ref": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+            "sha256": "952e95fd7e8d0b17f13835dde8067d7dd2abd019e6e17821d5ebf913113c589e"
+          },
+          {
+            "bytes": 13932,
+            "git_blob": "721b67a3ec36f15dee14daae4ef2cbe4aa5e986d",
+            "git_blob_verified": true,
+            "path": ".agents/skills/backend-patterns/SKILL.md",
+            "ref": "25278e7d7b6cf6e6a4e7a6c8e10f14ff22f0eb5b",
+            "sha256": "d4d3c9c54b5bf5af3c1711fe16ef28db1538d4c272cfa0e4420da60c368fef02"
+          }
+        ],
+        "skill_id": "affaan-m-everything-claude-code-agents-skills-backend-patterns-skill-md"
+      },
+      {
+        "locked_catalog_text_sha256": "f3d3984ea3d05a632379408dfe91974ab0c7d890e0a86115650b48b47274cbfc",
+        "raw_git_source_captures": [
+          {
+            "bytes": 11348,
+            "git_blob": "173826a88df389914acb726897957f0162fe7cb5",
+            "git_blob_verified": true,
+            "path": ".agents/skills/everything-claude-code/SKILL.md",
+            "ref": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+            "sha256": "f3d3984ea3d05a632379408dfe91974ab0c7d890e0a86115650b48b47274cbfc"
+          }
+        ],
+        "skill_id": "affaan-m-everything-claude-code-agents-skills-everything-claude-code-skill-md"
+      }
+    ],
+    "source_arm_count": 1,
+    "source_excerpts_equal_after_frontmatter_and_branding_changes": true
+  },
+  "source_mirrors_modified": false
+}

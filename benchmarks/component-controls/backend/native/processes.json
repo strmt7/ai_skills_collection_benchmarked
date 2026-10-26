@@ -1,0 +1,90 @@
+{
+  "node-version": {
+    "windows_job": true,
+    "real_interpreter_gated_before_site": true,
+    "kill_on_close": true,
+    "active_processes_after_cleanup": 0,
+    "termination_reason": null,
+    "exit_code": 0
+  },
+  "go-telemetry-off": {
+    "windows_job": true,
+    "real_interpreter_gated_before_site": true,
+    "kill_on_close": true,
+    "active_processes_after_cleanup": 0,
+    "termination_reason": null,
+    "exit_code": 0
+  },
+  "go-version": {
+    "windows_job": true,
+    "real_interpreter_gated_before_site": true,
+    "kill_on_close": true,
+    "active_processes_after_cleanup": 0,
+    "termination_reason": null,
+    "exit_code": 0
+  },
+  "source-compile": {
+    "windows_job": true,
+    "real_interpreter_gated_before_site": true,
+    "kill_on_close": true,
+    "active_processes_after_cleanup": 0,
+    "termination_reason": null,
+    "exit_code": 2
+  },
+  "source-node": {
+    "windows_job": true,
+    "real_interpreter_gated_before_site": true,
+    "kill_on_close": true,
+    "active_processes_after_cleanup": 0,
+    "termination_reason": null,
+    "exit_code": 0
+  },
+  "source-go": {
+    "windows_job": true,
+    "real_interpreter_gated_before_site": true,
+    "kill_on_close": true,
+    "active_processes_after_cleanup": 0,
+    "termination_reason": null,
+    "exit_code": 1
+  },
+  "maintained-compile": {
+    "windows_job": true,
+    "real_interpreter_gated_before_site": true,
+    "kill_on_close": true,
+    "active_processes_after_cleanup": 0,
+    "termination_reason": null,
+    "exit_code": 0
+  },
+  "maintained-node": {
+    "windows_job": true,
+    "real_interpreter_gated_before_site": true,
+    "kill_on_close": true,
+    "active_processes_after_cleanup": 0,
+    "termination_reason": null,
+    "exit_code": 0
+  },
+  "maintained-go": {
+    "windows_job": true,
+    "real_interpreter_gated_before_site": true,
+    "kill_on_close": true,
+    "active_processes_after_cleanup": 0,
+    "termination_reason": null,
+    "exit_code": 0
+  },
+  "qualification": {
+    "windows_job": true,
+    "real_interpreter_gated_before_site": true,
+    "kill_on_close": true,
+    "active_processes_after_cleanup": 0,
+    "termination_reason": null,
+    "exit_code": 0
+  },
+  "maintained-go-vet": {
+    "windows_job": true,
+    "real_interpreter_gated_before_site": true,
+    "kill_on_close": true,
+    "active_processes_after_cleanup": 0,
+    "termination_reason": null,
+    "exit_code": 0
+  }
+}

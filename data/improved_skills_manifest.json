@@ -349,6 +349,69 @@
       "source_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
       "source_file_sha256": "dd04a1c02503036ee7f4d649c9b7b75d2e6954a94d6f464faedfa992701d1978",
       "source_url": "https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/frontend-patterns/SKILL.md"
+    },
+    {
+      "license": "MIT",
+      "license_file_sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+      "license_source_sha": "b832b6f642312312367c07688dc7426db40a82ed",
+      "original_path": "included/improved/skills/api-design-current/provenance/original-SKILL.md",
+      "overlay_path": "included/improved/skills/api-design-current",
+      "overlay_sha256": "a2cc50f97199a580cfbdeb55a6ab892612387914b714dbb50f3a8740bcd64b8a",
+      "package_file_sha256": {
+        "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+        "NOTICE.md": "b61dd257ff25d3116d19e66ef3f13c8f2ed1899ce9fcd9746e5b93e65d0724e6",
+        "SKILL.md": "a2cc50f97199a580cfbdeb55a6ab892612387914b714dbb50f3a8740bcd64b8a",
+        "provenance/original-SKILL.md": "de3be9cde47bd707b2a8af79254915ed03bfcd1b2aeb187f1d889597e8cbb76d",
+        "provenance/original-agents/openai.yaml": "e823a4342b02b5410aae18a3c3ad351d8a73b206b59f1446dc04c43c4944c2dd",
+        "references/decode-json.go": "1305f2f9414f1ff2832da135262a80b303c5c717c5b763f6018e3939d1e97169",
+        "references/request-json.ts": "5b4b5289755e86c8d6d60ed19ca3bdb442260dbd6262c3bb5ce075e76774d5a5"
+      },
+      "performance_status": "unbenchmarked",
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-api-design-skill-md",
+      "source_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "source_file_sha256": "de3be9cde47bd707b2a8af79254915ed03bfcd1b2aeb187f1d889597e8cbb76d",
+      "source_url": "https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/api-design/SKILL.md"
+    },
+    {
+      "license": "MIT",
+      "license_file_sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+      "license_source_sha": "b832b6f642312312367c07688dc7426db40a82ed",
+      "original_path": "included/improved/skills/backend-patterns-current/provenance/original-SKILL.md",
+      "overlay_path": "included/improved/skills/backend-patterns-current",
+      "overlay_sha256": "c67e6a483b6808864a0aece3ea6eda7f32c2cce06cebf65a384bc522485dc2de",
+      "package_file_sha256": {
+        "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+        "NOTICE.md": "0f026acda8a64ea97da6b95240a9210af7b06a65bfec4479959617f9348728e7",
+        "SKILL.md": "c67e6a483b6808864a0aece3ea6eda7f32c2cce06cebf65a384bc522485dc2de",
+        "provenance/original-SKILL.md": "952e95fd7e8d0b17f13835dde8067d7dd2abd019e6e17821d5ebf913113c589e",
+        "provenance/original-agents/openai.yaml": "6a56b16e6ea055931bc38979c12279e7cd3ac7d3440bdd8fa1dc3152d003d36b",
+        "references/boundaries.ts": "5b35c0dbfcb17c26b55954ef7753da946bb09b56bc2f1b36cbaedb50c3431bb9"
+      },
+      "performance_status": "unbenchmarked",
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-backend-patterns-skill-md",
+      "source_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "source_file_sha256": "952e95fd7e8d0b17f13835dde8067d7dd2abd019e6e17821d5ebf913113c589e",
+      "source_url": "https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/backend-patterns/SKILL.md"
+    },
+    {
+      "license": "MIT",
+      "license_file_sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+      "license_source_sha": "b832b6f642312312367c07688dc7426db40a82ed",
+      "original_path": "included/improved/skills/repository-conventions-current/provenance/original-SKILL.md",
+      "overlay_path": "included/improved/skills/repository-conventions-current",
+      "overlay_sha256": "4a7fea347cdcf45db596d16f5ce654b25bdb6c88abde1b1609557e0aa091f570",
+      "package_file_sha256": {
+        "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+        "NOTICE.md": "c18e69cb924fd969da03f401875d6e04fbf7152839f3172dbe848823448363fb",
+        "SKILL.md": "4a7fea347cdcf45db596d16f5ce654b25bdb6c88abde1b1609557e0aa091f570",
+        "provenance/original-SKILL.md": "f3d3984ea3d05a632379408dfe91974ab0c7d890e0a86115650b48b47274cbfc",
+        "provenance/original-agents/openai.yaml": "595da338b7ad5a3c3631db8367ada185bb15ddbd86c5c08a85bfcc9885c651e1"
+      },
+      "performance_status": "unbenchmarked",
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-everything-claude-code-skill-md",
+      "source_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "source_file_sha256": "f3d3984ea3d05a632379408dfe91974ab0c7d890e0a86115650b48b47274cbfc",
+      "source_url": "https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/everything-claude-code/SKILL.md"
     }
   ]
 }

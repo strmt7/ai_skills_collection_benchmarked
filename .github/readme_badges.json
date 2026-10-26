@@ -6,6 +6,11 @@
   "remote_name": "origin",
   "badges": [
     {
+      "alt": "Codecov: Python tooling coverage",
+      "image": "https://img.shields.io/codecov/c/github/{repo_path}?label=Python%20tooling%20coverage&logo=codecov",
+      "target": "https://codecov.io/gh/{repo_path}"
+    },
+    {
       "alt": "Offline validation",
       "image": "https://github.com/{repo_path}/actions/workflows/offline-validation.yml/badge.svg",
       "target": "https://github.com/{repo_path}/actions/workflows/offline-validation.yml"

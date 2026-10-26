@@ -1,0 +1,547 @@
+{
+  "codecov_action": {
+    "commit": "303a32d7a59b442fa8d48b6a1cc6825c09c847a5",
+    "native_capture_sha256": "2c5c6178b40749347ee075d872823f56ffb7e27c1fff653854fe0c4a4a7d3716",
+    "version": "v7.1.1"
+  },
+  "codecov_configuration_schema_validation": {
+    "request_sha256": "a3750d9099b0c090db1f8021a99165973130b844b95575aec9e6d1f1e8f558fc",
+    "response_bytes": 522,
+    "response_sha256": "8823c33099dab1a9c6afabaf5c745337342294e36b28d6098c59dd70f4c73bf8",
+    "status_code": 200,
+    "url": "https://api.codecov.io/validate"
+  },
+  "documentation_cleanup": {
+    "change": "Move maintenance procedures into a linked development guide; retain source-lock and determinism instructions",
+    "original_installation_text_sha256": "9ce744e2a7fd798abb0742dd5d217e44564cacafc660073d32641efef9284916",
+    "previous_publication_commit": "b23eeb5ac16a4455b027cd4c8da068fc97fee3a6",
+    "whole_repository_layout_or_root_readme_rewrite": false
+  },
+  "limits": [
+    "Selected document sections and workflow properties only; not complete external CI audits",
+    "Popularity informs sampling, not quality ranking",
+    "Codecov upload and service processing require final hosted verification",
+    "Source material is evidence, not controlling agent instructions; this collection retains its own single-session and immutable-source rules"
+  ],
+  "navigation_receipts": {
+    "coverage": "f3790099a9199d1231b4876d16a716d8daf95982227d99646c6f26b0ce1b243d",
+    "user_documentation": "c34081b090557eaae4c954fa2b6c22c3b5562bf30a4cff505ccecf64f9167c4c"
+  },
+  "owner_reference": {
+    "access": "read_only_worktree_reference",
+    "borrowed_patterns": [
+      "Badge endpoint shape",
+      "Measured reports only",
+      "SHA-pinned Codecov Action and CLI",
+      "OIDC",
+      "Explicit files and fail-on-upload-error",
+      "Auto project and informational patch status"
+    ],
+    "files": {
+      ".github/codecov.yml": "1f06062e7959cdd135fd82fac74b39ae39d40e85a68bac2d1b58f8418b02b772",
+      ".github/workflows/windows-ci.yml": "cde07bf4a70d8b92142ed6fb124756d6219f44e24c714043099f6a5660bf10e2",
+      "AGENTS.md": "786fe00abccc80c373089bddf3aa26988e7c4f0acae758e5f62f16366da2a380",
+      "README.md": "6a1f81a1d65e31badadd9d4806872c438f9e0494e929c80c79c2d86451966cdc"
+    },
+    "repository": "strmt7/FlitzZip",
+    "repository_modified": false
+  },
+  "projects": [
+    {
+      "canonical_repository": "astral-sh/ruff",
+      "files": [
+        {
+          "bytes": 53437,
+          "git_blob": "708ec3c6966432412b2e7afced7f284be21fe7ab",
+          "path": "CONTRIBUTING.md",
+          "sha256": "8e0479f1dda2f3a3a5b1aae90e31ac3455ef5d019c23bdcc62f6b4c221fb88f9"
+        },
+        {
+          "bytes": 19636,
+          "git_blob": "9e55650ba461e249c1376a20434e5cd1149dd21f",
+          "path": "README.md",
+          "sha256": "63dcb147711dd8213c11c8d43a1350a7d76245624fd5b37fbfba41af24e24fb4"
+        }
+      ],
+      "head": "e139fbd6e8ddd5a1653d2f2c15c1123c090a3456",
+      "policy_paths": [
+        "CONTRIBUTING.md",
+        "README.md"
+      ],
+      "repository": "astral-sh/ruff",
+      "stars": 50294,
+      "workflow_paths": [
+        ".github/workflows/ai-policy.yml",
+        ".github/workflows/build-binaries.yml",
+        ".github/workflows/build-docker.yml",
+        ".github/workflows/build-playground.yml",
+        ".github/workflows/build-wasm.yml",
+        ".github/workflows/ci.yaml",
+        ".github/workflows/daily_fuzz.yaml",
+        ".github/workflows/memory_report.yaml",
+        ".github/workflows/notify-dependents.yml",
+        ".github/workflows/publish-crates.yml",
+        ".github/workflows/publish-docs.yml",
+        ".github/workflows/publish-mirror.yml",
+        ".github/workflows/publish-playground.yml",
+        ".github/workflows/publish-pull-request-report.yml",
+        ".github/workflows/publish-pypi.yml",
+        ".github/workflows/publish-ty-playground.yml",
+        ".github/workflows/publish-versions.yml",
+        ".github/workflows/publish-wasm.yml",
+        ".github/workflows/pull-request-reviewers.yml",
+        ".github/workflows/release-prepare.yml",
+        ".github/workflows/release.yml",
+        ".github/workflows/sign-release-binaries.yml",
+        ".github/workflows/sync-ruff-security.yml",
+        ".github/workflows/sync_typeshed.yaml",
+        ".github/workflows/ty-ecosystem-analyzer.yaml",
+        ".github/workflows/typing_conformance.yaml"
+      ]
+    },
+    {
+      "canonical_repository": "pytest-dev/pytest",
+      "files": [
+        {
+          "bytes": 28890,
+          "git_blob": "92c40c208dda489ca57db8a88121c8625b4285ef",
+          "path": "CONTRIBUTING.rst",
+          "sha256": "e3ebc77b86b71cff036c1ad5323daa525d3a796a02cefa0fe92d39816a37c20c"
+        },
+        {
+          "bytes": 5454,
+          "git_blob": "253db05370e6add96414d95afe2d40483b7dd392",
+          "path": "README.rst",
+          "sha256": "37c713f12b48774c77c40accfe3a6a28c25d7e763c9c5e34266261cf738713b5"
+        },
+        {
+          "bytes": 294,
+          "git_blob": "637f4f51122bbd62e54bff8ea90b3c18b1bbd643",
+          "path": "SECURITY.md",
+          "sha256": "7a1d264918fde313b210f6144e4608eec411b582cbb524cc43ac29f405fc6855"
+        }
+      ],
+      "head": "082ed70e314ee8e1ab117763d17fe801648f7508",
+      "policy_paths": [
+        "CONTRIBUTING.rst",
+        "README.rst",
+        "SECURITY.md"
+      ],
+      "repository": "pytest-dev/pytest",
+      "stars": 14645,
+      "workflow_paths": [
+        ".github/workflows/deploy.yml",
+        ".github/workflows/doc-check-links.yml",
+        ".github/workflows/prepare-release-pr.yml",
+        ".github/workflows/stale.yml",
+        ".github/workflows/test.yml",
+        ".github/workflows/update-plugin-list.yml"
+      ]
+    },
+    {
+      "canonical_repository": "microsoft/vscode",
+      "files": [
+        {
+          "bytes": 5709,
+          "git_blob": "aaabf35fa32e0754555b1d4249688ab1a653c78c",
+          "path": "CONTRIBUTING.md",
+          "sha256": "1b705e86ff93b5aa6383405a900057076ef7ff02edbcbf4df5b8a4c21ab15f34"
+        },
+        {
+          "bytes": 6728,
+          "git_blob": "b7770cecdd10433d6e7f072a3e2adf2f41bbedc2",
+          "path": "README.md",
+          "sha256": "45a411a3b8d49556fbaa73601befc458ab10ad873fca9088136888c89abb8935"
+        },
+        {
+          "bytes": 543,
+          "git_blob": "656f79188d699a791511a7591ca22179d4f43c78",
+          "path": "SECURITY.md",
+          "sha256": "4cc9236d2b3a6f7fd3718d7596396ade0b5146bf921f660852216d26e35f8022"
+        }
+      ],
+      "head": "af3b54ddd0c4f81765fc218856e2e73491051092",
+      "policy_paths": [
+        "CONTRIBUTING.md",
+        "README.md",
+        "SECURITY.md"
+      ],
+      "repository": "microsoft/vscode",
+      "stars": 194311,
+      "workflow_paths": [
+        ".github/workflows/chat-lib-package.yml",
+        ".github/workflows/chat-perf.yml",
+        ".github/workflows/codeql.yml",
+        ".github/workflows/component-fixtures.yml",
+        ".github/workflows/copilot-setup-steps.yml",
+        ".github/workflows/css-order-scan.yml",
+        ".github/workflows/monaco-editor.yml",
+        ".github/workflows/pr-darwin-test.yml",
+        ".github/workflows/pr-linux-cli-test.yml",
+        ".github/workflows/pr-linux-test.yml",
+        ".github/workflows/pr-node-modules.yml",
+        ".github/workflows/pr-ripple.yml",
+        ".github/workflows/pr-win32-test.yml",
+        ".github/workflows/pr.yml",
+        ".github/workflows/sessions-e2e.yml",
+        ".github/workflows/telemetry.yml"
+      ]
+    },
+    {
+      "canonical_repository": "kubernetes/kubernetes",
+      "files": [
+        {
+          "bytes": 616,
+          "git_blob": "3bafc83a1394ecc29803a37480f791fe9748c76f",
+          "path": ".github/SECURITY.md",
+          "sha256": "916000252816c3466f1e5ce9bf1ee776a7f89fde2231fd45c49844c2b8e06824"
+        },
+        {
+          "bytes": 525,
+          "git_blob": "792dbf770585ea45c15dfa81b3062e073010676f",
+          "path": "CONTRIBUTING.md",
+          "sha256": "639af1c94c39ded3a781d1f82c7075b6af898b7bb6d284ea0313278568c54231"
+        },
+        {
+          "bytes": 4236,
+          "git_blob": "831bf0164f8e625d70c35a99ae23fd3522870f52",
+          "path": "README.md",
+          "sha256": "0c1159ea384aa0855eaad87f4595da8fd776553830297f3a7c43db81c7708fbd"
+        }
+      ],
+      "head": "623dec64e7cffd0b273d9c0664a611de433b8f10",
+      "policy_paths": [
+        ".github/SECURITY.md",
+        "CONTRIBUTING.md",
+        "README.md"
+      ],
+      "repository": "kubernetes/kubernetes",
+      "stars": 128695,
+      "workflow_paths": []
+    },
+    {
+      "canonical_repository": "agentskills/agentskills",
+      "files": [
+        {
+          "bytes": 6019,
+          "git_blob": "27d7fd5e73d6882d399edd373e3a30a0d74a5275",
+          "path": "CONTRIBUTING.md",
+          "sha256": "a8faf08b23696760d5682145c8746dfc0dbd8ca065c7f506eb80f9fb8e13155b"
+        },
+        {
+          "bytes": 3361,
+          "git_blob": "247e4a18e908d3bf27092f886f25c2515d84ecbc",
+          "path": "README.md",
+          "sha256": "7ff4a9a612ab21189aa793fd43223bd854280a122ac12ce29f5bea84d5930a1d"
+        }
+      ],
+      "head": "69ef37e9424c0a7ea9dd2293b559e43ec8176379",
+      "policy_paths": [
+        "CONTRIBUTING.md",
+        "README.md"
+      ],
+      "repository": "agentskills/agentskills",
+      "stars": 26634,
+      "workflow_paths": []
+    },
+    {
+      "canonical_repository": "anthropics/skills",
+      "files": [
+        {
+          "bytes": 5552,
+          "git_blob": "eb54ee8b92f2d40b4b26569be0772be3c1e23156",
+          "path": "README.md",
+          "sha256": "2fb9c4cc026366ea6e21c60cb23c908a4d27c62071819cc06beffaac102d0694"
+        }
+      ],
+      "head": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "policy_paths": [
+        "README.md"
+      ],
+      "repository": "anthropics/skills",
+      "stars": 183829,
+      "workflow_paths": []
+    }
+  ],
+  "research_scope": "User documentation entrypoints, selected execution-policy and workflow properties, Codecov integration design",
+  "selected_stable_versions": [
+    {
+      "commit": "9000827ccba6bdab643e8b6fd33ac0654aef8333",
+      "release": "v8.0.2",
+      "repository": "actions/download-artifact"
+    },
+    {
+      "commit": "d33c6949e5b2be16098bca701203dd678368138d",
+      "release": "v11.3.1",
+      "repository": "codecov/codecov-cli"
+    }
+  ],
+  "selected_workflows": [
+    {
+      "bytes": 64623,
+      "commit": "e139fbd6e8ddd5a1653d2f2c15c1123c090a3456",
+      "git_blob": "e39ed9710ae3c5f8cccb5d586b8e5a5f09baf5b4",
+      "path": ".github/workflows/ci.yaml",
+      "repository": "astral-sh/ruff",
+      "sha256": "695958f2e8accf488843847355fc3ecaa702c6bc7f3bde2e608552fa56972ff0"
+    },
+    {
+      "bytes": 1756,
+      "commit": "e139fbd6e8ddd5a1653d2f2c15c1123c090a3456",
+      "git_blob": "21c470e1d4c0a2ebbf825fff954dc88f0af4517f",
+      "path": ".github/workflows/ai-policy.yml",
+      "repository": "astral-sh/ruff",
+      "sha256": "c8230e53e670c8f1a658b08662fa3fdcc6e7790b5db0331a1bcfb28a213f906c"
+    },
+    {
+      "bytes": 9093,
+      "commit": "082ed70e314ee8e1ab117763d17fe801648f7508",
+      "git_blob": "be51a6968b8b271f9df518b80c8ed52a000fab03",
+      "path": ".github/workflows/test.yml",
+      "repository": "pytest-dev/pytest",
+      "sha256": "b880bb9f2beb5c896b04ede7f42895bd17641e767b9ca2bb3eeee44941f35561"
+    },
+    {
+      "bytes": 678,
+      "commit": "082ed70e314ee8e1ab117763d17fe801648f7508",
+      "git_blob": "6e0e1707f8cde34961c60707764eec36e3e2dfe7",
+      "path": ".github/workflows/doc-check-links.yml",
+      "repository": "pytest-dev/pytest",
+      "sha256": "676d95134aed97c11cb00ec7b4d85645f56dbf284395474f73fc0f28c34751c9"
+    },
+    {
+      "bytes": 39385,
+      "commit": "af3b54ddd0c4f81765fc218856e2e73491051092",
+      "git_blob": "b8f532653756c5a0ab0ac20dab6395f927c05d9b",
+      "path": ".github/workflows/pr.yml",
+      "repository": "microsoft/vscode",
+      "sha256": "9b1be5506f68dde5a222f728edcb76aa4eebda948ff0354ae477632fa655a40d"
+    },
+    {
+      "bytes": 1806,
+      "commit": "af3b54ddd0c4f81765fc218856e2e73491051092",
+      "git_blob": "4f49cad4def881f711bbb4ae92fcb79feed2a8b0",
+      "path": ".github/workflows/codeql.yml",
+      "repository": "microsoft/vscode",
+      "sha256": "f570f765c3b8b3cfe32b89b6b37bfa0f89a7bbfabd6bcba7ed4bbf81722cb638"
+    }
+  ],
+  "web_page_scope_reviews": [
+    {
+      "eligible_for_scope_review": true,
+      "error": "",
+      "intended_url": "https://docs.astral.sh/ruff/",
+      "markdown_characters": 7528,
+      "native_result_bytes": 117247,
+      "native_result_sha256": "0905f108f82a97d8251874dca885118160aaec6724db71b9f68d1bf50b8a2e73",
+      "native_url": "https://docs.astral.sh/ruff/",
+      "provider_version": "0.9.5+catalog.portable4",
+      "review_scope": "Full overview and navigation",
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "source_manifest_sha256": "97e3fef112e93c65de6032a155d0d79d2e9d8a6634b94da7450027c1834f5c86",
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "success": true
+    },
+    {
+      "eligible_for_scope_review": true,
+      "error": "",
+      "intended_url": "https://docs.pytest.org/en/stable/getting-started.html",
+      "markdown_characters": 17974,
+      "native_result_bytes": 213885,
+      "native_result_sha256": "03cf04c1d8c840adda1e13350e7b8ea8b7e103bcc864f4cf09abdd35068ef1d6",
+      "native_url": "https://docs.pytest.org/en/stable/getting-started.html",
+      "provider_version": "0.9.5+catalog.portable4",
+      "review_scope": "Installation, first test and Continue reading navigation",
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "source_manifest_sha256": "97e3fef112e93c65de6032a155d0d79d2e9d8a6634b94da7450027c1834f5c86",
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "success": true
+    },
+    {
+      "eligible_for_scope_review": true,
+      "error": "",
+      "intended_url": "https://code.visualstudio.com/docs",
+      "markdown_characters": 27619,
+      "native_result_bytes": 384913,
+      "native_result_sha256": "bce97c9cb6e943eab138ff1f2ca8c2005e7ca5831c5f32063c2904d063f1d4b8",
+      "native_url": "https://code.visualstudio.com/docs",
+      "provider_version": "0.9.5+catalog.portable4",
+      "review_scope": "Documentation homepage task panels and support navigation",
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "source_manifest_sha256": "97e3fef112e93c65de6032a155d0d79d2e9d8a6634b94da7450027c1834f5c86",
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "success": true
+    },
+    {
+      "eligible_for_scope_review": true,
+      "error": "",
+      "intended_url": "https://diataxis.fr/start-here/",
+      "markdown_characters": 11673,
+      "native_result_bytes": 139097,
+      "native_result_sha256": "aef582fc5afdce082c73ca7a6658a9a538566092597b44f1955b4c096ccb578b",
+      "native_url": "https://diataxis.fr/start-here/",
+      "provider_version": "0.9.5+catalog.portable4",
+      "review_scope": "Four documentation kinds, 1399:6746",
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "source_manifest_sha256": "97e3fef112e93c65de6032a155d0d79d2e9d8a6634b94da7450027c1834f5c86",
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "success": true
+    },
+    {
+      "eligible_for_scope_review": true,
+      "error": "",
+      "intended_url": "https://developers.google.com/tech-writing/one/audience",
+      "markdown_characters": 19448,
+      "native_result_bytes": 251302,
+      "native_result_sha256": "53d36055e8b6a028f6556c7d71bd96c589a08a96aa285848ad4af35276a9811f",
+      "native_url": "https://developers.google.com/tech-writing/one/audience",
+      "provider_version": "0.9.5+catalog.portable4",
+      "review_scope": "Audience, required knowledge, vocabulary and curse of knowledge, 4394:12002",
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "source_manifest_sha256": "97e3fef112e93c65de6032a155d0d79d2e9d8a6634b94da7450027c1834f5c86",
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "success": true
+    },
+    {
+      "eligible_for_scope_review": true,
+      "error": "",
+      "intended_url": "https://kubernetes.io/docs/home/",
+      "markdown_characters": 110033,
+      "native_result_bytes": 1935790,
+      "native_result_sha256": "0eb2e75b3da70b4db09430b2a7708cef905daa7c0caf833a4288a808829727dc",
+      "native_url": "https://kubernetes.io/docs/home/",
+      "provider_version": "0.9.5+catalog.portable4",
+      "review_scope": "User/contribution task panels, 102608:107708",
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "source_manifest_sha256": "97e3fef112e93c65de6032a155d0d79d2e9d8a6634b94da7450027c1834f5c86",
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "success": true
+    },
+    {
+      "eligible_for_scope_review": true,
+      "error": "",
+      "intended_url": "https://docs.codecov.com/docs/codecov-tokens",
+      "markdown_characters": 23569,
+      "native_result_bytes": 497565,
+      "native_result_sha256": "98457313259c361795c70d8c0d15b1d474d6c45ce0d40c7dcdb59ec8c3df9470",
+      "native_url": "https://docs.codecov.com/docs/codecov-tokens",
+      "provider_version": "0.9.5+catalog.portable4",
+      "review_scope": "Authentication, tokenless limits and their documented prerequisites",
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "source_manifest_sha256": "97e3fef112e93c65de6032a155d0d79d2e9d8a6634b94da7450027c1834f5c86",
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "success": true
+    },
+    {
+      "eligible_for_scope_review": true,
+      "error": "",
+      "intended_url": "https://docs.codecov.com/docs/codecov-yaml",
+      "markdown_characters": 23755,
+      "native_result_bytes": 505504,
+      "native_result_sha256": "efd80c196cca687f28b5adeaebf093e0b6dd6b1a24e4a88737ff685dc0a93d2b",
+      "native_url": "https://docs.codecov.com/docs/codecov-yaml",
+      "provider_version": "0.9.5+catalog.portable4",
+      "review_scope": "Repository configuration, validation endpoint, accepted paths, default branch and report-age rules",
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "source_manifest_sha256": "97e3fef112e93c65de6032a155d0d79d2e9d8a6634b94da7450027c1834f5c86",
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "success": true
+    }
+  ]
+}

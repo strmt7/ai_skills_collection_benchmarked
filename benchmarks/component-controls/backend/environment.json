@@ -1,0 +1,16 @@
+{
+  "platform": "Windows x64",
+  "node_version": "v26.12.1",
+  "npm_version": "12.2.1",
+  "go_version": "go version go1.27.3 windows/amd64",
+  "direct_versions": {
+    "@types/react": "19.3.0",
+    "jsdom": "30.1.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "typescript": "7.0.2",
+    "zod": "4.6.7"
+  },
+  "dependency_lock": "benchmarks/component-controls/frontend/package-lock.json",
+  "go_archive_sha256": "f26081f438319757f8a1b46d7d0b2c5ec7583d4038e485e0aa725cfde7885fff"
+}

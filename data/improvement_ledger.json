@@ -36,17 +36,74 @@
     "affaan-m-everything-claude-code-agents-skills-api-design-skill-md": {
       "category": "Coding, refactoring & repository automation",
       "evaluation": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/backend-contracts/backend-review.json",
+            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+          },
+          {
+            "path": "docs/research-backend-contracts.md",
+            "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
+          },
+          {
+            "path": "benchmarks/component-controls/backend/result.json",
+            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+          }
+        ],
+        "scope": "Selected source-bound component controls only; no whole-skill or model-efficacy claim",
+        "status": "in_progress"
       },
       "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/api-design",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/backend-contracts/backend-review.json",
+            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+          },
+          {
+            "path": "docs/research-backend-contracts.md",
+            "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
+          },
+          {
+            "path": "benchmarks/component-controls/backend/result.json",
+            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+          }
+        ],
+        "open_work": [
+          "Complete original package read; whole-domain/runtime and agent-efficacy qualification remain open"
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "review_scope": "Complete original instruction body and all examples",
+            "sha256": "de3be9cde47bd707b2a8af79254915ed03bfcd1b2aeb187f1d889597e8cbb76d",
+            "status": "reviewed"
+          },
+          "agents/openai.yaml": {
+            "review_scope": "Complete UI, activation policy and default prompt; not installed",
+            "sha256": "e823a4342b02b5410aae18a3c3ad351d8a73b206b59f1446dc04c43c4944c2dd",
+            "status": "reviewed"
+          }
+        },
+        "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/backend-contracts/backend-review.json",
+            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+          },
+          {
+            "path": "docs/research-backend-contracts.md",
+            "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
+          },
+          {
+            "path": "benchmarks/component-controls/backend/result.json",
+            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+          }
+        ],
+        "scope": "Licensed experimental overlay with complete original provenance; immutable mirror unchanged",
+        "status": "complete"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
@@ -80,17 +137,74 @@
     "affaan-m-everything-claude-code-agents-skills-backend-patterns-skill-md": {
       "category": "Coding, refactoring & repository automation",
       "evaluation": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/backend-contracts/backend-review.json",
+            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+          },
+          {
+            "path": "docs/research-backend-contracts.md",
+            "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
+          },
+          {
+            "path": "benchmarks/component-controls/backend/result.json",
+            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+          }
+        ],
+        "scope": "Selected source-bound component controls only; no whole-skill or model-efficacy claim",
+        "status": "in_progress"
       },
       "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/backend-patterns",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/backend-contracts/backend-review.json",
+            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+          },
+          {
+            "path": "docs/research-backend-contracts.md",
+            "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
+          },
+          {
+            "path": "benchmarks/component-controls/backend/result.json",
+            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+          }
+        ],
+        "open_work": [
+          "Complete original package read; whole-domain/runtime and agent-efficacy qualification remain open"
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "review_scope": "Complete original instruction body and all examples",
+            "sha256": "952e95fd7e8d0b17f13835dde8067d7dd2abd019e6e17821d5ebf913113c589e",
+            "status": "reviewed"
+          },
+          "agents/openai.yaml": {
+            "review_scope": "Complete UI, activation policy and default prompt; not installed",
+            "sha256": "6a56b16e6ea055931bc38979c12279e7cd3ac7d3440bdd8fa1dc3152d003d36b",
+            "status": "reviewed"
+          }
+        },
+        "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/backend-contracts/backend-review.json",
+            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+          },
+          {
+            "path": "docs/research-backend-contracts.md",
+            "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
+          },
+          {
+            "path": "benchmarks/component-controls/backend/result.json",
+            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+          }
+        ],
+        "scope": "Licensed experimental overlay with complete original provenance; immutable mirror unchanged",
+        "status": "complete"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
@@ -469,17 +583,74 @@
     "affaan-m-everything-claude-code-agents-skills-everything-claude-code-skill-md": {
       "category": "Coding, refactoring & repository automation",
       "evaluation": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/backend-contracts/backend-review.json",
+            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+          },
+          {
+            "path": "docs/research-backend-contracts.md",
+            "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
+          },
+          {
+            "path": "benchmarks/component-controls/backend/result.json",
+            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+          }
+        ],
+        "scope": "Selected source-bound component controls only; no whole-skill or model-efficacy claim",
+        "status": "in_progress"
       },
       "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/everything-claude-code-conventions",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/backend-contracts/backend-review.json",
+            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+          },
+          {
+            "path": "docs/research-backend-contracts.md",
+            "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
+          },
+          {
+            "path": "benchmarks/component-controls/backend/result.json",
+            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+          }
+        ],
+        "open_work": [
+          "Complete original package read; whole-domain/runtime and agent-efficacy qualification remain open"
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "review_scope": "Complete original instruction body and all examples",
+            "sha256": "f3d3984ea3d05a632379408dfe91974ab0c7d890e0a86115650b48b47274cbfc",
+            "status": "reviewed"
+          },
+          "agents/openai.yaml": {
+            "review_scope": "Complete UI, activation policy and default prompt; not installed",
+            "sha256": "595da338b7ad5a3c3631db8367ada185bb15ddbd86c5c08a85bfcc9885c651e1",
+            "status": "reviewed"
+          }
+        },
+        "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/backend-contracts/backend-review.json",
+            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+          },
+          {
+            "path": "docs/research-backend-contracts.md",
+            "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
+          },
+          {
+            "path": "benchmarks/component-controls/backend/result.json",
+            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+          }
+        ],
+        "scope": "Licensed experimental overlay with complete original provenance; immutable mirror unchanged",
+        "status": "complete"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
@@ -636,17 +807,74 @@
     "affaan-m-everything-claude-code-agents-skills-investor-materials-skill-md": {
       "category": "Coding, refactoring & repository automation",
       "evaluation": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/backend-contracts/backend-review.json",
+            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+          },
+          {
+            "path": "docs/research-backend-contracts.md",
+            "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
+          },
+          {
+            "path": "benchmarks/component-controls/backend/result.json",
+            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+          }
+        ],
+        "scope": "Selected source-bound component controls only; no whole-skill or model-efficacy claim",
+        "status": "in_progress"
       },
       "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/investor-materials",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/backend-contracts/backend-review.json",
+            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+          },
+          {
+            "path": "docs/research-backend-contracts.md",
+            "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
+          },
+          {
+            "path": "benchmarks/component-controls/backend/result.json",
+            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+          }
+        ],
+        "open_work": [
+          "Complete original package read; whole-domain/runtime and agent-efficacy qualification remain open"
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "review_scope": "Complete original instruction body and all examples",
+            "sha256": "0541ac8ede8d39c59a646834481d0de86312e598331b86dc7027ece0def3c193",
+            "status": "reviewed"
+          },
+          "agents/openai.yaml": {
+            "review_scope": "Complete UI, activation policy and default prompt; not installed",
+            "sha256": "fae8c572e0edc7110f692e115d4ad7fa20d2d2852dead8dc366bfebdbf29b041",
+            "status": "reviewed"
+          }
+        },
+        "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/backend-contracts/backend-review.json",
+            "sha256": "09de468ec832de222ac58e2a6f0e0381915416fc4ff04134eca0ef33fe1b578e"
+          },
+          {
+            "path": "docs/research-backend-contracts.md",
+            "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
+          },
+          {
+            "path": "benchmarks/component-controls/backend/result.json",
+            "sha256": "dce96faf34b87ba3297484819cb87eeb0d9c690db86c53aadb888a7059848744"
+          }
+        ],
+        "scope": "Instructions retained; finance/documentation routing change reserved for final layout",
+        "status": "in_progress"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {

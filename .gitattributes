@@ -18,6 +18,9 @@
 # Exact npm Windows captures are bound into the qualified dependency receipt.
 /benchmarks/component-controls/frontend/package.json -text
 /benchmarks/component-controls/frontend/package-lock.json -text
+# Backend controllers are authored text; retained native streams are exact bytes.
+/benchmarks/component-controls/backend/** text eol=lf
+/benchmarks/component-controls/backend/native/** -text
 # Trial evidence hashes describe exact captured bytes, including Windows logs.
 # Preserve them across Git transports instead of converting line endings.
 /artifacts/agent-trials/** -text

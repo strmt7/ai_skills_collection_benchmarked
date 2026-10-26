@@ -1,0 +1,22 @@
+# Python tooling coverage; skill efficacy is evaluated separately.
+coverage:
+  status:
+    project:
+      default:
+        target: auto
+        threshold: 0%
+        if_ci_failed: error
+    patch:
+      default:
+        target: 90%
+        threshold: 0%
+        informational: true
+        if_ci_failed: error
+
+comment: false
+
+flags:
+  python_tooling:
+    paths:
+      - tools/
+    carryforward: false

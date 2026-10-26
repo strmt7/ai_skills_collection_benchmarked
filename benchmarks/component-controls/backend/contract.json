@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "measurement_kind": "component_contract_controls",
+  "agent_performance_claim": false,
+  "independence": "Expected behavior follows the cited protocol/SDK contracts and declared application requirements. The author read the skill examples before designing these targeted regressions. This is not a blind, held-out or representative skill/agent evaluation.",
+  "node_contracts": {
+    "post-valid-created": "Valid input creates once and returns 201 with Location and the public record.",
+    "post-schema-rejected": "Schema-invalid input returns 422 without calling creation.",
+    "post-malformed-json": "Malformed or concatenated JSON returns 400 without calling creation.",
+    "auth-valid": "A valid Bearer credential reaches the handler with its verified principal.",
+    "auth-scheme-case": "The HTTP authentication scheme is case insensitive; the credential itself is unchanged.",
+    "auth-challenge": "A missing credential returns 401 with a Bearer WWW-Authenticate challenge.",
+    "auth-invalid": "A known invalid credential returns 401 and never calls the handler.",
+    "auth-downstream-sync": "A synchronous application failure after successful verification propagates to the application error boundary.",
+    "auth-downstream-async": "An asynchronous application failure after successful verification propagates to that boundary.",
+    "auth-verifier-unavailable": "An unexpected verifier/service failure propagates instead of masquerading as an invalid credential.",
+    "retry-transient-recovery": "An explicitly replay-safe read can recover from a classified transient failure within three attempts.",
+    "retry-permanent-stop": "A failure classified as permanent stops after one attempt and preserves the failure.",
+    "retry-cancelled-before-start": "An already aborted operation performs zero attempts and preserves its cancellation reason.",
+    "zod4-error-issues": "A validation response includes the current Zod issue array and the excerpt type-checks against the qualified SDK.",
+    "log-context-integrity": "Context cannot overwrite the trusted log severity, message or timestamp.",
+    "exception-provenance": "A wrapper preserves an operation's original failure directly or as its cause."
+  },
+  "go_contracts": {
+    "valid-object": "Decode one typed JSON object and preserve its name.",
+    "trailing-whitespace": "Accept legal trailing JSON whitespace and preserve the name.",
+    "concatenated-values": "Reject multiple top-level JSON values in a single application/json request.",
+    "trailing-garbage": "Reject garbage after a valid top-level JSON object.",
+    "wrong-field-type": "Reject a number where the fixture DTO requires a string.",
+    "body-budget": "Enforce the declared request byte budget and preserve a typed MaxBytesError."
+  },
+  "application_choices": [
+    "These create-user fixtures choose 422 for schema errors and 400 for JSON syntax errors.",
+    "The retry cases explicitly opt into a classified, replay-safe read policy; they do not authorize retries of arbitrary writes.",
+    "The Go cases require a single typed JSON object within the declared byte budget; they are not a streaming JSON API."
+  ],
+  "limits": [
+    "No AI agent, JWT cryptographic verification, database, Redis server, full Next.js/Django application or production HTTP deployment is evaluated.",
+    "Supplied types and response factories exercise only the exact excerpt operations; their presence does not qualify a complete framework integration.",
+    "Locked and current upstream excerpts share executable text where recorded; identical source aliases do not create additional experimental arms.",
+    "These are deterministic functional controls. They do not estimate model task success, latency, throughput or skill-wide readiness."
+  ],
+  "sources": [
+    "https://httpwg.org/specs/rfc9110.html#auth.scheme",
+    "https://httpwg.org/specs/rfc9110.html#status.401",
+    "https://httpwg.org/specs/rfc9110.html#idempotent.methods",
+    "https://zod.dev/v4/changelog",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/cause",
+    "Qualified Go SDK: encoding/json.Decoder.Decode and net/http.MaxBytesReader"
+  ]
+}

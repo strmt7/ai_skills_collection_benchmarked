@@ -1,121 +1,67 @@
-# Host-, Agent-, and Installation-Agnostic Setup
+# Install and use a skill
 
-Host-agnostic means no dependency on a particular machine, user profile,
-installation path or AI agent. Operating-system requirements remain explicit
-for each component. The qualified [Crawl4AI provider](../toolchains/crawl4ai/README.md)
-targets Windows x64; host independence does not require porting it to other
-operating systems.
+You can [browse the catalog](catalog/index.md) without installing the Python
+tooling. Each entry links to its locked source, bundled resources and recorded
+evidence. Catalog inclusion does not establish compatibility with your agent or
+successful execution in your environment.
 
-This repository is designed so that *validation* of the catalog and *every
-quality gate run by CI* targets Python 3.11–3.14 on Linux and current Python
-on Windows,
-without root, without a specific username, and without referencing any path
-under `/tmp` or `/home/<user>/`.
+## Get a local copy
 
-Use Python 3.14.8 for the current validation environment. Compatibility CI also
-selects current security patches for supported older Python series. Python 3.10
-has reached end of life. Live services, devices, GPUs, external data sources,
-and installed agent runtimes need separate qualification; an offline catalog
-check does not prove their behavior. On Windows, use the active environment's
-`Scripts/python.exe` in place of `python3` in the commands below.
+Clone the collection into a directory you choose:
 
-## Validate from a fresh clone
-
-```bash
-python3 -m venv .venv
-. .venv/bin/activate
-python3 -m pip install -e '.[test,lint]'
-
-# 1. Catalog & cross-reference validation (collects all errors, exits non-zero
-#    on any drift). Runs offline; no source checkouts required.
-python3 tools/validate_catalog.py
-python3 tools/validate_agent_tool_policy.py --check --json
-
-# 2. Source-lock validator (offline by default; falls back to env-driven live
-#    mode when AI_SKILL_SOURCE_ROOT points at a real directory).
-python3 tools/validate_source_lock.py
-
-# 3. Static benchmarks freshness check.
-python3 tools/run_static_benchmarks.py --check
-
-# 4. Skill quality / risk audit freshness check.
-python3 tools/audit_skill_quality.py --check
-
-# 5. Markdown link reporter (writes docs/local-markdown-link-failures.md).
-python3 tools/report_local_markdown_link_failures.py --check
-
-# 6. Secret scan (exits non-zero if ANY secret-shaped string is found in the
-#    working tree or git history).
-python3 tools/check_no_secret_patterns.py --history
-
-# 7. Lint, format, type-check, and run the full test suite.
-ruff check tools tests
-ruff format --check tools tests
-mypy tools tests
-python3 -m pytest -q -n auto
+```powershell
+git clone https://github.com/strmt7/ai_skills_collection_benchmarked.git
+cd ai_skills_collection_benchmarked
 ```
 
-Every command above runs without network access. CI uses the same gates plus
-`gitleaks` (MIT, pinned binary) as a second-opinion secret scan.
+Keep the repository structure intact. Agent-ready entrypoints and maintained
+overlays contain relative links to resources, provenance and the agent-tool
+policy. Copying a `SKILL.md` file alone can break those links.
 
-## Reproducible / deterministic regeneration
+## Choose a skill
 
-Generators that produce dated artifacts (catalog, runtime batches, repaired
-overlays) honour the [reproducible-builds.org][repro] precedence:
+1. Find your task in the [catalog](catalog/index.md) or
+   [selected skills](selected-skills.md).
+2. Read the skill's requirements, licence and evidence. Check the required
+   operating system, runtime, external service and data access.
+3. Choose the locked [source mirror](../included/skills/README.md) for the
+   original instructions, or an explicitly documented repaired/maintained
+   overlay when its tested scope fits your task. The original mirror remains
+   available for comparison.
 
-1. `SOURCE_DATE_EPOCH` (Unix seconds since epoch) — explicit pin.
-2. The previous run's manifest value — idempotent regeneration.
-3. The latest commit time of the relevant input — input-anchored fallback.
+## Load it in your agent
 
-```bash
-# Pin every dated artifact to a specific instant for reproducible CI builds.
-export SOURCE_DATE_EPOCH=1745870400
-python3 tools/build_catalog.py --source-root /path/to/ai_skill_sources
-```
+For an agent that accepts local skill folders, use that agent's documented
+configuration to point to the selected folder in your clone. For a file-reading
+agent, provide the selected `SKILL.md` path and ask it to read linked resources
+as needed. Compact starting points are under
+[agent-ready skills](../included/agent-ready/README.md).
 
-## Catalog rebuild (requires upstream checkouts)
+Agents using this collection must follow the
+[mandatory agent tools](agent-tools.md): Caveman for every task, source-bound
+CocoIndex Code before conceptual repository navigation, and Crawl4AI for web-page
+research. Keep the local policy and all linked resources accessible. Tool setup
+and actual execution receipts are required where those scopes apply; installing
+a skill or copying an entrypoint does not prove compliance.
 
-A full rebuild needs the upstream skill source repositories cloned somewhere on
-disk. Point at them with the `--source-root` argument or via the
-`AI_SKILL_SOURCE_ROOT` environment variable; the path is never assumed.
+Run a small task in your actual agent environment and inspect its output before
+depending on broader behaviour. [Read the evidence guide](coverage.md) to
+distinguish packaging checks, component tests and agent trials.
 
-```bash
-export AI_SKILL_SOURCE_ROOT=$HOME/ai-skill-sources   # any directory you choose
-python3 tools/build_catalog.py
-python3 tools/validate_source_lock.py --source-root "$AI_SKILL_SOURCE_ROOT" --strict
-```
+## Requirements and troubleshooting
 
-To update an already cataloged source without re-resolving unrelated repositories,
-first verify its stable upstream release, update its declaration in
-`tools/build_catalog.py`, and prepare a clean checkout at that exact pinned ref.
-Then stage a scoped refresh:
+Host-agnostic means no fixed machine, username, installation path or AI client.
+Each component keeps its documented operating-system requirements. The qualified
+[Crawl4AI provider](../toolchains/crawl4ai/README.md) supports Windows x64.
+Catalog-validation CI also exercises Linux; that does not port the Windows
+provider or certify every mirrored skill on Linux.
 
-```bash
-python3 tools/build_catalog.py --source-root /path/to/ai-skill-sources \
-  --credential-policy 3 --refresh-source hugohe3/ppt-master --check --json
-```
+If a resource link fails, open the skill from the intact clone. If a required
+provider is missing or stale, follow [the tool setup policy](agent-tools.md)
+and restore it before dependent work. Keep other projects' provider registrations
+and caches intact.
 
-An expected update makes `--check` report drift and exit nonzero; inspect the
-retained staging directory before publishing. Repeat without `--check` to
-publish the regenerated catalog through the recoverable publication journal,
-then run every applicable quality gate above. The tool verifies all existing
-locked mirrors, preserves unrelated source signatures and contents, and records
-legacy Git executable modes explicitly for portable staging. It refuses an
-update that would rename unrelated skills. Only selected repositories need
-source checkouts; retaining a mirror does not establish upstream freshness or
-runtime readiness for that source. Neither mode fetches upstream repositories.
-
-Evaluator schemas under `evaluators/` are maintained scoring inputs in the
-independent artifact loop; catalog generation never rewrites them. README
-packaging and adapter counts come from their existing manifests, which are
-also preserved rather than regenerated during a source refresh.
-
-## Why the catalog is host-portable
-
-Tree hashes used in `data/skills_catalog.json`, the manifests, and
-`data/source_lock.json` use a git-style portable file mode (`0o100644` /
-`0o100755`) so a clone made with `umask 0002` produces the same tree hash as a
-clone made with `umask 0022`. The `tests/test_hash_portability.py` module
-locks the invariant in: see also `tools/build_catalog.py::_portable_mode`.
-
-[repro]: https://reproducible-builds.org/docs/source-date-epoch/
+For changes to this collection, use the separate
+[contributor guide](../CONTRIBUTING.md) and
+[development setup](development.md), including reproducible regeneration and
+all local quality gates.

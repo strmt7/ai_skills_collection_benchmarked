@@ -4,6 +4,11 @@ This repository governs three independent work loops (catalog mirror, artifact
 & test, and repair overlay). Read [`AGENTS.md`](AGENTS.md) before any change
 that touches more than one of those loops.
 
+For skill installation and use, start with the
+[user documentation](docs/README.md). To maintain this collection, use
+[development setup](docs/development.md). Follow the
+[documentation guide](docs/documentation-guide.md) when changing public pages.
+
 ## Quality gates (must pass before merge)
 
 Every pull request runs the following gates in CI; you can run all of them
@@ -20,6 +25,9 @@ locally with the toolchain installed via `pip install -e '.[test,lint]'`:
 | Static benchmarks | `python3 tools/run_static_benchmarks.py --check` | `.github/workflows/offline-validation.yml` |
 | Risk audit | `python3 tools/audit_skill_quality.py --check` | `.github/workflows/offline-validation.yml` |
 | Workflow evaluator controls | `python3 tools/report_workflow_evaluator_controls.py --check --json` | `.github/workflows/offline-validation.yml` |
+| Frontend component evidence | `python3 benchmarks/component-controls/frontend/prepare.py --check` | `.github/workflows/offline-validation.yml` |
+| API/backend component evidence | `python3 benchmarks/component-controls/backend/prepare_backend.py --check` | `.github/workflows/offline-validation.yml` |
+| Measured Python coverage | Complete matrix XML bundle, source hashes and Codecov OIDC; see [coverage scope](docs/coverage.md) | `.github/workflows/offline-validation.yml` |
 | Tests | `python3 -m pytest -q -n auto` (supported matrix: 3.11/3.12/3.13/3.14) | `.github/workflows/offline-validation.yml` |
 | Compile | `python3 -m compileall -q tools tests` | `.github/workflows/offline-validation.yml` |
 | Image CLI acceptance | Source-locked preparation, `npm ci --ignore-scripts`, audit and independent intercepted controls; see [`repair evidence`](docs/research-image-cli-acceptance.md) | `.github/workflows/image-cli-controls.yml` |
@@ -28,8 +36,10 @@ locally with the toolchain installed via `pip install -e '.[test,lint]'`:
 | Secrets (in-repo) | `python3 tools/check_no_secret_patterns.py --history` | `.github/workflows/secret-scan.yml` |
 | Secrets (gitleaks) | `gitleaks git --exit-code 1 .` | `.github/workflows/secret-scan.yml` |
 
-Concurrency, least-privilege `permissions: contents: read`, and pip caching
-are configured per workflow. All workflows accept `workflow_dispatch` so you
+Concurrency, least-privilege read permissions and pip caching are configured
+per workflow. In offline validation, only the isolated Codecov upload job receives
+`id-token: write`; test jobs keep read-only repository access.
+All workflows accept `workflow_dispatch` so you
 can rerun them manually from the Actions tab.
 
 ## Code style
@@ -83,23 +93,17 @@ email; the rule above applies **only** to AI-generated commits.
 
 ### Remediating a bad identity
 
-If an AI commit lands with the wrong author/committer (e.g. a named human,
-GitHub noreply, `ai-agent@users.noreply.github.com`, `codex@openai.com`,
-`codex@openai.invalid`, or a hyphenated `AI-agent`), rewrite history before
-push:
+First retain a fresh audit of branch heads, authors, committers and trailers,
+reporting PR heads separately. Use `git filter-repo` in an isolated checkout
+with an explicitly reviewed list of affected commits and identities. Preserve
+valid human and bot attribution and verify the exact `AI agent <>` form before
+publishing. A generic name/email replacement or an unreviewed callback is not
+an identity repair.
 
-```bash
-python3 -m pip install --user git-filter-repo  # once per machine
-git filter-repo --force \
-  --email-callback 'return b"" if email == b"<BAD_EMAIL>" else email' \
-  --name-callback  'return b"AI agent" if email == b"<BAD_EMAIL>" else name'
-git remote add origin https://github.com/strmt7/ai_skills_collection_benchmarked.git
-git push --force-with-lease origin main
-```
-
-Re-run `gh api 'repos/strmt7/ai_skills_collection_benchmarked/contributors?anon=1'`
-and every CI workflow after the force-push, and delete/recreate any tags
-that pointed into the rewritten range.
+Treat any necessary history publication as a separate operation: retain
+recoverable refs, inspect the full rewritten range and update only the verified
+affected refs. Re-run the anonymous-contributor API audit and required workflows
+after publication. Routine changes use an ordinary fast-forward push to `main`.
 
 ## Commit messages
 

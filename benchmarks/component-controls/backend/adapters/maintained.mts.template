@@ -1,0 +1,26 @@
+import { z } from 'zod';
+import { readValidatedJSON } from './request-json.mjs';
+import { CredentialError, withBearerAuth, retryRead, validationErrorResponse, buildLogRecord } from './boundaries.mjs';
+export { CredentialError, retryRead };
+export const errorResponse = validationErrorResponse;
+export const buildRecord = buildLogRecord;
+type Principal = { id: string };
+let verifier: (token: string) => Promise<Principal>;
+export function setVerifier(value: typeof verifier) { verifier = value; }
+type CreateInput = { email: string; name: string };
+type PublicUser = CreateInput & { id: string };
+let createUser: (input: CreateInput) => Promise<PublicUser>;
+export function setCreateUser(value: typeof createUser) { createUser = value; }
+const schema = z.object({ email: z.string().email(), name: z.string().min(1).max(100) });
+export async function post(request: Request): Promise<Response> {
+ const parsed = await readValidatedJSON(request, schema);
+ if (!parsed.ok) return parsed.response;
+ const user = await createUser(parsed.value);
+ return Response.json({ data: user }, { status: 201, headers: { Location: `/api/v1/users/${user.id}` } });
+}
+export async function auth(request: Request, handler: (request: Request, principal: Principal) => Response | Promise<Response>): Promise<Response> {
+ return withBearerAuth(verifier, handler)(request);
+}
+export async function preserveFailure(operation: () => Promise<unknown>) {
+/* PROFILE_EXCERPT */
+}

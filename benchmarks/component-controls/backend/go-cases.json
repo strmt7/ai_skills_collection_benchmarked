@@ -1,0 +1,8 @@
+[
+  {"id":"valid-object","body":"{\"name\":\"Ada\"}","budget":64,"accept":true,"name":"Ada"},
+  {"id":"trailing-whitespace","body":"{\"name\":\"Grace\"}\n \t","budget":64,"accept":true,"name":"Grace"},
+  {"id":"concatenated-values","body":"{\"name\":\"Ada\"} {\"name\":\"Other\"}","budget":64,"accept":false},
+  {"id":"trailing-garbage","body":"{\"name\":\"Ada\"} garbage","budget":64,"accept":false},
+  {"id":"wrong-field-type","body":"{\"name\":42}","budget":64,"accept":false},
+  {"id":"body-budget","body":"{\"name\":\"This field deliberately exceeds the small declared byte budget\"}","budget":32,"accept":false,"max_bytes_error":true}
+]

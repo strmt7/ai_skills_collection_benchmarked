@@ -156,9 +156,8 @@ exclude_also = [
   "if TYPE_CHECKING:",
   "pragma: no cover",
 ]
-# Floor below the current measured coverage (49.2%) so CI enforces a
-# no-regression gate immediately while we raise the bar per deep-rewrite pass.
-# Re-measure and increase after each batch of rewrites.
+# Coarse local minimum. Codecov separately compares measured head coverage
+# against the base commit; this percentage does not measure skill efficacy.
 fail_under = 45
 show_missing = true
 skip_covered = true

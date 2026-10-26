@@ -1,0 +1,1 @@
+source.mts(95,22): error TS2339: Property 'errors' does not exist on type 'ZodError<unknown>'.
