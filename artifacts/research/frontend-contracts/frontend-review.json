@@ -1,0 +1,362 @@
+{
+  "agent_performance_status": "unbenchmarked",
+  "base_publication_commit": "b27e24e9d9295c0f8ee4d19a35f4f4e471011c1a",
+  "category": "Frontend, UI & browser automation",
+  "cocoindex": {
+    "actual_source_file_count": 7,
+    "coverage_note": "The actual seven selected source files were indexed. The requested nonexistent overlay manifest prefix selected no file and supplies no evidence.",
+    "other_indexes_modified": false,
+    "receipt_sha256": "423b7c02680b86d26a1977d83d38a28ad51f4131ce6dbe73854e0929b94b9b83"
+  },
+  "component_result_path": "benchmarks/component-controls/frontend/result.json",
+  "component_result_sha256": "f0824f04eb0ef4885b52ff6f10e98c75b204ae0f27f311aac3c945ea3f158ea4",
+  "crawl4ai_platform": "Windows x64",
+  "mirrors_changed": false,
+  "native_api_blob_verification": "Git blob SHA-1 verified for every admitted raw text",
+  "open_qualification": [
+    "Full framework/browser/accessibility runtime qualification",
+    "macOS native troubleshooting and successor-path investigation",
+    "Representative independently controlled coding-agent trials"
+  ],
+  "os_port_performed": false,
+  "resources": [
+    {
+      "path": "agents/openai.yaml",
+      "review_status": "reviewed",
+      "scope": "Complete UI metadata, activation policy and default prompt; not installed",
+      "sha256": "5661a2691330e2a64e41d2c38638809eeeafb44a62d3a5d434fdc234ad3bb235",
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-coding-standards-skill-md"
+    },
+    {
+      "path": "SKILL.md",
+      "review_status": "reviewed",
+      "scope": "Complete instruction body and examples; source/version/platform and dependency contracts",
+      "sha256": "f856f758c97fb62ddbfbd75d4570e03bf4ed04c258d13756fecdb313a04cc8d9",
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-coding-standards-skill-md"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "review_status": "reviewed",
+      "scope": "Complete UI metadata, activation policy and default prompt; not installed",
+      "sha256": "8b21415748f7b5cb0f289f1f2c4cad934ef4cee1cdaa6306dbf2d7754b1ca8ec",
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-frontend-patterns-skill-md"
+    },
+    {
+      "path": "SKILL.md",
+      "review_status": "reviewed",
+      "scope": "Complete instruction body and examples; source/version/platform and dependency contracts",
+      "sha256": "dd04a1c02503036ee7f4d649c9b7b75d2e6954a94d6f464faedfa992701d1978",
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-frontend-patterns-skill-md"
+    },
+    {
+      "path": "SKILL.md",
+      "review_status": "reviewed",
+      "scope": "Complete instruction body and examples; source/version/platform and dependency contracts",
+      "sha256": "7ead464089964766aa2c9d58f4d84b63fc628f9a20f094f4d1a84134fb224985",
+      "skill_id": "trailofbits-skills-plugins-claude-in-chrome-troubleshooting-skills-claude-in-chrome-troubleshooting-skill-md"
+    }
+  ],
+  "schema_version": 1,
+  "source_captures": [
+    {
+      "admitted_as_raw_source": true,
+      "blob": "200b55c000da1fc2b60eb60658ee88923e298094",
+      "bytes": 11805,
+      "label": "locked",
+      "native_exit_code": 0,
+      "path": "coding-standards-locked.SKILL.md",
+      "ref": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "sha256": "f856f758c97fb62ddbfbd75d4570e03bf4ed04c258d13756fecdb313a04cc8d9",
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-coding-standards-skill-md",
+      "source_path": ".agents/skills/coding-standards/SKILL.md"
+    },
+    {
+      "admitted_as_raw_source": true,
+      "blob": "6ca1401aa490f36d31e876a46e6b0ed4653fa41c",
+      "bytes": 12855,
+      "label": "latest-head",
+      "native_exit_code": 0,
+      "path": "coding-standards-latest-head.SKILL.md",
+      "ref": "f3904009440af24f00617343910ee89714df8be3",
+      "sha256": "7295014cdb95589b28e9ac687e0c40a7fd329288e18a0e6fb6c5b1ed58437a0d",
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-coding-standards-skill-md",
+      "source_path": ".agents/skills/coding-standards/SKILL.md"
+    },
+    {
+      "admitted_as_raw_source": true,
+      "blob": "ef0de63f20229fb98050466941a940f0f7973667",
+      "bytes": 14773,
+      "label": "locked",
+      "native_exit_code": 0,
+      "path": "frontend-patterns-locked.SKILL.md",
+      "ref": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "sha256": "dd04a1c02503036ee7f4d649c9b7b75d2e6954a94d6f464faedfa992701d1978",
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-frontend-patterns-skill-md",
+      "source_path": ".agents/skills/frontend-patterns/SKILL.md"
+    },
+    {
+      "admitted_as_raw_source": true,
+      "blob": "6696c275afafe9ed87b2bcb47aca555e23688e9d",
+      "bytes": 16059,
+      "label": "latest-head",
+      "native_exit_code": 0,
+      "path": "frontend-patterns-latest-head.SKILL.md",
+      "ref": "f3904009440af24f00617343910ee89714df8be3",
+      "sha256": "722866e1106ca51a6eb7f6dd163554d5fa3a30fe9beb5fdbc075ab3a84ae883b",
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-frontend-patterns-skill-md",
+      "source_path": ".agents/skills/frontend-patterns/SKILL.md"
+    },
+    {
+      "admitted_as_raw_source": true,
+      "blob": "6544b3622913806236deccc5f363bcf343f17180",
+      "bytes": 10280,
+      "label": "locked",
+      "native_exit_code": 0,
+      "path": "claude-in-chrome-troubleshooting-locked.SKILL.md",
+      "ref": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
+      "sha256": "7ead464089964766aa2c9d58f4d84b63fc628f9a20f094f4d1a84134fb224985",
+      "skill_id": "trailofbits-skills-plugins-claude-in-chrome-troubleshooting-skills-claude-in-chrome-troubleshooting-skill-md",
+      "source_path": "plugins/claude-in-chrome-troubleshooting/skills/claude-in-chrome-troubleshooting/SKILL.md"
+    },
+    {
+      "admitted": false,
+      "label": "latest-head",
+      "native_exit_code": 1,
+      "ref": "196a9073ab10d35bacf111f945e02c00b2c6883a",
+      "skill_id": "trailofbits-skills-plugins-claude-in-chrome-troubleshooting-skills-claude-in-chrome-troubleshooting-skill-md",
+      "source_path": "plugins/claude-in-chrome-troubleshooting/skills/claude-in-chrome-troubleshooting/SKILL.md"
+    },
+    {
+      "admitted_as_raw_source": true,
+      "blob": "b0dda0eff39f4ab5560668d1281aea289e0acd45",
+      "bytes": 261,
+      "label": "locked-ui-metadata",
+      "native_exit_code": 0,
+      "path": "coding-standards-locked-openai.yaml",
+      "ref": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "sha256": "5661a2691330e2a64e41d2c38638809eeeafb44a62d3a5d434fdc234ad3bb235",
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-coding-standards-skill-md",
+      "source_path": ".agents/skills/coding-standards/agents/openai.yaml"
+    },
+    {
+      "admitted_as_raw_source": true,
+      "blob": "00f85995644be2cd13914e4740eebb1b70db73ff",
+      "bytes": 251,
+      "label": "locked-ui-metadata",
+      "native_exit_code": 0,
+      "path": "frontend-patterns-locked-openai.yaml",
+      "ref": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "sha256": "8b21415748f7b5cb0f289f1f2c4cad934ef4cee1cdaa6306dbf2d7754b1ca8ec",
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-frontend-patterns-skill-md",
+      "source_path": ".agents/skills/frontend-patterns/agents/openai.yaml"
+    }
+  ],
+  "source_refresh_admitted": false,
+  "trailofbits_path_at_current_head": {
+    "admitted": false,
+    "complete_tree_contains_skill_basename": false,
+    "http_status": 404,
+    "license_gitblob": "3b7b82d0da2db857eda1a798dbd908ea136f07b5",
+    "native_exit_code": 1,
+    "pinned_root_license": "CC-BY-SA-4.0",
+    "successor_absence_claimed": false
+  },
+  "web_sources": [
+    {
+      "error": "",
+      "intended_url": "https://react.dev/reference/react/useEffect",
+      "markdown_characters": 70520,
+      "native_result_bytes": 1336908,
+      "native_result_sha256": "b756e2bacf5e2350343af78bb81da049e28ede4e8a20fc36dbfad39c7f415173",
+      "native_url": "https://react.dev/reference/react/useEffect",
+      "provider_version": "0.9.5+catalog.portable4",
+      "reviewed_sections": [
+        "Fetching data with Effects: cleanup and race conditions"
+      ],
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "source_manifest_sha256": "97e3fef112e93c65de6032a155d0d79d2e9d8a6634b94da7450027c1834f5c86",
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "success": true
+    },
+    {
+      "error": "",
+      "intended_url": "https://react.dev/reference/react/useMemo",
+      "markdown_characters": 54890,
+      "native_result_bytes": 1051465,
+      "native_result_sha256": "a7199d786324f01126cc24605b0bc22fdb1d5185f86d526a1f9d6673afa569f6",
+      "native_url": "https://react.dev/reference/react/useMemo",
+      "provider_version": "0.9.5+catalog.portable4",
+      "reviewed_sections": [
+        "My calculation runs twice: purity and local mutation"
+      ],
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "source_manifest_sha256": "97e3fef112e93c65de6032a155d0d79d2e9d8a6634b94da7450027c1834f5c86",
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "success": true
+    },
+    {
+      "error": "",
+      "intended_url": "https://zod.dev/v4/changelog",
+      "markdown_characters": 32961,
+      "native_result_bytes": 1080533,
+      "native_result_sha256": "d942c41910b997902170f580cf652e1b92a6a9eea7d1bb0ac4bf4bf17ce498cb",
+      "native_url": "https://zod.dev/v4/changelog",
+      "provider_version": "0.9.5+catalog.portable4",
+      "reviewed_sections": [
+        "ZodError: removed .errors and issue APIs"
+      ],
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "source_manifest_sha256": "97e3fef112e93c65de6032a155d0d79d2e9d8a6634b94da7450027c1834f5c86",
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "success": true
+    },
+    {
+      "error": "",
+      "intended_url": "https://developer.mozilla.org/en-US/docs/Web/API/Response/ok",
+      "markdown_characters": 18544,
+      "native_result_bytes": 260497,
+      "native_result_sha256": "c0caf1dd73ec189c264f40e4e79c3fc1e72cf551705d0c15a08b72f30cc7f935",
+      "native_url": "https://developer.mozilla.org/en-US/docs/Web/API/Response/ok",
+      "provider_version": "0.9.5+catalog.portable4",
+      "reviewed_sections": [
+        "Value and success status range"
+      ],
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "source_manifest_sha256": "97e3fef112e93c65de6032a155d0d79d2e9d8a6634b94da7450027c1834f5c86",
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "success": true
+    },
+    {
+      "error": "",
+      "intended_url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/cause",
+      "markdown_characters": 24548,
+      "native_result_bytes": 298449,
+      "native_result_sha256": "4c524057a5640fe814c6d88e5b377dcc2fa26ad56e45ba68c8f1a51e162e2390",
+      "native_url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/cause",
+      "provider_version": "0.9.5+catalog.portable4",
+      "reviewed_sections": [
+        "Rethrowing an error with a cause"
+      ],
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "source_manifest_sha256": "97e3fef112e93c65de6032a155d0d79d2e9d8a6634b94da7450027c1834f5c86",
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "success": true
+    },
+    {
+      "error": "",
+      "intended_url": "https://developer.chrome.com/docs/extensions/develop/concepts/native-messaging",
+      "markdown_characters": 36818,
+      "native_result_bytes": 506298,
+      "native_result_sha256": "b4a2618b8771667ad51a1001235241769233110e2582c3ab9a051239975799be",
+      "native_url": "https://developer.chrome.com/docs/extensions/develop/concepts/native-messaging",
+      "provider_version": "0.9.5+catalog.portable4",
+      "reviewed_sections": [
+        "Native messaging host and connecting to a native application"
+      ],
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "source_manifest_sha256": "97e3fef112e93c65de6032a155d0d79d2e9d8a6634b94da7450027c1834f5c86",
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "success": true
+    },
+    {
+      "error": "",
+      "intended_url": "https://code.claude.com/docs/en/chrome",
+      "markdown_characters": 33593,
+      "native_result_bytes": 949355,
+      "native_result_sha256": "f86dcef6683213c19899b647af3bd06f14996d03e011c76fa61c6abc03e07e27",
+      "native_url": "https://code.claude.com/docs/en/chrome",
+      "provider_version": "0.9.5+catalog.portable4",
+      "reviewed_sections": [
+        "Prerequisites and extension reconnect troubleshooting"
+      ],
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "source_manifest_sha256": "97e3fef112e93c65de6032a155d0d79d2e9d8a6634b94da7450027c1834f5c86",
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "success": true
+    }
+  ]
+}

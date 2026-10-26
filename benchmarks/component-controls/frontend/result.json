@@ -1,0 +1,113 @@
+{
+  "agent_performance_claim": false,
+  "arms": {
+    "locked": {
+      "compile_log_sha256": "fdb5fd01647304fdf76a98d87303dadac8173dae95d41d5f05d54c2cda3d76e5",
+      "controls_sha256": "6ddaaa093f634f90cd41c1a39868947cea7e0b87be5820f99fccb3c20a4631a9",
+      "passed": 1,
+      "process_sha256": "35047aaf6a94c20f9885be56052bacee436eb7b5b5ff20b530aa4ec86bf8e235",
+      "results": {
+        "disable-race": false,
+        "failure-cause": false,
+        "http-status": true,
+        "inline-identity": false,
+        "key-race": false,
+        "refresh-race": false,
+        "sort-purity": false,
+        "zod4-issues": false
+      },
+      "typecheck_exit_code": 2
+    },
+    "maintained": {
+      "compile_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "controls_sha256": "7bdd4a959149d66aa3e2b6b72d0f84a9fe119e2aeec7b163464352b91e080786",
+      "passed": 8,
+      "process_sha256": "5bde00e5ef8365be76d5b845a3b26dba2bea1947fb9c2d6add88c5eee189ae55",
+      "results": {
+        "disable-race": true,
+        "failure-cause": true,
+        "http-status": true,
+        "inline-identity": true,
+        "key-race": true,
+        "refresh-race": true,
+        "sort-purity": true,
+        "zod4-issues": true
+      },
+      "typecheck_exit_code": 0
+    },
+    "upstream": {
+      "compile_log_sha256": "84742ebdf71773d063e075c2e4bbd468e12a579cefb86de61cddf28df7a6b5d8",
+      "controls_sha256": "b0824e80672bf90981d66751a2d0fd4a30ecf2e05e556e6d86e4526ce4f156c2",
+      "passed": 3,
+      "process_sha256": "35047aaf6a94c20f9885be56052bacee436eb7b5b5ff20b530aa4ec86bf8e235",
+      "results": {
+        "disable-race": false,
+        "failure-cause": false,
+        "http-status": true,
+        "inline-identity": true,
+        "key-race": false,
+        "refresh-race": false,
+        "sort-purity": true,
+        "zod4-issues": false
+      },
+      "typecheck_exit_code": 2
+    }
+  },
+  "claims_excluded": [
+    "agent task success",
+    "entire skill readiness",
+    "representative benchmark",
+    "real browser or accessibility readiness",
+    "cross-OS qualification"
+  ],
+  "environment": {
+    "direct_versions": {
+      "@types/react": "19.3.0",
+      "jsdom": "30.1.3",
+      "react": "19.3.1",
+      "react-dom": "19.3.1",
+      "typescript": "7.0.2",
+      "zod": "4.6.7"
+    },
+    "global_installation_or_configuration_changed": false,
+    "known_advisories": 0,
+    "locked_packages": 63,
+    "lockfile_sha256": "bf2754fb78e9b7390f41b8c351b286d5cb0321670b532075590f94299209d3cf",
+    "node_version": "v26.12.1",
+    "npm_version": "12.2.1",
+    "scripts_executed": false
+  },
+  "extraction_adaptations": [
+    "React and Zod imports supplied",
+    "Hook body copied before Usage marker",
+    "Fetch body copied before BAD example",
+    "Sort expression wrapped in callable function",
+    "Zod accessor exercised in minimal invalid-input wrapper"
+  ],
+  "input_sha256": {
+    "benchmarks/component-controls/frontend/contract.json": "b9325d98a56abd5eb90d60fa2e9a32392305c8ee9a7ceeb42a116030458e08af",
+    "benchmarks/component-controls/frontend/controls.mjs": "3f1c5f6f59efa1f9b27ff620277e2b74d635b02955d582e8272f582a8c63bd51",
+    "benchmarks/component-controls/frontend/fixtures/coding-standards-upstream.SKILL.md": "7295014cdb95589b28e9ac687e0c40a7fd329288e18a0e6fb6c5b1ed58437a0d",
+    "benchmarks/component-controls/frontend/fixtures/frontend-patterns-upstream.SKILL.md": "722866e1106ca51a6eb7f6dd163554d5fa3a30fe9beb5fdbc075ab3a84ae883b",
+    "benchmarks/component-controls/frontend/lifecycle.mjs": "56f79741a5618a159cd60754bfdde9420a8e41cef110cda26049855647586d73",
+    "benchmarks/component-controls/frontend/package-lock.json": "bf2754fb78e9b7390f41b8c351b286d5cb0321670b532075590f94299209d3cf",
+    "benchmarks/component-controls/frontend/package.json": "63abcef0471f3b6d0c8914f5c01ad20ed59edd97575ecf7bcf8e88157df4f533",
+    "benchmarks/component-controls/frontend/prepare.py": "dcdc35013b791f89c1312894085a8f1fb52bb50a75b2a1261fc03f32f63fc278",
+    "benchmarks/component-controls/frontend/run_native.py": "a02eb40322f2ea00cbcbbf1c59de9e403fa25cca81e05574d0857f400d67e42b",
+    "included/improved/skills/coding-standards-current/provenance/original-SKILL.md": "f856f758c97fb62ddbfbd75d4570e03bf4ed04c258d13756fecdb313a04cc8d9",
+    "included/improved/skills/coding-standards-current/references/contracts.ts": "12978d5c08eb4df70b36437932888741a58b7d4c041e2fd7ba46e83b6add260c",
+    "included/improved/skills/frontend-patterns-current/provenance/original-SKILL.md": "dd04a1c02503036ee7f4d649c9b7b75d2e6954a94d6f464faedfa992701d1978",
+    "included/improved/skills/frontend-patterns-current/references/request.ts": "a9a31f31f5c79facbfc547afdc07b734d7ca8658efb856650a10188056007f3c"
+  },
+  "lifecycle_sha256": "b5948cb7b4cb40af060eb4bea29186b21efc9bf1f605bbea47dc4814e8b66fe0",
+  "measurement_kind": "component_contract_controls",
+  "oracle_freeze": {
+    "before_authored_candidates": true,
+    "blind_authoring": false,
+    "contract_sha256": "b9325d98a56abd5eb90d60fa2e9a32392305c8ee9a7ceeb42a116030458e08af",
+    "controller_budget_guard_corrected_before_execution": true,
+    "expected_results_changed": false
+  },
+  "platform": "Windows x64",
+  "schema_version": 1
+}

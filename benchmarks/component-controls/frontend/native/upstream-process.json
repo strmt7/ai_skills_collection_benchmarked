@@ -1,0 +1,18 @@
+{
+  "compile": {
+    "active_processes_after_cleanup": 0,
+    "exit_code": 2,
+    "kill_on_close": true,
+    "real_interpreter_gated_before_site": true,
+    "termination_reason": null,
+    "windows_job": true
+  },
+  "controls": {
+    "active_processes_after_cleanup": 0,
+    "exit_code": 0,
+    "kill_on_close": true,
+    "real_interpreter_gated_before_site": true,
+    "termination_reason": null,
+    "windows_job": true
+  }
+}

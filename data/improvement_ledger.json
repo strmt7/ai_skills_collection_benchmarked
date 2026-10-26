@@ -194,17 +194,74 @@
     "affaan-m-everything-claude-code-agents-skills-coding-standards-skill-md": {
       "category": "Frontend, UI & browser automation",
       "evaluation": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/frontend-contracts/frontend-review.json",
+            "sha256": "b7e5e43f27280b5010636e9a8ede3ec9ee06c0d080e0394014726f3d649ff792"
+          },
+          {
+            "path": "docs/research-frontend-contracts.md",
+            "sha256": "dc7e9e056d6bf60267a0e23a2c5a56354cd812a9cdd8476f19cc5537a9d06fe5"
+          },
+          {
+            "path": "benchmarks/component-controls/frontend/result.json",
+            "sha256": "f0824f04eb0ef4885b52ff6f10e98c75b204ae0f27f311aac3c945ea3f158ea4"
+          }
+        ],
+        "scope": "Selected component controls and targeted native React qualification; no agent-efficacy claim",
+        "status": "in_progress"
       },
       "mirrored_path": "included/skills/by-category/frontend-ui-browser-automation/selected-structure-reference/coding-standards",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/frontend-contracts/frontend-review.json",
+            "sha256": "b7e5e43f27280b5010636e9a8ede3ec9ee06c0d080e0394014726f3d649ff792"
+          },
+          {
+            "path": "docs/research-frontend-contracts.md",
+            "sha256": "dc7e9e056d6bf60267a0e23a2c5a56354cd812a9cdd8476f19cc5537a9d06fe5"
+          },
+          {
+            "path": "benchmarks/component-controls/frontend/result.json",
+            "sha256": "f0824f04eb0ef4885b52ff6f10e98c75b204ae0f27f311aac3c945ea3f158ea4"
+          }
+        ],
+        "open_work": [
+          "See documented platform/framework and agent-trial qualification limits; reviewed instruction bodies are not runtime completion"
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "review_scope": "Complete instruction body and examples; source/version/platform and dependency contracts",
+            "sha256": "f856f758c97fb62ddbfbd75d4570e03bf4ed04c258d13756fecdb313a04cc8d9",
+            "status": "reviewed"
+          },
+          "agents/openai.yaml": {
+            "review_scope": "Complete UI metadata, activation policy and default prompt; not installed",
+            "sha256": "5661a2691330e2a64e41d2c38638809eeeafb44a62d3a5d434fdc234ad3bb235",
+            "status": "reviewed"
+          }
+        },
+        "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/frontend-contracts/frontend-review.json",
+            "sha256": "b7e5e43f27280b5010636e9a8ede3ec9ee06c0d080e0394014726f3d649ff792"
+          },
+          {
+            "path": "docs/research-frontend-contracts.md",
+            "sha256": "dc7e9e056d6bf60267a0e23a2c5a56354cd812a9cdd8476f19cc5537a9d06fe5"
+          },
+          {
+            "path": "benchmarks/component-controls/frontend/result.json",
+            "sha256": "f0824f04eb0ef4885b52ff6f10e98c75b204ae0f27f311aac3c945ea3f158ea4"
+          }
+        ],
+        "scope": "Authored experimental overlay with complete original provenance; immutable source unchanged",
+        "status": "complete"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
@@ -478,17 +535,74 @@
     "affaan-m-everything-claude-code-agents-skills-frontend-patterns-skill-md": {
       "category": "Frontend, UI & browser automation",
       "evaluation": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/frontend-contracts/frontend-review.json",
+            "sha256": "b7e5e43f27280b5010636e9a8ede3ec9ee06c0d080e0394014726f3d649ff792"
+          },
+          {
+            "path": "docs/research-frontend-contracts.md",
+            "sha256": "dc7e9e056d6bf60267a0e23a2c5a56354cd812a9cdd8476f19cc5537a9d06fe5"
+          },
+          {
+            "path": "benchmarks/component-controls/frontend/result.json",
+            "sha256": "f0824f04eb0ef4885b52ff6f10e98c75b204ae0f27f311aac3c945ea3f158ea4"
+          }
+        ],
+        "scope": "Selected component controls and targeted native React qualification; no agent-efficacy claim",
+        "status": "in_progress"
       },
       "mirrored_path": "included/skills/by-category/frontend-ui-browser-automation/selected-structure-reference/frontend-patterns",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/frontend-contracts/frontend-review.json",
+            "sha256": "b7e5e43f27280b5010636e9a8ede3ec9ee06c0d080e0394014726f3d649ff792"
+          },
+          {
+            "path": "docs/research-frontend-contracts.md",
+            "sha256": "dc7e9e056d6bf60267a0e23a2c5a56354cd812a9cdd8476f19cc5537a9d06fe5"
+          },
+          {
+            "path": "benchmarks/component-controls/frontend/result.json",
+            "sha256": "f0824f04eb0ef4885b52ff6f10e98c75b204ae0f27f311aac3c945ea3f158ea4"
+          }
+        ],
+        "open_work": [
+          "See documented platform/framework and agent-trial qualification limits; reviewed instruction bodies are not runtime completion"
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "review_scope": "Complete instruction body and examples; source/version/platform and dependency contracts",
+            "sha256": "dd04a1c02503036ee7f4d649c9b7b75d2e6954a94d6f464faedfa992701d1978",
+            "status": "reviewed"
+          },
+          "agents/openai.yaml": {
+            "review_scope": "Complete UI metadata, activation policy and default prompt; not installed",
+            "sha256": "8b21415748f7b5cb0f289f1f2c4cad934ef4cee1cdaa6306dbf2d7754b1ca8ec",
+            "status": "reviewed"
+          }
+        },
+        "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/frontend-contracts/frontend-review.json",
+            "sha256": "b7e5e43f27280b5010636e9a8ede3ec9ee06c0d080e0394014726f3d649ff792"
+          },
+          {
+            "path": "docs/research-frontend-contracts.md",
+            "sha256": "dc7e9e056d6bf60267a0e23a2c5a56354cd812a9cdd8476f19cc5537a9d06fe5"
+          },
+          {
+            "path": "benchmarks/component-controls/frontend/result.json",
+            "sha256": "f0824f04eb0ef4885b52ff6f10e98c75b204ae0f27f311aac3c945ea3f158ea4"
+          }
+        ],
+        "scope": "Authored experimental overlay with complete original provenance; immutable source unchanged",
+        "status": "complete"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
@@ -12819,8 +12933,32 @@
       },
       "mirrored_path": "included/skills/by-category/frontend-ui-browser-automation/security-reference/claude-in-chrome-troubleshooting",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/frontend-contracts/frontend-review.json",
+            "sha256": "b7e5e43f27280b5010636e9a8ede3ec9ee06c0d080e0394014726f3d649ff792"
+          },
+          {
+            "path": "docs/research-frontend-contracts.md",
+            "sha256": "dc7e9e056d6bf60267a0e23a2c5a56354cd812a9cdd8476f19cc5537a9d06fe5"
+          },
+          {
+            "path": "benchmarks/component-controls/frontend/result.json",
+            "sha256": "f0824f04eb0ef4885b52ff6f10e98c75b204ae0f27f311aac3c945ea3f158ea4"
+          }
+        ],
+        "open_work": [
+          "See documented platform/framework and agent-trial qualification limits; reviewed instruction bodies are not runtime completion"
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "review_scope": "Complete instruction body and examples; source/version/platform and dependency contracts",
+            "sha256": "7ead464089964766aa2c9d58f4d84b63fc628f9a20f094f4d1a84134fb224985",
+            "status": "reviewed"
+          }
+        },
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],

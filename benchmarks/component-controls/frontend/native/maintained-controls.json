@@ -1,0 +1,1 @@
+{"measurement_kind":"component_contract_controls","results":[{"id":"sort-purity","passed":true},{"id":"zod4-issues","passed":true},{"id":"http-status","passed":true},{"id":"failure-cause","passed":true},{"id":"inline-identity","passed":true},{"id":"key-race","passed":true},{"id":"disable-race","passed":true},{"id":"refresh-race","passed":true}],"diagnostics":[]}

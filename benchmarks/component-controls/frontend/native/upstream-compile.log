@@ -1,0 +1,1 @@
+controls-public-driver/upstream.mts(77,51): error TS2339: Property 'errors' does not exist on type 'ZodError<unknown>'.

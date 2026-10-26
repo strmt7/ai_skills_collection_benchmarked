@@ -11,6 +11,10 @@
 /benchmarks/dependency-regressions/** text eol=lf
 # Captured crypto inputs are already bound by exact-byte research receipts.
 /benchmarks/dependency-regressions/wycheproof-inputs.json -text
+# Authored frontend controls use LF; captured inputs and native output stay exact.
+/benchmarks/component-controls/frontend/** text eol=lf
+/benchmarks/component-controls/frontend/fixtures/** -text
+/benchmarks/component-controls/frontend/native/** -text
 # Trial evidence hashes describe exact captured bytes, including Windows logs.
 # Preserve them across Git transports instead of converting line endings.
 /artifacts/agent-trials/** -text

@@ -1,0 +1,1 @@
+{"passed":true,"assertions":["StrictMode cleanup and stale result guard","key clears previous data","non-Error rejection preserved","disable aborts and clears state","disabled refetch is a no-op","unmount aborts active work"]}

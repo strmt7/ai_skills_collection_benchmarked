@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "measurement_kind": "component_contract_controls",
+  "agent_performance_claim": false,
+  "independence": "Expected behavior comes from public API contracts and the application requirements below, not the examples' PASS comments. The author had read the examples; this is not a blinded or held-out evaluation.",
+  "requirements": {
+    "sort-purity": "Descending derived values preserve a frozen input array and its order.",
+    "zod4-issues": "Invalid input exposes a nonempty array of current Zod issues and type-checks against the qualified Zod version.",
+    "http-status": "A 503 response rejects instead of returning a successful JSON payload.",
+    "failure-cause": "A rejected fetch preserves the original failure directly or through Error.cause.",
+    "inline-identity": "Without StrictMode, one enabled key makes one request across incidental renders with inline fetcher/options identities.",
+    "key-race": "When key B resolves before key A, A cannot replace B's visible data.",
+    "disable-race": "Disabling a pending request clears visible data/loading and rejects late results.",
+    "refresh-race": "An explicit newer refresh supersedes an older in-flight request for the same key."
+  },
+  "limits": [
+    "No AI agent, browser extension, network fetch, production framework, cache, retry, SSR or accessibility evaluation.",
+    "Query freshness requirements are application-specific choices, not a claim about every query library's API.",
+    "Results describe selected excerpts, not entire skills or all upstream revisions.",
+    "Frozen input and deferred-promise cases are deterministic functional controls, not timing or throughput measurements."
+  ],
+  "sources": [
+    "https://react.dev/reference/react/useEffect#fetching-data-with-effects",
+    "https://react.dev/reference/react/useMemo#my-calculation-runs-twice-on-every-re-render",
+    "https://zod.dev/v4/changelog",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Response/ok",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/cause"
+  ]
+}

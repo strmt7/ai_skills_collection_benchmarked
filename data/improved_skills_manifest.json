@@ -307,6 +307,48 @@
       "source_commit": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
       "source_file_sha256": "e10842ca76aed8eaf3990f34e2d99934ea5bc756a062568993558e804b42695c",
       "source_url": "https://github.com/trailofbits/skills/blob/e8cc5baf9329ccb491bfa200e82eacbac83b1ead/plugins/trailmark/skills/vector-forge/SKILL.md"
+    },
+    {
+      "license": "MIT",
+      "license_file_sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+      "license_source_sha": "b832b6f642312312367c07688dc7426db40a82ed",
+      "original_path": "included/improved/skills/coding-standards-current/provenance/original-SKILL.md",
+      "overlay_path": "included/improved/skills/coding-standards-current",
+      "overlay_sha256": "63d1d02ac5120d95fbb1fef2f0e814008712d644793dc2308f2bb9edd1a9b80e",
+      "package_file_sha256": {
+        "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+        "NOTICE.md": "cf54d7163f892f99af80d8dac86f1849d86362b2753ee8cb5c7b02dc27f07204",
+        "SKILL.md": "63d1d02ac5120d95fbb1fef2f0e814008712d644793dc2308f2bb9edd1a9b80e",
+        "provenance/original-SKILL.md": "f856f758c97fb62ddbfbd75d4570e03bf4ed04c258d13756fecdb313a04cc8d9",
+        "provenance/original-agents/openai.yaml": "5661a2691330e2a64e41d2c38638809eeeafb44a62d3a5d434fdc234ad3bb235",
+        "references/contracts.ts": "12978d5c08eb4df70b36437932888741a58b7d4c041e2fd7ba46e83b6add260c"
+      },
+      "performance_status": "unbenchmarked",
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-coding-standards-skill-md",
+      "source_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "source_file_sha256": "f856f758c97fb62ddbfbd75d4570e03bf4ed04c258d13756fecdb313a04cc8d9",
+      "source_url": "https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/coding-standards/SKILL.md"
+    },
+    {
+      "license": "MIT",
+      "license_file_sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+      "license_source_sha": "b832b6f642312312367c07688dc7426db40a82ed",
+      "original_path": "included/improved/skills/frontend-patterns-current/provenance/original-SKILL.md",
+      "overlay_path": "included/improved/skills/frontend-patterns-current",
+      "overlay_sha256": "a3cc4b980a204728706d66509164b3425386dd0f574bbad278a979e45e924d83",
+      "package_file_sha256": {
+        "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+        "NOTICE.md": "e92a16bd01edf17b1d7ac34f5ddb7e30e7db37388c512f37122b0e7a6088d53a",
+        "SKILL.md": "a3cc4b980a204728706d66509164b3425386dd0f574bbad278a979e45e924d83",
+        "provenance/original-SKILL.md": "dd04a1c02503036ee7f4d649c9b7b75d2e6954a94d6f464faedfa992701d1978",
+        "provenance/original-agents/openai.yaml": "8b21415748f7b5cb0f289f1f2c4cad934ef4cee1cdaa6306dbf2d7754b1ca8ec",
+        "references/request.ts": "a9a31f31f5c79facbfc547afdc07b734d7ca8658efb856650a10188056007f3c"
+      },
+      "performance_status": "unbenchmarked",
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-frontend-patterns-skill-md",
+      "source_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "source_file_sha256": "dd04a1c02503036ee7f4d649c9b7b75d2e6954a94d6f464faedfa992701d1978",
+      "source_url": "https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/frontend-patterns/SKILL.md"
     }
   ]
 }
