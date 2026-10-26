@@ -8,15 +8,16 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import http.client
 import json
 import os
 import platform
 import subprocess
 import sys
-import urllib.request
 import uuid
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlsplit
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
@@ -142,7 +143,7 @@ def phase(home: Path, name: str, arguments: list[str | Path], *, timeout: int = 
     return {"phase": name, "logs": str(directory), **receipt}
 
 
-def verify(home: Path) -> dict[str, Any]:
+def installation_receipt(home: Path) -> dict[str, Any]:
     receipt_path = checked_path(home, "installation.json")
     if not receipt_path.is_file():
         raise ValueError("Provider setup is incomplete; run setup with a new --home to preserve failed diagnostics")
@@ -153,7 +154,10 @@ def verify(home: Path) -> dict[str, Any]:
         or receipt["schema_version"] != 1
     ):
         raise ValueError("Provider installation receipt has an invalid schema")
-    name = receipt.get("wheel_name") if isinstance(receipt, dict) else None
+    return receipt
+
+
+def wheel_filename(name: Any) -> str:
     if (
         not isinstance(name, str)
         or Path(name).name != name
@@ -163,6 +167,12 @@ def verify(home: Path) -> dict[str, Any]:
         or not name.endswith(".whl")
     ):
         raise ValueError("Provider receipt must select a wheel filename within its dedicated home")
+    return name
+
+
+def verify(home: Path) -> dict[str, Any]:
+    receipt = installation_receipt(home)
+    name = wheel_filename(receipt.get("wheel_name"))
     if receipt.get("input_identity") != identity(ROOT):
         raise ValueError("Provider inputs changed; run setup with a new dedicated home")
     pin = json.loads((ROOT / INPUTS / "source.json").read_bytes())
@@ -201,26 +211,47 @@ def verify(home: Path) -> dict[str, Any]:
     return {"ok": True, "provider_version": pin["version"], "home": str(home), "checks": checks}
 
 
+def download_archive(home: Path, pin: dict[str, Any]) -> Path:
+    parts = urlsplit(pin["archive_url"])
+    if (
+        parts.scheme != "https"
+        or parts.netloc != "files.pythonhosted.org"
+        or not parts.path.startswith("/packages/")
+        or parts.query
+        or parts.fragment
+    ):
+        raise ValueError("Provider source must use its pinned PyPI HTTPS artifact URL")
+    connection = http.client.HTTPSConnection("files.pythonhosted.org", timeout=60)
+    try:
+        connection.request("GET", parts.path, headers={"User-Agent": "AI-Skills-Provider-Setup/1"})
+        response = connection.getresponse()
+        raw = response.read(pin["archive_bytes"] + 1)
+        status = response.status
+    finally:
+        connection.close()
+    (home / "upstream-response.json").write_text(
+        json.dumps(
+            {"url": pin["archive_url"], "status_code": status, "bytes": len(raw), "sha256": source.digest(raw)},
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    archive = home / "upstream.tar.gz"
+    archive.write_bytes(raw)
+    if status != 200:
+        raise ValueError("Pinned source download failed; redirects and alternate sources are not accepted")
+    if len(raw) != pin["archive_bytes"] or source.digest(raw) != pin["archive_sha256"]:
+        raise ValueError("Downloaded source differs from the pinned archive")
+    return archive
+
+
 def setup(home: Path) -> dict[str, Any]:
     if home.exists():
         return verify(home)
     home.mkdir(parents=True)
     pin = json.loads((ROOT / INPUTS / "source.json").read_bytes())
-    request = urllib.request.Request(pin["archive_url"], headers={"User-Agent": "AI-Skills-Provider-Setup/1"})
-    with urllib.request.urlopen(request, timeout=60) as response:
-        raw = response.read(pin["archive_bytes"] + 1)
-        (home / "upstream-response.json").write_text(
-            json.dumps(
-                {"url": response.url, "status_code": response.status, "bytes": len(raw), "sha256": source.digest(raw)},
-                indent=2,
-            )
-            + "\n",
-            encoding="utf-8",
-        )
-    archive = home / "upstream.tar.gz"
-    archive.write_bytes(raw)
-    if len(raw) != pin["archive_bytes"] or source.digest(raw) != pin["archive_sha256"]:
-        raise ValueError("Downloaded source differs from the pinned archive")
+    archive = download_archive(home, pin)
     source.prepare(ROOT, archive, home / "source")
     steps = []
     steps.append(phase(home, "create-build", [sys.executable, "-I", "-m", "venv", home / "build"]))
@@ -408,7 +439,7 @@ def main(argv: list[str] | None = None) -> int:
                     timeout=120,
                 )
                 result.update(ok=True, output=str(outputs[0]), metadata=str(outputs[1]))
-    except (OSError, ValueError, KeyError, TypeError, subprocess.SubprocessError) as error:
+    except (OSError, ValueError, KeyError, TypeError, subprocess.SubprocessError, http.client.HTTPException) as error:
         result = {"ok": False, "errors": [str(error)]}
     print(json.dumps(result, indent=2))
     return int(not result["ok"])

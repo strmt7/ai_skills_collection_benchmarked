@@ -41,6 +41,38 @@ def validate_url(url: str) -> None:
         raise ValueError("Research requires an explicit HTTPS URL without embedded credentials")
 
 
+def browser_commands() -> list[list[str]]:
+    import psutil
+
+    commands = []
+    for child in psutil.Process().children(recursive=True):
+        try:
+            if any(name in child.name().lower() for name in ["chrome", "headless_shell"]):
+                commands.append(child.cmdline())
+        except psutil.NoSuchProcess:
+            continue
+    return commands
+
+
+def browser_evidence(home: Path) -> dict[str, Any]:
+    commands = browser_commands()
+    profiles = []
+    for arguments in commands:
+        if any("AutomationControlled" in value for value in arguments) or any(
+            value in {"--no-sandbox", "--disable-setuid-sandbox"} for value in arguments
+        ):
+            raise ValueError("The live browser has a forbidden automation or sandbox flag")
+        for value in arguments:
+            if value.startswith("--user-data-dir="):
+                profile = Path(value.split("=", 1)[1]).resolve()
+                if not profile.is_relative_to(home.resolve()):
+                    raise ValueError("The live browser profile is outside the owned provider home")
+                profiles.append(hashlib.sha256(str(profile).encode()).hexdigest())
+    if not commands or not profiles:
+        raise ValueError("Actual browser process and isolated profile evidence are missing")
+    return {"browser_processes": len(commands), "profile_sha256": sorted(set(profiles)), "forbidden_flags": []}
+
+
 async def capture(url: str, home: Path) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     from crawl4ai import AsyncWebCrawler, BrowserConfig, CacheMode, CrawlerRunConfig
 
@@ -74,42 +106,15 @@ async def capture(url: str, home: Path) -> tuple[dict[str, Any], list[dict[str, 
     async with AsyncWebCrawler(config=browser) as crawler:
 
         async def observe(page: Any, **_kwargs: Any) -> Any:
-            import psutil
-
-            if urlsplit(page.url).scheme != "https":
-                raise ValueError("The browser redirected research to an unencrypted page")
+            validate_url(page.url)
             webdriver = await page.evaluate("navigator.webdriver")
             if webdriver is not True:
                 raise ValueError("The live browser is hiding automation")
-            profiles = []
-            browser_count = 0
-            for child in psutil.Process().children(recursive=True):
-                try:
-                    if not any(name in child.name().lower() for name in ["chrome", "headless_shell"]):
-                        continue
-                    arguments = child.cmdline()
-                except psutil.NoSuchProcess:
-                    continue
-                browser_count += 1
-                if any("AutomationControlled" in value for value in arguments) or any(
-                    value in {"--no-sandbox", "--disable-setuid-sandbox"} for value in arguments
-                ):
-                    raise ValueError("The live browser has a forbidden automation or sandbox flag")
-                for value in arguments:
-                    if value.startswith("--user-data-dir="):
-                        profile = Path(value.split("=", 1)[1]).resolve()
-                        if not profile.is_relative_to(home.resolve()):
-                            raise ValueError("The live browser profile is outside the owned provider home")
-                        profiles.append(hashlib.sha256(str(profile).encode()).hexdigest())
-            if not browser_count or not profiles:
-                raise ValueError("Actual browser process and isolated profile evidence are missing")
             observations.append(
                 {
                     "navigator_webdriver": True,
                     "final_page_url": page.url,
-                    "browser_processes": browser_count,
-                    "profile_sha256": sorted(set(profiles)),
-                    "forbidden_flags": [],
+                    **browser_evidence(home),
                 }
             )
             return page

@@ -1,0 +1,52 @@
+{
+  "agent_efficacy_claim": false,
+  "capture": {
+    "automation_disclosed": true,
+    "browser_processes": [
+      4
+    ],
+    "capture_implementation_sha256": "7b5b95b63e18507be739baa1ab72f985f29e49af39340c00236fd34f8fdf7e0b",
+    "forbidden_flags": [],
+    "markdown_characters": 71352,
+    "native_sha256": "3c19bc477d65f3bd5b6676548feab237401e8b4a46bb80cc5913a9a660c71c98",
+    "owned_processes_after_cleanup": 0,
+    "reviewed_scope": "CocoIndex Code installation, local embedding extras and manual CLI usage",
+    "scope_reviewed": true,
+    "source_files_admitted": 87,
+    "status_code": 200,
+    "success": true,
+    "url": "https://github.com/cocoindex-io/cocoindex-code"
+  },
+  "evidence_class": "launcher-security-regression-and-native-component-qualification",
+  "hosted_confirmation_pending": true,
+  "independent_model_trials": 0,
+  "introduced_deepsource_findings_addressed": 5,
+  "local_quality": {
+    "focused_launcher_tests_passed": 41,
+    "gates_passed": 30,
+    "initial_fixture_type_failure_retained_and_corrected": true,
+    "tests_passed": 932,
+    "tests_skipped": 2,
+    "typed_source_files": 122
+  },
+  "remaining_limits": [
+    "Repository-wide DeepSource, CodeQL and historical secret findings require further triage and remediation.",
+    "Original source mirrors remain immutable; this change does not suppress or modify their findings.",
+    "Software component qualification does not demonstrate model superiority."
+  ],
+  "schema_version": 1,
+  "source_artifact_transport": {
+    "archive_bytes": 577411,
+    "archive_sha256": "84fa6f4970fbb086a68893c9fb18605a93fcd609c72bee6fbb1d2715924afbff",
+    "native_https": true,
+    "redirects_followed": false,
+    "setup_implementation_sha256": "610076a14414d270b7b93181ad27be7eb9c8ee8b47b3e0e6a40f7baa3b56e972"
+  },
+  "source_parent": "d9ee52f2bb8e5fac6e5aa9b180de4066e05190a6",
+  "source_sha256": {
+    "tests/test_crawl4ai_launcher.py": "e38cce7f8ac84abf60fe47e7daff4896a57b66807e2cef8dfe71f80e4880e579",
+    "tools/crawl4ai_capture.py": "7b5b95b63e18507be739baa1ab72f985f29e49af39340c00236fd34f8fdf7e0b",
+    "tools/crawl4ai_tool.py": "610076a14414d270b7b93181ad27be7eb9c8ee8b47b3e0e6a40f7baa3b56e972"
+  },
+  "suppressions_added": false
+}
