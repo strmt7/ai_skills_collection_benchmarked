@@ -20,6 +20,14 @@ placeholders such as `<GOOGLE_API_KEY>`, `<AWS_ACCESS_KEY_ID>`,
 real provider token formats are rejected by the in-repo scanner even when
 the value is intended as an example.
 
+Mirror publication also checks the exact selected bytes immediately before
+writing them. Declared dependency replacements receive the same check; binary
+carriers retain detectable ASCII shapes during inspection. Detected material
+rejects the write without echoing matched values or changing source bytes.
+Run `python tools/check_mirror_content_admission.py --json` to inspect every
+current mirror resource independently of source regeneration. This finite
+detector is an admission control, not proof that all sensitive data is absent.
+
 ## Local scans before pushing
 
 ```bash

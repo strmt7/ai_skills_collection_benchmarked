@@ -28,6 +28,7 @@ from _lib_b import credential_neutralizations, dependency_graphs
 from _lib_b.credential_patterns import V2_NEUTRALIZATIONS
 from _lib_b.determinism import existing_field, git_latest_commit_epoch_for, resolve_timestamp
 from _source_admission import require_admitted_source
+from check_no_secret_patterns import require_publishable_content
 
 try:
     import yaml
@@ -1065,7 +1066,9 @@ def copy_sanitized_tree(
         target_file = dst / relative
         target_file.parent.mkdir(parents=True, exist_ok=True)
         content = sanitized_file_bytes(source_file, credential_policy=credential_policy)
-        target_file.write_bytes(replacements[relative] if replacements and relative in replacements else content)
+        output = replacements[relative] if replacements and relative in replacements else content
+        require_publishable_content(output)
+        target_file.write_bytes(output)
         if modes is None:
             shutil.copymode(source_file, target_file, follow_symlinks=False)
         else:
@@ -1905,6 +1908,8 @@ Allowed mirror transformations are deterministic and auditable:
 - Secret-shaped text is neutralized before it can enter the repository.
 - Declared dependency advisory floors may be applied by the generator.
 - Stable generated paths, category labels, and metadata are derived from catalog rules.
+
+Before a mirror write, the copier checks the exact selected output bytes against the existing credential-shape and entropy rules. This includes declared dependency replacements and ASCII credential shapes inside binary carriers. A detected residual value rejects the write; admission does not silently rewrite it or change canonical hashing. Diagnostics identify rules and lines without echoing matched values. CI independently checks every current mirror resource with `tools/check_mirror_content_admission.py --json`. These finite detectors do not prove that every possible sensitive value is absent.
 
 ## Artifact And Test Loop
 

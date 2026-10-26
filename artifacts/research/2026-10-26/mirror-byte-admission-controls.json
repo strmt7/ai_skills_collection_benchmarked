@@ -1,0 +1,80 @@
+{
+  "baseline_publication_commit": "de1d34a232490dc0605e1331ed68369cff4f69f3",
+  "binary_or_non_utf8_resources_checked": 414,
+  "canonical_hashing_modified": false,
+  "coding_agent_efficacy_scored": false,
+  "controlled_regressions": {
+    "cases": [
+      "declared replacement bytes checked before writing",
+      "ASCII credential shape in binary carrier rejected",
+      "residual credential-assignment entropy rejected",
+      "permitted neutralization and exact accepted replacement bytes preserved"
+    ],
+    "failed_before_guard": 3,
+    "initial_cases": 4,
+    "native_initial_log_sha256": "bac65a924258321a21053e89b0ceb9cf969d29e24ba104f90acec5ee1d2b1915",
+    "passed_before_guard": 1,
+    "scope": "Ordinary regression reproduction for exact output admission; not a blinded experiment, performance comparison or agent benchmark."
+  },
+  "counted_runtime_benchmark_artifact": false,
+  "crawl4ai_platform": "Windows x64",
+  "current_mirror_cli": {
+    "bytes": 235295126,
+    "catalog_entries": 673,
+    "catalog_sha256": "f3c869100c5256ecfdb299e0a866c42304f1870ce67f84f014fa6bd4066438e5",
+    "checked_resources": 17671,
+    "errors": [],
+    "ok": true
+  },
+  "current_resource_manifest_sha256": "f063951657317bb12cc6166d0b32c4f4c5c2ba210c3c19542fc7367906868c0a",
+  "diagnostic_control": {
+    "cleanup_verified": true,
+    "expected_contracts": 6,
+    "native_artifact_sha256": "0661ba8090b276489670f70595d765dadc89c1a8d7c58d7699ed17b6c77a676f",
+    "passed": true,
+    "scope": "Existing original helper command-spy controls, including retained known diagnostic defects; no cluster contact or coding agent."
+  },
+  "evidence_class": "mirror-publication-byte-admission-controls",
+  "limits": [
+    "The finite existing detector cannot prove absence of every secret or encoded representation.",
+    "All-current-resource acceptance does not clear historical Gitleaks findings or upstream code findings.",
+    "Research, mirror byte admission, runtime readiness and coding-agent efficacy are separate evidence classes."
+  ],
+  "mirrored_sources_modified": false,
+  "native_findings_manually_closed": 0,
+  "operating_system_support_expanded": false,
+  "resources_skipped": 0,
+  "rules_or_paths_excluded": 0,
+  "sanitizer_renamed": false,
+  "schema_version": 1,
+  "source_code_sha256": [
+    {
+      "path": "benchmarks/dependency-regressions/kubernetes_diagnosis_controls.py",
+      "sha256": "9a5efc183b479ad0d59f6b555f12a5749df0343b835dcbd96804cc293848f918"
+    },
+    {
+      "path": "tests/test_mirror_content_admission.py",
+      "sha256": "2fd6e33a4d61c70313394ec9f5d1b91a10d6820e0645d5964817da59a570ecd6"
+    },
+    {
+      "path": "tools/build_catalog.py",
+      "sha256": "c2e0aef2feebaee650016444ddd21314e0aca3130455a89ea316f09238497b24"
+    },
+    {
+      "path": "tools/check_mirror_content_admission.py",
+      "sha256": "af994883b22be16aefbd68a4abc795237200ef2797dd2f7585339604e329cc7d"
+    },
+    {
+      "path": "tools/check_no_secret_patterns.py",
+      "sha256": "1e17dca968cb9e3511c78699131ea089cd0411dff42c5b0f11de0a97b927815b"
+    }
+  ],
+  "static_owned_alert_review": {
+    "limit": "Static review only; not a native scanner pass or a confirmed real-secret exposure.",
+    "needs_review": 1,
+    "not_actionable": 1,
+    "private_managed_result_sha256": "1a4d4dfb4bb7f6f48732f96c1b8cc1db45fbc12a2cb49154640feae20998eff2",
+    "selected_inputs": 2,
+    "source_analysis": 2024212118
+  }
+}

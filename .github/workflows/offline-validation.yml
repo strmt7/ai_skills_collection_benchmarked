@@ -55,6 +55,8 @@ jobs:
           print(f"Validated {len(data)} catalog records")
       - name: Validate catalog and mirrors
         run: python tools/validate_catalog.py
+      - name: Check exact mirror bytes for residual detected material
+        run: python tools/check_mirror_content_admission.py --json
       - name: Enforce mandatory agent-tool routing
         run: python tools/validate_agent_tool_policy.py --check --json
       - name: Validate benchmark and provenance artifacts

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import shutil
 import subprocess
 
 import _catalog_publication as publication
@@ -39,7 +40,11 @@ def fixture(tmp_path, monkeypatch):
         source = checkout / name
         mirror = root / "included/skills" / name
         modes = catalog.skill_file_modes(source)
-        catalog.copy_sanitized_tree(source, mirror, file_modes=modes)
+        # Seed the historical defect directly: the current publisher must reject
+        # these bytes, while migration must still repair a legacy mirror.
+        mirror.mkdir(parents=True)
+        shutil.copyfile(source / "SKILL.md", mirror / "SKILL.md")
+        (mirror / "SKILL.md").chmod(int(modes["SKILL.md"], 8) & 0o777)
         entries.append(
             {
                 "id": name,

@@ -30,6 +30,7 @@ def build_parser():
 
 def main(argv=None):
     from build_catalog import sanitized_file_bytes
+    from check_no_secret_patterns import require_publishable_content
     from isolated_python import run_isolated
 
     args = build_parser().parse_args(argv)
@@ -47,7 +48,9 @@ def main(argv=None):
         stage = Path(temporary)
         for name, path in inputs.items():
             if name == "original-diagnose.sh":
-                (stage / name).write_bytes(sanitized_file_bytes(path))
+                content = sanitized_file_bytes(path)
+                require_publishable_content(content)
+                (stage / name).write_bytes(content)
             else:
                 shutil.copyfile(path, stage / name)
         staged_script_sha256 = hashlib.sha256((stage / "original-diagnose.sh").read_bytes()).hexdigest()

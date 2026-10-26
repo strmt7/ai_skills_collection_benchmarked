@@ -260,6 +260,18 @@ def scan_text(label: str, text: str) -> list[str]:
     return findings
 
 
+def require_publishable_content(content: bytes) -> None:
+    """Reject detected material in exact output bytes without rewriting them.
+
+    Replacement decoding retains ASCII credential shapes inside binary carriers.
+    Diagnostics contain rule names and line numbers, never matched values.
+    This finite detector does not prove that all sensitive data is absent.
+    """
+    findings = scan_text("content", content.decode("utf-8", errors="replace"))
+    if findings:
+        raise ValueError("publishable content rejected: " + "; ".join(findings[:8]))
+
+
 def scan_worktree() -> list[str]:
     findings: list[str] = []
     for path in tracked_files():

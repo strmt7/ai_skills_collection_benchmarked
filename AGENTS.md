@@ -171,6 +171,7 @@ them locally with `pip install -e '.[test,lint]'` and the commands listed in
 - **Lint + format**: `ruff check tools tests` and `ruff format --check tools tests`. Configured in `pyproject.toml` (`[tool.ruff]`).
 - **Type check**: `mypy tools tests` runs across supported Python 3.11/3.12/3.13/3.14 runtimes, pinned to their current security or maintenance patch releases. Python 3.10 reached end of life in October 2026 and is no longer a supported runtime.
 - **Catalog**: `python3 tools/validate_catalog.py` collects every drift entry in a single run (no fail-fast).
+- **Mirror byte admission**: `python3 tools/check_mirror_content_admission.py --json` checks every current resource, including binary carriers, against the existing detection rules without modifying it.
 - **Mandatory agent tools**: `python3 tools/validate_agent_tool_policy.py --check --json` verifies all three local skills, policy links and every generated entrypoint.
 - **Static benchmarks freshness**: `python3 tools/run_static_benchmarks.py --check`.
 - **Skill risk audit freshness**: `python3 tools/audit_skill_quality.py --check`.
