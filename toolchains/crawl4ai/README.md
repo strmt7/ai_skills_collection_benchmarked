@@ -1,8 +1,40 @@
-# Crawl4AI research-provider source build
+# Crawl4AI research provider
 
 This identifies an explicit downstream build, **0.9.5+catalog.portable4**, from
 the latest non-prerelease Crawl4AI release checked on 25 October 2026 (0.9.5).
 Upstream classifies it as beta. It is not an official upstream release.
+
+## Install and use
+
+From an intact clone on Windows x64, use **CPython 3.13.17**:
+
+```powershell
+py -3.13 -I tools/crawl4ai_tool.py setup
+py -3.13 -I tools/crawl4ai_tool.py check
+py -3.13 -I tools/crawl4ai_tool.py crawl --url https://docs.crawl4ai.com/core/browser-crawler-config/ --output .venv/research/config.native.json --metadata .venv/research/config.metadata.json
+```
+
+An explicit path to that interpreter also works; no Python launcher, AI client
+or global project-package installation is required. Setup builds and verifies
+the admitted wheel, installs the complete hashed dependency graph normally,
+runs all 20 native controls and installs the compatible Chromium build. Its
+provider, browser, build and cache directories stay under this clone's `.venv`.
+The default provider directory is keyed to its pinned source and dependency
+records. It does not change another repository's provider or MCP registration.
+
+`check` verifies installed provider sources, dependency consistency and the
+recorded browser executable. A capture also checks actual browser processes,
+disclosed automation and the temporary profile. Retain and read the native
+result before accepting a source; metadata starts with `scope_reviewed: false`.
+Failures retain native results and process diagnostics without a retry or
+fallback. Provider setup alone does not qualify an external page.
+
+Use `--home .venv/agent-tools/<name>` **before** the command to select another
+dedicated profile. If setup is interrupted, inspect its retained logs and select
+a new profile for recovery; existing provider directories are never replaced.
+Browser/model caches and host-specific receipts must remain outside Git.
+
+## Source adaptation
 
 The adaptation fixes Windows no-follow downloads, a conflicting `fit_html`
 property that breaks native failure JSON, and an automation-hiding browser flag

@@ -6,13 +6,18 @@ on:
       - "toolchains/crawl4ai/**"
       - "tools/*crawl4ai*.py"
       - "tools/_catalog_publication.py"
+      - "tools/_windows_owned_python.py"
       - "tests/test_crawl4ai_source.py"
+      - "tests/test_crawl4ai_launcher.py"
       - ".github/workflows/crawl4ai-provider.yml"
   pull_request:
     paths:
       - "toolchains/crawl4ai/**"
       - "tools/*crawl4ai*.py"
+      - "tools/_catalog_publication.py"
+      - "tools/_windows_owned_python.py"
       - "tests/test_crawl4ai_source.py"
+      - "tests/test_crawl4ai_launcher.py"
       - ".github/workflows/crawl4ai-provider.yml"
   workflow_dispatch:
   schedule:
@@ -130,10 +135,24 @@ jobs:
             if ($candidate -eq "original" -and $status -notin @(0, 1)) { throw "Original native control process failed" }
           }
 
+      - name: Qualify the public setup and verification launcher on a fresh profile
+        shell: pwsh
+        run: |
+          python -I -B tools/crawl4ai_tool.py --home .venv/crawl4ai-public-launcher setup
+          if ($LASTEXITCODE -ne 0) { throw "Public provider setup failed" }
+          python -I -B tools/crawl4ai_tool.py --home .venv/crawl4ai-public-launcher check
+          if ($LASTEXITCODE -ne 0) { throw "Public provider verification failed" }
+
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         if: always()
         with:
           name: crawl4ai-native-build-controls
-          path: .venv/crawl4ai-*.json
+          path: |
+            .venv/crawl4ai-*.json
+            .venv/crawl4ai-public-launcher/installation.json
+            .venv/crawl4ai-public-launcher/controls.json
+            .venv/crawl4ai-public-launcher/upstream-response.json
+            .venv/crawl4ai-public-launcher/admission/source-admission.json
+            .venv/crawl4ai-public-launcher/logs/**/process.json
           include-hidden-files: true
           if-no-files-found: error

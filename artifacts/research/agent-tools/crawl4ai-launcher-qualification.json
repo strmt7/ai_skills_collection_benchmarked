@@ -1,0 +1,196 @@
+{
+  "agent_efficacy_claim": false,
+  "captures": [
+    {
+      "automation_disclosed": true,
+      "browser_processes": [
+        4
+      ],
+      "capture_implementation_sha256": null,
+      "external_llm": false,
+      "forbidden_flags": [],
+      "markdown_characters": 28427,
+      "native_sha256": "59f9d08bee923d4c1586fdf5aca0966741e15115211b686ebe27277a73ed2140",
+      "personal_profile": false,
+      "provider_version": "0.9.5+catalog.portable4",
+      "reviewed_scope": "Browser and crawler configuration overview",
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "status_code": 200,
+      "success": true,
+      "url": "https://docs.crawl4ai.com/core/browser-crawler-config/"
+    },
+    {
+      "automation_disclosed": true,
+      "browser_processes": [
+        4
+      ],
+      "capture_implementation_sha256": null,
+      "external_llm": false,
+      "forbidden_flags": [],
+      "markdown_characters": 44396,
+      "native_sha256": "5e421668964888e4a7a79a68a62b380f3f79f6467f4347832a10c6cae33cb5fe",
+      "personal_profile": false,
+      "provider_version": "0.9.5+catalog.portable4",
+      "reviewed_scope": "TLS, robots, retries, fallback and browser profile parameters",
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "status_code": 200,
+      "success": true,
+      "url": "https://docs.crawl4ai.com/api/parameters/"
+    },
+    {
+      "automation_disclosed": true,
+      "browser_processes": [
+        4
+      ],
+      "capture_implementation_sha256": "0cb0d253f4422ff94ea20654eacf082a4af0759ba2118c79bc6b150c650a180d",
+      "external_llm": false,
+      "forbidden_flags": [],
+      "markdown_characters": 12272,
+      "native_sha256": "a6de31aa91927d8e44b1c57ee26bd72465287e6934e00f9df3d8421f55d36610",
+      "personal_profile": false,
+      "provider_version": "0.9.5+catalog.portable4",
+      "reviewed_scope": "First-use native response, status, extracted Markdown and failure handling",
+      "scope_reviewed": true,
+      "source_files_admitted": 87,
+      "status_code": 200,
+      "success": true,
+      "url": "https://docs.crawl4ai.com/core/simple-crawling/"
+    }
+  ],
+  "evidence_class": "public-crawl4ai-launcher-software-qualification",
+  "host_independence_scope": "Frozen local qualification with explicit interpreter and isolated profile paths; hosted execution is recorded separately in source-bound workflow artifacts.",
+  "hosted_evidence_workflow": ".github/workflows/crawl4ai-provider.yml",
+  "independent_model_trials": 0,
+  "local_quality": {
+    "focused_launcher_contract_tests": 28,
+    "gates_passed": 30,
+    "skip_scope": "NTFS mode representation; explicit Git-index checks remain active",
+    "tests_passed": 917,
+    "tests_skipped": 2,
+    "typed_source_files": 122
+  },
+  "provider": {
+    "all_owned_processes_after_cleanup": 0,
+    "browser_executable": {
+      "bytes": 4578816,
+      "patchright_version": "1.64.3",
+      "relative_executable": "browsers/chromium-1248/chrome-win64/chrome.exe",
+      "sha256": "7f08161bbeb2853ffe1780a9ded4985087f52efb9725d7d8207aabdd42f7cfb9"
+    },
+    "downstream_version": "0.9.5+catalog.portable4",
+    "input_identity": "ecf869cdf06c3c91a715f508ae7702892de55813f8418303785186d49a16f770",
+    "native_controls_passed": 20,
+    "normal_complete_hashed_install": true,
+    "owned_setup_phases": 12,
+    "setup_implementation_sha256": "c0fd8d2014fcfa7e00944be1ab9c8db5c09340c02443c89b0b77a3d1b46af432",
+    "source_files_admitted": 87,
+    "upstream_version": "0.9.5",
+    "wheel_sha256": "89ec8a5f2d95cc25d637dc8ae21726c6dff2c16f33979a002ebba53b7e1f0adc"
+  },
+  "remaining_limits": [
+    "CrawlResult.model_json_schema for arbitrary SSLCertificate remains unsupported and separately recorded.",
+    "CocoIndex normal fresh-host bootstrap is a separate unfinished task.",
+    "Component controls and source admission do not establish coding-agent superiority."
+  ],
+  "research_date": "2026-10-26",
+  "schema_version": 1,
+  "source_parent": "8cbb18173866b07496cece1934a67c713fcf91db",
+  "source_sha256": {
+    ".agents/skills/crawl4ai-research/SKILL.md": "69eb59d60c7d1546a6499fc16101d1e54a11bbe44f53332e34349f9dfccab5f6",
+    ".github/workflows/crawl4ai-provider.yml": "115a2f459c9f840fa4de8d94dc766b7f150b7f33507c848f7b58667b99daf341",
+    "docs/agent-tools.md": "2360f8fe042fd0703a205600f5e5d928557cd1a27bc989f9e93ce38a20c8403e",
+    "pyproject.toml": "ffb5b0dc9f793fe3b2a4c2b46f7f4bc90f1c9f4629ffdbc42102d7c8a2a514f8",
+    "tests/test_crawl4ai_launcher.py": "5266f7178a2c95e237a1ae82f46770b94e53fa60f039049e399abeee1ba520c3",
+    "toolchains/crawl4ai/README.md": "a47f5e63fbe2d7fbfac275c65c37f2a976ea5baa9e9baab12c5ec40026d360e3",
+    "toolchains/crawl4ai/requirements-bootstrap.txt": "f409e9c999da22f4920b4724c68adadb416a515f38d760dfd34ae6382d43df04",
+    "toolchains/crawl4ai/requirements-build.txt": "598c137cde815bcc17fb75f786cd06f3ab08cda0b11b62f1a92491a39783367f",
+    "toolchains/crawl4ai/requirements.txt": "3852ff2d1e3c104281aa40857036662deef86ea775d6b7af1e5c5c98225f51a9",
+    "toolchains/crawl4ai/source.json": "97e3fef112e93c65de6032a155d0d79d2e9d8a6634b94da7450027c1834f5c86",
+    "tools/_catalog_publication.py": "3be0d907c21004dd9e86cbbd01d12a043f80cffd9c76d3da3d43d64f8aef8a3a",
+    "tools/_windows_owned_python.py": "acf5b4e2d94758065cef125e5d6386ff741fe75e80bde2e66e0e67ac5e4a2651",
+    "tools/check_crawl4ai_contracts.py": "56ce398e74626fff0b69452a8f0924db745bd74e265f3899cc871c63488d24ee",
+    "tools/crawl4ai_capture.py": "0cb0d253f4422ff94ea20654eacf082a4af0759ba2118c79bc6b150c650a180d",
+    "tools/crawl4ai_tool.py": "c0fd8d2014fcfa7e00944be1ab9c8db5c09340c02443c89b0b77a3d1b46af432",
+    "tools/prepare_crawl4ai_source.py": "d205159a6ffdd9f22ab65eb9cbe24a21edeb3c801e9c08e0ed9f79d92acac5dc",
+    "tools/verify_crawl4ai_wheel.py": "90bc6b422ff7e3e5e63c7a36f479f68e2129c76c6accf4f9373e31c7eb5dc37d"
+  },
+  "target": {
+    "architecture": "x64",
+    "os": "Windows",
+    "python": "3.13.17"
+  },
+  "version_review": {
+    "alerts_suppressed": false,
+    "build_and_bootstrap": [
+      {
+        "current": "1.6.1",
+        "exact_latest": true,
+        "latest": "1.6.1",
+        "name": "build",
+        "native_sha256": "1f23d3112e2d03277e2cdc3902b216387b30fea87b01f1b2d16877d785feeb44"
+      },
+      {
+        "current": "8.5.0",
+        "exact_latest": true,
+        "latest": "8.5.0",
+        "name": "click",
+        "native_sha256": "b10ffc8a5a9025eefe4fd243cd90c54724f6c372d9eface5b4648577bc479039"
+      },
+      {
+        "current": "0.4.6",
+        "exact_latest": true,
+        "latest": "0.4.6",
+        "name": "colorama",
+        "native_sha256": "91d65e313ddffe647e53485367394d6b784d5631b77a6e68836367ec14ff8cf7"
+      },
+      {
+        "current": "26.3",
+        "exact_latest": true,
+        "latest": "26.3",
+        "name": "packaging",
+        "native_sha256": "9d7a2885e9e79296598f8c943e0a94c2468e21c800abd26ed13c633465a78835"
+      },
+      {
+        "current": "7.6.2",
+        "exact_latest": true,
+        "latest": "7.6.2",
+        "name": "pip-tools",
+        "native_sha256": "ac1f98f35e74215667be8abc1fe7c6d523cdfed8b3182f40143ebeda5ae97d10"
+      },
+      {
+        "current": "26.2.2",
+        "exact_latest": true,
+        "latest": "26.2.2",
+        "name": "pip",
+        "native_sha256": "39496a234cc006f6063c4b5b918039b09bd8b31275935a224ead684089ab6a38"
+      },
+      {
+        "current": "1.3.3",
+        "exact_latest": true,
+        "latest": "1.3.3",
+        "name": "pyproject_hooks",
+        "native_sha256": "afc7607e4b9aecb6f18f1e60f964a2d51f3276c61cc77559543ba519266b4ca4"
+      },
+      {
+        "current": "84.2.1",
+        "exact_latest": true,
+        "latest": "84.2.1",
+        "name": "setuptools",
+        "native_sha256": "1b84d1a1e6d5469d9ac64f06e612b57d2d049b73df26f46e29771eaf34ed7006"
+      },
+      {
+        "current": "0.48.0",
+        "exact_latest": true,
+        "latest": "0.48.0",
+        "name": "wheel",
+        "native_sha256": "113f8abc907676e530c9dca238f3b2bd26e2b142747d16d7d4775810e1155980"
+      }
+    ],
+    "dependency_constraint_overrides": false,
+    "latest_compatible_changes": {},
+    "native_report_sha256": "95bdeba4cee2fff9c640822847daedb2a8dbb822f6f387abae4219a5ebd46f9b",
+    "resolved_runtime_packages": 96
+  }
+}

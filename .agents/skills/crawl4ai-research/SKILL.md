@@ -9,6 +9,12 @@ description: Require a reviewed isolated Crawl4AI provider for web-page research
 
 # Crawl4AI research
 
+For this collection on Windows x64, use CPython 3.13.17 and the public
+`tools/crawl4ai_tool.py` launcher: `setup`, `check`, then `crawl` with explicit
+URL, native result and metadata destinations. Read
+`toolchains/crawl4ai/README.md` for installation and recovery. This keeps builds,
+providers, browser profiles and diagnostics inside a dedicated checkout cache.
+
 Use Crawl4AI for web-page research and source-content reading. Search may locate
 the exact public URL, but snippets do not substitute for page extraction. Exact
 API, stream, package and archive captures retain their native transports.
