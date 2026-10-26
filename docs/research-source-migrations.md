@@ -50,9 +50,40 @@ an unresolved source condition, not a conclusion about external dependency licen
 The exact candidate is recorded in the hash-bound
 [admission registry](../data/source_admission_holds.json). Both collection and
 offline catalog validation refuse that version; the current pin remains allowed.
-The candidate report retains every resource's digest and review status: four whole
-resources were read; inspecting all 177 license fields does not complete review of
-those skill bodies. No candidate package, paid API job or agent benchmark ran.
+The initial candidate report retains every resource's digest and its review status
+at that stage: four whole resources were read. The
+[next review batch](../artifacts/research/2026-10-26/kdense-restricted-and-undeclared-review.json)
+reads all ten instruction files with missing, unknown, proprietary or noncommercial
+license declarations, plus the Glycoengineering helper source. Across both batches,
+12 of 177 instruction bodies and 15 of 2,026 resources have been read. The remaining
+references, scripts and assets still need review. No candidate package, paid API
+job or agent benchmark ran; the source hold remains in force.
+
+The batch distinguishes instruction permissions from package, dataset, model-weight
+and service terms. Three declarations remain unknown and four are missing. Rowan's
+proprietary field does not establish whether its restriction concerns the instruction
+or the hosted service. DeepSpot-M declares noncommercial terms and reports separate
+weight/access restrictions. What-If Oracle expressly retains noncommercial and
+share-alike terms. The official [PolyForm terms](https://polyformproject.org/licenses/noncommercial/1.0.0)
+and [CC BY-NC-SA legal code](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en)
+were read with Crawl4AI; the original PolyForm trailing-slash 404 is retained.
+These observations do not supply missing grants or clear the whole source for use.
+
+Native PyPI metadata checked on 26 October also identifies versions requiring new
+qualification before a later source or overlay update:
+
+| Package | Version discussed in the candidate | Latest stable observed |
+| --- | --- | --- |
+| PyHealth | 2.0.2 | 2.1.0 |
+| rowan-python | 3.2.0 | 3.2.3 |
+| pandas in the PrimeKG review | 3.0.6 | 3.1.0 |
+
+DeepSpot-M 1.0.0 and ETE3 3.1.3 still match their latest stable package metadata.
+Package availability does not prove compatibility. In particular, PyHealth 2.1.0
+declares Python 3.12–3.13 support; it cannot be treated as compatible with the
+catalog toolchain's Python 3.14 merely because it is newer. Eight existing catalog
+entries now track this candidate review as contextual research in progress. Their
+source signatures, revision/evaluation states and current mirrors are unchanged.
 
 The [migration controls](../artifacts/research/2026-10-25/source-history-migration-controls.json)
 retain the original refused preview, corrected counterexample, archival checks,

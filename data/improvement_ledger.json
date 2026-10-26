@@ -5115,8 +5115,18 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/glycoengineering",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "candidate_context_only": {
+          "candidate_source_path": "skills/glycoengineering/SKILL.md",
+          "current_mirror_not_reviewed_by_this_batch": true,
+          "source_commit": "526ebce143bc326f44471554e33d66a19c840360"
+        },
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-26/kdense-restricted-and-undeclared-review.json",
+            "sha256": "b91571cf19954030081a1d96830b226fd9e4340b4bb298abe2df77c629d2ebe2"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5247,8 +5257,18 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/infographics",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "candidate_context_only": {
+          "candidate_source_path": "skills/infographics/SKILL.md",
+          "current_mirror_not_reviewed_by_this_batch": true,
+          "source_commit": "526ebce143bc326f44471554e33d66a19c840360"
+        },
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-26/kdense-restricted-and-undeclared-review.json",
+            "sha256": "b91571cf19954030081a1d96830b226fd9e4340b4bb298abe2df77c629d2ebe2"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5357,8 +5377,18 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/latex-posters",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "candidate_context_only": {
+          "candidate_source_path": "skills/latex-posters/SKILL.md",
+          "current_mirror_not_reviewed_by_this_batch": true,
+          "source_commit": "526ebce143bc326f44471554e33d66a19c840360"
+        },
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-26/kdense-restricted-and-undeclared-review.json",
+            "sha256": "b91571cf19954030081a1d96830b226fd9e4340b4bb298abe2df77c629d2ebe2"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5929,8 +5959,18 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/phylogenetics",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "candidate_context_only": {
+          "candidate_source_path": "skills/phylogenetics/SKILL.md",
+          "current_mirror_not_reviewed_by_this_batch": true,
+          "source_commit": "526ebce143bc326f44471554e33d66a19c840360"
+        },
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-26/kdense-restricted-and-undeclared-review.json",
+            "sha256": "b91571cf19954030081a1d96830b226fd9e4340b4bb298abe2df77c629d2ebe2"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6039,8 +6079,18 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/primekg",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "candidate_context_only": {
+          "candidate_source_path": "skills/primekg/SKILL.md",
+          "current_mirror_not_reviewed_by_this_batch": true,
+          "source_commit": "526ebce143bc326f44471554e33d66a19c840360"
+        },
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-26/kdense-restricted-and-undeclared-review.json",
+            "sha256": "b91571cf19954030081a1d96830b226fd9e4340b4bb298abe2df77c629d2ebe2"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6149,8 +6199,18 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/pyhealth",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "candidate_context_only": {
+          "candidate_source_path": "skills/pyhealth/SKILL.md",
+          "current_mirror_not_reviewed_by_this_batch": true,
+          "source_commit": "526ebce143bc326f44471554e33d66a19c840360"
+        },
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-26/kdense-restricted-and-undeclared-review.json",
+            "sha256": "b91571cf19954030081a1d96830b226fd9e4340b4bb298abe2df77c629d2ebe2"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6479,8 +6539,18 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/rowan",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "candidate_context_only": {
+          "candidate_source_path": "skills/rowan/SKILL.md",
+          "current_mirror_not_reviewed_by_this_batch": true,
+          "source_commit": "526ebce143bc326f44471554e33d66a19c840360"
+        },
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-26/kdense-restricted-and-undeclared-review.json",
+            "sha256": "b91571cf19954030081a1d96830b226fd9e4340b4bb298abe2df77c629d2ebe2"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7161,8 +7231,18 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/what-if-oracle",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "candidate_context_only": {
+          "candidate_source_path": "skills/what-if-oracle/SKILL.md",
+          "current_mirror_not_reviewed_by_this_batch": true,
+          "source_commit": "526ebce143bc326f44471554e33d66a19c840360"
+        },
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-26/kdense-restricted-and-undeclared-review.json",
+            "sha256": "b91571cf19954030081a1d96830b226fd9e4340b4bb298abe2df77c629d2ebe2"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],

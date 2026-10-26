@@ -1,0 +1,425 @@
+{
+  "additional_whole_instructions_reviewed": 10,
+  "additional_whole_supporting_source_reviewed": {
+    "executed": false,
+    "path": "skills/glycoengineering/scripts/glycoengineering_tools.py",
+    "sha256": "e47977c4b873aeac963fccd5856184b645eaa9d90dc703c4d846a823d5e5ca0a"
+  },
+  "candidate_packages_installed": false,
+  "candidate_resources": 2026,
+  "candidate_skills": 177,
+  "catalog_or_mirrors_changed": false,
+  "coding_agent_efficacy_scored": false,
+  "completion_limit": "Ten complete instruction bodies and one helper source were read, not all resources of these skills. Their current catalog versions were not replaced or marked research-complete.",
+  "counted_runtime_benchmark_artifact": false,
+  "initial_inventory": {
+    "path": "artifacts/research/2026-10-25/kdense-v272-source-candidate-review.json",
+    "sha256": "5e3171b5dd8a87b37914e8b302596c6598354dc8fbd81e58414296ef0eecdc9c"
+  },
+  "license_evidence_scope": [
+    "Official PolyForm text was read after correcting a 404 trailing-slash URL; the original failure is retained.",
+    "Official CC BY-NC-SA 4.0 text was read, including noncommercial scope, attribution and share-alike conditions.",
+    "Reading license terms does not establish the uploader has all rights or resolve missing/proprietary declarations. No blanket admission or legal clearance is claimed."
+  ],
+  "native_crawls": [
+    {
+      "admitted_as_document_evidence": false,
+      "capture_bytes": 16902,
+      "capture_digest": "a8fb510cadabbadb6a6faf5c68d78a9d71e975c18660fb10c7fde41fa7a23627",
+      "error": "",
+      "extracted_characters": 690,
+      "native_success": true,
+      "provider_version": "0.9.5+catalog.portable4",
+      "source_files_verified": 87,
+      "status": 404,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "url": "https://polyformproject.org/licenses/noncommercial/1.0.0/",
+      "whole_extracted_text_reviewed": false
+    },
+    {
+      "admitted_as_document_evidence": true,
+      "capture_bytes": 35700,
+      "capture_digest": "6300e5192d75e623ecd3dae7c4b6024c33704e746a8e093445e9a2a97fb702c6",
+      "error": "",
+      "extracted_characters": 5215,
+      "native_success": true,
+      "provider_version": "0.9.5+catalog.portable4",
+      "source_files_verified": 87,
+      "status": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "url": "https://polyformproject.org/licenses/noncommercial/1.0.0",
+      "whole_extracted_text_reviewed": true
+    },
+    {
+      "admitted_as_document_evidence": true,
+      "capture_bytes": 217160,
+      "capture_digest": "e76662ae20b5c4cc41d191448d96aee0132e7d3d4c1972302dd4758044f405ae",
+      "error": "",
+      "extracted_characters": 26186,
+      "native_success": true,
+      "provider_version": "0.9.5+catalog.portable4",
+      "source_files_verified": 87,
+      "status": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en",
+      "whole_extracted_text_reviewed": true
+    }
+  ],
+  "native_package_metadata": [
+    {
+      "latest_stable": "1.0.0",
+      "native_bytes": 14699,
+      "native_sha256": "b4d6487b606822d42e90722eae3a62b16cef3b383568006abb16b2ae2a24cac4",
+      "package": "deepspotm",
+      "package_installed_or_executed": false,
+      "requires_python": ">=3.10",
+      "url": "https://pypi.org/pypi/deepspotm/json"
+    },
+    {
+      "latest_stable": "2.1.0",
+      "native_bytes": 63618,
+      "native_sha256": "cfdce626c5418cc91808a05415c7b4368ec8de616e4b99d689ae8e4c0e205d39",
+      "package": "pyhealth",
+      "package_installed_or_executed": false,
+      "requires_python": "<3.14,>=3.12",
+      "url": "https://pypi.org/pypi/pyhealth/json"
+    },
+    {
+      "latest_stable": "3.2.3",
+      "native_bytes": 119917,
+      "native_sha256": "3e9423d24fa37ed0063e8032d3981f7c269888910be56405259c6636bed947af",
+      "package": "rowan-python",
+      "package_installed_or_executed": false,
+      "requires_python": ">=3.12",
+      "url": "https://pypi.org/pypi/rowan-python/json"
+    },
+    {
+      "latest_stable": "3.1.3",
+      "native_bytes": 24340,
+      "native_sha256": "bcc638b8ee8ed6f57ddca64f202b1cd1a11203e203b2ae83caf74aa22db584b8",
+      "package": "ete3",
+      "package_installed_or_executed": false,
+      "requires_python": "",
+      "url": "https://pypi.org/pypi/ete3/json"
+    },
+    {
+      "latest_stable": "3.1.0",
+      "native_bytes": 2231153,
+      "native_sha256": "15772fe4ae6ffc680fe6c4aad7ba4c8ce579b2fa4ec222c3313138a35cf2c84b",
+      "package": "pandas",
+      "package_installed_or_executed": false,
+      "requires_python": ">=3.11",
+      "url": "https://pypi.org/pypi/pandas/json"
+    }
+  ],
+  "operating_system_target_changed": false,
+  "paid_api_or_model_jobs_executed": false,
+  "records": [
+    {
+      "admission_reason": "Declared noncommercial code terms; body separately reports noncommercial weight terms and narrower model-access eligibility. Current access-form eligibility was not independently checked.",
+      "admission_status": "held_unresolved",
+      "bytes": 9939,
+      "candidate_resource_count": 3,
+      "declared_license_field": "PolyForm-Noncommercial-1.0.0",
+      "immutable_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/526ebce143bc326f44471554e33d66a19c840360/skills/deepspot-m/SKILL.md",
+      "name": "deepspot-m",
+      "next_verification": [
+        "Resolve instruction/code/weight and gate terms separately.",
+        "Qualify current package preprocessing and coordinate contracts without presenting them as biological validation."
+      ],
+      "path": "skills/deepspot-m/SKILL.md",
+      "published_version_context_only_ids": [],
+      "source_blob": "629487ca20bc9993aa83956d2e9b0f28090f8fc5",
+      "source_observations": [
+        "Tile dimensions and physical MPP are separated; coordinate joins require IDs rather than row order.",
+        "CPU synthetic checks are reported upstream; gated weights, CUDA and biological accuracy are explicitly outside that report.",
+        "The optional histolab tiler is assigned a separate older Python environment."
+      ],
+      "source_program_executed": false,
+      "source_sha256": "a917434c523e136ddc1ce45b54acbef8c28398dd293314f72faa278431e67418",
+      "supporting_resources_review_complete": false,
+      "whole_instruction_reviewed": true
+    },
+    {
+      "admission_reason": "The instruction license field remains Unknown; predictor and structural-tool permissions are separate questions.",
+      "admission_status": "held_unresolved",
+      "bytes": 11942,
+      "candidate_resource_count": 5,
+      "declared_license_field": "Unknown",
+      "immutable_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/526ebce143bc326f44471554e33d66a19c840360/skills/glycoengineering/SKILL.md",
+      "name": "glycoengineering",
+      "next_verification": [
+        "Resolve instruction and bundled-helper permissions.",
+        "Review all supporting references, then independently qualify sequence/mutation boundaries and the claimed CLI defect."
+      ],
+      "path": "skills/glycoengineering/SKILL.md",
+      "published_version_context_only_ids": [
+        "k-dense-ai-scientific-agent-skills-scientific-skills-glycoengineering-skill-md"
+      ],
+      "source_blob": "c9ad1e217d693ea0edf61ec4ac978d9122d0d5da",
+      "source_observations": [
+        "The workflow distinguishes motif, prediction, measured occupancy and glycan structure.",
+        "It records a GlycoSHIELD CLI option-handling defect and directs readers to a reference-level API workaround.",
+        "The local helper is standard-library-only and performs sequence normalization, overlapping motif scanning and explicit mutations. Its entire source was read, not executed."
+      ],
+      "source_program_executed": false,
+      "source_sha256": "b529bde5367cd84175f07db473361c9713a69af8f641cd740a10c0b660b32bc7",
+      "supporting_resources_review_complete": false,
+      "whole_instruction_reviewed": true
+    },
+    {
+      "admission_reason": "No instruction license field is present; linked resource cards have independent terms.",
+      "admission_status": "held_unresolved",
+      "bytes": 11816,
+      "candidate_resource_count": 8,
+      "declared_license_field": null,
+      "immutable_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/526ebce143bc326f44471554e33d66a19c840360/skills/hugging-science/SKILL.md",
+      "name": "hugging-science",
+      "next_verification": [
+        "Resolve the missing instruction grant and each selected resource license.",
+        "Review the fetcher and all references; test explicit credential boundaries and resource-specific loaders."
+      ],
+      "path": "skills/hugging-science/SKILL.md",
+      "published_version_context_only_ids": [],
+      "source_blob": "9ca2c59dc856c511bb2ca72c7da0f06f4f74030e",
+      "source_observations": [
+        "Catalog discovery is separated from executable runtime and scientific suitability.",
+        "The source asserts a user preference for automatic parent-directory .env discovery; this is source material, not an established preference of catalog users.",
+        "Reported tiny/random, synthetic and mocked checks do not qualify pretrained inference or large dataset processing."
+      ],
+      "source_program_executed": false,
+      "source_sha256": "cff6c7e67d7f1925f008e11f5d0428f08391c35f4294d2c4c70350667b2decb2",
+      "supporting_resources_review_complete": false,
+      "whole_instruction_reviewed": true
+    },
+    {
+      "admission_reason": "No instruction license field is present; paid model and output terms are not supplied by a root repository notice.",
+      "admission_status": "held_unresolved",
+      "bytes": 15328,
+      "candidate_resource_count": 8,
+      "declared_license_field": null,
+      "immutable_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/526ebce143bc326f44471554e33d66a19c840360/skills/infographics/SKILL.md",
+      "name": "infographics",
+      "next_verification": [
+        "Resolve instruction and bundled-script terms.",
+        "Review scripts/references and qualify failure propagation, actual provider schemas and source retention before any paid generation."
+      ],
+      "path": "skills/infographics/SKILL.md",
+      "published_version_context_only_ids": [
+        "k-dense-ai-scientific-agent-skills-scientific-skills-infographics-skill-md"
+      ],
+      "source_blob": "075153e7d61cefdae881364210c60cd57ebf9873",
+      "source_observations": [
+        "Saved-image success is explicitly separated from review completion and factual correctness.",
+        "The source reports that generation continues after failed research using the supplied prompt; this boundary needs evaluation for tasks that require verified facts.",
+        "Numerical visualizations and GIS are directed to deterministic tools when geometry and reproducibility matter."
+      ],
+      "source_program_executed": false,
+      "source_sha256": "dcd4ac5b46ac7f88ce8bd4ddf3efc8aa99a3f4bc6cc9ce2067c7d469758f0a8f",
+      "supporting_resources_review_complete": false,
+      "whole_instruction_reviewed": true
+    },
+    {
+      "admission_reason": "No instruction license field is present; poster classes, templates and optional model services require separate attribution/terms review.",
+      "admission_status": "held_unresolved",
+      "bytes": 10624,
+      "candidate_resource_count": 17,
+      "declared_license_field": null,
+      "immutable_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/526ebce143bc326f44471554e33d66a19c840360/skills/latex-posters/SKILL.md",
+      "name": "latex-posters",
+      "next_verification": [
+        "Resolve instruction/template grants and the archived baposter source.",
+        "Compile and render every selected template on a qualified host; inspect final page size, fonts and placement."
+      ],
+      "path": "skills/latex-posters/SKILL.md",
+      "published_version_context_only_ids": [
+        "k-dense-ai-scientific-agent-skills-scientific-skills-latex-posters-skill-md"
+      ],
+      "source_blob": "b4e21b6ef09013a494efbeb04c2bfdc1597a74a8",
+      "source_observations": [
+        "Three compiled-template claims are dated upstream reports, not executions in this review.",
+        "The skill keeps quantitative plots and source figures separate from generated conceptual art.",
+        "Automated preflight is explicitly narrower than accessibility, PDF/X, overlap and scientific review."
+      ],
+      "source_program_executed": false,
+      "source_sha256": "4350dc80280fea210f9682991103445e97c58504ddd14e7a26f3d84e2fee5837",
+      "supporting_resources_review_complete": false,
+      "whole_instruction_reviewed": true
+    },
+    {
+      "admission_reason": "The instruction license remains Unknown; executable/package licenses do not establish the instruction grant.",
+      "admission_status": "held_unresolved",
+      "bytes": 9393,
+      "candidate_resource_count": 3,
+      "declared_license_field": "Unknown",
+      "immutable_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/526ebce143bc326f44471554e33d66a19c840360/skills/phylogenetics/SKILL.md",
+      "name": "phylogenetics",
+      "next_verification": [
+        "Resolve instruction/helper permissions.",
+        "Review both remaining resources and qualify actual executable identity, failure handling, tree labels and rerooted split support."
+      ],
+      "path": "skills/phylogenetics/SKILL.md",
+      "published_version_context_only_ids": [
+        "k-dense-ai-scientific-agent-skills-scientific-skills-phylogenetics-skill-md"
+      ],
+      "source_blob": "c09caa7c1918a8049318ed145916f1bf342e7c4d",
+      "source_observations": [
+        "ETE3 is deliberately versioned separately from ETE4; its Python cgi compatibility boundary is recorded.",
+        "The source distinguishes gene trees, biological rooting, support scales and dated phylogenies.",
+        "Smoke versions and untested visualization/trimAl/IQ-TREE 2 paths are explicitly separated."
+      ],
+      "source_program_executed": false,
+      "source_sha256": "eef2354a8fe6c51c2ad8a506e512326553bda52c731952598adef677ae2d67d5",
+      "supporting_resources_review_complete": false,
+      "whole_instruction_reviewed": true
+    },
+    {
+      "admission_reason": "The instruction license remains Unknown even though its body reports distinct MIT code and CC0 dataset declarations.",
+      "admission_status": "held_unresolved",
+      "bytes": 9659,
+      "candidate_resource_count": 3,
+      "declared_license_field": "Unknown",
+      "immutable_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/526ebce143bc326f44471554e33d66a19c840360/skills/primekg/SKILL.md",
+      "name": "primekg",
+      "next_verification": [
+        "Resolve the instruction/helper grant independently from the dataset and construction code.",
+        "Review the query helper/reference, qualify namespace/reverse-edge behavior and measure full-artifact memory before scalability claims."
+      ],
+      "path": "skills/primekg/SKILL.md",
+      "published_version_context_only_ids": [
+        "k-dense-ai-scientific-agent-skills-scientific-skills-primekg-skill-md"
+      ],
+      "source_blob": "f49ba0af63deca43653d1e6d3e0c4c39d965fa7c",
+      "source_observations": [
+        "Node keys include identity, type and source, with reverse rows and signed relations retained.",
+        "The helper is described as a full CSV read on every query; low_memory is not a bounded-memory graph engine.",
+        "The source reports byte-range/metadata checks, not a complete 982 MB artifact checksum or full graph qualification."
+      ],
+      "source_program_executed": false,
+      "source_sha256": "b20698944fa51b287a13e7dc22ac033b83836b73614a21cff725ad7d6d807226",
+      "supporting_resources_review_complete": false,
+      "whole_instruction_reviewed": true
+    },
+    {
+      "admission_reason": "No instruction license field is present; package and restricted clinical-data permissions remain separate.",
+      "admission_status": "held_unresolved",
+      "bytes": 8227,
+      "candidate_resource_count": 8,
+      "declared_license_field": null,
+      "immutable_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/526ebce143bc326f44471554e33d66a19c840360/skills/pyhealth/SKILL.md",
+      "name": "pyhealth",
+      "next_verification": [
+        "Resolve instruction/starter permissions.",
+        "Review the actual starter and train-only preprocessing recipe; qualify the newer 2.1.0 API on synthetic data before revising any compatibility claim."
+      ],
+      "path": "skills/pyhealth/SKILL.md",
+      "published_version_context_only_ids": [
+        "k-dense-ai-scientific-agent-skills-scientific-skills-pyhealth-skill-md"
+      ],
+      "source_blob": "5b9783f1eb09158c788af90a486544e74d720739",
+      "source_observations": [
+        "The source targets PyHealth 2.0.2 and distinguishes synthetic execution from clinical performance.",
+        "The quick prototype fits processors before patient splitting and explicitly discloses the resulting vocabulary leakage.",
+        "The strict train-only preprocessing path is deferred to a reference that is not yet reviewed here."
+      ],
+      "source_program_executed": false,
+      "source_sha256": "ec4de54618b71a4f8cfeb086d131c610127784a6839d842a67b3c1e87b66e161",
+      "supporting_resources_review_complete": false,
+      "whole_instruction_reviewed": true
+    },
+    {
+      "admission_reason": "The instruction field literally says Proprietary (API key required). An API key requirement does not by itself determine redistribution rights; the grant remains unresolved.",
+      "admission_status": "held_unresolved",
+      "bytes": 17335,
+      "candidate_resource_count": 6,
+      "declared_license_field": "Proprietary (API key required)",
+      "immutable_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/526ebce143bc326f44471554e33d66a19c840360/skills/rowan/SKILL.md",
+      "name": "rowan",
+      "next_verification": [
+        "Resolve the instruction grant and hosted-service terms separately.",
+        "Review all five references and the current 3.2.3 SDK; qualify schema/workaround changes before any hosted campaign."
+      ],
+      "path": "skills/rowan/SKILL.md",
+      "published_version_context_only_ids": [
+        "k-dense-ai-scientific-agent-skills-scientific-skills-rowan-skill-md"
+      ],
+      "source_blob": "b4e30e57a1a5f22f4ea9ec2b90751afcf522207b",
+      "source_observations": [
+        "The source targets SDK 3.2.0 and records a Folder model annotation workaround.",
+        "It distinguishes workflow completion from success, polling from event streaming and partial from typed final data.",
+        "Hosted examples consume credits; no authenticated calculation was executed for this review."
+      ],
+      "source_program_executed": false,
+      "source_sha256": "d631f00ae0f9325aa58912bb571b7eb43bc42c553498e4c97f4d65a1683c8599",
+      "supporting_resources_review_complete": false,
+      "whole_instruction_reviewed": true
+    },
+    {
+      "admission_reason": "The body expressly retains CC BY-NC-SA 4.0 attribution and says commercial use requires a separate author license.",
+      "admission_status": "held_unresolved",
+      "bytes": 11817,
+      "candidate_resource_count": 2,
+      "declared_license_field": "CC BY-NC-SA 4.0",
+      "immutable_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/526ebce143bc326f44471554e33d66a19c840360/skills/what-if-oracle/SKILL.md",
+      "name": "what-if-oracle",
+      "next_verification": [
+        "Preserve noncommercial/share-alike and attribution boundaries; do not relabel the work MIT.",
+        "Review the remaining reference and independently freeze evaluation tasks before any efficacy comparison."
+      ],
+      "path": "skills/what-if-oracle/SKILL.md",
+      "published_version_context_only_ids": [
+        "k-dense-ai-scientific-agent-skills-scientific-skills-what-if-oracle-skill-md"
+      ],
+      "source_blob": "dc6b38f8dd501155017f5d23099bdc0513fe5ab9",
+      "source_observations": [
+        "The six lenses are framed as qualitative prompts rather than a calibrated probability partition.",
+        "Forecast likelihood, evidence confidence, causal effects and scenario narratives are explicitly separated.",
+        "The documentation-only worked example is synthetic; no forecast engine or demonstrated research-outcome gain is supplied."
+      ],
+      "source_program_executed": false,
+      "source_sha256": "509af149c8cfc8f17dd15608d6337eb8a7ff3f4056fcadeda573c5e527c68a97",
+      "supporting_resources_review_complete": false,
+      "whole_instruction_reviewed": true
+    }
+  ],
+  "review_kind": "Complete instruction-body and targeted license-declaration review; supporting-resource and runtime review incomplete.",
+  "schema_version": 1,
+  "selected_ref": "v2.72.0",
+  "source_candidate_state": "held_before_publication",
+  "source_commit": "526ebce143bc326f44471554e33d66a19c840360",
+  "source_programs_executed": false,
+  "source_repo": "K-Dense-AI/scientific-agent-skills",
+  "upstream_claims_independently_reproduced": false,
+  "whole_instructions_reviewed_across_batches": 12,
+  "whole_resources_reviewed_across_batches": 15
+}
