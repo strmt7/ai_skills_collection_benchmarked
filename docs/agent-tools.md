@@ -20,6 +20,18 @@ broad navigation nor web-page research, record that scope rather than claim use.
 
 ## Source-bound execution
 
+The required roles match the inspected FlitzZip setup: Caveman governs internal
+communication, CocoIndex Code routes broad navigation and Crawl4AI reads web
+pages. FlitzZip permits documented alternatives after a crawler restriction;
+this collection follows its owner's stricter no-bypass policy. Restore a failed
+required provider before dependent work. The native API/archive transport
+exception below remains explicit.
+
+Caveman is an instruction overlay and needs no external runtime, hooks, plugin
+installer or worker agents. Read the local skill and preserve normal public
+prose, exact evidence and all safety and verification requirements. Tool badges
+link to upstream projects; their presence does not prove installation or use.
+
 For CocoIndex, use the reviewed local adapter in
 [search_semantic_corpus.py](../tools/search_semantic_corpus.py). Bind its corpus
 to the current Git root and exact selected source bytes. The adapter rejects

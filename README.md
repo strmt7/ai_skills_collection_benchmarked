@@ -1,7 +1,10 @@
 # AI Skills Collection Benchmarked
 
 <!-- BEGIN GENERATED BADGES -->
-[![Codecov: Python tooling coverage](https://img.shields.io/codecov/c/github/strmt7/ai_skills_collection_benchmarked?label=Python%20tooling%20coverage&logo=codecov)](https://codecov.io/gh/strmt7/ai_skills_collection_benchmarked)
+[![Codecov](https://img.shields.io/codecov/c/github/strmt7/ai_skills_collection_benchmarked?label=Codecov&logo=codecov)](https://codecov.io/gh/strmt7/ai_skills_collection_benchmarked)
+[![cocoindex-code](https://img.shields.io/static/v1?label=&message=cocoindex-code&color=555&logo=github&logoColor=white)](https://github.com/cocoindex-io/cocoindex-code)
+[![caveman](https://img.shields.io/static/v1?label=&message=caveman&color=555&logo=github&logoColor=white)](https://github.com/JuliusBrussee/caveman)
+[![crawl4ai](https://img.shields.io/static/v1?label=&message=crawl4ai&color=555&logo=github&logoColor=white)](https://github.com/unclecode/crawl4ai)
 [![Offline validation](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/offline-validation.yml/badge.svg)](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/offline-validation.yml)
 [![Ruff](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/ruff.yml/badge.svg)](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/ruff.yml)
 [![Mypy](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/mypy.yml/badge.svg)](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/workflows/mypy.yml)

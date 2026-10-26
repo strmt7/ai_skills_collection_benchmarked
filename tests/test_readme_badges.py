@@ -9,6 +9,27 @@ from pathlib import Path
 import update_readme_badges as badges
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def test_required_tool_and_codecov_badges_match_reference_contract() -> None:
+    metadata = json.loads((ROOT / ".github/readme_badges.json").read_text(encoding="utf-8"))
+    badges = {item["alt"]: item for item in metadata["badges"]}
+    assert (
+        badges["Codecov"]["image"] == "https://img.shields.io/codecov/c/github/{repo_path}?label=Codecov&logo=codecov"
+    )
+    assert badges["Codecov"]["target"] == "https://codecov.io/gh/{repo_path}"
+    for name, repository in [
+        ("cocoindex-code", "cocoindex-io/cocoindex-code"),
+        ("caveman", "JuliusBrussee/caveman"),
+        ("crawl4ai", "unclecode/crawl4ai"),
+    ]:
+        assert (
+            badges[name]["image"]
+            == f"https://img.shields.io/static/v1?label=&message={name}&color=555&logo=github&logoColor=white"
+        )
+        assert badges[name]["target"] == "https://github.com/" + repository
+
+
 KARPATHY_BADGE_URL = (
     "https://img.shields.io/static/v1?label=&message=andrej-karpathy-skills&color=555&logo=github&logoColor=white"
 )

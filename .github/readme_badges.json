@@ -6,9 +6,24 @@
   "remote_name": "origin",
   "badges": [
     {
-      "alt": "Codecov: Python tooling coverage",
-      "image": "https://img.shields.io/codecov/c/github/{repo_path}?label=Python%20tooling%20coverage&logo=codecov",
+      "alt": "Codecov",
+      "image": "https://img.shields.io/codecov/c/github/{repo_path}?label=Codecov&logo=codecov",
       "target": "https://codecov.io/gh/{repo_path}"
+    },
+    {
+      "alt": "cocoindex-code",
+      "image": "https://img.shields.io/static/v1?label=&message=cocoindex-code&color=555&logo=github&logoColor=white",
+      "target": "https://github.com/cocoindex-io/cocoindex-code"
+    },
+    {
+      "alt": "caveman",
+      "image": "https://img.shields.io/static/v1?label=&message=caveman&color=555&logo=github&logoColor=white",
+      "target": "https://github.com/JuliusBrussee/caveman"
+    },
+    {
+      "alt": "crawl4ai",
+      "image": "https://img.shields.io/static/v1?label=&message=crawl4ai&color=555&logo=github&logoColor=white",
+      "target": "https://github.com/unclecode/crawl4ai"
     },
     {
       "alt": "Offline validation",
