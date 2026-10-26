@@ -4603,23 +4603,14 @@
           {
             "path": "artifacts/research/2026-10-26/ppt-v673-source-candidate-review.json",
             "sha256": "d1b182b576d5aee9bf5b32e763c941d24dfa9bf4d9d91b3d094f2b1c7a8d8b9a"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/ppt-svg-text-move-v1/qualification.json",
-            "sha256": "491ad4c8d2b661504b4886b10956a929c6753a529f44ed2f91dadb9be16cef19"
           }
         ],
-        "scope": "Contextual review of the pinned baseline and v6.7.3 candidate, plus focused SVG editor text-move controls. Whole-package review and agent efficacy remain incomplete.",
+        "scope": "Contextual review of the pinned baseline and v6.7.3 candidate; byte verification, paired static scans and one native converter fixture. Whole-package review and agent efficacy remain incomplete.",
         "status": "in_progress"
       },
       "revision": {
-        "status": "in_progress",
-        "evidence": [
-          {
-            "path": "included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ppt-master/repair.json",
-            "sha256": "b1b5e29b63ab8bab7fc78794ebad1d223852587aae16b5c3b47ebb3542eaa11e"
-          }
-        ]
+        "evidence": [],
+        "status": "pending"
       },
       "source_repo": "hugohe3/ppt-master",
       "source_signature": {

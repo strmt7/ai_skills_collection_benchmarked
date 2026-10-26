@@ -31,11 +31,6 @@
 /included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/latex-posters/** text eol=lf
 /included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/latex-posters/provenance/** -text !eol
 /artifacts/repaired-skill-readiness/poster-preflight-v1/** text eol=lf
-# The PPT editor repair and its qualification are source-bound; preserve provenance bytes.
-/included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ppt-master/** text eol=lf
-/included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ppt-master/provenance/** -text !eol
-/artifacts/repaired-skill-readiness/ppt-svg-text-move-v1/** text eol=lf
-/benchmarks/component-controls/ppt-svg-editor/** text eol=lf
 # Trial evidence hashes describe exact captured bytes, including Windows logs.
 # Preserve them across Git transports instead of converting line endings.
 /artifacts/agent-trials/** -text

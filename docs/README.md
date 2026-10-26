@@ -23,7 +23,6 @@ For native memory testing and fuzzing dictionaries, see the
 [qualified LLVM contracts and experimental overlays](research-native-testing-contracts.md).
 
 For research posters, see the [maintained PDF preflight repair](poster-preflight-repair.md).
-For slide editing, see the [PPT Master SVG editor repair](ppt-svg-editor-repair.md).
 
 To improve this collection, use the separate
 [contributor guide](../CONTRIBUTING.md) and
