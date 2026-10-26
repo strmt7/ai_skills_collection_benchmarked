@@ -44,6 +44,12 @@ LIMITS = {
 
 
 def access_controls(home: Path, output: Path) -> dict[str, Any]:
+    specification = json.loads(runtime.SOURCE.read_bytes())
+    with runtime.lease(home, specification):
+        return access_controls_with_lease(home, output)
+
+
+def access_controls_with_lease(home: Path, output: Path) -> dict[str, Any]:
     output.mkdir()
     readable, sealed, scratch = [output / name for name in ("readable", "sealed", "scratch")]
     for directory in (readable, sealed, scratch):
@@ -138,6 +144,12 @@ def write_acls(path: Path, home: Path, descriptors: dict[Path, bytes]) -> None:
 
 
 def limit_controls(home: Path, output: Path) -> dict[str, Any]:
+    specification = json.loads(runtime.SOURCE.read_bytes())
+    with runtime.lease(home, specification):
+        return limit_controls_with_lease(home, output)
+
+
+def limit_controls_with_lease(home: Path, output: Path) -> dict[str, Any]:
     output.mkdir()
     observations = {}
     for name, (code, status, reason) in LIMITS.items():
@@ -209,12 +221,14 @@ def candidate_controls(home: Path, output: Path, revision: str) -> dict[str, Any
 def qualify(home: Path, output: Path, revision: str) -> dict[str, Any]:
     grader.common_workspace(home, output)
     sources = source_graph()
-    output.mkdir(parents=True, exist_ok=False)
-    native = Native()
-    native.grant(output, native.owner_sid(), None)
     pin = json.loads(runtime.SOURCE.read_bytes())
     if errors := runtime.verify(home, pin):
         raise ValueError("; ".join(errors))
+    with runtime.lease(home, pin):
+        pass
+    output.mkdir(parents=True, exist_ok=False)
+    native = Native()
+    native.grant(output, native.owner_sid(), None)
     result = {
         "measurement_kind": "native_confinement_component_controls",
         "runtime_version": pin["version"],
@@ -235,6 +249,8 @@ def qualify(home: Path, output: Path, revision: str) -> dict[str, Any]:
             raise ValueError("Qualification must use the current committed fixture bytes")
     if sources != source_graph() or runtime.verify(home, pin):
         raise ValueError("Qualification inputs changed during the control campaign")
+    with runtime.lease(home, pin):
+        pass
     (output / "result.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     return result
 
@@ -288,6 +304,11 @@ def verify_campaign(directory: Path) -> list[str]:
         errors.append("Native qualification source graph is stale")
     if result.get("agent_performance_claim") is not False or result.get("independent_model_trials") != 0:
         errors.append("Component evidence must not claim model performance")
+    before = json.loads((directory / "access/runtime-acls.before.json").read_bytes())
+    after = json.loads((directory / "access/runtime-acls.after.json").read_bytes())
+    expected_paths = {"runtime", *("runtime/" + name for name in json.loads(runtime.SOURCE.read_bytes())["files"])}
+    if before != after or len(before) != len(expected_paths) or {row["path"] for row in before} != expected_paths:
+        errors.append("Native runtime ACL descriptors were not restored exactly")
     for path in observed_files(directory):
         checked_path(path)
         if path.name != "process.json":

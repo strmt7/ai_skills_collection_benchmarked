@@ -25,7 +25,7 @@
     "process": {
       "appcontainer": true,
       "capability_count": 0,
-      "appcontainer_sid": "S-1-15-2-1323203744-3572113538-3851523921-2690182728-3363409822-3437094172-3843764195",
+      "appcontainer_sid": "S-1-15-2-4265359663-2895613686-1500165446-686608412-4038133157-2173504466-3103997577",
       "integrity_sid": "S-1-16-4096",
       "attested_while_suspended": true,
       "windows_job": true,
@@ -51,7 +51,7 @@
     "exit_status": {
       "appcontainer": true,
       "capability_count": 0,
-      "appcontainer_sid": "S-1-15-2-1645520563-3910651345-432597696-1398697552-1927712022-2305193604-2573119461",
+      "appcontainer_sid": "S-1-15-2-3087391289-2124617851-1297561341-2164283817-3743824925-4037301445-3163292232",
       "integrity_sid": "S-1-16-4096",
       "attested_while_suspended": true,
       "windows_job": true,
@@ -74,7 +74,7 @@
     "timeout": {
       "appcontainer": true,
       "capability_count": 0,
-      "appcontainer_sid": "S-1-15-2-380963212-2830011326-803268650-4053216683-337185801-1685492041-518805536",
+      "appcontainer_sid": "S-1-15-2-4151888847-2589221795-3242594264-343597401-2042469933-3832462698-1921866685",
       "integrity_sid": "S-1-16-4096",
       "attested_while_suspended": true,
       "windows_job": true,
@@ -97,7 +97,7 @@
     "output": {
       "appcontainer": true,
       "capability_count": 0,
-      "appcontainer_sid": "S-1-15-2-941730651-1607691985-2885507339-2258180921-3020482816-3227114754-829903272",
+      "appcontainer_sid": "S-1-15-2-2742909462-2862707666-1794468940-3447411903-3325290366-3496624561-2670148741",
       "integrity_sid": "S-1-16-4096",
       "attested_while_suspended": true,
       "windows_job": true,
@@ -120,7 +120,7 @@
     "memory": {
       "appcontainer": true,
       "capability_count": 0,
-      "appcontainer_sid": "S-1-15-2-3302527734-3837989101-2754425765-2599386886-3100461283-2470956804-1844129460",
+      "appcontainer_sid": "S-1-15-2-2283117538-307648335-3520719486-929819013-1766042614-1885134626-1831310657",
       "integrity_sid": "S-1-16-4096",
       "attested_while_suspended": true,
       "windows_job": true,
@@ -143,7 +143,7 @@
     "child": {
       "appcontainer": true,
       "capability_count": 0,
-      "appcontainer_sid": "S-1-15-2-2590590255-4025150608-1471913593-3201539209-1567127866-1343821790-4041628022",
+      "appcontainer_sid": "S-1-15-2-1885475217-2166161012-2569421403-3868427998-2968797706-3834756103-954212964",
       "integrity_sid": "S-1-16-4096",
       "attested_while_suspended": true,
       "windows_job": true,
@@ -195,7 +195,7 @@
   "source_sha256": [
     {
       "path": "tools/grade_validator_appcontainer.py",
-      "sha256": "984b3ff76a9f9d7eed5be787e28eb4133b589d0e997a9df1dc8423d5f5f565a2",
+      "sha256": "8d8950c26d80a2304bdd28c3a6bfa2e56070799925f8e30f91ea213c24ed8094",
       "source_kind": "executed_source_file"
     },
     {
@@ -210,7 +210,7 @@
     },
     {
       "path": "tools/appcontainer_runtime.py",
-      "sha256": "a4a13e1d61177943e79c69156ab8e38eadd190b795422b8bbe77e8d9d2201e37",
+      "sha256": "0798526b4ac9c82906a20898a589ed49e57e5f63849c16db3da785bb2e53efaf",
       "source_kind": "executed_source_file"
     },
     {
@@ -245,7 +245,7 @@
     },
     {
       "path": "tools/qualify_appcontainer.py",
-      "sha256": "725dc8853b5f1f37073463ea0bba611b61cd7feca2835870853798d47692e2b0",
+      "sha256": "790d73d8287b49f244549f9adb73772d7661d290ab1f00bcb00d5e6bd8a07855",
       "source_kind": "executed_source_file"
     },
     {
@@ -259,5 +259,5 @@
       "source_kind": "executed_source_file"
     }
   ],
-  "fixture_commit": "85763c055a15c7bf57dd1bbaba8c7585005fa6cb"
+  "fixture_commit": "01df7e54c4a09951cbbb75dbaff4ac76da842000"
 }

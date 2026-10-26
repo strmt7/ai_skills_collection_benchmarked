@@ -18,6 +18,13 @@ archive. Its byte count, SHA-256 and all 39 installed files are pinned in
 [source.json](source.json). The bundled Python license is retained. An exact
 existing archive can be supplied with `--archive` for offline installation.
 Existing installations and evidence directories are never overwritten.
+Setup restricts the new runtime home to the current Windows user and SYSTEM,
+and records its runtime
+descriptors. Each evaluation takes an exclusive lease and checks those descriptors
+before and after use. If an older home lacks the receipt, or its ACLs have changed,
+set up a new dedicated home; the existing directory is left in place. Use separate
+homes for concurrent evaluations. The workspace needs Windows ACLs and file locks,
+and the selected paths must not traverse junctions or other reparse points.
 
 To evaluate a collected patch:
 

@@ -2,11 +2,14 @@
 
 from __future__ import annotations
 
+import ctypes
 import hashlib
 import json
 import os
 import subprocess
+import sys
 import zipfile
+from ctypes import wintypes
 
 import appcontainer_runtime as runtime
 import appcontainer_validator_worker as worker
@@ -14,7 +17,7 @@ import grade_validator_appcontainer as grader
 import pytest
 import qualify_appcontainer as qualification
 from _validator_cases import accepted
-from _windows_appcontainer import checked_mounts, checked_path, checked_tree
+from _windows_appcontainer import Native, checked_mounts, checked_path, checked_tree
 
 
 @pytest.mark.parametrize("payload", [b'{"a":1,"a":2}', b'{"score":NaN}', b"[] trailing", b"\xff", b"[" * 1200])
@@ -80,6 +83,94 @@ def test_runtime_verifies_the_complete_file_graph(tmp_path):
     assert runtime.verify(tmp_path, pin) == ["unexpected runtime file: extra.py"]
     file.write_bytes(b"changed")
     assert "missing or changed runtime file: python.exe" in runtime.verify(tmp_path, pin)
+
+
+def test_older_runtime_without_an_acl_receipt_is_not_modified(tmp_path):
+    home = tmp_path / "old-runtime"
+    home.mkdir()
+    marker = home / "existing-file"
+    marker.write_bytes(b"preserved")
+    errors = runtime.verify_private_home(home, {"archive_sha256": hashlib.sha256(b"archive").hexdigest()})
+    assert errors == ["Private runtime ACL receipt is missing; set up a new dedicated runtime home"]
+    assert marker.read_bytes() == b"preserved"
+
+
+@pytest.mark.skipif(sys.platform != "win32", reason="Native Windows ACL and file-lock controls require Windows")
+def test_private_runtime_detects_acl_drift_and_rejects_concurrent_lease(tmp_path, monkeypatch):
+    home = tmp_path / ".venv/private-runtime"
+    directory = home / "runtime"
+    directory.mkdir(parents=True)
+    file = directory / "python.exe"
+    file.write_bytes(b"controlled fixture")
+    pin = {"archive_sha256": hashlib.sha256(b"archive").hexdigest()}
+    (home / "source.json").write_text(json.dumps(pin), encoding="utf-8")
+    monkeypatch.setattr(runtime, "ROOT", tmp_path)
+    runtime._prepare_private_home(home, pin)
+    native = Native()
+    original = native.descriptor(file)
+    assert runtime.verify_private_home(home, pin) == []
+    with pytest.raises(ValueError, match="already has an isolation receipt"):
+        runtime._prepare_private_home(home, pin)
+    with runtime.lease(home, pin), pytest.raises(RuntimeError, match="in use"), runtime.lease(home, pin):
+        pass
+    with runtime.lease(home, pin):
+        child = (
+            "import sys\nsys.path.insert(0,sys.argv[1])\nfrom pathlib import Path\nimport appcontainer_runtime as r\n"
+            "try:\n with r.lease(Path(sys.argv[2]),{'archive_sha256':sys.argv[3]}): pass\n"
+            "except RuntimeError:\n print('busy')\nelse:\n raise SystemExit(1)\n"
+        )
+        other = subprocess.run(
+            [sys.executable, "-I", "-S", "-c", child, str(grader.ROOT / "tools"), str(home), pin["archive_sha256"]],
+            capture_output=True,
+            timeout=10,
+        )
+        assert other.returncode == 0 and other.stdout.strip() == b"busy", other.stderr.decode(errors="replace")
+    with pytest.raises(ValueError, match="controlled failure"), runtime.lease(home, pin):
+        raise ValueError("controlled failure")
+    with runtime.lease(home, pin):
+        pass
+    try:
+        native.grant(file, native.owner_sid(), "S-1-15-2-1")
+        assert runtime.verify_private_home(home, pin) == [
+            "Private runtime ACL descriptors differ from the setup baseline"
+        ]
+    finally:
+        native.set_descriptor(file, ctypes.create_string_buffer(original))
+    assert runtime.verify_private_home(home, pin) == []
+
+
+@pytest.mark.skipif(sys.platform != "win32", reason="Native Windows ACL controls require Windows")
+def test_private_runtime_normalizes_legacy_inheritance_before_recording(tmp_path, monkeypatch):
+    home = tmp_path / ".venv/legacy-runtime"
+    directory = home / "runtime"
+    directory.mkdir(parents=True)
+    file = directory / "python.exe"
+    file.write_bytes(b"controlled fixture")
+    pin = {"archive_sha256": hashlib.sha256(b"archive").hexdigest()}
+    (home / "source.json").write_text(json.dumps(pin), encoding="utf-8")
+    monkeypatch.setattr(runtime, "ROOT", tmp_path)
+    native = Native()
+    descriptor = ctypes.create_string_buffer(native.descriptor(file))
+    # The obsolete API is used only to reproduce the hosted legacy flag in an owned fixture.
+    set_control = native.function(
+        "security", "SetSecurityDescriptorControl", [ctypes.c_void_p, wintypes.WORD, wintypes.WORD], wintypes.BOOL
+    )
+    set_file = native.function(
+        "security", "SetFileSecurityW", [wintypes.LPCWSTR, wintypes.DWORD, ctypes.c_void_p], wintypes.BOOL
+    )
+    assert set_control(descriptor, 0x0400, 0)
+    assert set_file(str(file), 4, descriptor)
+    assert not int.from_bytes(native.descriptor(file)[2:4], "little") & 0x0400
+    runtime._prepare_private_home(home, pin)
+    assert int.from_bytes(native.descriptor(file)[2:4], "little") & 0x0400
+    original = native.descriptor(directory)
+    with runtime.lease(home, pin):
+        try:
+            native.grant(directory, native.owner_sid(), "S-1-15-2-1")
+        finally:
+            native.set_descriptor(directory, ctypes.create_string_buffer(original))
+    assert runtime.verify_private_home(home, pin) == []
+    assert file.read_bytes() == b"controlled fixture"
 
 
 def test_junction_or_symlink_is_rejected_before_traversal(tmp_path):

@@ -18,7 +18,7 @@
       "process": {
         "appcontainer": true,
         "capability_count": 0,
-        "appcontainer_sid": "S-1-15-2-1636117236-867818169-2547372585-4283342258-4114525829-774372663-3153157286",
+        "appcontainer_sid": "S-1-15-2-745945580-2065506469-1771948145-2611300617-766337745-2038978964-503169769",
         "integrity_sid": "S-1-16-4096",
         "attested_while_suspended": true,
         "windows_job": true,
@@ -38,7 +38,7 @@
         "scratch_retained_without_traversal": true,
         "cleanup_errors": []
       },
-      "observation_directory": "case-02bcc969a7dc41abaac1aabec2a87f77/observations",
+      "observation_directory": "case-32421de2746e43c7a7512f7e082f244b/observations",
       "stdout_sha256": "0cce526349685f71acb26808a0c78a56045a8f7f616cc9744d72e0421334e454",
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "case": "valid_provenance",
@@ -58,7 +58,7 @@
       "process": {
         "appcontainer": true,
         "capability_count": 0,
-        "appcontainer_sid": "S-1-15-2-923543509-2567119171-1282641652-172586489-3805573436-40868618-1447505498",
+        "appcontainer_sid": "S-1-15-2-4098186358-1214776272-3632321756-4050152610-4029954797-1056722284-2345861018",
         "integrity_sid": "S-1-16-4096",
         "attested_while_suspended": true,
         "windows_job": true,
@@ -78,7 +78,7 @@
         "scratch_retained_without_traversal": true,
         "cleanup_errors": []
       },
-      "observation_directory": "case-4a21cc698b2e4ab79cbf1af673bee978/observations",
+      "observation_directory": "case-27b86490d8a6457487b942c6164d7e2f/observations",
       "stdout_sha256": "0cce526349685f71acb26808a0c78a56045a8f7f616cc9744d72e0421334e454",
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "case": "valid_extra_metadata",
@@ -98,7 +98,7 @@
       "process": {
         "appcontainer": true,
         "capability_count": 0,
-        "appcontainer_sid": "S-1-15-2-4288106116-3485997695-3969376059-906994633-3651507328-2237437880-4134466295",
+        "appcontainer_sid": "S-1-15-2-2932908872-2354004971-4154901906-1271879646-2746543823-1599120505-415602186",
         "integrity_sid": "S-1-16-4096",
         "attested_while_suspended": true,
         "windows_job": true,
@@ -118,7 +118,7 @@
         "scratch_retained_without_traversal": true,
         "cleanup_errors": []
       },
-      "observation_directory": "case-33ba2b5c3c4e4cf5b02ba9fa30c54f1e/observations",
+      "observation_directory": "case-62c54146b71842b2a9fa2eb7dc4c6b97/observations",
       "stdout_sha256": "b977a8626b2a8ce6e95349e8e0eb6f2be66e64d4734ed1babbd3597e6b1a094a",
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "case": "malformed_skill_id",
@@ -138,7 +138,7 @@
       "process": {
         "appcontainer": true,
         "capability_count": 0,
-        "appcontainer_sid": "S-1-15-2-2117839013-1962966941-3026449503-1881206102-3953665928-1691007020-740355761",
+        "appcontainer_sid": "S-1-15-2-3765768310-1781547380-2454134332-2297664894-314400259-2352163743-2869706379",
         "integrity_sid": "S-1-16-4096",
         "attested_while_suspended": true,
         "windows_job": true,
@@ -158,7 +158,7 @@
         "scratch_retained_without_traversal": true,
         "cleanup_errors": []
       },
-      "observation_directory": "case-6e6ce379d0994f5285a39315bc6c681a/observations",
+      "observation_directory": "case-a96df542c18d4130a958cf7fa6a45134/observations",
       "stdout_sha256": "8fe4782935bcf86a2acdbcc0ee97aa0b80aaacc9e7ee38a0ec3f3395d50c4e04",
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "case": "malformed_scenario_id",
@@ -178,7 +178,7 @@
       "process": {
         "appcontainer": true,
         "capability_count": 0,
-        "appcontainer_sid": "S-1-15-2-3763362556-2336570102-1353508373-1577225693-589266489-1735645885-4237592363",
+        "appcontainer_sid": "S-1-15-2-417136746-1913494759-3489896108-932412799-3665908388-1370487541-2236020346",
         "integrity_sid": "S-1-16-4096",
         "attested_while_suspended": true,
         "windows_job": true,
@@ -198,7 +198,7 @@
         "scratch_retained_without_traversal": true,
         "cleanup_errors": []
       },
-      "observation_directory": "case-cf592eab93a34429bf5ded32536f2485/observations",
+      "observation_directory": "case-86f4af05f50e4e24b1b77e6615cba23f/observations",
       "stdout_sha256": "78bd7d96528c8b59be097a2ba6da7c192e51fda3dca6f7edc690ef6784dfc87e",
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "case": "malformed_artifact_kind",
@@ -218,7 +218,7 @@
       "process": {
         "appcontainer": true,
         "capability_count": 0,
-        "appcontainer_sid": "S-1-15-2-56607864-3340059036-410461285-4214259067-2521569701-2667435582-2520562576",
+        "appcontainer_sid": "S-1-15-2-1422445105-797097457-494225026-1807013550-1629364246-220193604-2806289987",
         "integrity_sid": "S-1-16-4096",
         "attested_while_suspended": true,
         "windows_job": true,
@@ -238,7 +238,7 @@
         "scratch_retained_without_traversal": true,
         "cleanup_errors": []
       },
-      "observation_directory": "case-02489c87f5864540baed8c181c26ce95/observations",
+      "observation_directory": "case-2bc46e1d39094f0697d431e586ce16f5/observations",
       "stdout_sha256": "19279f6d6c129e6ba3e0d50126c789c6eb2f65ce8b4b758b349c7cb756e8350d",
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "case": "malformed_input_snapshot",
@@ -258,7 +258,7 @@
       "process": {
         "appcontainer": true,
         "capability_count": 0,
-        "appcontainer_sid": "S-1-15-2-1256653137-1898600466-2517268024-1978071851-952999299-1599440649-3858290499",
+        "appcontainer_sid": "S-1-15-2-1933691921-1767768025-867930706-2225374731-2898913062-2099445194-737173427",
         "integrity_sid": "S-1-16-4096",
         "attested_while_suspended": true,
         "windows_job": true,
@@ -278,7 +278,7 @@
         "scratch_retained_without_traversal": true,
         "cleanup_errors": []
       },
-      "observation_directory": "case-4e455358bce645ecadad9202cb858a43/observations",
+      "observation_directory": "case-190c9e43cb49448eaa2be75efc09469a/observations",
       "stdout_sha256": "ab9734c2a4a4ec174f84d9b0ddca59128877a5c0b220d2128f92fea6b81708a0",
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "case": "malformed_execution",
@@ -298,7 +298,7 @@
       "process": {
         "appcontainer": true,
         "capability_count": 0,
-        "appcontainer_sid": "S-1-15-2-809532554-3858379462-889786195-2015216307-1973306239-958428579-1532084247",
+        "appcontainer_sid": "S-1-15-2-1554200256-1139975971-474951339-1795136367-3554854584-1061367538-615747586",
         "integrity_sid": "S-1-16-4096",
         "attested_while_suspended": true,
         "windows_job": true,
@@ -318,7 +318,7 @@
         "scratch_retained_without_traversal": true,
         "cleanup_errors": []
       },
-      "observation_directory": "case-e2fba6f89f19474d859c64d549b930b4/observations",
+      "observation_directory": "case-ea3f690d90274f40947d3a8f49ada43e/observations",
       "stdout_sha256": "461adddb5a101f9af96ac7e434f1453d07fdfed9acf045f3e35f03552c86243a",
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "case": "malformed_runner",
@@ -338,7 +338,7 @@
       "process": {
         "appcontainer": true,
         "capability_count": 0,
-        "appcontainer_sid": "S-1-15-2-4273057859-1582776145-371610155-3010711667-4191764023-29517190-3855625194",
+        "appcontainer_sid": "S-1-15-2-2237906707-2279937016-359212594-3721006649-726321344-3308009375-3349008523",
         "integrity_sid": "S-1-16-4096",
         "attested_while_suspended": true,
         "windows_job": true,
@@ -358,7 +358,7 @@
         "scratch_retained_without_traversal": true,
         "cleanup_errors": []
       },
-      "observation_directory": "case-6e44f88e39e74a7a8071ad0da732982a/observations",
+      "observation_directory": "case-6d70e3d0cc8b42e4b4d866dbfb62b188/observations",
       "stdout_sha256": "b6549fd0997c34304289e498a431426fd8a3ed07093a13792c437c6100465ec1",
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "case": "malformed_independence",
@@ -378,7 +378,7 @@
       "process": {
         "appcontainer": true,
         "capability_count": 0,
-        "appcontainer_sid": "S-1-15-2-3635325559-2921489573-3312456470-1572710253-3988204438-2715713750-2170655563",
+        "appcontainer_sid": "S-1-15-2-3492320546-101338876-4156034665-1398059103-1668474838-2551926995-1704029246",
         "integrity_sid": "S-1-16-4096",
         "attested_while_suspended": true,
         "windows_job": true,
@@ -398,7 +398,7 @@
         "scratch_retained_without_traversal": true,
         "cleanup_errors": []
       },
-      "observation_directory": "case-3a08290f95144bd48225080518783e52/observations",
+      "observation_directory": "case-e5db05315eef47f6bd6d0863a2b582b1/observations",
       "stdout_sha256": "00af4349311c21d1bf40a53b30e131d1c1a23d6e8d2454e02eaa88e0c1eeb890",
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "case": "malformed_evidence",
@@ -418,7 +418,7 @@
       "process": {
         "appcontainer": true,
         "capability_count": 0,
-        "appcontainer_sid": "S-1-15-2-349055539-2175335209-1384080268-384490243-1180258247-2454795520-4010487609",
+        "appcontainer_sid": "S-1-15-2-996126801-492103423-1119367378-229557500-3988466843-3334973218-1890696006",
         "integrity_sid": "S-1-16-4096",
         "attested_while_suspended": true,
         "windows_job": true,
@@ -438,7 +438,7 @@
         "scratch_retained_without_traversal": true,
         "cleanup_errors": []
       },
-      "observation_directory": "case-051b7f198d454786905c440ddd6cc843/observations",
+      "observation_directory": "case-8ad56c40b0f94667b2efd651c6d46d87/observations",
       "stdout_sha256": "573307543b939415b26c215164a6220ee721703cadbbecde641b39ac23250509",
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "case": "malformed_metrics",
@@ -458,7 +458,7 @@
       "process": {
         "appcontainer": true,
         "capability_count": 0,
-        "appcontainer_sid": "S-1-15-2-1876630931-1653996631-3512220470-3088788421-129895475-1022820462-1667374664",
+        "appcontainer_sid": "S-1-15-2-2055812600-2687396054-4210563898-338079476-2724435903-2286156483-986835016",
         "integrity_sid": "S-1-16-4096",
         "attested_while_suspended": true,
         "windows_job": true,
@@ -478,7 +478,7 @@
         "scratch_retained_without_traversal": true,
         "cleanup_errors": []
       },
-      "observation_directory": "case-1520aa0d2e2249289b75b4684e836e1d/observations",
+      "observation_directory": "case-bc62d5e17d5649bf8cc1338fd48c6568/observations",
       "stdout_sha256": "2503fbdde69cd6f0fb12d30ac2e59c5d9fc824fe0c97c6ae8c43833d1379757f",
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "case": "malformed_outputs",
@@ -498,7 +498,7 @@
       "process": {
         "appcontainer": true,
         "capability_count": 0,
-        "appcontainer_sid": "S-1-15-2-3207310753-171107565-3490908629-949815698-1047330905-345627001-1509818182",
+        "appcontainer_sid": "S-1-15-2-4124440225-916878480-3409713757-2109296502-3458239378-3637880529-4177926603",
         "integrity_sid": "S-1-16-4096",
         "attested_while_suspended": true,
         "windows_job": true,
@@ -518,7 +518,7 @@
         "scratch_retained_without_traversal": true,
         "cleanup_errors": []
       },
-      "observation_directory": "case-f95867928e5e47138301417fff6e2225/observations",
+      "observation_directory": "case-b144ea3a838f4974b199ca22520d4f4c/observations",
       "stdout_sha256": "dcd7acb804e24fbefaef3cfd39856a559425db4e8aadd747265ae17a646c0cea",
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "case": "malformed_scenario_requirements",
@@ -538,7 +538,7 @@
       "process": {
         "appcontainer": true,
         "capability_count": 0,
-        "appcontainer_sid": "S-1-15-2-752385092-249357368-1244287298-3915466284-3836826473-733924534-4252619331",
+        "appcontainer_sid": "S-1-15-2-3573383768-77906408-3200281942-938256260-117084553-4056654815-2189542020",
         "integrity_sid": "S-1-16-4096",
         "attested_while_suspended": true,
         "windows_job": true,
@@ -558,7 +558,7 @@
         "scratch_retained_without_traversal": true,
         "cleanup_errors": []
       },
-      "observation_directory": "case-3bba9078f6f643dbab2dc8aa2b038573/observations",
+      "observation_directory": "case-534db819eebc4c4893f12d69d9f339ca/observations",
       "stdout_sha256": "7dbf2a42dea3168c15b157289f4e11db358a3f2f339c750621b5b65e579f0065",
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "case": "schema_minimum_string_length",
@@ -580,7 +580,7 @@
       "process": {
         "appcontainer": true,
         "capability_count": 0,
-        "appcontainer_sid": "S-1-15-2-4150258782-3166382864-1058096454-3645165015-2019425387-4091781477-1024545395",
+        "appcontainer_sid": "S-1-15-2-1889489801-1510486754-3355838336-746587241-1277104721-2142415761-1027647106",
         "integrity_sid": "S-1-16-4096",
         "attested_while_suspended": true,
         "windows_job": true,
@@ -600,7 +600,7 @@
         "scratch_retained_without_traversal": true,
         "cleanup_errors": []
       },
-      "observation_directory": "case-e2d9d7480f304b25b3e791aa1aefa73f/observations",
+      "observation_directory": "case-6ff4a780a0ed47e8a9ff3c87a7b509f7/observations",
       "stdout_sha256": "abe7853f649aa0e2aa08b1bc62a7e98fca1af900b7f531756005e78ee10268d1",
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "case": "transcript_must_be_file",
@@ -622,7 +622,7 @@
       "process": {
         "appcontainer": true,
         "capability_count": 0,
-        "appcontainer_sid": "S-1-15-2-1602854500-684167805-4220100229-406149803-1529266296-466948645-3097343462",
+        "appcontainer_sid": "S-1-15-2-1042369888-3720753261-3147699250-1876789207-2434265192-763135107-3693374571",
         "integrity_sid": "S-1-16-4096",
         "attested_while_suspended": true,
         "windows_job": true,
@@ -642,7 +642,7 @@
         "scratch_retained_without_traversal": true,
         "cleanup_errors": []
       },
-      "observation_directory": "case-1377b80cd88443eebe9ff64065b31d3b/observations",
+      "observation_directory": "case-665ea512c24e4576bc5f6c42102c03a7/observations",
       "stdout_sha256": "9749ba36712dbc05eec2e261f24d35b0d39638f9dbb374b149704f3b06025267",
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "case": "evidence_must_be_file",
@@ -654,7 +654,7 @@
         "value": {
           "verdict": "artifact_invalid",
           "errors": [
-            "cannot load artifact schema: C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\publication-ppt-refresh-v2-2026-10-07\\.venv\\agent-grader-appcontainer\\qualified-sealed-v8\\validators\\reference\\case-549a95acebcc41e3bc6148574788213e\\inputs\\unavailable.schema.json"
+            "cannot load artifact schema: C:\\Users\\strat\\Documents\\ChatGPT\\ai skills\\.venv\\publication-ppt-refresh-v2-2026-10-07\\.venv\\agent-grader-appcontainer\\qualified-private-v10\\validators\\reference\\case-19f4501cd8d84740b6a7d5659a0220dd\\inputs\\unavailable.schema.json"
           ],
           "warnings": []
         }
@@ -662,7 +662,7 @@
       "process": {
         "appcontainer": true,
         "capability_count": 0,
-        "appcontainer_sid": "S-1-15-2-2455007182-1581638066-2540808553-1528610003-2847461632-1314291470-4099763217",
+        "appcontainer_sid": "S-1-15-2-259135221-3470081455-3432968694-2998384034-716008512-2846694980-2763555177",
         "integrity_sid": "S-1-16-4096",
         "attested_while_suspended": true,
         "windows_job": true,
@@ -675,15 +675,15 @@
         "output_limit_bytes": 2097152,
         "termination_reason": null,
         "exit_code": 0,
-        "output_bytes": 376,
+        "output_bytes": 378,
         "active_processes_after_cleanup": 0,
         "profile_deleted": true,
         "readonly_acls_restored": true,
         "scratch_retained_without_traversal": true,
         "cleanup_errors": []
       },
-      "observation_directory": "case-549a95acebcc41e3bc6148574788213e/observations",
-      "stdout_sha256": "31f6b876497ca09d8d71fa8296b19c5f0709f6c42fb63d46ee29d92c63b7a6ca",
+      "observation_directory": "case-19f4501cd8d84740b6a7d5659a0220dd/observations",
+      "stdout_sha256": "1068785f0116fcd5811f4a543e22dd348ee2648cd26b3ea94898494ed709f981",
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "case": "missing_schema_rejected",
       "passed": true
@@ -700,7 +700,7 @@
   "evaluator_files": [
     {
       "path": "tools/grade_validator_appcontainer.py",
-      "sha256": "984b3ff76a9f9d7eed5be787e28eb4133b589d0e997a9df1dc8423d5f5f565a2"
+      "sha256": "8d8950c26d80a2304bdd28c3a6bfa2e56070799925f8e30f91ea213c24ed8094"
     },
     {
       "path": "tools/_validator_cases.py",
@@ -712,7 +712,7 @@
     },
     {
       "path": "tools/appcontainer_runtime.py",
-      "sha256": "a4a13e1d61177943e79c69156ab8e38eadd190b795422b8bbe77e8d9d2201e37"
+      "sha256": "0798526b4ac9c82906a20898a589ed49e57e5f63849c16db3da785bb2e53efaf"
     },
     {
       "path": "tools/_windows_appcontainer.py",
@@ -728,7 +728,7 @@
     }
   ],
   "controller_output_sealed": true,
-  "fixture_commit": "85763c055a15c7bf57dd1bbaba8c7585005fa6cb",
+  "fixture_commit": "01df7e54c4a09951cbbb75dbaff4ac76da842000",
   "oracle_process_separate": true,
   "independent_model_trials": 0,
   "agent_performance_claim": false,

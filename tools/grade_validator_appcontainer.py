@@ -65,9 +65,17 @@ def collect_candidate(submission: Path, fixture: Path, revision: str, destinatio
 def grade(submission: Path, fixture: Path, runtime_home: Path, output: Path, revision: str) -> dict[str, Any]:
     if sys.platform != "win32":
         raise ValueError("The confined evaluator requires Windows x64")
+    common_workspace(runtime_home, output)
+    specification = json.loads(appcontainer_runtime.SOURCE.read_bytes())
+    with appcontainer_runtime.lease(runtime_home, specification):
+        return grade_with_lease(submission, fixture, runtime_home, output, revision, specification)
+
+
+def grade_with_lease(
+    submission: Path, fixture: Path, runtime_home: Path, output: Path, revision: str, specification: dict[str, Any]
+) -> dict[str, Any]:
     workspace = common_workspace(runtime_home, output)
     evaluator_files = evaluator_fingerprints()
-    specification = json.loads(appcontainer_runtime.SOURCE.read_bytes())
     errors = appcontainer_runtime.verify(runtime_home, specification)
     if errors:
         raise ValueError("; ".join(errors))
@@ -105,6 +113,8 @@ def grade(submission: Path, fixture: Path, runtime_home: Path, output: Path, rev
         (output / "checks.json").write_text(json.dumps(observations, indent=2) + "\n", encoding="utf-8")
     if appcontainer_runtime.verify(runtime_home, specification):
         raise ValueError("Runtime source graph changed during grading")
+    if appcontainer_runtime.verify_private_home(runtime_home, specification):
+        raise ValueError("Runtime ACLs changed during grading")
     if evaluator_files != evaluator_fingerprints():
         raise ValueError("Trusted evaluator source changed during grading")
     count = sum(row["passed"] for row in observations)
