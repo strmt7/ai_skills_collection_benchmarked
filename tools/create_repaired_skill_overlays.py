@@ -13,7 +13,6 @@ import json
 import logging
 import re
 import shutil
-import subprocess
 import sys
 from pathlib import Path, PurePosixPath
 from typing import Any
@@ -53,10 +52,6 @@ def write_json(path: Path, data: Any) -> None:
 # Re-exported so existing callers keep working.
 sha256_text = _sha256_text
 sha256_file = _sha256_file
-
-
-def git_text(*args: str) -> str:
-    return subprocess.check_output(["git", "-C", str(ROOT), *args], text=True).strip()
 
 
 def yaml_scalar(value: Any) -> str:
@@ -131,33 +126,41 @@ def failed_runtime_artifacts() -> list[dict[str, Any]]:
     return artifacts
 
 
+def owned_overlay_target(name: str) -> Path:
+    relative = PurePosixPath(name)
+    target = ROOT / name
+    base = REPAIRED_ROOT.resolve()
+    resolved = target.resolve()
+    if (
+        "\\" in name
+        or ":" in name
+        or relative.is_absolute()
+        or relative.as_posix() != name
+        or ".." in relative.parts
+        or resolved == base
+        or not resolved.is_relative_to(base)
+    ):
+        raise ValueError("repair cleanup target escapes the owned overlay directory")
+    return target
+
+
+def generated_overlay_targets() -> set[Path]:
+    manifest_path = REPAIRED_ROOT / "manifest.json"
+    if not manifest_path.exists():
+        return set()
+    manifest = load_json(manifest_path)
+    if manifest.get("runner") != RUNNER_ID or manifest.get("run_name") != RUN_NAME:
+        raise ValueError("repair cleanup requires this generator's ownership manifest")
+    return {owned_overlay_target(item["repaired_path"]) for item in manifest["repairs"]}
+
+
 def clean_generated_outputs() -> None:
     # This generator owns only the overlays in its previous manifest. Other
     # maintained repairs share the parent and must survive regeneration.
-    targets = set()
-    manifest_path = REPAIRED_ROOT / "manifest.json"
-    if manifest_path.exists():
-        manifest = load_json(manifest_path)
-        if manifest.get("runner") != RUNNER_ID or manifest.get("run_name") != RUN_NAME:
-            raise ValueError("repair cleanup requires this generator's ownership manifest")
-        for item in manifest["repairs"]:
-            name = item["repaired_path"]
-            relative = PurePosixPath(name)
-            target = ROOT / name
-            if (
-                "\\" in name
-                or ":" in name
-                or relative.is_absolute()
-                or relative.as_posix() != name
-                or ".." in relative.parts
-                or target.resolve() == REPAIRED_ROOT.resolve()
-                or not target.resolve().is_relative_to(REPAIRED_ROOT.resolve())
-            ):
-                raise ValueError("repair cleanup target escapes the owned overlay directory")
-            targets.add(target)
+    targets = generated_overlay_targets()
     if ARTIFACT_ROOT.resolve() != (ROOT / "artifacts" / "repaired-skill-readiness" / RUN_NAME).resolve():
         raise ValueError("repair artifact cleanup target escapes its output directory")
-    if ARTIFACT_ROOT.exists() and not manifest_path.exists():
+    if ARTIFACT_ROOT.exists() and not (REPAIRED_ROOT / "manifest.json").exists():
         raise ValueError("existing repair artifacts require an ownership manifest before cleanup")
     # Validate every target before deleting any of them.
     for target in targets:
@@ -365,7 +368,6 @@ def write_artifact(
     catalog_commit: str,
 ) -> dict[str, Any]:
     result_path = artifact_dir / "result.json"
-    artifact_dir / "transcript.txt"
     repair_path = artifact_dir / "repair.json"
     artifact = {
         "artifact_version": "1.0",
