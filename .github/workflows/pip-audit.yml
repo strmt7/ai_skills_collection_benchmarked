@@ -48,6 +48,20 @@ jobs:
           pip-audit --strict --disable-pip --no-deps
           --requirement toolchains/pptx-native/requirements.txt
 
+      - name: Audit the local-only CocoIndex runtime coordinates
+        # The native workflow installs the admitted downstream wheel normally.
+        # Keep its upstream advisory identity and every actual runtime coordinate.
+        run: >-
+          pip-audit --strict --disable-pip --no-deps
+          --requirement toolchains/cocoindex-code/requirements.txt
+
+      - name: Audit the separate CocoIndex build and bootstrap graph
+        # Runtime and build intentionally use different pathspec versions.
+        # The build graph also includes the exact bootstrap pip coordinate.
+        run: >-
+          pip-audit --strict --disable-pip --no-deps
+          --requirement toolchains/cocoindex-code/requirements-build.txt
+
   lock-consistency:
     # pip-tools locks one environment, not a universal cross-platform graph.
     # Its seeded consistency is verified on Windows with Python 3.14.9;

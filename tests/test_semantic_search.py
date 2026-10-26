@@ -5,7 +5,9 @@ from __future__ import annotations
 import copy
 import hashlib
 import json
+import os
 import subprocess
+import sys
 from pathlib import Path
 
 import prepare_semantic_corpus as corpus
@@ -115,6 +117,50 @@ def test_changed_retrieved_bytes_fail_binding(bound):
         search.verify_response(response, base, manifest, [], 3)
 
 
+def test_indexed_source_cannot_shadow_a_provider_import(bound, monkeypatch, capsys):
+    root, _, _, response = bound
+    (root / "probe_index_import.py").write_text(
+        "from pathlib import Path\nPath('indexed-source-executed.txt').write_text('fixture executed')\nORIGIN='source'\n",
+        encoding="utf-8",
+    )
+    base = root / ".venv/import-boundary"
+    assert corpus.prepare(root, base, ["skills", "probe_index_import.py"], check=False)["ok"]
+    providers = root / ".venv/providers"
+    providers.mkdir()
+    (providers / "probe_index_import.py").write_text("ORIGIN='provider'\n", encoding="utf-8")
+    (root / "unused-proof.json").write_text("{}", encoding="utf-8")
+    env = {key: value for key, value in os.environ.items() if key.upper() in {"SYSTEMROOT", "WINDIR", "PATH"}}
+    env.update(PYTHONPATH=str(providers), PYTHONNOUSERSITE="1", PYTHONUTF8="1")
+    monkeypatch.setattr(search, "local_environment", lambda *args: env)
+    report = {"response": response, "project_status": {"indexing": False, "index_exists": True}}
+    worker = (
+        "import json,probe_index_import\n"
+        f"report=json.loads({json.dumps(report)!r})\n"
+        "report['import_origin']=probe_index_import.ORIGIN\nprint(json.dumps(report))\n"
+    )
+    monkeypatch.setattr(search, "CLIENT", worker)
+    status = search.main(
+        [
+            "--root",
+            str(root),
+            "--corpus",
+            str(base),
+            "--python",
+            sys.executable,
+            "--provider-dir",
+            str(providers),
+            "--model-proof",
+            str(root / "unused-proof.json"),
+            "--query",
+            "fixture import boundary",
+            "--json",
+        ]
+    )
+    assert status == 0
+    assert json.loads(capsys.readouterr().out)["import_origin"] == "provider"
+    assert not (base / "tree/indexed-source-executed.txt").exists()
+
+
 def test_stale_source_rejects_before_provider_call(bound, monkeypatch, capsys):
     root, base, _, _ = bound
     (root / "skills/source.md").write_text("new source", encoding="utf-8")
@@ -142,7 +188,8 @@ def test_stale_source_rejects_before_provider_call(bound, monkeypatch, capsys):
     assert "stale corpus" in json.loads(capsys.readouterr().out)["errors"][0]
 
 
-def test_environment_clears_host_mapping_and_rejects_model_drift(bound, monkeypatch):
+@pytest.mark.parametrize("hash_format", ["mapping", "records"])
+def test_environment_clears_host_mapping_and_rejects_model_drift(bound, monkeypatch, hash_format):
     root, base, _, _ = bound
     python = root / ".venv/python.exe"
     python.write_bytes(b"test executable path, not executed")
@@ -152,11 +199,14 @@ def test_environment_clears_host_mapping_and_rejects_model_drift(bound, monkeypa
     model.mkdir()
     (model / "model.safetensors").write_bytes(b"fixed fixture bytes")
     proof = root / "proof.json"
+    expected = {"model.safetensors": hashlib.sha256(b"fixed fixture bytes").hexdigest()}
     proof.write_text(
         json.dumps(
             {
                 "custom_code_present": False,
-                "files": {"model.safetensors": hashlib.sha256(b"fixed fixture bytes").hexdigest()},
+                "files": expected
+                if hash_format == "mapping"
+                else [{"path": name, "sha256": digest} for name, digest in expected.items()],
             }
         )
     )
@@ -165,9 +215,11 @@ def test_environment_clears_host_mapping_and_rejects_model_drift(bound, monkeypa
     (base / "config/global_settings.yml").write_text(yaml.safe_dump(settings))
     monkeypatch.setenv("COCOINDEX_CODE_HOST_CWD", "unrelated-project")
     monkeypatch.setenv("COCOINDEX_CODE_DB_PATH_MAPPING", "unrelated-index")
+    monkeypatch.setenv("PYTHONHOME", str(root / "foreign-runtime"))
     env = search.local_environment(root, base, python, providers, proof)
     assert "COCOINDEX_CODE_HOST_CWD" not in env and "COCOINDEX_CODE_DB_PATH_MAPPING" not in env
     assert env["HF_HUB_OFFLINE"] == env["TRANSFORMERS_OFFLINE"] == "1"
+    assert "PYTHONHOME" not in env and env["PYTHONSAFEPATH"] == env["PYTHONNOUSERSITE"] == "1"
     (model / "model.safetensors").write_bytes(b"changed")
     with pytest.raises(ValueError, match="pinned proof"):
         search.local_environment(root, base, python, providers, proof)

@@ -1,0 +1,129 @@
+name: CocoIndex local provider controls
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/cocoindex-provider.yml"
+      - "toolchains/cocoindex-code/**"
+      - "tools/_agent_tool_runtime.py"
+      - "tools/_windows_owned_python.py"
+      - "tools/_catalog_publication.py"
+      - "tools/cocoindex_*.py"
+      - "tools/prepare_cocoindex_source.py"
+      - "tools/verify_cocoindex_wheel.py"
+      - "tools/prepare_crawl4ai_source.py"
+      - "tools/prepare_semantic_corpus.py"
+      - "tools/search_semantic_corpus.py"
+      - "docs/agent-tools.md"
+      - ".agents/skills/cocoindex-code-search/SKILL.md"
+  workflow_dispatch:
+  schedule:
+    - cron: "50 6 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cocoindex-provider-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  native-local-provider:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    env:
+      GIT_CONFIG_COUNT: "1"
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: "true"
+      PYTHONUTF8: "1"
+      PYTHONSAFEPATH: "1"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.13.17"
+
+      - name: Provision and verify a fresh local-only provider
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Path .venv/cocoindex-ci -Force | Out-Null
+          python -I -B tools/cocoindex_tool.py setup > .venv/cocoindex-ci/setup.json
+          if ($LASTEXITCODE -ne 0) { throw "Normal hashed CocoIndex setup failed" }
+          python -I -B tools/cocoindex_tool.py check > .venv/cocoindex-ci/check.json
+          if ($LASTEXITCODE -ne 0) { throw "CocoIndex source, dependency or model admission failed" }
+
+      - name: Index explicit sources and verify native startup readiness
+        shell: pwsh
+        run: |
+          $selection = @("--corpus", ".venv/cocoindex-ci/corpus", "--prefix", "tools/cocoindex_tool.py", "--prefix", "tools/cocoindex_runtime.py", "--prefix", "tools/verify_cocoindex_wheel.py", "--prefix", "docs/agent-tools.md")
+          python -I -B tools/cocoindex_tool.py index @selection > .venv/cocoindex-ci/index.json
+          if ($LASTEXITCODE -ne 0) { throw "Native source-bound indexing failed" }
+          python -I -B tools/cocoindex_tool.py index @selection --check > .venv/cocoindex-ci/index-check.json
+          if ($LASTEXITCODE -ne 0) { throw "Native index readiness or source freshness failed" }
+
+      - name: Retrieve and independently verify current source spans
+        shell: pwsh
+        run: |
+          python -I -B tools/cocoindex_tool.py search --corpus .venv/cocoindex-ci/corpus --query "How do local indexing and search verify provider and model sources?" --limit 5 --output .venv/cocoindex-ci/search.native.json > .venv/cocoindex-ci/search-command.json
+          if ($LASTEXITCODE -ne 0) { throw "Native CocoIndex retrieval failed" }
+
+      - name: Bind the native software qualification to this commit
+        shell: python
+        run: |
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+
+          root = Path.cwd().resolve()
+          directory = root / ".venv/cocoindex-ci"
+          native = (directory / "search.native.json").read_bytes()
+          search = json.loads(native)
+          pin = json.loads((root / "toolchains/cocoindex-code/source.json").read_bytes())
+          manifest = json.loads((directory / "corpus/manifest.json").read_bytes())
+          checks = search.get("source_checks", [])
+          expected_versions = {"cocoindex": pin["runtime_versions"]["cocoindex"], "cocoindex-code": pin["version"]}
+          if search.get("ok") is not True or search.get("versions") != expected_versions:
+              raise SystemExit("Native receipt has an unexpected result or provider version")
+          if search.get("python_version") != "3.13.17" or not 1 <= len(checks) <= 5:
+              raise SystemExit("Native receipt has an unexpected interpreter or source count")
+          if Path(manifest["source_root"]).resolve() != root:
+              raise SystemExit("Corpus is bound to another repository")
+          if Path(search["query"]["project_root"]).resolve() != directory / "corpus/tree":
+              raise SystemExit("Query is bound to another corpus")
+          for check in checks:
+              if check.get("source_span_verified") is not True:
+                  raise SystemExit("An unverified source span was returned")
+              if hashlib.sha256((root / check["path"]).read_bytes()).hexdigest() != check["sha256"]:
+                  raise SystemExit("A returned source changed after retrieval")
+          result = {
+              "schema_version": 1,
+              "source_revision": os.environ["GITHUB_SHA"],
+              "evidence_class": "native-local-provider-software-qualification",
+              "native_search_sha256": hashlib.sha256(native).hexdigest(),
+              "source_checks": len(checks),
+              "versions": search["versions"],
+              "normal_complete_hashed_install": True,
+              "local_cpu_model": True,
+              "independent_model_trials": 0,
+              "agent_efficacy_claim": False,
+          }
+          (directory / "qualification.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8", newline="\n")
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: cocoindex-native-qualification
+          path: |
+            .venv/cocoindex-ci/*.json
+            .venv/cocoindex-ci/corpus/manifest.json
+            .venv/cocoindex-ci/corpus/index-receipt.json
+            .venv/agent-tools/cocoindex-*/installation.json
+            .venv/agent-tools/cocoindex-*/model-download.json
+            .venv/agent-tools/cocoindex-*/upstream-response.json
+            .venv/agent-tools/cocoindex-*/admission/source-admission.json
+            .venv/agent-tools/cocoindex-*/logs/**/process.json
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14

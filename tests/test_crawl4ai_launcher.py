@@ -156,7 +156,7 @@ def test_failed_owned_phase_retains_native_output_and_cleanup_receipt(tmp_path, 
         kwargs["stdout"].write(b"native failure retained")
         return 124, {"active_processes_after_cleanup": 0, "termination_reason": "timeout"}
 
-    monkeypatch.setattr(launcher, "run_python", fail)
+    monkeypatch.setattr(launcher.owned, "run_python", fail)
     home = tmp_path / "provider"
     with pytest.raises(ValueError, match="failed"):
         launcher.phase(home, "controlled-failure", ["unexecuted fixture"])

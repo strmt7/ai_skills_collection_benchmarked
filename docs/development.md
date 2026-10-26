@@ -5,15 +5,15 @@ This page covers maintaining and validating the collection.
 
 Host-agnostic means no dependency on a particular machine, user profile,
 installation path or AI agent. Operating-system requirements remain explicit
-for each component. The qualified [Crawl4AI provider](../toolchains/crawl4ai/README.md)
-targets Windows x64; host independence does not require porting it to other
-operating systems.
+for each component. The qualified [Crawl4AI](../toolchains/crawl4ai/README.md) and
+[local CocoIndex](../toolchains/cocoindex-code/README.md) providers target Windows
+x64. Their guides cover fresh isolated setup without a fixed host path or AI
+client.
 
-This repository is designed so that *validation* of the catalog and *every
-quality gate run by CI* targets Python 3.11–3.14 on Linux and current Python
-on Windows,
-without root, without a specific username, and without referencing any path
-under `/tmp` or `/home/<user>/`.
+Catalog validation and Python unit tests exercise supported Python 3.11–3.14
+on Linux and the current validation runtime on Windows. Native provider controls
+use their documented Windows interpreter and dependency graph. These checks need
+no administrator access, specific username or fixed installation path.
 
 Use a supported Python 3.11–3.14 environment; current hosted validation uses Python 3.14.9. Compatibility CI also
 selects current security patches for supported older Python series. Python 3.10

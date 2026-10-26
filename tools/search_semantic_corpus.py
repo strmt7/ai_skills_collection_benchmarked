@@ -16,6 +16,7 @@ from typing import Any
 
 import prepare_semantic_corpus as corpus
 import yaml
+from prepare_crawl4ai_source import runtime_sources
 
 ROOT = Path(__file__).resolve().parents[1]
 CLIENT = """import importlib.metadata,json,sys,msgspec
@@ -94,14 +95,20 @@ def local_environment(root: Path, base: Path, python: Path, providers: Path, pro
     if model_proof.get("custom_code_present") is not False:
         raise ValueError("model proof must exclude custom code")
     expected = model_proof["files"]
+    if isinstance(expected, list):
+        expected = runtime_sources({"runtime_files": expected})
     if {p.relative_to(model).as_posix() for p in model.rglob("*") if p.is_file()} != set(expected):
         raise ValueError("local model inventory differs from the pinned proof")
     for name, digest in expected.items():
         if hashlib.sha256(corpus.regular_file(model, name).read_bytes()).hexdigest() != digest:
             raise ValueError("local model differs from the pinned proof")
-    env = {key: value for key, value in os.environ.items() if not key.startswith("COCOINDEX_")}
+    env = {key: value for key, value in os.environ.items() if not key.upper().startswith(("COCOINDEX_", "PYTHON"))}
     env.update(
         PYTHONPATH=str(providers),
+        PYTHONSAFEPATH="1",
+        PYTHONNOUSERSITE="1",
+        PYTHONUTF8="1",
+        PYTHON_DOTENV_DISABLED="1",
         COCOINDEX_CODE_DIR=str(base / "config"),
         COCOINDEX_CODE_RUNTIME_DIR=str(base / "runtime"),
         COCOINDEX_DISABLE_USAGE_TRACKING="1",
@@ -154,7 +161,7 @@ def main(argv: list[str] | None = None) -> int:
             "offset": 0,
         }
         result = subprocess.run(
-            [str(python), "-c", CLIENT],
+            [str(python), "-P", "-c", CLIENT],
             input=json.dumps(request),
             env=env,
             cwd=base / "tree",

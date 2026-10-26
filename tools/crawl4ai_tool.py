@@ -7,35 +7,23 @@ as part of the Crawl4AI project (https://github.com/unclecode/crawl4ai).
 from __future__ import annotations
 
 import argparse
-import hashlib
 import http.client
 import json
-import os
 import platform
 import subprocess
 import sys
-import uuid
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlsplit
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import _agent_tool_runtime as owned
 import prepare_crawl4ai_source as source
 import verify_crawl4ai_wheel as wheel
 from _catalog_publication import checked_path
-from _windows_owned_python import run_python
 
 ROOT = Path(__file__).resolve().parents[1]
 INPUTS = "toolchains/crawl4ai"
-EXECUTE = "import subprocess,sys; raise SystemExit(subprocess.call(sys.argv[1:],stdin=subprocess.DEVNULL))"
-SCRIPT = """import runpy,sys
-from pathlib import Path
-script=Path(sys.argv[1]).resolve()
-sys.path.insert(0,str(script.parent))
-sys.argv=sys.argv[1:]
-runpy.run_path(str(script),run_name='__main__')
-"""
 BROWSER_PROBE = """import hashlib,importlib.metadata,json,sys
 from pathlib import Path
 from patchright.sync_api import sync_playwright
@@ -52,95 +40,44 @@ with sync_playwright() as provider:
 
 
 def script_command(interpreter: Path, name: str, *arguments: str | Path) -> list[str | Path]:
-    return [interpreter, "-I", "-B", "-c", SCRIPT, ROOT / "tools" / name, *arguments]
+    return owned.script_command(ROOT, interpreter, name, *arguments)
 
 
 def identity(root: Path) -> str:
     names = [
-        INPUTS + "/source.json",
-        INPUTS + "/requirements.txt",
-        INPUTS + "/requirements-build.txt",
-        INPUTS + "/requirements-bootstrap.txt",
+        INPUTS + "/" + name
+        for name in ["source.json", "requirements.txt", "requirements-build.txt", "requirements-bootstrap.txt"]
     ]
-    records = {name: hashlib.sha256((root / name).read_bytes().replace(b"\r\n", b"\n")).hexdigest() for name in names}
-    return hashlib.sha256(json.dumps(records, sort_keys=True).encode()).hexdigest()
+    return owned.input_identity(root, names)
 
 
 def home_path(root: Path, selected: Path | None) -> Path:
     target = selected or root / ".venv/agent-tools" / ("crawl4ai-" + identity(root)[:16])
-    target = target.absolute()
-    if target == root / ".venv" or not target.is_relative_to(root / ".venv"):
-        raise ValueError("Provider home must be a dedicated directory under this checkout's .venv")
-    return checked_path(root, target.relative_to(root).as_posix())
+    return owned.home_path(root, target)
 
 
 def require_interpreter() -> None:
-    if (
-        sys.platform != "win32"
-        or platform.machine().upper() not in {"AMD64", "X86_64"}
-        or sys.implementation.name != "cpython"
-        or sys.version_info[:3] != (3, 13, 17)
-    ):
-        raise ValueError("Run this Windows x64 provider launcher with CPython 3.13.17 (for example, py -3.13)")
+    owned.require_interpreter()
 
 
 def environment(home: Path) -> dict[str, str]:
-    allowed = {"SYSTEMROOT", "WINDIR", "COMSPEC", "PATH", "PATHEXT"}
-    child = {key: value for key, value in os.environ.items() if key.upper() in allowed}
-    for key, relative in {
-        "HOME": "profile",
-        "USERPROFILE": "profile",
-        "APPDATA": "profile/AppData/Roaming",
-        "LOCALAPPDATA": "profile/AppData/Local",
-        "TEMP": "temporary",
-        "TMP": "temporary",
-        "NLTK_DATA": "nltk",
-        "CRAWL4AI_BASE_DIRECTORY": "runtime-data",
-        "CRAWL4_AI_BASE_DIRECTORY": "setup-data",
-        "PLAYWRIGHT_BROWSERS_PATH": "browsers",
-        "PIP_CACHE_DIR": "pip-cache",
-    }.items():
-        path = checked_path(home, relative)
-        path.mkdir(parents=True, exist_ok=True)
-        child[key] = str(path)
-    child.update(
-        PYTHONUTF8="1",
-        PYTHONNOUSERSITE="1",
-        PYTHONHASHSEED="0",
-        PIP_CONFIG_FILE="nul",
-        PIP_DISABLE_PIP_VERSION_CHECK="1",
-        PIP_NO_INPUT="1",
-        DO_NOT_TRACK="1",
-        LITELLM_TELEMETRY="False",
-        HF_HUB_DISABLE_TELEMETRY="1",
-        TOKENIZERS_PARALLELISM="false",
-        CRAWL4AI_CHROMIUM_SANDBOX="true",
+    child = owned.profile_environment(
+        home,
+        {
+            "NLTK_DATA": "nltk",
+            "CRAWL4AI_BASE_DIRECTORY": "runtime-data",
+            "CRAWL4_AI_BASE_DIRECTORY": "setup-data",
+            "PLAYWRIGHT_BROWSERS_PATH": "browsers",
+        },
     )
+    child["CRAWL4AI_CHROMIUM_SANDBOX"] = "true"
     return child
 
 
 def phase(home: Path, name: str, arguments: list[str | Path], *, timeout: int = 600) -> dict[str, Any]:
-    directory = checked_path(home, "logs/" + name + "-" + uuid.uuid4().hex)
-    directory.mkdir(parents=True)
     env = environment(home)
     env["SOURCE_DATE_EPOCH"] = str(json.loads((ROOT / INPUTS / "source.json").read_bytes())["source_date_epoch"])
-    with (directory / "stdout.log").open("xb") as stdout, (directory / "stderr.log").open("xb") as stderr:
-        status, receipt = run_python(
-            sys.executable,
-            EXECUTE,
-            [str(value) for value in arguments],
-            cwd=ROOT,
-            environment=env,
-            stdout=stdout,
-            stderr=stderr,
-            timeout=timeout,
-            output_limit=16 * 1024 * 1024,
-        )
-    receipt.update(exit_code=status, phase=name)
-    (directory / "process.json").write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
-    if status != 0 or receipt["active_processes_after_cleanup"] != 0:
-        raise ValueError(f"{name} failed (exit {status}); native diagnostics: {directory}")
-    return {"phase": name, "logs": str(directory), **receipt}
+    return owned.phase(ROOT, home, name, arguments, environment=env, timeout=timeout)
 
 
 def installation_receipt(home: Path) -> dict[str, Any]:
@@ -212,38 +149,7 @@ def verify(home: Path) -> dict[str, Any]:
 
 
 def download_archive(home: Path, pin: dict[str, Any]) -> Path:
-    parts = urlsplit(pin["archive_url"])
-    if (
-        parts.scheme != "https"
-        or parts.netloc != "files.pythonhosted.org"
-        or not parts.path.startswith("/packages/")
-        or parts.query
-        or parts.fragment
-    ):
-        raise ValueError("Provider source must use its pinned PyPI HTTPS artifact URL")
-    connection = http.client.HTTPSConnection("files.pythonhosted.org", timeout=60)
-    try:
-        connection.request("GET", parts.path, headers={"User-Agent": "AI-Skills-Provider-Setup/1"})
-        response = connection.getresponse()
-        raw = response.read(pin["archive_bytes"] + 1)
-        status = response.status
-    finally:
-        connection.close()
-    (home / "upstream-response.json").write_text(
-        json.dumps(
-            {"url": pin["archive_url"], "status_code": status, "bytes": len(raw), "sha256": source.digest(raw)},
-            indent=2,
-        )
-        + "\n",
-        encoding="utf-8",
-    )
-    archive = home / "upstream.tar.gz"
-    archive.write_bytes(raw)
-    if status != 200:
-        raise ValueError("Pinned source download failed; redirects and alternate sources are not accepted")
-    if len(raw) != pin["archive_bytes"] or source.digest(raw) != pin["archive_sha256"]:
-        raise ValueError("Downloaded source differs from the pinned archive")
-    return archive
+    return owned.download_archive(home, pin)
 
 
 def setup(home: Path) -> dict[str, Any]:

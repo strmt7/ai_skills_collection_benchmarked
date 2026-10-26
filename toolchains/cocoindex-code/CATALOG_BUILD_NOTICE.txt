@@ -1,0 +1,6 @@
+Catalog-maintained local CPU provider based on CocoIndex Code 0.2.42.
+Original project: https://github.com/cocoindex-io/cocoindex-code
+License: Apache-2.0; original LICENSE and notices remain included.
+Changes: static downstream version, omit the unused cloud embedding dependency,
+and disable trust_remote_code. Cloud embedding providers are unsupported.
+The source archive and every original file remain hash-bound in source.json.

@@ -15,6 +15,14 @@ Git root and current selected source bytes. Read its help and provider/cache
 rules. Keep exact filenames, symbols, strings, counts and small known scopes on
 direct `rg`. Do not manufacture an irrelevant query to satisfy this requirement.
 
+For a fresh provider, follow the reviewed
+[local-only installation and search guide](../../../toolchains/cocoindex-code/README.md).
+Use `tools/cocoindex_tool.py` to provision, index explicit source prefixes and
+write native search receipts. Its admitted local CPU build disables remote
+model code and keeps providers, models and indexes inside the current clone.
+Existing providers still require explicit version, source and cache review;
+never overwrite them or relax admission to make an installation succeed.
+
 Retain actual JSON search output. The adapter checks source freshness, the local
 CPU model's pinned bytes, returned path scopes and source spans. Installation or
 an index marker is not evidence of use. Start with at most five candidates and

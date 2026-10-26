@@ -1,0 +1,679 @@
+{
+  "advisory_coordinate_mapping": {
+    "cocoindex-code": {
+      "audited_source": "0.2.42",
+      "installed": "0.2.42+catalog.local1"
+    }
+  },
+  "advisory_floors": {
+    "filelock": "4.2.4"
+  },
+  "archive_bytes": 94573,
+  "archive_members": 26,
+  "archive_root": "cocoindex_code-0.2.42",
+  "archive_sha256": "9c9bc290a490735ee9c6b32c2ca85ca6553b150295cd07791774148ef19f2902",
+  "archive_url": "https://files.pythonhosted.org/packages/b2/8d/6b379499c1109cd02ceb79fab12ea41f000661b55787245ca3b017da2f8f/cocoindex_code-0.2.42.tar.gz",
+  "core": {
+    "all_installed_files_match_qualified_wheel": true,
+    "name": "cocoindex",
+    "runtime_files": [
+      {
+        "path": "cocoindex/__init__.py",
+        "sha256": "694240ab780c73afef0bdddb70d128e915d06abedc8469e3a62d6298f3b92ad2"
+      },
+      {
+        "path": "cocoindex/_internal/__init__.py",
+        "sha256": "c0ca9b3f27c23a61f43a2a45584b0cefa46b7be7d36aba380f18c022cec1fe31"
+      },
+      {
+        "path": "cocoindex/_internal/api.py",
+        "sha256": "d2d6d9305b49700351ada8ea480b01c55635a075a44ae04a2b63d0f9be343f74"
+      },
+      {
+        "path": "cocoindex/_internal/app.py",
+        "sha256": "c2810987abe7689b9311e7aac33c9cfcb76b62edb0b910075798da77dc136a1a"
+      },
+      {
+        "path": "cocoindex/_internal/batching.py",
+        "sha256": "f2148ab41dd4ce7b0e2d18eb17074a38cff4f0021d3c8b9b89173c4ac6108d7a"
+      },
+      {
+        "path": "cocoindex/_internal/component_ctx.py",
+        "sha256": "1f9fb56f989e232fee76272169c196add74b76c594e79f123436564a25152994"
+      },
+      {
+        "path": "cocoindex/_internal/context_keys.py",
+        "sha256": "96af6e47eb9dcd83425028a07726ca5f8d06d6f7d8da9f39d1790b59ca4b8492"
+      },
+      {
+        "path": "cocoindex/_internal/core.pyd",
+        "sha256": "6e1347c384402058e956904f16918fe70365efa300debb2b902ec038662d4530"
+      },
+      {
+        "path": "cocoindex/_internal/core.pyi",
+        "sha256": "d47457cfc22cb26449330addc0091e708b437545b9ecf3fcc37c291dd72182e8"
+      },
+      {
+        "path": "cocoindex/_internal/datatype.py",
+        "sha256": "d5a025887deb6b06885513c878b67d23832a79bbee00627086fa0f8792b3609c"
+      },
+      {
+        "path": "cocoindex/_internal/deadline.py",
+        "sha256": "3048590f1e3603b937ac3c78bd206958b14cc49813b11b1ef0ba179d7a727416"
+      },
+      {
+        "path": "cocoindex/_internal/environment.py",
+        "sha256": "bbf19b796de9f868b6367a0c65e3c9edc8837b0261c1ee3a5de1636c8d81a921"
+      },
+      {
+        "path": "cocoindex/_internal/extras.py",
+        "sha256": "f86763d39d28df6bf507ac9a9ff41a130ab2b08cc8518e36089c91a89b34234a"
+      },
+      {
+        "path": "cocoindex/_internal/function.py",
+        "sha256": "90ba2eec1c8b3416345f7ef8649ccd7b25252eb6a93ca4cad20e579f38b3df6a"
+      },
+      {
+        "path": "cocoindex/_internal/inspect_api.py",
+        "sha256": "e166c709b081bef7c07a005ae85b9a562eaa7529a6631275a1767412674295ad"
+      },
+      {
+        "path": "cocoindex/_internal/live_component.py",
+        "sha256": "176b6abb24ca2df1c4910619139873f3a6fb26388826750d9e79f5da0c757caa"
+      },
+      {
+        "path": "cocoindex/_internal/logic_propagated_to_callers.py",
+        "sha256": "5007df33b799fa87a78ea48cd478056c372fc6319dc6a3be495ba3e2b4ab5160"
+      },
+      {
+        "path": "cocoindex/_internal/memo_fingerprint.py",
+        "sha256": "93bcd33ec9a7ef3d8864b95af3e070f59098385b18801b8bfc8ad79f44436612"
+      },
+      {
+        "path": "cocoindex/_internal/pending_marker.py",
+        "sha256": "b76e98d76d4da53fffd14e68c258ebcf417b7b19be740ee122c0d47e928816e8"
+      },
+      {
+        "path": "cocoindex/_internal/runner.py",
+        "sha256": "d2bc2e2910912e6db6350202bc65ff978d9abd7c2ca866defd8387a692cb6fd7"
+      },
+      {
+        "path": "cocoindex/_internal/rwlock.py",
+        "sha256": "e67bde2c432f7315bd00185eabe85a55c26da713615076fe5612c6b4324ae12e"
+      },
+      {
+        "path": "cocoindex/_internal/serde.py",
+        "sha256": "8fff085ba093d4b357df6cdc33685a376aa4cbab32d02e645a22e690c7bddda0"
+      },
+      {
+        "path": "cocoindex/_internal/setting.py",
+        "sha256": "2cbb180c1de0c7bfc1131722311cc1dd915f9d4ec25b2b9432194cd42716b9dc"
+      },
+      {
+        "path": "cocoindex/_internal/stable_path.py",
+        "sha256": "cf3f296c6885c69c8ccfba0cfb75225d5123b2fa43d669ba9b7d6cf786ce52da"
+      },
+      {
+        "path": "cocoindex/_internal/target_state.py",
+        "sha256": "8df29a6bc0677f3f0727bbb462021ce542a229fb6f9e8e6ae44fb331eb0f4066"
+      },
+      {
+        "path": "cocoindex/_internal/target_state_codec.py",
+        "sha256": "dff4f948abdb633b17b20087bbc35712f5077c7f97d15a58dfb199b8c9d3d8a7"
+      },
+      {
+        "path": "cocoindex/_internal/typing.py",
+        "sha256": "fdab59fc281d0989cb9ce5741beb028c00894557db5366ddf148cc6d237d4aad"
+      },
+      {
+        "path": "cocoindex/_internal/update_stats.py",
+        "sha256": "0f61d95cc8fdffbb16bef20f883733e3be26fc300072fae449539184adee40bf"
+      },
+      {
+        "path": "cocoindex/_version.py",
+        "sha256": "96512177655694e9aeda86e4a0906a1da3f0d1828a797cf0fff3ea7f27ffc553"
+      },
+      {
+        "path": "cocoindex/_version_check.py",
+        "sha256": "e92d936108720f09c916331cadd89309f7671a51900ddbd250fc6f2448a51186"
+      },
+      {
+        "path": "cocoindex/cli.py",
+        "sha256": "3070fa179581d909c33bd27f25c4259e64fe861c28993679aaf60d5f8d02d337"
+      },
+      {
+        "path": "cocoindex/connectorkits/__init__.py",
+        "sha256": "b76bf25d3cbb02bafa9c957a45465d27d94af560a036850e9ef912293ce9ad65"
+      },
+      {
+        "path": "cocoindex/connectorkits/_per_loop_connections.py",
+        "sha256": "f462eafe4ee876f75e599ce9852ec663d8687fd1239f4e7d446a583be1f41cdc"
+      },
+      {
+        "path": "cocoindex/connectorkits/async_adapters.py",
+        "sha256": "6b5ff18d762836f4e5168e1d5c152896ef92b47cd814aebf5961df9001400b3c"
+      },
+      {
+        "path": "cocoindex/connectorkits/fingerprint.py",
+        "sha256": "9c827fc3c98a1492af63bb331c07497d399ea80f0992d36e0842b7372106ae87"
+      },
+      {
+        "path": "cocoindex/connectorkits/statediff.py",
+        "sha256": "1d9403e9721eb81e9d048edc10633eac7fda503004f6bc46ac349b15f26c0f0d"
+      },
+      {
+        "path": "cocoindex/connectorkits/target.py",
+        "sha256": "294eebae0a557399271f0c394d7b4531be1fc0fe469fc801e57e8eb9172bc441"
+      },
+      {
+        "path": "cocoindex/connectors/amazon_s3/__init__.py",
+        "sha256": "575547120235892e2d8611a74e0c82fb4a8f8e36491b190ab437e0f288c392ab"
+      },
+      {
+        "path": "cocoindex/connectors/amazon_s3/_source.py",
+        "sha256": "a08521c0728658b671d9945838138b5f7b9e3075ffb601fca5152b86d0d03ad7"
+      },
+      {
+        "path": "cocoindex/connectors/azure_blob/__init__.py",
+        "sha256": "19393de58539f708cee18db8f87ff1ebeb5a3a813a585ae5bdd262b7bb600be1"
+      },
+      {
+        "path": "cocoindex/connectors/azure_blob/_source.py",
+        "sha256": "f601e36c2a50f62f5ac137a91ec1d0a26c08a124b6d766b4b5a67d93f7324152"
+      },
+      {
+        "path": "cocoindex/connectors/bigquery/__init__.py",
+        "sha256": "2bc02ed6fb2ca839910993a3fca34655a8b24d0281c349b561313743142ca69b"
+      },
+      {
+        "path": "cocoindex/connectors/bigquery/_target.py",
+        "sha256": "eeb3f60bf7f4e5a017520cf692ea83e59c12871201e41f549f818a6ae874b4ce"
+      },
+      {
+        "path": "cocoindex/connectors/doris/__init__.py",
+        "sha256": "5b4f00257da320999831520c0b05cb147c949240c21f2c9357742262116857a1"
+      },
+      {
+        "path": "cocoindex/connectors/doris/_target.py",
+        "sha256": "438738392ff5d311347bab638a74c73379e1f947286946a5313da9cdf78687a5"
+      },
+      {
+        "path": "cocoindex/connectors/falkordb/__init__.py",
+        "sha256": "5b4f00257da320999831520c0b05cb147c949240c21f2c9357742262116857a1"
+      },
+      {
+        "path": "cocoindex/connectors/falkordb/_cypher.py",
+        "sha256": "df6e29483e43c335e6b2178c4afe4a36e37b4c2549ab827d001676b9a668e070"
+      },
+      {
+        "path": "cocoindex/connectors/falkordb/_target.py",
+        "sha256": "7f7e812059bb7ddac2e0fdac0bd90cb668bf6390690bdfd8058ef00e57f0f068"
+      },
+      {
+        "path": "cocoindex/connectors/google_drive/__init__.py",
+        "sha256": "575547120235892e2d8611a74e0c82fb4a8f8e36491b190ab437e0f288c392ab"
+      },
+      {
+        "path": "cocoindex/connectors/google_drive/_source.py",
+        "sha256": "841ded793621ec025eb37c4cae9b28b6bde74f869269a386f40a5484fc81cdf8"
+      },
+      {
+        "path": "cocoindex/connectors/iggy/__init__.py",
+        "sha256": "101125ab60d41fa3b21aaf195bc75b57d49a9961154cf74530c01add9a2b4518"
+      },
+      {
+        "path": "cocoindex/connectors/iggy/_source.py",
+        "sha256": "f6b71681b93e9881be5ceba033ed39d8f0ef31efd84e6ba5150b9c5813a39e10"
+      },
+      {
+        "path": "cocoindex/connectors/iggy/_target.py",
+        "sha256": "101b6bb3eca485aabec9a3bc131dbb3bc1c423dc0a4f667b2ff68019032af603"
+      },
+      {
+        "path": "cocoindex/connectors/kafka/__init__.py",
+        "sha256": "101125ab60d41fa3b21aaf195bc75b57d49a9961154cf74530c01add9a2b4518"
+      },
+      {
+        "path": "cocoindex/connectors/kafka/_source.py",
+        "sha256": "57fd2d7bcffd9fdd1027434acf7db8dbc3a4186b8cc827a5a9cff1830cf43c23"
+      },
+      {
+        "path": "cocoindex/connectors/kafka/_target.py",
+        "sha256": "7661d25a4d8a38762d82c1214fede1d10504b8702db39716572b921c077429f4"
+      },
+      {
+        "path": "cocoindex/connectors/lancedb/__init__.py",
+        "sha256": "5b4f00257da320999831520c0b05cb147c949240c21f2c9357742262116857a1"
+      },
+      {
+        "path": "cocoindex/connectors/lancedb/_target.py",
+        "sha256": "40523a17940695a145078da6ecfda2841b38b9717bacc7da056c21812e4511ed"
+      },
+      {
+        "path": "cocoindex/connectors/localfs/__init__.py",
+        "sha256": "401b2a9dee68cacda2fddb26aad51e5aa3385e8057a844b80391a9d4cee01037"
+      },
+      {
+        "path": "cocoindex/connectors/localfs/_common.py",
+        "sha256": "49629b902b34cd1f7772b28785b361aae30a201826264fcd19432cce57348dd5"
+      },
+      {
+        "path": "cocoindex/connectors/localfs/_source.py",
+        "sha256": "5fa096c48dbcb91732434beb484563563a327fd7985b1298d1972df67838b4b7"
+      },
+      {
+        "path": "cocoindex/connectors/localfs/_target.py",
+        "sha256": "84ba69c0a449015e47282c1aaf6bfa8caf35f3190ff4ee5a9d7b2d825fd75046"
+      },
+      {
+        "path": "cocoindex/connectors/neo4j/__init__.py",
+        "sha256": "c05e371ab5b8eca66e63681bf29f7bf54f7d6766f563362d2ba10d50f65455a9"
+      },
+      {
+        "path": "cocoindex/connectors/neo4j/_cypher.py",
+        "sha256": "394f04977818f7ffb0bab5701a005e3ad5730c48dba4a84333354ca63607cb4f"
+      },
+      {
+        "path": "cocoindex/connectors/neo4j/_target.py",
+        "sha256": "9131d9a7d24b8482d50c9d6fb6cab7c4c04abb837870ad554eef1217eb10470d"
+      },
+      {
+        "path": "cocoindex/connectors/oci_object_storage/__init__.py",
+        "sha256": "063fb91430626bc801935078367c4d25928bc759561d51c2808bc42bb30395c3"
+      },
+      {
+        "path": "cocoindex/connectors/oci_object_storage/_source.py",
+        "sha256": "0ed08d8a065a5789c5635c3eba675cd63faac38f40b3cb82a6ebf91a9fdc7b45"
+      },
+      {
+        "path": "cocoindex/connectors/postgres/__init__.py",
+        "sha256": "0938b4ed60d90f010e3b058d8595999d7a163b348fe674351ae79649ce409dd5"
+      },
+      {
+        "path": "cocoindex/connectors/postgres/_source.py",
+        "sha256": "d5cf7aea94813d95a62f322c8b3b7c465f98e3a5a941232895dd2e18a96c299a"
+      },
+      {
+        "path": "cocoindex/connectors/postgres/_target.py",
+        "sha256": "8f0cbb6029de1ab504878d9af96c47ad0c283dd7e88d8031d723f00b2a517ff6"
+      },
+      {
+        "path": "cocoindex/connectors/qdrant/__init__.py",
+        "sha256": "5b4f00257da320999831520c0b05cb147c949240c21f2c9357742262116857a1"
+      },
+      {
+        "path": "cocoindex/connectors/qdrant/_target.py",
+        "sha256": "b0b408eb61c6daec29092caa838ded0cd2fbf07f98f1b2d34c9192d631bdc3d4"
+      },
+      {
+        "path": "cocoindex/connectors/snowflake/__init__.py",
+        "sha256": "2bc02ed6fb2ca839910993a3fca34655a8b24d0281c349b561313743142ca69b"
+      },
+      {
+        "path": "cocoindex/connectors/snowflake/_target.py",
+        "sha256": "cd892fbbf1e6f570149340bb2fb5339d6e35bec910ac5ea392b3717780b242a5"
+      },
+      {
+        "path": "cocoindex/connectors/sqlite/__init__.py",
+        "sha256": "5b4f00257da320999831520c0b05cb147c949240c21f2c9357742262116857a1"
+      },
+      {
+        "path": "cocoindex/connectors/sqlite/_target.py",
+        "sha256": "87bcc054b106d27adf6127060cb7fc2eb3b529e485062b6ea44e0095afb17c35"
+      },
+      {
+        "path": "cocoindex/connectors/surrealdb/__init__.py",
+        "sha256": "5b4f00257da320999831520c0b05cb147c949240c21f2c9357742262116857a1"
+      },
+      {
+        "path": "cocoindex/connectors/surrealdb/_target.py",
+        "sha256": "a374d8d8cbab75e328cde3faae3b5d5f433f3a1bc43e306d03c1d95b945027a4"
+      },
+      {
+        "path": "cocoindex/connectors/turbopuffer/__init__.py",
+        "sha256": "5b4f00257da320999831520c0b05cb147c949240c21f2c9357742262116857a1"
+      },
+      {
+        "path": "cocoindex/connectors/turbopuffer/_target.py",
+        "sha256": "60b630995e7435ad5d95511047a491012f1960cbb8a850b48f5495c4fca92368"
+      },
+      {
+        "path": "cocoindex/connectors/valkey/__init__.py",
+        "sha256": "2bc02ed6fb2ca839910993a3fca34655a8b24d0281c349b561313743142ca69b"
+      },
+      {
+        "path": "cocoindex/connectors/valkey/_target.py",
+        "sha256": "cf6695038bd7824d8c71f18902aa59a6ea183939c321601d1531b36d71ca1e2e"
+      },
+      {
+        "path": "cocoindex/connectors/zvec/__init__.py",
+        "sha256": "5b4f00257da320999831520c0b05cb147c949240c21f2c9357742262116857a1"
+      },
+      {
+        "path": "cocoindex/connectors/zvec/_target.py",
+        "sha256": "2d146fb661f3a63790965fdf84ba0a9a6c4deafb6f1f2e5dffab53708b022489"
+      },
+      {
+        "path": "cocoindex/engine_object.py",
+        "sha256": "3b64c71f1fa5229ddfdef629dbd3d341611e64119588809c727f9e9433f4be96"
+      },
+      {
+        "path": "cocoindex/inspect.py",
+        "sha256": "b30d2d27c4d774dd3efd7190ef30aecedd76e45d1a6b91c4bb906de1b8620adf"
+      },
+      {
+        "path": "cocoindex/ops/__init__.py",
+        "sha256": "d61ec84f7c4ec5ff2b0074d943ac617620caf41caf309cafeb828207d92b5714"
+      },
+      {
+        "path": "cocoindex/ops/code.py",
+        "sha256": "1d81f28a98fcf59fee2f3c74f1074d50820346b776bd8cfdcb974dd57fe6cc56"
+      },
+      {
+        "path": "cocoindex/ops/entity_resolution/__init__.py",
+        "sha256": "b2d354e4f89f0f761e6da04008332a047716b3f2baa08d4a784b629c2801e228"
+      },
+      {
+        "path": "cocoindex/ops/entity_resolution/llm_resolver.py",
+        "sha256": "2145b4949b15553107827c050c09049f47222bbd04652b8c4c9ea31d56033faa"
+      },
+      {
+        "path": "cocoindex/ops/litellm.py",
+        "sha256": "826ec32aa14eb8da1353199bfa2080bf69fc87074b1b715471bc9c82d8aa455d"
+      },
+      {
+        "path": "cocoindex/ops/sentence_transformers.py",
+        "sha256": "164e696ba682db825100b7815a7101f545454824b2a0dad8ca503d40cc84e09d"
+      },
+      {
+        "path": "cocoindex/ops/text.py",
+        "sha256": "2a9fd48dcb4a6b84f09007739a0a97ca6b56d99e3cd04217472a0e16c588599e"
+      },
+      {
+        "path": "cocoindex/py.typed",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "cocoindex/resources/chunk.py",
+        "sha256": "77130ccdc51a3d38eae190ffc5bfb2c6847e9fb85671349e402919ec1a385a54"
+      },
+      {
+        "path": "cocoindex/resources/embedder.py",
+        "sha256": "a5020559cb9f2895032aa6654e3fd9f9b94779ee2c0136a7629f6de2f5eb87e1"
+      },
+      {
+        "path": "cocoindex/resources/file.py",
+        "sha256": "1663d8240d39792758963265978668f6dfd1d35d1ea03b18e06fd6015776f0f8"
+      },
+      {
+        "path": "cocoindex/resources/id.py",
+        "sha256": "431ff507d02b29a2f0f7450a8f4ad6348c6cc2eade939062a4dd3385e3936fc1"
+      },
+      {
+        "path": "cocoindex/resources/live_map.py",
+        "sha256": "46c043510c7b10ed8819c497b0cf10d12d5b4c601fb8153e3204ba0b2a899dae"
+      },
+      {
+        "path": "cocoindex/resources/rate_limit.py",
+        "sha256": "c8aa6e800c6ac4b61c7a9f733f35d793c08b07b052986d973b262050b7b7ef8c"
+      },
+      {
+        "path": "cocoindex/resources/schema.py",
+        "sha256": "156ba74ec09d0d9c30b901131203d9802581136c7941789490ab0a0dd3952c29"
+      },
+      {
+        "path": "cocoindex/resources/view.py",
+        "sha256": "8eaf0cfaabfd63247bc8d5c3793a0244ec76d46a8a9349992f66da5711deb0f6"
+      },
+      {
+        "path": "cocoindex/user_app_loader.py",
+        "sha256": "33b3a0651a6c498f51fde98ba15c2a7d3766d8fcf8d823eefdb229058cea23f9"
+      }
+    ],
+    "version": "1.0.26",
+    "wheel_bytes": 10176740,
+    "wheel_sha256": "fa3d72a0b4a8cc02c8174220f2d7d38590707f8c9bfc92945d9fc3c0ececd678",
+    "wheel_url": "https://files.pythonhosted.org/packages/2b/df/37e29631cccf041a59c2cfe90b72ce776cd6bcb4182f4011dac6650f6d6b/cocoindex-1.0.26-cp311-abi3-win_amd64.whl"
+  },
+  "independent_model_trials": 0,
+  "license_sha256": "5e8c0ba20456f84943cba547175e212962117b43ad1b20c877aa983429eb256c",
+  "notice_sha256": "d656fbbca8904e04fa2505910276d9a3807de3076f5d967a51e59f80759d7705",
+  "original_source_sha256": {
+    ".gitignore": "2b67094d9eb343d47744d34ce40c507415395e243d752820b3b16d5bc529e44b",
+    "LICENSE": "5e8c0ba20456f84943cba547175e212962117b43ad1b20c877aa983429eb256c",
+    "PKG-INFO": "ead4a9325f35b6762fac0f6bfa98285bfd53264603206de37c34bf4b9b441cb6",
+    "README.md": "6dbd4e9d33a5ccac4894d59a7124ea273a9de2fadccefdf935cd4c884fd3e070",
+    "pyproject.toml": "d696a9271801f4d68262c83c29eb609d3114f884bff024a377845dee1b6a8ec6",
+    "src/cocoindex_code/__init__.py": "412c256a78c18764481b96028fd21cc9b313a90a95f81bc736e9fed5b4d856c6",
+    "src/cocoindex_code/__main__.py": "23dfbe3b58db460d99f82b3dba86f59c972ecbabc822585d83e7fd78975cd53b",
+    "src/cocoindex_code/_daemon_paths.py": "5c67e4887149fa9cfb8468effb1776f97e90b71b885c733d6617d7b380f5cf41",
+    "src/cocoindex_code/_version.py": "adedfd29bf0e9579efee75842adf3b751cb12b8f03b36a80d9c474fa6b1fa553",
+    "src/cocoindex_code/chunking.py": "1a2e66a3f8982baa6d6b1acb4b719ccb13b313fa694d174432855e014cf65202",
+    "src/cocoindex_code/cli.py": "7567ce81690d42babec17c79e6aeb7da0f0cae2647685a3e903b85f302e39ca2",
+    "src/cocoindex_code/client.py": "04c13015194f2bd8a484ea7e6483346d546088882a62364a54615554eb3f9ae8",
+    "src/cocoindex_code/daemon.py": "e8d7b730cc2214527847d70c356c6ad18b2c9f66686ff7d8b45e76d5f49bd249",
+    "src/cocoindex_code/embedder_defaults.py": "803a4f2d24d9f28609a33a7cfb5c6ac3a485af079a2df0af6ae0da94625b6903",
+    "src/cocoindex_code/embedder_params.py": "a8d52d82309365e2aae004fc6c2fa22467e6ca000dbef4bd85fd635ab937a6a2",
+    "src/cocoindex_code/file_walk.py": "ad29bd11fbd92a4b45034991889a8185fced29cebed89483e012ccaf063900be",
+    "src/cocoindex_code/grep.py": "4ed59e85dae3410a1886d36057989aee4152042877ca6c43f8ca72de09d440ba",
+    "src/cocoindex_code/indexer.py": "3a9ca61fd661244076386b907557963c46dbe183540f40b5f23dd5ca5df0e280",
+    "src/cocoindex_code/litellm_embedder.py": "77e05661c62ba8a6bc895800d81a490b8747cec10171ac6c3a9fd56d10e9a4e5",
+    "src/cocoindex_code/project.py": "6b63c822bd63efd75228d74a8ce0026651d00baf5225ef6227f64f820e1200ac",
+    "src/cocoindex_code/protocol.py": "a15b0a1f3d3efd649775420e7f8bbbc00467acefa7863051c5c5f1f984b3ae21",
+    "src/cocoindex_code/query.py": "cefd6c668a60e2d5b92d28127d68434fc20f74990de187fd8490263fb0f5d94e",
+    "src/cocoindex_code/schema.py": "5f86ee0b0c091ed8b46eaba1751563392fdd6db81006e54de8d9a2e09de02f41",
+    "src/cocoindex_code/server.py": "11c1a8588fdc8128b7f4aec53da3e4c1937168709b1a99b27964ed1cff54c494",
+    "src/cocoindex_code/settings.py": "356ebe487e8c7fce5fb611d0b56aecb26987806199ac9266ff2c426effd69235",
+    "src/cocoindex_code/shared.py": "5652d4ed782d84803eb07bb2c23d2b2d83c965e6e88101d61894fdcb1f8c5503"
+  },
+  "prepared_source_sha256": {
+    ".gitignore": "2b67094d9eb343d47744d34ce40c507415395e243d752820b3b16d5bc529e44b",
+    "LICENSE": "5e8c0ba20456f84943cba547175e212962117b43ad1b20c877aa983429eb256c",
+    "PKG-INFO": "ead4a9325f35b6762fac0f6bfa98285bfd53264603206de37c34bf4b9b441cb6",
+    "README.md": "6dbd4e9d33a5ccac4894d59a7124ea273a9de2fadccefdf935cd4c884fd3e070",
+    "pyproject.toml": "18f9ed6914c6959f0e39a23ada01c10bea2df59fedc7cd5b0dc68ff591e2cf8d",
+    "src/cocoindex_code/CATALOG_BUILD_NOTICE.txt": "d656fbbca8904e04fa2505910276d9a3807de3076f5d967a51e59f80759d7705",
+    "src/cocoindex_code/__init__.py": "412c256a78c18764481b96028fd21cc9b313a90a95f81bc736e9fed5b4d856c6",
+    "src/cocoindex_code/__main__.py": "23dfbe3b58db460d99f82b3dba86f59c972ecbabc822585d83e7fd78975cd53b",
+    "src/cocoindex_code/_daemon_paths.py": "5c67e4887149fa9cfb8468effb1776f97e90b71b885c733d6617d7b380f5cf41",
+    "src/cocoindex_code/_version.py": "5f0d5953ab936dbd663797b9c2af96017647789b61a38dc55848a332ea9a7a85",
+    "src/cocoindex_code/chunking.py": "1a2e66a3f8982baa6d6b1acb4b719ccb13b313fa694d174432855e014cf65202",
+    "src/cocoindex_code/cli.py": "7567ce81690d42babec17c79e6aeb7da0f0cae2647685a3e903b85f302e39ca2",
+    "src/cocoindex_code/client.py": "04c13015194f2bd8a484ea7e6483346d546088882a62364a54615554eb3f9ae8",
+    "src/cocoindex_code/daemon.py": "e8d7b730cc2214527847d70c356c6ad18b2c9f66686ff7d8b45e76d5f49bd249",
+    "src/cocoindex_code/embedder_defaults.py": "803a4f2d24d9f28609a33a7cfb5c6ac3a485af079a2df0af6ae0da94625b6903",
+    "src/cocoindex_code/embedder_params.py": "a8d52d82309365e2aae004fc6c2fa22467e6ca000dbef4bd85fd635ab937a6a2",
+    "src/cocoindex_code/file_walk.py": "ad29bd11fbd92a4b45034991889a8185fced29cebed89483e012ccaf063900be",
+    "src/cocoindex_code/grep.py": "4ed59e85dae3410a1886d36057989aee4152042877ca6c43f8ca72de09d440ba",
+    "src/cocoindex_code/indexer.py": "3a9ca61fd661244076386b907557963c46dbe183540f40b5f23dd5ca5df0e280",
+    "src/cocoindex_code/litellm_embedder.py": "77e05661c62ba8a6bc895800d81a490b8747cec10171ac6c3a9fd56d10e9a4e5",
+    "src/cocoindex_code/project.py": "6b63c822bd63efd75228d74a8ce0026651d00baf5225ef6227f64f820e1200ac",
+    "src/cocoindex_code/protocol.py": "a15b0a1f3d3efd649775420e7f8bbbc00467acefa7863051c5c5f1f984b3ae21",
+    "src/cocoindex_code/query.py": "cefd6c668a60e2d5b92d28127d68434fc20f74990de187fd8490263fb0f5d94e",
+    "src/cocoindex_code/schema.py": "5f86ee0b0c091ed8b46eaba1751563392fdd6db81006e54de8d9a2e09de02f41",
+    "src/cocoindex_code/server.py": "11c1a8588fdc8128b7f4aec53da3e4c1937168709b1a99b27964ed1cff54c494",
+    "src/cocoindex_code/settings.py": "356ebe487e8c7fce5fb611d0b56aecb26987806199ac9266ff2c426effd69235",
+    "src/cocoindex_code/shared.py": "257db8a46aea24e13e1cbe0d3ebd0d4116e98b5fbcc70751d6bd44e4527221f1"
+  },
+  "qualification_scope": "Local CPU source-bound index/search software qualification; no cloud embedding support or agent-efficacy score",
+  "qualified_platform": "Windows x64 CPython 3.13.17",
+  "qualified_runtime_lock_sha256": "bf2c1d93072a8f55502701385c8785c8a7990d950fc75140b981373e89d89c09",
+  "qualified_wheel_name": "cocoindex_code-0.2.42+catalog.local1-py3-none-any.whl",
+  "qualified_wheel_sha256": "1d9e2b85fd412b04b9c1788eae325912622a160fde348d775b83109b02a19743",
+  "runtime_files": [
+    {
+      "path": "cocoindex_code/CATALOG_BUILD_NOTICE.txt",
+      "sha256": "d656fbbca8904e04fa2505910276d9a3807de3076f5d967a51e59f80759d7705"
+    },
+    {
+      "path": "cocoindex_code/__init__.py",
+      "sha256": "412c256a78c18764481b96028fd21cc9b313a90a95f81bc736e9fed5b4d856c6"
+    },
+    {
+      "path": "cocoindex_code/__main__.py",
+      "sha256": "23dfbe3b58db460d99f82b3dba86f59c972ecbabc822585d83e7fd78975cd53b"
+    },
+    {
+      "path": "cocoindex_code/_daemon_paths.py",
+      "sha256": "5c67e4887149fa9cfb8468effb1776f97e90b71b885c733d6617d7b380f5cf41"
+    },
+    {
+      "path": "cocoindex_code/_version.py",
+      "sha256": "5f0d5953ab936dbd663797b9c2af96017647789b61a38dc55848a332ea9a7a85"
+    },
+    {
+      "path": "cocoindex_code/chunking.py",
+      "sha256": "1a2e66a3f8982baa6d6b1acb4b719ccb13b313fa694d174432855e014cf65202"
+    },
+    {
+      "path": "cocoindex_code/cli.py",
+      "sha256": "7567ce81690d42babec17c79e6aeb7da0f0cae2647685a3e903b85f302e39ca2"
+    },
+    {
+      "path": "cocoindex_code/client.py",
+      "sha256": "04c13015194f2bd8a484ea7e6483346d546088882a62364a54615554eb3f9ae8"
+    },
+    {
+      "path": "cocoindex_code/daemon.py",
+      "sha256": "e8d7b730cc2214527847d70c356c6ad18b2c9f66686ff7d8b45e76d5f49bd249"
+    },
+    {
+      "path": "cocoindex_code/embedder_defaults.py",
+      "sha256": "803a4f2d24d9f28609a33a7cfb5c6ac3a485af079a2df0af6ae0da94625b6903"
+    },
+    {
+      "path": "cocoindex_code/embedder_params.py",
+      "sha256": "a8d52d82309365e2aae004fc6c2fa22467e6ca000dbef4bd85fd635ab937a6a2"
+    },
+    {
+      "path": "cocoindex_code/file_walk.py",
+      "sha256": "ad29bd11fbd92a4b45034991889a8185fced29cebed89483e012ccaf063900be"
+    },
+    {
+      "path": "cocoindex_code/grep.py",
+      "sha256": "4ed59e85dae3410a1886d36057989aee4152042877ca6c43f8ca72de09d440ba"
+    },
+    {
+      "path": "cocoindex_code/indexer.py",
+      "sha256": "3a9ca61fd661244076386b907557963c46dbe183540f40b5f23dd5ca5df0e280"
+    },
+    {
+      "path": "cocoindex_code/litellm_embedder.py",
+      "sha256": "77e05661c62ba8a6bc895800d81a490b8747cec10171ac6c3a9fd56d10e9a4e5"
+    },
+    {
+      "path": "cocoindex_code/project.py",
+      "sha256": "6b63c822bd63efd75228d74a8ce0026651d00baf5225ef6227f64f820e1200ac"
+    },
+    {
+      "path": "cocoindex_code/protocol.py",
+      "sha256": "a15b0a1f3d3efd649775420e7f8bbbc00467acefa7863051c5c5f1f984b3ae21"
+    },
+    {
+      "path": "cocoindex_code/query.py",
+      "sha256": "cefd6c668a60e2d5b92d28127d68434fc20f74990de187fd8490263fb0f5d94e"
+    },
+    {
+      "path": "cocoindex_code/schema.py",
+      "sha256": "5f86ee0b0c091ed8b46eaba1751563392fdd6db81006e54de8d9a2e09de02f41"
+    },
+    {
+      "path": "cocoindex_code/server.py",
+      "sha256": "11c1a8588fdc8128b7f4aec53da3e4c1937168709b1a99b27964ed1cff54c494"
+    },
+    {
+      "path": "cocoindex_code/settings.py",
+      "sha256": "356ebe487e8c7fce5fb611d0b56aecb26987806199ac9266ff2c426effd69235"
+    },
+    {
+      "path": "cocoindex_code/shared.py",
+      "sha256": "257db8a46aea24e13e1cbe0d3ebd0d4116e98b5fbcc70751d6bd44e4527221f1"
+    }
+  ],
+  "runtime_versions": {
+    "annotated-doc": "0.0.5",
+    "annotated-types": "0.8.0",
+    "anyio": "4.15.1",
+    "attrs": "26.1.0",
+    "cffi": "2.1.1",
+    "click": "8.5.0",
+    "cloudpickle": "3.1.2",
+    "cocoindex": "1.0.26",
+    "cocoindex-code": "0.2.42+catalog.local1",
+    "colorama": "0.4.6",
+    "cryptography": "50.0.2",
+    "einops": "0.8.2",
+    "filelock": "4.2.4",
+    "fsspec": "2026.9.0",
+    "h11": "0.16.0",
+    "hf-xet": "1.7.0",
+    "httpcore2": "2.16.0",
+    "httpx2": "2.16.0",
+    "huggingface-hub": "2.3.0",
+    "idna": "3.20",
+    "jinja2": "3.1.6",
+    "joblib": "1.6.0",
+    "jsonschema": "4.26.0",
+    "jsonschema-specifications": "2025.9.1",
+    "markdown-it-py": "4.2.0",
+    "markupsafe": "3.0.4",
+    "mcp": "2.3.0",
+    "mcp-types": "2.3.0",
+    "mdurl": "0.1.2",
+    "mpmath": "1.3.0",
+    "msgspec": "0.22.0",
+    "narwhals": "2.27.1",
+    "networkx": "3.7",
+    "numpy": "2.5.4",
+    "opentelemetry-api": "1.45.1",
+    "packaging": "26.3",
+    "pathspec": "0.12.1",
+    "pip": "26.2.2",
+    "prompt-toolkit": "3.0.53",
+    "psutil": "7.2.2",
+    "pycparser": "3.12",
+    "pydantic": "2.14.1",
+    "pydantic-core": "2.50.1",
+    "pygments": "2.21.0",
+    "pyjwt": "2.15.1",
+    "python-dotenv": "1.2.4",
+    "python-multipart": "0.0.32",
+    "pywin32": "312",
+    "pyyaml": "6.0.3",
+    "questionary": "2.1.1",
+    "referencing": "0.37.0",
+    "regex": "2026.9.29",
+    "rich": "15.0.0",
+    "rpds-py": "2026.9.1",
+    "safetensors": "0.8.0",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "sentence-transformers": "6.2.0",
+    "setuptools": "84.2.1",
+    "shellingham": "1.5.4",
+    "sqlite-vec": "0.1.9",
+    "sse-starlette": "3.6.0",
+    "starlette": "1.10.0",
+    "sympy": "1.14.0",
+    "threadpoolctl": "3.7.0",
+    "tokenizers": "0.23.3",
+    "torch": "2.14.1",
+    "tqdm": "4.70.1",
+    "transformers": "5.20.2",
+    "truststore": "0.10.5",
+    "typer": "0.27.3",
+    "typing-extensions": "4.16.0",
+    "typing-inspection": "0.4.4",
+    "uvicorn": "0.54.0",
+    "watchdog": "6.0.0",
+    "wcwidth": "0.9.4"
+  },
+  "schema_version": 1,
+  "source_date_epoch": 1791235358,
+  "source_files": 26,
+  "source_repo": "https://github.com/cocoindex-io/cocoindex-code",
+  "unpacked_bytes": 320576,
+  "upstream_development_status": "Alpha",
+  "upstream_version": "0.2.42",
+  "version": "0.2.42+catalog.local1"
+}

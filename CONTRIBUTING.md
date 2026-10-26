@@ -39,6 +39,7 @@ locally with the toolchain installed via `pip install -e '.[test,lint]'`:
 | Compile | `python3 -m compileall -q tools tests` | `.github/workflows/offline-validation.yml` |
 | Image CLI acceptance | Source-locked preparation, `npm ci --ignore-scripts`, audit and independent intercepted controls; see [`repair evidence`](docs/research-image-cli-acceptance.md) | `.github/workflows/image-cli-controls.yml` |
 | Crawl4AI source build | Two reproducible wheels, complete hashed installations, source admission and identical native controls; see [`provider inputs`](toolchains/crawl4ai/README.md) | `.github/workflows/crawl4ai-provider.yml` |
+| CocoIndex local provider | Normal hashed installation, provider/model admission, native indexing and verified source spans; see [`setup and search`](toolchains/cocoindex-code/README.md) | `.github/workflows/cocoindex-provider.yml` |
 | Native PPTX retention | Pinned converter pair, deterministic fixture and semantic content checks; see [`consumer inputs`](toolchains/pptx-native/README.md) | `.github/workflows/pptx-retention-controls.yml` |
 | Secrets (in-repo) | `python3 tools/check_no_secret_patterns.py --history` | `.github/workflows/secret-scan.yml` |
 | Secrets (gitleaks) | `gitleaks git --exit-code 1 .` | `.github/workflows/secret-scan.yml` |

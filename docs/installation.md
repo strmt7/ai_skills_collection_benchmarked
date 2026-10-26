@@ -44,6 +44,11 @@ research. Keep the local policy and all linked resources accessible. Tool setup
 and actual execution receipts are required where those scopes apply; installing
 a skill or copying an entrypoint does not prove compliance.
 
+For a fresh code-search provider, follow the
+[local CocoIndex setup and search guide](../toolchains/cocoindex-code/README.md).
+For public-page research, use the
+[Crawl4AI installation guide](../toolchains/crawl4ai/README.md).
+
 Run a small task in your actual agent environment and inspect its output before
 depending on broader behaviour. [Read the evidence guide](coverage.md) to
 distinguish packaging checks, component tests and agent trials.
@@ -52,7 +57,8 @@ distinguish packaging checks, component tests and agent trials.
 
 Host-agnostic means no fixed machine, username, installation path or AI client.
 Each component keeps its documented operating-system requirements. The qualified
-[Crawl4AI provider](../toolchains/crawl4ai/README.md) supports Windows x64.
+[Crawl4AI](../toolchains/crawl4ai/README.md) and
+[local CocoIndex](../toolchains/cocoindex-code/README.md) providers support Windows x64.
 Catalog-validation CI also exercises Linux; that does not port the Windows
 provider or certify every mirrored skill on Linux.
 

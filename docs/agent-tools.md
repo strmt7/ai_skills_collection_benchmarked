@@ -41,6 +41,13 @@ installation, an index marker or an old query is insufficient. Refresh only
 inputs relevant to the task, without touching another repository's MCP server,
 runtime or index. Keep secrets and unrelated ignored files out of the corpus.
 
+On Windows x64 with CPython 3.13.17, use
+`py -3.13 -I tools/cocoindex_tool.py setup` for a fresh admitted local CPU
+provider. Its [installation and search guide](../toolchains/cocoindex-code/README.md)
+covers explicit source selection, native receipts and recovery. The complete
+hashed installation, pinned model and safe import boundary require no API key,
+global provider changes or AI client configuration.
+
 For Crawl4AI, configure a reviewed, isolated provider and compatible interpreter
 explicitly; no machine path is built into this repository. Reuse a qualified
 hash-locked installation when available. Read its installation and cache rules

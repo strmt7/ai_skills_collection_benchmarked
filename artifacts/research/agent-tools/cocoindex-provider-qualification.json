@@ -1,0 +1,176 @@
+{
+  "advisory_audits": {
+    "build": {
+      "dependencies_checked": 10,
+      "known_advisories": 0,
+      "native_sha256": "edfc187ae8dfbb5dd26515be072ce34c06e54488eb6709ce2c5d56c826ddcba2"
+    },
+    "ignores_added": false,
+    "runtime": {
+      "dependencies_checked": 75,
+      "known_advisories": 0,
+      "native_sha256": "179b5784bdd2224b5f1b5d8ed905120a852230963106741feec229e81ffcd9aa"
+    },
+    "separate_runtime_and_build_graphs": true,
+    "upstream_package_identity_retained_for_advisories": true
+  },
+  "agent_efficacy_claim": false,
+  "crawl4ai_source_review": {
+    "capture_implementation_sha256": "7b5b95b63e18507be739baa1ab72f985f29e49af39340c00236fd34f8fdf7e0b",
+    "markdown_characters": 19506,
+    "native_sha256": "9a67befb95e95cfdcc4b982431ba3251d9cada6e05389f8098ea11767dab24e8",
+    "provider_version": "0.9.5+catalog.portable4",
+    "scope_reviewed": true,
+    "source_files_admitted": 87,
+    "status_code": 200,
+    "strict_policy": {
+      "automation_disclosed": true,
+      "external_llm": false,
+      "fallback": false,
+      "max_retries": 0,
+      "personal_profile": false,
+      "robots": true,
+      "sandbox": true,
+      "stealth": false,
+      "tls_verification": true
+    },
+    "success": true,
+    "telemetry_opt_out_verified_in_source": true,
+    "url": "https://github.com/cocoindex-io/cocoindex/blob/a8528ac0b1b8aa430734910af588c1ed875cd39e/rust/core/src/telemetry/mod.rs"
+  },
+  "evidence_class": "native-local-provider-software-qualification",
+  "file_identity_records": {
+    "all_admitted_filenames_and_hashes_preserved": true,
+    "format": "Separate explicit path and sha256 fields for core and model files",
+    "initial_metadata_hash_false_positives": 6,
+    "secret_rule_or_path_suppressions_added": false,
+    "staged_secret_findings_after_correction": 0
+  },
+  "hosted_confirmation_pending": true,
+  "hosted_workflow": ".github/workflows/cocoindex-provider.yml",
+  "independent_model_trials": 0,
+  "local_model": {
+    "custom_model_code": false,
+    "files_admitted": 11,
+    "model": "Snowflake/snowflake-arctic-embed-xs",
+    "personal_token_used": false,
+    "revision": "d8c86521100d3556476a063fc2342036d45c106f",
+    "total_bytes": 91304871
+  },
+  "local_quality": {
+    "failed_initial_probes_preserved": true,
+    "focused_provider_and_search_tests_passed": 89,
+    "gates_passed": 30,
+    "hosted_validation_required": true,
+    "local_test_python": "3.14.8",
+    "tests_passed": 964,
+    "tests_skipped": 2,
+    "typed_source_files": 128
+  },
+  "native_retrieval": {
+    "commands_passed": [
+      "check",
+      "index",
+      "index --check",
+      "search"
+    ],
+    "native_sha256": "cfca731804d90f721c63dbd2783eed2d2396589408814f54d3a2f7555e42ee3e",
+    "retrieval_quality_established": false,
+    "verified_current_source_spans": 5
+  },
+  "normal_installation": {
+    "fresh_default_profile": true,
+    "hashed_complete_dependency_install": true,
+    "installation_native_sha256": "463a773c54de56952bc433c23abb9b57d6cf45de36f188135dbeeea2726b74d7",
+    "owned_processes_after_cleanup": 0,
+    "phases_passed": 11,
+    "pip_check_passed": true,
+    "runtime_distributions_including_pip": 76,
+    "source_files_admitted": 125
+  },
+  "provider": {
+    "cloud_embeddings_supported": false,
+    "core_version": "1.0.26",
+    "explicit_local_changes": [
+      "Static downstream version without the VCS build hook",
+      "Remove the unused cloud embedding dependency extra",
+      "Disable remote model code; preserve license and change notice"
+    ],
+    "independent_builds_with_identical_wheel": 2,
+    "qualified_platform": "Windows x64, CPython 3.13.17, CPU",
+    "upstream_archive_sha256": "9c9bc290a490735ee9c6b32c2ca85ca6553b150295cd07791774148ef19f2902",
+    "upstream_release_classification": "Alpha",
+    "version": "0.2.42+catalog.local1",
+    "wheel_bytes": 92617,
+    "wheel_sha256": "1d9e2b85fd412b04b9c1788eae325912622a160fde348d775b83109b02a19743"
+  },
+  "remaining_limits": [
+    "Known repository-wide security and static-analysis findings remain unresolved.",
+    "Upstream mirrors remain immutable; this provider does not alter their audit outcomes.",
+    "Component qualification does not establish coding-agent superiority."
+  ],
+  "schema_version": 1,
+  "source_input_transport": {
+    "cases": [
+      {
+        "core_autocrlf": "false",
+        "exact_pinned_files_verified": 7
+      },
+      {
+        "core_autocrlf": "true",
+        "exact_pinned_files_verified": 7
+      }
+    ],
+    "input_sha256": {
+      "toolchains/cocoindex-code/CATALOG_BUILD_NOTICE.txt": "d656fbbca8904e04fa2505910276d9a3807de3076f5d967a51e59f80759d7705",
+      "toolchains/cocoindex-code/LICENSE": "5e8c0ba20456f84943cba547175e212962117b43ad1b20c877aa983429eb256c",
+      "toolchains/cocoindex-code/model.json": "89cff376a957b213f1d6ceb70d4d3780f885ba3a98f4bb78a0d1f1232c298f2f",
+      "toolchains/cocoindex-code/requirements-bootstrap.txt": "f409e9c999da22f4920b4724c68adadb416a515f38d760dfd34ae6382d43df04",
+      "toolchains/cocoindex-code/requirements-build.txt": "a5ee8d7ee0539b4194c6cb97bf28f910aae81a6dd3eab9f939dc28cd17e88e1a",
+      "toolchains/cocoindex-code/requirements.txt": "e3acd1ed0facde8a18a80acdcaa88d33e5f303469cc96dc3105be1d7a6eb0051",
+      "toolchains/cocoindex-code/source.json": "898ab35225cb8d2ead3552d52bb242bcbc2a68a8a2ad9b8a3d4bd262b86885f9"
+    },
+    "native_receipt_sha256": "93c731570b6a999fc06cd347cad429ba2881e7893214ecb03568ce42eddd0622",
+    "passed": true,
+    "real_git_checkout_index": true
+  },
+  "source_parent": "e8236ca0899b922da13fad3f2a6cb3da0ae45bc5",
+  "source_sha256": {
+    ".agents/skills/cocoindex-code-search/SKILL.md": "a3ae34f834053dc874d9c47e84f9c2a9a158b2aeb33da0117df08f1f15ea3952",
+    ".gitattributes": "54d4d7bc08ba5d6f7f5b051956ea8bbc5d6d2d04b9b03c5caae04f1c78488e4a",
+    ".github/dependabot.yml": "86bb366e69377b37a46952af4d81638a02fc02422ee565e75acbb34e01816acb",
+    ".github/workflows/cocoindex-provider.yml": "448646683449d419d1495bd7e24203aeaeda239e2a2eb88d1dff166fbe4582b1",
+    ".github/workflows/crawl4ai-provider.yml": "9d821e0c82f7c0b9b45aafd63edb8b8b3396260612b0de72cb6def72f45d0663",
+    ".github/workflows/pip-audit.yml": "3945e84b078e22878f9cb0bb0f4abe85f6e3b0f2477d953ff0c1c7ebf1842d5b",
+    "CONTRIBUTING.md": "8b4d8905cea8ce13124b88c165ab735aa8ee8094fd9f474bbdcdfdd42a4e2fd4",
+    "docs/agent-tools.md": "a7c2055081137ac0b792a6a57a43bf03ecd6fe3ca6b96c25bd1a36e24e496693",
+    "docs/development.md": "bff6b07a488ef5aabe927bac4e58467f954dea1f53daea474811a39d0e6d8e5a",
+    "docs/installation.md": "584579f48d4358bd45bf0fafd2ea5a2e81b1388bd084b8587c7bc92b76da72ef",
+    "pyproject.toml": "80286b16071d84ba7f9a7a8693986a89410e83f26b2bebea5ec4fe96a2f4e86c",
+    "tests/test_cocoindex_provider.py": "313a15807563faec68eab2e930ca8a45f7da4086b60e5155ec6c7e7ecbc5b358",
+    "tests/test_crawl4ai_launcher.py": "4e2a7e45aad2e0fc642997d8848a3716496f9aefbd1ac25adde26415d40f1c2a",
+    "tests/test_semantic_search.py": "d557616c7c53ab6fda24899646456feaf34672472930d0e7e2570963247a6dc0",
+    "tests/test_workflow_versions.py": "5e9ea9fb49e422f1593e721131acaefefa2f2ff72a0f994c9ff96d8c4ca9d425",
+    "toolchains/cocoindex-code/CATALOG_BUILD_NOTICE.txt": "d656fbbca8904e04fa2505910276d9a3807de3076f5d967a51e59f80759d7705",
+    "toolchains/cocoindex-code/LICENSE": "5e8c0ba20456f84943cba547175e212962117b43ad1b20c877aa983429eb256c",
+    "toolchains/cocoindex-code/README.md": "0cb33466db2e9fdcdef0e88a9a2e87aeea02620488ef8e470912218d97d43775",
+    "toolchains/cocoindex-code/model.json": "89cff376a957b213f1d6ceb70d4d3780f885ba3a98f4bb78a0d1f1232c298f2f",
+    "toolchains/cocoindex-code/requirements-bootstrap.txt": "f409e9c999da22f4920b4724c68adadb416a515f38d760dfd34ae6382d43df04",
+    "toolchains/cocoindex-code/requirements-build.txt": "a5ee8d7ee0539b4194c6cb97bf28f910aae81a6dd3eab9f939dc28cd17e88e1a",
+    "toolchains/cocoindex-code/requirements.txt": "e3acd1ed0facde8a18a80acdcaa88d33e5f303469cc96dc3105be1d7a6eb0051",
+    "toolchains/cocoindex-code/source.json": "898ab35225cb8d2ead3552d52bb242bcbc2a68a8a2ad9b8a3d4bd262b86885f9",
+    "tools/_agent_tool_runtime.py": "e542b6a8c35b525203500fba15a9cfcb2c8c87f08bf4cb095100c1f7771750e3",
+    "tools/cocoindex_runtime.py": "9fa60f9b74ea013b714bd15ea2a0d3447e17ad896ec3e0eb0ef6bffc2f433a1d",
+    "tools/cocoindex_tool.py": "badc1d5a86f90c2832e3ced47dadaf372d1260bc27e7b91899e60ef8d4dccf16",
+    "tools/crawl4ai_tool.py": "23aa72cd5a48703659cdca92d7d9522a24f9dd3850602f85e70a13fb075fd967",
+    "tools/prepare_cocoindex_source.py": "927e8765e127b103e4e77d6a542cbfefc76b1fec135503b0f9ddbd71dae5e57a",
+    "tools/search_semantic_corpus.py": "99894cd2a207135e9da05c8d19829a1ca3bd56821204f341fb5d0532470c0a02",
+    "tools/verify_cocoindex_wheel.py": "d12903f5b9189ffadb854c21efd13138b46c8b6698281aaa1f41f3c47aebb873"
+  },
+  "suppressions_added": false,
+  "workflow_versions": {
+    "action_repositories_resolved": 9,
+    "native_sha256": "efabb005fbfcadd1e8c3ffa3400cea4fd295aa1b7f720aeea84c367c1d060969",
+    "observed_at_utc": "2026-10-26T14:59:43Z"
+  }
+}

@@ -1,10 +1,21 @@
 from __future__ import annotations
 
+import ast
 from pathlib import Path
 
 import audit_workflow_versions as audit
 import pytest
 import yaml
+
+
+def test_inline_python_workflow_steps_are_valid_python():
+    directory = Path(__file__).resolve().parents[1] / ".github/workflows"
+    for path in directory.glob("*.yml"):
+        workflow = yaml.safe_load(path.read_text(encoding="utf-8"))
+        for job in workflow["jobs"].values():
+            for step in job.get("steps", []):
+                if step.get("shell") == "python":
+                    ast.parse(step["run"], filename=str(path))
 
 
 def test_release_publishing_requires_manual_dispatch():
@@ -92,8 +103,6 @@ def test_incomplete_or_invalid_observations_cannot_pass(actions):
 
 @pytest.mark.parametrize("reference", ["./local-action", "docker://image:latest", 17, "${{ inputs.action }}"])
 def test_unreviewed_action_reference_is_explicit_failure(tmp_path, reference):
-    import yaml
-
     directory = tmp_path / ".github/workflows"
     directory.mkdir(parents=True)
     (directory / "check.yml").write_text(
