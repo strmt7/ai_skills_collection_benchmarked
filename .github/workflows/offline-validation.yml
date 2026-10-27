@@ -253,6 +253,30 @@ jobs:
           if-no-files-found: error
           retention-days: 30
 
+  docs-extractor-controls:
+    name: Documentation extractor regression controls
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.14.9"
+      - name: Pull pinned isolated runtime
+        run: docker pull python@sha256:89fb7d3da20043c370643435258bdd7ab755d326d359001d02988ed15ae5219e
+      - name: Reproduce source-bound extractor defects
+        run: >-
+          python benchmarks/dependency-regressions/docs_from_code_controls.py
+          --output "$RUNNER_TEMP/docs-from-code-controls.json"
+      - name: Retain control receipt
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: docs-from-code-controls
+          path: ${{ runner.temp }}/docs-from-code-controls.json
+          if-no-files-found: error
+          retention-days: 14
+
   stable-actions:
     runs-on: ubuntu-latest
     steps:
