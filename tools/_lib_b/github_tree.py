@@ -7,8 +7,8 @@ from typing import Any
 from urllib.parse import unquote, urlsplit
 
 
-def parse_github_url(url: str) -> tuple[str, str, str | None, str | None] | None:
-    """Parse supported repository, tree and blob URLs without discarding their ref."""
+def _github_url_parts(url: str) -> list[str] | None:
+    """Admit a canonical HTTPS GitHub path before splitting its components."""
     if any(ord(char) <= 32 or ord(char) == 127 for char in url):
         return None
     try:
@@ -19,20 +19,24 @@ def parse_github_url(url: str) -> tuple[str, str, str | None, str | None] | None
         return None
     if not parsed.path.startswith("/") or "//" in parsed.path:
         return None
-    parts = parsed.path.removeprefix("/").removesuffix("/").split("/")
+    return parsed.path.removeprefix("/").removesuffix("/").split("/")
+
+
+def _repository_identity(parts: list[str]) -> tuple[str, str] | None:
+    """Extract a valid owner and repository name from GitHub path components."""
     if len(parts) < 2 or not re.fullmatch(r"[A-Za-z0-9-]+", parts[0]):
         return None
     if not re.fullmatch(r"[A-Za-z0-9_.-]+", parts[1]) or parts[1] in {".", ".."}:
         return None
-    owner, repo = parts[:2]
-    repo = repo.removesuffix(".git")
+    repo = parts[1].removesuffix(".git")
     if not repo:
         return None
-    if len(parts) == 2:
-        return owner, repo, None, None
-    if len(parts) < 4 or parts[2] not in {"tree", "blob"}:
-        return None
-    encoded = "/".join(parts[3:])
+    return parts[0], repo
+
+
+def _decode_selector(parts: list[str]) -> str | None:
+    """Decode a selector while rejecting invalid escapes and unsafe path components."""
+    encoded = "/".join(parts)
     if re.search(r"%(?![0-9a-fA-F]{2})", encoded):
         return None
     try:
@@ -42,6 +46,25 @@ def parse_github_url(url: str) -> tuple[str, str, str | None, str | None] | None
     if any(not part or part in {".", ".."} for part in selector.split("/")) or "\\" in selector:
         return None
     if any(ord(char) < 32 or ord(char) == 127 for char in selector):
+        return None
+    return selector
+
+
+def parse_github_url(url: str) -> tuple[str, str, str | None, str | None] | None:
+    """Parse supported repository, tree and blob URLs without discarding their ref."""
+    parts = _github_url_parts(url)
+    if parts is None:
+        return None
+    identity = _repository_identity(parts)
+    if identity is None:
+        return None
+    owner, repo = identity
+    if len(parts) == 2:
+        return owner, repo, None, None
+    if len(parts) < 4 or parts[2] not in {"tree", "blob"}:
+        return None
+    selector = _decode_selector(parts[3:])
+    if selector is None:
         return None
     return owner, repo, parts[2], selector
 

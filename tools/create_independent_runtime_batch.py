@@ -134,34 +134,46 @@ def resolve_github_reference(
     return github_tree.select_reference(selector, result["stdout"])
 
 
+def resolve_other_url(url: str) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+    """Resolve a non-GitHub URL without treating unsupported GitHub routes as datasets."""
+    try:
+        host = urllib.parse.urlsplit(url).hostname
+    except ValueError:
+        return {"kind": "real-url", "url": url, "resolved": False, "error": "invalid URL"}, []
+    if host == "github.com":
+        return {
+            "kind": "real-github-repository-tree",
+            "url": url,
+            "resolved": False,
+            "error": "unsupported GitHub URL",
+        }, []
+    request = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "ai-skills-runtime-benchmark/1.0"})
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            return {
+                "kind": "real-url",
+                "url": url,
+                "status": response.status,
+                "resolved": 200 <= response.status < 400,
+            }, []
+    except urllib.error.URLError as exc:
+        return {"kind": "real-url", "url": url, "resolved": False, "error": str(exc)}, []
+
+
 def resolve_dataset_snapshot(track: dict[str, Any]) -> tuple[dict[str, Any], list[dict[str, Any]]]:
-    commands: list[dict[str, Any]] = []
+    """Resolve a dataset according to its supported source type."""
     url = track["url"]
     parsed = github_repo_from_url(url)
     if not parsed:
-        try:
-            host = urllib.parse.urlsplit(url).hostname
-        except ValueError:
-            return {"kind": "real-url", "url": url, "resolved": False, "error": "invalid URL"}, commands
-        if host == "github.com":
-            return {
-                "kind": "real-github-repository-tree",
-                "url": url,
-                "resolved": False,
-                "error": "unsupported GitHub URL",
-            }, commands
-        request = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "ai-skills-runtime-benchmark/1.0"})
-        try:
-            with urllib.request.urlopen(request, timeout=30) as response:
-                return {
-                    "kind": "real-url",
-                    "url": url,
-                    "status": response.status,
-                    "resolved": 200 <= response.status < 400,
-                }, commands
-        except urllib.error.URLError as exc:
-            return {"kind": "real-url", "url": url, "resolved": False, "error": str(exc)}, commands
+        return resolve_other_url(url)
+    return resolve_github_snapshot(url, parsed)
 
+
+def resolve_github_snapshot(
+    url: str, parsed: tuple[str, str, str | None, str | None]
+) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+    """Resolve and validate a repository ref and its selected tree or blob."""
+    commands: list[dict[str, Any]] = []
     owner, repo, target_kind, selector = parsed
     repo_url = f"https://github.com/{owner}/{repo}"
     snapshot: dict[str, Any] = {
