@@ -39,3 +39,21 @@ jobs:
       - uses: github/codeql-action/analyze@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1
         with:
           category: /language:${{ matrix.language }}
+
+  alert-budget:
+    name: Open code-scanning alert budget
+    needs: analyze
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      security-events: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Require no more than two open alerts on the analyzed main commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python tools/check_code_scanning_alerts.py --repository "$GITHUB_REPOSITORY" --commit "$GITHUB_SHA"

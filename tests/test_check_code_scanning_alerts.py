@@ -1,0 +1,188 @@
+from types import SimpleNamespace
+from urllib.parse import parse_qs, urlencode, urlsplit
+
+import check_code_scanning_alerts as gate
+import pytest
+
+SHA = "a" * 40
+REPO = "example/repo"
+
+
+class Snapshot:
+    def __init__(self, count=0, chunk=100):
+        self.count = count
+        self.chunk = chunk
+        self.heads = 0
+        self.inventory_calls = 0
+
+    def __call__(self, url):
+        if url == "repos/" + REPO:
+            return {"id": 123, "full_name": REPO, "default_branch": "main"}, None
+        if url.endswith("/branches/main"):
+            self.heads += 1
+            return {"commit": {"sha": SHA}}, None
+        if "/analyses?" in url:
+            return [
+                {"id": i + 1, "tool": {"name": "CodeQL"}, "category": c, "commit_sha": SHA, "error": ""}
+                for i, c in enumerate(sorted(gate.CATEGORIES))
+            ], None
+        self.inventory_calls += 1
+        q = parse_qs(urlsplit(url).query)
+        page = int(q.get("page", ["1"])[0])
+        start = (page - 1) * self.chunk
+        rows = [{"number": n + 1, "state": "open"} for n in range(start, min(start + self.chunk, self.count))]
+        next_url = None
+        if start + self.chunk < self.count:
+            q["page"] = [str(page + 1)]
+            next_url = "https://api.github.com/repositories/123/code-scanning/alerts?" + urlencode(
+                {k: v[0] for k, v in q.items()}
+            )
+        return rows, next_url
+
+
+@pytest.mark.parametrize("count", [0, 1, 2, 3, 100, 101, 201])
+def test_threshold(count):
+    result = gate.check(Snapshot(count), REPO, SHA)
+    assert result["open_alerts"] == count and result["passed"] is (count <= 2)
+
+
+def test_nonfull_page_with_next_is_followed():
+    result = gate.check(Snapshot(3, chunk=1), REPO, SHA)
+    assert result["open_alerts"] == 3 and not result["passed"]
+
+
+@pytest.mark.parametrize("kind", ["host", "path", "filter", "duplicate", "fragment", "cycle"])
+def test_untrusted_or_repeated_next_links_fail(kind):
+    snapshot = Snapshot(3, chunk=1)
+
+    def fetch(url):
+        data, link = snapshot(url)
+        if link and kind == "host":
+            link = link.replace("api.github.com", "evil.invalid")
+        elif link and kind == "path":
+            link = link.replace("/123/", "/999/")
+        elif link and kind == "filter":
+            link += "&severity=high"
+        elif link and kind == "duplicate":
+            link += "&state=closed"
+        elif link and kind == "fragment":
+            link += "#fragment"
+        elif link and kind == "cycle":
+            q = "ref=refs%2Fheads%2Fmain&state=open&per_page=100&page=2"
+            link = "https://api.github.com/repositories/123/code-scanning/alerts?" + q
+        return data, link
+
+    with pytest.raises(gate.GateError):
+        gate.check(fetch, REPO, SHA)
+
+
+def test_duplicates_fail():
+    snapshot = Snapshot(101)
+
+    def fetch(url):
+        data, link = snapshot(url)
+        if "/alerts?" in url and "page=2" in url:
+            data[0]["number"] = 1
+        return data, link
+
+    with pytest.raises(gate.GateError, match="Duplicate"):
+        gate.check(fetch, REPO, SHA)
+
+
+def test_changed_head_fails():
+    snapshot = Snapshot()
+
+    def fetch(url):
+        data, link = snapshot(url)
+        if url.endswith("/branches/main") and snapshot.heads == 2:
+            data["commit"]["sha"] = "b" * 40
+        return data, link
+
+    with pytest.raises(gate.GateError):
+        gate.check(fetch, REPO, SHA)
+
+
+def test_changed_inventory_fails():
+    snapshot = Snapshot(1)
+
+    def fetch(url):
+        data, link = snapshot(url)
+        if "/alerts?" in url and snapshot.inventory_calls == 2:
+            data = []
+        return data, link
+
+    with pytest.raises(gate.GateError, match="inventory changed"):
+        gate.check(fetch, REPO, SHA)
+
+
+@pytest.mark.parametrize("kind", ["stale", "missing", "failed", "malformed"])
+def test_bad_analysis_fails(kind):
+    snapshot = Snapshot()
+
+    def fetch(url):
+        data, link = snapshot(url)
+        if "/analyses?" in url:
+            if kind == "stale":
+                data[0]["commit_sha"] = "b" * 40
+            elif kind == "missing":
+                data.pop()
+            elif kind == "failed":
+                data[0]["error"] = "failed"
+            else:
+                data[0]["id"] = None
+        return data, link
+
+    with pytest.raises(gate.GateError):
+        gate.check(fetch, REPO, SHA)
+
+
+def test_http_link_parsing_and_invalid_headers(monkeypatch):
+    def response(text):
+        monkeypatch.setattr(
+            gate.subprocess, "run", lambda *a, **kw: SimpleNamespace(returncode=0, stdout=text.encode("utf-8"))
+        )
+        return gate.github("example")
+
+    data, link = response(
+        'HTTP/2.0 200 OK\nLink: <https://api.github.com/a?page=2>; rel="next", <https://api.github.com/a?page=3>; rel="last"\n\n[]'
+    )
+    assert data == [] and link == "https://api.github.com/a?page=2"
+    with pytest.raises(gate.GateError):
+        response("HTTP/2.0 200 OK\nLink: bad\n\n[]")
+    with pytest.raises(gate.GateError):
+        response('HTTP/2.0 200 OK\nLink: <x>; rel="next", <y>; rel="next"\n\n[]')
+    with pytest.raises(gate.GateError):
+        response("HTTP/2.0 200 OK\n\nnot-json")
+
+
+def test_workflow_runs_gate_after_scans_with_read_only_permissions():
+    from pathlib import Path
+
+    import yaml
+
+    path = Path(__file__).resolve().parents[1] / ".github/workflows/codeql.yml"
+    job = yaml.safe_load(path.read_text(encoding="utf-8"))["jobs"]["alert-budget"]
+    assert job["needs"] == "analyze"
+    assert job["permissions"] == {"contents": "read", "security-events": "read"}
+    assert job.get("continue-on-error", False) is False
+    assert job["steps"][0]["with"]["persist-credentials"] is False
+    assert (
+        job["steps"][-1]["run"]
+        == 'python tools/check_code_scanning_alerts.py --repository "$GITHUB_REPOSITORY" --commit "$GITHUB_SHA"'
+    )
+    assert job["steps"][-1]["env"]["GH_TOKEN"] == "${{ github.token }}"
+
+
+def test_github_cli_output_uses_utf8_and_fails_on_decode_error(monkeypatch):
+    def run(*args, **kwargs):
+        assert "encoding" not in kwargs and "text" not in kwargs
+        return SimpleNamespace(returncode=0, stdout='HTTP/2.0 200 OK\n\n{"message": "καλημέρα"}'.encode())
+
+    monkeypatch.setattr(gate.subprocess, "run", run)
+    data, link = gate.github("example")
+    assert data["message"] == "καλημέρα"
+    assert link is None
+
+    monkeypatch.setattr(gate.subprocess, "run", lambda *args, **kwargs: SimpleNamespace(returncode=0, stdout=b"\xff"))
+    with pytest.raises(gate.GateError, match="Invalid GitHub response"):
+        gate.github("example")
