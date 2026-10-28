@@ -37,14 +37,13 @@ def literals(path, names):
 
 
 def validate_invocation(execution, image, profile):
-    from isolated_python import OWNER_LABEL, validate_inspection
+    from isolated_python import validate_container_constraints
 
     observed = execution.get("isolation_checks", {})
     inspection = {
         "Config": {
             "Image": observed.get("observed_image"),
             "User": observed.get("observed_user"),
-            "Labels": {OWNER_LABEL: observed.get("observed_ownership_token")},
         },
         "Image": observed.get("resolved_image_id"),
         "HostConfig": observed.get("observed_host_constraints", {}),
@@ -55,8 +54,10 @@ def validate_invocation(execution, image, profile):
         and execution.get("cleanup_verified") is True
         and not execution.get("cleanup_error")
         and execution.get("candidate_response", {}).get("worker_status") == "returned"
-        and observed.get("observed_ownership_token")
-        and not validate_inspection(inspection, observed["observed_ownership_token"], profile, image=image)
+        and observed.get("schema_version") == 2
+        and observed.get("ownership_verified") is True
+        and observed.get("passed") is True
+        and not validate_container_constraints(inspection, profile, image=image)
     )
 
 

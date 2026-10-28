@@ -12,6 +12,7 @@ import hashlib
 import json
 import math
 import re
+import secrets
 import stat
 import subprocess
 import tempfile
@@ -78,10 +79,10 @@ def docker_call(arguments: list[str], *, timeout: float = 15) -> subprocess.Comp
     return subprocess.run(["docker", *arguments], capture_output=True, timeout=timeout, check=False)
 
 
-def validate_inspection(
-    record: dict[str, Any], token: str, profile: str = "python-small", *, image: str = IMAGE
+def validate_container_constraints(
+    record: dict[str, Any], profile: str = "python-small", *, image: str = IMAGE
 ) -> list[str]:
-    """Fail closed on isolation constraints before starting candidate code."""
+    """Validate recorded isolation constraints without exposing the ownership marker."""
     errors = []
     resources = PROFILES[profile]
     config = record.get("Config", {})
@@ -104,8 +105,6 @@ def validate_inspection(
         errors.append("unexpected user or image")
     if image.startswith("sha256:") and record.get("Image") != image:
         errors.append("resolved local image ID mismatch")
-    if config.get("Labels", {}).get(OWNER_LABEL) != token:
-        errors.append("ownership mismatch")
     if set(host.get("CapDrop") or []) != {"ALL"} or host.get("CapAdd"):
         errors.append("unexpected capabilities")
     if not any(item in {"no-new-privileges", "no-new-privileges:true"} for item in host.get("SecurityOpt") or []):
@@ -128,6 +127,16 @@ def validate_inspection(
         errors.append("unexpected temporary filesystem")
     if host.get("Devices") or host.get("DeviceRequests") or host.get("VolumesFrom"):
         errors.append("extra host devices or volumes")
+    return errors
+
+
+def validate_inspection(
+    record: dict[str, Any], token: str, profile: str = "python-small", *, image: str = IMAGE
+) -> list[str]:
+    """Fail closed on isolation constraints and ownership before running code."""
+    errors = validate_container_constraints(record, profile, image=image)
+    if record.get("Config", {}).get("Labels", {}).get(OWNER_LABEL) != token:
+        errors.append("ownership mismatch")
     return errors
 
 
@@ -182,8 +191,8 @@ def run_isolated(
     payload = json.dumps(request, allow_nan=False).encode("utf-8")
     if len(payload) > MAX_REQUEST_BYTES:
         raise ValueError("request exceeds size bound")
-    token = uuid.uuid4().hex
-    name = "skills-invoke-" + token
+    token = secrets.token_hex(32)
+    name = "skills-invoke-" + uuid.uuid4().hex
     worker_bytes = WORKER.read_bytes()
     report: dict[str, Any] = {
         "status": "infrastructure_error",
@@ -270,7 +279,8 @@ def run_isolated(
                 ]
             )
             if created.returncode:
-                raise RuntimeError("Docker create failed: " + created.stderr.decode("utf-8", errors="replace")[:2048])
+                diagnostic = created.stderr.decode("utf-8", errors="replace").replace(token, "<ownership marker>")
+                raise RuntimeError("Docker create failed: " + diagnostic[:2048])
             container_id = created.stdout.decode("ascii").strip()
             if not re.fullmatch(r"[0-9a-f]{64}", container_id):
                 raise RuntimeError("Docker returned an invalid container ID")
@@ -281,11 +291,12 @@ def run_isolated(
             inspection = json.loads(inspected.stdout)[0]
             errors = validate_inspection(inspection, token, profile, image=image)
             report["isolation_checks"] = {
+                "schema_version": 2,
                 "errors": errors,
                 "passed": not errors,
                 "observed_user": inspection["Config"].get("User"),
                 "observed_image": inspection["Config"].get("Image"),
-                "observed_ownership_token": inspection["Config"].get("Labels", {}).get(OWNER_LABEL),
+                "ownership_verified": inspection["Config"].get("Labels", {}).get(OWNER_LABEL) == token,
                 "resolved_image_id": inspection.get("Image"),
                 "observed_host_constraints": {
                     key: inspection["HostConfig"].get(key)
@@ -385,7 +396,7 @@ def run_isolated(
             report["captured_bytes"] = sum(len(value) for value in buffers.values())
             report["stderr"] = bytes(buffers["stderr"]).decode("utf-8", errors="replace")
         except (OSError, ValueError, subprocess.TimeoutExpired, RuntimeError) as exc:
-            report["detail"] = str(exc)[:2048]
+            report["detail"] = str(exc).replace(token, "<ownership marker>")[:2048]
         finally:
             try:
                 owned = docker_call(["inspect", name])
@@ -404,7 +415,7 @@ def run_isolated(
                     raise RuntimeError("container cleanup not verified")
                 report["cleanup_verified"] = True
             except (OSError, ValueError, KeyError, RuntimeError, subprocess.TimeoutExpired) as exc:
-                report["cleanup_error"] = str(exc)[:2048]
+                report["cleanup_error"] = str(exc).replace(token, "<ownership marker>")[:2048]
             if process is not None:
                 if process.poll() is None:
                     process.kill()

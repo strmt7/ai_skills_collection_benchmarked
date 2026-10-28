@@ -51,10 +51,14 @@ container identity before removal; unrelated containers are not selected.
 `tools/qualify_isolated_python.py` provides nine actual-engine controls:
 correct/incorrect results, missing functions, malformed output, nontermination,
 stdout/stderr floods, leftover children, and filesystem/network/identity checks.
-All pass again in `isolated-backend-controls-v5.json` after immutable dependency
-image support was added. `--check` revalidates
-recorded input hashes, complete denominators and observed isolation settings;
-it does not rerun the current host. Earlier receipts remain available. The first
+All passed in `isolated-backend-controls-v5.json` after immutable dependency
+image support was added. New schema 2 receipts record whether the live ownership
+check passed without retaining the ownership label; the container name uses a
+separate random identifier. `--check` revalidates current source hashes, complete
+denominators and recorded isolation settings, but cannot independently observe a
+past ownership check or rerun the current host. Earlier schema 1 receipts remain
+historical evidence for their original source and cannot qualify the revised
+backend. The first
 child control incorrectly expected a timeout although Docker terminated the
 child when its parent exited. The corrected control requires verified cleanup
 with either completion or timeout, rather than hiding the first result.

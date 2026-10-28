@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import copy
 import hashlib
+import importlib.util
 import json
 import subprocess
 from pathlib import Path
@@ -220,11 +221,12 @@ def control_result(value: Any = 4) -> dict[str, Any]:
         "candidate_response_is_untrusted": True,
         "candidate_response": {"worker_status": "returned", "result": value},
         "isolation_checks": {
+            "schema_version": 2,
             "passed": True,
             "errors": [],
             "observed_user": "65534:65534",
             "observed_image": backend.IMAGE,
-            "observed_ownership_token": "owned",
+            "ownership_verified": True,
             "observed_host_constraints": inspection["HostConfig"],
             "observed_mounts": inspection["Mounts"],
         },
@@ -246,6 +248,33 @@ def test_control_check_recomputes_observed_isolation() -> None:
     assert not qualification.control_passes(qualification.controls()[0], result)
 
 
+def test_control_requires_verified_ownership_without_retaining_marker() -> None:
+    result = control_result()
+    assert qualification.control_passes(qualification.controls()[0], result)
+    result["isolation_checks"]["ownership_verified"] = False
+    assert not qualification.control_passes(qualification.controls()[0], result)
+    del result["isolation_checks"]["ownership_verified"]
+    assert not qualification.control_passes(qualification.controls()[0], result)
+
+
+def test_mutation_control_checks_recorded_constraints_and_ownership() -> None:
+    path = Path(__file__).resolve().parents[1] / "benchmarks/dependency-regressions/mutation_runtime_controls.py"
+    spec = importlib.util.spec_from_file_location("mutation_runtime_controls", path)
+    assert spec is not None and spec.loader is not None
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    result = control_result()
+    assert module.validate_invocation(result, backend.IMAGE, "python-small")
+    result["isolation_checks"]["ownership_verified"] = False
+    assert not module.validate_invocation(result, backend.IMAGE, "python-small")
+    result["isolation_checks"]["ownership_verified"] = True
+    result["isolation_checks"]["observed_host_constraints"]["NetworkMode"] = "host"
+    assert not module.validate_invocation(result, backend.IMAGE, "python-small")
+    result = control_result()
+    result["isolation_checks"]["schema_version"] = 1
+    assert not module.validate_invocation(result, backend.IMAGE, "python-small")
+
+
 def test_control_requires_real_integer_answer() -> None:
     assert not qualification.control_passes(qualification.controls()[0], control_result(4.0))
 
@@ -253,7 +282,7 @@ def test_control_requires_real_integer_answer() -> None:
 def test_control_receipt_rejects_incomplete_denominators() -> None:
     errors = qualification.validate_receipt(
         {
-            "schema_version": 1,
+            "schema_version": 2,
             "evidence_class": "independent-container-backend-controls",
             "input_sha256": qualification.input_hashes(),
             "controls": [],
@@ -261,6 +290,14 @@ def test_control_receipt_rejects_incomplete_denominators() -> None:
         }
     )
     assert errors == ["incomplete control denominator"]
+
+
+def test_old_receipt_cannot_qualify_revised_backend() -> None:
+    result = control_result()
+    result["isolation_checks"]["schema_version"] = 1
+    assert not qualification.control_passes(qualification.controls()[0], result)
+    receipt = {"schema_version": 1, "evidence_class": "independent-container-backend-controls"}
+    assert "unsupported qualification receipt" in qualification.validate_receipt(receipt)
 
 
 def test_control_receipt_rejects_forged_pass_markers() -> None:
@@ -277,7 +314,7 @@ def test_control_receipt_rejects_forged_pass_markers() -> None:
     ]
     errors = qualification.validate_receipt(
         {
-            "schema_version": 1,
+            "schema_version": 2,
             "evidence_class": "independent-container-backend-controls",
             "input_sha256": qualification.input_hashes(),
             "controls": records,
@@ -333,8 +370,34 @@ def test_failed_inspection_cleans_only_verified_owned_container(
 
     monkeypatch.setattr(backend, "docker_call", fake_docker)
     result = backend.run_isolated(tmp_path, ["candidate.py"], {})
+    assert identity["token"] not in json.dumps(result)
+    assert result["isolation_checks"]["ownership_verified"] is (not foreign_owner)
     assert result["status"] == "infrastructure_error"
     assert "constraints failed inspection" in result["detail"]
     assert result["cleanup_verified"] is not foreign_owner
     assert not any(call[0] == "start" for call in calls)
     assert any(call[0] == "rm" for call in calls) is not foreign_owner
+
+
+def test_docker_create_diagnostics_do_not_disclose_ownership_marker(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    (tmp_path / "candidate.py").write_text("def run(request): return 4", encoding="utf-8")
+    marker = ""
+
+    def fake_docker(arguments: list[str], *, timeout: float = 15) -> subprocess.CompletedProcess[bytes]:
+        nonlocal marker
+        if arguments[0] == "create":
+            marker = arguments[arguments.index("--label") + 1].split("=", 1)[1]
+            return subprocess.CompletedProcess(arguments, 1, b"", ("rejected label " + marker).encode())
+        if arguments[0] == "inspect":
+            return subprocess.CompletedProcess(arguments, 1, b"", b"")
+        assert arguments[0] == "ps"
+        return subprocess.CompletedProcess(arguments, 0, b"", b"")
+
+    monkeypatch.setattr(backend, "docker_call", fake_docker)
+    result = backend.run_isolated(tmp_path, ["candidate.py"], {})
+    assert result["status"] == "infrastructure_error"
+    assert result["cleanup_verified"] is True
+    assert marker and marker not in result["detail"]
+    assert "rejected label" in result["detail"]

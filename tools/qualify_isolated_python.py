@@ -13,7 +13,7 @@ import tempfile
 from pathlib import Path
 from typing import Any
 
-from isolated_python import OWNER_LABEL, docker_call, run_isolated, validate_inspection
+from isolated_python import docker_call, run_isolated, validate_container_constraints
 
 ROOT = Path(__file__).resolve().parents[1]
 INPUTS = ("tools/isolated_python.py", "tools/_isolated_worker.py", "tools/qualify_isolated_python.py")
@@ -95,14 +95,13 @@ def control_passes(case: dict[str, Any], result: dict[str, Any]) -> bool:
         "Config": {
             "Image": inspection.get("observed_image"),
             "User": inspection.get("observed_user"),
-            "Labels": {OWNER_LABEL: inspection.get("observed_ownership_token")},
         },
         "HostConfig": inspection.get("observed_host_constraints", {}),
         "Mounts": inspection.get("observed_mounts", []),
     }
-    token = inspection.get("observed_ownership_token")
     if (
-        not isinstance(token, str)
+        inspection.get("schema_version") != 2
+        or inspection.get("ownership_verified") is not True
         or not isinstance(observed["HostConfig"], dict)
         or not isinstance(observed["Mounts"], list)
     ):
@@ -110,7 +109,7 @@ def control_passes(case: dict[str, Any], result: dict[str, Any]) -> bool:
     if any(not isinstance(mount, dict) for mount in observed["Mounts"]):
         return False
     try:
-        if validate_inspection(observed, token):
+        if validate_container_constraints(observed):
             return False
     except (TypeError, AttributeError):
         return False
@@ -156,7 +155,7 @@ def input_hashes() -> dict[str, str]:
 
 def validate_receipt(report: dict[str, Any]) -> list[str]:
     errors = []
-    if report.get("schema_version") != 1 or report.get("evidence_class") != "independent-container-backend-controls":
+    if report.get("schema_version") != 2 or report.get("evidence_class") != "independent-container-backend-controls":
         errors.append("unsupported qualification receipt")
     if report.get("input_sha256") != input_hashes():
         errors.append("qualification source hashes changed")
@@ -201,7 +200,7 @@ def qualify() -> dict[str, Any]:
     if input_hashes() != initial_hashes:
         raise ValueError("qualification sources changed during the observed run")
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "evidence_class": "independent-container-backend-controls",
         "controls": records,
         "all_controls_passed": all(record["passed"] for record in records),
