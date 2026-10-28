@@ -60,7 +60,7 @@ jobs:
       - name: Enforce mandatory agent-tool routing
         run: python tools/validate_agent_tool_policy.py --check --json
       - name: Verify citation URL security overlay
-        run: python tools/create_citation_security_overlay.py --check --json
+        run: python tools/check_citation_security_overlay.py --check --json
       - name: Validate benchmark and provenance artifacts
         shell: bash
         run: |

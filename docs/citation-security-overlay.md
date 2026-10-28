@@ -12,7 +12,7 @@ the upstream MIT license in its `provenance/` directory. Its
 records its source, changes and file hashes. Check the overlay with:
 
 ```sh
-python tools/create_citation_security_overlay.py --check --json
+python tools/check_citation_security_overlay.py --check --json
 ```
 
 The [security control](../artifacts/research/2026-10-28/citation-url-security-control.json)

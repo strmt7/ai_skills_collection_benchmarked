@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create or verify the source-bound citation URL-classification repair."""
+"""Verify the source-bound citation URL-classification repair."""
 
 from __future__ import annotations
 
@@ -129,25 +129,9 @@ def check_overlay(path: Path, expected: dict[str, bytes]) -> list[str]:
     return errors
 
 
-def write_overlay(target: Path, files: dict[str, bytes]) -> None:
-    if target.exists() or target.is_symlink():
-        raise ValueError("refusing to overwrite an existing citation overlay")
-    target.parent.mkdir(parents=True, exist_ok=True)
-    target.mkdir()
-    executable = set(json.loads(files["repair.json"])["executable_files"])
-    for name, data in files.items():
-        output = target / name
-        output.parent.mkdir(parents=True, exist_ok=True)
-        output.write_bytes(data)
-        if os.name != "nt":
-            output.chmod(0o755 if name in executable else 0o644)
-
-
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
-    group = parser.add_mutually_exclusive_group()
-    group.add_argument("--check", action="store_true", help="Verify the existing overlay (default)")
-    group.add_argument("--write", action="store_true", help="Create a new overlay without overwriting one")
+    parser.add_argument("--check", action="store_true", help="Verify the existing overlay (default)")
     parser.add_argument("--json", action="store_true")
     return parser
 
@@ -157,8 +141,6 @@ def main(argv: list[str] | None = None) -> int:
     try:
         files = expected_files()
         target = ROOT / OVERLAY
-        if args.write:
-            write_overlay(target, files)
         errors = check_overlay(target, files)
     except (OSError, ValueError, KeyError, StopIteration) as exc:
         errors = [f"overlay check incomplete: {type(exc).__name__}: {exc}"]

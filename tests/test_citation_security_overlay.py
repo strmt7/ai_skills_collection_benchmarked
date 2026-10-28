@@ -10,7 +10,7 @@ import sys
 from types import ModuleType
 
 import build_catalog
-import create_citation_security_overlay as overlay
+import check_citation_security_overlay as overlay
 import pytest
 
 CASES = (
@@ -124,26 +124,22 @@ def test_overlay_preserves_original_and_rejects_drift(tmp_path):
     }
 
 
-def test_generator_creates_exact_overlay_without_overwriting(tmp_path):
-    files = overlay.expected_files()
-    target = tmp_path / "new-overlay"
-    overlay.write_overlay(target, files)
-    assert overlay.check_overlay(target, files) == []
-    with pytest.raises(ValueError, match="refusing to overwrite"):
-        overlay.write_overlay(target, files)
-    assert overlay.check_overlay(target, files) == []
+def test_checker_reports_missing_overlay(tmp_path):
+    assert overlay.check_overlay(tmp_path / "missing", overlay.expected_files()) == [
+        "repair overlay is missing or is a symlink"
+    ]
 
 
 @pytest.mark.skipif(os.name == "nt", reason="Windows executable modes are recorded in the Git index")
 def test_overlay_check_rejects_wrong_executable_mode(tmp_path):
     files = overlay.expected_files()
     target = tmp_path / "mode-check"
-    overlay.write_overlay(target, files)
+    shutil.copytree(overlay.ROOT / overlay.OVERLAY, target)
     (target / overlay.SCRIPT).chmod(0o644)
     assert overlay.check_overlay(target, files) == ["changed executable mode: scripts/extract_metadata.py"]
 
 
-def test_generator_rejects_control_from_another_candidate(tmp_path, monkeypatch):
+def test_checker_rejects_control_from_another_candidate(tmp_path, monkeypatch):
     report = json.loads((overlay.ROOT / overlay.CONTROL).read_text(encoding="utf-8"))
     report["upstream_candidate"]["git_blob"] = "0" * 40
     path = tmp_path / "wrong-control.json"
