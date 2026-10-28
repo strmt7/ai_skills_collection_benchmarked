@@ -91,3 +91,9 @@ rejects the changed execution tooling before launch. Do not run a new model
 trial until the runner and confined grader are integrated and independently
 qualified. The historical evidence establishes neither container isolation nor
 provider-resolved model identity.
+
+The Windows job-process control limits output and cleans up job members. It is
+not a complete sandbox: Microsoft documents that processes created through
+`Win32_Process.Create` are not automatically assigned to the caller's job.
+Before integrating it into trials, qualify the agent sandbox's service access
+and the full collection and grading boundary. See [Windows job objects](https://learn.microsoft.com/en-us/windows/win32/procthread/job-objects).
