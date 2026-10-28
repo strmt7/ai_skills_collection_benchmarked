@@ -6,10 +6,21 @@ on:
     paths:
       - ".github/workflows/appcontainer-controls.yml"
       - "tools/*appcontainer*.py"
+      - "tools/grade_agent_submission.py"
+      - "tools/run_agent_trial.py"
+      - "tools/qualify_modern_grader.py"
+      - "tools/_windows_submission_reader.py"
+      - "benchmarks/agent-effectiveness/graders/artifact_validator.py"
       - "tools/_validator_cases.py"
       - "tools/_windows_owned_python.py"
       - "toolchains/appcontainer/**"
+      - "toolchains/appcontainer-modern/**"
       - "tests/test_appcontainer_evaluator.py"
+      - "tests/test_appcontainer_dependencies.py"
+      - "tests/test_appcontainer_modern_grader.py"
+      - "tests/test_windows_submission_reader.py"
+      - "tests/test_agent_grader_controls.py"
+      - "tests/test_agent_trial_runner.py"
       - "data/skills_catalog.json"
       - "data/benchmark_scenarios.json"
       - "evaluators/benchmark_run_artifact.schema.json"
@@ -46,6 +57,15 @@ jobs:
           --runtime-home .venv/appcontainer-native
           --output .venv/appcontainer-evidence
           --revision ${{ github.sha }}
+      - name: Install the hash-locked modern grading dependencies
+        run: python tools/appcontainer_dependencies.py setup --home .venv/appcontainer-dependencies
+      - name: Qualify modern grader and isolation controls
+        run: >-
+          python tools/qualify_modern_grader.py
+          --runtime-home .venv/appcontainer-native
+          --dependency-home .venv/appcontainer-dependencies
+          --output .venv/modern-grader-evidence
+          --revision ${{ github.sha }}
       - name: Retain native observations and failures
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
@@ -63,5 +83,9 @@ jobs:
             .venv/appcontainer-evidence/validators/*/checks.json
             .venv/appcontainer-evidence/validators/*/controller-sentinel.txt
             .venv/appcontainer-evidence/validators/*/case-*/observations/*
+            .venv/modern-grader-evidence/result.json
+            .venv/modern-grader-evidence/*/result.json
+            .venv/modern-grader-evidence/*/checks.json
+            .venv/modern-grader-evidence/*/case-*/observations/*
           if-no-files-found: error
           retention-days: 14

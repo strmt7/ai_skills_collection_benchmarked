@@ -22,6 +22,10 @@ ROOT = Path(__file__).resolve().parents[1]
 REFERENCE = ROOT / "artifacts/agent-trials/development-v2/repetition-1/default/submission"
 PROBE = ROOT / "tools/appcontainer_access_probe.py"
 PUBLISHED = ROOT / "artifacts/component-controls/appcontainer"
+HISTORICAL_SOURCES = (
+    ROOT / "artifacts/component-controls/appcontainer-source-snapshots/fb7e85307b96fdcad0bfdb5947b67b70a281d77c"
+)
+HISTORICAL_REPLACEMENTS = {"tools/grade_validator_appcontainer.py", "tools/qualify_appcontainer.py"}
 SOURCE_FILES = (
     *grader.EVALUATOR_FILES,
     *grader.TASK_FILES,
@@ -255,9 +259,11 @@ def qualify(home: Path, output: Path, revision: str) -> dict[str, Any]:
     return result
 
 
-def source_graph() -> list[dict[str, str]]:
+def source_graph(*, historical: bool = False) -> list[dict[str, str]]:
     records = []
     for name in SOURCE_FILES:
+        if historical and name == "tools/_windows_submission_reader.py":
+            continue
         if name in grader.TASK_FILES:
             raw = subprocess.run(
                 ["git", "-c", "core.longpaths=true", "show", "HEAD:" + name],
@@ -268,7 +274,12 @@ def source_graph() -> list[dict[str, str]]:
             ).stdout
             digest, kind = hashlib.sha256(raw).hexdigest(), "git_fixture_blob"
         else:
-            digest, kind = runtime.digest(ROOT / name), "executed_source_file"
+            source = (
+                HISTORICAL_SOURCES / (Path(name).name + ".txt")
+                if historical and name in HISTORICAL_REPLACEMENTS
+                else ROOT / name
+            )
+            digest, kind = runtime.digest(source), "executed_source_file"
         records.append({"path": name, "sha256": digest, "source_kind": kind})
     return records
 
@@ -297,10 +308,10 @@ def observed_files(output: Path) -> list[Path]:
     return files
 
 
-def verify_campaign(directory: Path) -> list[str]:
+def verify_campaign(directory: Path, *, historical: bool = False) -> list[str]:
     errors = []
     result = json.loads((directory / "result.json").read_bytes())
-    if result.get("source_sha256") != source_graph():
+    if result.get("source_sha256") != source_graph(historical=historical):
         errors.append("Native qualification source graph is stale")
     if result.get("agent_performance_claim") is not False or result.get("independent_model_trials") != 0:
         errors.append("Component evidence must not claim model performance")
@@ -402,10 +413,17 @@ def check() -> dict[str, Any]:
     manifest = json.loads((PUBLISHED / "manifest.json").read_bytes())
     files = observed_files(PUBLISHED)
     actual = {path.relative_to(PUBLISHED).as_posix(): runtime.digest(path) for path in files}
-    errors = verify_campaign(PUBLISHED)
+    errors = verify_campaign(PUBLISHED, historical=True)
     if manifest.get("files_sha256") != actual:
         errors.append("Published native observations differ from their complete selected hash graph")
-    return {"ok": not errors, "errors": errors, "files": len(files), "agent_performance_claim": False}
+    return {
+        "ok": not errors,
+        "errors": errors,
+        "files": len(files),
+        "historical_source_snapshots": True,
+        "current_source_qualified": False,
+        "agent_performance_claim": False,
+    }
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -415,7 +433,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--revision")
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--publish", type=Path, help="Admit a private campaign without reading candidate scratch")
-    mode.add_argument("--check", action="store_true", help="Check retained evidence and source/observation hashes")
+    mode.add_argument("--check", action="store_true", help="Check retained historical evidence and source hashes")
     return parser
 
 

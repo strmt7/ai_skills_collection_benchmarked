@@ -39,8 +39,11 @@
 /artifacts/source-history/** -text
 # Confined evaluator observations and their runtime pin bind exact Windows bytes.
 /artifacts/component-controls/appcontainer/** -text
+# Historical evaluator source snapshots are bound to exact captured bytes.
+/artifacts/component-controls/appcontainer-source-snapshots/**/*.txt -text
 /toolchains/appcontainer/source.json -text
 /toolchains/appcontainer/README.md text eol=lf
+/toolchains/appcontainer-modern/** text eol=lf
 # Original provenance is an exact captured input, not authored source formatting.
 /included/improved/**/provenance/** -text
 /docs/** text eol=lf

@@ -59,7 +59,7 @@ def test_protocol_freeze_rejects_changed_inputs(tmp_path, monkeypatch, changed):
         trials.prepare(protocol, "improved", tmp_path / "python.exe")
 
 
-def test_grading_timeout_counts_as_failed_submission(tmp_path, monkeypatch):
+def test_grading_timeout_does_not_claim_a_submission_failure(tmp_path, monkeypatch):
     def run(*args, **kwargs):
         assert kwargs["timeout"] == 60
         raise subprocess.TimeoutExpired(args[0], 60)
@@ -68,8 +68,39 @@ def test_grading_timeout_counts_as_failed_submission(tmp_path, monkeypatch):
     result = trials.external_grade(
         {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py"}, tmp_path, Path("python")
     )
-    assert result["status"] == "task_failed"
+    assert result["status"] == "harness_error"
     assert "grading limit" in result["error"]
+
+
+@pytest.mark.parametrize(
+    "returncode,stdout",
+    [
+        (2, '{"status":"harness_error","errors":["sandbox unavailable"]}'),
+        (1, "invalid JSON"),
+        (0, '{"status":"task_failed"}'),
+        (1, '{"status":"task_passed"}'),
+        (1, '{"status":[]}'),
+    ],
+)
+def test_grading_infrastructure_failures_are_not_scored_as_agent_failures(tmp_path, monkeypatch, returncode, stdout):
+    monkeypatch.setattr(
+        trials.subprocess, "run", lambda *args, **kwargs: subprocess.CompletedProcess(args[0], returncode, stdout, "")
+    )
+    result = trials.external_grade(
+        {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py"}, tmp_path, Path("python")
+    )
+    assert result["status"] == "harness_error"
+
+
+def test_frozen_legacy_protocol_refuses_changed_grading_before_launch(tmp_path, monkeypatch):
+    def no_launch(*args, **kwargs):
+        raise AssertionError("a frozen legacy protocol must not launch a model")
+
+    monkeypatch.setattr(trials.subprocess, "Popen", no_launch)
+    protocol = trials.ROOT / "benchmarks/agent-effectiveness/development/protocol-v2.json"
+    with pytest.raises(ValueError, match="execution tooling changed"):
+        trials.run(protocol, "default", tmp_path / "attempt", tmp_path / "cli", tmp_path / "python")
+    assert not (tmp_path / "attempt").exists()
 
 
 def test_existing_attempt_is_never_overwritten(tmp_path):

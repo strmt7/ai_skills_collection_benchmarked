@@ -210,7 +210,7 @@ def test_mounts_refuse_output_inside_a_candidate_tree_and_reused_scratch(tmp_pat
         checked_mounts(tmp_path, [readable], scratch, executable, tmp_path / "observations")
 
 
-def test_collection_uses_git_blobs_and_refuses_a_nonexact_revision(tmp_path):
+def test_collection_uses_git_blobs_and_refuses_a_nonexact_revision(tmp_path, monkeypatch):
     repository = tmp_path / "fixture"
     repository.mkdir()
     subprocess.run(["git", "init", "--quiet", str(repository)], check=True)
@@ -228,10 +228,27 @@ def test_collection_uses_git_blobs_and_refuses_a_nonexact_revision(tmp_path):
     submission = tmp_path / "submission"
     (submission / "tools").mkdir(parents=True)
     (submission / "tools/check_benchmark_artifact.py").write_bytes(b"pass\n")
+    if sys.platform != "win32":
+        monkeypatch.setattr(
+            grader, "read_submission", lambda root: (root / "tools/check_benchmark_artifact.py").read_bytes()
+        )
     grader.collect_candidate(submission, repository, revision, tmp_path / "collected")
     assert (tmp_path / "collected" / grader.TASK_FILES[0]).read_bytes() == b"committed fixture\n"
     with pytest.raises(ValueError, match="exact lowercase"):
         grader.collect_candidate(submission, repository, "HEAD", tmp_path / "bad")
+
+
+@pytest.mark.skipif(sys.platform != "win32", reason="Windows native handle boundary")
+def test_legacy_collection_refuses_a_hardlinked_submission(tmp_path):
+    submission = tmp_path / "submission"
+    (submission / "tools").mkdir(parents=True)
+    external = tmp_path / "external"
+    external.write_bytes(b"controlled sentinel\n")
+    os.link(external, submission / "tools/check_benchmark_artifact.py")
+    with pytest.raises(ValueError, match="one link"):
+        grader.collect_candidate(submission, tmp_path, "0" * 40, tmp_path / "collected")
+    assert not (tmp_path / "collected").exists()
+    assert external.read_bytes() == b"controlled sentinel\n"
 
 
 def test_invalid_runtime_location_has_no_output_side_effects(tmp_path, monkeypatch, capsys):
@@ -276,6 +293,17 @@ def test_qualification_binds_git_fixture_bytes_across_line_endings(tmp_path, mon
     assert qualification.source_graph() == [
         {"path": name, "sha256": hashlib.sha256(b"[]\n").hexdigest(), "source_kind": "git_fixture_blob"}
     ]
+
+
+def test_historical_qualification_checks_archived_sources_without_claiming_current_qualification(tmp_path, monkeypatch):
+    result = qualification.check()
+    assert result["ok"] and result["historical_source_snapshots"]
+    assert result["current_source_qualified"] is False
+    for path in qualification.HISTORICAL_SOURCES.iterdir():
+        (tmp_path / path.name).write_bytes(path.read_bytes())
+    (tmp_path / "grade_validator_appcontainer.py.txt").write_bytes(b"changed\n")
+    monkeypatch.setattr(qualification, "HISTORICAL_SOURCES", tmp_path)
+    assert "Native qualification source graph is stale" in qualification.check()["errors"]
 
 
 def test_evaluator_fingerprints_detect_changed_source_bytes(tmp_path, monkeypatch):

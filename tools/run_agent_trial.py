@@ -129,10 +129,20 @@ def external_grade(task: dict[str, Any], workspace: Path, python: Path) -> dict[
             check=False,
         )
     except subprocess.TimeoutExpired:
-        return {"status": "task_failed", "error": "submitted code exceeded the 60-second grading limit"}
-    if result.returncode:
-        return {"status": "task_failed", "error": "submission could not be graded", "diagnostic": result.stderr[-2000:]}
-    return json.loads(result.stdout)
+        return {"status": "harness_error", "error": "grading driver exceeded the 60-second grading limit"}
+    try:
+        response = json.loads(result.stdout)
+    except (TypeError, ValueError):
+        return {"status": "harness_error", "error": "grading driver returned invalid JSON"}
+    if (
+        not isinstance(response, dict)
+        or not isinstance(response.get("status"), str)
+        or response["status"] not in {"task_passed", "task_failed", "harness_error"}
+    ):
+        return {"status": "harness_error", "error": "grading driver returned an invalid status"}
+    if (result.returncode == 0) != (response["status"] == "task_passed"):
+        return {"status": "harness_error", "error": "grading driver exit status contradicts its result"}
+    return response
 
 
 def run(protocol_path: Path, condition: str, output: Path, cli: Path, python: Path) -> dict[str, Any]:

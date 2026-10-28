@@ -4,6 +4,15 @@
 version: 2
 updates:
   - package-ecosystem: "pip"
+    directory: "/toolchains/appcontainer-modern"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "08:45"
+      timezone: "UTC"
+    open-pull-requests-limit: 0
+
+  - package-ecosystem: "pip"
     directory: "/toolchains/cocoindex-code"
     schedule:
       interval: "weekly"

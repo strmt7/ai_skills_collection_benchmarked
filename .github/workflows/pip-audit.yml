@@ -48,6 +48,11 @@ jobs:
           pip-audit --strict --disable-pip --no-deps
           --requirement toolchains/pptx-native/requirements.txt
 
+      - name: Audit the confined grader dependency graph
+        run: >-
+          pip-audit --strict --disable-pip --no-deps
+          --requirement toolchains/appcontainer-modern/requirements.txt
+
       - name: Audit the local-only CocoIndex runtime coordinates
         # The native workflow installs the admitted downstream wheel normally.
         # Keep its upstream advisory identity and every actual runtime coordinate.

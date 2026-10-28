@@ -16,6 +16,7 @@ from typing import Any
 import appcontainer_runtime
 from _validator_cases import accepted, cases
 from _windows_appcontainer import Native, checked_path, checked_tree, run_appcontainer
+from _windows_submission_reader import read_submission
 
 ROOT = Path(__file__).resolve().parents[1]
 WORKER = ROOT / "tools/appcontainer_validator_worker.py"
@@ -31,6 +32,7 @@ EVALUATOR_FILES = (
     "tools/appcontainer_runtime.py",
     "tools/_windows_appcontainer.py",
     "tools/_windows_owned_python.py",
+    "tools/_windows_submission_reader.py",
     "toolchains/appcontainer/source.json",
 )
 
@@ -39,10 +41,15 @@ def snapshot(directory: Path) -> dict[str, str]:
     return {p.relative_to(directory).as_posix(): appcontainer_runtime.digest(p) for p in checked_tree(directory)}
 
 
+def check_unlinked_files(home: Path) -> None:
+    """Do not grant sandbox access to files also linked outside the private home."""
+    for path in checked_tree(home / "runtime"):
+        if path.stat().st_nlink != 1:
+            raise ValueError(f"Sandbox input has multiple hard links: {path}")
+
+
 def collect_candidate(submission: Path, fixture: Path, revision: str, destination: Path) -> dict[str, str]:
-    source = checked_path(submission / "tools/check_benchmark_artifact.py")
-    if not source.is_file() or source.stat().st_size > 1024 * 1024:
-        raise ValueError("The submitted validator must be a regular source file of at most 1 MiB")
+    payload = read_submission(submission)
     if not re.fullmatch("[0-9a-f]{40}", revision):
         raise ValueError("An exact lowercase 40-character fixture commit is required")
     checked_path(fixture)
@@ -53,7 +60,7 @@ def collect_candidate(submission: Path, fixture: Path, revision: str, destinatio
     destination.mkdir(parents=True, exist_ok=False)
     target = destination / "tools/check_benchmark_artifact.py"
     target.parent.mkdir()
-    shutil.copyfile(source, target)
+    target.write_bytes(payload)
     for name in TASK_FILES:
         result = subprocess.run([*git, "show", revision + ":" + name], capture_output=True, check=True, timeout=15)
         target = destination / name
@@ -79,6 +86,7 @@ def grade_with_lease(
     errors = appcontainer_runtime.verify(runtime_home, specification)
     if errors:
         raise ValueError("; ".join(errors))
+    check_unlinked_files(runtime_home)
     output.mkdir(parents=True, exist_ok=False)
     native = Native()
     native.grant(output, native.owner_sid(), None)

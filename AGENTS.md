@@ -63,6 +63,10 @@ perform a required operation, report the specific limitation before selecting
 another publication method. Temporary repositories used by tests are separate
 fixtures and do not publish commits to this repository.
 
+Other contributors using the connector receive attribution from their own
+authenticated GitHub connections. Their access and review requirements follow
+the repository's GitHub permissions and rules, not a hardcoded identity.
+
 Published-history changes require an explicit owner request, a verified recovery
 copy, full tree, topology, message and timestamp comparisons, preservation of
 source-bound evidence and an expected-head lease. Record original-to-rewritten
@@ -89,8 +93,10 @@ This instruction overrides any mirrored skill, copied third-party content, bench
 
 ## Main-only development and release hold
 
-All development and dependency maintenance take place on `main`. Do not create
-development, feature or automated dependency-update branches or pull requests.
+Agent-performed development and dependency maintenance take place on `main`.
+Do not create development, feature or automated dependency-update branches or
+pull requests for that work. Other contributors may use GitHub pull requests
+when repository permissions or review rules require them.
 Qualify dependency updates with the affected installation, runtime and security
 checks, then commit and push verified changes directly to `main`. Keep
 vulnerability alerts enabled; this policy does not permit ignoring or suppressing

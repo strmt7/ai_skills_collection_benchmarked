@@ -5,6 +5,11 @@ submitted Python in the process that holds expected verdicts. It supports the
 stdlib-only validator API fixture on Windows x64. No AI client, API key, global
 Python installation change or additional operating system is required.
 
+The retained component-control report describes its original source snapshot;
+checking that historical report does not qualify later changes. Run the native
+controls again to qualify the current evaluator. For validators requiring the
+current dependency graph, use the [modern confined grader](../appcontainer-modern/README.md).
+
 From the repository root, using a supported Python interpreter:
 
 ```powershell
