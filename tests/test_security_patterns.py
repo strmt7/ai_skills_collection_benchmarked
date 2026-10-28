@@ -13,6 +13,7 @@ import os
 import subprocess
 import sys
 from pathlib import Path
+from unittest.mock import Mock
 
 import check_no_secret_patterns
 import pytest
@@ -458,6 +459,70 @@ def test_unreadable_worktree_file_is_not_silently_skipped(tmp_path, monkeypatch,
 def test_incomplete_or_unbounded_git_headers_fail_closed(header):
     with pytest.raises(RuntimeError):
         check_no_secret_patterns.read_batch_header(io.BytesIO(header))
+
+
+@pytest.mark.parametrize("missing", ["stdin", "stdout"])
+def test_history_reader_reaps_process_and_closes_present_pipe_when_pipe_is_missing(monkeypatch, missing):
+    """A malformed process contract must fail closed and release its child."""
+    present = io.BytesIO()
+    process = Mock(stdin=None if missing == "stdin" else present, stdout=None if missing == "stdout" else present)
+    monkeypatch.setattr(check_no_secret_patterns.subprocess, "Popen", lambda *args, **kwargs: process)
+
+    with pytest.raises(RuntimeError, match="required pipes"):
+        list(check_no_secret_patterns.history_file_bytes())
+    assert present.closed
+    process.wait.assert_called_once_with(timeout=5)
+
+
+def test_history_reader_rejects_missing_pipe_under_optimized_python():
+    """Security checks must remain active when Python removes assertions."""
+    control = "\n".join(
+        [
+            "import io, sys",
+            "from unittest.mock import Mock",
+            "sys.path.insert(0, sys.argv[1])",
+            "import check_no_secret_patterns as scanner",
+            "process = Mock(stdin=None, stdout=io.BytesIO())",
+            "scanner.subprocess.Popen = lambda *args, **kwargs: process",
+            "try:",
+            "    list(scanner.history_file_bytes())",
+            "except RuntimeError as error:",
+            "    if 'required pipes' not in str(error) or not process.stdout.closed or process.wait.call_count != 1:",
+            "        raise",
+            "else:",
+            "    raise SystemExit('Missing pipe was not rejected')",
+        ]
+    )
+    subprocess.run([sys.executable, "-O", "-c", control, str(ROOT / "tools")], check=True, timeout=30)
+
+
+def test_history_reader_closes_output_and_reaps_process_when_input_close_fails(monkeypatch):
+    """A broken input pipe must not leak the output pipe or child process."""
+    stdin = Mock()
+    stdin.close.side_effect = BrokenPipeError("controlled failure")
+    stdout = io.BytesIO()
+    process = Mock(stdin=stdin, stdout=stdout)
+    monkeypatch.setattr(check_no_secret_patterns.subprocess, "Popen", lambda *args, **kwargs: process)
+    monkeypatch.setattr(check_no_secret_patterns, "history_commits", lambda: [])
+
+    with pytest.raises(BrokenPipeError, match="controlled failure"):
+        list(check_no_secret_patterns.history_file_bytes())
+    assert stdout.closed
+    process.wait.assert_called_once_with(timeout=5)
+
+
+def test_history_reader_kills_timed_out_child_and_closes_both_pipes(monkeypatch):
+    """A stalled Git process must be killed, reaped, and have both pipes closed."""
+    stdin, stdout = io.BytesIO(), io.BytesIO()
+    process = Mock(stdin=stdin, stdout=stdout, returncode=0)
+    process.wait.side_effect = [subprocess.TimeoutExpired("git", 5), 0]
+    monkeypatch.setattr(check_no_secret_patterns.subprocess, "Popen", lambda *args, **kwargs: process)
+    monkeypatch.setattr(check_no_secret_patterns, "history_commits", lambda: [])
+
+    assert list(check_no_secret_patterns.history_file_bytes()) == []
+    assert stdin.closed and stdout.closed
+    process.kill.assert_called_once_with()
+    assert process.wait.call_count == 2
 
 
 # ---------------------------------------------------------------------------

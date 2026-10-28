@@ -318,30 +318,38 @@ def history_file_bytes() -> Iterator[tuple[str, str, bytes]]:
         stdout=subprocess.PIPE,
         stderr=subprocess.DEVNULL,
     )
-    assert process.stdin is not None and process.stdout is not None
+    stdin, stdout = process.stdin, process.stdout
     try:
+        if stdin is None or stdout is None:
+            raise RuntimeError("Git object reader did not provide its required pipes")
         for commit in history_commits():
             for name in commit_changed_names(commit):
                 if not name:
                     raise RuntimeError("Git returned an empty history path")
-                process.stdin.write(f"{commit}:{name}".encode("utf-8", errors="surrogateescape") + b"\0")
-                process.stdin.flush()
-                header = read_batch_header(process.stdout)
+                stdin.write(f"{commit}:{name}".encode("utf-8", errors="surrogateescape") + b"\0")
+                stdin.flush()
+                header = read_batch_header(stdout)
                 if len(header) != 3 or header[1] != b"blob" or not header[2].isdigit():
                     raise RuntimeError("Git returned an unavailable or non-blob history input")
                 size = int(header[2])
-                data = process.stdout.read(size)
-                if len(data) != size or process.stdout.read(1) != b"\0":
+                data = stdout.read(size)
+                if len(data) != size or stdout.read(1) != b"\0":
                     raise RuntimeError("Git object body is incomplete")
                 yield commit, name, data
     finally:
-        process.stdin.close()
         try:
-            process.wait(timeout=5)
-        except subprocess.TimeoutExpired:
-            process.kill()
-            process.wait(timeout=5)
-        process.stdout.close()
+            if stdin is not None:
+                stdin.close()
+        finally:
+            try:
+                try:
+                    process.wait(timeout=5)
+                except subprocess.TimeoutExpired:
+                    process.kill()
+                    process.wait(timeout=5)
+            finally:
+                if stdout is not None:
+                    stdout.close()
     if process.returncode:
         raise RuntimeError("Git object reader failed")
 
