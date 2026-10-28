@@ -128,6 +128,76 @@ def test_worktree_scans_binary_carriers(tmp_path, monkeypatch):
     assert any("carrier.bin:1: google_api_key" in item for item in check_no_secret_patterns.scan_worktree())
 
 
+@pytest.mark.parametrize("directory", ["__pycache__", ".pytest_cache"])
+@pytest.mark.parametrize("scope", ["worktree", "history"])
+def test_tracked_cache_paths_are_scanned(tmp_path, monkeypatch, directory, scope):
+    env = {key: value for key, value in os.environ.items() if not key.startswith("GIT_")}
+    env.update(GIT_CONFIG_NOSYSTEM="1", GIT_CONFIG_GLOBAL=os.devnull, GIT_TERMINAL_PROMPT="0")
+    subprocess.run(["git", "init", "--initial-branch=main", str(tmp_path)], check=True, capture_output=True, env=env)
+    carrier = tmp_path / directory / "carrier.bin"
+    carrier.parent.mkdir()
+    carrier.write_bytes(b"\0" + b"AIza" + b"A" * 35 + b"\xff")
+    subprocess.run(["git", "-C", str(tmp_path), "add", "-f", str(carrier)], check=True, capture_output=True, env=env)
+    subprocess.run(
+        [
+            "git",
+            "-C",
+            str(tmp_path),
+            "-c",
+            "user.name=Fixture",
+            "-c",
+            "user.email=fixture@example.invalid",
+            "commit",
+            "-m",
+            "Add fixture",
+        ],
+        check=True,
+        capture_output=True,
+        env=env,
+    )
+    monkeypatch.setattr(check_no_secret_patterns, "ROOT", tmp_path)
+    expected = f"{directory}/carrier.bin:1: google_api_key"
+    scan = check_no_secret_patterns.scan_worktree if scope == "worktree" else check_no_secret_patterns.scan_history
+    assert any(expected in item for item in scan())
+
+
+def test_worktree_scan_reports_disappearing_input_as_incomplete(tmp_path, monkeypatch, capsys):
+    monkeypatch.setattr(check_no_secret_patterns, "ROOT", tmp_path)
+    monkeypatch.setattr(check_no_secret_patterns, "tracked_files", lambda: [tmp_path / "missing.bin"])
+    assert check_no_secret_patterns.main(["--json"]) == 2
+    assert json.loads(capsys.readouterr().out)["complete"] is False
+
+
+def test_shallow_history_scan_is_incomplete(tmp_path, monkeypatch, capsys):
+    env = {key: value for key, value in os.environ.items() if not key.startswith("GIT_")}
+    env.update(GIT_CONFIG_NOSYSTEM="1", GIT_CONFIG_GLOBAL=os.devnull, GIT_TERMINAL_PROMPT="0")
+    source, clone = tmp_path / "source", tmp_path / "clone"
+    source.mkdir()
+
+    def git(*args):
+        subprocess.run(["git", *args], check=True, capture_output=True, env=env)
+
+    git("init", "--initial-branch=main", str(source))
+    for index, value in enumerate(("AIza" + "A" * 35, "neutral")):
+        (source / "carrier.txt").write_text(value, encoding="utf-8")
+        git("-C", str(source), "add", "carrier.txt")
+        git(
+            "-C",
+            str(source),
+            "-c",
+            "user.name=Fixture",
+            "-c",
+            "user.email=fixture@example.invalid",
+            "commit",
+            "-m",
+            f"fixture {index}",
+        )
+    git("clone", "--depth=1", source.as_uri(), str(clone))
+    monkeypatch.setattr(check_no_secret_patterns, "ROOT", clone)
+    assert check_no_secret_patterns.main(["--history", "--json"]) == 2
+    assert json.loads(capsys.readouterr().out)["complete"] is False
+
+
 def test_history_scans_deleted_binary_carriers(tmp_path, monkeypatch):
     env = {key: value for key, value in os.environ.items() if not key.startswith("GIT_")}
     env.update(GIT_CONFIG_NOSYSTEM="1", GIT_CONFIG_GLOBAL=os.devnull, GIT_TERMINAL_PROMPT="0")

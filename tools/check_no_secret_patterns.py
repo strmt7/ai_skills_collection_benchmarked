@@ -134,9 +134,6 @@ PLACEHOLDER_VALUES = {
 }
 
 
-SKIP_PARTS = {".git", ".pytest_cache", "__pycache__"}
-
-
 def shannon_entropy(value: str) -> float:
     if not value:
         return 0.0
@@ -190,6 +187,8 @@ def tracked_files() -> list[Path]:
 
 
 def history_commits() -> list[str]:
+    if git("rev-parse", "--is-shallow-repository").strip() != "false":
+        raise RuntimeError("Git history is shallow or its completeness could not be established")
     return [line for line in git("rev-list", "--all").splitlines() if line]
 
 
@@ -226,14 +225,8 @@ def commit_changed_names(commit: str) -> list[str]:
     return paths
 
 
-def file_text(path: Path) -> str | None:
-    if SKIP_PARTS.intersection(path.parts):
-        return None
-    try:
-        data = path.read_bytes()
-    except FileNotFoundError:
-        return None
-    return data.decode("utf-8", errors="replace")
+def file_text(path: Path) -> str:
+    return path.read_bytes().decode("utf-8", errors="replace")
 
 
 def commit_file_text(commit: str, path: str) -> str | None:
@@ -275,8 +268,6 @@ def scan_worktree() -> list[str]:
     findings: list[str] = []
     for path in tracked_files():
         text = file_text(path)
-        if text is None:
-            continue
         findings.extend(scan_text(path.relative_to(ROOT).as_posix(), text))
     return findings
 
@@ -312,8 +303,8 @@ def history_file_texts() -> Iterator[tuple[str, str, str]]:
     try:
         for commit in history_commits():
             for name in commit_changed_names(commit):
-                if not name or SKIP_PARTS.intersection(Path(name).parts):
-                    continue
+                if not name:
+                    raise RuntimeError("Git returned an empty history path")
                 process.stdin.write(f"{commit}:{name}".encode("utf-8", errors="surrogateescape") + b"\0")
                 process.stdin.flush()
                 header = read_batch_header(process.stdout)
