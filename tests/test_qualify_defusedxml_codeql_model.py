@@ -8,9 +8,10 @@ import qualify_defusedxml_codeql_model as control
 
 
 def sarif(*, model=True, successful=True, uri="fixture.py", lines=(14,)):
+    """Create a minimal SARIF run for validation tests."""
     extensions = []
     if model:
-        extensions.append({"name": control.MODEL_NAME, "properties": {"isCodeQLModelPack": True}})
+        extensions.append({"name": control.GENERATED_MODEL_NAME, "properties": {"isCodeQLModelPack": True}})
     return {
         "runs": [
             {
@@ -31,6 +32,7 @@ def sarif(*, model=True, successful=True, uri="fixture.py", lines=(14,)):
 
 
 def test_analysis_verification_requires_the_model(tmp_path):
+    """Accept only a successful run that identifies the required model."""
     path = tmp_path / "analysis.sarif"
     path.write_text(json.dumps(sarif(model=False)), encoding="utf-8")
     with pytest.raises(ValueError, match="model pack absent"):
@@ -48,6 +50,7 @@ def test_analysis_verification_requires_the_model(tmp_path):
 
 
 def test_analysis_verification_rejects_absent_results(tmp_path):
+    """Reject absent SARIF files or runs."""
     with pytest.raises(ValueError, match="No CodeQL analysis"):
         control.verify_analysis(tmp_path)
     (tmp_path / "analysis.sarif").write_text('{"runs": []}', encoding="utf-8")
@@ -64,6 +67,7 @@ def test_analysis_verification_rejects_absent_results(tmp_path):
     ],
 )
 def test_native_evidence_rejects_invalid_runs(tmp_path, data, message):
+    """Reject unsuccessful, unrelated, or duplicate control results."""
     path = tmp_path / "control.sarif"
     path.write_text(json.dumps(data), encoding="utf-8")
     with pytest.raises(ValueError, match=message):
@@ -71,6 +75,7 @@ def test_native_evidence_rejects_invalid_runs(tmp_path, data, message):
 
 
 def test_cli_rejects_incomplete_arguments_and_existing_output(tmp_path, capsys):
+    """Reject incomplete options and avoid overwriting evidence."""
     assert control.main([]) == 1
     assert json.loads(capsys.readouterr().err)["passed"] is False
     assert control.main(["--codeql", "codeql", "--model", str(tmp_path), "--output", str(tmp_path)]) == 1
@@ -78,9 +83,12 @@ def test_cli_rejects_incomplete_arguments_and_existing_output(tmp_path, capsys):
 
 
 def test_native_command_logs_preserve_non_utf8_bytes_and_failures(tmp_path):
+    """Preserve native log bytes on success and failure."""
     log = tmp_path / "native.log"
-    control.run([sys.executable, "-c", "import sys; sys.stdout.buffer.write(bytes([255]))"], log)
+    control.run_command([sys.executable, "-c", "import sys; sys.stdout.buffer.write(bytes([255]))"], log)
     assert log.read_bytes() == b"\xff\n"
     with pytest.raises(RuntimeError, match="CodeQL command failed"):
-        control.run([sys.executable, "-c", "import sys; sys.stderr.buffer.write(bytes([254])); sys.exit(2)"], log)
+        control.run_command(
+            [sys.executable, "-c", "import sys; sys.stderr.buffer.write(bytes([254])); sys.exit(2)"], log
+        )
     assert log.read_bytes() == b"\n\xfe"
