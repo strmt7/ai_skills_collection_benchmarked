@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import io
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -117,6 +118,43 @@ def test_worktree_includes_untracked_files_and_preserves_newlines(monkeypatch):
     assert check_no_secret_patterns.tracked_files() == [
         check_no_secret_patterns.ROOT / name for name in ["tracked.md", "new-artifact.json", "line\nbreak.md"]
     ]
+
+
+def test_worktree_scans_binary_carriers(tmp_path, monkeypatch):
+    carrier = tmp_path / "carrier.bin"
+    carrier.write_bytes(b"\0" + b"AIza" + b"A" * 35 + b"\xff")
+    monkeypatch.setattr(check_no_secret_patterns, "ROOT", tmp_path)
+    monkeypatch.setattr(check_no_secret_patterns, "tracked_files", lambda: [carrier])
+    assert any("carrier.bin:1: google_api_key" in item for item in check_no_secret_patterns.scan_worktree())
+
+
+def test_history_scans_deleted_binary_carriers(tmp_path, monkeypatch):
+    env = {key: value for key, value in os.environ.items() if not key.startswith("GIT_")}
+    env.update(GIT_CONFIG_NOSYSTEM="1", GIT_CONFIG_GLOBAL=os.devnull, GIT_TERMINAL_PROMPT="0")
+    subprocess.run(["git", "init", "--initial-branch=main", str(tmp_path)], check=True, capture_output=True, env=env)
+    carrier = tmp_path / "carrier.bin"
+    carrier.write_bytes(b"\0" + b"AIza" + b"A" * 35 + b"\xff")
+    identity = ["-c", "user.name=Fixture", "-c", "user.email=fixture@example.invalid"]
+    commands = (
+        ["add", "carrier.bin"],
+        [*identity, "commit", "-m", "Add fixture"],
+        ["rm", "carrier.bin"],
+        [*identity, "commit", "-m", "Remove fixture"],
+    )
+    for command in commands:
+        subprocess.run(
+            ["git", "-c", f"core.hooksPath={tmp_path / 'no-hooks'}", "-C", str(tmp_path), *command],
+            check=True,
+            capture_output=True,
+            env=env,
+        )
+    for key in list(os.environ):
+        if key.startswith("GIT_"):
+            monkeypatch.delenv(key, raising=False)
+    for key in ("GIT_CONFIG_NOSYSTEM", "GIT_CONFIG_GLOBAL", "GIT_TERMINAL_PROMPT"):
+        monkeypatch.setenv(key, env[key])
+    monkeypatch.setattr(check_no_secret_patterns, "ROOT", tmp_path)
+    assert any("carrier.bin:1: google_api_key" in item for item in check_no_secret_patterns.scan_history())
 
 
 def test_history_includes_root_commit_and_other_local_refs(tmp_path, monkeypatch):

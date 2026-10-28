@@ -47,8 +47,8 @@ python3 tools/audit_skill_quality.py --check
 # 5. Markdown link reporter (writes docs/local-markdown-link-failures.md).
 python3 tools/report_local_markdown_link_failures.py --check
 
-# 6. Secret scan (exits non-zero if ANY secret-shaped string is found in the
-#    working tree or git history).
+# 6. Scan the working tree and reachable Git history separately.
+python3 tools/check_no_secret_patterns.py
 python3 tools/check_no_secret_patterns.py --history
 
 # 7. Lint, format, type-check, and run the full test suite.
@@ -57,6 +57,10 @@ ruff format --check tools tests
 mypy tools tests
 python3 -m pytest -q -n auto
 ```
+
+The in-repository scanner checks its known patterns in replacement-decoded text
+and binary file bytes. It does not unpack archives or recognize every encoding
+or credential. CI also runs Gitleaks across fetched Git history.
 
 After dependency installation, the validation commands above run without network access. Initial package installation needs the declared package sources. CI uses the same gates plus
 `gitleaks` (MIT, pinned binary) as a second-opinion secret scan.

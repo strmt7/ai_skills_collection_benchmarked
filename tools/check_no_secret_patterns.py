@@ -18,6 +18,9 @@ Two layers of detection are applied:
    base64-class strings). The heuristic requires both a credential-like
    variable name *and* a high-entropy value to keep false positives low.
 
+The same detector inspects replacement-decoded bytes in text and binary files,
+including history. It does not unpack archives or decode arbitrary encodings.
+
 CLI:
 
     python3 tools/check_no_secret_patterns.py           # scan worktree
@@ -230,8 +233,6 @@ def file_text(path: Path) -> str | None:
         data = path.read_bytes()
     except FileNotFoundError:
         return None
-    if b"\0" in data:
-        return None
     return data.decode("utf-8", errors="replace")
 
 
@@ -242,8 +243,6 @@ def commit_file_text(commit: str, path: str) -> str | None:
             stderr=subprocess.DEVNULL,
         )
     except subprocess.CalledProcessError:
-        return None
-    if b"\0" in data:
         return None
     return data.decode("utf-8", errors="replace")
 
@@ -324,8 +323,7 @@ def history_file_texts() -> Iterator[tuple[str, str, str]]:
                 data = process.stdout.read(size)
                 if len(data) != size or process.stdout.read(1) != b"\0":
                     raise RuntimeError("Git object body is incomplete")
-                if b"\0" not in data:
-                    yield commit, name, data.decode("utf-8", errors="replace")
+                yield commit, name, data.decode("utf-8", errors="replace")
     finally:
         process.stdin.close()
         try:
