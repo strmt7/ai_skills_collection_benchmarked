@@ -3,6 +3,7 @@
 Task: `artifact-validator-robustness`. Requested model: `gpt-6.1-sol` with `high` reasoning.
 
 All 9 planned attempts are recorded. No quality superiority is established.
+Each scored attempt must report all 17 cases in the grading manifest (`a480c7c343046e4d0686b2eb68748efa46ef824b3a552de8dcc2c3dc0e4cb91b`).
 
 | Condition | Task passes / planned | Observed usage | Input tokens, median [min–max] | Output tokens, median [min–max] |
 | --- | --- | --- | --- | --- |
@@ -24,6 +25,7 @@ The conditions use a default agent, a pinned third-party Karpathy adaptation, an
 - Provider-resolved model snapshots are unavailable; the requested model is not a verified backend revision.
 - This frozen block does not pool earlier exploratory probes or harness versions; their failures remain recorded separately.
 - The grading process executes submitted Python on the host; it is not a hardened service for arbitrary untrusted submissions.
+- A case manifest checks the reported denominator but cannot independently prove that the grader ran or that observations are authentic.
 - One development maintenance task on a real pinned repository subset; not final holdouts or collection-wide utility.
 - Instructions are injected, not selected by natural skill discovery; this measures the two-skill bundle, not each skill individually.
 - Process and instruction scope isolation; not a container with sealed grader files.

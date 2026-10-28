@@ -12,8 +12,9 @@ from collections import Counter
 from pathlib import Path, PurePosixPath
 from typing import Any
 
-from _lib_b.io_utils import dumps_deterministic, read_json, write_json, write_text
-from _trial_transcript import parse_events
+from _lib_b.io_utils import dumps_deterministic, write_json, write_text
+from _trial_manifest import read_grading_manifest
+from _trial_transcript import parse_events, strict_json
 
 STATUSES = {"task_passed", "task_failed", "harness_error", "invalid_scope", "timed_out"}
 LIMITATIONS = [
@@ -25,11 +26,17 @@ LIMITATIONS = [
     "Provider-resolved model snapshots are unavailable; the requested model is not a verified backend revision.",
     "This frozen block does not pool earlier exploratory probes or harness versions; their failures remain recorded separately.",
     "The grading process executes submitted Python on the host; it is not a hardened service for arbitrary untrusted submissions.",
+    "A case manifest checks the reported denominator but cannot independently prove that the grader ran or that observations are authentic.",
 ]
 
 
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def read_json(path: Path) -> Any:
+    """Reject ambiguous or non-finite JSON in recorded trial metadata."""
+    return strict_json(path.read_text(encoding="utf-8"))
 
 
 def evidence_path(directory: Path, relative: str) -> Path:
@@ -127,7 +134,9 @@ def verify_transcript(directory: Path, result: dict[str, Any]) -> None:
         raise ValueError("transcript disagrees with recorded usage or command count")
 
 
-def verify_result(directory: Path, protocol: dict[str, Any], protocol_hash: str, condition: str) -> dict[str, Any]:
+def verify_result(
+    directory: Path, protocol: dict[str, Any], protocol_hash: str, condition: str, expected_cases: frozenset[str]
+) -> dict[str, Any]:
     result = read_json(directory / "result.json")
     if not isinstance(result, dict):
         raise ValueError("trial result must be an object")
@@ -174,6 +183,8 @@ def verify_result(directory: Path, protocol: dict[str, Any], protocol_hash: str,
     names = [check.get("case") for check in checks]
     if any(not isinstance(name, str) or not name for name in names) or len(names) != len(set(names)):
         raise ValueError("external checks must have unique nonempty case names")
+    if result["status"] in {"task_passed", "task_failed"} and frozenset(names) != expected_cases:
+        raise ValueError("matched attempts must use the same independently recorded grading cases")
     if checks and (
         type(grade.get("checks_total")) is not int
         or type(grade.get("checks_passed")) is not int
@@ -224,11 +235,14 @@ def verify_result(directory: Path, protocol: dict[str, Any], protocol_hash: str,
 
 
 def summarize(protocol_path: Path, trials: Path, *, package_caches: bool = False) -> dict[str, Any]:
-    protocol = read_json(protocol_path)
-    protocol_hash = sha256(protocol_path)
+    protocol_bytes = protocol_path.read_bytes()
+    protocol = strict_json(protocol_bytes.decode("utf-8"))
+    if not isinstance(protocol, dict):
+        raise ValueError("trial protocol must be an object")
+    protocol_hash = hashlib.sha256(protocol_bytes).hexdigest()
+    expected_cases, manifest_hash = read_grading_manifest(protocol_path, protocol, protocol_hash)
     rows, planned_paths = [], set()
     repetitions = set()
-    graded_cases: frozenset[str] | None = None
     conditions = set(protocol["conditions"])
     for block in protocol["planned_order"]:
         repetition = block["repetition"]
@@ -249,12 +263,7 @@ def summarize(protocol_path: Path, trials: Path, *, package_caches: bool = False
             directory = trials / relative
             if not (directory / "result.json").is_file():
                 raise ValueError(f"planned attempt has not completed: {relative}")
-            result = verify_result(directory, protocol, protocol_hash, condition)
-            if result["status"] in {"task_passed", "task_failed"}:
-                cases = frozenset(check["case"] for check in result["grader"]["checks"])
-                if graded_cases is not None and cases != graded_cases:
-                    raise ValueError("matched attempts must use the same independent grading cases")
-                graded_cases = cases
+            result = verify_result(directory, protocol, protocol_hash, condition, expected_cases)
             if package_caches:
                 package_bytecode(directory, result["evidence_sha256"])
             rows.append(
@@ -279,6 +288,9 @@ def summarize(protocol_path: Path, trials: Path, *, package_caches: bool = False
     observed_paths = {path.relative_to(trials).as_posix() for path in trials.rglob("result.json")}
     if observed_paths != planned_paths:
         raise ValueError("trial directory includes unplanned results; refusing selective or duplicate accounting")
+    manifest_path = protocol_path.with_name(protocol_path.stem + ".grading.json")
+    if manifest_path.is_symlink() or sha256(protocol_path) != protocol_hash or sha256(manifest_path) != manifest_hash:
+        raise ValueError("trial protocol or grading manifest changed during verification")
     summaries = {}
     for condition in sorted(conditions):
         matched = [row for row in rows if row["condition"] == condition]
@@ -302,8 +314,10 @@ def summarize(protocol_path: Path, trials: Path, *, package_caches: bool = False
             else None,
         }
     return {
-        "report_version": 1,
+        "report_version": 2,
         "protocol_sha256": protocol_hash,
+        "grading_manifest_sha256": manifest_hash,
+        "expected_grading_cases": len(expected_cases),
         "task_id": protocol["task"]["id"],
         "partition": protocol["task"]["partition"],
         "model_requested": protocol["model"],
@@ -325,6 +339,7 @@ def render(report: dict[str, Any]) -> str:
         f"Task: `{report['task_id']}`. Requested model: `{report['model_requested']}` with `{report['reasoning_effort_requested']}` reasoning.",
         "",
         f"All {report['planned_attempts']} planned attempts are recorded. No quality superiority is established.",
+        f"Each scored attempt must report all {report['expected_grading_cases']} cases in the grading manifest (`{report['grading_manifest_sha256']}`).",
         "",
         "| Condition | Task passes / planned | Observed usage | Input tokens, median [min–max] | Output tokens, median [min–max] |",
         "| --- | --- | --- | --- | --- |",

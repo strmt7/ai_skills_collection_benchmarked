@@ -5,6 +5,7 @@ import subprocess
 from pathlib import Path
 from typing import Any
 
+import _trial_manifest
 import _trial_transcript
 import pytest
 import run_agent_trial as trials
@@ -161,9 +162,13 @@ def test_invalid_trial_stream_is_recorded_without_grading(tmp_path, monkeypatch)
     workspace = tmp_path / "workspace"
     workspace.mkdir()
     protocol = {
+        "protocol_version": 3,
         "runner_sha256": trials.sha256((trials.ROOT / "tools/run_agent_trial.py").read_bytes()),
         "grading_driver_sha256": trials.sha256((trials.ROOT / "tools/grade_agent_submission.py").read_bytes()),
         "transcript_parser_sha256": trials.sha256((trials.ROOT / "tools/_trial_transcript.py").read_bytes()),
+        "trial_manifest_sha256": trials.sha256((trials.ROOT / "tools/_trial_manifest.py").read_bytes()),
+        "grader_sha256": "a" * 64,
+        "grading_cases_sha256": _trial_manifest.case_digest(["independent"]),
         "task": {"id": "fixture", "partition": "development", "allowed_changes": []},
         "model": "fixture-model",
         "reasoning_effort": "high",
@@ -172,6 +177,17 @@ def test_invalid_trial_stream_is_recorded_without_grading(tmp_path, monkeypatch)
     }
     protocol_path = tmp_path / "protocol.json"
     protocol_path.write_text(json.dumps(protocol), encoding="utf-8")
+    protocol_path.with_name("protocol.grading.json").write_text(
+        json.dumps(
+            {
+                "manifest_version": 1,
+                "protocol_sha256": trials.sha256(protocol_path.read_bytes()),
+                "grader_sha256": protocol["grader_sha256"],
+                "cases": ["independent"],
+            }
+        ),
+        encoding="utf-8",
+    )
     monkeypatch.setattr(trials, "prepare", lambda *args: (workspace, "fixture", {}))
     monkeypatch.setattr(trials, "command", lambda *args: ["fixture"])
 
@@ -198,6 +214,48 @@ def test_invalid_trial_stream_is_recorded_without_grading(tmp_path, monkeypatch)
     assert result["usage"] is None and result["commands_completed"] is None
     assert result["grader"]["status"] == "harness_error"
     summary.verify_transcript(output, result)
+
+
+@pytest.mark.parametrize("problem", ["missing", "changed", "legacy"])
+def test_uncommitted_grading_cases_stop_before_a_trial_launch(tmp_path, monkeypatch, problem):
+    """Reject missing or changed case commitments without starting a process."""
+    protocol = {
+        "protocol_version": 2 if problem == "legacy" else 3,
+        "runner_sha256": trials.sha256((trials.ROOT / "tools/run_agent_trial.py").read_bytes()),
+        "grading_driver_sha256": trials.sha256((trials.ROOT / "tools/grade_agent_submission.py").read_bytes()),
+        "transcript_parser_sha256": trials.sha256((trials.ROOT / "tools/_trial_transcript.py").read_bytes()),
+        "trial_manifest_sha256": trials.sha256((trials.ROOT / "tools/_trial_manifest.py").read_bytes()),
+        "grader_sha256": "a" * 64,
+        "grading_cases_sha256": _trial_manifest.case_digest(["expected"]),
+    }
+    protocol_path = tmp_path / "protocol.json"
+    protocol_path.write_text(json.dumps(protocol), encoding="utf-8")
+    if problem == "changed":
+        protocol_path.with_name("protocol.grading.json").write_text(
+            json.dumps(
+                {
+                    "manifest_version": 1,
+                    "protocol_sha256": trials.sha256(protocol_path.read_bytes()),
+                    "grader_sha256": protocol["grader_sha256"],
+                    "cases": ["different"],
+                }
+            ),
+            encoding="utf-8",
+        )
+    monkeypatch.setattr(trials.subprocess, "Popen", lambda *args, **kwargs: pytest.fail("unexpected process"))
+    with pytest.raises(ValueError, match="grading manifest|committed"):
+        trials.run(protocol_path, "default", tmp_path / "attempt", Path("fixture"), Path("python"))
+    assert not (tmp_path / "attempt").exists()
+
+
+def test_ambiguous_protocol_is_rejected_before_trial_launch(tmp_path, monkeypatch):
+    """Duplicate protocol keys are rejected before any agent process starts."""
+    path = tmp_path / "protocol.json"
+    path.write_text('{"protocol_version": 3, "protocol_version": 3}', encoding="utf-8")
+    monkeypatch.setattr(trials.subprocess, "Popen", lambda *args, **kwargs: pytest.fail("unexpected process"))
+    with pytest.raises(ValueError, match="duplicate JSON key"):
+        trials.run(path, "default", tmp_path / "attempt", Path("fixture"), Path("python"))
+    assert not (tmp_path / "attempt").exists()
 
 
 def test_changed_transcript_parser_is_rejected_before_launch(tmp_path, monkeypatch):

@@ -4,6 +4,7 @@ import json
 import shutil
 from typing import Any
 
+import _trial_manifest
 import pytest
 import summarize_agent_trials as summary
 
@@ -15,9 +16,11 @@ def write_json(path, value):
 @pytest.fixture
 def matched(tmp_path):
     protocol: dict[str, Any] = {
+        "protocol_version": 2,
         "task": {"id": "independent-fixture", "partition": "development"},
         "model": "requested-model",
         "reasoning_effort": "high",
+        "grader_sha256": "a" * 64,
         "conditions": {"default": {}, "improved": {}},
         "planned_order": [{"repetition": 1, "conditions": ["default", "improved"]}],
         "limitations": [],
@@ -25,6 +28,10 @@ def matched(tmp_path):
     path = tmp_path / "protocol.json"
     write_json(path, protocol)
     digest = summary.sha256(path)
+    write_json(
+        path.with_name("protocol.grading.json"),
+        {"manifest_version": 1, "protocol_sha256": digest, "grader_sha256": "a" * 64, "cases": ["independent"]},
+    )
     trials = tmp_path / "trials"
     for condition in protocol["conditions"]:
         directory = trials / "repetition-1" / condition
@@ -334,6 +341,110 @@ def test_matched_attempts_must_use_the_same_independent_cases(matched):
         },
     )
     with pytest.raises(ValueError, match="same.*cases"):
+        summary.summarize(path, trials)
+
+
+def test_all_attempts_cannot_omit_the_same_frozen_case(matched):
+    """Equal but incomplete case lists cannot shrink the grading denominator."""
+    path, trials = matched
+    manifest = path.with_name("protocol.grading.json")
+    data = summary.read_json(manifest)
+    data["cases"].append("second-case")
+    write_json(manifest, data)
+    with pytest.raises(ValueError, match="same.*grading cases"):
+        summary.summarize(path, trials)
+
+
+def test_new_protocol_requires_the_precommitted_case_set(matched):
+    """A case manifest cannot be changed after a new protocol commits its digest."""
+    path, trials = matched
+    protocol = summary.read_json(path)
+    protocol["protocol_version"] = 3
+    protocol["grading_cases_sha256"] = _trial_manifest.case_digest(["independent"])
+    write_json(path, protocol)
+    manifest = path.with_name("protocol.grading.json")
+    data = summary.read_json(manifest)
+    data["protocol_sha256"] = summary.sha256(path)
+    data["cases"] = ["different"]
+    write_json(manifest, data)
+    with pytest.raises(ValueError, match="committed case set"):
+        summary.summarize(path, trials)
+
+
+def test_case_commitment_has_a_portable_order_independent_encoding():
+    """Case order does not alter the documented compact JSON digest."""
+    expected = "138bf4722f7ae17122c7282d0eb156499d349940e129bd4cdf27c8ffdcbb3d25"
+    assert _trial_manifest.case_digest(["alpha", "beta"]) == expected
+    assert _trial_manifest.case_digest(["beta", "alpha"]) == expected
+
+
+@pytest.mark.parametrize(
+    "change",
+    [
+        {"manifest_version": True},
+        {"protocol_sha256": "b" * 64},
+        {"grader_sha256": "b" * 64},
+        {"cases": []},
+        {"cases": ["independent", "independent"]},
+        {"cases": [" "]},
+        {"cases": ["independent", None]},
+    ],
+)
+def test_invalid_grading_manifest_is_rejected(matched, change):
+    """The manifest must be unambiguous and bound to the protocol and grader."""
+    path, trials = matched
+    manifest = path.with_name("protocol.grading.json")
+    data = summary.read_json(manifest)
+    data.update(change)
+    write_json(manifest, data)
+    with pytest.raises(ValueError, match="grading manifest"):
+        summary.summarize(path, trials)
+
+
+def test_missing_or_duplicate_key_grading_manifest_is_rejected(matched):
+    """A missing or ambiguous manifest cannot authorize a reported pass."""
+    path, trials = matched
+    manifest = path.with_name("protocol.grading.json")
+    manifest.unlink()
+    with pytest.raises(ValueError, match="grading manifest"):
+        summary.summarize(path, trials)
+    manifest.write_text('{"manifest_version": 1, "manifest_version": 1}', encoding="utf-8")
+    with pytest.raises(ValueError, match="duplicate JSON key"):
+        summary.summarize(path, trials)
+
+
+@pytest.mark.parametrize("document", ["protocol", "result", "launch"])
+def test_duplicate_metadata_keys_are_rejected_even_when_evidence_hashes_match(matched, document):
+    """Ambiguous JSON cannot become a scored report by updating its hash."""
+    path, trials = matched
+    directory = trials / "repetition-1/improved"
+    target = path if document == "protocol" else directory / (document + ".json")
+    field = "model" if document == "protocol" else "status" if document == "result" else "protocol_sha256"
+    original = target.read_text(encoding="utf-8")
+    target.write_text('{"' + field + '": "duplicate",' + original[1:], encoding="utf-8")
+    if document == "launch":
+        result_path = directory / "result.json"
+        result = summary.read_json(result_path)
+        result["evidence_sha256"]["launch.json"] = summary.sha256(target)
+        write_json(result_path, result)
+    with pytest.raises(ValueError, match="duplicate JSON key"):
+        summary.summarize(path, trials)
+
+
+@pytest.mark.parametrize("changed", ["protocol", "manifest"])
+def test_protocol_inputs_cannot_change_during_report_verification(matched, monkeypatch, changed):
+    """Do not publish a report if its protocol inputs change mid-verification."""
+    path, trials = matched
+    target = path if changed == "protocol" else path.with_name("protocol.grading.json")
+    verify = summary.verify_result
+
+    def change_input(*args, **kwargs):
+        result = verify(*args, **kwargs)
+        target.write_text(target.read_text(encoding="utf-8") + " ", encoding="utf-8")
+        return result
+
+    monkeypatch.setattr(summary, "verify_result", change_input)
+    with pytest.raises(ValueError, match="changed during verification"):
         summary.summarize(path, trials)
 
 

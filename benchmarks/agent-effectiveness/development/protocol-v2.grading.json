@@ -1,0 +1,29 @@
+{
+  "manifest_version": 1,
+  "protocol_sha256": "a1f6cbd086680ca19c3a6a124b7739537a7ad38550de8b59b83ec1f8781fcda9",
+  "grader_sha256": "6e507cffa902b802036c8f288729b4182463f2aff7045c5603e6ce38167ab8e2",
+  "cases": [
+    "valid_provenance",
+    "valid_extra_metadata",
+    "malformed_skill_id",
+    "malformed_scenario_id",
+    "malformed_artifact_kind",
+    "malformed_input_snapshot",
+    "malformed_execution",
+    "malformed_runner",
+    "malformed_independence",
+    "malformed_evidence",
+    "malformed_metrics",
+    "malformed_outputs",
+    "malformed_scenario_requirements",
+    "schema_minimum_string_length",
+    "transcript_must_be_file",
+    "evidence_must_be_file",
+    "missing_schema_rejected"
+  ],
+  "provenance": {
+    "kind": "posthoc_source_review",
+    "grader_source_commit": "86847df086d274ea64879d98873e1bfa8d6cd2fd",
+    "note": "Case names were reconstructed after the attempts from the Git blob matching the frozen grader hash. This does not prove execution or authenticate observations."
+  }
+}

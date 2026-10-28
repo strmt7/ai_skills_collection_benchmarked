@@ -77,9 +77,22 @@ contains all attempts, raw token summaries and standalone charts. Its publisher
 checks protocol identity, each captured evidence hash, grading consistency,
 failure denominators and missing or unplanned runs. It also compares completion,
 usage and completed-command counts against the captured CLI transcript. Scored
-attempts must report the same named grading cases, and failed or invalid-scope
-outcomes must agree with their recorded evidence. Matching case names alone does
-not prove that the evaluator or its full denominator was independently frozen.
+attempts must report every case in the adjacent grading manifest, which is bound
+to the protocol and grader hashes, and failed or invalid-scope outcomes must
+agree with their recorded evidence. The 17-case v2 manifest was reconstructed
+after the trials from a Git blob matching the frozen grader hash; it was not
+precommitted before those trials. It prevents consistent omission of a recorded
+case during report generation, but does not prove that the grader ran or that
+the observations are authentic. Future experiments must establish their case
+manifest before execution and retain independent grading evidence.
+For protocol version 3 or later, `grading_cases_sha256` commits the case set:
+sort the unique names, serialize them as compact ASCII JSON, and hash the UTF-8
+bytes with SHA-256. The adjacent `<protocol-stem>.grading.json` records that
+case list, the completed protocol hash and the grader hash. The protocol also
+pins `trial_manifest_sha256`, the hash of `tools/_trial_manifest.py`. Commit the
+protocol and manifest before collecting attempts. The runner checks these
+bindings before launching, but a hash alone does not prove when a commitment
+was made or whether grading evidence is authentic.
 Null usage remains null. Malformed event streams cannot produce a scored result;
 their retained transcript and matching parser error are counted as a harness
 failure without inventing usage or command counts. New protocols must also pin

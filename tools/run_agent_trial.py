@@ -15,7 +15,8 @@ import time
 from pathlib import Path
 from typing import Any
 
-from _lib_b.io_utils import read_json, write_json
+from _lib_b.io_utils import write_json
+from _trial_manifest import read_grading_manifest
 from _trial_transcript import parse_events, strict_json
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -142,21 +143,29 @@ def external_grade(task: dict[str, Any], workspace: Path, python: Path) -> dict[
 
 
 def run(protocol_path: Path, condition: str, output: Path, cli: Path, python: Path) -> dict[str, Any]:
-    protocol = read_json(protocol_path)
+    protocol_bytes = protocol_path.read_bytes()
+    protocol = strict_json(protocol_bytes.decode("utf-8"))
+    if not isinstance(protocol, dict):
+        raise ValueError("trial protocol must be an object")
+    protocol_hash = sha256(protocol_bytes)
     if output.exists():
         raise ValueError("trial output already exists; refusing to overwrite an attempt")
     for name, key in (
         ("run_agent_trial.py", "runner_sha256"),
         ("grade_agent_submission.py", "grading_driver_sha256"),
         ("_trial_transcript.py", "transcript_parser_sha256"),
+        ("_trial_manifest.py", "trial_manifest_sha256"),
     ):
         if sha256((ROOT / "tools" / name).read_bytes()) != protocol.get(key):
             raise ValueError("benchmark execution tooling changed after protocol freeze")
+    if type(protocol.get("protocol_version")) is not int or protocol["protocol_version"] < 3:
+        raise ValueError("new trials require a protocol with a committed grading case set")
+    read_grading_manifest(protocol_path, protocol, protocol_hash)
     workspace, prompt, inputs = prepare(protocol, condition, python)
     output.mkdir(parents=True, exist_ok=False)
     (output / "prompt.txt").write_text(prompt, encoding="utf-8")
     invocation = command(protocol, cli, workspace)
-    write_json(output / "launch.json", {"command": invocation, "protocol_sha256": sha256(protocol_path.read_bytes())})
+    write_json(output / "launch.json", {"command": invocation, "protocol_sha256": protocol_hash})
     started = time.monotonic()
     timed_out = False
     with (
@@ -240,7 +249,7 @@ def run(protocol_path: Path, condition: str, output: Path, cli: Path, python: Pa
     )
     result = {
         "trial_version": 1,
-        "protocol_sha256": sha256(protocol_path.read_bytes()),
+        "protocol_sha256": protocol_hash,
         "task_id": protocol["task"]["id"],
         "partition": protocol["task"]["partition"],
         "condition": condition,
