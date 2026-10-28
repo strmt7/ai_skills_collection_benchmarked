@@ -20,6 +20,8 @@ Two layers of detection are applied:
 
 The same detector inspects replacement-decoded bytes in text and binary files,
 including history. It does not unpack archives or decode arbitrary encodings.
+Worktree symbolic links are checked as link-target text rather than by reading
+their destinations. Worktree scanning is not atomic against concurrent changes.
 
 CLI:
 
@@ -34,6 +36,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import os
 import re
 import subprocess
 import sys
@@ -226,7 +229,10 @@ def commit_changed_names(commit: str) -> list[str]:
 
 
 def file_text(path: Path) -> str:
-    return path.read_bytes().decode("utf-8", errors="replace")
+    # Git stores a symbolic link's target text, not its destination's contents.
+    # As with other worktree reads, the tree must not be changed concurrently.
+    data = os.fsencode(os.readlink(path)) if path.is_symlink() else path.read_bytes()
+    return data.decode("utf-8", errors="replace")
 
 
 def commit_file_text(commit: str, path: str) -> str | None:

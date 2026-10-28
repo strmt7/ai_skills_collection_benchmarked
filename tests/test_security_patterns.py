@@ -128,6 +128,46 @@ def test_worktree_scans_binary_carriers(tmp_path, monkeypatch):
     assert any("carrier.bin:1: google_api_key" in item for item in check_no_secret_patterns.scan_worktree())
 
 
+@pytest.mark.parametrize("token_in_target", [True, False])
+def test_worktree_scans_link_text_without_following_destination(tmp_path, monkeypatch, token_in_target):
+    env = {key: value for key, value in os.environ.items() if not key.startswith("GIT_")}
+    env.update(GIT_CONFIG_NOSYSTEM="1", GIT_CONFIG_GLOBAL=os.devnull, GIT_TERMINAL_PROMPT="0")
+    repo = tmp_path / "repo"
+    repo.mkdir()
+    subprocess.run(["git", "init", "--initial-branch=main", str(repo)], check=True, capture_output=True, env=env)
+    marker = "hf" + "_" + "a" * 35
+    destination = tmp_path / (marker if token_in_target else "neutral-destination")
+    destination.write_text("neutral" if token_in_target else marker, encoding="utf-8")
+    try:
+        os.symlink(destination, repo / "link")
+    except OSError as exc:
+        pytest.skip(f"symbolic links are unavailable: {type(exc).__name__}")
+    subprocess.run(
+        ["git", "-c", "core.symlinks=true", "-C", str(repo), "add", "link"],
+        check=True,
+        capture_output=True,
+        env=env,
+    )
+    mode = subprocess.check_output(["git", "-C", str(repo), "ls-files", "--stage", "link"], env=env).split()[0]
+    assert mode == b"120000"
+    staged_link = subprocess.check_output(["git", "-C", str(repo), "show", ":link"], env=env)
+    monkeypatch.setattr(check_no_secret_patterns, "ROOT", repo)
+    findings = check_no_secret_patterns.scan_worktree()
+    assert findings == check_no_secret_patterns.scan_text("link", staged_link.decode("utf-8", errors="replace"))
+    assert any("link:1: huggingface_token" in item for item in findings) is token_in_target
+
+
+def test_worktree_scans_dangling_link_text(tmp_path, monkeypatch):
+    link = tmp_path / "link"
+    try:
+        os.symlink(tmp_path / "missing", link)
+    except OSError as exc:
+        pytest.skip(f"symbolic links are unavailable: {type(exc).__name__}")
+    monkeypatch.setattr(check_no_secret_patterns, "ROOT", tmp_path)
+    monkeypatch.setattr(check_no_secret_patterns, "tracked_files", lambda: [link])
+    assert check_no_secret_patterns.scan_worktree() == []
+
+
 @pytest.mark.parametrize("directory", ["__pycache__", ".pytest_cache"])
 @pytest.mark.parametrize("scope", ["worktree", "history"])
 def test_tracked_cache_paths_are_scanned(tmp_path, monkeypatch, directory, scope):
