@@ -5112,13 +5112,24 @@
             "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
             "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
             "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/citation-url-security-control.json",
+            "scope": "Eight independent URL-classification controls and scoped CodeQL comparison against a pinned upstream candidate; not a complete security audit or agent benchmark.",
+            "sha256": "3a3d1f8f74248bfdc87d3b33b43d285f2127d2eb495da7cc7942254211c8f74f"
           }
         ],
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/citation-management-security/repair.json",
+            "scope": "Explicit opt-in overlay repairs URL hostname classification while preserving the locked original and its unresolved findings.",
+            "sha256": "c7da5f08f245f46c1c04f269ff95abe49edf1a5f6c303256facd10fbfddb8969"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "K-Dense-AI/scientific-agent-skills",
       "source_signature": {

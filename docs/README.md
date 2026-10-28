@@ -24,6 +24,8 @@ For native memory testing and fuzzing dictionaries, see the
 
 For research posters, see the [maintained PDF preflight repair](poster-preflight-repair.md).
 
+For citation management, see the [URL-classification security overlay](citation-security-overlay.md).
+
 To improve this collection, use the separate
 [contributor guide](../CONTRIBUTING.md) and
 [development setup](development.md). Research records, test harnesses and source

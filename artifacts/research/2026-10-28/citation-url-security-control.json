@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "runtime_readiness_security_control",
+  "skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-citation-management-skill-md",
+  "baseline": {
+    "commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+    "path": "included/skills/by-category/science-research-data-analysis/latest-release-community/citation-management/scripts/extract_metadata.py",
+    "sha256": "369caaca798b4bb7e6a6ea3cf712ab0cd6a2e024998a51fbcc8bc6a9c4679a8e",
+    "verdict": "failed",
+    "passed": 3,
+    "executed_checkout_sha256": "4ee34095df7c4fdf3aaf0c155864ae7dc9423b896ad2dd5dce99ecc5b64f4847",
+    "sha256_role": "canonical locked Git blob bytes",
+    "checkout_transformation": "CRLF worktree bytes normalize exactly to the locked Git blob"
+  },
+  "upstream_candidate": {
+    "commit": "526ebce143bc326f44471554e33d66a19c840360",
+    "path": "skills/citation-management/scripts/extract_metadata.py",
+    "git_blob": "d3c3a7e0ab9ad358c9b6ef8aebf04486475a3bec",
+    "sha256": "bebc7835b5e659cdeee0087980e881635894330bac5eda4ce01f490fd41df781",
+    "verdict": "passed",
+    "passed": 8,
+    "sha256_role": "raw Git blob bytes",
+    "executed_checkout_sha256": "4e3080be478af674ff28f31c04df2dd0edc08ce6829b01cb86a5a09291c39c74",
+    "checkout_transformation": "CRLF worktree bytes normalize exactly to the verified raw Git blob"
+  },
+  "controls": [
+    {
+      "case": "doi_host_suffix",
+      "input": "https://doi.org.attacker.example/nope",
+      "expected": [
+        "url",
+        "https://doi.org.attacker.example/nope"
+      ],
+      "actual": {
+        "locked_mirror": [
+          "doi",
+          "nope"
+        ],
+        "candidate": [
+          "url",
+          "https://doi.org.attacker.example/nope"
+        ]
+      },
+      "candidate_pass": true,
+      "mirror_pass": false
+    },
+    {
+      "case": "doi_userinfo",
+      "input": "https://doi.org@attacker.example/nope",
+      "expected": [
+        "url",
+        "https://doi.org@attacker.example/nope"
+      ],
+      "actual": {
+        "locked_mirror": [
+          "doi",
+          "nope"
+        ],
+        "candidate": [
+          "url",
+          "https://doi.org@attacker.example/nope"
+        ]
+      },
+      "candidate_pass": true,
+      "mirror_pass": false
+    },
+    {
+      "case": "pubmed_host_suffix",
+      "input": "https://pubmed.ncbi.nlm.nih.gov.attacker.example/12345678",
+      "expected": [
+        "url",
+        "https://pubmed.ncbi.nlm.nih.gov.attacker.example/12345678"
+      ],
+      "actual": {
+        "locked_mirror": [
+          "pmid",
+          "12345678"
+        ],
+        "candidate": [
+          "url",
+          "https://pubmed.ncbi.nlm.nih.gov.attacker.example/12345678"
+        ]
+      },
+      "candidate_pass": true,
+      "mirror_pass": false
+    },
+    {
+      "case": "pubmed_path_spoof",
+      "input": "https://attacker.example/ncbi.nlm.nih.gov/pubmed/12345678",
+      "expected": [
+        "url",
+        "https://attacker.example/ncbi.nlm.nih.gov/pubmed/12345678"
+      ],
+      "actual": {
+        "locked_mirror": [
+          "pmid",
+          "12345678"
+        ],
+        "candidate": [
+          "url",
+          "https://attacker.example/ncbi.nlm.nih.gov/pubmed/12345678"
+        ]
+      },
+      "candidate_pass": true,
+      "mirror_pass": false
+    },
+    {
+      "case": "arxiv_host_suffix",
+      "input": "https://arxiv.org.attacker.example/abs/2401.12345",
+      "expected": [
+        "url",
+        "https://arxiv.org.attacker.example/abs/2401.12345"
+      ],
+      "actual": {
+        "locked_mirror": [
+          "arxiv",
+          "2401.12345"
+        ],
+        "candidate": [
+          "url",
+          "https://arxiv.org.attacker.example/abs/2401.12345"
+        ]
+      },
+      "candidate_pass": true,
+      "mirror_pass": false
+    },
+    {
+      "case": "valid_doi",
+      "input": "https://doi.org/10.1234/example",
+      "expected": [
+        "doi",
+        "10.1234/example"
+      ],
+      "actual": {
+        "locked_mirror": [
+          "doi",
+          "10.1234/example"
+        ],
+        "candidate": [
+          "doi",
+          "10.1234/example"
+        ]
+      },
+      "candidate_pass": true,
+      "mirror_pass": true
+    },
+    {
+      "case": "valid_pubmed",
+      "input": "https://pubmed.ncbi.nlm.nih.gov/12345678/",
+      "expected": [
+        "pmid",
+        "12345678"
+      ],
+      "actual": {
+        "locked_mirror": [
+          "pmid",
+          "12345678"
+        ],
+        "candidate": [
+          "pmid",
+          "12345678"
+        ]
+      },
+      "candidate_pass": true,
+      "mirror_pass": true
+    },
+    {
+      "case": "valid_arxiv",
+      "input": "https://arxiv.org/abs/2401.12345",
+      "expected": [
+        "arxiv",
+        "2401.12345"
+      ],
+      "actual": {
+        "locked_mirror": [
+          "arxiv",
+          "2401.12345"
+        ],
+        "candidate": [
+          "arxiv",
+          "2401.12345"
+        ]
+      },
+      "candidate_pass": true,
+      "mirror_pass": true
+    }
+  ],
+  "network": "Actual imported parser classes; requests.Session.request replaced with a failing guard.",
+  "scoped_codeql": {
+    "version": "2.27.3",
+    "suite": "python-code-scanning.qls",
+    "baseline_results": 3,
+    "baseline_rules": {
+      "py/incomplete-url-substring-sanitization": 3
+    },
+    "candidate_results": 0,
+    "baseline_sarif_sha256": "44454f85b78c07b1c92dd1f26d2d10fea4dd745c5aeec0b91c7ed09ebaeabad5",
+    "candidate_sarif_sha256": "25e9d477c4b2acfb922a376c39c0e693359b5c3a6d723930f2cb07f605d8f763"
+  },
+  "scope": "Eight independently specified URL-classification controls and a scoped Python CodeQL scan. Neither establishes overall skill safety, complete runtime readiness, agent effectiveness, or resolution of alerts on the unchanged mirror.",
+  "upstream_tree_evidence": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json"
+}

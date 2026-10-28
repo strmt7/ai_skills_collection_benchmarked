@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-citation-management-skill-md",
+  "original_mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/citation-management",
+  "original_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+  "original_skill_dir_sha256": "7113c0d5cc61c902d86b12d2084978844b3074429357699ea2bd2840b8a3de65",
+  "security_control": "artifacts/research/2026-10-28/citation-url-security-control.json",
+  "security_control_sha256": "3a3d1f8f74248bfdc87d3b33b43d285f2127d2eb495da7cc7942254211c8f74f",
+  "upstream_reference_commit": "526ebce143bc326f44471554e33d66a19c840360",
+  "upstream_reference_blob": "d3c3a7e0ab9ad358c9b6ef8aebf04486475a3bec",
+  "repair": "Classify DOI, PubMed and arXiv URLs using explicit hostnames and PubMed path boundaries.",
+  "limitations": "The unchanged mirror retains its findings. This overlay is not an agent benchmark or full security audit.",
+  "executable_files": [
+    "scripts/extract_metadata.py",
+    "scripts/format_bibtex.py",
+    "scripts/search_google_scholar.py",
+    "scripts/search_pubmed.py",
+    "scripts/validate_citations.py"
+  ],
+  "files": {
+    "SKILL.md": "d77dc1a4008d17a0f6ec2c888159054ebb4a79b3bb69df4b19c2ddd03996cdeb",
+    "assets/bibtex_template.bib": "69095a0fd392976ef402f21ae08e7a2eaffa8ce1848074123c6684956d946c03",
+    "assets/citation_checklist.md": "27422eac274a10762d28b50c9b30f86ac4a2fef3cddab0a0a16300eb2f325461",
+    "provenance/LICENSE.md": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1",
+    "provenance/original.SKILL.md": "432d74c699ba454ffa4b380da22f86d0ea5c33986a5ae6adabc1b300cdaa26a4",
+    "references/bibtex_formatting.md": "a02a65eb5aeccc15cc795e348d03bb0b749247b32eec8a8f20825da585b48157",
+    "references/citation_validation.md": "2c5d6ddbf26d2b6db5edcf1c826020be348c1daf22ee3a271c0c441de587db2b",
+    "references/google_scholar_search.md": "a16c16b4ce55cecfdce3eeb4667125b5c0fbc7041d8485aa4ec8ee9e715a475f",
+    "references/metadata_extraction.md": "71ec43daa1169f26aa2dd5bf60bf1c3406a6240a2da8ef8b80d00af3534d56c3",
+    "references/pubmed_search.md": "2975a41117d99f524bc7784e1e4820d158782d1bd7f567cf115461631aae40c2",
+    "scripts/doi_to_bibtex.py": "b9b9435f9dc4be045f2857182e4dcc2dc1625e6c11d0d0b773b5e893abe33880",
+    "scripts/extract_metadata.py": "30d3deacb33ecb5c27ad42fc7ea155dce3f88f48a3a059712babc971b654758b",
+    "scripts/format_bibtex.py": "cdea2754b151c7f410d7e3179d97c257ef8a7ec1be62e71f75d5df0c37aa3530",
+    "scripts/generate_schematic.py": "b4d8b9b7325637caa3e37baa99c08af91c02c5874841c08ef131ee37fd012f76",
+    "scripts/generate_schematic_ai.py": "5f96fa99e98822520acabd94074d17032bfaa43a42fcd6d29a045521f2727e08",
+    "scripts/search_google_scholar.py": "5fe432e6547586e9538121b4af0645c0897c57a917efabaef964bb41fd477eb9",
+    "scripts/search_pubmed.py": "63d394b8f271cac0946fa0e4ae70ad8499244a27cd36e186c5bf43bf6060e8fb",
+    "scripts/validate_citations.py": "00dc40a7d935f59b5ed2fce4c3fb8587a35a602f466270f364591e63103493a8"
+  }
+}
