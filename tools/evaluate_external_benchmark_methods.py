@@ -298,6 +298,8 @@ def github_tree_paths(repo_url: str, head_sha: str, *, receipt: dict[str, Any] |
     try:
         with urllib.request.urlopen(request, timeout=30) as response:
             data = json.loads(response.read().decode("utf-8"))
+        if data.get("sha") != head_sha:
+            raise ValueError("repository tree response does not match the requested commit")
         if data.get("truncated") is not False or not isinstance(data.get("tree"), list):
             raise ValueError("repository tree response is incomplete")
         paths = [item["path"] for item in data["tree"]]

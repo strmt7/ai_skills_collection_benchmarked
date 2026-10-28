@@ -124,7 +124,9 @@ def resolve_dataset_snapshot(track: dict[str, Any]) -> tuple[dict[str, Any], lis
     commands.append(ls_remote)
     head_sha = ""
     if ls_remote["returncode"] == 0 and ls_remote["stdout"]:
-        head_sha = ls_remote["stdout"].split()[0]
+        candidate = ls_remote["stdout"].split()[0]
+        if re.fullmatch(r"[0-9a-f]{40}", candidate):
+            head_sha = candidate
     snapshot: dict[str, Any] = {
         "kind": "real-github-repository-tree",
         "url": url,
@@ -144,13 +146,22 @@ def resolve_dataset_snapshot(track: dict[str, Any]) -> tuple[dict[str, Any], lis
         return snapshot, commands
     try:
         tree = fetch_json(snapshot["tree_api_url"])
+        if tree.get("sha") != head_sha:
+            raise ValueError("repository tree response does not match the requested commit")
+        snapshot["tree_truncated"] = tree.get("truncated")
+        if tree.get("truncated") is not False:
+            raise ValueError("repository tree response is truncated or lacks a completion flag")
+        items = tree.get("tree")
+        if not isinstance(items, list) or any(
+            not isinstance(item, dict) or not isinstance(item.get("path"), str) or not item["path"] for item in items
+        ):
+            raise ValueError("repository tree response contains invalid paths")
+        paths = sorted(item["path"] for item in items)
     except Exception as exc:
         snapshot["resolved"] = False
         snapshot["tree_error"] = str(exc)
         return snapshot, commands
-    paths = sorted(item["path"] for item in tree.get("tree", []) if item.get("path"))
     snapshot["tree_path_count"] = len(paths)
-    snapshot["tree_truncated"] = bool(tree.get("truncated"))
     if subpath:
         prefix = subpath.strip("/") + "/"
         matching = [path for path in paths if path == subpath or path.startswith(prefix)]

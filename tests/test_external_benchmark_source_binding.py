@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import subprocess
 import urllib.error
+from io import BytesIO
 from types import SimpleNamespace
 from typing import Any
 
@@ -89,7 +90,7 @@ def test_truncated_api_tree_requires_complete_pinned_resolution(monkeypatch):
             return False
 
         def read(self):
-            return json.dumps({"truncated": True, "tree": [{"path": "partial-only.py"}]}).encode()
+            return json.dumps({"sha": PIN, "truncated": True, "tree": [{"path": "partial-only.py"}]}).encode()
 
     monkeypatch.setattr(methods.urllib.request, "urlopen", lambda *_args, **_kwargs: Response())
 
@@ -99,6 +100,32 @@ def test_truncated_api_tree_requires_complete_pinned_resolution(monkeypatch):
     monkeypatch.setattr(methods.subprocess, "run", refuse)
     with pytest.raises(RuntimeError, match="controlled pinned fetch failure"):
         methods.github_tree_paths(REPO, PIN)
+
+
+@pytest.mark.parametrize("response_sha", [OTHER, None])
+def test_api_tree_with_unverified_commit_requires_pinned_resolution(monkeypatch, response_sha):
+    """Reject a complete-looking API tree that does not prove the requested commit."""
+    body = json.dumps({"sha": response_sha, "truncated": False, "tree": [{"path": "wrong.py"}]}).encode()
+    monkeypatch.setattr(methods.urllib.request, "urlopen", lambda *_args, **_kwargs: BytesIO(body))
+    monkeypatch.setattr(
+        methods.subprocess,
+        "run",
+        lambda *_args, **_kwargs: SimpleNamespace(returncode=1, stdout="", stderr="controlled pinned fetch failure"),
+    )
+    receipt: dict[str, Any] = {}
+    with pytest.raises(RuntimeError, match="controlled pinned fetch failure"):
+        methods.github_tree_paths(REPO, PIN, receipt=receipt)
+    assert receipt["api_failure"]["message"] == "repository tree response does not match the requested commit"
+    assert receipt["transport"] is None
+
+
+def test_api_tree_matching_commit_is_accepted(monkeypatch):
+    """Accept an explicitly complete API tree for the requested commit."""
+    body = json.dumps({"sha": PIN, "truncated": False, "tree": [{"path": "verified.py"}]}).encode()
+    monkeypatch.setattr(methods.urllib.request, "urlopen", lambda *_args, **_kwargs: BytesIO(body))
+    receipt: dict[str, Any] = {}
+    assert methods.github_tree_paths(REPO, PIN, receipt=receipt) == ["verified.py"]
+    assert receipt["transport"] == "github-tree-api"
 
 
 def test_remote_head_timeout_is_preserved_as_failed_resolution(monkeypatch):

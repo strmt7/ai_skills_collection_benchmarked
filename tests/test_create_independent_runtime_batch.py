@@ -166,7 +166,7 @@ def test_resolve_dataset_snapshot_github_subpath_reports_resolved(monkeypatch):
         lambda cmd, cwd=crib.ROOT: {  # noqa: ARG005
             "command": list(cmd),
             "returncode": 0,
-            "stdout": "abc123\tHEAD",
+            "stdout": f"{'a' * 40}\tHEAD",
             "stderr": "",
         },
     )
@@ -174,6 +174,7 @@ def test_resolve_dataset_snapshot_github_subpath_reports_resolved(monkeypatch):
         crib,
         "fetch_json",
         lambda url: {
+            "sha": "a" * 40,
             "tree": [  # noqa: ARG005
                 {"path": "benchmarks/metrics.py"},
                 {"path": "benchmarks/README.md"},
@@ -186,11 +187,46 @@ def test_resolve_dataset_snapshot_github_subpath_reports_resolved(monkeypatch):
     snap, commands = crib.resolve_dataset_snapshot(track)
     assert snap["kind"] == "real-github-repository-tree"
     assert snap["resolved"] is True
-    assert snap["head_sha"] == "abc123"
+    assert snap["head_sha"] == "a" * 40
     assert snap["track_subpath_present"] is True
     assert snap["tree_path_count"] == 3
     assert "benchmarks/metrics.py" in snap["sampled_paths"]
     assert len(commands) == 1
+
+
+@pytest.mark.parametrize(
+    "tree",
+    [
+        {"sha": "a" * 40, "truncated": True, "tree": [{"path": "file"}]},
+        {"sha": "a" * 40, "tree": [{"path": "file"}]},
+        {"sha": "b" * 40, "truncated": False, "tree": [{"path": "file"}]},
+        {"sha": "a" * 40, "truncated": False, "tree": [{"path": ""}]},
+        {"sha": "a" * 40, "truncated": False, "tree": None},
+    ],
+)
+def test_resolve_dataset_snapshot_rejects_unverified_tree(monkeypatch, tree):
+    """Incomplete, mismatched and malformed trees must not pass readiness."""
+    monkeypatch.setattr(
+        crib,
+        "run_command",
+        lambda *args, **kwargs: {"returncode": 0, "stdout": f"{'a' * 40}\tHEAD", "stderr": ""},
+    )
+    monkeypatch.setattr(crib, "fetch_json", lambda url: tree)
+    snap, _ = crib.resolve_dataset_snapshot({"id": "t", "url": "https://github.com/ex/repo"})
+    assert snap["resolved"] is False
+    assert snap["tree_error"]
+
+
+def test_resolve_dataset_snapshot_rejects_invalid_head(monkeypatch):
+    """Reject an invalid remote commit before constructing an API request."""
+    monkeypatch.setattr(
+        crib,
+        "run_command",
+        lambda *args, **kwargs: {"returncode": 0, "stdout": "abc123\tHEAD", "stderr": ""},
+    )
+    monkeypatch.setattr(crib, "fetch_json", lambda url: pytest.fail("invalid head must not be fetched"))
+    snap, _ = crib.resolve_dataset_snapshot({"id": "t", "url": "https://github.com/ex/repo"})
+    assert snap["resolved"] is False
 
 
 def test_resolve_dataset_snapshot_github_head_fail(monkeypatch):
