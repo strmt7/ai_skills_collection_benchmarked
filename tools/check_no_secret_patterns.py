@@ -19,7 +19,9 @@ Two layers of detection are applied:
    variable name *and* a high-entropy value to keep false positives low.
 
 The same detector inspects replacement-decoded bytes in text and binary files,
-including history. It does not unpack archives or decode arbitrary encodings.
+including history. It also inspects UTF-16 and UTF-32 ASCII text at any byte
+alignment, with or without a byte-order mark. It does not unpack archives or
+decode arbitrary encodings.
 Worktree symbolic links are checked as link-target text rather than by reading
 their destinations. Worktree scanning is not atomic against concurrent changes.
 
@@ -95,6 +97,16 @@ RULES: list[Rule] = [
     Rule("private_key", re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH |DSA |)?PRIVATE KEY-----")),
 ]
 SECRET_SHAPE = re.compile("|".join(f"(?:{rule.pattern.pattern})" for rule in RULES))
+
+# A provider-shaped value has an ASCII run of at least four characters. These
+# patterns select possible wide-text alignments without decoding every binary
+# file four times. The normal byte view is always scanned separately.
+WIDE_TEXT = (
+    ("utf-16-le", 2, re.compile(rb"(?:[ -~]\x00){4}")),
+    ("utf-16-be", 2, re.compile(rb"(?:\x00[ -~]){4}")),
+    ("utf-32-le", 4, re.compile(rb"(?:[ -~]\x00\x00\x00){4}")),
+    ("utf-32-be", 4, re.compile(rb"(?:\x00\x00\x00[ -~]){4}")),
+)
 
 
 # Entropy heuristic configuration. Triggers only when the line already contains
@@ -228,22 +240,10 @@ def commit_changed_names(commit: str) -> list[str]:
     return paths
 
 
-def file_text(path: Path) -> str:
+def file_bytes(path: Path) -> bytes:
     # Git stores a symbolic link's target text, not its destination's contents.
     # As with other worktree reads, the tree must not be changed concurrently.
-    data = os.fsencode(os.readlink(path)) if path.is_symlink() else path.read_bytes()
-    return data.decode("utf-8", errors="replace")
-
-
-def commit_file_text(commit: str, path: str) -> str | None:
-    try:
-        data = subprocess.check_output(
-            git_command("show", f"{commit}:{path}"),
-            stderr=subprocess.DEVNULL,
-        )
-    except subprocess.CalledProcessError:
-        return None
-    return data.decode("utf-8", errors="replace")
+    return os.fsencode(os.readlink(path)) if path.is_symlink() else path.read_bytes()
 
 
 def scan_text(label: str, text: str) -> list[str]:
@@ -258,14 +258,28 @@ def scan_text(label: str, text: str) -> list[str]:
     return findings
 
 
+def scan_bytes(label: str, content: bytes) -> list[str]:
+    """Scan raw bytes and plausible aligned UTF-16/32 views without echoing values."""
+    findings = scan_text(label, content.decode("utf-8", errors="replace"))
+    if b"\0" not in content:
+        return findings
+    for encoding, width, pattern in WIDE_TEXT:
+        alignments = {match.start() % width for match in pattern.finditer(content)}
+        for alignment in sorted(alignments):
+            text = content[alignment:].decode(encoding, errors="replace")
+            findings.extend(scan_text(f"{label} [{encoding}, offset {alignment}]", text))
+    return findings
+
+
 def require_publishable_content(content: bytes) -> None:
     """Reject detected material in exact output bytes without rewriting them.
 
-    Replacement decoding retains ASCII credential shapes inside binary carriers.
+    The raw and wide-text views retain detectable credential shapes inside
+    binary carriers; encoded line numbers refer to the selected decoded view.
     Diagnostics contain rule names and line numbers, never matched values.
     This finite detector does not prove that all sensitive data is absent.
     """
-    findings = scan_text("content", content.decode("utf-8", errors="replace"))
+    findings = scan_bytes("content", content)
     if findings:
         raise ValueError("publishable content rejected: " + "; ".join(findings[:8]))
 
@@ -273,15 +287,14 @@ def require_publishable_content(content: bytes) -> None:
 def scan_worktree() -> list[str]:
     findings: list[str] = []
     for path in tracked_files():
-        text = file_text(path)
-        findings.extend(scan_text(path.relative_to(ROOT).as_posix(), text))
+        findings.extend(scan_bytes(path.relative_to(ROOT).as_posix(), file_bytes(path)))
     return findings
 
 
 def scan_history() -> list[str]:
     findings: list[str] = []
-    for commit, name, text in history_file_texts():
-        findings.extend(scan_text(f"{commit[:12]}:{name}", text))
+    for commit, name, content in history_file_bytes():
+        findings.extend(scan_bytes(f"{commit[:12]}:{name}", content))
     return findings
 
 
@@ -297,7 +310,7 @@ def read_batch_header(stream: IO[bytes]) -> list[bytes]:
     raise RuntimeError("Git object header exceeds the protocol bound")
 
 
-def history_file_texts() -> Iterator[tuple[str, str, str]]:
+def history_file_bytes() -> Iterator[tuple[str, str, bytes]]:
     """Read changed blobs through one NUL-framed Git process, one object at a time."""
     process = subprocess.Popen(
         git_command("cat-file", "--batch", "-Z"),
@@ -320,7 +333,7 @@ def history_file_texts() -> Iterator[tuple[str, str, str]]:
                 data = process.stdout.read(size)
                 if len(data) != size or process.stdout.read(1) != b"\0":
                     raise RuntimeError("Git object body is incomplete")
-                yield commit, name, data.decode("utf-8", errors="replace")
+                yield commit, name, data
     finally:
         process.stdin.close()
         try:

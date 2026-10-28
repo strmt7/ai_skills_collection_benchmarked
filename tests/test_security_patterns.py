@@ -6,6 +6,7 @@ owned temporary Git repositories, including root, separate-ref and merge cases.
 
 from __future__ import annotations
 
+import hashlib
 import io
 import json
 import os
@@ -126,6 +127,61 @@ def test_worktree_scans_binary_carriers(tmp_path, monkeypatch):
     monkeypatch.setattr(check_no_secret_patterns, "ROOT", tmp_path)
     monkeypatch.setattr(check_no_secret_patterns, "tracked_files", lambda: [carrier])
     assert any("carrier.bin:1: google_api_key" in item for item in check_no_secret_patterns.scan_worktree())
+
+
+@pytest.mark.parametrize("encoding", ["utf-16-le", "utf-16-be", "utf-32-le", "utf-32-be"])
+@pytest.mark.parametrize("offset", [0, 1, 2, 3])
+def test_encoded_carriers_are_checked_without_disclosing_values(encoding, offset):
+    marker = "hf" + "_" + "a" * 35
+    carrier = b"\xff" * offset + ("prefix\n" + marker + "\n").encode(encoding) + b"\xff"
+    findings = check_no_secret_patterns.scan_bytes("carrier", carrier)
+    assert any("huggingface_token" in item and encoding in item for item in findings)
+    assert all(marker not in item for item in findings)
+    with pytest.raises(ValueError, match="huggingface_token") as rejected:
+        check_no_secret_patterns.require_publishable_content(carrier)
+    assert marker not in str(rejected.value)
+    assert check_no_secret_patterns.scan_bytes("clean", ("Use <TOKEN>\n").encode(encoding)) == []
+
+
+@pytest.mark.parametrize("encoding", ["utf-16-le", "utf-16-be", "utf-32-le", "utf-32-be"])
+def test_encoded_entropy_assignments_are_detected(encoding):
+    value = hashlib.sha256(b"independent encoded entropy fixture").hexdigest()
+    findings = check_no_secret_patterns.scan_bytes("fixture", ("password=" + value).encode(encoding))
+    assert any("high_entropy_hex_assignment" in item for item in findings)
+    assert all(value not in item for item in findings)
+
+
+def test_encoded_worktree_and_history_are_scanned(tmp_path, monkeypatch):
+    env = {key: value for key, value in os.environ.items() if not key.startswith("GIT_")}
+    env.update(GIT_CONFIG_NOSYSTEM="1", GIT_CONFIG_GLOBAL=os.devnull, GIT_TERMINAL_PROMPT="0")
+    subprocess.run(["git", "init", "--initial-branch=main", str(tmp_path)], check=True, capture_output=True, env=env)
+    marker = "hf" + "_" + "a" * 35
+    for encoding in ("utf-16", "utf-16-be", "utf-32", "utf-32-be"):
+        (tmp_path / f"{encoding}.txt").write_bytes(("line one\n" + marker + "\n").encode(encoding))
+    subprocess.run(["git", "-C", str(tmp_path), "add", "."], check=True, capture_output=True, env=env)
+    subprocess.run(
+        [
+            "git",
+            "-C",
+            str(tmp_path),
+            "-c",
+            "user.name=Fixture",
+            "-c",
+            "user.email=fixture@example.invalid",
+            "commit",
+            "-m",
+            "Add fixture",
+        ],
+        check=True,
+        capture_output=True,
+        env=env,
+    )
+    monkeypatch.setattr(check_no_secret_patterns, "ROOT", tmp_path)
+    for scan in (check_no_secret_patterns.scan_worktree, check_no_secret_patterns.scan_history):
+        findings = scan()
+        for encoding in ("utf-16", "utf-16-be", "utf-32", "utf-32-be"):
+            assert any(f"{encoding}.txt" in item and "huggingface_token" in item for item in findings)
+        assert all(marker not in item for item in findings)
 
 
 @pytest.mark.parametrize("token_in_target", [True, False])

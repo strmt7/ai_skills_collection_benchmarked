@@ -57,6 +57,23 @@ def test_declared_neutralization_and_replacement_bytes_are_preserved(tmp_path):
     assert resource.read_bytes() == original
 
 
+@pytest.mark.parametrize("encoding", ["utf-16-le", "utf-16-be", "utf-32-le", "utf-32-be"])
+def test_encoded_replacement_is_rejected_before_write(tmp_path, encoding):
+    source = tmp_path / "source"
+    source.mkdir()
+    (source / "example.txt").write_bytes(b"approved original\n")
+    destination = tmp_path / "destination"
+    destination.mkdir()
+    target = destination / "example.txt"
+    target.write_bytes(b"retain existing public bytes\n")
+    marker = shaped_value().decode()
+    attempted = ("token=" + marker).encode(encoding)
+    with pytest.raises(ValueError) as rejected:
+        catalog.copy_sanitized_tree(source, destination, replacements={"example.txt": attempted})
+    assert marker not in str(rejected.value)
+    assert target.read_bytes() == b"retain existing public bytes\n"
+
+
 @pytest.mark.parametrize("mode", ["accepted", "binary", "external", "empty"])
 def test_complete_mirror_gate_collects_boundaries_and_binary_findings(tmp_path, mode):
     mirror = tmp_path / "included/skills/example"
