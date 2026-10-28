@@ -3,13 +3,9 @@
 
 This validator performs two layers of checks on a ``artifact.json`` file:
 
-1. A structural pass driven by ``evaluators/benchmark_run_artifact.schema.json``
-   (JSON Schema Draft 2020-12). The implementation is pure Python and only
-   walks the subset of keywords that the schema actually uses:
-   ``type``, ``enum``, ``pattern``, ``required``, ``properties``,
-   ``additionalProperties``, ``items``, ``minItems``, and ``minLength``. Each error carries
-   a JSON-Pointer style path (e.g. ``/evidence/artifact_paths/0``) so that
-   callers can pinpoint which field is broken.
+1. A structural pass using the Draft 2020-12 schema in
+   ``evaluators/benchmark_run_artifact.schema.json``. Validation reports
+   JSON-Pointer paths and never retrieves external schema references.
 
 2. A domain pass that enforces catalog/scenario cross-references, independence
    invariants, transcript/evidence file existence, and visual/context-memory
@@ -35,13 +31,18 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import re
 import sys
 from collections.abc import Iterable
 from pathlib import Path
-from typing import Any
+from typing import Any, NoReturn
 
 from _source_history import resolve_version
+from jsonschema import Draft202012Validator
+from jsonschema.exceptions import SchemaError
+from referencing import Registry
+from referencing.exceptions import Unresolvable
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_PATH = ROOT / "evaluators" / "benchmark_run_artifact.schema.json"
@@ -77,8 +78,33 @@ REQUIRED_TOP_LEVEL = [
 # ---------------------------------------------------------------------------
 
 
+def _unique_object(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
+    result: dict[str, Any] = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError("duplicate JSON object key")
+        result[key] = value
+    return result
+
+
+def _finite_float(value: str) -> float:
+    number = float(value)
+    if not math.isfinite(number):
+        raise ValueError("non-finite JSON number")
+    return number
+
+
+def _reject_constant(value: str) -> NoReturn:
+    raise ValueError("non-finite JSON number")
+
+
 def load_json(path: Path) -> Any:
-    return json.loads(path.read_text(encoding="utf-8"))
+    return json.loads(
+        path.read_text(encoding="utf-8"),
+        object_pairs_hook=_unique_object,
+        parse_float=_finite_float,
+        parse_constant=_reject_constant,
+    )
 
 
 def _load_schema() -> dict[str, Any] | None:
@@ -121,85 +147,30 @@ def _pointer(parts: Iterable[str | int]) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Schema walker (Draft 2020-12 subset)
+# Schema validation (Draft 2020-12, offline references)
 # ---------------------------------------------------------------------------
-
-
-_JSON_TYPE_MAP: dict[str, tuple[type, ...] | type] = {
-    "object": dict,
-    "array": list,
-    "string": str,
-    "integer": int,
-    "number": (int, float),
-    "boolean": bool,
-    "null": type(None),
-}
-
-
-def _matches_type(value: Any, declared: Any) -> bool:
-    if declared is None:
-        return True
-    if isinstance(declared, list):
-        return any(_matches_type(value, option) for option in declared)
-    expected = _JSON_TYPE_MAP.get(declared)
-    if expected is None:
-        return True
-    # In JSON, booleans are not integers/numbers; Python disagrees.
-    if declared in {"integer", "number"} and isinstance(value, bool):
-        return False
-    if declared == "integer" and isinstance(value, float):
-        return value.is_integer()
-    return isinstance(value, expected)
-
-
-def _schema_walk(
-    schema: dict[str, Any],
-    instance: Any,
-    path: list[str | int],
-    errors: list[str],
-) -> None:
-    declared_type = schema.get("type")
-    if declared_type is not None and not _matches_type(instance, declared_type):
-        errors.append(f"{_pointer(path) or '/'}: expected type {declared_type!r}, got {type(instance).__name__}")
-        return
-
-    if "enum" in schema and instance not in schema["enum"]:
-        errors.append(f"{_pointer(path) or '/'}: value {instance!r} not in enum {schema['enum']}")
-
-    if "pattern" in schema and isinstance(instance, str) and not re.search(schema["pattern"], instance):
-        errors.append(f"{_pointer(path) or '/'}: value does not match pattern {schema['pattern']!r}")
-
-    if isinstance(instance, str) and len(instance) < schema.get("minLength", 0):
-        errors.append(f"{_pointer(path) or '/'}: expected at least {schema['minLength']} characters")
-
-    if isinstance(instance, dict):
-        for required in schema.get("required", []) or []:
-            if required not in instance:
-                errors.append(f"{_pointer(path + [required])}: missing required field")
-        for key, sub_schema in (schema.get("properties") or {}).items():
-            if key in instance and isinstance(sub_schema, dict):
-                _schema_walk(sub_schema, instance[key], path + [key], errors)
-        if schema.get("additionalProperties") is False:
-            for key in instance.keys() - (schema.get("properties") or {}).keys():
-                errors.append(f"{_pointer(path + [key])}: unexpected field")
-
-    if isinstance(instance, list):
-        min_items = schema.get("minItems")
-        if isinstance(min_items, int) and len(instance) < min_items:
-            errors.append(f"{_pointer(path) or '/'}: expected at least {min_items} items, got {len(instance)}")
-        item_schema = schema.get("items")
-        if isinstance(item_schema, dict):
-            for index, element in enumerate(instance):
-                _schema_walk(item_schema, element, path + [index], errors)
 
 
 def _schema_errors(artifact: Any) -> list[str]:
     schema = _load_schema()
     if schema is None:
         return ["cannot load benchmark artifact schema; structural validation is unavailable"]
-    errors: list[str] = []
-    _schema_walk(schema, artifact, [], errors)
-    return errors
+    if schema.get("$schema") != "https://json-schema.org/draft/2020-12/schema":
+        return ["unsupported benchmark artifact schema dialect"]
+    try:
+        Draft202012Validator.check_schema(schema)
+        validator = Draft202012Validator(schema, registry=Registry())
+        errors = set()
+        for error in validator.iter_errors(artifact):
+            if error.validator == "required" and isinstance(error.instance, dict):
+                for key in error.validator_value:
+                    if key not in error.instance:
+                        errors.add(f"{_pointer([*error.absolute_path, key])}: missing required field")
+            else:
+                errors.add(f"{_pointer(error.absolute_path) or '/'}: {error.message}")
+        return sorted(errors)
+    except (SchemaError, Unresolvable, TypeError, ValueError, RecursionError) as exc:
+        return [f"benchmark artifact schema validation unavailable: {type(exc).__name__}"]
 
 
 # ---------------------------------------------------------------------------

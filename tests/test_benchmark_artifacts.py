@@ -461,6 +461,126 @@ def test_artifact_missing_schema_fails_closed(tmp_path, monkeypatch):
     assert any("schema" in error for error in result["errors"])
 
 
+@pytest.mark.parametrize(
+    "constraint,instance,valid",
+    [
+        ({"type": "string", "maxLength": 3}, "abcd", False),
+        ({"type": "string", "maxLength": 3}, "abc", True),
+        ({"enum": [1]}, True, False),
+        ({"if": {"required": ["x"]}, "then": {"required": ["y"]}}, {"x": 1}, False),
+        ({"if": {"required": ["x"]}, "then": {"required": ["y"]}}, {"x": 1, "y": 2}, True),
+        ({"$defs": {"value": {"maxLength": 1}}, "$ref": "#/$defs/value"}, "ab", False),
+    ],
+)
+def test_schema_validation_uses_draft_2020_12(tmp_path, monkeypatch, constraint, instance, valid):
+    schema = tmp_path / "schema.json"
+    schema.write_text(
+        json.dumps({"$schema": "https://json-schema.org/draft/2020-12/schema", **constraint}), encoding="utf-8"
+    )
+    monkeypatch.setattr(check_benchmark_artifact, "SCHEMA_PATH", schema)
+    assert bool(check_benchmark_artifact._schema_errors(instance)) is not valid
+
+
+@pytest.mark.parametrize("constraint", [{"type": "badtype"}, {"$schema": "http://json-schema.org/draft-07/schema#"}])
+def test_invalid_or_wrong_dialect_schema_fails_closed(tmp_path, monkeypatch, constraint):
+    schema = tmp_path / "schema.json"
+    schema.write_text(
+        json.dumps({"$schema": "https://json-schema.org/draft/2020-12/schema", **constraint}), encoding="utf-8"
+    )
+    monkeypatch.setattr(check_benchmark_artifact, "SCHEMA_PATH", schema)
+    assert check_benchmark_artifact._schema_errors({})
+
+
+def test_schema_does_not_fetch_external_references(tmp_path, monkeypatch):
+    import socket
+
+    schema = tmp_path / "schema.json"
+    schema.write_text(
+        json.dumps(
+            {"$schema": "https://json-schema.org/draft/2020-12/schema", "$ref": "https://invalid.example/schema"}
+        ),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(check_benchmark_artifact, "SCHEMA_PATH", schema)
+
+    def no_network(*args, **kwargs):
+        raise AssertionError("schema validation must not use the network")
+
+    monkeypatch.setattr(socket, "socket", no_network)
+    assert check_benchmark_artifact._schema_errors({})
+
+
+def test_schema_errors_use_escaped_json_pointers(tmp_path, monkeypatch):
+    schema = tmp_path / "schema.json"
+    schema.write_text(
+        json.dumps(
+            {
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "type": "object",
+                "properties": {"a/b": {"type": "string", "maxLength": 1}},
+            }
+        ),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(check_benchmark_artifact, "SCHEMA_PATH", schema)
+    assert check_benchmark_artifact._schema_errors({"a/b": "too long"})[0].startswith("/a~1b:")
+
+
+def test_required_errors_identify_each_missing_field(tmp_path, monkeypatch):
+    schema = tmp_path / "schema.json"
+    schema.write_text(
+        json.dumps(
+            {
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "type": "object",
+                "properties": {"a/b": {"type": "object", "required": ["x", "y"]}},
+            }
+        ),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(check_benchmark_artifact, "SCHEMA_PATH", schema)
+    assert check_benchmark_artifact._schema_errors({"a/b": {}}) == [
+        "/a~1b/x: missing required field",
+        "/a~1b/y: missing required field",
+    ]
+
+
+def test_artifact_validation_enforces_new_schema_constraints(tmp_path, monkeypatch):
+    artifact = _complete_provenance_fixture(tmp_path)
+    path = tmp_path / "artifact.json"
+    path.write_text(json.dumps(artifact), encoding="utf-8")
+    schema = json.loads(check_benchmark_artifact.SCHEMA_PATH.read_text(encoding="utf-8"))
+    schema["properties"]["skill_id"]["maxLength"] = 1
+    modified = tmp_path / "schema.json"
+    modified.write_text(json.dumps(schema), encoding="utf-8")
+    monkeypatch.setattr(check_benchmark_artifact, "SCHEMA_PATH", modified)
+    result = check_benchmark_artifact.validate_artifact(path)
+    assert result["verdict"] != "artifact_complete"
+    assert any(error.startswith("/skill_id:") for error in result["errors"])
+
+
+@pytest.mark.parametrize("number", ["NaN", "Infinity", "-Infinity", "1e999"])
+def test_artifact_rejects_nonfinite_numbers(tmp_path, number):
+    artifact = _complete_provenance_fixture(tmp_path)
+    artifact["metrics"]["custom_score"] = "number-token"
+    data = json.dumps(artifact).replace('"number-token"', number)
+    path = tmp_path / "artifact.json"
+    path.write_text(data, encoding="utf-8")
+    result = check_benchmark_artifact.validate_artifact(path)
+    assert result["verdict"] == "artifact_invalid"
+    assert any("non-finite" in error for error in result["errors"])
+
+
+def test_artifact_rejects_duplicate_object_keys(tmp_path):
+    artifact = _complete_provenance_fixture(tmp_path)
+    data = json.dumps(artifact)
+    path = tmp_path / "artifact.json"
+    path.write_text(data[:-1] + ', "artifact_version": "1.0"}', encoding="utf-8")
+    result = check_benchmark_artifact.validate_artifact(path)
+    assert result["verdict"] == "artifact_invalid"
+    assert any("duplicate" in error for error in result["errors"])
+
+
 def test_benchmark_artifact_validate_all_passes_on_recorded_artifacts():
     """All real artifacts under artifacts/benchmark-runs must validate."""
     artifact_root = ROOT / "artifacts" / "benchmark-runs"
