@@ -252,6 +252,29 @@ def test_redirects_and_oversized_responses_are_rejected(tmp_path, monkeypatch):
         inventory.transport("test-token", {}, tmp_path / "response.json")
 
 
+def test_slow_response_stops_at_deadline_and_retains_partial_bytes(tmp_path, monkeypatch):
+    calls = []
+
+    class Response(io.BytesIO):
+        status = 200
+
+        def read1(self, size: int | None = -1, /) -> bytes:
+            return b"partial"
+
+    class Opener:
+        def open(self, request, timeout):
+            calls.append(request.full_url)
+            return Response()
+
+    times = iter([0.0, 0.0, 91.0])
+    monkeypatch.setattr(inventory.time, "monotonic", lambda: next(times, 91.0))
+    monkeypatch.setattr(inventory.urllib.request, "build_opener", lambda *args: Opener())
+    destination = tmp_path / "response.json"
+    with pytest.raises(inventory.InventoryError, match="within its limits"):
+        inventory.transport("test-token", {}, destination)
+    assert destination.read_bytes() == b"partial" and calls == [inventory.API]
+
+
 def test_output_inside_publishable_repository_tree_is_refused(tmp_path, monkeypatch):
     monkeypatch.setattr(inventory, "ROOT", tmp_path)
     with pytest.raises(inventory.InventoryError, match="outside"):

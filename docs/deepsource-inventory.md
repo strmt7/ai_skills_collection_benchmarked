@@ -31,6 +31,7 @@ DeepSource does not guarantee snapshot isolation, so these checks cannot prove
 that every concurrent change was detected. A complete inventory is not a clean
 bill of health: each finding still needs review and remediation.
 
-The collector makes no automatic retries and refuses redirects. If the provider
+The collector applies socket and response-read limits, makes no automatic retries
+and refuses redirects. If the provider
 returns an HTTP error or blocks a request, preserve the response and follow the
 provider's access instructions instead of changing clients to evade the refusal.

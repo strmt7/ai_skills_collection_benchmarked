@@ -9,6 +9,7 @@ import math
 import os
 import re
 import sys
+import time
 import tomllib
 import urllib.error
 import urllib.request
@@ -108,6 +109,8 @@ class _NoRedirect(urllib.request.HTTPRedirectHandler):
 
 def transport(token: str, variables: dict[str, Any], destination: Path) -> bytes:
     """Make one bounded request; retain failures and never retry or follow redirects."""
+    if not isinstance(token, str) or not token or any(char.isspace() for char in token):
+        raise InventoryError("A valid DeepSource credential is required")
     request = urllib.request.Request(
         API,
         data=json.dumps({"query": QUERY, "variables": variables}).encode(),
@@ -119,16 +122,41 @@ def transport(token: str, variables: dict[str, Any], destination: Path) -> bytes
         },
     )
     opener = urllib.request.build_opener(_NoRedirect())
+    deadline = time.monotonic() + 90
     try:
         response = opener.open(request, timeout=45)
     except urllib.error.HTTPError as error:
         response = error
-    with response:
-        raw, status = response.read(LIMIT + 1), response.status
+    chunks: list[bytes] = []
+    size = 0
+    failure = False
+    status = None
+    try:
+        with response:
+            status = response.status
+            reader = getattr(response, "read1", None)
+            if not callable(reader):
+                raise InventoryError("Response does not support bounded reads")
+            while size <= LIMIT:
+                if time.monotonic() >= deadline:
+                    raise InventoryError("Response exceeded its time limit")
+                requested = min(65536, LIMIT + 1 - size)
+                chunk = reader(requested)
+                if not isinstance(chunk, bytes) or len(chunk) > requested:
+                    raise InventoryError("Response yielded invalid bytes")
+                if not chunk:
+                    break
+                chunks.append(chunk)
+                size += len(chunk)
+    except Exception:
+        failure = True
+    raw = b"".join(chunks)
     retained = raw.replace(token.encode(), b"[redacted]")
     destination.write_bytes(retained)
     if retained != raw:
         raise InventoryError("Provider response contained the credential and was redacted")
+    if failure:
+        raise InventoryError("DeepSource response could not be read within its limits; inspect retained bytes")
     if status != 200:
         raise InventoryError(f"DeepSource returned HTTP {status}; inspect the retained response")
     if len(raw) > LIMIT:
