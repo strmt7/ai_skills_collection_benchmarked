@@ -8,6 +8,7 @@ import gzip
 import hashlib
 import json
 import re
+from datetime import datetime
 from pathlib import Path, PurePosixPath
 from typing import Any
 
@@ -132,6 +133,10 @@ def compare(
     new_commit: dict[str, Any],
     new_tree: dict[str, Any],
     input_sha256: dict[str, str],
+    *,
+    relocation: tuple[str, str] | None = None,
+    release: dict[str, Any] | None = None,
+    tag: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     if (
         not isinstance(repo, str)
@@ -153,9 +158,45 @@ def compare(
     source = selected[0]
     old_id, old_root = commit_tree(old_commit)
     new_id, new_root = commit_tree(new_commit)
+    release_evidence = None
+    if release is not None or tag is not None:
+        if not isinstance(release, dict) or not isinstance(tag, dict):
+            raise ValueError("release and tag evidence must be supplied together")
+        name, published, target = release.get("tag_name"), release.get("published_at"), tag.get("object")
+        if (
+            not isinstance(name, str)
+            or not name
+            or any(character in name for character in "\r\n\0")
+            or not isinstance(published, str)
+            or not published
+            or release.get("draft") is not False
+            or release.get("prerelease") is not False
+            or tag.get("ref") != "refs/tags/" + name
+            or not isinstance(target, dict)
+            or target.get("type") != "commit"
+            or target.get("sha") != new_id
+        ):
+            raise ValueError("stable release tag does not identify the candidate commit")
+        try:
+            timestamp = datetime.fromisoformat(published)
+        except ValueError as exc:
+            raise ValueError("release publication timestamp is invalid") from exc
+        if timestamp.utcoffset() is None:
+            raise ValueError("release publication timestamp must include a timezone")
+        release_evidence = {"tag_name": name, "published_at": published}
     if source.get("commit_sha") != old_id:
         raise ValueError("Old commit does not match the selected source lock")
     old, new = verify_tree(old_tree, old_root), verify_tree(new_tree, new_root)
+    if relocation is not None:
+        if not isinstance(relocation, tuple) or len(relocation) != 2:
+            raise ValueError("invalid relocation mapping")
+        old_prefix, new_prefix = (git_path(prefix) for prefix in relocation)
+        if (
+            old_prefix == new_prefix
+            or old.get(old_prefix, {}).get("type") != "tree"
+            or new.get(new_prefix, {}).get("type") != "tree"
+        ):
+            raise ValueError("relocation requires distinct existing source tree prefixes")
     skills = source.get("skills")
     if (
         not isinstance(skills, list)
@@ -174,12 +215,20 @@ def compare(
             raise ValueError("Locked skill identities and entrypoints must be unique")
         seen_ids.add(skill_id)
         seen_paths.add(path)
+        if relocation is not None:
+            if not path.startswith(old_prefix + "/"):
+                raise ValueError("relocation must cover every locked entrypoint")
+            target_path = git_path(new_prefix + path[len(old_prefix) :])
+        else:
+            target_path = path
         if path not in old or old[path]["type"] != "blob" or old[path]["mode"] not in {"100644", "100755"}:
             raise ValueError(f"Locked entrypoint is absent from its source tree: {path}")
         parent = PurePosixPath(path).parent
         prefix = "" if parent == PurePosixPath(".") else str(parent) + "/"
+        target_parent = PurePosixPath(target_path).parent
+        target_prefix = "" if target_parent == PurePosixPath(".") else str(target_parent) + "/"
 
-        before, after = resources(old, prefix), resources(new, prefix)
+        before, after = resources(old, prefix), resources(new, target_prefix)
         names = sorted(before.keys() | after.keys())
         changes = [
             {"path": name, "before": before.get(name), "after": after.get(name)}
@@ -192,15 +241,16 @@ def compare(
                 "source_path": path,
                 "old_resource_count": len(before),
                 "new_resource_count": len(after),
-                "new_entrypoint_present": path in new
-                and new[path]["type"] == "blob"
-                and new[path]["mode"] in {"100644", "100755"},
+                "new_entrypoint_present": target_path in new
+                and new[target_path]["type"] == "blob"
+                and new[target_path]["mode"] in {"100644", "100755"},
                 "changed": bool(changes),
                 "changes": changes,
+                **({"target_source_path": target_path} if relocation is not None else {}),
             }
         )
     records.sort(key=lambda item: item["skill_id"])
-    return {
+    report = {
         "schema_version": 1,
         "measurement_kind": "raw_upstream_git_tree_comparison",
         "repository": repo,
@@ -220,12 +270,21 @@ def compare(
         ],
         "skills": records,
     }
+    if relocation is not None:
+        report["relocation"] = {"old_prefix": old_prefix, "new_prefix": new_prefix}
+        report["limitations"].append("Relocation is an explicit candidate path mapping, not proof of skill identity.")
+    if release_evidence is not None:
+        report["release_evidence"] = release_evidence
+    return report
 
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--lock", type=Path, required=True)
     parser.add_argument("--repo", required=True)
+    parser.add_argument("--relocate", nargs=2, metavar=("OLD_PREFIX", "NEW_PREFIX"))
+    parser.add_argument("--release", type=Path)
+    parser.add_argument("--tag", type=Path)
     for name in ("old-commit", "old-tree", "new-commit", "new-tree"):
         parser.add_argument("--" + name, type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
@@ -237,6 +296,10 @@ def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
         paths = {name: getattr(args, name) for name in ("lock", "old_commit", "old_tree", "new_commit", "new_tree")}
+        if (args.release is None) != (args.tag is None):
+            raise ValueError("release and tag evidence must be supplied together")
+        if args.release is not None:
+            paths.update(release=args.release, tag=args.tag)
         if any(args.output.resolve() == path.resolve() for path in paths.values()) or args.output.is_symlink():
             raise ValueError("Output must not replace an input or a symbolic link")
         inputs = {name: read_object(path) for name, path in paths.items()}
@@ -251,6 +314,9 @@ def main(argv: list[str] | None = None) -> int:
                 **{name: value[1] for name, value in inputs.items()},
                 "tool": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
             },
+            relocation=tuple(args.relocate) if args.relocate is not None else None,
+            release=inputs["release"][0] if "release" in inputs else None,
+            tag=inputs["tag"][0] if "tag" in inputs else None,
         )
         expected = (json.dumps(report, indent=2, sort_keys=True, ensure_ascii=False) + "\n").encode("utf-8")
         if args.check:

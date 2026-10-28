@@ -94,6 +94,19 @@ jobs:
           --new-commit artifacts/research/2026-10-28/ecc-source-snapshots/new-commit.json
           --new-tree artifacts/research/2026-10-28/ecc-source-snapshots/new-tree.json.gz
           --output artifacts/research/2026-10-28/ecc-upstream-tree-delta.json --check
+      - name: Verify the recorded scientific skills relocation comparison
+        run: >-
+          python artifacts/research/2026-10-28/scientific-source-snapshots/generator.py.txt
+          --repo K-Dense-AI/scientific-agent-skills
+          --lock artifacts/research/2026-10-28/scientific-source-snapshots/source-lock.json.gz
+          --old-commit artifacts/research/2026-10-28/scientific-source-snapshots/old-commit.json
+          --old-tree artifacts/research/2026-10-28/scientific-source-snapshots/old-tree.json.gz
+          --new-commit artifacts/research/2026-10-28/scientific-source-snapshots/new-commit.json
+          --new-tree artifacts/research/2026-10-28/scientific-source-snapshots/new-tree.json.gz
+          --relocate scientific-skills skills
+          --release artifacts/research/2026-10-28/scientific-source-snapshots/latest-release.json
+          --tag artifacts/research/2026-10-28/scientific-source-snapshots/new-tag.json
+          --output artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json --check
       - name: Verify native workflow evaluator controls and retained misses
         run: python tools/report_workflow_evaluator_controls.py --check --json
       - name: Validate improved overlays and original provenance

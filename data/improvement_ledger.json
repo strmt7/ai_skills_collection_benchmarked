@@ -4799,8 +4799,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/adaptyv",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -4821,8 +4827,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/aeon",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -4843,8 +4855,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/anndata",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -4865,8 +4883,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/arboreto",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -4887,8 +4911,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/astropy",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -4909,8 +4939,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/benchling-integration",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -4931,8 +4967,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/bgpt-paper-search",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -4953,8 +4995,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/biopython",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -4975,8 +5023,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/bioservices",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -4997,8 +5051,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/cellxgene-census",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5019,8 +5079,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/cirq",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5041,8 +5107,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/citation-management",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5063,8 +5135,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/clinical-decision-support",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5085,8 +5163,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/clinical-reports",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5107,8 +5191,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/cobrapy",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5129,8 +5219,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/consciousness-council",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5151,8 +5247,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/dask",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5173,8 +5275,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/database-lookup",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5195,8 +5303,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/datamol",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5217,8 +5331,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/deepchem",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5239,8 +5359,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/deeptools",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5261,8 +5387,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/depmap",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5283,8 +5415,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/dhdna-profiler",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5305,8 +5443,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/diffdock",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5327,8 +5471,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/dnanexus-integration",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5349,8 +5499,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/docx-scientific-agent-skills",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5371,8 +5527,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/esm",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5393,8 +5555,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/etetoolkit",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5415,8 +5583,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/exploratory-data-analysis",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5437,8 +5611,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/flowio",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5459,8 +5639,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/fluidsim",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5481,8 +5667,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/generate-image",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5503,8 +5695,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/geniml",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5525,8 +5723,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/geomaster",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5547,8 +5751,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/geopandas",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5569,8 +5779,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/get-available-resources",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5591,8 +5807,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/gget",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5613,8 +5835,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/ginkgo-cloud-lab",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5644,6 +5872,11 @@
           {
             "path": "artifacts/research/2026-10-26/kdense-restricted-and-undeclared-review.json",
             "sha256": "b91571cf19954030081a1d96830b226fd9e4340b4bb298abe2df77c629d2ebe2"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
           }
         ],
         "status": "in_progress"
@@ -5667,8 +5900,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/gtars",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5689,8 +5928,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/histolab",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5711,8 +5956,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/hypogenic",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5733,8 +5984,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/hypothesis-generation",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5755,8 +6012,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/imaging-data-commons",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5786,6 +6049,11 @@
           {
             "path": "artifacts/research/2026-10-26/kdense-restricted-and-undeclared-review.json",
             "sha256": "b91571cf19954030081a1d96830b226fd9e4340b4bb298abe2df77c629d2ebe2"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
           }
         ],
         "status": "in_progress"
@@ -5809,8 +6077,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/iso-13485-certification",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5831,8 +6105,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/labarchive-integration",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5853,8 +6133,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/lamindb",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5875,8 +6161,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/latchbio-integration",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5906,18 +6198,23 @@
           {
             "path": "artifacts/research/2026-10-26/kdense-restricted-and-undeclared-review.json",
             "sha256": "b91571cf19954030081a1d96830b226fd9e4340b4bb298abe2df77c629d2ebe2"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
           }
         ],
         "status": "in_progress"
       },
       "revision": {
-        "status": "in_progress",
         "evidence": [
           {
             "path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/latex-posters/repair.json",
             "sha256": "c5b0ff47432d9efac15fed6e1d74f0cd5cb3b0f044c55f66d1dee7486cf4424e"
           }
-        ]
+        ],
+        "status": "in_progress"
       },
       "source_repo": "K-Dense-AI/scientific-agent-skills",
       "source_signature": {
@@ -5934,8 +6231,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/literature-review",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5956,8 +6259,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/markdown-mermaid-writing",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -5978,8 +6287,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/market-research-reports",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6000,8 +6315,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/markitdown",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6022,8 +6343,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/matchms",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6044,8 +6371,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/matlab",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6066,8 +6399,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/matplotlib",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6088,8 +6427,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/medchem",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6110,8 +6455,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/modal",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6132,8 +6483,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/molecular-dynamics",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6154,8 +6511,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/molfeat",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6176,8 +6539,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/networkx",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6198,8 +6567,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/neurokit2",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6220,8 +6595,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/neuropixels-analysis",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6242,8 +6623,14 @@
       },
       "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/latest-release-community/omero-integration",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6264,8 +6651,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/open-notebook",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6286,8 +6679,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/opentrons-integration",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6308,8 +6707,14 @@
       },
       "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/latest-release-community/optimize-for-gpu",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6330,8 +6735,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/paper-lookup",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6352,8 +6763,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/paperzilla",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6374,8 +6791,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/parallel-web",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6396,8 +6819,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/pathml",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6418,8 +6847,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/pdf-scientific-agent-skills",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6440,8 +6875,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/peer-review",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6462,8 +6903,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/pennylane",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6493,6 +6940,11 @@
           {
             "path": "artifacts/research/2026-10-26/kdense-restricted-and-undeclared-review.json",
             "sha256": "b91571cf19954030081a1d96830b226fd9e4340b4bb298abe2df77c629d2ebe2"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
           }
         ],
         "status": "in_progress"
@@ -6516,8 +6968,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/polars-bio",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6538,8 +6996,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/polars",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6560,8 +7024,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/pptx-posters",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6582,8 +7052,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/pptx-scientific-agent-skills",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6613,6 +7089,11 @@
           {
             "path": "artifacts/research/2026-10-26/kdense-restricted-and-undeclared-review.json",
             "sha256": "b91571cf19954030081a1d96830b226fd9e4340b4bb298abe2df77c629d2ebe2"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
           }
         ],
         "status": "in_progress"
@@ -6636,8 +7117,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/protocolsio-integration",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6658,8 +7145,14 @@
       },
       "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/latest-release-community/pufferlib",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6680,8 +7173,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/pydeseq2",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6702,8 +7201,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/pydicom",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6733,6 +7238,11 @@
           {
             "path": "artifacts/research/2026-10-26/kdense-restricted-and-undeclared-review.json",
             "sha256": "b91571cf19954030081a1d96830b226fd9e4340b4bb298abe2df77c629d2ebe2"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
           }
         ],
         "status": "in_progress"
@@ -6756,8 +7266,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/pylabrobot",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6778,8 +7294,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/pymatgen",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6800,8 +7322,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/pymc",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6822,8 +7350,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/pymoo",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6844,8 +7378,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/pyopenms",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6866,8 +7406,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/pysam",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6888,8 +7434,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/pytdc",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6910,8 +7462,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/pytorch-lightning",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6932,8 +7490,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/pyzotero",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6954,8 +7518,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/qiskit",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6976,8 +7546,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/qutip",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -6998,8 +7574,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/rdkit",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7020,8 +7602,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/research-grants",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7042,8 +7630,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/research-lookup",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7073,6 +7667,11 @@
           {
             "path": "artifacts/research/2026-10-26/kdense-restricted-and-undeclared-review.json",
             "sha256": "b91571cf19954030081a1d96830b226fd9e4340b4bb298abe2df77c629d2ebe2"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
           }
         ],
         "status": "in_progress"
@@ -7096,8 +7695,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/scanpy",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7118,8 +7723,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/scholar-evaluation",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7140,8 +7751,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/scientific-brainstorming",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7162,8 +7779,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/scientific-critical-thinking",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7184,8 +7807,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/scientific-schematics",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7206,8 +7835,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/scientific-slides",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7228,8 +7863,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/scientific-visualization",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7250,8 +7891,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/scientific-writing",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7272,8 +7919,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/scikit-bio",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7294,8 +7947,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/scikit-learn",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7316,8 +7975,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/scikit-survival",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7338,8 +8003,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/scvelo",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7360,8 +8031,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/scvi-tools",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7382,8 +8059,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/seaborn",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7404,8 +8087,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/shap",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7426,8 +8115,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/simpy",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7448,8 +8143,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/stable-baselines3",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7470,8 +8171,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/statistical-analysis",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7492,8 +8199,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/statsmodels",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7514,8 +8227,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/sympy",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7536,8 +8255,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/tiledbvcf",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7558,8 +8283,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/timesfm-forecasting",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7580,8 +8311,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/torch-geometric",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7602,8 +8339,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/torchdrug",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7624,8 +8367,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/transformers",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7646,8 +8395,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/treatment-plans",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7668,8 +8423,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/umap-learn",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7690,8 +8451,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/usfiscaldata",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7712,8 +8479,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/vaex",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7734,8 +8507,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/venue-templates",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7765,6 +8544,11 @@
           {
             "path": "artifacts/research/2026-10-26/kdense-restricted-and-undeclared-review.json",
             "sha256": "b91571cf19954030081a1d96830b226fd9e4340b4bb298abe2df77c629d2ebe2"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
           }
         ],
         "status": "in_progress"
@@ -7788,8 +8572,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/xlsx-scientific-agent-skills",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -7810,8 +8600,14 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/zarr-python",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+            "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
+            "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],

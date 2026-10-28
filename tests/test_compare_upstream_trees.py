@@ -5,6 +5,7 @@ import gzip
 import hashlib
 import json
 import os
+import shutil
 import subprocess
 from pathlib import Path
 
@@ -64,6 +65,8 @@ def git_history(tmp_path: Path):
     put("skills/alpha/new.txt", "new reference\n")
     (repo / "skills/alpha/reference.txt").unlink()
     (repo / "skills/beta/SKILL.md").unlink()
+    shutil.copytree(repo / "skills/alpha", repo / "relocated/alpha")
+    shutil.copytree(repo / "skills/gamma", repo / "relocated/gamma")
     new = commit("new")
 
     def objects(revision: str):
@@ -108,6 +111,75 @@ def test_repository_root_skill_includes_its_raw_descendant_resources(git_history
     report = comparison.compare(lock, "example/skills", old_commit, old_tree, new_commit, new_tree, {})
     assert report["skills"][0]["changed"] is True
     assert report["skills"][0]["old_resource_count"] > 1
+
+
+def test_explicit_relocation_compares_corresponding_resource_trees(git_history):
+    lock, old_commit, old_tree, new_commit, new_tree = git_history
+    report = comparison.compare(
+        lock, "example/skills", old_commit, old_tree, new_commit, new_tree, {}, relocation=("skills", "relocated")
+    )
+    assert report["relocation"] == {"old_prefix": "skills", "new_prefix": "relocated"}
+    assert (report["skill_count"], report["changed_skills"], report["missing_new_entrypoints"]) == (3, 2, 1)
+    alpha, beta, gamma = report["skills"]
+    assert alpha["target_source_path"] == "relocated/alpha/SKILL.md"
+    assert [change["path"] for change in alpha["changes"]] == ["SKILL.md", "new.txt", "reference.txt"]
+    assert beta["new_entrypoint_present"] is False and gamma["changed"] is False
+
+
+@pytest.mark.parametrize("relocation", [("missing", "relocated"), ("skills", "missing"), ("skills", "skills")])
+def test_relocation_must_bind_distinct_existing_tree_prefixes(git_history, relocation):
+    lock, old_commit, old_tree, new_commit, new_tree = git_history
+    with pytest.raises(ValueError, match="relocation"):
+        comparison.compare(
+            lock, "example/skills", old_commit, old_tree, new_commit, new_tree, {}, relocation=relocation
+        )
+
+
+def test_relocation_must_cover_every_locked_entrypoint(git_history):
+    lock, old_commit, old_tree, new_commit, new_tree = git_history
+    with pytest.raises(ValueError, match="relocation"):
+        comparison.compare(
+            lock,
+            "example/skills",
+            old_commit,
+            old_tree,
+            new_commit,
+            new_tree,
+            {},
+            relocation=("skills/alpha", "relocated/alpha"),
+        )
+
+
+def test_release_tag_must_identify_the_verified_candidate_commit(git_history):
+    lock, old_commit, old_tree, new_commit, new_tree = git_history
+    release = {"tag_name": "v2.0.0", "draft": False, "prerelease": False, "published_at": "2026-10-01T00:00:00Z"}
+    tag = {"ref": "refs/tags/v2.0.0", "object": {"type": "commit", "sha": new_commit["sha"]}}
+    report = comparison.compare(
+        lock, "example/skills", old_commit, old_tree, new_commit, new_tree, {}, release=release, tag=tag
+    )
+    assert report["release_evidence"] == {"tag_name": "v2.0.0", "published_at": release["published_at"]}
+    for changed_release, changed_tag in (
+        ({**release, "draft": True}, tag),
+        ({**release, "prerelease": True}, tag),
+        ({**release, "published_at": "not-a-date"}, tag),
+        ({**release, "published_at": "2026-10-01T00:00:00"}, tag),
+        (release, {**tag, "ref": "refs/tags/other"}),
+        (release, {**tag, "object": {"type": "commit", "sha": "0" * 40}}),
+        (release, {**tag, "object": {"type": "tag", "sha": new_commit["sha"]}}),
+        (release, None),
+    ):
+        with pytest.raises(ValueError, match="release|tag"):
+            comparison.compare(
+                lock,
+                "example/skills",
+                old_commit,
+                old_tree,
+                new_commit,
+                new_tree,
+                {},
+                release=changed_release,
+                tag=changed_tag,
+            )
 
 
 @pytest.mark.parametrize("damage", ["truncated", "root", "blob", "duplicate", "missing_parent", "mode"])
@@ -198,6 +270,27 @@ def test_cli_is_deterministic_and_never_overwrites_inputs(git_history, tmp_path,
     assert comparison.main(argv) == 0
     assert json.loads(capsys.readouterr().out)["missing_entrypoints"] == 1
     assert comparison.main([*argv, "--check"]) == 0
+    relocated = tmp_path / "relocated.json"
+    mapped_argv = [*argv, "--output", str(relocated), "--relocate", "skills", "relocated"]
+    assert comparison.main(mapped_argv) == 0
+    assert json.loads(relocated.read_text(encoding="utf-8"))["relocation"]["new_prefix"] == "relocated"
+    assert comparison.main([*mapped_argv, "--check"]) == 0
+    release_path = tmp_path / "release.json"
+    tag_path = tmp_path / "tag.json"
+    release_path.write_text(
+        json.dumps({"tag_name": "v2", "draft": False, "prerelease": False, "published_at": "2026-10-01T00:00:00Z"}),
+        encoding="utf-8",
+    )
+    tag_path.write_text(
+        json.dumps({"ref": "refs/tags/v2", "object": {"type": "commit", "sha": git_history[3]["sha"]}}),
+        encoding="utf-8",
+    )
+    released = tmp_path / "released.json"
+    release_argv = [*mapped_argv, "--output", str(released), "--release", str(release_path), "--tag", str(tag_path)]
+    assert comparison.main(release_argv) == 0
+    assert comparison.main([*release_argv, "--check"]) == 0
+    tag_path.write_text("{}", encoding="utf-8")
+    assert comparison.main([*release_argv, "--check"]) == 1
     assert comparison.main(argv) == 1
     output.write_text("changed", encoding="utf-8")
     assert comparison.main([*argv, "--check"]) == 1

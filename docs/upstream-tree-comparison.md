@@ -11,6 +11,12 @@ are absent at their old paths. Each record includes the old and new Git object
 IDs and modes for every changed resource. The improvement ledger links this
 inventory to each affected skill; individual research remains in progress.
 
+The [scientific skills comparison](../artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json)
+examines all 134 locked selections against the `v2.72.0` release using the
+explicit `scientific-skills` to `skills` directory mapping. It finds 129
+candidate entrypoints and five missing paths; all 134 mapped resource sets
+differ. These are raw source differences, not validated skill replacements.
+
 ## Reproduce a comparison
 
 The recorded comparison includes its exact verifier, GitHub API responses, and source lock
@@ -30,6 +36,14 @@ python artifacts/research/2026-10-28/ecc-source-snapshots/generator.py.txt --rep
 
 In other shells, use their line-continuation syntax or put the arguments on one line.
 
+When an upstream project moves all selected skills under a different directory,
+pass `--relocate OLD_PREFIX NEW_PREFIX` to compare corresponding relative paths.
+Both prefixes must be existing, distinct Git trees and the old prefix must cover
+every locked entrypoint. The report records the proposed target paths. Matching
+paths are candidates for review, not proof that the skills are equivalent. The
+changed-skill count reflects resource differences after mapping; moving an
+otherwise identical tree does not by itself count as a content change.
+
 For a new comparison, use `tools/compare_upstream_trees.py` and capture GitHub
 Git Data API responses for the two exact
 commits and their root trees. Tree requests must use `?recursive=1`, and the
@@ -40,6 +54,9 @@ response. It records hashes of the decompressed input bytes and the tool.
 `--check` requires those exact inputs and verifier bytes; the retained verifier
 keeps the historical result reproducible if the active tool changes. A fresh API
 capture can have a different response hash even if the Git trees are equal.
+To bind a stable release to the candidate commit, provide both `--release` and
+`--tag` with the captured API responses. This check supports tags that directly
+reference a commit; annotated tags require a separately verified resolution.
 
 Commit-to-tree bindings depend on the authenticity of the supplied API
 responses; signatures are not verified. The tool supports SHA-1 Git object IDs,
