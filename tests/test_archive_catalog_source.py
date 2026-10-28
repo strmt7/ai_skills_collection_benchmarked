@@ -116,3 +116,77 @@ def test_nested_directory_is_not_mistaken_for_the_checkout_root(tmp_path):
     assert archive.main(arguments) == 1
     assert not (nested / "data").exists()
     assert not (tmp_path / "data/catalog_source_history.json").exists()
+
+
+def test_rewritten_revision_preserves_original_provenance(tmp_path):
+    arguments, _, _ = published_source(tmp_path)
+    current_revision = arguments[arguments.index("--revision") + 1]
+    old_revision = "f" * 40
+    tree = archive.git_bytes(tmp_path, "rev-parse", current_revision + "^{tree}").decode().strip()
+    rewrite_map = tmp_path / "data/history-rewrite-map.json"
+    rewrite_map.write_text(
+        json.dumps(
+            {
+                "schema_version": 1,
+                "commits": [{"original": old_revision, "replacement": current_revision, "tree": tree}],
+            }
+        ),
+        encoding="utf-8",
+    )
+    arguments[arguments.index("--revision") + 1] = old_revision
+    assert archive.main(arguments) == 0
+    history = json.loads((tmp_path / "data/catalog_source_history.json").read_text(encoding="utf-8"))
+    assert history["versions"][0]["observed_catalog_revision"] == old_revision
+    assert archive.main([*arguments, "--check"]) == 0
+
+
+@pytest.mark.parametrize("case", ["missing", "duplicate", "wrong_tree", "missing_replacement"])
+def test_invalid_rewrite_mapping_is_rejected(tmp_path, case):
+    arguments, _, _ = published_source(tmp_path)
+    current_revision = arguments[arguments.index("--revision") + 1]
+    old_revision = "f" * 40
+    tree = archive.git_bytes(tmp_path, "rev-parse", current_revision + "^{tree}").decode().strip()
+    item = {"original": old_revision, "replacement": current_revision, "tree": tree}
+    if case == "wrong_tree":
+        item["tree"] = "e" * 40
+    if case == "missing_replacement":
+        item["replacement"] = "e" * 40
+    if case != "missing":
+        rows = [item, item] if case == "duplicate" else [item]
+        (tmp_path / "data/history-rewrite-map.json").write_text(
+            json.dumps({"schema_version": 1, "commits": rows}), encoding="utf-8"
+        )
+    arguments[arguments.index("--revision") + 1] = old_revision
+    assert archive.main(arguments) == 1
+    assert not (tmp_path / "data/catalog_source_history.json").exists()
+
+
+def test_rewrite_mapping_cannot_reference_unrelated_history(tmp_path):
+    arguments, _, _ = published_source(tmp_path)
+    current = arguments[arguments.index("--revision") + 1]
+    tree = archive.git_bytes(tmp_path, "rev-parse", current + "^{tree}").decode().strip()
+    unrelated = (
+        subprocess.check_output(
+            ["git", "-c", "user.name=Fixture", "-c", "user.email=fixture@example.invalid", "commit-tree", tree],
+            cwd=tmp_path,
+            input=b"Unrelated fixture\n",
+        )
+        .decode()
+        .strip()
+    )
+    old = "f" * 40
+    (tmp_path / "data/history-rewrite-map.json").write_text(
+        json.dumps({"schema_version": 1, "commits": [{"original": old, "replacement": unrelated, "tree": tree}]}),
+        encoding="utf-8",
+    )
+    arguments[arguments.index("--revision") + 1] = old
+    assert archive.main(arguments) == 1
+    assert not (tmp_path / "data/catalog_source_history.json").exists()
+
+
+def test_invalid_rewrite_json_is_rejected(tmp_path):
+    arguments, _, _ = published_source(tmp_path)
+    (tmp_path / "data/history-rewrite-map.json").write_text("{", encoding="utf-8")
+    arguments[arguments.index("--revision") + 1] = "f" * 40
+    assert archive.main(arguments) == 1
+    assert not (tmp_path / "data/catalog_source_history.json").exists()

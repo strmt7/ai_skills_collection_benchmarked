@@ -31,6 +31,39 @@ def git_bytes(root: Path, *arguments: str) -> bytes:
     return result.stdout
 
 
+def resolve_catalog_revision(root: Path, revision: str) -> str:
+    """Resolve a recorded commit through a reviewed, tree-preserving rewrite map."""
+    try:
+        found = git_bytes(root, "rev-parse", "--verify", revision + "^{commit}").decode().strip()
+    except subprocess.CalledProcessError:
+        found = ""
+    if found == revision:
+        return revision
+    path = publication.checked_path(root, "data/history-rewrite-map.json")
+    if not path.is_file() or path.stat().st_size > 1024 * 1024:
+        raise ValueError("recorded catalog commit is unavailable and no bounded rewrite map exists")
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(data, dict) or data.get("schema_version") != 1 or not isinstance(data.get("commits"), list):
+        raise ValueError("invalid history rewrite map")
+    matches = [row for row in data["commits"] if isinstance(row, dict) and row.get("original") == revision]
+    if len(matches) != 1:
+        raise ValueError("recorded catalog revision has no unique rewrite mapping")
+    replacement, tree = matches[0].get("replacement"), matches[0].get("tree")
+    if (
+        not isinstance(replacement, str)
+        or not re.fullmatch(r"[0-9a-f]{40}", replacement)
+        or not isinstance(tree, str)
+        or not re.fullmatch(r"[0-9a-f]{40}", tree)
+    ):
+        raise ValueError("invalid history rewrite identity")
+    if git_bytes(root, "rev-parse", "--verify", replacement + "^{commit}").decode().strip() != replacement:
+        raise ValueError("rewritten catalog commit is unavailable")
+    if git_bytes(root, "rev-parse", replacement + "^{tree}").decode().strip() != tree:
+        raise ValueError("rewritten catalog tree differs from the recorded original tree")
+    git_bytes(root, "merge-base", "--is-ancestor", replacement, "HEAD")
+    return replacement
+
+
 def recorded_skill(root: Path, revision: str, entry: dict[str, Any]) -> bytes:
     relative = entry["mirrored_path"] + "/SKILL.md"
     if not relative.startswith("included/skills/"):
@@ -59,10 +92,9 @@ def archive(args: argparse.Namespace) -> dict[str, Any]:
         raise ValueError("revision must be an immutable 40-character lowercase commit")
     if Path(git_bytes(root, "rev-parse", "--show-toplevel").decode().strip()).resolve() != root:
         raise ValueError("root must be the exact repository checkout root")
-    if git_bytes(root, "rev-parse", args.revision + "^{commit}").decode().strip() != args.revision:
-        raise ValueError("revision does not identify the requested commit")
-    catalog_bytes = git_bytes(root, "show", args.revision + ":data/skills_catalog.json")
-    scenario_bytes = git_bytes(root, "show", args.revision + ":data/benchmark_scenarios.json")
+    resolved_revision = resolve_catalog_revision(root, args.revision)
+    catalog_bytes = git_bytes(root, "show", resolved_revision + ":data/skills_catalog.json")
+    scenario_bytes = git_bytes(root, "show", resolved_revision + ":data/benchmark_scenarios.json")
     catalog = {entry["id"]: entry for entry in json.loads(catalog_bytes)}
     scenarios = {item["id"]: item for item in json.loads(scenario_bytes)}
     existing = historical_versions(root)
@@ -96,7 +128,7 @@ def archive(args: argparse.Namespace) -> dict[str, Any]:
             "sha256": notice_digest,
         }
         build_catalog.validate_preserved_notice(root, notice, entry["commit_sha"])
-        snapshot = recorded_skill(root, args.revision, entry)
+        snapshot = recorded_skill(root, resolved_revision, entry)
         name = f"artifacts/source-history/{skill_id}/{entry['commit_sha']}/SKILL.md"
         publication.checked_path(root, name)
         identity = (skill_id, entry["commit_sha"])
