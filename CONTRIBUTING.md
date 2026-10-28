@@ -94,41 +94,17 @@ overlay* under `included/repaired/` whose generator preserves the original
 text byte-for-byte under `provenance/`. See [`AGENTS.md`](AGENTS.md) for the
 full rule set.
 
-## Commit identity (hard rule for AI agents)
+## Commit attribution
 
-Every commit produced by an AI agent MUST use the identity `AI agent` with
-an **empty** email. The full rule, including forbidden variants and the
-rationale, lives in [`AGENTS.md` → "AI commit identity"](AGENTS.md#ai-commit-identity-hard-rule-immutable).
-Command-scoped identity keeps the value out of `git config`:
+Create commits through the authenticated official GitHub connector and verify
+its returned author and committer. The connector assigns contributor identity;
+do not override it through Git configuration or environment variables. Inspect
+the target tree, parents and current `main` before publication. The full
+publication and history-rewrite safeguards are in [AGENTS.md](AGENTS.md).
 
-```bash
-git -c user.name='AI agent' -c user.email= commit ...
-```
-
-Human contributors continue to commit under their real GitHub identity and
-email; the rule above applies **only** to AI-generated commits.
-
-### Remediating a bad identity
-
-First retain a fresh audit of branch heads, authors, committers and trailers,
-reporting PR heads separately. Use `git filter-repo` in an isolated checkout
-with an explicitly reviewed list of affected commits and identities. Preserve
-valid human and bot attribution and verify the exact `AI agent <>` form before
-publishing. A generic name/email replacement or an unreviewed callback is not
-an identity repair.
-
-Treat any necessary history publication as a separate operation: retain
-recoverable refs, inspect the full rewritten range and update only the verified
-affected refs. Re-run the anonymous-contributor API audit and required workflows
-after publication. Routine changes use an ordinary fast-forward push to `main`.
-
-## Commit messages
-
-* Use the imperative mood ("Add ruff CI gate", not "Added ruff CI gate").
-* If a commit touches more than one work loop, split it.
-* AI co-author trailers, if used at all, MUST be `Co-authored-by: AI agent`
-  with no email. Do not invent trailers; do not attribute AI work to a
-  named vendor, Claude, Codex, Copilot, or a human.
+Use clear imperative commit messages and keep distinct work loops reviewable.
+Do not add unrequested co-author trailers. Existing source-bound evidence keeps
+its original provenance when history changes.
 
 ## Releases
 

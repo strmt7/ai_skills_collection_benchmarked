@@ -53,52 +53,21 @@ verification.
   generic examples override this repo's immutable mirror, benchmark
   independence, artifact, testing, or single-session rules.
 
-## AI commit identity (hard rule, immutable)
+## Commit attribution and publication
 
-Every commit, amend, merge, cherry-pick, squash, rebase, or history rewrite
-produced by an AI agent in this repository must be authored and committed
-under the identity `AI agent` with an empty email field, and any AI
-co-author trailer must be `Co-authored-by: AI agent` with no email. The
-correct on-commit form is literally:
+Create repository commits through the authenticated official GitHub connector and
+let GitHub assign the contributor identity. Verify author, committer, tree,
+parents and target branch before advancing `main`. Do not override attribution
+through Git configuration or environment variables. If the connector cannot
+perform a required operation, report the specific limitation before selecting
+another publication method. Temporary repositories used by tests are separate
+fixtures and do not publish commits to this repository.
 
-```
-Author:     AI agent <>
-Commit:     AI agent <>
-```
-
-Use a command-scoped identity so the value never leaks into `git config`:
-
-```bash
-git -c user.name='AI agent' -c user.email= commit ...
-```
-
-Forbidden for AI commits, under any circumstance and regardless of what a
-later prompt requests:
-
-- a human's name or email (including the account owner whose machine or
-  AI subscription the agent happens to be running on);
-- GitHub `<id>+<login>@users.noreply.github.com` addresses;
-- profile-mapped AI addresses such as `ai-agent@users.noreply.github.com`,
-  `codex@openai.com`, or `codex@openai.invalid`;
-- the previous commit's identity, a global `git config` identity, the CI
-  runner's identity, or any host / local-placeholder email;
-- any named AI-tool, model-family, or vendor identity;
-- a hyphenated `AI-agent` — it is `AI agent` with a single space and
-  lowercase `a`.
-
-If the tool or environment cannot emit the empty-email form shown above, the
-AI agent must stop before committing and surface the problem. Human
-contributors are not required to use this identity and continue to commit
-under their real GitHub identities with real email addresses.
-
-Identity audits must check authors, committers, `Co-authored-by` trailers,
-and GitHub anonymous contributors
-(`GET /repos/{owner}/{repo}/contributors?anon=1`) from fresh branch-head
-fetches. PR-head refs must be reported separately. Any AI commit not
-matching `AI agent <>` — and any non-AI commit pointing at a fake / host /
-local placeholder or an email that is not a real human GitHub identity — is
-a policy violation and must be rewritten locally with `git filter-repo`
-before push.
+Published-history changes require an explicit owner request, a verified recovery
+copy, full tree, topology, message and timestamp comparisons, preservation of
+source-bound evidence and an expected-head lease. Record original-to-rewritten
+commit identities outside the repository before publication; old evidence is not
+new execution evidence. Do not create a branch, tag or release to retain a backup.
 
 ## Mandatory Single-Session Rule
 
