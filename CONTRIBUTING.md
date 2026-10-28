@@ -32,6 +32,7 @@ locally with the toolchain installed via `pip install -e '.[test,lint]'`:
 | Mandatory agent tools | `python3 tools/validate_agent_tool_policy.py --check --json` | `.github/workflows/offline-validation.yml` |
 | Static benchmarks | `python3 tools/run_static_benchmarks.py --check` | `.github/workflows/offline-validation.yml` |
 | Risk audit | `python3 tools/audit_skill_quality.py --check` | `.github/workflows/offline-validation.yml` |
+| Improvement evidence | `python3 tools/manage_improvement_ledger.py --check --json` | `.github/workflows/offline-validation.yml` |
 | Workflow evaluator controls | `python3 tools/report_workflow_evaluator_controls.py --check --json` | `.github/workflows/offline-validation.yml` |
 | Frontend component evidence | `python3 benchmarks/component-controls/frontend/prepare.py --check` | `.github/workflows/offline-validation.yml` |
 | API/backend component evidence | `python3 benchmarks/component-controls/backend/prepare_backend.py --check` | `.github/workflows/offline-validation.yml` |

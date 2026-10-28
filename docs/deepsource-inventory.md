@@ -31,6 +31,33 @@ DeepSource does not guarantee snapshot isolation, so these checks cannot prove
 that every concurrent change was detected. A complete inventory is not a clean
 bill of health: each finding still needs review and remediation.
 
+## Remediation workflow
+
+Use the complete DeepSource inventory together with all pages of open GitHub
+code-scanning alerts for the same default-branch commit. Keep the original
+responses, scan configuration, analyzer versions and commit identity with the
+comparison; counts from different commits or coverage are not interchangeable.
+
+Group occurrences by ownership, source repository, rule and shared root cause.
+Prioritize exposed security and secret findings, then correctness and the
+remaining quality findings. Review representative instances and any differing
+data flows before applying a shared fix; a rule name alone does not establish
+that every occurrence has the same cause. Test fixes against affected behavior,
+including negative controls, and retain the results.
+
+Repository-owned tools and tests can be corrected directly. Generated artifacts
+must be corrected through their source and regenerated. Mirrored skills remain
+source-locked: use a verified upstream correction and regenerate the mirror, or
+record an explicit repaired overlay and its provenance. An overlay does not
+resolve a finding still present in the original mirror. If no upstream correction
+is available, retain the finding and its impact as open work.
+
+After each batch, rerun relevant local checks and wait for hosted analysis on
+the published commit. Capture a fresh complete inventory, compare findings by
+stable identity and root-cause group, and investigate newly introduced findings
+and unexplained disappearances. Do not disable analyzers, exclude paths,
+suppress findings or change thresholds to make the counts appear lower.
+
 The collector applies socket and response-read limits, makes no automatic retries
 and refuses redirects. If the provider
 returns an HTTP error or blocks a request, preserve the response and follow the

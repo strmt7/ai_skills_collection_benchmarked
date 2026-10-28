@@ -232,8 +232,8 @@ def trial_status(
     return grade["status"]
 
 
-def run(protocol_path: Path, condition: str, output: Path, cli: Path, python: Path) -> dict[str, Any]:
-    """Run one frozen trial and retain its grading and execution evidence."""
+def validate_protocol(protocol_path: Path, output: Path) -> tuple[dict[str, Any], str]:
+    """Check frozen execution tooling and grading cases before creating an attempt."""
     protocol_bytes = protocol_path.read_bytes()
     protocol = strict_json(protocol_bytes.decode("utf-8"))
     if not isinstance(protocol, dict):
@@ -252,6 +252,12 @@ def run(protocol_path: Path, condition: str, output: Path, cli: Path, python: Pa
     if type(protocol.get("protocol_version")) is not int or protocol["protocol_version"] < 3:
         raise ValueError("new trials require a protocol with a committed grading case set")
     read_grading_manifest(protocol_path, protocol, protocol_hash)
+    return protocol, protocol_hash
+
+
+def run(protocol_path: Path, condition: str, output: Path, cli: Path, python: Path) -> dict[str, Any]:
+    """Run one frozen trial and retain its grading and execution evidence."""
+    protocol, protocol_hash = validate_protocol(protocol_path, output)
     workspace, prompt, inputs = prepare(protocol, condition, python)
     output.mkdir(parents=True, exist_ok=False)
     (output / "prompt.txt").write_text(prompt, encoding="utf-8")
