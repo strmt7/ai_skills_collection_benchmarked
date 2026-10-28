@@ -76,8 +76,14 @@ The [verified report](../artifacts/agent-trials/development-v2-report/README.md)
 contains all attempts, raw token summaries and standalone charts. Its publisher
 checks protocol identity, each captured evidence hash, grading consistency,
 failure denominators and missing or unplanned runs. It also compares completion,
-usage and completed-command counts against the captured CLI transcript. Null
-usage remains null.
+usage and completed-command counts against the captured CLI transcript. Scored
+attempts must report the same named grading cases, and failed or invalid-scope
+outcomes must agree with their recorded evidence. Matching case names alone does
+not prove that the evaluator or its full denominator was independently frozen.
+Null usage remains null. Malformed event streams cannot produce a scored result;
+their retained transcript and matching parser error are counted as a harness
+failure without inventing usage or command counts. New protocols must also pin
+the shared transcript parser by its `transcript_parser_sha256` before launch.
 The frozen results are unchanged. Grader-created bytecode bytes are preserved
 in nonexecuted `bytecode-evidence.zip` transports because loose Python caches
 are correctly ignored by Git. Raw trial text is exempt from Git newline

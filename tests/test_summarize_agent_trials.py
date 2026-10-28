@@ -128,6 +128,7 @@ def test_unplanned_attempt_cannot_be_selected_or_pooled(matched):
         {"protocol_sha256": "b" * 64},
         {"scope_violations": ["protected input changed"]},
         {"evidence_collection_errors": ["missing output"]},
+        {"process_exit_code": "0"},
         {"usage": {"input_tokens": 10, "cached_input_tokens": 11, "output_tokens": 3}},
         {"usage": {"input_tokens": True, "output_tokens": 3}},
     ],
@@ -181,6 +182,39 @@ def test_interrupted_transcript_can_retain_truncated_last_event(matched):
     assert summary.summarize(path, trials)["conditions"]["improved"]["task_passes"] == 0
 
 
+def test_invalid_transcript_is_counted_as_a_verified_harness_error(matched):
+    path, trials = matched
+    replace_transcript(trials, '{"type":"turn.started"}\nnot-json\n{"type":"turn.completed"}\n')
+    edit_result(
+        trials,
+        status="harness_error",
+        usage=None,
+        process_exit_code=0,
+        commands_completed=None,
+        transcript_error="transcript contains an invalid event on line 2",
+        grader={"status": "harness_error", "error": "grading skipped because the transcript is invalid"},
+    )
+    condition = summary.summarize(path, trials)["conditions"]["improved"]
+    assert condition["planned_attempts"] == 1
+    assert condition["status_counts"] == {"harness_error": 1}
+    assert condition["usage_unavailable_attempts"] == 1
+
+
+def test_invalid_transcript_error_cannot_be_forged(matched):
+    path, trials = matched
+    replace_transcript(trials, '{"type":"turn.started"}\nnot-json\n')
+    edit_result(
+        trials,
+        status="harness_error",
+        usage=None,
+        process_exit_code=0,
+        commands_completed=None,
+        transcript_error="different error",
+    )
+    with pytest.raises(ValueError, match="transcript"):
+        summary.summarize(path, trials)
+
+
 def test_transcript_usage_requires_exact_numeric_types(matched):
     path, trials = matched
     replace_transcript(
@@ -226,6 +260,80 @@ def test_duplicate_external_checks_are_rejected(matched):
         },
     )
     with pytest.raises(ValueError, match="unique nonempty"):
+        summary.summarize(path, trials)
+
+
+@pytest.mark.parametrize(
+    "changes",
+    [
+        {"status": "task_failed"},
+        {
+            "status": "task_failed",
+            "grader": {
+                "status": "task_failed",
+                "checks": [{"case": "independent", "passed": True}],
+                "checks_passed": 1,
+                "checks_total": 1,
+            },
+        },
+        {"status": "task_failed", "grader": {"status": "task_failed", "checks": []}},
+        {"status": "invalid_scope", "scope_violations": []},
+        {"process_exit_code": False},
+        {
+            "grader": {
+                "status": "task_passed",
+                "checks": [{"case": "independent", "passed": True}],
+                "checks_passed": True,
+                "checks_total": True,
+            }
+        },
+    ],
+)
+def test_contradictory_failure_or_boolean_check_counts_are_rejected(matched, changes):
+    path, trials = matched
+    edit_result(trials, **changes)
+    with pytest.raises(ValueError):
+        summary.summarize(path, trials)
+
+
+def test_verified_task_failure_is_kept_in_the_denominator(matched):
+    path, trials = matched
+    edit_result(
+        trials,
+        status="task_failed",
+        grader={
+            "status": "task_failed",
+            "checks": [{"case": "independent", "passed": False}],
+            "checks_passed": 0,
+            "checks_total": 1,
+        },
+    )
+    condition = summary.summarize(path, trials)["conditions"]["improved"]
+    assert condition["planned_attempts"] == 1
+    assert condition["status_counts"] == {"task_failed": 1}
+    assert condition["task_passes"] == 0
+
+
+def test_verified_scope_violation_is_kept_in_the_denominator(matched):
+    path, trials = matched
+    edit_result(trials, status="invalid_scope", scope_violations=["protected input changed"])
+    condition = summary.summarize(path, trials)["conditions"]["improved"]
+    assert condition["status_counts"] == {"invalid_scope": 1}
+    assert condition["task_passes"] == 0
+
+
+def test_matched_attempts_must_use_the_same_independent_cases(matched):
+    path, trials = matched
+    edit_result(
+        trials,
+        grader={
+            "status": "task_passed",
+            "checks": [{"case": "different", "passed": True}],
+            "checks_passed": 1,
+            "checks_total": 1,
+        },
+    )
+    with pytest.raises(ValueError, match="same.*cases"):
         summary.summarize(path, trials)
 
 

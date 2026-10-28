@@ -13,6 +13,7 @@ from pathlib import Path, PurePosixPath
 from typing import Any
 
 from _lib_b.io_utils import dumps_deterministic, read_json, write_json, write_text
+from _trial_transcript import parse_events
 
 STATUSES = {"task_passed", "task_failed", "harness_error", "invalid_scope", "timed_out"}
 LIMITATIONS = [
@@ -94,44 +95,23 @@ def package_bytecode(directory: Path, evidence: dict[str, str]) -> None:
 
 def verify_transcript(directory: Path, result: dict[str, Any]) -> None:
     """Cross-check recorded completion, usage and command counts with the native event stream."""
-
-    def unique_object(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
-        value: dict[str, Any] = {}
-        for key, item in pairs:
-            if key in value:
-                raise ValueError("transcript contains a duplicate JSON key")
-            value[key] = item
-        return value
-
-    def reject_constant(value: str) -> None:
-        raise ValueError(f"transcript contains a non-finite number: {value}")
-
+    allow_truncated = result["status"] in {"harness_error", "timed_out"} and (
+        result["status"] == "timed_out" or result.get("process_exit_code") != 0
+    )
+    raw = evidence_bytes(directory, "transcript.jsonl")
     try:
-        raw = evidence_bytes(directory, "transcript.jsonl").decode("utf-8")
-    except UnicodeDecodeError as exc:
-        raise ValueError("transcript is not UTF-8") from exc
-    events: list[dict[str, Any]] = []
-    lines = raw.splitlines(keepends=True)
-    for index, line in enumerate(lines):
-        try:
-            event = json.loads(line, object_pairs_hook=unique_object, parse_constant=reject_constant)
-        except json.JSONDecodeError as exc:
-            if (
-                index == len(lines) - 1
-                and not line.endswith(("\n", "\r"))
-                and result["status"]
-                in {
-                    "harness_error",
-                    "timed_out",
-                }
-            ):
-                break
-            raise ValueError("transcript contains an invalid event") from exc
-        if not isinstance(event, dict) or not isinstance(event.get("type"), str):
-            raise ValueError("transcript contains a malformed event")
-        if event["type"] == "item.completed" and not isinstance(event.get("item"), dict):
-            raise ValueError("transcript contains a malformed completed item")
-        events.append(event)
+        events = parse_events(raw, allow_truncated_final=allow_truncated)
+    except ValueError as exc:
+        if (
+            result["status"] in {"harness_error", "timed_out"}
+            and result.get("transcript_error") == str(exc)
+            and result.get("usage") is None
+            and result.get("commands_completed") is None
+        ):
+            return
+        raise
+    if result.get("transcript_error") is not None:
+        raise ValueError("transcript error is not supported by the recorded events")
     completed = [event for event in events if event["type"] == "turn.completed"]
     if len(completed) > 1 or (result["status"] in {"task_passed", "task_failed", "invalid_scope"} and not completed):
         raise ValueError("transcript does not establish a single completed turn")
@@ -163,6 +143,10 @@ def verify_result(directory: Path, protocol: dict[str, Any], protocol_hash: str,
         raise ValueError("attempt differs from its frozen protocol or assigned condition")
     if result.get("status") not in STATUSES:
         raise ValueError("unknown attempt outcome")
+    if "process_exit_code" not in result or (
+        result["process_exit_code"] is not None and type(result["process_exit_code"]) is not int
+    ):
+        raise ValueError("process exit code must be an integer or unavailable")
     evidence = result.get("evidence_sha256")
     if not isinstance(evidence, dict) or not {
         "launch.json",
@@ -191,19 +175,42 @@ def verify_result(directory: Path, protocol: dict[str, Any], protocol_hash: str,
     if any(not isinstance(name, str) or not name for name in names) or len(names) != len(set(names)):
         raise ValueError("external checks must have unique nonempty case names")
     if checks and (
-        grade.get("checks_total") != len(checks)
+        type(grade.get("checks_total")) is not int
+        or type(grade.get("checks_passed")) is not int
+        or grade.get("checks_total") != len(checks)
         or grade.get("checks_passed") != sum(check["passed"] for check in checks)
     ):
         raise ValueError("external check counts are inconsistent")
+    clean_execution = (
+        type(result.get("process_exit_code")) is int
+        and result["process_exit_code"] == 0
+        and result.get("evidence_collection_errors") == []
+    )
     if result["status"] == "task_passed" and (
         not checks
         or not all(check["passed"] for check in checks)
         or grade.get("status") != "task_passed"
-        or result.get("process_exit_code") != 0
+        or not clean_execution
         or result.get("scope_violations") != []
-        or result.get("evidence_collection_errors") != []
     ):
         raise ValueError("reported pass is contradicted by grading, execution, or collection evidence")
+    if result["status"] == "task_failed" and (
+        not checks
+        or all(check["passed"] for check in checks)
+        or grade.get("status") != "task_failed"
+        or not clean_execution
+        or result.get("scope_violations") != []
+    ):
+        raise ValueError("reported task failure is contradicted by grading, execution, or collection evidence")
+    if result["status"] == "invalid_scope":
+        violations = result.get("scope_violations")
+        if (
+            not clean_execution
+            or not isinstance(violations, list)
+            or not violations
+            or any(not isinstance(violation, str) or not violation for violation in violations)
+        ):
+            raise ValueError("reported scope violation is not supported by execution and scope evidence")
     usage = result.get("usage")
     if usage is not None:
         if not isinstance(usage, dict) or any(type(value) is not int or value < 0 for value in usage.values()):
@@ -221,6 +228,7 @@ def summarize(protocol_path: Path, trials: Path, *, package_caches: bool = False
     protocol_hash = sha256(protocol_path)
     rows, planned_paths = [], set()
     repetitions = set()
+    graded_cases: frozenset[str] | None = None
     conditions = set(protocol["conditions"])
     for block in protocol["planned_order"]:
         repetition = block["repetition"]
@@ -242,6 +250,11 @@ def summarize(protocol_path: Path, trials: Path, *, package_caches: bool = False
             if not (directory / "result.json").is_file():
                 raise ValueError(f"planned attempt has not completed: {relative}")
             result = verify_result(directory, protocol, protocol_hash, condition)
+            if result["status"] in {"task_passed", "task_failed"}:
+                cases = frozenset(check["case"] for check in result["grader"]["checks"])
+                if graded_cases is not None and cases != graded_cases:
+                    raise ValueError("matched attempts must use the same independent grading cases")
+                graded_cases = cases
             if package_caches:
                 package_bytecode(directory, result["evidence_sha256"])
             rows.append(

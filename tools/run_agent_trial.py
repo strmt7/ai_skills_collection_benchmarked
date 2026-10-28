@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Any
 
 from _lib_b.io_utils import read_json, write_json
+from _trial_transcript import parse_events, strict_json
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -101,16 +102,8 @@ def command(protocol: dict[str, Any], cli: Path, workspace: Path) -> list[str]:
     return [*result, "--json", "-m", protocol["model"], "-C", str(workspace), "-"]
 
 
-def read_events(path: Path) -> list[dict[str, Any]]:
-    events = []
-    for line in path.read_text(encoding="utf-8").splitlines():
-        try:
-            events.append(json.loads(line))
-        except json.JSONDecodeError:
-            # A killed process may leave one truncated final event. Retain the
-            # raw transcript; do not infer a completed turn or zero usage.
-            continue
-    return events
+def read_events(path: Path, *, allow_truncated_final: bool = False) -> list[dict[str, Any]]:
+    return parse_events(path.read_bytes(), allow_truncated_final=allow_truncated_final)
 
 
 def external_grade(task: dict[str, Any], workspace: Path, python: Path) -> dict[str, Any]:
@@ -130,8 +123,10 @@ def external_grade(task: dict[str, Any], workspace: Path, python: Path) -> dict[
         )
     except subprocess.TimeoutExpired:
         return {"status": "harness_error", "error": "grading driver exceeded the 60-second grading limit"}
+    except (OSError, UnicodeError) as exc:
+        return {"status": "harness_error", "error": f"grading driver unavailable or invalid text: {type(exc).__name__}"}
     try:
-        response = json.loads(result.stdout)
+        response = strict_json(result.stdout)
     except (TypeError, ValueError):
         return {"status": "harness_error", "error": "grading driver returned invalid JSON"}
     if (
@@ -140,7 +135,8 @@ def external_grade(task: dict[str, Any], workspace: Path, python: Path) -> dict[
         or response["status"] not in {"task_passed", "task_failed", "harness_error"}
     ):
         return {"status": "harness_error", "error": "grading driver returned an invalid status"}
-    if (result.returncode == 0) != (response["status"] == "task_passed"):
+    expected_exit = {"task_passed": 0, "task_failed": 1, "harness_error": 2}
+    if result.returncode != expected_exit[response["status"]]:
         return {"status": "harness_error", "error": "grading driver exit status contradicts its result"}
     return response
 
@@ -149,8 +145,12 @@ def run(protocol_path: Path, condition: str, output: Path, cli: Path, python: Pa
     protocol = read_json(protocol_path)
     if output.exists():
         raise ValueError("trial output already exists; refusing to overwrite an attempt")
-    for name, key in (("run_agent_trial.py", "runner_sha256"), ("grade_agent_submission.py", "grading_driver_sha256")):
-        if sha256((ROOT / "tools" / name).read_bytes()) != protocol[key]:
+    for name, key in (
+        ("run_agent_trial.py", "runner_sha256"),
+        ("grade_agent_submission.py", "grading_driver_sha256"),
+        ("_trial_transcript.py", "transcript_parser_sha256"),
+    ):
+        if sha256((ROOT / "tools" / name).read_bytes()) != protocol.get(key):
             raise ValueError("benchmark execution tooling changed after protocol freeze")
     workspace, prompt, inputs = prepare(protocol, condition, python)
     output.mkdir(parents=True, exist_ok=False)
@@ -173,7 +173,12 @@ def run(protocol_path: Path, condition: str, output: Path, cli: Path, python: Pa
             process.kill()
             process.communicate()
     elapsed = time.monotonic() - started
-    events = read_events(output / "transcript.jsonl")
+    transcript_error = None
+    try:
+        events = read_events(output / "transcript.jsonl", allow_truncated_final=timed_out or process.returncode != 0)
+    except ValueError as exc:
+        transcript_error = str(exc)
+        events = []
     usage = next((event.get("usage") for event in reversed(events) if event["type"] == "turn.completed"), None)
     completed = any(event["type"] == "turn.completed" for event in events)
     commands = [
@@ -216,7 +221,11 @@ def run(protocol_path: Path, condition: str, output: Path, cli: Path, python: Pa
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(data)
     (output / "patch.diff").write_text("".join(patch), encoding="utf-8")
-    grade = external_grade(protocol["task"], submission, python)
+    grade = (
+        {"status": "harness_error", "error": "grading skipped because the transcript is invalid"}
+        if transcript_error
+        else external_grade(protocol["task"], submission, python)
+    )
     # Policy/tool launch errors are harness failures, not evidence that the
     # model failed the coding task. Keep them in accounting with actual usage.
     blocked = "blocked by policy" in (output / "stderr.txt").read_text(encoding="utf-8")
@@ -224,7 +233,7 @@ def run(protocol_path: Path, condition: str, output: Path, cli: Path, python: Pa
         "timed_out"
         if timed_out
         else "harness_error"
-        if blocked or process.returncode or not completed or collection_errors
+        if blocked or process.returncode or not completed or collection_errors or transcript_error
         else "invalid_scope"
         if violations
         else grade["status"]
@@ -243,7 +252,8 @@ def run(protocol_path: Path, condition: str, output: Path, cli: Path, python: Pa
         "elapsed_seconds": elapsed,
         "latency_claim_eligible": False,
         "process_exit_code": process.returncode,
-        "commands_completed": len(commands),
+        "commands_completed": None if transcript_error else len(commands),
+        "transcript_error": transcript_error,
         "changed_source_files": changes,
         "scope_violations": violations,
         "evidence_collection_errors": collection_errors,
