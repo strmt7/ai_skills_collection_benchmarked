@@ -3,11 +3,14 @@ from __future__ import annotations
 import hashlib
 import json
 import subprocess
+import tomllib
+from importlib.metadata import version
 from pathlib import Path
 
 import pytest
 import validate_coverage_bundle as coverage
 import yaml
+from packaging.requirements import Requirement
 
 REPOSITORY = Path(__file__).resolve().parents[1]
 XML = """<coverage lines-valid="1" lines-covered="1" line-rate="1">
@@ -17,6 +20,7 @@ XML = """<coverage lines-valid="1" lines-covered="1" line-rate="1">
 
 @pytest.fixture
 def bundle(tmp_path):
+    """Create two reports and one checked-out source file for bundle controls."""
     root = tmp_path / "checkout"
     (root / "tools").mkdir(parents=True)
     (root / "tools/example.py").write_text("print('controlled fixture')\n", encoding="utf-8")
@@ -28,6 +32,7 @@ def bundle(tmp_path):
 
 
 def test_reports_are_bound_to_actual_tool_sources(bundle):
+    """Record the actual bytes of each source referenced by a valid report."""
     root, directory = bundle
     record, errors = coverage.validate_bundle(root, directory, 2)
     assert errors == []
@@ -35,6 +40,35 @@ def test_reports_are_bound_to_actual_tool_sources(bundle):
     assert record["reports"][0]["source_sha256"] == {
         "tools/example.py": hashlib.sha256((root / "tools/example.py").read_bytes()).hexdigest()
     }
+
+
+def test_benign_xml_comment_containing_dtd_text_is_not_a_declaration(bundle):
+    """Text inside a comment is not a DTD and must not invalidate coverage."""
+    root, directory = bundle
+    xml = XML.replace("<packages>", "<!-- <!DOCTYPE harmless> --><packages>", 1)
+    (directory / "linux/coverage.xml").write_text(xml, encoding="utf-8")
+    record, errors = coverage.validate_bundle(root, directory, 2)
+    assert not errors
+    assert len(record["reports"]) == 2
+
+
+@pytest.mark.parametrize(
+    "declaration",
+    [
+        "<!DOCTYPE coverage>",
+        '<!DOCTYPE coverage [<!ENTITY a "x">]>',
+        '<!DOCTYPE coverage SYSTEM "file:///not-a-real-file">',
+        '<!DOCTYPE coverage [<!ENTITY % a SYSTEM "file:///not-a-real-file">%a;]>',
+    ],
+)
+def test_dtds_and_entities_are_rejected_before_upload(bundle, declaration):
+    """External resources and all DTDs remain forbidden in coverage data."""
+    root, directory = bundle
+    (directory / "linux/coverage.xml").write_text(declaration + XML, encoding="utf-8")
+    record, errors = coverage.validate_bundle(root, directory, 2)
+    assert len(errors) == 1
+    assert "DTD/entity declarations are not coverage data" in errors[0]
+    assert len(record["reports"]) == 1
 
 
 @pytest.mark.parametrize(
@@ -136,6 +170,7 @@ def test_unsafe_report_path_does_not_publish_upload_outputs(bundle, monkeypatch)
     "bad", ["missing", "traversal", "outside", "line", "negative-hits", "doctype", "utf16", "empty"]
 )
 def test_invalid_coverage_reports_are_rejected_without_hiding_valid_report(bundle, bad):
+    """Collect one invalid-report error while retaining the other valid report."""
     root, directory = bundle
     xml = XML
     if bad == "missing":
@@ -160,11 +195,13 @@ def test_invalid_coverage_reports_are_rejected_without_hiding_valid_report(bundl
 
 
 def test_matrix_report_count_is_required(bundle):
+    """Reject a bundle that does not contain every expected matrix report."""
     root, directory = bundle
     assert coverage.validate_bundle(root, directory, 3)[1]
 
 
 def test_receipt_check_detects_source_change_and_emits_only_valid_report_paths(bundle, monkeypatch):
+    """Detect changed source bytes when rechecking a previously saved receipt."""
     root, directory = bundle
     monkeypatch.setattr(
         coverage.subprocess, "run", lambda *args, **kwargs: subprocess.CompletedProcess(args, 0, "a" * 40)
@@ -181,17 +218,41 @@ def test_receipt_check_detects_source_change_and_emits_only_valid_report_paths(b
 
 
 def test_coverage_upload_keeps_oidc_out_of_test_jobs_and_requires_the_full_matrix():
+    """Keep upload identity restricted and validate every matrix artifact first."""
     workflow = yaml.safe_load((REPOSITORY / ".github/workflows/offline-validation.yml").read_text(encoding="utf-8"))
     job = workflow["jobs"]["coverage"]
     assert job["needs"] == "validate"
     assert job["permissions"] == {"contents": "read", "id-token": "write"}
     assert workflow["jobs"]["validate"].get("permissions", workflow["permissions"]) == {"contents": "read"}
     steps = job["steps"]
-    upload = next(step for step in steps if step.get("uses", "").startswith("codecov/codecov-action@"))
+    installs = [step for step in steps if step.get("name") == "Install hashed coverage parser"]
+    uploads = [step for step in steps if step.get("uses", "").startswith("codecov/codecov-action@")]
+    validations = [step for step in steps if step.get("id") == "bundle"]
+    assert len(installs) == len(uploads) == len(validations) == 1
+    install, upload, validation = installs[0], uploads[0], validations[0]
+    assert "--require-hashes -r requirements-coverage-lock.txt" in install["run"]
+    assert "--only-binary=:all:" in install["run"]
     assert upload["with"]["use_oidc"] is True
     assert upload["with"]["fail_ci_if_error"] is True
     assert upload["with"]["disable_search"] is True
     matrix = workflow["jobs"]["validate"]["strategy"]["matrix"]
     count = len(matrix["os"]) * len(matrix["python-version"]) + len(matrix["include"])
-    validate = next(step["run"] for step in steps if step.get("id") == "bundle")
-    assert f"--expected-reports {count}" in validate
+    assert steps.index(install) < steps.index(validation) < steps.index(upload)
+    assert f"--expected-reports {count}" in validation["run"]
+
+
+def test_coverage_parser_lock_matches_installed_test_dependency():
+    """The minimal CI parser lock must agree with the supported test extra."""
+    project = tomllib.loads((REPOSITORY / "pyproject.toml").read_text(encoding="utf-8"))
+    requirements = [Requirement(item) for item in project["project"]["optional-dependencies"]["test"]]
+    parsers = [item for item in requirements if item.name == "defusedxml"]
+    pins = [
+        line.strip().removesuffix("\\").strip()
+        for line in (REPOSITORY / "requirements-coverage-lock.txt").read_text(encoding="utf-8").splitlines()
+        if line.startswith("defusedxml==")
+    ]
+    assert len(parsers) == len(pins) == 1
+    parser, locked = parsers[0], Requirement(pins[0])
+    installed_version = version("defusedxml")
+    assert installed_version in parser.specifier
+    assert installed_version in locked.specifier

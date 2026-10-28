@@ -7,14 +7,36 @@ import hashlib
 import json
 import math
 import subprocess
-import xml.etree.ElementTree as ET
+from collections.abc import Sequence
 from pathlib import Path, PurePosixPath
+from typing import Protocol
+
+from defusedxml import ElementTree as ET
+from defusedxml.common import DefusedXmlException
 
 ROOT = Path(__file__).resolve().parents[1]
 MAX_REPORT_BYTES = 16 * 1024 * 1024
 
 
-def _report_document(path: Path, directory: Path) -> tuple[bytes, ET.Element]:
+class CoverageElement(Protocol):
+    """The element operations needed to inspect a Cobertura report."""
+
+    @property
+    def tag(self) -> object:
+        """Return the XML element tag."""
+        ...
+
+    @property
+    def attrib(self) -> dict[str, str]:
+        """Return the element's attribute values."""
+        ...
+
+    def findall(self, path: str) -> Sequence[CoverageElement]:
+        """Return descendants matching the requested element path."""
+        ...
+
+
+def _report_document(path: Path, directory: Path) -> tuple[bytes, CoverageElement]:
     """Read a bounded report and reject unsafe paths or XML declarations."""
     name = path.as_posix()
     if any(ord(char) < 32 or ord(char) == 127 or char == "," for char in name):
@@ -26,9 +48,12 @@ def _report_document(path: Path, directory: Path) -> tuple[bytes, ET.Element]:
     if len(raw) > MAX_REPORT_BYTES:
         raise ValueError("report exceeds 16 MiB")
     text = raw.decode("utf-8")
-    if "\x00" in text or "<!DOCTYPE" in text or "<!ENTITY" in text:
-        raise ValueError("DTD/entity declarations are not coverage data")
-    document = ET.fromstring(text)
+    if "\x00" in text:
+        raise ValueError("NUL bytes are not coverage data")
+    try:
+        document = ET.fromstring(text, forbid_dtd=True, forbid_entities=True, forbid_external=True)
+    except DefusedXmlException:
+        raise ValueError("DTD/entity declarations are not coverage data") from None
     if document.tag != "coverage":
         raise ValueError("Cobertura coverage document required")
     return raw, document
@@ -49,7 +74,7 @@ def _source_name(name: str) -> str:
     return name if name.startswith("tools/") else "tools/" + name
 
 
-def _observed_sources(root: Path, document: ET.Element) -> tuple[dict[str, str], int, int]:
+def _observed_sources(root: Path, document: CoverageElement) -> tuple[dict[str, str], int, int]:
     """Bind each unique source and observed line to its actual file bytes."""
     classes = document.findall("./packages/package/classes/class")
     if not classes:
@@ -83,7 +108,7 @@ def _observed_sources(root: Path, document: ET.Element) -> tuple[dict[str, str],
     return sources, total, covered
 
 
-def _check_metrics(document: ET.Element, total: int, covered: int) -> None:
+def _check_metrics(document: CoverageElement, total: int, covered: int) -> None:
     """Compare declared line metrics with the report's distinct observations."""
     declared_total = int(document.attrib["lines-valid"])
     declared_covered = int(document.attrib["lines-covered"])

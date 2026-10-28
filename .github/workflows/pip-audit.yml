@@ -31,7 +31,7 @@ jobs:
           python -m pip install -e '.[security]'
 
       - name: Audit validation and report dependency graphs
-        run: pip-audit --strict --requirement requirements-lock.txt --requirement requirements-reports-lock.txt
+        run: pip-audit --strict --requirement requirements-lock.txt --requirement requirements-reports-lock.txt --requirement requirements-coverage-lock.txt
 
       - name: Audit all pinned Crawl4AI runtime and build records
         # Native hash installs + pip check in crawl4ai-provider.yml prove graph
