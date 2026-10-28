@@ -28,6 +28,7 @@ import audit_skill_quality
 import build_catalog
 import check_benchmark_artifact
 from _lib_b import determinism as _det
+from _lib_b.github_tree import verified_paths
 
 BATCH_NAME = "2026-04-17-independent-runtime-readiness-batch-01"
 RUNNER_ID = "tools/create_independent_runtime_batch.py"
@@ -146,17 +147,8 @@ def resolve_dataset_snapshot(track: dict[str, Any]) -> tuple[dict[str, Any], lis
         return snapshot, commands
     try:
         tree = fetch_json(snapshot["tree_api_url"])
-        if tree.get("sha") != head_sha:
-            raise ValueError("repository tree response does not match the requested commit")
         snapshot["tree_truncated"] = tree.get("truncated")
-        if tree.get("truncated") is not False:
-            raise ValueError("repository tree response is truncated or lacks a completion flag")
-        items = tree.get("tree")
-        if not isinstance(items, list) or any(
-            not isinstance(item, dict) or not isinstance(item.get("path"), str) or not item["path"] for item in items
-        ):
-            raise ValueError("repository tree response contains invalid paths")
-        paths = sorted(item["path"] for item in items)
+        paths = verified_paths(tree, head_sha)
     except Exception as exc:
         snapshot["resolved"] = False
         snapshot["tree_error"] = str(exc)

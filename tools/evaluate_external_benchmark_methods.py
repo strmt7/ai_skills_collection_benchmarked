@@ -21,6 +21,7 @@ from pathlib import Path
 from typing import Any
 
 from _catalog_publication import checked_path
+from _lib_b.github_tree import verified_paths
 
 ROOT = Path(__file__).resolve().parents[1]
 RUNNER_ID = "tools/evaluate_external_benchmark_methods.py"
@@ -298,15 +299,9 @@ def github_tree_paths(repo_url: str, head_sha: str, *, receipt: dict[str, Any] |
     try:
         with urllib.request.urlopen(request, timeout=30) as response:
             data = json.loads(response.read().decode("utf-8"))
-        if data.get("sha") != head_sha:
-            raise ValueError("repository tree response does not match the requested commit")
-        if data.get("truncated") is not False or not isinstance(data.get("tree"), list):
-            raise ValueError("repository tree response is incomplete")
-        paths = [item["path"] for item in data["tree"]]
-        if any(not isinstance(path, str) or not path for path in paths):
-            raise ValueError("repository tree paths are invalid")
+        paths = verified_paths(data, head_sha)
         evidence["transport"] = "github-tree-api"
-        return sorted(paths)
+        return paths
     except Exception as api_error:
         evidence["api_failure"] = {"type": type(api_error).__name__, "message": str(api_error)}
         with tempfile.TemporaryDirectory(prefix="external-benchmark-tree-") as tmp:
