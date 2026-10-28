@@ -1,0 +1,1084 @@
+{
+  "changed_skills": 30,
+  "input_sha256": {
+    "lock": "8a2e4a90ecc0465c828cb3f5ef15d3c29f35771c9399fd8d45dd65cf767b83d6",
+    "new_commit": "bb90c8ffece61fa948e33f5cbfd68e437b6fc034b4a5dccf5213fea6dd79a0c0",
+    "new_tree": "e1b790a54deb0d1ed9f22964f7f5d4e33efd46e7c2d5e86fbe449c223a21c82e",
+    "old_commit": "a1aa6401bd78a9a55e81f46220e7128b09153e1ce8c1b5a4c6ed33d91ad900ce",
+    "old_tree": "da114d8bdba5a9c71d54aefd484a357ba447703bdbdba9ace9b3dd7a4fc8b21d",
+    "tool": "801405b304e85cba5b1f7d797b2023b047d2de12b1fa61dd68bd41bede0158c6"
+  },
+  "limitations": [
+    "Commit-to-tree bindings rely on authentic supplied GitHub API responses; commit signatures are not verified.",
+    "Only SHA-1 Git object IDs are supported; matching object IDs do not rule out hash collisions.",
+    "Raw directory entries can include nested skills, symlinks or submodules; this is not mirror admission or a runtime audit.",
+    "A changed Git object is not proof of an improvement, regression, security fix, or agent performance."
+  ],
+  "measurement_kind": "raw_upstream_git_tree_comparison",
+  "missing_new_entrypoints": 2,
+  "new_commit": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+  "new_tree": "ae3070ee183d0bae220745ec9120964e6b671175",
+  "old_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+  "old_tree": "7c25b0da160557a8fb352e73075f10b797d1a24c",
+  "repository": "affaan-m/everything-claude-code",
+  "schema_version": 1,
+  "skill_count": 30,
+  "skills": [
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "98738177f210373a352dc6b83143be793588ef96",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "a45aca06d84dfd2a5297ba162704d456574a6df8",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "9daa40121704ad1edb7ba85c0a29e139c465412d",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "b83fe25f30bf85f042296fa7ba2b914dfa690171",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-api-design-skill-md",
+      "source_path": ".agents/skills/api-design/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "ab7f836ed26ed0a35ec4937fee99b33f9af3ee6f",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "6cf4339c79ee82d1ae1a0d6492941b62cbd9cc0d",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "14dfe51eabd400c7db300f6cc2e807c78f140fc7",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "41f14377f8c2ef143cb327f435002116d3d6217b",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-article-writing-skill-md",
+      "source_path": ".agents/skills/article-writing/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "721b67a3ec36f15dee14daae4ef2cbe4aa5e986d",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "30898b4d405df43ca9058ca8730a77d90cda3612",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "9ef9556776c98e39948e0846e01a03ef4f9bb46f",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "5fb47c634953565ada2f0cd3e74ea1b6afed8688",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-backend-patterns-skill-md",
+      "source_path": ".agents/skills/backend-patterns/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "fb7bec09f6928a7a23eb007e926be6af5cf867b1",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "5debed023f37d0665d14220d936d1af27b5b4e9e",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "42a51a14fc79aed133fe3ce731e23ca000988fda",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 3,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-brand-voice-skill-md",
+      "source_path": ".agents/skills/brand-voice/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "ab748e26a791516029a576cf65efe240fa8cb519",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "144e9a0c30f7cdd3c59882d67a15c52232137243",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "6460a67d25568351fa4cb92495b0476ab54aaf11",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "1eb8fa117d1abd6eae11549d121ed57003c720ef",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-bun-runtime-skill-md",
+      "source_path": ".agents/skills/bun-runtime/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": null,
+          "before": {
+            "mode": "100644",
+            "sha": "0c09b7401427b62575c92e94d7961540b433ed65",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": null,
+          "before": {
+            "mode": "100644",
+            "sha": "9db910fc99eb61d42f63ba69265286bf307ad390",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": false,
+      "new_resource_count": 0,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-claude-api-skill-md",
+      "source_path": ".agents/skills/claude-api/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "6ca1401aa490f36d31e876a46e6b0ed4653fa41c",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "200b55c000da1fc2b60eb60658ee88923e298094",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "8dd9c422880ed2ac5b7e831f0aa4fceccc4cbdb5",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "b0dda0eff39f4ab5560668d1281aea289e0acd45",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-coding-standards-skill-md",
+      "source_path": ".agents/skills/coding-standards/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "14dc8ed7beec9cb62fe21da170efd076361b6cec",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "4467724aef19a2d5413527997431692311dcdff6",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "c77f5080fcbf0bb764f2625789a4427c80de9d60",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "739576c9aecc6c4e40aa4b2898f0cd1d9d9e15ef",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-content-engine-skill-md",
+      "source_path": ".agents/skills/content-engine/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "0b167a1349c60aa2c169133d879d51fb574b1789",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "e94df3c314aa0f1a730b322a51b4400df5e86a06",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "57866de8bbb17a1f65c0db8932f14b1f2984aff5",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "c2534142d9df2399aa7fcbbf0147d1c60e6ab007",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-crosspost-skill-md",
+      "source_path": ".agents/skills/crosspost/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "74dc3e52affc23401ed8dd3c0169dc0c7eb31ab7",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "5a412b7e55647567c781586b4ca08b183f8408c6",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "529e81eb7e8c5c9971dae85b974978a920909295",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "51ac12b1a69eff63a71d249324a80951e21014ee",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-deep-research-skill-md",
+      "source_path": ".agents/skills/deep-research/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "9617aa5e8a5e605e05e8e5ddcad2540a70b34c84",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "813cc91cddbf6651eac1dc13064ba4b75a2896f4",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "e2c8dece566627d9fd215ed7e6e08e85bd1f3983",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "8147fea8b456f97ae86f1e763a6821fb32f28d4e",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-dmux-workflows-skill-md",
+      "source_path": ".agents/skills/dmux-workflows/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "e29e685256c001a61fa726477f77117cb78917e1",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "148ac841f12fbb69b7e2efb2789d4f64db507f20",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "ea1a69370fcce6c69b77851af18c9f03e7e3c61c",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "b7d4b48fe3e699a4f129d4460d3c274385a7da18",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-documentation-lookup-skill-md",
+      "source_path": ".agents/skills/documentation-lookup/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "5187aeaa3dd0dafc54fe5c0da5a85ded870c5153",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "0563199141a715ca7fd1aaaccfb4ac767b1d6f26",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "6f44f3d022e63cca2d178fbf7b50988821c1be80",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "cdedda78cd660a33525ecd4388b7368beb589045",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-e2e-testing-skill-md",
+      "source_path": ".agents/skills/e2e-testing/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "8b60b99b1aa09d0c9b7eb1d22cf1de9396be80ea",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "d320670c913a2b86bb723506c706209c6174a5ba",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "d55d58d04a9330c9286d79452782d5bf88f3d4f1",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "e017e6a7e711d9d2ec67e487f2d2602cc4ce66ff",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-eval-harness-skill-md",
+      "source_path": ".agents/skills/eval-harness/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": null,
+          "before": {
+            "mode": "100644",
+            "sha": "173826a88df389914acb726897957f0162fe7cb5",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": null,
+          "before": {
+            "mode": "100644",
+            "sha": "410a5bf875d5f68c1649fd39384a0383f7d6ec2e",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": false,
+      "new_resource_count": 0,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-everything-claude-code-skill-md",
+      "source_path": ".agents/skills/everything-claude-code/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "685d26b3b63183f3c94eb1311c8790dd901e37f8",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "37ea2b1b22b36ada87bd4955d5be502f3442d268",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "d8a6c58da28cb67a640342b7362cdf9153d71f6c",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "80d26bd30ecd1f8099c487214fe6c317b8165d1c",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-exa-search-skill-md",
+      "source_path": ".agents/skills/exa-search/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "24d9da822249a7669614c032493ae0497b35ddf7",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "cfada8df00c71d1fe399cf0b5937edea22860f6d",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "679efa45e29660e135d2e6af2088f28315aab2e3",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "d20f8ab0208765fc7bc31e7e26ae63ad98d898d4",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-fal-ai-media-skill-md",
+      "source_path": ".agents/skills/fal-ai-media/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "6696c275afafe9ed87b2bcb47aca555e23688e9d",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "ef0de63f20229fb98050466941a940f0f7973667",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "fb66e8499addd9a275df106732af6ac3dc4d4b45",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "00f85995644be2cd13914e4740eebb1b70db73ff",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-frontend-patterns-skill-md",
+      "source_path": ".agents/skills/frontend-patterns/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "2318ef74e1eab3505714bdf1847b4c37bc7808c9",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "3d41eb4fa7a8a16e24161a8d12684223ac0cc42b",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "e1f271d9999b191884fa4a27a79b64bb30dca09f",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "9c23da907263eb771bb05b88a22f3fa801e5cd66",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 3,
+      "old_resource_count": 3,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-frontend-slides-skill-md",
+      "source_path": ".agents/skills/frontend-slides/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "ed14d59b3d8abd41c3304af0a69772c05b0eb474",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "e392706af5d1b6b7c03738526c1251f122873f1e",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "facecc9f47bedd2ec0be810238c3db6a3dc217b2",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "9ebfc93b0e969d38387afb9d224b5fb63fcd8ca0",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-investor-materials-skill-md",
+      "source_path": ".agents/skills/investor-materials/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "c8e28e0dd1b9ff2a850e09296acfe83a13c55c51",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "f34860e42913a67adc65d3fc5b74cf996f524e69",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "8181eaa14a2e7c659a0740fb6eaa1e4213a75009",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "fc5a638586f679b7b35d92143fc220a594014f35",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-investor-outreach-skill-md",
+      "source_path": ".agents/skills/investor-outreach/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "8f9a08df94d06afd174460e459f6b14a30a00919",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "12ffa034b4f40ccd989ab3a2413bae8c424d1c26",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "749e6decc11c00d7b0364c69d2d03db7227df98b",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "828a4588cf4a769f8b2fa9711aa985b5be7a8510",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-market-research-skill-md",
+      "source_path": ".agents/skills/market-research/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "a73ae625f1091270fa61f12788858e3525309fbf",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "a3dea9cf0d514ec533d99e90a851026d1e1b8a2c",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "97a94adebce2c2c295031010e549da0beeb789b0",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 1,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-mcp-server-patterns-skill-md",
+      "source_path": ".agents/skills/mcp-server-patterns/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "b29570308123e721c1aafd657839f2800510b020",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "8e5287102e5518504b7d44aecea59ca0794db16f",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "b48ba47f6227857326ecd35f22ed7a13fe867388",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "61369bf1954921a8f3c6c9d4329dc82a9e252d10",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-nextjs-turbopack-skill-md",
+      "source_path": ".agents/skills/nextjs-turbopack/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "cb0cca0c810a903be1cda7b59e7029e6046765cb",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "af848b95e296d0fb2d205e4d5a9c814b5e2d4ea2",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "83739c87cd09662654e0aeb727976e70c1e7393e",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "9af830238dde54e271f780298d0756eaf6783b9d",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-security-review-skill-md",
+      "source_path": ".agents/skills/security-review/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "a4164df44b0ba1a7c557fd9e65591bbfdfef3c05",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "67bbb31eea2ec0b6e8ec3a35547f64d196b4c741",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "1c53ef51b24d0998cc60fb1c9e1028b6207dfb24",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "19ecabf8a2a89ec6176b494d0b2d1feed8dc8838",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-strategic-compact-skill-md",
+      "source_path": ".agents/skills/strategic-compact/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "67300bf520db15fe9254837780dcef7cf97fd3e8",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "63c6309e90a18d849afff24b78db8a430934c136",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "7f6355cf90d9d9e6726b7bca3ac82391f3340948",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "425c7d1c597cdd5a08ccfbe4974b89c54214c459",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-tdd-workflow-skill-md",
+      "source_path": ".agents/skills/tdd-workflow/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "b936bc9646e3b286dbe89ab2b2a7fb47bf3ad28e",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "1933545d57be0275ef5cac60fff332f279020e9e",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "e1d72dd92af84674310965281929bee79816faed",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "644a9ad535b265a195337d29164b626b2846b016",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-verification-loop-skill-md",
+      "source_path": ".agents/skills/verification-loop/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "a15fe9e688b46934420beb6feb3d91668167ff4f",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "fb47d9adc24af581a0badb1a19145a3ef4032ca7",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "4dadcf8e8a57d2036dce5732136ad1e09ad7cc8f",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "e943e01904f7085d1ff14fbe1dff6f07415e061c",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-video-editing-skill-md",
+      "source_path": ".agents/skills/video-editing/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "40d1a84025015b5e93f3d9def49f01db9100ddca",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "9100664ce19c5ec51d57b8d5b34c2061ce352c28",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "1aa2982c7eac72136283f786376cb50cb95ea058",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "2875958fb7e8d9dff9eb0777acc686a9be532fbb",
+            "type": "blob"
+          },
+          "path": "agents/openai.yaml"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-x-api-skill-md",
+      "source_path": ".agents/skills/x-api/SKILL.md"
+    }
+  ]
+}

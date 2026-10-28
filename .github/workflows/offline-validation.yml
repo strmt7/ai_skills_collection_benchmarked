@@ -84,6 +84,16 @@ jobs:
         run: python tools/audit_skill_quality.py --check
       - name: Validate complete improvement coverage and evidence
         run: python tools/manage_improvement_ledger.py --check --json
+      - name: Verify the recorded upstream tree comparison
+        run: >-
+          python artifacts/research/2026-10-28/ecc-source-snapshots/generator.py.txt
+          --repo affaan-m/everything-claude-code
+          --lock artifacts/research/2026-10-28/ecc-source-snapshots/source-lock.json.gz
+          --old-commit artifacts/research/2026-10-28/ecc-source-snapshots/old-commit.json
+          --old-tree artifacts/research/2026-10-28/ecc-source-snapshots/old-tree.json.gz
+          --new-commit artifacts/research/2026-10-28/ecc-source-snapshots/new-commit.json
+          --new-tree artifacts/research/2026-10-28/ecc-source-snapshots/new-tree.json.gz
+          --output artifacts/research/2026-10-28/ecc-upstream-tree-delta.json --check
       - name: Verify native workflow evaluator controls and retained misses
         run: python tools/report_workflow_evaluator_controls.py --check --json
       - name: Validate improved overlays and original provenance

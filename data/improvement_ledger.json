@@ -67,6 +67,11 @@
           {
             "path": "benchmarks/component-controls/backend/result.json",
             "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
           }
         ],
         "open_work": [
@@ -120,8 +125,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/selected-structure-reference/article-writing",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -168,6 +179,11 @@
           {
             "path": "benchmarks/component-controls/backend/result.json",
             "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
           }
         ],
         "open_work": [
@@ -221,8 +237,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/selected-structure-reference/brand-voice",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -263,6 +285,11 @@
           {
             "path": "artifacts/research/2026-10-02/playwright-wait-runtime-controls.json",
             "sha256": "55207bb87a1cfffd2c7e51f29593055b469fbd0cdb9429883fc15f742afbd9ee"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
           }
         ],
         "status": "in_progress"
@@ -290,6 +317,11 @@
           {
             "path": "docs/research-authoring-and-api.md",
             "sha256": "a3d1eced629ef1316309e756a94d819bb8eeda79e1576e88e5426a756b6269c3"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
           }
         ],
         "status": "in_progress"
@@ -339,6 +371,11 @@
           {
             "path": "benchmarks/component-controls/frontend/result.json",
             "sha256": "f0824f04eb0ef4885b52ff6f10e98c75b204ae0f27f311aac3c945ea3f158ea4"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
           }
         ],
         "open_work": [
@@ -392,8 +429,14 @@
       },
       "mirrored_path": "included/skills/by-category/communication-productivity-support/selected-structure-reference/content-engine",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -414,8 +457,14 @@
       },
       "mirrored_path": "included/skills/by-category/communication-productivity-support/selected-structure-reference/crosspost",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -436,8 +485,14 @@
       },
       "mirrored_path": "included/skills/by-category/search-retrieval-web-automation/selected-structure-reference/deep-research",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -462,6 +517,11 @@
           {
             "path": "docs/research-category-routing.md",
             "sha256": "ebb12eeb2087d52667592165a53e37ec144ead27ab2f83e994dd857e371d1958"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
           }
         ],
         "status": "in_progress"
@@ -485,8 +545,14 @@
       },
       "mirrored_path": "included/skills/by-category/search-retrieval-web-automation/selected-structure-reference/documentation-lookup-everything-claude-code",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -527,6 +593,11 @@
           {
             "path": "artifacts/research/2026-10-02/playwright-wait-runtime-controls.json",
             "sha256": "55207bb87a1cfffd2c7e51f29593055b469fbd0cdb9429883fc15f742afbd9ee"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
           }
         ],
         "status": "in_progress"
@@ -560,6 +631,11 @@
           {
             "path": "docs/research-initial-agent-workflows.md",
             "sha256": "04a54ee8f98e844081de808bc770fd9ab63cb7fcdb60c35f48378aec83496d05"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
           }
         ],
         "status": "in_progress"
@@ -614,6 +690,11 @@
           {
             "path": "benchmarks/component-controls/backend/result.json",
             "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
           }
         ],
         "open_work": [
@@ -667,8 +748,14 @@
       },
       "mirrored_path": "included/skills/by-category/search-retrieval-web-automation/selected-structure-reference/exa-search",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -689,8 +776,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/selected-structure-reference/fal-ai-media",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -737,6 +830,11 @@
           {
             "path": "benchmarks/component-controls/frontend/result.json",
             "sha256": "f0824f04eb0ef4885b52ff6f10e98c75b204ae0f27f311aac3c945ea3f158ea4"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
           }
         ],
         "open_work": [
@@ -790,8 +888,14 @@
       },
       "mirrored_path": "included/skills/by-category/documents-spreadsheets-presentations/selected-structure-reference/frontend-slides",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -838,6 +942,11 @@
           {
             "path": "benchmarks/component-controls/backend/result.json",
             "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
           }
         ],
         "open_work": [
@@ -891,8 +1000,14 @@
       },
       "mirrored_path": "included/skills/by-category/communication-productivity-support/selected-structure-reference/investor-outreach",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -913,8 +1028,14 @@
       },
       "mirrored_path": "included/skills/by-category/finance-commerce-forecasting/selected-structure-reference/market-research",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -939,6 +1060,11 @@
           {
             "path": "docs/research-initial-agent-workflows.md",
             "sha256": "04a54ee8f98e844081de808bc770fd9ab63cb7fcdb60c35f48378aec83496d05"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
           }
         ],
         "status": "in_progress"
@@ -966,6 +1092,11 @@
           {
             "path": "docs/research-category-routing.md",
             "sha256": "ebb12eeb2087d52667592165a53e37ec144ead27ab2f83e994dd857e371d1958"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
           }
         ],
         "status": "in_progress"
@@ -989,8 +1120,14 @@
       },
       "mirrored_path": "included/skills/by-category/security-compliance-risk/selected-structure-reference/security-review-everything-claude-code",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -1025,6 +1162,11 @@
           {
             "path": "docs/research-context-token-accounting.md",
             "sha256": "a14303ebd4cf07f4e216b04172db0a2e1a5a432fbab2ac539e84b21fbc7850d9"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
           }
         ],
         "status": "in_progress"
@@ -1077,6 +1219,11 @@
           {
             "path": "artifacts/research/2026-10-02/playwright-wait-runtime-controls.json",
             "sha256": "55207bb87a1cfffd2c7e51f29593055b469fbd0cdb9429883fc15f742afbd9ee"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
           }
         ],
         "status": "in_progress"
@@ -1120,6 +1267,11 @@
           {
             "path": "artifacts/research/2026-10-02/playwright-wait-runtime-controls.json",
             "sha256": "55207bb87a1cfffd2c7e51f29593055b469fbd0cdb9429883fc15f742afbd9ee"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
           }
         ],
         "status": "in_progress"
@@ -1148,8 +1300,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/selected-structure-reference/video-editing",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -1170,8 +1328,14 @@
       },
       "mirrored_path": "included/skills/by-category/security-compliance-risk/selected-structure-reference/x-api",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
