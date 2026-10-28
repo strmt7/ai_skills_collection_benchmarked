@@ -26,6 +26,8 @@ For research posters, see the [maintained PDF preflight repair](poster-preflight
 
 For citation management, see the [URL-classification security overlay](citation-security-overlay.md).
 
+For Azure Key Vault Java, see the [safer examples overlay](keyvault-java-security-overlay.md).
+
 To improve this collection, use the separate
 [contributor guide](../CONTRIBUTING.md) and
 [development setup](development.md). Research records, test harnesses and source

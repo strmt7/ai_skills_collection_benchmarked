@@ -8,6 +8,9 @@
 # This repair is generated from canonical locked source bytes on every host.
 /included/repaired/skills/citation-management-security/** text eol=lf
 /included/repaired/skills/citation-management-security/provenance/** -text
+# The Key Vault repair preserves canonical source and license bytes.
+/included/repaired/skills/azure-keyvault-java-security/** text eol=lf
+/included/repaired/skills/azure-keyvault-java-security/provenance/** -text
 /benchmarks/agent-effectiveness/** text eol=lf
 # A frozen protocol is exact-byte evidence already bound into recorded trials.
 /benchmarks/agent-effectiveness/development/protocol-v2.json -text

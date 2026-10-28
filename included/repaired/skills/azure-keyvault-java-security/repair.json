@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "skill_id": "microsoft-skills-github-plugins-azure-sdk-java-skills-azure-security-keyvault-secrets-java-skill-md",
+  "original_mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-secrets-java",
+  "original_commit": "a2c05249c4a20103dd954ca702467aa328aac031",
+  "original_skill_dir_sha256": "af9e840975efd1efec15f6cb93126aa694360b7a5ee78b2422717c8d788d1f44",
+  "security_control": "artifacts/research/2026-10-28/azure-keyvault-output-security-control.json",
+  "security_control_sha256": "01113c8c29e8dd9b2377b84fbb3816510fb22d1f9d25a0fcdb638c20f524b3e0",
+  "repair": "Avoid printing secret values or prefixes and label illustrative secret-value literals as placeholders.",
+  "limitations": "The original mirror remains unchanged. These controls do not establish full skill security or agent efficacy.",
+  "files": {
+    "SKILL.md": "57935c0c9253b09a2ac6bec3a03117ba867afec8232489a5d6be947345d67d5d",
+    "provenance/LICENSE": "d9a1b1e30d633d5732ea18e3cba9538d293ebc53e1a9e4e96ab739e0c5c4f1cb",
+    "provenance/original.SKILL.md": "e342ddc69582bf30df5ebf2091531ecb29a4a681492543b42eb37d96c778406e",
+    "references/acceptance-criteria.md": "1bb6009cc99e4e74becad45532b7e13313252fb9694250734daad1466e77a3c3",
+    "references/examples.md": "49a69faab031916f81a267330c3b64a41eb71d1bb9f3ab2f8321f5f150600ba9"
+  }
+}

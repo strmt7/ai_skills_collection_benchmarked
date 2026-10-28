@@ -9865,12 +9865,24 @@
       },
       "mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-security-keyvault-secrets-java",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-10-28/azure-keyvault-output-security-control.json",
+            "scope": "Twelve source snippets compiled with local fake SDK objects; official documentation reviewed. This does not prove real-secret exposure, complete skill safety or agent efficacy.",
+            "sha256": "01113c8c29e8dd9b2377b84fbb3816510fb22d1f9d25a0fcdb638c20f524b3e0"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/azure-keyvault-java-security/repair.json",
+            "scope": "Opt-in repair removes demonstrated secret-value output and labels literal examples as placeholders; the locked original remains unchanged.",
+            "sha256": "c2acd36686cf29004efddd6a58c6fe5084a6ad5b6656b3a8a828e81705e4e41f"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "microsoft/skills",
       "source_signature": {

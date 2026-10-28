@@ -61,6 +61,8 @@ jobs:
         run: python tools/validate_agent_tool_policy.py --check --json
       - name: Verify citation URL security overlay
         run: python tools/check_citation_security_overlay.py --check --json
+      - name: Verify Key Vault Java security overlay
+        run: python tools/check_keyvault_security_overlay.py --check --json
       - name: Validate benchmark and provenance artifacts
         shell: bash
         run: |
