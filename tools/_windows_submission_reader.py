@@ -158,6 +158,8 @@ def open_submission(workspace: Path) -> Iterator[tuple[Any, Any, int]]:
 
 
 def read_submission(workspace: Path) -> bytes:
+    if sys.platform != "win32":
+        raise ValueError("Safe submission collection requires Windows")
     with open_submission(workspace) as (kernel, handle, expected_size):
         kernel.ReadFile.argtypes = [
             wintypes.HANDLE,
