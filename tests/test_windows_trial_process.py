@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Any
 
 import pytest
+from _windows_appcontainer import Native
 from _windows_trial_process import run_owned
 
 pytestmark = pytest.mark.skipif(sys.platform != "win32", reason="Windows native job controls")
@@ -197,7 +198,8 @@ else:
 
 
 def test_unrelated_inheritable_handle_is_not_passed_to_the_child(tmp_path):
-    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+    native: Any = Native()
+    kernel = native.kernel
     kernel.CreateEventW.argtypes = [ctypes.c_void_p, wintypes.BOOL, wintypes.BOOL, wintypes.LPCWSTR]
     kernel.CreateEventW.restype = wintypes.HANDLE
     kernel.SetHandleInformation.argtypes = [wintypes.HANDLE, wintypes.DWORD, wintypes.DWORD]
