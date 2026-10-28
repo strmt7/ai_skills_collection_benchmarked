@@ -45,6 +45,7 @@ locally with the toolchain installed via `pip install -e '.[test,lint]'`:
 | Native PPTX retention | Pinned converter pair, deterministic fixture and semantic content checks; see [`consumer inputs`](toolchains/pptx-native/README.md) | `.github/workflows/pptx-retention-controls.yml` |
 | Secrets (in-repo) | `python3 tools/check_no_secret_patterns.py --history` | `.github/workflows/secret-scan.yml` |
 | Secrets (gitleaks) | `gitleaks git --exit-code 1 .` | `.github/workflows/secret-scan.yml` |
+| CodeQL model | `python tools/qualify_defusedxml_codeql_model.py --codeql <codeql> --model .github/codeql/extensions/defusedxml-paths --output <new-directory>` | `.github/workflows/codeql.yml` |
 
 Concurrency, least-privilege read permissions and pip caching are configured
 per workflow. In offline validation, only the isolated Codecov upload job receives
@@ -52,6 +53,11 @@ per workflow. In offline validation, only the isolated Codecov upload job receiv
 Validation workflows accept `workflow_dispatch` so you can rerun them manually
 from the Actions tab. The release workflow remains disabled during the release
 hold below.
+
+The local CodeQL model adds file-path sinks for `defusedxml` parsers. CI tests
+positive and negative examples and checks that the model was loaded in the
+repository analysis. This expands one area of scanner coverage; it does not prove
+that the scanned skills are secure.
 
 ## Code style
 

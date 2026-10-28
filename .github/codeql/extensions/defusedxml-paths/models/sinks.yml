@@ -1,0 +1,9 @@
+extensions:
+  - addsTo:
+      pack: codeql/python-all
+      extensible: sinkModel
+    data:
+      - ["defusedxml", "Member[ElementTree].Member[parse].Argument[0,source:]", "path-injection"]
+      - ["defusedxml", "Member[ElementTree].Member[iterparse].Argument[0,source:]", "path-injection"]
+      - ["defusedxml", "Member[minidom].Member[parse].Argument[0,file:]", "path-injection"]
+      - ["defusedxml", "Member[pulldom].Member[parse].Argument[0,stream_or_string:]", "path-injection"]
