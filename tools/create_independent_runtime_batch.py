@@ -17,6 +17,7 @@ import re
 import subprocess
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 from pathlib import Path
 from typing import Any
@@ -28,7 +29,7 @@ import audit_skill_quality
 import build_catalog
 import check_benchmark_artifact
 from _lib_b import determinism as _det
-from _lib_b.github_tree import verified_paths
+from _lib_b import github_tree
 
 BATCH_NAME = "2026-04-17-independent-runtime-readiness-batch-01"
 RUNNER_ID = "tools/create_independent_runtime_batch.py"
@@ -77,7 +78,20 @@ def git_text(*args: str) -> str:
 
 
 def run_command(command: list[str], cwd: Path = ROOT) -> dict[str, Any]:
-    completed = subprocess.run(command, cwd=cwd, text=True, capture_output=True, check=False)
+    """Run a reference lookup with a timeout and retain failures as evidence."""
+    try:
+        completed = subprocess.run(
+            command,
+            cwd=cwd,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            capture_output=True,
+            check=False,
+            timeout=60,
+        )
+    except (OSError, subprocess.TimeoutExpired) as exc:
+        return {"command": command, "returncode": 1, "stdout": "", "stderr": f"{type(exc).__name__}: {exc}"}
     return {
         "command": command,
         "returncode": completed.returncode,
@@ -86,14 +100,9 @@ def run_command(command: list[str], cwd: Path = ROOT) -> dict[str, Any]:
     }
 
 
-def github_repo_from_url(url: str) -> tuple[str, str, str | None] | None:
-    match = re.match(r"https://github\.com/([^/]+)/([^/#?]+)(?:/(?:tree|blob)/[^/]+/(.+))?/?$", url)
-    if not match:
-        return None
-    owner, repo, subpath = match.groups()
-    if repo.endswith(".git"):
-        repo = repo[:-4]
-    return owner, repo, subpath
+def github_repo_from_url(url: str) -> tuple[str, str, str | None, str | None] | None:
+    """Parse the repository URL while retaining any requested ref and path."""
+    return github_tree.parse_github_url(url)
 
 
 def fetch_json(url: str) -> dict[str, Any]:
@@ -102,11 +111,45 @@ def fetch_json(url: str) -> dict[str, Any]:
         return json.loads(response.read().decode("utf-8"))
 
 
+def resolve_github_reference(
+    repo_url: str, selector: str | None, commands: list[dict[str, Any]]
+) -> tuple[str, str, str | None, str]:
+    """Bind a requested ref to its advertised commit without guessing ambiguous paths."""
+    if selector is None:
+        command = ["git", "ls-remote", repo_url, "HEAD"]
+    else:
+        patterns = github_tree.reference_patterns(selector)
+        if not patterns:
+            raise ValueError("repository URL has no valid ref candidates")
+        command = ["git", "ls-remote", repo_url, *patterns]
+    result = run_command(command)
+    commands.append(result)
+    if result["returncode"] != 0:
+        raise ValueError("remote reference lookup failed")
+    if selector is None:
+        fields = result["stdout"].split()
+        if len(fields) != 2 or fields[1] != "HEAD" or not re.fullmatch(r"[0-9a-f]{40}", fields[0]):
+            raise ValueError("remote HEAD is missing or malformed")
+        return "HEAD", fields[0], None, "head"
+    return github_tree.select_reference(selector, result["stdout"])
+
+
 def resolve_dataset_snapshot(track: dict[str, Any]) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     commands: list[dict[str, Any]] = []
     url = track["url"]
     parsed = github_repo_from_url(url)
     if not parsed:
+        try:
+            host = urllib.parse.urlsplit(url).hostname
+        except ValueError:
+            return {"kind": "real-url", "url": url, "resolved": False, "error": "invalid URL"}, commands
+        if host == "github.com":
+            return {
+                "kind": "real-github-repository-tree",
+                "url": url,
+                "resolved": False,
+                "error": "unsupported GitHub URL",
+            }, commands
         request = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "ai-skills-runtime-benchmark/1.0"})
         try:
             with urllib.request.urlopen(request, timeout=30) as response:
@@ -119,36 +162,37 @@ def resolve_dataset_snapshot(track: dict[str, Any]) -> tuple[dict[str, Any], lis
         except urllib.error.URLError as exc:
             return {"kind": "real-url", "url": url, "resolved": False, "error": str(exc)}, commands
 
-    owner, repo, subpath = parsed
+    owner, repo, target_kind, selector = parsed
     repo_url = f"https://github.com/{owner}/{repo}"
-    ls_remote = run_command(["git", "ls-remote", repo_url, "HEAD"])
-    commands.append(ls_remote)
-    head_sha = ""
-    if ls_remote["returncode"] == 0 and ls_remote["stdout"]:
-        candidate = ls_remote["stdout"].split()[0]
-        if re.fullmatch(r"[0-9a-f]{40}", candidate):
-            head_sha = candidate
     snapshot: dict[str, Any] = {
         "kind": "real-github-repository-tree",
         "url": url,
         "repo_url": repo_url,
-        "head_sha": head_sha,
-        "track_subpath": subpath,
-        "resolved": bool(head_sha),
-        "tree_api_url": f"https://api.github.com/repos/{owner}/{repo}/git/trees/{head_sha}?recursive=1"
-        if head_sha
-        else "",
+        "head_sha": "",
+        "requested_selector": selector,
+        "resolved_ref": None,
+        "ref_kind": None,
+        "track_subpath": None,
+        "resolved": False,
+        "tree_api_url": "",
         "sampled_paths": [],
         "tree_path_count": 0,
         "tree_truncated": None,
         "track_subpath_present": None,
     }
-    if not head_sha:
-        return snapshot, commands
     try:
+        ref, head_sha, subpath, ref_kind = resolve_github_reference(repo_url, selector, commands)
+        if target_kind == "blob" and subpath is None:
+            raise ValueError("a blob URL must identify a path")
+        snapshot.update(head_sha=head_sha, resolved_ref=ref, ref_kind=ref_kind, track_subpath=subpath)
+        if ref_kind in {"tag", "commit"}:
+            commit = fetch_json(f"https://api.github.com/repos/{owner}/{repo}/git/commits/{head_sha}")
+            if commit.get("sha") != head_sha:
+                raise ValueError("reference target is not the requested commit")
+        snapshot["tree_api_url"] = f"https://api.github.com/repos/{owner}/{repo}/git/trees/{head_sha}?recursive=1"
         tree = fetch_json(snapshot["tree_api_url"])
         snapshot["tree_truncated"] = tree.get("truncated")
-        paths = verified_paths(tree, head_sha)
+        paths = github_tree.verified_paths(tree, head_sha)
     except Exception as exc:
         snapshot["resolved"] = False
         snapshot["tree_error"] = str(exc)
@@ -157,12 +201,16 @@ def resolve_dataset_snapshot(track: dict[str, Any]) -> tuple[dict[str, Any], lis
     if subpath:
         prefix = subpath.strip("/") + "/"
         matching = [path for path in paths if path == subpath or path.startswith(prefix)]
-        snapshot["track_subpath_present"] = bool(matching)
+        expected_type = "tree" if target_kind == "tree" else "blob"
+        snapshot["track_subpath_present"] = any(
+            item["path"] == subpath and item.get("type") == expected_type for item in tree["tree"]
+        )
         snapshot["sampled_paths"] = matching[:20]
-        snapshot["resolved"] = snapshot["resolved"] and bool(matching)
+        snapshot["resolved"] = snapshot["track_subpath_present"]
     else:
         snapshot["sampled_paths"] = paths[:20]
         snapshot["track_subpath_present"] = True
+        snapshot["resolved"] = True
     return snapshot, commands
 
 
@@ -490,6 +538,7 @@ def artifact_for(
             "dataset_track_id": track["id"],
             "dataset_url": track["url"],
             "resolved_commit": dataset_snapshot.get("head_sha"),
+            "resolved_ref": dataset_snapshot.get("resolved_ref"),
             "tree_path_count": dataset_snapshot.get("tree_path_count"),
             "track_subpath": dataset_snapshot.get("track_subpath"),
             "track_subpath_present": dataset_snapshot.get("track_subpath_present"),

@@ -23,11 +23,12 @@ crib = importlib.import_module("create_independent_runtime_batch")
 @pytest.mark.parametrize(
     "url,expected",
     [
-        ("https://github.com/owner/repo", ("owner", "repo", None)),
-        ("https://github.com/owner/repo.git", ("owner", "repo", None)),
-        ("https://github.com/o/r/tree/main/path/to/thing", ("o", "r", "path/to/thing")),
-        ("https://github.com/o/r/blob/main/README.md", ("o", "r", "README.md")),
-        ("https://github.com/o/r/", ("o", "r", None)),
+        ("https://github.com/owner/repo", ("owner", "repo", None, None)),
+        ("https://github.com/owner/repo.git", ("owner", "repo", None, None)),
+        ("https://github.com/o/r/tree/main/path/to/thing", ("o", "r", "tree", "main/path/to/thing")),
+        ("https://github.com/o/r/blob/main/README.md", ("o", "r", "blob", "main/README.md")),
+        ("https://github.com/o/r/", ("o", "r", None, None)),
+        ("https://github.com/o/r/tree/feature%2Fnested/files", ("o", "r", "tree", "feature/nested/files")),
     ],
 )
 def test_github_repo_from_url_parses(url, expected):
@@ -41,6 +42,12 @@ def test_github_repo_from_url_parses(url, expected):
         "http://github.com/o/r",  # wrong scheme
         "not-a-url",
         "https://github.com/only-owner",
+        "https://github.com/o/r/issues/1",
+        "https://github.com/o/r/tree/main/../secret",
+        "https://github.com/o/r/tree/main/%ZZ",
+        "https://github.com//o/r",
+        "https://github.com/o/r/tree/ma\nin/fixtures",
+        "https://[invalid",
     ],
 )
 def test_github_repo_from_url_rejects(url):
@@ -166,7 +173,7 @@ def test_resolve_dataset_snapshot_github_subpath_reports_resolved(monkeypatch):
         lambda cmd, cwd=crib.ROOT: {  # noqa: ARG005
             "command": list(cmd),
             "returncode": 0,
-            "stdout": f"{'a' * 40}\tHEAD",
+            "stdout": f"{'a' * 40}\trefs/heads/main",
             "stderr": "",
         },
     )
@@ -176,9 +183,10 @@ def test_resolve_dataset_snapshot_github_subpath_reports_resolved(monkeypatch):
         lambda url: {
             "sha": "a" * 40,
             "tree": [  # noqa: ARG005
-                {"path": "benchmarks/metrics.py"},
-                {"path": "benchmarks/README.md"},
-                {"path": "LICENSE"},
+                {"path": "benchmarks", "type": "tree"},
+                {"path": "benchmarks/metrics.py", "type": "blob"},
+                {"path": "benchmarks/README.md", "type": "blob"},
+                {"path": "LICENSE", "type": "blob"},
             ],
             "truncated": False,
         },
@@ -189,7 +197,8 @@ def test_resolve_dataset_snapshot_github_subpath_reports_resolved(monkeypatch):
     assert snap["resolved"] is True
     assert snap["head_sha"] == "a" * 40
     assert snap["track_subpath_present"] is True
-    assert snap["tree_path_count"] == 3
+    assert snap["tree_path_count"] == 4
+    assert snap["resolved_ref"] == "refs/heads/main"
     assert "benchmarks/metrics.py" in snap["sampled_paths"]
     assert len(commands) == 1
 
