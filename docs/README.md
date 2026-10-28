@@ -28,6 +28,8 @@ For citation management, see the [URL-classification security overlay](citation-
 
 For Azure Key Vault Java, see the [safer examples overlay](keyvault-java-security-overlay.md).
 
+Before using the `ppt-master` SVG editor, read its [security notice](ppt-master-security.md).
+
 To improve this collection, use the separate
 [contributor guide](../CONTRIBUTING.md) and
 [development setup](development.md). Research records, test harnesses and source

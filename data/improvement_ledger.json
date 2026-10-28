@@ -4775,9 +4775,13 @@
           {
             "path": "artifacts/research/2026-10-26/ppt-v673-source-candidate-review.json",
             "sha256": "d1b182b576d5aee9bf5b32e763c941d24dfa9bf4d9d91b3d094f2b1c7a8d8b9a"
+          },
+          {
+            "path": "artifacts/research/2026-10-28/ppt-master-origin-security-control.json",
+            "sha256": "43d7c8d9022207b2955ce7d07ad0e672fc60873680dae2d65ae8e99987d9384d"
           }
         ],
-        "scope": "Contextual review of the pinned baseline and v6.7.3 candidate; byte verification, paired static scans and one native converter fixture. Whole-package review and agent efficacy remain incomplete.",
+        "scope": "Contextual review of the pinned baseline and v6.7.3 candidate; byte verification, paired static scans, one native converter fixture and a local browser-origin security control. Whole-package review, a qualified security repair and agent efficacy remain incomplete.",
         "status": "in_progress"
       },
       "revision": {

@@ -15,6 +15,9 @@
 
 > Early alpha: this repository is experimental. Many entries may be incomplete, incompatible, stale, or unsuitable for a given environment. Use it at your own risk; the maintainers accept no responsibility for results, failures, or downstream use.
 
+**Security notice:** Avoid running the `ppt-master` local SVG editor until its
+[browser-origin issue](docs/ppt-master-security.md) has a qualified repair.
+
 Evidence-backed catalog of AI agent skills, with benchmark scenarios tied to real datasets and real repository workflows.
 
 Repository scope:
