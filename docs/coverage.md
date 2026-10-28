@@ -25,6 +25,13 @@ those reports under the `python_tooling` flag. No carryforward is enabled for
 that flag. Native TypeScript/Go example controls, source mirrors and instructions
 are outside this Python coverage percentage.
 
+The bundle validator checks that the reports agree on source files and that
+their declared line totals and rates match distinct recorded lines. It rejects
+unsafe upload paths and inconsistent reports. These consistency checks do not
+prove that a report recorded every executable line or that the observations
+were honestly produced; the workflow and its retained test artifacts provide
+the execution context.
+
 The configuration follows FlitzZip's measured-report approach: SHA-pinned
 Codecov Action, a pinned CLI, GitHub OIDC, explicit report paths and upload
 failures that fail CI. No upload secret is stored. The project status compares

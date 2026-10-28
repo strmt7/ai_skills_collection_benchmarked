@@ -38,6 +38,101 @@ def test_reports_are_bound_to_actual_tool_sources(bundle):
 
 
 @pytest.mark.parametrize(
+    "bad_xml",
+    [
+        XML.replace('<line number="1" hits="1"/>', ""),
+        XML.replace('lines-valid="1"', 'lines-valid="2"'),
+        XML.replace('lines-covered="1"', 'lines-covered="0"'),
+        XML.replace('line-rate="1"', 'line-rate="0"'),
+        XML.replace('line-rate="1"', 'line-rate="NaN"'),
+        XML.replace('<line number="1" hits="1"/>', '<line number="1" hits="1"/>' * 2),
+        XML.replace("</class>", '</class><class filename="tools/example.py"><lines/></class>'),
+        XML.replace('filename="example.py"', 'filename="./example.py"'),
+    ],
+    ids=["missing-lines", "total", "covered", "rate", "nonfinite", "duplicate-line", "duplicate-source", "alias"],
+)
+def test_report_rejects_contradictory_metrics_or_repeated_observations(bundle, bad_xml):
+    """Claimed coverage must agree with distinct lines in canonical sources."""
+    root, directory = bundle
+    (directory / "linux/coverage.xml").write_text(bad_xml, encoding="utf-8")
+    record, errors = coverage.validate_bundle(root, directory, 2)
+    assert len(errors) == 1
+    assert len(record["reports"]) == 1
+
+
+def test_zero_covered_lines_is_valid_when_the_report_says_so(bundle):
+    """A coherent zero-coverage result must not be inflated or rejected."""
+    root, directory = bundle
+    xml = XML.replace('lines-covered="1"', 'lines-covered="0"').replace('line-rate="1"', 'line-rate="0"')
+    (directory / "linux/coverage.xml").write_text(xml.replace('hits="1"', 'hits="0"'), encoding="utf-8")
+    record, errors = coverage.validate_bundle(root, directory, 2)
+    assert not errors
+    assert len(record["reports"]) == 2
+
+
+@pytest.mark.parametrize(("rate", "accepted"), [("0.3333", True), ("0.3334", False)])
+def test_line_rate_allows_coverage_py_rounding_without_accepting_contradictions(bundle, rate, accepted):
+    """Allow the four-decimal rate emitted by coverage.py for one of three lines."""
+    root, directory = bundle
+    (root / "tools/example.py").write_text("first\nsecond\nthird\n", encoding="utf-8")
+    xml = XML.replace('lines-valid="1"', 'lines-valid="3"').replace('line-rate="1"', f'line-rate="{rate}"')
+    xml = xml.replace(
+        '<line number="1" hits="1"/>',
+        '<line number="1" hits="1"/>' + '<line number="2" hits="0"/><line number="3" hits="0"/>',
+    )
+    (directory / "linux/coverage.xml").write_text(xml, encoding="utf-8")
+    _, errors = coverage.validate_bundle(root, directory, 2)
+    assert (not errors) is accepted
+
+
+def test_reports_must_cover_the_same_source_set(bundle):
+    """A truncated matrix report must not silently narrow coverage scope."""
+    root, directory = bundle
+    (root / "tools/other.py").write_text("pass\n", encoding="utf-8")
+    (directory / "windows/coverage.xml").write_text(XML.replace("example.py", "other.py"), encoding="utf-8")
+    record, errors = coverage.validate_bundle(root, directory, 2)
+    assert len(errors) == 1
+    assert "source set differs" in errors[0]
+    assert len(record["reports"]) == 1
+
+
+@pytest.mark.parametrize("unsafe", ["bad,report/coverage.xml", "bad\nreport/coverage.xml", "bad\rreport/coverage.xml"])
+def test_report_paths_cannot_inject_upload_list_or_github_outputs(tmp_path, unsafe):
+    """Report paths must fit both the comma-separated upload list and output protocol."""
+    with pytest.raises(ValueError, match="cannot be represented safely"):
+        coverage._report_document(tmp_path / unsafe, tmp_path)
+
+
+def test_unsafe_report_path_does_not_publish_upload_outputs(bundle, monkeypatch):
+    """A filename that would change Codecov's file list must fail the upload gate."""
+    root, directory = bundle
+    (directory / "linux").rename(directory / "linux,extra")
+    monkeypatch.setattr(
+        coverage.subprocess, "run", lambda *args, **kwargs: subprocess.CompletedProcess(args, 0, "a" * 40)
+    )
+    output, github = root / "receipt.json", root / "github-output.txt"
+    assert (
+        coverage.main(
+            [
+                "--root",
+                str(root),
+                "--directory",
+                str(directory),
+                "--expected-reports",
+                "2",
+                "--output",
+                str(output),
+                "--github-output",
+                str(github),
+            ]
+        )
+        == 1
+    )
+    assert not output.exists()
+    assert not github.exists()
+
+
+@pytest.mark.parametrize(
     "bad", ["missing", "traversal", "outside", "line", "negative-hits", "doctype", "utf16", "empty"]
 )
 def test_invalid_coverage_reports_are_rejected_without_hiding_valid_report(bundle, bad):
