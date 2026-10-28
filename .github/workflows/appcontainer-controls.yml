@@ -8,6 +8,7 @@ on:
       - "tools/*appcontainer*.py"
       - "tools/grade_agent_submission.py"
       - "tools/run_agent_trial.py"
+      - "tools/_trial_transcript.py"
       - "tools/qualify_modern_grader.py"
       - "tools/_windows_submission_reader.py"
       - "benchmarks/agent-effectiveness/graders/artifact_validator.py"
