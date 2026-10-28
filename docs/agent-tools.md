@@ -6,6 +6,11 @@ The root [AGENTS.md](../AGENTS.md) remains controlling, including its one-sessio
 rule, source locks and benchmark independence. Tool requirements do not authorize
 subagents or relax any access, security or evidence rule.
 
+Before operating a catalog skill, check the [collection guidance](README.md) for
+applicable security notices. In particular, do not run the `ppt-master` SVG editor
+while its [security notice](ppt-master-security.md) remains open. Catalog
+inclusion does not imply a security review or approval.
+
 | Required tool | Local skill | When execution is mandatory |
 | --- | --- | --- |
 | Caveman | [Internal communication](../.agents/skills/caveman/SKILL.md) | Every task: concise internal communication and bounded context, with normal public prose. |

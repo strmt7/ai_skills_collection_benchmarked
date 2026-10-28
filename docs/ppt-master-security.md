@@ -8,7 +8,9 @@ upstream v6.7.3 release checked on October 28, 2026.
 
 The [security control record](../artifacts/research/2026-10-28/ppt-master-origin-security-control.json)
 describes the source versions, test scope, evidence digests, and limitations.
-An experimental candidate rejected the tested cross-port request, but it is not
-distributed or qualified as a complete repair. The upstream mirror is unchanged,
-and its existing security findings remain open. This result does not assess the
-security of every `ppt-master` feature or measure coding-agent performance.
+An experimental candidate also rejects origin-free write requests and preserves
+the tested command-line shutdown flow. The [candidate review](../artifacts/research/2026-10-28/ppt-master-origin-candidate-v2-review.json)
+records those controls and their limits. The candidate is not distributed or
+qualified as a complete repair: its Python security scan retains 49 findings.
+The upstream mirror is unchanged. This result does not assess every `ppt-master`
+feature or measure coding-agent performance.

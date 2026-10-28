@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "security_candidate_qualification",
+  "skill_id": "hugohe3-ppt-master-skills-ppt-master-skill-md",
+  "source_repo": "hugohe3/ppt-master",
+  "source_commit": "a50758ac29ec027e85966db33e2ae80031446756",
+  "candidate_state": "private_experimental_not_distributed",
+  "candidate_server_sha256": {
+    "scripts/svg_editor/server.py": "d71e9a71fedbcb538c62862d3107496118f01a2569a97a51f059efdea4c14246",
+    "scripts/confirm_ui/server.py": "947e1fae15850da39475e91de17927ca6a459535e86aac02b899f2cf7972b4c3"
+  },
+  "controls": {
+    "two_server_origin_request_cases": 38,
+    "request_matrix_sha256": "f65e47702f1f104d95de99a9c35fd6637b3b461c07cc9cba6f2a77e437e4d7be",
+    "same_origin_browser_fetch_sha256": "104fcdbcde35f46870cf7f8b72286bd024245d0716845fc6416d95977682176c",
+    "cross_origin_browser_control_sha256": "ee92b65b7cb2d8b5819b8ef125eab4d8e9479c79420f523b7e3fa9610ff32371",
+    "origin_free_rejection_and_real_cli_shutdown_sha256": "a70bb3757c958458c5b336ebc4b57cfc5c2c26ba34075953ff0cc5c9120cbef8",
+    "confirmation_tests_baseline": "15 passed",
+    "confirmation_tests_candidate": "15 passed after explicitly sending same-origin test-client headers",
+    "security_tests_candidate": "6 passed after making positive origin tests use matching request hosts",
+    "original_expected_behavior_changes": "Cross-origin loopback requests and origin-free mutation requests are rejected.",
+    "test_environment_lock_sha256": "e1f8610f50b77f25dcf686ffbfbb0b9dfb6453c047623e973d05f83a0f0ed66e",
+    "test_environment": "CPython 3.13.17, Flask 3.1.3, PyYAML 6.0.3, eight wheels checked against PyPI digests and pip check"
+  },
+  "codeql": {
+    "version": "2.27.3",
+    "query_suite": "python-security-extended",
+    "baseline_alert_count": 49,
+    "candidate_alert_count": 49,
+    "new_location_fingerprints": 0,
+    "removed_location_fingerprints": 0,
+    "baseline_sarif_sha256": "2d7741c4ecbf13dccf3eb3176905ddf774793769263a8d0dfc5c4b3a20c56330",
+    "candidate_sarif_sha256": "138e18ccd73bc2e118f5ab16b4cce53e57ab34cd417adf793cfac7db02ed8bbb",
+    "scope": "Copied skill tree; Python scan snapshot was created before changes limited to test-client fixture headers."
+  },
+  "research": {
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html",
+    "crawl4ai_native_result_sha256": "f559035ea57c753e75fe48b8b4ba7db94b77fc605bf4ae3709b624c35171e12a",
+    "provider_version": "0.9.5+catalog.portable4",
+    "scope_reviewed": true
+  },
+  "limitations": [
+    "The candidate is private and not a distributed repair.",
+    "The 49 existing Python static findings remain; unchanged counts and fingerprints do not prove security.",
+    "Browser controls cover the SVG editor; the confirmation server was checked through its Flask request interface.",
+    "The controls do not establish complete CSRF protection, whole-package security, or coding-agent efficacy.",
+    "Original and revised test outputs and native browser receipts are retained outside Git."
+  ]
+}
