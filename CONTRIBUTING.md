@@ -11,10 +11,11 @@ For skill installation and use, start with the
 
 ## Development on main
 
-All development and dependency maintenance take place on `main`. Do not create
-development branches or pull requests. Validate dependency updates against their
-affected installation and runtime contracts, and keep vulnerability alerts and
-security checks enabled. Automatic dependency-update PR creation is disabled.
+Agent-performed development and dependency maintenance take place on `main`.
+Other contributors may use pull requests according to the repository's GitHub
+permissions and review rules. Validate dependency updates against their affected
+installation and runtime contracts, and keep vulnerability alerts and security
+checks enabled. Automatic dependency-update PR creation is disabled.
 
 ## Quality gates (must pass before push)
 
@@ -71,6 +72,12 @@ The [Windows evaluator guide](toolchains/appcontainer/README.md) explains privat
 runtime setup, native qualification and evaluation of collected validator patches.
 Run `python tools/qualify_appcontainer.py --check` with the other local gates.
 Its source-bound component evidence does not establish a model or skill advantage.
+
+## DeepSource inventory
+
+Use the [DeepSource inventory guide](docs/deepsource-inventory.md) to retrieve
+default-branch occurrences with the official API and verify pagination and
+analysis identity. A successful commit status does not establish an empty backlog.
 
 ## Determinism
 
