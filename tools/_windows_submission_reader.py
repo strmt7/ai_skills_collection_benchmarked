@@ -1,4 +1,4 @@
-"""Read one submission file through held Windows handles without following links."""
+"""Read explicitly selected submission files through held Windows handles."""
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ import sys
 from collections.abc import Iterator
 from contextlib import contextmanager
 from ctypes import wintypes
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Any
 
 
@@ -55,10 +55,21 @@ def _normalize_path(value: str) -> str:
 
 
 @contextmanager
-def open_submission(workspace: Path) -> Iterator[tuple[Any, Any, int]]:
-    """Hold workspace and tools directories against renames and yield the file handle."""
+def open_workspace_file(workspace: Path, name: str, *, max_bytes: int) -> Iterator[tuple[Any, Any, int]]:
+    """Hold the workspace and every selected ancestor against renames and writes."""
     if sys.platform != "win32":
         raise ValueError("Safe submission collection requires Windows")
+    if type(max_bytes) is not int or not 0 <= max_bytes <= 8 * 1024 * 1024:
+        raise ValueError("submission size limit must be between 0 and 8 MiB")
+    path = PurePosixPath(name)
+    parts = path.parts
+    if (
+        not parts
+        or path.is_absolute()
+        or path.as_posix() != name
+        or any(part in {".", ".."} or any(char in part for char in "\\:\0") or part[-1] in " ." for part in parts)
+    ):
+        raise ValueError("invalid submission path")
     kernel = ctypes.WinDLL("kernel32", use_last_error=True)
     ntdll = ctypes.WinDLL("ntdll")
     kernel.CreateFileW.argtypes = [
@@ -106,8 +117,10 @@ def open_submission(workspace: Path) -> Iterator[tuple[Any, Any, int]]:
     def relative(parent, name: str, directory: bool):
         if not name or name in {".", ".."} or any(char in name for char in "\\/:") or name[-1] in " .":
             raise ValueError("invalid submission path component")
-        buffer = ctypes.create_unicode_buffer(name)
         encoded = len(name.encode("utf-16-le"))
+        if encoded > 65532:
+            raise ValueError("submission path component exceeds the native limit")
+        buffer = ctypes.create_unicode_buffer(name)
         text = _UnicodeString(encoded, encoded + 2, ctypes.cast(buffer, wintypes.LPWSTR))
         attrs = _ObjectAttributes(ctypes.sizeof(_ObjectAttributes), parent, ctypes.pointer(text), 0x40, None, None)
         status = _IoStatus()
@@ -146,21 +159,29 @@ def open_submission(workspace: Path) -> Iterator[tuple[Any, Any, int]]:
             raise ValueError("cannot resolve the opened submission directory")
         if _normalize_path(buffer.value) != _normalize_path(absolute):
             raise ValueError("submission directory resolves outside its selected path")
-        tools, _ = relative(root, "tools", True)
-        candidate, info = relative(tools, "check_benchmark_artifact.py", False)
+        parent = root
+        for part in parts[:-1]:
+            parent, _ = relative(parent, part, True)
+        candidate, info = relative(parent, parts[-1], False)
         size = (info.size_high << 32) | info.size_low
-        if info.links != 1 or size > 1024 * 1024:
-            raise ValueError("submitted validator must have one link and be at most 1 MiB")
+        if info.links != 1 or size > max_bytes:
+            raise ValueError(f"submitted file must have one link and be within its size limit ({max_bytes} bytes)")
         yield kernel, candidate, size
     finally:
         for handle in reversed(handles):
             kernel.CloseHandle(handle)
 
 
-def read_submission(workspace: Path) -> bytes:
+@contextmanager
+def open_submission(workspace: Path) -> Iterator[tuple[Any, Any, int]]:
+    with open_workspace_file(workspace, "tools/check_benchmark_artifact.py", max_bytes=1024 * 1024) as opened:
+        yield opened
+
+
+def read_workspace_file(workspace: Path, name: str, *, max_bytes: int) -> bytes:
     if sys.platform != "win32":
         raise ValueError("Safe submission collection requires Windows")
-    with open_submission(workspace) as (kernel, handle, expected_size):
+    with open_workspace_file(workspace, name, max_bytes=max_bytes) as (kernel, handle, expected_size):
         kernel.ReadFile.argtypes = [
             wintypes.HANDLE,
             wintypes.LPVOID,
@@ -181,6 +202,10 @@ def read_submission(workspace: Path) -> bytes:
                     raise ValueError("submitted validator changed while being read")
                 return b"".join(chunks)
             total += count.value
-            if total > 1024 * 1024:
-                raise ValueError("submitted validator exceeds 1 MiB")
+            if total > max_bytes:
+                raise ValueError("submitted file exceeds its size limit")
             chunks.append(buffer.raw[: count.value])
+
+
+def read_submission(workspace: Path) -> bytes:
+    return read_workspace_file(workspace, "tools/check_benchmark_artifact.py", max_bytes=1024 * 1024)

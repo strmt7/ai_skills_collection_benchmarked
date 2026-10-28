@@ -1,11 +1,12 @@
 from __future__ import annotations
 
+import mmap
 import os
 import sys
 from pathlib import Path
 
 import pytest
-from _windows_submission_reader import open_submission, read_submission
+from _windows_submission_reader import open_submission, open_workspace_file, read_submission, read_workspace_file
 
 pytestmark = pytest.mark.skipif(sys.platform != "win32", reason="Windows native handle boundary")
 
@@ -58,13 +59,100 @@ def test_hardlinked_submission_is_rejected_without_touching_source(tmp_path):
 
 def test_oversized_submission_is_rejected(tmp_path):
     root = workspace(tmp_path, b"x" * (1024 * 1024 + 1))
-    with pytest.raises(ValueError, match="1 MiB"):
+    with pytest.raises(ValueError, match="size limit"):
         read_submission(root)
 
 
 def test_empty_submission_remains_readable(tmp_path):
     root = workspace(tmp_path, b"")
     assert read_submission(root) == b""
+
+
+def test_explicit_workspace_files_are_collected_without_changing_them(tmp_path):
+    root = workspace(tmp_path)
+    nested = root / "tests/deep/regressions.py"
+    nested.parent.mkdir(parents=True)
+    nested.write_bytes(b"independent tests\n")
+    assert read_workspace_file(root, "tests/deep/regressions.py", max_bytes=128) == b"independent tests\n"
+    assert nested.read_bytes() == b"independent tests\n"
+
+
+@pytest.mark.parametrize(
+    "name",
+    [
+        "",
+        ".",
+        "../outside",
+        "tests/../outside",
+        "/outside",
+        "C:/outside",
+        "tests\\outside",
+        "tests//file",
+        "tests/file.",
+    ],
+)
+def test_noncanonical_workspace_paths_are_rejected(tmp_path, name):
+    root = workspace(tmp_path)
+    with pytest.raises(ValueError):
+        read_workspace_file(root, name, max_bytes=128)
+
+
+def test_workspace_file_rejects_hardlinks_and_concurrent_writers(tmp_path):
+    root = workspace(tmp_path)
+    source = root / "tests/regressions.py"
+    source.parent.mkdir()
+    source.write_bytes(b"test")
+    with source.open("r+b"), pytest.raises((ValueError, OSError)):
+        read_workspace_file(root, "tests/regressions.py", max_bytes=128)
+    outside = tmp_path / "outside"
+    source.rename(outside)
+    os.link(outside, source)
+    with pytest.raises(ValueError, match="one link"):
+        read_workspace_file(root, "tests/regressions.py", max_bytes=128)
+    assert outside.read_bytes() == b"test"
+
+
+def test_workspace_file_rejects_a_live_writable_mapping(tmp_path):
+    root = workspace(tmp_path)
+    source = root / "tools/check_benchmark_artifact.py"
+    with source.open("r+b") as stream:
+        mapping = mmap.mmap(stream.fileno(), 0, access=mmap.ACCESS_WRITE)
+    try:
+        with pytest.raises((ValueError, OSError)):
+            read_workspace_file(root, "tools/check_benchmark_artifact.py", max_bytes=128)
+    finally:
+        mapping.close()
+    assert source.read_bytes() == b"print('safe')\n"
+
+
+def test_workspace_file_holds_all_ancestors_until_read_is_finished(tmp_path):
+    root = workspace(tmp_path)
+    path = root / "tests/deep/regressions.py"
+    path.parent.mkdir(parents=True)
+    path.write_bytes(b"test")
+    with open_workspace_file(root, "tests/deep/regressions.py", max_bytes=128):
+        with pytest.raises(OSError):
+            (root / "tests").rename(root / "moved")
+        with pytest.raises(OSError):
+            path.write_bytes(b"changed")
+    assert path.read_bytes() == b"test"
+
+
+def test_workspace_file_enforces_explicit_size_bound(tmp_path):
+    root = workspace(tmp_path)
+    with pytest.raises(ValueError, match="limit"):
+        read_workspace_file(root, "tools/check_benchmark_artifact.py", max_bytes=4)
+    for limit in (-1, True, 8 * 1024 * 1024 + 1):
+        with pytest.raises(ValueError, match="limit"):
+            read_workspace_file(root, "tools/check_benchmark_artifact.py", max_bytes=limit)
+
+
+def test_workspace_file_accepts_large_bounded_task_input(tmp_path):
+    root = workspace(tmp_path)
+    source = root / "catalog.json"
+    data = b"x" * (4 * 1024 * 1024)
+    source.write_bytes(data)
+    assert read_workspace_file(root, "catalog.json", max_bytes=len(data)) == data
 
 
 def make_symlink(target: Path, link: Path, *, directory: bool = False) -> None:
@@ -116,3 +204,15 @@ def test_tools_reparse_point_is_rejected(tmp_path):
     with pytest.raises((ValueError, OSError)):
         read_submission(root)
     assert (outside / "check_benchmark_artifact.py").read_bytes() == b"print('safe')\n"
+
+
+def test_workspace_nested_reparse_point_is_rejected(tmp_path):
+    root = workspace(tmp_path)
+    outside = tmp_path / "outside-dir"
+    outside.mkdir()
+    (outside / "file.py").write_bytes(b"sentinel")
+    (root / "tests").mkdir()
+    make_symlink(outside, root / "tests/link", directory=True)
+    with pytest.raises((ValueError, OSError)):
+        read_workspace_file(root, "tests/link/file.py", max_bytes=128)
+    assert (outside / "file.py").read_bytes() == b"sentinel"
