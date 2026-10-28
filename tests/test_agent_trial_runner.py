@@ -12,6 +12,37 @@ import run_agent_trial as trials
 import summarize_agent_trials as summary
 
 
+@pytest.mark.parametrize(
+    ("exit_code", "timed_out", "violations", "expected"),
+    [
+        (0, False, [], "task_passed"),
+        (None, False, [], "harness_error"),
+        (True, False, [], "harness_error"),
+        (1, False, [], "harness_error"),
+        (0, False, ["outside scope"], "invalid_scope"),
+        (1, True, ["outside scope"], "timed_out"),
+        (1, False, ["outside scope"], "harness_error"),
+    ],
+)
+def test_trial_status_requires_a_successful_process_and_preserves_failure_precedence(
+    exit_code, timed_out, violations, expected
+):
+    """Incomplete processes cannot become task passes, even when grading succeeds."""
+    assert (
+        trials.trial_status(
+            timed_out=timed_out,
+            exit_code=exit_code,
+            completed=True,
+            collection_errors=[],
+            transcript_error=None,
+            blocked=False,
+            violations=violations,
+            grade={"status": "task_passed"},
+        )
+        == expected
+    )
+
+
 def test_workspace_paths_cannot_escape(tmp_path):
     for path in ("../outside", ".", str(tmp_path.parent / "outside")):
         with pytest.raises(ValueError):

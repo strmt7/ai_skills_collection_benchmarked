@@ -26,7 +26,8 @@ LIMITATIONS = [
     "Provider-resolved model snapshots are unavailable; the requested model is not a verified backend revision.",
     "This frozen block does not pool earlier exploratory probes or harness versions; their failures remain recorded separately.",
     "The grading process executes submitted Python on the host; it is not a hardened service for arbitrary untrusted submissions.",
-    "A case manifest checks the reported denominator but cannot independently prove that the grader ran or that observations are authentic.",
+    "A case manifest checks the reported denominator but cannot independently prove that the grader ran "
+    "or that observations are authentic.",
 ]
 
 
@@ -134,12 +135,8 @@ def verify_transcript(directory: Path, result: dict[str, Any]) -> None:
         raise ValueError("transcript disagrees with recorded usage or command count")
 
 
-def verify_result(
-    directory: Path, protocol: dict[str, Any], protocol_hash: str, condition: str, expected_cases: frozenset[str]
-) -> dict[str, Any]:
-    result = read_json(directory / "result.json")
-    if not isinstance(result, dict):
-        raise ValueError("trial result must be an object")
+def _verify_identity(result: dict[str, Any], protocol: dict[str, Any], protocol_hash: str, condition: str) -> None:
+    """Check the attempt's protocol, condition, status and exit-code identity."""
     expected = {
         "protocol_sha256": protocol_hash,
         "task_id": protocol["task"]["id"],
@@ -156,6 +153,10 @@ def verify_result(
         result["process_exit_code"] is not None and type(result["process_exit_code"]) is not int
     ):
         raise ValueError("process exit code must be an integer or unavailable")
+
+
+def _verify_evidence(directory: Path, result: dict[str, Any], protocol_hash: str) -> None:
+    """Validate the retained files, transcript and launch protocol binding."""
     evidence = result.get("evidence_sha256")
     if not isinstance(evidence, dict) or not {
         "launch.json",
@@ -172,6 +173,23 @@ def verify_result(
     launch = read_json(directory / "launch.json")
     if not isinstance(launch, dict) or launch.get("protocol_sha256") != protocol_hash:
         raise ValueError("launch used a different frozen protocol")
+
+
+def _verify_counts(grade: dict[str, Any], checks: list[dict[str, Any]]) -> None:
+    """Require recorded check totals to agree with their boolean outcomes."""
+    if checks and (
+        type(grade.get("checks_total")) is not int
+        or type(grade.get("checks_passed")) is not int
+        or grade.get("checks_total") != len(checks)
+        or grade.get("checks_passed") != sum(check["passed"] for check in checks)
+    ):
+        raise ValueError("external check counts are inconsistent")
+
+
+def _verify_checks(
+    result: dict[str, Any], expected_cases: frozenset[str]
+) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+    """Validate the external grader's cases and complete scored denominator."""
     grade = result.get("grader")
     if not isinstance(grade, dict):
         raise ValueError("external grader result is unavailable")
@@ -185,43 +203,55 @@ def verify_result(
         raise ValueError("external checks must have unique nonempty case names")
     if result["status"] in {"task_passed", "task_failed"} and frozenset(names) != expected_cases:
         raise ValueError("matched attempts must use the same independently recorded grading cases")
-    if checks and (
-        type(grade.get("checks_total")) is not int
-        or type(grade.get("checks_passed")) is not int
-        or grade.get("checks_total") != len(checks)
-        or grade.get("checks_passed") != sum(check["passed"] for check in checks)
+    _verify_counts(grade, checks)
+    return grade, checks
+
+
+def _verify_scored_outcome(
+    result: dict[str, Any], grade: dict[str, Any], checks: list[dict[str, Any]], clean_execution: bool
+) -> None:
+    """Require scored outcomes to agree with grading and scope evidence."""
+    status = result["status"]
+    if status not in {"task_passed", "task_failed"}:
+        return
+    if (
+        not checks
+        or all(check["passed"] for check in checks) != (status == "task_passed")
+        or grade.get("status") != status
+        or not clean_execution
+        or result.get("scope_violations") != []
     ):
-        raise ValueError("external check counts are inconsistent")
+        label = "pass" if status == "task_passed" else "task failure"
+        raise ValueError(f"reported {label} is contradicted by grading, execution, or collection evidence")
+
+
+def _verify_scope_outcome(result: dict[str, Any], clean_execution: bool) -> None:
+    """Require an invalid-scope outcome to contain actual scope violations."""
+    if result["status"] != "invalid_scope":
+        return
+    violations = result.get("scope_violations")
+    if (
+        not clean_execution
+        or not isinstance(violations, list)
+        or not violations
+        or any(not isinstance(violation, str) or not violation for violation in violations)
+    ):
+        raise ValueError("reported scope violation is not supported by execution and scope evidence")
+
+
+def _verify_outcome(result: dict[str, Any], grade: dict[str, Any], checks: list[dict[str, Any]]) -> None:
+    """Reject pass, failure or scope labels contradicted by execution evidence."""
     clean_execution = (
         type(result.get("process_exit_code")) is int
         and result["process_exit_code"] == 0
         and result.get("evidence_collection_errors") == []
     )
-    if result["status"] == "task_passed" and (
-        not checks
-        or not all(check["passed"] for check in checks)
-        or grade.get("status") != "task_passed"
-        or not clean_execution
-        or result.get("scope_violations") != []
-    ):
-        raise ValueError("reported pass is contradicted by grading, execution, or collection evidence")
-    if result["status"] == "task_failed" and (
-        not checks
-        or all(check["passed"] for check in checks)
-        or grade.get("status") != "task_failed"
-        or not clean_execution
-        or result.get("scope_violations") != []
-    ):
-        raise ValueError("reported task failure is contradicted by grading, execution, or collection evidence")
-    if result["status"] == "invalid_scope":
-        violations = result.get("scope_violations")
-        if (
-            not clean_execution
-            or not isinstance(violations, list)
-            or not violations
-            or any(not isinstance(violation, str) or not violation for violation in violations)
-        ):
-            raise ValueError("reported scope violation is not supported by execution and scope evidence")
+    _verify_scored_outcome(result, grade, checks, clean_execution)
+    _verify_scope_outcome(result, clean_execution)
+
+
+def _verify_usage(result: dict[str, Any]) -> None:
+    """Reject incomplete or contradictory token counts."""
     usage = result.get("usage")
     if usage is not None:
         if not isinstance(usage, dict) or any(type(value) is not int or value < 0 for value in usage.values()):
@@ -231,6 +261,20 @@ def verify_result(
             or usage.get("cached_input_tokens", 0) > usage["input_tokens"]
         ):
             raise ValueError("usage token totals are incomplete or contradictory")
+
+
+def verify_result(
+    directory: Path, protocol: dict[str, Any], protocol_hash: str, condition: str, expected_cases: frozenset[str]
+) -> dict[str, Any]:
+    """Verify an attempt's identity, evidence, grading outcome and usage."""
+    result = read_json(directory / "result.json")
+    if not isinstance(result, dict):
+        raise ValueError("trial result must be an object")
+    _verify_identity(result, protocol, protocol_hash, condition)
+    _verify_evidence(directory, result, protocol_hash)
+    grade, checks = _verify_checks(result, expected_cases)
+    _verify_outcome(result, grade, checks)
+    _verify_usage(result)
     return result
 
 
@@ -339,7 +383,8 @@ def render(report: dict[str, Any]) -> str:
         f"Task: `{report['task_id']}`. Requested model: `{report['model_requested']}` with `{report['reasoning_effort_requested']}` reasoning.",
         "",
         f"All {report['planned_attempts']} planned attempts are recorded. No quality superiority is established.",
-        f"Each scored attempt must report all {report['expected_grading_cases']} cases in the grading manifest (`{report['grading_manifest_sha256']}`).",
+        f"Each scored attempt must report all {report['expected_grading_cases']} cases in the grading manifest "
+        f"(`{report['grading_manifest_sha256']}`).",
         "",
         "| Condition | Task passes / planned | Observed usage | Input tokens, median [min–max] | Output tokens, median [min–max] |",
         "| --- | --- | --- | --- | --- |",

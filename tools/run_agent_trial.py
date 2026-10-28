@@ -142,30 +142,8 @@ def external_grade(task: dict[str, Any], workspace: Path, python: Path) -> dict[
     return response
 
 
-def run(protocol_path: Path, condition: str, output: Path, cli: Path, python: Path) -> dict[str, Any]:
-    protocol_bytes = protocol_path.read_bytes()
-    protocol = strict_json(protocol_bytes.decode("utf-8"))
-    if not isinstance(protocol, dict):
-        raise ValueError("trial protocol must be an object")
-    protocol_hash = sha256(protocol_bytes)
-    if output.exists():
-        raise ValueError("trial output already exists; refusing to overwrite an attempt")
-    for name, key in (
-        ("run_agent_trial.py", "runner_sha256"),
-        ("grade_agent_submission.py", "grading_driver_sha256"),
-        ("_trial_transcript.py", "transcript_parser_sha256"),
-        ("_trial_manifest.py", "trial_manifest_sha256"),
-    ):
-        if sha256((ROOT / "tools" / name).read_bytes()) != protocol.get(key):
-            raise ValueError("benchmark execution tooling changed after protocol freeze")
-    if type(protocol.get("protocol_version")) is not int or protocol["protocol_version"] < 3:
-        raise ValueError("new trials require a protocol with a committed grading case set")
-    read_grading_manifest(protocol_path, protocol, protocol_hash)
-    workspace, prompt, inputs = prepare(protocol, condition, python)
-    output.mkdir(parents=True, exist_ok=False)
-    (output / "prompt.txt").write_text(prompt, encoding="utf-8")
-    invocation = command(protocol, cli, workspace)
-    write_json(output / "launch.json", {"command": invocation, "protocol_sha256": protocol_hash})
+def execute_agent(invocation: list[str], prompt: str, output: Path, timeout: float) -> tuple[int | None, bool, float]:
+    """Run one agent command and retain its transcript, errors and timing."""
     started = time.monotonic()
     timed_out = False
     with (
@@ -176,25 +154,18 @@ def run(protocol_path: Path, condition: str, output: Path, cli: Path, python: Pa
             invocation, stdin=subprocess.PIPE, stdout=stdout, stderr=stderr, text=True, encoding="utf-8"
         )
         try:
-            process.communicate(prompt, timeout=protocol["time_limit_seconds"])
+            process.communicate(prompt, timeout=timeout)
         except subprocess.TimeoutExpired:
             timed_out = True
             process.kill()
             process.communicate()
-    elapsed = time.monotonic() - started
-    transcript_error = None
-    try:
-        events = read_events(output / "transcript.jsonl", allow_truncated_final=timed_out or process.returncode != 0)
-    except ValueError as exc:
-        transcript_error = str(exc)
-        events = []
-    usage = next((event.get("usage") for event in reversed(events) if event["type"] == "turn.completed"), None)
-    completed = any(event["type"] == "turn.completed" for event in events)
-    commands = [
-        event["item"]
-        for event in events
-        if event["type"] == "item.completed" and event.get("item", {}).get("type") == "command_execution"
-    ]
+    return process.returncode, timed_out, time.monotonic() - started
+
+
+def collect_submission(
+    workspace: Path, output: Path, inputs: dict[str, bytes], protocol: dict[str, Any]
+) -> tuple[Path, list[str], list[str], list[str]]:
+    """Capture changed task files, scope violations, patches and collection errors."""
     changes: list[str] = []
     violations: list[str] = []
     patch: list[str] = []
@@ -230,6 +201,77 @@ def run(protocol_path: Path, condition: str, output: Path, cli: Path, python: Pa
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(data)
     (output / "patch.diff").write_text("".join(patch), encoding="utf-8")
+    return submission, changes, violations, collection_errors
+
+
+def trial_status(
+    *,
+    timed_out: bool,
+    exit_code: int | None,
+    completed: bool,
+    collection_errors: list[str],
+    transcript_error: str | None,
+    blocked: bool,
+    violations: list[str],
+    grade: dict[str, Any],
+) -> str:
+    """Keep timeouts, infrastructure errors and scope failures out of task scores."""
+    if timed_out:
+        return "timed_out"
+    if (
+        blocked
+        or type(exit_code) is not int
+        or exit_code != 0
+        or not completed
+        or collection_errors
+        or transcript_error
+    ):
+        return "harness_error"
+    if violations:
+        return "invalid_scope"
+    return grade["status"]
+
+
+def run(protocol_path: Path, condition: str, output: Path, cli: Path, python: Path) -> dict[str, Any]:
+    """Run one frozen trial and retain its grading and execution evidence."""
+    protocol_bytes = protocol_path.read_bytes()
+    protocol = strict_json(protocol_bytes.decode("utf-8"))
+    if not isinstance(protocol, dict):
+        raise ValueError("trial protocol must be an object")
+    protocol_hash = sha256(protocol_bytes)
+    if output.exists():
+        raise ValueError("trial output already exists; refusing to overwrite an attempt")
+    for name, key in (
+        ("run_agent_trial.py", "runner_sha256"),
+        ("grade_agent_submission.py", "grading_driver_sha256"),
+        ("_trial_transcript.py", "transcript_parser_sha256"),
+        ("_trial_manifest.py", "trial_manifest_sha256"),
+    ):
+        if sha256((ROOT / "tools" / name).read_bytes()) != protocol.get(key):
+            raise ValueError("benchmark execution tooling changed after protocol freeze")
+    if type(protocol.get("protocol_version")) is not int or protocol["protocol_version"] < 3:
+        raise ValueError("new trials require a protocol with a committed grading case set")
+    read_grading_manifest(protocol_path, protocol, protocol_hash)
+    workspace, prompt, inputs = prepare(protocol, condition, python)
+    output.mkdir(parents=True, exist_ok=False)
+    (output / "prompt.txt").write_text(prompt, encoding="utf-8")
+    invocation = command(protocol, cli, workspace)
+    write_json(output / "launch.json", {"command": invocation, "protocol_sha256": protocol_hash})
+    exit_code, timed_out, elapsed = execute_agent(invocation, prompt, output, protocol["time_limit_seconds"])
+    transcript_error = None
+    try:
+        events = read_events(output / "transcript.jsonl", allow_truncated_final=timed_out or exit_code != 0)
+    except ValueError as exc:
+        transcript_error = str(exc)
+        events = []
+    usage = next((event.get("usage") for event in reversed(events) if event["type"] == "turn.completed"), None)
+    completed = any(event["type"] == "turn.completed" for event in events)
+    commands = [
+        event["item"]
+        for event in events
+        if event["type"] == "item.completed" and event.get("item", {}).get("type") == "command_execution"
+    ]
+    submission, changes, violations, collection_errors = collect_submission(workspace, output, inputs, protocol)
     grade = (
         {"status": "harness_error", "error": "grading skipped because the transcript is invalid"}
         if transcript_error
@@ -238,14 +280,15 @@ def run(protocol_path: Path, condition: str, output: Path, cli: Path, python: Pa
     # Policy/tool launch errors are harness failures, not evidence that the
     # model failed the coding task. Keep them in accounting with actual usage.
     blocked = "blocked by policy" in (output / "stderr.txt").read_text(encoding="utf-8")
-    status = (
-        "timed_out"
-        if timed_out
-        else "harness_error"
-        if blocked or process.returncode or not completed or collection_errors or transcript_error
-        else "invalid_scope"
-        if violations
-        else grade["status"]
+    status = trial_status(
+        timed_out=timed_out,
+        exit_code=exit_code,
+        completed=completed,
+        collection_errors=collection_errors,
+        transcript_error=transcript_error,
+        blocked=blocked,
+        violations=violations,
+        grade=grade,
     )
     result = {
         "trial_version": 1,
@@ -260,7 +303,7 @@ def run(protocol_path: Path, condition: str, output: Path, cli: Path, python: Pa
         "usage": usage,
         "elapsed_seconds": elapsed,
         "latency_claim_eligible": False,
-        "process_exit_code": process.returncode,
+        "process_exit_code": exit_code,
         "commands_completed": None if transcript_error else len(commands),
         "transcript_error": transcript_error,
         "changed_source_files": changes,

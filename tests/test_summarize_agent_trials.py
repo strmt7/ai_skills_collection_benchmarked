@@ -439,6 +439,7 @@ def test_protocol_inputs_cannot_change_during_report_verification(matched, monke
     verify = summary.verify_result
 
     def change_input(*args, **kwargs):
+        """Simulate a protocol input changing during verification."""
         result = verify(*args, **kwargs)
         target.write_text(target.read_text(encoding="utf-8") + " ", encoding="utf-8")
         return result

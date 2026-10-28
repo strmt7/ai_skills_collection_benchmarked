@@ -16,6 +16,43 @@ def case_digest(cases: list[str]) -> str:
     return hashlib.sha256(encoded).hexdigest()
 
 
+def _check_header(manifest: Any, protocol: dict[str, Any], protocol_hash: str) -> int:
+    """Validate the protocol version, manifest version and protocol binding."""
+    version = protocol.get("protocol_version")
+    if type(version) is not int or version < 2:
+        raise ValueError("grading manifest does not match the protocol and grader")
+    if not isinstance(manifest, dict):
+        raise ValueError("grading manifest does not match the protocol and grader")
+    if type(manifest.get("manifest_version")) is not int or manifest["manifest_version"] != 1:
+        raise ValueError("grading manifest does not match the protocol and grader")
+    if manifest.get("protocol_sha256") != protocol_hash:
+        raise ValueError("grading manifest does not match the protocol and grader")
+    return version
+
+
+def _check_grader(manifest: dict[str, Any], protocol: dict[str, Any]) -> None:
+    """Require an exact lowercase SHA-256 binding to the frozen grader."""
+    grader_hash = protocol.get("grader_sha256")
+    if not isinstance(grader_hash, str) or len(grader_hash) != 64:
+        raise ValueError("grading manifest does not match the protocol and grader")
+    if any(character not in "0123456789abcdef" for character in grader_hash):
+        raise ValueError("grading manifest does not match the protocol and grader")
+    if manifest.get("grader_sha256") != grader_hash:
+        raise ValueError("grading manifest does not match the protocol and grader")
+
+
+def _check_cases(manifest: dict[str, Any]) -> list[str]:
+    """Require a nonempty list of distinct, nonblank case identifiers."""
+    cases = manifest.get("cases")
+    if not isinstance(cases, list) or not cases:
+        raise ValueError("grading manifest must contain unique nonempty case names")
+    if any(not isinstance(case, str) or not case.strip() for case in cases):
+        raise ValueError("grading manifest must contain unique nonempty case names")
+    if len(cases) != len(set(cases)):
+        raise ValueError("grading manifest must contain unique nonempty case names")
+    return cases
+
+
 def read_grading_manifest(
     protocol_path: Path, protocol: dict[str, Any], protocol_hash: str
 ) -> tuple[frozenset[str], str]:
@@ -28,29 +65,9 @@ def read_grading_manifest(
     if len(raw) > 1024 * 1024:
         raise ValueError("grading manifest is too large")
     manifest = strict_json(raw.decode("utf-8"))
-    grader_hash = protocol.get("grader_sha256")
-    version = protocol.get("protocol_version")
-    if (
-        not isinstance(manifest, dict)
-        or manifest.get("manifest_version") != 1
-        or type(manifest.get("manifest_version")) is not int
-        or manifest.get("protocol_sha256") != protocol_hash
-        or not isinstance(grader_hash, str)
-        or len(grader_hash) != 64
-        or any(character not in "0123456789abcdef" for character in grader_hash)
-        or manifest.get("grader_sha256") != grader_hash
-        or type(version) is not int
-        or version < 2
-    ):
-        raise ValueError("grading manifest does not match the protocol and grader")
-    cases = manifest.get("cases")
-    if (
-        not isinstance(cases, list)
-        or not cases
-        or any(not isinstance(case, str) or not case.strip() for case in cases)
-        or len(cases) != len(set(cases))
-    ):
-        raise ValueError("grading manifest must contain unique nonempty case names")
+    version = _check_header(manifest, protocol, protocol_hash)
+    _check_grader(manifest, protocol)
+    cases = _check_cases(manifest)
     if version >= 3 and protocol.get("grading_cases_sha256") != case_digest(cases):
         raise ValueError("grading manifest differs from the protocol's committed case set")
     return frozenset(cases), hashlib.sha256(raw).hexdigest()
