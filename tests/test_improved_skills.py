@@ -7,12 +7,22 @@ from pathlib import Path
 import pytest
 import validate_improved_skills as overlays
 from _lib_b.io_utils import read_json
+from build_catalog import sha256_file
 
 
 def test_experimental_overlays_preserve_original_sources():
     manifest = read_json(overlays.ROOT / "data/improved_skills_manifest.json")
     catalog = read_json(overlays.ROOT / "data/skills_catalog.json")
     assert not overlays.validate(manifest, catalog, overlays.ROOT)
+
+
+@pytest.mark.parametrize("version", ["v1", "v2"])
+def test_frozen_trials_keep_their_original_instruction_bytes(version):
+    protocol = read_json(overlays.ROOT / f"benchmarks/agent-effectiveness/development/protocol-{version}.json")
+    skills = protocol["conditions"]["improved"]["skills"]
+    assert skills
+    for skill in skills:
+        assert sha256_file(overlays.ROOT / skill["path"]) == skill["sha256"]
 
 
 @pytest.mark.parametrize(

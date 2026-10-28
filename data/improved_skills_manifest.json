@@ -24,12 +24,12 @@
       "license": "MIT",
       "license_file_sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
       "license_source_sha": "b832b6f642312312367c07688dc7426db40a82ed",
-      "original_path": "included/improved/skills/strategic-compact/provenance/original-SKILL.md",
-      "overlay_path": "included/improved/skills/strategic-compact",
-      "overlay_sha256": "3f53ae09458f05fd1938198c8266e578463eb68146ffeae8443f910b6ab1c875",
+      "original_path": "included/improved/skills/strategic-compact-current/provenance/original-SKILL.md",
+      "overlay_path": "included/improved/skills/strategic-compact-current",
+      "overlay_sha256": "4686f2f919ada2efd48525485a0408249101a3d33b6f52d34121df88c6812566",
       "package_file_sha256": {
         "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
-        "SKILL.md": "3f53ae09458f05fd1938198c8266e578463eb68146ffeae8443f910b6ab1c875",
+        "SKILL.md": "4686f2f919ada2efd48525485a0408249101a3d33b6f52d34121df88c6812566",
         "provenance/original-SKILL.md": "c83c4c9d60d30d508bbd2bf0c6ffa724b5fdac679addd4828b268892dc39dc1b"
       },
       "performance_status": "unbenchmarked",

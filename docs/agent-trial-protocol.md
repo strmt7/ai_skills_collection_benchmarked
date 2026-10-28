@@ -83,6 +83,11 @@ in nonexecuted `bytecode-evidence.zip` transports because loose Python caches
 are correctly ignored by Git. Raw trial text is exempt from Git newline
 conversion so a checkout preserves the original evidence digests.
 
+Those trials used the original experimental `strategic-compact` overlay at its
+frozen path. The later `strategic-compact-current` overlay is a separate,
+unbenchmarked revision; the historical results do not measure it. See the
+[token-accounting review](research-context-token-accounting.md).
+
 The historical v2 grading driver executed submitted Python on the host in a
 separate process. A newer Windows AppContainer grader has been qualified with
 known-good and boundary-attack controls, but the trial runner does not yet pass
