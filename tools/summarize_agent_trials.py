@@ -92,6 +92,61 @@ def package_bytecode(directory: Path, evidence: dict[str, str]) -> None:
             zipped.writestr(info, contents[name])
 
 
+def verify_transcript(directory: Path, result: dict[str, Any]) -> None:
+    """Cross-check recorded completion, usage and command counts with the native event stream."""
+
+    def unique_object(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
+        value: dict[str, Any] = {}
+        for key, item in pairs:
+            if key in value:
+                raise ValueError("transcript contains a duplicate JSON key")
+            value[key] = item
+        return value
+
+    def reject_constant(value: str) -> None:
+        raise ValueError(f"transcript contains a non-finite number: {value}")
+
+    try:
+        raw = evidence_bytes(directory, "transcript.jsonl").decode("utf-8")
+    except UnicodeDecodeError as exc:
+        raise ValueError("transcript is not UTF-8") from exc
+    events: list[dict[str, Any]] = []
+    lines = raw.splitlines(keepends=True)
+    for index, line in enumerate(lines):
+        try:
+            event = json.loads(line, object_pairs_hook=unique_object, parse_constant=reject_constant)
+        except json.JSONDecodeError as exc:
+            if (
+                index == len(lines) - 1
+                and not line.endswith(("\n", "\r"))
+                and result["status"]
+                in {
+                    "harness_error",
+                    "timed_out",
+                }
+            ):
+                break
+            raise ValueError("transcript contains an invalid event") from exc
+        if not isinstance(event, dict) or not isinstance(event.get("type"), str):
+            raise ValueError("transcript contains a malformed event")
+        if event["type"] == "item.completed" and not isinstance(event.get("item"), dict):
+            raise ValueError("transcript contains a malformed completed item")
+        events.append(event)
+    completed = [event for event in events if event["type"] == "turn.completed"]
+    if len(completed) > 1 or (result["status"] in {"task_passed", "task_failed", "invalid_scope"} and not completed):
+        raise ValueError("transcript does not establish a single completed turn")
+    usage = completed[0].get("usage") if completed else None
+    commands = sum(
+        event["type"] == "item.completed" and event["item"].get("type") == "command_execution" for event in events
+    )
+    if (
+        json.dumps(result.get("usage"), sort_keys=True) != json.dumps(usage, sort_keys=True)
+        or type(result.get("commands_completed")) is not int
+        or result["commands_completed"] != commands
+    ):
+        raise ValueError("transcript disagrees with recorded usage or command count")
+
+
 def verify_result(directory: Path, protocol: dict[str, Any], protocol_hash: str, condition: str) -> dict[str, Any]:
     result = read_json(directory / "result.json")
     if not isinstance(result, dict):
@@ -120,6 +175,7 @@ def verify_result(directory: Path, protocol: dict[str, Any], protocol_hash: str,
     for relative, digest in evidence.items():
         if hashlib.sha256(evidence_bytes(directory, relative)).hexdigest() != digest:
             raise ValueError(f"evidence hash changed: {relative}")
+    verify_transcript(directory, result)
     launch = read_json(directory / "launch.json")
     if not isinstance(launch, dict) or launch.get("protocol_sha256") != protocol_hash:
         raise ValueError("launch used a different frozen protocol")

@@ -20,9 +20,9 @@ Conditions use GPT-6.1 Sol with high reasoning effort:
   their source URL and content hash recorded. The skill declares MIT licensing.
 - **Improved:** the experimental `eval-harness` and `strategic-compact` bundle.
 
-Each attempt starts a fresh ephemeral CLI session with user configuration,
+Each recorded attempt started a fresh ephemeral CLI session with user configuration,
 memory, host-skill discovery, plugins, apps and delegation disabled. The task
-uses the workspace-write sandbox and disables network access. The Windows
+used the workspace-write sandbox and disabled network access. The Windows
 sandbox backend is explicitly configured; execution policies are retained.
 
 All conditions receive identical source code and pre-created empty test/log
@@ -33,12 +33,12 @@ serial; the owner may still be doing unrelated host work.
 
 ## Evidence and failure accounting
 
-`tools/run_agent_trial.py` records the launch, full CLI transcript, returned
+The frozen runner recorded the launch, full CLI transcript, returned
 usage, stderr, source patch, submitted tests/log, external grader result and
-artifact hashes. It refuses existing attempt directories and rejects changed
+artifact hashes. It refused existing attempt directories and rejected changed
 frozen inputs. An unsuccessful launch, timeout, missing completed turn, changed
 protected source or evidence collection problem cannot become a counted pass.
-Submitted code is graded in a separate process with a finite time limit.
+Submitted code was graded in a separate process with a finite time limit.
 
 The first independent-agent development probe passed 17/17. A CLI launch failed
 because commands were unavailable; a subsequent frozen CLI attempt passed
@@ -75,14 +75,19 @@ establish lower total cost or consistent efficiency.
 The [verified report](../artifacts/agent-trials/development-v2-report/README.md)
 contains all attempts, raw token summaries and standalone charts. Its publisher
 checks protocol identity, each captured evidence hash, grading consistency,
-failure denominators and missing or unplanned runs. Null usage remains null.
+failure denominators and missing or unplanned runs. It also compares completion,
+usage and completed-command counts against the captured CLI transcript. Null
+usage remains null.
 The frozen results are unchanged. Grader-created bytecode bytes are preserved
 in nonexecuted `bytecode-evidence.zip` transports because loose Python caches
 are correctly ignored by Git. Raw trial text is exempt from Git newline
 conversion so a checkout preserves the original evidence digests.
 
-This collection's grading driver executes submitted Python on the host in a
-separate process; it is not a hardened service for arbitrary untrusted code.
-Future external or adversarial submissions require isolated grading and sealed
-grader access. The current evidence establishes neither container isolation
-nor provider-resolved model identity.
+The historical v2 grading driver executed submitted Python on the host in a
+separate process. A newer Windows AppContainer grader has been qualified with
+known-good and boundary-attack controls, but the trial runner does not yet pass
+its required fixture and sandbox inputs to that grader. The frozen v2 protocol
+rejects the changed execution tooling before launch. Do not run a new model
+trial until the runner and confined grader are integrated and independently
+qualified. The historical evidence establishes neither container isolation nor
+provider-resolved model identity.

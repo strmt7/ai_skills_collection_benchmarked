@@ -30,8 +30,15 @@ def matched(tmp_path):
         directory = trials / "repetition-1" / condition
         directory.mkdir(parents=True)
         write_json(directory / "launch.json", {"protocol_sha256": digest})
-        for name in ("transcript.jsonl", "prompt.txt", "stderr.txt", "patch.diff"):
+        for name in ("prompt.txt", "stderr.txt", "patch.diff"):
             (directory / name).write_text(name, encoding="utf-8")
+        events = [
+            {"type": "item.completed", "item": {"type": "command_execution"}},
+            {"type": "turn.completed", "usage": {"input_tokens": 100, "cached_input_tokens": 20, "output_tokens": 30}},
+        ]
+        (directory / "transcript.jsonl").write_text(
+            "".join(json.dumps(event) + "\n" for event in events), encoding="utf-8"
+        )
         cache = directory / "submission/tools/__pycache__/fixture.cpython-312.pyc"
         cache.parent.mkdir(parents=True)
         cache.write_bytes(b"captured-bytecode-evidence-is-never-executed")
@@ -57,6 +64,7 @@ def matched(tmp_path):
                     "checks_total": 1,
                 },
                 "process_exit_code": 0,
+                "commands_completed": 1,
                 "scope_violations": [],
                 "evidence_collection_errors": [],
                 "usage": {"input_tokens": 100, "cached_input_tokens": 20, "output_tokens": 30},
@@ -73,9 +81,20 @@ def edit_result(trials, target_condition="improved", **changes):
     write_json(path, result)
 
 
+def replace_transcript(trials, text):
+    directory = trials / "repetition-1/improved"
+    transcript = directory / "transcript.jsonl"
+    transcript.write_text(text, encoding="utf-8")
+    result_path = directory / "result.json"
+    result = summary.read_json(result_path)
+    result["evidence_sha256"]["transcript.jsonl"] = summary.sha256(transcript)
+    write_json(result_path, result)
+
+
 def test_failure_and_unavailable_usage_keep_full_denominator(matched):
     path, trials = matched
-    edit_result(trials, status="harness_error", usage=None, process_exit_code=1)
+    replace_transcript(trials, '{"type":"turn.started"}\n')
+    edit_result(trials, status="harness_error", usage=None, process_exit_code=1, commands_completed=0)
     report = summary.summarize(path, trials)
     improved = report["conditions"]["improved"]
     assert improved["planned_attempts"] == 1
@@ -124,6 +143,52 @@ def test_modified_evidence_cannot_pass(matched):
     path, trials = matched
     (trials / "repetition-1/improved/prompt.txt").write_text("changed", encoding="utf-8")
     with pytest.raises(ValueError, match="hash changed"):
+        summary.summarize(path, trials)
+
+
+@pytest.mark.parametrize("changes", [{"commands_completed": 2}, {"usage": {"input_tokens": 101, "output_tokens": 30}}])
+def test_reported_usage_and_command_count_must_match_transcript(matched, changes):
+    path, trials = matched
+    edit_result(trials, **changes)
+    with pytest.raises(ValueError, match="transcript"):
+        summary.summarize(path, trials)
+
+
+@pytest.mark.parametrize(
+    "transcript",
+    [
+        '{"type":"turn.started"}\n',
+        '{"type":"turn.completed","usage":{"input_tokens":100,"cached_input_tokens":20,"output_tokens":30}}\nnot-json\n',
+        '{"type":"turn.completed","usage":{"input_tokens":100,"cached_input_tokens":20,"output_tokens":30}}\n{"type":',
+        '{"type":"turn.completed"}\n{"type":"turn.completed"}\n',
+        "[]\n",
+        '{"type":"item.completed","item":null}\n',
+        '{"type":"turn.started","type":"turn.completed"}\n',
+        '{"type":"turn.completed","usage":{"input_tokens":NaN}}\n',
+    ],
+)
+def test_a_pass_requires_a_complete_valid_transcript(matched, transcript):
+    path, trials = matched
+    replace_transcript(trials, transcript)
+    with pytest.raises(ValueError, match="transcript"):
+        summary.summarize(path, trials)
+
+
+def test_interrupted_transcript_can_retain_truncated_last_event(matched):
+    path, trials = matched
+    replace_transcript(trials, '{"type":"turn.started"}\n{"type":')
+    edit_result(trials, status="timed_out", usage=None, process_exit_code=1, commands_completed=0)
+    assert summary.summarize(path, trials)["conditions"]["improved"]["task_passes"] == 0
+
+
+def test_transcript_usage_requires_exact_numeric_types(matched):
+    path, trials = matched
+    replace_transcript(
+        trials,
+        '{"type":"item.completed","item":{"type":"command_execution"}}\n'
+        '{"type":"turn.completed","usage":{"input_tokens":100.0,"cached_input_tokens":20,"output_tokens":30}}\n',
+    )
+    with pytest.raises(ValueError, match="transcript"):
         summary.summarize(path, trials)
 
 
