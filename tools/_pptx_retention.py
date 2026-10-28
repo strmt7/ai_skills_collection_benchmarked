@@ -11,14 +11,83 @@ import hashlib
 import io
 import re
 import zipfile
+from dataclasses import dataclass
 from datetime import datetime
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from typing import Any
-from xml.etree import ElementTree
 
 MAX_MARKDOWN_BYTES = 1024 * 1024
+# Limits apply to the fixed three-slide control, not arbitrary presentations.
+MAX_PACKAGE_BYTES = 1024 * 1024
+MAX_MEMBER_BYTES = 1024 * 1024
+MAX_EXPANDED_BYTES = 4 * 1024 * 1024
+MAX_ARCHIVE_MEMBERS = 512
+MAX_PACKAGE_DEPTH = 1
+MAX_CORE_XML_BYTES = 64 * 1024
+MAX_CORE_XML_NODES = 4096
+MAX_CORE_XML_DEPTH = 64
 SLIDE_HEADING = re.compile(r"^## Slide\s+(\d+)\s*$", re.MULTILINE)
+
+
+@dataclass
+class _ArchiveBudget:
+    """Accumulate limits across the outer presentation and embedded workbooks."""
+
+    members: int = 0
+    expanded_bytes: int = 0
+
+
+def _check_member_name(info: zipfile.ZipInfo) -> None:
+    """Reject names that could escape an extraction root in downstream tools."""
+    name = info.filename
+    parts = name.removesuffix("/").split("/")
+    if (
+        not name
+        or info.orig_filename != name
+        or name.startswith("/")
+        or "\\" in name
+        or any(part in {"", ".", ".."} for part in parts)
+        or ":" in parts[0]
+    ):
+        raise ValueError("SDK fixture contains an unsafe ZIP member name")
+
+
+def _normalize_core_properties(data: bytes) -> bytes:
+    """Normalize bounded core properties without DTDs, entities or excessive structure."""
+    from defusedxml import ElementTree
+
+    if len(data) > MAX_CORE_XML_BYTES:
+        raise ValueError("SDK fixture core properties exceed the XML byte budget")
+    root = ElementTree.fromstring(data, forbid_dtd=True, forbid_entities=True, forbid_external=True)
+    pending = [(root, 1)]
+    visited = 0
+    while pending:
+        node, depth = pending.pop()
+        visited += 1
+        if visited > MAX_CORE_XML_NODES or depth > MAX_CORE_XML_DEPTH:
+            raise ValueError("SDK fixture core properties exceed the XML structure budget")
+        pending.extend((child, depth + 1) for child in node)
+    for key in ("created", "modified"):
+        for field in root.findall("{http://purl.org/dc/terms/}" + key):
+            field.text = "2026-01-01T00:00:00Z"
+    return ElementTree.tostring(root, encoding="utf-8", xml_declaration=True)
+
+
+def _read_member(source: zipfile.ZipFile, member: zipfile.ZipInfo) -> bytes:
+    """Admit a supported ZIP member and read at most the per-member budget."""
+    _check_member_name(member)
+    if member.compress_type not in {zipfile.ZIP_STORED, zipfile.ZIP_DEFLATED}:
+        raise ValueError("SDK fixture uses an unsupported ZIP compression method")
+    if member.flag_bits & 1:
+        raise ValueError("SDK fixture contains an encrypted ZIP member")
+    if member.file_size > MAX_MEMBER_BYTES:
+        raise ValueError("SDK fixture member exceeds the byte budget")
+    with source.open(member) as stream:
+        data = stream.read(MAX_MEMBER_BYTES + 1)
+    if len(data) != member.file_size:
+        raise ValueError("SDK fixture member size does not match the ZIP directory")
+    return data
 
 
 def _tables(text: str) -> list[list[list[str]]]:
@@ -100,23 +169,35 @@ def evaluate_markdown(text: str) -> dict[str, bool]:
 
 def normalize_package(raw: bytes) -> bytes:
     """Freeze outer and embedded workbook ZIP dates and core property dates."""
+    return _normalize_package(raw, _ArchiveBudget(), 0)
+
+
+def _normalize_package(raw: bytes, budget: _ArchiveBudget, depth: int) -> bytes:
+    """Apply shared archive limits and normalize a single supported ZIP layer."""
+    if depth > MAX_PACKAGE_DEPTH:
+        raise ValueError("SDK fixture contains nested workbooks beyond the supported depth")
+    if len(raw) > MAX_PACKAGE_BYTES:
+        raise ValueError("SDK fixture package exceeds the compressed byte budget")
     result = io.BytesIO()
     with (
         zipfile.ZipFile(io.BytesIO(raw)) as source,
         zipfile.ZipFile(result, "w", compression=zipfile.ZIP_DEFLATED) as target,
     ):
-        if len(source.namelist()) != len(set(source.namelist())):
+        members = source.infolist()
+        names = [member.filename for member in members]
+        if len(names) != len(set(names)):
             raise ValueError("SDK fixture contains duplicate ZIP members")
-        for name in sorted(source.namelist()):
-            data = source.read(name)
-            if name.endswith(".xlsx"):
-                data = normalize_package(data)
+        budget.members += len(members)
+        budget.expanded_bytes += sum(member.file_size for member in members)
+        if budget.members > MAX_ARCHIVE_MEMBERS or budget.expanded_bytes > MAX_EXPANDED_BYTES:
+            raise ValueError("SDK fixture exceeds the archive member or expanded byte budget")
+        for member in sorted(members, key=lambda item: item.filename):
+            data = _read_member(source, member)
+            name = member.filename
+            if name.lower().endswith(".xlsx"):
+                data = _normalize_package(data, budget, depth + 1)
             elif name == "docProps/core.xml":
-                core = ElementTree.fromstring(data)
-                for key in ("created", "modified"):
-                    for field in core.findall("{http://purl.org/dc/terms/}" + key):
-                        field.text = "2026-01-01T00:00:00Z"
-                data = ElementTree.tostring(core, encoding="utf-8", xml_declaration=True)
+                data = _normalize_core_properties(data)
             info = zipfile.ZipInfo(name, date_time=(2026, 1, 1, 0, 0, 0))
             info.compress_type = zipfile.ZIP_DEFLATED
             info.create_system = 3

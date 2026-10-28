@@ -186,8 +186,8 @@ def environment_versions(lock: Path) -> dict[str, str]:
         if name in packages or importlib.metadata.version(name) != version:
             raise ValueError(f"consumer dependency differs from its lock: {name}")
         packages[name] = version
-    if set(packages) != {"python-pptx", "lxml", "pillow", "typing-extensions", "xlsxwriter"}:
-        raise ValueError("consumer lock does not describe the complete five-package cohort")
+    if set(packages) != {"defusedxml", "python-pptx", "lxml", "pillow", "typing-extensions", "xlsxwriter"}:
+        raise ValueError("consumer lock does not describe the complete six-package cohort")
     return packages
 
 

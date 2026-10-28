@@ -5,6 +5,9 @@ Master converters against one deterministic, independently authored three-slide
 PPTX. It requires no coding agent, API key or model service. It does not install
 the catalog or qualify all presentation workflows.
 
+The fixed fixture is normalized with bounded archive and XML parsing. Its limits
+are specific to this three-slide control and do not describe general PPTX support.
+
 From the catalog checkout, create a disposable environment with Python 3.14 and
 install its complete wheel graph:
 

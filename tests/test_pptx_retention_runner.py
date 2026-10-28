@@ -10,6 +10,26 @@ import run_pptx_retention_controls as runner
 from test_pptx_retention import MARKDOWN
 
 
+def test_consumer_lock_requires_the_safe_xml_dependency(tmp_path, monkeypatch):
+    """The installed six-package cohort must include the locked XML parser."""
+    source = runner.ROOT / "toolchains/pptx-native/requirements.txt"
+    lines = source.read_text(encoding="utf-8").splitlines()
+    versions = {
+        line.split("==", 1)[0]: line.split("==", 1)[1].split(" ", 1)[0]
+        for line in lines
+        if line and not line.startswith("#")
+    }
+    monkeypatch.setattr(runner.importlib.metadata, "version", lambda name: versions[name])
+    assert runner.environment_versions(source)["defusedxml"] == versions["defusedxml"]
+    incomplete = tmp_path / "requirements.txt"
+    incomplete.write_text("\n".join(line for line in lines if not line.startswith("defusedxml==")), encoding="utf-8")
+    with pytest.raises(ValueError, match="six-package cohort"):
+        runner.environment_versions(incomplete)
+    versions["defusedxml"] = "0.0"
+    with pytest.raises(ValueError, match="consumer dependency differs"):
+        runner.environment_versions(source)
+
+
 @pytest.fixture
 def committed_source(tmp_path):
     root = tmp_path / "source"
