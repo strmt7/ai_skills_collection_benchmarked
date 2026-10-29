@@ -10,6 +10,7 @@ import os
 import shutil
 import stat
 from pathlib import Path
+from typing import Any
 
 import _catalog_publication as publication
 from _lib_b.io_utils import read_json
@@ -41,7 +42,8 @@ def files(path: Path) -> dict[str, str]:
     return result
 
 
-def prepare(root: Path, target: Path, *, check: bool = False) -> dict[str, object]:
+def _checked_inputs(root: Path, target: Path) -> tuple[Path, Path, dict[str, Any], Path, Path]:
+    """Bind the destination, mirror and graph to their declared source."""
     root, target = root.resolve(), target.absolute()
     # Provision only an explicitly requested directory within this workspace.
     if not target.is_relative_to(root) or target == root:
@@ -59,6 +61,11 @@ def prepare(root: Path, target: Path, *, check: bool = False) -> dict[str, objec
         raise ValueError("control stage cannot overlap the pinned dependency fixture")
     if sha256_tree(mirror, file_modes=source.get("file_modes")) != source["skill_dir_sha256"]:
         raise ValueError("immutable source mirror differs from catalog")
+    return root, target, source, mirror, fixture
+
+
+def _qualified_inputs(mirror: Path, fixture: Path) -> tuple[dict[str, str], dict[str, str]]:
+    """Hash staged inputs and verify the fixture dependency graph."""
     originals = files(mirror)
     expected = originals.copy()
     for name in ("package.json", "package-lock.json", "LICENSE"):
@@ -71,17 +78,29 @@ def prepare(root: Path, target: Path, *, check: bool = False) -> dict[str, objec
         for name, version in package["dependencies"].items()
     ):
         raise ValueError("direct dependency resolutions differ from pinned versions")
+    return originals, expected
+
+
+def _create_stage(target: Path, mirror: Path, fixture: Path) -> None:
+    """Create the requested stage once from the admitted inputs."""
+    if target.exists():
+        raise ValueError("control stage already exists; refusing replacement")
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.mkdir()
+    for relative in files(mirror):
+        destination = publication.checked_path(target, relative)
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(mirror / relative, destination)
+    for name in ("package.json", "package-lock.json", "LICENSE"):
+        (target / name).write_bytes((fixture / name).read_bytes())
+
+
+def prepare(root: Path, target: Path, *, check: bool = False) -> dict[str, object]:
+    """Prepare or verify an isolated stage of the exact pinned inputs."""
+    root, target, source, mirror, fixture = _checked_inputs(root, target)
+    originals, expected = _qualified_inputs(mirror, fixture)
     if not check:
-        if target.exists():
-            raise ValueError("control stage already exists; refusing replacement")
-        target.parent.mkdir(parents=True, exist_ok=True)
-        target.mkdir()
-        for relative in files(mirror):
-            destination = publication.checked_path(target, relative)
-            destination.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(mirror / relative, destination)
-        for name in ("package.json", "package-lock.json", "LICENSE"):
-            (target / name).write_bytes((fixture / name).read_bytes())
+        _create_stage(target, mirror, fixture)
     if not target.is_dir() or files(target) != expected:
         raise ValueError("control stage input files differ from pinned source/fixture")
     return {

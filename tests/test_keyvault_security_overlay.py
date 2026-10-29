@@ -244,3 +244,27 @@ def test_source_lock_identity_must_be_unique_before_overlay(tmp_path, change):
     (tmp_path / "data/source_lock.json").write_text(json.dumps(lock), encoding="utf-8")
     with pytest.raises(ValueError, match="one .* record"):
         overlay.expected_files(tmp_path)
+
+
+@pytest.mark.parametrize(
+    "field",
+    [
+        "skill_id",
+        "source_commit",
+        "source_skill_sha256",
+        "source_tree_sha256",
+        "source_examples_sha256",
+        "baseline_verdict",
+        "repair_verdict",
+        "controls",
+    ],
+)
+def test_every_control_identity_field_is_enforced(tmp_path, monkeypatch, field):
+    """Each source and control field must reject independent tampering."""
+    report = json.loads((overlay.ROOT / overlay.CONTROL).read_text(encoding="utf-8"))
+    report[field] = [] if field == "controls" else "tampered"
+    path = tmp_path / "control.json"
+    path.write_text(json.dumps(report), encoding="utf-8")
+    monkeypatch.setattr(overlay, "CONTROL", path)
+    with pytest.raises(ValueError, match="control does not match"):
+        overlay.expected_files()

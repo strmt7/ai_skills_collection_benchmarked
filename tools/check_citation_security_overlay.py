@@ -48,17 +48,8 @@ def digest(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
-def expected_files(root: Path = ROOT) -> dict[str, bytes]:
-    lock = json.loads((root / "data/source_lock.json").read_text(encoding="utf-8"))
-    source = require_unique(lock["sources"], "repo", "K-Dense-AI/scientific-agent-skills", "source lock")
-    entry = require_unique(source["skills"], "id", SKILL_ID, "source skill")
-    mirror = root / MIRROR
-    if (
-        source["commit_sha"] != BASELINE_COMMIT
-        or build_catalog.sha256_tree(mirror, file_modes=entry["file_modes"]) != entry["skill_dir_sha256"]
-    ):
-        raise ValueError("citation mirror does not match its locked source")
-
+def _verified_control(root: Path, mirror: Path) -> bytes:
+    """Bind the recorded security control to the exact locked source."""
     report_raw = (root / CONTROL).read_bytes()
     report = json.loads(report_raw)
     baseline = report["baseline"]
@@ -74,6 +65,21 @@ def expected_files(root: Path = ROOT) -> dict[str, bytes]:
     ):
         raise ValueError("citation security control does not match the source inputs")
 
+    return report_raw
+
+
+def expected_files(root: Path = ROOT) -> dict[str, bytes]:
+    lock = json.loads((root / "data/source_lock.json").read_text(encoding="utf-8"))
+    source = require_unique(lock["sources"], "repo", "K-Dense-AI/scientific-agent-skills", "source lock")
+    entry = require_unique(source["skills"], "id", SKILL_ID, "source skill")
+    mirror = root / MIRROR
+    if (
+        source["commit_sha"] != BASELINE_COMMIT
+        or build_catalog.sha256_tree(mirror, file_modes=entry["file_modes"]) != entry["skill_dir_sha256"]
+    ):
+        raise ValueError("citation mirror does not match its locked source")
+
+    report_raw = _verified_control(root, mirror)
     files = {
         item.relative_to(mirror).as_posix(): build_catalog.sanitized_file_bytes(item)
         for item in build_catalog.skill_tree_files(mirror)

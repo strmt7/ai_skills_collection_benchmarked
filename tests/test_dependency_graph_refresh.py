@@ -218,3 +218,49 @@ def test_catalog_identity_must_be_unique_before_publication(fixture, change):
     with pytest.raises(ValueError, match="one catalog record"):
         refresh.prepare(root, sources, "fixture", "artifacts/refresh.json")
     assert publication.signature(root) == before
+
+
+def test_metadata_change_during_staging_fails_without_publishing(fixture, monkeypatch):
+    """A concurrent catalog edit is preserved, and the staged graph is not published."""
+    root, sources, _, _, entry, _ = fixture
+    before = publication.signature(root / entry["mirrored_path"])
+    original_copy = catalog.copy_sanitized_tree
+
+    def copy_then_change(*args, **kwargs):
+        """Change a catalog input only after the staged copy has been written."""
+        original_copy(*args, **kwargs)
+        path = root / METADATA[0]
+        entries = json.loads(path.read_text(encoding="utf-8"))
+        entries[0]["review_marker"] = "concurrent edit"
+        catalog.write_json(path, entries)
+
+    monkeypatch.setattr(catalog, "copy_sanitized_tree", copy_then_change)
+    with pytest.raises(ValueError, match="catalog input changed while staging"):
+        refresh.prepare(root, sources, "fixture", "artifacts/refresh.json")
+    assert publication.signature(root / entry["mirrored_path"]) == before
+    assert not (root / "artifacts/refresh.json").exists()
+    assert json.loads((root / METADATA[0]).read_text(encoding="utf-8"))[0]["review_marker"] == "concurrent edit"
+
+
+def test_dependency_graph_change_during_staging_fails_without_publishing(fixture, monkeypatch):
+    """Recomputed dependency bytes must match the graph admitted before staging."""
+    root, sources, _, _, entry, _ = fixture
+    before = publication.signature(root / entry["mirrored_path"])
+    original_replacements = dependency_graphs.replacements
+    calls = 0
+
+    def changing_replacements(*args, **kwargs):
+        """Simulate a graph whose second observation differs from its first."""
+        nonlocal calls
+        result = original_replacements(*args, **kwargs)
+        calls += 1
+        if calls == 2:
+            result = {**result, "package.json": b"changed during staging"}
+        return result
+
+    monkeypatch.setattr(dependency_graphs, "replacements", changing_replacements)
+    with pytest.raises(ValueError, match="dependency graph changed while staging"):
+        refresh.prepare(root, sources, "fixture", "artifacts/refresh.json")
+    assert calls == 2
+    assert publication.signature(root / entry["mirrored_path"]) == before
+    assert not (root / "artifacts/refresh.json").exists()

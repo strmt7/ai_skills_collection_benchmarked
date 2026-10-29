@@ -9,6 +9,7 @@ import json
 import os
 import re
 from pathlib import Path
+from typing import Any
 
 import build_catalog
 from _lib_b.source_identity import require_unique
@@ -92,16 +93,8 @@ def normalize_placeholders(data: bytes, expected_count: int) -> bytes:
     return text.encode("utf-8")
 
 
-def expected_files(root: Path = ROOT) -> dict[str, bytes]:
-    lock = json.loads((root / "data/source_lock.json").read_text(encoding="utf-8"))
-    source = require_unique(lock["sources"], "repo", "microsoft/skills", "source lock")
-    entry = require_unique(source["skills"], "id", SKILL_ID, "source skill")
-    mirror = root / MIRROR
-    if (
-        source["commit_sha"] != SOURCE_COMMIT
-        or build_catalog.sha256_tree(mirror, file_modes=entry["file_modes"]) != entry["skill_dir_sha256"]
-    ):
-        raise ValueError("Key Vault mirror does not match its locked source")
+def _verified_control(root: Path, mirror: Path, entry: dict[str, Any]) -> tuple[bytes, dict[str, Any]]:
+    """Bind the recorded security control to the exact locked source."""
     report_raw = (root / CONTROL).read_bytes()
     report = json.loads(report_raw)
     if (
@@ -116,6 +109,20 @@ def expected_files(root: Path = ROOT) -> dict[str, bytes]:
         or len(report["controls"]) != 12
     ):
         raise ValueError("Key Vault control does not match the source inputs")
+    return report_raw, report
+
+
+def expected_files(root: Path = ROOT) -> dict[str, bytes]:
+    lock = json.loads((root / "data/source_lock.json").read_text(encoding="utf-8"))
+    source = require_unique(lock["sources"], "repo", "microsoft/skills", "source lock")
+    entry = require_unique(source["skills"], "id", SKILL_ID, "source skill")
+    mirror = root / MIRROR
+    if (
+        source["commit_sha"] != SOURCE_COMMIT
+        or build_catalog.sha256_tree(mirror, file_modes=entry["file_modes"]) != entry["skill_dir_sha256"]
+    ):
+        raise ValueError("Key Vault mirror does not match its locked source")
+    report_raw, report = _verified_control(root, mirror, entry)
     files = {
         item.relative_to(mirror).as_posix(): build_catalog.sanitized_file_bytes(item)
         for item in build_catalog.skill_tree_files(mirror)

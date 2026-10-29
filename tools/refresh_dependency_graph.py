@@ -18,12 +18,10 @@ from refresh_credential_policy import METADATA, checked_source, metadata_bytes
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def prepare(root: Path, source_root: Path, skill_id: str, receipt_path: str) -> tuple[Path, dict[str, Any], int]:
-    if not receipt_path.startswith("artifacts/") or not receipt_path.endswith(".json"):
-        raise ValueError("receipt must be new JSON under artifacts/")
-    receipt_target = publication.checked_path(root, receipt_path)
-    raw = {relative: (root / relative).read_bytes() for relative in METADATA}
-    documents = {relative: json.loads(content) for relative, content in raw.items()}
+def _select_locked_metadata(
+    documents: dict[str, Any], skill_id: str
+) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
+    """Require a unique catalog entry and matching locked source identity."""
     entries = documents[METADATA[0]]
     matches = [record for record in entries if record["id"] == skill_id]
     if len(matches) != 1:
@@ -43,6 +41,13 @@ def prepare(root: Path, source_root: Path, skill_id: str, receipt_path: str) -> 
     for key in ("source_path", "skill_file_sha256", "skill_dir_sha256", "dependency_graph", "file_modes"):
         if entry.get(key) != locked.get(key):
             raise ValueError(f"catalog/source metadata mismatch: {key}")
+    return entry, source, locked
+
+
+def _qualify_source(
+    root: Path, source_root: Path, entry: dict[str, Any], source: dict[str, Any]
+) -> tuple[dict[str, Any], Path, dict[str, str], dict[str, bytes], str, Path, bool]:
+    """Verify original and mirrored resources before preparing a graph update."""
     graph = dependency_graphs.graph_for(source["repo"], source["commit_sha"], entry["source_path"], root=root)
     if graph is None:
         raise ValueError("no declared dependency graph for this exact public pin")
@@ -59,7 +64,7 @@ def prepare(root: Path, source_root: Path, skill_id: str, receipt_path: str) -> 
     if catalog.sha256_tree(mirror, file_modes=entry.get("file_modes")) != entry["skill_dir_sha256"]:
         raise ValueError("existing mirror differs from catalog")
     if entry.get("dependency_graph") == graph["id"] and entry["skill_dir_sha256"] == updated_hash:
-        return root, {}, 0
+        return graph, original, modes, replacements, updated_hash, mirror, True
     if (
         entry.get("dependency_graph") != graph.get("previous_dependency_graph")
         or entry["skill_dir_sha256"] != graph["previous_mirror_sha256"]
@@ -71,17 +76,33 @@ def prepare(root: Path, source_root: Path, skill_id: str, receipt_path: str) -> 
             mirror / relative
         ):
             raise ValueError(f"nondependency source resource differs: {relative}")
-    if receipt_target.exists():
-        raise ValueError("refresh receipt must be a new file")
+    return graph, original, modes, replacements, updated_hash, mirror, False
+
+
+def _update_metadata(
+    documents: dict[str, Any], skill_id: str, entry: dict[str, Any], locked: dict[str, Any], updated: dict[str, Any]
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Update matching records while retaining their prior values for validation."""
     originals = copy.deepcopy(documents)
     previous = {key: entry.get(key) for key in ("dependency_graph", "skill_dir_sha256", "file_modes")}
-    updated = {"dependency_graph": graph["id"], "skill_dir_sha256": updated_hash, "file_modes": modes}
     entry.update(updated)
     locked.update(updated)
     for relative in METADATA[2:]:
         for record in documents[relative]:
             if record["id"] == skill_id:
                 record.update(updated)
+    return originals, previous
+
+
+def _refresh_receipt(
+    skill_id: str,
+    graph: dict[str, Any],
+    previous: dict[str, Any],
+    updated: dict[str, Any],
+    mirror: Path,
+    replacements: dict[str, bytes],
+) -> dict[str, Any]:
+    """Record the graph transition and its original input digests."""
     receipt = {
         "schema_version": 1,
         "evidence_class": "locked-public-source-complete-dependency-graph-refresh",
@@ -98,6 +119,27 @@ def prepare(root: Path, source_root: Path, skill_id: str, receipt_path: str) -> 
             for name in replacements
         },
     }
+
+    return receipt
+
+
+def prepare(root: Path, source_root: Path, skill_id: str, receipt_path: str) -> tuple[Path, dict[str, Any], int]:
+    if not receipt_path.startswith("artifacts/") or not receipt_path.endswith(".json"):
+        raise ValueError("receipt must be new JSON under artifacts/")
+    receipt_target = publication.checked_path(root, receipt_path)
+    raw = {relative: (root / relative).read_bytes() for relative in METADATA}
+    documents = {relative: json.loads(content) for relative, content in raw.items()}
+    entry, source, locked = _select_locked_metadata(documents, skill_id)
+    graph, original, modes, replacements, updated_hash, mirror, current = _qualify_source(
+        root, source_root, entry, source
+    )
+    if current:
+        return root, {}, 0
+    if receipt_target.exists():
+        raise ValueError("refresh receipt must be a new file")
+    updated = {"dependency_graph": graph["id"], "skill_dir_sha256": updated_hash, "file_modes": modes}
+    originals, previous = _update_metadata(documents, skill_id, entry, locked, updated)
+    receipt = _refresh_receipt(skill_id, graph, previous, updated, mirror, replacements)
 
     def build(stage: Path) -> None:
         for relative, value in documents.items():
