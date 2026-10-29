@@ -305,6 +305,7 @@ def test_invalid_trial_stream_is_recorded_without_grading(tmp_path, monkeypatch)
 
 
 def test_unqualified_execution_stops_before_workspace_or_process_creation(tmp_path, monkeypatch):
+    """An unqualified trial must stop before creating a workspace or agent process."""
     protocol = {
         "protocol_version": 3,
         "runner_sha256": trials.sha256((trials.ROOT / "tools/run_agent_trial.py").read_bytes()),
