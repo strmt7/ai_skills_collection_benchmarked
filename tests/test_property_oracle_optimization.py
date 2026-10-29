@@ -26,8 +26,16 @@ print(json.dumps({'optimize': not __debug__, 'first': rows[0], 'all_passed': all
 @pytest.mark.parametrize("broken", [False, True])
 def test_oracle_controls_detect_broken_reference_in_both_execution_modes(optimized: bool, broken: bool) -> None:
     """A broken reference must never pass simply because Python uses -O."""
-    command = [sys.executable, "-I", "-B", *(["-O"] if optimized else []), "-c", PROBE, str(SCRIPT)]
-    command.append("broken" if broken else "clean")
+    command = [
+        sys.executable,
+        "-I",
+        "-B",
+        *(["-O"] if optimized else []),
+        "-c",
+        PROBE,
+        str(SCRIPT),
+        "broken" if broken else "clean",
+    ]
     process = subprocess.run(command, capture_output=True, text=True, encoding="utf-8", timeout=60, check=False)
     assert process.returncode == 0, process.stderr
     result = json.loads(process.stdout)
