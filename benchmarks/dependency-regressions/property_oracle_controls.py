@@ -24,6 +24,12 @@ from hypothesis.errors import FailedHealthCheck, Unsatisfiable
 SEARCH = settings(max_examples=200, derandomize=True, database=None, deadline=None)
 
 
+def require(condition, message):
+    """Keep oracle checks active when Python optimization is enabled."""
+    if not condition:
+        raise AssertionError(message)
+
+
 def controls():
     results = []
 
@@ -41,8 +47,8 @@ def controls():
             lambda pair: operator.sub(*pair) != pair[0] + pair[1],
             settings=SEARCH,
         )
-        assert operator.add(a, b) == a + b
-        assert operator.sub(a, b) != a + b
+        require(operator.add(a, b) == a + b, "reference addition disagrees with the independent expression")
+        require(operator.sub(a, b) != a + b, "counterexample does not distinguish subtraction")
         return {
             "counterexample": [a, b],
             "expected": a + b,
@@ -61,9 +67,9 @@ def controls():
             return int.from_bytes(data, "big", signed=True) - 7
 
         for n in range(-200, 201):
-            assert decode(encode(n)) == n
+            require(decode(encode(n)) == n, "shared codec roundtrip failed")
         expected = bytes(8)
-        assert encode(0) != expected
+        require(encode(0) != expected, "zero vector did not expose the codec defect")
         return {
             "roundtrip_inputs_checked": 401,
             "roundtrip_passed": True,
@@ -80,8 +86,11 @@ def controls():
             return ""
 
         for text in ["", "a", " b ", "\tunicode Ω\n"]:
-            assert constant_normalizer(constant_normalizer(text)) == constant_normalizer(text)
-        assert constant_normalizer("content") != "content"
+            require(
+                constant_normalizer(constant_normalizer(text)) == constant_normalizer(text),
+                "normalizer is not idempotent",
+            )
+        require(constant_normalizer("content") != "content", "content preservation did not expose the defect")
         return {
             "idempotence_passed": True,
             "expected": "content",
@@ -93,8 +102,8 @@ def controls():
 
     def duplicates():
         original, mutated = [1, 1, 2], [1, 2, 2]
-        assert len(original) == len(mutated) and set(original) == set(mutated)
-        assert Counter(original) != Counter(mutated)
+        require(len(original) == len(mutated) and set(original) == set(mutated), "set and length premises differ")
+        require(Counter(original) != Counter(mutated), "multiset comparison did not expose the defect")
         return {
             "input": original,
             "mutated_output": mutated,
@@ -107,9 +116,12 @@ def controls():
     def regex_domain():
         pattern = r"[a-z][a-z0-9]{1,20}"
         text = find(st.from_regex(pattern), lambda s: re.fullmatch(pattern, s) is None, settings=SEARCH)
-        assert re.search(pattern, text) and re.fullmatch(pattern, text) is None
+        require(
+            bool(re.search(pattern, text)) and re.fullmatch(pattern, text) is None,
+            "regex search counterexample is invalid",
+        )
         full = find(st.from_regex(pattern, fullmatch=True), lambda s: True, settings=SEARCH)
-        assert re.fullmatch(pattern, full)
+        require(bool(re.fullmatch(pattern, full)), "fullmatch fixture is outside the intended domain")
         return {
             "default_search_counterexample": repr(text),
             "fullmatch_fixture": full,
@@ -121,7 +133,10 @@ def controls():
     def collection_type():
         mutable = find(st.sets(st.integers(-3, 3)), lambda _: True, settings=SEARCH)
         frozen = find(st.frozensets(st.integers(-3, 3)), lambda _: True, settings=SEARCH)
-        assert isinstance(mutable, set) and isinstance(frozen, frozenset)
+        require(
+            isinstance(mutable, set) and isinstance(frozen, frozenset),
+            "strategy collection types differ from their contracts",
+        )
         return {"sets_type": type(mutable).__name__, "frozensets_type": type(frozen).__name__}
 
     observe("set_and_frozenset_strategies_have_distinct_output_types", collection_type)
@@ -138,7 +153,7 @@ def controls():
             calls.append(n)
 
         probe()
-        assert len(calls) == 7
+        require(len(calls) == 7, "seeded example count differs from the configured budget")
         return {
             "configured_max_examples": 7,
             "observed_examples": len(calls),
@@ -160,7 +175,7 @@ def controls():
         try:
             impossible()
         except (FailedHealthCheck, Unsatisfiable) as error:
-            assert not calls
+            require(not calls, "contradictory assumptions produced a successful example")
             return {
                 "observed_exception": type(error).__name__,
                 "successful_examples": 0,
