@@ -10,6 +10,12 @@ from pathlib import Path
 
 GITHUB_TIMEOUT = 45
 DEEPSOURCE_TIMEOUT = 90
+GITLEAKS_TIMEOUT = 900
+TIMEOUTS = {
+    "_github_rest_worker.py": GITHUB_TIMEOUT,
+    "_deepsource_rest_worker.py": DEEPSOURCE_TIMEOUT,
+    "_gitleaks_history_worker.py": GITLEAKS_TIMEOUT,
+}
 CLEANUP_GRACE = 5
 
 
@@ -22,14 +28,9 @@ def main(argv: list[str] | None = None) -> int:
     """Run the worker in a verified private session with a bounded lifetime."""
     args = sys.argv[1:] if argv is None else argv
     if sys.platform != "win32":
-        if (
-            len(args) < 2
-            or args[0] not in {"_github_rest_worker.py", "_deepsource_rest_worker.py"}
-            or os.getpid() != getpgrp()
-            or os.getpid() != getsid(0)
-        ):
+        if len(args) < 2 or args[0] not in TIMEOUTS or os.getpid() != getpgrp() or os.getpid() != getsid(0):
             return 2
-        timeout = GITHUB_TIMEOUT if args[0] == "_github_rest_worker.py" else DEEPSOURCE_TIMEOUT
+        timeout = TIMEOUTS[args[0]]
         deadline = time.monotonic() + timeout + CLEANUP_GRACE
         worker = Path(__file__).resolve().with_name(args[0])
         child = subprocess.Popen([sys.executable, "-I", "-S", str(worker), *args[1:]])

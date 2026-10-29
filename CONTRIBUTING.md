@@ -45,8 +45,18 @@ locally with the toolchain installed via `pip install -e '.[test,lint]'`:
 | CocoIndex local provider | Normal hashed installation, provider/model admission, native indexing and verified source spans; see [`setup and search`](toolchains/cocoindex-code/README.md) | `.github/workflows/cocoindex-provider.yml` |
 | Native PPTX retention | Pinned converter pair, deterministic fixture and semantic content checks; see [`consumer inputs`](toolchains/pptx-native/README.md) | `.github/workflows/pptx-retention-controls.yml` |
 | Secrets (in-repo) | `python3 tools/check_no_secret_patterns.py --history` | `.github/workflows/secret-scan.yml` |
-| Secrets (gitleaks) | `gitleaks git --exit-code 1 .` | `.github/workflows/secret-scan.yml` |
+| Secrets (Gitleaks) | `python tools/check_gitleaks_history.py --gitleaks <absolute-executable> --gitleaks-sha256 <verified-binary-sha256> --git <absolute-git-executable>` | `.github/workflows/secret-scan.yml` |
 | CodeQL model | `python tools/qualify_defusedxml_codeql_model.py --codeql <codeql> --model .github/codeql/extensions/defusedxml-paths --output <new-directory>` | `.github/workflows/codeql.yml` |
+
+For the Gitleaks gate, verify the official release archive first and supply the
+lowercase SHA-256 of its extracted binary, along with absolute paths to that binary and
+Git. The gate checks the repository and scanner before and after the run,
+rejects shallow history, ignore files and scanner diagnostics, includes merge-parent patches,
+and disables inline allow comments. It reports redacted findings without
+suppressing them. This is a Git patch scan, not proof that every historical
+binary or unchanged byte was inspected. To retain error details locally, use
+`--diagnostics <new-path>` outside the checkout or under `.venv`; diagnostic
+files may contain sensitive data and should not be shared without review.
 
 Concurrency, least-privilege read permissions and pip caching are configured
 per workflow. In offline validation, only the isolated Codecov upload job receives
