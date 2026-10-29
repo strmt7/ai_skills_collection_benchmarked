@@ -1,6 +1,7 @@
 """Qualify real supervised DeepSource requests against owned local servers."""
 
 import json
+import logging
 import sys
 import threading
 import time
@@ -43,9 +44,9 @@ def test_supervised_local_http(mode, tmp_path, monkeypatch):
             with suppress(BrokenPipeError, ConnectionResetError):
                 self.wfile.write(body)
 
-        def log_message(self, *args):
-            """Keep the owned local server quiet."""
-            pass
+        def log_message(self, message, *args):
+            """Send fixture HTTP diagnostics to the configured debug logger."""
+            logging.getLogger(__name__).debug(message, *args)
 
     server = HTTPServer(("127.0.0.1", 0), Handler)
     thread = threading.Thread(target=server.handle_request)
@@ -67,7 +68,7 @@ def test_supervised_local_http(mode, tmp_path, monkeypatch):
     monkeypatch.setattr(inventory, "__file__", str(tmp_path / "deepsource_inventory.py"))
     monkeypatch.setattr(inventory, "API", endpoint)
     if mode == "slow":
-        name = "_run_windows" if sys.platform == "win32" else "_run_posix"
+        name = "run_windows" if sys.platform == "win32" else "run_posix"
         real = getattr(bounded, name)
 
         def shortened(command, timeout, output_limit, stdin=None):
@@ -136,7 +137,7 @@ def test_timeout_during_worker_output_withholds_partial_body(tmp_path, monkeypat
     leader = Path(inventory.__file__).with_name("_bounded_worker_leader.py")
     (tmp_path / "_bounded_worker_leader.py").write_bytes(leader.read_bytes())
     monkeypatch.setattr(inventory, "__file__", str(tmp_path / "deepsource_inventory.py"))
-    name = "_run_windows" if sys.platform == "win32" else "_run_posix"
+    name = "run_windows" if sys.platform == "win32" else "run_posix"
     real = getattr(bounded, name)
 
     def shortened(command, timeout, output_limit, stdin=None):

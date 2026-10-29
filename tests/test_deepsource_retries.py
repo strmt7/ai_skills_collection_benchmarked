@@ -82,7 +82,15 @@ def test_implementation_change_rejects_complete_inventory(tmp_path, monkeypatch)
     altered = dict(baseline)
     altered["_deepsource_rest_worker.py"] = "0" * 64
     observations = iter([baseline, altered])
-    monkeypatch.setattr(inventory, "implementation_digests", lambda: next(observations))
+
+    def observed_digests():
+        """Fail clearly if the collector requests more observations than expected."""
+        try:
+            return next(observations)
+        except StopIteration as error:
+            raise AssertionError("Unexpected extra implementation observation") from error
+
+    monkeypatch.setattr(inventory, "implementation_digests", observed_digests)
 
     def fetch(variables, destination):
         """Retain a consistent empty provider page."""

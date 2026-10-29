@@ -81,7 +81,7 @@ def _cleanup_posix(process: subprocess.Popen[bytes]) -> None:
                 process.stderr.close()
 
 
-def _run_posix(command: list[str], timeout: float, output_limit: int, stdin: BinaryIO | None = None) -> dict[str, Any]:
+def run_posix(command: list[str], timeout: float, output_limit: int, stdin: BinaryIO | None = None) -> dict[str, Any]:
     """Keep the leader unreaped until its owned process group is terminated."""
     if not command or not os.path.isabs(command[0]) or timeout <= 0 or output_limit <= 0:
         raise ValueError("invalid worker bounds")
@@ -107,7 +107,7 @@ def _run_posix(command: list[str], timeout: float, output_limit: int, stdin: Bin
     }
 
 
-def _run_windows(command, timeout, output_limit, stdin=None):
+def run_windows(command, timeout, output_limit, stdin=None):
     """Use a job to stop the worker and its job-associated descendants."""
     root = str(Path(__file__).resolve().parent)
     sys.path.insert(0, root)

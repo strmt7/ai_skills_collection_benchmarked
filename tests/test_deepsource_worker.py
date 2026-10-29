@@ -1,6 +1,7 @@
 """Exercise DeepSource response integrity and streaming credential protection."""
 
 import io
+import logging
 import threading
 import urllib.request
 from email.message import Message
@@ -31,8 +32,9 @@ def test_incomplete_or_unparseable_json_is_never_emitted():
 
 
 @pytest.mark.parametrize(("extra", "expected"), [(0, "ok"), (5, "incomplete_response")])
-def test_real_http_declared_length(extra, expected, monkeypatch):
+def test_real_http_declared_length(extra, expected, monkeypatch, caplog):
     """Compare complete and truncated bodies against their declared lengths."""
+    caplog.set_level(logging.DEBUG, logger=__name__)
     body = b'{"data":{"value":1}}'
 
     class Handler(BaseHTTPRequestHandler):
@@ -46,9 +48,9 @@ def test_real_http_declared_length(extra, expected, monkeypatch):
             self.end_headers()
             self.wfile.write(body)
 
-        def log_message(self, *args):
-            """Keep the owned local server quiet."""
-            pass
+        def log_message(self, message, *args):
+            """Send fixture HTTP diagnostics to the configured debug logger."""
+            logging.getLogger(__name__).debug(message, *args)
 
     server = HTTPServer(("127.0.0.1", 0), Handler)
     thread = threading.Thread(target=server.handle_request)
@@ -63,6 +65,7 @@ def test_real_http_declared_length(extra, expected, monkeypatch):
         thread.join(timeout=3)
         server.server_close()
     assert not thread.is_alive()
+    assert any(record.name == __name__ and "POST " in record.getMessage() for record in caplog.records)
     assert result["kind"] == expected
     if expected == "ok":
         assert output.getvalue() == body
@@ -155,9 +158,9 @@ def test_incomplete_chunked_response_is_withheld(monkeypatch):
             self.wfile.flush()
             self.close_connection = True
 
-        def log_message(self, *args):
-            """Keep the owned local server quiet."""
-            pass
+        def log_message(self, message, *args):
+            """Send fixture HTTP diagnostics to the configured debug logger."""
+            logging.getLogger(__name__).debug(message, *args)
 
     server = HTTPServer(("127.0.0.1", 0), Handler)
     thread = threading.Thread(target=server.handle_request)
@@ -236,9 +239,9 @@ def test_complete_chunked_response_is_admitted(monkeypatch):
             self.wfile.flush()
             self.close_connection = True
 
-        def log_message(self, *args):
-            """Keep the owned local server quiet."""
-            pass
+        def log_message(self, message, *args):
+            """Send fixture HTTP diagnostics to the configured debug logger."""
+            logging.getLogger(__name__).debug(message, *args)
 
     server = HTTPServer(("127.0.0.1", 0), Handler)
     thread = threading.Thread(target=server.handle_request)

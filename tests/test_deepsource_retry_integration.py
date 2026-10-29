@@ -1,6 +1,7 @@
 """Exercise a real retryable server failure through the complete collector."""
 
 import json
+import logging
 import threading
 import types
 from http.server import BaseHTTPRequestHandler, HTTPServer
@@ -32,9 +33,9 @@ def test_server_retry_retains_receipt_and_completes(tmp_path, monkeypatch, serve
             self.end_headers()
             self.wfile.write(payload)
 
-        def log_message(self, *args):
-            """Keep the owned local server quiet."""
-            pass
+        def log_message(self, message, *args):
+            """Send fixture HTTP diagnostics to the configured debug logger."""
+            logging.getLogger(__name__).debug(message, *args)
 
     server = HTTPServer(("127.0.0.1", 0), Handler)
     thread = threading.Thread(target=server.serve_forever)

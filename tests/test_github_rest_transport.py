@@ -5,6 +5,7 @@ from __future__ import annotations
 import http.server
 import io
 import json
+import logging
 import subprocess
 import sys
 import threading
@@ -246,8 +247,9 @@ class TruncatedHandler(http.server.BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(b"{}")
 
-    def log_message(self, *args):
-        """Keep the owned test server quiet."""
+    def log_message(self, message, *args):
+        """Send fixture HTTP diagnostics to the configured debug logger."""
+        logging.getLogger(__name__).debug(message, *args)
 
 
 def test_incomplete_http_response_fails(monkeypatch):

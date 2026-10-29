@@ -87,12 +87,12 @@ def _bounded_process():
 
 def _run_posix(command, timeout, output_limit):
     """Run the API worker in a bounded POSIX process group."""
-    return _bounded_process()._run_posix(command, timeout, output_limit)
+    return _bounded_process().run_posix(command, timeout, output_limit)
 
 
 def _run_windows(command, timeout, output_limit):
     """Run the API worker in a bounded Windows job."""
-    return _bounded_process()._run_windows(command, timeout, output_limit)
+    return _bounded_process().run_windows(command, timeout, output_limit)
 
 
 def _check_worker_result(run: dict[str, Any]) -> bytes:

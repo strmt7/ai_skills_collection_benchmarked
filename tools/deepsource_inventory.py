@@ -206,9 +206,9 @@ def _supervised_request(payload: bytes) -> dict[str, Any]:
     try:
         bounded = _supervisor()
         run = (
-            bounded._run_windows(command, 90, LIMIT + 4097, stdin=reader)
+            bounded.run_windows(command, 90, LIMIT + 4097, stdin=reader)
             if sys.platform == "win32"
-            else bounded._run_posix(command, 90, LIMIT + 4097, stdin=reader)
+            else bounded.run_posix(command, 90, LIMIT + 4097, stdin=reader)
         )
     finally:
         try:
