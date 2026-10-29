@@ -16,6 +16,43 @@ def case_digest(cases: list[str]) -> str:
     return hashlib.sha256(encoded).hexdigest()
 
 
+def _grade_checks(grade: dict[str, Any]) -> tuple[list[dict[str, Any]], frozenset[str]]:
+    """Require a well-formed set of individually identified boolean outcomes."""
+    checks = grade.get("checks", [])
+    if not isinstance(checks, list) or any(
+        not isinstance(check, dict) or type(check.get("passed")) is not bool for check in checks
+    ):
+        raise ValueError("external checks must contain explicit boolean outcomes")
+    names = [check.get("case") for check in checks]
+    if any(not isinstance(name, str) or not name for name in names) or len(names) != len(set(names)):
+        raise ValueError("external checks must have unique nonempty case names")
+    return checks, frozenset(names)
+
+
+def _check_grade_counts(grade: dict[str, Any], checks: list[dict[str, Any]]) -> None:
+    """Check the totals when the grader has provided individual outcomes."""
+    if checks and (
+        type(grade.get("checks_total")) is not int
+        or type(grade.get("checks_passed")) is not int
+        or grade.get("checks_total") != len(checks)
+        or grade.get("checks_passed") != sum(check["passed"] for check in checks)
+    ):
+        raise ValueError("external check counts are inconsistent")
+
+
+def validate_grade_checks(
+    grade: dict[str, Any], expected_cases: frozenset[str], *, scored: bool
+) -> list[dict[str, Any]]:
+    """Validate the recorded case outcomes against the committed denominator."""
+    checks, names = _grade_checks(grade)
+    if scored and (not checks or names != expected_cases):
+        raise ValueError("matched attempts must use the same independently recorded grading cases")
+    _check_grade_counts(grade, checks)
+    if scored and all(check["passed"] for check in checks) != (grade.get("status") == "task_passed"):
+        raise ValueError("grading status contradicts its check outcomes")
+    return checks
+
+
 def _check_header(manifest: Any, protocol: dict[str, Any], protocol_hash: str) -> int:
     """Validate the protocol version, manifest version and protocol binding."""
     version = protocol.get("protocol_version")

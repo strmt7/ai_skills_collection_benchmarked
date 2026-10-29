@@ -113,7 +113,10 @@ known-good and boundary-attack controls, but the trial runner does not yet pass
 its required fixture and sandbox inputs to that grader. The frozen v2 protocol
 rejects the changed execution tooling before launch. Do not run a new model
 trial until the runner and confined grader are integrated and independently
-qualified. The historical evidence establishes neither container isolation nor
+qualified. The runner now refuses new model launches before creating a workspace
+or starting a process until those prerequisites are implemented. It also rejects
+scored grader responses whose cases, counts or outcomes disagree with the frozen
+case set. The historical evidence establishes neither container isolation nor
 provider-resolved model identity.
 
 The Windows job-process control limits output and cleans up job members. It is

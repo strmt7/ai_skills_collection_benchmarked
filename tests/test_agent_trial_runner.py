@@ -134,7 +134,10 @@ def test_grading_timeout_does_not_claim_a_submission_failure(tmp_path, monkeypat
 
     monkeypatch.setattr(trials.subprocess, "run", run)
     result = trials.external_grade(
-        {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py"}, tmp_path, Path("python")
+        {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py"},
+        tmp_path,
+        Path("python"),
+        frozenset({"case"}),
     )
     assert result["status"] == "harness_error"
     assert "grading limit" in result["error"]
@@ -160,22 +163,72 @@ def test_grading_infrastructure_failures_are_not_scored_as_agent_failures(tmp_pa
         trials.subprocess, "run", lambda *args, **kwargs: subprocess.CompletedProcess(args[0], returncode, stdout, "")
     )
     result = trials.external_grade(
-        {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py"}, tmp_path, Path("python")
+        {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py"},
+        tmp_path,
+        Path("python"),
+        frozenset({"case"}),
     )
     assert result["status"] == "harness_error"
 
 
 @pytest.mark.parametrize("status,returncode", [("task_passed", 0), ("task_failed", 1), ("harness_error", 2)])
 def test_matching_grader_exit_codes_keep_the_reported_status(tmp_path, monkeypatch, status, returncode):
+    passed = status == "task_passed"
+    grade = {"status": status}
+    if status != "harness_error":
+        grade.update(checks=[{"case": "case", "passed": passed}], checks_total=1, checks_passed=int(passed))
     monkeypatch.setattr(
         trials.subprocess,
         "run",
-        lambda *args, **kwargs: subprocess.CompletedProcess(args[0], returncode, json.dumps({"status": status}), ""),
+        lambda *args, **kwargs: subprocess.CompletedProcess(args[0], returncode, json.dumps(grade), ""),
     )
     result = trials.external_grade(
-        {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py"}, tmp_path, Path("python")
+        {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py"},
+        tmp_path,
+        Path("python"),
+        frozenset({"case"}),
     )
     assert result["status"] == status
+
+
+@pytest.mark.parametrize(
+    "grade",
+    [
+        {"status": "task_passed"},
+        {"status": "task_passed", "checks": [], "checks_total": 0, "checks_passed": 0},
+        {"status": "task_passed", "checks": [{"case": "other", "passed": True}], "checks_total": 1, "checks_passed": 1},
+        {
+            "status": "task_passed",
+            "checks": [{"case": "case", "passed": True}] * 2,
+            "checks_total": 2,
+            "checks_passed": 2,
+        },
+        {
+            "status": "task_passed",
+            "checks": [{"case": "case", "passed": True}],
+            "checks_total": True,
+            "checks_passed": 1,
+        },
+        {"status": "task_passed", "checks": [{"case": "case", "passed": 1}], "checks_total": 1, "checks_passed": 1},
+        {"status": "task_passed", "checks": [{"case": "case", "passed": False}], "checks_total": 1, "checks_passed": 0},
+        {"status": "task_failed", "checks": [{"case": "case", "passed": True}], "checks_total": 1, "checks_passed": 1},
+    ],
+)
+def test_incomplete_or_contradictory_grading_is_a_harness_error(tmp_path, monkeypatch, grade):
+    """A valid exit code alone never authorizes a scored outcome."""
+    code = 0 if grade["status"] == "task_passed" else 1
+    monkeypatch.setattr(
+        trials.subprocess,
+        "run",
+        lambda *args, **kwargs: subprocess.CompletedProcess(args[0], code, json.dumps(grade), ""),
+    )
+    result = trials.external_grade(
+        {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py"},
+        tmp_path,
+        Path("python"),
+        frozenset({"case"}),
+    )
+    assert result["status"] == "harness_error"
 
 
 def test_unavailable_grading_driver_is_a_harness_error(tmp_path, monkeypatch):
@@ -184,7 +237,10 @@ def test_unavailable_grading_driver_is_a_harness_error(tmp_path, monkeypatch):
 
     monkeypatch.setattr(trials.subprocess, "run", unavailable)
     result = trials.external_grade(
-        {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py"}, tmp_path, Path("python")
+        {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py"},
+        tmp_path,
+        Path("python"),
+        frozenset({"case"}),
     )
     assert result["status"] == "harness_error"
 
@@ -221,6 +277,7 @@ def test_invalid_trial_stream_is_recorded_without_grading(tmp_path, monkeypatch)
     )
     monkeypatch.setattr(trials, "prepare", lambda *args: (workspace, "fixture", {}))
     monkeypatch.setattr(trials, "command", lambda *args: ["fixture"])
+    monkeypatch.setattr(trials, "require_qualified_trial_execution", lambda: None)
 
     def unexpected_grade(*args):
         raise AssertionError("invalid transcript must not be graded")
@@ -245,6 +302,37 @@ def test_invalid_trial_stream_is_recorded_without_grading(tmp_path, monkeypatch)
     assert result["usage"] is None and result["commands_completed"] is None
     assert result["grader"]["status"] == "harness_error"
     summary.verify_transcript(output, result)
+
+
+def test_unqualified_execution_stops_before_workspace_or_process_creation(tmp_path, monkeypatch):
+    protocol = {
+        "protocol_version": 3,
+        "runner_sha256": trials.sha256((trials.ROOT / "tools/run_agent_trial.py").read_bytes()),
+        "grading_driver_sha256": trials.sha256((trials.ROOT / "tools/grade_agent_submission.py").read_bytes()),
+        "transcript_parser_sha256": trials.sha256((trials.ROOT / "tools/_trial_transcript.py").read_bytes()),
+        "trial_manifest_sha256": trials.sha256((trials.ROOT / "tools/_trial_manifest.py").read_bytes()),
+        "grader_sha256": "a" * 64,
+        "grading_cases_sha256": _trial_manifest.case_digest(["case"]),
+    }
+    protocol_path = tmp_path / "protocol.json"
+    protocol_path.write_text(json.dumps(protocol), encoding="utf-8")
+    protocol_path.with_name("protocol.grading.json").write_text(
+        json.dumps(
+            {
+                "manifest_version": 1,
+                "protocol_sha256": trials.sha256(protocol_path.read_bytes()),
+                "grader_sha256": protocol["grader_sha256"],
+                "cases": ["case"],
+            }
+        ),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(trials, "prepare", lambda *args: pytest.fail("unexpected workspace creation"))
+    monkeypatch.setattr(trials.subprocess, "Popen", lambda *args, **kwargs: pytest.fail("unexpected process"))
+    output = tmp_path / "attempt"
+    with pytest.raises(RuntimeError, match="not integrated.*not been independently qualified"):
+        trials.run(protocol_path, "default", output, Path("fixture"), Path("python"))
+    assert not output.exists()
 
 
 @pytest.mark.parametrize("problem", ["missing", "changed", "legacy"])

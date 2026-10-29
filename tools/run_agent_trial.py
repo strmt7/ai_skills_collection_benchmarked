@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Any
 
 from _lib_b.io_utils import write_json
-from _trial_manifest import read_grading_manifest
+from _trial_manifest import read_grading_manifest, validate_grade_checks
 from _trial_transcript import parse_events, strict_json
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -107,7 +107,10 @@ def read_events(path: Path, *, allow_truncated_final: bool = False) -> list[dict
     return parse_events(path.read_bytes(), allow_truncated_final=allow_truncated_final)
 
 
-def external_grade(task: dict[str, Any], workspace: Path, python: Path) -> dict[str, Any]:
+def external_grade(
+    task: dict[str, Any], workspace: Path, python: Path, expected_cases: frozenset[str]
+) -> dict[str, Any]:
+    """Accept scored outcomes only when the driver reports the committed cases consistently."""
     try:
         result = subprocess.run(
             [
@@ -139,6 +142,10 @@ def external_grade(task: dict[str, Any], workspace: Path, python: Path) -> dict[
     expected_exit = {"task_passed": 0, "task_failed": 1, "harness_error": 2}
     if result.returncode != expected_exit[response["status"]]:
         return {"status": "harness_error", "error": "grading driver exit status contradicts its result"}
+    try:
+        validate_grade_checks(response, expected_cases, scored=response["status"] != "harness_error")
+    except ValueError as exc:
+        return {"status": "harness_error", "error": str(exc)}
     return response
 
 
@@ -255,9 +262,19 @@ def validate_protocol(protocol_path: Path, output: Path) -> tuple[dict[str, Any]
     return protocol, protocol_hash
 
 
+def require_qualified_trial_execution() -> None:
+    """Refuse model launches until the complete execution boundary is qualified."""
+    raise RuntimeError(
+        "Model trials are unavailable: the runner is not integrated with the confined grader, "
+        "and the agent execution and collection boundary has not been independently qualified"
+    )
+
+
 def run(protocol_path: Path, condition: str, output: Path, cli: Path, python: Path) -> dict[str, Any]:
     """Run one frozen trial and retain its grading and execution evidence."""
     protocol, protocol_hash = validate_protocol(protocol_path, output)
+    expected_cases, _ = read_grading_manifest(protocol_path, protocol, protocol_hash)
+    require_qualified_trial_execution()
     workspace, prompt, inputs = prepare(protocol, condition, python)
     output.mkdir(parents=True, exist_ok=False)
     (output / "prompt.txt").write_text(prompt, encoding="utf-8")
@@ -281,7 +298,7 @@ def run(protocol_path: Path, condition: str, output: Path, cli: Path, python: Pa
     grade = (
         {"status": "harness_error", "error": "grading skipped because the transcript is invalid"}
         if transcript_error
-        else external_grade(protocol["task"], submission, python)
+        else external_grade(protocol["task"], submission, python, expected_cases)
     )
     # Policy/tool launch errors are harness failures, not evidence that the
     # model failed the coding task. Keep them in accounting with actual usage.

@@ -13,7 +13,7 @@ from pathlib import Path, PurePosixPath
 from typing import Any
 
 from _lib_b.io_utils import dumps_deterministic, write_json, write_text
-from _trial_manifest import read_grading_manifest
+from _trial_manifest import read_grading_manifest, validate_grade_checks
 from _trial_transcript import parse_events, strict_json
 
 STATUSES = {"task_passed", "task_failed", "harness_error", "invalid_scope", "timed_out"}
@@ -175,17 +175,6 @@ def _verify_evidence(directory: Path, result: dict[str, Any], protocol_hash: str
         raise ValueError("launch used a different frozen protocol")
 
 
-def _verify_counts(grade: dict[str, Any], checks: list[dict[str, Any]]) -> None:
-    """Require recorded check totals to agree with their boolean outcomes."""
-    if checks and (
-        type(grade.get("checks_total")) is not int
-        or type(grade.get("checks_passed")) is not int
-        or grade.get("checks_total") != len(checks)
-        or grade.get("checks_passed") != sum(check["passed"] for check in checks)
-    ):
-        raise ValueError("external check counts are inconsistent")
-
-
 def _verify_checks(
     result: dict[str, Any], expected_cases: frozenset[str]
 ) -> tuple[dict[str, Any], list[dict[str, Any]]]:
@@ -193,17 +182,7 @@ def _verify_checks(
     grade = result.get("grader")
     if not isinstance(grade, dict):
         raise ValueError("external grader result is unavailable")
-    checks = grade.get("checks", [])
-    if not isinstance(checks, list) or any(
-        not isinstance(check, dict) or type(check.get("passed")) is not bool for check in checks
-    ):
-        raise ValueError("external checks must contain explicit boolean outcomes")
-    names = [check.get("case") for check in checks]
-    if any(not isinstance(name, str) or not name for name in names) or len(names) != len(set(names)):
-        raise ValueError("external checks must have unique nonempty case names")
-    if result["status"] in {"task_passed", "task_failed"} and frozenset(names) != expected_cases:
-        raise ValueError("matched attempts must use the same independently recorded grading cases")
-    _verify_counts(grade, checks)
+    checks = validate_grade_checks(grade, expected_cases, scored=result["status"] in {"task_passed", "task_failed"})
     return grade, checks
 
 
