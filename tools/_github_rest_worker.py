@@ -7,6 +7,7 @@ import os
 import sys
 import urllib.error
 import urllib.request
+from pathlib import Path
 from urllib.parse import urlsplit
 
 MAX_BODY = 8 * 1024 * 1024
@@ -42,6 +43,20 @@ class Redirect(urllib.request.HTTPRedirectHandler):
         return super().redirect_request(req, fp, code, msg, headers, newurl)
 
 
+def _validated_framing(response):
+    """Apply the shared HTTP framing contract in isolated Python mode."""
+    root = str(Path(__file__).resolve().parent)
+    sys.path.insert(0, root)
+    try:
+        from _http_framing import FramingError, response_framing
+    finally:
+        sys.path.pop(0)
+    try:
+        return response_framing(response, MAX_BODY)
+    except FramingError as error:
+        raise WorkerError(str(error)) from error
+
+
 def fetch(endpoint):
     """Fetch a size-bounded response without exposing credentials in diagnostics."""
     token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN", "")
@@ -59,13 +74,18 @@ def fetch(endpoint):
     with urllib.request.build_opener(Redirect()).open(request, timeout=45) as response:
         if response.status != 200:
             raise WorkerError("unexpected_status")
+        framed, expected_length = _validated_framing(response)
+        if not framed:
+            raise WorkerError("unframed_response")
         links = response.headers.get_all("Link", [])
         if len(links) > 1 or any(len(x) > MAX_LINK for x in links):
             raise WorkerError("invalid_link_headers")
         body = response.read(MAX_BODY + 1)
         if len(body) > MAX_BODY:
             raise WorkerError("response_too_large")
-        if response.length not in (None, 0):
+        if getattr(response, "length", None) not in (None, 0) or (
+            expected_length is not None and len(body) != expected_length
+        ):
             raise WorkerError("incomplete_response")
     return body, links
 

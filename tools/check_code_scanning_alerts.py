@@ -9,17 +9,12 @@ from __future__ import annotations
 import argparse
 import json
 import math
-import os
 import re
-import selectors
 import subprocess
 import sys
-import tempfile
-import time
 from collections.abc import Callable, Iterator
-from contextlib import suppress
 from pathlib import Path
-from typing import IO, Any, BinaryIO, cast
+from typing import Any
 from urllib.parse import parse_qs, urlencode, urlsplit
 
 CATEGORIES = frozenset({"/language:python", "/language:javascript-typescript", "/language:actions"})
@@ -79,128 +74,25 @@ def _finite_float(value: str) -> float:
     return number
 
 
-if sys.platform != "win32":
-    from os import killpg
-    from signal import SIGKILL
-
-    def _kill_group(pid: int) -> None:
-        """Terminate the isolated worker process group."""
-        killpg(pid, SIGKILL)
-
-else:
-
-    def _kill_group(pid: int) -> None:
-        """Reject the POSIX cleanup path on Windows."""
-        raise RuntimeError("POSIX process groups are unavailable on Windows")
-
-
-_EXIT_MARKER = re.compile(rb"\n__GH_WORKER_EXIT__:(-?[0-9]{1,10})\n\Z")
-
-
-def _collect_posix_output(
-    stdout: IO[bytes], stderr: IO[bytes], deadline: float, output_limit: int
-) -> tuple[dict[str, bytearray], str | None, int | None]:
-    """Collect pipes until worker status and stdout EOF, with one deadline and limit."""
-    outputs = {"stdout": bytearray(), "stderr": bytearray()}
-    worker_exit = None
-    with selectors.DefaultSelector() as selector:
-        selector.register(stdout.fileno(), selectors.EVENT_READ, "stdout")
-        selector.register(stderr.fileno(), selectors.EVENT_READ, "stderr")
-        while selector.get_map():
-            remaining = deadline - time.monotonic()
-            if remaining <= 0:
-                return outputs, "timeout", None
-            for key, _ in selector.select(remaining):
-                available = output_limit + 1 - sum(len(value) for value in outputs.values())
-                chunk = os.read(key.fd, min(65536, available))
-                if not chunk:
-                    selector.unregister(key.fd)
-                    continue
-                outputs[key.data].extend(chunk)
-                if sum(len(value) for value in outputs.values()) > output_limit or len(outputs["stderr"]) > MAX_STDERR:
-                    return outputs, "output_limit", None
-                if key.data == "stderr":
-                    match = _EXIT_MARKER.search(outputs["stderr"])
-                    if match:
-                        worker_exit = int(match.group(1))
-                        del outputs["stderr"][match.start() :]
-                        selector.unregister(key.fd)
-    return outputs, None if worker_exit is not None else "missing_status", worker_exit
-
-
-def _cleanup_posix(process: subprocess.Popen[bytes]) -> None:
-    """Kill the owned group, reap its leader, and close both output pipes."""
-    try:
-        try:
-            with suppress(ProcessLookupError):
-                _kill_group(process.pid)
-        finally:
-            process.wait(timeout=5)
-    finally:
-        try:
-            if process.stdout is not None:
-                process.stdout.close()
-        finally:
-            if process.stderr is not None:
-                process.stderr.close()
-
-
-def _run_posix(command: list[str], timeout: float, output_limit: int) -> dict[str, Any]:
-    """Keep the leader unreaped until its owned process group is terminated."""
-    if not command or not os.path.isabs(command[0]) or timeout <= 0 or output_limit <= 0:
-        raise ValueError("invalid worker bounds")
-    process = subprocess.Popen(
-        command,
-        stdin=subprocess.DEVNULL,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        start_new_session=True,
-    )
-    deadline = time.monotonic() + timeout
-    try:
-        if process.stdout is None or process.stderr is None:
-            raise RuntimeError("worker output pipes are unavailable")
-        outputs, reason, worker_exit = _collect_posix_output(process.stdout, process.stderr, deadline, output_limit)
-    finally:
-        _cleanup_posix(process)
-    return {
-        "exit_code": worker_exit,
-        "termination_reason": reason,
-        "stdout": bytes(outputs["stdout"]),
-        "stderr": bytes(outputs["stderr"]),
-    }
-
-
-def _run_windows(command, timeout, output_limit):
-    """Use a job to stop the worker and its job-associated descendants."""
+def _bounded_process():
+    """Load the repository-owned supervisor in isolated Python mode."""
     root = str(Path(__file__).resolve().parent)
     sys.path.insert(0, root)
     try:
-        from _windows_trial_process import run_owned
+        import _bounded_process as supervisor
     finally:
         sys.path.pop(0)
-    with (
-        tempfile.TemporaryFile() as stdin,
-        tempfile.TemporaryFile() as stdout,
-        tempfile.TemporaryFile() as stderr,
-    ):
-        report = run_owned(
-            command,
-            cwd=Path(root),
-            stdin=cast(BinaryIO, stdin),
-            stdout=cast(BinaryIO, stdout),
-            stderr=cast(BinaryIO, stderr),
-            timeout=timeout,
-            output_limit=output_limit,
-        )
-        stdout.seek(0)
-        stderr.seek(0)
-        return {
-            "exit_code": report["exit_code"],
-            "termination_reason": report["termination_reason"],
-            "stdout": stdout.read(output_limit + 1),
-            "stderr": stderr.read(output_limit + 1),
-        }
+    return supervisor
+
+
+def _run_posix(command, timeout, output_limit):
+    """Run the API worker in a bounded POSIX process group."""
+    return _bounded_process()._run_posix(command, timeout, output_limit)
+
+
+def _run_windows(command, timeout, output_limit):
+    """Run the API worker in a bounded Windows job."""
+    return _bounded_process()._run_windows(command, timeout, output_limit)
 
 
 def _check_worker_result(run: dict[str, Any]) -> bytes:
@@ -218,7 +110,8 @@ def _check_worker_result(run: dict[str, Any]) -> bytes:
         diagnostic = run["stderr"].decode("ascii", errors="replace")
         if not re.fullmatch(
             r"(?:invalid_url|invalid_redirect|invalid_token|unexpected_status|invalid_link_headers|"
-            r"response_too_large|incomplete_response|invalid_arguments|metadata_too_large|"
+            r"response_too_large|incomplete_response|invalid_response|unframed_response|"
+            r"invalid_arguments|metadata_too_large|"
             r"transport_[A-Za-z0-9_]+|unexpected_[A-Za-z0-9_]+)",
             diagnostic,
         ):
@@ -262,10 +155,13 @@ def github(endpoint: str) -> tuple[Any, str | None]:
     executable = Path(sys.executable)
     if not executable.is_absolute() or not executable.is_file() or not worker.is_file():
         raise GateError("GitHub API worker is unavailable")
-    script = worker if sys.platform == "win32" else worker.with_name("_github_rest_leader.py")
+    script = worker if sys.platform == "win32" else worker.with_name("_bounded_worker_leader.py")
     if not script.is_file():
         raise GateError("GitHub API process supervisor is unavailable")
-    command = [str(executable), "-I", "-S", str(script), endpoint]
+    command = [str(executable), "-I", "-S", str(script)]
+    if sys.platform != "win32":
+        command.append(worker.name)
+    command.append(endpoint)
     try:
         run = _run_windows(command, 45, MAX_OUTPUT) if sys.platform == "win32" else _run_posix(command, 45, MAX_OUTPUT)
         return _decode_worker_result(_check_worker_result(run))

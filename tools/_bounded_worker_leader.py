@@ -8,8 +8,9 @@ import sys
 import time
 from pathlib import Path
 
-WORKER_TIMEOUT = 45
-CLEANUP_TIMEOUT = 50
+GITHUB_TIMEOUT = 45
+DEEPSOURCE_TIMEOUT = 90
+CLEANUP_GRACE = 5
 
 
 if sys.platform != "win32":
@@ -21,13 +22,19 @@ def main(argv: list[str] | None = None) -> int:
     """Run the worker in a verified private session with a bounded lifetime."""
     args = sys.argv[1:] if argv is None else argv
     if sys.platform != "win32":
-        if len(args) != 1 or os.getpid() != getpgrp() or os.getpid() != getsid(0):
+        if (
+            len(args) < 2
+            or args[0] not in {"_github_rest_worker.py", "_deepsource_rest_worker.py"}
+            or os.getpid() != getpgrp()
+            or os.getpid() != getsid(0)
+        ):
             return 2
-        deadline = time.monotonic() + CLEANUP_TIMEOUT
-        worker = Path(__file__).resolve().with_name("_github_rest_worker.py")
-        child = subprocess.Popen([sys.executable, "-I", "-S", str(worker), args[0]], stdin=subprocess.DEVNULL)
+        timeout = GITHUB_TIMEOUT if args[0] == "_github_rest_worker.py" else DEEPSOURCE_TIMEOUT
+        deadline = time.monotonic() + timeout + CLEANUP_GRACE
+        worker = Path(__file__).resolve().with_name(args[0])
+        child = subprocess.Popen([sys.executable, "-I", "-S", str(worker), *args[1:]])
         try:
-            status = child.wait(timeout=WORKER_TIMEOUT)
+            status = child.wait(timeout=timeout + CLEANUP_GRACE)
         except subprocess.TimeoutExpired:
             killpg(getpgrp(), SIGKILL)
             return 2

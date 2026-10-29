@@ -108,6 +108,7 @@ class Response:
     def __init__(self, body=b"{}", status=200, links=()):
         self.status = status
         self.headers = Message()
+        self.headers["Content-Length"] = str(len(body))
         self.data = io.BytesIO(body)
         self.length = None
         for link in links:
@@ -279,8 +280,8 @@ def test_incomplete_http_response_fails(monkeypatch):
 @pytest.mark.parametrize(("mode", "expected"), [("normal", None), ("stalled", "timeout"), ("flood", "output_limit")])
 def test_posix_owned_worker_is_bounded(tmp_path, mode, expected):
     """Exercise the real process-group supervisor under normal and hostile output."""
-    leader = tmp_path / "_github_rest_leader.py"
-    leader.write_bytes(Path(gate.__file__).with_name("_github_rest_leader.py").read_bytes())
+    leader = tmp_path / "_bounded_worker_leader.py"
+    leader.write_bytes(Path(gate.__file__).with_name("_bounded_worker_leader.py").read_bytes())
     script = (
         "import sys,time\n"
         "mode=sys.argv[1]\n"
@@ -289,7 +290,7 @@ def test_posix_owned_worker_is_bounded(tmp_path, mode, expected):
         "if mode=='normal': print('ok')\n"
     )
     (tmp_path / "_github_rest_worker.py").write_text(script, encoding="utf-8")
-    result = gate._run_posix([sys.executable, "-I", "-S", str(leader), mode], 2, 4096)
+    result = gate._run_posix([sys.executable, "-I", "-S", str(leader), "_github_rest_worker.py", mode], 2, 4096)
     assert result["termination_reason"] == expected
     if mode == "normal":
         assert result["exit_code"] == 0 and result["stdout"] == b"ok\n"
@@ -314,16 +315,16 @@ def test_windows_owned_worker_is_bounded(mode, expected):
 @pytest.mark.parametrize("stalled", [True, False])
 def test_posix_leader_self_cleans_without_parent(tmp_path, stalled):
     """A surviving leader must terminate its owned group after a bounded deadline."""
-    source = Path(gate.__file__).with_name("_github_rest_leader.py").read_text(encoding="utf-8")
-    assert "WORKER_TIMEOUT = 45" in source and "CLEANUP_TIMEOUT = 50" in source
-    source = source.replace("WORKER_TIMEOUT = 45", "WORKER_TIMEOUT = 1")
-    source = source.replace("CLEANUP_TIMEOUT = 50", "CLEANUP_TIMEOUT = 2")
-    leader = tmp_path / "_github_rest_leader.py"
+    source = Path(gate.__file__).with_name("_bounded_worker_leader.py").read_text(encoding="utf-8")
+    assert "GITHUB_TIMEOUT = 45" in source and "CLEANUP_GRACE = 5" in source
+    source = source.replace("GITHUB_TIMEOUT = 45", "GITHUB_TIMEOUT = 1")
+    source = source.replace("CLEANUP_GRACE = 5", "CLEANUP_GRACE = 1")
+    leader = tmp_path / "_bounded_worker_leader.py"
     leader.write_text(source, encoding="utf-8")
     worker_source = "import time; time.sleep(30)" if stalled else "print('done')"
     (tmp_path / "_github_rest_worker.py").write_text(worker_source, encoding="utf-8")
     result = subprocess.run(
-        [sys.executable, "-I", "-S", str(leader), "fixture"],
+        [sys.executable, "-I", "-S", str(leader), "_github_rest_worker.py", "fixture"],
         stdin=subprocess.DEVNULL,
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
@@ -337,9 +338,9 @@ def test_posix_leader_self_cleans_without_parent(tmp_path, stalled):
 @pytest.mark.skipif(sys.platform == "win32", reason="POSIX process groups are unavailable on Windows")
 def test_posix_leader_rejects_unisolated_session():
     """Never terminate a process group owned by the calling shell."""
-    leader = Path(gate.__file__).with_name("_github_rest_leader.py")
+    leader = Path(gate.__file__).with_name("_bounded_worker_leader.py")
     result = subprocess.run(
-        [sys.executable, "-I", "-S", str(leader), "fixture"],
+        [sys.executable, "-I", "-S", str(leader), "_github_rest_worker.py", "fixture"],
         stdin=subprocess.DEVNULL,
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
@@ -347,3 +348,30 @@ def test_posix_leader_rejects_unisolated_session():
         check=False,
     )
     assert result.returncode == 2
+
+
+@pytest.mark.parametrize("kind", ["unframed", "mixed", "duplicate", "malformed"])
+def test_github_rejects_unverifiable_framing(provision, kind):
+    """Reject API bodies with missing or ambiguous HTTP framing."""
+    response = Response()
+    if kind == "unframed":
+        del response.headers["Content-Length"]
+    elif kind == "mixed":
+        response.headers["Transfer-Encoding"] = "chunked"
+    elif kind == "duplicate":
+        response.headers.add_header("Content-Length", "3")
+    else:
+        response.headers.replace_header("Content-Length", "invalid")
+    provision(response)
+    with pytest.raises(worker.WorkerError, match="unframed_response|invalid_response"):
+        worker.fetch("repos/owner/name")
+
+
+def test_github_accepts_chunked_response(provision):
+    """Allow a correctly framed chunked GitHub response."""
+    response = Response()
+    del response.headers["Content-Length"]
+    response.headers["Transfer-Encoding"] = "chunked"
+    provision(response)
+    body, links = worker.fetch("repos/owner/name")
+    assert body == b"{}" and links == []

@@ -1,6 +1,6 @@
 # DeepSource inventory
 
-Use the official [DeepSource GraphQL API](https://docs.deepsource.com/docs/product/api-and-webhooks)
+Use the official [DeepSource GraphQL API](https://deepsource.com/docs/product/api-and-webhooks)
 to inspect the full default-branch occurrence inventory. DeepSource's GitHub App
 can run analysis without a GitHub Actions secret; a GraphQL request requires an
 authenticated DeepSource personal access token. The collector reads an existing
@@ -58,7 +58,19 @@ stable identity and root-cause group, and investigate newly introduced findings
 and unexplained disappearances. Do not disable analyzers, exclude paths,
 suppress findings or change thresholds to make the counts appear lower.
 
-The collector applies socket and response-read limits, makes no automatic retries
-and refuses redirects. If the provider
-returns an HTTP error or blocks a request, preserve the response and follow the
-provider's access instructions instead of changing clients to evade the refusal.
+The collector runs each request in an owned, time- and size-bounded worker. It
+passes the credential through an anonymous pipe, refuses redirects, and requires
+unambiguous `Content-Length` or chunked framing for successful responses. It
+checks raw and decoded JSON for credential echoes before retaining the body.
+Close-delimited, incomplete, non-JSON or credential-bearing bodies are withheld;
+a transport receipt records the status and failure without the body.
+These checks cannot recognize every possible encoding of a credential.
+
+For a read-only query, HTTP 500, 502, 503 and 504 are retried at most twice, with each
+failed attempt and its transport receipt retained and hashed in the manifest.
+If a response contains `Retry-After`, the collector stops instead of retrying
+early. It does not automatically retry HTTP 429, authentication failures or
+incomplete responses. Follow the provider's access instructions if a request is
+blocked. The manifest binds the collector, worker and supervisor source hashes
+and checks them again before publishing findings; it cannot rule out a change
+that is made and reversed between those checks.

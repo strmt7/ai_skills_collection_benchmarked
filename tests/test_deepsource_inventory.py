@@ -6,6 +6,7 @@ import urllib.error
 from email.message import Message
 from typing import Any
 
+import _deepsource_rest_worker as worker
 import deepsource_inventory as inventory
 import pytest
 
@@ -14,6 +15,7 @@ COMMIT = "a" * 40
 
 
 def response(identifiers, total, *, cursor=None, more=False, run_id="run-1", repo_id="repo-1", commit=COMMIT):
+    """Build a provider page with controlled identity, findings and cursor."""
     nodes = []
     for identifier in identifiers:
         nodes.append(
@@ -63,11 +65,17 @@ def response(identifiers, total, *, cursor=None, more=False, run_id="run-1", rep
 
 
 def fetcher(pages, calls):
+    """Supply a sequence of retained provider pages to the collector."""
     pages = iter(pages)
 
     def fetch(variables, destination):
+        """Record a request and retain the next fixture page."""
         calls.append(variables)
-        data = json.dumps(next(pages)).encode()
+        try:
+            selected = next(pages)
+        except StopIteration as error:
+            raise AssertionError("Provider page fixture was exhausted") from error
+        data = json.dumps(selected).encode()
         destination.write_bytes(data)
         return data
 
@@ -75,6 +83,7 @@ def fetcher(pages, calls):
 
 
 def test_complete_pagination_retains_all_occurrences_and_checks_final_state(tmp_path):
+    """Reconcile every page and independently recheck the final provider state."""
     pages = [
         response(range(100), 205, more=True, cursor="first"),
         response(range(100, 200), 205, more=True, cursor="second"),
@@ -95,10 +104,12 @@ def test_complete_pagination_retains_all_occurrences_and_checks_final_state(tmp_
 
 
 def test_large_inventory_is_streamed_without_truncating_occurrences(tmp_path):
+    """Keep all occurrences when the inventory exceeds twenty thousand entries."""
     total = 21_123
     calls = 0
 
     def fetch(variables, destination):
+        """Return the requested slice of the synthetic large inventory."""
         nonlocal calls
         calls += 1
         start = int(variables["after"]) if variables["after"] is not None else 0
@@ -130,6 +141,7 @@ def test_large_inventory_is_streamed_without_truncating_occurrences(tmp_path):
     ],
 )
 def test_inconsistent_or_incomplete_provider_data_is_not_published(tmp_path, pages):
+    """Reject changed identities, duplicate findings and incomplete pagination."""
     output = tmp_path / "capture"
     with pytest.raises(inventory.InventoryError):
         inventory.capture(fetcher(pages, []), REPOSITORY, "main", COMMIT, output)
@@ -138,6 +150,7 @@ def test_inconsistent_or_incomplete_provider_data_is_not_published(tmp_path, pag
 
 
 def test_empty_inventory_needs_a_second_consistent_observation(tmp_path):
+    """Require a second observation even for an empty inventory."""
     calls: list[dict[str, Any]] = []
     result = inventory.capture(
         fetcher([response([], 0), response([], 0)], calls), REPOSITORY, "main", COMMIT, tmp_path / "capture"
@@ -146,6 +159,7 @@ def test_empty_inventory_needs_a_second_consistent_observation(tmp_path):
 
 
 def test_documented_null_repository_configuration_is_supported(tmp_path):
+    """Accept the provider's documented null configuration."""
     empty = response([], 0)
     empty["data"]["repository"]["configJson"] = None
     result = inventory.capture(fetcher([empty, empty], []), REPOSITORY, "main", COMMIT, tmp_path / "capture")
@@ -153,6 +167,7 @@ def test_documented_null_repository_configuration_is_supported(tmp_path):
 
 
 def test_unfinished_analysis_is_never_reported_as_empty_or_complete(tmp_path):
+    """Reject unfinished analyses instead of publishing an empty result."""
     pending = response([], 0)
     pending["data"]["run"]["status"] = "PENDING"
     pending["data"]["run"]["finishedAt"] = None
@@ -164,6 +179,7 @@ def test_unfinished_analysis_is_never_reported_as_empty_or_complete(tmp_path):
 
 
 def test_page_budget_and_existing_output_are_not_silently_overwritten(tmp_path):
+    """Fail at the page limit and preserve an existing evidence directory."""
     output = tmp_path / "capture"
     with pytest.raises(inventory.InventoryError, match="page limit"):
         inventory.capture(
@@ -176,7 +192,10 @@ def test_page_budget_and_existing_output_are_not_silently_overwritten(tmp_path):
 
 
 def test_mismatched_retained_page_cannot_become_a_complete_inventory(tmp_path):
+    """Reject a page when retained bytes differ from received bytes."""
+
     def fetch(variables, destination):
+        """Return bytes that deliberately disagree with the retained evidence."""
         destination.write_bytes(b"different evidence")
         return json.dumps(response([], 0)).encode()
 
@@ -189,11 +208,13 @@ def test_mismatched_retained_page_cannot_become_a_complete_inventory(tmp_path):
 
 @pytest.mark.parametrize("raw", [b'{"data":{},"data":{}}', b'{"number":NaN}', b'{"number":1e9999}', b"\xff"])
 def test_json_rejects_ambiguous_or_nonfinite_data(raw):
+    """Reject duplicate keys, invalid encoding and non-finite numbers."""
     with pytest.raises(inventory.InventoryError):
         inventory.decode(raw)
 
 
 def test_credentials_use_explicit_cloud_token_or_cli_config(tmp_path, monkeypatch):
+    """Read the selected credential only for the reviewed provider host."""
     config = tmp_path / "config.toml"
     config.write_text('token = "local-value"\nhost = "deepsource.com"\n', encoding="utf-8")
     monkeypatch.delenv("DEEPSOURCE_TOKEN", raising=False)
@@ -205,77 +226,86 @@ def test_credentials_use_explicit_cloud_token_or_cli_config(tmp_path, monkeypatc
         inventory.credential(config)
 
 
-def test_http_failure_is_retained_redacted_and_never_retried(tmp_path, monkeypatch):
+def test_http_failure_with_credential_is_withheld(monkeypatch):
+    """Never emit a provider body that echoes the authentication token."""
     calls = []
 
     class Opener:
-        def open(self, request, timeout):
+        """Return a forbidden response that echoes the fixture credential."""
+
+        @staticmethod
+        def open(request, timeout):
+            """Record the single request and return the controlled HTTP error."""
             calls.append((request.full_url, timeout))
-            raise urllib.error.HTTPError(request.full_url, 403, "refused", Message(), io.BytesIO(b"refused test-token"))
+            body = b'{"message":"refused fixture-token"}'
+            headers = Message()
+            headers["Content-Length"] = str(len(body))
+            raise urllib.error.HTTPError(request.full_url, 403, "refused", headers, io.BytesIO(body))
 
-    monkeypatch.setattr(inventory.urllib.request, "build_opener", lambda *args: Opener())
-    output = tmp_path / "response.json"
-    with pytest.raises(inventory.InventoryError, match="redacted"):
-        inventory.transport("test-token", {}, output)
-    assert calls == [(inventory.API, 45)]
-    assert b"test-token" not in output.read_bytes()
+    monkeypatch.setattr(worker.urllib.request, "build_opener", lambda *args: Opener())
+    output = io.BytesIO()
+    result = worker.request_page("fixture-token", {}, "query", output)
+    assert result == {"kind": "redacted"}
+    assert output.getvalue() == b""
+    assert calls == [(worker.API, 45)]
 
 
-def test_provider_forbidden_status_is_retained_and_reported_without_retry(tmp_path, monkeypatch):
+def test_provider_forbidden_json_is_retained_without_retry(monkeypatch):
+    """Retain a complete credential-free JSON error and report HTTP 403."""
     calls = []
 
     class Opener:
-        def open(self, request, timeout):
+        """Return a credential-free forbidden JSON response."""
+
+        @staticmethod
+        def open(request, timeout):
+            """Record the request and return a controlled HTTP error."""
             calls.append(request.full_url)
-            raise urllib.error.HTTPError(request.full_url, 403, "refused", Message(), io.BytesIO(b"refused"))
+            body = b'{"message":"refused"}'
+            headers = Message()
+            headers["Content-Length"] = str(len(body))
+            raise urllib.error.HTTPError(request.full_url, 403, "refused", headers, io.BytesIO(body))
 
-    monkeypatch.setattr(inventory.urllib.request, "build_opener", lambda *args: Opener())
-    destination = tmp_path / "response.json"
-    with pytest.raises(inventory.InventoryError, match="HTTP 403"):
-        inventory.transport("test-token", {}, destination)
-    assert destination.read_bytes() == b"refused" and calls == [inventory.API]
+    monkeypatch.setattr(worker.urllib.request, "build_opener", lambda *args: Opener())
+    output = io.BytesIO()
+    result = worker.request_page("fixture-token", {}, "query", output)
+    assert result == {"kind": "http_error", "status": 403, "body_retained": True}
+    assert output.getvalue() == b'{"message":"refused"}' and calls == [worker.API]
 
 
-def test_redirects_and_oversized_responses_are_rejected(tmp_path, monkeypatch):
-    with pytest.raises(inventory.InventoryError, match="redirected"):
-        inventory._NoRedirect().redirect_request(None, None, 302, "", {}, "https://other.example/")
+def test_redirects_and_oversized_responses_are_rejected(monkeypatch):
+    """Reject redirects and do not persist an over-limit response."""
+    with pytest.raises(ValueError, match="redirected"):
+        worker.NoRedirect().redirect_request(None, None, 302, "", {}, "https://other.example/")
 
     class Response(io.BytesIO):
+        """Supply a framed body larger than the response limit."""
+
         status = 200
+        length = None
+
+        def __init__(self, data):
+            """Attach the declared size to the controlled response body."""
+            super().__init__(data)
+            self.headers = Message()
+            self.headers["Content-Length"] = str(len(data))
 
     class Opener:
-        def open(self, request, timeout):
+        """Return the oversized response without a network request."""
+
+        @staticmethod
+        def open(request, timeout):
+            """Return the controlled oversized body."""
             return Response(b"x" * (inventory.LIMIT + 1))
 
-    monkeypatch.setattr(inventory.urllib.request, "build_opener", lambda *args: Opener())
-    with pytest.raises(inventory.InventoryError, match="byte limit"):
-        inventory.transport("test-token", {}, tmp_path / "response.json")
-
-
-def test_slow_response_stops_at_deadline_and_retains_partial_bytes(tmp_path, monkeypatch):
-    calls = []
-
-    class Response(io.BytesIO):
-        status = 200
-
-        def read1(self, size: int | None = -1, /) -> bytes:
-            return b"partial"
-
-    class Opener:
-        def open(self, request, timeout):
-            calls.append(request.full_url)
-            return Response()
-
-    times = iter([0.0, 0.0, 91.0])
-    monkeypatch.setattr(inventory.time, "monotonic", lambda: next(times, 91.0))
-    monkeypatch.setattr(inventory.urllib.request, "build_opener", lambda *args: Opener())
-    destination = tmp_path / "response.json"
-    with pytest.raises(inventory.InventoryError, match="within its limits"):
-        inventory.transport("test-token", {}, destination)
-    assert destination.read_bytes() == b"partial" and calls == [inventory.API]
+    monkeypatch.setattr(worker.urllib.request, "build_opener", lambda *args: Opener())
+    output = io.BytesIO()
+    result = worker.request_page("fixture-token", {}, "query", output)
+    assert result == {"kind": "response_too_large"} and output.getvalue() == b""
 
 
 def test_output_inside_publishable_repository_tree_is_refused(tmp_path, monkeypatch):
+    """Keep provider evidence outside publishable repository paths."""
     monkeypatch.setattr(inventory, "ROOT", tmp_path)
     with pytest.raises(inventory.InventoryError, match="outside"):
         inventory.capture(fetcher([], []), REPOSITORY, "main", COMMIT, tmp_path / "report")
