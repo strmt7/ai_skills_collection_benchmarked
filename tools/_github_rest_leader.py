@@ -12,19 +12,15 @@ WORKER_TIMEOUT = 45
 CLEANUP_TIMEOUT = 50
 
 
-if sys.platform == "win32":
-
-    def main(argv: list[str] | None = None) -> int:
-        """Reject the POSIX process supervisor on Windows."""
-        return 2
-
-else:
+if sys.platform != "win32":
     from os import getpgrp, getsid, killpg
     from signal import SIGKILL
 
-    def main(argv: list[str] | None = None) -> int:
-        """Run the worker in a verified private session with a bounded lifetime."""
-        args = sys.argv[1:] if argv is None else argv
+
+def main(argv: list[str] | None = None) -> int:
+    """Run the worker in a verified private session with a bounded lifetime."""
+    args = sys.argv[1:] if argv is None else argv
+    if sys.platform != "win32":
         if len(args) != 1 or os.getpid() != getpgrp() or os.getpid() != getsid(0):
             return 2
         deadline = time.monotonic() + CLEANUP_TIMEOUT
@@ -45,6 +41,8 @@ else:
             time.sleep(remaining)
         killpg(getpgrp(), SIGKILL)
         return 2
+
+    return 2
 
 
 if __name__ == "__main__":

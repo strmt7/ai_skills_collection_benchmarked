@@ -8,6 +8,8 @@ REPO = "example/repo"
 
 
 class Snapshot:
+    """Emulate a paginated GitHub inventory tied to a fixed repository."""
+
     def __init__(self, count=0, chunk=100):
         self.count = count
         self.chunk = chunk
@@ -41,20 +43,24 @@ class Snapshot:
 
 @pytest.mark.parametrize("count", [0, 1, 2, 3, 100, 101, 201])
 def test_threshold(count):
+    """Enforce the two-alert budget across single and multiple pages."""
     result = gate.check(Snapshot(count), REPO, SHA)
     assert result["open_alerts"] == count and result["passed"] is (count <= 2)
 
 
 def test_nonfull_page_with_next_is_followed():
+    """Follow explicit next links even when the current page is not full."""
     result = gate.check(Snapshot(3, chunk=1), REPO, SHA)
     assert result["open_alerts"] == 3 and not result["passed"]
 
 
 @pytest.mark.parametrize("kind", ["host", "path", "filter", "duplicate", "fragment", "cycle"])
 def test_untrusted_or_repeated_next_links_fail(kind):
+    """Reject pagination that escapes the original scope or repeats a page."""
     snapshot = Snapshot(3, chunk=1)
 
     def fetch(url):
+        """Rewrite a link to exercise one invalid pagination case."""
         data, link = snapshot(url)
         if link and kind == "host":
             link = link.replace("api.github.com", "evil.invalid")
@@ -76,9 +82,11 @@ def test_untrusted_or_repeated_next_links_fail(kind):
 
 
 def test_duplicates_fail():
+    """Reject duplicate alert identifiers across pages."""
     snapshot = Snapshot(101)
 
     def fetch(url):
+        """Duplicate an alert on the second page."""
         data, link = snapshot(url)
         if "/alerts?" in url and "page=2" in url:
             data[0]["number"] = 1
@@ -89,9 +97,11 @@ def test_duplicates_fail():
 
 
 def test_changed_head_fails():
+    """Reject an inventory when main changes between observations."""
     snapshot = Snapshot()
 
     def fetch(url):
+        """Change the returned head during the inventory."""
         data, link = snapshot(url)
         if url.endswith("/branches/main") and snapshot.heads == 2:
             data["commit"]["sha"] = "b" * 40
@@ -102,9 +112,11 @@ def test_changed_head_fails():
 
 
 def test_changed_inventory_fails():
+    """Reject inventories that disagree between consecutive reads."""
     snapshot = Snapshot(1)
 
     def fetch(url):
+        """Change the alert inventory between observations."""
         data, link = snapshot(url)
         if "/alerts?" in url and snapshot.inventory_calls == 2:
             data = []
@@ -116,9 +128,11 @@ def test_changed_inventory_fails():
 
 @pytest.mark.parametrize("kind", ["stale", "missing", "failed", "malformed"])
 def test_bad_analysis_fails(kind):
+    """Reject stale, missing, failed or malformed required analyses."""
     snapshot = Snapshot()
 
     def fetch(url):
+        """Alter a required analysis to test its validation."""
         data, link = snapshot(url)
         if "/analyses?" in url:
             if kind == "stale":
@@ -136,6 +150,7 @@ def test_bad_analysis_fails(kind):
 
 
 def test_workflow_runs_gate_after_scans_with_read_only_permissions():
+    """Require the alert gate to follow scans with minimal permissions."""
     from pathlib import Path
 
     import yaml

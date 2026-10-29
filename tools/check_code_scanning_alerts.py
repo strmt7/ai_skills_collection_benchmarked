@@ -150,7 +150,11 @@ def _run_posix(command: list[str], timeout: float, output_limit: int) -> dict[st
     if not command or not os.path.isabs(command[0]) or timeout <= 0 or output_limit <= 0:
         raise ValueError("invalid worker bounds")
     process = subprocess.Popen(
-        command, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True
+        command,
+        stdin=subprocess.DEVNULL,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        start_new_session=True,
     )
     deadline = time.monotonic() + timeout
     try:
@@ -175,7 +179,11 @@ def _run_windows(command, timeout, output_limit):
         from _windows_trial_process import run_owned
     finally:
         sys.path.pop(0)
-    with tempfile.TemporaryFile() as stdin, tempfile.TemporaryFile() as stdout, tempfile.TemporaryFile() as stderr:
+    with (
+        tempfile.TemporaryFile() as stdin,
+        tempfile.TemporaryFile() as stdout,
+        tempfile.TemporaryFile() as stderr,
+    ):
         report = run_owned(
             command,
             cwd=Path(root),
@@ -209,7 +217,9 @@ def _check_worker_result(run: dict[str, Any]) -> bytes:
     if run["exit_code"] != 0:
         diagnostic = run["stderr"].decode("ascii", errors="replace")
         if not re.fullmatch(
-            r"(?:invalid_url|invalid_redirect|invalid_token|unexpected_status|invalid_link_headers|response_too_large|incomplete_response|invalid_arguments|metadata_too_large|transport_[A-Za-z0-9_]+|unexpected_[A-Za-z0-9_]+)",
+            r"(?:invalid_url|invalid_redirect|invalid_token|unexpected_status|invalid_link_headers|"
+            r"response_too_large|incomplete_response|invalid_arguments|metadata_too_large|"
+            r"transport_[A-Za-z0-9_]+|unexpected_[A-Za-z0-9_]+)",
             diagnostic,
         ):
             diagnostic = "unavailable"
@@ -259,25 +269,146 @@ def github(endpoint: str) -> tuple[Any, str | None]:
     try:
         run = _run_windows(command, 45, MAX_OUTPUT) if sys.platform == "win32" else _run_posix(command, 45, MAX_OUTPUT)
         return _decode_worker_result(_check_worker_result(run))
-    except (OSError, UnicodeError, ValueError, RuntimeError, subprocess.SubprocessError) as exc:
+    except (OSError, ValueError, RuntimeError, subprocess.SubprocessError) as exc:
         raise GateError("GitHub API worker failed or returned invalid data") from exc
 
 
-def check(fetch: Callable[[str], tuple[Any, str | None]], repository: str, commit: str) -> dict[str, Any]:
-    """Return the observed budget after independent source and inventory checks."""
-    if not REPOSITORY.fullmatch(repository) or repository.split("/")[-1] in {".", ".."}:
-        raise GateError("Invalid repository")
-    if not COMMIT.fullmatch(commit):
-        raise GateError("Invalid commit")
-    prefix = f"repos/{repository}"
+def _validate_link_origin(link: str, endpoint: str, repo_id: int) -> dict[str, list[str]]:
+    """Require a next link to stay on the same GitHub API endpoint."""
+    parsed = urlsplit(link)
+    if (
+        parsed.scheme != "https"
+        or parsed.netloc != "api.github.com"
+        or parsed.path != f"/repositories/{repo_id}/{endpoint}"
+        or parsed.fragment
+    ):
+        raise GateError("Invalid or repeated pagination link")
+    return parse_qs(parsed.query, keep_blank_values=True)
 
-    def one(endpoint: str) -> Any:
-        value, link = fetch(endpoint)
+
+def _validate_link_query(query: dict[str, list[str]], fixed: dict[str, str]) -> None:
+    """Require unchanged filters and exactly one nonempty cursor."""
+    if (
+        any(query.get(k) != [v] for k, v in fixed.items())
+        or set(query) - (set(fixed) | {"page", "after", "before"})
+        or sum(k in query for k in ("page", "after", "before")) != 1
+        or any(len(v) != 1 or not v[0] for v in query.values())
+    ):
+        raise GateError("Invalid or repeated pagination link")
+
+
+def _validated_page_link(link: str, endpoint: str, repo_id: int, fixed: dict[str, str], seen: set[str]) -> None:
+    """Reject links that change origin, filters or previously visited pages."""
+    query = _validate_link_origin(link, endpoint, repo_id)
+    _validate_link_query(query, fixed)
+    if link in seen:
+        raise GateError("Invalid or repeated pagination link")
+
+
+def _analysis_values(row: dict[str, Any]) -> tuple[str, str, int]:
+    """Validate the commit, error state and identity of one CodeQL analysis."""
+    sha, error, ident = row.get("commit_sha"), row.get("error"), row.get("id")
+    if not isinstance(sha, str) or not isinstance(error, str) or type(ident) is not int or ident <= 0:
+        raise GateError("Malformed CodeQL analysis")
+    return sha, error, ident
+
+
+def _analysis_row(row: Any, latest: dict[str, tuple[str, str, int]]) -> None:
+    """Retain the newest valid CodeQL analysis for a required category."""
+    if not isinstance(row, dict) or not isinstance(row.get("tool"), dict):
+        raise GateError("Invalid analysis row")
+    category = row.get("category")
+    if (
+        isinstance(category, str)
+        and row["tool"].get("name") == "CodeQL"
+        and category in CATEGORIES
+        and category not in latest
+    ):
+        latest[category] = _analysis_values(row)
+
+
+def _alert_number(row: Any, ids: set[int]) -> int:
+    """Validate one open alert and reject repeated identifiers."""
+    if (
+        not isinstance(row, dict)
+        or type(row.get("number")) is not int
+        or row["number"] <= 0
+        or row.get("state") != "open"
+    ):
+        raise GateError("Invalid alert row")
+    if row["number"] in ids:
+        raise GateError("Duplicate alert")
+    return row["number"]
+
+
+class _Inventory:
+    """Read a source-bound, paginated GitHub code-scanning inventory."""
+
+    def __init__(self, fetch: Callable[[str], tuple[Any, str | None]], prefix: str, repo_id: int):
+        self.fetch = fetch
+        self.prefix = prefix
+        self.repo_id = repo_id
+
+    def one(self, endpoint: str) -> Any:
+        """Read a singleton API object and reject unexpected pagination."""
+        value, link = self.fetch(endpoint)
         if link is not None:
             raise GateError("Unexpected pagination on singleton response")
         return value
 
-    metadata = one(prefix)
+    def head(self) -> str:
+        """Read and validate the current main-branch commit."""
+        try:
+            value = self.one(f"{self.prefix}/branches/main")["commit"]["sha"]
+        except (KeyError, TypeError) as exc:
+            raise GateError("Invalid branch response") from exc
+        if not isinstance(value, str) or not COMMIT.fullmatch(value):
+            raise GateError("Invalid branch head")
+        return value
+
+    def pages(self, endpoint: str, params: dict[str, str]) -> Iterator[list[Any]]:
+        """Read all pages without allowing a link to escape its fixed scope."""
+        fixed = {**params, "per_page": "100"}
+        url = f"{self.prefix}/{endpoint}?{urlencode(fixed)}"
+        seen = {url}
+        for _ in range(1000):
+            value, link = self.fetch(url)
+            if not isinstance(value, list) or len(value) > 100:
+                raise GateError("Invalid paginated response")
+            yield value
+            if link is None:
+                return
+            _validated_page_link(link, endpoint, self.repo_id, fixed, seen)
+            seen.add(link)
+            url = link
+        raise GateError("Page limit exceeded")
+
+    def analyses(self, commit: str) -> dict[str, tuple[str, str, int]]:
+        """Require fresh successful analyses for all required CodeQL categories."""
+        latest: dict[str, tuple[str, str, int]] = {}
+        for page in self.pages("code-scanning/analyses", {"ref": "refs/heads/main", "direction": "desc"}):
+            for row in page:
+                _analysis_row(row, latest)
+            if len(latest) == len(CATEGORIES):
+                break
+        if set(latest) != CATEGORIES or any(sha != commit or error for sha, error, _ in latest.values()):
+            raise GateError("CodeQL analyses missing, stale, or failed")
+        return latest
+
+    def alerts(self) -> set[int]:
+        """Read a complete inventory of unique open alert numbers."""
+        ids: set[int] = set()
+        for page in self.pages("code-scanning/alerts", {"ref": "refs/heads/main", "state": "open"}):
+            for row in page:
+                ids.add(_alert_number(row, ids))
+        return ids
+
+
+def _repository_id(fetch: Callable[[str], tuple[Any, str | None]], repository: str) -> int:
+    """Bind the API response to the requested repository and default branch."""
+    metadata, link = fetch(f"repos/{repository}")
+    if link is not None:
+        raise GateError("Unexpected pagination on singleton response")
     if (
         not isinstance(metadata, dict)
         or type(metadata.get("id")) is not int
@@ -287,92 +418,23 @@ def check(fetch: Callable[[str], tuple[Any, str | None]], repository: str, commi
         or metadata["full_name"].lower() != repository.lower()
     ):
         raise GateError("Invalid repository identity")
-    repo_id = metadata["id"]
+    return metadata["id"]
 
-    def head() -> str:
-        try:
-            value = one(f"{prefix}/branches/main")["commit"]["sha"]
-        except (KeyError, TypeError) as exc:
-            raise GateError("Invalid branch response") from exc
-        if not isinstance(value, str) or not COMMIT.fullmatch(value):
-            raise GateError("Invalid branch head")
-        return value
 
-    def pages(endpoint: str, params: dict[str, str]) -> Iterator[list[Any]]:
-        fixed = {**params, "per_page": "100"}
-        url = f"{prefix}/{endpoint}?{urlencode(fixed)}"
-        seen = {url}
-        for _ in range(1000):
-            value, link = fetch(url)
-            if not isinstance(value, list) or len(value) > 100:
-                raise GateError("Invalid paginated response")
-            yield value
-            if link is None:
-                return
-            parsed = urlsplit(link)
-            query = parse_qs(parsed.query, keep_blank_values=True)
-            if (
-                parsed.scheme != "https"
-                or parsed.netloc != "api.github.com"
-                or parsed.path != f"/repositories/{repo_id}/{endpoint}"
-                or parsed.fragment
-                or any(query.get(k) != [v] for k, v in fixed.items())
-                or set(query) - (set(fixed) | {"page", "after", "before"})
-                or sum(k in query for k in ("page", "after", "before")) != 1
-                or any(len(v) != 1 or not v[0] for v in query.values())
-                or link in seen
-            ):
-                raise GateError("Invalid or repeated pagination link")
-            seen.add(link)
-            url = link
-        raise GateError("Page limit exceeded")
-
-    def analyses() -> dict[str, tuple[str, str, int]]:
-        latest: dict[str, tuple[str, str, int]] = {}
-        for page in pages("code-scanning/analyses", {"ref": "refs/heads/main", "direction": "desc"}):
-            for row in page:
-                if not isinstance(row, dict) or not isinstance(row.get("tool"), dict):
-                    raise GateError("Invalid analysis row")
-                category = row.get("category")
-                if (
-                    isinstance(category, str)
-                    and row["tool"].get("name") == "CodeQL"
-                    and category in CATEGORIES
-                    and category not in latest
-                ):
-                    sha, error, ident = row.get("commit_sha"), row.get("error"), row.get("id")
-                    if not isinstance(sha, str) or not isinstance(error, str) or type(ident) is not int or ident <= 0:
-                        raise GateError("Malformed CodeQL analysis")
-                    latest[category] = (sha, error, ident)
-            if len(latest) == len(CATEGORIES):
-                break
-        if set(latest) != CATEGORIES or any(sha != commit or error for sha, error, _ in latest.values()):
-            raise GateError("CodeQL analyses missing, stale, or failed")
-        return latest
-
-    def inventory() -> set[int]:
-        ids: set[int] = set()
-        for page in pages("code-scanning/alerts", {"ref": "refs/heads/main", "state": "open"}):
-            for row in page:
-                if (
-                    not isinstance(row, dict)
-                    or type(row.get("number")) is not int
-                    or row["number"] <= 0
-                    or row.get("state") != "open"
-                ):
-                    raise GateError("Invalid alert row")
-                if row["number"] in ids:
-                    raise GateError("Duplicate alert")
-                ids.add(row["number"])
-        return ids
-
-    if head() != commit:
+def check(fetch: Callable[[str], tuple[Any, str | None]], repository: str, commit: str) -> dict[str, Any]:
+    """Return the observed budget after independent source and inventory checks."""
+    if not REPOSITORY.fullmatch(repository) or repository.split("/")[-1] in {".", ".."}:
+        raise GateError("Invalid repository")
+    if not COMMIT.fullmatch(commit):
+        raise GateError("Invalid commit")
+    inventory = _Inventory(fetch, f"repos/{repository}", _repository_id(fetch, repository))
+    if inventory.head() != commit:
         raise GateError("Main changed before inventory")
-    before = analyses()
-    ids = inventory()
-    if inventory() != ids:
+    before = inventory.analyses(commit)
+    ids = inventory.alerts()
+    if inventory.alerts() != ids:
         raise GateError("Alert inventory changed between observations")
-    if head() != commit or analyses() != before or head() != commit:
+    if inventory.head() != commit or inventory.analyses(commit) != before or inventory.head() != commit:
         raise GateError("Source or analysis changed during inventory")
     return {
         "repository": repository,
@@ -386,6 +448,7 @@ def check(fetch: Callable[[str], tuple[Any, str | None]], repository: str, commi
 
 
 def build_parser() -> argparse.ArgumentParser:
+    """Define the repository and commit arguments."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repository", required=True)
     parser.add_argument("--commit", required=True)
@@ -393,6 +456,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    """Run the gate and return a machine-readable result."""
     args = build_parser().parse_args(argv)
     try:
         result = check(github, args.repository, args.commit)

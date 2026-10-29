@@ -259,7 +259,8 @@ def test_incomplete_http_response_fails(monkeypatch):
     class LocalOpener:
         """Route the test request to the owned local server."""
 
-        def open(self, request, timeout):
+        @staticmethod
+        def open(request, timeout):
             """Return the real local HTTP response."""
             return native_opener.open(f"http://127.0.0.1:{server.server_port}/", timeout=timeout)
 
