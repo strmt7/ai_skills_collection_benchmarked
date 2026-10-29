@@ -190,3 +190,33 @@ def test_invalid_rewrite_json_is_rejected(tmp_path):
     arguments[arguments.index("--revision") + 1] = "f" * 40
     assert archive.main(arguments) == 1
     assert not (tmp_path / "data/catalog_source_history.json").exists()
+
+
+@pytest.mark.parametrize("filename", ["skills_catalog.json", "benchmark_scenarios.json"])
+def test_duplicate_published_identity_cannot_be_archived(tmp_path, filename):
+    """Never preserve a source using an ambiguous published identity."""
+    arguments, _, _ = published_source(tmp_path)
+    path = tmp_path / "data" / filename
+    rows = json.loads(path.read_text(encoding="utf-8"))
+    path.write_text(json.dumps(rows + rows), encoding="utf-8")
+    subprocess.run(["git", "-c", "core.longpaths=true", "add", str(path)], cwd=tmp_path, check=True)
+    subprocess.run(
+        [
+            "git",
+            "-c",
+            "user.name=Fixture",
+            "-c",
+            "user.email=fixture@example.invalid",
+            "commit",
+            "--no-gpg-sign",
+            "-qm",
+            "Ambiguous source fixture",
+        ],
+        cwd=tmp_path,
+        check=True,
+    )
+    revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=tmp_path, text=True).strip()
+    arguments[arguments.index("--revision") + 1] = revision
+    assert archive.main(arguments) == 1
+    assert not (tmp_path / "data/catalog_source_history.json").exists()
+    assert not (tmp_path / "artifacts/source-history").exists()

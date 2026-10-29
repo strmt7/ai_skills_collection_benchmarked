@@ -47,7 +47,10 @@ def prepare(root: Path, target: Path, *, check: bool = False) -> dict[str, objec
     if not target.is_relative_to(root) or target == root:
         raise ValueError("control stage must be inside the workspace")
     target = publication.checked_path(root, target.relative_to(root).as_posix())
-    source = next(entry for entry in read_json(root / "data/skills_catalog.json") if entry["id"] == SKILL_ID)
+    matches = [entry for entry in read_json(root / "data/skills_catalog.json") if entry["id"] == SKILL_ID]
+    if len(matches) != 1:
+        raise ValueError("image skill must have one catalog record")
+    source = matches[0]
     mirror = publication.checked_path(root, source["mirrored_path"])
     if target == mirror or target.is_relative_to(mirror) or mirror.is_relative_to(target):
         raise ValueError("control stage cannot overlap the immutable source mirror")

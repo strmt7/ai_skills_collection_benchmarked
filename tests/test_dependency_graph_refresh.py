@@ -205,3 +205,16 @@ def test_successive_advisory_graph_requires_exact_predecessor(fixture, previous_
     assert (root / entry["mirrored_path"] / "SKILL.md").read_bytes() == original_skill
     assert json.loads((root / METADATA[0]).read_bytes())[0]["dependency_graph"] == updated["id"]
     assert refresh.prepare(root, sources, "fixture", "artifacts/second-refresh.json")[2] == 0
+
+
+@pytest.mark.parametrize("change", ["missing", "duplicate"])
+def test_catalog_identity_must_be_unique_before_publication(fixture, change):
+    """Reject missing or ambiguous skill records without staging any output."""
+    root, sources, _, _, _, _ = fixture
+    path = root / METADATA[0]
+    entries = json.loads(path.read_text(encoding="utf-8"))
+    catalog.write_json(path, [] if change == "missing" else entries + entries)
+    before = publication.signature(root)
+    with pytest.raises(ValueError, match="one catalog record"):
+        refresh.prepare(root, sources, "fixture", "artifacts/refresh.json")
+    assert publication.signature(root) == before

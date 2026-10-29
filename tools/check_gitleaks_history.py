@@ -88,6 +88,41 @@ def _diagnostics(path: Path, repository: Path, raw: bytes) -> None:
         raise GateError("Could not retain scanner diagnostics") from error
 
 
+def _finding_result(output: bytes, decoded: str, count: int, status: int) -> dict[str, Any]:
+    """Require the reported finding count to match the retained redacted output."""
+    observed = sum(1 for _ in re.finditer(rb"(?m)^Finding:", output))
+    if observed != count:
+        return {
+            "passed": False,
+            "reason": "incomplete_finding_output",
+            "findings": count,
+            "observed_findings": observed,
+            "redacted_output": decoded,
+        }
+    return {
+        "passed": False,
+        "reason": "findings",
+        "findings": count,
+        "exit_code": status,
+        "redacted_output": decoded,
+    }
+
+
+def _diagnostic_result(stderr: bytes, decoded: str, retained: bool) -> dict[str, Any]:
+    """Summarize unexpected diagnostics without exposing potentially sensitive bytes."""
+    result = {
+        "passed": False,
+        "reason": "scanner_diagnostics",
+        "diagnostic_bytes": len(stderr),
+        "diagnostic_sha256": hashlib.sha256(stderr).hexdigest(),
+        "diagnostics_retained": retained,
+        "redacted_output": decoded,
+    }
+    if stderr.rstrip(b"\r\n") == b"Repository contains a Gitleaks ignore file":
+        result["error"] = "Repository contains a Gitleaks ignore file"
+    return result
+
+
 def evaluate(result: dict[str, Any], repository: Path, diagnostics: Path | None) -> dict[str, Any]:
     """Reject incomplete scans and retain redacted findings without suppressions."""
     stderr = result["stderr"]
@@ -118,35 +153,9 @@ def evaluate(result: dict[str, Any], repository: Path, diagnostics: Path | None)
             "redacted_output": decoded,
         }
     if stderr and not expected_findings:
-        result = {
-            "passed": False,
-            "reason": "scanner_diagnostics",
-            "diagnostic_bytes": len(stderr),
-            "diagnostic_sha256": hashlib.sha256(stderr).hexdigest(),
-            "diagnostics_retained": diagnostics is not None,
-            "redacted_output": decoded,
-        }
-        if stderr.rstrip(b"\r\n") == b"Repository contains a Gitleaks ignore file":
-            result["error"] = "Repository contains a Gitleaks ignore file"
-        return result
+        return _diagnostic_result(stderr, decoded, diagnostics is not None)
     if status == 1 and summary is not None:
-        count = int(summary.group(1))
-        observed = sum(1 for _ in re.finditer(rb"(?m)^Finding:", output))
-        if observed != count:
-            return {
-                "passed": False,
-                "reason": "incomplete_finding_output",
-                "findings": count,
-                "observed_findings": observed,
-                "redacted_output": decoded,
-            }
-        return {
-            "passed": False,
-            "reason": "findings",
-            "findings": count,
-            "exit_code": status,
-            "redacted_output": decoded,
-        }
+        return _finding_result(output, decoded, int(summary.group(1)), status)
     if status != 0 or output:
         return {
             "passed": False,

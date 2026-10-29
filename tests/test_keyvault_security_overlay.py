@@ -228,3 +228,19 @@ def test_checker_rejects_unexpected_executable_mode(tmp_path):
     shutil.copytree(overlay.ROOT / overlay.OVERLAY, target)
     (target / "SKILL.md").chmod(0o755)
     assert overlay.check_overlay(target, files) == ["changed executable mode: SKILL.md"]
+
+
+@pytest.mark.parametrize("change", ["missing_source", "duplicate_source", "missing_skill", "duplicate_skill"])
+def test_source_lock_identity_must_be_unique_before_overlay(tmp_path, change):
+    """Missing or ambiguous source identities must fail before mirror processing."""
+    lock = json.loads((overlay.ROOT / "data/source_lock.json").read_text(encoding="utf-8"))
+    (source,) = [item for item in lock["sources"] if item["repo"] == "microsoft/skills"]
+    (entry,) = [item for item in source["skills"] if item["id"] == overlay.SKILL_ID]
+    source["skills"] = [] if change == "missing_skill" else [entry, entry] if change == "duplicate_skill" else [entry]
+    lock["sources"] = (
+        [] if change == "missing_source" else [source, source] if change == "duplicate_source" else [source]
+    )
+    (tmp_path / "data").mkdir()
+    (tmp_path / "data/source_lock.json").write_text(json.dumps(lock), encoding="utf-8")
+    with pytest.raises(ValueError, match="one .* record"):
+        overlay.expected_files(tmp_path)

@@ -4,7 +4,6 @@ import json
 import logging
 import sys
 import threading
-import time
 from contextlib import suppress
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
@@ -21,6 +20,8 @@ import pytest
 def test_supervised_local_http(mode, tmp_path, monkeypatch):
     """Verify supervised success and explicit failure behavior against an owned server."""
     token = "fixture-token"
+    release_response = threading.Event()
+    wait_expired: list[bool] = []
     body = b'{"data":{"value":1}}'
     if mode == "redacted":
         body = b"prefix-" + token.encode() + b"-suffix"
@@ -40,7 +41,7 @@ def test_supervised_local_http(mode, tmp_path, monkeypatch):
             if mode == "slow":
                 self.wfile.write(b"p")
                 self.wfile.flush()
-                time.sleep(3)
+                wait_expired.append(not release_response.wait(timeout=30))
             with suppress(BrokenPipeError, ConnectionResetError):
                 self.wfile.write(body)
 
@@ -49,6 +50,7 @@ def test_supervised_local_http(mode, tmp_path, monkeypatch):
             logging.getLogger(__name__).debug(message, *args)
 
     server = HTTPServer(("127.0.0.1", 0), Handler)
+    server.timeout = 6
     thread = threading.Thread(target=server.handle_request)
     thread.start()
     endpoint = f"http://127.0.0.1:{server.server_port}/"
@@ -73,11 +75,10 @@ def test_supervised_local_http(mode, tmp_path, monkeypatch):
 
         def shortened(command, timeout, output_limit, stdin=None):
             """Shorten only the test supervisor deadline for the stalled server."""
-            return real(command, 1.0, output_limit, stdin=stdin)
+            return real(command, 5.0, output_limit, stdin=stdin)
 
         monkeypatch.setattr(bounded, name, shortened)
     destination = tmp_path / "response.bin"
-    start = time.monotonic()
     try:
         if mode == "complete":
             assert inventory.transport(token, {}, destination) == body
@@ -95,8 +96,8 @@ def test_supervised_local_http(mode, tmp_path, monkeypatch):
             if mode in {"retry_after", "rate_limited"}:
                 assert type(caught.value) is inventory.InventoryError
     finally:
-        elapsed = time.monotonic() - start
-        thread.join(timeout=6)
+        release_response.set()
+        thread.join(timeout=10)
         server.server_close()
     assert not thread.is_alive()
     assert destination.exists()
@@ -114,7 +115,8 @@ def test_supervised_local_http(mode, tmp_path, monkeypatch):
         "retry_after_present": mode in {"retry_after", "rate_limited"},
     }
     if mode == "slow":
-        assert elapsed < 2.5 and metadata["termination_reason"] == "timeout"
+        assert wait_expired == [False]
+        assert metadata["termination_reason"] == "timeout"
         assert metadata["events"] == [{"event": "headers", "status": 200, "retry_after_present": False}]
         assert destination.read_bytes() == b""
     if mode == "truncated":

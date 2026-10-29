@@ -135,3 +135,15 @@ def test_unreadable_source_tree_fails_instead_of_hashing_empty(fixture, monkeypa
     monkeypatch.setattr(controls.os, "walk", fail)
     with pytest.raises(PermissionError, match="unreadable"):
         controls.files(mirror)
+
+
+@pytest.mark.parametrize("change", ["missing", "duplicate"])
+def test_catalog_identity_must_be_unique_before_staging(fixture, change):
+    """An absent or ambiguous catalog record cannot select a control source."""
+    root, _, target = fixture
+    path = root / "data/skills_catalog.json"
+    entries = json.loads(path.read_text(encoding="utf-8"))
+    path.write_text(json.dumps([] if change == "missing" else entries + entries), encoding="utf-8")
+    with pytest.raises(ValueError, match="one catalog record"):
+        controls.prepare(root, target)
+    assert not target.exists()

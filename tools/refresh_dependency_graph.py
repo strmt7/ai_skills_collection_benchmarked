@@ -25,7 +25,10 @@ def prepare(root: Path, source_root: Path, skill_id: str, receipt_path: str) -> 
     raw = {relative: (root / relative).read_bytes() for relative in METADATA}
     documents = {relative: json.loads(content) for relative, content in raw.items()}
     entries = documents[METADATA[0]]
-    entry = next(record for record in entries if record["id"] == skill_id)
+    matches = [record for record in entries if record["id"] == skill_id]
+    if len(matches) != 1:
+        raise ValueError("dependency skill must have one catalog record")
+    entry = matches[0]
     linked = [
         (source, record)
         for source in documents[METADATA[1]]["sources"]

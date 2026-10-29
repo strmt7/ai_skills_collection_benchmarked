@@ -95,8 +95,12 @@ def archive(args: argparse.Namespace) -> dict[str, Any]:
     resolved_revision = resolve_catalog_revision(root, args.revision)
     catalog_bytes = git_bytes(root, "show", resolved_revision + ":data/skills_catalog.json")
     scenario_bytes = git_bytes(root, "show", resolved_revision + ":data/benchmark_scenarios.json")
-    catalog = {entry["id"]: entry for entry in json.loads(catalog_bytes)}
-    scenarios = {item["id"]: item for item in json.loads(scenario_bytes)}
+    catalog_rows = json.loads(catalog_bytes)
+    scenario_rows = json.loads(scenario_bytes)
+    catalog = {entry["id"]: entry for entry in catalog_rows}
+    scenarios = {item["id"]: item for item in scenario_rows}
+    if len(catalog) != len(catalog_rows) or len(scenarios) != len(scenario_rows):
+        raise ValueError("published catalog and scenario identities must be unique")
     existing = historical_versions(root)
     index_path = publication.checked_path(root, INDEX)
     history: dict[str, Any] = (
@@ -116,6 +120,7 @@ def archive(args: argparse.Namespace) -> dict[str, Any]:
         raise ValueError("reviewed notice missing or too large")
     notice_digest = hashlib.sha256(notice_file.read_bytes()).hexdigest()
     outputs: dict[str, bytes] = {}
+    expected_hashes: dict[str, str] = {}
     selected = sorted(set(args.skill_id))
     for skill_id in selected:
         if skill_id not in catalog or catalog[skill_id]["source_repo"] != args.source_repo:
@@ -150,6 +155,7 @@ def archive(args: argparse.Namespace) -> dict[str, Any]:
             }
         )
         outputs[name] = snapshot
+        expected_hashes[name] = entry["skill_file_sha256"]
     if outputs:
         history["scope"] = (
             "Published source metadata, assigned scenarios and exact SKILL bytes; not complete historical packages or reconstructed benchmark sessions."
@@ -167,9 +173,7 @@ def archive(args: argparse.Namespace) -> dict[str, Any]:
                 target = publication.checked_path(staged, name)
                 target.parent.mkdir(parents=True, exist_ok=True)
                 target.write_bytes(content)
-                if name != INDEX and build_catalog.sha256_file(target) != next(
-                    item["entry"]["skill_file_sha256"] for item in history["versions"] if item["skill_snapshot"] == name
-                ):
+                if name != INDEX and build_catalog.sha256_file(target) != expected_hashes[name]:
                     raise ValueError("published source bytes differ from the catalog hash")
 
         transaction, journal = publication.prepare(root, list(outputs), build)

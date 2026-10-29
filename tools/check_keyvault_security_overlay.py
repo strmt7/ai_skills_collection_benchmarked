@@ -11,6 +11,7 @@ import re
 from pathlib import Path
 
 import build_catalog
+from _lib_b.source_identity import require_unique
 from check_no_secret_patterns import require_publishable_content
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -93,8 +94,8 @@ def normalize_placeholders(data: bytes, expected_count: int) -> bytes:
 
 def expected_files(root: Path = ROOT) -> dict[str, bytes]:
     lock = json.loads((root / "data/source_lock.json").read_text(encoding="utf-8"))
-    source = next(item for item in lock["sources"] if item["repo"] == "microsoft/skills")
-    entry = next(item for item in source["skills"] if item["id"] == SKILL_ID)
+    source = require_unique(lock["sources"], "repo", "microsoft/skills", "source lock")
+    entry = require_unique(source["skills"], "id", SKILL_ID, "source skill")
     mirror = root / MIRROR
     if (
         source["commit_sha"] != SOURCE_COMMIT
