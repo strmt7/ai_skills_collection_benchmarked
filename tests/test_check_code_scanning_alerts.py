@@ -1,4 +1,3 @@
-from types import SimpleNamespace
 from urllib.parse import parse_qs, urlencode, urlsplit
 
 import check_code_scanning_alerts as gate
@@ -136,25 +135,6 @@ def test_bad_analysis_fails(kind):
         gate.check(fetch, REPO, SHA)
 
 
-def test_http_link_parsing_and_invalid_headers(monkeypatch):
-    def response(text):
-        monkeypatch.setattr(
-            gate.subprocess, "run", lambda *a, **kw: SimpleNamespace(returncode=0, stdout=text.encode("utf-8"))
-        )
-        return gate.github("example")
-
-    data, link = response(
-        'HTTP/2.0 200 OK\nLink: <https://api.github.com/a?page=2>; rel="next", <https://api.github.com/a?page=3>; rel="last"\n\n[]'
-    )
-    assert data == [] and link == "https://api.github.com/a?page=2"
-    with pytest.raises(gate.GateError):
-        response("HTTP/2.0 200 OK\nLink: bad\n\n[]")
-    with pytest.raises(gate.GateError):
-        response('HTTP/2.0 200 OK\nLink: <x>; rel="next", <y>; rel="next"\n\n[]')
-    with pytest.raises(gate.GateError):
-        response("HTTP/2.0 200 OK\n\nnot-json")
-
-
 def test_workflow_runs_gate_after_scans_with_read_only_permissions():
     from pathlib import Path
 
@@ -171,18 +151,3 @@ def test_workflow_runs_gate_after_scans_with_read_only_permissions():
         == 'python tools/check_code_scanning_alerts.py --repository "$GITHUB_REPOSITORY" --commit "$GITHUB_SHA"'
     )
     assert job["steps"][-1]["env"]["GH_TOKEN"] == "${{ github.token }}"
-
-
-def test_github_cli_output_uses_utf8_and_fails_on_decode_error(monkeypatch):
-    def run(*args, **kwargs):
-        assert "encoding" not in kwargs and "text" not in kwargs
-        return SimpleNamespace(returncode=0, stdout='HTTP/2.0 200 OK\n\n{"message": "καλημέρα"}'.encode())
-
-    monkeypatch.setattr(gate.subprocess, "run", run)
-    data, link = gate.github("example")
-    assert data["message"] == "καλημέρα"
-    assert link is None
-
-    monkeypatch.setattr(gate.subprocess, "run", lambda *args, **kwargs: SimpleNamespace(returncode=0, stdout=b"\xff"))
-    with pytest.raises(gate.GateError, match="Invalid GitHub response"):
-        gate.github("example")

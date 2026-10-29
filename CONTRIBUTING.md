@@ -60,6 +60,25 @@ positive and negative examples and checks that the model was loaded in the
 repository analysis. This expands one area of scanner coverage; it does not prove
 that the scanned skills are secure.
 
+## Code-scanning alert budget
+
+The CodeQL workflow checks the current main-branch inventory against a budget
+of two open alerts after all three analyses complete. It checks the source head,
+analysis identities and two matching paginated inventories; GitHub does not
+provide an atomic snapshot, so this detects changes but cannot exclude every race.
+
+To run the gate locally, provide an authenticated GitHub token through `GH_TOKEN`
+or `GITHUB_TOKEN` with permission to read repository contents and code-scanning
+alerts, and use the exact current main-branch commit:
+
+```sh
+python tools/check_code_scanning_alerts.py --repository OWNER/REPO --commit COMMIT
+```
+
+The CI workflow supplies its scoped GitHub token. The gate sends authenticated requests directly
+to the public GitHub API, checks pagination scope and rejects incomplete responses;
+it does not need the GitHub CLI.
+
 ## Code style
 
 * `ruff` (`>=0.15`) is the single source of truth for both lint and format.
