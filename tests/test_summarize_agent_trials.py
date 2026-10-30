@@ -457,3 +457,18 @@ def test_report_check_detects_changed_publication(matched, tmp_path):
     assert summary.main([*argv, "--check"]) == 0
     (output / "README.md").write_text("unsupported improvement claim", encoding="utf-8")
     assert summary.main([*argv, "--check"]) == 1
+
+
+def test_report_exposes_full_block_outcomes_and_comparable_usage(matched):
+    """The published comparison keeps both passing attempts and observed token differences."""
+    path, trials = matched
+    report = summary.summarize(path, trials)
+    comparison = report["block_comparison"]["comparisons"]["improved"]
+    assert comparison["planned_blocks"] == 1
+    assert comparison["outcomes"]["both_passed"] == 1
+    assert comparison["token_comparable_blocks"] == 1
+    assert comparison["blocks"][0]["token_delta"] == {"input_tokens": 0, "output_tokens": 0}
+    text = summary.render(report)
+    assert "Repetition-block comparison with default" in text
+    assert "a shared random seed or causal effect is not implied" in text
+    assert "do not establish a causal or efficiency advantage" in text

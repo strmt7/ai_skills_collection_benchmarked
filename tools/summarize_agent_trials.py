@@ -13,10 +13,10 @@ from pathlib import Path, PurePosixPath
 from typing import Any
 
 from _lib_b.io_utils import dumps_deterministic, write_json, write_text
+from _trial_comparisons import STATUSES, compare_blocks
 from _trial_manifest import read_grading_manifest, validate_grade_checks
 from _trial_transcript import parse_events, strict_json
 
-STATUSES = {"task_passed", "task_failed", "harness_error", "invalid_scope", "timed_out"}
 LIMITATIONS = [
     "One development task and three matched attempts per condition do not establish collection-wide effectiveness.",
     "Quality is checked externally; agent-written regression tests are not a coverage or mutation score.",
@@ -350,9 +350,59 @@ def summarize(protocol_path: Path, trials: Path, *, package_caches: bool = False
         "completed_attempts": len(rows),
         "conditions": summaries,
         "attempts": rows,
+        "block_comparison": compare_blocks(rows, conditions),
         "quality_superiority_established": False,
         "limitations": LIMITATIONS + protocol.get("limitations", []),
     }
+
+
+def _format_token_interval(deltas: dict[str, Any] | None, key: str) -> str:
+    """Format an observed interval without inventing a value for missing usage."""
+    if deltas is None:
+        return "unavailable"
+    stats = deltas[key]
+    return f"{stats['median']:,} [{stats['min']:,}, {stats['max']:,}]"
+
+
+def _render_block_comparison(comparison: dict[str, Any]) -> list[str]:
+    """Show every planned outcome and the observed success-conditional token deltas."""
+    if comparison["baseline"] is None:
+        return ["", "No block comparison is available because the protocol has no default condition."]
+    if not comparison["comparisons"]:
+        return []
+    lines = [
+        "",
+        "## Repetition-block comparison with default",
+        "",
+        "Blocks follow the protocol's planned repetitions; a shared random seed or causal effect is not implied. "
+        "Unscored includes harness errors, invalid scope and timeouts.",
+        "",
+        "| Condition | Planned blocks | Both pass | Only condition passes | Only default passes | Neither passes | Unscored |",
+        "| --- | --- | --- | --- | --- | --- | --- |",
+    ]
+    for name, value in comparison["comparisons"].items():
+        outcomes = value["outcomes"]
+        lines.append(
+            f"| {name} | {value['planned_blocks']} | {outcomes['both_passed']} | "
+            f"{outcomes['candidate_only_passed']} | {outcomes['baseline_only_passed']} | "
+            f"{outcomes['neither_passed']} | {outcomes['unscored']} |"
+        )
+    lines += [
+        "",
+        "Token differences are condition minus default, only where both passed and both usages are available. "
+        "They are descriptive, success-conditional observations; they do not establish a causal or efficiency advantage.",
+        "",
+        "| Condition | Comparable / both-pass blocks | Input token difference, median [min, max] | Output token difference, median [min, max] |",
+        "| --- | --- | --- | --- |",
+    ]
+    for name, value in comparison["comparisons"].items():
+        deltas = value["token_deltas"]
+
+        lines.append(
+            f"| {name} | {value['token_comparable_blocks']}/{value['outcomes']['both_passed']} | "
+            f"{_format_token_interval(deltas, 'input_tokens')} | {_format_token_interval(deltas, 'output_tokens')} |"
+        )
+    return lines
 
 
 def render(report: dict[str, Any]) -> str:
@@ -381,6 +431,7 @@ def render(report: dict[str, Any]) -> str:
         lines.append(
             f"| {condition} | {values['task_passes']}/{values['planned_attempts']} | {values['usage_observed_attempts']}/{values['planned_attempts']} | {token_range('input_tokens')} | {token_range('output_tokens')} |"
         )
+    lines += _render_block_comparison(report["block_comparison"])
     lines += [
         "",
         "Input counts include cached input. Output counts are reported as returned by the CLI. These are descriptive tokens, not priced costs or statistically demonstrated efficiency gains.",

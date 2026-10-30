@@ -172,6 +172,123 @@
       }
     }
   ],
+  "block_comparison": {
+    "baseline": "default",
+    "comparisons": {
+      "improved": {
+        "blocks": [
+          {
+            "baseline_status": "task_passed",
+            "candidate_status": "task_passed",
+            "outcome": "both_passed",
+            "repetition": 1,
+            "token_delta": {
+              "input_tokens": -92259,
+              "output_tokens": -1772
+            }
+          },
+          {
+            "baseline_status": "task_passed",
+            "candidate_status": "task_passed",
+            "outcome": "both_passed",
+            "repetition": 2,
+            "token_delta": {
+              "input_tokens": 49699,
+              "output_tokens": -1185
+            }
+          },
+          {
+            "baseline_status": "task_passed",
+            "candidate_status": "task_passed",
+            "outcome": "both_passed",
+            "repetition": 3,
+            "token_delta": {
+              "input_tokens": 85128,
+              "output_tokens": 1954
+            }
+          }
+        ],
+        "both_passed_usage_unavailable": 0,
+        "outcomes": {
+          "baseline_only_passed": 0,
+          "both_passed": 3,
+          "candidate_only_passed": 0,
+          "neither_passed": 0,
+          "unscored": 0
+        },
+        "planned_blocks": 3,
+        "token_comparable_blocks": 3,
+        "token_deltas": {
+          "input_tokens": {
+            "max": 85128,
+            "median": 49699,
+            "min": -92259
+          },
+          "output_tokens": {
+            "max": 1954,
+            "median": -1185,
+            "min": -1772
+          }
+        }
+      },
+      "karpathy": {
+        "blocks": [
+          {
+            "baseline_status": "task_passed",
+            "candidate_status": "task_passed",
+            "outcome": "both_passed",
+            "repetition": 1,
+            "token_delta": {
+              "input_tokens": -77392,
+              "output_tokens": -1699
+            }
+          },
+          {
+            "baseline_status": "task_passed",
+            "candidate_status": "task_passed",
+            "outcome": "both_passed",
+            "repetition": 2,
+            "token_delta": {
+              "input_tokens": -15953,
+              "output_tokens": -1773
+            }
+          },
+          {
+            "baseline_status": "task_passed",
+            "candidate_status": "task_passed",
+            "outcome": "both_passed",
+            "repetition": 3,
+            "token_delta": {
+              "input_tokens": 12626,
+              "output_tokens": -722
+            }
+          }
+        ],
+        "both_passed_usage_unavailable": 0,
+        "outcomes": {
+          "baseline_only_passed": 0,
+          "both_passed": 3,
+          "candidate_only_passed": 0,
+          "neither_passed": 0,
+          "unscored": 0
+        },
+        "planned_blocks": 3,
+        "token_comparable_blocks": 3,
+        "token_deltas": {
+          "input_tokens": {
+            "max": 12626,
+            "median": -15953,
+            "min": -77392
+          },
+          "output_tokens": {
+            "max": -722,
+            "median": -1699,
+            "min": -1773
+          }
+        }
+      }
+    }
+  },
   "completed_attempts": 9,
   "conditions": {
     "default": {
