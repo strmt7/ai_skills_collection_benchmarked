@@ -1,0 +1,21 @@
+{
+  "platform": "Linux",
+  "python": "3.12.3",
+  "input_sha256": {
+    "jobs": "8d8c0278664757c79b2ce865d3e4e83531abf836e7ed6da3321b8309a3099c58",
+    "tasks": "c122f250cf1f9817dc722a5b7457eb5caf122619accfada078de66d40f311501",
+    "reference": "54a97eff4388b2a195f047a37250a5bad0648c6f15437bbe35acac3cf610828c"
+  },
+  "finish_job_count": 698,
+  "submission_job_count": 1234,
+  "finished_with_observed_submissions": 644,
+  "finished_without_observed_submissions": 54,
+  "submitted_without_observed_finish": 590,
+  "submissions_after_last_finish": 0,
+  "reference_records": 644,
+  "gaps_exactly_ten_minutes": 0,
+  "reference_matches_split_on_equal": true,
+  "reference_matches_split_after_equal": true,
+  "flink_job_executed": false,
+  "model_scored": false
+}
