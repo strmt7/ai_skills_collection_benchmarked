@@ -147,3 +147,12 @@ hash alone cannot prove when a plan was committed, whether tasks are independent
 or whether a grader actually ran. These descriptive figures are not a
 significance test, collection-wide conclusion, token-cost comparison or evidence
 of a provider-resolved model identity.
+
+With the `reports` extra installed, render the same verified plan with
+`python tools/render_multi_task_chart.py --plan <plan.json> --output <chart.svg>`.
+Add `--check` to compare an existing chart without writing it. Dots show scored
+individual tasks and the square shows the equal-task mean only when every
+planned task in that comparison is scored. Unscored tasks remain counted, and
+points may overlap. The offline-validation workflow tests and uploads a chart
+for the historical example; it shows no demonstrated advantage. Rendering
+checks require the reports dependencies and run in that workflow's report job.

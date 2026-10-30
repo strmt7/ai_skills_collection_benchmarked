@@ -275,6 +275,15 @@ jobs:
           --protocol benchmarks/agent-effectiveness/development/protocol-v2.json
           --trials artifacts/agent-trials/development-v2
           --output-dir "$RUNNER_TEMP/matched-development-report" --plots --json
+      - name: Test and render task-weighted comparison
+        env:
+          PYTHONPATH: tools
+          MPLCONFIGDIR: ${{ runner.temp }}/matplotlib
+        run: |
+          python -c "import matplotlib; print('Matplotlib', matplotlib.__version__)"
+          python -m unittest discover -s tests -p test_render_multi_task_chart.py
+          python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/matched-development-report/task-differences.svg"
+          python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/matched-development-report/task-differences.svg" --check
       - name: Upload verified tables and graphs
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
