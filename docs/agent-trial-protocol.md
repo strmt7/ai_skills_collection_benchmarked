@@ -124,3 +124,26 @@ not a complete sandbox: Microsoft documents that processes created through
 `Win32_Process.Create` are not automatically assigned to the caller's job.
 Before integrating it into trials, qualify the agent sandbox's service access
 and the full collection and grading boundary. See [Windows job objects](https://learn.microsoft.com/en-us/windows/win32/procthread/job-objects).
+
+## Comparing multiple task reports
+
+`tools/summarize_multi_task_trials.py` reads a declared plan of task IDs,
+protocol hashes, protocol paths and trial directories. It revalidates every
+single-task report, rejects missing attempts, duplicate tasks, changed protocol
+bytes and mismatched model, partition or condition definitions, then preserves
+per-task attempts and their result hashes, status counts, matched-block
+comparisons, grading provenance, limitations and model-snapshot availability. It reports pass-rate differences
+with equal weight per task using exact fractions. If either compared condition
+has an unscored attempt on any planned task, its aggregate difference is
+unavailable; that attempt remains visible rather than being counted as a fail
+or silently dropped.
+
+Run the read-only tool with `--plan <plan.json>`. The
+[historical example plan](../benchmarks/agent-effectiveness/development/multi-task-historical-example.json)
+reads the already recorded v2 trials. It was created after those trials and is
+not preregistration or a new experiment. It contains one task and therefore
+reports the existing zero difference without establishing an advantage. A plan
+hash alone cannot prove when a plan was committed, whether tasks are independent,
+or whether a grader actually ran. These descriptive figures are not a
+significance test, collection-wide conclusion, token-cost comparison or evidence
+of a provider-resolved model identity.

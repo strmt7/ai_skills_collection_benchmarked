@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "tasks": [
+    {
+      "id": "artifact-validator-robustness",
+      "protocol": "protocol-v2.json",
+      "protocol_sha256": "a1f6cbd086680ca19c3a6a124b7739537a7ad38550de8b59b83ec1f8781fcda9",
+      "trials": "../../../artifacts/agent-trials/development-v2"
+    }
+  ]
+}
