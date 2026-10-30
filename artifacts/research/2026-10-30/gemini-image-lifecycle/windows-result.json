@@ -1,0 +1,14 @@
+{
+  "google_skill_example": "gemini-3.1-flash-image-preview",
+  "google_marks_already_shutdown": true,
+  "google_table_date": "June 25, 2026",
+  "openrouter_skill_default": "google/gemini-3.1-flash-image-preview",
+  "openrouter_cli_default": "google/gemini-3.1-flash-image-preview",
+  "openrouter_catalog_matches": 1,
+  "openrouter_listed_name": "Google: Nano Banana 2 (Gemini 3.1 Flash Image Preview)",
+  "current_upstream_default": "google/gemini-3.1-flash-image",
+  "current_default_catalog_matches": 1,
+  "api_generation_attempted": false,
+  "catalog_listing_proves_runtime_availability": false,
+  "agent_scored": false
+}

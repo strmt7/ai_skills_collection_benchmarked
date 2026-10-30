@@ -1,0 +1,20 @@
+{
+  "observed_on": "2026-10-30",
+  "google_deprecation_url": "https://ai.google.dev/gemini-api/docs/deprecations",
+  "google_native_sha256": "2868e0b1715a54e2d8937777a274bf2deef835995dea62e8ae10149c7f9287b4",
+  "google_crawl_provider": "0.9.5+catalog.portable4",
+  "google_status": 200,
+  "google_scope_reviewed": true,
+  "openrouter_api": "https://openrouter.ai/api/v1/models",
+  "openrouter_native_sha256": "e41ae4995b9dcd75f5ad66f3876986f9cacd5af79ae406c3152428f28e07ec74",
+  "google_skill_pinned_and_current_commit": "9d2727cab3ab9e50d20f4ba4ae57aa57755edecd",
+  "google_skill_ref_api_sha256": "fe565a0c3461342b25048b8f6a0a2a92605b2aafb66bf19c7bcc0231856b8100",
+  "scientific_pinned_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+  "scientific_current_commit": "5f2bc0341354fd5590aef76a533ada1e1e5b4e62",
+  "scientific_ref_api_sha256": "0dd2b41c91f8214cb72a176dfd5d0b7862048bb507a20c71768d3a2261417b5d",
+  "current_script_path": "skills/generate-image/scripts/generate_image.py",
+  "current_script_git_blob": "03567a8d261a7de4bb8e7fb4e8fee3f2bb179506",
+  "current_script_sha256": "977b40ddc398a6e62f13e61482237363251b5d4b17b9997e947e2ef87fb12a6a",
+  "current_script_api_sha256": "aee538767f9be300a062be93259b2b442e993301e40549824a72396059436def",
+  "generation_attempted": false
+}

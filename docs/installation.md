@@ -53,6 +53,8 @@ Some reviewed instructions have known limitations:
   TypeScript fallback failed to start in the tested environment. [See the extractor controls](research-docs-from-code.md).
 - Eight skills hardcode a retired Gemini model; one more names it while allowing
   an alternative. [See the model review](research-retired-gemini-model.md).
+- One Google image-skill example names a shut-down preview model; the related
+  OpenRouter ID is a separate provider entry. [See the image-model review](research-gemini-image-lifecycle.md).
 
 These examples are not an exhaustive review of the catalog.
 

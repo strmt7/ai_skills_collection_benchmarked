@@ -6008,6 +6008,31 @@
             "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
             "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
             "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          },
+          {
+            "path": "docs/research-gemini-image-lifecycle.md",
+            "scope": "Source-bound Google lifecycle and OpenRouter catalog comparison; no generation request or agent performance test.",
+            "sha256": "556bb71dd1e853ab86cc65343976a01ece717dcfbba48f5c8d8eeb93beaeb082"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-image-lifecycle/reproduce.py",
+            "scope": "Source-bound Google lifecycle and OpenRouter catalog comparison; no generation request or agent performance test.",
+            "sha256": "8d2eb6dfd4babbe8f6ff2336655e7a635698703013d0b571c21362aecd92aced"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-image-lifecycle/source-evidence.json",
+            "scope": "Source-bound Google lifecycle and OpenRouter catalog comparison; no generation request or agent performance test.",
+            "sha256": "fa9b1221fa31452108efb1ba4a4ac481a0581fabf7a1814c8dfc495e2b197883"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-image-lifecycle/windows-result.json",
+            "scope": "Source-bound Google lifecycle and OpenRouter catalog comparison; no generation request or agent performance test.",
+            "sha256": "dbdd462b377785d6cde0e878b1173f51e7cc96eeb42cf7d20ce275b103314238"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-image-lifecycle/linux-result.json",
+            "scope": "Source-bound Google lifecycle and OpenRouter catalog comparison; no generation request or agent performance test.",
+            "sha256": "dbdd462b377785d6cde0e878b1173f51e7cc96eeb42cf7d20ce275b103314238"
           }
         ],
         "status": "in_progress"
@@ -18798,8 +18823,34 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/creative-reference/gemini-image-generation",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-gemini-image-lifecycle.md",
+            "scope": "Source-bound Google lifecycle and OpenRouter catalog comparison; no generation request or agent performance test.",
+            "sha256": "556bb71dd1e853ab86cc65343976a01ece717dcfbba48f5c8d8eeb93beaeb082"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-image-lifecycle/reproduce.py",
+            "scope": "Source-bound Google lifecycle and OpenRouter catalog comparison; no generation request or agent performance test.",
+            "sha256": "8d2eb6dfd4babbe8f6ff2336655e7a635698703013d0b571c21362aecd92aced"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-image-lifecycle/source-evidence.json",
+            "scope": "Source-bound Google lifecycle and OpenRouter catalog comparison; no generation request or agent performance test.",
+            "sha256": "fa9b1221fa31452108efb1ba4a4ac481a0581fabf7a1814c8dfc495e2b197883"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-image-lifecycle/windows-result.json",
+            "scope": "Source-bound Google lifecycle and OpenRouter catalog comparison; no generation request or agent performance test.",
+            "sha256": "dbdd462b377785d6cde0e878b1173f51e7cc96eeb42cf7d20ce275b103314238"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-image-lifecycle/linux-result.json",
+            "scope": "Source-bound Google lifecycle and OpenRouter catalog comparison; no generation request or agent performance test.",
+            "sha256": "dbdd462b377785d6cde0e878b1173f51e7cc96eeb42cf7d20ce275b103314238"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
