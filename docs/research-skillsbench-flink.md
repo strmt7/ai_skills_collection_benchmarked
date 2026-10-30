@@ -26,3 +26,26 @@ This exercises only the output-comparison function. It does not compile or run
 Flink, execute the benchmark harness, validate every query semantic or score a
 model. No held-out task content was read. Preserve the upstream test and report
 any multiplicity-aware replacement under a distinct predeclared protocol.
+
+## A separate multiplicity-aware comparison
+
+`tools/compare_flink_outputs.py` compares an independently supplied, nonempty
+reference with a candidate file. It parses each `(jobId,count)` tuple, rejects
+duplicate job IDs in either file, and compares counts without depending on row
+order. For example:
+
+```bash
+python tools/compare_flink_outputs.py --expected reference.txt --actual out.txt --json
+```
+
+The process exits zero only when the parsed records agree. It reports missing,
+extra and mismatched IDs; malformed lines and duplicate IDs fail. The reference
+must be obtained and validated independently: the comparator cannot establish
+that its contents are correct, that a Flink job ran, or that an agent solved a
+task. Its rules are a distinct development protocol, not the upstream verifier;
+predeclare its use in any future experiment and do not replace prior scores.
+The [source-bound control](../artifacts/research/2026-10-30/flink-comparator-control/reproduce.py)
+exercises the pinned 644-row reference and matching, reordered, duplicate,
+missing and extra cases. The [Windows](../artifacts/research/2026-10-30/flink-comparator-control/windows-result.json)
+and [Linux](../artifacts/research/2026-10-30/flink-comparator-control/linux-result.json)
+results agree. These controls do not constitute a model benchmark.

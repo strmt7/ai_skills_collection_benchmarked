@@ -1,0 +1,16 @@
+{
+  "platform": "Linux",
+  "python": "3.12.3",
+  "comparator_sha256": "067dd0cc319aeedfb7b831b44b9caf2e9f42d8ba1dcd768eab4324c164791438",
+  "reference_sha256": "54a97eff4388b2a195f047a37250a5bad0648c6f15437bbe35acac3cf610828c",
+  "reference_records": 644,
+  "accepted": {
+    "matching": true,
+    "reversed": true,
+    "duplicate": false,
+    "missing": false,
+    "extra": false
+  },
+  "flink_job_executed": false,
+  "model_scored": false
+}
