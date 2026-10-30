@@ -3019,7 +3019,7 @@
           {
             "path": "docs/research-xlsx-recalculation.md",
             "scope": "Source-bound simulated recalculation and CLI component controls; LibreOffice and agent performance not tested.",
-            "sha256": "e2d96493c0ad97b3b7c4f0af1392e4f7b0989156caa3661f85bcecf20fb856bd"
+            "sha256": "57805e259df9a962976c610950a41e17622ec77943c4817ece3cbec16cb19bad"
           },
           {
             "path": "artifacts/research/2026-10-30/xlsx-recalculation/reproduce.py",
@@ -3044,7 +3044,47 @@
           {
             "path": "artifacts/research/2026-10-30/xlsx-recalculation/source-evidence.json",
             "scope": "Source-bound simulated recalculation and CLI component controls; LibreOffice and agent performance not tested.",
-            "sha256": "73cadf0edb172943376fafa707148367747c4333e3d0fc14f1aebbcf78fc4009"
+            "sha256": "0294f69d3e3fcc517d0c279d2f6df21099bca30c3bae595009acfdb4e143ab2f"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/startup-reproduce.py",
+            "scope": "Source-bound Windows helper and subprocess startup controls; LibreOffice and agent performance not tested.",
+            "sha256": "8956e0062e0a66d8562c5037faf62edc1ec71c5e8cd916b34614446f44fed887"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/windows-office-env-control.py",
+            "scope": "Source-bound Windows helper and subprocess startup controls; LibreOffice and agent performance not tested.",
+            "sha256": "93b53b95edefd5cb7530a8ecccde53ab3a30bcf2e755c6d3968c27c3a8ec3b09"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/office-env-windows-3.11.json",
+            "scope": "Source-bound Windows helper and subprocess startup controls; LibreOffice and agent performance not tested.",
+            "sha256": "e3b619c9e3600b55deb1f81392c5af9b61baad11cf7e6cbd679a7e009441b711"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/office-env-windows-3.12.json",
+            "scope": "Source-bound Windows helper and subprocess startup controls; LibreOffice and agent performance not tested.",
+            "sha256": "d7277be6ddc0ec45bdb02bcff6cf2fd2043bd10a0b196b7af3bd7ae7fe65d60e"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/office-env-windows-3.13.json",
+            "scope": "Source-bound Windows helper and subprocess startup controls; LibreOffice and agent performance not tested.",
+            "sha256": "2a0928fe9a57d8461b7a661e6c364aa0d494429a9cbb9e5d997c1630821a86e1"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/office-env-windows-3.14.json",
+            "scope": "Source-bound Windows helper and subprocess startup controls; LibreOffice and agent performance not tested.",
+            "sha256": "d6fada2de99fc01ea1893f8f8f3b8dcf6bb7658fb14eaed8c4797f8b0d61ef5f"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/startup-windows-3.13-result.json",
+            "scope": "Source-bound Windows helper and subprocess startup controls; LibreOffice and agent performance not tested.",
+            "sha256": "33c5fbc6bc886ae5a021766b825e538d86907d57afb68351aeb54f776d15a839"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/startup-scientific-windows-3.13-result.json",
+            "scope": "Source-bound Windows helper and subprocess startup controls; LibreOffice and agent performance not tested.",
+            "sha256": "33c5fbc6bc886ae5a021766b825e538d86907d57afb68351aeb54f776d15a839"
           }
         ],
         "status": "in_progress"
@@ -8725,7 +8765,7 @@
           {
             "path": "docs/research-xlsx-recalculation.md",
             "scope": "Source-bound simulated recalculation and CLI component controls; LibreOffice and agent performance not tested.",
-            "sha256": "e2d96493c0ad97b3b7c4f0af1392e4f7b0989156caa3661f85bcecf20fb856bd"
+            "sha256": "57805e259df9a962976c610950a41e17622ec77943c4817ece3cbec16cb19bad"
           },
           {
             "path": "artifacts/research/2026-10-30/xlsx-recalculation/reproduce.py",
@@ -8750,7 +8790,47 @@
           {
             "path": "artifacts/research/2026-10-30/xlsx-recalculation/source-evidence.json",
             "scope": "Source-bound simulated recalculation and CLI component controls; LibreOffice and agent performance not tested.",
-            "sha256": "73cadf0edb172943376fafa707148367747c4333e3d0fc14f1aebbcf78fc4009"
+            "sha256": "0294f69d3e3fcc517d0c279d2f6df21099bca30c3bae595009acfdb4e143ab2f"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/startup-reproduce.py",
+            "scope": "Source-bound Windows helper and subprocess startup controls; LibreOffice and agent performance not tested.",
+            "sha256": "8956e0062e0a66d8562c5037faf62edc1ec71c5e8cd916b34614446f44fed887"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/windows-office-env-control.py",
+            "scope": "Source-bound Windows helper and subprocess startup controls; LibreOffice and agent performance not tested.",
+            "sha256": "93b53b95edefd5cb7530a8ecccde53ab3a30bcf2e755c6d3968c27c3a8ec3b09"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/office-env-windows-3.11.json",
+            "scope": "Source-bound Windows helper and subprocess startup controls; LibreOffice and agent performance not tested.",
+            "sha256": "e3b619c9e3600b55deb1f81392c5af9b61baad11cf7e6cbd679a7e009441b711"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/office-env-windows-3.12.json",
+            "scope": "Source-bound Windows helper and subprocess startup controls; LibreOffice and agent performance not tested.",
+            "sha256": "d7277be6ddc0ec45bdb02bcff6cf2fd2043bd10a0b196b7af3bd7ae7fe65d60e"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/office-env-windows-3.13.json",
+            "scope": "Source-bound Windows helper and subprocess startup controls; LibreOffice and agent performance not tested.",
+            "sha256": "2a0928fe9a57d8461b7a661e6c364aa0d494429a9cbb9e5d997c1630821a86e1"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/office-env-windows-3.14.json",
+            "scope": "Source-bound Windows helper and subprocess startup controls; LibreOffice and agent performance not tested.",
+            "sha256": "d6fada2de99fc01ea1893f8f8f3b8dcf6bb7658fb14eaed8c4797f8b0d61ef5f"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/startup-windows-3.13-result.json",
+            "scope": "Source-bound Windows helper and subprocess startup controls; LibreOffice and agent performance not tested.",
+            "sha256": "33c5fbc6bc886ae5a021766b825e538d86907d57afb68351aeb54f776d15a839"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/startup-scientific-windows-3.13-result.json",
+            "scope": "Source-bound Windows helper and subprocess startup controls; LibreOffice and agent performance not tested.",
+            "sha256": "33c5fbc6bc886ae5a021766b825e538d86907d57afb68351aeb54f776d15a839"
           }
         ],
         "status": "in_progress"

@@ -1,0 +1,20 @@
+{
+  "python": "3.11.9",
+  "platform": "win32",
+  "has_af_unix": false,
+  "libreoffice_started": false,
+  "source_sha256": {
+    "pinned": "f4ebbe4b638904d099eac915ada405b1031d1d7c5a80ecd5d733580d4eee1359",
+    "current": "df2c8d7249c132a4512d744482e4b5ed0ecbe885f0bcfb1295e7e6a7ced0432c"
+  },
+  "sources": {
+    "pinned": {
+      "error_type": "AttributeError",
+      "message": "module 'socket' has no attribute 'AF_UNIX'"
+    },
+    "current": {
+      "error_type": "AttributeError",
+      "message": "module 'socket' has no attribute 'AF_UNIX'"
+    }
+  }
+}

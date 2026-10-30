@@ -156,3 +156,6 @@ planned task in that comparison is scored. Unscored tasks remain counted, and
 points may overlap. The offline-validation workflow tests and uploads a chart
 for the historical example; it shows no demonstrated advantage. Rendering
 checks require the reports dependencies and run in that workflow's report job.
+The chart also counts attempts without snapshot metadata and distinct reported
+snapshot identifiers. These are reported metadata, not independently verified
+provider identities; distinct identifiers can make comparisons harder to interpret.

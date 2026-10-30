@@ -1,0 +1,31 @@
+{
+  "platform": "Windows",
+  "python": "3.13.17",
+  "openpyxl": "3.1.5",
+  "source_sha256": {
+    "pinned_recalc": "e8251c94ae0c6678b6793d56d2620dd2daf7c73e1da00db6c4aaf4d5e34acd8e",
+    "pinned_office": "f4ebbe4b638904d099eac915ada405b1031d1d7c5a80ecd5d733580d4eee1359",
+    "current_recalc": "66f6e726d5a53cfabea0b6471d6669deb95e54e96cb7913b687e4388da1bb3d9",
+    "current_office": "df2c8d7249c132a4512d744482e4b5ed0ecbe885f0bcfb1295e7e6a7ced0432c"
+  },
+  "available_soffice": true,
+  "has_af_unix": false,
+  "libreoffice_started": false,
+  "agent_scored": false,
+  "results": {
+    "pinned": {
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    import runpy,sys; sys.path.insert(0,sys.argv[1]); sys.argv=[sys.argv[1]+'/recalc.py',sys.argv[2]]; runpy.run_path(sys.argv[0],run_name='__main__')\n                                                                                                       ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen runpy>\", line 294, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"<workspace>/recalc.py\", line 184, in <module>\n    main()\n    ~~~~^^\n  File \"<workspace>/recalc.py\", line 179, in main\n    result = recalc(filename, timeout)\n  File \"<workspace>/recalc.py\", line 76, in recalc\n    if not setup_libreoffice_macro():\n           ~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"<workspace>/recalc.py\", line 59, in setup_libreoffice_macro\n    env=get_soffice_env(),\n        ~~~~~~~~~~~~~~~^^\n  File \"<workspace>\\office\\soffice.py\", line 28, in get_soffice_env\n    if _needs_shim():\n       ~~~~~~~~~~~^^\n  File \"<workspace>\\office\\soffice.py\", line 46, in _needs_shim\n    s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)\n                      ^^^^^^^^^^^^^^\nAttributeError: module 'socket' has no attribute 'AF_UNIX'\n",
+      "cached_formula_value": null,
+      "isolated_profile_empty": true
+    },
+    "current": {
+      "exit_code": 1,
+      "stdout": "{\n  \"error\": \"Could not prepare the LibreOffice environment: module 'socket' has no attribute 'AF_UNIX'\"\n}\n",
+      "stderr": "",
+      "cached_formula_value": null,
+      "isolated_profile_empty": true
+    }
+  }
+}

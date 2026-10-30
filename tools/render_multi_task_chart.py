@@ -48,6 +48,17 @@ def graph_rows(report: dict[str, Any]) -> list[tuple[str, list[Fraction], Fracti
     return rows
 
 
+def snapshot_summary(report: dict[str, Any]) -> tuple[int, int, int]:
+    """Count unavailable and distinct reported snapshots across all attempts."""
+    attempts = [attempt for task in report["tasks"] for attempt in task["attempts"]]
+    if not attempts or any(not isinstance(attempt, dict) for attempt in attempts):
+        raise ValueError("Chart requires recorded attempts")
+    snapshots = [attempt.get("provider_model_snapshot") for attempt in attempts]
+    if any(value is not None and (not isinstance(value, str) or not value) for value in snapshots):
+        raise ValueError("Invalid model snapshot metadata")
+    return sum(value is None for value in snapshots), len(snapshots), len({value for value in snapshots if value})
+
+
 def render_svg(report: dict[str, Any]) -> bytes:
     """Show each scored task and any fully observed equal-task-weight mean."""
     import matplotlib
@@ -57,13 +68,14 @@ def render_svg(report: dict[str, Any]) -> bytes:
     from matplotlib.lines import Line2D
 
     rows = graph_rows(report)
+    unavailable, attempts, distinct = snapshot_summary(report)
     conditions = [row[0] for row in rows]
     with matplotlib.rc_context(
         {"svg.hashsalt": report["plan_sha256"], "svg.fonttype": "none", "font.family": "DejaVu Sans"}
     ):
-        figure, axis = plt.subplots(figsize=(10, max(4.6, 3.8 + 0.65 * len(conditions))))
+        figure, axis = plt.subplots(figsize=(10, max(5.1, 4.3 + 0.65 * len(conditions))))
         try:
-            figure.subplots_adjust(left=0.16, right=0.75, top=0.70, bottom=0.27)
+            figure.subplots_adjust(left=0.16, right=0.75, top=0.70, bottom=0.29)
             axis.axvline(0, color="#64748b", linewidth=1, zorder=1)
             for row, (_condition, scored, mean, planned) in enumerate(rows):
                 offsets = [((index % 7) - 3) * 0.035 for index in range(len(scored))]
@@ -88,7 +100,8 @@ def render_svg(report: dict[str, Any]) -> bytes:
             axis.set_xticks([-1, -0.5, 0, 0.5, 1], ["-1", "-0.5", "0", "+0.5", "+1"])
             axis.set_xlabel("Task pass-rate difference (condition minus default)")
             figure.suptitle(
-                f"Task-weighted comparison: {report['partition']} | requested model: {report['model_requested']}",
+                f"Task-weighted comparison: {report['partition']} | requested model: {report['model_requested']}"
+                f" | requested effort: {report['reasoning_effort_requested']}",
                 y=0.97,
             )
             axis.grid(axis="x", alpha=0.2)
@@ -106,14 +119,22 @@ def render_svg(report: dict[str, Any]) -> bytes:
             )
             figure.text(
                 0.01,
-                0.08,
+                0.14,
+                f"Snapshot metadata unavailable: {unavailable}/{attempts}; distinct reported: {distinct}.",
+                fontsize=8,
+                color="#334155",
+            )
+            figure.text(
+                0.01,
+                0.095,
+                "Snapshot metadata is not independently verified. "
                 "Descriptive only; unscored tasks are not failures. No uncertainty or superiority claim.",
                 fontsize=8,
                 color="#334155",
             )
             figure.text(
                 0.01,
-                0.035,
+                0.05,
                 f"Plan {report['plan_sha256'][:12]}; a plan hash does not prove preregistration or grading authenticity.",
                 fontsize=8,
                 color="#334155",

@@ -21,6 +21,7 @@ def fixture_report(*, incomplete: bool = False):
         "task_count": 2,
         "partition": "synthetic control",
         "model_requested": "fixture",
+        "reasoning_effort_requested": "high",
         "quality_superiority_established": False,
         "comparisons": {
             "candidate": {
@@ -31,8 +32,8 @@ def fixture_report(*, incomplete: bool = False):
             }
         },
         "tasks": [
-            {"candidate_minus_default": {"candidate": first}},
-            {"candidate_minus_default": {"candidate": second}},
+            {"candidate_minus_default": {"candidate": first}, "attempts": [{}, {}]},
+            {"candidate_minus_default": {"candidate": second}, "attempts": [{}, {}]},
         ],
     }
 
@@ -74,6 +75,9 @@ class ChartRenderTests(unittest.TestCase):
         self.assertIn("1/2 scored; mean unavailable", text)
         self.assertIn("unscored tasks are not failures", text)
         self.assertIn("No uncertainty or superiority claim", text)
+        self.assertIn("Snapshot metadata unavailable: 4/4; distinct reported: 0", text)
+        self.assertIn("Snapshot metadata is not independently verified", text)
+        self.assertIn("requested model: fixture | requested effort: high", text)
         self.assertIn("does not prove preregistration or grading authenticity", text)
         groups = [node.get("id", "") for node in root.iter() if node.get("id", "").startswith("PathCollection_")]
         self.assertEqual(len(groups), 1)
@@ -88,6 +92,14 @@ class ChartRenderTests(unittest.TestCase):
         self.assertIn("2/2 scored; mean 1/4", text)
         groups = [node.get("id", "") for node in root.iter() if node.get("id", "").startswith("PathCollection_")]
         self.assertEqual(len(groups), 2)
+
+    def test_snapshot_metadata_counts_missing_and_distinct_values(self):
+        report = fixture_report()
+        report["tasks"][0]["attempts"][0]["provider_model_snapshot"] = "snapshot-a"
+        report["tasks"][1]["attempts"][1]["provider_model_snapshot"] = "snapshot-b"
+        root = ET.fromstring(target.render_svg(report))
+        text = " ".join("".join(node.itertext()) for node in root.iter() if node.tag.endswith("text"))
+        self.assertIn("Snapshot metadata unavailable: 2/4; distinct reported: 2", text)
 
     def test_check_detects_a_changed_svg(self):
         report = fixture_report()
@@ -128,6 +140,21 @@ class ChartConsistencyTests(unittest.TestCase):
         report["tasks"][0]["candidate_minus_default"]["candidate"]["numerator"] = 3
         with self.assertRaises(ValueError):
             target.graph_rows(report)
+
+    def test_snapshot_counts_require_valid_attempts(self):
+        report = fixture_report()
+        self.assertEqual(target.snapshot_summary(report), (4, 4, 0))
+        report["tasks"][0]["attempts"][0]["provider_model_snapshot"] = "snapshot-a"
+        report["tasks"][1]["attempts"][1]["provider_model_snapshot"] = "snapshot-a"
+        self.assertEqual(target.snapshot_summary(report), (2, 4, 1))
+        report["tasks"][0]["attempts"][1]["provider_model_snapshot"] = ""
+        with self.assertRaisesRegex(ValueError, "snapshot"):
+            target.snapshot_summary(report)
+        report = fixture_report()
+        for task in report["tasks"]:
+            task["attempts"] = []
+        with self.assertRaisesRegex(ValueError, "attempts"):
+            target.snapshot_summary(report)
 
 
 if __name__ == "__main__":

@@ -14,5 +14,10 @@
   "libreoffice_executed": false,
   "scientific_mirror_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/xlsx-scientific-agent-skills/scripts/recalc.py",
   "scientific_mirror_sha256": "e8251c94ae0c6678b6793d56d2620dd2daf7c73e1da00db6c4aaf4d5e34acd8e",
-  "scientific_mirror_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770"
+  "scientific_mirror_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+  "pinned_office_sha256": "f4ebbe4b638904d099eac915ada405b1031d1d7c5a80ecd5d733580d4eee1359",
+  "scientific_mirror_office_sha256": "f4ebbe4b638904d099eac915ada405b1031d1d7c5a80ecd5d733580d4eee1359",
+  "current_office_sha256": "df2c8d7249c132a4512d744482e4b5ed0ecbe885f0bcfb1295e7e6a7ced0432c",
+  "current_office_git_blob_sha": "0b4c99deca54013c550458c9244ee63eea748dca",
+  "current_office_api_capture_sha256": "d815ce26d70a4b861278fb78f131e5b012fc16abedb15eea369d641ce7592f02"
 }
