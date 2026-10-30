@@ -2851,8 +2851,29 @@
       },
       "mirrored_path": "included/skills/by-category/documents-spreadsheets-presentations/official-reference/theme-factory",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-theme-contrast.md",
+            "sha256": "97c98707ac3ce82ab19cadbabd80a2c29a226b78f6c2fa29041c2fc634c8ab22"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/theme-showcase-contrast/reproduce.py",
+            "sha256": "d79ad5e8376544731afbf954eb431540f72075e340e0467df1b5e13afcab5519"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/theme-showcase-contrast/windows-result.json",
+            "sha256": "ba4fe2aac3f3aa01e8a8ad68b294a51ac3ca8e084223c86fbc57e222f26cb079"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/theme-showcase-contrast/linux-result.json",
+            "sha256": "8c7ef7ac07a84bb3b772a409b894898f8b4c4c4fc28bbc719d0f4f00ffa403d1"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Ten showcase header and body samples with contrast controls only; full package and agent effectiveness remain unreviewed",
+        "open_work": [
+          "Review remaining theme resources and text placements; evaluate agent effectiveness independently"
+        ]
       },
       "revision": {
         "evidence": [],

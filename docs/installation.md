@@ -40,6 +40,8 @@ Some reviewed instructions have known limitations:
   library importable by a local script. [See the portability control](research-docx-portability.md).
 - The pinned PDF skill's metadata example fails without an information
   dictionary, and its image example does not always produce JPEGs. [See the tested cases](research-pdf-metadata.md).
+- Several text examples in the pinned theme showcase have low contrast.
+  [Review the measured colors](research-theme-contrast.md) before applying a theme.
 
 These examples are not an exhaustive review of the catalog.
 
