@@ -1,0 +1,30 @@
+{
+  "platform": "Linux",
+  "python": "3.12.3",
+  "input_sha256": {
+    "verifier": "5d1567a460400cbfc2b2d2ce8d75e1aa7b1d7da5892d1ee99a58eb0f4d6ec36b",
+    "expected": "54a97eff4388b2a195f047a37250a5bad0648c6f15437bbe35acac3cf610828c"
+  },
+  "expected_records": 644,
+  "expected_unique_jobs": 644,
+  "flink_job_executed": false,
+  "model_scored": false,
+  "cases": {
+    "matching": {
+      "lines": 644,
+      "accepted": true
+    },
+    "duplicate": {
+      "lines": 645,
+      "accepted": true
+    },
+    "missing": {
+      "lines": 643,
+      "accepted": false
+    },
+    "extra": {
+      "lines": 645,
+      "accepted": false
+    }
+  }
+}

@@ -117,3 +117,7 @@ keywords. This tests one predicate, not the complete task or a model run.
 Remaining qualification: component rights, current-runner compatibility,
 trusted oracle/verifier isolation, controls and actual paired trials. Do not
 pool a corrected protocol with historical leaderboard results.
+
+For `flink-query`, a [controlled comparison](research-skillsbench-flink.md)
+shows that duplicate output rows are not detected by the upstream set-based
+check. It does not run Flink or score a model.
