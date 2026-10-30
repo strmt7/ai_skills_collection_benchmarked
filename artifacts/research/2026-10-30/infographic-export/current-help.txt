@@ -1,0 +1,15 @@
+usage: current-export.py [-h] [--png] [--scale SCALE] [--out OUT]
+                         [--selector SELECTOR]
+                         html
+
+Export infographic HTML to PNG
+
+positional arguments:
+  html                 path to the HTML file
+
+options:
+  -h, --help           show this help message and exit
+  --png                (default) export PNG
+  --scale SCALE        device scale factor (default: 2)
+  --out OUT            output directory (default: same as input)
+  --selector SELECTOR

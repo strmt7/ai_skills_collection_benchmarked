@@ -1,0 +1,135 @@
+{
+  "pinned_commit": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4",
+  "current_commit": "caac7cda5621e289591e4e74b400e66ac72ad25b",
+  "skill_count": 9,
+  "skills": [
+    {
+      "name": "claude-md-generator",
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-claude-md-generator-skill-md",
+      "pinned": {
+        "model_mentions": 1,
+        "hardcoded_api_calls": 1,
+        "latest_available_mentions": 0
+      },
+      "current": {
+        "model_mentions": 1,
+        "hardcoded_api_calls": 1,
+        "latest_available_mentions": 0
+      }
+    },
+    {
+      "name": "meeting-brief-generator",
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-meeting-brief-generator-skill-md",
+      "pinned": {
+        "model_mentions": 1,
+        "hardcoded_api_calls": 1,
+        "latest_available_mentions": 0
+      },
+      "current": {
+        "model_mentions": 1,
+        "hardcoded_api_calls": 1,
+        "latest_available_mentions": 0
+      }
+    },
+    {
+      "name": "newsletter-digest",
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md",
+      "pinned": {
+        "model_mentions": 1,
+        "hardcoded_api_calls": 0,
+        "latest_available_mentions": 1
+      },
+      "current": {
+        "model_mentions": 1,
+        "hardcoded_api_calls": 0,
+        "latest_available_mentions": 1
+      }
+    },
+    {
+      "name": "noise2blog",
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-noise2blog-skill-md",
+      "pinned": {
+        "model_mentions": 1,
+        "hardcoded_api_calls": 1,
+        "latest_available_mentions": 0
+      },
+      "current": {
+        "model_mentions": 1,
+        "hardcoded_api_calls": 1,
+        "latest_available_mentions": 0
+      }
+    },
+    {
+      "name": "outreach-sequence-builder",
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-outreach-sequence-builder-skill-md",
+      "pinned": {
+        "model_mentions": 1,
+        "hardcoded_api_calls": 1,
+        "latest_available_mentions": 0
+      },
+      "current": {
+        "model_mentions": 1,
+        "hardcoded_api_calls": 1,
+        "latest_available_mentions": 0
+      }
+    },
+    {
+      "name": "producthunt-launch-kit",
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-producthunt-launch-kit-skill-md",
+      "pinned": {
+        "model_mentions": 1,
+        "hardcoded_api_calls": 1,
+        "latest_available_mentions": 0
+      },
+      "current": {
+        "model_mentions": 1,
+        "hardcoded_api_calls": 1,
+        "latest_available_mentions": 0
+      }
+    },
+    {
+      "name": "reddit-icp-monitor",
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-reddit-icp-monitor-skill-md",
+      "pinned": {
+        "model_mentions": 2,
+        "hardcoded_api_calls": 2,
+        "latest_available_mentions": 0
+      },
+      "current": {
+        "model_mentions": 2,
+        "hardcoded_api_calls": 2,
+        "latest_available_mentions": 0
+      }
+    },
+    {
+      "name": "reddit-post-engine",
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-reddit-post-engine-skill-md",
+      "pinned": {
+        "model_mentions": 1,
+        "hardcoded_api_calls": 1,
+        "latest_available_mentions": 0
+      },
+      "current": {
+        "model_mentions": 1,
+        "hardcoded_api_calls": 1,
+        "latest_available_mentions": 0
+      }
+    },
+    {
+      "name": "show-hn-writer",
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md",
+      "pinned": {
+        "model_mentions": 1,
+        "hardcoded_api_calls": 1,
+        "latest_available_mentions": 0
+      },
+      "current": {
+        "model_mentions": 0,
+        "hardcoded_api_calls": 0,
+        "latest_available_mentions": 0
+      }
+    }
+  ],
+  "api_calls_executed": false,
+  "agent_scored": false
+}

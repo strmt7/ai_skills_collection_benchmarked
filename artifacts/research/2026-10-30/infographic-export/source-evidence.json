@@ -1,0 +1,18 @@
+{
+  "pinned_source_repo": "aizzaku/create-infographics",
+  "current_source_repo": "aizzaku/aiz-infographic",
+  "pinned_commit": "5c8c8821026e7ee5998c886780237e64193e54c3",
+  "current_commit": "8054906f52c2b499d39ea108f55d2ab5a171e25e",
+  "source_path": "scripts/export.py",
+  "mirror_sha256": "e250a6992812a3721c763ff87a36783752b605a33d7e45a601c0271f88146005",
+  "mirror_git_blob": "e22cadd1f91e4b9dbef5f0cf300df6c827ac1151",
+  "current_sha256": "7138abc2f0fda929cca5a1f734e32c3613396f3634d64b2c31ab8b48d588da44",
+  "current_git_blob": "923de2564d5a8cd41e0b34e6feef95e8eae8e1a6",
+  "current_ref_api_sha256": "f31ff4bed60d644e3b51f777425e42515d2e69925a0bde49b92929dcc879e392",
+  "current_tree_api_sha256": "3a9ba4dbc6fb47bd8eda2e74df9f7aad08361717ee61a9a2c1b63e13afe789cf",
+  "current_blob_api_sha256": "47b79e76de76c18084dcd75491db36c24c0f93aac04090b2fa2fba5bbced3963",
+  "current_help_sha256": "b5826e6a4a79d28bc0d2afe17ac855e98a28f581777e1233bc78bd0e07ec9154",
+  "playwright_pypi_sha256": "f6ecee318a864f0d6059329fcdd05fe45d114b050995522269a465439f871c9c",
+  "playwright_latest": "1.64.1",
+  "playwright_chromium": "156.0.8078.4"
+}

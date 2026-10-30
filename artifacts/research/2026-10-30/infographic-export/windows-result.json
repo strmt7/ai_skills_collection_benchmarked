@@ -1,0 +1,99 @@
+{
+  "platform": "Windows",
+  "python": "3.13.17",
+  "playwright": "1.62.0",
+  "source_sha256": "e250a6992812a3721c763ff87a36783752b605a33d7e45a601c0271f88146005",
+  "converter_path_excludes_tools": true,
+  "server_started": false,
+  "html_has_external_resources": false,
+  "agent_scored": false,
+  "results": {
+    "all_default": {
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 1,
+        "output_bytes": 1846
+      },
+      "output_encoding": "cp1252",
+      "stdout": "PNG exported: <workspace>\\all_default\\result.png (2200x152 px)\r\nPDF exported: <workspace>\\all_default\\result.pdf\r\nSVG export skipped \u2014 neither Inkscape nor pdf2svg found.\r\n",
+      "stderr": "Traceback (most recent call last):\r\n  File \"<repository>\\included\\skills\\by-category\\documents-spreadsheets-presentations\\creative-reference\\create-infographics\\scripts\\export.py\", line 270, in <module>\r\n    main()\r\n    ~~~~^^\r\n  File \"<repository>\\included\\skills\\by-category\\documents-spreadsheets-presentations\\creative-reference\\create-infographics\\scripts\\export.py\", line 259, in main\r\n    export_svg(pdf_path, svg_path)\r\n    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\r\n  File \"<repository>\\included\\skills\\by-category\\documents-spreadsheets-presentations\\creative-reference\\create-infographics\\scripts\\export.py\", line 224, in export_svg\r\n    print(\"  Figma alternative: drag the .pdf directly into Figma (File \\u2192 Place Image, or just drop it).\")\r\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"<python>\\Lib\\encodings\\cp1252.py\", line 19, in encode\r\n    return codecs.charmap_encode(input,self.errors,encoding_table)[0]\r\n           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nUnicodeEncodeError: 'charmap' codec can't encode character '\\u2192' in position 61: character maps to <undefined>\r\n",
+      "files": {
+        "png": {
+          "exists": true,
+          "signature": "89504e470d0a1a0a"
+        },
+        "pdf": {
+          "exists": true,
+          "signature": "255044462d312e34"
+        },
+        "svg": {
+          "exists": false,
+          "signature": null
+        }
+      }
+    },
+    "all_utf8": {
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 1373
+      },
+      "output_encoding": "utf-8",
+      "stdout": "PNG exported: <workspace>\\all_utf8\\result.png (2200x152 px)\r\nPDF exported: <workspace>\\all_utf8\\result.pdf\r\nSVG export skipped \u2014 neither Inkscape nor pdf2svg found.\r\n  Figma alternative: drag the .pdf directly into Figma (File \u2192 Place Image, or just drop it).\r\n  Install Inkscape:  https://inkscape.org/release/  or  brew install inkscape\r\n  Install pdf2svg:   brew install pdf2svg  /  apt install pdf2svg\r\n\r\nAll formats exported:\r\n  HTML: <workspace>\\input.html\r\n  PNG:  <workspace>\\all_utf8\\result.png\r\n  PDF:  <workspace>\\all_utf8\\result.pdf\r\n  SVG:  <workspace>\\all_utf8\\result.svg  \u2190 open in Figma / Illustrator / Affinity\r\n",
+      "stderr": "",
+      "files": {
+        "png": {
+          "exists": true,
+          "signature": "89504e470d0a1a0a"
+        },
+        "pdf": {
+          "exists": true,
+          "signature": "255044462d312e34"
+        },
+        "svg": {
+          "exists": false,
+          "signature": null
+        }
+      }
+    },
+    "svg_utf8": {
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 473
+      },
+      "output_encoding": "utf-8",
+      "stdout": "PDF exported: <workspace>\\svg_utf8\\result.pdf\r\nSVG export skipped \u2014 neither Inkscape nor pdf2svg found.\r\n  Figma alternative: drag the .pdf directly into Figma (File \u2192 Place Image, or just drop it).\r\n  Install Inkscape:  https://inkscape.org/release/  or  brew install inkscape\r\n  Install pdf2svg:   brew install pdf2svg  /  apt install pdf2svg\r\n",
+      "stderr": "",
+      "files": {
+        "png": {
+          "exists": false,
+          "signature": null
+        },
+        "pdf": {
+          "exists": true,
+          "signature": "255044462d312e34"
+        },
+        "svg": {
+          "exists": false,
+          "signature": null
+        }
+      }
+    }
+  }
+}

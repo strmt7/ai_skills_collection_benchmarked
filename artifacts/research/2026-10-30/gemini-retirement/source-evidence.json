@@ -1,0 +1,99 @@
+{
+  "pinned_commit": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4",
+  "observed_current_commit": "caac7cda5621e289591e4e74b400e66ac72ad25b",
+  "current_ref_api_sha256": "b686b0f6066be3e18810c45bf50a54bd31dfbe3468d584d705919cab7c950515",
+  "current_tree_api_sha256": "73bd2576efbd793e67141b40c22d5e81417ed7b4a5de5cf8724dd974f8c3ded4",
+  "official_changelog_native_sha256": "9068b8fcec25b59f60d53de5bae2c0e54128e3d5620e6f439e50ebe14ee4313a",
+  "skills": [
+    {
+      "name": "claude-md-generator",
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-claude-md-generator-skill-md",
+      "mirror_path": "included/skills/by-category/coding-refactoring-repository-automation/reddit-verified-gtm-registry/claude-md-generator/SKILL.md",
+      "mirror_sha256": "523cd633638b2ad00239573c019b0a60af66a7f4a34218c891042e06d8e990aa",
+      "current_path": "skills/claude-md-generator/SKILL.md",
+      "current_git_blob_sha": "ebbd8ac03fcf88e8ef60f1dd8fc62c6445837f8b",
+      "current_sha256": "ce090f8acd227fa09feba8d4cf1190ee450bfb7d2f86a96b155818aa120537f0",
+      "current_blob_api_sha256": "adae8e36a8c0ce01c4767f313c27f2cf035b93bd3ac585d3914d831dc4c9f1fe"
+    },
+    {
+      "name": "meeting-brief-generator",
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-meeting-brief-generator-skill-md",
+      "mirror_path": "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/meeting-brief-generator/SKILL.md",
+      "mirror_sha256": "051b5f50faf15d934b424e370d496c663d3ed18b5dff5ef46ca6a7eb67d4d7b2",
+      "current_path": "skills/meeting-brief-generator/SKILL.md",
+      "current_git_blob_sha": "857b55d263a171e0ded10cdfcade4e157c81fb15",
+      "current_sha256": "0d4a733bb2f4c0aad75a94fcbba10f13fe6d2ecc41899c3e01f9814eac0bb69b",
+      "current_blob_api_sha256": "a32709c64fdaf224098d4413fc5ee66a5d979d26b3e2e37c3742db865788f7b7"
+    },
+    {
+      "name": "newsletter-digest",
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md",
+      "mirror_path": "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest/SKILL.md",
+      "mirror_sha256": "79d92765b77e17652b4a5de7aac722b02901a8dedf19116232bbd48c2b874111",
+      "current_path": "skills/newsletter-digest/SKILL.md",
+      "current_git_blob_sha": "92cd862afd5dbc3f6722af80039b10389425d502",
+      "current_sha256": "951051f6c4cda0609f5b3971a377a3a1022b5a2426629f2b5791638e73692640",
+      "current_blob_api_sha256": "8eb0003490059228faa253f624ce295100e90fdf7a215b4098fa1480068dc9c7"
+    },
+    {
+      "name": "noise2blog",
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-noise2blog-skill-md",
+      "mirror_path": "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/noise2blog/SKILL.md",
+      "mirror_sha256": "b3ec8d4f040a9eb8101cd1a62a1e5f4ff56e28cf109b32f1914e36eb4aea34b3",
+      "current_path": "skills/noise2blog/SKILL.md",
+      "current_git_blob_sha": "37abf59c0484afa0a11882f9de5d013a26a024c9",
+      "current_sha256": "2c15f82ee68535e07a125b9258720d299a4a0634af309373181caed056ad6b43",
+      "current_blob_api_sha256": "c8eeb88f5d011da8ad93cdd7d58bb97a7151f816e94730e8525791118940006c"
+    },
+    {
+      "name": "outreach-sequence-builder",
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-outreach-sequence-builder-skill-md",
+      "mirror_path": "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/outreach-sequence-builder/SKILL.md",
+      "mirror_sha256": "c9493991dfbd2950a96a0175ddd8f40e9989834e081cac985ce315db9c50626d",
+      "current_path": "skills/outreach-sequence-builder/SKILL.md",
+      "current_git_blob_sha": "58af3ccc1d588c1b2bdb8d72091a67a0b0607965",
+      "current_sha256": "2f9b88a2af229e1e16691cb13afd52cea0966809ff3a1dc95d11306cba64dfa0",
+      "current_blob_api_sha256": "af8066a04afaec71908d6b2ccc89887ff3e8ea46e0d6f03a892e57792f5212aa"
+    },
+    {
+      "name": "producthunt-launch-kit",
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-producthunt-launch-kit-skill-md",
+      "mirror_path": "included/skills/by-category/finance-commerce-forecasting/reddit-verified-gtm-registry/producthunt-launch-kit/SKILL.md",
+      "mirror_sha256": "6cf43b944b81ae20e2f0af5c7ea6a2d4bb5ac8b96f4de8a7e7ec4589a47193be",
+      "current_path": "skills/producthunt-launch-kit/SKILL.md",
+      "current_git_blob_sha": "c0ffc2275e007a2705c18a5c3851808fbcba93c8",
+      "current_sha256": "37ac4bc10f8c0e5cbe4518f2a638855baaad043d8205eab2e9c32729c8cdf687",
+      "current_blob_api_sha256": "6971dca3244b40491088d2556d9fa98b4a1e89f1a1e2bfda9835dc0c98930205"
+    },
+    {
+      "name": "reddit-icp-monitor",
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-reddit-icp-monitor-skill-md",
+      "mirror_path": "included/skills/by-category/devops-cloud-operations/reddit-verified-gtm-registry/reddit-icp-monitor/SKILL.md",
+      "mirror_sha256": "69fd541373877dc704e1736b23e6d92012946c6d85b0ffe8f9c732d98e40c051",
+      "current_path": "skills/reddit-icp-monitor/SKILL.md",
+      "current_git_blob_sha": "602618d016adbb2b1ca56595d09e38918f654eef",
+      "current_sha256": "52a3035584e0e02f1777b36c1739f769c88b028d60316065ca68b0cb396ae2ef",
+      "current_blob_api_sha256": "57e4c0dc31bb33b14315f4be5e271f267ccf7fea2fbc116d36b977f458223fc4"
+    },
+    {
+      "name": "reddit-post-engine",
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-reddit-post-engine-skill-md",
+      "mirror_path": "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/reddit-post-engine/SKILL.md",
+      "mirror_sha256": "b3f3b017933b89626248eeff24aa8a9a2a0141d53b595c0d35d172990017dea2",
+      "current_path": "skills/reddit-post-engine/SKILL.md",
+      "current_git_blob_sha": "789929613635504393d97066bb4754d7be2f52d2",
+      "current_sha256": "8f63f3d51fd47733c003cbfcd00c4a3b66e8e1d0bfa19072a73c4a91f87d5282",
+      "current_blob_api_sha256": "44f0f05b672918da9a8008b34f6cb58c2391dfe96b04f271c49f58c8edde9cf8"
+    },
+    {
+      "name": "show-hn-writer",
+      "skill_id": "varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md",
+      "mirror_path": "included/skills/by-category/agent-infrastructure-skill-creation/reddit-verified-gtm-registry/show-hn-writer/SKILL.md",
+      "mirror_sha256": "67865a92aae5ee23fee8fb74fac881ecfecb80d4ac5cc4e48b960ad0386d02db",
+      "current_path": "skills/show-hn-writer/SKILL.md",
+      "current_git_blob_sha": "0f64f35d6d2801d7fa83d093fe16e6a8e72f51d9",
+      "current_sha256": "90691265bfab310af8591409d1702fa4674c0e5a55b5dad38506c8b1a3d4d23e",
+      "current_blob_api_sha256": "a7ade52daa715670b03993c59b2389d1a057c3ff35c48ebacf764f93df767cc1"
+    }
+  ]
+}

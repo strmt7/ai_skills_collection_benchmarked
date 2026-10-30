@@ -1488,8 +1488,39 @@
       },
       "mirrored_path": "included/skills/by-category/documents-spreadsheets-presentations/creative-reference/create-infographics",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-infographic-export.md",
+            "scope": "Source-bound Windows export controls without an SVG converter; no SVG conversion or agent performance test.",
+            "sha256": "d05af91e44ef92ef3875141013be6921c72e228917114166a06fc0143c162fef"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/infographic-export/reproduce.py",
+            "scope": "Source-bound Windows export controls without an SVG converter; no SVG conversion or agent performance test.",
+            "sha256": "41ad54998a1ca1d57030b61ce1ff9f33a7545bd2dc58765fa6d45caf0237fc51"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/infographic-export/source-evidence.json",
+            "scope": "Source-bound Windows export controls without an SVG converter; no SVG conversion or agent performance test.",
+            "sha256": "49b7cc8fb257aa02d893fbda36f2a9a323bbc9c74bf4e68a8f55d9408bdd0b1d"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/infographic-export/windows-result.json",
+            "scope": "Source-bound Windows export controls without an SVG converter; no SVG conversion or agent performance test.",
+            "sha256": "901eb6c1ad24472af195bf01e29fa74d211305035adcaf978773478dbe55cd7c"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/infographic-export/windows-latest-result.json",
+            "scope": "Source-bound Windows export controls without an SVG converter; no SVG conversion or agent performance test.",
+            "sha256": "7d41da82c822f77b243ad29070e0b932a4fc87dff26a93fd12dc186b94e01a64"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/infographic-export/current-help.txt",
+            "scope": "Source-bound Windows export controls without an SVG converter; no SVG conversion or agent performance test.",
+            "sha256": "b5826e6a4a79d28bc0d2afe17ac855e98a28f581777e1233bc78bd0e07ec9154"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -16840,8 +16871,34 @@
       },
       "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/reddit-verified-gtm-registry/claude-md-generator",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-retired-gemini-model.md",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "b35ea4546482a95e8303997a399f798a4bcacdd5a161b7bf1d8381565a20b17a"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/reproduce.py",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "4ac81f4ec14698f1a1bd9f1d1896f87a2703650300376e207b20ae254e8c6476"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/source-evidence.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "0a51e78d4b4441dd8f7cf8f3de1934ec6a84c359d64dad5832cb42640c66ad43"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/windows-result.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/linux-result.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -17141,8 +17198,34 @@
       },
       "mirrored_path": "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/meeting-brief-generator",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-retired-gemini-model.md",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "b35ea4546482a95e8303997a399f798a4bcacdd5a161b7bf1d8381565a20b17a"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/reproduce.py",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "4ac81f4ec14698f1a1bd9f1d1896f87a2703650300376e207b20ae254e8c6476"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/source-evidence.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "0a51e78d4b4441dd8f7cf8f3de1934ec6a84c359d64dad5832cb42640c66ad43"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/windows-result.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/linux-result.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -17185,8 +17268,34 @@
       },
       "mirrored_path": "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/newsletter-digest",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-retired-gemini-model.md",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "b35ea4546482a95e8303997a399f798a4bcacdd5a161b7bf1d8381565a20b17a"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/reproduce.py",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "4ac81f4ec14698f1a1bd9f1d1896f87a2703650300376e207b20ae254e8c6476"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/source-evidence.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "0a51e78d4b4441dd8f7cf8f3de1934ec6a84c359d64dad5832cb42640c66ad43"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/windows-result.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/linux-result.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -17207,8 +17316,34 @@
       },
       "mirrored_path": "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/noise2blog",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-retired-gemini-model.md",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "b35ea4546482a95e8303997a399f798a4bcacdd5a161b7bf1d8381565a20b17a"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/reproduce.py",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "4ac81f4ec14698f1a1bd9f1d1896f87a2703650300376e207b20ae254e8c6476"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/source-evidence.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "0a51e78d4b4441dd8f7cf8f3de1934ec6a84c359d64dad5832cb42640c66ad43"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/windows-result.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/linux-result.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -17229,8 +17364,34 @@
       },
       "mirrored_path": "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/outreach-sequence-builder",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-retired-gemini-model.md",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "b35ea4546482a95e8303997a399f798a4bcacdd5a161b7bf1d8381565a20b17a"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/reproduce.py",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "4ac81f4ec14698f1a1bd9f1d1896f87a2703650300376e207b20ae254e8c6476"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/source-evidence.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "0a51e78d4b4441dd8f7cf8f3de1934ec6a84c359d64dad5832cb42640c66ad43"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/windows-result.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/linux-result.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -17295,8 +17456,34 @@
       },
       "mirrored_path": "included/skills/by-category/finance-commerce-forecasting/reddit-verified-gtm-registry/producthunt-launch-kit",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-retired-gemini-model.md",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "b35ea4546482a95e8303997a399f798a4bcacdd5a161b7bf1d8381565a20b17a"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/reproduce.py",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "4ac81f4ec14698f1a1bd9f1d1896f87a2703650300376e207b20ae254e8c6476"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/source-evidence.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "0a51e78d4b4441dd8f7cf8f3de1934ec6a84c359d64dad5832cb42640c66ad43"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/windows-result.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/linux-result.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -17317,8 +17504,34 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/reddit-verified-gtm-registry/reddit-icp-monitor",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-retired-gemini-model.md",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "b35ea4546482a95e8303997a399f798a4bcacdd5a161b7bf1d8381565a20b17a"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/reproduce.py",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "4ac81f4ec14698f1a1bd9f1d1896f87a2703650300376e207b20ae254e8c6476"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/source-evidence.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "0a51e78d4b4441dd8f7cf8f3de1934ec6a84c359d64dad5832cb42640c66ad43"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/windows-result.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/linux-result.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -17339,8 +17552,34 @@
       },
       "mirrored_path": "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/reddit-post-engine",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-retired-gemini-model.md",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "b35ea4546482a95e8303997a399f798a4bcacdd5a161b7bf1d8381565a20b17a"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/reproduce.py",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "4ac81f4ec14698f1a1bd9f1d1896f87a2703650300376e207b20ae254e8c6476"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/source-evidence.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "0a51e78d4b4441dd8f7cf8f3de1934ec6a84c359d64dad5832cb42640c66ad43"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/windows-result.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/linux-result.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -17387,6 +17626,31 @@
           {
             "path": "docs/research-authoring-and-api.md",
             "sha256": "a3d1eced629ef1316309e756a94d819bb8eeda79e1576e88e5426a756b6269c3"
+          },
+          {
+            "path": "docs/research-retired-gemini-model.md",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "b35ea4546482a95e8303997a399f798a4bcacdd5a161b7bf1d8381565a20b17a"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/reproduce.py",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "4ac81f4ec14698f1a1bd9f1d1896f87a2703650300376e207b20ae254e8c6476"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/source-evidence.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "0a51e78d4b4441dd8f7cf8f3de1934ec6a84c359d64dad5832cb42640c66ad43"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/windows-result.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/gemini-retirement/linux-result.json",
+            "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
+            "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
           }
         ],
         "status": "in_progress"

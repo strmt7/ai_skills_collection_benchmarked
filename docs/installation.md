@@ -44,11 +44,15 @@ Some reviewed instructions have known limitations:
   dictionary, and its image example does not always produce JPEGs. [See the tested cases](research-pdf-metadata.md).
 - Several text examples in the pinned theme showcase have low contrast.
   [Review the measured colors](research-theme-contrast.md) before applying a theme.
+- The pinned infographic exporter can report success without producing an SVG
+  when its converter is missing. [See the export control](research-infographic-export.md).
 
 - The pinned XLSX helpers can misreport simulated timeouts and literal error
   text. [See the recalculation controls](research-xlsx-recalculation.md).
 - The pinned docs-from-code fallbacks can miss or misidentify routes, and the
   TypeScript fallback failed to start in the tested environment. [See the extractor controls](research-docs-from-code.md).
+- Eight skills hardcode a retired Gemini model; one more names it while allowing
+  an alternative. [See the model review](research-retired-gemini-model.md).
 
 These examples are not an exhaustive review of the catalog.
 
