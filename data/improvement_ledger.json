@@ -4894,12 +4894,12 @@
           {
             "path": "docs/research-anndata-10x.md",
             "scope": "Partial input and output API review with specific upstream corrections; not a full migration review or agent evaluation.",
-            "sha256": "ef93b4e4f5359c9e69f614c64316418986152f3303561af0dc0641867fbb271f"
+            "sha256": "e34968ce2c8c59c0189fd0f3d082603c7a4c21a88ac56af8b384252984344963"
           },
           {
             "path": "artifacts/research/2026-10-30/anndata-10x-controls/result.json",
-            "scope": "Synthetic 10x, Matrix Market, Excel, HDF5 element and backed-persistence controls on Windows with AnnData 0.13.4 and Scanpy 1.12.5.",
-            "sha256": "4135a00c8ab055499bbc9a2b9fbf84aa6b3a406f92d16327cd84fab3314de6d6"
+            "scope": "Synthetic 10x, Matrix Market, Excel, HDF5 element, backed-persistence and collection controls on Windows with AnnData 0.13.4 and Scanpy 1.12.5.",
+            "sha256": "7d578e2ab8c1cfd72010ccd158303e142b5b27f54a6a2d98574d38e5ff9676ab"
           }
         ],
         "status": "in_progress"

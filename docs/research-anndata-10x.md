@@ -59,6 +59,12 @@ states that changes to slots such as `obs` are not saved automatically in
 backed mode. The newer upstream reference tells readers to write a new file for
 metadata changes. Do not rely on the pinned example to persist annotations.
 
+The mirror's `AnnCollection` examples pass file-path strings where the
+[documented API](https://anndata.readthedocs.io/en/stable/generated/anndata.experimental.AnnCollection.html)
+expects AnnData objects. The tested version raised `AttributeError` for paths;
+opening the same files as backed AnnData objects produced the expected
+four-observation collection. The newer upstream reference uses backed objects.
+
 ## Component control
 
 The [control](../artifacts/research/2026-10-30/anndata-10x-controls/reproduce.py)
@@ -77,7 +83,8 @@ python artifacts/research/2026-10-30/anndata-10x-controls/reproduce.py
 
 The control also verifies a generic Matrix Market import with separately
 assigned labels, an Excel import with an explicit sheet, an HDF5 element
-round-trip, and backed-mode persistence versus an explicit write. The tested
+round-trip, backed-mode persistence versus an explicit write, and backed-object
+collection construction. The tested
 environment passed `pip check`; its installed package listing is
 retained locally with SHA-256
 `964bd490d9852721cb0909cd0c428de2e0072cbf414d7bf1dc685bb65864594e`.
@@ -85,7 +92,7 @@ It is a record of the environment, not a portable, hash-locked dependency
 specification. The synthetic fixture is a component control, not a real
 dataset, full skill evaluation, or agent benchmark.
 
-The two Scanpy documentation pages, the AnnData release notes and the four
+The two Scanpy documentation pages, the AnnData release notes and the five
 AnnData reader documentation pages were read on 30 October 2026 with Crawl4AI
 `0.9.5+catalog.portable4`; each native result returned HTTP 200. Their respective
 native-result SHA-256 digests are
@@ -95,6 +102,7 @@ native-result SHA-256 digests are
 `369f08292281c87460ec1d1df2c14aa1e5d7af257dc8dfb8ce35bfefa9399216`,
 `1623580abd9f7fb1701624bb7dab293c4cf58eaa196eebc6203d921096eb3fa5`,
 `ffb12d278eadcdacd3b0e3202942639e0cc419b6e81e3ddbc7d5e48774d8e57e`,
-and `f49fb99e4c34fd6ea45eedd1e9d433c17720ce2b107c12f926beb491b09154eb`.
+`f49fb99e4c34fd6ea45eedd1e9d433c17720ce2b107c12f926beb491b09154eb`,
+and `346f6780b47ba763d066c6cfdf0df0230551617edfdf63183ff22fe16a3bbd81`.
 The versioned upstream skill files were captured through the Git Data API and
 checked against their Git blob IDs. Native captures remain local evidence.

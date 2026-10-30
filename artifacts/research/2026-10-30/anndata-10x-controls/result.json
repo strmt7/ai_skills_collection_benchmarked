@@ -71,6 +71,29 @@
     10,
     20
   ],
+  "anncollection_paths_error": "'str' object has no attribute 'var_names'",
+  "anncollection_backed_shape": [
+    4,
+    2
+  ],
+  "anncollection_backed_values": [
+    [
+      77.0,
+      2.0
+    ],
+    [
+      3.0,
+      4.0
+    ],
+    [
+      77.0,
+      2.0
+    ],
+    [
+      3.0,
+      4.0
+    ]
+  ],
   "deprecated_top_level_imports": {
     "read_csv": [
       "Importing read_csv from `anndata` is deprecated. Import anndata.io.read_csv instead."

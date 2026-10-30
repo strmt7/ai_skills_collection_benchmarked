@@ -14,6 +14,7 @@ import numpy as np
 import openpyxl
 import pandas as pd
 import scanpy as sc
+from anndata.experimental import AnnCollection
 
 
 def main():
@@ -35,6 +36,8 @@ def main():
             ad.read_10x_h5(path)
         except AttributeError as exc:
             missing = str(exc)
+            if "read_10x_h5" not in missing:
+                raise
         else:
             raise RuntimeError("AnnData unexpectedly provides read_10x_h5")
         result = sc.read_10x_h5(path)
@@ -65,6 +68,8 @@ def main():
             ad.read_10x_mtx(mtx_dir)
         except AttributeError as exc:
             missing_mtx = str(exc)
+            if "read_10x_mtx" not in missing_mtx:
+                raise
         else:
             raise RuntimeError("AnnData unexpectedly provides read_10x_mtx")
         mtx = sc.read_10x_mtx(mtx_dir)
@@ -84,6 +89,8 @@ def main():
                 ad.read_mtx(plain_mtx, var_names="features.tsv", obs_names="barcodes.tsv")
             except TypeError as exc:
                 bad_mtx_args = str(exc)
+                if "var_names" not in bad_mtx_args:
+                    raise
             else:
                 raise RuntimeError("Unexpected acceptance of unsupported read_mtx arguments")
         generic = ad.io.read_mtx(plain_mtx).T
@@ -110,6 +117,8 @@ def main():
                 ad.read_excel(excel_path)
             except TypeError as exc:
                 missing_sheet = str(exc)
+                if "sheet" not in missing_sheet:
+                    raise
             else:
                 raise RuntimeError("Unexpected acceptance of read_excel without a sheet")
         excel = ad.io.read_excel(excel_path, sheet="Data")
@@ -155,6 +164,30 @@ def main():
         saved_obs = rewritten.obs["new_column"].tolist()
         if saved_obs != [10, 20]:
             raise RuntimeError("explicit write did not preserve observation metadata")
+        paths = [backed_path, new_path]
+        try:
+            AnnCollection([str(item) for item in paths], join_obs="inner", join_vars="inner")
+        except AttributeError as exc:
+            collection_paths_error = str(exc)
+            if "var_names" not in collection_paths_error:
+                raise
+        else:
+            raise RuntimeError("unexpected acceptance of file paths in AnnCollection")
+        datasets = [ad.read_h5ad(item, backed="r") for item in paths]
+        try:
+            collection = AnnCollection(datasets, join_obs="inner", join_vars="inner", index_unique="-")
+            collection_shape = list(collection.shape)
+            collection_cells = collection.obs_names.tolist()
+            collection_values = np.asarray(collection[:].X).tolist()
+            if (
+                collection_shape != [4, 2]
+                or len(set(collection_cells)) != 4
+                or collection_values != [[77, 2], [3, 4], [77, 2], [3, 4]]
+            ):
+                raise RuntimeError("backed AnnCollection did not preserve both datasets")
+        finally:
+            for dataset in datasets:
+                dataset.file.close()
         deprecations = {}
         for name in ("read_csv", "read_mtx"):
             with warnings.catch_warnings(record=True) as captured:
@@ -195,6 +228,9 @@ def main():
                     "backed_obs_persisted_without_write": obs_persisted,
                     "backed_x_value_after_reopen": x_value,
                     "explicit_write_obs_values": saved_obs,
+                    "anncollection_paths_error": collection_paths_error,
+                    "anncollection_backed_shape": collection_shape,
+                    "anncollection_backed_values": collection_values,
                     "deprecated_top_level_imports": deprecations,
                     "cells": cells,
                     "genes": genes,
