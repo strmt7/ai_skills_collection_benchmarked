@@ -2452,8 +2452,19 @@
       },
       "mirrored_path": "included/skills/by-category/documents-spreadsheets-presentations/official-reference/docx-anthropics",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-docx-portability.md",
+            "scope": "Partial DOCX skill review: isolated module resolution and page-size controls; no agent benchmark or rendering validation.",
+            "sha256": "3bc0aca9503f4554b3b6b953405fdb59c59a509668692f38f217b766d2d31e90"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/docx-controls/result.json",
+            "scope": "Windows Node.js 24.22.1 and docx 9.15.0 controls; no claim about other versions or hosts.",
+            "sha256": "59f96724071cbdb0be4e1b746e03f26b98f86fbec21863f01ec295e4c5e4fa5f"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],

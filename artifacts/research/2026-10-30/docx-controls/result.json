@@ -1,0 +1,30 @@
+{
+  "node": "v24.22.1",
+  "npm": "11.19.1",
+  "docx": "9.15.0",
+  "global_resolution": {
+    "explicit_loaded": true,
+    "package_result": "MODULE_NOT_FOUND"
+  },
+  "local_resolution": {
+    "local_loaded": true
+  },
+  "missing_fs_reference_error": true,
+  "page_sizes": {
+    "default": {
+      "w": "11906",
+      "h": "16838",
+      "orient": "portrait"
+    },
+    "letter": {
+      "w": "12240",
+      "h": "15840",
+      "orient": "portrait"
+    },
+    "landscape": {
+      "w": "15840",
+      "h": "12240",
+      "orient": "landscape"
+    }
+  }
+}
