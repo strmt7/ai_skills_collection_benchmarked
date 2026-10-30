@@ -10,7 +10,7 @@ from fractions import Fraction
 from pathlib import Path
 from typing import Any
 
-from _trial_comparisons import SCORED, STATUSES
+from _trial_comparisons import SCORED, STATUSES, TOKEN_KEYS, compare_blocks
 from _trial_transcript import strict_json
 from summarize_agent_trials import summarize
 
@@ -19,6 +19,75 @@ def fraction(value: Fraction | None) -> dict[str, int] | None:
     if value is None:
         return None
     return {"numerator": value.numerator, "denominator": value.denominator}
+
+
+def summarize_paired_tokens(reports: list[dict[str, Any]], condition: str) -> dict[str, Any]:
+    """Average fully observed successful paired deltas with equal weight per task."""
+    if not reports:
+        raise ValueError("A nonempty task set is required for paired token summaries")
+    tasks = []
+    for report in reports:
+        comparison = report["block_comparison"]["comparisons"][condition]
+        blocks = comparison["blocks"]
+        planned = comparison["planned_blocks"]
+        if (
+            type(planned) is not int
+            or planned < 1
+            or not isinstance(blocks, list)
+            or len(blocks) != planned
+            or report["conditions"]["default"]["planned_attempts"] != planned
+            or report["conditions"][condition]["planned_attempts"] != planned
+        ):
+            raise ValueError("Paired token block denominator is inconsistent")
+        deltas = []
+        for block in blocks:
+            delta = block["token_delta"]
+            if delta is None:
+                continue
+            if (
+                block["outcome"] != "both_passed"
+                or not isinstance(delta, dict)
+                or set(delta) != set(TOKEN_KEYS)
+                or any(type(delta[key]) is not int for key in TOKEN_KEYS)
+            ):
+                raise ValueError("Invalid paired token delta")
+            deltas.append(delta)
+        if type(comparison["token_comparable_blocks"]) is not int or comparison["token_comparable_blocks"] != len(
+            deltas
+        ):
+            raise ValueError("Paired token comparable-block count is inconsistent")
+        means = (
+            {key: Fraction(sum(delta[key] for delta in deltas), planned) for key in TOKEN_KEYS}
+            if len(deltas) == planned
+            else None
+        )
+        tasks.append(
+            {"task_id": report["task_id"], "planned_blocks": planned, "comparable_blocks": len(deltas), "means": means}
+        )
+    fully_comparable = [task for task in tasks if task["means"] is not None]
+    average = (
+        {key: fraction(sum((task["means"][key] for task in tasks), Fraction()) / len(tasks)) for key in TOKEN_KEYS}
+        if len(fully_comparable) == len(tasks)
+        else None
+    )
+    return {
+        "planned_tasks": len(tasks),
+        "fully_comparable_tasks": len(fully_comparable),
+        "planned_blocks": sum(task["planned_blocks"] for task in tasks),
+        "comparable_blocks": sum(task["comparable_blocks"] for task in tasks),
+        "equal_task_weight_mean_delta": average,
+        "tasks": [
+            {
+                "task_id": task["task_id"],
+                "planned_blocks": task["planned_blocks"],
+                "comparable_blocks": task["comparable_blocks"],
+                "mean_delta": {key: fraction(value) for key, value in task["means"].items()}
+                if task["means"] is not None
+                else None,
+            }
+            for task in tasks
+        ],
+    }
 
 
 def aggregate(reports: list[dict[str, Any]], definitions: list[dict[str, Any]]) -> dict[str, Any]:
@@ -61,6 +130,8 @@ def aggregate(reports: list[dict[str, Any]], definitions: list[dict[str, Any]]) 
         rates: dict[str, Fraction | None] = {}
         if any(attempt["condition"] not in conditions for attempt in report["attempts"]):
             raise ValueError("Attempt has an unplanned condition")
+        if report["block_comparison"] != compare_blocks(report["attempts"], conditions):
+            raise ValueError("Matched block comparisons disagree with the attempts")
         for condition in sorted(conditions):
             statuses = [attempt["status"] for attempt in report["attempts"] if attempt["condition"] == condition]
             if not statuses or any(status not in STATUSES for status in statuses):
@@ -123,6 +194,9 @@ def aggregate(reports: list[dict[str, Any]], definitions: list[dict[str, Any]]) 
         "condition_definitions": definitions[0],
         "tasks": rows,
         "comparisons": comparisons,
+        "token_comparisons": {
+            condition: summarize_paired_tokens(reports, condition) for condition in sorted(conditions - {"default"})
+        },
         "quality_superiority_established": False,
         "limitations": [
             "Descriptive task-weighted differences do not establish statistical significance or generalization.",
@@ -130,7 +204,9 @@ def aggregate(reports: list[dict[str, Any]], definitions: list[dict[str, Any]]) 
             "A frozen plan and matching hashes alone do not establish preregistration or grading authenticity.",
             "Requested model identity is not proof of the provider-resolved model snapshot.",
             "Task IDs and protocol hashes do not by themselves prove that tasks are independent.",
-            "This report does not compare token cost or elapsed time across tasks.",
+            "Paired token differences require both attempts to pass and usage for every planned block; they are not priced cost or proof of efficiency.",
+            "Input counts include cached input; output counts include reported reasoning output and are not added to it again.",
+            "This report does not compare elapsed time across tasks.",
         ],
     }
 

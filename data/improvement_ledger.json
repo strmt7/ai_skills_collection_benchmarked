@@ -16625,8 +16625,34 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/creative-reference/twwch-comfyui-workflow-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-comfyui-model-lifecycle.md",
+            "scope": "Source-bound retired Anthropic model recommendation; no ComfyUI, model request or agent performance test.",
+            "sha256": "12953bbfea6da70551ecaf4f2bc88787125a4a72e66a0f04becfc700ccec3dd5"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/comfyui-model-lifecycle/reproduce.py",
+            "scope": "Source-bound retired Anthropic model recommendation; no ComfyUI, model request or agent performance test.",
+            "sha256": "da5e5b78c987a782dcad9f619b8bb83ee508a7133afec8805fcb955e27a1f051"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/comfyui-model-lifecycle/source-evidence.json",
+            "scope": "Source-bound retired Anthropic model recommendation; no ComfyUI, model request or agent performance test.",
+            "sha256": "90d46da976b59435d6554a80824a1278c05ce75321b59cb12201a6050d917d26"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/comfyui-model-lifecycle/windows-result.json",
+            "scope": "Source-bound retired Anthropic model recommendation; no ComfyUI, model request or agent performance test.",
+            "sha256": "7827c1a279890bac396451028cf17889e4bab08afe0d8328d84ab255066fbd0c"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/comfyui-model-lifecycle/linux-result.json",
+            "scope": "Source-bound retired Anthropic model recommendation; no ComfyUI, model request or agent performance test.",
+            "sha256": "7827c1a279890bac396451028cf17889e4bab08afe0d8328d84ab255066fbd0c"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],

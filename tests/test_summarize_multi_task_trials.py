@@ -6,6 +6,7 @@ from pathlib import Path
 import pytest
 import summarize_agent_trials as single
 import summarize_multi_task_trials as target
+from _trial_comparisons import compare_blocks
 
 pytest_plugins = ("test_summarize_agent_trials",)
 
@@ -14,13 +15,23 @@ DEFINITIONS = {"default": {"skills": []}, "candidate": {"skills": ["fixed-bundle
 
 
 def report(task, baseline, candidate):
+    attempts = [
+        *(
+            {"repetition": index, "condition": "default", "status": status, "usage": None}
+            for index, status in enumerate(baseline, 1)
+        ),
+        *(
+            {"repetition": index, "condition": "candidate", "status": status, "usage": None}
+            for index, status in enumerate(candidate, 1)
+        ),
+    ]
     return {
         "task_id": task,
         "protocol_sha256": task * 64,
         "grading_manifest_sha256": "f" * 64,
         "expected_grading_cases": 2,
         "limitations": ["fixture limitation"],
-        "block_comparison": {"baseline": "default", "comparisons": {}},
+        "block_comparison": compare_blocks(attempts, set(DEFINITIONS)),
         "model_requested": "model",
         "reasoning_effort_requested": "high",
         "partition": "development",
@@ -29,10 +40,7 @@ def report(task, baseline, candidate):
             "default": {"planned_attempts": len(baseline)},
             "candidate": {"planned_attempts": len(candidate)},
         },
-        "attempts": [
-            *({"condition": "default", "status": status} for status in baseline),
-            *({"condition": "candidate", "status": status} for status in candidate),
-        ],
+        "attempts": attempts,
     }
 
 
@@ -50,6 +58,74 @@ def test_tasks_have_equal_weight_instead_of_pooled_attempt_weight():
         "equal_task_weight_mean_difference": {"numerator": 1, "denominator": 2},
     }
     assert result["quality_superiority_established"] is False
+
+
+def test_token_differences_use_equal_task_weight_and_paired_blocks():
+    first = report("a", ["task_passed", "task_passed"], ["task_passed", "task_passed"])
+    second = report("b", ["task_passed"], ["task_passed"])
+    for item, inputs in ((first, (100, 100, 110, 130)), (second, (100, 90))):
+        for attempt, count in zip(item["attempts"], inputs, strict=True):
+            attempt["usage"] = {"input_tokens": count, "output_tokens": count // 10}
+        item["block_comparison"] = compare_blocks(item["attempts"], set(DEFINITIONS))
+    result = target.aggregate([first, second], [DEFINITIONS, DEFINITIONS])
+    comparison = result["token_comparisons"]["candidate"]
+    assert comparison["planned_tasks"] == 2
+    assert comparison["fully_comparable_tasks"] == 2
+    assert comparison["planned_blocks"] == 3
+    assert comparison["comparable_blocks"] == 3
+    assert comparison["equal_task_weight_mean_delta"]["input_tokens"] == {"numerator": 5, "denominator": 1}
+    assert comparison["equal_task_weight_mean_delta"]["output_tokens"] == {"numerator": 1, "denominator": 2}
+    assert comparison["tasks"][0]["mean_delta"]["input_tokens"] == {"numerator": 20, "denominator": 1}
+
+
+@pytest.mark.parametrize(
+    "status,usage", [("task_passed", None), ("task_failed", {"input_tokens": 50, "output_tokens": 5})]
+)
+def test_missing_or_nonpassing_paired_usage_prevents_aggregate(status, usage):
+    first = report("a", ["task_passed"], ["task_passed"])
+    second = report("b", ["task_passed"], [status])
+    for item in (first, second):
+        for attempt in item["attempts"]:
+            attempt["usage"] = {"input_tokens": 100, "output_tokens": 10}
+    second["attempts"][1]["usage"] = usage
+    for item in (first, second):
+        item["block_comparison"] = compare_blocks(item["attempts"], set(DEFINITIONS))
+    result = target.aggregate([first, second], [DEFINITIONS, DEFINITIONS])
+    comparison = result["token_comparisons"]["candidate"]
+    assert comparison["planned_blocks"] == 2
+    assert comparison["comparable_blocks"] == 1
+    assert comparison["fully_comparable_tasks"] == 1
+    assert comparison["equal_task_weight_mean_delta"] is None
+    assert comparison["tasks"][1]["mean_delta"] is None
+
+
+def test_inconsistent_paired_block_data_is_rejected():
+    item = report("a", ["task_passed"], ["task_passed"])
+    for attempt in item["attempts"]:
+        attempt["usage"] = {"input_tokens": 100, "output_tokens": 10}
+    item["block_comparison"] = compare_blocks(item["attempts"], set(DEFINITIONS))
+    item["block_comparison"]["comparisons"]["candidate"]["blocks"][0]["token_delta"]["input_tokens"] = 99
+    with pytest.raises(ValueError, match="disagree with the attempts"):
+        target.aggregate([item], [DEFINITIONS])
+
+
+def test_paired_token_task_means_remain_exact_fractions():
+    first = report("a", ["task_passed", "task_passed"], ["task_passed", "task_passed"])
+    second = report("b", ["task_passed"], ["task_passed"])
+    for item, inputs in ((first, (100, 100, 101, 102)), (second, (100, 100))):
+        for attempt, count in zip(item["attempts"], inputs, strict=True):
+            attempt["usage"] = {"input_tokens": count, "output_tokens": 0}
+        item["block_comparison"] = compare_blocks(item["attempts"], set(DEFINITIONS))
+    result = target.aggregate([first, second], [DEFINITIONS, DEFINITIONS])
+    assert result["token_comparisons"]["candidate"]["equal_task_weight_mean_delta"]["input_tokens"] == {
+        "numerator": 3,
+        "denominator": 4,
+    }
+
+
+def test_empty_token_task_set_is_rejected():
+    with pytest.raises(ValueError, match="nonempty"):
+        target.summarize_paired_tokens([], "candidate")
 
 
 @pytest.mark.parametrize("status", ["harness_error", "invalid_scope", "timed_out"])

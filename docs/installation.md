@@ -55,6 +55,8 @@ Some reviewed instructions have known limitations:
   an alternative. [See the model review](research-retired-gemini-model.md).
 - One Google image-skill example names a shut-down preview model; the related
   OpenRouter ID is a separate provider entry. [See the image-model review](research-gemini-image-lifecycle.md).
+- The ComfyUI skill recommends a retired Anthropic model while allowing a
+  different model choice. [See the model review](research-comfyui-model-lifecycle.md).
 
 These examples are not an exhaustive review of the catalog.
 

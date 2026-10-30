@@ -138,6 +138,15 @@ has an unscored attempt on any planned task, its aggregate difference is
 unavailable; that attempt remains visible rather than being counted as a fail
 or silently dropped.
 
+The report also summarizes matched input and output token differences. A block
+is comparable only when both attempts passed and both recorded usage. It first
+averages the paired deltas within each task, then weights tasks equally. A
+task mean is unavailable if any of its planned blocks is not comparable; the
+across-task mean is unavailable if any task mean is missing. Counts and
+individual blocks remain visible. Input includes cached input and output
+already includes reported reasoning output. These counts are not priced cost,
+statistical significance or proof of greater efficiency.
+
 Run the read-only tool with `--plan <plan.json>`. The
 [historical example plan](../benchmarks/agent-effectiveness/development/multi-task-historical-example.json)
 reads the already recorded v2 trials. It was created after those trials and is
@@ -145,7 +154,7 @@ not preregistration or a new experiment. It contains one task and therefore
 reports the existing zero difference without establishing an advantage. A plan
 hash alone cannot prove when a plan was committed, whether tasks are independent,
 or whether a grader actually ran. These descriptive figures are not a
-significance test, collection-wide conclusion, token-cost comparison or evidence
+significance test, collection-wide conclusion, priced-cost comparison or evidence
 of a provider-resolved model identity.
 
 With the `reports` extra installed, render the same verified plan with

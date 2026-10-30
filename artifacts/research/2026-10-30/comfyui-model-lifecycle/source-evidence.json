@@ -1,0 +1,17 @@
+{
+  "observed_on": "2026-10-30",
+  "pinned_source_repo": "twwch/comfyui-workflow-skill",
+  "current_source_repo": "LingyiChen-AI/comfyui-workflow-skill",
+  "pinned_and_current_commit": "61e6b7984de7f415a8df59c97522265cac6d3b1b",
+  "upstream_skill_git_blob": "c79dad49cfcff7f4c9871fa966125fc003c55141",
+  "upstream_skill_sha256": "1deff1940beaa6ea91ff3dfdb4ff85f68bdf1e64bdfa163415507ac0b9621ebf",
+  "mirror_skill_sha256": "3dd6746ab187a97c8f5493be5ac2820fbfd523104d2494fb6af811cfd3dfb024",
+  "upstream_ref_api_sha256": "292c2bdf23d93b33b4b126709ae9e611e4f47f45268b6b9f5e1a4498aa29b90a",
+  "upstream_skill_api_sha256": "b8ab4389ba59a754f4b02f83e5bc7264a3c7b6c33be0a1dc3fa182cc0dcf92f9",
+  "anthropic_lifecycle_url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+  "anthropic_native_sha256": "501ed060c1b99f3d08739485509d15cd43cf449f6c59b4767ae61c670339def1",
+  "anthropic_crawl_provider": "0.9.5+catalog.portable4",
+  "anthropic_status": 200,
+  "anthropic_scope_reviewed": true,
+  "model_requests_executed": false
+}

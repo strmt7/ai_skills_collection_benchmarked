@@ -1,0 +1,8 @@
+{
+  "recommended_model": "claude-sonnet-4-20250514",
+  "anthropic_api_status": "retired",
+  "anthropic_table_retirement_date": "June 15, 2026",
+  "skill_also_requests_model_preference": true,
+  "model_requests_executed": false,
+  "agent_scored": false
+}
