@@ -104,6 +104,12 @@ copies a near-identical Scala implementation into the image, and its verifier
 can report a pass after a simulated nonzero test exit. The [source-bound review](research-skillsbench-scala.md)
 records the controls and their limits. No Scala task or model run was scored.
 
+For the development task `dialogue-parser`, the upstream test module accepted
+a derived output-only fixture without the required parser and with an unrelated
+DOT edge. The [controlled review](research-skillsbench-dialogue.md) also
+records the original fixture failure and a negative visualization control. It
+does not report a benchmark-harness or model score.
+
 Remaining qualification: component rights, current-runner compatibility,
 trusted oracle/verifier isolation, controls and actual paired trials. Do not
 pool a corrected protocol with historical leaderboard results.

@@ -1,0 +1,54 @@
+{
+  "platform": "Linux",
+  "control_python": "3.12.3",
+  "pytest_python": "3.12.3",
+  "pytest": "8.3.4",
+  "input_sha256": {
+    "verifier": "d0effcfa8ba898260bce69ba8a0c4852f4959a83e9130cc69c13847f0f05b01c",
+    "script": "f63dcc28386cb2f963362eb78d40af75eb362945646c3c86e2a699bb2f14b409",
+    "oracle": "7c26e8db8b9624f73d3f0ee6406a5eda0a2044ed401efbb98d9eff8092a57f15"
+  },
+  "nodes": 204,
+  "edges": 321,
+  "missing_edge_text_fields": 146,
+  "dot_edges": 1,
+  "dot_edge_present_in_graph": false,
+  "benchmark_runner_executed": false,
+  "model_scored": false,
+  "cases": {
+    "original_oracle": {
+      "pytest_exit": 1,
+      "passed": 34,
+      "failed": 1,
+      "skipped": 0,
+      "errors": 0,
+      "failing_tests": [
+        "test_system_basics[schema_validation]"
+      ],
+      "solution_present": false
+    },
+    "normalized_output_only": {
+      "pytest_exit": 0,
+      "passed": 35,
+      "failed": 0,
+      "skipped": 0,
+      "errors": 0,
+      "failing_tests": [],
+      "solution_present": false
+    },
+    "invalid_dot": {
+      "pytest_exit": 1,
+      "passed": 31,
+      "failed": 4,
+      "skipped": 0,
+      "errors": 0,
+      "failing_tests": [
+        "test_visualization_validity[header]",
+        "test_visualization_validity[syntax]",
+        "test_visualization_validity[shapes]",
+        "test_visualization_validity[content]"
+      ],
+      "solution_present": false
+    }
+  }
+}
