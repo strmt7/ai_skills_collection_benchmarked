@@ -19,14 +19,15 @@ checks enabled. Automatic dependency-update PR creation is disabled.
 
 ## Quality gates (must pass before push)
 
-Every push runs the following gates in CI; you can run all of them
-locally with the toolchain installed via `pip install -e '.[test,lint]'`:
+The core Python checks run on pushes and can be run locally after
+`pip install -e '.[test,lint]'`. Specialized workflows can have path filters
+and additional prerequisites; see their linked instructions and actual triggers.
 
 | Gate | Command | Workflow |
 | --- | --- | --- |
-| Lint | `ruff check tools tests` | `.github/workflows/ruff.yml` |
-| Format | `ruff format --check tools tests` | `.github/workflows/ruff.yml` |
-| Types | `mypy tools tests` (supported matrix: 3.11/3.12/3.13/3.14) | `.github/workflows/mypy.yml` |
+| Lint | `ruff check tools tests benchmarks/agent-effectiveness/graders` | `.github/workflows/ruff.yml` |
+| Format | `ruff format --check tools tests benchmarks/agent-effectiveness/graders` | `.github/workflows/ruff.yml` |
+| Types | `mypy tools tests benchmarks/agent-effectiveness/graders` (local default: 3.11; CI passes `--python-version` for 3.11/3.12/3.13/3.14) | `.github/workflows/mypy.yml` |
 | Catalog | `python3 tools/validate_catalog.py` | `.github/workflows/offline-validation.yml` |
 | Mirror byte admission | `python3 tools/check_mirror_content_admission.py --json` | `.github/workflows/offline-validation.yml` |
 | Mandatory agent tools | `python3 tools/validate_agent_tool_policy.py --check --json` | `.github/workflows/offline-validation.yml` |
@@ -39,7 +40,7 @@ locally with the toolchain installed via `pip install -e '.[test,lint]'`:
 | Native fuzzing evidence | `python3 benchmarks/component-controls/native-testing/run_native.py --check`; [Windows runtime controls](docs/research-native-testing-contracts.md) | `.github/workflows/{offline-validation,native-fuzzing-controls}.yml` |
 | Measured Python coverage | Complete matrix XML bundle, source hashes and Codecov OIDC; see [coverage scope](docs/coverage.md) | `.github/workflows/offline-validation.yml` |
 | Tests | `python3 -m pytest -q -n auto` (supported matrix: 3.11/3.12/3.13/3.14) | `.github/workflows/offline-validation.yml` |
-| Compile | `python3 -m compileall -q tools tests` | `.github/workflows/offline-validation.yml` |
+| Compile | `python3 -m compileall -q tools tests benchmarks/agent-effectiveness/graders` | `.github/workflows/offline-validation.yml` |
 | Image CLI acceptance | Source-locked preparation, `npm ci --ignore-scripts`, audit and independent intercepted controls; see [`repair evidence`](docs/research-image-cli-acceptance.md) | `.github/workflows/image-cli-controls.yml` |
 | Crawl4AI source build | Two reproducible wheels, complete hashed installations, source admission and identical native controls; see [`provider inputs`](toolchains/crawl4ai/README.md) | `.github/workflows/crawl4ai-provider.yml` |
 | CocoIndex local provider | Normal hashed installation, provider/model admission, native indexing and verified source spans; see [`setup and search`](toolchains/cocoindex-code/README.md) | `.github/workflows/cocoindex-provider.yml` |

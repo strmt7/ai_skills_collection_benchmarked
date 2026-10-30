@@ -1859,15 +1859,15 @@ python3 tools/validate_source_lock.py        # offline structural + mirror-hash 
 python3 tools/run_static_benchmarks.py --check
 python3 tools/audit_skill_quality.py --check
 python3 tools/check_no_secret_patterns.py --history
-ruff check tools tests
-ruff format --check tools tests
-mypy tools tests
+ruff check tools tests benchmarks/agent-effectiveness/graders
+ruff format --check tools tests benchmarks/agent-effectiveness/graders
+mypy tools tests benchmarks/agent-effectiveness/graders
 python3 -m pytest -q -n auto
-python3 -m compileall -q tools tests
+python3 -m compileall -q tools tests benchmarks/agent-effectiveness/graders
 ```
 
-The same gates run in [GitHub Actions](.github/workflows/) on every push, on
-weekly cron, and on `workflow_dispatch`. See [docs/installation.md](docs/installation.md)
+The corresponding [GitHub Actions](.github/workflows/) run on pushes and manual
+dispatch; selected workflows also run weekly. See [docs/installation.md](docs/installation.md)
 for the full reproducible / `SOURCE_DATE_EPOCH`-anchored regeneration flow.
 """,
         encoding="utf-8",

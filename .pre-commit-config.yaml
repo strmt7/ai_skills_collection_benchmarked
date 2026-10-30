@@ -1,7 +1,8 @@
 # Local quality gates mirroring the CI workflow set. Install with:
 #   pip install -e '.[lint,security]' && pre-commit install
 #
-# Hook versions are pinned and refreshed by Dependabot (see .github/dependabot.yml).
+# Hook versions are pinned and maintained on main; automatic dependency-update
+# pull requests are disabled (see .github/dependabot.yml).
 
 default_language_version:
   python: python3.12

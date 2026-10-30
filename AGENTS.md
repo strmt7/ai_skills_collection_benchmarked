@@ -155,22 +155,28 @@ Benchmark independence rule:
 
 ## CI Quality Gates
 
-Every pull request must pass the following gates before merge. Run any of
-them locally with `pip install -e '.[test,lint]'` and the commands listed in
-[`docs/installation.md`](docs/installation.md):
+Run the applicable gates locally before agent changes are pushed to `main`,
+then check the hosted results. Human pull requests follow the repository's
+permissions and review rules. Core Python checks use
+`pip install -e '.[test,lint]'`; specialized checks have separate prerequisites documented
+in [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
-- **Lint + format**: `ruff check tools tests` and `ruff format --check tools tests`. Configured in `pyproject.toml` (`[tool.ruff]`).
-- **Type check**: `mypy tools tests` runs across supported Python 3.11/3.12/3.13/3.14 runtimes, pinned to their current security or maintenance patch releases. Python 3.10 reached end of life in October 2026 and is no longer a supported runtime.
+- **Lint + format**: `ruff check tools tests benchmarks/agent-effectiveness/graders` and `ruff format --check tools tests benchmarks/agent-effectiveness/graders`. Configured in `pyproject.toml` (`[tool.ruff]`).
+- **Type check**: `mypy tools tests benchmarks/agent-effectiveness/graders` uses the configured Python 3.11 target locally. CI passes `--python-version` for each supported 3.11/3.12/3.13/3.14 runtime, pinned to their current security or maintenance patch releases. Python 3.10 reached end of life in October 2026 and is no longer a supported runtime.
 - **Catalog**: `python3 tools/validate_catalog.py` collects every drift entry in a single run (no fail-fast).
 - **Mirror byte admission**: `python3 tools/check_mirror_content_admission.py --json` checks every current resource, including binary carriers, against the existing detection rules without modifying it.
 - **Mandatory agent tools**: `python3 tools/validate_agent_tool_policy.py --check --json` verifies all three local skills, policy links and every generated entrypoint.
 - **Static benchmarks freshness**: `python3 tools/run_static_benchmarks.py --check`.
 - **Skill risk audit freshness**: `python3 tools/audit_skill_quality.py --check`.
 - **Tests**: `python3 -m pytest -q -n auto` runs the full suite in parallel under `pytest-xdist`.
-- **Compile check**: `python3 -m compileall -q tools tests`.
+- **Compile check**: `python3 -m compileall -q tools tests benchmarks/agent-effectiveness/graders`.
 - **Secrets**: `python3 tools/check_no_secret_patterns.py --history` (in-repo regex + entropy) plus `gitleaks` v8.30.1 (MIT, pinned binary) as a second-opinion gate. Both checks cover mirrored sources and recorded evidence; `.gitleaks.toml` contains no path exemptions.
 
-Workflows: `.github/workflows/{ruff,mypy,offline-validation,secret-scan}.yml`. All declare least-privilege `permissions: contents: read`, concurrency cancellation, pip caching keyed on `pyproject.toml`, and weekly cron triggers (alongside `workflow_dispatch`).
+The Ruff, Mypy, offline-validation and secret-scan workflows run on pushes,
+pull requests and manual dispatch. Offline validation and secret scan also have
+weekly schedules; Ruff and Mypy do not. Specialized workflows may use path
+filters or other prerequisites; inspect their actual triggers before treating
+a missing run as a pass.
 
 ## Determinism Invariants
 
