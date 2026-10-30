@@ -2601,8 +2601,29 @@
       },
       "mirrored_path": "included/skills/by-category/documents-spreadsheets-presentations/official-reference/pdf-anthropics",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-pdf-metadata.md",
+            "sha256": "c8b2bae377ecf21ba5a8e2b88e2e69bf6e98237c79a6c6690607df8154cfa21c"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/pdf-metadata-controls/reproduce.py",
+            "sha256": "4500828f3ab2f3f16d6f9c03e03ddfbab593f86d764a8eddaa4edde6c5176b65"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/pdf-metadata-controls/result.json",
+            "sha256": "f467a40ee100df1e48c31260cca83a0b7a8f10961bf45e896e57b74fba31d8a7"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/pdf-metadata-controls/linux-result.json",
+            "sha256": "5d63b241386cfcd29085bfe2f3ed5bff2e36ee7299f45b6c037c43e8e1d9d044"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Metadata example and synthetic controls only; full package and agent effectiveness remain unreviewed",
+        "open_work": [
+          "Review remaining instructions and resources; evaluate agent effectiveness independently"
+        ]
       },
       "revision": {
         "evidence": [],

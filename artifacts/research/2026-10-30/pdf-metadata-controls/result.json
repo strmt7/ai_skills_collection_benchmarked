@@ -1,0 +1,22 @@
+{
+  "python": "3.13.17",
+  "platform": "Windows",
+  "pypdf": "6.21.4",
+  "skill_sha256": "9f78b8359fbd4943ad260a7a1e436e5a96503406d6c34e99f69223d647d85b9c",
+  "cases": {
+    "without_info": {
+      "metadata_is_none": true,
+      "outcome": {
+        "exception": "AttributeError",
+        "message": "'NoneType' object has no attribute 'title'"
+      }
+    },
+    "with_title": {
+      "metadata_is_none": false,
+      "outcome": {
+        "exception": null,
+        "title": "Control"
+      }
+    }
+  }
+}
