@@ -1,0 +1,23 @@
+{
+  "platform": "Linux",
+  "python": "3.10.22",
+  "numpy": "1.24.2",
+  "input_sha256": {
+    "verifier": "05590869057aeaac1032f2177b0b2bf80f56828af3dba66f100e4d1346b2e62f",
+    "reference": "162e3cd015afa98503a8419c6955523ba7c4401cd50f34e7d8f7e601e8489d2c"
+  },
+  "reference_shape": [
+    100
+  ],
+  "subprocess_simulated": true,
+  "simpo_training_executed": false,
+  "model_scored": false,
+  "accepted": {
+    "correct": true,
+    "wrong_regenerated": true,
+    "wrong_key_regenerated": true,
+    "missing_regenerated": false,
+    "subprocess_failed": false,
+    "wrong_initial": false
+  }
+}

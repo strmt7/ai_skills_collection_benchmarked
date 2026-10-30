@@ -121,3 +121,7 @@ pool a corrected protocol with historical leaderboard results.
 For `flink-query`, a [controlled comparison](research-skillsbench-flink.md)
 shows that duplicate output rows are not detected by the upstream set-based
 check. It does not run Flink or score a model.
+
+For `simpo-code-reproduction`, a [controlled verifier review](research-skillsbench-simpo.md)
+shows that regenerated output is not reloaded before its numerical comparison.
+It does not run the training task or score a model.
