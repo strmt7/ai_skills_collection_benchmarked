@@ -1,0 +1,24 @@
+{
+  "platform": "Linux",
+  "python": "3.12.3",
+  "playwright": "1.49.1",
+  "chromium": "131.0.6778.33",
+  "verifier_sha256": "9cc657768472d6887c537f488264de967a931707a78c2a346924fb9fc5ef82cd",
+  "predicate_sha256": "a0157b0112144910e15901a82fac2307ee9a3442098a03a3824dfcf798085ed2",
+  "cases": {
+    "none": {
+      "predicate": false,
+      "dark_class_applied": false
+    },
+    "decoy": {
+      "predicate": true,
+      "dark_class_applied": false
+    },
+    "working": {
+      "predicate": true,
+      "dark_class_applied": true
+    }
+  },
+  "full_benchmark_executed": false,
+  "model_scored": false
+}

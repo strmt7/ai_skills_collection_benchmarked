@@ -110,6 +110,10 @@ DOT edge. The [controlled review](research-skillsbench-dialogue.md) also
 records the original fixture failure and a negative visualization control. It
 does not report a benchmark-harness or model score.
 
+For `fix-visual-stability`, a [real-browser control](research-skillsbench-visual.md)
+shows that the theme-flicker predicate accepts an inert script containing its
+keywords. This tests one predicate, not the complete task or a model run.
+
 Remaining qualification: component rights, current-runner compatibility,
 trusted oracle/verifier isolation, controls and actual paired trials. Do not
 pool a corrected protocol with historical leaderboard results.
