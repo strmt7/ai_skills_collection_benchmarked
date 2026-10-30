@@ -43,6 +43,8 @@ Some reviewed instructions have known limitations:
 - Several text examples in the pinned theme showcase have low contrast.
   [Review the measured colors](research-theme-contrast.md) before applying a theme.
 
+- The two pinned XLSX helpers can report success after a simulated timeout
+  and misclassify literal error text. [See the recalculation controls](research-xlsx-recalculation.md).
 - The pinned docs-from-code fallbacks can miss or misidentify routes, and the
   TypeScript fallback failed to start in the tested environment. [See the extractor controls](research-docs-from-code.md).
 

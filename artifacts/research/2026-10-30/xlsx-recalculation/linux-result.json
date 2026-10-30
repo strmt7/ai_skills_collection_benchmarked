@@ -1,0 +1,154 @@
+{
+  "platform": "Linux",
+  "python": "3.12.3",
+  "openpyxl": "3.1.5",
+  "source_sha256": {
+    "mirror": "e8251c94ae0c6678b6793d56d2620dd2daf7c73e1da00db6c4aaf4d5e34acd8e",
+    "pinned": "cf419d15e02965aeaec17773c05b61303f7f520f67fa2696547e7da07502eac7",
+    "current": "66f6e726d5a53cfabea0b6471d6669deb95e54e96cb7913b687e4388da1bb3d9"
+  },
+  "mirror_and_pinned_ast_match": true,
+  "process_and_profile_simulated": true,
+  "libreoffice_executed": false,
+  "agent_scored": false,
+  "outcomes": {
+    "mirror": {
+      "neutral_text": {
+        "cell_type": "s",
+        "cached_before": "ordinary text",
+        "cached_after": "ordinary text",
+        "status": "success",
+        "error_returned": false,
+        "total_errors": 0
+      },
+      "literal_error_text": {
+        "cell_type": "s",
+        "cached_before": "note: #N/A appears in source",
+        "cached_after": "note: #N/A appears in source",
+        "status": "errors_found",
+        "error_returned": false,
+        "total_errors": 1
+      },
+      "actual_error_cell": {
+        "cell_type": "e",
+        "cached_before": "#DIV/0!",
+        "cached_after": "#DIV/0!",
+        "status": "errors_found",
+        "error_returned": false,
+        "total_errors": 1
+      },
+      "timed_out_formula": {
+        "cell_type": "f",
+        "cached_before": null,
+        "cached_after": null,
+        "status": "success",
+        "error_returned": false,
+        "total_errors": 0
+      },
+      "process_failure": {
+        "cell_type": "s",
+        "cached_before": "ordinary text",
+        "cached_after": "ordinary text",
+        "status": null,
+        "error_returned": true,
+        "total_errors": null
+      },
+      "missing_file_cli": {
+        "exit_code": 0,
+        "json_error": true
+      }
+    },
+    "pinned": {
+      "neutral_text": {
+        "cell_type": "s",
+        "cached_before": "ordinary text",
+        "cached_after": "ordinary text",
+        "status": "success",
+        "error_returned": false,
+        "total_errors": 0
+      },
+      "literal_error_text": {
+        "cell_type": "s",
+        "cached_before": "note: #N/A appears in source",
+        "cached_after": "note: #N/A appears in source",
+        "status": "errors_found",
+        "error_returned": false,
+        "total_errors": 1
+      },
+      "actual_error_cell": {
+        "cell_type": "e",
+        "cached_before": "#DIV/0!",
+        "cached_after": "#DIV/0!",
+        "status": "errors_found",
+        "error_returned": false,
+        "total_errors": 1
+      },
+      "timed_out_formula": {
+        "cell_type": "f",
+        "cached_before": null,
+        "cached_after": null,
+        "status": "success",
+        "error_returned": false,
+        "total_errors": 0
+      },
+      "process_failure": {
+        "cell_type": "s",
+        "cached_before": "ordinary text",
+        "cached_after": "ordinary text",
+        "status": null,
+        "error_returned": true,
+        "total_errors": null
+      },
+      "missing_file_cli": {
+        "exit_code": 0,
+        "json_error": true
+      }
+    },
+    "current": {
+      "neutral_text": {
+        "cell_type": "s",
+        "cached_before": "ordinary text",
+        "cached_after": "ordinary text",
+        "status": "success",
+        "error_returned": false,
+        "total_errors": 0
+      },
+      "literal_error_text": {
+        "cell_type": "s",
+        "cached_before": "note: #N/A appears in source",
+        "cached_after": "note: #N/A appears in source",
+        "status": "errors_found",
+        "error_returned": false,
+        "total_errors": 1
+      },
+      "actual_error_cell": {
+        "cell_type": "e",
+        "cached_before": "#DIV/0!",
+        "cached_after": "#DIV/0!",
+        "status": "errors_found",
+        "error_returned": false,
+        "total_errors": 1
+      },
+      "timed_out_formula": {
+        "cell_type": "f",
+        "cached_before": null,
+        "cached_after": null,
+        "status": null,
+        "error_returned": true,
+        "total_errors": null
+      },
+      "process_failure": {
+        "cell_type": "s",
+        "cached_before": "ordinary text",
+        "cached_after": "ordinary text",
+        "status": null,
+        "error_returned": true,
+        "total_errors": null
+      },
+      "missing_file_cli": {
+        "exit_code": 1,
+        "json_error": true
+      }
+    }
+  }
+}

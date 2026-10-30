@@ -3015,8 +3015,39 @@
       },
       "mirrored_path": "included/skills/by-category/documents-spreadsheets-presentations/official-reference/xlsx-anthropics",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-xlsx-recalculation.md",
+            "scope": "Source-bound simulated recalculation and CLI component controls; LibreOffice and agent performance not tested.",
+            "sha256": "e2d96493c0ad97b3b7c4f0af1392e4f7b0989156caa3661f85bcecf20fb856bd"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/reproduce.py",
+            "scope": "Source-bound simulated recalculation and CLI component controls; LibreOffice and agent performance not tested.",
+            "sha256": "fdce5c8a5d5af49d99ceb719df6ddfe60852cd38e350b821b5c18e506f0de56b"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/windows-result.json",
+            "scope": "Source-bound simulated recalculation and CLI component controls; LibreOffice and agent performance not tested.",
+            "sha256": "c8c8af1e932aec5458a044887f1d641914c8d3927e8543b54a209b287af91d55"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/linux-result.json",
+            "scope": "Source-bound simulated recalculation and CLI component controls; LibreOffice and agent performance not tested.",
+            "sha256": "aec610c8af236da3cdefa0bf9251db637b275ffc8ba916b3134382b28b168ceb"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/scientific-windows-result.json",
+            "scope": "Source-bound simulated recalculation and CLI component controls; LibreOffice and agent performance not tested.",
+            "sha256": "c8c8af1e932aec5458a044887f1d641914c8d3927e8543b54a209b287af91d55"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/source-evidence.json",
+            "scope": "Source-bound simulated recalculation and CLI component controls; LibreOffice and agent performance not tested.",
+            "sha256": "73cadf0edb172943376fafa707148367747c4333e3d0fc14f1aebbcf78fc4009"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -8690,6 +8721,36 @@
             "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
             "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
             "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          },
+          {
+            "path": "docs/research-xlsx-recalculation.md",
+            "scope": "Source-bound simulated recalculation and CLI component controls; LibreOffice and agent performance not tested.",
+            "sha256": "e2d96493c0ad97b3b7c4f0af1392e4f7b0989156caa3661f85bcecf20fb856bd"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/reproduce.py",
+            "scope": "Source-bound simulated recalculation and CLI component controls; LibreOffice and agent performance not tested.",
+            "sha256": "fdce5c8a5d5af49d99ceb719df6ddfe60852cd38e350b821b5c18e506f0de56b"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/windows-result.json",
+            "scope": "Source-bound simulated recalculation and CLI component controls; LibreOffice and agent performance not tested.",
+            "sha256": "c8c8af1e932aec5458a044887f1d641914c8d3927e8543b54a209b287af91d55"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/linux-result.json",
+            "scope": "Source-bound simulated recalculation and CLI component controls; LibreOffice and agent performance not tested.",
+            "sha256": "aec610c8af236da3cdefa0bf9251db637b275ffc8ba916b3134382b28b168ceb"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/scientific-windows-result.json",
+            "scope": "Source-bound simulated recalculation and CLI component controls; LibreOffice and agent performance not tested.",
+            "sha256": "c8c8af1e932aec5458a044887f1d641914c8d3927e8543b54a209b287af91d55"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/xlsx-recalculation/source-evidence.json",
+            "scope": "Source-bound simulated recalculation and CLI component controls; LibreOffice and agent performance not tested.",
+            "sha256": "73cadf0edb172943376fafa707148367747c4333e3d0fc14f1aebbcf78fc4009"
           }
         ],
         "status": "in_progress"

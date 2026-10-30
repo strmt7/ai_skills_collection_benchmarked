@@ -1,0 +1,18 @@
+{
+  "pinned_commit": "2c7ec5e78b8e5d43ea02e90bb8826f6b9f147b0c",
+  "observed_current_commit": "ca45fc496a3436251f191354091d557da31c15b5",
+  "path": "skills/xlsx/scripts/recalc.py",
+  "pinned_git_blob_sha": "f472e9a5d04583dc14869f36aa4252a533639ad6",
+  "current_git_blob_sha": "6232be2deea56cc97c1d8996e4d68adf2457059c",
+  "mirror_sha256": "e8251c94ae0c6678b6793d56d2620dd2daf7c73e1da00db6c4aaf4d5e34acd8e",
+  "pinned_sha256": "cf419d15e02965aeaec17773c05b61303f7f520f67fa2696547e7da07502eac7",
+  "current_sha256": "66f6e726d5a53cfabea0b6471d6669deb95e54e96cb7913b687e4388da1bb3d9",
+  "pinned_api_capture_sha256": "b91e04c5dcafa09c0acc6ea5f9c04ab7b0040f71eaf2a3528df158d2d0aa34d2",
+  "current_api_capture_sha256": "0d5aa468fe3f9e21da65e93c45ebad81c2579ab97d7da538347845aaa6473647",
+  "mirror_and_pinned_ast_match": true,
+  "mirror_formatting": "trailing whitespace removed",
+  "libreoffice_executed": false,
+  "scientific_mirror_path": "included/skills/by-category/science-research-data-analysis/latest-release-community/xlsx-scientific-agent-skills/scripts/recalc.py",
+  "scientific_mirror_sha256": "e8251c94ae0c6678b6793d56d2620dd2daf7c73e1da00db6c4aaf4d5e34acd8e",
+  "scientific_mirror_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770"
+}
