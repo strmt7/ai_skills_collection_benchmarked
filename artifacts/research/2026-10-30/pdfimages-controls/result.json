@@ -1,0 +1,14 @@
+{
+  "python": "3.12.3",
+  "platform": "Linux",
+  "pillow": "13.0.0",
+  "reportlab": "5.1.0",
+  "pdfimages": "pdfimages version 24.02.0",
+  "skill_sha256": "9f78b8359fbd4943ad260a7a1e436e5a96503406d6c34e99f69223d647d85b9c",
+  "outputs": [
+    "output-000.ppm",
+    "output-001.jpg"
+  ],
+  "lossless_pixels_preserved": true,
+  "jpeg_bytes_preserved": true
+}

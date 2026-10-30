@@ -2604,7 +2604,7 @@
         "evidence": [
           {
             "path": "docs/research-pdf-metadata.md",
-            "sha256": "c8b2bae377ecf21ba5a8e2b88e2e69bf6e98237c79a6c6690607df8154cfa21c"
+            "sha256": "9c60de42fdc9116979599a07086d56fefdfd1024e7072e2aedd18d4c9d24504f"
           },
           {
             "path": "artifacts/research/2026-10-30/pdf-metadata-controls/reproduce.py",
@@ -2617,10 +2617,18 @@
           {
             "path": "artifacts/research/2026-10-30/pdf-metadata-controls/linux-result.json",
             "sha256": "5d63b241386cfcd29085bfe2f3ed5bff2e36ee7299f45b6c037c43e8e1d9d044"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/pdfimages-controls/reproduce.py",
+            "sha256": "252d4d6725c6dda3e4ee878441fd67fa327f0cb5b22b2e71e2c3b4baba59d74d"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/pdfimages-controls/result.json",
+            "sha256": "886bedc98f3ac28a789662a9c55bcda44036f5a30c20ac3f9e30cd045f3ab004"
           }
         ],
         "status": "in_progress",
-        "scope": "Metadata example and synthetic controls only; full package and agent effectiveness remain unreviewed",
+        "scope": "Metadata and image-extraction examples with synthetic controls only; full package and agent effectiveness remain unreviewed",
         "open_work": [
           "Review remaining instructions and resources; evaluate agent effectiveness independently"
         ]

@@ -38,8 +38,8 @@ Some reviewed instructions have known limitations:
   example does not serialize the named target recipes. [See the parallelism control](research-makefile-parallelism.md).
 - The pinned DOCX skill's global npm installation does not necessarily make the
   library importable by a local script. [See the portability control](research-docx-portability.md).
-- The pinned PDF skill's metadata example fails when a document has no
-  information dictionary. [See the tested case](research-pdf-metadata.md).
+- The pinned PDF skill's metadata example fails without an information
+  dictionary, and its image example does not always produce JPEGs. [See the tested cases](research-pdf-metadata.md).
 
 These examples are not an exhaustive review of the catalog.
 
