@@ -6,7 +6,9 @@
   "numpy": "2.5.4",
   "h5py": "3.16.0",
   "wrapt": "2.5.2",
+  "openpyxl": "3.1.5",
   "ann_data_call_error": "module anndata has no attribute 'read_10x_h5'",
+  "ann_data_mtx_call_error": "module anndata has no attribute 'read_10x_mtx'",
   "scanpy_shape": [
     3,
     2
@@ -25,6 +27,58 @@
       0.0
     ]
   ],
+  "scanpy_mtx_shape": [
+    3,
+    2
+  ],
+  "scanpy_mtx_matrix": [
+    [
+      2.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0
+    ],
+    [
+      3.0,
+      0.0
+    ]
+  ],
+  "read_mtx_bad_arguments_error": "read_mtx() got an unexpected keyword argument 'var_names'",
+  "generic_mtx_shape": [
+    3,
+    2
+  ],
+  "read_excel_missing_sheet_error": "read_excel() missing 1 required positional argument: 'sheet'",
+  "excel_shape": [
+    3,
+    2
+  ],
+  "missing_top_level_element_exports": [
+    "read_elem",
+    "write_elem"
+  ],
+  "string_element_error": "AttributeError: 'str' object has no attribute 'name'",
+  "stored_element_values": [
+    2,
+    1,
+    3
+  ],
+  "backed_obs_persisted_without_write": false,
+  "backed_x_value_after_reopen": 77.0,
+  "explicit_write_obs_values": [
+    10,
+    20
+  ],
+  "deprecated_top_level_imports": {
+    "read_csv": [
+      "Importing read_csv from `anndata` is deprecated. Import anndata.io.read_csv instead."
+    ],
+    "read_mtx": [
+      "Importing read_mtx from `anndata` is deprecated. Import anndata.io.read_mtx instead."
+    ]
+  },
   "cells": [
     "cell1",
     "cell2",
