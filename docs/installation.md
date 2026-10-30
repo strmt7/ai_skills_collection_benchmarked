@@ -38,14 +38,15 @@ Some reviewed instructions have known limitations:
   example does not serialize the named target recipes. [See the parallelism control](research-makefile-parallelism.md).
 - The pinned DOCX skill's global npm installation does not necessarily make the
   library importable by a local script. [See the portability control](research-docx-portability.md).
+- The bundled LibreOffice helper in the DOCX, PPTX and XLSX skills fails to
+  start on the tested Windows Python runtimes. [See the shared-helper control](research-office-helper-windows.md).
 - The pinned PDF skill's metadata example fails without an information
   dictionary, and its image example does not always produce JPEGs. [See the tested cases](research-pdf-metadata.md).
 - Several text examples in the pinned theme showcase have low contrast.
   [Review the measured colors](research-theme-contrast.md) before applying a theme.
 
-- The two pinned XLSX helpers fail to start on the tested Windows Python
-  runtimes; they can also misreport simulated timeouts and literal error text.
-  [See the recalculation controls](research-xlsx-recalculation.md).
+- The pinned XLSX helpers can misreport simulated timeouts and literal error
+  text. [See the recalculation controls](research-xlsx-recalculation.md).
 - The pinned docs-from-code fallbacks can miss or misidentify routes, and the
   TypeScript fallback failed to start in the tested environment. [See the extractor controls](research-docs-from-code.md).
 

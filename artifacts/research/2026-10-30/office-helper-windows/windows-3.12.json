@@ -1,0 +1,54 @@
+{
+  "platform": "Windows",
+  "python": "3.12.10",
+  "has_af_unix": false,
+  "available_soffice": true,
+  "libreoffice_started": false,
+  "isolated_profile_empty": true,
+  "agent_scored": false,
+  "stderr_path_normalization": "repository root replaced by <repository>",
+  "helpers": [
+    {
+      "path": "included/skills/by-category/documents-spreadsheets-presentations/official-reference/docx-anthropics/scripts/office/soffice.py",
+      "sha256": "f4ebbe4b638904d099eac915ada405b1031d1d7c5a80ecd5d733580d4eee1359",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<repository>\\included\\skills\\by-category\\documents-spreadsheets-presentations\\official-reference\\docx-anthropics\\scripts\\office\\soffice.py\", line 182, in <module>\n    result = run_soffice(sys.argv[1:])\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<repository>\\included\\skills\\by-category\\documents-spreadsheets-presentations\\official-reference\\docx-anthropics\\scripts\\office\\soffice.py\", line 36, in run_soffice\n    env = get_soffice_env()\n          ^^^^^^^^^^^^^^^^^\n  File \"<repository>\\included\\skills\\by-category\\documents-spreadsheets-presentations\\official-reference\\docx-anthropics\\scripts\\office\\soffice.py\", line 28, in get_soffice_env\n    if _needs_shim():\n       ^^^^^^^^^^^^^\n  File \"<repository>\\included\\skills\\by-category\\documents-spreadsheets-presentations\\official-reference\\docx-anthropics\\scripts\\office\\soffice.py\", line 46, in _needs_shim\n    s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)\n                      ^^^^^^^^^^^^^^\nAttributeError: module 'socket' has no attribute 'AF_UNIX'\n"
+    },
+    {
+      "path": "included/skills/by-category/documents-spreadsheets-presentations/official-reference/pptx-anthropics/scripts/office/soffice.py",
+      "sha256": "f4ebbe4b638904d099eac915ada405b1031d1d7c5a80ecd5d733580d4eee1359",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<repository>\\included\\skills\\by-category\\documents-spreadsheets-presentations\\official-reference\\pptx-anthropics\\scripts\\office\\soffice.py\", line 182, in <module>\n    result = run_soffice(sys.argv[1:])\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<repository>\\included\\skills\\by-category\\documents-spreadsheets-presentations\\official-reference\\pptx-anthropics\\scripts\\office\\soffice.py\", line 36, in run_soffice\n    env = get_soffice_env()\n          ^^^^^^^^^^^^^^^^^\n  File \"<repository>\\included\\skills\\by-category\\documents-spreadsheets-presentations\\official-reference\\pptx-anthropics\\scripts\\office\\soffice.py\", line 28, in get_soffice_env\n    if _needs_shim():\n       ^^^^^^^^^^^^^\n  File \"<repository>\\included\\skills\\by-category\\documents-spreadsheets-presentations\\official-reference\\pptx-anthropics\\scripts\\office\\soffice.py\", line 46, in _needs_shim\n    s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)\n                      ^^^^^^^^^^^^^^\nAttributeError: module 'socket' has no attribute 'AF_UNIX'\n"
+    },
+    {
+      "path": "included/skills/by-category/documents-spreadsheets-presentations/official-reference/xlsx-anthropics/scripts/office/soffice.py",
+      "sha256": "f4ebbe4b638904d099eac915ada405b1031d1d7c5a80ecd5d733580d4eee1359",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<repository>\\included\\skills\\by-category\\documents-spreadsheets-presentations\\official-reference\\xlsx-anthropics\\scripts\\office\\soffice.py\", line 182, in <module>\n    result = run_soffice(sys.argv[1:])\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<repository>\\included\\skills\\by-category\\documents-spreadsheets-presentations\\official-reference\\xlsx-anthropics\\scripts\\office\\soffice.py\", line 36, in run_soffice\n    env = get_soffice_env()\n          ^^^^^^^^^^^^^^^^^\n  File \"<repository>\\included\\skills\\by-category\\documents-spreadsheets-presentations\\official-reference\\xlsx-anthropics\\scripts\\office\\soffice.py\", line 28, in get_soffice_env\n    if _needs_shim():\n       ^^^^^^^^^^^^^\n  File \"<repository>\\included\\skills\\by-category\\documents-spreadsheets-presentations\\official-reference\\xlsx-anthropics\\scripts\\office\\soffice.py\", line 46, in _needs_shim\n    s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)\n                      ^^^^^^^^^^^^^^\nAttributeError: module 'socket' has no attribute 'AF_UNIX'\n"
+    },
+    {
+      "path": "included/skills/by-category/science-research-data-analysis/latest-release-community/docx-scientific-agent-skills/scripts/office/soffice.py",
+      "sha256": "f4ebbe4b638904d099eac915ada405b1031d1d7c5a80ecd5d733580d4eee1359",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<repository>\\included\\skills\\by-category\\science-research-data-analysis\\latest-release-community\\docx-scientific-agent-skills\\scripts\\office\\soffice.py\", line 182, in <module>\n    result = run_soffice(sys.argv[1:])\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<repository>\\included\\skills\\by-category\\science-research-data-analysis\\latest-release-community\\docx-scientific-agent-skills\\scripts\\office\\soffice.py\", line 36, in run_soffice\n    env = get_soffice_env()\n          ^^^^^^^^^^^^^^^^^\n  File \"<repository>\\included\\skills\\by-category\\science-research-data-analysis\\latest-release-community\\docx-scientific-agent-skills\\scripts\\office\\soffice.py\", line 28, in get_soffice_env\n    if _needs_shim():\n       ^^^^^^^^^^^^^\n  File \"<repository>\\included\\skills\\by-category\\science-research-data-analysis\\latest-release-community\\docx-scientific-agent-skills\\scripts\\office\\soffice.py\", line 46, in _needs_shim\n    s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)\n                      ^^^^^^^^^^^^^^\nAttributeError: module 'socket' has no attribute 'AF_UNIX'\n"
+    },
+    {
+      "path": "included/skills/by-category/science-research-data-analysis/latest-release-community/pptx-scientific-agent-skills/scripts/office/soffice.py",
+      "sha256": "f4ebbe4b638904d099eac915ada405b1031d1d7c5a80ecd5d733580d4eee1359",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<repository>\\included\\skills\\by-category\\science-research-data-analysis\\latest-release-community\\pptx-scientific-agent-skills\\scripts\\office\\soffice.py\", line 182, in <module>\n    result = run_soffice(sys.argv[1:])\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<repository>\\included\\skills\\by-category\\science-research-data-analysis\\latest-release-community\\pptx-scientific-agent-skills\\scripts\\office\\soffice.py\", line 36, in run_soffice\n    env = get_soffice_env()\n          ^^^^^^^^^^^^^^^^^\n  File \"<repository>\\included\\skills\\by-category\\science-research-data-analysis\\latest-release-community\\pptx-scientific-agent-skills\\scripts\\office\\soffice.py\", line 28, in get_soffice_env\n    if _needs_shim():\n       ^^^^^^^^^^^^^\n  File \"<repository>\\included\\skills\\by-category\\science-research-data-analysis\\latest-release-community\\pptx-scientific-agent-skills\\scripts\\office\\soffice.py\", line 46, in _needs_shim\n    s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)\n                      ^^^^^^^^^^^^^^\nAttributeError: module 'socket' has no attribute 'AF_UNIX'\n"
+    },
+    {
+      "path": "included/skills/by-category/science-research-data-analysis/latest-release-community/xlsx-scientific-agent-skills/scripts/office/soffice.py",
+      "sha256": "f4ebbe4b638904d099eac915ada405b1031d1d7c5a80ecd5d733580d4eee1359",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<repository>\\included\\skills\\by-category\\science-research-data-analysis\\latest-release-community\\xlsx-scientific-agent-skills\\scripts\\office\\soffice.py\", line 182, in <module>\n    result = run_soffice(sys.argv[1:])\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<repository>\\included\\skills\\by-category\\science-research-data-analysis\\latest-release-community\\xlsx-scientific-agent-skills\\scripts\\office\\soffice.py\", line 36, in run_soffice\n    env = get_soffice_env()\n          ^^^^^^^^^^^^^^^^^\n  File \"<repository>\\included\\skills\\by-category\\science-research-data-analysis\\latest-release-community\\xlsx-scientific-agent-skills\\scripts\\office\\soffice.py\", line 28, in get_soffice_env\n    if _needs_shim():\n       ^^^^^^^^^^^^^\n  File \"<repository>\\included\\skills\\by-category\\science-research-data-analysis\\latest-release-community\\xlsx-scientific-agent-skills\\scripts\\office\\soffice.py\", line 46, in _needs_shim\n    s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)\n                      ^^^^^^^^^^^^^^\nAttributeError: module 'socket' has no attribute 'AF_UNIX'\n"
+    }
+  ]
+}

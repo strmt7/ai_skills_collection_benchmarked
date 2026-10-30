@@ -2473,6 +2473,36 @@
             "path": "artifacts/research/2026-10-30/docx-controls/result.json",
             "scope": "Windows Node.js 24.22.1 and docx 9.15.0 controls; no claim about other versions or hosts.",
             "sha256": "59f96724071cbdb0be4e1b746e03f26b98f86fbec21863f01ec295e4c5e4fa5f"
+          },
+          {
+            "path": "docs/research-office-helper-windows.md",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "1ba973165b4eae260c0785d8b6bbda6616aea93b67f05046e79d552cd41c905a"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/reproduce.py",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "5a48782ce60f4c2c2f1157ed30a48f10f47f62736e45f4503a1ec3b2d21ab354"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.11.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "94eb56e6d9130c17750130d74fbf1cffca02078d42e6b30f314fb3a5b9fd9e30"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.12.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "56297d0b554bedfdc3a25cec4b46d78fd5e55ffb99a6125733eac0178a2cfaf2"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.13.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "0612572b8dc5ad9a0304d7db33272011a2c09b7ed482ed542373b7d880c907bb"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.14.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "09a805b18777cef9b29f978ad3a2d0f000caa270546d66812e1e5b344eee9124"
           }
         ],
         "status": "in_progress"
@@ -2652,8 +2682,39 @@
       },
       "mirrored_path": "included/skills/by-category/documents-spreadsheets-presentations/official-reference/pptx-anthropics",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-office-helper-windows.md",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "1ba973165b4eae260c0785d8b6bbda6616aea93b67f05046e79d552cd41c905a"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/reproduce.py",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "5a48782ce60f4c2c2f1157ed30a48f10f47f62736e45f4503a1ec3b2d21ab354"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.11.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "94eb56e6d9130c17750130d74fbf1cffca02078d42e6b30f314fb3a5b9fd9e30"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.12.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "56297d0b554bedfdc3a25cec4b46d78fd5e55ffb99a6125733eac0178a2cfaf2"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.13.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "0612572b8dc5ad9a0304d7db33272011a2c09b7ed482ed542373b7d880c907bb"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.14.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "09a805b18777cef9b29f978ad3a2d0f000caa270546d66812e1e5b344eee9124"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -3085,6 +3146,36 @@
             "path": "artifacts/research/2026-10-30/xlsx-recalculation/startup-scientific-windows-3.13-result.json",
             "scope": "Source-bound Windows helper and subprocess startup controls; LibreOffice and agent performance not tested.",
             "sha256": "33c5fbc6bc886ae5a021766b825e538d86907d57afb68351aeb54f776d15a839"
+          },
+          {
+            "path": "docs/research-office-helper-windows.md",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "1ba973165b4eae260c0785d8b6bbda6616aea93b67f05046e79d552cd41c905a"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/reproduce.py",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "5a48782ce60f4c2c2f1157ed30a48f10f47f62736e45f4503a1ec3b2d21ab354"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.11.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "94eb56e6d9130c17750130d74fbf1cffca02078d42e6b30f314fb3a5b9fd9e30"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.12.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "56297d0b554bedfdc3a25cec4b46d78fd5e55ffb99a6125733eac0178a2cfaf2"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.13.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "0612572b8dc5ad9a0304d7db33272011a2c09b7ed482ed542373b7d880c907bb"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.14.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "09a805b18777cef9b29f978ad3a2d0f000caa270546d66812e1e5b344eee9124"
           }
         ],
         "status": "in_progress"
@@ -5688,6 +5779,36 @@
             "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
             "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
             "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          },
+          {
+            "path": "docs/research-office-helper-windows.md",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "1ba973165b4eae260c0785d8b6bbda6616aea93b67f05046e79d552cd41c905a"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/reproduce.py",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "5a48782ce60f4c2c2f1157ed30a48f10f47f62736e45f4503a1ec3b2d21ab354"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.11.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "94eb56e6d9130c17750130d74fbf1cffca02078d42e6b30f314fb3a5b9fd9e30"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.12.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "56297d0b554bedfdc3a25cec4b46d78fd5e55ffb99a6125733eac0178a2cfaf2"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.13.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "0612572b8dc5ad9a0304d7db33272011a2c09b7ed482ed542373b7d880c907bb"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.14.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "09a805b18777cef9b29f978ad3a2d0f000caa270546d66812e1e5b344eee9124"
           }
         ],
         "status": "in_progress"
@@ -7241,6 +7362,36 @@
             "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
             "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
             "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          },
+          {
+            "path": "docs/research-office-helper-windows.md",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "1ba973165b4eae260c0785d8b6bbda6616aea93b67f05046e79d552cd41c905a"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/reproduce.py",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "5a48782ce60f4c2c2f1157ed30a48f10f47f62736e45f4503a1ec3b2d21ab354"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.11.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "94eb56e6d9130c17750130d74fbf1cffca02078d42e6b30f314fb3a5b9fd9e30"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.12.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "56297d0b554bedfdc3a25cec4b46d78fd5e55ffb99a6125733eac0178a2cfaf2"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.13.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "0612572b8dc5ad9a0304d7db33272011a2c09b7ed482ed542373b7d880c907bb"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.14.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "09a805b18777cef9b29f978ad3a2d0f000caa270546d66812e1e5b344eee9124"
           }
         ],
         "status": "in_progress"
@@ -8831,6 +8982,36 @@
             "path": "artifacts/research/2026-10-30/xlsx-recalculation/startup-scientific-windows-3.13-result.json",
             "scope": "Source-bound Windows helper and subprocess startup controls; LibreOffice and agent performance not tested.",
             "sha256": "33c5fbc6bc886ae5a021766b825e538d86907d57afb68351aeb54f776d15a839"
+          },
+          {
+            "path": "docs/research-office-helper-windows.md",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "1ba973165b4eae260c0785d8b6bbda6616aea93b67f05046e79d552cd41c905a"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/reproduce.py",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "5a48782ce60f4c2c2f1157ed30a48f10f47f62736e45f4503a1ec3b2d21ab354"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.11.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "94eb56e6d9130c17750130d74fbf1cffca02078d42e6b30f314fb3a5b9fd9e30"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.12.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "56297d0b554bedfdc3a25cec4b46d78fd5e55ffb99a6125733eac0178a2cfaf2"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.13.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "0612572b8dc5ad9a0304d7db33272011a2c09b7ed482ed542373b7d880c907bb"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.14.json",
+            "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
+            "sha256": "09a805b18777cef9b29f978ad3a2d0f000caa270546d66812e1e5b344eee9124"
           }
         ],
         "status": "in_progress"
