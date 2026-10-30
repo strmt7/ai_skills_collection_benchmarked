@@ -2166,8 +2166,19 @@
       },
       "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-makefile-parallelism.md",
+            "scope": "Partial GNU Make 4.4.1 parallel-target review; dummy recipe controls, not an agent benchmark.",
+            "sha256": "380bc1ef73f5d24055979c8426690d9629211f5ad65955e86ecaf8a30ed672dd"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/make-parallel-controls/result.json",
+            "scope": "GNU Make 4.4.1 Linux container control for sibling-recipe overlap and a serial comparison.",
+            "sha256": "62cff8a0c3f7be69093ceb47202835b4b6fc91ccb074aaed0caf9dadb38b080a"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],

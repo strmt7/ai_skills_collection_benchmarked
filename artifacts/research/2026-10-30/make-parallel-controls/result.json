@@ -1,0 +1,35 @@
+{
+  "make": "GNU Make 4.4.1",
+  "selective_notparallel": {
+    "build_ns": [
+      811989496942,
+      812989685055
+    ],
+    "push_ns": [
+      813015150872,
+      814015306534
+    ],
+    "run_ns": [
+      813010472629,
+      814010655608
+    ],
+    "build_before_dependents": true,
+    "dependents_overlap": true
+  },
+  "global_notparallel": {
+    "build_ns": [
+      814042182586,
+      815042338166
+    ],
+    "push_ns": [
+      815073932636,
+      816074122908
+    ],
+    "run_ns": [
+      816094345013,
+      817094496101
+    ],
+    "build_before_dependents": true,
+    "dependents_overlap": false
+  }
+}
