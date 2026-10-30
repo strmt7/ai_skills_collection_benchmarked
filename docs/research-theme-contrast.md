@@ -37,6 +37,18 @@ in an isolated Python environment:
 python artifacts/research/2026-10-30/theme-showcase-contrast/reproduce.py
 ```
 
+## Definition consistency
+
+A separate [control](../artifacts/research/2026-10-30/theme-showcase-contrast/check-parity.py)
+matched all ten theme definitions to their showcase pages. The four color
+labels and both font labels on each page agree with the corresponding
+definition, and the two sampled text placements use matching PDF font-resource
+names. [Windows](../artifacts/research/2026-10-30/theme-showcase-contrast/parity-windows.json)
+and [Linux](../artifacts/research/2026-10-30/theme-showcase-contrast/parity-linux.json)
+results agree. Isolated controls with a changed color or font were rejected.
+This consistency check does not make the low-contrast samples readable or
+verify that these fonts are installed on a user's machine.
+
 GitHub's contents API returned the same showcase blob
 `24495d145c95917aba3a3445f7105444b6f7cfcc` at the pinned commit and
 [inspected upstream main commit](https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/theme-factory/theme-showcase.pdf).

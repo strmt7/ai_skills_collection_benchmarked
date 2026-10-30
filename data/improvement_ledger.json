@@ -2854,7 +2854,7 @@
         "evidence": [
           {
             "path": "docs/research-theme-contrast.md",
-            "sha256": "97c98707ac3ce82ab19cadbabd80a2c29a226b78f6c2fa29041c2fc634c8ab22"
+            "sha256": "663203820b40d87bb679ae73f811ce5cd01d65e0f70c697c192aacbb625716bb"
           },
           {
             "path": "artifacts/research/2026-10-30/theme-showcase-contrast/reproduce.py",
@@ -2867,10 +2867,22 @@
           {
             "path": "artifacts/research/2026-10-30/theme-showcase-contrast/linux-result.json",
             "sha256": "8c7ef7ac07a84bb3b772a409b894898f8b4c4c4fc28bbc719d0f4f00ffa403d1"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/theme-showcase-contrast/check-parity.py",
+            "sha256": "28a6e1f1bb65f169b94f40c24d40af01544980b03fd053ebc95ab6e3e85789f4"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/theme-showcase-contrast/parity-windows.json",
+            "sha256": "2f1815f9dcd1a3e84d3b016fc5b20a89e0908e15ee416887f503123c69b43442"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/theme-showcase-contrast/parity-linux.json",
+            "sha256": "753641235f52099b085270df78452c56e3b54f39f6ae74c3d06da2d95c45c2c2"
           }
         ],
         "status": "in_progress",
-        "scope": "Ten showcase header and body samples with contrast controls only; full package and agent effectiveness remain unreviewed",
+        "scope": "Ten showcase header and body samples plus definition consistency; full package and agent effectiveness remain unreviewed",
         "open_work": [
           "Review remaining theme resources and text placements; evaluate agent effectiveness independently"
         ]

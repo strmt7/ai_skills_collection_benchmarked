@@ -1,0 +1,169 @@
+{
+  "python": "3.13.17",
+  "platform": "Windows",
+  "pypdf": "6.21.4",
+  "showcase_sha256": "3e126eca9fe99088051f7cb984c97cedb31c7d9e09ce0ba5d61bd01e70a0d253",
+  "themes_checked": 10,
+  "themes": [
+    {
+      "theme": "Arctic Frost",
+      "page": 6,
+      "definition": "arctic-frost.md",
+      "definition_sha256": "868a75a8fb5b2a61d0f0ab87c437fe632d3cbab6371c418f06aa2816ac109ae0",
+      "colors": [
+        "#d4e4f7",
+        "#4a6fa5",
+        "#c0c0c0",
+        "#fafafa"
+      ],
+      "fonts": {
+        "header": "DejaVu Sans Bold",
+        "body": "DejaVu Sans"
+      }
+    },
+    {
+      "theme": "Botanical Garden",
+      "page": 9,
+      "definition": "botanical-garden.md",
+      "definition_sha256": "222cb8e7496abc9b75b29453c809fb9839e7e4b01fa45deecdd896b38d087765",
+      "colors": [
+        "#4a7c59",
+        "#f9a620",
+        "#b7472a",
+        "#f5f3ed"
+      ],
+      "fonts": {
+        "header": "DejaVu Serif Bold",
+        "body": "DejaVu Sans"
+      }
+    },
+    {
+      "theme": "Desert Rose",
+      "page": 7,
+      "definition": "desert-rose.md",
+      "definition_sha256": "bd065b8629be3b64655183927e248e3d892a27b8d184b009cfba89c96102744f",
+      "colors": [
+        "#d4a5a5",
+        "#b87d6d",
+        "#e8d5c4",
+        "#5d2e46"
+      ],
+      "fonts": {
+        "header": "FreeSans Bold",
+        "body": "FreeSans"
+      }
+    },
+    {
+      "theme": "Forest Canopy",
+      "page": 3,
+      "definition": "forest-canopy.md",
+      "definition_sha256": "ecb722efa24688e808b5bf323c334ca2349e989cfddd72ce8400ce5d4c4bd3e7",
+      "colors": [
+        "#2d4a2b",
+        "#7d8471",
+        "#a4ac86",
+        "#faf9f6"
+      ],
+      "fonts": {
+        "header": "FreeSerif Bold",
+        "body": "FreeSans"
+      }
+    },
+    {
+      "theme": "Golden Hour",
+      "page": 5,
+      "definition": "golden-hour.md",
+      "definition_sha256": "3444a00df971d3c2f06b665e21a2e9eb5d7d7d6f6281f2758773b8345776a139",
+      "colors": [
+        "#f4a900",
+        "#c1666b",
+        "#d4b896",
+        "#4a403a"
+      ],
+      "fonts": {
+        "header": "FreeSans Bold",
+        "body": "FreeSans"
+      }
+    },
+    {
+      "theme": "Midnight Galaxy",
+      "page": 10,
+      "definition": "midnight-galaxy.md",
+      "definition_sha256": "0e134c4c0324df41e34ac314269aa6829cd378cf3c304b31858d0cd158d2f944",
+      "colors": [
+        "#2b1e3e",
+        "#4a4e8f",
+        "#a490c2",
+        "#e6e6fa"
+      ],
+      "fonts": {
+        "header": "FreeSans Bold",
+        "body": "FreeSans"
+      }
+    },
+    {
+      "theme": "Modern Minimalist",
+      "page": 4,
+      "definition": "modern-minimalist.md",
+      "definition_sha256": "b8bc572b75948d4df69c401af703b9262ed6820a3ceb270da30a529e92763614",
+      "colors": [
+        "#36454f",
+        "#708090",
+        "#d3d3d3",
+        "#ffffff"
+      ],
+      "fonts": {
+        "header": "DejaVu Sans Bold",
+        "body": "DejaVu Sans"
+      }
+    },
+    {
+      "theme": "Ocean Depths",
+      "page": 1,
+      "definition": "ocean-depths.md",
+      "definition_sha256": "a7ad8eec85341dbfcb2665da827a4b6a4baee08ab3335ac02421f18e6b46b2e2",
+      "colors": [
+        "#1a2332",
+        "#2d8b8b",
+        "#a8dadc",
+        "#f1faee"
+      ],
+      "fonts": {
+        "header": "DejaVu Sans Bold",
+        "body": "DejaVu Sans"
+      }
+    },
+    {
+      "theme": "Sunset Boulevard",
+      "page": 2,
+      "definition": "sunset-boulevard.md",
+      "definition_sha256": "658af11ab04be4923692571081ffb42a428141ae537703117b9236d9f8ee22a3",
+      "colors": [
+        "#e76f51",
+        "#f4a261",
+        "#e9c46a",
+        "#264653"
+      ],
+      "fonts": {
+        "header": "DejaVu Serif Bold",
+        "body": "DejaVu Sans"
+      }
+    },
+    {
+      "theme": "Tech Innovation",
+      "page": 8,
+      "definition": "tech-innovation.md",
+      "definition_sha256": "183648163026dd5eeba3df5effa335b55ba333c3ee1fe215278605e55f40a52a",
+      "colors": [
+        "#0066ff",
+        "#00ffff",
+        "#1e1e1e",
+        "#ffffff"
+      ],
+      "fonts": {
+        "header": "DejaVu Sans Bold",
+        "body": "DejaVu Sans"
+      }
+    }
+  ]
+}
