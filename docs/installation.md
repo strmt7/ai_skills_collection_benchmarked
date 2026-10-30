@@ -43,6 +43,9 @@ Some reviewed instructions have known limitations:
 - Several text examples in the pinned theme showcase have low contrast.
   [Review the measured colors](research-theme-contrast.md) before applying a theme.
 
+- The pinned docs-from-code fallbacks can miss or misidentify routes, and the
+  TypeScript fallback failed to start in the tested environment. [See the extractor controls](research-docs-from-code.md).
+
 These examples are not an exhaustive review of the catalog.
 
 ## Load it in your agent

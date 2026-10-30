@@ -1,0 +1,30 @@
+{
+  "platform": "Windows",
+  "python": "3.14.8",
+  "node": "v24.22.1",
+  "extractor_sha256": "c286bc17ab3d90ea5e471539149e523fcefe0d6f7fbf0dcfbdf34087f532495d",
+  "manifest_sha256": "74a65805009f1f9164dfea5bd80b37b93c1cf494928f7fd62c2851c84c609c57",
+  "qualification_lock_sha256": "0219a1c50383072beeb9250cce4ced3a6bb3210b868e1ff5d77a14e3d0a887be",
+  "installed_versions": {
+    "ts-morph": "21.0.1",
+    "typescript": "5.9.3",
+    "ts-node": "10.9.2",
+    "@types/node": "20.19.43"
+  },
+  "original_exit_code": 1,
+  "original_diagnostic": "TS2353",
+  "diagnostic_copy_replaced_only_project_option": true,
+  "diagnostic_exit_code": 0,
+  "diagnostic_routes": [
+    [
+      "GET",
+      "/api/ping"
+    ],
+    [
+      "GET",
+      "cache-key"
+    ]
+  ],
+  "fixture_executed": false,
+  "agent_scored": false
+}

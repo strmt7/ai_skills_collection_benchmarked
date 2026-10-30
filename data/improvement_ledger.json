@@ -16584,8 +16584,50 @@
       },
       "mirrored_path": "included/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-docs-from-code.md",
+            "sha256": "c9087b3447969c8e733905a531a37cc3816265dcb8fa3bd0d2b1e553d6749ed6"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/docs-from-code-python-extractor/reproduce.py",
+            "sha256": "07fb4a58dea9c8f5b5888c4b8dd590cef7ac03f7a296c13b3c3cca18a3191de2"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/docs-from-code-python-extractor/windows-result.json",
+            "sha256": "304a95323a5e5fc19b69da7d3ffe4d6bb51a3b311981caae3fec635b106045fc"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/docs-from-code-python-extractor/linux-result.json",
+            "sha256": "876187d4b3d6ab970a0b1ad1bc38558c24f5765c5453291023add1e09f5eea55"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/docs-from-code-python-extractor/source-evidence.json",
+            "sha256": "973c17a764889431a8b35d0a3a868e000c9878315d51d3daa8d640d5323c9455"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/docs-from-code-typescript-extractor/reproduce.py",
+            "sha256": "d576575ec022acb8b0f6642ec90d9fb83b44bd7086c282f625c61483d835f6d3"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/docs-from-code-typescript-extractor/windows-result.json",
+            "sha256": "61f29a4fcbc1d53bed5cc56b137a65e4c51ff5991d6227c639cac20bb21f54d3"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/docs-from-code-typescript-extractor/linux-result.json",
+            "sha256": "f7a9cc7505f632ee791873db5fd6908a1ba46ece42cba40afd9ead4c95da45d3"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/docs-from-code-typescript-extractor/qualification-package-lock.json",
+            "sha256": "0219a1c50383072beeb9250cce4ced3a6bb3210b868e1ff5d77a14e3d0a887be"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Python and TypeScript fallback controls on synthetic source; graphify, remaining package and agent effectiveness remain unreviewed",
+        "open_work": [
+          "Review remaining package and broader framework coverage; test primary graphify workflow and agent effectiveness independently",
+          "Qualify any upstream source-lock update separately"
+        ]
       },
       "revision": {
         "evidence": [],

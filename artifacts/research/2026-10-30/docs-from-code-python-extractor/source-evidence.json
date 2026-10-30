@@ -1,0 +1,27 @@
+{
+  "pinned_commit": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4",
+  "observed_current_commit": "caac7cda5621e289591e4e74b400e66ac72ad25b",
+  "pinned_path": "packages/cli/skills/docs-from-code/scripts/extract_py.py",
+  "current_path": "skills/docs-from-code/scripts/extract_py.py",
+  "extractor_git_blob_sha": "cde6103e99f640f7c66e3daadeb658fe1cb5cc8e",
+  "current_skill_git_blob_sha": "5b890eed775c7a69330eff7abb38048a866d3e39",
+  "pinned_skill_git_blob_sha": "efc1fe66464f57c005afa0a5f365f356fd102d2f",
+  "current_tree_api_sha256": "95114b6a62a24e5d94f2f039810bc46c075862611c8c61beefa1b140724aec25",
+  "main_ref_api_sha256": "d6131989ac2a76f289661efd83eaa98040e72e0143cbe728819bdef38f4a5832",
+  "pinned_extractor_api_sha256": "fb962c0e7572be989754e2f79d2fccc08c9b9b95d4fe4dacc81dad520a23c51a",
+  "typescript_extractor_git_blob_sha": "abba0985afbb994c06369b7140facd5351c926f9",
+  "typescript_manifest_git_blob_sha": "e04ee551e74440c139bb5bc3c1d009a992e41158",
+  "current_typescript_blobs_match_pinned": true,
+  "nextjs_route_convention": {
+    "url": "https://nextjs.org/docs/app/getting-started/route-handlers",
+    "provider_version": "0.9.5+catalog.portable4",
+    "native_result_sha256": "9843b6f7d8b032ae509916673e188d466c3e08767a7e341d22be2510b11947f5",
+    "status": 200,
+    "scope_reviewed": true
+  },
+  "qualification_lock_normalization": {
+    "change": "CRLF to LF; parsed JSON unchanged",
+    "original_sha256": "a9dbbe265ef33351e2e5e97fd0ef044ba4aa60f8647b4775776e7c199b97feb9",
+    "normalized_sha256": "0219a1c50383072beeb9250cce4ced3a6bb3210b868e1ff5d77a14e3d0a887be"
+  }
+}

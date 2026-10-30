@@ -1,0 +1,24 @@
+{
+  "platform": "Windows",
+  "python": "3.14.8",
+  "extractor_sha256": "5f704c5c0399b661943ff663c3545d33c53540cda4ff7a509c0a1b7949ad8e90",
+  "fixture_sha256": "e72bc248618a0aac5a1dbec46c0da3e40aa76510f19a030624a45becfb71f51c",
+  "routes": [
+    [
+      "GET",
+      "/cached",
+      "cached_value"
+    ],
+    [
+      "GET",
+      "/items",
+      "fastapi_items"
+    ]
+  ],
+  "flask_route_detected": false,
+  "unrelated_decorator_reported_as_route": true,
+  "extracted_signature": "def combine(a: int, flag: bool) -> str",
+  "expected_source_signature": "def combine(a: int = 1, /, *values: int, flag: bool = False, **options: str) -> str",
+  "graphify_executed": false,
+  "agent_scored": false
+}
