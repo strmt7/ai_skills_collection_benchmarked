@@ -1,0 +1,42 @@
+{
+  "anndata": "0.13.4",
+  "scanpy": "1.12.5",
+  "python": "3.13.17",
+  "platform": "Windows",
+  "numpy": "2.5.4",
+  "h5py": "3.16.0",
+  "wrapt": "2.5.2",
+  "ann_data_call_error": "module anndata has no attribute 'read_10x_h5'",
+  "scanpy_shape": [
+    3,
+    2
+  ],
+  "scanpy_matrix": [
+    [
+      2.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0
+    ],
+    [
+      3.0,
+      0.0
+    ]
+  ],
+  "cells": [
+    "cell1",
+    "cell2",
+    "cell3"
+  ],
+  "genes": [
+    "gene1",
+    "gene2"
+  ],
+  "gene_ids": [
+    "id1",
+    "id2"
+  ],
+  "synthetic_fixture": true
+}

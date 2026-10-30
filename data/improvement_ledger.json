@@ -4890,6 +4890,16 @@
             "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
             "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
             "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          },
+          {
+            "path": "docs/research-anndata-10x.md",
+            "scope": "Partial 10x reader API review and specific upstream correction; not a full migration review or agent evaluation.",
+            "sha256": "a80caed9f76969bc06a11627d143d88b3969b8f5a4e53299d632bdb49dc3dd6a"
+          },
+          {
+            "path": "artifacts/research/2026-10-30/anndata-10x-controls/result.json",
+            "scope": "Synthetic 10x component control on Windows with AnnData 0.13.4 and Scanpy 1.12.5.",
+            "sha256": "fc7302026fa9997d8f35a838af8999042c53a6188c22f80c2caf8a58b7877e6c"
           }
         ],
         "status": "in_progress"
