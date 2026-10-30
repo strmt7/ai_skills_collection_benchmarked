@@ -81,6 +81,7 @@ accepts the two pinned compressed inputs and pinned reference as arguments.
 Its [Windows](../artifacts/research/2026-10-30/flink-reference-reconstruction/windows-result.json)
 and [Linux](../artifacts/research/2026-10-30/flink-reference-reconstruction/linux-result.json)
 results agree. Synthetic tests cover session boundaries and repeated submits;
-an altered input fails its digest check. This is a reference-data control, not a
-Flink execution or an agent benchmark. The independent comparator above still
+an altered input fails its digest check. This exploratory reconstruction was performed after the development reference
+was available; it is not a blinded or held-out validation. It is a
+reference-data control, not a Flink execution or an agent benchmark. The independent comparator above still
 requires a separately predeclared protocol before it is used for scoring.

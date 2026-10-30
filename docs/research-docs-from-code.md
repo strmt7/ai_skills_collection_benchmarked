@@ -21,6 +21,11 @@ and [Linux](../artifacts/research/2026-10-30/docs-from-code-python-extractor/lin
 results agree; a modified extractor was rejected. Treat its route list and
 signatures as candidates to verify against source, not a complete API contract.
 
+An [earlier source-bound control](../benchmarks/dependency-regressions/docs_from_code_controls.py)
+also exercises five Python cases, including route mounting and invalid input.
+The existing offline-validation workflow runs that control. The newer Windows
+and Linux fixture above independently rechecks a subset of its findings.
+
 The TypeScript fallback did not start in isolated Windows and Linux installs
 of the skill's declared dependencies: `ts-node` reported TS2353 for an
 unsupported project option. A temporary diagnostic copy changed only that

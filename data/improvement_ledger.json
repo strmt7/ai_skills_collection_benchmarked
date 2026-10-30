@@ -16587,7 +16587,7 @@
         "evidence": [
           {
             "path": "docs/research-docs-from-code.md",
-            "sha256": "c9087b3447969c8e733905a531a37cc3816265dcb8fa3bd0d2b1e553d6749ed6"
+            "sha256": "d029cdfc232ebaffda56bb844fdf8e2b6c6e06c406a866c7000b9f3b37bdef63"
           },
           {
             "path": "artifacts/research/2026-10-30/docs-from-code-python-extractor/reproduce.py",
@@ -16620,6 +16620,18 @@
           {
             "path": "artifacts/research/2026-10-30/docs-from-code-typescript-extractor/qualification-package-lock.json",
             "sha256": "0219a1c50383072beeb9250cce4ced3a6bb3210b868e1ff5d77a14e3d0a887be"
+          },
+          {
+            "path": "benchmarks/dependency-regressions/docs_from_code_controls.py",
+            "sha256": "603aba1358a60fca87aae86e257d6de836cef33b65e3fdafd690e9d107c1633a"
+          },
+          {
+            "path": "benchmarks/dependency-regressions/docs_from_code_fixture.py",
+            "sha256": "d635c8fd0d227e75bc9e6cb0188c25aed3e411e01ae2f3316f20954867725c34"
+          },
+          {
+            "path": "tests/test_docs_from_code_controls.py",
+            "sha256": "938fbda91839728d4a398ad3eb8565d6d5bf13c419bebf265062b2686745ead1"
           }
         ],
         "status": "in_progress",
