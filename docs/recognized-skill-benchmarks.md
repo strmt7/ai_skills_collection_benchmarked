@@ -99,6 +99,11 @@ verifier process. Preserve the upstream test and report corrected grading under
 a new protocol with known-bad controls and external expectations/clocks.
 See `research-parallel-search-benchmark.md`. No task or model run is scored yet.
 
+A second development task, `python-scala-translation`, has a Dockerfile that
+copies a near-identical Scala implementation into the image, and its verifier
+can report a pass after a simulated nonzero test exit. The [source-bound review](research-skillsbench-scala.md)
+records the controls and their limits. No Scala task or model run was scored.
+
 Remaining qualification: component rights, current-runner compatibility,
 trusted oracle/verifier isolation, controls and actual paired trials. Do not
 pool a corrected protocol with historical leaderboard results.

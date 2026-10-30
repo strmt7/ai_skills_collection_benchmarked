@@ -1,0 +1,96 @@
+{
+  "python": "3.12.3",
+  "platform": "Linux",
+  "input_sha256": {
+    "verifier": "fc4e797cb49906159fcbb204b24553984e5a800bc0f5df1534a02393d5c1b177",
+    "workspace_source": "180a9aaa519b759e30c595399a94ce3f1d25dd54b2ac9f5475df38cb786ecf51",
+    "reference_source": "962e79378766345f9acc49b11e8bbe3219021c532f69e0a78824327e53859e3e",
+    "dockerfile": "2e83a1622dd5649d214c029af925066044bf4191015d7c97489955246f70bef5"
+  },
+  "workspace_copy_matches_reference_except_import": true,
+  "all_compiler_and_test_commands_simulated": true,
+  "cases": {
+    "success": {
+      "calls": [
+        "compile",
+        "test"
+      ],
+      "simulated_compile_exit": 0,
+      "simulated_test_exit": 0,
+      "reported_passed": true,
+      "reported_compilation": {
+        "success": true,
+        "errors": [],
+        "warnings": []
+      },
+      "reported_tests": {
+        "passed": 10,
+        "failed": 0,
+        "total": 10,
+        "errors": []
+      },
+      "overall_score": 25
+    },
+    "nonzero_test_exit": {
+      "calls": [
+        "compile",
+        "test"
+      ],
+      "simulated_compile_exit": 0,
+      "simulated_test_exit": 1,
+      "reported_passed": true,
+      "reported_compilation": {
+        "success": true,
+        "errors": [],
+        "warnings": []
+      },
+      "reported_tests": {
+        "passed": 10,
+        "failed": 0,
+        "total": 10,
+        "errors": []
+      },
+      "overall_score": 25
+    },
+    "reported_test_failure": {
+      "calls": [
+        "compile",
+        "test"
+      ],
+      "simulated_compile_exit": 0,
+      "simulated_test_exit": 0,
+      "reported_passed": false,
+      "reported_compilation": {
+        "success": true,
+        "errors": [],
+        "warnings": []
+      },
+      "reported_tests": {
+        "passed": 9,
+        "failed": 1,
+        "total": 10,
+        "errors": []
+      },
+      "overall_score": 25
+    },
+    "compile_failure": {
+      "calls": [
+        "compile"
+      ],
+      "simulated_compile_exit": 1,
+      "simulated_test_exit": null,
+      "reported_passed": false,
+      "reported_compilation": {
+        "success": false,
+        "errors": [
+          "simulated compile failure"
+        ],
+        "warnings": []
+      },
+      "reported_tests": {
+        "skipped": true
+      },
+      "overall_score": 25
+    }
+  }
+}
