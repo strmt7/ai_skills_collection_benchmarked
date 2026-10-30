@@ -1,0 +1,20 @@
+{
+  "observation_date_utc": "2026-10-30",
+  "pypi_api": "https://pypi.org/pypi/benchflow/json",
+  "pypi_response_sha256": "9d5221750701569b0f25bad7071e33bcbfaf5887bc1ab9de489905f14f9a2e7b",
+  "latest_non_yanked_stable": "0.7.11",
+  "skillsbench_release": "v1.1",
+  "skillsbench_commit": "b63b7b2850226b6aa4fb5929a8c1ac7bc4d9a6af",
+  "registry_api_response_sha256": "59bade84de25346739b1de61514627706f6d38d429bf810b39ef5a8905c4f40d",
+  "registry_git_blob": "e0b643d8a3579b5f8a6366411090f59f4f946d20",
+  "registry_sha256": "ade4beaad3092cdbe9870f54e6a3e222e71f53be3527ec539ae002e1d6e5f6dc",
+  "declared_runner_range": ">=0.6.3,<0.7",
+  "range_membership": {
+    "0.6.3": true,
+    "0.7.8": false,
+    "0.7.11": false
+  },
+  "packaging_version": "26.3",
+  "runner_executed": false,
+  "model_scored": false
+}

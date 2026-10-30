@@ -1,4 +1,4 @@
-# External skill benchmark investigation, 2 October 2026
+# External skill benchmark investigation
 
 The repository already registers SkillsBench and SWE-Skills-Bench. Their existing
 adapters test repository resolution and metric descriptions. They do not execute
@@ -24,14 +24,25 @@ Its root license is Apache-2.0, but bundled skills carry additional component
 licenses. Review individual selected task/resource rights before redistributing.
 Exact source acquisition is recorded in `skill-benchmark-source-review.json`.
 
-The current BenchFlow stable release is `0.7.8`, pinned at
-`6614f922ad49322386b9d6083a827a3d58126710`. SkillsBench v1.1 explicitly requires
-the 0.6.x runner line in its README, project dependency and registry. A newer
-runner therefore requires compatibility qualification and a new protocol;
-silently mixing it with historical leaderboard results would be invalid.
-The current runner also pins LiteLLM 1.91.0, rather than its current stable
-version. Resolve dependency/security compatibility before execution. No
-upstream benchmark runner, task or oracle has been executed in this review.
+The BenchFlow release reviewed on 2 October was `0.7.8`, pinned at
+`6614f922ad49322386b9d6083a827a3d58126710`. On 30 October,
+[PyPI's package API](https://pypi.org/pypi/benchflow/json) reported `0.7.11`
+as the latest non-yanked stable release. SkillsBench v1.1 explicitly requires
+the 0.6.x runner line in its README, project dependency and registry; both
+0.7.8 and 0.7.11 fall outside that range. A newer runner therefore requires
+compatibility qualification and a new protocol; silently mixing it with
+historical leaderboard results would be invalid. The previously reviewed 0.7.8
+runner pins LiteLLM 1.91.0. Resolve dependency/security compatibility before
+execution. No upstream benchmark runner, task or oracle has been executed in
+this review.
+
+The 30 October native PyPI response has SHA-256
+`9d5221750701569b0f25bad7071e33bcbfaf5887bc1ab9de489905f14f9a2e7b`;
+the source-locked SkillsBench registry has SHA-256
+`ade4beaad3092cdbe9870f54e6a3e222e71f53be3527ec539ae002e1d6e5f3be`. These
+checks identify published versions and constraints; they do not test runner
+compatibility or benchmark performance. The [recorded comparison](../artifacts/research/2026-10-30/skillsbench-currentness/result.json)
+includes the source identities and range-membership results.
 
 ## SWE-Skills-Bench: useful methodology, unavailable code endpoint
 
@@ -71,7 +82,7 @@ benchmark performance is not the sole quality claim.
 The published v1.1 registry pins task commit
 `55bfe693f2a19f6b2f29aca3f54fe98b9d994668`. All 87 task content digests were
 independently recomputed and matched. The registry's exact runner range is
-`>=0.6.3,<0.7`; current 0.7.8 is outside it. These are identity checks, not
+`>=0.6.3,<0.7`; both inspected 0.7.x versions are outside it. These are identity checks, not
 correctness, security or license clearance. Most tasks request public networking.
 
 Before reading engineering task prompts, skills or verifiers, the 23 primary
