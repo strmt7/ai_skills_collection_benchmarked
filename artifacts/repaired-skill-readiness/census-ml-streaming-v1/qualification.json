@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "scope": "Native synthetic SOMA streaming, disjoint cell splits and a one-epoch-equivalent CPU training smoke test.",
+  "source_skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-cellxgene-census-skill-md",
+  "python_version": "3.12.3",
+  "platforms": [
+    "Linux x86_64 (WSL)"
+  ],
+  "packages": {
+    "cellxgene-census": "1.18.0",
+    "tiledbsoma": "2.3.0",
+    "tiledbsoma-ml": "0.1.0",
+    "torch": "2.15.0+cpu",
+    "numpy": "2.5.4"
+  },
+  "files_sha256": {
+    "reproduce.py": "d316a28ee14913b92ca35c0314b6c86fc562f4dc0590d56252d231d7c69dcca4",
+    "requirements.in": "0581fcf59cb5b3f218748cfae2751220e4fa3fe36c8297dcf04ef33321dae4d7",
+    "requirements-linux.txt": "3df87282afb091a8bd0fdccee7ac855dc09532fa79baac86ab6d99749210ca36",
+    "linux-result.json": "b5023be4bb54a11f869ef676a9771731c60524afd7f1e46c458c36bbbc9ae007",
+    "sources.json": "ff9a99f7395920911de98bd7941c0e868f129c5cd911a77daa1d89d700e2838f"
+  },
+  "agent_performance_tested": false,
+  "biological_validity_tested": false,
+  "full_skill_reviewed": false,
+  "limits": [
+    "Small synthetic local experiment; no live Census, biological or agent evaluation.",
+    "The CPU smoke test does not establish model convergence or generalization.",
+    "Only single-process loading and Linux x86_64 were tested locally.",
+    "Cell-level random splits do not prevent donor or dataset leakage.",
+    "Hosted workflow results are separate from local controls."
+  ]
+}

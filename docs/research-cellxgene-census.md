@@ -57,3 +57,21 @@ pair is one option until upstream resolves the incompatibility; it is not a
 general instruction to downgrade unrelated AnnData workflows. Do not treat a
 partial destination as a completed import or delete a destination without
 confirming that it belongs to the failed attempt.
+
+## Streaming data for machine learning
+
+The pinned skill imports `cellxgene_census.experimental.ml`; this module is
+absent from the tested Census 1.18.0 package. The current
+[official tutorial](https://chanzuckerberg.github.io/cellxgene-census/notebooks/experimental/pytorch.html)
+uses TileDB-SOMA-ML instead. The [streaming overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/cellxgene-census-ml-streaming/SKILL.md)
+shows the replacement API and distinguishes its `(features, obs)` batches from
+the mapping assumed by the pinned example.
+
+The [native control](../artifacts/repaired-skill-readiness/census-ml-streaming-v1/reproduce.py)
+checks the old import failure, a repeatable disjoint split, feature and label
+alignment by noncontiguous join ID, a filtered feature selection, a rejected
+one-cell split and a CPU training step on synthetic local SOMA data. The
+[qualification record](../artifacts/repaired-skill-readiness/census-ml-streaming-v1/qualification.json)
+states the tested versions and limits. Random cell splitting does not establish
+independence across donors or datasets. Neither the control nor the example
+establishes biological validity, live Census compatibility or agent efficacy.

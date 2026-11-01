@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "python": "3.12.3",
+  "packages": {
+    "cellxgene-census": "1.18.0",
+    "tiledbsoma": "2.3.0",
+    "tiledbsoma-ml": "0.1.0",
+    "torch": "2.15.0+cpu",
+    "numpy": "2.5.4"
+  },
+  "old_import_missing": true,
+  "train_cells": 6,
+  "test_cells": 2,
+  "split_disjoint_and_repeatable": true,
+  "features_and_labels_aligned": true,
+  "filtered_features_checked": true,
+  "small_selection_rejected": true,
+  "cpu_training_updated_weights": true,
+  "live_census_tested": false,
+  "biological_validity_tested": false,
+  "agent_performance_tested": false
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-02",
+  "pinned_source_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+  "pinned_entrypoint_sha256": "d088087c45f2e9720f67eb40477f2c08a9a54b7b0e3acae4597e68c28d928c63",
+  "tutorial": {
+    "url": "https://chanzuckerberg.github.io/cellxgene-census/notebooks/experimental/pytorch.html",
+    "native_result_sha256": "b5281267273fc68ab435097f0752efa88f0c3d53da18f83218a72745874d7b48",
+    "provider_version": "0.9.5+catalog.portable4",
+    "status_code": 200
+  },
+  "pypi_metadata": {
+    "cellxgene-census": {
+      "version": "1.18.0",
+      "metadata_sha256": "07cd0517585072fa21d1188ac1bf90ed81419458aef05517fefa8bf077c334df"
+    },
+    "tiledbsoma-ml": {
+      "version": "0.1.0",
+      "metadata_sha256": "2c4f0619807e5a3805c5f4c4685a8b0ae0bc7d946e5cd604500780e2d3dce6af"
+    },
+    "tiledbsoma": {
+      "version": "2.3.0",
+      "metadata_sha256": "ca334ddd136adce906e27c6f837dd76f5a9c512e4d7a014c68442cc92ba5fa9a"
+    }
+  },
+  "limits": [
+    "Native page and package metadata captures remain outside Git.",
+    "The entire source skill and upstream migration have not been reviewed."
+  ]
+}

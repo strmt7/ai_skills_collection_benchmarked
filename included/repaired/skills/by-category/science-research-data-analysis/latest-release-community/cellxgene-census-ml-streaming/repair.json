@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-cellxgene-census-skill-md",
+  "source_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+  "source_mirror": "included/skills/by-category/science-research-data-analysis/latest-release-community/cellxgene-census",
+  "source_license_blob_sha1": "eb246475fd5a66b9bb56176f3a718984632dd98d",
+  "scope": "Native synthetic SOMA streaming, disjoint cell splits and a one-epoch-equivalent CPU training smoke test.",
+  "agent_performance_tested": false,
+  "full_skill_reviewed": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/census-ml-streaming-v1/qualification.json",
+  "overlay_sha256": {
+    "SKILL.md": "c5dc127f379b3cdf14c94e1a04d2342bb30e908166cab1fa368d7c4a1a7b3099",
+    "LICENSE": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1",
+    "provenance/original.SKILL.md": "d088087c45f2e9720f67eb40477f2c08a9a54b7b0e3acae4597e68c28d928c63"
+  },
+  "evidence_sha256": {
+    "reproduce.py": "d316a28ee14913b92ca35c0314b6c86fc562f4dc0590d56252d231d7c69dcca4",
+    "requirements.in": "0581fcf59cb5b3f218748cfae2751220e4fa3fe36c8297dcf04ef33321dae4d7",
+    "requirements-linux.txt": "3df87282afb091a8bd0fdccee7ac855dc09532fa79baac86ab6d99749210ca36",
+    "linux-result.json": "b5023be4bb54a11f869ef676a9771731c60524afd7f1e46c458c36bbbc9ae007",
+    "sources.json": "ff9a99f7395920911de98bd7941c0e868f129c5cd911a77daa1d89d700e2838f",
+    "qualification.json": "74286bf0f1ab36fe7b4b18a0574188385207571c541b2c0360b108bad514c73c"
+  }
+}

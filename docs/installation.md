@@ -46,6 +46,9 @@ Some reviewed instructions have known limitations:
   stored sparse entries. The [summary and mean overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/cellxgene-census-summary-and-mean/SKILL.md)
   covers these operations; [the review](research-cellxgene-census.md) explains its scope
   and a separately tested AnnData-to-SOMA version incompatibility.
+- The pinned Census ML examples use a removed loader. The [streaming overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/cellxgene-census-ml-streaming/SKILL.md)
+  shows the replacement API; its [review](research-cellxgene-census.md#streaming-data-for-machine-learning)
+  describes the component test and its limits.
 - With GNU Make 4.4.1, the pinned Makefile generator's selective `.NOTPARALLEL`
   example does not serialize the named target recipes. [See the parallelism control](research-makefile-parallelism.md).
 - The pinned DOCX skill's global npm installation does not necessarily make the

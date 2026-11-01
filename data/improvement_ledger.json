@@ -5774,8 +5774,8 @@
           },
           {
             "path": "docs/research-cellxgene-census.md",
-            "scope": "Summary schema, sparse means and AnnData-to-SOMA version controls on synthetic data; full skill and live service remain unverified.",
-            "sha256": "9c1e7ef03a204a694328f9fbfd74732fce283414bd1bdf0943b32f55ea68776c"
+            "scope": "Summary, sparse mean, ingestion compatibility and ML streaming reviews using synthetic controls; full skill and live service remain unverified.",
+            "sha256": "17ea930073b3ff11a40f77b78ca6e0b1695d664292a74d4b4ccb0e4c2e6a36e9"
           }
         ],
         "status": "in_progress"
@@ -5787,6 +5787,11 @@
             "path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/cellxgene-census-summary-and-mean/repair.json",
             "scope": "Maintained summary and zero-filled mean guidance with synthetic SOMA controls; no agent evaluation.",
             "sha256": "97f287bda83986a4c943941c537387d04efeb461b1df921c6db774dd816a7f44"
+          },
+          {
+            "path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/cellxgene-census-ml-streaming/repair.json",
+            "scope": "Maintained ML streaming guidance and native synthetic CPU control; no live Census or agent evaluation.",
+            "sha256": "71b5ffc410c83c0f56be6f2bcb18347453d5ae433a4a484d3625a68e672ec160"
           }
         ]
       },

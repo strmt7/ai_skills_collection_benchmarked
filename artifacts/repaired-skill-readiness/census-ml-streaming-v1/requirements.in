@@ -1,0 +1,3 @@
+cellxgene-census==1.18.0
+tiledbsoma-ml==0.1.0
+torch==2.15.0+cpu
