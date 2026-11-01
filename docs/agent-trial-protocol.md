@@ -157,6 +157,11 @@ or whether a grader actually ran. These descriptive figures are not a
 significance test, collection-wide conclusion, priced-cost comparison or evidence
 of a provider-resolved model identity.
 
+For Python 3.11–3.14, install the `reports` extra from the repository root with
+`python -m pip install '.[reports]'`. The maintainer's
+`requirements-reports-lock.txt` is generated for the hosted Python 3.14 report
+job; it is not a lock for every supported Python version.
+
 With the `reports` extra installed, render the same verified plan with
 `python tools/render_multi_task_chart.py --plan <plan.json> --output <chart.svg>`.
 Add `--check` to compare an existing chart without writing it. Dots show scored

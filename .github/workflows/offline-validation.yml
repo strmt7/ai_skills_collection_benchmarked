@@ -260,6 +260,44 @@ jobs:
           if-no-files-found: error
           retention-days: 14
 
+  report-compatibility:
+    name: Report compatibility (${{ matrix.os }}, Python ${{ matrix.python-version }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      GIT_CONFIG_COUNT: "1"
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: "true"
+      PYTHONPATH: tools
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ["3.11.17", "3.12.15", "3.13.17", "3.14.9"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: "pip"
+          cache-dependency-path: pyproject.toml
+      - name: Install report dependencies
+        run: python -m pip install '.[reports]'
+      - name: Test report rendering
+        env:
+          MPLCONFIGDIR: ${{ runner.temp }}/matplotlib
+        run: python -m unittest discover -s tests -p 'test_render_*chart.py'
+      - name: Render verified historical comparisons
+        shell: bash
+        env:
+          MPLCONFIGDIR: ${{ runner.temp }}/matplotlib
+        run: |
+          python tools/summarize_agent_trials.py --protocol benchmarks/agent-effectiveness/development/protocol-v2.json --trials artifacts/agent-trials/development-v2 --output-dir "$RUNNER_TEMP/report-compatibility" --plots --json
+          python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/report-compatibility/task-differences.svg"
+          python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/report-compatibility/task-differences.svg" --check
+          python tools/render_token_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/report-compatibility/token-differences.svg"
+          python tools/render_token_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/report-compatibility/token-differences.svg" --check
+
   trial-report:
     runs-on: ubuntu-latest
     steps:
