@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-cellxgene-census-skill-md",
+  "source_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+  "source_mirror": "included/skills/by-category/science-research-data-analysis/latest-release-community/cellxgene-census",
+  "source_license_blob_sha1": "eb246475fd5a66b9bb56176f3a718984632dd98d",
+  "scope": "Summary and zero-filled matrix means using local synthetic SOMA tables and sparse queries.",
+  "agent_performance_tested": false,
+  "full_skill_reviewed": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/census-summary-mean-v1/qualification.json",
+  "overlay_sha256": {
+    "SKILL.md": "afc1fe27959fb47ac3e2c78a2b2d17984cbd8e6c0f0a43d5bf4c8b91c6ecda73",
+    "LICENSE": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1",
+    "provenance/original.SKILL.md": "d088087c45f2e9720f67eb40477f2c08a9a54b7b0e3acae4597e68c28d928c63"
+  },
+  "evidence_sha256": {
+    "reproduce.py": "c0232c44624de2d89f080e0f31c73a95fc7a4d02ae790b5e050cf6148fb316b0",
+    "requirements.in": "b95f86d80ed9dcb67cd5dc677952defe45e123cc43e894fd403f67bd91666688",
+    "requirements-linux.txt": "bac3fff0abb110cc640253224d3f530bac9f69803eb6c734f13381f135469d26",
+    "linux-result.json": "be6f3680588a0e93071802ba52391bbaa6584b74a021ccc917121c089662c2d3",
+    "sources.json": "3626f64111913673ec936245118f295aae0ba9782c47f26f3e5386badee6994b",
+    "qualification.json": "457abde807eef8677c85f5fcc97f29842f8e5a8f08762f2a3366c8e9a3039d5b"
+  }
+}

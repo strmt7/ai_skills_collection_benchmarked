@@ -1,0 +1,51 @@
+name: Census summary and sparse mean controls
+
+on:
+  push:
+    paths:
+      - 'included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/cellxgene-census-summary-and-mean/**'
+      - 'artifacts/repaired-skill-readiness/census-summary-mean-v1/**'
+      - '.github/workflows/census-summary-mean-controls.yml'
+      - '.gitattributes'
+  workflow_dispatch:
+  schedule:
+    - cron: '25 9 * * 2'
+
+concurrency:
+  group: census-summary-mean-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  controls:
+    name: Native synthetic SOMA controls (Linux)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: '0.13.6'
+          python-version: '3.12.16'
+          activate-environment: 'true'
+          venv-path: ${{ runner.temp }}/census-control-venv
+          enable-cache: 'false'
+      - name: Install the pinned component dependencies
+        run: |
+          python -c "import platform,sys; sys.exit(platform.python_version() != '3.12.16' or sys.prefix == sys.base_prefix)"
+          uv pip install --only-binary=:all: --require-hashes -r artifacts/repaired-skill-readiness/census-summary-mean-v1/requirements-linux.txt
+          uv pip check
+      - name: Run native sparse-query controls
+        env:
+          OMP_NUM_THREADS: '2'
+          OPENBLAS_NUM_THREADS: '2'
+        run: python artifacts/repaired-skill-readiness/census-summary-mean-v1/reproduce.py --output "${RUNNER_TEMP}/census-result.json"
+      - name: Retain the component result
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: census-synthetic-linux
+          path: ${{ runner.temp }}/census-result.json
+          if-no-files-found: error
+          retention-days: 14

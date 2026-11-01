@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-02",
+  "pinned_source_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+  "pinned_entrypoint_sha256": "d088087c45f2e9720f67eb40477f2c08a9a54b7b0e3acae4597e68c28d928c63",
+  "upstream_candidate_commit": "526ebce143bc326f44471554e33d66a19c840360",
+  "candidate_entrypoint_sha256": "123b66d6701c7c0587d0a615a2394caee52e62745b3fd31176381ea64aaa794a",
+  "candidate_reference_sha256": "28580f45bfeba8c2b1594006956cbd92c7c2c5211fa58fc667bb51bf81b4d455",
+  "pages": [
+    {
+      "url": "https://chanzuckerberg.github.io/cellxgene-census/cellxgene_census_schema.html",
+      "native_result_sha256": "b3b9a445f89294255e68a35433bff6d8301b11b6a5dd070a958a56e94058cc56",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200
+    },
+    {
+      "url": "https://chanzuckerberg.github.io/cellxgene-census/notebooks/api_demo/census_query_extract.html",
+      "native_result_sha256": "4056b6c8b286bc3d3619019ae6ab11c6c847ccac971dd9d137b6bf3547f8b664",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200
+    },
+    {
+      "url": "https://chanzuckerberg.github.io/cellxgene-census/notebooks/api_demo/census_compute_over_X.html",
+      "native_result_sha256": "8f327c6f4310219978410f2b66a1396e04bfc04bbbd666ad88f8507e8426ea37",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200
+    },
+    {
+      "url": "https://chanzuckerberg.github.io/cellxgene-census/notebooks/api_demo/census_dataset_presence.html",
+      "native_result_sha256": "ed97bb8bf7498bcb0811194cb8bebca71cb71cee78dfa87926490364147b7b6a",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200
+    }
+  ],
+  "limits": [
+    "Native captures, API responses and ingestion diagnostics remain outside Git.",
+    "The newer upstream skill has not been fully reviewed."
+  ]
+}

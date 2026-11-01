@@ -133,3 +133,8 @@
 /included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/scvi-model-inputs/** text eol=lf
 /included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/scvi-model-inputs/provenance/** -text !eol
 /artifacts/repaired-skill-readiness/scvi-model-inputs-v1/** text eol=lf
+
+# Preserve the source entrypoint for the scoped Census summary and mean repair.
+/included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/cellxgene-census-summary-and-mean/** text eol=lf
+/included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/cellxgene-census-summary-and-mean/provenance/** -text !eol
+/artifacts/repaired-skill-readiness/census-summary-mean-v1/** text eol=lf

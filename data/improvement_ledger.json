@@ -5771,13 +5771,24 @@
             "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
             "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
             "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          },
+          {
+            "path": "docs/research-cellxgene-census.md",
+            "scope": "Summary schema and sparse matrix review using native synthetic controls; full skill and live service remain unverified.",
+            "sha256": "0977d3cd0cd721280ba578028260b83fd60ae54e85dc3b9136b5eb420364cc21"
           }
         ],
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "status": "in_progress",
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/cellxgene-census-summary-and-mean/repair.json",
+            "scope": "Maintained summary and zero-filled mean guidance with synthetic SOMA controls; no agent evaluation.",
+            "sha256": "97f287bda83986a4c943941c537387d04efeb461b1df921c6db774dd816a7f44"
+          }
+        ]
       },
       "source_repo": "K-Dense-AI/scientific-agent-skills",
       "source_signature": {

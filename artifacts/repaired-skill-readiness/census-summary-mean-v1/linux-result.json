@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "python": "3.12.3",
+  "packages": {
+    "tiledbsoma": "2.3.0",
+    "numpy": "2.5.4",
+    "pyarrow": "26.0.0",
+    "pandas": "2.3.3"
+  },
+  "summary_count": 10000,
+  "means": [
+    0.6666666666666666,
+    0.5,
+    0.0
+  ],
+  "pinned_stored_entry_mean": 3.0,
+  "empty_cell_and_feature_selections_rejected": true,
+  "filter_column_projection_checked": true,
+  "live_census_tested": false,
+  "biological_validity_tested": false,
+  "agent_performance_tested": false
+}

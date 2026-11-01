@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "scope": "Summary and zero-filled matrix means using local synthetic SOMA tables and sparse queries.",
+  "source_skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-cellxgene-census-skill-md",
+  "python_version": "3.12.3",
+  "platforms": [
+    "Linux x86_64 (WSL)"
+  ],
+  "packages": {
+    "tiledbsoma": "2.3.0",
+    "numpy": "2.5.4",
+    "pyarrow": "26.0.0",
+    "pandas": "2.3.3"
+  },
+  "files_sha256": {
+    "reproduce.py": "c0232c44624de2d89f080e0f31c73a95fc7a4d02ae790b5e050cf6148fb316b0",
+    "requirements.in": "b95f86d80ed9dcb67cd5dc677952defe45e123cc43e894fd403f67bd91666688",
+    "requirements-linux.txt": "bac3fff0abb110cc640253224d3f530bac9f69803eb6c734f13381f135469d26",
+    "linux-result.json": "be6f3680588a0e93071802ba52391bbaa6584b74a021ccc917121c089662c2d3",
+    "sources.json": "3626f64111913673ec936245118f295aae0ba9782c47f26f3e5386badee6994b"
+  },
+  "agent_performance_tested": false,
+  "biological_validity_tested": false,
+  "full_skill_reviewed": false,
+  "limits": [
+    "The control uses synthetic local SOMA objects, not the live Census.",
+    "Matrix-wide zero-filled means do not establish biological validity or feature availability.",
+    "Native ingestion through AnnData was not part of this control.",
+    "Hosted workflow results are separate from local controls."
+  ]
+}
