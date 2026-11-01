@@ -1,0 +1,25 @@
+{
+  "platform": "Windows",
+  "python": "3.14.10",
+  "source_comparison": [
+    {
+      "source": "old",
+      "git_blob_sha1": "c7f7e3289fdff196399fd6f3d6668b9aa68eec87",
+      "sha256": "a3e21840e29e32f947d5286028931b96eaf2dee63f75d883b8eb19c943c80aa0",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<old-source>\", line 182, in <module>\n    result = run_soffice(sys.argv[1:])\n  File \"<old-source>\", line 36, in run_soffice\n    env = get_soffice_env()\n  File \"<old-source>\", line 28, in get_soffice_env\n    if _needs_shim():\n       ~~~~~~~~~~~^^\n  File \"<old-source>\", line 46, in _needs_shim\n    s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)\n                      ^^^^^^^^^^^^^^\nAttributeError: module 'socket' has no attribute 'AF_UNIX'\n"
+    },
+    {
+      "source": "new",
+      "git_blob_sha1": "0b4c99deca54013c550458c9244ee63eea748dca",
+      "sha256": "df2c8d7249c132a4512d744482e4b5ed0ecbe885f0bcfb1295e7e6a7ced0432c",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<new-source>\", line 191, in <module>\n    result = run_soffice(sys.argv[1:])\n  File \"<new-source>\", line 46, in run_soffice\n    return subprocess.run([\"soffice\"] + args, env=get_soffice_env(), **kwargs)\n                                                  ~~~~~~~~~~~~~~~^^\n  File \"<new-source>\", line 31, in get_soffice_env\n    if _needs_shim():\n       ~~~~~~~~~~~^^\n  File \"<new-source>\", line 55, in _needs_shim\n    s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)\n                      ^^^^^^^^^^^^^^\nAttributeError: module 'socket' has no attribute 'AF_UNIX'\n"
+    }
+  ],
+  "child_path": "empty-directory",
+  "document_conversion_tested": false,
+  "agent_evaluated": false
+}

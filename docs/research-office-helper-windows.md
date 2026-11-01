@@ -33,3 +33,37 @@ spreadsheet recalculation or agent performance. The separate
 recalculation and newer-upstream controls; the
 [DOCX portability review](research-docx-portability.md) covers a separate
 npm installation issue. The pinned source mirrors remain unchanged.
+
+## Comparison with newer DOCX upstream
+
+The [newer DOCX entrypoint](https://github.com/anthropics/skills/blob/ca45fc496a3436251f191354091d557da31c15b5/skills/docx/SKILL.md)
+tries `require('docx')` first and recommends a local `npm install docx` if the
+import fails. That differs from the pinned global-install guidance discussed in
+the [DOCX portability review](research-docx-portability.md). The newer
+entrypoint assumes the package is preinstalled, and this comparison did not run
+its complete document workflow. Its source SHA-256 is
+`8017469ea95fb7d28225c62daf8e2f3492a7b516fc64c18c28977cbf8980b7fe`.
+
+The newer commit also changes the helper to create a temporary LibreOffice
+profile. A [separate source-bound control](../artifacts/research/2026-11-01/docx-upstream-helper/reproduce.py)
+compared the exact upstream [old helper](https://raw.githubusercontent.com/anthropics/skills/2c7ec5e78b8e5d43ea02e90bb8826f6b9f147b0c/skills/docx/scripts/office/soffice.py)
+and [new helper](https://raw.githubusercontent.com/anthropics/skills/ca45fc496a3436251f191354091d557da31c15b5/skills/docx/scripts/office/soffice.py).
+On Windows Python [3.11.18](../artifacts/research/2026-11-01/docx-upstream-helper/windows-3.11.json),
+[3.12.16](../artifacts/research/2026-11-01/docx-upstream-helper/windows-3.12.json),
+[3.13.18](../artifacts/research/2026-11-01/docx-upstream-helper/windows-3.13.json)
+and [3.14.10](../artifacts/research/2026-11-01/docx-upstream-helper/windows-3.14.json),
+both failed before starting LibreOffice with `socket.AF_UNIX` unavailable. The
+child process used an empty PATH and disposable profile and temporary directories.
+No document conversion or agent evaluation was performed; this does not establish
+behavior on other Windows builds or systems where `socket.AF_UNIX` exists.
+
+To reproduce, save the two linked raw files without newline conversion and run
+the control on a Windows Python without `socket.AF_UNIX`:
+
+```text
+python artifacts/research/2026-11-01/docx-upstream-helper/reproduce.py --old <old-helper.py> --new <new-helper.py>
+```
+
+The control verifies both Git blob IDs and SHA-256 digests before execution and
+checks the files again afterward. The upstream snapshot is not a mirror update;
+its other changes remain unqualified.

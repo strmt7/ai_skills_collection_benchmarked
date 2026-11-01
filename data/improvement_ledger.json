@@ -2764,7 +2764,7 @@
           {
             "path": "docs/research-office-helper-windows.md",
             "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
-            "sha256": "1ba973165b4eae260c0785d8b6bbda6616aea93b67f05046e79d552cd41c905a"
+            "sha256": "65fb405acde31fb00ccb20973ef18c058498d6017f59351f1420feaa6e4f63fa"
           },
           {
             "path": "artifacts/research/2026-10-30/office-helper-windows/reproduce.py",
@@ -2795,6 +2795,31 @@
             "path": "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
             "sha256": "8627febb9e9ec18df126c1805a32e7f04060e5c62f7ccb76d9fc55ae4763d663",
             "scope": "Raw upstream Git tree comparison only; content, license, runtime and agent-effectiveness reviews remain separate."
+          },
+          {
+            "path": "artifacts/research/2026-11-01/docx-upstream-helper/reproduce.py",
+            "scope": "Upstream old/new DOCX helper startup on Windows without AF_UNIX; no document conversion or agent benchmark.",
+            "sha256": "f4139c3d0c5740350fe43a210e0bf3f6ed93bd841b6714a6ce3aecb11233c71a"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/docx-upstream-helper/windows-3.11.json",
+            "scope": "Upstream old/new DOCX helper startup on Windows without AF_UNIX; no document conversion or agent benchmark.",
+            "sha256": "0cbf9d67f49fd18da72fc1718b80f9f3e31d76296e59494d5b66bec6f5de7c3f"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/docx-upstream-helper/windows-3.12.json",
+            "scope": "Upstream old/new DOCX helper startup on Windows without AF_UNIX; no document conversion or agent benchmark.",
+            "sha256": "926da3979c7bbe55b79e242f1cdcde6feade4a11d0b725e07f703da0c0da8a78"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/docx-upstream-helper/windows-3.13.json",
+            "scope": "Upstream old/new DOCX helper startup on Windows without AF_UNIX; no document conversion or agent benchmark.",
+            "sha256": "9778c16810f3585a246e242506dfec5ceb65f7f660f22a04468a6ecad42cd570"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/docx-upstream-helper/windows-3.14.json",
+            "scope": "Upstream old/new DOCX helper startup on Windows without AF_UNIX; no document conversion or agent benchmark.",
+            "sha256": "0baa14b996cdf0e6302671e6b53f14391f44c28ed9f956b34aa68dc5b5ee200f"
           }
         ],
         "status": "in_progress"
@@ -3010,7 +3035,7 @@
           {
             "path": "docs/research-office-helper-windows.md",
             "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
-            "sha256": "1ba973165b4eae260c0785d8b6bbda6616aea93b67f05046e79d552cd41c905a"
+            "sha256": "65fb405acde31fb00ccb20973ef18c058498d6017f59351f1420feaa6e4f63fa"
           },
           {
             "path": "artifacts/research/2026-10-30/office-helper-windows/reproduce.py",
@@ -3506,7 +3531,7 @@
           {
             "path": "docs/research-office-helper-windows.md",
             "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
-            "sha256": "1ba973165b4eae260c0785d8b6bbda6616aea93b67f05046e79d552cd41c905a"
+            "sha256": "65fb405acde31fb00ccb20973ef18c058498d6017f59351f1420feaa6e4f63fa"
           },
           {
             "path": "artifacts/research/2026-10-30/office-helper-windows/reproduce.py",
@@ -6144,7 +6169,7 @@
           {
             "path": "docs/research-office-helper-windows.md",
             "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
-            "sha256": "1ba973165b4eae260c0785d8b6bbda6616aea93b67f05046e79d552cd41c905a"
+            "sha256": "65fb405acde31fb00ccb20973ef18c058498d6017f59351f1420feaa6e4f63fa"
           },
           {
             "path": "artifacts/research/2026-10-30/office-helper-windows/reproduce.py",
@@ -7752,7 +7777,7 @@
           {
             "path": "docs/research-office-helper-windows.md",
             "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
-            "sha256": "1ba973165b4eae260c0785d8b6bbda6616aea93b67f05046e79d552cd41c905a"
+            "sha256": "65fb405acde31fb00ccb20973ef18c058498d6017f59351f1420feaa6e4f63fa"
           },
           {
             "path": "artifacts/research/2026-10-30/office-helper-windows/reproduce.py",
@@ -9372,7 +9397,7 @@
           {
             "path": "docs/research-office-helper-windows.md",
             "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
-            "sha256": "1ba973165b4eae260c0785d8b6bbda6616aea93b67f05046e79d552cd41c905a"
+            "sha256": "65fb405acde31fb00ccb20973ef18c058498d6017f59351f1420feaa6e4f63fa"
           },
           {
             "path": "artifacts/research/2026-10-30/office-helper-windows/reproduce.py",
