@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-01",
+  "pages": [
+    {
+      "url": "https://anndata.readthedocs.io/en/stable/generated/anndata.io.read_h5ad.html",
+      "native_result_sha256": "31f0a60b4c8332682623afeafab08b6fa221aba0f4eea45223af25353b9de7fa",
+      "status_code": 200,
+      "provider_version": "0.9.5+catalog.portable4"
+    },
+    {
+      "url": "https://scanpy.readthedocs.io/en/stable/generated/scanpy.read_10x_h5.html",
+      "native_result_sha256": "f1766ae06541f2151832828e9717a991390fa42423a8a35b0ebef999c2fe6dd7",
+      "status_code": 200,
+      "provider_version": "0.9.5+catalog.portable4"
+    },
+    {
+      "url": "https://scanpy.readthedocs.io/en/stable/generated/scanpy.read_10x_mtx.html",
+      "native_result_sha256": "9a99c9714a5fb4219dc84a9adb81a0bb166c0a551404820f74cd9d5dd4aa1b15",
+      "status_code": 200,
+      "provider_version": "0.9.5+catalog.portable4"
+    }
+  ],
+  "pypi": {
+    "anndata": {
+      "version": "0.13.4",
+      "api_sha256": "e153a77aa481f9026385cd6ebe8fc2a65c29b5d0a98163a5e32261ff6d318983"
+    },
+    "scanpy": {
+      "version": "1.12.5",
+      "api_sha256": "a277f60b06da48a6e972fa99b71e0e788b48bce5cd66baf4c7b8cb297b1e4278"
+    }
+  },
+  "license_git_blob_sha1": "eb246475fd5a66b9bb56176f3a718984632dd98d",
+  "source_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+  "notes": [
+    "Native page and API captures are retained outside Git.",
+    "PyPI latest versions were checked at capture time; the environment is not a portable hash-locked installation."
+  ]
+}

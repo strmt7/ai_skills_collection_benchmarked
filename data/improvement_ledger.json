@@ -5569,8 +5569,14 @@
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/anndata-io/repair.json",
+            "scope": "Narrow maintained I/O overlay, synthetic Windows controls; full skill and agent evaluation remain incomplete.",
+            "sha256": "edcda275acfbc7df94b419f71e1aa402d2a543b74e9e5b9cc9a26dcb9a07c837"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "K-Dense-AI/scientific-agent-skills",
       "source_signature": {

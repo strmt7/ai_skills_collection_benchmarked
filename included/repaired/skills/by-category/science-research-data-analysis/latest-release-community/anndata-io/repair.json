@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-anndata-skill-md",
+  "source_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+  "source_mirror": "included/skills/by-category/science-research-data-analysis/latest-release-community/anndata",
+  "source_license_blob_sha1": "eb246475fd5a66b9bb56176f3a718984632dd98d",
+  "scope": "Selected 10x readers and backed observation metadata subset write, on synthetic fixtures.",
+  "agent_performance_tested": false,
+  "full_skill_reviewed": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/anndata-io-v1/qualification.json",
+  "overlay_sha256": {
+    "SKILL.md": "5a2b79b5668dc49ca37325856dfacb0a8df8fbe23bbcbe739b65e9155a3a595f",
+    "LICENSE": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1",
+    "provenance/original.SKILL.md": "801ad688e978d54f92af466fe2ae13ae7c322100bea6fc7a6004e3c591e8264a",
+    "provenance/original.io_operations.md": "20885ec82a36d76ccfb415945b1530fb2da9567fda52718a5156ff7b12bcdee5"
+  },
+  "evidence_sha256": {
+    "reproduce.py": "e02b119442171de8f980ac31bdc0fcbe2fd2a676656ebe2bf903b18b21528aa2",
+    "windows.json": "b2998d623cf16c521828fe628c176ead51b8762bd31c6cd4ac00fa201c85b851",
+    "sources.json": "90f989878139f49b21854d0a385c77b9bd1dec0af1d9c3475beb39ce08fcacd2",
+    "qualification.json": "829a9c99d74b5f8d8258d04d39e1d68f8b95743675b4113ab98f45258249e515"
+  }
+}

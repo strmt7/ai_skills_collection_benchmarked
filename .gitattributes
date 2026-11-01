@@ -117,3 +117,8 @@
 
 # Preserve the source-bound upstream inventory across hosts.
 /artifacts/research/2026-11-01/upstream-inventory-v1/** text eol=lf
+
+# Keep the AnnData I/O overlay portable and preserve its original source bytes.
+/included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/anndata-io/** text eol=lf
+/included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/anndata-io/provenance/** -text !eol
+/artifacts/repaired-skill-readiness/anndata-io-v1/** text eol=lf

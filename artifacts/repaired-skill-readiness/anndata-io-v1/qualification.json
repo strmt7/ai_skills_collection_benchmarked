@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "scope": "Selected 10x readers and backed observation metadata subset write, on synthetic fixtures.",
+  "source_skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-anndata-skill-md",
+  "platforms": [
+    "Windows"
+  ],
+  "python_version": "3.13.17",
+  "anndata_version": "0.13.4",
+  "scanpy_version": "1.12.5",
+  "agent_performance_tested": false,
+  "full_skill_reviewed": false,
+  "limits": [
+    "No agent trial, real dataset, Linux or macOS execution.",
+    "The control uses an existing isolated environment; its dependencies are not hash-locked for portable installation.",
+    "Original upstream skill and mirror are unchanged."
+  ]
+}

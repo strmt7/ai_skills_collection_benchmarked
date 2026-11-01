@@ -32,8 +32,9 @@ policy. Copying a `SKILL.md` file alone can break those links.
 Some reviewed instructions have known limitations:
 
 - The pinned AnnData skill incorrectly says backed-mode metadata changes are
-  saved automatically. [Review the tested I/O findings](research-anndata-10x.md)
-  before using it with data you need to preserve.
+  saved automatically. The [AnnData I/O overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/anndata-io/SKILL.md)
+  covers selected 10x readers and metadata writes; [the I/O review](research-anndata-10x.md)
+  explains its limits and other known issues.
 - With GNU Make 4.4.1, the pinned Makefile generator's selective `.NOTPARALLEL`
   example does not serialize the named target recipes. [See the parallelism control](research-makefile-parallelism.md).
 - The pinned DOCX skill's global npm installation does not necessarily make the
