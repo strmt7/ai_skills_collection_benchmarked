@@ -1,0 +1,21 @@
+{
+  "python": "3.13.18",
+  "platform": "Linux",
+  "anndata": "0.13.4",
+  "scanpy": "1.12.5",
+  "numpy": "2.5.4",
+  "h5py": "3.16.0",
+  "scipy": "1.18.1",
+  "synthetic_fixture": true,
+  "checks": [
+    "10x-h5",
+    "10x-mtx",
+    "feature-type-filter",
+    "dense-backed-subset",
+    "sparse-backed-subset",
+    "input-unchanged",
+    "reopened-output",
+    "invalid-selection-cleanup"
+  ],
+  "agent_performance_tested": false
+}

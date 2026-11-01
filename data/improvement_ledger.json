@@ -5574,6 +5574,11 @@
             "path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/anndata-io/repair.json",
             "scope": "Narrow maintained I/O overlay, synthetic Windows controls; full skill and agent evaluation remain incomplete.",
             "sha256": "edcda275acfbc7df94b419f71e1aa402d2a543b74e9e5b9cc9a26dcb9a07c837"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/anndata-io-v2/qualification.json",
+            "scope": "Fresh pinned Windows and Linux synthetic component controls; no full skill or agent evaluation.",
+            "sha256": "ba2ca752dc00a30a32522ea8d6358834ffbd019f0a83fd1485cd1fce7ab5591d"
           }
         ],
         "status": "in_progress"

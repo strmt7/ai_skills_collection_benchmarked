@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "scope": "Synthetic component checks for the three maintained AnnData I/O examples; no agent trial.",
+  "skill_path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/anndata-io/SKILL.md",
+  "skill_sha256": "5a2b79b5668dc49ca37325856dfacb0a8df8fbe23bbcbe739b65e9155a3a595f",
+  "python_version": "3.13.18",
+  "anndata_version": "0.13.4",
+  "scanpy_version": "1.12.5",
+  "resolver": "uv 0.13.6",
+  "platforms": [
+    "Windows x86_64",
+    "Ubuntu 24.04 WSL x86_64"
+  ],
+  "installation": "Separate fresh virtual environments; platform-specific pinned dependency graphs, distribution hashes and binary wheels.",
+  "results": {
+    "windows": "windows-result.json",
+    "linux": "linux-result.json"
+  },
+  "files_sha256": {
+    "requirements.in": "973dd04fc007e95976988675566bf19686377afc311a01c53cda7dd8223bfa55",
+    "requirements-windows.txt": "f4b48a96cac7cde49ffd2f8c39e5ae6a38941fa07b083d5895da79d0b57419d6",
+    "requirements-linux.txt": "e25330dd08757c6bc0a842e0695d0ddef98f959e190eb08514bfc3d55bda7e7b",
+    "reproduce.py": "da6e54ae62fe66dcde9a12e79fb17fd2854143b75e1a598e773f11f946ddfbce",
+    "windows-result.json": "297f94787f601385e562c84797ea9fa9e641fb28f4ac92ee867513f1304c89a9",
+    "linux-result.json": "a5aaffc5a5c85999f967a6bcff4a8df84f3f453e15a4dd8434c241544cd3a6fc"
+  },
+  "agent_performance_tested": false,
+  "full_skill_reviewed": false,
+  "limits": [
+    "Synthetic input only; no real biological dataset or agent comparison.",
+    "The hosted workflow outcome is separate from these local controls.",
+    "The historical v1 control remains unchanged."
+  ]
+}

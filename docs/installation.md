@@ -33,8 +33,9 @@ Some reviewed instructions have known limitations:
 
 - The pinned AnnData skill incorrectly says backed-mode metadata changes are
   saved automatically. The [AnnData I/O overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/anndata-io/SKILL.md)
-  covers selected 10x readers and metadata writes; [the I/O review](research-anndata-10x.md)
-  explains its limits and other known issues.
+  covers selected 10x readers and metadata writes. Its [component controls](../artifacts/repaired-skill-readiness/anndata-io-v2/qualification.json)
+  use pinned dependencies and synthetic inputs; [the I/O review](research-anndata-10x.md)
+  explains the remaining limits and other known issues.
 - With GNU Make 4.4.1, the pinned Makefile generator's selective `.NOTPARALLEL`
   example does not serialize the named target recipes. [See the parallelism control](research-makefile-parallelism.md).
 - The pinned DOCX skill's global npm installation does not necessarily make the
