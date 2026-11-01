@@ -58,7 +58,8 @@ Some reviewed instructions have known limitations:
 - The ComfyUI skill recommends a retired Anthropic model while allowing a
   different model choice. [See the model review](research-comfyui-model-lifecycle.md).
 - The design skill's local searches and HTML renderer can report success when
-  required input is missing. [See the tested cases](research-design-search.md).
+  required input is missing. A [local-search repair](../included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-design/SKILL.md)
+  is available; the brief generator and renderer remain unchanged. [See the tested cases](research-design-search.md).
 
 These examples are not an exhaustive review of the catalog.
 

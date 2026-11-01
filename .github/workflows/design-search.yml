@@ -1,0 +1,68 @@
+name: Design search compatibility
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 6 * * 1"
+
+concurrency:
+  group: design-search-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  search:
+    name: Search controls (${{ matrix.os }}, Python ${{ matrix.python-version }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      GIT_CONFIG_COUNT: "1"
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: "true"
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ["3.11.17", "3.12.15", "3.13.17", "3.14.9"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        if: ${{ runner.os != 'Windows' || (!startsWith(matrix.python-version, '3.11.') && !startsWith(matrix.python-version, '3.12.')) }}
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        if: ${{ runner.os == 'Windows' && (startsWith(matrix.python-version, '3.11.') || startsWith(matrix.python-version, '3.12.')) }}
+        with:
+          version: "0.13.6"
+          python-version: ${{ matrix.python-version }}
+          activate-environment: "true"
+          venv-path: ${{ runner.temp }}/design-search-venv
+          enable-cache: "false"
+      - name: Install pip in the managed Python environment
+        if: ${{ runner.os == 'Windows' && (startsWith(matrix.python-version, '3.11.') || startsWith(matrix.python-version, '3.12.')) }}
+        run: uv pip install 'pip==26.2.2'
+      - name: Verify the selected Python version
+        shell: python
+        env:
+          EXPECTED_PYTHON: ${{ matrix.python-version }}
+        run: |
+          import os
+          import platform
+          actual = platform.python_version()
+          expected = os.environ["EXPECTED_PYTHON"]
+          if actual != expected:
+              raise SystemExit(f"Expected Python {expected}; got {actual}")
+          print(f"Verified Python {actual}")
+      - name: Install the isolated search dependency
+        run: >-
+          python -m pip install --only-binary=:all: --require-hashes
+          -r included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-design/requirements.txt
+      - name: Run the search contract controls
+        run: >-
+          python -m unittest discover
+          -s included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-design
+          -p 'test_search*.py'

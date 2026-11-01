@@ -35,5 +35,10 @@ python artifacts/research/2026-11-01/design-search/reproduce.py --output /path/t
 The relevant five upstream scripts were unchanged between the pinned `v2.5.0`
 commit and the observed `v2.15.0` release; see the
 [source identities](../artifacts/research/2026-11-01/design-search/source-evidence.json).
-The review did not test a live image provider, the full design skill, an agent,
-or a repaired version. It does not establish benchmark improvement.
+The [repaired local-search overlay](../included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-design/SKILL.md)
+addresses selected search failures without changing the mirror. Its
+[component qualification](../artifacts/repaired-skill-readiness/design-local-search-v1/qualification.json)
+includes independent synthetic controls and cross-platform observations. It
+does not repair the brief generator or HTML renderer. Neither review tested a
+live image provider, the full design skill or an agent, and neither establishes
+benchmark improvement.

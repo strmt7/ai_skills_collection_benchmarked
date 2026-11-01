@@ -1,0 +1,104 @@
+{
+  "artifact_kind": "independent_runtime_readiness_component",
+  "source_commit": "07f4ef3ac2568c25a3b0c8ef5165a86abc3e56e4",
+  "source_skill_id": "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-design-skill-md",
+  "original_control_evidence": [
+    "artifacts/research/2026-11-01/design-search/windows-result.json",
+    "artifacts/research/2026-11-01/design-search/linux-result.json"
+  ],
+  "original_controls": {
+    "missing_selected_dataset_exit": 0,
+    "missing_selected_dataset_reported_error": true,
+    "uniform_count": 3,
+    "uniforms_count": 0
+  },
+  "repair_script_sha256": "f203fa509cdb43b8f74dc95e1dd97554708d7a2185591f0bcd16e72636411f4c",
+  "synthetic_control_script_sha256": "af93f863008044a05112f4a4d6eaec743f8ac9a5d35987ab7b22a3d59185e5ae",
+  "repair_controls": {
+    "synthetic_tests_per_interpreter": 20,
+    "windows_python": [
+      "3.11.9",
+      "3.12.10",
+      "3.13.17",
+      "3.14.10"
+    ],
+    "linux_python": [
+      "3.12.3",
+      "3.14.8"
+    ],
+    "missing_selected_dataset_exit": 2,
+    "missing_selected_dataset_ok": false,
+    "real_data_observations_identical_across_windows_and_linux": true,
+    "real_data_observations": [
+      {
+        "collection": "logo",
+        "domain": "style",
+        "query": "minimalist",
+        "exit": 0,
+        "matching": "exact",
+        "count": 1
+      },
+      {
+        "collection": "logo",
+        "domain": "color",
+        "query": "blue",
+        "exit": 0,
+        "matching": "exact",
+        "count": 3
+      },
+      {
+        "collection": "logo",
+        "domain": "industry",
+        "query": "healthcare",
+        "exit": 0,
+        "matching": "exact",
+        "count": 1
+      },
+      {
+        "collection": "cip",
+        "domain": "deliverable",
+        "query": "uniforms",
+        "exit": 0,
+        "matching": "expanded",
+        "count": 3
+      },
+      {
+        "collection": "cip",
+        "domain": "deliverable",
+        "query": "ID badge",
+        "exit": 0,
+        "matching": "exact",
+        "count": 3
+      },
+      {
+        "collection": "cip",
+        "domain": "style",
+        "query": "minimalist",
+        "exit": 0,
+        "matching": "expanded",
+        "count": 0
+      },
+      {
+        "collection": "cip",
+        "domain": "industry",
+        "query": "healthcare",
+        "exit": 0,
+        "matching": "exact",
+        "count": 1
+      },
+      {
+        "collection": "cip",
+        "domain": "mockup",
+        "query": "desk",
+        "exit": 0,
+        "matching": "exact",
+        "count": 2
+      }
+    ],
+    "bundled_data_tests_per_interpreter": 2,
+    "total_tests_per_interpreter": 22
+  },
+  "scope": "Local search component only; synthetic controls are defined independently of the skill text. No agent efficacy is scored.",
+  "agent_efficacy_scored": false,
+  "bundled_data_control_script_sha256": "1f8fa2d4ab4c7a08ba7804086257688c97a5a6797b54fac6acc982954621deaa"
+}

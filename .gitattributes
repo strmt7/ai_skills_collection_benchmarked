@@ -66,3 +66,7 @@
 /artifacts/external-benchmark-integrations/skillsbench-source-resolution-v6/** -text
 # This authored schema is bound by the native schema-validation receipt.
 /evaluators/external_benchmark_method_smoke.schema.json text eol=lf
+
+# Preserve normalized provenance and deterministic search-overlay inputs.
+/included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-design/** text eol=lf
+/artifacts/repaired-skill-readiness/design-local-search-v1/** text eol=lf

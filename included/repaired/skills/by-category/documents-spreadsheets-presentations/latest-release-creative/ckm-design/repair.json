@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-design-skill-md",
+  "source_commit": "07f4ef3ac2568c25a3b0c8ef5165a86abc3e56e4",
+  "source_mirror": "included/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-design",
+  "original_skill_sha256": "87a5278f1fdb2e2e51c7506b69aed58efbf261185e524e37450b866e594dd102",
+  "provenance_skill": "provenance/original.SKILL.md",
+  "license_file": "LICENSE",
+  "license_sha256": "738f69dfa83db5c347c678fb9d90e560877059f0de93a327c39001bff92dc014",
+  "repaired_skill_sha256": "36728b76069fc05451c410ef102f839c63825e0f72ccbcf86766ad4b24d33e7d",
+  "repaired_script_sha256": "f203fa509cdb43b8f74dc95e1dd97554708d7a2185591f0bcd16e72636411f4c",
+  "data_sha256": {
+    "data/logo/styles.csv": "ea08bdfb7aa557f08d1b6299222423f948700f8e4029321acb58c8f83197bdf2",
+    "data/logo/colors.csv": "d60218f0705bb0f0b892a10468a5c8d9a44eef3d0262ef8df8970ba3fbab567a",
+    "data/logo/industries.csv": "e58dda4b9d28851f70914f82c1d2a2cff626a991ca41076f64122f33cc8a6525",
+    "data/cip/deliverables.csv": "5b541cb89d95364f84191a48216690deba8ac146821d6b17cea32624d395dcb2",
+    "data/cip/styles.csv": "02b60129c4b15eba80ac18773db7fe1066687e9e50319c5424691135a01c0d42",
+    "data/cip/industries.csv": "4ca42af13d13c1741ea96204b7492d01e9b1aeb8e6822dfe7f5c411e02521303",
+    "data/cip/mockup-contexts.csv": "f11f4ad9a451043bca062904b84bc7556634959b70a293badbe14f8a47eba640"
+  },
+  "line_endings": "LF; source hashes use the Git-normalized source text",
+  "scope": "Local logo and corporate identity search only; original brief, provider and renderer remain unchanged.",
+  "model_performance_claim": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/design-local-search-v1/qualification.json",
+  "dependency": "snowballstemmer 3.1.1, separately installed from the hash-pinned requirements file",
+  "documented_repairs": [
+    "Return structured nonzero errors for missing or invalid selected data.",
+    "Provide exact matching and explicit opt-in or fallback English stemming, with per-result match metadata."
+  ]
+}

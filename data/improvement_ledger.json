@@ -13133,7 +13133,7 @@
           {
             "path": "docs/research-design-search.md",
             "scope": "Selected local search, missing-data and renderer controls; no live provider request or agent performance test.",
-            "sha256": "0a00e97dc7e5ce3a3f2bc04947ed5ef519205754c93f2e315b5e987f1c3f83dc"
+            "sha256": "099ee1978159228e0faa8453bc93ee0120d405ecd3694742fc2279950c358fd7"
           },
           {
             "path": "artifacts/research/2026-11-01/design-search/reproduce.py",
@@ -13164,8 +13164,13 @@
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-design/repair.json",
+            "sha256": "e6e7f9b5fd60055860cc4f928adfd7b8a76a892702b11991f963c5be477f5aa9"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "nextlevelbuilder/ui-ux-pro-max-skill",
       "source_signature": {
