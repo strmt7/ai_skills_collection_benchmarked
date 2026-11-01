@@ -282,8 +282,11 @@ jobs:
         run: |
           python -c "import matplotlib; print('Matplotlib', matplotlib.__version__)"
           python -m unittest discover -s tests -p test_render_multi_task_chart.py
+          python -m unittest discover -s tests -p test_render_token_chart.py
           python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/matched-development-report/task-differences.svg"
           python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/matched-development-report/task-differences.svg" --check
+          python tools/render_token_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/matched-development-report/token-differences.svg"
+          python tools/render_token_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/matched-development-report/token-differences.svg" --check
       - name: Upload verified tables and graphs
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:

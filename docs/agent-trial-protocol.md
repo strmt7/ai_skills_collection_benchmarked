@@ -168,3 +168,10 @@ checks require the reports dependencies and run in that workflow's report job.
 The chart also counts attempts without snapshot metadata and distinct reported
 snapshot identifiers. These are reported metadata, not independently verified
 provider identities; distinct identifiers can make comparisons harder to interpret.
+
+For paired token differences, use
+`python tools/render_token_chart.py --plan <plan.json> --output <chart.svg>`.
+The two panels show input and output counts separately, with complete task means,
+the equal-task mean when all tasks are complete, and comparable block counts.
+The workflow also uploads this chart. It describes observed usage; it does not
+establish priced cost, efficiency, statistical significance or agent superiority.
