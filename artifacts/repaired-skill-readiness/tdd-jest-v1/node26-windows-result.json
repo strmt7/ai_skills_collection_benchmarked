@@ -1,0 +1,56 @@
+{
+  "artifact_kind": "independent_runtime_readiness_component",
+  "source_skill_sha256": "63249998befbdbbf2f7d2f089c9cd7a9912f26ddc8fdf04ab1248c82614b43ac",
+  "source_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+  "overlay_skill_sha256": "947ed1e7a2f27323fd535562a8f0bebea9193cc97b500342abf30bfc308ce4a7",
+  "jest_version": "30.5.2",
+  "node_version": "v26.13.0",
+  "npm_lock_sha256": "892fe16f760f9b0787f554fcde0b07ead355555b665b47e49d64e1a6afa02b15",
+  "results": {
+    "source_low": {
+      "exit_code": 0,
+      "passed_tests": 1,
+      "failed_tests": 0,
+      "unknown_plural_warning": true,
+      "threshold_failure": false,
+      "coverage_percent": {
+        "statements": 75,
+        "branches": 50,
+        "functions": 100,
+        "lines": 66.66
+      }
+    },
+    "overlay_low": {
+      "exit_code": 1,
+      "passed_tests": 1,
+      "failed_tests": 0,
+      "unknown_plural_warning": false,
+      "threshold_failure": true,
+      "coverage_percent": {
+        "statements": 75,
+        "branches": 50,
+        "functions": 100,
+        "lines": 66.66
+      }
+    },
+    "overlay_full": {
+      "exit_code": 0,
+      "passed_tests": 2,
+      "failed_tests": 0,
+      "unknown_plural_warning": false,
+      "threshold_failure": false,
+      "coverage_percent": {
+        "statements": 100,
+        "branches": 100,
+        "functions": 100,
+        "lines": 100
+      }
+    }
+  },
+  "agent_efficacy_scored": false,
+  "limitations": [
+    "Synthetic test project; no agent evaluation.",
+    "Corrected configuration changes only the option name.",
+    "The full npm dependency lock and native logs are retained outside the repository."
+  ]
+}

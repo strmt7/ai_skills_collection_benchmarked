@@ -1,0 +1,12 @@
+{
+  "repository": "affaan-m/everything-claude-code",
+  "observed_main_commit": "b38be6a7f6350964d59328b52f0624e1d1d552d1",
+  "commit_time_utc": "2026-10-30T03:06:32Z",
+  "source_path": ".agents/skills/tdd-workflow/SKILL.md",
+  "git_blob_sha": "67300bf520db15fe9254837780dcef7cf97fd3e8",
+  "source_sha256": "e9507695657b05f26dd62127f1d6ff58e4015d624df65dd4d7e07f6470317393",
+  "commit_api": "https://api.github.com/repos/affaan-m/everything-claude-code/commits/b38be6a7f6350964d59328b52f0624e1d1d552d1",
+  "blob_api": "https://api.github.com/repos/affaan-m/everything-claude-code/git/blobs/67300bf520db15fe9254837780dcef7cf97fd3e8",
+  "scope": "Observed main at the recorded commit; source text and selected Jest controls only. Not a full upstream migration or an agent evaluation.",
+  "agent_efficacy_scored": false
+}

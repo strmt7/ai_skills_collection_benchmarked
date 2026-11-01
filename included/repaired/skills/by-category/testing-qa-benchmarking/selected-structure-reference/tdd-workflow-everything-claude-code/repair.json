@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "affaan-m-everything-claude-code-agents-skills-tdd-workflow-skill-md",
+  "source_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+  "source_mirror": "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/tdd-workflow-everything-claude-code",
+  "original_skill_sha256": "63249998befbdbbf2f7d2f089c9cd7a9912f26ddc8fdf04ab1248c82614b43ac",
+  "provenance_skill": "provenance/original.SKILL.md",
+  "repaired_skill_sha256": "947ed1e7a2f27323fd535562a8f0bebea9193cc97b500342abf30bfc308ce4a7",
+  "license_file": "LICENSE",
+  "license_sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+  "scope": "Testing-workflow instructions and a corrected Jest coverage configuration; component controls do not measure agent effectiveness.",
+  "model_performance_claim": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/tdd-jest-v1/windows-result.json",
+  "additional_evidence": [
+    "artifacts/repaired-skill-readiness/tdd-jest-v1/linux-result.json",
+    "artifacts/repaired-skill-readiness/tdd-jest-v1/node26-linux-result.json",
+    "artifacts/repaired-skill-readiness/tdd-jest-v1/node26-windows-result.json",
+    "artifacts/repaired-skill-readiness/tdd-jest-v1/upstream-linux-result.json",
+    "artifacts/repaired-skill-readiness/tdd-jest-v1/upstream-node26-linux-result.json",
+    "artifacts/repaired-skill-readiness/tdd-jest-v1/upstream-node26-windows-result.json",
+    "artifacts/repaired-skill-readiness/tdd-jest-v1/upstream-windows-result.json",
+    "artifacts/repaired-skill-readiness/tdd-jest-v1/upstream-observation.json"
+  ],
+  "documented_repairs": [
+    "Use the documented singular Jest coverageThreshold option.",
+    "Treat coverage targets and test types as project-specific requirements.",
+    "Use observable readiness instead of fixed sleeps in browser tests."
+  ],
+  "evidence_sha256": {
+    "linux-result.json": "94300c8100cac7084bebf538258ac39d6accf194c01876dd1d9063502e2e3e34",
+    "node26-linux-result.json": "b82c518c63d1e71cf05c067dc6421fc8c9c265e6db85dfca543bb42f9c0b0d71",
+    "node26-windows-result.json": "2f70d2f3a41a411241e0410def2d544e9f5f3c57cebeb694ede94f781ff4579a",
+    "reproduce.py": "82dfe2827aff77e23e6f591df1155a7abd10db6219127e160a88a6bc312b550e",
+    "upstream-linux-result.json": "cb2014a05e88a03f941e8f8295a011fd0debb73dea4fa8ee6793afc0aeb8c4f0",
+    "upstream-node26-linux-result.json": "a63bbccab65917d657d25b7fa52ee4b07ef34c3572e5a3e20023ff5fada648ea",
+    "upstream-node26-windows-result.json": "b9c4d09cc6168022971c0a20af3c372bef1049b099f903d245dbd34ae8984608",
+    "upstream-observation.json": "39f444e6c1b1f2e2b5b518a250e4e0c4b3dd1e524e8f96fcf3e8fe1f199e9960",
+    "upstream-windows-result.json": "548a6d4c174f6aa7672bd0c8453bd457189c2eb4fd91e029c76d39c3aa649cdc",
+    "windows-result.json": "9352120134c5daf36247efe770461c00a8a99af71b518edec485dfbcd25c79d1"
+  }
+}

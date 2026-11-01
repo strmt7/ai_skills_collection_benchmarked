@@ -268,7 +268,7 @@
         "evidence": [
           {
             "path": "docs/research-testing-workflows.md",
-            "sha256": "7085d7636d4485a387ec889b400aa274c909383b773f976afdf5c693e3094056"
+            "sha256": "b1c1e389a83345d776df6b922cebee42a8bf4a7890d4275657bd2c8122e0e71d"
           },
           {
             "path": "artifacts/research/2026-10-02/testing-stable-version-review.json",
@@ -576,7 +576,7 @@
         "evidence": [
           {
             "path": "docs/research-testing-workflows.md",
-            "sha256": "7085d7636d4485a387ec889b400aa274c909383b773f976afdf5c693e3094056"
+            "sha256": "b1c1e389a83345d776df6b922cebee42a8bf4a7890d4275657bd2c8122e0e71d"
           },
           {
             "path": "artifacts/research/2026-10-02/testing-stable-version-review.json",
@@ -1202,7 +1202,7 @@
         "evidence": [
           {
             "path": "docs/research-testing-workflows.md",
-            "sha256": "7085d7636d4485a387ec889b400aa274c909383b773f976afdf5c693e3094056"
+            "sha256": "b1c1e389a83345d776df6b922cebee42a8bf4a7890d4275657bd2c8122e0e71d"
           },
           {
             "path": "artifacts/research/2026-10-02/testing-stable-version-review.json",
@@ -1224,13 +1224,73 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "docs/research-tdd-jest-configuration.md",
+            "scope": "Jest configuration component controls and selected upstream source observation; no agent efficacy result.",
+            "sha256": "7b9a8c784753bef31a39e050a186dcc06b88d113938a0454b91cfc1931de9399"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/reproduce.py",
+            "scope": "Jest configuration component controls and selected upstream source observation; no agent efficacy result.",
+            "sha256": "82dfe2827aff77e23e6f591df1155a7abd10db6219127e160a88a6bc312b550e"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/windows-result.json",
+            "scope": "Jest configuration component controls and selected upstream source observation; no agent efficacy result.",
+            "sha256": "9352120134c5daf36247efe770461c00a8a99af71b518edec485dfbcd25c79d1"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/linux-result.json",
+            "scope": "Jest configuration component controls and selected upstream source observation; no agent efficacy result.",
+            "sha256": "94300c8100cac7084bebf538258ac39d6accf194c01876dd1d9063502e2e3e34"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/upstream-observation.json",
+            "scope": "Jest configuration component controls and selected upstream source observation; no agent efficacy result.",
+            "sha256": "39f444e6c1b1f2e2b5b518a250e4e0c4b3dd1e524e8f96fcf3e8fe1f199e9960"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/upstream-windows-result.json",
+            "scope": "Jest configuration component controls and selected upstream source observation; no agent efficacy result.",
+            "sha256": "548a6d4c174f6aa7672bd0c8453bd457189c2eb4fd91e029c76d39c3aa649cdc"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/upstream-linux-result.json",
+            "scope": "Jest configuration component controls and selected upstream source observation; no agent efficacy result.",
+            "sha256": "cb2014a05e88a03f941e8f8295a011fd0debb73dea4fa8ee6793afc0aeb8c4f0"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/node26-windows-result.json",
+            "scope": "Jest threshold component control using Node 26.13.0; no agent efficacy result.",
+            "sha256": "2f70d2f3a41a411241e0410def2d544e9f5f3c57cebeb694ede94f781ff4579a"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/node26-linux-result.json",
+            "scope": "Jest threshold component control using Node 26.13.0; no agent efficacy result.",
+            "sha256": "b82c518c63d1e71cf05c067dc6421fc8c9c265e6db85dfca543bb42f9c0b0d71"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/upstream-node26-windows-result.json",
+            "scope": "Jest threshold component control using Node 26.13.0; no agent efficacy result.",
+            "sha256": "b9c4d09cc6168022971c0a20af3c372bef1049b099f903d245dbd34ae8984608"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/upstream-node26-linux-result.json",
+            "scope": "Jest threshold component control using Node 26.13.0; no agent efficacy result.",
+            "sha256": "a63bbccab65917d657d25b7fa52ee4b07ef34c3572e5a3e20023ff5fada648ea"
           }
         ],
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/tdd-workflow-everything-claude-code/repair.json",
+            "sha256": "6ced12d7d3721198a75e6dc6f1037f0560952785cf7bfc988a29eb62a6d047c4"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
@@ -1250,7 +1310,7 @@
         "evidence": [
           {
             "path": "docs/research-testing-workflows.md",
-            "sha256": "7085d7636d4485a387ec889b400aa274c909383b773f976afdf5c693e3094056"
+            "sha256": "b1c1e389a83345d776df6b922cebee42a8bf4a7890d4275657bd2c8122e0e71d"
           },
           {
             "path": "artifacts/research/2026-10-02/testing-stable-version-review.json",

@@ -46,6 +46,10 @@ not an independently correct oracle. Explain genuine platform skips without
 silently dropping required coverage. Reversible formatting-only changes do not
 need tests that restate the edit.
 
+The Jest threshold example uses an unrecognized option and can exit successfully
+despite insufficient coverage. A [source-bound control and maintained overlay](research-tdd-jest-configuration.md)
+document the observed behavior and the corrected option.
+
 Current upstream adds runner discovery and Bun examples, but invokes an ECC
 repository-level detector absent from the standalone package. Its "Bun present"
 heuristic can override custom or Node-native tests. Inspect the repository's

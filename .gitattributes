@@ -70,3 +70,7 @@
 # Preserve normalized provenance and deterministic search-overlay inputs.
 /included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-design/** text eol=lf
 /artifacts/repaired-skill-readiness/design-local-search-v1/** text eol=lf
+
+# Preserve normalized provenance and source-bound testing controls.
+/included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/tdd-workflow-everything-claude-code/** text eol=lf
+/artifacts/repaired-skill-readiness/tdd-jest-v1/** text eol=lf
