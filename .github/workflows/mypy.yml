@@ -24,13 +24,13 @@ jobs:
         python-version: ["3.11", "3.12", "3.13", "3.14"]
         include:
           - python-version: "3.11"
-            runtime: "3.11.17"
+            runtime: "3.11.18"
           - python-version: "3.12"
-            runtime: "3.12.15"
+            runtime: "3.12.16"
           - python-version: "3.13"
-            runtime: "3.13.17"
+            runtime: "3.13.18"
           - python-version: "3.14"
-            runtime: "3.14.9"
+            runtime: "3.14.10"
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
