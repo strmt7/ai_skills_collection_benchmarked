@@ -92,6 +92,12 @@ repository root:
 python tools/summarize_agent_trials.py --protocol benchmarks/agent-effectiveness/development/protocol-v2.json --trials artifacts/agent-trials/development-v2 --output-dir artifacts/agent-trials/development-v2-report --check --check-plots
 ```
 
+The single-task reporter derives the partition and number of matched attempts
+from each protocol. Condition definitions belong to that protocol; the reporter
+does not assume that another experiment used this historical three-condition
+bundle. This keeps future development and holdout reports distinct without
+changing the recorded historical attempts or their scores.
+
 Future experiments must establish their case manifest before execution and
 retain independent grading evidence.
 For protocol version 3 or later, `grading_cases_sha256` commits the case set:

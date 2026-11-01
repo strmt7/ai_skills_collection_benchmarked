@@ -19,13 +19,12 @@ from _trial_manifest import read_grading_manifest, validate_grade_checks
 from _trial_transcript import parse_events, strict_json
 
 LIMITATIONS = [
-    "One development task and three matched attempts per condition do not establish collection-wide effectiveness.",
     "Quality is checked externally; agent-written regression tests are not a coverage or mutation score.",
     "Token statistics are descriptive actual CLI usage, not priced cost, significance, or general efficiency claims.",
     "Input tokens include cached input; reasoning usage is retained separately, not added again to output tokens.",
-    "Elapsed time is diagnostic only; unrelated host workloads were not controlled.",
-    "Provider-resolved model snapshots are unavailable; the requested model is not a verified backend revision.",
-    "This frozen block does not pool earlier exploratory probes or harness versions; their failures remain recorded separately.",
+    "Elapsed time is diagnostic only unless host and workload conditions are controlled.",
+    "A requested model name does not verify its provider-resolved snapshot; availability is recorded per attempt.",
+    "This report includes only attempts declared in its frozen protocol; other experiments are not pooled.",
     "The grading process executes submitted Python on the host; it is not a hardened service for arbitrary untrusted submissions.",
     "A case manifest checks the reported denominator but cannot independently prove that the grader ran "
     "or that observations are authentic.",
@@ -353,7 +352,12 @@ def summarize(protocol_path: Path, trials: Path, *, package_caches: bool = False
         "attempts": rows,
         "block_comparison": compare_blocks(rows, conditions),
         "quality_superiority_established": False,
-        "limitations": LIMITATIONS + protocol.get("limitations", []),
+        "limitations": [
+            f"One task and {len(repetitions)} matched {'attempt' if len(repetitions) == 1 else 'attempts'} "
+            "per condition do not establish collection-wide effectiveness.",
+            *LIMITATIONS,
+            *protocol.get("limitations", []),
+        ],
     }
 
 
@@ -408,7 +412,7 @@ def _render_block_comparison(comparison: dict[str, Any]) -> list[str]:
 
 def render(report: dict[str, Any]) -> str:
     lines = [
-        "# Matched development trials",
+        f"# Matched {report['partition']} trials",
         "",
         f"Task: `{report['task_id']}`. Requested model: `{report['model_requested']}` with `{report['reasoning_effort_requested']}` reasoning.",
         "",
@@ -437,7 +441,7 @@ def render(report: dict[str, Any]) -> str:
         "",
         "Input counts include cached input. Output counts are reported as returned by the CLI. These are descriptive tokens, not priced costs or statistically demonstrated efficiency gains.",
         "",
-        "The conditions use a default agent, a pinned third-party Karpathy adaptation, and an experimental two-skill bundle. Earlier exploratory and harness-version failures are retained separately; see [experiment protocol](../../../docs/agent-trial-protocol.md).",
+        "Condition definitions and run order are recorded in the associated protocol. Other experiments are not pooled into this report.",
         "",
         "## Limits",
         "",
@@ -482,7 +486,7 @@ def plots(report: dict[str, Any], output: Path) -> None:
     axis.set(
         ylim=(0, 1.16),
         ylabel="Fraction of planned attempts",
-        title="One development task; no demonstrated quality advantage",
+        title=f"One {report['partition']} task; no demonstrated quality advantage",
     )
     axis.legend(loc="upper center", bbox_to_anchor=(0.5, -0.14), ncol=3, frameon=False)
     figure.savefig(output / "quality.svg", metadata={"Date": None, "Creator": "summarize_agent_trials.py"})

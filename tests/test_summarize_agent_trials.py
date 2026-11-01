@@ -472,3 +472,34 @@ def test_report_exposes_full_block_outcomes_and_comparable_usage(matched):
     assert "Repetition-block comparison with default" in text
     assert "a shared random seed or causal effect is not implied" in text
     assert "do not establish a causal or efficiency advantage" in text
+
+
+def test_report_describes_its_actual_protocol(matched):
+    """A one-block protocol with two conditions must not inherit historical claims."""
+    path, trials = matched
+    report = summary.summarize(path, trials)
+    assert report["limitations"][0] == (
+        "One task and 1 matched attempt per condition do not establish collection-wide effectiveness."
+    )
+    text = summary.render(report)
+    assert "Karpathy adaptation" not in text
+    assert "two-skill bundle" not in text
+    assert "Condition definitions and run order are recorded in the associated protocol." in text
+
+
+def test_report_heading_uses_recorded_partition(matched):
+    path, trials = matched
+    report = summary.summarize(path, trials)
+    report["partition"] = "holdout"
+    assert summary.render(report).startswith("# Matched holdout trials\n")
+
+
+def test_quality_chart_uses_recorded_partition(matched, tmp_path):
+    pytest.importorskip("matplotlib", reason="requires the reports extra")
+    path, trials = matched
+    report = summary.summarize(path, trials)
+    report["partition"] = "holdout"
+    summary.plots(report, tmp_path)
+    chart = (tmp_path / "quality.svg").read_text(encoding="utf-8")
+    assert "One holdout task; no demonstrated quality advantage" in chart
+    assert "One development task" not in chart
