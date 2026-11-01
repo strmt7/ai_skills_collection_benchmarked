@@ -1,0 +1,20 @@
+{
+  "skill_id": "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-design-skill-md",
+  "source_commit": "07f4ef3ac2568c25a3b0c8ef5165a86abc3e56e4",
+  "line_endings": "normalize CRLF to LF before hashing",
+  "files": {
+    "SKILL.md": "87a5278f1fdb2e2e51c7506b69aed58efbf261185e524e37450b866e594dd102",
+    "scripts/logo/core.py": "4f8b36ffe538e5995d0e0b740053a0899a1adf445ffdf484bd47f94e71ade8d0",
+    "scripts/logo/search.py": "693b3a1824831f120d4c60ed72477847604da1f6b654343381f8e9d3800a28f2",
+    "scripts/cip/core.py": "78a78a51f12d2382b2854414df395dc62b68532626ef724ddd5de713507911e4",
+    "scripts/cip/search.py": "6619fbbe71983003a858c5eb79bc59c607b342610a1178b6976c687c2932161b",
+    "scripts/cip/render-html.py": "a49a89a017ea4a2c492438055f05dfba3dfb4f91563f5f913359939beeaeccab",
+    "data/logo/styles.csv": "ea08bdfb7aa557f08d1b6299222423f948700f8e4029321acb58c8f83197bdf2",
+    "data/logo/colors.csv": "d60218f0705bb0f0b892a10468a5c8d9a44eef3d0262ef8df8970ba3fbab567a",
+    "data/logo/industries.csv": "e58dda4b9d28851f70914f82c1d2a2cff626a991ca41076f64122f33cc8a6525",
+    "data/cip/deliverables.csv": "5b541cb89d95364f84191a48216690deba8ac146821d6b17cea32624d395dcb2",
+    "data/cip/styles.csv": "02b60129c4b15eba80ac18773db7fe1066687e9e50319c5424691135a01c0d42",
+    "data/cip/industries.csv": "4ca42af13d13c1741ea96204b7492d01e9b1aeb8e6822dfe7f5c411e02521303",
+    "data/cip/mockup-contexts.csv": "f11f4ad9a451043bca062904b84bc7556634959b70a293badbe14f8a47eba640"
+  }
+}

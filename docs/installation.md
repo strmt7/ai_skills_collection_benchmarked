@@ -57,6 +57,8 @@ Some reviewed instructions have known limitations:
   OpenRouter ID is a separate provider entry. [See the image-model review](research-gemini-image-lifecycle.md).
 - The ComfyUI skill recommends a retired Anthropic model while allowing a
   different model choice. [See the model review](research-comfyui-model-lifecycle.md).
+- The design skill's local searches and HTML renderer can report success when
+  required input is missing. [See the tested cases](research-design-search.md).
 
 These examples are not an exhaustive review of the catalog.
 

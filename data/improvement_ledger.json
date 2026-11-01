@@ -13129,8 +13129,39 @@
       },
       "mirrored_path": "included/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-design",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-design-search.md",
+            "scope": "Selected local search, missing-data and renderer controls; no live provider request or agent performance test.",
+            "sha256": "0a00e97dc7e5ce3a3f2bc04947ed5ef519205754c93f2e315b5e987f1c3f83dc"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/design-search/reproduce.py",
+            "scope": "Selected local search, missing-data and renderer controls; no live provider request or agent performance test.",
+            "sha256": "a4ac2007eb6d32df0358430e9c373c47be330f797f104182b55592645e5401dd"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/design-search/source-manifest.json",
+            "scope": "Selected local search, missing-data and renderer controls; no live provider request or agent performance test.",
+            "sha256": "45a952133c54cf5b46c82d8773cf2a6a2ec97b5d51e3413bb6ed8f906abc9833"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/design-search/source-evidence.json",
+            "scope": "Selected local search, missing-data and renderer controls; no live provider request or agent performance test.",
+            "sha256": "fa9593d10f85430ea557ed31e7b07b2a510d7f0dcc782a4688d4fe6da9f4fa26"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/design-search/windows-result.json",
+            "scope": "Selected local search, missing-data and renderer controls; no live provider request or agent performance test.",
+            "sha256": "6e2294775afd1d2ba6c92860730d7779af1c823bc7307a9f02fff1c661b6f918"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/design-search/linux-result.json",
+            "scope": "Selected local search, missing-data and renderer controls; no live provider request or agent performance test.",
+            "sha256": "6e2294775afd1d2ba6c92860730d7779af1c823bc7307a9f02fff1c661b6f918"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],

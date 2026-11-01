@@ -1,0 +1,23 @@
+{
+  "source_repository": "nextlevelbuilder/ui-ux-pro-max-skill",
+  "pinned_release": "v2.5.0",
+  "pinned_commit": "07f4ef3ac2568c25a3b0c8ef5165a86abc3e56e4",
+  "observed_latest_release": "v2.15.0",
+  "observed_latest_commit": "a38d04c3d5c298c851dbe5e6ee1965ee3de42cb5",
+  "observed_date": "2026-11-01",
+  "pinned_tree_api": "https://api.github.com/repos/nextlevelbuilder/ui-ux-pro-max-skill/git/trees/07f4ef3ac2568c25a3b0c8ef5165a86abc3e56e4?recursive=1",
+  "pinned_tree_response_sha256": "a933054d0a2d5960a43d61509cb144ed6e35884fe20ec6bcee1eebc08bb1b93d",
+  "latest_tree_api": "https://api.github.com/repos/nextlevelbuilder/ui-ux-pro-max-skill/git/trees/a38d04c3d5c298c851dbe5e6ee1965ee3de42cb5?recursive=1",
+  "latest_tree_response_sha256": "1963d7fbe26316ba46a8e6f504fe3961d281d3b471c51ce11badb54294d925db",
+  "upstream_unchanged_script_blobs": {
+    ".claude/skills/design/scripts/logo/core.py": "b3de30c5d7c4afecb1c8a51c52688184530ea300",
+    ".claude/skills/design/scripts/logo/search.py": "e8437537b449cc96b3528703f2c025b7fa6e1d64",
+    ".claude/skills/design/scripts/cip/core.py": "5e6b7a902ceabbc2f7a9ef425923774c9435f9da",
+    ".claude/skills/design/scripts/cip/search.py": "894f4841979ef66920e5b96b8f41c89c896b8f6a",
+    ".claude/skills/design/scripts/cip/render-html.py": "34e378261f642ea98303ee4a7718568b78ec8520"
+  },
+  "windows_runtime": "CPython 3.13.17 on Windows x64",
+  "linux_runtime": "CPython 3.14.8 on WSL Linux x64",
+  "result_sha256": "6e2294775afd1d2ba6c92860730d7779af1c823bc7307a9f02fff1c661b6f918",
+  "scope": "Copied local components and synthetic missing-input controls; no live provider request or agent benchmark"
+}

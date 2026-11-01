@@ -1,0 +1,91 @@
+{
+  "agent_efficacy_scored": false,
+  "brief": [
+    {
+      "deliverables": [
+        "T-Shirt",
+        "Name Badge Event",
+        "Reception Signage"
+      ],
+      "error_present": false,
+      "exit_code": 0,
+      "fixture": "complete"
+    },
+    {
+      "deliverables": [],
+      "error_present": false,
+      "exit_code": 0,
+      "fixture": "missing"
+    }
+  ],
+  "lexical": [
+    {
+      "count": 3,
+      "exit_code": 0,
+      "query": "uniform"
+    },
+    {
+      "count": 0,
+      "exit_code": 0,
+      "query": "uniforms"
+    },
+    {
+      "count": 3,
+      "exit_code": 0,
+      "query": "badge"
+    },
+    {
+      "count": 2,
+      "exit_code": 0,
+      "query": "badges"
+    }
+  ],
+  "renderer": [
+    {
+      "exit_code": 0,
+      "fixture": "missing",
+      "output_exists": false,
+      "reported_error": true
+    },
+    {
+      "exit_code": 0,
+      "fixture": "empty",
+      "output_exists": false,
+      "reported_error": true
+    },
+    {
+      "exit_code": 0,
+      "fixture": "valid",
+      "output_exists": true,
+      "reported_error": false
+    }
+  ],
+  "searches": [
+    {
+      "error_present": false,
+      "exit_code": 0,
+      "fixture": "complete",
+      "kind": "logo"
+    },
+    {
+      "error_present": true,
+      "exit_code": 0,
+      "fixture": "missing",
+      "kind": "logo"
+    },
+    {
+      "error_present": false,
+      "exit_code": 0,
+      "fixture": "complete",
+      "kind": "cip"
+    },
+    {
+      "error_present": true,
+      "exit_code": 0,
+      "fixture": "missing",
+      "kind": "cip"
+    }
+  ],
+  "skill_id": "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-design-skill-md",
+  "source_commit": "07f4ef3ac2568c25a3b0c8ef5165a86abc3e56e4"
+}
