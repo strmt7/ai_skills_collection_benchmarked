@@ -86,3 +86,6 @@
 # Preserve versioned Next.js component controls and overlay provenance.
 /included/repaired/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/nextjs-turbopack/** text eol=lf
 /artifacts/repaired-skill-readiness/next-turbopack-v1/** text eol=lf
+
+# Preserve the source-bound SWE-bench compatibility control.
+/artifacts/external-benchmark-integrations/swe-verified-schema-v1/** text eol=lf

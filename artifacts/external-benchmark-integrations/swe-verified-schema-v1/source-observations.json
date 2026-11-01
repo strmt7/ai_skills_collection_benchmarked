@@ -1,0 +1,26 @@
+{
+  "observed_date": "2026-11-01",
+  "harness": {
+    "package": "swebench",
+    "version": "5.0.2",
+    "wheel": "swebench-5.0.2-py3-none-any.whl",
+    "wheel_sha256": "b7f0416a1e686eca22c2f749b5f816685a202835032f6683080e2b53545bbb62",
+    "source": "https://pypi.org/project/swebench/5.0.2/"
+  },
+  "datasets": {
+    "legacy": {
+      "id": "princeton-nlp/SWE-bench_Verified",
+      "observed_repository_revision": "c104f840cc67f8b6eec6f759ebc8b2693d585d4a",
+      "metadata_response_sha256": "bd3109f153b14023f75d89a6f7bb0de76509905b3e902ac3b0eb7f1aba273086"
+    },
+    "current": {
+      "id": "SWE-bench/SWE-bench_Verified",
+      "observed_repository_revision": "78f471bf655a3137b2e8a75af1501690ec009ec3",
+      "metadata_response_sha256": "7f25ea79c5f53178db3d2430c667a3ea85409f394210a18c69a1c79681e54d78"
+    }
+  },
+  "scope": "Observed dataset-server pages and test-spec construction only; the API responses are not cryptographically bound to the separately observed repository revisions.",
+  "agent_efficacy_scored": false,
+  "control_sha256": "365d38aabada9b6c5941f47f346459272cce95d50e543f9d823a6442f76729d7",
+  "result_sha256": "3a0dfabe43754dfaffe18b9c50958037a9b2c3b0e421df209df1abc845f5af90"
+}

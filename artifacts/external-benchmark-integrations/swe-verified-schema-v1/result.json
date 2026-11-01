@@ -1,0 +1,37 @@
+{
+  "ok": true,
+  "swebench_version": "5.0.2",
+  "python_version": "3.13.17",
+  "cases": {
+    "legacy": {
+      "rows": 500,
+      "counts": {
+        "KeyError: 'image'": 500
+      },
+      "page_sha256": {
+        "0": "1c3850da017bd530532c42f80035df75ecc6ed7943e1494d0a5302c60d67ff3d",
+        "100": "ad2828da9a1a8ab3be3000672f287393ce83bc0102dc48be114e5e60ed0e18cb",
+        "200": "b0f1a84aa338d3ca7fdfc387d49435deb52dfa6cef00899b299cc5f7844a9370",
+        "300": "1e4db401e4969ddd52a497872be782d252fa5207c2988d3b139064f07222e28f",
+        "400": "a99ab0683594b82169e5a5531451f8cebddcbb6b6a0895654e7ed6e50ad80b0e"
+      }
+    },
+    "current": {
+      "rows": 500,
+      "counts": {
+        "accepted": 500
+      },
+      "page_sha256": {
+        "0": "a0f399fbb51380d9df71f2c42cce8170b563c4bb94c8915796fb07be4d8cc61e",
+        "100": "bc1ae9a3b8b2302c7da2175755f1e7483d6e5d30dcdd41a82d7ac38143691029",
+        "200": "cd79aaf4897b5e12177177213a677b32653ff24afd152a92c14141b2b1c372b1",
+        "300": "955abd565f3e69a231cbe3d2fb1b6823ad5c2cf7703954f2b3aca0e9b0e353a4",
+        "400": "f14a5f186f66ff37f9b1800aa1a57860bad897ed7b2a52457397d34b6f15e405"
+      }
+    }
+  },
+  "same_instance_ids_repositories_and_base_commits": true,
+  "matches_recorded_observation": true,
+  "executes_evaluation_scripts": false,
+  "agent_efficacy_scored": false
+}

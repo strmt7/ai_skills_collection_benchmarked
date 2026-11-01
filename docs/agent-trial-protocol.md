@@ -60,7 +60,9 @@ provider-resolved model snapshot; requested identity and returned usage are
 reported separately.
 
 Harder tasks, real complete repository fixtures, repeat analysis, untouched
-holdouts, skill selection tests and report graphs remain required. Do not tune
+holdouts, skill selection tests and report graphs remain required. The public
+[SWE-bench Verified compatibility check](research-swe-bench-verified.md)
+qualifies dataset input construction only; it is not an agent benchmark result. Do not tune
 against final holdouts or omit failures to produce a favorable chart.
 
 ## Completed first matched block
