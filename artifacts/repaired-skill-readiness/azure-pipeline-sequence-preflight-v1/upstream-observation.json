@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "repository": "akin-ozer/cc-devops-skills",
+  "pinned_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+  "observed_head": "276af751e659315aaf56d3ad13d7c26f4e72e28a",
+  "observed_date": "2026-11-01",
+  "scope": "devops-skills-plugin/skills/azure-pipelines-validator/",
+  "pinned_tree_sha": "8f6c3f7246fa33d4c1a736f75fc499ae8688785e",
+  "observed_tree_sha": "1a2c8163f5b3d817141fee0eb9c5c64fa2fef46c",
+  "pinned_native_tree_sha256": "f25f3ea950ceea9093e5988c48b3933f9ed9339c2d950fa1753bc20ef4a965cd",
+  "observed_native_tree_sha256": "b791b668f2034a2bee081e82b4aa236f1b24f74d0ac7726ca8616c07f5513c0a",
+  "native_api": "GitHub Git Trees API; full native responses retained outside Git",
+  "pinned_file_count": 22,
+  "observed_file_count": 22,
+  "changed_paths": [
+    {
+      "path": ".gitignore",
+      "pinned_blob": "74abd76af08e897f5cbdd41f0a72408d6d7c0290",
+      "observed_blob": "a978c395aac4b42319d1163d2c714b911286334e"
+    },
+    {
+      "path": "examples/basic-pipeline.yml",
+      "pinned_blob": "c95074cdff325270f26c02017b1e310132f3e4fe",
+      "observed_blob": "654572d80cf8111d10331ed27e21b6e8a5e54cd1"
+    },
+    {
+      "path": "scripts/test_regressions.py",
+      "pinned_blob": "c65f5069c1696137ececb1f243ce023d8133d000",
+      "observed_blob": "f4731380f98ee9d538cb377628dc23a57e2b6463"
+    }
+  ],
+  "unchanged_source_blobs": {
+    "SKILL.md": "e56175ef37b1679e17d05a9de46168adcd6f7664",
+    "scripts/validate_syntax.py": "46cf138dfc2a411f0b23ef298f3ddd28ba9381c6"
+  },
+  "runtime_or_quality_comparison": false
+}

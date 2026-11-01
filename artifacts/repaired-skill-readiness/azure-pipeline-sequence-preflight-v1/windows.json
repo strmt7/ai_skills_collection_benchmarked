@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "kind": "local_syntax_component_control_not_agent_benchmark",
+  "source_sha256": "195074a331b54a7c3f1dfcea48fef90db41c549abbb32f80eea9eb142a5fa534",
+  "preflight_sha256": "de4d52fff90e675f48402d66415f6d11de522acdc99a38ad197af92de1953cfb",
+  "python_version": "3.14.10",
+  "platform": "Windows",
+  "architecture": "AMD64",
+  "cases": [
+    {
+      "case": "ordinary_step",
+      "fixture_sha256": "55ab04fddfc47e9f5d24d96f44cf0d17671e9e668de88ee11d00de3e4080c4d1",
+      "exit_code": 0,
+      "stdout_sha256": "6e1cfea534f7506bbb1a1b3889db72928526486b34392b0374cfb2e701a4b2e0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "preflight_exit_code": 0,
+      "preflight_status": "no_shape_issues",
+      "preflight_stdout_sha256": "2359f171bf9502034f28c67ad1071aad68e001897fcb2bb8b77762dd1f069e38",
+      "preflight_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "bare_step",
+      "fixture_sha256": "cf189b41dce94660c0881d07b1074a679a6867828e2d89225658f8b34145be22",
+      "exit_code": 0,
+      "stdout_sha256": "6e1cfea534f7506bbb1a1b3889db72928526486b34392b0374cfb2e701a4b2e0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "preflight_exit_code": 1,
+      "preflight_status": "issues",
+      "preflight_stdout_sha256": "a6937dd6e128d936f9f5bf0bbefad6975dce3c16b78827455fb61f727557ef2b",
+      "preflight_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "bare_job",
+      "fixture_sha256": "9cea508f7549d37860bd4bb62636566abde21dd3657c08900958200dadd11342",
+      "exit_code": 0,
+      "stdout_sha256": "6e1cfea534f7506bbb1a1b3889db72928526486b34392b0374cfb2e701a4b2e0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "preflight_exit_code": 1,
+      "preflight_status": "issues",
+      "preflight_stdout_sha256": "0d5664dff084a1a0544b97adeb3411e68be3c0f2cbf606e2cff34c021aa5321d",
+      "preflight_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "bare_stage",
+      "fixture_sha256": "26bfdc324204eadf082c96d6ce85af6e3046744e329cb7aeb3a9a5bf1ce30bd1",
+      "exit_code": 0,
+      "stdout_sha256": "6e1cfea534f7506bbb1a1b3889db72928526486b34392b0374cfb2e701a4b2e0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "preflight_exit_code": 1,
+      "preflight_status": "issues",
+      "preflight_stdout_sha256": "66fc296cd64b4989cc72a66a0008af0fbfd5ae7ebcfb2c9073b18156a5cd0f09",
+      "preflight_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "nested_bare_step",
+      "fixture_sha256": "0a9c456665178cbfb98174b091d08279c7de7e61fe5805b58d3cf467b69aff23",
+      "exit_code": 0,
+      "stdout_sha256": "6e1cfea534f7506bbb1a1b3889db72928526486b34392b0374cfb2e701a4b2e0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "preflight_exit_code": 1,
+      "preflight_status": "issues",
+      "preflight_stdout_sha256": "fa1d67c5771834458397ec57936320d8acb5e118a14c9439ce8e86c14dcf43b1",
+      "preflight_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "conditional_mapping",
+      "fixture_sha256": "25fda396a85ece785b563dc49496dd8218a28087ca0e60c67ee568c0321a1464",
+      "exit_code": 0,
+      "stdout_sha256": "6e1cfea534f7506bbb1a1b3889db72928526486b34392b0374cfb2e701a4b2e0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "preflight_exit_code": 2,
+      "preflight_status": "indeterminate",
+      "preflight_stdout_sha256": "9bc16aa82fb855d688cc42e4927d2b3f56ef619d5f65c0b42bb9c5b37051a89d",
+      "preflight_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "step_list_insertion",
+      "fixture_sha256": "b8e2552d313851d4df8124bc2f971605790a0f39b70c02d9579670eadef94607",
+      "exit_code": 0,
+      "stdout_sha256": "6e1cfea534f7506bbb1a1b3889db72928526486b34392b0374cfb2e701a4b2e0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "preflight_exit_code": 2,
+      "preflight_status": "indeterminate",
+      "preflight_stdout_sha256": "ac30cf4e658e5b4470f230f44c117f68de3c84b8eacb7198f00bc0d8c48e1853",
+      "preflight_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "missing_task_version",
+      "fixture_sha256": "0e7cfde01ce37d2b23fed24e4d0bde5090f6619c442f671a569a3c8f6a471b54",
+      "exit_code": 1,
+      "stdout_sha256": "fcaed4a8d416167ff0152c316077fcfa174af2104fca1d2c2a4f81598115b864",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "preflight_exit_code": 0,
+      "preflight_status": "no_shape_issues",
+      "preflight_stdout_sha256": "2359f171bf9502034f28c67ad1071aad68e001897fcb2bb8b77762dd1f069e38",
+      "preflight_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "malformed_yaml",
+      "fixture_sha256": "053645f40e8bbf3532c592d252541ac71d397d9adeb67515f73d931ae2d19288",
+      "exit_code": 1,
+      "stdout_sha256": "3d6d1e72301d1127ca6be6999c914d0efc805826e3bfb0c5c3a3812f172c8e81",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "preflight_exit_code": 3,
+      "preflight_status": "invalid_input",
+      "preflight_stdout_sha256": "10b0ebbe6facfe20046b84f758f2a89ef3ebdb9fba218c853bd9a743a563d209",
+      "preflight_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "cp1252": {
+    "exit_code": 1,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "92afbc0470726b30b876dc85d4609fc41752f9c3bb6f432b269c7bbd440c9cb1",
+    "unicode_encode_error": true,
+    "preflight_exit_code": 0,
+    "preflight_stdout_sha256": "2359f171bf9502034f28c67ad1071aad68e001897fcb2bb8b77762dd1f069e38",
+    "preflight_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "azure_service_run": false,
+  "other_validator_components_run": false,
+  "agent_performance_tested": false
+}

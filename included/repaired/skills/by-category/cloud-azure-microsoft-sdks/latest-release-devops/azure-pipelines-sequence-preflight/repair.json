@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-validator-skill-md",
+  "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+  "source_mirror": "included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-validator",
+  "original_skill_sha256": "6f2971f08868e27feab7593c9487841a3d483c1c1cea2cd3b9e7dc63a77b1f6e",
+  "original_syntax_sha256": "195074a331b54a7c3f1dfcea48fef90db41c549abbb32f80eea9eb142a5fa534",
+  "license_file": "LICENSE",
+  "license_sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+  "scope": "Optional literal sequence-shape preflight only; not full validator, Azure service or agent evaluation.",
+  "azure_service_run": false,
+  "model_performance_claim": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/azure-pipeline-sequence-preflight-v1/qualification.json",
+  "overlay_sha256": {
+    "LICENSE": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+    "preflight.py": "de4d52fff90e675f48402d66415f6d11de522acdc99a38ad197af92de1953cfb",
+    "provenance/original.SKILL.md": "6f2971f08868e27feab7593c9487841a3d483c1c1cea2cd3b9e7dc63a77b1f6e",
+    "provenance/original.validate_syntax.py": "195074a331b54a7c3f1dfcea48fef90db41c549abbb32f80eea9eb142a5fa534",
+    "requirements.txt": "4d38355ae2f80970b6413d6931628417d0f91921bf60bc6d07ca84e6cdcdcc5d",
+    "SKILL.md": "50bfb29ca0fe07ec1ffd297b7f2e07d2391a8a64d98a0f7976e69366aaf5d1cc"
+  },
+  "evidence_sha256": {
+    "linux.json": "b9558bfacc2ea37e52c56ec5b4d7e73338addffeccefa6470f3385a00f314fc8",
+    "qualification.json": "c49227936c814117f91f846c3cdd37aa37d6d144df44e56339a823269aca17f0",
+    "reproduce.py": "ed129b64b1726d41f06526b04906d26d7096de6d6a90dbd40d59b94e97542b9d",
+    "sources.json": "db18c161c1129fbe8659f192c532146a8bec2d411637cac1947451c54b29e676",
+    "upstream-observation.json": "371707880b1a4d19f5aa46c0b6ac7860f610fc98784fc2c7304009c01cf7c2ee",
+    "windows.json": "3fab7491b176a23e60083fd6ef2982f26d834699218c6d106baf91aed6abd117"
+  }
+}

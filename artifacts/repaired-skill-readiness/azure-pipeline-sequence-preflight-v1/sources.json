@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "observed_date": "2026-11-01",
+  "source_transport": "reviewed isolated Crawl4AI; native captures retained outside Git",
+  "pages": [
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/devops/pipelines/yaml-schema/steps?view=azure-pipelines",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_sha256": "c4de70291a7b6f64d2f296873a0f17e3c9d8ef301be7f13b989277447a35d918",
+      "status": 200,
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/devops/pipelines/yaml-schema/jobs?view=azure-pipelines",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_sha256": "5a90715533c7c33086c78350425bdb475b54c4c38b96ef430674b1725dc10ea3",
+      "status": 200,
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/devops/pipelines/yaml-schema/stages?view=azure-pipelines",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_sha256": "ce4c9ec17b01aebb39a7dc0e0d7a18dccba82c4b982f075817806a5563dfe6fc",
+      "status": 200,
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/devops/pipelines/process/template-expressions?view=azure-devops",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_sha256": "072c10a8b26d8b7aad4c6c88f730e91d344fa4da49f2b2aed26fabea12d52ff7",
+      "status": 200,
+      "scope_reviewed": true
+    }
+  ]
+}

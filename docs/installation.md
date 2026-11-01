@@ -90,6 +90,8 @@ Some reviewed instructions have known limitations:
 
 - The pinned Azure Pipelines basic example assumes a specific npm test flag and allows lint failure. A [Node CI overlay](../included/repaired/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-node-ci/SKILL.md) covers a tested native-test-runner case. [See the review and limits](research-azure-pipelines-node.md).
 
+- The pinned Azure Pipelines syntax component accepts tested bare sequence entries. A [limited sequence preflight](../included/repaired/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-sequence-preflight/SKILL.md) identifies those shapes without claiming Azure schema validation. [See the controls and limits](research-azure-pipelines-syntax.md).
+
 - The pinned slides template can advance when Space is pressed on its focused previous button.
   A [maintained template](../included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-slides/SKILL.md)
   addresses tested navigation, scrolling and reduced-motion cases. [See the controls and limits](research-slides-keyboard.md).

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "scope": "Literal Azure Pipelines sequence-entry shape controls only.",
+  "source_sha256": "195074a331b54a7c3f1dfcea48fef90db41c549abbb32f80eea9eb142a5fa534",
+  "candidate_sha256": "de4d52fff90e675f48402d66415f6d11de522acdc99a38ad197af92de1953cfb",
+  "platforms": [
+    "Windows",
+    "Linux"
+  ],
+  "python_version": "3.14.10",
+  "paired_cases_per_platform": 9,
+  "azure_service_run": false,
+  "other_validator_components_run": false,
+  "agent_performance_tested": false,
+  "limits": [
+    "No Azure service execution or complete pipeline schema validation.",
+    "Task-version checks remain outside the preflight; the original caught the tested missing version.",
+    "Native web captures, complete Git trees, fixture files and raw command streams are retained outside Git."
+  ]
+}
