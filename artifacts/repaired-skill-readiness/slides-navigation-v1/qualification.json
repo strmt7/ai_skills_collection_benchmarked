@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "source_template_sha256": "fd5b051a37365fc6059c75bb388ec6f64daf1bd9ae938b287b6d762dc83c0c35",
+  "repaired_template_sha256": "0ed28b587e769cd036f1f1e46f31dee7f9149c263ea8be8c95d4e51f3e1d908d",
+  "node_versions": [
+    "24.22.2",
+    "26.13.0"
+  ],
+  "platform_engines": {
+    "windows": [
+      "chromium",
+      "webkit"
+    ],
+    "linux": [
+      "chromium",
+      "firefox"
+    ]
+  },
+  "receipt_count": 72,
+  "playwright_version": "1.64.1",
+  "chart_js_version": "4.6.1",
+  "full_accessibility_audit": false,
+  "agent_performance_tested": false,
+  "notes": [
+    "Component controls only; no model benchmark.",
+    "Linux WebKit could not launch without additional system libraries; Windows WebKit was tested.",
+    "The unchanged upstream animate-count example names an undefined countUp keyframe."
+  ]
+}

@@ -13623,7 +13623,7 @@
           {
             "path": "docs/research-slides-keyboard.md",
             "scope": "Source-bound slide template keyboard control; no agent efficacy or complete accessibility claim.",
-            "sha256": "ce2a4268c3779bc52e22537f9aee78b5741b70d06e448577ebdd32eb42b5e13e"
+            "sha256": "ab76c01e546c8327603c4d7ad94b8fa4a3cb9d788fd4a375fe02c4c91b4f8230"
           },
           {
             "path": "artifacts/research/2026-11-01/slides-keyboard-control/reproduce.cjs",
@@ -13654,8 +13654,14 @@
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-slides/repair.json",
+            "scope": "Maintained slide template with source-bound browser controls; full skill and agent effectiveness remain unqualified.",
+            "sha256": "31d78295882a16c205bca97833377072eaa48e9a94758646292913e50ca64816"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "nextlevelbuilder/ui-ux-pro-max-skill",
       "source_signature": {

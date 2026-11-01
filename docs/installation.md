@@ -89,7 +89,8 @@ Some reviewed instructions have known limitations:
   for all 17 pinned Anthropic skills; it does not qualify the changed files.
 
 - The pinned slides template can advance when Space is pressed on its focused previous button.
-  [See the keyboard control](research-slides-keyboard.md).
+  A [maintained template](../included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-slides/SKILL.md)
+  addresses tested navigation, scrolling and reduced-motion cases. [See the controls and limits](research-slides-keyboard.md).
 
 - The pinned Anthropic frontend skill uses broad aesthetic rules. [See the
   accessibility and upstream review](research-anthropic-frontend.md).

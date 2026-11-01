@@ -1,0 +1,13 @@
+{
+  "name": "slides-navigation-controls",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Isolated browser controls for the slide navigation repair.",
+  "devDependencies": {
+    "chart.js": "4.6.1",
+    "playwright": "1.64.1"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

@@ -93,3 +93,9 @@
 # Preserve exact upstream API snapshots used by the offline source comparison.
 /artifacts/research/2026-11-01/anthropic-source-snapshots/** -text
 /artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json -text
+
+# Maintained slides repair uses LF; provenance and native browser receipts keep their bytes.
+/included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-slides/** text eol=lf
+/included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-slides/provenance/** -text !eol
+/artifacts/repaired-skill-readiness/slides-navigation-v1/** text eol=lf
+/artifacts/repaired-skill-readiness/slides-navigation-v1/results/** -text !eol whitespace=cr-at-eol

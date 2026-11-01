@@ -46,3 +46,42 @@ The W3C page was read using the isolated Crawl4AI provider
 `0.9.5+catalog.portable4`; its retained native result SHA-256 is
 `6811910810a57f9efffdbba9f4b2972bf1297ad1a950bfd21e92be25f6e46b7c`.
 This component observation is not an agent benchmark or proof of a skill advantage.
+
+
+## Maintained template
+
+The separate [slides overlay](../included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-slides/SKILL.md)
+retains the original skill and template in its provenance directory. Its
+template keeps the focused previous button's Space activation, avoids the tested
+keyboard and pointer shortcuts on interactive content, and makes overflowing
+slide regions focusable and scrollable. Pointer advancement is limited to the
+slide background. Authors should localize the default English labels and test
+their complete deck. A slide may initially overlap fixed controls in a short
+viewport; the tested content can be scrolled above them.
+
+The template also disables its tested transitions and animation classes when
+`prefers-reduced-motion: reduce` is active. The upstream `animate-count` example
+still references an undefined `countUp` keyframe; the overlay does not claim to
+implement a counting animation. The [W3C explanation of animation from
+interactions](https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions)
+describes reduced-motion preferences as one technique. Its reviewed Crawl4AI
+result has SHA-256
+`552c15d201223507e977fbbeffa4251fa3cb6c93b5f259d734095bc64e6febb1`.
+
+The template uses Chart.js 4.6.1. The exact package bundle rendered the line
+example's four expected values in the tested browser configurations; the CDN
+still requires network access unless a local copy is supplied. The component
+[controls and native results](../artifacts/repaired-skill-readiness/slides-navigation-v1/qualification.json)
+cover Chromium and WebKit on Windows and Chromium and Firefox on Linux, with
+Node 24.22.2 and 26.13.0. They exercise keyboard, pointer, touch, long-content
+scrolling, reduced motion, labels, and chart rendering in specified fixtures.
+Linux WebKit was not tested because its system libraries were unavailable;
+WebKit was exercised on Windows. These controls are not a full accessibility
+or assistive-technology audit, interactive chart test, model benchmark, or proof
+that the skill improves agent performance.
+
+The [workflow](../.github/workflows/slides-navigation.yml) installs pinned npm,
+Playwright and Chart.js dependencies in temporary directories, runs the same
+controls on the four hosted configurations, and uploads the individual JSON
+results. Its browser installations are isolated to the job. The scripts also
+accept explicit paths to installed dependencies and the two template files.

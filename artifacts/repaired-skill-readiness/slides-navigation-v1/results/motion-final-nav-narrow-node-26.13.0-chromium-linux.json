@@ -1,0 +1,199 @@
+{
+  "source_sha256": "fd5b051a37365fc6059c75bb388ec6f64daf1bd9ae938b287b6d762dc83c0c35",
+  "candidate_sha256": "0ed28b587e769cd036f1f1e46f31dee7f9149c263ea8be8c95d4e51f3e1d908d",
+  "source_fixture_sha256": "d3bc7e71b67cc6e924bdbffaa46b83c01fe5ef67ff6a2251161c51aaf57535f5",
+  "candidate_fixture_sha256": "5b9a56bc27bf855fbb60e683e3d445768888baa84f84b996ce661e7f77985b09",
+  "node_version": "v26.13.0",
+  "playwright_version": "1.64.1",
+  "platform": "linux",
+  "architecture": "x64",
+  "browser_engine": "chromium",
+  "browser_version": "156.0.8078.4",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "touch_enabled": true,
+  "blocked_chart_requests": 59,
+  "tab_order": [
+    "Slide 1: Title Slide",
+    "Previous slide",
+    "Next slide"
+  ],
+  "original": {
+    "previous_space": 3,
+    "previous_enter": 1,
+    "previous_click": 1,
+    "body_space": 3,
+    "body_arrow_left": 1,
+    "input_arrow_right": {
+      "slide": 3,
+      "caret": 0
+    },
+    "input_space": {
+      "slide": 3,
+      "value": "abcd"
+    },
+    "textarea_arrow_left": {
+      "slide": 1,
+      "caret": 3
+    },
+    "editable_space": {
+      "slide": 3,
+      "text_length": 3
+    },
+    "link_click": 3,
+    "button_click": {
+      "slide": 3,
+      "clicked": "true"
+    },
+    "canvas_click": 3,
+    "shadow_input_arrow": {
+      "slide": 3,
+      "caret": 0
+    },
+    "shadow_button_click": {
+      "slide": 3,
+      "clicked": "1"
+    },
+    "shadow_button_space": {
+      "slide": 3,
+      "clicked": null
+    },
+    "closed_input_arrow": {
+      "slide": 3,
+      "caret": 0
+    },
+    "closed_button_space": {
+      "slide": 3,
+      "clicked": null
+    },
+    "closed_button_click": {
+      "slide": 3,
+      "clicked": "1"
+    },
+    "slider_arrow_right": 3,
+    "modified_arrow_right": 3,
+    "shift_space": 3,
+    "content_click": 3,
+    "background_click": 3,
+    "background_tap": 3,
+    "button_tap": {
+      "slide": 3,
+      "clicked": "true"
+    },
+    "prevented_key": 3,
+    "composing_key": 3,
+    "nested_editable_key": 3,
+    "previous_label": null,
+    "next_label": null,
+    "slide_role": null,
+    "slide_label": null,
+    "slide_tabindex": null,
+    "named_region_count": 0,
+    "custom_slide": {
+      "role": "group",
+      "label": "Custom slide",
+      "tabindex": "-1"
+    },
+    "labelled_slide": {
+      "role": "group",
+      "labelledby": "custom-heading",
+      "tabindex": "-1"
+    },
+    "status": {
+      "role": null,
+      "live": null,
+      "atomic": null
+    }
+  },
+  "repaired": {
+    "previous_space": 1,
+    "previous_enter": 1,
+    "previous_click": 1,
+    "body_space": 3,
+    "body_arrow_left": 1,
+    "input_arrow_right": {
+      "slide": 2,
+      "caret": 1
+    },
+    "input_space": {
+      "slide": 2,
+      "value": " abcd"
+    },
+    "textarea_arrow_left": {
+      "slide": 2,
+      "caret": 2
+    },
+    "editable_space": {
+      "slide": 2,
+      "text_length": 4
+    },
+    "link_click": 2,
+    "button_click": {
+      "slide": 2,
+      "clicked": "true"
+    },
+    "canvas_click": 2,
+    "shadow_input_arrow": {
+      "slide": 2,
+      "caret": 1
+    },
+    "shadow_button_click": {
+      "slide": 2,
+      "clicked": "1"
+    },
+    "shadow_button_space": {
+      "slide": 2,
+      "clicked": "1"
+    },
+    "closed_input_arrow": {
+      "slide": 2,
+      "caret": 1
+    },
+    "closed_button_space": {
+      "slide": 2,
+      "clicked": "1"
+    },
+    "closed_button_click": {
+      "slide": 2,
+      "clicked": "1"
+    },
+    "slider_arrow_right": 2,
+    "modified_arrow_right": 2,
+    "shift_space": 2,
+    "content_click": 2,
+    "background_click": 3,
+    "background_tap": 3,
+    "button_tap": {
+      "slide": 2,
+      "clicked": "true"
+    },
+    "prevented_key": 2,
+    "composing_key": 2,
+    "nested_editable_key": 2,
+    "previous_label": "Previous slide",
+    "next_label": "Next slide",
+    "slide_role": "region",
+    "slide_label": "Slide 2: Second slide",
+    "slide_tabindex": "0",
+    "named_region_count": 1,
+    "custom_slide": {
+      "role": "group",
+      "label": "Custom slide",
+      "tabindex": "-1"
+    },
+    "labelled_slide": {
+      "role": "group",
+      "labelledby": "custom-heading",
+      "tabindex": "-1"
+    },
+    "status": {
+      "role": "status",
+      "live": "polite",
+      "atomic": "true"
+    }
+  },
+  "full_accessibility_audit": false,
+  "agent_performance_tested": false
+}

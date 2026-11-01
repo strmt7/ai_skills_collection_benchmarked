@@ -1,0 +1,78 @@
+{
+  "source_sha256": "0ed28b587e769cd036f1f1e46f31dee7f9149c263ea8be8c95d4e51f3e1d908d",
+  "fixture_sha256": "5835d59e639698191686e036044cf243fc0288f99eea46a94c170bad48c819e3",
+  "bundle_sha256": "87364cc2b2a76a6684929e7d6b80b18a897794db38400caff1fcf1791c6925d2",
+  "node_version": "v26.13.0",
+  "playwright_version": "1.64.1",
+  "platform": "win32",
+  "architecture": "x64",
+  "browser_engine": "chromium",
+  "browser_version": "156.0.8078.4",
+  "viewport": {
+    "width": 844,
+    "height": 390
+  },
+  "served_requests": 1,
+  "unexpected_requests": [],
+  "page_errors": [],
+  "chart": {
+    "version": "4.6.1",
+    "type": "line",
+    "labels": [
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ],
+    "values": [
+      5,
+      12,
+      28,
+      45
+    ],
+    "width": 458,
+    "height": 200,
+    "nontransparent": 32568,
+    "max_pixel_error": 0.42105350504637684,
+    "chart_bounds": {
+      "left": 192.65625,
+      "top": 165.703125,
+      "right": 651.34375,
+      "bottom": 365.703125
+    },
+    "navigation_bounds": {
+      "left": 348.3671875,
+      "top": 320,
+      "right": 495.6328125,
+      "bottom": 360
+    },
+    "content_bounds": {
+      "left": 135.328125,
+      "top": 60,
+      "right": 708.65625,
+      "bottom": 365.703125
+    },
+    "slide_bounds": {
+      "left": 75.328125,
+      "top": 0,
+      "right": 768.65625,
+      "bottom": 390
+    },
+    "chart_navigation_overlap_area": 5890.625,
+    "scroll_control": {
+      "before": {
+        "client": 390,
+        "scroll": 466,
+        "top": 0
+      },
+      "visible": {
+        "chart_bottom": 289.703125,
+        "navigation_top": 320,
+        "slide_bottom": 390,
+        "scroll_top": 76
+      }
+    }
+  },
+  "interactive_chart_behavior_tested": false,
+  "agent_performance_tested": false
+}
