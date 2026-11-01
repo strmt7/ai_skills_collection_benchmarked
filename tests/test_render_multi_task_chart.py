@@ -7,6 +7,7 @@ import json
 import tempfile
 import unittest
 import xml.etree.ElementTree as ET
+from fractions import Fraction
 from pathlib import Path
 from unittest.mock import patch
 
@@ -56,6 +57,17 @@ class ChartRowsTests(unittest.TestCase):
         self.assertIsNone(rows[0][2])
         self.assertEqual(rows[0][3], 2)
 
+    def test_sensitivity_ranges_are_bound_to_attempts(self):
+        report = fixture_report(incomplete=True)
+        self.assertEqual(target.sensitivity_ranges(report)["candidate"], (Fraction(-1, 4), Fraction(1, 4)))
+        report["missing_outcome_sensitivity"]["candidate"]["equal_task_weight_lower"]["numerator"] = 0
+        with self.assertRaisesRegex(ValueError, "sensitivity"):
+            target.sensitivity_ranges(report)
+        report = fixture_report(incomplete=True)
+        report["tasks"][1]["attempt_status_counts"]["candidate"]["harness_error"] = 0
+        with self.assertRaisesRegex(ValueError, "counts"):
+            target.sensitivity_ranges(report)
+
     def test_inconsistent_denominator_or_mean_is_rejected(self):
         report = fixture_report()
         report["comparisons"]["candidate"]["fully_scored_tasks"] = 1
@@ -85,7 +97,9 @@ class ChartRenderTests(unittest.TestCase):
         text = " ".join("".join(node.itertext()) for node in root.iter() if node.tag.endswith("text"))
         self.assertIn("1/2 scored; mean unavailable", text)
         self.assertIn("unscored tasks are not failures", text)
-        self.assertIn("No uncertainty or superiority claim", text)
+        self.assertIn("Hypothetical bounds: -1/4 to 1/4", text)
+        self.assertIn("Hypothetical bounds are not a confidence interval or superiority claim", text)
+        self.assertIn("Hypothetical missing-outcome bounds", text)
         self.assertIn("Snapshot metadata unavailable: 6/6; distinct reported: 0", text)
         self.assertIn("IDs: incomplete; pairs: 0/3 differ, 3 incomplete", text)
         self.assertIn("Snapshot metadata is not independently verified", text)

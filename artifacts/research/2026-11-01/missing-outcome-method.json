@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "observed_date": "2026-11-01",
+  "source_transport": "reviewed isolated Crawl4AI; native capture retained outside Git",
+  "source": {
+    "url": "https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-10",
+    "section": "10.12.3 Dealing with missing outcome data from individual participants",
+    "provider_version": "0.9.5+catalog.portable4",
+    "native_sha256": "cdb5eda0e6bddbd2161764d968f947e3f03e56c7178c9603b2396b4facf46073",
+    "status": 200,
+    "scope_reviewed": true
+  },
+  "scope": "General rationale and limitations of extreme-case missing-outcome sensitivity analyses; the clinical context is not an agent benchmark.",
+  "limitations": [
+    "Bounds describe hypothetical binary assignments, not observed outcomes or predicted reruns.",
+    "No confidence interval, statistical test, causal effect or superiority claim is derived.",
+    "Invalid-scope attempts need not have meaningful binary outcomes without correcting the experiment."
+  ]
+}

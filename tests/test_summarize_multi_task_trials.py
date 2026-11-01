@@ -1,6 +1,8 @@
 import copy
+import itertools
 import json
 import shutil
+from fractions import Fraction
 from pathlib import Path
 
 import pytest
@@ -136,6 +138,89 @@ def test_unscored_attempts_are_not_failures_or_dropped(status):
     assert result["comparisons"]["candidate"]["equal_task_weight_mean_difference"] is None
     assert result["tasks"][1]["attempt_status_counts"]["candidate"][status] == 1
     assert result["tasks"][1]["pass_rates"]["candidate"] is None
+
+
+@pytest.mark.parametrize("missing_status", ["harness_error", "invalid_scope", "timed_out"])
+def test_missing_outcome_bounds_match_exhaustive_binary_completions(missing_status):
+    """Enumerate hypothetical completions independently of the bound calculation."""
+    original = [
+        (["task_passed", missing_status], ["task_failed", missing_status]),
+        ([missing_status], ["task_passed"]),
+    ]
+    reports = [report(str(index), baseline, candidate) for index, (baseline, candidate) in enumerate(original)]
+    result = target.aggregate(reports, [DEFINITIONS] * len(reports))
+    assert result["comparisons"]["candidate"]["equal_task_weight_mean_difference"] is None
+    bounds = result["missing_outcome_sensitivity"]["candidate"]
+    positions = [
+        (task, condition, index)
+        for task, groups in enumerate(original)
+        for condition, statuses in enumerate(groups)
+        for index, status in enumerate(statuses)
+        if status == missing_status
+    ]
+    means = []
+    for assignment in itertools.product(("task_passed", "task_failed"), repeat=len(positions)):
+        completed = [[list(group) for group in groups] for groups in original]
+        for (task, condition, index), status in zip(positions, assignment, strict=True):
+            completed[task][condition][index] = status
+        differences = [
+            Fraction(candidate.count("task_passed"), len(candidate))
+            - Fraction(baseline.count("task_passed"), len(baseline))
+            for baseline, candidate in completed
+        ]
+        means.append(sum(differences, Fraction()) / len(differences))
+    assert Fraction(**bounds["equal_task_weight_lower"]) == min(means)
+    assert Fraction(**bounds["equal_task_weight_upper"]) == max(means)
+    assert bounds["tasks_with_unscored_attempts"] == 2
+    assert result["quality_superiority_established"] is False
+
+
+def test_complete_and_fully_unscored_sensitivity_extremes():
+    complete = report("a", ["task_failed", "task_passed"], ["task_passed", "task_passed"])
+    result = target.aggregate([complete], [DEFINITIONS])
+    bounds = result["missing_outcome_sensitivity"]["candidate"]
+    assert bounds["equal_task_weight_lower"] == bounds["equal_task_weight_upper"] == {"numerator": 1, "denominator": 2}
+    assert bounds["tasks_with_unscored_attempts"] == 0
+    unscored = report("b", ["harness_error"], ["timed_out"])
+    bounds = target.aggregate([unscored], [DEFINITIONS])["missing_outcome_sensitivity"]["candidate"]
+    assert bounds["equal_task_weight_lower"] == {"numerator": -1, "denominator": 1}
+    assert bounds["equal_task_weight_upper"] == {"numerator": 1, "denominator": 1}
+
+
+def test_all_two_block_status_patterns_match_enumerated_bounds():
+    statuses = ("task_passed", "task_failed", "harness_error")
+    for pattern in itertools.product(statuses, repeat=4):
+        baseline, candidate = pattern[:2], pattern[2:]
+        result = target.aggregate([report("a", baseline, candidate)], [DEFINITIONS])
+        bounds = result["missing_outcome_sensitivity"]["candidate"]
+        positions = [index for index, value in enumerate(pattern) if value == "harness_error"]
+        possible = []
+        for assignment in itertools.product(("task_passed", "task_failed"), repeat=len(positions)):
+            completed = list(pattern)
+            for index, value in zip(positions, assignment, strict=True):
+                completed[index] = value
+            possible.append(Fraction(completed[2:].count("task_passed") - completed[:2].count("task_passed"), 2))
+        assert Fraction(**bounds["equal_task_weight_lower"]) == min(possible)
+        assert Fraction(**bounds["equal_task_weight_upper"]) == max(possible)
+
+
+def test_missing_outcome_bounds_keep_condition_identity():
+    definitions = {**DEFINITIONS, "other": {"skills": ["other-bundle"]}}
+    item = report("a", ["task_passed"], ["harness_error"])
+    item["attempts"].append({"repetition": 1, "condition": "other", "status": "task_passed", "usage": None})
+    item["conditions"]["other"] = {"planned_attempts": 1}
+    item["block_comparison"] = compare_blocks(item["attempts"], set(definitions))
+    bounds = target.aggregate([item], [definitions])["missing_outcome_sensitivity"]
+    assert bounds["candidate"]["equal_task_weight_lower"] == {"numerator": -1, "denominator": 1}
+    assert bounds["candidate"]["equal_task_weight_upper"] == {"numerator": 0, "denominator": 1}
+    assert (
+        bounds["other"]["equal_task_weight_lower"]
+        == bounds["other"]["equal_task_weight_upper"]
+        == {
+            "numerator": 0,
+            "denominator": 1,
+        }
+    )
 
 
 def test_duplicate_ids_and_condition_changes_are_rejected():

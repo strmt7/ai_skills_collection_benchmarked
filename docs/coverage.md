@@ -18,6 +18,19 @@ for the corresponding methods and limitations. Selected excerpt improvements
 are useful evidence of repairs; an advantage over a default agent requires
 separate, independently scored model trials.
 
+Multi-task trial reports keep the measured mean unavailable if any planned
+attempt is unscored. They also show hypothetical lower and upper bounds for
+the equal-task-weighted pass-rate difference: for each unscored attempt,
+consider a pass or a failure while retaining all planned attempts in the
+denominator. The chart labels this range when outcomes are missing. These are
+extreme assignments, not observed outcomes, predictions of reruns, confidence
+intervals or proof of an advantage. An invalid-scope attempt, for example,
+may not have a meaningful binary outcome until the experiment is corrected.
+The bounds do not address task selection, model identity, grading authenticity
+or other sources of bias. The [Cochrane Handbook](https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-10)
+describes the general use and limitations of extreme-case missing-data
+sensitivity analysis; its clinical setting differs from these agent trials.
+
 The coverage workflow retains each measured XML report from the existing
 Python/OS matrix. A separate job validates the complete bundle and binds its
 referenced tooling files to the checked-out source before upload. Codecov merges

@@ -5,12 +5,13 @@ from __future__ import annotations
 import argparse
 import io
 import json
+from collections import Counter
 from fractions import Fraction
 from pathlib import Path
 from typing import Any
 
-from _trial_comparisons import compare_blocks
-from summarize_multi_task_trials import run_plan, summarize_snapshot_evidence
+from _trial_comparisons import STATUSES, compare_blocks
+from summarize_multi_task_trials import missing_outcome_sensitivity, run_plan, summarize_snapshot_evidence
 
 
 def graph_rows(report: dict[str, Any]) -> list[tuple[str, list[Fraction], Fraction | None, int]]:
@@ -101,6 +102,35 @@ def snapshot_pair_labels(report: dict[str, Any]) -> dict[str, str]:
     return labels
 
 
+def sensitivity_ranges(report: dict[str, Any]) -> dict[str, tuple[Fraction, Fraction] | None]:
+    """Validate hypothetical missing-outcome bounds against recorded attempts."""
+    conditions = set(report["comparisons"])
+    if set(report["missing_outcome_sensitivity"]) != conditions:
+        raise ValueError("Missing-outcome sensitivity condition set differs from the comparisons")
+    for task in report["tasks"]:
+        for condition in conditions | {"default"}:
+            counts = Counter(item["status"] for item in task["attempts"] if item["condition"] == condition)
+            observed = {status: counts[status] for status in sorted(STATUSES)}
+            if json.dumps(task["attempt_status_counts"][condition], sort_keys=True) != json.dumps(
+                observed, sort_keys=True
+            ):
+                raise ValueError("Missing-outcome status counts disagree with attempts")
+    ranges = {}
+    for condition in sorted(conditions):
+        expected = missing_outcome_sensitivity(report["tasks"], condition)
+        recorded = report["missing_outcome_sensitivity"][condition]
+        if json.dumps(recorded, sort_keys=True, allow_nan=False) != json.dumps(
+            expected, sort_keys=True, allow_nan=False
+        ):
+            raise ValueError("Missing-outcome sensitivity disagrees with attempts")
+        ranges[condition] = (
+            (Fraction(**expected["equal_task_weight_lower"]), Fraction(**expected["equal_task_weight_upper"]))
+            if expected["tasks_with_unscored_attempts"]
+            else None
+        )
+    return ranges
+
+
 def render_svg(report: dict[str, Any]) -> bytes:
     """Show each scored task and any fully observed equal-task-weight mean."""
     import matplotlib
@@ -112,6 +142,7 @@ def render_svg(report: dict[str, Any]) -> bytes:
     rows = graph_rows(report)
     unavailable, attempts, distinct = snapshot_summary(report)
     snapshot_labels = snapshot_pair_labels(report)
+    sensitivity = sensitivity_ranges(report)
     conditions = [row[0] for row in rows]
     with matplotlib.rc_context(
         {"svg.hashsalt": report["plan_sha256"], "svg.fonttype": "none", "font.family": "DejaVu Sans"}
@@ -136,6 +167,11 @@ def render_svg(report: dict[str, Any]) -> bytes:
                     summary = f"{len(scored)}/{planned} scored; mean {mean}"
                 else:
                     summary = f"{len(scored)}/{planned} scored; mean unavailable"
+                interval = sensitivity[condition]
+                if interval is not None:
+                    lower, upper = interval
+                    axis.hlines(row + 0.18, float(lower), float(upper), color="#475569", linewidth=3, zorder=2)
+                    summary += f"\nHypothetical bounds: {lower} to {upper}"
                 axis.text(
                     1.03,
                     row,
@@ -155,13 +191,16 @@ def render_svg(report: dict[str, Any]) -> bytes:
                 y=0.97,
             )
             axis.grid(axis="x", alpha=0.2)
+            handles = [
+                Line2D([], [], marker="o", linestyle="", color="#2563eb", label="Scored task (dots can overlap)"),
+                Line2D([], [], marker="s", linestyle="", color="#c2410c", label="Mean, only if all tasks are scored"),
+            ]
+            if any(interval is not None for interval in sensitivity.values()):
+                handles.append(
+                    Line2D([], [], color="#475569", linewidth=3, label="Hypothetical missing-outcome bounds")
+                )
             figure.legend(
-                handles=[
-                    Line2D([], [], marker="o", linestyle="", color="#2563eb", label="Scored task (dots can overlap)"),
-                    Line2D(
-                        [], [], marker="s", linestyle="", color="#c2410c", label="Mean, only if all tasks are scored"
-                    ),
-                ],
+                handles=handles,
                 loc="upper center",
                 bbox_to_anchor=(0.5, 0.90),
                 ncols=2,
@@ -177,8 +216,12 @@ def render_svg(report: dict[str, Any]) -> bytes:
             figure.text(
                 0.01,
                 0.095,
-                "Snapshot metadata is not independently verified. "
-                "Descriptive only; unscored tasks are not failures. No uncertainty or superiority claim.",
+                "Snapshot metadata is not independently verified. Descriptive only; unscored tasks are not failures. "
+                + (
+                    "Hypothetical bounds are not a confidence interval or superiority claim."
+                    if any(interval is not None for interval in sensitivity.values())
+                    else "No uncertainty or superiority claim."
+                ),
                 fontsize=8,
                 color="#334155",
             )

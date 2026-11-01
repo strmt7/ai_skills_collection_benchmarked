@@ -155,6 +155,18 @@ has an unscored attempt on any planned task, its aggregate difference is
 unavailable; that attempt remains visible rather than being counted as a fail
 or silently dropped.
 
+For each comparison, `missing_outcome_sensitivity` reports exact lower and
+upper bounds from hypothetical pass/fail assignments for all unscored attempts.
+For each task, the lower bound assigns unscored baseline attempts passes and
+unscored candidate attempts failures; the upper bound assigns the opposite.
+The planned attempt count remains the denominator, and the task bounds are
+averaged with equal task weight. The report retains per-task bounds and missing
+counts. When every attempt is scored, both bounds equal the observed mean.
+These assignments do not turn an unscored attempt into an observed outcome:
+for an invalid-scope attempt there may be no meaningful binary outcome without
+correcting the experiment. The range is not a confidence interval, a rerun
+prediction or a superiority test and does not cover other sources of bias.
+
 For each comparison, `model_snapshot_evidence` counts matched pairs with equal,
 different or incomplete provider-reported snapshot identifiers. It also lists
 the identifiers observed across all planned tasks. The status is
@@ -199,7 +211,10 @@ With the `reports` extra installed, render the same verified plan with
 Add `--check` to compare an existing chart without writing it. Dots show scored
 individual tasks and the square shows the equal-task mean only when every
 planned task in that comparison is scored. Unscored tasks remain counted, and
-points may overlap. The offline-validation workflow tests and uploads a chart
+points may overlap. When outcomes are unscored, a separate line shows their
+hypothetical sensitivity bounds; it is not a confidence interval. The chart
+recomputes those bounds and status counts from the recorded attempts before
+rendering. The offline-validation workflow tests and uploads a chart
 for the historical example; it shows no demonstrated advantage. Rendering
 checks require the reports dependencies and run in that workflow's report job.
 The chart also counts attempts without snapshot metadata and distinct reported

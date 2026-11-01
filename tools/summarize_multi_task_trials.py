@@ -124,6 +124,43 @@ def summarize_paired_tokens(reports: list[dict[str, Any]], condition: str) -> di
     }
 
 
+def missing_outcome_sensitivity(rows: list[dict[str, Any]], condition: str) -> dict[str, Any]:
+    """Bound the observed-task mean under hypothetical binary outcomes for unscored attempts."""
+    if not rows:
+        raise ValueError("A nonempty task set is required for missing-outcome sensitivity")
+    tasks = []
+    for row in rows:
+        baseline = row["attempt_status_counts"]["default"]
+        candidate = row["attempt_status_counts"][condition]
+        planned = sum(baseline.values())
+        if planned < 1 or sum(candidate.values()) != planned:
+            raise ValueError("Sensitivity analysis requires equal planned condition denominators")
+        baseline_unscored = planned - baseline["task_passed"] - baseline["task_failed"]
+        candidate_unscored = planned - candidate["task_passed"] - candidate["task_failed"]
+        difference = candidate["task_passed"] - baseline["task_passed"]
+        lower = Fraction(difference - baseline_unscored, planned)
+        upper = Fraction(difference + candidate_unscored, planned)
+        tasks.append(
+            {
+                "task_id": row["task_id"],
+                "planned_attempts_per_condition": planned,
+                "baseline_unscored": baseline_unscored,
+                "candidate_unscored": candidate_unscored,
+                "lower": lower,
+                "upper": upper,
+            }
+        )
+    return {
+        "planned_tasks": len(tasks),
+        "tasks_with_unscored_attempts": sum(
+            bool(task["baseline_unscored"] or task["candidate_unscored"]) for task in tasks
+        ),
+        "equal_task_weight_lower": fraction(sum((task["lower"] for task in tasks), Fraction()) / len(tasks)),
+        "equal_task_weight_upper": fraction(sum((task["upper"] for task in tasks), Fraction()) / len(tasks)),
+        "tasks": [{**task, "lower": fraction(task["lower"]), "upper": fraction(task["upper"])} for task in tasks],
+    }
+
+
 def aggregate(reports: list[dict[str, Any]], definitions: list[dict[str, Any]]) -> dict[str, Any]:
     """Describe equally weighted task differences; callers must verify reports first."""
     if not reports or len(reports) != len(definitions):
@@ -228,6 +265,9 @@ def aggregate(reports: list[dict[str, Any]], definitions: list[dict[str, Any]]) 
         "condition_definitions": definitions[0],
         "tasks": rows,
         "comparisons": comparisons,
+        "missing_outcome_sensitivity": {
+            condition: missing_outcome_sensitivity(rows, condition) for condition in sorted(conditions - {"default"})
+        },
         "model_snapshot_evidence": {
             condition: summarize_snapshot_evidence(reports, condition) for condition in sorted(conditions - {"default"})
         },
@@ -238,6 +278,7 @@ def aggregate(reports: list[dict[str, Any]], definitions: list[dict[str, Any]]) 
         "limitations": [
             "Descriptive task-weighted differences do not establish statistical significance or generalization.",
             "Unscored attempts prevent an aggregate difference for the affected comparison.",
+            "Missing-outcome bounds hypothetically assign every unscored attempt pass or fail; they are not confidence intervals, observed outcomes, or predictions of reruns.",
             "A frozen plan and matching hashes alone do not establish preregistration or grading authenticity.",
             "Requested model identity is not proof of the provider-resolved model snapshot.",
             "Snapshot identifiers are provider-reported metadata; even matching identifiers do not independently establish model identity.",
