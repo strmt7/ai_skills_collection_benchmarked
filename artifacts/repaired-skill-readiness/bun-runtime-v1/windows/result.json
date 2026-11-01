@@ -1,0 +1,28 @@
+{
+  "bun_version": "1.4.4",
+  "binary_sha256": "cb1d8e6564e655e49d30cead359750a1cbbd12f42651caa4b62244d7bd93c244",
+  "platform": "Windows",
+  "cases": {
+    "no_lock_frozen": {
+      "exit": 0,
+      "lock_exists": false,
+      "lock_sha256": null
+    },
+    "create_lock": {
+      "exit": 0,
+      "lock_exists": true,
+      "lock_sha256": "df34c874e91af8ae28f5f8dd352a3fdd7b8ed4167122c5887e476d92c3cd84da"
+    },
+    "matching_frozen": {
+      "exit": 0,
+      "lock_exists": true,
+      "lock_sha256": "df34c874e91af8ae28f5f8dd352a3fdd7b8ed4167122c5887e476d92c3cd84da"
+    },
+    "mismatch_frozen": {
+      "exit": 1,
+      "lock_exists": true,
+      "lock_sha256": "df34c874e91af8ae28f5f8dd352a3fdd7b8ed4167122c5887e476d92c3cd84da"
+    }
+  },
+  "agent_efficacy_scored": false
+}

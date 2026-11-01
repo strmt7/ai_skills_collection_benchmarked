@@ -1,0 +1,3 @@
+bun install v1.4.4 (38afee6c8)
+
+Checked 1 install across 2 packages (no changes) [6.00ms]

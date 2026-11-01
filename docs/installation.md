@@ -67,6 +67,9 @@ Some reviewed instructions have known limitations:
 - The E2E skill can register its response wait too late. An [E2E repair](../included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/e2e-testing/SKILL.md)
   addresses the ordering. [See the timing controls](research-e2e-response-order.md).
 
+- The Bun skill assumes frozen installs are always locked. A [Bun repair](../included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/bun-runtime/SKILL.md)
+  makes the lockfile precondition explicit. [See the runtime controls](research-bun-runtime.md).
+
 These examples are not an exhaustive review of the catalog.
 
 ## Load it in your agent

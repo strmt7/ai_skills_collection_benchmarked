@@ -290,13 +290,68 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "docs/research-bun-runtime.md",
+            "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
+            "sha256": "774b6b7d6d91edc4a84b8103b8e48b703ae46e506b3c0a5958b296deb5912be9"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/frozen-control.py",
+            "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
+            "sha256": "90ea226a9d0ecd06b9051243dcab61f48ef7429da927738825d5d4b4b8d51845"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/http-server-probe.cjs",
+            "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
+            "sha256": "53dec6eb87a3ae41de1b0aaf62541311f58b2ee79719d017ad21aafe05bac42d"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/windows/result.json",
+            "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
+            "sha256": "b12476f42ab7a62668c44ce9cd8e37f90737d11d4f44b34ca0438b5e898cedc7"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/linux/result.json",
+            "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
+            "sha256": "aea0d2f58dc97dfb43ede225a55842e3562a41afb0aa7cc345ba3dffbaea662c"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/windows/node26-http.json",
+            "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
+            "sha256": "dec6f8e452726ad755e4934a553ad69989cc418371c69cb6474f10676cbdbbce"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/windows/bun14-http.json",
+            "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
+            "sha256": "b87cbf8eedc95af6a61cb266515928890c9077c22c96b4e0276794d5d05dc6f7"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/linux/node26-http.json",
+            "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
+            "sha256": "573393f58d10b88c0e7c842d51747cc9185bff89fcaa86414541af015687ad33"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/linux/bun14-http.json",
+            "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
+            "sha256": "f7c2348abcbf29de74b37b4ddee9e6054888459082de609f6d3ab6c5ccc7d3d4"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/upstream-observation.json",
+            "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
+            "sha256": "b210c97b88aca6ec0feee1bdde45377650457e90665e9f3fd230720f2d0da697"
           }
         ],
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/bun-runtime/repair.json",
+            "sha256": "5825b7a5e445029e07dd7412e4f3d5ec7d52b88ea19fe23595664011a2a88787"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {

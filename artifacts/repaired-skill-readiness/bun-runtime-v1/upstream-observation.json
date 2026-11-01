@@ -1,0 +1,12 @@
+{
+  "source_repository": "https://github.com/affaan-m/ECC",
+  "observed_commit": "b38be6a7f6350964d59328b52f0624e1d1d552d1",
+  "observed_commit_time": "2026-10-30T03:06:32Z",
+  "source_path": ".agents/skills/bun-runtime/SKILL.md",
+  "git_blob_sha": "5bd36c2412dc4f0c332b39828bd378eda56fd9b6",
+  "normalized_sha256": "27c101ca25477e7e70442a465d803395910c7264e321157b0ad30bb40e2d319e",
+  "scope": "Selected implementation and frozen-install guidance only; not a full upstream review or agent-effectiveness result.",
+  "bun_release": "bun-v1.4.4",
+  "bun_windows_archive_sha256": "cd2c0fccc78f3ede1f50ca827a15f063eda13d4d150a3d0674f4f6e323d864a5",
+  "bun_linux_archive_sha256": "bf8ccbfb2b0b80159e0f9a6d15c55317add8077534dbc6130a3edb52fccb395c"
+}

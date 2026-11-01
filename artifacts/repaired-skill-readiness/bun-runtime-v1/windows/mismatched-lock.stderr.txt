@@ -1,0 +1,5 @@
+Resolving dependencies
+Resolved, downloaded and extracted [6]
+error: lockfile had changes, but lockfile is frozen
+note: dependencies in package.json changed since bun.lock was saved: is-odd was added
+note: try re-running without --frozen-lockfile and commit the updated lockfile

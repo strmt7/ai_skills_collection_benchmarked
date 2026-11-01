@@ -1,0 +1,5 @@
+bun install v1.4.4 (38afee6c8)
+
++ is-number@7.0.0
+
+1 package installed [80.00ms]

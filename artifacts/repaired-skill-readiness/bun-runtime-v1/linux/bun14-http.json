@@ -1,0 +1,6 @@
+{
+  "bun_version": "1.4.4",
+  "node_compat_version": "26.3.0",
+  "platform": "linux",
+  "http_server_is_net_server": false
+}

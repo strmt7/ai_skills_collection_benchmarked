@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "affaan-m-everything-claude-code-agents-skills-bun-runtime-skill-md",
+  "source_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+  "source_mirror": "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/bun-runtime",
+  "original_skill_sha256": "2929d1f227962d86bfb2f0e45efd81590cfc90aeaad5b449f4630207e4e07204",
+  "provenance_skill": "provenance/original.SKILL.md",
+  "repaired_skill_sha256": "6f4609b23ebb683a00b37a936b39ccdb4ff8440c48ef985e29e087186f1d965a",
+  "license_file": "LICENSE",
+  "license_sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+  "scope": "Selected Bun compatibility, frozen-install and Vercel guidance; component controls do not measure agent effectiveness.",
+  "model_performance_claim": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/bun-runtime-v1/windows/result.json",
+  "additional_evidence": [
+    "artifacts/repaired-skill-readiness/bun-runtime-v1/linux/result.json",
+    "artifacts/repaired-skill-readiness/bun-runtime-v1/upstream-observation.json"
+  ],
+  "documented_repairs": [
+    "Qualify runtime compatibility and performance for the actual workload.",
+    "Check that the intended lock exists before relying on a frozen installation.",
+    "Review current Vercel Bun runtime and configuration for the target application."
+  ],
+  "evidence_sha256": {
+    "frozen-control.py": "90ea226a9d0ecd06b9051243dcab61f48ef7429da927738825d5d4b4b8d51845",
+    "http-server-probe.cjs": "53dec6eb87a3ae41de1b0aaf62541311f58b2ee79719d017ad21aafe05bac42d",
+    "linux/bun14-http.json": "f7c2348abcbf29de74b37b4ddee9e6054888459082de609f6d3ab6c5ccc7d3d4",
+    "linux/create-lock.stderr.txt": "47f54b390e29cf9d23c0e13e15bbff6224c42e067872d642b63deb38a8c5152c",
+    "linux/create-lock.stdout.txt": "d191f355bcbca27de26c61557d1b2d55d8d60c0ebfd17eb22497e8f61fcc329e",
+    "linux/matching-lock.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "linux/matching-lock.stdout.txt": "d191f355bcbca27de26c61557d1b2d55d8d60c0ebfd17eb22497e8f61fcc329e",
+    "linux/mismatched-lock.stderr.txt": "31537c1843222662ac317431d0460bf82ec14547a24970cb05eabcf6e612ff07",
+    "linux/mismatched-lock.stdout.txt": "08be9153a6836b6cd0295f8560b478a1b32eb92bd6aefe4c8ea2d8904148566e",
+    "linux/no-lock.stderr.txt": "8e90b15ac68236d374f20ea437b7040b6909bf09dd460ad881e5f52a385d7be8",
+    "linux/no-lock.stdout.txt": "0d76cd473dc0dee3eefdf48a52507d9ae3eb2e0059b30fd6442ab86ec4d1ad54",
+    "linux/node26-http.json": "573393f58d10b88c0e7c842d51747cc9185bff89fcaa86414541af015687ad33",
+    "linux/result.json": "aea0d2f58dc97dfb43ede225a55842e3562a41afb0aa7cc345ba3dffbaea662c",
+    "upstream-observation.json": "b210c97b88aca6ec0feee1bdde45377650457e90665e9f3fd230720f2d0da697",
+    "windows/bun14-http.json": "b87cbf8eedc95af6a61cb266515928890c9077c22c96b4e0276794d5d05dc6f7",
+    "windows/create-lock.stderr.txt": "47f54b390e29cf9d23c0e13e15bbff6224c42e067872d642b63deb38a8c5152c",
+    "windows/create-lock.stdout.txt": "3b2473c4272ac6c81b9a8be1bc86c60e745797702581fde329bc72a805a1a338",
+    "windows/matching-lock.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "windows/matching-lock.stdout.txt": "d191f355bcbca27de26c61557d1b2d55d8d60c0ebfd17eb22497e8f61fcc329e",
+    "windows/mismatched-lock.stderr.txt": "31537c1843222662ac317431d0460bf82ec14547a24970cb05eabcf6e612ff07",
+    "windows/mismatched-lock.stdout.txt": "08be9153a6836b6cd0295f8560b478a1b32eb92bd6aefe4c8ea2d8904148566e",
+    "windows/no-lock.stderr.txt": "8e90b15ac68236d374f20ea437b7040b6909bf09dd460ad881e5f52a385d7be8",
+    "windows/no-lock.stdout.txt": "86753efe7c2c3d016546c37599ca112f0b73e557e2fd1dc73dd51818d6a928ea",
+    "windows/node26-http.json": "dec6f8e452726ad755e4934a553ad69989cc418371c69cb6474f10676cbdbbce",
+    "windows/result.json": "b12476f42ab7a62668c44ce9cd8e37f90737d11d4f44b34ca0438b5e898cedc7"
+  }
+}
