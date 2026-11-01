@@ -188,6 +188,16 @@ individual blocks remain visible. Input includes cached input and output
 already includes reported reasoning output. These counts are not priced cost,
 statistical significance or proof of greater efficiency.
 
+The separate `all_attempt_usage` section accounts for reported input and output
+tokens across every attempt status, including failed and unscored runs. It shows
+observed subtotals and usage availability by status and task. Per-task means,
+equal-task means and condition-minus-default differences are available only
+when all required usage records are present; missing usage is never treated as
+zero. This view describes all recorded attempts, so its differences may combine
+different outcome mixes. It is not a success-matched comparison, a priced-cost
+calculation, or proof of efficiency. Cached input is already included in input;
+reported reasoning output is already included in output.
+
 Run the read-only tool with `--plan <plan.json>`. The
 [historical example plan](../benchmarks/agent-effectiveness/development/multi-task-historical-example.json)
 reads the already recorded v2 trials. It was created after those trials and is

@@ -12,7 +12,7 @@ from typing import Any
 
 from _trial_comparisons import SCORED, STATUSES, TOKEN_KEYS, compare_blocks
 from _trial_transcript import strict_json
-from summarize_agent_trials import summarize
+from summarize_agent_trials import _verify_usage, summarize
 
 
 def fraction(value: Fraction | None) -> dict[str, int] | None:
@@ -122,6 +122,89 @@ def summarize_paired_tokens(reports: list[dict[str, Any]], condition: str) -> di
             for task in tasks
         ],
     }
+
+
+def summarize_all_attempt_usage(reports: list[dict[str, Any]], conditions: set[str]) -> dict[str, Any]:
+    """Account for observed usage across every status without filling missing values."""
+    if not reports or "default" not in conditions:
+        raise ValueError("A nonempty task set and default condition are required for usage accounting")
+
+    def observed(rows: list[dict[str, Any]]) -> dict[str, int] | None:
+        usages = [row["usage"] for row in rows if row["usage"] is not None]
+        return {key: sum(item[key] for item in usages) for key in TOKEN_KEYS} if usages else None
+
+    summaries: dict[str, Any] = {}
+    complete_means: dict[str, dict[str, Fraction] | None] = {}
+    for condition in sorted(conditions):
+        tasks: list[dict[str, Any]] = []
+        all_rows: list[dict[str, Any]] = []
+        means: list[dict[str, Fraction]] = []
+        for report in reports:
+            rows = [row for row in report["attempts"] if row["condition"] == condition]
+            planned = report["conditions"][condition]["planned_attempts"]
+            if type(planned) is not int or planned < 1 or len(rows) != planned:
+                raise ValueError("Usage denominator differs from planned attempts")
+            for row in rows:
+                if row["status"] not in STATUSES:
+                    raise ValueError("Unknown usage status")
+                _verify_usage(row)
+            totals = observed(rows)
+            available = sum(row["usage"] is not None for row in rows)
+            mean = (
+                {key: Fraction(totals[key], planned) for key in TOKEN_KEYS}
+                if totals is not None and available == planned
+                else None
+            )
+            if mean is not None:
+                means.append(mean)
+            tasks.append(
+                {
+                    "task_id": report["task_id"],
+                    "planned_attempts": planned,
+                    "usage_observed_attempts": available,
+                    "usage_unavailable_attempts": planned - available,
+                    "observed_token_totals": totals,
+                    "mean_tokens_per_attempt": (
+                        {key: fraction(mean[key]) for key in TOKEN_KEYS} if mean is not None else None
+                    ),
+                }
+            )
+            all_rows.extend(rows)
+        available = sum(row["usage"] is not None for row in all_rows)
+        complete = (
+            {key: sum((mean[key] for mean in means), Fraction()) / len(reports) for key in TOKEN_KEYS}
+            if len(means) == len(reports)
+            else None
+        )
+        complete_means[condition] = complete
+        statuses = {}
+        for status in sorted(STATUSES):
+            rows = [row for row in all_rows if row["status"] == status]
+            statuses[status] = {
+                "attempts": len(rows),
+                "usage_observed_attempts": sum(row["usage"] is not None for row in rows),
+                "observed_token_totals": observed(rows),
+            }
+        summaries[condition] = {
+            "planned_attempts": len(all_rows),
+            "usage_observed_attempts": available,
+            "usage_unavailable_attempts": len(all_rows) - available,
+            "observed_token_totals": observed(all_rows),
+            "equal_task_weight_mean_tokens_per_attempt": (
+                {key: fraction(complete[key]) for key in TOKEN_KEYS} if complete is not None else None
+            ),
+            "by_status": statuses,
+            "tasks": tasks,
+        }
+    differences = {}
+    for condition in sorted(conditions - {"default"}):
+        baseline, candidate = complete_means["default"], complete_means[condition]
+        differences[condition] = (
+            {key: fraction(candidate[key] - baseline[key]) for key in TOKEN_KEYS}
+            if baseline is not None and candidate is not None
+            else None
+        )
+    return {"conditions": summaries, "condition_minus_default": differences}
 
 
 def missing_outcome_sensitivity(rows: list[dict[str, Any]], condition: str) -> dict[str, Any]:
@@ -274,6 +357,7 @@ def aggregate(reports: list[dict[str, Any]], definitions: list[dict[str, Any]]) 
         "token_comparisons": {
             condition: summarize_paired_tokens(reports, condition) for condition in sorted(conditions - {"default"})
         },
+        "all_attempt_usage": summarize_all_attempt_usage(reports, conditions),
         "quality_superiority_established": False,
         "limitations": [
             "Descriptive task-weighted differences do not establish statistical significance or generalization.",
@@ -284,6 +368,7 @@ def aggregate(reports: list[dict[str, Any]], definitions: list[dict[str, Any]]) 
             "Snapshot identifiers are provider-reported metadata; even matching identifiers do not independently establish model identity.",
             "Task IDs and protocol hashes do not by themselves prove that tasks are independent.",
             "Paired token differences require both attempts to pass and usage for every planned block; they are not priced cost or proof of efficiency.",
+            "All-attempt usage includes failed and unscored attempts when reported; missing usage prevents complete means and differences, and totals are observed subtotals rather than priced cost.",
             "Input counts include cached input; output counts include reported reasoning output and are not added to it again.",
             "This report does not compare elapsed time across tasks.",
         ],

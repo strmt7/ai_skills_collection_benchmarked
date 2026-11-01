@@ -80,6 +80,84 @@ def test_token_differences_use_equal_task_weight_and_paired_blocks():
     assert comparison["tasks"][0]["mean_delta"]["input_tokens"] == {"numerator": 20, "denominator": 1}
 
 
+def test_all_attempt_usage_includes_failures_and_uses_equal_task_weight():
+    first = report("a", ["task_passed"], ["task_failed"])
+    second = report("b", ["task_passed", "timed_out"], ["task_passed", "harness_error"])
+    for item, inputs in ((first, (10, 20)), (second, (20, 40, 30, 50))):
+        for attempt, count in zip(item["attempts"], inputs, strict=True):
+            attempt["usage"] = {"input_tokens": count, "output_tokens": count // 5}
+        item["block_comparison"] = compare_blocks(item["attempts"], set(DEFINITIONS))
+    result = target.aggregate([first, second], [DEFINITIONS, DEFINITIONS])
+    usage = result["all_attempt_usage"]
+    candidate = usage["conditions"]["candidate"]
+    assert candidate["observed_token_totals"] == {"input_tokens": 100, "output_tokens": 20}
+    assert candidate["by_status"]["harness_error"] == {
+        "attempts": 1,
+        "usage_observed_attempts": 1,
+        "observed_token_totals": {"input_tokens": 50, "output_tokens": 10},
+    }
+    assert usage["condition_minus_default"]["candidate"] == {
+        "input_tokens": {"numerator": 10, "denominator": 1},
+        "output_tokens": {"numerator": 2, "denominator": 1},
+    }
+    assert result["token_comparisons"]["candidate"]["equal_task_weight_mean_delta"] is None
+    assert result["quality_superiority_established"] is False
+
+
+def test_all_attempt_usage_keeps_missing_values_and_observed_zero_distinct():
+    item = report("a", ["task_passed", "timed_out"], ["task_failed", "harness_error"])
+    for attempt, usage in zip(
+        item["attempts"],
+        ({"input_tokens": 0, "output_tokens": 0}, None, {"input_tokens": 7, "output_tokens": 3}, None),
+        strict=True,
+    ):
+        attempt["usage"] = usage
+    item["block_comparison"] = compare_blocks(item["attempts"], set(DEFINITIONS))
+    summary = target.aggregate([item], [DEFINITIONS])["all_attempt_usage"]
+    assert summary["conditions"]["default"]["observed_token_totals"] == {"input_tokens": 0, "output_tokens": 0}
+    assert summary["conditions"]["default"]["usage_unavailable_attempts"] == 1
+    assert summary["conditions"]["candidate"]["observed_token_totals"] == {"input_tokens": 7, "output_tokens": 3}
+    assert summary["conditions"]["candidate"]["equal_task_weight_mean_tokens_per_attempt"] is None
+    assert summary["conditions"]["candidate"]["by_status"]["harness_error"]["observed_token_totals"] is None
+    assert summary["condition_minus_default"]["candidate"] is None
+
+
+def test_all_attempt_usage_availability_matches_exhaustive_observation_patterns():
+    """Check every missing/present pattern against separately calculated subtotals."""
+    for present in itertools.product((False, True), repeat=4):
+        reports = [
+            report("a", ["task_passed"], ["task_failed"]),
+            report("b", ["timed_out"], ["harness_error"]),
+        ]
+        counts = (0, 4, 5, 0)
+        for index, attempt in enumerate(item for task in reports for item in task["attempts"]):
+            attempt["usage"] = {"input_tokens": counts[index], "output_tokens": 0} if present[index] else None
+        for item in reports:
+            item["block_comparison"] = compare_blocks(item["attempts"], set(DEFINITIONS))
+        usage = target.aggregate(reports, [DEFINITIONS, DEFINITIONS])["all_attempt_usage"]
+        for condition, indices in (("default", (0, 2)), ("candidate", (1, 3))):
+            values = [counts[i] for i in indices if present[i]]
+            result = usage["conditions"][condition]
+            assert result["usage_observed_attempts"] == len(values)
+            assert result["observed_token_totals"] == (
+                {"input_tokens": sum(values), "output_tokens": 0} if values else None
+            )
+            assert (result["equal_task_weight_mean_tokens_per_attempt"] is not None) == (len(values) == 2)
+        assert (usage["condition_minus_default"]["candidate"] is not None) == all(present)
+
+
+@pytest.mark.parametrize(
+    "invalid",
+    [{"input_tokens": True, "output_tokens": 0}, {"input_tokens": 1, "output_tokens": 0, "cached_input_tokens": 2}],
+)
+def test_all_attempt_usage_rejects_invalid_counts_even_for_unscored_attempts(invalid):
+    item = report("a", ["task_passed"], ["harness_error"])
+    item["attempts"][1]["usage"] = invalid
+    item["block_comparison"] = compare_blocks(item["attempts"], set(DEFINITIONS))
+    with pytest.raises(ValueError, match="usage|token"):
+        target.aggregate([item], [DEFINITIONS])
+
+
 @pytest.mark.parametrize(
     "status,usage", [("task_passed", None), ("task_failed", {"input_tokens": 50, "output_tokens": 5})]
 )
