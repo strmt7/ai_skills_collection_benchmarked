@@ -74,3 +74,5 @@
 # Preserve normalized provenance and source-bound testing controls.
 /included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/tdd-workflow-everything-claude-code/** text eol=lf
 /artifacts/repaired-skill-readiness/tdd-jest-v1/** text eol=lf
+/included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/e2e-testing/** text eol=lf
+/artifacts/repaired-skill-readiness/e2e-response-v1/** text eol=lf

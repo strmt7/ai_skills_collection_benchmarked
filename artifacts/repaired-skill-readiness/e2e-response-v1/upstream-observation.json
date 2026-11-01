@@ -1,0 +1,9 @@
+{
+  "source_repository": "https://github.com/affaan-m/ECC",
+  "observed_commit": "b38be6a7f6350964d59328b52f0624e1d1d552d1",
+  "observed_commit_time": "2026-10-30T03:06:32Z",
+  "source_path": ".agents/skills/e2e-testing/SKILL.md",
+  "git_blob_sha": "5187aeaa3dd0dafc54fe5c0da5a85ded870c5153",
+  "normalized_sha256": "8cfa22c35e5370c1f85400921d27e259cc99ba67a890625412bf2fc650a1d038",
+  "scope": "Selected search method only; not a full upstream review or agent effectiveness result."
+}

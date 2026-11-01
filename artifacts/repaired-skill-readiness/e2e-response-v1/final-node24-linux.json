@@ -1,0 +1,27 @@
+{
+  "source_sha256": "f84ae93c159bf6ecef5a60c9735dc82d96bc5f977ef52eb71678b66722acf684",
+  "overlay_sha256": "997802fae03fb670386398ea342fe4434c11960e3f34388f505fc5d38ed22abd",
+  "lock_sha256": "2c93c3ab2be0e566ead39cdacfba195624e0ecaebec2af30edcc9c32ce6e46d8",
+  "served": 31,
+  "platform": "linux",
+  "arch": "x64",
+  "node": "v24.15.0",
+  "playwright": "1.64.1",
+  "browser": "156.0.8078.4",
+  "counts": {
+    "original": {
+      "passed": 6,
+      "timed_out": 4
+    },
+    "ordering_only": {
+      "passed": 10,
+      "timed_out": 0
+    },
+    "overlay": {
+      "passed": 10,
+      "timed_out": 0
+    }
+  },
+  "rejected_bad_status": true,
+  "agent_efficacy_scored": false
+}

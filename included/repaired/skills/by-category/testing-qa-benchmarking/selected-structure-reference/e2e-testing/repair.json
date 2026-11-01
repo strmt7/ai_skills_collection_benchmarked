@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "affaan-m-everything-claude-code-agents-skills-e2e-testing-skill-md",
+  "source_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+  "source_mirror": "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/e2e-testing",
+  "original_skill_sha256": "f84ae93c159bf6ecef5a60c9735dc82d96bc5f977ef52eb71678b66722acf684",
+  "provenance_skill": "provenance/original.SKILL.md",
+  "repaired_skill_sha256": "997802fae03fb670386398ea342fe4434c11960e3f34388f505fc5d38ed22abd",
+  "license_file": "LICENSE",
+  "license_sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+  "scope": "Selected Playwright response ordering and readiness guidance; synthetic component controls do not measure agent effectiveness.",
+  "model_performance_claim": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/e2e-response-v1/final-node26-windows.json",
+  "additional_evidence": [
+    "artifacts/repaired-skill-readiness/e2e-response-v1/final-node24-linux.json",
+    "artifacts/repaired-skill-readiness/e2e-response-v1/final-node24-windows.json",
+    "artifacts/repaired-skill-readiness/e2e-response-v1/final-node26-linux.json",
+    "artifacts/repaired-skill-readiness/e2e-response-v1/replay-ci-windows.json",
+    "artifacts/repaired-skill-readiness/e2e-response-v1/upstream-final-node26-linux.json",
+    "artifacts/repaired-skill-readiness/e2e-response-v1/upstream-final-node26-windows.json",
+    "artifacts/repaired-skill-readiness/e2e-response-v1/upstream-observation.json"
+  ],
+  "documented_repairs": [
+    "Register the matching response wait before the triggering action.",
+    "Use observable results rather than generic network-idle or fixed sleeps."
+  ],
+  "evidence_sha256": {
+    "control.cjs": "cae9eab344c0b944b29894e5d61d117ac8c94e6f5a28c3a7530b9d5708a0e8b6",
+    "final-node24-linux.json": "e9bd89fce59fa06ebe6f0baf55d98eca1adb87ddb1e4a0ace9e4b9afe323f40b",
+    "final-node24-windows.json": "99d53470954d19d0347967bbe2217cdaacb8fa7c86af3c9cf0e15127e8326d79",
+    "final-node26-linux.json": "117bad6bbf74d2465fc5125ddf93a092ea22422d1a8a465ff23e4c4f96b83fce",
+    "final-node26-windows.json": "d074699b70786c41acc7dd15fab608ad8afcff0d0dfb379d463886d7f1fc0d74",
+    "locks/linux/package-lock.json": "2c93c3ab2be0e566ead39cdacfba195624e0ecaebec2af30edcc9c32ce6e46d8",
+    "locks/linux/package.json": "4265a0bd83f318aee7cf79ef8df3f3c4afd83f609e2d4aed7d0569dfa6828d83",
+    "locks/windows/package-lock.json": "b6145606a03f9997ca996d9739170f94a6703b6161e154490ff05a51f4f97de2",
+    "locks/windows/package.json": "4265a0bd83f318aee7cf79ef8df3f3c4afd83f609e2d4aed7d0569dfa6828d83",
+    "replay-ci-windows.json": "99d53470954d19d0347967bbe2217cdaacb8fa7c86af3c9cf0e15127e8326d79",
+    "upstream-final-node26-linux.json": "68e718acae6a80b98a07fe9baffed8baa852c07cc115aaf1779b0439b87b3909",
+    "upstream-final-node26-windows.json": "38f14ad348cc865539122e0b6c2b9fef98fec9c09a7f9b5154b950c403cbee30",
+    "upstream-observation.json": "c4c7224eb72293216b90c14afbd8e4c7acf6b8f4dcd0aa8a2cdc434d09349f54"
+  }
+}

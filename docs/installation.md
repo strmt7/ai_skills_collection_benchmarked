@@ -64,6 +64,9 @@ Some reviewed instructions have known limitations:
   option. A [testing-workflow repair](../included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/tdd-workflow-everything-claude-code/SKILL.md)
   corrects it. [See the tested cases](research-tdd-jest-configuration.md).
 
+- The E2E skill can register its response wait too late. An [E2E repair](../included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/e2e-testing/SKILL.md)
+  addresses the ordering. [See the timing controls](research-e2e-response-order.md).
+
 These examples are not an exhaustive review of the catalog.
 
 ## Load it in your agent
