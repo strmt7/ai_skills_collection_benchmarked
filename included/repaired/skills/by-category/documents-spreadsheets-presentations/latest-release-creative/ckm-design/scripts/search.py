@@ -10,7 +10,7 @@ import re
 import unicodedata
 from collections import Counter
 from pathlib import Path
-from typing import Any
+from typing import Any, NoReturn
 
 DATA_ROOT = Path(__file__).resolve().parents[1] / "data"
 DOMAINS = {
@@ -153,8 +153,16 @@ def search(data_dir: Path, collection: str, domain: str, query: str, limit: int,
     }
 
 
+class JsonArgumentParser(argparse.ArgumentParser):
+    """Keep command-line errors in the same machine-readable envelope."""
+
+    def error(self, message: str) -> NoReturn:
+        print(json.dumps({"ok": False, "error": message}))
+        self.exit(2)
+
+
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = JsonArgumentParser(description=__doc__)
     parser.add_argument("--data-dir", type=Path, default=DATA_ROOT)
     parser.add_argument("--collection", required=True, choices=("logo", "cip"))
     parser.add_argument("--domain", required=True)

@@ -9,7 +9,7 @@
   "license_file": "LICENSE",
   "license_sha256": "738f69dfa83db5c347c678fb9d90e560877059f0de93a327c39001bff92dc014",
   "repaired_skill_sha256": "36728b76069fc05451c410ef102f839c63825e0f72ccbcf86766ad4b24d33e7d",
-  "repaired_script_sha256": "f203fa509cdb43b8f74dc95e1dd97554708d7a2185591f0bcd16e72636411f4c",
+  "repaired_script_sha256": "201622dd1c0932c67bf2ac2781c1c1e544d5f6a002a3a81a1d6096ef745ea292",
   "data_sha256": {
     "data/logo/styles.csv": "ea08bdfb7aa557f08d1b6299222423f948700f8e4029321acb58c8f83197bdf2",
     "data/logo/colors.csv": "d60218f0705bb0f0b892a10468a5c8d9a44eef3d0262ef8df8970ba3fbab567a",
@@ -25,7 +25,7 @@
   "readiness_evidence": "artifacts/repaired-skill-readiness/design-local-search-v1/qualification.json",
   "dependency": "snowballstemmer 3.1.1, separately installed from the hash-pinned requirements file",
   "documented_repairs": [
-    "Return structured nonzero errors for missing or invalid selected data.",
+    "Return structured nonzero errors for invalid arguments or missing or invalid selected data.",
     "Provide exact matching and explicit opt-in or fallback English stemming, with per-result match metadata."
   ]
 }

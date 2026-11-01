@@ -13167,7 +13167,7 @@
         "evidence": [
           {
             "path": "included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-design/repair.json",
-            "sha256": "e6e7f9b5fd60055860cc4f928adfd7b8a76a892702b11991f963c5be477f5aa9"
+            "sha256": "48bf0fa59db25156f8a94f1ee6b30a24707fef7e7fcbd8f945524ff193ba24f6"
           }
         ],
         "status": "in_progress"

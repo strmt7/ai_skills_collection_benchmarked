@@ -230,6 +230,27 @@ class SearchContract(unittest.TestCase):
         self.assertNotEqual(proc.returncode, 0)
         self.assertIn("no searchable content", data["error"])
 
+    def test_invalid_command_line_arguments_are_structured_failures(self):
+        for arguments in (
+            ["--collection", "wrong", "--domain", "deliverable", "badge"],
+            ["--collection", "cip", "--domain", "deliverable", "--max-results", "abc", "badge"],
+            ["--collection", "cip", "--domain", "deliverable"],
+            ["--unknown-option", "badge"],
+        ):
+            with self.subTest(arguments=arguments):
+                result = subprocess.run(
+                    [sys.executable, "-B", str(SCRIPT), *arguments],
+                    capture_output=True,
+                    text=True,
+                    encoding="utf-8",
+                    timeout=20,
+                    check=False,
+                )
+                body = json.loads(result.stdout)
+                self.assertEqual(result.returncode, 2)
+                self.assertFalse(body["ok"])
+                self.assertTrue(body["error"])
+
     def test_missing_dependency_is_a_structured_failure(self):
         result = subprocess.run(
             [

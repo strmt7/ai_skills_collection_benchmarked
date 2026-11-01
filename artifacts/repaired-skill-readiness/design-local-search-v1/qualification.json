@@ -12,10 +12,10 @@
     "uniform_count": 3,
     "uniforms_count": 0
   },
-  "repair_script_sha256": "f203fa509cdb43b8f74dc95e1dd97554708d7a2185591f0bcd16e72636411f4c",
-  "synthetic_control_script_sha256": "af93f863008044a05112f4a4d6eaec743f8ac9a5d35987ab7b22a3d59185e5ae",
+  "repair_script_sha256": "201622dd1c0932c67bf2ac2781c1c1e544d5f6a002a3a81a1d6096ef745ea292",
+  "synthetic_control_script_sha256": "f93f2d9c458dcc79222b196a1b54dfb2ff8152d4f9dd83881f3334084ef29812",
   "repair_controls": {
-    "synthetic_tests_per_interpreter": 20,
+    "synthetic_tests_per_interpreter": 21,
     "windows_python": [
       "3.11.9",
       "3.12.10",
@@ -96,7 +96,7 @@
       }
     ],
     "bundled_data_tests_per_interpreter": 2,
-    "total_tests_per_interpreter": 22
+    "total_tests_per_interpreter": 23
   },
   "scope": "Local search component only; synthetic controls are defined independently of the skill text. No agent efficacy is scored.",
   "agent_efficacy_scored": false,
