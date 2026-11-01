@@ -13133,7 +13133,7 @@
           {
             "path": "docs/research-design-search.md",
             "scope": "Selected local search, missing-data and renderer controls; no live provider request or agent performance test.",
-            "sha256": "099ee1978159228e0faa8453bc93ee0120d405ecd3694742fc2279950c358fd7"
+            "sha256": "796c4b92b33f6fe9dc58fc2947c8e63c1ae5be27fbb28f5ae732a398f833fa8d"
           },
           {
             "path": "artifacts/research/2026-11-01/design-search/reproduce.py",
@@ -13159,6 +13159,21 @@
             "path": "artifacts/research/2026-11-01/design-search/linux-result.json",
             "scope": "Selected local search, missing-data and renderer controls; no live provider request or agent performance test.",
             "sha256": "6e2294775afd1d2ba6c92860730d7779af1c823bc7307a9f02fff1c661b6f918"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/design-brief-phrase/reproduce.py",
+            "scope": "Independent synthetic control of one multiword brief deliverable; no agent efficacy result.",
+            "sha256": "9300e5e447d50f5a81bab34fb8daf87d6d27e30f465c2f2610ca56682919baf6"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/design-brief-phrase/windows-result.json",
+            "scope": "Independent synthetic control of one multiword brief deliverable; no agent efficacy result.",
+            "sha256": "6e47363aa400a651a8ccdc53877ce1188aec74c75564008e6eca20eed8f4485f"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/design-brief-phrase/linux-result.json",
+            "scope": "Independent synthetic control of one multiword brief deliverable; no agent efficacy result.",
+            "sha256": "6e47363aa400a651a8ccdc53877ce1188aec74c75564008e6eca20eed8f4485f"
           }
         ],
         "status": "in_progress"

@@ -13,6 +13,13 @@ removed from temporary fixtures. On both Windows and Linux:
   selected data file was missing. A sample corporate-identity brief also exited
   with status 0 and silently returned no deliverables when its deliverable data
   was missing.
+- In a separate [synthetic brief control](../artifacts/research/2026-11-01/design-brief-phrase/reproduce.py),
+  the only requested deliverable was `Business Card`. The original brief also
+  recommended an unrelated `Business Analytics` item because it searched the
+  words separately. The [Windows](../artifacts/research/2026-11-01/design-brief-phrase/windows-result.json)
+  and [Linux](../artifacts/research/2026-11-01/design-brief-phrase/linux-result.json)
+  observations agree; this single fixture does not measure the frequency of
+  incorrect recommendations in other briefs.
 - Searching the complete deliverable data for `uniform` returned three results;
   `uniforms` returned none. This illustrates a retrieval limitation, not a
   general measurement of search quality.

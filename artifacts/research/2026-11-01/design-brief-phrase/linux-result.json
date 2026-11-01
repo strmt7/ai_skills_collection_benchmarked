@@ -1,0 +1,15 @@
+{
+  "artifact_kind": "independent_runtime_readiness_component",
+  "source_commit": "07f4ef3ac2568c25a3b0c8ef5165a86abc3e56e4",
+  "source_sha256": "78a78a51f12d2382b2854414df395dc62b68532626ef724ddd5de713507911e4",
+  "fixture": "One named deliverable and one unrelated item sharing one word.",
+  "expected": [
+    "Business Card"
+  ],
+  "actual": [
+    "Business Analytics",
+    "Business Card"
+  ],
+  "source_satisfies_expected": false,
+  "agent_efficacy_scored": false
+}
