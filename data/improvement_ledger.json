@@ -8511,13 +8511,24 @@
             "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
             "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
             "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          },
+          {
+            "path": "docs/research-scanpy-workflow.md",
+            "scope": "Two source-bound synthetic failure cases and scoped upstream comparison; full review remains incomplete.",
+            "sha256": "be9d0f926b768e2dce19b73e20834e5d9e57e158854c3f2a01c2e2c3328f9657"
           }
         ],
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "status": "in_progress",
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/scanpy-counts-clustering/repair.json",
+            "scope": "Maintained counts and clustering overlay with Windows and Linux component controls; no agent evaluation.",
+            "sha256": "4b4356edfaccbb44d63bf2e7b28c1f94fa607fd20cc1809b111d6f46b0aef645"
+          }
+        ]
       },
       "source_repo": "K-Dense-AI/scientific-agent-skills",
       "source_signature": {

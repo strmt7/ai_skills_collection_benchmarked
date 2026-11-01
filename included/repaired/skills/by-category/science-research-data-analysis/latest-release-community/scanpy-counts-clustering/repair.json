@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-scanpy-skill-md",
+  "source_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+  "source_mirror": "included/skills/by-category/science-research-data-analysis/latest-release-community/scanpy",
+  "source_license_blob_sha1": "eb246475fd5a66b9bb56176f3a718984632dd98d",
+  "scope": "Pinned Scanpy count-snapshot and label-order failures, and maintained example controls on synthetic data.",
+  "agent_performance_tested": false,
+  "full_skill_reviewed": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/scanpy-counts-clustering-v1/qualification.json",
+  "overlay_sha256": {
+    "SKILL.md": "610b02de602f48972e468ef7ccbdfe7524345ce9ba635ab2ce4d8957343566db",
+    "LICENSE": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1",
+    "provenance/original.SKILL.md": "c93a0bfa855f502378d467541babdd4717639af2b7cce6fb638b0bde9366fff1"
+  },
+  "evidence_sha256": {
+    "reproduce.py": "d69500a88af4fab213689958b3c043a066c2e22c126dae5d79007e359dfd0f15",
+    "requirements-leiden.in": "773d1a5def6202a0d25ba56cec395e351011b4a8cc0896f4c2ad48300cc54fba",
+    "requirements-leiden.txt": "9fc4b8926da70b78f8e221429ecdb213ccdf0518cd1f46a1ca1dd218dabab85d",
+    "windows-result.json": "9b77271a31e640e555d31e29068d2a3fc807a3ec9cd649d8f48cc0904446aec0",
+    "linux-result.json": "9b77271a31e640e555d31e29068d2a3fc807a3ec9cd649d8f48cc0904446aec0",
+    "sources.json": "9508bd67046850dc63dc8ddee098a825a4ea4f5c2039844e34646bafbdf0531f",
+    "qualification.json": "8e9282e46a8365b3b4c091d38e93ae5199d865d1408c6bcc93ccada48373c9cd"
+  }
+}

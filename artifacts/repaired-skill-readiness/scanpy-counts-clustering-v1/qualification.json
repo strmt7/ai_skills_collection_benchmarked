@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "scope": "Pinned Scanpy count-snapshot and label-order failures, and maintained example controls on synthetic data.",
+  "source_skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-scanpy-skill-md",
+  "python_version": "3.13.18",
+  "platforms": [
+    "Windows x86_64",
+    "Ubuntu 24.04 WSL x86_64"
+  ],
+  "packages": {
+    "anndata": "0.13.4",
+    "scanpy": "1.12.5",
+    "igraph": "1.0.0",
+    "leidenalg": "0.12.0"
+  },
+  "base_requirements_sha256": {
+    "artifacts/repaired-skill-readiness/anndata-io-v2/requirements-linux.txt": "e25330dd08757c6bc0a842e0695d0ddef98f959e190eb08514bfc3d55bda7e7b",
+    "artifacts/repaired-skill-readiness/anndata-io-v2/requirements-windows.txt": "f4b48a96cac7cde49ffd2f8c39e5ae6a38941fa07b083d5895da79d0b57419d6"
+  },
+  "files_sha256": {
+    "reproduce.py": "d69500a88af4fab213689958b3c043a066c2e22c126dae5d79007e359dfd0f15",
+    "requirements-leiden.in": "773d1a5def6202a0d25ba56cec395e351011b4a8cc0896f4c2ad48300cc54fba",
+    "requirements-leiden.txt": "9fc4b8926da70b78f8e221429ecdb213ccdf0518cd1f46a1ca1dd218dabab85d",
+    "windows-result.json": "9b77271a31e640e555d31e29068d2a3fc807a3ec9cd649d8f48cc0904446aec0",
+    "linux-result.json": "9b77271a31e640e555d31e29068d2a3fc807a3ec9cd649d8f48cc0904446aec0",
+    "sources.json": "9508bd67046850dc63dc8ddee098a825a4ea4f5c2039844e34646bafbdf0531f"
+  },
+  "agent_performance_tested": false,
+  "biological_validity_tested": false,
+  "full_skill_reviewed": false,
+  "limits": [
+    "Synthetic data only; no biological interpretation or model comparison.",
+    "The hosted workflow outcome is separate from these local controls.",
+    "The complete upstream skill and source migration remain unreviewed."
+  ]
+}

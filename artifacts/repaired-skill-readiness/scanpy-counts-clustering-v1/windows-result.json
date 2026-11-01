@@ -1,0 +1,28 @@
+{
+  "cases": {
+    "dense": {
+      "source_errors_reproduced": true,
+      "counts_preserved": true,
+      "raw_independent": true,
+      "leiden_and_plot": true,
+      "round_trip": true
+    },
+    "sparse": {
+      "source_errors_reproduced": true,
+      "counts_preserved": true,
+      "raw_independent": true,
+      "leiden_and_plot": true,
+      "round_trip": true
+    }
+  },
+  "existing_counts_preserved": true,
+  "packages": {
+    "anndata": "0.13.4",
+    "scanpy": "1.12.5",
+    "igraph": "1.0.0",
+    "leidenalg": "0.12.0"
+  },
+  "synthetic": true,
+  "biological_validity_tested": false,
+  "agent_performance_tested": false
+}

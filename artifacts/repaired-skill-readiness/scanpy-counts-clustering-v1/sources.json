@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-01",
+  "pinned_source_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+  "pinned_entrypoint_sha256": "c93a0bfa855f502378d467541babdd4717639af2b7cce6fb638b0bde9366fff1",
+  "upstream_candidate_commit": "526ebce143bc326f44471554e33d66a19c840360",
+  "upstream_files": [
+    {
+      "file": "entrypoint",
+      "git_blob_sha1": "8c071306c10ebaf6b23da5d4fbacdaa597e5c8a8",
+      "sha256": "4a59f87933a1e9ed49eac603719af1b0c606dd99050fe59ffa1c1bf807900cb8"
+    },
+    {
+      "file": "_common.py",
+      "git_blob_sha1": "8bf596b2c9e3b7911d566b5e489c9faa72317802",
+      "sha256": "048948933c9fa6831520a512bce6e0a221e31352b6a1b2091d838e9460942e9f"
+    },
+    {
+      "file": "run_pipeline.py",
+      "git_blob_sha1": "d02ddb8b0356ac506466ac515737dadba7c7bc31",
+      "sha256": "380209ebe35bddb3e70eaa1f94dd245494e86013619a736688fb81156cde2733"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://anndata.readthedocs.io/en/stable/generated/anndata.AnnData.raw.html",
+      "native_result_sha256": "d375c4a7e68c3a7ab0045a7a999d18dca407ec503931e01b9bffcfcf899aef92",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200
+    },
+    {
+      "url": "https://scanpy.readthedocs.io/en/stable/api/generated/scanpy.pl.umap.html",
+      "native_result_sha256": "74cbb4427b38e3f97d6909e6c2a0b99595c11979f914a318e0718271bf49bde0",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200
+    },
+    {
+      "url": "https://scanpy.readthedocs.io/en/stable/generated/scanpy.tl.leiden.html",
+      "native_result_sha256": "806cf47ec2816d877db197e046b4ab16cb26f288f6da25551657f581a9bcca69",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200
+    }
+  ],
+  "limits": [
+    "Upstream files are source observations, not a full migration review.",
+    "Native API and browser captures, including two failed URLs, remain outside Git."
+  ]
+}

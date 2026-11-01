@@ -1,0 +1,73 @@
+name: Scanpy counts and clustering controls
+
+on:
+  push:
+    paths:
+      - 'included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/scanpy-counts-clustering/**'
+      - 'artifacts/repaired-skill-readiness/scanpy-counts-clustering-v1/**'
+      - 'artifacts/repaired-skill-readiness/anndata-io-v2/requirements-*.txt'
+      - '.github/workflows/scanpy-clustering-controls.yml'
+      - '.gitattributes'
+  workflow_dispatch:
+  schedule:
+    - cron: '40 8 * * 2'
+
+concurrency:
+  group: scanpy-clustering-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  controls:
+    name: Synthetic clustering controls (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    env:
+      GIT_CONFIG_COUNT: '1'
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: 'true'
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            requirements: requirements-linux.txt
+          - os: windows-latest
+            requirements: requirements-windows.txt
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: '0.13.6'
+          python-version: '3.13.18'
+          activate-environment: 'true'
+          venv-path: ${{ runner.temp }}/scanpy-clustering-venv
+          enable-cache: 'false'
+      - name: Verify interpreter and install the pinned dependency graphs
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          python -c "import platform,sys; print(platform.python_version()); sys.exit(platform.python_version() != '3.13.18' or sys.prefix == sys.base_prefix)"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          uv pip install --require-hashes --only-binary=:all: -r "artifacts/repaired-skill-readiness/anndata-io-v2/${{ matrix.requirements }}" -r artifacts/repaired-skill-readiness/scanpy-counts-clustering-v1/requirements-leiden.txt
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          uv pip check
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Exercise the pinned and maintained examples
+        shell: pwsh
+        env:
+          NUMBA_CACHE_DIR: ${{ runner.temp }}/numba-scanpy
+          MPLCONFIGDIR: ${{ runner.temp }}/matplotlib-scanpy
+        run: |
+          $ErrorActionPreference = 'Stop'
+          python artifacts/repaired-skill-readiness/scanpy-counts-clustering-v1/reproduce.py > "$env:RUNNER_TEMP/scanpy-clustering-result.json"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Retain the component result
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: scanpy-clustering-${{ matrix.os }}
+          path: ${{ runner.temp }}/scanpy-clustering-result.json
+          if-no-files-found: error
+          retention-days: 14
