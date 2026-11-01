@@ -1,0 +1,5 @@
+/usr/bin/ld: build/obj/main.o: warning: relocation against `shared_global' in read-only section `.text'
+/usr/bin/ld: build/obj/main.o: relocation R_X86_64_PC32 against symbol `shared_global' can not be used when making a shared object; recompile with -fPIC
+/usr/bin/ld: final link failed: bad value
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:42: build/libdemo.so.1.0.0] Error 1

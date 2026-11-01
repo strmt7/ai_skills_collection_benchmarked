@@ -1,0 +1,84 @@
+name: C Makefile compatibility
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 7 * * 1"
+
+concurrency:
+  group: makefile-c-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  makefile:
+    name: C template controls (${{ matrix.os }}, Python ${{ matrix.python-version }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    env:
+      GIT_CONFIG_COUNT: "1"
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: "true"
+      PYTHONDONTWRITEBYTECODE: "1"
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ["3.11.18", "3.12.16", "3.13.18", "3.14.10"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        if: ${{ runner.os != 'Windows' || startsWith(matrix.python-version, '3.14.') }}
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        if: ${{ runner.os == 'Windows' && !startsWith(matrix.python-version, '3.14.') }}
+        with:
+          version: "0.13.6"
+          python-version: ${{ matrix.python-version }}
+          activate-environment: "true"
+          venv-path: ${{ runner.temp }}/makefile-c-venv
+          enable-cache: "false"
+      - name: Verify Python version
+        shell: python
+        env:
+          EXPECTED_PYTHON: ${{ matrix.python-version }}
+        run: |
+          import os
+          import platform
+          actual = platform.python_version()
+          expected = os.environ["EXPECTED_PYTHON"]
+          if actual != expected:
+              raise SystemExit(f"Expected Python {expected}; got {actual}")
+          print(f"Verified Python {actual}")
+      - name: Build verified GNU Make 4.4.1
+        if: ${{ runner.os == 'Linux' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          archive="$RUNNER_TEMP/make-4.4.1.tar.gz"
+          curl -fsS --retry 3 --retry-all-errors https://mirror.bazel.build/ftpmirror.gnu.org/gnu/make/make-4.4.1.tar.gz -o "$archive"
+          printf '%s  %s\n' 'dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3' "$archive" | sha256sum -c -
+          tar -xzf "$archive" -C "$RUNNER_TEMP"
+          cd "$RUNNER_TEMP/make-4.4.1"
+          ./configure --disable-nls
+          make -j2
+          printf 'TASK_MAKE_BIN=%s/make-4.4.1/make\n' "$RUNNER_TEMP" >> "$GITHUB_ENV"
+      - name: Run Linux build controls
+        if: ${{ runner.os == 'Linux' }}
+        env:
+          TASK_REQUIRE_GNU: "1"
+        run: >-
+          python -m unittest discover
+          -s included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-c
+          -p test_generator.py -v
+      - name: Run Windows generator controls
+        if: ${{ runner.os == 'Windows' }}
+        run: >-
+          python -m unittest discover
+          -s included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-c
+          -p test_generator.py -v

@@ -80,3 +80,5 @@
 /artifacts/repaired-skill-readiness/bun-runtime-v1/** text eol=lf
 /included/repaired/skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill/** text eol=lf
 /artifacts/repaired-skill-readiness/playwright-executor-v1/** text eol=lf
+/included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-c/** text eol=lf
+/artifacts/repaired-skill-readiness/makefile-generator-c-v1/** text eol=lf

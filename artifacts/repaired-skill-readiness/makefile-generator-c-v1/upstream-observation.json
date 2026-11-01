@@ -1,0 +1,11 @@
+{
+  "source_repository": "https://github.com/akin-ozer/cc-devops-skills",
+  "pinned_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+  "observed_commit": "276af751e659315aaf56d3ad13d7c26f4e72e28a",
+  "observed_commit_time": "2026-07-11T06:48:04Z",
+  "skill_git_blob": "07ca260903d20aedb6a2293ae3eb677d13cafcab",
+  "generator_git_blob": "71dc645219692b3f7e2681a7652bcf4924c30015",
+  "gnu_make_archive_sha256": "dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3",
+  "gnu_make_manual_sha256": "4bc3c176c7eacefae7fdafd0665138372943f9e15cf6b6e816ad8062a31689dd",
+  "scope": "Selected C templates and helper only; not a full upstream review or agent-effectiveness result."
+}

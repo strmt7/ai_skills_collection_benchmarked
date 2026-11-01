@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-makefile-generator-skill-md",
+  "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+  "source_mirror": "included/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator",
+  "original_skill_sha256": "c0090361f2f9999c81050beb7d65aaf4338094559bd227d944aafbf1500286fe",
+  "provenance_skill": "provenance/original.SKILL.md",
+  "original_generator_sha256": "f85287a85ab0b152b2d7f8681642d616031896e4e75d45b78970de514a324747",
+  "repaired_skill_sha256": "efb7d8df54ef2d56d19ab0bc46f55e1e09f87a0cd123f08aaa40ba28a17544f3",
+  "license_file": "LICENSE",
+  "license_sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+  "scope": "C application and Linux ELF library Makefile templates only; component controls do not measure agent effectiveness.",
+  "model_performance_claim": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/makefile-generator-c-v1/result.json",
+  "documented_repairs": [
+    "Respect GNU make built-in and user compiler variable origins.",
+    "Preserve PIC when CFLAGS are overridden and honor shared-link flags.",
+    "Track C header dependencies and avoid invented test or installation targets."
+  ],
+  "overlay_sha256": {
+    "generate.py": "e26f4d411cafb463287d35a60460981a0b6786c0b45ba8d685860048d3b9f05f",
+    "LICENSE": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+    "provenance/original.generate.sh": "f85287a85ab0b152b2d7f8681642d616031896e4e75d45b78970de514a324747",
+    "provenance/original.SKILL.md": "c0090361f2f9999c81050beb7d65aaf4338094559bd227d944aafbf1500286fe",
+    "SKILL.md": "efb7d8df54ef2d56d19ab0bc46f55e1e09f87a0cd123f08aaa40ba28a17544f3",
+    "templates/c-lib.mk": "71cf163147bc09ec9cad63524379d9027a52ddfe826675c3f6f2fb70a8063e27",
+    "templates/c.mk": "d99a534130116e986df82d241fb34ef580533a9689bf1f5138759c5c48d534aa",
+    "test_generator.py": "69f406736b1782e358426ee24ca25590af5a0efb98b3539ba62dafcee6a46844"
+  },
+  "evidence_sha256": {
+    "original-command_cflags.stderr.txt": "b94d22f439175718f0d20a354a8c62c84fac4f2ee16a237993b24f2354f3f6bd",
+    "original-command_cflags.stdout.txt": "1d2446584c59491072f37a1ca38f3f4aece37cea554e163d44506fd10b4e68ac",
+    "original-environment_cflags.stderr.txt": "b94d22f439175718f0d20a354a8c62c84fac4f2ee16a237993b24f2354f3f6bd",
+    "original-environment_cflags.stdout.txt": "1d2446584c59491072f37a1ca38f3f4aece37cea554e163d44506fd10b4e68ac",
+    "original-invalid_ldflags.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original-invalid_ldflags.stdout.txt": "7419a24cdf785e3e8fa8950fc5630c287d238c73462fb82d0911d6e3261264b7",
+    "original-missing_ldlibs.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original-missing_ldlibs.stdout.txt": "7419a24cdf785e3e8fa8950fc5630c287d238c73462fb82d0911d6e3261264b7",
+    "repaired-command_cflags.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "repaired-command_cflags.stdout.txt": "240e1fe200c50fe0f66e4fd81f8f6b6c06a2dd3a085f614b2c826fc610bf332c",
+    "repaired-environment_cflags.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "repaired-environment_cflags.stdout.txt": "240e1fe200c50fe0f66e4fd81f8f6b6c06a2dd3a085f614b2c826fc610bf332c",
+    "repaired-invalid_ldflags.stderr.txt": "7a6eae4a506b2979f9a218aeef124d97553198880c8c7533536d1c43c10a31ed",
+    "repaired-invalid_ldflags.stdout.txt": "e30980e33efcfdcf3216b1a729baf1446dadb7885b2f77926de5520d74f8ce3e",
+    "repaired-missing_ldlibs.stderr.txt": "44fcf9bd6f7ce0c42eb145fded7dd88e4fc9a90e76faf6f6d69c3a19964cb046",
+    "repaired-missing_ldlibs.stdout.txt": "4242a00c08608ba38464dfc400bee26a621d72951f8f19c73abb620da06c0a51",
+    "reproduce.py": "2a13219d8af0bdaf7978d40e770b2cfdd44e682c18de3a5f95af6479d625e44a",
+    "result.json": "373cc31e0e5ce5026a9abb342de410a5718d7be11b7c7128882dc1bac64d819d",
+    "upstream-observation.json": "10efde0cef345dbaa66fc22c15e8efbcfef327c3c6ca14a9ef16dfbfd6e86704"
+  }
+}

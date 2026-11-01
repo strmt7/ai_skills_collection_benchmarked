@@ -74,6 +74,10 @@ Some reviewed instructions have known limitations:
   [maintained executor](../included/repaired/skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill/SKILL.md)
   preserves it. [See the tested cases](research-playwright-executor.md).
 
+- The Makefile generator can lose required PIC flags and ignore shared-link
+  settings. A [C generator repair](../included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-c/SKILL.md)
+  covers C executables and Linux ELF libraries. [See the build controls](research-makefile-generator-c.md).
+
 These examples are not an exhaustive review of the catalog.
 
 ## Load it in your agent

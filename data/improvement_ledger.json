@@ -2377,13 +2377,38 @@
             "path": "artifacts/research/2026-10-30/make-parallel-controls/result.json",
             "scope": "GNU Make 4.4.1 Linux container control for sibling-recipe overlap and a serial comparison.",
             "sha256": "62cff8a0c3f7be69093ceb47202835b4b6fc91ccb074aaed0caf9dadb38b080a"
+          },
+          {
+            "path": "docs/research-makefile-generator-c.md",
+            "scope": "C application and Linux ELF library Makefile component controls; no agent efficacy result.",
+            "sha256": "7f70d35d6d50da4c482efe12fa5e67948c321d72ee81072e47bc3655bb15a793"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/makefile-generator-c-v1/reproduce.py",
+            "scope": "C application and Linux ELF library Makefile component controls; no agent efficacy result.",
+            "sha256": "2a13219d8af0bdaf7978d40e770b2cfdd44e682c18de3a5f95af6479d625e44a"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/makefile-generator-c-v1/result.json",
+            "scope": "C application and Linux ELF library Makefile component controls; no agent efficacy result.",
+            "sha256": "373cc31e0e5ce5026a9abb342de410a5718d7be11b7c7128882dc1bac64d819d"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/makefile-generator-c-v1/upstream-observation.json",
+            "scope": "C application and Linux ELF library Makefile component controls; no agent efficacy result.",
+            "sha256": "10efde0cef345dbaa66fc22c15e8efbcfef327c3c6ca14a9ef16dfbfd6e86704"
           }
         ],
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-c/repair.json",
+            "sha256": "69a5ff2b1837ccec30c25a3185526aeb3297d48a4778aba1e618f081cfc85bd0"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "akin-ozer/cc-devops-skills",
       "source_signature": {

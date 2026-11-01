@@ -1,0 +1,4 @@
+gcc  -Wall -Wextra -O2 -fPIC -MMD -MP -c src/main.c -o build/obj/main.o
+ar rcs build/libdemo.a build/obj/main.o
+gcc  -shared -Wl,-soname,libdemo.so.1 build/obj/main.o -lthis_library_does_not_exist -o build/libdemo.so.1.0.0
+ranlib build/libdemo.a

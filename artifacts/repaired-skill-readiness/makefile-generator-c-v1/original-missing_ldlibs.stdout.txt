@@ -1,0 +1,4 @@
+cc  -Wall -Wextra -O2 -fPIC -c src/main.c -o build/obj/main.o
+ar rcs build/libdemo.a build/obj/main.o
+cc -shared -Wl,-soname,libdemo.so.1 build/obj/main.o -o build/libdemo.so.1.0.0
+ranlib build/libdemo.a
