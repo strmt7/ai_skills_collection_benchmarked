@@ -5774,8 +5774,8 @@
           },
           {
             "path": "docs/research-cellxgene-census.md",
-            "scope": "Summary schema and sparse matrix review using native synthetic controls; full skill and live service remain unverified.",
-            "sha256": "0977d3cd0cd721280ba578028260b83fd60ae54e85dc3b9136b5eb420364cc21"
+            "scope": "Summary schema, sparse means and AnnData-to-SOMA version controls on synthetic data; full skill and live service remain unverified.",
+            "sha256": "9c1e7ef03a204a694328f9fbfd74732fce283414bd1bdf0943b32f55ea68776c"
           }
         ],
         "status": "in_progress"

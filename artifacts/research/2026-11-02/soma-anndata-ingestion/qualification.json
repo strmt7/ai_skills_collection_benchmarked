@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-02",
+  "scope": "Native from_anndata and from_h5ad controls with synthetic dense and sparse inputs, named layers and axis metadata.",
+  "python_version": "3.12.3",
+  "platform": "Linux x86_64 (WSL)",
+  "compatible_pair": {
+    "tiledbsoma": "2.3.0",
+    "anndata": "0.12.19",
+    "outcome": "four_round_trips_equal"
+  },
+  "known_incompatible_pair": {
+    "tiledbsoma": "2.3.0",
+    "anndata": "0.13.4",
+    "outcome": "four_type_errors_with_partial_destinations"
+  },
+  "files_sha256": {
+    "reproduce.py": "53891a57d7975783e73af4a3ffc0a48f4da6b4c55765508b98de7905d460c427",
+    "requirements.in": "09078c253a8372c4973e96d62ec602f9542e26548b4f0d48e1ee67c3d1f077f0",
+    "requirements-linux.txt": "f19747ee5e05c854c4b59f1417d69dd75318abbd5036a018e1367d9abfbf2e7d",
+    "compatible-result.json": "733360e4be4bba54468a434dec4fdd880b664496108a24945173168657c61256",
+    "latest-result.json": "bbebc1249096ec9a8ff1ca7e8b4d71c42b00879fdb14d3897c196f2e46b15b2e"
+  },
+  "latest_lock": {
+    "path": "artifacts/repaired-skill-readiness/census-summary-mean-v1/requirements-linux.txt",
+    "sha256": "bac3fff0abb110cc640253224d3f530bac9f69803eb6c734f13381f135469d26"
+  },
+  "sources": [
+    {
+      "url": "https://scverse.org/blog/2026-anndata-013/",
+      "native_result_sha256": "3ad33238b5739a548440203674f93bb9b7d0ace89ce78a69a961841aa2ab77e1",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200
+    },
+    {
+      "url": "https://github.com/single-cell-data/TileDB-SOMA/issues/4466",
+      "api_result_sha256": "3111bddcdde4e67ddd8a4ab0779b557dda9dc269c80da526623fb8d7c7ad5a2b"
+    }
+  ],
+  "limits": [
+    "Small synthetic datasets and two version pairs only.",
+    "No live Census service, biological validity or agent performance tested.",
+    "A known-error CI result reports an observed failure, not successful ingestion.",
+    "Native page and issue captures are retained outside Git."
+  ]
+}

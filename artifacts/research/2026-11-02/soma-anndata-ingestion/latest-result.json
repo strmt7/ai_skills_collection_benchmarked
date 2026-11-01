@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "python": "3.12.3",
+  "versions": {
+    "anndata": "0.13.4",
+    "tiledbsoma": "2.3.0",
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "pyarrow": "26.0.0"
+  },
+  "expected_condition": "known-error",
+  "observations": [
+    {
+      "layout": "dense",
+      "transport": "anndata",
+      "outcome": "known_type_error"
+    },
+    {
+      "layout": "dense",
+      "transport": "h5ad",
+      "outcome": "known_type_error"
+    },
+    {
+      "layout": "sparse",
+      "transport": "anndata",
+      "outcome": "known_type_error"
+    },
+    {
+      "layout": "sparse",
+      "transport": "h5ad",
+      "outcome": "known_type_error"
+    }
+  ],
+  "partial_destination_observed_on_failure": true,
+  "input_data_preserved": true,
+  "full_dataset_compatibility_tested": false,
+  "agent_performance_tested": false
+}

@@ -1,0 +1,61 @@
+name: SOMA and AnnData ingestion controls
+
+on:
+  push:
+    paths:
+      - 'artifacts/research/2026-11-02/soma-anndata-ingestion/**'
+      - 'artifacts/repaired-skill-readiness/census-summary-mean-v1/requirements-linux.txt'
+      - '.github/workflows/soma-anndata-ingestion.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '40 9 * * 2'
+
+concurrency:
+  group: soma-anndata-ingestion-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  controls:
+    name: Ingestion observation (${{ matrix.condition }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - condition: compatible
+            lock: artifacts/research/2026-11-02/soma-anndata-ingestion/requirements-linux.txt
+          - condition: known-error
+            lock: artifacts/repaired-skill-readiness/census-summary-mean-v1/requirements-linux.txt
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: '0.13.6'
+          python-version: '3.12.16'
+          activate-environment: 'true'
+          venv-path: ${{ runner.temp }}/soma-ingestion-venv
+          enable-cache: 'false'
+      - name: Install the pinned dependency set
+        env:
+          LOCK_FILE: ${{ matrix.lock }}
+        run: |
+          python -c "import platform,sys; sys.exit(platform.python_version() != '3.12.16' or sys.prefix == sys.base_prefix)"
+          uv pip install --only-binary=:all: --require-hashes -r "$LOCK_FILE"
+          uv pip check
+      - name: Observe ingestion and validate the expected outcome
+        env:
+          CONDITION: ${{ matrix.condition }}
+          OMP_NUM_THREADS: '2'
+          OPENBLAS_NUM_THREADS: '2'
+        run: python artifacts/research/2026-11-02/soma-anndata-ingestion/reproduce.py --expect "$CONDITION" --output "${RUNNER_TEMP}/result.json"
+      - name: Retain observed outcomes
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: soma-ingestion-${{ matrix.condition }}
+          path: ${{ runner.temp }}/result.json
+          if-no-files-found: error
+          retention-days: 14

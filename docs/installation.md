@@ -44,7 +44,8 @@ Some reviewed instructions have known limitations:
   distinguishes SCVI and SysVI; [the review](research-scvi-model-inputs.md) explains the evidence and limits.
 - The pinned CELLxGENE Census skill misreads summary counts and averages only
   stored sparse entries. The [summary and mean overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/cellxgene-census-summary-and-mean/SKILL.md)
-  covers these operations; [the review](research-cellxgene-census.md) explains its scope.
+  covers these operations; [the review](research-cellxgene-census.md) explains its scope
+  and a separately tested AnnData-to-SOMA version incompatibility.
 - With GNU Make 4.4.1, the pinned Makefile generator's selective `.NOTPARALLEL`
   example does not serialize the named target recipes. [See the parallelism control](research-makefile-parallelism.md).
 - The pinned DOCX skill's global npm installation does not necessarily make the
