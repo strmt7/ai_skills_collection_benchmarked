@@ -1,0 +1,10 @@
+{
+  "source_repository": "https://github.com/lackeyjb/playwright-skill",
+  "pinned_commit": "289abdea7df857dc7a6ece937dbe0c5ecc964ccd",
+  "observed_commit": "dd47a6a023e249eb1b36e9e943eab89d0900865d",
+  "observed_commit_time": "2026-08-14T13:51:33Z",
+  "observed_skill_git_blob": "8e002881ae65ebfa13f61a99d50678622c0ae5bf",
+  "observed_skill_sha256": "6dc254f552392e1f5b8704434e982cd26375d04ebe815084d1b47af1ee2a971f",
+  "observed_executor_git_blob": "55ef973701fee172d3592fdcf4c7f6e90c0b5682",
+  "scope": "Selected temporary-path instructions and executor; not a full upstream review or agent-effectiveness result."
+}

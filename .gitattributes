@@ -78,3 +78,5 @@
 /artifacts/repaired-skill-readiness/e2e-response-v1/** text eol=lf
 /included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/bun-runtime/** text eol=lf
 /artifacts/repaired-skill-readiness/bun-runtime-v1/** text eol=lf
+/included/repaired/skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill/** text eol=lf
+/artifacts/repaired-skill-readiness/playwright-executor-v1/** text eol=lf

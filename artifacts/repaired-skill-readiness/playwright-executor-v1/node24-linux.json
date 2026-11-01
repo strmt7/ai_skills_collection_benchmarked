@@ -1,0 +1,39 @@
+{
+  "node": "v24.15.0",
+  "platform": "posix",
+  "playwright": "1.64.1",
+  "original_sha256": "f2afe1a17379548abee60e91c9cee9a3907ff5ae9a2423d9190e45ace761399d",
+  "repaired_sha256": "c8bcb288f1b63815a074cd0ff8650dfc5ea73b93018af62cf18a7c3d088cbe67",
+  "package_lock_sha256": "ee1206e0b5b61b34668bf5c686fede1bd310443b6a1d434262fd6374117331ff",
+  "cases": {
+    "direct": {
+      "exit": 0,
+      "fixture_ok": true,
+      "missing_fixture": false
+    },
+    "original": {
+      "exit": 1,
+      "fixture_ok": false,
+      "missing_fixture": true
+    },
+    "repaired": {
+      "exit": 0,
+      "fixture_ok": true,
+      "missing_fixture": false
+    },
+    "inline": {
+      "exit": 0,
+      "fixture_ok": true,
+      "missing_fixture": false
+    }
+  },
+  "playwright_without_node_path": {
+    "exit": 0,
+    "version": "1.64.1"
+  },
+  "browser_smoke": {
+    "exit": 0,
+    "result": "control ready"
+  },
+  "agent_efficacy_scored": false
+}

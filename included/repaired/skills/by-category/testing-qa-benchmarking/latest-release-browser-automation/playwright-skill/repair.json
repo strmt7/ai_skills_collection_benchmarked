@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "lackeyjb-playwright-skill-skills-playwright-skill-skill-md",
+  "source_commit": "289abdea7df857dc7a6ece937dbe0c5ecc964ccd",
+  "source_mirror": "included/skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill",
+  "original_skill_sha256": "746a885d19ce9fc027c376f30bab4c86907e7ab956366c242ccdb4cf20eb8a9b",
+  "provenance_skill": "provenance/original.SKILL.md",
+  "original_executor_sha256": "f2afe1a17379548abee60e91c9cee9a3907ff5ae9a2423d9190e45ace761399d",
+  "repaired_skill_sha256": "9282400eb7799905a1bc12df8f77e9ab087239edd6cc450cb3247bf88ffc4919",
+  "repaired_executor_sha256": "c8bcb288f1b63815a074cd0ff8650dfc5ea73b93018af62cf18a7c3d088cbe67",
+  "license_file": "LICENSE",
+  "license_sha256": "c9104b65859edbe0df0255c2adbad01b147b58a02fa2aff1c2e5736512e8a143",
+  "scope": "Preserve caller NODE_PATH, isolate package setup, and use portable temporary paths; component controls do not measure agent effectiveness.",
+  "model_performance_claim": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/playwright-executor-v1/node26-windows.json",
+  "additional_evidence": [
+    "artifacts/repaired-skill-readiness/playwright-executor-v1/node24-windows.json",
+    "artifacts/repaired-skill-readiness/playwright-executor-v1/node24-linux.json",
+    "artifacts/repaired-skill-readiness/playwright-executor-v1/node26-linux.json",
+    "artifacts/repaired-skill-readiness/playwright-executor-v1/upstream-observation.json"
+  ],
+  "documented_repairs": [
+    "Preserve existing NODE_PATH entries using the platform delimiter.",
+    "Install the pinned Playwright dependency in an isolated copy.",
+    "Use host-provided temporary paths instead of a fixed /tmp path."
+  ],
+  "overlay_sha256": {
+    "lib/helpers.js": "b837864b43126da1c0fc216b4d555b14a52c78bd78e0075af0c6acd1efa0e010",
+    "LICENSE": "c9104b65859edbe0df0255c2adbad01b147b58a02fa2aff1c2e5736512e8a143",
+    "package-lock.json": "ee1206e0b5b61b34668bf5c686fede1bd310443b6a1d434262fd6374117331ff",
+    "package.json": "b5a0c30d2ef1e420a9fbff262991af5ec3e5dce382319b460949deb54772c3ed",
+    "provenance/original.run.js": "f2afe1a17379548abee60e91c9cee9a3907ff5ae9a2423d9190e45ace761399d",
+    "provenance/original.SKILL.md": "746a885d19ce9fc027c376f30bab4c86907e7ab956366c242ccdb4cf20eb8a9b",
+    "run.js": "c8bcb288f1b63815a074cd0ff8650dfc5ea73b93018af62cf18a7c3d088cbe67",
+    "SKILL.md": "9282400eb7799905a1bc12df8f77e9ab087239edd6cc450cb3247bf88ffc4919",
+    "tests/executor-node-path.test.cjs": "5de9befb209effcd2654fcc87ce2e924f84cfc40a41444ff661d9e1e65432bd6"
+  },
+  "evidence_sha256": {
+    "node24-linux.json": "b68918fda8149a6b4c8f0fb1e800edc0487b8fde684e2c91e8b3c2dfdd76ac33",
+    "node24-windows.json": "93aab59a9e169f489d49e379c260a9849c2ea00938b5c4e7218d4eea819e98ac",
+    "node26-linux.json": "bd4df54c0f3ecca5286234b70ee575b9adaaef3647068a08f7fd812fdc751b9a",
+    "node26-windows.json": "b764e3b6a31c45478ca33d584a6b6cfe1192655dd3c9d834d6120b07304fe0e2",
+    "reproduce.py": "4c470beeb99f7fe66f65de1c10bde55e30bcb1e1779877a56cd2ba19e28bf3d9",
+    "upstream-observation.json": "f2d16d5d00c2c73a8ebe5d703b291cf69121884361e930e673520b45d5fb9f4d"
+  }
+}

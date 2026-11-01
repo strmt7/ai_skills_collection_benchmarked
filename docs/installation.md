@@ -70,6 +70,10 @@ Some reviewed instructions have known limitations:
 - The Bun skill assumes frozen installs are always locked. A [Bun repair](../included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/bun-runtime/SKILL.md)
   makes the lockfile precondition explicit. [See the runtime controls](research-bun-runtime.md).
 
+- The Playwright skill executor replaces the caller’s module search path. A
+  [maintained executor](../included/repaired/skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill/SKILL.md)
+  preserves it. [See the tested cases](research-playwright-executor.md).
+
 These examples are not an exhaustive review of the catalog.
 
 ## Load it in your agent

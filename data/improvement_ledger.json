@@ -9293,6 +9293,41 @@
           {
             "path": "artifacts/research/2026-10-25/playwright-v5-source-review.json",
             "sha256": "aa37dd78bcc9cc051390ded805edb0e943cad84e659b72de3ee7e2c8834f1a39"
+          },
+          {
+            "path": "docs/research-playwright-executor.md",
+            "scope": "Playwright executor module-path and local browser component controls; no agent efficacy result.",
+            "sha256": "a623a28ec307a33155756f21ccce0791e997ee0304733084285934fd9c4caec6"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/playwright-executor-v1/reproduce.py",
+            "scope": "Playwright executor module-path and local browser component controls; no agent efficacy result.",
+            "sha256": "4c470beeb99f7fe66f65de1c10bde55e30bcb1e1779877a56cd2ba19e28bf3d9"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/playwright-executor-v1/node24-windows.json",
+            "scope": "Playwright executor module-path and local browser component controls; no agent efficacy result.",
+            "sha256": "93aab59a9e169f489d49e379c260a9849c2ea00938b5c4e7218d4eea819e98ac"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/playwright-executor-v1/node24-linux.json",
+            "scope": "Playwright executor module-path and local browser component controls; no agent efficacy result.",
+            "sha256": "b68918fda8149a6b4c8f0fb1e800edc0487b8fde684e2c91e8b3c2dfdd76ac33"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/playwright-executor-v1/node26-windows.json",
+            "scope": "Playwright executor module-path and local browser component controls; no agent efficacy result.",
+            "sha256": "b764e3b6a31c45478ca33d584a6b6cfe1192655dd3c9d834d6120b07304fe0e2"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/playwright-executor-v1/node26-linux.json",
+            "scope": "Playwright executor module-path and local browser component controls; no agent efficacy result.",
+            "sha256": "bd4df54c0f3ecca5286234b70ee575b9adaaef3647068a08f7fd812fdc751b9a"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/playwright-executor-v1/upstream-observation.json",
+            "scope": "Playwright executor module-path and local browser component controls; no agent efficacy result.",
+            "sha256": "f2d16d5d00c2c73a8ebe5d703b291cf69121884361e930e673520b45d5fb9f4d"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -9331,8 +9366,13 @@
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill/repair.json",
+            "sha256": "c38ce55b47ec06f3f219e049dab5a4f42d3a5854dee2bead95a198185b3f0b80"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "lackeyjb/playwright-skill",
       "source_signature": {

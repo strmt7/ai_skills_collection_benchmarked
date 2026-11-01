@@ -1,0 +1,49 @@
+name: Playwright executor compatibility
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "45 6 * * 1"
+
+concurrency:
+  group: playwright-executor-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  executor:
+    name: Executor controls (${{ matrix.os }}, Node ${{ matrix.node-version }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      GIT_CONFIG_COUNT: "1"
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: "true"
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node-version: ["24.22.2", "26.13.0"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Verify Node version
+        env:
+          EXPECTED_NODE: ${{ matrix.node-version }}
+        run: node -e "if (process.versions.node !== process.env.EXPECTED_NODE) process.exit(1); console.log(process.versions.node)"
+      - name: Install and test an isolated package copy
+        shell: pwsh
+        run: |
+          $source = 'included/repaired/skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill'
+          $destination = Join-Path $env:RUNNER_TEMP 'playwright-skill-repair'
+          Copy-Item -LiteralPath $source -Destination $destination -Recurse
+          npm ci --prefix $destination --no-audit --no-fund
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          npm test --prefix $destination
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
