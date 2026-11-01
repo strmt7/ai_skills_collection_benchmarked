@@ -21,6 +21,40 @@ def fraction(value: Fraction | None) -> dict[str, int] | None:
     return {"numerator": value.numerator, "denominator": value.denominator}
 
 
+def summarize_snapshot_evidence(reports: list[dict[str, Any]], condition: str) -> dict[str, Any]:
+    """Describe reported snapshot identifiers without asserting their authenticity."""
+    pairs: Counter[str] = Counter()
+    identifiers: set[str] = set()
+    for report in reports:
+        attempts = {(item["repetition"], item["condition"]): item for item in report["attempts"]}
+        for block in report["block_comparison"]["comparisons"][condition]["blocks"]:
+            repetition = block["repetition"]
+            baseline = attempts[repetition, "default"].get("provider_model_snapshot")
+            candidate = attempts[repetition, condition].get("provider_model_snapshot")
+            identifiers.update(value for value in (baseline, candidate) if value is not None)
+            if baseline is None or candidate is None:
+                pairs["incomplete"] += 1
+            elif baseline == candidate:
+                pairs["same"] += 1
+            else:
+                pairs["different"] += 1
+    status = (
+        "inconsistent_reported_identifiers"
+        if len(identifiers) > 1
+        else "incomplete"
+        if pairs["incomplete"]
+        else "single_reported_identifier"
+    )
+    return {
+        "planned_pairs": sum(pairs.values()),
+        "same_reported_identifier_pairs": pairs["same"],
+        "different_reported_identifier_pairs": pairs["different"],
+        "incomplete_pairs": pairs["incomplete"],
+        "reported_identifiers": sorted(identifiers),
+        "status": status,
+    }
+
+
 def summarize_paired_tokens(reports: list[dict[str, Any]], condition: str) -> dict[str, Any]:
     """Average fully observed successful paired deltas with equal weight per task."""
     if not reports:
@@ -194,6 +228,9 @@ def aggregate(reports: list[dict[str, Any]], definitions: list[dict[str, Any]]) 
         "condition_definitions": definitions[0],
         "tasks": rows,
         "comparisons": comparisons,
+        "model_snapshot_evidence": {
+            condition: summarize_snapshot_evidence(reports, condition) for condition in sorted(conditions - {"default"})
+        },
         "token_comparisons": {
             condition: summarize_paired_tokens(reports, condition) for condition in sorted(conditions - {"default"})
         },
@@ -203,6 +240,7 @@ def aggregate(reports: list[dict[str, Any]], definitions: list[dict[str, Any]]) 
             "Unscored attempts prevent an aggregate difference for the affected comparison.",
             "A frozen plan and matching hashes alone do not establish preregistration or grading authenticity.",
             "Requested model identity is not proof of the provider-resolved model snapshot.",
+            "Snapshot identifiers are provider-reported metadata; even matching identifiers do not independently establish model identity.",
             "Task IDs and protocol hashes do not by themselves prove that tasks are independent.",
             "Paired token differences require both attempts to pass and usage for every planned block; they are not priced cost or proof of efficiency.",
             "Input counts include cached input; output counts include reported reasoning output and are not added to it again.",

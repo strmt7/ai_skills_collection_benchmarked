@@ -198,6 +198,68 @@ def test_model_snapshot_availability_is_preserved():
     assert snapshots["candidate"] == {"unavailable_attempts": 1, "reported_counts": {"snapshot-b": 1}}
 
 
+def test_snapshot_evidence_identifies_mismatch_and_missing_pairs():
+    item = report("a", ["task_passed", "task_passed"], ["task_passed", "task_passed"])
+    item["attempts"][0]["provider_model_snapshot"] = "snapshot-a"
+    item["attempts"][2]["provider_model_snapshot"] = "snapshot-b"
+    result = target.aggregate([item], [DEFINITIONS])
+    assert result["model_snapshot_evidence"]["candidate"] == {
+        "planned_pairs": 2,
+        "same_reported_identifier_pairs": 0,
+        "different_reported_identifier_pairs": 1,
+        "incomplete_pairs": 1,
+        "reported_identifiers": ["snapshot-a", "snapshot-b"],
+        "status": "inconsistent_reported_identifiers",
+    }
+    assert result["comparisons"]["candidate"]["equal_task_weight_mean_difference"] == {
+        "numerator": 0,
+        "denominator": 1,
+    }
+
+
+@pytest.mark.parametrize(
+    "snapshots, status",
+    [
+        ([(None, None), (None, None)], "incomplete"),
+        ([("a", None), ("a", "a")], "incomplete"),
+        ([("a", "a"), ("a", "a")], "single_reported_identifier"),
+        ([("a", "a"), ("b", "b")], "inconsistent_reported_identifiers"),
+    ],
+)
+def test_snapshot_evidence_classifies_across_tasks(snapshots, status):
+    reports = [report("a", ["task_passed"], ["task_passed"]), report("b", ["task_passed"], ["task_passed"])]
+    for item, (baseline, candidate) in zip(reports, snapshots, strict=True):
+        item["attempts"][0]["provider_model_snapshot"] = baseline
+        item["attempts"][1]["provider_model_snapshot"] = candidate
+    evidence = target.aggregate(reports, [DEFINITIONS, DEFINITIONS])["model_snapshot_evidence"]["candidate"]
+    assert evidence["status"] == status
+    assert evidence["planned_pairs"] == 2
+
+
+def test_snapshot_evidence_is_specific_to_each_candidate():
+    item = report("a", ["task_passed"], ["task_passed"])
+    item["attempts"][0]["provider_model_snapshot"] = "a"
+    item["attempts"][1]["provider_model_snapshot"] = "a"
+    item["attempts"].append(
+        {"repetition": 1, "condition": "other", "status": "task_passed", "usage": None, "provider_model_snapshot": "b"}
+    )
+    item["conditions"]["other"] = {"planned_attempts": 1}
+    definitions = {**DEFINITIONS, "other": {"skills": ["other"]}}
+    item["block_comparison"] = compare_blocks(item["attempts"], set(definitions))
+    evidence = target.aggregate([item], [definitions])["model_snapshot_evidence"]
+    assert evidence["candidate"]["status"] == "single_reported_identifier"
+    assert evidence["other"]["status"] == "inconsistent_reported_identifiers"
+    assert evidence["other"]["different_reported_identifier_pairs"] == 1
+
+
+@pytest.mark.parametrize("invalid", ["", 42, False, ["snapshot"]])
+def test_invalid_reported_snapshot_is_rejected(invalid):
+    item = report("a", ["task_passed"], ["task_passed"])
+    item["attempts"][0]["provider_model_snapshot"] = invalid
+    with pytest.raises(ValueError, match="snapshots must be nonempty strings or null"):
+        target.aggregate([item], [DEFINITIONS])
+
+
 def test_unplanned_condition_is_rejected():
     item = report("a", ["task_passed"], ["task_passed"])
     item["attempts"].append({"condition": "unexpected", "status": "task_passed"})

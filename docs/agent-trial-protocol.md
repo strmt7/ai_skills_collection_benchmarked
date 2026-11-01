@@ -155,6 +155,18 @@ has an unscored attempt on any planned task, its aggregate difference is
 unavailable; that attempt remains visible rather than being counted as a fail
 or silently dropped.
 
+For each comparison, `model_snapshot_evidence` counts matched pairs with equal,
+different or incomplete provider-reported snapshot identifiers. It also lists
+the identifiers observed across all planned tasks. The status is
+`inconsistent_reported_identifiers` when more than one identifier appears,
+even if the identifiers happen to match within every pair; otherwise it is
+`incomplete` when any pair lacks an identifier, or
+`single_reported_identifier` when all pairs report the same one. Different
+identifiers may reflect aliases or changed models; matching identifiers are
+not independent proof that the underlying model was unchanged. The descriptive
+outcomes remain visible, but inconsistent or missing metadata limits causal
+interpretation of the comparison.
+
 The report also summarizes matched input and output token differences. A block
 is comparable only when both attempts passed and both recorded usage. It first
 averages the paired deltas within each task, then weights tasks equally. A
