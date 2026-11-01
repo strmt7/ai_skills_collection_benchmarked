@@ -83,8 +83,17 @@ agree with their recorded evidence. The 17-case v2 manifest was reconstructed
 after the trials from a Git blob matching the frozen grader hash; it was not
 precommitted before those trials. It prevents consistent omission of a recorded
 case during report generation, but does not prove that the grader ran or that
-the observations are authentic. Future experiments must establish their case
-manifest before execution and retain independent grading evidence.
+the observations are authentic. The quality chart separates passed, failed and
+unscored attempts. With the optional reports dependencies installed, verify the
+published SVG content and PNG pixels against freshly rendered charts from the
+repository root:
+
+```bash
+python tools/summarize_agent_trials.py --protocol benchmarks/agent-effectiveness/development/protocol-v2.json --trials artifacts/agent-trials/development-v2 --output-dir artifacts/agent-trials/development-v2-report --check --check-plots
+```
+
+Future experiments must establish their case manifest before execution and
+retain independent grading evidence.
 For protocol version 3 or later, `grading_cases_sha256` commits the case set:
 sort the unique names, serialize them as compact ASCII JSON, and hash the UTF-8
 bytes with SHA-256. The adjacent `<protocol-stem>.grading.json` records that

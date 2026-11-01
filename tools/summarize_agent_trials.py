@@ -7,6 +7,7 @@ import argparse
 import hashlib
 import json
 import statistics
+import tempfile
 import zipfile
 from collections import Counter
 from pathlib import Path, PurePosixPath
@@ -454,17 +455,36 @@ def plots(report: dict[str, Any], output: Path) -> None:
     plt.rcParams.update({"svg.hashsalt": report["protocol_sha256"], "svg.fonttype": "none", "font.size": 10})
     conditions = sorted(report["conditions"])
     colors = ["#2563eb", "#059669", "#d97706"]
-    figure, axis = plt.subplots(figsize=(7.6, 4.0), layout="constrained")
+    figure, axis = plt.subplots(figsize=(7.6, 4.6), layout="constrained")
     values = [report["conditions"][condition] for condition in conditions]
-    rates = [value["task_passes"] / value["planned_attempts"] for value in values]
-    axis.bar(conditions, rates, color=colors[: len(conditions)])
-    for index, value in enumerate(values):
-        axis.text(index, rates[index] + 0.02, f"{value['task_passes']}/{value['planned_attempts']}", ha="center")
+    passed = [value["status_counts"].get("task_passed", 0) for value in values]
+    failed = [value["status_counts"].get("task_failed", 0) for value in values]
+    unscored = [
+        sum(count for status, count in value["status_counts"].items() if status not in {"task_passed", "task_failed"})
+        for value in values
+    ]
+    planned = [value["planned_attempts"] for value in values]
+    passed_fraction = [count / total for count, total in zip(passed, planned, strict=True)]
+    failed_fraction = [count / total for count, total in zip(failed, planned, strict=True)]
+    unscored_fraction = [count / total for count, total in zip(unscored, planned, strict=True)]
+    axis.bar(conditions, passed_fraction, label="Passed", color="#059669")
+    axis.bar(conditions, failed_fraction, bottom=passed_fraction, label="Failed", color="#b91c1c")
+    bottom = [left + right for left, right in zip(passed_fraction, failed_fraction, strict=True)]
+    axis.bar(conditions, unscored_fraction, bottom=bottom, label="Unscored", color="#6b7280")
+    for index, (passed_count, failed_count, unscored_count) in enumerate(zip(passed, failed, unscored, strict=True)):
+        axis.text(
+            index,
+            1.02,
+            f"{passed_count} pass / {failed_count} fail / {unscored_count} unscored",
+            ha="center",
+            fontsize=8,
+        )
     axis.set(
-        ylim=(0, 1.12),
-        ylabel="Task pass fraction, all planned attempts",
+        ylim=(0, 1.16),
+        ylabel="Fraction of planned attempts",
         title="One development task; no demonstrated quality advantage",
     )
+    axis.legend(loc="upper center", bbox_to_anchor=(0.5, -0.14), ncol=3, frameon=False)
     figure.savefig(output / "quality.svg", metadata={"Date": None, "Creator": "summarize_agent_trials.py"})
     figure.savefig(output / "quality.png", dpi=150, metadata={"Software": "summarize_agent_trials.py"})
     plt.close(figure)
@@ -492,6 +512,27 @@ def plots(report: dict[str, Any], output: Path) -> None:
     plt.close(figure)
 
 
+def verify_plots(report: dict[str, Any], output: Path) -> None:
+    """Compare rendered SVG content and PNG pixels without changing published files."""
+    from PIL import Image
+
+    with tempfile.TemporaryDirectory() as directory:
+        rendered = Path(directory)
+        plots(report, rendered)
+        for name in ("quality.svg", "tokens.svg"):
+            expected_svg = (rendered / name).read_bytes().replace(b"\r\n", b"\n")
+            actual_svg = (output / name).read_bytes().replace(b"\r\n", b"\n")
+            if actual_svg != expected_svg:
+                raise ValueError(f"published {name} differs from the verified trial report")
+        for name in ("quality.png", "tokens.png"):
+            with Image.open(rendered / name) as expected_image, Image.open(output / name) as actual_image:
+                if (
+                    expected_image.size != actual_image.size
+                    or expected_image.convert("RGBA").tobytes() != actual_image.convert("RGBA").tobytes()
+                ):
+                    raise ValueError(f"published {name} pixels differ from the verified trial report")
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--protocol", type=Path, required=True)
@@ -502,6 +543,9 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--plots", action="store_true", help="Generate standalone SVG charts; requires the reports extra"
+    )
+    parser.add_argument(
+        "--check-plots", action="store_true", help="With --check, verify published charts; requires the reports extra"
     )
     parser.add_argument("--json", action="store_true")
     parser.add_argument(
@@ -517,12 +561,16 @@ def main(argv: list[str] | None = None) -> int:
     try:
         if args.check and (args.plots or args.package_bytecode):
             raise ValueError("--check does not write charts or bytecode transports")
+        if args.check_plots and not args.check:
+            raise ValueError("--check-plots requires --check")
         report = summarize(args.protocol, args.trials, package_caches=args.package_bytecode)
         if args.check:
             if (args.output_dir / "summary.json").read_text(encoding="utf-8") != dumps_deterministic(report) or (
                 args.output_dir / "README.md"
             ).read_text(encoding="utf-8") != render(report):
                 raise ValueError("published trial report differs from verified recorded attempts")
+            if args.check_plots:
+                verify_plots(report, args.output_dir)
         else:
             args.output_dir.mkdir(parents=True, exist_ok=True)
             write_json(args.output_dir / "summary.json", report)

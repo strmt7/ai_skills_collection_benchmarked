@@ -321,6 +321,15 @@ jobs:
           python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/report-compatibility/task-differences.svg" --check
           python tools/render_token_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/report-compatibility/token-differences.svg"
           python tools/render_token_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/report-compatibility/token-differences.svg" --check
+      - name: Verify published single-task charts
+        env:
+          MPLCONFIGDIR: ${{ runner.temp }}/matplotlib
+        run: >-
+          python tools/summarize_agent_trials.py
+          --protocol benchmarks/agent-effectiveness/development/protocol-v2.json
+          --trials artifacts/agent-trials/development-v2
+          --output-dir artifacts/agent-trials/development-v2-report
+          --check --check-plots --json
 
   trial-report:
     runs-on: ubuntu-latest
