@@ -13619,8 +13619,39 @@
       },
       "mirrored_path": "included/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-slides",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-slides-keyboard.md",
+            "scope": "Source-bound slide template keyboard control; no agent efficacy or complete accessibility claim.",
+            "sha256": "ce2a4268c3779bc52e22537f9aee78b5741b70d06e448577ebdd32eb42b5e13e"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/slides-keyboard-control/reproduce.cjs",
+            "scope": "Source-bound slide template keyboard control; no agent efficacy or complete accessibility claim.",
+            "sha256": "f3126c8fdc672ea90959461d89504b2498306d022d01c650783eae898b8a23a7"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/slides-keyboard-control/node-24.22.2-chrome.json",
+            "scope": "Source-bound slide template keyboard control; no agent efficacy or complete accessibility claim.",
+            "sha256": "05f449ae39435bd6f84ba5179bb76e3d69f01380ad36d80919b0070e504dc2e4"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/slides-keyboard-control/node-24.22.2-edge.json",
+            "scope": "Source-bound slide template keyboard control; no agent efficacy or complete accessibility claim.",
+            "sha256": "6717f5472231fb8d61b7cb76a9e06b1a362f726648e000e23efa4da2802b70e1"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/slides-keyboard-control/node-26.13.0-chrome.json",
+            "scope": "Source-bound slide template keyboard control; no agent efficacy or complete accessibility claim.",
+            "sha256": "5b5d727f83602954c2a9197f801e372a111c3111b0b778bdeca4d1f6821c7efb"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/slides-keyboard-control/node-26.13.0-edge.json",
+            "scope": "Source-bound slide template keyboard control; no agent efficacy or complete accessibility claim.",
+            "sha256": "41d9cb133f3efaf7960e129d40ee13e90d23d884be7dfbc43347f656a95f22a7"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],

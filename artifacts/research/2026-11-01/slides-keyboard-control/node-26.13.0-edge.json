@@ -1,0 +1,22 @@
+{
+  "source_canonical_sha256": "fd5b051a37365fc6059c75bb388ec6f64daf1bd9ae938b287b6d762dc83c0c35",
+  "original_html_sha256": "422558951d81682e6f8bb2812f9770e997440bfecd11626c10412fcb2732a17d",
+  "fixture_html_sha256": "c14b2dfcd637a958e0d68d5282fc385707dd64105e4d24debccfe4fac3d4a8a2",
+  "diagnostic_guarded_fixture_sha256": "da88ba32abe7ef5797dfb4c9e656b0d6ca191dd036a1a4d7265bf7d7b5635e72",
+  "node_version": "v26.13.0",
+  "playwright_version": "1.64.1",
+  "browser_version": "156.0.4314.58",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "additional_slides": 2,
+  "blocked_chart_requests": 2,
+  "original_previous_button_click_from_slide_2": 1,
+  "original_previous_button_space_from_slide_2": 3,
+  "original_previous_button_enter_from_slide_2": 1,
+  "guarded_previous_button_space_from_slide_2": 1,
+  "guarded_body_space_from_slide_1": 2,
+  "full_deck_visual_quality_tested": false,
+  "agent_performance_tested": false
+}

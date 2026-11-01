@@ -88,6 +88,9 @@ Some reviewed instructions have known limitations:
 - A [source comparison](research-anthropic-upstream.md) records upstream changes
   for all 17 pinned Anthropic skills; it does not qualify the changed files.
 
+- The pinned slides template can advance when Space is pressed on its focused previous button.
+  [See the keyboard control](research-slides-keyboard.md).
+
 - The pinned Anthropic frontend skill uses broad aesthetic rules. [See the
   accessibility and upstream review](research-anthropic-frontend.md).
 
