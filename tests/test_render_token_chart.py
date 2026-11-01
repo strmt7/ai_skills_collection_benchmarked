@@ -134,10 +134,14 @@ class TokenRenderTests(unittest.TestCase):
                 attempt = {**base, "condition": name}
                 task["attempts"].append(attempt)
                 task["candidate_minus_default"][name] = copy.deepcopy(task["candidate_minus_default"]["candidate"])
+                task["attempt_status_counts"][name] = copy.deepcopy(task["attempt_status_counts"]["candidate"])
             task["block_comparison"] = compare_blocks(task["attempts"], conditions)
         for name in names[1:]:
             report["comparisons"][name] = copy.deepcopy(report["comparisons"]["candidate"])
             report["token_comparisons"][name] = copy.deepcopy(report["token_comparisons"]["candidate"])
+            report["missing_outcome_sensitivity"][name] = copy.deepcopy(
+                report["missing_outcome_sensitivity"]["candidate"]
+            )
         for name in names:
             report["model_snapshot_evidence"][name] = summarize_snapshot_evidence(report["tasks"], name)
 
