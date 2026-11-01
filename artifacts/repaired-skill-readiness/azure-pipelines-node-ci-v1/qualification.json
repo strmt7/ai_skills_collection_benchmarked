@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "scope": "Basic Azure Pipelines YAML for npm projects whose test script is node --test.",
+  "source_sha256": "1475c23454c1386ed0019d119233bc20b04ae32d7827bae53a7ef06801e52215",
+  "candidate_sha256": "938e118734c95b4a9e11066cd9c973af703b7911ca9f9370a7525276f5208d2d",
+  "local_result_count": 8,
+  "node_versions": [
+    "24.22.2",
+    "26.13.0"
+  ],
+  "npm_versions": [
+    "11.19.1",
+    "11.20.0",
+    "12.2.1"
+  ],
+  "platforms": [
+    "Windows",
+    "Ubuntu 24.04.5 LTS"
+  ],
+  "source_and_candidate_commands_executed": true,
+  "negative_controls": 6,
+  "azure_service_run": false,
+  "agent_performance_tested": false,
+  "limits": [
+    "Ubuntu was a local environment, not a Microsoft-hosted Azure agent.",
+    "Task scheduling, reporting, triggers and provider-specific policies require actual Azure validation.",
+    "Native web captures, full Git trees, raw streams and JUnit files remain in task-owned evidence outside Git."
+  ],
+  "empty_and_all_skipped_rejected": true,
+  "linux_guard_execution": "Exact example Bash step; Windows executes the same Python body directly."
+}

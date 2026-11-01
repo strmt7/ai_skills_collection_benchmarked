@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "case": "source-drift",
+      "exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "1e29e2beb760328cae2e3ff53576b979a0ad8fe4d5246594e0e34b8e225ff376",
+      "output_created": false
+    },
+    {
+      "case": "lint-softened",
+      "exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "22e62799840d6151c122d112206188701d914b5b6d6315bac01d96f1eaaf2fb5",
+      "output_created": false
+    },
+    {
+      "case": "missing-report-allowed",
+      "exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "22e62799840d6151c122d112206188701d914b5b6d6315bac01d96f1eaaf2fb5",
+      "output_created": false
+    },
+    {
+      "case": "incorrect-reporter",
+      "exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "22e62799840d6151c122d112206188701d914b5b6d6315bac01d96f1eaaf2fb5",
+      "output_created": false
+    },
+    {
+      "case": "wrong-runtime",
+      "exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "22e62799840d6151c122d112206188701d914b5b6d6315bac01d96f1eaaf2fb5",
+      "output_created": false
+    },
+    {
+      "case": "guard-removed",
+      "exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "22e62799840d6151c122d112206188701d914b5b6d6315bac01d96f1eaaf2fb5",
+      "output_created": false
+    }
+  ]
+}

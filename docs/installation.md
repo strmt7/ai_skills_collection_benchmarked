@@ -88,6 +88,8 @@ Some reviewed instructions have known limitations:
 - A [source comparison](research-anthropic-upstream.md) records upstream changes
   for all 17 pinned Anthropic skills; it does not qualify the changed files.
 
+- The pinned Azure Pipelines basic example assumes a specific npm test flag and allows lint failure. A [Node CI overlay](../included/repaired/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-node-ci/SKILL.md) covers a tested native-test-runner case. [See the review and limits](research-azure-pipelines-node.md).
+
 - The pinned slides template can advance when Space is pressed on its focused previous button.
   A [maintained template](../included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-slides/SKILL.md)
   addresses tested navigation, scrolling and reduced-motion cases. [See the controls and limits](research-slides-keyboard.md).

@@ -1776,12 +1776,39 @@
       },
       "mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-generator",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-azure-pipelines-node.md",
+            "scope": "Basic Node CI example and local command controls; not full skill, Azure service or agent evaluation.",
+            "sha256": "8e5ccf6d2d5dccc443f58c3c19d075be5fba76ec90ff162827f8b821a2120a8e"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/azure-pipelines-node-ci-v1/sources.json",
+            "scope": "Basic Node CI example and local command controls; not full skill, Azure service or agent evaluation.",
+            "sha256": "e12c564e0e974f3a0131f71b42da1c04a3d0f369aa46b7665e9f2cae9b3c194f"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/azure-pipelines-node-ci-v1/upstream-observation.json",
+            "scope": "Basic Node CI example and local command controls; not full skill, Azure service or agent evaluation.",
+            "sha256": "4b02eeda15f07f13b7d5350966da7c180033db4d841018a4169330b3dc342696"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/azure-pipelines-node-ci-v1/qualification.json",
+            "scope": "Basic Node CI example and local command controls; not full skill, Azure service or agent evaluation.",
+            "sha256": "a3797f89b36f047a4f7473404fe963ba4194122c872e407d5f3a5f1ade3a9ab9"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-node-ci/repair.json",
+            "scope": "Narrow maintained Node CI overlay; hosted Azure behavior and agent performance remain unqualified.",
+            "sha256": "91db44edd80d93011a57f3f0ce5248318a5010b6caf4f29a31d8024185c2c786"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "akin-ozer/cc-devops-skills",
       "source_signature": {

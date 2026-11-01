@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "guard_sha256": "d28cc8aef2020f2cb517cbbcc5fae4f7681acd1b062702926c180805c15c3aa5",
+  "shell": "bash",
+  "python_command": "python3",
+  "cases": [
+    {
+      "case": "passing",
+      "exit_code": 0,
+      "input_sha256": "836d2ea020ba9dbbab220683133bac3766c0276170a259fc6de6ad0ffb6ff786",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "failing",
+      "exit_code": 0,
+      "input_sha256": "257609a718603b2f1a8678ea8daf21f97fd4f859d040206ce75ea0458ab60223",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "empty",
+      "exit_code": 1,
+      "input_sha256": "5b5a5568c321a93d646f54c4e71ea795d4c2f2b5c04ad022e9cd45882eec4a25",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "812114c0545ab743efda696954115002940428ba41961c30f3b52b23f502d9c6"
+    },
+    {
+      "case": "skipped",
+      "exit_code": 1,
+      "input_sha256": "821492baa9f4ed850d08f954c555bde0a89a29f726208726ec8caeeb907efb1e",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "812114c0545ab743efda696954115002940428ba41961c30f3b52b23f502d9c6"
+    },
+    {
+      "case": "malformed",
+      "exit_code": 1,
+      "input_sha256": "3240e7f8ea70fca32c2b4287129c12084e5b7ae76de067cfa80d6fa81ee3fba8",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "f4006d5cf92fa0b6913ab7b4161de145563350c7a9ac4fb4ea2ceb5072c531e7"
+    }
+  ],
+  "azure_service_run": false
+}

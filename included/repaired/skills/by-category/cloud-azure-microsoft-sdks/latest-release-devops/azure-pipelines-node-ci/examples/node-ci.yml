@@ -1,0 +1,45 @@
+# Node.js native test-runner example. Adapt commands to the actual project.
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: ubuntu-24.04
+
+steps:
+  - checkout: self
+
+  - task: UseNode@1
+    displayName: Install Node.js
+    inputs:
+      version: '26.13.0'
+
+  - script: npm ci
+    displayName: Install locked dependencies
+
+  - script: npm run lint
+    displayName: Run lint
+
+  - script: npm test -- --test-reporter=junit --test-reporter-destination=junit.xml
+    displayName: Run native Node.js tests
+
+  - script: |
+      python3 - <<'PY'
+      import xml.etree.ElementTree as ET
+      root = ET.parse('junit.xml').getroot()
+      executed = [case for case in root.iter('testcase') if case.find('skipped') is None]
+      if not executed:
+          raise SystemExit('No executed test cases in junit.xml')
+      PY
+    displayName: Require executed tests
+
+  - task: PublishTestResults@2
+    displayName: Publish test results
+    condition: succeededOrFailed()
+    inputs:
+      testResultsFormat: JUnit
+      testResultsFiles: junit.xml
+      failTaskOnFailedTests: true
+      failTaskOnMissingResultsFile: true
+      failTaskOnFailureToPublishResults: true

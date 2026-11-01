@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "repository": "akin-ozer/cc-devops-skills",
+  "pinned_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+  "observed_head": "276af751e659315aaf56d3ad13d7c26f4e72e28a",
+  "observed_date": "2026-11-01",
+  "scope": "devops-skills-plugin/skills/azure-pipelines-generator/",
+  "pinned_tree_sha": "8f6c3f7246fa33d4c1a736f75fc499ae8688785e",
+  "observed_tree_sha": "1a2c8163f5b3d817141fee0eb9c5c64fa2fef46c",
+  "pinned_native_tree_sha256": "f25f3ea950ceea9093e5988c48b3933f9ed9339c2d950fa1753bc20ef4a965cd",
+  "observed_native_tree_sha256": "b791b668f2034a2bee081e82b4aa236f1b24f74d0ac7726ca8616c07f5513c0a",
+  "native_api": "GitHub Git Trees API; full raw responses retained outside Git",
+  "pinned_file_count": 16,
+  "observed_file_count": 15,
+  "changed_paths": [
+    {
+      "path": ".gitignore",
+      "pinned_blob": "ef339d00767eb78ff01488ab0e67b7e1b57a4bee",
+      "observed_blob": null
+    }
+  ],
+  "unchanged_source_blobs": {
+    "SKILL.md": "6b67a50fe1beb0c25665e2488f30ab02c21dc021",
+    "examples/basic-ci.yml": "f8bcc33ac3306c8861b10ab824d544fd44d0ed96"
+  },
+  "runtime_or_quality_comparison": false
+}

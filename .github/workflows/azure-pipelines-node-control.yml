@@ -1,0 +1,88 @@
+name: Azure Pipelines Node example controls
+
+on:
+  push:
+    paths:
+      - 'included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-generator/**'
+      - 'included/repaired/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-node-ci/**'
+      - 'artifacts/repaired-skill-readiness/azure-pipelines-node-ci-v1/**'
+      - 'tests/test_azure_pipelines_node_repair.py'
+      - '.github/workflows/azure-pipelines-node-control.yml'
+      - '.gitattributes'
+      - 'requirements-reports-lock.txt'
+  pull_request:
+    paths:
+      - 'included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-generator/**'
+      - 'included/repaired/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-node-ci/**'
+      - 'artifacts/repaired-skill-readiness/azure-pipelines-node-ci-v1/**'
+      - 'tests/test_azure_pipelines_node_repair.py'
+      - '.github/workflows/azure-pipelines-node-control.yml'
+      - '.gitattributes'
+      - 'requirements-reports-lock.txt'
+  workflow_dispatch:
+  schedule:
+    - cron: '30 7 * * 2'
+
+concurrency:
+  group: azure-node-control-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  controls:
+    name: Local Node control (${{ matrix.os }}, Node ${{ matrix.node }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      GIT_CONFIG_COUNT: '1'
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: 'true'
+      EXPECTED_NODE: ${{ matrix.node }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: ['24.22.2', '26.13.0']
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.14.10'
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install the pinned YAML parser and run local controls
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $evidence = 'artifacts/repaired-skill-readiness/azure-pipelines-node-ci-v1'
+          python -m pip install --only-binary=:all: --require-hashes -r "$evidence/requirements-pyyaml.txt"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          node -e "if (process.versions.node !== process.env.EXPECTED_NODE) process.exit(1)"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $node = (Get-Command node).Source
+          $nodeDir = Split-Path -Parent $node
+          $candidates = @(
+            (Join-Path $nodeDir 'node_modules/npm/bin/npm-cli.js'),
+            (Join-Path $nodeDir '../lib/node_modules/npm/bin/npm-cli.js')
+          )
+          $npm = @($candidates | Where-Object { Test-Path -LiteralPath $_ -PathType Leaf } | Select-Object -First 1)
+          if ($npm.Count -ne 1) { throw 'Bundled npm CLI was not found beside the selected Node installation' }
+          $source = 'included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-generator/examples/basic-ci.yml'
+          $candidate = 'included/repaired/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-node-ci/examples/node-ci.yml'
+          python "$evidence/reproduce.py" --source $source --candidate $candidate --node $node --npm-cli $npm[0] --output (Join-Path $env:RUNNER_TEMP 'azure-node-control')
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Retain local command observations
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: azure-node-control-${{ matrix.os }}-${{ matrix.node }}
+          path: |
+            ${{ runner.temp }}/azure-node-control/result.json
+            ${{ runner.temp }}/azure-node-control/*.stdout
+            ${{ runner.temp }}/azure-node-control/*.stderr
+            ${{ runner.temp }}/azure-node-control/*-junit.xml
+          if-no-files-found: warn
+          retention-days: 14

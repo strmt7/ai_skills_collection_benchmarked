@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "observed_date": "2026-11-01",
+  "source_transport": "reviewed isolated Crawl4AI; native captures retained outside Git",
+  "pages": [
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/hosted-deprecation-schedule?view=azure-devops",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_sha256": "066436210ca99c6febafc97aa721396f4e7f35af0383bbf3b6172e2f4b1b9f1d",
+      "status": 200,
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/publish-test-results-v2?view=azure-pipelines",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_sha256": "88e5abe1624b8ffe3572281ad299a749e8ee0ef8773411c675eb5c6703400e11",
+      "status": 200,
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://nodejs.org/en/about/previous-releases",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_sha256": "61e23260af7f60ec8e858f58042698ce8057fa3ee4bfc76f65b76fa5202ba69f",
+      "status": 200,
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://nodejs.org/api/test.html",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_sha256": "5237a66690d9a49ca1db6ff42a86d461ace1cfaad4f17b5c8a9e10bda2de887a",
+      "status": 200,
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/devops/pipelines/process/tasks?view=azure-devops",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_sha256": "52436405b56c72cda8b9385d0e0b75ba1da03234e7ae494569fae1b473bba0f1",
+      "status": 200,
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/rest/api/azure/devops/pipelines/preview/preview?view=azure-devops-rest-7.1",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_sha256": "377419f31376da322ee52642be2185ed8b8f59dbaf6d4e047d48f74d193081d4",
+      "status": 200,
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/use-node-v1?view=azure-pipelines",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_sha256": "0558616528915e4430fe15b58105294576b32a6a976b6fb599c2953b41ee3e92",
+      "status": 200,
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_sha256": "7a2af9288deda125941a23481e9cb1d6d4651b4b29a31f07325405151ff4b20f",
+      "status": 200,
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/devops/pipelines/yaml-schema/pr?view=azure-pipelines",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_sha256": "29e4a16fd56f2031ce0fd40b345baf1387e89d1810691afe39257528a3e8a790",
+      "status": 200,
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/node-tool-v0?view=azure-pipelines",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_sha256": "4d038390dbbd85a48bcd632bbea9784214e31aee60edb3c6386149d93d253ae5",
+      "status": 200,
+      "scope_reviewed": true
+    }
+  ],
+  "native_git_files": [
+    {
+      "repository": "actions/runner-images",
+      "path": "images/ubuntu/Ubuntu2404-Readme.md",
+      "observed_commit": "4da2307112a0fad2fd2ecaca8ba7d08683b8c581",
+      "git_blob": "97e7ec74186bddefe5bb53c8d3e573955364d89c",
+      "sha256": "433ac9525040ccec39fc6b1fbcbeb457cba1acd6414317f940e1ea2d9bea73c9",
+      "scope": "Observed image documentation lists Python 3.12.3; this is not an Azure service execution."
+    }
+  ]
+}

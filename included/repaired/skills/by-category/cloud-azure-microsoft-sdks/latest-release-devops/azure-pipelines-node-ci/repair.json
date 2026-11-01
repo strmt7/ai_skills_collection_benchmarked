@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator-skill-md",
+  "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+  "source_mirror": "included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-generator",
+  "original_skill_sha256": "99e7ae998f87bb6a54ee543f84539efe8e1bc46a9da3bb7a8ed584d1f5c96428",
+  "original_example_sha256": "1475c23454c1386ed0019d119233bc20b04ae32d7827bae53a7ef06801e52215",
+  "provenance_skill": "provenance/original.SKILL.md",
+  "license_file": "LICENSE",
+  "license_sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+  "repaired_skill_sha256": "9a7773a637e57163151bfcc08bb59a02d78775002dc35663dd33610e9309269c",
+  "repaired_example_sha256": "938e118734c95b4a9e11066cd9c973af703b7911ca9f9370a7525276f5208d2d",
+  "scope": "Basic Node/npm CI example only; local component controls do not establish Azure service behavior or agent effectiveness.",
+  "azure_service_run": false,
+  "model_performance_claim": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/azure-pipelines-node-ci-v1/qualification.json",
+  "overlay_sha256": {
+    "examples/node-ci.yml": "938e118734c95b4a9e11066cd9c973af703b7911ca9f9370a7525276f5208d2d",
+    "LICENSE": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+    "provenance/original.basic-ci.yml": "1475c23454c1386ed0019d119233bc20b04ae32d7827bae53a7ef06801e52215",
+    "provenance/original.SKILL.md": "99e7ae998f87bb6a54ee543f84539efe8e1bc46a9da3bb7a8ed584d1f5c96428",
+    "SKILL.md": "9a7773a637e57163151bfcc08bb59a02d78775002dc35663dd33610e9309269c"
+  },
+  "evidence_sha256": {
+    "linux-shell-guard.json": "f10d1f57d346fb3cbfc1ae01e2feee64bc4ea50c910ab28fdc359e5a2b65b2cb",
+    "negative-controls.json": "bb8f4fbf5383dedb0acce9430bbd128c82400668c99c4fb338a8bdac57e271e6",
+    "qualification.json": "a3797f89b36f047a4f7473404fe963ba4194122c872e407d5f3a5f1ade3a9ab9",
+    "reproduce.py": "2b129707f157ee9369c44d34e7d3024a18347f4114826acd4cb7f49377127e70",
+    "requirements-pyyaml.txt": "4d38355ae2f80970b6413d6931628417d0f91921bf60bc6d07ca84e6cdcdcc5d",
+    "results/linux-node24-bundled.json": "0a3be2047901a8719bb65dc2e3b28e53097e959bf320b91d43bdb4a42d3a01fc",
+    "results/linux-node24-npm12.json": "696f44db3e75f8f55cc2349b766ed894c5b2c86a958f392ad09ab0eb0737df49",
+    "results/linux-node26-bundled.json": "cb36919adc7bd5c1b5933db1074f417e81aa453c5f367af8dbd797ff8563a1b8",
+    "results/linux-node26-npm12.json": "d7de530d3cc673c90b760a5b707258bfbfcb7b0132678d218eaf4b206c1a37d1",
+    "results/windows-node24-bundled.json": "6823b4cc4adaa0007af679b634665345123edb7207857b4eb3001fbd13084fe5",
+    "results/windows-node24-npm12.json": "d6abaff442b8db9413878c81511736271464b79cbf9979303a4c0099bb84fc67",
+    "results/windows-node26-bundled.json": "642f5810021efe07ead9092b3cd255e34e444793f51edd05dac7c44b98f5c961",
+    "results/windows-node26-npm12.json": "87e67c94128bc6b456292e83ea493f7cecf5269994195fa73245818b4d359573",
+    "sources.json": "e12c564e0e974f3a0131f71b42da1c04a3d0f369aa46b7665e9f2cae9b3c194f",
+    "upstream-observation.json": "4b02eeda15f07f13b7d5350966da7c180033db4d841018a4169330b3dc342696"
+  }
+}

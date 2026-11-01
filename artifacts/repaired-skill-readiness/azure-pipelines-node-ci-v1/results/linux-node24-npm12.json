@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "kind": "local_component_control_not_agent_benchmark",
+  "source_sha256": "1475c23454c1386ed0019d119233bc20b04ae32d7827bae53a7ef06801e52215",
+  "candidate_sha256": "938e118734c95b4a9e11066cd9c973af703b7911ca9f9370a7525276f5208d2d",
+  "node_version": "v24.22.2",
+  "npm_version": "12.2.1",
+  "platform": "Linux",
+  "architecture": "x86_64",
+  "python_version": "3.14.10",
+  "guard_python_version": "Python 3.12.3",
+  "guard_execution": "example_bash_step",
+  "source_node_version": "20.x",
+  "source_image": "ubuntu-22.04",
+  "source_lint_continue_on_error": true,
+  "source_missing_result_setting_explicit": false,
+  "candidate_lint_continue_on_error": false,
+  "candidate_missing_result_fails": true,
+  "calls": {
+    "prepare_lock": {
+      "arguments": [
+        "install",
+        "--package-lock-only",
+        "--ignore-scripts"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c50bb35b3d8e52bd98bbea9d5a35f19c523512dfcee5ba3375f94110783a5d96",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "candidate_install": {
+      "arguments": [
+        "ci"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "14b509e7637017903263f513839c23707a7328d05c80345818323e8f4f51be4f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "candidate_lint_pass": {
+      "arguments": [
+        "run",
+        "lint"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "6d5345250335a47ff8fa2dec1519280d5ea4e6552544cb04b54ec5f357776d82"
+    },
+    "candidate_lint_fail": {
+      "arguments": [
+        "run",
+        "lint"
+      ],
+      "exit_code": 23,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "ecc0b729381e8dbabd63928481bac3404153efb0ac028ef16cfd9ba12cdecd1a"
+    },
+    "plain_test": {
+      "arguments": [
+        "test"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "438027294b161811f1114e1d8fb4cb069fe943b7b9ee01a4091b63615d082083",
+      "stderr_sha256": "02e4fe1641265daddf261b6b755f11fe689d8eb159223d1647d9616f2b4bc897"
+    },
+    "original_test": {
+      "arguments": [
+        "test",
+        "--",
+        "--coverage"
+      ],
+      "exit_code": 9,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "6d511a32b9418098de8135472ba8523e7f0ca325857e412c01f1c0bcb751bd04"
+    },
+    "candidate_test_pass": {
+      "arguments": [
+        "test",
+        "--",
+        "--test-reporter=junit",
+        "--test-reporter-destination=junit.xml"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "b646c274037b37cb01544df3f8a1d18a0a2e93da64a9161fee2366c3953ed9bc"
+    },
+    "guard_pass": {
+      "arguments": [
+        "bash",
+        "-c",
+        "<example shell guard>"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "candidate_test_fail": {
+      "arguments": [
+        "test",
+        "--",
+        "--test-reporter=junit",
+        "--test-reporter-destination=junit.xml"
+      ],
+      "exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "b646c274037b37cb01544df3f8a1d18a0a2e93da64a9161fee2366c3953ed9bc"
+    },
+    "candidate_test_empty": {
+      "arguments": [
+        "test",
+        "--",
+        "--test-reporter=junit",
+        "--test-reporter-destination=junit.xml"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "b646c274037b37cb01544df3f8a1d18a0a2e93da64a9161fee2366c3953ed9bc"
+    },
+    "guard_empty": {
+      "arguments": [
+        "bash",
+        "-c",
+        "<example shell guard>"
+      ],
+      "exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "812114c0545ab743efda696954115002940428ba41961c30f3b52b23f502d9c6"
+    },
+    "candidate_test_skipped": {
+      "arguments": [
+        "test",
+        "--",
+        "--test-reporter=junit",
+        "--test-reporter-destination=junit.xml"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "b646c274037b37cb01544df3f8a1d18a0a2e93da64a9161fee2366c3953ed9bc"
+    },
+    "guard_skipped": {
+      "arguments": [
+        "bash",
+        "-c",
+        "<example shell guard>"
+      ],
+      "exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "812114c0545ab743efda696954115002940428ba41961c30f3b52b23f502d9c6"
+    }
+  },
+  "fixture_sha256": {
+    "package.json": "94a25f7a2807c81534b13afb39f1b8f9a1766a1b52fe9e068d8b0670c41a2b44",
+    "package-lock.json": "4be12a8f9abe01ea2fb418cff9ae66ffc1c718caa427ea68eb0849564c0e3b8b",
+    "lint.cjs": "8e8551c76c1348524b85782af4d63cb6daf4b972c082a394df63a73c0659abf8",
+    "sample.test.cjs": "c3875d98079930fd446c3a0a176baaeb837adec22665322824773c82a59a0d23"
+  },
+  "junit": {
+    "passing_sha256": "cd51145fa3cdd685595ce03605d4fde56522b1d21cdd7e3fc5a8d7e34352d611",
+    "failing_sha256": "ab8a8b55ccf157caf2d6fdfab44a2742871471d3d1315b533c9cc0cb8b845efe",
+    "passing_testcases": 1,
+    "failing_testcases": 1,
+    "failures": 1,
+    "empty_sha256": "710aa1718c9311facba68f9a7a855882df211c308d4f995689c4f1d2c0305a1f",
+    "empty_testcases": 0,
+    "skipped_sha256": "fc11b81954ab69c4cfdd4c2031a1dce50f59781ad6f8217d0ae362fb17002ea7",
+    "skipped_testcases": 1
+  },
+  "azure_service_run": false,
+  "model_performance_tested": false
+}
