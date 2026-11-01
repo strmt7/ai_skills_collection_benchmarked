@@ -92,6 +92,10 @@ Some reviewed instructions have known limitations:
 
 - The pinned Azure Pipelines syntax component accepts tested bare sequence entries. A [limited sequence preflight](../included/repaired/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-sequence-preflight/SKILL.md) identifies those shapes without claiming Azure schema validation. [See the controls and limits](research-azure-pipelines-syntax.md).
 
+- The pinned Azure AI Projects .NET skill describes older SDK guidance. A
+  [stable Foundry example](../included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-projects-dotnet-stable/SKILL.md)
+  covers prompt-agent creation for the tested SDK versions. [See the version and compilation review](research-azure-ai-projects-dotnet.md).
+
 - The pinned slides template can advance when Space is pressed on its focused previous button.
   A [maintained template](../included/repaired/skills/by-category/documents-spreadsheets-presentations/latest-release-creative/ckm-slides/SKILL.md)
   addresses tested navigation, scrolling and reduced-motion cases. [See the controls and limits](research-slides-keyboard.md).

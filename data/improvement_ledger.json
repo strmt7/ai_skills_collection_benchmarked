@@ -9694,12 +9694,39 @@
       },
       "mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-projects-dotnet",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-azure-ai-projects-dotnet.md",
+            "scope": "Selected Azure AI Projects .NET SDK version and local compile controls; not full skill, Azure service, or agent evaluation.",
+            "sha256": "4203e9ed003501d9bb9ab6e16552c077eb6065248671d3b641eaf651feabc911"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/azure-ai-projects-dotnet-v1/sources.json",
+            "scope": "Selected Azure AI Projects .NET SDK version and local compile controls; not full skill, Azure service, or agent evaluation.",
+            "sha256": "1a5976327e07a2d6a09a87df0f98743c875fe1c322a402d86ecd41cb16460112"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/azure-ai-projects-dotnet-v1/upstream-observation.json",
+            "scope": "Selected Azure AI Projects .NET SDK version and local compile controls; not full skill, Azure service, or agent evaluation.",
+            "sha256": "e11fa903df96dbf258a8d4a3c40af2a179bddae0445a6b293d9670de2253177a"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/azure-ai-projects-dotnet-v1/qualification.json",
+            "scope": "Selected Azure AI Projects .NET SDK version and local compile controls; not full skill, Azure service, or agent evaluation.",
+            "sha256": "89c5ae36afaacd3f320ed65e68abe121879ba8c9fa787d7f189fb4bd3097b3d3"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-projects-dotnet-stable/repair.json",
+            "scope": "Selected Azure AI Projects .NET SDK version and local compile controls; not full skill, Azure service, or agent evaluation.",
+            "sha256": "7cbea67472432cb4d2b2d57ea8a4b9e0cf9dd7e112ec88cbddc0cca0b1298a0c"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "microsoft/skills",
       "source_signature": {

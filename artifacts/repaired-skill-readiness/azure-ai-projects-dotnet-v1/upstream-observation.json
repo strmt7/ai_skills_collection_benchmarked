@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "repository": "microsoft/skills",
+  "path": ".github/plugins/azure-sdk-dotnet/skills/azure-ai-projects-dotnet/SKILL.md",
+  "pinned_commit": "a2c05249c4a20103dd954ca702467aa328aac031",
+  "observed_head": "3f5b461b2314e01c400564051e92469114c5b68f",
+  "observed_date": "2026-11-01",
+  "pinned_blob": "962ce0eae0263b6ca18abaf5053bdc65ec523e3e",
+  "observed_blob": "80428335ae9036992bc1fda54594380a1c122b18",
+  "pinned_file_sha256": "a0cbf8f1ff6aae94060b38624bb2283c8c2c2c5966684b19781b50b28c4cb044",
+  "observed_file_sha256": "c928d09ea1c62c55b4582e53582e3f8a97fa7df84a6102be8e33aba9b1926058",
+  "pinned_native_api_sha256": "6be26c5ee50b78b528351a360323b06f4e6e5ba6b07dbd41bce7cd1e6821d002",
+  "observed_native_api_sha256": "c421ed8514bd3595318a72460723d68371ace3ae1463059568b1570b37a65ca1",
+  "selected_versioned_agent_guidance_present_in_both": true,
+  "whole_skill_unchanged": false,
+  "full_upstream_review": false
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "scope": "Six locked local .NET compilation controls for selected Azure AI Projects examples.",
+  "source_skill_sha256": "bf35c77776ab18146a39b7cfcea14747545b3cd441e268e9e7addfed542fabc2",
+  "sdk_version": "10.0.403",
+  "initial_platform": "Windows",
+  "case_count": 6,
+  "azure_service_called": false,
+  "agent_performance_tested": false,
+  "limits": [
+    "Build success does not establish Azure service access, model availability, operation correctness or cost.",
+    "The adapted snippets cover only selected members, not the full skill or every package version.",
+    "The Windows observation was local; the workflow separately runs the controls on Windows and Linux.",
+    "Native NuGet responses, crawl captures, full GitHub API responses and raw build streams remain outside Git."
+  ]
+}

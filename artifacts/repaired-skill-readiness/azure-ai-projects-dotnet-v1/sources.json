@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "observed_date": "2026-11-01",
+  "web_transport": "reviewed isolated Crawl4AI; native captures retained outside Git",
+  "pages": [
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/how-to/develop/sdk-overview?pivots=programming-language-csharp&tabs=sync",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_sha256": "1612d5e0b0e253370a7f701659ccebfd50941d5a98d0207666c90c6067923605",
+      "status": 200,
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/prompt-agent",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_sha256": "f2d8cd046f8bfcaf4f845d752cb4a0bbd30a1ccc9f7f6576b1463e1e5483fc88",
+      "status": 200,
+      "scope_reviewed": true
+    }
+  ],
+  "redirect_capture_not_admitted": {
+    "url": "https://learn.microsoft.com/azure/ai-foundry/how-to/develop/sdk-overview?pivots=programming-language-csharp&tabs=sync",
+    "native_sha256": "1f1d4c6b275fdceeaf38f0b78f9d09fa8905a56cae3f769c22d93882982bbe22",
+    "status": 302,
+    "scope_reviewed": false,
+    "final_url": "https://learn.microsoft.com/en-us/azure/foundry/how-to/develop/sdk-overview?pivots=programming-language-csharp&tabs=sync"
+  },
+  "registry_transport": "NuGet public flat-container JSON, native response bytes retained outside Git",
+  "registries": [
+    {
+      "url": "https://api.nuget.org/v3-flatcontainer/azure.ai.projects/index.json",
+      "native_sha256": "5377ca774f7d608f2fc4d9c23019feaa3d2a9b5f8fbffab7bb464bc6f189a0f0",
+      "latest_stable": "2.0.1"
+    },
+    {
+      "url": "https://api.nuget.org/v3-flatcontainer/azure.ai.projects.openai/index.json",
+      "native_sha256": "0763154f8d446d549f6bc66e3eb70ec4ac2817f669bd5885e717eab6623ed3ea",
+      "latest_stable": null
+    },
+    {
+      "url": "https://api.nuget.org/v3-flatcontainer/azure.ai.extensions.openai/index.json",
+      "native_sha256": "b2372a2a46eb30d65a3518e9faccfb32c3580959149b7aac17cd77078d404252",
+      "latest_stable": "2.0.0"
+    },
+    {
+      "url": "https://api.nuget.org/v3-flatcontainer/azure.ai.projects.agents/index.json",
+      "native_sha256": "b2372a2a46eb30d65a3518e9faccfb32c3580959149b7aac17cd77078d404252",
+      "latest_stable": "2.0.0"
+    },
+    {
+      "url": "https://api.nuget.org/v3-flatcontainer/azure.ai.agents.persistent/index.json",
+      "native_sha256": "6bc83c44399af064a13bf9ba79bdba363b7794cf3a8380a69116174f12987143",
+      "latest_stable": "1.1.0"
+    },
+    {
+      "url": "https://api.nuget.org/v3-flatcontainer/azure.identity/index.json",
+      "native_sha256": "5c94d15e78ecbab88462d3f49be130fa8c69b014600a19cc136b28fb4a5a8a70",
+      "latest_stable": "1.21.0"
+    }
+  ]
+}

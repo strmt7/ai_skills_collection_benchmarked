@@ -1,0 +1,61 @@
+name: Azure AI Projects .NET controls
+
+on:
+  push:
+    paths:
+      - 'included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-projects-dotnet/**'
+      - 'included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-projects-dotnet-stable/**'
+      - 'artifacts/repaired-skill-readiness/azure-ai-projects-dotnet-v1/**'
+      - 'tests/test_azure_ai_projects_dotnet.py'
+      - '.github/workflows/azure-ai-projects-dotnet.yml'
+      - '.gitattributes'
+  workflow_dispatch:
+  schedule:
+    - cron: '20 8 * * 3'
+
+concurrency:
+  group: azure-ai-projects-dotnet-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  compile:
+    name: Locked SDK compile controls (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    env:
+      GIT_CONFIG_COUNT: '1'
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: 'true'
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.14.10'
+      - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          dotnet-version: '10.0.403'
+      - name: Run locked local compile controls
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $dotnet = (Get-Command dotnet).Source
+          python artifacts/repaired-skill-readiness/azure-ai-projects-dotnet-v1/reproduce.py --dotnet $dotnet --output (Join-Path $env:RUNNER_TEMP 'azure-ai-dotnet-controls')
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Retain compile observations
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: azure-ai-dotnet-controls-${{ matrix.os }}
+          path: |
+            ${{ runner.temp }}/azure-ai-dotnet-controls/result.json
+            ${{ runner.temp }}/azure-ai-dotnet-controls/*/*.stdout
+            ${{ runner.temp }}/azure-ai-dotnet-controls/*/*.stderr
+          if-no-files-found: warn
+          retention-days: 14
