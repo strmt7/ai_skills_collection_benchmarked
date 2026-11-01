@@ -2666,8 +2666,19 @@
       },
       "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/official-reference/claude-api-anthropics",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-anthropic-api.md",
+            "sha256": "3e4372df404455454cefbae3b08a2b18778e42ac31bce10766b3dd96737599bf",
+            "scope": "Selected model, cache and upstream-tree observations; runtime and agent efficacy are not assessed."
+          },
+          {
+            "path": "artifacts/research/2026-11-01/anthropic-claude-api-source-observation.json",
+            "sha256": "551f183e0c12a08a02333fa0a95f8e479446cea7f0978218fffe569a8bfa4f1b",
+            "scope": "Selected model, cache and upstream-tree observations; runtime and agent efficacy are not assessed."
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],

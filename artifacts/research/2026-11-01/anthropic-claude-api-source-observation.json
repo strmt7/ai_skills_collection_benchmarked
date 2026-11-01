@@ -1,0 +1,43 @@
+{
+  "artifact_kind": "selected_upstream_source_observation",
+  "observed_date": "2026-11-01",
+  "repository": "https://github.com/anthropics/skills",
+  "source_path": "skills/claude-api/",
+  "pinned_commit": "2c7ec5e78b8e5d43ea02e90bb8826f6b9f147b0c",
+  "pinned_root_tree": "bf1a1ea424fdf881bc8913852163b0d5b3b55d5e",
+  "current_commit": "ca45fc496a3436251f191354091d557da31c15b5",
+  "current_root_tree": "3b83fb7a7255ef97c3ce8657bd0a3a4d667bd7be",
+  "pinned_skill_blob_sha1": "8531740b7b548946b03164b2d160badf0182e14c",
+  "current_skill_blob_sha1": "fe7e28a55c713933ff98e017112e53c61d8f5537",
+  "pinned_skill_sha256": "93b2fcf35ef3fc3926632aa9d3b09780c527d21dc0304f59b1baf8e887726b7d",
+  "current_skill_sha256": "40537cca17c4aa86e4ce83ced39efcbfb1204905e3cf4c4ff98f2eab011e4b7f",
+  "pinned_blob_files": 40,
+  "current_blob_files": 96,
+  "added_files": 61,
+  "removed_files": 5,
+  "changed_files": 35,
+  "pinned_tree_cli_capture_sha256": "11fa61bef9e3d4be5a7086886b1f044a9fdcc98f60355b2cab9786a377409c41",
+  "current_tree_cli_capture_sha256": "18b35851ed31605a9f0e0817c9030dec7e733b5dcc592695f407377f379de432",
+  "official_pages": [
+    {
+      "url": "https://platform.claude.com/docs/en/models/overview",
+      "native_result_sha256": "63fc9c4da2c24ca0cd3eaeac50873a3016f105e9a94edc2f09f3f4feaf867a00",
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+      "native_result_sha256": "85c32849a7769ebd2d089aaa125d2b5aa9444efd18a9e42fc440b82c3dfc05c4",
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-caching",
+      "native_result_sha256": "ebac73e859d6b26b8e7f1c079feb7a7132f08310512350dadfd62274b83f3a77",
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true
+    }
+  ],
+  "scope": "Selected source-tree and model/cache guidance comparison; no runtime or agent evaluation.",
+  "agent_efficacy_scored": false
+}

@@ -82,6 +82,9 @@ Some reviewed instructions have known limitations:
   [version-specific repair](../included/repaired/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/nextjs-turbopack/SKILL.md)
   records the tested commands. [See the component controls](research-next-turbopack.md).
 
+- The Anthropic API skill contains an older model table and default. [Review the
+  current-source comparison](research-anthropic-api.md) before selecting a model.
+
 These examples are not an exhaustive review of the catalog.
 
 ## Load it in your agent
