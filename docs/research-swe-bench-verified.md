@@ -4,6 +4,17 @@ SWE-bench Verified is a public set of 500 issue-resolution tasks; its [dataset c
 
 On 1 November 2026, an isolated Windows control passed all 500 rows from each of two dataset-server snapshots to the installed SWE-bench 5.0.2 `make_test_spec` function. The rows had matching instance IDs, source repositories and base commits. All 500 rows from `princeton-nlp/SWE-bench_Verified` raised `KeyError: 'image'`; all 500 rows from `SWE-bench/SWE-bench_Verified` produced a test specification. The [recorded results](../artifacts/external-benchmark-integrations/swe-verified-schema-v1/result.json) include hashes for every API page and the [source observations](../artifacts/external-benchmark-integrations/swe-verified-schema-v1/source-observations.json) identify the tested wheel and observed dataset revisions. The dataset-server responses were not cryptographically bound to those separately observed revisions.
 
+In a 2026 [OpenAI audit of SWE-bench Verified](https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/),
+59.4% of 138 selected tasks that models often failed had material test or problem-description
+issues. That selected subset is not an estimate for all 500 tasks. The audit also describes
+contamination concerns.
+
+In July 2026, [OpenAI withdrew its earlier recommendation of SWE-bench Pro](https://openai.com/index/separating-signal-from-noise-coding-evaluations/)
+after finding substantial issues in that version. The benchmark maintainers subsequently
+[announced Pro V2](https://labs.scale.com/leaderboard/swe_bench_pro_public_v2), including task
+removals and corrections. This repository has not independently qualified the revised suite.
+These findings do not establish an agent result for this collection.
+
 This check did not execute the evaluation scripts, pull images, run gold patches, score agents, or establish that an image or test suite works. A test specification being constructed is a necessary input check, not an evaluation result. The dataset is public and cannot be treated as a private holdout. Before a benchmark run, verify the selected harness and dataset versions, pin the actual inputs, run the [official harness controls](https://www.swebench.com/SWE-bench/guides/quickstart/), and retain results for each planned condition and failure.
 
 ## Reproduce the input check

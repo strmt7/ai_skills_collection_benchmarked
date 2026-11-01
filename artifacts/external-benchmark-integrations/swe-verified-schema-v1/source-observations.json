@@ -22,5 +22,25 @@
   "scope": "Observed dataset-server pages and test-spec construction only; the API responses are not cryptographically bound to the separately observed repository revisions.",
   "agent_efficacy_scored": false,
   "control_sha256": "365d38aabada9b6c5941f47f346459272cce95d50e543f9d823a6442f76729d7",
-  "result_sha256": "3a0dfabe43754dfaffe18b9c50958037a9b2c3b0e421df209df1abc845f5af90"
+  "result_sha256": "3a0dfabe43754dfaffe18b9c50958037a9b2c3b0e421df209df1abc845f5af90",
+  "benchmark_audit_sources": [
+    {
+      "url": "https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/",
+      "native_result_sha256": "94249c159a0e4c9b68749725164b28e0f65850b63f520ecd16410136be832330",
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://openai.com/index/separating-signal-from-noise-coding-evaluations/",
+      "native_result_sha256": "bec7700f868f696567822427b491d0d206bd74d50714e58dc660a6ad84cf7a48",
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://labs.scale.com/leaderboard/swe_bench_pro_public_v2",
+      "native_result_sha256": "3f8db57d172738c0efe27a504e04a25fcb4837c238b6e13b4c8994804805b3a2",
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true
+    }
+  ]
 }
