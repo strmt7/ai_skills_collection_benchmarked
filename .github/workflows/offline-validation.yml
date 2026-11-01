@@ -277,10 +277,34 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        if: ${{ runner.os != 'Windows' || (!startsWith(matrix.python-version, '3.11.') && !startsWith(matrix.python-version, '3.12.')) }}
         with:
           python-version: ${{ matrix.python-version }}
           cache: "pip"
           cache-dependency-path: pyproject.toml
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        if: ${{ runner.os == 'Windows' && (startsWith(matrix.python-version, '3.11.') || startsWith(matrix.python-version, '3.12.')) }}
+        with:
+          version: "0.13.6"
+          python-version: ${{ matrix.python-version }}
+          activate-environment: "true"
+          venv-path: ${{ runner.temp }}/report-compatibility-venv
+          enable-cache: "false"
+      - name: Install pip in the managed Python environment
+        if: ${{ runner.os == 'Windows' && (startsWith(matrix.python-version, '3.11.') || startsWith(matrix.python-version, '3.12.')) }}
+        run: uv pip install 'pip==26.2.2'
+      - name: Verify the selected Python version
+        shell: python
+        env:
+          EXPECTED_PYTHON: ${{ matrix.python-version }}
+        run: |
+          import os
+          import platform
+          actual = platform.python_version()
+          expected = os.environ["EXPECTED_PYTHON"]
+          if actual != expected:
+              raise SystemExit(f"Expected Python {expected}; got {actual}")
+          print(f"Verified Python {actual}")
       - name: Install report dependencies
         run: python -m pip install '.[reports]'
       - name: Test report rendering

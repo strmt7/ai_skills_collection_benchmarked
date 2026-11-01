@@ -160,7 +160,10 @@ of a provider-resolved model identity.
 For Python 3.11–3.14, install the `reports` extra from the repository root with
 `python -m pip install '.[reports]'`. The maintainer's
 `requirements-reports-lock.txt` is generated for the hosted Python 3.14 report
-job; it is not a lock for every supported Python version.
+job; it is not a lock for every supported Python version. The compatibility
+matrix uses uv-managed CPython builds for Windows 3.11 and 3.12, because the
+GitHub-hosted Python catalog does not provide those current patch releases for
+Windows; the other matrix jobs use GitHub's Python setup action.
 
 With the `reports` extra installed, render the same verified plan with
 `python tools/render_multi_task_chart.py --plan <plan.json> --output <chart.svg>`.
