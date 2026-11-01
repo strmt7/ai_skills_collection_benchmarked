@@ -1,0 +1,27 @@
+{
+  "artifact_kind": "selected_upstream_source_observation",
+  "observed_date": "2026-11-01",
+  "source_skill_id": "anthropics-skills-skills-frontend-design-skill-md",
+  "pinned_commit": "2c7ec5e78b8e5d43ea02e90bb8826f6b9f147b0c",
+  "current_commit": "ca45fc496a3436251f191354091d557da31c15b5",
+  "pinned_blob_sha1": "5be498e2585843c7137bf9a74e262f57415de5ce",
+  "current_blob_sha1": "a5333457c414d20d625f307df945842c0952ecc3",
+  "pinned_skill_sha256": "b81e2ff87ed8fa4d6c377ccb127a7254c9e6a77e3ae94f21e6b514f7bb2945a0",
+  "current_skill_sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3",
+  "selected_observations": "Pinned text mentions accessibility generally; upstream explicitly mentions keyboard focus and reduced motion. No output or agent behavior was tested.",
+  "reference_pages": [
+    {
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-visible",
+      "native_result_sha256": "3f24d901eb004724d840d394fd4a5d173c809ca6c217c5870e928d20e2a95acf",
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions",
+      "native_result_sha256": "552c15d201223507e977fbbeffa4251fa3cb6c93b5f259d734095bc64e6febb1",
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true
+    }
+  ],
+  "agent_efficacy_scored": false
+}

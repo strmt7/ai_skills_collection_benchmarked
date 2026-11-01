@@ -2823,6 +2823,16 @@
             "path": "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
             "sha256": "8627febb9e9ec18df126c1805a32e7f04060e5c62f7ccb76d9fc55ae4763d663",
             "scope": "Raw upstream Git tree comparison only; content, license, runtime and agent-effectiveness reviews remain separate."
+          },
+          {
+            "path": "docs/research-anthropic-frontend.md",
+            "sha256": "13ed90520c0ef29d8ab35d3c898d208aee29df1294ced9cd9f5f4dc612c404c0",
+            "scope": "Selected upstream and accessibility guidance comparison; no interface or agent evaluation."
+          },
+          {
+            "path": "artifacts/research/2026-11-01/anthropic-frontend-source-observation.json",
+            "sha256": "cb269872e6a3c3e6120342248c085444007d5cf61844f34e29e393ff133c5793",
+            "scope": "Selected upstream and accessibility guidance comparison; no interface or agent evaluation."
           }
         ],
         "status": "in_progress"
