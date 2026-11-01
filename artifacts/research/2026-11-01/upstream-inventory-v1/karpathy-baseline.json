@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-11-01T21:25:59Z",
+  "requested_repository": "forrestchang/andrej-karpathy-skills",
+  "canonical_repository": "multica-ai/andrej-karpathy-skills",
+  "default_branch": "main",
+  "observed_head": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+  "pinned_commit": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+  "head_matches_pin": true,
+  "skill_path": "skills/karpathy-guidelines/SKILL.md",
+  "skill_git_blob": "6a62d0441753157ca6ca50479e490c2948033adb",
+  "skill_sha256": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+  "historical_protocol_skill_sha256": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7",
+  "historical_protocol_bytes_match": true,
+  "latest_release_status": 404,
+  "captures": {
+    "metadata": {
+      "endpoint": "repos/forrestchang/andrej-karpathy-skills",
+      "exit_code": 0,
+      "stdout_sha256": "568c827df45e12cc8c35aa81a55613190b7f9a8eae8cc20d6c4f96dd8c930afc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "head": {
+      "endpoint": "repos/multica-ai/andrej-karpathy-skills/commits/main",
+      "exit_code": 0,
+      "stdout_sha256": "3cd0c4c956d7d5d36c62a6fc191081c6318452576c3a84964636fd75b59fb8df",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "latest_release": {
+      "endpoint": "repos/multica-ai/andrej-karpathy-skills/releases/latest",
+      "exit_code": 1,
+      "stdout_sha256": "d9e37600354c1839f6b22cebde497e9d14750d2401a06c9a51b1619baf991613",
+      "stderr_sha256": "d2c8985c89b29a842ac4946d13bdbc297709f44f20bb968faf9682664b211db6"
+    },
+    "skill": {
+      "endpoint": "repos/multica-ai/andrej-karpathy-skills/contents/skills/karpathy-guidelines/SKILL.md?ref=2c606141936f1eeef17fa3043a72095b4765b9c2",
+      "exit_code": 0,
+      "stdout_sha256": "8d0960fbf8315795815d345f5be8baf9cf070e309a9dc9d8ccce1e58cf142a0d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "scope": "Third-party adaptation of Karpathy guidelines; no agent benchmark or performance claim."
+}

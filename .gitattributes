@@ -114,3 +114,6 @@
 /included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-projects-dotnet-stable/** text eol=lf
 /included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-projects-dotnet-stable/provenance/** -text !eol
 /artifacts/repaired-skill-readiness/azure-ai-projects-dotnet-v1/** text eol=lf
+
+# Preserve the source-bound upstream inventory across hosts.
+/artifacts/research/2026-11-01/upstream-inventory-v1/** text eol=lf

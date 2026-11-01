@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "source_lock_repository_commit": "42b75a50a737792c029638e08246517d111f7850",
+  "source_lock_sha256": "8a2e4a90ecc0465c828cb3f5ef15d3c29f35771c9399fd8d45dd65cf767b83d6",
+  "comparison_algorithm_sha256": "05e917977ecc539679f7c1856d4d89f01e7be67bd09ad72b1c3fe3814a11c71a",
+  "native_git_api_transport": "GitHub REST API; raw response streams retained outside Git",
+  "github_tree_documentation": {
+    "url": "https://docs.github.com/en/rest/git/trees?apiVersion=2022-11-28",
+    "provider_version": "0.9.5+catalog.portable4",
+    "native_sha256": "505a3b2d7113841907752270861edbf586e2202bec69cad614c4f3229e11e292",
+    "status": 200,
+    "scope_reviewed": true
+  },
+  "scope": "The selection covers non-security skills from three public upstream sources; other sources and newly added skills are outside this snapshot."
+}

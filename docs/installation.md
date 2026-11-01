@@ -104,6 +104,8 @@ Some reviewed instructions have known limitations:
   accessibility and upstream review](research-anthropic-frontend.md).
 
 These examples are not an exhaustive review of the catalog.
+The [upstream tree inventory](research-upstream-skill-trees.md) identifies
+selected source changes that still require review before adoption.
 
 ## Load it in your agent
 
