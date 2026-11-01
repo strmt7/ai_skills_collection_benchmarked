@@ -89,3 +89,7 @@
 
 # Preserve the source-bound SWE-bench compatibility control.
 /artifacts/external-benchmark-integrations/swe-verified-schema-v1/** text eol=lf
+
+# Preserve exact upstream API snapshots used by the offline source comparison.
+/artifacts/research/2026-11-01/anthropic-source-snapshots/** -text
+/artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json -text

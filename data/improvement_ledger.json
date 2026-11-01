@@ -2600,8 +2600,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/official-reference/algorithmic-art",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
+            "sha256": "8627febb9e9ec18df126c1805a32e7f04060e5c62f7ccb76d9fc55ae4763d663",
+            "scope": "Raw upstream Git tree comparison only; content, license, runtime and agent-effectiveness reviews remain separate."
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -2622,8 +2628,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/official-reference/brand-guidelines",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
+            "sha256": "8627febb9e9ec18df126c1805a32e7f04060e5c62f7ccb76d9fc55ae4763d663",
+            "scope": "Raw upstream Git tree comparison only; content, license, runtime and agent-effectiveness reviews remain separate."
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -2644,8 +2656,14 @@
       },
       "mirrored_path": "included/skills/by-category/documents-spreadsheets-presentations/official-reference/canvas-design",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
+            "sha256": "8627febb9e9ec18df126c1805a32e7f04060e5c62f7ccb76d9fc55ae4763d663",
+            "scope": "Raw upstream Git tree comparison only; content, license, runtime and agent-effectiveness reviews remain separate."
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -2676,6 +2694,11 @@
             "path": "artifacts/research/2026-11-01/anthropic-claude-api-source-observation.json",
             "sha256": "551f183e0c12a08a02333fa0a95f8e479446cea7f0978218fffe569a8bfa4f1b",
             "scope": "Selected model, cache and upstream-tree observations; runtime and agent efficacy are not assessed."
+          },
+          {
+            "path": "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
+            "sha256": "8627febb9e9ec18df126c1805a32e7f04060e5c62f7ccb76d9fc55ae4763d663",
+            "scope": "Raw upstream Git tree comparison only; content, license, runtime and agent-effectiveness reviews remain separate."
           }
         ],
         "status": "in_progress"
@@ -2699,8 +2722,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/official-reference/doc-coauthoring",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
+            "sha256": "8627febb9e9ec18df126c1805a32e7f04060e5c62f7ccb76d9fc55ae4763d663",
+            "scope": "Raw upstream Git tree comparison only; content, license, runtime and agent-effectiveness reviews remain separate."
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -2761,6 +2790,11 @@
             "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.14.json",
             "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
             "sha256": "09a805b18777cef9b29f978ad3a2d0f000caa270546d66812e1e5b344eee9124"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
+            "sha256": "8627febb9e9ec18df126c1805a32e7f04060e5c62f7ccb76d9fc55ae4763d663",
+            "scope": "Raw upstream Git tree comparison only; content, license, runtime and agent-effectiveness reviews remain separate."
           }
         ],
         "status": "in_progress"
@@ -2784,8 +2818,14 @@
       },
       "mirrored_path": "included/skills/by-category/search-retrieval-web-automation/official-reference/frontend-design",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
+            "sha256": "8627febb9e9ec18df126c1805a32e7f04060e5c62f7ccb76d9fc55ae4763d663",
+            "scope": "Raw upstream Git tree comparison only; content, license, runtime and agent-effectiveness reviews remain separate."
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -2806,8 +2846,14 @@
       },
       "mirrored_path": "included/skills/by-category/communication-productivity-support/official-reference/internal-comms",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
+            "sha256": "8627febb9e9ec18df126c1805a32e7f04060e5c62f7ccb76d9fc55ae4763d663",
+            "scope": "Raw upstream Git tree comparison only; content, license, runtime and agent-effectiveness reviews remain separate."
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -2857,6 +2903,11 @@
           {
             "path": "artifacts/research/2026-10-02/mcp-current-sdk-handshake-roundtrip.json",
             "sha256": "c7c68d711ca9b3ce67ab5a38b197c788792207fb74f276eed2377deddbb81320"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
+            "sha256": "8627febb9e9ec18df126c1805a32e7f04060e5c62f7ccb76d9fc55ae4763d663",
+            "scope": "Raw upstream Git tree comparison only; content, license, runtime and agent-effectiveness reviews remain separate."
           }
         ],
         "status": "in_progress"
@@ -2913,6 +2964,11 @@
           {
             "path": "artifacts/research/2026-10-30/pdfimages-controls/result.json",
             "sha256": "886bedc98f3ac28a789662a9c55bcda44036f5a30c20ac3f9e30cd045f3ab004"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
+            "sha256": "8627febb9e9ec18df126c1805a32e7f04060e5c62f7ccb76d9fc55ae4763d663",
+            "scope": "Raw upstream Git tree comparison only; content, license, runtime and agent-effectiveness reviews remain separate."
           }
         ],
         "status": "in_progress",
@@ -2970,6 +3026,11 @@
             "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.14.json",
             "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
             "sha256": "09a805b18777cef9b29f978ad3a2d0f000caa270546d66812e1e5b344eee9124"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
+            "sha256": "8627febb9e9ec18df126c1805a32e7f04060e5c62f7ccb76d9fc55ae4763d663",
+            "scope": "Raw upstream Git tree comparison only; content, license, runtime and agent-effectiveness reviews remain separate."
           }
         ],
         "status": "in_progress"
@@ -3009,6 +3070,11 @@
           {
             "path": "artifacts/research/2026-10-02/skill-review-browser-runtime-controls-v3.json",
             "sha256": "8a24a58ece448217c6182f59717f79ffe3c660a43ce6aa169a04e29f9837f0e8"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
+            "sha256": "8627febb9e9ec18df126c1805a32e7f04060e5c62f7ccb76d9fc55ae4763d663",
+            "scope": "Raw upstream Git tree comparison only; content, license, runtime and agent-effectiveness reviews remain separate."
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -3148,8 +3214,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/official-reference/slack-gif-creator",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
+            "sha256": "8627febb9e9ec18df126c1805a32e7f04060e5c62f7ccb76d9fc55ae4763d663",
+            "scope": "Raw upstream Git tree comparison only; content, license, runtime and agent-effectiveness reviews remain separate."
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -3198,6 +3270,11 @@
           {
             "path": "artifacts/research/2026-10-30/theme-showcase-contrast/parity-linux.json",
             "sha256": "753641235f52099b085270df78452c56e3b54f39f6ae74c3d06da2d95c45c2c2"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
+            "sha256": "8627febb9e9ec18df126c1805a32e7f04060e5c62f7ccb76d9fc55ae4763d663",
+            "scope": "Raw upstream Git tree comparison only; content, license, runtime and agent-effectiveness reviews remain separate."
           }
         ],
         "status": "in_progress",
@@ -3225,8 +3302,14 @@
       },
       "mirrored_path": "included/skills/by-category/search-retrieval-web-automation/official-reference/web-artifacts-builder",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
+            "sha256": "8627febb9e9ec18df126c1805a32e7f04060e5c62f7ccb76d9fc55ae4763d663",
+            "scope": "Raw upstream Git tree comparison only; content, license, runtime and agent-effectiveness reviews remain separate."
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -3263,6 +3346,11 @@
           {
             "path": "artifacts/research/2026-10-02/playwright-public-type-runtime-controls-v3.json",
             "sha256": "0d9f06b731611f668d4ce0dd1c5d0af287887d2527fbd865cf192f817218b159"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
+            "sha256": "8627febb9e9ec18df126c1805a32e7f04060e5c62f7ccb76d9fc55ae4763d663",
+            "scope": "Raw upstream Git tree comparison only; content, license, runtime and agent-effectiveness reviews remain separate."
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -3434,6 +3522,11 @@
             "path": "artifacts/research/2026-10-30/office-helper-windows/windows-3.14.json",
             "scope": "Shared source-bound Windows helper startup controls; document conversion and agent performance not tested.",
             "sha256": "09a805b18777cef9b29f978ad3a2d0f000caa270546d66812e1e5b344eee9124"
+          },
+          {
+            "path": "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
+            "sha256": "8627febb9e9ec18df126c1805a32e7f04060e5c62f7ccb76d9fc55ae4763d663",
+            "scope": "Raw upstream Git tree comparison only; content, license, runtime and agent-effectiveness reviews remain separate."
           }
         ],
         "status": "in_progress"

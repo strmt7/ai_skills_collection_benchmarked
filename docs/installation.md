@@ -85,6 +85,9 @@ Some reviewed instructions have known limitations:
 - The Anthropic API skill contains an older model table and default. [Review the
   current-source comparison](research-anthropic-api.md) before selecting a model.
 
+- A [source comparison](research-anthropic-upstream.md) records upstream changes
+  for all 17 pinned Anthropic skills; it does not qualify the changed files.
+
 These examples are not an exhaustive review of the catalog.
 
 ## Load it in your agent

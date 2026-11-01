@@ -1,0 +1,2016 @@
+{
+  "changed_skills": 15,
+  "input_sha256": {
+    "lock": "f2bc5a2a6fedbc181f68423238cc13a1120c968705c668971551d2ba99300bb9",
+    "new_commit": "6f6722d7bf304d2c4a9c08ece0aeae9292024eedde3246e3f0fba0b3c5a35853",
+    "new_tree": "18b35851ed31605a9f0e0817c9030dec7e733b5dcc592695f407377f379de432",
+    "old_commit": "0f5dc58a5788916b8060cdc9239c9fed1a324f3ec0206ed45415c04229cc841c",
+    "old_tree": "11fa61bef9e3d4be5a7086886b1f044a9fdcc98f60355b2cab9786a377409c41",
+    "tool": "801405b304e85cba5b1f7d797b2023b047d2de12b1fa61dd68bd41bede0158c6"
+  },
+  "limitations": [
+    "Commit-to-tree bindings rely on authentic supplied GitHub API responses; commit signatures are not verified.",
+    "Only SHA-1 Git object IDs are supported; matching object IDs do not rule out hash collisions.",
+    "Raw directory entries can include nested skills, symlinks or submodules; this is not mirror admission or a runtime audit.",
+    "A changed Git object is not proof of an improvement, regression, security fix, or agent performance."
+  ],
+  "measurement_kind": "raw_upstream_git_tree_comparison",
+  "missing_new_entrypoints": 0,
+  "new_commit": "ca45fc496a3436251f191354091d557da31c15b5",
+  "new_tree": "3b83fb7a7255ef97c3ce8657bd0a3a4d667bd7be",
+  "old_commit": "2c7ec5e78b8e5d43ea02e90bb8826f6b9f147b0c",
+  "old_tree": "bf1a1ea424fdf881bc8913852163b0d5b3b55d5e",
+  "repository": "anthropics/skills",
+  "schema_version": 1,
+  "skill_count": 17,
+  "skills": [
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "7a4a3ea2424c09fbe48d455aed1eaa94d9124835",
+            "type": "blob"
+          },
+          "path": "LICENSE.txt"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 4,
+      "old_resource_count": 4,
+      "skill_id": "anthropics-skills-skills-algorithmic-art-skill-md",
+      "source_path": "skills/algorithmic-art/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "7a4a3ea2424c09fbe48d455aed1eaa94d9124835",
+            "type": "blob"
+          },
+          "path": "LICENSE.txt"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "anthropics-skills-skills-brand-guidelines-skill-md",
+      "source_path": "skills/brand-guidelines/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "7a4a3ea2424c09fbe48d455aed1eaa94d9124835",
+            "type": "blob"
+          },
+          "path": "LICENSE.txt"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 83,
+      "old_resource_count": 83,
+      "skill_id": "anthropics-skills-skills-canvas-design-skill-md",
+      "source_path": "skills/canvas-design/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "7a4a3ea2424c09fbe48d455aed1eaa94d9124835",
+            "type": "blob"
+          },
+          "path": "LICENSE.txt"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "fe7e28a55c713933ff98e017112e53c61d8f5537",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "8531740b7b548946b03164b2d160badf0182e14c",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": null,
+          "before": {
+            "mode": "100644",
+            "sha": "e0e790aabad365d99c852b1fd3fe99df749a01d3",
+            "type": "blob"
+          },
+          "path": "csharp/claude-api.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "0fabfd79307e61df690faf01d3b076f4cae665d8",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "csharp/claude-api/README.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "629f983660dc4681c10643f438699c868782fcca",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "csharp/claude-api/batches.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "46f85ca24528c5605d95c6a39bc44aafab1d58e5",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "csharp/claude-api/files-api.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "5d0b5ad0a4e2c682298c86d3f811e16b115d1624",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "csharp/claude-api/streaming.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "6fc31f1338c84105d6329dadbcbd2b7d455c308b",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "csharp/claude-api/tool-use.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "78b19edc1cc37a43e7f163cfbe63f7bec8b32865",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "54eb35c69c5d6c87ad0e5263d313cb2dc2c379f0",
+            "type": "blob"
+          },
+          "path": "curl/examples.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "3c64df0d89af4802f81452f34ebb9bc0bc5f299f",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "626d0421591dde5084999c012c4577f24695d2c2",
+            "type": "blob"
+          },
+          "path": "curl/managed-agents.md"
+        },
+        {
+          "after": null,
+          "before": {
+            "mode": "100644",
+            "sha": "019b80f3d4b93c3481e52ca4de4d31e873d369e3",
+            "type": "blob"
+          },
+          "path": "go/claude-api.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "5bfd6895aed807303c3edc77b9c97929025b2cf7",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "go/claude-api/README.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "b62f163fcf38c823812ec4181ad2ee75e0c3c2e7",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "go/claude-api/files-api.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "7b5eb9ee273db754b27d55ed2f403bef6b14f252",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "go/claude-api/streaming.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "e66b1795c13755b4780ad7563b03a490d6b3c602",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "go/claude-api/tool-use.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "7eb8c5f0a908a06ee39ebadc92a5a22c22dd3902",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "52b0237de6857dc15a120beb2307a2eecbb15f4c",
+            "type": "blob"
+          },
+          "path": "go/managed-agents/README.md"
+        },
+        {
+          "after": null,
+          "before": {
+            "mode": "100644",
+            "sha": "408d5bc9b304c812abe4a083063250fd09d9215e",
+            "type": "blob"
+          },
+          "path": "java/claude-api.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "98f7113898f873cbefd55755830a94f4dbb0b9cb",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "java/claude-api/README.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "e824fc3c8b0d280274dac380e3ccd9dd1817f094",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "java/claude-api/files-api.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "683b153550a2c4f99b8dba35927a789082e31d88",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "java/claude-api/streaming.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "89f22e1155e719fe537dd7e91428cfd943c4c324",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "java/claude-api/tool-use.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "f212275486c1912fa20469f1221b2ed84dc8e631",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "9b83b24c1fb414ea7439576432c3e5b26ca4f82f",
+            "type": "blob"
+          },
+          "path": "java/managed-agents/README.md"
+        },
+        {
+          "after": null,
+          "before": {
+            "mode": "100644",
+            "sha": "1b8d361f2a67b1f5e833620b2e61645b333b83b9",
+            "type": "blob"
+          },
+          "path": "php/claude-api.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "27f2d69dfa5964123dc5f7cd1d309c2d3417a421",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "php/claude-api/README.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "3cd4a818b9fd5b1ba6329e0ab7ebfce9eae0b613",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "php/claude-api/batches.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "26bd142dcdb34b63d7158409fac0e89f08745695",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "php/claude-api/files-api.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "b0f2cbbc54dbea98981825bd3ebafb7339aeaf3d",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "php/claude-api/streaming.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "c22a090229ffcaabe24ad1fa28b54ded458e888f",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "php/claude-api/tool-use.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "0117f4211a6a29205549795aa2a8fb8e158efeba",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "873d5afc179f48631642416aba35cc5c47288192",
+            "type": "blob"
+          },
+          "path": "php/managed-agents/README.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "3d4f61468bcb46039fdd749c3eb2a7606aacc1da",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "74463ff62ce00963d03f4e07fa7127326cb1e8af",
+            "type": "blob"
+          },
+          "path": "python/claude-api/README.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "f129f51d791635c7b3de4e8cb60469dbc4cf2e58",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "b22b4237a1fe7ac00f260f37b4b4f564c19e2b9d",
+            "type": "blob"
+          },
+          "path": "python/claude-api/batches.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "8c0db2f6be7acbaad0186e7cd3443af82453bfef",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "d4ab9551fd813ed782f7ecf6b44e0d991f71dbc2",
+            "type": "blob"
+          },
+          "path": "python/claude-api/files-api.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "bff43ab37fad6ab7484fd9e53bb7402657faacf0",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "python/claude-api/sdk-upgrade.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "69788059f192d8f21ede6dae53f7e45bed376ddf",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "5fc923be9bf9cc9d8a0ba43402ce7a5a314d6da4",
+            "type": "blob"
+          },
+          "path": "python/claude-api/streaming.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "3aaa8497bcd301dc39c3f8b20da9b6586885eb63",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "18e11aa0f56fa75e86c72572484670d956015f29",
+            "type": "blob"
+          },
+          "path": "python/claude-api/tool-use.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "25f37e3fd2c57bf0fa582c04d6c7be08f2f559cb",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "616c97a2ae3711b17c75799cff96535a56697097",
+            "type": "blob"
+          },
+          "path": "python/managed-agents/README.md"
+        },
+        {
+          "after": null,
+          "before": {
+            "mode": "100644",
+            "sha": "8705939e0a85a802393e32881537fd516cfab929",
+            "type": "blob"
+          },
+          "path": "ruby/claude-api.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "87024e190b69267c883c68b13b47abbae9687ccd",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "ruby/claude-api/README.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "31ca4ea54c9dd0211e30989c0f6116e06a1fd603",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "ruby/claude-api/streaming.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "adf440c7f5b8868d2241fae4d7bd1b7b9d5081ad",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "ruby/claude-api/tool-use.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "f293db0276a0f88480a5d22c953dfe6a76467fdc",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "1957f8545ce52493a70e80b901f025c95b066bff",
+            "type": "blob"
+          },
+          "path": "ruby/managed-agents/README.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "a688f7b5cafa17cfb14c9a676d692d4a9573ae5f",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/admin-api.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "517cec6b2a5529296b999916f43533425d30effb",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "6756c39a3562a413561451391fcfd2fcf496cdee",
+            "type": "blob"
+          },
+          "path": "shared/agent-design.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "13911dadc87be8d3829ad9a9cba53d33dbe06b22",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/anthropic-cli.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "f2a9f84f2b63b553b4af7af2fddaae129247db06",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/claude-platform-on-aws.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "f69f9d28880b6aa56ac33aa2f6987586c5ad7f74",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/cost-optimization.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "f2d63f962bb522b7faac478cd3b21f81d2388e3f",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "0fb2a1843579a6afbfb0a503dda3c5963ffc1e63",
+            "type": "blob"
+          },
+          "path": "shared/error-codes.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "ba875b712ba63135c60aaba4710bf84681ddf34b",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/evals/build-eval.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "d929871e2663848dbf0872825d053c9e73efb938",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/evals/cost-hillclimb.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "bc277162f32f11c98639621d94c4a3b90ce6d33d",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/evals/eval-audit.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "7e16832bef17a195ee87da35a4fd4df1b6fc9264",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/evals/eval-hillclimb.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "fb0d09db801f163809cdf184eb94cd74e0c5bc20",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/evals/report/SCHEMA.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "ba1c1ba05eadd9b121a1a1cc07cf59443e70754a",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/evals/report/build-report-lite.mjs"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "2f0220b41b4b30eb12606aa7ff95a9fee2f6e924",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/evals/report/runner-scaffold.mjs"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "d0693be9bf69673c1737d95ce59e8511a7e29d3a",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "53a8bbec2f6a1caa8dc276cdd074379aedb3a374",
+            "type": "blob"
+          },
+          "path": "shared/live-sources.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "bafed57da6956e04d891b96c5a4fe36e46985141",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "0d624adf76c6fd9dddcc74f9b7e2630ae8fa9ec4",
+            "type": "blob"
+          },
+          "path": "shared/managed-agents-api-reference.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "99a349bae41e11ac20edbde5e14b885bacf413d2",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "aa26c1e07fd7849e1699b4d8caa25720207a341a",
+            "type": "blob"
+          },
+          "path": "shared/managed-agents-client-patterns.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "431dd2968ffe7af9a3df4adc298b7f5820b68b6b",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "089eec2778c60637547334451a39803872a9d813",
+            "type": "blob"
+          },
+          "path": "shared/managed-agents-core.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "70cee556d5124244ae5998369cec3e3d0737ed4c",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "78a448fa591ce4882d0d18976960c410a7f7e9fb",
+            "type": "blob"
+          },
+          "path": "shared/managed-agents-environments.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "07b62eb6571f885713fbcdc465ce91af56e5386a",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "4ee3084d47103bba17f8f22648fe0d60a9b6d77c",
+            "type": "blob"
+          },
+          "path": "shared/managed-agents-events.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "3c89bd781c1f42f10e8924ff661112fee6c1203f",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/managed-agents-memory.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "a62973e38aa3bd9f13d2962591a792d93bcac75d",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/managed-agents-multiagent.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "b66d076a622febeccfcba1bc02e49f0915e45227",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/managed-agents-onboarding-from-quickstart.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "c9ee7a224b8fcd0aaf9e193b0ef7e01f7abe8801",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/managed-agents-onboarding-from-url.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "a8619d167d5a2b78274d4bbb36961e6c70ce6394",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "912a8cec66e2fa4348ca85d59ff22fa6e61fb84d",
+            "type": "blob"
+          },
+          "path": "shared/managed-agents-onboarding.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "b5b2fe800394a971a28a8a086a674faba6f65f54",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/managed-agents-outcomes.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "f9888171694b574e8d80c28d9e2b015f3b660fc8",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "7a11f55233db74a888ecaa067f64eb8352369e29",
+            "type": "blob"
+          },
+          "path": "shared/managed-agents-overview.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "9e6a3d2ea7e694ce6c8459b7b3959d112f6426f3",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/managed-agents-quickstarts/bug-hunter.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "44b0d20362632cf6de19ddb05e286d652154beb7",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/managed-agents-quickstarts/contract-tracker.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "bfc48475e91d7beb9bb8dfa8e2fb53f723392146",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/managed-agents-quickstarts/data-analyst.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "090fde54dfff5fa3eeb0a789622b57fc2329f14c",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/managed-agents-quickstarts/deep-researcher.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "55e97797cecfd8c905e12824ee3464aa79adb37d",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/managed-agents-quickstarts/explainer-video-maker.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "79268b6c4b552850bc69597a6ad925e5aa378e2b",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/managed-agents-quickstarts/field-monitor.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "d91edb8597e48c8cfd9001c7dd8905e7e2c62b58",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/managed-agents-quickstarts/incident-commander.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "b61d8e45a3170f0d17c7d6a0ea0c7dcdd3bdd586",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/managed-agents-quickstarts/performance-tuner.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "1d7a11a325b12adaf2d2a79f8a9a100df9b3dbb9",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/managed-agents-quickstarts/sprint-retro-facilitator.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "0f33adfe90087d93020b6261499a636d460330ad",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/managed-agents-quickstarts/structured-extractor.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "79eb2519e8a7b8f92433d5781a9e685d88bd98ca",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/managed-agents-quickstarts/support-agent.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "0558741c0411149d98bfb696f949ba917b3879cc",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/managed-agents-quickstarts/support-to-eng-escalator.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "19c17c3fb14446afe0ffc1485d49268edc87bff9",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/managed-agents-quickstarts/watchlist-scanner.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "6a6fc063a04492e6158a848aab4dbba0b8859982",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/managed-agents-scheduled-deployments.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "6d00564d1275ace86cfa59fb5b6b42f361253502",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/managed-agents-self-hosted-sandboxes.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "f1cf836d38b89117275e8192795f8531e2290709",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "de1dabb73c5549bee98b4b64b94e81fbc58eb6ee",
+            "type": "blob"
+          },
+          "path": "shared/managed-agents-tools.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "25f0592cdf26bed177b36e9e2579dea9676357fd",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/managed-agents-webhooks.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "eb523e50ece3627c2d945b11a658d4536829353c",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "23bc68e8a3579703d7d22794ea878e3b81377076",
+            "type": "blob"
+          },
+          "path": "shared/model-migration.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "9dd5c7840d973be30c237b59aebe31182d2c55a5",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "b6cae3d09eba70ec81d82015731739d0629fe690",
+            "type": "blob"
+          },
+          "path": "shared/models.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "61ad66dec946aeaba023a8c6cec74c20396e88a9",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/platform-availability.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "4f2051849ad23e7878c14a88008b4b3a5c8e6a7b",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/preserved-thinking-migration.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "f963b17494ac94c8ae06348f455db9470dd7ff6f",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/preserved-thinking-migration/causes.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "95f6a5146abcb3f111676c71b8a89feb3efb0495",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/preserved-thinking-migration/drop_block_probe.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "cfa88044b45b4acb8b82044f51872f4f7e306c2f",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/preserved-thinking-migration/prefix_diff.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "9f75ebb58a7dae16c860a97b5ffb2ade650356d0",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/prompt-audit.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "3ac5a38dcbe407794dcad614476acce42e45b95d",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "01e8702018bef441a06eaaf5ba251fe210d0119f",
+            "type": "blob"
+          },
+          "path": "shared/prompt-caching.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "65dbb4427e7018d527fc82dab07f3665ebfb3591",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "shared/token-counting.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "ed06b97d722c113f1f39ff1e2c94165e9f990b72",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "91cf685671025b11aa730d390af8da9a7819abde",
+            "type": "blob"
+          },
+          "path": "shared/tool-use-concepts.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "79b18031da6014fd4b305af159838f0a0cdddb18",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "a1386f8e3dcab76c527b88acf8f1ccfcf9a32b3e",
+            "type": "blob"
+          },
+          "path": "typescript/claude-api/README.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "ff3de5eef7562bbaf501871ccbdafef38a2c20af",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "b4e0f75036308120ee87756d8ad28aca5685f886",
+            "type": "blob"
+          },
+          "path": "typescript/claude-api/batches.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "c8488c67140e1c4065f7ce2fb93d66ab2e817cd2",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "ddc4d4ee0754dc0d442f91e0c7d8cac5e3745534",
+            "type": "blob"
+          },
+          "path": "typescript/claude-api/files-api.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "4ddc2b3faa1b5af33519167a8c803308bad04c9f",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "6a3517121b7a2d66931c44fee59ae41a6e692201",
+            "type": "blob"
+          },
+          "path": "typescript/claude-api/streaming.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "1f5ead7da17b4b985886be1a496fcbd5c235c160",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "fe5f8339883c0428d7dae5f9abae0e053475017c",
+            "type": "blob"
+          },
+          "path": "typescript/claude-api/tool-use.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "e177acd6a47971d722f76d8c658b0260bf176b11",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "cc4d9e610d62c989d43ff91cb88384b5583cafe5",
+            "type": "blob"
+          },
+          "path": "typescript/managed-agents/README.md"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 96,
+      "old_resource_count": 40,
+      "skill_id": "anthropics-skills-skills-claude-api-skill-md",
+      "source_path": "skills/claude-api/SKILL.md"
+    },
+    {
+      "changed": false,
+      "changes": [],
+      "new_entrypoint_present": true,
+      "new_resource_count": 1,
+      "old_resource_count": 1,
+      "skill_id": "anthropics-skills-skills-doc-coauthoring-skill-md",
+      "source_path": "skills/doc-coauthoring/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "fb954a460a1ea2294e9595e87fecce8df043eeba",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "2951e559989765293b6fbf83942378a3c2d0cba6",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100755",
+            "sha": "46ed5f52eb639934a8ead383976eecc2a6867fa7",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100755",
+            "sha": "36e1c935f2aac390ed468d0637e83cea18decd64",
+            "type": "blob"
+          },
+          "path": "scripts/comment.py"
+        },
+        {
+          "after": {
+            "mode": "100755",
+            "sha": "4c7c1bf261b1ec3febe4112e30f46c2aa9f4a141",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "scripts/merge_runs.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "d3c5817c7e50b23bdd82032c8f89fed497bce9fa",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+            "type": "blob"
+          },
+          "path": "scripts/office/helpers/__init__.py"
+        },
+        {
+          "after": null,
+          "before": {
+            "mode": "100644",
+            "sha": "ad7c25eec0d064fbd9f5624b17b60e5dd49b5903",
+            "type": "blob"
+          },
+          "path": "scripts/office/helpers/merge_runs.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "209cb7c58b91b90ee685c082f7e20be21a1a6686",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "scripts/office/helpers/pptx_chart.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "22f9aee0ff6c4797fa344f064d7cd6a1ab96b05b",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "scripts/office/helpers/pptx_slide.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "84466201cf22ca237cd640c80a08e9e2cabcce90",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "scripts/office/helpers/pptx_theme.py"
+        },
+        {
+          "after": null,
+          "before": {
+            "mode": "100644",
+            "sha": "db963bb998d7d5a8517d8252ce82ec9ab28665bc",
+            "type": "blob"
+          },
+          "path": "scripts/office/helpers/simplify_redlines.py"
+        },
+        {
+          "after": null,
+          "before": {
+            "mode": "100755",
+            "sha": "db29ed8b1c3676a4980b2d67e9dfe432556d2e58",
+            "type": "blob"
+          },
+          "path": "scripts/office/pack.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "0b4c99deca54013c550458c9244ee63eea748dca",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "c7f7e3289fdff196399fd6f3d6668b9aa68eec87",
+            "type": "blob"
+          },
+          "path": "scripts/office/soffice.py"
+        },
+        {
+          "after": null,
+          "before": {
+            "mode": "100755",
+            "sha": "00152533ac0fa95109f74253ac6a475401fa6afe",
+            "type": "blob"
+          },
+          "path": "scripts/office/unpack.py"
+        },
+        {
+          "after": {
+            "mode": "100755",
+            "sha": "29ca186a12e5c102702029ab9e51e6c3b71b1403",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100755",
+            "sha": "03b01f6e3ba40e1408d0bd16d587154fa9798a87",
+            "type": "blob"
+          },
+          "path": "scripts/office/validate.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "33fc97bbe351949f9a8bd88998c78f81cd842c6a",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "db4a06a2291abf80bd9b000b6ff3b7f012e6dd2f",
+            "type": "blob"
+          },
+          "path": "scripts/office/validators/base.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "b18149945a7cf7ebd77c14655eb74d89baca3a00",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "fec405e694790259824feebb95061f56a705621c",
+            "type": "blob"
+          },
+          "path": "scripts/office/validators/docx.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "318f0e61483972fb08e02be39c94331dba46445e",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "09842aa99866fe270ecfeec6f7993495e1865f2b",
+            "type": "blob"
+          },
+          "path": "scripts/office/validators/pptx.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "4185c51f4f10eeaf3227168e440ed378ce120ec6",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "71c81b6bf4cacda322db32c87df7b2301c469933",
+            "type": "blob"
+          },
+          "path": "scripts/office/validators/redlining.py"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 61,
+      "old_resource_count": 61,
+      "skill_id": "anthropics-skills-skills-docx-skill-md",
+      "source_path": "skills/docx/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "a5333457c414d20d625f307df945842c0952ecc3",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "5be498e2585843c7137bf9a74e262f57415de5ce",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 2,
+      "old_resource_count": 2,
+      "skill_id": "anthropics-skills-skills-frontend-design-skill-md",
+      "source_path": "skills/frontend-design/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "7a4a3ea2424c09fbe48d455aed1eaa94d9124835",
+            "type": "blob"
+          },
+          "path": "LICENSE.txt"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 6,
+      "old_resource_count": 6,
+      "skill_id": "anthropics-skills-skills-internal-comms-skill-md",
+      "source_path": "skills/internal-comms/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "7a4a3ea2424c09fbe48d455aed1eaa94d9124835",
+            "type": "blob"
+          },
+          "path": "LICENSE.txt"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "d61a9056202a0f8b2d064c896e62f415c45b1bf1",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "8a1a77a47d141967b246adb4da4f91037578ff7d",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "738ec1fb8b1a41661b0bb5d32a26234a14c4e3f0",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "f6e5df982adc0848bf261c47ab8d65a1e0469391",
+            "type": "blob"
+          },
+          "path": "reference/node_mcp_server.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "5d61f896d9707c8797c33ac8ac03c5aebf9b163f",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "reference/node_mcp_server_v2.md"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 11,
+      "old_resource_count": 10,
+      "skill_id": "anthropics-skills-skills-mcp-builder-skill-md",
+      "source_path": "skills/mcp-builder/SKILL.md"
+    },
+    {
+      "changed": false,
+      "changes": [],
+      "new_entrypoint_present": true,
+      "new_resource_count": 12,
+      "old_resource_count": 12,
+      "skill_id": "anthropics-skills-skills-pdf-skill-md",
+      "source_path": "skills/pdf/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "41cd2306977f269bb1d8169a9643b35053aa66bd",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "df5000e17ef60ecf400e65bfcd3c58ff88b604c3",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": null,
+          "before": {
+            "mode": "100644",
+            "sha": "f873e8a04ab20b5a79543ea28729149cfd70ef2c",
+            "type": "blob"
+          },
+          "path": "editing.md"
+        },
+        {
+          "after": null,
+          "before": {
+            "mode": "100644",
+            "sha": "6bfed908c9001d047b65995a8eb8b2097340da76",
+            "type": "blob"
+          },
+          "path": "pptxgenjs.md"
+        },
+        {
+          "after": {
+            "mode": "100755",
+            "sha": "f013ea94d1785c8cf767fb69284ffb5b8dd9d390",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100755",
+            "sha": "13700df012007ae73e63e12555182b75d3899a4a",
+            "type": "blob"
+          },
+          "path": "scripts/add_slide.py"
+        },
+        {
+          "after": {
+            "mode": "100755",
+            "sha": "551dd23192f6eae8e79d4b59b08a3cd9d10feadd",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100755",
+            "sha": "3d13994cfeb46b70ca2d8ba2839688bc85021fd0",
+            "type": "blob"
+          },
+          "path": "scripts/clean.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "d3c5817c7e50b23bdd82032c8f89fed497bce9fa",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+            "type": "blob"
+          },
+          "path": "scripts/office/helpers/__init__.py"
+        },
+        {
+          "after": null,
+          "before": {
+            "mode": "100644",
+            "sha": "ad7c25eec0d064fbd9f5624b17b60e5dd49b5903",
+            "type": "blob"
+          },
+          "path": "scripts/office/helpers/merge_runs.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "209cb7c58b91b90ee685c082f7e20be21a1a6686",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "scripts/office/helpers/pptx_chart.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "22f9aee0ff6c4797fa344f064d7cd6a1ab96b05b",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "scripts/office/helpers/pptx_slide.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "84466201cf22ca237cd640c80a08e9e2cabcce90",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "scripts/office/helpers/pptx_theme.py"
+        },
+        {
+          "after": null,
+          "before": {
+            "mode": "100644",
+            "sha": "db963bb998d7d5a8517d8252ce82ec9ab28665bc",
+            "type": "blob"
+          },
+          "path": "scripts/office/helpers/simplify_redlines.py"
+        },
+        {
+          "after": null,
+          "before": {
+            "mode": "100755",
+            "sha": "db29ed8b1c3676a4980b2d67e9dfe432556d2e58",
+            "type": "blob"
+          },
+          "path": "scripts/office/pack.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "0b4c99deca54013c550458c9244ee63eea748dca",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "c7f7e3289fdff196399fd6f3d6668b9aa68eec87",
+            "type": "blob"
+          },
+          "path": "scripts/office/soffice.py"
+        },
+        {
+          "after": null,
+          "before": {
+            "mode": "100755",
+            "sha": "00152533ac0fa95109f74253ac6a475401fa6afe",
+            "type": "blob"
+          },
+          "path": "scripts/office/unpack.py"
+        },
+        {
+          "after": {
+            "mode": "100755",
+            "sha": "29ca186a12e5c102702029ab9e51e6c3b71b1403",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100755",
+            "sha": "03b01f6e3ba40e1408d0bd16d587154fa9798a87",
+            "type": "blob"
+          },
+          "path": "scripts/office/validate.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "33fc97bbe351949f9a8bd88998c78f81cd842c6a",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "db4a06a2291abf80bd9b000b6ff3b7f012e6dd2f",
+            "type": "blob"
+          },
+          "path": "scripts/office/validators/base.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "b18149945a7cf7ebd77c14655eb74d89baca3a00",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "fec405e694790259824feebb95061f56a705621c",
+            "type": "blob"
+          },
+          "path": "scripts/office/validators/docx.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "318f0e61483972fb08e02be39c94331dba46445e",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "09842aa99866fe270ecfeec6f7993495e1865f2b",
+            "type": "blob"
+          },
+          "path": "scripts/office/validators/pptx.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "4185c51f4f10eeaf3227168e440ed378ce120ec6",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "71c81b6bf4cacda322db32c87df7b2301c469933",
+            "type": "blob"
+          },
+          "path": "scripts/office/validators/redlining.py"
+        },
+        {
+          "after": {
+            "mode": "100755",
+            "sha": "d49cac0e1a138fd0cbf46dece32b0da153cdc4f7",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100755",
+            "sha": "edcbdc0f81e7919fb2e6bb5b4a9f15bfa131f036",
+            "type": "blob"
+          },
+          "path": "scripts/thumbnail.py"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 56,
+      "old_resource_count": 59,
+      "skill_id": "anthropics-skills-skills-pptx-skill-md",
+      "source_path": "skills/pptx/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "7a4a3ea2424c09fbe48d455aed1eaa94d9124835",
+            "type": "blob"
+          },
+          "path": "LICENSE.txt"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 18,
+      "old_resource_count": 18,
+      "skill_id": "anthropics-skills-skills-skill-creator-skill-md",
+      "source_path": "skills/skill-creator/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "7a4a3ea2424c09fbe48d455aed1eaa94d9124835",
+            "type": "blob"
+          },
+          "path": "LICENSE.txt"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 7,
+      "old_resource_count": 7,
+      "skill_id": "anthropics-skills-skills-slack-gif-creator-skill-md",
+      "source_path": "skills/slack-gif-creator/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "7a4a3ea2424c09fbe48d455aed1eaa94d9124835",
+            "type": "blob"
+          },
+          "path": "LICENSE.txt"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 13,
+      "old_resource_count": 13,
+      "skill_id": "anthropics-skills-skills-theme-factory-skill-md",
+      "source_path": "skills/theme-factory/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "7a4a3ea2424c09fbe48d455aed1eaa94d9124835",
+            "type": "blob"
+          },
+          "path": "LICENSE.txt"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 5,
+      "old_resource_count": 5,
+      "skill_id": "anthropics-skills-skills-web-artifacts-builder-skill-md",
+      "source_path": "skills/web-artifacts-builder/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "7a4a3ea2424c09fbe48d455aed1eaa94d9124835",
+            "type": "blob"
+          },
+          "path": "LICENSE.txt"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 6,
+      "old_resource_count": 6,
+      "skill_id": "anthropics-skills-skills-webapp-testing-skill-md",
+      "source_path": "skills/webapp-testing/SKILL.md"
+    },
+    {
+      "changed": true,
+      "changes": [
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "9da54804cc8c938586f89363c8da3b3a6e2a563d",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "c5c881be9ebaa2bfcdd02f97de2ebd711ab78803",
+            "type": "blob"
+          },
+          "path": "SKILL.md"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "d3c5817c7e50b23bdd82032c8f89fed497bce9fa",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+            "type": "blob"
+          },
+          "path": "scripts/office/helpers/__init__.py"
+        },
+        {
+          "after": null,
+          "before": {
+            "mode": "100644",
+            "sha": "ad7c25eec0d064fbd9f5624b17b60e5dd49b5903",
+            "type": "blob"
+          },
+          "path": "scripts/office/helpers/merge_runs.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "209cb7c58b91b90ee685c082f7e20be21a1a6686",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "scripts/office/helpers/pptx_chart.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "22f9aee0ff6c4797fa344f064d7cd6a1ab96b05b",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "scripts/office/helpers/pptx_slide.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "84466201cf22ca237cd640c80a08e9e2cabcce90",
+            "type": "blob"
+          },
+          "before": null,
+          "path": "scripts/office/helpers/pptx_theme.py"
+        },
+        {
+          "after": null,
+          "before": {
+            "mode": "100644",
+            "sha": "db963bb998d7d5a8517d8252ce82ec9ab28665bc",
+            "type": "blob"
+          },
+          "path": "scripts/office/helpers/simplify_redlines.py"
+        },
+        {
+          "after": null,
+          "before": {
+            "mode": "100755",
+            "sha": "db29ed8b1c3676a4980b2d67e9dfe432556d2e58",
+            "type": "blob"
+          },
+          "path": "scripts/office/pack.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "0b4c99deca54013c550458c9244ee63eea748dca",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "c7f7e3289fdff196399fd6f3d6668b9aa68eec87",
+            "type": "blob"
+          },
+          "path": "scripts/office/soffice.py"
+        },
+        {
+          "after": null,
+          "before": {
+            "mode": "100755",
+            "sha": "00152533ac0fa95109f74253ac6a475401fa6afe",
+            "type": "blob"
+          },
+          "path": "scripts/office/unpack.py"
+        },
+        {
+          "after": {
+            "mode": "100755",
+            "sha": "29ca186a12e5c102702029ab9e51e6c3b71b1403",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100755",
+            "sha": "03b01f6e3ba40e1408d0bd16d587154fa9798a87",
+            "type": "blob"
+          },
+          "path": "scripts/office/validate.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "33fc97bbe351949f9a8bd88998c78f81cd842c6a",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "db4a06a2291abf80bd9b000b6ff3b7f012e6dd2f",
+            "type": "blob"
+          },
+          "path": "scripts/office/validators/base.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "b18149945a7cf7ebd77c14655eb74d89baca3a00",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "fec405e694790259824feebb95061f56a705621c",
+            "type": "blob"
+          },
+          "path": "scripts/office/validators/docx.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "318f0e61483972fb08e02be39c94331dba46445e",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "09842aa99866fe270ecfeec6f7993495e1865f2b",
+            "type": "blob"
+          },
+          "path": "scripts/office/validators/pptx.py"
+        },
+        {
+          "after": {
+            "mode": "100644",
+            "sha": "4185c51f4f10eeaf3227168e440ed378ce120ec6",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100644",
+            "sha": "71c81b6bf4cacda322db32c87df7b2301c469933",
+            "type": "blob"
+          },
+          "path": "scripts/office/validators/redlining.py"
+        },
+        {
+          "after": {
+            "mode": "100755",
+            "sha": "6232be2deea56cc97c1d8996e4d68adf2457059c",
+            "type": "blob"
+          },
+          "before": {
+            "mode": "100755",
+            "sha": "f472e9a5d04583dc14869f36aa4252a533639ad6",
+            "type": "blob"
+          },
+          "path": "scripts/recalc.py"
+        }
+      ],
+      "new_entrypoint_present": true,
+      "new_resource_count": 53,
+      "old_resource_count": 54,
+      "skill_id": "anthropics-skills-skills-xlsx-skill-md",
+      "source_path": "skills/xlsx/SKILL.md"
+    }
+  ]
+}
