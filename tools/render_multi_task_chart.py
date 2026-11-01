@@ -9,7 +9,8 @@ from fractions import Fraction
 from pathlib import Path
 from typing import Any
 
-from summarize_multi_task_trials import run_plan
+from _trial_comparisons import compare_blocks
+from summarize_multi_task_trials import run_plan, summarize_snapshot_evidence
 
 
 def graph_rows(report: dict[str, Any]) -> list[tuple[str, list[Fraction], Fraction | None, int]]:
@@ -59,6 +60,47 @@ def snapshot_summary(report: dict[str, Any]) -> tuple[int, int, int]:
     return sum(value is None for value in snapshots), len(snapshots), len({value for value in snapshots if value})
 
 
+def snapshot_pair_labels(report: dict[str, Any]) -> dict[str, str]:
+    """Validate and describe snapshot evidence separately for each candidate."""
+    conditions = set(report["comparisons"])
+    if set(report["model_snapshot_evidence"]) != conditions:
+        raise ValueError("Snapshot evidence condition set differs from the comparisons")
+    for task in report["tasks"]:
+        recorded = json.dumps(task["block_comparison"], sort_keys=True, allow_nan=False)
+        recomputed = json.dumps(
+            compare_blocks(task["attempts"], conditions | {"default"}), sort_keys=True, allow_nan=False
+        )
+        if recorded != recomputed:
+            raise ValueError("Snapshot evidence blocks disagree with attempts")
+    descriptions = {
+        "incomplete": "incomplete",
+        "inconsistent_reported_identifiers": "vary",
+        "single_reported_identifier": "one reported",
+    }
+    labels = {}
+    for condition in sorted(conditions):
+        evidence = summarize_snapshot_evidence(report["tasks"], condition)
+        recorded = report["model_snapshot_evidence"][condition]
+        counts = (
+            "planned_pairs",
+            "same_reported_identifier_pairs",
+            "different_reported_identifier_pairs",
+            "incomplete_pairs",
+        )
+        if (
+            not isinstance(recorded, dict)
+            or any(type(recorded.get(key)) is not int for key in counts)
+            or recorded != evidence
+        ):
+            raise ValueError("Snapshot evidence disagrees with attempts")
+        labels[condition] = (
+            f"IDs: {descriptions[evidence['status']]}; pairs: "
+            f"{evidence['different_reported_identifier_pairs']}/{evidence['planned_pairs']} differ, "
+            f"{evidence['incomplete_pairs']} incomplete"
+        )
+    return labels
+
+
 def render_svg(report: dict[str, Any]) -> bytes:
     """Show each scored task and any fully observed equal-task-weight mean."""
     import matplotlib
@@ -69,15 +111,16 @@ def render_svg(report: dict[str, Any]) -> bytes:
 
     rows = graph_rows(report)
     unavailable, attempts, distinct = snapshot_summary(report)
+    snapshot_labels = snapshot_pair_labels(report)
     conditions = [row[0] for row in rows]
     with matplotlib.rc_context(
         {"svg.hashsalt": report["plan_sha256"], "svg.fonttype": "none", "font.family": "DejaVu Sans"}
     ):
         figure, axis = plt.subplots(figsize=(10, max(5.1, 4.3 + 0.65 * len(conditions))))
         try:
-            figure.subplots_adjust(left=0.16, right=0.75, top=0.70, bottom=0.29)
+            figure.subplots_adjust(left=0.16, right=0.64, top=0.70, bottom=0.29)
             axis.axvline(0, color="#64748b", linewidth=1, zorder=1)
-            for row, (_condition, scored, mean, planned) in enumerate(rows):
+            for row, (condition, scored, mean, planned) in enumerate(rows):
                 offsets = [((index % 7) - 3) * 0.035 for index in range(len(scored))]
                 if scored:
                     axis.scatter(
@@ -93,7 +136,14 @@ def render_svg(report: dict[str, Any]) -> bytes:
                     summary = f"{len(scored)}/{planned} scored; mean {mean}"
                 else:
                     summary = f"{len(scored)}/{planned} scored; mean unavailable"
-                axis.text(1.03, row, summary, transform=axis.get_yaxis_transform(), va="center", fontsize=9)
+                axis.text(
+                    1.03,
+                    row,
+                    f"{summary}\n{snapshot_labels[condition]}",
+                    transform=axis.get_yaxis_transform(),
+                    va="center",
+                    fontsize=8,
+                )
             axis.set_yticks(range(len(conditions)), conditions)
             axis.set_ylim(len(conditions) - 0.5, -0.5)
             axis.set_xlim(-1.05, 1.05)

@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import Any
 
 from _trial_comparisons import TOKEN_KEYS, compare_blocks
-from render_multi_task_chart import snapshot_summary
+from render_multi_task_chart import snapshot_pair_labels, snapshot_summary
 from summarize_multi_task_trials import run_plan, summarize_paired_tokens
 
 
@@ -82,15 +82,16 @@ def render_svg(report: dict[str, Any]) -> bytes:
 
     rows = token_rows(report)
     unavailable, attempts, distinct = snapshot_summary(report)
+    snapshot_labels = snapshot_pair_labels(report)
     with matplotlib.rc_context(
         {"svg.hashsalt": report["plan_sha256"], "svg.fonttype": "none", "font.family": "DejaVu Sans"}
     ):
-        figure, axes = plt.subplots(1, 2, figsize=(12, max(5.4, 4.7 + 0.6 * len(rows))), sharey=True)
+        figure, axes = plt.subplots(1, 2, figsize=(14, max(5.4, 4.7 + 0.6 * len(rows))), sharey=True)
         try:
-            figure.subplots_adjust(left=0.13, right=0.97, top=0.70, bottom=0.32, wspace=0.30)
+            figure.subplots_adjust(left=0.11, right=0.70, top=0.70, bottom=0.32, wspace=0.35)
             for axis, key, label in zip(axes, TOKEN_KEYS, ("Input tokens", "Output tokens"), strict=True):
                 axis.axvline(0, color="#64748b", linewidth=1)
-                for row, (_condition, values, mean, complete, planned, observed, blocks) in enumerate(rows):
+                for row, (_condition, values, mean, _complete, _planned, _observed, _blocks) in enumerate(rows):
                     offsets = [((index % 7) - 3) * 0.035 for index in range(len(values[key]))]
                     if values[key]:
                         axis.scatter(
@@ -103,12 +104,20 @@ def render_svg(report: dict[str, Any]) -> bytes:
                         )
                     if mean is not None:
                         axis.scatter([float(mean[key])], [row], marker="s", s=65, color="#c2410c", zorder=4)
-                    summary = f"{complete}/{planned} tasks; {observed}/{blocks} blocks"
-                    if mean is None:
-                        summary += "; mean unavailable"
-                    axis.text(0.02, row - 0.25, summary, transform=axis.get_yaxis_transform(), fontsize=8)
                 axis.set_xlabel(f"{label}: condition minus default")
                 axis.grid(axis="x", alpha=0.2)
+            for row, (condition, _values, mean, complete, planned, observed, blocks) in enumerate(rows):
+                summary = f"{complete}/{planned} tasks; {observed}/{blocks} blocks"
+                if mean is None:
+                    summary += "; mean unavailable"
+                axes[1].text(
+                    1.03,
+                    row,
+                    f"{summary}\n{snapshot_labels[condition]}",
+                    transform=axes[1].get_yaxis_transform(),
+                    va="center",
+                    fontsize=8,
+                )
             axes[0].set_yticks(range(len(rows)), [row[0] for row in rows])
             axes[0].set_ylim(len(rows) - 0.5, -0.5)
             figure.suptitle(

@@ -11,31 +11,42 @@ from pathlib import Path
 from unittest.mock import patch
 
 import render_multi_task_chart as target
+from _trial_comparisons import compare_blocks
+from summarize_multi_task_trials import aggregate, summarize_snapshot_evidence
 
 
 def fixture_report(*, incomplete: bool = False):
-    first = {"numerator": 1, "denominator": 2}
-    second = None if incomplete else {"numerator": 0, "denominator": 1}
-    return {
-        "plan_sha256": "0" * 64,
-        "task_count": 2,
-        "partition": "synthetic control",
-        "model_requested": "fixture",
-        "reasoning_effort_requested": "high",
-        "quality_superiority_established": False,
-        "comparisons": {
-            "candidate": {
-                "planned_tasks": 2,
-                "fully_scored_tasks": 1 if incomplete else 2,
-                "unscored_tasks": 1 if incomplete else 0,
-                "equal_task_weight_mean_difference": None if incomplete else {"numerator": 1, "denominator": 4},
+    definitions = {"default": {"skills": []}, "candidate": {"skills": ["example"]}}
+    reports = []
+    rows = [
+        ("a", ["task_passed", "task_failed"], ["task_passed", "task_passed"]),
+        ("b", ["task_passed"], ["harness_error" if incomplete else "task_passed"]),
+    ]
+    for task, baseline, candidate in rows:
+        attempts = [
+            {"repetition": i, "condition": condition, "status": status, "usage": None, "provider_model_snapshot": None}
+            for condition, statuses in (("default", baseline), ("candidate", candidate))
+            for i, status in enumerate(statuses, 1)
+        ]
+        reports.append(
+            {
+                "task_id": task,
+                "protocol_sha256": task * 64,
+                "grading_manifest_sha256": "f" * 64,
+                "expected_grading_cases": 1,
+                "limitations": [],
+                "block_comparison": compare_blocks(attempts, set(definitions)),
+                "model_requested": "fixture",
+                "reasoning_effort_requested": "high",
+                "partition": "synthetic control",
+                "task_count": 1,
+                "conditions": {name: {"planned_attempts": len(baseline)} for name in definitions},
+                "attempts": attempts,
             }
-        },
-        "tasks": [
-            {"candidate_minus_default": {"candidate": first}, "attempts": [{}, {}]},
-            {"candidate_minus_default": {"candidate": second}, "attempts": [{}, {}]},
-        ],
-    }
+        )
+    result = aggregate(reports, [definitions, definitions])
+    result["plan_sha256"] = "0" * 64
+    return result
 
 
 class ChartRowsTests(unittest.TestCase):
@@ -75,7 +86,8 @@ class ChartRenderTests(unittest.TestCase):
         self.assertIn("1/2 scored; mean unavailable", text)
         self.assertIn("unscored tasks are not failures", text)
         self.assertIn("No uncertainty or superiority claim", text)
-        self.assertIn("Snapshot metadata unavailable: 4/4; distinct reported: 0", text)
+        self.assertIn("Snapshot metadata unavailable: 6/6; distinct reported: 0", text)
+        self.assertIn("IDs: incomplete; pairs: 0/3 differ, 3 incomplete", text)
         self.assertIn("Snapshot metadata is not independently verified", text)
         self.assertIn("requested model: fixture | requested effort: high", text)
         self.assertIn("does not prove preregistration or grading authenticity", text)
@@ -97,9 +109,71 @@ class ChartRenderTests(unittest.TestCase):
         report = fixture_report()
         report["tasks"][0]["attempts"][0]["provider_model_snapshot"] = "snapshot-a"
         report["tasks"][1]["attempts"][1]["provider_model_snapshot"] = "snapshot-b"
+        report["model_snapshot_evidence"]["candidate"] = summarize_snapshot_evidence(report["tasks"], "candidate")
         root = ET.fromstring(target.render_svg(report))
         text = " ".join("".join(node.itertext()) for node in root.iter() if node.tag.endswith("text"))
-        self.assertIn("Snapshot metadata unavailable: 2/4; distinct reported: 2", text)
+        self.assertIn("Snapshot metadata unavailable: 4/6; distinct reported: 2", text)
+        self.assertIn("IDs: vary; pairs: 0/3 differ, 3 incomplete", text)
+
+    def test_snapshot_labels_show_reported_match_and_pair_mismatch(self):
+        report = fixture_report()
+        for task in report["tasks"]:
+            for attempt in task["attempts"]:
+                attempt["provider_model_snapshot"] = "snapshot-a"
+        report["model_snapshot_evidence"]["candidate"] = summarize_snapshot_evidence(report["tasks"], "candidate")
+        root = ET.fromstring(target.render_svg(report))
+        text = " ".join("".join(node.itertext()) for node in root.iter() if node.tag.endswith("text"))
+        self.assertIn("IDs: one reported; pairs: 0/3 differ, 0 incomplete", text)
+        report["tasks"][0]["attempts"][2]["provider_model_snapshot"] = "snapshot-b"
+        report["model_snapshot_evidence"]["candidate"] = summarize_snapshot_evidence(report["tasks"], "candidate")
+        root = ET.fromstring(target.render_svg(report))
+        text = " ".join("".join(node.itertext()) for node in root.iter() if node.tag.endswith("text"))
+        self.assertIn("IDs: vary; pairs: 1/3 differ, 0 incomplete", text)
+
+    def test_inconsistent_snapshot_evidence_is_rejected(self):
+        report = fixture_report()
+        report["model_snapshot_evidence"]["candidate"]["planned_pairs"] = 1
+        with self.assertRaisesRegex(ValueError, "[Ss]napshot evidence"):
+            target.render_svg(report)
+
+    def test_boolean_is_not_a_valid_numeric_evidence_count(self):
+        report = fixture_report()
+        report["model_snapshot_evidence"]["candidate"]["different_reported_identifier_pairs"] = False
+        with self.assertRaisesRegex(ValueError, "[Ss]napshot evidence"):
+            target.render_svg(report)
+
+    def test_boolean_is_not_a_valid_block_repetition(self):
+        report = fixture_report()
+        report["tasks"][0]["block_comparison"]["comparisons"]["candidate"]["blocks"][0]["repetition"] = True
+        with self.assertRaisesRegex(ValueError, "[Ss]napshot evidence"):
+            target.render_svg(report)
+
+    def test_matching_pairs_with_different_identifiers_across_tasks_are_flagged(self):
+        report = fixture_report()
+        for task, snapshot in zip(report["tasks"], ("snapshot-a", "snapshot-b"), strict=True):
+            for attempt in task["attempts"]:
+                attempt["provider_model_snapshot"] = snapshot
+        report["model_snapshot_evidence"]["candidate"] = summarize_snapshot_evidence(report["tasks"], "candidate")
+        root = ET.fromstring(target.render_svg(report))
+        text = " ".join("".join(node.itertext()) for node in root.iter() if node.tag.endswith("text"))
+        self.assertIn("IDs: vary; pairs: 0/3 differ, 0 incomplete", text)
+
+    def test_snapshot_annotation_fits_outside_plot(self):
+        from matplotlib.figure import Figure
+
+        original = Figure.savefig
+
+        def verify(figure, *args, **kwargs):
+            figure.canvas.draw()
+            texts = [text for axis in figure.axes for text in axis.texts if "IDs:" in text.get_text()]
+            self.assertEqual(len(texts), 1)
+            bounds = texts[0].get_window_extent(figure.canvas.get_renderer())
+            self.assertGreaterEqual(bounds.x0, figure.axes[0].bbox.x1)
+            self.assertLessEqual(bounds.x1, figure.bbox.x1)
+            return original(figure, *args, **kwargs)
+
+        with patch.object(Figure, "savefig", verify):
+            target.render_svg(fixture_report())
 
     def test_check_detects_a_changed_svg(self):
         report = fixture_report()
@@ -148,10 +222,10 @@ class ChartConsistencyTests(unittest.TestCase):
 
     def test_snapshot_counts_require_valid_attempts(self):
         report = fixture_report()
-        self.assertEqual(target.snapshot_summary(report), (4, 4, 0))
+        self.assertEqual(target.snapshot_summary(report), (6, 6, 0))
         report["tasks"][0]["attempts"][0]["provider_model_snapshot"] = "snapshot-a"
         report["tasks"][1]["attempts"][1]["provider_model_snapshot"] = "snapshot-a"
-        self.assertEqual(target.snapshot_summary(report), (2, 4, 1))
+        self.assertEqual(target.snapshot_summary(report), (4, 6, 1))
         report["tasks"][0]["attempts"][1]["provider_model_snapshot"] = ""
         with self.assertRaisesRegex(ValueError, "snapshot"):
             target.snapshot_summary(report)

@@ -205,10 +205,14 @@ checks require the reports dependencies and run in that workflow's report job.
 The chart also counts attempts without snapshot metadata and distinct reported
 snapshot identifiers. These are reported metadata, not independently verified
 provider identities; distinct identifiers can make comparisons harder to interpret.
+Each candidate row also shows its identifier status and the number of matched
+pairs with different or incomplete identifiers. `IDs: vary` includes identifiers
+that differ between tasks even when each individual pair matches.
 
 For paired token differences, use
 `python tools/render_token_chart.py --plan <plan.json> --output <chart.svg>`.
 The two panels show input and output counts separately, with complete task means,
-the equal-task mean when all tasks are complete, and comparable block counts.
+the equal-task mean when all tasks are complete, comparable block counts, and
+the same per-candidate snapshot evidence.
 The workflow also uploads this chart. It describes observed usage; it does not
 establish priced cost, efficiency, statistical significance or agent superiority.
