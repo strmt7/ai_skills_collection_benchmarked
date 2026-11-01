@@ -8858,13 +8858,24 @@
             "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
             "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
             "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          },
+          {
+            "path": "docs/research-scvi-model-inputs.md",
+            "scope": "Model-specific SCVI and SysVI input review with synthetic controls; dataset and full source remain unverified.",
+            "sha256": "3346877b21113bb64965ccf91e771f38d48c0b07ce6eec69754006d8a572dc8c"
           }
         ],
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "status": "in_progress",
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/scvi-model-inputs/repair.json",
+            "scope": "Maintained model-specific input guidance and Windows synthetic component controls; no agent evaluation.",
+            "sha256": "cddac87e60a1e924b8428b9d9dfe606b2202123f190a1a4215bf568b5eadd893"
+          }
+        ]
       },
       "source_repo": "K-Dense-AI/scientific-agent-skills",
       "source_signature": {

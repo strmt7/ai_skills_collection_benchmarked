@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-scvi-tools-skill-md",
+  "source_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+  "source_mirror": "included/skills/by-category/science-research-data-analysis/latest-release-community/scvi-tools",
+  "source_license_blob_sha1": "eb246475fd5a66b9bb56176f3a718984632dd98d",
+  "scope": "SCVI and SysVI registration and one-epoch CPU fits on synthetic dense and sparse inputs.",
+  "agent_performance_tested": false,
+  "full_skill_reviewed": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/scvi-model-inputs-v1/qualification.json",
+  "overlay_sha256": {
+    "SKILL.md": "fb2ce874e4b3a9b6c6f908675042f93075c155eb81eed62425d9707eec9bbd48",
+    "LICENSE": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1",
+    "provenance/original.SKILL.md": "1909d968193a24c723a6b2f4c63a158d922ce1afbc4f119455af5166d31d64f0"
+  },
+  "evidence_sha256": {
+    "reproduce.py": "069d30e015395c011536d41cee9975caafe1af3b141c25a6c80533079897cbde",
+    "requirements.in": "f605edc67150855acfa980c6de4a80672ecc4dc63f3184ff14185c9c88b8387f",
+    "requirements-windows.txt": "55fecfab86d946d04ae0810520134959e09fd71f07f5c203100112ba1112d598",
+    "build-requirements.in": "2d644d0798c6cb45998e36406d2129041fe5fc00a7f31a35ce844a2038f687eb",
+    "build-requirements.txt": "6e7910c87ddfeaefcae794df890eeeb6be8ad963297bf693b09fba962a24ce6f",
+    "windows-result.json": "8a9428559fc541ec25755c8ac8ce12cc41f69095b9c5c3c93140d7cbf0f26221",
+    "sources.json": "e99bcf86c360ee5308b8e132e962ca9c1a9234fbbb62a59fde94799f977149a9",
+    "qualification.json": "be5f92a1f8b35add666acf002d8559184f71dbc971bdbf6b3d462c89fbde0c2f"
+  }
+}

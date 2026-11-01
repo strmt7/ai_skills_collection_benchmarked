@@ -128,3 +128,8 @@
 /included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/scanpy-counts-clustering/** text eol=lf
 /included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/scanpy-counts-clustering/provenance/** -text !eol
 /artifacts/repaired-skill-readiness/scanpy-counts-clustering-v1/** text eol=lf
+
+# Preserve source provenance for the scoped scvi-tools input guidance.
+/included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/scvi-model-inputs/** text eol=lf
+/included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/scvi-model-inputs/provenance/** -text !eol
+/artifacts/repaired-skill-readiness/scvi-model-inputs-v1/** text eol=lf

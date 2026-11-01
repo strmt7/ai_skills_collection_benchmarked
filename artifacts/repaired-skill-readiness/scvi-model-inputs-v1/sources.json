@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-01",
+  "pinned_source_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+  "pinned_entrypoint_sha256": "1909d968193a24c723a6b2f4c63a158d922ce1afbc4f119455af5166d31d64f0",
+  "upstream_candidate_commit": "526ebce143bc326f44471554e33d66a19c840360",
+  "upstream_entrypoint": {
+    "git_blob_sha1": "9866ed884a40f643a8f2813d8b072520789aba64",
+    "sha256": "b22633470d40ddaf31451fbbf811941fc89c3174c404ca359f25378691267e73"
+  },
+  "docrep_sdist": {
+    "version": "0.3.2",
+    "sha256": "ed8a17e201abd829ef8da78a0b6f4d51fb99a4cbd0554adbed3309297f964314",
+    "pypi_metadata_sha256": "20be1cf72f2f8bc3ddf33f1fcaf2b0ada85bdc63b5e4fdc52af587e888d0e664"
+  },
+  "pages": [
+    {
+      "url": "https://docs.scvi-tools.org/en/stable/api/reference/scvi.model.SCVI.html",
+      "native_result_sha256": "e17b60be90ae40015555ae7625f4eac7708717fe4d31ddc41324cb0aaeaec0f9",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200
+    },
+    {
+      "url": "https://docs.scvi-tools.org/en/stable/user_guide/models/sysvi.html",
+      "native_result_sha256": "a871d165404d2638488dad08faea4d98445e8714acd11473321d109350f34415",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200
+    },
+    {
+      "url": "https://docs.scvi-tools.org/en/latest/tutorials/notebooks/quick_start/api_overview.html",
+      "native_result_sha256": "60c806622e243fc1453421a6324edbc7db7510e7a7c370cc65ca24fd754883ac",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200
+    },
+    {
+      "url": "https://docs.scvi-tools.org/en/stable/api/user.html",
+      "native_result_sha256": "767cadde49a3b2a81e5dacd7db6d462bd6835d13873c8b8d16a4df9212b28182",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200
+    }
+  ],
+  "limits": [
+    "The example dataset was not inspected after a HEAD request returned HTTP 403.",
+    "Native captures and build logs remain outside Git.",
+    "The newer upstream skill has not been fully reviewed."
+  ]
+}

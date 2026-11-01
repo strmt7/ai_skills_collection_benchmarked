@@ -39,6 +39,9 @@ Some reviewed instructions have known limitations:
 - The pinned Scanpy workflow labels a log-normalized snapshot as raw counts and
   plots Leiden labels before creating them. The [counts and clustering overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/scanpy-counts-clustering/SKILL.md)
   covers these cases; [the review](research-scanpy-workflow.md) describes its tested scope.
+- The pinned scvi-tools skill applies its count-input advice to all models. The
+  [model-input overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/scvi-model-inputs/SKILL.md)
+  distinguishes SCVI and SysVI; [the review](research-scvi-model-inputs.md) explains the evidence and limits.
 - With GNU Make 4.4.1, the pinned Makefile generator's selective `.NOTPARALLEL`
   example does not serialize the named target recipes. [See the parallelism control](research-makefile-parallelism.md).
 - The pinned DOCX skill's global npm installation does not necessarily make the
