@@ -113,7 +113,12 @@ class ChartRenderTests(unittest.TestCase):
             args = ["--plan", "unused.json", "--output", str(output)]
             self.assertEqual(target.main(args), 0)
             self.assertEqual(target.main([*args, "--check"]), 0)
-            output.write_text("changed", encoding="utf-8")
+            crlf = output.read_bytes().replace(b"\n", b"\r\n")
+            output.write_bytes(crlf)
+            self.assertEqual(target.main([*args, "--check"]), 0)
+            changed = crlf.replace(b"plan_sha256=" + b"0" * 64, b"plan_sha256=1" + b"0" * 63, 1)
+            self.assertNotEqual(changed, crlf)
+            output.write_bytes(changed)
             self.assertEqual(target.main([*args, "--check"]), 1)
         self.assertFalse(json.loads(output_log.getvalue().splitlines()[-1])["ok"])
 

@@ -168,7 +168,7 @@ def main(argv: list[str] | None = None) -> int:
         report = run_plan(args.plan)
         rendered = render_svg(report)
         if args.check:
-            if args.output.read_bytes() != rendered:
+            if args.output.read_bytes().replace(b"\r\n", b"\n") != rendered.replace(b"\r\n", b"\n"):
                 raise ValueError("Chart differs from the current verified report")
         else:
             args.output.parent.mkdir(parents=True, exist_ok=True)
