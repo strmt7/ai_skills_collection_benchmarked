@@ -1,0 +1,16 @@
+{
+  "node": "v26.13.0",
+  "npm": "12.2.1",
+  "next": "Next.js v16.4.3",
+  "dev_help_exit": 0,
+  "build_help_exit": 0,
+  "analyze_help_exit": 0,
+  "unsupported_exit": 1,
+  "turbo_exit": 0,
+  "webpack_exit": 0,
+  "analyze_exit": 0,
+  "expected_html": true,
+  "root_in_analyzer": true,
+  "package_lock_sha256": "bb6e3620814e60c69becac9c7d78b0489663697efc93880e71126eb199bb28c9",
+  "agent_efficacy_scored": false
+}

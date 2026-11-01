@@ -1207,13 +1207,34 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/next-turbopack-v1/windows-result.json",
+            "sha256": "1750263eef3a404ebcd34bcace2e4eab38492ca5ea86040fe5888581ce249790",
+            "scope": "Selected version-specific component controls and upstream observation; not an agent evaluation."
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/next-turbopack-v1/linux-result.json",
+            "sha256": "19aceb5a695bb73686f50fd41e68894a47dd36afad8fa19c1b3f362f70351aa6",
+            "scope": "Selected version-specific component controls and upstream observation; not an agent evaluation."
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/next-turbopack-v1/upstream-observation.json",
+            "sha256": "bb37c645756835db4f8bada076b67e1e36dfd5851362229ace20f3399225517b",
+            "scope": "Selected version-specific component controls and upstream observation; not an agent evaluation."
           }
         ],
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/nextjs-turbopack/repair.json",
+            "sha256": "0534182588674fe9682cae796194b0a473217903cc9034fe3b0f85e27ff2966a",
+            "scope": "Maintained version-specific overlay; upstream mirror remains unchanged."
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {

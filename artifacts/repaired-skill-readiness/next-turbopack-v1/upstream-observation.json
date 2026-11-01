@@ -1,0 +1,9 @@
+{
+  "source_repository": "https://github.com/affaan-m/ECC",
+  "observed_commit": "b38be6a7f6350964d59328b52f0624e1d1d552d1",
+  "observed_commit_time": "2026-10-30T03:06:32Z",
+  "source_path": ".agents/skills/nextjs-turbopack/SKILL.md",
+  "git_blob_sha": "b29570308123e721c1aafd657839f2800510b020",
+  "normalized_sha256": "2beabec4326fc32e652db21378bae5f704c931a6ff50d0496b9c9f1c8340f82d",
+  "scope": "Compared source text and frontmatter with the pinned mirror; component checks do not measure agent effectiveness."
+}

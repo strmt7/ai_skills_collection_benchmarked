@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "affaan-m-everything-claude-code-agents-skills-nextjs-turbopack-skill-md",
+  "source_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+  "source_mirror": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/nextjs-turbopack",
+  "original_skill_sha256": "f65da15aabeb9dca7ae08525739e72ab16e79a78ff4004f7cab6ad2de1c2a79b",
+  "provenance_skill": "provenance/original.SKILL.md",
+  "repaired_skill_sha256": "bd5f4193ab5b3bb042010f358897fcf045fa6cdd7ef60414d143f06c5196b4ee",
+  "license_file": "LICENSE",
+  "license_sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+  "scope": "Version-specific bundler selection and bundle analysis; component controls do not measure agent effectiveness.",
+  "model_performance_claim": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/next-turbopack-v1/windows-result.json",
+  "additional_evidence": [
+    "artifacts/repaired-skill-readiness/next-turbopack-v1/linux-result.json",
+    "artifacts/repaired-skill-readiness/next-turbopack-v1/upstream-observation.json"
+  ],
+  "documented_repairs": [
+    "Use the installed CLI and version-specific documentation for bundler selection.",
+    "Use the documented analysis command and avoid unsupported performance claims."
+  ],
+  "evidence_sha256": {
+    "fixture/package-lock.json": "bb6e3620814e60c69becac9c7d78b0489663697efc93880e71126eb199bb28c9",
+    "fixture/package.json": "88f6de3b08c9bd25a8727707ff5d31a93ccafc66fe33e4d4d07d30fc1e01949b",
+    "fixture/project/app/layout.js": "313c75416442551fc0b1858490f74d828ab83505c5aa624639fe0e5d2bd71152",
+    "fixture/project/app/page.js": "125fe606d4bb07b1de481f362df456bdf4b0aed4598ee167dcf466efaff5f8e0",
+    "fixture/project/package.json": "4a0d76e1ba5c21e2ffbae9f7ecfc725d73db8a5562061650bbe30b6f171e9c97",
+    "linux-result.json": "19aceb5a695bb73686f50fd41e68894a47dd36afad8fa19c1b3f362f70351aa6",
+    "upstream-observation.json": "bb37c645756835db4f8bada076b67e1e36dfd5851362229ace20f3399225517b",
+    "windows-result.json": "1750263eef3a404ebcd34bcace2e4eab38492ca5ea86040fe5888581ce249790"
+  }
+}

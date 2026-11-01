@@ -1,0 +1,1 @@
+export default function Page() { return <main>control ready</main> }
