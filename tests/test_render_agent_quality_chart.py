@@ -18,6 +18,7 @@ class AgentQualityChartTests(unittest.TestCase):
     def report() -> dict[str, Any]:
         return {
             "protocol_sha256": "a" * 64,
+            "partition": "development",
             "conditions": {
                 "default": {
                     "planned_attempts": 4,

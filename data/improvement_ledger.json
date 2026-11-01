@@ -730,7 +730,7 @@
           {
             "path": "artifacts/agent-trials/development-v2-report/summary.json",
             "scope": "Joint injected eval-harness and strategic-compact bundle; one development task; all arms 3/3 task passes; no isolated skill effect or quality gain established.",
-            "sha256": "e50f991985a98ef3a42d7a55cbe6f5ee0f43f9318084ee443d6a416aa9a9484a"
+            "sha256": "0b838664647b98227be39d92b9b731966c8d2cec0768218785f8b03611877167"
           }
         ],
         "status": "in_progress"
@@ -1278,7 +1278,7 @@
           {
             "path": "artifacts/agent-trials/development-v2-report/summary.json",
             "scope": "Frozen earlier strategic-compact overlay and eval-harness bundle; one development task; all arms 3/3 task passes; no isolated skill effect or quality gain established. The later strategic-compact-current overlay has not been evaluated.",
-            "sha256": "e50f991985a98ef3a42d7a55cbe6f5ee0f43f9318084ee443d6a416aa9a9484a"
+            "sha256": "0b838664647b98227be39d92b9b731966c8d2cec0768218785f8b03611877167"
           }
         ],
         "status": "in_progress"
