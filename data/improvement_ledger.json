@@ -14986,6 +14986,11 @@
             "path": "artifacts/research/2026-11-02/dataframe-research-v1/report.json",
             "sha256": "60cad2cd81a765241ede3bd4e35dda5ea92718b467b48319b317bd0a4c09fd30",
             "scope": "Selected version-specific dataframe compatibility observations; not a full research review or agent evaluation."
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/vaex-delayed-statistics-v1/qualification.json",
+            "sha256": "33b2a229af27d6e7734b3a75aa9f9ae81b558845572da6b294a5ec175963e475",
+            "scope": "Selected Vaex CSV and delayed statistics controls; not a full research review or agent evaluation."
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -15022,8 +15027,14 @@
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/vaex-delayed-statistics/repair.json",
+            "sha256": "6e954e2faf404d7d553edb503e9cdad0486e6ebb4b5f302255badbe9185e0d6c",
+            "scope": "Selected Vaex delayed-statistics overlay with Windows and Linux component controls; not a full skill repair or agent evaluation."
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "K-Dense-AI/scientific-agent-skills",
       "source_signature": {

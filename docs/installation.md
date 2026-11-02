@@ -52,7 +52,8 @@ Some reviewed instructions have known limitations:
 - The locked Dask `sorted=True` index example assumes pre-sorted data. The
   [index overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/dask-index-queries/SKILL.md)
   covers selected unsorted inputs. Vaex 4.19 has Python and Dask version
-  constraints. [See the tested scope](research-dataframe-compatibility.md).
+  constraints; its [statistics overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/vaex-delayed-statistics/SKILL.md)
+  corrects selected delayed-execution guidance. [See the tested scope](research-dataframe-compatibility.md).
 - The pinned AnnData skill incorrectly says backed-mode metadata changes are
   saved automatically. The [AnnData I/O overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/anndata-io/SKILL.md)
   covers selected 10x readers and metadata writes. Its [component controls](../artifacts/repaired-skill-readiness/anndata-io-v2/qualification.json)

@@ -1,0 +1,29 @@
+{
+  "agent_performance_tested": false,
+  "artifact_kind": "maintained_runtime_repair",
+  "evidence_sha256": {
+    "build-requirements.txt": "0496f2e6a919f0b7391a91009453b77d9a641b5b8045593d7fa22762e6765a52",
+    "linux-result.json": "4629977e9170f1f571bac93b9aef75a1c366cadd4d38c1f32556620106e96277",
+    "qualification.json": "33b2a229af27d6e7734b3a75aa9f9ae81b558845572da6b294a5ec175963e475",
+    "reproduce.py": "131de3ff28caddf160027c9a63dc3d105b27b588d1fecc72ae39ad08c2c7264e",
+    "requirements-linux.txt": "09b4f3cc32f027630a38879929fc7ea258ed0bb7b9ff8adef4cc3da4a1041f55",
+    "requirements-windows.txt": "cdc4e5dae51c2d5b9701c34a97cf5a676d12d0db74a33fd3bc1f6de277d590e7",
+    "requirements.in": "8e490b38fb54fcf1e7c2a8bad344eed2b6b778f6ad8ae364b7ebb87f39ba47c9",
+    "windows-result.json": "4f520147b6d358a264dd668ac8df90f90154d33751de8a334fa1f947a202572d"
+  },
+  "full_skill_reviewed": false,
+  "overlay_sha256": {
+    "LICENSE": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1",
+    "SKILL.md": "139b206d134e9ae9c0a1ec95b6d4e9056d27a5814c87b3a9f2f7d00b0a1d88b2",
+    "provenance/original.SKILL.md": "53fc6ee59ecda323539566ed2fe83d547342f3ed5b9a8fae2278b4adff5ab392",
+    "provenance/original.io_operations.md": "8dc1340826cb51208b619a48c22a5a22e26e804c41a8132ee580957bc94dbe2b",
+    "provenance/original.performance.md": "8c028a3ed48171bd37b97fb9fa156a5ba5d90f03a967fba79524f01eeb75c0e2"
+  },
+  "readiness_evidence": "artifacts/repaired-skill-readiness/vaex-delayed-statistics-v1/qualification.json",
+  "schema_version": 1,
+  "scope": "Selected Vaex CSV and explicitly delayed mean and sum operations.",
+  "source_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+  "source_license_blob_sha1": "eb246475fd5a66b9bb56176f3a718984632dd98d",
+  "source_mirror": "included/skills/by-category/science-research-data-analysis/latest-release-community/vaex",
+  "source_skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-vaex-skill-md"
+}

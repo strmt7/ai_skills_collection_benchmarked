@@ -1,0 +1,17 @@
+{
+  "agent_performance_tested": false,
+  "checks": [
+    "original_mean_executes_at_call",
+    "assignment_does_not_trigger_execution",
+    "csv_uses_lazy_dataset",
+    "delayed_statistics_resolve_correctly",
+    "delayed_statistics_share_observed_pass"
+  ],
+  "dask": "2024.8.2",
+  "full_skill_reviewed": false,
+  "platform": "Windows",
+  "python": "3.12.10",
+  "schema_version": 1,
+  "skill_sha256": "139b206d134e9ae9c0a1ec95b6d4e9056d27a5814c87b3a9f2f7d00b0a1d88b2",
+  "vaex_core": "4.19.0"
+}

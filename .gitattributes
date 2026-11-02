@@ -228,3 +228,8 @@
 /included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/dask-index-queries/** text eol=lf
 /included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/dask-index-queries/provenance/** -text !eol
 /artifacts/repaired-skill-readiness/dask-index-queries-v1/** text eol=lf
+
+# Reviewed Vaex overlay and selected delayed-statistic controls
+/included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/vaex-delayed-statistics/** text eol=lf
+/included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/vaex-delayed-statistics/provenance/** -text !eol
+/artifacts/repaired-skill-readiness/vaex-delayed-statistics-v1/** text eol=lf

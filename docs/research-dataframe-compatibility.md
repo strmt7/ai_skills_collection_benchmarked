@@ -38,12 +38,23 @@ divisions. The default construction can require an expensive
 
 ## Vaex
 
+The locked performance reference describes an ordinary `mean()` call as
+deferred until its result is assigned. In the tested Vaex 4.19.0 environment,
+the mean executes at the call; assigning the returned value does not start the
+computation. Vaex's [asynchronous guide](https://vaex.io/docs/example_async.html)
+documents `delay=True` and explicit execution. The
+[delayed-statistics overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/vaex-delayed-statistics/SKILL.md)
+tests selected CSV and statistics examples on Windows and Linux. These small
+fixtures do not establish out-of-core behavior or performance.
+
 PyPI metadata for `vaex-core` 4.19.0 specifies Python `>=3.9,<3.13` and a
 Dask requirement below 2024.9. These constraints apply to that published
 package version, not every possible Vaex environment. Check the resolver and
-use separate environments when requirements conflict. The Vaex skill has not
-been runtime-tested in this review.
+use separate environments when requirements conflict. Its `aplus` dependency
+was available as a source distribution only, and its published metadata did
+not declare a license; redistribution terms remain to be reviewed.
 
-The [source-bound review record](../artifacts/research/2026-11-02/dataframe-research-v1/report.json)
-links version observations, source captures and component results. These are
-not coding-agent benchmark scores.
+The [initial source-bound review](../artifacts/research/2026-11-02/dataframe-research-v1/report.json)
+records the earlier package observations; the [Vaex qualification](../artifacts/repaired-skill-readiness/vaex-delayed-statistics-v1/qualification.json)
+records the later component controls. These are not coding-agent benchmark
+scores.

@@ -1,0 +1,56 @@
+{
+  "agent_performance_tested": false,
+  "dask_version": "2024.8.2",
+  "full_skill_reviewed": false,
+  "initial_control_failure": {
+    "reason": "The first control assumed a fresh executor counter; dataframes shared the counter in one process. The revised control compares before and after on the same executor.",
+    "stderr_sha256": "cb87b073b3b0193db952ff226284d44df8d9408bcfc96601a683a2b256e50470"
+  },
+  "limitations": [
+    "Small synthetic fixtures do not establish larger-than-memory behavior, performance or every Vaex input and operation.",
+    "The pass count is an observed implementation detail of the tested version, not a performance guarantee.",
+    "The source distribution license metadata is undeclared; redistribution terms have not been established.",
+    "The overlay addresses selected examples only and does not establish agent effectiveness."
+  ],
+  "local_python_versions": {
+    "linux": "3.12.3",
+    "windows": "3.12.10"
+  },
+  "requirements_sha256": {
+    "build-requirements.txt": "0496f2e6a919f0b7391a91009453b77d9a641b5b8045593d7fa22762e6765a52",
+    "requirements-linux.txt": "09b4f3cc32f027630a38879929fc7ea258ed0bb7b9ff8adef4cc3da4a1041f55",
+    "requirements-windows.txt": "cdc4e5dae51c2d5b9701c34a97cf5a676d12d0db74a33fd3bc1f6de277d590e7",
+    "requirements.in": "8e490b38fb54fcf1e7c2a8bad344eed2b6b778f6ad8ae364b7ebb87f39ba47c9"
+  },
+  "results": {
+    "linux-result.json": "4629977e9170f1f571bac93b9aef75a1c366cadd4d38c1f32556620106e96277",
+    "windows-result.json": "4f520147b6d358a264dd668ac8df90f90154d33751de8a334fa1f947a202572d"
+  },
+  "runner_sha256": "131de3ff28caddf160027c9a63dc3d105b27b588d1fecc72ae39ad08c2c7264e",
+  "schema_version": 1,
+  "scope": "Selected Vaex CSV and delayed-statistic examples on independent finite synthetic data.",
+  "skill_sha256": "139b206d134e9ae9c0a1ec95b6d4e9056d27a5814c87b3a9f2f7d00b0a1d88b2",
+  "source_distribution": {
+    "declared_license": "UNKNOWN",
+    "locally_built_wheel_distributed": false,
+    "name": "aplus",
+    "pypi_metadata_sha256": "ebf5df24eb76844a24e410549fe703c8fbd3d774dfc4c56b1f2784b2aa092763",
+    "sha256": "4f57025413bd9611fb54782b8f46946ea874ae7bb6dd876c0ec45c6a8d60f6e7",
+    "version": "0.11.0"
+  },
+  "sources": {
+    "async": {
+      "native_sha256": "3b1dd8761a349b21bf26ce4a8cd2b24970963b85fae1515e7f730aa38b98ea8a",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200,
+      "url": "https://vaex.io/docs/example_async.html"
+    },
+    "io": {
+      "native_sha256": "65b8cf2da5d2e1c8d645906c54e2e73a0094f348fcb473fa730bfb6dfef37b86",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200,
+      "url": "https://vaex.io/docs/guides/io.html"
+    }
+  },
+  "vaex_core_version": "4.19.0"
+}
