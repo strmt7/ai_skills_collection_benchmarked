@@ -55,12 +55,20 @@ def test_control_rejects_unreviewed_overlay_before_loading_dependencies(tmp_path
     node = shutil.which("node")
     if node is None:
         pytest.skip("Node is not installed")
-    run = subprocess.run(
+    with subprocess.Popen(
         [node, str(ARTIFACT / "control.cjs"), str(MIRROR), str(MIRROR), str(tmp_path)],
-        capture_output=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
         text=True,
-        check=False,
-        timeout=10,
-    )
-    assert run.returncode != 0
-    assert "Source or overlay does not match the reviewed content" in run.stderr
+    ) as process:
+        try:
+            _, stderr = process.communicate(timeout=10)
+        except subprocess.TimeoutExpired as error:
+            returncode_at_timeout = process.poll()
+            error.add_note(f"Child return code at timeout: {returncode_at_timeout!r}")
+            process.kill()
+            process.communicate()
+            raise
+    assert process.returncode != 0
+    assert "Source or overlay does not match the reviewed content" in stderr
+
