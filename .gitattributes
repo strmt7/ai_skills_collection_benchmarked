@@ -23,6 +23,11 @@
 /benchmarks/component-controls/frontend/native/** -text
 # The workflow-input control is bound to exact LF source bytes in its receipt.
 /benchmarks/component-controls/workflow-call-inputs/** text eol=lf
+# Preserve the npm repair's licensed originals and source-bound controls.
+/included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/npm-cache-install/** text eol=lf
+/included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/npm-cache-install/provenance/** -text !eol
+/artifacts/repaired-skill-readiness/npm-cache-install-v1/** text eol=lf
+/artifacts/repaired-skill-readiness/npm-cache-install-v1/raw/** -text !eol
 # Exact npm Windows captures are bound into the qualified dependency receipt.
 /benchmarks/component-controls/frontend/package.json -text
 /benchmarks/component-controls/frontend/package-lock.json -text

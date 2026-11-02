@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-github-actions-generator-skill-md",
+  "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+  "source_mirror": "included/skills/by-category/devops-cloud-operations/latest-release-devops/github-actions-generator",
+  "original_skill_sha256": "485a62c648f2a163fe479948409bd4b146dd3b47712f742452efadeab6dcbe3a",
+  "source_action_sha256": "6df9f7fb7b7034bbd8e66ecd2ae7342028a47a5d25136f8592b6c7e611b69add",
+  "license_file": "LICENSE",
+  "license_sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+  "scope": "npm package-cache restoration and unconditional locked installation on synthetic Windows and Linux fixtures.",
+  "model_performance_claim": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/npm-cache-install-v1/qualification.json",
+  "overlay_sha256": {
+    "LICENSE": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+    "NOTICE.md": "92b4d76b9ffb22c881cde080e5e7c1bb5d4f20107c390bb9af94497ecbf34db7",
+    "SKILL.md": "da9c0d97c0cfa751a457c47fa930ecf6d4e638618b8a2061b999fcb3827347ac",
+    "examples/npm-ci.yml": "59be851698c40800561454f57ebe90a399e8a5137e7831208460870ea20decdc",
+    "provenance/original-action.yml": "6df9f7fb7b7034bbd8e66ecd2ae7342028a47a5d25136f8592b6c7e611b69add",
+    "provenance/original.SKILL.md": "485a62c648f2a163fe479948409bd4b146dd3b47712f742452efadeab6dcbe3a"
+  },
+  "evidence_sha256": {
+    "github_fixture.py": "026ea2561859809e3517f9287ad5783247bb8adb3dcb40d1f266b03b282e75f6",
+    "linux-node24-npm11.json": "e9fb623c5f138f4a28e045ed4dc480242e1aef5d2846bc67e448d98505964ebd",
+    "qualification.json": "9eed2c1eaaa34497d4dc58fe292d9caad969da7ed3644716f1b15379bec85a32",
+    "reproduce.py": "6e0723f33cf4fce2ae1502b5fb7afcc392c95e2b4e3472a6a093ada7794bd3c9",
+    "windows-node26-npm11.json": "48758c6b0916e3969cad187e17b8da45e52210f4971ef159847c253ca81ce699",
+    "windows-node26-npm12.json": "e7df9b2d7519cb7eff80479c69fce0450b5bc8b689997ec7ec31d9ab0fb53ad7"
+  }
+}

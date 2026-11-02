@@ -2133,6 +2133,18 @@
           {
             "path": "artifacts/research/2026-11-02/workflow-call-inputs/qualification.json",
             "sha256": "dc52645a921ab7dee7ce36959bba9ab7d648fa72dfa0b75d4c518fae0daf53c5"
+          },
+          {
+            "path": "docs/research-npm-cache-install.md",
+            "sha256": "8a6c8ef49310671b890707ffa6e3a3ba0b0384598abc508e623fc194b10d3727"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/npm-cache-install-v1/reproduce.py",
+            "sha256": "6e0723f33cf4fce2ae1502b5fb7afcc392c95e2b4e3472a6a093ada7794bd3c9"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/npm-cache-install-v1/qualification.json",
+            "sha256": "9eed2c1eaaa34497d4dc58fe292d9caad969da7ed3644716f1b15379bec85a32"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -2185,7 +2197,8 @@
           },
           "examples/actions/setup-node-cached/action.yml": {
             "sha256": "6df9f7fb7b7034bbd8e66ecd2ae7342028a47a5d25136f8592b6c7e611b69add",
-            "status": "pending"
+            "status": "reviewed",
+            "review_scope": "Complete source text inspected; npm cache-hit behavior and lockfile failures tested on local synthetic fixtures. Yarn and pnpm behavior remains unqualified."
           },
           "examples/caching/docker-buildkit.yml": {
             "sha256": "9a87d25deddd97734718146da855f311b6493967eb336fab1520368cea30b1c3",
@@ -2276,6 +2289,10 @@
           {
             "path": "included/improved/skills/workflow-call-inputs/SKILL.md",
             "sha256": "b78c8c1fc96395fc1f8ef72701b63eb445f58cf6834f89f7483a14357b5272df"
+          },
+          {
+            "path": "included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/npm-cache-install/repair.json",
+            "sha256": "4b68c5773e16747c2cf955068cd4fa120067f6cc6f3358831975653c5b7f5b52"
           }
         ],
         "status": "in_progress"

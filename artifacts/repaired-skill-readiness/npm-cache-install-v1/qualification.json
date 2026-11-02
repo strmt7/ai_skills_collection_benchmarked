@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "runner_sha256": "6e0723f33cf4fce2ae1502b5fb7afcc392c95e2b4e3472a6a093ada7794bd3c9",
+  "github_fixture_sha256": "026ea2561859809e3517f9287ad5783247bb8adb3dcb40d1f266b03b282e75f6",
+  "results": {
+    "windows-node26-npm12.json": "e7df9b2d7519cb7eff80479c69fce0450b5bc8b689997ec7ec31d9ab0fb53ad7",
+    "linux-node24-npm11.json": "e9fb623c5f138f4a28e045ed4dc480242e1aef5d2846bc67e448d98505964ebd",
+    "windows-node26-npm11.json": "48758c6b0916e3969cad187e17b8da45e52210f4971ef159847c253ca81ce699"
+  },
+  "agent_performance_tested": false,
+  "github_cache_service_tested_in_local_results": false,
+  "raw_logs": "Native local logs are retained outside the repository; the hosted workflow uploads new raw observations.",
+  "scope": "Synthetic offline npm fixture and simulated source cache-hit condition; no agent trial."
+}

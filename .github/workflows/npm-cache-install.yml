@@ -1,0 +1,192 @@
+name: npm cache installation controls
+
+on:
+  push:
+    paths:
+      - 'artifacts/repaired-skill-readiness/npm-cache-install-v1/**'
+      - 'included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/npm-cache-install/**'
+      - 'included/skills/by-category/devops-cloud-operations/latest-release-devops/github-actions-generator/examples/actions/setup-node-cached/**'
+      - 'tests/test_npm_cache_install.py'
+      - '.github/workflows/npm-cache-install.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '25 9 * * 4'
+
+concurrency:
+  group: npm-cache-install-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  local-controls:
+    name: Offline npm controls (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      GIT_CONFIG_COUNT: '1'
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: 'true'
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: '0.13.6'
+          python-version: '3.13.18'
+          activate-environment: 'true'
+          venv-path: ${{ runner.temp }}/npm-cache-control-venv
+          enable-cache: 'false'
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '26.13.0'
+          package-manager-cache: false
+      - name: Exercise the source and maintained npm paths
+        shell: pwsh
+        run: |
+          $node = python -c "import shutil; print(shutil.which('node'))"
+          $npm = python -c "import shutil; print(shutil.which('npm.cmd') or shutil.which('npm'))"
+          python artifacts/repaired-skill-readiness/npm-cache-install-v1/reproduce.py --node $node --npm $npm --output-dir (Join-Path $env:RUNNER_TEMP 'npm-cache-control')
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Retain native observations
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: npm-cache-local-${{ matrix.os }}
+          path: ${{ runner.temp }}/npm-cache-control/
+          if-no-files-found: error
+          retention-days: 14
+
+  seed:
+    name: Seed isolated GitHub caches
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      npm_config_offline: 'true'
+      npm_config_audit: 'false'
+      npm_config_fund: 'false'
+      npm_config_update_notifier: 'false'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: catalog
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '26.13.0'
+          package-manager-cache: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.14.9'
+      - name: Create a disposable fixture outside the checkout
+        run: python -B catalog/artifacts/repaired-skill-readiness/npm-cache-install-v1/github_fixture.py prepare --workspace . --run-id "${{ github.run_id }}" --attempt "${{ github.run_attempt }}"
+      - name: Prepare the maintained action's cache
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '26.13.0'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Run the original action on a cache miss
+        id: original
+        uses: ./catalog/included/skills/by-category/devops-cloud-operations/latest-release-devops/github-actions-generator/examples/actions/setup-node-cached
+        with:
+          node-version: '26.13.0'
+          package-manager: npm
+          cache-dependency-path: package-lock.json
+      - name: Confirm the unique source cache was a miss
+        env:
+          CACHE_HIT: ${{ steps.original.outputs.cache-hit }}
+        run: test "$CACHE_HIT" != 'true'
+      - name: Retain the identical fixture for fresh jobs
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: npm-cache-fixture
+          path: |
+            package.json
+            package-lock.json
+            fixture.tgz
+          if-no-files-found: error
+          retention-days: 14
+
+  source-hit:
+    name: Original action on a real cache hit
+    needs: seed
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      npm_config_offline: 'true'
+      npm_config_audit: 'false'
+      npm_config_fund: 'false'
+      npm_config_update_notifier: 'false'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: catalog
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.14.9'
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: npm-cache-fixture
+      - name: Run the original action on a fresh workspace
+        id: original
+        uses: ./catalog/included/skills/by-category/devops-cloud-operations/latest-release-devops/github-actions-generator/examples/actions/setup-node-cached
+        with:
+          node-version: '26.13.0'
+          package-manager: npm
+          cache-dependency-path: package-lock.json
+      - name: Verify the hit omitted installation, then run npm ci
+        env:
+          CACHE_HIT: ${{ steps.original.outputs.cache-hit }}
+        run: python -B catalog/artifacts/repaired-skill-readiness/npm-cache-install-v1/github_fixture.py probe --workspace . --output "$RUNNER_TEMP/source-cache-probe" --cache-hit "$CACHE_HIT" --mode source
+      - name: Retain native observations
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: npm-cache-source-probe
+          path: ${{ runner.temp }}/source-cache-probe/
+          if-no-files-found: error
+          retention-days: 14
+
+  maintained-hit:
+    name: Maintained steps on a real cache hit
+    needs: seed
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      npm_config_offline: 'true'
+      npm_config_audit: 'false'
+      npm_config_fund: 'false'
+      npm_config_update_notifier: 'false'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: catalog
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.14.9'
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: npm-cache-fixture
+      - name: Restore the maintained example's npm cache
+        id: setup
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '26.13.0'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Verify npm ci installs from the restored cache
+        env:
+          CACHE_HIT: ${{ steps.setup.outputs.cache-hit }}
+        run: python -B catalog/artifacts/repaired-skill-readiness/npm-cache-install-v1/github_fixture.py probe --workspace . --output "$RUNNER_TEMP/maintained-cache-probe" --cache-hit "$CACHE_HIT" --mode maintained
+      - name: Retain native observations
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: npm-cache-maintained-probe
+          path: ${{ runner.temp }}/maintained-cache-probe/
+          if-no-files-found: error
+          retention-days: 14

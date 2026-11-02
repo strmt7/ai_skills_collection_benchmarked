@@ -34,6 +34,9 @@ Some reviewed instructions have known limitations:
 - The pinned GitHub Actions generator lists unsupported input types for
   reusable workflows. The experimental [workflow-call input overlay](../included/improved/skills/workflow-call-inputs/SKILL.md)
   distinguishes reusable and manual-dispatch inputs. [See the controls](research-workflow-call-inputs.md).
+- Its Node setup example can skip npm installation after restoring only the
+  package cache. The [npm cache repair](../included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/npm-cache-install/SKILL.md)
+  keeps installation unconditional. [See the component review](research-npm-cache-install.md).
 - The pinned clarification skill can require repeated confirmation after the
   user has already authorized proceeding. The experimental
   [clarification overlay](../included/improved/skills/clarify-when-needed/SKILL.md)

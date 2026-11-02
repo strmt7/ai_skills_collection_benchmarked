@@ -1,0 +1,74 @@
+{
+  "platform": "Windows",
+  "python_version": "3.13.17",
+  "node_version": "v26.13.0",
+  "npm_version": "11.20.0",
+  "source_action_sha256": "6df9f7fb7b7034bbd8e66ecd2ae7342028a47a5d25136f8592b6c7e611b69add",
+  "overlay_sha256": "da9c0d97c0cfa751a457c47fa930ecf6d4e638618b8a2061b999fcb3827347ac",
+  "example_sha256": "59be851698c40800561454f57ebe90a399e8a5137e7831208460870ea20decdc",
+  "fixture_tarball_sha256": "ce045384ce41d3761800d6111207248cbf8903d02979a55dbaa1f9e6afac9cdf",
+  "runner_sha256": "6e0723f33cf4fce2ae1502b5fb7afcc392c95e2b4e3472a6a093ada7794bd3c9",
+  "restored_cache_contains_package": true,
+  "fresh_workspace_had_node_modules": false,
+  "original_cache_hit_missing_dependency": true,
+  "maintained_offline_install_succeeded": true,
+  "missing_and_mismatched_locks_rejected": true,
+  "logs": {
+    "node-version": {
+      "exit_code": 0,
+      "stdout_sha256": "00c8158eb097d27ae16774d820ae2feb3526c7057b57b63426401bfba18be8a8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "npm-version": {
+      "exit_code": 0,
+      "stdout_sha256": "6784d6c924df1c8341f9f841f5b5b20c37255de3d34f923baebc0a557d5d5201",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "lock": {
+      "exit_code": 0,
+      "stdout_sha256": "775ee38466a4fa0c0ba933d87441bce5f5bf1363ad2596e61491da3b917bac34",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "seed-install": {
+      "exit_code": 0,
+      "stdout_sha256": "d1da091f1ba3e1483b4db99a92d8c5a48cf156ede08f4affa7e8915880bf2971",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "seed-cache-list": {
+      "exit_code": 0,
+      "stdout_sha256": "0e4ed04f321f9aa6776fac9f2a18858418485656d455560181d71499ff4c4b78",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "restored-cache-list": {
+      "exit_code": 0,
+      "stdout_sha256": "0e4ed04f321f9aa6776fac9f2a18858418485656d455560181d71499ff4c4b78",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "original-hit-load": {
+      "exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "b9f10e0b14b86dcf258e453085075b2eabdddb189a105c7386b94b493392187b"
+    },
+    "maintained-install": {
+      "exit_code": 0,
+      "stdout_sha256": "a08f684a3e9f1e43d869c7a98408a2ae729e95f845ca2301228e05239b56512b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "maintained-load": {
+      "exit_code": 0,
+      "stdout_sha256": "747955ac76cb80ab72be83494ffea2e377a6e775a3208e18892dbaf31d7ee385",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "missing-lock": {
+      "exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e4eaaf2bb58d2bb0abf5df395aaf3e2db7b6810aae9e2bb1313743ea49100e01"
+    },
+    "mismatched-lock": {
+      "exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "61947117c79024670418fabdf0865e136470cc94b734ec77a902e5b29acc8786"
+    }
+  },
+  "scope": "Synthetic npm fixture and simulated cache-hit condition; no GitHub cache service or agent trial."
+}
