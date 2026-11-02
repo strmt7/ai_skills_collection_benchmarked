@@ -153,6 +153,8 @@ Some reviewed instructions have known limitations:
 These examples are not an exhaustive review of the catalog.
 The [upstream tree inventory](research-upstream-skill-trees.md) identifies
 selected source changes that still require review before adoption.
+The [scientific source provenance review](research-scientific-provenance.md)
+records an author notice and a later license declaration for one skill.
 
 ## Load it in your agent
 

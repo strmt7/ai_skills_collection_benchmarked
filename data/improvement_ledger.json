@@ -10030,6 +10030,11 @@
             "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
             "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
             "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/what-if-oracle-provenance/record.json",
+            "scope": "Source-bound comparison of the historical author MIT notice, pinned mirror and later candidate license declaration; no legal clearance or runtime evaluation.",
+            "sha256": "b462dc83454d55213f1eeaabde4d0358b37bb89c9a6d5876c4f1b338867e9912"
           }
         ],
         "status": "in_progress"

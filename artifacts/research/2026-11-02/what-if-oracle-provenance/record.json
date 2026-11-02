@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "observation_date": "2026-11-02",
+  "scope": "Historical source provenance for one locked skill and the corresponding latest-release candidate; not a license determination or runtime evaluation.",
+  "origin": {
+    "repository": "ashrafkahoush-ux/Claude-consciousness-skills",
+    "initial_commit": "f4954b1de0cd00a74c8e16d4bc62b74d3d26d238",
+    "initial_tree": "e0d0afe3403759d7165823d4a8b8fdecc8c5e738",
+    "license_change_commit": "23cebd4aeb8d80c68088b9944b68c559accb4c11",
+    "license_change_tree": "564fc8b6cdbd25b00dd4bf075b51d54f485950e0",
+    "initial_license": {
+      "path": "artifacts/source-notices/ahk-what-if-oracle/f4954b1de0cd00a74c8e16d4bc62b74d3d26d238/LICENSE",
+      "sha256": "05f9fdb11e5ad998994cfd4566de85c47d69c0b2eb4e0b0ee954cc84e3e6708f",
+      "git_blob": "96aada3614fb276480435ccc107c1bd26c23b3eb"
+    },
+    "initial_skill": {
+      "path": "artifacts/research/2026-11-02/what-if-oracle-provenance/origin-initial-SKILL.md",
+      "sha256": "30db5ff7d690edb625fa47337cb279a21c5c780caad40dfa81fe1cf23a480e17",
+      "git_blob": "a379f6c37f7e5aa18a7575b686500ea5ff0ce815"
+    },
+    "initial_reference": {
+      "path": "artifacts/research/2026-11-02/what-if-oracle-provenance/origin-initial-scenario-templates.md",
+      "sha256": "5bc6746f7d53248c23ae77aa89a9e99e5e2cd1fb0e79b0894672802255569159",
+      "git_blob": "6718bd0d5b260f616f6f14486a225f4a119455a1"
+    },
+    "initial_tree_capture": {
+      "sha256": "1460c6b9b98deebc2f0055cd1ae8539b5809ef694266064b1b23ffb0f0d3f496",
+      "bytes": 4840
+    },
+    "license_change_tree_capture": {
+      "sha256": "38b4da4237fd4f26a70908af3f681b4929a26768fbd2e585cfdac77f9c331e5f",
+      "bytes": 5351
+    },
+    "initial_commit_api_capture": {
+      "sha256": "768573d7f5a5f1a90b3b8e77a76cd4999c5f351e0273f76e72f52d8199b3f8b2",
+      "bytes": 1352
+    },
+    "license_change_commit_api_capture": {
+      "sha256": "7a02cbd7d81736bc83490ea5e3cc061711d3ccfc0ae980245950c8625c0ab036",
+      "bytes": 1836
+    },
+    "license_history_api_capture": {
+      "sha256": "ffb07513f4849b80cc095e45767d98291ac6d936fa54976f24d7e52ed3d3b486",
+      "bytes": 7943
+    },
+    "later_license_git_blob": "26ab6986e3e51ffe0699002b8689578170653a11"
+  },
+  "pinned_source": {
+    "repository": "K-Dense-AI/scientific-agent-skills",
+    "commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+    "skill": {
+      "path": "artifacts/research/2026-11-02/what-if-oracle-provenance/kdense-pinned-SKILL.md",
+      "sha256": "6696e69bfae3694f7e792d35fd10b7c54880eefadfe33ddfd0c1c51edf956473",
+      "git_blob": "076829c6788a1a57c1e5105b2c201aef69cb7c14"
+    },
+    "reference_git_blob": "6718bd0d5b260f616f6f14486a225f4a119455a1",
+    "root_license_sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1",
+    "relationship": "The pinned entrypoint equals the initial upstream entrypoint with four frontmatter lines inserted. The reference has the same Git blob at both pinned paths."
+  },
+  "candidate": {
+    "release": "v2.72.0",
+    "commit": "526ebce143bc326f44471554e33d66a19c840360",
+    "path": "skills/what-if-oracle/SKILL.md",
+    "git_blob": "dc6b38f8dd501155017f5d23099bdc0513fe5ab9",
+    "sha256": "509af149c8cfc8f17dd15608d6337eb8a7ff3f4056fcadeda573c5e527c68a97",
+    "frontmatter_license": "CC BY-NC-SA 4.0",
+    "root_license_sha256": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1"
+  },
+  "limitations": [
+    "The initial author license and later author license are different historical versions.",
+    "The latest skill declaration and root license have different scopes; this record does not resolve permissions or establish commercial suitability.",
+    "The GitHub API captures bind observed commits to trees but signatures were not independently validated.",
+    "The candidate was inspected as a source file, not executed or assessed for agent effectiveness."
+  ]
+}
