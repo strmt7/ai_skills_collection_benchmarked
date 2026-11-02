@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "scope": "Synthetic snapshot comparison component, not a benchmark or model evaluation",
+  "source_commit": "55bfe693f2a19f6b2f29aca3f54fe98b9d994668",
+  "reference_git_blob": "75044184e62c088a2b914b2f940606ff0e9ef94f",
+  "reference_sha256": "162e3cd015afa98503a8419c6955523ba7c4401cd50f34e7d8f7e601e8489d2c",
+  "files_sha256": {
+    "benchmarks/component-controls/simpo-postrun/compare.py": "b68f95f298f0ea12039e5b5bc8caa43bf9abdb45ba58f61fa5191121ef414ed0",
+    "benchmarks/component-controls/simpo-postrun/test_compare.py": "59af76bc89efe1eac3cfe54f33073054b89c96e286bb45d2da01f8ac0234de02",
+    "benchmarks/component-controls/simpo-postrun/reproduce.py": "dfeb83ca251756ae9b534637e025c498ac1fac40a3ddffd941932c0483b45869",
+    "benchmarks/component-controls/simpo-postrun/requirements.in": "0711d68ad9cb1ba302aa016d8ceb49254ef33d109bab5dcc725b41aca41e9da1",
+    "benchmarks/component-controls/simpo-postrun/requirements-windows.txt": "bc3ec7d4d4f363aaae9f3ea20fa26758bca0428dfb7ac38971d6a47b12839d6c",
+    "benchmarks/component-controls/simpo-postrun/requirements-linux.txt": "c3799146f85ce133c4e75403c40d2807a7b1f8797076cf7cf33906dafb66f7c7",
+    "artifacts/research/2026-11-02/simpo-postrun-comparison/windows-result.json": "a12bc1f1593815432fc674a414ee0fcb12c50fff040d95423276d292775a80c6",
+    "artifacts/research/2026-11-02/simpo-postrun-comparison/linux-result.json": "835d3878a67299c9edacccc9c85c88b753e6f07584a8f6ec5b35c77c9d26ac38"
+  },
+  "test_results": {
+    "windows": "20 passed",
+    "linux": "20 passed"
+  },
+  "limitations": [
+    "Synthetic supplied bytes; archive freshness and generation are not established",
+    "Upstream harness and model trials were not executed",
+    "Reference-relative tolerance differs from upstream initial comparison"
+  ]
+}

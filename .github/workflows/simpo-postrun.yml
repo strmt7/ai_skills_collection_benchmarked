@@ -1,0 +1,85 @@
+name: SimPO snapshot comparison controls
+
+on:
+  push:
+    paths:
+      - 'benchmarks/component-controls/simpo-postrun/**'
+      - 'artifacts/research/2026-11-02/simpo-postrun-comparison/**'
+      - 'tests/test_simpo_postrun_evidence.py'
+      - '.github/workflows/simpo-postrun.yml'
+      - '.gitattributes'
+  workflow_dispatch:
+  schedule:
+    - cron: '20 8 * * 3'
+
+concurrency:
+  group: simpo-postrun-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  controls:
+    name: Synthetic snapshot controls (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    env:
+      GIT_CONFIG_COUNT: '1'
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: 'true'
+      PYTEST_DISABLE_PLUGIN_AUTOLOAD: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            requirements: requirements-linux.txt
+          - os: windows-latest
+            requirements: requirements-windows.txt
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: '0.13.6'
+          python-version: '3.13.18'
+          activate-environment: 'true'
+          venv-path: ${{ runner.temp }}/simpo-postrun-venv
+          enable-cache: 'false'
+      - name: Install the pinned component dependencies
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          python -c "import platform,sys; sys.exit(platform.python_version() != '3.13.18' or sys.prefix == sys.base_prefix)"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          uv pip install --require-hashes --only-binary=:all: -r "benchmarks/component-controls/simpo-postrun/${{ matrix.requirements }}"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          uv pip check
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Test the comparator
+        shell: pwsh
+        run: |
+          python -m pytest -q -o addopts='' -p no:cacheprovider benchmarks/component-controls/simpo-postrun/test_compare.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Retrieve the pinned public development reference
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $content = gh api repos/benchflow-ai/skillsbench/git/blobs/75044184e62c088a2b914b2f940606ff0e9ef94f --jq .content
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          [IO.File]::WriteAllBytes("$env:RUNNER_TEMP/simpo-reference.npz", [Convert]::FromBase64String(($content -join '')))
+      - name: Exercise the pinned-reference comparison
+        shell: pwsh
+        run: |
+          python benchmarks/component-controls/simpo-postrun/reproduce.py --reference "$env:RUNNER_TEMP/simpo-reference.npz" > "$env:RUNNER_TEMP/simpo-postrun-result.json"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Retain the component result
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: simpo-postrun-${{ matrix.os }}
+          path: ${{ runner.temp }}/simpo-postrun-result.json
+          if-no-files-found: error
+          retention-days: 14

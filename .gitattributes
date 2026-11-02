@@ -174,3 +174,7 @@
 /included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/bash-script-generator/** text eol=lf
 /included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/bash-script-generator/provenance/** -text !eol
 /artifacts/repaired-skill-readiness/bash-generator-v1/** text eol=lf
+
+# Keep the comparison control and its recorded evidence byte-stable.
+/benchmarks/component-controls/simpo-postrun/** text eol=lf
+/artifacts/research/2026-11-02/simpo-postrun-comparison/** text eol=lf

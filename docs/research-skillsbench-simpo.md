@@ -31,3 +31,31 @@ score a model. It does not establish how often a real submission produces a
 wrong regenerated archive. No held-out task content was read. Preserve the
 upstream verifier and define any corrected post-run comparison in a distinct,
 predeclared evaluation protocol.
+
+## Separate snapshot comparison control
+
+The [post-run comparison control](../benchmarks/component-controls/simpo-postrun/compare.py)
+compares supplied archive bytes with the pinned public reference. It checks the
+reference digest and requires one finite, real floating-point loss vector of
+exactly 100 elements. It rejects a wrong key, broadcastable wrong shape,
+nonfinite values, and values outside tolerance. Missing input or an invalid
+reference yields an unavailable result rather than a score. The component
+checks and their [recorded results](../artifacts/research/2026-11-02/simpo-postrun-comparison/qualification.json)
+use synthetic archives and the public development-task reference.
+
+The tolerance values match the upstream task (`rtol=1e-5`, `atol=1e-6`),
+but this comparison deliberately puts the reference on the right-hand side of
+`numpy.allclose`; the upstream initial comparison uses the generated values on
+that side. Relative tolerance is asymmetric, so this is a distinct rule, not
+an equivalent implementation of the original verifier. See the
+[NumPy allclose documentation](https://numpy.org/doc/stable/reference/generated/numpy.allclose.html).
+
+This control does not generate the archive, establish its freshness, execute
+the upstream program or harness, validate the reference's scientific
+correctness, or measure agent performance. It is not integrated into a model
+trial. This public task is development-exposed and is not a held-out test.
+To exercise the control with a separately obtained pinned reference archive:
+
+```sh
+python benchmarks/component-controls/simpo-postrun/reproduce.py --reference path/to/loss.npz
+```

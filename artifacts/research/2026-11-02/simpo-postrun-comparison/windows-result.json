@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "platform": "Windows",
+  "python": "3.13.18",
+  "numpy": "2.5.4",
+  "reference_sha256": "162e3cd015afa98503a8419c6955523ba7c4401cd50f34e7d8f7e601e8489d2c",
+  "comparator_sha256": "b68f95f298f0ea12039e5b5bc8caa43bf9abdb45ba58f61fa5191121ef414ed0",
+  "reference_shape": [
+    100
+  ],
+  "prior_correct_sha256": "e1b94399406bf1f6d685492ee52c7d14139c75d3467b91da4832166dc8df540b",
+  "regenerated_cases": {
+    "correct": {
+      "reference_sha256": "162e3cd015afa98503a8419c6955523ba7c4401cd50f34e7d8f7e601e8489d2c",
+      "generated_sha256": "e1b94399406bf1f6d685492ee52c7d14139c75d3467b91da4832166dc8df540b",
+      "shape": [
+        100
+      ],
+      "rtol": 1e-05,
+      "atol": 1e-06,
+      "generation_proven": false,
+      "agent_performance_tested": false,
+      "status": "matching",
+      "reason": "within_tolerance"
+    },
+    "wrong_values": {
+      "reference_sha256": "162e3cd015afa98503a8419c6955523ba7c4401cd50f34e7d8f7e601e8489d2c",
+      "generated_sha256": "7807bab4308070c4fc201b25cf2641b7ea48aac0c1b61940dcd7fe3a7878a40e",
+      "shape": [
+        100
+      ],
+      "rtol": 1e-05,
+      "atol": 1e-06,
+      "generation_proven": false,
+      "agent_performance_tested": false,
+      "status": "nonmatching",
+      "reason": "values_outside_tolerance"
+    },
+    "wrong_key": {
+      "reference_sha256": "162e3cd015afa98503a8419c6955523ba7c4401cd50f34e7d8f7e601e8489d2c",
+      "generated_sha256": "6e687f3fa59a86dc5a4bbcd5be071b1d7e8159fcf252d372d1d2438e6b6f3b5e",
+      "shape": [
+        100
+      ],
+      "rtol": 1e-05,
+      "atol": 1e-06,
+      "generation_proven": false,
+      "agent_performance_tested": false,
+      "status": "nonmatching",
+      "reason": "missing_or_duplicate_losses"
+    },
+    "broadcastable_shape": {
+      "reference_sha256": "162e3cd015afa98503a8419c6955523ba7c4401cd50f34e7d8f7e601e8489d2c",
+      "generated_sha256": "5d754cfeeab0f116d73d7fa18f98451da210e9b2298d12c44b5a0510e7a82ff6",
+      "shape": [
+        100
+      ],
+      "rtol": 1e-05,
+      "atol": 1e-06,
+      "generation_proven": false,
+      "agent_performance_tested": false,
+      "status": "nonmatching",
+      "reason": "shape_mismatch"
+    },
+    "nonfinite": {
+      "reference_sha256": "162e3cd015afa98503a8419c6955523ba7c4401cd50f34e7d8f7e601e8489d2c",
+      "generated_sha256": "48f7601fbdb7c8046b8bc62ae08e9144e84b8c3a091baa8dbd8ec5cd70b2d0a5",
+      "shape": [
+        100
+      ],
+      "rtol": 1e-05,
+      "atol": 1e-06,
+      "generation_proven": false,
+      "agent_performance_tested": false,
+      "status": "nonmatching",
+      "reason": "nonfinite_values"
+    }
+  },
+  "subprocess_or_regeneration_executed": false,
+  "actual_generation_proven": false,
+  "benchmark_harness_executed": false,
+  "agent_performance_tested": false
+}
