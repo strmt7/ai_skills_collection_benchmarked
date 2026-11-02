@@ -65,6 +65,12 @@ holdouts, skill selection tests and report graphs remain required. The public
 qualifies dataset input construction only; it is not an agent benchmark result. Do not tune
 against final holdouts or omit failures to produce a favorable chart.
 
+A [second development-task candidate](../benchmarks/agent-effectiveness/development/simpo-verifier-v1/TASK.md)
+uses the public SkillsBench verifier defect and has independently stated
+acceptance controls. It is development-exposed and has not been integrated into
+the confined grader or used in a model trial. Its calibration results do not
+change the single-task trial count or establish an agent advantage.
+
 ## Completed first matched block
 
 All nine planned protocol-v2 attempts completed. Default, third-party Karpathy

@@ -59,3 +59,9 @@ To exercise the control with a separately obtained pinned reference archive:
 ```sh
 python benchmarks/component-controls/simpo-postrun/reproduce.py --reference path/to/loss.npz
 ```
+
+The separate [development-task candidate](../benchmarks/agent-effectiveness/development/simpo-verifier-v1/TASK.md)
+uses the original verifier as a coding fixture and calibrates its acceptance
+cases against the unmodified verifier and two reference repairs. Its subprocess
+is simulated and the task is already exposed; it is not a model score or a
+qualified grader for agent submissions.

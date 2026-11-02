@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "cases": [
+    "test_valid_initial_and_regenerated_values_are_accepted[correct]",
+    "test_valid_initial_and_regenerated_values_are_accepted[within_tolerance]",
+    "test_invalid_input_or_regenerated_output_is_rejected[wrong_initial]",
+    "test_invalid_input_or_regenerated_output_is_rejected[wrong_initial_key]",
+    "test_invalid_input_or_regenerated_output_is_rejected[wrong_initial_shape]",
+    "test_invalid_input_or_regenerated_output_is_rejected[missing_initial]",
+    "test_invalid_input_or_regenerated_output_is_rejected[missing_reference]",
+    "test_invalid_input_or_regenerated_output_is_rejected[missing_environment]",
+    "test_invalid_input_or_regenerated_output_is_rejected[wrong_python_version]",
+    "test_invalid_input_or_regenerated_output_is_rejected[subprocess_failure]",
+    "test_invalid_input_or_regenerated_output_is_rejected[missing_regenerated]",
+    "test_invalid_input_or_regenerated_output_is_rejected[stale_regenerated]",
+    "test_invalid_input_or_regenerated_output_is_rejected[wrong_values]",
+    "test_invalid_input_or_regenerated_output_is_rejected[outside_tolerance]",
+    "test_invalid_input_or_regenerated_output_is_rejected[wrong_key]",
+    "test_invalid_input_or_regenerated_output_is_rejected[wrong_shape]",
+    "test_invalid_input_or_regenerated_output_is_rejected[nonfinite]"
+  ]
+}

@@ -184,3 +184,8 @@
 /included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-ts-checkpoint/provenance/** -text !eol whitespace=cr-at-eol
 /artifacts/repaired-skill-readiness/azure-eventhub-ts-checkpoint-v1/** text eol=lf
 /artifacts/repaired-skill-readiness/azure-eventhub-ts-checkpoint-v1/raw/** -text !eol whitespace=cr-at-eol
+
+# Preserve the upstream verifier and portable development controls.
+/benchmarks/agent-effectiveness/development/simpo-verifier-v1/** text eol=lf
+/benchmarks/agent-effectiveness/development/simpo-verifier-v1/fixture/** -text !eol whitespace=cr-at-eol
+/artifacts/research/2026-11-02/simpo-verifier-task-calibration/** text eol=lf

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "platform": "Windows",
+  "python": "3.13.18",
+  "numpy": "2.5.4",
+  "pytest": "9.1.1",
+  "inputs_sha256": {
+    "fixture/test_outputs.py": "05590869057aeaac1032f2177b0b2bf80f56828af3dba66f100e4d1346b2e62f",
+    "controls/test_acceptance.py": "f086c929bf24ba398c4a531724ad8b945fe886d51dcbe8c1743e3ca088a8e27b",
+    "controls/reference.py": "97885ede75808ca43b8b8e431b46df831fd487e8d771b4394280206c0f623c64",
+    "controls/reference_pathlib.py": "dc15cf0507e23b9c734f4107622dc90a138fe634f1618c1a93d3ae9d901037a6",
+    "cases.json": "251b7b37b3959df3f2a3a9783e51962701ba70b51d189fe52d34873441f4e132",
+    "controls/calibrate.py": "f66292eb6e1241abc890538dbcc90b93ace2680fa02fdb902068473f6a58dae7"
+  },
+  "controls": [
+    {
+      "control": "reference",
+      "passed": 17,
+      "failed_cases": [],
+      "stdout_sha256": "be988d8d28a4f55d26d3cc161a74455075e00523e776ca8281ccbad0dd2d2f7a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "junit_sha256": "ec5f6de5d6c91910d838528cecba0cccb83b908c29ccaf464376776a4ffb78b8"
+    },
+    {
+      "control": "reference_pathlib",
+      "passed": 17,
+      "failed_cases": [],
+      "stdout_sha256": "f27e36380d43f3df89341a23d20dc90719ca4c3eea02dadf4a59dd3aaa82b108",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "junit_sha256": "01cf15355162646ffd185dbc26bccd8b312531b0fe403f9ea8e00bde5f60fc40"
+    }
+  ],
+  "original_control": "not run: Linux source environment",
+  "subprocess_simulated": true,
+  "live_simpo_training": false,
+  "agent_submission_graded": false,
+  "sandbox_qualified": false
+}

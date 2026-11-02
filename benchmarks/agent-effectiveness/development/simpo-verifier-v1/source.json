@@ -1,0 +1,11 @@
+{
+  "repository": "benchflow-ai/skillsbench",
+  "commit": "55bfe693f2a19f6b2f29aca3f54fe98b9d994668",
+  "path": "tasks/simpo-code-reproduction/verifier/test_outputs.py",
+  "git_blob": "dd0f9885e10add04268a10f776a8dffdcfdd9a7f",
+  "sha256": "05590869057aeaac1032f2177b0b2bf80f56828af3dba66f100e4d1346b2e62f",
+  "license": "Apache-2.0",
+  "license_path": "LICENSE",
+  "license_git_blob": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+  "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+}

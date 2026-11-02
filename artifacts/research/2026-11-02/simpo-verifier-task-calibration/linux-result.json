@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "platform": "Linux",
+  "python": "3.13.18",
+  "numpy": "2.5.4",
+  "pytest": "9.1.1",
+  "inputs_sha256": {
+    "fixture/test_outputs.py": "05590869057aeaac1032f2177b0b2bf80f56828af3dba66f100e4d1346b2e62f",
+    "controls/test_acceptance.py": "f086c929bf24ba398c4a531724ad8b945fe886d51dcbe8c1743e3ca088a8e27b",
+    "controls/reference.py": "97885ede75808ca43b8b8e431b46df831fd487e8d771b4394280206c0f623c64",
+    "controls/reference_pathlib.py": "dc15cf0507e23b9c734f4107622dc90a138fe634f1618c1a93d3ae9d901037a6",
+    "cases.json": "251b7b37b3959df3f2a3a9783e51962701ba70b51d189fe52d34873441f4e132",
+    "controls/calibrate.py": "f66292eb6e1241abc890538dbcc90b93ace2680fa02fdb902068473f6a58dae7"
+  },
+  "controls": [
+    {
+      "control": "original",
+      "passed": 11,
+      "failed_cases": [
+        "test_invalid_input_or_regenerated_output_is_rejected[nonfinite]",
+        "test_invalid_input_or_regenerated_output_is_rejected[outside_tolerance]",
+        "test_invalid_input_or_regenerated_output_is_rejected[wrong_initial_key]",
+        "test_invalid_input_or_regenerated_output_is_rejected[wrong_key]",
+        "test_invalid_input_or_regenerated_output_is_rejected[wrong_shape]",
+        "test_invalid_input_or_regenerated_output_is_rejected[wrong_values]"
+      ],
+      "stdout_sha256": "fe13a7330ccb845cce30e51a883ca335b699657e38b9d9984e3089f84220f7cd",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "junit_sha256": "266a9c52b7f1c50a72ca16b653028e6ea20f1adbac317427a1edf7d2e50795a7"
+    },
+    {
+      "control": "reference",
+      "passed": 17,
+      "failed_cases": [],
+      "stdout_sha256": "15d2a5cb344ce83832e3de18b0ddd3f9580597078ddede1a3783946f059c6e0f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "junit_sha256": "eabd3481b8389a0bde7dc8b2acc75219ce967fc9fba1f9f0f7d9276179480c65"
+    },
+    {
+      "control": "reference_pathlib",
+      "passed": 17,
+      "failed_cases": [],
+      "stdout_sha256": "88b2f2c72fac2a529f764277f537feb7dcc4fb445a076c3af0066b209ddf89ba",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "junit_sha256": "a2e4959dbf29e96ef96e22861375f542e4f154500940fe6812e7644ba31eeff3"
+    }
+  ],
+  "original_control": "executed",
+  "subprocess_simulated": true,
+  "live_simpo_training": false,
+  "agent_submission_graded": false,
+  "sandbox_qualified": false
+}
