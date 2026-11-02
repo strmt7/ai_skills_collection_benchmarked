@@ -15,6 +15,39 @@ OVERLAY = ROOT / "included/repaired/skills/by-category/testing-qa-benchmarking/s
 MIRROR = ROOT / "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/e2e-testing/SKILL.md"
 
 
+def windows_process_cpu_seconds(pid: int) -> tuple[float, float] | None:
+    """Return kernel and user CPU seconds for a live Windows process when available."""
+    if os.name != "nt":
+        return None
+    import ctypes
+    from ctypes import wintypes
+
+    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel.OpenProcess.argtypes = [wintypes.DWORD, wintypes.BOOL, wintypes.DWORD]
+    kernel.OpenProcess.restype = wintypes.HANDLE
+    kernel.GetProcessTimes.argtypes = [wintypes.HANDLE] + [ctypes.POINTER(wintypes.FILETIME)] * 4
+    kernel.GetProcessTimes.restype = wintypes.BOOL
+    kernel.CloseHandle.argtypes = [wintypes.HANDLE]
+    kernel.CloseHandle.restype = wintypes.BOOL
+    handle = kernel.OpenProcess(0x1000, False, pid)  # PROCESS_QUERY_LIMITED_INFORMATION
+    if not handle:
+        return None
+    try:
+        created, exited, system, user = (wintypes.FILETIME() for _ in range(4))
+        if not kernel.GetProcessTimes(
+            handle, ctypes.byref(created), ctypes.byref(exited), ctypes.byref(system), ctypes.byref(user)
+        ):
+            return None
+
+        def seconds(value: wintypes.FILETIME) -> float:
+            ticks = (value.dwHighDateTime << 32) | value.dwLowDateTime
+            return ticks / 10_000_000  # FILETIME uses 100-nanosecond units.
+
+        return seconds(system), seconds(user)
+    finally:
+        kernel.CloseHandle(handle)
+
+
 def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
 
@@ -68,6 +101,11 @@ def test_control_rejects_unreviewed_overlay_before_loading_dependencies(tmp_path
         except subprocess.TimeoutExpired as error:
             returncode_at_timeout = process.poll()
             error.add_note(f"Child return code at timeout: {returncode_at_timeout!r}")
+            try:
+                cpu = windows_process_cpu_seconds(process.pid)
+                error.add_note(f"Child kernel/user CPU seconds at timeout: {cpu!r}")
+            except OSError as diagnostic_error:
+                error.add_note(f"Child CPU diagnostics unavailable: {diagnostic_error}")
             process.kill()
             stdout, stderr = process.communicate()
             error.add_note(f"Captured stdout after termination (first 2048 characters): {stdout[:2048]!r}")
@@ -75,3 +113,11 @@ def test_control_rejects_unreviewed_overlay_before_loading_dependencies(tmp_path
             raise
     assert process.returncode != 0
     assert "Source or overlay does not match the reviewed content" in stderr
+
+
+def test_process_cpu_diagnostic_uses_the_current_process() -> None:
+    observed = windows_process_cpu_seconds(os.getpid())
+    if os.name == "nt":
+        assert observed is not None and all(value >= 0 for value in observed)
+    else:
+        assert observed is None

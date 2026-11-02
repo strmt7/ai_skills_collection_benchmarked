@@ -1548,6 +1548,23 @@
             "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
+        "open_work": [
+          "Evaluate remaining examples and test-runner integrations independently.",
+          "Measure agent effects on independently defined tasks; component checks alone are not efficacy evidence."
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "review_scope": "Complete instruction body and examples read; research and runtime checks cover only the documented testing and Jest cases. Remaining examples and agent efficacy are unverified.",
+            "sha256": "63249998befbdbbf2f7d2f089c9cd7a9912f26ddc8fdf04ab1248c82614b43ac",
+            "status": "reviewed"
+          },
+          "agents/openai.yaml": {
+            "review_scope": "Complete display metadata, invocation policy and default prompt read; runtime activation not tested.",
+            "sha256": "ac132cb2dc93fa89181f8abe4067930ab215a440894be46fc5d0ebde7ee6185b",
+            "status": "reviewed"
+          }
+        },
         "status": "in_progress"
       },
       "revision": {
@@ -1605,6 +1622,23 @@
             "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
+        "open_work": [
+          "Complete remaining non-security behavior checks and agent evaluation.",
+          "Cybersecurity-related review is deferred under the owner instruction."
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "review_scope": "Complete source read; selected non-security pipeline, coverage and diff guidance reviewed. Cybersecurity-related guidance and remaining claims are deferred or unverified.",
+            "sha256": "01a9ae310ad4426bb05660dda6cefdeaac9513417585c09c8bb1b94738649a78",
+            "status": "pending"
+          },
+          "agents/openai.yaml": {
+            "review_scope": "Complete display metadata, invocation policy and default prompt read; runtime activation not tested.",
+            "sha256": "1907fd04fea5c83d15faf14acfc978de90076d4351341cf9259639aa0c3b7bd3",
+            "status": "reviewed"
+          }
+        },
         "status": "in_progress"
       },
       "revision": {
