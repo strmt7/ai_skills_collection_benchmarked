@@ -1,0 +1,87 @@
+{
+  "dask": {
+    "pandas_version": "3.1.0",
+    "probe_sha256": "f25d46fdb4ac8d326447dd862ecc1730c34890012f612c2d2c66cadca9222506",
+    "requirements_sha256": "b1b3a9397201129684c9a51188de7ef24516b94dba9033457a0be1176033335b",
+    "result_sha256": "6db5ade86575c5b2391b9dd519f1c91e3acfe1223f33711baec7d2496da61762",
+    "scope": "Windows synthetic overlapping partitions; incorrect sorted flag caused a lookup error, while default sorting returned the expected row.",
+    "tested_version": "2026.8.0"
+  },
+  "limitations": [
+    "The lexical occurrence counts require context and are not a comprehensive quality audit.",
+    "The Vaex observation is package metadata only and does not establish runtime behavior.",
+    "The Dask fixture is one synthetic input on one platform, not a general failure rate.",
+    "Component controls do not establish skill or agent efficacy."
+  ],
+  "polars": {
+    "dtypes_keyword_occurrences": 7,
+    "filter_before_aggregation_changes_answer": true,
+    "qualification": "artifacts/repaired-skill-readiness/polars-lazy-queries-v1/qualification.json",
+    "qualification_sha256": "8dab7519f6fbb77c635514613be6fcdd5328311dd41eed10cad4e0bbb0854982",
+    "streaming_keyword_occurrences": 7,
+    "tested_version": "2.1.0"
+  },
+  "pypi_native_sha256": {
+    "dask": "98027ac69873effb130184fd0c0be5405f0a4213fff9107804cd60df14457ff1",
+    "polars": "efd67174295181d501ecc3a222158c119cc174c4180932915eb0b708744f08fc",
+    "vaex": "2ca60068758766f652a743ed9b84a5c38a9232c323edf5806e715746fc7039a2",
+    "vaex-core": "c518518e43b287833425ec846ae58bdcedf538b5b33aa8670622ffac8f2de797"
+  },
+  "review_scope": "Selected dataframe compatibility examples, not full skill reviews or agent benchmarks.",
+  "schema_version": 1,
+  "source_signatures": {
+    "dask": {
+      "commit_sha": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+      "skill_dir_sha256": "8ab58cbc4101988f2828e9104239d04ad0dc1acff925a0844d75e2f663d5ad02",
+      "skill_file_sha256": "835c8ffa4e5623bfc49148d2910f37c22b7faa3097fe86843fe676e058f92aba"
+    },
+    "polars": {
+      "commit_sha": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+      "skill_dir_sha256": "41fcf8581a9948766b94ffb7cab773edfa39e844f9cd28c1e0a9085d17d22c9d",
+      "skill_file_sha256": "b7839f79ef81ec000b041c5f59439de6155d154388bea6f5be019ec101598ddb"
+    },
+    "vaex": {
+      "commit_sha": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+      "skill_dir_sha256": "423eb42decf3fb59ba8c9af00a5360644f429c852792874a13da3389c57293d1",
+      "skill_file_sha256": "53fc6ee59ecda323539566ed2fe83d547342f3ed5b9a8fae2278b4adff5ab392"
+    }
+  },
+  "sources": {
+    "dask_set_index": {
+      "native_sha256": "1f8e188b4d247095c81b2c4a595b3657d4785413cc84515b12f7f1543d8215dc",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200,
+      "url": "https://docs.dask.org/en/stable/generated/dask.dataframe.DataFrame.set_index.html"
+    },
+    "dask_shuffle": {
+      "native_sha256": "443a50adffb5b1d1b0eacd7cd8fc093276c05972146caff8494565c9429ab4ce",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200,
+      "url": "https://docs.dask.org/en/latest/dataframe-groupby.html"
+    },
+    "polars_collect": {
+      "native_sha256": "c6397065579d6530a496b6096056febca979abb07c9c28c23eaf8f8e21f854e1",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200,
+      "url": "https://docs.pola.rs/api/python/stable/reference/lazyframe/api/polars.LazyFrame.collect.html"
+    },
+    "polars_upgrade": {
+      "native_sha256": "502c238e56b4f9a94c70257183d5fd5db6562a3be441956d16d44b3c86927dd1",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200,
+      "url": "https://docs.pola.rs/releases/upgrade/2/"
+    },
+    "vaex_api": {
+      "native_sha256": "52e5549e066af398cab3c8a6535bf90a6a248f5f480d7b9f2437ab86a9e4b1a3",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200,
+      "url": "https://vaex.io/docs/api.html"
+    }
+  },
+  "vaex": {
+    "dask_requirement": "dask!=2022.4.0,<2024.9",
+    "requires_python": "<3.13,>=3.9",
+    "runtime_tested": false,
+    "vaex_core_version": "4.19.0"
+  }
+}

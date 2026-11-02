@@ -1,0 +1,20 @@
+{
+  "agent_performance_tested": false,
+  "checks": [
+    "original_streaming_argument_removed",
+    "original_dtypes_argument_removed",
+    "aggregate_first_fixture_and_schema",
+    "parquet_sink_round_trip",
+    "filter_before_mean_changes_answer"
+  ],
+  "full_skill_reviewed": false,
+  "platform": "Linux",
+  "polars": "2.1.0",
+  "python": "3.12.3",
+  "removed_argument_errors": {
+    "dtypes": "ArgumentRemovedError",
+    "streaming": "ArgumentRemovedError"
+  },
+  "schema_version": 1,
+  "skill_sha256": "17cdc6f6540393439d33174d66205be14af1a69bf65d777692171936041dfd23"
+}

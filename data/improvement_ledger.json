@@ -7230,6 +7230,11 @@
             "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
             "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
             "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/dataframe-research-v1/report.json",
+            "sha256": "60cad2cd81a765241ede3bd4e35dda5ea92718b467b48319b317bd0a4c09fd30",
+            "scope": "Selected version-specific dataframe compatibility observations; not a full research review or agent evaluation."
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -11455,6 +11460,11 @@
             "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
             "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
             "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/dataframe-research-v1/report.json",
+            "sha256": "60cad2cd81a765241ede3bd4e35dda5ea92718b467b48319b317bd0a4c09fd30",
+            "scope": "Selected version-specific dataframe compatibility observations; not a full research review or agent evaluation."
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -11491,8 +11501,14 @@
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/polars-lazy-queries/repair.json",
+            "sha256": "c8d3d893891dfda542662622d541fe5fa4f2b2fbe6a2f5d17d06d546c7651e0a",
+            "scope": "Selected Polars 2 lazy-query overlay with component controls; not a complete skill repair or agent evaluation."
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "K-Dense-AI/scientific-agent-skills",
       "source_signature": {
@@ -14959,6 +14975,11 @@
             "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
             "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
             "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/dataframe-research-v1/report.json",
+            "sha256": "60cad2cd81a765241ede3bd4e35dda5ea92718b467b48319b317bd0a4c09fd30",
+            "scope": "Selected version-specific dataframe compatibility observations; not a full research review or agent evaluation."
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",

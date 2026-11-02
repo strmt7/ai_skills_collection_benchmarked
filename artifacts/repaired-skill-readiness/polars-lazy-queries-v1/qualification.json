@@ -1,0 +1,40 @@
+{
+  "agent_performance_tested": false,
+  "full_skill_reviewed": false,
+  "limitations": [
+    "Local controls use a small synthetic fixture and do not establish larger-than-memory execution or throughput.",
+    "The overlay addresses selected examples only; other instructions and future package versions remain unqualified."
+  ],
+  "local_python_versions": {
+    "linux": "3.12.3",
+    "windows": "3.13.17"
+  },
+  "polars_version": "2.1.0",
+  "requirements_sha256": {
+    "requirements-linux.txt": "95cb5032cb7e109154f0c79f17cb13d998f0ab34f4cb133d81478f77ee58f524",
+    "requirements-windows.txt": "ede029a8b9a251211c28e0b4b09fc4758ca0f21095907a83212ca04ae583f3da",
+    "requirements.in": "9245c214ac58f4cd8aa41e2aa674fba71dc6eec5fd15ea429d4945abd4e4cc03"
+  },
+  "results": {
+    "linux-result.json": "6c8264a94a9d0fa62f3a179b36ffd6637b5e0a652b958f7d58fdeb69c1c43959",
+    "windows-result.json": "cd0a77a1b60c0cb2d621df6d0dd290a96b9a419ee47360e92846fd95bbb29ff3"
+  },
+  "runner_sha256": "73c680bb6e86878557f8c9add87235d0f355ea053c91d9b074ab0a02ab02aced",
+  "schema_version": 1,
+  "scope": "Selected Polars 2 lazy CSV, aggregation and Parquet examples with a negative semantic control on synthetic local data.",
+  "skill_sha256": "17cdc6f6540393439d33174d66205be14af1a69bf65d777692171936041dfd23",
+  "sources": {
+    "polars_collect": {
+      "native_sha256": "c6397065579d6530a496b6096056febca979abb07c9c28c23eaf8f8e21f854e1",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200,
+      "url": "https://docs.pola.rs/api/python/stable/reference/lazyframe/api/polars.LazyFrame.collect.html"
+    },
+    "polars_upgrade": {
+      "native_sha256": "502c238e56b4f9a94c70257183d5fd5db6562a3be441956d16d44b3c86927dd1",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200,
+      "url": "https://docs.pola.rs/releases/upgrade/2/"
+    }
+  }
+}

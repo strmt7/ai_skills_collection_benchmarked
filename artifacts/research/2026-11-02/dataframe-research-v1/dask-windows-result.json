@@ -1,0 +1,14 @@
+{
+  "agent_performance_tested": false,
+  "dask": "2026.8.0",
+  "default_index_lookup": {
+    "timestamp": 3,
+    "value": 30
+  },
+  "full_skill_reviewed": false,
+  "incorrect_presorted_lookup_error": "ValueError",
+  "pandas": "3.1.0",
+  "platform": "Windows",
+  "python": "3.13.17",
+  "schema_version": 1
+}

@@ -1,0 +1,28 @@
+{
+  "agent_performance_tested": false,
+  "artifact_kind": "maintained_runtime_repair",
+  "evidence_sha256": {
+    "linux-result.json": "6c8264a94a9d0fa62f3a179b36ffd6637b5e0a652b958f7d58fdeb69c1c43959",
+    "qualification.json": "8dab7519f6fbb77c635514613be6fcdd5328311dd41eed10cad4e0bbb0854982",
+    "reproduce.py": "73c680bb6e86878557f8c9add87235d0f355ea053c91d9b074ab0a02ab02aced",
+    "requirements-linux.txt": "95cb5032cb7e109154f0c79f17cb13d998f0ab34f4cb133d81478f77ee58f524",
+    "requirements-windows.txt": "ede029a8b9a251211c28e0b4b09fc4758ca0f21095907a83212ca04ae583f3da",
+    "requirements.in": "9245c214ac58f4cd8aa41e2aa674fba71dc6eec5fd15ea429d4945abd4e4cc03",
+    "windows-result.json": "cd0a77a1b60c0cb2d621df6d0dd290a96b9a419ee47360e92846fd95bbb29ff3"
+  },
+  "full_skill_reviewed": false,
+  "overlay_sha256": {
+    "LICENSE": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1",
+    "SKILL.md": "17cdc6f6540393439d33174d66205be14af1a69bf65d777692171936041dfd23",
+    "provenance/original.SKILL.md": "b7839f79ef81ec000b041c5f59439de6155d154388bea6f5be019ec101598ddb",
+    "provenance/original.best_practices.md": "024342131656706f53fb67c461b7693a33d67d0b215dbc53f2ebc07e53d78853",
+    "provenance/original.io_guide.md": "0a3d7dd798b17c511f1811e4a67760ae109aeaf0bfa78ea2976ee1b1653a1b98"
+  },
+  "readiness_evidence": "artifacts/repaired-skill-readiness/polars-lazy-queries-v1/qualification.json",
+  "schema_version": 1,
+  "scope": "Selected Polars 2 CSV schema, lazy aggregation and streaming materialization examples.",
+  "source_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+  "source_license_blob_sha1": "eb246475fd5a66b9bb56176f3a718984632dd98d",
+  "source_mirror": "included/skills/by-category/science-research-data-analysis/latest-release-community/polars",
+  "source_skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-polars-skill-md"
+}
