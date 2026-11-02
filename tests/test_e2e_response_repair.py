@@ -67,7 +67,9 @@ def test_control_rejects_unreviewed_overlay_before_loading_dependencies(tmp_path
             returncode_at_timeout = process.poll()
             error.add_note(f"Child return code at timeout: {returncode_at_timeout!r}")
             process.kill()
-            process.communicate()
+            stdout, stderr = process.communicate()
+            error.add_note(f"Captured stdout after termination (first 2048 characters): {stdout[:2048]!r}")
+            error.add_note(f"Captured stderr after termination (first 2048 characters): {stderr[:2048]!r}")
             raise
     assert process.returncode != 0
     assert "Source or overlay does not match the reviewed content" in stderr
