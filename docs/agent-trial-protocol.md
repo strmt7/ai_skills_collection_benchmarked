@@ -162,7 +162,9 @@ prompt-and-workspace declarations under different IDs, and lists exact shared
 workspace declarations even when the prompts differ. This prevents exact
 duplicates from being counted as separate tasks. The hashes reflect protocol
 declarations, not independent verification of the runtime environment; different
-hashes do not establish that tasks, fixtures or outcomes are independent.
+hashes do not establish that tasks, fixtures or outcomes are independent. The
+reporter checks retained prompt files against their recorded evidence hashes; it
+does not reconstruct them from the protocol or prove what the provider received.
 
 The `paired_outcomes` section also separates blocks where both conditions
 passed, only the candidate passed, only the default passed, neither passed, or
@@ -232,6 +234,10 @@ hash alone cannot prove when a plan was committed, whether tasks are independent
 or whether a grader actually ran. These descriptive figures are not a
 significance test, collection-wide conclusion, priced-cost comparison or evidence
 of a provider-resolved model identity.
+
+The offline-validation workflow uploads the historical plan's machine-readable
+multi-task summary alongside its charts, including the declared task signatures
+and shared-workspace groups.
 
 For Python 3.11–3.14, install the `reports` extra from the repository root with
 `python -m pip install '.[reports]'`. The maintainer's
