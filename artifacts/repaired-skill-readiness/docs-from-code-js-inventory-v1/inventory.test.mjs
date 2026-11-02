@@ -96,6 +96,14 @@ test('controlled Next.js 16 route handlers agree with filesystem candidates', {t
   assert.match(result.stdout, /Next.js route-handler control passed/);
 });
 
+test('Next fixture exits with failure after a controlled framework error', {timeout: 90000}, () => {
+  const result = spawnSync(process.execPath, [fileURLToPath(new URL('./next-live.mjs', import.meta.url)), '--controlled-failure'], {
+    encoding: 'utf8', timeout: 80000, env: {...process.env, NEXT_TELEMETRY_DISABLED: '1'},
+  });
+  assert.equal(result.status, 1, `${result.error ?? ''}\n${result.stdout}\n${result.stderr}`);
+  assert.match(result.stderr, /controlled Next failure/);
+});
+
 test('controlled Express 5 requests agree with direct and mounted route candidates', async () => {
   const files = {'index.js': `import express, {Router} from 'express';
 const app = express(); const api = Router(); app.get('/health', handler); api.post('/items', handler); app.use('/v1/', api);`};

@@ -17898,7 +17898,7 @@
           {
             "path": "docs/research-docs-from-code-js-inventory.md",
             "scope": "Selected JavaScript and TypeScript parser and Express/Next.js controls; not agent efficacy.",
-            "sha256": "5d58787d2a59cf9af88a786fa346725cd42659d0c27e782d18027bdb8879f643"
+            "sha256": "533d26b50d1bcfb65553bbd4421c2746440452c650bc00760fe1562ef5ec20a3"
           }
         ],
         "status": "in_progress",
@@ -17928,7 +17928,7 @@
           {
             "path": "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/qualification.json",
             "scope": "Source-bound controls with selected Express and Next.js runtime fixtures; no agent trial.",
-            "sha256": "2e7d5f90f97fa17cd8da395a757969edb93b5da1ae6a53b2fb03372587edaab2"
+            "sha256": "2049e26c4968e9af5ecc4f498ce4aeb750a08eefe257cffceceeced1fb68d9df"
           }
         ],
         "status": "in_progress"

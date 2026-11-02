@@ -1,21 +1,21 @@
 {
   "schema_version": 1,
-  "scope": "Seven controlled source and framework cases and a separate minimal runtime installation and CLI check; not an agent benchmark.",
-  "cases": 7,
+  "scope": "Eight controlled source and framework cases and a separate minimal runtime installation and CLI check; not an agent benchmark.",
+  "cases": 8,
   "runs": [
     {
       "name": "windows-node24",
       "platform": "Windows",
       "node": "v24.22.2",
-      "result_sha256": "2c74fd016ef37a19a239049fa0c42d01603598d30bf1390fa4e6a1283fab0ce2",
-      "tap_sha256": "098c54875d632c74699d28a7d0d3e665f1ec3ac0a42197a294163e6cdaa03bb7"
+      "result_sha256": "5673509841d1003832adb7246de32848494ad3e000b9c3bb1d87ec882ac1535c",
+      "tap_sha256": "d4ae0e2dbe2c8e5ab10c5f7a14c8debeac7cb80a08dc16cd191f0f0b9fe57742"
     },
     {
       "name": "linux-node24",
       "platform": "Linux",
       "node": "v24.15.0",
-      "result_sha256": "2aa5f00dcf0be324dfed506ecdfe19b15409b6d5ae5b72cea7d2f96ea1390c1f",
-      "tap_sha256": "4c012d022f403c173f35157f54dbc1cba2e746acfea42f0c795dd5291f9db00b"
+      "result_sha256": "d4f08856fff5cebb62034e504e09f1339911890228f379077b4e7f0c0702b36b",
+      "tap_sha256": "aa2baf9068bb35a926d69db2450f222246633bd2dec66637238f370dcb0afa38"
     }
   ],
   "owned_frameworks": {

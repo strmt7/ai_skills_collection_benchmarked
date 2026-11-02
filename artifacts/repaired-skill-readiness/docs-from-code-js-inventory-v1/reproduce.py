@@ -26,6 +26,7 @@ NAMES = (
     "CommonJS and reassignment are handled conservatively",
     "malformed input fails atomically without executing target source",
     "controlled Next.js 16 route handlers agree with filesystem candidates",
+    "Next fixture exits with failure after a controlled framework error",
     "controlled Express 5 requests agree with direct and mounted route candidates",
 )
 

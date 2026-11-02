@@ -7,7 +7,7 @@ parses JavaScript and TypeScript source and reports selected Express and
 Next.js route candidates. The pinned mirror remains unchanged.
 
 The [qualification](../artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/qualification.json)
-binds the tested files to recorded Windows and Linux runs. Seven controlled
+binds the tested files to recorded Windows and Linux runs. Eight controlled
 cases include live requests to owned Express 5.3.0 and Next.js 16.4.3 fixtures;
 a separate clean installation tests the minimal runtime package and CLI.
 These fixtures exercise a small part of each framework. The inventory does

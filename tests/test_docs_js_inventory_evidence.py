@@ -59,7 +59,7 @@ def test_overlay_preserves_upstream_and_binds_evidence():
 
 def test_recorded_runs_bind_inputs_and_keep_scope_explicit():
     qualification = json.loads((EVIDENCE / "qualification.json").read_text(encoding="utf-8"))
-    assert qualification["cases"] == 7
+    assert qualification["cases"] == 8
     assert qualification["agent_performance_tested"] is False
     assert {run["platform"] for run in qualification["runs"]} == {"Windows", "Linux"}
     for run in qualification["runs"]:
@@ -76,7 +76,7 @@ def test_recorded_runs_bind_inputs_and_keep_scope_explicit():
         assert result["agent_performance_tested"] is False
         tap = tap_path.read_text(encoding="utf-8")
         assert re.findall(r"^ok \d+ - (.+)$", tap, flags=re.MULTILINE) == result["case_names"]
-        assert len(result["case_names"]) == len(set(result["case_names"])) == result["cases"] == 7
+        assert len(result["case_names"]) == len(set(result["case_names"])) == result["cases"] == 8
         assert "# fail 0" in tap and "# skipped 0" in tap
         for path, expected in result["inputs_sha256"].items():
             assert digest(ROOT / path) == expected, path
