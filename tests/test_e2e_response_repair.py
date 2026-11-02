@@ -71,4 +71,3 @@ def test_control_rejects_unreviewed_overlay_before_loading_dependencies(tmp_path
             raise
     assert process.returncode != 0
     assert "Source or overlay does not match the reviewed content" in stderr
-
