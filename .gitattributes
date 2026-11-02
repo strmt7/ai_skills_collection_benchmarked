@@ -130,6 +130,11 @@
 /included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-rust-batching/provenance/** -text !eol
 /artifacts/repaired-skill-readiness/azure-eventhub-rust-batching-v1/** text eol=lf
 
+# Preserve the pinned Event Hubs Java skill and portable Maven controls.
+/included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-java-batching/** text eol=lf
+/included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-java-batching/provenance/** -text !eol
+/artifacts/repaired-skill-readiness/azure-eventhub-java-batching-v1/** text eol=lf
+
 # Preserve the source-bound upstream inventory across hosts.
 /artifacts/research/2026-11-01/upstream-inventory-v1/** text eol=lf
 

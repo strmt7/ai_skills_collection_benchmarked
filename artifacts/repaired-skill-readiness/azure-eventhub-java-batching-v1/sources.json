@@ -1,0 +1,30 @@
+{
+  "capture_date_utc": "2026-11-02",
+  "web_pages": [
+    {
+      "url": "https://learn.microsoft.com/en-us/java/api/com.azure.messaging.eventhubs.eventhubproducerclient?view=azure-java-stable",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_result_sha256": "a9295932a8d1a58a71b85399f70014ea5399fe56198a026f069da58bf164b23f",
+      "status_code": 200,
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://maven.apache.org/download.cgi",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_result_sha256": "82974c5666e03df4633d690beb38dfa49f276da4a4970090c43e18e4067d0ea9",
+      "status_code": 200,
+      "scope_reviewed": true
+    }
+  ],
+  "native_metadata_sha256": {
+    "eventhubs-metadata.xml": "1578d070ab6d963904e90320ae6d8d5eb4d9f0618d5b29be1b4871b107b38da7",
+    "maven-metadata.xml": "c353c296e75593b77b942fbb48d9cde72a0ecb4678889fc3cd489b4f2a6af371",
+    "junit-metadata.xml": "8c200889ad17c89a3f88419f0c0e7550436cbc8fe25b95327821044b9f5f7c0f",
+    "maven-compiler-plugin-metadata.xml": "a9497cbfe76f06c2f7682b12e0c2cea8725ee69cdc1c7640481405e9e80eed26",
+    "maven-surefire-plugin-metadata.xml": "ce52db2a631de836bca791d42992cb54918c3c13fd9d5a776d946080f77209eb",
+    "adoptium-jdk27-release.json": "ca812e13b7a59861b9e2b5ae2aeaeac4ef2b72417556348d973f2b20682be2a8",
+    "google-java-format-release.json": "0a4745df1107f7801d248546cec1482b5b6d2d7286f04deea21c9cc6efd410c3"
+  },
+  "adoptium_releases_api_observation": "HTTP 403; official Adoptium GitHub release metadata and release assets were used instead.",
+  "limits": "Native crawl, registry metadata and Maven streams are retained outside Git; hashes identify their captured bytes."
+}

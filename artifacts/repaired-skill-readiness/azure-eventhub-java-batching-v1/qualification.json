@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "scope": "Selected Java Event Hubs batch logic with real SDK batch objects and a simulated sender.",
+  "source_skill_sha256": "6d53bec91aac8687e33a87332ca1df6107e24478227d6af7bf5647e8e5eae838",
+  "initial_platform": "Windows",
+  "maven_version": "3.10.0",
+  "eventhubs_version": "5.21.7",
+  "test_count": 9,
+  "jdk_majors": [
+    17,
+    27
+  ],
+  "azure_service_called": false,
+  "agent_performance_tested": false,
+  "initial_fixture_failure": "The first fixture passed a null SDK error-context provider and failed two cases; the corrected fixture supplies a real context.",
+  "initial_failure_log_sha256": "087aa9d55e4b3876feb4f0d4af5812b93987f9be085557fe6adf96bb3e45b5ad",
+  "limits": [
+    "The test-only SDK batch constructor and event accessors are package-private in the pinned SDK; the example uses public producer APIs.",
+    "The sender is simulated; no Azure delivery, partition behavior, retries or actual network service was tested.",
+    "The dependency tree snapshot records resolved application and test coordinates, not Maven plugin or artifact byte locks.",
+    "The complete source skill and coding-agent performance were not evaluated."
+  ]
+}

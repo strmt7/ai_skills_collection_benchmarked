@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "platform": "Windows",
+  "java_version": "openjdk 17.0.19 2026-04-21 LTS",
+  "maven_version": "Apache Maven 3.10.0 (c43a36b8d67be7e0805a411bc0898af1a51f5472)",
+  "test_cases": [
+    "batchCreationFailurePropagatesBeforeSending",
+    "emptyInputDoesNotCreateOrSendBatch",
+    "originalRetryPatternOmitsRejectedEvent",
+    "oversizedFirstEventIsReportedWithoutSendingEmptyBatch",
+    "oversizedLaterEventIsReportedAfterPriorBatchIsSent",
+    "rolloverPreservesEveryEventInOrder",
+    "sdkOversizeExceptionIsNotSilencedOrSent",
+    "sendFailureStopsProcessingAndPropagates",
+    "singleEventIsSentOnce"
+  ],
+  "dependency_tree_matched": true,
+  "file_sha256": {
+    "pom.xml": "b011620240a147712935789cdbdb2ad779765534a4f91432a8dcfc1d45b9b288",
+    "dependency-tree.json": "5c79d64f888224a7de58eba16055cefc33e630e1db87d6145cb271b0cf955aa3",
+    "src/main/java/example/EventBatchSender.java": "76194da963d55daaae70a11952a67784f9e75c1531e7891127bf7b0316b49c16",
+    "src/test/java/com/azure/messaging/eventhubs/EventBatchSenderTest.java": "b1bc155f3fb9b1a51ecef5c8ecbd4e4eb03489a6b7274b1bc41deeb251388b98"
+  },
+  "test_stdout_sha256": "55de0babeddcdd2488102719f7624569c7914db3cac680967435927e71a6a9ab",
+  "test_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "tree_stdout_sha256": "f8f112fa2b9fac6af16da7d90ed23facacf4111468c2e0a6fc6ff8e897ec6ebe",
+  "tree_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "azure_service_called": false,
+  "agent_performance_tested": false
+}

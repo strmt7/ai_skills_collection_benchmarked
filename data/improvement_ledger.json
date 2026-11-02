@@ -10837,13 +10837,29 @@
             "path": "docs/research-azure-event-hubs.md",
             "scope": "Selected Event Hubs family examples only; no live Azure service or coding-agent evaluation.",
             "sha256": "34f20de5cfb9e8eb9c97125d4088e839b1b653be640964482c68fece464e4cd6"
+          },
+          {
+            "path": "docs/research-azure-eventhub-java.md",
+            "scope": "Selected Java batch acceptance behavior; no live Azure service or agent evaluation.",
+            "sha256": "a0676fd275c24bdf305a352b4813bb62e2c4fc20d11104ea76060c4b625c122d"
           }
         ],
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-java-batching/SKILL.md",
+            "scope": "Java batch overlay with real SDK batches and simulated sender.",
+            "sha256": "0fc29bfd6a4de55d427a6f635fec7dcb82be994f0e6db9e9a790073ad3a33e4f"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/azure-eventhub-java-batching-v1/qualification.json",
+            "scope": "Nine offline SDK controls on JDK 17 and 27; no Azure service run.",
+            "sha256": "6b3e051e2ecec90df7d917f2b601d4d46009e740a4575e91b137a3548e029db1"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "microsoft/skills",
       "source_signature": {

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "microsoft-skills-github-plugins-azure-sdk-java-skills-azure-eventhub-java-skill-md",
+  "source_commit": "a2c05249c4a20103dd954ca702467aa328aac031",
+  "source_mirror": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-java",
+  "original_skill_sha256": "6d53bec91aac8687e33a87332ca1df6107e24478227d6af7bf5647e8e5eae838",
+  "license_file": "LICENSE",
+  "license_sha256": "d9a1b1e30d633d5732ea18e3cba9538d293ebc53e1a9e4e96ab739e0c5c4f1cb",
+  "scope": "Java Event Hubs batch handling with real SDK batches and simulated sending.",
+  "azure_service_run": false,
+  "model_performance_claim": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/azure-eventhub-java-batching-v1/qualification.json",
+  "overlay_sha256": {
+    "examples/dependency-tree.json": "5c79d64f888224a7de58eba16055cefc33e630e1db87d6145cb271b0cf955aa3",
+    "examples/pom.xml": "b011620240a147712935789cdbdb2ad779765534a4f91432a8dcfc1d45b9b288",
+    "examples/src/main/java/example/EventBatchSender.java": "76194da963d55daaae70a11952a67784f9e75c1531e7891127bf7b0316b49c16",
+    "examples/src/test/java/com/azure/messaging/eventhubs/EventBatchSenderTest.java": "b1bc155f3fb9b1a51ecef5c8ecbd4e4eb03489a6b7274b1bc41deeb251388b98",
+    "LICENSE": "d9a1b1e30d633d5732ea18e3cba9538d293ebc53e1a9e4e96ab739e0c5c4f1cb",
+    "provenance/original.SKILL.md": "6d53bec91aac8687e33a87332ca1df6107e24478227d6af7bf5647e8e5eae838",
+    "SKILL.md": "0fc29bfd6a4de55d427a6f635fec7dcb82be994f0e6db9e9a790073ad3a33e4f"
+  },
+  "evidence_sha256": {
+    "qualification.json": "6b3e051e2ecec90df7d917f2b601d4d46009e740a4575e91b137a3548e029db1",
+    "reproduce.py": "307129b065a856df5f43aa0e1de37fd3a3f10581b99f7a6fb69578433787efe8",
+    "sources.json": "8045c84a8d5e1bcd39f7376776c70d0617edbc46d39b2ecb047e57c3424cae6d",
+    "windows-jdk17.json": "08bd5661015065b44d6affa1d00c67bae52d1f79c1143901aaa1bc68ea59bb1a",
+    "windows-jdk27.json": "2e347d30d7d07b404390babd70c8869888513078cecd325554a3a40568076f04"
+  }
+}
