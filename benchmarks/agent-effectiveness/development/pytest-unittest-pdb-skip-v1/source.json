@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "scope": "Public, adapted development task; not an untouched holdout or a SWE-bench suite score.",
+  "repository": "pytest-dev/pytest",
+  "source_commit": "da9a2b584eb7a6c7e924b2621ed0ddaeca0a7bea",
+  "source_file": "src/_pytest/unittest.py",
+  "source_git_blob": "851e4943b23efecfe30d0aad9b7529882f4e1bb9",
+  "source_sha256": "6a6995ff2584169db14eef86b93543179e2bbb3a2bbf8a5f6d59f6c023adcb2a",
+  "license": "MIT",
+  "license_path": "LICENSE",
+  "license_sha256": "ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b",
+  "issue": "https://github.com/pytest-dev/pytest/issues/10060",
+  "pull_request": "https://github.com/pytest-dev/pytest/pull/10081",
+  "dataset_instance": "pytest-dev__pytest-10081",
+  "dataset_page_sha256": "955abd565f3e69a231cbe3d2fb1b6823ad5c2cf7703954f2b3aca0e9b0e353a4",
+  "dataset_problem_sha256": "591d6bb69d71666bdd35a3144c95f3d689544055966393676fd23f260f707571",
+  "upstream_patch_transport": "controls/upstream-patch.json",
+  "upstream_patch_sha256": "30b7bbcd61e92e71c186f5c36c622301a6d5dde818e67c97535fa30d7897af93",
+  "upstream_test_patch_sha256": "cfb967eb1057797551c234d12dfb83eefacddfb1089e0ae97e183227f7c0e055",
+  "dataset_limit": "The dataset-server page is identified by its captured bytes; it is not cryptographically bound to a separately observed dataset repository revision.",
+  "documentation": [
+    {
+      "url": "https://docs.python.org/3.11/library/unittest.html",
+      "native_crawl_sha256": "01836fba662671f3fbf4eb6de4e028760eb63b54a64ab850252accd2fe63d0b0"
+    },
+    {
+      "url": "https://docs.pytest.org/en/7.1.x/how-to/skipping.html",
+      "native_crawl_sha256": "587881a15ea2d93e88e8b85a32455565e70bcaf720d499d876193e821580b800"
+    },
+    {
+      "url": "https://www.swebench.com/SWE-bench/guides/datasets/",
+      "native_crawl_sha256": "1bc7d69cf0bf5c62db5f5e611355ff079a545b430bcc0bd7e94487fc3d63bd2a"
+    }
+  ],
+  "crawl_provider": "0.9.5+catalog.portable4",
+  "agent_performance_tested": false
+}

@@ -1,0 +1,4 @@
+setuptools==84.2.1
+setuptools-scm[toml]==10.3.4
+wheel==0.48.0
+vcs-versioning==2.6.0

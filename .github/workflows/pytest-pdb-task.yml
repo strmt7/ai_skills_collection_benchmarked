@@ -1,0 +1,88 @@
+name: Pytest skipped-class task controls
+
+on:
+  push:
+    paths:
+      - 'benchmarks/agent-effectiveness/development/pytest-unittest-pdb-skip-v1/**'
+      - 'tests/test_pytest_pdb_task.py'
+      - '.github/workflows/pytest-pdb-task.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '20 8 * * 4'
+
+concurrency:
+  group: pytest-pdb-task-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  calibration:
+    name: Trusted source calibration (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    env:
+      GIT_CONFIG_COUNT: '1'
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: 'true'
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: '0.13.6'
+          python-version: '3.11.18'
+          activate-environment: 'true'
+          venv-path: ${{ runner.temp }}/pytest-pdb-task-venv
+          enable-cache: 'false'
+      - name: Obtain the pinned public checkout
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $source = Join-Path $env:RUNNER_TEMP 'pytest-pdb-upstream'
+          git init $source
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          git -C $source remote add origin https://github.com/pytest-dev/pytest.git
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          git -C $source fetch --depth=400 origin da9a2b584eb7a6c7e924b2621ed0ddaeca0a7bea
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          git -C $source checkout --detach FETCH_HEAD
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          git -C $source fetch origin 'refs/tags/7.1.2:refs/tags/7.1.2'
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          if ((git -C $source describe --tags --always --long --abbrev=12) -ne '7.2.0.dev0-173-gda9a2b584eb7') { throw 'Unexpected source version history' }
+      - name: Install the locked runtime and source
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $controls = 'benchmarks/agent-effectiveness/development/pytest-unittest-pdb-skip-v1/controls'
+          $platform = if ($IsWindows) { 'windows' } else { 'linux' }
+          $source = Join-Path $env:RUNNER_TEMP 'pytest-pdb-upstream'
+          python -c "import platform,sys; sys.exit(platform.python_version() != '3.11.18' or sys.prefix == sys.base_prefix)"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          uv pip install --require-hashes --build-constraints "$controls/build-$platform.txt" -r "$controls/requirements-$platform.txt"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          uv pip install --no-deps --build-constraints "$controls/build-$platform.txt" -e $source
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          uv pip check
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Calibrate the exposed development controls
+        shell: pwsh
+        run: |
+          $source = Join-Path $env:RUNNER_TEMP 'pytest-pdb-upstream'
+          $python = python -c "import sys; print(sys.executable)"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python benchmarks/agent-effectiveness/development/pytest-unittest-pdb-skip-v1/controls/calibrate.py --source $source --target-python $python --output (Join-Path $env:RUNNER_TEMP 'pytest-pdb-calibration')
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Retain control observations
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: pytest-pdb-task-${{ matrix.os }}
+          path: ${{ runner.temp }}/pytest-pdb-calibration/
+          if-no-files-found: error
+          retention-days: 14

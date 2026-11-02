@@ -71,6 +71,12 @@ acceptance controls. It is development-exposed and has not been integrated into
 the confined grader or used in a model trial. Its calibration results do not
 change the single-task trial count or establish an agent advantage.
 
+A further [pytest issue-resolution candidate](../benchmarks/agent-effectiveness/development/pytest-unittest-pdb-skip-v1/README.md)
+uses a complete pinned public checkout and separately calibrated lifecycle
+controls. Its issue and controls are public development material. It has not
+been integrated into the confined grader or used in a model trial, and its
+calibration does not establish difficulty or a skill advantage.
+
 ## Completed first matched block
 
 All nine planned protocol-v2 attempts completed. Default, third-party Karpathy

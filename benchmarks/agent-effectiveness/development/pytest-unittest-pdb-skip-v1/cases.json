@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "cases": [
+    "test_class_pytest_skip_normal",
+    "test_class_pytest_skip_pdb",
+    "test_class_skip_normal",
+    "test_class_skip_pdb",
+    "test_class_skipif_normal",
+    "test_class_skipif_pdb",
+    "test_class_skipunless_normal",
+    "test_class_skipunless_pdb",
+    "test_failed_test_enters_debugger_before_teardown",
+    "test_inherited_skip_normal",
+    "test_inherited_skip_pdb",
+    "test_inherited_skipif_normal",
+    "test_inherited_skipif_pdb",
+    "test_inherited_skipunless_normal",
+    "test_inherited_skipunless_pdb",
+    "test_method_pytest_skip_normal",
+    "test_method_pytest_skip_pdb",
+    "test_method_skip_normal",
+    "test_method_skip_pdb",
+    "test_method_skipif_normal",
+    "test_method_skipif_pdb",
+    "test_method_skipunless_normal",
+    "test_method_skipunless_pdb",
+    "test_non_skipped_class_normal",
+    "test_non_skipped_class_pdb"
+  ]
+}

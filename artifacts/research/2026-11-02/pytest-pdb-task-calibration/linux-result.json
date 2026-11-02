@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "scope": "Development controls for trusted variants; not an agent trial or a confined grader.",
+  "platform": "Linux",
+  "target_runtime": {
+    "python": [
+      3,
+      11,
+      18
+    ],
+    "venv": true,
+    "pytest": "7.2.0.dev173+gda9a2b584",
+    "dependencies": {
+      "attrs": "26.1.0",
+      "iniconfig": "2.3.1",
+      "packaging": "26.3",
+      "pluggy": "1.7.0",
+      "py": "1.11.0"
+    }
+  },
+  "source_commit": "da9a2b584eb7a6c7e924b2621ed0ddaeca0a7bea",
+  "source_git_blob_sha256": "6a6995ff2584169db14eef86b93543179e2bbb3a2bbf8a5f6d59f6c023adcb2a",
+  "source_file_count": 69,
+  "tracked_checkout_files": 571,
+  "source_snapshot_sha256": "4fc97a98afef6355a64aa4e74cfeae26ae2458c5c8b9f52241bfdacd506601e2",
+  "inputs_sha256": {
+    "TASK.md": "c293c361d6f6cb12c3841755f0dbbb82012059ed67f0c1e6a2fea581d1191e02",
+    "LICENSE": "ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b",
+    "source.json": "459d2a9ba3c0ac5eea2b3fd1db2b39308fd295a8dd5bd55d51b98be148343479",
+    "cases.json": "d7088b20543258dadae8f66fdab5e931ec4c6b3e42da171f80012863ed391f00",
+    "controls/calibrate.py": "5ec045ce399d82d7810311cdab40a13ed138cc1aaaecda6c05296cef8a4c3206",
+    "controls/test_skip_contract.py": "55e1712288d1631061bf40adbc38975fb37fb9526cb824e260bf555e5ff793d2",
+    "controls/upstream-patch.json": "77a4a1b8aae73f4933e99dd3fa7d3cf98bc57d72874217976a848a754ccbf046",
+    "controls/requirements.in": "3ff95940dbdd7be564bc2f14b5718a9f94444fcc22d4d227a17b323c35c74cc2",
+    "controls/requirements-windows.txt": "a47485fde1f12c14d8efdb8ca2e01629eef9795c242f97c19282e57499ee91ea",
+    "controls/requirements-linux.txt": "abc166550e21fdf04306bf8c8af76f0885c28d2bef0d9cd8a55141f2142b54d5",
+    "controls/build-requirements.in": "5220fd564caf927a432f7173f47207f5ab3720e0946256586850c7e6e22bc078",
+    "controls/build-windows.txt": "8f033a8ba24ddabb64ac12e4e5e701d7c52986902a7943cd3c2aee2dc46c0bd1",
+    "controls/build-linux.txt": "8f033a8ba24ddabb64ac12e4e5e701d7c52986902a7943cd3c2aee2dc46c0bd1"
+  },
+  "case_count": 25,
+  "variants": {
+    "base": {
+      "exit_code": 1,
+      "failed_cases": [
+        "test_class_skip_pdb",
+        "test_class_skipif_pdb",
+        "test_class_skipunless_pdb",
+        "test_inherited_skip_pdb",
+        "test_inherited_skipif_pdb",
+        "test_inherited_skipunless_pdb"
+      ],
+      "module_sha256": "6a6995ff2584169db14eef86b93543179e2bbb3a2bbf8a5f6d59f6c023adcb2a",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "c3074f19c69503bf5a585f819330dee6ab90fb0ad4f4e31461d9a840039c5458"
+    },
+    "gold": {
+      "exit_code": 0,
+      "failed_cases": [],
+      "module_sha256": "d18b12127b263c77e9777de86f824561af231825b43fe4ed4ab813c657b8e4c3",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "6f598d857dd606a53d2ef2f16fede215626ac185c4ccbb9ffdc0fed2ff37d6c2"
+    },
+    "alternative": {
+      "exit_code": 0,
+      "failed_cases": [],
+      "module_sha256": "576c51de26ca2d45cfa4e3b5ac6b112343f2dd5cb561b46df06274baec9ab1eb",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "eb11e8f6b448cd6088e297805eb54c6350c073309e8106909deffde7e7e75366"
+    },
+    "disable-pdb-teardown": {
+      "exit_code": 1,
+      "failed_cases": [
+        "test_failed_test_enters_debugger_before_teardown"
+      ],
+      "module_sha256": "dcbe83fd51a0e4c43aebb82146689ffc1b9b9c1a3d47c7a1dc1137e9ffcc5eff",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "087db6ff765af92ab1e2c1634a2c21e76996b3cc1860234a21bf1a349c14f953"
+    },
+    "ignore-method-skip": {
+      "exit_code": 1,
+      "failed_cases": [
+        "test_method_skip_pdb",
+        "test_method_skipif_pdb",
+        "test_method_skipunless_pdb"
+      ],
+      "module_sha256": "c5dfa08632d41d0329f0aebc8e52e55c55269451b9934c0562d3858c948ba537",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "6efc70c33b42f586dbd1b73c5f4e1561c03d8a81afbc13a9c1aed6287e652a8f"
+    },
+    "ignore-inherited-class-skip": {
+      "exit_code": 1,
+      "failed_cases": [
+        "test_inherited_skip_pdb",
+        "test_inherited_skipif_pdb",
+        "test_inherited_skipunless_pdb"
+      ],
+      "module_sha256": "0b68635f9c73c252160ba5740729aa8aaba2d9da8d73978b3792a4e8d059b700",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "8dcc0820a37012519f67453af07620b794dfe677bc2b4b5edd33c096c461bfbb"
+    }
+  },
+  "agent_performance_tested": false
+}

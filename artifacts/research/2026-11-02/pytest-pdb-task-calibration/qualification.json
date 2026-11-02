@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "scope": "Public, adapted development task and trusted variant calibration; not an agent trial or SWE-bench score.",
+  "case_count": 25,
+  "runs": [
+    {
+      "platform": "Windows",
+      "result": "win-result.json",
+      "result_sha256": "aa180ed853347737208eb61605bda3923dd183113ed88c1d0218e71e33ad7395"
+    },
+    {
+      "platform": "Linux",
+      "result": "linux-result.json",
+      "result_sha256": "35d9b66cd9445a6c5d8c5ce055f548ecd20bd38297c11d5ea0f07d2f5af78c87"
+    }
+  ],
+  "upstream_tests": [
+    {
+      "platform": "Windows",
+      "python": "3.11.9",
+      "base_exit": 1,
+      "base_failed": 1,
+      "base_passed": 4,
+      "fixed_exit": 0,
+      "fixed_passed": 5,
+      "base_stdout_sha256": "28bc49fcbd5d427aa1018b9628abe26b349bc0505f8ed3010c80bf98437d9d22",
+      "fixed_stdout_sha256": "4d88eee48849921f7d277b50aa05d956b8c8d99d952a4820b5a53459084ea7ed"
+    },
+    {
+      "platform": "Linux",
+      "python": "3.11.18",
+      "base_exit": 1,
+      "base_failed": 1,
+      "base_passed": 4,
+      "fixed_exit": 0,
+      "fixed_passed": 5,
+      "base_stdout_sha256": "a16d6b577b5b688c9195cb6536c1bf5a34fbd504b1551e7b8a3f7782b38fc22e",
+      "fixed_stdout_sha256": "571b2d88b94fac6a9d81c74532a2a71eecb9519785808732b28b717bf99b798d"
+    }
+  ],
+  "linux_python312_collection_failure": {
+    "exit_code": 4,
+    "reason": "Historical pytest assertion rewriting raises an ast.Str deprecation warning under the upstream warnings-as-errors configuration.",
+    "stderr_sha256": "46643dc3586d9cd3c04f5fee7b9755372420a6c6151ddb3d089842ec70e407a3"
+  },
+  "raw_outputs": "Retained outside Git in the isolated test-evidence directory; hosted workflow uploads its own control logs.",
+  "agent_performance_tested": false
+}
