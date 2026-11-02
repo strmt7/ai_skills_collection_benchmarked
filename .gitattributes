@@ -120,6 +120,11 @@
 /included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-dotnet-batching/provenance/** -text !eol
 /artifacts/repaired-skill-readiness/azure-eventhub-dotnet-batching-v1/** text eol=lf
 
+# Preserve the pinned Event Hubs Python skill and portable checkpoint controls.
+/included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-python-checkpoint/** text eol=lf
+/included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-python-checkpoint/provenance/** -text !eol
+/artifacts/repaired-skill-readiness/azure-eventhub-python-checkpoint-v1/** text eol=lf
+
 # Preserve the source-bound upstream inventory across hosts.
 /artifacts/research/2026-11-01/upstream-inventory-v1/** text eol=lf
 

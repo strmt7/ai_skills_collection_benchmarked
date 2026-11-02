@@ -11471,13 +11471,29 @@
             "path": "docs/research-azure-event-hubs.md",
             "scope": "Selected Event Hubs family examples only; no live Azure service or coding-agent evaluation.",
             "sha256": "34f20de5cfb9e8eb9c97125d4088e839b1b653be640964482c68fece464e4cd6"
+          },
+          {
+            "path": "docs/research-azure-eventhub-python.md",
+            "scope": "Synchronous checkpoint callbacks and lifecycle only; no live Azure service or agent evaluation.",
+            "sha256": "1ae4c6f02e9c20b6557cf42a666f84be527186afcaf6617c41e93872d1348797"
           }
         ],
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-python-checkpoint/SKILL.md",
+            "scope": "Synchronous checkpoint overlay with simulated receive controls.",
+            "sha256": "a3648eaba953a37389ddb82c0e5bf9c0eb5258f6d5defd9b22269ed76ea6c4d1"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/azure-eventhub-python-checkpoint-v1/qualification.json",
+            "scope": "Six offline SDK-client controls; no Azure service or agent performance evaluation.",
+            "sha256": "0b3f86c2eac776d0b8278e36d3a2677c55ca8e7465ff6d32e297b981e201e76d"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "microsoft/skills",
       "source_signature": {

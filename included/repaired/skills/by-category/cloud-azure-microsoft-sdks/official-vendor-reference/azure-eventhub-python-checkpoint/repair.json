@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "microsoft-skills-github-plugins-azure-sdk-python-skills-azure-eventhub-py-skill-md",
+  "source_commit": "a2c05249c4a20103dd954ca702467aa328aac031",
+  "source_mirror": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-py",
+  "original_skill_sha256": "9afca2d824bd3cb66950d689df72368dda2baa699099435eee065b3854b5e372",
+  "license_file": "LICENSE",
+  "license_sha256": "d9a1b1e30d633d5732ea18e3cba9538d293ebc53e1a9e4e96ab739e0c5c4f1cb",
+  "scope": "Synchronous checkpoint callback and consumer lifecycle; simulated receive controls only.",
+  "azure_service_run": false,
+  "model_performance_claim": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/azure-eventhub-python-checkpoint-v1/qualification.json",
+  "overlay_sha256": {
+    "examples/checkpoint_consumer.py": "9155c80c9bfa12ac57d6049aac2b4be19581b26898618e59ccfd0c28d9ad66ad",
+    "examples/requirements-test.txt": "ca64fc6da8ec16d2cbe1bff50a2c90f358e2c5d68942c2df14cc00429e53b98d",
+    "LICENSE": "d9a1b1e30d633d5732ea18e3cba9538d293ebc53e1a9e4e96ab739e0c5c4f1cb",
+    "provenance/original.SKILL.md": "9afca2d824bd3cb66950d689df72368dda2baa699099435eee065b3854b5e372",
+    "SKILL.md": "a3648eaba953a37389ddb82c0e5bf9c0eb5258f6d5defd9b22269ed76ea6c4d1"
+  },
+  "evidence_sha256": {
+    "qualification.json": "0b3f86c2eac776d0b8278e36d3a2677c55ca8e7465ff6d32e297b981e201e76d",
+    "reproduce.py": "f3649312efc6388fe0e342bf387e521daec92a4d6a05a48841fa9735ea54de07",
+    "sources.json": "560ee2b4692f208f091e1cf3329ebe76a7414861c4b852c101b1ec14c6cc3b39",
+    "windows-result.json": "e519ceed1fa39b0c174facc066be48c62fc10fdff551c66a5db8b3c3336429d0"
+  }
+}

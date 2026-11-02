@@ -112,8 +112,10 @@ Some reviewed instructions have known limitations:
 - The pinned Azure Pipelines syntax component accepts tested bare sequence entries. A [limited sequence preflight](../included/repaired/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/azure-pipelines-sequence-preflight/SKILL.md) identifies those shapes without claiming Azure schema validation. [See the controls and limits](research-azure-pipelines-syntax.md).
 
   - The five pinned Event Hubs skills have selected batching, checkpointing or
-    package-compatibility limitations. A [maintained .NET batching example](../included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-dotnet-batching/SKILL.md)
-    addresses the tested compile failure. [See the family review](research-azure-event-hubs.md).
+    package-compatibility limitations. Maintained examples address the tested
+    [.NET batching](../included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-dotnet-batching/SKILL.md)
+    and [synchronous Python checkpointing](../included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-python-checkpoint/SKILL.md)
+    cases. [See the family review](research-azure-event-hubs.md).
 
   - The pinned Azure AI Projects .NET skill describes older SDK guidance. A
   [stable Foundry example](../included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-ai-projects-dotnet-stable/SKILL.md)

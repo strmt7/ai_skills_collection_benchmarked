@@ -1,0 +1,20 @@
+{
+  "capture_date_utc": "2026-11-02",
+  "web_pages": [
+    {
+      "url": "https://learn.microsoft.com/en-us/python/api/azure-eventhub/azure.eventhub.eventhubconsumerclient?view=azure-python",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_result_sha256": "334f0918adea9e1473842949b564095cab98ceab79b7e6691a6ee83b3dfac7e9",
+      "status_code": 200,
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/python/api/overview/azure/eventhub-checkpointstoreblob-readme?view=azure-python",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_result_sha256": "8d96be4a2d2da7ea81c4b2dc9aa9b517947b85ed11f88606b030e81face7f622",
+      "status_code": 200,
+      "scope_reviewed": true
+    }
+  ],
+  "limits": "Native Crawl4AI results and command streams are retained outside Git; hashes identify the captured bytes."
+}

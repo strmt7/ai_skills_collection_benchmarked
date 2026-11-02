@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "scope": "Synchronous checkpoint callback and SDK-client lifecycle with simulated receive.",
+  "source_skill_sha256": "9afca2d824bd3cb66950d689df72368dda2baa699099435eee065b3854b5e372",
+  "initial_platform": "Windows",
+  "python_version": "3.13.17",
+  "tests_run": 6,
+  "azure_service_called": false,
+  "agent_performance_tested": false,
+  "raw_stdout_sha256": "7d15db53c6fc7666662ab6e6b5a7257c5544f747a3f71ef0a94a31d97dd9b2f7",
+  "raw_stderr_sha256": "13d7d0d51fa501d97f817e85c367e920c836111eb0f58ebdd1c1e25b438c3754",
+  "limits": [
+    "The receive method and socket connect are simulated; no Event Hubs or Blob Storage service is accessed.",
+    "These controls do not test Azure delivery, partition ownership, retries, or throughput.",
+    "The complete source skill and coding-agent performance have not been evaluated."
+  ]
+}

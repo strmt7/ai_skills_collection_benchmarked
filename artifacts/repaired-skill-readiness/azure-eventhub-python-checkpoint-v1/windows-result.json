@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "platform": "Windows",
+  "python_version": "3.13.17",
+  "packages": {
+    "azure-eventhub": "5.15.1",
+    "azure-eventhub-checkpointstoreblob": "1.2.0",
+    "azure-identity": "1.27.0"
+  },
+  "example_sha256": "9155c80c9bfa12ac57d6049aac2b4be19581b26898618e59ccfd0c28d9ad66ad",
+  "tests_run": 6,
+  "failures": 0,
+  "errors": 0,
+  "azure_service_called": false,
+  "agent_performance_tested": false
+}
