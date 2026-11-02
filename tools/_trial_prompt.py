@@ -10,23 +10,23 @@ INSTRUCTIONS = b"\n\nAdditional skill instructions for this condition:\n\n"
 RUNTIME = b"<PYTHON_RUNTIME>"
 
 
-def _matches_template(prompt: bytes, template: bytes) -> bool:
+def _matches_template(prompt: bytes, template: bytes) -> tuple[bool, bytes | None]:
     parts = template.split(RUNTIME)
     count = len(parts) - 1
     if not count:
-        return prompt == template
+        return prompt == template, None
     extra = len(prompt) - sum(map(len, parts))
     if extra <= 0 or extra % count:
-        return False
+        return False, None
     length = extra // count
     runtime = prompt[len(parts[0]) : len(parts[0]) + length]
     try:
         path = runtime.decode("utf-8")
     except UnicodeDecodeError:
-        return False
+        return False, None
     if "\x00" in path or not (PurePosixPath(path).is_absolute() or PureWindowsPath(path).is_absolute()):
-        return False
-    return template.replace(RUNTIME, runtime) == prompt
+        return False, None
+    return template.replace(RUNTIME, runtime) == prompt, runtime
 
 
 def _matches_skills(content: bytes, hashes: list[str]) -> bool:
@@ -49,22 +49,21 @@ def _matches_skills(content: bytes, hashes: list[str]) -> bool:
     return bool(hashes) and hashlib.sha256(content[offset:]).hexdigest() == hashes[-1]
 
 
-def _matches_prompt(prompt: bytes, template: bytes, hashes: list[str]) -> bool:
+def _matches_prompt(prompt: bytes, template: bytes, hashes: list[str]) -> tuple[bool, bytes | None]:
     if not hashes:
         return _matches_template(prompt, template)
     cursor = 0
-    matches = 0
+    matches: list[bytes | None] = []
     while (boundary := prompt.find(INSTRUCTIONS, cursor)) != -1:
-        if _matches_template(prompt[:boundary], template) and _matches_skills(
-            prompt[boundary + len(INSTRUCTIONS) :], hashes
-        ):
-            matches += 1
+        valid, runtime = _matches_template(prompt[:boundary], template)
+        if valid and _matches_skills(prompt[boundary + len(INSTRUCTIONS) :], hashes):
+            matches.append(runtime)
         cursor = boundary + 1
-    return matches == 1
+    return (True, matches[0]) if len(matches) == 1 else (False, None)
 
 
-def verify_prompt(raw: bytes, protocol: dict[str, Any], condition: str) -> None:
-    """Verify the recorded prompt's declared content, without asserting delivery or authenticity."""
+def verify_prompt(raw: bytes, protocol: dict[str, Any], condition: str) -> tuple[str, bytes | None]:
+    """Verify content and return the recorded runtime text only for in-memory comparison."""
     try:
         raw.decode("utf-8")
     except UnicodeDecodeError as exc:
@@ -93,5 +92,11 @@ def verify_prompt(raw: bytes, protocol: dict[str, Any], condition: str) -> None:
     expected = template.replace("<TASK_BRIEF>", task["brief"]).encode("utf-8")
     # write_text may add CR before each LF on Windows; reverse at most one layer.
     variants = {raw, raw.replace(b"\r\n", b"\n")}
-    if not any(_matches_prompt(value, expected, hashes) for value in variants):
+    matches = [runtime for value in variants for valid, runtime in [_matches_prompt(value, expected, hashes)] if valid]
+    if not matches:
         raise ValueError("captured prompt disagrees with task or skill content in the protocol")
+    if RUNTIME not in expected:
+        return "not_requested", None
+    if len(set(matches)) != 1:
+        return "ambiguous", None
+    return "recorded", matches[0]

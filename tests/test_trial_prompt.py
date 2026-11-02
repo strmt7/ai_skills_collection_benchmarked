@@ -67,6 +67,13 @@ def test_windows_text_transport_and_original_crlf_are_distinct():
         verify_prompt(windows_capture.replace(b"content", b"changed"), config, "candidate")
 
 
+def test_runtime_absence_and_ambiguous_newline_transport_remain_distinct():
+    without_runtime = protocol("<TASK_BRIEF>", "repair", [])
+    assert verify_prompt(b"repair", without_runtime, "candidate") == ("not_requested", None)
+    ambiguous = protocol("<PYTHON_RUNTIME>", "repair", [])
+    assert verify_prompt(b"/runtime\r\nname", ambiguous, "candidate") == ("ambiguous", None)
+
+
 def test_invalid_utf8_skill_cannot_be_accepted_as_runner_text():
     config = protocol("<TASK_BRIEF>", "repair", [])
     config["conditions"]["candidate"]["skills"] = [{"path": "skill.md", "sha256": hashlib.sha256(b"\xff").hexdigest()}]

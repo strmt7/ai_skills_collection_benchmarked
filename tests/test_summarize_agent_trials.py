@@ -24,7 +24,7 @@ def matched(tmp_path):
             "files": ["fixture.py"],
         },
         "input_sha256": {"fixture.py": "b" * 64},
-        "prompt_template": "<TASK_BRIEF>",
+        "prompt_template": "<TASK_BRIEF> Runtime: <PYTHON_RUNTIME>",
         "model": "requested-model",
         "reasoning_effort": "high",
         "grader_sha256": "a" * 64,
@@ -46,7 +46,7 @@ def matched(tmp_path):
         write_json(directory / "launch.json", {"protocol_sha256": digest})
         for name in ("prompt.txt", "stderr.txt", "patch.diff"):
             (directory / name).write_text(name, encoding="utf-8")
-        (directory / "prompt.txt").write_text(protocol["task"]["brief"], encoding="utf-8")
+        (directory / "prompt.txt").write_text(protocol["task"]["brief"] + " Runtime: /fixture/python", encoding="utf-8")
         events = [
             {"type": "item.completed", "item": {"type": "command_execution"}},
             {"type": "turn.completed", "usage": {"input_tokens": 100, "cached_input_tokens": 20, "output_tokens": 30}},
@@ -119,6 +119,54 @@ def test_rehashed_prompt_must_match_declared_task(matched):
         summary.summarize(protocol, trials)
 
 
+def test_runtime_path_difference_is_reported_without_publishing_paths(matched):
+    protocol, trials = matched
+    directory = trials / "repetition-1/improved"
+    prompt = directory / "prompt.txt"
+    prompt.write_text(prompt.read_text(encoding="utf-8").replace("/fixture/python", "/other/python"), encoding="utf-8")
+    result_file = directory / "result.json"
+    result = summary.read_json(result_file)
+    result["evidence_sha256"]["prompt.txt"] = summary.sha256(prompt)
+    write_json(result_file, result)
+    report = summary.summarize(protocol, trials)
+    evidence = report["prompt_runtime_evidence"]
+    assert evidence["comparisons"]["improved"] == {
+        "planned_pairs": 1,
+        "same_recorded_path": 0,
+        "different_recorded_path": 1,
+        "unavailable_pairs": 0,
+    }
+    encoded = json.dumps(report)
+    assert "/fixture/python" not in encoded and "/other/python" not in encoded
+
+
+def test_runtime_evidence_counts_unavailable_pairs_and_preserves_uncertainty():
+    runtimes = {
+        (1, "default"): ("recorded", b"/same"),
+        (1, "improved"): ("recorded", b"/same"),
+        (2, "default"): ("recorded", b"/one"),
+        (2, "improved"): ("recorded", b"/two"),
+        (3, "default"): ("not_requested", None),
+        (3, "improved"): ("ambiguous", None),
+    }
+    evidence = summary.prompt_runtime_evidence(runtimes, {"default", "improved"})
+    assert evidence["recorded_attempts"] == 4
+    assert evidence["not_requested_attempts"] == evidence["ambiguous_attempts"] == 1
+    assert evidence["comparisons"]["improved"] == {
+        "planned_pairs": 3,
+        "same_recorded_path": 1,
+        "different_recorded_path": 1,
+        "unavailable_pairs": 1,
+    }
+    assert "/same" not in json.dumps(evidence)
+
+
+@pytest.mark.parametrize("runtime", [("recorded", None), ("ambiguous", b"/path"), ("unknown", None)])
+def test_invalid_runtime_evidence_is_rejected(runtime):
+    with pytest.raises(ValueError, match="invalid prompt runtime"):
+        summary.prompt_runtime_evidence({(1, "default"): runtime}, {"default"})
+
+
 def test_rehashed_prompt_must_contain_declared_skill(matched):
     import hashlib
 
@@ -139,7 +187,7 @@ def test_rehashed_prompt_must_contain_declared_skill(matched):
         launch = directory / "launch.json"
         write_json(launch, {"protocol_sha256": digest})
         prompt = directory / "prompt.txt"
-        content = config["task"]["brief"]
+        content = config["task"]["brief"] + " Runtime: /fixture/python"
         if condition == "improved":
             content += "\n\nAdditional skill instructions for this condition:\n\nDifferent skill instructions."
         prompt.write_text(content, encoding="utf-8")

@@ -548,6 +548,41 @@ def test_snapshot_evidence_is_specific_to_each_candidate():
     assert evidence["other"]["different_reported_identifier_pairs"] == 1
 
 
+def test_prompt_runtime_comparison_uses_each_task_and_keeps_missing_unknown():
+    first = report("a", ["task_passed"], ["task_passed"])
+    second = report("b", ["task_passed"], ["task_failed"])
+    third = report("c", ["task_passed"], ["harness_error"])
+    first["prompt_runtime_evidence"] = single.prompt_runtime_evidence(
+        {(1, "default"): ("recorded", b"/private"), (1, "candidate"): ("recorded", b"/private")},
+        set(DEFINITIONS),
+    )
+    second["prompt_runtime_evidence"] = single.prompt_runtime_evidence(
+        {(1, "default"): ("recorded", b"/one"), (1, "candidate"): ("recorded", b"/two")},
+        set(DEFINITIONS),
+    )
+    result = target.aggregate([first, second, third], [DEFINITIONS] * 3)
+    assert result["prompt_runtime_evidence"]["candidate"] == {
+        "planned_tasks": 3,
+        "tasks_with_unavailable_pairs": 1,
+        "planned_pairs": 3,
+        "same_recorded_path": 1,
+        "different_recorded_path": 1,
+        "unavailable_pairs": 1,
+    }
+    assert "/private" not in json.dumps(result)
+    assert result["quality_superiority_established"] is False
+
+
+def test_inconsistent_prompt_runtime_counts_are_rejected():
+    item = report("a", ["task_passed"], ["task_passed"])
+    item["prompt_runtime_evidence"] = single.prompt_runtime_evidence(
+        {(1, "default"): ("recorded", b"/path"), (1, "candidate"): ("recorded", b"/path")}, set(DEFINITIONS)
+    )
+    item["prompt_runtime_evidence"]["comparisons"]["candidate"]["same_recorded_path"] = True
+    with pytest.raises(ValueError, match="runtime pair counts"):
+        target.aggregate([item], [DEFINITIONS])
+
+
 @pytest.mark.parametrize("invalid", ["", 42, False, ["snapshot"]])
 def test_invalid_reported_snapshot_is_rejected(invalid):
     item = report("a", ["task_passed"], ["task_passed"])
@@ -665,6 +700,9 @@ def test_historical_example_revalidates_recorded_attempts():
     assert result["task_count"] == 1
     assert result["tasks"][0]["attempt_status_counts"]["default"]["task_passed"] == 3
     assert result["tasks"][0]["provider_model_snapshots"]["default"]["unavailable_attempts"] == 3
+    for evidence in result["prompt_runtime_evidence"].values():
+        assert evidence["planned_pairs"] == evidence["same_recorded_path"] == 3
+        assert evidence["different_recorded_path"] == evidence["unavailable_pairs"] == 0
     assert result["comparisons"]["improved"]["equal_task_weight_mean_difference"] == {
         "numerator": 0,
         "denominator": 1,
@@ -694,7 +732,7 @@ def test_two_task_plan_revalidates_each_complete_trial(matched, tmp_path, same_t
         launch = directory / "launch.json"
         launch.write_text(json.dumps({"protocol_sha256": second_hash}), encoding="utf-8")
         prompt = directory / "prompt.txt"
-        prompt.write_text(config["task"]["brief"], encoding="utf-8")
+        prompt.write_text(config["task"]["brief"] + " Runtime: /fixture/python", encoding="utf-8")
         result_path = directory / "result.json"
         result = json.loads(result_path.read_text(encoding="utf-8"))
         result["protocol_sha256"] = second_hash

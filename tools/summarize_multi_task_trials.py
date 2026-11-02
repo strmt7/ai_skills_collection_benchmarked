@@ -8,7 +8,7 @@ import json
 from collections import Counter
 from fractions import Fraction
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 from _trial_comparisons import OUTCOMES, SCORED, STATUSES, TOKEN_KEYS, compare_blocks
 from _trial_transcript import strict_json
@@ -130,6 +130,57 @@ def summarize_snapshot_evidence(reports: list[dict[str, Any]], condition: str) -
         "incomplete_pairs": pairs["incomplete"],
         "reported_identifiers": sorted(identifiers),
         "status": status,
+    }
+
+
+def summarize_prompt_runtime_evidence(reports: list[dict[str, Any]], condition: str) -> dict[str, Any]:
+    """Pool within-task path-text comparisons; do not compare paths between tasks."""
+    totals: Counter[str] = Counter()
+    unavailable_tasks = 0
+    for report in reports:
+        planned = report["conditions"][condition]["planned_attempts"]
+        evidence = report.get("prompt_runtime_evidence")
+        if evidence is None:
+            counts = {"same_recorded_path": 0, "different_recorded_path": 0, "unavailable_pairs": planned}
+        else:
+            if not isinstance(evidence, dict):
+                raise ValueError("invalid prompt runtime evidence")
+            attempts = [
+                evidence.get(key) for key in ("recorded_attempts", "not_requested_attempts", "ambiguous_attempts")
+            ]
+            if any(type(value) is not int or value < 0 for value in attempts) or sum(cast(list[int], attempts)) != len(
+                report["attempts"]
+            ):
+                raise ValueError("invalid prompt runtime attempt counts")
+            comparisons = evidence.get("comparisons")
+            if not isinstance(comparisons, dict) or set(comparisons) != set(report["conditions"]) - {"default"}:
+                raise ValueError("invalid prompt runtime comparisons")
+            counts = comparisons[condition]
+            if not isinstance(counts, dict) or set(counts) != {
+                "planned_pairs",
+                "same_recorded_path",
+                "different_recorded_path",
+                "unavailable_pairs",
+            }:
+                raise ValueError("invalid prompt runtime pair counts")
+            if (
+                any(type(value) is not int or value < 0 for value in counts.values())
+                or counts["planned_pairs"] != planned
+                or sum(counts[key] for key in ("same_recorded_path", "different_recorded_path", "unavailable_pairs"))
+                != planned
+            ):
+                raise ValueError("invalid prompt runtime pair counts")
+        totals.update(
+            {key: counts[key] for key in ("same_recorded_path", "different_recorded_path", "unavailable_pairs")}
+        )
+        unavailable_tasks += bool(counts["unavailable_pairs"])
+    return {
+        "planned_tasks": len(reports),
+        "tasks_with_unavailable_pairs": unavailable_tasks,
+        "planned_pairs": sum(totals.values()),
+        "same_recorded_path": totals["same_recorded_path"],
+        "different_recorded_path": totals["different_recorded_path"],
+        "unavailable_pairs": totals["unavailable_pairs"],
     }
 
 
@@ -397,6 +448,7 @@ def aggregate(reports: list[dict[str, Any]], definitions: list[dict[str, Any]]) 
                 "expected_grading_cases": report["expected_grading_cases"],
                 "limitations": report["limitations"],
                 "block_comparison": report["block_comparison"],
+                "prompt_runtime_evidence": report.get("prompt_runtime_evidence"),
                 "attempts": report["attempts"],
                 "attempt_status_counts": counts,
                 "provider_model_snapshots": snapshots,
@@ -435,6 +487,10 @@ def aggregate(reports: list[dict[str, Any]], definitions: list[dict[str, Any]]) 
         "model_snapshot_evidence": {
             condition: summarize_snapshot_evidence(reports, condition) for condition in sorted(conditions - {"default"})
         },
+        "prompt_runtime_evidence": {
+            condition: summarize_prompt_runtime_evidence(reports, condition)
+            for condition in sorted(conditions - {"default"})
+        },
         "token_comparisons": {
             condition: summarize_paired_tokens(reports, condition) for condition in sorted(conditions - {"default"})
         },
@@ -448,6 +504,7 @@ def aggregate(reports: list[dict[str, Any]], definitions: list[dict[str, Any]]) 
             "A frozen plan and matching hashes alone do not establish preregistration or grading authenticity.",
             "Requested model identity is not proof of the provider-resolved model snapshot.",
             "Snapshot identifiers are provider-reported metadata; even matching identifiers do not independently establish model identity.",
+            "Runtime path comparisons use text recorded in prompts, not runtime execution evidence; equal text does not prove identical runtimes and different text may refer to the same runtime.",
             "Task IDs and protocol hashes do not by themselves prove that tasks are independent.",
             "Paired token differences require both attempts to pass and usage for every planned block; they are not priced cost or proof of efficiency.",
             "All-attempt usage includes failed and unscored attempts when reported; missing usage prevents complete means and differences, and totals are observed subtotals rather than priced cost.",

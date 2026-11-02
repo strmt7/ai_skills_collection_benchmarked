@@ -170,6 +170,14 @@ that the recorded runtime path is absolute, but does not establish which runtime
 was actually used or what the provider received. These are consistency checks,
 not proof that the evidence is authentic.
 
+`prompt_runtime_evidence` compares the runtime-path text recorded in matched
+prompts within each task. It counts equal, different and unavailable pairs,
+and distinguishes attempts without a runtime placeholder from ambiguous
+newline interpretations. Reports do not publish the extracted path text or
+its hash. Text equality does not prove that the same runtime was used, and
+different paths can identify the same runtime. These counts do not change task
+scores or establish a performance advantage.
+
 The `paired_outcomes` section also separates blocks where both conditions
 passed, only the candidate passed, only the default passed, neither passed, or
 at least one attempt was unscored. It reports both pooled block counts and the

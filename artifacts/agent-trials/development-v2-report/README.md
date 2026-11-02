@@ -27,6 +27,17 @@ Token differences are condition minus default, only where both passed and both u
 | improved | 3/3 | 49,699 [-92,259, 85,128] | -1,185 [-1,772, 1,954] |
 | karpathy | 3/3 | -15,953 [-77,392, 12,626] | -1,699 [-1,773, -722] |
 
+## Runtime paths recorded in prompts
+
+Path text is available for 9 attempts; 0 did not request a path and 0 were ambiguous.
+
+| Condition | Same path text | Different path text | Unavailable pairs |
+| --- | ---: | ---: | ---: |
+| improved | 3 | 0 | 0 |
+| karpathy | 3 | 0 | 0 |
+
+Path text is not published here. Equal text does not prove the same runtime was used; different text may identify the same runtime.
+
 Input counts include cached input. Output counts are reported as returned by the CLI. These are descriptive tokens, not priced costs or statistically demonstrated efficiency gains.
 
 Condition definitions and run order are recorded in the associated protocol. Other experiments are not pooled into this report.

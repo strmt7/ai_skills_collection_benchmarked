@@ -385,6 +385,25 @@
   "model_requested": "gpt-6.1-sol",
   "partition": "development",
   "planned_attempts": 9,
+  "prompt_runtime_evidence": {
+    "ambiguous_attempts": 0,
+    "comparisons": {
+      "improved": {
+        "different_recorded_path": 0,
+        "planned_pairs": 3,
+        "same_recorded_path": 3,
+        "unavailable_pairs": 0
+      },
+      "karpathy": {
+        "different_recorded_path": 0,
+        "planned_pairs": 3,
+        "same_recorded_path": 3,
+        "unavailable_pairs": 0
+      }
+    },
+    "not_requested_attempts": 0,
+    "recorded_attempts": 9
+  },
   "protocol_sha256": "a1f6cbd086680ca19c3a6a124b7739537a7ad38550de8b59b83ec1f8781fcda9",
   "quality_superiority_established": false,
   "reasoning_effort_requested": "high",

@@ -250,18 +250,62 @@ def _verify_usage(result: dict[str, Any]) -> None:
 
 def verify_result(
     directory: Path, protocol: dict[str, Any], protocol_hash: str, condition: str, expected_cases: frozenset[str]
-) -> dict[str, Any]:
+) -> tuple[dict[str, Any], tuple[str, bytes | None]]:
     """Verify an attempt's identity, evidence, grading outcome and usage."""
     result = read_json(directory / "result.json")
     if not isinstance(result, dict):
         raise ValueError("trial result must be an object")
     _verify_identity(result, protocol, protocol_hash, condition)
     prompt = _verify_evidence(directory, result, protocol_hash)
-    verify_prompt(prompt, protocol, condition)
+    runtime = verify_prompt(prompt, protocol, condition)
     grade, checks = _verify_checks(result, expected_cases)
     _verify_outcome(result, grade, checks)
     _verify_usage(result)
-    return result
+    return result, runtime
+
+
+def prompt_runtime_evidence(
+    runtimes: dict[tuple[int, str], tuple[str, bytes | None]], conditions: set[str]
+) -> dict[str, Any]:
+    """Compare recorded prompt path text within each block without publishing paths."""
+    repetitions = {repetition for repetition, _ in runtimes}
+    if (
+        not repetitions
+        or any(type(repetition) is not int or repetition < 1 for repetition in repetitions)
+        or set(runtimes) != {(repetition, condition) for repetition in repetitions for condition in conditions}
+        or any(
+            status not in {"recorded", "not_requested", "ambiguous"}
+            or (status == "recorded" and (not isinstance(path, bytes) or not path))
+            or (status != "recorded" and path is not None)
+            for status, path in runtimes.values()
+        )
+    ):
+        raise ValueError("invalid prompt runtime evidence")
+    counts = Counter(status for status, _ in runtimes.values())
+    comparisons = {}
+    if "default" in conditions:
+        for condition in sorted(conditions - {"default"}):
+            pairs: Counter[str] = Counter()
+            for repetition in sorted(repetitions):
+                baseline, candidate = runtimes[repetition, "default"], runtimes[repetition, condition]
+                if baseline[0] != "recorded" or candidate[0] != "recorded":
+                    pairs["unavailable_pairs"] += 1
+                elif baseline[1] == candidate[1]:
+                    pairs["same_recorded_path"] += 1
+                else:
+                    pairs["different_recorded_path"] += 1
+            comparisons[condition] = {
+                "planned_pairs": len(repetitions),
+                "same_recorded_path": pairs["same_recorded_path"],
+                "different_recorded_path": pairs["different_recorded_path"],
+                "unavailable_pairs": pairs["unavailable_pairs"],
+            }
+    return {
+        "recorded_attempts": counts["recorded"],
+        "not_requested_attempts": counts["not_requested"],
+        "ambiguous_attempts": counts["ambiguous"],
+        "comparisons": comparisons,
+    }
 
 
 def summarize(protocol_path: Path, trials: Path, *, package_caches: bool = False) -> dict[str, Any]:
@@ -272,6 +316,7 @@ def summarize(protocol_path: Path, trials: Path, *, package_caches: bool = False
     protocol_hash = hashlib.sha256(protocol_bytes).hexdigest()
     expected_cases, manifest_hash = read_grading_manifest(protocol_path, protocol, protocol_hash)
     rows, planned_paths = [], set()
+    runtimes: dict[tuple[int, str], tuple[str, bytes | None]] = {}
     repetitions = set()
     conditions = set(protocol["conditions"])
     for block in protocol["planned_order"]:
@@ -293,7 +338,8 @@ def summarize(protocol_path: Path, trials: Path, *, package_caches: bool = False
             directory = trials / relative
             if not (directory / "result.json").is_file():
                 raise ValueError(f"planned attempt has not completed: {relative}")
-            result = verify_result(directory, protocol, protocol_hash, condition, expected_cases)
+            result, runtime = verify_result(directory, protocol, protocol_hash, condition, expected_cases)
+            runtimes[repetition, condition] = runtime
             if package_caches:
                 package_bytecode(directory, result["evidence_sha256"])
             rows.append(
@@ -358,6 +404,7 @@ def summarize(protocol_path: Path, trials: Path, *, package_caches: bool = False
         "conditions": summaries,
         "attempts": rows,
         "block_comparison": compare_blocks(rows, conditions),
+        "prompt_runtime_evidence": prompt_runtime_evidence(runtimes, conditions),
         "quality_superiority_established": False,
         "limitations": [
             f"One task and {len(repetitions)} matched {'attempt' if len(repetitions) == 1 else 'attempts'} "
@@ -444,6 +491,29 @@ def render(report: dict[str, Any]) -> str:
             f"| {condition} | {values['task_passes']}/{values['planned_attempts']} | {values['usage_observed_attempts']}/{values['planned_attempts']} | {token_range('input_tokens')} | {token_range('output_tokens')} |"
         )
     lines += _render_block_comparison(report["block_comparison"])
+    runtime = report["prompt_runtime_evidence"]
+    lines += [
+        "",
+        "## Runtime paths recorded in prompts",
+        "",
+        f"Path text is available for {runtime['recorded_attempts']} attempts; "
+        f"{runtime['not_requested_attempts']} did not request a path and {runtime['ambiguous_attempts']} were ambiguous.",
+    ]
+    if runtime["comparisons"]:
+        lines += [
+            "",
+            "| Condition | Same path text | Different path text | Unavailable pairs |",
+            "| --- | ---: | ---: | ---: |",
+        ]
+        for condition, evidence in runtime["comparisons"].items():
+            lines.append(
+                f"| {condition} | {evidence['same_recorded_path']} | {evidence['different_recorded_path']} | {evidence['unavailable_pairs']} |"
+            )
+    lines += [
+        "",
+        "Path text is not published here. Equal text does not prove the same runtime was used; "
+        "different text may identify the same runtime.",
+    ]
     lines += [
         "",
         "Input counts include cached input. Output counts are reported as returned by the CLI. These are descriptive tokens, not priced costs or statistically demonstrated efficiency gains.",
