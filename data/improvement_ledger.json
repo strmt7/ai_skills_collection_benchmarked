@@ -15199,13 +15199,22 @@
           {
             "path": "docs/research-initial-agent-workflows.md",
             "sha256": "04a54ee8f98e844081de808bc770fd9ab63cb7fcdb60c35f48378aec83496d05"
+          },
+          {
+            "path": "docs/research-clarification-decisions.md",
+            "sha256": "92dd2bc718bb6cf8d04de0e99c58b89458320bc6f1b9bab58518c13192c8bb29"
           }
         ],
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/improved/skills/clarify-when-needed/SKILL.md",
+            "sha256": "349544f6014b9cc8abd3219ec7918870d988cb88158fbe73557715b50f752183"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "trailofbits/skills",
       "source_signature": {

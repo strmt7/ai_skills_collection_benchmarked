@@ -31,6 +31,10 @@ policy. Copying a `SKILL.md` file alone can break those links.
 
 Some reviewed instructions have known limitations:
 
+- The pinned clarification skill can require repeated confirmation after the
+  user has already authorized proceeding. The experimental
+  [clarification overlay](../included/improved/skills/clarify-when-needed/SKILL.md)
+  narrows that rule; it has not been evaluated in an agent trial.
 - The pinned AnnData skill incorrectly says backed-mode metadata changes are
   saved automatically. The [AnnData I/O overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/anndata-io/SKILL.md)
   covers selected 10x readers and metadata writes. Its [component controls](../artifacts/repaired-skill-readiness/anndata-io-v2/qualification.json)
