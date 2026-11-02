@@ -29,8 +29,6 @@ jobs:
       GIT_CONFIG_COUNT: '1'
       GIT_CONFIG_KEY_0: core.longpaths
       GIT_CONFIG_VALUE_0: 'true'
-      RUSTUP_HOME: ${{ runner.temp }}/eventhub-rustup
-      CARGO_HOME: ${{ runner.temp }}/eventhub-bootstrap-cargo
     strategy:
       fail-fast: false
       matrix:
@@ -42,12 +40,17 @@ jobs:
           python-version: '3.13.17'
       - name: Install the qualified Rust toolchain
         shell: pwsh
+        env:
+          RUSTUP_HOME: ${{ runner.temp }}/eventhub-rustup
+          CARGO_HOME: ${{ runner.temp }}/eventhub-bootstrap-cargo
         run: |
           $ErrorActionPreference = 'Stop'
           rustup toolchain install 1.99.1 --profile minimal --no-self-update
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Check the locked example
         shell: pwsh
+        env:
+          RUSTUP_HOME: ${{ runner.temp }}/eventhub-rustup
         run: |
           $ErrorActionPreference = 'Stop'
           $rustup = (Get-Command rustup).Source
