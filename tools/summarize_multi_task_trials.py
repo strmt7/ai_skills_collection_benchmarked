@@ -21,6 +21,51 @@ def fraction(value: Fraction | None) -> dict[str, int] | None:
     return {"numerator": value.numerator, "denominator": value.denominator}
 
 
+def declared_task_signatures(protocol: dict[str, Any]) -> tuple[str, str]:
+    """Hash declared prompt and workspace values; neither hash proves independence."""
+    task = protocol.get("task")
+    inputs = protocol.get("input_sha256")
+    template = protocol.get("prompt_template")
+    scaffold = protocol.get("workspace_scaffold", {})
+    if not isinstance(task, dict) or not isinstance(task.get("brief"), str) or not task["brief"].strip():
+        raise ValueError("Task declaration requires a nonempty brief")
+    if not isinstance(template, str) or not template.strip():
+        raise ValueError("Task declaration requires a nonempty prompt template")
+    files = task.get("files")
+    if (
+        not isinstance(inputs, dict)
+        or not inputs
+        or any(
+            not isinstance(path, str)
+            or not path
+            or not isinstance(digest, str)
+            or len(digest) != 64
+            or any(char not in "0123456789abcdef" for char in digest)
+            for path, digest in inputs.items()
+        )
+        or not isinstance(files, list)
+        or any(not isinstance(path, str) or not path for path in files)
+        or len(files) != len(set(files))
+        or set(files) != set(inputs)
+    ):
+        raise ValueError("Task declaration requires matching pinned files and SHA-256 inputs")
+    if (
+        not isinstance(scaffold, dict)
+        or any(not isinstance(path, str) or not path or not isinstance(value, str) for path, value in scaffold.items())
+        or set(scaffold) & set(inputs)
+    ):
+        raise ValueError("Task declaration has an invalid or overlapping workspace scaffold")
+    workspace = {"input_sha256": inputs, "workspace_scaffold": scaffold}
+
+    def signature(value: dict[str, Any]) -> str:
+        canonical = json.dumps(value, sort_keys=True, ensure_ascii=False, separators=(",", ":"), allow_nan=False)
+        return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+
+    return signature({"prompt": template.replace("<TASK_BRIEF>", task["brief"]), "workspace": workspace}), signature(
+        workspace
+    )
+
+
 def summarize_paired_outcomes(rows: list[dict[str, Any]], condition: str) -> dict[str, Any]:
     """Describe validated matched outcomes without treating repetitions as independent tasks."""
     if not rows:
@@ -427,6 +472,7 @@ def run_plan(path: Path) -> dict[str, Any]:
         raise ValueError("Plan must list at least one task")
     reports = []
     definitions = []
+    configs = []
     hashes = set()
     for item in plan["tasks"]:
         if not isinstance(item, dict) or set(item) != {"id", "protocol", "protocol_sha256", "trials"}:
@@ -446,10 +492,25 @@ def run_plan(path: Path) -> dict[str, Any]:
             raise ValueError("Verified task identity does not match the plan")
         reports.append(report)
         definitions.append(config["conditions"])
+        configs.append(config)
     if hashlib.sha256(path.read_bytes()).digest() != hashlib.sha256(raw).digest():
         raise ValueError("Multi-task plan changed during verification")
+    signatures = [declared_task_signatures(config) for config in configs]
+    task_signatures = [task for task, _ in signatures]
+    if len(set(task_signatures)) != len(task_signatures):
+        raise ValueError("Plan contains a duplicate declared task prompt and workspace")
     result = aggregate(reports, definitions)
     result["plan_sha256"] = hashlib.sha256(raw).hexdigest()
+    result["declared_task_signatures"] = [
+        {"task_id": report["task_id"], "sha256": task, "workspace_sha256": workspace}
+        for report, (task, workspace) in zip(reports, signatures, strict=True)
+    ]
+    workspaces: dict[str, list[str]] = {}
+    for report, (_, workspace) in zip(reports, signatures, strict=True):
+        workspaces.setdefault(workspace, []).append(report["task_id"])
+    result["declared_shared_workspaces"] = [
+        {"workspace_sha256": key, "task_ids": sorted(ids)} for key, ids in sorted(workspaces.items()) if len(ids) > 1
+    ]
     return result
 
 

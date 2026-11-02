@@ -155,6 +155,15 @@ has an unscored attempt on any planned task, its aggregate difference is
 unavailable; that attempt remains visible rather than being counted as a fail
 or silently dropped.
 
+Each plan entry must declare its task brief, prompt template, pinned input-file
+hashes and any workspace scaffold. The reporter hashes the declared prompt
+after inserting the brief and the declared workspace, rejects identical
+prompt-and-workspace declarations under different IDs, and lists exact shared
+workspace declarations even when the prompts differ. This prevents exact
+duplicates from being counted as separate tasks. The hashes reflect protocol
+declarations, not independent verification of the runtime environment; different
+hashes do not establish that tasks, fixtures or outcomes are independent.
+
 The `paired_outcomes` section also separates blocks where both conditions
 passed, only the candidate passed, only the default passed, neither passed, or
 at least one attempt was unscored. It reports both pooled block counts and the

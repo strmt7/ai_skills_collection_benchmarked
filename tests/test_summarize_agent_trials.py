@@ -17,7 +17,14 @@ def write_json(path, value):
 def matched(tmp_path):
     protocol: dict[str, Any] = {
         "protocol_version": 2,
-        "task": {"id": "independent-fixture", "partition": "development"},
+        "task": {
+            "id": "independent-fixture",
+            "partition": "development",
+            "brief": "Repair the declared fixture.",
+            "files": ["fixture.py"],
+        },
+        "input_sha256": {"fixture.py": "b" * 64},
+        "prompt_template": "<TASK_BRIEF>",
         "model": "requested-model",
         "reasoning_effort": "high",
         "grader_sha256": "a" * 64,

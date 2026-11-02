@@ -4,6 +4,7 @@ import json
 import shutil
 from fractions import Fraction
 from pathlib import Path
+from typing import Any
 
 import pytest
 import summarize_agent_trials as single
@@ -392,6 +393,57 @@ def test_duplicate_ids_and_condition_changes_are_rejected():
         target.aggregate([a, b], [DEFINITIONS, changed])
 
 
+def test_declared_signatures_use_effective_prompt_and_workspace_not_metadata():
+    first: dict[str, Any] = {
+        "task": {"id": "first", "brief": "repair", "files": ["a.py", "b.py"]},
+        "prompt_template": "Please <TASK_BRIEF>",
+        "input_sha256": {"a.py": "a" * 64, "b.py": "b" * 64},
+        "workspace_scaffold": {"tests.py": ""},
+    }
+    second = copy.deepcopy(first)
+    second["task"]["id"] = "second"
+    second["task"]["files"].reverse()
+    second["task"]["brief"] = "unused"
+    second["prompt_template"] = "Please repair"
+    second["input_sha256"] = dict(reversed(list(second["input_sha256"].items())))
+    assert target.declared_task_signatures(first) == target.declared_task_signatures(second)
+    baseline, workspace = target.declared_task_signatures(first)
+    second["prompt_template"] = "A different task"
+    changed_task, same_workspace = target.declared_task_signatures(second)
+    assert changed_task != baseline
+    assert same_workspace == workspace
+    second["input_sha256"]["a.py"] = "c" * 64
+    changed_task, changed_workspace = target.declared_task_signatures(second)
+    assert changed_workspace != workspace
+    second["workspace_scaffold"]["tests.py"] = "changed"
+    assert target.declared_task_signatures(second)[1] != changed_workspace
+
+
+@pytest.mark.parametrize(
+    "change",
+    [
+        {"task": {"brief": "", "files": ["fixture.py"]}},
+        {"task": {"brief": "repair", "files": []}},
+        {"task": {"brief": "repair", "files": ["fixture.py", "fixture.py"]}},
+        {"input_sha256": {}},
+        {"input_sha256": {"fixture.py": "A" * 64}},
+        {"input_sha256": {"fixture.py": True}},
+        {"prompt_template": ""},
+        {"workspace_scaffold": {"fixture.py": "overlap"}},
+        {"workspace_scaffold": {"output": 1}},
+    ],
+)
+def test_declared_signatures_reject_incomplete_or_inconsistent_inputs(change):
+    protocol = {
+        "task": {"brief": "repair", "files": ["fixture.py"]},
+        "input_sha256": {"fixture.py": "a" * 64},
+        "prompt_template": "<TASK_BRIEF>",
+    }
+    protocol.update(change)
+    with pytest.raises(ValueError, match="Task declaration"):
+        target.declared_task_signatures(protocol)
+
+
 @pytest.mark.parametrize(
     "field,value", [("model_requested", "other"), ("reasoning_effort_requested", "low"), ("partition", "holdout")]
 )
@@ -557,6 +609,29 @@ def test_plan_changed_during_verification_is_rejected(tmp_path, monkeypatch):
         target.run_plan(plan)
 
 
+def test_plan_rejects_unverifiable_task_declaration(tmp_path, monkeypatch):
+    import hashlib
+
+    protocol = tmp_path / "protocol.json"
+    protocol.write_text(json.dumps({"conditions": DEFINITIONS}), encoding="utf-8")
+    digest = hashlib.sha256(protocol.read_bytes()).hexdigest()
+    plan = tmp_path / "plan.json"
+    plan.write_text(
+        json.dumps(
+            {
+                "schema_version": 1,
+                "tasks": [{"id": "a", "protocol": "protocol.json", "protocol_sha256": digest, "trials": "trials"}],
+            }
+        ),
+        encoding="utf-8",
+    )
+    verified = report("a", ["task_passed"], ["task_passed"])
+    verified["protocol_sha256"] = digest
+    monkeypatch.setattr(target, "summarize", lambda *args: verified)
+    with pytest.raises(ValueError, match="requires a nonempty brief"):
+        target.run_plan(plan)
+
+
 def test_boolean_schema_version_is_not_an_integer_version(tmp_path):
     plan = tmp_path / "plan.json"
     plan.write_text('{"schema_version":true,"tasks":[]}', encoding="utf-8")
@@ -597,13 +672,16 @@ def test_historical_example_revalidates_recorded_attempts():
     assert result["quality_superiority_established"] is False
 
 
-def test_two_task_plan_revalidates_each_complete_trial(matched, tmp_path):
+@pytest.mark.parametrize("same_task", [False, True])
+def test_two_task_plan_revalidates_each_complete_trial(matched, tmp_path, same_task):
     protocol, trials = matched
     other = tmp_path / "second"
     other.mkdir()
     second_protocol = other / "protocol.json"
     config = json.loads(protocol.read_text(encoding="utf-8"))
     config["task"]["id"] = "another-fixture"
+    if not same_task:
+        config["task"]["brief"] = "Repair a different declared behavior."
     second_protocol.write_text(json.dumps(config), encoding="utf-8")
     second_hash = single.sha256(second_protocol)
     manifest = json.loads(protocol.with_name("protocol.grading.json").read_text(encoding="utf-8"))
@@ -644,8 +722,15 @@ def test_two_task_plan_revalidates_each_complete_trial(matched, tmp_path):
         ),
         encoding="utf-8",
     )
+    if same_task:
+        with pytest.raises(ValueError, match="duplicate declared task"):
+            target.run_plan(plan)
+        return
     report = target.run_plan(plan)
     assert report["task_count"] == 2
+    assert len(report["declared_shared_workspaces"]) == 1
+    assert report["declared_shared_workspaces"][0]["task_ids"] == ["another-fixture", "independent-fixture"]
+    assert len({item["sha256"] for item in report["declared_task_signatures"]}) == 2
     assert report["comparisons"]["improved"]["equal_task_weight_mean_difference"] == {"numerator": 0, "denominator": 1}
     (second_trials / "repetition-1/improved/result.json").unlink()
     with pytest.raises(ValueError, match="has not completed"):
