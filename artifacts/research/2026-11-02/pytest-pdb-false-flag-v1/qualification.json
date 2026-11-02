@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "scope": "Additional trusted development controls; not an agent trial or confined grader.",
+  "legacy_case_count": 25,
+  "additional_cases": 2,
+  "runs": [
+    {
+      "platform": "Windows",
+      "result": "windows-result.json",
+      "sha256": "171519c44a02b7b624a784f94106dda11c52c1ffd4032d572e610acab8673040"
+    },
+    {
+      "platform": "Linux",
+      "result": "linux-result.json",
+      "sha256": "93ac31a3402aaae7545daa259743f6548ed6bc118367250cb9a798faae9a6f94"
+    }
+  ],
+  "raw_outputs": "Retained outside Git in isolated local evidence; hosted workflow uploads its own logs.",
+  "agent_performance_tested": false
+}

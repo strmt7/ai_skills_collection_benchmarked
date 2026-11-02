@@ -19,6 +19,13 @@ and upstream pytest tests informed the cases. No model is invoked or scored.
 The [recorded calibration](../../../../artifacts/research/2026-11-02/pytest-pdb-task-calibration/qualification.json)
 binds both platform runs to their inputs and retains the upstream-test observations.
 
+Two additional controls check debugger-before-teardown ordering when a class
+explicitly sets a false skip flag, either directly or through inheritance. A
+fourth incorrect variant passes all 25 original controls but fails both new
+ones. The original checkout, upstream patch and independent alternative pass
+the new cases. The [additional calibration](../../../../artifacts/research/2026-11-02/pytest-pdb-false-flag-v1/qualification.json)
+records Windows and Linux observations without changing the original evidence.
+
 Five of the public issue's upstream tests were also run separately on Windows and
 Linux with Python 3.11: the original failed one and passed four related cases;
 the upstream fix passed all five. This was not the full upstream test suite.
@@ -43,6 +50,11 @@ python benchmarks/agent-effectiveness/development/pytest-unittest-pdb-skip-v1/co
   --source /path/to/pinned/pytest-checkout \
   --target-python /path/to/venv/python \
   --output /path/to/new/calibration-output
+
+python benchmarks/agent-effectiveness/development/pytest-unittest-pdb-skip-v1/controls/calibrate_false_flag.py \
+  --source /path/to/pinned/pytest-checkout \
+  --target-python /path/to/venv/python \
+  --output /path/to/new/false-flag-output
 ```
 
 On Windows, use the venv's `Scripts/python.exe` as `--target-python`. The
