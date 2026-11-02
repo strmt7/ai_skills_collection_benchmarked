@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "scope": "Selected non-security skill trees in mixed-purpose public sources; no skill-quality, license, runtime or agent-performance claim.",
+  "source_lock_sha256": "8a2e4a90ecc0465c828cb3f5ef15d3c29f35771c9399fd8d45dd65cf767b83d6",
+  "complete_observed_at_utc": "2026-11-02T15:34:28Z",
+  "alias_observed_at_utc": "2026-11-02T15:34:00Z",
+  "selected_repositories": 5,
+  "selected_skills": 82,
+  "complete_repositories": 5,
+  "complete_skills": 82,
+  "varnan_missing_recorded_paths": 26,
+  "varnan_with_same_named_candidates": 21,
+  "varnan_without_same_named_candidates": 5,
+  "alias_lock_is_derived_not_catalog_lock": true,
+  "files_sha256": {
+    "alias-selection.json": "c2dc2995b54fb169743db54b19c2f7f883d6a508361c717b205dff881416b667",
+    "alias-source-lock.json.gz": "3a932c2ae51d01552bd59d5344af7acbfc143abd373a566d0eed013472473539",
+    "alias-summary.json": "426883dcc68a9486a4303ca19c0d7f58cf22eeaeb311e02328d1e02481e9f137",
+    "alias-verification.json": "c652ae98473ce73346a4cdb099be58ece9c76240cb7487ee12de92698f878f67",
+    "complete-selection.json": "9c192cb0f72a0ef857d41aa8ce6cb910be16de89ee332e4cbf1d08b2fd1a7794",
+    "complete-summary.json": "9306e473fef9a20ba3fd87f2dc4f5bd7f933dffd901136f10da70fb05030d953",
+    "ecc-301-body.json": "055a6401a4d5fc1bf25dab8a880be780f61a6baf475173384d343d672c8226b8",
+    "ecc-301-headers.json": "31a8a5ba595d2973a5e45c0cc8dea83ecae3fc2d9864476fae0ca1616b22b716",
+    "ecc-canonical-metadata.json": "e9d6991292b411f81af74570b60d4b32bfebd3e16320b6c31b45171b5cda6484",
+    "ecc-pinned-commit.json": "a1aa6401bd78a9a55e81f46220e7128b09153e1ce8c1b5a4c6ed33d91ad900ce",
+    "ecc-redirect-target.json": "a92efacd9c54894235d7c46963f9bbd782bc491b4feb3ff0f29ba6f30ab4ac0a",
+    "redirect-observation.json": "d40807c57a8225b6288c00aa78575ca6755862ec23f4472d226a878838456232",
+    "selection.json": "1030e6e450a32630008ec32252fc98b5e9b3bcfd88670aadf87ebca5a3e8b2e7",
+    "source-lock.json.gz": "1bea919484d90e4e0b81b541228d1336c50da5f0bfcef259ea46f8a769dfcda3",
+    "verification.json": "7ab6e510e403b0f0dd569c3af3d5470cbd60f6aa20f7751155c46febe4478a21"
+  }
+}

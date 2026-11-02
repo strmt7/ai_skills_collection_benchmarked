@@ -456,3 +456,71 @@ def test_recorded_nonsecurity_batch_has_bound_source_and_reconciled_results():
         assert metadata["full_name"] == target["full_name"] == observation["canonical"]
         original_pins = {item["repo"]: item["commit_sha"] for item in json.loads(original)["sources"]}
         assert commit["sha"] == observation["pinned_commit"] == original_pins[observation["original"]]
+
+
+def test_recorded_mixed_source_batch_binds_canonical_alias_and_selection():
+    root = Path(__file__).resolve().parents[1]
+    evidence = root / "artifacts/research/2026-11-02/mixed-upstream-v1"
+    manifest = json.loads((evidence / "manifest.json").read_bytes())
+    actual = {
+        p.name: hashlib.sha256(p.read_bytes()).hexdigest()
+        for p in evidence.iterdir()
+        if p.is_file() and p.name != "manifest.json"
+    }
+    assert manifest["files_sha256"] == actual
+    original_bytes = gzip.decompress((evidence / "source-lock.json.gz").read_bytes())
+    alias_bytes = gzip.decompress((evidence / "alias-source-lock.json.gz").read_bytes())
+    assert hashlib.sha256(original_bytes).hexdigest() == manifest["source_lock_sha256"]
+    source, derived = json.loads(original_bytes), json.loads(alias_bytes)
+    redirect = json.loads((evidence / "redirect-observation.json").read_bytes())
+    pinned = next(item for item in source["sources"] if item["repo"] == redirect["original"])
+    assert pinned["commit_sha"] == redirect["pinned_commit"]
+    pinned["repo"] = redirect["canonical"]
+    pinned["origin_url"] = "https://github.com/" + redirect["canonical"] + ".git"
+    assert source == derived
+    headers = json.loads((evidence / "ecc-301-headers.json").read_bytes())
+    target = json.loads((evidence / "ecc-redirect-target.json").read_bytes())
+    metadata = json.loads((evidence / "ecc-canonical-metadata.json").read_bytes())
+    commit = json.loads((evidence / "ecc-pinned-commit.json").read_bytes())
+    assert redirect["redirect_status"] == 301 and headers["Location"] == redirect["redirect_location"]
+    assert target["id"] == metadata["id"] == redirect["repository_id"]
+    assert target["full_name"] == metadata["full_name"] == redirect["canonical"]
+    assert commit["sha"] == redirect["pinned_commit"]
+    selection = json.loads((evidence / "selection.json").read_bytes())
+    direct = json.loads((evidence / "complete-selection.json").read_bytes())
+    alias = json.loads((evidence / "alias-selection.json").read_bytes())
+    assert set(selection) == set(direct) | {redirect["original"]}
+    assert all(direct[repo] == selection[repo] for repo in direct)
+    assert alias == {redirect["canonical"]: selection[redirect["original"]]}
+    assert len(selection) == manifest["selected_repositories"] == 5
+    assert sum(map(len, selection.values())) == manifest["selected_skills"] == 82
+    for name, source_bytes, selected_name, verification_name in (
+        ("complete-summary.json", original_bytes, "complete-selection.json", "verification.json"),
+        ("alias-summary.json", alias_bytes, "alias-selection.json", "alias-verification.json"),
+    ):
+        raw = (evidence / name).read_bytes()
+        summary = json.loads(raw)
+        expected = json.loads((evidence / selected_name).read_bytes())
+        verification = json.loads((evidence / verification_name).read_bytes())
+        pins = {item["repo"]: item["commit_sha"] for item in json.loads(source_bytes)["sources"]}
+        assert summary["source_lock_sha256"] == hashlib.sha256(source_bytes).hexdigest()
+        assert summary["selection_sha256"] == hashlib.sha256((evidence / selected_name).read_bytes()).hexdigest()
+        assert verification["ok"] and verification["summary_sha256"] == hashlib.sha256(raw).hexdigest()
+        assert {item["repo"] for item in summary["results"]} == set(expected)
+        for item in summary["results"]:
+            assert item["status"] == "complete" and item["pinned_commit"] == pins[item["repo"]]
+            assert {row["skill_id"] for row in item["skills"]} == set(expected[item["repo"]])
+    summary = json.loads((evidence / "complete-summary.json").read_bytes())
+    varnan = next(item for item in summary["results"] if item["repo"] == "Varnan-Tech/opendirectory")
+    missing = [row for row in varnan["skills"] if row["entrypoint"] == "missing_at_recorded_path"]
+    assert len(missing) == manifest["varnan_missing_recorded_paths"] == 26
+    assert (
+        sum(bool(row["same_named_candidates"]) for row in missing)
+        == manifest["varnan_with_same_named_candidates"]
+        == 21
+    )
+    assert (
+        sum(not row["same_named_candidates"] for row in missing)
+        == manifest["varnan_without_same_named_candidates"]
+        == 5
+    )

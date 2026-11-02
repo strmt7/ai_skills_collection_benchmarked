@@ -1,0 +1,5918 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-11-02T15:34:28Z",
+  "source_lock_sha256": "8a2e4a90ecc0465c828cb3f5ef15d3c29f35771c9399fd8d45dd65cf767b83d6",
+  "selection_sha256": "9c192cb0f72a0ef857d41aa8ce6cb910be16de89ee332e4cbf1d08b2fd1a7794",
+  "algorithm_sha256": "05e917977ecc539679f7c1856d4d89f01e7be67bd09ad72b1c3fe3814a11c71a",
+  "scope": "Pinned selected skill directories compared with captured default-branch heads and latest GitHub releases; same-named paths are candidates only, not confirmed relocations. This is not an inventory of newly added skills, a quality review, or an agent-performance test.",
+  "results": [
+    {
+      "status": "complete",
+      "repo": "ahmedasmar/devops-claude-skills",
+      "default_branch": "main",
+      "pinned_commit": "1489c33ad8829a11219e423327d6b59f8339cee4",
+      "observed_head": "1489c33ad8829a11219e423327d6b59f8339cee4",
+      "pinned_tree": "7abd5b000060311711f9a5b444d5702cc9a087f5",
+      "observed_tree": "7abd5b000060311711f9a5b444d5702cc9a087f5",
+      "pinned_recursive_complete": true,
+      "observed_recursive_complete": true,
+      "selected_skill_count": 5,
+      "entrypoints_changed": 0,
+      "entrypoints_missing_at_recorded_path": 0,
+      "directories_changed": 0,
+      "skills": [
+        {
+          "skill_id": "ahmedasmar-devops-claude-skills-aws-cost-optimization-skills-skill-md",
+          "source_path": "aws-cost-optimization/skills/SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": false,
+          "pinned_file_count": 5,
+          "observed_file_count": 5,
+          "changed_paths": [],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "ahmedasmar-devops-claude-skills-gitops-workflows-skills-skill-md",
+          "source_path": "gitops-workflows/skills/SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": false,
+          "pinned_file_count": 18,
+          "observed_file_count": 18,
+          "changed_paths": [],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "ahmedasmar-devops-claude-skills-iac-terraform-skills-skill-md",
+          "source_path": "iac-terraform/skills/SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": false,
+          "pinned_file_count": 10,
+          "observed_file_count": 10,
+          "changed_paths": [],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "ahmedasmar-devops-claude-skills-k8s-troubleshooter-skills-skill-md",
+          "source_path": "k8s-troubleshooter/skills/SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": false,
+          "pinned_file_count": 6,
+          "observed_file_count": 6,
+          "changed_paths": [],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "ahmedasmar-devops-claude-skills-monitoring-observability-skills-skill-md",
+          "source_path": "monitoring-observability/skills/SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": false,
+          "pinned_file_count": 18,
+          "observed_file_count": 18,
+          "changed_paths": [],
+          "same_named_candidates": []
+        }
+      ],
+      "latest_release": null
+    },
+    {
+      "status": "complete",
+      "repo": "akin-ozer/cc-devops-skills",
+      "default_branch": "main",
+      "pinned_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+      "observed_head": "276af751e659315aaf56d3ad13d7c26f4e72e28a",
+      "pinned_tree": "8f6c3f7246fa33d4c1a736f75fc499ae8688785e",
+      "observed_tree": "1a2c8163f5b3d817141fee0eb9c5c64fa2fef46c",
+      "pinned_recursive_complete": true,
+      "observed_recursive_complete": true,
+      "selected_skill_count": 17,
+      "entrypoints_changed": 1,
+      "entrypoints_missing_at_recorded_path": 0,
+      "directories_changed": 12,
+      "skills": [
+        {
+          "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-ansible-generator-skill-md",
+          "source_path": "devops-skills-plugin/skills/ansible-generator/SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": true,
+          "pinned_file_count": 38,
+          "observed_file_count": 38,
+          "changed_paths": [
+            {
+              "path": ".gitignore",
+              "pinned": [
+                "blob",
+                "100644",
+                "02ce53418fbaafea0a7f6d466ddeb7a125d22c83"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "424bd2624fc984009a398c75cab453f190d9fe03"
+              ]
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator-skill-md",
+          "source_path": "devops-skills-plugin/skills/azure-pipelines-generator/SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": true,
+          "pinned_file_count": 16,
+          "observed_file_count": 15,
+          "changed_paths": [
+            {
+              "path": ".gitignore",
+              "pinned": [
+                "blob",
+                "100644",
+                "ef339d00767eb78ff01488ab0e67b7e1b57a4bee"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-validator-skill-md",
+          "source_path": "devops-skills-plugin/skills/azure-pipelines-validator/SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": true,
+          "pinned_file_count": 22,
+          "observed_file_count": 22,
+          "changed_paths": [
+            {
+              "path": ".gitignore",
+              "pinned": [
+                "blob",
+                "100644",
+                "74abd76af08e897f5cbdd41f0a72408d6d7c0290"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "a978c395aac4b42319d1163d2c714b911286334e"
+              ]
+            },
+            {
+              "path": "examples/basic-pipeline.yml",
+              "pinned": [
+                "blob",
+                "100644",
+                "c95074cdff325270f26c02017b1e310132f3e4fe"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "654572d80cf8111d10331ed27e21b6e8a5e54cd1"
+              ]
+            },
+            {
+              "path": "scripts/test_regressions.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "c65f5069c1696137ececb1f243ce023d8133d000"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "f4731380f98ee9d538cb377628dc23a57e2b6463"
+              ]
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-bash-script-generator-skill-md",
+          "source_path": "devops-skills-plugin/skills/bash-script-generator/SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": false,
+          "pinned_file_count": 10,
+          "observed_file_count": 10,
+          "changed_paths": [],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-dockerfile-generator-skill-md",
+          "source_path": "devops-skills-plugin/skills/dockerfile-generator/SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": false,
+          "pinned_file_count": 17,
+          "observed_file_count": 17,
+          "changed_paths": [],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-fluentbit-generator-skill-md",
+          "source_path": "devops-skills-plugin/skills/fluentbit-generator/SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": true,
+          "pinned_file_count": 20,
+          "observed_file_count": 19,
+          "changed_paths": [
+            {
+              "path": ".gitignore",
+              "pinned": [
+                "blob",
+                "100644",
+                "ef339d00767eb78ff01488ab0e67b7e1b57a4bee"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-github-actions-generator-skill-md",
+          "source_path": "devops-skills-plugin/skills/github-actions-generator/SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": false,
+          "pinned_file_count": 32,
+          "observed_file_count": 32,
+          "changed_paths": [],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-gitlab-ci-generator-skill-md",
+          "source_path": "devops-skills-plugin/skills/gitlab-ci-generator/SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": true,
+          "pinned_file_count": 11,
+          "observed_file_count": 11,
+          "changed_paths": [
+            {
+              "path": ".gitignore",
+              "pinned": [
+                "blob",
+                "100644",
+                "8af56cd078c5026596b278d0f39b49d4513fe76f"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "9737e3193e8f96295df82665dd6317abc8816950"
+              ]
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-helm-generator-skill-md",
+          "source_path": "devops-skills-plugin/skills/helm-generator/SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": true,
+          "pinned_file_count": 21,
+          "observed_file_count": 21,
+          "changed_paths": [
+            {
+              "path": ".gitignore",
+              "pinned": [
+                "blob",
+                "100644",
+                "dc00fbc16230bff34b1395ded028913c73073a0a"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "3787e657db08b5daafb314a2dabfd0f8e16681a0"
+              ]
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-jenkinsfile-generator-skill-md",
+          "source_path": "devops-skills-plugin/skills/jenkinsfile-generator/SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": true,
+          "pinned_file_count": 24,
+          "observed_file_count": 24,
+          "changed_paths": [
+            {
+              "path": ".gitignore",
+              "pinned": [
+                "blob",
+                "100644",
+                "cb123881455fe9552cc22faa73922f4463d40e2a"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "c1ca95a5f6ad6493a440e95ace2d1718515ead6e"
+              ]
+            },
+            {
+              "path": "scripts/lib/common_patterns.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "7a16109f612bdd6b1173043ea589539f37ea823f"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "8f4266209561ba8ac9fb7ea25fac0b8679c0cfc0"
+              ]
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-k8s-debug-skill-md",
+          "source_path": "devops-skills-plugin/skills/k8s-debug/SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": true,
+          "pinned_file_count": 9,
+          "observed_file_count": 8,
+          "changed_paths": [
+            {
+              "path": ".gitignore",
+              "pinned": [
+                "blob",
+                "100644",
+                "e44c6b8d46dcd46bda98e631cb0f6cbfb5bcf82e"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-logql-generator-skill-md",
+          "source_path": "devops-skills-plugin/skills/logql-generator/SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": true,
+          "pinned_file_count": 8,
+          "observed_file_count": 6,
+          "changed_paths": [
+            {
+              "path": "tests/__pycache__/test_loki_runtime_integration.cpython-314.pyc",
+              "pinned": [
+                "blob",
+                "100644",
+                "146a54ebb58385614e8b4549a5be533b2772eb81"
+              ],
+              "observed": null
+            },
+            {
+              "path": "tests/__pycache__/test_skill_contract.cpython-314.pyc",
+              "pinned": [
+                "blob",
+                "100644",
+                "c11598f9f8ee40432016ecb652e84564cf39b9fc"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-loki-config-generator-skill-md",
+          "source_path": "devops-skills-plugin/skills/loki-config-generator/SKILL.md",
+          "entrypoint": "changed",
+          "directory_changed": true,
+          "pinned_file_count": 20,
+          "observed_file_count": 18,
+          "changed_paths": [
+            {
+              "path": ".gitignore",
+              "pinned": [
+                "blob",
+                "100644",
+                "25febf52d4bd104b36ddbeab0cd1fd5deca21566"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "de9bb745bc155d070795fadf8eda43cb7c2698f0"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "61865fc5cffd2d06ba6c7dce52a790fc866e1f30"
+              ]
+            },
+            {
+              "path": "examples/grafana-alloy-daemonset.yaml",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "d7576d1ba7217d6a2e070a4204867a36b69ee4dc"
+              ]
+            },
+            {
+              "path": "examples/grafana-alloy.alloy",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "9e8bcd7e92437cbeeca0e667bf6cf485beeb5f85"
+              ]
+            },
+            {
+              "path": "examples/grafana-alloy.yaml",
+              "pinned": [
+                "blob",
+                "100644",
+                "14f4d7308ea22446c3f0446c069d3379f9372445"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/__pycache__/generate_config.cpython-314.pyc",
+              "pinned": [
+                "blob",
+                "100644",
+                "88c79128698aa4629ec9e3b6ef89743f7013bbca"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/__pycache__/test_generate_config.cpython-314.pyc",
+              "pinned": [
+                "blob",
+                "100644",
+                "29e60e9a762ce9b31ac5ed83909845aa90d05202"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/generate_config.py",
+              "pinned": [
+                "blob",
+                "100755",
+                "a2b4782221d2c5a3fce52fedac98d092f539258c"
+              ],
+              "observed": [
+                "blob",
+                "100755",
+                "2a38e79b788d67eaa2d2787a191fefe8e6125daa"
+              ]
+            },
+            {
+              "path": "scripts/test_generate_config.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "531362f0d33769ad2ce4650c3bfe1268294ed165"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "12bc0a22f434ce79c1f7241003f489baf677fed4"
+              ]
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-makefile-generator-skill-md",
+          "source_path": "devops-skills-plugin/skills/makefile-generator/SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": false,
+          "pinned_file_count": 11,
+          "observed_file_count": 11,
+          "changed_paths": [],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-promql-generator-skill-md",
+          "source_path": "devops-skills-plugin/skills/promql-generator/SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": true,
+          "pinned_file_count": 16,
+          "observed_file_count": 14,
+          "changed_paths": [
+            {
+              "path": "tests/__pycache__/test_service_down_portability.cpython-314.pyc",
+              "pinned": [
+                "blob",
+                "100644",
+                "5c702ae688fd232c71fd071635912d9dee575825"
+              ],
+              "observed": null
+            },
+            {
+              "path": "tests/__pycache__/test_time_window_semantics.cpython-314.pyc",
+              "pinned": [
+                "blob",
+                "100644",
+                "1e64c9cd390767637d445d7be771a3ea98dd43cc"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-terraform-generator-skill-md",
+          "source_path": "devops-skills-plugin/skills/terraform-generator/SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": false,
+          "pinned_file_count": 14,
+          "observed_file_count": 14,
+          "changed_paths": [],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-terragrunt-generator-skill-md",
+          "source_path": "devops-skills-plugin/skills/terragrunt-generator/SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": true,
+          "pinned_file_count": 10,
+          "observed_file_count": 9,
+          "changed_paths": [
+            {
+              "path": ".gitignore",
+              "pinned": [
+                "blob",
+                "100644",
+                "7a60b85e148f80966a550e5ab6a762a907c69ca6"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": []
+        }
+      ],
+      "latest_release": {
+        "tag": "v1.0.0",
+        "commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+        "tree": "8f6c3f7246fa33d4c1a736f75fc499ae8688785e",
+        "recursive_complete": true,
+        "entrypoints_changed": 0,
+        "entrypoints_missing_at_recorded_path": 0,
+        "directories_changed": 0,
+        "skills": [
+          {
+            "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-ansible-generator-skill-md",
+            "source_path": "devops-skills-plugin/skills/ansible-generator/SKILL.md",
+            "entrypoint": "unchanged",
+            "directory_changed": false,
+            "pinned_file_count": 38,
+            "observed_file_count": 38,
+            "changed_paths": [],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-generator-skill-md",
+            "source_path": "devops-skills-plugin/skills/azure-pipelines-generator/SKILL.md",
+            "entrypoint": "unchanged",
+            "directory_changed": false,
+            "pinned_file_count": 16,
+            "observed_file_count": 16,
+            "changed_paths": [],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-azure-pipelines-validator-skill-md",
+            "source_path": "devops-skills-plugin/skills/azure-pipelines-validator/SKILL.md",
+            "entrypoint": "unchanged",
+            "directory_changed": false,
+            "pinned_file_count": 22,
+            "observed_file_count": 22,
+            "changed_paths": [],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-bash-script-generator-skill-md",
+            "source_path": "devops-skills-plugin/skills/bash-script-generator/SKILL.md",
+            "entrypoint": "unchanged",
+            "directory_changed": false,
+            "pinned_file_count": 10,
+            "observed_file_count": 10,
+            "changed_paths": [],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-dockerfile-generator-skill-md",
+            "source_path": "devops-skills-plugin/skills/dockerfile-generator/SKILL.md",
+            "entrypoint": "unchanged",
+            "directory_changed": false,
+            "pinned_file_count": 17,
+            "observed_file_count": 17,
+            "changed_paths": [],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-fluentbit-generator-skill-md",
+            "source_path": "devops-skills-plugin/skills/fluentbit-generator/SKILL.md",
+            "entrypoint": "unchanged",
+            "directory_changed": false,
+            "pinned_file_count": 20,
+            "observed_file_count": 20,
+            "changed_paths": [],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-github-actions-generator-skill-md",
+            "source_path": "devops-skills-plugin/skills/github-actions-generator/SKILL.md",
+            "entrypoint": "unchanged",
+            "directory_changed": false,
+            "pinned_file_count": 32,
+            "observed_file_count": 32,
+            "changed_paths": [],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-gitlab-ci-generator-skill-md",
+            "source_path": "devops-skills-plugin/skills/gitlab-ci-generator/SKILL.md",
+            "entrypoint": "unchanged",
+            "directory_changed": false,
+            "pinned_file_count": 11,
+            "observed_file_count": 11,
+            "changed_paths": [],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-helm-generator-skill-md",
+            "source_path": "devops-skills-plugin/skills/helm-generator/SKILL.md",
+            "entrypoint": "unchanged",
+            "directory_changed": false,
+            "pinned_file_count": 21,
+            "observed_file_count": 21,
+            "changed_paths": [],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-jenkinsfile-generator-skill-md",
+            "source_path": "devops-skills-plugin/skills/jenkinsfile-generator/SKILL.md",
+            "entrypoint": "unchanged",
+            "directory_changed": false,
+            "pinned_file_count": 24,
+            "observed_file_count": 24,
+            "changed_paths": [],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-k8s-debug-skill-md",
+            "source_path": "devops-skills-plugin/skills/k8s-debug/SKILL.md",
+            "entrypoint": "unchanged",
+            "directory_changed": false,
+            "pinned_file_count": 9,
+            "observed_file_count": 9,
+            "changed_paths": [],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-logql-generator-skill-md",
+            "source_path": "devops-skills-plugin/skills/logql-generator/SKILL.md",
+            "entrypoint": "unchanged",
+            "directory_changed": false,
+            "pinned_file_count": 8,
+            "observed_file_count": 8,
+            "changed_paths": [],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-loki-config-generator-skill-md",
+            "source_path": "devops-skills-plugin/skills/loki-config-generator/SKILL.md",
+            "entrypoint": "unchanged",
+            "directory_changed": false,
+            "pinned_file_count": 20,
+            "observed_file_count": 20,
+            "changed_paths": [],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-makefile-generator-skill-md",
+            "source_path": "devops-skills-plugin/skills/makefile-generator/SKILL.md",
+            "entrypoint": "unchanged",
+            "directory_changed": false,
+            "pinned_file_count": 11,
+            "observed_file_count": 11,
+            "changed_paths": [],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-promql-generator-skill-md",
+            "source_path": "devops-skills-plugin/skills/promql-generator/SKILL.md",
+            "entrypoint": "unchanged",
+            "directory_changed": false,
+            "pinned_file_count": 16,
+            "observed_file_count": 16,
+            "changed_paths": [],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-terraform-generator-skill-md",
+            "source_path": "devops-skills-plugin/skills/terraform-generator/SKILL.md",
+            "entrypoint": "unchanged",
+            "directory_changed": false,
+            "pinned_file_count": 14,
+            "observed_file_count": 14,
+            "changed_paths": [],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-terragrunt-generator-skill-md",
+            "source_path": "devops-skills-plugin/skills/terragrunt-generator/SKILL.md",
+            "entrypoint": "unchanged",
+            "directory_changed": false,
+            "pinned_file_count": 10,
+            "observed_file_count": 10,
+            "changed_paths": [],
+            "same_named_candidates": []
+          }
+        ]
+      }
+    },
+    {
+      "status": "complete",
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "default_branch": "main",
+      "pinned_commit": "07f4ef3ac2568c25a3b0c8ef5165a86abc3e56e4",
+      "observed_head": "3a13158ff1f32156cbe144108de48eda2ecaed9a",
+      "pinned_tree": "cf20f8d008b9f29fc2760dcc50dd94c855a824e0",
+      "observed_tree": "6a65685cc09448108c8519efd19992c3db92deed",
+      "pinned_recursive_complete": true,
+      "observed_recursive_complete": true,
+      "selected_skill_count": 6,
+      "entrypoints_changed": 6,
+      "entrypoints_missing_at_recorded_path": 0,
+      "directories_changed": 6,
+      "skills": [
+        {
+          "skill_id": "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-banner-design-skill-md",
+          "source_path": ".claude/skills/banner-design/SKILL.md",
+          "entrypoint": "changed",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 2,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "18fdac634970c086eee9c9eb1dc933402b39d963"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "79fa5ee1884ce1b9f76627a1bea073d3dd67ee7b"
+              ]
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-design-system-skill-md",
+          "source_path": ".claude/skills/design-system/SKILL.md",
+          "entrypoint": "changed",
+          "directory_changed": true,
+          "pinned_file_count": 26,
+          "observed_file_count": 27,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "cfbcba0c8d36e5dd8a20ad00c6e9df53ec4a1341"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "804e553325fedc49dd7e75c30c6cffeebaa6650b"
+              ]
+            },
+            {
+              "path": "scripts/embed-tokens.cjs",
+              "pinned": [
+                "blob",
+                "100644",
+                "419c10474f100bd2940eb45337a50500d71c8c60"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "e677f0cd768f0a87fbaef48a485a0f66a9a763d7"
+              ]
+            },
+            {
+              "path": "scripts/fetch-background.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "bcbd357e3873ce75ae759506e54ecc444f5f29a8"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "08a997079c685325c042ea5cb3dc1859fd612a2d"
+              ]
+            },
+            {
+              "path": "scripts/generate-slide.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "228a50a3af92ca30cbd55be493fafe9e6d062301"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "2de390d905d4dc2d22a43b7a16d3f208d221161d"
+              ]
+            },
+            {
+              "path": "scripts/html-token-validator.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "a72249806aacca4d9b42be901e095265bd37bed4"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "2b9c5d08fab6f1522f451ad263713822af19cd83"
+              ]
+            },
+            {
+              "path": "scripts/search-slides.py",
+              "pinned": [
+                "blob",
+                "100755",
+                "ff5200adcf0a33d3a911a0ab4b4affddf2ad80d3"
+              ],
+              "observed": [
+                "blob",
+                "100755",
+                "fc9ce74b8f991ab8cc0943ec0b44001bc5b263a4"
+              ]
+            },
+            {
+              "path": "scripts/tests/test_validate_tokens.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "675424675459e93c1a8c845c50c6e766d5e8537e"
+              ]
+            },
+            {
+              "path": "scripts/validate-tokens.cjs",
+              "pinned": [
+                "blob",
+                "100644",
+                "e378665829f8edffa0a40b32d0b9b1e26ff25c7b"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "9839ed2486c0dee8671140fc1e4ff24eb1c3e62a"
+              ]
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-design-skill-md",
+          "source_path": ".claude/skills/design/SKILL.md",
+          "entrypoint": "changed",
+          "directory_changed": true,
+          "pinned_file_count": 35,
+          "observed_file_count": 38,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "1c4a37fb294a02d1fab922ea4fb7542c8e5e1432"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "0dda90057cd5aa19b127c51ac1227fbf8a1465c2"
+              ]
+            },
+            {
+              "path": "references/cip-design.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "81829ed56e4b9d64dd87233e79eb22c66c12d02b"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "877ae712a89bf46880c57938499053997449c0f7"
+              ]
+            },
+            {
+              "path": "references/design-routing.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "78f558749fc911a796288b76e45e7396cae9a7d6"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "4d745bd267994d1500aa9ffe12577cf3350cc94b"
+              ]
+            },
+            {
+              "path": "references/icon-design.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "db6db01d8a8eab6e8b4b169d9e97fac5bcb06afc"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "961cdacc20391d0ed43f29b0a34312596dbae4ad"
+              ]
+            },
+            {
+              "path": "references/logo-design.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "c10de1a84a13a579ecc298f702f75b2b2c1d8650"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "7b83120e510ec665ed6cd8a5b3758a983e7eb2dc"
+              ]
+            },
+            {
+              "path": "references/slides-copywriting-formulas.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "ecf2875cf18b69a23bb8bd2b6077582b291dc806"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "87352fc24996bbc268835d03e95a98a0ec9edcab"
+              ]
+            },
+            {
+              "path": "references/slides-layout-patterns.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "e2b3849f9c9b2b6131c19db592038eb2e84b9219"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "0949ab0fa240b5ffb5ff823be521a647977c2614"
+              ]
+            },
+            {
+              "path": "references/slides-strategies.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "e004fe174035983a6ca006ce74d3a481a85e9b3d"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "eae5b131f596490f4bdef4aedaa80b4194eef95c"
+              ]
+            },
+            {
+              "path": "references/social-photos-design.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "63f65459f5743f7aa11b6e8bc7e65bf0375fb378"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "1dc1fdc533c16b1ef2adb13e167977e685b7d1a4"
+              ]
+            },
+            {
+              "path": "scripts/cip/generate.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "0be632f5643fa8a5877a80bad1701499f513a1c6"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "394b06de244392b9b13317f2097cbfd0087116d0"
+              ]
+            },
+            {
+              "path": "scripts/icon/generate.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "5e00fa98f5f7f8c0ea071d967e63bd0d3f44ee44"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "375f7896e531be6ad0c5719052f4a5ba50eaf166"
+              ]
+            },
+            {
+              "path": "scripts/logo/generate.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "e33f8dbdab5ba3af346af5ee493291da09baab36"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "3b5773f82d60464a769627ad0ba12670f2771f52"
+              ]
+            },
+            {
+              "path": "scripts/logo/tests/test_generate.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "e0ca6cadab72b3b7339a01b78ddf04f18243d7ec"
+              ]
+            },
+            {
+              "path": "scripts/tests/test_cip_generate.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "26e3d3b98a4429dcfef0be39f898ac023b652048"
+              ]
+            },
+            {
+              "path": "scripts/tests/test_icon_generate.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "7fb777ab85bec2493dcb93d067fa79318a8c5720"
+              ]
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-slides-skill-md",
+          "source_path": ".claude/skills/slides/SKILL.md",
+          "entrypoint": "changed",
+          "directory_changed": true,
+          "pinned_file_count": 6,
+          "observed_file_count": 6,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "ef4500a086836a4bbaac01781a5989c5af532b05"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "52d345d1f4ab5fde70b38fdd0601ad42ef0449f1"
+              ]
+            },
+            {
+              "path": "references/copywriting-formulas.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "ecf2875cf18b69a23bb8bd2b6077582b291dc806"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "87352fc24996bbc268835d03e95a98a0ec9edcab"
+              ]
+            },
+            {
+              "path": "references/layout-patterns.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "e2b3849f9c9b2b6131c19db592038eb2e84b9219"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "0949ab0fa240b5ffb5ff823be521a647977c2614"
+              ]
+            },
+            {
+              "path": "references/slide-strategies.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "e004fe174035983a6ca006ce74d3a481a85e9b3d"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "eae5b131f596490f4bdef4aedaa80b4194eef95c"
+              ]
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-ui-styling-skill-md",
+          "source_path": ".claude/skills/ui-styling/SKILL.md",
+          "entrypoint": "changed",
+          "directory_changed": true,
+          "pinned_file_count": 98,
+          "observed_file_count": 98,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "f2a8f8dd25042425387d23f35b53e5c237178dcf"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "b5a9acb9643e10b3629c0b9cac7e616c1080b597"
+              ]
+            },
+            {
+              "path": "scripts/shadcn_add.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "e2a9799809f3604d52e1309f96e6a04841d6f69b"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "6168df7f9f1d3341c044738370067c13f5ebb8f1"
+              ]
+            },
+            {
+              "path": "scripts/tailwind_config_gen.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "51093111c6273692ba866c7077dcce04c895dd06"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "8dc6a0f8fa012eb91649cbe826bd1f10b6b316cc"
+              ]
+            },
+            {
+              "path": "scripts/tests/test_shadcn_add.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "03c8f31be7f13a96fead9f312ef51a284dba3595"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "806b6a4f7244b822811c8d8ef58c59597ac6b191"
+              ]
+            },
+            {
+              "path": "scripts/tests/test_tailwind_config_gen.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "a08414ee7b8cdbd7f09c68fcd89fffee8f7cbdb5"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "4eb06debf4a279b49a79e3c32668b38e00ca8feb"
+              ]
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-ui-ux-pro-max-skill-md",
+          "source_path": ".claude/skills/ui-ux-pro-max/SKILL.md",
+          "entrypoint": "changed",
+          "directory_changed": true,
+          "pinned_file_count": 3,
+          "observed_file_count": 73,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "a64d6c233a6293c05ab70f67156cc7e30284232a"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "41f8e2fd7f8c568228d0b55186ebe3f7b4007377"
+              ]
+            },
+            {
+              "path": "data",
+              "pinned": [
+                "blob",
+                "120000",
+                "e5b94699ce7cff5c94de1e14006fce76af06259b"
+              ],
+              "observed": null
+            },
+            {
+              "path": "data/app-interface.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "95e328c807a23be02c9c32c736d0fa19109c6076"
+              ]
+            },
+            {
+              "path": "data/catalog-summary.json",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "184d9619c19c15e930abb7dbb783f20a6e7798d0"
+              ]
+            },
+            {
+              "path": "data/charts.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "c6f4f875fd5b34379f24dbb541539492366a1058"
+              ]
+            },
+            {
+              "path": "data/colors.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "5d2bf7389105f8a824b504b57cc93c00dc1d7e0a"
+              ]
+            },
+            {
+              "path": "data/data-provenance.json",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "e41d2e553bdc7e5a8e6d16f5daab565faf372188"
+              ]
+            },
+            {
+              "path": "data/google-font-licenses.json",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "3ac2c34e80665bc902e265c52ab6c27b1654524c"
+              ]
+            },
+            {
+              "path": "data/google-fonts.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "d7f87e3e0159b1caba083b9954793d9852256aa0"
+              ]
+            },
+            {
+              "path": "data/icons.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "cfc3f1eccd7e5aee15d8d70f86d8fa17ba737958"
+              ]
+            },
+            {
+              "path": "data/landing.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "34858160aa2789c49dca274d48bb116d51dd3f0a"
+              ]
+            },
+            {
+              "path": "data/motion.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "8e0ca9ceb0e4cd4832aee60ac74713e1e1830de8"
+              ]
+            },
+            {
+              "path": "data/phosphor-icons-upstream.json",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "ec1d76b8117ccbfdce5df214bf0d993e41a75318"
+              ]
+            },
+            {
+              "path": "data/products.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "9f40f1d1f9743c4a81603076dfbfd115bbb55246"
+              ]
+            },
+            {
+              "path": "data/react-performance.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "425a8e76c6b3bae40e8c633ffbf7ad6222c9f73a"
+              ]
+            },
+            {
+              "path": "data/stacks/angular.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "5a1878dbee2b3c55c6468cbb18699b84d1a8c4d2"
+              ]
+            },
+            {
+              "path": "data/stacks/astro.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "1fd2492420b20a0b311295ab883597fadb8245a6"
+              ]
+            },
+            {
+              "path": "data/stacks/avalonia.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "c67f4117105865587eda9020c57d8c209f3a929a"
+              ]
+            },
+            {
+              "path": "data/stacks/flutter.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "731805c4076bd9f2755ca4bd7def5be6f6df7e9c"
+              ]
+            },
+            {
+              "path": "data/stacks/html-tailwind.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "9089eb0fc821ff0c8d135f8ee503be345e8fcb84"
+              ]
+            },
+            {
+              "path": "data/stacks/javafx.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "744bd80f437f12bfb5bb9c84630a58022604675a"
+              ]
+            },
+            {
+              "path": "data/stacks/jetpack-compose.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "8daa0b8f9a2ca3f0f1711664d9d677cd1c38dd9e"
+              ]
+            },
+            {
+              "path": "data/stacks/laravel.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "ed11b0fba457e02857f996d1542fb0b8e1271756"
+              ]
+            },
+            {
+              "path": "data/stacks/nextjs.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "acdaf097dff26ba0d3b22ab4544bf6169c87afd4"
+              ]
+            },
+            {
+              "path": "data/stacks/nuxt-ui.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "f6b8000e106aaf421a61da45134e35c8f03e18c6"
+              ]
+            },
+            {
+              "path": "data/stacks/nuxtjs.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "ceab9cf3358d2788af0bd7dc14cb3fab769740d0"
+              ]
+            },
+            {
+              "path": "data/stacks/react-native.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "a5aea45dc1d0341b11ee42076a86db842d4d2a19"
+              ]
+            },
+            {
+              "path": "data/stacks/react.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "fe8f001e695a978733449e04e99d7135af0f1bf3"
+              ]
+            },
+            {
+              "path": "data/stacks/shadcn.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "0e8bedf3084e7a40d6310bcd3011c437efcb1700"
+              ]
+            },
+            {
+              "path": "data/stacks/svelte.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "51684fe70448e15333cd16207db7da8aea0508e6"
+              ]
+            },
+            {
+              "path": "data/stacks/swiftui.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "ea9b95e8922e663b2adf27a7346e2c2f44c7a215"
+              ]
+            },
+            {
+              "path": "data/stacks/threejs.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "f62286320038beabbdc5e11e07ca2818d8e959a4"
+              ]
+            },
+            {
+              "path": "data/stacks/uno.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "9cab32326b4ad3a3cf43451a3c24553a41126cc1"
+              ]
+            },
+            {
+              "path": "data/stacks/uwp.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "04a84ea092a7657fef11e5daa97982be52dc6f59"
+              ]
+            },
+            {
+              "path": "data/stacks/vue.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "83997c515775170f22b638635aae0a67a46dfc87"
+              ]
+            },
+            {
+              "path": "data/stacks/winui.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "107ecead11728a83ec0ea10d815a9d1f43a35792"
+              ]
+            },
+            {
+              "path": "data/stacks/wpf.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "4e88d6750833a74f85ba487cf2b8f4ff6ebd2f4a"
+              ]
+            },
+            {
+              "path": "data/styles.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "d1eb2c216e453005ffa8232ffb94491c183afe3c"
+              ]
+            },
+            {
+              "path": "data/typography.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "70d107d107de30150863c965767320ec33ef29ad"
+              ]
+            },
+            {
+              "path": "data/ui-reasoning.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "8931d4c809f8e22ddac00ce612ce0c35f34a59b6"
+              ]
+            },
+            {
+              "path": "data/ux-guidelines.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "4e7d52b296537a03513b18b2c3f2b946cc802051"
+              ]
+            },
+            {
+              "path": "references/pro-rules.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "b2ce233287e37ec9ca13476c4014b922e9d5a0e9"
+              ]
+            },
+            {
+              "path": "references/quick-reference.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "7acc7e7540ca6981d878a90aae4455c1638e2385"
+              ]
+            },
+            {
+              "path": "scripts",
+              "pinned": [
+                "blob",
+                "120000",
+                "ccb93f777cb49f7f4ff40182905ce793295d66d1"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/core.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "82ebc78d513873d61511b149c35e9bd4e2ce5528"
+              ]
+            },
+            {
+              "path": "scripts/design_system.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "d5fe1575f00d839f919603bd09b44fe7e9def4fb"
+              ]
+            },
+            {
+              "path": "scripts/reasoning_contract.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "63652a666b130c249ea1e2954316f1ac8a5a73d5"
+              ]
+            },
+            {
+              "path": "scripts/search.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "752bc1c0ed669b4021346f28c16a89e7f62e8043"
+              ]
+            },
+            {
+              "path": "scripts/tests/fixtures/catalogs/google-api.json",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "eacf1bb4559875808247df711376e8cc47c4f7c4"
+              ]
+            },
+            {
+              "path": "scripts/tests/fixtures/catalogs/google-catalog.json",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "4eb89d4d3312b670ef70d44563bf2ffd5cf814bb"
+              ]
+            },
+            {
+              "path": "scripts/tests/fixtures/catalogs/google-existing.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "83279e0f218e9725b8a14486a558fa10ff134949"
+              ]
+            },
+            {
+              "path": "scripts/tests/fixtures/catalogs/google-metadata.json",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "43edcbec14c4a5e68d373eda8466c235f2ee7e9b"
+              ]
+            },
+            {
+              "path": "scripts/tests/fixtures/catalogs/google-overrides.json",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "162fd1830b08dc1a7b8b891f92f16dbb8b7015f2"
+              ]
+            },
+            {
+              "path": "scripts/tests/fixtures/catalogs/icons-curated.csv",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "3171bfc7a0a6b3b36745b4f7f0c7743f0afad953"
+              ]
+            },
+            {
+              "path": "scripts/tests/fixtures/catalogs/phosphor-core.json",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "be0edd337f2c731af41b8a745d37089172c5dc60"
+              ]
+            },
+            {
+              "path": "scripts/tests/fixtures/catalogs/phosphor-package.json",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "ad9e6ef4b835e65a6c0bd0ad9d11f0517fd718c1"
+              ]
+            },
+            {
+              "path": "scripts/tests/fixtures/catalogs/phosphor-react-exports.json",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "4a0b4587ce9876acac1904831ea774bbf8c69edf"
+              ]
+            },
+            {
+              "path": "scripts/tests/fixtures/catalogs/phosphor-react-package.json",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "a0db183da61e63f3a8f9e3fbfba7405144f41c1e"
+              ]
+            },
+            {
+              "path": "scripts/tests/fixtures/relevance-baseline.json",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "0894a44cc154a01d3b2d624a66c30e7ac3e1a3d5"
+              ]
+            },
+            {
+              "path": "scripts/tests/fixtures/relevance-cases.json",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "a1fbb87835bda252ba8ae7f15e7090cee580cb42"
+              ]
+            },
+            {
+              "path": "scripts/tests/fixtures/relevance-thresholds.json",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "1ae9bcd33a075da0e36e98dd7f68ebd1ee22362a"
+              ]
+            },
+            {
+              "path": "scripts/tests/test_catalog_refresh.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "8379cc3a224bb9f3dca2a3ebd561cd92b7e05ae4"
+              ]
+            },
+            {
+              "path": "scripts/tests/test_catalog_summary_line_endings.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "056c8e5e7d8ba69c87c31c8ad7bcd32ca3d7223c"
+              ]
+            },
+            {
+              "path": "scripts/tests/test_core.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "b30c0ae54c25f38ec91b37a56cda04426b2510a9"
+              ]
+            },
+            {
+              "path": "scripts/tests/test_core_data_quality.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "6d36c79b1f9f8c68c4b02f86a09c5e5f9ba410fe"
+              ]
+            },
+            {
+              "path": "scripts/tests/test_data_contracts.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "312dc383b3f6548d7200e928c192673a907b5016"
+              ]
+            },
+            {
+              "path": "scripts/tests/test_design_system_mode.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "44c80c1caa159058a7a5858284ea269bcb561449"
+              ]
+            },
+            {
+              "path": "scripts/tests/test_design_system_stack.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "50f0080300b56f4891014d878edddb781b36d7de"
+              ]
+            },
+            {
+              "path": "scripts/tests/test_native_desktop_stack_freshness.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "79e07f4f5f9c88025506cb3d7bb5aad01dbbd339"
+              ]
+            },
+            {
+              "path": "scripts/tests/test_relevance_evaluator.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "ed158e2d4e39a342090b29435dee25bcf5c4444f"
+              ]
+            },
+            {
+              "path": "scripts/tests/test_skill_script_paths.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "36514964d7ea6edcadc169e0d713c18b1cc0bb09"
+              ]
+            },
+            {
+              "path": "scripts/tests/test_style_taxonomy.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "09ec131ea6d609e21aaf81327a2e3ffe1ea59d4c"
+              ]
+            },
+            {
+              "path": "scripts/tests/test_text_layout_resilience.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "8db3b873f958b93906abb8f4e4d6ef75a344c76e"
+              ]
+            },
+            {
+              "path": "scripts/tests/test_web_stack_freshness.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "434c89b7c2aab7db6623415b1280486df1a91133"
+              ]
+            },
+            {
+              "path": "scripts/validate_data.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "8b6c7941f6ad3e51cb9d412b11185133e7763001"
+              ]
+            }
+          ],
+          "same_named_candidates": []
+        }
+      ],
+      "latest_release": {
+        "tag": "v2.15.0",
+        "commit": "a38d04c3d5c298c851dbe5e6ee1965ee3de42cb5",
+        "tree": "a6bd87aeb83d5354ecec528eff7652b8e6019f85",
+        "recursive_complete": true,
+        "entrypoints_changed": 6,
+        "entrypoints_missing_at_recorded_path": 0,
+        "directories_changed": 6,
+        "skills": [
+          {
+            "skill_id": "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-banner-design-skill-md",
+            "source_path": ".claude/skills/banner-design/SKILL.md",
+            "entrypoint": "changed",
+            "directory_changed": true,
+            "pinned_file_count": 2,
+            "observed_file_count": 2,
+            "changed_paths": [
+              {
+                "path": "SKILL.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "18fdac634970c086eee9c9eb1dc933402b39d963"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "ee935a5c43b15d5c8eb05eba046225ea6066b1f8"
+                ]
+              }
+            ],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-design-system-skill-md",
+            "source_path": ".claude/skills/design-system/SKILL.md",
+            "entrypoint": "changed",
+            "directory_changed": true,
+            "pinned_file_count": 26,
+            "observed_file_count": 27,
+            "changed_paths": [
+              {
+                "path": "SKILL.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "cfbcba0c8d36e5dd8a20ad00c6e9df53ec4a1341"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "4397c7f8b77fa087dec724900e5bd903d1ea0611"
+                ]
+              },
+              {
+                "path": "scripts/generate-slide.py",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "228a50a3af92ca30cbd55be493fafe9e6d062301"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "2de390d905d4dc2d22a43b7a16d3f208d221161d"
+                ]
+              },
+              {
+                "path": "scripts/tests/test_validate_tokens.py",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "bbde4ec8c12cdc78f60ddaea2a6dd081f316cc73"
+                ]
+              },
+              {
+                "path": "scripts/validate-tokens.cjs",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "e378665829f8edffa0a40b32d0b9b1e26ff25c7b"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "9839ed2486c0dee8671140fc1e4ff24eb1c3e62a"
+                ]
+              }
+            ],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-design-skill-md",
+            "source_path": ".claude/skills/design/SKILL.md",
+            "entrypoint": "changed",
+            "directory_changed": true,
+            "pinned_file_count": 35,
+            "observed_file_count": 35,
+            "changed_paths": [
+              {
+                "path": "SKILL.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "1c4a37fb294a02d1fab922ea4fb7542c8e5e1432"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "2437221d3055f1bf6d80385b38dfe0cd98fe10b6"
+                ]
+              }
+            ],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-slides-skill-md",
+            "source_path": ".claude/skills/slides/SKILL.md",
+            "entrypoint": "changed",
+            "directory_changed": true,
+            "pinned_file_count": 6,
+            "observed_file_count": 6,
+            "changed_paths": [
+              {
+                "path": "SKILL.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "ef4500a086836a4bbaac01781a5989c5af532b05"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "38750ff1b089e3ac27c3d7d1bb4f41bb32a91f91"
+                ]
+              }
+            ],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-ui-styling-skill-md",
+            "source_path": ".claude/skills/ui-styling/SKILL.md",
+            "entrypoint": "changed",
+            "directory_changed": true,
+            "pinned_file_count": 98,
+            "observed_file_count": 98,
+            "changed_paths": [
+              {
+                "path": "SKILL.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "f2a8f8dd25042425387d23f35b53e5c237178dcf"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "5824efeebe76af135a485f7d2cd67b815121364f"
+                ]
+              },
+              {
+                "path": "scripts/shadcn_add.py",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "e2a9799809f3604d52e1309f96e6a04841d6f69b"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "6168df7f9f1d3341c044738370067c13f5ebb8f1"
+                ]
+              },
+              {
+                "path": "scripts/tailwind_config_gen.py",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "51093111c6273692ba866c7077dcce04c895dd06"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "093c625fd84d32d6eead3a35fbb54e60ef9cdea3"
+                ]
+              },
+              {
+                "path": "scripts/tests/test_shadcn_add.py",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "03c8f31be7f13a96fead9f312ef51a284dba3595"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "806b6a4f7244b822811c8d8ef58c59597ac6b191"
+                ]
+              },
+              {
+                "path": "scripts/tests/test_tailwind_config_gen.py",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "a08414ee7b8cdbd7f09c68fcd89fffee8f7cbdb5"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "2facdbd0821d5a73060b8c8907a02cc6fb9c46c4"
+                ]
+              }
+            ],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "nextlevelbuilder-ui-ux-pro-max-skill-claude-skills-ui-ux-pro-max-skill-md",
+            "source_path": ".claude/skills/ui-ux-pro-max/SKILL.md",
+            "entrypoint": "changed",
+            "directory_changed": true,
+            "pinned_file_count": 3,
+            "observed_file_count": 70,
+            "changed_paths": [
+              {
+                "path": "SKILL.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "a64d6c233a6293c05ab70f67156cc7e30284232a"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "41f8e2fd7f8c568228d0b55186ebe3f7b4007377"
+                ]
+              },
+              {
+                "path": "data",
+                "pinned": [
+                  "blob",
+                  "120000",
+                  "e5b94699ce7cff5c94de1e14006fce76af06259b"
+                ],
+                "observed": null
+              },
+              {
+                "path": "data/app-interface.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "95e328c807a23be02c9c32c736d0fa19109c6076"
+                ]
+              },
+              {
+                "path": "data/catalog-summary.json",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "4a8c76432bcd5e125ad2ff5035d22074938573f0"
+                ]
+              },
+              {
+                "path": "data/charts.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "c6f4f875fd5b34379f24dbb541539492366a1058"
+                ]
+              },
+              {
+                "path": "data/colors.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "5d2bf7389105f8a824b504b57cc93c00dc1d7e0a"
+                ]
+              },
+              {
+                "path": "data/data-provenance.json",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "e41d2e553bdc7e5a8e6d16f5daab565faf372188"
+                ]
+              },
+              {
+                "path": "data/google-font-licenses.json",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "3ac2c34e80665bc902e265c52ab6c27b1654524c"
+                ]
+              },
+              {
+                "path": "data/google-fonts.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "d7f87e3e0159b1caba083b9954793d9852256aa0"
+                ]
+              },
+              {
+                "path": "data/icons.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "cfc3f1eccd7e5aee15d8d70f86d8fa17ba737958"
+                ]
+              },
+              {
+                "path": "data/landing.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "34858160aa2789c49dca274d48bb116d51dd3f0a"
+                ]
+              },
+              {
+                "path": "data/motion.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "8e0ca9ceb0e4cd4832aee60ac74713e1e1830de8"
+                ]
+              },
+              {
+                "path": "data/phosphor-icons-upstream.json",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "ec1d76b8117ccbfdce5df214bf0d993e41a75318"
+                ]
+              },
+              {
+                "path": "data/products.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "9f40f1d1f9743c4a81603076dfbfd115bbb55246"
+                ]
+              },
+              {
+                "path": "data/react-performance.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "425a8e76c6b3bae40e8c633ffbf7ad6222c9f73a"
+                ]
+              },
+              {
+                "path": "data/stacks/angular.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "5a1878dbee2b3c55c6468cbb18699b84d1a8c4d2"
+                ]
+              },
+              {
+                "path": "data/stacks/astro.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "1fd2492420b20a0b311295ab883597fadb8245a6"
+                ]
+              },
+              {
+                "path": "data/stacks/avalonia.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "c67f4117105865587eda9020c57d8c209f3a929a"
+                ]
+              },
+              {
+                "path": "data/stacks/flutter.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "731805c4076bd9f2755ca4bd7def5be6f6df7e9c"
+                ]
+              },
+              {
+                "path": "data/stacks/html-tailwind.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "9089eb0fc821ff0c8d135f8ee503be345e8fcb84"
+                ]
+              },
+              {
+                "path": "data/stacks/javafx.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "744bd80f437f12bfb5bb9c84630a58022604675a"
+                ]
+              },
+              {
+                "path": "data/stacks/jetpack-compose.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "8daa0b8f9a2ca3f0f1711664d9d677cd1c38dd9e"
+                ]
+              },
+              {
+                "path": "data/stacks/laravel.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "ed11b0fba457e02857f996d1542fb0b8e1271756"
+                ]
+              },
+              {
+                "path": "data/stacks/nextjs.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "acdaf097dff26ba0d3b22ab4544bf6169c87afd4"
+                ]
+              },
+              {
+                "path": "data/stacks/nuxt-ui.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "555501fc8943454af149ec8f50d705c32684c70f"
+                ]
+              },
+              {
+                "path": "data/stacks/nuxtjs.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "ceab9cf3358d2788af0bd7dc14cb3fab769740d0"
+                ]
+              },
+              {
+                "path": "data/stacks/react-native.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "a5aea45dc1d0341b11ee42076a86db842d4d2a19"
+                ]
+              },
+              {
+                "path": "data/stacks/react.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "320429bea22784fdaaa2765cf8e4404400f58813"
+                ]
+              },
+              {
+                "path": "data/stacks/shadcn.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "0e8bedf3084e7a40d6310bcd3011c437efcb1700"
+                ]
+              },
+              {
+                "path": "data/stacks/svelte.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "51684fe70448e15333cd16207db7da8aea0508e6"
+                ]
+              },
+              {
+                "path": "data/stacks/swiftui.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "ea9b95e8922e663b2adf27a7346e2c2f44c7a215"
+                ]
+              },
+              {
+                "path": "data/stacks/threejs.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "2e2cefe996c7c0622f58442bea4d11c333c4d616"
+                ]
+              },
+              {
+                "path": "data/stacks/uno.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "9cab32326b4ad3a3cf43451a3c24553a41126cc1"
+                ]
+              },
+              {
+                "path": "data/stacks/uwp.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "04a84ea092a7657fef11e5daa97982be52dc6f59"
+                ]
+              },
+              {
+                "path": "data/stacks/vue.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "83997c515775170f22b638635aae0a67a46dfc87"
+                ]
+              },
+              {
+                "path": "data/stacks/winui.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "107ecead11728a83ec0ea10d815a9d1f43a35792"
+                ]
+              },
+              {
+                "path": "data/stacks/wpf.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "4e88d6750833a74f85ba487cf2b8f4ff6ebd2f4a"
+                ]
+              },
+              {
+                "path": "data/styles.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "d1eb2c216e453005ffa8232ffb94491c183afe3c"
+                ]
+              },
+              {
+                "path": "data/typography.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "70d107d107de30150863c965767320ec33ef29ad"
+                ]
+              },
+              {
+                "path": "data/ui-reasoning.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "8931d4c809f8e22ddac00ce612ce0c35f34a59b6"
+                ]
+              },
+              {
+                "path": "data/ux-guidelines.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "4e7d52b296537a03513b18b2c3f2b946cc802051"
+                ]
+              },
+              {
+                "path": "references/pro-rules.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "b2ce233287e37ec9ca13476c4014b922e9d5a0e9"
+                ]
+              },
+              {
+                "path": "references/quick-reference.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "7acc7e7540ca6981d878a90aae4455c1638e2385"
+                ]
+              },
+              {
+                "path": "scripts",
+                "pinned": [
+                  "blob",
+                  "120000",
+                  "ccb93f777cb49f7f4ff40182905ce793295d66d1"
+                ],
+                "observed": null
+              },
+              {
+                "path": "scripts/core.py",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "e7b76486499478518cdfa919c0d2eff62afef65f"
+                ]
+              },
+              {
+                "path": "scripts/design_system.py",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "1114088ea5886c7e5b8986fb22aef61acecc83ea"
+                ]
+              },
+              {
+                "path": "scripts/reasoning_contract.py",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "63652a666b130c249ea1e2954316f1ac8a5a73d5"
+                ]
+              },
+              {
+                "path": "scripts/search.py",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "07be642c10e59a182f02822663eab95a8860a289"
+                ]
+              },
+              {
+                "path": "scripts/tests/fixtures/catalogs/google-api.json",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "eacf1bb4559875808247df711376e8cc47c4f7c4"
+                ]
+              },
+              {
+                "path": "scripts/tests/fixtures/catalogs/google-catalog.json",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "4eb89d4d3312b670ef70d44563bf2ffd5cf814bb"
+                ]
+              },
+              {
+                "path": "scripts/tests/fixtures/catalogs/google-existing.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "83279e0f218e9725b8a14486a558fa10ff134949"
+                ]
+              },
+              {
+                "path": "scripts/tests/fixtures/catalogs/google-metadata.json",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "43edcbec14c4a5e68d373eda8466c235f2ee7e9b"
+                ]
+              },
+              {
+                "path": "scripts/tests/fixtures/catalogs/google-overrides.json",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "162fd1830b08dc1a7b8b891f92f16dbb8b7015f2"
+                ]
+              },
+              {
+                "path": "scripts/tests/fixtures/catalogs/icons-curated.csv",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "3171bfc7a0a6b3b36745b4f7f0c7743f0afad953"
+                ]
+              },
+              {
+                "path": "scripts/tests/fixtures/catalogs/phosphor-core.json",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "be0edd337f2c731af41b8a745d37089172c5dc60"
+                ]
+              },
+              {
+                "path": "scripts/tests/fixtures/catalogs/phosphor-package.json",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "ad9e6ef4b835e65a6c0bd0ad9d11f0517fd718c1"
+                ]
+              },
+              {
+                "path": "scripts/tests/fixtures/catalogs/phosphor-react-exports.json",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "4a0b4587ce9876acac1904831ea774bbf8c69edf"
+                ]
+              },
+              {
+                "path": "scripts/tests/fixtures/catalogs/phosphor-react-package.json",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "a0db183da61e63f3a8f9e3fbfba7405144f41c1e"
+                ]
+              },
+              {
+                "path": "scripts/tests/fixtures/relevance-baseline.json",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "aff48e127e99795cccf1f361cf253b773b616259"
+                ]
+              },
+              {
+                "path": "scripts/tests/fixtures/relevance-cases.json",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "a1fbb87835bda252ba8ae7f15e7090cee580cb42"
+                ]
+              },
+              {
+                "path": "scripts/tests/fixtures/relevance-thresholds.json",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "387d7c0a2f250bb0641a7e202502f4efcb01dabb"
+                ]
+              },
+              {
+                "path": "scripts/tests/test_catalog_refresh.py",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "8379cc3a224bb9f3dca2a3ebd561cd92b7e05ae4"
+                ]
+              },
+              {
+                "path": "scripts/tests/test_core.py",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "b30c0ae54c25f38ec91b37a56cda04426b2510a9"
+                ]
+              },
+              {
+                "path": "scripts/tests/test_core_data_quality.py",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "6d36c79b1f9f8c68c4b02f86a09c5e5f9ba410fe"
+                ]
+              },
+              {
+                "path": "scripts/tests/test_data_contracts.py",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "312dc383b3f6548d7200e928c192673a907b5016"
+                ]
+              },
+              {
+                "path": "scripts/tests/test_design_system_mode.py",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "abe615bade2d851d73c04be3d37e39231eb2d6d5"
+                ]
+              },
+              {
+                "path": "scripts/tests/test_native_desktop_stack_freshness.py",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "5cad0795ed07131c645efe7212b37f048204fec7"
+                ]
+              },
+              {
+                "path": "scripts/tests/test_relevance_evaluator.py",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "ed158e2d4e39a342090b29435dee25bcf5c4444f"
+                ]
+              },
+              {
+                "path": "scripts/tests/test_style_taxonomy.py",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "09ec131ea6d609e21aaf81327a2e3ffe1ea59d4c"
+                ]
+              },
+              {
+                "path": "scripts/tests/test_text_layout_resilience.py",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "8db3b873f958b93906abb8f4e4d6ef75a344c76e"
+                ]
+              },
+              {
+                "path": "scripts/tests/test_web_stack_freshness.py",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "c43eb4488f58ddea4d29828f5639652644ef67ca"
+                ]
+              },
+              {
+                "path": "scripts/validate_data.py",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "c7797cd9cb011bbea48c426ed70818fa557905d6"
+                ]
+              }
+            ],
+            "same_named_candidates": []
+          }
+        ]
+      }
+    },
+    {
+      "status": "complete",
+      "repo": "Varnan-Tech/opendirectory",
+      "default_branch": "main",
+      "pinned_commit": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4",
+      "observed_head": "caac7cda5621e289591e4e74b400e66ac72ad25b",
+      "pinned_tree": "6743775246c30a176fcab15341f82fdd11bae83c",
+      "observed_tree": "64195a45103c4e40497badd4768dde9e82d5f77a",
+      "pinned_recursive_complete": true,
+      "observed_recursive_complete": true,
+      "selected_skill_count": 26,
+      "entrypoints_changed": 0,
+      "entrypoints_missing_at_recorded_path": 26,
+      "directories_changed": 26,
+      "skills": [
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-blog-cover-image-cli-skill-md",
+          "source_path": "packages/cli/skills/blog-cover-image-cli/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 22,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": ".github/workflows/publish.yml",
+              "pinned": [
+                "blob",
+                "100644",
+                "8b88da9cff979d96568a40df979b1ff8af895a8d"
+              ],
+              "observed": null
+            },
+            {
+              "path": ".gitignore",
+              "pinned": [
+                "blob",
+                "100644",
+                "8ecf095ee9794005bb0eef32ed406058396a78bf"
+              ],
+              "observed": null
+            },
+            {
+              "path": "LICENSE",
+              "pinned": [
+                "blob",
+                "100644",
+                "bb5f0129d791999580651de7d7a3c447320ec469"
+              ],
+              "observed": null
+            },
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "bb80dd107a545868ac21e70f9f3d0350e92d2736"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "1b938f1244fbe318da99db0191175b561ce35319"
+              ],
+              "observed": null
+            },
+            {
+              "path": "agent-skill/blog-cover-generator/README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "b72b5f88fa99185b5775f414ced9bc4eb4443d79"
+              ],
+              "observed": null
+            },
+            {
+              "path": "agent-skill/blog-cover-generator/SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "96ae8e7e069ca4cb7a6a38643996f25fb4a64a2e"
+              ],
+              "observed": null
+            },
+            {
+              "path": "bin/cli.js",
+              "pinned": [
+                "blob",
+                "100644",
+                "b537c84cc74d11676bca6988056fad1c8ae5ffb3"
+              ],
+              "observed": null
+            },
+            {
+              "path": "examples/100x_UX_Research_AI_Agent.png",
+              "pinned": [
+                "blob",
+                "100644",
+                "7deee905f7eeefb91734ccc8b553a0f8e2c22d04"
+              ],
+              "observed": null
+            },
+            {
+              "path": "examples/Firecrawl-supabase-bolt.png",
+              "pinned": [
+                "blob",
+                "100644",
+                "017ec403076d2e08a3895d451569ab6a06a93def"
+              ],
+              "observed": null
+            },
+            {
+              "path": "examples/Git-City_Case_study_Cover_Image.jpg",
+              "pinned": [
+                "blob",
+                "100644",
+                "b4b2ed7b0c5b44e724d3cfc05143770ec1cec773"
+              ],
+              "observed": null
+            },
+            {
+              "path": "examples/THE DISTRIBUTION LAYER (2).png",
+              "pinned": [
+                "blob",
+                "100644",
+                "955331e754926cc7e113e22bba4979d137b3fac9"
+              ],
+              "observed": null
+            },
+            {
+              "path": "examples/canva-perplexity-duolingo-cover-image.png",
+              "pinned": [
+                "blob",
+                "100644",
+                "7d0cf9f3cf00daa371b750a7e53a2c5424cbf67b"
+              ],
+              "observed": null
+            },
+            {
+              "path": "examples/gamma-mistral-veed.png",
+              "pinned": [
+                "blob",
+                "100644",
+                "f4b54ccc46425badf76965e2151390419d64635d"
+              ],
+              "observed": null
+            },
+            {
+              "path": "examples/server-survival-case-study-cover-image(1).png",
+              "pinned": [
+                "blob",
+                "100644",
+                "fd6690508430f0971a27479cac8d42edc580d058"
+              ],
+              "observed": null
+            },
+            {
+              "path": "examples/viral-meme-automation.png",
+              "pinned": [
+                "blob",
+                "100644",
+                "5a6d3c3c704cbb345c6ab7e91d1fae3caf565a4c"
+              ],
+              "observed": null
+            },
+            {
+              "path": "index.js",
+              "pinned": [
+                "blob",
+                "100644",
+                "6d30f5f7ed6eb6b9739569ff4bb04db367d9721f"
+              ],
+              "observed": null
+            },
+            {
+              "path": "package-lock.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "c77391a0fca4b589a17e260b58ba6bc6a627a5b8"
+              ],
+              "observed": null
+            },
+            {
+              "path": "package.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "b361bcf0d163d81a790c8b42904c3291b814711c"
+              ],
+              "observed": null
+            },
+            {
+              "path": "src/geminiGenerator.js",
+              "pinned": [
+                "blob",
+                "100644",
+                "5c590cce5f8e1a1905b7a8edf556b2291d5197d7"
+              ],
+              "observed": null
+            },
+            {
+              "path": "src/imageValidator.js",
+              "pinned": [
+                "blob",
+                "100644",
+                "3a1b38efff12098bae374abf47de26d1bb7d98da"
+              ],
+              "observed": null
+            },
+            {
+              "path": "src/logoFetcher.js",
+              "pinned": [
+                "blob",
+                "100644",
+                "d7e9f3e05243e134dff34ab5484d823f1d3fd30f"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "skills/blog-cover-image-cli/SKILL.md",
+              "entrypoint_identical": false,
+              "observed_file_count": 2,
+              "changed_paths": [
+                {
+                  "path": ".github/workflows/publish.yml",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "8b88da9cff979d96568a40df979b1ff8af895a8d"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": ".gitignore",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "8ecf095ee9794005bb0eef32ed406058396a78bf"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "LICENSE",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "bb5f0129d791999580651de7d7a3c447320ec469"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "README.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "bb80dd107a545868ac21e70f9f3d0350e92d2736"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "d3de093d9c365894670ebd91034fc798c650bd07"
+                  ]
+                },
+                {
+                  "path": "SKILL.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "1b938f1244fbe318da99db0191175b561ce35319"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "96ae8e7e069ca4cb7a6a38643996f25fb4a64a2e"
+                  ]
+                },
+                {
+                  "path": "agent-skill/blog-cover-generator/README.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "b72b5f88fa99185b5775f414ced9bc4eb4443d79"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "agent-skill/blog-cover-generator/SKILL.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "96ae8e7e069ca4cb7a6a38643996f25fb4a64a2e"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "bin/cli.js",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "b537c84cc74d11676bca6988056fad1c8ae5ffb3"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "examples/100x_UX_Research_AI_Agent.png",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "7deee905f7eeefb91734ccc8b553a0f8e2c22d04"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "examples/Firecrawl-supabase-bolt.png",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "017ec403076d2e08a3895d451569ab6a06a93def"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "examples/Git-City_Case_study_Cover_Image.jpg",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "b4b2ed7b0c5b44e724d3cfc05143770ec1cec773"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "examples/THE DISTRIBUTION LAYER (2).png",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "955331e754926cc7e113e22bba4979d137b3fac9"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "examples/canva-perplexity-duolingo-cover-image.png",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "7d0cf9f3cf00daa371b750a7e53a2c5424cbf67b"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "examples/gamma-mistral-veed.png",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "f4b54ccc46425badf76965e2151390419d64635d"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "examples/server-survival-case-study-cover-image(1).png",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "fd6690508430f0971a27479cac8d42edc580d058"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "examples/viral-meme-automation.png",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "5a6d3c3c704cbb345c6ab7e91d1fae3caf565a4c"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "index.js",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "6d30f5f7ed6eb6b9739569ff4bb04db367d9721f"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "package-lock.json",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "c77391a0fca4b589a17e260b58ba6bc6a627a5b8"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "package.json",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "b361bcf0d163d81a790c8b42904c3291b814711c"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "src/geminiGenerator.js",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "5c590cce5f8e1a1905b7a8edf556b2291d5197d7"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "src/imageValidator.js",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "3a1b38efff12098bae374abf47de26d1bb7d98da"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "src/logoFetcher.js",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "d7e9f3e05243e134dff34ab5484d823f1d3fd30f"
+                  ],
+                  "observed": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-claude-md-generator-skill-md",
+          "source_path": "packages/cli/skills/claude-md-generator/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 5,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": ".env.example",
+              "pinned": [
+                "blob",
+                "100644",
+                "8a80a1e58466944ba8120cf1e50d726c6bb07a5b"
+              ],
+              "observed": null
+            },
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "3914c0a6a81dd5102705f0f77c5d4b113fd33706"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "24b34c2513f3988736d654f3c770774ef20eacc3"
+              ],
+              "observed": null
+            },
+            {
+              "path": "evals/evals.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "99d378d852e08e3eab9f9514b67a22f831a00a45"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/section-guide.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "aa4499429658898b9b06d2187feae04be44739e1"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "skills/claude-md-generator/SKILL.md",
+              "entrypoint_identical": false,
+              "observed_file_count": 5,
+              "changed_paths": [
+                {
+                  "path": "README.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "3914c0a6a81dd5102705f0f77c5d4b113fd33706"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "f494158f81731d6a89f20ae72d6c4c47836f9f0e"
+                  ]
+                },
+                {
+                  "path": "SKILL.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "24b34c2513f3988736d654f3c770774ef20eacc3"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "ebbd8ac03fcf88e8ef60f1dd8fc62c6445837f8b"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-cook-the-blog-skill-md",
+          "source_path": "packages/cli/skills/cook-the-blog/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "c64e698ffa79eba38d51dfb498c725fde264bb81"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "5d741ad00fd5a4f54664bd43c81d8a20edb37f93"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "skills/cook-the-blog/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": [
+                {
+                  "path": "README.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "c64e698ffa79eba38d51dfb498c725fde264bb81"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "3c559370d7960f9687685764e6943b7e9970ba55"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-docs-from-code-skill-md",
+          "source_path": "packages/cli/skills/docs-from-code/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 9,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": ".env.example",
+              "pinned": [
+                "blob",
+                "100644",
+                "5fa3026d185a1ba1a96797aaa25e6541f68e50ca"
+              ],
+              "observed": null
+            },
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "46accd25143fe58c71534042a810c87c4361d024"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "3749524977ae7b3303e79f228ed29f098c951af4"
+              ],
+              "observed": null
+            },
+            {
+              "path": "evals/evals.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "fa549c5ed3c7aa6db3a83321ae1fe9f9892bfaa3"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/extraction-guide.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "cc20d7c4443b4dc4648f0f65edca6416899e0f32"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/output-template.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "7776701ad7a23c9484c820a6a96f79520d02f50c"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/extract_py.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "cde6103e99f640f7c66e3daadeb658fe1cb5cc8e"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/extract_ts.ts",
+              "pinned": [
+                "blob",
+                "100644",
+                "abba0985afbb994c06369b7140facd5351c926f9"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/package.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "e04ee551e74440c139bb5bc3c1d009a992e41158"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "skills/docs-from-code/SKILL.md",
+              "entrypoint_identical": false,
+              "observed_file_count": 9,
+              "changed_paths": [
+                {
+                  "path": "README.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "46accd25143fe58c71534042a810c87c4361d024"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "a855803572bd46d754d67bd814c8b8db033f7bcd"
+                  ]
+                },
+                {
+                  "path": "SKILL.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "3749524977ae7b3303e79f228ed29f098c951af4"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "5b890eed775c7a69330eff7abb38048a866d3e39"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-explain-this-pr-skill-md",
+          "source_path": "packages/cli/skills/explain-this-pr/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 3,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "4299a667a7eecab263e33b65991413b5f49ca853"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "ada7b973d18212cca6522548d6ed47c2b65f1e40"
+              ],
+              "observed": null
+            },
+            {
+              "path": "evals/evals.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "420c12abbb446daa9b7556d1cd4cb5271e5965b8"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "skills/explain-this-pr/SKILL.md",
+              "entrypoint_identical": false,
+              "observed_file_count": 3,
+              "changed_paths": [
+                {
+                  "path": "README.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "4299a667a7eecab263e33b65991413b5f49ca853"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "902abb8ef470c5bece99b9d8f6b31675ef592545"
+                  ]
+                },
+                {
+                  "path": "SKILL.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "ada7b973d18212cca6522548d6ed47c2b65f1e40"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "28f31fea6f07120fed114b16cab6165d9cac17a8"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-google-trends-api-skills-skill-md",
+          "source_path": "packages/cli/skills/google-trends-api-skills/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 9,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "153a168f9a193ee2f860002dbfa7e1d5a5194536"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "abfb00b1e863ffbc055c70ad551a8a85c68af9ef"
+              ],
+              "observed": null
+            },
+            {
+              "path": "google-trends-api/SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "8c091cf39e071eac0c38014e7d7166b87555a5f0"
+              ],
+              "observed": null
+            },
+            {
+              "path": "google-trends-api/references/api-responses.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "329bb3c798a97a7fd4399d2d13a2087d3441f25a"
+              ],
+              "observed": null
+            },
+            {
+              "path": "google-trends-api/scripts/discover_keywords.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "a89f1c364c530cd87546407ba42336a02cda00b9"
+              ],
+              "observed": null
+            },
+            {
+              "path": "seo-keyword-research/SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "f22884e2d1d309e7519758a58cebc4736e28eb09"
+              ],
+              "observed": null
+            },
+            {
+              "path": "seo-keyword-research/references/keyword-placement-guide.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "86c1425798a5b3508faea86fd7eae1c98ee74e37"
+              ],
+              "observed": null
+            },
+            {
+              "path": "seo-keyword-research/references/tech-blog-examples.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "f3048b7a29c60b492898a4b43b84ff5afd2b7a98"
+              ],
+              "observed": null
+            },
+            {
+              "path": "seo-keyword-research/scripts/blog_seo_research.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "9b6c2d1c67b5cb9a065ac17e8cd0c3484e8f8640"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-hackernews-intel-skill-md",
+          "source_path": "packages/cli/skills/hackernews-intel/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 6,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": ".env.example",
+              "pinned": [
+                "blob",
+                "100644",
+                "5fea713df25ebbd487bb98faca400bc046b1643d"
+              ],
+              "observed": null
+            },
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "4d322a0b03afb192683488d7512f9eb5b6415914"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "8c097bcefa64a71ae39b4d58cb947c4b4fe88b90"
+              ],
+              "observed": null
+            },
+            {
+              "path": "evals/evals.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "67df2c6a847afe433f4edbed9d6b250543f277e2"
+              ],
+              "observed": null
+            },
+            {
+              "path": "package.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "64e89b0d6bc1d3b289730324ba2a969899e2ab7c"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/monitor-hn.js",
+              "pinned": [
+                "blob",
+                "100644",
+                "78341a8984f700c5ebba70b755c38240b4c8f2f7"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "skills/hackernews-intel/SKILL.md",
+              "entrypoint_identical": false,
+              "observed_file_count": 6,
+              "changed_paths": [
+                {
+                  "path": "README.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "4d322a0b03afb192683488d7512f9eb5b6415914"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "ca2dd3ab6a12c3a3d0d3fc1c1993fb09a24cbaee"
+                  ]
+                },
+                {
+                  "path": "SKILL.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "8c097bcefa64a71ae39b4d58cb947c4b4fe88b90"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "65680b7df45898d728d76f76b0e31150c8e73829"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-kill-the-standup-skill-md",
+          "source_path": "packages/cli/skills/kill-the-standup/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 5,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": ".env.example",
+              "pinned": [
+                "blob",
+                "100644",
+                "25775c00072688abcc5baa4cc2a4a0375d624f0d"
+              ],
+              "observed": null
+            },
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "ac5ec6a360e6e0d71a9485d091cee25270840f81"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "73c2408a4d93d542f8123ee1da08970e17598a27"
+              ],
+              "observed": null
+            },
+            {
+              "path": "evals/evals.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "b4da22b226cfcd90aa1cc556b664fa8e749f60cd"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/standup-format.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "ee1fea7a9f8cd683b1459a199d25afbef65d01c2"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "skills/kill-the-standup/SKILL.md",
+              "entrypoint_identical": false,
+              "observed_file_count": 5,
+              "changed_paths": [
+                {
+                  "path": "README.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "ac5ec6a360e6e0d71a9485d091cee25270840f81"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "48feb1517e3cf9de0a6fdd57b5afe9281e721f2c"
+                  ]
+                },
+                {
+                  "path": "SKILL.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "73c2408a4d93d542f8123ee1da08970e17598a27"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "fdadeadc2692acc97790db162f86edb7883d8ea6"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-linkedin-post-generator-skill-md",
+          "source_path": "packages/cli/skills/linkedin-post-generator/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 6,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": ".env.example",
+              "pinned": [
+                "blob",
+                "100644",
+                "252b420c3d773c64409c0f6f20abfaea0547737a"
+              ],
+              "observed": null
+            },
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "773df34f82b090f85ba25aea1d50c20e8d17ff85"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "6da870096ab29534386ee462a59559151c8f4136"
+              ],
+              "observed": null
+            },
+            {
+              "path": "evals/evals.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "b7e779047bad7ca2fea5e08a30ca28d28ebf8005"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/linkedin-format.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "c74e3c0cbcf1edbab105994cf1c8b6bd86d93e8d"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/output-template.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "2bcc7ff25e2d74c5725217302a9d0bf027b9ceca"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "skills/linkedin-post-generator/SKILL.md",
+              "entrypoint_identical": false,
+              "observed_file_count": 6,
+              "changed_paths": [
+                {
+                  "path": "README.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "773df34f82b090f85ba25aea1d50c20e8d17ff85"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "838e1a38b9c07944be57f001a7e20d580b913026"
+                  ]
+                },
+                {
+                  "path": "SKILL.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "6da870096ab29534386ee462a59559151c8f4136"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "2de07fe6e9c212e3c6e4aad4506183ad5fac62fe"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-luma-attendees-scraper-skill-md",
+          "source_path": "packages/cli/skills/luma-attendees-scraper/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 3,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "ae42bde6820bc82415db4533995d755602ead4ee"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "035e78b66d08aaf80aabf373342581527b188479"
+              ],
+              "observed": null
+            },
+            {
+              "path": "luma_attendees_export.js",
+              "pinned": [
+                "blob",
+                "100644",
+                "5b1b5c122d6312bf3d46d19cf3e4f53ce44b0635"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-meeting-brief-generator-skill-md",
+          "source_path": "packages/cli/skills/meeting-brief-generator/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 6,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": ".env.example",
+              "pinned": [
+                "blob",
+                "100644",
+                "fa1b7eb8b86b7967da77cc9f4476d0351d097057"
+              ],
+              "observed": null
+            },
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "bc48c4c5db90c492d0d6105e97986ee82eb73712"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "82139e071519a9cc2d3f07ca2ff68f223876000e"
+              ],
+              "observed": null
+            },
+            {
+              "path": "evals/evals.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "0905d9c266d1b4c1361a89dd0bb5ff62d7d9a2be"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/brief-format.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "dff15537b43f6778279201d306a564dc4e7db76d"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/output-template.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "d2a1ab966474242d3bb21587272dfedb3980c145"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "skills/meeting-brief-generator/SKILL.md",
+              "entrypoint_identical": false,
+              "observed_file_count": 6,
+              "changed_paths": [
+                {
+                  "path": "README.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "bc48c4c5db90c492d0d6105e97986ee82eb73712"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "3bf58182840db96ffa30096853d138c7108cab5d"
+                  ]
+                },
+                {
+                  "path": "SKILL.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "82139e071519a9cc2d3f07ca2ff68f223876000e"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "857b55d263a171e0ded10cdfcade4e157c81fb15"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-meta-ads-skill-skill-md",
+          "source_path": "packages/cli/skills/meta-ads-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 7,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "8a9b4e80b6c023c599f254c637a07de401564d92"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "ada45f09b17cc52337634146a9c90a53dba34395"
+              ],
+              "observed": null
+            },
+            {
+              "path": "meta-ads-skill/SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "a2c0915273022cc7e0e94a75a44e213ce88e8578"
+              ],
+              "observed": null
+            },
+            {
+              "path": "meta-ads-skill/references/report_templates.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "5c37c5d77384882c5257f58a9f24284c39f0913f"
+              ],
+              "observed": null
+            },
+            {
+              "path": "meta-ads-skill/references/workflows.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "0553eaa71f40bb8942f1c2996b55fd648d89efb4"
+              ],
+              "observed": null
+            },
+            {
+              "path": "meta-ads-skill/scripts/auth_check.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "170641976bfb1aa027a5a78756d38c3bacaac707"
+              ],
+              "observed": null
+            },
+            {
+              "path": "meta-ads-skill/scripts/formatters.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "732521ab561155f98b127d5fa498fbd9177251a5"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "skills/meta-ads-skill/meta-ads-skill/SKILL.md",
+              "entrypoint_identical": false,
+              "observed_file_count": 3,
+              "changed_paths": [
+                {
+                  "path": "README.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "8a9b4e80b6c023c599f254c637a07de401564d92"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "SKILL.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "ada45f09b17cc52337634146a9c90a53dba34395"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "d5e9dcec180925772cd0ff9b21d7864a841687b8"
+                  ]
+                },
+                {
+                  "path": "meta-ads-skill/SKILL.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "a2c0915273022cc7e0e94a75a44e213ce88e8578"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "meta-ads-skill/references/report_templates.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "5c37c5d77384882c5257f58a9f24284c39f0913f"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "meta-ads-skill/references/workflows.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "0553eaa71f40bb8942f1c2996b55fd648d89efb4"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "meta-ads-skill/scripts/auth_check.py",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "170641976bfb1aa027a5a78756d38c3bacaac707"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "meta-ads-skill/scripts/formatters.py",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "732521ab561155f98b127d5fa498fbd9177251a5"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "references/report_templates.md",
+                  "pinned": null,
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "a2407a2441af6743b765d0746a6df7730aafe703"
+                  ]
+                },
+                {
+                  "path": "references/workflows.md",
+                  "pinned": null,
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "aef3614a27a7c95bff7fc5ea4bc82b649c5cf0d2"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-newsletter-digest-skill-md",
+          "source_path": "packages/cli/skills/newsletter-digest/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 10,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": ".env.example",
+              "pinned": [
+                "blob",
+                "100644",
+                "312f5e0b245f6fc7a904f0ab7db8d04fa4a4972a"
+              ],
+              "observed": null
+            },
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "c96fc5c0d61853d6d3129986a0214b3b2a4abd69"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "a90d47373ff4f55831969f28ef3e3e733bb237a2"
+              ],
+              "observed": null
+            },
+            {
+              "path": "evals/evals.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "c10e07f189eda062c8ac2379f1f7e98866d4816d"
+              ],
+              "observed": null
+            },
+            {
+              "path": "feeds.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "01c1c5f5e0cfd0696e0f84f5019e8695643be398"
+              ],
+              "observed": null
+            },
+            {
+              "path": "package.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "1d8c099b67ee9cf46bb1d79bab11f172e7e872ee"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/digest-format.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "5154ddb49e2849137d3b4dc7c42593d4a6755be6"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/output-template.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "2e22f02d658d06097203c0e1526bff97fce1afe3"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/fetch-feeds.js",
+              "pinned": [
+                "blob",
+                "100644",
+                "b1e7a68aeb629c3406acd4dc6fd55b37f40c9696"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/ghost-publish.js",
+              "pinned": [
+                "blob",
+                "100644",
+                "db9ddadbb48ee7d0d3f957e14cf491f8cbc9f1bd"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "skills/newsletter-digest/SKILL.md",
+              "entrypoint_identical": false,
+              "observed_file_count": 10,
+              "changed_paths": [
+                {
+                  "path": "README.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "c96fc5c0d61853d6d3129986a0214b3b2a4abd69"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "7701a8a36c3409f2100af95385b0ed2401dfbb5d"
+                  ]
+                },
+                {
+                  "path": "SKILL.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "a90d47373ff4f55831969f28ef3e3e733bb237a2"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "92cd862afd5dbc3f6722af80039b10389425d502"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-noise2blog-skill-md",
+          "source_path": "packages/cli/skills/noise2blog/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 6,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": ".env.example",
+              "pinned": [
+                "blob",
+                "100644",
+                "a0de76bff3bd16a92b0d5399217b4c52aefa125b"
+              ],
+              "observed": null
+            },
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "48aff18260d43ec7d251f55eda1ea81a3326b2e2"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "950df70dea69bf1d1f77b3d9d66843a95b4a47a2"
+              ],
+              "observed": null
+            },
+            {
+              "path": "evals/evals.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "38fc5ee00fd3507458ccc7d6162da5ac3137aa15"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/blog-format.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "6876b637f4d32d097368868a893975f5b2b9d9ab"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/output-template.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "38a623d07e962ccc179be49c301b38c87cc49144"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "skills/noise2blog/SKILL.md",
+              "entrypoint_identical": false,
+              "observed_file_count": 6,
+              "changed_paths": [
+                {
+                  "path": "README.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "48aff18260d43ec7d251f55eda1ea81a3326b2e2"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "d473cda8e2752b0af3f209d00a791dd314649fc0"
+                  ]
+                },
+                {
+                  "path": "SKILL.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "950df70dea69bf1d1f77b3d9d66843a95b4a47a2"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "37abf59c0484afa0a11882f9de5d013a26a024c9"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-outreach-sequence-builder-skill-md",
+          "source_path": "packages/cli/skills/outreach-sequence-builder/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 7,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": ".env.example",
+              "pinned": [
+                "blob",
+                "100644",
+                "52026dbcceb5aab12869406d98e819c58a948978"
+              ],
+              "observed": null
+            },
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "41b83171d9842d04e6d40de0a9e26c6a34308994"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "327fdd3528eb8ea866d97c4043a2e30a1c3050dd"
+              ],
+              "observed": null
+            },
+            {
+              "path": "evals/evals.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "d4cd14931ae70a9800ae7ccb1de7be5524e803b6"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/output-template.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "6aa1cf39cb43228f2739f63964582c2d70fdfe14"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/sequence-format.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "b2c6a6b694d40b04a2f3d431a864f4d8599b8549"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/signal-playbook.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "be2f8ba02bbe98aaca4bd1a97fd7b8b8c7987831"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "skills/outreach-sequence-builder/SKILL.md",
+              "entrypoint_identical": false,
+              "observed_file_count": 7,
+              "changed_paths": [
+                {
+                  "path": "README.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "41b83171d9842d04e6d40de0a9e26c6a34308994"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "60cbb55ebae4ec112415b0598206a55b9108205d"
+                  ]
+                },
+                {
+                  "path": "SKILL.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "327fdd3528eb8ea866d97c4043a2e30a1c3050dd"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "58af3ccc1d588c1b2bdb8d72091a67a0b0607965"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-position-me-skill-md",
+          "source_path": "packages/cli/skills/position-me/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 6,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "8f71e0b9b2657db00c0b2b86f585d5b985487228"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "2e8a98f43ca9ced37bd42791d4773c622fff7173"
+              ],
+              "observed": null
+            },
+            {
+              "path": "position-me/SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "08c331c54db3071fd3fce3faea9efcd7bc616201"
+              ],
+              "observed": null
+            },
+            {
+              "path": "position-me/references/EVALUATION_SOP.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "ac48e53c0413ba11676c363dbe5018b689552612"
+              ],
+              "observed": null
+            },
+            {
+              "path": "position-me/references/REPORT_TEMPLATE.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "f9ddd5cda82f3ad39a33bea62343f4e4ab71d87e"
+              ],
+              "observed": null
+            },
+            {
+              "path": "position-me/scripts/extract_links.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "c90a11f3e70d47fef735695d1eb9512da8b9be43"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "skills/position-me/position-me/SKILL.md",
+              "entrypoint_identical": false,
+              "observed_file_count": 4,
+              "changed_paths": [
+                {
+                  "path": "README.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "8f71e0b9b2657db00c0b2b86f585d5b985487228"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "SKILL.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "2e8a98f43ca9ced37bd42791d4773c622fff7173"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "08c331c54db3071fd3fce3faea9efcd7bc616201"
+                  ]
+                },
+                {
+                  "path": "position-me/SKILL.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "08c331c54db3071fd3fce3faea9efcd7bc616201"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "position-me/references/EVALUATION_SOP.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "ac48e53c0413ba11676c363dbe5018b689552612"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "position-me/references/REPORT_TEMPLATE.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "f9ddd5cda82f3ad39a33bea62343f4e4ab71d87e"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "position-me/scripts/extract_links.py",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "c90a11f3e70d47fef735695d1eb9512da8b9be43"
+                  ],
+                  "observed": null
+                },
+                {
+                  "path": "references/EVALUATION_SOP.md",
+                  "pinned": null,
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "ac48e53c0413ba11676c363dbe5018b689552612"
+                  ]
+                },
+                {
+                  "path": "references/REPORT_TEMPLATE.md",
+                  "pinned": null,
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "f9ddd5cda82f3ad39a33bea62343f4e4ab71d87e"
+                  ]
+                },
+                {
+                  "path": "scripts/extract_links.py",
+                  "pinned": null,
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "c90a11f3e70d47fef735695d1eb9512da8b9be43"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-pr-description-writer-skill-md",
+          "source_path": "packages/cli/skills/pr-description-writer/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 4,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "0476be45d370a259ea44036b6636b8293f1224b4"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "7ce70392e2b0c5c85ad791c2380d106d3606d275"
+              ],
+              "observed": null
+            },
+            {
+              "path": "evals/evals.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "92d6a0996c25614ba8aeb166c5abcda1fc24e4dc"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/pr-format-guide.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "a13a8d9054077ea0101889619f2507446cfdb7eb"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "skills/pr-description-writer/SKILL.md",
+              "entrypoint_identical": false,
+              "observed_file_count": 4,
+              "changed_paths": [
+                {
+                  "path": "README.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "0476be45d370a259ea44036b6636b8293f1224b4"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "89f8df49387960180ddab978f8efe569cd2dd984"
+                  ]
+                },
+                {
+                  "path": "SKILL.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "7ce70392e2b0c5c85ad791c2380d106d3606d275"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "2bb50dd5322740b10e1f6ab1a4d194975e9ac09e"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-producthunt-launch-kit-skill-md",
+          "source_path": "packages/cli/skills/producthunt-launch-kit/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 5,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": ".env.example",
+              "pinned": [
+                "blob",
+                "100644",
+                "cd508c0ff28a88f6e49bfe38e23b43ed5348bcf6"
+              ],
+              "observed": null
+            },
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "9f147b73be92fb9bbcc16661f18255e55e1dab3a"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "f7b557fdfa017df204df5fbe9b0413ad98923664"
+              ],
+              "observed": null
+            },
+            {
+              "path": "evals/evals.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "7283d2934e61a98a2b54b040270d823834d3243c"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/copy-rules.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "25f58a07842fbbe52bd76c645317232b77fb0836"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "skills/producthunt-launch-kit/SKILL.md",
+              "entrypoint_identical": false,
+              "observed_file_count": 5,
+              "changed_paths": [
+                {
+                  "path": "README.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "9f147b73be92fb9bbcc16661f18255e55e1dab3a"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "0654e559a15915bc7cf64f739aca0fcc66492110"
+                  ]
+                },
+                {
+                  "path": "SKILL.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "f7b557fdfa017df204df5fbe9b0413ad98923664"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "c0ffc2275e007a2705c18a5c3851808fbcba93c8"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-reddit-icp-monitor-skill-md",
+          "source_path": "packages/cli/skills/reddit-icp-monitor/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 6,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": ".env.example",
+              "pinned": [
+                "blob",
+                "100644",
+                "bd4dff62ee452123f4819ebe12100de83a84eee2"
+              ],
+              "observed": null
+            },
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "19f512b6bda6a35b88dd454a810b878711410aae"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "50f7bc90e4a555c5fa64d5c3a925ed0c75f74074"
+              ],
+              "observed": null
+            },
+            {
+              "path": "evals/evals.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "203fa81dea618129f722f64f41ed7d116caa2be5"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/icp-format.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "c7d17af1932faaca3312b96959bb204ab68f71ea"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/reply-rules.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "2b050346616fba4433e34720c2bee6f3a259e79c"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "skills/reddit-icp-monitor/SKILL.md",
+              "entrypoint_identical": false,
+              "observed_file_count": 6,
+              "changed_paths": [
+                {
+                  "path": "README.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "19f512b6bda6a35b88dd454a810b878711410aae"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "f1f023016e9ea555da3d654b1a5acf30ffe0d3ab"
+                  ]
+                },
+                {
+                  "path": "SKILL.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "50f7bc90e4a555c5fa64d5c3a925ed0c75f74074"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "602618d016adbb2b1ca56595d09e38918f654eef"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-reddit-post-engine-skill-md",
+          "source_path": "packages/cli/skills/reddit-post-engine/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 5,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": ".env.example",
+              "pinned": [
+                "blob",
+                "100644",
+                "7be4104ff25a606d0059ffaaf3ea4c98f0acf197"
+              ],
+              "observed": null
+            },
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "d29b1a18deff3265d83d78d8ca263c06146cf337"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "88bfd531265652485a309dee9de3311be91eda56"
+              ],
+              "observed": null
+            },
+            {
+              "path": "evals/evals.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "be135e80b82a71882857182480a67ac5b06fc884"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/subreddit-playbook.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "9fdb6e92124a436289c4872eebc1ce34d160e3b6"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "skills/reddit-post-engine/SKILL.md",
+              "entrypoint_identical": false,
+              "observed_file_count": 5,
+              "changed_paths": [
+                {
+                  "path": "README.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "d29b1a18deff3265d83d78d8ca263c06146cf337"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "4f68e736f22bbe068e863f1f30e85219798cf769"
+                  ]
+                },
+                {
+                  "path": "SKILL.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "88bfd531265652485a309dee9de3311be91eda56"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "789929613635504393d97066bb4754d7be2f52d2"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-schema-markup-generator-skill-md",
+          "source_path": "packages/cli/skills/schema-markup-generator/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 6,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": ".env.example",
+              "pinned": [
+                "blob",
+                "100644",
+                "f7efb3abce1f1de00839ad2ce733925f282c2eda"
+              ],
+              "observed": null
+            },
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "4f7094a7bc5253f9289f3b9da6a9c01b8fe9dc64"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "92e30603c4159bbe0e5b492a40104fb0ff649cba"
+              ],
+              "observed": null
+            },
+            {
+              "path": "evals/evals.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "9c6b4d68049d1f1b261543431e745c41146e6967"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/json-ld-spec.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "5717821c280b436e9ac5fedb5562a1201fb34173"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/output-template.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "91be88b8a1daaed6ef7d612a668af11aafabd4a3"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "skills/schema-markup-generator/SKILL.md",
+              "entrypoint_identical": false,
+              "observed_file_count": 6,
+              "changed_paths": [
+                {
+                  "path": "README.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "4f7094a7bc5253f9289f3b9da6a9c01b8fe9dc64"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "4fbfb0dffe9e27653a4cb84bf7e31cb11cf36084"
+                  ]
+                },
+                {
+                  "path": "SKILL.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "92e30603c4159bbe0e5b492a40104fb0ff649cba"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "757f0cd4f65a26d03d525ce8f2bb2d31a2f2cf5e"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md",
+          "source_path": "packages/cli/skills/show-hn-writer/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 6,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": ".env.example",
+              "pinned": [
+                "blob",
+                "100644",
+                "b7e1f055cfedef93c7f8c161ac60996656bd8729"
+              ],
+              "observed": null
+            },
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "947873535658c44b6fdaf991dc93481af3e523b7"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "354e78214fed79b58b020f1b07a0927212ea5241"
+              ],
+              "observed": null
+            },
+            {
+              "path": "evals/evals.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "409d8bbcfbd53170c91b8dc997dd8f80c68d70a9"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/hn-rules.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "d2e91eec71cd9e5f772b19cb0d77ba4994b9ed85"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/title-formulas.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "8755cc2cd6f5f7574b58d996e650ef5d8003e5f6"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "skills/show-hn-writer/SKILL.md",
+              "entrypoint_identical": false,
+              "observed_file_count": 6,
+              "changed_paths": [
+                {
+                  "path": "README.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "947873535658c44b6fdaf991dc93481af3e523b7"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "ccde7305e01d6b61646ab678c59210ee8285d664"
+                  ]
+                },
+                {
+                  "path": "SKILL.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "354e78214fed79b58b020f1b07a0927212ea5241"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "0f64f35d6d2801d7fa83d093fe16e6a8e72f51d9"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-stargazer-skill-md",
+          "source_path": "packages/cli/skills/stargazer/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 7,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "1562516a2ff5ace5fe834d105424a7ed1a73933f"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "caa2ddbf224115999c00b412c866c047c64308c2"
+              ],
+              "observed": null
+            },
+            {
+              "path": "stargazer-skill/SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "06b33ce8e6951e1502e3ae73eb82abd1fb691a96"
+              ],
+              "observed": null
+            },
+            {
+              "path": "stargazer-skill/assets/.env.example",
+              "pinned": [
+                "blob",
+                "100644",
+                "5306159df821b275226acba4cf942d8f8ba8e884"
+              ],
+              "observed": null
+            },
+            {
+              "path": "stargazer-skill/scripts/convert_to_csv.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "ccd85393478ae65a1893d1350e24d2573583040d"
+              ],
+              "observed": null
+            },
+            {
+              "path": "stargazer-skill/scripts/count_emails.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "9c1fb4fae18e6d1c134fc0a8dc1c593f8001e9f3"
+              ],
+              "observed": null
+            },
+            {
+              "path": "stargazer-skill/scripts/stargazer_deep_extractor.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "2c989b19da8655eb5ee7f737a5d02b19f424ec35"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-tweet-thread-from-blog-skill-md",
+          "source_path": "packages/cli/skills/tweet-thread-from-blog/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 6,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": ".env.example",
+              "pinned": [
+                "blob",
+                "100644",
+                "80a4d7730ba7c783e5b5ee006bd759cb6ca8b429"
+              ],
+              "observed": null
+            },
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "94061acba5b0d96542219e0693b37131b53c2f71"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "551ddd7f98bb548e6fb56295fc738182c0213b40"
+              ],
+              "observed": null
+            },
+            {
+              "path": "evals/evals.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "1f2f06b5637cd2688a6fb9990b063da45fd1b010"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/output-template.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "4b3ecf53fa82e62affbd9c0f14b6c0ee6581bfc8"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/thread-format.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "6fa6716c0fa9097ca01b1b23b852166e12466db2"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "skills/tweet-thread-from-blog/SKILL.md",
+              "entrypoint_identical": false,
+              "observed_file_count": 6,
+              "changed_paths": [
+                {
+                  "path": "README.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "94061acba5b0d96542219e0693b37131b53c2f71"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "2ab5b322ffe6e15a998419e2e6d788c5dd55d3e2"
+                  ]
+                },
+                {
+                  "path": "SKILL.md",
+                  "pinned": [
+                    "blob",
+                    "100644",
+                    "551ddd7f98bb548e6fb56295fc738182c0213b40"
+                  ],
+                  "observed": [
+                    "blob",
+                    "100644",
+                    "3d5b839965b843e81e3d172b8c8ddd76683209a1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-twitter-gtm-find-skill-skill-md",
+          "source_path": "packages/cli/skills/twitter-GTM-find-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 13,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": ".gitignore",
+              "pinned": [
+                "blob",
+                "100644",
+                "d50e18f501dc94050826b28a1d92c7720702ce3e"
+              ],
+              "observed": null
+            },
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "c66d3587918bfb36c1d77e0552dbf94b04eb8040"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "78f1f46d97af74b523e06df618d9aaf6856d0232"
+              ],
+              "observed": null
+            },
+            {
+              "path": "twitter-GTM-find/SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "4ec573156b7bcb483832b25e93413df646efe4aa"
+              ],
+              "observed": null
+            },
+            {
+              "path": "twitter-GTM-find/references/icp-checklist.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "962239a9fa0fc32c300c6d32a429b8b04e720f3c"
+              ],
+              "observed": null
+            },
+            {
+              "path": "twitter-GTM-find/scripts/package.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "0879f81ce25318f1676e95d47fb1090b15d7a46d"
+              ],
+              "observed": null
+            },
+            {
+              "path": "twitter-GTM-find/scripts/run_pipeline.sh",
+              "pinned": [
+                "blob",
+                "100644",
+                "a190471a4cc9c427cec84e606725535f220598b4"
+              ],
+              "observed": null
+            },
+            {
+              "path": "twitter-GTM-find/scripts/src/debug.ts",
+              "pinned": [
+                "blob",
+                "100644",
+                "596f9087ade58dc7c8c84d3547f639b24a8cb370"
+              ],
+              "observed": null
+            },
+            {
+              "path": "twitter-GTM-find/scripts/src/extractor.ts",
+              "pinned": [
+                "blob",
+                "100644",
+                "cfd8c9270a3b8436b1a561c0513fa901d91c7ff4"
+              ],
+              "observed": null
+            },
+            {
+              "path": "twitter-GTM-find/scripts/src/icp-filter.ts",
+              "pinned": [
+                "blob",
+                "100644",
+                "22685f8a808e1e8ce10d7b155f83c0bf097f2ed0"
+              ],
+              "observed": null
+            },
+            {
+              "path": "twitter-GTM-find/scripts/src/index.ts",
+              "pinned": [
+                "blob",
+                "100644",
+                "f746a16a6708b180fcac3a8eb1822ba51997229b"
+              ],
+              "observed": null
+            },
+            {
+              "path": "twitter-GTM-find/scripts/src/scraper.ts",
+              "pinned": [
+                "blob",
+                "100644",
+                "9cb5b40a23e3142b8a07311ec46e2041e4f8a5f7"
+              ],
+              "observed": null
+            },
+            {
+              "path": "twitter-GTM-find/scripts/tsconfig.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "c5001975a8c923b36a712c9e05a10e1429141244"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "varnan-tech-opendirectory-packages-cli-skills-yc-intent-radar-skill-skill-md",
+          "source_path": "packages/cli/skills/yc-intent-radar-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 10,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "5001bf61dac9e3f693846ba68eeecd080ca6c8ba"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "77f4dba8d0304f7139ce8b8612e198b66a222f0f"
+              ],
+              "observed": null
+            },
+            {
+              "path": "yc-jobs-scraper/.gitignore",
+              "pinned": [
+                "blob",
+                "100644",
+                "7227336ebbcd8abc31c551404f79bf768b285f35"
+              ],
+              "observed": null
+            },
+            {
+              "path": "yc-jobs-scraper/SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "e0f2d2e49931cb6082985a3dcaeb0f54dac7d1ed"
+              ],
+              "observed": null
+            },
+            {
+              "path": "yc-jobs-scraper/scripts/auth.js",
+              "pinned": [
+                "blob",
+                "100644",
+                "f594291291474c325a33737d536248f97222b471"
+              ],
+              "observed": null
+            },
+            {
+              "path": "yc-jobs-scraper/scripts/db.js",
+              "pinned": [
+                "blob",
+                "100644",
+                "332c702fbdfbc77c860dc4717efac2fc50188813"
+              ],
+              "observed": null
+            },
+            {
+              "path": "yc-jobs-scraper/scripts/export_radar_candidates.js",
+              "pinned": [
+                "blob",
+                "100644",
+                "5fcfd1597b4bcd13e3032dbff8c85a414f47b5af"
+              ],
+              "observed": null
+            },
+            {
+              "path": "yc-jobs-scraper/scripts/package-lock.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "2a83d59259569c9fb30048317a607e01844e787d"
+              ],
+              "observed": null
+            },
+            {
+              "path": "yc-jobs-scraper/scripts/package.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "ac15d43c8948e820216ee9531b9cb01869417a53"
+              ],
+              "observed": null
+            },
+            {
+              "path": "yc-jobs-scraper/scripts/scraper.js",
+              "pinned": [
+                "blob",
+                "100644",
+                "7b16e835fa78c266d9675ec3d08529b31caec134"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": []
+        }
+      ],
+      "latest_release": null
+    }
+  ],
+  "captures": [
+    {
+      "endpoint": "repos/ahmedasmar/devops-claude-skills",
+      "exit_code": 0,
+      "stdout_sha256": "aaecf3142732b7e1e068672e227d58884d5e158891c04176ffd8ce09e2c866b6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0000"
+    },
+    {
+      "endpoint": "repos/ahmedasmar/devops-claude-skills/commits/main",
+      "exit_code": 0,
+      "stdout_sha256": "722dd5dbd6e8a918de47b47b51cac2637d99a651af1813eb57d2eb553dcc1a6b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0001"
+    },
+    {
+      "endpoint": "repos/ahmedasmar/devops-claude-skills/git/commits/1489c33ad8829a11219e423327d6b59f8339cee4",
+      "exit_code": 0,
+      "stdout_sha256": "e03b8745ca11485a231b04a9e8afc94353a64adda9e38b9befa9091b8800df08",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0002"
+    },
+    {
+      "endpoint": "repos/ahmedasmar/devops-claude-skills/git/trees/7abd5b000060311711f9a5b444d5702cc9a087f5?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "072869de2fde05197e84b071095cc892ab351c1769c222542754ca11c3f79690",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0003"
+    },
+    {
+      "endpoint": "repos/ahmedasmar/devops-claude-skills/releases/latest",
+      "exit_code": 1,
+      "stdout_sha256": "d9e37600354c1839f6b22cebde497e9d14750d2401a06c9a51b1619baf991613",
+      "stderr_sha256": "d2c8985c89b29a842ac4946d13bdbc297709f44f20bb968faf9682664b211db6",
+      "capture": "0004"
+    },
+    {
+      "endpoint": "repos/akin-ozer/cc-devops-skills",
+      "exit_code": 0,
+      "stdout_sha256": "d5bf767db5b82259204dd4cc865fdc81135ddc8477c7c012729874c59dc97fbc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0005"
+    },
+    {
+      "endpoint": "repos/akin-ozer/cc-devops-skills/commits/main",
+      "exit_code": 0,
+      "stdout_sha256": "c6a1965c13547076d1399662fe9fa46cbdf731aeede078625e2f7e3b8ef15b9c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0006"
+    },
+    {
+      "endpoint": "repos/akin-ozer/cc-devops-skills/git/commits/7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+      "exit_code": 0,
+      "stdout_sha256": "660ebda19f7a98f1ba408d8f0591889699eecd0d12a565396fff47f892977d80",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0007"
+    },
+    {
+      "endpoint": "repos/akin-ozer/cc-devops-skills/git/trees/8f6c3f7246fa33d4c1a736f75fc499ae8688785e?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "f25f3ea950ceea9093e5988c48b3933f9ed9339c2d950fa1753bc20ef4a965cd",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0008"
+    },
+    {
+      "endpoint": "repos/akin-ozer/cc-devops-skills/git/commits/276af751e659315aaf56d3ad13d7c26f4e72e28a",
+      "exit_code": 0,
+      "stdout_sha256": "d9af8c0cdb4927e12ffe95802e868f62818c2156b512e61bc94bb3880cbd275c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0009"
+    },
+    {
+      "endpoint": "repos/akin-ozer/cc-devops-skills/git/trees/1a2c8163f5b3d817141fee0eb9c5c64fa2fef46c?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "b791b668f2034a2bee081e82b4aa236f1b24f74d0ac7726ca8616c07f5513c0a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0010"
+    },
+    {
+      "endpoint": "repos/akin-ozer/cc-devops-skills/releases/latest",
+      "exit_code": 0,
+      "stdout_sha256": "b70ff4dde990e2ed3fa8f72d35f1e54bca306714ed8051dfa257b18ee3f8610f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0011"
+    },
+    {
+      "endpoint": "repos/akin-ozer/cc-devops-skills/commits/v1.0.0",
+      "exit_code": 0,
+      "stdout_sha256": "6e17151ae34f88a490ad756eeb9891188ce000816fa33a954c7304b4e702533a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0012"
+    },
+    {
+      "endpoint": "repos/nextlevelbuilder/ui-ux-pro-max-skill",
+      "exit_code": 0,
+      "stdout_sha256": "0ab01e8653c3b203f34e160446298693cb00863535fd3f365320f1392277624b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0013"
+    },
+    {
+      "endpoint": "repos/nextlevelbuilder/ui-ux-pro-max-skill/commits/main",
+      "exit_code": 0,
+      "stdout_sha256": "4cdae3e786c0148fadf0fa230e93eb576c225fa63c0073b0dd2fe3ea40e3f885",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0014"
+    },
+    {
+      "endpoint": "repos/nextlevelbuilder/ui-ux-pro-max-skill/git/commits/07f4ef3ac2568c25a3b0c8ef5165a86abc3e56e4",
+      "exit_code": 0,
+      "stdout_sha256": "2f5df0c48a10fd25d6bf771c49321565bf8b4f16cc77dcf1fa305feff3833216",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0015"
+    },
+    {
+      "endpoint": "repos/nextlevelbuilder/ui-ux-pro-max-skill/git/trees/cf20f8d008b9f29fc2760dcc50dd94c855a824e0?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "16fb9598f59b7dd82ccae4282e1edf2a622eb74ab1e03188c5da0841b5ecc1d6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0016"
+    },
+    {
+      "endpoint": "repos/nextlevelbuilder/ui-ux-pro-max-skill/git/commits/3a13158ff1f32156cbe144108de48eda2ecaed9a",
+      "exit_code": 0,
+      "stdout_sha256": "ac3df44a65c6d290f84aeaf3d3e2e0972a5de7fbfa783bacb9e2c0946de19c31",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0017"
+    },
+    {
+      "endpoint": "repos/nextlevelbuilder/ui-ux-pro-max-skill/git/trees/6a65685cc09448108c8519efd19992c3db92deed?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "91fab6f422ec900192b59e2c4ac87aa79d3b636c79578b9561ab2af3df7107be",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0018"
+    },
+    {
+      "endpoint": "repos/nextlevelbuilder/ui-ux-pro-max-skill/releases/latest",
+      "exit_code": 0,
+      "stdout_sha256": "3b6f506c0927b21f3e92129dfd3cdc2daa787ea27b9296d908482aada0d402d5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0019"
+    },
+    {
+      "endpoint": "repos/nextlevelbuilder/ui-ux-pro-max-skill/commits/v2.15.0",
+      "exit_code": 0,
+      "stdout_sha256": "8c2999808c5485c73d0c8e8ebadc52cc1f13e898d435c6108cce36c67e2f2a41",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0020"
+    },
+    {
+      "endpoint": "repos/nextlevelbuilder/ui-ux-pro-max-skill/git/commits/a38d04c3d5c298c851dbe5e6ee1965ee3de42cb5",
+      "exit_code": 0,
+      "stdout_sha256": "fe8f5b22db0980c9d487711ecc751abe3fe2b92810d7c07564a2e3da6889a7df",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0021"
+    },
+    {
+      "endpoint": "repos/nextlevelbuilder/ui-ux-pro-max-skill/git/trees/a6bd87aeb83d5354ecec528eff7652b8e6019f85?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "bbd5ad778dd99546f551bf56a65353e3a03d024e9dd1dafe6ad7b592849f116b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0022"
+    },
+    {
+      "endpoint": "repos/Varnan-Tech/opendirectory",
+      "exit_code": 0,
+      "stdout_sha256": "d1c2946135d8bedc5f5c2631fded805ecf301292dd80b6f1c8f1abb7a78a7858",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0023"
+    },
+    {
+      "endpoint": "repos/Varnan-Tech/opendirectory/commits/main",
+      "exit_code": 0,
+      "stdout_sha256": "95dad04805d9fb0dfae0cfa7309a448fad59ecfa489614023ca8325266097c38",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0024"
+    },
+    {
+      "endpoint": "repos/Varnan-Tech/opendirectory/git/commits/bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4",
+      "exit_code": 0,
+      "stdout_sha256": "c551ac28f5c20403af0a9a6c04c5ad1d389fcab89ec957a7ea6983a82276c14b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0025"
+    },
+    {
+      "endpoint": "repos/Varnan-Tech/opendirectory/git/trees/6743775246c30a176fcab15341f82fdd11bae83c?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "856ab9351f85242728ce6515bc319c46a8c270a08aa4cecc7a5b3a3670c0bda6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0026"
+    },
+    {
+      "endpoint": "repos/Varnan-Tech/opendirectory/git/commits/caac7cda5621e289591e4e74b400e66ac72ad25b",
+      "exit_code": 0,
+      "stdout_sha256": "174be1bbcd61cbd36fa995844b131946ab7e27dab2b6e860e8c5891144ffa04a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0027"
+    },
+    {
+      "endpoint": "repos/Varnan-Tech/opendirectory/git/trees/64195a45103c4e40497badd4768dde9e82d5f77a?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "14300e3b15699a5e60d7b16b7ac88e018bacda80a438bc7484af78f23d517491",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0028"
+    },
+    {
+      "endpoint": "repos/Varnan-Tech/opendirectory/releases/latest",
+      "exit_code": 1,
+      "stdout_sha256": "d9e37600354c1839f6b22cebde497e9d14750d2401a06c9a51b1619baf991613",
+      "stderr_sha256": "d2c8985c89b29a842ac4946d13bdbc297709f44f20bb968faf9682664b211db6",
+      "capture": "0029"
+    }
+  ]
+}

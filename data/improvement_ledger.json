@@ -72,6 +72,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "open_work": [
@@ -130,6 +134,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -184,6 +192,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "open_work": [
@@ -242,6 +254,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -340,6 +356,10 @@
             "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/upstream-observation.json",
             "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
             "sha256": "b210c97b88aca6ec0feee1bdde45377650457e90665e9f3fd230720f2d0da697"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -377,6 +397,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -431,6 +455,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "open_work": [
@@ -489,6 +517,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -517,6 +549,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -545,6 +581,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -577,6 +617,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -605,6 +649,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -703,6 +751,10 @@
             "path": "artifacts/repaired-skill-readiness/e2e-response-v1/upstream-observation.json",
             "scope": "Synthetic Playwright response-ordering component controls and selected upstream source observation; no agent efficacy result.",
             "sha256": "c4c7224eb72293216b90c14afbd8e4c7acf6b8f4dcd0aa8a2cdc434d09349f54"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -746,6 +798,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -805,6 +861,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "open_work": [
@@ -863,6 +923,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -891,6 +955,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -945,6 +1013,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "open_work": [
@@ -1003,6 +1075,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -1057,6 +1133,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "open_work": [
@@ -1115,6 +1195,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -1143,6 +1227,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -1175,6 +1263,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -1222,6 +1314,10 @@
             "path": "artifacts/repaired-skill-readiness/next-turbopack-v1/upstream-observation.json",
             "sha256": "bb37c645756835db4f8bada076b67e1e36dfd5851362229ace20f3399225517b",
             "scope": "Selected version-specific component controls and upstream observation; not an agent evaluation."
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -1298,6 +1394,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -1410,6 +1510,10 @@
             "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/upstream-node26-linux-result.json",
             "scope": "Jest threshold component control using Node 26.13.0; no agent efficacy result.",
             "sha256": "a63bbccab65917d657d25b7fa52ee4b07ef34c3572e5a3e20023ff5fada648ea"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -1463,6 +1567,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -1496,6 +1604,10 @@
             "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
             "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
             "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -1547,8 +1659,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/devops-reference/aws-cost-optimization",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -1591,8 +1709,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/devops-reference/gitops-workflows",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -1613,8 +1737,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/devops-reference/iac-terraform",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -1635,8 +1765,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/devops-reference/k8s-troubleshooter",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -1657,8 +1793,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/devops-reference/monitoring-observability",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -1736,8 +1878,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/latest-release-devops/ansible-generator",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -1800,6 +1948,10 @@
             "path": "artifacts/repaired-skill-readiness/azure-pipelines-node-ci-v1/qualification.json",
             "scope": "Basic Node CI example and local command controls; not full skill, Azure service or agent evaluation.",
             "sha256": "a3797f89b36f047a4f7473404fe963ba4194122c872e407d5f3a5f1ade3a9ab9"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -1849,6 +2001,10 @@
             "path": "artifacts/repaired-skill-readiness/azure-pipeline-sequence-preflight-v1/qualification.json",
             "scope": "Literal sequence-shape component controls; not full skill, Azure service or agent evaluation.",
             "sha256": "c49227936c814117f91f846c3cdd37aa37d6d144df44e56339a823269aca17f0"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -1916,6 +2072,10 @@
           {
             "path": "artifacts/repaired-skill-readiness/bash-generator-v1/errexit-windows.json",
             "sha256": "075e3655141a181efee1914e1fe53122d0956fcadc85212d4d248c5ae484f210"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "open_work": [
@@ -2021,8 +2181,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/latest-release-devops/dockerfile-generator",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -2065,8 +2231,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/latest-release-devops/fluentbit-generator",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -2149,6 +2321,10 @@
           {
             "path": "artifacts/repaired-skill-readiness/npm-cache-install-v1/qualification.json",
             "sha256": "9eed2c1eaaa34497d4dc58fe292d9caad969da7ed3644716f1b15379bec85a32"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -2338,8 +2514,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/latest-release-devops/gitlab-ci-generator",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -2382,8 +2564,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/latest-release-devops/helm-generator",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -2426,8 +2614,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/latest-release-devops/jenkinsfile-generator",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -2470,8 +2664,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/latest-release-devops/k8s-debug",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -2536,8 +2736,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/latest-release-devops/logql-generator",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -2558,8 +2764,14 @@
       },
       "mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/latest-release-devops/loki-config-generator",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -2610,6 +2822,10 @@
             "path": "artifacts/repaired-skill-readiness/makefile-generator-c-v1/upstream-observation.json",
             "scope": "C application and Linux ELF library Makefile component controls; no agent efficacy result.",
             "sha256": "10efde0cef345dbaa66fc22c15e8efbcfef327c3c6ca14a9ef16dfbfd6e86704"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -2665,8 +2881,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/latest-release-devops/promql-generator",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -2709,8 +2931,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/latest-release-devops/terraform-generator",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -2753,8 +2981,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/latest-release-devops/terragrunt-generator",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -14117,8 +14351,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/latest-release-creative/ckm-banner-design",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -14206,6 +14446,10 @@
             "path": "artifacts/research/2026-11-01/design-brief-phrase/linux-result.json",
             "scope": "Independent synthetic control of one multiword brief deliverable; no agent efficacy result.",
             "sha256": "6e47363aa400a651a8ccdc53877ce1188aec74c75564008e6eca20eed8f4485f"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -14234,8 +14478,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/latest-release-creative/ckm-design-system",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -14286,6 +14536,10 @@
             "path": "artifacts/research/2026-11-01/slides-keyboard-control/node-26.13.0-edge.json",
             "scope": "Source-bound slide template keyboard control; no agent efficacy or complete accessibility claim.",
             "sha256": "41d9cb133f3efaf7960e129d40ee13e90d23d884be7dfbc43347f656a95f22a7"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -14315,8 +14569,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/latest-release-creative/ckm-ui-styling",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -14337,8 +14597,14 @@
       },
       "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/latest-release-creative/ui-ux-pro-max",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -17878,6 +18144,10 @@
           {
             "path": "docs/research-image-cli-resources.md",
             "sha256": "798eef99da3f05901bb24242a260199cef755cb6542e3cc06e7679bff55f3721"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -18092,6 +18362,10 @@
             "path": "artifacts/research/2026-10-30/gemini-retirement/linux-result.json",
             "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
             "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -18115,8 +18389,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/reddit-verified-gtm-registry/cook-the-blog",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -18217,6 +18497,10 @@
             "path": "docs/research-docs-from-code-js-inventory.md",
             "scope": "Selected JavaScript and TypeScript parser and Express/Next.js controls; not agent efficacy.",
             "sha256": "533d26b50d1bcfb65553bbd4421c2746440452c650bc00760fe1562ef5ec20a3"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress",
@@ -18270,6 +18554,10 @@
           {
             "path": "docs/research-category-routing.md",
             "sha256": "ebb12eeb2087d52667592165a53e37ec144ead27ab2f83e994dd857e371d1958"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -18293,8 +18581,14 @@
       },
       "mirrored_path": "included/skills/by-category/search-retrieval-web-automation/reddit-verified-gtm-registry/google-trends-api-skills",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -18315,8 +18609,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/reddit-verified-gtm-registry/hackernews-intel",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -18337,8 +18637,14 @@
       },
       "mirrored_path": "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/kill-the-standup",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -18359,8 +18665,14 @@
       },
       "mirrored_path": "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/linkedin-post-generator",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -18403,8 +18715,14 @@
       },
       "mirrored_path": "included/skills/by-category/search-retrieval-web-automation/reddit-verified-gtm-registry/luma-attendees-scraper",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -18450,6 +18768,10 @@
             "path": "artifacts/research/2026-10-30/gemini-retirement/linux-result.json",
             "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
             "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -18473,8 +18795,14 @@
       },
       "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/reddit-verified-gtm-registry/meta-ads-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -18520,6 +18848,10 @@
             "path": "artifacts/research/2026-10-30/gemini-retirement/linux-result.json",
             "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
             "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -18568,6 +18900,10 @@
             "path": "artifacts/research/2026-10-30/gemini-retirement/linux-result.json",
             "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
             "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -18616,6 +18952,10 @@
             "path": "artifacts/research/2026-10-30/gemini-retirement/linux-result.json",
             "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
             "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -18639,8 +18979,14 @@
       },
       "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/reddit-verified-gtm-registry/position-me",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -18661,8 +19007,14 @@
       },
       "mirrored_path": "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/pr-description-writer",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -18708,6 +19060,10 @@
             "path": "artifacts/research/2026-10-30/gemini-retirement/linux-result.json",
             "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
             "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -18756,6 +19112,10 @@
             "path": "artifacts/research/2026-10-30/gemini-retirement/linux-result.json",
             "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
             "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -18804,6 +19164,10 @@
             "path": "artifacts/research/2026-10-30/gemini-retirement/linux-result.json",
             "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
             "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -18827,8 +19191,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/reddit-verified-gtm-registry/schema-markup-generator",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -18878,6 +19248,10 @@
             "path": "artifacts/research/2026-10-30/gemini-retirement/linux-result.json",
             "scope": "Source-bound retired model inventory and official lifecycle documentation; no model API or agent performance test.",
             "sha256": "24d6b370b831cb9021e083ba3ce12a78614b10943d6b6743435faf5f19608f61"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
         "status": "in_progress"
@@ -18901,8 +19275,14 @@
       },
       "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/reddit-verified-gtm-registry/stargazer",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -18923,8 +19303,14 @@
       },
       "mirrored_path": "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/tweet-thread-from-blog",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -18945,8 +19331,14 @@
       },
       "mirrored_path": "included/skills/by-category/communication-productivity-support/reddit-verified-gtm-registry/twitter-gtm-find-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -18967,8 +19359,14 @@
       },
       "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/reddit-verified-gtm-registry/yc-intent-radar-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],

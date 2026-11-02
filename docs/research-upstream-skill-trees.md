@@ -98,3 +98,28 @@ evidence and verification records. Native streams for the full Git trees are
 retained outside Git; their digests remain in the summaries. No mirrors or
 source pins were changed by this observation. The ledger records source-tree
 research as in progress, not as a completed skill evaluation.
+
+## Selected skills from mixed-purpose sources
+
+A further [source-bound observation](../artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json)
+compared 82 selected non-security skills from five public sources on 2 November
+2026. Security-labeled entries were excluded from the selection. Complete
+Git-tree comparisons cover all 82 selected skills; the capture of the renamed
+`affaan-m/ECC` repository uses a separately retained derived alias lock after
+GitHub's permanent redirect and pinned commit were verified.
+
+The selected `ahmedasmar/devops-claude-skills` directories matched their pinned
+head. For `akin-ozer/cc-devops-skills`, the latest release remained the pinned
+v1.0.0, while 12 selected directories differed at the default-branch head.
+The selected `nextlevelbuilder/ui-ux-pro-max-skill` directories differed at the
+observed v2.15.0 release, and all selected `affaan-m/ECC` directories differed
+at the observed v2.2.3 release. These comparisons do not constitute admission
+or a content review of either release.
+
+All 26 selected `Varnan-Tech/opendirectory` entrypoints were missing at their
+recorded paths; 21 had same-named candidates and five had none in the captured
+complete tree. Candidate names alone do not establish equivalence or deletion.
+The complete and alias comparisons were independently reconciled and replayed;
+full native tree streams remain outside Git with their digests in the retained
+summaries. No catalog pin or mirror was changed, and the ledger records this
+as in-progress source research rather than an evaluation.

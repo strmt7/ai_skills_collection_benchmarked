@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "summary_sha256": "9306e473fef9a20ba3fd87f2dc4f5bd7f933dffd901136f10da70fb05030d953",
+  "repository_count": 4,
+  "skill_tree_comparisons": 77,
+  "candidate_directories_checked": 21,
+  "native_streams_checked": 60,
+  "scope": "Complete root tree reconciliation only; source quality, relocations and agent effectiveness were not verified."
+}
