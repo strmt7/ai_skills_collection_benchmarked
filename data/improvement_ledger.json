@@ -802,8 +802,40 @@
           {
             "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
             "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          },
+          {
+            "path": "docs/agent-trial-protocol.md",
+            "scope": "Selected pass-at-k estimator, missing-outcome bounds and independent controls; not full skill review or agent-efficacy evidence.",
+            "sha256": "0b633c1ff8bcfbd4b218f9c535dbca92fe656ba360e921065514f2a490ee77e5"
+          },
+          {
+            "path": "tools/summarize_best_of_k.py",
+            "scope": "Selected pass-at-k estimator, missing-outcome bounds and independent controls; not full skill review or agent-efficacy evidence.",
+            "sha256": "12a045c2bdef450d1feb78d8be3f4cc34019f7d971bce378168f2ebf9d93cde1"
+          },
+          {
+            "path": "tests/test_summarize_best_of_k.py",
+            "scope": "Selected pass-at-k estimator, missing-outcome bounds and independent controls; not full skill review or agent-efficacy evidence.",
+            "sha256": "95fba1d7aa7d4408002d6c1e693017c1df7b83a7157801d0661050acdb05f816"
           }
         ],
+        "open_work": [
+          "Complete the original skill review within the permitted scope; cybersecurity-related examples are deferred.",
+          "Independently test skill activation and agent effectiveness; a component-level metric is not an agent benchmark."
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "review_scope": "Complete source read; only evaluation metrics and reporting were assessed. Other guidance remains unreviewed, including deferred cybersecurity examples.",
+            "sha256": "0bc29828b0b20c57f1d0904fab2f046155aae9e6d9cf1d7587dd8776a8747f3d",
+            "status": "pending"
+          },
+          "agents/openai.yaml": {
+            "review_scope": "Complete display metadata, invocation policy and default prompt read; no runtime activation tested.",
+            "sha256": "6f2c19eb59062ca776286c2f6a6a7f1b552b4f927a2b48de888a7dbb2eeec6bd",
+            "status": "reviewed"
+          }
+        },
         "status": "in_progress"
       },
       "revision": {
