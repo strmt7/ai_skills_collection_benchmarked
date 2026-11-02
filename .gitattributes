@@ -207,3 +207,8 @@
 /included/repaired/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code-js-inventory/provenance/** -text !eol whitespace=cr-at-eol
 /artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/** text eol=lf
 /artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/raw/** -text !eol whitespace=cr-at-eol
+
+# Keep the Yarn repair and its source-bound evidence portable.
+/included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/yarn-cache-install/** text eol=lf
+/included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/yarn-cache-install/provenance/** -text !eol
+/artifacts/repaired-skill-readiness/yarn-cache-install-v1/** text eol=lf

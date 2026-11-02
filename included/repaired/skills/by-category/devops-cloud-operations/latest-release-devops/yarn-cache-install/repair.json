@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-github-actions-generator-skill-md",
+  "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+  "source_mirror": "included/skills/by-category/devops-cloud-operations/latest-release-devops/github-actions-generator",
+  "original_skill_sha256": "485a62c648f2a163fe479948409bd4b146dd3b47712f742452efadeab6dcbe3a",
+  "source_action_sha256": "6df9f7fb7b7034bbd8e66ecd2ae7342028a47a5d25136f8592b6c7e611b69add",
+  "license_file": "LICENSE",
+  "license_sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+  "scope": "Yarn 4 package cache and immutable installation in isolated node-modules and Plug-and-Play fixtures on Windows and Linux.",
+  "model_performance_claim": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/yarn-cache-install-v1",
+  "overlay_sha256": {
+    "LICENSE": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+    "NOTICE.md": "9275ce71c0119809c71248a80339cfad60702e639f05206e23395f04a8d1e411",
+    "provenance/original-action.yml": "6df9f7fb7b7034bbd8e66ecd2ae7342028a47a5d25136f8592b6c7e611b69add",
+    "provenance/original.SKILL.md": "485a62c648f2a163fe479948409bd4b146dd3b47712f742452efadeab6dcbe3a",
+    "SKILL.md": "3ec555cb16fee48b1fad1c4b9eb65b581c19329c94002e093c491062cebb011d"
+  },
+  "evidence_sha256": {
+    "fetch_yarn.py": "bc589a48cda534994273e9928f16bf832546955201a764904dcfa7bb4fa4eea2",
+    "linux-node24-yarn4.json": "26a78064a71acffb9f4182e734ae909e4b9ac8617218338efa78f6b7bb527012",
+    "reproduce.py": "1cc159cf6c1ac8da975dea2b15c6f2f394ec81d433514be1aaa1f8b4b20dae1b",
+    "windows-node26-yarn4.json": "35a4067fa04c2ae872ba9ae5ccef8eb90be11de72ef9dbf6b145e7c89ed4b3d0"
+  }
+}

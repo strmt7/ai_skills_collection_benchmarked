@@ -1,0 +1,95 @@
+{
+  "platform": "Linux",
+  "node_version": "v24.15.0",
+  "yarn_version": "4.18.1",
+  "yarn_js_sha256": "a28ad591febb769f939c11f82f89bacad0b0fac0c884d3b78fa2aaaee970907e",
+  "source_action_sha256": "6df9f7fb7b7034bbd8e66ecd2ae7342028a47a5d25136f8592b6c7e611b69add",
+  "runner_sha256": "1cc159cf6c1ac8da975dea2b15c6f2f394ec81d433514be1aaa1f8b4b20dae1b",
+  "overlay_sha256": "3ec555cb16fee48b1fad1c4b9eb65b581c19329c94002e093c491062cebb011d",
+  "fixture_tarball_sha256": "c1161c3c852f2ca2ddce6f01989889f21ca1f6f4d3a08949e3a1e0fc444ed0bd",
+  "network_enabled": false,
+  "github_cache_service_tested": false,
+  "agent_performance_tested": false,
+  "logs": {
+    "yarn-version": {
+      "exit_code": 0,
+      "stdout_sha256": "1dc6ecaaf89f583fd99219d6e984dc795cac20814c897af2417a6cd355cc84d0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "node-version": {
+      "exit_code": 0,
+      "stdout_sha256": "c642a0de246dcdc6c51318fe449646fc5067b981a8d09e9ccdb8141a5756339a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "node-modules-source-cache-command": {
+      "exit_code": 1,
+      "stdout_sha256": "1b055b645ff0d005f400af7f04a3c882cf88a5ec6b17a12d74058803d52ccdb4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "node-modules-config-cache": {
+      "exit_code": 0,
+      "stdout_sha256": "f954508717073179191642fda0eb2385d42086b2ef28e5aa3d44a3ffe433afa7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "node-modules-seed": {
+      "exit_code": 0,
+      "stdout_sha256": "bb058467619229e89a5d38e619fc3650c794a5ad450ed19191521c8ede79399b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "node-modules-before-install": {
+      "exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "93f945f4c708d2adefc9fe4caf7c15a26c949d835b47cd77a025d39967934b46"
+    },
+    "node-modules-install": {
+      "exit_code": 0,
+      "stdout_sha256": "adc026f362b2fe81a42d456859743f2096972b66c3f50ebdeb923f9010b315b3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "node-modules-after-install": {
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "node-modules-mismatched-lock": {
+      "exit_code": 1,
+      "stdout_sha256": "61a6e243f8ed118eed8b629071690dc2fe0c1e3f4505d14e8e6a2df048642c52",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "pnp-source-cache-command": {
+      "exit_code": 1,
+      "stdout_sha256": "1b055b645ff0d005f400af7f04a3c882cf88a5ec6b17a12d74058803d52ccdb4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "pnp-config-cache": {
+      "exit_code": 0,
+      "stdout_sha256": "343c226cf1cafe2900264681f98e8d821f640d2eafe7a49f0a22ac09a53062c3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "pnp-seed": {
+      "exit_code": 0,
+      "stdout_sha256": "b2dd6a09498fe9e621827c062cae90620dc86eb99e61bc9c2658bd604ae687f6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "pnp-before-install": {
+      "exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "42521358b3e5dcbed8cda42ed15a658798c60267e8b27080d961edb9f8b8ec0a"
+    },
+    "pnp-install": {
+      "exit_code": 0,
+      "stdout_sha256": "46c11b5756246e587e8421b8eff30552a657fab033cc77ee57c97c77c49cc7f3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "pnp-after-install": {
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "pnp-mismatched-lock": {
+      "exit_code": 1,
+      "stdout_sha256": "7eaeb0ffc670f475c56c920e249ec218f09d69aa07d2efd8e0d352820acc35ee",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

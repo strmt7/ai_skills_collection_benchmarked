@@ -1,0 +1,66 @@
+name: Yarn cache installation controls
+
+on:
+  push:
+    paths:
+      - 'artifacts/repaired-skill-readiness/yarn-cache-install-v1/**'
+      - 'included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/yarn-cache-install/**'
+      - 'included/skills/by-category/devops-cloud-operations/latest-release-devops/github-actions-generator/examples/actions/setup-node-cached/**'
+      - 'tests/test_yarn_cache_install.py'
+      - '.github/workflows/yarn-cache-install.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '45 9 * * 4'
+
+concurrency:
+  group: yarn-cache-install-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  controls:
+    name: Offline Yarn 4 controls (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      GIT_CONFIG_COUNT: '1'
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: 'true'
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: '0.13.6'
+          python-version: '3.13.18'
+          activate-environment: 'true'
+          venv-path: ${{ runner.temp }}/yarn-cache-control-venv
+          enable-cache: 'false'
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '26.13.0'
+          package-manager-cache: false
+      - name: Fetch the pinned Yarn CLI
+        shell: pwsh
+        run: |
+          python artifacts/repaired-skill-readiness/yarn-cache-install-v1/fetch_yarn.py --output (Join-Path $env:RUNNER_TEMP 'yarn-4.18.1.js')
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Exercise fresh-workspace installations
+        shell: pwsh
+        run: |
+          $node = python -c "import shutil; print(shutil.which('node'))"
+          python artifacts/repaired-skill-readiness/yarn-cache-install-v1/reproduce.py --node $node --yarn-js (Join-Path $env:RUNNER_TEMP 'yarn-4.18.1.js') --output-dir (Join-Path $env:RUNNER_TEMP 'yarn-cache-control')
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Retain native observations
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: yarn-cache-local-${{ matrix.os }}
+          path: ${{ runner.temp }}/yarn-cache-control/
+          if-no-files-found: error
+          retention-days: 14
