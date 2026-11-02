@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-anndata-skill-md",
+  "source_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+  "source_mirror": "included/skills/by-category/science-research-data-analysis/latest-release-community/anndata",
+  "source_license_blob_sha1": "eb246475fd5a66b9bb56176f3a718984632dd98d",
+  "scope": "Selected generic Matrix Market, Excel, HDF5 elements and backed collection matrix and observation metadata.",
+  "agent_performance_tested": false,
+  "full_skill_reviewed": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/anndata-general-io-v1/qualification.json",
+  "overlay_sha256": {
+    "LICENSE": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1",
+    "provenance/original.io_operations.md": "20885ec82a36d76ccfb415945b1530fb2da9567fda52718a5156ff7b12bcdee5",
+    "provenance/original.SKILL.md": "801ad688e978d54f92af466fe2ae13ae7c322100bea6fc7a6004e3c591e8264a",
+    "SKILL.md": "26bc9d16fa189f4e03504197f5ccf66ee13ffd3d18cca4ee553eb770c6c449b4"
+  },
+  "evidence_sha256": {
+    "linux-result.json": "ae95574bb7fd8ed2f37f8b17b13a28f52e2af221eee869abcc76bbea3ff72f75",
+    "qualification.json": "a0fbd43175822918fcf804f865e924a73ed5047425e7c47fae9c906ad1f5727b",
+    "reproduce.py": "736ed5b59ee59c3ada9d0f7888f1b6202b310e80b68d0b9e50d5cab1df08855a",
+    "requirements-linux.txt": "754e7d5771778443ce0a145a33efeac4d4885cbe7d63ce99fef7e921fd278ddc",
+    "requirements-windows.txt": "68b9c7b1f86259fc697f160ace0a171828d7cc87f600ea7ac162533eae6d3f24",
+    "requirements.in": "cb145901f4d739883aa5b19dec7cb16d78b788c32bc3e47265ba78ca06bd225c",
+    "windows-result.json": "279c4ac6a2534fa362cbcd0a448d93bcc4e3fec8ddc4b37d53767397fb38703a"
+  }
+}

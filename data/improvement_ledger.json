@@ -5662,7 +5662,7 @@
           {
             "path": "docs/research-anndata-10x.md",
             "scope": "Partial input and output API review with specific upstream corrections; not a full migration review or agent evaluation.",
-            "sha256": "e34968ce2c8c59c0189fd0f3d082603c7a4c21a88ac56af8b384252984344963"
+            "sha256": "6ffeb355aa23907c42ae59c742157a72b217e0f1b8b9dd4263f40daec7083e86"
           },
           {
             "path": "artifacts/research/2026-10-30/anndata-10x-controls/result.json",
@@ -5683,6 +5683,11 @@
             "path": "artifacts/repaired-skill-readiness/anndata-io-v2/qualification.json",
             "scope": "Fresh pinned Windows and Linux synthetic component controls; no full skill or agent evaluation.",
             "sha256": "ba2ca752dc00a30a32522ea8d6358834ffbd019f0a83fd1485cd1fce7ab5591d"
+          },
+          {
+            "path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/anndata-general-io/repair.json",
+            "sha256": "b49fd82a359a3a8436d3b3a46304053c52f7194ba7ad3339f64004674d369c58",
+            "scope": "Selected generic AnnData I/O component checks on synthetic data, not an agent benchmark."
           }
         ],
         "status": "in_progress"

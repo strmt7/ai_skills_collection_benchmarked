@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "scope": "Four examples on synthetic local inputs with explicit negative controls; no model trial or biological validation.",
+  "skill_sha256": "26bc9d16fa189f4e03504197f5ccf66ee13ffd3d18cca4ee553eb770c6c449b4",
+  "python_version": "3.13.18",
+  "anndata_version": "0.13.4",
+  "h5py_version": "3.16.0",
+  "openpyxl_version": "3.1.5",
+  "environment": "Separate Windows and Linux virtual environments installed from the platform-specific hash-locked binary dependency graphs; uv pip check passed.",
+  "lock_compiler": "uv 0.12.24",
+  "results": {
+    "windows-result.json": "279c4ac6a2534fa362cbcd0a448d93bcc4e3fec8ddc4b37d53767397fb38703a",
+    "linux-result.json": "ae95574bb7fd8ed2f37f8b17b13a28f52e2af221eee869abcc76bbea3ff72f75"
+  },
+  "requirements_sha256": {
+    "requirements.in": "cb145901f4d739883aa5b19dec7cb16d78b788c32bc3e47265ba78ca06bd225c",
+    "requirements-windows.txt": "68b9c7b1f86259fc697f160ace0a171828d7cc87f600ea7ac162533eae6d3f24",
+    "requirements-linux.txt": "754e7d5771778443ce0a145a33efeac4d4885cbe7d63ce99fef7e921fd278ddc"
+  },
+  "runner_sha256": "736ed5b59ee59c3ada9d0f7888f1b6202b310e80b68d0b9e50d5cab1df08855a",
+  "initial_failed_stderr_sha256": {
+    "windows": "24bb0631b3f2573b50495614b0e9850b1afbdc371f353a2d558e90a89387a6a8",
+    "linux": "ae36024daf90022ef555ac3c5620ec8734eef17821c7fdf9a12d512d7358fe49"
+  },
+  "sources": {
+    "anndata_api": {
+      "url": "https://anndata.readthedocs.io/en/stable/api.html",
+      "native_sha256": "be42a13e3c68c9f09a21db79bf1090cefc27dba1cb3aa606ec9dd40408f29943",
+      "status_code": 200,
+      "documented_version": "0.13.3.post0"
+    },
+    "anncollection": {
+      "url": "https://anndata.readthedocs.io/en/stable/generated/anndata.experimental.AnnCollection.html",
+      "native_sha256": "f750de99fc8ffe8acba095839077a88d2c61cf2b37d917a519a435454f6c83f3",
+      "status_code": 200,
+      "documented_version": "0.13.3.post0"
+    },
+    "pypi_api_sha256": {
+      "anndata": "e153a77aa481f9026385cd6ebe8fc2a65c29b5d0a98163a5e32261ff6d318983",
+      "openpyxl": "2bbf01d2a1146e878113777019080e8f8d0b14fd07d431a3f743dd54978718c4",
+      "h5py": "8d5cd2b3178923f2a72b631e8889549ba19964ca3e71127f8c19a22b596422c4"
+    }
+  },
+  "agent_performance_tested": false,
+  "full_skill_reviewed": false
+}

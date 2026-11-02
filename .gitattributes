@@ -146,6 +146,9 @@
 /included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/anndata-io/provenance/** -text !eol
 /artifacts/repaired-skill-readiness/anndata-io-v1/** text eol=lf
 /artifacts/repaired-skill-readiness/anndata-io-v2/** text eol=lf
+/included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/anndata-general-io/** text eol=lf
+/included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/anndata-general-io/provenance/** -text !eol
+/artifacts/repaired-skill-readiness/anndata-general-io-v1/** text eol=lf
 
 # Preserve the pinned Scanpy entrypoint alongside the maintained examples.
 /included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/scanpy-counts-clustering/** text eol=lf

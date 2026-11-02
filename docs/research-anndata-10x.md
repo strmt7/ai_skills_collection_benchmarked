@@ -106,3 +106,34 @@ native-result SHA-256 digests are
 and `346f6780b47ba763d066c6cfdf0df0230551617edfdf63183ff22fe16a3bbd81`.
 The versioned upstream skill files were captured through the Git Data API and
 checked against their Git blob IDs. Native captures remain local evidence.
+
+## General I/O overlay
+
+The separate [general I/O overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/anndata-general-io/SKILL.md)
+addresses generic Matrix Market labels, explicit Excel sheet selection, HDF5
+element access and selected backed-collection access. The matrix example
+checks label counts, duplicates and empty IDs, but cannot infer whether the
+producer supplied IDs in the correct order. Its transpose applies only to the
+stated features-by-observations input layout.
+
+The [component control](../artifacts/repaired-skill-readiness/anndata-general-io-v1/reproduce.py)
+executes the actual examples with synthetic data in separately installed,
+hash-locked Windows and Linux environments. It verifies selected-sheet data,
+HDF5 round-trip and no-overwrite behavior, reordered dense and sparse features,
+shared observation metadata, unchanged inputs and handle cleanup after an
+error. It does not validate biological interpretation or large-data behavior.
+
+An initially proposed `collection[:].to_adata()` example failed on AnnData
+0.13.4 for both matching and reordered features in the tested dense backed
+fixtures. The control retains those failures. The maintained example instead
+reads the selected matrix and shared observation metadata, and explicitly does
+not claim to preserve variable metadata, layers or embeddings. The earlier
+failed Windows and Linux runs were retained locally; the
+[qualification record](../artifacts/repaired-skill-readiness/anndata-general-io-v1/qualification.json)
+binds the actual snippets and environment versions. These results do not
+establish that other collection layouts or full materialization work.
+
+The AnnData API and AnnCollection documentation were captured with Crawl4AI
+on 2 November 2026. The captured stable documentation identified itself as
+version 0.13.3.post0; actual component tests used AnnData 0.13.4. No model
+trial or agent-effectiveness comparison was performed.

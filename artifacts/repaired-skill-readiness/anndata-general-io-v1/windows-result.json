@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "platform": "Windows",
+  "python": "3.13.18",
+  "anndata": "0.13.4",
+  "openpyxl": "3.1.5",
+  "h5py": "3.16.0",
+  "skill_sha256": "26bc9d16fa189f4e03504197f5ccf66ee13ffd3d18cca4ee553eb770c6c449b4",
+  "checks": [
+    "matrix-values-and-axis-labels",
+    "matrix-rejects-empty-duplicate-and-mismatched-ids",
+    "excel-selected-and-missing-sheet",
+    "hdf5-element-roundtrip-and-no-overwrite",
+    "collection-feature-alignment-and-shared-metadata",
+    "collection-reads-matrix-without-materializing-other-fields",
+    "sparse-collection-feature-alignment",
+    "collection-inputs-unchanged-and-handles-closed",
+    "collection-closes-prior-input-after-failure"
+  ],
+  "synthetic_fixture": true,
+  "full_collection_materialization_failures": {
+    "same_order": "ValueError: If you provide `layers[None]` and `X`, they must be identical.",
+    "reordered": "TypeError: Only 1D arrays allowed for fancy indexing"
+  },
+  "agent_performance_tested": false
+}
