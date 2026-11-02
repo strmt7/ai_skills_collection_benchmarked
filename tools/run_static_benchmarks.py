@@ -172,27 +172,51 @@ def _cell(value: Any) -> str:
     return str(value).replace("|", "\\|").replace("\n", " ")
 
 
+def _evidence_kind(artifact: dict[str, Any]) -> str:
+    """Identify the known deterministic readiness runner without inferring other runners' behavior."""
+    runner = artifact.get("runner")
+    if (
+        isinstance(runner, dict)
+        and runner.get("tool") == "tools/create_independent_runtime_batch.py"
+        and runner.get("model_or_runtime") == "local-deterministic-runtime-readiness-runner"
+    ):
+        return "Package readiness"
+    return "Other; inspect artifact"
+
+
 def render_results(results: dict[str, Any]) -> str:
+    readiness = [item for item in results["runtime_artifacts"] if _evidence_kind(item) == "Package readiness"]
     lines = [
         "# Benchmark Results",
         "",
-        "This page reports measured results only. Offline static checks were run against the mirrored files in this repository. Runtime benchmark counts include only committed independent benchmark artifacts that pass `tools/check_benchmark_artifact.py`. Source-proof artifacts are provenance checks, not runtime benchmark passes.",
+        "This page reports catalog checks and recorded artifacts, not a demonstrated coding-agent advantage. "
+        "The static checks measure packaging and catalog structure; their percentage is not a skill-quality score. "
+        "Independent artifacts are admitted by `tools/check_benchmark_artifact.py`, but their type and "
+        "actual execution must still be inspected. Source-proof artifacts are provenance checks.",
+        "",
+        "The deterministic package-readiness runner checks package structure and records a dataset URL or repository tree snapshot; "
+        "it does not execute the assigned scenario, run SWE-bench tasks, or compare coding agents. "
+        "Track names and assigned scenarios are references, not benchmark-suite scores. "
+        "Evidence labels reflect recorded runner metadata, not proof of authenticity. "
+        "Other artifacts are unclassified here and require inspection before making an efficacy claim.",
         "",
         "## Summary",
         "",
         f"- Skills checked: `{results['summary']['skill_count']}`",
-        f"- Static checks passed: `{results['summary']['static_checks_passed']}` / `{results['summary']['static_checks_total']}`",
-        f"- Average static score: `{results['summary']['average_static_score_percent']}`",
-        f"- Runtime scenario artifacts recorded: `{results['summary']['runtime_artifacts_recorded']}`",
-        f"- Runtime scenario artifacts passed: `{results['summary']['runtime_artifacts_passed']}`",
-        f"- Runtime scenario artifacts failed: `{results['summary']['runtime_artifacts_failed']}`",
-        f"- Runtime artifacts attached to retired skill identifiers: `{len(results['retired_skill_runtime_artifacts'])}`",
-        "- Per-skill runtime counts below apply only to the current source commit; historical artifacts remain in the dated evidence table.",
+        f"- Static packaging checks passed: `{results['summary']['static_checks_passed']}` / `{results['summary']['static_checks_total']}`",
+        f"- Average packaging-check completion: `{results['summary']['average_static_score_percent']}`%",
+        f"- Independent artifacts recorded: `{results['summary']['runtime_artifacts_recorded']}`",
+        f"- Independent artifacts reporting a pass: `{results['summary']['runtime_artifacts_passed']}`",
+        f"- Independent artifacts reporting a failure: `{results['summary']['runtime_artifacts_failed']}`",
+        f"- Known deterministic package-readiness artifacts: `{len(readiness)}`",
+        f"- Other independent artifacts requiring inspection: `{len(results['runtime_artifacts']) - len(readiness)}`",
+        f"- Independent artifacts attached to retired skill identifiers: `{len(results['retired_skill_runtime_artifacts'])}`",
+        "- Per-skill artifact counts below apply only to the current source commit; historical artifacts remain in the evidence table.",
         f"- Source-proof provenance artifacts recorded: `{results['summary']['provenance_artifacts_recorded']}`",
         "",
-        "## Benchmark Tracks",
+        "## Assigned Tracks",
         "",
-        "| Track | Assigned scenarios | Runtime artifacts |",
+        "| Track | Assigned scenarios | Independent artifacts |",
         "|---|---:|---:|",
     ]
     for track in results["tracks"]:
@@ -200,9 +224,9 @@ def render_results(results: dict[str, Any]) -> str:
     lines.extend(
         [
             "",
-            "## Skill Scores",
+            "## Skill Packaging Checks",
             "",
-            "| Skill | Category | Static checks | Static score | Current-source runtime artifacts | Fix points | Failed static checks |",
+            "| Skill | Category | Packaging checks | Completion % | Current-source artifacts | Review prompts | Failed checks |",
             "|---|---|---:|---:|---:|---:|---|",
         ]
     )
@@ -216,24 +240,25 @@ def render_results(results: dict[str, Any]) -> str:
     lines.extend(
         [
             "",
-            "## Runtime Artifacts",
+            "## Independent Artifacts",
             "",
-            "| Artifact | Skill | Scenario | Verdict | Score | Runner |",
-            "|---|---|---|---|---:|---|",
+            "| Artifact | Skill | Assigned scenario | Evidence type | Verdict | Recorded score | Runner |",
+            "|---|---|---|---|---|---:|---|",
         ]
     )
     if results["runtime_artifacts"]:
         for artifact in results["runtime_artifacts"]:
-            runner = artifact.get("runner", {})
+            runner = artifact.get("runner")
+            runner = runner if isinstance(runner, dict) else {}
             verdict = artifact.get("benchmark_verdict") or "recorded"
             score = artifact.get("score_percent")
             score_text = "n/a" if score is None else str(score)
             lines.append(
                 f"| `{artifact['artifact_path']}` | `{artifact['skill_id']}` | `{artifact['scenario_id']}` | "
-                f"`{verdict}` | {score_text} | {_cell(runner.get('tool', 'unknown'))} |"
+                f"{_evidence_kind(artifact)} | `{verdict}` | {score_text} | {_cell(runner.get('tool', 'unknown'))} |"
             )
     else:
-        lines.append("| none | none | none | none | n/a | none |")
+        lines.append("| none | none | none | none | none | n/a | none |")
     lines.extend(
         [
             "",
@@ -257,11 +282,13 @@ def render_results(results: dict[str, Any]) -> str:
 
 def render_quality_findings(results: dict[str, Any]) -> str:
     lines = [
-        "# Skill Quality Findings",
+        "# Catalog Review Prompts",
         "",
-        "This table is compiled from measured static checks and observed source structure. It lists every skill, its static benchmark score, failed checks, and concrete fix points from the source audit.",
+        "This table lists packaging-check completion and automatically generated review prompts. "
+        "The percentage does not measure skill quality, and prompts are not independently verified findings. "
+        "Consult the improvement ledger and linked research for reviewed evidence.",
         "",
-        "| Skill | Category | Static score | Failed checks | Fix points |",
+        "| Skill | Category | Packaging completion % | Failed checks | Review prompts |",
         "|---|---|---:|---|---|",
     ]
     for item in results["skills"]:

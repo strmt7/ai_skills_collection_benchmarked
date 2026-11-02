@@ -1,8 +1,8 @@
-# Skill Quality Findings
+# Catalog Review Prompts
 
-This table is compiled from measured static checks and observed source structure. It lists every skill, its static benchmark score, failed checks, and concrete fix points from the source audit.
+This table lists packaging-check completion and automatically generated review prompts. The percentage does not measure skill quality, and prompts are not independently verified findings. Consult the improvement ledger and linked research for reviewed evidence.
 
-| Skill | Category | Static score | Failed checks | Fix points |
+| Skill | Category | Packaging completion % | Failed checks | Review prompts |
 |---|---|---:|---|---|
 | `strmt7-simple-ai-bitcoin-trading-binance-agents-skills-context-budget-skill-md` | DevOps, cloud & operations | 100.0 | none | Keep provenance and selected ref visible so agents can verify the source before use.; Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.; Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings.; Add an executable validator or helper script so the workflow has objective checks. |
 | `strmt7-project-air-defense-agents-skills-android-visual-qa-skill-md` | Game, mobile & visual QA | 100.0 | none | Keep provenance and selected ref visible so agents can verify the source before use.; Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.; Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings. |

@@ -6,6 +6,7 @@ from pathlib import Path
 import check_benchmark_artifact
 import pytest
 import report_local_markdown_link_failures
+import run_static_benchmarks
 from _source_history import resolve_entry
 from helpers import ROOT, complete_artifacts, load
 
@@ -157,12 +158,60 @@ def test_static_benchmark_results_are_real_and_current():
         sum(item["quality_fix_point_count"] for item in results["skills"]) == results["summary"]["quality_fix_points"]
     )
     text = (ROOT / "docs" / "benchmark-results.md").read_text(encoding="utf-8")
-    assert "Static checks passed" in text
-    assert "Runtime scenario artifacts passed" in text
-    assert "Runtime scenario artifacts failed" in text
-    assert "Source-proof artifacts are provenance checks, not runtime benchmark passes" in text
+    assert "Static packaging checks passed" in text
+    assert "Independent artifacts reporting a pass" in text
+    assert "Independent artifacts reporting a failure" in text
+    assert "does not execute the assigned scenario, run SWE-bench tasks, or compare coding agents" in text
+    assert "Source-proof artifacts are provenance checks" in text
     quality_text = (ROOT / "docs" / "skill-quality-findings.md").read_text(encoding="utf-8")
-    assert "| Skill | Category | Static score | Failed checks | Fix points |" in quality_text
+    assert "| Skill | Category | Packaging completion % | Failed checks | Review prompts |" in quality_text
+    assert "prompts are not independently verified findings" in quality_text
+
+
+@pytest.mark.parametrize(
+    "runner,expected",
+    [
+        (
+            {
+                "tool": "tools/create_independent_runtime_batch.py",
+                "model_or_runtime": "local-deterministic-runtime-readiness-runner",
+            },
+            "Package readiness",
+        ),
+        (
+            {"tool": "tools/create_independent_runtime_batch.py", "model_or_runtime": "another-runner"},
+            "Other; inspect artifact",
+        ),
+        (
+            {"tool": "another-runner", "model_or_runtime": "local-deterministic-runtime-readiness-runner"},
+            "Other; inspect artifact",
+        ),
+        ({}, "Other; inspect artifact"),
+        (None, "Other; inspect artifact"),
+    ],
+)
+def test_report_labels_only_the_known_readiness_runner(runner, expected):
+    assert run_static_benchmarks._evidence_kind({"runner": runner}) == expected
+
+
+def test_report_keeps_an_unclassified_artifact_visible_without_calling_it_a_model_trial():
+    results = load("data/static_benchmark_results.json")
+    readiness_count = sum(
+        run_static_benchmarks._evidence_kind(item) == "Package readiness" for item in results["runtime_artifacts"]
+    )
+    unknown_count = len(results["runtime_artifacts"]) - readiness_count
+    unknown = copy.deepcopy(results["runtime_artifacts"][0])
+    unknown["artifact_path"] = "fixture/unknown.json"
+    unknown["runner"] = {"tool": "unreviewed", "model_or_runtime": "unreviewed"}
+    results["runtime_artifacts"].append(unknown)
+    results["summary"]["runtime_artifacts_recorded"] += 1
+    results["summary"]["runtime_artifacts_failed"] += 1
+    text = run_static_benchmarks.render_results(results)
+    assert f"Known deterministic package-readiness artifacts: `{readiness_count}`" in text
+    assert f"Other independent artifacts requiring inspection: `{unknown_count + 1}`" in text
+    assert "`fixture/unknown.json`" in text
+    assert "Other; inspect artifact" in text
+    assert "Other artifacts are unclassified here" in text
 
 
 def test_independent_runtime_batch_is_separate_and_scored():
