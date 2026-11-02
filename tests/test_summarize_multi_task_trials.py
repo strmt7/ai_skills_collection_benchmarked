@@ -62,6 +62,87 @@ def test_tasks_have_equal_weight_instead_of_pooled_attempt_weight():
     assert result["quality_superiority_established"] is False
 
 
+def test_paired_outcomes_show_opposing_task_effects_without_pooling_their_weights():
+    reports = [
+        report("a", ["task_passed"], ["task_failed"]),
+        report("b", ["task_failed"] * 4, ["task_passed"] * 4),
+    ]
+    result = target.aggregate(reports, [DEFINITIONS, DEFINITIONS])
+    paired = result["paired_outcomes"]["candidate"]
+    assert paired["planned_tasks"] == 2
+    assert paired["planned_blocks"] == 5
+    assert paired["pooled_block_counts"]["candidate_only_passed"] == 4
+    assert paired["pooled_block_counts"]["baseline_only_passed"] == 1
+    assert paired["equal_task_weight_block_fractions"]["candidate_only_passed"] == {"numerator": 1, "denominator": 2}
+    assert paired["equal_task_weight_block_fractions"]["baseline_only_passed"] == {"numerator": 1, "denominator": 2}
+    assert paired["task_direction_counts"] == {
+        "candidate_ahead": 1,
+        "baseline_ahead": 1,
+        "equal": 0,
+        "unscored": 0,
+    }
+    assert result["comparisons"]["candidate"]["equal_task_weight_mean_difference"] == {
+        "numerator": 0,
+        "denominator": 1,
+    }
+
+
+def test_paired_outcomes_distinguish_agreement_from_opposing_wins():
+    agreement = report("a", ["task_passed", "task_failed"], ["task_passed", "task_failed"])
+    disagreement = report("b", ["task_passed", "task_failed"], ["task_failed", "task_passed"])
+    first = target.aggregate([agreement], [DEFINITIONS])
+    second = target.aggregate([disagreement], [DEFINITIONS])
+    assert (
+        first["comparisons"]["candidate"]["equal_task_weight_mean_difference"]
+        == second["comparisons"]["candidate"]["equal_task_weight_mean_difference"]
+    )
+    assert first["paired_outcomes"]["candidate"]["pooled_block_counts"] == {
+        "both_passed": 1,
+        "candidate_only_passed": 0,
+        "baseline_only_passed": 0,
+        "neither_passed": 1,
+        "unscored": 0,
+    }
+    assert second["paired_outcomes"]["candidate"]["pooled_block_counts"] == {
+        "both_passed": 0,
+        "candidate_only_passed": 1,
+        "baseline_only_passed": 1,
+        "neither_passed": 0,
+        "unscored": 0,
+    }
+
+
+def test_paired_outcomes_keep_unscored_blocks_and_tasks_visible():
+    reports = [
+        report("a", ["task_passed"], ["timed_out"]),
+        report("b", ["task_failed"] * 2, ["task_passed"] * 2),
+    ]
+    result = target.aggregate(reports, [DEFINITIONS, DEFINITIONS])
+    paired = result["paired_outcomes"]["candidate"]
+    assert paired["pooled_block_counts"]["unscored"] == 1
+    assert paired["equal_task_weight_block_fractions"]["unscored"] == {"numerator": 1, "denominator": 2}
+    assert paired["equal_task_weight_block_fractions"]["candidate_only_passed"] == {"numerator": 1, "denominator": 2}
+    assert paired["task_direction_counts"]["unscored"] == 1
+    assert paired["task_direction_counts"]["candidate_ahead"] == 1
+    assert result["comparisons"]["candidate"]["equal_task_weight_mean_difference"] is None
+
+
+@pytest.mark.parametrize("baseline,candidate", itertools.product(sorted(target.STATUSES), repeat=2))
+def test_paired_outcome_fractions_partition_all_status_pairs(baseline, candidate):
+    result = target.aggregate([report("a", [baseline], [candidate])], [DEFINITIONS])
+    paired = result["paired_outcomes"]["candidate"]
+    expected = {
+        ("task_passed", "task_passed"): "both_passed",
+        ("task_passed", "task_failed"): "baseline_only_passed",
+        ("task_failed", "task_passed"): "candidate_only_passed",
+        ("task_failed", "task_failed"): "neither_passed",
+    }.get((baseline, candidate), "unscored")
+    assert paired["pooled_block_counts"] == {outcome: int(outcome == expected) for outcome in target.OUTCOMES}
+    assert paired["equal_task_weight_block_fractions"] == {
+        outcome: {"numerator": int(outcome == expected), "denominator": 1} for outcome in target.OUTCOMES
+    }
+
+
 def test_token_differences_use_equal_task_weight_and_paired_blocks():
     first = report("a", ["task_passed", "task_passed"], ["task_passed", "task_passed"])
     second = report("b", ["task_passed"], ["task_passed"])

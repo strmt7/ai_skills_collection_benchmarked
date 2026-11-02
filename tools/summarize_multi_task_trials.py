@@ -10,7 +10,7 @@ from fractions import Fraction
 from pathlib import Path
 from typing import Any
 
-from _trial_comparisons import SCORED, STATUSES, TOKEN_KEYS, compare_blocks
+from _trial_comparisons import OUTCOMES, SCORED, STATUSES, TOKEN_KEYS, compare_blocks
 from _trial_transcript import strict_json
 from summarize_agent_trials import _verify_usage, summarize
 
@@ -19,6 +19,39 @@ def fraction(value: Fraction | None) -> dict[str, int] | None:
     if value is None:
         return None
     return {"numerator": value.numerator, "denominator": value.denominator}
+
+
+def summarize_paired_outcomes(rows: list[dict[str, Any]], condition: str) -> dict[str, Any]:
+    """Describe validated matched outcomes without treating repetitions as independent tasks."""
+    if not rows:
+        raise ValueError("A nonempty task set is required for paired outcome summaries")
+    totals: Counter[str] = Counter()
+    weighted = dict.fromkeys(OUTCOMES, Fraction())
+    directions: Counter[str] = Counter()
+    for row in rows:
+        comparison = row["block_comparison"]["comparisons"][condition]
+        counts, planned = comparison["outcomes"], comparison["planned_blocks"]
+        totals.update(counts)
+        for outcome in OUTCOMES:
+            weighted[outcome] += Fraction(counts[outcome], planned)
+        if counts["unscored"]:
+            direction = "unscored"
+        elif counts["candidate_only_passed"] > counts["baseline_only_passed"]:
+            direction = "candidate_ahead"
+        elif counts["candidate_only_passed"] < counts["baseline_only_passed"]:
+            direction = "baseline_ahead"
+        else:
+            direction = "equal"
+        directions[direction] += 1
+    return {
+        "planned_tasks": len(rows),
+        "planned_blocks": sum(totals.values()),
+        "pooled_block_counts": {outcome: totals[outcome] for outcome in OUTCOMES},
+        "equal_task_weight_block_fractions": {outcome: fraction(weighted[outcome] / len(rows)) for outcome in OUTCOMES},
+        "task_direction_counts": {
+            direction: directions[direction] for direction in ("candidate_ahead", "baseline_ahead", "equal", "unscored")
+        },
+    }
 
 
 def summarize_snapshot_evidence(reports: list[dict[str, Any]], condition: str) -> dict[str, Any]:
@@ -348,6 +381,9 @@ def aggregate(reports: list[dict[str, Any]], definitions: list[dict[str, Any]]) 
         "condition_definitions": definitions[0],
         "tasks": rows,
         "comparisons": comparisons,
+        "paired_outcomes": {
+            condition: summarize_paired_outcomes(rows, condition) for condition in sorted(conditions - {"default"})
+        },
         "missing_outcome_sensitivity": {
             condition: missing_outcome_sensitivity(rows, condition) for condition in sorted(conditions - {"default"})
         },
@@ -361,6 +397,7 @@ def aggregate(reports: list[dict[str, Any]], definitions: list[dict[str, Any]]) 
         "quality_superiority_established": False,
         "limitations": [
             "Descriptive task-weighted differences do not establish statistical significance or generalization.",
+            "Pooled paired-block counts are descriptive; task-weighted fractions avoid weighting a task more for having more repetitions, and neither proves independence or superiority.",
             "Unscored attempts prevent an aggregate difference for the affected comparison.",
             "Missing-outcome bounds hypothetically assign every unscored attempt pass or fail; they are not confidence intervals, observed outcomes, or predictions of reruns.",
             "A frozen plan and matching hashes alone do not establish preregistration or grading authenticity.",

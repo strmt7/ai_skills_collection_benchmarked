@@ -155,6 +155,22 @@ has an unscored attempt on any planned task, its aggregate difference is
 unavailable; that attempt remains visible rather than being counted as a fail
 or silently dropped.
 
+The `paired_outcomes` section also separates blocks where both conditions
+passed, only the candidate passed, only the default passed, neither passed, or
+at least one attempt was unscored. It reports both pooled block counts and the
+average of each task's outcome fractions, giving every task equal weight even
+when repetition counts differ. Fully scored tasks are counted as candidate
+ahead, default ahead or equal according to their observed pass-rate difference;
+any task with an unscored block is counted separately. Equal net differences
+can therefore be distinguished from agreement on individual blocks.
+
+These are descriptive summaries, not confidence intervals or significance
+tests. Pooled repetitions need not be independent, task identity alone does
+not establish independence, and unscored results remain unknown. Research on
+[paired evaluation](https://aclanthology.org/2021.acl-long.179/) motivates
+retaining paired outcomes; it does not validate a superiority claim for this
+experiment.
+
 For each comparison, `missing_outcome_sensitivity` reports exact lower and
 upper bounds from hypothetical pass/fail assignments for all unscored attempts.
 For each task, the lower bound assigns unscored baseline attempts passes and
