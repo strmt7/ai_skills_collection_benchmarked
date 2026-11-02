@@ -16,6 +16,7 @@ from typing import Any
 from _lib_b.io_utils import dumps_deterministic, write_json, write_text
 from _trial_comparisons import STATUSES, compare_blocks
 from _trial_manifest import read_grading_manifest, validate_grade_checks
+from _trial_prompt import verify_prompt
 from _trial_transcript import parse_events, strict_json
 
 LIMITATIONS = [
@@ -155,7 +156,7 @@ def _verify_identity(result: dict[str, Any], protocol: dict[str, Any], protocol_
         raise ValueError("process exit code must be an integer or unavailable")
 
 
-def _verify_evidence(directory: Path, result: dict[str, Any], protocol_hash: str) -> None:
+def _verify_evidence(directory: Path, result: dict[str, Any], protocol_hash: str) -> bytes:
     """Validate the retained files, transcript and launch protocol binding."""
     evidence = result.get("evidence_sha256")
     if not isinstance(evidence, dict) or not {
@@ -166,13 +167,18 @@ def _verify_evidence(directory: Path, result: dict[str, Any], protocol_hash: str
         "patch.diff",
     }.issubset(evidence):
         raise ValueError("attempt evidence manifest is incomplete")
+    prompt = b""
     for relative, digest in evidence.items():
-        if hashlib.sha256(evidence_bytes(directory, relative)).hexdigest() != digest:
+        content = evidence_bytes(directory, relative)
+        if hashlib.sha256(content).hexdigest() != digest:
             raise ValueError(f"evidence hash changed: {relative}")
+        if relative == "prompt.txt":
+            prompt = content
     verify_transcript(directory, result)
     launch = read_json(directory / "launch.json")
     if not isinstance(launch, dict) or launch.get("protocol_sha256") != protocol_hash:
         raise ValueError("launch used a different frozen protocol")
+    return prompt
 
 
 def _verify_checks(
@@ -250,7 +256,8 @@ def verify_result(
     if not isinstance(result, dict):
         raise ValueError("trial result must be an object")
     _verify_identity(result, protocol, protocol_hash, condition)
-    _verify_evidence(directory, result, protocol_hash)
+    prompt = _verify_evidence(directory, result, protocol_hash)
+    verify_prompt(prompt, protocol, condition)
     grade, checks = _verify_checks(result, expected_cases)
     _verify_outcome(result, grade, checks)
     _verify_usage(result)

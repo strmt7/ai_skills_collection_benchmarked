@@ -693,11 +693,14 @@ def test_two_task_plan_revalidates_each_complete_trial(matched, tmp_path, same_t
         directory = second_trials / "repetition-1" / condition
         launch = directory / "launch.json"
         launch.write_text(json.dumps({"protocol_sha256": second_hash}), encoding="utf-8")
+        prompt = directory / "prompt.txt"
+        prompt.write_text(config["task"]["brief"], encoding="utf-8")
         result_path = directory / "result.json"
         result = json.loads(result_path.read_text(encoding="utf-8"))
         result["protocol_sha256"] = second_hash
         result["task_id"] = "another-fixture"
         result["evidence_sha256"]["launch.json"] = single.sha256(launch)
+        result["evidence_sha256"]["prompt.txt"] = single.sha256(prompt)
         result_path.write_text(json.dumps(result), encoding="utf-8")
     plan = tmp_path / "multi.json"
     plan.write_text(

@@ -28,7 +28,7 @@ def matched(tmp_path):
         "model": "requested-model",
         "reasoning_effort": "high",
         "grader_sha256": "a" * 64,
-        "conditions": {"default": {}, "improved": {}},
+        "conditions": {"default": {"skills": []}, "improved": {"skills": []}},
         "planned_order": [{"repetition": 1, "conditions": ["default", "improved"]}],
         "limitations": [],
     }
@@ -46,6 +46,7 @@ def matched(tmp_path):
         write_json(directory / "launch.json", {"protocol_sha256": digest})
         for name in ("prompt.txt", "stderr.txt", "patch.diff"):
             (directory / name).write_text(name, encoding="utf-8")
+        (directory / "prompt.txt").write_text(protocol["task"]["brief"], encoding="utf-8")
         events = [
             {"type": "item.completed", "item": {"type": "command_execution"}},
             {"type": "turn.completed", "usage": {"input_tokens": 100, "cached_input_tokens": 20, "output_tokens": 30}},
@@ -103,6 +104,53 @@ def replace_transcript(trials, text):
     result = summary.read_json(result_path)
     result["evidence_sha256"]["transcript.jsonl"] = summary.sha256(transcript)
     write_json(result_path, result)
+
+
+def test_rehashed_prompt_must_match_declared_task(matched):
+    protocol, trials = matched
+    directory = trials / "repetition-1/improved"
+    prompt = directory / "prompt.txt"
+    prompt.write_text("Perform a different task.", encoding="utf-8")
+    result_file = directory / "result.json"
+    result = summary.read_json(result_file)
+    result["evidence_sha256"]["prompt.txt"] = summary.sha256(prompt)
+    write_json(result_file, result)
+    with pytest.raises(ValueError, match="prompt.*protocol"):
+        summary.summarize(protocol, trials)
+
+
+def test_rehashed_prompt_must_contain_declared_skill(matched):
+    import hashlib
+
+    protocol, trials = matched
+    config = summary.read_json(protocol)
+    expected = "Specific skill instructions."
+    config["conditions"]["improved"]["skills"] = [
+        {"path": "skill.md", "sha256": hashlib.sha256(expected.encode()).hexdigest()}
+    ]
+    write_json(protocol, config)
+    digest = summary.sha256(protocol)
+    manifest_path = protocol.with_name("protocol.grading.json")
+    manifest = summary.read_json(manifest_path)
+    manifest["protocol_sha256"] = digest
+    write_json(manifest_path, manifest)
+    for condition in config["conditions"]:
+        directory = trials / "repetition-1" / condition
+        launch = directory / "launch.json"
+        write_json(launch, {"protocol_sha256": digest})
+        prompt = directory / "prompt.txt"
+        content = config["task"]["brief"]
+        if condition == "improved":
+            content += "\n\nAdditional skill instructions for this condition:\n\nDifferent skill instructions."
+        prompt.write_text(content, encoding="utf-8")
+        result_file = directory / "result.json"
+        result = summary.read_json(result_file)
+        result["protocol_sha256"] = digest
+        result["evidence_sha256"]["launch.json"] = summary.sha256(launch)
+        result["evidence_sha256"]["prompt.txt"] = summary.sha256(prompt)
+        write_json(result_file, result)
+    with pytest.raises(ValueError, match="prompt.*protocol"):
+        summary.summarize(protocol, trials)
 
 
 def test_failure_and_unavailable_usage_keep_full_denominator(matched):

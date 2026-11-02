@@ -163,8 +163,12 @@ workspace declarations even when the prompts differ. This prevents exact
 duplicates from being counted as separate tasks. The hashes reflect protocol
 declarations, not independent verification of the runtime environment; different
 hashes do not establish that tasks, fixtures or outcomes are independent. The
-reporter checks retained prompt files against their recorded evidence hashes; it
-does not reconstruct them from the protocol or prove what the provider received.
+reporter checks each retained prompt against its evidence hash, the declared task
+template and the frozen hashes of its ordered skill instructions. It permits
+the runtime-path substitution and the runner's newline conversion; it checks
+that the recorded runtime path is absolute, but does not establish which runtime
+was actually used or what the provider received. These are consistency checks,
+not proof that the evidence is authentic.
 
 The `paired_outcomes` section also separates blocks where both conditions
 passed, only the candidate passed, only the default passed, neither passed, or
