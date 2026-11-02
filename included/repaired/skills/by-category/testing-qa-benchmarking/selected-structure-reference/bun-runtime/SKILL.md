@@ -11,6 +11,8 @@ Inspect the project's existing runtime requirements, package manager, lockfile, 
 
 Use the project's documented, supported Bun version and package scripts. Run a focused check first, then the relevant build, tests, integration checks, and deployment qualification. Measure performance with representative workloads and controlled conditions when performance is the reason for a change. Report versions, commands, results, and limitations.
 
+When showing environment-variable commands, use syntax for the user's actual shell. An inline assignment such as `FOO=bar bun run script.ts` works in a POSIX shell but fails in PowerShell; use PowerShell's `$env:FOO = 'bar'; bun run script.ts` there. Scope the variable appropriately for the user's session.
+
 For a locked install, first verify that the intended project lockfile exists, is the one the deployment consumes, and corresponds to the manifest and workspace. Then use the project's documented frozen-install command, such as `bun install --frozen-lockfile`. Bun 1.4.4 can succeed without creating a lockfile when none exists, so the flag alone is not evidence of a locked install. Bun can also migrate supported non-Bun lockfiles in memory; check the current documentation and preserve existing project files during any migration. Do not generate or replace a lockfile without the requested scope and verification.
 
 Vercel's Bun runtime is documented as beta. When targeting it, check the current Vercel documentation, supported framework, runtime constraints, and accepted `bunVersion` values in `vercel.json`; qualify the exact application before deployment. Do not assume that selecting a package manager also selects the function runtime, or that a local run proves deployment compatibility.

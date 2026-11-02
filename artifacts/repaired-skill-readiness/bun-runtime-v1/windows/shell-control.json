@@ -1,0 +1,50 @@
+{
+  "agent_efficacy_scored": false,
+  "architecture": "AMD64",
+  "binary_sha256": "cb1d8e6564e655e49d30cead359750a1cbbd12f42651caa4b62244d7bd93c244",
+  "cases": {
+    "bun_test": {
+      "exit_code": 0,
+      "stderr": "\nprobe.test.ts:\n(pass) arithmetic [0.08ms]\n\n 1 pass\n 0 fail\n 1 expect() calls\nRan 1 test across 1 file. [8.00ms]\n",
+      "stdout": "bun test v1.4.4 (38afee6c8)\n"
+    },
+    "default_env": {
+      "exit_code": 0,
+      "stderr": "$ bun run probe.ts\n",
+      "stdout": "{\"sample\":\"default-file\",\"runtime\":\"1.4.4\"}\n"
+    },
+    "explicit_after_run": {
+      "exit_code": 0,
+      "stderr": "$ bun run probe.ts\n",
+      "stdout": "{\"sample\":\"explicit-file\",\"runtime\":\"1.4.4\"}\n"
+    },
+    "shell_inline": {
+      "exit_code": 1,
+      "stderr": "REVIEW_SAMPLE=inline : The term 'REVIEW_SAMPLE=inline' is not recognized as the name of a cmdlet, function, script \nfile, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct \nand try again.\nAt line:1 char:1\n+ REVIEW_SAMPLE=inline bun run probe.ts\n+ ~~~~~~~~~~~~~~~~~~~~\n    + CategoryInfo          : ObjectNotFound: (REVIEW_SAMPLE=inline:String) [], CommandNotFoundException\n    + FullyQualifiedErrorId : CommandNotFoundException\n \n",
+      "stdout": ""
+    },
+    "shell_native": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "{\"sample\":\"inline\",\"runtime\":\"1.4.4\"}\n"
+    },
+    "version": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "1.4.4\n"
+    }
+  },
+  "checks": {
+    "bun_test": true,
+    "default_file": true,
+    "explicit_file": true,
+    "powershell_native": true,
+    "shell_behavior_matches_platform": true,
+    "version": true
+  },
+  "limitations": [
+    "Selected CLI examples and shell syntax only; no deployment, package compatibility, performance, security or agent efficacy claim."
+  ],
+  "platform": "Windows",
+  "schema_version": 1
+}

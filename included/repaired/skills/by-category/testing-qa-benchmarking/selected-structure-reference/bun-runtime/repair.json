@@ -6,20 +6,23 @@
   "source_mirror": "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/bun-runtime",
   "original_skill_sha256": "2929d1f227962d86bfb2f0e45efd81590cfc90aeaad5b449f4630207e4e07204",
   "provenance_skill": "provenance/original.SKILL.md",
-  "repaired_skill_sha256": "6f4609b23ebb683a00b37a936b39ccdb4ff8440c48ef985e29e087186f1d965a",
+  "repaired_skill_sha256": "90d164461bbb0a323ad5486745db171ee44251b1a6f525289f78484b45efe0b6",
   "license_file": "LICENSE",
   "license_sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
-  "scope": "Selected Bun compatibility, frozen-install and Vercel guidance; component controls do not measure agent effectiveness.",
+  "scope": "Selected Bun compatibility, frozen-install, shell syntax and Vercel guidance; component controls do not measure agent effectiveness.",
   "model_performance_claim": false,
   "readiness_evidence": "artifacts/repaired-skill-readiness/bun-runtime-v1/windows/result.json",
   "additional_evidence": [
     "artifacts/repaired-skill-readiness/bun-runtime-v1/linux/result.json",
-    "artifacts/repaired-skill-readiness/bun-runtime-v1/upstream-observation.json"
+    "artifacts/repaired-skill-readiness/bun-runtime-v1/upstream-observation.json",
+    "artifacts/repaired-skill-readiness/bun-runtime-v1/windows/shell-control.json",
+    "artifacts/repaired-skill-readiness/bun-runtime-v1/linux/shell-control.json"
   ],
   "documented_repairs": [
     "Qualify runtime compatibility and performance for the actual workload.",
     "Check that the intended lock exists before relying on a frozen installation.",
-    "Review current Vercel Bun runtime and configuration for the target application."
+    "Review current Vercel Bun runtime and configuration for the target application.",
+    "Use environment-variable syntax appropriate to the selected shell."
   ],
   "evidence_sha256": {
     "frozen-control.py": "90ea226a9d0ecd06b9051243dcab61f48ef7429da927738825d5d4b4b8d51845",
@@ -46,6 +49,9 @@
     "windows/no-lock.stderr.txt": "8e90b15ac68236d374f20ea437b7040b6909bf09dd460ad881e5f52a385d7be8",
     "windows/no-lock.stdout.txt": "86753efe7c2c3d016546c37599ca112f0b73e557e2fd1dc73dd51818d6a928ea",
     "windows/node26-http.json": "dec6f8e452726ad755e4934a553ad69989cc418371c69cb6474f10676cbdbbce",
-    "windows/result.json": "b12476f42ab7a62668c44ce9cd8e37f90737d11d4f44b34ca0438b5e898cedc7"
+    "windows/result.json": "b12476f42ab7a62668c44ce9cd8e37f90737d11d4f44b34ca0438b5e898cedc7",
+    "shell-control.py": "7de9664b378cbb945f9d90c10fe38e153d9fa645f2608f2b77c727b090203b6a",
+    "windows/shell-control.json": "7a4b3fb5c34d0086ce82007925a11d2e9ffb070a8f8efb99c98cad7dd252238e",
+    "linux/shell-control.json": "aa9f57c850759dd1f22e6cee14ebe5572d623af78952d2ba8ef9537768b81baa"
   }
 }

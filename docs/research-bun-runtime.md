@@ -19,6 +19,12 @@ The [HTTP compatibility probe](../artifacts/repaired-skill-readiness/bun-runtime
 
 The pinned skill describes Bun as implemented in Zig. The selected [upstream observation](../artifacts/repaired-skill-readiness/bun-runtime-v1/upstream-observation.json) at commit `b38be6a7f6350964d59328b52f0624e1d1d552d1` instead notes the Bun 1.4 Rust implementation and warns about compatibility. This is a review of selected passages, not adoption or review of the complete upstream update. [Vercel's current documentation](https://vercel.com/docs/functions/runtimes/bun) calls its Bun runtime beta and describes configuration using `bunVersion` in `vercel.json`; verify the current options and application behavior before deployment.
 
+## Shell and environment examples
+
+On 2 November 2026, a separate [shell control](../artifacts/repaired-skill-readiness/bun-runtime-v1/shell-control.py) ran Bun 1.4.4 on Windows and Linux with a local, dependency-free fixture. The mirror's inline environment assignment succeeded in Linux `/bin/sh` and failed in Windows PowerShell; the PowerShell form succeeded. An explicit `--env-file` and the default `.env` both supplied the expected value, and a basic `bun test` passed on each host. The retained [Windows](../artifacts/repaired-skill-readiness/bun-runtime-v1/windows/shell-control.json) and [Linux](../artifacts/repaired-skill-readiness/bun-runtime-v1/linux/shell-control.json) observations include process output and executable digests. The overlay now calls out shell-specific syntax. These checks cover only these examples and do not test deployment or agent effectiveness. Bun's [environment documentation](https://bun.com/docs/runtime/environment-variables) describes the shell-specific forms and environment-file behavior.
+
+To reproduce, run `python artifacts/repaired-skill-readiness/bun-runtime-v1/shell-control.py --bun <bun-1.4.4-executable> --workspace <new-fixture-directory> --output <new-json-file>` with a new workspace and output path. The control does not install packages or modify an existing project.
+
 ## Reproduce the frozen-install control
 
 Use a separately installed Bun 1.4.4 executable and Python 3.11 or later. From the repository root on Windows, create new paths for the isolated fixture, cache, and process output:

@@ -46,6 +46,25 @@ def test_recorded_runtime_controls_are_complete() -> None:
         assert bun["bun_version"] == "1.4.4" and bun["http_server_is_net_server"] is False
 
 
+def test_recorded_shell_controls_distinguish_shell_syntax() -> None:
+    for platform in ("windows", "linux"):
+        folder = ARTIFACT / platform
+        data = json.loads((folder / "shell-control.json").read_text(encoding="utf-8"))
+        previous = json.loads((folder / "result.json").read_text(encoding="utf-8"))
+        cases = data["cases"]
+        assert data["binary_sha256"] == previous["binary_sha256"]
+        assert data["agent_efficacy_scored"] is False and all(data["checks"].values())
+        assert json.loads(cases["explicit_after_run"]["stdout"])["sample"] == "explicit-file"
+        assert json.loads(cases["default_env"]["stdout"])["sample"] == "default-file"
+        if platform == "windows":
+            assert cases["shell_inline"]["exit_code"] != 0
+            assert cases["shell_native"]["exit_code"] == 0
+            assert json.loads(cases["shell_native"]["stdout"])["sample"] == "inline"
+        else:
+            assert cases["shell_inline"]["exit_code"] == 0
+            assert json.loads(cases["shell_inline"]["stdout"])["sample"] == "inline"
+
+
 def test_control_rejects_wrong_runtime_without_creating_fixture(tmp_path: Path) -> None:
     scratch, output = tmp_path / "scratch", tmp_path / "output"
     result = subprocess.run(

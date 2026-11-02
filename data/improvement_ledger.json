@@ -310,7 +310,7 @@
           {
             "path": "docs/research-bun-runtime.md",
             "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
-            "sha256": "774b6b7d6d91edc4a84b8103b8e48b703ae46e506b3c0a5958b296deb5912be9"
+            "sha256": "36373612d07247578d1ec0a575bb266b1a390dae6b0e6db510e6283aafc64d85"
           },
           {
             "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/frozen-control.py",
@@ -360,17 +360,38 @@
           {
             "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
             "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/shell-control.py",
+            "scope": "Bun 1.4.4 selected CLI and shell controls only; no deployment or agent efficacy evaluation.",
+            "sha256": "7de9664b378cbb945f9d90c10fe38e153d9fa645f2608f2b77c727b090203b6a"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/windows/shell-control.json",
+            "scope": "Bun 1.4.4 selected CLI and shell controls only; no deployment or agent efficacy evaluation.",
+            "sha256": "7a4b3fb5c34d0086ce82007925a11d2e9ffb070a8f8efb99c98cad7dd252238e"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/linux/shell-control.json",
+            "scope": "Bun 1.4.4 selected CLI and shell controls only; no deployment or agent efficacy evaluation.",
+            "sha256": "aa9f57c850759dd1f22e6cee14ebe5572d623af78952d2ba8ef9537768b81baa"
           }
+        ],
+        "open_work": [
+          "Review remaining runtime, package manager, bundler and migration claims against current sources and representative projects.",
+          "Qualify actual agent activation and independently measure model effectiveness; do not infer efficacy from component controls."
         ],
         "resource_hash_policy": "catalog-canonical-v1",
         "resources": {
           "SKILL.md": {
+            "review_scope": "Complete pinned instruction text read; selected compatibility, frozen install, deployment guidance and shell examples checked; remaining claims and agent efficacy remain open.",
             "sha256": "2929d1f227962d86bfb2f0e45efd81590cfc90aeaad5b449f4630207e4e07204",
-            "status": "pending"
+            "status": "reviewed"
           },
           "agents/openai.yaml": {
+            "review_scope": "Complete display, prompt and activation metadata read; actual agent activation was not tested.",
             "sha256": "7e118790707006a543e3105cb3269c41dc98e601182dce4c7160867a934adb1a",
-            "status": "pending"
+            "status": "reviewed"
           }
         },
         "status": "in_progress"
@@ -379,7 +400,7 @@
         "evidence": [
           {
             "path": "included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/bun-runtime/repair.json",
-            "sha256": "5825b7a5e445029e07dd7412e4f3d5ec7d52b88ea19fe23595664011a2a88787"
+            "sha256": "b872d62edc3b268bfaaeb15ae3dcfd2d2940e54858dbc9f8f0c7bbf6b48e222b"
           }
         ],
         "status": "in_progress"

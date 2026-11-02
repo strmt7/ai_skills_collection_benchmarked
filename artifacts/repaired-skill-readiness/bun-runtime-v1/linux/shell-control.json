@@ -1,0 +1,44 @@
+{
+  "agent_efficacy_scored": false,
+  "architecture": "x86_64",
+  "binary_sha256": "10702245766b225e70bbf6235fd6b47214fd94b4760d00ffaed8ab0df57ac235",
+  "cases": {
+    "bun_test": {
+      "exit_code": 0,
+      "stderr": "\nprobe.test.ts:\n(pass) arithmetic [0.05ms]\n\n 1 pass\n 0 fail\n 1 expect() calls\nRan 1 test across 1 file. [2.00ms]\n",
+      "stdout": "bun test v1.4.4 (38afee6c8)\n"
+    },
+    "default_env": {
+      "exit_code": 0,
+      "stderr": "$ bun run probe.ts\n",
+      "stdout": "{\"sample\":\"default-file\",\"runtime\":\"1.4.4\"}\n"
+    },
+    "explicit_after_run": {
+      "exit_code": 0,
+      "stderr": "$ bun run probe.ts\n",
+      "stdout": "{\"sample\":\"explicit-file\",\"runtime\":\"1.4.4\"}\n"
+    },
+    "shell_inline": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "{\"sample\":\"inline\",\"runtime\":\"1.4.4\"}\n"
+    },
+    "version": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "1.4.4\n"
+    }
+  },
+  "checks": {
+    "bun_test": true,
+    "default_file": true,
+    "explicit_file": true,
+    "shell_behavior_matches_platform": true,
+    "version": true
+  },
+  "limitations": [
+    "Selected CLI examples and shell syntax only; no deployment, package compatibility, performance, security or agent efficacy claim."
+  ],
+  "platform": "Linux",
+  "schema_version": 1
+}
