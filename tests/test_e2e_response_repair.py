@@ -49,6 +49,34 @@ def windows_process_cpu_seconds(pid: int) -> tuple[float, float] | None:
         kernel.CloseHandle(handle)
 
 
+def windows_thread_snapshot(pid: int) -> dict[str, object] | None:
+    """Capture a best-effort Windows thread-state snapshot for a live process."""
+    if sys.platform != "win32":
+        return None
+    shell = shutil.which("powershell.exe")
+    if shell is None:
+        return None
+    command = f"""$ErrorActionPreference = 'Stop'
+$process = [System.Diagnostics.Process]::GetProcessById({pid:d})
+try {{
+    $threads = @($process.Threads | ForEach-Object {{
+        $state = $_.ThreadState
+        $reason = if ($state -eq [System.Diagnostics.ThreadState]::Wait) {{ [string]$_.WaitReason }} else {{ $null }}
+        [PSCustomObject]@{{ id = $_.Id; state = [string]$state; wait_reason = $reason; cpu_ms = $_.TotalProcessorTime.TotalMilliseconds }}
+    }})
+    [PSCustomObject]@{{ pid = $process.Id; threads = $threads }} | ConvertTo-Json -Depth 4 -Compress
+}} finally {{ $process.Dispose() }}"""
+    result = subprocess.run(
+        [shell, "-NoLogo", "-NoProfile", "-NonInteractive", "-Command", command],
+        capture_output=True,
+        text=True,
+        encoding="utf-8-sig",
+        timeout=5,
+        check=True,
+    )
+    return json.loads(result.stdout)
+
+
 def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
 
@@ -107,6 +135,10 @@ def test_control_rejects_unreviewed_overlay_before_loading_dependencies(tmp_path
                 error.add_note(f"Child kernel/user CPU seconds at timeout: {cpu!r}")
             except OSError as diagnostic_error:
                 error.add_note(f"Child CPU diagnostics unavailable: {diagnostic_error}")
+            try:
+                error.add_note(f"Child thread snapshot after timeout: {windows_thread_snapshot(process.pid)!r}")
+            except (OSError, subprocess.SubprocessError, ValueError) as diagnostic_error:
+                error.add_note(f"Child thread diagnostics unavailable: {diagnostic_error}")
             process.kill()
             stdout, stderr = process.communicate()
             error.add_note(f"Captured stdout after termination (first 2048 characters): {stdout[:2048]!r}")
@@ -122,3 +154,51 @@ def test_process_cpu_diagnostic_uses_the_current_process() -> None:
         assert observed is not None and all(value >= 0 for value in observed)
     else:
         assert observed is None
+
+
+def test_thread_snapshot_diagnostic_uses_the_current_process() -> None:
+    observed = windows_thread_snapshot(os.getpid())
+    if sys.platform == "win32" and shutil.which("powershell.exe") is not None:
+        assert observed is not None and observed["pid"] == os.getpid() and observed["threads"]
+    else:
+        assert observed is None
+
+
+def test_thread_diagnostic_failure_preserves_timeout_and_cleanup(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    class TimedOutProcess:
+        pid = 1
+        returncode = None
+        killed = False
+
+        def __enter__(self) -> TimedOutProcess:
+            return self
+
+        def __exit__(self, *args: object) -> None:
+            pass
+
+        def communicate(self, timeout: float | None = None) -> tuple[str, str]:
+            if not self.killed:
+                raise subprocess.TimeoutExpired("node", 10 if timeout is None else timeout)
+            return "", ""
+
+        def poll(self) -> None:
+            return None
+
+        def kill(self) -> None:
+            self.killed = True
+
+    process = TimedOutProcess()
+    monkeypatch.setattr(shutil, "which", lambda _: "node")
+    monkeypatch.setattr(subprocess, "Popen", lambda *args, **kwargs: process)
+    monkeypatch.setattr(sys.modules[__name__], "windows_process_cpu_seconds", lambda _: None)
+
+    def failed_snapshot(_: int) -> None:
+        raise subprocess.TimeoutExpired("thread snapshot", 5)
+
+    monkeypatch.setattr(sys.modules[__name__], "windows_thread_snapshot", failed_snapshot)
+    with pytest.raises(subprocess.TimeoutExpired, match="node") as caught:
+        test_control_rejects_unreviewed_overlay_before_loading_dependencies(tmp_path)
+    assert process.killed
+    assert any("Child thread diagnostics unavailable" in note for note in caught.value.__notes__)
