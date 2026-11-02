@@ -26,18 +26,22 @@ def probability(value: str) -> Decimal:
     return result
 
 
-def critical_tail(discordant: int, alpha: Fraction) -> int:
-    """Largest lower tail rejected by the two-sided exact conditional test."""
+def critical_tail(discordant: int, alpha: Fraction, alternative: str = "two-sided") -> int:
+    """Largest loss count rejected in the candidate-favoring tail."""
+    if alternative not in {"greater", "two-sided"}:
+        raise ValueError("Unsupported alternative")
     total = 1 << discordant
     term = 1
     cumulative = 0
     cutoff = -1
-    for wins in range((discordant + 1) // 2):
+    multiplier = 2 if alternative == "two-sided" else 1
+    limit = (discordant + 1) // 2 if alternative == "two-sided" else discordant
+    for losses in range(limit):
         cumulative += term
-        if 2 * cumulative * alpha.denominator > total * alpha.numerator:
+        if multiplier * cumulative * alpha.denominator > total * alpha.numerator:
             break
-        cutoff = wins
-        term = term * (discordant - wins) // (wins + 1)
+        cutoff = losses
+        term = term * (discordant - losses) // (losses + 1)
     return cutoff
 
 
@@ -51,8 +55,12 @@ def binomial_probability(n: int, k: int, p: float) -> float:
     )
 
 
-def power(tasks: int, candidate_only: Decimal, baseline_only: Decimal, alpha: Fraction) -> float:
+def power(
+    tasks: int, candidate_only: Decimal, baseline_only: Decimal, alpha: Fraction, alternative: str = "two-sided"
+) -> float:
     """Enumerate discordance and conditional rejection probabilities."""
+    if alternative not in {"greater", "two-sided"}:
+        raise ValueError("Unsupported alternative")
     candidate = Fraction(candidate_only)
     discordant_fraction = candidate + Fraction(baseline_only)
     if not discordant_fraction:
@@ -61,13 +69,15 @@ def power(tasks: int, candidate_only: Decimal, baseline_only: Decimal, alpha: Fr
     candidate_given_discordance = float(candidate / discordant_fraction)
     contributions = []
     for count in range(1, tasks + 1):
-        cutoff = critical_tail(count, alpha)
+        cutoff = critical_tail(count, alpha, alternative)
         if cutoff < 0:
             continue
-        rejection = math.fsum(
-            binomial_probability(count, wins, candidate_given_discordance)
-            for wins in (*range(cutoff + 1), *range(count - cutoff, count + 1))
-        )
+        wins = range(count - cutoff, count + 1)
+        rejection = math.fsum(binomial_probability(count, value, candidate_given_discordance) for value in wins)
+        if alternative == "two-sided":
+            rejection += math.fsum(
+                binomial_probability(count, value, candidate_given_discordance) for value in range(cutoff + 1)
+            )
         contributions.append(binomial_probability(tasks, count, discordance) * rejection)
     return min(1.0, max(0.0, math.fsum(contributions)))
 
@@ -79,6 +89,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--baseline-only", type=probability, required=True, help="P(baseline passes, candidate fails)")
     parser.add_argument("--alpha", type=probability, default=Decimal("0.05"), help="Family significance level")
     parser.add_argument("--comparisons", type=int, default=1, help="Number of prespecified tests (Bonferroni)")
+    parser.add_argument("--alternative", choices=("two-sided", "greater"), default="two-sided")
     return parser
 
 
@@ -98,7 +109,8 @@ def main(argv: list[str] | None = None) -> int:
     adjusted = Fraction(args.alpha) / args.comparisons
     difference = candidate - baseline
     result = {
-        "method": "two-sided exact conditional McNemar test with Bonferroni adjustment",
+        "method": f"{args.alternative} exact conditional McNemar test with Bonferroni adjustment",
+        "alternative": args.alternative,
         "independent_scored_task_pairs": args.tasks,
         "candidate_only_probability": str(args.candidate_only),
         "baseline_only_probability": str(args.baseline_only),
@@ -106,12 +118,13 @@ def main(argv: list[str] | None = None) -> int:
         "family_alpha": str(args.alpha),
         "prespecified_comparisons": args.comparisons,
         "per_comparison_alpha": {"numerator": adjusted.numerator, "denominator": adjusted.denominator},
-        "power": power(args.tasks, args.candidate_only, args.baseline_only, adjusted),
+        "power": power(args.tasks, args.candidate_only, args.baseline_only, adjusted, args.alternative),
         "limitations": [
             "Prospective calculation under fixed probabilities; not an observed agent result.",
             "Assumes independent, identically distributed task pairs and one scored comparison per task.",
             "Repeated runs on the same task, unscored outcomes, selection bias and model drift are not modeled.",
-            "Power is for detecting either direction, not a probability that the candidate is superior.",
+            "Power is a modeled rejection probability, not a probability that the candidate is superior.",
+            "A two-sided rejection can favor either condition; a greater alternative targets candidate-only passes.",
             "The exact conditional test may be conservative; probability sums use floating-point arithmetic.",
         ],
     }

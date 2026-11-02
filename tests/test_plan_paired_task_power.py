@@ -9,10 +9,13 @@ from decimal import Decimal
 from fractions import Fraction
 
 import pytest
+from analyze_paired_task_outcomes import exact_p_value
 from plan_paired_task_power import critical_tail, main, power
 
 
-def enumerate_task_pairs(tasks: int, candidate: Fraction, baseline: Fraction, alpha: Fraction) -> Fraction:
+def enumerate_task_pairs(
+    tasks: int, candidate: Fraction, baseline: Fraction, alpha: Fraction, alternative: str = "two-sided"
+) -> Fraction:
     """Enumerate every three-state task sequence and its exact null tail."""
     probabilities = {1: candidate, -1: baseline, 0: 1 - candidate - baseline}
     result = Fraction()
@@ -22,8 +25,11 @@ def enumerate_task_pairs(tasks: int, candidate: Fraction, baseline: Fraction, al
         discordant = wins + losses
         if not discordant:
             continue
-        smaller = min(wins, losses)
-        p_value = Fraction(2 * sum(math.comb(discordant, k) for k in range(smaller + 1)), 2**discordant)
+        if alternative == "greater":
+            p_value = Fraction(sum(math.comb(discordant, k) for k in range(wins, discordant + 1)), 2**discordant)
+        else:
+            smaller = min(wins, losses)
+            p_value = Fraction(2 * sum(math.comb(discordant, k) for k in range(smaller + 1)), 2**discordant)
         if p_value <= alpha:
             result += math.prod(probabilities[outcome] for outcome in outcomes)
     return result
@@ -52,6 +58,42 @@ def test_direction_symmetry_and_bonferroni() -> None:
     assert power(40, a, b, Fraction(1, 40)) <= unadjusted
 
 
+@pytest.mark.parametrize("alpha", [Fraction(1, 8), Fraction(3, 4)])
+@pytest.mark.parametrize("candidate,baseline", [("0.4", "0.1"), ("0.1", "0.4"), ("0.25", "0.25"), ("1", "0")])
+@pytest.mark.parametrize("tasks", [1, 4, 6])
+def test_directional_power_matches_independent_sequence_enumeration(
+    tasks: int, candidate: str, baseline: str, alpha: Fraction
+) -> None:
+    expected = enumerate_task_pairs(tasks, Fraction(candidate), Fraction(baseline), alpha, "greater")
+    actual = power(tasks, Decimal(candidate), Decimal(baseline), alpha, "greater")
+    assert actual == pytest.approx(float(expected), abs=1e-13)
+
+
+def test_directional_power_distinguishes_the_reversed_effect() -> None:
+    higher = power(40, Decimal("0.35"), Decimal("0.1"), Fraction(1, 20), "greater")
+    lower = power(40, Decimal("0.1"), Decimal("0.35"), Fraction(1, 20), "greater")
+    assert higher > lower
+
+
+@pytest.mark.parametrize("alternative", ["greater", "two-sided"])
+@pytest.mark.parametrize("alpha", [Fraction(1, 20), Fraction(3, 4)])
+def test_power_rejection_regions_match_the_paired_analyzer(alternative: str, alpha: Fraction) -> None:
+    for n in range(1, 21):
+        cutoff = critical_tail(n, alpha, alternative)
+        for wins in range(n + 1):
+            rejected = wins >= n - cutoff or (alternative == "two-sided" and wins <= cutoff)
+            assert rejected == (exact_p_value(wins, n - wins, alternative) <= alpha)
+
+
+def test_directional_cli_matches_its_analysis_choice(capsys: pytest.CaptureFixture[str]) -> None:
+    args = ["--tasks", "20", "--candidate-only", "0.3", "--baseline-only", "0.1", "--alternative", "greater"]
+    assert main(args) == 0
+    result = json.loads(capsys.readouterr().out)
+    assert result["alternative"] == "greater"
+    assert result["power"] == power(20, Decimal("0.3"), Decimal("0.1"), Fraction(1, 20), "greater")
+    assert "greater" in result["method"]
+
+
 @pytest.mark.parametrize(
     "tasks,candidate,baseline,alpha,expected",
     [
@@ -63,6 +105,24 @@ def test_direction_symmetry_and_bonferroni() -> None:
 )
 def test_scipy_reference_values(tasks: int, candidate: str, baseline: str, alpha: str, expected: float) -> None:
     assert power(tasks, Decimal(candidate), Decimal(baseline), Fraction(alpha)) == pytest.approx(expected, abs=1e-12)
+
+
+@pytest.mark.parametrize(
+    "tasks,candidate,baseline,alpha,expected",
+    [
+        (20, "0.3", "0.1", "0.05", 0.26254610703540504),
+        (40, "0.45", "0.15", "0.025", 0.636284118268727),
+        (50, "0.1", "0.3", "0.05", 1.51732752592772e-05),
+        (80, "0.2", "0.2", "0.05", 0.03599404426915759),
+    ],
+)
+def test_directional_scipy_reference_values(
+    tasks: int, candidate: str, baseline: str, alpha: str, expected: float
+) -> None:
+    # Independently enumerate conditional outcomes using scipy.stats.binomtest and binom.pmf (SciPy 1.18.1).
+    assert power(tasks, Decimal(candidate), Decimal(baseline), Fraction(alpha), "greater") == pytest.approx(
+        expected, abs=1e-12
+    )
 
 
 def test_cli_reports_assumptions_and_exact_threshold(capsys: pytest.CaptureFixture[str]) -> None:

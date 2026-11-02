@@ -158,8 +158,9 @@ and the full collection and grading boundary. See [Windows job objects](https://
 
 Before collecting a new experiment, consider how many independent tasks are
 needed under several plausible outcome distributions. The prospective planner
-enumerates the rejection probability of a two-sided exact conditional McNemar
-test, with a Bonferroni adjustment for a prespecified number of comparisons:
+enumerates the rejection probability of an exact conditional McNemar test, with
+a Bonferroni adjustment for a prespecified number of comparisons. Its default
+is the two-sided alternative:
 
 ```bash
 python tools/plan_paired_task_power.py --tasks 100 --candidate-only 0.15 --baseline-only 0.05 --comparisons 2
@@ -173,6 +174,17 @@ assumptions. Keeping the difference at ten points but setting the probabilities
 to 0.25 and 0.15 gives approximately 21% power: the difference alone does not
 specify the required design. These are illustrations, not estimated task
 probabilities or measured results.
+
+To plan the one-sided improvement test used by an analysis plan with
+`"alternative": "greater"`, add `--alternative greater` to the command. Choose
+the direction and comparison family before observing holdout outcomes, and use
+the same alternative in both the power and analysis plans. The directional
+calculation counts rejection in the candidate-favoring tail only; it can also
+give a nonzero rejection probability when the assumed effect favors the
+baseline. For the first illustrative scenario above it gives approximately
+54% power under the same assumptions. Neither alternative is a probability
+that the candidate is superior. SciPy documents the corresponding
+[one-sided exact binomial alternative](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.binomtest.html).
 
 The calculation assumes independent, identically distributed task pairs and
 one scored observation per condition per task. Repeated attempts on the same
