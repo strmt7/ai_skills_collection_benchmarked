@@ -147,8 +147,75 @@ def test_cli_revalidates_real_trial_fixture(matched, tmp_path: Path, capsys: pyt
     assert len(task["attempts"]) == 2
     assert all(len(attempt["result_sha256"]) == 64 for attempt in task["attempts"])
     assert task["provider_model_snapshots"]["default"]["unavailable_attempts"] == 1
+    assert target.main(["--plan", str(plan), "--k", "1", "--rule", "all"]) == 0
+    all_result = json.loads(capsys.readouterr().out)
+    assert all_result["success_rule"] == "all" and all_result["quality_superiority_established"] is False
+    assert all_result["conditions"] == result["conditions"]
     altered = json.loads(plan.read_text(encoding="utf-8"))
     altered["tasks"][0]["protocol_sha256"] = "f" * 64
     plan.write_text(json.dumps(altered), encoding="utf-8")
     assert target.main(["--plan", str(plan), "--k", "1"]) == 1
     assert json.loads(capsys.readouterr().out)["ok"] is False
+
+
+def observed_all_fraction(statuses: tuple[str, ...], k: int) -> Fraction:
+    subsets = list(itertools.combinations(statuses, k))
+    return Fraction(sum(all(status == "task_passed" for status in subset) for subset in subsets), len(subsets))
+
+
+def test_all_of_k_matches_explicit_subsets_and_k_one() -> None:
+    for n in range(1, 9):
+        for passed in range(n + 1):
+            statuses = ("task_passed",) * passed + ("task_failed",) * (n - passed)
+            for k in range(1, n + 1):
+                assert target.subset_success(n, passed, k, rule="all") == observed_all_fraction(statuses, k)
+            assert target.subset_success(n, passed, 1, rule="all") == target.subset_success(n, passed, 1)
+
+
+def test_all_of_k_bounds_cover_every_missing_assignment() -> None:
+    for n in range(1, 6):
+        for statuses in itertools.product(("task_passed", "task_failed", "timed_out"), repeat=n):
+            for k in range(1, n + 1):
+                result = target.analyze(report([(list(statuses), list(statuses))]), k, "default", rule="all")
+                row = result["tasks"][0]["conditions"]["candidate"]
+                unknown = statuses.count("timed_out")
+                possibilities = []
+                for assignment in itertools.product(("task_passed", "task_failed"), repeat=unknown):
+                    replacements = iter(assignment)
+                    complete = tuple(next(replacements) if status == "timed_out" else status for status in statuses)
+                    possibilities.append(observed_all_fraction(complete, k))
+                assert Fraction(**row["missing_outcome_lower"]) == min(possibilities)
+                assert Fraction(**row["missing_outcome_upper"]) == max(possibilities)
+                assert (row["estimate"] is None) == (unknown > 0)
+
+
+def test_all_of_k_task_weighting_and_rule_validation() -> None:
+    data = report(
+        [
+            (["task_passed", "task_passed", "task_failed"], ["task_passed", "task_failed", "task_failed"]),
+            (["task_passed", "task_passed"], ["task_passed", "task_passed"]),
+        ]
+    )
+    result = target.analyze(data, 2, "default", rule="all")
+    assert result["success_rule"] == "all"
+    assert Fraction(**result["conditions"]["default"]["equal_task_weight_estimate"]) == Fraction(2, 3)
+    assert Fraction(**result["conditions"]["candidate"]["equal_task_weight_estimate"]) == Fraction(1, 2)
+    assert Fraction(**result["candidate_minus_baseline"]["candidate"]["estimate_difference"]) == Fraction(-1, 6)
+    assert result["quality_superiority_established"] is False
+    with pytest.raises(ValueError):
+        target.analyze(data, 2, "default", rule="other")
+    with pytest.raises(ValueError):
+        target.subset_success(3, 2, 2, rule="other")
+
+
+def test_all_of_k_comparison_bounds_and_insufficient_attempts() -> None:
+    data = report([(["task_passed", "timed_out"], ["task_passed", "task_passed"])])
+    result = target.analyze(data, 2, "default", rule="all")
+    comparison = result["candidate_minus_baseline"]["candidate"]
+    assert comparison["estimate_difference"] is None
+    assert Fraction(**comparison["missing_lower_difference"]) == 0
+    assert Fraction(**comparison["missing_upper_difference"]) == 1
+    insufficient = target.analyze(data, 3, "default", rule="all")
+    assert insufficient["tasks"][0]["conditions"]["default"]["insufficient_attempts"] is True
+    assert insufficient["conditions"]["candidate"]["equal_task_weight_estimate"] is None
+    assert insufficient["candidate_minus_baseline"]["candidate"]["missing_upper_difference"] is None

@@ -848,18 +848,18 @@
           },
           {
             "path": "docs/agent-trial-protocol.md",
-            "scope": "Selected pass-at-k estimator, missing-outcome bounds and independent controls; not full skill review or agent-efficacy evidence.",
-            "sha256": "0b633c1ff8bcfbd4b218f9c535dbca92fe656ba360e921065514f2a490ee77e5"
+            "scope": "Selected any-of-k and all-of-k subset metrics, missing-outcome bounds and independent controls; not full skill review or agent-efficacy evidence.",
+            "sha256": "a2c9a2a335843075dde4639e2fb18a44b1ee0dfd637f9b1a8904f8c7beb17a75"
           },
           {
             "path": "tools/summarize_best_of_k.py",
-            "scope": "Selected pass-at-k estimator, missing-outcome bounds and independent controls; not full skill review or agent-efficacy evidence.",
-            "sha256": "12a045c2bdef450d1feb78d8be3f4cc34019f7d971bce378168f2ebf9d93cde1"
+            "scope": "Selected any-of-k and all-of-k subset metrics, missing-outcome bounds and independent controls; not full skill review or agent-efficacy evidence.",
+            "sha256": "d19bc79d73bd7e6e0a077ef213308a562008dddb7a975f049cb07df3272a1284"
           },
           {
             "path": "tests/test_summarize_best_of_k.py",
-            "scope": "Selected pass-at-k estimator, missing-outcome bounds and independent controls; not full skill review or agent-efficacy evidence.",
-            "sha256": "95fba1d7aa7d4408002d6c1e693017c1df7b83a7157801d0661050acdb05f816"
+            "scope": "Selected any-of-k and all-of-k subset metrics, missing-outcome bounds and independent controls; not full skill review or agent-efficacy evidence.",
+            "sha256": "79c9d03f26cb46280958110c59f54ad055576f74c0a54122ddbb598237fde1be"
           }
         ],
         "open_work": [

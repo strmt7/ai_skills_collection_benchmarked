@@ -271,12 +271,13 @@ has an unscored attempt on any planned task, its aggregate difference is
 unavailable; that attempt remains visible rather than being counted as a fail
 or silently dropped.
 
-### Describing best-of-k attempts
+### Describing subsets of attempts
 
 To inspect subsets of recorded attempts, run for example:
 
 ```bash
 python tools/summarize_best_of_k.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --k 3 --baseline karpathy
+python tools/summarize_best_of_k.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --k 3 --baseline karpathy --rule all
 ```
 
 The tool revalidates the plan and underlying results, then reports the exact
@@ -285,13 +286,19 @@ For `n` scored attempts and `c` passes this is `1 - C(n-c,k)/C(n,k)`, the
 estimator used by [HumanEval](https://github.com/openai/human-eval/blob/b9453e8f1865df0a0057a1383767caa400acfbcf/human_eval/evaluation.py).
 Each task has equal weight regardless of its number of attempts. The reference
 condition defaults to `default`; use `--baseline` for another planned condition.
+The default `--rule any` asks whether at least one selected attempt passed.
+`--rule all` instead reports the fraction of subsets where every attempt passed,
+`C(c,k)/C(n,k)`. These complementary measures describe different aspects of
+repeated outcomes, as discussed in [On Randomness in Agentic Evals](https://arxiv.org/html/2602.07150v3).
+Neither measure is a worst-case guarantee or establishes independent sampling.
 
 If any attempts are unscored, the tool reports a range obtained by assigning
 all of them failures or passes and withholds the point estimate, even if those
 endpoints coincide. A task with fewer than `k` attempts makes the affected
 aggregate unavailable. These bounds are not confidence intervals. The fraction
 describes recorded subsets; interpreting it as a probability for future runs
-requires suitable independent sampling and a way to select a passing attempt.
+requires suitable independent sampling. The `any` rule additionally requires a
+way to select a passing attempt.
 Adaptive retries, model changes and selection costs require separate analysis.
 The recorded example contains one development task with three passes in each
 condition, so its k=3 comparison is a tie and does not demonstrate an advantage.

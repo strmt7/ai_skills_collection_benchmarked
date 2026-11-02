@@ -1,4 +1,4 @@
-"""Describe best-of-k outcomes from independently verified task reports.
+"""Describe any-of-k or all-of-k outcomes from verified task reports.
 
 The estimator describes uniformly selected subsets of recorded attempts. Its
 use as a future-run probability additionally requires suitable sampling and
@@ -17,15 +17,22 @@ from typing import Any
 from summarize_multi_task_trials import SCORED, STATUSES, fraction, run_plan
 
 
-def subset_success(n: int, successes: int, k: int) -> Fraction:
-    """Exact fraction of k-subsets containing at least one successful attempt."""
+def subset_success(n: int, successes: int, k: int, *, rule: str = "any") -> Fraction:
+    """Exact fraction of k-subsets with at least one pass or all passes."""
     if any(type(value) is not int for value in (n, successes, k)) or not 1 <= k <= n or not 0 <= successes <= n:
         raise ValueError("Require integer counts with 0 <= successes <= n and 1 <= k <= n")
-    return 1 - Fraction(math.comb(n - successes, k) if n - successes >= k else 0, math.comb(n, k))
+    if rule not in {"any", "all"}:
+        raise ValueError("Rule must be 'any' or 'all'")
+    total = math.comb(n, k)
+    if rule == "all":
+        return Fraction(math.comb(successes, k) if successes >= k else 0, total)
+    return 1 - Fraction(math.comb(n - successes, k) if n - successes >= k else 0, total)
 
 
-def analyze(report: dict[str, Any], k: int, baseline: str) -> dict[str, Any]:
+def analyze(report: dict[str, Any], k: int, baseline: str, *, rule: str = "any") -> dict[str, Any]:
     """Summarize a verified multi-task report without discarding missing outcomes."""
+    if rule not in {"any", "all"}:
+        raise ValueError("Rule must be 'any' or 'all'")
     if type(k) is not int or not 1 <= k <= 1000:
         raise ValueError("k must be an integer from 1 to 1000")
     conditions = report["condition_definitions"]
@@ -53,8 +60,8 @@ def analyze(report: dict[str, Any], k: int, baseline: str) -> dict[str, Any]:
             if n < k:
                 point = lower = upper = None
             else:
-                lower = subset_success(n, passed, k)
-                upper = subset_success(n, passed + unscored, k)
+                lower = subset_success(n, passed, k, rule=rule)
+                upper = subset_success(n, passed + unscored, k, rule=rule)
                 point = lower if not unscored else None
             values[condition].append((point, lower, upper))
             rows[condition] = {
@@ -108,7 +115,12 @@ def analyze(report: dict[str, Any], k: int, baseline: str) -> dict[str, Any]:
                 ),
             }
     return {
-        "method": "exact uniformly sampled k-subset success fraction, with equal task weights",
+        "method": (
+            "exact uniformly sampled k-subset success fraction, with equal task weights"
+            if rule == "any"
+            else "exact uniformly sampled k-subset all-success fraction, with equal task weights"
+        ),
+        "success_rule": rule,
         "plan_sha256": report["plan_sha256"],
         "partition": report["partition"],
         "model_requested": report["model_requested"],
@@ -122,7 +134,11 @@ def analyze(report: dict[str, Any], k: int, baseline: str) -> dict[str, Any]:
         "quality_superiority_established": False,
         "limitations": [
             "The subset fraction is descriptive; generalizing to future attempts requires appropriate independent and identically distributed sampling, which is not verified.",
-            "Best-of-k assumes a way to select a passing candidate; this report does not establish a feasible selection process or account for its cost.",
+            (
+                "Best-of-k assumes a way to select a passing candidate; this report does not establish a feasible selection process or account for its cost."
+                if rule == "any"
+                else "All-of-k requires every selected attempt to pass; it is not a worst-case guarantee or proof of future reliability."
+            ),
             "Unscored attempts produce hypothetical assignment bounds rather than an observed estimate; those bounds are not confidence intervals.",
             "Tasks with fewer than k attempts prevent aggregate estimates and bounds for the affected condition.",
             "Adaptive retries, task selection, model drift, shared workspaces and graders can invalidate generalization or causal comparisons.",
@@ -136,13 +152,14 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--plan", type=Path, required=True, help="Verified multi-task trial plan")
     parser.add_argument("--k", type=int, required=True, help="Number of attempts per sampled subset")
     parser.add_argument("--baseline", default="default", help="Planned reference condition")
+    parser.add_argument("--rule", choices=("any", "all"), default="any", help="Require any or all attempts to pass")
     return parser
 
 
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
-        result = analyze(run_plan(args.plan), args.k, args.baseline)
+        result = analyze(run_plan(args.plan), args.k, args.baseline, rule=args.rule)
     except (OSError, ValueError, KeyError, TypeError) as exc:
         print(json.dumps({"ok": False, "error": str(exc)}, indent=2))
         return 1
