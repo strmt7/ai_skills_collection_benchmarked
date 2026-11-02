@@ -1869,17 +1869,100 @@
     "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-bash-script-generator-skill-md": {
       "category": "DevOps, cloud & operations",
       "evaluation": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/repaired-skill-readiness/bash-generator-v1/windows.json",
+            "sha256": "b818aca519869374e903596278c4e218ff1ba2b361e3032d877cecd7a8367431"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/bash-generator-v1/control.py",
+            "sha256": "a1a591a0aacf2e817b2f77c1d2d09fa4d1dfad1c20f839cbb0a9744b95f75168"
+          }
+        ],
+        "scope": "Selected shell component controls only; no agent-effectiveness result.",
+        "status": "in_progress"
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/latest-release-devops/bash-script-generator",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-bash-generator.md",
+            "sha256": "ff74b577bac6789ca4178a7f138539d3df84caf74624c8179ead65827960a3e9"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/bash-generator-v1/windows.json",
+            "sha256": "b818aca519869374e903596278c4e218ff1ba2b361e3032d877cecd7a8367431"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/bash-generator-v1/control.py",
+            "sha256": "a1a591a0aacf2e817b2f77c1d2d09fa4d1dfad1c20f839cbb0a9744b95f75168"
+          }
+        ],
+        "open_work": [
+          "Review remaining package resources and broader shell behavior; only selected defects were studied."
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "review_scope": "Complete instruction body; analyzed shell target and validation workflow.",
+            "sha256": "b47b1523883f16e171bfef13efa34ee0786b6e2225ef6f5e91b5bd726d43d4ab",
+            "status": "reviewed"
+          },
+          "assets/templates/standard-template.sh": {
+            "review_scope": "Read scaffold; syntax-checked canonical bytes with Bash and dash.",
+            "sha256": "33f8fc548cb1add2fa12ed9f2d6ae0ba883f2b004346b11f0228c8a59c54c277",
+            "status": "reviewed"
+          },
+          "docs/bash-scripting-guide.md": {
+            "sha256": "88addafc9e6bcc24374e87a25141b7656f48357fcefc66e8777bbf4151849ae0",
+            "status": "pending"
+          },
+          "docs/generation-best-practices.md": {
+            "sha256": "b208d49dc83c512718af10b6b5feb4f79369cb41775c03392aaebf761cd39c95",
+            "status": "pending"
+          },
+          "docs/script-patterns.md": {
+            "sha256": "e48c5874796cb9fa99fb2848cd08775bfd8bcd7a13019839b0b2e5b1af1b227d",
+            "status": "pending"
+          },
+          "docs/text-processing-guide.md": {
+            "sha256": "67277e164969af6d4057afb1384823ce9fb5f840d3262b71ce29e30d39fc73f7",
+            "status": "pending"
+          },
+          "examples/log-analyzer.sh": {
+            "sha256": "db63a1c5cd9c500580eb377dd6e127e05a0319a623d49cdd173a69389d0bdd8d",
+            "status": "pending"
+          },
+          "scripts/generate_script_template.sh": {
+            "review_scope": "Read generator behavior and its use of the standard template.",
+            "sha256": "92a2341ab7f75e2e23a0d133780ce630015a607a1d71f48145f29deaccc44fb3",
+            "status": "reviewed"
+          },
+          "scripts/run_ci_checks.sh": {
+            "review_scope": "Read file-discovery scope and locally executed the skill self-check.",
+            "sha256": "50e31d9aceb0c09a0380adf4e6673b600cfe03169d30cc211f30ed0f75ad4826",
+            "status": "reviewed"
+          },
+          "scripts/test_generator.sh": {
+            "sha256": "8bea38a6876f35724dd11129b68d90a2811730c4e5cb987b6334dca84df82ad2",
+            "status": "pending"
+          }
+        },
+        "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/bash-script-generator/SKILL.md",
+            "sha256": "8d5a577a6125a301e78c2f3de379ec54a448b0afec5c78bc421986f16c010c27"
+          },
+          {
+            "path": "included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/bash-script-generator/repair.json",
+            "sha256": "3fc6b6eaa2b556b62d5c360ed7bafac567f4c732535149efbd305d280ae0daef"
+          }
+        ],
+        "scope": "Source-preserving overlay for selected shell and output-validation issues.",
+        "status": "in_progress"
       },
       "source_repo": "akin-ozer/cc-devops-skills",
       "source_signature": {

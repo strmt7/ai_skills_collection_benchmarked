@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-bash-script-generator-skill-md",
+  "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+  "source_mirror": "included/skills/by-category/devops-cloud-operations/latest-release-devops/bash-script-generator",
+  "original_skill_sha256": "b47b1523883f16e171bfef13efa34ee0786b6e2225ef6f5e91b5bd726d43d4ab",
+  "provenance_skill": "provenance/original.SKILL.md",
+  "repaired_skill_sha256": "8d5a577a6125a301e78c2f3de379ec54a448b0afec5c78bc421986f16c010c27",
+  "license_file": "LICENSE",
+  "license_sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+  "scope": "Selected shell interpreter and generated-output validation guidance; component controls do not measure agent effectiveness.",
+  "model_performance_claim": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/bash-generator-v1/windows.json",
+  "documented_repairs": [
+    "Validate the actual generated output rather than relying on the skill self-check.",
+    "Select the requested shell and do not present the Bash template as a POSIX sh scaffold."
+  ],
+  "evidence_sha256": {
+    "control.py": "a1a591a0aacf2e817b2f77c1d2d09fa4d1dfad1c20f839cbb0a9744b95f75168",
+    "windows.json": "b818aca519869374e903596278c4e218ff1ba2b361e3032d877cecd7a8367431"
+  }
+}

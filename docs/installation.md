@@ -93,6 +93,10 @@ Some reviewed instructions have known limitations:
   settings. A [C generator repair](../included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-c/SKILL.md)
   covers C executables and Linux ELF libraries. [See the build controls](research-makefile-generator-c.md).
 
+- The shell generator's bundled checks do not validate the generated output,
+  and its Bash template is not a POSIX `sh` scaffold. A [shell-generation repair](../included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/bash-script-generator/SKILL.md)
+  addresses both issues. [See the component controls](research-bash-generator.md).
+
 - The Next.js skill contains outdated bundler and analysis guidance. A
   [version-specific repair](../included/repaired/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/nextjs-turbopack/SKILL.md)
   records the tested commands. [See the component controls](research-next-turbopack.md).

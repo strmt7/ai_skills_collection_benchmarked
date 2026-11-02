@@ -143,3 +143,8 @@
 /included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/cellxgene-census-ml-streaming/** text eol=lf
 /included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/cellxgene-census-ml-streaming/provenance/** -text !eol
 /artifacts/repaired-skill-readiness/census-ml-streaming-v1/** text eol=lf
+
+# Preserve original shell-generator instructions and portable control evidence.
+/included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/bash-script-generator/** text eol=lf
+/included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/bash-script-generator/provenance/** -text !eol
+/artifacts/repaired-skill-readiness/bash-generator-v1/** text eol=lf

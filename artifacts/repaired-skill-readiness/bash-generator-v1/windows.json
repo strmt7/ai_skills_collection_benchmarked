@@ -1,0 +1,26 @@
+{
+  "agent_efficacy_scored": false,
+  "bash_executable_sha256": "de2099f488acb59b21c120fa5f8a79b0d8856f6104b6f5165c25d6875d9be1c3",
+  "dash_executable_sha256": "61dc29be7b19d8f5facffbf0c1b6df7d40f064743f9902d2e51d51f4409f762d",
+  "exit_codes": {
+    "invalid_output_bash_syntax": 2,
+    "template_bash_syntax": 0,
+    "template_dash_syntax": 2,
+    "upstream_self_checks": 0,
+    "valid_output_bash_syntax": 0,
+    "valid_output_dash_execution": 0,
+    "valid_output_dash_syntax": 0
+  },
+  "observations_match": {
+    "invalid_output_rejected": true,
+    "template_shell_difference": true,
+    "upstream_self_checks": true,
+    "valid_output_accepted": true
+  },
+  "overlay_skill_sha256": "8d5a577a6125a301e78c2f3de379ec54a448b0afec5c78bc421986f16c010c27",
+  "platform": "Windows",
+  "schema_version": 1,
+  "source_ci_sha256": "50e31d9aceb0c09a0380adf4e6673b600cfe03169d30cc211f30ed0f75ad4826",
+  "source_skill_sha256": "b47b1523883f16e171bfef13efa34ee0786b6e2225ef6f5e91b5bd726d43d4ab",
+  "source_template_sha256": "33f8fc548cb1add2fa12ed9f2d6ae0ba883f2b004346b11f0228c8a59c54c277"
+}
