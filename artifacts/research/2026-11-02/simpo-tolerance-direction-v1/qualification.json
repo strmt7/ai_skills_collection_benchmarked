@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "scope": "Additional trusted development controls; not an agent trial or confined grader.",
+  "legacy_case_count": 17,
+  "additional_cases": 4,
+  "runs": [
+    {
+      "platform": "Windows",
+      "result": "windows-result.json",
+      "sha256": "65dd293a26b017e3e6af8dc4585536bbd147442db85f4741e34cc4c94925193e"
+    },
+    {
+      "platform": "Linux",
+      "result": "linux-result.json",
+      "sha256": "7c57d09b088959c440bc43542f53cd9f1c01a42c775393168bf38fd91b75c123"
+    }
+  ],
+  "official_documentation": {
+    "url": "https://numpy.org/doc/stable/reference/generated/numpy.allclose.html",
+    "native_crawl_sha256": "1aebee132ecced4f152f7832b55dd3b4955716055bb864f479df420d230909e2",
+    "provider_version": "0.9.5+catalog.portable4"
+  },
+  "raw_outputs": "Retained outside Git in isolated local evidence; hosted workflow uploads its own logs.",
+  "agent_performance_tested": false
+}

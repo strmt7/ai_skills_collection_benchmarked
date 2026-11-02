@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "scope": "Trusted development controls only; not an agent trial or confined grader.",
+  "platform": "Linux",
+  "python": "3.13.18",
+  "numpy": "2.5.4",
+  "pytest": "9.1.1",
+  "dependencies": {
+    "numpy": "2.5.4",
+    "pytest": "9.1.1",
+    "iniconfig": "2.3.1",
+    "packaging": "26.3",
+    "pluggy": "1.7.0",
+    "pygments": "2.21.0"
+  },
+  "inputs_sha256": {
+    "benchmarks/agent-effectiveness/development/simpo-verifier-v1/TASK.md": "46356d6751f840fab334a3170efda2def885d7fe2e02c36636819d65ade6c824",
+    "benchmarks/agent-effectiveness/development/simpo-verifier-v1/LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "benchmarks/agent-effectiveness/development/simpo-verifier-v1/source.json": "be0ea04f3c997d021d7629017b464d15a318933249079bbce94a35742c92bb07",
+    "benchmarks/agent-effectiveness/development/simpo-verifier-v1/fixture/test_outputs.py": "05590869057aeaac1032f2177b0b2bf80f56828af3dba66f100e4d1346b2e62f",
+    "benchmarks/agent-effectiveness/development/simpo-verifier-v1/cases.json": "251b7b37b3959df3f2a3a9783e51962701ba70b51d189fe52d34873441f4e132",
+    "benchmarks/agent-effectiveness/development/simpo-verifier-v1/controls/calibrate.py": "f66292eb6e1241abc890538dbcc90b93ace2680fa02fdb902068473f6a58dae7",
+    "benchmarks/agent-effectiveness/development/simpo-verifier-v1/controls/test_acceptance.py": "f086c929bf24ba398c4a531724ad8b945fe886d51dcbe8c1743e3ca088a8e27b",
+    "benchmarks/agent-effectiveness/development/simpo-verifier-v1/controls/reference.py": "97885ede75808ca43b8b8e431b46df831fd487e8d771b4394280206c0f623c64",
+    "benchmarks/agent-effectiveness/development/simpo-verifier-v1/controls/reference_pathlib.py": "dc15cf0507e23b9c734f4107622dc90a138fe634f1618c1a93d3ae9d901037a6",
+    "benchmarks/agent-effectiveness/development/simpo-verifier-v1/controls/test_tolerance_direction.py": "0d74027e1e53c83cdd7921e6b69a26eaf0cd863aae109651569e8ef8c70f2b9d",
+    "benchmarks/agent-effectiveness/development/simpo-verifier-v1/controls/calibrate_tolerance_direction.py": "784af2277d1851f6953dad07342441063efc5f7cd2a63ac83ec259e07bfea875",
+    "benchmarks/component-controls/simpo-postrun/requirements-windows.txt": "bc3ec7d4d4f363aaae9f3ea20fa26758bca0428dfb7ac38971d6a47b12839d6c",
+    "benchmarks/component-controls/simpo-postrun/requirements-linux.txt": "c3799146f85ce133c4e75403c40d2807a7b1f8797076cf7cf33906dafb66f7c7",
+    "artifacts/research/2026-11-02/simpo-verifier-task-calibration/windows-result.json": "9845f6ac5504c8fedb3aaad9185417c73ddd18fd5e6f0929b5fd0b67ed1b265d"
+  },
+  "new_cases": [
+    "test_asymmetric_tolerance[-5.99997e-06-False-initial]",
+    "test_asymmetric_tolerance[-5.99997e-06-False-regenerated]",
+    "test_asymmetric_tolerance[6.00003e-06-True-initial]",
+    "test_asymmetric_tolerance[6.00003e-06-True-regenerated]"
+  ],
+  "legacy_case_count": 17,
+  "variants": {
+    "reference-boundary": {
+      "exit_code": 0,
+      "failed_cases": [],
+      "stdout_sha256": "7abac67c3cceb2084525d7ddb489e8f7971a0c333e0a75d67d8c7219a6e9627b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "junit_sha256": "c3b38a75ab26a7276df0328f16e6ab24d73796d64ec390eff888d97f4147217f"
+    },
+    "reference-pathlib-boundary": {
+      "exit_code": 0,
+      "failed_cases": [],
+      "stdout_sha256": "d23041cfe2de1c1c0d15e48de6668f78ba2054f91eeccb7b8463506371c5771b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "junit_sha256": "ead2fc3ad792f16390b40e32526d220a1c0fa532eee18a21be4fbe46402ab1cb"
+    },
+    "reverse-initial-boundary": {
+      "exit_code": 1,
+      "failed_cases": [
+        "test_asymmetric_tolerance[-5.99997e-06-False-initial]",
+        "test_asymmetric_tolerance[6.00003e-06-True-initial]"
+      ],
+      "stdout_sha256": "eac68b624b716e476b8732da89900c0acf98ca2d48afa65b0228b8a1cd83b966",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "junit_sha256": "83208d63ddb5a8765929d317210a7376ea1271c1b429754d8d51cf3c99cbdf85"
+    },
+    "reverse-initial-legacy": {
+      "exit_code": 0,
+      "failed_cases": [],
+      "stdout_sha256": "084a25fd7fc57b69d76f16eaf5bf6197aefadfde1d0102d9db63b3ed8dd33a12",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "junit_sha256": "a4515070de389b088e6bb472aff79c747ddbd140138dc7d4223151af771706eb"
+    },
+    "reverse-regenerated-boundary": {
+      "exit_code": 1,
+      "failed_cases": [
+        "test_asymmetric_tolerance[-5.99997e-06-False-regenerated]",
+        "test_asymmetric_tolerance[6.00003e-06-True-regenerated]"
+      ],
+      "stdout_sha256": "ff6f8929b17a56d5ef8db5646b94d7c70a1ff974b63c0d5b2d9f62b2ea4d0af3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "junit_sha256": "c5bdde94f17999a7c04cccc101630eac0c8f74ca364946f6bd05bdd0caec0f05"
+    },
+    "reverse-regenerated-legacy": {
+      "exit_code": 0,
+      "failed_cases": [],
+      "stdout_sha256": "dcd3c62ec1aa95c643b0f40cd7c7f3b96c072dab18a1dd8bc16b8f356d491b2d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "junit_sha256": "eb991c7246b4600589e1aaf0bd6d74c88fd7d2f06ca4c83e669b42e7c48f825f"
+    },
+    "reverse-both-boundary": {
+      "exit_code": 1,
+      "failed_cases": [
+        "test_asymmetric_tolerance[-5.99997e-06-False-initial]",
+        "test_asymmetric_tolerance[-5.99997e-06-False-regenerated]",
+        "test_asymmetric_tolerance[6.00003e-06-True-initial]",
+        "test_asymmetric_tolerance[6.00003e-06-True-regenerated]"
+      ],
+      "stdout_sha256": "1a9608aba4eb59fde81c0bbf69ad5ecc50d3c62930416aaa69ac4366de6c43d4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "junit_sha256": "78690c443d44760e6059d47aa4385a186cdcbf6d1cf9d15ada1855ac30c3c4dd"
+    },
+    "reverse-both-legacy": {
+      "exit_code": 0,
+      "failed_cases": [],
+      "stdout_sha256": "356f9c98ed9a8a9e26cdfec980f860f806b8464fb1726f4d53b940a9a0ca47b6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "junit_sha256": "7d1305416c179e4a1dee22a87174d9d28aa54afc3198e946f30697fff60eb68b"
+    }
+  },
+  "agent_performance_tested": false
+}
