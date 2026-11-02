@@ -5,6 +5,7 @@ import json
 import os
 import shutil
 import subprocess
+import sys
 from pathlib import Path
 
 import pytest
@@ -17,7 +18,7 @@ MIRROR = ROOT / "included/skills/by-category/testing-qa-benchmarking/selected-st
 
 def windows_process_cpu_seconds(pid: int) -> tuple[float, float] | None:
     """Return kernel and user CPU seconds for a live Windows process when available."""
-    if os.name != "nt":
+    if sys.platform != "win32":
         return None
     import ctypes
     from ctypes import wintypes
