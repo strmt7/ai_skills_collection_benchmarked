@@ -226,9 +226,25 @@ It assumes independent task pairs, appropriate sampling and equal discordant
 probabilities under the null; the tool cannot verify those assumptions. The
 family adjustment covers only the complete prespecified comparison family, not
 unrecorded tests or repeated looks. A two-sided rejection has no direction.
-No confidence interval is computed. A p-value, matching hashes, reported model
-snapshots or a nominal rejection do not establish causal skill superiority,
-representative task coverage, grading authenticity or commercial readiness.
+
+The report also gives a two-sided familywise confidence interval for the
+candidate-minus-baseline pass-rate difference in the task population. It
+constructs four one-sided exact binomial bounds for the candidate-only and
+baseline-only probabilities, combines their endpoints, and applies a
+[Bonferroni union bound](https://www.itl.nist.gov/div898/handbook/prc/section4/prc473.htm)
+across the complete declared comparison family. The
+[binomial bounds](https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm)
+are inverted using integer arithmetic and rounded outward on a 2^32 grid. This
+is conservative and may be wide, particularly with few tasks. Coverage assumes
+independent, identically distributed task pairs sampled from the population of
+interest; repeated attempts, adaptive task selection, unscored outcomes and
+model changes can invalidate that interpretation. The interval is two-sided
+even when the paired test uses a one-sided alternative, so their decisions need
+not match.
+
+Neither an interval, p-value, matching hashes, reported model snapshots nor a
+nominal rejection establishes causal skill superiority, representative task
+coverage, grading authenticity or commercial readiness.
 
 ## Comparing multiple task reports
 

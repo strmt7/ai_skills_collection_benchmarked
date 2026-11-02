@@ -75,6 +75,65 @@ def exact_p_value(candidate_only: int, baseline_only: int, alternative: str) -> 
     return Fraction(numerator, 1 << n)
 
 
+# Fixed dyadic grid makes the exact binomial-tail comparisons reproducible.
+# Rounding each upper endpoint outward preserves the coverage guarantee.
+_INTERVAL_GRID = 1 << 32
+
+
+def _binomial_cdf_at_most(n: int, successes: int, numerator: int, tail: Fraction) -> bool:
+    """Compare a binomial CDF on the grid using integer arithmetic only."""
+    if numerator == 0:
+        return False  # CDF is one; tail is strictly below one.
+    if numerator == _INTERVAL_GRID:
+        return successes < n
+    failure = _INTERVAL_GRID - numerator
+    term = failure**n
+    total = term
+    for k in range(successes):
+        term = term * (n - k) * numerator // ((k + 1) * failure)
+        total += term
+    return total * tail.denominator <= _INTERVAL_GRID**n * tail.numerator
+
+
+def _binomial_upper(successes: int, n: int, tail: Fraction) -> Fraction:
+    """One-sided Clopper-Pearson bound, rounded up on the fixed grid."""
+    if successes == n:
+        return Fraction(1)
+    low, high = 0, _INTERVAL_GRID
+    while low + 1 < high:
+        middle = (low + high) // 2
+        if _binomial_cdf_at_most(n, successes, middle, tail):
+            high = middle
+        else:
+            low = middle
+    return Fraction(high, _INTERVAL_GRID)
+
+
+def paired_difference_interval(
+    wins: int, losses: int, n: int, family_alpha: Fraction, family_size: int
+) -> tuple[Fraction, Fraction]:
+    """Return a conservative familywise interval for P(candidate only) - P(baseline only)."""
+    if (
+        any(type(value) is not int for value in (wins, losses, n, family_size))
+        or not 1 <= n <= 1000
+        or wins < 0
+        or losses < 0
+        or wins + losses > n
+        or not 1 <= family_size <= 1000
+        or not isinstance(family_alpha, Fraction)
+        or not 0 < family_alpha < 1
+    ):
+        raise ValueError("Invalid paired interval parameters")
+    # Four one-sided binomial bounds per comparison; the union bound controls
+    # the full declared family without requiring win/loss independence.
+    tail = family_alpha / (4 * family_size)
+    win_upper = _binomial_upper(wins, n, tail)
+    loss_upper = _binomial_upper(losses, n, tail)
+    win_lower = 1 - _binomial_upper(n - wins, n, tail)
+    loss_lower = 1 - _binomial_upper(n - losses, n, tail)
+    return win_lower - loss_upper, win_upper - loss_lower
+
+
 def analyze(report: dict[str, Any], plan: dict[str, Any]) -> dict[str, Any]:
     """Analyze an already verified multi-task report according to the recorded plan."""
     plan = parse_plan(plan)
@@ -136,6 +195,7 @@ def analyze(report: dict[str, Any], plan: dict[str, Any]) -> dict[str, Any]:
     p_value = exact_p_value(wins, losses, plan["alternative"])
     adjusted = min(Fraction(1), p_value * plan["family_comparisons"])
     alpha = Fraction(probability(plan["family_alpha"]))
+    lower, upper = paired_difference_interval(wins, losses, len(tasks), alpha, plan["family_comparisons"])
     return {
         "method": "exact conditional paired binary test with Bonferroni adjustment",
         "plan_sha256": report["plan_sha256"],
@@ -151,6 +211,12 @@ def analyze(report: dict[str, Any], plan: dict[str, Any]) -> dict[str, Any]:
             for name in ("both_passed", "baseline_only_passed", "candidate_only_passed", "neither_passed")
         },
         "candidate_minus_baseline_pass_rate": fraction(Fraction(wins - losses, len(tasks))),
+        "familywise_candidate_minus_baseline_interval": {
+            "lower": fraction(lower),
+            "upper": fraction(upper),
+            "confidence_level": fraction(1 - alpha),
+            "method": "Bonferroni combination of outward-rounded exact binomial bounds",
+        },
         "exact_conditional_p_value": fraction(p_value),
         "bonferroni_adjusted_p_value": fraction(adjusted),
         "family_comparisons": plan["family_comparisons"],
@@ -165,6 +231,7 @@ def analyze(report: dict[str, Any], plan: dict[str, Any]) -> dict[str, Any]:
         "limitations": [
             "The conditional test assumes independent task pairs sampled from an appropriate target population and equal discordant probabilities under the null; these assumptions are not verified.",
             "One attempt per condition per task is required; unscored outcomes and repeated trials are rejected rather than counted as failures or independent tasks.",
+            "The conservative difference interval assumes independent, identically distributed task pairs; it combines binomial bounds by a union bound across the complete declared family.",
             "The recorded analysis plan and matching hashes do not prove preregistration, holdout integrity, or absence of optional stopping or selective reporting.",
             "Bonferroni adjustment is only valid for a correctly specified complete family of comparisons; multiple looks and unrecorded tests are not controlled.",
             "A two-sided rejection is not evidence of improvement in a particular direction, and a p-value is not an effect size or probability of superiority.",

@@ -6,6 +6,7 @@ import copy
 import hashlib
 import itertools
 import json
+import math
 from fractions import Fraction
 from pathlib import Path
 
@@ -215,3 +216,105 @@ def test_two_sided_tail_is_symmetric_and_single_sided_tail_is_directional():
     for wins, losses in ((0, 10), (1, 9), (3, 2), (10, 0)):
         assert target.exact_p_value(wins, losses, "two-sided") == target.exact_p_value(losses, wins, "two-sided")
         assert target.exact_p_value(wins, losses, "greater") + target.exact_p_value(losses, wins, "greater") >= 1
+
+
+def direct_binomial_cdf(n, wins, p):
+    return sum(math.comb(n, k) * p**k * (1 - p) ** (n - k) for k in range(wins + 1))
+
+
+def test_exact_binomial_upper_grid_matches_independent_tail_enumeration():
+    tail = Fraction(1, 80)
+    grid = 1 << 32
+    for n in range(1, 9):
+        for wins in range(n):
+            upper = target._binomial_upper(wins, n, tail)
+            assert (upper * grid).denominator == 1
+
+            assert direct_binomial_cdf(n, wins, upper) <= tail
+            assert direct_binomial_cdf(n, wins, upper - Fraction(1, grid)) > tail
+        assert target._binomial_upper(n, n, tail) == 1
+
+
+def test_paired_intervals_cover_small_exact_multinomial_distributions():
+    alpha = Fraction(1, 10)
+    # Exact enumeration includes negative dependence of the win and loss
+    # indicators. It is independent of the implementation's tail inversion.
+    for n in range(1, 7):
+        intervals = {
+            (wins, losses): target.paired_difference_interval(wins, losses, n, alpha, 1)
+            for wins in range(n + 1)
+            for losses in range(n - wins + 1)
+        }
+        for a in range(5):
+            for b in range(5 - a):
+                p, q = Fraction(a, 4), Fraction(b, 4)
+                covered = Fraction()
+                for (wins, losses), (lower, upper) in intervals.items():
+                    probability = (
+                        math.comb(n, wins)
+                        * math.comb(n - wins, losses)
+                        * p**wins
+                        * q**losses
+                        * (1 - p - q) ** (n - wins - losses)
+                    )
+                    if lower <= p - q <= upper:
+                        covered += probability
+                assert covered >= 1 - alpha
+
+
+def test_interval_direction_and_family_adjustment():
+    alpha = Fraction(1, 20)
+    lower, upper = target.paired_difference_interval(8, 1, 10, alpha, 1)
+    reverse_lower, reverse_upper = target.paired_difference_interval(1, 8, 10, alpha, 1)
+    assert (reverse_lower, reverse_upper) == (-upper, -lower)
+    assert lower <= Fraction(7, 10) <= upper
+    family_lower, family_upper = target.paired_difference_interval(8, 1, 10, alpha, 10)
+    assert family_lower <= lower <= upper <= family_upper
+    result = target.analyze(
+        task_report(
+            [("task_failed", "task_passed")] * 8 + [("task_passed", "task_failed")] + [("task_passed", "task_passed")]
+        ),
+        analysis_plan(),
+    )
+    interval = result["familywise_candidate_minus_baseline_interval"]
+    assert Fraction(**interval["confidence_level"]) == Fraction(19, 20)
+    assert (Fraction(**interval["lower"]), Fraction(**interval["upper"])) == (
+        target.paired_difference_interval(8, 1, 10, alpha, 2)
+    )
+
+
+@pytest.mark.parametrize(
+    "args",
+    [
+        (-1, 0, 1, Fraction(1, 20), 1),
+        (1, 1, 1, Fraction(1, 20), 1),
+        (0, 0, 0, Fraction(1, 20), 1),
+        (0, 0, 1, Fraction(0), 1),
+        (0, 0, 1, Fraction(1, 20), True),
+    ],
+)
+def test_invalid_interval_parameters_are_rejected(args):
+    with pytest.raises(ValueError, match="Invalid paired interval"):
+        target.paired_difference_interval(*args)
+
+
+@pytest.mark.parametrize(
+    ("n", "wins", "losses", "family", "reference_lower", "reference_upper"),
+    [
+        (10, 8, 1, 2, -0.168782977526363, 0.9871990651865448),
+        (100, 35, 20, 1, -0.05961208699810197, 0.34786956913242717),
+        (1000, 500, 200, 2, 0.2266569871313612, 0.3705954548665743),
+        (1, 1, 0, 1, -0.975, 1.0),
+        (20, 0, 0, 1, -0.19675967970462538, 0.19675967970462538),
+    ],
+)
+def test_interval_matches_independent_beta_quantile_reference(
+    n, wins, losses, family, reference_lower, reference_upper
+):
+    # Reference endpoints were independently generated using SciPy 1.18.1
+    # beta quantiles, not the implementation's integer binomial-tail inversion.
+    lower, upper = target.paired_difference_interval(wins, losses, n, Fraction(1, 20), family)
+    assert float(lower) <= reference_lower + 1e-12
+    assert float(upper) >= reference_upper - 1e-12
+    assert float(lower) == pytest.approx(reference_lower, abs=5e-10)
+    assert float(upper) == pytest.approx(reference_upper, abs=5e-10)
