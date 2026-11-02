@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "platform": "Windows",
+  "node": "v24.22.2",
+  "npm": "11.19.1",
+  "case_names": [
+    "identifies Next route exports, JS and TypeScript; excludes unrelated cache",
+    "Next conventions preserve patterns and disclose unresolved cases",
+    "tracks Express direct and mounted routers without treating arbitrary get as a route",
+    "CommonJS and reassignment are handled conservatively",
+    "malformed input fails atomically without executing target source",
+    "controlled Next.js 16 route handlers agree with filesystem candidates",
+    "controlled Express 5 requests agree with direct and mounted route candidates"
+  ],
+  "cases": 7,
+  "test_exit_code": 0,
+  "minimal_runtime_install_and_cli_passed": true,
+  "inputs_sha256": {
+    "included/repaired/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code-js-inventory/scripts/inventory.mjs": "3cd613a35e4892d993ea9092f1095a9dc8efd6ed72e31c5abfb7efc12c9fb117",
+    "included/repaired/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code-js-inventory/scripts/package.json": "abfa6c09bd39c70c971205dad934791f39afee8f32af07e92d8971de0505632d",
+    "included/repaired/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code-js-inventory/scripts/package-lock.json": "067178f0f346d3149728cd078bf925098a347e68128619f22cbb9113da5a8058",
+    "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/inventory.test.mjs": "c16b0190b56aad576632c547cf1f6b991f638f1acef46c57b8b2ab01e9802c04",
+    "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/next-live.mjs": "4ef1d112aa05e2309bfd976ab5461b44f9ab533f62eb02a7d2cd15320518b24b",
+    "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/package.json": "e264de4767320cfbd428e6eb1d5d810883a38fac23f5db5ed605c3e206eeca95",
+    "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/package-lock.json": "e313ab384711953e0b47192ad752f6bbac56a63f07c4bb1bffad1c7099e91c57",
+    "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/reproduce.py": "e54f77c161fabd54a2895d921685cf92cb7d21d175830f767ad87beb471e6127"
+  },
+  "target_project_imported_by_inventory": false,
+  "owned_express_and_next_fixtures_executed": true,
+  "agent_performance_tested": false
+}

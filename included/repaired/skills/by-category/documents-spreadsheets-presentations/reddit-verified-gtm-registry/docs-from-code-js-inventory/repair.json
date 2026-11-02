@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "varnan-tech-opendirectory-packages-cli-skills-docs-from-code-skill-md",
+  "source_commit": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4",
+  "source_mirror": "included/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code",
+  "original_skill_sha256": "5d14fa7f29a9e3d8b572e370052ecbd295b81c7f5ec19ac95d619b6f691a000e",
+  "license_declaration": "MIT as stated in preserved upstream README; no full project-level or docs-from-code license file found in the pinned tree.",
+  "scope": "Selected JavaScript and TypeScript source inventory and owned Express/Next.js fixtures; no graphify or agent trial.",
+  "model_performance_claim": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/qualification.json",
+  "overlay_sha256": {
+    "SKILL.md": "f019593cf5d924b597de2f29ca84fe68bc7e8fbc14aa367b5af52ab4335bbb35",
+    "scripts/inventory.mjs": "3cd613a35e4892d993ea9092f1095a9dc8efd6ed72e31c5abfb7efc12c9fb117",
+    "scripts/package.json": "abfa6c09bd39c70c971205dad934791f39afee8f32af07e92d8971de0505632d",
+    "scripts/package-lock.json": "067178f0f346d3149728cd078bf925098a347e68128619f22cbb9113da5a8058",
+    "provenance/original.SKILL.md": "5d14fa7f29a9e3d8b572e370052ecbd295b81c7f5ec19ac95d619b6f691a000e",
+    "provenance/upstream.README.md": "70c14cec2db6ac7e26ccc0e09e02e4d4e7c71520f43dc3cf98b39a04270fd3bc"
+  },
+  "evidence_sha256": {
+    "inventory.test.mjs": "c16b0190b56aad576632c547cf1f6b991f638f1acef46c57b8b2ab01e9802c04",
+    "next-live.mjs": "4ef1d112aa05e2309bfd976ab5461b44f9ab533f62eb02a7d2cd15320518b24b",
+    "package.json": "e264de4767320cfbd428e6eb1d5d810883a38fac23f5db5ed605c3e206eeca95",
+    "package-lock.json": "e313ab384711953e0b47192ad752f6bbac56a63f07c4bb1bffad1c7099e91c57",
+    "reproduce.py": "e54f77c161fabd54a2895d921685cf92cb7d21d175830f767ad87beb471e6127",
+    "qualification.json": "2e7d5f90f97fa17cd8da395a757969edb93b5da1ae6a53b2fb03372587edaab2",
+    "sources.json": "03d707895f8f406a98ec650f4150928215356992f1d2984a1741f1a43c96ab3d",
+    "windows-node24-result.json": "2c74fd016ef37a19a239049fa0c42d01603598d30bf1390fa4e6a1283fab0ce2",
+    "linux-node24-result.json": "2aa5f00dcf0be324dfed506ecdfe19b15409b6d5ae5b72cea7d2f96ea1390c1f",
+    "raw/windows-node24.tap": "098c54875d632c74699d28a7d0d3e665f1ec3ac0a42197a294163e6cdaa03bb7",
+    "raw/linux-node24.tap": "4c012d022f403c173f35157f54dbc1cba2e746acfea42f0c795dd5291f9db00b"
+  }
+}

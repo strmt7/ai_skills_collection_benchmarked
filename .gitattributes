@@ -194,3 +194,9 @@
 /included/repaired/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code-python-inventory/** text eol=lf
 /included/repaired/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code-python-inventory/provenance/** -text !eol whitespace=cr-at-eol
 /artifacts/repaired-skill-readiness/docs-from-code-python-inventory-v1/** text eol=lf
+
+# Keep the JavaScript inventory portable and preserve its pinned upstream text.
+/included/repaired/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code-js-inventory/** text eol=lf
+/included/repaired/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code-js-inventory/provenance/** -text !eol whitespace=cr-at-eol
+/artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/** text eol=lf
+/artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/raw/** -text !eol whitespace=cr-at-eol

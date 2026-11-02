@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "retrieval_date": "2026-11-02",
+  "sources": [
+    {
+      "url": "https://nextjs.org/docs/app/getting-started/route-handlers",
+      "status_code": 200,
+      "provider": "0.9.5+catalog.portable4",
+      "native_sha256": "b7e406eef29537d843606ce614a2d0d5035b229237b9dd2aca970ae0b932da87",
+      "markdown_characters": 16347
+    },
+    {
+      "url": "https://nextjs.org/docs/app/api-reference/file-conventions/route-groups",
+      "status_code": 200,
+      "provider": "0.9.5+catalog.portable4",
+      "native_sha256": "89730c3dae5e125b94eb72d77289d12760a663a686653304dd6a18757e6e57e7",
+      "markdown_characters": 9078
+    },
+    {
+      "url": "https://nextjs.org/docs/app/getting-started/project-structure",
+      "status_code": 200,
+      "provider": "0.9.5+catalog.portable4",
+      "native_sha256": "f96e69eda054116116526cfc10f91235b439c70378513b51f08c8f2a930261db",
+      "markdown_characters": 35529
+    },
+    {
+      "url": "https://expressjs.com/en/guide/routing/",
+      "status_code": 200,
+      "provider": "0.9.5+catalog.portable4",
+      "native_sha256": "8745e17e8eed256e73c8e16cdb385eef8807a2894920374ad46bd4f719820309",
+      "markdown_characters": 32417
+    },
+    {
+      "url": "https://babeljs.io/docs/babel-parser",
+      "status_code": 200,
+      "provider": "0.9.5+catalog.portable4",
+      "native_sha256": "64e2c5ad70ae5fa802014a53860c62a62d97819dcae47f02af48b71acbbc6fad",
+      "markdown_characters": 27173
+    },
+    {
+      "url": "https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API",
+      "status_code": 200,
+      "provider": "0.9.5+catalog.portable4",
+      "native_sha256": "5ff51810539a80ad2290fe47b37935102ecbb117a919d51f713fadd65d465db2",
+      "markdown_characters": 63204
+    }
+  ],
+  "native_capture_location": "Retained in the isolated development checkout under .venv/research; digest identifies each complete capture."
+}

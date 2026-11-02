@@ -17894,6 +17894,11 @@
             "path": "docs/research-docs-from-code-python-inventory.md",
             "scope": "Selected Python source and Flask/FastAPI controls; no graphify, TypeScript repair, or agent efficacy.",
             "sha256": "b88be2f54c01a8ab28009dcc1e9832c3573ab26facbfc68dc907bf5427147db3"
+          },
+          {
+            "path": "docs/research-docs-from-code-js-inventory.md",
+            "scope": "Selected JavaScript and TypeScript parser and Express/Next.js controls; not agent efficacy.",
+            "sha256": "5d58787d2a59cf9af88a786fa346725cd42659d0c27e782d18027bdb8879f643"
           }
         ],
         "status": "in_progress",
@@ -17914,6 +17919,16 @@
             "path": "artifacts/repaired-skill-readiness/docs-from-code-python-inventory-v1/qualification.json",
             "scope": "Source-bound control runs with selected real framework fixtures; no agent trial.",
             "sha256": "fb6ced53972ae5310db327d5bc19f46666126c9c94b4d10b089d7157e2380839"
+          },
+          {
+            "path": "included/repaired/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code-js-inventory/SKILL.md",
+            "scope": "Maintained JavaScript and TypeScript inventory only; results are static candidates.",
+            "sha256": "f019593cf5d924b597de2f29ca84fe68bc7e8fbc14aa367b5af52ab4335bbb35"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/qualification.json",
+            "scope": "Source-bound controls with selected Express and Next.js runtime fixtures; no agent trial.",
+            "sha256": "2e7d5f90f97fa17cd8da395a757969edb93b5da1ae6a53b2fb03372587edaab2"
           }
         ],
         "status": "in_progress"
