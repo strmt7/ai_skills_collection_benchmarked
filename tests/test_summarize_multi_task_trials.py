@@ -47,6 +47,117 @@ def report(task, baseline, candidate):
     }
 
 
+def three_condition_report(task, default, candidate, reference):
+    item = report(task, default, candidate)
+    item["attempts"].extend(
+        {"repetition": index, "condition": "karpathy", "status": status, "usage": None}
+        for index, status in enumerate(reference, 1)
+    )
+    definitions = {**DEFINITIONS, "karpathy": {"skills": ["reference-bundle"]}}
+    item["conditions"]["karpathy"] = {"planned_attempts": len(reference)}
+    item["block_comparison"] = compare_blocks(item["attempts"], set(definitions))
+    return item, definitions
+
+
+@pytest.mark.parametrize("reference,candidate", itertools.product(sorted(target.STATUSES), repeat=2))
+def test_direct_non_default_comparisons_keep_matched_outcomes_and_unscored_bounds(reference, candidate):
+    item, definitions = three_condition_report("a", ["harness_error"], [candidate], [reference])
+    result = target.aggregate([item], [definitions])
+    direct = result["non_default_comparisons"]["karpathy"]["candidate"]
+    reverse = result["non_default_comparisons"]["candidate"]["karpathy"]
+    assert direct["baseline"] == "karpathy" and direct["candidate"] == "candidate"
+    assert direct["planned_tasks"] == 1
+    scored = reference in target.SCORED and candidate in target.SCORED
+    assert direct["fully_scored_tasks"] == int(scored)
+    counts = direct["paired_outcomes"]["pooled_block_counts"]
+    assert sum(counts.values()) == 1
+    assert counts["unscored"] == int(not scored)
+    difference = int(candidate == "task_passed") - int(reference == "task_passed")
+    lower = difference - int(reference not in target.SCORED)
+    upper = difference + int(candidate not in target.SCORED)
+    sensitivity = direct["missing_outcome_sensitivity"]
+    assert sensitivity["equal_task_weight_lower"] == {"numerator": lower, "denominator": 1}
+    assert sensitivity["equal_task_weight_upper"] == {"numerator": upper, "denominator": 1}
+    if scored:
+        assert direct["equal_task_weight_mean_difference"] == {"numerator": difference, "denominator": 1}
+        assert reverse["equal_task_weight_mean_difference"] == {"numerator": -difference, "denominator": 1}
+    else:
+        assert direct["equal_task_weight_mean_difference"] is None
+        assert reverse["equal_task_weight_mean_difference"] is None
+    assert result["comparisons"]["candidate"]["equal_task_weight_mean_difference"] is None
+
+
+def test_direct_non_default_comparison_weights_tasks_and_uses_its_own_token_and_snapshot_pairs():
+    first, definitions = three_condition_report("a", ["task_failed"], ["task_passed"], ["task_failed"])
+    second, _ = three_condition_report("b", ["task_passed"] * 4, ["task_passed"] * 4, ["task_passed"] * 4)
+    for attempt in second["attempts"]:
+        condition = attempt["condition"]
+        attempt["usage"] = {
+            "input_tokens": {"default": 99, "candidate": 8, "karpathy": 10}[condition],
+            "output_tokens": 3,
+        }
+        attempt["provider_model_snapshot"] = "v1" if condition != "default" else "other"
+    second["block_comparison"] = compare_blocks(second["attempts"], set(definitions))
+    result = target.aggregate([first, second], [definitions, definitions])
+    direct = result["non_default_comparisons"]["karpathy"]["candidate"]
+    assert direct["equal_task_weight_mean_difference"] == {"numerator": 1, "denominator": 2}
+    assert direct["paired_outcomes"]["equal_task_weight_block_fractions"]["candidate_only_passed"] == {
+        "numerator": 1,
+        "denominator": 2,
+    }
+    assert direct["model_snapshot_evidence"]["same_reported_identifier_pairs"] == 4
+    assert direct["model_snapshot_evidence"]["incomplete_pairs"] == 1
+    assert direct["paired_token_differences"]["comparable_blocks"] == 4
+    assert direct["paired_token_differences"]["equal_task_weight_mean_delta"] is None
+    assert direct["paired_token_differences"]["tasks"][1]["mean_delta"]["input_tokens"] == {
+        "numerator": -2,
+        "denominator": 1,
+    }
+
+
+def test_direct_non_default_bounds_match_all_binary_completions_for_two_repetitions():
+    statuses = sorted(target.STATUSES)
+    for reference in itertools.product(statuses, repeat=2):
+        for candidate in itertools.product(statuses, repeat=2):
+            item, definitions = three_condition_report("a", ["task_passed"] * 2, candidate, reference)
+            pairs = target.aggregate([item], [definitions])["non_default_comparisons"]
+            direct = pairs["karpathy"]["candidate"]
+            possibilities = [
+                (1,) if status == "task_passed" else (0,) if status == "task_failed" else (0, 1)
+                for status in (*reference, *candidate)
+            ]
+            values = [
+                Fraction(sum(completion[2:]) - sum(completion[:2]), 2)
+                for completion in itertools.product(*possibilities)
+            ]
+            bounds = direct["missing_outcome_sensitivity"]
+            assert Fraction(**bounds["equal_task_weight_lower"]) == min(values)
+            assert Fraction(**bounds["equal_task_weight_upper"]) == max(values)
+            reverse = pairs["candidate"]["karpathy"]
+            reverse_bounds = reverse["missing_outcome_sensitivity"]
+            assert Fraction(**reverse_bounds["equal_task_weight_lower"]) == -max(values)
+            assert Fraction(**reverse_bounds["equal_task_weight_upper"]) == -min(values)
+
+
+def test_direct_non_default_fully_observed_token_deltas_are_not_computed_against_default():
+    item, definitions = three_condition_report("a", ["task_passed"], ["task_passed"], ["task_passed"])
+    for attempt in item["attempts"]:
+        attempt["usage"] = {
+            "input_tokens": {"default": 90, "candidate": 6, "karpathy": 10}[attempt["condition"]],
+            "output_tokens": {"default": 90, "candidate": 7, "karpathy": 5}[attempt["condition"]],
+        }
+    item["block_comparison"] = compare_blocks(item["attempts"], set(definitions))
+    pairs = target.aggregate([item], [definitions])["non_default_comparisons"]
+    assert pairs["karpathy"]["candidate"]["paired_token_differences"]["equal_task_weight_mean_delta"] == {
+        "input_tokens": {"numerator": -4, "denominator": 1},
+        "output_tokens": {"numerator": 2, "denominator": 1},
+    }
+    assert pairs["candidate"]["karpathy"]["paired_token_differences"]["equal_task_weight_mean_delta"] == {
+        "input_tokens": {"numerator": 4, "denominator": 1},
+        "output_tokens": {"numerator": -2, "denominator": 1},
+    }
+
+
 def test_tasks_have_equal_weight_instead_of_pooled_attempt_weight():
     reports = [
         report("a", ["task_passed"], ["task_passed"]),
@@ -333,6 +444,13 @@ def test_inconsistent_paired_block_data_is_rejected():
         attempt["usage"] = {"input_tokens": 100, "output_tokens": 10}
     item["block_comparison"] = compare_blocks(item["attempts"], set(DEFINITIONS))
     item["block_comparison"]["comparisons"]["candidate"]["blocks"][0]["token_delta"]["input_tokens"] = 99
+    with pytest.raises(ValueError, match="disagree with the attempts"):
+        target.aggregate([item], [DEFINITIONS])
+
+
+def test_boolean_in_recorded_block_count_is_not_equal_to_integer_one():
+    item = report("a", ["task_passed"], ["task_passed"])
+    item["block_comparison"]["comparisons"]["candidate"]["planned_blocks"] = True
     with pytest.raises(ValueError, match="disagree with the attempts"):
         target.aggregate([item], [DEFINITIONS])
 
@@ -774,6 +892,12 @@ def test_historical_example_revalidates_recorded_attempts():
         "denominator": 1,
     }
     assert result["quality_superiority_established"] is False
+    direct = result["non_default_comparisons"]["karpathy"]["improved"]
+    assert direct["equal_task_weight_mean_difference"] == {"numerator": 0, "denominator": 1}
+    assert direct["paired_outcomes"]["pooled_block_counts"]["both_passed"] == 3
+    order = direct["planned_order_outcomes"]["pooled_outcomes_by_planned_order"]
+    assert order["baseline_first"]["both_passed"] == 2
+    assert order["candidate_first"]["both_passed"] == 1
     for evidence in result["planned_order_outcomes"].values():
         assert sum(sum(counts.values()) for counts in evidence["pooled_outcomes_by_planned_order"].values()) == 3
 

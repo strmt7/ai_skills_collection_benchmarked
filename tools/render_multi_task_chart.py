@@ -13,11 +13,95 @@ from typing import Any
 
 from _trial_comparisons import OUTCOMES, STATUSES, compare_blocks
 from summarize_multi_task_trials import (
+    aggregate,
     missing_outcome_sensitivity,
     run_plan,
     summarize_paired_outcomes,
     summarize_snapshot_evidence,
 )
+
+
+def baseline_chart_view(report: dict[str, Any], baseline: str) -> dict[str, Any]:
+    """Recompute a chart view from attempts with an explicit non-default baseline."""
+    if baseline == "default":
+        return report
+    if (
+        report["quality_superiority_established"] is not False
+        or type(report["task_count"]) is not int
+        or report["task_count"] != len(report["tasks"])
+    ):
+        raise ValueError("Chart requires all planned tasks and no superiority claim")
+    definitions = report["condition_definitions"]
+    if baseline not in definitions or baseline == "default":
+        raise ValueError("Chart baseline must be a declared condition")
+    candidates = set(definitions) - {"default", baseline}
+    if not candidates:
+        raise ValueError("A non-default baseline requires another non-default condition")
+
+    def same(left: Any, right: Any) -> bool:
+        return json.dumps(left, sort_keys=True, allow_nan=False) == json.dumps(right, sort_keys=True, allow_nan=False)
+
+    projected_definitions = {
+        "default": definitions[baseline],
+        **{name: definitions[name] for name in sorted(candidates)},
+    }
+    reports = []
+    for task in report["tasks"]:
+        if not same(task["block_comparison"], compare_blocks(task["attempts"], set(definitions))):
+            raise ValueError("Recorded blocks disagree with attempts")
+        for name in definitions:
+            counts = Counter(attempt["status"] for attempt in task["attempts"] if attempt["condition"] == name)
+            if not same(task["attempt_status_counts"][name], {status: counts[status] for status in sorted(STATUSES)}):
+                raise ValueError("Recorded attempt counts disagree with attempts")
+        attempts = [
+            {**attempt, "condition": "default" if attempt["condition"] == baseline else attempt["condition"]}
+            for attempt in task["attempts"]
+            if attempt["condition"] in candidates | {baseline}
+        ]
+        planned = {
+            "default": sum(task["attempt_status_counts"][baseline].values()),
+            **{name: sum(task["attempt_status_counts"][name].values()) for name in sorted(candidates)},
+        }
+        reports.append(
+            {
+                "task_id": task["task_id"],
+                "protocol_sha256": task["protocol_sha256"],
+                "grading_manifest_sha256": task["grading_manifest_sha256"],
+                "expected_grading_cases": task["expected_grading_cases"],
+                "limitations": task["limitations"],
+                "block_comparison": compare_blocks(attempts, set(projected_definitions)),
+                "model_requested": report["model_requested"],
+                "reasoning_effort_requested": report["reasoning_effort_requested"],
+                "partition": report["partition"],
+                "task_count": 1,
+                "conditions": {name: {"planned_attempts": count} for name, count in planned.items()},
+                "attempts": attempts,
+            }
+        )
+    projected = aggregate(reports, [projected_definitions] * len(reports))
+    for candidate in sorted(candidates):
+        direct = report["non_default_comparisons"][baseline][candidate]
+        comparison = projected["comparisons"][candidate]
+        if (
+            direct["baseline"] != baseline
+            or direct["candidate"] != candidate
+            or any(not same(direct[key], comparison[key]) for key in comparison)
+            or not same(direct["paired_outcomes"], projected["paired_outcomes"][candidate])
+            or not same(direct["missing_outcome_sensitivity"], projected["missing_outcome_sensitivity"][candidate])
+            or not same(direct["model_snapshot_evidence"], projected["model_snapshot_evidence"][candidate])
+            or not same(direct["paired_token_differences"], projected["token_comparisons"][candidate])
+            or not same(
+                direct["task_differences"],
+                [
+                    {"task_id": row["task_id"], "candidate_minus_baseline": row["candidate_minus_default"][candidate]}
+                    for row in projected["tasks"]
+                ],
+            )
+        ):
+            raise ValueError("Direct comparison disagrees with recorded attempts")
+    projected["plan_sha256"] = report["plan_sha256"]
+    projected["chart_baseline"] = baseline
+    return projected
 
 
 def graph_rows(report: dict[str, Any]) -> list[tuple[str, list[Fraction], Fraction | None, int]]:
@@ -176,10 +260,12 @@ def render_paired_svg(report: dict[str, Any]) -> bytes:
 
     rows = paired_rows(report)
     snapshot_labels = snapshot_pair_labels(report)
+    baseline = report.get("chart_baseline", "default")
+    baseline_label = "Default" if baseline == "default" else baseline
     styles = (
         ("Both passed", "#0072B2", None, "white"),
         ("Candidate only passed", "#007C58", None, "white"),
-        ("Default only passed", "#B44600", None, "white"),
+        (f"{baseline_label} only passed", "#B44600", None, "white"),
         ("Neither passed", "#4C566A", None, "white"),
         ("Unscored", "#F0E442", "///", "black"),
     )
@@ -253,7 +339,10 @@ def render_paired_svg(report: dict[str, Any]) -> bytes:
                 fontsize=8,
             )
             figure.text(
-                0.01, 0.12, "+ candidate ahead; - default ahead; = equal observed rates; ? unscored task.", fontsize=8
+                0.01,
+                0.12,
+                f"+ candidate ahead; - {baseline} ahead; = equal observed rates; ? unscored task.",
+                fontsize=8,
             )
             figure.text(
                 0.01,
@@ -275,7 +364,8 @@ def render_paired_svg(report: dict[str, Any]) -> bytes:
                 metadata={
                     "Date": None,
                     "Creator": "render_multi_task_chart.py",
-                    "Description": f"plan_sha256={report['plan_sha256']};view=paired_outcomes",
+                    "Description": f"plan_sha256={report['plan_sha256']};view=paired_outcomes"
+                    + (f";baseline={baseline}" if baseline != "default" else ""),
                 },
             )
         finally:
@@ -292,6 +382,7 @@ def render_svg(report: dict[str, Any]) -> bytes:
     from matplotlib.lines import Line2D
 
     rows = graph_rows(report)
+    baseline = report.get("chart_baseline", "default")
     unavailable, attempts, distinct = snapshot_summary(report)
     snapshot_labels = snapshot_pair_labels(report)
     sensitivity = sensitivity_ranges(report)
@@ -336,7 +427,7 @@ def render_svg(report: dict[str, Any]) -> bytes:
             axis.set_ylim(len(conditions) - 0.5, -0.5)
             axis.set_xlim(-1.05, 1.05)
             axis.set_xticks([-1, -0.5, 0, 0.5, 1], ["-1", "-0.5", "0", "+0.5", "+1"])
-            axis.set_xlabel("Task pass-rate difference (condition minus default)")
+            axis.set_xlabel(f"Task pass-rate difference (condition minus {baseline})")
             figure.suptitle(
                 f"Task-weighted comparison: {report['partition']} | requested model: {report['model_requested']}"
                 f" | requested effort: {report['reasoning_effort_requested']}",
@@ -391,7 +482,8 @@ def render_svg(report: dict[str, Any]) -> bytes:
                 metadata={
                     "Date": None,
                     "Creator": "render_multi_task_chart.py",
-                    "Description": f"plan_sha256={report['plan_sha256']}",
+                    "Description": f"plan_sha256={report['plan_sha256']}"
+                    + (f";baseline={baseline}" if baseline != "default" else ""),
                 },
             )
         finally:
@@ -403,6 +495,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--plan", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--baseline", default="default", help="Declared baseline condition (default: default)")
     parser.add_argument("--view", choices=("difference", "paired"), default="difference")
     parser.add_argument("--check", action="store_true", help="Compare an existing SVG without writing")
     return parser
@@ -411,7 +504,7 @@ def build_parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
-        report = run_plan(args.plan)
+        report = baseline_chart_view(run_plan(args.plan), args.baseline)
         rendered = render_paired_svg(report) if args.view == "paired" else render_svg(report)
         if args.check:
             if args.output.read_bytes().replace(b"\r\n", b"\n") != rendered.replace(b"\r\n", b"\n"):

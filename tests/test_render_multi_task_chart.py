@@ -52,7 +52,85 @@ def fixture_report(*, incomplete: bool = False, single: bool = False, candidate_
     return result
 
 
+def reference_fixture_report(*, incomplete: bool = False):
+    definitions = {"default": {}, "improved": {"skills": ["bundle"]}, "karpathy": {"skills": ["reference"]}}
+    reports = []
+    for task, statuses in (
+        ("a", {"default": ["task_failed"], "improved": ["task_passed"], "karpathy": ["task_failed"]}),
+        (
+            "b",
+            {
+                name: ["timed_out" if incomplete and name == "karpathy" else "task_passed", "task_passed"]
+                for name in definitions
+            },
+        ),
+    ):
+        attempts = [
+            {"repetition": i, "condition": condition, "status": status, "usage": None, "provider_model_snapshot": None}
+            for condition, values in statuses.items()
+            for i, status in enumerate(values, 1)
+        ]
+        reports.append(
+            {
+                "task_id": task,
+                "protocol_sha256": task * 64,
+                "grading_manifest_sha256": "f" * 64,
+                "expected_grading_cases": 1,
+                "limitations": [],
+                "block_comparison": compare_blocks(attempts, set(definitions)),
+                "model_requested": "fixture",
+                "reasoning_effort_requested": "high",
+                "partition": "synthetic control",
+                "task_count": 1,
+                "conditions": {name: {"planned_attempts": len(values)} for name, values in statuses.items()},
+                "attempts": attempts,
+            }
+        )
+    result = aggregate(reports, [definitions] * len(reports))
+    result["plan_sha256"] = "0" * 64
+    return result
+
+
 class ChartRowsTests(unittest.TestCase):
+    def test_non_default_baseline_recomputes_direct_pair_from_attempts(self):
+        report = reference_fixture_report()
+        view = target.baseline_chart_view(report, "karpathy")
+        self.assertEqual(view["chart_baseline"], "karpathy")
+        self.assertEqual(target.graph_rows(view), [("improved", [Fraction(1), Fraction(0)], Fraction(1, 2), 2)])
+        self.assertEqual(target.paired_rows(view)[0][1][1], Fraction(1, 2))
+        self.assertIs(target.baseline_chart_view(report, "default"), report)
+
+    def test_non_default_baseline_preserves_unscored_task_and_sensitivity_bounds(self):
+        view = target.baseline_chart_view(reference_fixture_report(incomplete=True), "karpathy")
+        self.assertEqual(target.graph_rows(view), [("improved", [Fraction(1)], None, 2)])
+        self.assertEqual(target.sensitivity_ranges(view)["improved"], (Fraction(1, 2), Fraction(3, 4)))
+        self.assertEqual(target.paired_rows(view)[0][4]["unscored"], 1)
+
+    def test_non_default_baseline_rejects_tampered_comparison_and_attempts(self):
+        report = reference_fixture_report()
+        report["non_default_comparisons"]["karpathy"]["improved"]["equal_task_weight_mean_difference"]["numerator"] = 9
+        with self.assertRaisesRegex(ValueError, "Direct comparison"):
+            target.baseline_chart_view(report, "karpathy")
+        report = reference_fixture_report()
+        report["non_default_comparisons"]["karpathy"]["improved"]["equal_task_weight_mean_difference"]["numerator"] = (
+            True
+        )
+        with self.assertRaisesRegex(ValueError, "Direct comparison"):
+            target.baseline_chart_view(report, "karpathy")
+        report = reference_fixture_report()
+        report["tasks"][0]["attempts"][0]["status"] = "task_passed"
+        with self.assertRaisesRegex(ValueError, "blocks disagree"):
+            target.baseline_chart_view(report, "karpathy")
+        report = reference_fixture_report()
+        report["quality_superiority_established"] = True
+        with self.assertRaisesRegex(ValueError, "no superiority claim"):
+            target.baseline_chart_view(report, "karpathy")
+        report = reference_fixture_report()
+        with self.assertRaisesRegex(ValueError, "declared condition"):
+            target.baseline_chart_view(report, "unknown")
+        with self.assertRaisesRegex(ValueError, "another non-default"):
+            target.baseline_chart_view(fixture_report(), "candidate")
+
     def test_incomplete_data_has_no_mean(self):
         rows = target.graph_rows(fixture_report(incomplete=True))
         self.assertEqual(len(rows[0][1]), 1)
@@ -123,6 +201,19 @@ class PairedRowsTests(unittest.TestCase):
 
 @unittest.skipUnless(importlib.util.find_spec("matplotlib") is not None, "requires the reports extra")
 class ChartRenderTests(unittest.TestCase):
+    def test_non_default_baseline_labels_both_chart_views_and_metadata(self):
+        report = target.baseline_chart_view(reference_fixture_report(), "karpathy")
+        for render, label in (
+            (target.render_svg, "Task pass-rate difference (condition minus karpathy)"),
+            (target.render_paired_svg, "karpathy only passed"),
+        ):
+            first = render(report)
+            self.assertEqual(first, render(report))
+            root = ET.fromstring(first)
+            text = " ".join("".join(node.itertext()) for node in root.iter() if node.tag.endswith("text"))
+            self.assertIn(label, text)
+            self.assertIn(";baseline=karpathy", first.decode())
+
     def test_paired_view_is_reproducible_and_explains_missing_data(self):
         first = target.render_paired_svg(fixture_report(incomplete=True))
         self.assertEqual(first, target.render_paired_svg(fixture_report(incomplete=True)))

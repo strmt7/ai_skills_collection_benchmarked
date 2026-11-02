@@ -331,6 +331,10 @@ jobs:
           python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/report-compatibility/task-differences.svg" --check
           python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --view paired --output "$RUNNER_TEMP/report-compatibility/paired-outcomes.svg"
           python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --view paired --output "$RUNNER_TEMP/report-compatibility/paired-outcomes.svg" --check
+          python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --baseline karpathy --output "$RUNNER_TEMP/report-compatibility/karpathy-differences.svg"
+          python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --baseline karpathy --output "$RUNNER_TEMP/report-compatibility/karpathy-differences.svg" --check
+          python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --baseline karpathy --view paired --output "$RUNNER_TEMP/report-compatibility/karpathy-paired.svg"
+          python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --baseline karpathy --view paired --output "$RUNNER_TEMP/report-compatibility/karpathy-paired.svg" --check
           python tools/render_token_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/report-compatibility/token-differences.svg"
           python tools/render_token_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/report-compatibility/token-differences.svg" --check
       - name: Verify published single-task charts
@@ -371,6 +375,10 @@ jobs:
           python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/matched-development-report/task-differences.svg" --check
           python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --view paired --output "$RUNNER_TEMP/matched-development-report/paired-outcomes.svg"
           python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --view paired --output "$RUNNER_TEMP/matched-development-report/paired-outcomes.svg" --check
+          python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --baseline karpathy --output "$RUNNER_TEMP/matched-development-report/karpathy-differences.svg"
+          python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --baseline karpathy --output "$RUNNER_TEMP/matched-development-report/karpathy-differences.svg" --check
+          python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --baseline karpathy --view paired --output "$RUNNER_TEMP/matched-development-report/karpathy-paired.svg"
+          python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --baseline karpathy --view paired --output "$RUNNER_TEMP/matched-development-report/karpathy-paired.svg" --check
           python tools/render_token_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/matched-development-report/token-differences.svg"
           python tools/render_token_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/matched-development-report/token-differences.svg" --check
       - name: Upload verified tables and graphs

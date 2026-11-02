@@ -211,6 +211,24 @@ not establish independence, and unscored results remain unknown. Research on
 retaining paired outcomes; it does not validate a superiority claim for this
 experiment.
 
+`non_default_comparisons` compares every ordered pair of non-default
+conditions directly, using their matched repetitions rather than subtracting
+two summaries against default. For example, `karpathy` then `improved` reports
+improved minus Karpathy. Each pair includes per-task differences, equally
+weighted means, paired outcomes, missing-outcome bounds, reported snapshot
+identifiers, successful-pair token differences, and planned relative order.
+Unscored attempts in one member prevent that pair's complete mean; an unscored
+default attempt does not make an otherwise complete non-default pair unscored.
+These are the same observed attempts viewed in another comparison, not extra
+replications, a confidence interval, or evidence of a model or skill advantage.
+Prompt runtime-path evidence remains available only for comparisons with default.
+The machine-readable report includes the direct pairs. To render the improved
+condition against Karpathy, pass `--baseline karpathy` to
+`tools/render_multi_task_chart.py`; it recomputes the selected view from the
+recorded attempts and checks it against the direct comparison. The default
+chart remains available without that option. Non-default baseline charts show
+other non-default conditions; use the default chart for comparisons with default.
+
 For each comparison, `missing_outcome_sensitivity` reports exact lower and
 upper bounds from hypothetical pass/fail assignments for all unscored attempts.
 For each task, the lower bound assigns unscored baseline attempts passes and

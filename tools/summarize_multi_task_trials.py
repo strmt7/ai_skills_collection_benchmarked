@@ -430,6 +430,90 @@ def missing_outcome_sensitivity(rows: list[dict[str, Any]], condition: str) -> d
     }
 
 
+def project_condition_pair(reports: list[dict[str, Any]], baseline: str, candidate: str) -> list[dict[str, Any]]:
+    """Project two verified conditions into the existing paired-comparison machinery."""
+    if baseline == candidate:
+        raise ValueError("Pair members must be distinct")
+    projected = []
+    for report in reports:
+        if baseline not in report["conditions"] or candidate not in report["conditions"]:
+            raise ValueError("Pair members must be planned conditions")
+        attempts = [
+            {**attempt, "condition": "default" if attempt["condition"] == baseline else "candidate"}
+            for attempt in report["attempts"]
+            if attempt["condition"] in {baseline, candidate}
+        ]
+        projected.append(
+            {
+                "task_id": report["task_id"],
+                "conditions": {
+                    "default": report["conditions"][baseline],
+                    "candidate": report["conditions"][candidate],
+                },
+                "attempts": attempts,
+                "block_comparison": compare_blocks(attempts, {"default", "candidate"}),
+            }
+        )
+    return projected
+
+
+def summarize_non_default_pairs(reports: list[dict[str, Any]], rows: list[dict[str, Any]]) -> dict[str, Any]:
+    """Compare each ordered pair of non-default conditions using their own matched attempts."""
+    names = sorted(set(reports[0]["conditions"]) - {"default"})
+    pairs: dict[str, Any] = {}
+    for baseline in names:
+        candidates = {}
+        for candidate in names:
+            if baseline == candidate:
+                continue
+            projected = project_condition_pair(reports, baseline, candidate)
+            pair_rows = [
+                {
+                    "task_id": row["task_id"],
+                    "block_comparison": item["block_comparison"],
+                    "attempt_status_counts": {
+                        "default": row["attempt_status_counts"][baseline],
+                        "candidate": row["attempt_status_counts"][candidate],
+                    },
+                }
+                for row, item in zip(rows, projected, strict=True)
+            ]
+            differences = []
+            for row in pair_rows:
+                left, right = row["attempt_status_counts"]["default"], row["attempt_status_counts"]["candidate"]
+                planned = sum(left.values())
+                if planned != sum(right.values()) or planned < 1:
+                    raise ValueError("Pair members require equal planned condition denominators")
+                scored = left["task_passed"] + left["task_failed"] == planned and (
+                    right["task_passed"] + right["task_failed"] == planned
+                )
+                value = Fraction(right["task_passed"] - left["task_passed"], planned) if scored else None
+                differences.append({"task_id": row["task_id"], "candidate_minus_baseline": value})
+            complete = [
+                item["candidate_minus_baseline"] for item in differences if item["candidate_minus_baseline"] is not None
+            ]
+            average = sum(complete, Fraction()) / len(rows) if len(complete) == len(rows) else None
+            candidates[candidate] = {
+                "baseline": baseline,
+                "candidate": candidate,
+                "planned_tasks": len(rows),
+                "fully_scored_tasks": len(complete),
+                "unscored_tasks": len(rows) - len(complete),
+                "equal_task_weight_mean_difference": fraction(average),
+                "task_differences": [
+                    {**item, "candidate_minus_baseline": fraction(item["candidate_minus_baseline"])}
+                    for item in differences
+                ],
+                "paired_outcomes": summarize_paired_outcomes(pair_rows, "candidate"),
+                "missing_outcome_sensitivity": missing_outcome_sensitivity(pair_rows, "candidate"),
+                "model_snapshot_evidence": summarize_snapshot_evidence(projected, "candidate"),
+                "paired_token_differences": summarize_paired_tokens(projected, "candidate"),
+            }
+        if candidates:
+            pairs[baseline] = candidates
+    return pairs
+
+
 def aggregate(reports: list[dict[str, Any]], definitions: list[dict[str, Any]]) -> dict[str, Any]:
     """Describe equally weighted task differences; callers must verify reports first."""
     if not reports or len(reports) != len(definitions):
@@ -470,7 +554,7 @@ def aggregate(reports: list[dict[str, Any]], definitions: list[dict[str, Any]]) 
         rates: dict[str, Fraction | None] = {}
         if any(attempt["condition"] not in conditions for attempt in report["attempts"]):
             raise ValueError("Attempt has an unplanned condition")
-        if report["block_comparison"] != compare_blocks(report["attempts"], conditions):
+        if canonical(report["block_comparison"]) != canonical(compare_blocks(report["attempts"], conditions)):
             raise ValueError("Matched block comparisons disagree with the attempts")
         for condition in sorted(conditions):
             statuses = [attempt["status"] for attempt in report["attempts"] if attempt["condition"] == condition]
@@ -535,6 +619,7 @@ def aggregate(reports: list[dict[str, Any]], definitions: list[dict[str, Any]]) 
         "condition_definitions": definitions[0],
         "tasks": rows,
         "comparisons": comparisons,
+        "non_default_comparisons": summarize_non_default_pairs(reports, rows),
         "paired_outcomes": {
             condition: summarize_paired_outcomes(rows, condition) for condition in sorted(conditions - {"default"})
         },
@@ -556,6 +641,7 @@ def aggregate(reports: list[dict[str, Any]], definitions: list[dict[str, Any]]) 
         "limitations": [
             "Descriptive task-weighted differences do not establish statistical significance or generalization.",
             "Pooled paired-block counts are descriptive; task-weighted fractions avoid weighting a task more for having more repetitions, and neither proves independence or superiority.",
+            "Direct non-default condition pairs are descriptive and use the same matched attempts; they are not independent replications or evidence of superiority.",
             "Unscored attempts prevent an aggregate difference for the affected comparison.",
             "Missing-outcome bounds hypothetically assign every unscored attempt pass or fail; they are not confidence intervals, observed outcomes, or predictions of reruns.",
             "A frozen plan and matching hashes alone do not establish preregistration or grading authenticity.",
@@ -619,6 +705,30 @@ def run_plan(path: Path) -> dict[str, Any]:
         condition: summarize_planned_order(reports, configs, condition)
         for condition in sorted(set(definitions[0]) - {"default"})
     }
+    for baseline, candidates in result["non_default_comparisons"].items():
+        for candidate, comparison in candidates.items():
+            projected = project_condition_pair(reports, baseline, candidate)
+            projected_configs = [
+                {
+                    "conditions": {
+                        "default": config["conditions"][baseline],
+                        "candidate": config["conditions"][candidate],
+                    },
+                    "planned_order": [
+                        {
+                            "repetition": block["repetition"],
+                            "conditions": [
+                                "default" if name == baseline else "candidate"
+                                for name in block["conditions"]
+                                if name in {baseline, candidate}
+                            ],
+                        }
+                        for block in config["planned_order"]
+                    ],
+                }
+                for config in configs
+            ]
+            comparison["planned_order_outcomes"] = summarize_planned_order(projected, projected_configs, "candidate")
     result["limitations"].append(
         "Order groups describe planned relative positions, not verified execution order or an order effect; "
         "pooled blocks can be dependent and tasks may have unequal repetition counts."
