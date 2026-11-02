@@ -1,0 +1,35 @@
+{
+  "license_scope": "The source skill README declares MIT; no full license for this skill or project root was found in the pinned tree.",
+  "observed_at_utc": "2026-11-02T22:57:58Z",
+  "provider_version": "0.9.5+catalog.portable4",
+  "upstream_tree": {
+    "commit": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4",
+    "license_paths": [
+      "packages/cli/skills/blog-cover-image-cli/LICENSE",
+      "skills/blog-cover-image-cli/LICENSE"
+    ],
+    "raw_response_sha256": "9e15a665578a10b4457526b5d5f9d9558dcabe2049190f6b388e4b8f6fd899ef",
+    "repo": "Varnan-Tech/opendirectory",
+    "truncated": false
+  },
+  "web_sources": [
+    {
+      "native_result_sha256": "fef83a2b2cf0da5cfe1a75403f8fe2232e7a9feec8cb2bfa4fffbb687145cf35",
+      "scope": "GitHub CLI diff/view behavior",
+      "status_code": 200,
+      "url": "https://cli.github.com/manual/gh_pr_diff"
+    },
+    {
+      "native_result_sha256": "eebcb9b91cdfa2eff708a6c17a0e4ac6b6d785b539049d33589aba28f15aaeec",
+      "scope": "GitHub CLI diff/view behavior",
+      "status_code": 200,
+      "url": "https://cli.github.com/manual/gh_pr_view"
+    },
+    {
+      "native_result_sha256": "ad617e40cc8d6ec3a3eea404a9445e5a8e1d62a20d3ec2285a0cb53b1ab5fc90",
+      "scope": "GitHub REST changed-files pagination and 3,000-file maximum",
+      "status_code": 200,
+      "url": "https://docs.github.com/en/rest/pulls/pulls"
+    }
+  ]
+}

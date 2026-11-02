@@ -24255,13 +24255,76 @@
           {
             "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
             "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          },
+          {
+            "path": "docs/research-explain-this-pr.md",
+            "scope": "Scoped large-diff and source review, not an agent evaluation.",
+            "sha256": "a5c655c8f229e7e4cbce53ab5304bd08d41e3754239b1039a07f3a2820193043"
+          },
+          {
+            "path": "included/repaired/skills/by-category/coding-refactoring-repository-automation/reddit-verified-gtm-registry/explain-this-pr/repair.json",
+            "scope": "Maintained overlay for incomplete diff coverage and explicit posting intent.",
+            "sha256": "5f9816ac8050c340ecac6d08fc07ca0bde1282a6595098bd8fe3c0c320ed012e"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/explain-pr-diff-v1/control.py",
+            "scope": "Synthetic diff control and source record; no model trial.",
+            "sha256": "4cc67bdd9946986ee7f0139033eac25252d534a8d7d25cf6276d17ae300fc8f7"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/explain-pr-diff-v1/windows-result.json",
+            "scope": "Synthetic diff control and source record; no model trial.",
+            "sha256": "62abd336d2ec87739ed8a2f50b42b6708ff556b797095718a1d4dcfabd14fa65"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/explain-pr-diff-v1/linux-result.json",
+            "scope": "Synthetic diff control and source record; no model trial.",
+            "sha256": "afb3546f4e15537a1f37a22c6ccab26518ac26248f81b2d3c478244e537613e4"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/explain-pr-diff-v1/raw/full.diff",
+            "scope": "Synthetic diff control and source record; no model trial.",
+            "sha256": "fb7ef14cb12da27071adf2143f332aa41bd38ba4244c441648bbcce308b96ab3"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/explain-pr-diff-v1/sources.json",
+            "scope": "Synthetic diff control and source record; no model trial.",
+            "sha256": "5436e7566811941ea4a4173c04a36aaecd52571c6911930da186e392ea8b322e"
           }
         ],
+        "open_work": [
+          "Qualify changed-file pagination, missing binary patches and revision drift against representative GitHub cases without posting.",
+          "Independently evaluate agent behavior and broader PR types; synthetic excerpt control is not an efficacy benchmark."
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "README.md": {
+            "review_scope": "Complete source README read, including MIT declaration; no independent license determination.",
+            "sha256": "8ac4af8c1a1da030636796c186e93b8c580f7c7562be1b359f2c597749db7d70",
+            "status": "reviewed"
+          },
+          "SKILL.md": {
+            "review_scope": "Complete pinned instruction text read; large-diff excerpt behavior tested with a synthetic fixture; other claims and agent effectiveness remain open.",
+            "sha256": "a092ecb1dc1ab0f493c3cb94980be73cc0e8ecbd6a0789fa4e822d71e558e733",
+            "status": "reviewed"
+          },
+          "evals/evals.json": {
+            "review_scope": "Complete source eval definitions read as upstream material; they were not used as an independent model benchmark.",
+            "sha256": "d48bd70066928d020d9f10527287ba33ecbcf1877f0c3818465e931e6bf87241",
+            "status": "reviewed"
+          }
+        },
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/coding-refactoring-repository-automation/reddit-verified-gtm-registry/explain-this-pr/repair.json",
+            "scope": "Maintained overlay; original source remains unchanged.",
+            "sha256": "5f9816ac8050c340ecac6d08fc07ca0bde1282a6595098bd8fe3c0c320ed012e"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "Varnan-Tech/opendirectory",
       "source_signature": {

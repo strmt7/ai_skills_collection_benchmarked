@@ -85,6 +85,11 @@
 /artifacts/repaired-skill-readiness/e2e-response-v1/** text eol=lf
 /included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/bun-runtime/** text eol=lf
 /artifacts/repaired-skill-readiness/bun-runtime-v1/** text eol=lf
+
+# Preserve the pull-request explanation overlay and its original source bytes.
+/included/repaired/skills/by-category/coding-refactoring-repository-automation/reddit-verified-gtm-registry/explain-this-pr/** text eol=lf
+/included/repaired/skills/by-category/coding-refactoring-repository-automation/reddit-verified-gtm-registry/explain-this-pr/provenance/** -text !eol whitespace=cr-at-eol
+/artifacts/repaired-skill-readiness/explain-pr-diff-v1/** text eol=lf
 /included/repaired/skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill/** text eol=lf
 /artifacts/repaired-skill-readiness/playwright-executor-v1/** text eol=lf
 /included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-c/** text eol=lf

@@ -1,0 +1,21 @@
+{
+  "agent_efficacy_scored": false,
+  "checks": {
+    "expected_diff_exit": true,
+    "large_diff": true,
+    "tail_change_missing_from_excerpt": true,
+    "tail_change_present": true,
+    "tail_file_missing_from_excerpt": true,
+    "tail_file_present": true
+  },
+  "diff_line_count": 513,
+  "diff_sha256": "fb7ef14cb12da27071adf2143f332aa41bd38ba4244c441648bbcce308b96ab3",
+  "diff_stderr": "",
+  "excerpt_line_count": 200,
+  "git_version": "git version 2.56.0.windows.1",
+  "limitations": [
+    "Synthetic git diff component control; no GitHub API, posting, model, or agent-effectiveness evaluation."
+  ],
+  "platform": "Windows",
+  "schema_version": 1
+}
