@@ -29,6 +29,21 @@ def test_overlay_preserves_upstream_and_binds_evidence():
     assert (OVERLAY / "provenance/upstream.README.md").read_bytes() == canonical(MIRROR / "README.md")
     assert repair["original_skill_sha256"] == digest(OVERLAY / "provenance/original.SKILL.md")
     assert repair["model_performance_claim"] is False
+    assert set(repair["evidence_sha256"]) == {
+        "cases.json",
+        "linux-313-result.json",
+        "qualification.json",
+        "reproduce.py",
+        "requirements-linux.txt",
+        "requirements-windows.txt",
+        "requirements.in",
+        "sources.json",
+        "test_inventory.py",
+        "win-311-result.json",
+        "win-312-result.json",
+        "win-313-result.json",
+        "win-314-result.json",
+    }
     for path, expected in repair["overlay_sha256"].items():
         assert digest(OVERLAY / path) == expected, path
     for path, expected in repair["evidence_sha256"].items():

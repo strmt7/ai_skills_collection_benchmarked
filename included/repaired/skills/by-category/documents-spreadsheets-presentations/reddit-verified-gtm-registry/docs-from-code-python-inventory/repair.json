@@ -16,7 +16,6 @@
     "provenance/upstream.README.md": "70c14cec2db6ac7e26ccc0e09e02e4d4e7c71520f43dc3cf98b39a04270fd3bc"
   },
   "evidence_sha256": {
-    "__pycache__/test_inventory.cpython-313-pytest-9.2.0.pyc": "e0655ccb94011e34b17d531d78b6d8f9a97e55dc00a829d91442437a326050e0",
     "cases.json": "11a22224e9c225936ba8fbce12eb38310caf55e9cf983bd6b29a76f5cabf0231",
     "linux-313-result.json": "5cdbc915ec0714538e2bb687f3d0748969b6430aac61d7436a91c30ec10ce6e6",
     "qualification.json": "fb6ced53972ae5310db327d5bc19f46666126c9c94b4d10b089d7157e2380839",
