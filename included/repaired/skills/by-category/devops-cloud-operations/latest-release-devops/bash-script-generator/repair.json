@@ -6,18 +6,26 @@
   "source_mirror": "included/skills/by-category/devops-cloud-operations/latest-release-devops/bash-script-generator",
   "original_skill_sha256": "b47b1523883f16e171bfef13efa34ee0786b6e2225ef6f5e91b5bd726d43d4ab",
   "provenance_skill": "provenance/original.SKILL.md",
-  "repaired_skill_sha256": "8d5a577a6125a301e78c2f3de379ec54a448b0afec5c78bc421986f16c010c27",
+  "repaired_skill_sha256": "3e6d5030a3c4267e2e77869b747ea7365e21a252a44bd8e5b1029d432059162d",
   "license_file": "LICENSE",
   "license_sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
-  "scope": "Selected shell interpreter and generated-output validation guidance; component controls do not measure agent effectiveness.",
+  "scope": "Selected shell interpreter, output validation and Bash error-handling guidance; component controls do not measure agent effectiveness.",
   "model_performance_claim": false,
   "readiness_evidence": "artifacts/repaired-skill-readiness/bash-generator-v1/windows.json",
   "documented_repairs": [
     "Validate the actual generated output rather than relying on the skill self-check.",
-    "Select the requested shell and do not present the Bash template as a POSIX sh scaffold."
+    "Select the requested shell and do not present the Bash template as a POSIX sh scaffold.",
+    "Handle failures explicitly in Bash conditional contexts and do not interpret pipefail as completion-time ordering."
   ],
   "evidence_sha256": {
     "control.py": "a1a591a0aacf2e817b2f77c1d2d09fa4d1dfad1c20f839cbb0a9744b95f75168",
-    "windows.json": "b818aca519869374e903596278c4e218ff1ba2b361e3032d877cecd7a8367431"
-  }
+    "windows.json": "b818aca519869374e903596278c4e218ff1ba2b361e3032d877cecd7a8367431",
+    "errexit-control.py": "a3101e4d9f135888ca0cb94586c43b7d713bd148c6fa8271cd674a015bb29f67",
+    "errexit-windows.json": "075e3655141a181efee1914e1fe53122d0956fcadc85212d4d248c5ae484f210"
+  },
+  "prior_repair_skill": "provenance/prior-overlay.SKILL.md",
+  "prior_repair_sha256": "8d5a577a6125a301e78c2f3de379ec54a448b0afec5c78bc421986f16c010c27",
+  "additional_evidence": [
+    "artifacts/repaired-skill-readiness/bash-generator-v1/errexit-windows.json"
+  ]
 }

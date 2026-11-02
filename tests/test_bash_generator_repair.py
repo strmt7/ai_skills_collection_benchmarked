@@ -36,25 +36,41 @@ def test_repair_preserves_source_and_binds_the_observation() -> None:
     assert recorded["source_skill_sha256"] == manifest["original_skill_sha256"]
     assert recorded["source_ci_sha256"] == digest(SOURCE / "scripts/run_ci_checks.sh")
     assert recorded["source_template_sha256"] == digest(SOURCE / "assets/templates/standard-template.sh")
-    assert recorded["overlay_skill_sha256"] == manifest["repaired_skill_sha256"]
+    assert recorded["overlay_skill_sha256"] == digest(OVERLAY / manifest["prior_repair_skill"])
+    assert recorded["overlay_skill_sha256"] == manifest["prior_repair_sha256"]
     assert recorded["agent_efficacy_scored"] is False
     assert all(recorded["observations_match"].values())
 
+    errexit = json.loads((EVIDENCE / "errexit-windows.json").read_text(encoding="utf-8"))
+    assert errexit["source_guide_sha256"] == digest(SOURCE / "docs/bash-scripting-guide.md")
+    assert errexit["overlay_skill_sha256"] == manifest["repaired_skill_sha256"]
+    assert errexit["cases"]["pipeline"]["stderr"] == "right\nleft\n"
+    assert all(errexit["observations_match"].values())
+    assert errexit["agent_efficacy_scored"] is False
 
-def test_component_control_against_installed_shells() -> None:
+
+def installed_bash() -> Path:
     if os.name == "nt":
         git = shutil.which("git")
         if not git:
             pytest.skip("Git for Windows is unavailable")
-        git_home = Path(git).resolve().parent.parent
-        bash, dash = git_home / "bin/bash.exe", git_home / "usr/bin/dash.exe"
+        bash = Path(git).resolve().parent.parent / "bin/bash.exe"
     else:
-        bash_path, dash_path = shutil.which("bash"), shutil.which("dash")
-        if not bash_path or not dash_path:
-            pytest.skip("Bash or dash is unavailable")
-        bash, dash = Path(bash_path), Path(dash_path)
-    if not bash.is_file() or not dash.is_file():
-        pytest.skip("Bash or dash is unavailable")
+        bash_path = shutil.which("bash")
+        if not bash_path:
+            pytest.skip("Bash is unavailable")
+        bash = Path(bash_path)
+    if not bash.is_file():
+        pytest.skip("Bash is unavailable")
+    return bash
+
+
+def test_component_control_against_installed_shells() -> None:
+    bash = installed_bash()
+    dash_path = str(bash.parent.parent / "usr/bin/dash.exe") if os.name == "nt" else shutil.which("dash")
+    if not dash_path or not Path(dash_path).is_file():
+        pytest.skip("dash is unavailable")
+    dash = Path(dash_path)
     process = subprocess.run(
         [sys.executable, str(EVIDENCE / "control.py"), "--bash", str(bash), "--dash", str(dash)],
         capture_output=True,
@@ -70,3 +86,22 @@ def test_component_control_against_installed_shells() -> None:
     assert result["exit_codes"]["template_bash_syntax"] == 0
     assert result["exit_codes"]["template_dash_syntax"] != 0
     assert result["exit_codes"]["valid_output_dash_execution"] == 0
+
+
+def test_errexit_and_pipeline_controls_against_installed_bash() -> None:
+    bash = installed_bash()
+    process = subprocess.run(
+        [sys.executable, str(EVIDENCE / "errexit-control.py"), "--bash", str(bash)],
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        check=False,
+        timeout=30,
+    )
+    assert process.returncode == 0, process.stderr
+    result = json.loads(process.stdout)
+    assert result["cases"]["standalone"]["exit_code"] != 0
+    assert result["cases"]["conditional"]["stdout"] == "continued\nbranch\n"
+    assert result["cases"]["explicit"]["stdout"] == "caught\n"
+    assert result["cases"]["pipeline"]["stdout"] == "status=4\n"
+    assert set(result["cases"]["pipeline"]["stderr"].splitlines()) == {"left", "right"}

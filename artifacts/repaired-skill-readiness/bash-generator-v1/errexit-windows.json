@@ -1,0 +1,37 @@
+{
+  "agent_efficacy_scored": false,
+  "bash_executable_sha256": "de2099f488acb59b21c120fa5f8a79b0d8856f6104b6f5165c25d6875d9be1c3",
+  "bash_version": "GNU bash, version 5.3.15(2)-release (x86_64-pc-cygwin)",
+  "cases": {
+    "conditional": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "continued\nbranch\n"
+    },
+    "explicit": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "caught\n"
+    },
+    "pipeline": {
+      "exit_code": 0,
+      "stderr": "right\nleft\n",
+      "stdout": "status=4\n"
+    },
+    "standalone": {
+      "exit_code": 1,
+      "stderr": "",
+      "stdout": ""
+    }
+  },
+  "observations_match": {
+    "conditional_continued": true,
+    "explicit_propagation": true,
+    "pipeline_status": true,
+    "standalone_stopped": true
+  },
+  "overlay_skill_sha256": "3e6d5030a3c4267e2e77869b747ea7365e21a252a44bd8e5b1029d432059162d",
+  "platform": "Windows",
+  "schema_version": 1,
+  "source_guide_sha256": "88addafc9e6bcc24374e87a25141b7656f48357fcefc66e8777bbf4151849ae0"
+}

@@ -1877,6 +1877,14 @@
           {
             "path": "artifacts/repaired-skill-readiness/bash-generator-v1/control.py",
             "sha256": "a1a591a0aacf2e817b2f77c1d2d09fa4d1dfad1c20f839cbb0a9744b95f75168"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/bash-generator-v1/errexit-control.py",
+            "sha256": "a3101e4d9f135888ca0cb94586c43b7d713bd148c6fa8271cd674a015bb29f67"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/bash-generator-v1/errexit-windows.json",
+            "sha256": "075e3655141a181efee1914e1fe53122d0956fcadc85212d4d248c5ae484f210"
           }
         ],
         "scope": "Selected shell component controls only; no agent-effectiveness result.",
@@ -1887,7 +1895,7 @@
         "evidence": [
           {
             "path": "docs/research-bash-generator.md",
-            "sha256": "ff74b577bac6789ca4178a7f138539d3df84caf74624c8179ead65827960a3e9"
+            "sha256": "3b2ecccb77b837cd78786481eafe25182c27c99b9d737f7df7d84c46f2e2e241"
           },
           {
             "path": "artifacts/repaired-skill-readiness/bash-generator-v1/windows.json",
@@ -1896,10 +1904,18 @@
           {
             "path": "artifacts/repaired-skill-readiness/bash-generator-v1/control.py",
             "sha256": "a1a591a0aacf2e817b2f77c1d2d09fa4d1dfad1c20f839cbb0a9744b95f75168"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/bash-generator-v1/errexit-control.py",
+            "sha256": "a3101e4d9f135888ca0cb94586c43b7d713bd148c6fa8271cd674a015bb29f67"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/bash-generator-v1/errexit-windows.json",
+            "sha256": "075e3655141a181efee1914e1fe53122d0956fcadc85212d4d248c5ae484f210"
           }
         ],
         "open_work": [
-          "Review remaining package resources and broader shell behavior; only selected defects were studied."
+          "Review remaining package resources and the rest of the Bash guide; selected shell and error-handling behavior was studied."
         ],
         "resource_hash_policy": "catalog-canonical-v1",
         "resources": {
@@ -1954,14 +1970,14 @@
         "evidence": [
           {
             "path": "included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/bash-script-generator/SKILL.md",
-            "sha256": "8d5a577a6125a301e78c2f3de379ec54a448b0afec5c78bc421986f16c010c27"
+            "sha256": "3e6d5030a3c4267e2e77869b747ea7365e21a252a44bd8e5b1029d432059162d"
           },
           {
             "path": "included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/bash-script-generator/repair.json",
-            "sha256": "3fc6b6eaa2b556b62d5c360ed7bafac567f4c732535149efbd305d280ae0daef"
+            "sha256": "8593d8b8c56edbb3709a75418a6181708b4cc12e2ecb296efb0b0f73360863ef"
           }
         ],
-        "scope": "Source-preserving overlay for selected shell and output-validation issues.",
+        "scope": "Source-preserving overlay for selected shell, output-validation and Bash error-handling issues.",
         "status": "in_progress"
       },
       "source_repo": "akin-ozer/cc-devops-skills",
