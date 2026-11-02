@@ -154,6 +154,38 @@ not a complete sandbox: Microsoft documents that processes created through
 Before integrating it into trials, qualify the agent sandbox's service access
 and the full collection and grading boundary. See [Windows job objects](https://learn.microsoft.com/en-us/windows/win32/procthread/job-objects).
 
+## Planning an independent-task comparison
+
+Before collecting a new experiment, consider how many independent tasks are
+needed under several plausible outcome distributions. The prospective planner
+enumerates the rejection probability of a two-sided exact conditional McNemar
+test, with a Bonferroni adjustment for a prespecified number of comparisons:
+
+```bash
+python tools/plan_paired_task_power.py --tasks 100 --candidate-only 0.15 --baseline-only 0.05 --comparisons 2
+```
+
+Here `candidate-only` is the assumed probability that the candidate passes and
+the baseline fails on a task; `baseline-only` is the opposite. The example
+assumes a ten-percentage-point difference, a 5% family significance level and
+two prespecified comparisons. It produces approximately 43% power under its
+assumptions. Keeping the difference at ten points but setting the probabilities
+to 0.25 and 0.15 gives approximately 21% power: the difference alone does not
+specify the required design. These are illustrations, not estimated task
+probabilities or measured results.
+
+The calculation assumes independent, identically distributed task pairs and
+one scored observation per condition per task. Repeated attempts on the same
+task are not independent task pairs. Task selection, shared repositories,
+unscored attempts, model changes and other dependencies can invalidate the
+assumptions; the tool does not model them. A two-sided rejection detects a
+difference in either direction, not necessarily an improvement. The exact
+conditional test can be conservative, and numerical probabilities are summed
+using floating point. A plan and appropriate analysis must be specified before
+collecting untouched holdout results; this tool is not a preregistration or an
+analysis of existing trials. See the [R Exact package's paired power documentation](https://search.r-project.org/CRAN/refmans/Exact/html/power.paired.test.html)
+for the underlying paired-outcome setup and alternative test methods.
+
 ## Comparing multiple task reports
 
 `tools/summarize_multi_task_trials.py` reads a declared plan of task IDs,
