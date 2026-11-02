@@ -2136,7 +2136,7 @@
           },
           {
             "path": "docs/research-npm-cache-install.md",
-            "sha256": "8a6c8ef49310671b890707ffa6e3a3ba0b0384598abc508e623fc194b10d3727"
+            "sha256": "46d4725e785433a4b061ee6103e1ae60f4fbaf05c7765a64ddde59eacf0f370d"
           },
           {
             "path": "artifacts/repaired-skill-readiness/npm-cache-install-v1/reproduce.py",

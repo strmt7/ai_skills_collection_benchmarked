@@ -13,6 +13,13 @@ the lockfile. It covers npm only; the source action's Yarn and pnpm paths and
 other generator features remain unqualified. The original entrypoint and action
 are retained in the repair's provenance directory and the catalog mirror is unchanged.
 
+For the hosted source-action check, upstream release `v1.0.0` resolves to the
+same pinned source commit, `7fe7595e4512f8ce43dcf956aa5190b96d627dd1`.
+On 2 November 2026 the upstream action file's Git blob
+`3af2916939f377f36dc35fee8cccb4f3ace61deb` matched the catalog mirror byte for
+byte. The hosted workflow uses that immutable upstream reference so the normal
+stable-release audit can review it; the local control checks the mirrored bytes.
+
 ## Component evidence
 
 The [independent control](../artifacts/repaired-skill-readiness/npm-cache-install-v1/reproduce.py)

@@ -91,7 +91,7 @@ jobs:
           cache-dependency-path: package-lock.json
       - name: Run the original action on a cache miss
         id: original
-        uses: ./catalog/included/skills/by-category/devops-cloud-operations/latest-release-devops/github-actions-generator/examples/actions/setup-node-cached
+        uses: akin-ozer/cc-devops-skills/devops-skills-plugin/skills/github-actions-generator/examples/actions/setup-node-cached@7fe7595e4512f8ce43dcf956aa5190b96d627dd1 # v1.0.0
         with:
           node-version: '26.13.0'
           package-manager: npm
@@ -133,7 +133,7 @@ jobs:
           name: npm-cache-fixture
       - name: Run the original action on a fresh workspace
         id: original
-        uses: ./catalog/included/skills/by-category/devops-cloud-operations/latest-release-devops/github-actions-generator/examples/actions/setup-node-cached
+        uses: akin-ozer/cc-devops-skills/devops-skills-plugin/skills/github-actions-generator/examples/actions/setup-node-cached@7fe7595e4512f8ce43dcf956aa5190b96d627dd1 # v1.0.0
         with:
           node-version: '26.13.0'
           package-manager: npm
