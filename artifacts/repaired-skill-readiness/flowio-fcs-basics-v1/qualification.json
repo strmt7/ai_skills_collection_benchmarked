@@ -1,0 +1,61 @@
+{
+  "agent_performance_tested": false,
+  "fixture_fetcher_sha256": "33091c31923439519586ef1bdc6803453bcfba10ccdce3f2e88b3f0769455545",
+  "flowio_version": "1.4.0",
+  "full_skill_reviewed": false,
+  "limitations": [
+    "Selected tests do not establish general FCS conformance, interoperability, metadata preservation or biological and clinical correctness.",
+    "The public tutorial fixture is a single source example; its separate data-use terms were not independently established.",
+    "Both documents were read, but many API claims, file variants, error paths and transformations were not runtime-tested.",
+    "A component control is not a coding-agent benchmark."
+  ],
+  "local_python_versions": {
+    "linux": "3.12.3",
+    "windows": "3.13.17"
+  },
+  "numpy_version": "2.5.4",
+  "package": {
+    "declared_license": "BSD-3-Clause",
+    "pypi_metadata_sha256": "250224e36f4ca1f1b97df6bd012e5de2f79b3dc665177bab9397d2821dc9d5fb",
+    "sdist_sha256": "c205efcecd1da7da29a1a55c30e09daa7fc132b997cd88910ef06a490755ecf7"
+  },
+  "requirements_sha256": {
+    "build-requirements.txt": "0496f2e6a919f0b7391a91009453b77d9a641b5b8045593d7fa22762e6765a52",
+    "requirements-linux.txt": "b30b11d189b1344dd411cfb4a45f2f47a5ac69f424281255f9100beb8ee95e31",
+    "requirements-windows.txt": "de96e7c3eaa04920688eba6f68f8e5422e2eb3794ba17090ee8691c9b47e5aeb",
+    "requirements.in": "485f9e24a4f77e4cd27528328630c967e219e7832b71d656f86f649fa32499e6"
+  },
+  "results": {
+    "linux-result.json": "10308cfa627e90545b0d17be8bc4b2a538453da96099b1f9a7ea5dbbed716d29",
+    "windows-result.json": "d9a07eb2a273204dd2479b9ad00aa5535c9506aa736fe7b11f13da9a23c68ceb"
+  },
+  "runner_sha256": "cb89087fcd9be2ad3643cf49c9960c850b7ce08c1964ac5a149626cf90127915",
+  "schema_version": 1,
+  "scope": "Selected FCS writer, metadata, gain and null-channel behavior plus a pinned public FCS 2.0 tutorial sample.",
+  "skill_sha256": "142719e35d720043d9183653d7a9019167982a80ed43a0eea3a4ef9fb5649d1d",
+  "sources": {
+    "api": {
+      "native_sha256": "a3e2790d3fda75d512f4208b99d9ab50031d78379c1dae66a0a4c01b5f42cfc4",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200,
+      "url": "https://flowio.readthedocs.io/en/latest/api.html"
+    },
+    "tutorial": {
+      "native_sha256": "54b0effee31302691ed30f4e855f2ea084d796506f668771ebc5bf86d2a879fa",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200,
+      "url": "https://flowio.readthedocs.io/en/stable/notebooks/flowio_tutorial.html"
+    }
+  },
+  "tutorial_fixture": {
+    "bytes": 216432,
+    "commit": "9ae65421cbe64d3ff17eeaf81f9dd0fbb9079436",
+    "data_use_terms_verified": false,
+    "distributed_in_repository": false,
+    "git_blob": "a4c61a27010b7760541940512b5ee2fa2d3dd46a",
+    "path": "data/fcs_files/data1.fcs",
+    "repository": "whitews/FlowIO",
+    "sha256": "cba7812f5bbce700786d22d97cf9858c1301878aa840c64eadcd263a3a0a5508",
+    "tree": "e6ac76f7aeb20002ac62f1e01899fbf32c2e1644"
+  }
+}

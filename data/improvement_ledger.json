@@ -8502,24 +8502,37 @@
             "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
             "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
             "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/flowio-fcs-basics-v1/qualification.json",
+            "sha256": "e0189cd8d32c350db2c9eda0e19aa47c2ecd7da92de618136624f163e0cec323",
+            "scope": "Both documents read; selected FlowIO 1.4.0 contracts and one upstream tutorial fixture checked. Many file variants and operations remain untested."
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
         "resources": {
           "SKILL.md": {
             "sha256": "ae294468af765e28437c88bccb9918a12a27cacf4335f2ed4c3dc63fc0a17a43",
-            "status": "pending"
+            "status": "reviewed",
+            "review_scope": "Full text read; selected API, writer, metadata and gain claims checked against official documentation and component controls. Other claims and file variants remain untested."
           },
           "references/api_reference.md": {
             "sha256": "c4ade46347f2e81085ea8205bdea354a191d61acd297410892aeb823263c8ff2",
-            "status": "pending"
+            "status": "reviewed",
+            "review_scope": "Full text read; selected API, writer, metadata and gain claims checked against official documentation and component controls. Other claims and file variants remain untested."
           }
         },
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/flowio-fcs-basics/repair.json",
+            "sha256": "d73d3227c770b3fbc2c7fd15d8694b5db916b1fa88808e3a390ede4828aae045",
+            "scope": "Selected FlowIO writer and raw read overlay with Windows and Linux component controls; not a complete skill repair or agent evaluation."
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "K-Dense-AI/scientific-agent-skills",
       "source_signature": {

@@ -233,3 +233,8 @@
 /included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/vaex-delayed-statistics/** text eol=lf
 /included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/vaex-delayed-statistics/provenance/** -text !eol
 /artifacts/repaired-skill-readiness/vaex-delayed-statistics-v1/** text eol=lf
+
+# Reviewed FlowIO overlay and selected FCS controls
+/included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/flowio-fcs-basics/** text eol=lf
+/included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/flowio-fcs-basics/provenance/** -text !eol
+/artifacts/repaired-skill-readiness/flowio-fcs-basics-v1/** text eol=lf

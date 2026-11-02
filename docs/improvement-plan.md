@@ -13,7 +13,7 @@ pending for 355; evaluation was in progress for 12 and pending for 661. These
 are tracking states, not a percentage of release readiness. For current counts,
 run `python tools/manage_improvement_ledger.py --check --json`.
 The scientific category now has 148 skill-level resource inventories, with
-1,268 resource records pending review and three marked reviewed. File records
+1,266 resource records pending review and five marked reviewed. File records
 are scoped to each skill and may overlap between nested packages. Transient
 `.git` and `__pycache__` directories follow the catalog hash boundary and are
 not source resources. Inventorying a file does not review or evaluate it.

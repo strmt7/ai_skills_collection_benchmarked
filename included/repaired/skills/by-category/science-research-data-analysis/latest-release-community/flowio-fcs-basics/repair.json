@@ -1,0 +1,30 @@
+{
+  "agent_performance_tested": false,
+  "artifact_kind": "maintained_runtime_repair",
+  "evidence_sha256": {
+    "build-requirements.txt": "0496f2e6a919f0b7391a91009453b77d9a641b5b8045593d7fa22762e6765a52",
+    "fetch_fixture.py": "33091c31923439519586ef1bdc6803453bcfba10ccdce3f2e88b3f0769455545",
+    "linux-result.json": "10308cfa627e90545b0d17be8bc4b2a538453da96099b1f9a7ea5dbbed716d29",
+    "qualification.json": "e0189cd8d32c350db2c9eda0e19aa47c2ecd7da92de618136624f163e0cec323",
+    "reproduce.py": "cb89087fcd9be2ad3643cf49c9960c850b7ce08c1964ac5a149626cf90127915",
+    "requirements-linux.txt": "b30b11d189b1344dd411cfb4a45f2f47a5ac69f424281255f9100beb8ee95e31",
+    "requirements-windows.txt": "de96e7c3eaa04920688eba6f68f8e5422e2eb3794ba17090ee8691c9b47e5aeb",
+    "requirements.in": "485f9e24a4f77e4cd27528328630c967e219e7832b71d656f86f649fa32499e6",
+    "windows-result.json": "d9a07eb2a273204dd2479b9ad00aa5535c9506aa736fe7b11f13da9a23c68ceb"
+  },
+  "full_skill_reviewed": false,
+  "overlay_sha256": {
+    "LICENSE": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1",
+    "SKILL.md": "142719e35d720043d9183653d7a9019167982a80ed43a0eea3a4ef9fb5649d1d",
+    "provenance/FLOWIO-LICENSE": "52bfc9d9ada20974b1c1db1376f8c9f7a6958d7a35a79889c062b5076d630bca",
+    "provenance/original.SKILL.md": "ae294468af765e28437c88bccb9918a12a27cacf4335f2ed4c3dc63fc0a17a43",
+    "provenance/original.api_reference.md": "c4ade46347f2e81085ea8205bdea354a191d61acd297410892aeb823263c8ff2"
+  },
+  "readiness_evidence": "artifacts/repaired-skill-readiness/flowio-fcs-basics-v1/qualification.json",
+  "schema_version": 1,
+  "scope": "Selected FCS writer, raw read, metadata and gain semantics for FlowIO 1.4.0.",
+  "source_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+  "source_license_blob_sha1": "eb246475fd5a66b9bb56176f3a718984632dd98d",
+  "source_mirror": "included/skills/by-category/science-research-data-analysis/latest-release-community/flowio",
+  "source_skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-flowio-skill-md"
+}

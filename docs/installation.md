@@ -54,6 +54,9 @@ Some reviewed instructions have known limitations:
   covers selected unsorted inputs. Vaex 4.19 has Python and Dask version
   constraints; its [statistics overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/vaex-delayed-statistics/SKILL.md)
   corrects selected delayed-execution guidance. [See the tested scope](research-dataframe-compatibility.md).
+- The locked FlowIO examples misuse its writer arguments and describe gain
+  scaling incorrectly for the tested case. The [FCS basics overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/flowio-fcs-basics/SKILL.md)
+  covers selected read/write behavior. [See the component review](research-flowio-fcs.md).
 - The pinned AnnData skill incorrectly says backed-mode metadata changes are
   saved automatically. The [AnnData I/O overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/anndata-io/SKILL.md)
   covers selected 10x readers and metadata writes. Its [component controls](../artifacts/repaired-skill-readiness/anndata-io-v2/qualification.json)

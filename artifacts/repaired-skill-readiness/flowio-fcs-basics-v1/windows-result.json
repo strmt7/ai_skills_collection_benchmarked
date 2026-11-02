@@ -1,0 +1,23 @@
+{
+  "agent_performance_tested": false,
+  "checks": [
+    "original_writer_arguments_fail",
+    "original_metadata_keyword_fails",
+    "float32_data_bytes_and_raw_round_trip",
+    "normalized_metadata_and_channels",
+    "existing_output_not_overwritten",
+    "invalid_values_rejected_before_write",
+    "gain_divides_in_tested_case",
+    "null_channel_does_not_drop_columns",
+    "tutorial_file_metadata_and_independent_raw_bytes",
+    "tutorial_metadata_only"
+  ],
+  "fixture_sha256": "cba7812f5bbce700786d22d97cf9858c1301878aa840c64eadcd263a3a0a5508",
+  "flowio": "1.4.0",
+  "full_skill_reviewed": false,
+  "numpy": "2.5.4",
+  "platform": "Windows",
+  "python": "3.13.17",
+  "schema_version": 1,
+  "skill_sha256": "142719e35d720043d9183653d7a9019167982a80ed43a0eea3a4ef9fb5649d1d"
+}
