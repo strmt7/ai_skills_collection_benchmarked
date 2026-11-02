@@ -21,7 +21,7 @@ EXAMPLE = ROOT / (
     "included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/"
     "azure-eventhub-ts-checkpoint/examples/checkpoint-consumer.ts"
 )
-ORIGINAL_SHA256 = "bd9b7a5bb69f8b558611f749624c9751c2d0549f97eb513714d548e9e48963e2"
+ORIGINAL_SHA256 = "628dd0e1c7ea86baa518db273c43664e4de2ea6f7e3154ac2c01c8174b5d25c3"
 
 
 def digest(data: bytes) -> str:
@@ -38,7 +38,7 @@ def main(argv: list[str] | None = None) -> int:
     npm = args.npm_cli.resolve(strict=True)
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=False)
-    if digest(ORIGINAL.read_bytes()) != ORIGINAL_SHA256:
+    if digest(ORIGINAL.read_bytes().replace(b"\r\n", b"\n")) != ORIGINAL_SHA256:
         raise ValueError("Pinned original skill bytes differ")
 
     results = []

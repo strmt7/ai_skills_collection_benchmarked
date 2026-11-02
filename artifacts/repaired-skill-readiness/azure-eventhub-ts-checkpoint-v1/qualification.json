@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "scope": "TypeScript checkpoint callback compilation and simulated calls; no Azure service or agent trial",
-  "source_skill_sha256": "bd9b7a5bb69f8b558611f749624c9751c2d0549f97eb513714d548e9e48963e2",
+  "source_skill_sha256": "628dd0e1c7ea86baa518db273c43664e4de2ea6f7e3154ac2c01c8174b5d25c3",
   "sdk": "@azure/event-hubs@6.0.4",
   "typescript": "7.0.2",
   "tests_per_platform": 5,
@@ -15,5 +15,9 @@
     "Direct callback simulation does not test live service delivery or recovery.",
     "Handling, durable effects, deduplication and recovery are application responsibilities.",
     "Other parts of the original skill were not fully reviewed."
-  ]
+  ],
+  "source_checkout_line_endings": {
+    "Windows": "CRLF",
+    "Linux": "LF Git blob fixture"
+  }
 }

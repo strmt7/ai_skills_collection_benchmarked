@@ -54,11 +54,10 @@ test("checkpoint failure propagates", async () => {
 test("original snippet can swallow failure before checkpointing a later batch", async () => {
   const path = process.env.ORIGINAL_SKILL;
   if (!path) throw new Error("ORIGINAL_SKILL is required");
-  const original = readFileSync(path);
-  if (createHash("sha256").update(original).digest("hex") !== "bd9b7a5bb69f8b558611f749624c9751c2d0549f97eb513714d548e9e48963e2") {
+  const source = readFileSync(path, "utf8").replace(/\r\n/g, "\n");
+  if (createHash("sha256").update(source).digest("hex") !== "628dd0e1c7ea86baa518db273c43664e4de2ea6f7e3154ac2c01c8174b5d25c3") {
     throw new Error("Original source digest mismatch");
   }
-  const source = original.toString("utf8");
   const body = source.split("## Error Handling")[1]?.split("```typescript")[1]?.split("```")[0];
   if (!body) throw new Error("Original error-handling example not found");
   const operations: Operation[] = [];

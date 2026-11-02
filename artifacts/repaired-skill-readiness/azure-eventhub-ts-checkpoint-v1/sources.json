@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "source_commit": "a2c05249c4a20103dd954ca702467aa328aac031",
-  "source_skill_sha256": "bd9b7a5bb69f8b558611f749624c9751c2d0549f97eb513714d548e9e48963e2",
+  "source_skill_sha256": "628dd0e1c7ea86baa518db273c43664e4de2ea6f7e3154ac2c01c8174b5d25c3",
   "sdk": "@azure/event-hubs@6.0.4",
   "typescript": "7.0.2",
   "pages": [

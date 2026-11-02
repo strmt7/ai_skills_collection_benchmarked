@@ -19,10 +19,14 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def canonical_original():
+    return ORIGINAL.read_bytes().replace(b"\r\n", b"\n")
+
+
 def test_repair_preserves_original_and_binds_all_evidence():
     repair = json.loads((OVERLAY / "repair.json").read_text(encoding="utf-8"))
-    assert (OVERLAY / "provenance/original.SKILL.md").read_bytes() == ORIGINAL.read_bytes()
-    assert repair["original_skill_sha256"] == sha(ORIGINAL)
+    assert (OVERLAY / "provenance/original.SKILL.md").read_bytes() == canonical_original()
+    assert repair["original_skill_sha256"] == hashlib.sha256(canonical_original()).hexdigest()
     for path, digest in repair["overlay_sha256"].items():
         assert sha(OVERLAY / path) == digest, path
     for path, digest in repair["evidence_sha256"].items():
@@ -37,7 +41,7 @@ def test_platform_results_bind_inputs_and_retained_output():
         result = json.loads((EVIDENCE / f"{platform}-result.json").read_text(encoding="utf-8"))
         assert result["status"] == "passed"
         assert result["platform"].lower() == platform
-        assert result["original_sha256"] == sha(ORIGINAL)
+        assert result["original_sha256"] == hashlib.sha256(canonical_original()).hexdigest()
         assert result["example_sha256"] == sha(OVERLAY / "examples/checkpoint-consumer.ts")
         assert result["azure_service_called"] is False
         assert result["agent_performance_tested"] is False

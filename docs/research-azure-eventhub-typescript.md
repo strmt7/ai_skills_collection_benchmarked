@@ -21,6 +21,9 @@ explains that events can be processed more than once after recovery.
 type-check against the pinned SDK and simulate callbacks on Windows and Linux.
 They do not exercise the Azure service, live retries, checkpoint storage,
 partition ownership, production recovery, or an AI agent.
+The controls verify the pinned Git text after normalizing checkout CRLF to LF;
+the preserved provenance copy contains the canonical Git bytes. The Linux
+control was also run against an LF source fixture from the Git blob.
 
 To repeat the component controls, use Python 3.13, Node.js 24 and its bundled
 npm CLI. The runner installs the locked test packages in a temporary directory

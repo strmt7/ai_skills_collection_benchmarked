@@ -12359,7 +12359,7 @@
           {
             "path": "docs/research-azure-eventhub-typescript.md",
             "scope": "TypeScript checkpoint callback behavior only; simulated calls, no Azure service or agent evaluation.",
-            "sha256": "f15d48d56555f2ae3218fcad76250785e45ce30418a2e06a4d8e232ac83abde7"
+            "sha256": "91dd6c2d7ad15efde69d5540aab1c2d1f05fce2f35df6efffb4adf207265e5ff"
           }
         ],
         "status": "in_progress"
@@ -12374,7 +12374,7 @@
           {
             "path": "artifacts/repaired-skill-readiness/azure-eventhub-ts-checkpoint-v1/qualification.json",
             "scope": "Five offline callback controls on Windows and Linux; no Azure service or agent performance evaluation.",
-            "sha256": "c47b97b438a194ce654e2f7251883a486eebd048a9955bf0a1224db7a3795348"
+            "sha256": "481c86eb830f598805cf4bf8d8f8186f203c1677abdc0f6d4fbaa0b42f79b734"
           }
         ],
         "status": "in_progress"

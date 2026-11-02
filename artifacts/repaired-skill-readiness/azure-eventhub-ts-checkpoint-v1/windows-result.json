@@ -4,14 +4,14 @@
   "platform": "Windows",
   "node_version": "v24.22.2",
   "npm_version": "11.19.1",
-  "original_sha256": "bd9b7a5bb69f8b558611f749624c9751c2d0549f97eb513714d548e9e48963e2",
+  "original_sha256": "628dd0e1c7ea86baa518db273c43664e4de2ea6f7e3154ac2c01c8174b5d25c3",
   "example_sha256": "6c890854ff0e5ad38cfae88c61b8f3201d0f1614a0d65fc5042d1996181f0d0d",
   "control_sha256": {
     "package.json": "c325209a60db07f68e22a469966eb31cf683ffb47803865994d14a897fa7ea50",
     "package-lock.json": "4fcd6cb1aa8490614c7090aaf89cb7b253337abe884cec5180b4d70f881cf829",
     "tsconfig.json": "5da26da71f371aaf6c3dbeb1c67c09b0abaa2537c2ffaa13e58f14be2e82a825",
-    "control.test.ts": "5d6cf94ac4153d4ef6589b422922cea938d54b7d2661d1098c9ab0aa4ad6a838",
-    "reproduce.py": "6cc69ded43a4d4bd8dbea1f3eae71d408f3dfb7a0a89fbabda4798079314098a"
+    "control.test.ts": "4063ba1eeec6b11032b3b7304a1adaf079d550dba8a61cf1ebc2cd482a318bf9",
+    "reproduce.py": "fb63311641bf30c04452c2c19fc2cf78b19e01fb2f7b8f7e80db80af7adff87a"
   },
   "commands": [
     {
@@ -41,7 +41,7 @@
     {
       "name": "callbacks",
       "returncode": 0,
-      "stdout_sha256": "9e3b0c45cb28339582be7f0a6d5cbc7804a382bdcfec223f4c344bb86d95dff8",
+      "stdout_sha256": "32259284932413a0f1cf89fcff6cf9513152e2d9066595235bba7a3d5fec3949",
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
   ],
