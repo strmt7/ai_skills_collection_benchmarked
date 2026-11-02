@@ -40,13 +40,19 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: ${{ matrix.node }}
-      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
+          version: '0.13.6'
           python-version: '3.13.18'
+          activate-environment: 'true'
+          venv-path: ${{ runner.temp }}/docs-js-inventory-venv
+          enable-cache: 'false'
       - name: Exercise the inventory and real framework fixtures
         shell: pwsh
         run: |
           if ((node --version) -ne "v$env:EXPECTED_NODE") { throw 'Unexpected Node version' }
+          python -c "import platform,sys; sys.exit(platform.python_version() != '3.13.18' or sys.prefix == sys.base_prefix)"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           python artifacts/repaired-skill-readiness/docs-from-code-js-inventory-v1/reproduce.py --output (Join-Path $env:RUNNER_TEMP 'docs-js-inventory')
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Retain test observations
