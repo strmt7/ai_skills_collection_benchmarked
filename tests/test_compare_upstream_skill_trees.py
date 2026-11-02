@@ -1,4 +1,5 @@
 import copy
+import gzip
 import hashlib
 import json
 from pathlib import Path
@@ -377,3 +378,81 @@ def test_recorded_karpathy_baseline_matches_historical_protocol():
     assert observation["observed_head"] == observation["pinned_commit"]
     assert observation["historical_protocol_bytes_match"] is True
     assert observation["skill_sha256"] == protocol["conditions"]["karpathy"]["skills"][0]["sha256"]
+
+
+def test_recorded_nonsecurity_batch_has_bound_source_and_reconciled_results():
+    root = Path(__file__).resolve().parents[1]
+    evidence = root / "artifacts/research/2026-11-02/nonsecurity-upstream-v1"
+    manifest = json.loads((evidence / "manifest.json").read_bytes())
+    actual_files = {
+        path.name: hashlib.sha256(path.read_bytes()).hexdigest()
+        for path in evidence.iterdir()
+        if path.is_file() and path.name != "manifest.json"
+    }
+    assert manifest["files_sha256"] == actual_files
+    original = gzip.decompress((evidence / "source-lock.json.gz").read_bytes())
+    alias = gzip.decompress((evidence / "alias-source-lock.json.gz").read_bytes())
+    assert hashlib.sha256(original).hexdigest() == manifest["source_lock_sha256"]
+    source = json.loads(original)
+    derived = json.loads(alias)
+    redirects = json.loads((evidence / "redirect-observations.json").read_bytes())
+    mapping = {item["original"]: item["canonical"] for item in redirects}
+    for item in source["sources"]:
+        if item["repo"] in mapping:
+            item["repo"] = mapping[item["repo"]]
+            item["origin_url"] = "https://github.com/" + item["repo"] + ".git"
+    assert source == derived
+    selection = json.loads((evidence / "selection.json").read_bytes())
+    original_subset = json.loads((evidence / "complete-selection.json").read_bytes())
+    alias_subset = json.loads((evidence / "alias-selection.json").read_bytes())
+    unavailable = json.loads((evidence / "unavailable.json").read_bytes())
+    unavailable_names = {item["repo"] for item in unavailable}
+    assert set(selection) == set(original_subset) | set(mapping) | unavailable_names
+    assert all(alias_subset[new] == selection[old] for old, new in mapping.items())
+    assert all(original_subset[repo] == selection[repo] for repo in original_subset)
+    assert len(selection) == manifest["selected_repositories"] == 15
+    assert sum(map(len, selection.values())) == manifest["selected_skills"] == 49
+    assert len(unavailable_names) == manifest["unavailable_repositories"] == 2
+    assert all(item["http_status"] == 404 for item in unavailable)
+    for item, stem in zip(unavailable, ("video", "music"), strict=True):
+        stdout = (evidence / f"{stem}-404.stdout").read_bytes()
+        stderr = (evidence / f"{stem}-404.stderr").read_bytes()
+        assert hashlib.sha256(stdout).hexdigest() == item["stdout_sha256"]
+        assert hashlib.sha256(stderr).hexdigest() == item["stderr_sha256"]
+        assert b"HTTP 404" in stderr
+    for name, source_bytes, selection_bytes, verification_name in (
+        ("complete-summary.json", original, (evidence / "complete-selection.json").read_bytes(), "verification.json"),
+        ("alias-summary.json", alias, (evidence / "alias-selection.json").read_bytes(), "alias-verification.json"),
+    ):
+        summary_bytes = (evidence / name).read_bytes()
+        summary = json.loads(summary_bytes)
+        verification = json.loads((evidence / verification_name).read_bytes())
+        assert summary["source_lock_sha256"] == hashlib.sha256(source_bytes).hexdigest()
+        assert summary["selection_sha256"] == hashlib.sha256(selection_bytes).hexdigest()
+        assert verification["ok"] and verification["summary_sha256"] == hashlib.sha256(summary_bytes).hexdigest()
+        expected = json.loads(selection_bytes)
+        pins = {item["repo"]: item["commit_sha"] for item in json.loads(source_bytes)["sources"]}
+        assert {item["repo"] for item in summary["results"]} == set(expected)
+        for item in summary["results"]:
+            assert item["status"] == "complete" and item["pinned_commit"] == pins[item["repo"]]
+            assert {row["skill_id"] for row in item["skills"]} == set(expected[item["repo"]])
+    summary = json.loads((evidence / "complete-summary.json").read_bytes())
+    browser = next(item for item in summary["results"] if item["repo"] == "browser-act/skills")
+    moved = [row for row in browser["skills"] if row["entrypoint"] == "missing_at_recorded_path"]
+    assert len(moved) == manifest["browser_missing_recorded_paths"] == 31
+    assert all(
+        len(row["same_named_candidates"]) == 1
+        and row["same_named_candidates"][0]["entrypoint_identical"]
+        and not row["same_named_candidates"][0]["changed_paths"]
+        for row in moved
+    )
+    for observation, stem in zip(redirects, ("comfyui-workflow-skill", "create-infographics"), strict=True):
+        headers = json.loads((evidence / f"{stem}-301-headers.json").read_bytes())
+        metadata = json.loads((evidence / f"{stem}-canonical-metadata.json").read_bytes())
+        target = json.loads((evidence / f"{stem}-redirect-target.json").read_bytes())
+        commit = json.loads((evidence / f"{stem}-pinned-commit.json").read_bytes())
+        assert observation["redirect_status"] == 301 and headers["Location"] == observation["redirect_location"]
+        assert metadata["id"] == target["id"] == observation["repository_id"]
+        assert metadata["full_name"] == target["full_name"] == observation["canonical"]
+        original_pins = {item["repo"]: item["commit_sha"] for item in json.loads(original)["sources"]}
+        assert commit["sha"] == observation["pinned_commit"] == original_pins[observation["original"]]

@@ -65,3 +65,36 @@ adding `--replay /path/to/previous-capture` and retaining its original time,
 selection and source-lock bytes. `tools/verify_upstream_skill_inventory.py`
 independently reconciles captures with complete root trees; it rejects truncated
 roots rather than checking the comparator's subtree fallback.
+
+## Additional public-source observation
+
+On 2 November 2026, a separate [source-bound inventory](../artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json)
+examined 49 selected non-security skills from 15 public sources omitted from
+the earlier three-source comparison. Thirteen source comparisons covering 47
+skills completed; two source endpoints returned HTTP 404. A 404 does not prove
+whether a repository was deleted, renamed, or made private.
+
+For `browser-act/skills`, 31 entrypoints were missing at their recorded paths.
+Each had exactly one same-named candidate with identical complete directory Git
+entries at the observed head. This identifies byte-identical candidates, not a
+review of their meaning or a decision to update the catalog. The remaining
+selected browser directory changed at its recorded path. Published releases of
+`Bria-AI/bria-skill` and `guinacio/claude-image-gen` also differ from their
+locked source versions. `lackeyjb/playwright-skill` has a changed default
+branch, but its latest release remains the pinned v5.0.0.
+
+Two old repository names returned GitHub HTTP 301 responses. Their redirect
+targets resolved to matching repository IDs, and the canonical repositories
+contained the previously pinned commits. The separate canonical-name comparison
+uses a **derived alias lock**, retained compressed with the evidence; it is not
+the catalog's source lock. The first name's selected directory was unchanged at
+head, while the second changed. Redirects and tree equality do not establish
+license compatibility, runtime quality or agent effectiveness.
+
+The original-name complete set and the derived-alias set were independently
+reconciled against their retained native API streams and reproduced by offline
+replay. The manifest binds selections, captured comparison summaries, redirect
+evidence and verification records. Native streams for the full Git trees are
+retained outside Git; their digests remain in the summaries. No mirrors or
+source pins were changed by this observation. The ledger records source-tree
+research as in progress, not as a completed skill evaluation.

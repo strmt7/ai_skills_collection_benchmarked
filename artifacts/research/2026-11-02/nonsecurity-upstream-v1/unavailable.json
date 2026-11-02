@@ -1,0 +1,16 @@
+[
+  {
+    "repo": "EvoLinkAI/video-generation-skill-for-openclaw",
+    "http_status": 404,
+    "error": "GitHub returned HTTP 404; source availability is undetermined.",
+    "stdout_sha256": "4f50e254a719a6b1b06b529bdaa08980e4acf0878aad0090cba7771f6ebdf0b9",
+    "stderr_sha256": "d2c8985c89b29a842ac4946d13bdbc297709f44f20bb968faf9682664b211db6"
+  },
+  {
+    "repo": "EvoLinkAI/music-generation-skill-for-openclaw",
+    "http_status": 404,
+    "error": "GitHub returned HTTP 404; source availability is undetermined.",
+    "stdout_sha256": "4f50e254a719a6b1b06b529bdaa08980e4acf0878aad0090cba7771f6ebdf0b9",
+    "stderr_sha256": "d2c8985c89b29a842ac4946d13bdbc297709f44f20bb968faf9682664b211db6"
+  }
+]

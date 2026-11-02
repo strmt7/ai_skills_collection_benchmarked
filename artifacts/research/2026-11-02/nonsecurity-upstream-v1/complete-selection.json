@@ -1,0 +1,69 @@
+{
+  "browser-act/skills": [
+    "browser-act-skills-amazon-asin-lookup-api-skill-skill-md",
+    "browser-act-skills-amazon-best-selling-products-finder-api-skill-skill-md",
+    "browser-act-skills-amazon-buy-box-monitor-api-skill-skill-md",
+    "browser-act-skills-amazon-competitor-analyzer-skill-md",
+    "browser-act-skills-amazon-listing-competitor-analysis-skill-skill-md",
+    "browser-act-skills-amazon-product-api-skill-skill-md",
+    "browser-act-skills-amazon-product-search-api-skill-skill-md",
+    "browser-act-skills-amazon-reviews-api-skill-skill-md",
+    "browser-act-skills-browser-act-skill-md",
+    "browser-act-skills-business-contact-social-links-skill-skill-md",
+    "browser-act-skills-github-project-contributor-finder-api-skill-skill-md",
+    "browser-act-skills-google-image-api-skill-skill-md",
+    "browser-act-skills-google-maps-api-skill-skill-md",
+    "browser-act-skills-google-maps-reviews-api-skill-skill-md",
+    "browser-act-skills-google-maps-search-api-skill-skill-md",
+    "browser-act-skills-google-news-api-skill-skill-md",
+    "browser-act-skills-industry-key-contact-radar-api-skill-skill-md",
+    "browser-act-skills-reddit-competitor-analysis-api-skill-skill-md",
+    "browser-act-skills-social-media-finder-skill-skill-md",
+    "browser-act-skills-web-research-assistant-skill-md",
+    "browser-act-skills-web-search-scraper-api-skill-skill-md",
+    "browser-act-skills-wechat-article-search-api-skill-skill-md",
+    "browser-act-skills-youtube-api-skill-skill-md",
+    "browser-act-skills-youtube-batch-transcript-extractor-api-skill-skill-md",
+    "browser-act-skills-youtube-channel-api-skill-skill-md",
+    "browser-act-skills-youtube-comments-api-skill-skill-md",
+    "browser-act-skills-youtube-influencer-finder-api-skill-skill-md",
+    "browser-act-skills-youtube-search-api-skill-skill-md",
+    "browser-act-skills-youtube-transcript-analysis-api-skill-skill-md",
+    "browser-act-skills-youtube-transcript-extractor-api-skill-skill-md",
+    "browser-act-skills-youtube-video-api-skill-skill-md",
+    "browser-act-skills-zhihu-search-api-skill-skill-md"
+  ],
+  "lackeyjb/playwright-skill": [
+    "lackeyjb-playwright-skill-skills-playwright-skill-skill-md"
+  ],
+  "designrique/ai-graphic-design-skill": [
+    "designrique-ai-graphic-design-skill-skill-md"
+  ],
+  "yuvalsuede/agent-media-skill": [
+    "yuvalsuede-agent-media-skill-skill-md"
+  ],
+  "Raven7979/ai-video-editing-skill": [
+    "raven7979-ai-video-editing-skill-skill-md"
+  ],
+  "ztj7728/gemini-image-generation": [
+    "ztj7728-gemini-image-generation-skill-md"
+  ],
+  "fruteroclub/marketing-designer": [
+    "fruteroclub-marketing-designer-skill-md"
+  ],
+  "Bria-AI/bria-skill": [
+    "bria-ai-bria-skill-skills-bria-ai-skill-md",
+    "bria-ai-bria-skill-skills-image-utils-skill-md",
+    "bria-ai-bria-skill-skills-remove-background-skill-md",
+    "bria-ai-bria-skill-skills-vgl-skill-md"
+  ],
+  "guinacio/claude-image-gen": [
+    "guinacio-claude-image-gen-skills-image-generation-skill-md"
+  ],
+  "supermemoryai/skills": [
+    "supermemoryai-skills-svg-animations-skill-md"
+  ],
+  "hardikpandya/stop-slop": [
+    "hardikpandya-stop-slop-skill-md"
+  ]
+}

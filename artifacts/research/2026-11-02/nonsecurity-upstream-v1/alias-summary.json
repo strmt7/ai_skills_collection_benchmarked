@@ -1,0 +1,3039 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-11-02T15:25:15Z",
+  "source_lock_sha256": "d513bcd5c1a195d47b2ef431aaaa0c9db9e916d609097a68d47d949b1c89caff",
+  "selection_sha256": "aa122ae6085830296bd8936dc27c92ba9963e5915b32b2d2c363e2ec6c3125fa",
+  "algorithm_sha256": "05e917977ecc539679f7c1856d4d89f01e7be67bd09ad72b1c3fe3814a11c71a",
+  "scope": "Pinned selected skill directories compared with captured default-branch heads and latest GitHub releases; same-named paths are candidates only, not confirmed relocations. This is not an inventory of newly added skills, a quality review, or an agent-performance test.",
+  "results": [
+    {
+      "status": "complete",
+      "repo": "LingyiChen-AI/comfyui-workflow-skill",
+      "default_branch": "main",
+      "pinned_commit": "61e6b7984de7f415a8df59c97522265cac6d3b1b",
+      "observed_head": "61e6b7984de7f415a8df59c97522265cac6d3b1b",
+      "pinned_tree": "b4e28441422bea4dd9ebdeb46884f54e7867461b",
+      "observed_tree": "b4e28441422bea4dd9ebdeb46884f54e7867461b",
+      "pinned_recursive_complete": true,
+      "observed_recursive_complete": true,
+      "selected_skill_count": 1,
+      "entrypoints_changed": 0,
+      "entrypoints_missing_at_recorded_path": 0,
+      "directories_changed": 0,
+      "skills": [
+        {
+          "skill_id": "twwch-comfyui-workflow-skill-skill-md",
+          "source_path": "SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": false,
+          "pinned_file_count": 97,
+          "observed_file_count": 97,
+          "changed_paths": [],
+          "same_named_candidates": []
+        }
+      ],
+      "latest_release": null
+    },
+    {
+      "status": "complete",
+      "repo": "aizzaku/aiz-infographic",
+      "default_branch": "main",
+      "pinned_commit": "5c8c8821026e7ee5998c886780237e64193e54c3",
+      "observed_head": "8054906f52c2b499d39ea108f55d2ab5a171e25e",
+      "pinned_tree": "51ebefd37f59e9b4a888d0ba685e5ef72ba80a7a",
+      "observed_tree": "657e1ad4631b5be45d8ddfaed2ef3d3827b4f114",
+      "pinned_recursive_complete": true,
+      "observed_recursive_complete": true,
+      "selected_skill_count": 1,
+      "entrypoints_changed": 1,
+      "entrypoints_missing_at_recorded_path": 0,
+      "directories_changed": 1,
+      "skills": [
+        {
+          "skill_id": "aizzaku-create-infographics-skill-md",
+          "source_path": "SKILL.md",
+          "entrypoint": "changed",
+          "directory_changed": true,
+          "pinned_file_count": 54,
+          "observed_file_count": 107,
+          "changed_paths": [
+            {
+              "path": ".gitignore",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "644a86b78dd8cf231c1d04154e0eda4b2c36df77"
+              ]
+            },
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "2dbd027932b7f34236e0c23b1910be21133152bb"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "ca862ab1a7f1206a9027b4fbbf0bbbe1fb93bb35"
+              ]
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "3f8a7ec3a9574d959a924f176364eef8dedae4cf"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "a0d5f8673dcfab2efd1835b9e0eff2e3f4d2b9f5"
+              ]
+            },
+            {
+              "path": "evals/evals.json",
+              "pinned": [
+                "blob",
+                "100644",
+                "7451f23c1df13b6f920e01811dd36fa3c3a84462"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "9960d7463278034588c06cd15e30cb978e5b85fe"
+              ]
+            },
+            {
+              "path": "evals/output-evals.json",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "213812730e9f525ba3e42ce8c0f6bdaec4b4ec74"
+              ]
+            },
+            {
+              "path": "examples/defi_protocol.png",
+              "pinned": [
+                "blob",
+                "100644",
+                "d1e1b21a97589f3e3d71720221747b513f8c29f0"
+              ],
+              "observed": null
+            },
+            {
+              "path": "examples/double_token_strategy_flywheel_flow.png",
+              "pinned": [
+                "blob",
+                "100644",
+                "85407f95ded7da2920a2a4e860aeb2cad9b3e388"
+              ],
+              "observed": null
+            },
+            {
+              "path": "examples/farming_game_mode_mechanic_overview.png",
+              "pinned": [
+                "blob",
+                "100644",
+                "8b66bbab7f07ba3e14806b308af9b48be0ccd729"
+              ],
+              "observed": null
+            },
+            {
+              "path": "examples/game_event_overview.png",
+              "pinned": [
+                "blob",
+                "100644",
+                "1f072b2ee51c36b2ee73226bc6cc85d3af16c196"
+              ],
+              "observed": null
+            },
+            {
+              "path": "examples/game_quest_cheatsheet.png",
+              "pinned": [
+                "blob",
+                "100644",
+                "7b8d8f2df4dbd67f0a1a2a99677f2d607f3cf0ef"
+              ],
+              "observed": null
+            },
+            {
+              "path": "examples/game_strateg_flow.png",
+              "pinned": [
+                "blob",
+                "100644",
+                "b12d1701e8488d8bab71badee8c8a38232847885"
+              ],
+              "observed": null
+            },
+            {
+              "path": "examples/game_whitepaper_overview.png",
+              "pinned": [
+                "blob",
+                "100644",
+                "1723358717e82dd858dad9cdd68d45a5f11b5e07"
+              ],
+              "observed": null
+            },
+            {
+              "path": "examples/game_whitepaper_overview_2.png",
+              "pinned": [
+                "blob",
+                "100644",
+                "99141d8d55c55db5aac8ec2555cc097398b15e95"
+              ],
+              "observed": null
+            },
+            {
+              "path": "examples/nft_ecosystem_overview.png",
+              "pinned": [
+                "blob",
+                "100644",
+                "52593bae8bb2ddad14676a11feb2b8bd2004c70c"
+              ],
+              "observed": null
+            },
+            {
+              "path": "examples/pocket_guide.png",
+              "pinned": [
+                "blob",
+                "100644",
+                "c72365e0464a0aa7f9fe48937b8997c5fe271b1a"
+              ],
+              "observed": null
+            },
+            {
+              "path": "examples/showcase/canvases-showcase.png",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "7cbaebad65b4b70e8427f9336f41ea70098ee960"
+              ]
+            },
+            {
+              "path": "examples/showcase/elements-showcase.png",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "563ff8b029943a664d3787c47f393ab57b0956a5"
+              ]
+            },
+            {
+              "path": "examples/showcase/mental-model.png",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "b2fd4b2f5eb66ec9d207c4f02b7f895afa0e1537"
+              ]
+            },
+            {
+              "path": "examples/showcase/readme-banner.png",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "55247aa826f6f9033563202b8bb6b849b1b114c1"
+              ]
+            },
+            {
+              "path": "examples/showcase/snippets-showcase.png",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "7f1a1114217b5f8f0b6472c34f2053387ac8f158"
+              ]
+            },
+            {
+              "path": "examples/showcase/styles-showcase.png",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "5b0b662b9cc21fe427e20e66a4f1bf159a7498c4"
+              ]
+            },
+            {
+              "path": "examples/stats.png",
+              "pinned": [
+                "blob",
+                "100644",
+                "e4a7ce9088e7e6a0fbbda882d5645a8208e79e71"
+              ],
+              "observed": null
+            },
+            {
+              "path": "examples/token_ecosystem_flow.png",
+              "pinned": [
+                "blob",
+                "100644",
+                "468cd38ddfe308093783b06b4749d3f0922db23e"
+              ],
+              "observed": null
+            },
+            {
+              "path": "examples/token_strategy_flywheel_flow.png",
+              "pinned": [
+                "blob",
+                "100644",
+                "9610a7bdef103a24933cc14e7ff85f7f301eca29"
+              ],
+              "observed": null
+            },
+            {
+              "path": "examples/tokenomics_overview.png",
+              "pinned": [
+                "blob",
+                "100644",
+                "0af0bf87120661372f3fdfad67a3e38f1d5f3345"
+              ],
+              "observed": null
+            },
+            {
+              "path": "examples/whitepaper_overview.png",
+              "pinned": [
+                "blob",
+                "100644",
+                "f9fa2bbb75a82156fc70d4e240a50c329b462f3d"
+              ],
+              "observed": null
+            },
+            {
+              "path": "install.sh",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "926558a9c441b278ffa9ec7ba9e076c4ba483176"
+              ]
+            },
+            {
+              "path": "progress.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "cc49a2a45d9bc24210859e4b529286d1238017e1"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/_design-docs/new-templates-design-brief.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "4ebd8aba7030a41b48419f39d29a2e2330576407"
+              ]
+            },
+            {
+              "path": "references/_gallery.html",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "21b5e1d930f6df265c84588fa6200abea5e4b528"
+              ]
+            },
+            {
+              "path": "references/_standalone-extraction.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "90e7da6f938004cab6494e4ac4d31e7e968910b8"
+              ]
+            },
+            {
+              "path": "references/actionable-frameworks.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "7a16c2741fff3115a7aa9805276549ae2fc47e47"
+              ]
+            },
+            {
+              "path": "references/brand-extraction.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "e529909aa49247386b1657bc8f9a7920e3c57a34"
+              ]
+            },
+            {
+              "path": "references/canvases/bento-box.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "75d2e51fb133fa8160e8b4b90855df9d524393de"
+              ]
+            },
+            {
+              "path": "references/canvases/dashboard.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "0a90586619c5bc1ab38e83ddd96569089058dac8"
+              ]
+            },
+            {
+              "path": "references/canvases/editorial.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "3902ebc64f850675a70906e86790dc8ab8ad8ffd"
+              ]
+            },
+            {
+              "path": "references/canvases/poster.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "c03e835c3ea392d37208dfbf5273e9ab2bfd4da7"
+              ]
+            },
+            {
+              "path": "references/creator-tools.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "4fd6cbc5b6f10895d3f87046000490dccb62cf8c"
+              ]
+            },
+            {
+              "path": "references/elements/annotation.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "5e71c33c32c0a65f5b3fa4e54666d3125f644b58"
+              ]
+            },
+            {
+              "path": "references/elements/badges.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "8c4f41ed7d2e7f9979f497099fac8d31efb67829"
+              ]
+            },
+            {
+              "path": "references/elements/callout-card.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "9c9baeaeef33d04d5ccd2b20e35ef59982880a24"
+              ]
+            },
+            {
+              "path": "references/elements/charts.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "77b1f1a1fce6c95ca496c7338fa56d2a7b469a8c"
+              ]
+            },
+            {
+              "path": "references/elements/comparison.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "f6575bb8fbe482655d27c925a5fdb200632961b1"
+              ]
+            },
+            {
+              "path": "references/elements/connectors.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "2561e212fa1925ef065c1a0400626e5e8fea4fdd"
+              ]
+            },
+            {
+              "path": "references/elements/data-widgets.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "4e630e02caf494ef2b7d9b4e87f5a163d14e912a"
+              ]
+            },
+            {
+              "path": "references/elements/decorative.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "5cd12253fbca5ca19d991874257afef320e22ccb"
+              ]
+            },
+            {
+              "path": "references/elements/icons.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "995cd42bac034fb57a45d5ba14db9571d935d777"
+              ]
+            },
+            {
+              "path": "references/elements/layout.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "a789bc489e1ee4a5ab1c0a759994c5c54459a21a"
+              ]
+            },
+            {
+              "path": "references/elements/maps.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "0c56877628b4bfe937a84cbcd860c7c54fb6376e"
+              ]
+            },
+            {
+              "path": "references/elements/progress-bars.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "ca188ccaff0987acc0400b25509463ade116871b"
+              ]
+            },
+            {
+              "path": "references/elements/sparklines.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "51c966e243b47ed8b4c39b6aa3abca42cb92a8b4"
+              ]
+            },
+            {
+              "path": "references/elements/tagged-header.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "5a67c02378eae88a31ba8a0cd0809478356b575d"
+              ]
+            },
+            {
+              "path": "references/elements/text.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "fdf238bedb28f83d89852b1eeb82381fbbacd7b7"
+              ]
+            },
+            {
+              "path": "references/export/figma-import.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "fb81f47d0dd6033d393442ce33c68c700c4c23e0"
+              ]
+            },
+            {
+              "path": "references/export/png-export.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "674ecd18157a47b8f749477546aa2c19d0d871ff"
+              ]
+            },
+            {
+              "path": "references/infographic-web-based.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "0b4a1b2dd8174a9106376768cbb93df6bd9b8251"
+              ]
+            },
+            {
+              "path": "references/snippets/anatomical.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "b1815262c02f27e9f8cf0dbcf45b6b5cf033e502"
+              ]
+            },
+            {
+              "path": "references/snippets/callout-grid.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "2992c7bba8190b8a3c3c878bd6083acb781ba713"
+              ]
+            },
+            {
+              "path": "references/snippets/circular-flow.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "e96473f7ce900f9972686cd1cf29aba4ced00d0b"
+              ]
+            },
+            {
+              "path": "references/snippets/comparison.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "32d5c0a90e72a35c402221ec762e458d3d3ff72b"
+              ]
+            },
+            {
+              "path": "references/snippets/fishbone.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "28f12933c7c80540826e396ee6edacf40a0bc4e5"
+              ]
+            },
+            {
+              "path": "references/snippets/flowchart.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "6664ada6db8784a8730d6e18145a53cca461d6b5"
+              ]
+            },
+            {
+              "path": "references/snippets/funnel.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "1cf46182b6727a890b141d109820b336b91ab4c9"
+              ]
+            },
+            {
+              "path": "references/snippets/geographic.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "ec98087d9c94022d56acb95cb597c2a4879cbb0e"
+              ]
+            },
+            {
+              "path": "references/snippets/grid-cards.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "919b794ea5872ea0100cea06be510743b8b739dc"
+              ]
+            },
+            {
+              "path": "references/snippets/hierarchical.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "b0765c1863a43eadaa57ee55459a9afa4ab5cb44"
+              ]
+            },
+            {
+              "path": "references/snippets/iceberg.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "00c955095c864b9e25d0fe793f22f7f09c7c39ea"
+              ]
+            },
+            {
+              "path": "references/snippets/journey-path.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "e3b51fbdbf9ca98a8b7f5de716846dda8685411f"
+              ]
+            },
+            {
+              "path": "references/snippets/kpi-panel-grid.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "b6c7a15792e792fdaa81f9749b88be342abe2f69"
+              ]
+            },
+            {
+              "path": "references/snippets/list.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "29e457bdf72837905b42aae35a227e896a43ee78"
+              ]
+            },
+            {
+              "path": "references/snippets/mind-map.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "49a4f2f02e94f2a52359928a1abf16c4220ef522"
+              ]
+            },
+            {
+              "path": "references/snippets/network-graph.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "af08c6586163df8d10e9a7efe990fef597b40895"
+              ]
+            },
+            {
+              "path": "references/snippets/process-flow.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "2dcfc6de6a4eb5bf5d8e11e36f741be9989ccb07"
+              ]
+            },
+            {
+              "path": "references/snippets/pyramid.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "78d5bd8206b52c6524dba502ace9a83a8e3c195f"
+              ]
+            },
+            {
+              "path": "references/snippets/quadrant.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "1cdd76edb762541c3dc8da3d78be2b71ff39d70e"
+              ]
+            },
+            {
+              "path": "references/snippets/roadmap.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "3efd2e9589b9ec3834c9b171aac3fac9424d89fa"
+              ]
+            },
+            {
+              "path": "references/snippets/sankey-flow.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "045bdacb8ad033afaf4da0965b9726d9e228c0e8"
+              ]
+            },
+            {
+              "path": "references/snippets/stat-spotlight.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "9490a6a2383def98ef764e1b7f13ee8826eaf594"
+              ]
+            },
+            {
+              "path": "references/snippets/statistical.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "684f5b1e91efe7fba4c53eb52d5336b23d1a027c"
+              ]
+            },
+            {
+              "path": "references/snippets/step-connector.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "c5aaa2d4f883d4d13458a80b8de2eab335187249"
+              ]
+            },
+            {
+              "path": "references/snippets/swimlane.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "5262165c904235f0f1b273c0e0bba197756af272"
+              ]
+            },
+            {
+              "path": "references/snippets/timeline.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "b99091c36932d3b5850204a310c550c7f3b908c2"
+              ]
+            },
+            {
+              "path": "references/snippets/venn.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "a6e0c88005b42a82bb7ce0c3cad37ccf5c163906"
+              ]
+            },
+            {
+              "path": "references/social-media-copy.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "ee9f1c78d43f352e5ec3275699fe78aaf0367e2e"
+              ]
+            },
+            {
+              "path": "references/styles/_custom-template.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "3d3abad96bab76af3d0e446141adfccd9a09d84d"
+              ]
+            },
+            {
+              "path": "references/styles/aizfographics-style.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "50ef02e35b4c8afcb96fc74372db0aac82e81f9d"
+              ]
+            },
+            {
+              "path": "references/styles/ash.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "571e3cffadc8df2f42341f2e8abdfe1649f5d528"
+              ]
+            },
+            {
+              "path": "references/styles/blueprint.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "417abb656a8773dcd303746bd796507972290d9e"
+              ]
+            },
+            {
+              "path": "references/styles/chalkboard.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "d44b28e3950374ad90ea30dd9d54ca7461c26cbc"
+              ]
+            },
+            {
+              "path": "references/styles/claude-light.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "135a91ef3b37d29d1ece997fa236c575f267d68a"
+              ]
+            },
+            {
+              "path": "references/styles/clean-minimal.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "85286bd923387420e33842dec15371e9361efb56"
+              ]
+            },
+            {
+              "path": "references/styles/corporate.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "16d2e182e5967b894e95462bf8f729acabd008bb"
+              ]
+            },
+            {
+              "path": "references/styles/cyberpunk.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "ea210577758c4beada18769cf82b05e4d8050ad9"
+              ]
+            },
+            {
+              "path": "references/styles/editorial.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "a807eff41ab8ef0456f46dd4e1968a87ad0f8e38"
+              ]
+            },
+            {
+              "path": "references/styles/forge.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "1473c0e1338ae81da48026bb8c2f7605c1f21cb2"
+              ]
+            },
+            {
+              "path": "references/styles/glassmorphism.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "79da68a339120c2bf09075d65320053eb909eb7f"
+              ]
+            },
+            {
+              "path": "references/styles/glasspaper.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "b2fdabf6e201606fae79766acdb6ec375e3f9cae"
+              ]
+            },
+            {
+              "path": "references/styles/grok-dark.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "3eaf2a904a5be81d92fef73ce6bdce0b26831d06"
+              ]
+            },
+            {
+              "path": "references/styles/growth-hacking.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "b4387c635e1ffb1456f9d9ea5596a53d5381ba13"
+              ]
+            },
+            {
+              "path": "references/styles/hand-drawn.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "20bd48c66ead81abd9a1e4710dfb9cc950791bc8"
+              ]
+            },
+            {
+              "path": "references/styles/hermes.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "00d4dd313106bdf692dde70a876c7a6bd542a7cb"
+              ]
+            },
+            {
+              "path": "references/styles/obsidian-ledger.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "a5996063a40ebdabfd17108b886dc5e43260c0e3"
+              ]
+            },
+            {
+              "path": "references/styles/openai-dark.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "b5cd10ce78ce9779a5c8f510c26a8c8b4c2ef9bf"
+              ]
+            },
+            {
+              "path": "references/styles/openclaw.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "9a19122320d14694a16aa628631933eed7f30e29"
+              ]
+            },
+            {
+              "path": "references/styles/retro.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "03cb2b61c086a2373359c6147c901dbf2d74b446"
+              ]
+            },
+            {
+              "path": "references/styles/scrapbook.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "201535c6664fa4bcc1f7ae3ef8a5a0b6ed122162"
+              ]
+            },
+            {
+              "path": "references/styles/signal.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "2757de05842d383dcd8c3cd105a75b87d4a4559b"
+              ]
+            },
+            {
+              "path": "references/styles/terminal.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "a1552ee2e213ea7c24b0a274f4418522e0394fc6"
+              ]
+            },
+            {
+              "path": "references/styles/vercel-dark.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "2b8d5bc38c4be122fb18fa4dbf5ba09d7c7d8120"
+              ]
+            },
+            {
+              "path": "references/templates/_signals.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "249ca34e43bcf61ebfb8b678e718ad6d32c0ae3f"
+              ]
+            },
+            {
+              "path": "references/templates/allocation-breakdown.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "7d258e831a0940a839171f6d6d12cc8005fedfef"
+              ]
+            },
+            {
+              "path": "references/templates/case-study.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "89cd39e4e58e434846ab0c09f9dbcaf04691afdf"
+              ]
+            },
+            {
+              "path": "references/templates/cheatsheet.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "14fe49a37b34eda40914d781eaaeef5a04409e06"
+              ]
+            },
+            {
+              "path": "references/templates/collection-showcase.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "6929f84b9216fa06087cfc5d20c173daed255583"
+              ]
+            },
+            {
+              "path": "references/templates/concept-explainer.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "450830b043aa3196f98e9bf45cff0a6dee394bed"
+              ]
+            },
+            {
+              "path": "references/templates/distribution-guide.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "e4aa3b3487007492d9bee57e625dd5b25e9934cf"
+              ]
+            },
+            {
+              "path": "references/templates/ecosystem-overview.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "be541bc855731270e97ec3807d05eee5082c2348"
+              ]
+            },
+            {
+              "path": "references/templates/game-mechanics.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "92fe7a8afefc6cac62e8ec0206d37c9501d70b74"
+              ]
+            },
+            {
+              "path": "references/templates/game-overview.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "3dcfd1e7d1b7242805e29ac459df2fed656baccc"
+              ]
+            },
+            {
+              "path": "references/templates/how-it-works.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "ea88fdb6fb0c263330f752b0e7b0a81cd65ba2bf"
+              ]
+            },
+            {
+              "path": "references/templates/report.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "798b8443c348dea1f82aa43930627330d5f26139"
+              ]
+            },
+            {
+              "path": "references/viewer-features.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "59e5329e708362ba3d9c3f5b9ad7450caf9a3411"
+              ]
+            },
+            {
+              "path": "resources/charts.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "a6456ddbbdbc65dc05010174133ac3f04ca7b68c"
+              ],
+              "observed": null
+            },
+            {
+              "path": "resources/color-palettes.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "37e073babef35a6cdb15188a49109cc11862ef57"
+              ],
+              "observed": null
+            },
+            {
+              "path": "resources/copy-guide.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "905044b0873ad67afa5139c0d59f23dac307c2c6"
+              ],
+              "observed": null
+            },
+            {
+              "path": "resources/design-brief.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "93a479c60eb1dab6d29c5f56e5872142ae86ae06"
+              ],
+              "observed": null
+            },
+            {
+              "path": "resources/font-pairings.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "e812c366ff81d488e71af18137681b8ae1e4f75d"
+              ],
+              "observed": null
+            },
+            {
+              "path": "resources/layout-patterns.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "b4522cc824a1283162c7168a768ff03dca6200d0"
+              ],
+              "observed": null
+            },
+            {
+              "path": "resources/platform-sizes.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "a486956f82da7cd7339676af2bd341ff3b5a7f57"
+              ],
+              "observed": null
+            },
+            {
+              "path": "resources/style-details.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "e1536fee7d41688bdebbbea1ea327c03a012c401"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/export.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "7d6c0059ed92e4b7014da34b4e686cf024d89fa9"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "923de2564d5a8cd41e0b34e6feef95e8eae8e1a6"
+              ]
+            },
+            {
+              "path": "scripts/preview_server.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "95676de69b0809758fd2950d86040d53af10d7d2"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/airdrop-guide.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "8dfc7cd5c48a29b14ceda88d3744789c3881a848"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/branded-minimal.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "c77463853b37fe9faa574df09d194a72c4282e62"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/comparison.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "478d178cc14da4c45b1a61bb7a50dd4335e5ff94"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/crypto-explainer.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "32376736a17ee3a6a25a96a060c3fe0335a63fa1"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/dark-modern.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "a9770bc7af3366d91dffc7ba4bd5e3f870191a57"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/data-story.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "730642f0bb79c7d94a59e3697b0f23141cea316c"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/defi-protocol.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "14b3c9e8db3b09073a3eb2139ab62d8ab6af428c"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/ecosystem.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "beaa0602aee352e28acf0112cfd822ad19044caf"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/event-schedule.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "a3a2c51b7eef5bfde1c5e5013d6123ba6ff481a8"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/feature-roster.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "405f0b04e887b6a7998821fc6c44f7432e454332"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/game-cheat-sheet.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "3d76360295e180a6009644e63a3db3bdbeda8670"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/game-event.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "99077833c48c070734bd31811838c861486bc99b"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/game-overview.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "b7b2b588b19a60310179359f91cf9f49fce267eb"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/how-it-works.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "4fc7e36b512a24dabb3faf79f13dd160f09cc760"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/light-editorial.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "2423e65d93de75204d006b69cded7de80198761f"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/listicle.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "1908e80ec057616f81907db52fae82c2ae2933b1"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/modern-timeline.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "98c7216fddf101066105424759a671c440c77543"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/nft-showcase.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "60535be747ad9e49f24778ac007deb23bbd3e10a"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/roadmap.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "03db0b074984af8d810eefb08b1c32e24220b9cb"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/staking-yield.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "2509b898902ad66aa11d698e05459213e1ca6a15"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/stats-poster.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "b2a1e7b54344dd8f8dc18e796ee9aaba30a39875"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/token-economics.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "c1c2993e16ef9a270359e5734e50038994e3119d"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/token-flywheel.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "bf216054e16dab9cac63554d1ad29cffc68fe5f8"
+              ],
+              "observed": null
+            },
+            {
+              "path": "templates/whitepaper-overview.html",
+              "pinned": [
+                "blob",
+                "100644",
+                "6787c6842b49740ad033eb89d6661d3ebcd8c647"
+              ],
+              "observed": null
+            },
+            {
+              "path": "v2updates.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "333d591b6b2b029a35354537661d6c81ce28be97"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": []
+        }
+      ],
+      "latest_release": {
+        "tag": "v2026.05.25",
+        "commit": "8054906f52c2b499d39ea108f55d2ab5a171e25e",
+        "tree": "657e1ad4631b5be45d8ddfaed2ef3d3827b4f114",
+        "recursive_complete": true,
+        "entrypoints_changed": 1,
+        "entrypoints_missing_at_recorded_path": 0,
+        "directories_changed": 1,
+        "skills": [
+          {
+            "skill_id": "aizzaku-create-infographics-skill-md",
+            "source_path": "SKILL.md",
+            "entrypoint": "changed",
+            "directory_changed": true,
+            "pinned_file_count": 54,
+            "observed_file_count": 107,
+            "changed_paths": [
+              {
+                "path": ".gitignore",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "644a86b78dd8cf231c1d04154e0eda4b2c36df77"
+                ]
+              },
+              {
+                "path": "README.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "2dbd027932b7f34236e0c23b1910be21133152bb"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "ca862ab1a7f1206a9027b4fbbf0bbbe1fb93bb35"
+                ]
+              },
+              {
+                "path": "SKILL.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "3f8a7ec3a9574d959a924f176364eef8dedae4cf"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "a0d5f8673dcfab2efd1835b9e0eff2e3f4d2b9f5"
+                ]
+              },
+              {
+                "path": "evals/evals.json",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "7451f23c1df13b6f920e01811dd36fa3c3a84462"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "9960d7463278034588c06cd15e30cb978e5b85fe"
+                ]
+              },
+              {
+                "path": "evals/output-evals.json",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "213812730e9f525ba3e42ce8c0f6bdaec4b4ec74"
+                ]
+              },
+              {
+                "path": "examples/defi_protocol.png",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "d1e1b21a97589f3e3d71720221747b513f8c29f0"
+                ],
+                "observed": null
+              },
+              {
+                "path": "examples/double_token_strategy_flywheel_flow.png",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "85407f95ded7da2920a2a4e860aeb2cad9b3e388"
+                ],
+                "observed": null
+              },
+              {
+                "path": "examples/farming_game_mode_mechanic_overview.png",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "8b66bbab7f07ba3e14806b308af9b48be0ccd729"
+                ],
+                "observed": null
+              },
+              {
+                "path": "examples/game_event_overview.png",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "1f072b2ee51c36b2ee73226bc6cc85d3af16c196"
+                ],
+                "observed": null
+              },
+              {
+                "path": "examples/game_quest_cheatsheet.png",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "7b8d8f2df4dbd67f0a1a2a99677f2d607f3cf0ef"
+                ],
+                "observed": null
+              },
+              {
+                "path": "examples/game_strateg_flow.png",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "b12d1701e8488d8bab71badee8c8a38232847885"
+                ],
+                "observed": null
+              },
+              {
+                "path": "examples/game_whitepaper_overview.png",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "1723358717e82dd858dad9cdd68d45a5f11b5e07"
+                ],
+                "observed": null
+              },
+              {
+                "path": "examples/game_whitepaper_overview_2.png",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "99141d8d55c55db5aac8ec2555cc097398b15e95"
+                ],
+                "observed": null
+              },
+              {
+                "path": "examples/nft_ecosystem_overview.png",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "52593bae8bb2ddad14676a11feb2b8bd2004c70c"
+                ],
+                "observed": null
+              },
+              {
+                "path": "examples/pocket_guide.png",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "c72365e0464a0aa7f9fe48937b8997c5fe271b1a"
+                ],
+                "observed": null
+              },
+              {
+                "path": "examples/showcase/canvases-showcase.png",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "7cbaebad65b4b70e8427f9336f41ea70098ee960"
+                ]
+              },
+              {
+                "path": "examples/showcase/elements-showcase.png",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "563ff8b029943a664d3787c47f393ab57b0956a5"
+                ]
+              },
+              {
+                "path": "examples/showcase/mental-model.png",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "b2fd4b2f5eb66ec9d207c4f02b7f895afa0e1537"
+                ]
+              },
+              {
+                "path": "examples/showcase/readme-banner.png",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "55247aa826f6f9033563202b8bb6b849b1b114c1"
+                ]
+              },
+              {
+                "path": "examples/showcase/snippets-showcase.png",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "7f1a1114217b5f8f0b6472c34f2053387ac8f158"
+                ]
+              },
+              {
+                "path": "examples/showcase/styles-showcase.png",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "5b0b662b9cc21fe427e20e66a4f1bf159a7498c4"
+                ]
+              },
+              {
+                "path": "examples/stats.png",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "e4a7ce9088e7e6a0fbbda882d5645a8208e79e71"
+                ],
+                "observed": null
+              },
+              {
+                "path": "examples/token_ecosystem_flow.png",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "468cd38ddfe308093783b06b4749d3f0922db23e"
+                ],
+                "observed": null
+              },
+              {
+                "path": "examples/token_strategy_flywheel_flow.png",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "9610a7bdef103a24933cc14e7ff85f7f301eca29"
+                ],
+                "observed": null
+              },
+              {
+                "path": "examples/tokenomics_overview.png",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "0af0bf87120661372f3fdfad67a3e38f1d5f3345"
+                ],
+                "observed": null
+              },
+              {
+                "path": "examples/whitepaper_overview.png",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "f9fa2bbb75a82156fc70d4e240a50c329b462f3d"
+                ],
+                "observed": null
+              },
+              {
+                "path": "install.sh",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "926558a9c441b278ffa9ec7ba9e076c4ba483176"
+                ]
+              },
+              {
+                "path": "progress.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "cc49a2a45d9bc24210859e4b529286d1238017e1"
+                ],
+                "observed": null
+              },
+              {
+                "path": "references/_design-docs/new-templates-design-brief.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "4ebd8aba7030a41b48419f39d29a2e2330576407"
+                ]
+              },
+              {
+                "path": "references/_gallery.html",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "21b5e1d930f6df265c84588fa6200abea5e4b528"
+                ]
+              },
+              {
+                "path": "references/_standalone-extraction.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "90e7da6f938004cab6494e4ac4d31e7e968910b8"
+                ]
+              },
+              {
+                "path": "references/actionable-frameworks.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "7a16c2741fff3115a7aa9805276549ae2fc47e47"
+                ]
+              },
+              {
+                "path": "references/brand-extraction.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "e529909aa49247386b1657bc8f9a7920e3c57a34"
+                ]
+              },
+              {
+                "path": "references/canvases/bento-box.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "75d2e51fb133fa8160e8b4b90855df9d524393de"
+                ]
+              },
+              {
+                "path": "references/canvases/dashboard.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "0a90586619c5bc1ab38e83ddd96569089058dac8"
+                ]
+              },
+              {
+                "path": "references/canvases/editorial.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "3902ebc64f850675a70906e86790dc8ab8ad8ffd"
+                ]
+              },
+              {
+                "path": "references/canvases/poster.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "c03e835c3ea392d37208dfbf5273e9ab2bfd4da7"
+                ]
+              },
+              {
+                "path": "references/creator-tools.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "4fd6cbc5b6f10895d3f87046000490dccb62cf8c"
+                ]
+              },
+              {
+                "path": "references/elements/annotation.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "5e71c33c32c0a65f5b3fa4e54666d3125f644b58"
+                ]
+              },
+              {
+                "path": "references/elements/badges.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "8c4f41ed7d2e7f9979f497099fac8d31efb67829"
+                ]
+              },
+              {
+                "path": "references/elements/callout-card.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "9c9baeaeef33d04d5ccd2b20e35ef59982880a24"
+                ]
+              },
+              {
+                "path": "references/elements/charts.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "77b1f1a1fce6c95ca496c7338fa56d2a7b469a8c"
+                ]
+              },
+              {
+                "path": "references/elements/comparison.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "f6575bb8fbe482655d27c925a5fdb200632961b1"
+                ]
+              },
+              {
+                "path": "references/elements/connectors.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "2561e212fa1925ef065c1a0400626e5e8fea4fdd"
+                ]
+              },
+              {
+                "path": "references/elements/data-widgets.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "4e630e02caf494ef2b7d9b4e87f5a163d14e912a"
+                ]
+              },
+              {
+                "path": "references/elements/decorative.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "5cd12253fbca5ca19d991874257afef320e22ccb"
+                ]
+              },
+              {
+                "path": "references/elements/icons.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "995cd42bac034fb57a45d5ba14db9571d935d777"
+                ]
+              },
+              {
+                "path": "references/elements/layout.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "a789bc489e1ee4a5ab1c0a759994c5c54459a21a"
+                ]
+              },
+              {
+                "path": "references/elements/maps.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "0c56877628b4bfe937a84cbcd860c7c54fb6376e"
+                ]
+              },
+              {
+                "path": "references/elements/progress-bars.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "ca188ccaff0987acc0400b25509463ade116871b"
+                ]
+              },
+              {
+                "path": "references/elements/sparklines.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "51c966e243b47ed8b4c39b6aa3abca42cb92a8b4"
+                ]
+              },
+              {
+                "path": "references/elements/tagged-header.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "5a67c02378eae88a31ba8a0cd0809478356b575d"
+                ]
+              },
+              {
+                "path": "references/elements/text.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "fdf238bedb28f83d89852b1eeb82381fbbacd7b7"
+                ]
+              },
+              {
+                "path": "references/export/figma-import.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "fb81f47d0dd6033d393442ce33c68c700c4c23e0"
+                ]
+              },
+              {
+                "path": "references/export/png-export.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "674ecd18157a47b8f749477546aa2c19d0d871ff"
+                ]
+              },
+              {
+                "path": "references/infographic-web-based.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "0b4a1b2dd8174a9106376768cbb93df6bd9b8251"
+                ]
+              },
+              {
+                "path": "references/snippets/anatomical.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "b1815262c02f27e9f8cf0dbcf45b6b5cf033e502"
+                ]
+              },
+              {
+                "path": "references/snippets/callout-grid.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "2992c7bba8190b8a3c3c878bd6083acb781ba713"
+                ]
+              },
+              {
+                "path": "references/snippets/circular-flow.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "e96473f7ce900f9972686cd1cf29aba4ced00d0b"
+                ]
+              },
+              {
+                "path": "references/snippets/comparison.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "32d5c0a90e72a35c402221ec762e458d3d3ff72b"
+                ]
+              },
+              {
+                "path": "references/snippets/fishbone.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "28f12933c7c80540826e396ee6edacf40a0bc4e5"
+                ]
+              },
+              {
+                "path": "references/snippets/flowchart.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "6664ada6db8784a8730d6e18145a53cca461d6b5"
+                ]
+              },
+              {
+                "path": "references/snippets/funnel.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "1cf46182b6727a890b141d109820b336b91ab4c9"
+                ]
+              },
+              {
+                "path": "references/snippets/geographic.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "ec98087d9c94022d56acb95cb597c2a4879cbb0e"
+                ]
+              },
+              {
+                "path": "references/snippets/grid-cards.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "919b794ea5872ea0100cea06be510743b8b739dc"
+                ]
+              },
+              {
+                "path": "references/snippets/hierarchical.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "b0765c1863a43eadaa57ee55459a9afa4ab5cb44"
+                ]
+              },
+              {
+                "path": "references/snippets/iceberg.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "00c955095c864b9e25d0fe793f22f7f09c7c39ea"
+                ]
+              },
+              {
+                "path": "references/snippets/journey-path.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "e3b51fbdbf9ca98a8b7f5de716846dda8685411f"
+                ]
+              },
+              {
+                "path": "references/snippets/kpi-panel-grid.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "b6c7a15792e792fdaa81f9749b88be342abe2f69"
+                ]
+              },
+              {
+                "path": "references/snippets/list.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "29e457bdf72837905b42aae35a227e896a43ee78"
+                ]
+              },
+              {
+                "path": "references/snippets/mind-map.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "49a4f2f02e94f2a52359928a1abf16c4220ef522"
+                ]
+              },
+              {
+                "path": "references/snippets/network-graph.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "af08c6586163df8d10e9a7efe990fef597b40895"
+                ]
+              },
+              {
+                "path": "references/snippets/process-flow.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "2dcfc6de6a4eb5bf5d8e11e36f741be9989ccb07"
+                ]
+              },
+              {
+                "path": "references/snippets/pyramid.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "78d5bd8206b52c6524dba502ace9a83a8e3c195f"
+                ]
+              },
+              {
+                "path": "references/snippets/quadrant.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "1cdd76edb762541c3dc8da3d78be2b71ff39d70e"
+                ]
+              },
+              {
+                "path": "references/snippets/roadmap.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "3efd2e9589b9ec3834c9b171aac3fac9424d89fa"
+                ]
+              },
+              {
+                "path": "references/snippets/sankey-flow.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "045bdacb8ad033afaf4da0965b9726d9e228c0e8"
+                ]
+              },
+              {
+                "path": "references/snippets/stat-spotlight.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "9490a6a2383def98ef764e1b7f13ee8826eaf594"
+                ]
+              },
+              {
+                "path": "references/snippets/statistical.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "684f5b1e91efe7fba4c53eb52d5336b23d1a027c"
+                ]
+              },
+              {
+                "path": "references/snippets/step-connector.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "c5aaa2d4f883d4d13458a80b8de2eab335187249"
+                ]
+              },
+              {
+                "path": "references/snippets/swimlane.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "5262165c904235f0f1b273c0e0bba197756af272"
+                ]
+              },
+              {
+                "path": "references/snippets/timeline.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "b99091c36932d3b5850204a310c550c7f3b908c2"
+                ]
+              },
+              {
+                "path": "references/snippets/venn.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "a6e0c88005b42a82bb7ce0c3cad37ccf5c163906"
+                ]
+              },
+              {
+                "path": "references/social-media-copy.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "ee9f1c78d43f352e5ec3275699fe78aaf0367e2e"
+                ]
+              },
+              {
+                "path": "references/styles/_custom-template.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "3d3abad96bab76af3d0e446141adfccd9a09d84d"
+                ]
+              },
+              {
+                "path": "references/styles/aizfographics-style.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "50ef02e35b4c8afcb96fc74372db0aac82e81f9d"
+                ]
+              },
+              {
+                "path": "references/styles/ash.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "571e3cffadc8df2f42341f2e8abdfe1649f5d528"
+                ]
+              },
+              {
+                "path": "references/styles/blueprint.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "417abb656a8773dcd303746bd796507972290d9e"
+                ]
+              },
+              {
+                "path": "references/styles/chalkboard.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "d44b28e3950374ad90ea30dd9d54ca7461c26cbc"
+                ]
+              },
+              {
+                "path": "references/styles/claude-light.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "135a91ef3b37d29d1ece997fa236c575f267d68a"
+                ]
+              },
+              {
+                "path": "references/styles/clean-minimal.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "85286bd923387420e33842dec15371e9361efb56"
+                ]
+              },
+              {
+                "path": "references/styles/corporate.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "16d2e182e5967b894e95462bf8f729acabd008bb"
+                ]
+              },
+              {
+                "path": "references/styles/cyberpunk.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "ea210577758c4beada18769cf82b05e4d8050ad9"
+                ]
+              },
+              {
+                "path": "references/styles/editorial.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "a807eff41ab8ef0456f46dd4e1968a87ad0f8e38"
+                ]
+              },
+              {
+                "path": "references/styles/forge.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "1473c0e1338ae81da48026bb8c2f7605c1f21cb2"
+                ]
+              },
+              {
+                "path": "references/styles/glassmorphism.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "79da68a339120c2bf09075d65320053eb909eb7f"
+                ]
+              },
+              {
+                "path": "references/styles/glasspaper.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "b2fdabf6e201606fae79766acdb6ec375e3f9cae"
+                ]
+              },
+              {
+                "path": "references/styles/grok-dark.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "3eaf2a904a5be81d92fef73ce6bdce0b26831d06"
+                ]
+              },
+              {
+                "path": "references/styles/growth-hacking.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "b4387c635e1ffb1456f9d9ea5596a53d5381ba13"
+                ]
+              },
+              {
+                "path": "references/styles/hand-drawn.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "20bd48c66ead81abd9a1e4710dfb9cc950791bc8"
+                ]
+              },
+              {
+                "path": "references/styles/hermes.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "00d4dd313106bdf692dde70a876c7a6bd542a7cb"
+                ]
+              },
+              {
+                "path": "references/styles/obsidian-ledger.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "a5996063a40ebdabfd17108b886dc5e43260c0e3"
+                ]
+              },
+              {
+                "path": "references/styles/openai-dark.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "b5cd10ce78ce9779a5c8f510c26a8c8b4c2ef9bf"
+                ]
+              },
+              {
+                "path": "references/styles/openclaw.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "9a19122320d14694a16aa628631933eed7f30e29"
+                ]
+              },
+              {
+                "path": "references/styles/retro.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "03cb2b61c086a2373359c6147c901dbf2d74b446"
+                ]
+              },
+              {
+                "path": "references/styles/scrapbook.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "201535c6664fa4bcc1f7ae3ef8a5a0b6ed122162"
+                ]
+              },
+              {
+                "path": "references/styles/signal.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "2757de05842d383dcd8c3cd105a75b87d4a4559b"
+                ]
+              },
+              {
+                "path": "references/styles/terminal.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "a1552ee2e213ea7c24b0a274f4418522e0394fc6"
+                ]
+              },
+              {
+                "path": "references/styles/vercel-dark.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "2b8d5bc38c4be122fb18fa4dbf5ba09d7c7d8120"
+                ]
+              },
+              {
+                "path": "references/templates/_signals.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "249ca34e43bcf61ebfb8b678e718ad6d32c0ae3f"
+                ]
+              },
+              {
+                "path": "references/templates/allocation-breakdown.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "7d258e831a0940a839171f6d6d12cc8005fedfef"
+                ]
+              },
+              {
+                "path": "references/templates/case-study.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "89cd39e4e58e434846ab0c09f9dbcaf04691afdf"
+                ]
+              },
+              {
+                "path": "references/templates/cheatsheet.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "14fe49a37b34eda40914d781eaaeef5a04409e06"
+                ]
+              },
+              {
+                "path": "references/templates/collection-showcase.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "6929f84b9216fa06087cfc5d20c173daed255583"
+                ]
+              },
+              {
+                "path": "references/templates/concept-explainer.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "450830b043aa3196f98e9bf45cff0a6dee394bed"
+                ]
+              },
+              {
+                "path": "references/templates/distribution-guide.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "e4aa3b3487007492d9bee57e625dd5b25e9934cf"
+                ]
+              },
+              {
+                "path": "references/templates/ecosystem-overview.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "be541bc855731270e97ec3807d05eee5082c2348"
+                ]
+              },
+              {
+                "path": "references/templates/game-mechanics.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "92fe7a8afefc6cac62e8ec0206d37c9501d70b74"
+                ]
+              },
+              {
+                "path": "references/templates/game-overview.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "3dcfd1e7d1b7242805e29ac459df2fed656baccc"
+                ]
+              },
+              {
+                "path": "references/templates/how-it-works.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "ea88fdb6fb0c263330f752b0e7b0a81cd65ba2bf"
+                ]
+              },
+              {
+                "path": "references/templates/report.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "798b8443c348dea1f82aa43930627330d5f26139"
+                ]
+              },
+              {
+                "path": "references/viewer-features.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "59e5329e708362ba3d9c3f5b9ad7450caf9a3411"
+                ]
+              },
+              {
+                "path": "resources/charts.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "a6456ddbbdbc65dc05010174133ac3f04ca7b68c"
+                ],
+                "observed": null
+              },
+              {
+                "path": "resources/color-palettes.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "37e073babef35a6cdb15188a49109cc11862ef57"
+                ],
+                "observed": null
+              },
+              {
+                "path": "resources/copy-guide.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "905044b0873ad67afa5139c0d59f23dac307c2c6"
+                ],
+                "observed": null
+              },
+              {
+                "path": "resources/design-brief.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "93a479c60eb1dab6d29c5f56e5872142ae86ae06"
+                ],
+                "observed": null
+              },
+              {
+                "path": "resources/font-pairings.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "e812c366ff81d488e71af18137681b8ae1e4f75d"
+                ],
+                "observed": null
+              },
+              {
+                "path": "resources/layout-patterns.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "b4522cc824a1283162c7168a768ff03dca6200d0"
+                ],
+                "observed": null
+              },
+              {
+                "path": "resources/platform-sizes.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "a486956f82da7cd7339676af2bd341ff3b5a7f57"
+                ],
+                "observed": null
+              },
+              {
+                "path": "resources/style-details.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "e1536fee7d41688bdebbbea1ea327c03a012c401"
+                ],
+                "observed": null
+              },
+              {
+                "path": "scripts/export.py",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "7d6c0059ed92e4b7014da34b4e686cf024d89fa9"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "923de2564d5a8cd41e0b34e6feef95e8eae8e1a6"
+                ]
+              },
+              {
+                "path": "scripts/preview_server.py",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "95676de69b0809758fd2950d86040d53af10d7d2"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/airdrop-guide.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "8dfc7cd5c48a29b14ceda88d3744789c3881a848"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/branded-minimal.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "c77463853b37fe9faa574df09d194a72c4282e62"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/comparison.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "478d178cc14da4c45b1a61bb7a50dd4335e5ff94"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/crypto-explainer.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "32376736a17ee3a6a25a96a060c3fe0335a63fa1"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/dark-modern.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "a9770bc7af3366d91dffc7ba4bd5e3f870191a57"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/data-story.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "730642f0bb79c7d94a59e3697b0f23141cea316c"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/defi-protocol.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "14b3c9e8db3b09073a3eb2139ab62d8ab6af428c"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/ecosystem.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "beaa0602aee352e28acf0112cfd822ad19044caf"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/event-schedule.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "a3a2c51b7eef5bfde1c5e5013d6123ba6ff481a8"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/feature-roster.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "405f0b04e887b6a7998821fc6c44f7432e454332"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/game-cheat-sheet.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "3d76360295e180a6009644e63a3db3bdbeda8670"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/game-event.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "99077833c48c070734bd31811838c861486bc99b"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/game-overview.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "b7b2b588b19a60310179359f91cf9f49fce267eb"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/how-it-works.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "4fc7e36b512a24dabb3faf79f13dd160f09cc760"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/light-editorial.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "2423e65d93de75204d006b69cded7de80198761f"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/listicle.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "1908e80ec057616f81907db52fae82c2ae2933b1"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/modern-timeline.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "98c7216fddf101066105424759a671c440c77543"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/nft-showcase.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "60535be747ad9e49f24778ac007deb23bbd3e10a"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/roadmap.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "03db0b074984af8d810eefb08b1c32e24220b9cb"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/staking-yield.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "2509b898902ad66aa11d698e05459213e1ca6a15"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/stats-poster.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "b2a1e7b54344dd8f8dc18e796ee9aaba30a39875"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/token-economics.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "c1c2993e16ef9a270359e5734e50038994e3119d"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/token-flywheel.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "bf216054e16dab9cac63554d1ad29cffc68fe5f8"
+                ],
+                "observed": null
+              },
+              {
+                "path": "templates/whitepaper-overview.html",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "6787c6842b49740ad033eb89d6661d3ebcd8c647"
+                ],
+                "observed": null
+              },
+              {
+                "path": "v2updates.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "333d591b6b2b029a35354537661d6c81ce28be97"
+                ],
+                "observed": null
+              }
+            ],
+            "same_named_candidates": []
+          }
+        ]
+      }
+    }
+  ],
+  "captures": [
+    {
+      "endpoint": "repos/LingyiChen-AI/comfyui-workflow-skill",
+      "exit_code": 0,
+      "stdout_sha256": "0b82178e58c991da398d4cf41fdbdb08b351b15d040285292bd6e6b46ab65159",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0000"
+    },
+    {
+      "endpoint": "repos/LingyiChen-AI/comfyui-workflow-skill/commits/main",
+      "exit_code": 0,
+      "stdout_sha256": "9dc53587b0201de82d37060951e228c52549f39eba8fd7ed5e704052ac6d0bae",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0001"
+    },
+    {
+      "endpoint": "repos/LingyiChen-AI/comfyui-workflow-skill/git/commits/61e6b7984de7f415a8df59c97522265cac6d3b1b",
+      "exit_code": 0,
+      "stdout_sha256": "1c4adada8d9cdeab552115b9ac23f01c35b9bd14522a574bc4815a42440aeb95",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0002"
+    },
+    {
+      "endpoint": "repos/LingyiChen-AI/comfyui-workflow-skill/git/trees/b4e28441422bea4dd9ebdeb46884f54e7867461b?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "c2ee8f2bfd07ceafdb7e3304df036b5b137426dbddc54fb3e40d4d3f794c7838",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0003"
+    },
+    {
+      "endpoint": "repos/LingyiChen-AI/comfyui-workflow-skill/releases/latest",
+      "exit_code": 1,
+      "stdout_sha256": "d9e37600354c1839f6b22cebde497e9d14750d2401a06c9a51b1619baf991613",
+      "stderr_sha256": "d2c8985c89b29a842ac4946d13bdbc297709f44f20bb968faf9682664b211db6",
+      "capture": "0004"
+    },
+    {
+      "endpoint": "repos/aizzaku/aiz-infographic",
+      "exit_code": 0,
+      "stdout_sha256": "8db57f905996ed76cbd7e1dce9e969c378d745b167b292e427dc605222a5200e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0005"
+    },
+    {
+      "endpoint": "repos/aizzaku/aiz-infographic/commits/main",
+      "exit_code": 0,
+      "stdout_sha256": "09ddcd46c0a59331e9d8dc91f693f15b5e395a43415430f13233a0ca0cfe2632",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0006"
+    },
+    {
+      "endpoint": "repos/aizzaku/aiz-infographic/git/commits/5c8c8821026e7ee5998c886780237e64193e54c3",
+      "exit_code": 0,
+      "stdout_sha256": "1427fd435ce1c46d43ae58520d498a292cd5f18700ec6c505a639a2e2bf83d7b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0007"
+    },
+    {
+      "endpoint": "repos/aizzaku/aiz-infographic/git/trees/51ebefd37f59e9b4a888d0ba685e5ef72ba80a7a?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "cecd2dd18f62754e2bf92b74d073f0867f7e5da02efa046ae8878e6a678f1e08",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0008"
+    },
+    {
+      "endpoint": "repos/aizzaku/aiz-infographic/git/commits/8054906f52c2b499d39ea108f55d2ab5a171e25e",
+      "exit_code": 0,
+      "stdout_sha256": "083e377d6ded3d240b136a6785befe6f129e2d2a35be79f0b671f34664f5450f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0009"
+    },
+    {
+      "endpoint": "repos/aizzaku/aiz-infographic/git/trees/657e1ad4631b5be45d8ddfaed2ef3d3827b4f114?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "30b58260fbd6654862ee3bfad0008308d5b5985e506bab500f3b5302209fc25c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0010"
+    },
+    {
+      "endpoint": "repos/aizzaku/aiz-infographic/releases/latest",
+      "exit_code": 0,
+      "stdout_sha256": "ec7121c90b0df5b7bef6aa214e26e3e15cca999e050b230ca7fd95696e539350",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0011"
+    },
+    {
+      "endpoint": "repos/aizzaku/aiz-infographic/commits/v2026.05.25",
+      "exit_code": 0,
+      "stdout_sha256": "09ddcd46c0a59331e9d8dc91f693f15b5e395a43415430f13233a0ca0cfe2632",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0012"
+    }
+  ]
+}

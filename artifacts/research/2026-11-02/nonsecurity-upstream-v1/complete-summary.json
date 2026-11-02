@@ -1,0 +1,2452 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-11-02T15:23:47Z",
+  "source_lock_sha256": "8a2e4a90ecc0465c828cb3f5ef15d3c29f35771c9399fd8d45dd65cf767b83d6",
+  "selection_sha256": "4bf3e6701d8978ee2b60d1479366296fb2f0bb3827280080ff4f63e4c1cb5df4",
+  "algorithm_sha256": "05e917977ecc539679f7c1856d4d89f01e7be67bd09ad72b1c3fe3814a11c71a",
+  "scope": "Pinned selected skill directories compared with captured default-branch heads and latest GitHub releases; same-named paths are candidates only, not confirmed relocations. This is not an inventory of newly added skills, a quality review, or an agent-performance test.",
+  "results": [
+    {
+      "status": "complete",
+      "repo": "browser-act/skills",
+      "default_branch": "main",
+      "pinned_commit": "749ed52133b85606cf402b7fda95949542cbb8f8",
+      "observed_head": "11c057b03f92101642cadc9f840564574120d184",
+      "pinned_tree": "d858a0010fea64b8f735b4854aeec045e87eb63a",
+      "observed_tree": "37d7b27c8021cd8b2e2b824ad2541d532ca51636",
+      "pinned_recursive_complete": true,
+      "observed_recursive_complete": true,
+      "selected_skill_count": 32,
+      "entrypoints_changed": 1,
+      "entrypoints_missing_at_recorded_path": 31,
+      "directories_changed": 32,
+      "skills": [
+        {
+          "skill_id": "browser-act-skills-amazon-asin-lookup-api-skill-skill-md",
+          "source_path": "amazon-asin-lookup-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "820fca89b3a491b556e24620cae085668e6794ad"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/amazon_asin_lookup_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "f24d723f1e347355ca41ec81c0af1f05b2a993b4"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/ecommerce/amazon-asin-lookup-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-amazon-best-selling-products-finder-api-skill-skill-md",
+          "source_path": "amazon-best-selling-products-finder-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "e9bb308efca6c2fb1b11f5c787560561329f3210"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/amazon_best_selling_products_finder_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "411118d3d5670a7626d8a487f9786c461d5451a2"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/ecommerce/amazon-best-selling-products-finder-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-amazon-buy-box-monitor-api-skill-skill-md",
+          "source_path": "amazon-buy-box-monitor-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "9b817e330ba1bb6da9f38cfc67bd8ede8d546fd9"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/amazon_buy_box_monitor_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "6bbf00b5521882347a0d89a49b59e2c748c5e529"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/ecommerce/amazon-buy-box-monitor-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-amazon-competitor-analyzer-skill-md",
+          "source_path": "amazon-competitor-analyzer/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 3,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": ".env.example",
+              "pinned": [
+                "blob",
+                "100644",
+                "8cf73dec72d148229b2a1981941ce4123793bc32"
+              ],
+              "observed": null
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "2a2c765422d79533685d7ddc3b7a290aa1efa697"
+              ],
+              "observed": null
+            },
+            {
+              "path": "amazon_competitor_analyzer.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "233618a203617d29cfdf7ab57758d7a500432e80"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/ecommerce/amazon-competitor-analyzer/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 3,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-amazon-listing-competitor-analysis-skill-skill-md",
+          "source_path": "amazon-listing-competitor-analysis-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "0bda3fb73a9e9ba29e749fa95b615adc15d23d4d"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/amazon_listing_competitor_analysis.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "bcb69363edf80e2ac624d40239a39dd79f75c438"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/ecommerce/amazon-listing-competitor-analysis-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-amazon-product-api-skill-skill-md",
+          "source_path": "amazon-product-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "75aa931b0d2471d496a8fa43ec6d7afa350924c4"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/amazon_product_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "b6da3422cdc3852e5692760eced882ce1bc51e73"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/ecommerce/amazon-product-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-amazon-product-search-api-skill-skill-md",
+          "source_path": "amazon-product-search-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "7a925c26a7cbad6f7de4c8e5e7ba7d372e4acb7a"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/amazon_product_search_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "96485cd1a688c1e4ee6045604e2a50d37fa323b8"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/ecommerce/amazon-product-search-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-amazon-reviews-api-skill-skill-md",
+          "source_path": "amazon-reviews-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "7f9c088d844a057b01cde378e08c550a8b3b3eeb"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/amazon_reviews_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "8a6694fd8b0f1208a80b7499e627a3db117824fa"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/ecommerce/amazon-reviews-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-browser-act-skill-md",
+          "source_path": "browser-act/SKILL.md",
+          "entrypoint": "changed",
+          "directory_changed": true,
+          "pinned_file_count": 3,
+          "observed_file_count": 1,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "a857be6c618e7b1e8e96bab1405ee8391c24c0b0"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "1e0db2ac51c886516adbb3e83b1a8e0f9df911e4"
+              ]
+            },
+            {
+              "path": "references/site-notes/.gitkeep",
+              "pinned": [
+                "blob",
+                "100644",
+                "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+              ],
+              "observed": null
+            },
+            {
+              "path": "references/site-notes/example.com.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "872d7aa3ed84335c28cb266f10b382bef994304a"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "browser-act-skills-business-contact-social-links-skill-skill-md",
+          "source_path": "business-contact-social-links-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "536718cfbb431ea14d9a4f91578fefbc5b8687b4"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/business_contact_social_links.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "3b6e2d19b2779bc078b581e6846c1bc42ce941fb"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/lead-generation/business-contact-social-links-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-github-project-contributor-finder-api-skill-skill-md",
+          "source_path": "github-project-contributor-finder-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "b3f41e3efe8567557a2c22e230c25d876cbdaba4"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/github_project_contributor_finder_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "d39edf5ef598fbaa60dd91899c5d16435ac1c862"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/lead-generation/github-project-contributor-finder-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-google-image-api-skill-skill-md",
+          "source_path": "google-image-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "c61063a58ceb760b21533219ba5fc81833b4c227"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/google_image_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "1373bbf6458b62b0b30f578b2f43795de3eddbfd"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/search-research/google-image-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-google-maps-api-skill-skill-md",
+          "source_path": "google-maps-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "e4b3034ddb370cf2360b8a157787277850223f69"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/google_maps_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "dd86b82d4545f5e5d930eaf0b53fba71763820f4"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/lead-generation/google-maps-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-google-maps-reviews-api-skill-skill-md",
+          "source_path": "google-maps-reviews-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "9ed3c956fda4d1073fcd2190205c45440241775a"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/google_maps_reviews_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "12251afa9e2bd6debb08c1fd39837747d350406a"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/lead-generation/google-maps-reviews-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-google-maps-search-api-skill-skill-md",
+          "source_path": "google-maps-search-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "09907c6819af3a7c312f14382647487059d54425"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/google_maps_search_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "ae0123c324cfcb02f048897204769b933ddb2f70"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/lead-generation/google-maps-search-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-google-news-api-skill-skill-md",
+          "source_path": "google-news-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "67f6627db69594dda6f51e6b453c64706e760fc0"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/google_news_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "014e5f653fa0f803a194ceab415758c590b80baf"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/search-research/google-news-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-industry-key-contact-radar-api-skill-skill-md",
+          "source_path": "industry-key-contact-radar-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "1dfea336503babb8085a07a917ebd535b8b335b3"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/industry_key_contact_radar_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "6f1075dd38be5c2bc45f623d89fc1d4a077c7a11"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/lead-generation/industry-key-contact-radar-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-reddit-competitor-analysis-api-skill-skill-md",
+          "source_path": "reddit-competitor-analysis-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "ee5d8f49d2c683dffacbd594ce649d5f12849ccf"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/reddit_competitor_analysis_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "7b07226e1c15907c39f2148113ea6751bf8f427d"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/social-listening/reddit-competitor-analysis-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-social-media-finder-skill-skill-md",
+          "source_path": "social-media-finder-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "d0e9968ab3424f2c27eeb43c7ba743ae5bec0ad5"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/social_media_finder.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "0aa5a99be3c21b0034804a77f3a0af6de110c555"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/lead-generation/social-media-finder-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-web-research-assistant-skill-md",
+          "source_path": "web-research-assistant/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "c87b62b537842ec03989ad589d7a99296da6b3e7"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/research.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "1e3d1d1978a07590d826a32f870c8d53a39ca7a1"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/search-research/web-research-assistant/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-web-search-scraper-api-skill-skill-md",
+          "source_path": "web-search-scraper-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "72db1e94f4c0b505cb8e9206429b686be5e653f9"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/web_search_scraper_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "e7d262afd039a23dd4649de504acdc47b7cb105b"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/search-research/web-search-scraper-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-wechat-article-search-api-skill-skill-md",
+          "source_path": "wechat-article-search-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "80ff5912aeb6c348904f2d8b0120be9c8f466784"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/wechat_article_search_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "37772df2630340e3ddf739e25f5f51d16095e1b6"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/social-listening/wechat-article-search-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-youtube-api-skill-skill-md",
+          "source_path": "youtube-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "9781e4280157698343d848e2556eb6c3afe30453"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/youtube_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "070e86fc9255fd6dabe54dd64ccf275c3b5aa5e3"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/video-platforms/youtube-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-youtube-batch-transcript-extractor-api-skill-skill-md",
+          "source_path": "youtube-batch-transcript-extractor-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "febbf08d86bcb2337f09ead243359a967f4325ab"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/youtube_batch_transcript_extractor_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "beb6ef0469898b85409d6723075f4a9bd9603231"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/video-platforms/youtube-batch-transcript-extractor-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-youtube-channel-api-skill-skill-md",
+          "source_path": "youtube-channel-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "44c431e639ef04233c35322e39dde4228252d644"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/youtube_channel_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "2fc8c0c1ac888369de29a90453e9d2b4f27e5908"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/video-platforms/youtube-channel-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-youtube-comments-api-skill-skill-md",
+          "source_path": "youtube-comments-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "a83e00a727d399ecac487b61cde3c9a0394161a2"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/youtube_comments_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "486526a1c0a6f6ceb8cc210a45196baa08c2c974"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/video-platforms/youtube-comments-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-youtube-influencer-finder-api-skill-skill-md",
+          "source_path": "youtube-influencer-finder-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "48f0d450c46bae1f8853dbb6665ce5900110caf8"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/youtube_influencer_finder_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "9c84ad590407134f329c868c7cb22f49ffbd4067"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/video-platforms/youtube-influencer-finder-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-youtube-search-api-skill-skill-md",
+          "source_path": "youtube-search-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "6456ff281d547078af36f6b4f0d480ad44d2eb19"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/youtube_search_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "be65163f4189764361c6febfd769993da35d361d"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/video-platforms/youtube-search-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-youtube-transcript-analysis-api-skill-skill-md",
+          "source_path": "youtube-transcript-analysis-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "2e0169908773c24c4e297a3bfb695a5a5b7872bc"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/youtube_transcript_analysis_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "a41fcce9af14e5d46679565076e60143643ced78"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/video-platforms/youtube-transcript-analysis-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-youtube-transcript-extractor-api-skill-skill-md",
+          "source_path": "youtube-transcript-extractor-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "ad092404db6c446c45211d6ae66066235e661b63"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/youtube_transcript_extractor_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "ab758537bb08878a8d3099d93cbcff96758d96af"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/video-platforms/youtube-transcript-extractor-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-youtube-video-api-skill-skill-md",
+          "source_path": "youtube-video-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "b68ef6c7a5a3263c85e8df877c0409f669bcdc7a"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/youtube_video_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "84e096c216ed9bc41d14478db1931130546c7b90"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/video-platforms/youtube-video-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        },
+        {
+          "skill_id": "browser-act-skills-zhihu-search-api-skill-skill-md",
+          "source_path": "zhihu-search-api-skill/SKILL.md",
+          "entrypoint": "missing_at_recorded_path",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 0,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "e9c72ef5fc6947c196ee82502f79b69562b896a4"
+              ],
+              "observed": null
+            },
+            {
+              "path": "scripts/zhihu_search_api.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "39fe08b5a6a3b28c8785d147ff5387a1735c8b02"
+              ],
+              "observed": null
+            }
+          ],
+          "same_named_candidates": [
+            {
+              "source_path": "solutions/social-listening/zhihu-search-api-skill/SKILL.md",
+              "entrypoint_identical": true,
+              "observed_file_count": 2,
+              "changed_paths": []
+            }
+          ]
+        }
+      ],
+      "latest_release": null
+    },
+    {
+      "status": "complete",
+      "repo": "lackeyjb/playwright-skill",
+      "default_branch": "main",
+      "pinned_commit": "289abdea7df857dc7a6ece937dbe0c5ecc964ccd",
+      "observed_head": "dd47a6a023e249eb1b36e9e943eab89d0900865d",
+      "pinned_tree": "93d82c1ba05d02035591027cfb4c4b547828611a",
+      "observed_tree": "44d9d077552af5ed8a31d2130849efe936b0e11f",
+      "pinned_recursive_complete": true,
+      "observed_recursive_complete": true,
+      "selected_skill_count": 1,
+      "entrypoints_changed": 1,
+      "entrypoints_missing_at_recorded_path": 0,
+      "directories_changed": 1,
+      "skills": [
+        {
+          "skill_id": "lackeyjb-playwright-skill-skills-playwright-skill-skill-md",
+          "source_path": "skills/playwright-skill/SKILL.md",
+          "entrypoint": "changed",
+          "directory_changed": true,
+          "pinned_file_count": 6,
+          "observed_file_count": 6,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "83ad831771e8b4046a88e83981438fbc3f5eb162"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "8e002881ae65ebfa13f61a99d50678622c0ae5bf"
+              ]
+            }
+          ],
+          "same_named_candidates": []
+        }
+      ],
+      "latest_release": {
+        "tag": "v5.0.0",
+        "commit": "289abdea7df857dc7a6ece937dbe0c5ecc964ccd",
+        "tree": "93d82c1ba05d02035591027cfb4c4b547828611a",
+        "recursive_complete": true,
+        "entrypoints_changed": 0,
+        "entrypoints_missing_at_recorded_path": 0,
+        "directories_changed": 0,
+        "skills": [
+          {
+            "skill_id": "lackeyjb-playwright-skill-skills-playwright-skill-skill-md",
+            "source_path": "skills/playwright-skill/SKILL.md",
+            "entrypoint": "unchanged",
+            "directory_changed": false,
+            "pinned_file_count": 6,
+            "observed_file_count": 6,
+            "changed_paths": [],
+            "same_named_candidates": []
+          }
+        ]
+      }
+    },
+    {
+      "status": "complete",
+      "repo": "designrique/ai-graphic-design-skill",
+      "default_branch": "main",
+      "pinned_commit": "7d9d03b290f076e51d0b574659cda2ca9347651e",
+      "observed_head": "7d9d03b290f076e51d0b574659cda2ca9347651e",
+      "pinned_tree": "982c3e2925d9968b5d717ddb28be36d4685c2202",
+      "observed_tree": "982c3e2925d9968b5d717ddb28be36d4685c2202",
+      "pinned_recursive_complete": true,
+      "observed_recursive_complete": true,
+      "selected_skill_count": 1,
+      "entrypoints_changed": 0,
+      "entrypoints_missing_at_recorded_path": 0,
+      "directories_changed": 0,
+      "skills": [
+        {
+          "skill_id": "designrique-ai-graphic-design-skill-skill-md",
+          "source_path": "SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": false,
+          "pinned_file_count": 6,
+          "observed_file_count": 6,
+          "changed_paths": [],
+          "same_named_candidates": []
+        }
+      ],
+      "latest_release": null
+    },
+    {
+      "status": "complete",
+      "repo": "yuvalsuede/agent-media-skill",
+      "default_branch": "main",
+      "pinned_commit": "c37c209942bad44588f4d93b744473d733f95e6d",
+      "observed_head": "3896eddbc527fd5031c7ebb9f787748f1c070d28",
+      "pinned_tree": "b5e9e8231aa8ca799ace342f83d4f7797a7209b5",
+      "observed_tree": "38f15dad2c96810d22024c088b58cd2f68754f42",
+      "pinned_recursive_complete": true,
+      "observed_recursive_complete": true,
+      "selected_skill_count": 1,
+      "entrypoints_changed": 1,
+      "entrypoints_missing_at_recorded_path": 0,
+      "directories_changed": 1,
+      "skills": [
+        {
+          "skill_id": "yuvalsuede-agent-media-skill-skill-md",
+          "source_path": "SKILL.md",
+          "entrypoint": "changed",
+          "directory_changed": true,
+          "pinned_file_count": 8,
+          "observed_file_count": 8,
+          "changed_paths": [
+            {
+              "path": "README.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "1790cdffbba751e1cccc33e7d008f54a0dd953af"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "3610ce01fd169464cb732175e5bea720986f2189"
+              ]
+            },
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "f0b3bc7d2e360fc20572fcda2f5640d63a58a711"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "8070d5a8bbdabcca9eabaad44c3042fcdc5fca0b"
+              ]
+            }
+          ],
+          "same_named_candidates": []
+        }
+      ],
+      "latest_release": null
+    },
+    {
+      "status": "complete",
+      "repo": "Raven7979/ai-video-editing-skill",
+      "default_branch": "main",
+      "pinned_commit": "9bf0a9c3396c181dca45ee969de72bfa57602d4c",
+      "observed_head": "9bf0a9c3396c181dca45ee969de72bfa57602d4c",
+      "pinned_tree": "a623dc49cbd6b0aa6632ad2d2e1685021783b143",
+      "observed_tree": "a623dc49cbd6b0aa6632ad2d2e1685021783b143",
+      "pinned_recursive_complete": true,
+      "observed_recursive_complete": true,
+      "selected_skill_count": 1,
+      "entrypoints_changed": 0,
+      "entrypoints_missing_at_recorded_path": 0,
+      "directories_changed": 0,
+      "skills": [
+        {
+          "skill_id": "raven7979-ai-video-editing-skill-skill-md",
+          "source_path": "SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": false,
+          "pinned_file_count": 8,
+          "observed_file_count": 8,
+          "changed_paths": [],
+          "same_named_candidates": []
+        }
+      ],
+      "latest_release": null
+    },
+    {
+      "status": "complete",
+      "repo": "ztj7728/gemini-image-generation",
+      "default_branch": "main",
+      "pinned_commit": "9d2727cab3ab9e50d20f4ba4ae57aa57755edecd",
+      "observed_head": "9d2727cab3ab9e50d20f4ba4ae57aa57755edecd",
+      "pinned_tree": "507b679f032b80e760b6d3804e354c1d151dd1e4",
+      "observed_tree": "507b679f032b80e760b6d3804e354c1d151dd1e4",
+      "pinned_recursive_complete": true,
+      "observed_recursive_complete": true,
+      "selected_skill_count": 1,
+      "entrypoints_changed": 0,
+      "entrypoints_missing_at_recorded_path": 0,
+      "directories_changed": 0,
+      "skills": [
+        {
+          "skill_id": "ztj7728-gemini-image-generation-skill-md",
+          "source_path": "SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": false,
+          "pinned_file_count": 6,
+          "observed_file_count": 6,
+          "changed_paths": [],
+          "same_named_candidates": []
+        }
+      ],
+      "latest_release": null
+    },
+    {
+      "status": "complete",
+      "repo": "fruteroclub/marketing-designer",
+      "default_branch": "main",
+      "pinned_commit": "c8f65f94fc3a1b99bafcfe334d3fae3347d94433",
+      "observed_head": "c8f65f94fc3a1b99bafcfe334d3fae3347d94433",
+      "pinned_tree": "d8e868d79605f9f2e1c001f9f5fd90a606b41c00",
+      "observed_tree": "d8e868d79605f9f2e1c001f9f5fd90a606b41c00",
+      "pinned_recursive_complete": true,
+      "observed_recursive_complete": true,
+      "selected_skill_count": 1,
+      "entrypoints_changed": 0,
+      "entrypoints_missing_at_recorded_path": 0,
+      "directories_changed": 0,
+      "skills": [
+        {
+          "skill_id": "fruteroclub-marketing-designer-skill-md",
+          "source_path": "SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": false,
+          "pinned_file_count": 7,
+          "observed_file_count": 7,
+          "changed_paths": [],
+          "same_named_candidates": []
+        }
+      ],
+      "latest_release": null
+    },
+    {
+      "status": "complete",
+      "repo": "Bria-AI/bria-skill",
+      "default_branch": "dev",
+      "pinned_commit": "b0e107b0f4667f0e1c9177bcd491b7d436c6932d",
+      "observed_head": "d5f08b6fd54de6601a3cf9fd641a67cabd43028d",
+      "pinned_tree": "a27c76fe43ffc990f2b76b5667d4e233b8c269ba",
+      "observed_tree": "9b5097edf7d812bd6c778a572aa50d661752a7ec",
+      "pinned_recursive_complete": true,
+      "observed_recursive_complete": true,
+      "selected_skill_count": 4,
+      "entrypoints_changed": 4,
+      "entrypoints_missing_at_recorded_path": 0,
+      "directories_changed": 4,
+      "skills": [
+        {
+          "skill_id": "bria-ai-bria-skill-skills-bria-ai-skill-md",
+          "source_path": "skills/bria-ai/SKILL.md",
+          "entrypoint": "changed",
+          "directory_changed": true,
+          "pinned_file_count": 4,
+          "observed_file_count": 7,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "38576bf85a2b4ef27e4150dd254478851c1e0508"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "09e328e9209c52bba4f9b21e63bdd54b691a871b"
+              ]
+            },
+            {
+              "path": "references/api-endpoints.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "e43a53de33e34b1099db4272aab91265c6ebd512"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "a0684eced1d968d1a95b55afb49fb9c95e3834e7"
+              ]
+            },
+            {
+              "path": "references/code-examples/bria_client.sh",
+              "pinned": [
+                "blob",
+                "100644",
+                "0088accbc308531bc63774a931d2b1dcf6e6eb04"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "8d4fc6cb6c0ec832e14881c70ce91287916050ba"
+              ]
+            },
+            {
+              "path": "references/code-examples/build_catalog.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "245c9407d4193fa35cb958f58f4addcf35394573"
+              ]
+            },
+            {
+              "path": "references/code-examples/export_variants.py",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "13bf0865540badd628e8cbc23c22c1628321b7a4"
+              ]
+            },
+            {
+              "path": "references/marketplace-presets.md",
+              "pinned": null,
+              "observed": [
+                "blob",
+                "100644",
+                "60d9a1f1218e558589c64e3dc6ac54cc290389b5"
+              ]
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "bria-ai-bria-skill-skills-image-utils-skill-md",
+          "source_path": "skills/image-utils/SKILL.md",
+          "entrypoint": "changed",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 2,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "e4673e8ad2465443cc20250907949dde1cb3cf2e"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "4880dac78d55597ed4701d42a918247a33a2607a"
+              ]
+            },
+            {
+              "path": "references/code-examples/image_utils.py",
+              "pinned": [
+                "blob",
+                "100644",
+                "c97fec7beb54ff2f65dfd82c303ffb7e2dd6f5ea"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "9c6ea064e2d631a597e5d1a9f9ee9f01320ef369"
+              ]
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "bria-ai-bria-skill-skills-remove-background-skill-md",
+          "source_path": "skills/remove-background/SKILL.md",
+          "entrypoint": "changed",
+          "directory_changed": true,
+          "pinned_file_count": 4,
+          "observed_file_count": 4,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "47dc74987387b164abd6bec1c8f96f1dc4c23df6"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "a3681eeaa714f372f348c0f703dae0ea242a5f2a"
+              ]
+            },
+            {
+              "path": "references/api-endpoints.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "75e40cc0570475ecfd07a044fd4c08ce789dd6b8"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "ceefa3f71497811af176cabbd15c8ff1fcdba2ef"
+              ]
+            },
+            {
+              "path": "references/code-examples/bria_client.sh",
+              "pinned": [
+                "blob",
+                "100644",
+                "0088accbc308531bc63774a931d2b1dcf6e6eb04"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "2f3c380560cbc27a83f375e5fc4619ac0102eb41"
+              ]
+            }
+          ],
+          "same_named_candidates": []
+        },
+        {
+          "skill_id": "bria-ai-bria-skill-skills-vgl-skill-md",
+          "source_path": "skills/vgl/SKILL.md",
+          "entrypoint": "changed",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 2,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "54980ad077a6877a6e300b6b35d4badfd0034fb4"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "7d58ff59d60db70bb8d5e38d15979fcf8be61e48"
+              ]
+            }
+          ],
+          "same_named_candidates": []
+        }
+      ],
+      "latest_release": {
+        "tag": "v1.7.0",
+        "commit": "d5f08b6fd54de6601a3cf9fd641a67cabd43028d",
+        "tree": "9b5097edf7d812bd6c778a572aa50d661752a7ec",
+        "recursive_complete": true,
+        "entrypoints_changed": 4,
+        "entrypoints_missing_at_recorded_path": 0,
+        "directories_changed": 4,
+        "skills": [
+          {
+            "skill_id": "bria-ai-bria-skill-skills-bria-ai-skill-md",
+            "source_path": "skills/bria-ai/SKILL.md",
+            "entrypoint": "changed",
+            "directory_changed": true,
+            "pinned_file_count": 4,
+            "observed_file_count": 7,
+            "changed_paths": [
+              {
+                "path": "SKILL.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "38576bf85a2b4ef27e4150dd254478851c1e0508"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "09e328e9209c52bba4f9b21e63bdd54b691a871b"
+                ]
+              },
+              {
+                "path": "references/api-endpoints.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "e43a53de33e34b1099db4272aab91265c6ebd512"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "a0684eced1d968d1a95b55afb49fb9c95e3834e7"
+                ]
+              },
+              {
+                "path": "references/code-examples/bria_client.sh",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "0088accbc308531bc63774a931d2b1dcf6e6eb04"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "8d4fc6cb6c0ec832e14881c70ce91287916050ba"
+                ]
+              },
+              {
+                "path": "references/code-examples/build_catalog.py",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "245c9407d4193fa35cb958f58f4addcf35394573"
+                ]
+              },
+              {
+                "path": "references/code-examples/export_variants.py",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "13bf0865540badd628e8cbc23c22c1628321b7a4"
+                ]
+              },
+              {
+                "path": "references/marketplace-presets.md",
+                "pinned": null,
+                "observed": [
+                  "blob",
+                  "100644",
+                  "60d9a1f1218e558589c64e3dc6ac54cc290389b5"
+                ]
+              }
+            ],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "bria-ai-bria-skill-skills-image-utils-skill-md",
+            "source_path": "skills/image-utils/SKILL.md",
+            "entrypoint": "changed",
+            "directory_changed": true,
+            "pinned_file_count": 2,
+            "observed_file_count": 2,
+            "changed_paths": [
+              {
+                "path": "SKILL.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "e4673e8ad2465443cc20250907949dde1cb3cf2e"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "4880dac78d55597ed4701d42a918247a33a2607a"
+                ]
+              },
+              {
+                "path": "references/code-examples/image_utils.py",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "c97fec7beb54ff2f65dfd82c303ffb7e2dd6f5ea"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "9c6ea064e2d631a597e5d1a9f9ee9f01320ef369"
+                ]
+              }
+            ],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "bria-ai-bria-skill-skills-remove-background-skill-md",
+            "source_path": "skills/remove-background/SKILL.md",
+            "entrypoint": "changed",
+            "directory_changed": true,
+            "pinned_file_count": 4,
+            "observed_file_count": 4,
+            "changed_paths": [
+              {
+                "path": "SKILL.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "47dc74987387b164abd6bec1c8f96f1dc4c23df6"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "a3681eeaa714f372f348c0f703dae0ea242a5f2a"
+                ]
+              },
+              {
+                "path": "references/api-endpoints.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "75e40cc0570475ecfd07a044fd4c08ce789dd6b8"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "ceefa3f71497811af176cabbd15c8ff1fcdba2ef"
+                ]
+              },
+              {
+                "path": "references/code-examples/bria_client.sh",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "0088accbc308531bc63774a931d2b1dcf6e6eb04"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "2f3c380560cbc27a83f375e5fc4619ac0102eb41"
+                ]
+              }
+            ],
+            "same_named_candidates": []
+          },
+          {
+            "skill_id": "bria-ai-bria-skill-skills-vgl-skill-md",
+            "source_path": "skills/vgl/SKILL.md",
+            "entrypoint": "changed",
+            "directory_changed": true,
+            "pinned_file_count": 2,
+            "observed_file_count": 2,
+            "changed_paths": [
+              {
+                "path": "SKILL.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "54980ad077a6877a6e300b6b35d4badfd0034fb4"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "7d58ff59d60db70bb8d5e38d15979fcf8be61e48"
+                ]
+              }
+            ],
+            "same_named_candidates": []
+          }
+        ]
+      }
+    },
+    {
+      "status": "complete",
+      "repo": "guinacio/claude-image-gen",
+      "default_branch": "master",
+      "pinned_commit": "6f25d226f906db0420b2ceaa51f32de253eb2f22",
+      "observed_head": "9ae689d2f1163ccba1900fa58a75436ef4d8d75b",
+      "pinned_tree": "2f77cbf4f74f3b1b593cc2fc6cdd0876583e69b4",
+      "observed_tree": "913d4b955d342214de62ea43260aedb8785efe68",
+      "pinned_recursive_complete": true,
+      "observed_recursive_complete": true,
+      "selected_skill_count": 1,
+      "entrypoints_changed": 1,
+      "entrypoints_missing_at_recorded_path": 0,
+      "directories_changed": 1,
+      "skills": [
+        {
+          "skill_id": "guinacio-claude-image-gen-skills-image-generation-skill-md",
+          "source_path": "skills/image-generation/SKILL.md",
+          "entrypoint": "changed",
+          "directory_changed": true,
+          "pinned_file_count": 2,
+          "observed_file_count": 2,
+          "changed_paths": [
+            {
+              "path": "SKILL.md",
+              "pinned": [
+                "blob",
+                "100644",
+                "4ff7a25fabcb7044ae4aaaaf2d42d5f70b785414"
+              ],
+              "observed": [
+                "blob",
+                "100644",
+                "62d54c309f2fefcc1531e9d0714ff3f41e08b09c"
+              ]
+            }
+          ],
+          "same_named_candidates": []
+        }
+      ],
+      "latest_release": {
+        "tag": "1.2.3",
+        "commit": "9ae689d2f1163ccba1900fa58a75436ef4d8d75b",
+        "tree": "913d4b955d342214de62ea43260aedb8785efe68",
+        "recursive_complete": true,
+        "entrypoints_changed": 1,
+        "entrypoints_missing_at_recorded_path": 0,
+        "directories_changed": 1,
+        "skills": [
+          {
+            "skill_id": "guinacio-claude-image-gen-skills-image-generation-skill-md",
+            "source_path": "skills/image-generation/SKILL.md",
+            "entrypoint": "changed",
+            "directory_changed": true,
+            "pinned_file_count": 2,
+            "observed_file_count": 2,
+            "changed_paths": [
+              {
+                "path": "SKILL.md",
+                "pinned": [
+                  "blob",
+                  "100644",
+                  "4ff7a25fabcb7044ae4aaaaf2d42d5f70b785414"
+                ],
+                "observed": [
+                  "blob",
+                  "100644",
+                  "62d54c309f2fefcc1531e9d0714ff3f41e08b09c"
+                ]
+              }
+            ],
+            "same_named_candidates": []
+          }
+        ]
+      }
+    },
+    {
+      "status": "complete",
+      "repo": "supermemoryai/skills",
+      "default_branch": "main",
+      "pinned_commit": "10d5e16780b446c5ce58968bcde528766699cdf2",
+      "observed_head": "64e285d5a4a56c773e86c088af54524328b71c42",
+      "pinned_tree": "229086ecd29d38308e0891e955435f82bfb0a97d",
+      "observed_tree": "9f40bd57cb88bd3bf16480f025506a250bbd65d3",
+      "pinned_recursive_complete": true,
+      "observed_recursive_complete": true,
+      "selected_skill_count": 1,
+      "entrypoints_changed": 0,
+      "entrypoints_missing_at_recorded_path": 0,
+      "directories_changed": 0,
+      "skills": [
+        {
+          "skill_id": "supermemoryai-skills-svg-animations-skill-md",
+          "source_path": "svg-animations/SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": false,
+          "pinned_file_count": 1,
+          "observed_file_count": 1,
+          "changed_paths": [],
+          "same_named_candidates": []
+        }
+      ],
+      "latest_release": null
+    },
+    {
+      "status": "complete",
+      "repo": "hardikpandya/stop-slop",
+      "default_branch": "main",
+      "pinned_commit": "8da1f030185bdfe8471220585162991eaeb970e9",
+      "observed_head": "8da1f030185bdfe8471220585162991eaeb970e9",
+      "pinned_tree": "ad0fbeffcd18b385764221d4de1ba3f1a3abaf2b",
+      "observed_tree": "ad0fbeffcd18b385764221d4de1ba3f1a3abaf2b",
+      "pinned_recursive_complete": true,
+      "observed_recursive_complete": true,
+      "selected_skill_count": 1,
+      "entrypoints_changed": 0,
+      "entrypoints_missing_at_recorded_path": 0,
+      "directories_changed": 0,
+      "skills": [
+        {
+          "skill_id": "hardikpandya-stop-slop-skill-md",
+          "source_path": "SKILL.md",
+          "entrypoint": "unchanged",
+          "directory_changed": false,
+          "pinned_file_count": 7,
+          "observed_file_count": 7,
+          "changed_paths": [],
+          "same_named_candidates": []
+        }
+      ],
+      "latest_release": null
+    }
+  ],
+  "captures": [
+    {
+      "endpoint": "repos/browser-act/skills",
+      "exit_code": 0,
+      "stdout_sha256": "e8ad42ef1a90ef0f4c91b74ff5e90b67fecc66742f85343a1eaf7f5ab356f9af",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0000"
+    },
+    {
+      "endpoint": "repos/browser-act/skills/commits/main",
+      "exit_code": 0,
+      "stdout_sha256": "a340cceb8142a3e0a18196846af313f4b3c4124bf9d5e02deddb42c061ea9905",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0001"
+    },
+    {
+      "endpoint": "repos/browser-act/skills/git/commits/749ed52133b85606cf402b7fda95949542cbb8f8",
+      "exit_code": 0,
+      "stdout_sha256": "3a569e4b49b1db2703af1bcbbdecf158ab14849b4dab139c9af98be010acca3e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0002"
+    },
+    {
+      "endpoint": "repos/browser-act/skills/git/trees/d858a0010fea64b8f735b4854aeec045e87eb63a?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "20b7e6aa93126b0332e7e48feecf0d8ecab2ddabd52644535ba430f11bb73f42",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0003"
+    },
+    {
+      "endpoint": "repos/browser-act/skills/git/commits/11c057b03f92101642cadc9f840564574120d184",
+      "exit_code": 0,
+      "stdout_sha256": "193d5b4e87bbc3bc68d84af468a3c347fbd475575ca365e57ecff1e25fc4e4d9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0004"
+    },
+    {
+      "endpoint": "repos/browser-act/skills/git/trees/37d7b27c8021cd8b2e2b824ad2541d532ca51636?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "c1f6ea1b054027eae5dcc79f8dfad987dc5fac3c4b566728f7c357e7d96e1ec7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0005"
+    },
+    {
+      "endpoint": "repos/browser-act/skills/releases/latest",
+      "exit_code": 1,
+      "stdout_sha256": "d9e37600354c1839f6b22cebde497e9d14750d2401a06c9a51b1619baf991613",
+      "stderr_sha256": "d2c8985c89b29a842ac4946d13bdbc297709f44f20bb968faf9682664b211db6",
+      "capture": "0006"
+    },
+    {
+      "endpoint": "repos/lackeyjb/playwright-skill",
+      "exit_code": 0,
+      "stdout_sha256": "2836a878ca9bf02624b249ffce5843de76e2ad59e48b967be3d3417563451cc3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0007"
+    },
+    {
+      "endpoint": "repos/lackeyjb/playwright-skill/commits/main",
+      "exit_code": 0,
+      "stdout_sha256": "3112489e83e014b1801787ff2745d4c13d2f6c627a777b5e834001aa424a4231",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0008"
+    },
+    {
+      "endpoint": "repos/lackeyjb/playwright-skill/git/commits/289abdea7df857dc7a6ece937dbe0c5ecc964ccd",
+      "exit_code": 0,
+      "stdout_sha256": "c3d6e3b6da274765834275479bf37442f95c16399b6a5aa5904f97b0ccfe51cb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0009"
+    },
+    {
+      "endpoint": "repos/lackeyjb/playwright-skill/git/trees/93d82c1ba05d02035591027cfb4c4b547828611a?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "559da73ddbf8114af970a341dbf3fa89384a0512147b673e000858d47f801ef1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0010"
+    },
+    {
+      "endpoint": "repos/lackeyjb/playwright-skill/git/commits/dd47a6a023e249eb1b36e9e943eab89d0900865d",
+      "exit_code": 0,
+      "stdout_sha256": "2f09ead36016a6828ab979669f0ea3afc4cfa7297de08e33027f7f9125266bad",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0011"
+    },
+    {
+      "endpoint": "repos/lackeyjb/playwright-skill/git/trees/44d9d077552af5ed8a31d2130849efe936b0e11f?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "c15cd69ae343b1dd64f6fe399b6e09f42c3e646296ad2a57090b15f84d3dd83d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0012"
+    },
+    {
+      "endpoint": "repos/lackeyjb/playwright-skill/releases/latest",
+      "exit_code": 0,
+      "stdout_sha256": "72008c5ee7c29eeaea9c7bf9cbcdacd08d441681e13b5db4496e1f1e56214360",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0013"
+    },
+    {
+      "endpoint": "repos/lackeyjb/playwright-skill/commits/v5.0.0",
+      "exit_code": 0,
+      "stdout_sha256": "fe3a10ebd88852c7642047a742bc925567d40534d20b54c42e7e324f7f679be2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0014"
+    },
+    {
+      "endpoint": "repos/designrique/ai-graphic-design-skill",
+      "exit_code": 0,
+      "stdout_sha256": "feccb06d842db9d6f13cff3fc002740b964e2aa75a9205c638b8ee14ef952cdf",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0015"
+    },
+    {
+      "endpoint": "repos/designrique/ai-graphic-design-skill/commits/main",
+      "exit_code": 0,
+      "stdout_sha256": "1e8f1ebb1099f4f5d324d503a7ba61eeec8d814c594dfc0ed255b0e4d9eb5d59",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0016"
+    },
+    {
+      "endpoint": "repos/designrique/ai-graphic-design-skill/git/commits/7d9d03b290f076e51d0b574659cda2ca9347651e",
+      "exit_code": 0,
+      "stdout_sha256": "fa92ac6e3c9d1cd6053f03ab844be30cb76c9f151b5faa55ea2d78287689ff26",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0017"
+    },
+    {
+      "endpoint": "repos/designrique/ai-graphic-design-skill/git/trees/982c3e2925d9968b5d717ddb28be36d4685c2202?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "5b008a1fe6a47849b9b426540dbf7d202e305c1783197bc495675b7dff0ab69e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0018"
+    },
+    {
+      "endpoint": "repos/designrique/ai-graphic-design-skill/releases/latest",
+      "exit_code": 1,
+      "stdout_sha256": "d9e37600354c1839f6b22cebde497e9d14750d2401a06c9a51b1619baf991613",
+      "stderr_sha256": "d2c8985c89b29a842ac4946d13bdbc297709f44f20bb968faf9682664b211db6",
+      "capture": "0019"
+    },
+    {
+      "endpoint": "repos/yuvalsuede/agent-media-skill",
+      "exit_code": 0,
+      "stdout_sha256": "ca49512539af6edf039f9731084e34d4590c5a5145db40c5d95219615e0426e3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0020"
+    },
+    {
+      "endpoint": "repos/yuvalsuede/agent-media-skill/commits/main",
+      "exit_code": 0,
+      "stdout_sha256": "9c512ee07ef284df939c1722d85525ad6b004e95eb0a4e20cb16c922afa2c9fa",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0021"
+    },
+    {
+      "endpoint": "repos/yuvalsuede/agent-media-skill/git/commits/c37c209942bad44588f4d93b744473d733f95e6d",
+      "exit_code": 0,
+      "stdout_sha256": "7824334f9640528a5699f2c8ca54b859facbae3528c54a17185e6200971cab5c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0022"
+    },
+    {
+      "endpoint": "repos/yuvalsuede/agent-media-skill/git/trees/b5e9e8231aa8ca799ace342f83d4f7797a7209b5?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "3b0f8b95eeb1e91d60256545c0f3de1c2e8da337ee36d00997201bb232d7c6cb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0023"
+    },
+    {
+      "endpoint": "repos/yuvalsuede/agent-media-skill/git/commits/3896eddbc527fd5031c7ebb9f787748f1c070d28",
+      "exit_code": 0,
+      "stdout_sha256": "6844b28763c2194e42ddf2a64a153ec593ee72a18c23a8b50e35186c17d506a4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0024"
+    },
+    {
+      "endpoint": "repos/yuvalsuede/agent-media-skill/git/trees/38f15dad2c96810d22024c088b58cd2f68754f42?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "61b8e83b682534f00ac712b6a0a7142245effb9c60db7290cbb2b2383e94bd76",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0025"
+    },
+    {
+      "endpoint": "repos/yuvalsuede/agent-media-skill/releases/latest",
+      "exit_code": 1,
+      "stdout_sha256": "d9e37600354c1839f6b22cebde497e9d14750d2401a06c9a51b1619baf991613",
+      "stderr_sha256": "d2c8985c89b29a842ac4946d13bdbc297709f44f20bb968faf9682664b211db6",
+      "capture": "0026"
+    },
+    {
+      "endpoint": "repos/Raven7979/ai-video-editing-skill",
+      "exit_code": 0,
+      "stdout_sha256": "1c8e2a62078c323d5a9eaa7cd26a7b97d4e335e12ed6bdf5c0d302a2486d33b8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0027"
+    },
+    {
+      "endpoint": "repos/Raven7979/ai-video-editing-skill/commits/main",
+      "exit_code": 0,
+      "stdout_sha256": "8ea6d69089c8830746ca67786ee07f9c5047649303b2b6da5875aada4ec9da57",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0028"
+    },
+    {
+      "endpoint": "repos/Raven7979/ai-video-editing-skill/git/commits/9bf0a9c3396c181dca45ee969de72bfa57602d4c",
+      "exit_code": 0,
+      "stdout_sha256": "ef7099c0e810d2cbc279fc8606faf70f5ab6ac848259ec67cc7dd0c57dfa2021",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0029"
+    },
+    {
+      "endpoint": "repos/Raven7979/ai-video-editing-skill/git/trees/a623dc49cbd6b0aa6632ad2d2e1685021783b143?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "f8d33ebac5cee7bb8e7faeb64c4ccc08c24f50090c24d8180d0d6fa44242f080",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0030"
+    },
+    {
+      "endpoint": "repos/Raven7979/ai-video-editing-skill/releases/latest",
+      "exit_code": 1,
+      "stdout_sha256": "d9e37600354c1839f6b22cebde497e9d14750d2401a06c9a51b1619baf991613",
+      "stderr_sha256": "d2c8985c89b29a842ac4946d13bdbc297709f44f20bb968faf9682664b211db6",
+      "capture": "0031"
+    },
+    {
+      "endpoint": "repos/ztj7728/gemini-image-generation",
+      "exit_code": 0,
+      "stdout_sha256": "62540400f865127a0e90ec32eb91c414a322ebf7a986655f16266ff23a72d9ac",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0032"
+    },
+    {
+      "endpoint": "repos/ztj7728/gemini-image-generation/commits/main",
+      "exit_code": 0,
+      "stdout_sha256": "9f743582ad751b1bddd72562abf8984d135e64617194c1b86160ce3eaffc6a9e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0033"
+    },
+    {
+      "endpoint": "repos/ztj7728/gemini-image-generation/git/commits/9d2727cab3ab9e50d20f4ba4ae57aa57755edecd",
+      "exit_code": 0,
+      "stdout_sha256": "d4d57b52189cd53e2132d484ffd96dd3b5b6e0db07598523459f12e60958c650",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0034"
+    },
+    {
+      "endpoint": "repos/ztj7728/gemini-image-generation/git/trees/507b679f032b80e760b6d3804e354c1d151dd1e4?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "6147366ef64f9ca1f8022220e65ce6f1a6fe80a4fb9ab8bb47e44f4e2d99b73c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0035"
+    },
+    {
+      "endpoint": "repos/ztj7728/gemini-image-generation/releases/latest",
+      "exit_code": 1,
+      "stdout_sha256": "d9e37600354c1839f6b22cebde497e9d14750d2401a06c9a51b1619baf991613",
+      "stderr_sha256": "d2c8985c89b29a842ac4946d13bdbc297709f44f20bb968faf9682664b211db6",
+      "capture": "0036"
+    },
+    {
+      "endpoint": "repos/fruteroclub/marketing-designer",
+      "exit_code": 0,
+      "stdout_sha256": "925be3b96c8f6bf49bde838c04b615ab7881648c4f531ce3198eb843d31baac8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0037"
+    },
+    {
+      "endpoint": "repos/fruteroclub/marketing-designer/commits/main",
+      "exit_code": 0,
+      "stdout_sha256": "5d4e6601cd53b2e34efd2c8e46ac95435331d138fa7f4a4fe56bac11e204d310",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0038"
+    },
+    {
+      "endpoint": "repos/fruteroclub/marketing-designer/git/commits/c8f65f94fc3a1b99bafcfe334d3fae3347d94433",
+      "exit_code": 0,
+      "stdout_sha256": "47f7dd6e43002f928060d74722cd50ad48247e76a5509708d76e56f9cac00370",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0039"
+    },
+    {
+      "endpoint": "repos/fruteroclub/marketing-designer/git/trees/d8e868d79605f9f2e1c001f9f5fd90a606b41c00?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "976802083bd7f9c5a325ff4c822b12e9f026305cf96df95376e6c53d0e25f92f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0040"
+    },
+    {
+      "endpoint": "repos/fruteroclub/marketing-designer/releases/latest",
+      "exit_code": 1,
+      "stdout_sha256": "d9e37600354c1839f6b22cebde497e9d14750d2401a06c9a51b1619baf991613",
+      "stderr_sha256": "d2c8985c89b29a842ac4946d13bdbc297709f44f20bb968faf9682664b211db6",
+      "capture": "0041"
+    },
+    {
+      "endpoint": "repos/Bria-AI/bria-skill",
+      "exit_code": 0,
+      "stdout_sha256": "b10ebf13dd657112c47a3aa45a292155f96bcd37caec043e548dce58b3e8d3ad",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0042"
+    },
+    {
+      "endpoint": "repos/Bria-AI/bria-skill/commits/dev",
+      "exit_code": 0,
+      "stdout_sha256": "ed38cea2decbbfbb1d797097d0f66a2441c11405d8e21dc87d088f5b1eb955f4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0043"
+    },
+    {
+      "endpoint": "repos/Bria-AI/bria-skill/git/commits/b0e107b0f4667f0e1c9177bcd491b7d436c6932d",
+      "exit_code": 0,
+      "stdout_sha256": "34886807b903e23f57649eab243d9d2dbc0448c466e900d9b7b99e858c5cb07a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0044"
+    },
+    {
+      "endpoint": "repos/Bria-AI/bria-skill/git/trees/a27c76fe43ffc990f2b76b5667d4e233b8c269ba?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "2bea95bf2301dd90322c0e1b8fc2d6165a92ecaef365e6852a3eaa787b433540",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0045"
+    },
+    {
+      "endpoint": "repos/Bria-AI/bria-skill/git/commits/d5f08b6fd54de6601a3cf9fd641a67cabd43028d",
+      "exit_code": 0,
+      "stdout_sha256": "86ee074c589ed2b3109e1e5ae0a277b9a4544bfe5b3f50e4327a3d95e47d1f33",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0046"
+    },
+    {
+      "endpoint": "repos/Bria-AI/bria-skill/git/trees/9b5097edf7d812bd6c778a572aa50d661752a7ec?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "05d8940e900729a26c8b83ccaf774ccc2c516140863ddd240ec59bf7331f85d4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0047"
+    },
+    {
+      "endpoint": "repos/Bria-AI/bria-skill/releases/latest",
+      "exit_code": 0,
+      "stdout_sha256": "57ad184b19256ca8a2ae990dbea429e5bdd58ca0b27b0275c88585a9a56add29",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0048"
+    },
+    {
+      "endpoint": "repos/Bria-AI/bria-skill/commits/v1.7.0",
+      "exit_code": 0,
+      "stdout_sha256": "ed38cea2decbbfbb1d797097d0f66a2441c11405d8e21dc87d088f5b1eb955f4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0049"
+    },
+    {
+      "endpoint": "repos/guinacio/claude-image-gen",
+      "exit_code": 0,
+      "stdout_sha256": "39a89082bf5baab8af7793640f45906c2ded0236d459219465c3bc7906d7635b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0050"
+    },
+    {
+      "endpoint": "repos/guinacio/claude-image-gen/commits/master",
+      "exit_code": 0,
+      "stdout_sha256": "3c36938533013f970fbd47b4ba54e397ef327efe20da4afcf0a255b233a745d2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0051"
+    },
+    {
+      "endpoint": "repos/guinacio/claude-image-gen/git/commits/6f25d226f906db0420b2ceaa51f32de253eb2f22",
+      "exit_code": 0,
+      "stdout_sha256": "547e18cbf56f5f2de4c050755b804555ac4a1c74d2971f9ac91e71c8c8a19e06",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0052"
+    },
+    {
+      "endpoint": "repos/guinacio/claude-image-gen/git/trees/2f77cbf4f74f3b1b593cc2fc6cdd0876583e69b4?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "99356034395c91f337e8222799f5cfde0ad95ce28bc2d36a4f175b58b484fbfe",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0053"
+    },
+    {
+      "endpoint": "repos/guinacio/claude-image-gen/git/commits/9ae689d2f1163ccba1900fa58a75436ef4d8d75b",
+      "exit_code": 0,
+      "stdout_sha256": "c762f99082f7d202638674869d32e549a1b09e02b3a4992fd237c57059909d8e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0054"
+    },
+    {
+      "endpoint": "repos/guinacio/claude-image-gen/git/trees/913d4b955d342214de62ea43260aedb8785efe68?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "d4faa0237508aef63bd69a99078cbff7f6c2de1d7ae44a31c3aece87556a16f7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0055"
+    },
+    {
+      "endpoint": "repos/guinacio/claude-image-gen/releases/latest",
+      "exit_code": 0,
+      "stdout_sha256": "941a69ade932c61156fe90241266cfc82e3c571004e96c1d7a6145ff5a9d6160",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0056"
+    },
+    {
+      "endpoint": "repos/guinacio/claude-image-gen/commits/1.2.3",
+      "exit_code": 0,
+      "stdout_sha256": "3c36938533013f970fbd47b4ba54e397ef327efe20da4afcf0a255b233a745d2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0057"
+    },
+    {
+      "endpoint": "repos/supermemoryai/skills",
+      "exit_code": 0,
+      "stdout_sha256": "0e2b84a7483b9923172da05dbf50b754df81656e12699aa02ea50d72e249e6f4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0058"
+    },
+    {
+      "endpoint": "repos/supermemoryai/skills/commits/main",
+      "exit_code": 0,
+      "stdout_sha256": "6c1b55e621573dd36576428f31a7b9e279c8a75d1e2626eadf69752ef82eccfe",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0059"
+    },
+    {
+      "endpoint": "repos/supermemoryai/skills/git/commits/10d5e16780b446c5ce58968bcde528766699cdf2",
+      "exit_code": 0,
+      "stdout_sha256": "7a85916f6168b5ab0191c2d3e1aee4ea7025362bc14586f9a1c6d5f81a29168a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0060"
+    },
+    {
+      "endpoint": "repos/supermemoryai/skills/git/trees/229086ecd29d38308e0891e955435f82bfb0a97d?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "ecf7052e565ca6b79bba3306fa3ac39931d0302a8c4d97584381f676d061db4b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0061"
+    },
+    {
+      "endpoint": "repos/supermemoryai/skills/git/commits/64e285d5a4a56c773e86c088af54524328b71c42",
+      "exit_code": 0,
+      "stdout_sha256": "e8b53ee9bb5286f2bf9a8ad8ebe0957d6e029447de1aaeaf1991fbdc5fbcfec5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0062"
+    },
+    {
+      "endpoint": "repos/supermemoryai/skills/git/trees/9f40bd57cb88bd3bf16480f025506a250bbd65d3?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "a1f4e48f56a5d9c824fef6a31c0455e3b20e33990e81636f152f8c5966991ff4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0063"
+    },
+    {
+      "endpoint": "repos/supermemoryai/skills/releases/latest",
+      "exit_code": 1,
+      "stdout_sha256": "d9e37600354c1839f6b22cebde497e9d14750d2401a06c9a51b1619baf991613",
+      "stderr_sha256": "d2c8985c89b29a842ac4946d13bdbc297709f44f20bb968faf9682664b211db6",
+      "capture": "0064"
+    },
+    {
+      "endpoint": "repos/hardikpandya/stop-slop",
+      "exit_code": 0,
+      "stdout_sha256": "23bb11e497fd35f273ada4fa2e8f9305902112b8b873d9e673ecad440c8950f5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0065"
+    },
+    {
+      "endpoint": "repos/hardikpandya/stop-slop/commits/main",
+      "exit_code": 0,
+      "stdout_sha256": "2d8842b173caa4323e775315e7bb808e5d4ecbd397fbfae0f34057e0b84cc34b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0066"
+    },
+    {
+      "endpoint": "repos/hardikpandya/stop-slop/git/commits/8da1f030185bdfe8471220585162991eaeb970e9",
+      "exit_code": 0,
+      "stdout_sha256": "920a35b27412fc11e942b8421a512f59f57db7cb64bae854221024072f19b445",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0067"
+    },
+    {
+      "endpoint": "repos/hardikpandya/stop-slop/git/trees/ad0fbeffcd18b385764221d4de1ba3f1a3abaf2b?recursive=1",
+      "exit_code": 0,
+      "stdout_sha256": "d3c8c49af9b65793a16f756fa67163a915f6c0518882d2d91acc29913394c65e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "capture": "0068"
+    },
+    {
+      "endpoint": "repos/hardikpandya/stop-slop/releases/latest",
+      "exit_code": 1,
+      "stdout_sha256": "d9e37600354c1839f6b22cebde497e9d14750d2401a06c9a51b1619baf991613",
+      "stderr_sha256": "d2c8985c89b29a842ac4946d13bdbc297709f44f20bb968faf9682664b211db6",
+      "capture": "0069"
+    }
+  ]
+}

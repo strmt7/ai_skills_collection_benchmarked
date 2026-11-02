@@ -1709,6 +1709,10 @@
             "path": "artifacts/research/2026-10-30/infographic-export/current-help.txt",
             "scope": "Source-bound Windows export controls without an SVG converter; no SVG conversion or agent performance test.",
             "sha256": "b5826e6a4a79d28bc0d2afe17ac855e98a28f581777e1233bc78bd0e07ec9154"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
           }
         ],
         "status": "in_progress"
@@ -3778,8 +3782,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/latest-release-creative/bria-ai",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -3800,8 +3810,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/latest-release-creative/image-utils",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -3822,8 +3838,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/latest-release-creative/remove-background",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -3844,8 +3866,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/latest-release-creative/vgl",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -3866,8 +3894,14 @@
       },
       "mirrored_path": "included/skills/by-category/search-retrieval-web-automation/browser-automation-reference/amazon-asin-lookup-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -3888,8 +3922,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/browser-automation-reference/amazon-best-selling-products-finder-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -3910,8 +3950,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/browser-automation-reference/amazon-buy-box-monitor-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -3932,8 +3978,14 @@
       },
       "mirrored_path": "included/skills/by-category/search-retrieval-web-automation/browser-automation-reference/amazon-competitor-analyzer",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -3954,8 +4006,14 @@
       },
       "mirrored_path": "included/skills/by-category/search-retrieval-web-automation/browser-automation-reference/amazon-listing-competitor-analysis-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -3976,8 +4034,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/browser-automation-reference/amazon-product-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -3998,8 +4062,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/browser-automation-reference/amazon-product-search-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4020,8 +4090,14 @@
       },
       "mirrored_path": "included/skills/by-category/communication-productivity-support/browser-automation-reference/amazon-reviews-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4042,8 +4118,14 @@
       },
       "mirrored_path": "included/skills/by-category/communication-productivity-support/browser-automation-reference/browser-act",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4064,8 +4146,14 @@
       },
       "mirrored_path": "included/skills/by-category/communication-productivity-support/browser-automation-reference/business-contact-social-links-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4086,8 +4174,14 @@
       },
       "mirrored_path": "included/skills/by-category/search-retrieval-web-automation/browser-automation-reference/github-project-contributor-finder-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4108,8 +4202,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/browser-automation-reference/google-image-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4130,8 +4230,14 @@
       },
       "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/browser-automation-reference/google-maps-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4152,8 +4258,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/browser-automation-reference/google-maps-reviews-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4174,8 +4286,14 @@
       },
       "mirrored_path": "included/skills/by-category/game-mobile-visual-qa/browser-automation-reference/google-maps-search-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4196,8 +4314,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/browser-automation-reference/google-news-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4218,8 +4342,14 @@
       },
       "mirrored_path": "included/skills/by-category/communication-productivity-support/browser-automation-reference/industry-key-contact-radar-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4240,8 +4370,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/browser-automation-reference/reddit-competitor-analysis-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4262,8 +4398,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/browser-automation-reference/social-media-finder-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4284,8 +4426,14 @@
       },
       "mirrored_path": "included/skills/by-category/search-retrieval-web-automation/browser-automation-reference/web-research-assistant",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4306,8 +4454,14 @@
       },
       "mirrored_path": "included/skills/by-category/communication-productivity-support/browser-automation-reference/web-search-scraper-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4328,8 +4482,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/browser-automation-reference/wechat-article-search-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4350,8 +4510,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/browser-automation-reference/youtube-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4372,8 +4538,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/browser-automation-reference/youtube-batch-transcript-extractor-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4394,8 +4566,14 @@
       },
       "mirrored_path": "included/skills/by-category/search-retrieval-web-automation/browser-automation-reference/youtube-channel-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4416,8 +4594,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/browser-automation-reference/youtube-comments-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4438,8 +4622,14 @@
       },
       "mirrored_path": "included/skills/by-category/search-retrieval-web-automation/browser-automation-reference/youtube-influencer-finder-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4460,8 +4650,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/browser-automation-reference/youtube-search-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4482,8 +4678,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/browser-automation-reference/youtube-transcript-analysis-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4504,8 +4706,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/browser-automation-reference/youtube-transcript-extractor-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4526,8 +4734,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/browser-automation-reference/youtube-video-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -4548,8 +4762,14 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/browser-automation-reference/zhihu-search-api-skill",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -5464,8 +5684,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/creative-reference/ai-graphic-design",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -5486,7 +5712,12 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/creative-reference/evolink-music",
       "research": {
-        "evidence": [],
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
         "status": "pending"
       },
       "revision": {
@@ -5508,7 +5739,12 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/creative-reference/evolink-video",
       "research": {
-        "evidence": [],
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
         "status": "pending"
       },
       "revision": {
@@ -5530,8 +5766,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/creative-reference/marketing-designer",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -5552,8 +5794,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/latest-release-creative/image-generation",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -5574,8 +5822,14 @@
       },
       "mirrored_path": "included/skills/by-category/communication-productivity-support/reddit-verified-writing-skill/stop-slop",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -9760,6 +10014,10 @@
             "path": "artifacts/repaired-skill-readiness/playwright-executor-v1/upstream-observation.json",
             "scope": "Playwright executor module-path and local browser component controls; no agent efficacy result.",
             "sha256": "f2d16d5d00c2c73a8ebe5d703b291cf69121884361e930e673520b45d5fb9f4d"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -14101,8 +14359,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/creative-reference/ai-video-editing",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -15066,8 +15330,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/reddit-verified-creative-skill/svg-animations",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -17521,6 +17791,10 @@
             "path": "artifacts/research/2026-10-30/comfyui-model-lifecycle/linux-result.json",
             "scope": "Source-bound retired Anthropic model recommendation; no ComfyUI, model request or agent performance test.",
             "sha256": "7827c1a279890bac396451028cf17889e4bab08afe0d8328d84ab255066fbd0c"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
           }
         ],
         "status": "in_progress"
@@ -18715,8 +18989,14 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/creative-reference/agent-media",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          }
+        ],
+        "status": "in_progress",
+        "scope": "Upstream source-tree observation only; skill quality, licensing, runtime behavior and agent efficacy remain unreviewed."
       },
       "revision": {
         "evidence": [],
@@ -19776,6 +20056,10 @@
             "path": "artifacts/research/2026-10-30/gemini-image-lifecycle/linux-result.json",
             "scope": "Source-bound Google lifecycle and OpenRouter catalog comparison; no generation request or agent performance test.",
             "sha256": "dbdd462b377785d6cde0e878b1173f51e7cc96eeb42cf7d20ce275b103314238"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+            "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
           }
         ],
         "status": "in_progress"
