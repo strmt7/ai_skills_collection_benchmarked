@@ -9,9 +9,12 @@ tag will be created only if the owner later requests one.
 
 On 2 November 2026 the [improvement ledger](../data/improvement_ledger.json)
 recorded 673 skills: research was complete for one, in progress for 317 and
-pending for 355; evaluation was in progress for 12 and pending for 661. These
-are tracking states, not a percentage of release readiness. For current counts,
-run `python tools/manage_improvement_ledger.py --check --json`.
+pending for 355; revision was complete for five, in progress for 49 and
+pending for 619; evaluation was in progress for 12 and pending for 661. At
+that snapshot, 188 skills had resource inventories, containing 130 reviewed
+and 1,317 pending resource records. These are tracking states, not a percentage
+of release readiness. For current counts, run `python tools/manage_improvement_ledger.py
+--check --json`.
 The scientific category now has 148 skill-level resource inventories, with
 1,266 resource records pending review and five marked reviewed. File records
 are scoped to each skill and may overlap between nested packages. Transient
@@ -22,7 +25,9 @@ To add pending resource records for another category, first validate the ledger
 and mirrors, then run `python tools/manage_improvement_ledger.py
 --inventory-category "<exact category name>"`. Existing inventories and review
 states are preserved; source changes invalidate associated work through the
-ledger's synchronization rules.
+ledger's synchronization rules. To inventory selected skills without processing
+the rest of a category, use `--inventory-skill "<skill id>"` and repeat that
+option for each selected ID. Neither command marks resources as reviewed.
 
 The first nine matched development attempts scored three passes in each of the
 default, Karpathy and experimental conditions on a task that reached the

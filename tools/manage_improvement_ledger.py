@@ -176,10 +176,18 @@ def validate_resources(skill_id: str, state: dict[str, Any], root: Path) -> list
 
 def inventory_category(ledger: dict[str, Any], root: Path, category: str) -> tuple[dict[str, Any], int]:
     """Add pending source-bound resource records without replacing previous reviews."""
-    updated = copy.deepcopy(ledger)
-    selected = [state for state in updated["skills"].values() if state["category"] == category]
-    if not selected:
+    skill_ids = [skill_id for skill_id, state in ledger["skills"].items() if state["category"] == category]
+    if not skill_ids:
         raise ValueError("Unknown or empty category")
+    return inventory_skills(ledger, root, skill_ids)
+
+
+def inventory_skills(ledger: dict[str, Any], root: Path, skill_ids: list[str]) -> tuple[dict[str, Any], int]:
+    """Inventory explicitly selected skills, preserving all other records."""
+    if not skill_ids or any(skill_id not in ledger["skills"] for skill_id in skill_ids):
+        raise ValueError("Unknown or empty skill selection")
+    updated = copy.deepcopy(ledger)
+    selected = [updated["skills"][skill_id] for skill_id in dict.fromkeys(skill_ids)]
     added = 0
     for state in selected:
         research = state["research"]
@@ -253,6 +261,11 @@ def build_parser() -> argparse.ArgumentParser:
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--check", action="store_true", help="Check coverage and evidence without changing files")
     mode.add_argument("--inventory-category", help="Add pending resource records for a category")
+    mode.add_argument(
+        "--inventory-skill",
+        action="append",
+        help="Add pending resource records for a skill ID; repeat to select several",
+    )
     parser.add_argument("--json", action="store_true", help="Print machine-readable coverage and errors")
     parser.add_argument("--gate", help="Check a named time gate; exit 3 while it is closed")
     parser.add_argument("--at", help="UTC time for an explicit gate check (default: current UTC)")
@@ -271,17 +284,20 @@ def main(argv: list[str] | None = None) -> int:
         updated = synchronize(read_json(args.catalog), previous)
         errors = validate(updated, ROOT)
         added = 0
-        if args.inventory_category is not None and not errors:
+        if (args.inventory_category is not None or args.inventory_skill is not None) and not errors:
             if updated != previous:
                 raise ValueError("Ledger is stale; synchronize it before inventory")
-            updated, added = inventory_category(updated, ROOT, args.inventory_category)
+            if args.inventory_category is not None:
+                updated, added = inventory_category(updated, ROOT, args.inventory_category)
+            else:
+                updated, added = inventory_skills(updated, ROOT, args.inventory_skill)
             errors = validate(updated, ROOT)
         if args.check and updated != previous:
             errors.append("ledger coverage is stale; synchronize before recording new research")
         if not args.check and not errors:
             write_json(args.ledger, updated)
         report = {"errors": errors, "skill_count": len(updated["skills"])}
-        if args.inventory_category is not None:
+        if args.inventory_category is not None or args.inventory_skill is not None:
             report["resource_inventories_added"] = added
         if not errors:
             report.update(summary(updated))

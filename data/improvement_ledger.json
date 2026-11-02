@@ -362,6 +362,17 @@
             "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "sha256": "2929d1f227962d86bfb2f0e45efd81590cfc90aeaad5b449f4630207e4e07204",
+            "status": "pending"
+          },
+          "agents/openai.yaml": {
+            "sha256": "7e118790707006a543e3105cb3269c41dc98e601182dce4c7160867a934adb1a",
+            "status": "pending"
+          }
+        },
         "status": "in_progress"
       },
       "revision": {
@@ -757,6 +768,17 @@
             "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "sha256": "f84ae93c159bf6ecef5a60c9735dc82d96bc5f977ef52eb71678b66722acf684",
+            "status": "pending"
+          },
+          "agents/openai.yaml": {
+            "sha256": "5f50508a300616d77f39dc50a51de10cabd05ef7ae770e7948ef6c28f340cdf2",
+            "status": "pending"
+          }
+        },
         "status": "in_progress"
       },
       "revision": {
@@ -1265,6 +1287,17 @@
             "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "sha256": "7ef3fa13d6272fd295eeb2aca9f6a2f09f6a8270cf33b0675fc5a0018cf6e406",
+            "status": "pending"
+          },
+          "agents/openai.yaml": {
+            "sha256": "42e1b1bf676506bc50027131cd8226b151f48a57551197308102dd01fd080943",
+            "status": "pending"
+          }
+        },
         "status": "in_progress"
       },
       "revision": {
@@ -1352,6 +1385,17 @@
             "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "sha256": "f65da15aabeb9dca7ae08525739e72ab16e79a78ff4004f7cab6ad2de1c2a79b",
+            "status": "pending"
+          },
+          "agents/openai.yaml": {
+            "sha256": "eae70fb66b6bcbc2df6137f4f1a7681a11391d45b333a282fa512864f36785e6",
+            "status": "pending"
+          }
+        },
         "status": "in_progress"
       },
       "revision": {
@@ -7299,8 +7343,8 @@
           },
           {
             "path": "artifacts/research/2026-11-02/dataframe-research-v1/report.json",
-            "sha256": "60cad2cd81a765241ede3bd4e35dda5ea92718b467b48319b317bd0a4c09fd30",
-            "scope": "Selected version-specific dataframe compatibility observations; not a full research review or agent evaluation."
+            "scope": "Selected version-specific dataframe compatibility observations; not a full research review or agent evaluation.",
+            "sha256": "60cad2cd81a765241ede3bd4e35dda5ea92718b467b48319b317bd0a4c09fd30"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -7340,8 +7384,8 @@
         "evidence": [
           {
             "path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/dask-index-queries/repair.json",
-            "sha256": "ef8dd5f5d66653f758d4142578fb2ba93d70b9e3c94047cd0497243a41c4fc63",
-            "scope": "Selected Dask index overlay with Windows and Linux component controls; not a complete skill repair or agent evaluation."
+            "scope": "Selected Dask index overlay with Windows and Linux component controls; not a complete skill repair or agent evaluation.",
+            "sha256": "ef8dd5f5d66653f758d4142578fb2ba93d70b9e3c94047cd0497243a41c4fc63"
           }
         ],
         "status": "in_progress"
@@ -8571,21 +8615,21 @@
           },
           {
             "path": "artifacts/repaired-skill-readiness/flowio-fcs-basics-v1/qualification.json",
-            "sha256": "e0189cd8d32c350db2c9eda0e19aa47c2ecd7da92de618136624f163e0cec323",
-            "scope": "Both documents read; selected FlowIO 1.4.0 contracts and one upstream tutorial fixture checked. Many file variants and operations remain untested."
+            "scope": "Both documents read; selected FlowIO 1.4.0 contracts and one upstream tutorial fixture checked. Many file variants and operations remain untested.",
+            "sha256": "e0189cd8d32c350db2c9eda0e19aa47c2ecd7da92de618136624f163e0cec323"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
         "resources": {
           "SKILL.md": {
+            "review_scope": "Full text read; selected API, writer, metadata and gain claims checked against official documentation and component controls. Other claims and file variants remain untested.",
             "sha256": "ae294468af765e28437c88bccb9918a12a27cacf4335f2ed4c3dc63fc0a17a43",
-            "status": "reviewed",
-            "review_scope": "Full text read; selected API, writer, metadata and gain claims checked against official documentation and component controls. Other claims and file variants remain untested."
+            "status": "reviewed"
           },
           "references/api_reference.md": {
+            "review_scope": "Full text read; selected API, writer, metadata and gain claims checked against official documentation and component controls. Other claims and file variants remain untested.",
             "sha256": "c4ade46347f2e81085ea8205bdea354a191d61acd297410892aeb823263c8ff2",
-            "status": "reviewed",
-            "review_scope": "Full text read; selected API, writer, metadata and gain claims checked against official documentation and component controls. Other claims and file variants remain untested."
+            "status": "reviewed"
           }
         },
         "status": "in_progress"
@@ -8594,8 +8638,8 @@
         "evidence": [
           {
             "path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/flowio-fcs-basics/repair.json",
-            "sha256": "d73d3227c770b3fbc2c7fd15d8694b5db916b1fa88808e3a390ede4828aae045",
-            "scope": "Selected FlowIO writer and raw read overlay with Windows and Linux component controls; not a complete skill repair or agent evaluation."
+            "scope": "Selected FlowIO writer and raw read overlay with Windows and Linux component controls; not a complete skill repair or agent evaluation.",
+            "sha256": "d73d3227c770b3fbc2c7fd15d8694b5db916b1fa88808e3a390ede4828aae045"
           }
         ],
         "status": "in_progress"
@@ -11548,8 +11592,8 @@
           },
           {
             "path": "artifacts/research/2026-11-02/dataframe-research-v1/report.json",
-            "sha256": "60cad2cd81a765241ede3bd4e35dda5ea92718b467b48319b317bd0a4c09fd30",
-            "scope": "Selected version-specific dataframe compatibility observations; not a full research review or agent evaluation."
+            "scope": "Selected version-specific dataframe compatibility observations; not a full research review or agent evaluation.",
+            "sha256": "60cad2cd81a765241ede3bd4e35dda5ea92718b467b48319b317bd0a4c09fd30"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -11589,8 +11633,8 @@
         "evidence": [
           {
             "path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/polars-lazy-queries/repair.json",
-            "sha256": "c8d3d893891dfda542662622d541fe5fa4f2b2fbe6a2f5d17d06d546c7651e0a",
-            "scope": "Selected Polars 2 lazy-query overlay with component controls; not a complete skill repair or agent evaluation."
+            "scope": "Selected Polars 2 lazy-query overlay with component controls; not a complete skill repair or agent evaluation.",
+            "sha256": "c8d3d893891dfda542662622d541fe5fa4f2b2fbe6a2f5d17d06d546c7651e0a"
           }
         ],
         "status": "in_progress"
@@ -15063,13 +15107,13 @@
           },
           {
             "path": "artifacts/research/2026-11-02/dataframe-research-v1/report.json",
-            "sha256": "60cad2cd81a765241ede3bd4e35dda5ea92718b467b48319b317bd0a4c09fd30",
-            "scope": "Selected version-specific dataframe compatibility observations; not a full research review or agent evaluation."
+            "scope": "Selected version-specific dataframe compatibility observations; not a full research review or agent evaluation.",
+            "sha256": "60cad2cd81a765241ede3bd4e35dda5ea92718b467b48319b317bd0a4c09fd30"
           },
           {
             "path": "artifacts/repaired-skill-readiness/vaex-delayed-statistics-v1/qualification.json",
-            "sha256": "33b2a229af27d6e7734b3a75aa9f9ae81b558845572da6b294a5ec175963e475",
-            "scope": "Selected Vaex CSV and delayed statistics controls; not a full research review or agent evaluation."
+            "scope": "Selected Vaex CSV and delayed statistics controls; not a full research review or agent evaluation.",
+            "sha256": "33b2a229af27d6e7734b3a75aa9f9ae81b558845572da6b294a5ec175963e475"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -15109,8 +15153,8 @@
         "evidence": [
           {
             "path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/vaex-delayed-statistics/repair.json",
-            "sha256": "6e954e2faf404d7d553edb503e9cdad0486e6ebb4b5f302255badbe9185e0d6c",
-            "scope": "Selected Vaex delayed-statistics overlay with Windows and Linux component controls; not a full skill repair or agent evaluation."
+            "scope": "Selected Vaex delayed-statistics overlay with Windows and Linux component controls; not a full skill repair or agent evaluation.",
+            "sha256": "6e954e2faf404d7d553edb503e9cdad0486e6ebb4b5f302255badbe9185e0d6c"
           }
         ],
         "status": "in_progress"
@@ -24698,6 +24742,29 @@
             "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           }
         ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          ".env.example": {
+            "sha256": "c4cb487916ebb1ad2d5732289768cfa2b2bb7074380716beca5aff1031736a08",
+            "status": "pending"
+          },
+          "README.md": {
+            "sha256": "bc7cc41210c2c4f26342d7607934ddefbea2e69c0eb484cc23e5ec882e64cce5",
+            "status": "pending"
+          },
+          "SKILL.md": {
+            "sha256": "630d7e842d719b4a6ccbd00254aaa2cae4a15bad89df63b64b7ce162e17d4a24",
+            "status": "pending"
+          },
+          "evals/evals.json": {
+            "sha256": "fbd558c9e3e20e297198eb567cb8bd2e3d05f4445c906a5eb6f738836b2ce6cf",
+            "status": "pending"
+          },
+          "references/copy-rules.md": {
+            "sha256": "3fcaf02ad737de9fe21d1664ff25ca8d8282efdda0b2e148926b2fd18b35f700",
+            "status": "pending"
+          }
+        },
         "status": "in_progress"
       },
       "revision": {

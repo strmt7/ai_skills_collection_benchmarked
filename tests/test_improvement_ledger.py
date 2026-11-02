@@ -249,3 +249,40 @@ def test_inventory_cli_writes_only_after_validation(tmp_path, monkeypatch, capsy
     assert ledger.main([*arguments, "--inventory-category", "unknown", "--json"]) == 1
     capsys.readouterr()
     assert path.read_bytes() == committed
+
+
+def test_selected_skill_inventory_is_scoped_and_idempotent(tmp_path):
+    data = ledger.synchronize([entry(), entry("two")], {})
+    for skill_id in ("one", "two"):
+        mirror = tmp_path / "included/skills" / skill_id
+        mirror.mkdir(parents=True)
+        (mirror / "SKILL.md").write_text(skill_id, encoding="utf-8")
+    updated, added = ledger.inventory_skills(data, tmp_path, ["two", "two"])
+    assert added == 1
+    assert "resources" not in updated["skills"]["one"]["research"]
+    assert updated["skills"]["two"]["research"]["resources"]["SKILL.md"]["status"] == "pending"
+    assert not ledger.validate(updated, tmp_path)
+    assert ledger.inventory_skills(updated, tmp_path, ["two"]) == (updated, 0)
+    with pytest.raises(ValueError, match="Unknown or empty skill selection"):
+        ledger.inventory_skills(data, tmp_path, ["two", "unknown"])
+    assert "resources" not in data["skills"]["two"]["research"]
+
+
+def test_selected_skill_inventory_cli_refuses_unknown_without_writing(tmp_path, monkeypatch, capsys):
+    root = tmp_path / "repo"
+    mirror = root / "included/skills/one"
+    mirror.mkdir(parents=True)
+    (mirror / "SKILL.md").write_text("first\n", encoding="utf-8")
+    catalog = root / "catalog.json"
+    catalog.write_text(json.dumps([entry()]), encoding="utf-8")
+    path = root / "ledger.json"
+    path.write_text(json.dumps(ledger.synchronize([entry()], {})), encoding="utf-8")
+    monkeypatch.setattr(ledger, "ROOT", root)
+    arguments = ["--ledger", str(path), "--catalog", str(catalog)]
+    before = path.read_bytes()
+    assert ledger.main([*arguments, "--inventory-skill", "one", "--inventory-skill", "unknown", "--json"]) == 1
+    assert path.read_bytes() == before
+    capsys.readouterr()
+    assert ledger.main([*arguments, "--inventory-skill", "one", "--json"]) == 0
+    assert json.loads(capsys.readouterr().out)["resource_inventories_added"] == 1
+    assert ledger.main([*arguments, "--check", "--json"]) == 0
