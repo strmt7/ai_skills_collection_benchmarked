@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import shutil
 import subprocess
 from pathlib import Path
@@ -60,6 +61,7 @@ def test_control_rejects_unreviewed_overlay_before_loading_dependencies(tmp_path
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         text=True,
+        env={**os.environ, "NODE_DEBUG": "module"},
     ) as process:
         try:
             _, stderr = process.communicate(timeout=10)
