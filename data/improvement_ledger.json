@@ -9935,12 +9935,29 @@
       },
       "mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-dotnet",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-azure-event-hubs.md",
+            "scope": "Selected Event Hubs family examples only; no live Azure service or coding-agent evaluation.",
+            "sha256": "34f20de5cfb9e8eb9c97125d4088e839b1b653be640964482c68fece464e4cd6"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-dotnet-batching/SKILL.md",
+            "scope": "Narrow .NET batching overlay; compile control only.",
+            "sha256": "db570e6523d280fc7678ca9a11f123456f569e9e240f4e55b6c70c8ad9be36e9"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/azure-eventhub-dotnet-batching-v1/qualification.json",
+            "scope": "Original and repaired .NET examples compiled in a locked control; no service run.",
+            "sha256": "f442c73c2af9a2c4e93b83fb2b15bf836185a12cdcd9b95c18df09ec4e11a009"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "microsoft/skills",
       "source_signature": {
@@ -10815,8 +10832,14 @@
       },
       "mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-java",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-azure-event-hubs.md",
+            "scope": "Selected Event Hubs family examples only; no live Azure service or coding-agent evaluation.",
+            "sha256": "34f20de5cfb9e8eb9c97125d4088e839b1b653be640964482c68fece464e4cd6"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -11443,8 +11466,14 @@
       },
       "mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-py",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-azure-event-hubs.md",
+            "scope": "Selected Event Hubs family examples only; no live Azure service or coding-agent evaluation.",
+            "sha256": "34f20de5cfb9e8eb9c97125d4088e839b1b653be640964482c68fece464e4cd6"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -11971,8 +12000,14 @@
       },
       "mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-rust",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-azure-event-hubs.md",
+            "scope": "Selected Event Hubs family examples only; no live Azure service or coding-agent evaluation.",
+            "sha256": "34f20de5cfb9e8eb9c97125d4088e839b1b653be640964482c68fece464e4cd6"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],
@@ -12257,8 +12292,14 @@
       },
       "mirrored_path": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-ts",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "docs/research-azure-event-hubs.md",
+            "scope": "Selected Event Hubs family examples only; no live Azure service or coding-agent evaluation.",
+            "sha256": "34f20de5cfb9e8eb9c97125d4088e839b1b653be640964482c68fece464e4cd6"
+          }
+        ],
+        "status": "in_progress"
       },
       "revision": {
         "evidence": [],

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "sdk_version": "10.0.403",
+  "platform": "Windows",
+  "source_skill_sha256": "90eb8a7b1103670312148fccb43eb3746eae4cef41a24ca2cfe7191b053ca356",
+  "azure_service_called": false,
+  "agent_performance_tested": false,
+  "cases": [
+    {
+      "case": "original",
+      "build_exit_code": 1,
+      "source_sha256": "84185537d360c9ee9a61026bce045de33fa4460258393324191116375092a6ec",
+      "project_sha256": "28386910182bfe4440a5aee0bd2ea69648e06ac93ff0993aecd12189815a427f",
+      "lock_sha256": "d93b2cd2fe880ce17c5df9ed8c9930702667abf3381fa6cb7d7deaa70d3016e2",
+      "restore_stdout_sha256": "a2f239ca970dd430e0c93cd42c1b1ab8cfa5f4943d4deb2e4db5941f870447b2",
+      "restore_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "build_stdout_sha256": "54b0a00806d1db766c055a885c372e607257ecff1907904e4df4ddf102f4da74",
+      "build_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "repaired",
+      "build_exit_code": 0,
+      "source_sha256": "cfa5a651c1b2221ce5d25daa2dc77dd8f58cc9484ecd4d164310e84238132ea5",
+      "project_sha256": "28386910182bfe4440a5aee0bd2ea69648e06ac93ff0993aecd12189815a427f",
+      "lock_sha256": "d93b2cd2fe880ce17c5df9ed8c9930702667abf3381fa6cb7d7deaa70d3016e2",
+      "restore_stdout_sha256": "388047309155881dd48e323c09532015f32460bb00c0658a71071ad2d4c35793",
+      "restore_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "build_stdout_sha256": "2db68dfd0d4276ee155be4fa28d5d0d36a62010f3fd6c498d336aa45dee56011",
+      "build_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "upstream_commit": "3f5b461b2314e01c400564051e92469114c5b68f",
+  "pinned_commit": "a2c05249c4a20103dd954ca702467aa328aac031",
+  "items": [
+    {
+      "name": "azure-eventhub-dotnet",
+      "source_path": ".github/plugins/azure-sdk-dotnet/skills/azure-eventhub-dotnet/SKILL.md",
+      "pinned_skill_sha256": "90eb8a7b1103670312148fccb43eb3746eae4cef41a24ca2cfe7191b053ca356",
+      "observed_blob_sha": "11c2a85610791e40b99dec976b422fe326e4fc9c",
+      "observed_skill_sha256": "f9b30ce076b96ee944e8863b553d48851a6ffaf6ab0e94acff72745b41ccf686",
+      "same_normalized_content": false
+    },
+    {
+      "name": "azure-eventhub-java",
+      "source_path": ".github/plugins/azure-sdk-java/skills/azure-eventhub-java/SKILL.md",
+      "pinned_skill_sha256": "6d53bec91aac8687e33a87332ca1df6107e24478227d6af7bf5647e8e5eae838",
+      "observed_blob_sha": "9399c5d62cc5d5b395e65ad0fc5aaa780e03242e",
+      "observed_skill_sha256": "ef3200235c5e38f311fb6af505f0193166b9b2f99326cea3410c8ecc7f743255",
+      "same_normalized_content": false
+    },
+    {
+      "name": "azure-eventhub-py",
+      "source_path": ".github/plugins/azure-sdk-python/skills/azure-eventhub-py/SKILL.md",
+      "pinned_skill_sha256": "9afca2d824bd3cb66950d689df72368dda2baa699099435eee065b3854b5e372",
+      "observed_blob_sha": "289676f5c80a9f4064980ff98283575502fe1d99",
+      "observed_skill_sha256": "fd26cd3d54d9e92d3d8989b0c2be8f54ab140f41837ba1f4a03da40659f64d03",
+      "same_normalized_content": false
+    },
+    {
+      "name": "azure-eventhub-rust",
+      "source_path": ".github/plugins/azure-sdk-rust/skills/azure-eventhub-rust/SKILL.md",
+      "pinned_skill_sha256": "61157fa265febcf41c98a06c0152b6a235207c546ee5688b673005566ebd2ef1",
+      "observed_blob_sha": "39e8ddaaa38e6c4e94757250eb26ef2e29ef763d",
+      "observed_skill_sha256": "ebfc903a96b4aa25c2ef83021ef90e02306ce56cf01943244f4bc3f4f3980278",
+      "same_normalized_content": false
+    },
+    {
+      "name": "azure-eventhub-ts",
+      "source_path": ".github/plugins/azure-sdk-typescript/skills/azure-eventhub-ts/SKILL.md",
+      "pinned_skill_sha256": "628dd0e1c7ea86baa518db273c43664e4de2ea6f7e3154ac2c01c8174b5d25c3",
+      "observed_blob_sha": "fe0cc9ab1db48af480d95c11e72de9db5c7c4645",
+      "observed_skill_sha256": "6f452bd5f842bafc697edbb8201a091a360584c7a03881bfb63c38745899de2a",
+      "same_normalized_content": false
+    }
+  ],
+  "scope": "Five SKILL.md files and selected problem statements only; not a complete upstream review."
+}

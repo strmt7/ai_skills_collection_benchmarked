@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "microsoft-skills-github-plugins-azure-sdk-dotnet-skills-azure-eventhub-dotnet-skill-md",
+  "source_commit": "a2c05249c4a20103dd954ca702467aa328aac031",
+  "source_mirror": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-dotnet",
+  "original_skill_sha256": "90eb8a7b1103670312148fccb43eb3746eae4cef41a24ca2cfe7191b053ca356",
+  "license_file": "LICENSE",
+  "license_sha256": "d9a1b1e30d633d5732ea18e3cba9538d293ebc53e1a9e4e96ab739e0c5c4f1cb",
+  "scope": "Event Hubs .NET bounded batch sending; compile controls only.",
+  "azure_service_run": false,
+  "model_performance_claim": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/azure-eventhub-dotnet-batching-v1/qualification.json",
+  "overlay_sha256": {
+    "examples/Example.csproj": "28386910182bfe4440a5aee0bd2ea69648e06ac93ff0993aecd12189815a427f",
+    "examples/packages.lock.json": "d93b2cd2fe880ce17c5df9ed8c9930702667abf3381fa6cb7d7deaa70d3016e2",
+    "examples/Program.cs": "cfa5a651c1b2221ce5d25daa2dc77dd8f58cc9484ecd4d164310e84238132ea5",
+    "LICENSE": "d9a1b1e30d633d5732ea18e3cba9538d293ebc53e1a9e4e96ab739e0c5c4f1cb",
+    "provenance/original.SKILL.md": "90eb8a7b1103670312148fccb43eb3746eae4cef41a24ca2cfe7191b053ca356",
+    "SKILL.md": "db570e6523d280fc7678ca9a11f123456f569e9e240f4e55b6c70c8ad9be36e9"
+  },
+  "evidence_sha256": {
+    "qualification.json": "f442c73c2af9a2c4e93b83fb2b15bf836185a12cdcd9b95c18df09ec4e11a009",
+    "reproduce.py": "67c6a4d537361a0f9353032a0822415ad431aa9f56008b4e155fda4350002910",
+    "sources.json": "5682e758c07f71d8f1de545a458da410e802d95ab8afddadcfefd2bb4618f9ac",
+    "upstream-observation.json": "c7e83b2844ae1c4f40f5494340fcfc9f7963602c6be7d44fad6c91f7bb3f6200",
+    "windows-result.json": "a94195a7525d561513054ae4e5f740a23334005270e9ff9e34ad9d6ca5499645"
+  }
+}

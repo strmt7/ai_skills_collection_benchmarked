@@ -1,0 +1,45 @@
+{
+  "capture_date_utc": "2026-11-02",
+  "web_pages": [
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-event-hubs",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_result_sha256": "0ae515e4c13b1cf1b0f1b9b12a260fc13f7aeda7e95a5ee3c35864543e0aa1e0",
+      "status_code": 200,
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/python/api/overview/azure/eventhub-checkpointstoreblob-readme?view=azure-python",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_result_sha256": "8d96be4a2d2da7ea81c4b2dc9aa9b517947b85ed11f88606b030e81face7f622",
+      "status_code": 200,
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/java/api/com.azure.messaging.eventhubs.eventdatabatch?view=azure-java-stable",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_result_sha256": "974bc010f95c96e57fee7ba0bf9595181770176952af89fe4ade117e46422020",
+      "status_code": 200,
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/event-hubs/sdks",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_result_sha256": "0681f77547dbc9381d42e506159c7a351972b537c737f0ad87f1a17a851ac95c",
+      "status_code": 200,
+      "scope_reviewed": true
+    }
+  ],
+  "native_package_response_sha256": {
+    "checkpoint-async-pypi": "2fbf8f57bc433dabbeb0785db9b2101f612d03905f687e2883df33ef84905723",
+    "checkpoint-sync-pypi": "f5344b94f0f047144fed2dfbe71db9ad9305b6d64d6c9cab27cfe648cf5268b4",
+    "eventhubs-npm": "ead05195808332702d4bb2c8952c7157639ef519905c59eae947583ac5d7e471",
+    "eventhubs-nuget": "dbb11f832d0204441bf18c030feb386a69a8628468363ba22beab9fb5983f7c8",
+    "eventhubs-pypi": "29ceae72b6cb041bcce3aa544f020f6dc5e4bef7930b6dee93b325d7f3ae6ac6",
+    "eventhubs-rust": "9c6060195608e301f80945aa304e27553cb034b2feda97775d38a50ce038ce6f",
+    "identity-rust": "4bbb7b74f3079154e484c49a89b81c7e1e01abe69cc97a30f534e59b52e2b837",
+    "rust-0.15-deps": "8d07c38437c9c3fb370958f8a32ea10f19d339f6ed747369e8387de2e3e8c281",
+    "rust-0.16-deps": "470f1c54c80398251eb51cd53a92ef850ba6044defcf27703e72d4cb081eeaf0"
+  },
+  "limits": "Native web, package and build streams are retained outside Git; hashes identify the captured bytes."
+}
