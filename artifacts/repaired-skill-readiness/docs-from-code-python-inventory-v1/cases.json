@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "cases": [
+    "test_aliases_dynamic_paths_and_dynamic_methods_are_not_guessed",
+    "test_aliasing_router_preserves_identity_across_mount",
+    "test_conditional_or_other_uncertain_rebinding_is_not_assumed[class-rebind]",
+    "test_conditional_or_other_uncertain_rebinding_is_not_assumed[conditional-assignment]",
+    "test_conditional_or_other_uncertain_rebinding_is_not_assumed[named-expression]",
+    "test_conditional_or_other_uncertain_rebinding_is_not_assumed[star-import]",
+    "test_declared_python_source_encoding_and_hash_are_respected",
+    "test_existing_output_is_replaced_only_after_successful_analysis",
+    "test_fastapi_same_file_prefixes_and_multiple_mounts",
+    "test_flask_routes_do_not_include_cache_or_implicit_methods",
+    "test_generic_type_parameters_are_retained",
+    "test_invalid_source_fails_without_creating_or_overwriting_output",
+    "test_keyword_expansion_does_not_invent_methods_or_prefixes",
+    "test_missing_or_non_directory_root_is_an_error",
+    "test_output_cannot_overwrite_an_inventoried_source",
+    "test_prior_independent_five_case_controls",
+    "test_rebinding_does_not_make_unrelated_decorator_a_route",
+    "test_selected_candidates_agree_with_real_framework_route_tables",
+    "test_signature_preserves_defaults_kinds_and_return_annotation",
+    "test_source_is_parsed_not_executed",
+    "test_unrecognized_imports_and_nested_definitions_do_not_become_routes",
+    "test_unresolved_mounts_are_not_presented_as_final_paths[dynamic-mount-prefix]",
+    "test_unresolved_mounts_are_not_presented_as_final_paths[dynamic-router-prefix]",
+    "test_unresolved_mounts_are_not_presented_as_final_paths[early-mount]",
+    "test_unresolved_mounts_are_not_presented_as_final_paths[unmounted]"
+  ]
+}

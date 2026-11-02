@@ -189,3 +189,8 @@
 /benchmarks/agent-effectiveness/development/simpo-verifier-v1/** text eol=lf
 /benchmarks/agent-effectiveness/development/simpo-verifier-v1/fixture/** -text !eol whitespace=cr-at-eol
 /artifacts/research/2026-11-02/simpo-verifier-task-calibration/** text eol=lf
+
+# Keep the Python inventory portable and preserve its pinned upstream text.
+/included/repaired/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code-python-inventory/** text eol=lf
+/included/repaired/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code-python-inventory/provenance/** -text !eol whitespace=cr-at-eol
+/artifacts/repaired-skill-readiness/docs-from-code-python-inventory-v1/** text eol=lf

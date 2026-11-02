@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "varnan-tech-opendirectory-packages-cli-skills-docs-from-code-skill-md",
+  "source_commit": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4",
+  "source_mirror": "included/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code",
+  "original_skill_sha256": "5d14fa7f29a9e3d8b572e370052ecbd295b81c7f5ec19ac95d619b6f691a000e",
+  "license_declaration": "MIT as stated in preserved upstream README; no full project-level or docs-from-code license file found in the pinned tree.",
+  "scope": "Selected Python source inventory and owned Flask/FastAPI runtime fixtures; no graphify, TypeScript fallback or agent trial.",
+  "model_performance_claim": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/docs-from-code-python-inventory-v1/qualification.json",
+  "overlay_sha256": {
+    "SKILL.md": "cd93ff2b0f4071474c9fd5c8e789611f942c7febd75e8e22de3db2efe808fd5f",
+    "scripts/inventory.py": "ebf613de44fe70360ac2618beee0526f8a4d82c3baa0ae337c680f7e1ed1f18d",
+    "provenance/original.SKILL.md": "5d14fa7f29a9e3d8b572e370052ecbd295b81c7f5ec19ac95d619b6f691a000e",
+    "provenance/upstream.README.md": "70c14cec2db6ac7e26ccc0e09e02e4d4e7c71520f43dc3cf98b39a04270fd3bc"
+  },
+  "evidence_sha256": {
+    "__pycache__/test_inventory.cpython-313-pytest-9.2.0.pyc": "e0655ccb94011e34b17d531d78b6d8f9a97e55dc00a829d91442437a326050e0",
+    "cases.json": "11a22224e9c225936ba8fbce12eb38310caf55e9cf983bd6b29a76f5cabf0231",
+    "linux-313-result.json": "5cdbc915ec0714538e2bb687f3d0748969b6430aac61d7436a91c30ec10ce6e6",
+    "qualification.json": "fb6ced53972ae5310db327d5bc19f46666126c9c94b4d10b089d7157e2380839",
+    "reproduce.py": "4358a660d3ee42e376db014b410c725b20cc79a5ad060e50a80aa44bc99c6b15",
+    "requirements-linux.txt": "8d084d4c00300bd4418ff5f3c3ae8ed343789286070e586e322f79b8bb4ef341",
+    "requirements-windows.txt": "83280552a46a17b48a4768ad780f60b9ec2cb50061f5c7055928b219d7a39f50",
+    "requirements.in": "0b84900cf26ff88e676e61063769aad890191d8d5010dad0e57b7e96ce843816",
+    "sources.json": "2fae9cd724231f49488fd27a9348737d759566b2bf62707c013752da6522ddf4",
+    "test_inventory.py": "6c55aa8109072b42d8eadcfa684d6b528ba4b328ab58a0535a39ed07c832ed47",
+    "win-311-result.json": "1fab839556e34f0e248586d7602d8189825fc9f873a5672e374084cfa57f598a",
+    "win-312-result.json": "868759eaa299d2ff8fdf2fb4a34bf5863f956475d3434958020b3be4671fee65",
+    "win-313-result.json": "5b48f2192f8e4b2648d5905f5cb9dddad3af3a3ca63bd2970bbd4e9c822971c4",
+    "win-314-result.json": "93b958d6bb600eed0b97cf5031a351611e8fdd07d59a679719f4a0409892681e"
+  }
+}

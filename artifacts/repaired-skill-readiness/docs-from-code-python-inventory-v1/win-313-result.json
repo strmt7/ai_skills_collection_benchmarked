@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "platform": "Windows",
+  "python": "3.13.17",
+  "versions": {
+    "fastapi": "0.162.0",
+    "flask": "3.1.3",
+    "pytest": "9.2.0"
+  },
+  "inputs_sha256": {
+    "included/repaired/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code-python-inventory/scripts/inventory.py": "ebf613de44fe70360ac2618beee0526f8a4d82c3baa0ae337c680f7e1ed1f18d",
+    "artifacts/repaired-skill-readiness/docs-from-code-python-inventory-v1/test_inventory.py": "6c55aa8109072b42d8eadcfa684d6b528ba4b328ab58a0535a39ed07c832ed47",
+    "artifacts/repaired-skill-readiness/docs-from-code-python-inventory-v1/cases.json": "11a22224e9c225936ba8fbce12eb38310caf55e9cf983bd6b29a76f5cabf0231",
+    "artifacts/repaired-skill-readiness/docs-from-code-python-inventory-v1/reproduce.py": "4358a660d3ee42e376db014b410c725b20cc79a5ad060e50a80aa44bc99c6b15",
+    "artifacts/repaired-skill-readiness/docs-from-code-python-inventory-v1/requirements-windows.txt": "83280552a46a17b48a4768ad780f60b9ec2cb50061f5c7055928b219d7a39f50",
+    "benchmarks/dependency-regressions/docs_from_code_fixture.py": "d635c8fd0d227e75bc9e6cb0188c25aed3e411e01ae2f3316f20954867725c34",
+    "benchmarks/dependency-regressions/docs_from_code_controls.py": "603aba1358a60fca87aae86e257d6de836cef33b65e3fdafd690e9d107c1633a"
+  },
+  "test_cases": 25,
+  "passed_cases": 25,
+  "skipped_cases": [],
+  "failed_cases": [],
+  "error_cases": [],
+  "pytest_returncode": 0,
+  "stdout_sha256": "078767dd88412cbe2aa8f3946704df937b6002ed36d7cf051144faeb7a8e5221",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "junit_sha256": "79ed27d2110ebb1b3f78e1838635e948c3196cbd06037c021e217f5bcf443b7d",
+  "target_project_imported_by_inventory": false,
+  "owned_runtime_fixture_executed": true,
+  "graphify_executed": false,
+  "typescript_fallback_tested": false,
+  "agent_performance_tested": false
+}

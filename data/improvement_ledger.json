@@ -17889,6 +17889,11 @@
           {
             "path": "tests/test_docs_from_code_controls.py",
             "sha256": "938fbda91839728d4a398ad3eb8565d6d5bf13c419bebf265062b2686745ead1"
+          },
+          {
+            "path": "docs/research-docs-from-code-python-inventory.md",
+            "scope": "Selected Python source and Flask/FastAPI controls; no graphify, TypeScript repair, or agent efficacy.",
+            "sha256": "b88be2f54c01a8ab28009dcc1e9832c3573ab26facbfc68dc907bf5427147db3"
           }
         ],
         "status": "in_progress",
@@ -17899,8 +17904,19 @@
         ]
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code-python-inventory/SKILL.md",
+            "scope": "Maintained Python source inventory only; results are static candidates.",
+            "sha256": "cd93ff2b0f4071474c9fd5c8e789611f942c7febd75e8e22de3db2efe808fd5f"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/docs-from-code-python-inventory-v1/qualification.json",
+            "scope": "Source-bound control runs with selected real framework fixtures; no agent trial.",
+            "sha256": "fb6ced53972ae5310db327d5bc19f46666126c9c94b4d10b089d7157e2380839"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "Varnan-Tech/opendirectory",
       "source_signature": {

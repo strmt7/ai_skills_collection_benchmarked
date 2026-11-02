@@ -67,7 +67,10 @@ Some reviewed instructions have known limitations:
 - The pinned XLSX helpers can misreport simulated timeouts and literal error
   text. [See the recalculation controls](research-xlsx-recalculation.md).
 - The pinned docs-from-code fallbacks can miss or misidentify routes, and the
-  TypeScript fallback failed to start in the tested environment. [See the extractor controls](research-docs-from-code.md).
+  TypeScript fallback failed to start in the tested environment. A
+  [Python source inventory](../included/repaired/skills/by-category/documents-spreadsheets-presentations/reddit-verified-gtm-registry/docs-from-code-python-inventory/SKILL.md)
+  addresses selected Python cases; its results still need source and runtime
+  verification. [See the extractor controls](research-docs-from-code.md).
 - Eight skills hardcode a retired Gemini model; one more names it while allowing
   an alternative. [See the model review](research-retired-gemini-model.md).
 - One Google image-skill example names a shut-down preview model; the related
