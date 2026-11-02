@@ -1,0 +1,49 @@
+name: Reusable workflow input controls
+
+on:
+  push:
+    paths:
+      - 'benchmarks/component-controls/workflow-call-inputs/**'
+      - 'tests/test_workflow_call_input_controls.py'
+      - 'included/improved/skills/workflow-call-inputs/**'
+      - 'included/skills/by-category/devops-cloud-operations/latest-release-devops/github-actions-generator/**'
+      - '.github/workflows/workflow-call-inputs.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '10 9 * * 4'
+
+concurrency:
+  group: workflow-call-inputs-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  controls:
+    name: Input-type controls (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      GIT_CONFIG_COUNT: '1'
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: 'true'
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.13.18'
+      - name: Check source and maintained workflow inputs
+        run: python benchmarks/component-controls/workflow-call-inputs/controls.py --download --output "${{ runner.temp }}/workflow-call-inputs.json"
+      - name: Retain observations
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: workflow-call-inputs-${{ matrix.os }}
+          path: ${{ runner.temp }}/workflow-call-inputs.json
+          if-no-files-found: error
+          retention-days: 14

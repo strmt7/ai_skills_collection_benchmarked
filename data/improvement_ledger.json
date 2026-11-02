@@ -2121,6 +2121,18 @@
           {
             "path": "artifacts/research/2026-10-08/workflow-evaluator-controls/capture-context-proof.json",
             "sha256": "3697518b53344b67a1aced3e397ddeb4e7b9591613f8c36f9b727f26b5ca1c9e"
+          },
+          {
+            "path": "docs/research-workflow-call-inputs.md",
+            "sha256": "4358919160e380b0ae06bf27cb30cd008883f4e9c0cefa2aa9f46feacb728916"
+          },
+          {
+            "path": "benchmarks/component-controls/workflow-call-inputs/controls.py",
+            "sha256": "d4879f6df3b67d8f02e0baff0f7a751a64348c3b7fffc391c00a0a74de2c8bf5"
+          },
+          {
+            "path": "artifacts/research/2026-11-02/workflow-call-inputs/qualification.json",
+            "sha256": "dc52645a921ab7dee7ce36959bba9ab7d648fa72dfa0b75d4c518fae0daf53c5"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -2164,7 +2176,8 @@
           },
           "assets/templates/workflow/reusable_workflow.yml": {
             "sha256": "b1182c8e00dff00587f462cdafb514c3fb45a7a4604090a8a93384c03777be1c",
-            "status": "pending"
+            "status": "pending",
+            "partial_review_scope": "Input type declaration and examples only; other template sections remain unreviewed."
           },
           "examples/README.md": {
             "sha256": "f310d20d0ea6204fabff67c9c9d54b1b4d02ae3d095449404895db5641cf8c2c",
@@ -2259,8 +2272,13 @@
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/improved/skills/workflow-call-inputs/SKILL.md",
+            "sha256": "b78c8c1fc96395fc1f8ef72701b63eb445f58cf6834f89f7483a14357b5272df"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "akin-ozer/cc-devops-skills",
       "source_signature": {

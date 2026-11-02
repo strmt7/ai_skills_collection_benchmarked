@@ -1,0 +1,186 @@
+{
+  "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+  "source_template_sha256": "b1182c8e00dff00587f462cdafb514c3fb45a7a4604090a8a93384c03777be1c",
+  "overlay_sha256": "b78c8c1fc96395fc1f8ef72701b63eb445f58cf6834f89f7483a14357b5272df",
+  "controls_sha256": "d4879f6df3b67d8f02e0baff0f7a751a64348c3b7fffc391c00a0a74de2c8bf5",
+  "actionlint_version": "1.7.12",
+  "runs": {
+    "windows": {
+      "platform": "Windows",
+      "actionlint_executable_sha256": "54ca21be3de4c7cfa26914aa8b61bd76bf573ef3caac5f80d110558cdf241718",
+      "native_result_sha256": "905b814d9057d3f24cb8feb7402bd1021c09427e08b706a3ffa3857fee33da78",
+      "native_result_location": "Independent host evidence; CI uploads current results as workflow artifacts.",
+      "outcomes": [
+        {
+          "case": "workflow_call-boolean",
+          "input_sha256": "e1111b9aed051a3acf97dcd3d22efa123377be98288b9762fdb90696c0892f6e",
+          "exit_code": 0
+        },
+        {
+          "case": "workflow_call-number",
+          "input_sha256": "a62092da34cf7159d149d951e85a1cdc82ab5b69fcfe707de36ec9dbedc3d7ba",
+          "exit_code": 0
+        },
+        {
+          "case": "workflow_call-string",
+          "input_sha256": "cbb4d9cb26e37e2b7ed0f737d715a03e009293153a2325f939313fd53ae6679b",
+          "exit_code": 0
+        },
+        {
+          "case": "workflow_call-choice",
+          "input_sha256": "8dc3261ed351d093e2c8dde8017a70d544ade2327328199fc32d6dce93de38cc",
+          "exit_code": 1
+        },
+        {
+          "case": "workflow_call-environment",
+          "input_sha256": "e8ae40678bce81a12e1b83c685bf6652590212859ce474e89d8ffffae7d72327",
+          "exit_code": 1
+        },
+        {
+          "case": "workflow_dispatch-boolean",
+          "input_sha256": "1fe418376219150875040c9471ab8e889697bb91a3b708c4bd660151e37a3833",
+          "exit_code": 0
+        },
+        {
+          "case": "workflow_dispatch-number",
+          "input_sha256": "d2d77fbf3ebba2eb69526396526f718c550a20bfa9373e58aab7f30bc2b2246f",
+          "exit_code": 0
+        },
+        {
+          "case": "workflow_dispatch-string",
+          "input_sha256": "b89eb584b5bb14f088550774856c31bbd5a97c44beead0803391ba045e72098d",
+          "exit_code": 0
+        },
+        {
+          "case": "workflow_dispatch-choice",
+          "input_sha256": "79f4304accda033ce4caaa0d5914e0e9ede72ed8af62732b014c5be80c61e3c4",
+          "exit_code": 0
+        },
+        {
+          "case": "workflow_dispatch-environment",
+          "input_sha256": "aa5b5132c00854157c7ce97c42da01146cc729eff37b572f58777b47636ac9ea",
+          "exit_code": 0
+        },
+        {
+          "case": "workflow_call-boolean-default-false",
+          "input_sha256": "7bb4034e08320eb43ccd1b8ce6b22a70c112274418ba1682354032b05b0acd65",
+          "exit_code": 0
+        },
+        {
+          "case": "workflow_call-boolean-default-maybe",
+          "input_sha256": "7018a3f9c265b8e034f8f8d659c313acf95a39824d0c68122fd374d18c4dda52",
+          "exit_code": 1
+        },
+        {
+          "case": "workflow_call-number-default-2",
+          "input_sha256": "bc244ac2fc8d4594efecb462c1e39dbb85612ca8be4fd314308479685e8f4c62",
+          "exit_code": 0
+        },
+        {
+          "case": "workflow_call-number-default-abc",
+          "input_sha256": "4cdf26983012a4d162a53441276e47c7de3cb766a570c2cc60ee49e05de72aae",
+          "exit_code": 1
+        },
+        {
+          "case": "workflow_call-string-default-abc",
+          "input_sha256": "493074993ad1a6294d63da761fa809297b754d5939e6c6727f21bc91868207a7",
+          "exit_code": 0
+        },
+        {
+          "case": "maintained-example",
+          "input_sha256": "c7ad33a9316963c289f0ef66a2546233373d7ad9bd53d51060702e57a2d6df58",
+          "exit_code": 0
+        }
+      ]
+    },
+    "linux": {
+      "platform": "Linux",
+      "actionlint_executable_sha256": "c872d6db8c6bf83a8eaa704fc93999f027d55dffbc63b8a6abdccb47df5f4cd4",
+      "native_result_sha256": "887e0f9fb01cfae0cf87fbbdd97132cd45c04dd18b5df46ae493d6337a5c487b",
+      "native_result_location": "Independent host evidence; CI uploads current results as workflow artifacts.",
+      "outcomes": [
+        {
+          "case": "workflow_call-boolean",
+          "input_sha256": "e1111b9aed051a3acf97dcd3d22efa123377be98288b9762fdb90696c0892f6e",
+          "exit_code": 0
+        },
+        {
+          "case": "workflow_call-number",
+          "input_sha256": "a62092da34cf7159d149d951e85a1cdc82ab5b69fcfe707de36ec9dbedc3d7ba",
+          "exit_code": 0
+        },
+        {
+          "case": "workflow_call-string",
+          "input_sha256": "cbb4d9cb26e37e2b7ed0f737d715a03e009293153a2325f939313fd53ae6679b",
+          "exit_code": 0
+        },
+        {
+          "case": "workflow_call-choice",
+          "input_sha256": "8dc3261ed351d093e2c8dde8017a70d544ade2327328199fc32d6dce93de38cc",
+          "exit_code": 1
+        },
+        {
+          "case": "workflow_call-environment",
+          "input_sha256": "e8ae40678bce81a12e1b83c685bf6652590212859ce474e89d8ffffae7d72327",
+          "exit_code": 1
+        },
+        {
+          "case": "workflow_dispatch-boolean",
+          "input_sha256": "1fe418376219150875040c9471ab8e889697bb91a3b708c4bd660151e37a3833",
+          "exit_code": 0
+        },
+        {
+          "case": "workflow_dispatch-number",
+          "input_sha256": "d2d77fbf3ebba2eb69526396526f718c550a20bfa9373e58aab7f30bc2b2246f",
+          "exit_code": 0
+        },
+        {
+          "case": "workflow_dispatch-string",
+          "input_sha256": "b89eb584b5bb14f088550774856c31bbd5a97c44beead0803391ba045e72098d",
+          "exit_code": 0
+        },
+        {
+          "case": "workflow_dispatch-choice",
+          "input_sha256": "79f4304accda033ce4caaa0d5914e0e9ede72ed8af62732b014c5be80c61e3c4",
+          "exit_code": 0
+        },
+        {
+          "case": "workflow_dispatch-environment",
+          "input_sha256": "aa5b5132c00854157c7ce97c42da01146cc729eff37b572f58777b47636ac9ea",
+          "exit_code": 0
+        },
+        {
+          "case": "workflow_call-boolean-default-false",
+          "input_sha256": "7bb4034e08320eb43ccd1b8ce6b22a70c112274418ba1682354032b05b0acd65",
+          "exit_code": 0
+        },
+        {
+          "case": "workflow_call-boolean-default-maybe",
+          "input_sha256": "7018a3f9c265b8e034f8f8d659c313acf95a39824d0c68122fd374d18c4dda52",
+          "exit_code": 1
+        },
+        {
+          "case": "workflow_call-number-default-2",
+          "input_sha256": "bc244ac2fc8d4594efecb462c1e39dbb85612ca8be4fd314308479685e8f4c62",
+          "exit_code": 0
+        },
+        {
+          "case": "workflow_call-number-default-abc",
+          "input_sha256": "4cdf26983012a4d162a53441276e47c7de3cb766a570c2cc60ee49e05de72aae",
+          "exit_code": 1
+        },
+        {
+          "case": "workflow_call-string-default-abc",
+          "input_sha256": "493074993ad1a6294d63da761fa809297b754d5939e6c6727f21bc91868207a7",
+          "exit_code": 0
+        },
+        {
+          "case": "maintained-example",
+          "input_sha256": "c7ad33a9316963c289f0ef66a2546233373d7ad9bd53d51060702e57a2d6df58",
+          "exit_code": 0
+        }
+      ]
+    }
+  },
+  "limitations": "Static syntax controls on synthetic workflows; no GitHub-hosted execution, full generator qualification, or agent efficacy measurement."
+}

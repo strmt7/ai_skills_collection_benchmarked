@@ -21,6 +21,8 @@
 /benchmarks/component-controls/frontend/** text eol=lf
 /benchmarks/component-controls/frontend/fixtures/** -text
 /benchmarks/component-controls/frontend/native/** -text
+# The workflow-input control is bound to exact LF source bytes in its receipt.
+/benchmarks/component-controls/workflow-call-inputs/** text eol=lf
 # Exact npm Windows captures are bound into the qualified dependency receipt.
 /benchmarks/component-controls/frontend/package.json -text
 /benchmarks/component-controls/frontend/package-lock.json -text

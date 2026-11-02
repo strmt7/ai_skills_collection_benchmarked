@@ -471,6 +471,26 @@
       "source_commit": "e8cc5baf9329ccb491bfa200e82eacbac83b1ead",
       "source_file_sha256": "fef9189249c46d08d5172f7010e0d83ae8dc104cc3d07714a909dd12f9e92e79",
       "source_url": "https://github.com/trailofbits/skills/blob/e8cc5baf9329ccb491bfa200e82eacbac83b1ead/plugins/ask-questions-if-underspecified/skills/ask-questions-if-underspecified/SKILL.md"
+    },
+    {
+      "license": "Apache-2.0",
+      "license_file_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "license_source_sha": "f49a4e16e68b128803cc2dcea614603632b04eac",
+      "original_path": "included/improved/skills/workflow-call-inputs/provenance/original-SKILL.md",
+      "overlay_path": "included/improved/skills/workflow-call-inputs",
+      "overlay_sha256": "b78c8c1fc96395fc1f8ef72701b63eb445f58cf6834f89f7483a14357b5272df",
+      "package_file_sha256": {
+        "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "NOTICE.md": "363fc4a1ec9e620bece80a7f7b29b6ffdf9ac72b8b5382fa5364d277655c5331",
+        "SKILL.md": "b78c8c1fc96395fc1f8ef72701b63eb445f58cf6834f89f7483a14357b5272df",
+        "provenance/original-SKILL.md": "485a62c648f2a163fe479948409bd4b146dd3b47712f742452efadeab6dcbe3a",
+        "provenance/original-reusable-workflow.yml": "b1182c8e00dff00587f462cdafb514c3fb45a7a4604090a8a93384c03777be1c"
+      },
+      "performance_status": "unbenchmarked",
+      "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-github-actions-generator-skill-md",
+      "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+      "source_file_sha256": "485a62c648f2a163fe479948409bd4b146dd3b47712f742452efadeab6dcbe3a",
+      "source_url": "https://github.com/akin-ozer/cc-devops-skills/blob/7fe7595e4512f8ce43dcf956aa5190b96d627dd1/devops-skills-plugin/skills/github-actions-generator/SKILL.md"
     }
   ]
 }
