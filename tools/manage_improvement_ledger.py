@@ -165,6 +165,42 @@ def validate_resources(skill_id: str, state: dict[str, Any], root: Path) -> list
     return errors
 
 
+def inventory_category(ledger: dict[str, Any], root: Path, category: str) -> tuple[dict[str, Any], int]:
+    """Add pending source-bound resource records without replacing previous reviews."""
+    updated = copy.deepcopy(ledger)
+    selected = [state for state in updated["skills"].values() if state["category"] == category]
+    if not selected:
+        raise ValueError("Unknown or empty category")
+    added = 0
+    for state in selected:
+        research = state["research"]
+        if "resources" in research:
+            continue
+        if research["status"] in {"complete", "not_applicable"}:
+            raise ValueError("A finished research record requires individual review before inventory")
+        mirror = root / state["mirrored_path"]
+        if not mirror.is_dir() or not mirror.resolve().is_relative_to(root.resolve()):
+            raise ValueError("Resource mirror missing or external")
+        resources = {}
+        for file in sorted(mirror.rglob("*")):
+            if file.is_symlink():
+                raise ValueError("Linked resource cannot be inventoried")
+            if not file.is_file():
+                continue
+            if not file.resolve().is_relative_to(mirror.resolve()):
+                raise ValueError("External resource cannot be inventoried")
+            resources[file.relative_to(mirror).as_posix()] = {
+                "sha256": sha256_file(file),
+                "status": "pending",
+            }
+        if not resources:
+            raise ValueError("Resource mirror contains no files")
+        research["resource_hash_policy"] = "catalog-canonical-v1"
+        research["resources"] = resources
+        added += 1
+    return updated, added
+
+
 def parse_utc(value: str) -> datetime:
     if not isinstance(value, str):
         raise ValueError("timestamp must be an explicit UTC string")
@@ -203,7 +239,9 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--ledger", type=Path, default=ROOT / "data/improvement_ledger.json")
     parser.add_argument("--catalog", type=Path, default=ROOT / "data/skills_catalog.json")
-    parser.add_argument("--check", action="store_true", help="Check coverage and evidence without changing files")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--check", action="store_true", help="Check coverage and evidence without changing files")
+    mode.add_argument("--inventory-category", help="Add pending resource records for a category")
     parser.add_argument("--json", action="store_true", help="Print machine-readable coverage and errors")
     parser.add_argument("--gate", help="Check a named time gate; exit 3 while it is closed")
     parser.add_argument("--at", help="UTC time for an explicit gate check (default: current UTC)")
@@ -221,11 +259,19 @@ def main(argv: list[str] | None = None) -> int:
             return 0 if eligible else 3
         updated = synchronize(read_json(args.catalog), previous)
         errors = validate(updated, ROOT)
+        added = 0
+        if args.inventory_category is not None and not errors:
+            if updated != previous:
+                raise ValueError("Ledger is stale; synchronize it before inventory")
+            updated, added = inventory_category(updated, ROOT, args.inventory_category)
+            errors = validate(updated, ROOT)
         if args.check and updated != previous:
             errors.append("ledger coverage is stale; synchronize before recording new research")
         if not args.check and not errors:
             write_json(args.ledger, updated)
         report = {"errors": errors, "skill_count": len(updated["skills"])}
+        if args.inventory_category is not None:
+            report["resource_inventories_added"] = added
         if not errors:
             report.update(summary(updated))
         print(

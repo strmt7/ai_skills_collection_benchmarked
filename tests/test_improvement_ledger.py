@@ -185,3 +185,62 @@ def test_malformed_resource_status_is_reported(tmp_path, record):
     data, _ = resource_ledger(tmp_path)
     data["skills"]["one"]["research"]["resources"]["helper.py"] = record
     assert any("invalid resource status" in e for e in ledger.validate(data, tmp_path))
+
+
+def test_category_inventory_preserves_existing_work_and_tracks_each_file(tmp_path):
+    data = ledger.synchronize([entry(), entry("two")], {})
+    first = tmp_path / "included/skills/one"
+    second = tmp_path / "included/skills/two"
+    first.mkdir(parents=True)
+    second.mkdir(parents=True)
+    (first / "SKILL.md").write_text("first\n", encoding="utf-8")
+    (first / "refs").mkdir()
+    (first / "refs/example.txt").write_text("example\n", encoding="utf-8")
+    (second / "SKILL.md").write_text("second\n", encoding="utf-8")
+    data["skills"]["one"]["research"]["status"] = "in_progress"
+    updated, added = ledger.inventory_category(data, tmp_path, "coding")
+    assert added == 2
+    assert "resources" not in data["skills"]["one"]["research"]
+    research = updated["skills"]["one"]["research"]
+    assert research["status"] == "in_progress"
+    assert set(research["resources"]) == {"SKILL.md", "refs/example.txt"}
+    assert all(record["status"] == "pending" for record in research["resources"].values())
+    assert not ledger.validate(updated, tmp_path)
+    again, added = ledger.inventory_category(updated, tmp_path, "coding")
+    assert added == 0
+    assert again == updated
+    (first / "refs/example.txt").write_text("changed\n", encoding="utf-8")
+    assert any("hash mismatch" in error for error in ledger.validate(updated, tmp_path))
+
+
+def test_category_inventory_refuses_finished_or_unknown_category_without_modification(tmp_path):
+    data = ledger.synchronize([entry()], {})
+    with pytest.raises(ValueError, match="Unknown or empty category"):
+        ledger.inventory_category(data, tmp_path, "missing")
+    data["skills"]["one"]["research"]["status"] = "complete"
+    with pytest.raises(ValueError, match="finished research"):
+        ledger.inventory_category(data, tmp_path, "coding")
+    assert "resources" not in data["skills"]["one"]["research"]
+
+
+def test_inventory_cli_writes_only_after_validation(tmp_path, monkeypatch, capsys):
+    root = tmp_path / "repo"
+    mirror = root / "included/skills/one"
+    mirror.mkdir(parents=True)
+    (mirror / "SKILL.md").write_text("first\n", encoding="utf-8")
+    catalog = root / "catalog.json"
+    catalog.write_text(json.dumps([entry()]), encoding="utf-8")
+    path = root / "ledger.json"
+    data = ledger.synchronize([entry()], {})
+    path.write_text(json.dumps(data), encoding="utf-8")
+    monkeypatch.setattr(ledger, "ROOT", root)
+    arguments = ["--ledger", str(path), "--catalog", str(catalog)]
+    assert ledger.main([*arguments, "--inventory-category", "coding", "--json"]) == 0
+    assert json.loads(capsys.readouterr().out)["resource_inventories_added"] == 1
+    committed = path.read_bytes()
+    assert ledger.main([*arguments, "--check", "--json"]) == 0
+    capsys.readouterr()
+    assert path.read_bytes() == committed
+    assert ledger.main([*arguments, "--inventory-category", "unknown", "--json"]) == 1
+    capsys.readouterr()
+    assert path.read_bytes() == committed

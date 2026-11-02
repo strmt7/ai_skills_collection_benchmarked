@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-11-02T16:32:01Z",
+  "requested_repository": "forrestchang/andrej-karpathy-skills",
+  "resolved_repository": "multica-ai/andrej-karpathy-skills",
+  "default_branch": "main",
+  "observed_head": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+  "pinned_baseline": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+  "matches_pinned_baseline": true,
+  "captures": [
+    {
+      "endpoint": "https://api.github.com/repos/forrestchang/andrej-karpathy-skills",
+      "sha256": "ed1872b215b1173f89174ba2bed0454e8068a91c349f17f2ae89a283e33b2041",
+      "bytes": 6933
+    },
+    {
+      "endpoint": "https://api.github.com/repos/forrestchang/andrej-karpathy-skills/commits/main",
+      "sha256": "3cd0c4c956d7d5d36c62a6fc191081c6318452576c3a84964636fd75b59fb8df",
+      "bytes": 5744
+    }
+  ],
+  "limitations": [
+    "The head observation is time-bound and does not compare unmerged branches, unpublished changes or other upstream sources.",
+    "Matching commits establish source identity, not efficacy or commercial readiness."
+  ]
+}
