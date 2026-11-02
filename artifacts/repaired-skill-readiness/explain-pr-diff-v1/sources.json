@@ -10,6 +10,19 @@
     ],
     "raw_response_sha256": "9e15a665578a10b4457526b5d5f9d9558dcabe2049190f6b388e4b8f6fd899ef",
     "repo": "Varnan-Tech/opendirectory",
+    "skill_difference": "Pinned upstream SKILL.md has two additional trailing newline bytes after the canonical mirrored text.",
+    "source_files": {
+      "README.md": {
+        "byte_identical": true,
+        "canonical_mirror_sha256": "8ac4af8c1a1da030636796c186e93b8c580f7c7562be1b359f2c597749db7d70",
+        "upstream_sha256": "8ac4af8c1a1da030636796c186e93b8c580f7c7562be1b359f2c597749db7d70"
+      },
+      "SKILL.md": {
+        "byte_identical": false,
+        "canonical_mirror_sha256": "a092ecb1dc1ab0f493c3cb94980be73cc0e8ecbd6a0789fa4e822d71e558e733",
+        "upstream_sha256": "a0c22a5941a24cc5584394f169d929a0d8aa751cac8e740bd659a622d353dbfb"
+      }
+    },
     "truncated": false
   },
   "web_sources": [

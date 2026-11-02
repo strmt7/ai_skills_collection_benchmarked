@@ -8,16 +8,16 @@
     "control.py": "4cc67bdd9946986ee7f0139033eac25252d534a8d7d25cf6276d17ae300fc8f7",
     "linux-result.json": "afb3546f4e15537a1f37a22c6ccab26518ac26248f81b2d3c478244e537613e4",
     "raw/full.diff": "fb7ef14cb12da27071adf2143f332aa41bd38ba4244c441648bbcce308b96ab3",
-    "sources.json": "5436e7566811941ea4a4173c04a36aaecd52571c6911930da186e392ea8b322e",
+    "sources.json": "0cef32a67b2267c891fbbea97e48851759c233b3e64b8cb80a46be9356bc4104",
     "windows-result.json": "62abd336d2ec87739ed8a2f50b42b6708ff556b797095718a1d4dcfabd14fa65"
   },
   "license_declaration": "MIT as stated in the preserved upstream README; no complete project-level or skill-level license file found in the pinned tree.",
   "model_performance_claim": false,
-  "original_skill_sha256": "d722d1ea76bc7f1bc350485b85f0e9a9309860f37cedea6fdfb94c0dec385bc5",
+  "original_skill_sha256": "a092ecb1dc1ab0f493c3cb94980be73cc0e8ecbd6a0789fa4e822d71e558e733",
   "overlay_sha256": {
     "SKILL.md": "bbf9d4083a69ff743e50f8c9e5dd7f5be4fd36e1636d94b21a0392fd9319c023",
-    "provenance/original.SKILL.md": "d722d1ea76bc7f1bc350485b85f0e9a9309860f37cedea6fdfb94c0dec385bc5",
-    "provenance/upstream.README.md": "dc9c658350d610f1b2c466e7eba8764b94a564e111f6f3af5643e8cb2c7c883a"
+    "provenance/original.SKILL.md": "a092ecb1dc1ab0f493c3cb94980be73cc0e8ecbd6a0789fa4e822d71e558e733",
+    "provenance/upstream.README.md": "8ac4af8c1a1da030636796c186e93b8c580f7c7562be1b359f2c597749db7d70"
   },
   "readiness_evidence": "artifacts/repaired-skill-readiness/explain-pr-diff-v1/windows-result.json",
   "schema_version": 1,

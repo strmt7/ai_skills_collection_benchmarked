@@ -24259,12 +24259,12 @@
           {
             "path": "docs/research-explain-this-pr.md",
             "scope": "Scoped large-diff and source review, not an agent evaluation.",
-            "sha256": "a5c655c8f229e7e4cbce53ab5304bd08d41e3754239b1039a07f3a2820193043"
+            "sha256": "4534c23809981d22152ec5135d12404c11e3c2f6d5be91e243d7c21ca1f63b77"
           },
           {
             "path": "included/repaired/skills/by-category/coding-refactoring-repository-automation/reddit-verified-gtm-registry/explain-this-pr/repair.json",
             "scope": "Maintained overlay for incomplete diff coverage and explicit posting intent.",
-            "sha256": "5f9816ac8050c340ecac6d08fc07ca0bde1282a6595098bd8fe3c0c320ed012e"
+            "sha256": "1272b1cb855fa56edbda8c00fa050b735dca85b2bcf3a5318c22d7e69bcae7b1"
           },
           {
             "path": "artifacts/repaired-skill-readiness/explain-pr-diff-v1/control.py",
@@ -24289,7 +24289,7 @@
           {
             "path": "artifacts/repaired-skill-readiness/explain-pr-diff-v1/sources.json",
             "scope": "Synthetic diff control and source record; no model trial.",
-            "sha256": "5436e7566811941ea4a4173c04a36aaecd52571c6911930da186e392ea8b322e"
+            "sha256": "0cef32a67b2267c891fbbea97e48851759c233b3e64b8cb80a46be9356bc4104"
           }
         ],
         "open_work": [
@@ -24321,7 +24321,7 @@
           {
             "path": "included/repaired/skills/by-category/coding-refactoring-repository-automation/reddit-verified-gtm-registry/explain-this-pr/repair.json",
             "scope": "Maintained overlay; original source remains unchanged.",
-            "sha256": "5f9816ac8050c340ecac6d08fc07ca0bde1282a6595098bd8fe3c0c320ed012e"
+            "sha256": "1272b1cb855fa56edbda8c00fa050b735dca85b2bcf3a5318c22d7e69bcae7b1"
           }
         ],
         "status": "in_progress"

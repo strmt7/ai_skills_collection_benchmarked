@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 
 import pytest
+from build_catalog import sanitized_file_bytes
 
 ROOT = Path(__file__).resolve().parents[1]
 ARTIFACT = ROOT / "artifacts/repaired-skill-readiness/explain-pr-diff-v1"
@@ -27,14 +28,23 @@ def digest(path: Path) -> str:
 
 def test_provenance_and_component_evidence_are_source_bound() -> None:
     manifest = json.loads((OVERLAY / "repair.json").read_text(encoding="utf-8"))
-    assert (OVERLAY / "provenance/original.SKILL.md").read_bytes() == (MIRROR / "SKILL.md").read_bytes()
-    assert (OVERLAY / "provenance/upstream.README.md").read_bytes() == (MIRROR / "README.md").read_bytes()
-    assert digest(MIRROR / "SKILL.md") == manifest["original_skill_sha256"]
+    assert (OVERLAY / "provenance/original.SKILL.md").read_bytes() == sanitized_file_bytes(MIRROR / "SKILL.md")
+    assert (OVERLAY / "provenance/upstream.README.md").read_bytes() == sanitized_file_bytes(MIRROR / "README.md")
+    assert digest(OVERLAY / "provenance/original.SKILL.md") == manifest["original_skill_sha256"]
     assert manifest["model_performance_claim"] is False
     for name, expected in manifest["overlay_sha256"].items():
         assert digest(OVERLAY / name) == expected
     for name, expected in manifest["evidence_sha256"].items():
         assert digest(ARTIFACT / name) == expected
+
+
+@pytest.mark.parametrize("line_ending", [b"\n", b"\r\n"])
+def test_mirror_checkout_line_endings_preserve_canonical_provenance(tmp_path: Path, line_ending: bytes) -> None:
+    for original, preserved in (("SKILL.md", "original.SKILL.md"), ("README.md", "upstream.README.md")):
+        canonical = (OVERLAY / "provenance" / preserved).read_bytes()
+        checkout = tmp_path / original
+        checkout.write_bytes(canonical.replace(b"\n", line_ending))
+        assert sanitized_file_bytes(checkout) == canonical
 
 
 def test_full_diff_exposes_change_omitted_from_excerpt() -> None:
