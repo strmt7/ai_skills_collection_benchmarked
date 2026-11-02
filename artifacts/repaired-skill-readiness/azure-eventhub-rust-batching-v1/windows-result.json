@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "platform": "Windows",
+  "toolchain": {
+    "cargo": "cargo 1.99.1 (5f94df478 2026-08-27)",
+    "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)"
+  },
+  "check_exit_code": 0,
+  "source_sha256": "efe2bd8570f0c8c429d07e91918abd626b05743e6204f882514084d3f21fd6e4",
+  "manifest_sha256": "759c12698fae36e0a9a211ece2ac7c74c2f42c81e2a2413cf535df69886818fa",
+  "lock_sha256": "40bc7aeafcb6fba0be1004bd33a4f3051023d2606a2d8c52036030b26004d3b7",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "f7b29588101cabdb847f14010422bd453cb1c0648714091e808690dc75a29f41",
+  "azure_service_called": false,
+  "agent_performance_tested": false
+}

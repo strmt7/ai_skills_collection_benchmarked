@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "scope": "Compile locked Rust producer example and record a dated resolver conflict.",
+  "source_skill_sha256": "61157fa265febcf41c98a06c0152b6a235207c546ee5688b673005566ebd2ef1",
+  "initial_platform": "Windows",
+  "rust_toolchain": "1.99.1",
+  "stable_pair": {
+    "azure_messaging_eventhubs": "0.15.0",
+    "azure_identity": "1.0.0"
+  },
+  "observed_incompatible_pair": {
+    "azure_messaging_eventhubs": "0.16.0",
+    "azure_identity": "1.0.0",
+    "resolver_exit": 101
+  },
+  "clean_deep_path_compile_exit": 1,
+  "temporary_workspace_compile_exit": 0,
+  "deep_path_stderr_sha256": "d2d7dc2a87bad26135b64c49a1c5a63faa98408031001afa063554bfff8250f4",
+  "resolver_stderr_sha256": "a444f32b29d74020ec5ca2b2f6968ed3f85d2264864a86098167455fb591546a",
+  "azure_service_called": false,
+  "agent_performance_tested": false,
+  "limits": [
+    "The negative resolver result depends on the registry state on 2 November 2026.",
+    "The first clean deep-path build failed with missing native include errors; the temporary-workspace build succeeded.",
+    "Compilation does not establish live Azure delivery, retry behavior, or agent performance."
+  ]
+}

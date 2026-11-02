@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "microsoft-skills-github-plugins-azure-sdk-rust-skills-azure-eventhub-rust-skill-md",
+  "source_commit": "a2c05249c4a20103dd954ca702467aa328aac031",
+  "source_mirror": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-rust",
+  "original_skill_sha256": "61157fa265febcf41c98a06c0152b6a235207c546ee5688b673005566ebd2ef1",
+  "license_file": "LICENSE",
+  "license_sha256": "d9a1b1e30d633d5732ea18e3cba9538d293ebc53e1a9e4e96ab739e0c5c4f1cb",
+  "scope": "Rust Event Hubs batch sending and package compatibility; compile controls only.",
+  "azure_service_run": false,
+  "model_performance_claim": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/azure-eventhub-rust-batching-v1/qualification.json",
+  "overlay_sha256": {
+    "examples/Cargo.lock": "40bc7aeafcb6fba0be1004bd33a4f3051023d2606a2d8c52036030b26004d3b7",
+    "examples/Cargo.toml": "759c12698fae36e0a9a211ece2ac7c74c2f42c81e2a2413cf535df69886818fa",
+    "examples/src/main.rs": "efe2bd8570f0c8c429d07e91918abd626b05743e6204f882514084d3f21fd6e4",
+    "LICENSE": "d9a1b1e30d633d5732ea18e3cba9538d293ebc53e1a9e4e96ab739e0c5c4f1cb",
+    "provenance/original.SKILL.md": "61157fa265febcf41c98a06c0152b6a235207c546ee5688b673005566ebd2ef1",
+    "SKILL.md": "4795d93f2f132c660c75d816125548278bf90395bc656e4da0e96610a9fb7160"
+  },
+  "evidence_sha256": {
+    "qualification.json": "29d303768b3ea2f796b996968c66839d94f946b28c2658d43a3f67cc88f864e8",
+    "reproduce.py": "ab0e227271c9a0da19c73df90edb1f8eac78904b8500ba5399c7a1e139a2f904",
+    "sources.json": "387cddff93fdc93fa9fbd051a08eaa64815b977ca3d3292662023ae06300f07a",
+    "windows-result.json": "96f5dfb24e8d32f2254295cda89b2b48889457a6214e9c7709a243d550bda969"
+  }
+}

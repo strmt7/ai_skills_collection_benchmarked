@@ -1,0 +1,66 @@
+name: Azure Event Hubs Rust batching controls
+
+on:
+  push:
+    paths:
+      - 'included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-rust/**'
+      - 'included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-rust-batching/**'
+      - 'artifacts/repaired-skill-readiness/azure-eventhub-rust-batching-v1/**'
+      - 'tests/test_azure_eventhub_rust.py'
+      - '.github/workflows/azure-eventhub-rust.yml'
+      - '.gitattributes'
+  workflow_dispatch:
+  schedule:
+    - cron: '5 9 * * 3'
+
+concurrency:
+  group: azure-eventhub-rust-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  compile:
+    name: Locked Rust batching compile (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    env:
+      GIT_CONFIG_COUNT: '1'
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: 'true'
+      RUSTUP_HOME: ${{ runner.temp }}/eventhub-rustup
+      CARGO_HOME: ${{ runner.temp }}/eventhub-bootstrap-cargo
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.13.17'
+      - name: Install the qualified Rust toolchain
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          rustup toolchain install 1.99.1 --profile minimal --no-self-update
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Check the locked example
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $rustup = (Get-Command rustup).Source
+          python artifacts/repaired-skill-readiness/azure-eventhub-rust-batching-v1/reproduce.py --rustup $rustup --output (Join-Path $env:RUNNER_TEMP 'eventhub-rust-controls')
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Retain compile observations
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: azure-eventhub-rust-controls-${{ matrix.os }}
+          path: |
+            ${{ runner.temp }}/eventhub-rust-controls/result.json
+            ${{ runner.temp }}/eventhub-rust-controls/check.stdout
+            ${{ runner.temp }}/eventhub-rust-controls/check.stderr
+          if-no-files-found: warn
+          retention-days: 14

@@ -1,0 +1,27 @@
+{
+  "capture_date_utc": "2026-11-02",
+  "web_pages": [
+    {
+      "url": "https://docs.rs/azure_messaging_eventhubs/0.15.0/azure_messaging_eventhubs/",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_result_sha256": "3b1557312a0e2a2e002ee2303c20dfa2eb142c5d2c60cc3d1c18b6015d666512",
+      "status_code": 200,
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://docs.rs/azure_messaging_eventhubs/0.15.0/azure_messaging_eventhubs/struct.EventDataBatch.html",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_result_sha256": "234b77b863e1487b41b556431fb4dc61821326c444ef327718242e04af58ed94",
+      "status_code": 200,
+      "scope_reviewed": true
+    }
+  ],
+  "native_registry_response_sha256": {
+    "eventhubs": "af9aa7bd1d7604f56103add368b75ef67c077bf1eca4304ce2fc70f315ef0111",
+    "eventhubs-015-dependencies": "8d07c38437c9c3fb370958f8a32ea10f19d339f6ed747369e8387de2e3e8c281",
+    "eventhubs-016-dependencies": "470f1c54c80398251eb51cd53a92ef850ba6044defcf27703e72d4cb081eeaf0",
+    "identity": "9d9ea82dcd6097854d194442fb3be3e28e47bebc631daf02cf691c8f09cf4a61",
+    "rust-stable": "fb152be80975c194aa5fc684b2aec3a6e14e2b855efe2faa4e5f8ae6e590f463"
+  },
+  "limits": "Native Crawl4AI, registry and compiler streams are retained outside Git; hashes identify their captured bytes."
+}

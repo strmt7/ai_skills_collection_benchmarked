@@ -1,0 +1,10 @@
+[package]
+name = "eventhub-batching-example"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+azure_messaging_eventhubs = "=0.15.0"
+azure_identity = "=1.0.0"
+tokio = { version = "=1.54.1", features = ["macros", "rt-multi-thread"] }
