@@ -186,6 +186,50 @@ collecting untouched holdout results; this tool is not a preregistration or an
 analysis of existing trials. See the [R Exact package's paired power documentation](https://search.r-project.org/CRAN/refmans/Exact/html/power.paired.test.html)
 for the underlying paired-outcome setup and alternative test methods.
 
+## Exact paired-outcome analysis
+
+`tools/analyze_paired_task_outcomes.py` can calculate an exact conditional
+paired binary test for **one scored matched pair per task**. It first revalidates
+the multi-task plan and all underlying reports, then rejects missing outcomes,
+repeated comparisons within a task, mismatched conditions and analysis-plan
+hashes. It never treats repeated attempts as independent tasks. The input is the
+same multi-task `--plan` used by the descriptive reporter plus a separate
+`--analysis-plan` JSON file, for example:
+
+```json
+{
+  "schema_version": 1,
+  "trial_plan_sha256": "<sha256 of the exact multi-task plan>",
+  "partition": "holdout",
+  "baseline": "default",
+  "candidate": "collection",
+  "alternative": "greater",
+  "family_comparisons": 2,
+  "family_alpha": "0.05"
+}
+```
+
+Set the partition and condition names to those in the frozen trial plan. Record
+the comparison, direction, complete family size, significance level, task
+selection and stopping rule **before** inspecting the holdout outcomes; a file
+hash alone cannot prove that this happened. Run
+`python tools/analyze_paired_task_outcomes.py --plan PLAN.json --analysis-plan ANALYSIS.json`.
+The one-sided `greater` alternative tests candidate-only passes against
+baseline-only passes; `two-sided` tests either direction. The output preserves
+the four paired outcomes, observed pass-rate difference, exact p-value and
+Bonferroni-adjusted p-value as rational numbers. Zero discordant pairs yield
+p = 1. Missing or differing provider-reported snapshots remain visible.
+
+The exact conditional calculation follows the binomial form of
+[McNemar's test](https://www.statsmodels.org/stable/generated/statsmodels.stats.contingency_tables.mcnemar.html).
+It assumes independent task pairs, appropriate sampling and equal discordant
+probabilities under the null; the tool cannot verify those assumptions. The
+family adjustment covers only the complete prespecified comparison family, not
+unrecorded tests or repeated looks. A two-sided rejection has no direction.
+No confidence interval is computed. A p-value, matching hashes, reported model
+snapshots or a nominal rejection do not establish causal skill superiority,
+representative task coverage, grading authenticity or commercial readiness.
+
 ## Comparing multiple task reports
 
 `tools/summarize_multi_task_trials.py` reads a declared plan of task IDs,
