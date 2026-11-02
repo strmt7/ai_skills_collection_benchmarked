@@ -82,6 +82,9 @@
 /artifacts/repaired-skill-readiness/playwright-executor-v1/** text eol=lf
 /included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-c/** text eol=lf
 /artifacts/repaired-skill-readiness/makefile-generator-c-v1/** text eol=lf
+/included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-parallelism/** text eol=lf
+/included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-parallelism/provenance/original.SKILL.md -text !eol
+/artifacts/repaired-skill-readiness/makefile-parallelism-v1/** text eol=lf
 
 # Preserve versioned Next.js component controls and overlay provenance.
 /included/repaired/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/nextjs-turbopack/** text eol=lf

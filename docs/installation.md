@@ -50,7 +50,8 @@ Some reviewed instructions have known limitations:
   shows the replacement API; its [review](research-cellxgene-census.md#streaming-data-for-machine-learning)
   describes the component test and its limits.
 - With GNU Make 4.4.1, the pinned Makefile generator's selective `.NOTPARALLEL`
-  example does not serialize the named target recipes. [See the parallelism control](research-makefile-parallelism.md).
+  example does not serialize the named target recipes. The [parallelism overlay](../included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-parallelism/SKILL.md)
+  covers explicit ordering and invocation-wide serialization. [See the controls](research-makefile-parallelism.md).
 - The pinned DOCX skill's global npm installation does not necessarily make the
   library importable by a local script. [See the portability control](research-docx-portability.md).
 - The bundled LibreOffice helper in the DOCX, PPTX and XLSX skills fails to

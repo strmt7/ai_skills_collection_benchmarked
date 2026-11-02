@@ -76,6 +76,21 @@ jobs:
           python -m unittest discover
           -s included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-c
           -p test_generator.py -v
+      - name: Run GNU Make parallelism controls
+        if: ${{ runner.os == 'Linux' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python artifacts/repaired-skill-readiness/makefile-parallelism-v1/reproduce.py --make "$TASK_MAKE_BIN" > "$RUNNER_TEMP/make-parallelism.json"
+          cat "$RUNNER_TEMP/make-parallelism.json"
+      - name: Retain GNU Make parallelism controls
+        if: ${{ runner.os == 'Linux' && always() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: make-parallelism-${{ matrix.python-version }}
+          path: ${{ runner.temp }}/make-parallelism.json
+          if-no-files-found: warn
+          retention-days: 14
       - name: Run Windows generator controls
         if: ${{ runner.os == 'Windows' }}
         run: >-

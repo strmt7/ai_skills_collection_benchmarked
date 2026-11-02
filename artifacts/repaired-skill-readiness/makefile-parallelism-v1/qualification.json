@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "scope": "Synthetic GNU Make target graphs on Linux; no Docker target operations or agent performance evaluation.",
+  "source_skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-makefile-generator-skill-md",
+  "source_skill_sha256": "c0090361f2f9999c81050beb7d65aaf4338094559bd227d944aafbf1500286fe",
+  "runner_sha256": "af5ddb77bfedb2fbccc11731e3d25ec7fca8939f44dc3639d79a5ac8137c8f08",
+  "results": {
+    "linux-make-4.3.json": "40841452cf206d2a25f23699fd62a82b83188184ba5d3438abcde14f14383949",
+    "linux-make-4.4.1.json": "36a9b3ea4b81c20010da45b3a05bb92f0381dcc40a9205d4ea76be531e1da55b"
+  },
+  "environments": {
+    "linux-make-4.3.json": "Ubuntu 24.04 WSL, installed GNU Make 4.3 and Python 3.12.3",
+    "linux-make-4.4.1.json": "Alpine Linux, make=4.4.1-r4 from unfrozen repository, Python 3.13.15; image python@sha256:79e7a9b9ff1cbceff819f856fb374477792a5967759d94df266de7b7b4120e6f"
+  },
+  "sources": {
+    "gnu_make_4.4.1_release_notes": {
+      "url": "https://github.com/mirror/make/blob/4.4.1/NEWS",
+      "native_sha256": "e12983d0643ff3fb54fc85c0c82a640ae57ae4cd47594ca6629e5d0d89d4a846",
+      "status_code": 200
+    },
+    "gnu_hosted_manual": {
+      "url": "https://www.gnu.org/software/make/manual/html_node/Parallel-Disable.html",
+      "native_sha256": "80e13eb029b97afac80e35bca3518310f357d5d12d87d5616f7c095da9976191",
+      "status_code": null,
+      "error": "navigation timed out"
+    }
+  },
+  "agent_performance_tested": false
+}

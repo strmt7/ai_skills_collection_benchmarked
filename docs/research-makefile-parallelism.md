@@ -69,5 +69,31 @@ content SHA-256 is
 
 This is a source-and-component finding. It does not show whether an agent
 following the skill would generate a faulty build, nor does it measure agent
-performance. An independently evaluated repair or upstream correction remains
-necessary.
+performance.
+
+## Maintained examples
+
+The [parallelism overlay](../included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-parallelism/SKILL.md)
+provides a direct dependency chain and an invocation-wide serial alternative.
+The chain intentionally causes earlier operations to run when its final target
+is requested; it is suitable only where that is the intended behavior. The
+serial alternative does not coordinate separate or recursive Make processes.
+
+The [control](../artifacts/repaired-skill-readiness/makefile-parallelism-v1/reproduce.py)
+exercised both examples with synthetic recipes, including direct and multiple
+goals. In the recorded GNU Make 4.4.1 run, an adapted original declaration
+allowed sibling recipes to overlap; both maintained examples avoided overlap.
+In a separate GNU Make 4.3 run, the adapted original did not overlap. These are
+observations on small Linux graphs, not a timing or agent benchmark. The 4.4.1
+test used Alpine `make=4.4.1-r4` in the pinned Python image; the package
+repository was not frozen. The 4.3 test used the installed Ubuntu executable.
+The hosted C Makefile workflow rebuilds checksum-pinned GNU Make 4.4.1 and
+runs the same control. Observed intervals and version details are retained in
+the [qualification records](../artifacts/repaired-skill-readiness/makefile-parallelism-v1/qualification.json).
+
+On 2 November 2026 the versioned GNU Make 4.4.1 release notes were captured
+again with Crawl4AI and confirm the prerequisite-scoped behavior. A request
+for the GNU-hosted manual timed out; its failure was retained, and the release
+notes were used for the version-specific claim. These controls do not establish
+behavior for other build graphs, external locks, recursive invocations, or
+coding-agent effectiveness.

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-makefile-generator-skill-md",
+  "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+  "source_mirror": "included/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator",
+  "original_skill_sha256": "c0090361f2f9999c81050beb7d65aaf4338094559bd227d944aafbf1500286fe",
+  "license_file": "LICENSE",
+  "license_sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+  "scope": "GNU Make target ordering and invocation-wide serialization on selected Linux synthetic graphs.",
+  "model_performance_claim": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/makefile-parallelism-v1/qualification.json",
+  "overlay_sha256": {
+    "examples/ordered.mk": "c214681cf12d3caac7f63fc3437dec3f2b0564fcfb218d3a46909e92d69dbd39",
+    "examples/serial.mk": "433602f72b643d0ad596d7b8bee3c80009b4c6cd229c2215c8482bb9c3cc4e44",
+    "LICENSE": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+    "provenance/original.SKILL.md": "c0090361f2f9999c81050beb7d65aaf4338094559bd227d944aafbf1500286fe",
+    "SKILL.md": "28b58d8a25a744712b633a4c597740eb689803a1733d944e84838d67d6688554"
+  },
+  "evidence_sha256": {
+    "linux-make-4.3.json": "40841452cf206d2a25f23699fd62a82b83188184ba5d3438abcde14f14383949",
+    "linux-make-4.4.1.json": "36a9b3ea4b81c20010da45b3a05bb92f0381dcc40a9205d4ea76be531e1da55b",
+    "qualification.json": "e48505aad08e5562ef39095b9ed6364f57c55bb668b829a8771f8479f34b6b4a",
+    "reproduce.py": "af5ddb77bfedb2fbccc11731e3d25ec7fca8939f44dc3639d79a5ac8137c8f08"
+  }
+}

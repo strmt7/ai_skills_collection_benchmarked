@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "platform": "Linux",
+  "python": "3.13.15",
+  "make": "GNU Make 4.4.1",
+  "source_sha256": "c0090361f2f9999c81050beb7d65aaf4338094559bd227d944aafbf1500286fe",
+  "examples_sha256": {
+    "ordered.mk": "c214681cf12d3caac7f63fc3437dec3f2b0564fcfb218d3a46909e92d69dbd39",
+    "serial.mk": "433602f72b643d0ad596d7b8bee3c80009b4c6cd229c2215c8482bb9c3cc4e44"
+  },
+  "observations": {
+    "original": {
+      "intervals_ns": {
+        "prepare": [
+          151606133512616,
+          151606633722581
+        ],
+        "publish": [
+          151606652826075,
+          151607152927769
+        ],
+        "verify": [
+          151606657235450,
+          151607157306418
+        ]
+      },
+      "stdout": "",
+      "stderr": "",
+      "prepare_completed_first": true,
+      "siblings_overlap": true,
+      "publish_completed_before_verify": false
+    },
+    "ordered_all": {
+      "intervals_ns": {
+        "prepare": [
+          151607207114994,
+          151607707225998
+        ],
+        "publish": [
+          151607731614178,
+          151608231717791
+        ],
+        "verify": [
+          151608251062061,
+          151608751159270
+        ]
+      },
+      "stdout": "",
+      "stderr": "",
+      "prepare_completed_first": true,
+      "siblings_overlap": false,
+      "publish_completed_before_verify": true
+    },
+    "ordered_direct": {
+      "intervals_ns": {
+        "prepare": [
+          151608802574391,
+          151609302699722
+        ],
+        "publish": [
+          151609325923340,
+          151609826064098
+        ],
+        "verify": [
+          151609848480207,
+          151610348603815
+        ]
+      },
+      "stdout": "",
+      "stderr": "",
+      "prepare_completed_first": true,
+      "siblings_overlap": false,
+      "publish_completed_before_verify": true
+    },
+    "serial_all": {
+      "intervals_ns": {
+        "prepare": [
+          151610407470607,
+          151610907572194
+        ],
+        "publish": [
+          151610927728529,
+          151611427829534
+        ],
+        "verify": [
+          151611448365132,
+          151611948506264
+        ]
+      },
+      "stdout": "",
+      "stderr": "",
+      "prepare_completed_first": true,
+      "siblings_overlap": false,
+      "publish_completed_before_verify": true
+    },
+    "serial_multiple_goals": {
+      "intervals_ns": {
+        "prepare": [
+          151611998617934,
+          151612498717224
+        ],
+        "publish": [
+          151612518455044,
+          151613018911463
+        ],
+        "verify": [
+          151613041735988,
+          151613542265419
+        ]
+      },
+      "stdout": "",
+      "stderr": "",
+      "prepare_completed_first": true,
+      "siblings_overlap": false,
+      "publish_completed_before_verify": true
+    }
+  },
+  "external_services_called": false,
+  "agent_performance_tested": false
+}

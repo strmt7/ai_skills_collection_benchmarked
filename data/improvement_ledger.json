@@ -2544,8 +2544,8 @@
         "evidence": [
           {
             "path": "docs/research-makefile-parallelism.md",
-            "scope": "Partial GNU Make 4.4.1 parallel-target review; dummy recipe controls, not an agent benchmark.",
-            "sha256": "380bc1ef73f5d24055979c8426690d9629211f5ad65955e86ecaf8a30ed672dd"
+            "scope": "GNU Make 4.3 and 4.4.1 selected target-ordering controls; not an agent benchmark.",
+            "sha256": "f9771883d651ba8664d4ae8030538ccc0b2bd1c44d7462825110c694286b414a"
           },
           {
             "path": "artifacts/research/2026-10-30/make-parallel-controls/result.json",
@@ -2580,6 +2580,11 @@
           {
             "path": "included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-c/repair.json",
             "sha256": "69a5ff2b1837ccec30c25a3185526aeb3297d48a4778aba1e618f081cfc85bd0"
+          },
+          {
+            "path": "included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-parallelism/repair.json",
+            "sha256": "213c32250682280417b4130f1329ddad563bd58326321f39dd2bd67b060bc514",
+            "scope": "Synthetic GNU Make target-ordering controls only; no agent efficacy result."
           }
         ],
         "status": "in_progress"
