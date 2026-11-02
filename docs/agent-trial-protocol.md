@@ -250,6 +250,15 @@ Each candidate row also shows its identifier status and the number of matched
 pairs with different or incomplete identifiers. `IDs: vary` includes identifiers
 that differ between tasks even when each individual pair matches.
 
+Use `--view paired` with the same command to render the paired-outcome chart.
+Its stacked bars show the equally task-weighted fractions for both passes,
+candidate-only passes, default-only passes, neither passing and unscored blocks.
+Task-direction counts and pooled block counts are annotations, not the bar's
+denominator. Percentages are rounded; small segments are left unlabeled and
+unscored segments are hatched. The renderer checks the paired summary against
+the recorded attempts. The workflow also uploads this view for the historical
+plan; it is descriptive and does not establish significance or superiority.
+
 For paired token differences, use
 `python tools/render_token_chart.py --plan <plan.json> --output <chart.svg>`.
 The two panels show input and output counts separately, with complete task means,

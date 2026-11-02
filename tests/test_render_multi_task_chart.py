@@ -16,17 +16,19 @@ from _trial_comparisons import compare_blocks
 from summarize_multi_task_trials import aggregate, summarize_snapshot_evidence
 
 
-def fixture_report(*, incomplete: bool = False):
-    definitions = {"default": {"skills": []}, "candidate": {"skills": ["example"]}}
+def fixture_report(*, incomplete: bool = False, single: bool = False, candidate_name: str = "candidate"):
+    definitions = {"default": {"skills": []}, candidate_name: {"skills": ["example"]}}
     reports = []
     rows = [
         ("a", ["task_passed", "task_failed"], ["task_passed", "task_passed"]),
         ("b", ["task_passed"], ["harness_error" if incomplete else "task_passed"]),
     ]
+    if single:
+        rows = rows[1:]
     for task, baseline, candidate in rows:
         attempts = [
             {"repetition": i, "condition": condition, "status": status, "usage": None, "provider_model_snapshot": None}
-            for condition, statuses in (("default", baseline), ("candidate", candidate))
+            for condition, statuses in (("default", baseline), (candidate_name, candidate))
             for i, status in enumerate(statuses, 1)
         ]
         reports.append(
@@ -45,7 +47,7 @@ def fixture_report(*, incomplete: bool = False):
                 "attempts": attempts,
             }
         )
-    result = aggregate(reports, [definitions, definitions])
+    result = aggregate(reports, [definitions] * len(reports))
     result["plan_sha256"] = "0" * 64
     return result
 
@@ -89,8 +91,114 @@ class ChartRowsTests(unittest.TestCase):
             target.graph_rows(report)
 
 
+class PairedRowsTests(unittest.TestCase):
+    def test_equal_task_weight_preserves_unscored_blocks(self):
+        rows = target.paired_rows(fixture_report(incomplete=True))
+        self.assertEqual(
+            rows[0][:4], ("candidate", [Fraction(1, 4), Fraction(1, 4), Fraction(), Fraction(), Fraction(1, 2)], 2, 3)
+        )
+        self.assertEqual(rows[0][4], {"candidate_ahead": 1, "baseline_ahead": 0, "equal": 0, "unscored": 1})
+
+    def test_paired_totals_and_fractions_must_match_attempts(self):
+        for field, value in (("planned_blocks", True), ("planned_blocks", 2)):
+            report = fixture_report()
+            report["paired_outcomes"]["candidate"][field] = value
+            with self.assertRaisesRegex(ValueError, "Paired outcomes"):
+                target.paired_rows(report)
+        report = fixture_report()
+        report["paired_outcomes"]["candidate"]["equal_task_weight_block_fractions"]["both_passed"]["numerator"] = 2
+        with self.assertRaisesRegex(ValueError, "Paired outcomes"):
+            target.paired_rows(report)
+        report = fixture_report()
+        report["tasks"][0]["attempts"][0]["status"] = "task_failed"
+        with self.assertRaisesRegex(ValueError, "blocks disagree"):
+            target.paired_rows(report)
+
+    def test_paired_conditions_must_match(self):
+        report = fixture_report()
+        report["paired_outcomes"] = {}
+        with self.assertRaisesRegex(ValueError, "condition set"):
+            target.paired_rows(report)
+
+
 @unittest.skipUnless(importlib.util.find_spec("matplotlib") is not None, "requires the reports extra")
 class ChartRenderTests(unittest.TestCase):
+    def test_paired_view_is_reproducible_and_explains_missing_data(self):
+        first = target.render_paired_svg(fixture_report(incomplete=True))
+        self.assertEqual(first, target.render_paired_svg(fixture_report(incomplete=True)))
+        root = ET.fromstring(first)
+        text = " ".join("".join(node.itertext()) for node in root.iter() if node.tag.endswith("text"))
+        for label in (
+            "Paired benchmark outcomes",
+            "Equal-task-weight share of paired blocks",
+            "Candidate only passed",
+            "Default only passed",
+            "Unscored",
+            "2 tasks; 3 paired blocks",
+            "Task directions: +1 / -0 / =0 / ?1",
+            "Unscored is not failure. Descriptive only; no significance or superiority claim.",
+            "requested model: fixture | requested effort: high",
+            "25%",
+            "50%",
+        ):
+            self.assertIn(label, text)
+        self.assertIn(("plan_sha256=" + "0" * 64 + ";view=paired_outcomes").encode(), first)
+
+    def test_paired_view_labels_single_task_and_block(self):
+        root = ET.fromstring(target.render_paired_svg(fixture_report(single=True)))
+        text = " ".join("".join(node.itertext()) for node in root.iter() if node.tag.endswith("text"))
+        self.assertIn("1 task; 1 paired block", text)
+
+    def test_paired_view_shows_a_fully_unscored_task_without_a_winner(self):
+        root = ET.fromstring(target.render_paired_svg(fixture_report(incomplete=True, single=True)))
+        text = " ".join("".join(node.itertext()) for node in root.iter() if node.tag.endswith("text"))
+        self.assertIn("100%", text)
+        self.assertIn("Task directions: +0 / -0 / =0 / ?1", text)
+        self.assertIn("Unscored is not failure", text)
+
+    def test_paired_annotation_fits_outside_plot(self):
+        from matplotlib.figure import Figure
+
+        original = Figure.savefig
+
+        def verify(figure, *args, **kwargs):
+            figure.canvas.draw()
+            texts = [text for axis in figure.axes for text in axis.texts if "Task directions:" in text.get_text()]
+            self.assertEqual(len(texts), 1)
+            bounds = texts[0].get_window_extent(figure.canvas.get_renderer())
+            self.assertGreaterEqual(bounds.x0, figure.axes[0].bbox.x1)
+            self.assertLessEqual(bounds.x1, figure.bbox.x1)
+            return original(figure, *args, **kwargs)
+
+        with patch.object(Figure, "savefig", verify):
+            target.render_paired_svg(fixture_report(incomplete=True))
+
+    def test_long_condition_label_remains_inside_figure(self):
+        from matplotlib.figure import Figure
+
+        original = Figure.savefig
+
+        def verify(figure, *args, **kwargs):
+            figure.canvas.draw()
+            labels = figure.axes[0].get_yticklabels()
+            self.assertEqual(len(labels), 1)
+            self.assertIn("\n", labels[0].get_text())
+            self.assertGreaterEqual(labels[0].get_window_extent(figure.canvas.get_renderer()).x0, 0)
+            return original(figure, *args, **kwargs)
+
+        with patch.object(Figure, "savefig", verify):
+            target.render_paired_svg(fixture_report(candidate_name="candidate-with-a-long-descriptive-identifier"))
+
+    def test_paired_view_cli_writes_and_checks_output(self):
+        report = fixture_report()
+        with tempfile.TemporaryDirectory() as temp, patch.object(target, "run_plan", return_value=report):
+            output = Path(temp) / "paired.svg"
+            args = ["--plan", "unused.json", "--output", str(output), "--view", "paired"]
+            self.assertEqual(target.main(args), 0)
+            self.assertEqual(target.main([*args, "--check"]), 0)
+            output.write_bytes(output.read_bytes().replace(b"view=paired_outcomes", b"view=changed"))
+            self.assertEqual(target.main([*args, "--check"]), 1)
+
     def test_unscored_is_labeled_and_not_plotted_as_a_mean(self):
         svg = target.render_svg(fixture_report(incomplete=True))
         root = ET.fromstring(svg)

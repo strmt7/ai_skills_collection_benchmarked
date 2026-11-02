@@ -329,6 +329,8 @@ jobs:
           python tools/summarize_agent_trials.py --protocol benchmarks/agent-effectiveness/development/protocol-v2.json --trials artifacts/agent-trials/development-v2 --output-dir "$RUNNER_TEMP/report-compatibility" --plots --json
           python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/report-compatibility/task-differences.svg"
           python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/report-compatibility/task-differences.svg" --check
+          python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --view paired --output "$RUNNER_TEMP/report-compatibility/paired-outcomes.svg"
+          python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --view paired --output "$RUNNER_TEMP/report-compatibility/paired-outcomes.svg" --check
           python tools/render_token_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/report-compatibility/token-differences.svg"
           python tools/render_token_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/report-compatibility/token-differences.svg" --check
       - name: Verify published single-task charts
@@ -366,6 +368,8 @@ jobs:
           python -m unittest discover -s tests -p test_render_token_chart.py
           python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/matched-development-report/task-differences.svg"
           python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/matched-development-report/task-differences.svg" --check
+          python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --view paired --output "$RUNNER_TEMP/matched-development-report/paired-outcomes.svg"
+          python tools/render_multi_task_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --view paired --output "$RUNNER_TEMP/matched-development-report/paired-outcomes.svg" --check
           python tools/render_token_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/matched-development-report/token-differences.svg"
           python tools/render_token_chart.py --plan benchmarks/agent-effectiveness/development/multi-task-historical-example.json --output "$RUNNER_TEMP/matched-development-report/token-differences.svg" --check
       - name: Upload verified tables and graphs

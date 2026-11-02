@@ -8,10 +8,16 @@ import json
 from collections import Counter
 from fractions import Fraction
 from pathlib import Path
+from textwrap import fill
 from typing import Any
 
-from _trial_comparisons import STATUSES, compare_blocks
-from summarize_multi_task_trials import missing_outcome_sensitivity, run_plan, summarize_snapshot_evidence
+from _trial_comparisons import OUTCOMES, STATUSES, compare_blocks
+from summarize_multi_task_trials import (
+    missing_outcome_sensitivity,
+    run_plan,
+    summarize_paired_outcomes,
+    summarize_snapshot_evidence,
+)
 
 
 def graph_rows(report: dict[str, Any]) -> list[tuple[str, list[Fraction], Fraction | None, int]]:
@@ -129,6 +135,151 @@ def sensitivity_ranges(report: dict[str, Any]) -> dict[str, tuple[Fraction, Frac
             else None
         )
     return ranges
+
+
+def paired_rows(report: dict[str, Any]) -> list[tuple[str, list[Fraction], int, int, dict[str, int]]]:
+    """Recompute paired outcomes from the attempts before displaying them."""
+    graph_rows(report)
+    conditions = set(report["comparisons"])
+    if set(report["paired_outcomes"]) != conditions:
+        raise ValueError("Paired outcome condition set differs from the comparisons")
+    snapshot_pair_labels(report)
+    rows = []
+    for condition in sorted(conditions):
+        expected = summarize_paired_outcomes(report["tasks"], condition)
+        if json.dumps(report["paired_outcomes"][condition], sort_keys=True, allow_nan=False) != json.dumps(
+            expected, sort_keys=True, allow_nan=False
+        ):
+            raise ValueError("Paired outcomes disagree with the recorded attempts")
+        values = [Fraction(**expected["equal_task_weight_block_fractions"][outcome]) for outcome in OUTCOMES]
+        if sum(values, Fraction()) != 1 or any(value < 0 for value in values):
+            raise ValueError("Invalid paired outcome fractions")
+        rows.append(
+            (
+                condition,
+                values,
+                expected["planned_tasks"],
+                expected["planned_blocks"],
+                expected["task_direction_counts"],
+            )
+        )
+    return rows
+
+
+def render_paired_svg(report: dict[str, Any]) -> bytes:
+    """Show the equally task-weighted composition of matched outcomes."""
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    from matplotlib.patches import Patch
+
+    rows = paired_rows(report)
+    snapshot_labels = snapshot_pair_labels(report)
+    styles = (
+        ("Both passed", "#0072B2", None, "white"),
+        ("Candidate only passed", "#007C58", None, "white"),
+        ("Default only passed", "#B44600", None, "white"),
+        ("Neither passed", "#4C566A", None, "white"),
+        ("Unscored", "#F0E442", "///", "black"),
+    )
+    condition_labels = [fill(row[0], width=24, break_on_hyphens=False) for row in rows]
+    label_lines = max(label.count("\n") + 1 for label in condition_labels)
+    with matplotlib.rc_context(
+        {"svg.hashsalt": report["plan_sha256"], "svg.fonttype": "none", "font.family": "DejaVu Sans"}
+    ):
+        figure, axis = plt.subplots(figsize=(11, max(5.3, 4.6 + max(0.7, 0.32 * label_lines) * len(rows))))
+        try:
+            figure.subplots_adjust(left=0.18, right=0.69, top=0.72, bottom=0.29)
+            for row, (condition, values, tasks, blocks, directions) in enumerate(rows):
+                left = 0.0
+                for value, (_, color, hatch, text_color) in zip(values, styles, strict=True):
+                    width = float(value)
+                    axis.barh(
+                        row, width, left=left, height=0.48, color=color, edgecolor="black", linewidth=0.4, hatch=hatch
+                    )
+                    if value >= Fraction(1, 10):
+                        axis.text(
+                            left + width / 2,
+                            row,
+                            f"{width:.0%}",
+                            ha="center",
+                            va="center",
+                            color=text_color,
+                            bbox={"facecolor": "white", "edgecolor": "none", "alpha": 0.85, "pad": 1}
+                            if hatch
+                            else None,
+                        )
+                    left += width
+                task_label = "task" if tasks == 1 else "tasks"
+                block_label = "paired block" if blocks == 1 else "paired blocks"
+                axis.text(
+                    1.03,
+                    row,
+                    f"{tasks} {task_label}; {blocks} {block_label}\n"
+                    f"Task directions: +{directions['candidate_ahead']} / -{directions['baseline_ahead']} / "
+                    f"={directions['equal']} / ?{directions['unscored']}\n{snapshot_labels[condition]}",
+                    transform=axis.get_yaxis_transform(),
+                    va="center",
+                    fontsize=8,
+                )
+            axis.set_yticks(range(len(rows)), condition_labels)
+            axis.set_ylim(len(rows) - 0.5, -0.5)
+            axis.set_xlim(0, 1)
+            axis.set_xticks([0, 0.25, 0.5, 0.75, 1], ["0%", "25%", "50%", "75%", "100%"])
+            axis.set_xlabel("Equal-task-weight share of paired blocks")
+            figure.suptitle("Paired benchmark outcomes", y=0.98)
+            figure.text(
+                0.5,
+                0.93,
+                f"requested model: {report['model_requested']} | requested effort: {report['reasoning_effort_requested']}",
+                ha="center",
+                fontsize=9,
+            )
+            figure.legend(
+                handles=[
+                    Patch(facecolor=color, edgecolor="black", hatch=hatch, label=label)
+                    for label, color, hatch, _ in styles
+                ],
+                loc="upper center",
+                bbox_to_anchor=(0.5, 0.89),
+                ncols=3,
+                frameon=False,
+            )
+            figure.text(
+                0.01,
+                0.17,
+                "Each task has equal weight; percentages are rounded and small segments are unlabeled.",
+                fontsize=8,
+            )
+            figure.text(
+                0.01, 0.12, "+ candidate ahead; - default ahead; = equal observed rates; ? unscored task.", fontsize=8
+            )
+            figure.text(
+                0.01,
+                0.07,
+                "Unscored is not failure. Descriptive only; no significance or superiority claim.",
+                fontsize=8,
+            )
+            figure.text(
+                0.01,
+                0.025,
+                f"Plan {report['plan_sha256'][:12]}; a plan hash does not prove preregistration or grading authenticity.",
+                fontsize=8,
+            )
+            output = io.BytesIO()
+            figure.savefig(
+                output,
+                format="svg",
+                metadata={
+                    "Date": None,
+                    "Creator": "render_multi_task_chart.py",
+                    "Description": f"plan_sha256={report['plan_sha256']};view=paired_outcomes",
+                },
+            )
+        finally:
+            plt.close(figure)
+    return output.getvalue()
 
 
 def render_svg(report: dict[str, Any]) -> bytes:
@@ -251,6 +402,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--plan", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--view", choices=("difference", "paired"), default="difference")
     parser.add_argument("--check", action="store_true", help="Compare an existing SVG without writing")
     return parser
 
@@ -259,7 +411,7 @@ def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
         report = run_plan(args.plan)
-        rendered = render_svg(report)
+        rendered = render_paired_svg(report) if args.view == "paired" else render_svg(report)
         if args.check:
             if args.output.read_bytes().replace(b"\r\n", b"\n") != rendered.replace(b"\r\n", b"\n"):
                 raise ValueError("Chart differs from the current verified report")
