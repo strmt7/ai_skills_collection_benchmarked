@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "platform": "Linux",
+  "node_version": "v24.15.0",
+  "npm_version": "11.12.1",
+  "original_sha256": "bd9b7a5bb69f8b558611f749624c9751c2d0549f97eb513714d548e9e48963e2",
+  "example_sha256": "6c890854ff0e5ad38cfae88c61b8f3201d0f1614a0d65fc5042d1996181f0d0d",
+  "control_sha256": {
+    "package.json": "c325209a60db07f68e22a469966eb31cf683ffb47803865994d14a897fa7ea50",
+    "package-lock.json": "4fcd6cb1aa8490614c7090aaf89cb7b253337abe884cec5180b4d70f881cf829",
+    "tsconfig.json": "5da26da71f371aaf6c3dbeb1c67c09b0abaa2537c2ffaa13e58f14be2e82a825",
+    "control.test.ts": "5d6cf94ac4153d4ef6589b422922cea938d54b7d2661d1098c9ab0aa4ad6a838",
+    "reproduce.py": "6cc69ded43a4d4bd8dbea1f3eae71d408f3dfb7a0a89fbabda4798079314098a"
+  },
+  "commands": [
+    {
+      "name": "node-version",
+      "returncode": 0,
+      "stdout_sha256": "c642a0de246dcdc6c51318fe449646fc5067b981a8d09e9ccdb8141a5756339a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "npm-version",
+      "returncode": 0,
+      "stdout_sha256": "608c86d3f47c084a7a0de5d4eb4bc18724c96c456f3fe6842d17f04004338c3f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "install",
+      "returncode": 0,
+      "stdout_sha256": "0219ede12b16b190ca4df3650dbd4c20fd3b9f71013b84597dce674ab40daaf5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "typecheck",
+      "returncode": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "callbacks",
+      "returncode": 0,
+      "stdout_sha256": "d9edf1b649699e387d4e681a1fd275a9e5efa227cc653786c2dbb646cbe99285",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "azure_service_called": false,
+  "agent_performance_tested": false
+}

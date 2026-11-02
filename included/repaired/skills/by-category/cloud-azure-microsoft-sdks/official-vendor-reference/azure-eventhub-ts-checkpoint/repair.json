@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "microsoft-skills-github-plugins-azure-sdk-typescript-skills-azure-eventhub-ts-skill-md",
+  "source_commit": "a2c05249c4a20103dd954ca702467aa328aac031",
+  "source_mirror": "included/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-ts",
+  "original_skill_sha256": "bd9b7a5bb69f8b558611f749624c9751c2d0549f97eb513714d548e9e48963e2",
+  "license_file": "LICENSE",
+  "license_sha256": "d9a1b1e30d633d5732ea18e3cba9538d293ebc53e1a9e4e96ab739e0c5c4f1cb",
+  "scope": "TypeScript checkpoint callback compilation and simulated calls; no Azure service or agent trial",
+  "azure_service_run": false,
+  "model_performance_claim": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/azure-eventhub-ts-checkpoint-v1/qualification.json",
+  "overlay_sha256": {
+    "SKILL.md": "e7f7639851b3aa2885ae3dd0d9236b54b1c9e737d3c8a624eea25cca9757032a",
+    "examples/checkpoint-consumer.ts": "6c890854ff0e5ad38cfae88c61b8f3201d0f1614a0d65fc5042d1996181f0d0d",
+    "provenance/original.SKILL.md": "bd9b7a5bb69f8b558611f749624c9751c2d0549f97eb513714d548e9e48963e2",
+    "LICENSE": "d9a1b1e30d633d5732ea18e3cba9538d293ebc53e1a9e4e96ab739e0c5c4f1cb"
+  },
+  "evidence_sha256": {
+    "control.test.ts": "5d6cf94ac4153d4ef6589b422922cea938d54b7d2661d1098c9ab0aa4ad6a838",
+    "linux-result.json": "6b677bf632a72f181498fd0c3323cb560971b962fb807c630983695f710c267b",
+    "package-lock.json": "4fcd6cb1aa8490614c7090aaf89cb7b253337abe884cec5180b4d70f881cf829",
+    "package.json": "c325209a60db07f68e22a469966eb31cf683ffb47803865994d14a897fa7ea50",
+    "qualification.json": "c47b97b438a194ce654e2f7251883a486eebd048a9955bf0a1224db7a3795348",
+    "raw/linux/callbacks.stdout": "d9edf1b649699e387d4e681a1fd275a9e5efa227cc653786c2dbb646cbe99285",
+    "raw/linux/install.stdout": "0219ede12b16b190ca4df3650dbd4c20fd3b9f71013b84597dce674ab40daaf5",
+    "raw/linux/node-version.stdout": "c642a0de246dcdc6c51318fe449646fc5067b981a8d09e9ccdb8141a5756339a",
+    "raw/linux/npm-version.stdout": "608c86d3f47c084a7a0de5d4eb4bc18724c96c456f3fe6842d17f04004338c3f",
+    "raw/windows/callbacks.stdout": "9e3b0c45cb28339582be7f0a6d5cbc7804a382bdcfec223f4c344bb86d95dff8",
+    "raw/windows/install.stdout": "e441bfcbb4e4602b6b672db43d435e6dcc0abe7dd3dbd353aa35c9bb63c48a88",
+    "raw/windows/node-version.stdout": "a25268f2c36e81182617b915c912caf469a307f4e3b32a02cf2b9ca603fe0bed",
+    "raw/windows/npm-version.stdout": "acb90e420303a6e949fec90f74faf64cc372894b3964e310a261689b898f41b0",
+    "reproduce.py": "6cc69ded43a4d4bd8dbea1f3eae71d408f3dfb7a0a89fbabda4798079314098a",
+    "sources.json": "30b5b65d29d2ec5ba54b65e17bd8563f035cdbd04717a13a14b6e5044d6c9352",
+    "tsconfig.json": "5da26da71f371aaf6c3dbeb1c67c09b0abaa2537c2ffaa13e58f14be2e82a825",
+    "windows-result.json": "ee3b3473935fa58675337b2a4d00e9b49724b5aace819da055235e09e2218085"
+  }
+}

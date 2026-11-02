@@ -12355,13 +12355,29 @@
             "path": "docs/research-azure-event-hubs.md",
             "scope": "Selected Event Hubs family examples only; no live Azure service or coding-agent evaluation.",
             "sha256": "34f20de5cfb9e8eb9c97125d4088e839b1b653be640964482c68fece464e4cd6"
+          },
+          {
+            "path": "docs/research-azure-eventhub-typescript.md",
+            "scope": "TypeScript checkpoint callback behavior only; simulated calls, no Azure service or agent evaluation.",
+            "sha256": "f15d48d56555f2ae3218fcad76250785e45ce30418a2e06a4d8e232ac83abde7"
           }
         ],
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-ts-checkpoint/SKILL.md",
+            "scope": "TypeScript checkpoint callback overlay; simulated calls only.",
+            "sha256": "e7f7639851b3aa2885ae3dd0d9236b54b1c9e737d3c8a624eea25cca9757032a"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/azure-eventhub-ts-checkpoint-v1/qualification.json",
+            "scope": "Five offline callback controls on Windows and Linux; no Azure service or agent performance evaluation.",
+            "sha256": "c47b97b438a194ce654e2f7251883a486eebd048a9955bf0a1224db7a3795348"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "microsoft/skills",
       "source_signature": {

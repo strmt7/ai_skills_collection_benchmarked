@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: all events finish before checkpoint
+ok 1 - all events finish before checkpoint
+  ---
+  duration_ms: 1.204037
+  type: 'test'
+  ...
+# Subtest: empty callback does not checkpoint
+ok 2 - empty callback does not checkpoint
+  ---
+  duration_ms: 0.121134
+  type: 'test'
+  ...
+# Subtest: handler failure propagates and does not checkpoint a partial batch
+ok 3 - handler failure propagates and does not checkpoint a partial batch
+  ---
+  duration_ms: 0.34263
+  type: 'test'
+  ...
+# Subtest: checkpoint failure propagates
+ok 4 - checkpoint failure propagates
+  ---
+  duration_ms: 0.212529
+  type: 'test'
+  ...
+# Subtest: original snippet can swallow failure before checkpointing a later batch
+ok 5 - original snippet can swallow failure before checkpointing a later batch
+  ---
+  duration_ms: 6.705696
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 51.617678

@@ -1,0 +1,11 @@
+{
+  "name": "azure-eventhub-ts-checkpoint-controls",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "devDependencies": {
+    "@azure/event-hubs": "6.0.4",
+    "@types/node": "24.19.2",
+    "typescript": "7.0.2"
+  }
+}

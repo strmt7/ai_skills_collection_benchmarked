@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "source_commit": "a2c05249c4a20103dd954ca702467aa328aac031",
+  "source_skill_sha256": "bd9b7a5bb69f8b558611f749624c9751c2d0549f97eb513714d548e9e48963e2",
+  "sdk": "@azure/event-hubs@6.0.4",
+  "typescript": "7.0.2",
+  "pages": [
+    {
+      "native_url": "https://learn.microsoft.com/en-us/javascript/api/overview/azure/event-hubs-readme?view=azure-node-latest",
+      "native_result_sha256": "e2b4b039f58108e8b575eb468968f796fafcb1a781170af8d15e122fe584661b",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200,
+      "markdown_characters": 52989
+    },
+    {
+      "native_url": "https://learn.microsoft.com/en-us/javascript/api/%40azure/event-hubs/subscriptioneventhandlers?view=azure-node-latest",
+      "native_result_sha256": "796f1aff719db49c7c29b273f1a3a8f07e63ae6c890b5d0ec8dc7f7424f6802a",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200,
+      "markdown_characters": 25737
+    }
+  ]
+}

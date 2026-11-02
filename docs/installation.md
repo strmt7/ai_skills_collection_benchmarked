@@ -118,6 +118,7 @@ Some reviewed instructions have known limitations:
     [.NET batching](../included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-dotnet-batching/SKILL.md),
     [Java batching](../included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-java-batching/SKILL.md),
     [synchronous Python checkpointing](../included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-python-checkpoint/SKILL.md),
+    [TypeScript checkpoint callbacks](../included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-ts-checkpoint/SKILL.md),
     and [Rust batching](../included/repaired/skills/by-category/cloud-azure-microsoft-sdks/official-vendor-reference/azure-eventhub-rust-batching/SKILL.md)
     cases. [See the family review](research-azure-event-hubs.md).
 
