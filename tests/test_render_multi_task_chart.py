@@ -136,7 +136,8 @@ class ChartRenderTests(unittest.TestCase):
             "Unscored",
             "2 tasks; 3 paired blocks",
             "Task directions: +1 / -0 / =0 / ?1",
-            "Unscored is not failure. Descriptive only; no significance or superiority claim.",
+            "Unscored is not failure. Snapshot IDs are provider-reported and not independently verified.",
+            "Descriptive only; no significance or superiority claim.",
             "requested model: fixture | requested effort: high",
             "25%",
             "50%",
@@ -168,6 +169,10 @@ class ChartRenderTests(unittest.TestCase):
             bounds = texts[0].get_window_extent(figure.canvas.get_renderer())
             self.assertGreaterEqual(bounds.x0, figure.axes[0].bbox.x1)
             self.assertLessEqual(bounds.x1, figure.bbox.x1)
+            for text in figure.texts:
+                bounds = text.get_window_extent(figure.canvas.get_renderer())
+                self.assertGreaterEqual(bounds.x0, figure.bbox.x0)
+                self.assertLessEqual(bounds.x1, figure.bbox.x1)
             return original(figure, *args, **kwargs)
 
         with patch.object(Figure, "savefig", verify):

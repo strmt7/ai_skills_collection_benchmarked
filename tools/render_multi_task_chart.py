@@ -258,13 +258,14 @@ def render_paired_svg(report: dict[str, Any]) -> bytes:
             figure.text(
                 0.01,
                 0.07,
-                "Unscored is not failure. Descriptive only; no significance or superiority claim.",
+                "Unscored is not failure. Snapshot IDs are provider-reported and not independently verified.",
                 fontsize=8,
             )
             figure.text(
                 0.01,
                 0.025,
-                f"Plan {report['plan_sha256'][:12]}; a plan hash does not prove preregistration or grading authenticity.",
+                f"Descriptive only; no significance or superiority claim. Plan {report['plan_sha256'][:12]}; "
+                "the hash does not prove preregistration or grading authenticity.",
                 fontsize=8,
             )
             output = io.BytesIO()

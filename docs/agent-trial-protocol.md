@@ -256,7 +256,8 @@ candidate-only passes, default-only passes, neither passing and unscored blocks.
 Task-direction counts and pooled block counts are annotations, not the bar's
 denominator. Percentages are rounded; small segments are left unlabeled and
 unscored segments are hatched. The renderer checks the paired summary against
-the recorded attempts. The workflow also uploads this view for the historical
+the recorded attempts; displayed snapshot IDs are provider-reported and are not
+independently verified. The workflow also uploads this view for the historical
 plan; it is descriptive and does not establish significance or superiority.
 
 For paired token differences, use
