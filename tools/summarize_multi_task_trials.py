@@ -99,6 +99,63 @@ def summarize_paired_outcomes(rows: list[dict[str, Any]], condition: str) -> dic
     }
 
 
+def summarize_planned_order(
+    reports: list[dict[str, Any]], configs: list[dict[str, Any]], condition: str
+) -> dict[str, Any]:
+    """Describe outcomes by planned relative order, not by observed launch order."""
+    if not reports or len(reports) != len(configs):
+        raise ValueError("A protocol is required for every task")
+    groups = ("baseline_first", "candidate_first")
+    totals: dict[str, Counter[str]] = {group: Counter() for group in groups}
+    tasks = []
+    for report, config in zip(reports, configs, strict=True):
+        blocks = report["block_comparison"]["comparisons"][condition]["blocks"]
+        outcomes = {block["repetition"]: block["outcome"] for block in blocks}
+        schedule = config["planned_order"]
+        conditions = set(config["conditions"])
+        if (
+            len(outcomes) != len(blocks)
+            or not isinstance(schedule, list)
+            or len(schedule) != len(blocks)
+            or "default" not in conditions
+            or condition not in conditions
+        ):
+            raise ValueError("Planned order does not match paired blocks")
+        counts: dict[str, Counter[str]] = {group: Counter() for group in groups}
+        seen: set[int] = set()
+        for block in schedule:
+            repetition, order = block["repetition"], block["conditions"]
+            if (
+                type(repetition) is not int
+                or repetition in seen
+                or repetition not in outcomes
+                or not isinstance(order, list)
+                or len(order) != len(conditions)
+                or set(order) != conditions
+                or outcomes[repetition] not in OUTCOMES
+            ):
+                raise ValueError("Planned order does not match paired blocks")
+            seen.add(repetition)
+            group = "baseline_first" if order.index("default") < order.index(condition) else "candidate_first"
+            counts[group][outcomes[repetition]] += 1
+            totals[group][outcomes[repetition]] += 1
+        tasks.append(
+            {
+                "task_id": report["task_id"],
+                "outcomes_by_planned_order": {
+                    group: {outcome: counts[group][outcome] for outcome in OUTCOMES} for group in groups
+                },
+            }
+        )
+    return {
+        "planned_tasks": len(tasks),
+        "pooled_outcomes_by_planned_order": {
+            group: {outcome: totals[group][outcome] for outcome in OUTCOMES} for group in groups
+        },
+        "tasks": tasks,
+    }
+
+
 def summarize_snapshot_evidence(reports: list[dict[str, Any]], condition: str) -> dict[str, Any]:
     """Describe reported snapshot identifiers without asserting their authenticity."""
     pairs: Counter[str] = Counter()
@@ -558,6 +615,14 @@ def run_plan(path: Path) -> dict[str, Any]:
         raise ValueError("Plan contains a duplicate declared task prompt and workspace")
     result = aggregate(reports, definitions)
     result["plan_sha256"] = hashlib.sha256(raw).hexdigest()
+    result["planned_order_outcomes"] = {
+        condition: summarize_planned_order(reports, configs, condition)
+        for condition in sorted(set(definitions[0]) - {"default"})
+    }
+    result["limitations"].append(
+        "Order groups describe planned relative positions, not verified execution order or an order effect; "
+        "pooled blocks can be dependent and tasks may have unequal repetition counts."
+    )
     result["declared_task_signatures"] = [
         {"task_id": report["task_id"], "sha256": task, "workspace_sha256": workspace}
         for report, (task, workspace) in zip(reports, signatures, strict=True)

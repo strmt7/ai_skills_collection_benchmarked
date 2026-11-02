@@ -187,6 +187,17 @@ ahead, default ahead or equal according to their observed pass-rate difference;
 any task with an unscored block is counted separately. Equal net differences
 can therefore be distinguished from agreement on individual blocks.
 
+The `planned_order_outcomes` section groups paired outcomes by whether the
+protocol placed the default or the candidate first in each repetition. It
+retains both pooled counts and the counts for each task, including unscored
+blocks. With more than two conditions, first means earlier relative to the
+other member of that pair; another condition may be scheduled before or between
+them. These are planned positions, not independently verified launch times.
+Unequal group counts and different outcomes can flag an imbalance worth
+investigating, but do not establish an order effect or a causal advantage.
+Pooled blocks are not necessarily independent and tasks may have different
+numbers of repetitions.
+
 These are descriptive summaries, not confidence intervals or significance
 tests. Pooled repetitions need not be independent, task identity alone does
 not establish independence, and unscored results remain unknown. Research on

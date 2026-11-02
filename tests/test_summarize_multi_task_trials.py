@@ -128,6 +128,72 @@ def test_paired_outcomes_keep_unscored_blocks_and_tasks_visible():
     assert result["comparisons"]["candidate"]["equal_task_weight_mean_difference"] is None
 
 
+def test_planned_order_breakdown_preserves_task_and_unscored_counts():
+    first = report("a", ["task_failed", "task_passed", "timed_out"], ["task_passed", "task_failed", "task_passed"])
+    second = report("b", ["task_passed"], ["task_passed"])
+    configs = [
+        {
+            "conditions": DEFINITIONS,
+            "planned_order": [
+                {"repetition": 1, "conditions": ["candidate", "default"]},
+                {"repetition": 2, "conditions": ["default", "candidate"]},
+                {"repetition": 3, "conditions": ["candidate", "default"]},
+            ],
+        },
+        {"conditions": DEFINITIONS, "planned_order": [{"repetition": 1, "conditions": ["default", "candidate"]}]},
+    ]
+    result = target.summarize_planned_order([first, second], configs, "candidate")
+    assert result["planned_tasks"] == 2
+    assert result["pooled_outcomes_by_planned_order"] == {
+        "baseline_first": {
+            "both_passed": 1,
+            "candidate_only_passed": 0,
+            "baseline_only_passed": 1,
+            "neither_passed": 0,
+            "unscored": 0,
+        },
+        "candidate_first": {
+            "both_passed": 0,
+            "candidate_only_passed": 1,
+            "baseline_only_passed": 0,
+            "neither_passed": 0,
+            "unscored": 1,
+        },
+    }
+    assert result["tasks"][0]["outcomes_by_planned_order"]["candidate_first"]["unscored"] == 1
+    assert result["tasks"][1]["outcomes_by_planned_order"]["candidate_first"] == dict.fromkeys(target.OUTCOMES, 0)
+
+
+def test_planned_order_is_relative_to_each_candidate_in_multi_condition_block():
+    item = report("a", ["task_failed"], ["task_passed"])
+    item["attempts"].append({"repetition": 1, "condition": "other", "status": "task_passed", "usage": None})
+    definitions = {**DEFINITIONS, "other": {"skills": ["other-bundle"]}}
+    item["block_comparison"] = compare_blocks(item["attempts"], set(definitions))
+    config = {
+        "conditions": definitions,
+        "planned_order": [{"repetition": 1, "conditions": ["other", "default", "candidate"]}],
+    }
+    for name, group in (("candidate", "baseline_first"), ("other", "candidate_first")):
+        counts = target.summarize_planned_order([item], [config], name)["pooled_outcomes_by_planned_order"]
+        assert counts[group]["candidate_only_passed"] == 1
+        assert sum(counts[group].values()) == 1
+
+
+@pytest.mark.parametrize(
+    "schedule",
+    [
+        [{"repetition": 2, "conditions": ["default", "candidate"]}],
+        [{"repetition": 1, "conditions": ["default", "default"]}],
+        [{"repetition": True, "conditions": ["default", "candidate"]}],
+        [],
+    ],
+)
+def test_planned_order_breakdown_rejects_mismatched_schedule(schedule):
+    item = report("a", ["task_passed"], ["task_failed"])
+    with pytest.raises(ValueError, match="Planned order"):
+        target.summarize_planned_order([item], [{"conditions": DEFINITIONS, "planned_order": schedule}], "candidate")
+
+
 @pytest.mark.parametrize("baseline,candidate", itertools.product(sorted(target.STATUSES), repeat=2))
 def test_paired_outcome_fractions_partition_all_status_pairs(baseline, candidate):
     result = target.aggregate([report("a", [baseline], [candidate])], [DEFINITIONS])
@@ -708,6 +774,8 @@ def test_historical_example_revalidates_recorded_attempts():
         "denominator": 1,
     }
     assert result["quality_superiority_established"] is False
+    for evidence in result["planned_order_outcomes"].values():
+        assert sum(sum(counts.values()) for counts in evidence["pooled_outcomes_by_planned_order"].values()) == 3
 
 
 @pytest.mark.parametrize("same_task", [False, True])
