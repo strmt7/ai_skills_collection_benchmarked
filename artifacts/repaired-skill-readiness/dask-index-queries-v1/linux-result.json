@@ -1,0 +1,17 @@
+{
+  "agent_performance_tested": false,
+  "checks": [
+    "overlapping_unsorted",
+    "already_sorted",
+    "duplicate_labels",
+    "empty_range",
+    "invalid_presorted_input_rejected_by_lookup"
+  ],
+  "dask": "2026.8.0",
+  "full_skill_reviewed": false,
+  "pandas": "3.1.0",
+  "platform": "Linux",
+  "python": "3.12.3",
+  "schema_version": 1,
+  "skill_sha256": "0c356f5d5edcd444a1eb44d2780336e7c3b3bc825e20d1dac1f458a278367a0c"
+}

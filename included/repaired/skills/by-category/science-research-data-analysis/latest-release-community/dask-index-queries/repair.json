@@ -1,0 +1,27 @@
+{
+  "agent_performance_tested": false,
+  "artifact_kind": "maintained_runtime_repair",
+  "evidence_sha256": {
+    "linux-result.json": "0fc8c175d71dc02061efb7728fd1d5e8c6517e392aa39c8acc63b34368d0da81",
+    "qualification.json": "c4ca53519cd02d572525eaed2c2a7e37e7a8f7d0bdb88a137474ffea6df96284",
+    "reproduce.py": "4a7a3f9b45f818a598865fb2251af83887dac9a146759b99ee97314efe1ec08a",
+    "requirements-linux.txt": "2c091fb868a8fa9ec9683c27178691797922868c99388a1f42ef9d23d9ca7158",
+    "requirements-windows.txt": "b1b3a9397201129684c9a51188de7ef24516b94dba9033457a0be1176033335b",
+    "requirements.in": "da477d433846169fae08f65f18cb5879f153231cf7c335e93c5af1f41247ca80",
+    "windows-result.json": "d4423913227c1de724b04507bca17b6dac4d203d8460d36d8bdd3ae78d213b19"
+  },
+  "full_skill_reviewed": false,
+  "overlay_sha256": {
+    "LICENSE": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1",
+    "SKILL.md": "0c356f5d5edcd444a1eb44d2780336e7c3b3bc825e20d1dac1f458a278367a0c",
+    "provenance/original.SKILL.md": "835c8ffa4e5623bfc49148d2910f37c22b7faa3097fe86843fe676e058f92aba",
+    "provenance/original.dataframes.md": "e80128e558b61d509b42fd0d2d6accf9f4a3bf27416870aaec32fb988e8f48d9"
+  },
+  "readiness_evidence": "artifacts/repaired-skill-readiness/dask-index-queries-v1/qualification.json",
+  "schema_version": 1,
+  "scope": "Selected Dask index construction and bounded label lookup without unverified sorted-input claims.",
+  "source_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+  "source_license_blob_sha1": "eb246475fd5a66b9bb56176f3a718984632dd98d",
+  "source_mirror": "included/skills/by-category/science-research-data-analysis/latest-release-community/dask",
+  "source_skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-dask-skill-md"
+}

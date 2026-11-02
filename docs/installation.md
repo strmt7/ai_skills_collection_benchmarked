@@ -49,8 +49,10 @@ Some reviewed instructions have known limitations:
   filter-before-aggregation example with different semantics. The
   [lazy-query overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/polars-lazy-queries/SKILL.md)
   covers selected corrected cases. [See the dataframe compatibility review](research-dataframe-compatibility.md).
-- The locked Dask `sorted=True` index example assumes pre-sorted data. Vaex
-  4.19 also has Python and Dask version constraints. [See the tested scope](research-dataframe-compatibility.md).
+- The locked Dask `sorted=True` index example assumes pre-sorted data. The
+  [index overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/dask-index-queries/SKILL.md)
+  covers selected unsorted inputs. Vaex 4.19 has Python and Dask version
+  constraints. [See the tested scope](research-dataframe-compatibility.md).
 - The pinned AnnData skill incorrectly says backed-mode metadata changes are
   saved automatically. The [AnnData I/O overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/anndata-io/SKILL.md)
   covers selected 10x readers and metadata writes. Its [component controls](../artifacts/repaired-skill-readiness/anndata-io-v2/qualification.json)

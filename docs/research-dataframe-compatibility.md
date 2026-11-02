@@ -30,8 +30,10 @@ specifies that this option is for an already increasing index. In a Windows
 Dask 2026.8.0 control with overlapping, unsorted partitions, an indexed lookup
 failed; using the default index construction returned the expected row. The
 [probe and pinned environment](../artifacts/research/2026-11-02/dataframe-research-v1/)
-record the exact scope. Do not mark data sorted without verifying the required
-ordering and divisions. The default construction can require an expensive
+record that observation. The [maintained index overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/dask-index-queries/SKILL.md)
+uses the default index construction and has selected Windows and Linux component
+controls. Do not mark data sorted without verifying the required ordering and
+divisions. The default construction can require an expensive
 [shuffle](https://docs.dask.org/en/latest/dataframe-groupby.html).
 
 ## Vaex

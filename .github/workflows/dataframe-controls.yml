@@ -6,6 +6,8 @@ on:
       - 'included/skills/by-category/science-research-data-analysis/latest-release-community/polars/**'
       - 'included/skills/by-category/science-research-data-analysis/latest-release-community/dask/**'
       - 'included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/polars-lazy-queries/**'
+      - 'included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/dask-index-queries/**'
+      - 'artifacts/repaired-skill-readiness/dask-index-queries-v1/**'
       - 'artifacts/repaired-skill-readiness/polars-lazy-queries-v1/**'
       - 'artifacts/research/2026-11-02/dataframe-research-v1/**'
       - '.github/workflows/dataframe-controls.yml'
@@ -69,19 +71,29 @@ jobs:
           retention-days: 14
 
   dask:
-    name: Dask index precondition (Windows)
-    runs-on: windows-latest
+    name: Dask selected index examples (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 20
     env:
       GIT_CONFIG_COUNT: '1'
       GIT_CONFIG_KEY_0: core.longpaths
       GIT_CONFIG_VALUE_0: 'true'
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: '3.12.16'
+            requirements: requirements-linux.txt
+          - os: windows-latest
+            python: '3.13.18'
+            requirements: requirements-windows.txt
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
           version: '0.13.6'
-          python-version: '3.13.18'
+          python-version: ${{ matrix.python }}
           activate-environment: 'true'
           venv-path: ${{ runner.temp }}/dask-controls-venv
           enable-cache: 'false'
@@ -89,19 +101,23 @@ jobs:
         shell: pwsh
         run: |
           $ErrorActionPreference = 'Stop'
-          uv pip install --require-hashes --only-binary=:all: -r artifacts/research/2026-11-02/dataframe-research-v1/requirements-windows.txt
+          uv pip install --require-hashes --only-binary=:all: -r "artifacts/repaired-skill-readiness/dask-index-queries-v1/${{ matrix.requirements }}"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           uv pip check
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-      - name: Run the index precondition control
+      - name: Run selected index controls
         shell: pwsh
         run: |
           $ErrorActionPreference = 'Stop'
-          python artifacts/research/2026-11-02/dataframe-research-v1/dask-probe.py > "$env:RUNNER_TEMP/dask-result.json"
+          python artifacts/repaired-skill-readiness/dask-index-queries-v1/reproduce.py > "$env:RUNNER_TEMP/dask-result.json"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python artifacts/research/2026-11-02/dataframe-research-v1/dask-probe.py > "$env:RUNNER_TEMP/dask-probe-result.json"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
-          name: dask-index-controls-windows
-          path: ${{ runner.temp }}/dask-result.json
+          name: dask-index-controls-${{ matrix.os }}
+          path: |
+            ${{ runner.temp }}/dask-result.json
+            ${{ runner.temp }}/dask-probe-result.json
           if-no-files-found: error
           retention-days: 14

@@ -223,3 +223,8 @@
 /included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/polars-lazy-queries/provenance/** -text !eol
 /artifacts/repaired-skill-readiness/polars-lazy-queries-v1/** text eol=lf
 /artifacts/research/2026-11-02/dataframe-research-v1/** text eol=lf
+
+# Reviewed Dask overlay and selected index controls
+/included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/dask-index-queries/** text eol=lf
+/included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/dask-index-queries/provenance/** -text !eol
+/artifacts/repaired-skill-readiness/dask-index-queries-v1/** text eol=lf

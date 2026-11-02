@@ -7271,8 +7271,14 @@
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/dask-index-queries/repair.json",
+            "sha256": "ef8dd5f5d66653f758d4142578fb2ba93d70b9e3c94047cd0497243a41c4fc63",
+            "scope": "Selected Dask index overlay with Windows and Linux component controls; not a complete skill repair or agent evaluation."
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "K-Dense-AI/scientific-agent-skills",
       "source_signature": {
