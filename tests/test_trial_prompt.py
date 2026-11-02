@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import random
 
 import pytest
 from _trial_prompt import INSTRUCTIONS, verify_prompt
@@ -64,6 +65,32 @@ def test_windows_text_transport_and_original_crlf_are_distinct():
     verify_prompt(windows_capture, config, "candidate")
     with pytest.raises(ValueError, match="prompt.*protocol"):
         verify_prompt(windows_capture.replace(b"content", b"changed"), config, "candidate")
+
+
+def test_invalid_utf8_skill_cannot_be_accepted_as_runner_text():
+    config = protocol("<TASK_BRIEF>", "repair", [])
+    config["conditions"]["candidate"]["skills"] = [{"path": "skill.md", "sha256": hashlib.sha256(b"\xff").hexdigest()}]
+    with pytest.raises(ValueError, match="UTF-8"):
+        verify_prompt(b"repair" + INSTRUCTIONS + b"\xff", config, "candidate")
+
+
+def test_seeded_skill_bundles_survive_both_newline_transports():
+    generator = random.Random(20261102)
+    fragments = ["A", "B", "\n", "\r", "é", "💡", "\n\n", INSTRUCTIONS.decode()]
+    for index in range(512):
+        skills = [
+            "".join(generator.choice(fragments) for _ in range(generator.randrange(9)))
+            for _ in range(generator.randrange(5))
+        ]
+        brief = f"task {index}\n"
+        template = "Prefix <TASK_BRIEF> Runtime <PYTHON_RUNTIME> End"
+        rendered = template.replace("<TASK_BRIEF>", brief).replace("<PYTHON_RUNTIME>", f"/opt/python {index}")
+        if skills:
+            rendered += INSTRUCTIONS.decode() + "\n\n".join(skills)
+        raw = rendered.encode("utf-8")
+        config = protocol(template, brief, skills)
+        verify_prompt(raw, config, "candidate")
+        verify_prompt(raw.replace(b"\n", b"\r\n"), config, "candidate")
 
 
 @pytest.mark.parametrize(

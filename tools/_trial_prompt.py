@@ -65,6 +65,10 @@ def _matches_prompt(prompt: bytes, template: bytes, hashes: list[str]) -> bool:
 
 def verify_prompt(raw: bytes, protocol: dict[str, Any], condition: str) -> None:
     """Verify the recorded prompt's declared content, without asserting delivery or authenticity."""
+    try:
+        raw.decode("utf-8")
+    except UnicodeDecodeError as exc:
+        raise ValueError("captured prompt must be UTF-8") from exc
     task, template, conditions = protocol.get("task"), protocol.get("prompt_template"), protocol.get("conditions")
     if (
         not isinstance(task, dict)
