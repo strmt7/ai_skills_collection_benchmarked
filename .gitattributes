@@ -212,3 +212,8 @@
 /included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/yarn-cache-install/** text eol=lf
 /included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/yarn-cache-install/provenance/** -text !eol
 /artifacts/repaired-skill-readiness/yarn-cache-install-v1/** text eol=lf
+
+# Preserve the pnpm repair and canonical upstream provenance.
+/included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/pnpm-cache-install/** text eol=lf
+/included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/pnpm-cache-install/provenance/** -text !eol
+/artifacts/repaired-skill-readiness/pnpm-cache-install-v1/** text eol=lf

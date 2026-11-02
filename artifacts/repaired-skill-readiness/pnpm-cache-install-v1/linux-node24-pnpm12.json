@@ -1,0 +1,66 @@
+{
+  "platform": "Linux",
+  "node_version": "v24.15.0",
+  "pnpm_version": "12.16.1",
+  "pnpm_sha256": "41fe8049fc73f4239b99487c35def4eacdb3cb18659a6003573500e3cc313628",
+  "source_action_sha256": "6df9f7fb7b7034bbd8e66ecd2ae7342028a47a5d25136f8592b6c7e611b69add",
+  "runner_sha256": "4ec894bad4c8e040932bf5703b68ba7951de6513cd3bd9b3cccd4236fd26088a",
+  "overlay_sha256": "7c5be2fe80d137d64884a6228bf33eaf675379753c10886b0d719d74783f3430",
+  "example_sha256": "27fcb0eb50f7fffcb5324267569458849666109df8b7aa9828607835649f299b",
+  "fixture_tarball_sha256": "5b37805f8ab64c05ef7577684278dfc88eefabe17b5c17f5066333f2a1e2a7f8",
+  "pnpm_offline_mode": true,
+  "github_cache_service_tested": false,
+  "agent_performance_tested": false,
+  "logs": {
+    "pnpm-version": {
+      "exit_code": 0,
+      "stdout_sha256": "af24c4404052eb57d108af369192a87f56f1b93ef88bd1a4901c4e1aefef8c8e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "node-version": {
+      "exit_code": 0,
+      "stdout_sha256": "c642a0de246dcdc6c51318fe449646fc5067b981a8d09e9ccdb8141a5756339a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "store-path": {
+      "exit_code": 0,
+      "stdout_sha256": "83f942494171548a299f986b48e5d8c8ded04cd88d6087cb75e11807b24cad96",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "seed-install": {
+      "exit_code": 0,
+      "stdout_sha256": "6da04e1dc4aadf43d3ad1e6b3a07e15c34d678dd7070c178b3f65f058eb42ef0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "before-install": {
+      "exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "65c60e0138bb295684205256b69dbe1fc97034c74fd567e9c961b9a3da411e01"
+    },
+    "frozen-install": {
+      "exit_code": 0,
+      "stdout_sha256": "395ff503978637789f48ba9b68a2d79a01f9066780e8e6c2de6836744c536f10",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "after-install": {
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "missing-archive": {
+      "exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "37c7106c1cf501bfab489115df7e63660ddf6b39535e8fb374fd7664390788b5"
+    },
+    "missing-lock": {
+      "exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "a9fa645fdf3e41a40776776adb0d8cff6dc0529b4b76649a544e2fcea200ecc5"
+    },
+    "mismatched-lock": {
+      "exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "17f6366d175dbe98b30bc8127db4e3eee3bcb53567e6dc5c5a146f3e9b28ecb6"
+    }
+  }
+}

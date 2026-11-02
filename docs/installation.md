@@ -39,6 +39,8 @@ Some reviewed instructions have known limitations:
   keeps installation unconditional. [See the component review](research-npm-cache-install.md).
 - Yarn 4: the [Yarn cache repair](../included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/yarn-cache-install/SKILL.md)
   covers locked installation after cache restoration. [See the component review](research-yarn-cache-install.md).
+- pnpm 12: the [pnpm cache repair](../included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/pnpm-cache-install/SKILL.md)
+  installs the locked project after restoring its store. [See the component review](research-pnpm-cache-install.md).
 - The pinned clarification skill can require repeated confirmation after the
   user has already authorized proceeding. The experimental
   [clarification overlay](../included/improved/skills/clarify-when-needed/SKILL.md)

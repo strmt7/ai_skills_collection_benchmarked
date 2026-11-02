@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_runtime_repair",
+  "source_skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-github-actions-generator-skill-md",
+  "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+  "source_mirror": "included/skills/by-category/devops-cloud-operations/latest-release-devops/github-actions-generator",
+  "original_skill_sha256": "485a62c648f2a163fe479948409bd4b146dd3b47712f742452efadeab6dcbe3a",
+  "source_action_sha256": "6df9f7fb7b7034bbd8e66ecd2ae7342028a47a5d25136f8592b6c7e611b69add",
+  "license_file": "LICENSE",
+  "license_sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+  "scope": "pnpm 12 store restoration and frozen installation in isolated Windows and Linux fixtures.",
+  "model_performance_claim": false,
+  "readiness_evidence": "artifacts/repaired-skill-readiness/pnpm-cache-install-v1",
+  "overlay_sha256": {
+    "examples/pnpm-ci.yml": "27fcb0eb50f7fffcb5324267569458849666109df8b7aa9828607835649f299b",
+    "LICENSE": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+    "NOTICE.md": "f23067f0f06ef28a7dd499411df0b74affbda170b580c8d4671bf339d56a9614",
+    "provenance/original-action.yml": "6df9f7fb7b7034bbd8e66ecd2ae7342028a47a5d25136f8592b6c7e611b69add",
+    "provenance/original.SKILL.md": "485a62c648f2a163fe479948409bd4b146dd3b47712f742452efadeab6dcbe3a",
+    "SKILL.md": "7c5be2fe80d137d64884a6228bf33eaf675379753c10886b0d719d74783f3430"
+  },
+  "evidence_sha256": {
+    "github_fixture.py": "52099504de425d3463884d464f742a995affd383e44f06e9e9c0625f1ab6976c",
+    "linux-node24-pnpm12.json": "b39a9786c7c8d0be087e7c74b7bcff8229fbd0d6f29232af77f0dab9e9ee7b27",
+    "reproduce.py": "4ec894bad4c8e040932bf5703b68ba7951de6513cd3bd9b3cccd4236fd26088a",
+    "windows-node26-pnpm12.json": "10a6d76a09d4a8c4ac4d9bbc6f42caed8709ba2dd9f2be672984b2bd533d0ebd"
+  }
+}

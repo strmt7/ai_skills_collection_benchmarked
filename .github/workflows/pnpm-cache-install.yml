@@ -1,0 +1,180 @@
+name: pnpm cache installation controls
+
+on:
+  push:
+    paths:
+      - 'artifacts/repaired-skill-readiness/pnpm-cache-install-v1/**'
+      - 'included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/pnpm-cache-install/**'
+      - 'included/skills/by-category/devops-cloud-operations/latest-release-devops/github-actions-generator/examples/actions/setup-node-cached/**'
+      - 'tests/test_pnpm_cache_install.py'
+      - '.github/workflows/pnpm-cache-install.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '05 10 * * 4'
+
+concurrency:
+  group: pnpm-cache-install-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  local-controls:
+    name: Offline pnpm controls (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      GIT_CONFIG_COUNT: '1'
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: 'true'
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: '0.13.6'
+          python-version: '3.13.18'
+          activate-environment: 'true'
+          venv-path: ${{ runner.temp }}/pnpm-cache-control-venv
+          enable-cache: 'false'
+      - uses: pnpm/setup@fa36a5ef7dcdefc3a7cb25655c122e00cf6e636e # v3.1.2
+        with:
+          version: '12.16.1'
+          runtime: node@26.13.0
+          install: false
+          dest: ${{ runner.temp }}/pnpm-control-setup
+      - name: Exercise fresh-workspace installations
+        shell: pwsh
+        run: |
+          $node = python -c "import shutil; print(shutil.which('node'))"
+          $pnpm = python -c "import shutil; print(shutil.which('pnpm'))"
+          python artifacts/repaired-skill-readiness/pnpm-cache-install-v1/reproduce.py --node $node --pnpm $pnpm --output-dir (Join-Path $env:RUNNER_TEMP 'pnpm-cache-control')
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Retain native observations
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: pnpm-cache-local-${{ matrix.os }}
+          path: ${{ runner.temp }}/pnpm-cache-control/
+          if-no-files-found: error
+          retention-days: 14
+
+  seed:
+    name: Seed an isolated GitHub pnpm cache
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: catalog
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.14.9'
+      - name: Create a unique local package fixture
+        run: python -B catalog/artifacts/repaired-skill-readiness/pnpm-cache-install-v1/github_fixture.py prepare --workspace . --run-id "${{ github.run_id }}" --attempt "${{ github.run_attempt }}"
+      - name: Provision pnpm and Node
+        uses: pnpm/setup@fa36a5ef7dcdefc3a7cb25655c122e00cf6e636e # v3.1.2
+        with:
+          version: '12.16.1'
+          runtime: node@26.13.0
+          install: false
+      - name: Generate the fixture lockfile and store
+        run: pnpm install --offline --no-frozen-lockfile
+      - name: Save a unique pnpm cache
+        id: seed
+        uses: pnpm/setup@fa36a5ef7dcdefc3a7cb25655c122e00cf6e636e # v3.1.2
+        with:
+          version: '12.16.1'
+          runtime: node@26.13.0
+          cache: true
+          require-lockfile: true
+      - name: Confirm the unique cache was a miss
+        env:
+          CACHE_HIT: ${{ steps.seed.outputs.cache-hit }}
+        run: test "$CACHE_HIT" != 'true'
+      - name: Retain the fixture for clean jobs
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: pnpm-cache-fixture
+          path: |
+            package.json
+            pnpm-lock.yaml
+            fixture.tgz
+          if-no-files-found: error
+          retention-days: 14
+
+  source-hit:
+    name: Simulated source behavior on a real cache hit
+    needs: seed
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: catalog
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.14.9'
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: pnpm-cache-fixture
+      - name: Restore the pnpm store without installation
+        id: setup
+        uses: pnpm/setup@fa36a5ef7dcdefc3a7cb25655c122e00cf6e636e # v3.1.2
+        with:
+          version: '12.16.1'
+          runtime: node@26.13.0
+          cache: true
+          install: false
+      - name: Test the source cache-hit decision
+        env:
+          CACHE_HIT: ${{ steps.setup.outputs.cache-hit }}
+        run: python -B catalog/artifacts/repaired-skill-readiness/pnpm-cache-install-v1/github_fixture.py probe --workspace . --output "$RUNNER_TEMP/pnpm-source-probe" --cache-hit "$CACHE_HIT" --mode source
+      - name: Retain native observations
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: pnpm-cache-source-probe
+          path: ${{ runner.temp }}/pnpm-source-probe/
+          if-no-files-found: error
+          retention-days: 14
+
+  maintained-hit:
+    name: Maintained setup action on a real cache hit
+    needs: seed
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: catalog
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.14.9'
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: pnpm-cache-fixture
+      - name: Restore and install the locked project
+        id: setup
+        uses: pnpm/setup@fa36a5ef7dcdefc3a7cb25655c122e00cf6e636e # v3.1.2
+        with:
+          version: '12.16.1'
+          runtime: node@26.13.0
+          cache: true
+          require-lockfile: true
+      - name: Check the restored project's dependency
+        env:
+          CACHE_HIT: ${{ steps.setup.outputs.cache-hit }}
+        run: python -B catalog/artifacts/repaired-skill-readiness/pnpm-cache-install-v1/github_fixture.py probe --workspace . --output "$RUNNER_TEMP/pnpm-maintained-probe" --cache-hit "$CACHE_HIT" --mode maintained
+      - name: Retain native observations
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: pnpm-cache-maintained-probe
+          path: ${{ runner.temp }}/pnpm-maintained-probe/
+          if-no-files-found: error
+          retention-days: 14
