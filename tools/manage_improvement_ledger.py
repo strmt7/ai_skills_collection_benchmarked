@@ -112,6 +112,11 @@ def validate(ledger: dict[str, Any], root: Path) -> list[str]:
     return errors
 
 
+def is_mirrored_resource(path: Path, mirror: Path) -> bool:
+    """Exclude the same transient directories as catalog source hashing."""
+    return not {".git", "__pycache__"}.intersection(path.relative_to(mirror).parts)
+
+
 def validate_resources(skill_id: str, state: dict[str, Any], root: Path) -> list[str]:
     """Check optional resource-level progress without treating inventory as review."""
     errors = []
@@ -124,7 +129,11 @@ def validate_resources(skill_id: str, state: dict[str, Any], root: Path) -> list
     mirror = root / str(state.get("mirrored_path", ""))
     if not mirror.is_dir() or not mirror.resolve().is_relative_to(root.resolve()):
         return [f"{skill_id}: resource mirror missing or external"]
-    files = {file.relative_to(mirror).as_posix(): file for file in mirror.rglob("*") if file.is_file()}
+    files = {
+        file.relative_to(mirror).as_posix(): file
+        for file in mirror.rglob("*")
+        if is_mirrored_resource(file, mirror) and file.is_file()
+    }
     if set(resources) != set(files):
         errors.append(f"{skill_id}: resource inventory differs from complete mirrored package")
     for name, record in resources.items():
@@ -183,6 +192,8 @@ def inventory_category(ledger: dict[str, Any], root: Path, category: str) -> tup
             raise ValueError("Resource mirror missing or external")
         resources = {}
         for file in sorted(mirror.rglob("*")):
+            if not is_mirrored_resource(file, mirror):
+                continue
             if file.is_symlink():
                 raise ValueError("Linked resource cannot be inventoried")
             if not file.is_file():

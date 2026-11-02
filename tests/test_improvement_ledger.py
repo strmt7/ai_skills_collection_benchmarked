@@ -196,6 +196,9 @@ def test_category_inventory_preserves_existing_work_and_tracks_each_file(tmp_pat
     (first / "SKILL.md").write_text("first\n", encoding="utf-8")
     (first / "refs").mkdir()
     (first / "refs/example.txt").write_text("example\n", encoding="utf-8")
+    cache = first / "refs/__pycache__"
+    cache.mkdir()
+    (cache / "generated.pyc").write_bytes(b"runtime cache")
     (second / "SKILL.md").write_text("second\n", encoding="utf-8")
     data["skills"]["one"]["research"]["status"] = "in_progress"
     updated, added = ledger.inventory_category(data, tmp_path, "coding")
@@ -205,6 +208,8 @@ def test_category_inventory_preserves_existing_work_and_tracks_each_file(tmp_pat
     assert research["status"] == "in_progress"
     assert set(research["resources"]) == {"SKILL.md", "refs/example.txt"}
     assert all(record["status"] == "pending" for record in research["resources"].values())
+    assert not ledger.validate(updated, tmp_path)
+    (cache / "generated.pyc").write_bytes(b"changed runtime cache")
     assert not ledger.validate(updated, tmp_path)
     again, added = ledger.inventory_category(updated, tmp_path, "coding")
     assert added == 0

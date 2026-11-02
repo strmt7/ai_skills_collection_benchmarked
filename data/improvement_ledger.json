@@ -6805,10 +6805,6 @@
             "sha256": "2975a41117d99f524bc7784e1e4820d158782d1bd7f567cf115461631aae40c2",
             "status": "pending"
           },
-          "scripts/__pycache__/extract_metadata.cpython-314.pyc": {
-            "sha256": "ed03100397a4acb22a0112601ea4520d5b3d3355057ca9c6d329e942c7507479",
-            "status": "pending"
-          },
           "scripts/doi_to_bibtex.py": {
             "sha256": "b9b9435f9dc4be045f2857182e4dcc2dc1625e6c11d0d0b773b5e893abe33880",
             "status": "pending"
