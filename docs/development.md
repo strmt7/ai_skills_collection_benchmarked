@@ -15,7 +15,7 @@ on Linux and the current validation runtime on Windows. Native provider controls
 use their documented Windows interpreter and dependency graph. These checks need
 no administrator access, specific username or fixed installation path.
 
-Use a supported Python 3.11–3.14 environment; current hosted validation uses Python 3.14.9. Compatibility CI also
+Use a supported Python 3.11–3.14 environment; current hosted validation uses Python 3.14.10. Compatibility CI also
 selects current security patches for supported older Python series. Python 3.10
 has reached end of life. Live services, devices, GPUs, external data sources,
 and installed agent runtimes need separate qualification; an offline catalog
@@ -23,6 +23,39 @@ check does not prove their behavior. On Windows, use the active environment's
 `Scripts/python.exe` in place of `python3` in the commands below.
 
 ## Set up validation from a fresh clone
+
+The Ruff and mypy workflows use `requirements-dev-lock.txt` with uv 0.13.6.
+It locks the project runtime, test, lint and build requirements, including
+distribution hashes. Their lock check resolves the existing pins again against
+PyPI and rejects changed inputs or hashes. The separate offline-validation
+workflow has its own installation and is not covered by this developer lock.
+To reproduce the locked lint and type-check environment, install uv 0.13.6,
+create and activate a Python 3.11–3.14 virtual environment, then run:
+
+```bash
+python tools/verify_dev_lock.py --json
+uv pip sync --require-hashes --only-binary=:all: requirements-dev-lock.txt
+uv pip install --no-deps --no-build-isolation -e .
+uv pip check
+```
+
+Lock verification requires network access. The offline verifier controls use
+synthetic wheels and are required in the Ruff workflow; without the pinned uv
+executable they are skipped in other test runs. A universal resolution is not a
+guarantee that binary distributions exist for every Python or platform.
+
+To regenerate the developer lock after changing project or build requirements,
+first create and activate `.venv`, install uv 0.13.6, then run:
+
+```bash
+python -c "import pathlib,tomllib; p=pathlib.Path('pyproject.toml'); r=tomllib.loads(p.read_text(encoding='utf-8'))['build-system']['requires']; pathlib.Path('.venv/dev-build.in').write_text('\n'.join(r)+'\n', encoding='utf-8')"
+uv pip compile pyproject.toml .venv/dev-build.in --extra test --extra lint --universal --python-version 3.11.18 --generate-hashes --no-strip-markers --only-binary=:all: --no-annotate --no-header --no-config --default-index https://pypi.org/simple --output-file requirements-dev-lock.txt
+python tools/verify_dev_lock.py --json
+```
+
+Review dependency changes and run the affected checks before committing. Add
+`--upgrade` when intentionally updating the resolved versions. The test and
+lint lock does not replace the separate audit and report dependency locks.
 
 ```bash
 python3 -m venv .venv

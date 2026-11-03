@@ -25,9 +25,10 @@ The supplied 27 October implementation manual has 154 pages and seven
 embedded files. Its [review ledger](../artifacts/research/2026-11-03/implementation-manual-review/ledger.json)
 tracks extraction, partial inspection and unresolved actions; most of the
 manual remains to be reviewed. Its internal hashes establish byte consistency,
-not the correctness of its claims. Current workflow files confirm that ordinary
-lint and test environments still resolve loose dependencies, so qualifying
-platform-specific locks and a separate latest-dependency canary remains open.
+not the correctness of its claims. Ruff and mypy now use a checked, hashed
+developer lock; the ordinary offline test workflow still resolves loose
+dependencies. Qualification of that workflow and a separate latest-dependency
+canary remains open.
 The owner's 120-character Python limit and prohibition on working on other
 repositories take precedence over conflicting recommendations in the manual.
 Security-related actions remain paused.

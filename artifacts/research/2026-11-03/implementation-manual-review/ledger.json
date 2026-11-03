@@ -851,7 +851,7 @@
     },
     {
       "id": "AISC-03",
-      "note": "Current ordinary offline, Ruff and mypy jobs install loose extras; qualify target-specific locked graphs and separate latest-resolution canaries before changing required gates.",
+      "note": "Ruff and mypy use a hashed developer lock with source and hash verification; the ordinary offline job still installs loose extras. Qualify its graph and a separate latest-resolution canary.",
       "status": "open_verified"
     },
     {
