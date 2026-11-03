@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "scope": "Diagnostic observations of a recurring hosted test timeout; not a fix or an agent benchmark.",
+  "hosted_failures": [
+    {
+      "run_id": 41523429677,
+      "attempt": 2,
+      "commit": "7e3a121024330c632d51167e9c9ee99e815871a3",
+      "run_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/41523429677",
+      "failed_log_sha256": "6738802aba0437c1ff9f966f70000bb124311f274a87d07d24f6eb0f45c148c6",
+      "attempt_api_sha256": "dc652ab9b40170ce22df66c293e53c2d1adf20c1aafbc3bc9d06fb4d5e5a2133"
+    },
+    {
+      "run_id": 41529603664,
+      "attempt": 1,
+      "commit": "00817ce66ce9008e4642e1c350a604d318c4606d",
+      "run_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/41529603664",
+      "failed_log_sha256": "a2fc103c5a0ff22fa19d4c3420d9ea6ec4c83f012d14509dbfc7d80f4aadad58",
+      "attempt_api_sha256": "823e8d2698236bbf45a49cc6db1c558f75a2d2419d6a1b587faaffa99ee466f3"
+    },
+    {
+      "run_id": 41533743822,
+      "attempt": 1,
+      "commit": "48c191eb263cba8a9d044b7c1aad7f82b7be8f11",
+      "run_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/41533743822",
+      "failed_log_sha256": "cabaedc5b8bd4e88ca04255b6d4bfc940b328332d718669075f951021f90f275",
+      "attempt_api_sha256": "bd06c43befa6fe3051adcb56e195a81c0552aa5d01742fbdaf749df144ddfb72"
+    },
+    {
+      "run_id": 41536909537,
+      "attempt": 1,
+      "commit": "cdb3793fc88e423395a79d21377175d92d020110",
+      "run_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/41536909537",
+      "failed_log_sha256": "0ef4f83b8f6c52c63cee9de8bf51b6b2c478688198ff82f75f1054ecdb8787da",
+      "attempt_api_sha256": "c9736afb7126bc7973f4264c9d70236bceeae54dcf063ad2de4ce54c4b26ca58"
+    },
+    {
+      "run_id": 41541062053,
+      "attempt": 1,
+      "commit": "4341ad4e2a903f628b3dcb96686c72bbc434eaec",
+      "run_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/41541062053",
+      "failed_log_sha256": "4fdf8808a6cf9dc1e5bd2eca732f871551cc122197cf26571afb085bd7f2164f",
+      "attempt_api_sha256": "198652bd8fc7e543cd00212b425c304ac75802e9cddd3193b5d0400fa384cb11"
+    },
+    {
+      "run_id": 41554570066,
+      "attempt": 1,
+      "commit": "df73a10c84914b60a65919a1408e54c5028a829b",
+      "run_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/41554570066",
+      "failed_log_sha256": "3e02c2cf39ee620712108a14a0629a90328f4c1c90ef96870ae14d67c334cfcd",
+      "attempt_api_sha256": "8aab82dbbf2222e6e56fc3dad7a42637b884241aceb4c131c7912c838c906df0"
+    }
+  ],
+  "hosted_sample_note": "Selected known failing attempts; not a random sample or a failure-rate estimate. Logs were captured locally and are not included here.",
+  "hosted_retry": {
+    "run_id": 41554570066,
+    "attempt": 2,
+    "conclusion": "success",
+    "note": "A later passing attempt does not resolve the first timeout."
+  },
+  "local_process_controls": {
+    "record": "local-process-observations.json",
+    "sha256": "b93df6b59b4e8d9f413bd7ec29bd51cafdb8240bebe8856a0e5310a9d692d49c",
+    "runs": 200,
+    "pipes": 100,
+    "temporary_files": 100,
+    "timeout_count": 0,
+    "unexpected_outcome_count": 0,
+    "max_workers": 2,
+    "node_version": "v24.22.2",
+    "python_version": "3.14.9"
+  },
+  "local_xdist_control": {
+    "script": "xdist-control.py",
+    "sha256": "4f6bcb6f74cf4a6a513e5dafb2bf30c80c8f31ca0e28fda5747f6249269dfdbf",
+    "passed": 120,
+    "failed": 0,
+    "workers": 2,
+    "python_version": "3.14.9",
+    "pytest": "9.2.0",
+    "pytest_xdist": "3.8.0",
+    "pytest_cov": "7.1.0",
+    "coverage": "7.17.0",
+    "stdout_sha256": "bceaa318850cce0b6ffaa6981a98bb79c9f100aa61b021287f9e1bd643e97132",
+    "stderr_sha256": "f44b558dffd03a94864659f4082b6a711f8509c4e9070a1e56c6026a288b5cc4",
+    "capture_note": "Raw output remains in the local research workspace; coverage instrumentation was enabled solely to match the environment, not to measure repository coverage."
+  },
+  "subjects": {
+    "test_path": "tests/test_e2e_response_repair.py",
+    "test_sha256": "1bdd916d9095acfe811d4f5ce2dd7a13372dd53e4db4660fdea635fd139619f4",
+    "node_control_path": "artifacts/repaired-skill-readiness/e2e-response-v1/control.cjs",
+    "node_control_sha256": "cae9eab344c0b944b29894e5d61d117ac8c94e6f5a28c3a7530b9d5708a0e8b6"
+  },
+  "official_documentation": {
+    "url": "https://docs.python.org/3.14/library/subprocess.html",
+    "native_sha256": "91981823e635e04401c4e7a32e4f4c0dc696143ccb5b8e210c935c8576deb831",
+    "provider": "0.9.5+catalog.portable4",
+    "status_code": 200
+  },
+  "cause_established": false,
+  "agent_performance_tested": false
+}

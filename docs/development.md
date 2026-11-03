@@ -117,6 +117,10 @@ independent artifact loop; catalog generation never rewrites them. README
 packaging and adapter counts come from their existing manifests, which are
 also preserved rather than regenerated during a source refresh.
 
+The [Windows Node control timeout investigation](research-windows-node-timeout.md)
+records an intermittent hosted test failure, local controls and its unresolved
+cause. A passing retry does not establish that the timeout is fixed.
+
 ## Why the catalog is host-portable
 
 Tree hashes used in `data/skills_catalog.json`, the manifests, and

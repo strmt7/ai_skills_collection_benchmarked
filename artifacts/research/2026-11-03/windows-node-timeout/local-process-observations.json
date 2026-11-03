@@ -1,0 +1,1612 @@
+{
+  "scope": "Local bounded process observations; no hosted reproduction or causal conclusion.",
+  "host": "Windows-11-10.0.26300-SP0",
+  "python": "3.14.9",
+  "node": "v24.22.2",
+  "worker_limit": 2,
+  "source_sha256": "2728c7a7b0da310ef9c755bb55d6a41835d7f45f91c23555e7dec97805d62869",
+  "control_sha256": "cae9eab344c0b944b29894e5d61d117ac8c94e6f5a28c3a7530b9d5708a0e8b6",
+  "elapsed_seconds": 5.443,
+  "trials": [
+    {
+      "id": 0,
+      "mode": "pipes",
+      "seconds": 0.05773,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 1,
+      "mode": "files",
+      "seconds": 0.08648,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 2,
+      "mode": "pipes",
+      "seconds": 0.05091,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 3,
+      "mode": "files",
+      "seconds": 0.051491,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 4,
+      "mode": "pipes",
+      "seconds": 0.050873,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 5,
+      "mode": "files",
+      "seconds": 0.052648,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 6,
+      "mode": "pipes",
+      "seconds": 0.055303,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 7,
+      "mode": "files",
+      "seconds": 0.052902,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 8,
+      "mode": "pipes",
+      "seconds": 0.050736,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 9,
+      "mode": "files",
+      "seconds": 0.05151,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 10,
+      "mode": "pipes",
+      "seconds": 0.049068,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 11,
+      "mode": "files",
+      "seconds": 0.050802,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 12,
+      "mode": "pipes",
+      "seconds": 0.052858,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 13,
+      "mode": "files",
+      "seconds": 0.052011,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 14,
+      "mode": "pipes",
+      "seconds": 0.048651,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 15,
+      "mode": "files",
+      "seconds": 0.055223,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 16,
+      "mode": "pipes",
+      "seconds": 0.048298,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 17,
+      "mode": "files",
+      "seconds": 0.051095,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 18,
+      "mode": "pipes",
+      "seconds": 0.047606,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 19,
+      "mode": "files",
+      "seconds": 0.056818,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 20,
+      "mode": "pipes",
+      "seconds": 0.046858,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 21,
+      "mode": "files",
+      "seconds": 0.054656,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 22,
+      "mode": "pipes",
+      "seconds": 0.052861,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 23,
+      "mode": "files",
+      "seconds": 0.052794,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 24,
+      "mode": "pipes",
+      "seconds": 0.049998,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 25,
+      "mode": "files",
+      "seconds": 0.056501,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 26,
+      "mode": "pipes",
+      "seconds": 0.054892,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 27,
+      "mode": "files",
+      "seconds": 0.054124,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 28,
+      "mode": "pipes",
+      "seconds": 0.054261,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 29,
+      "mode": "files",
+      "seconds": 0.051933,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 30,
+      "mode": "pipes",
+      "seconds": 0.050998,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 31,
+      "mode": "files",
+      "seconds": 0.052997,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 32,
+      "mode": "pipes",
+      "seconds": 0.051739,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 33,
+      "mode": "files",
+      "seconds": 0.050313,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 34,
+      "mode": "pipes",
+      "seconds": 0.04936,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 35,
+      "mode": "files",
+      "seconds": 0.054292,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 36,
+      "mode": "pipes",
+      "seconds": 0.053869,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 37,
+      "mode": "files",
+      "seconds": 0.082017,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 38,
+      "mode": "pipes",
+      "seconds": 0.048153,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 39,
+      "mode": "files",
+      "seconds": 0.04818,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 40,
+      "mode": "pipes",
+      "seconds": 0.048475,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 41,
+      "mode": "files",
+      "seconds": 0.05291,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 42,
+      "mode": "pipes",
+      "seconds": 0.055417,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 43,
+      "mode": "files",
+      "seconds": 0.053292,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 44,
+      "mode": "pipes",
+      "seconds": 0.054463,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 45,
+      "mode": "files",
+      "seconds": 0.053804,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 46,
+      "mode": "pipes",
+      "seconds": 0.055927,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 47,
+      "mode": "files",
+      "seconds": 0.049647,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 48,
+      "mode": "pipes",
+      "seconds": 0.051575,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 49,
+      "mode": "files",
+      "seconds": 0.052624,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 50,
+      "mode": "pipes",
+      "seconds": 0.05355,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 51,
+      "mode": "files",
+      "seconds": 0.050464,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 52,
+      "mode": "pipes",
+      "seconds": 0.054666,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 53,
+      "mode": "files",
+      "seconds": 0.050334,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 54,
+      "mode": "pipes",
+      "seconds": 0.05478,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 55,
+      "mode": "files",
+      "seconds": 0.051701,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 56,
+      "mode": "pipes",
+      "seconds": 0.047868,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 57,
+      "mode": "files",
+      "seconds": 0.04779,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 58,
+      "mode": "pipes",
+      "seconds": 0.045581,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 59,
+      "mode": "files",
+      "seconds": 0.046819,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 60,
+      "mode": "pipes",
+      "seconds": 0.049859,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 61,
+      "mode": "files",
+      "seconds": 0.04988,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 62,
+      "mode": "pipes",
+      "seconds": 0.050006,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 63,
+      "mode": "files",
+      "seconds": 0.050282,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 64,
+      "mode": "pipes",
+      "seconds": 0.050684,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 65,
+      "mode": "files",
+      "seconds": 0.050633,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 66,
+      "mode": "pipes",
+      "seconds": 0.04767,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 67,
+      "mode": "files",
+      "seconds": 0.047863,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 68,
+      "mode": "pipes",
+      "seconds": 0.047201,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 69,
+      "mode": "files",
+      "seconds": 0.046136,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 70,
+      "mode": "pipes",
+      "seconds": 0.05168,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 71,
+      "mode": "files",
+      "seconds": 0.052152,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 72,
+      "mode": "pipes",
+      "seconds": 0.048768,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 73,
+      "mode": "files",
+      "seconds": 0.04846,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 74,
+      "mode": "pipes",
+      "seconds": 0.080689,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 75,
+      "mode": "files",
+      "seconds": 0.080697,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 76,
+      "mode": "pipes",
+      "seconds": 0.048135,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 77,
+      "mode": "files",
+      "seconds": 0.048809,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 78,
+      "mode": "pipes",
+      "seconds": 0.048909,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 79,
+      "mode": "files",
+      "seconds": 0.048564,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 80,
+      "mode": "pipes",
+      "seconds": 0.049554,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 81,
+      "mode": "files",
+      "seconds": 0.049397,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 82,
+      "mode": "pipes",
+      "seconds": 0.050062,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 83,
+      "mode": "files",
+      "seconds": 0.050086,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 84,
+      "mode": "pipes",
+      "seconds": 0.050227,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 85,
+      "mode": "files",
+      "seconds": 0.05139,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 86,
+      "mode": "pipes",
+      "seconds": 0.052344,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 87,
+      "mode": "files",
+      "seconds": 0.051572,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 88,
+      "mode": "pipes",
+      "seconds": 0.046896,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 89,
+      "mode": "files",
+      "seconds": 0.046786,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 90,
+      "mode": "pipes",
+      "seconds": 0.048843,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 91,
+      "mode": "files",
+      "seconds": 0.048699,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 92,
+      "mode": "pipes",
+      "seconds": 0.047413,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 93,
+      "mode": "files",
+      "seconds": 0.047533,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 94,
+      "mode": "pipes",
+      "seconds": 0.048842,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 95,
+      "mode": "files",
+      "seconds": 0.048787,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 96,
+      "mode": "pipes",
+      "seconds": 0.050252,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 97,
+      "mode": "files",
+      "seconds": 0.050277,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 98,
+      "mode": "pipes",
+      "seconds": 0.053276,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 99,
+      "mode": "files",
+      "seconds": 0.053256,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 100,
+      "mode": "pipes",
+      "seconds": 0.050179,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 101,
+      "mode": "files",
+      "seconds": 0.049845,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 102,
+      "mode": "pipes",
+      "seconds": 0.051297,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 103,
+      "mode": "files",
+      "seconds": 0.051429,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 104,
+      "mode": "pipes",
+      "seconds": 0.050549,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 105,
+      "mode": "files",
+      "seconds": 0.050526,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 106,
+      "mode": "pipes",
+      "seconds": 0.051891,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 107,
+      "mode": "files",
+      "seconds": 0.052123,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 108,
+      "mode": "pipes",
+      "seconds": 0.050191,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 109,
+      "mode": "files",
+      "seconds": 0.050011,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 110,
+      "mode": "pipes",
+      "seconds": 0.056344,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 111,
+      "mode": "files",
+      "seconds": 0.056293,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 112,
+      "mode": "pipes",
+      "seconds": 0.079504,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 113,
+      "mode": "files",
+      "seconds": 0.079475,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 114,
+      "mode": "pipes",
+      "seconds": 0.050827,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 115,
+      "mode": "files",
+      "seconds": 0.050693,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 116,
+      "mode": "pipes",
+      "seconds": 0.047806,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 117,
+      "mode": "files",
+      "seconds": 0.047884,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 118,
+      "mode": "pipes",
+      "seconds": 0.049404,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 119,
+      "mode": "files",
+      "seconds": 0.049058,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 120,
+      "mode": "pipes",
+      "seconds": 0.050833,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 121,
+      "mode": "files",
+      "seconds": 0.050891,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 122,
+      "mode": "pipes",
+      "seconds": 0.048826,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 123,
+      "mode": "files",
+      "seconds": 0.048917,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 124,
+      "mode": "pipes",
+      "seconds": 0.050742,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 125,
+      "mode": "files",
+      "seconds": 0.050905,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 126,
+      "mode": "pipes",
+      "seconds": 0.047803,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 127,
+      "mode": "files",
+      "seconds": 0.048848,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 128,
+      "mode": "pipes",
+      "seconds": 0.048772,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 129,
+      "mode": "files",
+      "seconds": 0.048817,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 130,
+      "mode": "pipes",
+      "seconds": 0.048994,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 131,
+      "mode": "files",
+      "seconds": 0.047841,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 132,
+      "mode": "pipes",
+      "seconds": 0.050982,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 133,
+      "mode": "files",
+      "seconds": 0.051039,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 134,
+      "mode": "pipes",
+      "seconds": 0.047649,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 135,
+      "mode": "files",
+      "seconds": 0.047498,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 136,
+      "mode": "pipes",
+      "seconds": 0.047685,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 137,
+      "mode": "files",
+      "seconds": 0.047703,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 138,
+      "mode": "pipes",
+      "seconds": 0.048384,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 139,
+      "mode": "files",
+      "seconds": 0.048142,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 140,
+      "mode": "pipes",
+      "seconds": 0.052285,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 141,
+      "mode": "files",
+      "seconds": 0.051013,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 142,
+      "mode": "pipes",
+      "seconds": 0.049621,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 143,
+      "mode": "files",
+      "seconds": 0.048944,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 144,
+      "mode": "pipes",
+      "seconds": 0.051683,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 145,
+      "mode": "files",
+      "seconds": 0.051578,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 146,
+      "mode": "pipes",
+      "seconds": 0.052057,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 147,
+      "mode": "files",
+      "seconds": 0.08597,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 148,
+      "mode": "pipes",
+      "seconds": 0.052152,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 149,
+      "mode": "files",
+      "seconds": 0.051806,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 150,
+      "mode": "pipes",
+      "seconds": 0.046673,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 151,
+      "mode": "files",
+      "seconds": 0.046506,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 152,
+      "mode": "pipes",
+      "seconds": 0.043713,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 153,
+      "mode": "files",
+      "seconds": 0.045905,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 154,
+      "mode": "pipes",
+      "seconds": 0.042681,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 155,
+      "mode": "files",
+      "seconds": 0.047387,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 156,
+      "mode": "pipes",
+      "seconds": 0.043432,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 157,
+      "mode": "files",
+      "seconds": 0.051107,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 158,
+      "mode": "pipes",
+      "seconds": 0.047555,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 159,
+      "mode": "files",
+      "seconds": 0.049427,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 160,
+      "mode": "pipes",
+      "seconds": 0.048914,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 161,
+      "mode": "files",
+      "seconds": 0.049276,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 162,
+      "mode": "pipes",
+      "seconds": 0.048351,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 163,
+      "mode": "files",
+      "seconds": 0.053807,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 164,
+      "mode": "pipes",
+      "seconds": 0.053312,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 165,
+      "mode": "files",
+      "seconds": 0.050241,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 166,
+      "mode": "pipes",
+      "seconds": 0.051012,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 167,
+      "mode": "files",
+      "seconds": 0.050067,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 168,
+      "mode": "pipes",
+      "seconds": 0.048756,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 169,
+      "mode": "files",
+      "seconds": 0.052868,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 170,
+      "mode": "pipes",
+      "seconds": 0.052481,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 171,
+      "mode": "files",
+      "seconds": 0.049675,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 172,
+      "mode": "pipes",
+      "seconds": 0.049915,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 173,
+      "mode": "files",
+      "seconds": 0.050794,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 174,
+      "mode": "pipes",
+      "seconds": 0.050115,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 175,
+      "mode": "files",
+      "seconds": 0.051732,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 176,
+      "mode": "pipes",
+      "seconds": 0.049554,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 177,
+      "mode": "files",
+      "seconds": 0.050357,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 178,
+      "mode": "pipes",
+      "seconds": 0.049944,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 179,
+      "mode": "files",
+      "seconds": 0.051586,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 180,
+      "mode": "pipes",
+      "seconds": 0.050266,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 181,
+      "mode": "files",
+      "seconds": 0.078764,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 182,
+      "mode": "pipes",
+      "seconds": 0.078284,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 183,
+      "mode": "files",
+      "seconds": 0.052198,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 184,
+      "mode": "pipes",
+      "seconds": 0.05159,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 185,
+      "mode": "files",
+      "seconds": 0.048305,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 186,
+      "mode": "pipes",
+      "seconds": 0.049186,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 187,
+      "mode": "files",
+      "seconds": 0.055088,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 188,
+      "mode": "pipes",
+      "seconds": 0.053551,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 189,
+      "mode": "files",
+      "seconds": 0.049729,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 190,
+      "mode": "pipes",
+      "seconds": 0.049348,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 191,
+      "mode": "files",
+      "seconds": 0.049333,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 192,
+      "mode": "pipes",
+      "seconds": 0.048917,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 193,
+      "mode": "files",
+      "seconds": 0.052808,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 194,
+      "mode": "pipes",
+      "seconds": 0.052421,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 195,
+      "mode": "files",
+      "seconds": 0.05228,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 196,
+      "mode": "pipes",
+      "seconds": 0.051717,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 197,
+      "mode": "files",
+      "seconds": 0.053215,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 198,
+      "mode": "pipes",
+      "seconds": 0.052749,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    },
+    {
+      "id": 199,
+      "mode": "files",
+      "seconds": 0.047522,
+      "exit_code": 1,
+      "expected_error": true,
+      "timeout": false
+    }
+  ]
+}
