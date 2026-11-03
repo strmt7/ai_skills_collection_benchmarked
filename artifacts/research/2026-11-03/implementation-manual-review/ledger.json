@@ -1,0 +1,937 @@
+{
+  "attachments": [
+    {
+      "bytes": 24286,
+      "name": "Content Credentials",
+      "sha256": "0d9dd6d020ee916d9aee6f8848e8aca3873ae4518769ad634971ea7fc37f45f3",
+      "status": "inventory_only"
+    },
+    {
+      "bytes": 155093,
+      "name": "currentness-snapshot.json",
+      "sha256": "06f9899096989936f0215a384a1bfe2d68e231b1b6a97942a2d8704f55b409b2",
+      "status": "inventory_only"
+    },
+    {
+      "bytes": 38775,
+      "name": "implementation-contract.zip",
+      "sha256": "0d8ed02c2ecea30ba2c4ebaaef79d6d1ae4d1d18789c6f379e978121f561f335",
+      "status": "member_manifest_hashes_checked_partial"
+    },
+    {
+      "bytes": 523750,
+      "name": "implementation-manual.md",
+      "sha256": "ab82b4cc17709e41da30babc2f6ea544d716c83c11731303296f93c0957259b4",
+      "status": "inventory_only"
+    },
+    {
+      "bytes": 6348700,
+      "name": "report-verification-ledger.json",
+      "sha256": "328cbb9e13996674eecb2005a074a18b33857de2e71d81cc41515ce678dd8fde",
+      "status": "internal_digest_links_checked_partial"
+    },
+    {
+      "bytes": 94938,
+      "name": "repository-action-cards.json",
+      "sha256": "b96710dd9476385a0f89a045d0302ab5b5f6fdb2ab5aaa416e557f704b8192b7",
+      "status": "target_card_inspected_partial"
+    },
+    {
+      "bytes": 12969,
+      "name": "requirements-traceability.json",
+      "sha256": "f04115672ac33e8935346f153b4f2fe840fc0d3b9ae994d5f297bdb77ed05549",
+      "status": "structure_inspected_partial"
+    }
+  ],
+  "audit_commit": "f9578006e601c2aed6184894b2eec3537325eeab",
+  "document_name": "strmt7-enterprise-engineering-implementation-manual-2026-10-27.pdf",
+  "document_pages": 154,
+  "document_sha256": "e47cd7084b51ba5b8d8ef0f6b1cb9cb0812d90b46af328caec55705ed1b2304e",
+  "internal_integrity": {
+    "contract_zip_manifest_entries": 18,
+    "contract_zip_manifest_mismatches": 0,
+    "contract_zip_unlisted_entries": 0,
+    "embedded_ledger_manual_and_card_digests_match": true,
+    "interpretation": "These are internal byte-consistency checks, not authenticity or correctness verification."
+  },
+  "observed_repository_commit": "24e8d3b9d29ee561643163ae1cb0ad40d8fa19e7",
+  "page_review": [
+    {
+      "extracted_text_sha256": "f1f03f37bcf65acc141fa6477a255993a3f2e7639acebe8e9e264e61e659939e",
+      "page": 1,
+      "status": "inspected_claims_unverified"
+    },
+    {
+      "extracted_text_sha256": "34b1d5890f28c4bdb163aa2e678c52c806781389804a67fc2b5c512c1a77b084",
+      "page": 2,
+      "status": "inspected_claims_unverified"
+    },
+    {
+      "extracted_text_sha256": "349a8b2c83e101bd720ab6f19ddf365340a002286a88bfc17a5b32f0fa2d615f",
+      "page": 3,
+      "status": "inspected_claims_unverified"
+    },
+    {
+      "extracted_text_sha256": "7a07adb128785af7b8277d6e5549385bf8b0bcfdefd2a673b557be67277b864a",
+      "page": 4,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "fd56fb24bce41439211e3a52874785381648203b0416f6c3028bf8e418e8b2c1",
+      "page": 5,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "bbd985836478d2532dd5a31c2a5a1146e3babb7533590264ec227f0f90262bdf",
+      "page": 6,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "b4933c60e3f617e62720180d0f032c222938583750ac86049d979a052a5cbd3f",
+      "page": 7,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "0321c594bedfceac46a0b02566336d2b762bc1bce52d7660c715690269635b65",
+      "page": 8,
+      "status": "inspected_claims_unverified"
+    },
+    {
+      "extracted_text_sha256": "8ee372a9996755145ca2f2b5f5dcd5ea1d9f6e3cbfd48f8d385f1d88574e84e6",
+      "page": 9,
+      "status": "inspected_claims_unverified"
+    },
+    {
+      "extracted_text_sha256": "c74055785b446a3a6c4fddc0d43db64e9638f20d71564fb451c26b2f674e6807",
+      "page": 10,
+      "status": "inspected_claims_unverified"
+    },
+    {
+      "extracted_text_sha256": "1a3d952c0ac7f03e21a68a00a6cd8024fccfeadd90a66222a39b19dcf5093805",
+      "page": 11,
+      "status": "inspected_claims_unverified"
+    },
+    {
+      "extracted_text_sha256": "ea66a8f0158055a5863dd735ac2019177dad0e73b31505ca742d095a0c10730b",
+      "page": 12,
+      "status": "inspected_claims_unverified"
+    },
+    {
+      "extracted_text_sha256": "da1566486564034ca26c91d1e5c7c64c5a738ad9766fd2180284d6786618fc2b",
+      "page": 13,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "9505dfa1024bbdf32aef8a68210849e8668b37dcd42363495032d48db8f5211a",
+      "page": 14,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "d1ae910c94950aa1fe0e0a3ddec6a0bf15728402fd13dbb54e3cfd7d52500975",
+      "page": 15,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "57e579ee5c2f7c8201640297564c557373f1fa6aad3c5a22b58ac38072bcb182",
+      "page": 16,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "f4146bfc4d352f54483a2fcf0b2f7d0c7f2babc8de9f30ac5491601807c5b34d",
+      "page": 17,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "d5d660aff91a35205df085f11d39bbcd584acaba495285eee5f1d2f19e71ba4f",
+      "page": 18,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "ab2f74df654a16830189941b7027d4b30facdc276a147e07a88f7200ede1d4e3",
+      "page": 19,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "d14252b6e02f3516ae64fa50c86c1c9254b1b87eae8d23416eb376947f110dd5",
+      "page": 20,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "740b737b4616b62ea1e9bede6b9ee34d8d6e63c2536f3c1e3d112d2372945c60",
+      "page": 21,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "5e6cf006898d57eff5f43c0c4335116968c15e082cc16898e26bfbdecd49e8ce",
+      "page": 22,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "65b399f34ae1c12bb45dae1de0a23e26b77a88630c0121f70386c2ab29505fa5",
+      "page": 23,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "3946e7e3631bb7f6a512bab6f3b3631f6bd251b072ea6a4a8ea0b7080101b5c3",
+      "page": 24,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "84ea6b2e5af67f6706bcff6162f09e0c3190ec08f4014a190493156f83ace250",
+      "page": 25,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "2b03ebcd7cb1e9b17c39b729f4d173ce228ee25faede2cc995b00affc2608961",
+      "page": 26,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "498f1f480d412d403cafecd02a571f4905c0c4f8a6fa381d6d54a69c05304574",
+      "page": 27,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "9ba2b6dc10d33974437708f7f35d5bc4dfcfc5fb3d68671267828810acf4d6c9",
+      "page": 28,
+      "status": "inspected_claims_unverified"
+    },
+    {
+      "extracted_text_sha256": "ef33cd0bf8b9bbfdde5a6d47d3cf21f4e7c2ef258a6a45619451a1f905dd6c5b",
+      "page": 29,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "b4dee1c16806235923892dc74bd2e0d4522399ca783e211986724ae8617aec7b",
+      "page": 30,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "3baba17c07d93d63c1db5f69735ddb78628952966439893ff2cb53ec604c1ec6",
+      "page": 31,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "a6d02b1219af98380a1d131534be6fa08bba29e8daace89565cafed505307385",
+      "page": 32,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "14dd8ed5c1fe5ea0323db9e0162cdb6b658ac21f28223436467f3ea74004f50b",
+      "page": 33,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "774fccb95de2022304a0331c3ed0ddb49fe0965a5deb4459acd064a545fae912",
+      "page": 34,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "1ebd4d5500532902a0a3bc4729ef2273ba6bae272cfc842cfa46182760cd82bb",
+      "page": 35,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "20fca801b793db505d4dd0e0dc49b63e11c5408ac8407ce6021a7621cc8fe86d",
+      "page": 36,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "12266b28757f2c8b157dde730646dec87dac415c3d9d6269a877828714e44e24",
+      "page": 37,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "5856aa3c7ba932d9a7d42d67894c3451dde14808aca011bdbf82604e8aee9527",
+      "page": 38,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "c1c4e9ec5ba908d2e5f0826a276c038e692b76c5ccf2eb5eca53484a91f7e347",
+      "page": 39,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "2b5ad3e12966173574b050fd8d784aa38d306994649e56786210a39f06ae40e8",
+      "page": 40,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "22669911539c754da14407b37b518c3235c754bcbd4acfca2d489accd7af0440",
+      "page": 41,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "5485fd120bfc98692941179fd7bbd9dc7606bfcf88eb098d271f136b735c74d7",
+      "page": 42,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "4a9ee5a78cc567021f7bc5ec45c0327e3d6d53babe7a8e7ea4648b83e41179ce",
+      "page": 43,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "1e62b9cf6113d2460452a9905d24f3f0a9ec7785f715f962cfa2a6b17240780b",
+      "page": 44,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "01e51247550df063e31450b3e6a9beacdc9888f63101886186c97fbaf7c6d82d",
+      "page": 45,
+      "status": "inspected_claims_unverified"
+    },
+    {
+      "extracted_text_sha256": "b6a08d2736df2c159f68a02b634e6fe5b3555b07689e4ca85d8051d09522b1dc",
+      "page": 46,
+      "status": "inspected_claims_unverified"
+    },
+    {
+      "extracted_text_sha256": "a37cfbdc159a9a9c24e454fbcf57ff4575b596e9b33ba7174053bbf00db76b96",
+      "page": 47,
+      "status": "inspected_claims_unverified"
+    },
+    {
+      "extracted_text_sha256": "e465bfb7dc3b68f655171e288c5e3cb00905e9a5132c70e19183c0c4506757af",
+      "page": 48,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "1e4f85cd7cd36c9f988aa4f9b7d08ad4f8299a6afa1a26e44fe4518b1b2c0555",
+      "page": 49,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "dc180fcbf99cbaab3e27737535ff796e8b044b273705daedb919872cb4c004a2",
+      "page": 50,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "a724994b21d2257ddc66f138eb16f2f37dd65c7278e83f6808ee54175480455b",
+      "page": 51,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "4d80f15bd939e7a52580d9b500821b6007618d64af67db7bd2fa60548fccdf5e",
+      "page": 52,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "65917db0fb3a3b4396cba555d4e838a36d17005efaad55e0b9490d088e302d84",
+      "page": 53,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "8be788795ca60b303a452885bc944c8012e22d0753dfb53052aaaf7ad71278e8",
+      "page": 54,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "7ba9c5d760dda2c880c71f127cd6ca56b1ed3433fc54772265f2a1db3cca996c",
+      "page": 55,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "1cd15dc4bfa5ae8b9587e8cb178558c7696a90af5a7e942016de6504c15dca13",
+      "page": 56,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "5360da7175c59a0807a2717751ab59678bd03fc582abed40f687831c2a3f2c4f",
+      "page": 57,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "d1001e964150f5bbd655fbf370e2dedb59fa313a08c5337ff57dad3b5b50e9bb",
+      "page": 58,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "6cf2ce77ec38e8e8044e04d448f67c2f80b701a9334abcb077a4fdb1a2b943a6",
+      "page": 59,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "a1f68d721f69e31e37ebd784edcff0681821691f1c94bf64e3d6bb1e4c0cd977",
+      "page": 60,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "a9baf19d2756cfb23308d0781059e4af179aedbe4298677faebc995da9cff220",
+      "page": 61,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "6851e375a6d00d6bcea2c8a47fd4b6b452303e903ba26e1ad3a5618997323a21",
+      "page": 62,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "0933f1c178d31de66fab8021452b105fd2eba7afd6720224e1af3b591d0c49e4",
+      "page": 63,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "a6c4ac87d78c0cf7286f5605e83bc82a6641a4591759d93512cf1c446b79c7e3",
+      "page": 64,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "a6fa538b5e4adb12e5590a4cd2f41570f2aac2bf15b61005378c88a7d23573fd",
+      "page": 65,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "c5d57e94b33145f195d022cf6342ca1377498f10e5a76f3a8a4f2ab5c711f6e9",
+      "page": 66,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "b1cac047b9d7d73592d268648b998fefec0231aa8331e8c7a15f248cac482b6a",
+      "page": 67,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "4ff475f86f109674ac28d37ff3173c8e6036e48c8c8b8270bbd18acb12f13420",
+      "page": 68,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "e170e3a6f904d18ceb2f7acd3354249df116c0648868121dac6ac71acc1f0e45",
+      "page": 69,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "6d10b146ebb32300d34af181f91771729bf404ee99b723da2d84813164b4c618",
+      "page": 70,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "0d5d0ade2ea0dc63427fb8f76649ad36e37c9a1768dbb690d3ac73c4872ad171",
+      "page": 71,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "e54bb9bfb71195d587eed28ef8f40c1b1234b55ec8e8d35fac30d3d95417defe",
+      "page": 72,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "d7191bb3cf875844728e0b617d4388d65a1ac61bf8c9bec46a48befea2dc68ab",
+      "page": 73,
+      "status": "inspected_claims_unverified"
+    },
+    {
+      "extracted_text_sha256": "a7554f8c977c627b071fdc939428689aee787a6b4b7ad06fd6b575ededa4e65c",
+      "page": 74,
+      "status": "inspected_claims_unverified"
+    },
+    {
+      "extracted_text_sha256": "3fa6c1e924e118898d96cb45d1d731f0f5f1f1d770d3d552de1532c06b8f6716",
+      "page": 75,
+      "status": "inspected_claims_unverified"
+    },
+    {
+      "extracted_text_sha256": "e786a52da6d38d2fc787a3c0d1107b04ced783c3e0fbe84d57a210b4e07717ea",
+      "page": 76,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "ad087778811533a33f80474d2ba081355a94077b72084570b65f30e1477ae7e7",
+      "page": 77,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "502d93f77f39dc0dccaad4e33e095e7b93ea1c53e57fb3f03cf1736a95df3342",
+      "page": 78,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "40da12870c1ddc8daed4c233b866be5fae890cc8396b9b12ae5e87256648c8d4",
+      "page": 79,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "12e67fb5ada22505cd65ab6952a4062b48e32747f37f8605ab6cf20274b9bcf5",
+      "page": 80,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "4be151f3d34ca9fe837a1fc3a98bcd5d68ac68ba60664ce55d11fb7a48fad33c",
+      "page": 81,
+      "status": "inspected_claims_unverified"
+    },
+    {
+      "extracted_text_sha256": "e32865e749a5126076e97751d683c764e95da398f5e6db24f1b5e4fbbb909f1d",
+      "page": 82,
+      "status": "inspected_claims_unverified"
+    },
+    {
+      "extracted_text_sha256": "db11149d669afab56943f6cf63b96016dae9310f2f992ec9ba6f22c1d9f83bf1",
+      "page": 83,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "a47cbcd68e6a16658fd09f89a0a244ebcb4746fae554c6086fcf9d882fea95cc",
+      "page": 84,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "3026360e71fd955231e53625d531f4223e9bb4cc419f8926a7dfc533d4ae760c",
+      "page": 85,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "cd6f1b2bd6c36f667c6b34cc48afc7619f0a8496df1b0880fc8c0f4669bea486",
+      "page": 86,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "aaa2c8ad9667d234da304b279411e27fcb8c13831887ebee5b0b90e9b6e25fa2",
+      "page": 87,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "f424a191b67a47c2e1a4c69b92e05ef72ee770100db9d48a2d7111f06f4034f7",
+      "page": 88,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "d11787af54b7cb42fe4702dea2f7838f13847f8f87cade97ad489fa97352c260",
+      "page": 89,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "979864976e075d3a0cf8bd807c340d85ebf9d716ba90e273b0709aa481865e05",
+      "page": 90,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "6e0b23f204a695a6d639cf4fe67f6903fc3b852b9d55366e6c9e72222b5cc532",
+      "page": 91,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "791d5f3376fb15fcbacdede6be1d1ca3ce825ab5e16272b69f42f43c2ed2e118",
+      "page": 92,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "a7252e2a87bae281fd85b21a233a71801a4571ff75ac93cb38e6d3f4dbdbdc9f",
+      "page": 93,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "16759f371a06fea008ff68b22b2dd4cf78da4f6865900cf2a21bbe151427e26e",
+      "page": 94,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "d9aabb931f114f1d474f5904434b4fa3e35cdc9a7c009110f780ac3a5cc3c228",
+      "page": 95,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "eb1a3c3f0c11acaa8f32b1d69b16421a9bf8ab09d9921f3e5fa84e46a57688dc",
+      "page": 96,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "5d8bda170fa762e00f63a0f1a977165b9b6de570f5dab9ceb6ae2cfe8f21674f",
+      "page": 97,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "c58d2aa1d5f33fad095911c12d5aba0aa3404596650d6d04c28830e31a2cab88",
+      "page": 98,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "4fab8b12414bf04a2bf06f23f5c94cc1faf1e0f38e390c9801c95c637c964f36",
+      "page": 99,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "95d63e9c081ca686b0ad882f578cea4f919013e04ab08c5a791289e1a6dbae6a",
+      "page": 100,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "87b48a261f0cb2ca87433af6ca0d738a533b77fdc8b59c4ae47be531da2a320b",
+      "page": 101,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "444b0e2d39522be180a7245bb497f0bc4144f00b05622f3f41b3ed60fe376686",
+      "page": 102,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "cb129790cb634d129ee31ab40e860c70a5052e7667ea73190c3e23ceed0b2770",
+      "page": 103,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "a4c0b9af11839810f3cb1aaa4ae685abc6508853a8312b3bb3c4e87f1d26596b",
+      "page": 104,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "0aa40dcf90b3fc49d46659a87d3a2ec390bde9d8e5ea4747b76a2ce5081c9dda",
+      "page": 105,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "366e4a937e53fd1efe2703be5982efd35582fcc318f7f86bb5ac245f3db15e4f",
+      "page": 106,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "8d634f387fb02ed9d615ebf3d57e15c86fa8a0179f5548ea8dc82e21a892f8eb",
+      "page": 107,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "f9c027b4d6d96fc018fd83fbcb7fe04d946a9e67c8badd09fe13f44d9a80c911",
+      "page": 108,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "74c171e081a047b11777647ea06fa307cee1bceb8b1b6bcb409b15c7b1bb86f6",
+      "page": 109,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "bed41981cb85cbe8c15f3c83cae043c323adbae15b656243a22a59440f7006b5",
+      "page": 110,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "32ff08da9cb0e2c779351c3b5f40db66feac9d30d2bb0d5b28a866901ab67e8a",
+      "page": 111,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "ac1ffd39664875dd17b7bae7c33c6b38ca0fb5f9250ff6c7caf7f240716ac9ff",
+      "page": 112,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "f364ba9d885a7db4ac561ecf33eac6f29c99b4948672626ab057d5fd4f3849bc",
+      "page": 113,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "756f6011147e6d3a7076b66569c1b3a3aad20e22a29d2fee012b73ac0b88d9b5",
+      "page": 114,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "5b69daa72b2d711a40816594c1a14db3dbe6d301cf960424d4f5c659989aebcb",
+      "page": 115,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "ef4513cb944f21a20e7d0228fd2b2203ff4aad359b893097f0e87fa18ff26da4",
+      "page": 116,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "906a02d4b491947953653a2f66998717042af180b1d943dc5b8448e582e97cf7",
+      "page": 117,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "d38722621409a5c7b98b90fa203933ead3c73334fffe61a982b1227cff66173f",
+      "page": 118,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "5a27b117bc5f399f5b28fc075410ea9261efb554f876675aad7c530fbb27dafe",
+      "page": 119,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "58c16650b5d36d9276cffdb9889ac2588570628defc94ac1a328bb4112b5a6c3",
+      "page": 120,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "475d0b9b13cfe28e13c1143eb9c8bfbac1e7543dfbe420cdf6185329237a1642",
+      "page": 121,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "149654cbcdf72f534e2ab72e990312bf816ff186dd5d264a8232d441bbfc444d",
+      "page": 122,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "485e7853c7d590a59bdf8121e4f1942b9c0288e6654397580c4a220316dfd8ca",
+      "page": 123,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "a2c8f0377302a58046ffef6928809c6318a081ee364c649cbb2d7da78ffca841",
+      "page": 124,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "0cb2f44bc4a4c8f0da30cb39c55def8dd758e1415e502f31b0eb06546c714c76",
+      "page": 125,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "256b61b683e4e82f606a7b3c5371b1d9358ced80c59199f775270d307785370b",
+      "page": 126,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "385f18f76b6a75bc14efa6a94181c2d4804c5b2b12fb7765a64ad825c1aad6c4",
+      "page": 127,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "58b82283bd7045cfd4dcd9c9fab1adcd8220a2ed9ae8cc0feac645de3f1a5fe0",
+      "page": 128,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "23cc7ec27b87856876f5dd77b402b802d923e8ecd9775cd7c368389590b16975",
+      "page": 129,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "715db1107754e42c5e38be3a6694cef97782d53680089271192f4a412787b9be",
+      "page": 130,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "9f5553495384854d9cd8ba6a7538fa20ba6b0c3209ab556bf3c3cce222d110b4",
+      "page": 131,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "f8de6c20e2456d484c156c2fc747e166af0a9b0131386d50311292e4082201a1",
+      "page": 132,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "be361dd38cc62a95d6b01bacfbcf511bca89370a9e89bf4e302fc998f99a0228",
+      "page": 133,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "c580d67f3aa2c64380e3ee16b21f627d001b9dae5834865234e5226ee4a80b54",
+      "page": 134,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "8168e9ba20b131eac4f6dfa4773a51aebd337bb1c8d7582308dfa58b9638516d",
+      "page": 135,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "a02daa05a5efd6cc802871700db253623db31c23b1ed5511c18fc1ab6c881d76",
+      "page": 136,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "fe379e3992e4642cb8aa22aaf32f2d5c040b4c55d0c7e780d3fc626bbfb0b0be",
+      "page": 137,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "f24275cf1dfe9c6f1ccfff75bbced313006286e663374e479d41c903790b0836",
+      "page": 138,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "a6193b66d5f30738d9e89df6547ffb97f0930b30ae40651475371816d1f59f7e",
+      "page": 139,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "4a48d162c1914fcc251cae480432727ba78eb9b97d3d6b4531d2e28aac99077e",
+      "page": 140,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "a2663c28ffb590a84e223c86d36838fd573f258a2e300e8db13fff0218c350ea",
+      "page": 141,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "d58da9f356ebafa22ffb3525c5fdb5f34e4e9577dd0f403bb5e8f59c7cd4d77d",
+      "page": 142,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "477162c24dc4e26933b694f83af7195dab0847c2af7f9837fa7d4e2ffad69aa2",
+      "page": 143,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "35e8ee65b453d28cb490307ae5cc57ea850991e975fdc6891c619048956cc904",
+      "page": 144,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "c9168594c6e0530cf0d957fe19b85f1a728480d51fc2d2d49bb1ab022386b294",
+      "page": 145,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "ed41e28d71fc855e002c90a17efd2b76073a53b72bf1c80af18101274540cdfe",
+      "page": 146,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "e3bd21c012517c93e4418d3354ea6d56abc6841d9eed71eb388db3c65ab12e3d",
+      "page": 147,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "623ff4f4cdb0db64f473a8b3c871e236043d9fa2bbddbe18f3147f1ffe78270b",
+      "page": 148,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "6841f552412fd5970a3dfd4c88cb96905cb6812ce3d90952064868ff7c19d33e",
+      "page": 149,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "2c86b436236d9aa909ebec1e1e657de678dba778ac012668cea87a3e4e9547e7",
+      "page": 150,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "7af4a6b225e774968c40d0dad3aefe288e3ee0af8fc232bf715954884cec389b",
+      "page": 151,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "c5a936a5227cd2d6769305edcdb8292a0c36853d3e38d5a8601d6057a38088a0",
+      "page": 152,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "938d12b54e2ebde943bb0480fcb957e75d3c2313d7bc0ddffac110da2731c24f",
+      "page": 153,
+      "status": "pending_review"
+    },
+    {
+      "extracted_text_sha256": "6f71789cf1ca1077778364b9dda9ff92127986fadd0290ab1ee2711004286460",
+      "page": 154,
+      "status": "pending_review"
+    }
+  ],
+  "page_text_extractor": "pypdf 6.10.0",
+  "precedence_decisions": [
+    {
+      "decision": "Keep the user-directed 120-character setting; the manual suggests a 100-character target.",
+      "topic": "Python line length"
+    },
+    {
+      "decision": "Do not create or modify another repository; consider applicable shared guidance within this repository.",
+      "topic": "Shared engineering repository"
+    }
+  ],
+  "project_actions": [
+    {
+      "id": "AISC-01",
+      "note": "Secret-scan investigation is outside the currently authorized work scope.",
+      "status": "deferred_security_pause"
+    },
+    {
+      "id": "AISC-02",
+      "note": "Current agent instructions describe main-only development, connector attribution and actual workflow schedules; effective ruleset and complete governance remain to be checked in scope.",
+      "status": "partially_checked"
+    },
+    {
+      "id": "AISC-03",
+      "note": "Current ordinary offline, Ruff and mypy jobs install loose extras; qualify target-specific locked graphs and separate latest-resolution canaries before changing required gates.",
+      "status": "open_verified"
+    },
+    {
+      "id": "AISC-04",
+      "note": "Existing nine-attempt single-task result reached a ceiling and does not show a skill advantage; discriminating preregistered held-out trials remain.",
+      "status": "open"
+    },
+    {
+      "id": "AISC-05",
+      "note": "Grader isolation is a security-related prerequisite; no new model trials should run before its qualification.",
+      "status": "deferred_security_pause"
+    },
+    {
+      "id": "AISC-06",
+      "note": "Current artifact validator imports Draft202012Validator; complete schema behavior and catalog refactoring qualification remain open.",
+      "status": "partially_checked"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Track review of the complete supplied document and embedded materials. Extracted text and internal hashes are not independent verification; user instructions take precedence. Do not work on other user repositories. Security-related implementation is paused.",
+  "shared_requirements": [
+    {
+      "id": "S01",
+      "status": "pending_verification"
+    },
+    {
+      "id": "S02",
+      "status": "pending_verification"
+    },
+    {
+      "id": "S03",
+      "status": "pending_verification"
+    },
+    {
+      "id": "S04",
+      "status": "pending_verification"
+    },
+    {
+      "id": "S05",
+      "status": "pending_verification"
+    },
+    {
+      "id": "S06",
+      "status": "pending_verification"
+    },
+    {
+      "id": "S07",
+      "status": "pending_verification"
+    },
+    {
+      "id": "S08",
+      "status": "pending_verification"
+    },
+    {
+      "id": "S09",
+      "status": "pending_verification"
+    },
+    {
+      "id": "S10",
+      "status": "pending_verification"
+    },
+    {
+      "id": "S11",
+      "status": "pending_verification"
+    },
+    {
+      "id": "S12",
+      "status": "pending_verification"
+    },
+    {
+      "id": "S13",
+      "status": "pending_verification"
+    },
+    {
+      "id": "S14",
+      "status": "pending_verification"
+    },
+    {
+      "id": "S15",
+      "status": "pending_verification"
+    }
+  ]
+}

@@ -9,8 +9,8 @@ tag will be created only if the owner later requests one.
 
 On 3 November 2026 the [improvement ledger](../data/improvement_ledger.json)
 recorded 673 skills: research was complete for one, in progress for 317 and
-pending for 355; revision was complete for five, in progress for 50 and
-pending for 618; evaluation was in progress for 12 and pending for 661. On
+pending for 355; revision was complete for five, in progress for 52 and
+pending for 616; evaluation was in progress for 12 and pending for 661. On
 2 November, 188 skills had resource inventories, containing 130 reviewed
 and 1,317 pending resource records. These are tracking states, not a percentage
 of release readiness. For current counts, run `python tools/manage_improvement_ledger.py
@@ -20,6 +20,17 @@ The scientific category now has 148 skill-level resource inventories, with
 are scoped to each skill and may overlap between nested packages. Transient
 `.git` and `__pycache__` directories follow the catalog hash boundary and are
 not source resources. Inventorying a file does not review or evaluate it.
+
+The supplied 27 October implementation manual has 154 pages and seven
+embedded files. Its [review ledger](../artifacts/research/2026-11-03/implementation-manual-review/ledger.json)
+tracks extraction, partial inspection and unresolved actions; most of the
+manual remains to be reviewed. Its internal hashes establish byte consistency,
+not the correctness of its claims. Current workflow files confirm that ordinary
+lint and test environments still resolve loose dependencies, so qualifying
+platform-specific locks and a separate latest-dependency canary remains open.
+The owner's 120-character Python limit and prohibition on working on other
+repositories take precedence over conflicting recommendations in the manual.
+Security-related actions remain paused.
 
 To add pending resource records for another category, first validate the ledger
 and mirrors, then run `python tools/manage_improvement_ledger.py
