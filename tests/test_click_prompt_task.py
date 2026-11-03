@@ -142,3 +142,41 @@ def test_terminal_evidence_binds_source_inputs_traces_and_outcomes(backend: str)
             assert observation["passed"] == (observation["lines"] == expected)
             expected_pass = name == "entire-input-prompt" or (name == "upstream" and backend == "gnu")
             assert observation["passed"] == expected_pass
+
+
+@pytest.mark.parametrize("platform", ["windows", "linux"])
+def test_routing_evidence_binds_controls_output_and_expected_failures(platform: str) -> None:
+    root = Path(__file__).resolve().parents[1]
+    task = CONTROL.parent.parent
+    evidence = root / "artifacts/research/2026-11-03/click-routing-calibration-v1" / platform
+    result = json.loads((evidence / "result.json").read_text(encoding="utf-8"))
+    outputs = json.loads((evidence / "outputs.json").read_text(encoding="utf-8"))
+    assert result["source_commit"] == calibrate.COMMIT
+    assert result["source_file_count"] == 142
+    assert result["source_snapshot_sha256"] == "5b73c75d771e54933a4871bf73109f83161b8f6bc6689577a2850d93b9008c84"
+    assert result["agent_performance_tested"] is False
+    assert len(result["runtime"]["executable_sha256"]) == 64
+    for name, expected in result["control_inputs_sha256"].items():
+        assert hashlib.sha256((task / name).read_bytes()).hexdigest() == expected
+    simulated_cases = json.loads((task / "cases.json").read_text(encoding="utf-8"))["cases"]
+    routing_cases = [
+        "test_confirm_to_stderr",
+        "test_confirm_to_stdout",
+        "test_prompt_to_stderr",
+        "test_prompt_to_stdout",
+    ]
+    failures = {"test_confirm_to_stderr", "test_prompt_to_stderr"}
+    assert set(result["variants"]) == {"upstream", "no-workaround", "entire-input-prompt", "err-ignored"}
+    assert len(outputs) == 16
+    for name, variant in result["variants"].items():
+        assert set(variant["suites"]) == {"simulated", "routing"}
+        for suite, observation in variant["suites"].items():
+            stdout = base64.b64decode(outputs[f"{name}-{suite}.stdout"], validate=True)
+            stderr = base64.b64decode(outputs[f"{name}-{suite}.stderr"], validate=True)
+            assert hashlib.sha256(stdout).hexdigest() == observation["stdout_sha256"]
+            assert hashlib.sha256(stderr).hexdigest() == observation["stderr_sha256"]
+            cases = simulated_cases if suite == "simulated" else routing_cases
+            expected = failures if suite == "routing" and name in {"entire-input-prompt", "err-ignored"} else set()
+            assert observation["case_count"] == len(cases)
+            assert observation["exit_code"] == int(bool(expected))
+            assert calibrate.verify_results(stderr, cases, expected, observation["exit_code"]) == sorted(expected)

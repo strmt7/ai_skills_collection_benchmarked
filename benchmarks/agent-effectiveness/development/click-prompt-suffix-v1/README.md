@@ -40,7 +40,18 @@ these terminal cases on both; it is a positive control for this specific screen
 behavior, not a complete or recommended fix for Click's output routing and
 color handling. These observations do not establish behavior across all
 terminals or a Windows console. Historical 16-case records bind the task files
-as they existed at their recorded hashes, including the earlier README.
+as they existed at their recorded hashes, including the earlier task brief and
+README.
+
+The separate [output-routing calibration](../../../../artifacts/research/2026-11-03/click-routing-calibration-v1/)
+checks that both prompt APIs honor `err` for the question text and still return
+their answers. On the tested Windows and Linux runtimes, the upstream patch
+passes those four cases. Both an `err`-ignoring variant and the terminal-only
+entire-input-prompt variant fail the stderr cases, despite passing the original
+16 simulated cases. The no-workaround variant passes routing and is rejected by
+the separate terminal control. The routing cases check the question text,
+not the stream used for every suffix byte. Neither control alone proves a
+complete repair.
 
 Obtain and extract the public archive identified in `source.json` into a new
 directory. Run the following from the collection root with CPython 3.11 or later
@@ -73,3 +84,12 @@ digests. CI requires its positive and negative controls to separate; it reports
 the upstream result rather than assuming it passes every backend. A terminal
 control is still required inside the independently qualified grading boundary
 before this task can support a counted trial.
+
+The output-routing control also runs on Windows. With the same source and a
+new output path, invoke:
+
+```sh
+python benchmarks/agent-effectiveness/development/click-prompt-suffix-v1/controls/calibrate_routing.py \
+  --source /path/to/extracted-click-source \
+  --output /path/to/new-routing-output
+```
