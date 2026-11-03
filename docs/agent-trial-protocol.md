@@ -77,12 +77,6 @@ controls. Its issue and controls are public development material. It has not
 been integrated into the confined grader or used in a model trial, and its
 calibration does not establish difficulty or a skill advantage.
 
-The [Click prompt-suffix candidate](../benchmarks/agent-effectiveness/development/click-prompt-suffix-v1/README.md)
-is another public, development-exposed issue with a complete pinned source
-tree and trusted positive and negative controls. It is not an untouched holdout,
-has not been integrated into the confined grader and has not been used in an
-agent trial. Its calibration is not evidence of agent performance.
-
 ## Completed first matched block
 
 All nine planned protocol-v2 attempts completed. Default, third-party Karpathy
