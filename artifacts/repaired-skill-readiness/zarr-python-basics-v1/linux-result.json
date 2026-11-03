@@ -1,0 +1,42 @@
+{
+  "agent_performance_tested": false,
+  "control_sha256": "d24fc76368a23f2e64e7fc9802a6222e31ff9a709f7beb05d5c65cb446baa36e",
+  "numpy_version": "2.5.4",
+  "original_sha256": "e5dfd7907be47cf782af6e62988829968b36a70521881253c2f4ff7574858088",
+  "outcomes": [
+    {
+      "case": "upstream_resize",
+      "exception": "TypeError",
+      "outcome": "expected_failure"
+    },
+    {
+      "case": "upstream_codecs",
+      "exception": "TypeError",
+      "outcome": "expected_failure"
+    },
+    {
+      "case": "upstream_nbytes_stored",
+      "exception": "TypeError",
+      "outcome": "expected_failure"
+    },
+    {
+      "case": "upstream_ThreadSynchronizer",
+      "exception": "ImportError",
+      "outcome": "expected_failure"
+    },
+    {
+      "case": "upstream_ProcessSynchronizer",
+      "exception": "ImportError",
+      "outcome": "expected_failure"
+    },
+    {
+      "case": "overlay_example",
+      "outcome": "pass"
+    }
+  ],
+  "overlay_sha256": "6d47a7d77f5527cc7162ccbb2c8a4bb9fb84dc8797c25e56925beb29399524e3",
+  "platform": "Linux",
+  "python_version": "3.12.3",
+  "scope": "Selected in-memory array API examples only; no agent or concurrency trial",
+  "zarr_version": "3.4.2"
+}

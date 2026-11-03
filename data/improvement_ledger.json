@@ -15739,6 +15739,11 @@
             "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
             "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
             "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          },
+          {
+            "path": "docs/research-zarr-python.md",
+            "scope": "Selected version-specific API research; both complete source resources remain pending review.",
+            "sha256": "245670ed90a6e45ef598a34f53a103df660eb95e8cf9e0b3fe7912e874411532"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -15755,8 +15760,14 @@
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/repaired-skill-readiness/zarr-python-basics-v1/qualification.json",
+            "scope": "Selected source-bound in-memory Zarr 3.4.2 controls on Windows and Linux; no agent evaluation.",
+            "sha256": "8ded07d09ad3e7cc1dae1687f2a68adbb814663cc01069e0c57acbf1aed7425a"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "K-Dense-AI/scientific-agent-skills",
       "source_signature": {

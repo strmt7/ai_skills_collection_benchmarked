@@ -243,3 +243,9 @@
 /included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/flowio-fcs-basics/** text eol=lf
 /included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/flowio-fcs-basics/provenance/** -text !eol
 /artifacts/repaired-skill-readiness/flowio-fcs-basics-v1/** text eol=lf
+
+# Zarr overlay and exact locked source provenance.
+/included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/zarr-python-basics/** text eol=lf
+/included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/zarr-python-basics/provenance/** -text !eol
+/included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/zarr-python-basics/LICENSE -text !eol
+/artifacts/repaired-skill-readiness/zarr-python-basics-v1/** text eol=lf

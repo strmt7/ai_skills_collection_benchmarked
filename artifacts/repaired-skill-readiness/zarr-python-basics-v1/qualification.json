@@ -1,0 +1,54 @@
+{
+  "agent_performance_tested": false,
+  "files_sha256": {
+    "control.py": "d24fc76368a23f2e64e7fc9802a6222e31ff9a709f7beb05d5c65cb446baa36e",
+    "linux-result.json": "62a0acae0ffc219401961c3c1807ebc4d0655554d9cc57be7426aac7cb19f60d",
+    "requirements-linux.txt": "3c0480ac91da395c0d0a2e5c1459581e1c203aa7670b8dabd392af7e098690cf",
+    "requirements-windows.txt": "cf9ff123de3234ad529fad9e1bf17902d7ea7101fa0d8f15c6c91cc694f90192",
+    "requirements.in": "e405f1c38ab2e1746a6c0658bccac86555ddbd02662ea76b90ce53992d4a1bd2",
+    "windows-result.json": "f7f73be4086d299da702031d10cb00ff530ba6f8bf7e2faba90d01e25cfd2a39"
+  },
+  "full_skill_reviewed": false,
+  "limitations": [
+    "The examples do not qualify persistence, concurrent writes, sharding, cloud stores or other codecs.",
+    "Only selected source examples were tested; the complete skill and reference remain unreviewed.",
+    "Component controls do not measure a coding agent or establish performance improvement."
+  ],
+  "original_sha256": "e5dfd7907be47cf782af6e62988829968b36a70521881253c2f4ff7574858088",
+  "overlay_sha256": "6d47a7d77f5527cc7162ccbb2c8a4bb9fb84dc8797c25e56925beb29399524e3",
+  "pypi_metadata_sha256": "98e40bed22992d806ec54d06cc4ccdbfb86a7717423450c969ce5a7736fad9c9",
+  "schema_version": 1,
+  "scope": "Selected Zarr 3.4.2 in-memory array API examples; no concurrency or agent trial.",
+  "sources": {
+    "api-array": {
+      "native_result_sha256": "427232ffdc91b168f4114b8e42a6f17d012d150dca59093fc91f76b367a4aaf3",
+      "native_url": "https://zarr.readthedocs.io/en/stable/api/zarr/array/",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200
+    },
+    "arrays": {
+      "native_result_sha256": "6191b5c1f48f1e0c9f5939830712ac03fe9b8591e12f2914663b649cd3f247be",
+      "native_url": "https://zarr.readthedocs.io/en/stable/user-guide/arrays/",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200
+    },
+    "migration": {
+      "native_result_sha256": "2680d97043debc4214cc14fe4d6638c3a5e1ad5672091ad579a6e919177626f0",
+      "native_url": "https://zarr.readthedocs.io/en/stable/user-guide/v3_migration/",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200
+    },
+    "performance": {
+      "native_result_sha256": "516ebcd289249b224a52151e6d4d3dac835dfad7f2b843058195c0e65bcf3c21",
+      "native_url": "https://zarr.readthedocs.io/en/stable/user-guide/performance/",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200
+    }
+  },
+  "upstream_skill_release": {
+    "api_reference_git_blob": "3053f36b9ba641af88c76c7262f3245a5b0a3810",
+    "commit": "526ebce143bc326f44471554e33d66a19c840360",
+    "entrypoint_git_blob": "780de6f9a4284409d68d91b548dace2815c8dd1c",
+    "tag": "v2.72.0"
+  }
+}

@@ -57,6 +57,9 @@ Some reviewed instructions have known limitations:
   covers selected unsorted inputs. Vaex 4.19 has Python and Dask version
   constraints; its [statistics overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/vaex-delayed-statistics/SKILL.md)
   corrects selected delayed-execution guidance. [See the tested scope](research-dataframe-compatibility.md).
+- The locked Zarr Python skill has version-specific API errors. The
+  [Zarr basics overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/zarr-python-basics/SKILL.md)
+  covers selected array operations; [see the review](research-zarr-python.md).
 - The locked FlowIO examples misuse its writer arguments and describe gain
   scaling incorrectly for the tested case. The [FCS basics overlay](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/flowio-fcs-basics/SKILL.md)
   covers selected read/write behavior. [See the component review](research-flowio-fcs.md).
