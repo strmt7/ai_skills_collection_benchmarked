@@ -860,6 +860,21 @@
             "path": "tests/test_summarize_best_of_k.py",
             "scope": "Selected any-of-k and all-of-k subset metrics, missing-outcome bounds and independent controls; not full skill review or agent-efficacy evidence.",
             "sha256": "79c9d03f26cb46280958110c59f54ad055576f74c0a54122ddbb598237fde1be"
+          },
+          {
+            "path": "docs/research-eval-harness-sampling.md",
+            "scope": "Scoped sampling review; not a full skill review or agent trial.",
+            "sha256": "b0834a9fe57029680608590c1e036531a8e083caec12d15af75b977c6a627754"
+          },
+          {
+            "path": "artifacts/research/2026-11-03/eval-harness-sampling-v1/check_metrics.py",
+            "scope": "Independent finite-subset control; synthetic observations only.",
+            "sha256": "1a6ddc366f1b69e92333a37e1362ecc633895751c885ff5601d0444e1dc0dad2"
+          },
+          {
+            "path": "artifacts/research/2026-11-03/eval-harness-sampling-v1/result.json",
+            "scope": "Source-bound synthetic control result; no agent-performance claim.",
+            "sha256": "104223ca324f4b9c5d41b0ded47144ec5a00e13d7333c96196ce9cf30dfb092b"
           }
         ],
         "open_work": [
@@ -886,6 +901,11 @@
           {
             "path": "included/improved/skills/eval-harness/SKILL.md",
             "sha256": "c598eed23babdb8fcc2eea2498c5841516bd641e7d0e373aeadb504201daf1d9"
+          },
+          {
+            "path": "included/improved/skills/eval-harness-current/SKILL.md",
+            "scope": "Versioned experimental overlay; no agent-effectiveness evaluation.",
+            "sha256": "03bd4666ace171cc6852c531b474de6cd13131fb89f3971c0a8fb56c4632ab8a"
           }
         ],
         "status": "in_progress"

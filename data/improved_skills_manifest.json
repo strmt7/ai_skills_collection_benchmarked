@@ -6,12 +6,12 @@
       "license": "MIT",
       "license_file_sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
       "license_source_sha": "b832b6f642312312367c07688dc7426db40a82ed",
-      "original_path": "included/improved/skills/eval-harness/provenance/original-SKILL.md",
-      "overlay_path": "included/improved/skills/eval-harness",
-      "overlay_sha256": "c598eed23babdb8fcc2eea2498c5841516bd641e7d0e373aeadb504201daf1d9",
+      "original_path": "included/improved/skills/eval-harness-current/provenance/original-SKILL.md",
+      "overlay_path": "included/improved/skills/eval-harness-current",
+      "overlay_sha256": "03bd4666ace171cc6852c531b474de6cd13131fb89f3971c0a8fb56c4632ab8a",
       "package_file_sha256": {
         "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
-        "SKILL.md": "c598eed23babdb8fcc2eea2498c5841516bd641e7d0e373aeadb504201daf1d9",
+        "SKILL.md": "03bd4666ace171cc6852c531b474de6cd13131fb89f3971c0a8fb56c4632ab8a",
         "provenance/original-SKILL.md": "0bc29828b0b20c57f1d0904fab2f046155aae9e6d9cf1d7587dd8776a8747f3d"
       },
       "performance_status": "unbenchmarked",

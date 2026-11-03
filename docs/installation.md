@@ -31,6 +31,10 @@ policy. Copying a `SKILL.md` file alone can break those links.
 
 Some reviewed instructions have known limitations:
 
+- The pinned evaluation-harness skill treats pass@k as a reliability trend.
+  The experimental [evaluation overlay](../included/improved/skills/eval-harness-current/SKILL.md)
+  distinguishes task weighting, any-of-k and all-of-k; [see the sampling review](research-eval-harness-sampling.md).
+  It has not been evaluated in an agent trial.
 - The pinned Claude instruction generator requires a retired external model and
   imposes a fixed line limit. The experimental [current-agent alternative](../included/improved/skills/claude-md-generator-current/SKILL.md)
   uses project evidence and documents Claude's import behavior. [See the review](research-claude-md-generator.md).
