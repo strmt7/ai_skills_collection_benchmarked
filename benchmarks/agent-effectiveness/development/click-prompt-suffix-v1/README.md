@@ -43,7 +43,7 @@ terminals or a Windows console. Historical 16-case records bind the task files
 as they existed at their recorded hashes, including the earlier task brief and
 README.
 
-The separate [output-routing calibration](../../../../artifacts/research/2026-11-03/click-routing-calibration-v1/)
+The separate [output-routing calibration](../../../../artifacts/research/2026-11-03/click-routing-calibration-v2/)
 checks that both prompt APIs honor `err` for the question text and still return
 their answers. On the tested Windows and Linux runtimes, the upstream patch
 passes those four cases. Both an `err`-ignoring variant and the terminal-only

@@ -11,7 +11,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
-from pathlib import Path
+from pathlib import Path, PurePath
 
 CONTROLS = Path(__file__).resolve().parent
 SPEC = importlib.util.spec_from_file_location("terminal_calibration", CONTROLS / "calibrate_terminal.py")
@@ -38,6 +38,11 @@ EXPECTED_FAILURES = {
 
 def digest(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
+
+
+def input_name(path: PurePath, root: PurePath) -> str:
+    """Serialize task-relative source paths consistently on Windows and POSIX."""
+    return path.relative_to(root).as_posix()
 
 
 def apply_variant(root: Path, name: str, patch: bytes) -> None:
@@ -68,7 +73,7 @@ def main(argv: list[str] | None = None) -> int:
         raise ValueError("Output must be outside the source tree")
     before = calibrate.verify_source(source)
     inputs = {
-        str(path.relative_to(CONTROLS.parent)): digest(path.read_bytes())
+        input_name(path, CONTROLS.parent): digest(path.read_bytes())
         for path in (
             Path(__file__).resolve(),
             CONTROLS / "test_routing_contract.py",

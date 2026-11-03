@@ -6,7 +6,7 @@ import base64
 import hashlib
 import importlib.util
 import json
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
 
 import pytest
 
@@ -144,11 +144,24 @@ def test_terminal_evidence_binds_source_inputs_traces_and_outcomes(backend: str)
             assert observation["passed"] == expected_pass
 
 
+def test_routing_input_names_are_portable_across_path_flavors() -> None:
+    path = CONTROL.with_name("calibrate_routing.py")
+    routing_spec = importlib.util.spec_from_file_location("click_routing_calibrate", path)
+    assert routing_spec and routing_spec.loader
+    routing = importlib.util.module_from_spec(routing_spec)
+    routing_spec.loader.exec_module(routing)
+    assert (
+        routing.input_name(PureWindowsPath("C:/repo/controls/test.py"), PureWindowsPath("C:/repo"))
+        == "controls/test.py"
+    )
+    assert routing.input_name(PurePosixPath("/repo/controls/test.py"), PurePosixPath("/repo")) == "controls/test.py"
+
+
 @pytest.mark.parametrize("platform", ["windows", "linux"])
 def test_routing_evidence_binds_controls_output_and_expected_failures(platform: str) -> None:
     root = Path(__file__).resolve().parents[1]
     task = CONTROL.parent.parent
-    evidence = root / "artifacts/research/2026-11-03/click-routing-calibration-v1" / platform
+    evidence = root / "artifacts/research/2026-11-03/click-routing-calibration-v2" / platform
     result = json.loads((evidence / "result.json").read_text(encoding="utf-8"))
     outputs = json.loads((evidence / "outputs.json").read_text(encoding="utf-8"))
     assert result["source_commit"] == calibrate.COMMIT
@@ -157,6 +170,7 @@ def test_routing_evidence_binds_controls_output_and_expected_failures(platform: 
     assert result["agent_performance_tested"] is False
     assert len(result["runtime"]["executable_sha256"]) == 64
     for name, expected in result["control_inputs_sha256"].items():
+        assert "\\" not in name
         assert hashlib.sha256((task / name).read_bytes()).hexdigest() == expected
     simulated_cases = json.loads((task / "cases.json").read_text(encoding="utf-8"))["cases"]
     routing_cases = [

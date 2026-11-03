@@ -1,5 +1,11 @@
 # Click prompt output-routing calibration
 
+This is the historical first record. Its Windows input names use backslashes,
+which prevented the evidence check from locating those files on Linux. The
+[corrected calibration](../click-routing-calibration-v2/) uses portable
+relative paths. The first observations and their original hashes are retained;
+the issue was in evidence-path serialization, not the observed routing cases.
+
 These records qualify development controls against trusted source variants;
 they are not agent trials. Both runs verified the same 142-file Click source
 tree. Four additional cases check stdout or stderr routing of the question
