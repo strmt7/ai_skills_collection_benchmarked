@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 from pathlib import Path
 from typing import Any
 
@@ -13,14 +14,14 @@ from summarize_multi_task_trials import declared_task_signatures
 
 
 def audit(path: Path) -> dict[str, Any]:
-    """Compare pinned protocols; declarations and hashes cannot prove independence."""
+    """Compare pinned protocols and candidate records; neither proves independence."""
     raw = path.read_bytes()
     manifest = strict_json(raw.decode("utf-8"))
     if (
         not isinstance(manifest, dict)
         or set(manifest) != {"schema_version", "tasks"}
         or type(manifest["schema_version"]) is not int
-        or manifest["schema_version"] != 1
+        or manifest["schema_version"] not in {1, 2}
         or not isinstance(manifest["tasks"], list)
         or not manifest["tasks"]
     ):
@@ -28,10 +29,15 @@ def audit(path: Path) -> dict[str, Any]:
     tasks = []
     identities: set[tuple[str, str]] = set()
     for entry in manifest["tasks"]:
-        if not isinstance(entry, dict) or set(entry) != {"id", "partition", "protocol", "protocol_sha256", "groups"}:
+        if not isinstance(entry, dict):
             raise ValueError("Invalid partition task")
-        if any(not isinstance(entry[key], str) or not entry[key].strip() for key in ("id", "partition", "protocol")):
-            raise ValueError("Task ID, partition and protocol must be nonempty strings")
+        kind = entry.get("kind") if manifest["schema_version"] == 2 else "protocol"
+        shared = {"id", "partition", "groups"} | ({"kind"} if manifest["schema_version"] == 2 else set())
+        fields = {"protocol", "protocol_sha256"} if kind == "protocol" else {"source_record", "source_record_sha256"}
+        if kind not in {"protocol", "candidate"} or set(entry) != shared | fields:
+            raise ValueError("Invalid partition task")
+        if any(not isinstance(entry[key], str) or not entry[key].strip() for key in ("id", "partition")):
+            raise ValueError("Task ID and partition must be nonempty strings")
         if entry["partition"] not in {"development", "holdout"}:
             raise ValueError("Partition must be development or holdout")
         groups = entry["groups"]
@@ -46,24 +52,54 @@ def audit(path: Path) -> dict[str, Any]:
         if identity in identities:
             raise ValueError("Duplicate task ID within partition")
         identities.add(identity)
-        protocol_raw = (path.parent / entry["protocol"]).read_bytes()
-        digest = hashlib.sha256(protocol_raw).hexdigest()
-        if entry["protocol_sha256"] != digest:
-            raise ValueError("Protocol digest mismatch")
-        protocol = strict_json(protocol_raw.decode("utf-8"))
-        if not isinstance(protocol, dict) or not isinstance(protocol.get("task"), dict):
-            raise ValueError("Invalid task protocol")
-        if protocol["task"].get("id") != entry["id"] or protocol["task"].get("partition") != entry["partition"]:
-            raise ValueError("Protocol task identity or partition differs from manifest")
-        task_signature, workspace_signature = declared_task_signatures(protocol)
+        record_key = "protocol" if kind == "protocol" else "source_record"
+        record_path = entry[record_key]
+        if not isinstance(record_path, str) or not record_path.strip():
+            raise ValueError("Task record path must be a nonempty string")
+        record_raw = (path.parent / record_path).read_bytes()
+        digest = hashlib.sha256(record_raw).hexdigest()
+        if entry[f"{record_key}_sha256"] != digest:
+            raise ValueError(f"{record_key.replace('_', ' ').capitalize()} digest mismatch")
+        record = strict_json(record_raw.decode("utf-8"))
+        if not isinstance(record, dict):
+            raise ValueError("Invalid task record")
+        task_signature: str | None = None
+        workspace_signature: str | None = None
+        if kind == "protocol":
+            if not isinstance(record.get("task"), dict):
+                raise ValueError("Invalid task protocol")
+            if record["task"].get("id") != entry["id"] or record["task"].get("partition") != entry["partition"]:
+                raise ValueError("Protocol task identity or partition differs from manifest")
+            task_signature, workspace_signature = declared_task_signatures(record)
+            inputs = set(record["input_sha256"].values())
+        else:
+            if entry["partition"] != "development":
+                raise ValueError("Unfrozen candidates must be development tasks")
+            repo = record.get("repository")
+            commit = record.get("source_commit", record.get("commit"))
+            source = record.get("source_file", record.get("path"))
+            source_hash = record.get("source_sha256", record.get("sha256"))
+            if (
+                not isinstance(repo, str)
+                or not re.fullmatch(r"[^/\s]+/[^/\s]+", repo)
+                or not isinstance(commit, str)
+                or not re.fullmatch(r"[0-9a-f]{40}", commit)
+                or not isinstance(source, str)
+                or not source.strip()
+                or not isinstance(source_hash, str)
+                or not re.fullmatch(r"[0-9a-f]{64}", source_hash)
+            ):
+                raise ValueError("Candidate source record lacks pinned source identity")
+            inputs = {source_hash}
         tasks.append(
             {
                 "id": entry["id"],
                 "partition": entry["partition"],
+                "kind": kind,
                 "groups": set(groups),
                 "task_signature": task_signature,
                 "workspace_signature": workspace_signature,
-                "input_digests": set(protocol["input_sha256"].values()),
+                "input_digests": inputs,
             }
         )
     if path.read_bytes() != raw:
@@ -78,9 +114,9 @@ def audit(path: Path) -> dict[str, Any]:
                 reasons.append("same_task_id")
             if left["groups"] & right["groups"]:
                 reasons.append("shared_declared_group")
-            if left["task_signature"] == right["task_signature"]:
+            if left["task_signature"] is not None and left["task_signature"] == right["task_signature"]:
                 reasons.append("same_declared_task")
-            if left["workspace_signature"] == right["workspace_signature"]:
+            if left["workspace_signature"] is not None and left["workspace_signature"] == right["workspace_signature"]:
                 reasons.append("same_declared_workspace")
             if left["input_digests"] <= right["input_digests"] or right["input_digests"] <= left["input_digests"]:
                 reasons.append("input_content_subset")
@@ -90,6 +126,7 @@ def audit(path: Path) -> dict[str, Any]:
     return {
         "manifest_sha256": hashlib.sha256(raw).hexdigest(),
         "development_tasks": len(development),
+        "development_candidates": sum(task["kind"] == "candidate" for task in development),
         "holdout_tasks": len(holdout),
         "status": status,
         "potential_overlaps": overlaps,

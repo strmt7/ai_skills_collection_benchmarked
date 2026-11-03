@@ -1,13 +1,47 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "tasks": [
     {
+      "kind": "protocol",
       "id": "artifact-validator-robustness",
       "partition": "development",
       "protocol": "protocol-v2.json",
       "protocol_sha256": "a1f6cbd086680ca19c3a6a124b7739537a7ad38550de8b59b83ec1f8781fcda9",
       "groups": [
         "strmt7/ai_skills_collection_benchmarked:artifact-validator-robustness"
+      ]
+    },
+    {
+      "kind": "candidate",
+      "id": "simpo-verifier-v1",
+      "partition": "development",
+      "source_record": "simpo-verifier-v1/source.json",
+      "source_record_sha256": "be0ea04f3c997d021d7629017b464d15a318933249079bbce94a35742c92bb07",
+      "groups": [
+        "benchflow-ai/skillsbench:tasks/simpo-code-reproduction"
+      ]
+    },
+    {
+      "kind": "candidate",
+      "id": "pytest-unittest-pdb-skip-v1",
+      "partition": "development",
+      "source_record": "pytest-unittest-pdb-skip-v1/source.json",
+      "source_record_sha256": "459d2a9ba3c0ac5eea2b3fd1db2b39308fd295a8dd5bd55d51b98be148343479",
+      "groups": [
+        "github:pytest-dev/pytest:issue/10060",
+        "github:pytest-dev/pytest:pull/10081",
+        "swe-bench:pytest-dev__pytest-10081"
+      ]
+    },
+    {
+      "kind": "candidate",
+      "id": "click-prompt-suffix-v1",
+      "partition": "development",
+      "source_record": "click-prompt-suffix-v1/source.json",
+      "source_record_sha256": "2f308132cb0bc73cc12a15b3b4ac7155795e111075598a5f49f1bf280d6b4f8e",
+      "groups": [
+        "github:pallets/click:issue/3019",
+        "github:pallets/click:pull/3021"
       ]
     }
   ]

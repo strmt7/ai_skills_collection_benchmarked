@@ -163,13 +163,19 @@ holdout protocols in a partition manifest:
 python tools/audit_trial_partitions.py --manifest benchmarks/agent-effectiveness/development/partition-manifest.json
 ```
 
-The checked-in manifest contains the one historically attempted development
-task and no holdout; its status is `incomplete`. Public development candidates
-that do not yet have frozen trial protocols are not in this manifest and must
-also be considered when selecting a holdout. Before future trials, include every
-relevant frozen protocol with its exact SHA-256 and reviewed source groups that
-identify shared issue, dataset or other task lineage. Compare all exposed
-development work, not merely successful attempts. Commit the manifest and
+The checked-in manifest contains one historically attempted development
+protocol, three public development candidates and no holdout; its status is
+`incomplete`. Candidates are separately counted and do not represent agent
+trials. Their pinned source records supply one declared source-file digest each;
+the audit checks the source-record bytes but does not independently retrieve
+the source file or inventory its full repository. A candidate cannot be entered
+as a holdout. Include other exposed work when identified: this manifest alone
+does not prove a complete exposure inventory.
+
+Before future trials, include every relevant frozen protocol with its exact
+SHA-256 and reviewed source groups that identify shared issue, dataset or other
+task lineage. Compare all exposed development work, not merely successful
+attempts. Commit the manifest and
 protocols before collecting trial outcomes, using access-controlled storage
 for material that must remain hidden. A public digest can record a commitment
 without publishing a private holdout; a digest alone does not prove when the

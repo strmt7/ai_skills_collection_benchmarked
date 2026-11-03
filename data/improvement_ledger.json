@@ -849,7 +849,7 @@
           {
             "path": "docs/agent-trial-protocol.md",
             "scope": "Selected any-of-k and all-of-k subset metrics, missing-outcome bounds and independent controls; not full skill review or agent-efficacy evidence.",
-            "sha256": "e8ea917685e3e03a1070b9b85d22c7ddad34f875df83f55a7d1fa16914765c74"
+            "sha256": "a348d0b5de9516c7c48cc285d1a5ff5fdfdf3c8f5bd46cf152b516068e07e4dd"
           },
           {
             "path": "tools/summarize_best_of_k.py",
