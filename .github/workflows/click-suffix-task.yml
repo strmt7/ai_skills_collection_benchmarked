@@ -1,0 +1,56 @@
+name: Click prompt suffix task controls
+
+on:
+  push:
+    paths:
+      - 'benchmarks/agent-effectiveness/development/click-prompt-suffix-v1/**'
+      - 'tests/test_click_prompt_task.py'
+      - '.github/workflows/click-suffix-task.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '35 8 * * 4'
+
+concurrency:
+  group: click-suffix-task-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  calibration:
+    name: Trusted source calibration (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.14.10'
+      - name: Obtain the pinned public source archive
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $archive = Join-Path $env:RUNNER_TEMP 'click-source.tar.gz'
+          $source = Join-Path $env:RUNNER_TEMP 'click-source'
+          Invoke-WebRequest -Uri 'https://codeload.github.com/pallets/click/tar.gz/5f86603a84e12bdec1584c15c9f982740e613c45' -OutFile $archive
+          New-Item -ItemType Directory -Path $source | Out-Null
+          tar -xzf $archive -C $source --strip-components=1
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Calibrate the exposed development controls
+        shell: pwsh
+        run: |
+          python benchmarks/agent-effectiveness/development/click-prompt-suffix-v1/controls/calibrate.py --source (Join-Path $env:RUNNER_TEMP 'click-source') --output (Join-Path $env:RUNNER_TEMP 'click-suffix-calibration')
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Retain control observations
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: click-suffix-task-${{ matrix.os }}
+          path: ${{ runner.temp }}/click-suffix-calibration/
+          if-no-files-found: warn
+          retention-days: 14

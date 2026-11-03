@@ -1,0 +1,573 @@
+{
+  "files": {
+    ".devcontainer/devcontainer.json": {
+      "git_blob": "677d72affdcd3d26d915011aa988e7fc9497dbb7",
+      "mode": "100644"
+    },
+    ".devcontainer/on-create-command.sh": {
+      "git_blob": "eaebea61856f7f6bde03a0deb1c7098fb085ca29",
+      "mode": "100755"
+    },
+    ".editorconfig": {
+      "git_blob": "2ff985a67af35fdfd1076354b771c425867cdab4",
+      "mode": "100644"
+    },
+    ".github/ISSUE_TEMPLATE/bug-report.md": {
+      "git_blob": "7a42e5f37733ccf1ca52d7807241c634c9676ec3",
+      "mode": "100644"
+    },
+    ".github/ISSUE_TEMPLATE/config.yml": {
+      "git_blob": "9d26be19bac721cb977d68806e9832fef8c0f604",
+      "mode": "100644"
+    },
+    ".github/ISSUE_TEMPLATE/feature-request.md": {
+      "git_blob": "3932f5e1d02bd33fb005cd6ab040807ef645f4cf",
+      "mode": "100644"
+    },
+    ".github/pull_request_template.md": {
+      "git_blob": "eb124d251a733352fc4e867844072e876d1a8508",
+      "mode": "100644"
+    },
+    ".github/workflows/lock.yaml": {
+      "git_blob": "f3055c545954920906d6e5e3d3db1cec7048bc73",
+      "mode": "100644"
+    },
+    ".github/workflows/pre-commit.yaml": {
+      "git_blob": "eda8c518a76e6d8e02e166c2cf2eaec3a8a1bb09",
+      "mode": "100644"
+    },
+    ".github/workflows/publish.yaml": {
+      "git_blob": "bf3b2d992e023e8a08aa983aea3febd878c08b67",
+      "mode": "100644"
+    },
+    ".github/workflows/tests.yaml": {
+      "git_blob": "db947befe281b58ea76433584fa046f9937d82a8",
+      "mode": "100644"
+    },
+    ".gitignore": {
+      "git_blob": "8441e5a64f3bdd680c9d67e8b44c9f176d2a351b",
+      "mode": "100644"
+    },
+    ".pre-commit-config.yaml": {
+      "git_blob": "bf712b269571cf58ddd826bf7dd98b6db4dc030f",
+      "mode": "100644"
+    },
+    ".readthedocs.yaml": {
+      "git_blob": "961761bc0bdf5d14a0b711f558b5ee6e54890f91",
+      "mode": "100644"
+    },
+    "CHANGES.rst": {
+      "git_blob": "95d6556dfd56379ab3359292ce9c8ff6593afc12",
+      "mode": "100644"
+    },
+    "LICENSE.txt": {
+      "git_blob": "d12a849186982399c537c5b9a8fd77bf2edd5eab",
+      "mode": "100644"
+    },
+    "README.md": {
+      "git_blob": "bb688b25745d24bc7ada2373d5a3ba687bcd6a10",
+      "mode": "100644"
+    },
+    "docs/_static/click-icon.svg": {
+      "git_blob": "d2d5578dab44148ca790ce133ce1de989b3816b8",
+      "mode": "100644"
+    },
+    "docs/_static/click-logo.svg": {
+      "git_blob": "0a33948664037abacf790ffae42da48bb2ba6475",
+      "mode": "100644"
+    },
+    "docs/_static/click-name.svg": {
+      "git_blob": "bf0cd14151e005734792e9953394f9cbc2f40e7e",
+      "mode": "100644"
+    },
+    "docs/advanced.md": {
+      "git_blob": "45e36ef753d4f52c2e7e3bc5fafba04780955ba7",
+      "mode": "100644"
+    },
+    "docs/api.md": {
+      "git_blob": "5ecb483506e0e8ae9452a3db0c462e513fb1d8b4",
+      "mode": "100644"
+    },
+    "docs/arguments.rst": {
+      "git_blob": "ae2991b39bc8f22169c8cb095f4cee185b461e8c",
+      "mode": "100644"
+    },
+    "docs/changes.rst": {
+      "git_blob": "955deaf27bc821a6367e818f36c016892fed3d33",
+      "mode": "100644"
+    },
+    "docs/click-concepts.rst": {
+      "git_blob": "79a7a3841c8a36a3b045db6dfdd81a815d343918",
+      "mode": "100644"
+    },
+    "docs/commands-and-groups.rst": {
+      "git_blob": "b31712b0c7b2089b80c38c542c7f7f81723811fe",
+      "mode": "100644"
+    },
+    "docs/commands.rst": {
+      "git_blob": "53a1c3a462c1b52423a00e7dbfb2838c78a7515c",
+      "mode": "100644"
+    },
+    "docs/complex.rst": {
+      "git_blob": "c176617a117355c1a894b32d9f4683e140d8280f",
+      "mode": "100644"
+    },
+    "docs/conf.py": {
+      "git_blob": "2b223ab42264487f3f490e10f5039cfb4b373a80",
+      "mode": "100644"
+    },
+    "docs/contrib.md": {
+      "git_blob": "11716969a2e58c5717bde62bb73706ac57bfdf22",
+      "mode": "100644"
+    },
+    "docs/documentation.md": {
+      "git_blob": "25ca18dfaa16078ed275e0b0145e454292ddef27",
+      "mode": "100644"
+    },
+    "docs/entry-points.rst": {
+      "git_blob": "6c70f9724d6fb26680be55b655223722373faed2",
+      "mode": "100644"
+    },
+    "docs/exceptions.rst": {
+      "git_blob": "dec89da8c243bb7339b16fa48aa43ebb00a22a00",
+      "mode": "100644"
+    },
+    "docs/extending-click.rst": {
+      "git_blob": "5322e8f836ba73eb693723e7695272c3d521b5f8",
+      "mode": "100644"
+    },
+    "docs/faqs.md": {
+      "git_blob": "58afb9c945f30fe6e47fd75a17e9b6e6fc8633a2",
+      "mode": "100644"
+    },
+    "docs/handling-files.md": {
+      "git_blob": "bdf0a4901c7e9183761819a25ba2999e0b7b5280",
+      "mode": "100644"
+    },
+    "docs/index.rst": {
+      "git_blob": "a6bcd84166d1c725e918606ad65f43c6427b1ab0",
+      "mode": "100644"
+    },
+    "docs/license.md": {
+      "git_blob": "dd761fd120dff321af0f8877b34017564513aa06",
+      "mode": "100644"
+    },
+    "docs/option-decorators.md": {
+      "git_blob": "37a426dd48065f221f1789983e66b5f053007cc9",
+      "mode": "100644"
+    },
+    "docs/options.md": {
+      "git_blob": "ca62f2297b24d96ab4b2cc77833bc6cc63dc8eb5",
+      "mode": "100644"
+    },
+    "docs/parameter-types.md": {
+      "git_blob": "e9ac206f2ce319042b86816f74ada4c977e98aec",
+      "mode": "100644"
+    },
+    "docs/parameters.md": {
+      "git_blob": "ae908f9eb10577a35ded0b58d640f36a5d92af80",
+      "mode": "100644"
+    },
+    "docs/prompts.md": {
+      "git_blob": "f11b4161377779195ff171d6432299aedc96e550",
+      "mode": "100644"
+    },
+    "docs/quickstart.md": {
+      "git_blob": "523a8072d5bb69fbcae3fbc246277171180d5f9e",
+      "mode": "100644"
+    },
+    "docs/setuptools.md": {
+      "git_blob": "8cf5c8c92e38539fb3b2262a65c2d7aad4b16437",
+      "mode": "100644"
+    },
+    "docs/shell-completion.md": {
+      "git_blob": "a4fedc6fb840ed4f0cad1c765837d6c16c49c628",
+      "mode": "100644"
+    },
+    "docs/support-multiple-versions.md": {
+      "git_blob": "faa50ad1335a905778e7b8fcf77dec8c3a2931e4",
+      "mode": "100644"
+    },
+    "docs/testing.md": {
+      "git_blob": "6d437a2b0ab08e0ecde8c50db42d64d79c5c2a93",
+      "mode": "100644"
+    },
+    "docs/unicode-support.md": {
+      "git_blob": "ad9ef09fec9c7cf25b406c2b6c68f284ca8b48a4",
+      "mode": "100644"
+    },
+    "docs/utils.md": {
+      "git_blob": "c0a3f96b7793469b8316c668b92b94decaa1e85a",
+      "mode": "100644"
+    },
+    "docs/virtualenv.md": {
+      "git_blob": "20cbe734280e51ab5d64284ae0b909b4ebdfa89a",
+      "mode": "100644"
+    },
+    "docs/why.md": {
+      "git_blob": "31fc546e24c366078ccef7bf3b5c6426aaf2ab0b",
+      "mode": "100644"
+    },
+    "docs/wincmd.md": {
+      "git_blob": "0579a37318584eb843e4509d109cdd67bfc8305e",
+      "mode": "100644"
+    },
+    "examples/README": {
+      "git_blob": "652dbecb05be8d0b3166faac9b9f741c17a98415",
+      "mode": "100644"
+    },
+    "examples/aliases/README": {
+      "git_blob": "5a4a0665663b93c02d5ce2e739f413b6b151a973",
+      "mode": "100644"
+    },
+    "examples/aliases/aliases.ini": {
+      "git_blob": "4f1d54cd6b28d5daefe24e86891cc4cf81a3f893",
+      "mode": "100644"
+    },
+    "examples/aliases/aliases.py": {
+      "git_blob": "af3caa60bfffb0e208e79eece6bdf3c05ba70655",
+      "mode": "100644"
+    },
+    "examples/aliases/pyproject.toml": {
+      "git_blob": "afdfb7d4e60106561cf054b37e929f0fdcce83c3",
+      "mode": "100644"
+    },
+    "examples/colors/README": {
+      "git_blob": "7aec8efb5b69d65bcf6bdbb276fa4b14e014edae",
+      "mode": "100644"
+    },
+    "examples/colors/colors.py": {
+      "git_blob": "1d94417039d870174e3a11774f9f037dae18e66a",
+      "mode": "100644"
+    },
+    "examples/colors/pyproject.toml": {
+      "git_blob": "5b4219eb2088dfe7fee8ffdb6a88f956cec950a2",
+      "mode": "100644"
+    },
+    "examples/completion/README": {
+      "git_blob": "e2aeca3282c6f44060ecbcdc781aaff6e0c7cb8d",
+      "mode": "100644"
+    },
+    "examples/completion/completion.py": {
+      "git_blob": "6c45a1fc46b8d6f493ac6a4518453e7b61abdf35",
+      "mode": "100644"
+    },
+    "examples/completion/pyproject.toml": {
+      "git_blob": "c1c983d7a675f795d0a13641a0c0a18da1587a0e",
+      "mode": "100644"
+    },
+    "examples/complex/README": {
+      "git_blob": "7eaac903720753c843f037440f0eb2fc3486497a",
+      "mode": "100644"
+    },
+    "examples/complex/complex/__init__.py": {
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644"
+    },
+    "examples/complex/complex/cli.py": {
+      "git_blob": "81af075c4b99d2e9497810112cf22e1e77d70839",
+      "mode": "100644"
+    },
+    "examples/complex/complex/commands/__init__.py": {
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644"
+    },
+    "examples/complex/complex/commands/cmd_init.py": {
+      "git_blob": "8802458a9151a8f27ebc480477f60854c91015da",
+      "mode": "100644"
+    },
+    "examples/complex/complex/commands/cmd_status.py": {
+      "git_blob": "92275bb49778f0a7c7c4ca5abe062fd59e2ecac2",
+      "mode": "100644"
+    },
+    "examples/complex/pyproject.toml": {
+      "git_blob": "248f1acbb6140f817983cb11c90c228f9711a36d",
+      "mode": "100644"
+    },
+    "examples/imagepipe/.gitignore": {
+      "git_blob": "63280895b10d305bd38ba66f437bd687abd4728c",
+      "mode": "100644"
+    },
+    "examples/imagepipe/README": {
+      "git_blob": "5f1046c3e410a5c0e1f989f2fb6d2a3fab3466fe",
+      "mode": "100644"
+    },
+    "examples/imagepipe/example01.jpg": {
+      "git_blob": "f2d9397755be888e0377fe923c03068606b69cf6",
+      "mode": "100644"
+    },
+    "examples/imagepipe/example02.jpg": {
+      "git_blob": "b1f802ed85825e5202f85c8fdee2c56183b21647",
+      "mode": "100644"
+    },
+    "examples/imagepipe/imagepipe.py": {
+      "git_blob": "e2d2f03fd90ace6b70dfcb6f9f3f7df7ce2e6bd1",
+      "mode": "100644"
+    },
+    "examples/imagepipe/pyproject.toml": {
+      "git_blob": "7ee3090d535892b501dd06e256319e0200a21164",
+      "mode": "100644"
+    },
+    "examples/inout/README": {
+      "git_blob": "6309bc873e0f72ae94e6a9002b27c313525c06f0",
+      "mode": "100644"
+    },
+    "examples/inout/inout.py": {
+      "git_blob": "854c84efaa2aad512bfd2fa6510c933dbd17fee6",
+      "mode": "100644"
+    },
+    "examples/inout/pyproject.toml": {
+      "git_blob": "5ff140bbb47f2ac68c86c0c3ea33ba79f17d7230",
+      "mode": "100644"
+    },
+    "examples/naval/README": {
+      "git_blob": "aa289a28e702cc6245b01d3ca687529041527739",
+      "mode": "100644"
+    },
+    "examples/naval/naval.py": {
+      "git_blob": "7310e6d939f9f57c8ac8dc3c7492d0d4faa521ca",
+      "mode": "100644"
+    },
+    "examples/naval/pyproject.toml": {
+      "git_blob": "1915de4af86afed493fac007ec5b1a4f4a55035e",
+      "mode": "100644"
+    },
+    "examples/repo/README": {
+      "git_blob": "52d1fa7d0be96447f5ee4074625eac1d3efee6b3",
+      "mode": "100644"
+    },
+    "examples/repo/pyproject.toml": {
+      "git_blob": "fab1153ab07f30ddc46b1bd574a2ab54784c9c39",
+      "mode": "100644"
+    },
+    "examples/repo/repo.py": {
+      "git_blob": "b773f3ae7ba950e9b5925bc3adb380f4eb1de7d1",
+      "mode": "100644"
+    },
+    "examples/termui/README": {
+      "git_blob": "2c9d9dd045e9aad50efcdd8f0999fadc5812dbbf",
+      "mode": "100644"
+    },
+    "examples/termui/pyproject.toml": {
+      "git_blob": "a80e21fb1cbfc345e1b6b4ca3e03fa8f3c923c9a",
+      "mode": "100644"
+    },
+    "examples/termui/termui.py": {
+      "git_blob": "e72e65e5fec7ca4534515ace07535097b09d6a20",
+      "mode": "100644"
+    },
+    "examples/validation/README": {
+      "git_blob": "a69e3f4276e6566a72320b0a85da6111ab30bd4e",
+      "mode": "100644"
+    },
+    "examples/validation/pyproject.toml": {
+      "git_blob": "7fcffbedbf48d538298e4d79be3168014bb778d6",
+      "mode": "100644"
+    },
+    "examples/validation/validation.py": {
+      "git_blob": "3f78df0e7f6d0c119aa37ad4e48409145bdde4ed",
+      "mode": "100644"
+    },
+    "pyproject.toml": {
+      "git_blob": "d41fc8afd8abccb787c104a2267d3a85819bdf5f",
+      "mode": "100644"
+    },
+    "src/click/__init__.py": {
+      "git_blob": "1aa547c57af68954b3bcd6012873881030e53d91",
+      "mode": "100644"
+    },
+    "src/click/_compat.py": {
+      "git_blob": "f2726b93afe2ed69ba20d8e709c9cbd22b9d2339",
+      "mode": "100644"
+    },
+    "src/click/_termui_impl.py": {
+      "git_blob": "ee8225c4c29344e6c672800f97f65322d245e166",
+      "mode": "100644"
+    },
+    "src/click/_textwrap.py": {
+      "git_blob": "97fbee3dc6ce372600e702d38d9139bcf6a40bec",
+      "mode": "100644"
+    },
+    "src/click/_utils.py": {
+      "git_blob": "09fb00855e68840d18187f3de3a604e7defc37e8",
+      "mode": "100644"
+    },
+    "src/click/_winconsole.py": {
+      "git_blob": "e56c7c6ae7ee7e577db6ace659cd58c0c652074c",
+      "mode": "100644"
+    },
+    "src/click/core.py": {
+      "git_blob": "5f47287176e9832a14ae42783e4afca9ea562819",
+      "mode": "100644"
+    },
+    "src/click/decorators.py": {
+      "git_blob": "21f4c342245fa93a7946b17d7661e0d2fa6a0c29",
+      "mode": "100644"
+    },
+    "src/click/exceptions.py": {
+      "git_blob": "4d782ee361442e4aafeac7e371ab12789c8a3751",
+      "mode": "100644"
+    },
+    "src/click/formatting.py": {
+      "git_blob": "0b64f831b5578e7262302ec9218fa498a2336794",
+      "mode": "100644"
+    },
+    "src/click/globals.py": {
+      "git_blob": "a2f91723d21cefdf658be327174e1f8ccdc20fcd",
+      "mode": "100644"
+    },
+    "src/click/parser.py": {
+      "git_blob": "1ea1f7166e4b9eac5bcb632ecd86fe0331829141",
+      "mode": "100644"
+    },
+    "src/click/py.typed": {
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644"
+    },
+    "src/click/shell_completion.py": {
+      "git_blob": "8f1564c49be8e138014841d8f7cb35a34265674f",
+      "mode": "100644"
+    },
+    "src/click/termui.py": {
+      "git_blob": "dcbb22216c4bac521eee02fbac97e3b67f302076",
+      "mode": "100644"
+    },
+    "src/click/testing.py": {
+      "git_blob": "f6f60b809a065e2d67de5a7ec13d9d3c51b5e760",
+      "mode": "100644"
+    },
+    "src/click/types.py": {
+      "git_blob": "e71c1c21e4c2e1f954ceeed228507478f138993a",
+      "mode": "100644"
+    },
+    "src/click/utils.py": {
+      "git_blob": "beae26f761607f0a7a617d4ce8789bf49bb99b6b",
+      "mode": "100644"
+    },
+    "tests/conftest.py": {
+      "git_blob": "9440804feb3b22cb4a28f1f9eaa7f6e1fb0ce049",
+      "mode": "100644"
+    },
+    "tests/test_arguments.py": {
+      "git_blob": "9663258bd976f574abe466d41ac46d8c03970dc9",
+      "mode": "100644"
+    },
+    "tests/test_basic.py": {
+      "git_blob": "125fac3c4429cb14887de3db62abacd7ce2fce1c",
+      "mode": "100644"
+    },
+    "tests/test_chain.py": {
+      "git_blob": "702eaaa3e18edae197ec563497500cfb595f8441",
+      "mode": "100644"
+    },
+    "tests/test_command_decorators.py": {
+      "git_blob": "5bd268c0a60be62ed5b8d667d61ac35bc4c2a6b8",
+      "mode": "100644"
+    },
+    "tests/test_commands.py": {
+      "git_blob": "f26529a5425293546152faff273dec5770430c91",
+      "mode": "100644"
+    },
+    "tests/test_compat.py": {
+      "git_blob": "0e2e424cb2a18694aed3f71126d2dec2b9618f66",
+      "mode": "100644"
+    },
+    "tests/test_context.py": {
+      "git_blob": "816154dcd8abece2fcc0f15e3d256a26d1b23068",
+      "mode": "100644"
+    },
+    "tests/test_custom_classes.py": {
+      "git_blob": "314842bdace76c0c0a17ff34553a3d66bcfa3856",
+      "mode": "100644"
+    },
+    "tests/test_defaults.py": {
+      "git_blob": "31eee844b933a2532195e5f43babc1018ae65f24",
+      "mode": "100644"
+    },
+    "tests/test_formatting.py": {
+      "git_blob": "c79f6577fa6cf737be6112539c9df24e25062645",
+      "mode": "100644"
+    },
+    "tests/test_imports.py": {
+      "git_blob": "7b13f909ce68cb5c7c6ee9e6677a217fc9f4e2c5",
+      "mode": "100644"
+    },
+    "tests/test_info_dict.py": {
+      "git_blob": "20fe68cc139d2cbff3928659bfc3999f37d35c3f",
+      "mode": "100644"
+    },
+    "tests/test_normalization.py": {
+      "git_blob": "442b638f465ed78915e507eb1bbfbb549b9437ee",
+      "mode": "100644"
+    },
+    "tests/test_options.py": {
+      "git_blob": "11e30c31af1ca82a1a7d0e9439ad345463435e8e",
+      "mode": "100644"
+    },
+    "tests/test_parser.py": {
+      "git_blob": "f2a3ad5931761ad0da0b4d3d8b7481bfd5f89ebb",
+      "mode": "100644"
+    },
+    "tests/test_shell_completion.py": {
+      "git_blob": "20cff238f7c72d4999b20205c1fa0244f9934d70",
+      "mode": "100644"
+    },
+    "tests/test_termui.py": {
+      "git_blob": "0b2ef80e671154be5f3ca17530c5df8234158f75",
+      "mode": "100644"
+    },
+    "tests/test_testing.py": {
+      "git_blob": "11fe29dc5d9bd1213b4dff98565ea495e8317e6f",
+      "mode": "100644"
+    },
+    "tests/test_types.py": {
+      "git_blob": "75434f1042bf73f1c6d20559b49f29d49b88cd18",
+      "mode": "100644"
+    },
+    "tests/test_utils.py": {
+      "git_blob": "85d2b11ba61733c11d1813880c68e7f3a90e00cb",
+      "mode": "100644"
+    },
+    "tests/typing/typing_aliased_group.py": {
+      "git_blob": "404870bbe5a826194aee107976788c74cc0c4d88",
+      "mode": "100644"
+    },
+    "tests/typing/typing_confirmation_option.py": {
+      "git_blob": "920df25623012aa9723f3df3e5658846cc4813ea",
+      "mode": "100644"
+    },
+    "tests/typing/typing_group_kw_options.py": {
+      "git_blob": "579132facc51c0d0a9c64597204b83149ff34132",
+      "mode": "100644"
+    },
+    "tests/typing/typing_help_option.py": {
+      "git_blob": "6b822c13147a05f06ccef8b3c0a1c7df2a34cda0",
+      "mode": "100644"
+    },
+    "tests/typing/typing_options.py": {
+      "git_blob": "a3eca16e5fbcc26fc21a6c93dd83d98abad27331",
+      "mode": "100644"
+    },
+    "tests/typing/typing_password_option.py": {
+      "git_blob": "8537e6ff59ec53e94c8adaf5402f46fb646a41c8",
+      "mode": "100644"
+    },
+    "tests/typing/typing_progressbar.py": {
+      "git_blob": "98ca1703b6c9194aab0f3926aadf8371cf876f90",
+      "mode": "100644"
+    },
+    "tests/typing/typing_simple_example.py": {
+      "git_blob": "641937c5dc65f331de508ea7c23b11d99d479a90",
+      "mode": "100644"
+    },
+    "tests/typing/typing_version_option.py": {
+      "git_blob": "c7203ddca3e5926e48ccbd5a1f37eb15a5cb6b01",
+      "mode": "100644"
+    },
+    "uv.lock": {
+      "git_blob": "4f37b5e16ba469fd2f96ecce188e44b60da5f0a1",
+      "mode": "100644"
+    }
+  },
+  "tree": "d1ed59d09082175edc5123aaeaae262dac1baa4d"
+}

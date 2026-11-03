@@ -7,11 +7,11 @@ tag will be created only if the owner later requests one.
 
 ## Current state
 
-On 2 November 2026 the [improvement ledger](../data/improvement_ledger.json)
+On 3 November 2026 the [improvement ledger](../data/improvement_ledger.json)
 recorded 673 skills: research was complete for one, in progress for 317 and
-pending for 355; revision was complete for five, in progress for 49 and
-pending for 619; evaluation was in progress for 12 and pending for 661. At
-that snapshot, 188 skills had resource inventories, containing 130 reviewed
+pending for 355; revision was complete for five, in progress for 50 and
+pending for 618; evaluation was in progress for 12 and pending for 661. On
+2 November, 188 skills had resource inventories, containing 130 reviewed
 and 1,317 pending resource records. These are tracking states, not a percentage
 of release readiness. For current counts, run `python tools/manage_improvement_ledger.py
 --check --json`.
@@ -113,3 +113,47 @@ change another repository.
 
 There is no defensible completion date or overall percentage until the
 remaining research, qualification and trials reveal their actual scope.
+
+## Execution and decision points
+
+The work above is a dependency plan, not a promise that every skill can be
+made useful or that a desired benchmark result can be produced. Continue
+independent non-security work while the owner's security-work pause applies.
+In particular:
+
+1. Use the ledger to select bounded non-security groups and inventory every
+   remaining resource. For each group, record its source revision, applicable
+   documentation, reviewed resources, behavior contracts, limitations and
+   supporting evidence. Review changes to a source before refreshing its lock;
+   re-open stale evidence when its inputs change. The group is complete only
+   when every entry has an evidence-backed disposition, not merely an inventory.
+2. Implement supported fixes as attributable overlays, or record why an
+   upstream-only issue or unsuitable skill remains unresolved. Verify each
+   overlay against independent behavior contracts and its installation and
+   entrypoint paths. Preserve the upstream mirror and original source text.
+3. Prepare a diverse development task set before selecting final holdouts.
+   Record each task's real source and revision, issue, license, environment,
+   independently specified cases and evaluator controls. Exercise known-good
+   and meaningfully different bad variants. Keep these public development tasks
+   and any tuning based on them out of the final holdout set. Calibrated cases
+   alone do not show that agents find a task difficult or that skills help.
+4. Before model trials, integrate and qualify the runner and grading boundary.
+   That qualification is deferred while security-related work is paused; the
+   existing refusal to launch new trials remains in force. Once it is permitted
+   and complete, freeze task selection, sample sizes, allocation, budgets,
+   failure handling, the primary outcome and a practically meaningful effect
+   threshold before evaluating. Include source selection and natural skill
+   discovery in the design, with separate baseline, Karpathy-derived and
+   collection conditions. Retain every outcome and report uncertainty and
+   multiple comparisons according to the frozen analysis plan.
+5. Use development results to revise supported skills and re-run affected
+   controls. Freeze the final candidate and evaluate it on untouched holdouts;
+   report results even if the desired improvement is absent. An inconclusive or
+   negative result calls for investigation or a narrower claim, not a release
+   recommendation or a changed success threshold after observing outcomes.
+6. After the substantive work, perform the requested end-user documentation,
+   layout and cleanup pass, then validate the exact final revision locally and
+   in hosted workflows. Security-related checks and unresolved findings remain
+   readiness dependencies even though their implementation is currently
+   deferred. Report readiness only after all applicable evidence has been
+   reviewed; do not create a release or tag.

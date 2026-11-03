@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "cases": [
+    "test_confirm_default_suffix",
+    "test_confirm_default_value",
+    "test_confirm_double_space_suffix",
+    "test_confirm_empty_suffix",
+    "test_confirm_punctuation_suffix",
+    "test_confirm_retry",
+    "test_confirm_single_space_suffix",
+    "test_confirm_unicode_suffix",
+    "test_prompt_default_suffix",
+    "test_prompt_default_value",
+    "test_prompt_double_space_suffix",
+    "test_prompt_empty_suffix",
+    "test_prompt_punctuation_suffix",
+    "test_prompt_retry",
+    "test_prompt_single_space_suffix",
+    "test_prompt_unicode_suffix"
+  ]
+}

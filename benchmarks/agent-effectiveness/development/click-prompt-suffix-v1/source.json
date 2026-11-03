@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "scope": "Public development task; not a hidden holdout, SWE-bench score, or agent performance result.",
+  "repository": "pallets/click",
+  "source_commit": "5f86603a84e12bdec1584c15c9f982740e613c45",
+  "source_tree": "d1ed59d09082175edc5123aaeaae262dac1baa4d",
+  "source_tree_manifest_sha256": "4e1b53cf3149a002c7fb9c9e9e21a69645b38c2839f72a0cacca995ab860f24f",
+  "archive_url": "https://api.github.com/repos/pallets/click/tarball/5f86603a84e12bdec1584c15c9f982740e613c45",
+  "observed_archive_sha256": "4861ce8670a34a839cef149c056fff9671d2d47ee13aa62d89096aaa26933e1a",
+  "archive_limit": "Archive bytes are an observed transport; the retained Git tree manifest is the source identity check.",
+  "source_file": "src/click/termui.py",
+  "source_git_blob": "dcbb22216c4bac521eee02fbac97e3b67f302076",
+  "source_sha256": "bc062b282d9aedffcd7c42210138445587dafff89be5741b4d2086b499400510",
+  "license": "BSD-3-Clause",
+  "license_path": "LICENSE",
+  "license_sha256": "9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d",
+  "issue": "https://github.com/pallets/click/issues/3019",
+  "pull_request": "https://github.com/pallets/click/pull/3021",
+  "merge_commit": "8533c966b84783718e74286aa7b098f3ff1e9221",
+  "merge_first_parent": "5f86603a84e12bdec1584c15c9f982740e613c45",
+  "fixed_source_git_blob": "2e98a0771ca410a7a2ed83199cf401e75cc6d41f",
+  "fixed_source_sha256": "86a0848cd9dd53e9f35b4f2744090169581f669fc574203d2b17c85a529868c7",
+  "upstream_patch": "controls/upstream-patch.json",
+  "upstream_patch_sha256": "ef3c8329b80795dc828f58c750dafdbaebbec8374eb2750ff141124a431e2ff9",
+  "upstream_patch_transport": "UTF-8 JSON containing GitHub pull-request files API patch text for the source file, with standard Git diff headers added",
+  "documentation": {
+    "url": "https://click.palletsprojects.com/en/stable/api/",
+    "native_crawl_sha256": "b4a3597d41b7f1464f7073c04fb3a6fd68c8a0ca63b10465f87a444888c61d6a",
+    "crawl_provider": "0.9.5+catalog.portable4",
+    "limit": "This is the current stable API documentation, not a snapshot of the historical base revision."
+  },
+  "agent_performance_tested": false
+}

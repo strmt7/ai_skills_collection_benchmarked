@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "scope": "Trusted development controls, not an agent trial or a confined grader.",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "target_runtime": {
+    "implementation": "CPython",
+    "version": [
+      3,
+      14,
+      10
+    ]
+  },
+  "source_commit": "5f86603a84e12bdec1584c15c9f982740e613c45",
+  "source_file_count": 142,
+  "source_snapshot_sha256": "5b73c75d771e54933a4871bf73109f83161b8f6bc6689577a2850d93b9008c84",
+  "inputs_sha256": {
+    "TASK.md": "190459e72c0745a180b4cf828aea641a04b84cc4ea3e0083a0c1a46107ea348d",
+    "README.md": "620002cb24126434784dce2fe0082235e93baa5d99532a15e033939ca60643ba",
+    "LICENSE": "9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d",
+    "source.json": "2f308132cb0bc73cc12a15b3b4ac7155795e111075598a5f49f1bf280d6b4f8e",
+    "tree.json": "4e1b53cf3149a002c7fb9c9e9e21a69645b38c2839f72a0cacca995ab860f24f",
+    "cases.json": "1ef9c94265b1223fb06e2ab2e26519d305a10726114c4ae0c0af319c8ce7a370",
+    "controls/calibrate.py": "17f2dc62997664fb15e0d4998a1d3b7e20841c420d42f091f2eb86f49bef1d09",
+    "controls/test_contract.py": "6e4f45343e697c3ace473cb0f4d7b406cc8a379d0c984bfe9946d37b14e1218e",
+    "controls/upstream-patch.json": "0e9adc5768378d2f74635c7c56032a9dbe18b4942a631e81a5c862f64c8f06eb"
+  },
+  "case_count": 16,
+  "variants": {
+    "base": {
+      "exit_code": 1,
+      "failed_cases": [
+        "test_confirm_default_value",
+        "test_confirm_double_space_suffix",
+        "test_confirm_empty_suffix",
+        "test_confirm_punctuation_suffix",
+        "test_confirm_retry",
+        "test_confirm_unicode_suffix",
+        "test_prompt_default_value",
+        "test_prompt_double_space_suffix",
+        "test_prompt_empty_suffix",
+        "test_prompt_punctuation_suffix",
+        "test_prompt_retry",
+        "test_prompt_unicode_suffix"
+      ],
+      "module_sha256": "bc062b282d9aedffcd7c42210138445587dafff89be5741b4d2086b499400510",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "b641906ccf56a4ed1994cc7889398118ff66c0a83543433d93812cb968806010"
+    },
+    "upstream": {
+      "exit_code": 0,
+      "failed_cases": [],
+      "module_sha256": "86a0848cd9dd53e9f35b4f2744090169581f669fc574203d2b17c85a529868c7",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "8fa994669d4788c8135ed168c4fbd551edd4e25575222ef085a392ceec75ef89"
+    },
+    "alternative": {
+      "exit_code": 0,
+      "failed_cases": [],
+      "module_sha256": "5ba18036c9b75b1713b402a780efa8b9b007c946e83d99dafa5de574d76e7eda",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "8fa994669d4788c8135ed168c4fbd551edd4e25575222ef085a392ceec75ef89"
+    },
+    "prompt-only": {
+      "exit_code": 1,
+      "failed_cases": [
+        "test_confirm_default_value",
+        "test_confirm_double_space_suffix",
+        "test_confirm_empty_suffix",
+        "test_confirm_punctuation_suffix",
+        "test_confirm_retry",
+        "test_confirm_unicode_suffix"
+      ],
+      "module_sha256": "d975d64b4f82aa67d5bd7e00218f3e562b5b2a456d28efc036e9b00b7e6930f0",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e94c98ab8c668d14aef35cef3091eff605fff25f345cc2c9418b23813b01fafe"
+    },
+    "strip-trailing": {
+      "exit_code": 1,
+      "failed_cases": [
+        "test_confirm_default_value",
+        "test_confirm_double_space_suffix",
+        "test_confirm_empty_suffix",
+        "test_confirm_punctuation_suffix",
+        "test_confirm_retry",
+        "test_confirm_unicode_suffix",
+        "test_prompt_default_value",
+        "test_prompt_double_space_suffix",
+        "test_prompt_empty_suffix",
+        "test_prompt_punctuation_suffix",
+        "test_prompt_retry",
+        "test_prompt_unicode_suffix"
+      ],
+      "module_sha256": "931f49c20592619d47de33b434dbf0a2d7bf7c6d5ac1ac7e43e8b7e4d50fd5aa",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "1ccb89fef18acb91b4fe0c35f7a760c894ce39feabdeae63e75779da9bd1d8a0"
+    },
+    "empty-only": {
+      "exit_code": 1,
+      "failed_cases": [
+        "test_confirm_double_space_suffix",
+        "test_confirm_punctuation_suffix",
+        "test_confirm_unicode_suffix",
+        "test_prompt_double_space_suffix",
+        "test_prompt_punctuation_suffix",
+        "test_prompt_unicode_suffix"
+      ],
+      "module_sha256": "dfd6e10581069d3c611fd4dc5908630c1d6d00efe65e8cbc8d39a9754e00bc71",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "cebb7cd4bcdaa5334e0452acb07ffb3eeadd46733cb29c33a889a3290df48bff"
+    }
+  },
+  "agent_performance_tested": false
+}
