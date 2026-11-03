@@ -1,0 +1,20 @@
+{
+  "annotated_tag": "93f9f6154d164ccb9f4dc38858a2bc2d5dcab222",
+  "commit": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+  "files": {
+    "SKILL.md": {
+      "git_blob": "b29570308123e721c1aafd657839f2800510b020",
+      "normalized_body_matches_locked": true,
+      "sha256": "2beabec4326fc32e652db21378bae5f704c931a6ff50d0496b9c9f1c8340f82d"
+    },
+    "agents/openai.yaml": {
+      "changes": "short description and default prompt; implicit invocation remains enabled",
+      "git_blob": "b48ba47f6227857326ecd35f22ed7a13fe867388",
+      "sha256": "05cf64df6a26ba90aafe7243bd7570326e51aef92fd87ad7954fc2ecd1d459ed"
+    }
+  },
+  "observed_date": "2026-11-03",
+  "release": "v2.2.3",
+  "repository": "affaan-m/everything-claude-code",
+  "scope": "Two files in this upstream skill only; no complete release or agent efficacy assessment."
+}

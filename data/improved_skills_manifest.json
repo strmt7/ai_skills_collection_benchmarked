@@ -491,6 +491,25 @@
       "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
       "source_file_sha256": "485a62c648f2a163fe479948409bd4b146dd3b47712f742452efadeab6dcbe3a",
       "source_url": "https://github.com/akin-ozer/cc-devops-skills/blob/7fe7595e4512f8ce43dcf956aa5190b96d627dd1/devops-skills-plugin/skills/github-actions-generator/SKILL.md"
+    },
+    {
+      "license": "MIT",
+      "license_file_sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+      "license_source_sha": "b832b6f642312312367c07688dc7426db40a82ed",
+      "original_path": "included/improved/skills/nextjs-turbopack-cache/provenance/original-SKILL.md",
+      "overlay_path": "included/improved/skills/nextjs-turbopack-cache",
+      "overlay_sha256": "616f4264a1b82d70280cb16f02e9e1c87568bf9c7642b2b654337808abfc60fb",
+      "package_file_sha256": {
+        "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+        "NOTICE.md": "b9c4d6d3d936bd427441e00214aae1bf1a2607a8d35b8af7bfef4fb522824e79",
+        "SKILL.md": "616f4264a1b82d70280cb16f02e9e1c87568bf9c7642b2b654337808abfc60fb",
+        "provenance/original-SKILL.md": "f65da15aabeb9dca7ae08525739e72ab16e79a78ff4004f7cab6ad2de1c2a79b"
+      },
+      "performance_status": "unbenchmarked",
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-nextjs-turbopack-skill-md",
+      "source_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "source_file_sha256": "f65da15aabeb9dca7ae08525739e72ab16e79a78ff4004f7cab6ad2de1c2a79b",
+      "source_url": "https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/nextjs-turbopack/SKILL.md"
     }
   ]
 }

@@ -1424,17 +1424,41 @@
           {
             "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
             "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          },
+          {
+            "path": "docs/research-next-cache-defaults.md",
+            "sha256": "0dcd3151652fb9525dfc36a4e50c121e326e090d85d961e870d33c2ca3b048ef"
+          },
+          {
+            "path": "benchmarks/dependency-regressions/next_turbopack_cache.py",
+            "sha256": "f28abe958b6e84ba7cc189b93d9874ddb24e8323b816d72fa03d7032d94a41d4"
+          },
+          {
+            "path": "artifacts/research/2026-11-03/next-cache-defaults-v1/windows-result.json",
+            "sha256": "239613d3b4c7fdf00f24dd8c42386d084da57c97a29c330f2b1e39f8dfa8042a"
+          },
+          {
+            "path": "artifacts/research/2026-11-03/next-cache-defaults-v1/linux-result.json",
+            "sha256": "671c70509d486f096949783ffe3ca9210e79d7337a682f9f2e3de9e5884e2ab3"
+          },
+          {
+            "path": "artifacts/research/2026-11-03/next-cache-defaults-v1/upstream-observation.json",
+            "sha256": "0e5c5bf0d151becf69675b5f80ff089dc59ee05d78d0bb5a4b46d4ccce1ea63a"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
         "resources": {
           "SKILL.md": {
+            "captured_raw_sha256": "ca08eec7bc37bc0d90b2417f6806cc09d1c9b3536028ee07f7d53d9769fdb822",
+            "review_scope": "Complete locked entrypoint reviewed against upstream, current documentation and selected component controls; speed and agent effectiveness remain unmeasured.",
             "sha256": "f65da15aabeb9dca7ae08525739e72ab16e79a78ff4004f7cab6ad2de1c2a79b",
-            "status": "pending"
+            "status": "reviewed"
           },
           "agents/openai.yaml": {
+            "captured_raw_sha256": "e33c8bc4bbb6fac578c5a7e54517f35dc4f492c807851058c4bb0722e95eb93a",
+            "review_scope": "Complete locked discovery metadata reviewed and compared with the stable upstream release; automatic selection was not evaluated.",
             "sha256": "eae70fb66b6bcbc2df6137f4f1a7681a11391d45b333a282fa512864f36785e6",
-            "status": "pending"
+            "status": "reviewed"
           }
         },
         "status": "in_progress"
@@ -1445,6 +1469,10 @@
             "path": "included/repaired/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/nextjs-turbopack/repair.json",
             "scope": "Maintained version-specific overlay; upstream mirror remains unchanged.",
             "sha256": "0534182588674fe9682cae796194b0a473217903cc9034fe3b0f85e27ff2966a"
+          },
+          {
+            "path": "included/improved/skills/nextjs-turbopack-cache/SKILL.md",
+            "sha256": "616f4264a1b82d70280cb16f02e9e1c87568bf9c7642b2b654337808abfc60fb"
           }
         ],
         "status": "in_progress"

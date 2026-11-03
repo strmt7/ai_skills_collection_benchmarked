@@ -145,9 +145,10 @@ Some reviewed instructions have known limitations:
   and its Bash template is not a POSIX `sh` scaffold. A [shell-generation repair](../included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/bash-script-generator/SKILL.md)
   addresses both issues. [See the component controls](research-bash-generator.md).
 
-- The Next.js skill contains outdated bundler and analysis guidance. A
-  [version-specific repair](../included/repaired/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/nextjs-turbopack/SKILL.md)
-  records the tested commands. [See the component controls](research-next-turbopack.md).
+- The Next.js skill overlooks version-specific bundler and cache behavior. The
+  experimental [cache-aware overlay](../included/improved/skills/nextjs-turbopack-cache/SKILL.md)
+  and [package controls](research-next-cache-defaults.md) cover selected releases.
+  The [earlier 16.4.3 repair](research-next-turbopack.md) remains available.
 
 - The Anthropic API skill contains an older model table and default. [Review the
   current-source comparison](research-anthropic-api.md) before selecting a model.

@@ -1,0 +1,93 @@
+{
+  "errors": [],
+  "evidence_class": "next-turbopack-cache-config-controls",
+  "node_sha256": "d1de76d8edf2fededf6f8b30d244e2c0529ac607923a018283b77e9c74bd932c",
+  "node_version": "v24.15.0",
+  "passed": true,
+  "platform": "Linux",
+  "reproducer_sha256": "f28abe958b6e84ba7cc189b93d9874ddb24e8323b816d72fa03d7032d94a41d4",
+  "schema_version": 1,
+  "scope": "Selected package configuration exports only; no server, build, cache persistence or performance measurement.",
+  "versions": {
+    "16.0.0": {
+      "archive_integrity": "sha512-nYohiNdxGu4OmBzggxy9rczmjIGI+TpR5vbKTsE1HqYwNm1B+YSiugSrFguX6omMOKnDHAmBPY4+8TNJk0Idyg==",
+      "config_sha256": "8c3d63a8085c068f0c89a2e3e2913f8d79624ff2712a8143102347321e41dbc3",
+      "defaults": {
+        "turbopackFileSystemCacheForBuild": {
+          "present": false,
+          "value": null
+        },
+        "turbopackFileSystemCacheForDev": {
+          "present": false,
+          "value": null
+        }
+      },
+      "modules": [
+        "node_modules/next/dist/lib/constants.js",
+        "node_modules/next/dist/server/config-shared.js",
+        "node_modules/next/dist/shared/lib/errors/canary-only-config-error.js",
+        "node_modules/next/dist/shared/lib/image-config.js"
+      ]
+    },
+    "16.1.0": {
+      "archive_integrity": "sha512-Y+KbmDbefYtHDDQKLNrmzE/YYzG2msqo2VXhzh5yrJ54tx/6TmGdkR5+kP9ma7i7LwZpZMfoY3m/AoPPPKxtVw==",
+      "config_sha256": "a9e1d6fd8e6f34e0d03af458d8903f9c5c0a44ccac331fa93e9f39c59d9bfd31",
+      "defaults": {
+        "turbopackFileSystemCacheForBuild": {
+          "present": true,
+          "value": false
+        },
+        "turbopackFileSystemCacheForDev": {
+          "present": true,
+          "value": true
+        }
+      },
+      "modules": [
+        "node_modules/next/dist/lib/constants.js",
+        "node_modules/next/dist/server/config-shared.js",
+        "node_modules/next/dist/shared/lib/errors/canary-only-config-error.js",
+        "node_modules/next/dist/shared/lib/image-config.js"
+      ]
+    },
+    "16.3.0": {
+      "archive_integrity": "sha512-NEdGOzH+08eTXMUp9UYkA99Nhi5N6Thrhc1jgFOQgfgnGK/dA2hRwBpXep+exdFQrnwlRf/3Wixyp8lLBUpE2A==",
+      "config_sha256": "2c15353ce27ba7ea7322b53f3194c6d39593936f2c73e303cbd2dd7d37d88f0a",
+      "defaults": {
+        "turbopackFileSystemCacheForBuild": {
+          "present": true,
+          "value": true
+        },
+        "turbopackFileSystemCacheForDev": {
+          "present": true,
+          "value": true
+        }
+      },
+      "modules": [
+        "node_modules/next/dist/lib/constants.js",
+        "node_modules/next/dist/server/config-shared.js",
+        "node_modules/next/dist/shared/lib/image-config.js",
+        "node_modules/next/dist/shared/lib/size-limit.js"
+      ]
+    },
+    "16.4.4": {
+      "archive_integrity": "sha512-Hu4pOw2x0RQ0TQabNWbpsNg/3+SZf+rLQwvfhBLnptv98GS4dcIVMlfEyn9jb2/ZJDSahhnUKEs0YrfarjGX3A==",
+      "config_sha256": "cc8b6197fd97a12b0d9257c9d7d4288347053fc8712b021d03c3bfad7a19cdd3",
+      "defaults": {
+        "turbopackFileSystemCacheForBuild": {
+          "present": true,
+          "value": true
+        },
+        "turbopackFileSystemCacheForDev": {
+          "present": true,
+          "value": true
+        }
+      },
+      "modules": [
+        "node_modules/next/dist/lib/constants.js",
+        "node_modules/next/dist/server/config-shared.js",
+        "node_modules/next/dist/shared/lib/image-config.js",
+        "node_modules/next/dist/shared/lib/size-limit.js"
+      ]
+    }
+  }
+}

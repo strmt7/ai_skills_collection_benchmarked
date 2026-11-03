@@ -94,6 +94,18 @@ jobs:
         run: >-
           python benchmarks/dependency-regressions/verification_powershell.py
           --output artifacts/research/2026-11-03/verification-powershell-status-v1/result.json --check
+      - name: Verify recorded Next.js cache control evidence
+        shell: python
+        run: |
+          import subprocess
+          import sys
+          from pathlib import Path
+          base = Path("artifacts/research/2026-11-03/next-cache-defaults-v1")
+          for name in ("windows-result.json", "linux-result.json"):
+              subprocess.run([
+                  sys.executable, "benchmarks/dependency-regressions/next_turbopack_cache.py",
+                  "--output", str(base / name), "--check",
+              ], check=True)
       - name: Validate catalog and mirrors
         run: python tools/validate_catalog.py
       - name: Check exact mirror bytes for residual detected material
