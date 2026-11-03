@@ -1705,6 +1705,18 @@
           {
             "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
             "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          },
+          {
+            "path": "docs/research-powershell-exit-status.md",
+            "sha256": "2257f0e9646c886235a0d10a208687155b741b5bab8c8ccd271e7437681ead45"
+          },
+          {
+            "path": "benchmarks/dependency-regressions/verification_powershell.py",
+            "sha256": "2c17256f0e0c0280c12cac603efc70e3e7a02b746f26f1fd47a01640e5571149"
+          },
+          {
+            "path": "artifacts/research/2026-11-03/verification-powershell-status-v1/result.json",
+            "sha256": "9f60914d03a49112e85de2280cf3a9ac1bc78939a400710595708761c0bf867c"
           }
         ],
         "open_work": [
@@ -1731,6 +1743,10 @@
           {
             "path": "artifacts/research/2026-10-02/improved-skills-manifest-four-overlays.json",
             "sha256": "0f05a838b09ecb124e78ae84e264f957b0e0f9668dde8f3a61ef98563bdfdbf0"
+          },
+          {
+            "path": "included/improved/skills/verification-loop-shell-status/SKILL.md",
+            "sha256": "64637a36eee74d85b2f6f65a5b3f029e399c60ac9cc37fe00ba5651bd80b4f49"
           }
         ],
         "status": "in_progress"

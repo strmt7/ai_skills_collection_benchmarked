@@ -31,6 +31,10 @@ policy. Copying a `SKILL.md` file alone can break those links.
 
 Some reviewed instructions have known limitations:
 
+- The pinned verification skill can report a failed command as successful after
+  piping its output. The experimental [verification overlay](../included/improved/skills/verification-loop-shell-status/SKILL.md)
+  distinguishes native PowerShell statuses and cmdlet errors; [see the shell controls](research-powershell-exit-status.md).
+  It has not been evaluated in an agent trial.
 - The pinned evaluation-harness skill treats pass@k as a reliability trend.
   The experimental [evaluation overlay](../included/improved/skills/eval-harness-current/SKILL.md)
   distinguishes task weighting, any-of-k and all-of-k; [see the sampling review](research-eval-harness-sampling.md).

@@ -1,0 +1,81 @@
+{
+  "engines": {
+    "powershell": {
+      "cases": {
+        "cmdlet_stale_native_status": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "success=False last=7"
+        },
+        "error_action_stop": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "continued"
+        },
+        "native_pipeline": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "last=0"
+        },
+        "native_to_cmdlet": {
+          "returncode": 7,
+          "stderr": "",
+          "stdout": "last=7"
+        },
+        "producer_direct": {
+          "returncode": 7,
+          "stderr": "",
+          "stdout": "payload"
+        },
+        "separate_capture": {
+          "returncode": 7,
+          "stderr": "",
+          "stdout": "payload"
+        }
+      },
+      "version": "7.6.5"
+    },
+    "windows_powershell": {
+      "cases": {
+        "cmdlet_stale_native_status": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "success=False last=7"
+        },
+        "error_action_stop": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "continued"
+        },
+        "native_pipeline": {
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "last=0"
+        },
+        "native_to_cmdlet": {
+          "returncode": 7,
+          "stderr": "",
+          "stdout": "last=7"
+        },
+        "producer_direct": {
+          "returncode": 7,
+          "stderr": "",
+          "stdout": "payload"
+        },
+        "separate_capture": {
+          "returncode": 7,
+          "stderr": "",
+          "stdout": "payload"
+        }
+      },
+      "version": "5.1.26100.9818"
+    }
+  },
+  "errors": [],
+  "evidence_class": "powershell-native-exit-status-controls",
+  "passed": true,
+  "python_version": "3.13.17",
+  "reproducer_sha256": "2c17256f0e0c0280c12cac603efc70e3e7a02b746f26f1fd47a01640e5571149",
+  "schema_version": 1,
+  "scope": "Windows shell behavior only; not an agent trial or a skill-effectiveness score."
+}

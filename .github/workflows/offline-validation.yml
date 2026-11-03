@@ -77,6 +77,23 @@ jobs:
           from pathlib import Path
           data = json.loads(Path("data/skills_catalog.json").read_text(encoding="utf-8"))
           print(f"Validated {len(data)} catalog records")
+      - name: Verify PowerShell native exit-status controls
+        if: runner.os == 'Windows'
+        shell: python
+        run: |
+          import os
+          import subprocess
+          import sys
+          from pathlib import Path
+          output = Path(os.environ["RUNNER_TEMP"]) / "verification-powershell-status.json"
+          subprocess.run([
+              sys.executable, "benchmarks/dependency-regressions/verification_powershell.py",
+              "--output", str(output),
+          ], check=True)
+      - name: Verify recorded PowerShell control evidence
+        run: >-
+          python benchmarks/dependency-regressions/verification_powershell.py
+          --output artifacts/research/2026-11-03/verification-powershell-status-v1/result.json --check
       - name: Validate catalog and mirrors
         run: python tools/validate_catalog.py
       - name: Check exact mirror bytes for residual detected material

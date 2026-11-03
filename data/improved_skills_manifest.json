@@ -63,13 +63,13 @@
       "license": "MIT",
       "license_file_sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
       "license_source_sha": "b832b6f642312312367c07688dc7426db40a82ed",
-      "original_path": "included/improved/skills/verification-loop-current/provenance/original-SKILL.md",
-      "overlay_path": "included/improved/skills/verification-loop-current",
-      "overlay_sha256": "2119ceff89160776e50f9ee8a39cf3ffccbb3537c0312c7e593da1765edabb14",
+      "original_path": "included/improved/skills/verification-loop-shell-status/provenance/original-SKILL.md",
+      "overlay_path": "included/improved/skills/verification-loop-shell-status",
+      "overlay_sha256": "64637a36eee74d85b2f6f65a5b3f029e399c60ac9cc37fe00ba5651bd80b4f49",
       "package_file_sha256": {
         "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
-        "NOTICE.md": "8608999c474b56fdcc74a29ebb40455bf8c02e03933847313943719e5b434a16",
-        "SKILL.md": "2119ceff89160776e50f9ee8a39cf3ffccbb3537c0312c7e593da1765edabb14",
+        "NOTICE.md": "faae9affbb0da3cc6f736882d1f69faad6cd4b347be90d0b7b67d65c1d3fada9",
+        "SKILL.md": "64637a36eee74d85b2f6f65a5b3f029e399c60ac9cc37fe00ba5651bd80b4f49",
         "provenance/original-SKILL.md": "01a9ae310ad4426bb05660dda6cefdeaac9513417585c09c8bb1b94738649a78"
       },
       "performance_status": "unbenchmarked",
