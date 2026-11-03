@@ -61,9 +61,13 @@ jobs:
           $ErrorActionPreference = 'Stop'
           python artifacts/repaired-skill-readiness/zarr-python-basics-v1/control.py > "$env:RUNNER_TEMP/zarr-result.json"
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python artifacts/repaired-skill-readiness/zarr-python-basics-v1/reference-control.py > "$env:RUNNER_TEMP/zarr-reference-result.json"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: zarr-controls-${{ matrix.os }}
-          path: ${{ runner.temp }}/zarr-result.json
+          path: |
+            ${{ runner.temp }}/zarr-result.json
+            ${{ runner.temp }}/zarr-reference-result.json
           if-no-files-found: error
           retention-days: 14

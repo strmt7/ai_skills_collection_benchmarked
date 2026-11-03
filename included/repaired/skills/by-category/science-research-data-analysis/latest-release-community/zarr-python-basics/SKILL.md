@@ -42,7 +42,10 @@ stored_bytes = array.nbytes_stored()
 `MemoryStore` is ephemeral. Choose a persistent store and its lifecycle according
 to the application. Resize takes a shape tuple; call `nbytes_stored()` to obtain
 the stored size. `compressors` specifies compression, while serialization is a
-separate setting. Check the version's API before configuring either.
+separate setting. Check the version's API before configuring either. In the
+tested version, `chunks=None` can still produce multiple chunks; inspect the
+resulting chunk shape. The locked reference's `array.copy()` and
+`array.info_items()` examples are unavailable in this version.
 
 For separate processes, the Zarr documentation requires writes to different
 chunks and a storage backend supporting atomic writes for concurrent operation;

@@ -34,7 +34,7 @@
       "outcome": "pass"
     }
   ],
-  "overlay_sha256": "6d47a7d77f5527cc7162ccbb2c8a4bb9fb84dc8797c25e56925beb29399524e3",
+  "overlay_sha256": "0595f73bb63ab8805961fe865fe59d59166c09b5ce6a3c9cf684a763d9760de6",
   "platform": "Linux",
   "python_version": "3.12.3",
   "scope": "Selected in-memory array API examples only; no agent or concurrency trial",

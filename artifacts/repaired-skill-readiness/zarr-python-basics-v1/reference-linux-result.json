@@ -1,0 +1,20 @@
+{
+  "agent_performance_tested": false,
+  "chunks": [
+    625,
+    625
+  ],
+  "control_sha256": "a89aa18d9a5281b5718c899cd9ee319e298c7ff42d18d14b159b3c7dc8fb4800",
+  "method_failures": {
+    "copy": "AttributeError",
+    "info_items": "AttributeError"
+  },
+  "platform": "Linux",
+  "python_version": "3.12.3",
+  "reference_sha256": "68d983ea5bacfd410ca3f2d1e0c4d464e555724d882467bff5313fd48dbd40b9",
+  "shape": [
+    10000,
+    10000
+  ],
+  "zarr_version": "3.4.2"
+}

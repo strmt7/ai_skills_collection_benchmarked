@@ -27,6 +27,16 @@ reproduce the hosted load, runner image or necessarily its Node version and do
 not prove the timeout fixed. Their coverage instrumentation was used to match
 the test environment; the focused run is not a repository coverage result.
 
+A later [Windows job](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/41562610887/job/125676488329)
+at commit `fd6cb2adcf1e150a8701136762441fb0fd8db1df` failed in the same test:
+2,102 passed, one timed out and 47 were skipped. Its child was still running
+at the deadline and had accumulated 0.125 seconds of kernel and user CPU time;
+the captured stderr after termination included the expected rejection. The
+native job log captured on 3 November 2026 has SHA-256
+`f21547ee062cedce9578c7570411aa2ce8da218850e9238e2bcb4c7a0637c436`.
+This additional observation still does not establish the timing of the
+captured output or identify the cause. It is not a failure-rate sample.
+
 The original assertions, deadline and workflow remain unchanged. A useful next
 diagnostic needs timestamps for child startup, output availability and actual
 exit in the hosted environment, while retaining failures and avoiding changes

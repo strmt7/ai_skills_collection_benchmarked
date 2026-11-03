@@ -2,11 +2,14 @@
   "agent_performance_tested": false,
   "files_sha256": {
     "control.py": "d24fc76368a23f2e64e7fc9802a6222e31ff9a709f7beb05d5c65cb446baa36e",
-    "linux-result.json": "62a0acae0ffc219401961c3c1807ebc4d0655554d9cc57be7426aac7cb19f60d",
+    "linux-result.json": "ae51b8a62c2ab52e0c667e4128b29ee56bc2d131d3891796dd3ce311a4f8ee51",
+    "reference-control.py": "a89aa18d9a5281b5718c899cd9ee319e298c7ff42d18d14b159b3c7dc8fb4800",
+    "reference-linux-result.json": "63da15a12e3ee1d92cecb9d0257e1fbd119572a2d2ff04c922ab31aa2b49adde",
+    "reference-windows-result.json": "c0a1cd673b957a2c033516dab610654b1298e9ba63dc92424ac40563dc91acf3",
     "requirements-linux.txt": "3c0480ac91da395c0d0a2e5c1459581e1c203aa7670b8dabd392af7e098690cf",
     "requirements-windows.txt": "cf9ff123de3234ad529fad9e1bf17902d7ea7101fa0d8f15c6c91cc694f90192",
     "requirements.in": "e405f1c38ab2e1746a6c0658bccac86555ddbd02662ea76b90ce53992d4a1bd2",
-    "windows-result.json": "f7f73be4086d299da702031d10cb00ff530ba6f8bf7e2faba90d01e25cfd2a39"
+    "windows-result.json": "f49f4a3ed1cd265f8c5a2a5d731d25700dc7f6fe9620e98d66b764b52d8e2ece"
   },
   "full_skill_reviewed": false,
   "limitations": [
@@ -15,10 +18,11 @@
     "Component controls do not measure a coding agent or establish performance improvement."
   ],
   "original_sha256": "e5dfd7907be47cf782af6e62988829968b36a70521881253c2f4ff7574858088",
-  "overlay_sha256": "6d47a7d77f5527cc7162ccbb2c8a4bb9fb84dc8797c25e56925beb29399524e3",
+  "overlay_sha256": "0595f73bb63ab8805961fe865fe59d59166c09b5ce6a3c9cf684a763d9760de6",
   "pypi_metadata_sha256": "98e40bed22992d806ec54d06cc4ccdbfb86a7717423450c969ce5a7736fad9c9",
+  "reference_sha256": "68d983ea5bacfd410ca3f2d1e0c4d464e555724d882467bff5313fd48dbd40b9",
   "schema_version": 1,
-  "scope": "Selected Zarr 3.4.2 in-memory array API examples; no concurrency or agent trial.",
+  "scope": "Selected Zarr 3.4.2 in-memory array API and reference examples; no concurrency or agent trial.",
   "sources": {
     "api-array": {
       "native_result_sha256": "427232ffdc91b168f4114b8e42a6f17d012d150dca59093fc91f76b367a4aaf3",

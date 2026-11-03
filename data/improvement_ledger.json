@@ -15743,7 +15743,7 @@
           {
             "path": "docs/research-zarr-python.md",
             "scope": "Selected version-specific API research; both complete source resources remain pending review.",
-            "sha256": "245670ed90a6e45ef598a34f53a103df660eb95e8cf9e0b3fe7912e874411532"
+            "sha256": "53e5e258f510428bd05a5669138d7571f8a9b017288c2781b82c9bea2e67f12b"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -15764,7 +15764,7 @@
           {
             "path": "artifacts/repaired-skill-readiness/zarr-python-basics-v1/qualification.json",
             "scope": "Selected source-bound in-memory Zarr 3.4.2 controls on Windows and Linux; no agent evaluation.",
-            "sha256": "8ded07d09ad3e7cc1dae1687f2a68adbb814663cc01069e0c57acbf1aed7425a"
+            "sha256": "d8839887f2918e358d526824ee6d61fe51785c92b2d240dc92edee02441be09d"
           }
         ],
         "status": "in_progress"

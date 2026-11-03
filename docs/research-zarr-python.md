@@ -16,8 +16,12 @@ extracts the original statements from the preserved source and executes the
 replacement example, checking values against an independent expectation. It is
 not an agent benchmark. The original mirror, its exact original entrypoint and
 the upstream license are retained; the reference and remaining examples still
-need review. Concurrent writes, persistence, cloud storage, sharding and codec
-performance were not tested.
+need review. The [reference control](../artifacts/repaired-skill-readiness/zarr-python-basics-v1/reference-control.py)
+also reproduces missing `copy` and `info_items` methods and a case where
+`chunks=None` still creates multiple chunks on both recorded hosts. This
+counterexample does not predict chunk shapes for other inputs. Concurrent
+writes, persistence, cloud storage, sharding and codec performance were not
+tested.
 
 The official [migration guide](https://zarr.readthedocs.io/en/stable/user-guide/v3_migration/)
 documents tuple-based resize and describes synchronizer support; the
