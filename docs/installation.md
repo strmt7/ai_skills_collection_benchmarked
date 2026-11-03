@@ -123,6 +123,9 @@ Some reviewed instructions have known limitations:
 - The testing-workflow skill's Jest threshold example uses an unrecognized
   option. A [testing-workflow repair](../included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/tdd-workflow-everything-claude-code/SKILL.md)
   corrects it. [See the tested cases](research-tdd-jest-configuration.md).
+  An [experimental revision](../included/improved/skills/tdd-workflow-current/SKILL.md)
+  also explains how to distinguish a meaningful failing test from a setup error.
+  [See the control and its limits](research-tdd-red-phase.md).
 - The pull-request explanation skill can miss later changes when it reads only
   the start of a large diff. A [review-scope overlay](../included/repaired/skills/by-category/coding-refactoring-repository-automation/reddit-verified-gtm-registry/explain-this-pr/SKILL.md)
   makes incomplete coverage explicit. [See the control](research-explain-this-pr.md).

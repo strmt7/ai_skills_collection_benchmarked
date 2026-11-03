@@ -1659,6 +1659,16 @@
           {
             "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
             "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          },
+          {
+            "path": "docs/research-tdd-red-phase.md",
+            "scope": "Pytest red-phase outcome interpretation; not agent-efficacy evidence.",
+            "sha256": "a13e1626c017e4e7224c25a819623471253a466a7bff895d3da0e1efd7c9e887"
+          },
+          {
+            "path": "tests/test_tdd_red_phase_controls.py",
+            "scope": "Independent executable pytest outcome controls; not an agent trial.",
+            "sha256": "360d587fa7205ae2845ede08fe398ba8611b04b52c715333d4b4f5ffa17ed7bb"
           }
         ],
         "open_work": [
@@ -1685,6 +1695,11 @@
           {
             "path": "included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/tdd-workflow-everything-claude-code/repair.json",
             "sha256": "6ced12d7d3721198a75e6dc6f1037f0560952785cf7bfc988a29eb62a6d047c4"
+          },
+          {
+            "path": "included/improved/skills/tdd-workflow-current/SKILL.md",
+            "scope": "Experimental unbenchmarked revision; original and historical repair remain unchanged.",
+            "sha256": "38515bb140a79f78469e06da346dca10c3cc05fd7be4cb70e668e2c539c66c14"
           }
         ],
         "status": "in_progress"

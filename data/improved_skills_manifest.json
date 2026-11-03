@@ -510,6 +510,25 @@
       "source_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
       "source_file_sha256": "f65da15aabeb9dca7ae08525739e72ab16e79a78ff4004f7cab6ad2de1c2a79b",
       "source_url": "https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/nextjs-turbopack/SKILL.md"
+    },
+    {
+      "license": "MIT",
+      "license_file_sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+      "license_source_sha": "b832b6f642312312367c07688dc7426db40a82ed",
+      "original_path": "included/improved/skills/tdd-workflow-current/provenance/original-SKILL.md",
+      "overlay_path": "included/improved/skills/tdd-workflow-current",
+      "overlay_sha256": "38515bb140a79f78469e06da346dca10c3cc05fd7be4cb70e668e2c539c66c14",
+      "package_file_sha256": {
+        "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+        "NOTICE.md": "a9d97e52116a189aa46fb71ab631418f0f36bb14fa3adf0d87b3025b9b03dea2",
+        "SKILL.md": "38515bb140a79f78469e06da346dca10c3cc05fd7be4cb70e668e2c539c66c14",
+        "provenance/original-SKILL.md": "63249998befbdbbf2f7d2f089c9cd7a9912f26ddc8fdf04ab1248c82614b43ac"
+      },
+      "performance_status": "unbenchmarked",
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-tdd-workflow-skill-md",
+      "source_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "source_file_sha256": "63249998befbdbbf2f7d2f089c9cd7a9912f26ddc8fdf04ab1248c82614b43ac",
+      "source_url": "https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/tdd-workflow/SKILL.md"
     }
   ]
 }
