@@ -156,6 +156,36 @@ and the full collection and grading boundary. See [Windows job objects](https://
 
 ## Planning an independent-task comparison
 
+Before attempting a held-out evaluation, compare the frozen development and
+holdout protocols in a partition manifest:
+
+```bash
+python tools/audit_trial_partitions.py --manifest benchmarks/agent-effectiveness/development/partition-manifest.json
+```
+
+The checked-in manifest contains the one historically attempted development
+task and no holdout; its status is `incomplete`. Public development candidates
+that do not yet have frozen trial protocols are not in this manifest and must
+also be considered when selecting a holdout. Before future trials, include every
+relevant frozen protocol with its exact SHA-256 and reviewed source groups that
+identify shared issue, dataset or other task lineage. Compare all exposed
+development work, not merely successful attempts. Commit the manifest and
+protocols before collecting trial outcomes, using access-controlled storage
+for material that must remain hidden. A public digest can record a commitment
+without publishing a private holdout; a digest alone does not prove when the
+material was created or who had access to it.
+
+The audit reports cross-partition matching IDs, declared groups, effective
+prompts and workspaces, and input-content subsets even when files are renamed.
+Shared files can be ordinary dependencies, so each reported match needs review.
+`review_required` means only that the automatic comparisons found no match;
+it does not establish independence. Group declarations may be incomplete, and
+semantic overlap, prior model exposure and whether a holdout stayed private
+require separate evidence. The command's success exit status means the audit
+ran successfully, not that a holdout is valid. Grouping dependent examples when
+splitting evaluation data is also discussed in the
+[scikit-learn cross-validation documentation](https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation-iterators-for-grouped-data).
+
 Before collecting a new experiment, consider how many independent tasks are
 needed under several plausible outcome distributions. The prospective planner
 enumerates the rejection probability of an exact conditional McNemar test, with
