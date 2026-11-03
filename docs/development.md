@@ -15,9 +15,11 @@ on Linux and the current validation runtime on Windows. Native provider controls
 use their documented Windows interpreter and dependency graph. These checks need
 no administrator access, specific username or fixed installation path.
 
-Use a supported Python 3.11–3.14 environment; current hosted validation uses Python 3.14.10. Compatibility CI also
-selects current security patches for supported older Python series. Python 3.10
-has reached end of life. Live services, devices, GPUs, external data sources,
+Use a supported Python 3.11–3.14 environment. The hosted Ruff and mypy jobs use
+Python 3.14.10 and the current patch releases for the other supported series;
+the offline validation matrix still uses Python 3.11.17, 3.12.15, 3.13.17 and
+3.14.9. Its report-compatibility matrix uses the newer patches. Python 3.10 has
+reached end of life. Live services, devices, GPUs, external data sources,
 and installed agent runtimes need separate qualification; an offline catalog
 check does not prove their behavior. On Windows, use the active environment's
 `Scripts/python.exe` in place of `python3` in the commands below.
