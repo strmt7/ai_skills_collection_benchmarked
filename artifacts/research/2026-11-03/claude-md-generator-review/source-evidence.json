@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "scope": "Source and documentation observations only; not a runtime or agent trial.",
+  "source_repository": "Varnan-Tech/opendirectory",
+  "pinned_commit": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4",
+  "observed_default_branch": "main",
+  "observed_head": "caac7cda5621e289591e4e74b400e66ac72ad25b",
+  "observed_date": "2026-11-03",
+  "api_captures": {
+    "repository": {
+      "sha256": "d1c2946135d8bedc5f5c2631fded805ecf301292dd80b6f1c8f1abb7a78a7858",
+      "retained": "local research workspace"
+    },
+    "branch": {
+      "sha256": "6d6e231f21c19bc1503dad9d8bec167632e4aef1c7d3fe174149914331867e50",
+      "retained": "local research workspace"
+    },
+    "pinned-tree": {
+      "sha256": "9e15a665578a10b4457526b5d5f9d9558dcabe2049190f6b388e4b8f6fd899ef",
+      "retained": "local research workspace"
+    }
+  },
+  "pinned_tree_response_truncated": false,
+  "resources": [
+    {
+      "path": "SKILL.md",
+      "mirror_worktree_sha256": "523cd633638b2ad00239573c019b0a60af66a7f4a34218c891042e06d8e990aa",
+      "upstream_git_blob": "24b34c2513f3988736d654f3c770774ef20eacc3",
+      "lf_normalized_mirror_matches_upstream_blob": false
+    },
+    {
+      "path": "README.md",
+      "mirror_worktree_sha256": "7615dd48da87e23ca577dffb80cdfbc6d80fcce337d83f94442b066d9354219e",
+      "upstream_git_blob": "3914c0a6a81dd5102705f0f77c5d4b113fd33706",
+      "lf_normalized_mirror_matches_upstream_blob": true
+    },
+    {
+      "path": "evals/evals.json",
+      "mirror_worktree_sha256": "0881e6703cfdc1c4e642b48dcc57184086d622fb6d21b8f4b83bb13262a13857",
+      "upstream_git_blob": "99d378d852e08e3eab9f9514b67a22f831a00a45",
+      "lf_normalized_mirror_matches_upstream_blob": true
+    },
+    {
+      "path": "references/section-guide.md",
+      "mirror_worktree_sha256": "eb646828cb9335a9e9486baf49034aa9cbd55aa18db2a06e19d6df82c3c363ab",
+      "upstream_git_blob": "aa4499429658898b9b06d2187feae04be44739e1",
+      "lf_normalized_mirror_matches_upstream_blob": true
+    }
+  ],
+  "documentation": {
+    "claude_memory": {
+      "intended_url": "https://code.claude.com/docs/en/memory",
+      "native_result_sha256": "c0eae8908027defdf91292fd6931a6bd4fa069d5f9b7792dbda9491a65cfd874",
+      "status_code": 200,
+      "success": true,
+      "provider_version": "0.9.5+catalog.portable4",
+      "eligible_for_scope_review": true
+    },
+    "google_changelog": {
+      "intended_url": "https://ai.google.dev/gemini-api/docs/changelog",
+      "native_result_sha256": "283f004345ecec283dc4bda24f9ef0ea801c4c3c222c1890849aee2a44b94efa",
+      "status_code": 301,
+      "success": true,
+      "provider_version": "0.9.5+catalog.portable4",
+      "eligible_for_scope_review": false
+    },
+    "google_deprecations": {
+      "intended_url": "https://ai.google.dev/gemini-api/docs/deprecations/",
+      "native_result_sha256": "347545fe2a376e180cc219887df936d1a777d4f906c5e4f11eb782f3a40c5dee",
+      "status_code": 301,
+      "success": true,
+      "provider_version": "0.9.5+catalog.portable4",
+      "eligible_for_scope_review": false
+    }
+  },
+  "agent_performance_tested": false
+}

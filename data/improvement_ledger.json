@@ -24063,13 +24063,66 @@
           {
             "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
             "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          },
+          {
+            "path": "docs/research-claude-md-generator.md",
+            "scope": "Source-bound non-security review and current official Claude documentation; no agent or model API test.",
+            "sha256": "cda121931551c740346816b5a8690ebb3bd45216efd1d88c090b8687018234ed"
+          },
+          {
+            "path": "artifacts/research/2026-11-03/claude-md-generator-review/source-evidence.json",
+            "scope": "Source and documentation observation metadata; raw provider captures remain local, and no agent trial was performed.",
+            "sha256": "ceb4465c57965855bfe37116e937046bf958f98cb5986910773d1f489b038cd5"
           }
         ],
+        "open_work": [
+          "Review remaining source examples and supporting resources; security-related review is deferred under the owner instruction.",
+          "Independently validate the experimental instructions and agent effectiveness on source-independent tasks.",
+          "Resolve the source license notice question before treating the experimental alternative as release-qualified."
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          ".env.example": {
+            "sha256": "ff8e9cf2f7ff8f6d12bea96e84e955baec4b76c8a2a8b7757bfe7a692eccd186",
+            "status": "pending"
+          },
+          "README.md": {
+            "review_scope": "Complete README read; line-limit and license declarations compared with the entrypoint and pinned source tree. Remaining content is not fully validated.",
+            "sha256": "cd8dd50a454cf5206df9ddb95e0f0d5a356789c617f54fc33835db68f5595a4c",
+            "status": "pending"
+          },
+          "SKILL.md": {
+            "review_scope": "Complete entrypoint read; model availability and instruction-file guidance assessed. Other examples and security-related content remain open.",
+            "sha256": "73f8d92940af2bbd5aae9777d692c9cd1ac7eba11d9bb585d241c52ad6397ff5",
+            "status": "pending"
+          },
+          "evals/evals.json": {
+            "review_scope": "All five supplied evaluation expectations read; they depend on skill-specific output and are not independent agent benchmark evidence.",
+            "sha256": "eb75db5caafd4b6cf02f298246c19469a96cda79e89918ce38e6fa5a58719d6c",
+            "status": "reviewed"
+          },
+          "references/section-guide.md": {
+            "review_scope": "Complete guide read; sample commands and context claims are not yet independently validated.",
+            "sha256": "0e127ce5f4cb450cec0eb61142b65f40764ebf3493aa44f0bcb1c7e8d00ea06c",
+            "status": "pending"
+          }
+        },
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/improved/skills/claude-md-generator-current/SKILL.md",
+            "scope": "Experimental maintained alternative; not a runtime-readiness repair or an agent efficacy result.",
+            "sha256": "5520082197dc78653c9bd20d340b71c8b17578ef6d06968e9ed347e9fca16bd7"
+          },
+          {
+            "path": "included/improved/skills/claude-md-generator-current/NOTICE.md",
+            "scope": "Attribution and scope of the experimental alternative.",
+            "sha256": "a474c2c25336b781dbddc9e964c2b3bfae3b4c15e394fe4fd6e4cc81f22c93a5"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "Varnan-Tech/opendirectory",
       "source_signature": {
