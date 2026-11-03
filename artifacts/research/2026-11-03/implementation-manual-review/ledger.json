@@ -851,8 +851,8 @@
     },
     {
       "id": "AISC-03",
-      "note": "Ruff and mypy use a hashed developer lock with source and hash verification; the ordinary offline job still installs loose extras. Qualify its graph and a separate latest-resolution canary.",
-      "status": "open_verified"
+      "note": "The main offline test matrix now verifies and installs the hashed universal developer lock; a separate scheduled and manually dispatched matrix resolves latest compatible test dependencies. Independent installation and focused controls passed locally on Windows and Linux. Closure requires exact-commit hosted validation and qualification of the scheduled canary.",
+      "status": "partially_checked"
     },
     {
       "id": "AISC-04",

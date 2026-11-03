@@ -157,9 +157,9 @@ Benchmark independence rule:
 
 Run the applicable gates locally before agent changes are pushed to `main`,
 then check the hosted results. Human pull requests follow the repository's
-permissions and review rules. Core Python checks use
-`pip install -e '.[test,lint]'`; specialized checks have separate prerequisites documented
-in [`CONTRIBUTING.md`](CONTRIBUTING.md).
+permissions and review rules. Set up the locked Python environment as described
+in [`docs/development.md`](docs/development.md); specialized checks have separate
+prerequisites documented in [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 - **Lint + format**: `ruff check tools tests benchmarks/agent-effectiveness/graders` and `ruff format --check tools tests benchmarks/agent-effectiveness/graders`. Configured in `pyproject.toml` (`[tool.ruff]`).
 - **Type check**: `mypy tools tests benchmarks/agent-effectiveness/graders` uses the configured Python 3.11 target locally. CI passes `--python-version` for each supported 3.11/3.12/3.13/3.14 runtime, pinned to their current security or maintenance patch releases. Python 3.10 reached end of life in October 2026 and is no longer a supported runtime.

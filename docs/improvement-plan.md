@@ -25,10 +25,11 @@ The supplied 27 October implementation manual has 154 pages and seven
 embedded files. Its [review ledger](../artifacts/research/2026-11-03/implementation-manual-review/ledger.json)
 tracks extraction, partial inspection and unresolved actions; most of the
 manual remains to be reviewed. Its internal hashes establish byte consistency,
-not the correctness of its claims. Ruff and mypy now use a checked, hashed
-developer lock; the ordinary offline test workflow still resolves loose
-dependencies. Qualification of that workflow and a separate latest-dependency
-canary remains open.
+not the correctness of its claims. Ruff, mypy and the main offline test matrix
+use a checked, hashed developer lock. A separate scheduled and manually
+dispatched matrix resolves the latest compatible test dependencies. Exact-commit
+hosted qualification and the scheduled canary remain part of the evidence needed
+for this change.
 The owner's 120-character Python limit and prohibition on working on other
 repositories take precedence over conflicting recommendations in the manual.
 Security-related actions remain paused.
@@ -149,6 +150,9 @@ In particular:
    and meaningfully different bad variants. Keep these public development tasks
    and any tuning based on them out of the final holdout set. Calibrated cases
    alone do not show that agents find a task difficult or that skills help.
+   Record source-group lineage and check overlap between development and
+   held-out inputs; exact hashes alone do not rule out reordered, derivative or
+   semantically related cases. Declare the scope and limits of those checks.
 4. Before model trials, integrate and qualify the runner and grading boundary.
    That qualification is deferred while security-related work is paused; the
    existing refusal to launch new trials remains in force. Once it is permitted

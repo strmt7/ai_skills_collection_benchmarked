@@ -13,7 +13,7 @@ import tempfile
 import tomllib
 from pathlib import Path
 
-UV_VERSION = "0.13.6"
+UV_VERSION = "0.13.7"
 MINIMUM_PYTHON = "3.11.18"
 ROOT = Path(__file__).resolve().parents[1]
 

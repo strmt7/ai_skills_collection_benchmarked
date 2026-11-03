@@ -18,13 +18,13 @@ def uv() -> str:
     path = os.environ.get("AI_SKILLS_TEST_UV") or shutil.which("uv")
     if path is None:
         if os.environ.get("AI_SKILLS_REQUIRE_UV") == "1":
-            pytest.fail("uv 0.13.6 is required")
-        pytest.skip("uv 0.13.6 is required for the offline integration controls")
+            pytest.fail(f"uv {module.UV_VERSION} is required")
+        pytest.skip(f"uv {module.UV_VERSION} is required for the offline integration controls")
     result = subprocess.run([path, "--version"], capture_output=True, text=True, check=False, timeout=30)
-    if result.returncode or result.stdout.split()[:2] != ["uv", "0.13.6"]:
+    if result.returncode or result.stdout.split()[:2] != ["uv", module.UV_VERSION]:
         if os.environ.get("AI_SKILLS_REQUIRE_UV") == "1":
-            pytest.fail("uv 0.13.6 is required")
-        pytest.skip("uv 0.13.6 is required for the offline integration controls")
+            pytest.fail(f"uv {module.UV_VERSION} is required")
+        pytest.skip(f"uv {module.UV_VERSION} is required for the offline integration controls")
     return str(Path(path).resolve())
 
 
@@ -72,7 +72,7 @@ def fixture(tmp_path: Path, uv: str) -> tuple[Path, Path, str, tuple[str, ...]]:
         "lint",
         "--universal",
         "--python-version",
-        "3.11.18",
+        module.MINIMUM_PYTHON,
         "--generate-hashes",
         "--no-strip-markers",
         "--only-binary=:all:",

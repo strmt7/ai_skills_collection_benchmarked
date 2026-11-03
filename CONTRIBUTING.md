@@ -8,7 +8,7 @@ For skill installation and use, start with the
 [user documentation](docs/README.md). To maintain this collection, use
 [development setup](docs/development.md). Follow the
 [documentation guide](docs/documentation-guide.md) when changing public pages.
-The [development plan](docs/development-plan.md) records the remaining work
+The [development plan](docs/improvement-plan.md) records the remaining work
 and release criteria.
 
 ## Development on main
@@ -21,9 +21,10 @@ checks enabled. Automatic dependency-update PR creation is disabled.
 
 ## Quality gates (must pass before push)
 
-The core Python checks run on pushes and can be run locally after
-`pip install -e '.[test,lint]'`. Specialized workflows can have path filters
-and additional prerequisites; see their linked instructions and actual triggers.
+The core Python checks run on pushes and can be run locally using the
+[locked development environment](docs/development.md#set-up-validation-from-a-fresh-clone).
+Specialized workflows can have path filters and additional prerequisites; see
+their linked instructions and actual triggers.
 
 | Gate | Command | Workflow |
 | --- | --- | --- |

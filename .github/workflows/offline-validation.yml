@@ -29,23 +29,47 @@ jobs:
       GIT_CONFIG_COUNT: "1"
       GIT_CONFIG_KEY_0: core.longpaths
       GIT_CONFIG_VALUE_0: "true"
+      AI_SKILLS_REQUIRE_UV: "1"
     strategy:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        python-version: ["3.11.17", "3.12.15", "3.13.17", "3.14.9"]
+        python-version: ["3.11.18", "3.12.16", "3.13.18", "3.14.10"]
         include:
           - os: windows-latest
-            python-version: "3.14.9"
+            python-version: "3.14.10"
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: ${{ matrix.python-version }}
-          cache: "pip"
-          cache-dependency-path: pyproject.toml
-      - name: Install test dependencies
-        run: python -m pip install -e '.[test]'
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: "0.13.7"
+      - name: Install locked test environment
+        shell: python
+        run: |
+          import os
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          subprocess.run([sys.executable, "-m", "venv", ".venv"], check=True)
+          bindir = Path(".venv") / ("Scripts" if os.name == "nt" else "bin")
+          python = bindir / ("python.exe" if os.name == "nt" else "python")
+          subprocess.run([sys.executable, "tools/verify_dev_lock.py", "--json"], check=True)
+          subprocess.run([
+              "uv", "pip", "sync", "--python", str(python), "--no-config",
+              "--default-index", "https://pypi.org/simple", "--require-hashes",
+              "--only-binary=:all:", "requirements-dev-lock.txt",
+          ], check=True)
+          subprocess.run([
+              "uv", "pip", "install", "--python", str(python), "--no-config",
+              "--no-deps", "--no-build-isolation", "--editable", ".",
+          ], check=True)
+          subprocess.run(["uv", "pip", "check", "--python", str(python)], check=True)
+          with open(os.environ["GITHUB_PATH"], "a", encoding="utf-8") as output:
+              output.write(f"{bindir.resolve()}\n")
       - name: Validate generated JSON
         shell: python
         run: |
@@ -152,6 +176,53 @@ jobs:
           retention-days: 14
       - name: Compile Python
         run: python -m compileall -q tools tests benchmarks/agent-effectiveness/graders
+
+  latest-test-dependencies:
+    name: Latest compatible test dependencies
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ${{ matrix.os }}
+    env:
+      GIT_CONFIG_COUNT: "1"
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: "true"
+      AI_SKILLS_REQUIRE_UV: "1"
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ["3.11.18", "3.12.16", "3.13.18", "3.14.10"]
+        include:
+          - os: windows-latest
+            python-version: "3.14.10"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: "0.13.7"
+      - name: Install latest compatible test dependencies
+        shell: python
+        run: |
+          import os
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          subprocess.run([sys.executable, "-m", "venv", ".venv"], check=True)
+          bindir = Path(".venv") / ("Scripts" if os.name == "nt" else "bin")
+          python = bindir / ("python.exe" if os.name == "nt" else "python")
+          subprocess.run([
+              "uv", "pip", "install", "--python", str(python), "--no-config",
+              "--default-index", "https://pypi.org/simple", "--editable", ".[test]",
+          ], check=True)
+          subprocess.run(["uv", "pip", "check", "--python", str(python)], check=True)
+          subprocess.run(["uv", "pip", "freeze", "--python", str(python)], check=True)
+          with open(os.environ["GITHUB_PATH"], "a", encoding="utf-8") as output:
+              output.write(f"{bindir.resolve()}\n")
+      - name: Run tests against latest compatible dependencies
+        run: python -m pytest -q -n auto
 
   coverage:
     needs: validate
