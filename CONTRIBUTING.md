@@ -8,6 +8,8 @@ For skill installation and use, start with the
 [user documentation](docs/README.md). To maintain this collection, use
 [development setup](docs/development.md). Follow the
 [documentation guide](docs/documentation-guide.md) when changing public pages.
+The [development plan](docs/development-plan.md) records the remaining work
+and release criteria.
 
 ## Development on main
 
