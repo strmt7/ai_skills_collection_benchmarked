@@ -50,11 +50,19 @@ jobs:
         run: |
           python benchmarks/agent-effectiveness/development/click-prompt-suffix-v1/controls/calibrate.py --source (Join-Path $env:RUNNER_TEMP 'click-source') --output (Join-Path $env:RUNNER_TEMP 'click-suffix-calibration')
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Qualify readline behavior in a real terminal
+        if: runner.os == 'Linux'
+        shell: pwsh
+        run: |
+          python benchmarks/agent-effectiveness/development/click-prompt-suffix-v1/controls/calibrate_terminal.py --source (Join-Path $env:RUNNER_TEMP 'click-source') --output (Join-Path $env:RUNNER_TEMP 'click-terminal-calibration')
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Retain control observations
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: click-suffix-task-${{ matrix.os }}
-          path: ${{ runner.temp }}/click-suffix-calibration/
+          path: |
+            ${{ runner.temp }}/click-suffix-calibration/
+            ${{ runner.temp }}/click-terminal-calibration/
           if-no-files-found: warn
           retention-days: 14

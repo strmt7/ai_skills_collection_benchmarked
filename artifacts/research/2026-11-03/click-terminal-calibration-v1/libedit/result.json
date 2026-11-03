@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "scope": "Trusted POSIX PTY controls only; not an agent trial or a confined grader.",
+  "source_commit": "5f86603a84e12bdec1584c15c9f982740e613c45",
+  "source_file_count": 142,
+  "source_snapshot_sha256": "5b73c75d771e54933a4871bf73109f83161b8f6bc6689577a2850d93b9008c84",
+  "runtime": {
+    "python": "3.14.10 (main, Oct 26 2026, 14:09:22) [Clang 23.1.3 ]",
+    "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "readline_backend": "editline",
+    "readline_doc": "Importing this module enables command line editing using libedit readline.",
+    "readline_version": 1026,
+    "executable_sha256": "340a561270dc31d791a4922adf3a112da5c425379a3e080c1946047d3eb89638"
+  },
+  "terminal": {
+    "columns": 80,
+    "rows": 24,
+    "term": "xterm",
+    "inputrc": "empty"
+  },
+  "control_inputs_sha256": {
+    "controls/calibrate_terminal.py": "b9eb21830e7cd8962fcd88a38913b04c5636feaef7fa80ab756ad69f77a48b0c",
+    "controls/calibrate.py": "17f2dc62997664fb15e0d4998a1d3b7e20841c420d42f091f2eb86f49bef1d09",
+    "controls/upstream-patch.json": "0e9adc5768378d2f74635c7c56032a9dbe18b4942a631e81a5c862f64c8f06eb",
+    "controls/test_contract.py": "6e4f45343e697c3ace473cb0f4d7b406cc8a379d0c984bfe9946d37b14e1218e",
+    "tree.json": "4e1b53cf3149a002c7fb9c9e9e21a69645b38c2839f72a0cacca995ab860f24f",
+    "source.json": "2f308132cb0bc73cc12a15b3b4ac7155795e111075598a5f49f1bf280d6b4f8e",
+    "cases.json": "1ef9c94265b1223fb06e2ab2e26519d305a10726114c4ae0c0af319c8ce7a370"
+  },
+  "variants": {
+    "upstream": {
+      "module_sha256": "86a0848cd9dd53e9f35b4f2744090169581f669fc574203d2b17c85a529868c7",
+      "simulated_cases": 16,
+      "simulated_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "simulated_stderr_sha256": "fcc7c455ce69b447b9bb7c30e830e02d5d1a53fa4203174c98f664972b0027e6",
+      "cases": {
+        "prompt": {
+          "passed": false,
+          "lines": [
+            " z",
+            "RESULT=z"
+          ],
+          "trace": "upstream-prompt.terminal",
+          "sha256": "610b7edef40dc2b3084333c60f54de183652d61a475570a8b632ad8c7da32e75"
+        },
+        "confirm": {
+          "passed": false,
+          "lines": [
+            " y",
+            "RESULT=True"
+          ],
+          "trace": "upstream-confirm.terminal",
+          "sha256": "d973818655f787cab1fe48649c955fd47ca993aaaa9c24500a12d0d05f6fa8a3"
+        }
+      }
+    },
+    "no-workaround": {
+      "module_sha256": "b3aa60b7cdcc13f2c7db94a0eac4cf66f455f926d9d09d0fe702d2028b5d2c72",
+      "simulated_cases": 16,
+      "simulated_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "simulated_stderr_sha256": "fcc7c455ce69b447b9bb7c30e830e02d5d1a53fa4203174c98f664972b0027e6",
+      "cases": {
+        "prompt": {
+          "passed": false,
+          "lines": [
+            "z",
+            "RESULT=z"
+          ],
+          "trace": "no-workaround-prompt.terminal",
+          "sha256": "ae3417764d989aa9c15e5517513ac970e81885a86f2fb6fac7466a97eb2f23a8"
+        },
+        "confirm": {
+          "passed": false,
+          "lines": [
+            "y",
+            "RESULT=True"
+          ],
+          "trace": "no-workaround-confirm.terminal",
+          "sha256": "43a092881bd6bada63c8b98b57c4fba4a9f6d53fa9cb6b2f34b5d0305ce7b04b"
+        }
+      }
+    },
+    "entire-input-prompt": {
+      "module_sha256": "3350ff90c52d3ba3b3792dd4aa465223aed9d5c380921dcfabfafd13c773645e",
+      "simulated_cases": 16,
+      "simulated_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "simulated_stderr_sha256": "fcc7c455ce69b447b9bb7c30e830e02d5d1a53fa4203174c98f664972b0027e6",
+      "cases": {
+        "prompt": {
+          "passed": true,
+          "lines": [
+            "Question: z",
+            "RESULT=z"
+          ],
+          "trace": "entire-input-prompt-prompt.terminal",
+          "sha256": "fdd435bddcb66fb5973575dfcdc306cd408bab07f7882975f03371ba1dee9795"
+        },
+        "confirm": {
+          "passed": true,
+          "lines": [
+            "Question: y",
+            "RESULT=True"
+          ],
+          "trace": "entire-input-prompt-confirm.terminal",
+          "sha256": "1e11d4bbfd068465614fbbd55dbc18c7140a2f15ebd03535f3b0caf5eeaa2b3b"
+        }
+      }
+    }
+  },
+  "agent_performance_tested": false
+}

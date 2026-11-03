@@ -1,0 +1,21 @@
+test_confirm_default_suffix (__main__.Contract.test_confirm_default_suffix) ... ok
+test_confirm_default_value (__main__.Contract.test_confirm_default_value) ... ok
+test_confirm_double_space_suffix (__main__.Contract.test_confirm_double_space_suffix) ... ok
+test_confirm_empty_suffix (__main__.Contract.test_confirm_empty_suffix) ... ok
+test_confirm_punctuation_suffix (__main__.Contract.test_confirm_punctuation_suffix) ... ok
+test_confirm_retry (__main__.Contract.test_confirm_retry) ... ok
+test_confirm_single_space_suffix (__main__.Contract.test_confirm_single_space_suffix) ... ok
+test_confirm_unicode_suffix (__main__.Contract.test_confirm_unicode_suffix) ... ok
+test_prompt_default_suffix (__main__.Contract.test_prompt_default_suffix) ... ok
+test_prompt_default_value (__main__.Contract.test_prompt_default_value) ... ok
+test_prompt_double_space_suffix (__main__.Contract.test_prompt_double_space_suffix) ... ok
+test_prompt_empty_suffix (__main__.Contract.test_prompt_empty_suffix) ... ok
+test_prompt_punctuation_suffix (__main__.Contract.test_prompt_punctuation_suffix) ... ok
+test_prompt_retry (__main__.Contract.test_prompt_retry) ... ok
+test_prompt_single_space_suffix (__main__.Contract.test_prompt_single_space_suffix) ... ok
+test_prompt_unicode_suffix (__main__.Contract.test_prompt_unicode_suffix) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.003s
+
+OK

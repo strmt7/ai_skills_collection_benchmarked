@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import base64
 import hashlib
 import importlib.util
 import json
@@ -82,3 +83,62 @@ def test_source_admission_detects_changed_missing_and_extra_files(
     module.unlink()
     with pytest.raises(ValueError, match="incomplete"):
         calibrate.verify_source(source)
+
+
+def load_terminal_control():
+    path = CONTROL.with_name("calibrate_terminal.py")
+    terminal_spec = importlib.util.spec_from_file_location("click_terminal_calibrate", path)
+    assert terminal_spec and terminal_spec.loader
+    terminal = importlib.util.module_from_spec(terminal_spec)
+    terminal_spec.loader.exec_module(terminal)
+    return terminal
+
+
+def test_terminal_screen_parser_distinguishes_erased_prompt() -> None:
+    terminal = load_terminal_control()
+    good = b"Question: abc\b\x1b[K\b\x1b[K\b\x1b[Kz\r\nRESULT=z\r\n"
+    erased = b"Question: abc\b\x1b[K\b\x1b[K\r\x1b[Kz\r\nRESULT=z\r\n"
+    positioned = b"Question: abc\r\x1b[13G\x1b[K\r\x1b[12G\x1b[K\r\x1b[11G\x1b[Kz\r\nRESULT=z\r\n"
+    assert terminal.terminal_lines(good) == ["Question: z", "RESULT=z"]
+    assert terminal.terminal_lines(erased) == ["z", "RESULT=z"]
+    assert terminal.terminal_lines(positioned) == ["Question: z", "RESULT=z"]
+    for bad in (b"\x1b[", b"\x1b[2J", b"\x00"):
+        with pytest.raises(ValueError):
+            terminal.terminal_lines(bad)
+
+
+@pytest.mark.parametrize("backend", ["gnu", "libedit"])
+def test_terminal_evidence_binds_source_inputs_traces_and_outcomes(backend: str) -> None:
+    terminal = load_terminal_control()
+    root = Path(__file__).resolve().parents[1]
+    task = CONTROL.parent.parent
+    evidence = root / "artifacts/research/2026-11-03/click-terminal-calibration-v1" / backend
+    result = json.loads((evidence / "result.json").read_text(encoding="utf-8"))
+    assert result["source_commit"] == calibrate.COMMIT
+    assert result["source_file_count"] == 142
+    assert result["source_snapshot_sha256"] == "5b73c75d771e54933a4871bf73109f83161b8f6bc6689577a2850d93b9008c84"
+    assert result["agent_performance_tested"] is False
+    assert result["terminal"] == {"columns": 80, "rows": 24, "term": "xterm", "inputrc": "empty"}
+    assert len(result["runtime"]["executable_sha256"]) == 64
+    assert ("GNU readline" in result["runtime"]["readline_doc"]) == (backend == "gnu")
+    for name, expected in result["control_inputs_sha256"].items():
+        assert hashlib.sha256((task / name).read_bytes()).hexdigest() == expected
+    planned = json.loads((task / "cases.json").read_text(encoding="utf-8"))["cases"]
+    assert set(result["variants"]) == {"upstream", "no-workaround", "entire-input-prompt"}
+    for name, variant in result["variants"].items():
+        stdout = (evidence / f"{name}.stdout").read_bytes()
+        stderr = (evidence / f"{name}.stderr").read_bytes()
+        assert hashlib.sha256(stdout).hexdigest() == variant["simulated_stdout_sha256"]
+        assert hashlib.sha256(stderr).hexdigest() == variant["simulated_stderr_sha256"]
+        assert variant["simulated_cases"] == 16
+        assert calibrate.verify_results(stderr, planned, set(), 0) == []
+        assert set(variant["cases"]) == {"prompt", "confirm"}
+        for kind, observation in variant["cases"].items():
+            transport = (evidence / f"{observation['trace']}.b64").read_text(encoding="ascii").strip()
+            trace = base64.b64decode(transport, validate=True)
+            assert hashlib.sha256(trace).hexdigest() == observation["sha256"]
+            assert terminal.terminal_lines(trace) == observation["lines"]
+            expected = ["Question: z", "RESULT=z"] if kind == "prompt" else ["Question: y", "RESULT=True"]
+            assert observation["passed"] == (observation["lines"] == expected)
+            expected_pass = name == "entire-input-prompt" or (name == "upstream" and backend == "gnu")
+            assert observation["passed"] == expected_pass
