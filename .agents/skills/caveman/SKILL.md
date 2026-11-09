@@ -19,3 +19,8 @@ authorization boundary and required progress update. Do not invent abbreviations
 or compress away ambiguity. User-facing replies, documentation, code, comments
 and commits use normal clear prose. No model worker, subagent, hook or external
 service is required; the single-session rule remains controlling.
+
+Keep AI responses concise and use current and future repository tools without
+routine announcements or explanations. Follow the root communication and
+execution policy; preserve required progress, material failures and evidence.
+Prioritize useful work and avoid redundant narration or unchanged checks.

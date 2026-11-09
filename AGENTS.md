@@ -21,6 +21,27 @@ with `python tools/validate_agent_tool_policy.py --check --json`. This checks
 repository routing; it cannot independently prove an external agent followed
 the instructions. Actual execution evidence remains mandatory.
 
+## Communication and execution efficiency
+
+Keep AI responses concise, clear and focused on outcomes, decisions and what
+the user needs to know. Use all current and future repository tools quietly:
+routine tool selection, setup and execution do not need announcements, tool-name
+lists or explanations of why each tool is being used. This includes Caveman,
+CocoIndex Code, Crawl4AI and any tools added later.
+
+Preserve required progress updates, meaningful failure and limitation disclosures,
+evidence, access boundaries and approval requirements. Mention a tool when the
+user asks or when its identity is necessary to explain a material result,
+failure or required action. Quiet operation never permits skipping mandatory
+tools, checks or receipts, or claiming work that was not performed.
+
+Prioritize work by user impact, correctness, dependencies and verification needs.
+Use bounded research and targeted source reads, reuse still-valid evidence, and
+avoid redundant narration, rereading and unchanged expensive checks. Broaden or
+repeat verification when required by project policy, changed inputs, observed
+failures or unresolved risk. Keep public documentation as detailed as its
+readers need; token efficiency must preserve technical meaning and usability.
+
 ## Pinned Karpathy agent baseline
 
 Adapted from

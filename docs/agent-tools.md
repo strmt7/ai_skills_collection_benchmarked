@@ -6,6 +6,11 @@ The root [AGENTS.md](../AGENTS.md) remains controlling, including its one-sessio
 rule, source locks and benchmark independence. Tool requirements do not authorize
 subagents or relax any access, security or evidence rule.
 
+Use these and all future repository tools without routine narration. Follow the
+root [communication and execution policy](../AGENTS.md#communication-and-execution-efficiency):
+keep responses concise and prioritize useful work, while retaining required
+progress, failure disclosures and execution evidence.
+
 Before operating a catalog skill, check the [collection guidance](README.md) for
 applicable security notices. In particular, do not run the `ppt-master` SVG editor
 while its [security notice](ppt-master-security.md) remains open. Catalog
