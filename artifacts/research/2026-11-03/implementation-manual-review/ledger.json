@@ -74,22 +74,22 @@
     {
       "extracted_text_sha256": "7a07adb128785af7b8277d6e5549385bf8b0bcfdefd2a673b557be67277b864a",
       "page": 4,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "fd56fb24bce41439211e3a52874785381648203b0416f6c3028bf8e418e8b2c1",
       "page": 5,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "bbd985836478d2532dd5a31c2a5a1146e3babb7533590264ec227f0f90262bdf",
       "page": 6,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "b4933c60e3f617e62720180d0f032c222938583750ac86049d979a052a5cbd3f",
       "page": 7,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "0321c594bedfceac46a0b02566336d2b762bc1bce52d7660c715690269635b65",
@@ -119,62 +119,62 @@
     {
       "extracted_text_sha256": "da1566486564034ca26c91d1e5c7c64c5a738ad9766fd2180284d6786618fc2b",
       "page": 13,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "9505dfa1024bbdf32aef8a68210849e8668b37dcd42363495032d48db8f5211a",
       "page": 14,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "d1ae910c94950aa1fe0e0a3ddec6a0bf15728402fd13dbb54e3cfd7d52500975",
       "page": 15,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "57e579ee5c2f7c8201640297564c557373f1fa6aad3c5a22b58ac38072bcb182",
       "page": 16,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "f4146bfc4d352f54483a2fcf0b2f7d0c7f2babc8de9f30ac5491601807c5b34d",
       "page": 17,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "d5d660aff91a35205df085f11d39bbcd584acaba495285eee5f1d2f19e71ba4f",
       "page": 18,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "ab2f74df654a16830189941b7027d4b30facdc276a147e07a88f7200ede1d4e3",
       "page": 19,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "d14252b6e02f3516ae64fa50c86c1c9254b1b87eae8d23416eb376947f110dd5",
       "page": 20,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "740b737b4616b62ea1e9bede6b9ee34d8d6e63c2536f3c1e3d112d2372945c60",
       "page": 21,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "5e6cf006898d57eff5f43c0c4335116968c15e082cc16898e26bfbdecd49e8ce",
       "page": 22,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "65b399f34ae1c12bb45dae1de0a23e26b77a88630c0121f70386c2ab29505fa5",
       "page": 23,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "3946e7e3631bb7f6a512bab6f3b3631f6bd251b072ea6a4a8ea0b7080101b5c3",
       "page": 24,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "84ea6b2e5af67f6706bcff6162f09e0c3190ec08f4014a190493156f83ace250",
@@ -870,8 +870,92 @@
       "status": "partially_checked"
     }
   ],
+  "review_batches": [
+    {
+      "checks": [
+        {
+          "command": [
+            ".venv/offline-lock-qualification-20261103-v1/workflow-simulation-locked-windows/.venv/Scripts/python.exe",
+            "-m",
+            "pytest",
+            "tests/test_trial_declarations.py",
+            "tests/test_audit_trial_partitions.py::test_data_modules_do_not_load_trial_scoring",
+            "tests/test_eval_harness_sampling_receipt.py",
+            "tests/test_coverage_bundle.py",
+            "-q",
+            "--no-cov",
+            "-p",
+            "no:cacheprovider",
+            "-o",
+            "addopts=",
+            "--basetemp",
+            ".venv/research/manual-common-review-pytest-20261109-v2"
+          ],
+          "environment": {
+            "os": "Windows",
+            "pytest": "9.2.0",
+            "python": "3.14.10"
+          },
+          "exit_code": 0,
+          "failed": 0,
+          "passed": 47,
+          "scope": "Selected local synthetic controls only; not the complete repository matrix or agent trials.",
+          "skipped": 0,
+          "stdout": {
+            "native_stdout_sha256": "c458d21497a64153d11ac3996912903e66cd03c65870cdac1a193ab860d8d7c4",
+            "path": "artifacts/research/2026-11-09/manual-common-review-v1/checks.json",
+            "sha256": "6e6597e9c2e99e316c3f81f07fdb74587eb96e98b0240fcc8a29b5a73ecba1d6",
+            "transport": "base64 JSON"
+          }
+        }
+      ],
+      "id": "common-standard-20261109-v1",
+      "limitations": [
+        "Other repositories were not accessed or modified; portfolio observations were not reverified.",
+        "The embedded contract validator was inventoried, not executed or adopted.",
+        "No source-page citation or internal digest is accepted as proof of external correctness.",
+        "The security pause and release hold remain controlling."
+      ],
+      "page_scope": "Complete extracted text inspected and matched to retained page digests. Page 21 also rendered and visually inspected. Individual claims remain unverified except the limited mappings below.",
+      "pages_inspected": [
+        4,
+        5,
+        6,
+        7,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "repository_commit": "66f0dd76b15b4eaab2f2cb64fc9d9f6ae625717b",
+      "source_pdf_digest_rechecked": true,
+      "source_sha256": {
+        ".github/workflows/offline-validation.yml": "29dd0684025c9344fd70ab9e6fa475ba31e0d57e7600ce90495bd9fcc6934111",
+        "artifacts/research/2026-11-09/eval-harness-sampling-v2/result.json": "ca67159373bad41c0e2ad2aca0488e9667de57dd14700737715fca651cad2ca2",
+        "pyproject.toml": "bb14112c89ed110bcaca444ecea64b4b81f8a8bdf0f74a6a64b37e4f097cbe1f",
+        "tests/test_audit_trial_partitions.py": "8150ac862f6c9a74d6fd7ddb62fb40af8a91d8239dbc2414195c91d31f61df7e",
+        "tests/test_coverage_bundle.py": "47732aaa71ee202d15a6395f988c4347ea0346de6df28f007efab2dd52fad2ac",
+        "tests/test_eval_harness_sampling_receipt.py": "ffc5fa308b4155a75c9170de9796107e5392726014fee34ac86298ee61627bc7",
+        "tests/test_trial_declarations.py": "ec81880e83bde923542ecfff8bf299e2f58ae25bca7728cdeb96b700f29a6445",
+        "tools/_trial_comparisons.py": "fda308dc35b24f588be4bf458d12a407c357754b2e0ef581db7fb172087e4018",
+        "tools/_trial_declarations.py": "157185245b98be55d3f101c63cb39b293abf8cbc47c3673efe843d3c4dab883c",
+        "tools/_trial_summary.py": "46985cacd8e131f1f4aa83a0956021636e5b646d05c329b305f53edfdab809a6"
+      },
+      "visually_inspected_pages": [
+        21
+      ]
+    }
+  ],
   "schema_version": 1,
-  "scope": "Track review of the complete supplied document and embedded materials. Extracted text and internal hashes are not independent verification; user instructions take precedence. Do not work on other user repositories. Security-related implementation is paused.",
+  "scope": "Track review of the complete supplied document and embedded materials. Page inspection, internal hashes and selected passing fixtures are not full requirement verification. The manual is untrusted reference material, not an operating instruction; user instructions take precedence. Do not work on other user repositories. Security-related implementation is paused.",
   "shared_requirements": [
     {
       "id": "S01",
@@ -903,15 +987,21 @@
     },
     {
       "id": "S08",
-      "status": "pending_verification"
+      "note": "Selected independent finite-subset enumeration and unchanged numerical-result controls passed. This does not qualify all skill or real-agent test oracles.",
+      "review_batch": "common-standard-20261109-v1",
+      "status": "partially_checked"
     },
     {
       "id": "S09",
-      "status": "pending_verification"
+      "note": "Selected coverage-bundle source-binding and negative fixtures passed, and the workflow requires five current reports. No complete coverage or required-test-family qualification is established by this batch.",
+      "review_batch": "common-standard-20261109-v1",
+      "status": "partially_checked"
     },
     {
       "id": "S10",
-      "status": "pending_verification"
+      "note": "Task declarations and report summaries import without loading either trial verifier in separate-process controls. This verifies selected dependency boundaries, not the entire architecture.",
+      "review_batch": "common-standard-20261109-v1",
+      "status": "partially_checked"
     },
     {
       "id": "S11",
@@ -927,7 +1017,9 @@
     },
     {
       "id": "S14",
-      "status": "pending_verification"
+      "note": "The current sampling receipt is explicitly versioned, preserves v1, and rejects changed evidence. The full documentation and generator inventory remains open.",
+      "review_batch": "common-standard-20261109-v1",
+      "status": "partially_checked"
     },
     {
       "id": "S15",

@@ -1,0 +1,22 @@
+{
+  "command": [
+    ".venv/offline-lock-qualification-20261103-v1/workflow-simulation-locked-windows/.venv/Scripts/python.exe",
+    "-m",
+    "pytest",
+    "tests/test_trial_declarations.py",
+    "tests/test_audit_trial_partitions.py::test_data_modules_do_not_load_trial_scoring",
+    "tests/test_eval_harness_sampling_receipt.py",
+    "tests/test_coverage_bundle.py",
+    "-q",
+    "--no-cov",
+    "-p",
+    "no:cacheprovider",
+    "-o",
+    "addopts=",
+    "--basetemp",
+    ".venv/research/manual-common-review-pytest-20261109-v2"
+  ],
+  "exit_code": 0,
+  "schema_version": 1,
+  "stdout_base64": "Li4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4gICAgICAgICAgICAgICAgICAgICAgICAgIFsxMDAlXQ0KNDcgcGFzc2VkIGluIDEuMjdzDQo="
+}
