@@ -34,13 +34,21 @@ The owner's 120-character Python limit and prohibition on working on other
 repositories take precedence over conflicting recommendations in the manual.
 Security-related actions remain paused.
 
-The 9 November common-standard review brings the inspected-page count to 33 of
-154. Its source-bound batch records 47 passing local controls and limited
+The 9 November reviews bring the inspected-page count to 100 of 154. The
+common-standard batch records 47 passing local controls and limited
 mappings for independent oracles, coverage validation, dependency direction and
 versioned evidence. These four shared requirements remain only partially
 checked; page inspection is not claim verification. The proposed embedded
 closure validator has not been executed or adopted, and other repositories
 were not accessed for this review.
+
+The [expanded benchmark review](benchmark-expansion.md) covers direct skill
+studies and broader engineering, terminal, enterprise-browser and scientific
+methods. The [redesign method](skill-improvement-method.md) applies to every
+skill and maintained tool. It requires generalizable improvements, independent
+contracts, exposure tracking and honest neutral or negative results, and
+prohibits benchmark-answer fitting. These documents do not complete the
+remaining per-skill work or establish an agent advantage.
 
 To add pending resource records for another category, first validate the ledger
 and mirrors, then run `python tools/manage_improvement_ledger.py

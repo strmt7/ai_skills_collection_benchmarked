@@ -1,0 +1,164 @@
+{
+  "artifact_kind": "external_benchmark_method_smoke",
+  "artifact_version": "1.1",
+  "checks": [
+    {
+      "evidence": "data/external_benchmark_methods.json",
+      "name": "adapter_spec_complete",
+      "passed": true
+    },
+    {
+      "evidence": "https://github.com/datacurve-ai/deep-swe",
+      "name": "repository_head_resolves",
+      "passed": true
+    },
+    {
+      "evidence": 1591,
+      "name": "repo_tree_sampled",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "task pass rate",
+        "named test outcomes",
+        "agent steps",
+        "token usage"
+      ],
+      "name": "declares_objective_metrics",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "pinned task and verifier versions",
+        "fresh verification image",
+        "committed patch",
+        "complete CTRF test inventory"
+      ],
+      "name": "declares_integration_requirements",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "Coding, refactoring & repository automation",
+        "Testing, QA & benchmarking"
+      ],
+      "name": "declares_category_fit",
+      "passed": true
+    },
+    {
+      "evidence": "repository root",
+      "name": "required_subpath_resolves",
+      "passed": true
+    }
+  ],
+  "evidence": {
+    "citations_or_paths": [
+      "https://github.com/datacurve-ai/deep-swe",
+      "https://deepswe.datacurve.ai/blog/deepswe-v1-1",
+      "data/external_benchmark_methods.json"
+    ]
+  },
+  "execution": {
+    "agent_session_started": false,
+    "commands": [
+      {
+        "command": [
+          "git",
+          "ls-remote",
+          "https://github.com/datacurve-ai/deep-swe",
+          "HEAD"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "0b9fabbb63b9104d678fe965e1632f2dd9eaa2ea\tHEAD"
+      }
+    ],
+    "fresh_session": true,
+    "full_benchmark_suite_executed": false,
+    "model_invoked": false
+  },
+  "input_snapshot": {
+    "head_sha": "0b9fabbb63b9104d678fe965e1632f2dd9eaa2ea",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "repo_subpath": null,
+    "repo_subpath_present": true,
+    "repo_url": "https://github.com/datacurve-ai/deep-swe",
+    "sampled_paths": [
+      ".gitignore",
+      "LICENSE",
+      "PROVENANCE.md",
+      "README.md",
+      "tasks",
+      "tasks/README.md",
+      "tasks/abs-module-cache-flags",
+      "tasks/abs-module-cache-flags/environment",
+      "tasks/abs-module-cache-flags/environment/Dockerfile",
+      "tasks/abs-module-cache-flags/instruction.md",
+      "tasks/abs-module-cache-flags/solution",
+      "tasks/abs-module-cache-flags/solution/solution.patch",
+      "tasks/abs-module-cache-flags/solution/solve.sh",
+      "tasks/abs-module-cache-flags/task.toml",
+      "tasks/abs-module-cache-flags/tests",
+      "tasks/abs-module-cache-flags/tests/Dockerfile",
+      "tasks/abs-module-cache-flags/tests/config.json",
+      "tasks/abs-module-cache-flags/tests/grader.py",
+      "tasks/abs-module-cache-flags/tests/test.patch",
+      "tasks/abs-module-cache-flags/tests/test.sh"
+    ],
+    "source_url": "https://deepswe.datacurve.ai/blog/deepswe-v1-1",
+    "tree_error": "",
+    "tree_path_count": 1591,
+    "tree_resolution": {
+      "api_failure": null,
+      "api_url": "https://api.github.com/repos/datacurve-ai/deep-swe/git/trees/0b9fabbb63b9104d678fe965e1632f2dd9eaa2ea?recursive=1",
+      "commands": [],
+      "requested_commit": "0b9fabbb63b9104d678fe965e1632f2dd9eaa2ea",
+      "transport": "github-tree-api"
+    }
+  },
+  "method": {
+    "adapter_stage": "declared-source-probe",
+    "category_fit": [
+      "Coding, refactoring & repository automation",
+      "Testing, QA & benchmarking"
+    ],
+    "id": "deepswe",
+    "integration_requirements": [
+      "pinned task and verifier versions",
+      "fresh verification image",
+      "committed patch",
+      "complete CTRF test inventory"
+    ],
+    "primary_metrics": [
+      "task pass rate",
+      "named test outcomes",
+      "agent steps",
+      "token usage"
+    ],
+    "repo_url": "https://github.com/datacurve-ai/deep-swe",
+    "scope": "Tests original long-horizon engineering tasks with committed-patch verification in a fresh environment.",
+    "source_url": "https://deepswe.datacurve.ai/blog/deepswe-v1-1",
+    "title": "DeepSWE"
+  },
+  "method_id": "deepswe",
+  "method_title": "DeepSWE",
+  "metrics": {
+    "blocking_failures": [],
+    "checks_passed": 7,
+    "checks_total": 7,
+    "integration_status": "adapter_ready",
+    "measurement_scope": "registry declarations and repository resolution only",
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "schema": "evaluators/external_benchmark_method_smoke.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-integration-smoke",
+    "run_name": "2026-11-09-expanded-benchmark-source-probes",
+    "timestamp_utc": "2026-11-09T08:20:14Z",
+    "tool": "tools/evaluate_external_benchmark_methods.py",
+    "tool_sha256": "2269711504fdc976d0100c02467c91311f3cd487f9b14322755e9ef87c4df168"
+  }
+}

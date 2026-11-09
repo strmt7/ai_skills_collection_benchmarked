@@ -1,0 +1,187 @@
+{
+  "additional_checks": [
+    {
+      "command": [
+        "py",
+        "-3.13",
+        "tools/validate_catalog.py"
+      ],
+      "exit_code": 0,
+      "scope": "673 catalog entries, 19 dataset tracks, 718 scenarios."
+    },
+    {
+      "command": [
+        "py",
+        "-3.13",
+        "tools/run_static_benchmarks.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "scope": "Generated static outputs current; not agent efficacy."
+    },
+    {
+      "command": [
+        "py",
+        "-3.13",
+        "tools/audit_skill_quality.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "scope": "Risk-audit freshness only; existing findings remain findings."
+    },
+    {
+      "command": [
+        "py",
+        "-3.13",
+        "tools/evaluate_external_benchmark_methods.py",
+        "--check",
+        "--json"
+      ],
+      "exit_code": 0,
+      "scope": "Generated registry and independent historical/current source-probe declarations."
+    },
+    {
+      "command": [
+        "<qualified-python>",
+        "-m",
+        "pytest",
+        "tests/test_evidence_git_transport.py",
+        "tests/test_external_benchmark_source_binding.py",
+        "tests/test_evaluate_external_benchmark_methods.py",
+        "-q",
+        "--no-cov",
+        "-p",
+        "no:cacheprovider",
+        "-o",
+        "addopts="
+      ],
+      "exit_code": 0,
+      "passed": 31,
+      "scope": "After adding explicit LF transport rules for the new generated source-probe directories."
+    }
+  ],
+  "environment": {
+    "mypy": "2.4.1",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "pytest": "9.2.0",
+    "pytest-xdist": "3.8.0",
+    "python": "3.14.10",
+    "ruff": "0.17.3"
+  },
+  "full_suite": {
+    "command": [
+      "<qualified-python>",
+      "-m",
+      "pytest",
+      "-q",
+      "-n",
+      "2",
+      "--no-cov",
+      "-p",
+      "no:cacheprovider",
+      "-o",
+      "addopts=",
+      "--basetemp",
+      "<fresh task-owned temporary directory outside Git>"
+    ],
+    "command_local_record": ".venv/research/benchmark-expansion-20261109-v1/full-pytest-v2.command.json",
+    "exit_code": 0,
+    "failed": 0,
+    "native_stdout_sha256": "d30eac1caa07d6bc42ecd427fdf4e0876d69ef6a3561e8fae09e729eaee3023f",
+    "passed": 2151,
+    "skipped": 56,
+    "stdout_base64": "YnJpbmdpbmcgdXAgbm9kZXMuLi4NCmJyaW5naW5nIHVwIG5vZGVzLi4uDQoNCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbICAzJV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbICA2JV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbICA5JV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDEzJV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDE2JV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDE5JV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4ucy4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDIyJV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDI2JV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDI5JV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDMyJV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDM1JV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDM5JV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDQyJV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDQ1JV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLnMuLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDQ4JV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLnNzcy4uLnNzcy4uLi4uLi4uLi4uLiBbIDUyJV0NCi4uLi4uLi4uLi5zc3Nzc3Nzcy5zLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDU1JV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDU4JV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4ucy4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDYxJV0NCi4uLi4uLi4uLi4uLi4uLnNzLi4uLi4uLi4uLnNzc3Nzc3Nzc3Nzc3Nzc3Nzcy4uLi5zc3Nzc3Nzcy4uLi4uLi4uLi4uLi4uLiBbIDY1JV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDY4JV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDcxJV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDc1JV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLnMuLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDc4JV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDgxJV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDg0JV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDg4JV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDkxJV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLnNzc3Nzc3Nzcy4uLiBbIDk0JV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiBbIDk3JV0NCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uICAgICAgICAgICAgICAgICAgICAgICAgICBbMTAwJV0NCjIxNTEgcGFzc2VkLCA1NiBza2lwcGVkIGluIDI2NS41MXMgKDA6MDQ6MjUpDQo="
+  },
+  "limitations": [
+    "One Windows/Python environment, a dirty working tree and 56 retained skips; this is not full optional-environment qualification.",
+    "No model invocation, external task/verifier run or efficacy score is claimed.",
+    "Final hosted checks are required on the published commit."
+  ],
+  "prior_execution_failures": [
+    {
+      "exit_code": 1,
+      "failed": 2,
+      "native_stdout_local_path": ".venv/research/benchmark-expansion-20261109-v1/full-pytest.stdout.txt",
+      "native_stdout_sha256": "e8568baf80970420bfb1e96aabfab584c02d11642f2d8afea1e4250d101422b2",
+      "passed": 2149,
+      "scope": "Full run with temporary fixtures inside the checkout .venv; two assumptions about non-Git and non-venv fixture locations fail. No production behavior or assertion was changed.",
+      "skipped": 56
+    },
+    {
+      "evidence_limit": "Observed in the interactive command output only; no native output-file digest is claimed.",
+      "exit_code": 1,
+      "native_stdout_capture": null,
+      "scope": "An attempted standard temporary-root rerun failed during pytest cleanup with WinError 5 at pytest-current. Shared temporary data was left untouched."
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Local repository correctness checks and source-probe consistency, not native benchmark execution or agent efficacy.",
+  "source_files": {
+    "AGENTS.md": "45265452d3d963635fba28cb8993b0eb5830d8a51015825685dcfa50a0d1b14b",
+    "data/external_benchmark_methods.json": "16576a7d28ee6c9d2bfe730a7c514a3a19b67578548c4773ed1582f450404326",
+    "tests/test_evaluate_external_benchmark_methods.py": "925f058c2a576a8e5515596d9a11641a37d30ec68bc992b0e99889e022cc04a8",
+    "tests/test_repaired_skills_and_external_benchmarks.py": "14cdd8e97b954c41d89d03e79ecb47a4f3be64a5d93d2c08b264103a6640ae19",
+    "tools/evaluate_external_benchmark_methods.py": "c34be8362ebe5aacfcd031e2decc955e5b439a5d85cf972cd93719f5a762962d"
+  },
+  "static_checks": [
+    {
+      "command": [
+        "<qualified-python>",
+        "-m",
+        "ruff",
+        "check",
+        "tools",
+        "tests"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "All checks passed!\n"
+    },
+    {
+      "command": [
+        "<qualified-python>",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "tools",
+        "tests"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "256 files already formatted\n"
+    },
+    {
+      "command": [
+        "<qualified-python>",
+        "-m",
+        "mypy",
+        "tools",
+        "tests"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "Success: no issues found in 256 source files\r\n"
+    },
+    {
+      "command": [
+        "<qualified-python>",
+        "-m",
+        "compileall",
+        "-q",
+        "tools",
+        "tests"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "temporary_location_control": {
+    "exit_code": 0,
+    "native_stdout_sha256": "b68911b89449a8600f850e2bd28d10bff9605163907e135f6ebe07a6e14f835c",
+    "passed": 2,
+    "scope": "The two unchanged failing tests passed using a fresh task-owned directory outside Git and .venv.",
+    "stdout_base64": "Li4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFsxMDAlXQ0KMiBwYXNzZWQgaW4gMS43MnMNCg=="
+  }
+}

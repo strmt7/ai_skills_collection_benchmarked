@@ -6,6 +6,8 @@ Uses injected providers to keep the suite offline and deterministic.
 from __future__ import annotations
 
 import importlib
+import json
+from pathlib import Path
 from typing import Any
 
 import pytest
@@ -169,3 +171,54 @@ def test_smoke_probe_captures_tree_exception_text(complete_method):
     )
     assert "hypothetical clone failure" in artifact["input_snapshot"]["tree_error"]
     assert artifact["metrics"]["integration_status"] == "adapter_incomplete"
+
+
+@pytest.fixture
+def retained_probe_bundle(tmp_path, monkeypatch):
+    """Read a real retained observation without networking or changing its bytes."""
+    root = eebm.ROOT
+    name = eebm.CURRENT_RUN_NAME
+    manifest_path = Path("artifacts/external-benchmark-integrations") / name / "manifest.json"
+    manifest = json.loads((root / manifest_path).read_bytes())
+    for relative in [str(manifest_path), *(item["artifact_path"] for item in manifest["artifacts"])]:
+        target = tmp_path / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes((root / relative).read_bytes())
+    monkeypatch.setattr(eebm, "ROOT", tmp_path)
+    return tmp_path, manifest_path, manifest
+
+
+def test_frozen_probe_is_independent_of_later_registry_changes(retained_probe_bundle, monkeypatch):
+    monkeypatch.setattr(eebm, "EXTERNAL_METHODS", [])
+    eebm.check_probe_run(eebm.CURRENT_RUN_NAME)
+
+
+@pytest.mark.parametrize("mutation", ["duplicate", "count", "head", "score", "method_identity", "definition"])
+def test_probe_check_rejects_inconsistent_or_stale_observations(retained_probe_bundle, mutation):
+    root, manifest_path, manifest = retained_probe_bundle
+    expected = {method["id"]: method for method in eebm.EXTERNAL_METHODS if method["id"] in eebm.CURRENT_PROBE_METHODS}
+    item = manifest["artifacts"][0]
+    artifact_path = root / item["artifact_path"]
+    artifact = json.loads(artifact_path.read_bytes())
+    if mutation == "duplicate":
+        manifest["artifacts"].append(dict(item))
+    elif mutation == "count":
+        manifest["summary"]["method_count"] += 1
+    elif mutation == "head":
+        item["head_sha"] = "0" * 40
+    elif mutation == "score":
+        item["score_percent"] = 0
+    elif mutation == "method_identity":
+        artifact["method_id"] = "different-method"
+    else:
+        artifact["method"]["repo_url"] = "https://github.com/old-owner/old-benchmark"
+    (root / manifest_path).write_text(json.dumps(manifest), encoding="utf-8")
+    artifact_path.write_text(json.dumps(artifact), encoding="utf-8")
+    with pytest.raises(SystemExit):
+        eebm.check_probe_run(eebm.CURRENT_RUN_NAME, expected_methods=expected)
+
+
+def test_current_probe_cannot_omit_an_expected_method(retained_probe_bundle):
+    expected = {method["id"]: method for method in eebm.EXTERNAL_METHODS}
+    with pytest.raises(SystemExit, match="cover its declared methods"):
+        eebm.check_probe_run(eebm.CURRENT_RUN_NAME, expected_methods=expected)

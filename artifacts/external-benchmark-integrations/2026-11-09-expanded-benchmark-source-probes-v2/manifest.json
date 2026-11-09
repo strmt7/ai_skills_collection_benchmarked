@@ -1,0 +1,62 @@
+{
+  "artifact_kind": "external_benchmark_method_smoke",
+  "artifacts": [
+    {
+      "artifact_path": "artifacts/external-benchmark-integrations/2026-11-09-expanded-benchmark-source-probes-v2/swe-skills-bench/artifact.json",
+      "blocking_failures": [],
+      "head_sha": "4d3450d9216a590a8726fcb3604b5143daca776b",
+      "integration_status": "adapter_ready",
+      "method_id": "swe-skills-bench",
+      "score_percent": 100.0
+    },
+    {
+      "artifact_path": "artifacts/external-benchmark-integrations/2026-11-09-expanded-benchmark-source-probes-v2/terminal-bench/artifact.json",
+      "blocking_failures": [],
+      "head_sha": "cfc7b6c66f2c731e4b70d92ee71ee5d6d3b55b64",
+      "integration_status": "adapter_ready",
+      "method_id": "terminal-bench",
+      "score_percent": 100.0
+    },
+    {
+      "artifact_path": "artifacts/external-benchmark-integrations/2026-11-09-expanded-benchmark-source-probes-v2/swe-bench-pro-v2/artifact.json",
+      "blocking_failures": [],
+      "head_sha": "66f92766bba642462d4bbe5479e83f91f9211862",
+      "integration_status": "adapter_ready",
+      "method_id": "swe-bench-pro-v2",
+      "score_percent": 100.0
+    },
+    {
+      "artifact_path": "artifacts/external-benchmark-integrations/2026-11-09-expanded-benchmark-source-probes-v2/deepswe/artifact.json",
+      "blocking_failures": [],
+      "head_sha": "0b9fabbb63b9104d678fe965e1632f2dd9eaa2ea",
+      "integration_status": "adapter_ready",
+      "method_id": "deepswe",
+      "score_percent": 100.0
+    },
+    {
+      "artifact_path": "artifacts/external-benchmark-integrations/2026-11-09-expanded-benchmark-source-probes-v2/workarena/artifact.json",
+      "blocking_failures": [],
+      "head_sha": "e885130962f61fb64ac305497996a46cfc7d18f0",
+      "integration_status": "adapter_ready",
+      "method_id": "workarena",
+      "score_percent": 100.0
+    },
+    {
+      "artifact_path": "artifacts/external-benchmark-integrations/2026-11-09-expanded-benchmark-source-probes-v2/scienceagentbench/artifact.json",
+      "blocking_failures": [],
+      "head_sha": "c26e151ed601ba109dc4d35e057ff8e73fec469d",
+      "integration_status": "adapter_ready",
+      "method_id": "scienceagentbench",
+      "score_percent": 100.0
+    }
+  ],
+  "generated_at_utc": "2026-11-09T08:26:30Z",
+  "registry_path": "data/external_benchmark_methods.json",
+  "run_name": "2026-11-09-expanded-benchmark-source-probes-v2",
+  "runner": "tools/evaluate_external_benchmark_methods.py",
+  "summary": {
+    "adapter_incomplete": 0,
+    "adapter_ready": 6,
+    "method_count": 6
+  }
+}

@@ -172,6 +172,16 @@ Benchmark independence rule:
 - Benchmark tasks, fixtures, expected results, and evaluators must be authored independently from the exact text of the skill being evaluated.
 - Skill text may be used as provenance, activation context, or operating instructions, but it must not define the expected answer used for scoring that same skill.
 - Source-grounded skill-proof artifacts are provenance checks only. They must not be counted as runtime benchmark passes.
+- Redesign every skill and maintained tool against general task requirements,
+  current primary sources and independent behavior contracts; follow
+  [the redesign method](docs/skill-improvement-method.md). Development results
+  may reveal general failure mechanisms, but never import benchmark answers,
+  reference patches, benchmark-ID branches or verifier-specific exceptions into
+  candidate guidance or tools. Record incidental exposure, preserve negative
+  results and keep exposed material outside untouched evaluation. Freeze
+  candidate revisions and success criteria before holdout outcomes; changed
+  candidates require new untouched evaluation. Do not infer benefit for all
+  models or agents from results on selected configurations.
 - A counted runtime benchmark artifact must explicitly record that the task, evaluator, and expected result were defined outside the skill content.
 
 ## CI Quality Gates

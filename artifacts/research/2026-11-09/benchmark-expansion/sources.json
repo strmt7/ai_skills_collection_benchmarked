@@ -1,0 +1,446 @@
+{
+  "limits": [
+    "Native browser/API captures remain retained under ignored local research paths; the public record contains identities and review assertions, not full third-party pages.",
+    "Capture success and source resolution do not establish task, verifier, environment, model or skill effectiveness.",
+    "Public benchmark examples and metadata encountered in this session are development-exposed, never evidence of untouched evaluation.",
+    "Benchmark answers were not sought for candidate tuning; no reference patch or example answer was imported into skills or tools.",
+    "No model trial, benchmark task, ServiceNow instance or other user repository was executed or accessed by this research.",
+    "The WebDev study was reviewed at abstract level; its reproducibility and code availability remain unqualified."
+  ],
+  "observed_at_utc": "2026-11-09T08:26:30Z",
+  "release_api_observations": [
+    {
+      "api_endpoint": "https://api.github.com/repos/benchflow-ai/skillsbench/releases/latest",
+      "native_capture_local_path": ".venv/research/benchmark-expansion-20261109-v1/skillsbench.latest-release.api.json",
+      "native_capture_sha256": "da5d1c818e53952a8de11d375cd28bfab1d619471cef1ce1e076dff6aff85d4e",
+      "published_at": "2026-06-14T23:16:44Z",
+      "published_stable_release_found": true,
+      "release_commit": "b63b7b2850226b6aa4fb5929a8c1ac7bc4d9a6af",
+      "repository": "benchflow-ai/skillsbench",
+      "tag": "v1.1"
+    },
+    {
+      "api_endpoint": "https://api.github.com/repos/harbor-framework/terminal-bench/releases/latest",
+      "native_capture_local_path": ".venv/research/benchmark-expansion-20261109-v1/terminal-bench.latest-release.api.json",
+      "native_capture_sha256": "7a28efbdc3bfc55bbb59a03a297f41ce84f69f09793e74f48d58f93357eac040",
+      "published_at": "2026-11-03T20:39:05Z",
+      "published_stable_release_found": true,
+      "release_commit": "4070d6cef56a7d20cb5dc98d5e10ada88a6b9440",
+      "repository": "harbor-framework/terminal-bench",
+      "tag": "v4.1.0"
+    },
+    {
+      "api_endpoint": "https://api.github.com/repos/ControllableModel/SWE-Skills-Bench/releases/latest",
+      "api_status": 404,
+      "native_capture_local_path": ".venv/research/benchmark-expansion-20261109-v1/swe-skills.latest-release.api.json",
+      "native_capture_sha256": "d9e37600354c1839f6b22cebde497e9d14750d2401a06c9a51b1619baf991613",
+      "published_stable_release_found": false,
+      "repository": "ControllableModel/SWE-Skills-Bench"
+    }
+  ],
+  "schema_version": 1,
+  "source_observations": [
+    {
+      "accepted_for_stated_scope": true,
+      "content_scope": "Official homepage and paired-comparison methodology; public task previews encountered.",
+      "error": "",
+      "extracted_text_characters": 20648,
+      "extracted_text_sha256": "f274cc0cd08b0d1b0569c07878db047c398bab40400c67ae87081a9154aae44f",
+      "id": "skillsbench",
+      "native_result": {
+        "bytes": 771140,
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/skillsbench.native.json",
+        "sha256": "01da0fac3846dbf5d5bc7fd2851c08a85d2c0b8671aa8266da456e8d825cb2b7"
+      },
+      "native_success": true,
+      "provider_metadata": {
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/skillsbench.metadata.json",
+        "sha256": "861a45f5100ddbe68e42c97ffa2a3c194d0c5e5b5cb154b3703134d536f737a1"
+      },
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true,
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "url": "https://www.skillsbench.ai/"
+    },
+    {
+      "accepted_for_stated_scope": false,
+      "content_scope": "Rejected HTTP 404 at the formerly registered repository; not evidence of current benchmark availability.",
+      "error": "",
+      "extracted_text_characters": 8779,
+      "extracted_text_sha256": "3ecb409e77f00d88456b266700ece72bde325b069c7c4da76f6867f55d0ae32d",
+      "id": "swe-skills",
+      "native_result": {
+        "bytes": 413502,
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/swe-skills.native.json",
+        "sha256": "b846fae0b6854995eefe87f032a3a870d217a0f0bedc5648ae2627341181cab7"
+      },
+      "native_success": true,
+      "provider_metadata": {
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/swe-skills.metadata.json",
+        "sha256": "e76ba94e4926d54fb207275ea982b8c14709f71f35f225afe33e913de8316464"
+      },
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": false,
+      "status_code": 404,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "url": "https://github.com/GeniusHTX/SWE-Skills-Bench"
+    },
+    {
+      "accepted_for_stated_scope": true,
+      "content_scope": "Official 4.0 methodology announcement, superseded for stable-version selection by 4.1.0.",
+      "error": "",
+      "extracted_text_characters": 6672,
+      "extracted_text_sha256": "6f718b6fe9171544467e6a5960720ebfa8de356bfa5717919657adeb118fbec5",
+      "id": "terminal-bench",
+      "native_result": {
+        "bytes": 129847,
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/terminal-bench.native.json",
+        "sha256": "356713bc153ba67f10ace44f84ef7a4e42f7f3b6a976af3104bfd4f52f3c3a49"
+      },
+      "native_success": true,
+      "provider_metadata": {
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/terminal-bench.metadata.json",
+        "sha256": "aee249e7620217b6eb83db1bb96203c1187797755030e5a8fa61271b30bc840b"
+      },
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true,
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "url": "https://www.tbench.ai/news/terminal-bench-4-0"
+    },
+    {
+      "accepted_for_stated_scope": true,
+      "content_scope": "arXiv abstract, revision 1; full paper and executable suite not reviewed.",
+      "error": "",
+      "extracted_text_characters": 8752,
+      "extracted_text_sha256": "32a51db006ad6e62a5db866e8acda9d87d4feb77a1dbc182600fe87d09d6cf64",
+      "id": "webdev-skills",
+      "native_result": {
+        "bytes": 138755,
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/webdev-skills.native.json",
+        "sha256": "77b662da11640204d0205694055795f73cd4ff4447c75007cc7e15d421f34f13"
+      },
+      "native_success": true,
+      "provider_metadata": {
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/webdev-skills.metadata.json",
+        "sha256": "6252670a5f09b3969564b28ce9db84c3093d37c7020704b852dd72f1d7c57cef"
+      },
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true,
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "url": "https://arxiv.org/abs/2608.23067"
+    },
+    {
+      "accepted_for_stated_scope": true,
+      "content_scope": "Official V2 announcement and resolve-rate methodology; legacy sections are not V2 dataset evidence.",
+      "error": "",
+      "extracted_text_characters": 15888,
+      "extracted_text_sha256": "7024f32a527055cb0db5fd4187dbec466cec388866753249090327edef128ffd",
+      "id": "swe-pro-v2",
+      "native_result": {
+        "bytes": 556785,
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/swe-pro-v2.native.json",
+        "sha256": "6cc46e7caa99005b1c89b02580f75a8621b7d9f2e99772b40086487a04702582"
+      },
+      "native_success": true,
+      "provider_metadata": {
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/swe-pro-v2.metadata.json",
+        "sha256": "8a36f4670f3b11ae4ea54da88dc3d6106f67ee2796e52fc9bdfdfb3d668a89e4"
+      },
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true,
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "url": "https://labs.scale.com/leaderboard/swe_bench_pro_public_v2"
+    },
+    {
+      "accepted_for_stated_scope": true,
+      "content_scope": "Official blog index: navigation and release identity only, not task verification.",
+      "error": "",
+      "extracted_text_characters": 857,
+      "extracted_text_sha256": "4bdc1ecef3451fa1b698789fb830701c6f63b9ea938920366a9342a43d205903",
+      "id": "deepswe",
+      "native_result": {
+        "bytes": 28910,
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/deepswe.native.json",
+        "sha256": "418df2474834374154ea416a0b81d0933bdd9441aead0a356e65034c73ff210f"
+      },
+      "native_success": true,
+      "provider_metadata": {
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/deepswe.metadata.json",
+        "sha256": "0def01b089bf58fb231c5c09d1c98a37243d3f565e26f8d07c82c1345cd7ede0"
+      },
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true,
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "url": "https://deepswe.datacurve.ai/blog"
+    },
+    {
+      "accepted_for_stated_scope": true,
+      "content_scope": "arXiv abstract, revision 2, including the current canonical repository link; not a reproduced study.",
+      "error": "",
+      "extracted_text_characters": 9044,
+      "extracted_text_sha256": "df4ea406beab94075711aa387fc1c161eb02e24c47dc865db0a1a88fef66ee73",
+      "id": "swe-skills-paper",
+      "native_result": {
+        "bytes": 148749,
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/swe-skills-paper.native.json",
+        "sha256": "f75fa60130355f062ff04f9b1066d046a2ca531abb27c920b6483c2c33912aab"
+      },
+      "native_success": true,
+      "provider_metadata": {
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/swe-skills-paper.metadata.json",
+        "sha256": "1a1e791c35a74d8f8647d27f977971cde322d45afc9877be80d9918d688cbca6"
+      },
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true,
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "url": "https://arxiv.org/abs/2603.15401"
+    },
+    {
+      "accepted_for_stated_scope": true,
+      "content_scope": "Official 1.1 methodology, separate committed-patch grading and test-inventory description; public task names encountered.",
+      "error": "",
+      "extracted_text_characters": 13876,
+      "extracted_text_sha256": "b09a963d7764e7c1ba0833974e4c862528cc18fdff823a38f22d1694f897fab5",
+      "id": "deepswe-v11",
+      "native_result": {
+        "bytes": 554227,
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/deepswe-v11.native.json",
+        "sha256": "63c6faa635f5d7c260de865009146575981d5e874553097108d8dd64c0cfe09d"
+      },
+      "native_success": true,
+      "provider_metadata": {
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/deepswe-v11.metadata.json",
+        "sha256": "1f6cf39b62ae54f0199271e288eeff63b479eb4efdd191c22f89e4e57c212f1e"
+      },
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true,
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "url": "https://deepswe.datacurve.ai/blog/deepswe-v1-1"
+    },
+    {
+      "accepted_for_stated_scope": true,
+      "content_scope": "Official overview and prerequisites; a public oracle demo was encountered, not executed.",
+      "error": "",
+      "extracted_text_characters": 23758,
+      "extracted_text_sha256": "864f74f2211274e8054c200d6446dba98440d43f64b1e190ee2a24088a8daea6",
+      "id": "workarena",
+      "native_result": {
+        "bytes": 651207,
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/workarena.native.json",
+        "sha256": "9bc0a0e5b2eca456f5deb9c0c27b238f68f34a9101552280d87af9b23581c1d7"
+      },
+      "native_success": true,
+      "provider_metadata": {
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/workarena.metadata.json",
+        "sha256": "dc35659b626e40e9ce745bd961eaf8df4376f7acca11d422b3d81f3bd6f6f06b"
+      },
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true,
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "url": "https://github.com/ServiceNow/WorkArena"
+    },
+    {
+      "accepted_for_stated_scope": true,
+      "content_scope": "Official overview and scientific-output goals; public annotated examples were encountered. No full task inventory or scientific oracle was audited.",
+      "error": "",
+      "extracted_text_characters": 64982,
+      "extracted_text_sha256": "813ba08a33074d5976349734fe6e579fe5631a38c0fb93bdb06ada486a99383d",
+      "id": "scienceagentbench",
+      "native_result": {
+        "bytes": 599743,
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/scienceagentbench.native.json",
+        "sha256": "8d51ca8366e7dacee75dbd9b5600f58a756d9920f35dc9f748204cb17ce96e2d"
+      },
+      "native_success": true,
+      "provider_metadata": {
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/scienceagentbench.metadata.json",
+        "sha256": "3554985ede0936ecc80d8309c8ee898bc7a0dc2aeb1860efdf41daacc9d87440"
+      },
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true,
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "url": "https://osu-nlp-group.github.io/ScienceAgentBench/"
+    },
+    {
+      "accepted_for_stated_scope": true,
+      "content_scope": "Current official repository overview, paired design and author-reported aggregate results; no task or hidden verifier was executed.",
+      "error": "",
+      "extracted_text_characters": 24764,
+      "extracted_text_sha256": "5f005231902c771c547d16793f5e47c8db3f86dbf554cf1f191a92ec3c2d4841",
+      "id": "swe-skills-current",
+      "native_result": {
+        "bytes": 560063,
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/swe-skills-current.native.json",
+        "sha256": "f5b5d9ccfcb3da6284c1915b487ae32b349676c0306a16c2ec436b20feea1f1d"
+      },
+      "native_success": true,
+      "provider_metadata": {
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/swe-skills-current.metadata.json",
+        "sha256": "806d856318308da401a3373f17a3499bafedb67a913e71bea3ee406a4cb27984"
+      },
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true,
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "url": "https://github.com/ControllableModel/SWE-Skills-Bench"
+    },
+    {
+      "accepted_for_stated_scope": true,
+      "content_scope": "Published stable 4.1.0 release overview and dataset variants; no task changelog or verifier implementation was followed.",
+      "error": "",
+      "extracted_text_characters": 21309,
+      "extracted_text_sha256": "6fd3c0546b20c7e0086571e4374803abee269716bbce03b15bc610ce138ec962",
+      "id": "terminal-bench-v41",
+      "native_result": {
+        "bytes": 455479,
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/terminal-bench-v41.native.json",
+        "sha256": "088b086bed7b0a653713b267278ca46cd049e6b9c5082ae3da0582333c467054"
+      },
+      "native_success": true,
+      "provider_metadata": {
+        "local_path": ".venv/research/benchmark-expansion-20261109-v1/terminal-bench-v41.metadata.json",
+        "sha256": "9cef0edda3efd3d008162e6d4f10fe77ca514072e9207627b99a7811e65a754f"
+      },
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true,
+      "status_code": 200,
+      "strict_policy": {
+        "automation_disclosed": true,
+        "external_llm": false,
+        "fallback": false,
+        "max_retries": 0,
+        "personal_profile": false,
+        "robots": true,
+        "sandbox": true,
+        "stealth": false,
+        "tls_verification": true
+      },
+      "url": "https://github.com/harbor-framework/terminal-bench/releases/tag/v4.1.0"
+    }
+  ],
+  "source_probe_manifest": {
+    "path": "artifacts/external-benchmark-integrations/2026-11-09-expanded-benchmark-source-probes-v2/manifest.json",
+    "sha256": "2ab3eaf719bea2be669435b5386873e8d5662e99c5ef495e1051721df97e5ccf"
+  },
+  "source_repository_commit": "5418f3c4614c7ddb46b23f99d1d6ebc517bcfd3c",
+  "working_tree_scope": "Uncommitted benchmark-registry expansion and manual review; this is not an efficacy run."
+}

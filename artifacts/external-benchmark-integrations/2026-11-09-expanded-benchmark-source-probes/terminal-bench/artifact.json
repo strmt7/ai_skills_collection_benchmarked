@@ -1,0 +1,164 @@
+{
+  "artifact_kind": "external_benchmark_method_smoke",
+  "artifact_version": "1.1",
+  "checks": [
+    {
+      "evidence": "data/external_benchmark_methods.json",
+      "name": "adapter_spec_complete",
+      "passed": true
+    },
+    {
+      "evidence": "https://github.com/harbor-framework/terminal-bench",
+      "name": "repository_head_resolves",
+      "passed": true
+    },
+    {
+      "evidence": 6199,
+      "name": "repo_tree_sampled",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "task success",
+        "command log completeness",
+        "execution time",
+        "resource use"
+      ],
+      "name": "declares_objective_metrics",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "task definition",
+        "container environment",
+        "command transcript",
+        "verifier result"
+      ],
+      "name": "declares_integration_requirements",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "DevOps, cloud & operations",
+        "Testing, QA & benchmarking"
+      ],
+      "name": "declares_category_fit",
+      "passed": true
+    },
+    {
+      "evidence": "repository root",
+      "name": "required_subpath_resolves",
+      "passed": true
+    }
+  ],
+  "evidence": {
+    "citations_or_paths": [
+      "https://github.com/harbor-framework/terminal-bench",
+      "https://www.tbench.ai/news/terminal-bench-4-0",
+      "data/external_benchmark_methods.json"
+    ]
+  },
+  "execution": {
+    "agent_session_started": false,
+    "commands": [
+      {
+        "command": [
+          "git",
+          "ls-remote",
+          "https://github.com/harbor-framework/terminal-bench",
+          "HEAD"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "cfc7b6c66f2c731e4b70d92ee71ee5d6d3b55b64\tHEAD"
+      }
+    ],
+    "fresh_session": true,
+    "full_benchmark_suite_executed": false,
+    "model_invoked": false
+  },
+  "input_snapshot": {
+    "head_sha": "cfc7b6c66f2c731e4b70d92ee71ee5d6d3b55b64",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "repo_subpath": null,
+    "repo_subpath_present": true,
+    "repo_url": "https://github.com/harbor-framework/terminal-bench",
+    "sampled_paths": [
+      ".github",
+      ".github/harbor-run-defaults.yml",
+      ".github/harbor-version",
+      ".github/pull_request_template.md",
+      ".github/workflows",
+      ".github/workflows/build-domain-chart.yml",
+      ".github/workflows/dispatch-harbor-rollout.yml",
+      ".github/workflows/issue-category.yml",
+      ".github/workflows/leaderboard-apply.yml",
+      ".github/workflows/leaderboard-check.yml",
+      ".github/workflows/leaderboard-close.yml",
+      ".github/workflows/leaderboard-judge.yml",
+      ".github/workflows/leaderboard-merge.yml",
+      ".github/workflows/leaderboard-recheck.yml",
+      ".github/workflows/poll-hosted-jobs.yml",
+      ".github/workflows/regrade.yml",
+      ".github/workflows/release-prebuilt.yml",
+      ".github/workflows/review.yml",
+      ".github/workflows/run-cheat-trials.yml",
+      ".github/workflows/run-trials.yml"
+    ],
+    "source_url": "https://www.tbench.ai/news/terminal-bench-4-0",
+    "tree_error": "",
+    "tree_path_count": 6199,
+    "tree_resolution": {
+      "api_failure": null,
+      "api_url": "https://api.github.com/repos/harbor-framework/terminal-bench/git/trees/cfc7b6c66f2c731e4b70d92ee71ee5d6d3b55b64?recursive=1",
+      "commands": [],
+      "requested_commit": "cfc7b6c66f2c731e4b70d92ee71ee5d6d3b55b64",
+      "transport": "github-tree-api"
+    }
+  },
+  "method": {
+    "adapter_stage": "declared-source-probe",
+    "category_fit": [
+      "DevOps, cloud & operations",
+      "Testing, QA & benchmarking"
+    ],
+    "id": "terminal-bench",
+    "integration_requirements": [
+      "task definition",
+      "container environment",
+      "command transcript",
+      "verifier result"
+    ],
+    "primary_metrics": [
+      "task success",
+      "command log completeness",
+      "execution time",
+      "resource use"
+    ],
+    "repo_url": "https://github.com/harbor-framework/terminal-bench",
+    "scope": "Evaluates terminal-native agent tasks with reproducible task containers and verifiers.",
+    "source_url": "https://www.tbench.ai/news/terminal-bench-4-0",
+    "title": "Terminal-Bench"
+  },
+  "method_id": "terminal-bench",
+  "method_title": "Terminal-Bench",
+  "metrics": {
+    "blocking_failures": [],
+    "checks_passed": 7,
+    "checks_total": 7,
+    "integration_status": "adapter_ready",
+    "measurement_scope": "registry declarations and repository resolution only",
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "schema": "evaluators/external_benchmark_method_smoke.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-integration-smoke",
+    "run_name": "2026-11-09-expanded-benchmark-source-probes",
+    "timestamp_utc": "2026-11-09T08:20:14Z",
+    "tool": "tools/evaluate_external_benchmark_methods.py",
+    "tool_sha256": "2269711504fdc976d0100c02467c91311f3cd487f9b14322755e9ef87c4df168"
+  }
+}

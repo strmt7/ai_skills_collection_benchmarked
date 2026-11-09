@@ -9,7 +9,7 @@ from _source_history import resolve_entry
 from helpers import ROOT, load
 
 
-def test_external_benchmark_registry_and_smoke_artifacts_cover_all_methods():
+def test_external_benchmark_registry_preserves_historical_probe_scope():
     registry = load("data/external_benchmark_methods.json")
     manifest = load(
         "artifacts/external-benchmark-integrations/2026-04-19-external-benchmark-method-smoke/manifest.json"
@@ -17,13 +17,13 @@ def test_external_benchmark_registry_and_smoke_artifacts_cover_all_methods():
     expected = evaluate_external_benchmark_methods.registry()
 
     assert registry == expected
-    assert registry["method_count"] == 14
-    assert manifest["summary"]["method_count"] == registry["method_count"]
-    assert manifest["summary"]["adapter_ready"] == registry["method_count"]
+    assert registry["method_count"] == 18
+    assert manifest["summary"]["method_count"] == 14
+    assert manifest["summary"]["adapter_ready"] == 14
     assert manifest["summary"]["adapter_incomplete"] == 0
 
     method_ids = {method["id"] for method in registry["methods"]}
-    assert {item["method_id"] for item in manifest["artifacts"]} == method_ids
+    assert {item["method_id"] for item in manifest["artifacts"]} < method_ids
     for item in manifest["artifacts"]:
         artifact_path = ROOT / item["artifact_path"]
         assert artifact_path.is_file()
@@ -37,6 +37,14 @@ def test_external_benchmark_registry_and_smoke_artifacts_cover_all_methods():
         assert (ROOT / artifact["outputs"]["schema"]).is_file()
         assert artifact["method"]["primary_metrics"]
         assert artifact["method"]["integration_requirements"]
+
+
+def test_current_selected_probes_bind_the_expanded_method_definitions():
+    methods = evaluate_external_benchmark_methods
+    expected = {
+        method["id"]: method for method in methods.EXTERNAL_METHODS if method["id"] in methods.CURRENT_PROBE_METHODS
+    }
+    methods.check_probe_run(methods.CURRENT_RUN_NAME, expected_methods=expected)
 
 
 def test_external_benchmark_docs_are_generated_from_registry_and_manifest():

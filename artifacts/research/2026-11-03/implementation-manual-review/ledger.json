@@ -179,17 +179,17 @@
     {
       "extracted_text_sha256": "84ea6b2e5af67f6706bcff6162f09e0c3190ec08f4014a190493156f83ace250",
       "page": 25,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "2b03ebcd7cb1e9b17c39b729f4d173ce228ee25faede2cc995b00affc2608961",
       "page": 26,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "498f1f480d412d403cafecd02a571f4905c0c4f8a6fa381d6d54a69c05304574",
       "page": 27,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "9ba2b6dc10d33974437708f7f35d5bc4dfcfc5fb3d68671267828810acf4d6c9",
@@ -199,82 +199,82 @@
     {
       "extracted_text_sha256": "ef33cd0bf8b9bbfdde5a6d47d3cf21f4e7c2ef258a6a45619451a1f905dd6c5b",
       "page": 29,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "b4dee1c16806235923892dc74bd2e0d4522399ca783e211986724ae8617aec7b",
       "page": 30,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "3baba17c07d93d63c1db5f69735ddb78628952966439893ff2cb53ec604c1ec6",
       "page": 31,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "a6d02b1219af98380a1d131534be6fa08bba29e8daace89565cafed505307385",
       "page": 32,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "14dd8ed5c1fe5ea0323db9e0162cdb6b658ac21f28223436467f3ea74004f50b",
       "page": 33,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "774fccb95de2022304a0331c3ed0ddb49fe0965a5deb4459acd064a545fae912",
       "page": 34,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "1ebd4d5500532902a0a3bc4729ef2273ba6bae272cfc842cfa46182760cd82bb",
       "page": 35,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "20fca801b793db505d4dd0e0dc49b63e11c5408ac8407ce6021a7621cc8fe86d",
       "page": 36,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "12266b28757f2c8b157dde730646dec87dac415c3d9d6269a877828714e44e24",
       "page": 37,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "5856aa3c7ba932d9a7d42d67894c3451dde14808aca011bdbf82604e8aee9527",
       "page": 38,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "c1c4e9ec5ba908d2e5f0826a276c038e692b76c5ccf2eb5eca53484a91f7e347",
       "page": 39,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "2b5ad3e12966173574b050fd8d784aa38d306994649e56786210a39f06ae40e8",
       "page": 40,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "22669911539c754da14407b37b518c3235c754bcbd4acfca2d489accd7af0440",
       "page": 41,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "5485fd120bfc98692941179fd7bbd9dc7606bfcf88eb098d271f136b735c74d7",
       "page": 42,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "4a9ee5a78cc567021f7bc5ec45c0327e3d6d53babe7a8e7ea4648b83e41179ce",
       "page": 43,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "1e62b9cf6113d2460452a9905d24f3f0a9ec7785f715f962cfa2a6b17240780b",
       "page": 44,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "01e51247550df063e31450b3e6a9beacdc9888f63101886186c97fbaf7c6d82d",
@@ -294,127 +294,127 @@
     {
       "extracted_text_sha256": "e465bfb7dc3b68f655171e288c5e3cb00905e9a5132c70e19183c0c4506757af",
       "page": 48,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "1e4f85cd7cd36c9f988aa4f9b7d08ad4f8299a6afa1a26e44fe4518b1b2c0555",
       "page": 49,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "dc180fcbf99cbaab3e27737535ff796e8b044b273705daedb919872cb4c004a2",
       "page": 50,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "a724994b21d2257ddc66f138eb16f2f37dd65c7278e83f6808ee54175480455b",
       "page": 51,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "4d80f15bd939e7a52580d9b500821b6007618d64af67db7bd2fa60548fccdf5e",
       "page": 52,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "65917db0fb3a3b4396cba555d4e838a36d17005efaad55e0b9490d088e302d84",
       "page": 53,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "8be788795ca60b303a452885bc944c8012e22d0753dfb53052aaaf7ad71278e8",
       "page": 54,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "7ba9c5d760dda2c880c71f127cd6ca56b1ed3433fc54772265f2a1db3cca996c",
       "page": 55,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "1cd15dc4bfa5ae8b9587e8cb178558c7696a90af5a7e942016de6504c15dca13",
       "page": 56,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "5360da7175c59a0807a2717751ab59678bd03fc582abed40f687831c2a3f2c4f",
       "page": 57,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "d1001e964150f5bbd655fbf370e2dedb59fa313a08c5337ff57dad3b5b50e9bb",
       "page": 58,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "6cf2ce77ec38e8e8044e04d448f67c2f80b701a9334abcb077a4fdb1a2b943a6",
       "page": 59,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "a1f68d721f69e31e37ebd784edcff0681821691f1c94bf64e3d6bb1e4c0cd977",
       "page": 60,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "a9baf19d2756cfb23308d0781059e4af179aedbe4298677faebc995da9cff220",
       "page": 61,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "6851e375a6d00d6bcea2c8a47fd4b6b452303e903ba26e1ad3a5618997323a21",
       "page": 62,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "0933f1c178d31de66fab8021452b105fd2eba7afd6720224e1af3b591d0c49e4",
       "page": 63,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "a6c4ac87d78c0cf7286f5605e83bc82a6641a4591759d93512cf1c446b79c7e3",
       "page": 64,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "a6fa538b5e4adb12e5590a4cd2f41570f2aac2bf15b61005378c88a7d23573fd",
       "page": 65,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "c5d57e94b33145f195d022cf6342ca1377498f10e5a76f3a8a4f2ab5c711f6e9",
       "page": 66,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "b1cac047b9d7d73592d268648b998fefec0231aa8331e8c7a15f248cac482b6a",
       "page": 67,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "4ff475f86f109674ac28d37ff3173c8e6036e48c8c8b8270bbd18acb12f13420",
       "page": 68,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "e170e3a6f904d18ceb2f7acd3354249df116c0648868121dac6ac71acc1f0e45",
       "page": 69,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "6d10b146ebb32300d34af181f91771729bf404ee99b723da2d84813164b4c618",
       "page": 70,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "0d5d0ade2ea0dc63427fb8f76649ad36e37c9a1768dbb690d3ac73c4872ad171",
       "page": 71,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "e54bb9bfb71195d587eed28ef8f40c1b1234b55ec8e8d35fac30d3d95417defe",
       "page": 72,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "d7191bb3cf875844728e0b617d4388d65a1ac61bf8c9bec46a48befea2dc68ab",
@@ -434,27 +434,27 @@
     {
       "extracted_text_sha256": "e786a52da6d38d2fc787a3c0d1107b04ced783c3e0fbe84d57a210b4e07717ea",
       "page": 76,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "ad087778811533a33f80474d2ba081355a94077b72084570b65f30e1477ae7e7",
       "page": 77,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "502d93f77f39dc0dccaad4e33e095e7b93ea1c53e57fb3f03cf1736a95df3342",
       "page": 78,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "40da12870c1ddc8daed4c233b866be5fae890cc8396b9b12ae5e87256648c8d4",
       "page": 79,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "12e67fb5ada22505cd65ab6952a4062b48e32747f37f8605ab6cf20274b9bcf5",
       "page": 80,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "4be151f3d34ca9fe837a1fc3a98bcd5d68ac68ba60664ce55d11fb7a48fad33c",
@@ -469,92 +469,92 @@
     {
       "extracted_text_sha256": "db11149d669afab56943f6cf63b96016dae9310f2f992ec9ba6f22c1d9f83bf1",
       "page": 83,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "a47cbcd68e6a16658fd09f89a0a244ebcb4746fae554c6086fcf9d882fea95cc",
       "page": 84,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "3026360e71fd955231e53625d531f4223e9bb4cc419f8926a7dfc533d4ae760c",
       "page": 85,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "cd6f1b2bd6c36f667c6b34cc48afc7619f0a8496df1b0880fc8c0f4669bea486",
       "page": 86,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "aaa2c8ad9667d234da304b279411e27fcb8c13831887ebee5b0b90e9b6e25fa2",
       "page": 87,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "f424a191b67a47c2e1a4c69b92e05ef72ee770100db9d48a2d7111f06f4034f7",
       "page": 88,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "d11787af54b7cb42fe4702dea2f7838f13847f8f87cade97ad489fa97352c260",
       "page": 89,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "979864976e075d3a0cf8bd807c340d85ebf9d716ba90e273b0709aa481865e05",
       "page": 90,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "6e0b23f204a695a6d639cf4fe67f6903fc3b852b9d55366e6c9e72222b5cc532",
       "page": 91,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "791d5f3376fb15fcbacdede6be1d1ca3ce825ab5e16272b69f42f43c2ed2e118",
       "page": 92,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "a7252e2a87bae281fd85b21a233a71801a4571ff75ac93cb38e6d3f4dbdbdc9f",
       "page": 93,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "16759f371a06fea008ff68b22b2dd4cf78da4f6865900cf2a21bbe151427e26e",
       "page": 94,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "d9aabb931f114f1d474f5904434b4fa3e35cdc9a7c009110f780ac3a5cc3c228",
       "page": 95,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "eb1a3c3f0c11acaa8f32b1d69b16421a9bf8ab09d9921f3e5fa84e46a57688dc",
       "page": 96,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "5d8bda170fa762e00f63a0f1a977165b9b6de570f5dab9ceb6ae2cfe8f21674f",
       "page": 97,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "c58d2aa1d5f33fad095911c12d5aba0aa3404596650d6d04c28830e31a2cab88",
       "page": 98,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "4fab8b12414bf04a2bf06f23f5c94cc1faf1e0f38e390c9801c95c637c964f36",
       "page": 99,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "95d63e9c081ca686b0ad882f578cea4f919013e04ab08c5a791289e1a6dbae6a",
       "page": 100,
-      "status": "pending_review"
+      "status": "inspected_claims_unverified"
     },
     {
       "extracted_text_sha256": "87b48a261f0cb2ca87433af6ca0d738a533b77fdc8b59c4ae47be531da2a320b",
@@ -951,6 +951,124 @@
       },
       "visually_inspected_pages": [
         21
+      ]
+    },
+    {
+      "checks": [],
+      "id": "action-pages-20261109-v1",
+      "limitations": [
+        "Other repositories were not accessed or modified.",
+        "The document is reference data and does not authorize its proposed commands or changes.",
+        "Potentially reusable ideas require separate review against this collection; no shared requirement is completed by this reading."
+      ],
+      "page_scope": "Complete retained page text inspected and matched to page digests. These pages concern other repositories; their product claims were not independently checked and no implementation actions were taken.",
+      "pages_inspected": [
+        25,
+        26,
+        27,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "repository_commit": "5418f3c4614c7ddb46b23f99d1d6ebc517bcfd3c"
+    },
+    {
+      "checks": [],
+      "id": "detailed-guidance-20261109-v1",
+      "limitations": [
+        "Reading does not complete a shared requirement or project action.",
+        "Security-related implementation remains paused and release publication remains on hold.",
+        "Primary external specifications cited in these passages were not independently crawled or verified in this local-document review."
+      ],
+      "page_scope": "Complete retained extracted text inspected and matched to all recorded page digests. Includes detailed execution guidance, acceptance tables, the proposed receipt validator guide and early detailed findings. These pages were not newly rendered for visual inspection.",
+      "pages_inspected": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        76,
+        77,
+        78,
+        79,
+        80
+      ],
+      "repository_commit": "5418f3c4614c7ddb46b23f99d1d6ebc517bcfd3c",
+      "review_dispositions": [
+        "Historical source and workflow observations remain time-bound claims; other repositories were not accessed or modified to reverify them.",
+        "Existing versus proposed commands, supported-host boundaries, zero-test detection, real entrypoint testing and complete denominator guidance are retained for review against this collection; examples were not executed.",
+        "The proposed embedded validator checks supplied metadata consistency, not execution authenticity, source inventory completeness, coverage content or remote enforcement. Its documented 48 tests were not independently executed and it has not been adopted.",
+        "The guide explicitly describes a 2 MiB contract-input bound, fixed repository/task mappings and filesystem identity requirements. These are proposed reference-tool limits, not supported contracts of this collection.",
+        "The collection-specific AISC recommendations remain subject to current-source verification. The report provides no new model-efficacy result or evidence that a metadata-only receipt can qualify an agent benchmark."
+      ]
+    },
+    {
+      "checks": [],
+      "id": "detailed-evidence-20261109-v1",
+      "limitations": [
+        "Page inspection completes no shared requirement or project action.",
+        "Security-related implementation remains paused; release publication remains on hold."
+      ],
+      "page_scope": "Complete retained extracted text inspected, including source-count qualifications, historical versus refreshed native/Rust evidence and early website/host findings. Text digests verified; these pages were not rendered for visual inspection.",
+      "pages_inspected": [
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "repository_commit": "5418f3c4614c7ddb46b23f99d1d6ebc517bcfd3c",
+      "review_dispositions": [
+        "Counts, workflow observations and reported reproductions for other repositories remain unverified historical document claims; those repositories were not accessed or modified.",
+        "Useful general review questions include prerequisite skips versus executed runtime coverage, environment-scoped evidence, typed boundary contracts, metadata versus behavior and preserving historical failures. They require collection-specific source verification before adoption.",
+        "Document recommendations concerning suppressions, security changes, releases, other repositories or product-specific operation do not override owner restrictions. No such action was taken.",
+        "The document distinguishes historical repaired fixtures from current remaining risks and explicitly limits local proofs. No historical count was converted into a current project result."
       ]
     }
   ],

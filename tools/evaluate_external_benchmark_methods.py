@@ -27,6 +27,15 @@ ROOT = Path(__file__).resolve().parents[1]
 RUNNER_ID = "tools/evaluate_external_benchmark_methods.py"
 RUNNER_SOURCE_SHA256 = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
 RUN_NAME = "2026-04-19-external-benchmark-method-smoke"
+CURRENT_RUN_NAME = "2026-11-09-expanded-benchmark-source-probes-v2"
+CURRENT_PROBE_METHODS = {
+    "swe-skills-bench",
+    "terminal-bench",
+    "swe-bench-pro-v2",
+    "deepswe",
+    "workarena",
+    "scienceagentbench",
+}
 
 
 EXTERNAL_METHODS: list[dict[str, Any]] = [
@@ -34,9 +43,9 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "id": "swe-skills-bench",
         "title": "SWE-Skills-Bench",
         "scope": "Measures skill utility on real software-engineering tasks by comparing paired runs with and without the skill.",
-        "repo_url": "https://github.com/GeniusHTX/SWE-Skills-Bench",
-        "source_url": "https://arxiv.org/abs/2603.15401",
-        "adapter_stage": "implemented-smoke-adapter",
+        "repo_url": "https://github.com/ControllableModel/SWE-Skills-Bench",
+        "source_url": "https://arxiv.org/abs/2603.15401v2",
+        "adapter_stage": "declared-source-probe",
         "primary_metrics": ["with-skill pass rate", "without-skill pass rate", "pass-rate delta", "token overhead"],
         "category_fit": ["Coding, refactoring & repository automation", "Agent infrastructure & skill creation"],
         "integration_requirements": [
@@ -52,7 +61,7 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "scope": "Evaluates agent skill use across diverse verifiable real-world tasks and deterministic verifiers.",
         "repo_url": "https://github.com/benchflow-ai/skillsbench",
         "source_url": "https://www.skillsbench.ai/",
-        "adapter_stage": "implemented-smoke-adapter",
+        "adapter_stage": "declared-source-probe",
         "primary_metrics": ["task pass rate", "skill gain", "steps", "token usage"],
         "category_fit": ["Agent infrastructure & skill creation", "Testing, QA & benchmarking"],
         "integration_requirements": ["task package", "skill package", "deterministic verifier", "agent trajectory"],
@@ -63,7 +72,7 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "scope": "Runs evidence-graded skill eval cases in CI and reports regression-oriented skill scores.",
         "repo_url": "https://github.com/skill-bench/skill-eval-action",
         "source_url": "https://skill-bench.dev/",
-        "adapter_stage": "implemented-smoke-adapter",
+        "adapter_stage": "declared-source-probe",
         "primary_metrics": ["criterion score", "evidence coverage", "pass/fail", "regression delta"],
         "category_fit": ["Agent infrastructure & skill creation", "Testing, QA & benchmarking"],
         "integration_requirements": ["eval case YAML", "grader criteria", "skill path", "agent response transcript"],
@@ -74,7 +83,7 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "scope": "Evaluates repository issue resolution by applying patches and running project tests.",
         "repo_url": "https://github.com/SWE-bench/SWE-bench",
         "source_url": "https://github.com/SWE-bench/SWE-bench",
-        "adapter_stage": "implemented-smoke-adapter",
+        "adapter_stage": "declared-source-probe",
         "primary_metrics": ["resolved instances", "patch applies", "test pass rate", "regression count"],
         "category_fit": ["Coding, refactoring & repository automation", "Testing, QA & benchmarking"],
         "integration_requirements": ["Docker-capable host", "instance id", "prediction patch", "test harness output"],
@@ -83,9 +92,9 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "id": "terminal-bench",
         "title": "Terminal-Bench",
         "scope": "Evaluates terminal-native agent tasks with reproducible task containers and verifiers.",
-        "repo_url": "https://github.com/laude-institute/terminal-bench",
-        "source_url": "https://github.com/laude-institute/terminal-bench",
-        "adapter_stage": "implemented-smoke-adapter",
+        "repo_url": "https://github.com/harbor-framework/terminal-bench",
+        "source_url": "https://github.com/harbor-framework/terminal-bench/releases/tag/v4.1.0",
+        "adapter_stage": "declared-source-probe",
         "primary_metrics": ["task success", "command log completeness", "execution time", "resource use"],
         "category_fit": ["DevOps, cloud & operations", "Testing, QA & benchmarking"],
         "integration_requirements": [
@@ -101,7 +110,7 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "scope": "Provides a unified browser-agent environment across MiniWoB, WebArena, VisualWebArena, WorkArena, and related suites.",
         "repo_url": "https://github.com/ServiceNow/BrowserGym",
         "source_url": "https://github.com/ServiceNow/BrowserGym",
-        "adapter_stage": "implemented-smoke-adapter",
+        "adapter_stage": "declared-source-probe",
         "primary_metrics": ["task success", "trace completeness", "browser actions", "wall time"],
         "category_fit": ["Frontend, UI & browser automation", "Search, retrieval & web automation"],
         "integration_requirements": ["Playwright browser", "environment id", "browser trace", "task evaluator"],
@@ -112,7 +121,7 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "scope": "Measures realistic self-hosted web tasks with end-to-end web-agent success criteria.",
         "repo_url": "https://github.com/web-arena-x/webarena",
         "source_url": "https://arxiv.org/abs/2307.13854",
-        "adapter_stage": "implemented-smoke-adapter",
+        "adapter_stage": "declared-source-probe",
         "primary_metrics": [
             "end-to-end task success",
             "site state correctness",
@@ -128,7 +137,7 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "scope": "Adds version-controlled verified web tasks and deterministic evaluators on top of WebArena-style environments.",
         "repo_url": "https://github.com/ServiceNow/webarena-verified",
         "source_url": "https://github.com/ServiceNow/webarena-verified",
-        "adapter_stage": "implemented-smoke-adapter",
+        "adapter_stage": "declared-source-probe",
         "primary_metrics": [
             "verified task success",
             "network trace evidence",
@@ -149,7 +158,7 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "scope": "Evaluates safety and trustworthiness for enterprise-oriented web agents.",
         "repo_url": "https://github.com/segev-shlomov/ST-WebAgentBench",
         "source_url": "https://github.com/segev-shlomov/ST-WebAgentBench",
-        "adapter_stage": "implemented-smoke-adapter",
+        "adapter_stage": "declared-source-probe",
         "primary_metrics": [
             "task success",
             "safety violation rate",
@@ -165,7 +174,7 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "scope": "Evaluates multimodal computer-use agents across real desktop applications and operating-system workflows.",
         "repo_url": "https://github.com/xlang-ai/OSWorld",
         "source_url": "https://os-world.github.io/",
-        "adapter_stage": "implemented-smoke-adapter",
+        "adapter_stage": "declared-source-probe",
         "primary_metrics": [
             "task success",
             "execution evaluator result",
@@ -187,7 +196,7 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "repo_url": "https://github.com/ShishirPatil/gorilla",
         "repo_subpath": "berkeley-function-call-leaderboard",
         "source_url": "https://gorilla.cs.berkeley.edu/blogs/8_berkeley_function_calling_leaderboard.html",
-        "adapter_stage": "implemented-smoke-adapter",
+        "adapter_stage": "declared-source-probe",
         "primary_metrics": ["AST match", "execution accuracy", "function relevance", "multi-turn correctness"],
         "category_fit": ["Agent infrastructure & skill creation", "Search, retrieval & web automation"],
         "integration_requirements": [
@@ -203,7 +212,7 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "scope": "Evaluates machine-learning engineering agents on Kaggle-style competitions with local grading scripts.",
         "repo_url": "https://github.com/openai/mle-bench",
         "source_url": "https://github.com/openai/mle-bench",
-        "adapter_stage": "implemented-smoke-adapter",
+        "adapter_stage": "declared-source-probe",
         "primary_metrics": ["competition score", "medal threshold", "valid submission rate", "runtime budget"],
         "category_fit": ["Science, research & data analysis", "Data, analytics & visualization"],
         "integration_requirements": [
@@ -219,7 +228,7 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "scope": "Evaluates real-world ML development tasks such as dataset handling, debugging, training, and implementation.",
         "repo_url": "https://github.com/ml-dev-bench/ml-dev-bench",
         "source_url": "https://github.com/ml-dev-bench/ml-dev-bench",
-        "adapter_stage": "implemented-smoke-adapter",
+        "adapter_stage": "declared-source-probe",
         "primary_metrics": ["task success", "model score", "debugging correctness", "implementation correctness"],
         "category_fit": ["Science, research & data analysis", "Data, analytics & visualization"],
         "integration_requirements": [
@@ -235,7 +244,7 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
         "scope": "Evaluates code agents on real repository tasks from setup through delivery with cost-aware metrics.",
         "repo_url": "https://github.com/QuantaAlpha/GitTaskBench",
         "source_url": "https://github.com/QuantaAlpha/GitTaskBench",
-        "adapter_stage": "implemented-smoke-adapter",
+        "adapter_stage": "declared-source-probe",
         "primary_metrics": ["task success", "setup success", "cost-aware alpha", "test result"],
         "category_fit": ["Coding, refactoring & repository automation", "DevOps, cloud & operations"],
         "integration_requirements": [
@@ -243,6 +252,70 @@ EXTERNAL_METHODS: list[dict[str, Any]] = [
             "environment setup log",
             "agent patch",
             "test/evaluator result",
+        ],
+    },
+    {
+        "id": "swe-bench-pro-v2",
+        "title": "SWE-Bench Pro V2",
+        "scope": "Tests long-horizon repository changes with clean-image patch regrading and regression checks.",
+        "repo_url": "https://github.com/scaleapi/SWE-bench_Pro-os",
+        "source_url": "https://labs.scale.com/leaderboard/swe_bench_pro_public_v2",
+        "adapter_stage": "declared-source-probe",
+        "primary_metrics": ["resolved tasks", "fail-to-pass outcomes", "pass-to-pass regressions", "attempt cost"],
+        "category_fit": ["Coding, refactoring & repository automation", "Testing, QA & benchmarking"],
+        "integration_requirements": [
+            "pinned V2 split and images",
+            "reference and empty-patch controls",
+            "clean-image regrading",
+            "all attempt outcomes",
+        ],
+    },
+    {
+        "id": "deepswe",
+        "title": "DeepSWE",
+        "scope": "Tests original long-horizon engineering tasks with committed-patch verification in a fresh environment.",
+        "repo_url": "https://github.com/datacurve-ai/deep-swe",
+        "source_url": "https://deepswe.datacurve.ai/blog/deepswe-v1-1",
+        "adapter_stage": "declared-source-probe",
+        "primary_metrics": ["task pass rate", "named test outcomes", "agent steps", "token usage"],
+        "category_fit": ["Coding, refactoring & repository automation", "Testing, QA & benchmarking"],
+        "integration_requirements": [
+            "pinned task and verifier versions",
+            "fresh verification image",
+            "committed patch",
+            "complete CTRF test inventory",
+        ],
+    },
+    {
+        "id": "workarena",
+        "title": "WorkArena / WorkArena++",
+        "scope": "Tests atomic and composed enterprise knowledge-work journeys on ServiceNow through BrowserGym.",
+        "repo_url": "https://github.com/ServiceNow/WorkArena",
+        "source_url": "https://github.com/ServiceNow/WorkArena",
+        "adapter_stage": "declared-source-probe",
+        "primary_metrics": ["task success", "application state correctness", "action count", "attempt cost"],
+        "category_fit": ["Frontend, UI & browser automation", "Search, retrieval & web automation"],
+        "integration_requirements": [
+            "approved disposable ServiceNow instance",
+            "pinned BrowserGym environment",
+            "task level and seeds",
+            "native state evaluator",
+        ],
+    },
+    {
+        "id": "scienceagentbench",
+        "title": "ScienceAgentBench",
+        "scope": "Tests data-driven scientific programming across multiple disciplines using executable output checks.",
+        "repo_url": "https://github.com/OSU-NLP-Group/ScienceAgentBench",
+        "source_url": "https://osu-nlp-group.github.io/ScienceAgentBench/",
+        "adapter_stage": "declared-source-probe",
+        "primary_metrics": ["task success", "program execution", "scientific output correctness", "attempt cost"],
+        "category_fit": ["Science, research & data analysis", "Testing, QA & benchmarking"],
+        "integration_requirements": [
+            "pinned dataset and dependency environment",
+            "discipline-specific output oracle",
+            "submission program",
+            "data and model provenance",
         ],
     },
 ]
@@ -374,7 +447,7 @@ def github_tree_paths(repo_url: str, head_sha: str, *, receipt: dict[str, Any] |
 def registry() -> dict[str, Any]:
     return {
         "registry_version": 1,
-        "generated_on": "2026-04-19",
+        "generated_on": "2026-11-09",
         "method_count": len(EXTERNAL_METHODS),
         "methods": EXTERNAL_METHODS,
     }
@@ -564,6 +637,8 @@ def render_methods_doc(data: dict[str, Any]) -> str:
             "A smoke adapter proves only that the external method can be addressed objectively from this repository. It is not a task pass, not a model score, and not a substitute for running the external suite.",
             "",
             "Current source research and immutable release pins for SkillsBench are recorded in [the SkillsBench review](research-skillsbench.md). Historical probes remain unchanged; no agent-efficacy result is inferred from them.",
+            "",
+            "The [expanded benchmark review](benchmark-expansion.md) separates skill-effect studies, repository engineering, terminal workflows, enterprise browser tasks and scientific programming. `declared-source-probe` means a source-resolution definition; it does not mean a native evaluation adapter is implemented. The new selected source probes are retained separately from the historical 14-method run.",
         ]
     )
     return "\n".join(lines) + "\n"
@@ -655,6 +730,38 @@ def run_smoke(
     return manifest
 
 
+def check_probe_run(run_name: str, *, expected_methods: dict[str, dict[str, Any]] | None = None) -> None:
+    """Check a frozen observation against its own declarations, never a later registry."""
+    manifest = load_json(ROOT / "artifacts" / "external-benchmark-integrations" / run_name / "manifest.json")
+    items = manifest["artifacts"]
+    ids = [item["method_id"] for item in items]
+    if manifest["run_name"] != run_name or not ids or len(ids) != len(set(ids)):
+        raise SystemExit(f"invalid or duplicate method identities in {run_name}")
+    if expected_methods is not None and set(ids) != expected_methods.keys():
+        raise SystemExit(f"source probe does not cover its declared methods: {run_name}")
+    ready = 0
+    for item in items:
+        artifact = load_json(checked_path(ROOT, item["artifact_path"]))
+        method_id = item["method_id"]
+        if (
+            artifact["method_id"] != method_id
+            or artifact["method"]["id"] != method_id
+            or artifact["runner"]["run_name"] != run_name
+            or artifact["input_snapshot"]["head_sha"] != item["head_sha"]
+            or any(
+                artifact["metrics"][key] != item[key]
+                for key in ("integration_status", "score_percent", "blocking_failures")
+            )
+        ):
+            raise SystemExit(f"stale external source-probe summary for {method_id}")
+        if expected_methods is not None and artifact["method"] != expected_methods[method_id]:
+            raise SystemExit(f"source probe uses a different method definition: {method_id}")
+        ready += item["integration_status"] == "adapter_ready"
+    expected_summary = {"method_count": len(ids), "adapter_ready": ready, "adapter_incomplete": len(ids) - ready}
+    if manifest["summary"] != expected_summary:
+        raise SystemExit(f"inconsistent external source-probe counts: {run_name}")
+
+
 def check_outputs() -> None:
     expected = registry()
     data_path = ROOT / "data" / "external_benchmark_methods.json"
@@ -668,15 +775,14 @@ def check_outputs() -> None:
     manifest = load_json(manifest_path)
     if report_path.read_text(encoding="utf-8") != render_smoke_report(manifest):
         raise SystemExit("docs/external-benchmark-adapter-smoke.md is stale")
-    expected_ids = {method["id"] for method in expected["methods"]}
-    artifact_ids = {item["method_id"] for item in manifest["artifacts"]}
-    if artifact_ids != expected_ids:
-        raise SystemExit("external benchmark smoke manifest does not cover every method")
-    for item in manifest["artifacts"]:
-        artifact_path = ROOT / item["artifact_path"]
-        artifact = load_json(artifact_path)
-        if artifact["metrics"]["integration_status"] != item["integration_status"]:
-            raise SystemExit(f"stale external smoke summary for {item['method_id']}")
+    check_probe_run(RUN_NAME)
+    check_probe_run("2026-11-09-expanded-benchmark-source-probes")
+    check_probe_run(
+        CURRENT_RUN_NAME,
+        expected_methods={
+            method["id"]: method for method in expected["methods"] if method["id"] in CURRENT_PROBE_METHODS
+        },
+    )
 
 
 def build_parser() -> argparse.ArgumentParser:

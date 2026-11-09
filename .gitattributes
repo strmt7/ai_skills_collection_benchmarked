@@ -71,6 +71,9 @@
 # Frozen source-resolution evidence is hashed as exact published bytes.
 /artifacts/external-benchmark-integrations/skillsbench-source-resolution-v3/** -text
 /artifacts/external-benchmark-integrations/skillsbench-source-resolution-v6/** -text
+# New generated source-probe manifests are hash-bound LF text on every host.
+/artifacts/external-benchmark-integrations/2026-11-09-expanded-benchmark-source-probes/** text eol=lf
+/artifacts/external-benchmark-integrations/2026-11-09-expanded-benchmark-source-probes-v2/** text eol=lf
 # This authored schema is bound by the native schema-validation receipt.
 /evaluators/external_benchmark_method_smoke.schema.json text eol=lf
 

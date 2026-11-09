@@ -1,0 +1,164 @@
+{
+  "artifact_kind": "external_benchmark_method_smoke",
+  "artifact_version": "1.1",
+  "checks": [
+    {
+      "evidence": "data/external_benchmark_methods.json",
+      "name": "adapter_spec_complete",
+      "passed": true
+    },
+    {
+      "evidence": "https://github.com/ControllableModel/SWE-Skills-Bench",
+      "name": "repository_head_resolves",
+      "passed": true
+    },
+    {
+      "evidence": 2784,
+      "name": "repo_tree_sampled",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "with-skill pass rate",
+        "without-skill pass rate",
+        "pass-rate delta",
+        "token overhead"
+      ],
+      "name": "declares_objective_metrics",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "pinned task repository",
+        "with-skill run",
+        "without-skill run",
+        "deterministic acceptance tests"
+      ],
+      "name": "declares_integration_requirements",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "Coding, refactoring & repository automation",
+        "Agent infrastructure & skill creation"
+      ],
+      "name": "declares_category_fit",
+      "passed": true
+    },
+    {
+      "evidence": "repository root",
+      "name": "required_subpath_resolves",
+      "passed": true
+    }
+  ],
+  "evidence": {
+    "citations_or_paths": [
+      "https://github.com/ControllableModel/SWE-Skills-Bench",
+      "https://arxiv.org/abs/2603.15401v2",
+      "data/external_benchmark_methods.json"
+    ]
+  },
+  "execution": {
+    "agent_session_started": false,
+    "commands": [
+      {
+        "command": [
+          "git",
+          "ls-remote",
+          "https://github.com/ControllableModel/SWE-Skills-Bench",
+          "HEAD"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "4d3450d9216a590a8726fcb3604b5143daca776b\tHEAD"
+      }
+    ],
+    "fresh_session": true,
+    "full_benchmark_suite_executed": false,
+    "model_invoked": false
+  },
+  "input_snapshot": {
+    "head_sha": "4d3450d9216a590a8726fcb3604b5143daca776b",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "repo_subpath": null,
+    "repo_subpath_present": true,
+    "repo_url": "https://github.com/ControllableModel/SWE-Skills-Bench",
+    "sampled_paths": [
+      ".env.example",
+      ".gitattributes",
+      ".gitignore",
+      "LICENSE",
+      "README.md",
+      "config",
+      "config/benchmark_config.yaml",
+      "docker",
+      "docker/base",
+      "docker/base/Dockerfile.cpp",
+      "docker/base/Dockerfile.golang",
+      "docker/base/Dockerfile.jvm",
+      "docker/base/Dockerfile.node",
+      "docker/base/Dockerfile.python",
+      "docker/base/Dockerfile.rust",
+      "docker/bazel",
+      "docker/bazel/Dockerfile",
+      "docker/clojure",
+      "docker/clojure/Dockerfile",
+      "docker/golang"
+    ],
+    "source_url": "https://arxiv.org/abs/2603.15401v2",
+    "tree_error": "",
+    "tree_path_count": 2784,
+    "tree_resolution": {
+      "api_failure": null,
+      "api_url": "https://api.github.com/repos/ControllableModel/SWE-Skills-Bench/git/trees/4d3450d9216a590a8726fcb3604b5143daca776b?recursive=1",
+      "commands": [],
+      "requested_commit": "4d3450d9216a590a8726fcb3604b5143daca776b",
+      "transport": "github-tree-api"
+    }
+  },
+  "method": {
+    "adapter_stage": "declared-source-probe",
+    "category_fit": [
+      "Coding, refactoring & repository automation",
+      "Agent infrastructure & skill creation"
+    ],
+    "id": "swe-skills-bench",
+    "integration_requirements": [
+      "pinned task repository",
+      "with-skill run",
+      "without-skill run",
+      "deterministic acceptance tests"
+    ],
+    "primary_metrics": [
+      "with-skill pass rate",
+      "without-skill pass rate",
+      "pass-rate delta",
+      "token overhead"
+    ],
+    "repo_url": "https://github.com/ControllableModel/SWE-Skills-Bench",
+    "scope": "Measures skill utility on real software-engineering tasks by comparing paired runs with and without the skill.",
+    "source_url": "https://arxiv.org/abs/2603.15401v2",
+    "title": "SWE-Skills-Bench"
+  },
+  "method_id": "swe-skills-bench",
+  "method_title": "SWE-Skills-Bench",
+  "metrics": {
+    "blocking_failures": [],
+    "checks_passed": 7,
+    "checks_total": 7,
+    "integration_status": "adapter_ready",
+    "measurement_scope": "registry declarations and repository resolution only",
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "schema": "evaluators/external_benchmark_method_smoke.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-integration-smoke",
+    "run_name": "2026-11-09-expanded-benchmark-source-probes-v2",
+    "timestamp_utc": "2026-11-09T08:26:30Z",
+    "tool": "tools/evaluate_external_benchmark_methods.py",
+    "tool_sha256": "c34be8362ebe5aacfcd031e2decc955e5b439a5d85cf972cd93719f5a762962d"
+  }
+}

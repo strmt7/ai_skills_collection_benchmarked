@@ -1,0 +1,164 @@
+{
+  "artifact_kind": "external_benchmark_method_smoke",
+  "artifact_version": "1.1",
+  "checks": [
+    {
+      "evidence": "data/external_benchmark_methods.json",
+      "name": "adapter_spec_complete",
+      "passed": true
+    },
+    {
+      "evidence": "https://github.com/OSU-NLP-Group/ScienceAgentBench",
+      "name": "repository_head_resolves",
+      "passed": true
+    },
+    {
+      "evidence": 37,
+      "name": "repo_tree_sampled",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "task success",
+        "program execution",
+        "scientific output correctness",
+        "attempt cost"
+      ],
+      "name": "declares_objective_metrics",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "pinned dataset and dependency environment",
+        "discipline-specific output oracle",
+        "submission program",
+        "data and model provenance"
+      ],
+      "name": "declares_integration_requirements",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "Science, research & data analysis",
+        "Testing, QA & benchmarking"
+      ],
+      "name": "declares_category_fit",
+      "passed": true
+    },
+    {
+      "evidence": "repository root",
+      "name": "required_subpath_resolves",
+      "passed": true
+    }
+  ],
+  "evidence": {
+    "citations_or_paths": [
+      "https://github.com/OSU-NLP-Group/ScienceAgentBench",
+      "https://osu-nlp-group.github.io/ScienceAgentBench/",
+      "data/external_benchmark_methods.json"
+    ]
+  },
+  "execution": {
+    "agent_session_started": false,
+    "commands": [
+      {
+        "command": [
+          "git",
+          "ls-remote",
+          "https://github.com/OSU-NLP-Group/ScienceAgentBench",
+          "HEAD"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "c26e151ed601ba109dc4d35e057ff8e73fec469d\tHEAD"
+      }
+    ],
+    "fresh_session": true,
+    "full_benchmark_suite_executed": false,
+    "model_invoked": false
+  },
+  "input_snapshot": {
+    "head_sha": "c26e151ed601ba109dc4d35e057ff8e73fec469d",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "repo_subpath": null,
+    "repo_subpath_present": true,
+    "repo_url": "https://github.com/OSU-NLP-Group/ScienceAgentBench",
+    "sampled_paths": [
+      ".gitignore",
+      "LICENSE",
+      "README.md",
+      "agent.py",
+      "benchmark",
+      "benchmark/README.md",
+      "calculate_metrics.py",
+      "compare_diff.py",
+      "compute_scores.py",
+      "config_conda_env.py",
+      "docs",
+      "docs/20250110_docker",
+      "docs/20250110_docker/README.md",
+      "engine",
+      "engine/base_engine.py",
+      "engine/bedrock_engine.py",
+      "engine/openai_engine.py",
+      "evaluation",
+      "evaluation/harness",
+      "evaluation/harness/__init__.py"
+    ],
+    "source_url": "https://osu-nlp-group.github.io/ScienceAgentBench/",
+    "tree_error": "",
+    "tree_path_count": 37,
+    "tree_resolution": {
+      "api_failure": null,
+      "api_url": "https://api.github.com/repos/OSU-NLP-Group/ScienceAgentBench/git/trees/c26e151ed601ba109dc4d35e057ff8e73fec469d?recursive=1",
+      "commands": [],
+      "requested_commit": "c26e151ed601ba109dc4d35e057ff8e73fec469d",
+      "transport": "github-tree-api"
+    }
+  },
+  "method": {
+    "adapter_stage": "declared-source-probe",
+    "category_fit": [
+      "Science, research & data analysis",
+      "Testing, QA & benchmarking"
+    ],
+    "id": "scienceagentbench",
+    "integration_requirements": [
+      "pinned dataset and dependency environment",
+      "discipline-specific output oracle",
+      "submission program",
+      "data and model provenance"
+    ],
+    "primary_metrics": [
+      "task success",
+      "program execution",
+      "scientific output correctness",
+      "attempt cost"
+    ],
+    "repo_url": "https://github.com/OSU-NLP-Group/ScienceAgentBench",
+    "scope": "Tests data-driven scientific programming across multiple disciplines using executable output checks.",
+    "source_url": "https://osu-nlp-group.github.io/ScienceAgentBench/",
+    "title": "ScienceAgentBench"
+  },
+  "method_id": "scienceagentbench",
+  "method_title": "ScienceAgentBench",
+  "metrics": {
+    "blocking_failures": [],
+    "checks_passed": 7,
+    "checks_total": 7,
+    "integration_status": "adapter_ready",
+    "measurement_scope": "registry declarations and repository resolution only",
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "schema": "evaluators/external_benchmark_method_smoke.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-integration-smoke",
+    "run_name": "2026-11-09-expanded-benchmark-source-probes-v2",
+    "timestamp_utc": "2026-11-09T08:26:30Z",
+    "tool": "tools/evaluate_external_benchmark_methods.py",
+    "tool_sha256": "c34be8362ebe5aacfcd031e2decc955e5b439a5d85cf972cd93719f5a762962d"
+  }
+}

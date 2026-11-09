@@ -5,6 +5,15 @@ The existing 673-entry catalog readiness results describe packaging. The new
 its submitted behavior outside the task workspace. No measured skill advantage
 has been established yet.
 
+The [expanded benchmark review](benchmark-expansion.md) defines additional
+content, routing, context-cost and cross-model comparisons. Follow the
+[redesign method](skill-improvement-method.md): infer general failure mechanisms
+from development evidence, then verify improvements on independent tasks.
+Benchmark answers, reference patches and verifier-specific shortcuts must not
+enter candidate skills or tools. Record public-example exposure and keep it
+outside untouched evaluation. Freeze practical thresholds and analysis before
+outcomes; retain neutral, harmful and failed results.
+
 ## Frozen inputs
 
 `development/protocol-v2.json` records the task commit, source hashes, grader

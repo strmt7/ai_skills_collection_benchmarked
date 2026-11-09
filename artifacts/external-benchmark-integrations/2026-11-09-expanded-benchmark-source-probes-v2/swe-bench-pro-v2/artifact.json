@@ -1,0 +1,164 @@
+{
+  "artifact_kind": "external_benchmark_method_smoke",
+  "artifact_version": "1.1",
+  "checks": [
+    {
+      "evidence": "data/external_benchmark_methods.json",
+      "name": "adapter_spec_complete",
+      "passed": true
+    },
+    {
+      "evidence": "https://github.com/scaleapi/SWE-bench_Pro-os",
+      "name": "repository_head_resolves",
+      "passed": true
+    },
+    {
+      "evidence": 16077,
+      "name": "repo_tree_sampled",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "resolved tasks",
+        "fail-to-pass outcomes",
+        "pass-to-pass regressions",
+        "attempt cost"
+      ],
+      "name": "declares_objective_metrics",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "pinned V2 split and images",
+        "reference and empty-patch controls",
+        "clean-image regrading",
+        "all attempt outcomes"
+      ],
+      "name": "declares_integration_requirements",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "Coding, refactoring & repository automation",
+        "Testing, QA & benchmarking"
+      ],
+      "name": "declares_category_fit",
+      "passed": true
+    },
+    {
+      "evidence": "repository root",
+      "name": "required_subpath_resolves",
+      "passed": true
+    }
+  ],
+  "evidence": {
+    "citations_or_paths": [
+      "https://github.com/scaleapi/SWE-bench_Pro-os",
+      "https://labs.scale.com/leaderboard/swe_bench_pro_public_v2",
+      "data/external_benchmark_methods.json"
+    ]
+  },
+  "execution": {
+    "agent_session_started": false,
+    "commands": [
+      {
+        "command": [
+          "git",
+          "ls-remote",
+          "https://github.com/scaleapi/SWE-bench_Pro-os",
+          "HEAD"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "66f92766bba642462d4bbe5479e83f91f9211862\tHEAD"
+      }
+    ],
+    "fresh_session": true,
+    "full_benchmark_suite_executed": false,
+    "model_invoked": false
+  },
+  "input_snapshot": {
+    "head_sha": "66f92766bba642462d4bbe5479e83f91f9211862",
+    "is_real": true,
+    "kind": "real-github-repository-tree",
+    "repo_subpath": null,
+    "repo_subpath_present": true,
+    "repo_url": "https://github.com/scaleapi/SWE-bench_Pro-os",
+    "sampled_paths": [
+      ".gitignore",
+      ".gitmodules",
+      "LICENSE",
+      "README.md",
+      "SWE-agent",
+      "dockerfiles",
+      "dockerfiles/base_dockerfile",
+      "dockerfiles/base_dockerfile/instance_NodeBB__NodeBB-00c70ce7b0541cfc94afe567921d7668cdc8f4ac-vnan",
+      "dockerfiles/base_dockerfile/instance_NodeBB__NodeBB-00c70ce7b0541cfc94afe567921d7668cdc8f4ac-vnan/Dockerfile",
+      "dockerfiles/base_dockerfile/instance_NodeBB__NodeBB-04998908ba6721d64eba79ae3b65a351dcfbc5b5-vnan",
+      "dockerfiles/base_dockerfile/instance_NodeBB__NodeBB-04998908ba6721d64eba79ae3b65a351dcfbc5b5-vnan/Dockerfile",
+      "dockerfiles/base_dockerfile/instance_NodeBB__NodeBB-05f2236193f407cf8e2072757fbd6bb170bc13f0-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e",
+      "dockerfiles/base_dockerfile/instance_NodeBB__NodeBB-05f2236193f407cf8e2072757fbd6bb170bc13f0-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e/Dockerfile",
+      "dockerfiles/base_dockerfile/instance_NodeBB__NodeBB-087e6020e490b4a1759f38c1ad03869511928263-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e",
+      "dockerfiles/base_dockerfile/instance_NodeBB__NodeBB-087e6020e490b4a1759f38c1ad03869511928263-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e/Dockerfile",
+      "dockerfiles/base_dockerfile/instance_NodeBB__NodeBB-0c81642997ea1d827dbd02c311db9d4976112cd4-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e",
+      "dockerfiles/base_dockerfile/instance_NodeBB__NodeBB-0c81642997ea1d827dbd02c311db9d4976112cd4-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e/Dockerfile",
+      "dockerfiles/base_dockerfile/instance_NodeBB__NodeBB-0e07f3c9bace416cbab078a30eae972868c0a8a3-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e",
+      "dockerfiles/base_dockerfile/instance_NodeBB__NodeBB-0e07f3c9bace416cbab078a30eae972868c0a8a3-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e/Dockerfile",
+      "dockerfiles/base_dockerfile/instance_NodeBB__NodeBB-0f788b8eaa4bba3c142d171fd941d015c53b65fc-v0ec6d6c2baf3cb4797482ce4829bc25cd5716649"
+    ],
+    "source_url": "https://labs.scale.com/leaderboard/swe_bench_pro_public_v2",
+    "tree_error": "",
+    "tree_path_count": 16077,
+    "tree_resolution": {
+      "api_failure": null,
+      "api_url": "https://api.github.com/repos/scaleapi/SWE-bench_Pro-os/git/trees/66f92766bba642462d4bbe5479e83f91f9211862?recursive=1",
+      "commands": [],
+      "requested_commit": "66f92766bba642462d4bbe5479e83f91f9211862",
+      "transport": "github-tree-api"
+    }
+  },
+  "method": {
+    "adapter_stage": "declared-source-probe",
+    "category_fit": [
+      "Coding, refactoring & repository automation",
+      "Testing, QA & benchmarking"
+    ],
+    "id": "swe-bench-pro-v2",
+    "integration_requirements": [
+      "pinned V2 split and images",
+      "reference and empty-patch controls",
+      "clean-image regrading",
+      "all attempt outcomes"
+    ],
+    "primary_metrics": [
+      "resolved tasks",
+      "fail-to-pass outcomes",
+      "pass-to-pass regressions",
+      "attempt cost"
+    ],
+    "repo_url": "https://github.com/scaleapi/SWE-bench_Pro-os",
+    "scope": "Tests long-horizon repository changes with clean-image patch regrading and regression checks.",
+    "source_url": "https://labs.scale.com/leaderboard/swe_bench_pro_public_v2",
+    "title": "SWE-Bench Pro V2"
+  },
+  "method_id": "swe-bench-pro-v2",
+  "method_title": "SWE-Bench Pro V2",
+  "metrics": {
+    "blocking_failures": [],
+    "checks_passed": 7,
+    "checks_total": 7,
+    "integration_status": "adapter_ready",
+    "measurement_scope": "registry declarations and repository resolution only",
+    "score_percent": 100.0
+  },
+  "outputs": {
+    "schema": "evaluators/external_benchmark_method_smoke.schema.json"
+  },
+  "runner": {
+    "model_or_runtime": "local-deterministic-integration-smoke",
+    "run_name": "2026-11-09-expanded-benchmark-source-probes-v2",
+    "timestamp_utc": "2026-11-09T08:26:30Z",
+    "tool": "tools/evaluate_external_benchmark_methods.py",
+    "tool_sha256": "c34be8362ebe5aacfcd031e2decc955e5b439a5d85cf972cd93719f5a762962d"
+  }
+}

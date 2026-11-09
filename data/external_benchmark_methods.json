@@ -1,9 +1,9 @@
 {
-  "generated_on": "2026-04-19",
-  "method_count": 14,
+  "generated_on": "2026-11-09",
+  "method_count": 18,
   "methods": [
     {
-      "adapter_stage": "implemented-smoke-adapter",
+      "adapter_stage": "declared-source-probe",
       "category_fit": [
         "Coding, refactoring & repository automation",
         "Agent infrastructure & skill creation"
@@ -21,13 +21,13 @@
         "pass-rate delta",
         "token overhead"
       ],
-      "repo_url": "https://github.com/GeniusHTX/SWE-Skills-Bench",
+      "repo_url": "https://github.com/ControllableModel/SWE-Skills-Bench",
       "scope": "Measures skill utility on real software-engineering tasks by comparing paired runs with and without the skill.",
-      "source_url": "https://arxiv.org/abs/2603.15401",
+      "source_url": "https://arxiv.org/abs/2603.15401v2",
       "title": "SWE-Skills-Bench"
     },
     {
-      "adapter_stage": "implemented-smoke-adapter",
+      "adapter_stage": "declared-source-probe",
       "category_fit": [
         "Agent infrastructure & skill creation",
         "Testing, QA & benchmarking"
@@ -51,7 +51,7 @@
       "title": "SkillsBench"
     },
     {
-      "adapter_stage": "implemented-smoke-adapter",
+      "adapter_stage": "declared-source-probe",
       "category_fit": [
         "Agent infrastructure & skill creation",
         "Testing, QA & benchmarking"
@@ -75,7 +75,7 @@
       "title": "Skill Bench"
     },
     {
-      "adapter_stage": "implemented-smoke-adapter",
+      "adapter_stage": "declared-source-probe",
       "category_fit": [
         "Coding, refactoring & repository automation",
         "Testing, QA & benchmarking"
@@ -99,7 +99,7 @@
       "title": "SWE-bench"
     },
     {
-      "adapter_stage": "implemented-smoke-adapter",
+      "adapter_stage": "declared-source-probe",
       "category_fit": [
         "DevOps, cloud & operations",
         "Testing, QA & benchmarking"
@@ -117,13 +117,13 @@
         "execution time",
         "resource use"
       ],
-      "repo_url": "https://github.com/laude-institute/terminal-bench",
+      "repo_url": "https://github.com/harbor-framework/terminal-bench",
       "scope": "Evaluates terminal-native agent tasks with reproducible task containers and verifiers.",
-      "source_url": "https://github.com/laude-institute/terminal-bench",
+      "source_url": "https://github.com/harbor-framework/terminal-bench/releases/tag/v4.1.0",
       "title": "Terminal-Bench"
     },
     {
-      "adapter_stage": "implemented-smoke-adapter",
+      "adapter_stage": "declared-source-probe",
       "category_fit": [
         "Frontend, UI & browser automation",
         "Search, retrieval & web automation"
@@ -147,7 +147,7 @@
       "title": "BrowserGym"
     },
     {
-      "adapter_stage": "implemented-smoke-adapter",
+      "adapter_stage": "declared-source-probe",
       "category_fit": [
         "Frontend, UI & browser automation",
         "Search, retrieval & web automation"
@@ -171,7 +171,7 @@
       "title": "WebArena"
     },
     {
-      "adapter_stage": "implemented-smoke-adapter",
+      "adapter_stage": "declared-source-probe",
       "category_fit": [
         "Frontend, UI & browser automation",
         "Search, retrieval & web automation"
@@ -195,7 +195,7 @@
       "title": "WebArena-Verified"
     },
     {
-      "adapter_stage": "implemented-smoke-adapter",
+      "adapter_stage": "declared-source-probe",
       "category_fit": [
         "Security, compliance & risk",
         "Frontend, UI & browser automation"
@@ -219,7 +219,7 @@
       "title": "ST-WebAgentBench"
     },
     {
-      "adapter_stage": "implemented-smoke-adapter",
+      "adapter_stage": "declared-source-probe",
       "category_fit": [
         "Frontend, UI & browser automation",
         "Documents, spreadsheets & presentations"
@@ -243,7 +243,7 @@
       "title": "OSWorld"
     },
     {
-      "adapter_stage": "implemented-smoke-adapter",
+      "adapter_stage": "declared-source-probe",
       "category_fit": [
         "Agent infrastructure & skill creation",
         "Search, retrieval & web automation"
@@ -268,7 +268,7 @@
       "title": "Berkeley Function Calling Leaderboard"
     },
     {
-      "adapter_stage": "implemented-smoke-adapter",
+      "adapter_stage": "declared-source-probe",
       "category_fit": [
         "Science, research & data analysis",
         "Data, analytics & visualization"
@@ -292,7 +292,7 @@
       "title": "MLE-bench"
     },
     {
-      "adapter_stage": "implemented-smoke-adapter",
+      "adapter_stage": "declared-source-probe",
       "category_fit": [
         "Science, research & data analysis",
         "Data, analytics & visualization"
@@ -316,7 +316,7 @@
       "title": "ML-Dev-Bench"
     },
     {
-      "adapter_stage": "implemented-smoke-adapter",
+      "adapter_stage": "declared-source-probe",
       "category_fit": [
         "Coding, refactoring & repository automation",
         "DevOps, cloud & operations"
@@ -338,6 +338,102 @@
       "scope": "Evaluates code agents on real repository tasks from setup through delivery with cost-aware metrics.",
       "source_url": "https://github.com/QuantaAlpha/GitTaskBench",
       "title": "GitTaskBench"
+    },
+    {
+      "adapter_stage": "declared-source-probe",
+      "category_fit": [
+        "Coding, refactoring & repository automation",
+        "Testing, QA & benchmarking"
+      ],
+      "id": "swe-bench-pro-v2",
+      "integration_requirements": [
+        "pinned V2 split and images",
+        "reference and empty-patch controls",
+        "clean-image regrading",
+        "all attempt outcomes"
+      ],
+      "primary_metrics": [
+        "resolved tasks",
+        "fail-to-pass outcomes",
+        "pass-to-pass regressions",
+        "attempt cost"
+      ],
+      "repo_url": "https://github.com/scaleapi/SWE-bench_Pro-os",
+      "scope": "Tests long-horizon repository changes with clean-image patch regrading and regression checks.",
+      "source_url": "https://labs.scale.com/leaderboard/swe_bench_pro_public_v2",
+      "title": "SWE-Bench Pro V2"
+    },
+    {
+      "adapter_stage": "declared-source-probe",
+      "category_fit": [
+        "Coding, refactoring & repository automation",
+        "Testing, QA & benchmarking"
+      ],
+      "id": "deepswe",
+      "integration_requirements": [
+        "pinned task and verifier versions",
+        "fresh verification image",
+        "committed patch",
+        "complete CTRF test inventory"
+      ],
+      "primary_metrics": [
+        "task pass rate",
+        "named test outcomes",
+        "agent steps",
+        "token usage"
+      ],
+      "repo_url": "https://github.com/datacurve-ai/deep-swe",
+      "scope": "Tests original long-horizon engineering tasks with committed-patch verification in a fresh environment.",
+      "source_url": "https://deepswe.datacurve.ai/blog/deepswe-v1-1",
+      "title": "DeepSWE"
+    },
+    {
+      "adapter_stage": "declared-source-probe",
+      "category_fit": [
+        "Frontend, UI & browser automation",
+        "Search, retrieval & web automation"
+      ],
+      "id": "workarena",
+      "integration_requirements": [
+        "approved disposable ServiceNow instance",
+        "pinned BrowserGym environment",
+        "task level and seeds",
+        "native state evaluator"
+      ],
+      "primary_metrics": [
+        "task success",
+        "application state correctness",
+        "action count",
+        "attempt cost"
+      ],
+      "repo_url": "https://github.com/ServiceNow/WorkArena",
+      "scope": "Tests atomic and composed enterprise knowledge-work journeys on ServiceNow through BrowserGym.",
+      "source_url": "https://github.com/ServiceNow/WorkArena",
+      "title": "WorkArena / WorkArena++"
+    },
+    {
+      "adapter_stage": "declared-source-probe",
+      "category_fit": [
+        "Science, research & data analysis",
+        "Testing, QA & benchmarking"
+      ],
+      "id": "scienceagentbench",
+      "integration_requirements": [
+        "pinned dataset and dependency environment",
+        "discipline-specific output oracle",
+        "submission program",
+        "data and model provenance"
+      ],
+      "primary_metrics": [
+        "task success",
+        "program execution",
+        "scientific output correctness",
+        "attempt cost"
+      ],
+      "repo_url": "https://github.com/OSU-NLP-Group/ScienceAgentBench",
+      "scope": "Tests data-driven scientific programming across multiple disciplines using executable output checks.",
+      "source_url": "https://osu-nlp-group.github.io/ScienceAgentBench/",
+      "title": "ScienceAgentBench"
     }
   ],
   "registry_version": 1
