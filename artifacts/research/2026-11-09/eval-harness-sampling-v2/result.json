@@ -1,0 +1,18 @@
+{
+  "agent_performance_tested": false,
+  "input_sha256": {
+    "artifacts/research/2026-11-03/eval-harness-sampling-v1/check_metrics.py": "1a6ddc366f1b69e92333a37e1362ecc633895751c885ff5601d0444e1dc0dad2",
+    "included/improved/skills/eval-harness-current/SKILL.md": "03bd4666ace171cc6852c531b474de6cd13131fb89f3971c0a8fb56c4632ab8a",
+    "tools/summarize_best_of_k.py": "6bc8cfba948b6bed6e0a8c716978937538b963a6c8752e029a8a0fe348fb0772"
+  },
+  "results": {
+    "four_tasks_all5": "1/4",
+    "four_tasks_any5": "3/4",
+    "four_tasks_pass1": "9/20",
+    "subsets_checked": 480,
+    "unequal_attempts_equal_task_pass1": "1/2",
+    "unequal_attempts_pooled_pass1": "1/5"
+  },
+  "schema_version": 1,
+  "scope": "Synthetic finite-subset controls; not an agent trial or skill-effectiveness result."
+}

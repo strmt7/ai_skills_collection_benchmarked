@@ -49,11 +49,16 @@ For a separate two-task example with 2/2 and 0/8 passes, equal-task pass@1 is
 the control from this checkout with:
 
 ```sh
-python artifacts/research/2026-11-03/eval-harness-sampling-v1/check_metrics.py --check
+python artifacts/research/2026-11-03/eval-harness-sampling-v1/check_metrics.py --check --result artifacts/research/2026-11-09/eval-harness-sampling-v2/result.json
 ```
 
-The [result](../artifacts/research/2026-11-03/eval-harness-sampling-v1/result.json)
-binds the new instructions, calculator and control bytes. Existing tests also
+The [current result](../artifacts/research/2026-11-09/eval-harness-sampling-v2/result.json)
+binds the instructions, refactored calculator and unchanged control bytes.
+The [v1 result](../artifacts/research/2026-11-03/eval-harness-sampling-v1/result.json)
+retains the earlier source hashes. Its numerical results match v2, but its
+source bindings deliberately do not match the refactored checkout. The current
+test supplies the new receipt explicitly through the control's existing
+`--result` option. Existing tests also
 exercise incomplete outcomes, insufficient samples and task weighting. The
 two source pages were captured with Crawl4AI on 3 November 2026; their native
 result SHA-256 digests are

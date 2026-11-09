@@ -864,7 +864,7 @@
           {
             "path": "docs/research-eval-harness-sampling.md",
             "scope": "Scoped sampling review; not a full skill review or agent trial.",
-            "sha256": "b0834a9fe57029680608590c1e036531a8e083caec12d15af75b977c6a627754"
+            "sha256": "93518a12556780f14bebe238bf118ea9f48ca772bbb174e1486ae99274518f51"
           },
           {
             "path": "artifacts/research/2026-11-03/eval-harness-sampling-v1/check_metrics.py",
@@ -880,6 +880,11 @@
             "path": "tools/_trial_summary.py",
             "scope": "Descriptive summary core extracted with unchanged calculation syntax trees; not agent-efficacy evidence.",
             "sha256": "46985cacd8e131f1f4aa83a0956021636e5b646d05c329b305f53edfdab809a6"
+          },
+          {
+            "path": "artifacts/research/2026-11-09/eval-harness-sampling-v2/result.json",
+            "scope": "Refactored-source finite subset receipt; same independent enumeration and numerical results as v1, no agent-efficacy evidence.",
+            "sha256": "ca67159373bad41c0e2ad2aca0488e9667de57dd14700737715fca651cad2ca2"
           }
         ],
         "open_work": [
