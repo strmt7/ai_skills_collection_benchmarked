@@ -1,0 +1,227 @@
+{
+  "focused_tests": {
+    "command": [
+      "<qualified-python>",
+      "-m",
+      "pytest",
+      "tests/test_improvement_ledger.py",
+      "tests/test_eval_harness_sampling_receipt.py",
+      "-q",
+      "--no-cov",
+      "-p",
+      "no:cacheprovider",
+      "-o",
+      "addopts=",
+      "--basetemp",
+      "<fresh task-owned temporary directory outside Git>"
+    ],
+    "exit_code": 0,
+    "failed": 0,
+    "native_stdout_sha256": "4acb3bba4da25d539bdd82c20447a6507914517ff35759eae01d8ae41abe663c",
+    "passed": 37,
+    "stdout_base64": "Li4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFsxMDAlXQ0KMzcgcGFzc2VkIGluIDAuODdzDQo="
+  },
+  "limitations": [
+    "These are local metadata/provenance controls, not independently authenticated execution or agent-efficacy evidence.",
+    "Hosted validation must be repeated on the repair commit.",
+    "The CodeQL pin, open-alert budget, dependency audit and history scan remain within paused security work."
+  ],
+  "observed_failure": {
+    "cause": "The protocol page changed while its prior review still referenced the older page digest.",
+    "error": "affaan-m-everything-claude-code-agents-skills-eval-harness-skill-md/research: evidence hash mismatch",
+    "gate": "Validate complete improvement coverage and evidence",
+    "workflow_run_id": 42589524665
+  },
+  "parent_commit": "fcc87469fe536fa8f01794366f1163e8eb4a3e65",
+  "read_only_ci_checks": [
+    {
+      "command": [
+        "<qualified-python>",
+        "tools/manage_improvement_ledger.py",
+        "--check",
+        "--json"
+      ],
+      "exit_code": 0,
+      "name": "Validate complete improvement coverage and evidence",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "13b4b400cccacbd3160ebe13e96ad26dcd364a96b172c701113c2ddf46bccd68"
+    },
+    {
+      "command": [
+        "<qualified-python>",
+        "artifacts/research/2026-10-28/ecc-source-snapshots/generator.py.txt",
+        "--repo",
+        "affaan-m/everything-claude-code",
+        "--lock",
+        "artifacts/research/2026-10-28/ecc-source-snapshots/source-lock.json.gz",
+        "--old-commit",
+        "artifacts/research/2026-10-28/ecc-source-snapshots/old-commit.json",
+        "--old-tree",
+        "artifacts/research/2026-10-28/ecc-source-snapshots/old-tree.json.gz",
+        "--new-commit",
+        "artifacts/research/2026-10-28/ecc-source-snapshots/new-commit.json",
+        "--new-tree",
+        "artifacts/research/2026-10-28/ecc-source-snapshots/new-tree.json.gz",
+        "--output",
+        "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+        "--check"
+      ],
+      "exit_code": 0,
+      "name": "Verify the recorded upstream tree comparison",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "9dbfcedbdb38cef2e948a6fe541cab45875ad8e1c3bb41624d3526943dac55ca"
+    },
+    {
+      "command": [
+        "<qualified-python>",
+        "artifacts/research/2026-10-28/ecc-source-snapshots/generator.py.txt",
+        "--repo",
+        "anthropics/skills",
+        "--lock",
+        "artifacts/research/2026-11-01/anthropic-source-snapshots/source-lock.json.gz",
+        "--old-commit",
+        "artifacts/research/2026-11-01/anthropic-source-snapshots/old-commit.json",
+        "--old-tree",
+        "artifacts/research/2026-11-01/anthropic-source-snapshots/old-tree.json.gz",
+        "--new-commit",
+        "artifacts/research/2026-11-01/anthropic-source-snapshots/new-commit.json",
+        "--new-tree",
+        "artifacts/research/2026-11-01/anthropic-source-snapshots/new-tree.json.gz",
+        "--output",
+        "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
+        "--check"
+      ],
+      "exit_code": 0,
+      "name": "Verify the recorded Anthropic source comparison",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "3ed1ed8e38a6509e3023541f4b2f5ea6cf9cf5b8d0f8c8d2ef05b37f5bb4925d"
+    },
+    {
+      "command": [
+        "<qualified-python>",
+        "artifacts/research/2026-10-28/scientific-source-snapshots/generator.py.txt",
+        "--repo",
+        "K-Dense-AI/scientific-agent-skills",
+        "--lock",
+        "artifacts/research/2026-10-28/scientific-source-snapshots/source-lock.json.gz",
+        "--old-commit",
+        "artifacts/research/2026-10-28/scientific-source-snapshots/old-commit.json",
+        "--old-tree",
+        "artifacts/research/2026-10-28/scientific-source-snapshots/old-tree.json.gz",
+        "--new-commit",
+        "artifacts/research/2026-10-28/scientific-source-snapshots/new-commit.json",
+        "--new-tree",
+        "artifacts/research/2026-10-28/scientific-source-snapshots/new-tree.json.gz",
+        "--relocate",
+        "scientific-skills",
+        "skills",
+        "--release",
+        "artifacts/research/2026-10-28/scientific-source-snapshots/latest-release.json",
+        "--tag",
+        "artifacts/research/2026-10-28/scientific-source-snapshots/new-tag.json",
+        "--output",
+        "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+        "--check"
+      ],
+      "exit_code": 0,
+      "name": "Verify the recorded scientific skills relocation comparison",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "15ce79c17cac30ec0949d9744d06694b210cfe578c5f5cf7bb79c24dc693f395"
+    },
+    {
+      "command": [
+        "<qualified-python>",
+        "tools/report_workflow_evaluator_controls.py",
+        "--check",
+        "--json"
+      ],
+      "exit_code": 0,
+      "name": "Verify native workflow evaluator controls and retained misses",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "729944944d23862caf802c459f199490cf6c8a55888250eafa320e6d2de23a48"
+    },
+    {
+      "command": [
+        "<qualified-python>",
+        "tools/validate_improved_skills.py",
+        "--json"
+      ],
+      "exit_code": 0,
+      "name": "Validate improved overlays and original provenance",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "40856fa0455b8c247b3bee47720e1996f63abae0c39b88cf26a615c823bbe2a5"
+    },
+    {
+      "command": [
+        "<qualified-python>",
+        "benchmarks/component-controls/frontend/prepare.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "name": "Verify frontend component control evidence and input freshness",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "7da9a12c802f35336db3fc124ac07a93ee3e6f4d89be9953f9fedda757acecf5"
+    },
+    {
+      "command": [
+        "<qualified-python>",
+        "benchmarks/component-controls/backend/prepare_backend.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "name": "Verify API and backend component evidence and input freshness",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "7da9a12c802f35336db3fc124ac07a93ee3e6f4d89be9953f9fedda757acecf5"
+    },
+    {
+      "command": [
+        "<qualified-python>",
+        "benchmarks/component-controls/native-testing/run_native.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "name": "Verify native fuzzing evidence and collector input freshness",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "7a98c201e439859146366fe3a876cef8bfc2c8d24e7e7699e6aa7e30ee1cf64d"
+    },
+    {
+      "command": [
+        "<qualified-python>",
+        "tools/qualify_appcontainer.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "name": "Verify confined evaluator evidence and source freshness",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "cd009f56af3f1616dcc19bab042415d5434afceb7ae4737878fc7e1ab8e80f17"
+    },
+    {
+      "command": [
+        "<qualified-python>",
+        "tools/summarize_agent_trials.py",
+        "--protocol",
+        "benchmarks/agent-effectiveness/development/protocol-v2.json",
+        "--trials",
+        "artifacts/agent-trials/development-v2",
+        "--output-dir",
+        "artifacts/agent-trials/development-v2-report",
+        "--check",
+        "--json"
+      ],
+      "exit_code": 0,
+      "name": "Verify all matched development trials and report",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ebd9ee1124db9e56ac37c53ef33ca57423e5c97de3daf5c68c2f58bd29d235be"
+    }
+  ],
+  "repair": {
+    "all_phase_statuses_unchanged": true,
+    "historical_source_sha256": "a348d0b5de9516c7c48cc285d1a5ff5fdfdf3c8f5bd46cf152b516068e07e4dd",
+    "other_skill_records_unchanged": 672,
+    "research_status": "in_progress",
+    "snapshot_path": "artifacts/research/2026-11-09/benchmark-expansion/protocol-source-before-expansion.json",
+    "snapshot_sha256": "b1d7a9002e5f23b61848871cde8f392b686313a59b648a2dbae5dbf43c63901b"
+  },
+  "schema_version": 1,
+  "scope": "Repair research-evidence provenance after a documented pre-push gate was omitted. No runtime or efficacy result is claimed."
+}

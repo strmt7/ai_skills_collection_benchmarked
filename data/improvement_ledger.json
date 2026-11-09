@@ -847,9 +847,9 @@
             "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
           },
           {
-            "path": "docs/agent-trial-protocol.md",
-            "scope": "Selected any-of-k and all-of-k subset metrics, missing-outcome bounds and independent controls; not full skill review or agent-efficacy evidence.",
-            "sha256": "a348d0b5de9516c7c48cc285d1a5ff5fdfdf3c8f5bd46cf152b516068e07e4dd"
+            "path": "artifacts/research/2026-11-09/benchmark-expansion/protocol-source-before-expansion.json",
+            "scope": "Selected any-of-k and all-of-k subset metrics, missing-outcome bounds and independent controls; not full skill review or agent-efficacy evidence. Historical protocol page retained as an exact-byte source snapshot; no expanded review or new run is inferred.",
+            "sha256": "b1d7a9002e5f23b61848871cde8f392b686313a59b648a2dbae5dbf43c63901b"
           },
           {
             "path": "tools/summarize_best_of_k.py",
@@ -885,6 +885,11 @@
             "path": "artifacts/research/2026-11-09/eval-harness-sampling-v2/result.json",
             "scope": "Refactored-source finite subset receipt; same independent enumeration and numerical results as v1, no agent-efficacy evidence.",
             "sha256": "ca67159373bad41c0e2ad2aca0488e9667de57dd14700737715fca651cad2ca2"
+          },
+          {
+            "path": "artifacts/research/2026-11-09/benchmark-expansion/sources.json",
+            "scope": "External methodology overview/abstract review supporting proposed content, routing and context-cost controls; no study reproduction, complete skill review or agent-efficacy evidence.",
+            "sha256": "23998266d904fe9cefdea0b2c82dfe8131a2bae1e6cbe0109f4b300e95c65f9b"
           }
         ],
         "open_work": [
