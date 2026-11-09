@@ -16,9 +16,10 @@ from fractions import Fraction
 from pathlib import Path
 from typing import Any
 
+from _trial_summary import fraction
 from _trial_transcript import strict_json
 from plan_paired_task_power import probability
-from summarize_multi_task_trials import fraction, run_plan
+from summarize_multi_task_trials import run_plan
 
 PLAN_FIELDS = {
     "schema_version",

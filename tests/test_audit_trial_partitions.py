@@ -9,10 +9,11 @@ import audit_trial_partitions as target
 import pytest
 
 
-def test_partition_preflight_does_not_load_trial_scoring():
+@pytest.mark.parametrize("module", ["audit_trial_partitions", "_trial_summary"])
+def test_data_modules_do_not_load_trial_scoring(module):
     tools = Path(__file__).resolve().parents[1] / "tools"
     code = (
-        "import sys; import audit_trial_partitions; "
+        f"import importlib, sys; importlib.import_module({module!r}); "
         "assert 'summarize_multi_task_trials' not in sys.modules; "
         "assert 'summarize_agent_trials' not in sys.modules"
     )

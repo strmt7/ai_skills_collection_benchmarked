@@ -13,7 +13,7 @@ from unittest.mock import patch
 
 import render_multi_task_chart as target
 from _trial_comparisons import compare_blocks
-from summarize_multi_task_trials import aggregate, summarize_snapshot_evidence
+from _trial_summary import aggregate, summarize_snapshot_evidence
 
 
 def fixture_report(*, incomplete: bool = False, single: bool = False, candidate_name: str = "candidate"):

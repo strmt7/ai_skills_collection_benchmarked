@@ -854,7 +854,7 @@
           {
             "path": "tools/summarize_best_of_k.py",
             "scope": "Selected any-of-k and all-of-k subset metrics, missing-outcome bounds and independent controls; not full skill review or agent-efficacy evidence.",
-            "sha256": "d19bc79d73bd7e6e0a077ef213308a562008dddb7a975f049cb07df3272a1284"
+            "sha256": "6bc8cfba948b6bed6e0a8c716978937538b963a6c8752e029a8a0fe348fb0772"
           },
           {
             "path": "tests/test_summarize_best_of_k.py",
@@ -875,6 +875,11 @@
             "path": "artifacts/research/2026-11-03/eval-harness-sampling-v1/result.json",
             "scope": "Source-bound synthetic control result; no agent-performance claim.",
             "sha256": "104223ca324f4b9c5d41b0ded47144ec5a00e13d7333c96196ce9cf30dfb092b"
+          },
+          {
+            "path": "tools/_trial_summary.py",
+            "scope": "Descriptive summary core extracted with unchanged calculation syntax trees; not agent-efficacy evidence.",
+            "sha256": "46985cacd8e131f1f4aa83a0956021636e5b646d05c329b305f53edfdab809a6"
           }
         ],
         "open_work": [

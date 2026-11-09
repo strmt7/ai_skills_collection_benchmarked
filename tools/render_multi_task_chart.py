@@ -12,13 +12,13 @@ from textwrap import fill
 from typing import Any
 
 from _trial_comparisons import OUTCOMES, STATUSES, compare_blocks
-from summarize_multi_task_trials import (
+from _trial_summary import (
     aggregate,
     missing_outcome_sensitivity,
-    run_plan,
     summarize_paired_outcomes,
     summarize_snapshot_evidence,
 )
+from summarize_multi_task_trials import run_plan
 
 
 def baseline_chart_view(report: dict[str, Any], baseline: str) -> dict[str, Any]:

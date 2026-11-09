@@ -12,6 +12,19 @@ OUTCOMES = ("both_passed", "candidate_only_passed", "baseline_only_passed", "nei
 TOKEN_KEYS = ("input_tokens", "output_tokens")
 
 
+def verify_usage(result: dict[str, Any]) -> None:
+    """Reject incomplete or contradictory token counts."""
+    usage = result.get("usage")
+    if usage is not None:
+        if not isinstance(usage, dict) or any(type(value) is not int or value < 0 for value in usage.values()):
+            raise ValueError("usage must contain nonnegative integer counts; unavailable usage stays null")
+        if (
+            not {"input_tokens", "output_tokens"}.issubset(usage)
+            or usage.get("cached_input_tokens", 0) > usage["input_tokens"]
+        ):
+            raise ValueError("usage token totals are incomplete or contradictory")
+
+
 def _outcome(baseline: str, candidate: str) -> str:
     """Classify observed task outcomes without counting unscored runs as failures."""
     if baseline not in SCORED or candidate not in SCORED:

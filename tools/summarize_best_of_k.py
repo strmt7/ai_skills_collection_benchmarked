@@ -14,7 +14,9 @@ from fractions import Fraction
 from pathlib import Path
 from typing import Any
 
-from summarize_multi_task_trials import SCORED, STATUSES, fraction, run_plan
+from _trial_comparisons import SCORED, STATUSES
+from _trial_summary import fraction
+from summarize_multi_task_trials import run_plan
 
 
 def subset_success(n: int, successes: int, k: int, *, rule: str = "any") -> Fraction:

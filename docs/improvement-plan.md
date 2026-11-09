@@ -173,6 +173,15 @@ development partition report remained byte-identical during local comparison.
 This migration changes module ownership; it establishes no agent-performance
 or execution-speed improvement.
 
+The second migration separates descriptive outcome calculations into
+`tools/_trial_summary.py`. Multi-task orchestration retains protocol and
+trial-file verification and the CLI. Analysis and chart consumers import the
+shared calculations directly, while token-usage validation is shared through
+`tools/_trial_comparisons.py`. A process-level check ensures the summary core
+does not load either trial verifier. The moved calculation functions retain
+their syntax trees, and local historical and partition CLI outputs remain
+byte-identical. These are compatibility checks, not efficacy measurements.
+
 ## Evidence needed to declare readiness
 
 - All catalog entries and resources have a source-bound research disposition,

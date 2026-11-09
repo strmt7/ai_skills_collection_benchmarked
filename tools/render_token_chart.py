@@ -10,8 +10,9 @@ from pathlib import Path
 from typing import Any
 
 from _trial_comparisons import TOKEN_KEYS, compare_blocks
+from _trial_summary import summarize_paired_tokens
 from render_multi_task_chart import snapshot_pair_labels, snapshot_summary
-from summarize_multi_task_trials import run_plan, summarize_paired_tokens
+from summarize_multi_task_trials import run_plan
 
 
 def token_rows(report: dict[str, Any]) -> list[tuple[str, dict[str, list[Fraction]], Any, int, int, int, int]]:

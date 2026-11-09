@@ -5,6 +5,7 @@ import shutil
 from fractions import Fraction
 from pathlib import Path
 
+import _trial_summary as summary_core
 import pytest
 import summarize_agent_trials as single
 import summarize_multi_task_trials as target
@@ -58,22 +59,22 @@ def three_condition_report(task, default, candidate, reference):
     return item, definitions
 
 
-@pytest.mark.parametrize("reference,candidate", itertools.product(sorted(target.STATUSES), repeat=2))
+@pytest.mark.parametrize("reference,candidate", itertools.product(sorted(summary_core.STATUSES), repeat=2))
 def test_direct_non_default_comparisons_keep_matched_outcomes_and_unscored_bounds(reference, candidate):
     item, definitions = three_condition_report("a", ["harness_error"], [candidate], [reference])
-    result = target.aggregate([item], [definitions])
+    result = summary_core.aggregate([item], [definitions])
     direct = result["non_default_comparisons"]["karpathy"]["candidate"]
     reverse = result["non_default_comparisons"]["candidate"]["karpathy"]
     assert direct["baseline"] == "karpathy" and direct["candidate"] == "candidate"
     assert direct["planned_tasks"] == 1
-    scored = reference in target.SCORED and candidate in target.SCORED
+    scored = reference in summary_core.SCORED and candidate in summary_core.SCORED
     assert direct["fully_scored_tasks"] == int(scored)
     counts = direct["paired_outcomes"]["pooled_block_counts"]
     assert sum(counts.values()) == 1
     assert counts["unscored"] == int(not scored)
     difference = int(candidate == "task_passed") - int(reference == "task_passed")
-    lower = difference - int(reference not in target.SCORED)
-    upper = difference + int(candidate not in target.SCORED)
+    lower = difference - int(reference not in summary_core.SCORED)
+    upper = difference + int(candidate not in summary_core.SCORED)
     sensitivity = direct["missing_outcome_sensitivity"]
     assert sensitivity["equal_task_weight_lower"] == {"numerator": lower, "denominator": 1}
     assert sensitivity["equal_task_weight_upper"] == {"numerator": upper, "denominator": 1}
@@ -97,7 +98,7 @@ def test_direct_non_default_comparison_weights_tasks_and_uses_its_own_token_and_
         }
         attempt["provider_model_snapshot"] = "v1" if condition != "default" else "other"
     second["block_comparison"] = compare_blocks(second["attempts"], set(definitions))
-    result = target.aggregate([first, second], [definitions, definitions])
+    result = summary_core.aggregate([first, second], [definitions, definitions])
     direct = result["non_default_comparisons"]["karpathy"]["candidate"]
     assert direct["equal_task_weight_mean_difference"] == {"numerator": 1, "denominator": 2}
     assert direct["paired_outcomes"]["equal_task_weight_block_fractions"]["candidate_only_passed"] == {
@@ -115,11 +116,11 @@ def test_direct_non_default_comparison_weights_tasks_and_uses_its_own_token_and_
 
 
 def test_direct_non_default_bounds_match_all_binary_completions_for_two_repetitions():
-    statuses = sorted(target.STATUSES)
+    statuses = sorted(summary_core.STATUSES)
     for reference in itertools.product(statuses, repeat=2):
         for candidate in itertools.product(statuses, repeat=2):
             item, definitions = three_condition_report("a", ["task_passed"] * 2, candidate, reference)
-            pairs = target.aggregate([item], [definitions])["non_default_comparisons"]
+            pairs = summary_core.aggregate([item], [definitions])["non_default_comparisons"]
             direct = pairs["karpathy"]["candidate"]
             possibilities = [
                 (1,) if status == "task_passed" else (0,) if status == "task_failed" else (0, 1)
@@ -146,7 +147,7 @@ def test_direct_non_default_fully_observed_token_deltas_are_not_computed_against
             "output_tokens": {"default": 90, "candidate": 7, "karpathy": 5}[attempt["condition"]],
         }
     item["block_comparison"] = compare_blocks(item["attempts"], set(definitions))
-    pairs = target.aggregate([item], [definitions])["non_default_comparisons"]
+    pairs = summary_core.aggregate([item], [definitions])["non_default_comparisons"]
     assert pairs["karpathy"]["candidate"]["paired_token_differences"]["equal_task_weight_mean_delta"] == {
         "input_tokens": {"numerator": -4, "denominator": 1},
         "output_tokens": {"numerator": 2, "denominator": 1},
@@ -162,7 +163,7 @@ def test_tasks_have_equal_weight_instead_of_pooled_attempt_weight():
         report("a", ["task_passed"], ["task_passed"]),
         report("b", ["task_failed"] * 4, ["task_passed"] * 4),
     ]
-    result = target.aggregate(reports, [DEFINITIONS, copy.deepcopy(DEFINITIONS)])
+    result = summary_core.aggregate(reports, [DEFINITIONS, copy.deepcopy(DEFINITIONS)])
     comparison = result["comparisons"]["candidate"]
     assert comparison == {
         "planned_tasks": 2,
@@ -178,7 +179,7 @@ def test_paired_outcomes_show_opposing_task_effects_without_pooling_their_weight
         report("a", ["task_passed"], ["task_failed"]),
         report("b", ["task_failed"] * 4, ["task_passed"] * 4),
     ]
-    result = target.aggregate(reports, [DEFINITIONS, DEFINITIONS])
+    result = summary_core.aggregate(reports, [DEFINITIONS, DEFINITIONS])
     paired = result["paired_outcomes"]["candidate"]
     assert paired["planned_tasks"] == 2
     assert paired["planned_blocks"] == 5
@@ -201,8 +202,8 @@ def test_paired_outcomes_show_opposing_task_effects_without_pooling_their_weight
 def test_paired_outcomes_distinguish_agreement_from_opposing_wins():
     agreement = report("a", ["task_passed", "task_failed"], ["task_passed", "task_failed"])
     disagreement = report("b", ["task_passed", "task_failed"], ["task_failed", "task_passed"])
-    first = target.aggregate([agreement], [DEFINITIONS])
-    second = target.aggregate([disagreement], [DEFINITIONS])
+    first = summary_core.aggregate([agreement], [DEFINITIONS])
+    second = summary_core.aggregate([disagreement], [DEFINITIONS])
     assert (
         first["comparisons"]["candidate"]["equal_task_weight_mean_difference"]
         == second["comparisons"]["candidate"]["equal_task_weight_mean_difference"]
@@ -228,7 +229,7 @@ def test_paired_outcomes_keep_unscored_blocks_and_tasks_visible():
         report("a", ["task_passed"], ["timed_out"]),
         report("b", ["task_failed"] * 2, ["task_passed"] * 2),
     ]
-    result = target.aggregate(reports, [DEFINITIONS, DEFINITIONS])
+    result = summary_core.aggregate(reports, [DEFINITIONS, DEFINITIONS])
     paired = result["paired_outcomes"]["candidate"]
     assert paired["pooled_block_counts"]["unscored"] == 1
     assert paired["equal_task_weight_block_fractions"]["unscored"] == {"numerator": 1, "denominator": 2}
@@ -252,7 +253,7 @@ def test_planned_order_breakdown_preserves_task_and_unscored_counts():
         },
         {"conditions": DEFINITIONS, "planned_order": [{"repetition": 1, "conditions": ["default", "candidate"]}]},
     ]
-    result = target.summarize_planned_order([first, second], configs, "candidate")
+    result = summary_core.summarize_planned_order([first, second], configs, "candidate")
     assert result["planned_tasks"] == 2
     assert result["pooled_outcomes_by_planned_order"] == {
         "baseline_first": {
@@ -271,7 +272,7 @@ def test_planned_order_breakdown_preserves_task_and_unscored_counts():
         },
     }
     assert result["tasks"][0]["outcomes_by_planned_order"]["candidate_first"]["unscored"] == 1
-    assert result["tasks"][1]["outcomes_by_planned_order"]["candidate_first"] == dict.fromkeys(target.OUTCOMES, 0)
+    assert result["tasks"][1]["outcomes_by_planned_order"]["candidate_first"] == dict.fromkeys(summary_core.OUTCOMES, 0)
 
 
 def test_planned_order_is_relative_to_each_candidate_in_multi_condition_block():
@@ -284,7 +285,7 @@ def test_planned_order_is_relative_to_each_candidate_in_multi_condition_block():
         "planned_order": [{"repetition": 1, "conditions": ["other", "default", "candidate"]}],
     }
     for name, group in (("candidate", "baseline_first"), ("other", "candidate_first")):
-        counts = target.summarize_planned_order([item], [config], name)["pooled_outcomes_by_planned_order"]
+        counts = summary_core.summarize_planned_order([item], [config], name)["pooled_outcomes_by_planned_order"]
         assert counts[group]["candidate_only_passed"] == 1
         assert sum(counts[group].values()) == 1
 
@@ -301,12 +302,14 @@ def test_planned_order_is_relative_to_each_candidate_in_multi_condition_block():
 def test_planned_order_breakdown_rejects_mismatched_schedule(schedule):
     item = report("a", ["task_passed"], ["task_failed"])
     with pytest.raises(ValueError, match="Planned order"):
-        target.summarize_planned_order([item], [{"conditions": DEFINITIONS, "planned_order": schedule}], "candidate")
+        summary_core.summarize_planned_order(
+            [item], [{"conditions": DEFINITIONS, "planned_order": schedule}], "candidate"
+        )
 
 
-@pytest.mark.parametrize("baseline,candidate", itertools.product(sorted(target.STATUSES), repeat=2))
+@pytest.mark.parametrize("baseline,candidate", itertools.product(sorted(summary_core.STATUSES), repeat=2))
 def test_paired_outcome_fractions_partition_all_status_pairs(baseline, candidate):
-    result = target.aggregate([report("a", [baseline], [candidate])], [DEFINITIONS])
+    result = summary_core.aggregate([report("a", [baseline], [candidate])], [DEFINITIONS])
     paired = result["paired_outcomes"]["candidate"]
     expected = {
         ("task_passed", "task_passed"): "both_passed",
@@ -314,9 +317,9 @@ def test_paired_outcome_fractions_partition_all_status_pairs(baseline, candidate
         ("task_failed", "task_passed"): "candidate_only_passed",
         ("task_failed", "task_failed"): "neither_passed",
     }.get((baseline, candidate), "unscored")
-    assert paired["pooled_block_counts"] == {outcome: int(outcome == expected) for outcome in target.OUTCOMES}
+    assert paired["pooled_block_counts"] == {outcome: int(outcome == expected) for outcome in summary_core.OUTCOMES}
     assert paired["equal_task_weight_block_fractions"] == {
-        outcome: {"numerator": int(outcome == expected), "denominator": 1} for outcome in target.OUTCOMES
+        outcome: {"numerator": int(outcome == expected), "denominator": 1} for outcome in summary_core.OUTCOMES
     }
 
 
@@ -327,7 +330,7 @@ def test_token_differences_use_equal_task_weight_and_paired_blocks():
         for attempt, count in zip(item["attempts"], inputs, strict=True):
             attempt["usage"] = {"input_tokens": count, "output_tokens": count // 10}
         item["block_comparison"] = compare_blocks(item["attempts"], set(DEFINITIONS))
-    result = target.aggregate([first, second], [DEFINITIONS, DEFINITIONS])
+    result = summary_core.aggregate([first, second], [DEFINITIONS, DEFINITIONS])
     comparison = result["token_comparisons"]["candidate"]
     assert comparison["planned_tasks"] == 2
     assert comparison["fully_comparable_tasks"] == 2
@@ -345,7 +348,7 @@ def test_all_attempt_usage_includes_failures_and_uses_equal_task_weight():
         for attempt, count in zip(item["attempts"], inputs, strict=True):
             attempt["usage"] = {"input_tokens": count, "output_tokens": count // 5}
         item["block_comparison"] = compare_blocks(item["attempts"], set(DEFINITIONS))
-    result = target.aggregate([first, second], [DEFINITIONS, DEFINITIONS])
+    result = summary_core.aggregate([first, second], [DEFINITIONS, DEFINITIONS])
     usage = result["all_attempt_usage"]
     candidate = usage["conditions"]["candidate"]
     assert candidate["observed_token_totals"] == {"input_tokens": 100, "output_tokens": 20}
@@ -371,7 +374,7 @@ def test_all_attempt_usage_keeps_missing_values_and_observed_zero_distinct():
     ):
         attempt["usage"] = usage
     item["block_comparison"] = compare_blocks(item["attempts"], set(DEFINITIONS))
-    summary = target.aggregate([item], [DEFINITIONS])["all_attempt_usage"]
+    summary = summary_core.aggregate([item], [DEFINITIONS])["all_attempt_usage"]
     assert summary["conditions"]["default"]["observed_token_totals"] == {"input_tokens": 0, "output_tokens": 0}
     assert summary["conditions"]["default"]["usage_unavailable_attempts"] == 1
     assert summary["conditions"]["candidate"]["observed_token_totals"] == {"input_tokens": 7, "output_tokens": 3}
@@ -392,7 +395,7 @@ def test_all_attempt_usage_availability_matches_exhaustive_observation_patterns(
             attempt["usage"] = {"input_tokens": counts[index], "output_tokens": 0} if present[index] else None
         for item in reports:
             item["block_comparison"] = compare_blocks(item["attempts"], set(DEFINITIONS))
-        usage = target.aggregate(reports, [DEFINITIONS, DEFINITIONS])["all_attempt_usage"]
+        usage = summary_core.aggregate(reports, [DEFINITIONS, DEFINITIONS])["all_attempt_usage"]
         for condition, indices in (("default", (0, 2)), ("candidate", (1, 3))):
             values = [counts[i] for i in indices if present[i]]
             result = usage["conditions"][condition]
@@ -413,7 +416,7 @@ def test_all_attempt_usage_rejects_invalid_counts_even_for_unscored_attempts(inv
     item["attempts"][1]["usage"] = invalid
     item["block_comparison"] = compare_blocks(item["attempts"], set(DEFINITIONS))
     with pytest.raises(ValueError, match="usage|token"):
-        target.aggregate([item], [DEFINITIONS])
+        summary_core.aggregate([item], [DEFINITIONS])
 
 
 @pytest.mark.parametrize(
@@ -428,7 +431,7 @@ def test_missing_or_nonpassing_paired_usage_prevents_aggregate(status, usage):
     second["attempts"][1]["usage"] = usage
     for item in (first, second):
         item["block_comparison"] = compare_blocks(item["attempts"], set(DEFINITIONS))
-    result = target.aggregate([first, second], [DEFINITIONS, DEFINITIONS])
+    result = summary_core.aggregate([first, second], [DEFINITIONS, DEFINITIONS])
     comparison = result["token_comparisons"]["candidate"]
     assert comparison["planned_blocks"] == 2
     assert comparison["comparable_blocks"] == 1
@@ -444,14 +447,14 @@ def test_inconsistent_paired_block_data_is_rejected():
     item["block_comparison"] = compare_blocks(item["attempts"], set(DEFINITIONS))
     item["block_comparison"]["comparisons"]["candidate"]["blocks"][0]["token_delta"]["input_tokens"] = 99
     with pytest.raises(ValueError, match="disagree with the attempts"):
-        target.aggregate([item], [DEFINITIONS])
+        summary_core.aggregate([item], [DEFINITIONS])
 
 
 def test_boolean_in_recorded_block_count_is_not_equal_to_integer_one():
     item = report("a", ["task_passed"], ["task_passed"])
     item["block_comparison"]["comparisons"]["candidate"]["planned_blocks"] = True
     with pytest.raises(ValueError, match="disagree with the attempts"):
-        target.aggregate([item], [DEFINITIONS])
+        summary_core.aggregate([item], [DEFINITIONS])
 
 
 def test_paired_token_task_means_remain_exact_fractions():
@@ -461,7 +464,7 @@ def test_paired_token_task_means_remain_exact_fractions():
         for attempt, count in zip(item["attempts"], inputs, strict=True):
             attempt["usage"] = {"input_tokens": count, "output_tokens": 0}
         item["block_comparison"] = compare_blocks(item["attempts"], set(DEFINITIONS))
-    result = target.aggregate([first, second], [DEFINITIONS, DEFINITIONS])
+    result = summary_core.aggregate([first, second], [DEFINITIONS, DEFINITIONS])
     assert result["token_comparisons"]["candidate"]["equal_task_weight_mean_delta"]["input_tokens"] == {
         "numerator": 3,
         "denominator": 4,
@@ -470,13 +473,13 @@ def test_paired_token_task_means_remain_exact_fractions():
 
 def test_empty_token_task_set_is_rejected():
     with pytest.raises(ValueError, match="nonempty"):
-        target.summarize_paired_tokens([], "candidate")
+        summary_core.summarize_paired_tokens([], "candidate")
 
 
 @pytest.mark.parametrize("status", ["harness_error", "invalid_scope", "timed_out"])
 def test_unscored_attempts_are_not_failures_or_dropped(status):
     reports = [report("a", ["task_passed"], ["task_passed"]), report("b", ["task_passed"], [status])]
-    result = target.aggregate(reports, [DEFINITIONS, DEFINITIONS])
+    result = summary_core.aggregate(reports, [DEFINITIONS, DEFINITIONS])
     assert result["comparisons"]["candidate"]["unscored_tasks"] == 1
     assert result["comparisons"]["candidate"]["equal_task_weight_mean_difference"] is None
     assert result["tasks"][1]["attempt_status_counts"]["candidate"][status] == 1
@@ -491,7 +494,7 @@ def test_missing_outcome_bounds_match_exhaustive_binary_completions(missing_stat
         ([missing_status], ["task_passed"]),
     ]
     reports = [report(str(index), baseline, candidate) for index, (baseline, candidate) in enumerate(original)]
-    result = target.aggregate(reports, [DEFINITIONS] * len(reports))
+    result = summary_core.aggregate(reports, [DEFINITIONS] * len(reports))
     assert result["comparisons"]["candidate"]["equal_task_weight_mean_difference"] is None
     bounds = result["missing_outcome_sensitivity"]["candidate"]
     positions = [
@@ -520,12 +523,12 @@ def test_missing_outcome_bounds_match_exhaustive_binary_completions(missing_stat
 
 def test_complete_and_fully_unscored_sensitivity_extremes():
     complete = report("a", ["task_failed", "task_passed"], ["task_passed", "task_passed"])
-    result = target.aggregate([complete], [DEFINITIONS])
+    result = summary_core.aggregate([complete], [DEFINITIONS])
     bounds = result["missing_outcome_sensitivity"]["candidate"]
     assert bounds["equal_task_weight_lower"] == bounds["equal_task_weight_upper"] == {"numerator": 1, "denominator": 2}
     assert bounds["tasks_with_unscored_attempts"] == 0
     unscored = report("b", ["harness_error"], ["timed_out"])
-    bounds = target.aggregate([unscored], [DEFINITIONS])["missing_outcome_sensitivity"]["candidate"]
+    bounds = summary_core.aggregate([unscored], [DEFINITIONS])["missing_outcome_sensitivity"]["candidate"]
     assert bounds["equal_task_weight_lower"] == {"numerator": -1, "denominator": 1}
     assert bounds["equal_task_weight_upper"] == {"numerator": 1, "denominator": 1}
 
@@ -534,7 +537,7 @@ def test_all_two_block_status_patterns_match_enumerated_bounds():
     statuses = ("task_passed", "task_failed", "harness_error")
     for pattern in itertools.product(statuses, repeat=4):
         baseline, candidate = pattern[:2], pattern[2:]
-        result = target.aggregate([report("a", baseline, candidate)], [DEFINITIONS])
+        result = summary_core.aggregate([report("a", baseline, candidate)], [DEFINITIONS])
         bounds = result["missing_outcome_sensitivity"]["candidate"]
         positions = [index for index, value in enumerate(pattern) if value == "harness_error"]
         possible = []
@@ -553,7 +556,7 @@ def test_missing_outcome_bounds_keep_condition_identity():
     item["attempts"].append({"repetition": 1, "condition": "other", "status": "task_passed", "usage": None})
     item["conditions"]["other"] = {"planned_attempts": 1}
     item["block_comparison"] = compare_blocks(item["attempts"], set(definitions))
-    bounds = target.aggregate([item], [definitions])["missing_outcome_sensitivity"]
+    bounds = summary_core.aggregate([item], [definitions])["missing_outcome_sensitivity"]
     assert bounds["candidate"]["equal_task_weight_lower"] == {"numerator": -1, "denominator": 1}
     assert bounds["candidate"]["equal_task_weight_upper"] == {"numerator": 0, "denominator": 1}
     assert (
@@ -569,11 +572,11 @@ def test_missing_outcome_bounds_keep_condition_identity():
 def test_duplicate_ids_and_condition_changes_are_rejected():
     a = report("a", ["task_passed"], ["task_passed"])
     with pytest.raises(ValueError, match="unique"):
-        target.aggregate([a, copy.deepcopy(a)], [DEFINITIONS, DEFINITIONS])
+        summary_core.aggregate([a, copy.deepcopy(a)], [DEFINITIONS, DEFINITIONS])
     b = report("b", ["task_passed"], ["task_passed"])
     changed = {"default": {"skills": []}, "candidate": {"skills": ["different-bundle"]}}
     with pytest.raises(ValueError, match="definitions differ"):
-        target.aggregate([a, b], [DEFINITIONS, changed])
+        summary_core.aggregate([a, b], [DEFINITIONS, changed])
 
 
 @pytest.mark.parametrize(
@@ -584,14 +587,14 @@ def test_mixed_experiment_conditions_are_rejected(field, value):
     b = report("b", ["task_passed"], ["task_passed"])
     b[field] = value
     with pytest.raises(ValueError, match="differ"):
-        target.aggregate([a, b], [DEFINITIONS, DEFINITIONS])
+        summary_core.aggregate([a, b], [DEFINITIONS, DEFINITIONS])
 
 
 def test_planned_denominator_mismatch_is_rejected():
     a = report("a", ["task_passed"], ["task_passed"])
     a["conditions"]["candidate"]["planned_attempts"] = 2
     with pytest.raises(ValueError, match="denominator"):
-        target.aggregate([a], [DEFINITIONS])
+        summary_core.aggregate([a], [DEFINITIONS])
 
 
 def test_missing_planned_task_fails_without_creating_report(tmp_path, capsys):
@@ -620,7 +623,7 @@ def test_model_snapshot_availability_is_preserved():
     item = report("a", ["task_passed", "task_passed"], ["task_passed", "task_passed"])
     item["attempts"][0]["provider_model_snapshot"] = "snapshot-a"
     item["attempts"][2]["provider_model_snapshot"] = "snapshot-b"
-    result = target.aggregate([item], [DEFINITIONS])
+    result = summary_core.aggregate([item], [DEFINITIONS])
     snapshots = result["tasks"][0]["provider_model_snapshots"]
     assert snapshots["default"] == {"unavailable_attempts": 1, "reported_counts": {"snapshot-a": 1}}
     assert snapshots["candidate"] == {"unavailable_attempts": 1, "reported_counts": {"snapshot-b": 1}}
@@ -630,7 +633,7 @@ def test_snapshot_evidence_identifies_mismatch_and_missing_pairs():
     item = report("a", ["task_passed", "task_passed"], ["task_passed", "task_passed"])
     item["attempts"][0]["provider_model_snapshot"] = "snapshot-a"
     item["attempts"][2]["provider_model_snapshot"] = "snapshot-b"
-    result = target.aggregate([item], [DEFINITIONS])
+    result = summary_core.aggregate([item], [DEFINITIONS])
     assert result["model_snapshot_evidence"]["candidate"] == {
         "planned_pairs": 2,
         "same_reported_identifier_pairs": 0,
@@ -659,7 +662,7 @@ def test_snapshot_evidence_classifies_across_tasks(snapshots, status):
     for item, (baseline, candidate) in zip(reports, snapshots, strict=True):
         item["attempts"][0]["provider_model_snapshot"] = baseline
         item["attempts"][1]["provider_model_snapshot"] = candidate
-    evidence = target.aggregate(reports, [DEFINITIONS, DEFINITIONS])["model_snapshot_evidence"]["candidate"]
+    evidence = summary_core.aggregate(reports, [DEFINITIONS, DEFINITIONS])["model_snapshot_evidence"]["candidate"]
     assert evidence["status"] == status
     assert evidence["planned_pairs"] == 2
 
@@ -674,7 +677,7 @@ def test_snapshot_evidence_is_specific_to_each_candidate():
     item["conditions"]["other"] = {"planned_attempts": 1}
     definitions = {**DEFINITIONS, "other": {"skills": ["other"]}}
     item["block_comparison"] = compare_blocks(item["attempts"], set(definitions))
-    evidence = target.aggregate([item], [definitions])["model_snapshot_evidence"]
+    evidence = summary_core.aggregate([item], [definitions])["model_snapshot_evidence"]
     assert evidence["candidate"]["status"] == "single_reported_identifier"
     assert evidence["other"]["status"] == "inconsistent_reported_identifiers"
     assert evidence["other"]["different_reported_identifier_pairs"] == 1
@@ -692,7 +695,7 @@ def test_prompt_runtime_comparison_uses_each_task_and_keeps_missing_unknown():
         {(1, "default"): ("recorded", b"/one"), (1, "candidate"): ("recorded", b"/two")},
         set(DEFINITIONS),
     )
-    result = target.aggregate([first, second, third], [DEFINITIONS] * 3)
+    result = summary_core.aggregate([first, second, third], [DEFINITIONS] * 3)
     assert result["prompt_runtime_evidence"]["candidate"] == {
         "planned_tasks": 3,
         "tasks_with_unavailable_pairs": 1,
@@ -712,7 +715,7 @@ def test_inconsistent_prompt_runtime_counts_are_rejected():
     )
     item["prompt_runtime_evidence"]["comparisons"]["candidate"]["same_recorded_path"] = True
     with pytest.raises(ValueError, match="runtime pair counts"):
-        target.aggregate([item], [DEFINITIONS])
+        summary_core.aggregate([item], [DEFINITIONS])
 
 
 @pytest.mark.parametrize("invalid", ["", 42, False, ["snapshot"]])
@@ -720,14 +723,14 @@ def test_invalid_reported_snapshot_is_rejected(invalid):
     item = report("a", ["task_passed"], ["task_passed"])
     item["attempts"][0]["provider_model_snapshot"] = invalid
     with pytest.raises(ValueError, match="snapshots must be nonempty strings or null"):
-        target.aggregate([item], [DEFINITIONS])
+        summary_core.aggregate([item], [DEFINITIONS])
 
 
 def test_unplanned_condition_is_rejected():
     item = report("a", ["task_passed"], ["task_passed"])
     item["attempts"].append({"condition": "unexpected", "status": "task_passed"})
     with pytest.raises(ValueError, match="unplanned"):
-        target.aggregate([item], [DEFINITIONS])
+        summary_core.aggregate([item], [DEFINITIONS])
 
 
 def test_plan_rejects_modified_protocol_before_loading_reports(tmp_path, monkeypatch):
@@ -809,7 +812,7 @@ def test_boolean_schema_version_is_not_an_integer_version(tmp_path):
 def test_negative_and_positive_task_differences_are_weighted_exactly():
     first = report("a", ["task_failed"], ["task_passed"])
     second = report("b", ["task_passed", "task_passed"], ["task_passed", "task_failed"])
-    result = target.aggregate([first, second], [DEFINITIONS, DEFINITIONS])
+    result = summary_core.aggregate([first, second], [DEFINITIONS, DEFINITIONS])
     assert result["comparisons"]["candidate"]["equal_task_weight_mean_difference"] == {"numerator": 1, "denominator": 4}
     assert result["tasks"][0]["limitations"] == ["fixture limitation"]
     assert result["tasks"][0]["attempts"] == first["attempts"]
@@ -822,7 +825,7 @@ def test_boolean_and_integer_condition_parameters_are_not_equivalent():
     yes = {"default": {}, "candidate": {"flag": True}}
     one = {"default": {}, "candidate": {"flag": 1}}
     with pytest.raises(ValueError, match="definitions differ"):
-        target.aggregate([first, second], [yes, one])
+        summary_core.aggregate([first, second], [yes, one])
 
 
 def test_historical_example_revalidates_recorded_attempts():
