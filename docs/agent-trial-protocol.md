@@ -5,6 +5,13 @@ The existing 673-entry catalog readiness results describe packaging. The new
 its submitted behavior outside the task workspace. No measured skill advantage
 has been established yet.
 
+The owner permits serial benchmark subjects and the prerequisite execution
+qualification under the [benchmark-only exception](benchmark-subject-policy.md).
+The development controller retains all mandatory tools and the single-session
+rule. A baseline subject may omit collection instructions only as a frozen
+experimental condition. No new model launch is permitted until the complete
+runner, collection and grading boundary is qualified.
+
 The [expanded benchmark review](benchmark-expansion.md) defines additional
 content, routing, context-cost and cross-model comparisons. Follow the
 [redesign method](skill-improvement-method.md): infer general failure mechanisms
@@ -147,8 +154,13 @@ unbenchmarked revision; the historical results do not measure it. See the
 
 The historical v2 grading driver executed submitted Python on the host in a
 separate process. A newer Windows AppContainer grader has been qualified with
-known-good and boundary-attack controls, but the trial runner does not yet pass
-its required fixture and sandbox inputs to that grader. The frozen v2 protocol
+known-good and boundary-attack controls. The trial runner now passes its
+explicit fixture revision, runtime, dependency bundle and output to that grader;
+missing configuration remains a harness error, with no host-grading fallback.
+Submission collection uses bounded native reads that reject linked, oversized
+or concurrently writable files. These integrations have component controls,
+but the complete agent execution and collection boundary is not yet qualified.
+The frozen v2 protocol
 rejects the changed execution tooling before launch. Do not run a new model
 trial until the runner and confined grader are integrated and independently
 qualified. The runner now refuses new model launches before creating a workspace
@@ -156,6 +168,20 @@ or starting a process until those prerequisites are implemented. It also rejects
 scored grader responses whose cases, counts or outcomes disagree with the frozen
 case set. The historical evidence establishes neither container isolation nor
 provider-resolved model identity.
+
+The 9 November qualification work uses the official stable Codex CLI 0.167.0
+in a private provider directory. Native MXC probes permit workspace operations
+and ordinary children while denying the tested outside-file and loopback
+operations. Delayed children are stopped at foreground exit. A matched host
+control can create an owned WMI process; the MXC attempt produces no marker and
+reports PowerShell constrained-language errors. This is limited prototype
+evidence, not full controller, instruction-discovery, authentication or model
+qualification. The [native observations](../artifacts/component-controls/trial-runner/2026-11-09-integration/observations.json)
+retain the failed setup controls as well as the corrected observations. The
+launcher remains disabled. The implementation follows the current official
+[Windows sandbox](https://learn.chatgpt.com/docs/windows/windows-sandbox) and
+[permission profile](https://learn.chatgpt.com/docs/permissions) documentation;
+documented support does not replace host qualification.
 
 The Windows job-process control limits output and cleans up job members. It is
 not a complete sandbox: Microsoft documents that processes created through

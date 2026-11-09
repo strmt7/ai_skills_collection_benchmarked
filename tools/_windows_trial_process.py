@@ -35,6 +35,9 @@ def run_owned(
     stderr: BinaryIO,
     timeout: float,
     output_limit: int,
+    environment: dict[str, str] | None = None,
+    memory_limit: int = 1024 * 1024 * 1024,
+    process_limit: int = 32,
 ) -> dict[str, Any]:
     """Start suspended and stop all processes assigned to the job before return.
 
@@ -60,8 +63,30 @@ def run_owned(
         or timeout <= 0
         or type(output_limit) is not int
         or not 0 < output_limit <= 1024 * 1024 * 1024
+        or type(memory_limit) is not int
+        or not 32 * 1024 * 1024 <= memory_limit <= 8 * 1024 * 1024 * 1024
+        or type(process_limit) is not int
+        or not 1 <= process_limit <= 128
     ):
-        raise ValueError("A finite positive time and bounded output limit are required")
+        raise ValueError("Finite positive time and bounded output, memory and process limits are required")
+    environment_block = None
+    if environment is not None:
+        if not environment or any(
+            not isinstance(key, str)
+            or not key
+            or "=" in key
+            or "\0" in key
+            or not isinstance(value, str)
+            or "\0" in value
+            for key, value in environment.items()
+        ):
+            raise ValueError("A nonempty environment with valid string keys and values is required")
+        if len({key.upper() for key in environment}) != len(environment):
+            raise ValueError("Environment keys must be unique ignoring case")
+        environment_block = c.create_unicode_buffer(
+            "\0".join(f"{key}={value}" for key, value in sorted(environment.items(), key=lambda item: item[0].upper()))
+            + "\0\0"
+        )
 
     import msvcrt
 
@@ -81,7 +106,9 @@ def run_owned(
         require(job)
         resources.callback(native.close, job)
         limits = ExtendedLimits()
-        limits.basic.flags = 0x2000  # Kill on job close; do not enable breakaway.
+        limits.basic.flags = 0x2000 | 0x200 | 0x8  # Kill on close, total job memory and active process count.
+        limits.basic.active_limit = process_limit
+        limits.job_memory = memory_limit
         require(
             native.function("kernel", "SetInformationJobObject", [w.HANDLE, c.c_int, c.c_void_p, w.DWORD], w.BOOL)(
                 job, 9, c.byref(limits), c.sizeof(limits)
@@ -140,8 +167,8 @@ def run_owned(
                 None,
                 None,
                 True,
-                0x80000 | 0x4 | 0x8000000,
-                None,
+                0x80000 | 0x4 | 0x8000000 | 0x400,
+                environment_block,
                 str(cwd),
                 c.byref(startup),
                 c.byref(process),
@@ -198,4 +225,7 @@ def run_owned(
             "termination_reason": reason,
             "exit_code": exit_status.value,
             "output_bytes": total,
+            "job_memory_limit_bytes": memory_limit,
+            "active_process_limit": process_limit,
+            "explicit_environment": environment is not None,
         }

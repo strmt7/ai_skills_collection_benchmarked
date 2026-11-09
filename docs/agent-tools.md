@@ -1,10 +1,16 @@
 # Mandatory agent tools
 
-Every AI agent working on this repository must read and apply these local skills.
+Every AI development agent working on this repository must read and apply these local skills.
 The same duties apply when work starts from a generated agent-ready entrypoint.
 The root [AGENTS.md](../AGENTS.md) remains controlling, including its one-session
 rule, source locks and benchmark independence. Tool requirements do not authorize
 subagents or relax any access, security or evidence rule.
+
+Controlled, serial benchmark subjects follow the owner's
+[benchmark-only exception](benchmark-subject-policy.md). Only their frozen
+experimental conditions may omit collection instructions or tools. This permits
+a valid no-skills baseline; it does not exempt the development controller or
+authorize delegated development, parallel trials or an unqualified launcher.
 
 Use these and all future repository tools without routine narration. Follow the
 root [communication and execution policy](../AGENTS.md#communication-and-execution-efficiency):

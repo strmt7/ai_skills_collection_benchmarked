@@ -1,0 +1,146 @@
+{
+  "cli": {
+    "bundled_cli_observed": "0.167.0-alpha.3.2",
+    "global_installation_changed": false,
+    "private_installation": true,
+    "stable_package_version": "0.167.0",
+    "windows_archive_sha512_integrity": "sha512-duPCBwflc8qhQdLekbL8fDYF646tW4gj0/l9BDnsVhEzoqm6OwxMAJXDFwSOLUUJPCmjBeM+eHYAx4fP/hwfjg=="
+  },
+  "complete_trial_boundary_qualified": false,
+  "fixture_commit": "7152067a17a8b826bf7808077d105a5da5c90d78",
+  "grading_controls": [
+    {
+      "all_native_processes_cleaned": true,
+      "checks_passed": 17,
+      "checks_total": 17,
+      "control": "known-good",
+      "response_member": "grading/known-good/driver-response.json",
+      "response_sha256": "9704115c227b84ac5611eae2e45998ea25d70b049766ef2a208e74a7c7d204a5",
+      "status": "task_passed"
+    },
+    {
+      "all_native_processes_cleaned": true,
+      "checks_passed": 0,
+      "checks_total": 17,
+      "control": "always-accept",
+      "response_member": "grading/always-accept/driver-response.json",
+      "response_sha256": "f66adb622ff775fe44219d2236b0ad0bcef0d8f4c48b54eeb9c44d16704569ed",
+      "status": "task_failed"
+    },
+    {
+      "all_native_processes_cleaned": true,
+      "checks_passed": 2,
+      "checks_total": 17,
+      "control": "constant-accept",
+      "response_member": "grading/constant-accept/driver-response.json",
+      "response_sha256": "d6947cc71c36660ba81ebe39092ecc9f80648748bf960b41736bfb408ea3dc48",
+      "status": "task_failed"
+    },
+    {
+      "all_native_processes_cleaned": true,
+      "checks_passed": 15,
+      "checks_total": 17,
+      "control": "constant-reject",
+      "response_member": "grading/constant-reject/driver-response.json",
+      "response_sha256": "1ee11a29aff31cc782218ff1fbd760adcb289817bbcb427c2af00cab80823aa0",
+      "status": "task_failed"
+    }
+  ],
+  "limitations": [
+    "No model or untouched holdout was invoked.",
+    "The historical always-accept-labelled control lacks validate_artifact and is an API-error control; both correctly implemented constant controls were subsequently executed.",
+    "The first MXC startup omitted SystemDrive. The corrected explicit environment passed. Both native outcomes are retained.",
+    "The first WMI host control used the wrong ShowWindow numeric type. The corrected UInt16 control created its owned marker on the host; the MXC attempt produced no marker and constrained-language errors. These are limited observations.",
+    "The first process-count test used a Windows virtual-environment redirector that itself needs a second process. The corrected single-process control invokes the base interpreter.",
+    "A preliminary focused test command hit the global coverage threshold and unrelated shared-temp cleanup; the task-owned isolated rerun passed. Global test thresholds were unchanged.",
+    "Instruction discovery, authentication separation, the production execution launcher and the full end-to-end boundary remain to be qualified."
+  ],
+  "model_requests": 0,
+  "native_archive": {
+    "members": 253,
+    "path": "native-controls.zip",
+    "sha256": "ec4a8269eaa4a0adcf830c04196defbaf563efccd03d2dac7c4aabb25f37ead1"
+  },
+  "schema_version": 1,
+  "scope": "Component integration and isolated MXC prototype observations only; full model execution remains disabled",
+  "skill_advantage_established": false,
+  "source_sha256": {
+    "tools/_windows_submission_reader.py": "e30efc6c98ad1652dd093f8fff0371c77657ac335fb565f3c493ed596725febf",
+    "tools/_windows_trial_process.py": "0231f5eb87e7b971a38621e732907b147cf83382e1ab9966d70c30272122dd29",
+    "tools/grade_agent_submission.py": "ae0a84a8c7671bba58e84b39762e0b7f3ebf1a8899e42c5cc0fae14ae4119aa8",
+    "tools/grade_validator_appcontainer_modern.py": "74942d47c6502f86a62770019e1cb0214145b5d9cd97fbe9a725ef69fd3c036c",
+    "tools/run_agent_trial.py": "acb0f30f0666473263576d91c80bb1a904e0449beceb8348078dd7a2c7de296f"
+  },
+  "web_sources": [
+    {
+      "accepted_for_scoped_document_review": true,
+      "error": "",
+      "intended_url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+      "native_result_sha256": "76a35310ca9ff5f1e9bae42c7df261c8a0bf6689fbe19f32e1ca2b04e0d959cf",
+      "native_url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200,
+      "success": true
+    },
+    {
+      "accepted_for_scoped_document_review": false,
+      "error": "",
+      "intended_url": "https://learn.chatgpt.com/codex/cli/reference",
+      "native_result_sha256": "ce324aa9ebce4c5a501d4fd6794fbf138ed8cf04b29ae0974fa4fc623ad7c1aa",
+      "native_url": "https://learn.chatgpt.com/codex/cli/reference",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 308,
+      "success": true
+    },
+    {
+      "accepted_for_scoped_document_review": false,
+      "error": "",
+      "intended_url": "https://developers.openai.com/codex/cli/reference/",
+      "native_result_sha256": "57f705d95f19ed343077a56f762e7bbcd7b49eafc1ea7cf37a6f625da7fe1967",
+      "native_url": "https://developers.openai.com/codex/cli/reference/",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 308,
+      "success": true
+    },
+    {
+      "accepted_for_scoped_document_review": true,
+      "error": "",
+      "intended_url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+      "native_result_sha256": "8b531c42016bd9874cbac44f489f93ddcc432b6d9f6e8b9a283036f6da44c620",
+      "native_url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200,
+      "success": true
+    },
+    {
+      "accepted_for_scoped_document_review": true,
+      "error": "",
+      "intended_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "native_result_sha256": "55072e492009a18a54336513ace002170655a97fe9c64f03c0663c6a5932c588",
+      "native_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200,
+      "success": true
+    },
+    {
+      "accepted_for_scoped_document_review": true,
+      "error": "",
+      "intended_url": "https://learn.chatgpt.com/docs/permissions",
+      "native_result_sha256": "0f5a7e3766efd836c76318e6c663b6a0bb20f0409b005f08ae377990538bd8c9",
+      "native_url": "https://learn.chatgpt.com/docs/permissions",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200,
+      "success": true
+    },
+    {
+      "accepted_for_scoped_document_review": true,
+      "error": "",
+      "intended_url": "https://learn.chatgpt.com/docs/windows/windows-sandbox",
+      "native_result_sha256": "c96c47d7bfb9f58668d1800b09bc658d89891be91343e6fc66a319734dc07e6a",
+      "native_url": "https://learn.chatgpt.com/docs/windows/windows-sandbox",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200,
+      "success": true
+    }
+  ]
+}

@@ -18,6 +18,7 @@ from typing import Any
 from _lib_b.io_utils import write_json
 from _trial_manifest import read_grading_manifest, validate_grade_checks
 from _trial_transcript import parse_events, strict_json
+from _windows_submission_reader import read_workspace_file
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -37,7 +38,7 @@ def pinned_file(commit: str, path: str) -> bytes:
     checked_path(ROOT, path)
     if len(commit) != 40 or any(character not in "0123456789abcdef" for character in commit):
         raise ValueError("source commit must be an immutable SHA")
-    return subprocess.check_output(["git", "-C", str(ROOT), "show", f"{commit}:{path}"])
+    return subprocess.check_output(["git", "-c", "core.longpaths=true", "-C", str(ROOT), "show", f"{commit}:{path}"])
 
 
 def prepare(protocol: dict[str, Any], condition: str, python: Path) -> tuple[Path, str, dict[str, bytes]]:
@@ -108,9 +109,21 @@ def read_events(path: Path, *, allow_truncated_final: bool = False) -> list[dict
 
 
 def external_grade(
-    task: dict[str, Any], workspace: Path, python: Path, expected_cases: frozenset[str]
+    task: dict[str, Any],
+    workspace: Path,
+    python: Path,
+    expected_cases: frozenset[str],
+    *,
+    runtime_home: Path | None = None,
+    dependency_home: Path | None = None,
+    output: Path | None = None,
 ) -> dict[str, Any]:
     """Accept scored outcomes only when the driver reports the committed cases consistently."""
+    if runtime_home is None or dependency_home is None or output is None:
+        return {
+            "status": "harness_error",
+            "error": "Explicit confined runtime, dependency home and output are required",
+        }
     try:
         result = subprocess.run(
             [
@@ -118,15 +131,25 @@ def external_grade(
                 str(ROOT / "tools/grade_agent_submission.py"),
                 str(checked_path(ROOT, task["grader"])),
                 str(workspace.resolve()),
+                "--fixture",
+                str(ROOT.resolve()),
+                "--revision",
+                task["source_commit"],
+                "--runtime-home",
+                str(runtime_home.resolve()),
+                "--dependency-home",
+                str(dependency_home.resolve()),
+                "--output",
+                str(output.resolve()),
             ],
             capture_output=True,
             text=True,
             encoding="utf-8",
-            timeout=60,
+            timeout=240,
             check=False,
         )
     except subprocess.TimeoutExpired:
-        return {"status": "harness_error", "error": "grading driver exceeded the 60-second grading limit"}
+        return {"status": "harness_error", "error": "grading driver exceeded the 240-second grading limit"}
     except (OSError, UnicodeError) as exc:
         return {"status": "harness_error", "error": f"grading driver unavailable or invalid text: {type(exc).__name__}"}
     try:
@@ -178,35 +201,33 @@ def collect_submission(
     patch: list[str] = []
     collection_errors: list[str] = []
     submission = output / "submission"
-    for name, before in inputs.items():
-        source = checked_path(workspace, name)
-        if source.is_file():
-            target = checked_path(submission, name)
-            target.parent.mkdir(parents=True, exist_ok=True)
-            target.write_bytes(source.read_bytes())
-        after = source.read_bytes() if source.is_file() else b""
+    for name in dict.fromkeys([*inputs, *protocol.get("workspace_scaffold", {})]):
+        try:
+            after = read_workspace_file(workspace, name, max_bytes=8 * 1024 * 1024)
+        except (OSError, ValueError) as exc:
+            collection_errors.append(f"{name}: {type(exc).__name__}")
+            continue
+        target = checked_path(submission, name)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(after)
+        if name not in inputs:
+            continue
+        before = inputs[name]
         if after != before:
             changes.append(name)
             if name not in protocol["task"]["allowed_changes"]:
                 violations.append(f"protected source input changed: {name}")
-            patch.extend(
-                difflib.unified_diff(
-                    before.decode("utf-8").splitlines(True),
-                    after.decode("utf-8").splitlines(True),
-                    fromfile=f"a/{name}",
-                    tofile=f"b/{name}",
+            try:
+                patch.extend(
+                    difflib.unified_diff(
+                        before.decode("utf-8").splitlines(True),
+                        after.decode("utf-8").splitlines(True),
+                        fromfile=f"a/{name}",
+                        tofile=f"b/{name}",
+                    )
                 )
-            )
-    for name in protocol.get("workspace_scaffold", {}):
-        path = checked_path(workspace, name)
-        target = checked_path(submission, name)
-        try:
-            data = path.read_bytes()
-        except OSError as exc:
-            collection_errors.append(f"{name}: {type(exc).__name__}")
-        else:
-            target.parent.mkdir(parents=True, exist_ok=True)
-            target.write_bytes(data)
+            except UnicodeError:
+                collection_errors.append(f"{name}: UnicodeError")
     (output / "patch.diff").write_text("".join(patch), encoding="utf-8")
     return submission, changes, violations, collection_errors
 
@@ -265,12 +286,21 @@ def validate_protocol(protocol_path: Path, output: Path) -> tuple[dict[str, Any]
 def require_qualified_trial_execution() -> None:
     """Refuse model launches until the complete execution boundary is qualified."""
     raise RuntimeError(
-        "Model trials are unavailable: the runner is not integrated with the confined grader, "
-        "and the agent execution and collection boundary has not been independently qualified"
+        "Model trials are unavailable: the integrated runner, agent execution and collection boundary "
+        "has not been independently qualified"
     )
 
 
-def run(protocol_path: Path, condition: str, output: Path, cli: Path, python: Path) -> dict[str, Any]:
+def run(
+    protocol_path: Path,
+    condition: str,
+    output: Path,
+    cli: Path,
+    python: Path,
+    *,
+    runtime_home: Path | None = None,
+    dependency_home: Path | None = None,
+) -> dict[str, Any]:
     """Run one frozen trial and retain its grading and execution evidence."""
     protocol, protocol_hash = validate_protocol(protocol_path, output)
     expected_cases, _ = read_grading_manifest(protocol_path, protocol, protocol_hash)
@@ -298,7 +328,15 @@ def run(protocol_path: Path, condition: str, output: Path, cli: Path, python: Pa
     grade = (
         {"status": "harness_error", "error": "grading skipped because the transcript is invalid"}
         if transcript_error
-        else external_grade(protocol["task"], submission, python, expected_cases)
+        else external_grade(
+            protocol["task"],
+            submission,
+            python,
+            expected_cases,
+            runtime_home=runtime_home,
+            dependency_home=dependency_home,
+            output=output / "grading",
+        )
     )
     # Policy/tool launch errors are harness failures, not evidence that the
     # model failed the coding task. Keep them in accounting with actual usage.
@@ -351,12 +389,22 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--output", type=Path, required=True, help="New attempt directory; never overwritten")
     parser.add_argument("--cli", type=Path, required=True)
     parser.add_argument("--python", type=Path, default=Path(sys.executable))
+    parser.add_argument("--runtime-home", type=Path, required=True, help="Qualified confined Python runtime")
+    parser.add_argument("--dependency-home", type=Path, required=True, help="Qualified confined dependency bundle")
     return parser
 
 
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
-    result = run(args.protocol, args.condition, args.output, args.cli, args.python)
+    result = run(
+        args.protocol,
+        args.condition,
+        args.output,
+        args.cli,
+        args.python,
+        runtime_home=args.runtime_home,
+        dependency_home=args.dependency_home,
+    )
     print(
         json.dumps(
             {

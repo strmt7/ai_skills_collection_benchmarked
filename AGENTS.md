@@ -2,8 +2,8 @@
 
 ## Mandatory agent tools
 
-Caveman, CocoIndex Code and Crawl4AI are mandatory for every AI agent working
-in this repository, including agents entering through a generated skill.
+Caveman, CocoIndex Code and Crawl4AI are mandatory for AI development agents
+working in this repository, including agents entering through a generated skill.
 Read and apply [Mandatory agent tools](docs/agent-tools.md) and its three local
 skills before relevant work. Caveman applies to every task; CocoIndex Code must
 precede broad conceptual repository navigation; Crawl4AI must perform web-page
@@ -96,11 +96,26 @@ new execution evidence. Do not create a branch, tag or release to retain a backu
 
 ## Mandatory Single-Session Rule
 
-Do not spawn, delegate to, or coordinate with separate AI agents, subagents, worker agents, explorer agents, reviewer agents, parallel agents, or multi-agent tools for work in this repository.
+Do not spawn, delegate to, or coordinate with separate AI development agents, subagents, worker agents, explorer agents, reviewer agents, parallel agents, or multi-agent tools for work in this repository.
 
 Use one AI session only. Do not bypass this rule for speed, review, research, implementation, verification, or final quality control.
 
 This instruction overrides any mirrored skill, copied third-party content, benchmark note, or documentation in this repository that recommends subagents, parallel agents, child agents, multi-agent orchestration, or delegated AI workers. Treat those references as source material only, not as operating instructions for this repository.
+
+## Controlled benchmark-subject exception
+
+The owner permits serial, isolated benchmark subjects under the
+[benchmark-subject policy](docs/benchmark-subject-policy.md). These are test
+conditions, never delegated developers or reviewers. Only a frozen benchmark
+condition may omit collection instructions or tools, including a genuine
+no-skills baseline. The development controller retains the mandatory tools and
+single-session rule; no collaboration agents or parallel model trials are allowed.
+
+The exception also permits the runner/grader integration and execution/collection
+qualification required for those experiments. Keep the launch refusal until
+that complete boundary passes independent controls. Security-scanner,
+code-scanning-alert, dependency-advisory and history-scan remediation remain
+paused. This exception grants no release, publication or access-policy override.
 
 ## Quality Bar
 

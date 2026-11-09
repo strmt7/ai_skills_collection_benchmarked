@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import subprocess
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -129,15 +130,18 @@ def test_protocol_freeze_rejects_changed_inputs(tmp_path, monkeypatch, changed):
 
 def test_grading_timeout_does_not_claim_a_submission_failure(tmp_path, monkeypatch):
     def run(*args, **kwargs):
-        assert kwargs["timeout"] == 60
-        raise subprocess.TimeoutExpired(args[0], 60)
+        assert kwargs["timeout"] == 240
+        raise subprocess.TimeoutExpired(args[0], 240)
 
     monkeypatch.setattr(trials.subprocess, "run", run)
     result = trials.external_grade(
-        {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py"},
+        {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py", "source_commit": "a" * 40},
         tmp_path,
         Path("python"),
         frozenset({"case"}),
+        runtime_home=tmp_path / "runtime",
+        dependency_home=tmp_path / "dependencies",
+        output=tmp_path / "grading",
     )
     assert result["status"] == "harness_error"
     assert "grading limit" in result["error"]
@@ -163,10 +167,13 @@ def test_grading_infrastructure_failures_are_not_scored_as_agent_failures(tmp_pa
         trials.subprocess, "run", lambda *args, **kwargs: subprocess.CompletedProcess(args[0], returncode, stdout, "")
     )
     result = trials.external_grade(
-        {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py"},
+        {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py", "source_commit": "a" * 40},
         tmp_path,
         Path("python"),
         frozenset({"case"}),
+        runtime_home=tmp_path / "runtime",
+        dependency_home=tmp_path / "dependencies",
+        output=tmp_path / "grading",
     )
     assert result["status"] == "harness_error"
 
@@ -183,10 +190,13 @@ def test_matching_grader_exit_codes_keep_the_reported_status(tmp_path, monkeypat
         lambda *args, **kwargs: subprocess.CompletedProcess(args[0], returncode, json.dumps(grade), ""),
     )
     result = trials.external_grade(
-        {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py"},
+        {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py", "source_commit": "a" * 40},
         tmp_path,
         Path("python"),
         frozenset({"case"}),
+        runtime_home=tmp_path / "runtime",
+        dependency_home=tmp_path / "dependencies",
+        output=tmp_path / "grading",
     )
     assert result["status"] == status
 
@@ -223,10 +233,13 @@ def test_incomplete_or_contradictory_grading_is_a_harness_error(tmp_path, monkey
         lambda *args, **kwargs: subprocess.CompletedProcess(args[0], code, json.dumps(grade), ""),
     )
     result = trials.external_grade(
-        {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py"},
+        {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py", "source_commit": "a" * 40},
         tmp_path,
         Path("python"),
         frozenset({"case"}),
+        runtime_home=tmp_path / "runtime",
+        dependency_home=tmp_path / "dependencies",
+        output=tmp_path / "grading",
     )
     assert result["status"] == "harness_error"
 
@@ -237,12 +250,119 @@ def test_unavailable_grading_driver_is_a_harness_error(tmp_path, monkeypatch):
 
     monkeypatch.setattr(trials.subprocess, "run", unavailable)
     result = trials.external_grade(
-        {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py"},
+        {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py", "source_commit": "a" * 40},
         tmp_path,
         Path("python"),
         frozenset({"case"}),
+        runtime_home=tmp_path / "runtime",
+        dependency_home=tmp_path / "dependencies",
+        output=tmp_path / "grading",
     )
     assert result["status"] == "harness_error"
+
+
+def test_confined_grading_receives_the_frozen_fixture_and_explicit_homes(tmp_path, monkeypatch):
+    observed = []
+
+    def invoke(args, **kwargs):
+        observed.append(args)
+        return subprocess.CompletedProcess(args, 2, '{"status":"harness_error","errors":["control"]}', "")
+
+    monkeypatch.setattr(trials.subprocess, "run", invoke)
+    task = {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py", "source_commit": "b" * 40}
+    result = trials.external_grade(
+        task,
+        tmp_path / "submission",
+        tmp_path / "python",
+        frozenset({"case"}),
+        runtime_home=tmp_path / "runtime",
+        dependency_home=tmp_path / "dependencies",
+        output=tmp_path / "grading",
+    )
+    assert result["status"] == "harness_error"
+    args = observed[0]
+    for option, expected in {
+        "--fixture": str(trials.ROOT.resolve()),
+        "--revision": "b" * 40,
+        "--runtime-home": str((tmp_path / "runtime").resolve()),
+        "--dependency-home": str((tmp_path / "dependencies").resolve()),
+        "--output": str((tmp_path / "grading").resolve()),
+    }.items():
+        assert args[args.index(option) + 1] == expected
+
+
+@pytest.mark.parametrize("missing", ["runtime_home", "dependency_home", "output"])
+def test_missing_confined_inputs_never_fall_back_to_host_grading(tmp_path, monkeypatch, missing):
+    monkeypatch.setattr(trials.subprocess, "run", lambda *args, **kwargs: pytest.fail("unexpected grading process"))
+    options = {name: tmp_path / name for name in ("runtime_home", "dependency_home", "output")}
+    options[missing] = None
+    result = trials.external_grade({}, tmp_path, Path("python"), frozenset({"case"}), **options)
+    assert result["status"] == "harness_error"
+    assert "Explicit confined" in result["error"]
+
+
+def test_collection_uses_one_bounded_read_for_each_declared_file(tmp_path, monkeypatch):
+    reads = []
+    contents = {"code.py": b"after\n", "protected.json": b"{}\n", "tests/control.py": b"test\n"}
+
+    def read(workspace, name, *, max_bytes):
+        assert workspace == tmp_path / "workspace"
+        reads.append((name, max_bytes))
+        return contents[name]
+
+    monkeypatch.setattr(trials, "read_workspace_file", read)
+    output = tmp_path / "output"
+    output.mkdir()
+    submission, changes, violations, errors = trials.collect_submission(
+        tmp_path / "workspace",
+        output,
+        {"code.py": b"before\n", "protected.json": b"old\n"},
+        {"task": {"allowed_changes": ["code.py"]}, "workspace_scaffold": {"tests/control.py": ""}},
+    )
+    assert reads == [(name, 8 * 1024 * 1024) for name in contents]
+    assert changes == ["code.py", "protected.json"]
+    assert violations == ["protected source input changed: protected.json"]
+    assert errors == []
+    assert {name: (submission / name).read_bytes() for name in contents} == contents
+    assert "-before\n+after\n" in (output / "patch.diff").read_text(encoding="utf-8")
+
+
+@pytest.mark.parametrize("error", [ValueError("linked file"), OSError("locked file")])
+def test_collection_failures_are_recorded_without_copying_rejected_files(tmp_path, monkeypatch, error):
+    def reject(*args, **kwargs):
+        raise error
+
+    monkeypatch.setattr(trials, "read_workspace_file", reject)
+    output = tmp_path / "output"
+    output.mkdir()
+    submission, _, _, errors = trials.collect_submission(
+        tmp_path, output, {"code.py": b"before"}, {"task": {"allowed_changes": ["code.py"]}}
+    )
+    assert errors == [f"code.py: {type(error).__name__}"]
+    assert not submission.exists()
+
+
+@pytest.mark.skipif(sys.platform != "win32", reason="Windows native collection integration")
+def test_native_collection_rejects_a_hardlink_and_retains_regular_scaffold(tmp_path):
+    import os
+
+    workspace, output = tmp_path / "workspace", tmp_path / "output"
+    workspace.mkdir()
+    output.mkdir()
+    outside = tmp_path / "outside"
+    outside.write_bytes(b"private control\n")
+    os.link(outside, workspace / "code.py")
+    (workspace / "action-log.json").write_bytes(b"{}\n")
+    submission, _, _, errors = trials.collect_submission(
+        workspace,
+        output,
+        {"code.py": b"original\n"},
+        {"task": {"allowed_changes": ["code.py"]}, "workspace_scaffold": {"action-log.json": ""}},
+    )
+    assert errors == ["code.py: ValueError"]
+    assert not (submission / "code.py").exists()
+    assert (submission / "action-log.json").read_bytes() == b"{}\n"
+    assert outside.read_bytes() == b"private control\n"
 
 
 def test_invalid_trial_stream_is_recorded_without_grading(tmp_path, monkeypatch):
@@ -331,7 +451,7 @@ def test_unqualified_execution_stops_before_workspace_or_process_creation(tmp_pa
     monkeypatch.setattr(trials, "prepare", lambda *args: pytest.fail("unexpected workspace creation"))
     monkeypatch.setattr(trials.subprocess, "Popen", lambda *args, **kwargs: pytest.fail("unexpected process"))
     output = tmp_path / "attempt"
-    with pytest.raises(RuntimeError, match="not integrated.*not been independently qualified"):
+    with pytest.raises(RuntimeError, match="integrated runner.*not been independently qualified"):
         trials.run(protocol_path, "default", output, Path("fixture"), Path("python"))
     assert not output.exists()
 

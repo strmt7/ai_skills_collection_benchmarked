@@ -23,8 +23,8 @@ not source resources. Inventorying a file does not review or evaluate it.
 
 The supplied 27 October implementation manual has 154 pages and seven
 embedded files. Its [review ledger](../artifacts/research/2026-11-03/implementation-manual-review/ledger.json)
-tracks extraction, partial inspection and unresolved actions; most of the
-manual remains to be reviewed. Its internal hashes establish byte consistency,
+tracks extraction, partial inspection and unresolved actions; 54 pages remain
+pending inspection. Its internal hashes establish byte consistency,
 not the correctness of its claims. Ruff, mypy and the main offline test matrix
 use a checked, hashed developer lock. A separate scheduled and manually
 dispatched matrix resolves the latest compatible test dependencies. Exact-commit
@@ -32,7 +32,9 @@ hosted qualification and the scheduled canary remain part of the evidence needed
 for this change.
 The owner's 120-character Python limit and prohibition on working on other
 repositories take precedence over conflicting recommendations in the manual.
-Security-related actions remain paused.
+Security remediation remains paused. The owner permits benchmark-boundary
+qualification and serial experimental subjects under the
+[benchmark-only exception](benchmark-subject-policy.md).
 
 The 9 November reviews bring the inspected-page count to 100 of 154. The
 common-standard batch records 47 passing local controls and limited
@@ -63,9 +65,11 @@ default, Karpathy and experimental conditions on a task that reached the
 measurement ceiling. The result does not demonstrate an advantage. See the
 [trial protocol](agent-trial-protocol.md) and
 [recorded report](../artifacts/agent-trials/development-v2-report/README.md).
-New model trials are blocked until the runner and confined grader are
-integrated and independently qualified; the existing launch refusal must remain
-in place until then.
+The runner now supplies the confined grader's explicit fixture and runtime
+inputs and uses bounded native submission reads. New model trials remain
+blocked until the complete controller, instruction isolation, execution,
+collection and grading boundary is independently qualified. Preserve the
+launch refusal until then; isolated prototype probes are insufficient.
 
 The [2 November upstream observation](../artifacts/research/2026-11-02/karpathy-baseline-head.json)
 found that the Karpathy-derived baseline's upstream default-branch head matched
@@ -243,9 +247,9 @@ In particular:
    held-out inputs; exact hashes alone do not rule out reordered, derivative or
    semantically related cases. Declare the scope and limits of those checks.
 4. Before model trials, integrate and qualify the runner and grading boundary.
-   That qualification is deferred while security-related work is paused; the
-   existing refusal to launch new trials remains in force. Once it is permitted
-   and complete, freeze task selection, sample sizes, allocation, budgets,
+   That qualification is now permitted by the benchmark-only exception; the
+   existing refusal to launch new trials remains until it passes. Once
+   complete, freeze task selection, sample sizes, allocation, budgets,
    failure handling, the primary outcome and a practically meaningful effect
    threshold before evaluating. Include source selection and natural skill
    discovery in the design, with separate baseline, Karpathy-derived and

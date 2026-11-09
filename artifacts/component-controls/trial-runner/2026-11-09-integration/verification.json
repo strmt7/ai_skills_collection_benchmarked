@@ -1,0 +1,270 @@
+{
+  "commands": [
+    {
+      "command": [
+        "-m",
+        "ruff",
+        "check",
+        "tools",
+        "tests"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "command": [
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "tools",
+        "tests"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "cc199a57a5c7fffcf8d4daf5a28ebb8dd97f626dacee6e2fd506ca4d72be1fff"
+    },
+    {
+      "command": [
+        "-m",
+        "mypy",
+        "tools",
+        "tests"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "f0ad5c528a1299873fed62de6882399da31abb7f9bb91625492834089a87a350"
+    },
+    {
+      "command": [
+        "-m",
+        "compileall",
+        "-q",
+        "tools",
+        "tests",
+        "benchmarks/agent-effectiveness/graders"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "tools/validate_catalog.py"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "00146a45ba3e35b9d91bae396e68386dd45de78a073003696aeab9f63494832c"
+    },
+    {
+      "command": [
+        "tools/run_static_benchmarks.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "8ba34d2ea51d64736a00532973e85cfd0abd5b28251bd22b0eac40989c26a531"
+    },
+    {
+      "command": [
+        "tools/audit_skill_quality.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "7b4c5e0613b0648d64bb2e36f131f7c65936a98ed1c267d8982f46eaef7f4691"
+    },
+    {
+      "command": [
+        "tools/validate_agent_tool_policy.py",
+        "--check",
+        "--json"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "9fb42ae727a3e25d04309584d426540e4196e659a6df45abc5ac6d78a73c4331"
+    },
+    {
+      "command": [
+        "tools/evaluate_external_benchmark_methods.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "bfaf6d8b2dd624f764b20bd880b65d7cfa3c16f476cd384764b1f8378979c3c2"
+    },
+    {
+      "command": [
+        "tools/manage_improvement_ledger.py",
+        "--check",
+        "--json"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "13b4b400cccacbd3160ebe13e96ad26dcd364a96b172c701113c2ddf46bccd68"
+    },
+    {
+      "command": [
+        "artifacts/research/2026-10-28/ecc-source-snapshots/generator.py.txt",
+        "--repo",
+        "affaan-m/everything-claude-code",
+        "--lock",
+        "artifacts/research/2026-10-28/ecc-source-snapshots/source-lock.json.gz",
+        "--old-commit",
+        "artifacts/research/2026-10-28/ecc-source-snapshots/old-commit.json",
+        "--old-tree",
+        "artifacts/research/2026-10-28/ecc-source-snapshots/old-tree.json.gz",
+        "--new-commit",
+        "artifacts/research/2026-10-28/ecc-source-snapshots/new-commit.json",
+        "--new-tree",
+        "artifacts/research/2026-10-28/ecc-source-snapshots/new-tree.json.gz",
+        "--output",
+        "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "9dbfcedbdb38cef2e948a6fe541cab45875ad8e1c3bb41624d3526943dac55ca"
+    },
+    {
+      "command": [
+        "artifacts/research/2026-10-28/ecc-source-snapshots/generator.py.txt",
+        "--repo",
+        "anthropics/skills",
+        "--lock",
+        "artifacts/research/2026-11-01/anthropic-source-snapshots/source-lock.json.gz",
+        "--old-commit",
+        "artifacts/research/2026-11-01/anthropic-source-snapshots/old-commit.json",
+        "--old-tree",
+        "artifacts/research/2026-11-01/anthropic-source-snapshots/old-tree.json.gz",
+        "--new-commit",
+        "artifacts/research/2026-11-01/anthropic-source-snapshots/new-commit.json",
+        "--new-tree",
+        "artifacts/research/2026-11-01/anthropic-source-snapshots/new-tree.json.gz",
+        "--output",
+        "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "3ed1ed8e38a6509e3023541f4b2f5ea6cf9cf5b8d0f8c8d2ef05b37f5bb4925d"
+    },
+    {
+      "command": [
+        "artifacts/research/2026-10-28/scientific-source-snapshots/generator.py.txt",
+        "--repo",
+        "K-Dense-AI/scientific-agent-skills",
+        "--lock",
+        "artifacts/research/2026-10-28/scientific-source-snapshots/source-lock.json.gz",
+        "--old-commit",
+        "artifacts/research/2026-10-28/scientific-source-snapshots/old-commit.json",
+        "--old-tree",
+        "artifacts/research/2026-10-28/scientific-source-snapshots/old-tree.json.gz",
+        "--new-commit",
+        "artifacts/research/2026-10-28/scientific-source-snapshots/new-commit.json",
+        "--new-tree",
+        "artifacts/research/2026-10-28/scientific-source-snapshots/new-tree.json.gz",
+        "--relocate",
+        "scientific-skills",
+        "skills",
+        "--release",
+        "artifacts/research/2026-10-28/scientific-source-snapshots/latest-release.json",
+        "--tag",
+        "artifacts/research/2026-10-28/scientific-source-snapshots/new-tag.json",
+        "--output",
+        "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "15ce79c17cac30ec0949d9744d06694b210cfe578c5f5cf7bb79c24dc693f395"
+    },
+    {
+      "command": [
+        "tools/report_workflow_evaluator_controls.py",
+        "--check",
+        "--json"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "729944944d23862caf802c459f199490cf6c8a55888250eafa320e6d2de23a48"
+    },
+    {
+      "command": [
+        "tools/validate_improved_skills.py",
+        "--json"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "40856fa0455b8c247b3bee47720e1996f63abae0c39b88cf26a615c823bbe2a5"
+    },
+    {
+      "command": [
+        "benchmarks/component-controls/frontend/prepare.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "7da9a12c802f35336db3fc124ac07a93ee3e6f4d89be9953f9fedda757acecf5"
+    },
+    {
+      "command": [
+        "benchmarks/component-controls/backend/prepare_backend.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "7da9a12c802f35336db3fc124ac07a93ee3e6f4d89be9953f9fedda757acecf5"
+    },
+    {
+      "command": [
+        "benchmarks/component-controls/native-testing/run_native.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "7a98c201e439859146366fe3a876cef8bfc2c8d24e7e7699e6aa7e30ee1cf64d"
+    },
+    {
+      "command": [
+        "tools/qualify_appcontainer.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "cd009f56af3f1616dcc19bab042415d5434afceb7ae4737878fc7e1ab8e80f17"
+    },
+    {
+      "command": [
+        "tools/summarize_agent_trials.py",
+        "--protocol",
+        "benchmarks/agent-effectiveness/development/protocol-v2.json",
+        "--trials",
+        "artifacts/agent-trials/development-v2",
+        "--output-dir",
+        "artifacts/agent-trials/development-v2-report",
+        "--check",
+        "--json"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ebd9ee1124db9e56ac37c53ef33ca57423e5c97de3daf5c68c2f58bd29d235be"
+    }
+  ],
+  "commercial_readiness_established": false,
+  "full_suite": {
+    "coverage_enabled": true,
+    "coverage_total_line": "TOTAL                                           14177   3859   5084    774  71.6%",
+    "exit_code": 0,
+    "passed": 2172,
+    "skipped": 56,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "4e0109b9d97b7bf57ac2b14d408dae6812a087a196c98aa051cd8bc69fdddcac",
+    "summary": "2172 passed, 56 skipped in 375.45s (0:06:15)",
+    "workers": 2
+  },
+  "model_trials": 0,
+  "schema_version": 1,
+  "scope": "Local component and repository validation; not a coding-agent benchmark score"
+}

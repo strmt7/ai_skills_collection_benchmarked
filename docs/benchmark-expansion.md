@@ -59,8 +59,10 @@ were sought for candidate tuning, and none were imported into skill guidance.
 
 Freeze candidates before holdout execution. Later changes require a new
 candidate and new untouched evaluation material. The existing refusal to launch
-model trials remains until runner/grader integration is qualified; that work
-is deferred while security work is paused. This review authorizes no release.
+model trials remains until runner/grader integration is qualified. The owner
+permits that prerequisite work and serial subjects under the
+[benchmark-only exception](benchmark-subject-policy.md); unrelated security
+remediation remains paused. This review authorizes no release.
 
 ## Reproducing source checks
 

@@ -15,7 +15,15 @@ from _windows_trial_process import run_owned
 pytestmark = pytest.mark.skipif(sys.platform != "win32", reason="Windows native job controls")
 
 
-def run_fixture(tmp_path: Path, source: str, *, timeout: float = 10, output_limit: int = 1024 * 1024):
+def run_fixture(
+    tmp_path: Path,
+    source: str,
+    *,
+    timeout: float = 10,
+    output_limit: int = 1024 * 1024,
+    executable: Path | None = None,
+    **options,
+):
     prompt = tmp_path / "prompt"
     prompt.write_bytes(b"fixture input\n")
     with (
@@ -24,13 +32,14 @@ def run_fixture(tmp_path: Path, source: str, *, timeout: float = 10, output_limi
         (tmp_path / "stderr").open("xb") as stderr,
     ):
         result = run_owned(
-            [str(Path(sys.executable).resolve()), "-c", source],
+            [str((executable or Path(sys.executable)).resolve()), "-c", source],
             cwd=tmp_path.resolve(),
             stdin=stdin,
             stdout=stdout,
             stderr=stderr,
             timeout=timeout,
             output_limit=output_limit,
+            **options,
         )
     return result, (tmp_path / "stdout").read_bytes(), (tmp_path / "stderr").read_bytes()
 
@@ -50,6 +59,9 @@ def test_success_preserves_streams_and_exit_status(tmp_path):
         "termination_reason": None,
         "exit_code": 0,
         "output_bytes": len(stdout) + len(stderr),
+        "job_memory_limit_bytes": 1024 * 1024 * 1024,
+        "active_process_limit": 32,
+        "explicit_environment": False,
     }
 
 
@@ -63,6 +75,61 @@ def test_invalid_time_limit_never_launches(tmp_path, timeout):
 def test_invalid_output_limit_never_launches(tmp_path, limit):
     with pytest.raises(ValueError, match="limit"):
         run_fixture(tmp_path, "raise AssertionError('must not run')", output_limit=limit)
+
+
+@pytest.mark.parametrize(
+    "options",
+    [
+        {"memory_limit": False},
+        {"memory_limit": 0},
+        {"memory_limit": 8 * 1024 * 1024 * 1024 + 1},
+        {"process_limit": False},
+        {"process_limit": 0},
+        {"process_limit": 129},
+        {"environment": {}},
+        {"environment": {"CONTROL": "value\0suffix"}},
+        {"environment": {"BAD=NAME": "value"}},
+        {"environment": {"CONTROL": "value", "control": "other"}},
+    ],
+)
+def test_invalid_resource_or_environment_settings_never_launch(tmp_path, options):
+    with pytest.raises(ValueError):
+        run_fixture(tmp_path, "raise AssertionError('must not run')", **options)
+
+
+def test_explicit_environment_does_not_inherit_parent_values(tmp_path, monkeypatch):
+    monkeypatch.setenv("AI_SKILLS_PARENT_CONTROL", "must not leak")
+    result, stdout, _ = run_fixture(
+        tmp_path,
+        "import os; print(os.environ.get('AI_SKILLS_PARENT_CONTROL')); print(os.environ['AI_SKILLS_CHILD_CONTROL'])",
+        environment={"AI_SKILLS_CHILD_CONTROL": "Unicode \u03b1", "PYTHONIOENCODING": "utf-8"},
+    )
+    assert result["exit_code"] == 0 and result["explicit_environment"] is True
+    assert stdout.decode("utf-8") == "None\r\nUnicode \u03b1\r\n"
+
+
+def test_job_memory_limit_denies_an_oversized_allocation(tmp_path):
+    result, stdout, _ = run_fixture(
+        tmp_path,
+        "try:\n data=bytearray(256*1024*1024)\nexcept MemoryError:\n print('allocation denied')",
+        memory_limit=96 * 1024 * 1024,
+    )
+    assert result["exit_code"] == 0
+    assert stdout == b"allocation denied\r\n"
+    assert result["job_memory_limit_bytes"] == 96 * 1024 * 1024
+
+
+def test_active_process_limit_denies_a_second_process(tmp_path):
+    result, stdout, _ = run_fixture(
+        tmp_path,
+        "import subprocess,sys\ntry:\n subprocess.run([sys.executable,'-c','pass'],check=True)\n"
+        "except OSError:\n print('child denied')",
+        process_limit=1,
+        executable=Path(getattr(sys, "_base_executable", sys.executable)),
+    )
+    assert result["exit_code"] == 0
+    assert stdout == b"child denied\r\n"
+    assert result["active_process_limit"] == 1
 
 
 def child_source(started: Path, escaped: Path) -> str:
