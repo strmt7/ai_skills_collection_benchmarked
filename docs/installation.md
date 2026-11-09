@@ -31,6 +31,11 @@ policy. Copying a `SKILL.md` file alone can break those links.
 
 Some reviewed instructions have known limitations:
 
+- The Biopython sequence reference can leave qualities and feature coordinates
+  unchanged during reversal and assumes automatic gzip decoding. A
+  [record I/O repair](../included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/biopython-record-io/SKILL.md)
+  covers selected transformations. [See the controls and limits](research-biopython-record-io.md).
+
 - The pinned verification skill can report a failed command as successful after
   piping its output. The experimental [verification overlay](../included/improved/skills/verification-loop-shell-status/SKILL.md)
   distinguishes native PowerShell statuses and cmdlet errors; [see the shell controls](research-powershell-exit-status.md).

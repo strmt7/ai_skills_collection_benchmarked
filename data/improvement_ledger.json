@@ -6730,7 +6730,21 @@
             "path": "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
             "scope": "Verified raw Git resource delta under an explicit candidate path mapping; identity, content, licensing, runtime and agent effectiveness remain unverified.",
             "sha256": "18d2206f73571787a992e4b3c95fd41027dbce423fa8880029d73e7889551aab"
+          },
+          {
+            "path": "docs/research-biopython-record-io.md",
+            "scope": "Selected sequence reference controls; other resources and agent efficacy remain open.",
+            "sha256": "378b5df966feca156aff33646f2d7e7b47b39e461cabbf69037170a3585d9b8d"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/biopython-record-io-v1/windows-result.json",
+            "scope": "Windows synthetic component controls only.",
+            "sha256": "1b3220ee276c99e2a130a10fe611ff35872414a6953719fa33e99f483f5eb3c7"
           }
+        ],
+        "open_work": [
+          "Review remaining reference resources and examples.",
+          "Qualify additional runtimes and independently measure agent effects."
         ],
         "resource_hash_policy": "catalog-canonical-v1",
         "resources": {
@@ -6770,8 +6784,14 @@
         "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/biopython-record-io/repair.json",
+            "scope": "Selected source-bound maintained repair; full-skill review incomplete.",
+            "sha256": "be7f19efb997bc6e869b8d5fc01eac5e5507237d3651c562c173fe5761940bb0"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "K-Dense-AI/scientific-agent-skills",
       "source_signature": {

@@ -1,0 +1,19 @@
+{
+  "agent_performance_tested": false,
+  "biopython": "1.88",
+  "checks": [
+    "original_sequence_only_leaves_qualities_and_features",
+    "record_reverse_complement_updates_values",
+    "reverse_default_metadata",
+    "slice_annotation_loss",
+    "gzip_text_handle_round_trip"
+  ],
+  "full_skill_reviewed": false,
+  "numpy": "2.5.4",
+  "original_gzip_path_error": "ValueError",
+  "overlay_sha256": "c4273b25cda8e2d085ff29533f0388097fc2f9f6bc93d43c591c2d7cdaf36ffc",
+  "platform": "Windows",
+  "python": "3.13.17",
+  "reference_sha256": "eb20a075f0ba4bfd3c805ebf489b4a789b54b86a6456a8c05f0516872b678f27",
+  "schema_version": 1
+}

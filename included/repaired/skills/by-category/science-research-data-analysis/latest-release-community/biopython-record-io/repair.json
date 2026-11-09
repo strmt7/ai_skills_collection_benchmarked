@@ -1,0 +1,23 @@
+{
+  "agent_performance_tested": false,
+  "artifact_kind": "maintained_runtime_repair",
+  "evidence_sha256": {
+    "reproduce.py": "9a5a0bb53717c2599818b9801ef98ff533b42ef1b7ae05fe21289c585602f0d6",
+    "requirements-windows.txt": "25a12d6bbd12340e4a768fb8dd1c6214857b6b968a7042194d9c24064bddf976",
+    "windows-result.json": "1b3220ee276c99e2a130a10fe611ff35872414a6953719fa33e99f483f5eb3c7"
+  },
+  "full_skill_reviewed": false,
+  "overlay_sha256": {
+    "LICENSE": "09b02a3c9df3053c55531d503357a9c7cde275970e6c3ceaa1ddf5f0e90b40c1",
+    "SKILL.md": "c4273b25cda8e2d085ff29533f0388097fc2f9f6bc93d43c591c2d7cdaf36ffc",
+    "provenance/original.SKILL.md": "8865f5f5727c498bfcc27c53a5da4d0bcd48c2088b4e6db08646e5da40451508",
+    "provenance/original.sequence_io.md": "eb20a075f0ba4bfd3c805ebf489b4a789b54b86a6456a8c05f0516872b678f27"
+  },
+  "readiness_evidence": "artifacts/repaired-skill-readiness/biopython-record-io-v1/windows-result.json",
+  "schema_version": 1,
+  "scope": "Selected record reverse complement, slicing and gzip FASTA examples; Windows CPython 3.13.17 with Biopython 1.88.",
+  "source_commit": "eb20fb0dcb0b1dadaa3db2737188f0755bbc4770",
+  "source_license_blob_sha1": "eb246475fd5a66b9bb56176f3a718984632dd98d",
+  "source_mirror": "included/skills/by-category/science-research-data-analysis/latest-release-community/biopython",
+  "source_skill_id": "k-dense-ai-scientific-agent-skills-scientific-skills-biopython-skill-md"
+}

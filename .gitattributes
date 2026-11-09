@@ -249,3 +249,8 @@
 /included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/zarr-python-basics/provenance/** -text !eol
 /included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/zarr-python-basics/LICENSE -text !eol
 /artifacts/repaired-skill-readiness/zarr-python-basics-v1/** text eol=lf
+
+# Biopython selected record and compressed-input controls.
+/included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/biopython-record-io/** text eol=lf
+/included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/biopython-record-io/provenance/** -text !eol
+/artifacts/repaired-skill-readiness/biopython-record-io-v1/** text eol=lf
