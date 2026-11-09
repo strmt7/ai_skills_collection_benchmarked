@@ -1,10 +1,23 @@
 import copy
 import hashlib
 import json
+import subprocess
+import sys
 from pathlib import Path
 
 import audit_trial_partitions as target
 import pytest
+
+
+def test_partition_preflight_does_not_load_trial_scoring():
+    tools = Path(__file__).resolve().parents[1] / "tools"
+    code = (
+        "import sys; import audit_trial_partitions; "
+        "assert 'summarize_multi_task_trials' not in sys.modules; "
+        "assert 'summarize_agent_trials' not in sys.modules"
+    )
+    result = subprocess.run([sys.executable, "-c", code], cwd=tools, capture_output=True, text=True, timeout=30)
+    assert result.returncode == 0, result.stdout + result.stderr
 
 
 def make_entry(root, task_id, partition, inputs, groups):

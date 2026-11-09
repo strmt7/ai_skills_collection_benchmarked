@@ -9,8 +9,8 @@ import re
 from pathlib import Path
 from typing import Any
 
+from _trial_declarations import declared_task_signatures
 from _trial_transcript import strict_json
-from summarize_multi_task_trials import declared_task_signatures
 
 
 def audit(path: Path) -> dict[str, Any]:

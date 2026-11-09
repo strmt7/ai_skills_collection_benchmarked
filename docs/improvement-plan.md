@@ -164,6 +164,15 @@ It does not replace the outstanding skill reviews, manual review, independent
 agent experiments or delivery requirements above. Final structural cleanup
 must preserve those obligations and their evidence.
 
+The first tooling migration moves task-declaration validation into
+`tools/_trial_declarations.py`, shared by partition preflight and multi-task
+reporting. Preflight no longer imports either trial scorer. Existing declaration
+tests move with their implementation, and a separate-process regression check
+protects that dependency boundary. The checked historical multi-task report and
+development partition report remained byte-identical during local comparison.
+This migration changes module ownership; it establishes no agent-performance
+or execution-speed improvement.
+
 ## Evidence needed to declare readiness
 
 - All catalog entries and resources have a source-bound research disposition,
