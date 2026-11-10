@@ -22724,12 +22724,20 @@
       "evaluation": {
         "evidence": [
           {
-            "path": "benchmarks/component-controls/native-testing/result.json",
+            "path": "artifacts/research/2026-11-10/llvm-toolchain-refresh/previous/result.json",
             "sha256": "e6125f8023c71ce9cb2c362cf101e3342eb415cb81e0ada21d23b3971b121fa7"
           },
           {
             "path": "artifacts/research/native-testing/review.json",
             "sha256": "aea83b4d908a2453de85a1661f8fefbe7240b77f16590ab3b41d75d116ea39f6"
+          },
+          {
+            "path": "artifacts/research/2026-11-10/llvm-toolchain-refresh/review.json",
+            "sha256": "c1db8a146d1a007b0d394453c802baa075266e1c1605a23d55d03cca9688da6e"
+          },
+          {
+            "path": "benchmarks/component-controls/native-testing/result.json",
+            "sha256": "e90ebab354c10ead9b7f5be7f8913c55c4c64c40925d0d5b3da3cfe801b03678"
           }
         ],
         "status": "in_progress"
@@ -22742,8 +22750,16 @@
             "sha256": "aea83b4d908a2453de85a1661f8fefbe7240b77f16590ab3b41d75d116ea39f6"
           },
           {
-            "path": "docs/research-native-testing-contracts.md",
+            "path": "artifacts/research/2026-11-10/llvm-toolchain-refresh/previous/research-native-testing-contracts.md.txt",
             "sha256": "4f86b9ac97538f09cdef2f56a2bf0ac8af4c48a6e8be3ab550325fc858116957"
+          },
+          {
+            "path": "artifacts/research/2026-11-10/llvm-toolchain-refresh/review.json",
+            "sha256": "c1db8a146d1a007b0d394453c802baa075266e1c1605a23d55d03cca9688da6e"
+          },
+          {
+            "path": "benchmarks/component-controls/native-testing/result.json",
+            "sha256": "e90ebab354c10ead9b7f5be7f8913c55c4c64c40925d0d5b3da3cfe801b03678"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -22968,12 +22984,20 @@
       "evaluation": {
         "evidence": [
           {
-            "path": "benchmarks/component-controls/native-testing/result.json",
+            "path": "artifacts/research/2026-11-10/llvm-toolchain-refresh/previous/result.json",
             "sha256": "e6125f8023c71ce9cb2c362cf101e3342eb415cb81e0ada21d23b3971b121fa7"
           },
           {
             "path": "artifacts/research/native-testing/review.json",
             "sha256": "aea83b4d908a2453de85a1661f8fefbe7240b77f16590ab3b41d75d116ea39f6"
+          },
+          {
+            "path": "artifacts/research/2026-11-10/llvm-toolchain-refresh/review.json",
+            "sha256": "c1db8a146d1a007b0d394453c802baa075266e1c1605a23d55d03cca9688da6e"
+          },
+          {
+            "path": "benchmarks/component-controls/native-testing/result.json",
+            "sha256": "e90ebab354c10ead9b7f5be7f8913c55c4c64c40925d0d5b3da3cfe801b03678"
           }
         ],
         "status": "in_progress"
@@ -22986,8 +23010,16 @@
             "sha256": "aea83b4d908a2453de85a1661f8fefbe7240b77f16590ab3b41d75d116ea39f6"
           },
           {
-            "path": "docs/research-native-testing-contracts.md",
+            "path": "artifacts/research/2026-11-10/llvm-toolchain-refresh/previous/research-native-testing-contracts.md.txt",
             "sha256": "4f86b9ac97538f09cdef2f56a2bf0ac8af4c48a6e8be3ab550325fc858116957"
+          },
+          {
+            "path": "artifacts/research/2026-11-10/llvm-toolchain-refresh/review.json",
+            "sha256": "c1db8a146d1a007b0d394453c802baa075266e1c1605a23d55d03cca9688da6e"
+          },
+          {
+            "path": "benchmarks/component-controls/native-testing/result.json",
+            "sha256": "e90ebab354c10ead9b7f5be7f8913c55c4c64c40925d0d5b3da3cfe801b03678"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -23901,7 +23933,12 @@
     "varnan-tech-opendirectory-packages-cli-skills-blog-cover-image-cli-skill-md": {
       "category": "Creative, media & design",
       "evaluation": {
-        "evidence": [],
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-10/image-dependency-refresh/review.json",
+            "sha256": "ded36b838d119d57050c6ef6657162fc994e153367a6ddf97caa6d5e35deeb2f"
+          }
+        ],
         "status": "pending"
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/reddit-verified-gtm-registry/blog-cover-image-cli",
@@ -23970,6 +24007,10 @@
           {
             "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
             "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+          },
+          {
+            "path": "artifacts/research/2026-11-10/image-dependency-refresh/review.json",
+            "sha256": "ded36b838d119d57050c6ef6657162fc994e153367a6ddf97caa6d5e35deeb2f"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -24139,6 +24180,10 @@
           {
             "path": "docs/research-image-cli-resources.md",
             "sha256": "798eef99da3f05901bb24242a260199cef755cb6542e3cc06e7679bff55f3721"
+          },
+          {
+            "path": "artifacts/research/2026-11-10/image-dependency-refresh/review.json",
+            "sha256": "ded36b838d119d57050c6ef6657162fc994e153367a6ddf97caa6d5e35deeb2f"
           }
         ],
         "scope": "Explicit licensed overlay retains immutable provenance; current graph and bounded logo repair pass component controls; provider configuration and credential storage remain unqualified, with no agent efficacy claim",

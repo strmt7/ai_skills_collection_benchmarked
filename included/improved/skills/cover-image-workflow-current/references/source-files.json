@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "source_commit": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4",
-  "dependency_graph": "blog-cover-image-cli-advisories-2026-10-25",
+  "dependency_graph": "blog-cover-image-cli-dependencies-2026-11-10",
   "hash_policy": "UTF-8 text: newline normalization only; binary: exact bytes",
   "source_files": [
     {
@@ -123,12 +123,12 @@
     },
     {
       "path": "package.json",
-      "sha256": "a9785c35344878f6264a05a7e891275a5f620bb3aa3aeefbb41f135b3322898a",
+      "sha256": "7516f6be36f44cccd21b758ac47bcff6881a08b6d477fce2e939eee54c048ef3",
       "text": true
     },
     {
       "path": "package-lock.json",
-      "sha256": "f52c586fde6c3bcc55b2ff4a59c848115e5ff583ca0605626546b9d51b7fe765",
+      "sha256": "2ae8788f07982864fc63bb82fab3c8a40265ca97d27c38eac9f9f01330120353",
       "text": true
     }
   ]

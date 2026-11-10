@@ -22,6 +22,7 @@ jobs:
         # version-conditional type errors (e.g. datetime.UTC, PEP 695 syntax)
         # surface here instead of in production.
         python-version: ["3.11", "3.12", "3.13", "3.14"]
+        platform: [linux, win32]
         include:
           - python-version: "3.11"
             runtime: "3.11.18"
@@ -47,4 +48,4 @@ jobs:
           uv pip install --python .venv/bin/python --no-deps --no-build-isolation -e .
           uv pip check --python .venv/bin/python
       - name: mypy
-        run: .venv/bin/python -m mypy --python-version ${{ matrix.python-version }} tools tests benchmarks/agent-effectiveness/graders
+        run: .venv/bin/python -m mypy --python-version ${{ matrix.python-version }} --platform ${{ matrix.platform }} tools tests benchmarks/agent-effectiveness/graders

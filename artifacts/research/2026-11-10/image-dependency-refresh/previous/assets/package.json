@@ -1,0 +1,40 @@
+{
+  "name": "blog-cover-image-cli",
+  "version": "1.0.17",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "blog-cover-cli": "bin/cli.js"
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "files": [
+    "bin",
+    "src",
+    "examples",
+    "agent-skill",
+    "index.js"
+  ],
+  "dependencies": {
+    "@google/genai": "2.31.0",
+    "@inquirer/prompts": "8.7.4",
+    "chalk": "6.0.1",
+    "commander": "15.0.0",
+    "conf": "16.0.0",
+    "dotenv": "18.0.9",
+    "figlet": "1.12.0",
+    "gradient-string": "3.0.0",
+    "sharp": "0.35.5"
+  },
+  "engines": {
+    "node": ">=26.12.1"
+  }
+}

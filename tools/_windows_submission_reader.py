@@ -11,6 +11,8 @@ from ctypes import wintypes
 from pathlib import Path, PurePosixPath
 from typing import Any
 
+from _windows_appcontainer import last_error, win_error
+
 
 class _UnicodeString(ctypes.Structure):
     _fields_ = [("Length", wintypes.USHORT), ("MaximumLength", wintypes.USHORT), ("Buffer", wintypes.LPWSTR)]
@@ -84,6 +86,8 @@ class WorkspaceReader:
         self._files: dict[str, tuple[Any, int]] = {}
 
     def _configure(self) -> None:
+        if sys.platform != "win32":
+            raise ValueError("Safe submission collection requires Windows")
         self.kernel = kernel = ctypes.WinDLL("kernel32", use_last_error=True)
         self.ntdll = ntdll = ctypes.WinDLL("ntdll")
         kernel.CreateFileW.argtypes = [
@@ -136,12 +140,12 @@ class WorkspaceReader:
 
     def _close(self, handle: Any) -> None:
         if not self.kernel.CloseHandle(handle):
-            raise ctypes.WinError(ctypes.get_last_error())
+            raise win_error(last_error())
 
     def _inspect(self, handle: Any, directory: bool) -> _FileInformation:
         info = _FileInformation()
         if not self.kernel.GetFileInformationByHandle(handle, ctypes.byref(info)):
-            raise ctypes.WinError(ctypes.get_last_error())
+            raise win_error(last_error())
         if self.kernel.GetFileType(handle) != 1 or info.attributes & 0x400 or bool(info.attributes & 0x10) != directory:
             raise ValueError("submission path contains a reparse point or wrong object type")
         return info
@@ -245,13 +249,13 @@ class WorkspaceReader:
     def read_file(self, name: str, *, max_bytes: int) -> bytes:
         kernel, handle, expected_size = self.open_file(name, max_bytes=max_bytes)
         if not kernel.SetFilePointerEx(handle, 0, None, 0):
-            raise ctypes.WinError(ctypes.get_last_error())
+            raise win_error(last_error())
         chunks: list[bytes] = []
         total = 0
         while True:
             buffer, count = ctypes.create_string_buffer(65536), wintypes.DWORD()
             if not kernel.ReadFile(handle, buffer, len(buffer), ctypes.byref(count), None):
-                raise ctypes.WinError(ctypes.get_last_error())
+                raise win_error(last_error())
             if not count.value:
                 if total != expected_size:
                     raise ValueError("submitted file changed while being read")

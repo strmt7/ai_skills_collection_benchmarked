@@ -119,7 +119,9 @@ jobs:
           '@
           $setup = Get-Content .venv/cocoindex-ci/setup.json -Raw | ConvertFrom-Json
           $python = Join-Path $setup.home 'runtime/Scripts/python.exe'
-          & $python -I -B -c $code
+          $script = Join-Path $PWD '.venv/cocoindex-ci/bind-qualification.py'
+          [IO.File]::WriteAllText($script, $code, (New-Object Text.UTF8Encoding($false)))
+          & $python -I -B $script
           if ($LASTEXITCODE -ne 0) { throw "Native qualification binding failed" }
 
       - name: Retain private bootstrap diagnostics

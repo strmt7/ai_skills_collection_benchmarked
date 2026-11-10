@@ -10,6 +10,7 @@ from typing import Any
 
 from _trial_collection_policy import ROOT_EXCLUSIONS, collection_policy, excluded_directory
 from _trial_protocol import relative_path
+from _windows_appcontainer import last_error, win_error
 from _windows_submission_reader import WorkspaceReader
 
 HEADER = struct.Struct("<II6qIII")
@@ -70,10 +71,10 @@ def directory_entries(
     while True:
         buffer = ctypes.create_string_buffer(BUFFER_BYTES)
         if not kernel.GetFileInformationByHandleEx(handle, 0xF if restart else 0xE, buffer, len(buffer)):
-            code = ctypes.get_last_error()
+            code = last_error()
             if code == 18:  # ERROR_NO_MORE_FILES
                 return result
-            raise ctypes.WinError(code)
+            raise win_error(code)
         page = parse_directory_buffer(buffer.raw)
         name_bytes += sum(len(entry.name.encode("utf-8")) for entry in page)
         if name_bytes > max_name_bytes:

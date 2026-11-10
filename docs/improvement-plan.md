@@ -28,6 +28,14 @@ cases and Python interruption cleanup have passed model-free controls. These
 are infrastructure results. The complete live-model boundary remains gated.
 See [setup](../toolchains/bootstrap/README.md) and [trial methods](agent-trial-protocol.md).
 
+The [published development checkpoint](https://github.com/strmt7/ai_skills_collection_benchmarked/commit/5c95bcac4646c5aed06bd9aed5235cfc7985aafc)
+completed 39 triggered workflows: 31 passed and eight failed. The
+[retained hosted review](../artifacts/research/2026-11-10/hosted-checkpoint-review/review.json)
+drives the follow-up repairs. A local pass alone did not catch interpreter
+availability, Windows command resolution and quoting, upstream package drift,
+or Linux type-checking errors. Hosted acceptance and the paused security gates
+remain release requirements; a subsequent source revision needs its own checks.
+
 The earlier nine matched development attempts reached a ceiling: each of the
 default, Karpathy and experimental conditions passed three times. That result
 does not demonstrate an advantage. Official external-suite scores for this

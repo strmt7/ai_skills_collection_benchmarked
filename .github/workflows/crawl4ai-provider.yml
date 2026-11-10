@@ -60,11 +60,19 @@ jobs:
       TOKENIZERS_PARALLELISM: "false"
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
-          python-version: "3.13.18"
-          cache: "pip"
-          cache-dependency-path: "toolchains/crawl4ai/requirements*.txt"
+          version: "0.13.7"
+      - name: Install the exact managed Python build
+        shell: pwsh
+        run: |
+          uv python install 3.13.18 --no-config
+          if ($LASTEXITCODE -ne 0) { throw "Managed Python installation failed" }
+          $python = uv python find 3.13.18 --managed-python --no-config
+          if ($LASTEXITCODE -ne 0) { throw "Managed Python discovery failed" }
+          $observed = & $python -I -B -c 'import platform; print(platform.python_version())'
+          if ($LASTEXITCODE -ne 0 -or $observed -ne '3.13.18') { throw "Managed Python version differs" }
+          Add-Content -LiteralPath $env:GITHUB_PATH -Value (Split-Path -Parent $python)
 
       - name: Create private disposable build caches
         shell: pwsh

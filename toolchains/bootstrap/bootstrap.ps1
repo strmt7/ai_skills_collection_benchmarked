@@ -320,6 +320,14 @@ try {
         if ([string]::IsNullOrEmpty($value)) { throw "Missing native system variable: $name" }
         $environment.Add($name,$value)
     }
+    $programFolders = @{
+        PROGRAMFILES = 'ProgramFiles'; PROGRAMW6432 = 'ProgramFiles'
+        'PROGRAMFILES(X86)' = 'ProgramFilesX86'; PROGRAMDATA = 'CommonApplicationData'
+    }
+    foreach ($entry in $programFolders.GetEnumerator()) {
+        $location = [Environment]::GetFolderPath($entry.Value)
+        if (-not [string]::IsNullOrEmpty($location)) { $environment.Add($entry.Key,$location) }
+    }
     $environment.Add('PATH',[Environment]::GetFolderPath('System'))
     $temporary = Join-Path ([IO.Path]::GetTempPath()) ('as-' + [Guid]::NewGuid().ToString('N').Substring(0,12))
     Assert-OrdinaryPath $temporary

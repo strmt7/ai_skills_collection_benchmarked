@@ -1,0 +1,30 @@
+{
+  "artifact_kind": "native_toolchain_update_qualification",
+  "observed_on": "2026-11-10",
+  "version": "23.1.5",
+  "source_pin_sha256": "206c0063b7dd6e2adab31d5b388786574f8f3ddaeedd0b8cd86fb4878e0b6a29",
+  "result_sha256": "e90ebab354c10ead9b7f5be7f8913c55c4c64c40925d0d5b3da3cfe801b03678",
+  "retained_controls": {
+    "path": "native-controls.zip",
+    "sha256": "8727c68b83014b59516665a25176c540248c189ea720deebbb221e2294c39a6f"
+  },
+  "prior_source_and_result": "previous/",
+  "controls": 11,
+  "all_passed": true,
+  "all_owned_processes_closed": true,
+  "model_requests": 0,
+  "agent_efficacy_proven": false,
+  "production_bootstrap_sha256": "5cf314b8a528a4ec4ff02fbcf652fed558e43484af44f51be9dea1ee792ebb4a",
+  "official_release_api_sha256": "5908a4bf48a70f3ce5a6a70c5b1d18c9c9b89429de9424ccd440eafd78c6cc09",
+  "retained_negative_controls": [
+    "The old source pin rejected the new release asset before extraction.",
+    "A private decoder omitted the existing production window bound; the verified archive was reused with that explicit bound.",
+    "The first isolated runtime path exceeded the Windows loader path limit. Identical admitted bytes passed at a verified shorter owned path.",
+    "The first public-frontend build could not discover installed C++ headers because standard program-location hints were absent. The corrected frontend resolves those locations through Windows APIs; the unchanged native controls pass."
+  ],
+  "limitations": [
+    "These are native component controls, not model/skill efficacy.",
+    "Windows C++ build components remain an explicit prerequisite.",
+    "No host installation, global PATH, global environment, service or scheduled-task changes were made."
+  ]
+}

@@ -9,6 +9,9 @@ on:
       - "included/repaired/skills/address-sanitizer-current/**"
       - "included/repaired/skills/fuzzing-dictionary-current/**"
       - "tools/_windows_owned_python.py"
+      - "dev.ps1"
+      - "toolchains/bootstrap/**"
+      - "tools/_bootstrap_*.py"
   workflow_dispatch:
   schedule:
     - cron: "10 7 * * 1"
@@ -51,7 +54,7 @@ jobs:
       - name: Verify and extract the archive, then run bounded native controls
         shell: pwsh
         run: |
-          python -I -B benchmarks/component-controls/native-testing/run_native.py --archive (Join-Path $env:RUNNER_TEMP 'llvm-native.tar.zst') --toolchain (Join-Path $env:RUNNER_TEMP 'llvm-native') --workspace (Join-Path $env:RUNNER_TEMP 'native-fuzzing-workspace') --output (Join-Path $env:RUNNER_TEMP 'native-fuzzing-evidence/controls')
+          ./dev.ps1 python benchmarks/component-controls/native-testing/run_native.py --archive (Join-Path $env:RUNNER_TEMP 'llvm-native.tar.zst') --toolchain (Join-Path $env:RUNNER_TEMP 'llvm-native') --workspace (Join-Path $env:RUNNER_TEMP 'native-fuzzing-workspace') --output (Join-Path $env:RUNNER_TEMP 'native-fuzzing-evidence/controls')
           exit $LASTEXITCODE
       - name: Retain actual native observations and failures
         if: always()

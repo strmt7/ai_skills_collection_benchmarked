@@ -1,0 +1,331 @@
+{
+  "artifact_kind": "hosted_workflow_observation",
+  "commit": "5c95bcac4646c5aed06bd9aed5235cfc7985aafc",
+  "observed_on": "2026-11-10",
+  "complete_inventory": true,
+  "total_runs": 39,
+  "passed": 31,
+  "failed": 8,
+  "active": 0,
+  "source_api": "https://api.github.com/repos/strmt7/ai_skills_collection_benchmarked/actions/runs?head_sha=5c95bcac4646c5aed06bd9aed5235cfc7985aafc&event=push&per_page=100",
+  "native_response_sha256": "043b17f1e87ccafee1a01c2412128a234ec6b5aea3d54aeea46e93c634c2486f",
+  "retained_response": "runs.native.json.gz",
+  "compressed_sha256": "96be9dde3b59009e63412664c4a1566cfffc23e5e73d297056277c4a952c12ce",
+  "runs": [
+    {
+      "id": 42789960975,
+      "name": "Crawl4AI source build controls",
+      "path": ".github/workflows/crawl4ai-provider.yml",
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789960975"
+    },
+    {
+      "id": 42789960910,
+      "name": "Census ML streaming controls",
+      "path": ".github/workflows/census-ml-streaming.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789960910"
+    },
+    {
+      "id": 42789961079,
+      "name": "FlowIO FCS component controls",
+      "path": ".github/workflows/flowio-controls.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961079"
+    },
+    {
+      "id": 42789960832,
+      "name": "Azure Pipelines Node example controls",
+      "path": ".github/workflows/azure-pipelines-node-control.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789960832"
+    },
+    {
+      "id": 42789961245,
+      "name": "Ruff",
+      "path": ".github/workflows/ruff.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961245"
+    },
+    {
+      "id": 42789961489,
+      "name": "Azure Event Hubs Java batching controls",
+      "path": ".github/workflows/azure-eventhub-java.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961489"
+    },
+    {
+      "id": 42789961476,
+      "name": "Zarr Python component controls",
+      "path": ".github/workflows/zarr-python-basics.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961476"
+    },
+    {
+      "id": 42789960992,
+      "name": "Azure Event Hubs .NET batching controls",
+      "path": ".github/workflows/azure-eventhub-dotnet.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789960992"
+    },
+    {
+      "id": 42789961549,
+      "name": "Azure Event Hubs Python checkpoint controls",
+      "path": ".github/workflows/azure-eventhub-python.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961549"
+    },
+    {
+      "id": 42789961268,
+      "name": "Dataframe component controls",
+      "path": ".github/workflows/dataframe-controls.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961268"
+    },
+    {
+      "id": 42789961301,
+      "name": "Python documentation inventory controls",
+      "path": ".github/workflows/docs-python-inventory.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961301"
+    },
+    {
+      "id": 42789961426,
+      "name": "Census summary and sparse mean controls",
+      "path": ".github/workflows/census-summary-mean-controls.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961426"
+    },
+    {
+      "id": 42789961264,
+      "name": "Native fuzzing contracts",
+      "path": ".github/workflows/native-fuzzing-controls.yml",
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961264"
+    },
+    {
+      "id": 42789961488,
+      "name": "Image CLI acceptance controls",
+      "path": ".github/workflows/image-cli-controls.yml",
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961488"
+    },
+    {
+      "id": 42789961326,
+      "name": "AnnData general I/O controls",
+      "path": ".github/workflows/anndata-general-io.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961326"
+    },
+    {
+      "id": 42789961345,
+      "name": "SimPO verifier task calibration",
+      "path": ".github/workflows/simpo-verifier-task.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961345"
+    },
+    {
+      "id": 42789961568,
+      "name": "scvi-tools model input controls",
+      "path": ".github/workflows/scvi-input-controls.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961568"
+    },
+    {
+      "id": 42789961094,
+      "name": "Native PPTX retention controls",
+      "path": ".github/workflows/pptx-retention-controls.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961094"
+    },
+    {
+      "id": 42789961560,
+      "name": "SimPO snapshot comparison controls",
+      "path": ".github/workflows/simpo-postrun.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961560"
+    },
+    {
+      "id": 42789961591,
+      "name": "pip-audit",
+      "path": ".github/workflows/pip-audit.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961591"
+    },
+    {
+      "id": 42789961507,
+      "name": "Design search compatibility",
+      "path": ".github/workflows/design-search.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961507"
+    },
+    {
+      "id": 42789961184,
+      "name": "Mypy",
+      "path": ".github/workflows/mypy.yml",
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961184"
+    },
+    {
+      "id": 42789961468,
+      "name": "C Makefile compatibility",
+      "path": ".github/workflows/makefile-c.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961468"
+    },
+    {
+      "id": 42789961038,
+      "name": "Azure Event Hubs Rust batching controls",
+      "path": ".github/workflows/azure-eventhub-rust.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961038"
+    },
+    {
+      "id": 42789961495,
+      "name": "Playwright executor compatibility",
+      "path": ".github/workflows/playwright-executor.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961495"
+    },
+    {
+      "id": 42789961478,
+      "name": "Confined evaluator controls",
+      "path": ".github/workflows/appcontainer-controls.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961478"
+    },
+    {
+      "id": 42789961449,
+      "name": "Azure Event Hubs TypeScript checkpoint controls",
+      "path": ".github/workflows/azure-eventhub-ts-checkpoint.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961449"
+    },
+    {
+      "id": 42789961362,
+      "name": "Azure AI Projects .NET controls",
+      "path": ".github/workflows/azure-ai-projects-dotnet.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961362"
+    },
+    {
+      "id": 42789961624,
+      "name": "pnpm cache installation controls",
+      "path": ".github/workflows/pnpm-cache-install.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961624"
+    },
+    {
+      "id": 42789961730,
+      "name": "npm cache installation controls",
+      "path": ".github/workflows/npm-cache-install.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961730"
+    },
+    {
+      "id": 42789961473,
+      "name": "CocoIndex local provider controls",
+      "path": ".github/workflows/cocoindex-provider.yml",
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961473"
+    },
+    {
+      "id": 42789961414,
+      "name": "Scanpy counts and clustering controls",
+      "path": ".github/workflows/scanpy-clustering-controls.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961414"
+    },
+    {
+      "id": 42789961516,
+      "name": "AnnData I/O component controls",
+      "path": ".github/workflows/anndata-io-controls.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961516"
+    },
+    {
+      "id": 42789961231,
+      "name": "Slides navigation compatibility",
+      "path": ".github/workflows/slides-navigation.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961231"
+    },
+    {
+      "id": 42789961762,
+      "name": "Secret scan",
+      "path": ".github/workflows/secret-scan.yml",
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961762"
+    },
+    {
+      "id": 42789961382,
+      "name": "Automatic Windows setup",
+      "path": ".github/workflows/bootstrap.yml",
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961382"
+    },
+    {
+      "id": 42789961385,
+      "name": "JavaScript documentation inventory controls",
+      "path": ".github/workflows/docs-js-inventory.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961385"
+    },
+    {
+      "id": 42789961608,
+      "name": "CodeQL",
+      "path": ".github/workflows/codeql.yml",
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961608"
+    },
+    {
+      "id": 42789961501,
+      "name": "Offline validation",
+      "path": ".github/workflows/offline-validation.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42789961501"
+    }
+  ],
+  "disposition": "Engineering failures are under repair; history secret-scan remediation and code-scanning-alert remediation remain paused. No gate was disabled or suppressed. This records the first checkpoint, not acceptance of a later source revision.",
+  "model_benchmark_score": false,
+  "release_readiness": false
+}

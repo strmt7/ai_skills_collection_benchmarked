@@ -33,11 +33,11 @@ jobs:
           python-version: "3.14.10"
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: "26.12.1"
+          node-version: "26.13.0"
           cache: npm
           cache-dependency-path: included/improved/skills/cover-image-workflow-current/assets/package-lock.json
       - name: Select the qualified npm release
-        run: npm install --global npm@12.2.1 --ignore-scripts --no-fund
+        run: npm install --global npm@12.2.2 --ignore-scripts --no-fund
       - name: Prepare the source-locked repair without changing the mirror
         shell: bash
         run: >-

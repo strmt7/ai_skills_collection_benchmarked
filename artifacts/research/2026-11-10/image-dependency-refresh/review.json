@@ -1,0 +1,53 @@
+{
+  "artifact_kind": "image_dependency_graph_qualification",
+  "observed_on": "2026-11-10",
+  "qualified_platform": "Windows x64",
+  "node_version": "v26.13.0",
+  "npm_version": "12.2.2",
+  "baseline_affected_package_records": 5,
+  "baseline_advisory_ids": [
+    "GHSA-3g3m-2fjr-6pw4",
+    "GHSA-g3hv-75wg-m249"
+  ],
+  "candidate_reported_vulnerabilities": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "direct_dependencies": {
+    "@google/genai": "3.0.0",
+    "@inquirer/prompts": "8.7.5",
+    "chalk": "6.0.1",
+    "commander": "15.1.0",
+    "conf": "16.0.0",
+    "dotenv": "18.0.10",
+    "figlet": "1.12.0",
+    "gradient-string": "3.0.0",
+    "sharp": "0.35.5"
+  },
+  "acceptance_checks": 43,
+  "resource_checks": 14,
+  "examples_decoded": 8,
+  "native_evidence": {
+    "path": "native-controls.zip",
+    "sha256": "4f490d9f61f654f33d7cc7ce2f2a87c1e911907ba62aa4414e1371d1addb0e7f",
+    "members": 38
+  },
+  "source_mirror_modified": false,
+  "provenance_modified": false,
+  "lifecycle_scripts_executed": false,
+  "real_provider_qualified": false,
+  "agent_efficacy_scored": false,
+  "model_requests_requested_by_evaluator": 0,
+  "process_wide_network_egress_monitored": false,
+  "notes": [
+    "The complete current graph was installed and audited; no dependency override, force flag or audit exclusion was used.",
+    "All unchanged component evaluators passed against the isolated candidate before source promotion.",
+    "The baseline count describes affected package records, not independent vulnerabilities.",
+    "Native mocked-provider/resource checks do not establish real provider availability, visual quality, process-wide absence of network egress or model improvement.",
+    "Linux qualification awaits the corresponding hosted workflow."
+  ]
+}

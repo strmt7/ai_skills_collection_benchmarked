@@ -119,6 +119,14 @@ Use fewer workers on constrained hosts. Increase concurrency only after checking
 available RAM, CPU and disk activity; do not use automatic host-wide parallelism
 by default on a shared workstation. Hosted CI sizes workers to its runner.
 
+When starting managed native tools from Python, use their verified full paths.
+The frontend declares `AI_SKILLS_GIT`, `AI_SKILLS_BASH`, `AI_SKILLS_DASH` and
+`AI_SKILLS_UNIX_BIN`; maintained shell consumers use those bindings. Resolve
+other supplied tools against the private `PATH` before passing their absolute
+paths to `subprocess`. Windows can select a system executable before searching
+`PATH` for a bare command, including the system WSL `bash` alias. The Windows
+toolchain does not require WSL.
+
 The in-repository scanner checks its known patterns in replacement-decoded text
 and binary file bytes. It does not unpack archives or recognize every encoding
 or credential. CI also runs Gitleaks across fetched Git history.

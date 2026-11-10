@@ -2,9 +2,14 @@
 
 The 26 October 2026 Windows x64 checks used official LLVM 23.1.4 with
 `-fsanitize=fuzzer,address`. The
-[native controls](../../../../../benchmarks/component-controls/native-testing/source.json)
+[retained source pin](../../../../../artifacts/research/2026-11-10/llvm-toolchain-refresh/previous/source.json)
 pin its archive and runtime identity. LLVM's versioned dictionary parser defines
 accepted escapes independently of this overlay.
+
+The [10 November update](../../../../../artifacts/research/2026-11-10/llvm-toolchain-refresh/review.json)
+repeated all 11 unchanged native controls with LLVM 23.1.5 through the automatic
+development entrypoint. Its current identities are in the
+[native controls](../../../../../benchmarks/component-controls/native-testing/source.json).
 
 The mirrored PNG dictionary line, containing C-style `\r` and `\n`, failed with
 `ParseDictionaryFile: error in line 1`. Its explicit hex-byte form loaded.

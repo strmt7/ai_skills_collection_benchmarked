@@ -78,6 +78,8 @@ def test_capture_refuses_overlapping_or_preexisting_output(tmp_path, target):
 
 
 def test_held_handle_graph_closes_every_handle_across_repeated_snapshots(tmp_path):
+    if sys.platform != "win32":
+        pytest.skip("Windows process handle accounting")
     workspace = tmp_path / "workspace"
     workspace.mkdir()
     (workspace / "a").write_bytes(b"source")
@@ -110,6 +112,8 @@ def test_path_metadata_budget_is_enforced_before_copy(tmp_path):
 
 @pytest.mark.parametrize("location", ["root", "nested", "excluded-cache", "parent"])
 def test_directory_junctions_are_rejected_without_reading_the_owned_canary(tmp_path, monkeypatch, location):
+    if sys.platform != "win32":
+        pytest.skip("Windows junction creation")
     import _winapi
 
     outside = tmp_path / "canary"

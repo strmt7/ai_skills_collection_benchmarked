@@ -1,0 +1,304 @@
+{
+  "agent_performance_claim": false,
+  "all_passed": true,
+  "compiler_version": "23.1.4",
+  "controls": [
+    {
+      "arguments": [
+        "<compiler>",
+        "--version"
+      ],
+      "exit_code": 0,
+      "expected_zero_exit": true,
+      "label": "compiler-version",
+      "passed": true,
+      "process": {
+        "active_processes_after_cleanup": 0,
+        "kill_on_close": true,
+        "real_interpreter_gated_before_site": true,
+        "termination_reason": null,
+        "windows_job": true
+      },
+      "required_diagnostics": [
+        "clang version 23.1.4"
+      ],
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "337f105fa14a007e323c125a7b6b3d33cab0757383d31b36f5f17c2c09774363"
+    },
+    {
+      "arguments": [
+        "<compiler>",
+        "-O1",
+        "-g",
+        "-fno-omit-frame-pointer",
+        "-fsanitize=address",
+        "-fuse-ld=lld",
+        "-v",
+        "allocation-boundary.cpp",
+        "-o",
+        "allocation-boundary.exe"
+      ],
+      "exit_code": 0,
+      "expected_zero_exit": true,
+      "label": "asan-build",
+      "passed": true,
+      "process": {
+        "active_processes_after_cleanup": 0,
+        "kill_on_close": true,
+        "real_interpreter_gated_before_site": true,
+        "termination_reason": null,
+        "windows_job": true
+      },
+      "required_diagnostics": [],
+      "stderr_sha256": "75e37273bf396e9a6d8ecdad88e788104806b50ea2e4b0d59ef0ab17970ca8e7",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "arguments": [
+        "<workspace>\\allocation-boundary.exe"
+      ],
+      "exit_code": 0,
+      "expected_zero_exit": true,
+      "label": "asan-clean",
+      "passed": true,
+      "process": {
+        "active_processes_after_cleanup": 0,
+        "kill_on_close": true,
+        "real_interpreter_gated_before_site": true,
+        "termination_reason": null,
+        "windows_job": true
+      },
+      "required_diagnostics": [],
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "arguments": [
+        "<workspace>\\allocation-boundary.exe",
+        "outside"
+      ],
+      "exit_code": 1,
+      "expected_zero_exit": false,
+      "label": "asan-out-of-bounds",
+      "passed": true,
+      "process": {
+        "active_processes_after_cleanup": 0,
+        "kill_on_close": true,
+        "real_interpreter_gated_before_site": true,
+        "termination_reason": null,
+        "windows_job": true
+      },
+      "required_diagnostics": [
+        "ERROR: AddressSanitizer: heap-buffer-overflow"
+      ],
+      "stderr_sha256": "14b02369002a92ac5cdb1c92e569433a4e6a99cbbcd4b288a2f9562d42a0c09c",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "arguments": [
+        "<compiler>",
+        "-O1",
+        "-g",
+        "-fsanitize=fuzzer,address",
+        "-fuse-ld=lld",
+        "dictionary-loader.cpp",
+        "-o",
+        "dictionary-loader.exe"
+      ],
+      "exit_code": 0,
+      "expected_zero_exit": true,
+      "label": "fuzzer-build",
+      "passed": true,
+      "process": {
+        "active_processes_after_cleanup": 0,
+        "kill_on_close": true,
+        "real_interpreter_gated_before_site": true,
+        "termination_reason": null,
+        "windows_job": true
+      },
+      "required_diagnostics": [],
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "arguments": [
+        "<workspace>\\dictionary-loader.exe",
+        "-help=1"
+      ],
+      "exit_code": 0,
+      "expected_zero_exit": true,
+      "label": "fuzzer-help",
+      "passed": true,
+      "process": {
+        "active_processes_after_cleanup": 0,
+        "kill_on_close": true,
+        "real_interpreter_gated_before_site": true,
+        "termination_reason": null,
+        "windows_job": true
+      },
+      "required_diagnostics": [
+        "rss_limit_mb",
+        "malloc_limit_mb"
+      ],
+      "stderr_sha256": "906c99d02e29f1b6cdcb0247fcd9ea5b9800f6dd9aed391f5a2d552787cb4423",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "arguments": [
+        "<workspace>\\dictionary-loader.exe",
+        "-runs=1",
+        "-seed=1",
+        "-timeout=2",
+        "-max_len=512",
+        "-rss_limit_mb=256",
+        "-malloc_limit_mb=32",
+        "-dict=unsupported-c-escapes.dict"
+      ],
+      "exit_code": 1,
+      "expected_zero_exit": false,
+      "label": "unsupported-c-escapes",
+      "passed": true,
+      "process": {
+        "active_processes_after_cleanup": 0,
+        "kill_on_close": true,
+        "real_interpreter_gated_before_site": true,
+        "termination_reason": null,
+        "windows_job": true
+      },
+      "required_diagnostics": [
+        "ParseDictionaryFile: error in line 1"
+      ],
+      "stderr_sha256": "e6d1c7c096da387ab8616780d1cad626a9bfdd2da014b1444bee703ef3337560",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "arguments": [
+        "<workspace>\\dictionary-loader.exe",
+        "-runs=1",
+        "-seed=1",
+        "-timeout=2",
+        "-max_len=512",
+        "-rss_limit_mb=256",
+        "-malloc_limit_mb=32",
+        "-dict=portable-byte-escapes.dict"
+      ],
+      "exit_code": 0,
+      "expected_zero_exit": true,
+      "label": "portable-byte-escapes",
+      "passed": true,
+      "process": {
+        "active_processes_after_cleanup": 0,
+        "kill_on_close": true,
+        "real_interpreter_gated_before_site": true,
+        "termination_reason": null,
+        "windows_job": true
+      },
+      "required_diagnostics": [
+        "Dictionary: 1 entries"
+      ],
+      "stderr_sha256": "5414f6c7839de46e18bc3759e6aab788e43813b4bcf5a6e47972d668edc5105c",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "arguments": [
+        "<workspace>\\dictionary-loader.exe",
+        "-runs=1",
+        "-seed=1",
+        "-timeout=2",
+        "-max_len=512",
+        "-rss_limit_mb=256",
+        "-malloc_limit_mb=32",
+        "-dict=quoted-and-backslash.dict"
+      ],
+      "exit_code": 0,
+      "expected_zero_exit": true,
+      "label": "quoted-and-backslash",
+      "passed": true,
+      "process": {
+        "active_processes_after_cleanup": 0,
+        "kill_on_close": true,
+        "real_interpreter_gated_before_site": true,
+        "termination_reason": null,
+        "windows_job": true
+      },
+      "required_diagnostics": [
+        "Dictionary: 1 entries"
+      ],
+      "stderr_sha256": "5414f6c7839de46e18bc3759e6aab788e43813b4bcf5a6e47972d668edc5105c",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "arguments": [
+        "<workspace>\\dictionary-loader.exe",
+        "-runs=1",
+        "-seed=1",
+        "-timeout=2",
+        "-max_len=512",
+        "-rss_limit_mb=256",
+        "-malloc_limit_mb=32",
+        "-dict=all-byte-values.dict"
+      ],
+      "exit_code": 0,
+      "expected_zero_exit": true,
+      "label": "all-byte-values",
+      "passed": true,
+      "process": {
+        "active_processes_after_cleanup": 0,
+        "kill_on_close": true,
+        "real_interpreter_gated_before_site": true,
+        "termination_reason": null,
+        "windows_job": true
+      },
+      "required_diagnostics": [
+        "Dictionary: 1 entries"
+      ],
+      "stderr_sha256": "5414f6c7839de46e18bc3759e6aab788e43813b4bcf5a6e47972d668edc5105c",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "arguments": [
+        "<workspace>\\dictionary-loader.exe",
+        "-runs=1",
+        "-seed=1",
+        "-timeout=2",
+        "-max_len=512",
+        "-rss_limit_mb=256",
+        "-malloc_limit_mb=32",
+        "-dict=unterminated-quote.dict"
+      ],
+      "exit_code": 1,
+      "expected_zero_exit": false,
+      "label": "unterminated-quote",
+      "passed": true,
+      "process": {
+        "active_processes_after_cleanup": 0,
+        "kill_on_close": true,
+        "real_interpreter_gated_before_site": true,
+        "termination_reason": null,
+        "windows_job": true
+      },
+      "required_diagnostics": [
+        "ParseDictionaryFile: error in line 1"
+      ],
+      "stderr_sha256": "4598081d4fcb95e03b37d538eb2a1f3d745d1f5d62e4ad534c5f3669ed162a78",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "independent_model_trials": 0,
+  "input_sha256": {
+    "all-byte-values.dict": "83bcaf5f7c0f5659de75b3d16638ff704593bd4b1658739b486a0afdb0292661",
+    "allocation-boundary.cpp": "4394f1041faf454c5f53dbff58b3d792ec2bd5368e80b09b6972d73d0b5959d0",
+    "dictionary-loader.cpp": "3066e04216a90aecd40b128075432f5decdf34b64d92a205e800139b5e1744b2",
+    "portable-byte-escapes.dict": "7a924c8e3d0b7ee460e817d2f864a61289d814b01b0fb45f3dd0897aa588bfce",
+    "quoted-and-backslash.dict": "b9387dd979084af24e194e421fd04eb7e3f28ccbe8e598dce8ab2b605d933138",
+    "run_native.py": "9baa52b3a9d8d5349c9b225505c92b3e7cba990c91147d4a0f449203e7aa2abe",
+    "source.json": "5c6d30a10fcbbb27dded4d4154fb940ab9d72d193750b6afef8e958e486e6c12",
+    "tools/_windows_owned_python.py": "acf5b4e2d94758065cef125e5d6386ff741fe75e80bde2e66e0e67ac5e4a2651",
+    "unsupported-c-escapes.dict": "b3335be4a07a961f41de4dc667aa0bf850aca3af44dd89c08849f896fee29894",
+    "unterminated-quote.dict": "3dbada9657912dacea122dccb87478b5fee0a39df07764c7881df202aece7de3"
+  },
+  "measurement_kind": "native_component_contract_controls",
+  "native_result_sha256": "0a7abf5ee5553c01de33da3a0b94f3290fb0495ea15bf3be3b59f0184e24006c",
+  "receipt_normalization": "Only the owned workspace prefix in recorded arguments is replaced with <workspace>; exits, diagnostics, stream digests and process observations are unchanged.",
+  "scope": "Windows x64 LLVM ASan detection and libFuzzer dictionary admission; no campaign, MSVC compiler, other fuzzer or leak qualification"
+}

@@ -84,22 +84,23 @@
       "license_source_sha": "bc01f7c1c31f0af54c2924c1ec1abbb472ab1df4",
       "original_path": "included/improved/skills/cover-image-workflow-current/provenance/original-SKILL.md",
       "overlay_path": "included/improved/skills/cover-image-workflow-current",
-      "overlay_sha256": "3b3ceb70e76c9ea7e64aa8eee92ccbe5c9ed1aab7fc39003abd2b8c133e421ed",
+      "overlay_sha256": "50fcedc7b941c4d77ab441c0058778830c03665d4585920b6ce517bbe04859a5",
       "package_file_sha256": {
-        "LICENSE": "8b1855650f4439f83e80337656bf960fe5e06e6d8812ea30cae166e613d57304",
-        "NOTICE.md": "0a394fedc38c713d49b70b645015791e0cb52e53e737bbd0330f13047d95b283",
-        "SKILL.md": "3b3ceb70e76c9ea7e64aa8eee92ccbe5c9ed1aab7fc39003abd2b8c133e421ed",
         "assets/cli.js": "3f8feabfbcd3d58b5dbe2c161348c28cdec393eb521f5daaabf77564ce5acd71",
         "assets/imageValidator.js": "70643e57021b25098716d79acd699ad727c8922e0fd28b9f9f104a6848d31f47",
         "assets/logoFetcher.js": "783a2d9b2f05333e3e286e3866ff2f92963a9f6a7722db5ad01f2fb22d193d24",
-        "assets/package-lock.json": "f52c586fde6c3bcc55b2ff4a59c848115e5ff583ca0605626546b9d51b7fe765",
-        "assets/package.json": "a9785c35344878f6264a05a7e891275a5f620bb3aa3aeefbb41f135b3322898a",
+        "assets/package-lock.json": "2ae8788f07982864fc63bb82fab3c8a40265ca97d27c38eac9f9f01330120353",
+        "assets/package.json": "7516f6be36f44cccd21b758ac47bcff6881a08b6d477fce2e939eee54c048ef3",
+        "LICENSE": "8b1855650f4439f83e80337656bf960fe5e06e6d8812ea30cae166e613d57304",
+        "NOTICE.md": "0a394fedc38c713d49b70b645015791e0cb52e53e737bbd0330f13047d95b283",
         "provenance/original-SKILL.md": "f5ab67d3ed7b80e1e7ad7dc34175633f28b3acf053f7a4366fc4b76960587fcc",
-        "references/cli-repair.md": "3d7a1ec9145995799cb7b16ffc47cdfe0773fdad4ccc80a181e649cfe852f6df",
+        "references/cli-repair.md": "aaed34a6a9ca6090d4bed4010f66496c64bd4f76c1b113c302c376a3aaa60ccb",
         "references/qualification-2026-10-25.md": "28c0679f34b78602674c295fb612111b3849fdf00eba9d052bf43e96363b1f9a",
+        "references/qualification-2026-11-10.md": "7e8891241ec5bb2e339b6f3f0375cc820917d0288298361783617138077f1b1b",
         "references/qualified-implementation.md": "ad2c3e4cd0a3eec20e68195ed4085b962450a72cbe45b357cda1a78a07145c47",
-        "references/source-files.json": "8163d95000a80975057fef2cf905fa2387613a817ce55131c4b2ba6563c2bbd6",
-        "scripts/prepare_cli.py": "00216393e2f046100eea1fb125b14dc62fb79e4a57f607fd52e8727c3dc47272"
+        "references/source-files.json": "32c78cfdb79a70cf61202ccaad34bb5806d878d2ad784a308d40c2d28482beca",
+        "scripts/prepare_cli.py": "00216393e2f046100eea1fb125b14dc62fb79e4a57f607fd52e8727c3dc47272",
+        "SKILL.md": "50fcedc7b941c4d77ab441c0058778830c03665d4585920b6ce517bbe04859a5"
       },
       "performance_status": "unbenchmarked",
       "skill_id": "varnan-tech-opendirectory-packages-cli-skills-blog-cover-image-cli-skill-md",
@@ -423,9 +424,9 @@
       "package_file_sha256": {
         "LICENSE": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
         "NOTICE.md": "894f86385a0b78eac31ab2e7859bd64783e54444d1afc92efbca747b9c4299fd",
-        "SKILL.md": "d7ac89b75a15258a6c578dcdbea70dcb49d5aef7afb76c720bcce324209a6d1e",
         "provenance/original.SKILL.md": "5404e73526105c064eb051abe726097a9699ba39a2aaa23fb1b195d2835bd9c4",
-        "references/qualification.md": "54b4484e3aa20adce550e52d723f8a697d7accb9a39e95df36467c2e010b819f"
+        "references/qualification.md": "405272e0f620b082b76ab3c1c9296864c13bd31b31445575fd658119d6fdf668",
+        "SKILL.md": "d7ac89b75a15258a6c578dcdbea70dcb49d5aef7afb76c720bcce324209a6d1e"
       },
       "performance_status": "unbenchmarked",
       "skill_id": "trailofbits-skills-plugins-testing-handbook-skills-skills-address-sanitizer-skill-md",
@@ -443,9 +444,9 @@
       "package_file_sha256": {
         "LICENSE": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
         "NOTICE.md": "397eeffbe81c6e9e16fe840a5788a01d7d6340e4f8e029303db4ee664d1cfc60",
-        "SKILL.md": "c1cd3f868ca4910cac32ce79d7863d768701b225ebaa8d9268148d7e96900ddd",
         "provenance/original.SKILL.md": "3247064b931fdc5b259e9d7786a7e50858cde27cedbf6bef873a5d77827efed8",
-        "references/qualification.md": "e5ffb438c0ecdd26039adf27f59be89c82d95bfe881b72fb7c89817f2461bad5"
+        "references/qualification.md": "2e01c15facdc61153ef5a6658e8c7309f3c9ea65827e545520e9a9bd0f59c39a",
+        "SKILL.md": "c1cd3f868ca4910cac32ce79d7863d768701b225ebaa8d9268148d7e96900ddd"
       },
       "performance_status": "unbenchmarked",
       "skill_id": "trailofbits-skills-plugins-testing-handbook-skills-skills-fuzzing-dictionary-skill-md",

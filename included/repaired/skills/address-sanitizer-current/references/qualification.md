@@ -2,6 +2,10 @@
 
 The 26 October 2026 Windows x64 checks used the official LLVM 23.1.4 portable
 archive. Its archive, compiler and ASan runtime digests are pinned in the
+[retained source pin](../../../../../artifacts/research/2026-11-10/llvm-toolchain-refresh/previous/source.json).
+The [10 November update](../../../../../artifacts/research/2026-11-10/llvm-toolchain-refresh/review.json)
+repeated all 11 unchanged native controls with LLVM 23.1.5 through the automatic
+development entrypoint. The current pin is in the
 [native controls](../../../../../benchmarks/component-controls/native-testing/source.json).
 The Windows build also needs installed MSVC C++ headers/libraries and a Windows
 SDK. The runner lets LLVM discover them through the system's standard program

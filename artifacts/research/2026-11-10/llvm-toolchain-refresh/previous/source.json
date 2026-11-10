@@ -1,0 +1,11 @@
+{
+  "version": "23.1.4",
+  "release": "llvmorg-23.1.4",
+  "release_url": "https://github.com/llvm/llvm-project/releases/tag/llvmorg-23.1.4",
+  "archive_url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.4/clang%2Bllvm-23.1.4-x86_64-pc-windows-msvc.tar.zst",
+  "archive_bytes": 276626313,
+  "archive_sha256": "1a3f2f998e230b5791cc4e2bfe11a1f7c07fe42c96ff44f227c9db0bedfaf091",
+  "compiler_sha256": "2fcd72a41bbc6bcf8e89c63555c4db7451da53bf47082fb91d6b1c1e990636ad",
+  "runtime_relative_path": "lib/clang/23/lib/windows/clang_rt.asan_dynamic-x86_64.dll",
+  "runtime_sha256": "3c1fa35803045a589c2bb3cc7d1a6a9ea873bcf147800979cd8f165bb3354b58"
+}

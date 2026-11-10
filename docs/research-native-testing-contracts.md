@@ -16,7 +16,7 @@ the unchanged original instructions. Follow the collection's
 | --- | --- |
 | Skip Windows/macOS ASan; describe Windows support as experimental | Current LLVM and Microsoft documentation supports native ASan on documented platforms. The Windows LLVM control detects an invalid access. MSVC and macOS were not executed here. |
 | Disable libFuzzer RSS limits because ASan maps a large shadow address range | LLVM distinguishes virtual address mappings from resident memory. Keep a finite RSS budget; this review does not stress-test the limit. |
-| Use `\r` and `\n` in a libFuzzer PNG dictionary entry | LLVM 23.1.4 rejects that line. Explicit `\x0D` and `\x0A` escapes load successfully. |
+| Use `\r` and `\n` in a libFuzzer PNG dictionary entry | LLVM 23.1.4 and 23.1.5 reject that line. Explicit `\x0D` and `\x0A` escapes load successfully. |
 | Pass raw extracted strings directly into a dictionary | Extraction alone does not serialize embedded quotes, backslashes or binary bytes. Separate native controls admit escaped strings and all 256 byte values. |
 
 The native run has **11 successful controls**, including compiler identity,
@@ -25,8 +25,13 @@ accepted dictionaries and two expected dictionary failures. Every child runs
 inside an owned Windows process tree with a deadline and bounded logs. Expected
 failures remain in the evidence; they are not converted into clean runs.
 
-The qualified compiler is the official **LLVM 23.1.4 Windows x64** portable
-archive, the latest non-prerelease release checked on 26 October 2026. Windows
+The current qualified compiler is the official **LLVM 23.1.5 Windows x64** portable
+archive, checked against the latest non-prerelease release on 10 November 2026.
+The [update record](../artifacts/research/2026-11-10/llvm-toolchain-refresh/review.json)
+retains the earlier 23.1.4 inputs and results, and all 11 current native controls
+through the automatic development entrypoint. Native checks use verified owned
+toolchain paths; excessively long Windows loader paths remain unsupported.
+Windows
 builds also require installed MSVC C++ headers/libraries and a Windows SDK.
 The runner discovers those installations and records their selected paths in
 the verbose build log. No global installation, AI client, fixed username or

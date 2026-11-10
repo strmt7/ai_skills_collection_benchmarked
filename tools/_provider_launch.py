@@ -35,6 +35,8 @@ def write_json(path: Path, value: Any) -> None:
 
 @contextlib.contextmanager
 def exclusive(path: Path, timeout: float = 600) -> Iterator[BinaryIO]:
+    if sys.platform != "win32":
+        raise ValueError("Automatic provider setup requires Windows")
     import msvcrt
 
     with path.open("a+b") as stream:

@@ -180,7 +180,20 @@ exit $LASTEXITCODE
     [void](Invoke-Control 'reserved-credential' @('--credential-env','PATH','python','-c','raise AssertionError("must not execute")') 1)
     if (-not ([IO.File]::ReadAllText((Join-Path $output 'reserved-credential.stderr.native'))).Contains('isolated runtime environment')) { throw 'The reserved-name control failed for an unexpected reason' }
     [void](Invoke-Control 'child-packages' @('python','-c','import subprocess,sys;subprocess.run([sys.executable,"-I","-c","import yaml,pip;print(yaml.__version__);print(pip.__version__)"],check=True)'))
-    [void](Invoke-Control 'tools' @('python','-c','import subprocess;[subprocess.run([name,"--version"],check=True) for name in ("git","uv","node","java","javac","bash","sleep","cygpath")]'))
+    $toolProbe = @'
+import os,shutil,subprocess
+for name in ("git","uv","node","java","javac","bash","sleep","cygpath"):
+    executable=shutil.which(name)
+    if executable is None:
+        raise RuntimeError("Managed tool was not discoverable: "+name)
+    expected=os.environ.get("AI_SKILLS_"+name.upper())
+    if name in ("sleep","cygpath"):
+        expected=os.path.join(os.environ["AI_SKILLS_UNIX_BIN"],name+".exe")
+    if expected is not None and not os.path.samefile(executable,expected):
+        raise RuntimeError("Managed tool resolved outside its admitted installation: "+name)
+    subprocess.run([executable,"--version"],check=True)
+'@
+    [void](Invoke-Control 'tools' @('python','-c',$toolProbe))
     [void](Invoke-Control 'exit-code' @('python','-c','raise SystemExit(7)') 7)
     $transport = Invoke-Control 'default-temp-git-transport' @('python','-m','pytest','-q','--no-cov','-o','addopts=','tests/test_ci_transport.py::test_frozen_trial_protocol_survives_lf_git_transport')
     if (-not $transport.Contains('1 passed')) { throw 'The default temporary location did not pass actual Git transport' }

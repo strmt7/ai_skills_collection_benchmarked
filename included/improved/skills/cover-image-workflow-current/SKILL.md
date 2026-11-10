@@ -23,7 +23,8 @@ that materially affect the result. Use the available qualified image tool.
 Check the actual runtime, package lock, installed API and provider's model status.
 Use current stable model identifiers; a current SDK does not make a retired
 preview endpoint current. For a custom implementation, consult
-[current qualification record](references/qualification-2026-10-25.md).
+[earlier provider review](references/qualification-2026-10-25.md) and the
+[current package qualification](references/qualification-2026-11-10.md).
 Keep an exact dependency graph and reproduce local response/image controls
 before relying on it. An advisory audit is one check, not proof of correct output.
 For a task specifically maintaining the historical CLI, use the explicit

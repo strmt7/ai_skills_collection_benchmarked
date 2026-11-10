@@ -23,7 +23,7 @@ bytes, replaces three JavaScript files and both dependency declarations, and wri
 receipt. It installs nothing and makes no provider request. Preserve a failed
 partial stage for diagnosis; select a new output for a new attempt.
 
-To reproduce the component controls, use the qualified Node 26.12.1/npm 12.2.1
+To reproduce the component controls, use the qualified Node 26.13.0/npm 12.2.2
 cohort and the staged lock:
 
 ```sh
@@ -60,5 +60,5 @@ which is not a hard CPU-time or process-isolation guarantee.
 
 The collection's `docs/research-image-cli-resources.md` records the current graph,
 all resource reviews and identical original/repaired control results. Consult
-the [current qualification record](qualification-2026-10-25.md) for provider and
+the [earlier provider review](qualification-2026-10-25.md) for provider and
 publishing limits. Do not activate the archival source publishing workflow.

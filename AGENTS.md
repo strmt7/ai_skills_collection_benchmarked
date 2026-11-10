@@ -84,6 +84,14 @@ Resolve paths from the current checkout or explicit configuration. Validate any
 discovered executable's version, architecture and required capabilities before
 use; a familiar filename or directory is insufficient evidence.
 
+Launch admitted native tools by their full executable paths. A private `PATH`
+does not override every operating-system search rule: Windows process creation
+can select a system executable before searching `PATH`. Use the repository's
+declared tool bindings or resolve and verify the managed executable before
+launch. A successful version command is insufficient when it ran another tool,
+including a WSL alias. Never install or start another operating system to make
+a Windows qualification pass.
+
 Supported entrypoints must automatically provision missing declared dependencies
 into isolated, owned caches using verified downloads and complete compatible
 locked graphs. Use the newest qualified stable versions. Preserve other
@@ -288,7 +296,7 @@ in [`docs/development.md`](docs/development.md); specialized checks have separat
 prerequisites documented in [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 - **Lint + format**: `ruff check tools tests benchmarks/agent-effectiveness/graders` and `ruff format --check tools tests benchmarks/agent-effectiveness/graders`. Configured in `pyproject.toml` (`[tool.ruff]`).
-- **Type check**: `mypy tools tests benchmarks/agent-effectiveness/graders` uses the configured Python 3.11 target locally. CI passes `--python-version` for each supported 3.11/3.12/3.13/3.14 runtime, pinned to their current security or maintenance patch releases. Python 3.10 reached end of life in October 2026 and is no longer a supported runtime.
+- **Type check**: `mypy tools tests benchmarks/agent-effectiveness/graders` uses the configured Python 3.11 target locally. Check both `--platform linux` and `--platform win32`; one host's stubs do not cover both native API boundaries. CI crosses those targets with each supported 3.11/3.12/3.13/3.14 runtime, pinned to current security or maintenance patch releases. Python 3.10 reached end of life in October 2026 and is no longer supported.
 - **Catalog**: `python3 tools/validate_catalog.py` collects every drift entry in a single run (no fail-fast).
 - **Mirror byte admission**: `python3 tools/check_mirror_content_admission.py --json` checks every current resource, including binary carriers, against the existing detection rules without modifying it.
 - **Mandatory agent tools**: `python3 tools/validate_agent_tool_policy.py --check --json` verifies all three local skills, policy links and every generated entrypoint.
