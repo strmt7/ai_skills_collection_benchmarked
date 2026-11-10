@@ -69,22 +69,16 @@ Start here:
 - [Contributing guide](CONTRIBUTING.md)
 - [Changelog](CHANGELOG.md)
 
-Validation (offline; no source checkouts required):
+For local validation on Windows x64, run:
 
-```bash
-python3 -m pip install -e '.[test,lint]'
-python3 tools/validate_catalog.py            # cross-reference + mirror integrity
-python3 tools/validate_source_lock.py        # offline structural + mirror-hash check
-python3 tools/run_static_benchmarks.py --check
-python3 tools/audit_skill_quality.py --check
-python3 tools/check_no_secret_patterns.py --history
-ruff check tools tests benchmarks/agent-effectiveness/graders
-ruff format --check tools tests benchmarks/agent-effectiveness/graders
-mypy tools tests benchmarks/agent-effectiveness/graders
-python3 -m pytest -q -n auto
-python3 -m compileall -q tools tests benchmarks/agent-effectiveness/graders
+```powershell
+.\dev.ps1 doctor
+.\dev.ps1 python tools/validate_catalog.py
 ```
 
-The corresponding [GitHub Actions](.github/workflows/) run on pushes and manual
-dispatch; selected workflows also run weekly. See [docs/installation.md](docs/installation.md)
-for the full reproducible / `SOURCE_DATE_EPOCH`-anchored regeneration flow.
+Missing validation dependencies install automatically from verified, locked
+inputs into an owned cache. No preinstalled Python or global package changes
+are required. First-time setup needs network access. See the
+[development guide](docs/development.md) for setup, reproducible regeneration
+and supported validation platforms, and [contributing](CONTRIBUTING.md) for all
+checks and their [GitHub Actions workflows](.github/workflows/).

@@ -225,6 +225,8 @@ def run_owned(
             "termination_reason": reason,
             "exit_code": exit_status.value,
             "output_bytes": total,
+            "output_limit_bytes": output_limit,
+            "wall_time_limit_seconds": float(timeout),
             "job_memory_limit_bytes": memory_limit,
             "active_process_limit": process_limit,
             "explicit_environment": environment is not None,

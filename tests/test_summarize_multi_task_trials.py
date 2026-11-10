@@ -708,6 +708,19 @@ def test_prompt_runtime_comparison_uses_each_task_and_keeps_missing_unknown():
     assert result["quality_superiority_established"] is False
 
 
+def test_setup_failed_prompt_availability_is_preserved_in_multi_task_reports():
+    item = report("a", ["harness_error"], ["task_passed"])
+    item["prompt_runtime_evidence"] = single.prompt_runtime_evidence(
+        {(1, "default"): ("unavailable", None), (1, "candidate"): ("recorded", b"/path")}, set(DEFINITIONS)
+    )
+    result = summary_core.aggregate([item], [DEFINITIONS])
+    assert result["prompt_runtime_evidence"]["candidate"]["unavailable_pairs"] == 1
+    assert result["prompt_runtime_evidence"]["candidate"]["same_recorded_path"] == 0
+    item["prompt_runtime_evidence"]["unavailable_attempts"] = True
+    with pytest.raises(ValueError, match="runtime attempt counts"):
+        summary_core.aggregate([item], [DEFINITIONS])
+
+
 def test_inconsistent_prompt_runtime_counts_are_rejected():
     item = report("a", ["task_passed"], ["task_passed"])
     item["prompt_runtime_evidence"] = single.prompt_runtime_evidence(

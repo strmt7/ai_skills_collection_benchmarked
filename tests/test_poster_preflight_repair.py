@@ -10,6 +10,7 @@ import subprocess
 from pathlib import Path
 
 import pytest
+from _native_shells import discover
 from audit_skill_quality import missing_markdown_links
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -25,18 +26,10 @@ def canonical(path: Path) -> bytes:
 
 
 def bash_and_path() -> tuple[str, str]:
-    if os.name == "nt":
-        git = shutil.which("git")
-        if git:
-            home = Path(git).resolve().parent.parent
-            candidate = home / "bin/bash.exe"
-            if candidate.is_file():
-                return str(candidate), str(home / "usr/bin")
-        pytest.skip("Git Bash is not available")
-    bash = shutil.which("bash")
-    if bash is None:
-        pytest.skip("Bash is not available")
-    return bash, os.defpath
+    runtime = discover()
+    if runtime is None:
+        pytest.skip("Qualified native Bash is unavailable")
+    return str(runtime.bash), str(runtime.utilities)
 
 
 @pytest.fixture

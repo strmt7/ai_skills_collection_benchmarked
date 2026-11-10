@@ -2,7 +2,12 @@ name: Crawl4AI source build controls
 
 on:
   push:
+    branches: [main]
     paths:
+      - "dev.ps1"
+      - "toolchains/bootstrap/**"
+      - "tools/_provider_launch.py"
+      - "tools/_bootstrap_*.py"
       - "toolchains/crawl4ai/**"
       - "tools/*crawl4ai*.py"
       - "tools/_catalog_publication.py"
@@ -13,6 +18,10 @@ on:
       - ".github/workflows/crawl4ai-provider.yml"
   pull_request:
     paths:
+      - "dev.ps1"
+      - "toolchains/bootstrap/**"
+      - "tools/_provider_launch.py"
+      - "tools/_bootstrap_*.py"
       - "toolchains/crawl4ai/**"
       - "tools/*crawl4ai*.py"
       - "tools/_catalog_publication.py"
@@ -53,7 +62,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
-          python-version: "3.13.17"
+          python-version: "3.13.18"
           cache: "pip"
           cache-dependency-path: "toolchains/crawl4ai/requirements*.txt"
 
@@ -140,10 +149,16 @@ jobs:
       - name: Qualify the public setup and verification launcher on a fresh profile
         shell: pwsh
         run: |
-          python -I -B tools/crawl4ai_tool.py --home .venv/crawl4ai-public-launcher setup
+          New-Item -ItemType Directory -Path .venv/crawl4ai-ci -Force | Out-Null
+          ./dev.ps1 crawl4ai check > .venv/crawl4ai-ci/setup.json
           if ($LASTEXITCODE -ne 0) { throw "Public provider setup failed" }
-          python -I -B tools/crawl4ai_tool.py --home .venv/crawl4ai-public-launcher check
+          ./dev.ps1 crawl4ai check > .venv/crawl4ai-ci/check.json
           if ($LASTEXITCODE -ne 0) { throw "Public provider verification failed" }
+          $setup = Get-Content .venv/crawl4ai-ci/setup.json -Raw | ConvertFrom-Json
+          $check = Get-Content .venv/crawl4ai-ci/check.json -Raw | ConvertFrom-Json
+          if (-not $setup.ok -or -not $check.ok -or $check.home -ne $setup.home -or $check.automatic_setup.newly_installed) { throw "Admitted crawler was not reused" }
+          $browser = Get-Content (Join-Path $setup.home 'browser-controls.json') -Raw | ConvertFrom-Json
+          if (-not $browser.passed -or @($browser.checks).Count -ne 10) { throw "Actual native browser controls failed" }
 
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         if: always()
@@ -151,10 +166,12 @@ jobs:
           name: crawl4ai-native-build-controls
           path: |
             .venv/crawl4ai-*.json
-            .venv/crawl4ai-public-launcher/installation.json
-            .venv/crawl4ai-public-launcher/controls.json
-            .venv/crawl4ai-public-launcher/upstream-response.json
-            .venv/crawl4ai-public-launcher/admission/source-admission.json
-            .venv/crawl4ai-public-launcher/logs/**/process.json
+            .venv/crawl4ai-ci/*.json
+            .venv/agent-tools/automatic-crawl4ai/profile-*/installation.json
+            .venv/agent-tools/automatic-crawl4ai/profile-*/controls.json
+            .venv/agent-tools/automatic-crawl4ai/profile-*/browser-controls.json
+            .venv/agent-tools/automatic-crawl4ai/profile-*/upstream-response.json
+            .venv/agent-tools/automatic-crawl4ai/profile-*/admission/source-admission.json
+            .venv/agent-tools/automatic-crawl4ai/profile-*/logs/**/process.json
           include-hidden-files: true
           if-no-files-found: error

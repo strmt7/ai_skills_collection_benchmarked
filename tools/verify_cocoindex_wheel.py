@@ -82,13 +82,18 @@ def installed_files(pin: dict[str, Any]) -> int:
     if installed_versions() != pin["runtime_versions"]:
         raise ValueError("Installed CocoIndex dependency versions differ from the complete admitted graph")
     records = {**runtime_sources(pin), **runtime_sources(pin["core"])}
-    prefix = Path(sys.prefix).resolve(strict=True)
+    logical = Path(sys.prefix).absolute()
+    prefix = logical.resolve(strict=True)
     distribution = importlib.metadata.distribution("cocoindex-code")
     errors = []
     for name, expected in records.items():
         path = Path(str(distribution.locate_file(name)))
         try:
-            relative = path.relative_to(prefix).as_posix()
+            try:
+                relative = path.relative_to(logical).as_posix()
+            except ValueError:
+                relative = path.relative_to(prefix).as_posix()
+            # Preserve unresolved descendants for the existing no-follow check.
             if digest(regular_file(prefix, relative).read_bytes()) != expected:
                 errors.append("changed provider source: " + name)
         except (OSError, ValueError) as error:

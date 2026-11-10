@@ -17,7 +17,7 @@ direct `rg`. Do not manufacture an irrelevant query to satisfy this requirement.
 
 For a fresh provider, follow the reviewed
 [local-only installation and search guide](../../../toolchains/cocoindex-code/README.md).
-Use `tools/cocoindex_tool.py` to provision, index explicit source prefixes and
+Use `./dev.ps1 cocoindex` to provision, index explicit source prefixes and
 write native search receipts. Its admitted local CPU build disables remote
 model code and keeps providers, models and indexes inside the current clone.
 Existing providers still require explicit version, source and cache review;

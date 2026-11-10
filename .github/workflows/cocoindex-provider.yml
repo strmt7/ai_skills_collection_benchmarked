@@ -7,6 +7,10 @@ on:
       - ".github/workflows/cocoindex-provider.yml"
       - "toolchains/cocoindex-code/**"
       - "tools/_agent_tool_runtime.py"
+      - "tools/_provider_launch.py"
+      - "tools/_bootstrap_*.py"
+      - "dev.ps1"
+      - "toolchains/bootstrap/**"
       - "tools/_windows_owned_python.py"
       - "tools/_catalog_publication.py"
       - "tools/cocoindex_*.py"
@@ -40,37 +44,34 @@ jobs:
       PYTHONSAFEPATH: "1"
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
-        with:
-          python-version: "3.13.17"
-
       - name: Provision and verify a fresh local-only provider
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Path .venv/cocoindex-ci -Force | Out-Null
-          python -I -B tools/cocoindex_tool.py setup > .venv/cocoindex-ci/setup.json
+          ./dev.ps1 cocoindex setup > .venv/cocoindex-ci/setup.json
           if ($LASTEXITCODE -ne 0) { throw "Normal hashed CocoIndex setup failed" }
-          python -I -B tools/cocoindex_tool.py check > .venv/cocoindex-ci/check.json
+          ./dev.ps1 cocoindex check > .venv/cocoindex-ci/check.json
           if ($LASTEXITCODE -ne 0) { throw "CocoIndex source, dependency or model admission failed" }
 
       - name: Index explicit sources and verify native startup readiness
         shell: pwsh
         run: |
           $selection = @("--corpus", ".venv/cocoindex-ci/corpus", "--prefix", "tools/cocoindex_tool.py", "--prefix", "tools/cocoindex_runtime.py", "--prefix", "tools/verify_cocoindex_wheel.py", "--prefix", "docs/agent-tools.md")
-          python -I -B tools/cocoindex_tool.py index @selection > .venv/cocoindex-ci/index.json
+          ./dev.ps1 cocoindex index @selection > .venv/cocoindex-ci/index.json
           if ($LASTEXITCODE -ne 0) { throw "Native source-bound indexing failed" }
-          python -I -B tools/cocoindex_tool.py index @selection --check > .venv/cocoindex-ci/index-check.json
+          ./dev.ps1 cocoindex index @selection --check > .venv/cocoindex-ci/index-check.json
           if ($LASTEXITCODE -ne 0) { throw "Native index readiness or source freshness failed" }
 
       - name: Retrieve and independently verify current source spans
         shell: pwsh
         run: |
-          python -I -B tools/cocoindex_tool.py search --corpus .venv/cocoindex-ci/corpus --query "How do local indexing and search verify provider and model sources?" --limit 5 --output .venv/cocoindex-ci/search.native.json > .venv/cocoindex-ci/search-command.json
+          ./dev.ps1 cocoindex search --corpus .venv/cocoindex-ci/corpus --query "How do local indexing and search verify provider and model sources?" --limit 5 --output .venv/cocoindex-ci/search.native.json > .venv/cocoindex-ci/search-command.json
           if ($LASTEXITCODE -ne 0) { throw "Native CocoIndex retrieval failed" }
 
       - name: Bind the native software qualification to this commit
-        shell: python
+        shell: powershell
         run: |
+          $code = @'
           import hashlib
           import json
           import os
@@ -83,10 +84,15 @@ jobs:
           pin = json.loads((root / "toolchains/cocoindex-code/source.json").read_bytes())
           manifest = json.loads((directory / "corpus/manifest.json").read_bytes())
           checks = search.get("source_checks", [])
+          setup = json.loads((directory / "setup.json").read_bytes())
+          for name in ["check.json", "index.json", "index-check.json", "search-command.json"]:
+              command = json.loads((directory / name).read_bytes())
+              if command["home"] != setup["home"] or command["automatic_setup"]["newly_installed"]:
+                  raise SystemExit("An actual provider operation invalidated the admitted installation")
           expected_versions = {"cocoindex": pin["runtime_versions"]["cocoindex"], "cocoindex-code": pin["version"]}
           if search.get("ok") is not True or search.get("versions") != expected_versions:
               raise SystemExit("Native receipt has an unexpected result or provider version")
-          if search.get("python_version") != "3.13.17" or not 1 <= len(checks) <= 5:
+          if search.get("python_version") != "3.13.18" or not 1 <= len(checks) <= 5:
               raise SystemExit("Native receipt has an unexpected interpreter or source count")
           if Path(manifest["source_root"]).resolve() != root:
               raise SystemExit("Corpus is bound to another repository")
@@ -110,6 +116,33 @@ jobs:
               "agent_efficacy_claim": False,
           }
           (directory / "qualification.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8", newline="\n")
+          '@
+          $setup = Get-Content .venv/cocoindex-ci/setup.json -Raw | ConvertFrom-Json
+          $python = Join-Path $setup.home 'runtime/Scripts/python.exe'
+          & $python -I -B -c $code
+          if ($LASTEXITCODE -ne 0) { throw "Native qualification binding failed" }
+
+      - name: Retain private bootstrap diagnostics
+        if: always()
+        shell: powershell
+        run: |
+          $root = [IO.Path]::GetFullPath((Get-Location).Path).TrimEnd('\')
+          $hash = [Security.Cryptography.SHA256]::Create()
+          try {
+            $digest = [BitConverter]::ToString($hash.ComputeHash([Text.Encoding]::UTF8.GetBytes($root.ToLowerInvariant()))).Replace('-','').ToLowerInvariant()
+          } finally { $hash.Dispose() }
+          $base = Join-Path ([Environment]::GetFolderPath('LocalApplicationData')) 'ai-skills-toolchains'
+          $namespace = Join-Path $base $digest.Substring(0,16)
+          $owner = Join-Path $namespace 'owner.json'
+          if (Test-Path -LiteralPath $owner -PathType Leaf) {
+            $record = Get-Content -LiteralPath $owner -Raw | ConvertFrom-Json
+            if ($record.purpose -cne 'ai-skills-toolchains' -or -not $record.source_root.Equals($root,[StringComparison]::OrdinalIgnoreCase)) { throw "Bootstrap diagnostics have a different owner" }
+            foreach ($directory in Get-ChildItem -LiteralPath $namespace -Directory -Filter 'logs-*') {
+              $target = Join-Path '.venv/cocoindex-ci/bootstrap' $directory.Name
+              New-Item -ItemType Directory -Path $target -Force | Out-Null
+              Get-ChildItem -LiteralPath $directory.FullName -File | Where-Object { $_.Extension -in @('.json','.native') } | Copy-Item -Destination $target
+            }
+          }
 
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         if: always()
@@ -117,13 +150,15 @@ jobs:
           name: cocoindex-native-qualification
           path: |
             .venv/cocoindex-ci/*.json
+            .venv/cocoindex-ci/bootstrap/**/*.json
+            .venv/cocoindex-ci/bootstrap/**/*.native
             .venv/cocoindex-ci/corpus/manifest.json
             .venv/cocoindex-ci/corpus/index-receipt.json
-            .venv/agent-tools/cocoindex-*/installation.json
-            .venv/agent-tools/cocoindex-*/model-download.json
-            .venv/agent-tools/cocoindex-*/upstream-response.json
-            .venv/agent-tools/cocoindex-*/admission/source-admission.json
-            .venv/agent-tools/cocoindex-*/logs/**/process.json
+            .venv/agent-tools/automatic-cocoindex/profile-*/installation.json
+            .venv/agent-tools/automatic-cocoindex/profile-*/model-download.json
+            .venv/agent-tools/automatic-cocoindex/profile-*/upstream-response.json
+            .venv/agent-tools/automatic-cocoindex/profile-*/admission/source-admission.json
+            .venv/agent-tools/automatic-cocoindex/profile-*/logs/**/process.json
           include-hidden-files: true
           if-no-files-found: error
           retention-days: 14

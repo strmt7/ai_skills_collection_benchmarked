@@ -6,33 +6,46 @@ Upstream classifies it as beta. It is not an official upstream release.
 
 ## Install and use
 
-From an intact clone on Windows x64, use **CPython 3.13.17**:
+From an intact clone on **Windows x64**:
 
 ```powershell
-py -3.13 -I tools/crawl4ai_tool.py setup
-py -3.13 -I tools/crawl4ai_tool.py check
-py -3.13 -I tools/crawl4ai_tool.py crawl --url https://docs.crawl4ai.com/core/browser-crawler-config/ --output .venv/research/config.native.json --metadata .venv/research/config.metadata.json
+./dev.ps1 crawl4ai check
+./dev.ps1 crawl4ai crawl --url https://docs.crawl4ai.com/core/browser-crawler-config/ --output .venv/research/config.native.json --metadata .venv/research/config.metadata.json
 ```
 
-An explicit path to that interpreter also works; no Python launcher, AI client
-or global project-package installation is required. Setup builds and verifies
-the admitted wheel, installs the complete hashed dependency graph normally,
-runs all 20 native controls and installs the compatible Chromium build. Its
-provider, browser, build and cache directories stay under this clone's `.venv`.
-The default provider directory is keyed to its pinned source and dependency
-records. It does not change another repository's provider or MCP registration.
+Missing dependencies install automatically. No preinstalled Python, Python
+launcher, browser, package manager or AI client is required. The frontend admits
+CPython **3.13.18**, its app-local native runtime, the complete hashed package
+graph and the matching **Playwright 1.65.0 / Chromium 158.0.8127.18** payloads.
+It does not change global packages, persistent PATH, registry, shell profiles or
+another repository's provider. Foundation downloads use an owned OS cache;
+provider profiles, browsers and diagnostics stay inside this clone's `.venv`.
 
-`check` verifies installed provider sources, dependency consistency and the
-recorded browser executable. A capture also checks actual browser processes,
-disclosed automation and the temporary profile. Retain and read the native
-result before accepting a source; metadata starts with `scope_reviewed: false`.
-Failures retain native results and process diagnostics without a retry or
-fallback. Provider setup alone does not qualify an external page.
+Setup builds the admitted wheel, installs dependencies normally, and verifies
+all 87 provider files, the exact distribution graph and all 596 browser/support
+files. The browser pins were measured from complete publisher ZIP payloads;
+they are not independent publisher signatures. Native controls and actual
+headless-browser controls must pass before the active profile is published.
+Patchright remains a package dependency; ordinary research uses Playwright's
+browser. Their browser revisions differ and cannot be substituted.
 
-Use `--home .venv/agent-tools/<name>` **before** the command to select another
-dedicated profile. If setup is interrupted, inspect its retained logs and select
-a new profile for recovery; existing provider directories are never replaced.
-Browser/model caches and host-specific receipts must remain outside Git.
+Subsequent commands verify and reuse the admitted profile. Missing or modified
+dependencies trigger a new isolated installation under an exclusive setup lock.
+The previous profile and failure evidence are preserved. An interrupted download,
+wrong platform or failed qualification reports the exact failure; it does not
+change host policies or install an unqualified alternative. See the
+[foundation setup guide](../bootstrap/README.md) for cache selection.
+
+A capture checks actual browser processes, disclosed automation and the temporary
+profile. Retain and read the native result before accepting a source; metadata
+starts with `scope_reviewed: false`. Failures retain native results and process
+diagnostics without retry or fallback. Setup controls qualify the crawler,
+not an external page or coding-agent improvement.
+
+For explicit profile management, the admitted CPython 3.13.18 interpreter can run
+`tools/crawl4ai_tool.py --home .venv/agent-tools/<name> setup`, then `check` or
+`crawl`. The automatic frontend manages its own profiles and rejects `--home`.
+Browser caches and host-specific receipts must remain outside Git.
 
 ## Source adaptation
 
@@ -62,14 +75,14 @@ failures are retained as measurements; repaired failures fail the workflow.
 lock replacing only the original Crawl4AI record. The version-controlled
 `requirements.txt` retains public upstream coordinates for advisory services.
 All runtime, build and bootstrap records are audited and tracked by Dependabot.
-These are Windows x64 CPython 3.13.17 locks, not universal dependency graphs.
+These are Windows x64 CPython 3.13.18 locks, not universal dependency graphs.
 Paths are resolved from the current checkout and explicit stage arguments.
 The tools require no fixed drive, user account, global package installation,
 browser profile, MCP registration or particular AI agent. Windows is the
 qualified operating-system target for this provider.
 
-The current major upgrades proposed in Dependabot PRs 29–31 are incompatible:
-Patchright 1.64.3 requires `pyee<15,>=13`; Crawl4AI 0.9.5 requires
+The earlier resolver review of Dependabot PRs 29–31 found incompatible major upgrades:
+The qualified Patchright 1.64.4 requires `pyee<15,>=13`; Crawl4AI 0.9.5 requires
 `xxhash~=3.4` and `snowballstemmer~=2.2`. Normal pip dry runs on each exact PR
 lock return `ResolutionImpossible`. Keep the newest compatible releases until
 upstream supports a newer graph and native qualification passes. No dependency

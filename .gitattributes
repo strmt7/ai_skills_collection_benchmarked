@@ -61,7 +61,13 @@
 /included/improved/**/provenance/** -text
 /docs/** text eol=lf
 /README.md text eol=lf
+/.gitattributes text eol=lf
 /AGENTS.md text eol=lf
+/CONTRIBUTING.md text eol=lf
+/dev.ps1 text eol=lf
+/.agents/skills/** text eol=lf
+/toolchains/bootstrap/** text eol=lf
+/requirements-dev-lock.txt text eol=lf
 /pyproject.toml text eol=lf
 # Licensed build inputs and qualified wheel hashes require exact source bytes.
 /toolchains/crawl4ai/** text eol=lf

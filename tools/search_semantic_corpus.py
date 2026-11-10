@@ -114,6 +114,7 @@ def local_environment(root: Path, base: Path, python: Path, providers: Path, pro
         PYTHONSAFEPATH="1",
         PYTHONNOUSERSITE="1",
         PYTHONUTF8="1",
+        PYTHONDONTWRITEBYTECODE="1",
         PYTHON_DOTENV_DISABLED="1",
         COCOINDEX_CODE_DIR=str(base / "config"),
         COCOINDEX_CODE_RUNTIME_DIR=str(base / "runtime"),
@@ -167,7 +168,7 @@ def main(argv: list[str] | None = None) -> int:
             "offset": 0,
         }
         result = subprocess.run(
-            [str(python), "-P", "-c", CLIENT],
+            [str(python), "-P", "-B", "-c", CLIENT],
             input=json.dumps(request),
             env=env,
             cwd=base / "tree",

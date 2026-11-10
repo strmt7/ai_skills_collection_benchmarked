@@ -42,7 +42,7 @@ their linked instructions and actual triggers.
 | API/backend component evidence | `python3 benchmarks/component-controls/backend/prepare_backend.py --check` | `.github/workflows/offline-validation.yml` |
 | Native fuzzing evidence | `python3 benchmarks/component-controls/native-testing/run_native.py --check`; [Windows runtime controls](docs/research-native-testing-contracts.md) | `.github/workflows/{offline-validation,native-fuzzing-controls}.yml` |
 | Measured Python coverage | Complete matrix XML bundle, source hashes and Codecov OIDC; see [coverage scope](docs/coverage.md) | `.github/workflows/offline-validation.yml` |
-| Tests | `python3 -m pytest -q -n auto` (supported matrix: 3.11/3.12/3.13/3.14) | `.github/workflows/offline-validation.yml` |
+| Tests | `python3 -m pytest -q -n 2` (supported matrix: 3.11/3.12/3.13/3.14; adjust workers to available resources) | `.github/workflows/offline-validation.yml` |
 | Compile | `python3 -m compileall -q tools tests benchmarks/agent-effectiveness/graders` | `.github/workflows/offline-validation.yml` |
 | Image CLI acceptance | Source-locked preparation, `npm ci --ignore-scripts`, audit and independent intercepted controls; see [`repair evidence`](docs/research-image-cli-acceptance.md) | `.github/workflows/image-cli-controls.yml` |
 | Crawl4AI source build | Two reproducible wheels, complete hashed installations, source admission and identical native controls; see [`provider inputs`](toolchains/crawl4ai/README.md) | `.github/workflows/crawl4ai-provider.yml` |
@@ -99,7 +99,7 @@ it does not need the GitHub CLI.
   We enable `E F B SIM UP I` and ignore `E501` (handled by the formatter),
   `B008`, `SIM108`, `UP015`. Per-file ignores live in `pyproject.toml`.
 * The minimum supported runtime is **Python 3.11**; production validation uses
-  Python 3.14.9 and the matrix exercises current patches of 3.11–3.14. Keep
+  Python 3.14.10 and the matrix exercises current patches of 3.11–3.14. Keep
   annotations and APIs compatible with that support range. The formatter's
   older syntax target remains fixed while independent trials are frozen;
   do not rewrite experimental inputs during a matched comparison block.

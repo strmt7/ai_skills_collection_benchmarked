@@ -2,13 +2,12 @@ from __future__ import annotations
 
 import hashlib
 import json
-import os
-import shutil
 import subprocess
 import sys
 from pathlib import Path
 
 import pytest
+from _native_shells import discover
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "included/skills/by-category/devops-cloud-operations/latest-release-devops/bash-script-generator"
@@ -50,24 +49,16 @@ def test_repair_preserves_source_and_binds_the_observation() -> None:
 
 
 def installed_bash() -> Path:
-    if os.name == "nt":
-        git = shutil.which("git")
-        if not git:
-            pytest.skip("Git for Windows is unavailable")
-        bash = Path(git).resolve().parent.parent / "bin/bash.exe"
-    else:
-        bash_path = shutil.which("bash")
-        if not bash_path:
-            pytest.skip("Bash is unavailable")
-        bash = Path(bash_path)
-    if not bash.is_file():
-        pytest.skip("Bash is unavailable")
-    return bash
+    runtime = discover()
+    if runtime is None:
+        pytest.skip("Qualified native Bash is unavailable")
+    return runtime.bash
 
 
 def test_component_control_against_installed_shells() -> None:
     bash = installed_bash()
-    dash_path = str(bash.parent.parent / "usr/bin/dash.exe") if os.name == "nt" else shutil.which("dash")
+    runtime = discover()
+    dash_path = runtime.dash if runtime is not None else None
     if not dash_path or not Path(dash_path).is_file():
         pytest.skip("dash is unavailable")
     dash = Path(dash_path)

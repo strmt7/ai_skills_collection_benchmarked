@@ -220,6 +220,15 @@ def test_environment_clears_host_mapping_and_rejects_model_drift(bound, monkeypa
     assert "COCOINDEX_CODE_HOST_CWD" not in env and "COCOINDEX_CODE_DB_PATH_MAPPING" not in env
     assert env["HF_HUB_OFFLINE"] == env["TRANSFORMERS_OFFLINE"] == "1"
     assert "PYTHONHOME" not in env and env["PYTHONSAFEPATH"] == env["PYTHONNOUSERSITE"] == "1"
+    child = subprocess.run(
+        [sys.executable, "-c", "import sys; print(int(sys.dont_write_bytecode))"],
+        env=env,
+        capture_output=True,
+        text=True,
+        check=True,
+        timeout=15,
+    )
+    assert child.stdout.strip() == "1"
     (model / "model.safetensors").write_bytes(b"changed")
     with pytest.raises(ValueError, match="pinned proof"):
         search.local_environment(root, base, python, providers, proof)

@@ -1,18 +1,18 @@
 {
   "advisory_coordinate_mapping": {
     "cocoindex-code": {
-      "audited_source": "0.2.42",
-      "installed": "0.2.42+catalog.local1"
+      "audited_source": "0.2.43",
+      "installed": "0.2.43+catalog.local1"
     }
   },
   "advisory_floors": {
     "filelock": "4.2.4"
   },
-  "archive_bytes": 94573,
+  "archive_bytes": 99476,
   "archive_members": 26,
-  "archive_root": "cocoindex_code-0.2.42",
-  "archive_sha256": "9c9bc290a490735ee9c6b32c2ca85ca6553b150295cd07791774148ef19f2902",
-  "archive_url": "https://files.pythonhosted.org/packages/b2/8d/6b379499c1109cd02ceb79fab12ea41f000661b55787245ca3b017da2f8f/cocoindex_code-0.2.42.tar.gz",
+  "archive_root": "cocoindex_code-0.2.43",
+  "archive_sha256": "0861fc13e76cfcdad916c8030074c7a573609683c85a4021e4f1acd263dfc11d",
+  "archive_url": "https://files.pythonhosted.org/packages/c1/ab/6b769802d5af93e6e2d5cc8480f0885fafd0948ed646f8601bdf34451d64/cocoindex_code-0.2.43.tar.gz",
   "core": {
     "all_installed_files_match_qualified_wheel": true,
     "name": "cocoindex",
@@ -437,73 +437,73 @@
   },
   "independent_model_trials": 0,
   "license_sha256": "5e8c0ba20456f84943cba547175e212962117b43ad1b20c877aa983429eb256c",
-  "notice_sha256": "d656fbbca8904e04fa2505910276d9a3807de3076f5d967a51e59f80759d7705",
+  "notice_sha256": "b79911aa1c639c372151ba4b93fbad9665c3035cbcaa72eaf34b258ee5ec7db7",
   "original_source_sha256": {
     ".gitignore": "2b67094d9eb343d47744d34ce40c507415395e243d752820b3b16d5bc529e44b",
     "LICENSE": "5e8c0ba20456f84943cba547175e212962117b43ad1b20c877aa983429eb256c",
-    "PKG-INFO": "ead4a9325f35b6762fac0f6bfa98285bfd53264603206de37c34bf4b9b441cb6",
-    "README.md": "6dbd4e9d33a5ccac4894d59a7124ea273a9de2fadccefdf935cd4c884fd3e070",
+    "PKG-INFO": "568aae28fea2a3101be9105e774807ad7254d596b0ecfe73204930089bd3f824",
+    "README.md": "6a330dcfbe9c51c95b6df6db01c2a52031f21f7e1a69dcd72df7c805982136ca",
     "pyproject.toml": "d696a9271801f4d68262c83c29eb609d3114f884bff024a377845dee1b6a8ec6",
     "src/cocoindex_code/__init__.py": "412c256a78c18764481b96028fd21cc9b313a90a95f81bc736e9fed5b4d856c6",
     "src/cocoindex_code/__main__.py": "23dfbe3b58db460d99f82b3dba86f59c972ecbabc822585d83e7fd78975cd53b",
-    "src/cocoindex_code/_daemon_paths.py": "5c67e4887149fa9cfb8468effb1776f97e90b71b885c733d6617d7b380f5cf41",
-    "src/cocoindex_code/_version.py": "adedfd29bf0e9579efee75842adf3b751cb12b8f03b36a80d9c474fa6b1fa553",
-    "src/cocoindex_code/chunking.py": "1a2e66a3f8982baa6d6b1acb4b719ccb13b313fa694d174432855e014cf65202",
-    "src/cocoindex_code/cli.py": "7567ce81690d42babec17c79e6aeb7da0f0cae2647685a3e903b85f302e39ca2",
-    "src/cocoindex_code/client.py": "04c13015194f2bd8a484ea7e6483346d546088882a62364a54615554eb3f9ae8",
-    "src/cocoindex_code/daemon.py": "e8d7b730cc2214527847d70c356c6ad18b2c9f66686ff7d8b45e76d5f49bd249",
+    "src/cocoindex_code/_daemon_paths.py": "9ff8e322baf9135d1528c1ed76f42154d2ce8cfbca0d5022c72b1b5a42946150",
+    "src/cocoindex_code/_version.py": "6bf68f514a8642565541a5557f8f840ccf09e6ddf5d0905cd4d9e0d1ddc28d38",
+    "src/cocoindex_code/chunking.py": "1da79568269099891529f3738ca6de47a927be491a8f08df6b5e7311cbcdd651",
+    "src/cocoindex_code/cli.py": "505c562c71a1ba88bae402ea5e120db998332c75edb4a87b2bf3c98c0cece827",
+    "src/cocoindex_code/client.py": "1c13d6ee83a60c3a2bec90bb1c3003539f0670ad7642d3548fe604dc903a5f06",
+    "src/cocoindex_code/daemon.py": "ef0d540df739aba501cde1dc55668fe7fcfa8414f6affb37612847449a5a6166",
     "src/cocoindex_code/embedder_defaults.py": "803a4f2d24d9f28609a33a7cfb5c6ac3a485af079a2df0af6ae0da94625b6903",
     "src/cocoindex_code/embedder_params.py": "a8d52d82309365e2aae004fc6c2fa22467e6ca000dbef4bd85fd635ab937a6a2",
     "src/cocoindex_code/file_walk.py": "ad29bd11fbd92a4b45034991889a8185fced29cebed89483e012ccaf063900be",
     "src/cocoindex_code/grep.py": "4ed59e85dae3410a1886d36057989aee4152042877ca6c43f8ca72de09d440ba",
-    "src/cocoindex_code/indexer.py": "3a9ca61fd661244076386b907557963c46dbe183540f40b5f23dd5ca5df0e280",
+    "src/cocoindex_code/indexer.py": "ad29011af29ffb7e78fa26aa4fff2c4a079fdc156e7c43fbc1dca47b11389a04",
     "src/cocoindex_code/litellm_embedder.py": "77e05661c62ba8a6bc895800d81a490b8747cec10171ac6c3a9fd56d10e9a4e5",
-    "src/cocoindex_code/project.py": "6b63c822bd63efd75228d74a8ce0026651d00baf5225ef6227f64f820e1200ac",
+    "src/cocoindex_code/project.py": "5426c25e8d59fd739e39929ef67cb53a91c3453cab3adb21508ddd2607e6b158",
     "src/cocoindex_code/protocol.py": "a15b0a1f3d3efd649775420e7f8bbbc00467acefa7863051c5c5f1f984b3ae21",
     "src/cocoindex_code/query.py": "cefd6c668a60e2d5b92d28127d68434fc20f74990de187fd8490263fb0f5d94e",
     "src/cocoindex_code/schema.py": "5f86ee0b0c091ed8b46eaba1751563392fdd6db81006e54de8d9a2e09de02f41",
-    "src/cocoindex_code/server.py": "11c1a8588fdc8128b7f4aec53da3e4c1937168709b1a99b27964ed1cff54c494",
-    "src/cocoindex_code/settings.py": "356ebe487e8c7fce5fb611d0b56aecb26987806199ac9266ff2c426effd69235",
-    "src/cocoindex_code/shared.py": "5652d4ed782d84803eb07bb2c23d2b2d83c965e6e88101d61894fdcb1f8c5503"
+    "src/cocoindex_code/server.py": "4f3b3bdb6c252c2b70ea9f46a4010cda16b3860a91f4dafbb4770025d7753078",
+    "src/cocoindex_code/settings.py": "6879ff28ae546227156a616de244196d4ee224b6cf4876ce39f3f6cb5ba134d2",
+    "src/cocoindex_code/shared.py": "64bbaba32bf092c169554388b7eadd88cda87a6f8376bee9e11eb588ab07368d"
   },
   "prepared_source_sha256": {
     ".gitignore": "2b67094d9eb343d47744d34ce40c507415395e243d752820b3b16d5bc529e44b",
     "LICENSE": "5e8c0ba20456f84943cba547175e212962117b43ad1b20c877aa983429eb256c",
-    "PKG-INFO": "ead4a9325f35b6762fac0f6bfa98285bfd53264603206de37c34bf4b9b441cb6",
-    "README.md": "6dbd4e9d33a5ccac4894d59a7124ea273a9de2fadccefdf935cd4c884fd3e070",
-    "pyproject.toml": "18f9ed6914c6959f0e39a23ada01c10bea2df59fedc7cd5b0dc68ff591e2cf8d",
-    "src/cocoindex_code/CATALOG_BUILD_NOTICE.txt": "d656fbbca8904e04fa2505910276d9a3807de3076f5d967a51e59f80759d7705",
+    "PKG-INFO": "568aae28fea2a3101be9105e774807ad7254d596b0ecfe73204930089bd3f824",
+    "README.md": "6a330dcfbe9c51c95b6df6db01c2a52031f21f7e1a69dcd72df7c805982136ca",
+    "pyproject.toml": "1644c6ba820d1096cf725547ce66f50dd334b1081d3fc850a20ee3a4269d4d38",
+    "src/cocoindex_code/CATALOG_BUILD_NOTICE.txt": "b79911aa1c639c372151ba4b93fbad9665c3035cbcaa72eaf34b258ee5ec7db7",
     "src/cocoindex_code/__init__.py": "412c256a78c18764481b96028fd21cc9b313a90a95f81bc736e9fed5b4d856c6",
     "src/cocoindex_code/__main__.py": "23dfbe3b58db460d99f82b3dba86f59c972ecbabc822585d83e7fd78975cd53b",
-    "src/cocoindex_code/_daemon_paths.py": "5c67e4887149fa9cfb8468effb1776f97e90b71b885c733d6617d7b380f5cf41",
-    "src/cocoindex_code/_version.py": "5f0d5953ab936dbd663797b9c2af96017647789b61a38dc55848a332ea9a7a85",
-    "src/cocoindex_code/chunking.py": "1a2e66a3f8982baa6d6b1acb4b719ccb13b313fa694d174432855e014cf65202",
-    "src/cocoindex_code/cli.py": "7567ce81690d42babec17c79e6aeb7da0f0cae2647685a3e903b85f302e39ca2",
-    "src/cocoindex_code/client.py": "04c13015194f2bd8a484ea7e6483346d546088882a62364a54615554eb3f9ae8",
-    "src/cocoindex_code/daemon.py": "e8d7b730cc2214527847d70c356c6ad18b2c9f66686ff7d8b45e76d5f49bd249",
+    "src/cocoindex_code/_daemon_paths.py": "9ff8e322baf9135d1528c1ed76f42154d2ce8cfbca0d5022c72b1b5a42946150",
+    "src/cocoindex_code/_version.py": "8e0356289869ffc6f86cb86082b3ba511d1a07c4ff0fb2878332998ed6a28d58",
+    "src/cocoindex_code/chunking.py": "1da79568269099891529f3738ca6de47a927be491a8f08df6b5e7311cbcdd651",
+    "src/cocoindex_code/cli.py": "505c562c71a1ba88bae402ea5e120db998332c75edb4a87b2bf3c98c0cece827",
+    "src/cocoindex_code/client.py": "1c13d6ee83a60c3a2bec90bb1c3003539f0670ad7642d3548fe604dc903a5f06",
+    "src/cocoindex_code/daemon.py": "ef0d540df739aba501cde1dc55668fe7fcfa8414f6affb37612847449a5a6166",
     "src/cocoindex_code/embedder_defaults.py": "803a4f2d24d9f28609a33a7cfb5c6ac3a485af079a2df0af6ae0da94625b6903",
     "src/cocoindex_code/embedder_params.py": "a8d52d82309365e2aae004fc6c2fa22467e6ca000dbef4bd85fd635ab937a6a2",
     "src/cocoindex_code/file_walk.py": "ad29bd11fbd92a4b45034991889a8185fced29cebed89483e012ccaf063900be",
     "src/cocoindex_code/grep.py": "4ed59e85dae3410a1886d36057989aee4152042877ca6c43f8ca72de09d440ba",
-    "src/cocoindex_code/indexer.py": "3a9ca61fd661244076386b907557963c46dbe183540f40b5f23dd5ca5df0e280",
+    "src/cocoindex_code/indexer.py": "ad29011af29ffb7e78fa26aa4fff2c4a079fdc156e7c43fbc1dca47b11389a04",
     "src/cocoindex_code/litellm_embedder.py": "77e05661c62ba8a6bc895800d81a490b8747cec10171ac6c3a9fd56d10e9a4e5",
-    "src/cocoindex_code/project.py": "6b63c822bd63efd75228d74a8ce0026651d00baf5225ef6227f64f820e1200ac",
+    "src/cocoindex_code/project.py": "5426c25e8d59fd739e39929ef67cb53a91c3453cab3adb21508ddd2607e6b158",
     "src/cocoindex_code/protocol.py": "a15b0a1f3d3efd649775420e7f8bbbc00467acefa7863051c5c5f1f984b3ae21",
     "src/cocoindex_code/query.py": "cefd6c668a60e2d5b92d28127d68434fc20f74990de187fd8490263fb0f5d94e",
     "src/cocoindex_code/schema.py": "5f86ee0b0c091ed8b46eaba1751563392fdd6db81006e54de8d9a2e09de02f41",
-    "src/cocoindex_code/server.py": "11c1a8588fdc8128b7f4aec53da3e4c1937168709b1a99b27964ed1cff54c494",
-    "src/cocoindex_code/settings.py": "356ebe487e8c7fce5fb611d0b56aecb26987806199ac9266ff2c426effd69235",
-    "src/cocoindex_code/shared.py": "257db8a46aea24e13e1cbe0d3ebd0d4116e98b5fbcc70751d6bd44e4527221f1"
+    "src/cocoindex_code/server.py": "4f3b3bdb6c252c2b70ea9f46a4010cda16b3860a91f4dafbb4770025d7753078",
+    "src/cocoindex_code/settings.py": "6879ff28ae546227156a616de244196d4ee224b6cf4876ce39f3f6cb5ba134d2",
+    "src/cocoindex_code/shared.py": "c28b74a30c1d827138ebc2ce8f8ac02f34372ac77ab3c8132f969421914e4e97"
   },
   "qualification_scope": "Local CPU source-bound index/search software qualification; no cloud embedding support or agent-efficacy score",
-  "qualified_platform": "Windows x64 CPython 3.13.17",
-  "qualified_runtime_lock_sha256": "bf2c1d93072a8f55502701385c8785c8a7990d950fc75140b981373e89d89c09",
-  "qualified_wheel_name": "cocoindex_code-0.2.42+catalog.local1-py3-none-any.whl",
-  "qualified_wheel_sha256": "1d9e2b85fd412b04b9c1788eae325912622a160fde348d775b83109b02a19743",
+  "qualified_platform": "Windows x64 CPython 3.13.18",
+  "qualified_runtime_lock_sha256": "7d5ed8c8b2eb6bf991fd8b9503c2d33ef92243e1607610ae6045a90e2c6ef27e",
+  "qualified_wheel_name": "cocoindex_code-0.2.43+catalog.local1-py3-none-any.whl",
+  "qualified_wheel_sha256": "be7617dcd8a2669b4d2c0d6152a7330336c480e4ea02e30c044deced7c0203c2",
   "runtime_files": [
     {
       "path": "cocoindex_code/CATALOG_BUILD_NOTICE.txt",
-      "sha256": "d656fbbca8904e04fa2505910276d9a3807de3076f5d967a51e59f80759d7705"
+      "sha256": "b79911aa1c639c372151ba4b93fbad9665c3035cbcaa72eaf34b258ee5ec7db7"
     },
     {
       "path": "cocoindex_code/__init__.py",
@@ -515,27 +515,27 @@
     },
     {
       "path": "cocoindex_code/_daemon_paths.py",
-      "sha256": "5c67e4887149fa9cfb8468effb1776f97e90b71b885c733d6617d7b380f5cf41"
+      "sha256": "9ff8e322baf9135d1528c1ed76f42154d2ce8cfbca0d5022c72b1b5a42946150"
     },
     {
       "path": "cocoindex_code/_version.py",
-      "sha256": "5f0d5953ab936dbd663797b9c2af96017647789b61a38dc55848a332ea9a7a85"
+      "sha256": "8e0356289869ffc6f86cb86082b3ba511d1a07c4ff0fb2878332998ed6a28d58"
     },
     {
       "path": "cocoindex_code/chunking.py",
-      "sha256": "1a2e66a3f8982baa6d6b1acb4b719ccb13b313fa694d174432855e014cf65202"
+      "sha256": "1da79568269099891529f3738ca6de47a927be491a8f08df6b5e7311cbcdd651"
     },
     {
       "path": "cocoindex_code/cli.py",
-      "sha256": "7567ce81690d42babec17c79e6aeb7da0f0cae2647685a3e903b85f302e39ca2"
+      "sha256": "505c562c71a1ba88bae402ea5e120db998332c75edb4a87b2bf3c98c0cece827"
     },
     {
       "path": "cocoindex_code/client.py",
-      "sha256": "04c13015194f2bd8a484ea7e6483346d546088882a62364a54615554eb3f9ae8"
+      "sha256": "1c13d6ee83a60c3a2bec90bb1c3003539f0670ad7642d3548fe604dc903a5f06"
     },
     {
       "path": "cocoindex_code/daemon.py",
-      "sha256": "e8d7b730cc2214527847d70c356c6ad18b2c9f66686ff7d8b45e76d5f49bd249"
+      "sha256": "ef0d540df739aba501cde1dc55668fe7fcfa8414f6affb37612847449a5a6166"
     },
     {
       "path": "cocoindex_code/embedder_defaults.py",
@@ -555,7 +555,7 @@
     },
     {
       "path": "cocoindex_code/indexer.py",
-      "sha256": "3a9ca61fd661244076386b907557963c46dbe183540f40b5f23dd5ca5df0e280"
+      "sha256": "ad29011af29ffb7e78fa26aa4fff2c4a079fdc156e7c43fbc1dca47b11389a04"
     },
     {
       "path": "cocoindex_code/litellm_embedder.py",
@@ -563,7 +563,7 @@
     },
     {
       "path": "cocoindex_code/project.py",
-      "sha256": "6b63c822bd63efd75228d74a8ce0026651d00baf5225ef6227f64f820e1200ac"
+      "sha256": "5426c25e8d59fd739e39929ef67cb53a91c3453cab3adb21508ddd2607e6b158"
     },
     {
       "path": "cocoindex_code/protocol.py",
@@ -579,37 +579,37 @@
     },
     {
       "path": "cocoindex_code/server.py",
-      "sha256": "11c1a8588fdc8128b7f4aec53da3e4c1937168709b1a99b27964ed1cff54c494"
+      "sha256": "4f3b3bdb6c252c2b70ea9f46a4010cda16b3860a91f4dafbb4770025d7753078"
     },
     {
       "path": "cocoindex_code/settings.py",
-      "sha256": "356ebe487e8c7fce5fb611d0b56aecb26987806199ac9266ff2c426effd69235"
+      "sha256": "6879ff28ae546227156a616de244196d4ee224b6cf4876ce39f3f6cb5ba134d2"
     },
     {
       "path": "cocoindex_code/shared.py",
-      "sha256": "257db8a46aea24e13e1cbe0d3ebd0d4116e98b5fbcc70751d6bd44e4527221f1"
+      "sha256": "c28b74a30c1d827138ebc2ce8f8ac02f34372ac77ab3c8132f969421914e4e97"
     }
   ],
   "runtime_versions": {
     "annotated-doc": "0.0.5",
     "annotated-types": "0.8.0",
-    "anyio": "4.15.1",
+    "anyio": "4.16.0",
     "attrs": "26.1.0",
     "cffi": "2.1.1",
-    "click": "8.5.0",
+    "click": "8.5.1",
     "cloudpickle": "3.1.2",
     "cocoindex": "1.0.26",
-    "cocoindex-code": "0.2.42+catalog.local1",
+    "cocoindex-code": "0.2.43+catalog.local1",
     "colorama": "0.4.6",
     "cryptography": "50.0.2",
     "einops": "0.8.2",
-    "filelock": "4.2.4",
+    "filelock": "4.2.10",
     "fsspec": "2026.9.0",
     "h11": "0.16.0",
-    "hf-xet": "1.7.0",
+    "hf-xet": "1.8.0",
     "httpcore2": "2.16.0",
     "httpx2": "2.16.0",
-    "huggingface-hub": "2.3.0",
+    "huggingface-hub": "2.4.0",
     "idna": "3.20",
     "jinja2": "3.1.6",
     "joblib": "1.6.0",
@@ -622,27 +622,27 @@
     "mdurl": "0.1.2",
     "mpmath": "1.3.0",
     "msgspec": "0.22.0",
-    "narwhals": "2.27.1",
+    "narwhals": "2.28.0",
     "networkx": "3.7",
     "numpy": "2.5.4",
-    "opentelemetry-api": "1.45.1",
+    "opentelemetry-api": "1.45.2",
     "packaging": "26.3",
     "pathspec": "0.12.1",
-    "pip": "26.2.2",
+    "pip": "26.3",
     "prompt-toolkit": "3.0.53",
     "psutil": "7.2.2",
     "pycparser": "3.12",
-    "pydantic": "2.14.1",
-    "pydantic-core": "2.50.1",
+    "pydantic": "2.14.3",
+    "pydantic-core": "2.50.4",
     "pygments": "2.21.0",
     "pyjwt": "2.15.1",
     "python-dotenv": "1.2.4",
-    "python-multipart": "0.0.32",
+    "python-multipart": "0.0.33",
     "pywin32": "312",
     "pyyaml": "6.0.3",
     "questionary": "2.1.1",
     "referencing": "0.37.0",
-    "regex": "2026.9.29",
+    "regex": "2026.11.9",
     "rich": "15.0.0",
     "rpds-py": "2026.9.1",
     "safetensors": "0.8.0",
@@ -652,28 +652,28 @@
     "setuptools": "84.2.1",
     "shellingham": "1.5.4",
     "sqlite-vec": "0.1.9",
-    "sse-starlette": "3.6.0",
+    "sse-starlette": "3.7.0",
     "starlette": "1.10.0",
     "sympy": "1.14.0",
-    "threadpoolctl": "3.7.0",
+    "threadpoolctl": "3.8.0",
     "tokenizers": "0.23.3",
-    "torch": "2.14.1",
+    "torch": "2.15.0",
     "tqdm": "4.70.1",
-    "transformers": "5.20.2",
+    "transformers": "5.22.2",
     "truststore": "0.10.5",
-    "typer": "0.27.3",
+    "typer": "0.29.0",
     "typing-extensions": "4.16.0",
-    "typing-inspection": "0.4.4",
+    "typing-inspection": "0.4.5",
     "uvicorn": "0.54.0",
-    "watchdog": "6.0.0",
+    "watchdog": "7.1.0",
     "wcwidth": "0.9.4"
   },
   "schema_version": 1,
-  "source_date_epoch": 1791235358,
+  "source_date_epoch": 1580601600,
   "source_files": 26,
   "source_repo": "https://github.com/cocoindex-io/cocoindex-code",
-  "unpacked_bytes": 320576,
+  "unpacked_bytes": 335972,
   "upstream_development_status": "Alpha",
-  "upstream_version": "0.2.42",
-  "version": "0.2.42+catalog.local1"
+  "upstream_version": "0.2.43",
+  "version": "0.2.43+catalog.local1"
 }

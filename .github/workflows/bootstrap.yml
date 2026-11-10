@@ -1,0 +1,72 @@
+name: Automatic Windows setup
+
+on:
+  push:
+    paths:
+      - dev.ps1
+      - toolchains/bootstrap/**
+      - tools/_bootstrap_*.py
+      - tools/_native_shells.py
+      - tools/_provider_launch.py
+      - tests/test_bootstrap_archive.py
+      - tests/test_bootstrap_tar.py
+      - tests/test_provider_launch.py
+      - tests/qualify_windows_bootstrap.ps1
+      - tests/test_bootstrap_runtime.py
+      - requirements-*.txt
+      - .github/workflows/bootstrap.yml
+  pull_request:
+    paths:
+      - dev.ps1
+      - toolchains/bootstrap/**
+      - tools/_bootstrap_*.py
+      - tools/_native_shells.py
+      - tools/_provider_launch.py
+      - tests/test_bootstrap_archive.py
+      - tests/test_bootstrap_tar.py
+      - tests/test_provider_launch.py
+      - tests/qualify_windows_bootstrap.ps1
+      - tests/test_bootstrap_runtime.py
+      - requirements-*.txt
+      - .github/workflows/bootstrap.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bootstrap-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  clean-setup:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    env:
+      GIT_CONFIG_COUNT: "1"
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: "true"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Qualify installation, recovery, concurrency and managed archives
+        shell: powershell
+        run: |
+          $evidence = Join-Path $PWD ('.venv/bootstrap-qualification/' + [Guid]::NewGuid().ToString('N'))
+          ./tests/qualify_windows_bootstrap.ps1 -OutputDirectory $evidence
+          $qualification = Get-Content -LiteralPath (Join-Path $evidence 'qualification.json') -Raw | ConvertFrom-Json
+          ./dev.ps1 --cache-root $qualification.cache_root python -m pytest tests/test_bootstrap_tar.py -q --no-cov `
+            1> (Join-Path $evidence 'managed-tar.stdout.native') `
+            2> (Join-Path $evidence 'managed-tar.stderr.native')
+          $code = $LASTEXITCODE
+          Get-Content -LiteralPath (Join-Path $evidence 'managed-tar.stdout.native')
+          if ($code -ne 0) { exit $code }
+      - name: Retain actual qualification records
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: bootstrap-qualification
+          path: |
+            .venv/bootstrap-qualification/**/*.json
+            .venv/bootstrap-qualification/**/*.native
+          if-no-files-found: error
+          retention-days: 14

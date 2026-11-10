@@ -26,7 +26,7 @@ ROOT = Path(__file__).resolve().parents[1]
 INPUTS = "toolchains/crawl4ai"
 BROWSER_PROBE = """import hashlib,importlib.metadata,json,sys
 from pathlib import Path
-from patchright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright
 home=Path(sys.argv[1]).resolve()
 with sync_playwright() as provider:
     executable=Path(provider.chromium.executable_path).resolve()
@@ -35,7 +35,7 @@ with sync_playwright() as provider:
     raw=executable.read_bytes()
     print(json.dumps({'relative_executable':executable.relative_to(home).as_posix(),
                       'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw),
-                      'patchright_version':importlib.metadata.version('patchright')}))
+                      'playwright_version':importlib.metadata.version('playwright')}))
 """
 
 
@@ -46,7 +46,13 @@ def script_command(interpreter: Path, name: str, *arguments: str | Path) -> list
 def identity(root: Path) -> str:
     names = [
         INPUTS + "/" + name
-        for name in ["source.json", "requirements.txt", "requirements-build.txt", "requirements-bootstrap.txt"]
+        for name in [
+            "source.json",
+            "browser.json",
+            "requirements.txt",
+            "requirements-build.txt",
+            "requirements-bootstrap.txt",
+        ]
     ]
     return owned.input_identity(root, names)
 
@@ -57,7 +63,7 @@ def home_path(root: Path, selected: Path | None) -> Path:
 
 
 def require_interpreter() -> None:
-    owned.require_interpreter()
+    owned.require_interpreter((3, 13, 18))
 
 
 def environment(home: Path) -> dict[str, str]:
@@ -71,6 +77,15 @@ def environment(home: Path) -> dict[str, str]:
         },
     )
     child["CRAWL4AI_CHROMIUM_SANDBOX"] = "true"
+    managed = ROOT / ".venv/agent-tools/automatic-crawl4ai"
+    if home.parent == managed:
+        owner = json.loads(checked_path(managed, "owner.json").read_bytes())
+        expected = {"schema_version": 1, "purpose": "ai-skills-automatic-crawl4ai", "source_root": str(ROOT)}
+        if owner != expected or type(owner["schema_version"]) is not int:
+            raise ValueError("The shared package cache is not owned by this checkout")
+        cache = checked_path(managed, "package-cache")
+        cache.mkdir(exist_ok=True)
+        child["PIP_CACHE_DIR"] = str(cache)
     return child
 
 
@@ -92,6 +107,14 @@ def installation_receipt(home: Path) -> dict[str, Any]:
     ):
         raise ValueError("Provider installation receipt has an invalid schema")
     return receipt
+
+
+def worker(home: Path, name: str) -> dict[str, Any]:
+    return phase(
+        home,
+        name,
+        script_command(home / "runtime/Scripts/python.exe", "crawl4ai_runtime.py", "--home", home, name),
+    )
 
 
 def wheel_filename(name: Any) -> str:
@@ -116,7 +139,7 @@ def verify(home: Path) -> dict[str, Any]:
     if (
         receipt.get("provider_version") != pin["version"]
         or receipt.get("wheel_sha256") != pin["qualified_wheel_sha256"]
-        or receipt.get("python_version") != "3.13.17"
+        or receipt.get("python_version") != "3.13.18"
     ):
         raise ValueError("Provider installation receipt differs from admitted runtime inputs")
     runtime = checked_path(home, "runtime/Scripts/python.exe")
@@ -124,6 +147,8 @@ def verify(home: Path) -> dict[str, Any]:
     wheel.prepare(ROOT, candidate, home / "admission", check=True)
     checks = [
         phase(home, "pip-check", [runtime, "-I", "-m", "pip", "check"]),
+        worker(home, "check-runtime"),
+        worker(home, "check-browser"),
         phase(
             home,
             "installed-source",
@@ -166,7 +191,17 @@ def setup(home: Path) -> dict[str, Any]:
         phase(
             home,
             "build-dependencies",
-            [build, "-I", "-m", "pip", "install", "--require-hashes", "-r", ROOT / INPUTS / "requirements-build.txt"],
+            [
+                build,
+                "-I",
+                "-m",
+                "pip",
+                "install",
+                "--require-hashes",
+                "--only-binary=:all:",
+                "-r",
+                ROOT / INPUTS / "requirements-build.txt",
+            ],
         )
     )
     steps.append(phase(home, "build-pip-check", [build, "-I", "-m", "pip", "check"]))
@@ -206,6 +241,7 @@ def setup(home: Path) -> dict[str, Any]:
                 "pip",
                 "install",
                 "--require-hashes",
+                "--only-binary=:all:",
                 "-r",
                 ROOT / INPUTS / "requirements-bootstrap.txt",
             ],
@@ -222,6 +258,7 @@ def setup(home: Path) -> dict[str, Any]:
                 "pip",
                 "install",
                 "--require-hashes",
+                "--only-binary=:all:",
                 "--find-links",
                 home / "wheel",
                 "-r",
@@ -230,6 +267,7 @@ def setup(home: Path) -> dict[str, Any]:
         )
     )
     steps.append(phase(home, "runtime-pip-check", [runtime, "-I", "-m", "pip", "check"]))
+    steps.append(worker(home, "check-runtime"))
     steps.append(
         phase(
             home,
@@ -266,7 +304,23 @@ def setup(home: Path) -> dict[str, Any]:
     controls = json.loads((home / "controls.json").read_bytes())
     if controls.get("passed") is not True or len(controls.get("checks", [])) != 20:
         raise ValueError("All twenty native provider controls must pass")
-    steps.append(phase(home, "browser-install", [runtime, "-I", "-m", "patchright", "install", "chromium"]))
+    steps.append(phase(home, "browser-install", [runtime, "-I", "-m", "playwright", "install", "chromium"]))
+    steps.append(worker(home, "check-browser"))
+    steps.append(
+        phase(
+            home,
+            "browser-controls",
+            script_command(
+                home / "runtime/Scripts/python.exe",
+                "check_crawl4ai_browser.py",
+                "--home",
+                home,
+                "--output",
+                home / "browser-controls.json",
+            ),
+            timeout=120,
+        )
+    )
     browser = phase(home, "browser-probe", [runtime, "-I", "-c", BROWSER_PROBE, home], timeout=30)
     steps.append(browser)
     browser_identity = json.loads((Path(browser["logs"]) / "stdout.log").read_bytes())
@@ -310,41 +364,45 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
+def execute(args: argparse.Namespace, home: Path, result: dict[str, Any]) -> dict[str, Any]:
+    if args.command != "crawl":
+        return result
+    outputs = [home_path(ROOT, path) for path in [args.output, args.metadata]]
+    if outputs[0] == outputs[1] or any(path.exists() for path in outputs):
+        raise ValueError("Native result and metadata must be distinct new paths")
+    for path in outputs:
+        path.parent.mkdir(parents=True, exist_ok=True)
+    capture = phase(
+        home,
+        "capture",
+        [
+            home / "runtime/Scripts/python.exe",
+            "-I",
+            "-B",
+            ROOT / "tools/crawl4ai_capture.py",
+            "--url",
+            args.url,
+            "--output",
+            outputs[0],
+            "--metadata",
+            outputs[1],
+            "--home",
+            home,
+        ],
+        timeout=120,
+    )
+    return {**result, "capture": capture, "output": str(outputs[0]), "metadata": str(outputs[1])}
+
+
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
         require_interpreter()
         home = home_path(ROOT, args.home)
-        if args.command == "setup":
-            result = setup(home)
-        else:
-            result = verify(home)
-            if args.command == "crawl":
-                outputs = [home_path(ROOT, path) for path in [args.output, args.metadata]]
-                if outputs[0] == outputs[1] or any(path.exists() for path in outputs):
-                    raise ValueError("Native result and metadata must be distinct new paths")
-                for path in outputs:
-                    path.parent.mkdir(parents=True, exist_ok=True)
-                result = phase(
-                    home,
-                    "capture",
-                    [
-                        home / "runtime/Scripts/python.exe",
-                        "-I",
-                        "-B",
-                        ROOT / "tools/crawl4ai_capture.py",
-                        "--url",
-                        args.url,
-                        "--output",
-                        outputs[0],
-                        "--metadata",
-                        outputs[1],
-                        "--home",
-                        home,
-                    ],
-                    timeout=120,
-                )
-                result.update(ok=True, output=str(outputs[0]), metadata=str(outputs[1]))
+        # Missing or invalid managed profiles are recovered by dev.ps1, which
+        # holds the checkout lock and preserves the previous profile.
+        result = setup(home) if args.command == "setup" else verify(home)
+        result = execute(args, home, result)
     except (OSError, ValueError, KeyError, TypeError, subprocess.SubprocessError, http.client.HTTPException) as error:
         result = {"ok": False, "errors": [str(error)]}
     print(json.dumps(result, indent=2))

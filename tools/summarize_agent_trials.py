@@ -6,6 +6,8 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
+import re
 import statistics
 import tempfile
 import zipfile
@@ -14,11 +16,22 @@ from pathlib import Path, PurePosixPath
 from typing import Any
 
 from _lib_b.io_utils import dumps_deterministic, write_json, write_text
+from _trial_collection_contract import process_complete, verify_collector_launch
+from _trial_collection_manifest import validate_manifest
 from _trial_comparisons import STATUSES, compare_blocks
 from _trial_comparisons import verify_usage as _verify_usage
+from _trial_execution_evidence import (
+    FAILURE_OBSERVATIONS,
+    failure_measurements,
+    verify_attempt,
+    verify_launch,
+    verify_process,
+)
 from _trial_manifest import read_grading_manifest, validate_grade_checks
 from _trial_prompt import verify_prompt
+from _trial_protocol import validate_declaration
 from _trial_transcript import parse_events, strict_json
+from _trial_workspace_changes import workspace_changes
 
 LIMITATIONS = [
     "Quality is checked externally; agent-written regression tests are not a coverage or mutation score.",
@@ -182,6 +195,216 @@ def _verify_evidence(directory: Path, result: dict[str, Any], protocol_hash: str
     return prompt
 
 
+def _verify_v4_inventory(directory: Path, result: dict[str, Any], protocol: dict[str, Any]) -> dict[str, Any]:
+    """Reject undeclared paths before opening any file from the evidence inventory."""
+    if not isinstance(result.get("evidence_sha256"), dict):
+        raise ValueError("trial evidence inventory must be a digest mapping")
+    if result.get("attempt_phase") != "finished":
+        raise ValueError("executed trial requires a finished attempt lifecycle record")
+    if result.get("provider_model_snapshot") is not None:
+        raise ValueError("provider-resolved model identity has no qualified evidence source")
+    if result.get("latency_claim_eligible") is not False:
+        raise ValueError("modern trial elapsed time remains diagnostic only")
+    evidence = set(result["evidence_sha256"])
+    required = {
+        "attempt.json",
+        "launch.json",
+        "process.json",
+        "input.native",
+        "prompt.txt",
+        "transcript.jsonl",
+        "stderr.txt",
+        "patch.diff",
+        "workspace-changes.json",
+        "collection/launch.json",
+        "collection/input.native",
+        "collection/process.json",
+        "collection/result.json",
+    }
+    allowed = required | {
+        "collection/stdout.native",
+        "collection/stderr.native",
+        "grading.driver.stdout.native",
+        "grading.driver.stderr.native",
+    }
+    grade = result["grader"]
+    if grade.get("status") in {"task_passed", "task_failed"}:
+        grading = {
+            "grading/result.json",
+            "grading/checks.json",
+            "grading.driver.stdout.native",
+            "grading.driver.stderr.native",
+        }
+        for check in grade["checks"]:
+            relative = check.get("observation_directory")
+            if not isinstance(relative, str) or re.fullmatch(r"case-[0-9a-f]{32}/observations", relative) is None:
+                raise ValueError("grading stream directory is not a declared confined observation")
+            grading.update(f"grading/{relative}/{stream}.native" for stream in ("stdout", "stderr"))
+        required |= grading
+        allowed |= grading
+    if not required.issubset(evidence) or any(
+        name not in allowed and not name.startswith("submission/") for name in evidence
+    ):
+        raise ValueError("trial evidence inventory contains missing or undeclared outputs")
+    raw = evidence_bytes(directory, "collection/result.json")
+    if hashlib.sha256(raw).hexdigest() != result["evidence_sha256"]["collection/result.json"]:
+        raise ValueError("source capture metadata hash changed")
+    manifest = strict_json(raw.decode("utf-8"))
+    if not isinstance(manifest, dict) or manifest.get("status") not in {"collected", "collection_error"}:
+        raise ValueError("source capture outcome is unavailable")
+    if manifest["status"] == "collected":
+        validate_manifest(manifest, protocol["collection_policy"])
+        submission = {"submission/" + name for name in manifest["files"]}
+        required |= submission | {"collection/stdout.native", "collection/stderr.native"}
+        allowed |= submission
+    elif result["status"] in {"task_passed", "task_failed", "invalid_scope"}:
+        raise ValueError("incomplete source collection cannot be scored")
+    if not required.issubset(evidence) or not evidence.issubset(allowed):
+        raise ValueError("trial evidence inventory contains missing or undeclared outputs")
+    return manifest
+
+
+def _verify_v4_execution(
+    directory: Path, result: dict[str, Any], protocol: dict[str, Any], prompt: bytes, manifest: dict[str, Any]
+) -> None:
+    """Cross-check native launch, prompt, process bounds and grading transport records."""
+    grade = result["grader"]
+    if (
+        grade.get("status") in {"task_passed", "task_failed"}
+        and strict_json(evidence_bytes(directory, "grading.driver.stdout.native").decode("utf-8")) != grade
+    ):
+        raise ValueError("recorded grader differs from its native driver response")
+    raw_input = evidence_bytes(directory, "input.native")
+    if raw_input not in (prompt, prompt.replace(b"\r\n", b"\n")):
+        raise ValueError("native model input differs from the captured prompt")
+    if evidence_bytes(directory, "collection/input.native") != b"":
+        raise ValueError("source collector requires an empty native input stream")
+    changes_record = read_json(directory / "workspace-changes.json")
+    if not isinstance(changes_record, dict):
+        raise ValueError("source namespace change record is unavailable")
+    if manifest["status"] == "collected":
+        changes, source_changes, violations = workspace_changes(protocol, manifest)
+        if (
+            result.get("changed_source_files") != source_changes
+            or result.get("scope_violations") != violations
+            or changes_record.get("complete") is not True
+            or changes_record.get("changes") != changes
+        ):
+            raise ValueError("reported source changes or scope violations disagree with collected input digests")
+        raw = evidence_bytes(directory, "collection/stdout.native")
+        if strict_json(raw.decode("utf-8")) != manifest:
+            raise ValueError("source capture receipt differs from its native worker response")
+        if any(
+            result["evidence_sha256"]["submission/" + name] != data["sha256"]
+            or len(evidence_bytes(directory, "submission/" + name)) != data["bytes"]
+            for name, data in manifest["files"].items()
+        ):
+            raise ValueError("collected source bytes differ from the source capture receipt")
+        process = read_json(directory / "collection/process.json")
+        if not process_complete(
+            process,
+            protocol["collection_policy"],
+            len(raw) + len(evidence_bytes(directory, "collection/stderr.native")),
+        ):
+            raise ValueError("source capture process did not complete within its declared bounds")
+    elif (
+        result.get("evidence_collection_errors") == []
+        or changes_record.get("complete") is not False
+        or changes_record.get("changes") != []
+        or result.get("changed_source_files") != []
+        or result.get("scope_violations") != []
+    ):
+        raise ValueError("source capture failure must retain unavailable scope and collection errors")
+    attempt = read_json(directory / "attempt.json")
+    verify_attempt(attempt, result["protocol_sha256"], result["condition"], "finished")
+    launch = read_json(directory / "launch.json")
+    verify_launch(launch, protocol)
+    if attempt["workspace"] != launch["context"]["workspace"]:
+        raise ValueError("attempt workspace differs from its recorded launch")
+    verify_collector_launch(
+        read_json(directory / "collection/launch.json"), protocol["collection_policy"], attempt["workspace"]
+    )
+    verify_process(
+        read_json(directory / "process.json"),
+        result,
+        sum(len(evidence_bytes(directory, name)) for name in ("transcript.jsonl", "stderr.txt")),
+        protocol["time_limit_seconds"],
+    )
+
+
+def _verify_failed_attempt(directory: Path, result: dict[str, Any]) -> None:
+    """Retain terminal infrastructure failures without claiming observed execution."""
+    phase = result["attempt_phase"]
+    error_name = "setup-error.json" if phase == "setup_failed" else "controller-error.json"
+    nulls = {"provider_model_snapshot"}
+    if phase == "setup_failed":
+        nulls |= {"usage", "process_exit_code", "commands_completed", "transcript_error"}
+    if (
+        result["status"] != "harness_error"
+        or not nulls.issubset(result)
+        or any(result[key] is not None for key in nulls)
+        or result.get("latency_claim_eligible") is not False
+        or any(result.get(key) != [] for key in ("changed_source_files", "scope_violations"))
+        or not isinstance(result.get("evidence_collection_errors"), list)
+        or any(not isinstance(value, str) or not value for value in result["evidence_collection_errors"])
+        or result["grader"].get("status") != "harness_error"
+        or set(result["grader"]) != {"status", "error"}
+        or not isinstance(result["grader"]["error"], str)
+        or not result["grader"]["error"]
+        or type(result.get("elapsed_seconds")) not in (int, float)
+        or not math.isfinite(result["elapsed_seconds"])
+        or result["elapsed_seconds"] < 0
+    ):
+        raise ValueError("infrastructure failure cannot contain task scores, execution counts or invented usage")
+    evidence = result.get("evidence_sha256")
+    required, allowed = (
+        {"attempt.json", error_name},
+        FAILURE_OBSERVATIONS[phase],
+    )
+    if not isinstance(evidence, dict) or not required.issubset(evidence) or not set(evidence).issubset(allowed):
+        raise ValueError("infrastructure failure has an invalid evidence inventory")
+    if phase == "setup_failed" and any(
+        (directory / name).exists() or (directory / name).is_symlink()
+        for name in (
+            "input.native",
+            "process.json",
+            "transcript.jsonl",
+            "stderr.txt",
+            "grading",
+            "grading.driver.stdout.native",
+            "grading.driver.stderr.native",
+        )
+    ):
+        raise ValueError("setup failure contains evidence of a model launch attempt")
+    for name, digest in evidence.items():
+        if hashlib.sha256(evidence_bytes(directory, name)).hexdigest() != digest:
+            raise ValueError(f"failure evidence hash changed: {name}")
+    if phase == "controller_failed":
+        measured = failure_measurements(
+            *(
+                evidence_bytes(directory, name) if name in evidence else None
+                for name in ("transcript.jsonl", "process.json")
+            )
+        )
+        if not set(measured).issubset(result) or any(
+            json.dumps(result[key], sort_keys=True) != json.dumps(value, sort_keys=True)
+            for key, value in measured.items()
+        ):
+            raise ValueError("failure measurements disagree with retained native observations")
+    attempt = read_json(directory / "attempt.json")
+    verify_attempt(attempt, result["protocol_sha256"], result["condition"], phase)
+    error = read_json(directory / error_name)
+    if (
+        not isinstance(error, dict)
+        or set(error) != {"stage", "error_type", "errno", "winerror"}
+        or error["stage"] != attempt["stage"]
+        or not isinstance(error["error_type"], str)
+        or re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", error["error_type"]) is None
+        or any(error[name] is not None and type(error[name]) is not int for name in ("errno", "winerror"))
+    ):
+        raise ValueError("failure metadata disagrees with its lifecycle record")
+
+
 def _verify_checks(
     result: dict[str, Any], expected_cases: frozenset[str]
 ) -> tuple[dict[str, Any], list[dict[str, Any]]]:
@@ -189,6 +412,12 @@ def _verify_checks(
     grade = result.get("grader")
     if not isinstance(grade, dict):
         raise ValueError("external grader result is unavailable")
+    if not isinstance(grade.get("status"), str) or grade["status"] not in {
+        "task_passed",
+        "task_failed",
+        "harness_error",
+    }:
+        raise ValueError("external grader result has an unknown status")
     checks = validate_grade_checks(grade, expected_cases, scored=result["status"] in {"task_passed", "task_failed"})
     return grade, checks
 
@@ -244,9 +473,18 @@ def verify_result(
     if not isinstance(result, dict):
         raise ValueError("trial result must be an object")
     _verify_identity(result, protocol, protocol_hash, condition)
+    grade, checks = _verify_checks(result, expected_cases)
+    if protocol.get("protocol_version") == 4:
+        validate_declaration(protocol, condition)
+        if isinstance(result.get("attempt_phase"), str) and result["attempt_phase"] in FAILURE_OBSERVATIONS:
+            _verify_failed_attempt(directory, result)
+            _verify_usage(result)
+            return result, ("unavailable", None)
+        manifest = _verify_v4_inventory(directory, result, protocol)
     prompt = _verify_evidence(directory, result, protocol_hash)
     runtime = verify_prompt(prompt, protocol, condition)
-    grade, checks = _verify_checks(result, expected_cases)
+    if protocol.get("protocol_version") == 4:
+        _verify_v4_execution(directory, result, protocol, prompt, manifest)
     _verify_outcome(result, grade, checks)
     _verify_usage(result)
     return result, runtime
@@ -262,7 +500,7 @@ def prompt_runtime_evidence(
         or any(type(repetition) is not int or repetition < 1 for repetition in repetitions)
         or set(runtimes) != {(repetition, condition) for repetition in repetitions for condition in conditions}
         or any(
-            status not in {"recorded", "not_requested", "ambiguous"}
+            status not in {"recorded", "not_requested", "ambiguous", "unavailable"}
             or (status == "recorded" and (not isinstance(path, bytes) or not path))
             or (status != "recorded" and path is not None)
             for status, path in runtimes.values()
@@ -289,6 +527,7 @@ def prompt_runtime_evidence(
                 "unavailable_pairs": pairs["unavailable_pairs"],
             }
     return {
+        **({"unavailable_attempts": counts["unavailable"]} if counts["unavailable"] else {}),
         "recorded_attempts": counts["recorded"],
         "not_requested_attempts": counts["not_requested"],
         "ambiguous_attempts": counts["ambiguous"],
@@ -301,6 +540,8 @@ def summarize(protocol_path: Path, trials: Path, *, package_caches: bool = False
     protocol = strict_json(protocol_bytes.decode("utf-8"))
     if not isinstance(protocol, dict):
         raise ValueError("trial protocol must be an object")
+    if protocol.get("protocol_version") == 4:
+        validate_declaration(protocol)
     protocol_hash = hashlib.sha256(protocol_bytes).hexdigest()
     expected_cases, manifest_hash = read_grading_manifest(protocol_path, protocol, protocol_hash)
     rows, planned_paths = [], set()
@@ -349,7 +590,10 @@ def summarize(protocol_path: Path, trials: Path, *, package_caches: bool = False
             )
     if not rows:
         raise ValueError("protocol contains no planned attempts")
-    observed_paths = {path.relative_to(trials).as_posix() for path in trials.rglob("result.json")}
+    observed_results = (
+        trials.glob("*/*/result.json") if protocol.get("protocol_version") == 4 else trials.rglob("result.json")
+    )
+    observed_paths = {path.relative_to(trials).as_posix() for path in observed_results}
     if observed_paths != planned_paths:
         raise ValueError("trial directory includes unplanned results; refusing selective or duplicate accounting")
     manifest_path = protocol_path.with_name(protocol_path.stem + ".grading.json")
@@ -397,7 +641,13 @@ def summarize(protocol_path: Path, trials: Path, *, package_caches: bool = False
         "limitations": [
             f"One task and {len(repetitions)} matched {'attempt' if len(repetitions) == 1 else 'attempts'} "
             "per condition do not establish collection-wide effectiveness.",
-            *LIMITATIONS,
+            *[
+                "Grading uses the declared confined Windows runtime; consistency checks do not authenticate "
+                "execution or qualify a service for arbitrary untrusted submissions."
+                if protocol.get("protocol_version") == 4 and item.startswith("The grading process executes")
+                else item
+                for item in LIMITATIONS
+            ],
             *protocol.get("limitations", []),
         ],
     }
@@ -487,6 +737,11 @@ def render(report: dict[str, Any]) -> str:
         f"Path text is available for {runtime['recorded_attempts']} attempts; "
         f"{runtime['not_requested_attempts']} did not request a path and {runtime['ambiguous_attempts']} were ambiguous.",
     ]
+    if runtime.get("unavailable_attempts", 0):
+        missing = runtime["unavailable_attempts"]
+        lines.append(
+            f"Executed prompt evidence is unavailable for {missing} infrastructure-failed {'attempt' if missing == 1 else 'attempts'}."
+        )
     if runtime["comparisons"]:
         lines += [
             "",

@@ -58,8 +58,12 @@ def model_proof() -> dict[str, Any]:
 
 
 def check_model(home: Path) -> dict[str, Any]:
+    return check_model_directory(checked_path(home, "model"))
+
+
+def check_model_directory(model: Path) -> dict[str, Any]:
     proof = model_proof()
-    model = checked_path(home, "model")
+    model = corpus.checked_output(ROOT, model)
     actual = files(model)
     if set(actual) != set(proof["files"]):
         raise ValueError("Local embedding model inventory differs from its exact source pin")
@@ -160,7 +164,12 @@ def configure(home: Path, base: Path, *, check: bool) -> None:
         if not check:
             path.parent.mkdir(parents=True, exist_ok=True)
             write_json(path, value, new=True)
-        if json.loads(corpus.regular_file(base, name).read_bytes()) != value:
+        observed = json.loads(corpus.regular_file(base, name).read_bytes())
+        if check and name == "config/global_settings.yml":
+            retained_model = observed["embedding"]["model"]
+            check_model_directory(Path(retained_model))
+            value["embedding"]["model"] = retained_model
+        if observed != value:
             raise ValueError("Corpus configuration differs from its isolated local-only contract: " + name)
 
 
@@ -210,7 +219,7 @@ def index(home: Path, base: Path, prefixes: list[str], *, check: bool) -> dict[s
             os.environ.clear()
             os.environ.update(previous)
     else:
-        command = [sys.executable, "-P", "-c", "from cocoindex_code.cli import app;app()", "index"]
+        command = [sys.executable, "-P", "-B", "-c", "from cocoindex_code.cli import app;app()", "index"]
         subprocess.run(command, cwd=base / "tree", env=env, check=True, timeout=540)
     after = corpus.prepare(ROOT, base, prefixes, check=True)
     if not after["ok"]:

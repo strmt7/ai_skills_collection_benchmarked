@@ -18,10 +18,17 @@ INPUTS = "toolchains/cocoindex-code"
 
 def adapt(source: dict[str, bytes], notice: bytes, version: str) -> dict[str, bytes]:
     result = source.copy()
+    upstream_version, suffix = version.split("+", 1)
+    release = tuple(int(part) for part in upstream_version.split("."))
     project = source["pyproject.toml"].decode("utf-8")
     project = replace_once(project, 'requires = ["hatchling", "hatch-vcs"]', 'requires = ["hatchling"]')
     project = replace_once(project, 'dynamic = ["version"]', f'version = "{version}"')
     project = replace_once(project, '"cocoindex[litellm]>=1.0.17,<1.1.0"', '"cocoindex>=1.0.17,<1.1.0"')
+    project = replace_once(
+        project,
+        'packages = ["src/cocoindex_code"]\n',
+        'packages = ["src/cocoindex_code"]\nartifacts = ["src/cocoindex_code/_version.py"]\n',
+    )
     project = replace_once(
         project,
         '[tool.hatch.version]\nsource = "vcs"\nfallback-version = "999.0.0"\n\n'
@@ -33,13 +40,13 @@ def adapt(source: dict[str, bytes], notice: bytes, version: str) -> dict[str, by
     ).encode("utf-8")
     version_source = replace_once(
         source["src/cocoindex_code/_version.py"].decode("utf-8"),
-        "__version__ = version = '0.2.42'",
+        f"__version__ = version = '{upstream_version}'",
         f"__version__ = version = '{version}'",
     )
     version_source = replace_once(
         version_source,
-        "__version_tuple__ = version_tuple = (0, 2, 42)",
-        "__version_tuple__ = version_tuple = (0, 2, 42, 'catalog.local1')",
+        f"__version_tuple__ = version_tuple = {release!r}",
+        f"__version_tuple__ = version_tuple = {(*release, suffix)!r}",
     )
     result["src/cocoindex_code/_version.py"] = (
         "# Catalog local-only build version; original archive remains source-locked.\n" + version_source

@@ -43,6 +43,15 @@ def home_path(root: Path, selected: Path | None) -> Path:
 
 def environment(home: Path) -> dict[str, str]:
     env = owned.profile_environment(home, {"HF_HOME": "huggingface", "TORCH_HOME": "torch"})
+    managed = ROOT / ".venv/agent-tools/automatic-cocoindex"
+    if home.parent == managed:
+        owner = json.loads(checked_path(managed, "owner.json").read_bytes())
+        expected = {"schema_version": 1, "purpose": "ai-skills-automatic-cocoindex", "source_root": str(ROOT)}
+        if owner != expected or type(owner["schema_version"]) is not int:
+            raise ValueError("The shared package cache is not owned by this checkout")
+        cache = checked_path(managed, "package-cache")
+        cache.mkdir(exist_ok=True)
+        env["PIP_CACHE_DIR"] = str(cache)
     env.update(
         COCOINDEX_DISABLE_USAGE_TRACKING="1",
         HF_HUB_OFFLINE="1",
@@ -83,7 +92,7 @@ def verify(home: Path) -> dict[str, Any]:
         "schema_version": 1,
         "input_identity": identity(ROOT),
         "provider_version": pin["version"],
-        "python_version": "3.13.17",
+        "python_version": "3.13.18",
         "wheel_name": pin["qualified_wheel_name"],
         "wheel_sha256": pin["qualified_wheel_sha256"],
     }
@@ -218,35 +227,40 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
+def execute(args: argparse.Namespace, home: Path, result: dict[str, Any]) -> dict[str, Any]:
+    if args.command == "index":
+        arguments: list[str | Path] = ["--corpus", args.corpus]
+        for prefix in args.prefix:
+            arguments.extend(["--prefix", prefix])
+        if args.check:
+            arguments.append("--check")
+        process = worker(home, "index", *arguments)
+        result.update(corpus=str(args.corpus), operation=process)
+    elif args.command == "search":
+        arguments = [
+            "--corpus",
+            args.corpus,
+            "--query",
+            args.query,
+            "--limit",
+            str(args.limit),
+            "--output",
+            args.output,
+        ]
+        for pattern in args.path:
+            arguments.extend(["--path", pattern])
+        process = worker(home, "query", *arguments)
+        result.update(output=str(args.output), operation=process)
+    return result
+
+
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
-        owned.require_interpreter()
+        owned.require_interpreter((3, 13, 18))
         home = home_path(ROOT, args.home)
         result = setup(home) if args.command == "setup" else verify(home)
-        if args.command == "index":
-            arguments: list[str | Path] = ["--corpus", args.corpus]
-            for prefix in args.prefix:
-                arguments.extend(["--prefix", prefix])
-            if args.check:
-                arguments.append("--check")
-            process = worker(home, "index", *arguments)
-            result.update(corpus=str(args.corpus), operation=process)
-        elif args.command == "search":
-            arguments = [
-                "--corpus",
-                args.corpus,
-                "--query",
-                args.query,
-                "--limit",
-                str(args.limit),
-                "--output",
-                args.output,
-            ]
-            for pattern in args.path:
-                arguments.extend(["--path", pattern])
-            process = worker(home, "query", *arguments)
-            result.update(output=str(args.output), operation=process)
+        result = execute(args, home, result)
     except (OSError, ValueError, KeyError, TypeError, subprocess.SubprocessError, http.client.HTTPException) as error:
         result = {"ok": False, "errors": [str(error)]}
     print(json.dumps(result, indent=2))

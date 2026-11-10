@@ -127,7 +127,7 @@ def test_source_download_closes_the_connection_after_a_transport_failure(tmp_pat
 
 
 def test_provider_cache_identity_is_portable_and_detects_dependency_drift(tmp_path):
-    names = ["source.json", "requirements.txt", "requirements-build.txt", "requirements-bootstrap.txt"]
+    names = ["source.json", "browser.json", "requirements.txt", "requirements-build.txt", "requirements-bootstrap.txt"]
     for name in names:
         target = tmp_path / "toolchains/crawl4ai" / name
         target.parent.mkdir(parents=True, exist_ok=True)

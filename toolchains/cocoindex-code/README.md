@@ -6,18 +6,24 @@ registration or particular AI client.
 
 ## Install and search
 
-From a clone on Windows x64, use **CPython 3.13.17**:
+From a clone on Windows x64:
 
 ```powershell
-py -3.13 -I tools/cocoindex_tool.py setup
-py -3.13 -I tools/cocoindex_tool.py check
-py -3.13 -I tools/cocoindex_tool.py index --corpus .venv/semantic/tasks-a --prefix tools --prefix docs
-py -3.13 -I tools/cocoindex_tool.py search --corpus .venv/semantic/tasks-a --query "Where is source freshness verified?" --limit 5 --output .venv/research/search-a.json
+.\dev.ps1 cocoindex check
+.\dev.ps1 cocoindex index --corpus .venv/semantic/tasks-a --prefix tools --prefix docs
+.\dev.ps1 cocoindex search --corpus .venv/semantic/tasks-a --query "Where is source freshness verified?" --limit 5 --output .venv/research/search-a.json
 ```
 
-An explicit path to that interpreter also works. Packages, model downloads,
-profiles and indexes stay inside this clone's `.venv`; setup preserves other
-repositories' providers and configuration. Create fresh caches on each host.
+Missing Python, packages and the local model install automatically from verified,
+locked inputs. The native C++ runtime is downloaded directly from Microsoft and
+used inside the private installation; no global installer runs. No administrator
+access, API key, global packages, persistent PATH changes, registry registration,
+MCP registration or particular AI client is required.
+
+The foundation uses an owned cache for this checkout; provider environments,
+models and indexes stay in its `.venv`. `--cache-root PATH` before `cocoindex`
+selects another writable foundation cache. Create fresh caches on each host.
+Only the validation command provisions Node and Java.
 
 Select only the files or directories needed for the task with repeated
 `--prefix` arguments. Only UTF-8 inputs without NUL bytes and at most 4 MiB enter
@@ -35,15 +41,26 @@ Source changes invalidate the corpus binding. Preserve earlier evidence and
 index the relevant prefixes at a new corpus path. To verify an existing index,
 repeat its `index` command with `--check`.
 
-The default provider cache is keyed to its pinned inputs. Use
-`--home .venv/agent-tools/<name>` **before** the command to choose another private
-profile. If setup is interrupted, inspect the named logs and select a new
-profile; partial installations are never silently replaced.
+Each command verifies the selected provider before use. Missing or changed
+packages trigger a fresh isolated installation; earlier profiles and failure
+diagnostics are preserved. Concurrent setup requests share one installation.
+The cache belongs to this checkout and refuses unrelated existing data.
+Replacement profiles share an owned package-download cache. Installed packages
+remain isolated, and every installation still requires the pinned hashes.
+
+A valid existing index keeps its original model binding across package recovery;
+the model's exact inventory, bytes and local settings are verified again. Changed
+source or model contents require a new corpus, preserving the earlier evidence.
+
+The low-level `tools/cocoindex_tool.py` remains available for explicit provider
+qualification with an admitted CPython 3.13.18 interpreter. Its `--home` option
+selects a separate directory under `.venv`; automatic setup manages its own
+profiles and does not adopt that directory.
 
 ## Supported provider
 
-This is the explicitly identified `0.2.42+catalog.local1` build of
-[CocoIndex Code 0.2.42](https://github.com/cocoindex-io/cocoindex-code).
+This is the explicitly identified `0.2.43+catalog.local1` build of
+[CocoIndex Code 0.2.43](https://github.com/cocoindex-io/cocoindex-code).
 Its author classifies the upstream package as Alpha. The qualified mode here is
 Windows x64 CPU search using CocoIndex 1.0.26 and the pinned
 `Snowflake/snowflake-arctic-embed-xs` model. Cloud embeddings are unsupported.

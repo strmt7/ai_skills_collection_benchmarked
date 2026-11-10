@@ -877,8 +877,8 @@
             "sha256": "104223ca324f4b9c5d41b0ded47144ec5a00e13d7333c96196ce9cf30dfb092b"
           },
           {
-            "path": "tools/_trial_summary.py",
-            "scope": "Descriptive summary core extracted with unchanged calculation syntax trees; not agent-efficacy evidence.",
+            "path": "artifacts/research/2026-11-09/eval-harness-sampling-v2/summary-core-source.py.txt",
+            "scope": "Descriptive summary core extracted with unchanged calculation syntax trees; not agent-efficacy evidence. Historical exact-byte tools/_trial_summary.py source at ba7899423096fb0add6b462cc9f4e85e95a519ff; later prompt-availability changes are outside this original source review.",
             "sha256": "46985cacd8e131f1f4aa83a0956021636e5b646d05c329b305f53edfdab809a6"
           },
           {

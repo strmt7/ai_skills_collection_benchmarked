@@ -19,8 +19,11 @@ Runner/grader integration and execution/collection isolation qualification are
 permitted for these trials. Preserve the launch refusal until the actual
 complete boundary passes independently specified positive and negative
 controls. Do not substitute a host subprocess or unqualified alternate launcher.
-Security-scanner, code-scanning-alert, dependency-advisory and history-scan
-remediation remain paused.
+Security-scanner, code-scanning-alert and history-scan remediation remain paused.
+The owner's subsequent dependency-maintenance instruction permits package and
+tool updates and Dependabot remediation. Qualify complete compatible graphs,
+retain failure evidence and preserve immutable upstream mirrors. This does not
+authorize alert suppression or relax the separate model-launch qualification.
 
 Begin with public, development-exposed tasks to qualify infrastructure and
 calibrate difficulty. Task contracts and evaluators must be independent of

@@ -44,7 +44,7 @@ jobs:
           enable-cache: "false"
       - name: Install pip in the managed Python environment
         if: ${{ runner.os == 'Windows' && !startsWith(matrix.python-version, '3.14.') }}
-        run: uv pip install 'pip==26.2.2'
+        run: uv pip install 'pip==26.3'
       - name: Verify the selected Python version
         shell: python
         env:

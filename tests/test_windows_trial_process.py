@@ -59,6 +59,8 @@ def test_success_preserves_streams_and_exit_status(tmp_path):
         "termination_reason": None,
         "exit_code": 0,
         "output_bytes": len(stdout) + len(stderr),
+        "output_limit_bytes": 1024 * 1024,
+        "wall_time_limit_seconds": 10.0,
         "job_memory_limit_bytes": 1024 * 1024 * 1024,
         "active_process_limit": 32,
         "explicit_environment": False,

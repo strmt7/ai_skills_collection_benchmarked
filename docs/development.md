@@ -26,6 +26,26 @@ check does not prove their behavior. On Windows, use the active environment's
 
 ## Set up validation from a fresh clone
 
+On Windows x64, the automatic entrypoint provisions the complete qualified
+validation toolset into an owned cache:
+
+```powershell
+.\dev.ps1 doctor
+.\dev.ps1 python -m pytest -q -n 2
+.\dev.ps1 python -m ruff check tools tests benchmarks/agent-effectiveness/graders
+```
+
+No preinstalled Python, uv, Git, Node or JDK is required. Setup checks pinned
+downloads, creates isolated Python environments and supplies native tool paths
+to child processes. It preserves global packages, persistent PATH, registry
+settings and shell profiles. Missing components trigger automatic setup;
+recovery preserves prior profiles. See the
+[bootstrap guide](../toolchains/bootstrap/README.md) for cache selection and
+readiness diagnostics. Native provider setup remains documented separately.
+
+For an existing supported Python environment or the Linux CI jobs, use the
+locked setup below.
+
 The Ruff, mypy and main offline-validation jobs use
 `requirements-dev-lock.txt` with uv 0.13.7.
 It locks the project runtime, test, lint and build requirements, including
@@ -92,8 +112,12 @@ python3 tools/check_no_secret_patterns.py --history
 ruff check tools tests
 ruff format --check tools tests
 mypy tools tests
-python3 -m pytest -q -n auto
+python3 -m pytest -q -n 2
 ```
+
+Use fewer workers on constrained hosts. Increase concurrency only after checking
+available RAM, CPU and disk activity; do not use automatic host-wide parallelism
+by default on a shared workstation. Hosted CI sizes workers to its runner.
 
 The in-repository scanner checks its known patterns in replacement-decoded text
 and binary file bytes. It does not unpack archives or recognize every encoding

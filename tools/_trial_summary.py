@@ -154,7 +154,8 @@ def summarize_prompt_runtime_evidence(reports: list[dict[str, Any]], condition: 
             if not isinstance(evidence, dict):
                 raise ValueError("invalid prompt runtime evidence")
             attempts = [
-                evidence.get(key) for key in ("recorded_attempts", "not_requested_attempts", "ambiguous_attempts")
+                *(evidence.get(key) for key in ("recorded_attempts", "not_requested_attempts", "ambiguous_attempts")),
+                evidence.get("unavailable_attempts", 0),
             ]
             if any(type(value) is not int or value < 0 for value in attempts) or sum(cast(list[int], attempts)) != len(
                 report["attempts"]

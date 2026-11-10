@@ -42,14 +42,15 @@ def home_path(root: Path, target: Path) -> Path:
     return checked_path(root, target.relative_to(root).as_posix())
 
 
-def require_interpreter() -> None:
+def require_interpreter(expected: tuple[int, int, int] = (3, 13, 17)) -> None:
     if (
         sys.platform != "win32"
         or platform.machine().upper() not in {"AMD64", "X86_64"}
         or sys.implementation.name != "cpython"
-        or sys.version_info[:3] != (3, 13, 17)
+        or sys.version_info[:3] != expected
     ):
-        raise ValueError("Run this Windows x64 provider launcher with CPython 3.13.17 (for example, py -3.13)")
+        version = ".".join(str(part) for part in expected)
+        raise ValueError(f"Run this Windows x64 provider launcher with its qualified CPython {version}")
 
 
 def profile_environment(home: Path, extra_paths: dict[str, str]) -> dict[str, str]:
@@ -71,6 +72,7 @@ def profile_environment(home: Path, extra_paths: dict[str, str]) -> dict[str, st
         child[key] = str(path)
     child.update(
         PYTHONUTF8="1",
+        PYTHONDONTWRITEBYTECODE="1",
         PYTHONNOUSERSITE="1",
         PYTHONSAFEPATH="1",
         PYTHON_DOTENV_DISABLED="1",
@@ -89,6 +91,8 @@ def profile_environment(home: Path, extra_paths: dict[str, str]) -> dict[str, st
 def phase(
     root: Path, home: Path, name: str, arguments: list[str | Path], *, environment: dict[str, str], timeout: int = 600
 ) -> dict[str, Any]:
+    if len(arguments) > 1 and arguments[1] == "-I" and "-B" not in arguments[2:]:
+        arguments = [*arguments[:2], "-B", *arguments[2:]]
     directory = checked_path(home, "logs/" + name + "-" + uuid.uuid4().hex)
     directory.mkdir(parents=True)
     with (directory / "stdout.log").open("xb") as stdout, (directory / "stderr.log").open("xb") as stderr:

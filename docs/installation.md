@@ -209,10 +209,26 @@ research. Keep the local policy and all linked resources accessible. Tool setup
 and actual execution receipts are required where those scopes apply; installing
 a skill or copying an entrypoint does not prove compliance.
 
-For a fresh code-search provider, follow the
-[local CocoIndex setup and search guide](../toolchains/cocoindex-code/README.md).
-For public-page research, use the
-[Crawl4AI installation guide](../toolchains/crawl4ai/README.md).
+On Windows x64, the required providers have automatic setup entrypoints:
+
+```powershell
+.\dev.ps1 cocoindex check
+.\dev.ps1 crawl4ai check
+```
+
+Run the command for the operation you need. Missing Python, native libraries,
+packages and the matching model or browser install into owned isolated caches
+from verified, locked inputs. Setup needs network access and preserves global
+packages, persistent PATH, registry settings and other applications' providers.
+If a provider fails verification, setup creates a fresh profile and retains
+earlier profiles and failure diagnostics. A failed download or readiness check
+remains an error, with diagnostics to investigate.
+
+For actual searches and page captures, follow the
+[local CocoIndex guide](../toolchains/cocoindex-code/README.md) and
+[Crawl4AI guide](../toolchains/crawl4ai/README.md). Their `check` commands verify
+installation; they do not replace the search or crawl receipts required for
+relevant agent work.
 
 Run a small task in your actual agent environment and inspect its output before
 depending on broader behaviour. [Read the evidence guide](coverage.md) to

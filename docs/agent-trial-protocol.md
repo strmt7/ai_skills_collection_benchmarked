@@ -12,6 +12,17 @@ rule. A baseline subject may omit collection instructions only as a frozen
 experimental condition. No new model launch is permitted until the complete
 runner, collection and grading boundary is qualified.
 
+The gated `run()` entrypoint and model-free controller qualification share one
+internal lifecycle implementation. That implementation revalidates the frozen
+protocol and case manifest before reserving an attempt. Qualification uses only
+an owned deterministic endpoint and generated canary credentials; it is not an
+alternate way to launch real providers or models. The public entrypoint still
+refuses model launches before entering that lifecycle. Trusted grading drivers
+disable Python bytecode writes as well as the confined workers they start.
+Native transcript and error captures use unbuffered Python file writes, so an
+interrupted controller can retain bytes already received from the CLI. Partial
+records never establish a completed result or permit an incomplete report.
+
 The [expanded benchmark review](benchmark-expansion.md) defines additional
 content, routing, context-cost and cross-model comparisons. Follow the
 [redesign method](skill-improvement-method.md): infer general failure mechanisms
@@ -20,6 +31,27 @@ Benchmark answers, reference patches and verifier-specific shortcuts must not
 enter candidate skills or tools. Record public-example exposure and keep it
 outside untouched evaluation. Freeze practical thresholds and analysis before
 outcomes; retain neutral, harmful and failed results.
+
+## Declared provider authentication
+
+A version-4 plan may declare `provider` with exactly `base_url` and
+`credential_env`. Freeze the endpoint and variable name in the protocol; never
+put a credential value in that file. Remote endpoints require HTTPS. Explicit
+numeric loopback HTTP endpoints support local qualification and local providers;
+they do not establish TLS or remote-provider qualification.
+
+The selected credential enters only the private CLI controller environment.
+Subject commands keep their separate environment. Launch records retain the
+provider declaration and variable name without copying the credential. Reporting
+reconstructs the declared provider options and rejects an endpoint override.
+Missing credentials remain setup errors, not coding-task failures.
+
+When using the automatic development entrypoint, explicitly forward the selected
+variable with `--credential-env NAME` before `python`. Other parent credentials
+are omitted. The local authentication controls use generated canaries and a
+deterministic endpoint; they make no real model requests and do not qualify live
+credentials, the complete controller or an agent advantage. The model-launch
+refusal remains in force.
 
 ## Frozen inputs
 
@@ -130,6 +162,12 @@ changing the recorded historical attempts or their scores.
 
 Future experiments must establish their case manifest before execution and
 retain independent grading evidence.
+The current runner requires protocol version 4. In addition to the case
+commitment below, `execution_source_sha256` must equal
+`run_agent_trial.execution_source_hashes()`: the declared controller,
+collector and confined evaluator sources, their helpers and runtime source
+specifications. A changed, missing or additional source entry stops the launch.
+These hashes establish consistency, not independent execution or efficacy.
 For protocol version 3 or later, `grading_cases_sha256` commits the case set:
 sort the unique names, serialize them as compact ASCII JSON, and hash the UTF-8
 bytes with SHA-256. The adjacent `<protocol-stem>.grading.json` records that
@@ -188,6 +226,179 @@ not a complete sandbox: Microsoft documents that processes created through
 `Win32_Process.Create` are not automatically assigned to the caller's job.
 Before integrating it into trials, qualify the agent sandbox's service access
 and the full collection and grading boundary. See [Windows job objects](https://learn.microsoft.com/en-us/windows/win32/procthread/job-objects).
+
+## Private context controls
+
+Autonomous trial subjects cannot request human input. The context disables
+both synchronous and asynchronous question tools through Codex's
+`tools.experimental_request_user_input.enabled` setting. This common constraint
+applies to every condition, including the baseline. Native controls verify that
+coding tools still work and that neither question tool is advertised. The
+setting follows the pinned upstream
+[tool admission rules](https://github.com/openai/codex/blob/086ccc833bc9cf01024ad2dd6af7dbd421b6bf9a/codex-rs/core/src/tools/spec_plan.rs#L1317-L1347).
+
+The trial context disables both legacy delegation and v2 native agent tools.
+In Codex 0.167.0, feature flags alone did not remove the model-visible
+collaboration namespace in a local control. The explicit v2
+`disable_native_tools` setting removed it while preserving command execution
+and independent grading. This follows the pinned upstream
+[native-tool admission check](https://github.com/openai/codex/blob/086ccc833bc9cf01024ad2dd6af7dbd421b6bf9a/codex-rs/core/src/tools/spec_plan.rs#L735-L748).
+Removing advertised tools is a component check; it does not qualify the full
+controller or authorize model launches.
+
+Native command controls exercise the Windows PowerShell-to-Python route used
+by the coding tool. The shell is discovered from the native Windows directory;
+its executable, the admitted Python, the exact probe and command are bound to
+the retained evidence. Bytecode writes are disabled in controlled Python
+processes. File-access, network, environment and child-process expectations
+remain unchanged.
+
+Disposable workspaces and controller profiles use OS-derived temporary
+locations independently of the report directory. The source binding records
+their actual paths. The checker verifies the declared working directory and
+probe bytes retained before and after execution, without reopening disposable
+fixture paths during artifact validation.
+
+Direct standalone Python launches through the 0.167.0 RPC endpoint failed
+with Windows error 3 in local controls; system-command and shell-route controls
+succeeded under the same sandbox permissions. Those failures remain recorded.
+Passing shell-route controls does not qualify direct non-system image launches
+or the complete model execution boundary.
+
+After qualification and protocol validation, the runner reserves each attempt
+directory before preparing its workspace. `attempt.json` records the controller
+phase. A pre-launch setup exception produces an unscored `harness_error` with
+unavailable usage and process exit status, plus structured error type, `errno`
+and Windows error code. Exception messages and local variables are not copied
+into the published diagnostics. Reports verify this separate failure path and
+retain missing prompt evidence as unavailable, including across task summaries.
+Ordinary controller exceptions after setup produce a separate `controller_failed`
+record and an unscored `harness_error`. This includes agent execution, transcript
+reading, collection, grading, evidence selection and final result storage when
+the error record can still be saved. The error records its stage and OS error
+domains, without copying exception messages or local variables. A fixed inventory
+retains available controller and native observations; it never traverses grader
+scratch or controller profiles.
+
+The failure path preserves usage, completed-command observations and exit status
+when retained native records support them. Missing or invalid measurements stay
+unavailable. Partial streams contribute only complete observed events; a malformed
+stream cannot invent counts. Reporting recomputes these measurements and verifies
+the error metadata, lifecycle state and evidence hashes. These consistency checks
+do not attest model execution, process cleanup or the authenticity of observations.
+No controller failure becomes a task pass or an ordinary coding failure.
+
+Cancellation or persistent terminal-storage failure remains unresolved; the
+reporter refuses a complete report. Lifecycle records do not prove process
+liveness or authorize replay, and existing attempt directories are never overwritten.
+
+New trial plans require protocol version 4. Before creating a workspace, the
+runner validates pinned input declarations, portable file identities, allowed
+changes, explicit model settings and positive time limits. Each repetition must
+schedule every declared condition once, and the default condition must contain
+no collection skills. The protocol binds the complete declared execution-source
+closure; missing, extra or changed source entries invalidate the freeze.
+Allowed changes may name exact files, including new files, or directory prefixes
+ending in `/`. A directory scope includes its descendants, with Windows case
+matching and a path boundary: `src/` does not authorize `src-extra/`. An exact
+file scope permits its necessary parent directories, but not sibling files.
+Scaffold text is materialized as its declared UTF-8 bytes. Protected input and
+scaffold edits or deletions remain scope violations.
+
+Every new protocol declares `collection_policy`: file and directory counts,
+depth, per-file bytes, total bytes, path metadata bytes, collection timeout and
+explicit cache-directory exclusions. The default limits are 2,048 files, 2,048
+directories, depth 32, 8 MiB per file, 64 MiB total content, 4 MiB of path text
+and 60 seconds. Only the declared cache directories and fixed root `.git` and
+`.trial-profile` omissions are allowed. Cache exclusions apply to directories;
+a regular file named `__pycache__` remains source. Tasks targeting caches must
+remove the relevant exclusion before freezing their protocol.
+
+Collection uses a separate process with isolated Python imports, an explicit
+system environment, a 1 GiB job memory limit and a four-process limit. It walks
+held directory handles, opens every admitted file before copying, rejects linked
+objects and rechecks the complete namespace. Captures retain new files, binary
+bytes and empty directories. A failed or interrupted capture is unscored; partial
+output is never admitted for grading. All subject execution must have stopped
+before capture. Namespace rechecks do not establish an atomic snapshot.
+
+`workspace-changes.json` records additions, modifications and deletions of files
+and directories. Captured bytes and this record are authoritative; `patch.diff`
+is a bounded diagnostic view with explicit omissions for binary, large or
+budgeted files. It is not an external benchmark's patch adapter. Native component
+controls cover directory enumeration, links, long paths, bounded collection and
+handle cleanup. Full model execution remains unqualified and disabled.
+
+Version-4 reporting also reconstructs the declared CLI command and checks its
+model, reasoning effort, permission profile, shell environment and runtime read
+grants. Native process records must agree with output byte counts, time/output
+limits, memory/process bounds and cleanup. Only selected controller, submission
+and grading files may appear in the evidence inventory; scratch paths are
+rejected before reading their contents. The collection manifest, native worker
+response, file sizes and digests, process limits and declared collection command
+must agree. Collected input digests must support the reported source changes,
+deletions and scope violations. Rehashing altered records does not make
+contradictory evidence valid. These are consistency checks, not authenticated
+execution evidence. They do not qualify complete runtime graphs or the model
+transport. Provider-resolved model identity remains unavailable and elapsed time
+remains diagnostic. Historical version-2 reports retain their original method
+and limitations.
+
+The current integration reserves a fresh controller directory through the
+operating system's temporary-directory API, separate from the task workspace and
+publishable trial outputs. Controller paths do not inherit checkout depth. Keep
+these private profiles outside published evidence and retain their locations
+in the launch record. A local deterministic-endpoint comparison completed with
+the temporary controller location while the deeper profile stalled in PowerShell
+and reached its execution timeout. This does not establish a universal path-length
+limit or qualify arbitrary temporary-directory configurations.
+The integration supplies an explicit system/tool environment,
+disables automatic skill instructions and memory, and uses the native MXC
+permission profile. Read grants must identify the declared CLI and Python
+runtime directories without exposing the controller home or other workspaces.
+
+Provision the pinned Codex CLI on Windows with `./dev.ps1 codex`. Setup installs
+missing release files and licenses into an owned cache and returns `cli` and
+`readable_root` paths as JSON. `./dev.ps1 doctor` provides the isolated Python
+runtime. Run the model-free context controls with these paths and explicitly
+declare the Python runtime read roots, including the base runtime for a virtual
+environment. Replace the bracketed paths with their locations:
+
+```powershell
+python tools/qualify_trial_context.py --cli <codex.exe> --python <python.exe> --readable-root <CLI-package-root> --readable-root <Python-runtime-root> --output .venv/context-controls --json
+python tools/qualify_trial_context.py --output .venv/context-controls --check --json
+```
+
+Use a new output directory for each run. The native checks include visible
+instruction canaries under an ordinary positive-control profile, their absence
+from the isolated context, the declared instruction intervention, and a bounded
+command through the native `command/exec` protocol. A normal-process
+countercontrol verifies that the owned file and loopback probes are available;
+the isolated command must deny outside reads, outside writes and loopback
+connections while allowing workspace writes and ordinary children. Parent-only
+environment variables and the controller home must stay out of the command's
+environment. No thread, turn or model-inference request is sent.
+
+Prompt comparison retains raw inputs. It normalizes only message IDs, message
+creation timestamps and the native randomized arg0 shim path under the private
+controller home. Semantic equality does not mean byte-identical requests or
+identical tokenization of runtime paths. The checker verifies the complete
+evidence inventory and recomputes the controls; it cannot authenticate execution.
+
+The positive visibility control uses the ordinary `:workspace` profile; the
+tested injection context uses the restrictive `trial` profile. During development,
+the prompt inspector intermittently timed out after emitting its input when
+automatic skill instructions were enabled under the restrictive profile. Those
+failed controls remain retained. This recipe does not qualify automatic skill
+discovery or natural skill routing under that combination.
+
+The runner preserves raw grading-driver streams and hashes explicitly selected
+controller outputs, collected submission files and native grading streams.
+It does not recursively traverse grader scratch or include controller profiles.
+Launch failures, missing evidence and output-limit failures remain unscored
+infrastructure failures. Context controls do not qualify the complete model
+execution, authentication, collection and grading path; the model-launch refusal
+remains in force until that complete boundary is independently qualified.
 
 ## Planning an independent-task comparison
 

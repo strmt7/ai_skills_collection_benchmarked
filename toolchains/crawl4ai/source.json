@@ -23,7 +23,7 @@
     "CATALOG_BUILD_NOTICE.txt": "de85bf2754a67294cac7f62184333cf8f6c99c3a2e019f1f8ef0c2004c1c5d4d"
   },
   "qualified_wheel_sha256": "89ec8a5f2d95cc25d637dc8ae21726c6dff2c16f33979a002ebba53b7e1f0adc",
-  "qualified_platform": "Windows x64 CPython 3.13.17",
+  "qualified_platform": "Windows x64 CPython 3.13.18",
   "qualification_scope": "Native component controls; no coding-agent efficacy score",
   "runtime_files": [
     {

@@ -42,6 +42,75 @@ repeat verification when required by project policy, changed inputs, observed
 failures or unresolved risk. Keep public documentation as detailed as its
 readers need; token efficiency must preserve technical meaning and usability.
 
+Develop and publish cohesive, verified batches. Avoid frequent small pushes;
+prioritize substantive implementation and run the complete pre-push gates
+before publishing the batch.
+
+## Process and host resource lifecycle
+
+Keep every task-owned process bounded and accountable throughout development.
+Use the repository's owned-process runners with time, output, memory and child
+process limits. Retain actual cleanup results. Track ownership through the
+launch handle, process identity and creation time; a process name alone is
+insufficient. Start background helpers hidden and give them an explicit stop
+path before starting them.
+
+On success, failure and cancellation, stop task-owned children, close streams,
+handles and temporary listeners, wait for termination and verify that the owned
+job has no remaining processes. Preserve partial evidence and mark interrupted
+work incomplete. An observation timeout or lock file does not establish that a
+process stopped: inspect the same live handle before retrying or restarting.
+
+Do not create persistent development services or scheduled jobs without an
+explicit task requirement. Stop temporary services and remove task-owned
+temporary schedules when their task ends. Persistent product services require
+a documented lifecycle. Preserve unrelated applications,
+other tasks and host-managed agent or connector processes; never kill processes
+by executable name or change system services to make a test pass.
+
+Budget concurrency against available RAM, CPU and disk activity. Prefer bounded
+worker counts, reuse admitted environments and avoid redundant full-tree scans
+or duplicate installations. Check for orphaned task-owned processes and leaked
+handles, streams or listeners before reporting completion. Record the checks
+and their limits; do not infer absence of host-wide memory leaks from a passing
+unit test. Keep source and required failure evidence while cleaning up only
+verified task-owned disposable resources.
+
+## Portable, automatic dependency setup
+
+Support the declared operating system and architecture without depending on a
+particular host, username, installation directory, AI agent or preinstalled app.
+Resolve paths from the current checkout or explicit configuration. Validate any
+discovered executable's version, architecture and required capabilities before
+use; a familiar filename or directory is insufficient evidence.
+
+Supported entrypoints must automatically provision missing declared dependencies
+into isolated, owned caches using verified downloads and complete compatible
+locked graphs. Use the newest qualified stable versions. Preserve other
+applications, shared environments, global packages, persistent PATH, registry
+settings and shell profiles. Do not require administrator access, silently
+switch operating systems, disable host policies or run an unverified remote
+installer. Install only the dependencies needed for the selected operation.
+
+Check installation results and actual runtime readiness. Retain bounded failure
+evidence, preserve existing owned profiles during recovery and prevent concurrent
+installations from corrupting a cache. Missing dependencies trigger safe automatic
+setup; a failed download, incompatible platform or failed qualification requires
+an exact diagnostic rather than a fabricated success. Host-specific paths in
+ignored execution receipts are observations, never portable runtime defaults.
+
+For repository-built distributions, admit the complete package contents,
+required modules, metadata and licenses before installation or import. Matching
+build hashes and a passing dependency resolver do not establish that a package
+contains its required runtime files. Preserve a failing package as a negative
+control and verify both rejection and a fresh installation of the corrected build.
+
+Preserve admitted interpreter bytes during use. Controlled isolated Python
+children need `-B`; `-I` ignores Python environment variables, so an environment
+setting alone is insufficient. Set `PYTHONDONTWRITEBYTECODE=1` for daemon
+entrypoints and retain it when rebuilding child environments. Qualify cache
+reuse after actual indexing and daemon execution, as well as installation.
+
 ## Pinned Karpathy agent baseline
 
 Adapted from
@@ -114,12 +183,23 @@ single-session rule; no collaboration agents or parallel model trials are allowe
 The exception also permits the runner/grader integration and execution/collection
 qualification required for those experiments. Keep the launch refusal until
 that complete boundary passes independent controls. Security-scanner,
-code-scanning-alert, dependency-advisory and history-scan remediation remain
-paused. This exception grants no release, publication or access-policy override.
+code-scanning-alert and history-scan remediation remain paused. The owner's
+subsequent dependency-maintenance instruction permits package and tool updates
+and Dependabot remediation under the qualification requirements below.
+This exception grants no release, publication or access-policy override.
 
 ## Quality Bar
 
 - Verify changes with local commands before committing or pushing.
+- Write maintained source with the explicit line endings declared in
+  `.gitattributes`; use explicit LF writes for authored text and preserve native
+  capture/provenance bytes. Before publishing, verify that the prepared Git
+  blobs match the qualified source bytes, rather than silently relying on
+  checkout or clean-filter conversions.
+- Freeze all inputs consumed by a running check, including fixtures, workflows
+  and documentation. Bind batch qualification to an immutable checkout or a
+  verified before/after source fingerprint. Preserve results from changed inputs
+  as historical evidence and rerun the affected checks on the final source.
 - Do not commit real credentials or provider-shaped example credentials.
 - Prefer smaller code when it preserves behavior and improves maintainability.
 - Do not claim benchmark success unless real run artifacts exist and are validated.
@@ -214,7 +294,7 @@ prerequisites documented in [`CONTRIBUTING.md`](CONTRIBUTING.md).
 - **Mandatory agent tools**: `python3 tools/validate_agent_tool_policy.py --check --json` verifies all three local skills, policy links and every generated entrypoint.
 - **Static benchmarks freshness**: `python3 tools/run_static_benchmarks.py --check`.
 - **Skill risk audit freshness**: `python3 tools/audit_skill_quality.py --check`.
-- **Tests**: `python3 -m pytest -q -n auto` runs the full suite in parallel under `pytest-xdist`.
+- **Tests**: `python3 -m pytest -q -n 2` runs the full suite with a bounded local worker count. Reduce it on constrained hosts; increase it only after checking available resources. Hosted CI may use `-n auto` on its declared runner capacity.
 - **Compile check**: `python3 -m compileall -q tools tests benchmarks/agent-effectiveness/graders`.
 - **Secrets**: `python3 tools/check_no_secret_patterns.py --history` (in-repo regex + entropy) plus `gitleaks` v8.30.1 (MIT, pinned binary) as a second-opinion gate. Both checks cover mirrored sources and recorded evidence; `.gitleaks.toml` contains no path exemptions.
 

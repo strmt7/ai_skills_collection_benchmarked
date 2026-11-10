@@ -130,6 +130,33 @@ def test_installed_provider_core_and_full_dependency_graph_are_admitted(admitted
         wheel.installed_files(pin)
 
 
+@pytest.mark.parametrize("location", ["logical", "canonical"])
+def test_installed_provider_accepts_windows_application_data_redirection(admitted, monkeypatch, location):
+    root, _, _, pin, members = admitted
+    physical = root / "physical-runtime"
+    logical = root / "application-data-runtime"
+    providers = physical / "Lib/site-packages"
+    contents = {name: raw for name, raw in members.items() if name.startswith("cocoindex_code/")}
+    contents["cocoindex/engine.pyd"] = b"opaque native fixture"
+    for name, raw in contents.items():
+        target = providers / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(raw)
+
+    original_resolve = Path.resolve
+
+    def redirected_resolve(path, *args, **kwargs):
+        return physical if path == logical else original_resolve(path, *args, **kwargs)
+
+    monkeypatch.setattr(Path, "resolve", redirected_resolve)
+    monkeypatch.setattr(wheel.sys, "prefix", str(logical))
+    monkeypatch.setattr(wheel, "installed_versions", lambda: pin["runtime_versions"])
+    installed = logical if location == "logical" else physical
+    distribution = SimpleNamespace(locate_file=lambda name: installed / "Lib/site-packages" / name)
+    monkeypatch.setattr(wheel.importlib.metadata, "distribution", lambda _name: distribution)
+    assert wheel.installed_files(pin) == len(contents)
+
+
 @pytest.fixture
 def local_model(tmp_path, monkeypatch):
     root = tmp_path / "repo"
@@ -199,6 +226,37 @@ def test_model_hash_records_reject_duplicate_paths(local_model):
     (root / "toolchains/cocoindex-code/model.json").write_text(json.dumps(proof), encoding="utf-8")
     with pytest.raises(ValueError, match="unique files"):
         runtime.check_model(home)
+
+
+def test_provider_recovery_keeps_an_existing_pinned_model_binding_without_rewriting_it(local_model):
+    root, original, _ = local_model
+    base = root / ".venv/corpus"
+    runtime.configure(original, base, check=False)
+    before = {path.relative_to(base).as_posix(): path.read_bytes() for path in base.rglob("*") if path.is_file()}
+    runtime.configure(root / ".venv/replacement-provider", base, check=True)
+    assert {
+        path.relative_to(base).as_posix(): path.read_bytes() for path in base.rglob("*") if path.is_file()
+    } == before
+
+
+@pytest.mark.parametrize("change", ["model-bytes", "extra-code", "external-path", "cloud-provider"])
+def test_retained_model_binding_still_requires_exact_local_model_bytes_and_settings(local_model, change):
+    root, home, _ = local_model
+    base = root / ".venv/corpus"
+    runtime.configure(home, base, check=False)
+    settings = base / "config/global_settings.yml"
+    if change == "model-bytes":
+        (home / "model/model.safetensors").write_bytes(b"changed")
+    elif change == "extra-code":
+        (home / "model/custom.py").write_bytes(b"must not load")
+    else:
+        value = json.loads(settings.read_bytes())
+        value["embedding"]["model" if change == "external-path" else "provider"] = (
+            str(root.parent / "external") if change == "external-path" else "cloud"
+        )
+        settings.write_text(json.dumps(value), encoding="utf-8")
+    with pytest.raises(ValueError):
+        runtime.configure(root / ".venv/replacement-provider", base, check=True)
 
 
 @pytest.mark.parametrize("change", ["revision", "size"])
