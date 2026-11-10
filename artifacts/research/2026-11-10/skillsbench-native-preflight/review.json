@@ -1,0 +1,157 @@
+{
+  "admitted_wheel_files": 601,
+  "benchflow_version": "0.9.2",
+  "confirmatory_eligible": false,
+  "development_task": "dialogue-parser",
+  "installed_native_wheel_files_verified": 600,
+  "installed_windows_graph_matches_all_audited_coordinates": true,
+  "linux_graph": {
+    "affected_projects": 0,
+    "all_resolved_projects_queried": true,
+    "exceptions": [],
+    "findings": [],
+    "lock_sha256": "e5f7b811e1548c094fe0e5d3d75f82e5ee1d0e6a67b1741863a0c39e0e43b446",
+    "model_requests": 0,
+    "native_evaluator": "benchflow 0.9.2",
+    "package_installed": false,
+    "resolved_projects_queried": 140,
+    "source": "Official OSV batch API; snapshot of reported PyPI coordinate advisories, not source-code scanning or a security guarantee"
+  },
+  "linux_runtime_installed": false,
+  "metadata_sources": {
+    "advisories": "https://api.osv.dev/v1/querybatch",
+    "benchflow": "https://pypi.org/project/benchflow/0.9.2/",
+    "skillsbench": "https://github.com/benchflow-ai/skillsbench"
+  },
+  "model_trials_run": 0,
+  "native_cli_version_command_passed": true,
+  "native_oracle_executed": false,
+  "native_verifier_executed": false,
+  "official_suite_score": null,
+  "original_task_modified": false,
+  "maintained_tool_or_skill_modified_by_native_preflight": false,
+  "purpose": "Public development evaluator admission; not a model benchmark or official suite score",
+  "qualification_limits": [
+    "Native positive and negative oracle/verifier controls remain required in an explicitly qualified POSIX benchmark environment.",
+    "No fcntl stub, upstream patch, host OS change, container creation or service creation was used.",
+    "Linux dependency resolution and advisory lookup do not prove runtime or evaluator behavior.",
+    "The public development task and exposed oracle cannot enter untouched confirmatory evaluation.",
+    "No task solutions, verifier expectations or benchmark-specific routing may be added to candidate skills."
+  ],
+  "schema_version": 1,
+  "skillsbench_revision": "f860ecf02ef53412a030f8661c83d644b739ff01",
+  "source_package_modified": false,
+  "task_files": [
+    {
+      "bytes": 11357,
+      "git_blob": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "path": "LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "bytes": 1643,
+      "git_blob": "916197a5674bf42f3444986f4f9055a8fcd9a79d",
+      "path": "pyproject.toml",
+      "sha256": "d896026bbbcdd9efdc9495b3e47c097812c0f8ce2e50207bf980fd983ecf431f"
+    },
+    {
+      "bytes": 429,
+      "git_blob": "210256aca6bb2480830facc4b305997fa62788e1",
+      "path": "tasks/dialogue-parser/environment/Dockerfile",
+      "sha256": "e0fdab0e028c11d5437caf3b827f10aa65fcf224c8a9689fecc7fa49f3ec92e7"
+    },
+    {
+      "bytes": 22785,
+      "git_blob": "68c901006879b5d3c9078ab37dda429c36478c68",
+      "path": "tasks/dialogue-parser/environment/script.txt",
+      "sha256": "f63dcc28386cb2f963362eb78d40af75eb362945646c3c86e2a699bb2f14b409"
+    },
+    {
+      "bytes": 2386,
+      "git_blob": "7d4b6066567b2e2f69f31c41247f11b0f6b22a93",
+      "path": "tasks/dialogue-parser/environment/skills/dialogue-graph/SKILL.md",
+      "sha256": "03d711b93219cec1cd70d823d595e7c5adffc058c5910b94886fe6cc374f08d8"
+    },
+    {
+      "bytes": 5793,
+      "git_blob": "d0e81b40e0970f170ca4e180fea0bc8ad277e3af",
+      "path": "tasks/dialogue-parser/environment/skills/dialogue-graph/scripts/dialogue_graph.py",
+      "sha256": "f169725b80f5d63bddab1f2b5bbe1114643952defff760ef9e2e1096a93f53de"
+    },
+    {
+      "bytes": 60358,
+      "git_blob": "cb6e68fa6eb4d9d352df3aa1aa72e45e1241a031",
+      "path": "tasks/dialogue-parser/oracle/dialogue.json",
+      "sha256": "7c26e8db8b9624f73d3f0ee6406a5eda0a2044ed401efbb98d9eff8092a57f15"
+    },
+    {
+      "bytes": 22785,
+      "git_blob": "68c901006879b5d3c9078ab37dda429c36478c68",
+      "path": "tasks/dialogue-parser/oracle/script.txt",
+      "sha256": "f63dcc28386cb2f963362eb78d40af75eb362945646c3c86e2a699bb2f14b409"
+    },
+    {
+      "bytes": 8677,
+      "git_blob": "0efb8c4fd7f700a6a46078a68fc07032dd80299f",
+      "path": "tasks/dialogue-parser/oracle/solution.py",
+      "sha256": "583e6513768600d8daa0e25c882cf3efd78d063c27eb66662591e0cb8a1799e2"
+    },
+    {
+      "bytes": 972,
+      "git_blob": "0b6e5a676f62a5d54f9642816ce17a51c6709e61",
+      "path": "tasks/dialogue-parser/oracle/solve.sh",
+      "sha256": "5973e2fe36b0e6c7219ef1ced877580eea3519b7433ef8254113d8cadfaf442e"
+    },
+    {
+      "bytes": 2284,
+      "git_blob": "3f3216f08b9b0b2250119754e7e568174fa64477",
+      "path": "tasks/dialogue-parser/task.md",
+      "sha256": "f96d2d4f1332d6bb55d699e654f05a81334db8015b875af44f6f473565b8a390"
+    },
+    {
+      "bytes": 1210,
+      "git_blob": "7eece02e946716c595c1253530671d1d9140ac4a",
+      "path": "tasks/dialogue-parser/verifier/test.sh",
+      "sha256": "57d2cb2cbd76d173357da476eb525e07678aabbb4b22392563718fe867e12f67"
+    },
+    {
+      "bytes": 12521,
+      "git_blob": "5e7c38966446c3572483c2e03951f3b47e8e5035",
+      "path": "tasks/dialogue-parser/verifier/test_outputs.py",
+      "sha256": "d0effcfa8ba898260bce69ba8a0c4852f4959a83e9130cc69c13847f0f05b01c"
+    },
+    {
+      "bytes": 602206,
+      "git_blob": "af5883887a0e19419b1c9d2876069311f1fc81ec",
+      "path": "uv.lock",
+      "sha256": "d34d977decefa1a0365b70830884c6f8e15a8f56e25559ef0207c540b25c28bf"
+    }
+  ],
+  "task_verifier_semantics": "test.sh writes reward.txt from native CTRF passed/tests and exits zero even for an incorrect submission; do not derive task success from shell status alone.",
+  "wheel_sha256": "0ede69cab59e8c397c58e80d3c68d60240ede0722c03e495dbd2400329d9cf9e",
+  "windows_failures": [
+    {
+      "log_sha256": "feb468c62ff2cff5341994565400d463c183ff9337e60deb3367f34cc5b87b82",
+      "method": "Isolated CPython with PYTHONUTF8 environment variable",
+      "result": "UnicodeDecodeError during default-encoding read of harvey_lab_acp_shim.py"
+    },
+    {
+      "log_sha256": "8a15e40c194eb3c90d20cd9e325123af76a2ca57bc490d1362ed53ab83512797",
+      "method": "Explicit -I -X utf8 -B runtime flags; unchanged package",
+      "result": "Encoding error cleared; unconditional import fcntl prevents native Windows command execution"
+    }
+  ],
+  "windows_graph": {
+    "affected_projects": 0,
+    "all_resolved_projects_queried": true,
+    "exceptions": [],
+    "findings": [],
+    "lock_sha256": "a89c8b918c91e9a7b94cee85e4e6d137751eac085f473317f3bff4719b1ac437",
+    "model_requests": 0,
+    "native_evaluator": "benchflow 0.9.2",
+    "package_installed": false,
+    "resolved_projects_queried": 141,
+    "source": "Official OSV batch API; snapshot of reported PyPI coordinate advisories, not source-code scanning or a security guarantee"
+  },
+  "windows_schema_check_passed": false
+}

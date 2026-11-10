@@ -36,6 +36,20 @@ availability, Windows command resolution and quoting, upstream package drift,
 or Linux type-checking errors. Hosted acceptance and the paused security gates
 remain release requirements; a subsequent source revision needs its own checks.
 
+The [follow-up checkpoint](https://github.com/strmt7/ai_skills_collection_benchmarked/commit/5a51fca0e994a574820ef673a1b62e609c05f9b6)
+finished all 15 triggered workflows: 13 passed and the two paused security gates
+failed. Windows validation passed on a targeted rerun with 2,570 tests and 56
+skips; its initial Node timeout remains an unresolved intermittent finding.
+The [follow-up review](../artifacts/research/2026-11-10/hosted-repair-follow-up/review.json)
+retains both attempts. A passing rerun does not establish a repair.
+
+The [native SkillsBench preflight](research-skillsbench-native.md) admitted a
+public development package and the official evaluator without changing either.
+Windows command validation is blocked by an upstream POSIX-only import. Separate
+dependency graphs resolve, but native oracle/verifier and model execution remain
+unqualified. The next environment must preserve the authors' scoring semantics,
+have explicit resource ownership and leave the workstation's OS unchanged.
+
 The earlier nine matched development attempts reached a ceiling: each of the
 default, Karpathy and experimental conditions passed three times. That result
 does not demonstrate an advantage. Official external-suite scores for this

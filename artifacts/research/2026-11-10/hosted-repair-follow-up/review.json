@@ -1,0 +1,47 @@
+{
+  "active": 0,
+  "automatic_retry_added": false,
+  "completed": 15,
+  "compressed_inventory_sha256": "71c3001eb68ee53e0311e255763c78f6f0e09cbf548112c18cdd31a7ce6b4d1e",
+  "failed_workflows": [
+    {
+      "id": 42806437083,
+      "name": "Secret scan",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42806437083"
+    },
+    {
+      "id": 42806437332,
+      "name": "CodeQL",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42806437332"
+    }
+  ],
+  "failure": 2,
+  "head": "5a51fca0e994a574820ef673a1b62e609c05f9b6",
+  "model_efficacy_claim": false,
+  "push_workflows": 15,
+  "raw_inventory_sha256": "c079c46489784451f5cbb16aee81b2092c33af426cb3bd259eff5cff9c2011a7",
+  "release_created": false,
+  "schema_version": 1,
+  "security_remediation_paused": true,
+  "success": 13,
+  "windows_validation": {
+    "decoded_log_utf8_sha256": [
+      "ac4913d0193ada3e9ee446c4684fef830fb223f2037929ec125cae5d78242e8b",
+      "c264b7c2086a96603f324ccfd5c035c074bac2991968a2ee131dd8c666587808"
+    ],
+    "initial_job": 129796662685,
+    "initial_result": {
+      "failed": 1,
+      "passed": 2569,
+      "skipped": 56
+    },
+    "interpretation": "The targeted rerun passed; the initial timeout remains an intermittent engineering finding. Separate cancellation cleanup remediation requires qualification on its own source revision.",
+    "original_node_hang_root_cause_resolved": false,
+    "run_id": 42806437214,
+    "targeted_rerun_job": 129986734404,
+    "targeted_rerun_result": {
+      "passed": 2570,
+      "skipped": 56
+    }
+  }
+}

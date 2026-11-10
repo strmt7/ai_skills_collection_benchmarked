@@ -11,6 +11,12 @@ contains 18 reference methods, including frameworks as well as datasets. Three
 additional execution candidates were reviewed: τ-Bench, LiveCodeBench and
 ProgramBench. These counts are not counts of completed benchmark evaluations.
 
+The [native SkillsBench preflight](research-skillsbench-native.md) admitted the
+current task format and BenchFlow 0.9.2 distribution. It preserved two Windows
+compatibility failures and resolved separate platform dependency graphs. Native
+oracle/verifier execution and full harness qualification remain required;
+installation and the version command are not benchmark results.
+
 ## Execution priorities
 
 Use the authors' datasets, scoring implementations and native result formats.

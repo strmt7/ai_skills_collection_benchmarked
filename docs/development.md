@@ -10,6 +10,11 @@ for each component. The qualified [Crawl4AI](../toolchains/crawl4ai/README.md) a
 x64. Their guides cover fresh isolated setup without a fixed host path or AI
 client.
 
+Follow the [agent efficiency rules](../AGENTS.md#communication-and-execution-efficiency):
+bound source reads and tool output, reuse applicable evidence and maintained
+runners, and reserve the complete required checks for a frozen publication
+batch. These rules preserve reasoning depth, verification and failure reporting.
+
 Catalog validation and Python unit tests exercise supported Python 3.11–3.14
 on Linux and the current validation runtime on Windows. Native provider controls
 use their documented Windows interpreter and dependency graph. These checks need
@@ -23,6 +28,12 @@ Some specialized jobs use their own documented interpreter versions. Python
 and installed agent runtimes need separate qualification; an offline catalog
 check does not prove their behavior. On Windows, use the active environment's
 `Scripts/python.exe` in place of `python3` in the commands below.
+
+The main offline-validation matrix explicitly provisions Node 26.13.0 for its
+native controls. When qualifying external Python tools in isolated mode, use
+explicit text encodings and, where required by the tool, `-I -X utf8 -B`.
+`-I` ignores `PYTHONUTF8`; setting that environment variable does not establish
+UTF-8 mode for an isolated interpreter.
 
 ## Set up validation from a fresh clone
 
@@ -42,6 +53,12 @@ settings and shell profiles. Missing components trigger automatic setup;
 recovery preserves prior profiles. See the
 [bootstrap guide](../toolchains/bootstrap/README.md) for cache selection and
 readiness diagnostics. Native provider setup remains documented separately.
+
+The managed Windows environment enables Git's long-path support for child
+commands without changing host Git configuration. Keep full-suite temporary
+directories outside the checkout: Git's non-repository fixtures must not
+discover the collection as a parent repository. The automatic entrypoint
+provides a private temporary directory; use its default for the full suite.
 
 For an existing supported Python environment or the Linux CI jobs, use the
 locked setup below.

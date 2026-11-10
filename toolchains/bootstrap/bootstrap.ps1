@@ -480,6 +480,9 @@ if ([string]::IsNullOrEmpty($CommandBase64)) {
     $environment['VIRTUAL_ENV'] = [IO.Path]::GetDirectoryName([IO.Path]::GetDirectoryName($python))
     $environment['AI_SKILLS_BOOTSTRAP_DIAGNOSTICS'] = $logs
     $environment['GIT_CONFIG_NOSYSTEM']='1'; $environment['GIT_CONFIG_GLOBAL']='NUL'; $environment['GIT_OPTIONAL_LOCKS']='0'
+    $environment['GIT_CONFIG_COUNT']='1'
+    $environment['GIT_CONFIG_KEY_0']='core.longpaths'
+    $environment['GIT_CONFIG_VALUE_0']='true'
     $environment['AI_SKILLS_GIT']=$git
     $environment['AI_SKILLS_BASH']=$bash
     $environment['AI_SKILLS_UNIX_BIN']=[IO.Path]::GetDirectoryName($bash)

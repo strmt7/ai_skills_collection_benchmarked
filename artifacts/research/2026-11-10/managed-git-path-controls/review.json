@@ -1,0 +1,85 @@
+{
+  "baseline_head": "5a51fca0e994a574820ef673a1b62e609c05f9b6",
+  "failed_full_suite": {
+    "diagnosed_mechanisms": [
+      "A temporary directory inside the checkout can discover the parent Git repository.",
+      "The isolated Git environment omitted core.longpaths; native 247-unit working-directory controls failed on deep files and passed with command-scoped or environment-scoped configuration."
+    ],
+    "errors": 108,
+    "failed": 20,
+    "fixture_location": "Inside the checkout; invalid for Git non-repository controls",
+    "passed": 2483,
+    "qualification_sha256": "b47f37aec0ff09f45687edc6fd6922c9b2452fb0c1cd76d85bed195f5c4af7d3",
+    "rerun_with_proper_fixture_isolation_required": true,
+    "skipped": 17
+  },
+  "git_path_reproduction": {
+    "cases": [
+      {
+        "case": "short",
+        "exit_code": 0,
+        "filename_too_long": false,
+        "path_utf16_units": 162
+      },
+      {
+        "case": "long-default",
+        "exit_code": 1,
+        "filename_too_long": true,
+        "path_utf16_units": 247
+      },
+      {
+        "case": "long-option",
+        "exit_code": 0,
+        "filename_too_long": false,
+        "path_utf16_units": 247
+      },
+      {
+        "case": "long-environment",
+        "exit_code": 0,
+        "filename_too_long": false,
+        "path_utf16_units": 247
+      }
+    ],
+    "global_git_configuration_changed": false,
+    "model_trials_run": 0,
+    "parent_repository_discovered_from_in_checkout_temporary_directory": true,
+    "source_modified": false
+  },
+  "long_working_directory_limit": [
+    {
+      "case": "long-default",
+      "exit_code": 128,
+      "filename_too_long": true,
+      "path_utf16_units": 316
+    },
+    {
+      "case": "long-option",
+      "exit_code": 128,
+      "filename_too_long": true,
+      "path_utf16_units": 315
+    },
+    {
+      "case": "long-environment",
+      "exit_code": 128,
+      "filename_too_long": true,
+      "path_utf16_units": 320
+    }
+  ],
+  "model_trials_run": 0,
+  "native_setup": {
+    "host_state_sha256": "02165b07f147f77e3890059dd423686b5acc3cb64297fc8c06ca604025cfe0d8",
+    "named_controls": 33,
+    "owned_process_runs": 35,
+    "passed": true,
+    "persistent_host_state_unchanged": true,
+    "qualification_sha256": "8a20547e8c4452e9fe4f0d8a4615f9603ce46848770f59742de6366d176c426c",
+    "remaining_owned_processes": 0
+  },
+  "release_created": false,
+  "schema_version": 1,
+  "scope": "Native Windows setup and tracked-file behavior; not unlimited working-directory path support or a coding-agent benchmark",
+  "source_sha256": {
+    "tests/qualify_windows_bootstrap.ps1": "0a34a53e072bf3a0b7a73c0192d0bf226857cbf725eeffcd89cb24ae5c8a5c55",
+    "toolchains/bootstrap/bootstrap.ps1": "d80ab6dd334d8fb062d8f8c50f43484dbefd9443fd6f93030601680d3ce72dfa"
+  }
+}

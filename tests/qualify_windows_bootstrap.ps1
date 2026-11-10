@@ -74,6 +74,11 @@ $privateTemporary = Join-Path ([IO.Path]::GetTempPath()) ("skills-bootstrap ' " 
 Write-Record (Join-Path $privateTemporary 'owner.json') @{purpose='ai-skills-bootstrap-qualification'; source_root=$root; diagnostics=$output}
 $environment['TEMP'] = $privateTemporary
 $environment['TMP'] = $privateTemporary
+$environment['GIT_CONFIG_COUNT'] = '2'
+$environment['GIT_CONFIG_KEY_0'] = 'core.longpaths'
+$environment['GIT_CONFIG_VALUE_0'] = 'false'
+$environment['GIT_CONFIG_KEY_1'] = 'alias.parent-scope-probe'
+$environment['GIT_CONFIG_VALUE_1'] = 'must-not-cross'
 $shell = Join-Path ([Environment]::GetFolderPath('System')) 'WindowsPowerShell/v1.0/powershell.exe'
 $entry = Join-Path $root 'dev.ps1'
 $controls = New-Object 'System.Collections.Generic.List[object]'
@@ -194,6 +199,37 @@ for name in ("git","uv","node","java","javac","bash","sleep","cygpath"):
     subprocess.run([executable,"--version"],check=True)
 '@
     [void](Invoke-Control 'tools' @('python','-c',$toolProbe))
+    $gitPathProbe = @'
+import os,subprocess,tempfile
+from pathlib import Path
+expected={"GIT_CONFIG_NOSYSTEM":"1","GIT_CONFIG_GLOBAL":"NUL","GIT_CONFIG_COUNT":"1","GIT_CONFIG_KEY_0":"core.longpaths","GIT_CONFIG_VALUE_0":"true"}
+if any(os.environ.get(name)!=value for name,value in expected.items()):
+    raise RuntimeError("Managed Git configuration differs from the isolated long-path contract")
+git=os.environ["AI_SKILLS_GIT"]
+parent=Path(os.environ["TEMP"]).resolve(strict=True)
+with tempfile.TemporaryDirectory(prefix="git-path-",dir=parent) as directory:
+    repository=Path(directory).resolve(strict=True)
+    if not repository.is_relative_to(parent):
+        raise RuntimeError("Git path fixture escaped its owned temporary directory")
+    subprocess.run([git,"-C",str(repository),"init","-q"],check=True,timeout=10)
+    resource=repository
+    while len(str(resource).encode("utf-16-le"))//2<=300:
+        resource=resource/"long-path-component-0123456789"
+    resource.mkdir(parents=True)
+    resource=resource/"fixture.txt"
+    content=b"qualified long-path Git input\n"
+    resource.write_bytes(content)
+    relative=resource.relative_to(repository).as_posix()
+    subprocess.run([git,"-C",str(repository),"add","--",relative],check=True,timeout=10)
+    observed=subprocess.run([git,"-C",str(repository),"show",":"+relative],check=True,capture_output=True,timeout=10)
+    if observed.stdout!=content:
+        raise RuntimeError("Git did not preserve the actual long-path fixture bytes")
+    inherited=subprocess.run([git,"-C",str(repository),"config","--get","alias.parent-scope-probe"],capture_output=True,timeout=10)
+    if inherited.returncode!=1 or inherited.stdout:
+        raise RuntimeError("Parent Git configuration crossed the isolated runtime boundary")
+    print("Managed Git tracked and read a native path beyond 300 UTF-16 units")
+'@
+    [void](Invoke-Control 'git-long-path' @('python','-c',$gitPathProbe))
     [void](Invoke-Control 'exit-code' @('python','-c','raise SystemExit(7)') 7)
     $transport = Invoke-Control 'default-temp-git-transport' @('python','-m','pytest','-q','--no-cov','-o','addopts=','tests/test_ci_transport.py::test_frozen_trial_protocol_survives_lf_git_transport')
     if (-not $transport.Contains('1 passed')) { throw 'The default temporary location did not pass actual Git transport' }

@@ -46,6 +46,31 @@ Develop and publish cohesive, verified batches. Avoid frequent small pushes;
 prioritize substantive implementation and run the complete pre-push gates
 before publishing the batch.
 
+Reduce context and repeated work without reducing reasoning quality:
+
+- Read the current task state, applicable instructions and relevant ledger
+  entries first. Retrieve a bounded category or skill subset; do not repeatedly
+  load the complete catalog, ledger, historical transcript or report bundle.
+- Give searches and tool output a scope and size budget. Return relevant paths,
+  counts, source spans and failure excerpts. Filter large API responses and logs
+  before displaying them; retain complete required evidence in owned files.
+- Batch independent reads and checks when their combined resource use fits the
+  host budget. Keep dependent operations, source mutations and publication
+  sequential. Do not repeat unchanged observations merely to narrate activity.
+- Reuse maintained commands and runners. Prefer explicit configuration for
+  repeated qualification variations over copying scripts to change paths or
+  versions. Preserve necessary frozen inputs, negative results and their exact
+  implementation identities.
+- Use focused checks while editing. Freeze each publication batch, run all
+  required pre-push checks, and reuse results only while their source bytes,
+  configuration, environment and scope remain applicable. Relevant changes,
+  failures or uncertainty require fresh verification; efficiency never permits
+  skipping a required gate or treating a rerun as a repair.
+- Keep continuity notes short and factual: objective, constraints, current head,
+  pending changes, verified results, unresolved failures and the next useful
+  action. Link durable evidence instead of repeating it. Do not record private
+  reasoning or call an unresolved limitation complete.
+
 ## Process and host resource lifecycle
 
 Keep every task-owned process bounded and accountable throughout development.
