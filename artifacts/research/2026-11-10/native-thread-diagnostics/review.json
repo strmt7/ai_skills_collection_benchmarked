@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "scope": "Replace a shell-dependent test diagnostic with the supported Windows Toolhelp API; preserve original Node rejection and cancellation behavior.",
+  "observed_hosted_failure": {
+    "commit": "00f7e9653d06f424d91ed22097e83d1f4b49b913",
+    "run_id": 42878561357,
+    "job_id": 130048339387,
+    "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42878561357",
+    "test": "tests/test_e2e_response_repair.py::test_thread_snapshot_diagnostic_uses_the_current_process",
+    "mechanism": "Starting a PowerShell subprocess to inspect the current process exceeded the existing five-second timeout.",
+    "windows_tests": {"passed": 2571, "failed": 1, "skipped": 56},
+    "retry_used_as_repair": false
+  },
+  "primary_sources": [
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/toolhelp/traversing-the-thread-list",
+      "native_capture_sha256": "36570589324543d4b26f2e6e7992cbcbfdd4751d444edcb2eb7c9989fb1de0da",
+      "reviewed_contract": "Acquire a thread snapshot, initialize THREADENTRY32, traverse entries, filter owner PID and close the acquired handle."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/tlhelp32/ns-tlhelp32-threadentry32",
+      "native_capture_sha256": "61de9e0595941a512182872f796f3f74c44dcee2d2aac77f6f2a8338598e5e9d",
+      "reviewed_contract": "Use the documented seven-field structure and report actual thread IDs and base priorities."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/tlhelp32/nf-tlhelp32-thread32next",
+      "native_capture_sha256": "9e16b21e1221da38e5380c77aae144b09a6cd7af836ac3cca4cf6c24c7858d76",
+      "reviewed_contract": "Distinguish normal ERROR_NO_MORE_FILES termination from an enumeration error."
+    }
+  ],
+  "research": {
+    "provider_version": "0.9.5+catalog.portable4",
+    "all_sources_http_200": true,
+    "scope_reviewed": true,
+    "robots_checks": true,
+    "external_llm": false,
+    "stealth_or_challenge_bypass": false
+  },
+  "qualification": {
+    "diagnostic_probe": "With shell discovery unavailable and subprocess.run forbidden, the original helper returned no snapshot; the revised helper returned native thread entries for the current process.",
+    "focused_windows_tests": {"passed": 11, "failed": 0},
+    "owned_processes_remaining_after_focused_check": 0,
+    "negative_controls": ["invalid snapshot", "enumeration error", "cancellation"],
+    "handle_contract": "Close exactly an acquired snapshot, including when enumeration raises; do not close an invalid handle.",
+    "timeout_increased": false,
+    "test_suppressed": false,
+    "original_node_artifact_modified": false
+  },
+  "limits": [
+    "Toolhelp does not provide wait states or per-thread CPU time; these fields are explicitly unavailable.",
+    "Focused checks do not establish complete hosted acceptance or host-wide absence of leaks.",
+    "No model trials, token-saving percentage or agent-effectiveness claim follows from this change."
+  ]
+}

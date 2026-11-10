@@ -1,0 +1,21 @@
+{
+  "commit": "3dc497a7f858c774d6e15b25e8c6120ef3a0eda8",
+  "source_path": "skills/caveman/SKILL.md",
+  "git_blob": "9a94044529e5ee1576361c891b4a271504518e6f",
+  "source_sha256": "415d43518f2b1a9498c15a445d4657117b129ee5e81b19454ce348439cc6672b",
+  "native_url": "https://raw.githubusercontent.com/JuliusBrussee/caveman/3dc497a7f858c774d6e15b25e8c6120ef3a0eda8/skills/caveman/SKILL.md",
+  "native_capture_sha256": "7ede28aac475fcbd642933aa78ee6458529930ac39a2b291e69db990ddb5abfe",
+  "provider_version": "0.9.5+catalog.portable4",
+  "scope_reviewed": true,
+  "applicable_principles": [
+    "Answer directly and remove ceremony.",
+    "Preserve exact code, commands, paths, numbers, errors and every negation.",
+    "Use bounded tool status and changed-source excerpts.",
+    "Clarity overrides compression; persisted documents and code use normal prose."
+  ],
+  "repository_disposition": "The mandatory lite adapter and current efficiency policy preserve these principles. User and repository rules keep public responses clear, require progress updates, and prohibit delegation. No upstream framework, daemon, hook or persistent service is needed for applying the instruction skill.",
+  "upstream_claimed_token_saving_measured_here": false,
+  "reasoning_depth_reduced": false,
+  "mandatory_adapter_modified": false,
+  "scope": "Instruction-level efficiency review; no optional upstream framework or service adopted."
+}

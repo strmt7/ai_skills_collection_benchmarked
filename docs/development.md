@@ -15,6 +15,11 @@ bound source reads and tool output, reuse applicable evidence and maintained
 runners, and reserve the complete required checks for a frozen publication
 batch. These rules preserve reasoning depth, verification and failure reporting.
 
+Windows thread diagnostics use the native Toolhelp snapshot API without starting
+PowerShell. They report thread IDs and base priorities; wait states and per-thread
+CPU time are unavailable through that API. Process CPU measurements remain
+separate. Error and cancellation controls verify ownership of snapshot handles.
+
 Catalog validation and Python unit tests exercise supported Python 3.11–3.14
 on Linux and the current validation runtime on Windows. Native provider controls
 use their documented Windows interpreter and dependency graph. These checks need

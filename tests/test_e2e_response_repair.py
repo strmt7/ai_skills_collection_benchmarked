@@ -6,8 +6,10 @@ import os
 import shutil
 import subprocess
 import sys
+import time
 from pathlib import Path
 from typing import Any
+from unittest.mock import Mock
 
 import pytest
 
@@ -51,31 +53,54 @@ def windows_process_cpu_seconds(pid: int) -> tuple[float, float] | None:
 
 
 def windows_thread_snapshot(pid: int) -> dict[str, object] | None:
-    """Capture a best-effort Windows thread-state snapshot for a live process."""
+    """Read native thread IDs/priorities; Toolhelp does not expose wait states."""
     if sys.platform != "win32":
         return None
-    shell = shutil.which("powershell.exe")
-    if shell is None:
-        return None
-    command = f"""$ErrorActionPreference = 'Stop'
-$process = [System.Diagnostics.Process]::GetProcessById({pid:d})
-try {{
-    $threads = @($process.Threads | ForEach-Object {{
-        $state = $_.ThreadState
-        $reason = if ($state -eq [System.Diagnostics.ThreadState]::Wait) {{ [string]$_.WaitReason }} else {{ $null }}
-        [PSCustomObject]@{{ id = $_.Id; state = [string]$state; wait_reason = $reason; cpu_ms = $_.TotalProcessorTime.TotalMilliseconds }}
-    }})
-    [PSCustomObject]@{{ pid = $process.Id; threads = $threads }} | ConvertTo-Json -Depth 4 -Compress
-}} finally {{ $process.Dispose() }}"""
-    result = subprocess.run(
-        [shell, "-NoLogo", "-NoProfile", "-NonInteractive", "-Command", command],
-        capture_output=True,
-        text=True,
-        encoding="utf-8-sig",
-        timeout=5,
-        check=True,
-    )
-    return json.loads(result.stdout)
+    import ctypes
+    from ctypes import wintypes
+
+    class ThreadEntry(ctypes.Structure):
+        _fields_ = [
+            ("dwSize", wintypes.DWORD),
+            ("cntUsage", wintypes.DWORD),
+            ("th32ThreadID", wintypes.DWORD),
+            ("th32OwnerProcessID", wintypes.DWORD),
+            ("tpBasePri", wintypes.LONG),
+            ("tpDeltaPri", wintypes.LONG),
+            ("dwFlags", wintypes.DWORD),
+        ]
+
+    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel.CreateToolhelp32Snapshot.argtypes = [wintypes.DWORD, wintypes.DWORD]
+    kernel.CreateToolhelp32Snapshot.restype = wintypes.HANDLE
+    for function in (kernel.Thread32First, kernel.Thread32Next):
+        function.argtypes = [wintypes.HANDLE, ctypes.POINTER(ThreadEntry)]
+        function.restype = wintypes.BOOL
+    kernel.CloseHandle.argtypes = [wintypes.HANDLE]
+    kernel.CloseHandle.restype = wintypes.BOOL
+    deadline = time.monotonic() + 5
+    snapshot = kernel.CreateToolhelp32Snapshot(0x4, 0)  # TH32CS_SNAPTHREAD
+    if snapshot in (None, ctypes.c_void_p(-1).value):
+        raise ctypes.WinError(ctypes.get_last_error())
+    try:
+        entry = ThreadEntry()
+        entry.dwSize = ctypes.sizeof(entry)
+        available = kernel.Thread32First(snapshot, ctypes.byref(entry))
+        threads = []
+        while available:
+            if time.monotonic() > deadline:
+                raise TimeoutError("Native thread enumeration exceeded its five-second budget")
+            if entry.th32OwnerProcessID == pid:
+                threads.append({"id": entry.th32ThreadID, "base_priority": entry.tpBasePri})
+            entry.dwSize = ctypes.sizeof(entry)
+            available = kernel.Thread32Next(snapshot, ctypes.byref(entry))
+        error = ctypes.get_last_error()
+        if error != 18:  # ERROR_NO_MORE_FILES
+            raise ctypes.WinError(error)
+        return {"pid": pid, "threads": threads, "enumeration_complete": True, "thread_state_available": False}
+    finally:
+        if not kernel.CloseHandle(snapshot):
+            raise ctypes.WinError(ctypes.get_last_error())
 
 
 def digest(path: Path) -> str:
@@ -171,12 +196,44 @@ def test_process_cpu_diagnostic_uses_the_current_process() -> None:
         assert observed is None
 
 
-def test_thread_snapshot_diagnostic_uses_the_current_process() -> None:
+def test_thread_snapshot_diagnostic_uses_the_current_process(monkeypatch: pytest.MonkeyPatch) -> None:
+    def no_child_process(*args: object, **kwargs: object) -> None:
+        raise AssertionError("Thread introspection must not start another process")
+
+    monkeypatch.setattr(shutil, "which", lambda _: None)
+    monkeypatch.setattr(subprocess, "run", no_child_process)
     observed = windows_thread_snapshot(os.getpid())
-    if sys.platform == "win32" and shutil.which("powershell.exe") is not None:
+    if sys.platform == "win32":
         assert observed is not None and observed["pid"] == os.getpid() and observed["threads"]
+        assert observed["enumeration_complete"] is True and observed["thread_state_available"] is False
     else:
         assert observed is None
+
+
+@pytest.mark.parametrize("failure", ["invalid-snapshot", "enumeration-error", "cancelled"])
+def test_native_thread_failure_closes_only_an_acquired_snapshot(monkeypatch: pytest.MonkeyPatch, failure: str) -> None:
+    if sys.platform != "win32":
+        pytest.skip("Windows native thread API")
+    import ctypes
+
+    kernel = Mock()
+    valid_snapshot = failure != "invalid-snapshot"
+    kernel.CreateToolhelp32Snapshot.return_value = 4321 if valid_snapshot else ctypes.c_void_p(-1).value
+    kernel.Thread32First.return_value = False
+    if failure == "cancelled":
+        kernel.Thread32First.side_effect = KeyboardInterrupt
+    kernel.CloseHandle.return_value = True
+    monkeypatch.setattr(ctypes, "WinDLL", lambda *args, **kwargs: kernel)
+    monkeypatch.setattr(ctypes, "get_last_error", lambda: 5)
+    expected = KeyboardInterrupt if failure == "cancelled" else OSError
+    with pytest.raises(expected) as caught:
+        windows_thread_snapshot(os.getpid())
+    if isinstance(caught.value, OSError):
+        assert caught.value.winerror == 5
+    if valid_snapshot:
+        kernel.CloseHandle.assert_called_once_with(4321)
+    else:
+        kernel.CloseHandle.assert_not_called()
 
 
 @pytest.mark.parametrize("cancelled", [False, True])

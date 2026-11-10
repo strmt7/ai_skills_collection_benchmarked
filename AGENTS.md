@@ -61,6 +61,10 @@ Reduce context and repeated work without reducing reasoning quality:
   repeated qualification variations over copying scripts to change paths or
   versions. Preserve necessary frozen inputs, negative results and their exact
   implementation identities.
+- Prefer supported in-process APIs for small diagnostics when they provide the
+  required information. Avoid launching an interpreter or shell just to inspect
+  the current process. State missing diagnostic fields explicitly; fewer process
+  launches must not turn unavailable information into a fabricated result.
 - Use focused checks while editing. Freeze each publication batch, run all
   required pre-push checks, and reuse results only while their source bytes,
   configuration, environment and scope remain applicable. Relevant changes,
@@ -178,13 +182,22 @@ verification.
 
 ## Commit attribution and publication
 
-Create repository commits through the authenticated official GitHub connector and
-let GitHub assign the contributor identity. Verify author, committer, tree,
-parents and target branch before advancing `main`. Do not override attribution
-through Git configuration or environment variables. If the connector cannot
-perform a required operation, report the specific limitation before selecting
-another publication method. Temporary repositories used by tests are separate
-fixtures and do not publish commits to this repository.
+Use only the authenticated official GitHub connector for AI-authored repository
+commits and GitHub repository mutations. This includes creating or changing
+commits, rewriting published history and updating branches, tags or releases
+when separately authorized. Do not substitute local commits, `git push`, `gh`,
+scripts, direct HTTP requests or direct Git Data API calls for the connector.
+
+Let GitHub assign the contributor identity. Do not hardcode an author, committer,
+email address or co-author identity, or override attribution through Git
+configuration or environment variables. Verify the connector's author,
+committer, tree, parents and target branch before advancing `main`.
+
+If the connector cannot perform a required operation, stop that publication
+operation and report the exact limitation. Do not switch publication methods.
+Local Git may inspect source and history and prepare or verify uncommitted
+diffs, indexes, trees and blobs. Temporary repositories used by tests are
+separate fixtures and do not publish commits to this repository.
 
 Other contributors using the connector receive attribution from their own
 authenticated GitHub connections. Their access and review requirements follow

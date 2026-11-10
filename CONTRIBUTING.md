@@ -143,11 +143,16 @@ full rule set.
 
 ## Commit attribution
 
-Create commits through the authenticated official GitHub connector and verify
-its returned author and committer. The connector assigns contributor identity;
-do not override it through Git configuration or environment variables. Inspect
-the target tree, parents and current `main` before publication. The full
-publication and history-rewrite safeguards are in [AGENTS.md](AGENTS.md).
+AI-authored repository commits and GitHub repository mutations use only the
+authenticated official GitHub connector. Do not fall back to local commits,
+`git push`, `gh`, scripts or direct API calls. If the connector lacks a required
+operation, stop that publication operation and report the limitation.
+
+GitHub assigns each contributor's identity. Do not hardcode or override author,
+committer, email or co-author fields. Verify the returned attribution, target
+tree, parents and current `main` before publication. Local inspection and
+uncommitted preparation remain permitted. The full publication and
+history-rewrite safeguards are in [AGENTS.md](AGENTS.md).
 
 Use clear imperative commit messages and keep distinct work loops reviewable.
 Do not add unrequested co-author trailers. Existing source-bound evidence keeps
