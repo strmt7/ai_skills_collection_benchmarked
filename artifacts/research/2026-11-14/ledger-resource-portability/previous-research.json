@@ -1,0 +1,43 @@
+{
+  "evidence": [
+    {
+      "path": "docs/research-initial-agent-workflows.md",
+      "sha256": "04a54ee8f98e844081de808bc770fd9ab63cb7fcdb60c35f48378aec83496d05"
+    },
+    {
+      "path": "docs/research-context-token-accounting.md",
+      "sha256": "a14303ebd4cf07f4e216b04172db0a2e1a5a432fbab2ac539e84b21fbc7850d9"
+    },
+    {
+      "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+      "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+      "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+    },
+    {
+      "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+      "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+    },
+    {
+      "path": "artifacts/research/2026-11-11/evaluation-resumption/review.json",
+      "scope": "Independent native controls and upstream observation. No agent efficacy evidence.",
+      "sha256": "a4581ce106cdfbc51b309141d5ea46f67033a68fdd0866f168041baef7f1db93"
+    },
+    {
+      "path": "docs/research-evaluation-and-resumption.md",
+      "sha256": "f2a216e27b872f8836ba5cb5b104358809e8532a75e66657987ea1cd8d3ffcf4"
+    }
+  ],
+  "resources": {
+    "SKILL.md": {
+      "review_scope": "Reviewed the pinned entrypoint in full. Assessed context signals, host hooks, durable records and owned process resumption. The referenced hook is absent from the locked package.",
+      "sha256": "3687b590f5f39a23d22b7700bf9e208e14a462b1a2c68f531f995fe3675f95f5",
+      "status": "reviewed"
+    },
+    "agents/openai.yaml": {
+      "review_scope": "Reviewed complete user-interface metadata and implicit invocation policy. Activation behavior has not been measured.",
+      "sha256": "7354622d7dd7d5ddf271c07aa0b2db72e69e83a18b9c4309751cb3a647789ac4",
+      "status": "reviewed"
+    }
+  },
+  "status": "complete"
+}

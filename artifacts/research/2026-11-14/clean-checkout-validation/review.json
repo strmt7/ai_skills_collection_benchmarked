@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "scope": "Independent clean-checkout reproduction of the published raw resource hash failure, all 21 candidate offline domain gates, and a full Windows test suite through the supported managed launcher. Working source and mirrored files remain intact; no model-efficacy claim.",
+  "source_sha256": {
+    "data/improvement_ledger.json": "a644da057a1926f6e5f08af0cd3d854dd432e516a28694e55cd3273be07da34a"
+  },
+  "artifacts": {
+    "domain-checks.json": "bbb9c2530669d0fb8bb92ea0fa7bffef6a4d11c0638108bfd71115616d74dd45",
+    "domain-control.py.txt": "36326a58d36b32afbb6f785bb67c9f23fc38284716b4dda0eea97a3e593037b8",
+    "full-tests.stdout.native": "16379a30b0d439c5b28c7882fbaa05c190ddd336a168153d4a4790cedb696049",
+    "historical-harness-failures.json": "0e820daa833e28123e0a7b0c1e6a5be5f789a2b10f9f4e583d2cac4f244453eb",
+    "suite-control.py.txt": "267f0b00b04c44d4d74ecfb145899a4b2b8cf21318d597d32d9c1f6fdded3234",
+    "suite-processes.json": "47fa9b0f33e728df5ff1cd81adf607e3a9c2ad9952dda1477db7dd12176dbba2"
+  },
+  "published_parent": "4bdc6c812723fb50aff090c21a3466c7221e3883",
+  "candidate_domain_gates": 21,
+  "full_suite": {
+    "passed": 3310,
+    "skipped": 18,
+    "elapsed_seconds": 416.9
+  },
+  "model_invocations": 0,
+  "hosted_candidate_acceptance": false
+}

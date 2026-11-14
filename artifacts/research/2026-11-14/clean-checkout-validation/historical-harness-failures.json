@@ -1,0 +1,22 @@
+{
+  "attempts": [
+    {
+      "path": "clean-checkout-qualified-v1",
+      "classification": "Invalid script import environment; no acceptance claim"
+    },
+    {
+      "path": "clean-checkout-qualified-v2",
+      "classification": "Preflight rejected a duplicated tools path before domain replay"
+    },
+    {
+      "path": "clean-checkout-qualified-v3/candidate-full-tests",
+      "classification": "Invalid full-suite launcher environment: omitted project module path, managed tool declarations and short temporary root",
+      "passed": 3003,
+      "failed": 41,
+      "errors": 112,
+      "skipped": 26
+    }
+  ],
+  "raw_failure_streams_retained_privately": true,
+  "repair": "Use the supported checkout launcher, the admitted managed capability environment and a bounded owned short temporary root. Qualify focused preflight before the full rerun. No source tests or expected results changed."
+}

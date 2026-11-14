@@ -1,0 +1,77 @@
+"""Replay every offline domain gate in an isolated published checkout and candidate."""
+import hashlib
+import argparse
+import json
+import os
+import re
+import shlex
+import shutil
+import sys
+from pathlib import Path
+import yaml
+S=Path(__file__).resolve().parent;R=S.parents[2]
+sys.path.insert(0,str(R/'tools'))
+from _agent_tool_runtime import profile_environment, SCRIPT
+from _windows_trial_process import run_owned
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--output',type=Path,required=True)
+parser.add_argument('--checkout',type=Path)
+args=parser.parse_args()
+O=args.output.resolve()
+if not O.is_relative_to(S) or O==S:raise ValueError('Use new owned research state')
+O.mkdir()
+if shutil.disk_usage(O).free<3*1024**3:raise ValueError('Insufficient free space for isolated checkout qualification')
+b=json.loads((S/'swe-capsule-qualified-tool-bindings-v2.json').read_bytes());git=Path(b['git'])
+if hashlib.sha256(git.read_bytes()).hexdigest()!=b['git_sha256']:raise ValueError('Git changed')
+C=args.checkout.resolve(strict=True) if args.checkout else O/'checkout'
+if not C.is_relative_to(S) or C==S:raise ValueError('Checkout must remain in owned research state')
+env=profile_environment(O,{'UV_CACHE_DIR':'uv-cache'})
+env.update(GIT_CONFIG_NOSYSTEM='1',GIT_CONFIG_GLOBAL=os.devnull,GIT_TERMINAL_PROMPT='0',GCM_INTERACTIVE='never')
+records=[]
+def run(label,command,cwd,timeout=240,memory=2*1024**3):
+    with (O/(label+'.stdout.native')).open('xb') as stdout,(O/(label+'.stderr.native')).open('xb') as stderr,open(os.devnull,'rb') as stdin:
+        process=run_owned(command,cwd=cwd,stdin=stdin,stdout=stdout,stderr=stderr,timeout=timeout,output_limit=16*1024**2,memory_limit=memory,process_limit=64,environment=env)
+    ok=process['exit_code']==0 and not process['termination_reason'] and process['job_active_processes_after_cleanup']==0
+    records.append({'id':label,'argv':command,'passed':ok,'process':process})
+    (O/'progress.json').write_text(json.dumps(records,indent=2)+'\n',encoding='utf-8',newline='\n')
+    print(label+(': passed' if ok else ': FAILED'),flush=True)
+    return ok
+g=[str(git),'-c','core.longpaths=true','-c','core.autocrlf=false']
+if args.checkout:
+    if not run('existing-head',g+['-C',str(C),'rev-parse','HEAD'],R) or (O/'existing-head.stdout.native').read_text().strip()!='4bdc6c812723fb50aff090c21a3466c7221e3883':raise ValueError('Existing checkout has another revision')
+    if not run('existing-clean',g+['-C',str(C),'status','--porcelain=v1','--untracked-files=all'],R) or (O/'existing-clean.stdout.native').read_bytes().strip():raise ValueError('Existing checkout is not clean')
+else:
+    if not run('clone',g+['clone','--shared','--no-checkout','--single-branch','--branch','main',str(R),str(C)],R):raise ValueError('Clone failed')
+    if not run('checkout',g+['-C',str(C),'checkout','main'],R):raise ValueError('Checkout failed')
+workflow=yaml.safe_load((C/'.github/workflows/offline-validation.yml').read_text(encoding='utf-8'))
+steps=workflow['jobs']['validate']['steps']
+start=next(i for i,s in enumerate(steps) if s.get('name')=='Validate catalog and mirrors')
+end=next(i for i,s in enumerate(steps) if s.get('name')=='Verify frozen public development task selection')
+commands=[]
+for index,step in enumerate(steps[start:end+1]):
+    text=step['run'].strip()
+    if text.startswith("python - <<'PY'\n") and text.endswith('\nPY'):
+        command=[sys.executable,'-B','-c',text.split('\n',1)[1].rsplit('\n',1)[0]]
+    else:
+        command=shlex.split(text)
+        if command[0]!='python' or any('${{' in arg for arg in command):raise ValueError('Unqualified workflow command: '+step['name'])
+        if command[1].startswith('-'):raise ValueError('Unexpected interpreter option: '+step['name'])
+        command=[sys.executable,'-I','-B','-c',SCRIPT,str(C/command[1]),*command[2:]]
+    commands.append((str(index).zfill(2)+'-'+re.sub('[^a-z0-9]+','-',step['name'].lower()).strip('-'),command))
+if not run('script-import-preflight',commands[1][1],C):raise ValueError('The isolated script launcher failed preflight')
+baseline=[]
+for label,command in commands:baseline.append(run('published-'+label,command,C))
+# Apply only the explicit candidate ledger migration and its evidence, never mirrors.
+names=['data/improvement_ledger.json']+[p.relative_to(R).as_posix() for p in (R/'artifacts/research/2026-11-14/ledger-resource-portability').iterdir() if p.is_file()]
+source_hashes={n:hashlib.sha256((R/n).read_bytes()).hexdigest() for n in names}
+for name in names:
+    target=C/name
+    if not target.resolve().is_relative_to(C.resolve()):raise ValueError('Candidate copy escaped the owned checkout')
+    target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes((R/name).read_bytes())
+candidate=[]
+for label,command in commands:candidate.append(run('candidate-'+label,command,C))
+suite=run('candidate-full-tests',[sys.executable,'-B','-m','pytest','-q','-n','2','--cov-report','xml:'+str(O/'coverage.xml')],C,1500,4*1024**3) if all(candidate) else False
+unchanged=all(hashlib.sha256((R/n).read_bytes()).hexdigest()==d for n,d in source_hashes.items())
+result={'passed':all(candidate) and suite and unchanged,'published_commit':'4bdc6c812723fb50aff090c21a3466c7221e3883','checkout_line_endings':'core.autocrlf=false; host system and global Git configuration disabled','domain_gates':len(commands),'published_failures':[record['id'] for record in records if record['id'].startswith('published-') and not record['passed']],'candidate_domain_passed':sum(candidate),'candidate_full_suite_passed':suite,'source_unchanged':unchanged,'source_sha256':source_hashes,'records':records,'local_commits_created':0,'github_writes':0,'model_invocations':0}
+(O/'qualification.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8',newline='\n')
+raise SystemExit(not result['passed'])

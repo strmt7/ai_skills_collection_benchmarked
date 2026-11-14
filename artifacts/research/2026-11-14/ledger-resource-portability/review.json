@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "scope": "Evidence-preserving resource hash portability migration; no source or status changes.",
+  "source_sha256": {
+    "data/improvement_ledger.json": "a644da057a1926f6e5f08af0cd3d854dd432e516a28694e55cd3273be07da34a"
+  },
+  "artifacts": {
+    "00-captured.txt": "3687b590f5f39a23d22b7700bf9e208e14a462b1a2c68f531f995fe3675f95f5",
+    "00-published.txt": "c83c4c9d60d30d508bbd2bf0c6ffa724b5fdac679addd4828b268892dc39dc1b",
+    "01-captured.txt": "7354622d7dd7d5ddf271c07aa0b2db72e69e83a18b9c4309751cb3a647789ac4",
+    "01-published.txt": "88acce453f917eda04f291533c1edb9722b00a37e94581dc30255028f65961b2",
+    "migration.json": "ef15b6c20a301329d1f996fb5d126f0c61b3ad501ac7b0add9230d771d10c99f",
+    "previous-research.json": "728c32222e3951772ec3288356fac789c0e79045539e485a91664c864ff2d75f"
+  },
+  "model_improvement_established": false
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "scope": "LF/CRLF identity portability only; original hashes, bytes, review scopes and statuses retained; no mirror edits.",
+  "audited_resource_inventories": 192,
+  "raw_inventories_found": 1,
+  "skill_id": "affaan-m-everything-claude-code-agents-skills-strategic-compact-skill-md",
+  "records": [
+    {
+      "resource": "included/skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/strategic-compact/SKILL.md",
+      "captured_path": "00-captured.txt",
+      "captured_raw_sha256": "3687b590f5f39a23d22b7700bf9e208e14a462b1a2c68f531f995fe3675f95f5",
+      "published_path": "00-published.txt",
+      "canonical_sha256": "c83c4c9d60d30d508bbd2bf0c6ffa724b5fdac679addd4828b268892dc39dc1b",
+      "published_blob_equals_canonical": true,
+      "source_unchanged": true
+    },
+    {
+      "resource": "included/skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/strategic-compact/agents/openai.yaml",
+      "captured_path": "01-captured.txt",
+      "captured_raw_sha256": "7354622d7dd7d5ddf271c07aa0b2db72e69e83a18b9c4309751cb3a647789ac4",
+      "published_path": "01-published.txt",
+      "canonical_sha256": "88acce453f917eda04f291533c1edb9722b00a37e94581dc30255028f65961b2",
+      "published_blob_equals_canonical": true,
+      "source_unchanged": true
+    }
+  ],
+  "research_status_changed": false,
+  "model_trials": 0
+}

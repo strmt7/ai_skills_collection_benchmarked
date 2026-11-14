@@ -1,0 +1,874 @@
+{
+  "domain_gates": 21,
+  "records": [
+    {
+      "id": "candidate-00-validate-catalog-and-mirrors",
+      "argv": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\profile-8adb8e3ce26f4575b1fe3499eb173b58\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys\nfrom pathlib import Path\nscript=Path(sys.argv[1]).resolve()\nsys.path.insert(0,str(script.parent))\nsys.argv=sys.argv[1:]\nrunpy.run_path(str(script),run_name='__main__')\n",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\clean-checkout-qualified-v2\\checkout\\tools\\validate_catalog.py"
+      ],
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 59,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 240.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "candidate-01-check-exact-mirror-bytes-for-residual-detected-material",
+      "argv": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\profile-8adb8e3ce26f4575b1fe3499eb173b58\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys\nfrom pathlib import Path\nscript=Path(sys.argv[1]).resolve()\nsys.path.insert(0,str(script.parent))\nsys.argv=sys.argv[1:]\nrunpy.run_path(str(script),run_name='__main__')\n",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\clean-checkout-qualified-v2\\checkout\\tools\\check_mirror_content_admission.py",
+        "--json"
+      ],
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 207,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 240.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "candidate-02-enforce-mandatory-agent-tool-routing",
+      "argv": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\profile-8adb8e3ce26f4575b1fe3499eb173b58\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys\nfrom pathlib import Path\nscript=Path(sys.argv[1]).resolve()\nsys.path.insert(0,str(script.parent))\nsys.argv=sys.argv[1:]\nrunpy.run_path(str(script),run_name='__main__')\n",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\clean-checkout-qualified-v2\\checkout\\tools\\validate_agent_tool_policy.py",
+        "--check",
+        "--json"
+      ],
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 168,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 240.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "candidate-03-verify-current-native-qualification-and-historical-source-supersessions",
+      "argv": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\profile-8adb8e3ce26f4575b1fe3499eb173b58\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys\nfrom pathlib import Path\nscript=Path(sys.argv[1]).resolve()\nsys.path.insert(0,str(script.parent))\nsys.argv=sys.argv[1:]\nrunpy.run_path(str(script),run_name='__main__')\n",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\clean-checkout-qualified-v2\\checkout\\tools\\validate_native_qualification_index.py",
+        "--check",
+        "--json"
+      ],
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 109,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 240.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "candidate-04-verify-citation-url-security-overlay",
+      "argv": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\profile-8adb8e3ce26f4575b1fe3499eb173b58\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys\nfrom pathlib import Path\nscript=Path(sys.argv[1]).resolve()\nsys.path.insert(0,str(script.parent))\nsys.argv=sys.argv[1:]\nrunpy.run_path(str(script),run_name='__main__')\n",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\clean-checkout-qualified-v2\\checkout\\tools\\check_citation_security_overlay.py",
+        "--check",
+        "--json"
+      ],
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 28,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 240.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "candidate-05-verify-key-vault-java-security-overlay",
+      "argv": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\profile-8adb8e3ce26f4575b1fe3499eb173b58\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys\nfrom pathlib import Path\nscript=Path(sys.argv[1]).resolve()\nsys.path.insert(0,str(script.parent))\nsys.argv=sys.argv[1:]\nrunpy.run_path(str(script),run_name='__main__')\n",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\clean-checkout-qualified-v2\\checkout\\tools\\check_keyvault_security_overlay.py",
+        "--check",
+        "--json"
+      ],
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 28,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 240.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "candidate-06-validate-benchmark-and-provenance-artifacts",
+      "argv": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\profile-8adb8e3ce26f4575b1fe3499eb173b58\\Scripts\\python.exe",
+        "-B",
+        "-c",
+        "import sys\nfrom pathlib import Path\n\nsys.path.insert(0, \"tools\")\nimport check_benchmark_artifact\n\npaths = sorted(Path(\"artifacts/benchmark-runs\").rglob(\"artifact.json\"))\nif not paths:\n    raise SystemExit(\"no benchmark or provenance artifacts recorded\")\nfor path in paths:\n    result = check_benchmark_artifact.validate_artifact(path)\n    if result[\"verdict\"] != \"artifact_complete\":\n        raise SystemExit(f\"{path}: {result}\")\nprint(f\"validated {len(paths)} benchmark/provenance artifacts\")"
+      ],
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 45,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 240.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "candidate-07-validate-static-benchmark-outputs",
+      "argv": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\profile-8adb8e3ce26f4575b1fe3499eb173b58\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys\nfrom pathlib import Path\nscript=Path(sys.argv[1]).resolve()\nsys.path.insert(0,str(script.parent))\nsys.argv=sys.argv[1:]\nrunpy.run_path(str(script),run_name='__main__')\n",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\clean-checkout-qualified-v2\\checkout\\tools\\run_static_benchmarks.py",
+        "--check"
+      ],
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 39,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 240.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "candidate-08-validate-skill-risk-audit",
+      "argv": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\profile-8adb8e3ce26f4575b1fe3499eb173b58\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys\nfrom pathlib import Path\nscript=Path(sys.argv[1]).resolve()\nsys.path.insert(0,str(script.parent))\nsys.argv=sys.argv[1:]\nrunpy.run_path(str(script),run_name='__main__')\n",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\clean-checkout-qualified-v2\\checkout\\tools\\audit_skill_quality.py",
+        "--check"
+      ],
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 80,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 240.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "candidate-09-validate-complete-improvement-coverage-and-evidence",
+      "argv": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\profile-8adb8e3ce26f4575b1fe3499eb173b58\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys\nfrom pathlib import Path\nscript=Path(sys.argv[1]).resolve()\nsys.path.insert(0,str(script.parent))\nsys.argv=sys.argv[1:]\nrunpy.run_path(str(script),run_name='__main__')\n",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\clean-checkout-qualified-v2\\checkout\\tools\\manage_improvement_ledger.py",
+        "--check",
+        "--json"
+      ],
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 4334,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 240.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "candidate-10-verify-the-recorded-upstream-tree-comparison",
+      "argv": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\profile-8adb8e3ce26f4575b1fe3499eb173b58\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys\nfrom pathlib import Path\nscript=Path(sys.argv[1]).resolve()\nsys.path.insert(0,str(script.parent))\nsys.argv=sys.argv[1:]\nrunpy.run_path(str(script),run_name='__main__')\n",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\clean-checkout-qualified-v2\\checkout\\artifacts\\research\\2026-10-28\\ecc-source-snapshots\\generator.py.txt",
+        "--repo",
+        "affaan-m/everything-claude-code",
+        "--lock",
+        "artifacts/research/2026-10-28/ecc-source-snapshots/source-lock.json.gz",
+        "--old-commit",
+        "artifacts/research/2026-10-28/ecc-source-snapshots/old-commit.json",
+        "--old-tree",
+        "artifacts/research/2026-10-28/ecc-source-snapshots/old-tree.json.gz",
+        "--new-commit",
+        "artifacts/research/2026-10-28/ecc-source-snapshots/new-commit.json",
+        "--new-tree",
+        "artifacts/research/2026-10-28/ecc-source-snapshots/new-tree.json.gz",
+        "--output",
+        "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+        "--check"
+      ],
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 69,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 240.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "candidate-11-verify-the-recorded-anthropic-source-comparison",
+      "argv": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\profile-8adb8e3ce26f4575b1fe3499eb173b58\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys\nfrom pathlib import Path\nscript=Path(sys.argv[1]).resolve()\nsys.path.insert(0,str(script.parent))\nsys.argv=sys.argv[1:]\nrunpy.run_path(str(script),run_name='__main__')\n",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\clean-checkout-qualified-v2\\checkout\\artifacts\\research\\2026-10-28\\ecc-source-snapshots\\generator.py.txt",
+        "--repo",
+        "anthropics/skills",
+        "--lock",
+        "artifacts/research/2026-11-01/anthropic-source-snapshots/source-lock.json.gz",
+        "--old-commit",
+        "artifacts/research/2026-11-01/anthropic-source-snapshots/old-commit.json",
+        "--old-tree",
+        "artifacts/research/2026-11-01/anthropic-source-snapshots/old-tree.json.gz",
+        "--new-commit",
+        "artifacts/research/2026-11-01/anthropic-source-snapshots/new-commit.json",
+        "--new-tree",
+        "artifacts/research/2026-11-01/anthropic-source-snapshots/new-tree.json.gz",
+        "--output",
+        "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
+        "--check"
+      ],
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 69,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 240.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "candidate-12-verify-the-recorded-scientific-skills-relocation-comparison",
+      "argv": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\profile-8adb8e3ce26f4575b1fe3499eb173b58\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys\nfrom pathlib import Path\nscript=Path(sys.argv[1]).resolve()\nsys.path.insert(0,str(script.parent))\nsys.argv=sys.argv[1:]\nrunpy.run_path(str(script),run_name='__main__')\n",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\clean-checkout-qualified-v2\\checkout\\artifacts\\research\\2026-10-28\\scientific-source-snapshots\\generator.py.txt",
+        "--repo",
+        "K-Dense-AI/scientific-agent-skills",
+        "--lock",
+        "artifacts/research/2026-10-28/scientific-source-snapshots/source-lock.json.gz",
+        "--old-commit",
+        "artifacts/research/2026-10-28/scientific-source-snapshots/old-commit.json",
+        "--old-tree",
+        "artifacts/research/2026-10-28/scientific-source-snapshots/old-tree.json.gz",
+        "--new-commit",
+        "artifacts/research/2026-10-28/scientific-source-snapshots/new-commit.json",
+        "--new-tree",
+        "artifacts/research/2026-10-28/scientific-source-snapshots/new-tree.json.gz",
+        "--relocate",
+        "scientific-skills",
+        "skills",
+        "--release",
+        "artifacts/research/2026-10-28/scientific-source-snapshots/latest-release.json",
+        "--tag",
+        "artifacts/research/2026-10-28/scientific-source-snapshots/new-tag.json",
+        "--output",
+        "artifacts/research/2026-10-28/scientific-upstream-relocation-delta.json",
+        "--check"
+      ],
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 71,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 240.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "candidate-13-verify-native-workflow-evaluator-controls-and-retained-misses",
+      "argv": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\profile-8adb8e3ce26f4575b1fe3499eb173b58\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys\nfrom pathlib import Path\nscript=Path(sys.argv[1]).resolve()\nsys.path.insert(0,str(script.parent))\nsys.argv=sys.argv[1:]\nrunpy.run_path(str(script),run_name='__main__')\n",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\clean-checkout-qualified-v2\\checkout\\tools\\report_workflow_evaluator_controls.py",
+        "--check",
+        "--json"
+      ],
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 13107,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 240.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "candidate-14-validate-improved-overlays-and-original-provenance",
+      "argv": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\profile-8adb8e3ce26f4575b1fe3499eb173b58\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys\nfrom pathlib import Path\nscript=Path(sys.argv[1]).resolve()\nsys.path.insert(0,str(script.parent))\nsys.argv=sys.argv[1:]\nrunpy.run_path(str(script),run_name='__main__')\n",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\clean-checkout-qualified-v2\\checkout\\tools\\validate_improved_skills.py",
+        "--json"
+      ],
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 22,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 240.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "candidate-15-verify-frontend-component-control-evidence-and-input-freshness",
+      "argv": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\profile-8adb8e3ce26f4575b1fe3499eb173b58\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys\nfrom pathlib import Path\nscript=Path(sys.argv[1]).resolve()\nsys.path.insert(0,str(script.parent))\nsys.argv=sys.argv[1:]\nrunpy.run_path(str(script),run_name='__main__')\n",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\clean-checkout-qualified-v2\\checkout\\benchmarks\\component-controls\\frontend\\prepare.py",
+        "--check"
+      ],
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 16,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 240.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "candidate-16-verify-api-and-backend-component-evidence-and-input-freshness",
+      "argv": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\profile-8adb8e3ce26f4575b1fe3499eb173b58\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys\nfrom pathlib import Path\nscript=Path(sys.argv[1]).resolve()\nsys.path.insert(0,str(script.parent))\nsys.argv=sys.argv[1:]\nrunpy.run_path(str(script),run_name='__main__')\n",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\clean-checkout-qualified-v2\\checkout\\benchmarks\\component-controls\\backend\\prepare_backend.py",
+        "--check"
+      ],
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 16,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 240.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "candidate-17-verify-native-fuzzing-evidence-and-collector-input-freshness",
+      "argv": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\profile-8adb8e3ce26f4575b1fe3499eb173b58\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys\nfrom pathlib import Path\nscript=Path(sys.argv[1]).resolve()\nsys.path.insert(0,str(script.parent))\nsys.argv=sys.argv[1:]\nrunpy.run_path(str(script),run_name='__main__')\n",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\clean-checkout-qualified-v2\\checkout\\benchmarks\\component-controls\\native-testing\\run_native.py",
+        "--check"
+      ],
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 66,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 240.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "candidate-18-verify-confined-evaluator-evidence-and-source-freshness",
+      "argv": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\profile-8adb8e3ce26f4575b1fe3499eb173b58\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys\nfrom pathlib import Path\nscript=Path(sys.argv[1]).resolve()\nsys.path.insert(0,str(script.parent))\nsys.argv=sys.argv[1:]\nrunpy.run_path(str(script),run_name='__main__')\n",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\clean-checkout-qualified-v2\\checkout\\tools\\qualify_appcontainer.py",
+        "--check"
+      ],
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 148,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 240.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "candidate-19-verify-all-matched-development-trials-and-report",
+      "argv": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\profile-8adb8e3ce26f4575b1fe3499eb173b58\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys\nfrom pathlib import Path\nscript=Path(sys.argv[1]).resolve()\nsys.path.insert(0,str(script.parent))\nsys.argv=sys.argv[1:]\nrunpy.run_path(str(script),run_name='__main__')\n",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\clean-checkout-qualified-v2\\checkout\\tools\\summarize_agent_trials.py",
+        "--protocol",
+        "benchmarks/agent-effectiveness/development/protocol-v2.json",
+        "--trials",
+        "artifacts/agent-trials/development-v2",
+        "--output-dir",
+        "artifacts/agent-trials/development-v2-report",
+        "--check",
+        "--json"
+      ],
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 84,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 240.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "candidate-20-verify-frozen-public-development-task-selection",
+      "argv": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\profile-8adb8e3ce26f4575b1fe3499eb173b58\\Scripts\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import runpy,sys\nfrom pathlib import Path\nscript=Path(sys.argv[1]).resolve()\nsys.path.insert(0,str(script.parent))\nsys.argv=sys.argv[1:]\nrunpy.run_path(str(script),run_name='__main__')\n",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\clean-checkout-qualified-v2\\checkout\\tools\\select_swe_skills_tasks.py",
+        "--frame",
+        "artifacts/research/2026-11-11/swe-skills-bench-archive/frame.json",
+        "--exclusions",
+        "benchmarks/agent-effectiveness/development/swe-skills-pilot-v1/exclusions.json",
+        "--seed",
+        "f658aca6273493e179b592e650341bc2cf76b1c48002633e592ab68c6cef212b",
+        "--tasks",
+        "12",
+        "--output",
+        "benchmarks/agent-effectiveness/development/swe-skills-pilot-v1/selection.json",
+        "--check"
+      ],
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 112,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 240.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    }
+  ],
+  "streams": {
+    "candidate-00-validate-catalog-and-mirrors": {
+      "stdout.native": {
+        "utf8": "OK: 673 catalog entries, 19 dataset tracks, 718 scenarios\r\n",
+        "sha256": "00146a45ba3e35b9d91bae396e68386dd45de78a073003696aeab9f63494832c"
+      },
+      "stderr.native": {
+        "utf8": "",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "candidate-01-check-exact-mirror-bytes-for-residual-detected-material": {
+      "stdout.native": {
+        "utf8": "{\r\n  \"ok\": true,\r\n  \"errors\": [],\r\n  \"catalog_sha256\": \"befada014a8adf1cbb5f49049829783640725551a08862b17c22488b6fec106b\",\r\n  \"catalog_entries\": 673,\r\n  \"checked_resources\": 17671,\r\n  \"bytes\": 234178580\r\n}\r\n",
+        "sha256": "2d78f904e9490528feb89ad3fa7136c4e4d4627b138932335afcbb53602094e8"
+      },
+      "stderr.native": {
+        "utf8": "",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "candidate-02-enforce-mandatory-agent-tool-routing": {
+      "stdout.native": {
+        "utf8": "{\r\n  \"ok\": true,\r\n  \"required_tools\": [\r\n    \"caveman\",\r\n    \"cocoindex-code-search\",\r\n    \"crawl4ai-research\"\r\n  ],\r\n  \"entrypoints_checked\": 673,\r\n  \"errors\": []\r\n}\r\n",
+        "sha256": "9fb42ae727a3e25d04309584d426540e4196e659a6df45abc5ac6d78a73c4331"
+      },
+      "stderr.native": {
+        "utf8": "",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "candidate-03-verify-current-native-qualification-and-historical-source-supersessions": {
+      "stdout.native": {
+        "utf8": "{\r\n  \"ok\": true,\r\n  \"errors\": [],\r\n  \"scope\": \"Source and artifact binding; not proof of model efficacy\"\r\n}\r\n",
+        "sha256": "a4420a478a71e9a9975a59da362945ac1f227d5c671e00c703c78c99fca8d568"
+      },
+      "stderr.native": {
+        "utf8": "",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "candidate-04-verify-citation-url-security-overlay": {
+      "stdout.native": {
+        "utf8": "{\"ok\": true, \"errors\": []}\r\n",
+        "sha256": "a8d5a6bdeef10f9462a37adeb1b1b025f4d0323ecea38dd98d10a64daf3221de"
+      },
+      "stderr.native": {
+        "utf8": "",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "candidate-05-verify-key-vault-java-security-overlay": {
+      "stdout.native": {
+        "utf8": "{\"ok\": true, \"errors\": []}\r\n",
+        "sha256": "a8d5a6bdeef10f9462a37adeb1b1b025f4d0323ecea38dd98d10a64daf3221de"
+      },
+      "stderr.native": {
+        "utf8": "",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "candidate-06-validate-benchmark-and-provenance-artifacts": {
+      "stdout.native": {
+        "utf8": "validated 44 benchmark/provenance artifacts\r\n",
+        "sha256": "f0f472378b88745c04a10ced38cbe14f9718a3ad41fa9796d0a8fd1bc53627ea"
+      },
+      "stderr.native": {
+        "utf8": "",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "candidate-07-validate-static-benchmark-outputs": {
+      "stdout.native": {
+        "utf8": "Static benchmark outputs are current.\r\n",
+        "sha256": "8ba34d2ea51d64736a00532973e85cfd0abd5b28251bd22b0eac40989c26a531"
+      },
+      "stderr.native": {
+        "utf8": "",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "candidate-08-validate-skill-risk-audit": {
+      "stdout.native": {
+        "utf8": "Skill risk audit: 44 likely non-working, 262 subpar/needs review, 673 audited.\r\n",
+        "sha256": "7b4c5e0613b0648d64bb2e36f131f7c65936a98ed1c267d8982f46eaef7f4691"
+      },
+      "stderr.native": {
+        "utf8": "",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "candidate-09-validate-complete-improvement-coverage-and-evidence": {
+      "stdout.native": {
+        "utf8": "{\r\n  \"categories\": {\r\n    \"Agent infrastructure & skill creation\": {\r\n      \"evaluation\": {\r\n        \"in_progress\": 2,\r\n        \"pending\": 6\r\n      },\r\n      \"research\": {\r\n        \"complete\": 1,\r\n        \"in_progress\": 7\r\n      },\r\n      \"revision\": {\r\n        \"in_progress\": 2,\r\n        \"pending\": 6\r\n      },\r\n      \"skills\": 8\r\n    },\r\n    \"Cloud, Azure & Microsoft SDKs\": {\r\n      \"evaluation\": {\r\n        \"pending\": 178\r\n      },\r\n      \"research\": {\r\n        \"in_progress\": 10,\r\n        \"pending\": 168\r\n      },\r\n      \"revision\": {\r\n        \"in_progress\": 9,\r\n        \"pending\": 169\r\n      },\r\n      \"skills\": 178\r\n    },\r\n    \"Coding, refactoring & repository automation\": {\r\n      \"evaluation\": {\r\n        \"in_progress\": 7,\r\n        \"pending\": 23\r\n      },\r\n      \"research\": {\r\n        \"in_progress\": 20,\r\n        \"pending\": 10\r\n      },\r\n      \"revision\": {\r\n        \"complete\": 3,\r\n        \"in_progress\": 9,\r\n        \"pending\": 18\r\n      },\r\n      \"skills\": 30\r\n    },\r\n    \"Communication, productivity & support\": {\r\n      \"evaluation\": {\r\n        \"pending\": 59\r\n      },\r\n      \"research\": {\r\n        \"in_progress\": 20,\r\n        \"pending\": 39\r\n      },\r\n      \"revision\": {\r\n        \"pending\": 59\r\n      },\r\n      \"skills\": 59\r\n    },\r\n    \"Creative, media & design\": {\r\n      \"evaluation\": {\r\n        \"pending\": 30\r\n      },\r\n      \"research\": {\r\n        \"complete\": 1,\r\n        \"in_progress\": 27,\r\n        \"pending\": 2\r\n      },\r\n      \"revision\": {\r\n        \"in_progress\": 1,\r\n        \"pending\": 29\r\n      },\r\n      \"skills\": 30\r\n    },\r\n    \"DevOps, cloud & operations\": {\r\n      \"evaluation\": {\r\n        \"in_progress\": 1,\r\n        \"pending\": 39\r\n      },\r\n      \"research\": {\r\n        \"in_progress\": 36,\r\n        \"pending\": 4\r\n      },\r\n      \"revision\": {\r\n        \"in_progress\": 2,\r\n        \"pending\": 38\r\n      },\r\n      \"skills\": 40\r\n    },\r\n    \"Documents, spreadsheets & presentations\": {\r\n      \"evaluation\": {\r\n        \"pending\": 12\r\n      },\r\n      \"research\": {\r\n        \"in_progress\": 12\r\n      },\r\n      \"revision\": {\r\n        \"in_progress\": 3,\r\n        \"pending\": 9\r\n      },\r\n      \"skills\": 12\r\n    },\r\n    \"Finance, commerce & forecasting\": {\r\n      \"evaluation\": {\r\n        \"pending\": 2\r\n      },\r\n      \"research\": {\r\n        \"in_progress\": 2\r\n      },\r\n      \"revision\": {\r\n        \"pending\": 2\r\n      },\r\n      \"skills\": 2\r\n    },\r\n    \"Frontend, UI & browser automation\": {\r\n      \"evaluation\": {\r\n        \"in_progress\": 2,\r\n        \"pending\": 1\r\n      },\r\n      \"research\": {\r\n        \"in_progress\": 3\r\n      },\r\n      \"revision\": {\r\n        \"complete\": 2,\r\n        \"pending\": 1\r\n      },\r\n      \"skills\": 3\r\n    },\r\n    \"Game, mobile & visual QA\": {\r\n      \"evaluation\": {\r\n        \"pending\": 25\r\n      },\r\n      \"research\": {\r\n        \"in_progress\": 7,\r\n        \"pending\": 18\r\n      },\r\n      \"revision\": {\r\n        \"pending\": 25\r\n      },\r\n      \"skills\": 25\r\n    },\r\n    \"OMERO, Django, Docker & lab infrastructure\": {\r\n      \"evaluation\": {\r\n        \"pending\": 46\r\n      },\r\n      \"research\": {\r\n        \"in_progress\": 3,\r\n        \"pending\": 43\r\n      },\r\n      \"revision\": {\r\n        \"pending\": 46\r\n      },\r\n      \"skills\": 46\r\n    },\r\n    \"Science, research & data analysis\": {\r\n      \"evaluation\": {\r\n        \"pending\": 148\r\n      },\r\n      \"research\": {\r\n        \"in_progress\": 133,\r\n        \"pending\": 15\r\n      },\r\n      \"revision\": {\r\n        \"in_progress\": 12,\r\n        \"pending\": 136\r\n      },\r\n      \"skills\": 148\r\n    },\r\n    \"Search, retrieval & web automation\": {\r\n      \"evaluation\": {\r\n        \"pending\": 16\r\n      },\r\n      \"research\": {\r\n        \"in_progress\": 14,\r\n        \"pending\": 2\r\n      },\r\n      \"revision\": {\r\n        \"pending\": 16\r\n      },\r\n      \"skills\": 16\r\n    },\r\n    \"Security, compliance & risk\": {\r\n      \"evaluation\": {\r\n        \"pending\": 57\r\n      },\r\n      \"research\": {\r\n        \"in_progress\": 3,\r\n        \"pending\": 54\r\n      },\r\n      \"revision\": {\r\n        \"pending\": 57\r\n      },\r\n      \"skills\": 57\r\n    },\r\n    \"Testing, QA & benchmarking\": {\r\n      \"evaluation\": {\r\n        \"pending\": 19\r\n      },\r\n      \"research\": {\r\n        \"in_progress\": 19\r\n      },\r\n      \"revision\": {\r\n        \"in_progress\": 15,\r\n        \"pending\": 4\r\n      },\r\n      \"skills\": 19\r\n    }\r\n  },\r\n  \"category_count\": 15,\r\n  \"errors\": [],\r\n  \"skill_count\": 673\r\n}\r\n",
+        "sha256": "73ccc50dc442a3f4f581c51bb05b6e099287efa89f296132386da2f088424e96"
+      },
+      "stderr.native": {
+        "utf8": "",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "candidate-10-verify-the-recorded-upstream-tree-comparison": {
+      "stdout.native": {
+        "utf8": "{\"ok\": true, \"skills\": 30, \"changed\": 30, \"missing_entrypoints\": 2}\r\n",
+        "sha256": "9dbfcedbdb38cef2e948a6fe541cab45875ad8e1c3bb41624d3526943dac55ca"
+      },
+      "stderr.native": {
+        "utf8": "",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "candidate-11-verify-the-recorded-anthropic-source-comparison": {
+      "stdout.native": {
+        "utf8": "{\"ok\": true, \"skills\": 17, \"changed\": 15, \"missing_entrypoints\": 0}\r\n",
+        "sha256": "3ed1ed8e38a6509e3023541f4b2f5ea6cf9cf5b8d0f8c8d2ef05b37f5bb4925d"
+      },
+      "stderr.native": {
+        "utf8": "",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "candidate-12-verify-the-recorded-scientific-skills-relocation-comparison": {
+      "stdout.native": {
+        "utf8": "{\"ok\": true, \"skills\": 134, \"changed\": 134, \"missing_entrypoints\": 5}\r\n",
+        "sha256": "15ce79c17cac30ec0949d9744d06694b210cfe578c5f5cf7bb79c24dc693f395"
+      },
+      "stderr.native": {
+        "utf8": "",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "candidate-13-verify-native-workflow-evaluator-controls-and-retained-misses": {
+      "stdout.native": {
+        "utf8": "{\r\n  \"ok\": true,\r\n  \"errors\": [],\r\n  \"variants\": [\r\n    {\r\n      \"revision\": 1,\r\n      \"cases\": [\r\n        {\r\n          \"case_id\": \"bash-direct-template\",\r\n          \"domain_expected_unsafe\": true,\r\n          \"native\": {\r\n            \"actionlint\": {\r\n              \"exit_code\": 1,\r\n              \"all_diagnostic_count\": 1,\r\n              \"all_rules\": [\r\n                \"expression\"\r\n              ],\r\n              \"all_severities\": null,\r\n              \"target_hazard_detected\": true,\r\n              \"no_diagnostics\": false\r\n            },\r\n            \"zizmor\": {\r\n              \"exit_code\": 14,\r\n              \"all_diagnostic_count\": 2,\r\n              \"all_rules\": [\r\n                \"template-injection\",\r\n                \"anonymous-definition\"\r\n              ],\r\n              \"all_severities\": [\r\n                \"High\",\r\n                \"Informational\"\r\n              ],\r\n              \"target_hazard_detected\": true,\r\n              \"no_diagnostics\": false\r\n            }\r\n          }\r\n        },\r\n        {\r\n          \"case_id\": \"bash-environment-data\",\r\n          \"domain_expected_unsafe\": false,\r\n          \"native\": {\r\n            \"actionlint\": {\r\n              \"exit_code\": 0,\r\n              \"all_diagnostic_count\": 0,\r\n              \"all_rules\": [],\r\n              \"all_severities\": null,\r\n              \"target_hazard_detected\": null,\r\n              \"no_diagnostics\": true\r\n            },\r\n            \"zizmor\": {\r\n              \"exit_code\": 11,\r\n              \"all_diagnostic_count\": 1,\r\n              \"all_rules\": [\r\n                \"anonymous-definition\"\r\n              ],\r\n              \"all_severities\": [\r\n                \"Informational\"\r\n              ],\r\n              \"target_hazard_detected\": null,\r\n              \"no_diagnostics\": false\r\n            }\r\n          }\r\n        },\r\n        {\r\n          \"case_id\": \"powershell-direct-template\",\r\n          \"domain_expected_unsafe\": true,\r\n          \"native\": {\r\n            \"actionlint\": {\r\n              \"exit_code\": 1,\r\n              \"all_diagnostic_count\": 1,\r\n              \"all_rules\": [\r\n                \"expression\"\r\n              ],\r\n              \"all_severities\": null,\r\n              \"target_hazard_detected\": true,\r\n              \"no_diagnostics\": false\r\n            },\r\n            \"zizmor\": {\r\n              \"exit_code\": 14,\r\n              \"all_diagnostic_count\": 2,\r\n              \"all_rules\": [\r\n                \"template-injection\",\r\n                \"anonymous-definition\"\r\n              ],\r\n              \"all_severities\": [\r\n                \"High\",\r\n                \"Informational\"\r\n              ],\r\n              \"target_hazard_detected\": true,\r\n              \"no_diagnostics\": false\r\n            }\r\n          }\r\n        },\r\n        {\r\n          \"case_id\": \"powershell-environment-data\",\r\n          \"domain_expected_unsafe\": false,\r\n          \"native\": {\r\n            \"actionlint\": {\r\n              \"exit_code\": 0,\r\n              \"all_diagnostic_count\": 0,\r\n              \"all_rules\": [],\r\n              \"all_severities\": null,\r\n              \"target_hazard_detected\": null,\r\n              \"no_diagnostics\": true\r\n            },\r\n            \"zizmor\": {\r\n              \"exit_code\": 11,\r\n              \"all_diagnostic_count\": 1,\r\n              \"all_rules\": [\r\n                \"anonymous-definition\"\r\n              ],\r\n              \"all_severities\": [\r\n                \"Informational\"\r\n              ],\r\n              \"target_hazard_detected\": null,\r\n              \"no_diagnostics\": false\r\n            }\r\n          }\r\n        },\r\n        {\r\n          \"case_id\": \"environment-fed-eval\",\r\n          \"domain_expected_unsafe\": true,\r\n          \"native\": {\r\n            \"actionlint\": {\r\n              \"exit_code\": 0,\r\n              \"all_diagnostic_count\": 0,\r\n              \"all_rules\": [],\r\n              \"all_severities\": null,\r\n              \"target_hazard_detected\": false,\r\n              \"no_diagnostics\": true\r\n            },\r\n            \"zizmor\": {\r\n              \"exit_code\": 11,\r\n              \"all_diagnostic_count\": 1,\r\n              \"all_rules\": [\r\n                \"anonymous-definition\"\r\n              ],\r\n              \"all_severities\": [\r\n                \"Informational\"\r\n              ],\r\n              \"target_hazard_detected\": false,\r\n              \"no_diagnostics\": false\r\n            }\r\n          }\r\n        },\r\n        {\r\n          \"case_id\": \"checkout-mutable-ref\",\r\n          \"domain_expected_unsafe\": true,\r\n          \"native\": {\r\n            \"actionlint\": {\r\n              \"exit_code\": 0,\r\n              \"all_diagnostic_count\": 0,\r\n              \"all_rules\": [],\r\n              \"all_severities\": null,\r\n              \"target_hazard_detected\": false,\r\n              \"no_diagnostics\": true\r\n            },\r\n            \"zizmor\": {\r\n              \"exit_code\": 14,\r\n              \"all_diagnostic_count\": 2,\r\n              \"all_rules\": [\r\n                \"unpinned-uses\",\r\n                \"anonymous-definition\"\r\n              ],\r\n              \"all_severities\": [\r\n                \"High\",\r\n                \"Informational\"\r\n              ],\r\n              \"target_hazard_detected\": true,\r\n              \"no_diagnostics\": false\r\n            }\r\n          }\r\n        },\r\n        {\r\n          \"case_id\": \"checkout-immutable-ref\",\r\n          \"domain_expected_unsafe\": false,\r\n          \"native\": {\r\n            \"actionlint\": {\r\n              \"exit_code\": 0,\r\n              \"all_diagnostic_count\": 0,\r\n              \"all_rules\": [],\r\n              \"all_severities\": null,\r\n              \"target_hazard_detected\": null,\r\n              \"no_diagnostics\": true\r\n            },\r\n            \"zizmor\": {\r\n              \"exit_code\": 11,\r\n              \"all_diagnostic_count\": 1,\r\n              \"all_rules\": [\r\n                \"anonymous-definition\"\r\n              ],\r\n              \"all_severities\": [\r\n                \"Informational\"\r\n              ],\r\n              \"target_hazard_detected\": null,\r\n              \"no_diagnostics\": false\r\n            }\r\n          }\r\n        }\r\n      ],\r\n      \"tools\": {\r\n        \"actionlint\": {\r\n          \"missed_hazards\": [\r\n            \"environment-fed-eval\",\r\n            \"checkout-mutable-ref\"\r\n          ],\r\n          \"domain_safe_controls_with_findings\": [],\r\n          \"qualified_as_complete_security_grader\": false\r\n        },\r\n        \"zizmor\": {\r\n          \"missed_hazards\": [\r\n            \"environment-fed-eval\"\r\n          ],\r\n          \"domain_safe_controls_with_findings\": [\r\n            \"bash-environment-data\",\r\n            \"powershell-environment-data\",\r\n            \"checkout-immutable-ref\"\r\n          ],\r\n          \"qualified_as_complete_security_grader\": false\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \"revision\": 2,\r\n      \"cases\": [\r\n        {\r\n          \"case_id\": \"bash-direct-template\",\r\n          \"domain_expected_unsafe\": true,\r\n          \"native\": {\r\n            \"actionlint\": {\r\n              \"exit_code\": 1,\r\n              \"all_diagnostic_count\": 1,\r\n              \"all_rules\": [\r\n                \"expression\"\r\n              ],\r\n              \"all_severities\": null,\r\n              \"target_hazard_detected\": true,\r\n              \"no_diagnostics\": false\r\n            },\r\n            \"zizmor\": {\r\n              \"exit_code\": 14,\r\n              \"all_diagnostic_count\": 1,\r\n              \"all_rules\": [\r\n                \"template-injection\"\r\n              ],\r\n              \"all_severities\": [\r\n                \"High\"\r\n              ],\r\n              \"target_hazard_detected\": true,\r\n              \"no_diagnostics\": false\r\n            }\r\n          }\r\n        },\r\n        {\r\n          \"case_id\": \"bash-environment-data\",\r\n          \"domain_expected_unsafe\": false,\r\n          \"native\": {\r\n            \"actionlint\": {\r\n              \"exit_code\": 0,\r\n              \"all_diagnostic_count\": 0,\r\n              \"all_rules\": [],\r\n              \"all_severities\": null,\r\n              \"target_hazard_detected\": null,\r\n              \"no_diagnostics\": true\r\n            },\r\n            \"zizmor\": {\r\n              \"exit_code\": 0,\r\n              \"all_diagnostic_count\": 0,\r\n              \"all_rules\": [],\r\n              \"all_severities\": [],\r\n              \"target_hazard_detected\": null,\r\n              \"no_diagnostics\": true\r\n            }\r\n          }\r\n        },\r\n        {\r\n          \"case_id\": \"powershell-direct-template\",\r\n          \"domain_expected_unsafe\": true,\r\n          \"native\": {\r\n            \"actionlint\": {\r\n              \"exit_code\": 1,\r\n              \"all_diagnostic_count\": 1,\r\n              \"all_rules\": [\r\n                \"expression\"\r\n              ],\r\n              \"all_severities\": null,\r\n              \"target_hazard_detected\": true,\r\n              \"no_diagnostics\": false\r\n            },\r\n            \"zizmor\": {\r\n              \"exit_code\": 14,\r\n              \"all_diagnostic_count\": 1,\r\n              \"all_rules\": [\r\n                \"template-injection\"\r\n              ],\r\n              \"all_severities\": [\r\n                \"High\"\r\n              ],\r\n              \"target_hazard_detected\": true,\r\n              \"no_diagnostics\": false\r\n            }\r\n          }\r\n        },\r\n        {\r\n          \"case_id\": \"powershell-environment-data\",\r\n          \"domain_expected_unsafe\": false,\r\n          \"native\": {\r\n            \"actionlint\": {\r\n              \"exit_code\": 0,\r\n              \"all_diagnostic_count\": 0,\r\n              \"all_rules\": [],\r\n              \"all_severities\": null,\r\n              \"target_hazard_detected\": null,\r\n              \"no_diagnostics\": true\r\n            },\r\n            \"zizmor\": {\r\n              \"exit_code\": 0,\r\n              \"all_diagnostic_count\": 0,\r\n              \"all_rules\": [],\r\n              \"all_severities\": [],\r\n              \"target_hazard_detected\": null,\r\n              \"no_diagnostics\": true\r\n            }\r\n          }\r\n        },\r\n        {\r\n          \"case_id\": \"environment-fed-eval\",\r\n          \"domain_expected_unsafe\": true,\r\n          \"native\": {\r\n            \"actionlint\": {\r\n              \"exit_code\": 0,\r\n              \"all_diagnostic_count\": 0,\r\n              \"all_rules\": [],\r\n              \"all_severities\": null,\r\n              \"target_hazard_detected\": false,\r\n              \"no_diagnostics\": true\r\n            },\r\n            \"zizmor\": {\r\n              \"exit_code\": 0,\r\n              \"all_diagnostic_count\": 0,\r\n              \"all_rules\": [],\r\n              \"all_severities\": [],\r\n              \"target_hazard_detected\": false,\r\n              \"no_diagnostics\": true\r\n            }\r\n          }\r\n        },\r\n        {\r\n          \"case_id\": \"checkout-mutable-ref\",\r\n          \"domain_expected_unsafe\": true,\r\n          \"native\": {\r\n            \"actionlint\": {\r\n              \"exit_code\": 0,\r\n              \"all_diagnostic_count\": 0,\r\n              \"all_rules\": [],\r\n              \"all_severities\": null,\r\n              \"target_hazard_detected\": false,\r\n              \"no_diagnostics\": true\r\n            },\r\n            \"zizmor\": {\r\n              \"exit_code\": 14,\r\n              \"all_diagnostic_count\": 1,\r\n              \"all_rules\": [\r\n                \"unpinned-uses\"\r\n              ],\r\n              \"all_severities\": [\r\n                \"High\"\r\n              ],\r\n              \"target_hazard_detected\": true,\r\n              \"no_diagnostics\": false\r\n            }\r\n          }\r\n        },\r\n        {\r\n          \"case_id\": \"checkout-immutable-ref\",\r\n          \"domain_expected_unsafe\": false,\r\n          \"native\": {\r\n            \"actionlint\": {\r\n              \"exit_code\": 0,\r\n              \"all_diagnostic_count\": 0,\r\n              \"all_rules\": [],\r\n              \"all_severities\": null,\r\n              \"target_hazard_detected\": null,\r\n              \"no_diagnostics\": true\r\n            },\r\n            \"zizmor\": {\r\n              \"exit_code\": 0,\r\n              \"all_diagnostic_count\": 0,\r\n              \"all_rules\": [],\r\n              \"all_severities\": [],\r\n              \"target_hazard_detected\": null,\r\n              \"no_diagnostics\": true\r\n            }\r\n          }\r\n        }\r\n      ],\r\n      \"tools\": {\r\n        \"actionlint\": {\r\n          \"missed_hazards\": [\r\n            \"environment-fed-eval\",\r\n            \"checkout-mutable-ref\"\r\n          ],\r\n          \"domain_safe_controls_with_findings\": [],\r\n          \"qualified_as_complete_security_grader\": false\r\n        },\r\n        \"zizmor\": {\r\n          \"missed_hazards\": [\r\n            \"environment-fed-eval\"\r\n          ],\r\n          \"domain_safe_controls_with_findings\": [],\r\n          \"qualified_as_complete_security_grader\": false\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"agent_efficacy_scored\": false,\r\n  \"quality_superiority_claim_permitted\": false,\r\n  \"limits\": [\r\n    \"These seven controls are selected domain probes, not a representative vulnerability distribution.\",\r\n    \"Native outputs and independent ground truth must remain separate; unrelated findings do not detect the intended hazard.\",\r\n    \"Offline zizmor excludes remote audits. Optional ShellCheck and Pyflakes were not provisioned for actionlint.\",\r\n    \"Hashes validate recorded bytes, not an independently witnessed execution or a binary signature.\",\r\n    \"No coding-agent comparison, real GitHub event execution or model superiority is measured.\"\r\n  ]\r\n}\r\n",
+        "sha256": "729944944d23862caf802c459f199490cf6c8a55888250eafa320e6d2de23a48"
+      },
+      "stderr.native": {
+        "utf8": "",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "candidate-14-validate-improved-overlays-and-original-provenance": {
+      "stdout.native": {
+        "utf8": "{\r\n  \"errors\": []\r\n}\r\n",
+        "sha256": "40856fa0455b8c247b3bee47720e1996f63abae0c39b88cf26a615c823bbe2a5"
+      },
+      "stderr.native": {
+        "utf8": "",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "candidate-15-verify-frontend-component-control-evidence-and-input-freshness": {
+      "stdout.native": {
+        "utf8": "{\"errors\": []}\r\n",
+        "sha256": "7da9a12c802f35336db3fc124ac07a93ee3e6f4d89be9953f9fedda757acecf5"
+      },
+      "stderr.native": {
+        "utf8": "",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "candidate-16-verify-api-and-backend-component-evidence-and-input-freshness": {
+      "stdout.native": {
+        "utf8": "{\"errors\": []}\r\n",
+        "sha256": "7da9a12c802f35336db3fc124ac07a93ee3e6f4d89be9953f9fedda757acecf5"
+      },
+      "stderr.native": {
+        "utf8": "",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "candidate-17-verify-native-fuzzing-evidence-and-collector-input-freshness": {
+      "stdout.native": {
+        "utf8": "{\"errors\": [], \"controls\": 11, \"agent_performance_claim\": false}\r\n",
+        "sha256": "7a98c201e439859146366fe3a876cef8bfc2c8d24e7e7699e6aa7e30ee1cf64d"
+      },
+      "stderr.native": {
+        "utf8": "",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "candidate-18-verify-confined-evaluator-evidence-and-source-freshness": {
+      "stdout.native": {
+        "utf8": "{\"ok\": true, \"errors\": [], \"files\": 313, \"historical_source_snapshots\": true, \"current_source_qualified\": false, \"agent_performance_claim\": false}\r\n",
+        "sha256": "cd009f56af3f1616dcc19bab042415d5434afceb7ae4737878fc7e1ab8e80f17"
+      },
+      "stderr.native": {
+        "utf8": "",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "candidate-19-verify-all-matched-development-trials-and-report": {
+      "stdout.native": {
+        "utf8": "{\"valid\": true, \"completed_attempts\": 9, \"quality_superiority_established\": false}\r\n",
+        "sha256": "ebd9ee1124db9e56ac37c53ef33ca57423e5c97de3daf5c68c2f58bd29d235be"
+      },
+      "stderr.native": {
+        "utf8": "",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "candidate-20-verify-frozen-public-development-task-selection": {
+      "stdout.native": {
+        "utf8": "{\"ok\": true, \"planned_tasks\": 12, \"planned_attempts\": 36, \"execution_admitted\": false, \"model_invocations\": 0}\r\n",
+        "sha256": "562b07814fd48bc606840b75240d7a61f309dea6f885348e503a9a8eca23e57e"
+      },
+      "stderr.native": {
+        "utf8": "",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  "scope": "Every offline-validation domain step, in workflow order, through an isolated LF checkout; no gate omitted."
+}

@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "records": [
+    {
+      "id": "preflight",
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 101,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 180.0,
+        "job_memory_limit_bytes": 4294967296,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "full-tests",
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 26968,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 1500.0,
+        "job_memory_limit_bytes": 4294967296,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    }
+  ],
+  "source_unchanged": true,
+  "source_sha256": {
+    "data/improvement_ledger.json": "a644da057a1926f6e5f08af0cd3d854dd432e516a28694e55cd3273be07da34a",
+    "artifacts/research/2026-11-14/ledger-resource-portability/00-captured.txt": "3687b590f5f39a23d22b7700bf9e208e14a462b1a2c68f531f995fe3675f95f5",
+    "artifacts/research/2026-11-14/ledger-resource-portability/00-published.txt": "c83c4c9d60d30d508bbd2bf0c6ffa724b5fdac679addd4828b268892dc39dc1b",
+    "artifacts/research/2026-11-14/ledger-resource-portability/01-captured.txt": "7354622d7dd7d5ddf271c07aa0b2db72e69e83a18b9c4309751cb3a647789ac4",
+    "artifacts/research/2026-11-14/ledger-resource-portability/01-published.txt": "88acce453f917eda04f291533c1edb9722b00a37e94581dc30255028f65961b2",
+    "artifacts/research/2026-11-14/ledger-resource-portability/migration.json": "ef15b6c20a301329d1f996fb5d126f0c61b3ad501ac7b0add9230d771d10c99f",
+    "artifacts/research/2026-11-14/ledger-resource-portability/previous-research.json": "728c32222e3951772ec3288356fac789c0e79045539e485a91664c864ff2d75f",
+    "artifacts/research/2026-11-14/ledger-resource-portability/review.json": "f00c1847f05966608cff31cf98cc19ce9b28ef2dc145584223c27e8b39a1e790"
+  },
+  "prior_domain_qualification_sha256": "ebcf912b7b1aa1d295a2e7136d9b2746c9b76ea38450c3f461dc7df48ea61cd1",
+  "domain_gates_passed": 21,
+  "temporary_directory_removed": true,
+  "model_invocations": 0
+}

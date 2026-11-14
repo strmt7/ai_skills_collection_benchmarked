@@ -1607,17 +1607,25 @@
           {
             "path": "docs/research-evaluation-and-resumption.md",
             "sha256": "f2a216e27b872f8836ba5cb5b104358809e8532a75e66657987ea1cd8d3ffcf4"
+          },
+          {
+            "path": "artifacts/research/2026-11-14/ledger-resource-portability/migration.json",
+            "scope": "Exact original and published bytes establish a line-ending-only migration to the existing catalog hash policy. No review status or evaluation result changed.",
+            "sha256": "ef15b6c20a301329d1f996fb5d126f0c61b3ad501ac7b0add9230d771d10c99f"
           }
         ],
+        "resource_hash_policy": "catalog-canonical-v1",
         "resources": {
           "SKILL.md": {
+            "captured_raw_sha256": "3687b590f5f39a23d22b7700bf9e208e14a462b1a2c68f531f995fe3675f95f5",
             "review_scope": "Reviewed the pinned entrypoint in full. Assessed context signals, host hooks, durable records and owned process resumption. The referenced hook is absent from the locked package.",
-            "sha256": "3687b590f5f39a23d22b7700bf9e208e14a462b1a2c68f531f995fe3675f95f5",
+            "sha256": "c83c4c9d60d30d508bbd2bf0c6ffa724b5fdac679addd4828b268892dc39dc1b",
             "status": "reviewed"
           },
           "agents/openai.yaml": {
+            "captured_raw_sha256": "7354622d7dd7d5ddf271c07aa0b2db72e69e83a18b9c4309751cb3a647789ac4",
             "review_scope": "Reviewed complete user-interface metadata and implicit invocation policy. Activation behavior has not been measured.",
-            "sha256": "7354622d7dd7d5ddf271c07aa0b2db72e69e83a18b9c4309751cb3a647789ac4",
+            "sha256": "88acce453f917eda04f291533c1edb9722b00a37e94581dc30255028f65961b2",
             "status": "reviewed"
           }
         },
