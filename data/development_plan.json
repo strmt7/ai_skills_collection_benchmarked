@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "plan_date": "2026-11-13",
+  "plan_date": "2026-11-14",
   "objective_status": "active_and_incomplete",
   "controller_mode": "single_development_session",
   "benchmark_subject_mode": "serial_isolated_conditions_under_approved_exception",
@@ -78,7 +78,7 @@
         "R9",
         "R12"
       ],
-      "next_action": "Clean native profile authentication still needs a supported completed sign-in. The existing browser route was checked against current official documentation and reached the accounts registered passkey/recovery-key challenge; no secrets were entered, native credentials copied or auth settings changed. Resume actual-account isolation/identity qualification when that verification can be completed. Keep launch refusal closed; continue dependency-ready integration and catalog work without repeating unchanged login probes.",
+      "next_action": "Qualify an additional anonymous numeric-loopback local-model stratum through the official native harness. Current private metadata, model-input verification and native context controls are preparation only. Requalify the integrated subject/controller/collector/grader boundary with independently specified positive and negative controls before any model invocation. Keep the launch refusal closed meanwhile. Native OpenAI sign-in/profile admission remains separately open; do not request an API key, copy credentials or modify personal account state.",
       "deliverables": [
         "Maintained qualification entrypoint and frozen input assets",
         "Provider/model identity and capability admission",
@@ -160,7 +160,7 @@
         "R4",
         "R12"
       ],
-      "next_action": "Integrate the complete original build/test stages and modular scoring for all twelve fixed tasks. Native resource components now support original 600\u2013900-second test budgets, explicit project quotas and long leases; seven original-grader controls passed. Full Faiss CUDA-enabled, Prometheus Go and Nx pnpm dependency/build qualification remains open. Preserve the fixed frame and keep counted model trials closed until admission passes.",
+      "next_action": "Integrate the complete original build/test stages and modular scoring for all twelve fixed tasks. Native resource components now support original 600–900-second test budgets, explicit project quotas and long leases; seven original-grader controls passed. Full Faiss CUDA-enabled, Prometheus Go and Nx pnpm dependency/build qualification remains open. Preserve the fixed frame and keep counted model trials closed until admission passes.",
       "deliverables": [
         "Frozen public-development frame",
         "Candidate and intervention hashes",
@@ -412,7 +412,7 @@
         "R9",
         "R12"
       ],
-      "next_action": "Qualify the cross-project provider and exact-byte checkout fixes; verify the updated stable pnpm action in hosted controls. Continue remaining dependency, workflow and Codecov acceptance without claiming completion or model advantage.",
+      "next_action": "The b475adde exact-head snapshot records all 31 workflows terminal: 29 passed, including complete Windows/Linux offline validation; two held scanner gates remain failed. Continue stable dependency/toolchain and actual Codecov acceptance checks. Keep installation/runtime evidence separate from model-effectiveness claims.",
       "deliverables": [
         "Fresh-cache and recovery qualification",
         "Workflow-to-source trigger map",
@@ -450,6 +450,10 @@
         {
           "path": "artifacts/research/2026-11-14/pnpm-action-update/review.json",
           "sha256": "4aa778691e078fd66d2ea76f46f0e6125155a1d31e424d8c4c0033a83276eac0"
+        },
+        {
+          "path": "artifacts/research/2026-11-14/hosted-validation-b475adde/review.json",
+          "sha256": "23588598db8b8cca442ea4a3e82e2d60758f3d2974f66fa384b782c97be79d32"
         }
       ]
     },
@@ -496,7 +500,7 @@
         "R11",
         "R12"
       ],
-      "next_action": "Repair the ordinary offline-validation failures found on 1091ed16ec51e06e0826fd1bc36d94a740738514, qualify this cohesive portability batch, publish through the connector, then wait for every triggered workflow. Keep the two held security gates visibly failed until authorized remediation.",
+      "next_action": "Review and qualify the maintained MCP 2.3.0 pagination repair, its independent before/after controls, fresh locked SDK environment and recurring native CI. Publish the cohesive batch through the official connector after local gates; wait for every triggered workflow. Keep the two held security gates visible, retain main-only development and create no release or tag.",
       "deliverables": [
         "Reviewed file and line-ending inventory",
         "Connector commit on main with expected-head check",
@@ -515,6 +519,10 @@
           "path": "artifacts/research/2026-11-14/development-checkpoint/hosted-runs.json",
           "sha256": "73a88f88da49a371d614409d23f5067185cad4680b2c3f7da1b9aca6898ee7ff",
           "scope": "All 42 workflows terminal on the published checkpoint; 39 succeeded and three failed. This is not hosted acceptance."
+        },
+        {
+          "path": "artifacts/research/2026-11-14/hosted-validation-b475adde/review.json",
+          "sha256": "23588598db8b8cca442ea4a3e82e2d60758f3d2974f66fa384b782c97be79d32"
         }
       ]
     },

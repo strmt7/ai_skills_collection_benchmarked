@@ -10,3 +10,7 @@ SDK/protocol contracts; bounded operations and complete client loops;
 independent evaluation guidance; an authored local SDK qualification fixture.
 These changes are experimental. Runtime controls are not coding-agent efficacy
 evidence. The original mirrored package remains unchanged.
+
+Modified on 14 November 2026: qualified Python 3.14.10 and MCP 2.3.0;
+preserved opaque empty-string pagination cursors; added tool-count bounds and
+controls for empty cursors, cycles and page/tool limits.

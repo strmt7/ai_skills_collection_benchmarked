@@ -4,6 +4,15 @@
 version: 2
 updates:
   - package-ecosystem: "pip"
+    directory: "/artifacts/research/2026-11-14/mcp-pagination-sdk230"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "08:50"
+      timezone: "UTC"
+    open-pull-requests-limit: 0
+
+  - package-ecosystem: "pip"
     directory: "/toolchains/appcontainer-modern"
     schedule:
       interval: "weekly"

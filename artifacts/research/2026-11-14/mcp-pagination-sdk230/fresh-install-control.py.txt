@@ -1,0 +1,41 @@
+"""Qualify a fresh private SDK installation matching the proposed Windows workflow."""
+import hashlib
+import json
+import os
+import sys
+from pathlib import Path
+S=Path(__file__).resolve().parent;R=S.parents[2]
+sys.path.insert(0,str(R/'tools'))
+from _agent_tool_runtime import profile_environment
+from _windows_trial_process import run_owned
+O=S/'mcp-workflow-fresh-qualified-v2';O.mkdir()
+previous=S/'mcp-sdk-230-native-v1'
+prior=json.loads((previous/'result.json').read_bytes())
+if not prior['passed']:raise ValueError('Missing initial SDK graph qualification')
+uv=Path(os.environ['AI_SKILLS_UV'])
+if hashlib.sha256(uv.read_bytes()).hexdigest()!=prior['uv_sha256']:raise ValueError('Installer changed')
+raw=(previous/'requirements.txt').read_bytes()
+lines=raw.decode('utf-8').splitlines(keepends=True)
+lock=('# Windows x64 CPython 3.14.10; MCP 2.3.0.\n# Generated with uv 0.13.8: uv --no-config pip compile --python 3.14.10 --prerelease disallow --generate-hashes requirements.in\n'+''.join(lines[2:])).encode()
+if lock.splitlines()[2:]!=raw.splitlines()[2:]:raise ValueError('Dependency records changed')
+requirements=O/'requirements.txt';requirements.write_bytes(lock)
+source=R/'included/improved/skills/mcp-builder-current/scripts/qualify_sdk.py'
+workflow=R/'.github/workflows/mcp-python-sdk.yml'
+hashes={str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in (source,workflow,requirements)}
+environment=profile_environment(O,{'UV_CACHE_DIR':'uv-cache'})
+environment.update(UV_NO_CONFIG='1',UV_PYTHON_DOWNLOADS='never')
+python=O/'runtime/Scripts/python.exe'
+cases=[('create',[str(uv),'--no-config','venv','--python',str(Path(sys._base_executable)),str(O/'runtime')]),('install',[str(uv),'--no-config','pip','install','--python',str(python),'--require-hashes','--only-binary=:all:','-r',str(requirements)]),('dependency-check',[str(uv),'--no-config','pip','check','--python',str(python)]),('modern',[str(python),'-X','utf8','-I','-B',str(source),'--output',str(O/'modern.json')]),('handshake',[str(python),'-X','utf8','-I','-B',str(source),'--protocol','handshake','--output',str(O/'handshake.json')])]
+records=[]
+for label,command in cases:
+    with (O/(label+'.stdout.native')).open('xb') as stdout,(O/(label+'.stderr.native')).open('xb') as stderr,open(os.devnull,'rb') as stdin:
+        process=run_owned(command,cwd=R,stdin=stdin,stdout=stdout,stderr=stderr,timeout=180,output_limit=8*1024**2,memory_limit=2*1024**3,process_limit=32,environment=environment)
+    passed=process['exit_code']==0 and process['termination_reason'] is None and process['job_active_processes_after_cleanup']==0
+    records.append({'id':label,'passed':passed,'command':command,'process':process})
+    (O/'progress.json').write_text(json.dumps(records,indent=2)+'\n',encoding='utf-8',newline='\n')
+    print(label+(': passed' if passed else ': FAILED'),flush=True)
+    if not passed:break
+unchanged=all(hashlib.sha256(Path(p).read_bytes()).hexdigest()==d for p,d in hashes.items())
+result={'passed':len(records)==len(cases) and all(r['passed'] for r in records) and unchanged,'source_unchanged':unchanged,'source_sha256':hashes,'records':records,'previous_native_lock_sha256':hashlib.sha256(raw).hexdigest(),'lock_change':'Portable header only; every dependency/version/hash record unchanged.','hosted_workflow_qualified':False,'model_inferences':0,'counted_benchmark_trials':0}
+(O/'qualification.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8',newline='\n')
+raise SystemExit(not result['passed'])

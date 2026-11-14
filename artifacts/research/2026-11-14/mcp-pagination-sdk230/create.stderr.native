@@ -1,0 +1,3 @@
+Using CPython 3.14.10 interpreter at: C:\Users\strat\AppData\Local\ai-skills-qualification\e64f5fcedfdc\e6e91defacfa8253\tools\python-3.14.10-fb6245cd5efc49d29c5360e38e1b8587\tools\python.exe
+Creating virtual environment at: .venv\research\benchmark-planning-20261110-v1\mcp-workflow-fresh-qualified-v2\runtime
+Activate with: .venv\research\benchmark-planning-20261110-v1\mcp-workflow-fresh-qualified-v2\runtime\Scripts\activate

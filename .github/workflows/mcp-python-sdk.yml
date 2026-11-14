@@ -1,0 +1,73 @@
+name: Python MCP SDK contracts
+
+on:
+  push:
+    paths:
+      - .github/workflows/mcp-python-sdk.yml
+      - included/improved/skills/mcp-builder-current/**
+      - artifacts/research/2026-11-14/mcp-pagination-sdk230/**
+  pull_request:
+    paths:
+      - .github/workflows/mcp-python-sdk.yml
+      - included/improved/skills/mcp-builder-current/**
+      - artifacts/research/2026-11-14/mcp-pagination-sdk230/**
+  workflow_dispatch:
+  schedule:
+    - cron: "35 7 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mcp-python-sdk-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  stdio:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    env:
+      GIT_CONFIG_COUNT: "1"
+      GIT_CONFIG_KEY_0: core.longpaths
+      GIT_CONFIG_VALUE_0: "true"
+      PYTHONDONTWRITEBYTECODE: "1"
+      UV_NO_CONFIG: "1"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: "0.13.8"
+          python-version: "3.14.10"
+          activate-environment: "true"
+          venv-path: ${{ runner.temp }}/mcp-sdk-venv
+          enable-cache: "false"
+      - name: Install the isolated hash-locked SDK graph
+        shell: pwsh
+        env:
+          UV_PYTHON_DOWNLOADS: never
+        run: |
+          $ErrorActionPreference = 'Stop'
+          python -c "import platform,sys; sys.exit(platform.python_version() != '3.14.10' or sys.prefix == sys.base_prefix)"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          uv pip install --require-hashes --only-binary=:all: -r artifacts/research/2026-11-14/mcp-pagination-sdk230/requirements.txt
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          uv pip check
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Exercise modern and legacy local stdio contracts
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $output = Join-Path $env:RUNNER_TEMP 'mcp-sdk-observations'
+          New-Item -ItemType Directory -Path $output | Out-Null
+          python included/improved/skills/mcp-builder-current/scripts/qualify_sdk.py --output (Join-Path $output 'modern.json')
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python included/improved/skills/mcp-builder-current/scripts/qualify_sdk.py --protocol handshake --output (Join-Path $output 'handshake.json')
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Retain SDK contract observations
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: mcp-python-sdk-contracts-windows-3.14.10
+          path: ${{ runner.temp }}/mcp-sdk-observations/
+          if-no-files-found: error
+          retention-days: 14

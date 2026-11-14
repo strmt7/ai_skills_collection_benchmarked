@@ -3761,6 +3761,11 @@
           {
             "path": "docs/research-authoring-and-api.md",
             "sha256": "a3d1eced629ef1316309e756a94d819bb8eeda79e1576e88e5426a756b6269c3"
+          },
+          {
+            "path": "artifacts/research/2026-11-14/mcp-pagination-sdk230/review.json",
+            "scope": "Current SDK pagination contract, corrected maintained overlay and local stdio/component controls only. No model-effectiveness or full-package review claim.",
+            "sha256": "b521001d32e22ee22b0614e44d584bd4f44201695a019a4082f04752bc2330d3"
           }
         ],
         "status": "in_progress"
@@ -3792,6 +3797,11 @@
             "path": "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
             "scope": "Raw upstream Git tree comparison only; content, license, runtime and agent-effectiveness reviews remain separate.",
             "sha256": "8627febb9e9ec18df126c1805a32e7f04060e5c62f7ccb76d9fc55ae4763d663"
+          },
+          {
+            "path": "artifacts/research/2026-11-14/mcp-pagination-sdk230/review.json",
+            "scope": "Current SDK pagination contract, corrected maintained overlay and local stdio/component controls only. No model-effectiveness or full-package review claim.",
+            "sha256": "b521001d32e22ee22b0614e44d584bd4f44201695a019a4082f04752bc2330d3"
           }
         ],
         "status": "in_progress"
@@ -3805,6 +3815,11 @@
           {
             "path": "docs/research-authoring-and-api.md",
             "sha256": "a3d1eced629ef1316309e756a94d819bb8eeda79e1576e88e5426a756b6269c3"
+          },
+          {
+            "path": "artifacts/research/2026-11-14/mcp-pagination-sdk230/review.json",
+            "scope": "Current SDK pagination contract, corrected maintained overlay and local stdio/component controls only. No model-effectiveness or full-package review claim.",
+            "sha256": "b521001d32e22ee22b0614e44d584bd4f44201695a019a4082f04752bc2330d3"
           }
         ],
         "status": "in_progress"

@@ -1,0 +1,161 @@
+{
+  "passed": true,
+  "source_unchanged": true,
+  "source_sha256": {
+    "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\included\\improved\\skills\\mcp-builder-current\\scripts\\qualify_sdk.py": "c381fa57afa274d0bb2e0b23bca9f4d2e6043363a84e19b8136d9a452305b0cc",
+    "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.github\\workflows\\mcp-python-sdk.yml": "766a103e75df8181924a73f44e08990e5409921e9ab8fd61afdc75dc3e3a293c",
+    "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\mcp-workflow-fresh-qualified-v2\\requirements.txt": "060aa3becf9386644dd0b749fe42bd310ea7e0a0865937f597d7bfe897e5e538"
+  },
+  "records": [
+    {
+      "id": "create",
+      "passed": true,
+      "command": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\tools\\uv-b82920747ad4444b83e0fdb3eb42c836\\uv.exe",
+        "--no-config",
+        "venv",
+        "--python",
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\tools\\python-3.14.10-fb6245cd5efc49d29c5360e38e1b8587\\tools\\python.exe",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\mcp-workflow-fresh-qualified-v2\\runtime"
+      ],
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 429,
+        "output_limit_bytes": 8388608,
+        "wall_time_limit_seconds": 180.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 32,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "install",
+      "passed": true,
+      "command": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\tools\\uv-b82920747ad4444b83e0fdb3eb42c836\\uv.exe",
+        "--no-config",
+        "pip",
+        "install",
+        "--python",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\mcp-workflow-fresh-qualified-v2\\runtime\\Scripts\\python.exe",
+        "--require-hashes",
+        "--only-binary=:all:",
+        "-r",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\mcp-workflow-fresh-qualified-v2\\requirements.txt"
+      ],
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 1002,
+        "output_limit_bytes": 8388608,
+        "wall_time_limit_seconds": 180.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 32,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "dependency-check",
+      "passed": true,
+      "command": [
+        "C:\\Users\\strat\\AppData\\Local\\ai-skills-qualification\\e64f5fcedfdc\\e6e91defacfa8253\\tools\\uv-b82920747ad4444b83e0fdb3eb42c836\\uv.exe",
+        "--no-config",
+        "pip",
+        "check",
+        "--python",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\mcp-workflow-fresh-qualified-v2\\runtime\\Scripts\\python.exe"
+      ],
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 188,
+        "output_limit_bytes": 8388608,
+        "wall_time_limit_seconds": 180.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 32,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "modern",
+      "passed": true,
+      "command": [
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\mcp-workflow-fresh-qualified-v2\\runtime\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-I",
+        "-B",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\included\\improved\\skills\\mcp-builder-current\\scripts\\qualify_sdk.py",
+        "--output",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\mcp-workflow-fresh-qualified-v2\\modern.json"
+      ],
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 492,
+        "output_limit_bytes": 8388608,
+        "wall_time_limit_seconds": 180.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 32,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "handshake",
+      "passed": true,
+      "command": [
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\mcp-workflow-fresh-qualified-v2\\runtime\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-I",
+        "-B",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\included\\improved\\skills\\mcp-builder-current\\scripts\\qualify_sdk.py",
+        "--protocol",
+        "handshake",
+        "--output",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\mcp-workflow-fresh-qualified-v2\\handshake.json"
+      ],
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 492,
+        "output_limit_bytes": 8388608,
+        "wall_time_limit_seconds": 180.0,
+        "job_memory_limit_bytes": 2147483648,
+        "active_process_limit": 32,
+        "explicit_environment": true
+      }
+    }
+  ],
+  "previous_native_lock_sha256": "6107de2c5effb6aba38cbb7e4216765f71c391bf735b33d7fdd0784fb2487d92",
+  "lock_change": "Portable header only; every dependency/version/hash record unchanged.",
+  "hosted_workflow_qualified": false,
+  "model_inferences": 0,
+  "counted_benchmark_trials": 0
+}

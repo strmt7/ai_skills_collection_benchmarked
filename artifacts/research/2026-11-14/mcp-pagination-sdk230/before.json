@@ -1,0 +1,18 @@
+{
+  "defect_reproduced": true,
+  "expected_tools": [
+    "alpha",
+    "beta"
+  ],
+  "observed_tools": [
+    "alpha"
+  ],
+  "observed_cursors": [
+    null
+  ],
+  "mcp_version": "2.3.0",
+  "source_sha256": "6467717e25b7550e6fcbb912153ce061c054a95757457e7198bd17a6a1f8ff11",
+  "model_inferences": 0,
+  "counted_benchmark_trials": 0,
+  "scope": "Protocol/API consumer regression only. The independently reviewed SDK pagination contract treats None as the sole terminal signal."
+}

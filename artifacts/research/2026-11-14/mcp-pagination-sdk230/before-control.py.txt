@@ -1,0 +1,27 @@
+"""Check opaque empty-string cursor continuation using actual SDK result types."""
+import asyncio
+import hashlib
+import importlib.metadata
+import importlib.util
+import json
+from pathlib import Path
+from mcp.types import ListToolsResult, Tool
+
+S=Path(__file__).resolve().parent;R=S.parents[2]
+O=S/'mcp-empty-cursor-before-v1';O.mkdir()
+source=R/'included/improved/skills/mcp-builder-current/scripts/qualify_sdk.py'
+raw=source.read_bytes();(O/'baseline-qualify_sdk.py.txt').write_bytes(raw)
+spec=importlib.util.spec_from_file_location('current_fixture',source)
+module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+class Pages:
+    def __init__(self):self.cursors=[]
+    async def list_tools(self,*,params):
+        self.cursors.append(params.cursor)
+        if params.cursor is None:return ListToolsResult(tools=[Tool(name='alpha',inputSchema={'type':'object'})],nextCursor='')
+        if params.cursor=='':return ListToolsResult(tools=[Tool(name='beta',inputSchema={'type':'object'})],nextCursor=None)
+        raise ValueError('Client fabricated a cursor')
+pages=Pages();actual=[tool.name for tool in asyncio.run(module.all_tools(pages))]
+reproduced=actual==['alpha'] and pages.cursors==[None]
+report={'defect_reproduced':reproduced,'expected_tools':['alpha','beta'],'observed_tools':actual,'observed_cursors':pages.cursors,'mcp_version':importlib.metadata.version('mcp'),'source_sha256':hashlib.sha256(raw).hexdigest(),'model_inferences':0,'counted_benchmark_trials':0,'scope':'Protocol/API consumer regression only. The independently reviewed SDK pagination contract treats None as the sole terminal signal.'}
+(O/'result.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8',newline='\n')
+print(json.dumps(report));raise SystemExit(not reproduced)

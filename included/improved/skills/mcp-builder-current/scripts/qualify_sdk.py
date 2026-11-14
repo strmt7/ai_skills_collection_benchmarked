@@ -61,20 +61,24 @@ def serve(lifecycle: Path):
     server.run(transport="stdio")
 
 
-async def all_tools(session, max_pages=100):
+async def all_tools(session, max_pages=100, max_tools=10000):
     """Use current typed request/result fields and reject cursor cycles."""
+    if any(type(limit) is not int or limit <= 0 for limit in (max_pages, max_tools)):
+        raise ValueError("pagination limits must be positive integers")
     cursor = None
     seen = set()
     tools = []
     names = set()
     for _ in range(max_pages):
         response = await session.list_tools(params=PaginatedRequestParams(cursor=cursor))
+        if len(response.tools) > max_tools - len(tools):
+            raise ValueError("tool listing limit exceeded")
         for tool in response.tools:
             if tool.name in names:
                 raise ValueError("duplicate tool name across pages")
             names.add(tool.name)
             tools.append(tool)
-        if not response.next_cursor:
+        if response.next_cursor is None:
             return tools
         if response.next_cursor in seen:
             raise ValueError("tool pagination cursor cycle")
@@ -84,17 +88,21 @@ async def all_tools(session, max_pages=100):
 
 
 class TypedPages:
-    def __init__(self, cycle=False):
+    def __init__(self, cycle=False, continuation="second"):
         self.observed = []
         self.cycle = cycle
+        self.continuation = continuation
 
     async def list_tools(self, *, params):
         self.observed.append(params.cursor)
         if params.cursor is None:
-            return ListToolsResult(tools=[Tool(name="page_one", inputSchema={"type": "object"})], nextCursor="second")
+            return ListToolsResult(
+                tools=[Tool(name="page_one", inputSchema={"type": "object"})], nextCursor=self.continuation
+            )
         name = "page_cycle" if self.cycle else "page_two"
         return ListToolsResult(
-            tools=[Tool(name=name, inputSchema={"type": "object"})], nextCursor="second" if self.cycle else None
+            tools=[Tool(name=name, inputSchema={"type": "object"})],
+            nextCursor=self.continuation if self.cycle else None,
         )
 
 
@@ -106,11 +114,27 @@ async def qualify(protocol="modern"):
 
     pages = TypedPages()
     names = [tool.name for tool in await all_tools(pages)]
-    cycle_rejected = False
-    try:
-        await all_tools(TypedPages(cycle=True))
-    except ValueError as exc:
-        cycle_rejected = "cursor cycle" in str(exc)
+    empty_pages = TypedPages(continuation="")
+    empty_names = [tool.name for tool in await all_tools(empty_pages)]
+    cycle_rejected = {}
+    for continuation in ("second", ""):
+        try:
+            await all_tools(TypedPages(cycle=True, continuation=continuation))
+        except ValueError as exc:
+            cycle_rejected[continuation] = "cursor cycle" in str(exc)
+        else:
+            cycle_rejected[continuation] = False
+    limits_rejected = {}
+    for label, limits, message in (
+        ("tools", {"max_tools": 1}, "tool listing limit"),
+        ("pages", {"max_pages": 1}, "pagination page limit"),
+    ):
+        try:
+            await all_tools(TypedPages(), **limits)
+        except ValueError as exc:
+            limits_rejected[label] = message in str(exc)
+        else:
+            limits_rejected[label] = False
     with tempfile.TemporaryDirectory(prefix="mcp-roundtrip-") as temporary:
         lifecycle = Path(temporary) / "lifecycle.txt"
         stderr = Path(temporary) / "server.log"
@@ -158,7 +182,11 @@ async def qualify(protocol="modern"):
         "request_timeout": timeout_observed,
         "lifespan_finally_cleanup": lifecycle_events == ["started", "closed"],
         "typed_multi_page_listing": names == ["page_one", "page_two"] and pages.observed == [None, "second"],
-        "pagination_cycle_rejected": cycle_rejected,
+        "pagination_cycle_rejected": cycle_rejected["second"],
+        "opaque_empty_cursor_preserved": empty_names == ["page_one", "page_two"] and empty_pages.observed == [None, ""],
+        "empty_cursor_cycle_rejected": cycle_rejected[""],
+        "tool_count_limit_rejected": limits_rejected["tools"],
+        "pagination_page_limit_rejected": limits_rejected["pages"],
     }
     return {
         "schema_version": 1,
@@ -176,7 +204,7 @@ async def qualify(protocol="modern"):
         "success_envelope": serialized_success,
         "failure_envelope": serialized_failure,
         "server_log_bytes": server_log_size,
-        "scope": "Actual initialization, listing, structured result, error, progress, timeout and lifespan cleanup over local stdio. Typed pagination uses explicit two-page/cycle fixtures. No remote transport/security or model efficacy claim.",
+        "scope": "Actual initialization, listing, structured result, error, progress, timeout and lifespan cleanup over local stdio. Typed pagination covers ordinary/empty opaque cursors, cycles, page limits and tool-count limits. No remote transport/security or model efficacy claim.",
     }
 
 

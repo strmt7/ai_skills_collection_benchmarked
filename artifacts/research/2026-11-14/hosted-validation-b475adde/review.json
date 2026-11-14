@@ -1,0 +1,293 @@
+{
+  "schema_version": 1,
+  "repository": "strmt7/ai_skills_collection_benchmarked",
+  "commit": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+  "source": "https://api.github.com/repos/strmt7/ai_skills_collection_benchmarked/actions/runs?head_sha=b475adde08f1aeb72aa7370e449ff27293951d2c&per_page=100",
+  "total_workflows": 31,
+  "completed": 31,
+  "successful": 29,
+  "failed": 2,
+  "security_remediation_status": "Held under P8. Failed gates remain enabled and visible.",
+  "runs": [
+    {
+      "id": 43583497888,
+      "name": "Ruff",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583497888",
+      "updated_at": "2026-11-14T10:04:44Z"
+    },
+    {
+      "id": 43583498043,
+      "name": "SimPO snapshot comparison controls",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583498043",
+      "updated_at": "2026-11-14T10:04:51Z"
+    },
+    {
+      "id": 43583497875,
+      "name": "SimPO verifier task calibration",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583497875",
+      "updated_at": "2026-11-14T10:04:55Z"
+    },
+    {
+      "id": 43583497899,
+      "name": "AnnData general I/O controls",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583497899",
+      "updated_at": "2026-11-14T10:05:04Z"
+    },
+    {
+      "id": 43583497918,
+      "name": "Design search compatibility",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583497918",
+      "updated_at": "2026-11-14T10:05:08Z"
+    },
+    {
+      "id": 43583498034,
+      "name": "AnnData I/O component controls",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583498034",
+      "updated_at": "2026-11-14T10:06:20Z"
+    },
+    {
+      "id": 43583497867,
+      "name": "Census summary and sparse mean controls",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583497867",
+      "updated_at": "2026-11-14T10:06:00Z"
+    },
+    {
+      "id": 43583498040,
+      "name": "Image CLI acceptance controls",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583498040",
+      "updated_at": "2026-11-14T10:05:55Z"
+    },
+    {
+      "id": 43583498081,
+      "name": "FlowIO FCS component controls",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583498081",
+      "updated_at": "2026-11-14T10:05:56Z"
+    },
+    {
+      "id": 43583498053,
+      "name": "Azure Event Hubs .NET batching controls",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583498053",
+      "updated_at": "2026-11-14T10:06:06Z"
+    },
+    {
+      "id": 43583497861,
+      "name": "scvi-tools model input controls",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583497861",
+      "updated_at": "2026-11-14T10:06:06Z"
+    },
+    {
+      "id": 43583497960,
+      "name": "Mypy",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583497960",
+      "updated_at": "2026-11-14T10:06:32Z"
+    },
+    {
+      "id": 43583498032,
+      "name": "C Makefile compatibility",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583498032",
+      "updated_at": "2026-11-14T10:06:35Z"
+    },
+    {
+      "id": 43583498033,
+      "name": "Zarr Python component controls",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583498033",
+      "updated_at": "2026-11-14T10:05:29Z"
+    },
+    {
+      "id": 43583497884,
+      "name": "pip-audit",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583497884",
+      "updated_at": "2026-11-14T10:05:29Z"
+    },
+    {
+      "id": 43583497844,
+      "name": "Azure Event Hubs TypeScript checkpoint controls",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583497844",
+      "updated_at": "2026-11-14T10:05:35Z"
+    },
+    {
+      "id": 43583498060,
+      "name": "Azure Event Hubs Java batching controls",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583498060",
+      "updated_at": "2026-11-14T10:05:17Z"
+    },
+    {
+      "id": 43583498078,
+      "name": "Azure Event Hubs Python checkpoint controls",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583498078",
+      "updated_at": "2026-11-14T10:05:13Z"
+    },
+    {
+      "id": 43583497983,
+      "name": "Playwright executor compatibility",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583497983",
+      "updated_at": "2026-11-14T10:05:33Z"
+    },
+    {
+      "id": 43583497952,
+      "name": "Census ML streaming controls",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583497952",
+      "updated_at": "2026-11-14T10:05:36Z"
+    },
+    {
+      "id": 43583498039,
+      "name": "Azure AI Projects .NET controls",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583498039",
+      "updated_at": "2026-11-14T10:05:39Z"
+    },
+    {
+      "id": 43583498028,
+      "name": "Scanpy counts and clustering controls",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583498028",
+      "updated_at": "2026-11-14T10:05:42Z"
+    },
+    {
+      "id": 43583497986,
+      "name": "Python documentation inventory controls",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583497986",
+      "updated_at": "2026-11-14T10:05:40Z"
+    },
+    {
+      "id": 43583497975,
+      "name": "Dataframe component controls",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583497975",
+      "updated_at": "2026-11-14T10:06:15Z"
+    },
+    {
+      "id": 43583498035,
+      "name": "Azure Pipelines Node example controls",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583498035",
+      "updated_at": "2026-11-14T10:06:15Z"
+    },
+    {
+      "id": 43583498012,
+      "name": "Azure Event Hubs Rust batching controls",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583498012",
+      "updated_at": "2026-11-14T10:07:35Z"
+    },
+    {
+      "id": 43583498085,
+      "name": "JavaScript documentation inventory controls",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583498085",
+      "updated_at": "2026-11-14T10:07:48Z"
+    },
+    {
+      "id": 43583498054,
+      "name": "Slides navigation compatibility",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583498054",
+      "updated_at": "2026-11-14T10:07:58Z"
+    },
+    {
+      "id": 43583498029,
+      "name": "Secret scan",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "failure",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583498029",
+      "updated_at": "2026-11-14T10:08:17Z"
+    },
+    {
+      "id": 43583498026,
+      "name": "CodeQL",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "failure",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583498026",
+      "updated_at": "2026-11-14T10:08:55Z"
+    },
+    {
+      "id": 43583498116,
+      "name": "Offline validation",
+      "head_sha": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43583498116",
+      "updated_at": "2026-11-14T10:17:31Z"
+    }
+  ],
+  "scope": "Exact-head workflow state only. No statement about later commits, full scanner inventories, benchmark efficacy or release readiness."
+}

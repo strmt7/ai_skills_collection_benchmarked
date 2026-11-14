@@ -1,6 +1,6 @@
-# Qualified Python MCP contracts, 2 October 2026
+# Qualified Python MCP contracts, 14 November 2026
 
-These calls were exercised with Python 3.14.8 and official MCP 2.2.0. The portable
+These calls were exercised with Python 3.14.10 and official MCP 2.3.0. The portable
 fixture contains exact executable examples; the table records their scope.
 
 | Operation | Current tested contract |
@@ -28,7 +28,9 @@ the collection's research records.
 The fixture uses the server parameter expected by the lifespan callback and
 cleans up in `finally`. An actual tool error preserves `isError: true`; it is not
 converted into a nominally successful string. Pagination fixtures prove both a
-second page and cursor-cycle rejection. They do not stand for pagination support
+second page, opaque empty-string continuation, cursor-cycle rejection and finite
+page/tool-count limits. Only `next_cursor is None` terminates enumeration;
+truthiness drops valid continuations. They do not stand for pagination support
 in every deployed server.
 
 Remote transport, authentication, concurrent request isolation, resource access,
@@ -38,6 +40,7 @@ Do not extrapolate local stdio results to those contracts.
 Primary sources:
 
 - [Python MCP SDK](https://github.com/modelcontextprotocol/python-sdk).
+- [Python SDK pagination contract](https://py.sdk.modelcontextprotocol.io/advanced/pagination/).
 - [Published MCP 2026-07-28 specification](https://modelcontextprotocol.io/specification/2026-07-28).
 - [Elicitation constraints](https://modelcontextprotocol.io/specification/2026-07-28/client/elicitation).
 - [TypeScript MCP SDK](https://github.com/modelcontextprotocol/typescript-sdk).

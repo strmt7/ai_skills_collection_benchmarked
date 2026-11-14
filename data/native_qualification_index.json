@@ -93,8 +93,7 @@
         "sha256": "0716c3edfe7fdf54f6ba8050f4e1e7972d002af7da7da64570ffd8028fa397f7"
       },
       "sources": [
-        "docs/improvement-plan.md",
-        "data/development_plan.json"
+        "docs/improvement-plan.md"
       ]
     },
     {
@@ -117,6 +116,31 @@
         ".gitattributes",
         "tests/test_native_benchmark_runtime.py",
         "tests/test_native_project_resource_artifacts.py"
+      ]
+    },
+    {
+      "id": "mcp-sdk230-pagination",
+      "review": {
+        "path": "artifacts/research/2026-11-14/mcp-pagination-sdk230/review.json",
+        "sha256": "b521001d32e22ee22b0614e44d584bd4f44201695a019a4082f04752bc2330d3"
+      },
+      "sources": [
+        "included/improved/skills/mcp-builder-current/SKILL.md",
+        "included/improved/skills/mcp-builder-current/NOTICE.md",
+        "included/improved/skills/mcp-builder-current/references/python-contracts.md",
+        "included/improved/skills/mcp-builder-current/scripts/qualify_sdk.py",
+        ".github/workflows/mcp-python-sdk.yml"
+      ]
+    },
+    {
+      "id": "plan-workflow-checkpoint",
+      "review": {
+        "path": "artifacts/research/2026-11-14/plan-workflow-checkpoint/review.json",
+        "sha256": "b417f3a83ae0aebca7a66127b9a0b50ff2c3d8bd83fe1aa192753cf3c0ead50d"
+      },
+      "sources": [
+        "data/development_plan.json",
+        "artifacts/research/2026-11-14/hosted-validation-b475adde/review.json"
       ]
     }
   ],
@@ -190,6 +214,15 @@
       },
       "superseded_sources": [
         ".gitattributes"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-14/development-checkpoint/review.json",
+        "sha256": "0716c3edfe7fdf54f6ba8050f4e1e7972d002af7da7da64570ffd8028fa397f7"
+      },
+      "superseded_sources": [
+        "data/development_plan.json"
       ]
     }
   ]

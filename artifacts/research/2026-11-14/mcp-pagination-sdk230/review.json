@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "scope": "MCP Python 2.3.0 local stdio and typed pagination compatibility. The independent pagination contract requires passing any non-None cursor unchanged. Before correction an empty cursor discarded page two; the maintained helper now preserves it, rejects cycles and bounds total tools/pages. The original Anthropic mirror and provenance remain unchanged.",
+  "source_sha256": {
+    "included/improved/skills/mcp-builder-current/SKILL.md": "8c1a2afa115b71d8b468d05cdfc5c0da1d5b1232e0eb9368e08062281be13176",
+    "included/improved/skills/mcp-builder-current/NOTICE.md": "6f4e6d1aae9b132c491bc7a7e522ce67204510a99e02f9837d3775011c93c895",
+    "included/improved/skills/mcp-builder-current/references/python-contracts.md": "7483ffb98125522aafa2f5544179cb4d7cbccf2ba262e37fcef7e64d4c4957e2",
+    "included/improved/skills/mcp-builder-current/scripts/qualify_sdk.py": "c381fa57afa274d0bb2e0b23bca9f4d2e6043363a84e19b8136d9a452305b0cc",
+    ".github/workflows/mcp-python-sdk.yml": "766a103e75df8181924a73f44e08990e5409921e9ab8fd61afdc75dc3e3a293c"
+  },
+  "artifacts": {
+    "baseline-qualify_sdk.py.txt": "6467717e25b7550e6fcbb912153ce061c054a95757457e7198bd17a6a1f8ff11",
+    "before-control.py.txt": "7c2878902465f1d0838587dd410622c200812fe43ef8bc7976e6112c4db58c3c",
+    "before.json": "f81567f09e4579b4ba3754f44a46e007f9cbd46506d0da5cc1254f6037833af4",
+    "create.stderr.native": "537a45f2ae338e0c988379fcd61a97792953ec8e0f0c1b97fa12524bfea49738",
+    "dependency-check.stderr.native": "b909ac3491a18f8697b7dacb1772068a4a9e36e6a3df503df8082d8b81f785e5",
+    "fresh-install-control.py.txt": "8f5f8dd6a3f3d0baee438da7cbb8fcaf88388fce8e285ae19a7d12505d7bea71",
+    "handshake.json": "0d8193ae0864e3ded86846b5af2dfaf6488bae2f3b6ddf531f9688c93c6c24df",
+    "handshake.stdout.native": "2bf025e049fcc128bb5a3ed514fa318b7b9454e686ebee0a65380eb4baa69379",
+    "install.stderr.native": "09840b47a86b3e6eaa5e5e1636df7f420641713d7e4499504fd28c227cbf35bf",
+    "modern.json": "55ad9d16a075ec705d2c2d3165e88dc86d5cfb715322c26e571367c4379878e4",
+    "modern.stdout.native": "2bf025e049fcc128bb5a3ed514fa318b7b9454e686ebee0a65380eb4baa69379",
+    "qualification.json": "6869939583f858c0a5bc1c1187b6b444a2354c414079ede7c93b4603d225577b",
+    "requirements.in": "b2a3a41cb92969a57ba10746218731ed453fe6528322ddda667df989ac494035",
+    "requirements.txt": "060aa3becf9386644dd0b749fe42bd310ea7e0a0865937f597d7bfe897e5e538",
+    "sdk-release.native.json": "5eeade981fe66c9963ad88615c42946eb5adaee7c82ecae3f99f7733cc5775c8"
+  },
+  "python_version": "3.14.10",
+  "mcp_version": "2.3.0",
+  "checks_per_negotiation": 13,
+  "negotiations": [
+    "modern",
+    "handshake"
+  ],
+  "shared_typed_pagination_checks": 6,
+  "local_stdio_connections": 2,
+  "fresh_hash_locked_installation": true,
+  "previous_graph_change": "Portable comments only; dependency/version/hash records unchanged.",
+  "primary_source": {
+    "url": "https://py.sdk.modelcontextprotocol.io/advanced/pagination/",
+    "native_result_sha256": "be3855553ec3744f9487acf86343495b35bc668bde2107d20f987e0faa273af0",
+    "provider_version": "0.9.5+catalog.portable4",
+    "scope_reviewed": true,
+    "scope": "Complete substantive Python SDK pagination article; navigation excluded. Native capture retained in ignored research state."
+  },
+  "latest_sdk_release": {
+    "url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v2.3.0",
+    "tag": "v2.3.0",
+    "published_at": "2026-10-02T22:02:27Z",
+    "prerelease": false
+  },
+  "performance_status": "unbenchmarked",
+  "model_inferences": 0,
+  "counted_benchmark_trials": 0,
+  "remote_transports_qualified": false,
+  "hosted_workflow_qualified": false,
+  "reviewed_original_package_scope": "Original entrypoint and selected existing resources only; not a complete package review.",
+  "checkout_policy": "The workflow sets command-scoped Git long-path support before checkout, rather than depending on image/global configuration. The SDK controls were repeated in a second fresh environment after finalizing the workflow."
+}

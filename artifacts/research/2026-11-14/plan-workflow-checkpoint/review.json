@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "scope": "Active work-order update only. Preserve every task status, dependency, requirement, publication rule, release hold and security hold. Change the date, three next actions and two evidence links to the completed exact-head workflow snapshot. Additional local-provider preparation does not authorize a model launch or establish efficacy.",
+  "source_sha256": {
+    "data/development_plan.json": "43006619969106150beb53d82e02965fbaf92fa4c3c2b6b67d22c168060a5a11",
+    "artifacts/research/2026-11-14/hosted-validation-b475adde/review.json": "23588598db8b8cca442ea4a3e82e2d60758f3d2974f66fa384b782c97be79d32"
+  },
+  "artifacts": {
+    "prior-plan.json": "667c855c38f6defe4f5c6ded068c88ee90b267d99dce91c1ef779ea96c25bc1d"
+  },
+  "baseline_commit": "b475adde08f1aeb72aa7370e449ff27293951d2c",
+  "task_statuses_unchanged": true,
+  "dependencies_and_holds_unchanged": true,
+  "all_31_workflows_terminal": true,
+  "successful_workflows": 29,
+  "held_failed_workflows": 2,
+  "model_inferences": 0
+}
