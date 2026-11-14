@@ -1,0 +1,15 @@
+{
+  "passed": false,
+  "generation_requested": true,
+  "owned_job_members_remaining": 0,
+  "exit_code": 1,
+  "termination_reason": null,
+  "counted_model_trials": 0,
+  "script_sha256": "8b2242d41402fc389a7647b8e7ccb0eabffaccef139d007b760924a3545d742d",
+  "native_job_memory_observation": {
+    "samples": 3598,
+    "peak_job_commit_bytes": 13057912832,
+    "limit_bytes": 8589934592,
+    "errors": []
+  }
+}

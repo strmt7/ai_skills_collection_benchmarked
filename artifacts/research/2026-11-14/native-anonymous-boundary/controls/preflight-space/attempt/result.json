@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "status": "harness_error",
+  "score": null,
+  "stage": "storage_preflight",
+  "error_type": "ValueError",
+  "errno": null,
+  "winerror": null,
+  "evidence_sha256": {
+    "plan.json": "bf2cd063a630608e779fff83803652ef6b0cfc1872739c21ad540a78010374d1",
+    "setup-space.json": "8d89d27b9aa884efa7ac7bdbcddba5c046128df9be1713b53d9fc78c997e2170"
+  }
+}

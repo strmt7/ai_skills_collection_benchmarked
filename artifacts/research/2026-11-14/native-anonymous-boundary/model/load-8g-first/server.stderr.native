@@ -1,0 +1,170 @@
+time=2026-11-14T14:12:43.349+01:00 level=INFO source=routes.go:2474 msg="server config" env="map[CUDA_VISIBLE_DEVICES: GGML_VK_VISIBLE_DEVICES: GPU_DEVICE_ORDINAL: HIP_VISIBLE_DEVICES: HSA_OVERRIDE_GFX_VERSION: HTTPS_PROXY: HTTP_PROXY: LLAMA_ARG_FIT: LLAMA_ARG_FIT_TARGET: NO_PROXY: OLLAMA_CONTEXT_LENGTH:65536 OLLAMA_CREATE_REMOTE:false OLLAMA_DEBUG:INFO OLLAMA_DEBUG_LOG_REQUESTS:false OLLAMA_EDITOR: OLLAMA_FLASH_ATTENTION:false OLLAMA_GO_TEMPLATE:true OLLAMA_GPU_OVERHEAD:0 OLLAMA_HOST:http://127.0.0.1:49671 OLLAMA_IGPU_ENABLE: OLLAMA_KEEP_ALIVE:0s OLLAMA_KV_CACHE_TYPE: OLLAMA_LLM_LIBRARY: OLLAMA_LOAD_TIMEOUT:1m0s OLLAMA_MAX_LOADED_MODELS:1 OLLAMA_MAX_QUEUE:1 OLLAMA_MAX_TRANSFER_STREAMS:4 OLLAMA_MODELS:C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\local-model-store-qualified-v1\\models OLLAMA_NOHISTORY:true OLLAMA_NOPRUNE:true OLLAMA_NO_CLOUD:true OLLAMA_NUM_PARALLEL:1 OLLAMA_ORIGINS:[http://localhost https://localhost http://localhost:* https://localhost:* http://127.0.0.1 https://127.0.0.1 http://127.0.0.1:* https://127.0.0.1:* http://0.0.0.0 https://0.0.0.0 http://0.0.0.0:* https://0.0.0.0:* app://* file://* tauri://* vscode-webview://* vscode-file://*] OLLAMA_REMOTES:[ollama.com] OLLAMA_SCHED_SPREAD:false OLLAMA_VULKAN:true ROCR_VISIBLE_DEVICES:]"
+time=2026-11-14T14:12:43.350+01:00 level=INFO source=routes.go:2476 msg="Ollama cloud disabled: true"
+time=2026-11-14T14:12:43.350+01:00 level=INFO source=routes.go:2536 msg="Listening on 127.0.0.1:49671 (version 0.40.16)"
+time=2026-11-14T14:12:43.351+01:00 level=INFO source=model_recommendations.go:177 msg="model recommendations cache sleep scheduled" wait=3h15m10.8681644s consecutive_failures=0
+time=2026-11-14T14:12:43.351+01:00 level=INFO source=runner.go:60 msg="discovering available GPUs..."
+time=2026-11-14T14:12:45.308+01:00 level=INFO source=types.go:32 msg="inference compute" id=0 filter_id=0 library=ROCm compute=gfx1201 name=ROCm0 description="AMD Radeon RX 9070 XT" libdirs=ollama,rocm_v7_1 driver=0.0 pci_id=0000:03:00.0 type=discrete total="15.9 GiB" available="15.8 GiB"
+time=2026-11-14T14:12:45.308+01:00 level=INFO source=routes.go:2586 msg="vram-based default context" total_vram="15.9 GiB" default_num_ctx=4096
+time=2026-11-14T14:13:00.319+01:00 level=INFO source=server.go:107 msg="using llama-server for model" model=C:\Users\strat\Documents\Codex\independent-development\poster-repair-2026-10-26-v1\.venv\research\benchmark-planning-20261110-v1\local-model-store-qualified-v1\models\blobs\sha256-8ecb5d4ad6172c63f9cbf1a07a04e525985a8a11a6e516da02b674c4010de716
+time=2026-11-14T14:13:00.338+01:00 level=INFO source=llama_server.go:467 msg="starting llama-server" cmd="C:\\Users\\strat\\AppData\\Local\\Programs\\Ollama\\lib\\ollama\\llama-server.exe --model C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\local-model-store-qualified-v1\\models\\blobs\\sha256-8ecb5d4ad6172c63f9cbf1a07a04e525985a8a11a6e516da02b674c4010de716 --port 63725 --host 127.0.0.1 --no-webui --offline -c 65536 -np 1 --log-verbosity 4 --no-log-prefix --no-log-timestamps --no-jinja --chat-template chatml --flash-attn auto -b 512 -ub 512 --context-shift --keep 4"
+time=2026-11-14T14:13:00.342+01:00 level=INFO source=sched.go:651 msg="system memory" total="63.6 GiB" free="33.0 GiB" free_swap="76.5 GiB"
+time=2026-11-14T14:13:00.342+01:00 level=INFO source=sched.go:658 msg="gpu memory" id=0 library=ROCm available="15.3 GiB" free="15.8 GiB" minimum="457.0 MiB" overhead="0 B"
+time=2026-11-14T14:13:00.342+01:00 level=INFO source=llama_server.go:1098 msg="loading model via llama-server" model=C:\Users\strat\Documents\Codex\independent-development\poster-repair-2026-10-26-v1\.venv\research\benchmark-planning-20261110-v1\local-model-store-qualified-v1\models\blobs\sha256-8ecb5d4ad6172c63f9cbf1a07a04e525985a8a11a6e516da02b674c4010de716
+time=2026-11-14T14:13:00.342+01:00 level=INFO source=llama_server.go:1351 msg="waiting for llama-server to start responding"
+time=2026-11-14T14:13:00.343+01:00 level=INFO source=llama_server.go:1406 msg="waiting for llama-server to become available" status="llm server error"
+srv  llama_server: initializing ...
+load_backend: loaded CPU backend from C:\Users\strat\AppData\Local\Programs\Ollama\lib\ollama\ggml-cpu-zen4.dll
+ggml_cuda_init: found 1 ROCm devices (Total VRAM: 16304 MiB):
+  Device 0: AMD Radeon RX 9070 XT, gfx1201 (0x1201), VMM: no, Wave Size: 32, VRAM: 16304 MiB
+load_backend: loaded ROCm backend from C:\Users\strat\AppData\Local\Programs\Ollama\lib\ollama\rocm_v7_1\ggml-hip.dll
+cmn  common_param: common_params_print_info: build 1 (6c01da627) with Clang 18.1.8 for Windows AMD64
+cmn  common_param: common_params_print_info: verbosity = 4 (adjust with the `-lv N` CLI arg)
+cmn  common_param: device_info:
+cmn  common_param:   - CPU     : AMD Ryzen 9 9950X 16-Core Processor             (65141 MiB, 33726 MiB free)
+cmn  common_param:   - ROCm0   : AMD Radeon RX 9070 XT (16304 MiB, 16152 MiB free)
+cmn  common_param: system_info: n_threads = 16 (n_threads_batch = 16) / 32 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | AVX512_VBMI = 1 | AVX512_VNNI = 1 | AVX512_BF16 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | ROCm : NO_VMM = 1 | NO_PEER_COPY = 1 | FA_QUANTS = q4_0-q4_0,q8_0-q8_0,f16-f16,bf16-bf16 | 
+srv  init_listene: The UI is disabled
+srv  init_listene: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+srv          init: using 31 threads for HTTP server
+srv  server_setup: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+srv    load_model: loading model 'C:\Users\strat\Documents\Codex\independent-development\poster-repair-2026-10-26-v1\.venv\research\benchmark-planning-20261110-v1\local-model-store-qualified-v1\models\blobs\sha256-8ecb5d4ad6172c63f9cbf1a07a04e525985a8a11a6e516da02b674c4010de716'
+srv    load_model: local path 'C:\Users\strat\Documents\Codex\independent-development\poster-repair-2026-10-26-v1\.venv\research\benchmark-planning-20261110-v1\local-model-store-qualified-v1\models\blobs\sha256-8ecb5d4ad6172c63f9cbf1a07a04e525985a8a11a6e516da02b674c4010de716'
+cmn  common_fit_a: fitting params to device memory ...
+cmn  common_fit_a: (for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on)
+common_params_fit_impl: getting device memory data for initial parameters:
+time=2026-11-14T14:13:00.594+01:00 level=INFO source=llama_server.go:1406 msg="waiting for llama-server to become available" status="llm server loading model"
+common_memory_breakdown_print: | memory breakdown [MiB] | total    free     self   model   context   compute    unaccounted |
+common_memory_breakdown_print: |   - ROCm0 (RX 9070 XT) | 16304 = 16140 + (13745 = 12036 +    1554 +     154) +      -13581 |
+common_memory_breakdown_print: |   - Host               |                   1191 =  1104 +       0 +      87                |
+common_params_fit_impl: projected to use 13745 MiB of device memory vs. 16140 MiB of free device memory
+common_params_fit_impl: will leave 2394 >= 1024 MiB of free device memory, no changes needed
+common_fit_params: successfully fit params to free device memory
+common_fit_params: fitting params to free memory took 0.34 seconds
+llama_model_loader: loaded meta data with 33 key-value pairs and 459 tensors from C:\Users\strat\Documents\Codex\independent-development\poster-repair-2026-10-26-v1\.venv\research\benchmark-planning-20261110-v1\local-model-store-qualified-v1\models\blobs\sha256-8ecb5d4ad6172c63f9cbf1a07a04e525985a8a11a6e516da02b674c4010de716 (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = gpt-oss
+llama_model_loader: - kv   1:                          general.file_type u32              = 4
+llama_model_loader: - kv   2:               general.quantization_version u32              = 2
+llama_model_loader: - kv   3:               gpt-oss.attention.head_count u32              = 64
+llama_model_loader: - kv   4:            gpt-oss.attention.head_count_kv u32              = 8
+llama_model_loader: - kv   5:               gpt-oss.attention.key_length u32              = 64
+llama_model_loader: - kv   6:   gpt-oss.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv   7:           gpt-oss.attention.sliding_window u32              = 128
+llama_model_loader: - kv   8:             gpt-oss.attention.value_length u32              = 64
+llama_model_loader: - kv   9:                        gpt-oss.block_count u32              = 24
+llama_model_loader: - kv  10:                     gpt-oss.context_length u32              = 131072
+llama_model_loader: - kv  11:                   gpt-oss.embedding_length u32              = 2880
+llama_model_loader: - kv  12:                       gpt-oss.expert_count u32              = 32
+llama_model_loader: - kv  13:         gpt-oss.expert_feed_forward_length u32              = 2880
+llama_model_loader: - kv  14:                  gpt-oss.expert_used_count u32              = 4
+llama_model_loader: - kv  15:                gpt-oss.feed_forward_length u32              = 2880
+llama_model_loader: - kv  16:                     gpt-oss.rope.freq_base f32              = 150000.000000
+llama_model_loader: - kv  17:                gpt-oss.rope.scaling.factor f32              = 32.000000
+llama_model_loader: - kv  18: gpt-oss.rope.scaling.original_context_length u32              = 4096
+llama_model_loader: - kv  19:                  gpt-oss.rope.scaling.type str              = yarn
+llama_model_loader: - kv  20:               tokenizer.ggml.add_bos_token bool             = false
+llama_model_loader: - kv  21:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  22:           tokenizer.ggml.add_padding_token bool             = false
+llama_model_loader: - kv  23:                tokenizer.ggml.bos_token_id u32              = 199998
+llama_model_loader: - kv  24:                tokenizer.ggml.eos_token_id u32              = 199999
+llama_model_loader: - kv  25:               tokenizer.ggml.eos_token_ids arr[i32,3]       = [199999, 200002, 200012]
+llama_model_loader: - kv  26:                      tokenizer.ggml.merges arr[str,446189]  = ["Ġ Ġ", "Ġ ĠĠĠ", "ĠĠ ĠĠ", "...
+llama_model_loader: - kv  27:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  28:            tokenizer.ggml.padding_token_id u32              = 199999
+llama_model_loader: - kv  29:                         tokenizer.ggml.pre str              = gpt-4o
+llama_model_loader: - kv  30:                      tokenizer.ggml.scores arr[f32,201088]  = [0.000000, 1.000000, 2.000000, 3.0000...
+llama_model_loader: - kv  31:                  tokenizer.ggml.token_type arr[i32,201088]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  32:                      tokenizer.ggml.tokens arr[str,201088]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - type  f32:  289 tensors
+llama_model_loader: - type bf16:   98 tensors
+llama_model_loader: - type mxfp4:   72 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = unknown, may not work
+print_info: file size   = 12.83 GiB (5.27 BPW) 
+llama_prepare_model_devices: using device ROCm0 (AMD Radeon RX 9070 XT) (0000:03:00.0) - 16152 MiB free
+load: 0 unused tokens
+load: setting token '<|message|>' (200008) attribute to USER_DEFINED (16), old attributes: 8
+load: setting token '<|channel|>' (200005) attribute to USER_DEFINED (16), old attributes: 8
+load: setting token '<|start|>' (200006) attribute to USER_DEFINED (16), old attributes: 8
+load: setting token '<|constrain|>' (200003) attribute to USER_DEFINED (16), old attributes: 8
+load: printing all EOG tokens:
+load:   - 199999 ('<|endoftext|>')
+load:   - 200002 ('<|return|>')
+load:   - 200007 ('<|end|>')
+load:   - 200012 ('<|call|>')
+load: special_eog_ids contains both '<|return|>' and '<|call|>', or '<|calls|>' and '<|flush|>' tokens, removing '<|end|>' token from EOG list
+load: special tokens cache size = 1090
+load: token to piece cache size = 1.3413 MB
+print_info: arch                  = gpt-oss
+print_info: vocab_only            = 0
+print_info: no_alloc              = 0
+print_info: n_ctx_train           = 131072
+print_info: n_embd_inp            = 2880
+print_info: n_embd                = 2880
+print_info: n_embd_out            = 2880
+print_info: n_layer               = 24
+print_info: n_layer_all           = 24
+print_info: n_head                = 64
+print_info: n_head_kv             = 8
+print_info: n_rot                 = 64
+print_info: n_swa                 = 128
+print_info: is_swa_any            = 1
+print_info: non_causal_type       = 0
+print_info: n_embd_head_k         = 64
+print_info: n_embd_head_v         = 64
+print_info: n_gqa                 = 8
+print_info: n_embd_k_gqa          = 512
+print_info: n_embd_v_gqa          = 512
+print_info: f_norm_eps            = 0.0e+00
+print_info: f_norm_rms_eps        = 1.0e-05
+print_info: f_clamp_kqv           = 0.0e+00
+print_info: f_max_alibi_bias      = 0.0e+00
+print_info: f_logit_scale         = 0.0e+00
+print_info: f_attn_scale          = 0.0e+00
+print_info: f_attn_value_scale    = 0.0000
+print_info: n_ff                  = 2880
+print_info: n_expert              = 32
+print_info: n_expert_used         = 4
+print_info: n_expert_groups       = 0
+print_info: n_group_used          = 0
+print_info: causal attn           = 1
+print_info: pooling type          = -1
+print_info: rope type             = 2
+print_info: rope scaling          = yarn
+print_info: freq_base_train       = 150000.0
+print_info: freq_scale_train      = 0.03125
+print_info: freq_base_swa         = 150000.0
+print_info: freq_scale_swa        = 0.03125
+print_info: n_embd_head_k_swa     = 64
+print_info: n_embd_head_v_swa     = 64
+print_info: n_rot_swa             = 64
+print_info: n_ctx_orig_yarn       = 4096
+print_info: rope_yarn_log_mul     = 0.0000
+print_info: rope_finetuned        = unknown
+print_info: model type            = 20B
+print_info: model params          = 20.91 B
+print_info: general.name          = n/a
+print_info: n_ff_exp              = 2880
+print_info: vocab type            = BPE
+print_info: n_vocab               = 201088
+print_info: n_merges              = 446189
+print_info: BOS token             = 199998 '<|startoftext|>'
+print_info: EOS token             = 199999 '<|endoftext|>'
+print_info: EOT token             = 199999 '<|endoftext|>'
+print_info: PAD token             = 199999 '<|endoftext|>'
+print_info: LF token              = 198 'Ċ'
+print_info: EOG token             = 199999 '<|endoftext|>'
+print_info: EOG token             = 200002 '<|return|>'
+print_info: EOG token             = 200012 '<|call|>'
+print_info: max token length      = 256
+load_tensors: loading model tensors, this can take a while... (load_mode = mmap)
+ggml_backend_cuda_buffer_type_alloc_buffer: allocating 12036.68 MiB on device 0: cudaMalloc failed: out of memory
+ggml_backend_buft_alloc_buffer_n_default: failed to allocate ROCm0 buffer of size 12621372672
+llama_model_load: error loading model: unable to allocate ROCm0 buffer
+llama_model_load_from_file_impl: failed to load model
+cmn  common_init_: failed to load model 'C:\Users\strat\Documents\Codex\independent-development\poster-repair-2026-10-26-v1\.venv\research\benchmark-planning-20261110-v1\local-model-store-qualified-v1\models\blobs\sha256-8ecb5d4ad6172c63f9cbf1a07a04e525985a8a11a6e516da02b674c4010de716'
+srv    load_model: failed to load model, 'C:\Users\strat\Documents\Codex\independent-development\poster-repair-2026-10-26-v1\.venv\research\benchmark-planning-20261110-v1\local-model-store-qualified-v1\models\blobs\sha256-8ecb5d4ad6172c63f9cbf1a07a04e525985a8a11a6e516da02b674c4010de716'
+srv    operator(): operator(): cleaning up before exit...
+srv  server_run_i: exiting due to model loading error
+time=2026-11-14T14:13:09.081+01:00 level=ERROR source=llama_server.go:1073 msg="llama-server terminated" error="exit status 1" exit=1
+time=2026-11-14T14:13:09.135+01:00 level=INFO source=sched.go:679 msg="Load failed" model=C:\Users\strat\Documents\Codex\independent-development\poster-repair-2026-10-26-v1\.venv\research\benchmark-planning-20261110-v1\local-model-store-qualified-v1\models\blobs\sha256-8ecb5d4ad6172c63f9cbf1a07a04e525985a8a11a6e516da02b674c4010de716 error="llama-server process has terminated: exit status 1: cudaMalloc failed: out of memory\nggml_backend_buft_alloc_buffer_n_default: failed to allocate ROCm0 buffer of size 12621372672\nerror loading model: unable to allocate ROCm0 buffer"

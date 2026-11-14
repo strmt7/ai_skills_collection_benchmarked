@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "C:\Users\strat\Documents\Codex\independent-development\poster-repair-2026-10-26-v1\.venv\research\benchmark-planning-20261110-v1\qualify_owned_local_model_transport_v1.py", line 296, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "C:\Users\strat\Documents\Codex\independent-development\poster-repair-2026-10-26-v1\.venv\research\benchmark-planning-20261110-v1\qualify_owned_local_model_transport_v1.py", line 246, in main
+    driver(args)
+    ~~~~~~^^^^^^
+  File "C:\Users\strat\Documents\Codex\independent-development\poster-repair-2026-10-26-v1\.venv\research\benchmark-planning-20261110-v1\qualify_owned_local_model_transport_v1.py", line 203, in driver
+    require(identities and all(identity == (model["model"], expected, 65536) for identity in identities), "Actual loaded model/context identity was not established")
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\strat\Documents\Codex\independent-development\poster-repair-2026-10-26-v1\.venv\research\benchmark-planning-20261110-v1\qualify_owned_local_model_transport_v1.py", line 37, in require
+    raise ValueError(reason)
+ValueError: Actual loaded model/context identity was not established

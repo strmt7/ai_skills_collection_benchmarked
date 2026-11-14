@@ -1,0 +1,9 @@
+{
+  "passed": false,
+  "generation_requested": true,
+  "owned_job_members_remaining": 0,
+  "exit_code": 1,
+  "termination_reason": null,
+  "counted_model_trials": 0,
+  "script_sha256": "95af8b43767b9ab59c90e9c187e1d4ecbc89418051b71fb91af4cec9bfb24963"
+}

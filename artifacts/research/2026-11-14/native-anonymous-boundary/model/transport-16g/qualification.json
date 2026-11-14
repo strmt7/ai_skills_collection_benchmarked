@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "generation_requested": true,
+  "owned_job_members_remaining": 0,
+  "exit_code": 0,
+  "termination_reason": null,
+  "counted_model_trials": 0,
+  "script_sha256": "5010ee52be3cb2d6c030a5075b17dcdf1b73450e1ce07c3a4cc91c515468ffd3",
+  "native_job_memory_observation": {
+    "samples": 12002,
+    "peak_job_memory_used_bytes": 13329690624,
+    "limit_bytes": 17179869184,
+    "limit_flags": 8712,
+    "errors": []
+  }
+}

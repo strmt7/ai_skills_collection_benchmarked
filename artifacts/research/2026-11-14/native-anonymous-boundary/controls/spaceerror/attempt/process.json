@@ -1,0 +1,68 @@
+{
+  "active_process_limit": 32,
+  "assigned_before_resume": true,
+  "exit_code": 0,
+  "explicit_environment": true,
+  "hard_storage_quota": false,
+  "job_active_processes_after_cleanup": 0,
+  "job_memory_limit_bytes": 2147483648,
+  "job_peak_memory_used_bytes": 119721984,
+  "job_write_io_bytes": 2796440,
+  "kill_on_close": true,
+  "output_bytes": 9618,
+  "output_limit_bytes": 8388608,
+  "service_created_processes_tracked": false,
+  "space_budget": {
+    "enforcement": "polled_caller_available_space",
+    "hard_storage_quota": false,
+    "min_free_bytes": 4294967296,
+    "observation_error": {
+      "api": "GetDiskFreeSpaceExW",
+      "error_type": "PermissionError",
+      "path": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\native-local-route-admission-spaceerror-v3\\attempt",
+      "winerror": 5
+    },
+    "paths": [
+      "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\native-local-route-admission-spaceerror-v3\\attempt",
+      "C:\\Users\\strat\\AppData\\Local\\Temp\\as-44ac0163c387\\native-skill-subject-hl32nc5p\\workspace",
+      "C:\\Users\\strat\\AppData\\Local\\Temp\\as-44ac0163c387\\skills-agent-controller-kp87erjs\\private",
+      "C:\\Users\\strat\\AppData\\Local\\Temp\\as-44ac0163c387"
+    ],
+    "poll_interval_seconds": 0.5,
+    "polls": 6,
+    "samples": {
+      "C:\\Users\\strat\\AppData\\Local\\Temp\\as-44ac0163c387": {
+        "available_bytes": 690808303616,
+        "lowest_available_bytes": 690808303616,
+        "total_bytes": 4095608877056,
+        "volume_free_bytes": 690808303616
+      },
+      "C:\\Users\\strat\\AppData\\Local\\Temp\\as-44ac0163c387\\native-skill-subject-hl32nc5p\\workspace": {
+        "available_bytes": 690808303616,
+        "lowest_available_bytes": 690808303616,
+        "total_bytes": 4095608877056,
+        "volume_free_bytes": 690808303616
+      },
+      "C:\\Users\\strat\\AppData\\Local\\Temp\\as-44ac0163c387\\skills-agent-controller-kp87erjs\\private": {
+        "available_bytes": 690808303616,
+        "lowest_available_bytes": 690808303616,
+        "total_bytes": 4095608877056,
+        "volume_free_bytes": 690808303616
+      },
+      "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\native-local-route-admission-spaceerror-v3\\attempt": {
+        "available_bytes": 690808303616,
+        "lowest_available_bytes": 690808303616,
+        "total_bytes": 4095608877056,
+        "volume_free_bytes": 690808303616
+      }
+    },
+    "termination_reason": "storage_observation_error"
+  },
+  "termination_reason": "storage_observation_error",
+  "wall_time_limit_seconds": 90.0,
+  "windows_job": true,
+  "write_io_enforcement": "polled_job_transfer_accounting",
+  "write_io_limit_bytes": 1073741824,
+  "write_io_observation_error": null,
+  "write_io_overshoot_bytes": 0
+}

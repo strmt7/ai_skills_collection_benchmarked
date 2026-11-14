@@ -1,0 +1,36 @@
+"""Observe real job accounting without changing the native API's result or limits."""
+import ctypes
+from contextlib import contextmanager
+from _windows_appcontainer import Native
+from _windows_owned_python import ExtendedLimits
+
+
+@contextmanager
+def observe_job_memory():
+    original = Native.function
+    record = {"samples": 0, "peak_job_memory_used_bytes": 0, "limit_bytes": None, "limit_flags": None, "errors": []}
+
+    def factory(self, library, name, *arguments):
+        actual = original(self, library, name, *arguments)
+        if library != "kernel" or name != "QueryInformationJobObject":
+            return actual
+
+        def query(job, information_class, *values):
+            result = actual(job, information_class, *values)
+            if result and information_class in (1, 8):
+                observed = ExtendedLimits()
+                if actual(job, 9, ctypes.byref(observed), ctypes.sizeof(observed), None):
+                    record["samples"] += 1
+                    record["peak_job_memory_used_bytes"] = max(record["peak_job_memory_used_bytes"], observed.peak_job_memory)
+                    record["limit_bytes"] = observed.job_memory
+                    record["limit_flags"] = observed.basic.flags
+                else:
+                    record["errors"].append(ctypes.get_last_error())
+            return result
+        return query
+
+    Native.function = factory
+    try:
+        yield record
+    finally:
+        Native.function = original

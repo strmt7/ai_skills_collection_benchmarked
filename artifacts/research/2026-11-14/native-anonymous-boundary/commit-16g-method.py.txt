@@ -1,0 +1,88 @@
+"""Distinguish virtual commit admission from physical RAM use in a bounded owned job."""
+import argparse
+import ctypes
+import importlib.util
+import json
+import os
+import sys
+from pathlib import Path
+
+STATE = Path(__file__).resolve().parent
+ROOT = STATE.parents[2]
+sys.path.insert(0, str(ROOT / "tools"))
+from _windows_trial_process import run_owned
+
+
+def write(path, value):
+    path.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
+
+
+def child(size, output):
+    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+    allocate = kernel.VirtualAlloc
+    allocate.argtypes = [ctypes.c_void_p, ctypes.c_size_t, ctypes.c_uint32, ctypes.c_uint32]
+    allocate.restype = ctypes.c_void_p
+    release = kernel.VirtualFree
+    release.argtypes = [ctypes.c_void_p, ctypes.c_size_t, ctypes.c_uint32]
+    release.restype = ctypes.c_int
+    ctypes.set_last_error(0)
+    address = allocate(None, size, 0x1000 | 0x2000, 0x04)
+    error = ctypes.get_last_error() if not address else None
+    released = None
+    if address:
+        try:
+            ctypes.memset(address, 0, 1)
+            ctypes.memset(address + size - 1, 0, 1)
+        finally:
+            released = bool(release(address, 0, 0x8000))
+    write(output, {"requested_commit_bytes": size, "allocation_succeeded": bool(address), "native_error": error,
+                   "release_succeeded": released, "bytes_written": 2 if address else 0, "intervening_pages_accessed": False,
+                   "model_inferences": 0, "scope": "Virtual commit probe; does not touch or populate the intervening pages."})
+    if address and not released:
+        raise ValueError("Native virtual allocation was not released")
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--child-bytes", type=int)
+    parser.add_argument("--job-limit", type=int, default=8 * 1024**3)
+    parser.add_argument("--within-bytes", type=int, default=1024**3)
+    parser.add_argument("--over-bytes", type=int, default=9 * 1024**3)
+    args = parser.parse_args()
+    if args.child_bytes is not None:
+        child(args.child_bytes, args.output)
+        return 0
+    output = args.output.resolve()
+    if not output.is_relative_to(STATE) or output.exists():
+        raise ValueError("Use a new owned output directory")
+    output.mkdir()
+    (output / "implementation.py.txt").write_bytes(Path(__file__).read_bytes())
+    helper = STATE / "native_job_memory_observer_v1.py"
+    (output / "memory-observer.py.txt").write_bytes(helper.read_bytes())
+    spec = importlib.util.spec_from_file_location("owned_job_memory_observer", helper)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    rows = []
+    for name, size, expected in (("admitted", args.within_bytes, True), ("over-limit", args.over_bytes, False)):
+        directory = output / name
+        directory.mkdir()
+        command = [sys.executable, "-I", "-B", "-S", str(Path(__file__).resolve()), "--child-bytes", str(size), "--output", str(directory / "native-allocation.json")]
+        with module.observe_job_memory() as memory:
+            with (directory / "stdout.native").open("xb") as stdout, (directory / "stderr.native").open("xb") as stderr, open(os.devnull, "rb") as stdin:
+                process = run_owned(command, cwd=ROOT, stdin=stdin, stdout=stdout, stderr=stderr, timeout=15,
+                                    output_limit=65536, memory_limit=args.job_limit, process_limit=4,
+                                    write_io_limit=1024**2, environment=dict(os.environ))
+        write(directory / "process.json", process)
+        write(directory / "native-job-memory.json", memory)
+        observed = json.loads((directory / "native-allocation.json").read_bytes())
+        passed = observed["allocation_succeeded"] is expected and process["exit_code"] == 0 and process["job_active_processes_after_cleanup"] == 0 and not memory["errors"] and memory["samples"] > 0 and memory["limit_bytes"] == args.job_limit and memory["limit_flags"] & 0x200
+        rows.append({"case": name, "passed": bool(passed), "allocation": observed, "job_memory": memory})
+    report = {"passed": all(row["passed"] for row in rows), "cases": rows, "model_inferences": 0}
+    write(output / "qualification.json", report)
+    print(json.dumps(report))
+    return 0 if report["passed"] else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

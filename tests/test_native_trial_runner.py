@@ -444,3 +444,55 @@ def test_dependency_bundle_is_scoped_and_reverified_before_grading(attempt, tmp_
     assert result["status"] == ("harness_error" if drift else "task_failed")
     assert result["score"] == (None if drift else 0.5)
     assert attempt[2]["grade_calls"] == (0 if drift else 1)
+
+
+def test_plan_changed_after_qualification_cannot_launch(attempt, monkeypatch):
+    monkeypatch.setattr(trials, "verify_binding", lambda qualification: None)
+    qualification = trials.QualifiedNativeTrial(
+        "different-plan", "receipt", "unit-profile", Path("receipt"), (), "source"
+    )
+    result = trials._run_controller(attempt[0], attempt[1], qualification=qualification)
+    assert result["status"] == "harness_error" and result["score"] is None
+    assert result["stage"] == "admission" and "context" not in attempt[2]
+
+
+def test_changed_qualification_after_grading_withholds_score(attempt, monkeypatch):
+    observations = []
+
+    def observed(qualification):
+        observations.append(qualification)
+        if len(observations) == 2:
+            raise ValueError("Boundary evidence changed")
+
+    monkeypatch.setattr(trials, "verify_binding", observed)
+    qualification = trials.QualifiedNativeTrial(
+        sha256(attempt[0].read_bytes()), "receipt", "unit-profile", Path("receipt"), (), "source"
+    )
+    result = trials._run_controller(
+        attempt[0],
+        attempt[1],
+        qualification=qualification,
+        credential_source={"NATIVE_FIXTURE": "owned fixture credential"},
+    )
+    assert len(observations) == 2 and attempt[2]["grade_calls"] == 1
+    assert result["status"] == "harness_error" and result["score"] is None
+    assert result["execution_boundary_qualification"] == {"profile": "unit-profile", "receipt_sha256": "receipt"}
+
+
+def test_public_route_requires_scoped_admission_and_exact_resource_budgets(tmp_path, monkeypatch):
+    plan, receipt = tmp_path / "plan", tmp_path / "receipt"
+    qualification = trials.QualifiedNativeTrial("frozen-plan", "receipt", "unit-profile", receipt, (), "source")
+    calls = []
+
+    def admitted(path, evidence):
+        assert path == plan and evidence == receipt
+        return qualification
+
+    def controller(path, output, **kwargs):
+        calls.append(kwargs)
+        return {"status": "harness_error", "score": None}
+
+    monkeypatch.setattr(trials, "admit", admitted)
+    monkeypatch.setattr(trials, "_run_controller", controller)
+    trials.run(plan, tmp_path / "output", qualification=receipt)
+    assert calls == [{"require_resource_budgets": True, "qualification": qualification}]

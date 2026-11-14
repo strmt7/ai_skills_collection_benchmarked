@@ -1,0 +1,63 @@
+{
+  "active_process_limit": 32,
+  "assigned_before_resume": true,
+  "exit_code": 0,
+  "explicit_environment": true,
+  "hard_storage_quota": false,
+  "job_active_processes_after_cleanup": 0,
+  "job_memory_limit_bytes": 2147483648,
+  "job_peak_memory_used_bytes": 118972416,
+  "job_write_io_bytes": 2554776,
+  "kill_on_close": true,
+  "output_bytes": 9618,
+  "output_limit_bytes": 8388608,
+  "service_created_processes_tracked": false,
+  "space_budget": {
+    "enforcement": "polled_caller_available_space",
+    "hard_storage_quota": false,
+    "min_free_bytes": 4294967296,
+    "observation_error": null,
+    "paths": [
+      "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\native-local-route-admission-space-v3\\attempt",
+      "C:\\Users\\strat\\AppData\\Local\\Temp\\as-d47e1d431406\\native-skill-subject-8sv8mfuk\\workspace",
+      "C:\\Users\\strat\\AppData\\Local\\Temp\\as-d47e1d431406\\skills-agent-controller-wkv_9h0a\\private",
+      "C:\\Users\\strat\\AppData\\Local\\Temp\\as-d47e1d431406"
+    ],
+    "poll_interval_seconds": 0.5,
+    "polls": 8,
+    "samples": {
+      "C:\\Users\\strat\\AppData\\Local\\Temp\\as-d47e1d431406": {
+        "available_bytes": 690993471488,
+        "lowest_available_bytes": 690993471488,
+        "total_bytes": 4095608877056,
+        "volume_free_bytes": 690993471488
+      },
+      "C:\\Users\\strat\\AppData\\Local\\Temp\\as-d47e1d431406\\native-skill-subject-8sv8mfuk\\workspace": {
+        "available_bytes": 690993471488,
+        "lowest_available_bytes": 690993471488,
+        "total_bytes": 4095608877056,
+        "volume_free_bytes": 690993471488
+      },
+      "C:\\Users\\strat\\AppData\\Local\\Temp\\as-d47e1d431406\\skills-agent-controller-wkv_9h0a\\private": {
+        "available_bytes": 690993471488,
+        "lowest_available_bytes": 690993471488,
+        "total_bytes": 4095608877056,
+        "volume_free_bytes": 690993471488
+      },
+      "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\native-local-route-admission-space-v3\\attempt": {
+        "available_bytes": 5,
+        "lowest_available_bytes": 5,
+        "total_bytes": 4095608877056,
+        "volume_free_bytes": 690993577984
+      }
+    },
+    "termination_reason": "free_space_limit"
+  },
+  "termination_reason": "free_space_limit",
+  "wall_time_limit_seconds": 90.0,
+  "windows_job": true,
+  "write_io_enforcement": "polled_job_transfer_accounting",
+  "write_io_limit_bytes": 1073741824,
+  "write_io_observation_error": null,
+  "write_io_overshoot_bytes": 0
+}

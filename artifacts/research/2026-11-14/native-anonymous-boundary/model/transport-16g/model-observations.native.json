@@ -1,0 +1,1513 @@
+[
+  {
+    "models": [],
+    "available_ram_bytes": 33797115904
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 33844269056
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 33467691008
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 33530417152
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 33521225728
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 33119391744
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 32719122432
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 32350728192
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 32104574976
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 32227147776
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 32377327616
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 32573153280
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 32741011456
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 32924803072
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 32940343296
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 33226596352
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 33190309888
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 32467668992
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 30557712384
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 28078682112
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 25882562560
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 24059822080
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 22214098944
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 20098838528
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 32941277184
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 31078760448
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 28674768896
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 25900290048
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 22813323264
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 19311742976
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 17296449536
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 16179642368
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:36.4832513+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 16165081088
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:37.5101382+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 16090730496
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:38.5258252+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 15635099648
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:39.5499189+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 14614532096
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:40.5779574+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 14335836160
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:41.5956236+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 14470901760
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:42.599809+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 14627512320
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:43.6126093+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 14417690624
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:44.6409837+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 14838181888
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:45.654494+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 14087995392
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:46.6681744+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 14176870400
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:47.6888804+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 14502023168
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:48.7078045+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 13948702720
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:49.7256056+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 13522694144
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:50.7364649+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 13120720896
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:51.7514655+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 13338353664
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:52.7662501+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 13453795328
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:53.7772486+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 13576306688
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:54.8045362+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 13691822080
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:55.8286328+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 13488041984
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:56.8454594+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 13080940544
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:57.8608647+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 13047504896
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:58.8844841+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 13251829760
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:40:59.8991213+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 13443031040
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:00.9013476+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 13539381248
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:01.9164687+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 13182480384
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:02.9234952+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 13296467968
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:03.9407693+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 13406392320
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:04.9445009+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 13720526848
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:05.955168+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 13813649408
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:06.9665188+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 13336072192
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:07.991732+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 13537976320
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:09.0171711+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 13706416128
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:10.045806+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 13874343936
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:11.0605451+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 14025089024
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:12.0768836+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 13986308096
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:13.0946179+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 14186795008
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:14.1062007+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 15299260416
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:15.1355699+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 14912262144
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:16.1622764+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 15060287488
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:17.1901006+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 15187988480
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:18.221805+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 15303598080
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:19.2515457+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 15354314752
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:20.2815489+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 15397306368
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:21.3101642+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 15403134976
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:22.3151369+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 15385169920
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:23.3267121+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 15370956800
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:24.3414769+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 15257722880
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:25.3555333+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 15219703808
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 34445766656
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 34292183040
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 34278350848
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 32429154304
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 30103093248
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 27863601152
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 25635446784
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 23529705472
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 21405335552
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 34132226048
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 29687615488
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 27328020480
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 25206140928
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 23120556032
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 21138391040
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 19122569216
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 16560095232
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:44.7777653+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 16691441664
+  },
+  {
+    "models": [
+      {
+        "name": "gpt-oss:20b",
+        "model": "gpt-oss:20b",
+        "size": 12802536242,
+        "digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gpt-oss",
+          "families": [
+            "gpt-oss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "expires_at": "2026-11-14T14:41:45.7946855+01:00",
+        "size_vram": 12802536242,
+        "context_length": 65536,
+        "runner": "llamacpp"
+      }
+    ],
+    "available_ram_bytes": 16544718848
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 34600210432
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 34544394240
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 34532958208
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 34469306368
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 34387267584
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 34578223104
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 34482348032
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 34427375616
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 34374406144
+  },
+  {
+    "models": [],
+    "available_ram_bytes": 34348015616
+  }
+]

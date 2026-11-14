@@ -1,0 +1,27 @@
+{
+  "raw_transcript_sha256": "30037256af89d93115469017a90df17bd4d6ac4415ca7e1850479b597e44ae41",
+  "selected_native_events": [
+    {
+      "type": "item.completed",
+      "item": {
+        "id": "item_3",
+        "type": "command_execution",
+        "command": "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command \"C:\\\\Users\\\\strat\\\\AppData\\\\Local\\\\ai-skills-qualification\\\\e64f5fcedfdc\\\\e6e91defacfa8253\\\\tools\\\\python-3.14.10-fb6245cd5efc49d29c5360e38e1b8587\\\\tools\\\\python.exe -c \\\"print('NATIVE_LOCAL_MODEL_TRANSPORT_OK')\\\"\"",
+        "aggregated_output": "NATIVE_LOCAL_MODEL_TRANSPORT_OK\r\n",
+        "exit_code": 0,
+        "status": "completed"
+      }
+    },
+    {
+      "type": "turn.completed",
+      "usage": {
+        "input_tokens": 5805,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1650,
+        "reasoning_output_tokens": 0
+      }
+    }
+  ],
+  "scope": "Native command completion and usage events only. The complete original transcript remains in ignored execution evidence; this excerpt is not a full transcript."
+}

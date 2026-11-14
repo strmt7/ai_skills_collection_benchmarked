@@ -1,0 +1,1 @@
+{"auxiliary_requests": [], "captured_messages": 0, "errors": [], "fallback_requests": 0, "listener_stopped": true, "model_requests": 0, "peer_disconnects": [], "posts": 1, "prewarm_requests": 0, "requests": [{"authentication": "none", "authorization_present": false, "canary_received": false, "method": "POST", "path": "/v1/responses"}], "websocket_peer_eof": 0}

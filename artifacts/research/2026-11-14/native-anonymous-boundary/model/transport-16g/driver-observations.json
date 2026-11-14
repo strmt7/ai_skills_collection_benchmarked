@@ -1,0 +1,32 @@
+{
+  "generation_requested": true,
+  "counted_model_trials": 0,
+  "model_api_request_count": null,
+  "user_server_touched": false,
+  "execution_boundary_profile": "windows-native-packaging-anonymous-v1",
+  "backend_pid": 47244,
+  "backend_port": 49336,
+  "official_harness_attempts": 1,
+  "native_task_status": "task_failed",
+  "native_task_score": 0.0,
+  "native_counts": {
+    "passed": 0,
+    "failed": 10,
+    "skipped": 1,
+    "errors": 0,
+    "total": 11
+  },
+  "actual_loaded_model_identities": [
+    [
+      "gpt-oss:20b",
+      "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+      65536
+    ]
+  ],
+  "tool_marker_observed": true,
+  "model_transport_qualified": true,
+  "scope": "One uncounted local-model transport/tool calibration; no coding benchmark score or skill-gain claim.",
+  "backend_stopped": true,
+  "listener_stopped": true,
+  "observer_stopped": true
+}

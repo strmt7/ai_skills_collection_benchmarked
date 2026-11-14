@@ -33,14 +33,17 @@ from _windows_trial_process import ProcessBudgetOptions, verify_write_io_budget
 from grade_swe_skills_submission import asset, grade
 from prepare_subject_dependencies import prepare as prepare_dependencies
 from prepare_subject_dependencies import verify as verify_dependencies
+from qualify_native_trial_boundary import QualifiedNativeTrial, admit, verify_binding
 from run_agent_trial import exception_metadata, execute_agent, require_qualified_trial_execution
 from transfer_benchmark_submission import plan_handoff, restore, seal
 
 
-def run(plan: Path, output: Path) -> dict[str, Any]:
-    """Keep live launches closed until the complete native adapter is qualified."""
-    require_qualified_trial_execution()
-    return _run_controller(plan, output, require_resource_budgets=True)
+def run(plan: Path, output: Path, *, qualification: Path | None = None) -> dict[str, Any]:
+    """Require current, scoped boundary evidence before a native development trial."""
+    if qualification is None:
+        require_qualified_trial_execution()
+    admitted = admit(plan, qualification) if qualification is not None else None
+    return _run_controller(plan, output, require_resource_budgets=True, qualification=admitted)
 
 
 def verify_initial_workspace(workspace: Path, output: Path, python: Path, task: dict[str, Any], before: bytes) -> None:
@@ -80,8 +83,9 @@ def _run_controller(
     *,
     credential_source: Mapping[str, str] | None = None,
     require_resource_budgets: bool = False,
+    qualification: QualifiedNativeTrial | None = None,
 ) -> dict[str, Any]:
-    """Shared lifecycle; direct calls are reserved for owned deterministic qualification."""
+    """Shared lifecycle; live callers must enter through the qualified public route."""
     output = checked_path(output)
     if not output.is_relative_to(ROOT / ".venv") or output == ROOT / ".venv":
         raise ValueError("Native attempt evidence requires a new owned directory")
@@ -91,6 +95,14 @@ def _run_controller(
     setup_space: SpaceBudget | None = None
     try:
         admitted = load_plan(plan_path)
+        if qualification is not None:
+            verify_binding(qualification)
+            if admitted["plan_sha256"] != qualification.plan_sha256:
+                raise ValueError("Native plan changed after boundary qualification")
+            report["execution_boundary_qualification"] = {
+                "profile": qualification.profile,
+                "receipt_sha256": qualification.receipt_sha256,
+            }
         (output / "plan.json").write_bytes(admitted["plan_raw"])
         plan, task, runtime = (admitted[name] for name in ("plan", "task", "runtime"))
         if require_resource_budgets and plan.get("schema_version") != 3:
@@ -279,6 +291,8 @@ def _run_controller(
             or plan["execution_source_sha256"] != execution_sources()
         ):
             raise ValueError("Frozen native attempt inputs changed during execution")
+        if qualification is not None:
+            verify_binding(qualification)
         report.update(
             status=graded["status"],
             score=graded["score"],
@@ -318,12 +332,13 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--plan", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--qualification", type=Path, help="Current scoped native boundary qualification directory")
     return parser
 
 
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
-    result = run(args.plan, args.output)
+    result = run(args.plan, args.output, qualification=args.qualification)
     print(json.dumps(result, sort_keys=True))
     return {"task_passed": 0, "task_failed": 1, "harness_error": 2}[result["status"]]
 

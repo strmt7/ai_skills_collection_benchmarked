@@ -26,6 +26,8 @@ from _windows_appcontainer import (
 from _windows_owned_python import Accounting, Counters, ExtendedLimits
 from _windows_storage_budget import SpaceBudget
 
+MAX_JOB_MEMORY_BYTES = 16 * 1024**3
+
 
 class ProcessBudgetOptions(TypedDict, total=False):
     write_io_limit: int
@@ -143,7 +145,7 @@ def run_owned(
         or type(output_limit) is not int
         or not 0 < output_limit <= 1024 * 1024 * 1024
         or type(memory_limit) is not int
-        or not 32 * 1024 * 1024 <= memory_limit <= 8 * 1024 * 1024 * 1024
+        or not 32 * 1024 * 1024 <= memory_limit <= MAX_JOB_MEMORY_BYTES
         or type(process_limit) is not int
         or not 1 <= process_limit <= 128
         or (write_io_limit is not None and (type(write_io_limit) is not int or not 0 < write_io_limit <= 1024**3))
@@ -346,6 +348,10 @@ def run_owned(
         if space_budget is not None:
             final_space_reason = space_budget.check(force=True)
             reason = reason or final_space_reason
+        observed_limits = ExtendedLimits()
+        require(query(job, 9, c.byref(observed_limits), c.sizeof(observed_limits), None))
+        if observed_limits.job_memory != memory_limit or observed_limits.basic.flags & 0x2208 != 0x2208:
+            raise RuntimeError("Native job resource limits differ from the requested limits")
         return {
             "windows_job": True,
             "assigned_before_resume": True,
@@ -358,6 +364,7 @@ def run_owned(
             "output_limit_bytes": output_limit,
             "wall_time_limit_seconds": float(timeout),
             "job_memory_limit_bytes": memory_limit,
+            "job_peak_memory_used_bytes": observed_limits.peak_job_memory,
             "active_process_limit": process_limit,
             "explicit_environment": environment is not None,
             **({"space_budget": space_budget.record()} if space_budget is not None else {}),

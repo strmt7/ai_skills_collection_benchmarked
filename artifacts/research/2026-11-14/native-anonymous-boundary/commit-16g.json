@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "admitted",
+      "passed": true,
+      "allocation": {
+        "requested_commit_bytes": 9663676416,
+        "allocation_succeeded": true,
+        "native_error": null,
+        "release_succeeded": true,
+        "bytes_written": 2,
+        "intervening_pages_accessed": false,
+        "model_inferences": 0,
+        "scope": "Virtual commit probe; does not touch or populate the intervening pages."
+      },
+      "job_memory": {
+        "samples": 19,
+        "peak_job_memory_used_bytes": 9701285888,
+        "limit_bytes": 17179869184,
+        "limit_flags": 8712,
+        "errors": []
+      }
+    },
+    {
+      "case": "over-limit",
+      "passed": true,
+      "allocation": {
+        "requested_commit_bytes": 18253611008,
+        "allocation_succeeded": false,
+        "native_error": 1455,
+        "release_succeeded": null,
+        "bytes_written": 0,
+        "intervening_pages_accessed": false,
+        "model_inferences": 0,
+        "scope": "Virtual commit probe; does not touch or populate the intervening pages."
+      },
+      "job_memory": {
+        "samples": 19,
+        "peak_job_memory_used_bytes": 18307657728,
+        "limit_bytes": 17179869184,
+        "limit_flags": 8712,
+        "errors": []
+      }
+    }
+  ],
+  "model_inferences": 0
+}

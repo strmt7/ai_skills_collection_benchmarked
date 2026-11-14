@@ -22,8 +22,7 @@
       "sources": [
         "tools/_windows_appcontainer.py",
         "tools/_windows_storage_budget.py",
-        "tests/test_windows_storage_budget.py",
-        "tests/test_windows_trial_process.py"
+        "tests/test_windows_storage_budget.py"
       ]
     },
     {
@@ -139,8 +138,34 @@
         "sha256": "b417f3a83ae0aebca7a66127b9a0b50ff2c3d8bd83fe1aa192753cf3c0ead50d"
       },
       "sources": [
-        "data/development_plan.json",
         "artifacts/research/2026-11-14/hosted-validation-b475adde/review.json"
+      ]
+    },
+    {
+      "id": "native-anonymous-boundary",
+      "review": {
+        "path": "artifacts/research/2026-11-14/native-anonymous-boundary/review.json",
+        "sha256": "2ba2e57364cdec108d7df894cd9c351e1c10bc11a2a3cadc7b53d40cfe11cc7f"
+      },
+      "sources": [
+        "tools/qualify_native_trial_boundary.py",
+        "tools/run_swe_skills_trial.py",
+        "tools/_native_trial_plan.py",
+        "tools/_windows_trial_process.py",
+        "tests/test_native_trial_boundary.py",
+        "tests/test_native_trial_runner.py",
+        "tests/test_windows_trial_process.py",
+        "docs/native-benchmark-controller.md"
+      ]
+    },
+    {
+      "id": "native-boundary-plan-checkpoint",
+      "review": {
+        "path": "artifacts/research/2026-11-14/native-boundary-plan-checkpoint/review.json",
+        "sha256": "cfa2fcffb8f8470aebe742fe08c466e96f038f1d2fb90f728dfceab8a4d09585"
+      },
+      "sources": [
+        "data/development_plan.json"
       ]
     }
   ],
@@ -156,6 +181,7 @@
         "tools/_native_benchmark_runtime.py",
         "tools/_windows_appcontainer.py",
         "tools/_windows_storage_budget.py",
+        "tools/_windows_trial_process.py",
         "tools/grade_swe_skills_submission.py"
       ]
     },
@@ -168,6 +194,7 @@
         "tools/_native_benchmark_runtime.py",
         "tools/_windows_appcontainer.py",
         "tools/_windows_storage_budget.py",
+        "tools/_windows_trial_process.py",
         "tools/grade_swe_skills_submission.py"
       ]
     },
@@ -186,7 +213,8 @@
         "sha256": "f04a82d9d333212282a865dd78af3920ae0f38d3d4616ea2f30100b9a37b871e"
       },
       "superseded_sources": [
-        "docs/improvement-plan.md"
+        "docs/improvement-plan.md",
+        "tests/test_windows_trial_process.py"
       ]
     },
     {

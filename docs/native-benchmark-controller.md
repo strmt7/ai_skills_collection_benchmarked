@@ -149,9 +149,11 @@ paths refers to a host installation or changes a host profile.
 ## Subject-to-grader integration
 
 `tools/run_swe_skills_trial.py` adds a single-attempt adapter around the same
-native grader. Its public entrypoint retains the model-launch refusal while
-the complete experiment boundary is under qualification. Development controls
-use an owned deterministic endpoint; they are not model evaluations.
+native grader. Its default entrypoint refuses model launches. A current,
+independently checked boundary receipt can admit the specific anonymous local
+development profile described below. Other tasks, account profiles and general
+model execution remain unqualified. Development controls use an owned
+deterministic endpoint; they are not model evaluations.
 
 The adapter admits frozen inputs and reconstructs the complete baseline in a
 fresh subject workspace. Before subject launch, the selected collector runtime
@@ -172,9 +174,64 @@ rejected. All prompt text together must fit one MiB; inputs are never truncated.
 
 Schema-2 plans add `write_io_limit_bytes`, an integer from 1 byte to one GiB.
 Schema-3 plans also require a `storage_limits` object. The public native route
-requires schema 3 and the existing model-launch qualification gate. Schemas 1
+requires schema 3 and a current scoped boundary qualification. Schemas 1
 and 2 retain their original contracts for historical controls; they are not
 silently assigned new budgets.
+
+### Qualify an anonymous development profile
+
+`tools/qualify_native_trial_boundary.py` verifies eleven independent packaging
+controls and the native context controls against their recorded observations.
+It checks the original scorer's passing and failing results, incomplete streams,
+write and storage limits, observation errors, an interrupted running tool,
+protected-path and network access, and owned-process cleanup. A marker in a
+requested command is insufficient: successful controls require the matching
+tool output. Changed native evidence or execution source invalidates a receipt.
+Execution sources and admission-checker sources are bound separately. Updating
+the checker invalidates its receipt without relabelling or rerunning unchanged
+native execution evidence. The admitted checker bytes are checked again before
+execution and after grading.
+The timeout control also observes the running tool's PID and creation time from
+the host and confirms its termination; an empty CLI job alone is insufficient.
+
+The specification declares `schema_version: 1`, profile
+`windows-native-packaging-anonymous-v1`, `execution_source_sha256`, an absolute
+`context_directory`, and a `controls` object mapping all eleven case names to
+their absolute evidence directories: `edited`, `unchanged`, `truncated`, `budget`,
+`accounting`, `logical`, `space`, `spaceerror`, `preflight-space`, `timeout` and
+`isolation`. Paths stay in this checkout's ignored `.venv`; generate them for
+the current installation. This is a trusted-controller evidence check, not
+cryptographic attestation of arbitrary third-party results.
+
+```powershell
+.\dev.ps1 python tools/qualify_native_trial_boundary.py --specification .venv/native-controls/specification.json --output .venv/native-controls/qualified
+.\dev.ps1 python tools/qualify_native_trial_boundary.py --check .venv/native-controls/qualified
+.\dev.ps1 python tools/run_swe_skills_trial.py --plan .venv/native-controls/trial.json --qualification .venv/native-controls/qualified --output .venv/native-controls/attempt
+```
+
+Admission binds the model, reasoning setting, runtime, task, baseline and storage
+budgets to the qualified profile. It permits HTTP Responses on numeric IPv4
+loopback only. The plan is checked again before setup; the receipt and its
+evidence are checked before execution and after grading. A mismatch withholds
+the score. Holdouts and other task/runtime combinations require separate work.
+
+Execution-boundary qualification does not establish the backend's actual model
+identity, local generation compatibility, matched model comparisons or skill
+gains. Verify those separately. OpenAI sign-in admission and the release hold
+remain unchanged; no API key or copied personal profile is required by this
+anonymous local route.
+
+The agent process retains its 2 GiB job limit. The owned-process helper also
+admits explicitly configured backend jobs up to 16 GiB; a controller must select
+an appropriate limit from current host headroom. It reads the configured limits
+back from Windows and records `job_peak_memory_used_bytes` separately. This
+native peak can include a rejected allocation: controlled commit probes admitted
+1 GiB and rejected 9 GiB under an 8 GiB limit, then admitted 9 GiB and rejected
+17 GiB under a 16 GiB limit. Those probes wrote only two bytes to an admitted
+range, released it and did not populate the intervening pages. They establish
+commit admission, not physical RAM or GPU capacity. See Microsoft's
+[job-limit fields](https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-jobobject_extended_limit_information)
+and [virtual-allocation semantics](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualalloc).
 
 Provider authentication uses the [explicit trial-provider contract](agent-trial-protocol.md#declared-provider-authentication).
 Existing `base_url`/`credential_env` declarations retain their behavior. An owned

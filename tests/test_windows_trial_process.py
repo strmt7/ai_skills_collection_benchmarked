@@ -116,6 +116,8 @@ def test_success_preserves_streams_and_exit_status(tmp_path):
     )
     assert stdout == b"fixture input\r\n"
     assert stderr == b"fixture error\r\n"
+    peak = result.pop("job_peak_memory_used_bytes")
+    assert type(peak) is int and peak > 0
     assert result == {
         "windows_job": True,
         "assigned_before_resume": True,
@@ -150,7 +152,7 @@ def test_invalid_output_limit_never_launches(tmp_path, limit):
     [
         {"memory_limit": False},
         {"memory_limit": 0},
-        {"memory_limit": 8 * 1024 * 1024 * 1024 + 1},
+        {"memory_limit": 16 * 1024 * 1024 * 1024 + 1},
         {"process_limit": False},
         {"process_limit": 0},
         {"process_limit": 129},
@@ -185,6 +187,13 @@ def test_job_memory_limit_denies_an_oversized_allocation(tmp_path):
     assert result["exit_code"] == 0
     assert stdout == b"allocation denied\r\n"
     assert result["job_memory_limit_bytes"] == 96 * 1024 * 1024
+
+
+def test_explicit_model_backend_limit_is_admitted_without_allocating_the_limit(tmp_path):
+    result, stdout, _ = run_fixture(tmp_path, "print('bounded backend role')", memory_limit=16 * 1024**3)
+    assert result["exit_code"] == 0 and stdout == b"bounded backend role\r\n"
+    assert result["job_memory_limit_bytes"] == 16 * 1024**3
+    assert type(result["job_peak_memory_used_bytes"]) is int and result["job_peak_memory_used_bytes"] > 0
 
 
 def test_active_process_limit_denies_a_second_process(tmp_path):

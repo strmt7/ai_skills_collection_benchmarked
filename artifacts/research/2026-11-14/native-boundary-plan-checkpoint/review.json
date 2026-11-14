@@ -1,0 +1,9 @@
+{
+  "scope": "Update the next action from metadata preparation to task calibration while retaining every task status, publication policy and hold.",
+  "source_sha256": {
+    "data/development_plan.json": "ed24cab4ad11b4256ab2805cfbc415fe4297d78e468d8f0ce894fa779a2553ef"
+  },
+  "artifacts": {
+    "status.json": "6b22ea8bb601486440c284bf1ea1d09847c5a5280d6b040837ca040464798ddd"
+  }
+}

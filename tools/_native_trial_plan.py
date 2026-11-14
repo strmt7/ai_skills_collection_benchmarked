@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def execution_sources() -> dict[str, str]:
-    """Bind the subject adapter, original grading controller and CLI admission pin."""
+    """Bind runtime and grader sources; boundary receipts separately bind admission code."""
     names = (
         "tools/_native_trial_plan.py",
         "tools/run_swe_skills_trial.py",

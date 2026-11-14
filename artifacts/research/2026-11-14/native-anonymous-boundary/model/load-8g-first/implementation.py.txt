@@ -1,0 +1,270 @@
+"""Exercise an owned local backend only through the qualified official native harness."""
+
+from __future__ import annotations
+
+import argparse
+import ctypes
+import hashlib
+import json
+import os
+import socket
+import struct
+import subprocess
+import sys
+import threading
+import time
+import urllib.request
+from pathlib import Path
+
+STATE = Path(__file__).resolve().parent
+ROOT = STATE.parents[2]
+sys.path.insert(0, str(ROOT / "tools"))
+from _agent_tool_runtime import profile_environment
+from _native_trial_plan import execution_sources
+from _trial_transcript import parse_events, strict_json
+from _windows_appcontainer import checked_path
+from _windows_trial_process import run_owned
+import qualify_native_trial_boundary as boundary
+import run_swe_skills_trial as trials
+
+MARKER = "NATIVE_LOCAL_MODEL_TRANSPORT_OK"
+
+
+def require(value, reason):
+    if not value:
+        raise ValueError(reason)
+
+
+def read(path):
+    return strict_json(path.read_text(encoding="utf-8"))
+
+
+def write(path, value):
+    path.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
+
+
+def listener_owner(port):
+    native = ctypes.WinDLL("iphlpapi", use_last_error=True).GetExtendedTcpTable
+    native.argtypes = [ctypes.c_void_p, ctypes.POINTER(ctypes.c_uint32), ctypes.c_int, ctypes.c_uint32, ctypes.c_int, ctypes.c_uint32]
+    native.restype = ctypes.c_uint32
+    size = ctypes.c_uint32()
+    require(native(None, ctypes.byref(size), 0, 2, 3, 0) in (0, 122) and size.value <= 4 * 1024**2, "TCP inventory unavailable")
+    table = ctypes.create_string_buffer(size.value)
+    require(native(table, ctypes.byref(size), 0, 2, 3, 0) == 0, "TCP inventory changed")
+    count = ctypes.c_uint32.from_buffer(table).value
+    require(4 + count * 24 <= size.value, "Malformed TCP inventory")
+    owners = set()
+    for index in range(count):
+        row = (ctypes.c_uint32 * 6).from_buffer(table, 4 + index * 24)
+        if socket.ntohs(row[2] & 0xffff) == port:
+            require(socket.inet_ntoa(struct.pack("=I", row[1])) == "127.0.0.1", "Backend is not bound only to loopback")
+            owners.add(row[5])
+    return owners
+
+
+def free_memory():
+    class Memory(ctypes.Structure):
+        _fields_ = [("length", ctypes.c_uint32), ("load", ctypes.c_uint32), *[(name, ctypes.c_uint64) for name in (
+            "total", "available", "page_total", "page_available", "virtual_total", "virtual_available", "extended")]]
+    value = Memory()
+    value.length = ctypes.sizeof(value)
+    require(ctypes.WinDLL("kernel32", use_last_error=True).GlobalMemoryStatusEx(ctypes.byref(value)), "RAM observation failed")
+    return value.available
+
+
+class NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, *args, **kwargs):
+        raise ValueError("Metadata redirects are not permitted")
+
+
+def verify_files(runtime, model, *, full_model, hash_runtime=True):
+    for row in runtime["files"]:
+        root = Path(runtime["runtime_root"])
+        path = checked_path(root / row["path"])
+        require(path.is_relative_to(root), "Runtime identity escaped its declared root")
+        before = path.stat()
+        require([before.st_dev, before.st_ino, before.st_size, before.st_mtime_ns] == row["file_identity"], "Native runtime changed")
+        if hash_runtime:
+            with path.open("rb") as stream:
+                require(hashlib.file_digest(stream, "sha256").hexdigest() == row["sha256"], "Native runtime digest differs")
+        after = path.stat()
+        require((before.st_dev, before.st_ino, before.st_size, before.st_mtime_ns) ==
+                (after.st_dev, after.st_ino, after.st_size, after.st_mtime_ns), "Runtime changed during verification")
+    for row in model["records"]:
+        path = checked_path(Path(row["destination"]))
+        require(path.is_relative_to(Path(model["model_root"])) and path.stat().st_size == row["bytes"], "Model graph differs")
+        if row["storage"].startswith("hardlink"):
+            metadata = path.stat()
+            require(metadata.st_ino == row["file_id"] and metadata.st_mtime_ns == row["modified_ns"], "Weight identity changed")
+            if not full_model:
+                continue
+        with path.open("rb") as stream:
+            require(hashlib.file_digest(stream, "sha256").hexdigest() == row["sha256"], "Model input digest differs")
+
+
+def driver(args):
+    out = args.output.resolve(strict=True)
+    qualification = STATE / "native-boundary-admission-qualified-v1"
+    validation = boundary.check(qualification)
+    sources = execution_sources()
+    runtime = read(STATE / "local-model-runtime-qualified-v1/qualification.json")
+    model = read(STATE / "local-model-store-qualified-v1/qualification.json")
+    require(runtime["passed"] is True and model["passed"] is True, "Unqualified local inputs")
+    kernel = ctypes.WinDLL("kernel32", use_last_error=True)
+    kernel.GetCurrentProcess.restype = ctypes.c_void_p
+    kernel.SetPriorityClass.argtypes = [ctypes.c_void_p, ctypes.c_uint32]
+    require(kernel.SetPriorityClass(kernel.GetCurrentProcess(), 0x4000), "Could not lower owned driver priority")
+    require(free_memory() >= 12 * 1024**3, "Insufficient current host RAM headroom")
+    verify_files(runtime, model, full_model=args.generate)
+    executable = Path(runtime["runtime_root"]) / "ollama.exe"
+    environment = profile_environment(out / "backend", {})
+    system = Path(os.environ["SYSTEMROOT"])
+    environment["PATH"] = os.pathsep.join(map(str, (executable.parent, system / "System32", system / "System32/WindowsPowerShell/v1.0")))
+    environment.update(OLLAMA_MODELS=model["model_root"], OLLAMA_NO_CLOUD="1", OLLAMA_NOPRUNE="1", OLLAMA_NOHISTORY="1",
+                       OLLAMA_NUM_PARALLEL="1", OLLAMA_MAX_LOADED_MODELS="1", OLLAMA_MAX_QUEUE="1", OLLAMA_KEEP_ALIVE="0",
+                       OLLAMA_LOAD_TIMEOUT="60s", OLLAMA_CONTEXT_LENGTH="65536")
+    with socket.socket() as reservation:
+        reservation.bind(("127.0.0.1", 0))
+        port = reservation.getsockname()[1]
+    require(port != 11434, "Do not replace the user's backend")
+    environment["OLLAMA_HOST"] = "127.0.0.1:" + str(port)
+    opener = urllib.request.build_opener(urllib.request.ProxyHandler({}), NoRedirect())
+    base = "http://127.0.0.1:" + str(port)
+    process = None
+    stopped = threading.Event()
+    observations = []
+    monitor = None
+
+    def metadata(name, timeout=3):
+        require(process is not None and process.poll() is None and listener_owner(port) == {process.pid}, "Backend ownership changed")
+        with opener.open(base + "/api/" + name, timeout=timeout) as response:
+            value = response.read(2 * 1024**2 + 1)
+            require(response.status == 200 and len(value) <= 2 * 1024**2, "Invalid native metadata response")
+        return value, strict_json(value.decode("utf-8"))
+
+    def observe():
+        while not stopped.is_set():
+            try:
+                _, value = metadata("ps", timeout=2)
+                available = free_memory()
+                observations.append({"models": value["models"], "available_ram_bytes": available})
+                if available < 10 * 1024**3:
+                    observations.append({"resource_failure": "available_ram_floor"})
+                    if process.poll() is None:
+                        process.terminate()
+                    return
+            except (OSError, ValueError, KeyError) as error:
+                if not stopped.is_set():
+                    observations.append({"observation_error": type(error).__name__})
+            stopped.wait(1)
+
+    expected = args.expected_model_digest or model["observed_manifest_sha256"]
+    report = {"generation_requested": args.generate, "counted_model_trials": 0, "model_api_request_count": None,
+              "user_server_touched": False, "execution_boundary_profile": validation["profile"]}
+    try:
+        with (out / "server.stdout.native").open("xb") as stdout, (out / "server.stderr.native").open("xb") as stderr:
+            process = subprocess.Popen([str(executable), "serve"], stdin=subprocess.DEVNULL, stdout=stdout, stderr=stderr,
+                                       cwd=out, env=environment, creationflags=subprocess.CREATE_NO_WINDOW)
+            deadline = time.monotonic() + 20
+            while listener_owner(port) != {process.pid}:
+                require(process.poll() is None and time.monotonic() < deadline, "Owned server did not bind")
+                time.sleep(.1)
+            report.update(backend_pid=process.pid, backend_port=port)
+            for name in ("version", "tags", "ps"):
+                native, value = metadata(name, timeout=30 if name == "version" else 3)
+                (out / (name + ".native.json")).write_bytes(native)
+                if name == "version":
+                    require(value.get("version") == runtime["version"], "Native server version differs")
+                elif name == "tags":
+                    require([(row["name"], row["digest"]) for row in value["models"]] == [(model["model"], expected)], "Native model digest differs")
+                else:
+                    require(value["models"] == [], "Metadata control unexpectedly loaded a model")
+            if args.generate:
+                monitor = threading.Thread(target=observe, name="owned-model-metadata")
+                monitor.start()
+                plan = json.loads(json.dumps(validation["positive_plan"]))
+                prompt = ("This is an uncounted transport calibration. Use the provided Python executable exactly once through "
+                          "exec_command to print the literal string " + MARKER + ". Do not read or modify project files. "
+                          "After the tool succeeds, reply with that same marker. Do not invoke any other tool.\n").encode()
+                prompt_path = out / "prompt.txt"
+                prompt_path.write_bytes(prompt)
+                plan.update(id="local-native-transport-calibration-v1", time_limit_seconds=180,
+                            provider={"base_url": base + "/v1", "authentication": "none"},
+                            prompt={"path": str(prompt_path), "sha256": hashlib.sha256(prompt).hexdigest()})
+                write(out / "plan.json", plan)
+                result = trials.run(out / "plan.json", out / "attempt", qualification=qualification)
+                events = parse_events((out / "attempt/transcript.jsonl").read_bytes(), allow_truncated_final=True)
+                commands = [event["item"] for event in events if event["type"] == "item.completed" and event["item"].get("type") == "command_execution"]
+                marker = any(row.get("exit_code") == 0 and MARKER in row.get("aggregated_output", "") for row in commands)
+                loaded = [entry for row in observations for entry in row.get("models", [])]
+                identities = {(row.get("name"), row.get("digest"), row.get("context_length")) for row in loaded}
+                require(identities and all(identity == (model["model"], expected, 65536) for identity in identities), "Actual loaded model/context identity was not established")
+                require(not any("resource_failure" in row or "observation_error" in row for row in observations), "Model resource observation failed")
+                require(marker and result.get("process_exit_code") == 0 and result.get("stage") == "complete" and
+                        any(event["type"] == "turn.completed" for event in events), "Official-harness model transport did not complete its tool control")
+                report.update(official_harness_attempts=1, native_task_status=result["status"], native_task_score=result["score"],
+                              native_counts=result.get("native_counts"), actual_loaded_model_identities=sorted(identities),
+                              tool_marker_observed=True, model_transport_qualified=True,
+                              scope="One uncounted local-model transport/tool calibration; no coding benchmark score or skill-gain claim.")
+            else:
+                report.update(model_transport_qualified=False, models_loaded=0, official_harness_attempts=0)
+        require(execution_sources() == sources, "Native execution sources changed")
+        verify_files(runtime, model, full_model=False, hash_runtime=False)
+    finally:
+        stopped.set()
+        observer_stopped = True
+        if monitor is not None:
+            monitor.join(6)
+            observer_stopped = not monitor.is_alive()
+        if process is not None and process.poll() is None:
+            process.terminate()
+            try:
+                process.wait(timeout=5)
+            except subprocess.TimeoutExpired:
+                process.kill()
+                process.wait(timeout=3)
+        report.update(backend_stopped=process is not None and process.poll() is not None,
+                      listener_stopped=not listener_owner(port), observer_stopped=observer_stopped)
+        write(out / "model-observations.native.json", observations)
+        write(out / "driver-observations.json", report)
+        require(observer_stopped, "Owned metadata observer did not stop")
+    require(report["backend_stopped"] and report["listener_stopped"], "Owned backend cleanup not established")
+    report["passed"] = True
+    write(out / "driver-result.json", report)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--driver", action="store_true")
+    parser.add_argument("--generate", action="store_true")
+    parser.add_argument("--expected-model-digest")
+    args = parser.parse_args()
+    if args.driver:
+        driver(args)
+        return 0
+    out = checked_path(args.output)
+    require(out.is_relative_to(STATE) and not out.exists(), "Use a new owned output directory")
+    out.mkdir()
+    (out / "implementation.py.txt").write_bytes(Path(__file__).read_bytes())
+    command = [sys.executable, "-X", "utf8", "-I", "-B", str(Path(__file__).resolve()), "--driver", "--output", str(out)]
+    if args.generate:
+        command.append("--generate")
+    if args.expected_model_digest is not None:
+        command.extend(["--expected-model-digest", args.expected_model_digest])
+    with (out / "stdout.native").open("xb") as stdout, (out / "stderr.native").open("xb") as stderr, open(os.devnull, "rb") as stdin:
+        result = run_owned(command, cwd=ROOT, stdin=stdin, stdout=stdout, stderr=stderr, timeout=360 if args.generate else 90,
+                           output_limit=4 * 1024**2, memory_limit=8 * 1024**3, process_limit=64,
+                           write_io_limit=1024**3, environment=dict(os.environ))
+    write(out / "process.json", result)
+    passed = result["exit_code"] == 0 and result["termination_reason"] is None and result["job_active_processes_after_cleanup"] == 0 and (out / "driver-result.json").is_file()
+    report = {"passed": passed, "generation_requested": args.generate, "owned_job_members_remaining": result["job_active_processes_after_cleanup"],
+              "exit_code": result["exit_code"], "termination_reason": result["termination_reason"], "counted_model_trials": 0,
+              "script_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
+    write(out / "qualification.json", report)
+    print(json.dumps(report))
+    return 0 if passed else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

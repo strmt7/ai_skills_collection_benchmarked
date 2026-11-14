@@ -1,0 +1,12 @@
+{
+  "generation_requested": true,
+  "counted_model_trials": 0,
+  "model_api_request_count": null,
+  "user_server_touched": false,
+  "execution_boundary_profile": "windows-native-packaging-anonymous-v1",
+  "backend_pid": 44124,
+  "backend_port": 49671,
+  "backend_stopped": true,
+  "listener_stopped": true,
+  "observer_stopped": true
+}
