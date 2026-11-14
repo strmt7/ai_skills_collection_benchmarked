@@ -1,0 +1,25 @@
+{
+  "scope": "Explicit bounded development-command memory, propagation across the pinned-engine handoff, recorded resource declarations and native rejection/allocation controls. Default limits and separately declared child limits remain unchanged.",
+  "source_sha256": {
+    "dev.ps1": "889cf6a1f8b238e06adbd0faac3262d1a0788882e5f89b8c7e2ad7b418b5239a",
+    "toolchains/bootstrap/bootstrap.ps1": "3890abfdd297852406f48ba5888eac1c15ce32f8018c0cbdacb24989c8837bd2",
+    "toolchains/bootstrap/README.md": "50f96f0a7f7e90e41c62aa4045c86db3adf8b59ab275453f78bbc47beb8a0b13",
+    "tests/test_bootstrap_runtime.py": "5efaca557ddf73d441e6a66effbea0d8ad73ca84786e333b02a25844963116e8"
+  },
+  "artifacts": {
+    "observations.json": "9cf550839a6e22b2f64d59d15803cdc73b4e8d53606a6386820958f8bc2916ce"
+  },
+  "qualification": {
+    "native_allocation_controls_passed": true,
+    "unit_tests_passed": 190,
+    "complete_model_transport_qualified": false,
+    "counted_model_trials": 0
+  },
+  "limitations": [
+    "Commit controls touch only two physical pages; they do not measure inference performance or resident memory at scale.",
+    "A single nearest-job limit query does not enumerate the enclosing hierarchy. Declared resource records and observed allocation behavior are distinguished.",
+    "The failed GPU transport attempt and the invalid write-limit control remain preserved. Corrected-enclosure full-model generation is not established by metadata checks.",
+    "Normal Node file loading under the minimal native profile, full frozen-task runtime graphs, comparative model trials and all skill-gain claims remain open.",
+    "This is trusted-controller source/evidence binding, not cryptographic attestation. All owner holds remain unchanged."
+  ]
+}

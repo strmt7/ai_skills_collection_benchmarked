@@ -74,6 +74,45 @@ readiness nor model or skill performance.
 The [local catalog controls](../artifacts/research/2026-11-14/local-model-catalog/review.json)
 record the source-bound metadata, context, timeout and cleanup observations.
 
+Experimental subject runtime schema 4 declares native tools beyond Python.
+Retain the CLI/Python fields and add `toolchains` as a frozen `path`/`sha256`
+asset. The complete Python dependency fields and `model_catalog` remain optional;
+partial dependency declarations are rejected. This is a subject runtime version,
+separate from the attempt plan's schema version and explicit resource budgets.
+
+The toolchain manifest has `schema_version: 1` and a `toolchains` list. Each
+entry declares `name`, `version`, absolute `root`, `files`, `directories` and
+`commands`. `files` maps every relative file path to its `bytes` and `sha256`;
+`directories` includes every directory, including empty ones. Each command maps
+to a nonempty list of declared relative file paths: for example, Node's executable
+followed by a pnpm script. Command arguments belong in the task invocation.
+
+Provision supported tools through their qualified isolated setup before freezing
+the manifest. Do not point it at an ambient installation or an entire shared
+cache. Payload roots must be scoped and disjoint, preserve licenses, and exclude
+controller inputs and evaluator assets. Declare all payload contents; symlinks,
+undeclared files or directories, changed bytes and incomplete inventories fail
+admission. The combined manifest permits at most eight toolchains, 32,000 file
+and directory entries, and 4 GiB of payload bytes. These are explicit profile
+limits, not evidence that every original benchmark runtime fits them.
+
+The runner archives the manifest, grants read access to the declared payloads,
+and supplies full command prefixes alongside the Python executable in the common
+runtime instructions. It does not infer tools from the host `PATH`. Use identical
+tool declarations and runtime instructions in every matched condition; a tool
+bundle treatment requires its own experiment. Payloads are checked before launch
+and before accepting the native score. A declared version does not independently
+prove capabilities, current stable status or a complete task build. Qualify actual
+execution in the native subject and each original task's build/test stages before
+admitting comparative model trials.
+
+The current Windows Node 26.13.1 file-entrypoint control fails with `EPERM`
+when its normal module loader queries drive-root metadata under the minimal
+filesystem policy. This is an open runtime compatibility gap. Do not widen
+access to the host drive, suppress the failure or treat a built-in/eval probe
+as qualification of a Node project. Schema admission and payload identity checks
+do not admit the frozen pilot or establish support for its Nx/pnpm build.
+
 The separate grader runtime file declares the following fields.
 
 | Field | Required value |

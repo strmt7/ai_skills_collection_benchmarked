@@ -1,0 +1,9 @@
+{
+  "scope": "Refresh dependency-ready work from native runtime and enclosing-resource evidence without changing any task completion state or owner hold.",
+  "source_sha256": {
+    "data/development_plan.json": "cd32e75b5e031571b48217f8c8b604ebf781f779e42d34d2e7490e7ed12d9613"
+  },
+  "artifacts": {
+    "status.json": "83508c93397c23031aac7477b5cae9e9961bc4d58e08a9e83fa6a69a9f508973"
+  }
+}

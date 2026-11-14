@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "kind": "experimental_native_toolchain_admission",
+  "execution_boundary_qualified": false,
+  "file_entrypoint_runtime_qualified": false,
+  "model_transport_qualified": false,
+  "model_inferences": 0,
+  "counted_model_trials": 0,
+  "source_checks": {
+    "passed": true,
+    "source_unchanged": true,
+    "unit_tests_passed": 172,
+    "checks": [
+      {
+        "name": "pytest",
+        "passed": true
+      },
+      {
+        "name": "ruff",
+        "passed": true
+      },
+      {
+        "name": "format",
+        "passed": true
+      },
+      {
+        "name": "mypy-windows",
+        "passed": true
+      },
+      {
+        "name": "mypy-linux",
+        "passed": true
+      }
+    ],
+    "qualification_sha256": "2d73e49fa26283e014bbfc01d8bcccae8a029601b5a3ae328c9c0908cdb2d536",
+    "junit_sha256": "1231084b92fbaaf69a09622554966ba31f0b8a5d52e98f3353800666ed3ef648",
+    "typecheck_scope": "355 source files on each of win32 and linux"
+  },
+  "native_controls": {
+    "baseline": {
+      "control_passed": true,
+      "status": "task_passed",
+      "score": 1,
+      "native_counts": {
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "total": 11
+      },
+      "stage": "complete",
+      "cli_exit_code": 0,
+      "tool_exit_codes": [
+        0
+      ],
+      "node_marker_observed": false,
+      "job_members_remaining": 0,
+      "listener_stopped": true,
+      "model_requests": 0,
+      "raw_sha256": {
+        "summary.json": "3489ca87b40d82e3bb78ac32898b727703f2ee869bbde3a5c6b6c07565475a21",
+        "implementation.py.txt": "4ebf48e43106e397ce2955a31d41fc189fcc2fdd84045ca4df1b4eb6b7f3195f",
+        "attempt/result.json": "d5e6b346900bef68790ad078e827cffdcbc311b6078285a4fbacb28bdd0adb07",
+        "attempt/process.json": "d33d079656d7c366ba561b6de5372f8f99d55cd1bdfe890dcbd39a101d5b52bc",
+        "attempt/transcript.jsonl": "e6cb54faa158b157bafa60976a09f6b16ff91fae2df899f054bd9aa296fc4447"
+      }
+    },
+    "node-eval": {
+      "control_passed": true,
+      "status": "task_passed",
+      "score": 1,
+      "native_counts": {
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "total": 11
+      },
+      "stage": "complete",
+      "cli_exit_code": 0,
+      "tool_exit_codes": [
+        0
+      ],
+      "node_marker_observed": true,
+      "job_members_remaining": 0,
+      "listener_stopped": true,
+      "model_requests": 0,
+      "raw_sha256": {
+        "summary.json": "3489ca87b40d82e3bb78ac32898b727703f2ee869bbde3a5c6b6c07565475a21",
+        "implementation.py.txt": "e0488a1f484702baacdde7bbc7bd0b0c27a1526d063fe937dfe51b8e5b9282f8",
+        "attempt/result.json": "c0d0278550922df228861bc6148cbbcd2b9727dc6bbf7e45a4e7b7b096f99e2b",
+        "attempt/process.json": "24feb6e1c07e73e68ad2b7a4dbce81e90d73dec6f8edc19b1bc1d8c980fb3371",
+        "attempt/transcript.jsonl": "5c75c20ab43da750f9c354787f6f01b21e23c2e20eb4da3e4584a2ad4b402847"
+      }
+    },
+    "node-inline-quoting-failure": {
+      "control_passed": false,
+      "status": "task_failed",
+      "score": 0,
+      "native_counts": {
+        "passed": 0,
+        "failed": 10,
+        "skipped": 1,
+        "errors": 0,
+        "total": 11
+      },
+      "stage": "complete",
+      "cli_exit_code": 0,
+      "tool_exit_codes": [
+        1
+      ],
+      "node_marker_observed": true,
+      "job_members_remaining": 0,
+      "listener_stopped": true,
+      "model_requests": 0,
+      "raw_sha256": {
+        "summary.json": "f08083c4f0efc7f192ae1b591e0b5771d32d12af94a858b387b614f7cfdd817f",
+        "implementation.py.txt": "daffd69163d8af62bed862b25674efd5271af1e316194eac2543dd69da669ab9",
+        "attempt/result.json": "3a41f3c9698e7f52828d29981c3dbb4ee3b552cff4b6c0a2fbe3c0e3fcb52d9c",
+        "attempt/process.json": "8d5db7b3c02b5543d45bbcc9415ab8b412b9e91ba24b0b0e9e3bd3195545aab5",
+        "attempt/transcript.jsonl": "2d5511654eaae560839b7a3215085d3312f60309a4cc9ee7d292e93b43373c5a"
+      }
+    },
+    "node-shell-method-failure": {
+      "control_passed": false,
+      "status": "task_failed",
+      "score": 0,
+      "native_counts": {
+        "passed": 0,
+        "failed": 10,
+        "skipped": 1,
+        "errors": 0,
+        "total": 11
+      },
+      "stage": "complete",
+      "cli_exit_code": 0,
+      "tool_exit_codes": [
+        1
+      ],
+      "node_marker_observed": false,
+      "job_members_remaining": 0,
+      "listener_stopped": true,
+      "model_requests": 0,
+      "raw_sha256": {
+        "summary.json": "f08083c4f0efc7f192ae1b591e0b5771d32d12af94a858b387b614f7cfdd817f",
+        "implementation.py.txt": "0e1d6d68d29b01704420d0590fdf4b33c4ffe1950537cb533b57b405d1998472",
+        "attempt/result.json": "b2af6a58f6a4235797e28c9a8894c286f527ac4448f206ea4928925889998496",
+        "attempt/process.json": "a932394c3006142f74a5c4bebfe381af1e3b3face3d7f99f4286f4a4c5cd02c6",
+        "attempt/transcript.jsonl": "67857f7d6cea033e050a04a1415bc8f1a9256a0c8aeee77feaa84aa415652413"
+      }
+    },
+    "node-file-entrypoint-failure": {
+      "control_passed": false,
+      "status": "task_failed",
+      "score": 0,
+      "native_counts": {
+        "passed": 0,
+        "failed": 10,
+        "skipped": 1,
+        "errors": 0,
+        "total": 11
+      },
+      "stage": "complete",
+      "cli_exit_code": 0,
+      "tool_exit_codes": [
+        1
+      ],
+      "node_marker_observed": false,
+      "job_members_remaining": 0,
+      "listener_stopped": true,
+      "model_requests": 0,
+      "raw_sha256": {
+        "summary.json": "f08083c4f0efc7f192ae1b591e0b5771d32d12af94a858b387b614f7cfdd817f",
+        "implementation.py.txt": "4ebf48e43106e397ce2955a31d41fc189fcc2fdd84045ca4df1b4eb6b7f3195f",
+        "attempt/result.json": "bfe76968684596b5def8c7ad2a0c0d4f8b7978f5201395bfe8f911a97f76a3b9",
+        "attempt/process.json": "e0fbf17dd61b56af5bd31a4e45c660c4bc184682a4b0fda2b99e058b876742e5",
+        "attempt/transcript.jsonl": "5cd6ad51b78e48f0270b60963534c4cef46e50c54d93e90f61d4c7fbe1529ae1"
+      }
+    }
+  },
+  "failures": {
+    "node-inline-quoting-failure": "Native argument parsing stripped the inline JavaScript JSON quotes.",
+    "node-shell-method-failure": "The constrained-language shell rejected the .NET file-writing method before Node execution.",
+    "node-file-entrypoint-failure": "Normal Node CommonJS entrypoint loading returned EPERM while querying drive-root metadata. The original file-loading control remains failed."
+  },
+  "supported_observation": "A separate Node eval/built-in control passed using the declared executable, observed native version/path and cryptographic primitive; this does not qualify normal file loading or a Node project.",
+  "known_gap": "The frozen Nx/pnpm runtime remains unqualified. Drive-wide grants and changed module-resolution semantics have not been adopted to turn this failure into a pass.",
+  "research": {
+    "node_cli": {
+      "url": "https://nodejs.org/download/release/v26.13.1/docs/api/cli.html",
+      "status_code": 200,
+      "success": true,
+      "error": "",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_sha256": "58ed34532a6b7b096230641d613558e87e010477a846c8536f0e0797d7618f77",
+      "markdown_characters": 246450,
+      "scope_reviewed": true,
+      "scope": "Versioned Node CLI documentation on normal module real-path behavior and preserve-symlinks flags. These flags alter resolution/cache semantics and are not adopted as a generic task-runtime fix."
+    },
+    "codex_source_commit": "d32063f96c2dff1dc96af839b3952abb6acfeda4",
+    "pinned_native_sources": {
+      "codex-rs/mxc-sandbox/src/policy.rs": {
+        "git_blob": "be227e1ced766a101382aab9088fe9e1df2ebaf6",
+        "sha256": "44af2ce09682de492c07e9db91fbd5c071184fe79d83941029266135d4d2097f"
+      },
+      "codex-rs/mxc-sandbox/README.md": {
+        "git_blob": "bf4cd0fd0de957b92a94010d13c1315c54e33aff",
+        "sha256": "6ecfd6496f2c707f3388ee48905e9480a0f9e4993ef2715966123f703801b1da"
+      },
+      "codex-rs/mxc-sandbox/src/windows.rs": {
+        "git_blob": "c475066d31fe7160640adba27b075218265db668",
+        "sha256": "4473164a0b056177e6affa17d12fe3a37e59bea6150b218c4b2bccb62d8d4422"
+      }
+    }
+  }
+}

@@ -203,6 +203,8 @@ def _run_controller(
         if agent_space is not None:
             resources["space_budget"] = agent_space
         prompt = admitted["prompt"] + "\n\nPython executable for this attempt: " + str(runtime["python"]) + "\n"
+        if "toolchains" in runtime:
+            prompt += runtime["toolchains"].instructions()
         with ExitStack() as credentials:
             selected = credentials.enter_context(
                 credential_lease(
@@ -274,6 +276,8 @@ def _run_controller(
         if dependency_receipt is not None:
             verify_dependencies(dependency_receipt)
             asset(runtime["dependencies"]["asset"])
+        if "toolchains" in runtime:
+            runtime["toolchains"].verify()
         asset(plan["grader_runtime"])
         if setup_space is not None:
             setup_space.require_available()

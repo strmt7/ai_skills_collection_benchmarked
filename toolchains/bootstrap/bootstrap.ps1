@@ -4,7 +4,8 @@ param(
     [ValidateSet('validation','agent-tools','git','codex','supervisor-build')][string]$Profile = 'validation',
     [ValidateRange(1,600)][int]$LockTimeoutSeconds = 600,
     [string]$CommandBase64,
-    [string]$CredentialEnvironmentBase64
+    [string]$CredentialEnvironmentBase64,
+    [ValidateRange(1,32)][int]$CommandMemoryGiB = 4
 )
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
@@ -12,6 +13,8 @@ $utf8 = New-Object Text.UTF8Encoding($false)
 [Console]::OutputEncoding = $utf8
 [Console]::Error.Write('')
 $rootPath = [IO.Path]::GetFullPath($Root)
+$commandMemoryBytes=[long]$CommandMemoryGiB*1073741824L
+$handoffMemoryBytes=[Math]::Max(6442450944L,($commandMemoryBytes+2147483648L))
 if ($rootPath.Length -gt [IO.Path]::GetPathRoot($rootPath).Length) { $rootPath=$rootPath.TrimEnd('\') }
 if (-not [IO.File]::Exists((Join-Path $rootPath 'pyproject.toml'))) { throw 'The selected checkout has no project declaration' }
 if ([Environment]::OSVersion.Platform -ne [PlatformID]::Win32NT -or
@@ -279,6 +282,7 @@ try {
         $lock.Dispose()
         $lock = $null
         $parameters = @('-NoLogo','-NoProfile','-NonInteractive','-MTA','-File',(Join-Path $bootstrapHome 'bootstrap.ps1'),'-Root',$rootPath,'-CacheRoot',$CacheRoot,'-Profile',$Profile,'-LockTimeoutSeconds',[string]$LockTimeoutSeconds)
+        $parameters += @('-CommandMemoryGiB',[string]$CommandMemoryGiB)
         if (-not [string]::IsNullOrEmpty($CommandBase64)) { $parameters += @('-CommandBase64',$CommandBase64) }
         if (-not [string]::IsNullOrEmpty($CredentialEnvironmentBase64)) { $parameters += @('-CredentialEnvironmentBase64',$CredentialEnvironmentBase64) }
         $engineEnvironment = @{
@@ -297,7 +301,8 @@ try {
         [void][IO.Directory]::CreateDirectory((Native-Path $handoffDirectory))
         $handoffStdout = Join-Path $handoffDirectory 'stdout.native'
         $handoffStderr = Join-Path $handoffDirectory 'stderr.native'
-        $handoff = [SkillsBootstrap.OwnedProcess]::Run($engine,[string[]]$parameters,$rootPath,$handoffEnvironment,$handoffStdout,$handoffStderr,3600,16777216,6442450944,128)
+        Write-Json (Join-Path $handoffDirectory 'resources.json') @{memory_limit_bytes=$handoffMemoryBytes; command_memory_limit_bytes=$commandMemoryBytes; scope='Declared enclosing engine and command budgets; not a memory reservation'}
+        $handoff = [SkillsBootstrap.OwnedProcess]::Run($engine,[string[]]$parameters,$rootPath,$handoffEnvironment,$handoffStdout,$handoffStderr,3600,16777216,$handoffMemoryBytes,128)
         Write-Json (Join-Path $handoffDirectory 'process.json') $handoff
         [Console]::Out.Write([IO.File]::ReadAllText((Native-Path $handoffStdout),$utf8))
         [Console]::Error.Write([IO.File]::ReadAllText((Native-Path $handoffStderr),$utf8))
@@ -509,7 +514,8 @@ if ([string]::IsNullOrEmpty($CommandBase64)) {
     Forward-CredentialEnvironment $CredentialEnvironmentBase64 $environment
     $arguments = Python-Arguments (Join-Path $rootPath 'tools/_bootstrap_launch.py') (@('--packages',(Native-Path $packages),'--root',$rootPath,'--') + $command)
     $stdout = Join-Path $logs 'command.stdout.native'; $stderr = Join-Path $logs 'command.stderr.native'
-    $process = [SkillsBootstrap.OwnedProcess]::Run($python,$arguments,$rootPath,$environment,$stdout,$stderr,1800,16777216,4294967296,64)
+    Write-Json (Join-Path $logs 'command-resources.json') @{memory_limit_bytes=$commandMemoryBytes; wall_time_limit_seconds=1800; output_limit_bytes=16777216; process_limit=64; scope='Declared development-command budget; nested operations retain their own limits'}
+    $process = [SkillsBootstrap.OwnedProcess]::Run($python,$arguments,$rootPath,$environment,$stdout,$stderr,1800,16777216,$commandMemoryBytes,64)
     Write-Json (Join-Path $logs 'command.process.json') $process
     [Console]::Out.Write([IO.File]::ReadAllText($stdout,$utf8)); [Console]::Error.Write([IO.File]::ReadAllText($stderr,$utf8))
     if ($null -ne $process.termination_reason -or $process.active_processes_after_cleanup -ne 0) { throw "Development command did not complete normally; retained diagnostics: $logs" }

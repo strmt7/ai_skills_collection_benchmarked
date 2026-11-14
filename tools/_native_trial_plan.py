@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from _native_benchmark_runtime import sha256
+from _subject_toolchains import load_toolchains
 from _trial_catalog import load_local_catalog
 from _trial_provider import validate_provider
 from _trial_transcript import strict_json
@@ -22,6 +23,7 @@ def execution_sources() -> dict[str, str]:
     """Bind runtime and grader sources; boundary receipts separately bind admission code."""
     names = (
         "tools/_native_trial_plan.py",
+        "tools/_subject_toolchains.py",
         "tools/run_swe_skills_trial.py",
         "toolchains/bootstrap/codex.json",
         "tools/prepare_subject_dependencies.py",
@@ -37,16 +39,19 @@ def _identifier(value: Any) -> bool:
 
 
 def subject_runtime(entry: Any) -> dict[str, Any]:
-    """Verify the complete CLI payload and explicit Python executable identity."""
+    """Verify the CLI, Python and any declared complete native toolchain payloads."""
     runtime = strict_json(asset(entry).decode("utf-8"))
     basic = {"schema_version", "cli_package_root", "python", "python_sha256"}
     extra = {"dependencies", "installer", "archive_directory", "import_paths"}
-    if (
-        not isinstance(runtime, dict)
-        or type(runtime["schema_version"]) is not int
-        or (runtime["schema_version"], set(runtime))
-        not in ((1, basic), (2, basic | extra), (3, basic | {"model_catalog"}), (3, basic | extra | {"model_catalog"}))
-    ):
+    if not isinstance(runtime, dict) or type(runtime.get("schema_version")) is not int:
+        raise ValueError("Expected an explicit subject runtime declaration")
+    version = runtime["schema_version"]
+    fields = {1: basic, 2: basic | extra, 3: basic | {"model_catalog"}, 4: basic | {"toolchains"}}.get(version)
+    if fields is not None and version in (3, 4):
+        fields = fields | (extra if "dependencies" in runtime else set())
+        if version == 4 and "model_catalog" in runtime:
+            fields = fields | {"model_catalog"}
+    if fields is None or set(runtime) != fields:
         raise ValueError("Expected an explicit subject runtime declaration")
     package, python = (checked_path(Path(runtime[name])) for name in ("cli_package_root", "python"))
     pin = strict_json((ROOT / "toolchains/bootstrap/codex.json").read_text(encoding="utf-8"))
@@ -117,12 +122,14 @@ def subject_runtime(entry: Any) -> dict[str, Any]:
                 "import_paths": paths,
             }
         }
+    toolchains = load_toolchains(runtime["toolchains"]) if version == 4 else None
     return {
         "cli": package / pin["executable"],
         "python": python,
-        "roots": (package / pin["runtime_root"], python.parent),
+        "roots": (package / pin["runtime_root"], python.parent, *(toolchains.roots() if toolchains else ())),
         **dependencies,
-        **({"local_catalog": load_local_catalog(runtime["model_catalog"])} if runtime["schema_version"] == 3 else {}),
+        **({"local_catalog": load_local_catalog(runtime["model_catalog"])} if "model_catalog" in runtime else {}),
+        **({"toolchains": toolchains} if toolchains is not None else {}),
     }
 
 
@@ -133,6 +140,7 @@ def input_assets(plan: dict[str, Any], runtime: dict[str, Any] | None = None) ->
         "prompt.txt": plan["prompt"],
         **{f"interventions/{index:04d}.txt": entry for index, entry in enumerate(plan["interventions"])},
         **({"model-catalog.json": runtime["local_catalog"].asset()} if runtime and "local_catalog" in runtime else {}),
+        **({"native-toolchains.json": runtime["toolchains"].asset()} if runtime and "toolchains" in runtime else {}),
     }
 
 
@@ -256,6 +264,8 @@ def load_plan(path: Path) -> dict[str, Any]:
         protected.append(Path(runtime["dependencies"]["asset"]["path"]))
     if "local_catalog" in runtime:
         protected.append(Path(runtime["local_catalog"].location))
+    if "toolchains" in runtime:
+        protected.append(Path(runtime["toolchains"].location))
     protected.extend(Path(task[name]["path"]) for name in ("verifier", "inventory"))
     protected.extend(Path(entry["path"]) for entry in [*task["scorer"]["files"], *task["scorer"]["wheels"]])
     protected.extend(Path(entry["path"]) for entry in task.get("python_environment", {}).get("wheels", []))

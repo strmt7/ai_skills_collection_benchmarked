@@ -1,0 +1,31 @@
+{
+  "scope": "Frozen native toolchain payload admission, read grants, common explicit command prefixes, archived manifests and pre-score identity checks. Source and selected scripted native controls only.",
+  "qualification": {
+    "scope": "Experimental source/control proof; no complete new runtime profile or model admission",
+    "execution_boundary_qualified": false,
+    "file_entrypoint_runtime_qualified": false,
+    "model_transport_qualified": false,
+    "unit_tests_passed": 172,
+    "counted_model_trials": 0
+  },
+  "source_sha256": {
+    "tools/_subject_toolchains.py": "a619c7eeb0b329d7eb7618ba3c8f199cbbdbb453104889d993ea58fa0b46c1bc",
+    "tools/_native_trial_plan.py": "162f1d6299532b5c68d2d76ad984b5e8d6104e0407cf7836616c2eec591ac2b6",
+    "tools/run_swe_skills_trial.py": "728b9a49330f7e71ebea12a6f5c127246ba252f4ee3554607e0e20088ab56816",
+    "tests/test_subject_toolchains.py": "bebe3ebfd5e5871f7a87651d626b7b530ca217f8a72c3fcfb7f618896a792f11",
+    "tests/test_native_trial_plan.py": "b9263ab677674022b3e83edbb1485bdb89e8d69c662b30806426c0de95655136",
+    "tests/test_native_trial_runner.py": "6783a54ce4f43d918c99b0b11674e45cd8bea540690680a1d3758e500dd78c3c",
+    "docs/native-benchmark-controller.md": "41611eb4b621fe4e5cdb2c135e735534dc85650c3c5770d557189a12f4cd70f8"
+  },
+  "artifacts": {
+    "observations.json": "b8fefe4c1d1297c23c991b2af56ff706188071d8789ee4c91c56bf29a87cd526"
+  },
+  "limitations": [
+    "All native cases use a deterministic peer; no model inference or comparative efficacy result exists.",
+    "Node eval/built-in success is distinct from the failed normal script-file control; full original project staging and frozen pilot admission remain open.",
+    "Only selected source/type/lint tests ran for this batch; the full publication gate set and hosted checks have not run.",
+    "Existing scoped runtime receipts bind their original source snapshots. Changed execution sources require fresh qualification before real model execution.",
+    "The frozen twelve-task frame, security work hold, main-only connector publication and release hold are unchanged.",
+    "Raw streams and exact pinned API source captures remain in owned ignored state; this is trusted-controller evidence, not remote cryptographic attestation."
+  ]
+}

@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from types import SimpleNamespace
+from typing import Any
 
 import _native_trial_plan as plans
 import pytest
@@ -196,9 +198,21 @@ def test_grader_wheel_bytes_cannot_be_used_as_subject_instructions(frozen):
 
 
 @pytest.mark.parametrize("mutation", [None, "missing", "changed", "extra", "directory", "python"])
-@pytest.mark.parametrize("schema,with_dependencies", [(1, False), (2, True), (3, False), (3, True)])
+@pytest.mark.parametrize(
+    "schema,with_dependencies,with_catalog",
+    [
+        (1, False, False),
+        (2, True, False),
+        (3, False, True),
+        (3, True, True),
+        (4, False, False),
+        (4, True, False),
+        (4, False, True),
+        (4, True, True),
+    ],
+)
 def test_subject_runtime_checks_complete_cli_payload_and_python(
-    tmp_path, monkeypatch, mutation, schema, with_dependencies
+    tmp_path, monkeypatch, mutation, schema, with_dependencies, with_catalog
 ):
     root = tmp_path / "controller"
     pin_path = root / "toolchains/bootstrap/codex.json"
@@ -230,7 +244,7 @@ def test_subject_runtime_checks_complete_cli_payload_and_python(
         }
         monkeypatch.setattr(plans, "load_specification", lambda raw: {"admitted": True})
         monkeypatch.setattr(plans, "installer_identity", lambda path: {"admitted": True})
-    if schema == 3:
+    if with_catalog:
         extra["model_catalog"] = ref(
             tmp_path / "model-catalog.json",
             json.dumps(
@@ -242,6 +256,33 @@ def test_subject_runtime_checks_complete_cli_payload_and_python(
                             "base_instructions": "Frozen native instructions.",
                         }
                     ]
+                }
+            ).encode(),
+        )
+    if schema == 4:
+        native = tmp_path / "native-toolchain"
+        native.mkdir()
+        (native / "node.exe").write_bytes(b"native tool fixture")
+        extra["toolchains"] = ref(
+            tmp_path / "toolchains.json",
+            json.dumps(
+                {
+                    "schema_version": 1,
+                    "toolchains": [
+                        {
+                            "name": "node",
+                            "version": "26.13.1",
+                            "root": str(native),
+                            "files": {
+                                "node.exe": {
+                                    "bytes": len(b"native tool fixture"),
+                                    "sha256": sha256(b"native tool fixture"),
+                                }
+                            },
+                            "directories": [],
+                            "commands": {"node": ["node.exe"]},
+                        }
+                    ],
                 }
             ).encode(),
         )
@@ -271,8 +312,14 @@ def test_subject_runtime_checks_complete_cli_payload_and_python(
     if mutation is None:
         admitted = plans.subject_runtime(runtime)
         assert admitted["cli"] == executable and admitted["python"] == python
-        if schema == 3:
+        if with_catalog:
             assert admitted["local_catalog"].metadata()["slug"] == "owned-local"
+        if schema == 4:
+            assert admitted["toolchains"].roots() == (native,)
+            assert native in admitted["roots"]
+            plan: dict[str, Any] = {key: runtime for key in ("task", "subject_runtime", "grader_runtime", "prompt")}
+            plan["interventions"] = []
+            assert plans.input_assets(plan, admitted)["native-toolchains.json"] == extra["toolchains"]
     else:
         with pytest.raises(ValueError):
             plans.subject_runtime(runtime)
@@ -326,3 +373,13 @@ def test_source_archive_matches_the_frozen_implementation(tmp_path, monkeypatch)
     (root / "source.py").write_bytes(b"changed source")
     with pytest.raises(ValueError, match="during archival"):
         plans.archive_sources(tmp_path / "changed-archive", expected)
+
+
+def test_native_toolchain_manifest_cannot_be_inside_a_subject_read_grant(frozen, monkeypatch):
+    _, _, runtime_root = frozen
+    manifest = runtime_root / "toolchains.json"
+    manifest.write_bytes(b"frozen declaration")
+    runtime = {"roots": (runtime_root,), "toolchains": SimpleNamespace(location=str(manifest))}
+    monkeypatch.setattr(plans, "subject_runtime", lambda entry: runtime)
+    with pytest.raises(ValueError, match="controller or evaluator"):
+        load(frozen)

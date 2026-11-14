@@ -25,6 +25,19 @@ registration, shell-profile edits or specific AI client are required. Existing
 profiles are preserved when a missing or changed component needs recovery.
 Concurrent setup requests share one installation.
 
+Development commands default to a 4 GiB aggregate memory ceiling; the enclosing
+PowerShell handoff permits 6 GiB. For an operation with a separately qualified
+larger resource budget, put `--command-memory-gib 18` before `python`. The integer
+range is 1–32 GiB. The selected command ceiling propagates through the handoff,
+which retains at least 2 GiB of additional headroom. Both limits are recorded in
+the diagnostics. This option applies only to the `python` operation.
+
+These limits are ceilings, not memory reservations. The selected operation must
+still check available host resources and enforce its own bounds. A nested 16 GiB
+job cannot overcome a smaller enclosing job. Increasing the command ceiling
+does not change an agent's or tool's separately declared memory, time or I/O
+limits, and does not establish that a model can load or a benchmark can run.
+
 `codex` provisions the pinned stable benchmark CLI from its official npm platform
 package, its complete payload, source licenses and unmodified vendor model catalog,
 checks its version, and returns its executable and runtime

@@ -78,7 +78,7 @@
         "R9",
         "R12"
       ],
-      "next_action": "Use the explicit frozen local catalog route for independently qualified development work. Eleven native controls and seventeen context checks passed, including explicit managed Git, archived catalog identity and observed timeout cleanup. The earlier 180-second coding calibration timed out without a score; no skill comparison has run. Verify actual backend metadata, reasoning and loaded context under the new profile, and complete all twelve tasks, independence and matched-sampling requirements before counted comparisons. The OpenAI sign-in route and GPT-6.1 high comparison remain separately open; do not request an API key, copy credentials or modify personal account state.",
+      "next_action": "Finish real-model transport under an explicitly qualified enclosing command budget before attempting independent comparisons. The backend retains its 16 GiB limit and the coding agent retains 2 GiB; the generation profile still requires 28 GiB of available RAM inside its preflight. The previous launch under default enclosing caps failed a ROCm allocation; matched commit controls establish the launcher mismatch, while successful corrected-profile inference remains unverified. Preserve the earlier unscored 180-second coding timeout. Complete all twelve original task/runtime/collection graphs, including the unresolved Node file-loader metadata gap, before admitting the frozen pilot. Keep the named GPT-6.1 high sign-in route separately open; use only the official harness/app and never request an OpenAI API key or alter personal account state.",
       "deliverables": [
         "Maintained qualification entrypoint and frozen input assets",
         "Provider/model identity and capability admission",
@@ -155,6 +155,11 @@
           "path": "artifacts/research/2026-11-14/local-model-catalog/review.json",
           "sha256": "428e35bfb1366f30772c0c7768986cefe4da3b8e7ff9f9188bf6b8b91bbec836",
           "scope": "Eleven current-source native fault controls and seventeen context controls; no counted model or efficacy trial."
+        },
+        {
+          "path": "artifacts/research/2026-11-14/bootstrap-command-resources/review.json",
+          "sha256": "5386596e9fda519f44eca8e890f79eb278a190216acbd5ee5758f0156203b5a0",
+          "scope": "190 focused tests; paired source-bound enclosing-limit controls; refreshed eleven native and seventeen context controls. Metadata-only backend check passed; corrected-enclosure generation and comparative efficacy remain unverified."
         }
       ]
     },
@@ -170,7 +175,7 @@
         "R4",
         "R12"
       ],
-      "next_action": "Integrate the complete original build/test stages and modular scoring for all twelve fixed tasks. Native resource components now support original 600\u2013900-second test budgets, explicit project quotas and long leases; seven original-grader controls passed. Full Faiss CUDA-enabled, Prometheus Go and Nx pnpm dependency/build qualification remains open. Preserve the fixed frame and keep counted model trials closed until admission passes.",
+      "next_action": "Integrate the complete original build/test stages and modular scoring for all twelve fixed tasks. Native resource components now support original 600–900-second test budgets, explicit project quotas and long leases; seven original-grader controls passed. Full Faiss CUDA-enabled, Prometheus Go and Nx pnpm dependency/build qualification remains open. Preserve the fixed frame and keep counted model trials closed until admission passes.",
       "deliverables": [
         "Frozen public-development frame",
         "Candidate and intervention hashes",
@@ -422,7 +427,7 @@
         "R9",
         "R12"
       ],
-      "next_action": "The eb3db51 exact-head snapshot has all ten triggered workflows terminal: eight passed, including Windows/Linux offline validation, coverage and the Codecov upload step; two held scanner gates remain failed. Continue stable dependency/toolchain checks and independently verify Codecov dashboard acceptance. Installation and workflow evidence do not establish skill efficacy.",
+      "next_action": "The db5a359 exact-revision observation has ten terminal workflows: eight successes and two held scanner failures. Codecov processed that commit, while its hosted metric and local coverage representation still need reconciliation; DeepSource skipped analysis because its Analysis quota was exhausted. Qualify the new explicit command-memory option and complete whole supported stable dependency/setup graphs and latest-compatible evidence. Resource controls and tooling coverage do not establish skill efficacy.",
       "deliverables": [
         "Fresh-cache and recovery qualification",
         "Workflow-to-source trigger map",
@@ -464,6 +469,11 @@
         {
           "path": "artifacts/research/2026-11-14/hosted-validation-b475adde/review.json",
           "sha256": "23588598db8b8cca442ea4a3e82e2d60758f3d2974f66fa384b782c97be79d32"
+        },
+        {
+          "path": "artifacts/research/2026-11-14/bootstrap-command-resources/review.json",
+          "sha256": "5386596e9fda519f44eca8e890f79eb278a190216acbd5ee5758f0156203b5a0",
+          "scope": "Optional bounded command memory propagates through both launch layers; normal defaults remain 4/6 GiB. Invalid arguments are rejected before setup and actual commit behavior is measured separately from declarations."
         }
       ]
     },
@@ -510,7 +520,7 @@
         "R11",
         "R12"
       ],
-      "next_action": "Complete the required source-bound pre-push gates for the cohesive local-model catalog and explicit-Git qualification batch. Publish verified changes through the official connector on main, then wait for all triggered workflows. Keep the two held security gates visible and create no release or tag.",
+      "next_action": "Run the complete source-bound nonheld publication gates for the cohesive native-toolchain and enclosing-resource batch. Publish verified changes only through the official GitHub connector on main with an expected-head check, then wait for every triggered workflow. Preserve failures, the security-work hold and the release/tag hold.",
       "deliverables": [
         "Reviewed file and line-ending inventory",
         "Connector commit on main with expected-head check",

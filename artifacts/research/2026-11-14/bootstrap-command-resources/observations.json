@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "kind": "native_enclosing_resource_controls",
+  "default_command_gib": 4,
+  "default_engine_handoff_gib": 6,
+  "configured_command_gib": 18,
+  "configured_engine_handoff_gib": 20,
+  "supported_explicit_command_gib": {
+    "minimum": 1,
+    "maximum": 32,
+    "operation": "python"
+  },
+  "source_checks": {
+    "checks": [
+      {
+        "name": "pytest",
+        "passed": true
+      },
+      {
+        "name": "ruff",
+        "passed": true
+      },
+      {
+        "name": "format",
+        "passed": true
+      },
+      {
+        "name": "mypy-windows",
+        "passed": true
+      },
+      {
+        "name": "mypy-linux",
+        "passed": true
+      }
+    ],
+    "source_unchanged": true,
+    "unit_tests_passed": 190,
+    "typecheck_files": 355,
+    "typecheck_platforms": [
+      "win32",
+      "linux"
+    ],
+    "raw_qualification_sha256": "be2705458b18b1f6107861b89ca948730d343bf44e9482115ffdd698d6ec3bed"
+  },
+  "matched_allocation_controls": {
+    "scope": "Same 8 GiB virtual-commit probe source; only two physical pages touched on successful allocation. These are not model runs or benchmarks.",
+    "probe_source_sha256": "95c90ac46f2853a5bcbbdcae8b2fa12b4d47b6d2326159871aad9ab794175666",
+    "default": {
+      "allocation": {
+        "requested_commit_bytes": 8589934592,
+        "allocation_succeeded": false,
+        "winerror": 1455,
+        "touched_pages": 0,
+        "immediate_job_memory_limit_bytes": 0,
+        "limit_flags": 12288,
+        "scope": "Virtual commit with only two resident pages touched; no model or GPU allocation"
+      },
+      "raw_sha256": "518662551b2d73caae870b05a87cbbe0dbdf44cbc3fbbf4bcebe084d82c13759"
+    },
+    "configured": {
+      "allocation": {
+        "requested_commit_bytes": 8589934592,
+        "allocation_succeeded": true,
+        "winerror": 0,
+        "touched_pages": 2,
+        "immediate_job_memory_limit_bytes": 0,
+        "limit_flags": 12288,
+        "scope": "Virtual commit with only two resident pages touched; no model or GPU allocation"
+      },
+      "raw_sha256": "d96b6b2043ce928ba3d1294edd1e118283a138889bd4c039b3527be4cff13881"
+    },
+    "both_owned_jobs_empty": true,
+    "nearest_job_query_limit_bytes": 0,
+    "nearest_job_query_scope": "A zero nearest-job limit did not establish the absence of restrictive ancestor limits; the default enclosing launcher still rejected the allocation."
+  },
+  "refreshed_boundary": {
+    "profile": "windows-native-packaging-anonymous-v1",
+    "execution_boundary_qualified": true,
+    "model_transport_qualified": false,
+    "native_controls": 11,
+    "context_checks": 17,
+    "raw_sha256": "c658c907a029ed78855c8d5cee9b71d2d116a950e5f5ef364b11eb0d7bfbdf60",
+    "scope": "Current-source anonymous packaging calibration only; no native Node project or frozen-pilot admission."
+  },
+  "retained_transport_failure": {
+    "generation_requested": true,
+    "passed": false,
+    "native_job_memory_limit_bytes": 17179869184,
+    "job_members_remaining": 0,
+    "backend_stopped": true,
+    "listener_stopped": true,
+    "observer_stopped": true,
+    "root_observation": "The backend failed allocating a ROCm buffer while the command was launched under the default enclosing limits. The source-bound paired allocation controls prove those enclosing limits constrain the declared backend envelope.",
+    "limitation": "A completed generation under the corrected envelope is not yet established; the full model profile also requires its unchanged RAM headroom gate.",
+    "raw_sha256": "1c946aa99486e9557dcd41b2548b6e267276d18d3e1b2796c905c544f40b33bf"
+  },
+  "metadata_only": {
+    "passed": true,
+    "models_loaded": 0,
+    "official_harness_attempts": 0,
+    "declared_enclosing_memory_bytes": 4294967296,
+    "native_backend_job_limit_bytes": 2147483648,
+    "backend_stopped": true,
+    "listener_stopped": true,
+    "observer_stopped": true,
+    "scope": "Smaller metadata-only operation. No generation requested or loaded model; not qualification of the 16 GiB generation profile."
+  },
+  "retained_control_configuration_failure": {
+    "control_passed": false,
+    "actual_status": "task_passed",
+    "actual_score": 1,
+    "cause": "The batch passed the ordinary write budget to the one-byte fault control. The negative control was correctly rejected.",
+    "corrected_control": "native-toolchain-current-budget-v2",
+    "invalid_argument_guard_passed": true,
+    "raw_sha256": "9f2ad6fa4e34b6229441ee3a6bfcf08aa72d461a86db98fbeb0f6ae9b1fd66a0"
+  },
+  "model_inferences_completed": 0,
+  "counted_model_trials": 0,
+  "research": {
+    "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/nested-jobs",
+    "status_code": 200,
+    "success": true,
+    "provider_version": "0.9.5+catalog.portable4",
+    "native_sha256": "d425928561d8bdee3f3a2d6b4e1a21426f20ae90a250aa5ac35f7de7abde4875",
+    "scope_reviewed": true,
+    "markdown_characters": 24165,
+    "scope": "Official Windows nested-job commit-charge and ancestor-limit semantics. Native allocation controls independently verify this launcher."
+  }
+}

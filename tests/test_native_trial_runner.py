@@ -10,6 +10,7 @@ from typing import Any
 import pytest
 import run_swe_skills_trial as trials
 from _native_benchmark_runtime import sha256
+from _subject_toolchains import load_toolchains
 from _trial_context import TrialContext
 from prepare_subject_dependencies import inventory
 
@@ -76,6 +77,7 @@ def attempt(tmp_path, monkeypatch):
     monkeypatch.setattr(trials, "input_assets", lambda plan, runtime=None: {"fixture.json": {}})
 
     def execute(invocation, prompt, output, timeout, *, context, **resource_options):
+        state["prompt"] = prompt
         state["context"] = context
         state["resource_options"] = resource_options
         assert context.controller_environment["NATIVE_FIXTURE"] == "owned fixture credential"
@@ -156,6 +158,55 @@ def test_native_fraction_and_denominator_are_preserved(attempt):
     assert attempt[2]["grade_calls"] == 1
     assert "NATIVE_FIXTURE" not in attempt[2]["context"].controller_environment
     assert "owned fixture credential" not in json.dumps(result)
+
+
+@pytest.mark.parametrize("drift", [False, True])
+def test_native_toolchains_need_no_python_dependencies_and_drift_forbids_grading(attempt, tmp_path, monkeypatch, drift):
+    root = tmp_path / "native tools"
+    root.mkdir()
+    binary = root / "node.exe"
+    binary.write_bytes(b"frozen native tool fixture")
+    raw = json.dumps(
+        {
+            "schema_version": 1,
+            "toolchains": [
+                {
+                    "name": "node",
+                    "version": "26.13.1",
+                    "root": str(root),
+                    "files": {"node.exe": {"bytes": binary.stat().st_size, "sha256": sha256(binary.read_bytes())}},
+                    "directories": [],
+                    "commands": {"node": ["node.exe"]},
+                }
+            ],
+        }
+    ).encode()
+    manifest = tmp_path / "toolchains.json"
+    manifest.write_bytes(raw)
+    admitted = load_toolchains({"path": str(manifest), "sha256": sha256(raw)})
+    load = trials.load_plan
+
+    def with_tools(path):
+        value = load(path)
+        value["runtime"].update(toolchains=admitted, roots=admitted.roots())
+        return value
+
+    execute = trials.execute_agent
+
+    def subject(*args, **kwargs):
+        assert root in kwargs["context"].readable_roots
+        result = execute(*args, **kwargs)
+        if drift:
+            binary.write_bytes(b"changed native tool fixture")
+        return result
+
+    monkeypatch.setattr(trials, "load_plan", with_tools)
+    monkeypatch.setattr(trials, "execute_agent", subject)
+    result = invoke(attempt)
+    assert json.dumps(str(binary)) in attempt[2]["prompt"]
+    assert result["status"] == ("harness_error" if drift else "task_failed")
+    assert result["score"] == (None if drift else 0.5)
+    assert attempt[2]["grade_calls"] == (0 if drift else 1)
 
 
 @pytest.mark.parametrize("stopped", [1, False, None])

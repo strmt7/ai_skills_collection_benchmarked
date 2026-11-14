@@ -156,8 +156,8 @@
     {
       "id": "native-boundary-plan-checkpoint",
       "review": {
-        "path": "artifacts/research/2026-11-14/local-model-catalog-plan-checkpoint/review.json",
-        "sha256": "98e895fc83db0c008934fa77f165186fdf82ccc1fb3d1927c0e2b7985575b3f5"
+        "path": "artifacts/research/2026-11-14/native-resource-plan-checkpoint/review.json",
+        "sha256": "05c6182521a5b862292d1da5b077dd701599412c07d66ba7530b78e9634d402f"
       },
       "sources": [
         "data/development_plan.json"
@@ -173,17 +173,41 @@
         "tools/_trial_catalog.py",
         "tools/_trial_context.py",
         "tools/_trial_execution_evidence.py",
-        "tools/_native_trial_plan.py",
-        "tools/run_swe_skills_trial.py",
         "tools/qualify_trial_context.py",
         "tools/qualify_native_trial_boundary.py",
         "tests/test_trial_local_catalog.py",
-        "tests/test_native_trial_plan.py",
-        "tests/test_native_trial_runner.py",
         "tests/test_trial_execution_evidence.py",
         "tests/test_qualify_trial_context.py",
-        "docs/agent-trial-protocol.md",
+        "docs/agent-trial-protocol.md"
+      ]
+    },
+    {
+      "id": "native-subject-toolchains",
+      "review": {
+        "path": "artifacts/research/2026-11-14/native-subject-toolchains/review.json",
+        "sha256": "a8c626bda7dacb2c08078251cedfdcc577d30a9bc561c02a975e56491de835ea"
+      },
+      "sources": [
+        "tools/_subject_toolchains.py",
+        "tools/_native_trial_plan.py",
+        "tools/run_swe_skills_trial.py",
+        "tests/test_subject_toolchains.py",
+        "tests/test_native_trial_plan.py",
+        "tests/test_native_trial_runner.py",
         "docs/native-benchmark-controller.md"
+      ]
+    },
+    {
+      "id": "bootstrap-command-resources",
+      "review": {
+        "path": "artifacts/research/2026-11-14/bootstrap-command-resources/review.json",
+        "sha256": "5386596e9fda519f44eca8e890f79eb278a190216acbd5ee5758f0156203b5a0"
+      },
+      "sources": [
+        "dev.ps1",
+        "toolchains/bootstrap/bootstrap.ps1",
+        "toolchains/bootstrap/README.md",
+        "tests/test_bootstrap_runtime.py"
       ]
     }
   ],
@@ -196,6 +220,8 @@
       "superseded_sources": [
         ".gitattributes",
         ".github/workflows/offline-validation.yml",
+        "dev.ps1",
+        "toolchains/bootstrap/bootstrap.ps1",
         "tools/_native_benchmark_runtime.py",
         "tools/_trial_catalog.py",
         "tools/_trial_context.py",
@@ -294,6 +320,28 @@
       "review": {
         "path": "artifacts/research/2026-11-14/native-boundary-plan-checkpoint/review.json",
         "sha256": "cfa2fcffb8f8470aebe742fe08c466e96f038f1d2fb90f728dfceab8a4d09585"
+      },
+      "superseded_sources": [
+        "data/development_plan.json"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-14/local-model-catalog/review.json",
+        "sha256": "428e35bfb1366f30772c0c7768986cefe4da3b8e7ff9f9188bf6b8b91bbec836"
+      },
+      "superseded_sources": [
+        "docs/native-benchmark-controller.md",
+        "tests/test_native_trial_plan.py",
+        "tests/test_native_trial_runner.py",
+        "tools/_native_trial_plan.py",
+        "tools/run_swe_skills_trial.py"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-14/local-model-catalog-plan-checkpoint/review.json",
+        "sha256": "98e895fc83db0c008934fa77f165186fdf82ccc1fb3d1927c0e2b7985575b3f5"
       },
       "superseded_sources": [
         "data/development_plan.json"

@@ -2,12 +2,18 @@ $ErrorActionPreference='Stop'
 [Console]::OutputEncoding=New-Object Text.UTF8Encoding($false)
 $inputArguments=@($args)
 $Root=$PSScriptRoot; $CacheRoot=$null; $index=0
+$commandMemoryGiB=4; $commandMemorySpecified=$false
 $credentialNames=New-Object 'System.Collections.Generic.List[string]'
-while($index -lt $inputArguments.Count -and $inputArguments[$index] -in @('--cache-root','--credential-env')) {
+while($index -lt $inputArguments.Count -and $inputArguments[$index] -in @('--cache-root','--credential-env','--command-memory-gib')) {
     $option=$inputArguments[$index]; $index++
     if($index -ge $inputArguments.Count) { throw "Missing path for $option" }
     if ($option -eq '--cache-root') { $CacheRoot=[string]$inputArguments[$index] }
-    else { $credentialNames.Add([string]$inputArguments[$index]) }
+    elseif ($option -eq '--credential-env') { $credentialNames.Add([string]$inputArguments[$index]) }
+    else {
+        $memoryText=[string]$inputArguments[$index]
+        if ($commandMemorySpecified -or $memoryText -cnotmatch '^(?:[1-9]|[12][0-9]|3[0-2])$') { throw 'Supply --command-memory-gib once with an integer from 1 to 32' }
+        $commandMemoryGiB=[int]$memoryText; $commandMemorySpecified=$true
+    }
     $index++
 }
 if ($credentialNames.Count -gt 16) { throw 'Credential environment declaration exceeds its bound' }
@@ -18,6 +24,7 @@ foreach ($name in $credentialNames) {
 $Operation='doctor'
 if($index -lt $inputArguments.Count) { $Operation=[string]$inputArguments[$index]; $index++ }
 if($Operation -notin @('doctor','python','cocoindex','crawl4ai','codex')) { throw 'Use doctor, python, cocoindex, crawl4ai or codex' }
+if ($commandMemorySpecified -and $Operation -ne 'python') { throw 'Command memory configuration requires the python operation' }
 if ($Operation -in @('doctor','codex') -and $credentialNames.Count -gt 0) { throw 'Credential forwarding requires a development command' }
 $CommandArguments=@()
 if($index -lt $inputArguments.Count) { $CommandArguments=@($inputArguments[$index..($inputArguments.Count-1)] | ForEach-Object { [string]$_ }) }
@@ -30,6 +37,7 @@ $shell=[IO.Path]::Combine($system,'WindowsPowerShell\v1.0\powershell.exe')
 if (-not [IO.File]::Exists($shell)) { throw 'Windows PowerShell is unavailable at the native operating-system location' }
 $parameters=@('-NoLogo','-NoProfile','-NonInteractive','-File',(Join-Path $Root 'toolchains/bootstrap/bootstrap.ps1'),'-Root',$Root)
 if (-not [string]::IsNullOrEmpty($CacheRoot)) { $parameters+=@('-CacheRoot',$CacheRoot) }
+if ($commandMemorySpecified) { $parameters+=@('-CommandMemoryGiB',[string]$commandMemoryGiB) }
 if ($credentialNames.Count -gt 0) {
     $namesJson=ConvertTo-Json -InputObject @($credentialNames.ToArray()) -Compress
     $parameters+=@('-CredentialEnvironmentBase64',[Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($namesJson)))

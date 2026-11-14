@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -12,6 +13,56 @@ import _bootstrap_doctor as doctor
 import _bootstrap_launch as launch
 import _native_shells as shells
 import pytest
+
+
+@pytest.mark.skipif(os.name != "nt", reason="Native Windows frontend argument contract")
+@pytest.mark.parametrize(
+    "arguments,message",
+    [
+        (["--command-memory-gib", "0", "python", "--version"], "integer from 1 to 32"),
+        (["--command-memory-gib", "33", "python", "--version"], "integer from 1 to 32"),
+        (["--command-memory-gib", "1.5", "python", "--version"], "integer from 1 to 32"),
+        (["--command-memory-gib", "1", "--command-memory-gib", "2", "python", "--version"], "once"),
+        (["--command-memory-gib", "18", "doctor"], "requires the python operation"),
+        (["--command-memory-gib", "18", "codex"], "requires the python operation"),
+        (["--command-memory-gib", "18", "crawl4ai", "check"], "requires the python operation"),
+    ],
+)
+def test_frontend_rejects_invalid_command_budgets_before_installation(tmp_path, arguments, message):
+    from _windows_trial_process import run_owned
+
+    root = Path(__file__).resolve().parents[1]
+    shell = Path(os.environ["SYSTEMROOT"]) / "System32/WindowsPowerShell/v1.0/powershell.exe"
+    cache = tmp_path / "must-not-be-created"
+    stdout, stderr = tmp_path / "stdout.native", tmp_path / "stderr.native"
+    with stdout.open("wb") as out, stderr.open("wb") as err, open(os.devnull, "rb") as stdin:
+        result = run_owned(
+            [
+                str(shell),
+                "-NoLogo",
+                "-NoProfile",
+                "-NonInteractive",
+                "-File",
+                str(root / "dev.ps1"),
+                "--cache-root",
+                str(cache),
+                *arguments,
+            ],
+            cwd=root,
+            stdin=stdin,
+            stdout=out,
+            stderr=err,
+            environment=dict(os.environ),
+            timeout=15,
+            memory_limit=512 * 1024**2,
+            output_limit=256 * 1024,
+            process_limit=8,
+            write_io_limit=8 * 1024**2,
+        )
+    assert result["exit_code"] != 0 and result["termination_reason"] is None
+    assert result["job_active_processes_after_cleanup"] == 0
+    assert not cache.exists()
+    assert message in stderr.read_text(encoding="utf-8")
 
 
 def distribution(name: str, version: str, requires: list[str] | None = None) -> SimpleNamespace:
