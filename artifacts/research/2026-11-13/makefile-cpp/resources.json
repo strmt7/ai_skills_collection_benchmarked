@@ -1,0 +1,59 @@
+{
+  "source_skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-makefile-generator-skill-md",
+  "source_signature": {
+    "commit_sha": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+    "skill_dir_sha256": "c7b51244ed4d37fdb03e26ad3bd84acbf8efb19e24a7519b166fe54ea9b54796",
+    "skill_file_sha256": "c0090361f2f9999c81050beb7d65aaf4338094559bd227d944aafbf1500286fe"
+  },
+  "hash_policy": "catalog-canonical-v1",
+  "resources": {
+    "assets/templates/.gitkeep": {
+      "sha256": "3733477b18dd35099f9e9134394f247012e8e573329132098d328d725846dff9",
+      "status": "pending"
+    },
+    "docs/makefile-structure.md": {
+      "sha256": "c128dfeb981215cfe7b25957c8332dbc6ad757a8b8ae681eabebb048564df219",
+      "status": "pending"
+    },
+    "docs/optimization-guide.md": {
+      "sha256": "8b928d0ac61c01fc83255ba96a29e480c9496d991f72c47f561b08558b1f7a6f",
+      "status": "pending"
+    },
+    "docs/patterns-guide.md": {
+      "sha256": "d1fd655e149df87b457bd85324c1c4e02fd858dd858cff5698508f196b34fe57",
+      "status": "pending"
+    },
+    "docs/security-guide.md": {
+      "sha256": "b976405ebff9c9fcb3a54f18557e3d201af3dd35fbf1e2b46c4406849d122824",
+      "status": "pending",
+      "scope_hold": "Owner has held cybersecurity-related work; no security review performed."
+    },
+    "docs/targets-guide.md": {
+      "sha256": "282faa5b0264c6ba8215072dfa7e30b4c39ba8aa5d15bc8c1b9c3a6cfdf2eaa8",
+      "status": "pending"
+    },
+    "docs/variables-guide.md": {
+      "sha256": "25ed125126630a1f58bac17ce3f8d0ee69f4508074510d473b2c98152a90d12e",
+      "status": "pending"
+    },
+    "scripts/add_standard_targets.sh": {
+      "sha256": "15a03d4651bc37947c375520fb58c5658bd5d6e5386bb58e227f4f96e8ee0ba9",
+      "status": "pending"
+    },
+    "scripts/generate_makefile_template.sh": {
+      "sha256": "f85287a85ab0b152b2d7f8681642d616031896e4e75d45b78970de514a324747",
+      "status": "reviewed",
+      "review_scope": "Complete helper read; C++ generation and independently defined compiler/no-test controls exercised. Other language branches were not qualified."
+    },
+    "SKILL.md": {
+      "sha256": "c0090361f2f9999c81050beb7d65aaf4338094559bd227d944aafbf1500286fe",
+      "status": "reviewed",
+      "review_scope": "Entrypoint read; C++ instruction/build contracts reviewed. Other-language and security claims are not qualified by this scope."
+    },
+    "test/test_helper_scripts.sh": {
+      "sha256": "238e329e79e7fd484a9d3e8340f71f5ae20343376d85ac69bfdc0e6e64674355",
+      "status": "pending"
+    }
+  },
+  "scope": "All original files inventoried; C++ entrypoint/helper component review only. Pending resources and held security guidance prevent whole-package completion."
+}

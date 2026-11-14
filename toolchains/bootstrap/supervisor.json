@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "assembly_bytes": 9728,
+  "assembly_sha256": "f0a41795d31c5841d4e81d9e5dd109a8f0809a8c707bbceec8efd48e30c54cdb",
+  "source_sha256": "74196cb95ebda326993a2bb44d90171436cad93d575a298acbfea79d972dfaa7",
+  "build_inputs": {
+    "powershell.json": "d5c147eba4fc753ba3c73ecf8a13010d7da5f67a3161c0404ad1115686761fcc",
+    "framework-references.json": "9a8d2add32b4433407b854e443bdfbb291e87654a86b06c793b115bce8f2f893",
+    "CompileSupervisor.ps1": "45c2e16bba6111204d8fbaf5390646fc124c81574ae03ef28b0182fcef5050b4",
+    "build_supervisor.ps1": "87971225642f874daea0fbb1dbec41cd603ac39630304ed04298a3763c72bceb"
+  }
+}

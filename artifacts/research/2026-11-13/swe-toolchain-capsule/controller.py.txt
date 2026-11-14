@@ -1,0 +1,66 @@
+"""Qualify a complete disposable SDK capsule before any repository integration."""
+import argparse
+import ctypes
+import hashlib
+import json
+import os
+import sys
+from pathlib import Path
+
+S = Path(__file__).resolve().parent
+R = S.parents[2]
+sys.path.insert(0, str(R / 'tools'))
+from _native_benchmark_runtime import ContainerLease, DockerClient, LeaseResources, stage_inputs
+
+sha = lambda data: hashlib.sha256(data).hexdigest()
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--output', type=Path, required=True)
+args = parser.parse_args()
+out = args.output.resolve()
+if not out.is_relative_to(S) or out == S or out.exists():
+    raise ValueError('Capsule evidence requires a fresh owned destination')
+controller_before = Path(__file__).read_bytes()
+pin_before = (S / 'swe-node22-toolchain-input-v1/receipt.json').read_bytes()
+class MemoryStatus(ctypes.Structure):
+    _fields_ = [('length', ctypes.c_ulong), ('load', ctypes.c_ulong)] + [(name, ctypes.c_ulonglong) for name in ('total', 'available', 'page_total', 'page_available', 'virtual_total', 'virtual_available', 'extended_available')]
+memory = MemoryStatus()
+memory.length = ctypes.sizeof(memory)
+if not ctypes.windll.kernel32.GlobalMemoryStatusEx(ctypes.byref(memory)):
+    raise ctypes.WinError()
+assert memory.available >= 8 * 1024**3
+source = S / 'swe-node22-toolchain-input-v1'
+pin = json.loads((source / 'receipt.json').read_bytes())
+assert Path(pin['archive_name']).name == pin['archive_name'] and pin['major'] == 22
+archive = (source / pin['archive_name']).read_bytes()
+assert len(archive) == pin['archive_bytes'] and sha(archive) == pin['archive_sha256']
+names = {'capsule_common.py': 'node_capsule_common_v1.py', 'setup.py': 'node_capsule_setup_v1.py', 'probe.py': 'node_capsule_probe_v1.py'}
+files = {name: (S / path).read_bytes() for name, path in names.items()}
+assert all(len(data) <= 64 * 1024 for data in files.values())
+files['runtime.tar.gz'] = archive
+assert sum(map(len, files.values())) <= 63 * 1024**2
+out.mkdir(exist_ok=False)
+client = DockerClient(R, out / 'client', S / 'native-controller-runtime-qualification-v1/runtime.json')
+preflight = json.loads(client.run('cached-image-admission', ['image', 'inspect', client.reference]))
+assert len(preflight) == 1
+image_id = preflight[0]['Id']
+lease = ContainerLease(client, out / 'lease.json', seconds=180, resources=LeaseResources(memory_bytes=1024**3, tmpfs_bytes=512*1024**2, executable_workspace=True))
+try:
+    lease.create()
+    lease.start()
+    stage_inputs(lease, out / 'staging', files)
+    setup_raw = client.run('root-capsule-setup', ['container', 'exec', '--user=0:0', lease.identity, 'python', '-I', '-B', '/tmp/benchmark-inputs/setup.py'], timeout=75)
+    setup = json.loads(setup_raw)
+    (out / 'inventory.native.json').write_bytes(setup_raw)
+    assert setup['archive_sha256'] == pin['archive_sha256'] and setup['setup_uid'] == 0 and setup['wrong_digest_rejected_before_extraction']
+    probe_raw = client.run('task-user-capsule-probe', ['container', 'exec', '--user=dev', lease.identity, 'python', '-I', '-B', '/tmp/benchmark-inputs/probe.py'], timeout=75)
+    observation = json.loads(probe_raw)
+    assert observation['passed'] and observation['task_uid'] != 0 and observation['inventory_sha256'] == setup['inventory_sha256']
+finally:
+    lease.close()
+assert not client.ids(lease.token)
+assert all((S / path).read_bytes() == files[name] for name, path in names.items())
+assert Path(__file__).read_bytes() == controller_before
+assert (source / 'receipt.json').read_bytes() == pin_before
+summary = {'observation': observation, 'archive_sha256': pin['archive_sha256'], 'setup_program_sha256': sha(files['setup.py']), 'probe_program_sha256': sha(files['probe.py']), 'common_program_sha256': sha(files['capsule_common.py']), 'complete_inventory_sha256': setup['inventory_sha256'], 'native_inventory_receipt_sha256': sha(setup_raw), 'license_sha256': setup['sdk_license_sha256'], 'image_reference': client.reference, 'image_id': image_id, 'lease_closed': True, 'remaining_owned_containers': 0, 'images_pulled': 0, 'images_created': 0, 'global_installation': False, 'available_host_ram_before_bytes': memory.available, 'memory_limit_bytes': 1024**3, 'tmpfs_limit_bytes': 512*1024**2, 'cpus': 1, 'lease_seconds': 180, 'task_packet_budget_changed': False, 'model_invocations': 0, 'runtime_admitted': False}
+(out / 'summary.json').write_text(json.dumps(summary, indent=2) + '\n', encoding='utf-8', newline='\n')
+print(json.dumps({'passed': observation['passed'], 'cases': len(observation['cases']), 'sdk_objects': observation['sdk_objects'], 'remaining_owned_containers': 0}))

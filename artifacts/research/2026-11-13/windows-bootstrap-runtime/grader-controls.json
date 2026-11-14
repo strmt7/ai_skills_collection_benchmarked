@@ -1,0 +1,108 @@
+{
+  "passed": true,
+  "source_unchanged": true,
+  "controls": [
+    {
+      "id": "windows-positive",
+      "passed": true,
+      "windows_cases_passed": 15,
+      "linux_counts": {
+        "passed": 18,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "total": 18
+      },
+      "cli_version": "0.169.0",
+      "installer_version": "0.13.8",
+      "scripted_control": true,
+      "model_invocations": 0,
+      "counted_attempts": 0
+    },
+    {
+      "id": "baseline",
+      "passed": true,
+      "case": "baseline",
+      "status": "task_failed",
+      "diagnostic_fraction": 0.0,
+      "native_counts": {
+        "passed": 0,
+        "failed": 18,
+        "skipped": 0,
+        "errors": 0,
+        "total": 18
+      },
+      "original_publisher_scoring_class_executed": true,
+      "dependency_inventory_unchanged": true,
+      "closed_leases": 2,
+      "remaining_owned_containers": 0,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "task_solution_written": false,
+      "original_receipt_sha256": "45af331719bc3b6d3f1872db108df428e45d702019b89ffb91f9927300a66246"
+    },
+    {
+      "id": "wrong-import",
+      "passed": true,
+      "case": "wrong-import",
+      "status": "harness_error",
+      "diagnostic_fraction": null,
+      "native_counts": null,
+      "original_publisher_scoring_class_executed": false,
+      "dependency_inventory_unchanged": false,
+      "closed_leases": 1,
+      "remaining_owned_containers": 0,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "task_solution_written": false,
+      "original_receipt_sha256": "d6e15b3374d14fe87064d7340166e349f47bf46dfaaab39ac9e360c579f201c1"
+    },
+    {
+      "id": "schema-2",
+      "passed": true,
+      "task_schema": 2,
+      "existing_public_fixture": "batch1/python-packaging",
+      "original_verifier_and_publisher_scorer_executed": true,
+      "native_counts": {
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "total": 11
+      },
+      "closed_leases": 2,
+      "remaining_owned_containers": 0,
+      "new_selected_task_solution_written": false,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "dependency_inventory_unchanged": false,
+      "original_receipt_sha256": "ea673ac03b2ceaea962c2b7f589dc949e5f24641ef1a424d1cfe9abcf999ae56"
+    },
+    {
+      "id": "schema-3",
+      "passed": true,
+      "task_schema": 3,
+      "existing_public_fixture": "batch1/python-packaging",
+      "original_verifier_and_publisher_scorer_executed": true,
+      "native_counts": {
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "total": 11
+      },
+      "closed_leases": 2,
+      "remaining_owned_containers": 0,
+      "new_selected_task_solution_written": false,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "dependency_inventory_unchanged": true,
+      "original_receipt_sha256": "87bb4198ced949e97e00f48f7516ac105e474ac244c89a607bba8eb9e1a905ab"
+    }
+  ],
+  "control_groups_executed": 5,
+  "original_checkpoint_sha256": "16d23e2069fb8fc6fcf4e48dc1bf65c87f637ef9433300bceebfb94d669f49ee",
+  "model_invocations": 0,
+  "counted_attempts": 0,
+  "agent_efficacy_established": false
+}

@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "classification": "local-development-batch-acceptance",
+  "published": false,
+  "full_repository_tests": {
+    "passed": 2801,
+    "skipped": 18,
+    "failed": 0,
+    "workers": 2,
+    "coverage_percent": 73.62,
+    "qualification_sha256": "34acdb2bb2c7f9e69cc6145c3d4ebc990aea36238816a0fb8789da3b6b87f75a",
+    "coverage_xml_sha256": "127818724bcb00cda331d28fa7e7639f91f89e9a4d93c6dfe62a6ca2152679be",
+    "source_files_frozen_during_run": 22178,
+    "source_unchanged_during_run": true,
+    "skipped_checks_are_not_passes": true
+  },
+  "static_validation": {
+    "verified": true,
+    "prior_qualification_sha256": "327b6682f89964a67c1c817cbf61c991ede4d76eaa218ca0120fd06da536b19e",
+    "new_qualification_sha256": "34acdb2bb2c7f9e69cc6145c3d4ebc990aea36238816a0fb8789da3b6b87f75a",
+    "all_prior_sources_identical_during_the_new_batch": true,
+    "reused_checks": [
+      "ruff",
+      "format",
+      "mypy",
+      "compile",
+      "focused-tests"
+    ]
+  },
+  "post_suite_artifact_qualification": {
+    "passed": true,
+    "source_files_verified": 22178,
+    "code_and_test_sources_unchanged_after_full_suite": true,
+    "post_suite_artifact_changes": [
+      {
+        "path": "artifacts/research/2026-11-11/subject-dependency-runtime/review.json",
+        "before_sha256": "fbf2bac321002d17d3adb0a5b3fee8a713197aecdc42610aa25cbaf14823a2fd",
+        "after_sha256": "2e43db50f10dbe33d5aef4e1ddffa91f0507acd5d51e247c2c80e5ce65085f7f",
+        "scope": "Correct project-versus-benchmark provenance and append the independently completed full-project readiness result.",
+        "qualification": "This native-input and connector cross-check; program/test sources remain unchanged."
+      }
+    ],
+    "project_provenance_verified": true,
+    "full_project_tests": {
+      "passed": 61055,
+      "skipped": 1
+    },
+    "public_model_guard": "closed",
+    "model_requests": 0
+  },
+  "native_runtime_readiness": {
+    "original_project_tests_passed": 61055,
+    "original_project_tests_skipped": 1,
+    "source_modified": false,
+    "warnings_suppressed": false,
+    "native_controls": {
+      "edited": 1.0,
+      "unchanged": 0.0,
+      "interrupted": null
+    },
+    "model_requests": 0,
+    "is_model_efficacy_evidence": false
+  },
+  "closure": {
+    "checks_passed": [
+      "review-artifacts",
+      "execution-policy",
+      "ledger",
+      "audit-owned-containers",
+      "observe-owned-host"
+    ],
+    "qualification_sha256": "923397906be5abc43163c46bf29080359af68f9f440c783786c9d2d590c83f4c",
+    "policy_result_sha256": "9fb42ae727a3e25d04309584d426540e4196e659a6df45abc5ac6d78a73c4331",
+    "remaining_matching_nonobserver_processes": 0,
+    "remaining_matching_services": 0,
+    "remaining_matching_scheduled_tasks": 0,
+    "remaining_owned_containers": 0,
+    "container_engine_identity_verified": true,
+    "host_observation_scope": "Current checkout and current declared qualification cache; actual observer ancestry excluded by PID and creation-time checks. This is a path-scoped observation, not proof of absence of host-wide leaks. No process, service or schedule was terminated or modified.",
+    "free_ram_gib_observed": 30.58
+  },
+  "current_review_sha256": "2e43db50f10dbe33d5aef4e1ddffa91f0507acd5d51e247c2c80e5ce65085f7f",
+  "public_model_launch_guard": "closed",
+  "security_scanner_and_history_remediation": "paused; not represented as passed",
+  "release_created": false,
+  "limitations": [
+    "Local tests and native controls do not replace hosted CI acceptance.",
+    "This does not establish a model/skill advantage, commercial readiness, permanent absence of advisories or absence of host-wide leaks.",
+    "The full test source fingerprint includes the pre-correction review; the separately recorded post-suite evidence qualification validates its corrected provenance and follow-up project results without changing program or test sources."
+  ]
+}

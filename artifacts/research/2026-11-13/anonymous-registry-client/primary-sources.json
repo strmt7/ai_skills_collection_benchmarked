@@ -1,0 +1,31 @@
+{
+  "vendor_version_tag": "v29.9.3",
+  "docker_cli_sha256": "326fc37135eccfb538e5e536c94a6845dc98d33dd5c60967c486cc71837f4cc1",
+  "sources": [
+    {
+      "url": "https://github.com/docker/cli/blob/v29.9.3/cli/config/config.go",
+      "git_blob_sha1": "a7ea0acdd7e6833d59acc38f585509749065b339",
+      "content_sha256": "6e16ec5fcbb6a7874cf8234708a0783c9fbf0e31dbd533dff504d61810e068f3",
+      "native_capture_sha256": "8d8697edc7d3b9c178a2827fbb7b0478f8b67a9e3c9d645b8cab4103d85e9844"
+    },
+    {
+      "url": "https://github.com/docker/cli/blob/v29.9.3/cli/config/configfile/file.go",
+      "git_blob_sha1": "e32b1e767cbb753e4e944e6af2e0a0239404b422",
+      "content_sha256": "54a2edc334bfac938942cf7cd7eea4674b073bd55681354f7a08356f3ad940f5",
+      "native_capture_sha256": "ef61853584b6ca628a7246e6fc71b5dca0c8910ef82b8ca4ad91f9aef1f83160"
+    },
+    {
+      "url": "https://github.com/docker/cli/blob/v29.9.3/cli/config/credentials/default_store_windows.go",
+      "git_blob_sha1": "bb799ca61b79ddf3961d5b90ff84e230588f0818",
+      "content_sha256": "83bda5d66a4bef6368b5bdf41b87ea1664e51abdee0641cef127aaa358dd1a96",
+      "native_capture_sha256": "1b52a415f3cca9942274414136d91ded4d2f5b25860daeda60367bfc0d14493f"
+    },
+    {
+      "url": "https://github.com/docker/cli/blob/v29.9.3/cli/config/credentials/default_store.go",
+      "git_blob_sha1": "35b9ae4f53ea7b06085d591b40cfafca54eef18b",
+      "content_sha256": "1ab953f25f3277fbb44d939c50addd0e211633df460f14c9314347477ac6be90",
+      "native_capture_sha256": "4cd8d06663a954f121a99a46637a421cb27cdef756b598a4361d946dcf221cf6"
+    }
+  ],
+  "scope": "Matching vendor-version source, Git-blob verification and live native behavior; no claim of a reproducible binary build or global latest-version inventory."
+}

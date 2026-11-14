@@ -11,11 +11,69 @@ contains 18 reference methods, including frameworks as well as datasets. Three
 additional execution candidates were reviewed: τ-Bench, LiveCodeBench and
 ProgramBench. These counts are not counts of completed benchmark evaluations.
 
-The [native SkillsBench preflight](research-skillsbench-native.md) admitted the
-current task format and BenchFlow 0.9.2 distribution. It preserved two Windows
-compatibility failures and resolved separate platform dependency graphs. Native
-oracle/verifier execution and full harness qualification remain required;
-installation and the version command are not benchmark results.
+The native SkillsBench verifier accepted the reference solution and rejected
+an empty graph on the authors' pinned task environment. Its CTRF reward groups
+35 pytest cases into six entries, so the two denominators must stay visible.
+See [native SkillsBench qualification](research-skillsbench-native.md).
+
+The [SWE-Skills-Bench archive verification](research-swe-skills-bench-archive.md)
+reproduced the publisher's four paired comparisons. A separate public
+development control ran an original verifier on a pinned image. It detected
+a deliberately introduced syntax error, and the unchanged starting revision
+already reached the cell's scoring ceiling. The result gate rejects
+incomplete runs, and a second development cell qualified two-file transfer
+from a closed producer into a fresh grader. The supported handoff tool also
+qualified a zero-change capture and rejected a modified archive before
+reconstruction. A declared skip policy binds the empty Packaging candidate's
+0/11 native result to its completed capture and reconstruction receipt.
+The [native grading controller](native-benchmark-controller.md) now connects
+those steps through one supported entry point. The schema-2 profile verifies
+declared framework and project import origins before tests. See the
+[runtime-origin controls](research-native-runtime-origins.md). Model launch
+and live transport qualification remain required for a matched experiment.
+
+The Windows subject adapter now supports automatic, hash-locked dependency
+installation into a fresh private profile. In the Packaging development cell,
+51,498 unchanged project version tests passed inside the subject sandbox.
+Its integrated edited, unchanged and interrupted controls retained 11/11,
+0/11 and no score respectively. This qualifies that development path, not a
+model's ability or a complete benchmark suite. The qualified profile uses pytest
+9.0.3: tested newer releases reject the project's original generator parametrization
+under its unchanged warnings-as-errors policy. The repository's own test
+runner remains on its separately qualified version. See the
+[dependency-runtime review](../artifacts/research/2026-11-11/subject-dependency-runtime/review.json).
+Remaining resource and grader import boundaries, live
+authentication/transport and independent matched frames still need
+qualification before model launches can open.
+
+Controlled native shells and the actual `codex exec` tool path were observed
+inside the controller's job on the pinned Windows setup, including forced
+parent timeouts. Separate paired writes qualified cumulative job write
+accounting. See the [resource observations](../artifacts/research/2026-11-11/native-resource-observation/review.json).
+The [versioned native plan](native-benchmark-controller.md) now declares and
+enforces a polled write-transfer budget. Its controlled tests reject over-budget
+and unmeasured execution without a score. Schema-3 plans add explicit
+caller-available space reserves and bounded stopped-workspace accounting,
+including caches and alternate data streams. These observations do not impose
+a hard filesystem quota or establish the complete model-evaluation boundary.
+The [storage review](../artifacts/research/2026-11-11/native-storage-budget/review.json)
+records seven reconciled controls, including the retained failed fixture and
+its independently qualified correction. These controls contain no real model
+inference or evidence of comparative skill gains.
+
+On Windows, a separate controller test used Codex CLI 0.167.1 and a scripted
+loopback Responses provider. The controller ran a sandboxed PowerShell tool,
+collected the exact submission and distinguished a valid submission, an
+invalid one and a truncated stream. Fifteen context and isolation checks also
+passed. External model transport and the full SkillsBench controller adapter
+still require qualification. See the [qualification evidence](../artifacts/research/2026-11-11/benchmark-qualification/review.json).
+
+A subsequent [authentication review](research-codex-authentication.md) confirmed
+an existing ChatGPT login and a successful read-only status check in a separate
+controller profile. No API key was required for those checks, and no model
+request was made. Credential availability, refresh behavior, live model access
+and complete runner qualification are separate requirements. The next execution
+work must integrate and qualify the selected method before opening the launch gate.
 
 ## Execution priorities
 
@@ -23,6 +81,37 @@ Use the authors' datasets, scoring implementations and native result formats.
 An integration adapter transports inputs and results; it must not rewrite the
 grader, expected answers or acceptance thresholds. Preserve published version
 boundaries and label partial runs explicitly.
+
+Scripted qualification must verify native `command_execution` completion and
+integer exit code 0, using `tools/_scripted_tool_control.py`, then validate the
+operation's independent output files or test results. A completed CLI turn or
+an echoed success marker does not prove that its tool command succeeded:
+failure tracebacks can quote the marker from source. Preserve failed receipts
+and explicitly revoke any conclusions contradicted by native tool status.
+Also check the final structured control verdict and every declared criterion;
+process exit zero cannot override a failing nested report. A retained helper
+returned an earlier boolean after its final report failed. The
+[claim audit](../artifacts/research/2026-11-13/qualification-claim-audit/review.json)
+revokes that historical pass and preserves both original records.
+This requirement applies to controlled qualification. Failed debugging commands
+remain legitimate events in real model trials; their native task graders
+continue to determine the score.
+
+The [fixed-cohort preflight](../artifacts/research/2026-11-13/cohort-execution-preflight/review.json)
+preserves twelve tasks with twelve enabled unit-test stages and three enabled
+build checks. Five of seven publisher image manifests are verified; two Node
+image references denied anonymous reads. Neither a unit-test-only adapter nor
+those partial image captures admit the cohort. Current DICOM client controls
+use the publisher's 300-second test timeout; the earlier 120-second diagnostic
+remains historical. Qualify every declared stage and runtime before model runs.
+
+The [native resource qualification](../artifacts/research/2026-11-13/native-project-resources/review.json)
+removes fixture-sized component limits that excluded the fixed frame's original
+600–900-second test stages. Two native grader profiles retain 900-second test
+budgets through staging and scoring. Separate live controls verify explicit
+project CPU, memory and executable-workspace quotas, plus orphan cleanup for a
+2,460-second lease. Full build-stage integration and language-specific dependency
+graphs remain required; passing these controls does not admit the cohort.
 
 | Priority and method | Evidence sought | Native admission requirements |
 | --- | --- | --- |
@@ -102,6 +191,84 @@ final tasks after seeing candidate gains. Freeze the candidate before accessing
 confirmatory task content. Track exact and source-group overlap, derived cases,
 public previews and known exposure. Public tasks and unknown training exposure
 do not justify an unconditional contamination-free claim.
+
+## Frozen public development selection
+
+The [selection review](../artifacts/research/2026-11-13/swe-skills-pilot-selection/review.json)
+reconciles all 98 skill records and 980 task-file references against the pinned
+SWE-Skills-Bench author configuration and Git tree. It reads neither publisher
+outcome tables nor task briefs, evaluator implementations or reference solutions.
+The archived frame has 90 declared repository groups. The explicit cybersecurity
+hold and one unresolved repository revision leave 89 groups eligible for this
+metadata-only selection; that is not runtime eligibility.
+
+The [selection receipt](../benchmarks/agent-effectiveness/development/swe-skills-pilot-v1/selection.json)
+chooses one skill/batch cell from each of 12 distinct declared repository groups.
+It schedules the default, Karpathy-derived and collection conditions once per
+task: 36 planned attempts. Each six-task block uses all six condition orders.
+The seed is the SHA-256 of the exact pinned author configuration, independently
+of result tables. This fixed development design is reproducible; it is not proof
+of random, representative or semantically independent sampling.
+
+Check its exact inputs and output without rewriting the receipt:
+
+```powershell
+python tools/select_swe_skills_tasks.py --frame artifacts/research/2026-11-11/swe-skills-bench-archive/frame.json --exclusions benchmarks/agent-effectiveness/development/swe-skills-pilot-v1/exclusions.json --seed f658aca6273493e179b592e650341bc2cf76b1c48002633e592ab68c6cef212b --tasks 12 --output benchmarks/agent-effectiveness/development/swe-skills-pilot-v1/selection.json --check
+```
+
+Use `./dev.ps1 python` in place of `python` for automatic isolated setup on
+Windows x64. Offline validation checks the same receipt without starting an agent.
+
+The [prospective policy](../benchmarks/agent-effectiveness/development/swe-skills-pilot-v1/policy.json)
+preserves native metrics and thresholds, every scheduled attempt and unscored
+outcome, no counted retries or replacements, and explicit stopping/amendment
+rules. The pilot is descriptive only. Its candidate, exact budgets, task/image/
+scorer admission, model identity and complete analysis contract remain unfinished.
+No model was invoked, and the launch guard remains closed. Local hashes do not
+establish public preregistration timing. Public development tasks must never be
+promoted to an untouched confirmatory holdout.
+
+The selected environments' [registry metadata](../benchmarks/agent-effectiveness/development/swe-skills-pilot-v1/environment-metadata.json)
+resolves five image references to Linux/amd64 descriptors. Anonymous queries for
+the two Node references returned denied/authentication-required responses; those
+responses do not establish whether the images are private or absent. That
+metadata capture pulled no images and created no containers. Keep those cells in the fixed cohort
+while qualifying official access or a clearly recorded source-built environment;
+do not silently substitute images or resample tasks. Descriptor metadata alone
+does not qualify image contents, original-environment equivalence or a scorer.
+
+The [environment feasibility review](../artifacts/research/2026-11-13/swe-environment-feasibility/review.json)
+checks the documented registry flow against a public image and a missing-tag
+control. Both Node references still reject anonymous manifest access. The
+author's Node 20/22 scripts export local Enroot archives. A checksum-frozen
+Node 22 prototype passed seven capability controls in temporary storage on the
+cached Python image, including rejection by the wrong-major runtime. That
+prototype leaves original-image equivalence, selected dependencies, subject tool
+access and scoring unqualified. Declare and validate any source-derived route
+before counted outcomes; keep all 12 selected cells and 36 scheduled attempts.
+
+The subsequent [modern Node replay](../artifacts/research/2026-11-13/node-local-replay/review.json)
+qualifies Node 26.13.1, npm/npx 11.20.0 and the maintained loader for a
+checksum-bound, untagged image archive. Its publisher base layers remain exact;
+the Node layer and PATH change are explicit. Two native rejection controls
+prevent loading a bad digest or tagged archive. Five affected publisher-grader
+regressions and the anonymous credential-selection control were repeated against
+the current implementation. These are runtime and controller qualifications.
+The original Node aliases remain unresolved, and complete task dependencies,
+all evaluator stages and common model-trial admission remain open.
+
+The [original build-scorer controls](../artifacts/research/2026-11-13/publisher-build-scorer/review.json)
+now retain five real native command outcomes and six publisher contract checks.
+The independently qualified [build-result validator](benchmark-build-results.md)
+admits consistent failures and timeouts while rejecting contradictory, incomplete
+or stale evidence. This does not complete the three selected project builds.
+Faiss's pinned default enables GPU support, Prometheus declares Go 1.25.0 and Nx
+pins pnpm 10.28.2 with an eight-way build. Actual probes record the capabilities
+of the cached Python and modern-Node runtimes; the Golang image remains unprobed.
+Do not disable required features or replace full source scope to obtain a pass.
+Complete the original multi-stage aggregate as well as each native stage before
+common trial admission; the publisher averages enabled stage scores and rounds
+the aggregate to three decimal places.
 
 ## Success criteria and reporting
 

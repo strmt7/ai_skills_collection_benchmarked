@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-11",
+  "classification": "model-free-native-process-and-write-accounting-research",
+  "production_code_changed": false,
+  "source_sha256": {
+    "tools/_windows_trial_process.py": "d0fdc4e3b4d7dc89a2c0bce8bf82189c548124755c37bc20c1de80b17eb51a82",
+    "tools/_windows_appcontainer.py": "8b94b6bee9dcbeeeee295a71fb156eff66083f42fb3e17c52553baff57d23c6b",
+    "tools/_trial_context.py": "5aaa584b547872c0cd71557e74879b2468c829239437ae339ce5f3af3d1e8986",
+    "tools/_trial_rpc.py": "99928c148d2b5726ecfa2485a1486ca57ea346cef2b445915b2d988685cd8643",
+    "toolchains/bootstrap/codex.json": "6ad514456ca7a5ce3dd62fc099c2eda32d795e513ab1fe538b465a1488bf58be",
+    "tools/_windows_owned_python.py": "acf5b4e2d94758065cef125e5d6386ff741fe75e80bde2e66e0e67ac5e4a2651"
+  },
+  "native_cli_pin_sha256": "6ad514456ca7a5ce3dd62fc099c2eda32d795e513ab1fe538b465a1488bf58be",
+  "controlled_process_observations": [
+    {
+      "kind": "command-normal",
+      "in_controller_job": true,
+      "process_creation_time_retained": true,
+      "child_stopped_same_handle": true,
+      "observer_stopped": true,
+      "remaining_job_processes": 0,
+      "parent_termination_reason": null,
+      "temporary_context_removed": true,
+      "private_evidence": "subject-resource-membership-native-v1/summary.json",
+      "native_sha256": "b63bf0fe787d7266667542e34f39d248edbf07a8c8d0690e07c5ffc97c91b3d9"
+    },
+    {
+      "kind": "command-parent-timeout",
+      "in_controller_job": true,
+      "process_creation_time_retained": true,
+      "child_stopped_same_handle": true,
+      "observer_stopped": true,
+      "remaining_job_processes": 0,
+      "parent_termination_reason": "timeout",
+      "temporary_context_removed": true,
+      "private_evidence": "subject-resource-parent-timeout-native-v1/summary.json",
+      "native_sha256": "1670560bebd778b6b9a58949286404ebb9eef3855041852f660e1132dd82d2cf"
+    },
+    {
+      "kind": "exec-tool-normal",
+      "in_controller_job": true,
+      "process_creation_time_retained": true,
+      "child_stopped_same_handle": true,
+      "observer_stopped": true,
+      "remaining_job_processes": 0,
+      "parent_termination_reason": null,
+      "temporary_context_removed": true,
+      "private_evidence": "subject-resource-agent-normal-v1/summary.json",
+      "native_sha256": "1fcc32d5b24db166d6391f278d8faaae7855c96ee255e5cd0b2107b3730b62a7"
+    },
+    {
+      "kind": "exec-tool-parent-timeout",
+      "in_controller_job": true,
+      "process_creation_time_retained": true,
+      "child_stopped_same_handle": true,
+      "observer_stopped": true,
+      "remaining_job_processes": 0,
+      "parent_termination_reason": "timeout",
+      "temporary_context_removed": true,
+      "private_evidence": "subject-resource-agent-timeout-v1/summary.json",
+      "native_sha256": "21793b3cdb316a3f20e416feb89b035b6437b57bdb08c7daef70f495e7ac63a5"
+    }
+  ],
+  "write_accounting_controls": [
+    {
+      "case": 1,
+      "requested_file_bytes": 0,
+      "actual_file_bytes": 0,
+      "observed_write_transfer_delta_bytes": 6,
+      "returned_accounting_struct_bytes": 96,
+      "private_evidence": "subject-resource-io-native-1-v1/summary.json",
+      "native_sha256": "abc425e0db74058e87169b84d82e7f057b8cd31902fdbe3f3bc7157a8bcfd223"
+    },
+    {
+      "case": 2,
+      "requested_file_bytes": 8388608,
+      "actual_file_bytes": 8388608,
+      "observed_write_transfer_delta_bytes": 8388614,
+      "returned_accounting_struct_bytes": 96,
+      "private_evidence": "subject-resource-io-native-2-v1/summary.json",
+      "native_sha256": "60e214db061f5b649bb8e3d278e8ddd565b9ff8dd8d6cc912f5b816442503844"
+    },
+    {
+      "case": 3,
+      "requested_file_bytes": 0,
+      "actual_file_bytes": 0,
+      "observed_write_transfer_delta_bytes": 6,
+      "returned_accounting_struct_bytes": 96,
+      "private_evidence": "subject-resource-io-native-3-v1/summary.json",
+      "native_sha256": "8b6c5517dc7ce59e0b3885750e89027593b7bfe86b378b646e40ef85fed60b88"
+    },
+    {
+      "case": 4,
+      "requested_file_bytes": 8388608,
+      "actual_file_bytes": 8388608,
+      "observed_write_transfer_delta_bytes": 8388614,
+      "returned_accounting_struct_bytes": 96,
+      "private_evidence": "subject-resource-io-native-4-v1/summary.json",
+      "native_sha256": "7942ee88a564d80a98e1887d72cb9be7b6d643b0d498c975015c5064532dc4ba"
+    }
+  ],
+  "interpretation": [
+    "The actual job handle was observed only after successful AssignProcessToJobObject. The observer forwarded the original call unchanged.",
+    "A controlled native shell was a member of that job in both command/exec and actual codex exec tool paths, on the pinned CLI and current Windows host.",
+    "Forced parent execution timeouts also stopped the observed child; the same retained process handle and native creation time were used for verification.",
+    "In two serial no-op/write pairs, the 8388608-byte file payload added exactly 8388608 observed write-transfer bytes above the six-byte control marker.",
+    "QueryInformationJobObject class 8 includes previously associated processes; the controlled Python writer had already exited before the after-write observation.",
+    "The observations support development of a polled cumulative write-I/O budget; they do not establish a hard filesystem or allocated-space quota."
+  ],
+  "rejected_method": {
+    "api": "SetIoRateControlInformationJobObject",
+    "reason": "Microsoft documents it as unsupported on Windows 10 version 1607 and newer. No implementation or host-policy change was attempted."
+  },
+  "rejected_source_captures": [
+    {
+      "path": "subject-resource-membership-api-v1.native.json",
+      "status": 404,
+      "reason": "Wrong jobapi2 documentation URL; the correct jobapi page was separately captured and reviewed."
+    },
+    {
+      "path": "subject-resource-io-counters-v1.native.json",
+      "status": 302,
+      "reason": "Nonlocalized URL redirected; the explicit English target was separately captured with HTTP 200."
+    }
+  ],
+  "official_documentation": [
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/jobapi2/nf-jobapi2-setioratecontrolinformationjobobject",
+      "status": 200,
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true,
+      "native_sha256": "b6858e356bb93c277e9f241b9118ad80fd4afdb3d686586198641c2575b43142"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/jobapi/nf-jobapi-isprocessinjob",
+      "status": 200,
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true,
+      "native_sha256": "b6a19f7cc452dc997d5e4ecc3a6b3ae39fcb1941964ad281403ecd28ecd225f8"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-jobobject_basic_and_io_accounting_information",
+      "status": 200,
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true,
+      "native_sha256": "c180ac7365841728cac7abd58d0910b71bdb40b7803f2e825849e71d515f8df6"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/jobapi2/nf-jobapi2-queryinformationjobobject",
+      "status": 200,
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true,
+      "native_sha256": "30689b19f8afa534aa7d4d16ba769ce2041f2391aae067d8b54f73340b385e69"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-io_counters",
+      "status": 200,
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true,
+      "native_sha256": "a53b50aa2e47605a62876a2a1540b9903ec0d2d1d130d3956f2ead936e13cd28"
+    }
+  ],
+  "limits": [
+    "These are scoped controls on one Windows host and pinned CLI, not a guarantee that all service-created processes or future executor configurations join the caller job.",
+    "The generic runner still records service_created_processes_tracked=false; this research does not silently change that statement.",
+    "The child-stop wait runs after the parent runner returns. It does not measure latency from the original timeout deadline or establish a cancellation SLA.",
+    "I/O accounting is not physical allocation, total workspace size, a file count limit or an I/O-rate limit.",
+    "No production write-budget enforcement or workspace free-space guard has been added by this research.",
+    "No real model inference, official model score or skill-performance gain was measured; the public model launch guard remains closed."
+  ],
+  "next_work": [
+    "Implement a source-bound, fail-closed write-accounting budget through the owned runner; qualify over-budget and accounting-failure paths before adoption.",
+    "Record observation/overshoot explicitly and qualify workspace logical-size/free-space protection separately.",
+    "Requalify affected native collector/grader source bindings after production changes.",
+    "Continue supported stable authentication and independent matched benchmark-frame admission."
+  ],
+  "live_model_inferences": 0,
+  "release_created": false
+}

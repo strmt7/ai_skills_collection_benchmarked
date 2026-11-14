@@ -1,5 +1,20 @@
 # Repository Agent Instructions
 
+## Development autonomy and product scope
+
+Follow the owner's latest explicit decisions. Within the authorized scope,
+continue ordinary development without routine confirmation. Repository rules
+are maintainable guidance: correct conflicts or restrictions that obstruct the
+product, record the reason and verify the affected contracts. Preserve explicit
+user holds, required tools, provenance and truthful evidence.
+
+Build task-focused skills and tools that different AI agents can use. Keep
+repository-maintenance and experimental-runner constraints scoped to this
+checkout; do not export them as general restrictions on downstream projects.
+Ordinary skill use must not require a particular model, account or agent harness
+unless that specific skill operates that product. The current OpenAI benchmark
+access policy below governs that experiment, not every collection consumer.
+
 ## Mandatory agent tools
 
 Caveman, CocoIndex Code and Crawl4AI are mandatory for AI development agents
@@ -36,6 +51,18 @@ failure or required action. Quiet operation never permits skipping mandatory
 tools, checks or receipts, or claiming work that was not performed.
 
 Prioritize work by user impact, correctness, dependencies and verification needs.
+Follow the existing goal together with the [development plan](docs/improvement-plan.md)
+and [active work order](data/development_plan.json). Select the highest-priority
+dependency-ready task within the current authorized scope; preserve explicit
+holds. Update task status only after inspecting source-bound evidence. Keep the
+dated audit immutable. These files do not authorize a second goal, another AI
+session, delegation or a release.
+
+For the current development goal, OpenAI model runs must use the official harness
+or app with the existing sign-in. Do not ask for, provision or use an OpenAI API
+key, or substitute direct OpenAI API requests. Preserve isolated benchmark contexts
+and complete launcher qualification; this access constraint grants no bypass.
+
 Use bounded research and targeted source reads, reuse still-valid evidence, and
 avoid redundant narration, rereading and unchanged expensive checks. Broaden or
 repeat verification when required by project policy, changed inputs, observed
@@ -151,7 +178,8 @@ reuse after actual indexing and daemon execution, as well as installation.
 ## Pinned Karpathy agent baseline
 
 Adapted from
-<https://github.com/forrestchang/andrej-karpathy-skills> at
+<https://github.com/multica-ai/andrej-karpathy-skills> (formerly
+`forrestchang/andrej-karpathy-skills`, the same GitHub repository) at
 `2c606141936f1eeef17fa3043a72095b4765b9c2`.
 Apply this agent-neutral baseline before the repo-specific rules below, but do
 not weaken stricter repository rules such as the single-session rule, immutable
@@ -237,6 +265,10 @@ This exception grants no release, publication or access-policy override.
 ## Quality Bar
 
 - Verify changes with local commands before committing or pushing.
+- Qualify external native protocol consumers against owned positive and negative
+  controls, including omitted versus null fields; generated type declarations
+  alone do not establish the wire contract. Run focused and native controls
+  before the full suite, so known protocol failures do not waste broad test runs.
 - Write maintained source with the explicit line endings declared in
   `.gitattributes`; use explicit LF writes for authored text and preserve native
   capture/provenance bytes. Before publishing, verify that the prepared Git
@@ -275,7 +307,11 @@ verified before recommending publication.
 
 Do not edit mirrored upstream skill contents to satisfy audits, benchmarks, or presentation goals. Treat `included/skills/` as source-locked input generated from pinned public source commits, with only deterministic secret neutralization and recorded dependency advisory floors allowed during mirroring.
 
-Record issues as audit findings or benchmark artifacts. A skill that is subpar, incomplete, or non-working remains documented as such until its source is corrected upstream and the catalog is regenerated from a new pinned source commit.
+Record upstream defects honestly in the original mirror. Independently maintained
+or repaired overlays may correct or redesign skills and tools without waiting
+for upstream changes. Preserve attribution, licenses, original source bytes and
+explicit revision identities. Describe readiness and measured utility separately;
+an improved-looking overlay is not evidence of a model advantage.
 
 ## Separate Work Loops
 
@@ -294,6 +330,14 @@ Artifact and test loop:
 - Allowed output: benchmark artifacts, static benchmark tables, risk audit reports, validation logs, and CI checks.
 - Allowed transformations: adding evidence, validating artifacts, recomputing measured counts, and recording findings.
 - Forbidden: changing mirrored skills as part of artifact generation, changing test expectations to hide failures, inventing benchmark results, or converting an audit finding into a claimed pass without a validated artifact.
+
+Maintained improvement loop:
+
+- Input: general task requirements, current primary sources, independently specified development tasks and attributable upstream material.
+- Allowed output: maintained skills under `included/improved/skills/`, supporting tools and references, version manifests, and appropriate validation evidence.
+- Required: focused activation criteria, useful task guidance, preserved attribution and licenses, applicable functional checks, and explicit experimental or measured status.
+- Development may proceed while model-launch qualification is incomplete. Model access is required for comparative efficacy claims, not for ordinary design, implementation or functional testing.
+- Forbidden: copying benchmark answers, changing an original mirror, treating a common template as a complete redesign, or claiming general agent improvement from packaging or component tests.
 
 Repair overlay loop:
 
@@ -324,6 +368,21 @@ Benchmark independence rule:
   candidates require new untouched evaluation. Do not infer benefit for all
   models or agents from results on selected configurations.
 - A counted runtime benchmark artifact must explicitly record that the task, evaluator, and expected result were defined outside the skill content.
+
+Experimental snapshots apply to a declared comparison, not to all development.
+Preserve previous snapshots and their evidence. Before counted trials begin,
+advance a development snapshot with an explicit change inventory and fresh
+qualification instead of indefinitely freezing ordinary skill or tool work.
+After counted trials begin, evaluate changed candidates in a separately declared
+comparison; never merge outcomes from different revisions or alter a holdout
+after inspecting its results.
+
+Historical qualification reports retain their original source identities.
+Qualify changed components explicitly and update the current qualification index;
+do not rewrite past reports or require unchanged components to be rebuilt merely
+because another component advanced. Every current-source claim still needs
+applicable fresh evidence. Validate native source supersessions with
+`python tools/validate_native_qualification_index.py --check --json`.
 
 ## CI Quality Gates
 

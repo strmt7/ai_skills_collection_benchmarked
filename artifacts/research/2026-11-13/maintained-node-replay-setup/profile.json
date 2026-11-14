@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "profile_kind": "modern-replay-not-publisher-equivalent",
+  "pins_path": "toolchains/native-node-replay/pins.json",
+  "pins_sha256": "ce92b02cd2b190de2d3a7d348a921f0fac3121a229b16821010789f7cc6fbab6",
+  "node_version": "v26.13.1",
+  "npm_npx_version": "11.20.0",
+  "crane_version": "0.22.1",
+  "base_image": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+  "image_id": "sha256:b762dc6969ec64a78923b09b009dfdd5ca96a6c3ee610b005f04efd5b5cd59a3",
+  "image_archive": {
+    "bytes": 623281664,
+    "sha256": "b11368f2bbe1c32b7cac507de6e731b090e47c3d5a766532ff7006bfc1213a23"
+  },
+  "layer": {
+    "bytes": 229355520,
+    "sha256": "0d91d4d4990796dab274a0f4d7ba66f1fc07230312bd56922cfa278f52f09894"
+  },
+  "assembly_memory_limit_bytes": 536870912,
+  "assembly_timeout_seconds": 360,
+  "probe_container_memory_limit_bytes": 536870912,
+  "probe_network": "none",
+  "host_paths_generated_from_explicit_current_host_inputs": true,
+  "global_installation": false,
+  "build_service_created": false,
+  "registry_writes": false,
+  "publisher_equivalent": false,
+  "task_execution_admitted": false,
+  "model_improvement_established": false
+}

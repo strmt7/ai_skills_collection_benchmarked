@@ -1,0 +1,41 @@
+{
+  "sources": [
+    {
+      "source": "https://github.com/facebookresearch/faiss/blob/0759009bd7ddf290170c930c70a722badd05aa7d/CMakeLists.txt",
+      "git_blob_sha1": "f12f977769922296a6f410bc1b5cf96548b776b4",
+      "source_sha256": "5373fdc4b55c0a8132fd412f77755d1e6f81f4e25fb9bc703495f068d124a90a",
+      "api_receipt_sha256": "a4b52a2320cff3a4caa80949f794009691383ee633f34a2dfe4ef9667a92a2b2"
+    },
+    {
+      "source": "https://github.com/prometheus/prometheus/blob/df61021436e3aa53917a76ae8a4599d2c7fe6097/go.mod",
+      "git_blob_sha1": "04b0682e7b14e41352e1578bf35deb05e5a86343",
+      "source_sha256": "645ca55b5fe9ebe019083dcc5bbe5f89208e4848712941687f0160d057591eca",
+      "api_receipt_sha256": "33130726d4cc5b6f9f1f6fa04553404b2c1e9e34ca695e260b629d5c67cf5cb9"
+    },
+    {
+      "source": "https://github.com/nrwl/nx/blob/b3cb4d826144ceadce28dda7f614fd357bc61fd0/package.json",
+      "git_blob_sha1": "8cac35fdfc48baa28f0d000fe4f1886f9c4a7130",
+      "source_sha256": "90acdc5a92cc76f8a7ed6923c7f4afaa0655ba69df90a9bf9d4fdfbfc191c999",
+      "api_receipt_sha256": "93e2615f50d081c12a19f965de0504a8fb25dcd82dfef40bf9c5ad5b33624923"
+    }
+  ],
+  "faiss": {
+    "cmake_minimum": "3.24.0",
+    "cxx_standard": 20,
+    "default_gpu_enabled": true,
+    "default_rocm_enabled": false,
+    "default_mkl_enabled": true,
+    "full_original_build_qualified": false
+  },
+  "prometheus": {
+    "go_directive": "1.25.0",
+    "full_original_build_qualified": false
+  },
+  "nx": {
+    "package_manager": "pnpm@10.28.2",
+    "declared_build_parallelism": 8,
+    "dev_dependency_declarations": 308,
+    "full_original_build_qualified": false
+  },
+  "scope": "Pinned project metadata and cached-image PATH capability probes. Missing on PATH is not a complete filesystem search. The Golang publisher image was not probed. Recipe text is not proof of published image contents."
+}

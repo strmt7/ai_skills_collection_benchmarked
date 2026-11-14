@@ -53,7 +53,7 @@ def test_readme_uses_github_logo_static_karpathy_badge() -> None:
     assert "<!-- END GENERATED BADGES -->" in readme
     assert "[![andrej-karpathy-skills](" in readme
     assert KARPATHY_BADGE_URL in readme
-    assert "https://github.com/forrestchang/andrej-karpathy-skills" in readme
+    assert "https://github.com/multica-ai/andrej-karpathy-skills" in readme
     assert "https://img.shields.io/badge/andrej-karpathy-skills" not in readme
 
 

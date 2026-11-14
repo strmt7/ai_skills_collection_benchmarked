@@ -1,0 +1,29 @@
+{
+  "controls": [
+    {
+      "id": "empty-map-negative",
+      "verdict": "default_helper_discovery_reproduced",
+      "native_exit_code": 0,
+      "helper_calls_before": 0,
+      "helper_calls_after": 1,
+      "config_sha256": "c0b7041de81740accd514d8c61ef461104bfaf857be2b63db637bceded78d22b",
+      "job_remaining_processes": 0
+    },
+    {
+      "id": "explicit-anonymous-positive",
+      "verdict": "explicit_anonymous_config_skips_helper_and_verifies_manifest",
+      "native_exit_code": 0,
+      "helper_calls_before": 1,
+      "helper_calls_after": 1,
+      "config_sha256": "62ddcfdd2e04ce00a794930f306fc84a7a6f39fc1a7198e5f3e8badf7b72ba83",
+      "job_remaining_processes": 0
+    }
+  ],
+  "base_interpreter_inventory_unchanged": true,
+  "canary_qualification_sha256": "cbbd51d39592d072831a2e4f5fd654958dc51f4539429865d9baf53565abfa14",
+  "canary_processes_sha256": "99066ba0edc0e4d97fe399227243e81769c2b258261f05a9e5ce0c05aee4ef5b",
+  "only_owned_canary_helper_used": true,
+  "host_credential_helpers_used": false,
+  "image_layers_downloaded": 0,
+  "model_invocations": 0
+}

@@ -1,0 +1,90 @@
+"""Qualify source origins and original evaluator failure paths without solving it."""
+import ast
+import hashlib
+import json
+import os
+import subprocess
+import sys
+import xml.etree.ElementTree as ET
+from pathlib import Path
+
+sys.path.insert(0, '/tmp/benchmark-inputs')
+from capsule_inventory import inventory
+
+INPUT = Path('/tmp/benchmark-inputs')
+ROOT = Path('/tmp/pydicom-dependencies')
+PROJECT = Path('/workspace/pydicom')
+python = ROOT / 'bin/python'
+configuration = json.loads((INPUT / 'configuration.json').read_bytes())
+setup = json.loads(Path('/tmp/pydicom-setup-receipt.json').read_bytes())
+assert os.getuid() != 0
+before, identity = inventory(ROOT)
+assert before == setup['inventory'] and identity == setup['inventory_sha256']
+records = []
+cases = [{'case': 'native-offline-graph-and-reinstall-qualified', 'resolved_versions': setup['resolved_versions'], 'fresh_reinstall_equal': setup['fresh_hash_locked_reinstall_equal']}, {'case': 'task-user-reads-frozen-dependency-inventory', 'objects': len(before), 'inventory_sha256': identity}]
+env = {'PATH': str(ROOT / 'bin') + ':' + os.defpath, 'HOME': '/tmp/pydicom-task-home', 'LANG': 'C.UTF-8', 'PYTHONPATH': str(PROJECT / 'src'), 'PYTHONDONTWRITEBYTECODE': '1', 'PYTEST_DISABLE_PLUGIN_AUTOLOAD': '1', 'PYTEST_ADDOPTS': '-o cache_dir=/tmp/pydicom-pytest-cache', 'OPENBLAS_NUM_THREADS': '1', 'OMP_NUM_THREADS': '1'}
+Path(env['HOME']).mkdir()
+def run(label, args, *, expected=0, environment=env):
+    result = subprocess.run(list(map(str, args)), cwd=PROJECT, env=environment, stdin=subprocess.DEVNULL, text=True, capture_output=True, timeout=75)
+    row = {'case': label, 'argv': list(map(str, args)), 'exit_code': result.returncode, 'stdout': result.stdout, 'stderr': result.stderr}
+    records.append(row)
+    print(json.dumps(row), file=sys.stderr, flush=True)
+    assert result.returncode == expected, row
+    return result
+origin_code = "import hashlib,importlib.metadata,json,numpy,pydicom,pytest;from pydicom.dataset import Dataset;d=Dataset();d.InstanceNumber=7;print(json.dumps({'pydicom_path':pydicom.__file__,'pydicom_sha256':hashlib.sha256(open(pydicom.__file__,'rb').read()).hexdigest(),'numpy_path':numpy.__file__,'pytest_path':pytest.__file__,'pydicom_distribution_version':importlib.metadata.version('pydicom'),'numpy_version':numpy.__version__,'array_sum':int(numpy.arange(10).sum()),'dataset_instance':int(d.InstanceNumber)}))"
+def admit_origins(observed):
+    expected_file = PROJECT / 'src/pydicom/__init__.py'
+    if observed['pydicom_path'] != str(expected_file) or observed['pydicom_sha256'] != configuration['source']['files']['src/pydicom/__init__.py']['sha256']:
+        raise ValueError('Imported installed package instead of the pinned project source')
+    if not all(Path(observed[name]).is_relative_to(ROOT) for name in ('numpy_path', 'pytest_path')):
+        raise ValueError('Dependency resolved outside the frozen environment')
+    return observed
+correct = admit_origins(json.loads(run('pinned-project-and-native-array-imports', [python, '-B', '-c', origin_code]).stdout))
+assert correct['array_sum'] == 45 and correct['dataset_instance'] == 7
+cases.append({'case': 'actual-pinned-source-and-native-numpy-import', **correct})
+wrong_env = dict(env)
+wrong_env.pop('PYTHONPATH')
+wrong = json.loads(run('installed-package-origin-negative-control', [python, '-B', '-c', origin_code], environment=wrong_env).stdout)
+try:
+    admit_origins(wrong)
+except ValueError:
+    cases.append({'case': 'installed-package-origin-rejected', 'rejected': True, 'observed_path': wrong['pydicom_path']})
+else:
+    raise AssertionError('Installed package import origin was accepted')
+try:
+    os.close(os.open(ROOT / 'pyvenv.cfg', os.O_WRONLY))
+except PermissionError:
+    cases.append({'case': 'task-user-cannot-write-grader-environment', 'rejected': True})
+else:
+    raise AssertionError('Task user could modify the grader environment')
+verifier = INPUT / 'verifier.py'
+raw = verifier.read_bytes()
+assert hashlib.sha256(raw).hexdigest() == configuration['verifier_sha256']
+tests = [node for node in ast.walk(ast.parse(raw)) if isinstance(node, ast.FunctionDef) and node.name.startswith('test_')]
+assert len(tests) == 18
+def evaluate(label, expected_passes):
+    xml = Path('/tmp/' + label + '.xml')
+    result = run(label, [python, '-m', 'pytest', verifier, '-v', '--tb=short', '-rs', '--junitxml=' + str(xml)], expected=1)
+    rows = ET.parse(xml).getroot().findall('.//testcase')
+    counts = {'collected': len(rows), 'failed': sum(row.find('failure') is not None for row in rows), 'errors': sum(row.find('error') is not None for row in rows), 'skipped': sum(row.find('skipped') is not None for row in rows)}
+    counts['passed'] = counts['collected'] - counts['failed'] - counts['errors'] - counts['skipped']
+    assert counts == {'collected': 18, 'failed': 18 - expected_passes, 'errors': 0, 'skipped': 0, 'passed': expected_passes}, counts
+    assert len({(row.attrib.get('classname'), row.attrib['name']) for row in rows}) == 18
+    cases.append({'case': label, 'exit_code': result.returncode, 'counts': counts, 'classification': 'Deliberate diagnostic failure control, not a model attempt or model score.'})
+evaluate('original-evaluator-on-untouched-baseline', 0)
+series = PROJECT / 'src/pydicom/util/series.py'
+series.parent.mkdir(parents=True, exist_ok=True)
+assert not series.exists()
+series.write_text('def sort_slices(datasets):\n    raise RuntimeError("Intentional source-origin/evaluator qualification failure")\n')
+native_test = PROJECT / 'tests/test_util_series.py'
+assert not native_test.exists()
+native_test.write_text('def test_intentional_control_failure():\n    assert False, "Intentional native-test qualification failure"\n')
+evaluate('original-evaluator-on-intentionally-failing-deliverables', 3)
+for name, row in configuration['source']['files'].items():
+    path = PROJECT / name
+    assert path.is_file() and hashlib.sha256(path.read_bytes()).hexdigest() == row['sha256'], name
+cases.append({'case': 'every-original-project-file-preserved', 'files': len(configuration['source']['files'])})
+after, final = inventory(ROOT)
+assert before == after and final == identity
+cases.append({'case': 'complete-grader-environment-unchanged-after-evaluation', 'inventory_sha256': final})
+print(json.dumps({'passed': True, 'cases': cases, 'records': records, 'inventory_sha256': identity, 'task_uid': os.getuid(), 'model_invocations': 0, 'counted_attempts': 0, 'original_evaluator_executed': True, 'task_solution_written': False, 'runtime_admitted': False, 'scope': 'Native dependency/source-origin and original evaluator failure-path controls only. No passing task solution, model score, subject access or full experiment admission.'}))

@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "current_native_control_groups": 39,
+  "native_binary_and_csharp_source_unchanged": true,
+  "framework_reference_values_unchanged": true,
+  "changed_build_input_pins": [
+    "build_supervisor.ps1",
+    "framework-references.json"
+  ],
+  "generated_pin_newlines": "LF",
+  "full_native_git_transport_control": "default-temp-git-transport",
+  "git_transport_subjects": [
+    "frozen protocol",
+    "native binary",
+    "supervisor.json",
+    "framework-references.json"
+  ],
+  "prior_native_only_qualification_sha256": "1461aca6f7d564cae5815fa1aa9672685b0786a1d57de82a73a63f95dbdb5651",
+  "prior_transport_admitted": false
+}

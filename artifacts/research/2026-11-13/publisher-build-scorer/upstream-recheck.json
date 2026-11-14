@@ -1,0 +1,62 @@
+{
+  "canonical_repository": "multica-ai/andrej-karpathy-skills",
+  "historical_alias": "forrestchang/andrej-karpathy-skills",
+  "repository_id": 1142983825,
+  "head": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+  "pinned_head_unchanged": true,
+  "new_skill_content_imported": false,
+  "public_api_capture": {
+    "requests": [
+      {
+        "url": "https://api.github.com/repositories/1142983825",
+        "success": true,
+        "authentication_used": false,
+        "status": 200,
+        "final_url": "https://api.github.com/repositories/1142983825",
+        "server_date": "Fri, 13 Nov 2026 19:54:27 GMT",
+        "rate_limit_remaining": "59",
+        "bytes": 6848,
+        "sha256": "8bb3a38993faebfb3b1848740c2219f7c8f01a14e4636170ece3c4504ce041b3"
+      },
+      {
+        "url": "https://api.github.com/repositories/1142983825/commits?per_page=1",
+        "success": true,
+        "authentication_used": false,
+        "status": 200,
+        "final_url": "https://api.github.com/repositories/1142983825/commits?per_page=1",
+        "server_date": "Fri, 13 Nov 2026 19:54:27 GMT",
+        "rate_limit_remaining": "58",
+        "bytes": 4582,
+        "sha256": "fe764774d8362da987db052039c7ac657cee6c13ae62cd5605e2f9a47fd1106a"
+      }
+    ]
+  },
+  "redirect_and_connector_route_failures_retained": true,
+  "official_repositories": [
+    {
+      "repository": "karpathy/autoresearch",
+      "head": "228791fb499afffb54b46200aca536f79142f117",
+      "committed_at": "2026-03-26T00:07:37Z",
+      "api_url": "https://api.github.com/repos/karpathy/autoresearch/commits?per_page=1",
+      "api_receipt_sha256": "f50918207288402cc98455a153007d0453ec21f0dfc7f5b9265de044f807a1b6",
+      "matches_previous_review": true
+    },
+    {
+      "repository": "karpathy/nanochat",
+      "head": "92d63d4e8bb4df75c3b71618f31ddde2378b2bcd",
+      "committed_at": "2026-07-03T22:54:57Z",
+      "api_url": "https://api.github.com/repos/karpathy/nanochat/commits?per_page=1",
+      "api_receipt_sha256": "ec9c22c26917b71ce277720ec4009a5fd863bbd1ee49af895648268db9fff160",
+      "matches_previous_review": true
+    },
+    {
+      "repository": "karpathy/karpathy.github.io",
+      "head": "717b06d57b7834e27ca4bd55bda0a79d16dddeca",
+      "committed_at": "2026-04-10T23:50:07Z",
+      "api_url": "https://api.github.com/repos/karpathy/karpathy.github.io/commits?per_page=1",
+      "api_receipt_sha256": "12564f6f182312041c39609aa984ca1f4c97d6bdf22af3a2cdcb098db5b42ea3",
+      "matches_previous_review": true
+    }
+  ],
+  "scope": "Fresh default-HEAD checks for these four repositories. This is not an exhaustive new inventory or a claim that Karpathy maintains the third-party adaptation."
+}

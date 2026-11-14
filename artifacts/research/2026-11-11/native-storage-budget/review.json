@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-11",
+  "classification": "controlled-native-storage-qualification",
+  "source_sha256": {
+    "tools/_windows_storage_budget.py": "154642098411576c97d516a0934d0cc3ad4a26e5bd6268296b380ca7c613579b",
+    "tools/_windows_submission_reader.py": "27cd274f560c34c1101ccb1a5d0d2f1a7b4806a587ec90799475cb689bda42ba",
+    "tests/test_windows_storage_budget.py": "b11e0fa141b41d108a86335def683495e40280b683cc305390ec622c77a849c6",
+    "tests/test_windows_submission_reader.py": "54c444fc4ca3335fb3af52972d0199e2b18b01dc49a3f4063be01c33f016a27c",
+    "tests/test_windows_directory_reader.py": "7701d983a96d6fff982ab5657a354d8cc1276cd30dd4ffd54c65d1ce8c2e1d8f",
+    "tests/test_appcontainer_evaluator.py": "f94f7ad23e815560eb35ebef5ec88d8caa62633b976504b07d69ef29d67769ed",
+    "tools/_windows_trial_process.py": "b716265c9b8afd96c6534c722ee4bad62748dd6326a0178c15bafd69d0ad0a17",
+    "tools/run_agent_trial.py": "5c3bf4c29e38d61d39c65564062fa96d7e4e85e169ba5883960838a302a5a74f",
+    "tests/test_windows_trial_process.py": "7343fe457ea681cb7a994d4e5e65b764f968108cfcf61da3fa2c6d411b7de5d7",
+    "tools/_native_trial_plan.py": "33338ce8729de0235a822a1a07f068af3dcf2c54c05001583464417379c567d0",
+    "tools/run_swe_skills_trial.py": "4791e532ee93947bf96b3a4a5ed41e303a459b253f162dde9743edbfd7199342",
+    "tools/prepare_subject_dependencies.py": "172932b85e7dba4bf06c8f46e4966bf239d112903d9cc75359eab49a9c336cd4",
+    "tests/test_native_trial_plan.py": "09cc890397f582f4b5e806ff8f4823bc0237e609791e9f148f0425b140702a06",
+    "tests/test_native_trial_runner.py": "62998508c23fbb980f98116648a220e7700bf9cc97281ea61be01af51ccf2165",
+    "tests/test_subject_dependencies.py": "6202957aae3c0c8fd3ee5f29ca5d9f455a6411de8905c044608b6fc723b71a3c",
+    "tests/test_trial_execution_evidence.py": "2f4bdfa9f95a706b29f5a964a3ee73b2fe406ea1a8faa03c0814ea6d56dadae4"
+  },
+  "official_sources": [
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getdiskfreespaceexw",
+      "status": 200,
+      "native_sha256": "952a7e4ec3490abfc07d0a2a05303bd71ad2d5eaefb787f7408631884446e48e",
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/ns-winbase-file_stream_info",
+      "status": 200,
+      "native_sha256": "bdf33392150bca123ce0d5388cbcaa1703a69a9489696e531a7c22239c331da3",
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getfileinformationbyhandleex",
+      "status": 200,
+      "native_sha256": "6d509fdfe69ec061e30cc605e5eaf2cb8c6c7128aeda215bec62037b7f32b5e4",
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true
+    }
+  ],
+  "changes": [
+    "Version native plans with explicit caller-available space and complete stopped-workspace limits.",
+    "Observe every declared writable location at phase boundaries and during owned subprocesses.",
+    "Include profile caches and named data streams, retain partial counts and native errors, and fail without scoring.",
+    "Keep legacy plan contracts and immutable historical observations separate from current qualification."
+  ],
+  "native_controls": [
+    {
+      "case": "edited",
+      "attempt": "v2",
+      "status": "task_passed",
+      "score": 1.0,
+      "stage": "complete",
+      "native_counts": {
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "total": 11
+      },
+      "plan_sha256": "7940b54d1e510548b219583b4b27f3218a4d99751a60e6256484c93c9342f5b9",
+      "result_sha256": "0a10b1af4f37e4ae325f66b5e1a7edef0a07e1c16f6bf201e356332a09ec1765",
+      "qualification_sha256": "19e4e1e7879123b02de156ba5da1f7ccafa194d8f19221c02c530828b2b52a65",
+      "fixture_sha256": "7c23bacb595fd1922d13f3932b01df39c3e1b61d68b31aff70da8ca93e68d0a7",
+      "credential_binding_released": true,
+      "listener_stopped": true,
+      "initial_storage": {
+        "complete": true,
+        "logical_bytes": 844127,
+        "entries": 246,
+        "files": 116,
+        "directories": 14,
+        "streams": 116,
+        "measurement": "stopped_workspace_data_stream_lengths"
+      },
+      "final_storage": {
+        "complete": true,
+        "logical_bytes": 846541,
+        "entries": 257,
+        "files": 118,
+        "directories": 21,
+        "streams": 118,
+        "measurement": "stopped_workspace_data_stream_lengths"
+      },
+      "process_termination_reason": null,
+      "job_active_processes_after_cleanup": 0,
+      "space_budget_sha256": "b950debaddb28b14fe6e7f5cae7bbba99cba13b4084bd016cefe804e04b57540"
+    },
+    {
+      "case": "unchanged",
+      "attempt": "v2",
+      "status": "task_failed",
+      "score": 0.0,
+      "stage": "complete",
+      "native_counts": {
+        "passed": 0,
+        "failed": 10,
+        "skipped": 1,
+        "errors": 0,
+        "total": 11
+      },
+      "plan_sha256": "98ddbc571686503fa8e8840487149511e5733f79517f423b471f104f64acc0ec",
+      "result_sha256": "010994b522cf193a0e1b01803cbbc1639f6e5e6b94ee6171fd41e2c2bb229c99",
+      "qualification_sha256": "19e4e1e7879123b02de156ba5da1f7ccafa194d8f19221c02c530828b2b52a65",
+      "fixture_sha256": "7c23bacb595fd1922d13f3932b01df39c3e1b61d68b31aff70da8ca93e68d0a7",
+      "credential_binding_released": true,
+      "listener_stopped": true,
+      "initial_storage": {
+        "complete": true,
+        "logical_bytes": 844127,
+        "entries": 246,
+        "files": 116,
+        "directories": 14,
+        "streams": 116,
+        "measurement": "stopped_workspace_data_stream_lengths"
+      },
+      "final_storage": {
+        "complete": true,
+        "logical_bytes": 844127,
+        "entries": 252,
+        "files": 116,
+        "directories": 20,
+        "streams": 116,
+        "measurement": "stopped_workspace_data_stream_lengths"
+      },
+      "process_termination_reason": null,
+      "job_active_processes_after_cleanup": 0,
+      "space_budget_sha256": "7df0665bb124263a25b368d3bad65d7ed82a54932e1f1fbf2ab9cd631933bc56"
+    },
+    {
+      "case": "truncated",
+      "attempt": "v2",
+      "status": "harness_error",
+      "score": null,
+      "stage": "collection",
+      "native_counts": null,
+      "plan_sha256": "04339cee5d8c658d41412913c7cc2e8d12d995cf5b2f88deaea20f7a625c11cc",
+      "result_sha256": "67f343c65d3db7a86d731d5a62aec38007d247ac4923ec8082127d5623ce0b20",
+      "qualification_sha256": "19e4e1e7879123b02de156ba5da1f7ccafa194d8f19221c02c530828b2b52a65",
+      "fixture_sha256": "7c23bacb595fd1922d13f3932b01df39c3e1b61d68b31aff70da8ca93e68d0a7",
+      "credential_binding_released": true,
+      "listener_stopped": true,
+      "initial_storage": {
+        "complete": true,
+        "logical_bytes": 844127,
+        "entries": 246,
+        "files": 116,
+        "directories": 14,
+        "streams": 116,
+        "measurement": "stopped_workspace_data_stream_lengths"
+      },
+      "final_storage": {
+        "complete": true,
+        "logical_bytes": 844127,
+        "entries": 252,
+        "files": 116,
+        "directories": 20,
+        "streams": 116,
+        "measurement": "stopped_workspace_data_stream_lengths"
+      },
+      "process_termination_reason": null,
+      "job_active_processes_after_cleanup": 0,
+      "space_budget_sha256": "ea6eda88b9799603c4a46d58a42d4b086bb5e71bb147d6ac05f4bcdcf1cbf21d"
+    },
+    {
+      "case": "logical",
+      "attempt": "v3",
+      "status": "harness_error",
+      "score": null,
+      "stage": "final_storage",
+      "native_counts": null,
+      "plan_sha256": "d1f6c092faace7929966e79c49754fb7804218749b2e722ff68523fce9ce4e28",
+      "result_sha256": "5b99e9b6a9980d7e9d7d14796ab383640f48537943f0fd90576979708867e346",
+      "qualification_sha256": "359e042e22dd702b359cdbc745071f7ebff9e389dbea1158214cd96b686bb2f5",
+      "fixture_sha256": "ffa4ab8f34f03e6b4035b88a761c985250f8ded1681319227d727d01b176ab1f",
+      "credential_binding_released": true,
+      "listener_stopped": true,
+      "initial_storage": {
+        "complete": true,
+        "logical_bytes": 844127,
+        "entries": 246,
+        "files": 116,
+        "directories": 14,
+        "streams": 116,
+        "measurement": "stopped_workspace_data_stream_lengths"
+      },
+      "final_storage": {
+        "complete": false,
+        "logical_bytes": 67944563,
+        "entries": 243,
+        "files": 111,
+        "directories": 21,
+        "streams": 111,
+        "measurement": "stopped_workspace_data_stream_lengths",
+        "termination_reason": "workspace_logical_bytes_limit"
+      },
+      "process_termination_reason": null,
+      "job_active_processes_after_cleanup": 0,
+      "space_budget_sha256": "c8425e0d0486ff1c8670b32482d057a5b4d06121f0a8d26ab4e7178fae4e1704"
+    },
+    {
+      "case": "space",
+      "attempt": "v2",
+      "status": "harness_error",
+      "score": null,
+      "stage": "collection",
+      "native_counts": null,
+      "plan_sha256": "a23fd5300e178e508b0978705a4738e286419f7f0b27e1989aeec7b3ae5c23c3",
+      "result_sha256": "493a6c40a317315ee526c8b2dc0e3b252cabe1d84a2ea04299b79e927a12360c",
+      "qualification_sha256": "19e4e1e7879123b02de156ba5da1f7ccafa194d8f19221c02c530828b2b52a65",
+      "fixture_sha256": "7c23bacb595fd1922d13f3932b01df39c3e1b61d68b31aff70da8ca93e68d0a7",
+      "credential_binding_released": true,
+      "listener_stopped": true,
+      "condition": "Owned synthetic API condition; actual pre-injection native values are retained.",
+      "initial_storage": {
+        "complete": true,
+        "logical_bytes": 844127,
+        "entries": 246,
+        "files": 116,
+        "directories": 14,
+        "streams": 116,
+        "measurement": "stopped_workspace_data_stream_lengths"
+      },
+      "final_storage": {
+        "complete": true,
+        "logical_bytes": 846556,
+        "entries": 260,
+        "files": 119,
+        "directories": 22,
+        "streams": 119,
+        "measurement": "stopped_workspace_data_stream_lengths"
+      },
+      "process_termination_reason": "free_space_limit",
+      "job_active_processes_after_cleanup": 0,
+      "space_budget_sha256": "bea07046dae1176556e8b75f7389222a643b80e869a6d060c53ea7f33fa30811"
+    },
+    {
+      "case": "spaceerror",
+      "attempt": "v2",
+      "status": "harness_error",
+      "score": null,
+      "stage": "collection",
+      "native_counts": null,
+      "plan_sha256": "93325c612694218c4aa088fe0cef22770b74c94461af253194494c7e310dc655",
+      "result_sha256": "c0a941f2c9517bfaae8c34e718226d1d2b773f072eea53adb9d31fac9f13b94d",
+      "qualification_sha256": "19e4e1e7879123b02de156ba5da1f7ccafa194d8f19221c02c530828b2b52a65",
+      "fixture_sha256": "7c23bacb595fd1922d13f3932b01df39c3e1b61d68b31aff70da8ca93e68d0a7",
+      "credential_binding_released": true,
+      "listener_stopped": true,
+      "condition": "Owned synthetic API condition; actual pre-injection native values are retained.",
+      "initial_storage": {
+        "complete": true,
+        "logical_bytes": 844127,
+        "entries": 246,
+        "files": 116,
+        "directories": 14,
+        "streams": 116,
+        "measurement": "stopped_workspace_data_stream_lengths"
+      },
+      "final_storage": {
+        "complete": true,
+        "logical_bytes": 846556,
+        "entries": 260,
+        "files": 119,
+        "directories": 22,
+        "streams": 119,
+        "measurement": "stopped_workspace_data_stream_lengths"
+      },
+      "process_termination_reason": "storage_observation_error",
+      "job_active_processes_after_cleanup": 0,
+      "space_budget_sha256": "32c46815fc8f7ea39b770808f98423f81429683cee30416c5afc8682f8f3ce74"
+    },
+    {
+      "case": "preflight-space",
+      "attempt": "v2",
+      "status": "harness_error",
+      "score": null,
+      "stage": "storage_preflight",
+      "native_counts": null,
+      "plan_sha256": "a53afda4c62fdb628aa984371db22d0f2b0b708712b2be48132b4672f08e99cc",
+      "result_sha256": "5c38d861ae2105e7fad6a145d19f828068d1174797a67ac4b1df0ad4f907bd07",
+      "qualification_sha256": "19e4e1e7879123b02de156ba5da1f7ccafa194d8f19221c02c530828b2b52a65",
+      "fixture_sha256": "7c23bacb595fd1922d13f3932b01df39c3e1b61d68b31aff70da8ca93e68d0a7",
+      "credential_binding_released": true,
+      "listener_stopped": true,
+      "subject_launched": false
+    }
+  ],
+  "failed_fixture_retained": {
+    "attempt": "logical-v2",
+    "counted_as_guard_pass": false,
+    "summary_sha256": "09ebe926fe8614648c02440d1a6dee3ba46bc21ea9aa879a6608daf9cbf98465",
+    "cause": "The sandbox correctly rejected a .NET method call; no oversized file was created.",
+    "correction": "Use the already admitted Python runtime to create the controlled logical-size fixture; no sandbox rule changes."
+  },
+  "qualification_composition": "Six independently passing v2 controls plus corrected logical v3 control. All use identical current production source hashes; fixture implementations remain separately archived. The complete v2 batch is retained as failed.",
+  "focused_tests_passed": 337,
+  "typing_source_files": 316,
+  "focused_qualification_sha256": "56ede03073a9ff79348fef14812165e37c724547e972facc2b5a7670c00246b0",
+  "pre_grader_regression": {
+    "failure_preserved": true,
+    "diagnosis": "Capacity lost during collection previously reached the grader before the next reserve check.",
+    "repair": "Check reserves immediately before grader startup; regression now passes."
+  },
+  "limits": [
+    "These observations are not hard quotas, peak storage, physical allocation or host-wide I/O isolation.",
+    "The logical scan occurs before launch and after stop; the live reserve monitor uses polling.",
+    "Unsupported metadata and bounded enumeration failures withhold a score rather than silently omit objects.",
+    "Low-space and API-error controls are synthetic; they do not fill the host disk or prove physical quota enforcement.",
+    "No real model inference, comparative skill gain, hosted acceptance or commercial-readiness result is established."
+  ],
+  "full_regression_acceptance": "Recorded separately in validation.json after the frozen batch.",
+  "public_model_launch_guard": "closed",
+  "model_requests": 0,
+  "release_created": false
+}

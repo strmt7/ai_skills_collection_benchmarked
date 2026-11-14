@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "scope": "Local current-development qualification: platform error API boundaries, source-index contracts, workflow declaration, operating policy and seven original-grader controls. Hosted workflow execution, full selected task admission and model effectiveness remain unqualified.",
+  "source_sha256": {
+    "tools/_windows_appcontainer.py": "57e23120b6da5ab1391f68c054382164236cbe31846482a3aaa17856d069a3fd",
+    "tools/_windows_storage_budget.py": "3ab9e8b4e864a463280aa936e6cb1464db9a7d56710b4cec9f6dc0c8d931451a",
+    "tests/test_windows_storage_budget.py": "2eac926beaa6441b3b559a82ae21607807f7ca469f84cd3b6d439bc3cbd7f091",
+    "tests/test_windows_trial_process.py": "9f4f8519f2e90b68d1fd9af3f9955cb3f6d87bf4af83d6e7e6088e895fc15f3e",
+    "tools/validate_native_qualification_index.py": "33a8333d7400b1ef6305e171905317f1efca9ca64a0924239c8f6e1bd758cf14",
+    "tests/test_native_qualification_index.py": "a893227616ca3cd6768f1b22e2af725d07577d19c8c98be3bda5cf3e3075075e",
+    ".github/workflows/offline-validation.yml": "0f6b653469b082033c4cd3c8d7f7efbfaf9415932c37e1a8d8114f112311a1e1",
+    "AGENTS.md": "5e5c743af064d3c371356112ff868d271bb6bf4b4d14998afa387f2519bb892f",
+    "CONTRIBUTING.md": "8f917aefb6cda3e8fef54ebf4f5628f000e4620ce61c403ab3766e35d3cf703b",
+    "docs/skill-improvement-method.md": "af773694d29aed633e653a2462154d1fceaf9a331d60869105e13bc8ba81c47e",
+    "docs/improvement-plan.md": "00ee0f9844ef6ed8dc14533a5e33453def08f0868116c1d46eb6c59675ee10ce"
+  },
+  "component_sources": {
+    "windows-error-boundary": [
+      "tools/_windows_appcontainer.py",
+      "tools/_windows_storage_budget.py",
+      "tests/test_windows_storage_budget.py",
+      "tests/test_windows_trial_process.py"
+    ],
+    "qualification-gate": [
+      "tools/validate_native_qualification_index.py",
+      "tests/test_native_qualification_index.py",
+      ".github/workflows/offline-validation.yml"
+    ],
+    "operating-policy": [
+      "AGENTS.md",
+      "CONTRIBUTING.md",
+      "docs/skill-improvement-method.md",
+      "docs/improvement-plan.md"
+    ]
+  },
+  "artifacts": {
+    "agent-policy-routing.stdout.native": "9fb42ae727a3e25d04309584d426540e4196e659a6df45abc5ac6d78a73c4331",
+    "grader-controls.json": "9c24ef15e00c718756ea436fafe003ebedc03e44fd22fc147afbf0000067d3a8",
+    "native-windows-error-controls.stdout.native": "66c5af7069ae72e19bafbeb20685a152e59d7b5548592cce3a6dec3b17911596",
+    "policy-review.json": "42ca057cbc56e99227a08d650b15f108dfc1102ca03d145f5d44fa7ccac33adf",
+    "qualification-index-contracts.stdout.native": "5f958037da0c85f4dfce24346983280201b43906fe99914da5b7fe8c63e50b62",
+    "types-linux.stdout.native": "680d481cc62731d2fd04d8210927e7bd5809d6ac50c76e04c215cd8ff6cdcec8",
+    "types-win32.stdout.native": "680d481cc62731d2fd04d8210927e7bd5809d6ac50c76e04c215cd8ff6cdcec8",
+    "workflow-gate-declaration.stdout.native": "dfa6f64fa17c76166167b99146ff3ee187b78046c1bd6a63ff39d084dfaa2e8c"
+  },
+  "focused_native_windows_tests": 107,
+  "qualification_index_contract_tests": 13,
+  "original_grader_controls": 7,
+  "hosted_workflow_execution_qualified": false,
+  "selected_task_builds_qualified": false,
+  "model_invocations": 0,
+  "counted_attempts": 0,
+  "model_improvement_established": false
+}

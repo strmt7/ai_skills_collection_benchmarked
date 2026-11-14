@@ -27,6 +27,14 @@ from _trial_execution_evidence import (
     verify_launch,
     verify_process,
 )
+from _trial_grading_process import (
+    DRIVER_EXIT_CODES,
+    DRIVER_PROCESS,
+    DRIVER_SOURCE,
+    DRIVER_STDERR,
+    DRIVER_STDOUT,
+    driver_completed,
+)
 from _trial_manifest import read_grading_manifest, validate_grade_checks
 from _trial_prompt import verify_prompt
 from _trial_protocol import validate_declaration
@@ -224,16 +232,19 @@ def _verify_v4_inventory(directory: Path, result: dict[str, Any], protocol: dict
     allowed = required | {
         "collection/stdout.native",
         "collection/stderr.native",
-        "grading.driver.stdout.native",
-        "grading.driver.stderr.native",
+        DRIVER_STDOUT,
+        DRIVER_STDERR,
+        DRIVER_PROCESS,
     }
+    streams = {DRIVER_STDOUT, DRIVER_STDERR}
+    if DRIVER_SOURCE in protocol["execution_source_sha256"] and streams & evidence:
+        required |= streams | {DRIVER_PROCESS}
     grade = result["grader"]
     if grade.get("status") in {"task_passed", "task_failed"}:
         grading = {
             "grading/result.json",
             "grading/checks.json",
-            "grading.driver.stdout.native",
-            "grading.driver.stderr.native",
+            *streams,
         }
         for check in grade["checks"]:
             relative = check.get("observation_directory")
@@ -269,11 +280,18 @@ def _verify_v4_execution(
 ) -> None:
     """Cross-check native launch, prompt, process bounds and grading transport records."""
     grade = result["grader"]
-    if (
-        grade.get("status") in {"task_passed", "task_failed"}
-        and strict_json(evidence_bytes(directory, "grading.driver.stdout.native").decode("utf-8")) != grade
-    ):
-        raise ValueError("recorded grader differs from its native driver response")
+    if grade.get("status") in {"task_passed", "task_failed"}:
+        stdout = evidence_bytes(directory, DRIVER_STDOUT)
+        if strict_json(stdout.decode("utf-8")) != grade:
+            raise ValueError("recorded grader differs from its native driver response")
+        if DRIVER_SOURCE in protocol["execution_source_sha256"] or DRIVER_PROCESS in result["evidence_sha256"]:
+            process = strict_json(evidence_bytes(directory, DRIVER_PROCESS).decode("utf-8"))
+            stderr = evidence_bytes(directory, DRIVER_STDERR)
+            if (
+                not driver_completed(process, len(stdout) + len(stderr))
+                or process["exit_code"] != DRIVER_EXIT_CODES[grade["status"]]
+            ):
+                raise ValueError("scored grading result lacks a matching completed native process")
     raw_input = evidence_bytes(directory, "input.native")
     if raw_input not in (prompt, prompt.replace(b"\r\n", b"\n")):
         raise ValueError("native model input differs from the captured prompt")
@@ -371,8 +389,9 @@ def _verify_failed_attempt(directory: Path, result: dict[str, Any]) -> None:
             "transcript.jsonl",
             "stderr.txt",
             "grading",
-            "grading.driver.stdout.native",
-            "grading.driver.stderr.native",
+            DRIVER_STDOUT,
+            DRIVER_STDERR,
+            DRIVER_PROCESS,
         )
     ):
         raise ValueError("setup failure contains evidence of a model launch attempt")

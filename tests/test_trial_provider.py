@@ -4,8 +4,10 @@ from __future__ import annotations
 
 import json
 import tomllib
+from contextlib import nullcontext
 from pathlib import Path
 
+import _trial_provider as provider_binding
 import pytest
 from _trial_context import TrialContext, command
 from _trial_execution_evidence import context_record
@@ -100,3 +102,95 @@ def test_missing_or_invalid_credentials_fail_without_printing_the_value(context,
     with pytest.raises(ValueError) as error:
         bind_credentials(context, declaration(), {"TRIAL_TOKEN": secret})
     assert str(error.value) == "The selected provider credential is missing or invalid"
+
+
+def test_bound_controller_representation_omits_the_credential(context):
+    selected = bind_credentials(context, declaration(), {"TRIAL_TOKEN": "private-controller-fixture"})
+    assert "private-controller-fixture" not in repr(selected)
+
+
+@pytest.mark.parametrize("interrupt", [False, True])
+def test_owned_credential_is_released_on_normal_and_exceptional_exit(context, interrupt):
+    parent = {"TRIAL_TOKEN": "private-controller-fixture", "OTHER": "unselected-fixture"}
+    original = context.controller_environment.copy()
+    selected = None
+    try:
+        with provider_binding.credential_lease(context, declaration(), parent) as selected:
+            assert selected.controller_environment["TRIAL_TOKEN"] == parent["TRIAL_TOKEN"]
+            assert "TRIAL_TOKEN" not in selected.tool_environment
+            if interrupt:
+                raise RuntimeError("owned interruption")
+    except RuntimeError as exc:
+        assert interrupt and str(exc) == "owned interruption"
+    assert selected is not None
+    assert "TRIAL_TOKEN" not in selected.controller_environment
+    assert context.controller_environment == original
+    assert parent == {"TRIAL_TOKEN": "private-controller-fixture", "OTHER": "unselected-fixture"}
+
+
+def test_each_attempt_binds_the_current_credential_and_releases_the_previous_one(context):
+    parent = {"TRIAL_TOKEN": "first-controller-fixture"}
+    with provider_binding.credential_lease(context, declaration(), parent) as first:
+        assert first.controller_environment["TRIAL_TOKEN"] == "first-controller-fixture"
+    parent["TRIAL_TOKEN"] = "replacement-controller-fixture"
+    with provider_binding.credential_lease(context, declaration(), parent) as second:
+        assert second.controller_environment["TRIAL_TOKEN"] == "replacement-controller-fixture"
+        assert "TRIAL_TOKEN" not in first.controller_environment
+    assert "TRIAL_TOKEN" not in second.controller_environment
+
+
+@pytest.mark.parametrize("url", ["http://127.0.0.1:8041/v1", "http://[::1]:8041/v1", "https://127.0.0.1/v1"])
+def test_deliberately_unauthenticated_numeric_loopback_is_valid(url):
+    provider = {"base_url": url, "authentication": "none"}
+    assert validate_provider(provider) == provider
+
+
+@pytest.mark.parametrize(
+    "value",
+    [
+        {"base_url": "https://model.example.test/v1", "authentication": "none"},
+        {"base_url": "https://localhost/v1", "authentication": "none"},
+        {"base_url": "https://127.0.0.1.example.test/v1", "authentication": "none"},
+        {"base_url": "http://127.0.0.1/v1"},
+        {"base_url": "http://127.0.0.1/v1", "credential_env": None},
+        {"base_url": "http://127.0.0.1/v1", "authentication": None},
+        {"base_url": "http://127.0.0.1/v1", "authentication": False},
+        {"base_url": "http://127.0.0.1/v1", "authentication": "bearer"},
+        {"base_url": "http://127.0.0.1/v1", "authentication": "none", "credential_env": "TRIAL_TOKEN"},
+    ],
+)
+def test_missing_or_ambiguous_authentication_never_silently_becomes_anonymous(value):
+    with pytest.raises(ValueError):
+        validate_provider(value)
+
+
+@pytest.mark.parametrize("interrupt", [False, True])
+def test_unauthenticated_lease_never_reads_credentials_or_changes_environments(context, interrupt):
+    class UnreadableCredentials(dict):
+        def get(self, *args):
+            pytest.fail("An unauthenticated local attempt consulted credentials")
+
+    provider = {"base_url": "http://127.0.0.1:8041/v1", "authentication": "none"}
+    before = (context.controller_environment.copy(), context.tool_environment.copy())
+    with (
+        pytest.raises(InterruptedError) if interrupt else nullcontext(),
+        provider_binding.credential_lease(context, provider, UnreadableCredentials()) as selected,
+    ):
+        assert selected is context
+        if interrupt:
+            raise InterruptedError
+    assert (context.controller_environment, context.tool_environment) == before
+
+
+def test_unauthenticated_cli_disables_account_authentication_without_an_env_key(context):
+    provider = {"base_url": "http://127.0.0.1:8041/v1", "authentication": "none"}
+    invocation = command(context, "fixture-model", "high", provider=provider)
+    settings = {}
+    for index, option in enumerate(invocation[:-1]):
+        if option == "-c":
+            name, value = invocation[index + 1].split("=", 1)
+            settings[name] = tomllib.loads("value=" + value)["value"]
+    assert "model_providers.trial_provider.env_key" not in settings
+    assert settings["model_providers.trial_provider.requires_openai_auth"] is False
+    assert settings["model_providers.trial_provider.base_url"] == provider["base_url"]
+    assert "--ignore-user-config" in invocation

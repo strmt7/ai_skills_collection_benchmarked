@@ -1,0 +1,148 @@
+{
+  "passed": true,
+  "runtimes": [
+    {
+      "runtime": "publisher-python",
+      "image_id": "sha256:bcd148db78f6860c1e31f59a736d8239bb564598207da7a5ecf87f269ab46e29",
+      "runtime_binding_sha256": "9f19d6e327c30c6665e918543911ca41e0f96ae5f4927ff8902fa0681b79abec",
+      "native_receipt_sha256": "551071a9d745d0b3ed1e7c2c0721b7ba46fe6883be2d47613e6fb71c342af71e",
+      "closed_lease": true,
+      "capabilities": {
+        "python": {
+          "present": true,
+          "path": "/usr/bin/python",
+          "resolved_file_sha256": "c2c20b4745d447551221ec3d4e70f92c270c4609fe3df34fc52ea6dd46e92273",
+          "exit_code": 0,
+          "stdout": "Python 3.12.3\n",
+          "stderr": ""
+        },
+        "cmake": {
+          "present": true,
+          "path": "/usr/bin/cmake",
+          "resolved_file_sha256": "1c5227af4edd22d8d689def545e18ee458260c0fd579eba2187967f38817e638",
+          "exit_code": 0,
+          "stdout": "cmake version 3.28.3\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).\n",
+          "stderr": ""
+        },
+        "gcc": {
+          "present": true,
+          "path": "/usr/bin/gcc",
+          "resolved_file_sha256": "1b99826121ae6682a634e5efe09bd3e3df58ce58e0b28f849114ab5b89139c26",
+          "exit_code": 0,
+          "stdout": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+          "stderr": ""
+        },
+        "g++": {
+          "present": true,
+          "path": "/usr/bin/g++",
+          "resolved_file_sha256": "1353e9bdd29a7295c7226bf6c63abccce056d8cac31f112e5cdbecc3f28c2769",
+          "exit_code": 0,
+          "stdout": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+          "stderr": ""
+        },
+        "nvcc": {
+          "present": false,
+          "path": null
+        },
+        "hipcc": {
+          "present": false,
+          "path": null
+        },
+        "go": {
+          "present": false,
+          "path": null
+        },
+        "node": {
+          "present": true,
+          "path": "/usr/bin/node",
+          "resolved_file_sha256": "d01614ef369e36eee9ab8d86fbfa93ddf44931010add45e5262a63e3ddda784e",
+          "exit_code": 0,
+          "stdout": "v20.20.0\n",
+          "stderr": ""
+        },
+        "pnpm": {
+          "present": true,
+          "path": "/usr/bin/pnpm",
+          "resolved_file_sha256": "b276da51dc8ca5b0d3ee3371695b50fc8b3244b281b091c63a3f082a88dadeb9",
+          "exit_code": 0,
+          "stdout": "10.30.2\n",
+          "stderr": ""
+        }
+      }
+    },
+    {
+      "runtime": "maintained-modern-node",
+      "image_id": "sha256:b762dc6969ec64a78923b09b009dfdd5ca96a6c3ee610b005f04efd5b5cd59a3",
+      "runtime_binding_sha256": "3681dbb729943d7579ed1fa5db15f74ba32c192e976b1f20f632fe515fa3de1c",
+      "native_receipt_sha256": "4ba769dd7ad89be9c5a23e64cfd8c645d38c1063631e11fc8f12ffe947b1175b",
+      "closed_lease": true,
+      "capabilities": {
+        "python": {
+          "present": true,
+          "path": "/usr/bin/python",
+          "resolved_file_sha256": "c2c20b4745d447551221ec3d4e70f92c270c4609fe3df34fc52ea6dd46e92273",
+          "exit_code": 0,
+          "stdout": "Python 3.12.3\n",
+          "stderr": ""
+        },
+        "cmake": {
+          "present": true,
+          "path": "/usr/bin/cmake",
+          "resolved_file_sha256": "1c5227af4edd22d8d689def545e18ee458260c0fd579eba2187967f38817e638",
+          "exit_code": 0,
+          "stdout": "cmake version 3.28.3\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).\n",
+          "stderr": ""
+        },
+        "gcc": {
+          "present": true,
+          "path": "/usr/bin/gcc",
+          "resolved_file_sha256": "1b99826121ae6682a634e5efe09bd3e3df58ce58e0b28f849114ab5b89139c26",
+          "exit_code": 0,
+          "stdout": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+          "stderr": ""
+        },
+        "g++": {
+          "present": true,
+          "path": "/usr/bin/g++",
+          "resolved_file_sha256": "1353e9bdd29a7295c7226bf6c63abccce056d8cac31f112e5cdbecc3f28c2769",
+          "exit_code": 0,
+          "stdout": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+          "stderr": ""
+        },
+        "nvcc": {
+          "present": false,
+          "path": null
+        },
+        "hipcc": {
+          "present": false,
+          "path": null
+        },
+        "go": {
+          "present": false,
+          "path": null
+        },
+        "node": {
+          "present": true,
+          "path": "/opt/benchmark-node/bin/node",
+          "resolved_file_sha256": "d931c649850ffa7155b8ceffb400dc916ef325866e509cc52ae36e33e8fbb9a9",
+          "exit_code": 0,
+          "stdout": "v26.13.1\n",
+          "stderr": ""
+        },
+        "pnpm": {
+          "present": true,
+          "path": "/usr/bin/pnpm",
+          "resolved_file_sha256": "b276da51dc8ca5b0d3ee3371695b50fc8b3244b281b091c63a3f082a88dadeb9",
+          "exit_code": 0,
+          "stdout": "10.30.2\n",
+          "stderr": ""
+        }
+      }
+    }
+  ],
+  "closed_container_leases": 2,
+  "remaining_owned_containers": 0,
+  "model_invocations": 0,
+  "selected_task_builds_qualified": false,
+  "dependencies_installed": false
+}

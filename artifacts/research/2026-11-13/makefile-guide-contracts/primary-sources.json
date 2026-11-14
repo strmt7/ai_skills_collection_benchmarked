@@ -1,0 +1,34 @@
+{
+  "accepted_page": {
+    "url": "https://gnu.googlesource.com/make/+/refs/tags/4.4.1/doc/make.texi",
+    "status_code": 200,
+    "success": true,
+    "provider_version": "0.9.5+catalog.portable4",
+    "native_sha256": "d4b0f2cdd6bb13be23301bd4187e399ec544206951084b90a5d590c2fef13100",
+    "text_characters": 667655,
+    "scope_reviewed": true,
+    "scope": "Versioned Make 4.4.1 manual: conditional assignment, command-line override priority and target-specific variable context."
+  },
+  "failed_page": {
+    "url": "https://www.gnu.org/software/make/manual/html_node/Target_002dspecific.html",
+    "status_code": null,
+    "success": false,
+    "native_sha256": "d52eb9546a2607fd93ce2ede923a8a0a39d35f0fc71affc1c13bf682e0594419",
+    "text_characters": 0,
+    "scope_reviewed": false,
+    "failure": "Page.goto: net::ERR_CONNECTION_TIMED_OUT; no content admitted."
+  },
+  "source_archive": {
+    "archive_sha256": "dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3",
+    "member": "make-4.4.1/doc/make.texi",
+    "member_sha256": "4bc3c176c7eacefae7fdafd0665138372943f9e15cf6b6e816ad8062a31689dd",
+    "bytes": 525891,
+    "capture": {
+      "url": "https://mirror.bazel.build/ftpmirror.gnu.org/gnu/make/make-4.4.1.tar.gz",
+      "bytes": 2348200,
+      "sha256": "dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3",
+      "scope": "Exact hash-pinned GNU Make source archive matching the existing workflow pin; no HTML page substitute."
+    },
+    "scope": "Previously captured checksum-pinned release archive, locally rehashed; exact manual bytes, not a replacement page reader or a fresh network capture."
+  }
+}

@@ -1,0 +1,62 @@
+"""Check explicit owned output cleanup and honest wrapper execution."""
+import hashlib
+import json
+import shutil
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+records = []
+cases = []
+make = shutil.which('make')
+python = shutil.which('python3')
+assert make and python
+
+def write(path, text):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(text, encoding='utf-8', newline='\n')
+
+def run(argv, cwd):
+    result = subprocess.run(argv, cwd=cwd, stdin=subprocess.DEVNULL, capture_output=True, text=True, timeout=20)
+    row = {'argv': argv, 'cwd_name': cwd.name, 'exit_code': result.returncode, 'stdout': result.stdout, 'stderr': result.stderr}
+    records.append(row)
+    print(json.dumps({'native_command': row}), file=sys.stderr, flush=True)
+    return result
+
+with tempfile.TemporaryDirectory(prefix='wrapper-contract-', dir='/tmp') as raw:
+    root = Path(raw)
+    project = root / 'project'
+    project.mkdir()
+    kept = {project / '.venv/lib/vendor/__pycache__/dependency.pyc': 'dependency fixture\n', root / 'sibling/__pycache__/unrelated.pyc': 'unrelated fixture\n'}
+    owned = [project / 'build/output', project / 'dist/package.whl', project / 'src/demo/__pycache__/demo.pyc', project / 'tests/__pycache__/test_demo.pyc']
+    for path, text in kept.items():
+        write(path, text)
+    for path in owned:
+        write(path, 'owned output\n')
+    before = {str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest() for path in kept}
+    write(project / 'Makefile', '.PHONY: clean\nclean:\n\trm -rf -- build dist src/demo/__pycache__ tests/__pycache__\n')
+    result = run([make, '--no-print-directory', 'clean'], project)
+    assert result.returncode == 0 and all(not p.exists() for p in owned)
+    after = {str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest() for path in kept}
+    assert before == after
+    cases.append({'case': 'declared-cleanup-preserves-dependencies-and-sibling', 'exit_code': result.returncode, 'owned_outputs_removed': True, 'retained_bytes_equal': True})
+    write(project / 'Makefile', '.PHONY: build test\nbuild test:\n\t@echo "Operation is not configured" >&2\n\t@exit 2\n')
+    for target in ('build', 'test'):
+        result = run([make, '--no-print-directory', target], project)
+        assert result.returncode != 0 and 'not configured' in result.stderr
+        cases.append({'case': 'unconfigured-' + target + '-fails', 'exit_code': result.returncode})
+    write(project / 'build.py', 'from pathlib import Path\nPath("actual-artifact.txt").write_text("built by actual command\\n")\n')
+    write(project / 'test.py', 'assert 2 + 2 == 4\nprint("one genuine assertion passed")\n')
+    write(project / 'Makefile', '.PHONY: build test\nPYTHON := ' + python + '\nbuild:\n\t$(PYTHON) -B build.py\ntest:\n\t$(PYTHON) -B test.py\n')
+    result = run([make, '--no-print-directory', 'build'], project)
+    assert result.returncode == 0 and (project / 'actual-artifact.txt').read_text() == 'built by actual command\n'
+    cases.append({'case': 'configured-build-produces-real-output', 'exit_code': 0})
+    result = run([make, '--no-print-directory', 'test'], project)
+    assert result.returncode == 0 and 'one genuine assertion passed' in result.stdout
+    cases.append({'case': 'configured-test-executes-real-passing-assertion', 'exit_code': 0})
+    write(project / 'test.py', 'assert False, "intentional wrapper control failure"\n')
+    result = run([make, '--no-print-directory', 'test'], project)
+    assert result.returncode != 0 and 'intentional wrapper control failure' in result.stderr
+    cases.append({'case': 'configured-test-propagates-real-failure', 'exit_code': result.returncode})
+print(json.dumps({'passed': True, 'cases': cases, 'records': records, 'model_invocations': 0, 'scope': 'Native owned project-wrapper controls only; no agent benchmark or general cleanup algorithm.'}))

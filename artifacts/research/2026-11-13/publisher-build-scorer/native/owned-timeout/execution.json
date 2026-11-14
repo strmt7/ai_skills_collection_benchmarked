@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "command": "cd /workspace/fixture && python -c 'import subprocess,sys,time; child=subprocess.Popen([sys.executable,\"-c\",\"import time;time.sleep(30)\"]);print(child.pid,flush=True);time.sleep(30)'",
+  "timeout_seconds": 2,
+  "exit_code": -9,
+  "timed_out": true,
+  "duration_seconds": 2.002217655000095,
+  "stdout_sha256": "0e55092af0746630c98d1b2e0d960617c33f8ea7b55739fd18cb7cd5342a28ca",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "execution_complete": true,
+  "remaining_owned_processes": 0
+}

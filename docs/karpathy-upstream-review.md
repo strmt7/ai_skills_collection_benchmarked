@@ -4,6 +4,9 @@ The collection's pinned general coding baseline is a third-party adaptation of
 Karpathy's observations. GitHub redirects the historical repository name to
 `multica-ai/andrej-karpathy-skills`. Its current default HEAD remains
 `2c606141936f1eeef17fa3043a72095b4765b9c2`, matching the existing pin.
+The [13 November 2026 recheck](../artifacts/research/2026-11-13/publisher-build-scorer/upstream-recheck.json)
+confirmed that same head and all three official-source heads listed below.
+The generated README badge now targets the canonical repository directly.
 The standalone skill declares MIT in frontmatter. It is not a repository
 maintained by Karpathy.
 

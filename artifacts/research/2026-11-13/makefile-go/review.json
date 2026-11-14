@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-13",
+  "kind": "source-grounded-go-make-wrapper-review",
+  "source_skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-makefile-generator-skill-md",
+  "source_signature": {
+    "commit_sha": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+    "skill_dir_sha256": "c7b51244ed4d37fdb03e26ad3bd84acbf8efb19e24a7519b166fe54ea9b54796",
+    "skill_file_sha256": "c0090361f2f9999c81050beb7d65aaf4338094559bd227d944aafbf1500286fe"
+  },
+  "generator_canonical_sha256": "f85287a85ab0b152b2d7f8681642d616031896e4e75d45b78970de514a324747",
+  "generation_cases": 11,
+  "generation_scope": "All seven declared types generate output; noninteractive preservation, explicit force, unsupported-type rejection and help are measured. Generation is not runtime readiness.",
+  "observed_initial_capabilities": {
+    "bash": {
+      "available": true,
+      "path": "/usr/bin/bash",
+      "exit_code": 0,
+      "stdout": "GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)\nCopyright (C) 2022 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n\nThis is free software; you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n",
+      "stderr": ""
+    },
+    "make": {
+      "available": true,
+      "path": "/usr/bin/make",
+      "exit_code": 0,
+      "stdout": "GNU Make 4.3\nBuilt for x86_64-pc-linux-gnu\nCopyright (C) 1988-2020 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n",
+      "stderr": ""
+    },
+    "go": {
+      "available": false
+    },
+    "java": {
+      "available": false
+    },
+    "javac": {
+      "available": false
+    },
+    "jar": {
+      "available": false
+    },
+    "python3": {
+      "available": true,
+      "path": "/usr/bin/python3",
+      "exit_code": 0,
+      "stdout": "Python 3.12.3\n",
+      "stderr": ""
+    }
+  },
+  "observed_initial_python_packages": {
+    "pytest": "9.0.2",
+    "build": null,
+    "black": null,
+    "isort": null,
+    "flake8": null,
+    "pylint": null
+  },
+  "go_native_cases": 14,
+  "go_native_version": "go version go1.27.4 linux/amd64",
+  "findings": [
+    {
+      "id": "embedded-input-stale-binary",
+      "observed": "The original outer timestamp gate ignores a changed embedded data file and retains the old executable. Direct Go build recognizes it. The native-tool-owned wrapper produces the updated content."
+    },
+    {
+      "id": "missing-input-hidden-by-wrapper",
+      "observed": "Removing a required embedded data file still returns success from the original wrapper when its old executable exists. The native-tool-owned wrapper returns the actual compiler failure."
+    }
+  ],
+  "sound_original_behavior": "The original Go test target executes a real test and propagates a real test failure; both controls also pass for the maintained wrapper prototype. Module build without go.sum works for the no-external-dependency fixture.",
+  "sdk_provisioning": {
+    "version": "go1.27.4",
+    "sha256": "7226736c2339719cda28fbf3a54d71aa63bcefe376e98cef00034268dab24840",
+    "automatic_private_downloads": 1,
+    "complete_archive_members": 17375,
+    "expanded_bytes": 244338457,
+    "global_installation": false,
+    "host_extraction": false,
+    "sdk_license_sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+    "negative_digest_control": "Wrong expected digest rejected before Go execution.",
+    "transport": "Bounded native docker exec stdin stream as the declared non-root dev user, with exact byte-count and SHA-256 acknowledgement before extraction. Task input staging retains its original 64-MiB limit."
+  },
+  "retained_prequalification_failures": [
+    {
+      "stage": "Archive header admission",
+      "observed": "A prefix predicate rejected the legitimate go root directory header after checksum verification. Reused the same downloaded archive; component-aware admission retains path, type and size bounds."
+    },
+    {
+      "stage": "Task transfer",
+      "observed": "Full SDK exceeds the existing task-packet budget; transfer refused before Go execution. Task staging was not changed."
+    },
+    {
+      "stage": "Docker copy",
+      "observed": "The Docker archive-copy API rejects the read-only container. The documented exec-streaming mechanism was qualified instead; root filesystem, network and resource limits remain unchanged."
+    }
+  ],
+  "execution": {
+    "network": "none",
+    "root_filesystem": "read_only",
+    "cpus": 1,
+    "memory_limit_bytes": 2147483648,
+    "tmpfs_limit_bytes": 1073741824,
+    "lease_seconds": 300,
+    "lease_closed": true,
+    "remaining_owned_containers": 0,
+    "images_pulled": 0,
+    "image_reference": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974"
+  },
+  "maintained_repair": {
+    "path": "included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-go",
+    "repair_manifest_sha256": "236e3f7846780f7e9ed5f2aa0fa179d56b6cc71a5065aeaeebfde341d97c609c",
+    "skill_sha256": "a035c8253bf10c51e0afda0efd438af77ffb57e13d075927237941bd59c0486d",
+    "scope": "Instruction repair only. The prototype recipe is native-tested; no general installer or new scaffold capability is claimed."
+  },
+  "artifacts": {
+    "component-control.py.txt": "ec532d8deb4b25aeb19e6f65e615704cefd22b085b970b0eaf81db190f7de7a4",
+    "contract.json": "b3fecdd6ab84d9492be956194c89144018fd8d12f7af2d80152ac5849eb09f51",
+    "generation-controls.json": "f7788a289d11016ff5e63a29b416f07b49e69a7344a47a05c9521a08521e3529",
+    "NOTICE.md": "d518fc20c24e3ff7ecca3e3efe776e2e61cc448ee0d5d3ffef3e0f2ecc346fa3",
+    "primary-sources.json": "f77e37dbc85b62efe5222a1b6e301c472b72335b3775a200953b74f894d77e61",
+    "provisioning-controller.py.txt": "a5b049d4609e5347d938cadf3591bd7416f9fd79a37ed7e73a6adb4097e93773",
+    "result.json": "31f76074896f2ddf78ccb94d62d66dabdc5429f9094af9087bb74aa67aa1e6ab",
+    "sdk-capture.json": "200980508579202625b1859206a64563ed9dadd266ee62c32f68bffb04126e5b"
+  },
+  "model_invocations": 0,
+  "agent_efficacy_established": false,
+  "whole_skill_complete": false,
+  "performance_status": "unbenchmarked",
+  "security_review": "held",
+  "commercial_release_ready": false,
+  "limitations": [
+    "One Linux x64 Go module, embedded string resource, GNU Make and exact Go SDK only; no native Windows runtime or arbitrary module/workspace qualification.",
+    "Go provisioning is a private qualified component setup, not a new supported repository bootstrap command.",
+    "Python and Java runtimes/build tools remain missing in the original cached image; their generated branches and the generic placeholder still need separate runtime controls.",
+    "Other source-guide installation/packaging/deployment contracts remain unqualified.",
+    "No official agent benchmark score, model effect or speed improvement is established."
+  ]
+}

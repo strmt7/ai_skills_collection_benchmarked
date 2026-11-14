@@ -13,9 +13,9 @@ import tempfile
 import tomllib
 from pathlib import Path
 
-UV_VERSION = "0.13.7"
-MINIMUM_PYTHON = "3.11.18"
 ROOT = Path(__file__).resolve().parents[1]
+UV_VERSION: str = json.loads((ROOT / "toolchains/bootstrap/manifest.json").read_bytes())["uv"]["version"]
+MINIMUM_PYTHON = "3.11.18"
 
 
 def requirement_lines(content: str) -> list[str]:

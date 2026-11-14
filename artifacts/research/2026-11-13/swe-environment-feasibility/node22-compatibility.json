@@ -1,0 +1,110 @@
+{
+  "observation": {
+    "passed": true,
+    "node_version": "v22.23.5",
+    "npm_version": "10.9.9",
+    "runtime_archive_sha256": "c54118104acc524633b5abe106bbf44a53126ec8b4e5fa105cb92b5d7de8a1a1",
+    "node_binary_sha256": "2f822d544601dfff107f57d945b649d15c5bf6302595735a6bd9cdc7ee9669bd",
+    "node_header_sha256": "2d4560831e525b47b060ec8a0864ab73993df9e20215ce9f0fe7b24cd31af32a",
+    "license_sha256": "c738ae413cf561f174e34f6961f8ca458aae2369a73640dda6234c629b98bcc4",
+    "base_node_unchanged": true,
+    "component_cases": 7,
+    "records": [
+      {
+        "case": "new-node-version",
+        "argv": [
+          "/tmp/admitted-node22/node-v22.23.5-linux-x64/bin/node",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "v22.23.5\n",
+        "stderr": ""
+      },
+      {
+        "case": "base-node-unchanged",
+        "argv": [
+          "/usr/bin/node",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "v20.20.0\n",
+        "stderr": ""
+      },
+      {
+        "case": "bundled-npm-version",
+        "argv": [
+          "/tmp/admitted-node22/node-v22.23.5-linux-x64/bin/node",
+          "/tmp/admitted-node22/node-v22.23.5-linux-x64/lib/node_modules/npm/bin/npm-cli.js",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "10.9.9\n",
+        "stderr": ""
+      },
+      {
+        "case": "native-addon-compile",
+        "argv": [
+          "g++",
+          "-shared",
+          "-fPIC",
+          "-I/tmp/admitted-node22/node-v22.23.5-linux-x64/include/node",
+          "/tmp/node22-compatibility-project/answer.cc",
+          "-o",
+          "/tmp/node22-compatibility-project/answer.node"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "case": "npm-script-child-and-addon",
+        "argv": [
+          "/tmp/admitted-node22/node-v22.23.5-linux-x64/bin/node",
+          "/tmp/admitted-node22/node-v22.23.5-linux-x64/lib/node_modules/npm/bin/npm-cli.js",
+          "--offline",
+          "run",
+          "--loglevel=error",
+          "test"
+        ],
+        "exit_code": 0,
+        "stdout": "\n> node22-component-contract@0.0.0 test\n> node check.cjs\n\nNODE22_CONTRACT={\"major\":22,\"napiAnswer\":42}\n",
+        "stderr": ""
+      },
+      {
+        "case": "wrong-runtime-negative-control",
+        "argv": [
+          "/usr/bin/node",
+          "/tmp/node22-compatibility-project/check.cjs"
+        ],
+        "exit_code": 1,
+        "stdout": "",
+        "stderr": "node:assert:90\n  throw new AssertionError(obj);\n  ^\n\nAssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'20' !== '22'\n\n    at Object.<anonymous> (/tmp/node22-compatibility-project/check.cjs:1:51)\n    at Module._compile (node:internal/modules/cjs/loader:1521:14)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)\n    at Module.load (node:internal/modules/cjs/loader:1266:32)\n    at Module._load (node:internal/modules/cjs/loader:1091:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12)\n    at node:internal/main/run_main_module:28:49 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: '20',\n  expected: '22',\n  operator: 'strictEqual'\n}\n\nNode.js v20.20.0\n"
+      },
+      {
+        "case": "owned-http-client-server",
+        "argv": [
+          "/tmp/admitted-node22/node-v22.23.5-linux-x64/bin/node",
+          "-e",
+          "const assert=require('node:assert/strict');const http=require('node:http');const server=http.createServer((req,res)=>res.end('ready'));(async()=>{await new Promise(r=>server.listen(0,'127.0.0.1',r));try{const response=await fetch('http://127.0.0.1:'+server.address().port);assert.equal(await response.text(),'ready');}finally{server.closeAllConnections();await new Promise(r=>server.close(r));}assert.equal(server.listening,false);console.log('listener-closed');})().catch(e=>{server.closeAllConnections();server.close();console.error(e);process.exitCode=1;});"
+        ],
+        "exit_code": 0,
+        "stdout": "listener-closed\n",
+        "stderr": ""
+      }
+    ],
+    "global_installation": false,
+    "host_modified": false,
+    "external_network": "disabled by container",
+    "model_invocations": 0,
+    "runtime_admitted": false,
+    "scope": "Source-derived toolchain compatibility prototype only. The author Enroot filesystem, original image bytes, selected task dependencies and scorer equivalence are not established."
+  },
+  "program_sha256": "f861e5e7e83558b1a1c29236389a2f078e3c9be06b3292683b4dbcaaebfbbd59",
+  "image_reference": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+  "lease_closed": true,
+  "remaining_owned_containers": 0,
+  "images_pulled": 0,
+  "model_invocations": 0,
+  "runtime_admitted": false,
+  "asset_sha256": "c54118104acc524633b5abe106bbf44a53126ec8b4e5fa105cb92b5d7de8a1a1"
+}

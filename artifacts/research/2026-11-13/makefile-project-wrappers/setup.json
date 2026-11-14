@@ -1,0 +1,108 @@
+{
+  "java_sdk": {
+    "release_name": "jdk-27.0.1.0.2+1",
+    "version_data_as_published": {
+      "build": 0,
+      "major": 27,
+      "minor": 0,
+      "openjdk_version": "27.0.1.0",
+      "patch": 0,
+      "security": 1,
+      "semver": "27.0.1+0"
+    },
+    "url": "https://github.com/adoptium/temurin27-binaries/releases/download/jdk-27.0.1.0.2%2B1/OpenJDK27U-jdk_x64_linux_hotspot_27.0.1.0.2_1.tar.gz",
+    "archive_name": "OpenJDK27U-jdk_x64_linux_hotspot_27.0.1.0.2_1.tar.gz",
+    "bytes": 142729023,
+    "sha256": "30cb129f6cf299c852cec0feca9ea2a596d2ee9f26d8605d3a253951f6c8b20f",
+    "checksum_sidecar_sha256": "7aee9b4ff820b403711722e1c2559f8cd23934130be2a6dba52818ece532218a",
+    "final_download_hostname": "release-assets.githubusercontent.com",
+    "archive_members": 464,
+    "expanded_bytes": 317303788,
+    "internal_link_members": 193,
+    "archive_root": "jdk-27.0.1.0.2+1",
+    "source_metadata_sha256": "d8868958a13b9e3001eeb25413047cfd321d8bdcd13009b0d6b4a221096665e1",
+    "latest_endpoint_sha256": "8c0bd13faf6e5d61181c8b86cbce142dac34cc9139a2ea54c7936c0456e63fbf",
+    "host_extraction": false,
+    "global_installation": false,
+    "network_downloads": 1
+  },
+  "junit": {
+    "version": "6.1.3",
+    "url": "https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-console-standalone/6.1.3/junit-platform-console-standalone-6.1.3.jar",
+    "bytes": 2997949,
+    "sha256": "e62b96ac475dbcde8599ea905d088f65d90778f86e259b856a49fa5c4ea256ec",
+    "publisher_checksum_algorithm": "sha512",
+    "publisher_checksum": "ba9f93c8e45cba7231e4af859152cc6410684d56814768efee868eca8e27c7f01a28ffd1add0e13e4f675dcf0a9f01b235a949040f390c75d8269bf07eab8a79",
+    "checksum_attempts": [
+      {
+        "url": "https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-console-standalone/6.1.3/junit-platform-console-standalone-6.1.3.jar.sha512",
+        "status": 200,
+        "bytes": 128
+      }
+    ],
+    "class_capabilities": {
+      "junit4_core": true,
+      "junit4_test": true,
+      "jupiter_test": true,
+      "vintage_engine": true,
+      "hamcrest": true
+    },
+    "archive_members": 2135,
+    "global_installation": false
+  },
+  "official_metadata_native_sha256": {
+    "java-stable-metadata-20261113-v1/available.native.json": "e980cb29aee790fb6c131e96eacf6c8f6c4822ad7486bd8ae05fe2e5a2e4e295",
+    "java-stable-metadata-20261113-v1/assets.native.json": "d8868958a13b9e3001eeb25413047cfd321d8bdcd13009b0d6b4a221096665e1",
+    "java-stable-metadata-20261113-v1/latest.native.json": "8c0bd13faf6e5d61181c8b86cbce142dac34cc9139a2ea54c7936c0456e63fbf",
+    "junit-stable-metadata-20261113-v1/metadata.native.xml": "cdfd2ef0e00c444788f9356faf128c5f62e31d45f627d290bab20a9fe1e80e99"
+  },
+  "python_target": {
+    "implementation_name": "cpython",
+    "implementation_version": "3.12.3",
+    "os_name": "posix",
+    "platform_machine": "x86_64",
+    "platform_python_implementation": "CPython",
+    "platform_system": "Linux",
+    "python_full_version": "3.12.3",
+    "python_version": "3.12",
+    "sys_platform": "linux",
+    "extra": ""
+  },
+  "python_resolved_versions": {
+    "pylint": "4.1.3",
+    "black": "26.10.1",
+    "build": "1.6.1",
+    "flake8": "7.5.0",
+    "isort": "9.0.2",
+    "pytest": "9.2.0",
+    "wheel": "0.48.0",
+    "astroid": "4.3.4",
+    "click": "8.5.1",
+    "dill": "0.4.1",
+    "iniconfig": "2.3.1",
+    "mccabe": "0.7.0",
+    "mypy-extensions": "1.2.0",
+    "packaging": "26.3",
+    "pathspec": "1.1.1",
+    "pip": "26.3",
+    "platformdirs": "4.14.5",
+    "pluggy": "1.7.0",
+    "pycodestyle": "2.15.0",
+    "pyflakes": "4.1.0",
+    "pygments": "2.21.0",
+    "pyproject-hooks": "1.3.3",
+    "pytokens": "0.4.1",
+    "setuptools": "84.2.1",
+    "tomlkit": "0.15.2"
+  },
+  "python_hash_lock": "astroid==4.3.4 --hash=sha256:2bcd0d02648a443a4b818c952c3550091989daefac3c12d3b83b2289482e0818\nblack==26.10.1 --hash=sha256:28842f9a8207cc1df6eb983a35a14c5a0dfcd603d214fe82d84bef552afd2e3a\nbuild==1.6.1 --hash=sha256:ecd351a4be9d35a9eaaba244a7687143c9c7d4aea6ac964e7e7ddab20cbcf4e7\nclick==8.5.1 --hash=sha256:8bb5376d2006950386f8c6427613334a2acadc5f559cb80e638d00b4df957e37\ndill==0.4.1 --hash=sha256:1e1ce33e978ae97fcfcff5638477032b801c46c7c65cf717f95fbc2248f79a9d\nflake8==7.5.0 --hash=sha256:637ea1a443a78ed6ee461725cdf71ca93bc5cde0abf25436dbebdc3880b4e078\niniconfig==2.3.1 --hash=sha256:9121e2c1fdb355232495be3194c8dfe87ccc2d5dee45947b78e68f499790d7a7\nisort==9.0.2 --hash=sha256:6c29deeb39698a8717823b7f75b2ac58c5e8ab8dcf6cf31205a72a6617fb454e\nmccabe==0.7.0 --hash=sha256:6c2d30ab6be0e4a46919781807b4f0d834ebdd6c6e3dca0bda5a15f863427b6e\nmypy-extensions==1.2.0 --hash=sha256:993e7a20aa5671eb41a7132cf555af30062da99729601601b9a8382b11cae768\npackaging==26.3 --hash=sha256:d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c\npathspec==1.1.1 --hash=sha256:a00ce642f577bf7f473932318056212bc4f8bfdf53128c78bbd5af0b9b20b189\npip==26.3 --hash=sha256:f3b60b20ffaadd4415ed7957212a38ac63fa4c5fa375bd0f4a797777940fad13\nplatformdirs==4.14.5 --hash=sha256:8e778c6fa421516f4d3369449f8df3b0e1b72c0e0005fe88e3ec772d0a14e750\npluggy==1.7.0 --hash=sha256:7dd7b0d8832ba3cb632c306926ded123429211b83641b35dc5c41ad2d34f9bec\npycodestyle==2.15.0 --hash=sha256:12fd2f73c7b8ee8845a0431111df8faf4c1a07d6e64e2ee7f0c74014dab14181\npyflakes==4.1.0 --hash=sha256:b2e05e6bac8e49b67be2a6ffa63422c60f7193fc72e8180255907b41ec997dc1\npygments==2.21.0 --hash=sha256:2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9\npylint==4.1.3 --hash=sha256:a85357cae24f33ad8d86c8f3daaa92c600ae4012b54a57299cee76000e9364cf\npyproject-hooks==1.3.3 --hash=sha256:5fc53fdac9f7bd63fbcdc868fb5f90b4784d78a53a3d3388cd738b807441a20b\npytest==9.2.0 --hash=sha256:07acdcf88ec174f907dc01af70bf52d49b014bbab03faeeade31c96b18c2e588\npytokens==0.4.1 --hash=sha256:26cef14744a8385f35d0e095dc8b3a7583f6c953c2e3d269c7f82484bf5ad2de\nsetuptools==84.2.1 --hash=sha256:ca140b45d5325a9478f880e351484f62fef15f336462e449ca0c03c873d589c2\ntomlkit==0.15.2 --hash=sha256:05562412163a3037b94497385fb7f9204c637bc605af7a48199e41cf2272f437\nwheel==0.48.0 --hash=sha256:3217dcc807155e45db462d7ef2431f5ddda0d7273b700d05a67b271ceb1287ab\n",
+  "python_candidate_capture_sha256": "ba038fdac07097ed6307ded74f599a069a58c4b3206401073eff811a74686d8f",
+  "python_pool_bytes": 6523196,
+  "python_pool_wheels": 25,
+  "python_installation": "Offline native pip resolves the verified pure-wheel candidate pool into a private interpreter; a fresh hash-locked reinstall reproduces the installed graph. No global package upgrade.",
+  "base_python": "3.12.3 compatibility runtime, not newest-release assertion",
+  "sdk_host_extraction": false,
+  "global_installation": false,
+  "public_binary_payloads": false,
+  "model_invocations": 0
+}

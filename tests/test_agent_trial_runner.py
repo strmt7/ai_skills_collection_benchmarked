@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import json
-import subprocess
 import sys
 from pathlib import Path
 from typing import Any
@@ -280,12 +279,44 @@ def test_protocol_freeze_rejects_changed_inputs(tmp_path, monkeypatch, changed):
         trials.prepare(protocol, "improved", tmp_path / "python.exe")
 
 
-def test_grading_timeout_does_not_claim_a_submission_failure(tmp_path, monkeypatch):
-    def run(*args, **kwargs):
-        assert kwargs["timeout"] == 240
-        raise subprocess.TimeoutExpired(args[0], 240)
+@pytest.fixture
+def grading_job(monkeypatch):
+    monkeypatch.setattr(trials, "driver_environment", lambda python, temporary: {"PATH": str(python.parent)})
 
-    monkeypatch.setattr(trials.subprocess, "run", run)
+    def install(code, output, *, termination=None, active=0):
+        calls = []
+
+        def run(command, **kwargs):
+            calls.append((command, kwargs))
+            kwargs["stdout"].write(output)
+            return {
+                "exit_code": code,
+                "termination_reason": termination,
+                "job_active_processes_after_cleanup": active,
+                "windows_job": True,
+                "assigned_before_resume": True,
+                "kill_on_close": True,
+                "explicit_environment": True,
+                "job_memory_limit_bytes": kwargs["memory_limit"],
+                "active_process_limit": kwargs["process_limit"],
+                "output_limit_bytes": kwargs["output_limit"],
+                "wall_time_limit_seconds": kwargs["timeout"],
+                "output_bytes": len(output),
+            }
+
+        monkeypatch.setattr(trials, "run_owned", run)
+        return calls
+
+    return install
+
+
+@pytest.mark.parametrize(
+    "termination,active,message",
+    [("timeout", 0, "grading limit"), ("output_limit", 0, "process limits"), (None, 1, "process limits")],
+)
+def test_incomplete_grading_job_preserves_evidence_without_scoring(tmp_path, grading_job, termination, active, message):
+    stdout = b'{"status":"task_passed","checks":[{"case":"case","passed":true}],"checks_total":1,"checks_passed":1}'
+    grading_job(0, stdout, termination=termination, active=active)
     result = trials.external_grade(
         {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py", "source_commit": "a" * 40},
         tmp_path,
@@ -296,7 +327,10 @@ def test_grading_timeout_does_not_claim_a_submission_failure(tmp_path, monkeypat
         output=tmp_path / "grading",
     )
     assert result["status"] == "harness_error"
-    assert "grading limit" in result["error"]
+    assert message in result["error"]
+    assert (tmp_path / trials.DRIVER_STDOUT).read_bytes() == stdout
+    process = json.loads((tmp_path / trials.DRIVER_PROCESS).read_bytes())
+    assert process["termination_reason"] == termination and process["job_active_processes_after_cleanup"] == active
 
 
 @pytest.mark.parametrize(
@@ -314,12 +348,8 @@ def test_grading_timeout_does_not_claim_a_submission_failure(tmp_path, monkeypat
         (0, '{"status":"task_passed","checks_total":NaN}'),
     ],
 )
-def test_grading_infrastructure_failures_are_not_scored_as_agent_failures(tmp_path, monkeypatch, returncode, stdout):
-    monkeypatch.setattr(
-        trials.subprocess,
-        "run",
-        lambda *args, **kwargs: subprocess.CompletedProcess(args[0], returncode, stdout.encode(), b""),
-    )
+def test_grading_infrastructure_failures_are_not_scored_as_agent_failures(tmp_path, grading_job, returncode, stdout):
+    grading_job(returncode, stdout.encode())
     result = trials.external_grade(
         {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py", "source_commit": "a" * 40},
         tmp_path,
@@ -333,16 +363,12 @@ def test_grading_infrastructure_failures_are_not_scored_as_agent_failures(tmp_pa
 
 
 @pytest.mark.parametrize("status,returncode", [("task_passed", 0), ("task_failed", 1), ("harness_error", 2)])
-def test_matching_grader_exit_codes_keep_the_reported_status(tmp_path, monkeypatch, status, returncode):
+def test_matching_grader_exit_codes_keep_the_reported_status(tmp_path, grading_job, status, returncode):
     passed = status == "task_passed"
     grade = {"status": status}
     if status != "harness_error":
         grade.update(checks=[{"case": "case", "passed": passed}], checks_total=1, checks_passed=int(passed))
-    monkeypatch.setattr(
-        trials.subprocess,
-        "run",
-        lambda *args, **kwargs: subprocess.CompletedProcess(args[0], returncode, json.dumps(grade).encode(), b""),
-    )
+    grading_job(returncode, json.dumps(grade).encode())
     result = trials.external_grade(
         {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py", "source_commit": "a" * 40},
         tmp_path,
@@ -378,14 +404,10 @@ def test_matching_grader_exit_codes_keep_the_reported_status(tmp_path, monkeypat
         {"status": "task_failed", "checks": [{"case": "case", "passed": True}], "checks_total": 1, "checks_passed": 1},
     ],
 )
-def test_incomplete_or_contradictory_grading_is_a_harness_error(tmp_path, monkeypatch, grade):
+def test_incomplete_or_contradictory_grading_is_a_harness_error(tmp_path, grading_job, grade):
     """A valid exit code alone never authorizes a scored outcome."""
     code = 0 if grade["status"] == "task_passed" else 1
-    monkeypatch.setattr(
-        trials.subprocess,
-        "run",
-        lambda *args, **kwargs: subprocess.CompletedProcess(args[0], code, json.dumps(grade).encode(), b""),
-    )
+    grading_job(code, json.dumps(grade).encode())
     result = trials.external_grade(
         {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py", "source_commit": "a" * 40},
         tmp_path,
@@ -398,11 +420,11 @@ def test_incomplete_or_contradictory_grading_is_a_harness_error(tmp_path, monkey
     assert result["status"] == "harness_error"
 
 
-def test_unavailable_grading_driver_is_a_harness_error(tmp_path, monkeypatch):
+def test_unavailable_grading_driver_is_a_harness_error(tmp_path, monkeypatch, grading_job):
     def unavailable(*args, **kwargs):
         raise FileNotFoundError("fixture runtime unavailable")
 
-    monkeypatch.setattr(trials.subprocess, "run", unavailable)
+    monkeypatch.setattr(trials, "run_owned", unavailable)
     result = trials.external_grade(
         {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py", "source_commit": "a" * 40},
         tmp_path,
@@ -413,16 +435,11 @@ def test_unavailable_grading_driver_is_a_harness_error(tmp_path, monkeypatch):
         output=tmp_path / "grading",
     )
     assert result["status"] == "harness_error"
+    assert json.loads((tmp_path / trials.DRIVER_PROCESS).read_bytes())["termination_reason"] == "launch_error"
 
 
-def test_confined_grading_receives_the_frozen_fixture_and_explicit_homes(tmp_path, monkeypatch):
-    observed = []
-
-    def invoke(args, **kwargs):
-        observed.append(args)
-        return subprocess.CompletedProcess(args, 2, b'{"status":"harness_error","errors":["control"]}', b"")
-
-    monkeypatch.setattr(trials.subprocess, "run", invoke)
+def test_confined_grading_receives_the_frozen_fixture_and_explicit_homes(tmp_path, grading_job):
+    observed = grading_job(2, b'{"status":"harness_error","errors":["control"]}')
     task = {"grader": "benchmarks/agent-effectiveness/graders/artifact_validator.py", "source_commit": "b" * 40}
     result = trials.external_grade(
         task,
@@ -434,7 +451,8 @@ def test_confined_grading_receives_the_frozen_fixture_and_explicit_homes(tmp_pat
         output=tmp_path / "grading",
     )
     assert result["status"] == "harness_error"
-    args = observed[0]
+    args, job = observed[0]
+    assert args[1:4] == ["-I", "-S", "-B"] and job["timeout"] == 240.0
     for option, expected in {
         "--fixture": str(trials.ROOT.resolve()),
         "--revision": "b" * 40,
@@ -447,7 +465,7 @@ def test_confined_grading_receives_the_frozen_fixture_and_explicit_homes(tmp_pat
 
 @pytest.mark.parametrize("missing", ["runtime_home", "dependency_home", "output"])
 def test_missing_confined_inputs_never_fall_back_to_host_grading(tmp_path, monkeypatch, missing):
-    monkeypatch.setattr(trials.subprocess, "run", lambda *args, **kwargs: pytest.fail("unexpected grading process"))
+    monkeypatch.setattr(trials, "run_owned", lambda *args, **kwargs: pytest.fail("unexpected grading process"))
     options = {name: tmp_path / name for name in ("runtime_home", "dependency_home", "output")}
     options[missing] = None
     result = trials.external_grade({}, tmp_path, Path("python"), frozenset({"case"}), **options)
@@ -458,7 +476,7 @@ def test_missing_confined_inputs_never_fall_back_to_host_grading(tmp_path, monke
 def test_grading_transport_is_never_overwritten(tmp_path, monkeypatch):
     captured = tmp_path / "grading.driver.stdout.native"
     captured.write_bytes(b"previous attempt")
-    monkeypatch.setattr(trials.subprocess, "run", lambda *args, **kwargs: pytest.fail("unexpected process"))
+    monkeypatch.setattr(trials, "run_owned", lambda *args, **kwargs: pytest.fail("unexpected process"))
     result = trials.external_grade({}, tmp_path, Path("python"), frozenset({"case"}), output=tmp_path / "grading")
     assert result["status"] == "harness_error" and "refusing to overwrite" in result["error"]
     assert captured.read_bytes() == b"previous attempt"

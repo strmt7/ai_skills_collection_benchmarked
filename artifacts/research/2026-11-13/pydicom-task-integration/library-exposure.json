@@ -1,0 +1,14 @@
+{
+  "task_id": "swe-skills-bench/batch4/pydicom-dicom-parsing",
+  "partition": "development",
+  "library_freeze_sha256": "ef2b41429643da1fdf105de0efc2d06152c7ca30278f354b672bc8da9bbd5520",
+  "library_files": 18245,
+  "immutable_mirror_files": 17673,
+  "before_selected_task_content_capture": true,
+  "candidate_skill_bytes_unchanged_after_integration": true,
+  "task_and_evaluator_now_exposed_to_integration_controller": true,
+  "task_material_not_injected_into_skills": true,
+  "candidate_intervention_admitted": false,
+  "public_timestamp_attestation": false,
+  "scope": "Locally ordered source-bound separation; this is not an untouched holdout or a public preregistration timestamp."
+}

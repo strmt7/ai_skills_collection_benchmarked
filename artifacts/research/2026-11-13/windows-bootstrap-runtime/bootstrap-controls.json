@@ -1,0 +1,756 @@
+{
+  "passed": true,
+  "control_groups": [
+    {
+      "name": "supervisor-reproducible-build",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 12.5148767,
+        "observed_output_bytes": 278,
+        "retained_output_bytes": 278
+      }
+    },
+    {
+      "name": "supervisor-reject-binary",
+      "process": {
+        "exit_code": 1,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 0.7541225,
+        "observed_output_bytes": 598,
+        "retained_output_bytes": 598
+      }
+    },
+    {
+      "name": "supervisor-reject-source",
+      "process": {
+        "exit_code": 1,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 0.6901604,
+        "observed_output_bytes": 598,
+        "retained_output_bytes": 598
+      }
+    },
+    {
+      "name": "codex-fresh",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 14.2064706,
+        "observed_output_bytes": 751,
+        "retained_output_bytes": 751
+      }
+    },
+    {
+      "name": "codex-reuse",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 5.386532,
+        "observed_output_bytes": 751,
+        "retained_output_bytes": 751
+      }
+    },
+    {
+      "name": "codex-missing-helper",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 13.8985687,
+        "observed_output_bytes": 751,
+        "retained_output_bytes": 751
+      }
+    },
+    {
+      "name": "codex-missing-license",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 5.6255609,
+        "observed_output_bytes": 751,
+        "retained_output_bytes": 751
+      }
+    },
+    {
+      "name": "codex-missing-model-catalog",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 5.6521428,
+        "observed_output_bytes": 751,
+        "retained_output_bytes": 751
+      }
+    },
+    {
+      "name": "codex-execution-arguments",
+      "process": {
+        "exit_code": 1,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 0.5397604,
+        "observed_output_bytes": 675,
+        "retained_output_bytes": 675
+      }
+    },
+    {
+      "name": "codex-credential-forwarding",
+      "process": {
+        "exit_code": 1,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 0.4407284,
+        "observed_output_bytes": 613,
+        "retained_output_bytes": 613
+      }
+    },
+    {
+      "name": "codex-concurrent-reuse",
+      "processes": [
+        {
+          "exit_code": 0,
+          "active_processes_after_cleanup": 0,
+          "termination_reason": null,
+          "windows_job": true,
+          "assigned_before_resume": true,
+          "kill_on_close": true,
+          "explicit_environment": true,
+          "attested_while_suspended": true,
+          "elapsed_seconds": 6.917412,
+          "observed_output_bytes": 751,
+          "retained_output_bytes": 751
+        },
+        {
+          "exit_code": 0,
+          "active_processes_after_cleanup": 0,
+          "termination_reason": null,
+          "windows_job": true,
+          "assigned_before_resume": true,
+          "kill_on_close": true,
+          "explicit_environment": true,
+          "attested_while_suspended": true,
+          "elapsed_seconds": 9.5571894,
+          "observed_output_bytes": 751,
+          "retained_output_bytes": 751
+        }
+      ],
+      "shared_installation": true
+    },
+    {
+      "name": "codex-default",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 21.0705216,
+        "observed_output_bytes": 1259,
+        "retained_output_bytes": 1259
+      }
+    },
+    {
+      "name": "fresh",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 49.1211272,
+        "observed_output_bytes": 701,
+        "retained_output_bytes": 701
+      }
+    },
+    {
+      "name": "reuse",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 12.4993414,
+        "observed_output_bytes": 702,
+        "retained_output_bytes": 702
+      }
+    },
+    {
+      "name": "missing-architecture-environment",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 12.0413388,
+        "observed_output_bytes": 702,
+        "retained_output_bytes": 702
+      }
+    },
+    {
+      "name": "wrong-architecture-environment",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 11.1457014,
+        "observed_output_bytes": 702,
+        "retained_output_bytes": 702
+      }
+    },
+    {
+      "name": "single-option",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 12.2244451,
+        "observed_output_bytes": 84,
+        "retained_output_bytes": 84
+      }
+    },
+    {
+      "name": "single-script",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 11.6267726,
+        "observed_output_bytes": 23,
+        "retained_output_bytes": 23
+      }
+    },
+    {
+      "name": "arguments",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 11.4811381,
+        "observed_output_bytes": 46,
+        "retained_output_bytes": 46
+      }
+    },
+    {
+      "name": "powershell-values",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 11.4262125,
+        "observed_output_bytes": 652,
+        "retained_output_bytes": 652
+      }
+    },
+    {
+      "name": "credential-not-inherited",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 12.2884271,
+        "observed_output_bytes": 6,
+        "retained_output_bytes": 6
+      }
+    },
+    {
+      "name": "selected-credential",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 11.3922401,
+        "observed_output_bytes": 66,
+        "retained_output_bytes": 66
+      }
+    },
+    {
+      "name": "duplicate-credential",
+      "process": {
+        "exit_code": 1,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 0.4514843,
+        "observed_output_bytes": 619,
+        "retained_output_bytes": 619
+      }
+    },
+    {
+      "name": "missing-credential",
+      "process": {
+        "exit_code": 1,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 11.4552139,
+        "observed_output_bytes": 690,
+        "retained_output_bytes": 690
+      }
+    },
+    {
+      "name": "reserved-credential",
+      "process": {
+        "exit_code": 1,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 11.3248791,
+        "observed_output_bytes": 700,
+        "retained_output_bytes": 700
+      }
+    },
+    {
+      "name": "child-packages",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 11.6787249,
+        "observed_output_bytes": 13,
+        "retained_output_bytes": 13
+      }
+    },
+    {
+      "name": "tools",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 11.6721656,
+        "observed_output_bytes": 1168,
+        "retained_output_bytes": 1168
+      }
+    },
+    {
+      "name": "git-long-path",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 11.2219993,
+        "observed_output_bytes": 68,
+        "retained_output_bytes": 68
+      }
+    },
+    {
+      "name": "exit-code",
+      "process": {
+        "exit_code": 7,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 11.1145318,
+        "observed_output_bytes": 0,
+        "retained_output_bytes": 0
+      }
+    },
+    {
+      "name": "default-temp-git-transport",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 13.1073821,
+        "observed_output_bytes": 100,
+        "retained_output_bytes": 100
+      }
+    },
+    {
+      "name": "timeout",
+      "process": {
+        "exit_code": 124,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": "timeout",
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 1.0346496,
+        "observed_output_bytes": 0,
+        "retained_output_bytes": 0
+      }
+    },
+    {
+      "name": "output-limit",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": "output_limit",
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 0.0524169,
+        "observed_output_bytes": 1000000,
+        "retained_output_bytes": 1024
+      }
+    },
+    {
+      "name": "child-cleanup",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 0.1134226,
+        "observed_output_bytes": 7,
+        "retained_output_bytes": 7
+      }
+    },
+    {
+      "name": "missing-package-recovery",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 20.9201081,
+        "observed_output_bytes": 701,
+        "retained_output_bytes": 701
+      }
+    },
+    {
+      "name": "missing-engine-recovery",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 19.4965384,
+        "observed_output_bytes": 702,
+        "retained_output_bytes": 702
+      }
+    },
+    {
+      "name": "extended-engine-path",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 12.5010023,
+        "observed_output_bytes": 702,
+        "retained_output_bytes": 702
+      }
+    },
+    {
+      "name": "missing-tool-recovery",
+      "process": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 13.3607575,
+        "observed_output_bytes": 702,
+        "retained_output_bytes": 702
+      }
+    },
+    {
+      "name": "unowned-cache",
+      "process": {
+        "exit_code": 1,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 1.0914256,
+        "observed_output_bytes": 663,
+        "retained_output_bytes": 663
+      }
+    },
+    {
+      "installed_once": true,
+      "name": "concurrent-installation",
+      "processes": [
+        {
+          "exit_code": 0,
+          "active_processes_after_cleanup": 0,
+          "termination_reason": null,
+          "windows_job": true,
+          "assigned_before_resume": true,
+          "kill_on_close": true,
+          "explicit_environment": true,
+          "attested_while_suspended": true,
+          "elapsed_seconds": 31.052837,
+          "observed_output_bytes": 702,
+          "retained_output_bytes": 702
+        },
+        {
+          "exit_code": 0,
+          "active_processes_after_cleanup": 0,
+          "termination_reason": null,
+          "windows_job": true,
+          "assigned_before_resume": true,
+          "kill_on_close": true,
+          "explicit_environment": true,
+          "attested_while_suspended": true,
+          "elapsed_seconds": 22.1021534,
+          "observed_output_bytes": 701,
+          "retained_output_bytes": 701
+        }
+      ]
+    }
+  ],
+  "control_groups_executed": 39,
+  "all_owned_jobs_closed": true,
+  "host_path_and_registry_unchanged": true,
+  "source_fixture_inputs_equal_active_inputs": true,
+  "input_files": 26,
+  "source_fixture_contains_unicode": true,
+  "native_node_version": "v26.13.1",
+  "original_wrapper_sha256": "abc6970b229d0110e8c16508bcfb9a65b13334a65c81ef4805904ed523f5669f",
+  "original_native_receipt_sha256": "f1e7a96d2d0250cda1bbaf87e9523259b87bd9930e8718b5092662cc6c58381f",
+  "native_stdout_stderr_sha256": {
+    "arguments.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "arguments.stdout.native": "c59f83f2444784576e87d6035f47506031841b761799caf9380bae3ca5de4596",
+    "child-cleanup.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "child-cleanup.stdout.native": "db2cf80ef9f3d8209de701e08e5b45ace1bb3441aaad8d591e80d7b1c8edd7a9",
+    "child-packages.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "child-packages.stdout.native": "80e4c47ab41e4cbd8addd36d50630573b817bef2e37a58080904b20b88c661bc",
+    "codex-concurrent-first.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "codex-concurrent-first.stdout.native": "0f9a0371a0f1b2c643b196f8bf31c52a637ab0172bd7a36b3a744ad4aee5e620",
+    "codex-concurrent-second.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "codex-concurrent-second.stdout.native": "307093cfc369857b5359bb9bda6c254eb0cc00ea97e857626df2858ddc34a632",
+    "codex-credential-forwarding.stderr.native": "1da834d86141947a7c23996673f83c13591e4825ba7203a5f02daddc4ec7bf9a",
+    "codex-credential-forwarding.stdout.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "codex-default.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "codex-default.stdout.native": "e2ef4c5e0177bba321acf6f8935f81b03cf69137802197a943cef3b69d0a34b6",
+    "codex-execution-arguments.stderr.native": "74fd67237792fa994f6f651f515cac602874acd136ea2b97fb9c0d02ab2120a2",
+    "codex-execution-arguments.stdout.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "codex-fresh.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "codex-fresh.stdout.native": "14c4a10137ed493a14ec568e4af2cc717921f3596feb2d8d6783ee83fea745ec",
+    "codex-missing-helper.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "codex-missing-helper.stdout.native": "14a1d1a2df755fc256673b5a7bf44ecddf63744a08930b7822716c7f801c3827",
+    "codex-missing-license.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "codex-missing-license.stdout.native": "9842c59d3a6f4e291ea0bd3265b2263d7dfab1d691d65bf37dca657d1940dc6b",
+    "codex-missing-model-catalog.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "codex-missing-model-catalog.stdout.native": "777999d72377526bd6fa031ea9fb1574de6ddb36c4b7f4dc3045d7e09427a561",
+    "codex-reuse.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "codex-reuse.stdout.native": "2956e1d16123a872d66bec4be62c45cbc158b5eeb7d91a66f9f2e5488712f80b",
+    "concurrent-first.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "concurrent-first.stdout.native": "cb50e735a2e1c3b6e5693b91885c28918a42999daef488b797cf97d9947dab7f",
+    "concurrent-second.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "concurrent-second.stdout.native": "10167dc5f9afe9a246e7211118d1ef3ff9c83ddc2f1f732a0cf72bce2a8d2146",
+    "credential-not-inherited.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "credential-not-inherited.stdout.native": "ca4a016eae14ab0c7ebb935a6e24ae8b512958f25c788f11eb99566d066b7957",
+    "default-temp-git-transport.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "default-temp-git-transport.stdout.native": "1e1fcccfb22688cc0923f68aef046b36d8e1054bcf52c783ee41a468d49f2ac0",
+    "duplicate-credential.stderr.native": "bdeaed5dc1c002b81280b89318d686808a2930b7934125ab183a73e0da7b466b",
+    "duplicate-credential.stdout.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exit-code.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exit-code.stdout.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "extended-engine-path.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "extended-engine-path.stdout.native": "83e2f126d97b237aa955260ffe2ea65f8e82428f7451587e512d1c9613fcbd2d",
+    "fresh.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "fresh.stdout.native": "d4f74dc993fdc6b505aec7955ee8207922d1e018e5615d3bfbbf731d7b5044bc",
+    "git-long-path.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "git-long-path.stdout.native": "254fbb945a89223924dd636f7f9e1211fbc401099d6c954f062744fd9fab0dab",
+    "missing-architecture-environment.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-architecture-environment.stdout.native": "8658ea71c81b5af5c1cceabce0b82cb226cdc5bdbacac78e691d2090884c8eb4",
+    "missing-credential.stderr.native": "2f7923efa65571e6939d3551913229fc39eea0d620c7d9a2d1bd63ed1d947bec",
+    "missing-credential.stdout.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-engine-recovery.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-engine-recovery.stdout.native": "e52b0de6a183f89b6acf4ad99df85ef2daf3a0c48e4303474ab11ca13990cb0a",
+    "missing-package-recovery.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-package-recovery.stdout.native": "3a013321ad7113022c8813f59b3c648de4cd47671f80fc9d6e7e784c4f47633f",
+    "missing-tool-recovery.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-tool-recovery.stdout.native": "5c7005c9d499c8b76b4f9f053adbfa29980ee60d2d1c5f1cf8b1309df9f5a939",
+    "output-limit.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output-limit.stdout.native": "49abd65bbf7f7e40c7055093ed2e3fd75f2f602f2c5fcf955c213e3135eb03f7",
+    "powershell-values.stderr.native": "aa4c6b5187e8a52a4b02316c91eb0c7a4cfdce4cdea9b9d7ecfe2faa1d97cce4",
+    "powershell-values.stdout.native": "5b6479929bb3587ae04fecce0bf7bf585692280b0f59e95d755eaa46d8dc0783",
+    "reserved-credential.stderr.native": "b8bdc12fbf334257b37ddb0c2e52515c73f584beeb115f613654ba8c35a80e62",
+    "reserved-credential.stdout.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reuse.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reuse.stdout.native": "091ae02e728137d50f06f468c7823c8f76a62b910136b6254e2c56f29545c50b",
+    "selected-credential.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "selected-credential.stdout.native": "edb5d0c568d6a6c2184a40ed04e0f4433c0ffc1ec5c18baa56b1c7183a0e4233",
+    "single-option.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "single-option.stdout.native": "6067d4c3514410c7817e902e400db09cfdd15c2a5c2de3c4f9e0367f56a47a0c",
+    "single-script.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "single-script.stdout.native": "8eab595ac285bb863b3fa90121e2e02c8395ef6b3665fff275d34f029e74ad83",
+    "supervisor-build.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "supervisor-build.stdout.native": "c75194b031a78c27e8fb38b745b288d979b42d568bfcc4b1123912c7b25b0965",
+    "supervisor-reject-binary.stderr.native": "6b1d1a65656eed5ac74092c8135972354a630e84402727563efa3b7e538e1365",
+    "supervisor-reject-binary.stdout.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "supervisor-reject-source.stderr.native": "6b1d1a65656eed5ac74092c8135972354a630e84402727563efa3b7e538e1365",
+    "supervisor-reject-source.stdout.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "timeout.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "timeout.stdout.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tools.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tools.stdout.native": "8aad0f62eabb7f1ff27d2c85bd17b5da3ca66780d47fe2d63241b5d9a97c47ab",
+    "unowned-cache.stderr.native": "9d1b9acf34ac9e5dbc60ee0b47dd5c1f2ff7367d28de8ef2355e21c727ea7ee9",
+    "unowned-cache.stdout.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wrong-architecture-environment.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wrong-architecture-environment.stdout.native": "ebce15839317a5262fa248923c407f0ef07fd071be377df37ed08598967e5691"
+  },
+  "model_requests": 0,
+  "scope": "Source-bound copied checkout on the current Windows x64 host; PATH and registry snapshots are scoped controls, not a host-wide leak proof."
+}

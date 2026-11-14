@@ -1,0 +1,318 @@
+{
+  "schema_version": 1,
+  "kind": "official-native-signin-controller-qualification",
+  "date": "2026-11-11",
+  "cli_version": "0.167.1",
+  "source_commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+  "execution_policy": "Official CLI only; no real OpenAI API key, token export, credential copying or direct OpenAI API request.",
+  "authentication_scope": "Synthetic file-store credentials for native controls; file/keyring/auto declarations and admission logic covered by unit tests. No real account or keyring qualification.",
+  "sources": [
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/exec/src/cli.rs",
+      "capture_sha256": "22942d28739133513ea1a78635d803019d1707ba78effc3415bc26b202b8036e",
+      "capture_transport": "official GitHub connector decoded source; not a wire-byte or Git-blob claim"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/model-provider-info/src/lib.rs",
+      "capture_sha256": "f0fe5491ee3cc240cbd106e0a9f55312f7775b2912c2ab561ca53559c05fa392",
+      "capture_transport": "official GitHub connector decoded source; not a wire-byte or Git-blob claim"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/codex-home/src/instructions/mod.rs",
+      "capture_sha256": "17719c5dddb4709e881a78f58471ec59698e33f786d221d1003cdac538e81c90",
+      "capture_transport": "official GitHub connector decoded source; not a wire-byte or Git-blob claim"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/cli/src/login.rs",
+      "capture_sha256": "9a9c1ea56e34196ae71bc667ff830412c7c2dba469ad96b7d85d7368751b1f8e",
+      "capture_transport": "official GitHub connector decoded source; not a wire-byte or Git-blob claim"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/core/src/client.rs",
+      "capture_sha256": "77d0700bf7d53a35b530d2f18f37941b6e33d2521b114a3016b3d5d2cfa50387",
+      "capture_transport": "official GitHub connector decoded source; not a wire-byte or Git-blob claim"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/protocol/src/models.rs",
+      "capture_sha256": "bc9ceb266061fca8de68446fddc901c0fcc2bee85209c51364555b9fb44cc6a2",
+      "capture_transport": "official GitHub connector decoded source; not a wire-byte or Git-blob claim"
+    }
+  ],
+  "qualified_source_sha256": {
+    "tests/test_agent_trial_runner.py": "9a4c2b16cb8fa747abd0af495585bee4d49ad467169260df884ac85fd4bf9c3f",
+    "tests/test_documentation_contracts.py": "52772a62c86c992d191bfbd89bb48c1b61acbf443ccf5a00578a0fdfbcbfdbc6",
+    "tests/test_grade_swe_skills_submission.py": "4bff05e9bea91114b5e1916130d69b650b019db4ff431e9a17453d6a9ae62c74",
+    "tests/test_native_trial_plan.py": "0b7e63bcee74f71ddb995bb962d3cbfae8b46bfe298bc01487c36a2acf93aea6",
+    "tests/test_native_trial_runner.py": "62998508c23fbb980f98116648a220e7700bf9cc97281ea61be01af51ccf2165",
+    "tests/test_trial_context.py": "601aa31d0d38979ea351f4c740ce0879f441479de4bb3e753c4c04bf83993893",
+    "tests/test_trial_execution_evidence.py": "daba69100985988a25a26e968ced8697417e20756b47ee91c1611543ef70fa2b",
+    "tests/test_trial_protocol.py": "f5b02a8d519d07e30c2b68e206cf3b14c78e33df403129b081a6b15b0f746f9c",
+    "tests/test_trial_provider.py": "5985a7d918f5f800325356dd50622e0492e37869ac66259376464481da748140",
+    "tests/test_trial_rpc.py": "75a91a1fc477f84d68519426a5b33def6fbd3ada7cb9b02b2dbbf257fc49e28c",
+    "tests/test_trial_signin.py": "fc3a0cbe4ff0e5e12fbfd35f46386c2c582a6fa013b641dcaa4faf83be81c164",
+    "tools/_bootstrap_doctor.py": "ec124d1120318030c20435c7ac9d7c8edde399d3ba5749c6234bca30d91f5c95",
+    "tools/_lib_b/__init__.py": "d5d2f451fd013d9c3848cf9ea24fbf1cb9f9aa6e3277440f7afda3fbfe3305e7",
+    "tools/_lib_b/determinism.py": "d8e0829e9306e630c47b857d4558ab1b40f7a529e7a5b69b13f764c7240c8cb5",
+    "tools/_lib_b/frontmatter_utils.py": "ce8dabc7321d6089628e42a1fdcda576a5f7b8657a2090718551191fad736165",
+    "tools/_lib_b/hashing.py": "7a19e225c3df4a18bd1b6447a7b13783f2169b9d9628fb6d85cda04429ce0c35",
+    "tools/_lib_b/io_utils.py": "b470b6a341006053110b53348d5a2322ea0d3d7995a8d99a7513e5fd59fcf376",
+    "tools/_lib_b/logging_utils.py": "e20db684564c57d2a4a0922e7797c5a4661fc74434b159bfd98f090cf41aea83",
+    "tools/_native_benchmark_runtime.py": "fd8f4c4703ada6478da48e0930a091b7f7a6ac381311468b40dc56355d211975",
+    "tools/_native_trial_plan.py": "33338ce8729de0235a822a1a07f068af3dcf2c54c05001583464417379c567d0",
+    "tools/_trial_collection.py": "5c2388bc3a2a361c4ee0a4465e73745651eb87c0baaa91066f0afc33874cb5e0",
+    "tools/_trial_collection_contract.py": "99ddd0c2a4be1ef50fd41ff91c57973b8ccf8508f9061411bd510c19ca7db676",
+    "tools/_trial_collection_manifest.py": "92766b10b195a87884022c1cdb2b4d292e4464d31334abe8a4b969f3293f626b",
+    "tools/_trial_collection_policy.py": "ff2b6163130348c7f5c6a1315c3b93e94abd1e93e607d6759e73ab1df88ee2c8",
+    "tools/_trial_context.py": "2d62c7b51e3b0b267c9afdfe2165e4de1a62c028bfb7840769ede14beb8347fd",
+    "tools/_trial_declarations.py": "157185245b98be55d3f101c63cb39b293abf8cbc47c3673efe843d3c4dab883c",
+    "tools/_trial_execution_evidence.py": "8afdf41359bd11b911eca01cf8236076e0168bcb75628c72815baaf58cff0f7d",
+    "tools/_trial_grading_process.py": "4694b30f3a921214ee6fac6cb4d95a8b0e1f799b5a28c40a8ee921690df3aefc",
+    "tools/_trial_manifest.py": "fb70ce24aa79bc0e7f236f23b10a5543884d0a1c26745581d41b41302c658c79",
+    "tools/_trial_patch.py": "1910d39115fac763c8869fe8ec3ad5f977463bec1d22e260a4e70b27b03f91a3",
+    "tools/_trial_protocol.py": "086fa266058574b09c0ca72f970f9c64341a5e697f737cdd0955fb9883b351de",
+    "tools/_trial_provider.py": "f8b35a67b28a8e9fdb6a83ddd6d2a5012e6e76d81965ab2fc031d5332b600894",
+    "tools/_trial_signin.py": "9d7a5293babc9cb9d4a3ba6276b9040ad3d3b3ff6033ef58a93fb7ba8d87b671",
+    "tools/_trial_transcript.py": "bad23e9f19c3523a426c1ad140aebc331f5b47b94ab95b2296b487765430fb3f",
+    "tools/_trial_workspace_changes.py": "c6635829bc4a557a760901e41b5bcb85e80c0cc3a5bb5fda1e42595678f33594",
+    "tools/_validator_cases.py": "c42df082de8ad465b56c5a61c67e6a8f2a8b1b711ac68b77ef969988bd159def",
+    "tools/_windows_appcontainer.py": "8729f1b1782104551eff6d340ee3fbc4d65b6f63c642a150e5f3056ad062e17e",
+    "tools/_windows_directory_reader.py": "35ad2ebd910a379a05177f18ac6fbd5c49b43f1c669f8844972cdcea46f5586f",
+    "tools/_windows_owned_python.py": "acf5b4e2d94758065cef125e5d6386ff741fe75e80bde2e66e0e67ac5e4a2651",
+    "tools/_windows_storage_budget.py": "154642098411576c97d516a0934d0cc3ad4a26e5bd6268296b380ca7c613579b",
+    "tools/_windows_submission_reader.py": "27cd274f560c34c1101ccb1a5d0d2f1a7b4806a587ec90799475cb689bda42ba",
+    "tools/_windows_trial_process.py": "b716265c9b8afd96c6534c722ee4bad62748dd6326a0178c15bafd69d0ad0a17",
+    "tools/appcontainer_dependencies.py": "317b3f95063960575cd69365722393e46db485acc5e0a3c4bffde7930f8c2cf9",
+    "tools/appcontainer_runtime.py": "0798526b4ac9c82906a20898a589ed49e57e5f63849c16db3da785bb2e53efaf",
+    "tools/appcontainer_validator_worker.py": "e333bff3e8d40c07c8e2623a4d00d25e7f0f729251f02d7ec07fe93b494b5ab9",
+    "tools/appcontainer_validator_worker_modern.py": "cd0b687c96263680590cd23a3818710c97510b89ef9555a17d11e9a3d4d1bdb2",
+    "tools/collect_agent_workspace.py": "fe18ba7a2512d7ad30d5e987cc59dcdd1db3c782a6da080d082ea7755abdebc8",
+    "tools/grade_agent_submission.py": "ae0a84a8c7671bba58e84b39762e0b7f3ebf1a8899e42c5cc0fae14ae4119aa8",
+    "tools/grade_swe_skills_submission.py": "db05e95c909af08113745f14d192ab552d46c95f87ce6b542b15f64ed82345a1",
+    "tools/grade_validator_appcontainer.py": "61b2052e8caa63eb175ac9fc10be27ada4a443fdb5a308764158df1879fa241f",
+    "tools/grade_validator_appcontainer_modern.py": "74942d47c6502f86a62770019e1cb0214145b5d9cd97fbe9a725ef69fd3c036c",
+    "tools/prepare_subject_dependencies.py": "172932b85e7dba4bf06c8f46e4966bf239d112903d9cc75359eab49a9c336cd4",
+    "tools/run_agent_trial.py": "b84cc9335107750bbf065d241e056ea6e4415a05597d8ba6d73381a64ff0cd41",
+    "tools/run_swe_skills_trial.py": "4791e532ee93947bf96b3a4a5ed41e303a459b253f162dde9743edbfd7199342",
+    "tools/transfer_benchmark_submission.py": "aa8abf2156e2274200360465dc8bf7b36e7218f7843c2682fe0d6d34414c6faa",
+    "tools/verify_swe_skills_bench_pytest_result.py": "5f6af07acc181f1c56cdd30feb3bc9fe4589b30991c204db4565eea574137545"
+  },
+  "focused_tests": {
+    "passed": 417,
+    "ruff": "passed",
+    "format": "passed",
+    "mypy": "passed",
+    "qualification_sha256": "2d6cf2e0be83d880b7e36a7ab65d1db140a8e13ceb791b229365a3c61dd01819"
+  },
+  "native_controls": [
+    {
+      "id": "signin-edited",
+      "passed": true,
+      "outcome": "task_passed",
+      "fixture_score": 1.0,
+      "native_counts": {
+        "errors": 0,
+        "failed": 0,
+        "passed": 11,
+        "skipped": 0,
+        "total": 11
+      },
+      "accepted_generation_requests": 2,
+      "canary_observed": false,
+      "authentication_file_unchanged": true,
+      "subject_store_read_write_denied": true,
+      "binding_released": true,
+      "listener_stopped": true,
+      "owned_processes_after_cleanup": 0,
+      "summary_sha256": "4d9fd39c14068f900201169a3027e5e45ac530fb2379375b77ed0caad9a02ed8"
+    },
+    {
+      "id": "signin-unchanged",
+      "passed": true,
+      "outcome": "task_failed",
+      "fixture_score": 0.0,
+      "native_counts": {
+        "errors": 0,
+        "failed": 10,
+        "passed": 0,
+        "skipped": 1,
+        "total": 11
+      },
+      "accepted_generation_requests": 1,
+      "canary_observed": false,
+      "authentication_file_unchanged": true,
+      "subject_store_read_write_denied": false,
+      "binding_released": true,
+      "listener_stopped": true,
+      "owned_processes_after_cleanup": 0,
+      "summary_sha256": "449403df1c4b41f91575f3a7d3ce402f91d6cd67231505b2fe61005e95fefe31"
+    },
+    {
+      "id": "signin-truncated",
+      "passed": true,
+      "outcome": "harness_error",
+      "fixture_score": null,
+      "native_counts": null,
+      "accepted_generation_requests": 12,
+      "canary_observed": false,
+      "authentication_file_unchanged": true,
+      "subject_store_read_write_denied": false,
+      "binding_released": true,
+      "listener_stopped": true,
+      "owned_processes_after_cleanup": 0,
+      "summary_sha256": "a2dc2dfc5bc4a295eff1031fe5adea759f4d8925fee51d89c0a1addf3a3074c8"
+    },
+    {
+      "id": "signin-edited-wrong-mode",
+      "passed": true,
+      "outcome": "harness_error",
+      "fixture_score": null,
+      "native_counts": null,
+      "accepted_generation_requests": 0,
+      "canary_observed": false,
+      "authentication_file_unchanged": true,
+      "subject_store_read_write_denied": false,
+      "binding_released": true,
+      "listener_stopped": true,
+      "owned_processes_after_cleanup": 0,
+      "summary_sha256": "f22952fdb87927e7c125cc75d73497512efe945f15915ad751f627ce80e20919"
+    },
+    {
+      "id": "signin-edited-leaky",
+      "passed": true,
+      "outcome": "harness_error",
+      "fixture_score": null,
+      "native_counts": null,
+      "accepted_generation_requests": 0,
+      "canary_observed": true,
+      "authentication_file_unchanged": true,
+      "subject_store_read_write_denied": false,
+      "binding_released": true,
+      "listener_stopped": true,
+      "owned_processes_after_cleanup": 0,
+      "summary_sha256": "fb27f1a55ed8fd01bd93dfb11a9f128e9ffd1d2fe737ad8ed89874caec9476fe"
+    },
+    {
+      "id": "signin-edited-instructions",
+      "passed": true,
+      "outcome": "harness_error",
+      "fixture_score": null,
+      "native_counts": null,
+      "accepted_generation_requests": 0,
+      "canary_observed": false,
+      "authentication_file_unchanged": true,
+      "subject_store_read_write_denied": false,
+      "binding_released": true,
+      "listener_stopped": true,
+      "owned_processes_after_cleanup": 0,
+      "summary_sha256": "107e2ae5418ce8b184f1308c980ff54e9372e73bb4e262ba01397354757b2659"
+    }
+  ],
+  "retained_config_leak_control": {
+    "passed": true,
+    "payloads": [
+      {
+        "name": "decoded-request-1.native.json",
+        "sha256": "b1c8815105da9f0c656959393dde8f77031e96776b839b4b02717cde62e8e811",
+        "config_canary_present": false
+      },
+      {
+        "name": "decoded-request-2.native.json",
+        "sha256": "a373144d653d3e9793314805ec9bd661aae63cf24be481126fce11458bb7dd5b",
+        "config_canary_present": true
+      },
+      {
+        "name": "decoded-request-3.native.json",
+        "sha256": "6ebc3231ce5612bb9744b3f969014bc79d35bbac85a4284fa6ade4da11b27311",
+        "config_canary_present": true
+      },
+      {
+        "name": "decoded-request-4.native.json",
+        "sha256": "9ca9faa2c9ad97468ac67ac483e4f274868ee7150133047a6e127d0641c18f74",
+        "config_canary_present": true
+      },
+      {
+        "name": "decoded-request-5.native.json",
+        "sha256": "01ee5f893be6dfac69e5ece036847012fafae9b135ac8ec1102b87009b6af03e",
+        "config_canary_present": true
+      },
+      {
+        "name": "decoded-request-6.native.json",
+        "sha256": "4d848005d1b78a252a89f7622f06d5c329d35793034cc2de6c46d57a29718931",
+        "config_canary_present": true
+      },
+      {
+        "name": "decoded-request-7.native.json",
+        "sha256": "cec3aa53580b306ff0d8f8698dc0faf1af2063e0eff860945beb70eb71a2925e",
+        "config_canary_present": true
+      },
+      {
+        "name": "decoded-request-8.native.json",
+        "sha256": "1ccd749511f85578998614fc29964c41fc8b11a8f94258a69e19f9b608d21d98",
+        "config_canary_present": true
+      }
+    ],
+    "transport_sha256": "f0af8c96f92fe7dcf7091c9575f5c39bc00b982262d557c976240fd62c674322",
+    "fixture_stderr_bytes": 0,
+    "qualification_sha256": "22d4ed8e347e6357e833b0a180d33e5714a42355dd03879e6ad29179f09a00a4"
+  },
+  "global_instruction_admission": "Reject AGENTS.md or AGENTS.override.md entries before and after status. No personal instruction bytes are read, modified or deleted. These checks do not freeze a shared profile against concurrent changes.",
+  "native_transport": "Built-in OpenAI provider, native WebSocket warmup/tool protocol and HTTP fallback; default retries retained within fixed owned process budgets. Local account/configuration service routes intentionally return 404 and analytics is consumed locally; this does not qualify real account services.",
+  "failure_retention": [
+    {
+      "attempt": "si1",
+      "cause": "Invalid synthetic JWT envelope"
+    },
+    {
+      "attempt": "si2",
+      "cause": "Reserved built-in provider overrides rejected"
+    },
+    {
+      "attempt": "si3",
+      "cause": "Legacy fixture lacked native transport routes and compression"
+    },
+    {
+      "attempt": "si4",
+      "cause": "Native warmup/tool protocol unsupported; real global AGENTS leakage observed"
+    },
+    {
+      "attempt": "si5",
+      "cause": "Default additional-tools protocol unsupported by fixture"
+    },
+    {
+      "attempt": "si6",
+      "cause": "Native restore support omitted the new pure declaration module; now covered by isolated import regression"
+    },
+    {
+      "attempt": "si7",
+      "cause": "Negative fixtures missed native retry fallback, current status wording and sanitized error classification"
+    },
+    {
+      "attempt": "si9",
+      "cause": "Detector passed with raw payload capture but fixture peer-abort traceback remained; explicitly recorded disconnect handling qualified in si10"
+    }
+  ],
+  "real_model_inferences": 0,
+  "model_efficacy_established": false,
+  "whole_model_trial_boundary_qualified": false,
+  "public_model_launch_guard": "closed",
+  "release_created": false,
+  "remaining": [
+    "Supported shared-profile stability and token refresh lifecycle",
+    "All remaining model-visible caches and common execution policy channels",
+    "Provider-resolved model identity and source-bound launch admission",
+    "Reusable fresh-install qualification entrypoint",
+    "Real matched external benchmark trials and demonstrated effect sizes"
+  ],
+  "full_suite": {
+    "passed": 2994,
+    "skipped": 18,
+    "frozen_inputs": 22205,
+    "qualification_sha256": "e2b6932257ebd0e3709e880d87a25562696159b597c00f1b9e33143597c13d7b",
+    "coverage": {
+      "line_rate": 0.7542,
+      "branch_rate": 0.7078,
+      "combined_line_branch_percent": 74.19,
+      "xml_sha256": "a21cb74702923c1f7c1a5d3e95e73ddb0d5c8754fe3fbea2303e278583ef598f"
+    }
+  }
+}

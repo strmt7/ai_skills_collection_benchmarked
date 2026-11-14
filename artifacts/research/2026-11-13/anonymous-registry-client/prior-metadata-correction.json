@@ -1,0 +1,8 @@
+{
+  "prior_summary_sha256": "23fa3a925370cf14d6de0208982a1e71845db2970271b2279cfc8869f16fe16a",
+  "unaccepted_metadata_field": "host_docker_credentials_used",
+  "prior_value": false,
+  "reason": "An empty auth map permits native credential-store auto-discovery. Prior access to host stores was not instrumented; that false flag is not accepted as isolation evidence. Exact manifest payload digests are separate from this access-boundary claim.",
+  "original_receipt_modified": false,
+  "native_canary_proof_sha256": "cbbd51d39592d072831a2e4f5fd654958dc51f4539429865d9baf53565abfa14"
+}

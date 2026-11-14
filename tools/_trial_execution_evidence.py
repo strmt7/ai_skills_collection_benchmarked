@@ -6,8 +6,11 @@ import re
 from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Any
 
+from _trial_catalog import PIN_SOURCE, decode_record
 from _trial_context import SYSTEM_VARIABLES, TrialContext, command
+from _trial_grading_process import DRIVER_PROCESS, DRIVER_STDERR, DRIVER_STDOUT
 from _trial_protocol import relative_path
+from _trial_signin import STORES, NativeSignin, status_completed
 from _trial_transcript import parse_events, strict_json
 
 SETUP_STAGES = {"workspace", "prepare", "context", "prompt", "command", "launch_record"}
@@ -25,8 +28,9 @@ FAILURE_OBSERVATIONS = {
         "stderr.txt",
         "patch.diff",
         "workspace-changes.json",
-        "grading.driver.stdout.native",
-        "grading.driver.stderr.native",
+        DRIVER_STDOUT,
+        DRIVER_STDERR,
+        DRIVER_PROCESS,
         *(
             f"collection/{name}"
             for name in ("launch.json", "input.native", "process.json", "result.json", "stdout.native", "stderr.native")
@@ -104,6 +108,8 @@ def context_record(context: TrialContext) -> dict[str, Any]:
         **{name: str(getattr(context, name)) for name in ("home", "workspace", "cli", "python")},
         "readable_roots": [str(path) for path in context.readable_roots],
         "tool_environment": context.tool_environment,
+        **({"signin": context.signin.record()} if context.signin is not None else {}),
+        **({"native_catalog": context.native_catalog.record()} if context.native_catalog is not None else {}),
     }
 
 
@@ -126,13 +132,35 @@ def _path(value: Any) -> PureWindowsPath:
 
 def _context(value: Any) -> TrialContext:
     fields = {"home", "workspace", "cli", "python", "readable_roots", "tool_environment"}
-    if not isinstance(value, dict) or set(value) != fields:
+    if not isinstance(value, dict) or set(value) not in (
+        fields,
+        fields | {"signin"},
+        fields | {"signin", "native_catalog"},
+    ):
         raise ValueError("launch must record the complete declared trial context")
     home, workspace, cli, python = (_path(value[name]) for name in ("home", "workspace", "cli", "python"))
     roots = value["readable_roots"]
     if not isinstance(roots, list) or not roots:
         raise ValueError("launch runtime read roots are missing")
     grants = tuple(_path(root) for root in roots)
+    signin = None
+    if "signin" in value:
+        record = value["signin"]
+        if (
+            not isinstance(record, dict)
+            or set(record) != {"home", "credential_store", "mode", "status_process"}
+            or record["mode"] != "chatgpt"
+            or not isinstance(record["credential_store"], str)
+            or record["credential_store"] not in STORES
+            or not status_completed(record["status_process"])
+        ):
+            raise ValueError("launch native sign-in admission is incomplete or invalid")
+        auth_home = _path(record["home"])
+        if auth_home == PureWindowsPath(auth_home.anchor) or any(
+            auth_home.is_relative_to(root) or root.is_relative_to(auth_home) for root in (home, workspace, *grants)
+        ):
+            raise ValueError("launch native sign-in storage overlaps subject, controller or runtime grants")
+        signin = NativeSignin(Path(str(auth_home)), record["credential_store"], record["status_process"])
     if len(set(grants)) != len(grants):
         raise ValueError("launch repeats runtime read roots")
     if home.is_relative_to(workspace) or workspace.is_relative_to(home):
@@ -186,8 +214,10 @@ def _context(value: Any) -> TrialContext:
         Path(str(cli)),
         Path(str(python)),
         tuple(Path(str(root)) for root in grants),
-        {},
+        {"CODEX_HOME": str(signin.home)} if signin is not None else {},
         environment,
+        signin,
+        decode_record(value["native_catalog"], Path(str(cli))) if "native_catalog" in value else None,
     )
 
 
@@ -202,6 +232,8 @@ def verify_launch(launch: Any, protocol: dict[str, Any]) -> None:
     ):
         raise ValueError("launch execution sources differ from the frozen protocol")
     context = _context(launch.get("context"))
+    if context.native_catalog is not None and context.native_catalog.source_sha256 != sources.get(PIN_SOURCE):
+        raise ValueError("Native model catalog evidence differs from the frozen execution source pin")
     if launch.get("command") != command(
         context, protocol["model"], protocol["reasoning_effort"], provider=protocol.get("provider")
     ):

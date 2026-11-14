@@ -4,15 +4,19 @@ from __future__ import annotations
 
 import hashlib
 import json
+from dataclasses import replace
 from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Any
 
 import pytest
 import summarize_agent_trials as summary
+from _trial_catalog import PIN_SOURCE
 from _trial_collection_contract import collector_command
 from _trial_collection_policy import default_collection_policy
 from _trial_context import TrialContext, command
+from _trial_execution_evidence import _context as read_context
 from _trial_execution_evidence import context_record, verify_launch, verify_process
+from _trial_signin import NativeSignin
 
 
 @pytest.fixture
@@ -98,6 +102,86 @@ def test_launch_context_excludes_controller_authentication(frozen):
     protocol, launch, _ = frozen
     assert "AUTHENTICATION_CANARY" not in json.dumps(launch)
     verify_launch(launch, protocol)
+
+
+def native_launch(frozen, native_catalog_pin):
+    protocol, launch, process = frozen
+    home = Path("C:\\native-signin")
+    admission = {
+        **process,
+        "output_limit_bytes": 65536,
+        "wall_time_limit_seconds": 20,
+        "job_memory_limit_bytes": 1024**3,
+        "active_process_limit": 8,
+        "write_io_limit_bytes": 1024**2,
+        "job_write_io_bytes": 24,
+        "write_io_observation_error": None,
+        "write_io_enforcement": "polled_job_transfer_accounting",
+        "hard_storage_quota": False,
+    }
+    context = replace(
+        read_context(launch["context"]),
+        controller_environment={"CODEX_HOME": str(home)},
+        signin=NativeSignin(home, "file", admission),
+        native_catalog=native_catalog_pin(Path(launch["context"]["cli"])),
+    )
+    assert context.native_catalog is not None
+    protocol["execution_source_sha256"][PIN_SOURCE] = context.native_catalog.source_sha256
+    launch["execution_source_sha256"] = protocol["execution_source_sha256"].copy()
+    protocol["provider"] = {"authentication": "codex_signin", "codex_home": str(home), "credential_store": "file"}
+    launch["context"] = context_record(context)
+    launch["command"] = command(context, protocol["model"], protocol["reasoning_effort"], provider=protocol["provider"])
+    return protocol, launch
+
+
+def test_native_signin_context_and_denied_store_round_trip_without_credentials(frozen, native_catalog_pin):
+    protocol, launch = native_launch(frozen, native_catalog_pin)
+    verify_launch(launch, protocol)
+    assert launch["context"]["signin"]["mode"] == "chatgpt"
+    assert "access_token" not in json.dumps(launch)
+
+
+@pytest.mark.parametrize("mutation", ["mode", "unfinished", "boolean", "overlap", "mismatched", "missing", "extra"])
+def test_unproven_or_substituted_native_signin_binding_is_rejected(frozen, mutation, native_catalog_pin):
+    protocol, launch = native_launch(frozen, native_catalog_pin)
+    record = launch["context"]["signin"]
+    if mutation == "mode":
+        record["mode"] = "apikey"
+    elif mutation == "unfinished":
+        record["status_process"]["job_active_processes_after_cleanup"] = 1
+    elif mutation == "boolean":
+        record["status_process"]["exit_code"] = False
+    elif mutation == "overlap":
+        record["home"] = launch["context"]["workspace"]
+    elif mutation == "mismatched":
+        protocol["provider"]["codex_home"] = "C:\\another-signin"
+    elif mutation == "missing":
+        del launch["context"]["signin"]
+    else:
+        record["credential"] = "private-canary"
+    with pytest.raises(ValueError):
+        verify_launch(launch, protocol)
+
+
+@pytest.mark.parametrize("fault", ["missing", "extra", "malformed", "pin-substitution", "command-override"])
+def test_native_catalog_evidence_is_bound_to_the_frozen_pin_and_entire_command(frozen, native_catalog_pin, fault):
+    protocol, launch = native_launch(frozen, native_catalog_pin)
+    record = launch["context"]["native_catalog"]
+    if fault == "missing":
+        del launch["context"]["native_catalog"]
+    elif fault == "extra":
+        record["unexpected"] = True
+    elif fault == "malformed":
+        record["pin"] = "{}"
+    elif fault == "pin-substitution":
+        pin = json.loads(record["pin"])
+        pin["resources"]["models.json"]["sha256"] = "b" * 64
+        record["pin"] = json.dumps(pin)
+    else:
+        index = launch["command"].index("exec")
+        launch["command"][index:index] = ["-c", 'model_catalog_json="C:/other/models.json"']
+    with pytest.raises(ValueError):
+        verify_launch(launch, protocol)
 
 
 def test_launch_must_match_the_frozen_provider_without_recording_its_credential(frozen):

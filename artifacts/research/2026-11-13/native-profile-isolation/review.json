@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-13",
+  "stable_release": {
+    "version": "0.167.2",
+    "tag": "rust-v0.167.2",
+    "published_at": "2026-11-11T22:44:46Z",
+    "url": "https://github.com/openai/codex/releases/tag/rust-v0.167.2",
+    "source_commit": "ce21072c90d32c40af7a55b60b2fb35c84a43a6a",
+    "capture_sha256": "6d70ec89d6edf7e54fc4d9abc1d1b788ed7e9070448bd4cfc10d4918d91f7e42"
+  },
+  "documentation": {
+    "url": "https://learn.chatgpt.com/docs/agent-configuration/agents-md",
+    "native_status": 200,
+    "native_success": true,
+    "provider_version": "0.9.5+catalog.portable4",
+    "native_result_sha256": "ee72af9a8078c864636b153e525c1defba7673e922e1339752db9515279f16fc",
+    "native_result_bytes": 1196949,
+    "raw_markdown_characters": 61477,
+    "reviewed_scope": "Guidance discovery, merge behavior, global overrides, custom home and troubleshooting. Navigation boilerplate is not evidence.",
+    "claim": "Global guidance is read from CODEX_HOME; the documented separate-profile mechanism changes that home. The page does not establish a credentials-preserving opt-out from global guidance."
+  },
+  "rejected_capture": {
+    "intended_url": "https://developers.openai.com/codex/guides/agents-md/",
+    "status": 308,
+    "reason": "Redirected to a different URL; retained but not admitted. The canonical destination was then crawled directly."
+  },
+  "source": [
+    {
+      "url": "https://github.com/openai/codex/blob/ce21072c90d32c40af7a55b60b2fb35c84a43a6a/codex-rs/core/src/config/auth_keyring.rs",
+      "capture_sha256": "681e5e09340d98828589868425f1d682047dcead0731fb806aec1d0cb6fc5dd2"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/ce21072c90d32c40af7a55b60b2fb35c84a43a6a/codex-rs/codex-home/src/instructions/mod.rs",
+      "capture_sha256": "17719c5dddb4709e881a78f58471ec59698e33f786d221d1003cdac538e81c90"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/ce21072c90d32c40af7a55b60b2fb35c84a43a6a/codex-rs/app-server/src/message_processor.rs",
+      "capture_sha256": "d03d58303aa41b3471c7e76b5698b1f6b92a4d3c1debf55ca40743788e6ec898"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/ce21072c90d32c40af7a55b60b2fb35c84a43a6a/codex-rs/core/src/agents_md_manager.rs",
+      "capture_sha256": "d0604de003e755bc1dbc985e2400c4a933e3d2ae5f43872f9861d183a39741e7"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/ce21072c90d32c40af7a55b60b2fb35c84a43a6a/codex-rs/core/src/agents_md.rs",
+      "capture_sha256": "943c8a03b5f951327b4d44063cb208427751386929420928d6fa67c1e8763581"
+    }
+  ],
+  "observations": [
+    "The reviewed Config and bootstrap AuthConfig constructors use the same codex_home as the instruction provider.",
+    "The app-server constructs its global instruction provider from config.codex_home.",
+    "Global and thread instruction contributions are separate fields; setting thread instructions does not remove the global field.",
+    "The project-document budget does not disable the native global provider."
+  ],
+  "decision": "No supported unattended isolation route was established in the reviewed documentation and source paths. Keep existing admission rejection and the public launch refusal. This is a bounded investigation, not a proof that no supported route can exist.",
+  "boundaries": {
+    "actual_credentials_read": false,
+    "actual_profile_modified": false,
+    "actual_global_instruction_content_read": false,
+    "vendor_base_instructions_replaced": false,
+    "model_invocations": 0,
+    "api_key_requested_or_used": false,
+    "release_created": false
+  },
+  "next_step": "Continue independent skill review and environment qualification. Reassess a documented official isolation mechanism or a separately authenticated clean profile only when available without changing the real user profile or requiring unattended user interaction.",
+  "agent_efficacy_established": false
+}

@@ -13,22 +13,40 @@ import sys
 import tempfile
 import time
 from collections.abc import Mapping
+from contextlib import ExitStack
 from pathlib import Path
 from typing import Any
 
 from _lib_b.io_utils import write_json
+from _trial_catalog import catalog_lease
 from _trial_collection import capture_owned
+from _trial_collection_contract import BOOTSTRAP
 from _trial_collection_manifest import validate_manifest
 from _trial_context import TrialContext, create_context, temporary_home
 from _trial_context import command as context_command
 from _trial_execution_evidence import FAILURE_OBSERVATIONS, context_record, failure_measurements
+from _trial_grading_process import (
+    DRIVER_EXIT_CODES,
+    DRIVER_MEMORY_LIMIT,
+    DRIVER_OUTPUT_LIMIT,
+    DRIVER_PROCESS,
+    DRIVER_PROCESS_LIMIT,
+    DRIVER_SOURCE,
+    DRIVER_STDERR,
+    DRIVER_STDOUT,
+    DRIVER_TIMEOUT,
+    driver_completed,
+    driver_environment,
+)
 from _trial_manifest import read_grading_manifest, validate_grade_checks
 from _trial_patch import diagnostic_patch
 from _trial_protocol import validate_declaration
-from _trial_provider import bind_credentials
+from _trial_provider import credential_lease
+from _trial_signin import SigninAdmissionError
 from _trial_transcript import parse_events, strict_json
 from _trial_workspace_changes import workspace_changes
 from _windows_appcontainer import checked_path as native_path
+from _windows_storage_budget import SpaceBudget
 from _windows_submission_reader import read_workspace_file
 from _windows_trial_process import run_owned
 from grade_validator_appcontainer_modern import EVALUATOR_FILES
@@ -40,21 +58,28 @@ EXECUTION_SOURCES = tuple(
             *EVALUATOR_FILES,
             "tools/run_agent_trial.py",
             "tools/_trial_context.py",
+            "tools/_trial_catalog.py",
+            "toolchains/bootstrap/codex.json",
             "tools/_trial_collection.py",
             "tools/_trial_collection_contract.py",
             "tools/_trial_collection_manifest.py",
             "tools/_trial_collection_policy.py",
             "tools/_trial_declarations.py",
             "tools/_trial_execution_evidence.py",
+            DRIVER_SOURCE,
             "tools/_trial_manifest.py",
             "tools/_trial_protocol.py",
             "tools/_trial_provider.py",
+            "tools/_trial_signin.py",
+            "tools/_trial_account_readiness.py",
+            "tools/check_native_trial_readiness.py",
             "tools/_trial_patch.py",
             "tools/_trial_transcript.py",
             "tools/_trial_workspace_changes.py",
             "tools/_windows_directory_reader.py",
             "tools/collect_agent_workspace.py",
             "tools/_windows_trial_process.py",
+            "tools/_windows_storage_budget.py",
             *(
                 f"tools/_lib_b/{name}.py"
                 for name in ("__init__", "determinism", "frontmatter_utils", "hashing", "io_utils", "logging_utils")
@@ -79,6 +104,7 @@ def exception_metadata(exception: Exception) -> dict[str, Any]:
     return {
         "error_type": type(exception).__name__,
         **{name: value if type(value) is int else None for name, value in codes.items()},
+        **({"native_signin_admission": exception.admission} if isinstance(exception, SigninAdmissionError) else {}),
     }
 
 
@@ -156,66 +182,86 @@ def external_grade(
     output: Path | None = None,
 ) -> dict[str, Any]:
     """Accept scored outcomes only when the driver reports the committed cases consistently."""
-    captures = (
-        {stream: output.with_name(f"{output.name}.driver.{stream}.native") for stream in ("stdout", "stderr")}
-        if output is not None
-        else {}
-    )
-    try:
-        if any(path.exists() for path in captures.values()):
-            return {"status": "harness_error", "error": "grading transport already exists; refusing to overwrite"}
-        for path in captures.values():
-            path.touch(exist_ok=False)
-    except OSError as exc:
-        return {"status": "harness_error", "error": f"grading transport unavailable: {type(exc).__name__}"}
-    if runtime_home is None or dependency_home is None or output is None:
+    if output is None:
         return {
             "status": "harness_error",
             "error": "Explicit confined runtime, dependency home and output are required",
         }
+    stdout_path, stderr_path, process_path = (
+        output.parent / name for name in (DRIVER_STDOUT, DRIVER_STDERR, DRIVER_PROCESS)
+    )
+    if any(path.exists() or path.is_symlink() for path in (stdout_path, stderr_path, process_path)):
+        return {"status": "harness_error", "error": "grading transport already exists; refusing to overwrite"}
+    process: dict[str, Any]
     try:
-        result = subprocess.run(
-            [
-                str(python.resolve()),
-                "-B",
-                str(ROOT / "tools/grade_agent_submission.py"),
-                str(checked_path(ROOT, task["grader"])),
-                str(workspace.resolve()),
-                "--fixture",
-                str(ROOT.resolve()),
-                "--revision",
-                task["source_commit"],
-                "--runtime-home",
-                str(runtime_home.resolve()),
-                "--dependency-home",
-                str(dependency_home.resolve()),
-                "--output",
-                str(output.resolve()),
-            ],
-            capture_output=True,
-            timeout=240,
-            check=False,
-        )
-    except subprocess.TimeoutExpired as exc:
-        captures["stdout"].write_bytes(exc.stdout or b"")
-        captures["stderr"].write_bytes(exc.stderr or b"")
+        with stdout_path.open("xb") as stdout, stderr_path.open("xb") as stderr:
+            if runtime_home is None or dependency_home is None:
+                process = {"exit_code": None, "termination_reason": "missing_configuration"}
+            else:
+                try:
+                    python = python.resolve()
+                    command = [
+                        str(python),
+                        "-I",
+                        "-S",
+                        "-B",
+                        "-c",
+                        BOOTSTRAP,
+                        str(ROOT / "tools"),
+                        str(ROOT / "tools/grade_agent_submission.py"),
+                        str(checked_path(ROOT, task["grader"])),
+                        str(workspace.resolve()),
+                        "--fixture",
+                        str(ROOT),
+                        "--revision",
+                        task["source_commit"],
+                        "--runtime-home",
+                        str(runtime_home.resolve()),
+                        "--dependency-home",
+                        str(dependency_home.resolve()),
+                        "--output",
+                        str(output.resolve()),
+                    ]
+                    with open(os.devnull, "rb") as stdin:
+                        process = run_owned(
+                            command,
+                            cwd=ROOT,
+                            stdin=stdin,
+                            stdout=stdout,
+                            stderr=stderr,
+                            timeout=DRIVER_TIMEOUT,
+                            output_limit=DRIVER_OUTPUT_LIMIT,
+                            memory_limit=DRIVER_MEMORY_LIMIT,
+                            process_limit=DRIVER_PROCESS_LIMIT,
+                            environment=driver_environment(python, output.parent.resolve()),
+                        )
+                except (OSError, RuntimeError, ValueError) as exc:
+                    process = {"exit_code": None, "termination_reason": "launch_error", **exception_metadata(exc)}
+        with process_path.open("x", encoding="utf-8", newline="\n") as stream:
+            json.dump(process, stream, sort_keys=True)
+            stream.write("\n")
+    except OSError as exc:
+        return {"status": "harness_error", "error": f"grading transport unavailable: {type(exc).__name__}"}
+    if process["termination_reason"] == "missing_configuration":
+        return {
+            "status": "harness_error",
+            "error": "Explicit confined runtime, dependency home and output are required",
+        }
+    if process["termination_reason"] == "timeout":
         return {"status": "harness_error", "error": "grading driver exceeded the 240-second grading limit"}
-    except (OSError, UnicodeError) as exc:
-        return {"status": "harness_error", "error": f"grading driver unavailable or invalid text: {type(exc).__name__}"}
-    captures["stdout"].write_bytes(result.stdout)
-    captures["stderr"].write_bytes(result.stderr)
+    if not driver_completed(process, stdout_path.stat().st_size + stderr_path.stat().st_size):
+        return {"status": "harness_error", "error": "grading driver did not finish inside its declared process limits"}
     try:
-        response = strict_json(result.stdout.decode("utf-8"))
-    except (UnicodeError, TypeError, ValueError):
+        response = strict_json(stdout_path.read_bytes().decode("utf-8"))
+    except (OSError, UnicodeError, TypeError, ValueError):
         return {"status": "harness_error", "error": "grading driver returned invalid JSON"}
     if (
         not isinstance(response, dict)
         or not isinstance(response.get("status"), str)
-        or response["status"] not in {"task_passed", "task_failed", "harness_error"}
+        or response["status"] not in DRIVER_EXIT_CODES
     ):
         return {"status": "harness_error", "error": "grading driver returned an invalid status"}
-    expected_exit = {"task_passed": 0, "task_failed": 1, "harness_error": 2}
-    if result.returncode != expected_exit[response["status"]]:
+    if process["exit_code"] != DRIVER_EXIT_CODES[response["status"]]:
         return {"status": "harness_error", "error": "grading driver exit status contradicts its result"}
     try:
         validate_grade_checks(response, expected_cases, scored=response["status"] != "harness_error")
@@ -225,7 +271,14 @@ def external_grade(
 
 
 def execute_agent(
-    invocation: list[str], prompt: str, output: Path, timeout: float, *, context: TrialContext
+    invocation: list[str],
+    prompt: str,
+    output: Path,
+    timeout: float,
+    *,
+    context: TrialContext,
+    write_io_limit: int | None = None,
+    space_budget: SpaceBudget | None = None,
 ) -> tuple[int | None, bool, float]:
     """Run one agent command and retain its transcript, errors and timing."""
     started = time.monotonic()
@@ -248,6 +301,8 @@ def execute_agent(
                 memory_limit=2 * 1024 * 1024 * 1024,
                 process_limit=32,
                 environment=context.controller_environment,
+                write_io_limit=write_io_limit,
+                **({"space_budget": space_budget} if space_budget is not None else {}),
             )
         except (OSError, RuntimeError, ValueError) as exc:
             process = {
@@ -309,7 +364,7 @@ def collect_evidence(
 
 def grading_evidence(grade: dict[str, Any]) -> list[str]:
     """Admit only the confined grader's declared controller files and native streams."""
-    names = ["grading.driver.stdout.native", "grading.driver.stderr.native"]
+    names = [DRIVER_STDOUT, DRIVER_STDERR, DRIVER_PROCESS]
     if grade["status"] in {"task_passed", "task_failed"}:
         names.extend(["grading/result.json", "grading/checks.json"])
         for check in grade["checks"]:
@@ -512,174 +567,181 @@ def _run_controller(
     must supply their owned deterministic endpoint and canary credentials. They
     may not use this internal function for real-provider or model requests.
     """
-    protocol, protocol_hash = validate_protocol(protocol_path, output)
-    validate_declaration(protocol, condition)
-    expected_cases, _ = read_grading_manifest(protocol_path, protocol, protocol_hash)
-    output = native_path(output)
-    output.mkdir(parents=True, exist_ok=False)
-    started, stage, workspace = time.monotonic(), "workspace", None
-    record_attempt(output, protocol_hash, condition, "setup", stage, workspace)
-    try:
-        workspace = Path(tempfile.mkdtemp(prefix="skills-agent-trial-"))
-        stage = "prepare"
+    with ExitStack() as credentials:
+        protocol, protocol_hash = validate_protocol(protocol_path, output)
+        validate_declaration(protocol, condition)
+        expected_cases, _ = read_grading_manifest(protocol_path, protocol, protocol_hash)
+        output = native_path(output)
+        output.mkdir(parents=True, exist_ok=False)
+        started, stage, workspace = time.monotonic(), "workspace", None
         record_attempt(output, protocol_hash, condition, "setup", stage, workspace)
-        workspace, prompt, inputs = prepare(protocol, condition, python, workspace=workspace)
-        stage = "context"
-        record_attempt(output, protocol_hash, condition, "setup", stage, workspace)
-        context = create_context(temporary_home(), workspace, cli, python, readable_roots)
-        if "provider" in protocol:
-            context = bind_credentials(
-                context, protocol["provider"], os.environ if credential_source is None else credential_source
-            )
-        stage = "prompt"
-        record_attempt(output, protocol_hash, condition, "setup", stage, workspace)
-        (output / "prompt.txt").write_text(prompt, encoding="utf-8")
-        stage = "command"
-        record_attempt(output, protocol_hash, condition, "setup", stage, workspace)
-        invocation = command(protocol, context)
-        stage = "launch_record"
-        record_attempt(output, protocol_hash, condition, "setup", stage, workspace)
-        write_json(
-            output / "launch.json",
-            {
-                "command": invocation,
-                "protocol_sha256": protocol_hash,
-                "execution_source_sha256": protocol["execution_source_sha256"],
-                "context": context_record(context),
-            },
-        )
-    except Exception as exc:
-        return failed_attempt(
-            protocol,
-            protocol_hash,
-            condition,
-            output,
-            stage,
-            exc,
-            time.monotonic() - started,
-            workspace,
-            phase="setup_failed",
-        )
-    stage = "agent"
-    try:
-        record_attempt(output, protocol_hash, condition, "executing", "agent", workspace)
-        exit_code, timed_out, elapsed = execute_agent(
-            invocation, prompt, output, protocol["time_limit_seconds"], context=context
-        )
-        stage = "transcript"
-        record_attempt(output, protocol_hash, condition, "executing", stage, workspace)
-        transcript_error = None
         try:
-            events = read_events(output / "transcript.jsonl", allow_truncated_final=timed_out or exit_code != 0)
-        except ValueError as exc:
-            transcript_error = str(exc)
-            events = []
-        usage = next((event.get("usage") for event in reversed(events) if event["type"] == "turn.completed"), None)
-        completed = any(event["type"] == "turn.completed" for event in events)
-        commands = [
-            event["item"]
-            for event in events
-            if event["type"] == "item.completed" and event.get("item", {}).get("type") == "command_execution"
-        ]
-        stage = "submission"
-        record_attempt(output, protocol_hash, condition, "collecting", stage, workspace)
-        submission, changes, violations, collection_errors = collect_submission(
-            workspace, output, inputs, protocol, python=python
-        )
-        grading_ran = exit_code == 0 and not timed_out and completed and not transcript_error and not collection_errors
-        stage = "grader"
-        record_attempt(output, protocol_hash, condition, "grading", stage, workspace)
-        grade = (
-            {
-                "status": "harness_error",
-                "error": "grading skipped because execution or collected evidence is incomplete",
-            }
-            if not grading_ran
-            else external_grade(
-                protocol["task"],
-                submission,
-                python,
-                expected_cases,
-                runtime_home=runtime_home,
-                dependency_home=dependency_home,
-                output=output / "grading",
+            workspace = Path(tempfile.mkdtemp(prefix="skills-agent-trial-"))
+            stage = "prepare"
+            record_attempt(output, protocol_hash, condition, "setup", stage, workspace)
+            workspace, prompt, inputs = prepare(protocol, condition, python, workspace=workspace)
+            stage = "context"
+            record_attempt(output, protocol_hash, condition, "setup", stage, workspace)
+            context = create_context(temporary_home(), workspace, cli, python, readable_roots)
+            if "provider" in protocol:
+                context = credentials.enter_context(
+                    credential_lease(
+                        context, protocol["provider"], os.environ if credential_source is None else credential_source
+                    )
+                )
+            context = credentials.enter_context(catalog_lease(context, protocol.get("provider")))
+            stage = "prompt"
+            record_attempt(output, protocol_hash, condition, "setup", stage, workspace)
+            (output / "prompt.txt").write_text(prompt, encoding="utf-8")
+            stage = "command"
+            record_attempt(output, protocol_hash, condition, "setup", stage, workspace)
+            invocation = command(protocol, context)
+            stage = "launch_record"
+            record_attempt(output, protocol_hash, condition, "setup", stage, workspace)
+            write_json(
+                output / "launch.json",
+                {
+                    "command": invocation,
+                    "protocol_sha256": protocol_hash,
+                    "execution_source_sha256": protocol["execution_source_sha256"],
+                    "context": context_record(context),
+                },
             )
-        )
-        stage = "evidence"
-        record_attempt(output, protocol_hash, condition, "grading", stage, workspace)
-        # Policy/tool launch errors are harness failures, not evidence that the
-        # model failed the coding task. Keep them in accounting with actual usage.
-        evidence_names = [
-            "attempt.json",
-            "prompt.txt",
-            "input.native",
-            "launch.json",
-            "process.json",
-            "transcript.jsonl",
-            "stderr.txt",
-            "patch.diff",
-            "workspace-changes.json",
-            *(f"collection/{name}" for name in ("launch.json", "input.native", "process.json", "result.json")),
-        ]
-        collection = strict_json((output / "collection/result.json").read_text(encoding="utf-8"))
-        evidence_names.extend(
-            f"collection/{name}"
-            for name in ("stdout.native", "stderr.native")
-            if (output / "collection" / name).exists()
-        )
-        if collection["status"] == "collected":
-            evidence_names.extend("submission/" + name for name in collection["files"])
-        if grading_ran:
+        except Exception as exc:
+            return failed_attempt(
+                protocol,
+                protocol_hash,
+                condition,
+                output,
+                stage,
+                exc,
+                time.monotonic() - started,
+                workspace,
+                phase="setup_failed",
+            )
+        stage = "agent"
+        try:
+            record_attempt(output, protocol_hash, condition, "executing", "agent", workspace)
+            exit_code, timed_out, elapsed = execute_agent(
+                invocation, prompt, output, protocol["time_limit_seconds"], context=context
+            )
+            credentials.close()
+            stage = "transcript"
+            record_attempt(output, protocol_hash, condition, "executing", stage, workspace)
+            transcript_error = None
             try:
-                evidence_names.extend(grading_evidence(grade))
+                events = read_events(output / "transcript.jsonl", allow_truncated_final=timed_out or exit_code != 0)
             except ValueError as exc:
-                collection_errors.append(str(exc))
-        record_attempt(output, protocol_hash, condition, "finished", "result", workspace)
-        evidence_hashes, evidence_errors = collect_evidence(output, evidence_names)
-        collection_errors.extend(evidence_errors)
-        blocked = "blocked by policy" in (output / "stderr.txt").read_text(encoding="utf-8", errors="replace")
-        status = trial_status(
-            timed_out=timed_out,
-            exit_code=exit_code,
-            completed=completed,
-            collection_errors=collection_errors,
-            transcript_error=transcript_error,
-            blocked=blocked,
-            violations=violations,
-            grade=grade,
-        )
-        result = {
-            **trial_identity(protocol, protocol_hash, condition),
-            "attempt_phase": "finished",
-            "status": status,
-            "usage": usage,
-            "elapsed_seconds": elapsed,
-            "process_exit_code": exit_code,
-            "commands_completed": None if transcript_error else len(commands),
-            "transcript_error": transcript_error,
-            "changed_source_files": changes,
-            "scope_violations": violations,
-            "evidence_collection_errors": collection_errors,
-            "grader": grade,
-            "limitations": protocol["limitations"],
-            "evidence_sha256": evidence_hashes,
-            "evidence_scope": "Declared controller outputs, collected submission and native grading streams; no scratch traversal",
-        }
-        stage = "result"
-        write_json(output / "result.json", result)
-        return result
-    except Exception as exc:
-        return failed_attempt(
-            protocol,
-            protocol_hash,
-            condition,
-            output,
-            stage,
-            exc,
-            time.monotonic() - started,
-            workspace,
-            phase="controller_failed",
-        )
+                transcript_error = str(exc)
+                events = []
+            usage = next((event.get("usage") for event in reversed(events) if event["type"] == "turn.completed"), None)
+            completed = any(event["type"] == "turn.completed" for event in events)
+            commands = [
+                event["item"]
+                for event in events
+                if event["type"] == "item.completed" and event.get("item", {}).get("type") == "command_execution"
+            ]
+            stage = "submission"
+            record_attempt(output, protocol_hash, condition, "collecting", stage, workspace)
+            submission, changes, violations, collection_errors = collect_submission(
+                workspace, output, inputs, protocol, python=python
+            )
+            grading_ran = (
+                exit_code == 0 and not timed_out and completed and not transcript_error and not collection_errors
+            )
+            stage = "grader"
+            record_attempt(output, protocol_hash, condition, "grading", stage, workspace)
+            grade = (
+                {
+                    "status": "harness_error",
+                    "error": "grading skipped because execution or collected evidence is incomplete",
+                }
+                if not grading_ran
+                else external_grade(
+                    protocol["task"],
+                    submission,
+                    python,
+                    expected_cases,
+                    runtime_home=runtime_home,
+                    dependency_home=dependency_home,
+                    output=output / "grading",
+                )
+            )
+            stage = "evidence"
+            record_attempt(output, protocol_hash, condition, "grading", stage, workspace)
+            # Policy/tool launch errors are harness failures, not evidence that the
+            # model failed the coding task. Keep them in accounting with actual usage.
+            evidence_names = [
+                "attempt.json",
+                "prompt.txt",
+                "input.native",
+                "launch.json",
+                "process.json",
+                "transcript.jsonl",
+                "stderr.txt",
+                "patch.diff",
+                "workspace-changes.json",
+                *(f"collection/{name}" for name in ("launch.json", "input.native", "process.json", "result.json")),
+            ]
+            collection = strict_json((output / "collection/result.json").read_text(encoding="utf-8"))
+            evidence_names.extend(
+                f"collection/{name}"
+                for name in ("stdout.native", "stderr.native")
+                if (output / "collection" / name).exists()
+            )
+            if collection["status"] == "collected":
+                evidence_names.extend("submission/" + name for name in collection["files"])
+            if grading_ran:
+                try:
+                    evidence_names.extend(grading_evidence(grade))
+                except ValueError as exc:
+                    collection_errors.append(str(exc))
+            record_attempt(output, protocol_hash, condition, "finished", "result", workspace)
+            evidence_hashes, evidence_errors = collect_evidence(output, evidence_names)
+            collection_errors.extend(evidence_errors)
+            blocked = "blocked by policy" in (output / "stderr.txt").read_text(encoding="utf-8", errors="replace")
+            status = trial_status(
+                timed_out=timed_out,
+                exit_code=exit_code,
+                completed=completed,
+                collection_errors=collection_errors,
+                transcript_error=transcript_error,
+                blocked=blocked,
+                violations=violations,
+                grade=grade,
+            )
+            result = {
+                **trial_identity(protocol, protocol_hash, condition),
+                "attempt_phase": "finished",
+                "status": status,
+                "usage": usage,
+                "elapsed_seconds": elapsed,
+                "process_exit_code": exit_code,
+                "commands_completed": None if transcript_error else len(commands),
+                "transcript_error": transcript_error,
+                "changed_source_files": changes,
+                "scope_violations": violations,
+                "evidence_collection_errors": collection_errors,
+                "grader": grade,
+                "limitations": protocol["limitations"],
+                "evidence_sha256": evidence_hashes,
+                "evidence_scope": "Declared controller outputs, collected submission and native grading streams; no scratch traversal",
+            }
+            stage = "result"
+            write_json(output / "result.json", result)
+            return result
+        except Exception as exc:
+            return failed_attempt(
+                protocol,
+                protocol_hash,
+                condition,
+                output,
+                stage,
+                exc,
+                time.monotonic() - started,
+                workspace,
+                phase="controller_failed",
+            )
 
 
 def build_parser() -> argparse.ArgumentParser:

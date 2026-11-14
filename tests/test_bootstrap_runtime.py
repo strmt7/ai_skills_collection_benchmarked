@@ -36,6 +36,12 @@ def test_doctor_checks_the_complete_dependency_graph(tmp_path: Path, monkeypatch
         doctor.observation(tmp_path, [lock], [])
 
 
+def test_strict_package_imports_reject_ambient_modules(tmp_path, monkeypatch, isolated_imports):
+    monkeypatch.setattr(doctor.importlib.metadata, "distributions", lambda **kwargs: [])
+    with pytest.raises(ValueError, match="owned packages"):
+        doctor.observation(tmp_path, [], ["json"], require_package_imports=True)
+
+
 @pytest.mark.parametrize(
     ("locked", "installed", "message"),
     [

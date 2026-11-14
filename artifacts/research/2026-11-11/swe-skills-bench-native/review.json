@@ -1,0 +1,121 @@
+{
+  "cases": [
+    {
+      "case": "unchanged",
+      "failed": 0,
+      "native_sha256": {
+        "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "05dc92a3be0e22a44e14f2121cafe8fd649b04f54d0436a1c02207dc4ef547bf",
+        "xml": "6768c462a715e55beca90e20eae3cd77c4ea8d0e03d64243d19c7e07868436fe"
+      },
+      "passed": 10,
+      "stage": {
+        "files": 110,
+        "iterutils_sha256": "35f92474d72992a10ee32553a3fb854c6a293c5f95215fbbc22f5482f2f7e4ea",
+        "original_iterutils_sha256": "35f92474d72992a10ee32553a3fb854c6a293c5f95215fbbc22f5482f2f7e4ea",
+        "verifier_sha256": "b09a0ce0b57b6ca5642bfeb62245bbbb8b81f17d273847138635f0d805234237"
+      },
+      "total": 10
+    },
+    {
+      "case": "syntax-error",
+      "failed": 3,
+      "native_sha256": {
+        "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "56f0017a3c14df8f2ee56e73d85a50764ae0a21704fbf5a84b5f48b91558d8c2",
+        "xml": "89dd8716ea0104e04dee83c2d5f30ca58a9943e45b9f282b37ae53f85f2efa43"
+      },
+      "passed": 7,
+      "stage": {
+        "files": 110,
+        "iterutils_sha256": "1b54f060f3fb28151c856ab4c138fb836fe7dda9c40a35f1c53f8b055fc2bfbd",
+        "original_iterutils_sha256": "35f92474d72992a10ee32553a3fb854c6a293c5f95215fbbc22f5482f2f7e4ea",
+        "verifier_sha256": "b09a0ce0b57b6ca5642bfeb62245bbbb8b81f17d273847138635f0d805234237"
+      },
+      "total": 10
+    }
+  ],
+  "execution": {
+    "author_docker_manager_used": false,
+    "author_result_pipeline_used": false,
+    "cache_directory": "/tmp/pytest-cache",
+    "container_network": "none",
+    "fault_suffix_sha256": "e43501f806b16f488721ffec584362ce5d097f118e367e861d91d0b01cd494bc",
+    "fresh_container_per_control": true,
+    "host_mounts": 0,
+    "junitxml_argument": "--junitxml=/tmp/pytest.xml",
+    "memory_limit_bytes": 805306368,
+    "native_command": "python -m pytest /workspace/tests/test_python_anti_patterns.py -v --tb=short -rs",
+    "native_execution_summary_sha256": "906bdf7c018a08cf9daa8f2acc5b736076b8fb7486e78925bed4318ac429337f",
+    "native_runner_source": "https://github.com/ControllableModel/SWE-Skills-Bench/blob/4d3450d9216a590a8726fcb3604b5143daca776b/src/evaluator/unit_test_runner.py",
+    "process_limit": 64,
+    "qualification_implementation_sha256": "daf825606b9e77b06b0bae0a1851091d6deb7b6c536194e5fc7a71f0d2a33df5",
+    "read_only_container_root": true,
+    "scorer_is_unprivileged": true,
+    "scratch_tmpfs_bytes": 67108864,
+    "workspace_tmpfs_bytes": 8388608
+  },
+  "image": {
+    "compressed_layer_bytes": 547160623,
+    "config_sha256": "bcd148db78f6860c1e31f59a736d8239bb564598207da7a5ecf87f269ab46e29",
+    "containers_created": 0,
+    "id": "sha256:bcd148db78f6860c1e31f59a736d8239bb564598207da7a5ecf87f269ab46e29",
+    "image": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+    "layer_count": 11,
+    "manifest_sha256": "51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+    "model_requests": 0,
+    "processes_after_cleanup": 0,
+    "published_run_image_equivalence_proven": false,
+    "pytest_version": "9.0.2",
+    "python_version": "3.12.3",
+    "size": 1387249574
+  },
+  "kind": "native-development-verifier-control",
+  "limits": [
+    "The checked-in Docker manager and enroot backend were not used. The publisher image was pinned after publication of the archive.",
+    "The original author verifier ran with JUnit output and an isolated cache. Native console, JUnit case counts and exit status agreed.",
+    "The unchanged source already reached the verifier ceiling. This development cell is excluded from untouched evaluation regardless of score.",
+    "No models, agent submissions, collection skills or Karpathy instructions were evaluated."
+  ],
+  "model_requests": 0,
+  "publisher_inputs": {
+    "task.md": {
+      "blob": "0dac16650a721f93ef2c1e465457139a86e80094",
+      "bytes": 1551,
+      "sha256": "2127c82884b2363c0a1d0a54e3b024bb5c0f71cc0372fdf095a4ea96508e13d4"
+    },
+    "verifier.py.txt": {
+      "blob": "e1a79055a3c69db1c6b2aedd21837912468d3420",
+      "bytes": 4542,
+      "sha256": "b09a0ce0b57b6ca5642bfeb62245bbbb8b81f17d273847138635f0d805234237"
+    }
+  },
+  "schema_version": 1,
+  "selection": {
+    "batch": "batch1",
+    "holdout_eligible": false,
+    "model_requests": 0,
+    "publisher_commit": "4d3450d9216a590a8726fcb3604b5143daca776b",
+    "publisher_repo": "ControllableModel/SWE-Skills-Bench",
+    "reason": "Public development-only batch1 cell, smallest declared verifier byte size among Python image cells with no setup commands and a pinned repository commit; selection based on source metadata, without outcome use.",
+    "skill": "python-anti-patterns",
+    "target_commit": "207651ee6055aabd0d9cdeac2e00140cdc208d44",
+    "target_repo": "mahmoud/boltons"
+  },
+  "source": {
+    "archive_sha256": "c0497e3622d2d4ede46c73f0b3530cb120c57e9133164a6bd01de226a1b72ccf",
+    "request": {
+      "bytes": 244731,
+      "status": 200,
+      "url": "https://codeload.github.com/mahmoud/boltons/tar.gz/207651ee6055aabd0d9cdeac2e00140cdc208d44"
+    },
+    "source_commit": "207651ee6055aabd0d9cdeac2e00140cdc208d44",
+    "source_files_verified": 110,
+    "source_tree": "b15dd1d55e0a8b16cf84e1096b6a12a460b53adf",
+    "unpacked_bytes": 910843
+  },
+  "upstream_unchanged_suite": {
+    "passed": 431,
+    "stdout_sha256": "114dab975e9c2d31820c5911f178d98bc310b9ae8a85908a13f7e8e3512b6ef2"
+  }
+}

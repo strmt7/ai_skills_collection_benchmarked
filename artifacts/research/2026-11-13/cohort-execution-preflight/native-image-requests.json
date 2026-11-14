@@ -1,0 +1,260 @@
+{
+  "requests": [
+    {
+      "id": "help",
+      "operation": [
+        "manifest",
+        "inspect",
+        "--help"
+      ],
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 608,
+        "output_limit_bytes": 2097152,
+        "wall_time_limit_seconds": 45.0,
+        "job_memory_limit_bytes": 536870912,
+        "active_process_limit": 8,
+        "explicit_environment": true,
+        "write_io_limit_bytes": 16777216,
+        "job_write_io_bytes": 608,
+        "write_io_overshoot_bytes": 0,
+        "write_io_observation_error": null,
+        "write_io_enforcement": "polled_job_transfer_accounting",
+        "hard_storage_quota": false
+      }
+    },
+    {
+      "id": "image-01",
+      "operation": [
+        "manifest",
+        "inspect",
+        "--verbose",
+        "zhangyiiiiii/swe-skills-bench-clojure:latest"
+      ],
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 5793,
+        "output_limit_bytes": 2097152,
+        "wall_time_limit_seconds": 45.0,
+        "job_memory_limit_bytes": 536870912,
+        "active_process_limit": 8,
+        "explicit_environment": true,
+        "write_io_limit_bytes": 16777216,
+        "job_write_io_bytes": 5793,
+        "write_io_overshoot_bytes": 0,
+        "write_io_observation_error": null,
+        "write_io_enforcement": "polled_job_transfer_accounting",
+        "hard_storage_quota": false
+      }
+    },
+    {
+      "id": "image-02",
+      "operation": [
+        "manifest",
+        "inspect",
+        "--verbose",
+        "zhangyiiiiii/swe-skills-bench-golang:latest"
+      ],
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 7699,
+        "output_limit_bytes": 2097152,
+        "wall_time_limit_seconds": 45.0,
+        "job_memory_limit_bytes": 536870912,
+        "active_process_limit": 8,
+        "explicit_environment": true,
+        "write_io_limit_bytes": 16777216,
+        "job_write_io_bytes": 7699,
+        "write_io_overshoot_bytes": 0,
+        "write_io_observation_error": null,
+        "write_io_enforcement": "polled_job_transfer_accounting",
+        "hard_storage_quota": false
+      }
+    },
+    {
+      "id": "image-03",
+      "operation": [
+        "manifest",
+        "inspect",
+        "--verbose",
+        "zhangyiiiiii/swe-skills-bench-node-ext:latest"
+      ],
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 1,
+        "output_bytes": 98,
+        "output_limit_bytes": 2097152,
+        "wall_time_limit_seconds": 45.0,
+        "job_memory_limit_bytes": 536870912,
+        "active_process_limit": 8,
+        "explicit_environment": true,
+        "write_io_limit_bytes": 16777216,
+        "job_write_io_bytes": 98,
+        "write_io_overshoot_bytes": 0,
+        "write_io_observation_error": null,
+        "write_io_enforcement": "polled_job_transfer_accounting",
+        "hard_storage_quota": false
+      }
+    },
+    {
+      "id": "image-04",
+      "operation": [
+        "manifest",
+        "inspect",
+        "--verbose",
+        "zhangyiiiiii/swe-skills-bench-node22-ext:latest"
+      ],
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 1,
+        "output_bytes": 98,
+        "output_limit_bytes": 2097152,
+        "wall_time_limit_seconds": 45.0,
+        "job_memory_limit_bytes": 536870912,
+        "active_process_limit": 8,
+        "explicit_environment": true,
+        "write_io_limit_bytes": 16777216,
+        "job_write_io_bytes": 98,
+        "write_io_overshoot_bytes": 0,
+        "write_io_observation_error": null,
+        "write_io_enforcement": "polled_job_transfer_accounting",
+        "hard_storage_quota": false
+      }
+    },
+    {
+      "id": "image-05",
+      "operation": [
+        "manifest",
+        "inspect",
+        "--verbose",
+        "zhangyiiiiii/swe-skills-bench-python:latest"
+      ],
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 6268,
+        "output_limit_bytes": 2097152,
+        "wall_time_limit_seconds": 45.0,
+        "job_memory_limit_bytes": 536870912,
+        "active_process_limit": 8,
+        "explicit_environment": true,
+        "write_io_limit_bytes": 16777216,
+        "job_write_io_bytes": 6268,
+        "write_io_overshoot_bytes": 0,
+        "write_io_observation_error": null,
+        "write_io_enforcement": "polled_job_transfer_accounting",
+        "hard_storage_quota": false
+      }
+    },
+    {
+      "id": "image-06",
+      "operation": [
+        "manifest",
+        "inspect",
+        "--verbose",
+        "zhangyiiiiii/swe-skills-bench-ruby:latest"
+      ],
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 5789,
+        "output_limit_bytes": 2097152,
+        "wall_time_limit_seconds": 45.0,
+        "job_memory_limit_bytes": 536870912,
+        "active_process_limit": 8,
+        "explicit_environment": true,
+        "write_io_limit_bytes": 16777216,
+        "job_write_io_bytes": 5789,
+        "write_io_overshoot_bytes": 0,
+        "write_io_observation_error": null,
+        "write_io_enforcement": "polled_job_transfer_accounting",
+        "hard_storage_quota": false
+      }
+    },
+    {
+      "id": "image-07",
+      "operation": [
+        "manifest",
+        "inspect",
+        "--verbose",
+        "zhangyiiiiii/swe-skills-bench-rust:latest"
+      ],
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 5795,
+        "output_limit_bytes": 2097152,
+        "wall_time_limit_seconds": 45.0,
+        "job_memory_limit_bytes": 536870912,
+        "active_process_limit": 8,
+        "explicit_environment": true,
+        "write_io_limit_bytes": 16777216,
+        "job_write_io_bytes": 5795,
+        "write_io_overshoot_bytes": 0,
+        "write_io_observation_error": null,
+        "write_io_enforcement": "polled_job_transfer_accounting",
+        "hard_storage_quota": false
+      }
+    }
+  ],
+  "unresolved": [
+    {
+      "repository": "zhangyiiiiii/swe-skills-bench-node-ext",
+      "native_exit_code": 1,
+      "stderr": "errors:\ndenied: requested access to the resource is denied\nunauthorized: authentication required\n\n",
+      "stderr_sha256": "0cf9cfbbd6a5ffecf9b2f3c48c56b93bde9c1ae7aa0c47139508ac2eb0807865"
+    },
+    {
+      "repository": "zhangyiiiiii/swe-skills-bench-node22-ext",
+      "native_exit_code": 1,
+      "stderr": "errors:\ndenied: requested access to the resource is denied\nunauthorized: authentication required\n\n",
+      "stderr_sha256": "0cf9cfbbd6a5ffecf9b2f3c48c56b93bde9c1ae7aa0c47139508ac2eb0807865"
+    }
+  ],
+  "all_child_jobs_closed": true,
+  "image_layers_downloaded": 0,
+  "capture_passed": false
+}

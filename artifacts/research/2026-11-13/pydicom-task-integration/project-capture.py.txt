@@ -1,0 +1,93 @@
+"""Verify the complete pinned project archive against its connected Git tree."""
+import hashlib
+import json
+import tarfile
+import urllib.parse
+import urllib.request
+from pathlib import Path, PurePosixPath
+
+S = Path(__file__).resolve().parent
+source = S / 'pydicom-integration-source-v1'
+read = lambda p: json.loads(p.read_bytes())
+commit = read(source / 'repo-commit.native.json')
+tree = read(source / 'repo-tree.native.json')
+expected_commit = 'f15214fb9bc83d063f481552c487b02b28bfb7cc'
+assert commit['sha'] == expected_commit and commit['tree']['sha'] == tree['sha'] == '77cf924c4d3b0150d05345d20d561eed731a6f8b'
+assert tree['truncated'] is False and not any(row['type'] == 'commit' for row in tree['tree'])
+index = {row['path']: row for row in tree['tree']}
+assert len(index) == len(tree['tree']) and len(index) <= 10000
+directories = {'': []}
+for name, row in index.items():
+    path = PurePosixPath(name)
+    assert not path.is_absolute() and '..' not in path.parts
+    parent = path.parent.as_posix()
+    directories.setdefault('' if parent == '.' else parent, []).append(row)
+    if row['type'] == 'tree':
+        directories.setdefault(name, [])
+calculated = {}
+for directory in sorted(directories, key=lambda value: (value.count('/'), len(value)), reverse=True):
+    rows = directories[directory]
+    ordered = sorted(rows, key=lambda row: PurePosixPath(row['path']).name.encode() + (b'/' if row['type'] == 'tree' else b''))
+    data = b''
+    for row in ordered:
+        if row['type'] == 'tree':
+            assert calculated[row['path']] == row['sha']
+        data += row['mode'].lstrip('0').encode() + b' ' + PurePosixPath(row['path']).name.encode() + b'\0' + bytes.fromhex(row['sha'])
+    calculated[directory] = hashlib.sha1(b'tree ' + str(len(data)).encode() + b'\0' + data, usedforsecurity=False).hexdigest()
+assert calculated[''] == tree['sha']
+out = S / 'pydicom-project-archive-v1'
+out.mkdir(exist_ok=False)
+archive = out / 'source.tar.gz'
+url = 'https://codeload.github.com/pydicom/pydicom/tar.gz/' + expected_commit
+opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+digest = hashlib.sha256()
+total = 0
+with opener.open(urllib.request.Request(url, headers={'User-Agent': 'ai-skills-benchmark-source-admission'}), timeout=30) as response, archive.open('xb') as target:
+    assert response.status == 200 and urllib.parse.urlsplit(response.url).hostname == 'codeload.github.com'
+    while chunk := response.read(64 * 1024):
+        total += len(chunk)
+        assert total <= 32 * 1024**2
+        digest.update(chunk)
+        target.write(chunk)
+expected = {name: row for name, row in index.items() if row['type'] == 'blob'}
+assert len({name.casefold() for name in index}) == len(index), 'Windows source inventory has case collisions'
+records = {}
+root_name = 'pydicom-' + expected_commit
+expanded = 0
+with tarfile.open(archive, 'r:gz') as data:
+    members = data.getmembers()
+    assert len(members) <= 10000
+    for member in members:
+        path = PurePosixPath(member.name)
+        assert path.parts and path.parts[0] == root_name and not path.is_absolute() and '..' not in path.parts
+        if len(path.parts) == 1:
+            assert member.isdir()
+            continue
+        name = PurePosixPath(*path.parts[1:]).as_posix()
+        if member.isdir():
+            assert name in index and index[name]['type'] == 'tree'
+            continue
+        assert name in expected and name not in records
+        row = expected[name]
+        if member.issym():
+            assert row['mode'] == '120000'
+            raw = member.linkname.encode()
+        else:
+            assert member.isfile() and member.size <= 16 * 1024**2
+            stream = data.extractfile(member)
+            assert stream is not None
+            with stream:
+                raw = stream.read()
+            portable_mode = '100755' if member.mode & 0o111 else '100644'
+            assert portable_mode == row['mode']
+        expanded += len(raw)
+        assert expanded <= 64 * 1024**2
+        identity = hashlib.sha1(b'blob ' + str(len(raw)).encode() + b'\0' + raw, usedforsecurity=False).hexdigest()
+        assert len(raw) == row['size'] and identity == row['sha'], name
+        records[name] = {'bytes': len(raw), 'git_blob_sha1': identity, 'sha256': hashlib.sha256(raw).hexdigest(), 'mode': row['mode']}
+assert set(records) == set(expected), sorted(set(expected) - set(records))
+receipt = {'source_repository': 'pydicom/pydicom', 'source_commit': expected_commit, 'source_tree_sha1': tree['sha'], 'recursive_git_tree_recomputed': True, 'url': url, 'archive_name': archive.name, 'archive_bytes': total, 'archive_sha256': digest.hexdigest(), 'archive_root': root_name, 'expanded_bytes': expanded, 'files': records, 'complete_git_blob_inventory_verified': True, 'case_collisions': False, 'host_extraction': False, 'model_invocations': 0}
+with (out / 'capture.json').open('x', encoding='utf-8', newline='\n') as target:
+    json.dump(receipt, target, indent=2)
+    target.write('\n')
+print(json.dumps({'passed': True, 'source_files': len(records), 'archive_bytes': total, 'expanded_bytes': expanded, 'archive_sha256': digest.hexdigest(), 'complete_git_blob_inventory_verified': True}))

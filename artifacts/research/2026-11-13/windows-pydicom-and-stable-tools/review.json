@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "kind": "windows-selected-project-and-stable-tool-qualification",
+  "date": "2026-11-13",
+  "status": "component-qualified-experiment-not-admitted",
+  "qualified_versions": {
+    "codex": "0.169.0",
+    "uv": "0.13.8",
+    "windows_python": "3.14.10",
+    "numpy": "2.5.4",
+    "pytest": "9.2.0",
+    "installed_pydicom_distribution": "3.0.2"
+  },
+  "project_source": {
+    "repository": "pydicom/pydicom",
+    "commit": "f15214fb9bc83d063f481552c487b02b28bfb7cc",
+    "complete_files_preserved": 541,
+    "installed_distribution_does_not_replace_project_source": true
+  },
+  "source_sha256": {
+    "toolchains/bootstrap/codex.json": "f84483a94d1e1e48073612add046771ce948340cf8201d3f852572a3e7e4c370",
+    "toolchains/bootstrap/manifest.json": "a0ff06e405124e410f6f8417a096134d3de57c8a06292ba38c21fd93e935a77b",
+    "tools/_scripted_tool_control.py": "ad1a5b57b44fdf54f6abeafb43fb56c40c7cf2edcf708729966f3b4a9d47034f",
+    "tests/test_scripted_tool_control.py": "93476f42f8763b9d3538956072fa3242537dafcc7c3c67b14041b51854bfd847",
+    "docs/benchmark-execution-plan.md": "205d271b636398aef8cbf6ed12d6c017949ef54be8db74e29c0bd834b1410bde",
+    "tools/verify_dev_lock.py": "4a02bb06f669a028b39018e1cc64b429f7e5c33f366f5fa0ea25bcbcc395607e",
+    "tests/test_verify_dev_lock.py": "637e7c2980cb2693be4275f880f8c0d618310f246d92cca194088b9d0ce938e3",
+    ".github/workflows/anndata-general-io.yml": "a5d78261e7f5e53ea5417115767ff054e776e266814e3dfed246713eef74ebbe",
+    ".github/workflows/anndata-io-controls.yml": "5d8de86bc3684b24cab8fc6f0d3e95831af48e0956d2146a2d258adbe26b5bdd",
+    ".github/workflows/census-ml-streaming.yml": "1f9eabdac686818d5cde5b3183985a95eba8da21d3b143869bfd4291f3f63da6",
+    ".github/workflows/census-summary-mean-controls.yml": "a0784de4f866954af8319986117ccda1b9d6f372199a534f63199ef697c058cb",
+    ".github/workflows/crawl4ai-provider.yml": "165833e020dfd3950bd87ca28b816bb1ea75fb896e42de700a91beac04eb3f93",
+    ".github/workflows/dataframe-controls.yml": "7f4e592bfd8172e4bbf1190a1c01caa792db80a578e843d86775fe8b82f250cf",
+    ".github/workflows/design-search.yml": "f99044f21ed78424a195015c2e4922b9642b1687314387fe99555f8e5a4596db",
+    ".github/workflows/docs-js-inventory.yml": "dc56c9f4909471868f4cace14379c6747773cc97242ddfdd3e4e79d7b73ae059",
+    ".github/workflows/docs-python-inventory.yml": "842d3d13066074a878e89a7f8468434b99bb1617d1354ab14aa37e9125a448d2",
+    ".github/workflows/flowio-controls.yml": "c3c6fae3acedc2d3d6838cab8f6c36b981d1683dbdb2f2c91001a6768836a7d3",
+    ".github/workflows/makefile-c.yml": "88632c15748b6c7f19a47ca82a581e789aefcced939494a151adcf54093de2c0",
+    ".github/workflows/mypy.yml": "0cc8785e3e7dca8898c24c54ae58300d18c9613f29604f0c4767bddf210d3933",
+    ".github/workflows/npm-cache-install.yml": "0083c178f7b0c0308b4763e9307e8e8d00ba56efcdea51d75edd34e12c1f3ff0",
+    ".github/workflows/offline-validation.yml": "fd066e49291c2d9324b83420e784d4dbac8af20dd9b33a75f205ba8dca424dfa",
+    ".github/workflows/pnpm-cache-install.yml": "7cebdd97e6609cf12e355bf8b3ec22e20ba346dcebb9fafeaf1bf3251f3eefbb",
+    ".github/workflows/pytest-pdb-task.yml": "4611cf6849f2471e2852c289898e3e488b5d6bc14af889e471d31b2ac1bac732",
+    ".github/workflows/ruff.yml": "ead88d7f9e47244181d6e20d5362ec2d5d2aad6a76a7a808deba2e1ad2826126",
+    ".github/workflows/scanpy-clustering-controls.yml": "a17b47c9857a9ebce83d09d0394dc86a28fa218e55e9dc7363fd52b9a5b24bda",
+    ".github/workflows/scvi-input-controls.yml": "3c8e484d06eb675740800d43663da3b77ee1b6a16f99e97683ead0d65c865ec5",
+    ".github/workflows/simpo-postrun.yml": "b4f2d973db41348166912fecf499e01fca0e885046176894a5ded196f0b3d157",
+    ".github/workflows/simpo-verifier-task.yml": "cfdbb35560513de0d643fdf60a33f91ae7889d8815e1a2555dbee178605431f3",
+    ".github/workflows/soma-anndata-ingestion.yml": "153fd53e1d649e3cf11e248aedb9198d3b49b6e1355100ab0aa1d654a8a8b6f9",
+    ".github/workflows/workflow-call-inputs.yml": "d09b04228c6854c4712286c41aeac40214d8af47c8c17afa28914221d481a757",
+    ".github/workflows/yarn-cache-install.yml": "568df5bc52b83ea5130edd99700e0e9c3299857d8353ef01524036fc8e7d45ca",
+    ".github/workflows/zarr-python-basics.yml": "966ffd7125eb104eebdd9f92e15b86681fe361cfb21115097a1ec1e91435a96b"
+  },
+  "publisher_provenance": {
+    "complete_cli_payload_files_verified": 47,
+    "npm_integrity_verified": true,
+    "github_release_executable_digest_matches": true,
+    "source_resources_git_blob_verified": true,
+    "source_commit": "d32063f96c2dff1dc96af839b3952abb6acfeda4",
+    "source_tag_signature_verified": false,
+    "source_tag_verification_reason": "unsigned"
+  },
+  "verified_controls": {
+    "fresh_latest_uv_native_installs": 2,
+    "native_managed_bootstrap_cases": 9,
+    "focused_bootstrap_tests_passed": 40,
+    "maintained_windows_source_write_pytest_original_linux_grader_cycles": 2,
+    "native_windows_pytest_cases_per_cycle": 1,
+    "original_linux_verifier_cases_per_cycle": 18,
+    "original_linux_passed_per_cycle": 0,
+    "qualified_replacement_for_two_revoked_candidate_claims": true,
+    "revoked_candidate_claims": 2,
+    "new_false_marker_regression_cases": 11,
+    "offline_lock_integration_cases_passed": 9,
+    "workflow_uv_install_steps_consistent": 29
+  },
+  "configuration_notices": {
+    "under_development_skip_host_skill_discovery_flag_enabled": true,
+    "synthetic_unknown_model_uses_fallback_metadata": true,
+    "warnings_suppressed": false,
+    "scope": "These notices remain visible in native transcripts. Requested real-model configuration and clean sign-in remain separate admission requirements."
+  },
+  "selection": {
+    "tasks": 12,
+    "planned_attempts": 36,
+    "sha256": "42de081f53b0273f936ea5ca12dd0a6f69da0c33ade087b7b76ac8e6b7bee1c5"
+  },
+  "task_record": {
+    "path": "benchmarks/agent-effectiveness/development/swe-skills-pilot-v1/task-integration/pydicom-v3.json",
+    "sha256": "2ffe4d26989b74729b1a2542ab0654ea226d74d2e1e89fbddea39819fb8a8b77"
+  },
+  "candidate_library_files_unchanged_since_preexposure_freeze": 18245,
+  "model_invocations": 0,
+  "counted_attempts": 0,
+  "selected_task_solution_written": false,
+  "whole_experiment_admitted": false,
+  "limitations": [
+    "Two earlier candidate sandbox pass claims were invalid: their failed commands echoed the source marker. Both are explicitly revoked; neither represented a model outcome.",
+    "The corrected maintained path now requires structured native command success, a parsed passing JUnit case and exact source collection.",
+    "The selected original DICOM task still needs a task-specific passing success control. Its unchanged original verifier failures are diagnostic controls only.",
+    "The actual requested model and account sign-in remain unqualified; model launch stays closed.",
+    "No model improvement, original-environment equivalence, full benchmark suite score or commercial readiness is established."
+  ],
+  "artifacts": {
+    "bootstrap-controls.json": "277d6e210fe4be7cad01da6b0b5f4b28ff862b7e199c2d6690d315986530e4fd",
+    "native-controls.json": "0e3ccfb716ffd4e4f0a3c2724cefd3bca1016b9b50c3a4723c47cf45982d88ba",
+    "payload-audit.json": "d7f765eefab36137f1bf65263161c410d93233afa3a2f7439c5ee515a4199797",
+    "revoked-controls.json": "6e62aebd5c3ea749a64133e2ca50da7d1d158e867a6b75f0e30288173bbffed1",
+    "tool-pins.json": "1c6afdb63fc2b32aef454a43cb57ab5c76ccd367085a565066f5dc31d27df74e",
+    "windows-environment.json": "58310b62e76e9089e7f02dac686e311752249ea5afd3e934178dad9deb856202",
+    "uv-version-consistency.json": "a4a2ac4604924895905e187f80b3ad4e85e3358a58c9b4063d5be4b99bae6c1f"
+  }
+}

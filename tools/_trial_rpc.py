@@ -39,12 +39,20 @@ def command_control(
     output: Path,
     *,
     environment_overrides: dict[str, str] | None = None,
+    timeout_seconds: int = 5,
+    output_bytes: int = 16384,
 ) -> dict[str, Any]:
     """Initialize one private server, execute one bounded command, then close it.
 
     Only initialize and command/exec are sent. No thread, turn, model inference,
     login, MCP tool, or unrestricted thread/shellCommand request is permitted.
     """
+    if type(timeout_seconds) is not int or not 1 <= timeout_seconds <= 300:
+        raise ValueError("Native command timeout must be an integer from 1 to 300 seconds")
+    if context.signin is not None:
+        raise ValueError("Model-free RPC controls require a separate credential-free profile")
+    if type(output_bytes) is not int or not 1 <= output_bytes <= 1024**2:
+        raise ValueError("Native command output must be an integer from 1 byte to one MiB")
     output = checked_path(output)
     if any(
         output.is_relative_to(root) or root.is_relative_to(output)
@@ -61,8 +69,8 @@ def command_control(
             "params": {
                 "command": command,
                 "cwd": str(context.workspace),
-                "timeoutMs": 5000,
-                "outputBytesCap": 16384,
+                "timeoutMs": timeout_seconds * 1000,
+                "outputBytesCap": output_bytes,
                 "env": environment_overrides or {},
             },
         },
@@ -85,7 +93,7 @@ def command_control(
                     stdin=stdin,
                     stdout=stdout,
                     stderr=stderr,
-                    timeout=40,
+                    timeout=timeout_seconds + 35,
                     output_limit=8 * 1024 * 1024,
                     environment=context.controller_environment,
                     memory_limit=2 * 1024**3,
@@ -101,7 +109,7 @@ def command_control(
         os.close(read_fd)
         os.close(write_fd)
         raise
-    deadline = time.monotonic() + 30
+    deadline = time.monotonic() + timeout_seconds + 25
     try:
         with os.fdopen(write_fd, "wb", buffering=0) as writer:
             writer.write((json.dumps(requests[0]) + "\n").encode("utf-8"))
@@ -113,9 +121,13 @@ def command_control(
             observed["command"] = response(output / "stdout.native", 2, worker, deadline)
     except (OSError, RuntimeError, ValueError, TimeoutError) as exc:
         observed["client_error"] = {"type": type(exc).__name__, "message": str(exc)}
-    worker.join(timeout=45)
-    observed["worker_stopped"] = not worker.is_alive()
-    write_json(output / "observations.json", observed)
-    if worker.is_alive():
-        raise RuntimeError("Native control did not stop within its ownership deadline")
+    except BaseException as exc:
+        observed["client_aborted"] = {"type": type(exc).__name__}
+        raise
+    finally:
+        worker.join(timeout=timeout_seconds + 40)
+        observed["worker_stopped"] = not worker.is_alive()
+        write_json(output / "observations.json", observed)
+        if worker.is_alive():
+            raise RuntimeError("Native control did not stop within its ownership deadline")
     return observed

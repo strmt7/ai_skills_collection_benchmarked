@@ -1,0 +1,626 @@
+{
+  "scope": "Metadata-only execution preflight for the complete fixed 12-task/36-attempt public development frame. No tasks are replaced or removed.",
+  "benchmark_source_commit": "4d3450d9216a590a8726fcb3604b5143daca776b",
+  "config_path": "config/benchmark_config.yaml",
+  "config_git_blob_sha1": "89b81807c59b68d629a3b4ed32193aac9378fe70",
+  "config_sha256": "f658aca6273493e179b592e650341bc2cf76b1c48002633e592ab68c6cef212b",
+  "native_config_receipt_sha256": "5d67a34d57e39c7a86b1b8b9e7b065256d425df04eda8032e4baec333032acc5",
+  "selection_sha256": "42de081f53b0273f936ea5ca12dd0a6f69da0c33ade087b7b76ac8e6b7bee1c5",
+  "candidate_library_freeze_sha256": "ef2b41429643da1fdf105de0efc2d06152c7ca30278f354b672bc8da9bbd5520",
+  "candidate_library_files_unchanged": 18245,
+  "tasks": [
+    {
+      "task_id": "swe-skills-bench/batch8/clap-cli-patterns",
+      "skill_id": "clap-cli-patterns",
+      "condition_order": [
+        "collection",
+        "karpathy",
+        "default"
+      ],
+      "source_repository": "burntsushi/ripgrep",
+      "source_commit": "4519153e5e461527f4bca45b042fff45c4ec6fb9",
+      "source_sparse_checkout": [],
+      "publisher_task_type": "feature",
+      "publisher_image_reference": "zhangyiiiiii/swe-skills-bench-rust",
+      "publisher_dockerfile_override": "",
+      "publisher_setup_commands": [],
+      "publisher_pre_process": null,
+      "publisher_env_vars": {},
+      "publisher_limits": {
+        "cpus": "4",
+        "memory": "8g",
+        "timeout_per_command": 600,
+        "max_iterations": 1,
+        "total_timeout_sec": 2400
+      },
+      "enabled_evaluators": [
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_clap_cli_patterns.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 900
+          }
+        }
+      ],
+      "common_execution_admitted": false,
+      "diagnostic_record": null
+    },
+    {
+      "task_id": "swe-skills-bench/batch10/prometheus-configuration",
+      "skill_id": "prometheus-configuration",
+      "condition_order": [
+        "karpathy",
+        "default",
+        "collection"
+      ],
+      "source_repository": "prometheus/prometheus",
+      "source_commit": "df61021436e3aa53917a76ae8a4599d2c7fe6097",
+      "source_sparse_checkout": [],
+      "publisher_task_type": "feature",
+      "publisher_image_reference": "zhangyiiiiii/swe-skills-bench-golang",
+      "publisher_dockerfile_override": "",
+      "publisher_setup_commands": [],
+      "publisher_pre_process": null,
+      "publisher_env_vars": {},
+      "publisher_limits": {
+        "max_iterations": 1,
+        "total_timeout_sec": 1800
+      },
+      "enabled_evaluators": [
+        {
+          "level": "L1",
+          "method": "build_check",
+          "enabled": true,
+          "params": {
+            "build_command": "go build ./...",
+            "expected_exit_code": 0,
+            "timeout": 600
+          }
+        },
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_prometheus_configuration.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 300
+          }
+        }
+      ],
+      "common_execution_admitted": false,
+      "diagnostic_record": null
+    },
+    {
+      "task_id": "swe-skills-bench/batch1/vector-index-tuning",
+      "skill_id": "vector-index-tuning",
+      "condition_order": [
+        "collection",
+        "default",
+        "karpathy"
+      ],
+      "source_repository": "facebookresearch/faiss",
+      "source_commit": "0759009bd7ddf290170c930c70a722badd05aa7d",
+      "source_sparse_checkout": [],
+      "publisher_task_type": "feature",
+      "publisher_image_reference": "zhangyiiiiii/swe-skills-bench-python",
+      "publisher_dockerfile_override": "",
+      "publisher_setup_commands": [],
+      "publisher_pre_process": null,
+      "publisher_env_vars": {},
+      "publisher_limits": {
+        "max_iterations": 1,
+        "total_timeout_sec": 2400
+      },
+      "enabled_evaluators": [
+        {
+          "level": "L1",
+          "method": "build_check",
+          "enabled": true,
+          "params": {
+            "build_command": "cmake -B build && cmake --build build",
+            "expected_exit_code": 0,
+            "timeout": 1200
+          }
+        },
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_vector_index_tuning.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 300
+          }
+        }
+      ],
+      "common_execution_admitted": false,
+      "diagnostic_record": null
+    },
+    {
+      "task_id": "swe-skills-bench/batch5/clojure-write",
+      "skill_id": "clojure-write",
+      "condition_order": [
+        "karpathy",
+        "collection",
+        "default"
+      ],
+      "source_repository": "metabase/metabase",
+      "source_commit": "d8bb291939a60c44d8ba6eb7bb132a5e0f271cf1",
+      "source_sparse_checkout": [],
+      "publisher_task_type": "feature",
+      "publisher_image_reference": "zhangyiiiiii/swe-skills-bench-clojure",
+      "publisher_dockerfile_override": "",
+      "publisher_setup_commands": [],
+      "publisher_pre_process": null,
+      "publisher_env_vars": {},
+      "publisher_limits": {
+        "max_iterations": 1,
+        "total_timeout_sec": 2400
+      },
+      "enabled_evaluators": [
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_clojure_write.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 600
+          }
+        }
+      ],
+      "common_execution_admitted": false,
+      "diagnostic_record": null
+    },
+    {
+      "task_id": "swe-skills-bench/batch4/pydicom-dicom-parsing",
+      "skill_id": "pydicom-dicom-parsing",
+      "condition_order": [
+        "default",
+        "collection",
+        "karpathy"
+      ],
+      "source_repository": "pydicom/pydicom",
+      "source_commit": "f15214fb9bc83d063f481552c487b02b28bfb7cc",
+      "source_sparse_checkout": [],
+      "publisher_task_type": "feature",
+      "publisher_image_reference": "zhangyiiiiii/swe-skills-bench-python",
+      "publisher_dockerfile_override": "",
+      "publisher_setup_commands": [
+        "pip install pydicom numpy --break-system-packages"
+      ],
+      "publisher_pre_process": null,
+      "publisher_env_vars": {},
+      "publisher_limits": {
+        "cpus": "4",
+        "memory": "8g",
+        "timeout_per_command": 600,
+        "max_iterations": 1,
+        "total_timeout_sec": 2400
+      },
+      "enabled_evaluators": [
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_pydicom_dicom_parsing.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 300
+          }
+        }
+      ],
+      "common_execution_admitted": false,
+      "diagnostic_record": "benchmarks/agent-effectiveness/development/swe-skills-pilot-v1/task-integration/pydicom-v4.json"
+    },
+    {
+      "task_id": "swe-skills-bench/batch4/nx-workspace-patterns",
+      "skill_id": "nx-workspace-patterns",
+      "condition_order": [
+        "default",
+        "karpathy",
+        "collection"
+      ],
+      "source_repository": "nrwl/nx",
+      "source_commit": "b3cb4d826144ceadce28dda7f614fd357bc61fd0",
+      "source_sparse_checkout": [],
+      "publisher_task_type": "test",
+      "publisher_image_reference": "zhangyiiiiii/swe-skills-bench-python",
+      "publisher_dockerfile_override": "",
+      "publisher_setup_commands": [],
+      "publisher_pre_process": null,
+      "publisher_env_vars": {},
+      "publisher_limits": {
+        "max_iterations": 1,
+        "total_timeout_sec": 2400
+      },
+      "enabled_evaluators": [
+        {
+          "level": "L1",
+          "method": "build_check",
+          "enabled": true,
+          "params": {
+            "build_command": "pnpm install && pnpm build",
+            "expected_exit_code": 0,
+            "timeout": 600
+          }
+        },
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_nx_workspace_patterns.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 600
+          }
+        }
+      ],
+      "common_execution_admitted": false,
+      "diagnostic_record": null
+    },
+    {
+      "task_id": "swe-skills-bench/batch3/go-monads-mo",
+      "skill_id": "go-monads-mo",
+      "condition_order": [
+        "collection",
+        "karpathy",
+        "default"
+      ],
+      "source_repository": "samber/mo",
+      "source_commit": "35a143a391a281ca954b388bd8c6795ea1ee1955",
+      "source_sparse_checkout": [],
+      "publisher_task_type": "feature",
+      "publisher_image_reference": "zhangyiiiiii/swe-skills-bench-golang",
+      "publisher_dockerfile_override": "",
+      "publisher_setup_commands": [
+        "cd /workspace/mo && go mod download"
+      ],
+      "publisher_pre_process": null,
+      "publisher_env_vars": {},
+      "publisher_limits": {
+        "cpus": "4",
+        "memory": "8g",
+        "timeout_per_command": 600,
+        "max_iterations": 1,
+        "total_timeout_sec": 2400
+      },
+      "enabled_evaluators": [
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_go_monads_mo.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 300
+          }
+        }
+      ],
+      "common_execution_admitted": false,
+      "diagnostic_record": null
+    },
+    {
+      "task_id": "swe-skills-bench/batch4/bats-shell-testing",
+      "skill_id": "bats-shell-testing",
+      "condition_order": [
+        "karpathy",
+        "default",
+        "collection"
+      ],
+      "source_repository": "bats-core/bats-core",
+      "source_commit": "d9faff0d7bc32e7adebc6552446f978118d3ab3b",
+      "source_sparse_checkout": [],
+      "publisher_task_type": "feature",
+      "publisher_image_reference": "zhangyiiiiii/swe-skills-bench-python",
+      "publisher_dockerfile_override": "",
+      "publisher_setup_commands": [
+        "apt-get update && apt-get install -y bats"
+      ],
+      "publisher_pre_process": null,
+      "publisher_env_vars": {},
+      "publisher_limits": {
+        "cpus": "4",
+        "memory": "8g",
+        "timeout_per_command": 600,
+        "max_iterations": 1,
+        "total_timeout_sec": 2400
+      },
+      "enabled_evaluators": [
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_bats_shell_testing.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 300
+          }
+        }
+      ],
+      "common_execution_admitted": false,
+      "diagnostic_record": null
+    },
+    {
+      "task_id": "swe-skills-bench/batch3/tanstack-query-patterns",
+      "skill_id": "tanstack-query-patterns",
+      "condition_order": [
+        "collection",
+        "default",
+        "karpathy"
+      ],
+      "source_repository": "tanstack/query",
+      "source_commit": "763782a2403aefaa52ce76601cf0f4912045be34",
+      "source_sparse_checkout": [],
+      "publisher_task_type": "feature",
+      "publisher_image_reference": "zhangyiiiiii/swe-skills-bench-node22-ext",
+      "publisher_dockerfile_override": "",
+      "publisher_setup_commands": [
+        "cd /workspace/query && (corepack enable pnpm || npm i -g pnpm) && pnpm install --no-frozen-lockfile"
+      ],
+      "publisher_pre_process": null,
+      "publisher_env_vars": {},
+      "publisher_limits": {
+        "cpus": "4",
+        "memory": "8g",
+        "timeout_per_command": 600,
+        "max_iterations": 1,
+        "total_timeout_sec": 2400
+      },
+      "enabled_evaluators": [
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_tanstack_query_patterns.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 300
+          }
+        }
+      ],
+      "common_execution_admitted": false,
+      "diagnostic_record": null
+    },
+    {
+      "task_id": "swe-skills-bench/batch8/graphql-schema-design",
+      "skill_id": "graphql-schema-design",
+      "condition_order": [
+        "karpathy",
+        "collection",
+        "default"
+      ],
+      "source_repository": "apollographql/apollo-server",
+      "source_commit": "64c0e1bb5d79d571bf448c35aea0b31097e6ce9d",
+      "source_sparse_checkout": [],
+      "publisher_task_type": "feature",
+      "publisher_image_reference": "zhangyiiiiii/swe-skills-bench-node-ext",
+      "publisher_dockerfile_override": "",
+      "publisher_setup_commands": [
+        "cd /workspace/apollo-server && npm i graphql @apollo/server graphql-tag && npm i -D vitest"
+      ],
+      "publisher_pre_process": null,
+      "publisher_env_vars": {},
+      "publisher_limits": {
+        "cpus": "4",
+        "memory": "8g",
+        "timeout_per_command": 600,
+        "max_iterations": 1,
+        "total_timeout_sec": 2400
+      },
+      "enabled_evaluators": [
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_graphql_schema_design.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 300
+          }
+        }
+      ],
+      "common_execution_admitted": false,
+      "diagnostic_record": null
+    },
+    {
+      "task_id": "swe-skills-bench/batch7/gitlab-ci-patterns",
+      "skill_id": "gitlab-ci-patterns",
+      "condition_order": [
+        "default",
+        "collection",
+        "karpathy"
+      ],
+      "source_repository": "gitlabhq/gitlabhq",
+      "source_commit": "d91b0b33f4c63b5f4b7307059a9b70d9b82a7b41",
+      "source_sparse_checkout": [],
+      "publisher_task_type": "fix",
+      "publisher_image_reference": "zhangyiiiiii/swe-skills-bench-ruby",
+      "publisher_dockerfile_override": "",
+      "publisher_setup_commands": [],
+      "publisher_pre_process": null,
+      "publisher_env_vars": {},
+      "publisher_limits": {
+        "max_iterations": 1,
+        "total_timeout_sec": 2400
+      },
+      "enabled_evaluators": [
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_gitlab_ci_patterns.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 600
+          }
+        }
+      ],
+      "common_execution_admitted": false,
+      "diagnostic_record": null
+    },
+    {
+      "task_id": "swe-skills-bench/batch2/mypy-type-checking",
+      "skill_id": "mypy-type-checking",
+      "condition_order": [
+        "default",
+        "karpathy",
+        "collection"
+      ],
+      "source_repository": "psf/black",
+      "source_commit": "8dcc4865c8f9a2769411db5638927696172cdf75",
+      "source_sparse_checkout": [],
+      "publisher_task_type": "feature",
+      "publisher_image_reference": "zhangyiiiiii/swe-skills-bench-python",
+      "publisher_dockerfile_override": "",
+      "publisher_setup_commands": [
+        "pip install mypy --break-system-packages"
+      ],
+      "publisher_pre_process": null,
+      "publisher_env_vars": {},
+      "publisher_limits": {
+        "cpus": "4",
+        "memory": "8g",
+        "timeout_per_command": 600,
+        "max_iterations": 1,
+        "total_timeout_sec": 2400
+      },
+      "enabled_evaluators": [
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_mypy_type_checking.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 300
+          }
+        }
+      ],
+      "common_execution_admitted": false,
+      "diagnostic_record": null
+    }
+  ],
+  "unique_publisher_images": [
+    "zhangyiiiiii/swe-skills-bench-clojure",
+    "zhangyiiiiii/swe-skills-bench-golang",
+    "zhangyiiiiii/swe-skills-bench-node-ext",
+    "zhangyiiiiii/swe-skills-bench-node22-ext",
+    "zhangyiiiiii/swe-skills-bench-python",
+    "zhangyiiiiii/swe-skills-bench-ruby",
+    "zhangyiiiiii/swe-skills-bench-rust"
+  ],
+  "enabled_evaluator_counts": {
+    "unit_test": 12,
+    "build_check": 3
+  },
+  "optional_recipe_lookups": [
+    {
+      "skill_id": "clap-cli-patterns",
+      "requested_path": "docker/skills/Dockerfile.clap-cli-patterns",
+      "status": "git_blob_verified",
+      "git_blob_sha1": "96002f01dfb3e0706d4703af94725e6fe69123a0",
+      "native_receipt_sha256": "5f5eb9fb86e2122b380a6dee4499a79a76810a26a2b291da53a658ec2ace04ad"
+    },
+    {
+      "skill_id": "prometheus-configuration",
+      "requested_path": "docker/skills/Dockerfile.prometheus-configuration",
+      "status": "not_present_in_pinned_tree",
+      "native_receipt_sha256": "541962a04b1743a860cec249747b9ed93465c096bb802b5305968775ae7577df"
+    },
+    {
+      "skill_id": "vector-index-tuning",
+      "requested_path": "docker/skills/Dockerfile.vector-index-tuning",
+      "status": "not_present_in_pinned_tree",
+      "native_receipt_sha256": "541962a04b1743a860cec249747b9ed93465c096bb802b5305968775ae7577df"
+    },
+    {
+      "skill_id": "clojure-write",
+      "requested_path": "docker/skills/Dockerfile.clojure-write",
+      "status": "not_present_in_pinned_tree",
+      "native_receipt_sha256": "541962a04b1743a860cec249747b9ed93465c096bb802b5305968775ae7577df"
+    },
+    {
+      "skill_id": "pydicom-dicom-parsing",
+      "requested_path": "docker/skills/Dockerfile.pydicom-dicom-parsing",
+      "status": "git_blob_verified",
+      "git_blob_sha1": "91890bf6622e609a483fc60761c86f671bcffef9",
+      "native_receipt_sha256": "414027bf5c70bee5521ab365d16029aee29d10487b81fb0d9dafc1a56cafec8c"
+    },
+    {
+      "skill_id": "nx-workspace-patterns",
+      "requested_path": "docker/skills/Dockerfile.nx-workspace-patterns",
+      "status": "not_present_in_pinned_tree",
+      "native_receipt_sha256": "541962a04b1743a860cec249747b9ed93465c096bb802b5305968775ae7577df"
+    },
+    {
+      "skill_id": "go-monads-mo",
+      "requested_path": "docker/skills/Dockerfile.go-monads-mo",
+      "status": "git_blob_verified",
+      "git_blob_sha1": "411147c8e2bbdc05019349c07b97e00c7b8b5b3a",
+      "native_receipt_sha256": "e36d5354453f34993d0225045e3b974a6e34e017503e30b0875639608fb86392"
+    },
+    {
+      "skill_id": "bats-shell-testing",
+      "requested_path": "docker/skills/Dockerfile.bats-shell-testing",
+      "status": "git_blob_verified",
+      "git_blob_sha1": "5f958c11bb9ff902291f794a9e4e57665cb78774",
+      "native_receipt_sha256": "ba5248ad0774143f39fa2c0e757bf50ad45e497191d2debe737701ccd7becb9f"
+    },
+    {
+      "skill_id": "tanstack-query-patterns",
+      "requested_path": "docker/skills/Dockerfile.tanstack-query-patterns",
+      "status": "git_blob_verified",
+      "git_blob_sha1": "80797bc800a84a41ded3de0602b07876ed1cee67",
+      "native_receipt_sha256": "cda21a21aea11e7bb86bdc064bed62f482be4f119e3981c44eef78daf5293dce"
+    },
+    {
+      "skill_id": "graphql-schema-design",
+      "requested_path": "docker/skills/Dockerfile.graphql-schema-design",
+      "status": "git_blob_verified",
+      "git_blob_sha1": "f642e0faeb99c8c0024ccf1cd0457b68d8004cf4",
+      "native_receipt_sha256": "8f59d85b0d19b2de35071c6d1643bbe6cd2154cdc7b33a0d8b06ca7725d2db4a"
+    },
+    {
+      "skill_id": "gitlab-ci-patterns",
+      "requested_path": "docker/skills/Dockerfile.gitlab-ci-patterns",
+      "status": "not_present_in_pinned_tree",
+      "native_receipt_sha256": "541962a04b1743a860cec249747b9ed93465c096bb802b5305968775ae7577df"
+    },
+    {
+      "skill_id": "mypy-type-checking",
+      "requested_path": "docker/skills/Dockerfile.mypy-type-checking",
+      "status": "not_present_in_pinned_tree",
+      "native_receipt_sha256": "541962a04b1743a860cec249747b9ed93465c096bb802b5305968775ae7577df"
+    }
+  ],
+  "publisher_runtime": {
+    "container_backend": "enroot",
+    "network_mode": "bridge",
+    "workspace_dir": "/workspace"
+  },
+  "known_diagnostic_contract_differences": [
+    {
+      "task_id": "swe-skills-bench/batch4/pydicom-dicom-parsing",
+      "field": "unit_test.timeout",
+      "diagnostic_seconds": 120,
+      "publisher_seconds": 300,
+      "action": "Preserve this diagnostic as historical; use the publisher contract in prospective execution admission."
+    }
+  ],
+  "requirements": [
+    "Qualify every enabled evaluator, including build_check stages, rather than assuming all tasks are unit-test-only.",
+    "Resolve and qualify all declared image and toolchain profiles; generic image names, optional skill recipe paths and registry tags are separate evidence.",
+    "Preserve full declared source scope, initialization, runtime versions, executable modes and path semantics without modifying other owner repositories or the host OS.",
+    "Missing optional recipe filenames are retained lookup failures, not evidence of an unavailable server or permission denial."
+  ],
+  "new_task_or_evaluator_bodies_read": false,
+  "new_model_invocations": 0,
+  "counted_attempts": 0,
+  "model_improvement_established": false,
+  "historical_publisher_runtime_reproduced": false
+}

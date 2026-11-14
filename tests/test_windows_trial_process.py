@@ -9,10 +9,75 @@ from pathlib import Path
 from typing import Any
 
 import pytest
-from _windows_appcontainer import Native
+from _windows_appcontainer import Native, set_last_error
+from _windows_storage_budget import SpaceBudget, StorageLimits
 from _windows_trial_process import run_owned
 
 pytestmark = pytest.mark.skipif(sys.platform != "win32", reason="Windows native job controls")
+
+
+@pytest.mark.parametrize("failure", ["free_space_limit", "storage_observation_error"])
+def test_active_space_budget_stops_the_owned_process_without_disk_stress(tmp_path, monkeypatch, failure):
+    import _windows_storage_budget as storage
+
+    marker = tmp_path / "started"
+
+    def sample(_path):
+        if marker.exists():
+            if failure == "storage_observation_error":
+                raise ValueError("owned injected space observation failure")
+            return {"available_bytes": 5, "total_bytes": 1000, "volume_free_bytes": 100}
+        return {"available_bytes": 100, "total_bytes": 1000, "volume_free_bytes": 100}
+
+    monkeypatch.setattr(storage, "available_space", sample)
+    budget = SpaceBudget(StorageLimits(10, 1024, 100), (tmp_path,))
+    result, _, _ = run_fixture(
+        tmp_path,
+        "from pathlib import Path;import time;Path('started').write_text('ready');time.sleep(30)",
+        timeout=5,
+        python_arguments=("-I", "-B", "-S"),
+        space_budget=budget,
+    )
+    assert marker.exists() and result["termination_reason"] == failure
+    assert result["job_active_processes_after_cleanup"] == 0
+    assert result["space_budget"]["termination_reason"] == failure
+    assert result["space_budget"]["hard_storage_quota"] is False
+
+
+def test_insufficient_space_prevents_process_launch(tmp_path, monkeypatch):
+    import _windows_storage_budget as storage
+
+    monkeypatch.setattr(
+        storage, "available_space", lambda _path: {"available_bytes": 5, "total_bytes": 1000, "volume_free_bytes": 100}
+    )
+    budget = SpaceBudget(StorageLimits(10, 1024, 100), (tmp_path,))
+    with pytest.raises(ValueError, match="free_space_limit"):
+        run_fixture(tmp_path, "from pathlib import Path;Path('must-not-start').write_text('bad')", space_budget=budget)
+    assert not (tmp_path / "must-not-start").exists()
+
+
+def test_final_space_observation_catches_a_fast_completed_process(tmp_path, monkeypatch):
+    import _windows_storage_budget as storage
+
+    def sample(_path):
+        return {
+            "available_bytes": 5 if (tmp_path / "started").exists() else 100,
+            "total_bytes": 1000,
+            "volume_free_bytes": 100,
+        }
+
+    monkeypatch.setattr(storage, "available_space", sample)
+    budget = SpaceBudget(StorageLimits(10, 1024, 100), (tmp_path,))
+    result, _, _ = run_fixture(
+        tmp_path,
+        "from pathlib import Path;Path('started').write_text('ready')",
+        python_arguments=("-I", "-B", "-S"),
+        space_budget=budget,
+        write_io_limit=1024**2,
+    )
+    assert result["termination_reason"] == "free_space_limit"
+    assert result["space_budget"]["samples"][str(tmp_path)]["lowest_available_bytes"] == 5
+    assert result["job_write_io_bytes"] is not None and result["job_active_processes_after_cleanup"] == 0
 
 
 def run_fixture(
@@ -22,6 +87,7 @@ def run_fixture(
     timeout: float = 10,
     output_limit: int = 1024 * 1024,
     executable: Path | None = None,
+    python_arguments: tuple[str, ...] = ("-B",),
     **options,
 ):
     prompt = tmp_path / "prompt"
@@ -32,7 +98,7 @@ def run_fixture(
         (tmp_path / "stderr").open("xb") as stderr,
     ):
         result = run_owned(
-            [str((executable or Path(sys.executable)).resolve()), "-c", source],
+            [str((executable or Path(sys.executable)).resolve()), *python_arguments, "-c", source],
             cwd=tmp_path.resolve(),
             stdin=stdin,
             stdout=stdout,
@@ -186,6 +252,104 @@ def test_output_limit_stops_the_entire_process(tmp_path):
     assert result["termination_reason"] == "output_limit"
     assert result["job_active_processes_after_cleanup"] == 0
     assert len(stdout) + len(stderr) == result["output_bytes"] == 4097
+
+
+def test_write_budget_rejects_a_fast_completed_file_write(tmp_path):
+    result, _, _ = run_fixture(
+        tmp_path,
+        "from pathlib import Path; Path('payload').write_bytes(b'x'*(2*1024**2))",
+        write_io_limit=65536,
+        python_arguments=("-I", "-B", "-S"),
+    )
+    assert result["termination_reason"] == "write_io_limit"
+    assert result["job_active_processes_after_cleanup"] == 0
+    assert result["job_write_io_bytes"] >= 2 * 1024**2
+    assert result["write_io_overshoot_bytes"] == result["job_write_io_bytes"] - 65536
+    assert result["hard_storage_quota"] is False
+
+
+def test_small_file_write_completes_within_its_observed_budget(tmp_path):
+    result, _, _ = run_fixture(
+        tmp_path,
+        "from pathlib import Path; Path('payload').write_bytes(b'x'*4096)",
+        write_io_limit=65536,
+        python_arguments=("-I", "-B", "-S"),
+    )
+    assert result["exit_code"] == 0 and result["termination_reason"] is None
+    assert 4096 <= result["job_write_io_bytes"] <= 65536
+    assert result["write_io_overshoot_bytes"] == 0
+    assert result["write_io_limit_bytes"] == 65536
+
+
+@pytest.mark.parametrize("limit", [0, -1, True, 1.5, 1024**3 + 1])
+def test_invalid_write_io_budget_never_launches(tmp_path, limit):
+    with pytest.raises(ValueError, match="limit"):
+        run_fixture(tmp_path, "raise AssertionError('must not run')", write_io_limit=limit)
+
+
+def test_write_accounting_failure_stops_the_job_and_retains_the_error(tmp_path, monkeypatch):
+    original = Native.function
+
+    def function(self, library, name, *arguments):
+        actual = original(self, library, name, *arguments)
+        if library == "kernel" and name == "QueryInformationJobObject":
+
+            def query(job, information_class, *values):
+                if information_class == 8:
+                    set_last_error(5)
+                    return False
+                return actual(job, information_class, *values)
+
+            return query
+        return actual
+
+    monkeypatch.setattr(Native, "function", function)
+    result, _, _ = run_fixture(tmp_path, "import time; time.sleep(30)", write_io_limit=65536)
+    assert result["termination_reason"] == "resource_observation_error"
+    assert result["job_active_processes_after_cleanup"] == 0
+    assert result["write_io_observation_error"]["winerror"] == 5
+    assert result["job_write_io_bytes"] is None
+
+
+def test_a_descendant_file_write_trips_the_shared_job_budget(tmp_path):
+    escaped = tmp_path / "escaped"
+    child = (
+        "import time; from pathlib import Path; "
+        "Path('payload').write_bytes(b'x'*(2*1024**2)); time.sleep(2); "
+        f"Path({str(escaped)!r}).write_text('escaped')"
+    )
+    source = (
+        f"import subprocess,sys,time; subprocess.Popen([sys.executable,'-I','-B','-S','-c',{child!r}]); time.sleep(30)"
+    )
+    result, _, _ = run_fixture(tmp_path, source, write_io_limit=65536, python_arguments=("-I", "-B", "-S"))
+    assert result["termination_reason"] == "write_io_limit"
+    assert result["job_write_io_bytes"] >= 2 * 1024**2
+    assert result["job_active_processes_after_cleanup"] == 0
+    time.sleep(2.2)
+    assert not escaped.exists()
+
+
+def test_unexpected_accounting_layout_cannot_produce_a_success(tmp_path, monkeypatch):
+    original = Native.function
+
+    def function(self, library, name, *arguments):
+        actual = original(self, library, name, *arguments)
+        if library == "kernel" and name == "QueryInformationJobObject":
+
+            def query(job, information_class, *values):
+                if information_class == 8:
+                    return True  # Deliberately omit the required returned-length value.
+                return actual(job, information_class, *values)
+
+            return query
+        return actual
+
+    monkeypatch.setattr(Native, "function", function)
+    result, _, _ = run_fixture(tmp_path, "import time; time.sleep(30)", write_io_limit=65536)
+    assert result["termination_reason"] == "resource_observation_error"
+    assert result["job_active_processes_after_cleanup"] == 0
+    assert result["write_io_observation_error"]["expected_bytes"] == 96
+    assert result["write_io_observation_error"]["returned_bytes"] == 0
 
 
 def test_output_write_error_also_stops_descendants(tmp_path):

@@ -1,0 +1,587 @@
+{
+  "schema_version": 1,
+  "plan_date": "2026-11-13",
+  "objective_status": "active_and_incomplete",
+  "controller_mode": "single_development_session",
+  "benchmark_subject_mode": "serial_isolated_conditions_under_approved_exception",
+  "release_hold": true,
+  "publication_branch": "main",
+  "publication_transport": "official_authenticated_github_connector",
+  "openai_execution_policy": "Official harness or app with the existing sign-in only. Do not request, provision or use an OpenAI API key for this development goal; do not use direct OpenAI API requests as a substitute.",
+  "requirements": {
+    "R1": "Verify upstream source, current compatible stable dependencies and the community Karpathy-derived baseline.",
+    "R2": "Review every skill and resource with source-bound category and per-entry tracking.",
+    "R3": "Redesign maintained skills and tools from general research and independent evidence while preserving immutable mirrors.",
+    "R4": "Establish meaningful gains over the same no-skills agent and pinned Karpathy-derived condition using independent external benchmarks.",
+    "R5": "Use prior authorized cross-repository inspiration without modifying other owner repositories or creating owner-repository-specific skills.",
+    "R6": "Perform the complete structural refactor and short end-user README pass after substantive requirements are addressed.",
+    "R7": "Keep tools and setup host-, installation- and agent-agnostic on declared OS/architecture; provision missing qualified dependencies safely.",
+    "R8": "Complete quality/workflow/coverage/dependency and authorized scanner gates without hiding findings; retain the release/tag hold.",
+    "R9": "Bound processes, memory, I/O and context; avoid stale services, duplicate setup and unsupported performance claims.",
+    "R10": "Verify every applicable general and repository-specific manual claim, all pages and embedded materials independently.",
+    "R11": "Use main and the official GitHub connector for publication; let GitHub assign contributor identity and verify protections.",
+    "R12": "Keep scientific methods, provenance, limitations, failures and user-facing claims consistent and reproducible."
+  },
+  "tasks": [
+    {
+      "id": "P0",
+      "priority": 0,
+      "title": "Establish the current state and controlling plan",
+      "status": "complete",
+      "depends_on": [],
+      "requirements": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9",
+        "R10",
+        "R11",
+        "R12"
+      ],
+      "next_action": "Keep the dated audit immutable; update this active work order after material gates.",
+      "deliverables": [
+        "Current-state audit",
+        "Detailed work plan",
+        "Agent-readable task registry"
+      ],
+      "acceptance": [
+        "Reconcile live ledger, qualified results, working tree and published head",
+        "Record unknowns and paused work explicitly"
+      ],
+      "evidence": [
+        {
+          "path": "artifacts/research/2026-11-11/repository-state/audit.json",
+          "sha256": "59398cdf891f764e4b613165b9da45499b1a48a7cd27ae697cd6c24c634cf1c2"
+        },
+        {
+          "path": "artifacts/research/2026-11-13/publisher-build-scorer/review.json",
+          "sha256": "bb017b9b141a3bf3cb9c0692b9f3c10b148799d991a8c01cc84b589ce7af4c74"
+        }
+      ]
+    },
+    {
+      "id": "P1",
+      "priority": 1,
+      "title": "Finish one qualified, reusable model-execution route",
+      "status": "active",
+      "depends_on": [
+        "P0"
+      ],
+      "requirements": [
+        "R4",
+        "R7",
+        "R9",
+        "R12"
+      ],
+      "next_action": "Clean native profile authentication still needs a supported completed sign-in. The existing browser route was checked against current official documentation and reached the accounts registered passkey/recovery-key challenge; no secrets were entered, native credentials copied or auth settings changed. Resume actual-account isolation/identity qualification when that verification can be completed. Keep launch refusal closed; continue dependency-ready integration and catalog work without repeating unchanged login probes.",
+      "deliverables": [
+        "Maintained qualification entrypoint and frozen input assets",
+        "Provider/model identity and capability admission",
+        "Bounded cancellation and resource controls",
+        "Source-bound launch admission"
+      ],
+      "acceptance": [
+        "Every positive and negative control proves its actual trigger and expected stage",
+        "No personal instructions, configuration, memory, skills or history enter a subject; no credential leakage or unexplained process/service remains",
+        "Subject tools cannot read or modify the native authentication store",
+        "Fresh supported installation works",
+        "Public development calibration follows boundary qualification before counted comparisons"
+      ],
+      "policy": "Use only the official harness or app with existing sign-in for the requested GPT-6.1 Sol high target; no OpenAI API key or substitute direct-API route. Local models are supplementary; never silently replace that target.",
+      "expansion_rule": "Add runtime features only for an observed blocking requirement; stop broad infrastructure expansion when this gate passes.",
+      "evidence": [
+        {
+          "path": "artifacts/research/2026-11-11/native-provider-authentication/review.json",
+          "sha256": "9a1ce442a3511eafdffbec0802f07ce71a676d28895bbd475d2f5fc0d294bb54",
+          "scope": "Four deterministic native authentication controls, 338 focused tests and 2941 full-suite tests; not real-model transport, fresh-install or complete boundary qualification."
+        },
+        {
+          "path": "artifacts/research/2026-11-11/official-harness-signin/review.json",
+          "sha256": "815c9683946775ad73f120463a595dc4e5e272b977ee29d52a6d3772aa742063",
+          "scope": "Three official documentation captures, pinned exec source and three supported model-free help controls identify the keyless harness route; integration and live qualification remain incomplete."
+        },
+        {
+          "path": "artifacts/research/2026-11-11/native-signin-controller/review.json",
+          "sha256": "681e116402c3a685ee50ebf3667ae5f0af4f5c40b1b0e0700d3e45177418f9a1",
+          "scope": "417 focused tests, six synthetic native controls, retained deliberate config-leak payloads and 2994 full-suite tests with 18 skips. Global instructions are rejected without modifying profiles; real account refresh, shared-profile stability, model identity and complete boundary qualification remain open."
+        },
+        {
+          "path": "artifacts/research/2026-11-11/native-signin-lifecycle/review.json",
+          "sha256": "c81b51ee29c4e336f05fc3af095beebbda550fe3f66410d2935633b829e86292",
+          "scope": "Four serial native synthetic lifecycle controls cover refresh, generation conflict, rejection and cancellation. Earlier full-suite functional sources remained unchanged at that checkpoint. A failed first fixture is explicitly invalidated; real-account preflight, shared-profile stability and whole-boundary qualification remain open."
+        },
+        {
+          "path": "artifacts/research/2026-11-11/native-account-readiness/review.json",
+          "sha256": "faa5e0f33041a67d7740ae4ddd018e4ef48e74e49fb831a567bdbad790f6007e",
+          "scope": "Maintained model-free account/quota/model metadata entrypoint, 11 serial native cases, 470 focused tests and 3048 full-suite tests with 18 skips. Network/device profile aliases are rejected before I/O. Raw production account responses stay in memory. Profile/exec configuration concordance and complete launch qualification remain unproved; the public guard stays closed."
+        },
+        {
+          "path": "artifacts/research/2026-11-11/native-configuration-readiness/review.json",
+          "sha256": "51a7a1a8cbbe7438a5f301defd6854c15f51be2bf910f67aefec12f6ed6315c5"
+        },
+        {
+          "path": "artifacts/research/2026-11-13/native-vendor-catalog/review.json",
+          "sha256": "30ca21e1bab6a188c74310f56007593561ca83f73ec882a387a870ed3fce5595",
+          "scope": "Observed native shared-cache channel repaired using source-pinned vendor metadata; synthetic controls and full validation only. Real profile global instructions remain an explicit launch limitation; no measured model gain."
+        },
+        {
+          "path": "artifacts/research/2026-11-13/native-profile-isolation/review.json",
+          "sha256": "2e1f6af04ee19943141a0c80387e822b7cb968c920fe6fbbe39023c41cf094c2"
+        },
+        {
+          "path": "artifacts/research/2026-11-13/native-signin-user-presence/review.json",
+          "sha256": "098c34d24bded8828a6ef613dd2e73613c2b70ebdbc2c8bb65c30bd0ede3014c"
+        },
+        {
+          "path": "artifacts/research/2026-11-13/windows-pydicom-and-stable-tools/review.json",
+          "sha256": "41960c5ab8e23b98f0706864a2b7df185db023407ed58a44e9d298b31b62ed11",
+          "scope": "Stable CLI/installer admission only. Real account/model and experimental isolation configuration remain unqualified."
+        },
+        {
+          "path": "artifacts/research/2026-11-13/qualification-claim-audit/review.json",
+          "sha256": "5af4a41c74c0442ce013c54ccb738e18b0f60b2daaac12b282d285f7503b30c5"
+        }
+      ]
+    },
+    {
+      "id": "P2",
+      "priority": 2,
+      "title": "Freeze an independent pilot and analysis contract",
+      "status": "active",
+      "depends_on": [
+        "P0"
+      ],
+      "requirements": [
+        "R4",
+        "R12"
+      ],
+      "next_action": "Integrate the complete original build/test stages and modular scoring for all twelve fixed tasks. Native resource components now support original 600\u2013900-second test budgets, explicit project quotas and long leases; seven original-grader controls passed. Full Faiss CUDA-enabled, Prometheus Go and Nx pnpm dependency/build qualification remains open. Preserve the fixed frame and keep counted model trials closed until admission passes.",
+      "deliverables": [
+        "Frozen public-development frame",
+        "Candidate and intervention hashes",
+        "Failure and missing-outcome rules",
+        "Practical effect and uncertainty criteria"
+      ],
+      "acceptance": [
+        "Only declared interventions vary",
+        "No benchmark solutions or grader content enter skill development",
+        "Native scorer denominators remain intact",
+        "Requested and resolved model identities are separate"
+      ],
+      "evidence": [
+        {
+          "path": "artifacts/research/2026-11-13/swe-skills-pilot-selection/review.json",
+          "sha256": "b039206c63e8c68ffd800653379103f2848d213c9eaaa22f76205ebd81bb8039",
+          "scope": "Metadata-only public development selection and independently tested selector; no model runs or efficacy evidence."
+        },
+        {
+          "path": "artifacts/research/2026-11-13/swe-environment-feasibility/review.json",
+          "sha256": "c8bf154086f3fc4ddd00012c05ddc249974bf8927ad4f469639debcbd653c191"
+        },
+        {
+          "path": "artifacts/research/2026-11-13/swe-toolchain-capsule/review.json",
+          "sha256": "a1a8944e458b0525d1d03662fe6bfc08c49aeb25ea61f4f3131af60b833722a7"
+        },
+        {
+          "path": "artifacts/research/2026-11-13/pydicom-task-integration/review.json",
+          "sha256": "d3e322aa0a520c358f3cf2921a7083eaf17d8d5742229a832eaa63f186b1d230"
+        },
+        {
+          "path": "artifacts/research/2026-11-13/native-grader-dependencies/review.json",
+          "sha256": "cd6c5fe266e9885058c40203a00315f753f1607d12e41cfef0df52e0562dd51e",
+          "scope": "Maintained grader component and original scorer qualification only; no model outcomes or complete task admission."
+        },
+        {
+          "path": "artifacts/research/2026-11-13/windows-pydicom-and-stable-tools/review.json",
+          "sha256": "41960c5ab8e23b98f0706864a2b7df185db023407ed58a44e9d298b31b62ed11",
+          "scope": "Latest-tool setup and actual Windows source/pytest/original native grader handoff; includes two explicit revoked claims. No model outcome."
+        },
+        {
+          "path": "artifacts/research/2026-11-13/pydicom-task-success-controls/review.json",
+          "sha256": "064534c3e4848bff441784623dd33d3d6c5c72aef64f834a558da0e0ca59a920"
+        },
+        {
+          "path": "artifacts/research/2026-11-13/qualification-claim-audit/review.json",
+          "sha256": "5af4a41c74c0442ce013c54ccb738e18b0f60b2daaac12b282d285f7503b30c5"
+        },
+        {
+          "path": "artifacts/research/2026-11-13/cohort-execution-preflight/review.json",
+          "sha256": "87d615c0179301fd709f842f809008c4061896d9d4820f7d857bee2eb692eb3c"
+        },
+        {
+          "path": "artifacts/research/2026-11-13/anonymous-registry-client/review.json",
+          "sha256": "d5d37a5483a344503f9500fd914e05bbf51721c4fa4f2882ac7aad2df685436d"
+        },
+        {
+          "path": "artifacts/research/2026-11-13/node-local-replay/review.json",
+          "sha256": "341111d13896b548c3e857c40ddb11e06be853c5745feb997c7e0db74d8187e6",
+          "scope": "Current-source local archive loading and modern Node runtime probes; original publisher requests remain denied and model outcomes remain absent."
+        },
+        {
+          "path": "artifacts/research/2026-11-13/maintained-node-replay-setup/review.json",
+          "sha256": "19147ccc73bd844a679c776f294532526d9983c32175897a1bf6339e51f2afdf",
+          "scope": "Maintained private dependency installation, current-source CLI rejection controls and source-versioned same-host byte reproducibility; no model outcome."
+        },
+        {
+          "path": "artifacts/research/2026-11-13/windows-bootstrap-runtime/history/initial-qualified/review.json",
+          "sha256": "bdeee32a2a0ab8dc0e5998875cc7d6df1d2e2c6a688772e46485005ae0931893"
+        },
+        {
+          "path": "artifacts/research/2026-11-13/windows-bootstrap-runtime/review.json",
+          "sha256": "b863bbb96c44462a876908e8394aaf94d62fe03c295db103668518b32744a997"
+        },
+        {
+          "path": "artifacts/research/2026-11-13/publisher-build-scorer/review.json",
+          "sha256": "bb017b9b141a3bf3cb9c0692b9f3c10b148799d991a8c01cc84b589ce7af4c74"
+        },
+        {
+          "path": "artifacts/research/2026-11-13/native-project-resources/review.json",
+          "sha256": "43722091a64a46feb6ec40b079106da0c37ea367bd7306b0f7d944e58d5f8072"
+        }
+      ]
+    },
+    {
+      "id": "P3",
+      "priority": 3,
+      "title": "Complete the rolling 673-entry skill/resource review and redesign",
+      "status": "active",
+      "depends_on": [
+        "P0"
+      ],
+      "requirements": [
+        "R1",
+        "R2",
+        "R3",
+        "R5",
+        "R7",
+        "R10",
+        "R12"
+      ],
+      "next_action": "Continue category-by-category maintained skill and tool redesign, primary-source review and functional testing without waiting for model-launch admission. Preserve immutable upstream mirrors and older candidates. Qualify comparative claims in separately frozen experiments; security-category work remains held.",
+      "deliverables": [
+        "Complete resource and license dispositions",
+        "Verified upstream/API/dependency observations",
+        "Attributable maintained overlays",
+        "Independent per-entry controls and activation/cost evidence"
+      ],
+      "acceptance": [
+        "Every catalog ID and resource has an evidenced disposition",
+        "Unreviewed resources prevent complete status",
+        "Mirrors and their original provenance remain unchanged",
+        "Unsupported capabilities stay explicit",
+        "All S01-S15 and AISC-01-AISC-06 manual items receive verified dispositions"
+      ],
+      "model_evaluation_requires": [
+        "P1",
+        "P2"
+      ],
+      "held_subscope": "Security/compliance/risk entries and security-specific manual work remain held under P8.",
+      "evidence": [
+        {
+          "path": "artifacts/research/2026-11-13/makefile-cpp/review.json",
+          "sha256": "df1db4d4b9e86347a8e20d615146036956b17cbf4cb3dd81e2eed63423100cf3",
+          "scope": "C++ overlay and source/current-upstream component review; other source resources and model benchmarks remain incomplete."
+        },
+        {
+          "path": "artifacts/research/2026-11-13/makefile-standard-targets/review.json",
+          "sha256": "67040e5a809f9baa77fefd0623b1f91953e2b97eb0c7f13386da9756700cbe3b"
+        },
+        {
+          "path": "artifacts/research/2026-11-13/e2e-readiness/review.json",
+          "sha256": "720f19fcd7a1cc3b075b930e835e2a6337027c74f453338493c7e36a6a6a7ea8"
+        },
+        {
+          "path": "artifacts/research/2026-11-13/makefile-optimization/review.json",
+          "sha256": "8652d340315d1e10c6e09b27ad7d92c208c3fa1193648e070baba3b79fdee8ae"
+        },
+        {
+          "path": "artifacts/research/2026-11-13/makefile-guide-contracts/review.json",
+          "sha256": "6ee4fe76b6776d6775503351471a5e4ad7726b54e846695a24a42cc3ee36635d"
+        },
+        {
+          "path": "artifacts/research/2026-11-13/makefile-go/review.json",
+          "sha256": "02e8aa2b038e20e5d99047a9080d1315c995b561404bcdf906f1f8a6b4f28eb0"
+        },
+        {
+          "path": "artifacts/research/2026-11-13/makefile-project-wrappers/review.json",
+          "sha256": "5a7522ca9714acda243949731007f39a1b8da516cc46feb744a0220487fc371b"
+        }
+      ]
+    },
+    {
+      "id": "P4",
+      "priority": 4,
+      "title": "Run the first discriminating matched pilot",
+      "status": "pending",
+      "depends_on": [
+        "P1",
+        "P2"
+      ],
+      "requirements": [
+        "R4",
+        "R9",
+        "R12"
+      ],
+      "next_action": "Execute serial fresh baseline, pinned Karpathy-derived and candidate conditions on the frozen development frame.",
+      "deliverables": [
+        "All attempt transcripts and native results",
+        "Usage and failure accounting",
+        "Paired pilot analysis",
+        "A causal failure taxonomy"
+      ],
+      "acceptance": [
+        "No ceiling-only result is called a gain",
+        "No failed or missing attempt is silently dropped",
+        "An incomplete official run receives no invented suite score",
+        "Show actual identity, budget and source bindings for each attempt"
+      ]
+    },
+    {
+      "id": "P5",
+      "priority": 5,
+      "title": "Iterate skills from general mechanisms and broaden external evaluation",
+      "status": "pending",
+      "depends_on": [
+        "P4"
+      ],
+      "requirements": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R9",
+        "R12"
+      ],
+      "next_action": "Use development evidence to revise transferable guidance, then repeat the matched frame and test independent development transfer.",
+      "deliverables": [
+        "Recorded hypotheses and revisions",
+        "Skill/routing/tool ablations",
+        "Qualified external benchmark portfolio",
+        "Per-category evaluation coverage"
+      ],
+      "acceptance": [
+        "No benchmark IDs, answer fragments or evaluator-specific behavior in skills",
+        "Every change has independent regressions beyond the revealing case",
+        "Preserve neutral and harmful results",
+        "Separate new-tool effects from instruction effects"
+      ]
+    },
+    {
+      "id": "P6",
+      "priority": 6,
+      "title": "Confirm meaningful transfer on untouched evaluation",
+      "status": "pending",
+      "depends_on": [
+        "P3",
+        "P5"
+      ],
+      "requirements": [
+        "R4",
+        "R12"
+      ],
+      "next_action": "Freeze final candidates and confirmatory selection, then open the held-out task content and run the predeclared analysis.",
+      "deliverables": [
+        "Held-out cross-model and cross-task results",
+        "Paired uncertainty and sensitivity analysis",
+        "Reproducible graphs from valid artifacts"
+      ],
+      "acceptance": [
+        "Practical and statistical support against both requested baselines",
+        "Independent tasks are distinguished from repeated seeds",
+        "Multiplicity and missing outcomes follow the preregistration",
+        "Claims stay within tested models, agents, tasks and environments"
+      ]
+    },
+    {
+      "id": "P7",
+      "priority": 7,
+      "title": "Maintain installation, dependencies, workflows and coverage",
+      "status": "active",
+      "depends_on": [
+        "P0"
+      ],
+      "requirements": [
+        "R1",
+        "R7",
+        "R8",
+        "R9",
+        "R12"
+      ],
+      "next_action": "Qualify the remaining deliberately versioned native workflow families separately, preserve historical evidence, and obtain exact-revision hosted acceptance after authorized publication. Current Windows setup has 39 native controls and five current-source controller/grader controls; these establish no model advantage.",
+      "deliverables": [
+        "Fresh-cache and recovery qualification",
+        "Workflow-to-source trigger map",
+        "Root-cause flake repairs",
+        "Current source-bound coverage and dependency evidence"
+      ],
+      "acceptance": [
+        "Required enabled jobs finish successfully on the exact candidate revision",
+        "No rerun-only repair or dropped required test family",
+        "Codecov uploads and UI state are verified after publication",
+        "Dependency findings are fixed, not suppressed"
+      ],
+      "scope": "Dependency maintenance is authorized. Security/scanner/history remediation remains held under P8.",
+      "evidence": [
+        {
+          "path": "artifacts/research/2026-11-13/anonymous-registry-client/review.json",
+          "sha256": "d5d37a5483a344503f9500fd914e05bbf51721c4fa4f2882ac7aad2df685436d"
+        },
+        {
+          "path": "artifacts/research/2026-11-13/windows-bootstrap-runtime/history/initial-qualified/review.json",
+          "sha256": "bdeee32a2a0ab8dc0e5998875cc7d6df1d2e2c6a688772e46485005ae0931893"
+        },
+        {
+          "path": "artifacts/research/2026-11-13/windows-bootstrap-runtime/review.json",
+          "sha256": "b863bbb96c44462a876908e8394aaf94d62fe03c295db103668518b32744a997"
+        }
+      ]
+    },
+    {
+      "id": "P8",
+      "priority": 8,
+      "title": "Resolve the held scanner, alert and history requirements",
+      "status": "held",
+      "depends_on": [
+        "P0"
+      ],
+      "requirements": [
+        "R2",
+        "R8",
+        "R10",
+        "R11",
+        "R12"
+      ],
+      "next_action": "Retain the hold; resume only when the owner changes the current security scope.",
+      "deliverables": [
+        "Paginated exact-revision inventories",
+        "Issue-family root-cause remediation",
+        "Verified gate thresholds and permitted exceptions",
+        "Final identity/protection and alert acceptance"
+      ],
+      "acceptance": [
+        "Reconcile full page totals and analyzer identities",
+        "No path exemptions or suppression used to make findings disappear",
+        "All required findings have verified dispositions",
+        "Current administrative protection details are verified through the permitted mechanism"
+      ],
+      "hold_reason": "Existing owner security/scanner/history pause; this plan does not resume it."
+    },
+    {
+      "id": "P9",
+      "priority": 9,
+      "title": "Publish cohesive development checkpoints and wait for hosted acceptance",
+      "status": "pending",
+      "depends_on": [
+        "P7",
+        "P8"
+      ],
+      "requirements": [
+        "R8",
+        "R11",
+        "R12"
+      ],
+      "next_action": "Prepare the exact reviewed tree now; publish only after the full required batch gates pass.",
+      "deliverables": [
+        "Reviewed file and line-ending inventory",
+        "Connector commit on main with expected-head check",
+        "Exact-commit hosted results"
+      ],
+      "acceptance": [
+        "Only the authenticated official GitHub connector performs mutations",
+        "GitHub supplies contributor attribution",
+        "All required triggered/dispatchable jobs finish and are reviewed",
+        "No release, tag or development branch is created"
+      ],
+      "repeatable": true
+    },
+    {
+      "id": "P10",
+      "priority": 10,
+      "title": "Perform the final structural refactor and end-user presentation pass",
+      "status": "pending",
+      "depends_on": [
+        "P3",
+        "P5",
+        "P6",
+        "P7",
+        "P8"
+      ],
+      "requirements": [
+        "R6",
+        "R7",
+        "R8",
+        "R12"
+      ],
+      "next_action": "After substantive requirements pass, map consumers and consolidate code, folders, workflows and current documentation coherently.",
+      "deliverables": [
+        "Clear catalog/overlay/runtime/evaluator/report boundaries",
+        "Maintained public qualification commands",
+        "Archived historical evidence with an index",
+        "Short end-user README and separate developer guide"
+      ],
+      "acceptance": [
+        "Preserve historical bytes and immutable mirrors",
+        "Update every caller, source hash, schema and generated link together",
+        "Requalify affected behavior, installation and benchmark contracts",
+        "No broad deletion of retained untrusted scratch or unrelated host data"
+      ]
+    },
+    {
+      "id": "P11",
+      "priority": 11,
+      "title": "Audit readiness for the owner's later release decision",
+      "status": "pending",
+      "depends_on": [
+        "P3",
+        "P6",
+        "P7",
+        "P8",
+        "P9",
+        "P10"
+      ],
+      "requirements": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "R8",
+        "R9",
+        "R10",
+        "R11",
+        "R12"
+      ],
+      "next_action": "Perform a requirement-by-requirement exact-revision audit and report readiness without creating a release.",
+      "deliverables": [
+        "Complete requirement/evidence matrix",
+        "Current hosted and external benchmark acceptance",
+        "Explicit limitations and supported scope"
+      ],
+      "acceptance": [
+        "Every original requirement is proved or remains visibly open",
+        "No static/package/control result substitutes for efficacy",
+        "No defensible issue is hidden",
+        "The release/tag hold remains until a new explicit owner request"
+      ]
+    }
+  ],
+  "execution_rules": [
+    "Execute the highest-priority dependency-ready action within the owner's active scope.",
+    "P3 research can progress while P1 waits on a verified external capability; model evaluation still needs its gates.",
+    "Advance a task only from inspected evidence; record the path, source identity, scope and unresolved failures.",
+    "Do not create a separate goal, agent, thread, scheduled job or persistent service to execute this plan.",
+    "Refresh the plan after material gates; keep dated state snapshots and historical failures immutable.",
+    "No model invocation before boundary qualification; no holdout access before candidate and analysis freeze."
+  ],
+  "audit": {
+    "path": "artifacts/research/2026-11-11/repository-state/audit.json",
+    "sha256": "59398cdf891f764e4b613165b9da45499b1a48a7cd27ae697cd6c24c634cf1c2"
+  }
+}

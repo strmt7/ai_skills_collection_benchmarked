@@ -73,3 +73,55 @@ def test_subject_cannot_write_control_observations(tmp_path, monkeypatch, contex
     with pytest.raises(ValueError, match="must be separate"):
         rpc.command_control(context, ["fixture"], output)
     assert not output.exists()
+
+
+def test_longer_native_control_preserves_nested_deadlines(tmp_path, monkeypatch, context):
+    def server(invocation, **streams):
+        assert streams["timeout"] == 155
+        streams["stdin"].readline()
+        streams["stdout"].write(b'{"id":1,"result":{}}\n')
+        streams["stdin"].readline()
+        request = json.loads(streams["stdin"].readline())
+        assert request["params"]["timeoutMs"] == 120000
+        assert request["params"]["outputBytesCap"] == 262144
+        streams["stdout"].write(b'{"id":2,"result":{"exitCode":0}}\n')
+        return {"exit_code": 0, "job_active_processes_after_cleanup": 0}
+
+    monkeypatch.setattr(rpc, "run_owned", server)
+    result = rpc.command_control(
+        context, ["fixture"], tmp_path / "observations", timeout_seconds=120, output_bytes=262144
+    )
+    assert result["worker_stopped"] is True
+    assert result["command"]["result"]["exitCode"] == 0
+
+
+@pytest.mark.parametrize(
+    "limits",
+    [{"timeout_seconds": value} for value in (0, 301, True, 1.5)]
+    + [{"output_bytes": value} for value in (0, 1024**2 + 1, True, 1.5)],
+)
+def test_invalid_control_budgets_do_not_create_output_or_process(tmp_path, monkeypatch, context, limits):
+    monkeypatch.setattr(rpc, "run_owned", lambda *args, **kwargs: pytest.fail("unexpected process"))
+    output = tmp_path / "observations"
+    with pytest.raises(ValueError):
+        rpc.command_control(context, ["fixture"], output, **limits)
+    assert not output.exists()
+
+
+def test_cancellation_joins_the_control_worker_and_retains_its_stop_evidence(tmp_path, monkeypatch, context):
+    def server(invocation, **streams):
+        streams["stdin"].read()
+        return {"exit_code": 0, "job_active_processes_after_cleanup": 0}
+
+    def cancel(*args):
+        raise KeyboardInterrupt
+
+    monkeypatch.setattr(rpc, "run_owned", server)
+    monkeypatch.setattr(rpc, "response", cancel)
+    output = tmp_path / "observations"
+    with pytest.raises(KeyboardInterrupt):
+        rpc.command_control(context, ["fixture"], output)
+    result = json.loads((output / "observations.json").read_bytes())
+    assert result["worker_stopped"] is True
+    assert result["process"]["job_active_processes_after_cleanup"] == 0
+    assert "command" not in result

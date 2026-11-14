@@ -13,6 +13,8 @@ on:
       - tests/test_provider_launch.py
       - tests/qualify_windows_bootstrap.ps1
       - tests/test_bootstrap_runtime.py
+      - tests/test_native_supervisor_artifacts.py
+      - pyproject.toml
       - requirements-*.txt
       - .github/workflows/bootstrap.yml
   pull_request:
@@ -27,6 +29,8 @@ on:
       - tests/test_provider_launch.py
       - tests/qualify_windows_bootstrap.ps1
       - tests/test_bootstrap_runtime.py
+      - tests/test_native_supervisor_artifacts.py
+      - pyproject.toml
       - requirements-*.txt
       - .github/workflows/bootstrap.yml
   workflow_dispatch:

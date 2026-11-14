@@ -1,0 +1,12 @@
+{
+  "level": "L1",
+  "method": "build_check",
+  "status": "failed",
+  "score": 0.0,
+  "message": "Build timed out",
+  "details": {
+    "command": "python -c 'import subprocess,sys,time; child=subprocess.Popen([sys.executable,\"-c\",\"import time;time.sleep(30)\"]);print(child.pid,flush=True);time.sleep(30)'",
+    "timeout": 2,
+    "output": "43\n"
+  }
+}

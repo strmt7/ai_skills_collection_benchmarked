@@ -1,0 +1,397 @@
+{
+  "source_config_sha256": "f658aca6273493e179b592e650341bc2cf76b1c48002633e592ab68c6cef212b",
+  "selection_sha256": "42de081f53b0273f936ea5ca12dd0a6f69da0c33ade087b7b76ac8e6b7bee1c5",
+  "source_network_mode": "bridge",
+  "source_container_backend": "enroot",
+  "rows": [
+    {
+      "task_id": "swe-skills-bench/batch8/clap-cli-patterns",
+      "skill_id": "clap-cli-patterns",
+      "batch": "batch8",
+      "repository": "burntsushi/ripgrep",
+      "source_commit": "4519153e5e461527f4bca45b042fff45c4ec6fb9",
+      "base_image": "zhangyiiiiii/swe-skills-bench-rust",
+      "limits": {
+        "cpus": "4",
+        "memory": "8g",
+        "timeout_per_command": 600,
+        "max_iterations": 1,
+        "total_timeout_sec": 2400
+      },
+      "env_vars": {},
+      "setup_commands": [],
+      "pre_process": null,
+      "evaluation": [
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_clap_cli_patterns.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 900
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "swe-skills-bench/batch10/prometheus-configuration",
+      "skill_id": "prometheus-configuration",
+      "batch": "batch10",
+      "repository": "prometheus/prometheus",
+      "source_commit": "df61021436e3aa53917a76ae8a4599d2c7fe6097",
+      "base_image": "zhangyiiiiii/swe-skills-bench-golang",
+      "limits": {
+        "max_iterations": 1,
+        "total_timeout_sec": 1800
+      },
+      "env_vars": {},
+      "setup_commands": [],
+      "pre_process": null,
+      "evaluation": [
+        {
+          "level": "L1",
+          "method": "build_check",
+          "enabled": true,
+          "params": {
+            "build_command": "go build ./...",
+            "expected_exit_code": 0,
+            "timeout": 600
+          }
+        },
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_prometheus_configuration.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 300
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "swe-skills-bench/batch1/vector-index-tuning",
+      "skill_id": "vector-index-tuning",
+      "batch": "batch1",
+      "repository": "facebookresearch/faiss",
+      "source_commit": "0759009bd7ddf290170c930c70a722badd05aa7d",
+      "base_image": "zhangyiiiiii/swe-skills-bench-python",
+      "limits": {
+        "max_iterations": 1,
+        "total_timeout_sec": 2400
+      },
+      "env_vars": {},
+      "setup_commands": [],
+      "pre_process": null,
+      "evaluation": [
+        {
+          "level": "L1",
+          "method": "build_check",
+          "enabled": true,
+          "params": {
+            "build_command": "cmake -B build && cmake --build build",
+            "expected_exit_code": 0,
+            "timeout": 1200
+          }
+        },
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_vector_index_tuning.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 300
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "swe-skills-bench/batch5/clojure-write",
+      "skill_id": "clojure-write",
+      "batch": "batch5",
+      "repository": "metabase/metabase",
+      "source_commit": "d8bb291939a60c44d8ba6eb7bb132a5e0f271cf1",
+      "base_image": "zhangyiiiiii/swe-skills-bench-clojure",
+      "limits": {
+        "max_iterations": 1,
+        "total_timeout_sec": 2400
+      },
+      "env_vars": {},
+      "setup_commands": [],
+      "pre_process": null,
+      "evaluation": [
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_clojure_write.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 600
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "swe-skills-bench/batch4/pydicom-dicom-parsing",
+      "skill_id": "pydicom-dicom-parsing",
+      "batch": "batch4",
+      "repository": "pydicom/pydicom",
+      "source_commit": "f15214fb9bc83d063f481552c487b02b28bfb7cc",
+      "base_image": "zhangyiiiiii/swe-skills-bench-python",
+      "limits": {
+        "cpus": "4",
+        "memory": "8g",
+        "timeout_per_command": 600,
+        "max_iterations": 1,
+        "total_timeout_sec": 2400
+      },
+      "env_vars": {},
+      "setup_commands": [
+        "pip install pydicom numpy --break-system-packages"
+      ],
+      "pre_process": null,
+      "evaluation": [
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_pydicom_dicom_parsing.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 300
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "swe-skills-bench/batch4/nx-workspace-patterns",
+      "skill_id": "nx-workspace-patterns",
+      "batch": "batch4",
+      "repository": "nrwl/nx",
+      "source_commit": "b3cb4d826144ceadce28dda7f614fd357bc61fd0",
+      "base_image": "zhangyiiiiii/swe-skills-bench-python",
+      "limits": {
+        "max_iterations": 1,
+        "total_timeout_sec": 2400
+      },
+      "env_vars": {},
+      "setup_commands": [],
+      "pre_process": null,
+      "evaluation": [
+        {
+          "level": "L1",
+          "method": "build_check",
+          "enabled": true,
+          "params": {
+            "build_command": "pnpm install && pnpm build",
+            "expected_exit_code": 0,
+            "timeout": 600
+          }
+        },
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_nx_workspace_patterns.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 600
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "swe-skills-bench/batch3/go-monads-mo",
+      "skill_id": "go-monads-mo",
+      "batch": "batch3",
+      "repository": "samber/mo",
+      "source_commit": "35a143a391a281ca954b388bd8c6795ea1ee1955",
+      "base_image": "zhangyiiiiii/swe-skills-bench-golang",
+      "limits": {
+        "cpus": "4",
+        "memory": "8g",
+        "timeout_per_command": 600,
+        "max_iterations": 1,
+        "total_timeout_sec": 2400
+      },
+      "env_vars": {},
+      "setup_commands": [
+        "cd /workspace/mo && go mod download"
+      ],
+      "pre_process": null,
+      "evaluation": [
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_go_monads_mo.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 300
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "swe-skills-bench/batch4/bats-shell-testing",
+      "skill_id": "bats-shell-testing",
+      "batch": "batch4",
+      "repository": "bats-core/bats-core",
+      "source_commit": "d9faff0d7bc32e7adebc6552446f978118d3ab3b",
+      "base_image": "zhangyiiiiii/swe-skills-bench-python",
+      "limits": {
+        "cpus": "4",
+        "memory": "8g",
+        "timeout_per_command": 600,
+        "max_iterations": 1,
+        "total_timeout_sec": 2400
+      },
+      "env_vars": {},
+      "setup_commands": [
+        "apt-get update && apt-get install -y bats"
+      ],
+      "pre_process": null,
+      "evaluation": [
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_bats_shell_testing.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 300
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "swe-skills-bench/batch3/tanstack-query-patterns",
+      "skill_id": "tanstack-query-patterns",
+      "batch": "batch3",
+      "repository": "tanstack/query",
+      "source_commit": "763782a2403aefaa52ce76601cf0f4912045be34",
+      "base_image": "zhangyiiiiii/swe-skills-bench-node22-ext",
+      "limits": {
+        "cpus": "4",
+        "memory": "8g",
+        "timeout_per_command": 600,
+        "max_iterations": 1,
+        "total_timeout_sec": 2400
+      },
+      "env_vars": {},
+      "setup_commands": [
+        "cd /workspace/query && (corepack enable pnpm || npm i -g pnpm) && pnpm install --no-frozen-lockfile"
+      ],
+      "pre_process": null,
+      "evaluation": [
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_tanstack_query_patterns.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 300
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "swe-skills-bench/batch8/graphql-schema-design",
+      "skill_id": "graphql-schema-design",
+      "batch": "batch8",
+      "repository": "apollographql/apollo-server",
+      "source_commit": "64c0e1bb5d79d571bf448c35aea0b31097e6ce9d",
+      "base_image": "zhangyiiiiii/swe-skills-bench-node-ext",
+      "limits": {
+        "cpus": "4",
+        "memory": "8g",
+        "timeout_per_command": 600,
+        "max_iterations": 1,
+        "total_timeout_sec": 2400
+      },
+      "env_vars": {},
+      "setup_commands": [
+        "cd /workspace/apollo-server && npm i graphql @apollo/server graphql-tag && npm i -D vitest"
+      ],
+      "pre_process": null,
+      "evaluation": [
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_graphql_schema_design.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 300
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "swe-skills-bench/batch7/gitlab-ci-patterns",
+      "skill_id": "gitlab-ci-patterns",
+      "batch": "batch7",
+      "repository": "gitlabhq/gitlabhq",
+      "source_commit": "d91b0b33f4c63b5f4b7307059a9b70d9b82a7b41",
+      "base_image": "zhangyiiiiii/swe-skills-bench-ruby",
+      "limits": {
+        "max_iterations": 1,
+        "total_timeout_sec": 2400
+      },
+      "env_vars": {},
+      "setup_commands": [],
+      "pre_process": null,
+      "evaluation": [
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_gitlab_ci_patterns.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 600
+          }
+        }
+      ]
+    },
+    {
+      "task_id": "swe-skills-bench/batch2/mypy-type-checking",
+      "skill_id": "mypy-type-checking",
+      "batch": "batch2",
+      "repository": "psf/black",
+      "source_commit": "8dcc4865c8f9a2769411db5638927696172cdf75",
+      "base_image": "zhangyiiiiii/swe-skills-bench-python",
+      "limits": {
+        "cpus": "4",
+        "memory": "8g",
+        "timeout_per_command": 600,
+        "max_iterations": 1,
+        "total_timeout_sec": 2400
+      },
+      "env_vars": {},
+      "setup_commands": [
+        "pip install mypy --break-system-packages"
+      ],
+      "pre_process": null,
+      "evaluation": [
+        {
+          "level": "L2",
+          "method": "unit_test",
+          "enabled": true,
+          "params": {
+            "test_command": "python -m pytest /workspace/tests/test_mypy_type_checking.py -v --tb=short",
+            "min_pass_rate": 1.0,
+            "timeout": 300
+          }
+        }
+      ]
+    }
+  ],
+  "task_briefs_or_evaluator_implementations_read": false,
+  "model_invocations": 0
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "kind": "partial-selected-task-integration",
+  "task_id": "swe-skills-bench/batch4/pydicom-dicom-parsing",
+  "selection_sha256": "42de081f53b0273f936ea5ca12dd0a6f69da0c33ade087b7b76ac8e6b7bee1c5",
+  "partition": "development",
+  "original_task_and_verifier": [
+    {
+      "path": "tasks/batch4/pydicom-dicom-parsing.md",
+      "git_blob_sha1": "90685d75108c736439b98d08c54a0cfa0e927535",
+      "bytes": 3300,
+      "sha256": "fd1ec73df6e6ee48ceac3dcb9f18f654623a55371e95a361740e89c972139487",
+      "url": "https://github.com/ControllableModel/SWE-Skills-Bench/blob/4d3450d9216a590a8726fcb3604b5143daca776b/tasks/batch4/pydicom-dicom-parsing.md"
+    },
+    {
+      "path": "tests/batch4/test_pydicom_dicom_parsing.py",
+      "git_blob_sha1": "9cfd34a13f339803268ea40844b39de1f12529ab",
+      "bytes": 19072,
+      "sha256": "8cf292604c990ca9de963dc108557e06bbb406316a0e608d384d2c6c1aa88925",
+      "url": "https://github.com/ControllableModel/SWE-Skills-Bench/blob/4d3450d9216a590a8726fcb3604b5143daca776b/tests/batch4/test_pydicom_dicom_parsing.py"
+    }
+  ],
+  "project_commit": "f15214fb9bc83d063f481552c487b02b28bfb7cc",
+  "project_tree_sha1": "77cf924c4d3b0150d05345d20d561eed731a6f8b",
+  "project_archive_sha256": "36c35d54315e26107a8210114d2a18a99f3e010cee87246157dc20ef6bc18768",
+  "complete_project_files": 541,
+  "linux_dependency_graph_qualified": true,
+  "original_verifier_failure_controls_qualified": true,
+  "original_verifier_success_control_qualified": false,
+  "publisher_scoring_class_qualified_for_this_task": false,
+  "windows_subject_tool_access_qualified": false,
+  "maintained_grader_dependency_profile_implemented": false,
+  "candidate_source_unchanged": true,
+  "original_verifier_source_unchanged": true,
+  "limits": {
+    "memory_bytes": 1610612736,
+    "tmpfs_bytes": 536870912,
+    "lease_seconds": 300,
+    "setup_timeout_seconds": 120,
+    "probe_timeout_seconds": 120
+  },
+  "framework_version": "9.2.0",
+  "source_environment_deviations": [
+    "Fresh private hash-locked environment rather than the authors unversioned system installation command.",
+    "Pytest 9.2.0 in the private environment; the unchanged cached image contains Pytest 9.0.2.",
+    "Offline controlled Docker execution instead of the author configuration Enroot/bridge environment."
+  ],
+  "evidence": "artifacts/research/2026-11-13/pydicom-task-integration/result.json",
+  "execution_admitted": false,
+  "complete_preregistration": false,
+  "model_invocations": 0,
+  "agent_efficacy_established": false
+}

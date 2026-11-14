@@ -1,0 +1,16 @@
+{
+  "source": "included\\skills\\by-category\\coding-refactoring-repository-automation\\latest-release-devops\\makefile-generator\\docs\\optimization-guide.md",
+  "canonical_source_sha256": "8b928d0ac61c01fc83255ba96a29e480c9496d991f72c47f561b08558b1f7a6f",
+  "source_examples": {
+    "unity": "# Combine all sources into one compilation unit\nunity.c: $(SOURCES)\n\t@echo \"Generating unity build...\"\n\t@for src in $(SOURCES); do \\\n\t\techo \"#include \\\"$$src\\\"\" >> $@; \\\n\tdone\n\nunity.o: unity.c\n\t$(CC) $(CFLAGS) -c $< -o $@\n\n# Fast single-file compilation\n# Trade-off: No parallel compilation\n",
+    "recursive": "# Top-level Makefile\nSUBDIRS := lib1 lib2 app\n\nall:\n\tfor dir in $(SUBDIRS); do $(MAKE) -C $$dir; done\n"
+  },
+  "contracts": [
+    "Regenerating an aggregate translation unit after one input changes must contain each declared source exactly once and compile.",
+    "Removing an explicitly configured source must remove its inclusion after the configuration changes.",
+    "A failing required sub-build must cause the parent build to fail even when a later sub-build would succeed.",
+    "An all-successful declared sub-build graph must succeed with bounded parallel jobs.",
+    "A documented profiling flag must be accepted by the declared Make executable; supported trace output is checked separately."
+  ],
+  "scope": "Source-grounded component review, not an independent agent benchmark or speed comparison. Contracts fixed before native execution and maintained guidance edits."
+}

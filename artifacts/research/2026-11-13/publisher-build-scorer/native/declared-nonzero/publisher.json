@@ -1,0 +1,12 @@
+{
+  "level": "L1",
+  "method": "build_check",
+  "status": "passed",
+  "score": 1.0,
+  "message": "Build succeeded",
+  "details": {
+    "command": "python -c 'raise SystemExit(7)'",
+    "exit_code": 7,
+    "duration": 0.016093293999801972
+  }
+}

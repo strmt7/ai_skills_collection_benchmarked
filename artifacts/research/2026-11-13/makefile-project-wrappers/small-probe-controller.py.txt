@@ -1,0 +1,24 @@
+"""Replay a declared local component observation in an already cached admitted image."""
+import argparse,hashlib,json,os,sys
+from pathlib import Path
+S=Path(__file__).resolve().parent;R=S.parents[2];sys.path.insert(0,str(R/'tools'))
+from _native_benchmark_runtime import ContainerLease,DockerClient,LeaseResources,stage_inputs
+from _windows_trial_process import run_owned
+p=argparse.ArgumentParser();p.add_argument('--program',type=Path,required=True);p.add_argument('--output',type=Path,required=True);a=p.parse_args()
+source=a.program.resolve(strict=True);out=a.output.resolve();assert source.is_relative_to(S) and out.is_relative_to(S) and out!=S and not out.exists()
+out.mkdir();raw_source=source.read_bytes();assert len(raw_source)<=64*1024
+runtime_path=S/'native-controller-runtime-qualification-v1/runtime.json';runtime=json.loads(runtime_path.read_bytes());exe=Path(runtime['docker_cli']);assert hashlib.sha256(exe.read_bytes()).hexdigest()==runtime['docker_cli_sha256']
+config=out/'preflight';config.mkdir();(config/'config.json').write_text('{"auths":{}}\n')
+env={k:os.environ[k] for k in ('SYSTEMROOT','WINDIR','TEMP','TMP') if k in os.environ};env['PATH']=os.pathsep.join((str(exe.parent),str(Path(os.environ['SYSTEMROOT'])/'System32')))
+with (out/'preflight.stdout.native').open('xb') as stdout,(out/'preflight.stderr.native').open('xb') as stderr,open(os.devnull,'rb') as stdin:
+ process=run_owned([str(exe),'--host',runtime['endpoint'],'--config',str(config),'image','inspect',runtime['image_reference']],cwd=R,environment=env,stdin=stdin,stdout=stdout,stderr=stderr,timeout=20,output_limit=1024**2)
+assert process['exit_code']==0 and process['job_active_processes_after_cleanup']==0,'No uncached image pull admitted'
+client=DockerClient(R,out/'client',runtime_path);lease=ContainerLease(client,out/'lease.json',seconds=90,resources=LeaseResources(memory_bytes=512*1024**2,tmpfs_bytes=128*1024**2,executable_workspace=True))
+try:
+ lease.create();lease.start();stage_inputs(lease,out/'staging',{'probe.py':raw_source})
+ raw=client.run('declared-component-observation',['container','exec','--user=dev',lease.identity,'python','-I','-B','/tmp/benchmark-inputs/probe.py'],timeout=60)
+ observed=json.loads(raw)
+finally:lease.close()
+assert not client.ids(lease.token) and source.read_bytes()==raw_source
+summary={'observation':observed,'program_sha256':hashlib.sha256(raw_source).hexdigest(),'image_reference':runtime['image_reference'],'lease_closed':True,'remaining_owned_containers':0,'images_pulled':0,'model_invocations':0,'runtime_admitted':False}
+(out/'summary.json').write_text(json.dumps(summary,indent=2)+'\n',encoding='utf-8',newline='\n');print(json.dumps(summary))

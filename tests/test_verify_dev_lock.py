@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import os
 import shutil
 import subprocess
@@ -11,6 +12,23 @@ from typing import Any
 
 import pytest
 import verify_dev_lock as module
+import yaml
+
+
+def test_workflow_installers_and_lock_verifier_use_the_qualified_uv_pin() -> None:
+    expected = json.loads((module.ROOT / "toolchains/bootstrap/manifest.json").read_bytes())["uv"]["version"]
+    assert expected == module.UV_VERSION
+    found = []
+    workflows = module.ROOT / ".github/workflows"
+    for path in sorted([*workflows.glob("*.yml"), *workflows.glob("*.yaml")]):
+        definition = yaml.safe_load(path.read_bytes())
+        for job in definition.get("jobs", {}).values():
+            for step in job.get("steps", []):
+                if step.get("uses", "").startswith("astral-sh/setup-uv@"):
+                    observed = step.get("with", {}).get("version")
+                    assert observed == expected, (path.name, observed, expected)
+                    found.append((path.name, observed))
+    assert found, "The qualified UV version must be exercised by workflow installers"
 
 
 @pytest.fixture

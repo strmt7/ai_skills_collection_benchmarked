@@ -1,0 +1,9 @@
+{
+  "source_sha256": "f85287a85ab0b152b2d7f8681642d616031896e4e75d45b78970de514a324747",
+  "contracts": [
+    "Record whether generic build/test targets execute work or only return placeholder success.",
+    "Project cleanup must distinguish project-generated caches from a nested dependency environment.",
+    "Observe pip and venv support before selecting an isolated dependency provisioner."
+  ],
+  "scope": "Source-grounded component/capability observation only, not agent efficacy or complete language readiness."
+}

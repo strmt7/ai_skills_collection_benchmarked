@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-13",
+  "skill_id": "affaan-m-everything-claude-code-agents-skills-e2e-testing-skill-md",
+  "source_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+  "source_skill_sha256": "f84ae93c159bf6ecef5a60c9735dc82d96bc5f977ef52eb71678b66722acf684",
+  "candidate_skill_sha256": "37dba3477baaa890c1e443027e472f06cffaa3345531d9525ad8a01d27c37d4a",
+  "upstream": {
+    "canonical_repository": "affaan-m/ECC",
+    "repository_id": 1136590548,
+    "head": "d2ef2680594f9a17526a6e1a2e18b3d242c5d17b",
+    "latest_stable_release": "v2.2.3",
+    "release_published_at": "2026-10-01T23:00:36Z",
+    "current_skill_blob": "5187aeaa3dd0dafc54fe5c0da5a85ded870c5153",
+    "release_skill_blob": "5187aeaa3dd0dafc54fe5c0da5a85ded870c5153",
+    "items_page_example_unchanged": true,
+    "other_changes": "Current frontmatter adds an activation description and MIT license; non-ASCII presentation also differs. This is not complete upstream adoption.",
+    "head_source_url": "https://github.com/affaan-m/ECC/blob/d2ef2680594f9a17526a6e1a2e18b3d242c5d17b/.agents/skills/e2e-testing/SKILL.md"
+  },
+  "method": "Source-grounded local component controls use the original example interface and separately defined readiness/failure contracts. They were authored before the new maintained candidate. They are not independent model benchmark tasks or counted agent-efficacy evidence.",
+  "findings": [
+    {
+      "id": "networkidle-is-not-business-readiness",
+      "observed": "Original ItemsPage.goto times out in a rendered, ready application that polls every 50 ms. The explicit heading contract succeeds without disabling polling."
+    },
+    {
+      "id": "wait-order-and-http-observability",
+      "observed": "A prearmed waiter observes the intended response; a waiter started after known completion times out. HTTP 500 remains observable when status is asserted after identity matching. This ordering control does not claim native fill always loses an event."
+    }
+  ],
+  "native_component_cases": 7,
+  "candidate_example_cases": [
+    {
+      "mode": "ready",
+      "observed_exit_code": 0,
+      "test_status": "passed",
+      "expected_outcome_confirmed": true,
+      "listener_closed": true,
+      "trace_count": 0
+    },
+    {
+      "mode": "missing",
+      "observed_exit_code": 1,
+      "test_status": "failed",
+      "expected_outcome_confirmed": true,
+      "listener_closed": true,
+      "trace_count": 1
+    }
+  ],
+  "versions": {
+    "node": "v26.13.0",
+    "npm": "12.2.2",
+    "playwright": "1.65.0",
+    "chromium": "158.0.8127.18"
+  },
+  "currency": [
+    {
+      "package": "playwright-core",
+      "version": "1.65.0",
+      "url": "https://registry.npmjs.org/playwright-core/latest",
+      "status": 200,
+      "sha256": "beea255db6b49c0a9444ed34dcbda0e77c5db877f9469e0b7be770443e4c83e7",
+      "prerelease": false
+    },
+    {
+      "package": "@playwright/test",
+      "version": "1.65.0",
+      "url": "https://registry.npmjs.org/@playwright/test/latest",
+      "status": 200,
+      "sha256": "18d4a1c6962a3b9745ee6b7bf9ba067331b26fc3aeaf3da3e0e9915114101f9d",
+      "prerelease": false
+    }
+  ],
+  "runtime_identities": {
+    "node_sha256": "14319838b3f355e0398c13569a90270bce4fc68f25189f58c59b03dadae0e6d5",
+    "browser_tree_sha256": "10d587e7f140866aefc7c693d4889136c8c33c9ed4e13af4f9e90312374a169d",
+    "npm_tree_sha256": "6492496f32010ea16c8af9af78b45898fe68b0494ebddef2087cf9918eefaea9",
+    "example_sha256": "fd45e971ae934251279bf0328b6937a6d06479bcb2825c99f0421fedc53e481a"
+  },
+  "artifact_checks": {
+    "native_trace_zip_valid": true,
+    "candidate_failure_trace_zip_valid": true,
+    "candidate_failure_screenshot_visually_inspected": true,
+    "candidate_failure_screenshot_observed": "Loading heading; expected Items readiness heading absent."
+  },
+  "official_documentation": [
+    {
+      "url": "https://playwright.dev/docs/api/class-page",
+      "scope": "Load-state guidance and response wait registration; other page APIs not comprehensively reviewed.",
+      "native_result_sha256": "c8979d7a9bf51d9a7ea67e95fad845755221017e5db5942f15a48698117364c0"
+    },
+    {
+      "url": "https://playwright.dev/docs/test-assertions",
+      "scope": "Awaited retrying locator assertions; not every assertion API.",
+      "native_result_sha256": "2020e9acccc367190fb921a57ed99123c4ac382923c1f54bfb43f4cefc379423"
+    }
+  ],
+  "prior_evidence": "docs/research-e2e-response-order.md retains earlier response-order controls across Node versions and operating systems; it is neither deleted nor recounted as new evidence.",
+  "artifacts": [
+    {
+      "path": "artifacts/research/2026-11-13/e2e-readiness/candidate-example.json",
+      "sha256": "24eb402c57c36a82b79cd709b134496765f6627afcbd3a61a47e6bde86e7e8bf"
+    },
+    {
+      "path": "artifacts/research/2026-11-13/e2e-readiness/candidate-runner.cjs.txt",
+      "sha256": "01d1ab829807eeb11c44723c81752e29570fc5c55a5a0a4480af26bbef7c5c77"
+    },
+    {
+      "path": "artifacts/research/2026-11-13/e2e-readiness/component-control.cjs.txt",
+      "sha256": "b5f6bc3b561175761953aecb48080d16b9d6d49a3070ecdf1a09f905ab9c8950"
+    },
+    {
+      "path": "artifacts/research/2026-11-13/e2e-readiness/component-controls.json",
+      "sha256": "fff51f9a25dbabb40ad46a2debe8e100efd5096ae2d9059e2d79a1d14840c672"
+    },
+    {
+      "path": "artifacts/research/2026-11-13/e2e-readiness/original-example.ts.txt",
+      "sha256": "171274472bc9c394da8fe1864aef8434194a623e0afbf88502c7bc7af3f73ba2"
+    },
+    {
+      "path": "artifacts/research/2026-11-13/e2e-readiness/runner/package-lock.json",
+      "sha256": "fcc4bd1404ab67e52b2a02be6a8be02b8b705d2e6f47bb7349e588cd7b246970"
+    },
+    {
+      "path": "artifacts/research/2026-11-13/e2e-readiness/runner/package.json",
+      "sha256": "845f7a5e8ab0a5b44673b522578c5de44acbf6e8d6ae26917c98cd0de122706f"
+    }
+  ],
+  "limitations": [
+    "Windows x64 live browser qualification only in this round.",
+    "Only selected readiness, response and artifact mechanisms tested; browser matrices, application journeys, actual CI upload and the remaining source claims require separate qualification.",
+    "The source financial/wallet examples were not executed; cybersecurity-related work remains held."
+  ],
+  "global_installation": false,
+  "browser_downloads": 0,
+  "model_invocations": 0,
+  "agent_efficacy_established": false,
+  "performance_status": "unbenchmarked",
+  "resource_cleanup": {
+    "owned_job_processes": 0,
+    "owned_listeners_closed": true
+  },
+  "npm_source": {
+    "version": "12.2.2",
+    "engines": {
+      "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
+    },
+    "url": "https://registry.npmjs.org/npm/-/npm-12.2.2.tgz",
+    "integrity": "sha512-KglgbZyacf7jH+FHuNRqVuCzQi8VhI2a7J87Ix43FsPTuZoGWmIXXGdZtBUOA79vwL+IJREqURVzupA7PsQTcA==",
+    "archive_sha256": "07fecbf753e2c3bc10ebeb3e9ed8738f6a0cc1292998b79e2e9f1dd2a5525e0c",
+    "archive_bytes": 3069597,
+    "files": 1943,
+    "global_installation": false
+  },
+  "reproduction": {
+    "inputs": "runner/package.json and package-lock.json are the exact qualified private project inputs. candidate-runner.cjs.txt is retained as inert control source, not a new application tool.",
+    "steps": [
+      "Use admitted explicit Node/npm executables and a matching Playwright browser in an owned environment. Install runner/package-lock.json with npm ci --ignore-scripts and no global installation.",
+      "Copy the maintained skill TypeScript example unchanged to example.spec.ts in that isolated project.",
+      "Execute the retained candidate runner with explicit project directory, browser executable, new output directory and ready or missing fixture mode. Bound the process tree, memory, output and wall time as in the recorded native qualification.",
+      "The ready fixture must pass once; the missing fixture must fail at the Items visibility assertion without skips or retries, retain its trace and close the listener."
+    ],
+    "limits": "These are source-grounded component recipes, not model benchmarks or a self-provisioning standalone benchmark adapter."
+  }
+}

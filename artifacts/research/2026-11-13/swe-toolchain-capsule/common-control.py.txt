@@ -1,0 +1,35 @@
+"""Deterministic SDK inventory shared by the setup and task-user controls."""
+import hashlib
+import json
+import os
+import stat
+from pathlib import Path
+
+ROOT = Path('/tmp/benchmark-node22-capsule')
+SDK = ROOT / 'node-v22.23.5-linux-x64'
+
+def inventory():
+    pending = [ROOT]
+    records = []
+    while pending:
+        path = pending.pop()
+        info = path.lstat()
+        row = {'path': path.relative_to(ROOT).as_posix(), 'uid': info.st_uid, 'gid': info.st_gid, 'mode': stat.S_IMODE(info.st_mode)}
+        assert info.st_uid == info.st_gid == 0
+        if path.is_symlink():
+            row.update(kind='symlink', target=os.readlink(path))
+            assert path.resolve(strict=True).is_relative_to(ROOT)
+        elif path.is_dir():
+            assert not row['mode'] & 0o222
+            row['kind'] = 'directory'
+            pending.extend(sorted(path.iterdir(), reverse=True))
+        elif path.is_file():
+            assert not row['mode'] & 0o222
+            row.update(kind='file', bytes=info.st_size, sha256=hashlib.sha256(path.read_bytes()).hexdigest())
+        else:
+            raise ValueError('Unexpected SDK object type')
+        records.append(row)
+        assert len(records) <= 10000
+    records.sort(key=lambda row: row['path'])
+    raw = json.dumps(records, sort_keys=True, separators=(',', ':')).encode()
+    return records, hashlib.sha256(raw).hexdigest()

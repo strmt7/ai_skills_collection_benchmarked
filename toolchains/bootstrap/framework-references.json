@@ -1,0 +1,30 @@
+{
+  "version": "1.0.3",
+  "url": "https://api.nuget.org/v3-flatcontainer/microsoft.netframework.referenceassemblies.net48/1.0.3/microsoft.netframework.referenceassemblies.net48.1.0.3.nupkg",
+  "archive_bytes": 20997929,
+  "archive_sha256": "8a7e348538e7eb91351696911689f49e3d4f63f8bab517432bbe159b8b1104a2",
+  "files": {
+    "Microsoft.NETFramework.ReferenceAssemblies.net48.nuspec": {
+      "bytes": 949,
+      "sha256": "11b529552084c0d72e9ab1b20945cda82a6f6fd5a5123def11c1d109913ce0fd"
+    },
+    "mscorlib.dll": {
+      "bytes": 2731056,
+      "sha256": "6b35530467b914b0b195146ca1d1485ddd219afaad6461103f16f54e952f75a9"
+    },
+    "System.Core.dll": {
+      "bytes": 256560,
+      "sha256": "94a1fc97eb0d36f13acd209bb7207da504c8be10caf7e5096b2c46e671dc6fe2"
+    },
+    "System.dll": {
+      "bytes": 1477168,
+      "sha256": "2fe343569f794f2ca92ee14a41875571a9f21bf92637b8f8ee86306534209cca"
+    }
+  },
+  "file_map": {
+    "Microsoft.NETFramework.ReferenceAssemblies.net48.nuspec": "Microsoft.NETFramework.ReferenceAssemblies.net48.nuspec",
+    "build/.NETFramework/v4.8/mscorlib.dll": "mscorlib.dll",
+    "build/.NETFramework/v4.8/System.Core.dll": "System.Core.dll",
+    "build/.NETFramework/v4.8/System.dll": "System.dll"
+  }
+}

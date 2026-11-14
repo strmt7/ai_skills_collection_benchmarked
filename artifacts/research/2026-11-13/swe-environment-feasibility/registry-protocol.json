@@ -1,0 +1,115 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "python-positive",
+      "repository": "zhangyiiiiii/swe-skills-bench-python",
+      "tag": "latest",
+      "requested_url": "https://registry-1.docker.io/v2/zhangyiiiiii/swe-skills-bench-python/manifests/latest",
+      "challenge_scope": "repository:zhangyiiiiii/swe-skills-bench-python:pull",
+      "challenge_service": "registry.docker.io",
+      "token_endpoint": "https://auth.docker.io/token",
+      "token_response_status": 200,
+      "token_response_field_names": [
+        "access_token",
+        "expires_in",
+        "issued_at",
+        "token"
+      ],
+      "bearer_retained": false,
+      "manifest_status": 200,
+      "expected_status": 200,
+      "expected_status_observed": true,
+      "manifest_body_sha256": "51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+      "manifest_content_type": "application/vnd.oci.image.manifest.v1+json",
+      "registry_manifest_digest": "sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+      "error_codes": []
+    },
+    {
+      "case": "node-ext",
+      "repository": "zhangyiiiiii/swe-skills-bench-node-ext",
+      "tag": "latest",
+      "requested_url": "https://registry-1.docker.io/v2/zhangyiiiiii/swe-skills-bench-node-ext/manifests/latest",
+      "challenge_scope": "repository:zhangyiiiiii/swe-skills-bench-node-ext:pull",
+      "challenge_service": "registry.docker.io",
+      "token_endpoint": "https://auth.docker.io/token",
+      "token_response_status": 200,
+      "token_response_field_names": [
+        "access_token",
+        "expires_in",
+        "issued_at",
+        "token"
+      ],
+      "bearer_retained": false,
+      "manifest_status": 401,
+      "expected_status": 401,
+      "expected_status_observed": true,
+      "manifest_body_sha256": "165b8cad53eba3faf4b9effa255226af29638c5fff9cee52eb5c17b3e2e4b0db",
+      "manifest_content_type": "application/json",
+      "registry_manifest_digest": null,
+      "error_codes": [
+        "UNAUTHORIZED"
+      ]
+    },
+    {
+      "case": "node22-ext",
+      "repository": "zhangyiiiiii/swe-skills-bench-node22-ext",
+      "tag": "latest",
+      "requested_url": "https://registry-1.docker.io/v2/zhangyiiiiii/swe-skills-bench-node22-ext/manifests/latest",
+      "challenge_scope": "repository:zhangyiiiiii/swe-skills-bench-node22-ext:pull",
+      "challenge_service": "registry.docker.io",
+      "token_endpoint": "https://auth.docker.io/token",
+      "token_response_status": 200,
+      "token_response_field_names": [
+        "access_token",
+        "expires_in",
+        "issued_at",
+        "token"
+      ],
+      "bearer_retained": false,
+      "manifest_status": 401,
+      "expected_status": 401,
+      "expected_status_observed": true,
+      "manifest_body_sha256": "e31085bd285b00f0d0c5c6cad9f12618b23170cbb77eb149ae0d0aadea094ea0",
+      "manifest_content_type": "application/json",
+      "registry_manifest_digest": null,
+      "error_codes": [
+        "UNAUTHORIZED"
+      ]
+    },
+    {
+      "case": "python-missing-tag",
+      "repository": "zhangyiiiiii/swe-skills-bench-python",
+      "tag": "qualification-absent-ca548be78d994944936f2d9200e68496",
+      "requested_url": "https://registry-1.docker.io/v2/zhangyiiiiii/swe-skills-bench-python/manifests/qualification-absent-ca548be78d994944936f2d9200e68496",
+      "challenge_scope": "repository:zhangyiiiiii/swe-skills-bench-python:pull",
+      "challenge_service": "registry.docker.io",
+      "token_endpoint": "https://auth.docker.io/token",
+      "token_response_status": 200,
+      "token_response_field_names": [
+        "access_token",
+        "expires_in",
+        "issued_at",
+        "token"
+      ],
+      "bearer_retained": false,
+      "manifest_status": 404,
+      "expected_status": 404,
+      "expected_status_observed": true,
+      "manifest_body_sha256": "b2992c32372c85f48fd2db557077e83bea183c9c261b0c4b815a6dd8886cf875",
+      "manifest_content_type": "application/json",
+      "registry_manifest_digest": null,
+      "error_codes": [
+        "MANIFEST_UNKNOWN"
+      ]
+    }
+  ],
+  "method": "Documented challenge, anonymous opaque bearer acquisition and manifest request. Positive public-image and missing-tag controls use the same client. No token content or credential headers were persisted.",
+  "personal_credentials_used": false,
+  "personal_profile_read": false,
+  "proxy_configuration_read": false,
+  "image_layers_downloaded": 0,
+  "containers_created": 0,
+  "model_invocations": 0,
+  "scope": "Repository visibility/access observation only; 401 does not prove private rather than absent. No image/runtime admitted."
+}

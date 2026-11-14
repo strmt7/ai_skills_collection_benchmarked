@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "required_tools": [
+    "caveman",
+    "cocoindex-code-search",
+    "crawl4ai-research"
+  ],
+  "entrypoints_checked": 673,
+  "errors": []
+}

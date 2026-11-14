@@ -1,0 +1,226 @@
+{
+  "checks_executed": 8,
+  "qualification_sha256": "f2042ba409a46589d928101bc54958602e52ee79582e007f2a0f7d83f9a68798",
+  "controls": [
+    {
+      "id": "windows-positive",
+      "passed": true,
+      "native_exit_code": 0,
+      "remaining_job_processes": 0
+    },
+    {
+      "id": "baseline",
+      "passed": true,
+      "native_exit_code": 0,
+      "remaining_job_processes": 0
+    },
+    {
+      "id": "wrong-import",
+      "passed": true,
+      "native_exit_code": 0,
+      "remaining_job_processes": 0
+    },
+    {
+      "id": "schema-2",
+      "passed": true,
+      "native_exit_code": 0,
+      "remaining_job_processes": 0
+    },
+    {
+      "id": "schema-3",
+      "passed": true,
+      "native_exit_code": 0,
+      "remaining_job_processes": 0
+    },
+    {
+      "id": "node-replay",
+      "passed": true,
+      "native_exit_code": 0,
+      "remaining_job_processes": 0
+    },
+    {
+      "id": "archive-rejections",
+      "passed": true,
+      "native_exit_code": 0,
+      "remaining_job_processes": 0
+    },
+    {
+      "id": "anonymous-client",
+      "passed": true,
+      "native_exit_code": 0,
+      "remaining_job_processes": 0
+    }
+  ],
+  "live_runtime": {
+    "passed": true,
+    "results": [
+      {
+        "id": "node",
+        "stdout": "{\"version\":\"v26.13.1\",\"arch\":\"x64\",\"platform\":\"linux\",\"crypto\":true}"
+      },
+      {
+        "id": "npm",
+        "stdout": "11.20.0"
+      },
+      {
+        "id": "npx",
+        "stdout": "11.20.0"
+      }
+    ],
+    "source_unchanged": true,
+    "closed_lease": "closed",
+    "processes_closed": true,
+    "image_id": "sha256:706b871312a2396dabb1f751a253802c0f89347f74ec9d4fab0f6436ffe0308c",
+    "publisher_equivalent": false,
+    "modern_replay_only": true,
+    "model_trials_run": 0
+  },
+  "rejected_archives": {
+    "passed": true,
+    "cases": [
+      {
+        "id": "digest",
+        "rejected": true,
+        "reason": "Local image archive differs from its declared digest",
+        "engine_loads": 0,
+        "registry_pulls": 0,
+        "all_jobs_closed": true
+      },
+      {
+        "id": "tag",
+        "rejected": true,
+        "reason": "Local image archive must be untagged",
+        "engine_loads": 0,
+        "registry_pulls": 0,
+        "all_jobs_closed": true
+      }
+    ],
+    "model_trials_run": 0
+  },
+  "anonymous_client": {
+    "controls": [
+      {
+        "id": "empty-map-negative",
+        "verdict": "default_helper_discovery_reproduced",
+        "native_exit_code": 0,
+        "helper_calls_before": 0,
+        "helper_calls_after": 1,
+        "config_sha256": "c0b7041de81740accd514d8c61ef461104bfaf857be2b63db637bceded78d22b",
+        "job_remaining_processes": 0
+      },
+      {
+        "id": "explicit-anonymous-positive",
+        "verdict": "explicit_anonymous_config_skips_helper_and_verifies_manifest",
+        "native_exit_code": 0,
+        "helper_calls_before": 1,
+        "helper_calls_after": 1,
+        "config_sha256": "62ddcfdd2e04ce00a794930f306fc84a7a6f39fc1a7198e5f3e8badf7b72ba83",
+        "job_remaining_processes": 0
+      }
+    ],
+    "base_interpreter_inventory_unchanged": true,
+    "only_owned_helper_used": true,
+    "raw_sha256": "d574a0d49a723a21243d268b030abce00241cbc8300eae10e5153101891c85f6"
+  },
+  "publisher_grader_regressions": [
+    {
+      "id": "windows-pydicom-positive",
+      "windows_contract_passed": 15,
+      "original_verifier_passed": 18,
+      "native_command_exit_code": 0,
+      "native_counts": {
+        "passed": 18,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "total": 18
+      },
+      "raw_sha256": "e3c0264e0cef99f4b39163b1bd19c96901a5155f80cdf7e817679c9a19669034"
+    },
+    {
+      "id": "baseline",
+      "raw_sha256": "45af331719bc3b6d3f1872db108df428e45d702019b89ffb91f9927300a66246",
+      "passed": true,
+      "case": "baseline",
+      "status": "task_failed",
+      "diagnostic_fraction": 0.0,
+      "native_counts": {
+        "passed": 0,
+        "failed": 18,
+        "skipped": 0,
+        "errors": 0,
+        "total": 18
+      },
+      "original_publisher_scoring_class_executed": true,
+      "dependency_inventory_unchanged": true,
+      "closed_leases": 2,
+      "remaining_owned_containers": 0,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "task_solution_written": false
+    },
+    {
+      "id": "wrong-import",
+      "raw_sha256": "d6e15b3374d14fe87064d7340166e349f47bf46dfaaab39ac9e360c579f201c1",
+      "passed": true,
+      "case": "wrong-import",
+      "status": "harness_error",
+      "diagnostic_fraction": null,
+      "native_counts": null,
+      "original_publisher_scoring_class_executed": false,
+      "dependency_inventory_unchanged": false,
+      "closed_leases": 1,
+      "remaining_owned_containers": 0,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "task_solution_written": false
+    },
+    {
+      "id": "schema-2",
+      "raw_sha256": "ea673ac03b2ceaea962c2b7f589dc949e5f24641ef1a424d1cfe9abcf999ae56",
+      "passed": true,
+      "task_schema": 2,
+      "existing_public_fixture": "batch1/python-packaging",
+      "original_verifier_and_publisher_scorer_executed": true,
+      "native_counts": {
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "total": 11
+      },
+      "closed_leases": 2,
+      "remaining_owned_containers": 0,
+      "new_selected_task_solution_written": false,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "dependency_inventory_unchanged": false
+    },
+    {
+      "id": "schema-3",
+      "raw_sha256": "87bb4198ced949e97e00f48f7516ac105e474ac244c89a607bba8eb9e1a905ab",
+      "passed": true,
+      "task_schema": 3,
+      "existing_public_fixture": "batch1/python-packaging",
+      "original_verifier_and_publisher_scorer_executed": true,
+      "native_counts": {
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "total": 11
+      },
+      "closed_leases": 2,
+      "remaining_owned_containers": 0,
+      "new_selected_task_solution_written": false,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "dependency_inventory_unchanged": true
+    }
+  ],
+  "closed_grader_leases": 9,
+  "complete_dependency_objects": 2525,
+  "complete_inventory_unchanged_within_and_across_three_grades": true,
+  "model_invocations": 0,
+  "counted_attempts": 0
+}

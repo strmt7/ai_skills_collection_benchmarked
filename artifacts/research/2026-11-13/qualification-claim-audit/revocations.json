@@ -1,0 +1,31 @@
+{
+  "new_revoked_historical_wrapper_claims": [
+    {
+      "wrapper": "provider-route-signin-native-qualified-refresh1/qualification.json",
+      "wrapper_sha256": "a8a9caac2e705cf608feae69813db5f4875aaf3dee6d7033cd88e0668bf20117",
+      "check_id": "signin-unchanged-refresh",
+      "output": "provider-route-signin-unchanged-refresh-refresh1",
+      "historical_check_passed": true,
+      "historical_task_status": "task_failed",
+      "summary_sha256": "0505fc1e7baf185139ad4b600eb47e8599fc89e0f6226332778fdbd25fa1477f",
+      "classification": "revoked_wrapper_pass_nested_summary_failed",
+      "nested_summary_passed": false,
+      "reason": "The historical helper emitted the final failing summary but returned the stale pre-update passed variable. Process exit zero did not validate the final control criteria.",
+      "stdout_sha256": "e5ce1bc021e267b43716afc4df258ba763f8c1cdaf25c7e4803a4ad4b2a32f42",
+      "historical_implementation_sha256": "56d1942531773bb2f97994148a9b071534766206725495d338f477ff74f57253",
+      "current_corrected_implementation_sha256": "cd37cc70bcad6b7fea26187b27d62e1cad0751f3e986ef30a0c621ff88ba56a9",
+      "original_receipts_modified": false,
+      "accepted_for_current_admission": false
+    }
+  ],
+  "previous_marker_claim_revocations": {
+    "path": "artifacts/research/2026-11-13/windows-pydicom-and-stable-tools/revoked-controls.json",
+    "sha256": "6e62aebd5c3ea749a64133e2ca50da7d1d158e867a6b75f0e30288173bbffed1"
+  },
+  "separate_metadata_scope_correction": {
+    "path": "artifacts/research/2026-11-13/pydicom-task-success-controls/metadata-scope-correction.json",
+    "sha256": "b2623af862a82979abd11c02d71bf8246186dbda9eeb396d5fd65db06c53c07f"
+  },
+  "original_receipts_modified": false,
+  "model_outcomes_removed_or_replaced": false
+}

@@ -1,0 +1,13 @@
+{
+  "package": "Microsoft.NETFramework.ReferenceAssemblies.net48",
+  "version": "1.0.3",
+  "url": "https://api.nuget.org/v3-flatcontainer/microsoft.netframework.referenceassemblies.net48/1.0.3/microsoft.netframework.referenceassemblies.net48.1.0.3.nupkg",
+  "archive_bytes": 20997929,
+  "archive_sha256": "8a7e348538e7eb91351696911689f49e3d4f63f8bab517432bbe159b8b1104a2",
+  "publisher_sha512_base64": "XWKgyeNadNcTQaIVvQB8BrdCNrEar6fo/de1OdQRZ9HFy0jcBSaM8IV5q64ZampsSnC8AlTsACaGZUuoFw41RA==",
+  "reference_assemblies_executed": false,
+  "license_source_url": "https://github.com/microsoft/dotnet/blob/main/LICENSE",
+  "license_git_blob": "b73b4a1293c328fdb684ee285e2039f72f4f1c4c",
+  "license_verification": "Official package metadata links the former master-branch license URL, which returned 404; the official repository current main-branch MIT notice was retrieved and Git-blob verified. The failed original request is retained privately.",
+  "qualification_limit": "A pinned compiler input is not an independently verified vendor signature or evidence of model capability gains."
+}

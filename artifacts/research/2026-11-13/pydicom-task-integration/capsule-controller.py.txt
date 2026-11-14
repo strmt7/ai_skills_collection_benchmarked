@@ -1,0 +1,86 @@
+"""Run explicitly frozen setup/probe inputs in one owned disposable capsule."""
+import argparse
+import ctypes
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+S = Path(__file__).resolve().parent
+R = S.parents[2]
+sys.path.insert(0, str(R / 'tools'))
+from _native_benchmark_runtime import ContainerLease, DockerClient, LeaseResources, stage_inputs
+from _trial_protocol import relative_path
+
+def sha(path):
+    with path.open('rb') as stream:
+        return hashlib.file_digest(stream, 'sha256').hexdigest()
+
+def build_parser():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--specification', type=Path, required=True)
+    parser.add_argument('--output', type=Path, required=True)
+    return parser
+
+def main():
+    args = build_parser().parse_args()
+    spec_path = args.specification.resolve(strict=True)
+    out = args.output.resolve()
+    assert spec_path.is_relative_to(S) and out.is_relative_to(S) and out != S and not out.exists()
+    raw_spec = spec_path.read_bytes()
+    specification = json.loads(raw_spec)
+    assert set(specification) == {'schema_version', 'files', 'setup', 'probe', 'limits'} and specification['schema_version'] == 1
+    files = {}
+    sources = {}
+    assert 1 <= len(specification['files']) <= 128
+    for row in specification['files']:
+        assert set(row) == {'target', 'path', 'bytes', 'sha256'}
+        name = relative_path(row['target'])
+        path = (R / row['path']).resolve(strict=True)
+        assert name not in files and path.is_relative_to(S) and path.is_file()
+        data = path.read_bytes()
+        assert len(data) == row['bytes'] and hashlib.sha256(data).hexdigest() == row['sha256']
+        files[name] = data
+        sources[path] = row['sha256']
+    assert sum(map(len, files.values())) <= 63 * 1024**2
+    assert specification['setup'] in files and specification['probe'] in files
+    limits = specification['limits']
+    assert set(limits) == {'memory_bytes', 'tmpfs_bytes', 'lease_seconds', 'setup_timeout_seconds', 'probe_timeout_seconds'}
+    assert all(type(value) is int and value > 0 for value in limits.values())
+    assert limits['setup_timeout_seconds'] + limits['probe_timeout_seconds'] + 30 <= limits['lease_seconds']
+    class MemoryStatus(ctypes.Structure):
+        _fields_ = [('length', ctypes.c_ulong), ('load', ctypes.c_ulong)] + [(name, ctypes.c_ulonglong) for name in ('total', 'available', 'page_total', 'page_available', 'virtual_total', 'virtual_available', 'extended_available')]
+    memory = MemoryStatus()
+    memory.length = ctypes.sizeof(memory)
+    if not ctypes.windll.kernel32.GlobalMemoryStatusEx(ctypes.byref(memory)):
+        raise ctypes.WinError()
+    assert memory.available >= 8 * 1024**3
+    own_source = Path(__file__).read_bytes()
+    out.mkdir()
+    client = DockerClient(R, out / 'client', S / 'native-controller-runtime-qualification-v1/runtime.json')
+    image = json.loads(client.run('cached-image-admission', ['image', 'inspect', client.reference]))
+    assert len(image) == 1
+    lease = ContainerLease(client, out / 'lease.json', seconds=limits['lease_seconds'], resources=LeaseResources(memory_bytes=limits['memory_bytes'], tmpfs_bytes=limits['tmpfs_bytes'], executable_workspace=True, repository_workspace=True))
+    try:
+        lease.create()
+        lease.start()
+        stage_inputs(lease, out / 'staging', files)
+        setup_raw = client.run('frozen-capsule-setup', ['container', 'exec', '--user=0:0', lease.identity, 'python', '-I', '-B', '/tmp/benchmark-inputs/' + specification['setup']], timeout=limits['setup_timeout_seconds'])
+        setup = json.loads(setup_raw)
+        assert setup['passed'] is True
+        (out / 'setup.native.json').write_bytes(setup_raw)
+        probe_raw = client.run('task-user-probe', ['container', 'exec', '--user=dev', lease.identity, 'python', '-I', '-B', '/tmp/benchmark-inputs/' + specification['probe']], timeout=limits['probe_timeout_seconds'])
+        observation = json.loads(probe_raw)
+        assert observation['passed'] is True
+        (out / 'probe.native.json').write_bytes(probe_raw)
+    finally:
+        lease.close()
+    assert not client.ids(lease.token)
+    assert spec_path.read_bytes() == raw_spec and Path(__file__).read_bytes() == own_source and all(sha(path) == digest for path, digest in sources.items())
+    summary = {'observation': observation, 'setup': setup, 'specification_sha256': hashlib.sha256(raw_spec).hexdigest(), 'controller_sha256': hashlib.sha256(own_source).hexdigest(), 'asset_sha256': {name: hashlib.sha256(data).hexdigest() for name, data in files.items()}, 'image_reference': client.reference, 'image_id': image[0]['Id'], 'limits': limits, 'available_host_ram_before_bytes': memory.available, 'lease_closed': True, 'remaining_owned_containers': 0, 'images_pulled': 0, 'images_created': 0, 'global_installation': False, 'model_invocations': 0, 'runtime_admitted': False}
+    (out / 'summary.json').write_text(json.dumps(summary, indent=2) + '\n', encoding='utf-8', newline='\n')
+    print(json.dumps({'passed': True, 'cases': len(observation['cases']), 'remaining_owned_containers': 0}))
+    return 0
+
+if __name__ == '__main__':
+    raise SystemExit(main())

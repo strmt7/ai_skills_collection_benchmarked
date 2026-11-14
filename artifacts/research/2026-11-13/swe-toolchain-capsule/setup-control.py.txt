@@ -1,0 +1,53 @@
+"""Install only the checksum-frozen SDK inside the disposable lease."""
+import hashlib
+import json
+import os
+import stat
+import sys
+import tarfile
+from pathlib import Path, PurePosixPath
+
+sys.path.insert(0, '/tmp/benchmark-inputs')
+from capsule_common import ROOT, SDK, inventory
+
+archive = Path('/tmp/benchmark-inputs/runtime.tar.gz')
+expected = 'c54118104acc524633b5abe106bbf44a53126ec8b4e5fa105cb92b5d7de8a1a1'
+assert os.getuid() == 0 and not ROOT.exists()
+def admit(digest):
+    actual = hashlib.sha256(archive.read_bytes()).hexdigest()
+    if actual != digest:
+        raise ValueError('SDK digest differs from frozen source input')
+    return actual
+try:
+    admit('0' * 64)
+except ValueError:
+    rejected = True
+else:
+    raise AssertionError('Bad digest was not rejected')
+assert admit(expected) == expected
+ROOT.mkdir(mode=0o700)
+with tarfile.open(archive, 'r:gz') as source:
+    members = source.getmembers()
+    assert len(members) <= 10000 and sum(row.size for row in members) <= 256 * 1024**2
+    for row in members:
+        path = PurePosixPath(row.name)
+        assert path.parts and path.parts[0] == SDK.name and not path.is_absolute() and '..' not in path.parts
+        assert row.isfile() or row.isdir() or row.issym() or row.islnk()
+    source.extractall(ROOT, members=members, filter='data')
+pending = [ROOT]
+while pending:
+    path = pending.pop()
+    info = path.lstat()
+    assert info.st_uid == info.st_gid == 0
+    if path.is_symlink():
+        continue
+    if path.is_dir():
+        pending.extend(path.iterdir())
+    path.chmod(stat.S_IMODE(info.st_mode) & ~0o222)
+ROOT.chmod(0o555)
+records, digest = inventory()
+receipt = {'archive_sha256': expected, 'wrong_digest_rejected_before_extraction': rejected, 'inventory_sha256': digest, 'inventory': records, 'sdk_license_sha256': hashlib.sha256((SDK / 'LICENSE').read_bytes()).hexdigest(), 'setup_uid': os.getuid()}
+target = Path('/tmp/node22-capsule-receipt.json')
+target.write_text(json.dumps(receipt, sort_keys=True) + '\n')
+target.chmod(0o444)
+print(json.dumps(receipt))

@@ -1,0 +1,91 @@
+"""Replay a frozen Go probe with one admitted SDK and explicit resource limits."""
+import argparse
+import ctypes
+import hashlib
+import json
+import os
+import sys
+from pathlib import Path
+
+S = Path(__file__).resolve().parent
+R = S.parents[2]
+sys.path.insert(0, str(R / 'tools'))
+from _native_benchmark_runtime import ContainerLease, DockerClient, LeaseResources, stage_inputs
+from _windows_trial_process import run_owned
+
+p = argparse.ArgumentParser(description=__doc__)
+p.add_argument('--program', type=Path, required=True)
+p.add_argument('--output', type=Path, required=True)
+a = p.parse_args()
+program = a.program.resolve(strict=True)
+out = a.output.resolve()
+assert program.is_relative_to(S) and program.is_file() and out.is_relative_to(S) and out != S and not out.exists()
+raw = program.read_bytes()
+assert len(raw) <= 64 * 1024
+capture_path = S / 'go-linux-sdk-20261113-v1/capture.json'
+capture = json.loads(capture_path.read_bytes())
+selection = json.loads((S / 'go-stable-metadata-20261113-v1/selection.json').read_bytes())
+asset = selection['archives']['linux']
+sdk = capture_path.parent / asset['filename']
+assert sdk.stat().st_size == capture['bytes'] == asset['size'] <= 96 * 1024**2
+assert hashlib.sha256(sdk.read_bytes()).hexdigest() == capture['sha256'] == asset['sha256']
+
+class MemoryStatus(ctypes.Structure):
+    _fields_ = [('length', ctypes.c_ulong), ('load', ctypes.c_ulong)] + [(n, ctypes.c_ulonglong) for n in ('total', 'available', 'page_total', 'page_available', 'virtual_total', 'virtual_available', 'extended_available')]
+
+memory = MemoryStatus()
+memory.length = ctypes.sizeof(memory)
+if not ctypes.windll.kernel32.GlobalMemoryStatusEx(ctypes.byref(memory)):
+    raise ctypes.WinError()
+assert memory.available >= 8 * 1024**3, 'Insufficient observed host RAM headroom for the declared two-GiB component'
+out.mkdir()
+runtime_path = S / 'native-controller-runtime-qualification-v1/runtime.json'
+runtime = json.loads(runtime_path.read_bytes())
+exe = Path(runtime['docker_cli'])
+assert hashlib.sha256(exe.read_bytes()).hexdigest() == runtime['docker_cli_sha256']
+config = out / 'preflight'
+config.mkdir()
+(config / 'config.json').write_text('{"auths":{}}\n', encoding='utf-8')
+env = {k: os.environ[k] for k in ('SYSTEMROOT', 'WINDIR', 'TEMP', 'TMP') if k in os.environ}
+env['PATH'] = os.pathsep.join((str(exe.parent), str(Path(os.environ['SYSTEMROOT']) / 'System32')))
+with (out / 'preflight.stdout.native').open('xb') as stdout, (out / 'preflight.stderr.native').open('xb') as stderr, open(os.devnull, 'rb') as stdin:
+    observed = run_owned([str(exe), '--host', runtime['endpoint'], '--config', str(config), 'image', 'inspect', runtime['image_reference']], cwd=R, environment=env, stdin=stdin, stdout=stdout, stderr=stderr, timeout=20, output_limit=1024**2)
+assert observed['exit_code'] == 0 and observed['job_active_processes_after_cleanup'] == 0, 'No uncached image pull admitted'
+client = DockerClient(R, out / 'client', runtime_path)
+lease = ContainerLease(client, out / 'lease.json', seconds=300, resources=LeaseResources(memory_bytes=2 * 1024**3, tmpfs_bytes=1024**3, executable_workspace=True))
+try:
+    lease.create()
+    lease.start()
+    assert lease.identity is not None and lease.owned(lease.identity) is not None
+    provision = out / 'sdk-provision'
+    provision.mkdir()
+    receiver = """import hashlib,json,os,sys
+from pathlib import Path
+expected_size=int(sys.argv[1]);expected_sha=sys.argv[2]
+if not 0<expected_size<=96*1024**2 or len(expected_sha)!=64:raise ValueError('Invalid SDK admission')
+path=Path('/tmp/qualification-sdk.tar.gz');total=0;digest=hashlib.sha256()
+with path.open('xb') as target:
+ while block:=sys.stdin.buffer.read(1024**2):
+  total+=len(block)
+  if total>expected_size:raise ValueError('SDK transfer exceeds exact declared size')
+  digest.update(block);target.write(block)
+if total!=expected_size or digest.hexdigest()!=expected_sha:raise ValueError('SDK transfer digest or size mismatch')
+path.chmod(0o444)
+print(json.dumps({'bytes':total,'sha256':digest.hexdigest(),'uid':os.getuid()}))
+"""
+    argv = [str(client.docker), '--host', client.endpoint, '--config', str(client.config), 'container', 'exec', '--interactive', '--user=dev', lease.identity, 'python', '-I', '-B', '-c', receiver, str(capture['bytes']), capture['sha256']]
+    with sdk.open('rb') as stdin, (provision / 'stdout.native').open('xb') as stdout, (provision / 'stderr.native').open('xb') as stderr:
+        process = run_owned(argv, cwd=R, environment=client.environment, stdin=stdin, stdout=stdout, stderr=stderr, timeout=60, output_limit=1024**2, memory_limit=512*1024**2, process_limit=16)
+    (provision / 'process.json').write_text(json.dumps({'argv':argv,'process':process},indent=2)+'\n',encoding='utf-8',newline='\n')
+    assert process['exit_code']==0 and process['termination_reason'] is None and process['job_active_processes_after_cleanup']==0
+    acknowledgement=json.loads((provision / 'stdout.native').read_bytes())
+    assert acknowledgement['bytes']==capture['bytes'] and acknowledgement['sha256']==capture['sha256'] and type(acknowledgement['uid']) is int and acknowledgement['uid']>0
+
+    stage_inputs(lease, out / 'staging', {'probe.py': raw})
+    result = json.loads(client.run('go-component', ['container', 'exec', '--user=dev', lease.identity, 'python', '-I', '-B', '/tmp/benchmark-inputs/probe.py'], timeout=240))
+finally:
+    lease.close()
+assert not client.ids(lease.token) and program.read_bytes() == raw
+summary = {'observation': result, 'program_sha256': hashlib.sha256(raw).hexdigest(), 'sdk_sha256': capture['sha256'], 'sdk_version': capture['version'], 'image_reference': runtime['image_reference'], 'available_host_ram_before_bytes': memory.available, 'memory_limit_bytes': 2 * 1024**3, 'tmpfs_limit_bytes': 1024**3, 'lease_seconds': 300, 'lease_closed': True, 'remaining_owned_containers': 0, 'images_pulled': 0, 'model_invocations': 0, 'host_installation': False}
+(out / 'summary.json').write_text(json.dumps(summary, indent=2) + '\n', encoding='utf-8', newline='\n')
+print(json.dumps({'passed': result.get('passed'), 'cases': len(result.get('cases', [])), 'sdk_version': capture['version'], 'remaining_owned_containers': 0}))

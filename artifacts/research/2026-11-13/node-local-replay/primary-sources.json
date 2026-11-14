@@ -1,0 +1,121 @@
+{
+  "benchmark_commit": "4d3450d9216a590a8726fcb3604b5143daca776b",
+  "benchmark_sources": [
+    {
+      "path": "docker/base/Dockerfile.node",
+      "git_blob_sha1": "999347484a1a65a23e4a09b99fc1b3567255cf8a",
+      "sha256": "a4530661ccb1b6694ad1cfee1a9190edf5b71ab7f8b5c1c4bb08ca91179353a5",
+      "native_capture_sha256": "a59e598a8d03338f498a21e76d0e18e0a78f4299c013bdb3bf668cb480a34d03"
+    },
+    {
+      "path": "docker/node-ext/Dockerfile",
+      "git_blob_sha1": "147b53701147dded6ffecc7f96aa9d4ae5fd7dfc",
+      "sha256": "ea291a8d9b7227c322b82f35d29d259db9221097fad628a3e132b25263cf9860",
+      "native_capture_sha256": "d9cfb6853c6b4393b594439827a21b4db55e2bdf7ef9e11dcfddf828e4f3886d"
+    },
+    {
+      "path": "scripts/build_node_image.sh",
+      "git_blob_sha1": "6fd5894e0b0c46aff256a830d35680162240083b",
+      "sha256": "c785caf1686e36939d0261a0d532910deb54b0158e7cd84271f772199ab78d0f",
+      "native_capture_sha256": "2d316b227804decd2a6e75811a034858c516439f60017966ffaba3178b32ff98"
+    },
+    {
+      "path": "scripts/build_node22_image.sh",
+      "git_blob_sha1": "d65cd509ef366efc8a968d30bcfb714c7f0f391e",
+      "sha256": "6a2aa5551a94d18bfa81152f1d5b4d0319a618f4ee27f3db1bcb5cb8c1ee0c1a",
+      "native_capture_sha256": "f0d547a6c97aa73bb594163998a30aca98c673c081209525b9e0d88778576001"
+    },
+    {
+      "path": "scripts/bake_image.sh",
+      "git_blob_sha1": "7b1cb36b6488897643880ad13d447723fe908005",
+      "sha256": "dce93aac68b76fe22808df9a07dac4950cb02c8f2d6363f3aaca3e749455f4b1",
+      "native_capture_sha256": "fea313e32287b24faa7fb52d4270adbfd2ce95535b68275888257db8c7ea7643"
+    }
+  ],
+  "crane_sources": [
+    {
+      "capture": "crane-append",
+      "capture_sha256": "1bc5873c0e83ee1ddfe69d8225ccb59787ade3b5af6455b21d6581dd51063b1c",
+      "git_blob_sha1": "f00a00a27df0a430ea2117a9f6f1529720a18961"
+    },
+    {
+      "capture": "crane-mutate",
+      "capture_sha256": "b35977b7ea752503c85e422a90ce3ff0fe5bf0b49af139a9ca039aed2d3e2c1a",
+      "git_blob_sha1": "d7140d0ab409ed5ea92f14609ea51e12cb686565"
+    },
+    {
+      "capture": "crane-root",
+      "capture_sha256": "bca46dbd13e7aba267d697ae22d87efba642ced6c8c1ab16e7f29b6b86946417",
+      "git_blob_sha1": "abfd1dc99ec6b0f778b8d87a018306f5e398c5a8"
+    },
+    {
+      "capture": "crane-keychain",
+      "capture_sha256": "6708b78f9ce45eb4233b34d5f27dc7edc49cc27928f90a1eb844960a6e9aa0fe",
+      "git_blob_sha1": "a9b105e177b6af8111b79f5e0d53196e591a0f8f"
+    }
+  ],
+  "node_release_index": {
+    "url": "https://nodejs.org/dist/index.json",
+    "final_url": "https://nodejs.org/dist/index.json",
+    "status": 200,
+    "content_type": "application/json",
+    "server_date": "Fri, 13 Nov 2026 13:35:51 GMT",
+    "success": true,
+    "bytes": 337814,
+    "sha256": "ecbf1d9f49532daf606cd495537d2ff7ab28f441e877ae40821738d56e2a0a80",
+    "releases": 882
+  },
+  "reviewed_documents": [
+    {
+      "sha256": "042381f68e4b9266270042bc44edaca67bfd4d3bb96ab56157cd7c67d5e62f11",
+      "url": "https://docs.docker.com/build/builders/drivers/docker-container/",
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true,
+      "reviewed_heading": "# Docker container driver",
+      "article_characters": 7373,
+      "article_sha256": "a54cfff585889cde975b3a513e5476a331bc83b1dd5db29cd21b63b290531cdb",
+      "strict_policy": {
+        "robots": true,
+        "tls_verification": true,
+        "sandbox": true,
+        "stealth": false,
+        "automation_disclosed": true,
+        "personal_profile": false,
+        "external_llm": false,
+        "max_retries": 0,
+        "fallback": false
+      },
+      "raw_metadata_unchanged": true
+    },
+    {
+      "sha256": "aa519904e4af2d631334a67001a9bf817b88e6f9c4b5d10e81803a27c9d0a5e3",
+      "url": "https://docs.docker.com/build/ci/github-actions/reproducible-builds/",
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true,
+      "reviewed_heading": "# Reproducible builds with GitHub Actions",
+      "article_characters": 3133,
+      "article_sha256": "c9b1cc7d0b024e878d6ff86ace697627f1febf536aba337544cf84ea12231be4",
+      "strict_policy": {
+        "robots": true,
+        "tls_verification": true,
+        "sandbox": true,
+        "stealth": false,
+        "automation_disclosed": true,
+        "personal_profile": false,
+        "external_llm": false,
+        "max_retries": 0,
+        "fallback": false
+      },
+      "raw_metadata_unchanged": true
+    }
+  ],
+  "conclusions": [
+    "A docker-container builder creates a managed BuildKit container and persistent cache volume.",
+    "Its default restart policy is unless-stopped; resource and lifecycle management would require explicit configuration.",
+    "Docker documents SOURCE_DATE_EPOCH support for BuildKit metadata. The replay layer instead sets its timestamp explicitly from the publisher release date.",
+    "Use the reviewed crane output path for a foreground, process-bounded, registry-read-only assembly; no BuildKit service required."
+  ],
+  "publisher_scripts_executed": false,
+  "crane_download_digest_cross_checked_with_release_asset_and_checksum_file": true,
+  "node_archive_checksum_verified": true
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_instruction_repair",
+  "source_skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-makefile-generator-skill-md",
+  "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+  "source_mirror": "included/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator",
+  "original_skill_sha256": "c0090361f2f9999c81050beb7d65aaf4338094559bd227d944aafbf1500286fe",
+  "provenance_skill": "provenance/original.SKILL.md",
+  "original_generator_sha256": "f85287a85ab0b152b2d7f8681642d616031896e4e75d45b78970de514a324747",
+  "repaired_skill_sha256": "a035c8253bf10c51e0afda0efd438af77ffb57e13d075927237941bd59c0486d",
+  "license_file": "LICENSE",
+  "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+  "scope": "Go Make-wrapper guidance with source-grounded native component evidence; no standalone scaffold or complete package readiness.",
+  "model_performance_claim": false,
+  "readiness_status": "component_controls_only",
+  "readiness_evidence": "artifacts/research/2026-11-13/makefile-go/result.json",
+  "overlay_sha256": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "NOTICE.md": "d518fc20c24e3ff7ecca3e3efe776e2e61cc448ee0d5d3ffef3e0f2ecc346fa3",
+    "provenance/original.generate.sh": "f85287a85ab0b152b2d7f8681642d616031896e4e75d45b78970de514a324747",
+    "provenance/original.SKILL.md": "c0090361f2f9999c81050beb7d65aaf4338094559bd227d944aafbf1500286fe",
+    "SKILL.md": "a035c8253bf10c51e0afda0efd438af77ffb57e13d075927237941bd59c0486d"
+  },
+  "evidence_sha256": {
+    "component-control.py.txt": "ec532d8deb4b25aeb19e6f65e615704cefd22b085b970b0eaf81db190f7de7a4",
+    "contract.json": "b3fecdd6ab84d9492be956194c89144018fd8d12f7af2d80152ac5849eb09f51",
+    "generation-controls.json": "f7788a289d11016ff5e63a29b416f07b49e69a7344a47a05c9521a08521e3529",
+    "NOTICE.md": "d518fc20c24e3ff7ecca3e3efe776e2e61cc448ee0d5d3ffef3e0f2ecc346fa3",
+    "primary-sources.json": "f77e37dbc85b62efe5222a1b6e301c472b72335b3775a200953b74f894d77e61",
+    "provisioning-controller.py.txt": "a5b049d4609e5347d938cadf3591bd7416f9fd79a37ed7e73a6adb4097e93773",
+    "result.json": "31f76074896f2ddf78ccb94d62d66dabdc5429f9094af9087bb74aa67aa1e6ab",
+    "sdk-capture.json": "200980508579202625b1859206a64563ed9dadd266ee62c32f68bffb04126e5b"
+  }
+}

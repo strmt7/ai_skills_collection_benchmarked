@@ -1,0 +1,107 @@
+"""Capture official pip's target-wheel candidates; native resolution is still required."""
+import argparse
+import email.parser
+import hashlib
+import json
+import os
+import re
+import sys
+import urllib.parse
+import urllib.request
+import zipfile
+from pathlib import Path
+
+from packaging.utils import canonicalize_name, parse_wheel_filename
+from packaging.version import Version
+
+S = Path(__file__).resolve().parent
+R = S.parents[2]
+sys.path.insert(0, str(R / 'tools'))
+from _windows_trial_process import run_owned
+
+def digest(path):
+    with path.open('rb') as stream:
+        return hashlib.file_digest(stream, 'sha256').hexdigest()
+
+def build_parser():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--target', type=Path, required=True)
+    parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--root', action='append', required=True)
+    return parser
+
+def main():
+    args = build_parser().parse_args()
+    target_path = args.target.resolve(strict=True)
+    out = args.output.resolve()
+    assert target_path.is_relative_to(S) and out.is_relative_to(S) and out != S and not out.exists()
+    roots = list(dict.fromkeys(args.root))
+    assert 1 <= len(roots) <= 16 and all(re.fullmatch('[A-Za-z0-9][A-Za-z0-9_.-]*', name) for name in roots)
+    raw_target = target_path.read_bytes()
+    snapshot = json.loads(raw_target)
+    target = snapshot['observation']
+    assert target['passed'] and target['implementation'] == 'cpython'
+    assert re.fullmatch(r'3\.\d+\.\d+', target['python'])
+    tags = target['wheel_tags']
+    interpreter, abi, _ = tags[0].split('-')
+    assert re.fullmatch('cp[0-9]+', interpreter) and abi == interpreter
+    platforms = list(dict.fromkeys(tag.split('-')[2] for tag in tags if tag.startswith(interpreter + '-' + abi + '-')))
+    assert 0 < len(platforms) <= 64
+    before = Path(__file__).read_bytes()
+    out.mkdir()
+    wheels = out / 'wheels'
+    wheels.mkdir()
+    home = out / 'home'
+    home.mkdir()
+    env = {key: os.environ[key] for key in ('SYSTEMROOT', 'WINDIR', 'TEMP', 'TMP') if key in os.environ}
+    env.update(PATH=os.pathsep.join((str(Path(sys.executable).parent), str(Path(os.environ['SYSTEMROOT']) / 'System32'))), USERPROFILE=str(home), HOME=str(home), NO_PROXY='*', PIP_CONFIG_FILE=os.devnull, PIP_NO_INPUT='1', PIP_DISABLE_PIP_VERSION_CHECK='1')
+    command = [sys.executable, '-I', '-B', '-m', 'pip', '--isolated', '--disable-pip-version-check', '--no-cache-dir', 'download', '--only-binary=:all:', '--no-input', '--index-url', 'https://pypi.org/simple', '--retries', '0', '--timeout', '30', '--dest', str(wheels), '--python-version', target['python'], '--implementation', 'cp', '--abi', abi]
+    for platform in platforms:
+        command.extend(('--platform', platform))
+    command.extend(roots)
+    with open(os.devnull, 'rb') as stdin, (out / 'download.stdout.native').open('xb') as stdout, (out / 'download.stderr.native').open('xb') as stderr:
+        process = run_owned(command, cwd=R, environment=env, stdin=stdin, stdout=stdout, stderr=stderr, timeout=180, output_limit=8*1024**2, memory_limit=1024**3, process_limit=16)
+    (out / 'process.json').write_text(json.dumps({'argv': command, 'process': process}, indent=2) + '\n', encoding='utf-8', newline='\n')
+    assert process['exit_code'] == 0 and not process['termination_reason'] and process['job_active_processes_after_cleanup'] == 0
+    files = sorted(wheels.iterdir())
+    assert 1 <= len(files) <= 64 and sum(path.stat().st_size for path in files) <= 96 * 1024**2
+    metadata = out / 'metadata'
+    metadata.mkdir()
+    opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+    records = []
+    expanded = 0
+    for path in files:
+        name, version, _, wheel_tags = parse_wheel_filename(path.name)
+        assert not version.is_prerelease and not version.is_devrelease
+        assert {str(tag) for tag in wheel_tags} & set(tags), path.name
+        url = 'https://pypi.org/pypi/' + name + '/' + str(version) + '/json'
+        with opener.open(urllib.request.Request(url, headers={'User-Agent': 'ai-skills-dependency-qualification'}), timeout=30) as response:
+            body = response.read(2 * 1024**2 + 1)
+            assert response.status == 200 and urllib.parse.urlsplit(response.url).hostname == 'pypi.org' and len(body) <= 2 * 1024**2
+        capture = metadata / (name + '-' + str(version) + '.json')
+        capture.write_bytes(body)
+        published = json.loads(body)
+        matches = [entry for entry in published['urls'] if entry['filename'] == path.name]
+        assert len(matches) == 1 and not matches[0].get('yanked')
+        entry = matches[0]
+        assert urllib.parse.urlsplit(entry['url']).hostname == 'files.pythonhosted.org'
+        actual = digest(path)
+        assert path.stat().st_size == entry['size'] and actual == entry['digests']['sha256']
+        with zipfile.ZipFile(path) as archive:
+            entries = archive.infolist()
+            assert len(entries) <= 20000
+            expanded += sum(item.file_size for item in entries)
+            assert expanded <= 256 * 1024**2
+            members = [item for item in entries if item.filename.endswith('.dist-info/METADATA')]
+            assert len(members) == 1 and members[0].file_size <= 2 * 1024**2
+            fields = email.parser.Parser().parsestr(archive.read(members[0]).decode())
+            assert canonicalize_name(fields['Name']) == name and Version(fields['Version']) == version
+        records.append({'filename': path.name, 'project': name, 'version': str(version), 'bytes': path.stat().st_size, 'sha256': actual, 'url': entry['url'], 'metadata_url': url, 'metadata_sha256': hashlib.sha256(body).hexdigest()})
+    assert target_path.read_bytes() == raw_target and Path(__file__).read_bytes() == before
+    result = {'roots': roots, 'target_python': target['python'], 'target_markers': target['markers'], 'target_wheel_tags_sha256': hashlib.sha256(json.dumps(tags).encode()).hexdigest(), 'target_capture_sha256': hashlib.sha256(raw_target).hexdigest(), 'wheel_files': records, 'wheel_bytes': sum(row['bytes'] for row in records), 'wheel_expanded_bytes': expanded, 'capture_controller_sha256': hashlib.sha256(before).hexdigest(), 'process_cleanup_remaining': 0, 'candidate_pool_only': True, 'native_graph_qualified': False, 'cross_target_marker_limitation': 'pip download applies requested wheel/Python tags but can evaluate dependency markers on the controller. A successful native offline resolve, pip check and fresh hash-locked reinstall are required before treating this as the target graph.', 'global_installation': False}
+    (out / 'capture.json').write_text(json.dumps(result, indent=2) + '\n', encoding='utf-8', newline='\n')
+    print(json.dumps({'captured_wheels': len(records), 'wheel_bytes': result['wheel_bytes'], 'versions': {row['project']: row['version'] for row in records}, 'native_graph_qualified': False}))
+    return 0
+
+if __name__ == '__main__':
+    raise SystemExit(main())

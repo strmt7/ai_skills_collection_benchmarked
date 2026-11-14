@@ -1,0 +1,514 @@
+{
+  "schema_version": 1,
+  "observed_date": "2026-11-11",
+  "scope": "Read-only audit before the planning-document update",
+  "working_tree": {
+    "head": "c80f19ad60fda34b59197010ebe4fd84df5d4323",
+    "branch": "main",
+    "pending_files_before_plan_update": 112,
+    "pending_groups": {
+      "data": 2,
+      "docs": 9,
+      "tests": 19,
+      "toolchains": 3,
+      "tools": 22,
+      "artifacts": 44,
+      "included": 13
+    },
+    "status_counts": {
+      " M": 28,
+      "??": 84
+    },
+    "nonignored_files": 22198,
+    "nonignored_bytes": 342865768,
+    "mirrored_source_changes": []
+  },
+  "catalog": {
+    "skills": 673,
+    "categories": 15,
+    "phase_status": {
+      "research": {
+        "in_progress": 316,
+        "complete": 2,
+        "pending": 355
+      },
+      "revision": {
+        "complete": 5,
+        "pending": 615,
+        "in_progress": 53
+      },
+      "evaluation": {
+        "in_progress": 12,
+        "pending": 661
+      }
+    },
+    "by_category": {
+      "Coding, refactoring & repository automation": {
+        "skills": 30,
+        "research": {
+          "in_progress": 20,
+          "pending": 10
+        },
+        "revision": {
+          "complete": 3,
+          "in_progress": 9,
+          "pending": 18
+        },
+        "evaluation": {
+          "in_progress": 7,
+          "pending": 23
+        }
+      },
+      "Creative, media & design": {
+        "skills": 30,
+        "research": {
+          "in_progress": 27,
+          "pending": 2,
+          "complete": 1
+        },
+        "revision": {
+          "pending": 29,
+          "in_progress": 1
+        },
+        "evaluation": {
+          "pending": 30
+        }
+      },
+      "Testing, QA & benchmarking": {
+        "skills": 19,
+        "research": {
+          "in_progress": 19
+        },
+        "revision": {
+          "in_progress": 15,
+          "pending": 4
+        },
+        "evaluation": {
+          "pending": 19
+        }
+      },
+      "Agent infrastructure & skill creation": {
+        "skills": 8,
+        "research": {
+          "in_progress": 7,
+          "complete": 1
+        },
+        "revision": {
+          "pending": 6,
+          "in_progress": 2
+        },
+        "evaluation": {
+          "pending": 6,
+          "in_progress": 2
+        }
+      },
+      "Frontend, UI & browser automation": {
+        "skills": 3,
+        "research": {
+          "in_progress": 3
+        },
+        "revision": {
+          "complete": 2,
+          "pending": 1
+        },
+        "evaluation": {
+          "in_progress": 2,
+          "pending": 1
+        }
+      },
+      "Communication, productivity & support": {
+        "skills": 59,
+        "research": {
+          "in_progress": 20,
+          "pending": 39
+        },
+        "revision": {
+          "pending": 59
+        },
+        "evaluation": {
+          "pending": 59
+        }
+      },
+      "Search, retrieval & web automation": {
+        "skills": 16,
+        "research": {
+          "in_progress": 14,
+          "pending": 2
+        },
+        "revision": {
+          "pending": 16
+        },
+        "evaluation": {
+          "pending": 16
+        }
+      },
+      "Documents, spreadsheets & presentations": {
+        "skills": 12,
+        "research": {
+          "in_progress": 12
+        },
+        "revision": {
+          "pending": 9,
+          "in_progress": 3
+        },
+        "evaluation": {
+          "pending": 12
+        }
+      },
+      "Finance, commerce & forecasting": {
+        "skills": 2,
+        "research": {
+          "in_progress": 2
+        },
+        "revision": {
+          "pending": 2
+        },
+        "evaluation": {
+          "pending": 2
+        }
+      },
+      "Security, compliance & risk": {
+        "skills": 57,
+        "research": {
+          "in_progress": 3,
+          "pending": 54
+        },
+        "revision": {
+          "pending": 57
+        },
+        "evaluation": {
+          "pending": 57
+        }
+      },
+      "DevOps, cloud & operations": {
+        "skills": 40,
+        "research": {
+          "in_progress": 36,
+          "pending": 4
+        },
+        "revision": {
+          "pending": 38,
+          "in_progress": 2
+        },
+        "evaluation": {
+          "pending": 39,
+          "in_progress": 1
+        }
+      },
+      "Cloud, Azure & Microsoft SDKs": {
+        "skills": 178,
+        "research": {
+          "in_progress": 10,
+          "pending": 168
+        },
+        "revision": {
+          "in_progress": 9,
+          "pending": 169
+        },
+        "evaluation": {
+          "pending": 178
+        }
+      },
+      "Game, mobile & visual QA": {
+        "skills": 25,
+        "research": {
+          "in_progress": 7,
+          "pending": 18
+        },
+        "revision": {
+          "pending": 25
+        },
+        "evaluation": {
+          "pending": 25
+        }
+      },
+      "Science, research & data analysis": {
+        "skills": 148,
+        "research": {
+          "in_progress": 133,
+          "pending": 15
+        },
+        "revision": {
+          "pending": 136,
+          "in_progress": 12
+        },
+        "evaluation": {
+          "pending": 148
+        }
+      },
+      "OMERO, Django, Docker & lab infrastructure": {
+        "skills": 46,
+        "research": {
+          "in_progress": 3,
+          "pending": 43
+        },
+        "revision": {
+          "pending": 46
+        },
+        "evaluation": {
+          "pending": 46
+        }
+      }
+    },
+    "ledger_sha256": "1cde8a43a00752a95892d64ecf684980a2bd4a1af48263c42047627bcc36ecee",
+    "resource_inventory_skills": 191,
+    "resource_status": {
+      "reviewed": 140,
+      "pending": 1317
+    },
+    "contributing_source_repositories": 30,
+    "maintained_overlay_records": 26,
+    "maintained_overlay_performance_status": {
+      "unbenchmarked": 26
+    },
+    "historical_packaging_repair_manifest_records": 34
+  },
+  "benchmarks": {
+    "scenario_templates": 718,
+    "external_reference_methods": 18,
+    "registry_stages": {
+      "declared-source-probe": 18
+    },
+    "qualified_current_path_real_model_inferences": 0,
+    "meaningful_comparative_gain_established": false,
+    "historical_development_result": "Nine earlier matched attempts reached the same ceiling; no advantage established."
+  },
+  "engineering": {
+    "latest_local_validation": "artifacts/research/2026-11-11/native-storage-budget/validation.json",
+    "latest_local_validation_sha256": "ceebe7e2614158f2c38fcc4b04f88cae80e8ae8e0647b38f9373e2d4757bd547",
+    "tests": {
+      "passed": 2925,
+      "skipped": 18,
+      "failed": 0,
+      "workers": 2,
+      "coverage_percent": 75.28,
+      "qualification_sha256": "9aa50308145a830f26664c4fbf85af151b81c8084f4f018c8d03f45ee3710d7a",
+      "coverage_xml_sha256": "49c8467d9dcc2128facb307f5e39d7108f582b7d7d485c78f3beef7831f28891",
+      "source_files_frozen_during_run": 22197,
+      "source_unchanged_during_run": true,
+      "skipped_checks_are_not_passes": true
+    },
+    "python_modules": 316,
+    "python_lines": 63925,
+    "largest_tool_modules": [
+      {
+        "path": "tools/build_catalog.py",
+        "lines": 2375,
+        "functions": 57,
+        "largest_function_lines": 313
+      },
+      {
+        "path": "tools/summarize_agent_trials.py",
+        "lines": 939,
+        "functions": 26,
+        "largest_function_lines": 116
+      },
+      {
+        "path": "tools/evaluate_external_benchmark_methods.py",
+        "lines": 842,
+        "functions": 16,
+        "largest_function_lines": 131
+      },
+      {
+        "path": "tools/create_independent_runtime_batch.py",
+        "lines": 803,
+        "functions": 24,
+        "largest_function_lines": 135
+      },
+      {
+        "path": "tools/run_agent_trial.py",
+        "lines": 779,
+        "functions": 23,
+        "largest_function_lines": 192
+      },
+      {
+        "path": "tools/deepsource_inventory.py",
+        "lines": 753,
+        "functions": 41,
+        "largest_function_lines": 35
+      },
+      {
+        "path": "tools/_native_benchmark_runtime.py",
+        "lines": 736,
+        "functions": 28,
+        "largest_function_lines": 88
+      },
+      {
+        "path": "tools/create_repaired_skill_overlays.py",
+        "lines": 707,
+        "functions": 24,
+        "largest_function_lines": 140
+      }
+    ],
+    "top_level_documentation_files": 145,
+    "workflow_definitions": 45,
+    "private_planning_scripts_at_audit": 139,
+    "private_planning_directories_at_audit": 412,
+    "private_cache_disk_usage": "Not measured; no expensive recursive host-cache scan performed.",
+    "cleanup": {
+      "qualification_sha256": "caf353e0257e04b35192e34e887937132304fb22b13b0114221872a951bf03aa",
+      "checks_passed": [
+        "review-artifacts",
+        "execution-policy",
+        "ledger",
+        "audit-owned-containers",
+        "observe-owned-host"
+      ],
+      "remaining_matching_nonobserver_processes": 0,
+      "remaining_matching_services": 0,
+      "remaining_matching_scheduled_tasks": 0,
+      "remaining_owned_containers": 0,
+      "container_engine_identity_verified": true,
+      "host_observed_utc": "2026-11-11T09:25:49.3421270Z",
+      "host_observation_scope": "Current checkout and current declared qualification cache; actual observer ancestry excluded by PID and creation-time checks. This is a path-scoped observation, not proof of absence of host-wide leaks. No process, service or schedule was terminated or modified.",
+      "free_ram_gib_observed": 26.15
+    }
+  },
+  "github": {
+    "repository_url": "https://github.com/strmt7/ai_skills_collection_benchmarked",
+    "head": "c80f19ad60fda34b59197010ebe4fd84df5d4323",
+    "protected": true,
+    "branches": [
+      "main"
+    ],
+    "open_pull_requests": 0,
+    "releases": 0,
+    "tag_refs": 0,
+    "head_workflow_runs": [
+      {
+        "id": 42893945531,
+        "name": "Playwright executor compatibility",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42893945531"
+      },
+      {
+        "id": 42893945429,
+        "name": "Design search compatibility",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42893945429"
+      },
+      {
+        "id": 42893945428,
+        "name": "C Makefile compatibility",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42893945428"
+      },
+      {
+        "id": 42893945995,
+        "name": "Mypy",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42893945995"
+      },
+      {
+        "id": 42893945789,
+        "name": "pip-audit",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42893945789"
+      },
+      {
+        "id": 42893945881,
+        "name": "Image CLI acceptance controls",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42893945881"
+      },
+      {
+        "id": 42893945888,
+        "name": "Ruff",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42893945888"
+      },
+      {
+        "id": 42893946152,
+        "name": "CodeQL",
+        "status": "completed",
+        "conclusion": "failure",
+        "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42893946152"
+      },
+      {
+        "id": 42893945983,
+        "name": "Secret scan",
+        "status": "completed",
+        "conclusion": "failure",
+        "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42893945983"
+      },
+      {
+        "id": 42893945920,
+        "name": "Offline validation",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42893945920"
+      }
+    ],
+    "head_workflow_conclusions": {
+      "success": 8,
+      "failure": 2
+    },
+    "rulesets": [
+      {
+        "name": "Main-only development",
+        "enforcement": "active",
+        "rule_types": [
+          "creation",
+          "update"
+        ]
+      },
+      {
+        "name": "Owner-directed release hold",
+        "enforcement": "active",
+        "rule_types": [
+          "creation",
+          "update"
+        ]
+      },
+      {
+        "name": "Protect main from history replacement and deletion",
+        "enforcement": "active",
+        "rule_types": [
+          "deletion",
+          "non_fast_forward"
+        ]
+      }
+    ],
+    "classic_branch_protection": "Unverified: the connector's active integration returned HTTP 403 Resource not accessible by integration for this administrative read. Public rulesets were retrieved successfully.",
+    "current_alert_counts": "Not refreshed during the security pause; historical DeepSource/code-scanning totals are not current inventories.",
+    "capture_transport": "Official authenticated GitHub connector GET responses; native captures retained privately."
+  },
+  "manual": {
+    "pages": 154,
+    "page_status": {
+      "inspected_claims_unverified": 154
+    },
+    "attachments": 7,
+    "attachment_status": {
+      "inventory_only": 3,
+      "member_manifest_hashes_checked_partial": 1,
+      "internal_digest_links_checked_partial": 1,
+      "target_card_inspected_partial": 1,
+      "structure_inspected_partial": 1
+    },
+    "shared_requirement_status": {
+      "pending_verification": 11,
+      "partially_checked": 4
+    },
+    "project_action_status": {
+      "deferred_security_pause": 1,
+      "partially_checked": 4,
+      "open": 1
+    },
+    "ledger": "artifacts/research/2026-11-03/implementation-manual-review/ledger.json"
+  },
+  "limits": [
+    "Local tests do not qualify unpublished code on GitHub-hosted runners.",
+    "Line counts and directory counts are review signals, not proof of defective code or memory leaks.",
+    "Workflow conclusions do not enumerate scanner findings or prove their causes.",
+    "Ledger completion states have entry-specific scopes; they are not whole-skill efficacy scores.",
+    "The snapshot predates the plan, task registry and agent-instruction edits made from this audit."
+  ]
+}

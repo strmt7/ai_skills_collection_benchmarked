@@ -1,0 +1,1 @@
+{"passed": true, "parser_version": "6.0.3", "workflow": ".github/workflows/offline-validation.yml", "native_gate_declarations": 1, "command": "python tools/validate_native_qualification_index.py --check --json", "hosted_execution_qualified": false}

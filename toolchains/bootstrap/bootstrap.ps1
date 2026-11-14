@@ -1,7 +1,7 @@
 param(
     [Parameter(Mandatory=$true)][string]$Root,
     [string]$CacheRoot,
-    [ValidateSet('validation','agent-tools','git','codex')][string]$Profile = 'validation',
+    [ValidateSet('validation','agent-tools','git','codex','supervisor-build')][string]$Profile = 'validation',
     [ValidateRange(1,600)][int]$LockTimeoutSeconds = 600,
     [string]$CommandBase64,
     [string]$CredentialEnvironmentBase64
@@ -14,17 +14,17 @@ $utf8 = New-Object Text.UTF8Encoding($false)
 $rootPath = [IO.Path]::GetFullPath($Root)
 if ($rootPath.Length -gt [IO.Path]::GetPathRoot($rootPath).Length) { $rootPath=$rootPath.TrimEnd('\') }
 if (-not [IO.File]::Exists((Join-Path $rootPath 'pyproject.toml'))) { throw 'The selected checkout has no project declaration' }
-$architecture = $env:PROCESSOR_ARCHITECTURE
-if ($env:PROCESSOR_ARCHITEW6432) { $architecture = $env:PROCESSOR_ARCHITEW6432 }
-if ([Environment]::OSVersion.Platform -ne [PlatformID]::Win32NT -or $architecture -ne 'AMD64') { throw 'This bootstrap target requires Windows x64' }
+if ([Environment]::OSVersion.Platform -ne [PlatformID]::Win32NT -or
+    [Runtime.InteropServices.RuntimeInformation]::OSArchitecture.ToString() -cne 'X64' -or
+    [Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture.ToString() -cne 'X64') { throw 'This bootstrap target requires Windows x64' }
 Add-Type -AssemblyName System.IO.Compression
 $bootstrapHome=$PSScriptRoot
 $archivePython=$null
 . (Join-Path $PSScriptRoot 'ArchiveLayers.ps1')
 $manifestPath = Join-Path $PSScriptRoot 'manifest.json'
 $manifest = [IO.File]::ReadAllText($manifestPath) | ConvertFrom-Json
-$spec = if ($Profile -in @('git','codex')) { @{python='none'; requirements=@()} } else { $manifest.profiles.$Profile }
-if ($Profile -in @('git','codex') -and -not [string]::IsNullOrEmpty($CommandBase64)) { throw 'The selected tool-only profile cannot execute Python commands' }
+$spec = if ($Profile -in @('git','codex','supervisor-build')) { @{python='none'; requirements=@()} } else { $manifest.profiles.$Profile }
+if ($Profile -in @('git','codex','supervisor-build') -and -not [string]::IsNullOrEmpty($CommandBase64)) { throw 'The selected tool-only profile cannot execute Python commands' }
 if (-not [string]::IsNullOrEmpty($CredentialEnvironmentBase64) -and [string]::IsNullOrEmpty($CommandBase64)) { throw 'Credential forwarding requires a development command' }
 function Forward-CredentialEnvironment([string]$Encoded,$Variables) {
     if ([string]::IsNullOrEmpty($Encoded)) { return }
@@ -213,6 +213,14 @@ function Ensure-Tool([string]$Name,$Pin,[string]$ToolRoot) {
     Write-Json $pointer @{home=$toolHome; archive_sha256=$Pin.archive_sha256}
     return $toolHome
 }
+if ($Profile -ne 'supervisor-build') {
+    # Load the source-bound supervisor without invoking a legacy compiler.
+    $supervisorPin = [IO.File]::ReadAllText((Native-Path (Join-Path $bootstrapHome 'supervisor.json')),$utf8) | ConvertFrom-Json
+    $supervisorPath = Native-Path (Join-Path $bootstrapHome 'NativeSupervisor.dll')
+    $supervisorBytes = [IO.File]::ReadAllBytes($supervisorPath)
+    if ($supervisorPin.schema_version -ne 1 -or $supervisorBytes.Length -ne $supervisorPin.assembly_bytes -or (Bytes-Digest $supervisorBytes) -cne $supervisorPin.assembly_sha256 -or (Get-Digest (Native-Path (Join-Path $bootstrapHome 'OwnedProcess.cs'))) -cne $supervisorPin.source_sha256) { throw 'The native supervisor differs from its source or binary pin' }
+    [void][Reflection.Assembly]::Load($supervisorBytes)
+}
 if ([string]::IsNullOrEmpty($CacheRoot)) {
     $CacheRoot = Join-Path ([Environment]::GetFolderPath('LocalApplicationData')) 'ai-skills-toolchains'
 }
@@ -256,6 +264,13 @@ try {
     $enginePin = [IO.File]::ReadAllText($enginePinPath) | ConvertFrom-Json
     $engineHome = Plain-Path (Ensure-Tool 'powershell' $enginePin $toolRoot)
     $engine = Join-Path $engineHome 'pwsh.exe'
+    if ($Profile -eq 'supervisor-build') {
+        # Provision compiler inputs only; reference assemblies are metadata, never executed.
+        $referencePin = [IO.File]::ReadAllText((Join-Path $bootstrapHome 'framework-references.json')) | ConvertFrom-Json
+        $referenceHome = Plain-Path (Ensure-Tool 'framework-references' $referencePin $toolRoot)
+        @{engine=$engine; references=$referenceHome; namespace=$namespace} | ConvertTo-Json -Compress
+        exit 0
+    }
     $currentEngine = [Diagnostics.Process]::GetCurrentProcess()
     try { $currentEnginePath = $currentEngine.MainModule.FileName }
     finally { $currentEngine.Dispose() }
@@ -263,7 +278,7 @@ try {
         # The first stage uses only managed APIs; compilation runs in the admitted engine.
         $lock.Dispose()
         $lock = $null
-        $parameters = @('-NoLogo','-NoProfile','-NonInteractive','-File',(Join-Path $bootstrapHome 'bootstrap.ps1'),'-Root',$rootPath,'-CacheRoot',$CacheRoot,'-Profile',$Profile,'-LockTimeoutSeconds',[string]$LockTimeoutSeconds)
+        $parameters = @('-NoLogo','-NoProfile','-NonInteractive','-MTA','-File',(Join-Path $bootstrapHome 'bootstrap.ps1'),'-Root',$rootPath,'-CacheRoot',$CacheRoot,'-Profile',$Profile,'-LockTimeoutSeconds',[string]$LockTimeoutSeconds)
         if (-not [string]::IsNullOrEmpty($CommandBase64)) { $parameters += @('-CommandBase64',$CommandBase64) }
         if (-not [string]::IsNullOrEmpty($CredentialEnvironmentBase64)) { $parameters += @('-CredentialEnvironmentBase64',$CredentialEnvironmentBase64) }
         $engineEnvironment = @{
@@ -272,21 +287,24 @@ try {
             POWERSHELL_TELEMETRY_OPTOUT = '1'
             POWERSHELL_UPDATECHECK = 'Off'
         }
-        $previousEnvironment = @{}
-        try {
-            foreach ($name in $engineEnvironment.Keys) {
-                $previousEnvironment[$name] = [Environment]::GetEnvironmentVariable($name,'Process')
-                [Environment]::SetEnvironmentVariable($name,$engineEnvironment[$name],'Process')
-            }
-            & $engine @parameters
-            $engineExit = $LASTEXITCODE
-        } finally {
-            foreach ($name in $previousEnvironment.Keys) { [Environment]::SetEnvironmentVariable($name,$previousEnvironment[$name],'Process') }
+        # Use the same explicit-application, owned-job launcher for every engine path.
+        $handoffEnvironment = New-Object 'System.Collections.Generic.Dictionary[string,string]' ([StringComparer]::OrdinalIgnoreCase)
+        foreach ($item in [Environment]::GetEnvironmentVariables('Process').GetEnumerator()) {
+            $handoffEnvironment.Add([string]$item.Key,[string]$item.Value)
         }
-        exit $engineExit
+        foreach ($name in $engineEnvironment.Keys) { $handoffEnvironment[$name] = $engineEnvironment[$name] }
+        $handoffDirectory = Join-Path $namespace ('handoff-' + [Guid]::NewGuid().ToString('N'))
+        [void][IO.Directory]::CreateDirectory((Native-Path $handoffDirectory))
+        $handoffStdout = Join-Path $handoffDirectory 'stdout.native'
+        $handoffStderr = Join-Path $handoffDirectory 'stderr.native'
+        $handoff = [SkillsBootstrap.OwnedProcess]::Run($engine,[string[]]$parameters,$rootPath,$handoffEnvironment,$handoffStdout,$handoffStderr,3600,16777216,6442450944,128)
+        Write-Json (Join-Path $handoffDirectory 'process.json') $handoff
+        [Console]::Out.Write([IO.File]::ReadAllText((Native-Path $handoffStdout),$utf8))
+        [Console]::Error.Write([IO.File]::ReadAllText((Native-Path $handoffStderr),$utf8))
+        if ($null -ne $handoff.termination_reason -or $handoff.active_processes_after_cleanup -ne 0) { throw "Engine handoff did not complete normally; diagnostics: $handoffDirectory" }
+        exit $handoff.exit_code
     }
     if ($PSVersionTable.PSVersion.ToString() -cne $enginePin.version) { throw 'The admitted PowerShell runtime version differs from its pin' }
-    Add-Type -Path (Join-Path $bootstrapHome 'OwnedProcess.cs')
     Add-Type -Path (Join-Path $bootstrapHome 'NativeCabinet.cs')
     $inputs = [ordered]@{}
     $lockedInputs = [ordered]@{}
@@ -484,6 +502,7 @@ if ([string]::IsNullOrEmpty($CommandBase64)) {
     $environment['GIT_CONFIG_KEY_0']='core.longpaths'
     $environment['GIT_CONFIG_VALUE_0']='true'
     $environment['AI_SKILLS_GIT']=$git
+    $environment['AI_SKILLS_UV']=$uv
     $environment['AI_SKILLS_BASH']=$bash
     $environment['AI_SKILLS_UNIX_BIN']=[IO.Path]::GetDirectoryName($bash)
     $environment['AI_SKILLS_DASH']=[IO.Path]::Combine($gitHome,'usr\bin\dash.exe')

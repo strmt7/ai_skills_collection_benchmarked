@@ -1,0 +1,41 @@
+{
+  "scope": "Metadata preflight for the complete selected development frame; no model run or full task admission.",
+  "tasks": 12,
+  "planned_attempts": 36,
+  "enabled_evaluator_counts": {
+    "unit_test": 12,
+    "build_check": 3
+  },
+  "publisher_images": 7,
+  "exact_platform_manifests_verified": 5,
+  "anonymous_manifest_requests_unresolved": 2,
+  "all_required_images_resolved": false,
+  "common_execution_admitted": false,
+  "publisher_runtime_reproduced": false,
+  "model_invocations": 0,
+  "counted_attempts": 0,
+  "image_layers_downloaded": 0,
+  "original_frame_tasks_replaced_or_removed": false,
+  "artifacts": {
+    "image-manifests.json": "5ebd1e6fcd108b64bbb27c13f4c500146ddf146c7aac9b7f387d6e9c2e667a49",
+    "manifests/swe-skills-bench-clojure.json": "23dbff2f54f64213ea8b2a627594e6b72ec2c9d160902f51a55f2fd397cf462f",
+    "manifests/swe-skills-bench-golang.json": "08a709af3502f43282367befe0ae3ba641efe7300cf9d2295c01eb12564c6180",
+    "manifests/swe-skills-bench-python.json": "51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+    "manifests/swe-skills-bench-ruby.json": "fa5497839a3891571a70a5b8eb22ce510bf1932d801a4086fef78eb02c4406f5",
+    "manifests/swe-skills-bench-rust.json": "d826cd5a4a34f5bcdad6b1560d40256785cc618e1a467193e33183a2c9c49b05",
+    "matrix.json": "20b5e30a1b5105a72488349773fb29f46f7b63b8d750af2a7a4c58b70afb36fa",
+    "native-image-requests.json": "efb7eee0bd2aa230d8fc08f2a4bbe84085e72b47e8817b89709f00a7eeb4a365"
+  },
+  "requirements": [
+    "Qualify every enabled evaluator, including build_check stages, rather than assuming all tasks are unit-test-only.",
+    "Resolve and qualify all declared image and toolchain profiles; generic image names, optional skill recipe paths and registry tags are separate evidence.",
+    "Preserve full declared source scope, initialization, runtime versions, executable modes and path semantics without modifying other owner repositories or the host OS.",
+    "Missing optional recipe filenames are retained lookup failures, not evidence of an unavailable server or permission denial."
+  ],
+  "remaining": [
+    "Qualify every full source snapshot and declared toolchain graph.",
+    "Qualify all twelve unit-test stages and the three enabled build checks.",
+    "Resolve the two Node image references through an official authorized route or qualify an explicitly labelled rebuild from pinned publisher sources.",
+    "Complete common prospective admission and official model/account qualification before any model trial."
+  ]
+}

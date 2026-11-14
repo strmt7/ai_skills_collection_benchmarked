@@ -1,0 +1,22 @@
+{
+  "scope": "Operating-policy review and targeted corrections; the full product and 673-entry review remain incomplete.",
+  "changes": [
+    "Clarified agent-neutral consumer scope and autonomous development within user authorization.",
+    "Allowed maintained skill/tool redesign without waiting for upstream acceptance or model-launch readiness.",
+    "Scoped snapshot immutability to declared comparisons, preserving previous revisions and outcomes.",
+    "Kept historical native reports immutable; require explicit current-source supersessions with fresh evidence."
+  ],
+  "preserved": [
+    "Mandatory Caveman, CocoIndex Code and Crawl4AI duties",
+    "Single development session and serial isolated benchmark subjects",
+    "Original upstream mirror bytes and licenses",
+    "Benchmark independence, original metrics and release hold",
+    "Official GitHub connector publication and GitHub-assigned contributor identity",
+    "Existing security-work hold"
+  ],
+  "previous_policy_sha256": "7a2f6fc9ece5b8bcb1c16e3db28ac003a1e48b274708bd407318b54e0b4832aa",
+  "current_policy_sha256": "5e5c743af064d3c371356112ff868d271bb6bf4b4d14998afa387f2519bb892f",
+  "all_skill_bytes_unchanged": true,
+  "counted_trials": 0,
+  "full_repository_reevaluation_complete": false
+}

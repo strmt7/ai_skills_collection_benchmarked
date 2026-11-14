@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-13",
+  "kind": "source-grounded-make-optimization-component-review",
+  "source_skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-makefile-generator-skill-md",
+  "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+  "source_url": "https://github.com/akin-ozer/cc-devops-skills/blob/7fe7595e4512f8ce43dcf956aa5190b96d627dd1/devops-skills-plugin/skills/makefile-generator/docs/optimization-guide.md",
+  "source_resource": "included\\skills\\by-category\\coding-refactoring-repository-automation\\latest-release-devops\\makefile-generator\\docs\\optimization-guide.md",
+  "canonical_source_sha256": "8b928d0ac61c01fc83255ba96a29e480c9496d991f72c47f561b08558b1f7a6f",
+  "scope": "Complete optimization guide read; selected build correctness and diagnostic mechanisms exercised. Other source resources, language branches and whole-package readiness remain unqualified. Security-related work remains held.",
+  "upstream_observation": {
+    "evidence": "artifacts/research/2026-11-13/makefile-cpp/review.json",
+    "sha256": "df1db4d4b9e86347a8e20d615146036956b17cbf4cb3dd81e2eed63423100cf3",
+    "scope": "Earlier same-day package Git object comparison; not a new network recheck."
+  },
+  "findings": [
+    {
+      "id": "aggregate-source-accumulation",
+      "observed": "Original unity generator appends to the prior output. First compilation succeeds; regeneration creates four includes from two inputs and compilation fails with redefinitions. The maintained replacement prototype compiles with two includes and handles an explicit configured source removal."
+    },
+    {
+      "id": "recursive-failure-masked",
+      "observed": "Original loop returns zero after a required first child fails and later children succeed. The maintained prerequisite graph returns nonzero and does not run its dependent app; the all-successful graph passes with two parallel jobs."
+    },
+    {
+      "id": "unsupported-profile-option",
+      "observed": "Reviewed GNU Make 4.3 rejects --profile=profile.log. Its supported --trace command succeeds and emits update decisions; no duration profiler or speed improvement is inferred."
+    }
+  ],
+  "other_dispositions": [
+    "The illustrative 100-file timing table has no raw measurements, project identity, host or repeated-run provenance in this resource. Its speedup numbers are not admitted as measured evidence; this does not prove those numbers false.",
+    "Parallelism and built-in compiler-default issues were previously reviewed; their prior records are retained rather than counted as new discoveries.",
+    "Version, POSIX, cache, distributed-build, PCH and LTO claims are not independently qualified by the current controls. No availability or performance claim is inferred from reading them."
+  ],
+  "versions": {
+    "make": "GNU Make 4.3",
+    "compiler": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+  },
+  "component_cases": 8,
+  "qualification": {
+    "images_pulled": 0,
+    "lease_closed": true,
+    "remaining_owned_containers": 0,
+    "image_reference": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+    "network": "none",
+    "root_filesystem": "read_only",
+    "cpus": 1,
+    "memory_bytes": 536870912,
+    "tmpfs_bytes": 134217728,
+    "lease_seconds": 90
+  },
+  "maintained_response": {
+    "path": "included/improved/skills/makefile-generator-cpp",
+    "previous_skill_sha256": "608438ef42db5051ca18e0b7752c5ba610d8fccfb9b1de676e4d41a68cb654f1",
+    "skill_sha256": "59b3127a45cde2400a071d2a527ceafbadad758224d42d968c6abf9766af4235",
+    "reference": "references/build-reliability.md",
+    "reference_sha256": "a05b46cb85984a8d3dbc3bb545ed86d898993da82a141df4d249f544a9d58aaf",
+    "generator_and_template_unchanged": true,
+    "scope": "Lazy-loaded general build guidance added to the existing C++ overlay; no new generator capability or source-mirror edit."
+  },
+  "artifacts": {
+    "contracts.json": "49ca8288d095c2e0026548c2cfd7890241da5aa80c4baa84ea278488127f65a9",
+    "native-controls.json": "b41ee1ad3b069a07cbf19979babf5e93329ae4dda1530e79ad6d1ddbbdec8678",
+    "component-control.py.txt": "c9a0f40d1fca1ac3e40f83723ede6d93a9cdca9f71b9f926de1d98e3b61237a0",
+    "NOTICE.md": "37f634975bf6a408b5258030134985f34f2f18f7635a98a7492178eccb115c2c"
+  },
+  "web_research_performed_in_this_round": false,
+  "model_invocations": 0,
+  "performance_status": "unbenchmarked",
+  "agent_efficacy_established": false,
+  "commercial_release_ready": false,
+  "limitations": [
+    "GNU Make 4.3 and GCC 13.3.0 in one Linux compatibility image only; no latest-toolchain claim.",
+    "Maintained regeneration prototype uses an explicit source list; arbitrary wildcard additions/removals require an independently tracked list.",
+    "C unity controls do not establish C++ unity compatibility.",
+    "No native Windows compilation, cross-implementation Make qualification or build-speed comparison.",
+    "No model invocation, official benchmark score or superiority over either requested agent baseline."
+  ],
+  "metadata_qualification_failure": {
+    "stage": "Local affected tests and overlay-manifest validation",
+    "observed": "Retained package files were incorrectly rehashed as raw bytes rather than the existing catalog canonical form.",
+    "repair": "Regenerated the complete package map with build_catalog.sha256_file; no source, test expectation or validator changed.",
+    "affected_files": [
+      "LICENSE",
+      "provenance/original-generate.sh",
+      "provenance/original-SKILL.md"
+    ],
+    "retained_failed_qualification_sha256": "eb155cb238792124e673a467f29483f8d09df28a03495c43cc8defd70bb54904",
+    "lesson": "Use canonical catalog hashing for package manifests; raw digests bind native evidence. Validate the manifest immediately before the broader checkpoint."
+  }
+}

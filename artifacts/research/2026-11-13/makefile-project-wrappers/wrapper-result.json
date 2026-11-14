@@ -1,0 +1,110 @@
+{
+  "observation": {
+    "passed": true,
+    "cases": [
+      {
+        "case": "declared-cleanup-preserves-dependencies-and-sibling",
+        "exit_code": 0,
+        "owned_outputs_removed": true,
+        "retained_bytes_equal": true
+      },
+      {
+        "case": "unconfigured-build-fails",
+        "exit_code": 2
+      },
+      {
+        "case": "unconfigured-test-fails",
+        "exit_code": 2
+      },
+      {
+        "case": "configured-build-produces-real-output",
+        "exit_code": 0
+      },
+      {
+        "case": "configured-test-executes-real-passing-assertion",
+        "exit_code": 0
+      },
+      {
+        "case": "configured-test-propagates-real-failure",
+        "exit_code": 2
+      }
+    ],
+    "records": [
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "clean"
+        ],
+        "cwd_name": "project",
+        "exit_code": 0,
+        "stdout": "rm -rf -- build dist src/demo/__pycache__ tests/__pycache__\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "build"
+        ],
+        "cwd_name": "project",
+        "exit_code": 2,
+        "stdout": "",
+        "stderr": "Operation is not configured\nmake: *** [Makefile:4: build] Error 2\n"
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "test"
+        ],
+        "cwd_name": "project",
+        "exit_code": 2,
+        "stdout": "",
+        "stderr": "Operation is not configured\nmake: *** [Makefile:4: test] Error 2\n"
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "build"
+        ],
+        "cwd_name": "project",
+        "exit_code": 0,
+        "stdout": "/usr/bin/python3 -B build.py\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "test"
+        ],
+        "cwd_name": "project",
+        "exit_code": 0,
+        "stdout": "/usr/bin/python3 -B test.py\none genuine assertion passed\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "test"
+        ],
+        "cwd_name": "project",
+        "exit_code": 2,
+        "stdout": "/usr/bin/python3 -B test.py\n",
+        "stderr": "Traceback (most recent call last):\n  File \"/tmp/wrapper-contract-xe741_ym/project/test.py\", line 1, in <module>\n    assert False, \"intentional wrapper control failure\"\n           ^^^^^\nAssertionError: intentional wrapper control failure\nmake: *** [Makefile:6: test] Error 1\n"
+      }
+    ],
+    "model_invocations": 0,
+    "scope": "Native owned project-wrapper controls only; no agent benchmark or general cleanup algorithm."
+  },
+  "program_sha256": "929baf0deca8a65c992e466b5276af57263aa1a07e33581abdb36ce3ad81a7e5",
+  "image_reference": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+  "lease_closed": true,
+  "remaining_owned_containers": 0,
+  "images_pulled": 0,
+  "model_invocations": 0,
+  "runtime_admitted": false
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "kind": "maintained-native-grader-dependency-profile-qualification",
+  "date": "2026-11-13",
+  "status": "component-qualified-experiment-not-admitted",
+  "summary": "A generic schema-3 grader installs a frozen offline Python graph in its owned lease, preserves source imports and the original verifier/scorer, and checks a complete read-only dependency inventory after grading. Schema-2 tasks keep their existing profile.",
+  "source_sha256": {
+    "docs/native-benchmark-controller.md": "f921b82ae2b51373378f16c94752137b7aad2da3d9a6b73bdb04b888a8c943d3",
+    "tests/test_grade_swe_skills_submission.py": "d76e250e48818508661b00e89b9b22d93921265a9a1a3fd0ff2e472df7e310af",
+    "tests/test_native_trial_plan.py": "ea49b258159c8b8fc41ceed227531f85d80a8e81ec4cb7f059d03b68ebcc4566",
+    "tools/_native_grader_dependencies.py": "6b04fe4e6e48228d26d606561dc2aa1c34413bc60b062f732bd64991fc629340",
+    "tools/_native_trial_plan.py": "679dd397a1a5548b1c9aedc138030a67a3dd81c8d092750490290a083584233e",
+    "tools/grade_swe_skills_submission.py": "cd0caf3d2d2f23888c64f2ecbb6434e2bcf4ac2ef0b5bb720cd75ef32a77db76"
+  },
+  "qualification": {
+    "native_receipt_sha256": "3a5c1a59514b44b9573624ee78e7dda520afaa84320a6e4a4b702dbcb3048719",
+    "gates_passed": 10,
+    "focused_tests_passed": 167,
+    "new_unit_test_cases": 12,
+    "native_control_cases": 6
+  },
+  "native_facts": {
+    "selected_task_original_verifier_cases": 18,
+    "untouched_control_passed": 0,
+    "intentionally_broken_control_passed": 3,
+    "generic_success_fixture_cases": 11,
+    "generic_success_task_schemas": [
+      2,
+      3
+    ],
+    "exact_dependency_inventory_objects": 2525,
+    "identical_complete_inventories_across_native_grades": 3,
+    "native_interpreter_mismatch_rejected_without_score": true,
+    "native_import_mismatch_rejected_without_score": true,
+    "closed_native_leases": 10,
+    "remaining_owned_containers": 0,
+    "model_invocations": 0,
+    "counted_attempts": 0,
+    "new_selected_task_solution_written": false
+  },
+  "task_record": {
+    "path": "benchmarks/agent-effectiveness/development/swe-skills-pilot-v1/task-integration/pydicom-v2.json",
+    "sha256": "5c726d9a5694afb9daf1ac44dd0c9909e6a0d2b59856284a94905d1be289d743"
+  },
+  "research": {
+    "url": "https://pip.pypa.io/en/stable/topics/secure-installs/",
+    "native_crawl_sha256": "090adf27f7157ec8e0b2b47e7fa078be9e060ce94b4e7310b8aa52e231436a74",
+    "scope": "Reviewed pip hash mode requires hashes for all dependencies and exact pinned requirements; native installs use the complete frozen graph and no index."
+  },
+  "retained_diagnostic_failures": [
+    {
+      "qualification_sha256": "6f69cd0ceb353709652f2a429b7cc793788508f58d9f1315741a71925b6671cb",
+      "cause": "Control bound stdout bytes instead of the validated baseline manifest"
+    },
+    {
+      "qualification_sha256": "f7df3d4a846608d28caae310df89ff31256aba175adca4dd76c6cb17d811d826",
+      "cause": "Windows Path formatted the guest interpreter with backslashes"
+    },
+    {
+      "qualification_sha256": "2ee47249a48a507abb65206e98c0fff530b8f2be4b16e834dd18c0acd3be5b04",
+      "cause": "Restored project scratch area and the image home were read-only"
+    }
+  ],
+  "corrections": [
+    "Bind the validated manifest file exactly",
+    "Represent guest protocol paths with PurePosixPath and retain a cross-platform regression test",
+    "Provide disposable project write access and a private bounded task home; retain an unprivileged native write preflight"
+  ],
+  "limitations": [
+    "The original selected DICOM task still lacks a passing task-specific success control and Windows subject qualification.",
+    "No candidate skill was modified after selected task or evaluator exposure. The task remains exposed public development data.",
+    "The fixed cohort remains 12 tasks and 36 planned matched attempts. Model launch remains gated.",
+    "No model benchmark, meaningful model improvement, original-environment equivalence or commercial readiness is established."
+  ],
+  "artifacts": {
+    "compatibility-controls.py.txt": "5b50ed5b9ebe441b27eb76a33c98b1c8c54bb059eb4736008a8ac9ecfd50af7f",
+    "controls.json": "f5a0b803c0ac455900523df5aafc8d5f38de0949984747631eba4c34de6d8ef9",
+    "dependency-inventory.json": "f14c716b24119abe57cb28ab7552ed024421b8c2019f573b15db248fa6a64607",
+    "environment.json": "aedf977ac010f2064c0d226c2d3a24483c2f3d890a7b8b339d4c008e811e25ef",
+    "source-admission.json": "8bda96c7296f2d2b0fa0e3b144f270cfb41a145d4fc8af1e427b598707975fec",
+    "task-controls.py.txt": "a13ad9b8b352704377ae90299ce639c1c21bd9b20346329cc838d7b487fa674a"
+  }
+}

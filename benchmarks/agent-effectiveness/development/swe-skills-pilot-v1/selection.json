@@ -1,0 +1,198 @@
+{
+  "conditions": [
+    "default",
+    "karpathy",
+    "collection"
+  ],
+  "eligible_cells": 960,
+  "eligible_repository_groups": 89,
+  "exclusions": {
+    "security-review": "Owner has held cybersecurity-related development and evaluation."
+  },
+  "exclusions_sha256": "ef27499bc32b9d63425d2d3eaecf16842dbeadb59b1e60b1f91426e8e8f40594",
+  "execution_admitted": false,
+  "frame_batches": 10,
+  "frame_cells": 980,
+  "frame_sha256": "04ee61200fa839b225765c108659bdbe16d0d13646ddc81a413620ff245feb67",
+  "frame_skills": 98,
+  "kind": "swe-skills-bench-public-development-selection",
+  "limitations": [
+    "Source groups are declared repositories, not verified semantic independence or a complete overlap audit.",
+    "A fixed seed is reproducible, not proof of random or representative sampling; retain its provenance.",
+    "Public development tasks are exposed material and cannot become an untouched confirmatory holdout.",
+    "Publisher outcome tables, task briefs, evaluator implementations and reference solutions are not read.",
+    "No image, task, scorer, intervention, model or runner is admitted by this selection receipt.",
+    "Freeze interventions, common budgets, native metrics, missing-outcome and stopping rules before execution."
+  ],
+  "model_invocations": 0,
+  "partition": "development",
+  "planned_attempts": 36,
+  "planned_tasks": 12,
+  "preregistration_timing_verified": false,
+  "schema_version": 1,
+  "seed": "f658aca6273493e179b592e650341bc2cf76b1c48002633e592ab68c6cef212b",
+  "selected": [
+    {
+      "batch": "batch8",
+      "condition_order": [
+        "collection",
+        "karpathy",
+        "default"
+      ],
+      "repository": "burntsushi/ripgrep",
+      "repository_group": "burntsushi/ripgrep",
+      "skill_id": "clap-cli-patterns",
+      "source_commit": "4519153e5e461527f4bca45b042fff45c4ec6fb9",
+      "task_id": "swe-skills-bench/batch8/clap-cli-patterns"
+    },
+    {
+      "batch": "batch10",
+      "condition_order": [
+        "karpathy",
+        "default",
+        "collection"
+      ],
+      "repository": "prometheus/prometheus",
+      "repository_group": "prometheus/prometheus",
+      "skill_id": "prometheus-configuration",
+      "source_commit": "df61021436e3aa53917a76ae8a4599d2c7fe6097",
+      "task_id": "swe-skills-bench/batch10/prometheus-configuration"
+    },
+    {
+      "batch": "batch1",
+      "condition_order": [
+        "collection",
+        "default",
+        "karpathy"
+      ],
+      "repository": "facebookresearch/faiss",
+      "repository_group": "facebookresearch/faiss",
+      "skill_id": "vector-index-tuning",
+      "source_commit": "0759009bd7ddf290170c930c70a722badd05aa7d",
+      "task_id": "swe-skills-bench/batch1/vector-index-tuning"
+    },
+    {
+      "batch": "batch5",
+      "condition_order": [
+        "karpathy",
+        "collection",
+        "default"
+      ],
+      "repository": "metabase/metabase",
+      "repository_group": "metabase/metabase",
+      "skill_id": "clojure-write",
+      "source_commit": "d8bb291939a60c44d8ba6eb7bb132a5e0f271cf1",
+      "task_id": "swe-skills-bench/batch5/clojure-write"
+    },
+    {
+      "batch": "batch4",
+      "condition_order": [
+        "default",
+        "collection",
+        "karpathy"
+      ],
+      "repository": "pydicom/pydicom",
+      "repository_group": "pydicom/pydicom",
+      "skill_id": "pydicom-dicom-parsing",
+      "source_commit": "f15214fb9bc83d063f481552c487b02b28bfb7cc",
+      "task_id": "swe-skills-bench/batch4/pydicom-dicom-parsing"
+    },
+    {
+      "batch": "batch4",
+      "condition_order": [
+        "default",
+        "karpathy",
+        "collection"
+      ],
+      "repository": "nrwl/nx",
+      "repository_group": "nrwl/nx",
+      "skill_id": "nx-workspace-patterns",
+      "source_commit": "b3cb4d826144ceadce28dda7f614fd357bc61fd0",
+      "task_id": "swe-skills-bench/batch4/nx-workspace-patterns"
+    },
+    {
+      "batch": "batch3",
+      "condition_order": [
+        "collection",
+        "karpathy",
+        "default"
+      ],
+      "repository": "samber/mo",
+      "repository_group": "samber/mo",
+      "skill_id": "go-monads-mo",
+      "source_commit": "35a143a391a281ca954b388bd8c6795ea1ee1955",
+      "task_id": "swe-skills-bench/batch3/go-monads-mo"
+    },
+    {
+      "batch": "batch4",
+      "condition_order": [
+        "karpathy",
+        "default",
+        "collection"
+      ],
+      "repository": "bats-core/bats-core",
+      "repository_group": "bats-core/bats-core",
+      "skill_id": "bats-shell-testing",
+      "source_commit": "d9faff0d7bc32e7adebc6552446f978118d3ab3b",
+      "task_id": "swe-skills-bench/batch4/bats-shell-testing"
+    },
+    {
+      "batch": "batch3",
+      "condition_order": [
+        "collection",
+        "default",
+        "karpathy"
+      ],
+      "repository": "tanstack/query",
+      "repository_group": "tanstack/query",
+      "skill_id": "tanstack-query-patterns",
+      "source_commit": "763782a2403aefaa52ce76601cf0f4912045be34",
+      "task_id": "swe-skills-bench/batch3/tanstack-query-patterns"
+    },
+    {
+      "batch": "batch8",
+      "condition_order": [
+        "karpathy",
+        "collection",
+        "default"
+      ],
+      "repository": "apollographql/apollo-server",
+      "repository_group": "apollographql/apollo-server",
+      "skill_id": "graphql-schema-design",
+      "source_commit": "64c0e1bb5d79d571bf448c35aea0b31097e6ce9d",
+      "task_id": "swe-skills-bench/batch8/graphql-schema-design"
+    },
+    {
+      "batch": "batch7",
+      "condition_order": [
+        "default",
+        "collection",
+        "karpathy"
+      ],
+      "repository": "gitlabhq/gitlabhq",
+      "repository_group": "gitlabhq/gitlabhq",
+      "skill_id": "gitlab-ci-patterns",
+      "source_commit": "d91b0b33f4c63b5f4b7307059a9b70d9b82a7b41",
+      "task_id": "swe-skills-bench/batch7/gitlab-ci-patterns"
+    },
+    {
+      "batch": "batch2",
+      "condition_order": [
+        "default",
+        "karpathy",
+        "collection"
+      ],
+      "repository": "psf/black",
+      "repository_group": "psf/black",
+      "skill_id": "mypy-type-checking",
+      "source_commit": "8dcc4865c8f9a2769411db5638927696172cdf75",
+      "task_id": "swe-skills-bench/batch2/mypy-type-checking"
+    }
+  ],
+  "selection_method": "SHA-256 rank of repository groups, then one skill/batch cell per group",
+  "source_commit": "4d3450d9216a590a8726fcb3604b5143daca776b",
+  "task_independence_verified": false,
+  "unresolved_source_skills": [
+    "add-uint-support"
+  ]
+}

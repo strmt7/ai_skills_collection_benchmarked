@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-13",
+  "kind": "source-grounded-python-java-generic-make-wrapper-review",
+  "source_skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-makefile-generator-skill-md",
+  "source_signature": {
+    "commit_sha": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+    "skill_dir_sha256": "c7b51244ed4d37fdb03e26ad3bd84acbf8efb19e24a7519b166fe54ea9b54796",
+    "skill_file_sha256": "c0090361f2f9999c81050beb7d65aaf4338094559bd227d944aafbf1500286fe"
+  },
+  "generator_canonical_sha256": "f85287a85ab0b152b2d7f8681642d616031896e4e75d45b78970de514a324747",
+  "native_cases": {
+    "python-result.json": 11,
+    "java-result.json": 16,
+    "original-scope-result.json": 3,
+    "wrapper-result.json": 6
+  },
+  "total_component_cases": 36,
+  "findings": [
+    {
+      "id": "cleanup-crosses-dependency-environment",
+      "observed": "The original Python clean target deletes a nested virtual-environment dependency cache. Explicit owned-output cleanup retains both dependency and sibling sentinel bytes."
+    },
+    {
+      "id": "formatter-success-with-incompatible-output",
+      "observed": "The original Python format target exits zero, then Black check exits one. A common explicit Black/isort profile and line length 120 satisfies both check commands."
+    },
+    {
+      "id": "removed-java-source-retains-obsolete-class",
+      "observed": "The original Java build packages the deleted source class again. A fresh native compilation/archive excludes it."
+    },
+    {
+      "id": "classpath-change-not-recompiled",
+      "observed": "A dependency JAR ABI change does not invalidate the original compile stamp; build returns zero and the old program fails at runtime. Fresh javac rejects the changed ABI."
+    },
+    {
+      "id": "junit-false-success-with-zero-tests",
+      "observed": "The original test operation returns zero while an actual failing JUnit 4 test is not discovered. Explicit class execution and current console discovery expose the real failure; current console no-tests policy rejects empty discovery."
+    },
+    {
+      "id": "generic-placeholder-success",
+      "observed": "Original generic build and test commands return zero without executing build/test work. An unconfigured wrapper rejects each operation; configured real commands preserve artifact/test/failure contracts."
+    }
+  ],
+  "sound_original_behavior": "With an actual isolated compatible tool environment, the original Python commands build a real wheel/sdist, perform a private editable installation, execute a real passing test, propagate a real failing test and run the configured linters. Those behaviors are retained.",
+  "setup": {
+    "java_runtime_as_observed": {
+      "IMPLEMENTOR": "Eclipse Adoptium",
+      "IMPLEMENTOR_VERSION": "Temurin-27.0.1.0.2+1",
+      "JAVA_VERSION": "27.0.1.0.2",
+      "OS_ARCH": "x86_64",
+      "OS_NAME": "Linux"
+    },
+    "python_graph_resolved_and_reinstalled": true,
+    "system_interpreter_packages_unchanged": true,
+    "task_staging_budget_changed": false,
+    "sdk_transfer_separate_from_task_staging": true
+  },
+  "retained_prequalification_failures": [
+    {
+      "stage": "Evidence assembly",
+      "observed": "An incorrect assumed target field name stopped the first writer before manifests, ledger or documentation updates. The native controls were already complete. Verified the actual capture schema and resumed only byte-identical partial copies; no original mirror changed."
+    },
+    {
+      "stage": "PyPI file eligibility",
+      "observed": "An invalid historical Requires-Python specifier stopped initial capture. The corrected candidate collector rejects and records malformed file metadata without rewriting or weakening it; native pip resolves admitted candidates."
+    },
+    {
+      "stage": "JUnit documentation location",
+      "observed": "The old user-guide URL returned 301 and was not admitted as content. The canonical overview yielded the actual console-launcher documentation URL; that URL was independently crawled and reviewed."
+    },
+    {
+      "stage": "Java negative admission control",
+      "observed": "The initial run only compared a bad digest instead of invoking admission. It was not accepted as negative-admission evidence. The final frozen v2 calls admission, observes ValueError for the wrong digest and then admits the real digest."
+    }
+  ],
+  "artifacts": {
+    "java-contract.json": "d1a62db4fd3f0d4fab9e5531b6b28aeee59b1d419fa4d3917ac491ac92f1ee2f",
+    "java-control.py.txt": "2c9aeb522142513a174f16bc56ac4656db8a15fd276e95a891aacbd179b65a01",
+    "java-result.json": "9d71b2965aac1097ec26e638fd1d3ae1518ee00e451c1728a08dbfa1e09f345f",
+    "language-provisioning-controller.py.txt": "5d84d3f07f4b32534c3fb85fc12876319fa45fbd481215ae57090e8db39d5dd0",
+    "NOTICE.md": "d518fc20c24e3ff7ecca3e3efe776e2e61cc448ee0d5d3ffef3e0f2ecc346fa3",
+    "original-scope-contract.json": "37fdd20e92d5fd2b4e83442306ef29cccad28ed252b0eb697f2f77b6900fd00a",
+    "original-scope-control.py.txt": "a81215d4d7ed2b262d9ac41799b7953792e621ca68a206f9807f0a03d3f32c3a",
+    "original-scope-result.json": "4b1632aed7bb3d5f58051a39acf0d61154830a8eaf4dbadeb6521c9071a248b6",
+    "primary-sources.json": "d2acef0405d1e9638b7b8b36960e8fc80c967d06523feb6e681d3a90118d82f8",
+    "python-contract.json": "a21424991e7cf73dd1bf05b75b13138187a651f7251e701c5be3f68ca58c9cf5",
+    "python-control.py.txt": "7342ea1bfea3b1d01b2652b14c8e9ff1bc68c6a8804c2c1c60513d0b6c8800f8",
+    "python-result.json": "a836086addf1ca95c4dc1e859958304def170dcd0d4bd89709af08810d7e5207",
+    "setup.json": "08488255d1f09985d0cbe165bc2cd30e49600b0f720c30a91fafd8b0a6b893e5",
+    "small-probe-controller.py.txt": "099e7a64763775f54fec7f3d6b1aa161c9fb4fb0a2f72dbbeb5b861ff8a2eaed",
+    "wrapper-contract.json": "5e18838724904742c81c2de3254b75483448800e6a3383fd7929b59351174a8d",
+    "wrapper-control.py.txt": "929baf0deca8a65c992e466b5276af57263aa1a07e33581abdb36ce3ad81a7e5",
+    "wrapper-result.json": "a8c371d9d0ba3d9188912e51df50f62cdeada44a4f470fe82c0d536ba6aac69a"
+  },
+  "maintained_repair": {
+    "path": "included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-project-wrappers",
+    "repair_manifest_sha256": "01c8a3002f39a2f3b7813d78f75ee01c22800183aa78735308ae183c51a2a4f0"
+  },
+  "model_invocations": 0,
+  "agent_efficacy_established": false,
+  "whole_skill_complete": false,
+  "whole_package_readiness": false,
+  "unqualified": [
+    "Native Windows Python/Java language execution",
+    "Supported automatic end-user Go/JDK provisioning; private proof is not a maintained installer",
+    "Maven/Gradle and arbitrary project dependency graphs",
+    "All remaining guide examples, deployment and privileged installation",
+    "Security guide remains held",
+    "Independent model efficacy and speed comparisons"
+  ]
+}

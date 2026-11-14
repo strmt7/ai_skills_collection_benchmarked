@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "kind": "native-vendor-catalog-and-global-instruction-isolation",
+  "date": "2026-11-13",
+  "scope": "Windows x64 official CLI admission and source-frozen model catalog controls using owned scripted peers and generated credentials. No real model or account execution.",
+  "cli_version": "0.167.2",
+  "source_commit": "ce21072c90d32c40af7a55b60b2fb35c84a43a6a",
+  "pin_sha256": "2bbde4be1630f46199390e4215a8ef00cddc7369235980a0572bdd1778bad87b",
+  "latest_stable_verification": {
+    "release_api": "https://api.github.com/repos/openai/codex/releases/latest",
+    "npm_registry": "https://registry.npmjs.org/@openai/codex/latest",
+    "observed_version": "0.167.2",
+    "annotated_tag": "rust-v0.167.2",
+    "tag_signature_verified": false,
+    "release_capture_sha256": "f52d0d857e21df0d4a1a8a132faeaba65c30f7ff04b1b4bfe6ff586515675381",
+    "npm_capture_sha256": "d372a601e6546a0e7e1d084a5d736609be831c40cb6aa7bf8793d5b3555e79d0",
+    "claim_limit": "Latest stable at capture, not a continuing currency guarantee or signed-tag claim."
+  },
+  "sources": [
+    {
+      "url": "https://github.com/openai/codex/blob/ce21072c90d32c40af7a55b60b2fb35c84a43a6a/codex-rs/models-manager/src/cache.rs",
+      "decoded_source_sha256": "28ed89e6b3e8f286e652f73e72d3d6fffc0f6c58b1d4d25a7e43dc7be5f105cc",
+      "transport": "Official GitHub connector decoded source; no exact HTTP wire or reproducible-build claim."
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/ce21072c90d32c40af7a55b60b2fb35c84a43a6a/codex-rs/models-manager/src/manager.rs",
+      "decoded_source_sha256": "34f04f5726a3b7218dc1439ac2291f8b2a069eaee8f3d49f52d8294c603a4057",
+      "transport": "Official GitHub connector decoded source; no exact HTTP wire or reproducible-build claim."
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/ce21072c90d32c40af7a55b60b2fb35c84a43a6a/codex-rs/models-manager/src/lib.rs",
+      "decoded_source_sha256": "314a571674d1c5d67326619b4d435b422f3a2aa8a044cfd71a4f5dc94b94c533",
+      "transport": "Official GitHub connector decoded source; no exact HTTP wire or reproducible-build claim."
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/ce21072c90d32c40af7a55b60b2fb35c84a43a6a/codex-rs/codex-home/src/instructions/mod.rs",
+      "decoded_source_sha256": "17719c5dddb4709e881a78f58471ec59698e33f786d221d1003cdac538e81c90",
+      "transport": "Official GitHub connector decoded source; no exact HTTP wire or reproducible-build claim."
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/ce21072c90d32c40af7a55b60b2fb35c84a43a6a/codex-rs/app-server/src/message_processor.rs",
+      "decoded_source_sha256": "d03d58303aa41b3471c7e76b5698b1f6b92a4d3c1debf55ca40743788e6ec898",
+      "transport": "Official GitHub connector decoded source; no exact HTTP wire or reproducible-build claim."
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/ce21072c90d32c40af7a55b60b2fb35c84a43a6a/codex-rs/core/src/agents_md_manager.rs",
+      "decoded_source_sha256": "d0604de003e755bc1dbc985e2400c4a933e3d2ae5f43872f9861d183a39741e7",
+      "transport": "Official GitHub connector decoded source; no exact HTTP wire or reproducible-build claim."
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/ce21072c90d32c40af7a55b60b2fb35c84a43a6a/codex-rs/core/src/agents_md.rs",
+      "decoded_source_sha256": "943c8a03b5f951327b4d44063cb208427751386929420928d6fa67c1e8763581",
+      "transport": "Official GitHub connector decoded source; no exact HTTP wire or reproducible-build claim."
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/ce21072c90d32c40af7a55b60b2fb35c84a43a6a/codex-rs/core/src/config/mod.rs",
+      "decoded_source_sha256": "eb66371f17028adcc54256a87466cc6bdfdfc2c043023574309816d035a2e3e0",
+      "transport": "Official GitHub connector decoded source; no exact HTTP wire or reproducible-build claim."
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/ce21072c90d32c40af7a55b60b2fb35c84a43a6a/codex-rs/exec/src/cli.rs",
+      "decoded_source_sha256": "22942d28739133513ea1a78635d803019d1707ba78effc3415bc26b202b8036e",
+      "transport": "Official GitHub connector decoded source; no exact HTTP wire or reproducible-build claim."
+    }
+  ],
+  "vendor_catalog": {
+    "url": "https://raw.githubusercontent.com/openai/codex/ce21072c90d32c40af7a55b60b2fb35c84a43a6a/codex-rs/models-manager/models.json",
+    "bytes": 539696,
+    "sha256": "1384625c0b6b3e67d3c60da29becea2b017f2c283fc1e2d05b8edafb4698eb10",
+    "git_blob_sha1": "489ebe3f2483348641a16160ce8491dd077eabca",
+    "git_blob_identity_verified": true,
+    "models": 12,
+    "condition_policy": "Unmodified vendor default model metadata is identical in all comparison conditions; no collection-specific base-prompt replacement."
+  },
+  "defect": {
+    "channel": "CODEX_HOME/models_cache.json",
+    "observed_behavior": "A matching identity/version/fresh cache contributes marked model instructions when refresh receives HTTP 503; a normal online refresh removes that marker. --ignore-user-config alone does not isolate this cache.",
+    "pre_mitigation_five_cases": {
+      "qualification_sha256": "fb22ccd8c0a23796d401721ec68049e087ec5ab387f3d7e726000bde5d8f8efb",
+      "checks": 5,
+      "source_inputs": 69,
+      "source_unchanged": true,
+      "scope": "Scripted or model-free qualification, not model efficacy."
+    },
+    "failed_initial_hypothesis": {
+      "qualification_sha256": "43d99604847ecf3cb1d158ccd9c816c5679e7a3a834dd2347c36fc9be75ca982",
+      "reason": "The original online-only hypothesis expected cache reuse; native successful refresh replaced it. The failed attempt remains retained."
+    }
+  },
+  "repair": {
+    "subject_option": "-c model_catalog_json=<verified vendor catalog>",
+    "entrypoints": [
+      "tools/run_agent_trial.py",
+      "tools/run_swe_skills_trial.py"
+    ],
+    "input_verification": "Pinned executable and vendor catalog hashes and sizes before execution and at lease closure, before grading.",
+    "archived_evidence": "Public pin bytes retained in execution context, bound to protocol source digest; command validation requires no original host files.",
+    "automatic_recovery": "Owned bootstrap restores a missing catalog from the pinned official source; verified with a native recovery control.",
+    "claim_limit": "Finite controls establish this observed cache channel, not complete isolation against concurrent profile changes."
+  },
+  "qualifications": {
+    "package_admission": {
+      "qualification_sha256": "cf69ff96167800d8790efd137b4fa799c74b28513ccefcd7db9a851c82ff6299",
+      "checks": 2,
+      "source_inputs": 19,
+      "source_unchanged": true,
+      "scope": "Scripted or model-free qualification, not model efficacy."
+    },
+    "bootstrap": {
+      "qualification_sha256": "955a7dc25fb76702a849c2e784c79124e724f49971ede990002beb4c04f22645",
+      "checks": 2,
+      "source_inputs": 20,
+      "source_unchanged": true,
+      "scope": "Scripted or model-free qualification, not model efficacy."
+    },
+    "unit_lint_format_types": {
+      "qualification_sha256": "b40cd9a02cedfd048557e13448b60c6c2a6a14b2d8ba75cb712c3128717d8659",
+      "checks": 4,
+      "source_inputs": 71,
+      "source_unchanged": true,
+      "scope": "Scripted or model-free qualification, not model efficacy."
+    },
+    "metadata": {
+      "qualification_sha256": "81314fa29022238806720ab5e95d8f9565ac0bc25820b082e88d0941cfdb4c1f",
+      "checks": 13,
+      "source_inputs": 61,
+      "source_unchanged": true,
+      "scope": "Scripted or model-free qualification, not model efficacy."
+    },
+    "maintained_native_cache_controls": {
+      "qualification_sha256": "b28e5a9579762187c53e3519f06b86dbbcb0c9e6190a461fa975903fe6914fa5",
+      "checks": 3,
+      "source_inputs": 64,
+      "source_unchanged": true,
+      "scope": "Scripted or model-free qualification, not model efficacy."
+    },
+    "late_global_instruction_control": {
+      "qualification_sha256": "bf02a48b8cdd7fd0ca5c96fcbf24ae66e5c16e6791405b1fe86f9547211b0241",
+      "checks": 1,
+      "source_inputs": 67,
+      "source_unchanged": true,
+      "scope": "Scripted or model-free qualification, not model efficacy."
+    },
+    "full_suite": {
+      "qualification_sha256": "73cc709ed1025786fa7a6e7b207dce2c8d5de15bc8fe1e253a247538c3444922",
+      "checks": 1,
+      "source_inputs": 22214,
+      "source_unchanged": true,
+      "scope": "Scripted or model-free qualification, not model efficacy."
+    }
+  },
+  "native_bootstrap_controls": {
+    "qualification_sha256": "1a7124cb84033f118f77db49204a542b64028c2a46210e82cc615e28bf542cea",
+    "controls": 9,
+    "focused_tests": 40
+  },
+  "maintained_native_controls": [
+    {
+      "id": "protected-unchanged",
+      "observed": {
+        "status": "task_failed",
+        "score": 0.0,
+        "cache_canary_observed": false,
+        "authentication_file_unchanged": true,
+        "credential_binding_released": true,
+        "listener_stopped": true,
+        "models_reads": [
+          {
+            "path": "/v1/models?client_version=0.167.2",
+            "phase": "warmup",
+            "status": 200
+          }
+        ],
+        "native_store_denial_observed": false,
+        "real_model_inferences": 0
+      },
+      "summary_sha256": "22fa3f2b3849d8b0dd45a7a3288590ebda5223a8dd0c4405e4c0732cf138b8f6"
+    },
+    {
+      "id": "protected-edited",
+      "observed": {
+        "status": "task_passed",
+        "score": 1.0,
+        "cache_canary_observed": false,
+        "authentication_file_unchanged": true,
+        "credential_binding_released": true,
+        "listener_stopped": true,
+        "models_reads": [
+          {
+            "path": "/v1/models?client_version=0.167.2",
+            "phase": "warmup",
+            "status": 200
+          }
+        ],
+        "native_store_denial_observed": true,
+        "real_model_inferences": 0
+      },
+      "summary_sha256": "59c42f10debadc786369c7b00c67fed114c90db5f54788f4a7069a0a504b686f"
+    },
+    {
+      "id": "catalog-ablated",
+      "observed": {
+        "status": "harness_error",
+        "score": null,
+        "cache_canary_observed": true,
+        "authentication_file_unchanged": true,
+        "credential_binding_released": true,
+        "listener_stopped": true,
+        "models_reads": [
+          {
+            "path": "/v1/models?client_version=0.167.2",
+            "phase": "warmup",
+            "status": 200
+          },
+          {
+            "path": "/v1/models?client_version=0.167.2",
+            "phase": "measured",
+            "status": 503
+          },
+          {
+            "path": "/v1/models?client_version=0.167.2",
+            "phase": "measured",
+            "status": 503
+          }
+        ],
+        "native_store_denial_observed": false,
+        "real_model_inferences": 0
+      },
+      "summary_sha256": "bcdb3e3841874abc3dd88993313cf6aae712d3eb82fa6a515050ba8c440787ee"
+    }
+  ],
+  "global_instructions": {
+    "owned_late_file_control": {
+      "summary_sha256": "f9ff81617b35a4b174175fec6a0fd91a67800d766044705161089dad60fb3319",
+      "global_marker_reached_scripted_peer": true,
+      "result_withheld": true,
+      "credential_binding_released": true,
+      "listener_stopped": true,
+      "actual_user_profile_modified": false
+    },
+    "actual_home_discovery": {
+      "directory_exists": true,
+      "authentication_file_exists": true,
+      "global_agents_exists": true,
+      "global_override_exists": false,
+      "credential_content_read": false,
+      "profile_modified": false
+    },
+    "conclusion": "Global instructions load independently of ignored user config and the zero project-document budget. Retain the admission rejection. No supported opt-out was established; do not clear base instructions, move user files or copy credentials. A file created after admission still leaks in the scripted control, so concurrent profile stability remains unqualified."
+  },
+  "validation": {
+    "focused_tests_passed": 529,
+    "typed_python_files": 324,
+    "full_tests_passed": 3107,
+    "full_tests_skipped": 18,
+    "full_suite_frozen_inputs": 22214,
+    "full_suite_seconds": 344.08,
+    "full_test_log_sha256": "2792461147079d6a0e15826909f7e84d244186754f7d301faaf537196217365e",
+    "coverage": {
+      "lines_covered": 14053,
+      "lines_valid": 18552,
+      "line_rate": 0.7575,
+      "branches_covered": 4778,
+      "branches_valid": 6728,
+      "branch_rate": 0.7102,
+      "xml_sha256": "14b0eebe18b2e7acaea4fcace1b6aff65b57d427d4b4510893f407d47ac72e36"
+    }
+  },
+  "implementation_sha256": {
+    "tools/_trial_catalog.py": "7a380a989ef18a134f0ec32f240cab7a59101f8582a9d97ecb3231455fdb259a",
+    "tools/_trial_context.py": "67e86b88e0cc58a7b31a01fd248ba05211542fa26cac55ccf8b8c27d63512067",
+    "tools/_trial_execution_evidence.py": "eaec60e6f611957fb737293a4be0a402856f5c7e4c8114589408162a39029926",
+    "tools/run_agent_trial.py": "b2f72b158661a5ca8e1cde73ea2e3b2659f4177a0050c613566f46f37c14f768",
+    "tools/run_swe_skills_trial.py": "6aeeca12055896c22896a69a42ec852b27fe132705841aa3b1101a9b061ac6cd",
+    "tests/test_trial_catalog.py": "30a15ebd1874ad33424fc397fa3df5438487ef76af5284e783902fed1203d851",
+    "tests/test_trial_execution_evidence.py": "1803e2dd26bf09b1029f1f889ad41f466b4f9e1dbc934f5a2e208914ab625a82",
+    "tests/test_trial_signin.py": "df8d13c039ff958a73b3b4cb77dd9fdb9665b558b39f62e6677dffed5c40705c",
+    "tests/conftest.py": "dd7deea2b0f400ef560a85c51f21e9e2bbe9c29c3b1e05a3bbffc2a37c4e9fc7",
+    "tests/qualify_windows_bootstrap.ps1": "9304a524870714ccd2ee736e42be2a1e8e011152287f8b13b86092e01d509b80",
+    "toolchains/bootstrap/codex.json": "2bbde4be1630f46199390e4215a8ef00cddc7369235980a0572bdd1778bad87b"
+  },
+  "real_model_inferences": 0,
+  "api_keys_requested": 0,
+  "api_keys_used": 0,
+  "public_model_launch_guard": "closed",
+  "whole_model_trial_boundary_qualified": false,
+  "significant_skill_gain_established": false,
+  "commercial_release_ready": false,
+  "release_created": false,
+  "limitations": [
+    "Generated synthetic credentials and loopback endpoints do not qualify real-account refresh, TLS routing, independent model identity or entitlement.",
+    "Actual discovered sign-in home contains global instructions and is currently ineligible. Controller did not read or modify those files.",
+    "No confirmatory external benchmark scores exist for these changes; infrastructure passes do not demonstrate skill efficacy.",
+    "Security work remains held and unpublished changes have no hosted acceptance."
+  ]
+}

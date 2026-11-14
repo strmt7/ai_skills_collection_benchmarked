@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "git_version": "git version 2.56.0.windows.4",
+  "git_sha256": "9c75f3f41eb5686bacde4b7c4fdfcd7970e8b699ee05c8d7a0cc9c8a7ddaffe8",
+  "core_autocrlf": true,
+  "records": [
+    {
+      "path": ".gitattributes",
+      "bytes": 20381,
+      "sha256": "4e4fbad66f65274ee90256bf9eab883d4ef0d86911821a964af88d40e042ea1d",
+      "staged_blob_sha": "5a17c9c773721235bd4eed1ea3ad4d4aee1914a6",
+      "raw_blob_sha": "5a17c9c773721235bd4eed1ea3ad4d4aee1914a6",
+      "checkout_identical": true
+    },
+    {
+      "path": "toolchains/native-node-replay/pins.json",
+      "bytes": 2083,
+      "sha256": "ce92b02cd2b190de2d3a7d348a921f0fac3121a229b16821010789f7cc6fbab6",
+      "staged_blob_sha": "b81f92b4e12dcbde5af10d86035f23c9cac3be51",
+      "raw_blob_sha": "b81f92b4e12dcbde5af10d86035f23c9cac3be51",
+      "checkout_identical": true
+    },
+    {
+      "path": "toolchains/bootstrap/NativeSupervisor.dll",
+      "bytes": 9728,
+      "sha256": "f0a41795d31c5841d4e81d9e5dd109a8f0809a8c707bbceec8efd48e30c54cdb",
+      "staged_blob_sha": "d7faa86ef1116f97fb70d6ce0d2267d94049ba0b",
+      "raw_blob_sha": "d7faa86ef1116f97fb70d6ce0d2267d94049ba0b",
+      "checkout_identical": true
+    }
+  ],
+  "scope": "Real add and checkout with Windows line conversion enabled; no commit or ref update",
+  "model_trials": 0
+}

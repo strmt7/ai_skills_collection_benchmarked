@@ -1,0 +1,17 @@
+{
+  "accepted_native_attempt": 3,
+  "unadmitted_attempts": [
+    {
+      "attempt": 1,
+      "reason": "Controller-generated fixture initialization contained an invalid Python string literal; no build outcome admitted.",
+      "source_snapshot_retained": true
+    },
+    {
+      "attempt": 2,
+      "reason": "Fixture initialization tried chown after all container capabilities were dropped. The corrected fixture uses its own writable scratch directory without restoring capabilities.",
+      "source_snapshot_retained": true
+    }
+  ],
+  "original_source_unmodified": true,
+  "container_cleanup_verified_on_failures": true
+}

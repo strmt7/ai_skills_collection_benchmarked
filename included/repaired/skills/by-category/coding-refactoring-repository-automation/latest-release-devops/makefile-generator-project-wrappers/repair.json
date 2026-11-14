@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "maintained_instruction_repair",
+  "source_skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-makefile-generator-skill-md",
+  "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+  "source_mirror": "included/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator",
+  "original_skill_sha256": "c0090361f2f9999c81050beb7d65aaf4338094559bd227d944aafbf1500286fe",
+  "provenance_skill": "provenance/original.SKILL.md",
+  "original_generator_sha256": "f85287a85ab0b152b2d7f8681642d616031896e4e75d45b78970de514a324747",
+  "license_file": "LICENSE",
+  "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+  "model_performance_claim": false,
+  "readiness_status": "component_controls_only",
+  "scope": "Python, Java and generic Make-wrapper instruction repair; selected Linux component controls only, no supported standalone scaffold or automatic end-user language installer.",
+  "repaired_skill_sha256": "3a7bbd5a40e6e28a3e97efc580d042796c06452b6e69695981be5f5b79379b83",
+  "readiness_evidence": "artifacts/research/2026-11-13/makefile-project-wrappers/review.json",
+  "overlay_sha256": {
+    "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "NOTICE.md": "d518fc20c24e3ff7ecca3e3efe776e2e61cc448ee0d5d3ffef3e0f2ecc346fa3",
+    "provenance/original.generate.sh": "f85287a85ab0b152b2d7f8681642d616031896e4e75d45b78970de514a324747",
+    "provenance/original.SKILL.md": "c0090361f2f9999c81050beb7d65aaf4338094559bd227d944aafbf1500286fe",
+    "SKILL.md": "3a7bbd5a40e6e28a3e97efc580d042796c06452b6e69695981be5f5b79379b83"
+  },
+  "evidence_sha256": {
+    "java-contract.json": "d1a62db4fd3f0d4fab9e5531b6b28aeee59b1d419fa4d3917ac491ac92f1ee2f",
+    "java-control.py.txt": "2c9aeb522142513a174f16bc56ac4656db8a15fd276e95a891aacbd179b65a01",
+    "java-result.json": "9d71b2965aac1097ec26e638fd1d3ae1518ee00e451c1728a08dbfa1e09f345f",
+    "language-provisioning-controller.py.txt": "5d84d3f07f4b32534c3fb85fc12876319fa45fbd481215ae57090e8db39d5dd0",
+    "NOTICE.md": "d518fc20c24e3ff7ecca3e3efe776e2e61cc448ee0d5d3ffef3e0f2ecc346fa3",
+    "original-scope-contract.json": "37fdd20e92d5fd2b4e83442306ef29cccad28ed252b0eb697f2f77b6900fd00a",
+    "original-scope-control.py.txt": "a81215d4d7ed2b262d9ac41799b7953792e621ca68a206f9807f0a03d3f32c3a",
+    "original-scope-result.json": "4b1632aed7bb3d5f58051a39acf0d61154830a8eaf4dbadeb6521c9071a248b6",
+    "primary-sources.json": "d2acef0405d1e9638b7b8b36960e8fc80c967d06523feb6e681d3a90118d82f8",
+    "python-contract.json": "a21424991e7cf73dd1bf05b75b13138187a651f7251e701c5be3f68ca58c9cf5",
+    "python-control.py.txt": "7342ea1bfea3b1d01b2652b14c8e9ff1bc68c6a8804c2c1c60513d0b6c8800f8",
+    "python-result.json": "a836086addf1ca95c4dc1e859958304def170dcd0d4bd89709af08810d7e5207",
+    "setup.json": "08488255d1f09985d0cbe165bc2cd30e49600b0f720c30a91fafd8b0a6b893e5",
+    "small-probe-controller.py.txt": "099e7a64763775f54fec7f3d6b1aa161c9fb4fb0a2f72dbbeb5b861ff8a2eaed",
+    "wrapper-contract.json": "5e18838724904742c81c2de3254b75483448800e6a3383fd7929b59351174a8d",
+    "wrapper-control.py.txt": "929baf0deca8a65c992e466b5276af57263aa1a07e33581abdb36ce3ad81a7e5",
+    "wrapper-result.json": "a8c371d9d0ba3d9188912e51df50f62cdeada44a4f470fe82c0d536ba6aac69a"
+  }
+}

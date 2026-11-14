@@ -1,0 +1,168 @@
+"""Bounded offline Make correctness controls; no installations or model calls."""
+import json
+import os
+import shutil
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+CONTRACT = {'source_skill_id': 'akin-ozer-cc-devops-skills-devops-skills-plugin-skills-makefile-generator-skill-md', 'source_commit': '7fe7595e4512f8ce43dcf956aa5190b96d627dd1', 'resources': {'docs/variables-guide.md': {'canonical_sha256': '25ed125126630a1f58bac17ce3f8d0ee69f4508074510d473b2c98152a90d12e', 'characters': 12817}, 'docs/makefile-structure.md': {'canonical_sha256': 'c128dfeb981215cfe7b25957c8332dbc6ad757a8b8ae681eabebb048564df219', 'characters': 11183}, 'docs/patterns-guide.md': {'canonical_sha256': 'd1fd655e149df87b457bd85324c1c4e02fd858dd858cff5698508f196b34fe57', 'characters': 12594}, 'docs/targets-guide.md': {'canonical_sha256': '282faa5b0264c6ba8215072dfa7e30b4c39ba8aa5d15bc8c1b9c3a6cfdf2eaa8', 'characters': 13244}, 'assets/templates/.gitkeep': {'canonical_sha256': '3733477b18dd35099f9e9134394f247012e8e573329132098d328d725846dff9', 'characters': 43}}, 'source_examples': {'configurations': 'BUILD_TYPES := debug release profile\n\n.PHONY: all $(BUILD_TYPES) clean\n\nall: release\n\n# Target-specific variables\ndebug: CFLAGS += -g -O0 -DDEBUG\ndebug: TARGET := build/debug/$(PROJECT)\ndebug: $(TARGET)\n\nrelease: CFLAGS += -O3 -DNDEBUG\nrelease: TARGET := build/release/$(PROJECT)\nrelease: $(TARGET)\n\nprofile: CFLAGS += -pg -O2\nprofile: TARGET := build/profile/$(PROJECT)\nprofile: $(TARGET)\n\n# Generic build rule\n$(TARGET): $(OBJECTS)\n\t@mkdir -p $(@D)\n\t$(CC) $(LDFLAGS) $^ $(LDLIBS) -o $@\n', 'mixed': 'PROJECT := mixed\nCC ?= gcc\nCXX ?= g++\nCFLAGS ?= -Wall -O2\nCXXFLAGS ?= -Wall -O2 -std=c++17\n\nSRCDIR := src\nBUILDDIR := build\nOBJDIR := $(BUILDDIR)/obj\n\n# Separate C and C++ sources\nC_SOURCES := $(wildcard $(SRCDIR)/*.c)\nCXX_SOURCES := $(wildcard $(SRCDIR)/*.cpp)\n\n# Separate object files\nC_OBJECTS := $(C_SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o)\nCXX_OBJECTS := $(CXX_SOURCES:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)\n\nALL_OBJECTS := $(C_OBJECTS) $(CXX_OBJECTS)\nDEPENDS := $(ALL_OBJECTS:.o=.d)\n\nTARGET := $(BUILDDIR)/$(PROJECT)\n\n.PHONY: all clean\n\nall: $(TARGET)\n\n# Link with C++ compiler (for C++ standard library)\n$(TARGET): $(ALL_OBJECTS)\n\t@mkdir -p $(@D)\n\t$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@\n\n# Compile C sources\n$(OBJDIR)/%.o: $(SRCDIR)/%.c\n\t@mkdir -p $(@D)\n\t$(CC) $(CPPFLAGS) $(CFLAGS) -MMD -MP -c $< -o $@\n\n# Compile C++ sources\n$(OBJDIR)/%.o: $(SRCDIR)/%.cpp\n\t@mkdir -p $(@D)\n\t$(CXX) $(CPPFLAGS) $(CXXFLAGS) -MMD -MP -c $< -o $@\n\n-include $(DEPENDS)\n\nclean:\n\t$(RM) -r $(BUILDDIR)\n', 'directory': "# Each line is a separate shell invocation\nbad:\n\tcd subdir\n\tmake all  # ERROR: cd didn't persist!\n\n# Solution 1: Use && to chain commands\ngood:\n\tcd subdir && make all\n\n# Solution 2: Use semicolons\ngood2:\n\tcd subdir; make all\n\n# Solution 3: Use backslash continuation\ngood3:\n\tcd subdir && \\\n\tmake all\n", 'flags': 'CFLAGS ?= -Wall -Wextra -O2\nCFLAGS += -I./include -I./src\n', 'builtin': '.SUFFIXES:\n', 'install': '## Install built files to PREFIX\n.PHONY: install\ninstall: all\n\t$(INSTALL) -d $(DESTDIR)$(BINDIR)\n\t$(INSTALL_PROGRAM) $(TARGET) $(DESTDIR)$(BINDIR)/\n\t$(INSTALL) -d $(DESTDIR)$(LIBDIR)\n\t$(INSTALL_DATA) lib$(PROJECT).a $(DESTDIR)$(LIBDIR)/\n\t$(INSTALL) -d $(DESTDIR)$(INCLUDEDIR)\n\t$(INSTALL_DATA) $(PROJECT).h $(DESTDIR)$(INCLUDEDIR)/\n\t$(INSTALL) -d $(DESTDIR)$(MAN1DIR)\n\t$(INSTALL_DATA) docs/$(PROJECT).1 $(DESTDIR)$(MAN1DIR)/\n', 'uninstall': '## Remove installed files\n.PHONY: uninstall\nuninstall:\n\t$(RM) $(DESTDIR)$(BINDIR)/$(TARGET)\n\t$(RM) $(DESTDIR)$(LIBDIR)/lib$(PROJECT).a\n\t$(RM) $(DESTDIR)$(INCLUDEDIR)/$(PROJECT).h\n\t$(RM) $(DESTDIR)$(MAN1DIR)/$(PROJECT).1\n'}, 'contracts': ['An explicitly empty setting remains empty; a genuinely undefined setting receives its declared default.', 'User optimization flags must not silently remove project-required include paths.', 'Debug and release outputs must have distinct declared prerequisites and paths when both configurations are supported.', 'A failed directory change must stop the intended child build rather than run a parent build successfully.', 'Distinct C and C++ sources with the same basename must both reach the final executable.', 'A claim to disable implicit rules must be checked against actual rule resolution; explicit rules must still work.', 'Uninstall must remove the actual staged installed filename while preserving unrelated staged files; no host-system installation is permitted.'], 'scope': 'Source-grounded component review, not model evaluation. Contracts fixed before execution and maintained edits; no external benchmark tasks, solutions or graders used.', 'revision_reason': 'Retain v1 exact-line fixture failure and v2 disproved C-link hypothesis. Inspect actual remaining built-in patterns through the Make database without executing checkout recipes; preserve the negative C-link observation.'}
+assert isinstance(CONTRACT, dict)
+make, cc, cxx = (shutil.which(name) for name in ('make', 'gcc', 'g++'))
+assert make and cc and cxx
+records, cases = [], []
+
+
+def call(cwd, argv, extra_env=None):
+    env = dict(os.environ)
+    env.pop('TASK_SETTING', None)
+    env.update(extra_env or {})
+    result = subprocess.run(argv, cwd=cwd, env=env, text=True, capture_output=True, timeout=10)
+    records.append({'argv': argv, 'cwd_name': cwd.name, 'exit_code': result.returncode, 'stdout': result.stdout, 'stderr': result.stderr})
+    print(json.dumps({'native_command': records[-1]}), file=sys.stderr, flush=True)
+    return result
+
+
+def build(cwd, *args, extra_env=None):
+    return call(cwd, [make, '--no-print-directory', *args], extra_env)
+
+
+def write(path, text):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(text, encoding='utf-8', newline='\n')
+
+
+def case(name, **values):
+    cases.append({'case': name, 'expected_observation': True, **values})
+    print(json.dumps({'component_case': cases[-1]}), file=sys.stderr, flush=True)
+
+
+with tempfile.TemporaryDirectory(prefix='make-remaining-', dir='/tmp') as temp:
+    root = Path(temp)
+    project = root / 'conditional'
+    write(project / 'Makefile', 'TASK_SETTING ?= fallback\n.PHONY: show\nshow:\n\t@printf "%s|<%s>\\n" "$(origin TASK_SETTING)" "$(TASK_SETTING)"\n')
+    for name, args, env, expected in [('undefined-setting', [], {}, 'file|<fallback>'), ('command-empty-setting', ['TASK_SETTING='], {}, 'command line|<>'), ('environment-empty-setting', [], {'TASK_SETTING': ''}, 'environment|<>')]:
+        result = build(project, 'show', *args, extra_env=env)
+        assert result.returncode == 0 and result.stdout.strip() == expected, records[-1]
+        case(name, observed=result.stdout.strip())
+    for kind in ('original', 'maintained'):
+        project = root / ('flags-' + kind)
+        write(project / 'src/main.c', '#include "project.h"\nint main(void) { return PROJECT_ANSWER != 42; }\n')
+        write(project / 'include/project.h', '#define PROJECT_ANSWER 42\n')
+        flags = CONTRACT['source_examples']['flags'] if kind == 'original' else 'CFLAGS ?= -Wall -Wextra -O2\nPROJECT_CPPFLAGS := -I./include\n'
+        write(project / 'Makefile', flags + 'all:\n\t$(CC) $(CPPFLAGS) $(PROJECT_CPPFLAGS) $(CFLAGS) src/main.c -o app\n')
+        result = build(project, 'all', 'CC=' + cc, 'CFLAGS=-O0')
+        assert (result.returncode == 0) == (kind == 'maintained'), records[-1]
+        if kind == 'original':
+            assert 'project.h' in result.stderr
+        else:
+            assert call(project, ['./app']).returncode == 0
+        case(kind + '-required-include', exit_code=result.returncode)
+    for kind in ('original', 'maintained'):
+        project = root / ('configuration-' + kind)
+        write(project / 'main.c', '#include <stdio.h>\nint main(void) {\n#ifdef DEBUG\nputs("debug");\n#else\nputs("release");\n#endif\nreturn 0; }\n')
+        if kind == 'original':
+            text = 'PROJECT := demo\nTARGET := build/shared\nOBJECTS := build/main.o\n' + CONTRACT['source_examples']['configurations'] + '\nbuild/main.o: main.c\n\t@mkdir -p "$(@D)"\n\t$(CC) $(CFLAGS) -c "$<" -o "$@"\n'
+        else:
+            text = '''CONFIG ?= release
+TARGET := build/$(CONFIG)/demo
+OBJECT := build/$(CONFIG)/main.o
+PROJECT_CPPFLAGS := $(if $(filter debug,$(CONFIG)),-DDEBUG,-DNDEBUG)
+.PHONY: all
+all: $(TARGET)
+$(TARGET): $(OBJECT)
+\t$(CC) $(CFLAGS) $(LDFLAGS) "$<" $(LDLIBS) -o "$@"
+$(OBJECT): main.c
+\t@mkdir -p "$(@D)"
+\t$(CC) $(CPPFLAGS) $(PROJECT_CPPFLAGS) $(CFLAGS) -c "$<" -o "$@"
+'''
+        write(project / 'Makefile', text)
+        observed = []
+        for config in ('debug', 'release'):
+            args = [config] if kind == 'original' else ['all', 'CONFIG=' + config]
+            result = build(project, *args, 'CC=' + cc)
+            assert result.returncode == 0, records[-1]
+            output = project / ('build/shared' if kind == 'original' else 'build/' + config + '/demo')
+            observed.append(call(project, [str(output)]).stdout.strip())
+        assert observed == (['debug', 'debug'] if kind == 'original' else ['debug', 'release'])
+        if kind == 'original':
+            assert not (project / 'build/debug/demo').exists() and not (project / 'build/release/demo').exists()
+        case(kind + '-configuration-identity', outputs=observed)
+    project = root / 'directory'
+    original = '.PHONY: all good2\nall:\n\t@printf "%s\\n" parent-directory\n' + CONTRACT['source_examples']['directory']
+    write(project / 'Makefile', original)
+    result = build(project, 'good2')
+    assert result.returncode == 0 and 'parent-directory\n' in result.stdout and 'subdir' in result.stderr
+    case('original-failed-directory-change', exit_code=0, wrong_parent_executed=True)
+    write(project / 'Makefile', original.replace('cd subdir; make all', 'cd subdir && $(MAKE) all'))
+    result = build(project, 'good2')
+    assert result.returncode != 0 and 'parent-directory\n' not in result.stdout
+    case('maintained-failed-directory-change', exit_code=result.returncode, wrong_parent_executed=False)
+    write(project / 'subdir/Makefile', 'all:\n\t@printf "%s\\n" intended-child\n')
+    result = build(project, 'good2')
+    assert result.returncode == 0 and 'intended-child\n' in result.stdout and 'parent-directory\n' not in result.stdout
+    case('maintained-successful-directory-change', exit_code=0)
+    for kind in ('original', 'maintained'):
+        project = root / ('mixed-' + kind)
+        write(project / 'src/same.c', 'int c_value(void) { return 20; }\n')
+        write(project / 'src/same.cpp', 'int cpp_value() { return 22; }\n')
+        write(project / 'src/main.cpp', '#include <iostream>\nextern "C" int c_value(void);\nint cpp_value();\nint main() { std::cout << c_value() + cpp_value() << "\\n"; }\n')
+        text = CONTRACT['source_examples']['mixed']
+        if kind == 'maintained':
+            replacements = {'C_OBJECTS := $(C_SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o)': 'C_OBJECTS := $(addprefix $(OBJDIR)/,$(addsuffix .o,$(C_SOURCES)))', 'CXX_OBJECTS := $(CXX_SOURCES:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)': 'CXX_OBJECTS := $(addprefix $(OBJDIR)/,$(addsuffix .o,$(CXX_SOURCES)))', '$(OBJDIR)/%.o: $(SRCDIR)/%.c\n': '$(OBJDIR)/%.c.o: %.c\n', '$(OBJDIR)/%.o: $(SRCDIR)/%.cpp': '$(OBJDIR)/%.cpp.o: %.cpp'}
+            for before, after in replacements.items():
+                assert text.count(before) == 1
+                text = text.replace(before, after)
+        write(project / 'Makefile', text)
+        result = build(project, '-j2', 'all', 'CC=' + cc, 'CXX=' + cxx)
+        assert (result.returncode == 0) == (kind == 'maintained'), records[-1]
+        if kind == 'original':
+            assert 'undefined reference' in result.stderr and 'cpp_value' in result.stderr
+        else:
+            assert call(project, ['./build/mixed']).stdout.strip() == '42'
+            assert (project / 'build/obj/src/same.c.o').is_file() and (project / 'build/obj/src/same.cpp.o').is_file()
+        case(kind + '-mixed-object-identity', exit_code=result.returncode)
+    project = root / 'builtins'
+    write(project / 'app.c', 'int main(void) { return 0; }\n')
+    assert call(project, [cc, '-c', 'app.c', '-o', 'app.o']).returncode == 0
+    write(project / 'Makefile', CONTRACT['source_examples']['builtin'] + 'all: app\n')
+    result = build(project, 'all', 'CC=' + cc)
+    assert result.returncode != 0 and 'No rule to make target' in result.stderr and not (project / 'app').exists()
+    case('suffix-list-cleared-c-link-absent', exit_code=result.returncode, prior_opposite_hypothesis_rejected=True)
+    write(project / 'Makefile', CONTRACT['source_examples']['builtin'] + '.PHONY: show\nshow:\n\t@:\n')
+    for strict in (False, True):
+        args = ['--no-builtin-rules'] if strict else []
+        result = build(project, *args, '--print-data-base', '--dry-run', 'show')
+        patterns = [line for line in result.stdout.splitlines() if line.startswith('%') and '%,v' in line]
+        assert result.returncode == 0 and bool(patterns) == (not strict)
+        case('strict-builtins-database' if strict else 'suffix-only-builtins-database', checkout_patterns=patterns, any_checkout_executed=False)
+    write(project / 'Makefile', CONTRACT['source_examples']['builtin'] + 'all: app\napp: app.o\n\t$(CC) "$<" -o "$@"\n')
+    result = build(project, '--no-builtin-rules', 'all', 'CC=' + cc)
+    assert result.returncode == 0 and call(project, ['./app']).returncode == 0
+    case('explicit-rule-without-builtins', exit_code=0)
+    for kind in ('original', 'maintained'):
+        project = root / ('installation-' + kind)
+        write(project / 'build/demo', 'fixture executable content\n')
+        write(project / 'libdemo.a', 'fixture archive content\n')
+        write(project / 'demo.h', 'fixture header content\n')
+        write(project / 'docs/demo.1', 'fixture manual content\n')
+        stage = project / 'stage'
+        prefix = 'PROJECT := demo\nTARGET := build/demo\nPREFIX ?= /opt/demo\nBINDIR := $(PREFIX)/bin\nLIBDIR := $(PREFIX)/lib\nINCLUDEDIR := $(PREFIX)/include\nMAN1DIR := $(PREFIX)/share/man/man1\nINSTALL ?= install\nINSTALL_PROGRAM := $(INSTALL) -m 755\nINSTALL_DATA := $(INSTALL) -m 644\n.PHONY: all install uninstall\nall:\n'
+        uninstall = CONTRACT['source_examples']['uninstall']
+        if kind == 'maintained':
+            needle = '$(DESTDIR)$(BINDIR)/$(TARGET)'
+            assert uninstall.count(needle) == 1
+            uninstall = uninstall.replace(needle, '$(DESTDIR)$(BINDIR)/$(notdir $(TARGET))')
+        write(project / 'Makefile', prefix + CONTRACT['source_examples']['install'] + uninstall)
+        result = build(project, 'install', 'DESTDIR=' + str(stage))
+        binary = stage / 'opt/demo/bin/demo'
+        assert result.returncode == 0 and binary.is_file(), records[-1]
+        sentinel = stage / 'opt/demo/bin/unrelated'
+        write(sentinel, 'retain me\n')
+        removed = build(project, 'uninstall', 'DESTDIR=' + str(stage))
+        assert removed.returncode == 0 and binary.exists() == (kind == 'original') and sentinel.read_text() == 'retain me\n', records[-1]
+        case(kind + '-staged-uninstall', exit_code=removed.returncode, installed_binary_remains=binary.exists(), unrelated_file_preserved=True)
+versions = {name: subprocess.run([exe, '--version'], text=True, capture_output=True, timeout=5, check=True).stdout.splitlines()[0] for name, exe in [('make', make), ('cc', cc), ('cxx', cxx)]}
+assert len(cases) == 18
+print(json.dumps({'passed': True, 'kind': 'source-grounded-component-controls', 'versions': versions, 'cases': cases, 'records': records, 'source_resources': CONTRACT['resources'], 'model_invocations': 0, 'scope': 'Declared Make/C/C++ correctness fixtures only; no model or speed comparison.'}))

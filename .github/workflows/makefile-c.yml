@@ -16,6 +16,7 @@ permissions:
 
 jobs:
   makefile:
+    # Preserve the published check context while extending coverage to C++.
     name: C template controls (${{ matrix.os }}, Python ${{ matrix.python-version }})
     runs-on: ${{ matrix.os }}
     timeout-minutes: 20
@@ -38,7 +39,7 @@ jobs:
       - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         if: ${{ runner.os == 'Windows' && !startsWith(matrix.python-version, '3.14.') }}
         with:
-          version: "0.13.6"
+          version: "0.13.8"
           python-version: ${{ matrix.python-version }}
           activate-environment: "true"
           venv-path: ${{ runner.temp }}/makefile-c-venv
@@ -96,4 +97,28 @@ jobs:
         run: >-
           python -m unittest discover
           -s included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-c
+          -p test_generator.py -v
+      - name: Ensure C++ compiler on the disposable Linux runner
+        if: ${{ runner.os == 'Linux' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! command -v g++ >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y --no-install-recommends g++
+          fi
+          g++ --version
+      - name: Run Linux C++ build controls
+        if: ${{ runner.os == 'Linux' }}
+        env:
+          TASK_REQUIRE_CPP: "1"
+        run: >-
+          python -B -m unittest discover
+          -s included/improved/skills/makefile-generator-cpp
+          -p test_generator.py -v
+      - name: Run Windows C++ generator controls
+        if: ${{ runner.os == 'Windows' }}
+        run: >-
+          python -B -m unittest discover
+          -s included/improved/skills/makefile-generator-cpp
           -p test_generator.py -v

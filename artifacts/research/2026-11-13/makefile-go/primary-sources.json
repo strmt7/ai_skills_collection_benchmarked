@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://pkg.go.dev/embed",
+    "status_code": 200,
+    "success": true,
+    "native_sha256": "34e0d7aa9ec1ebb0dbd16a1e7d21815569d095ef775cfbfa6f7828950ce3482f",
+    "provider_version": "0.9.5+catalog.portable4",
+    "text_characters": 21095,
+    "scope_reviewed": true,
+    "scope": "Go standard-library embed documentation: files are embedded at compile time and build tooling exposes embedded-file metadata."
+  },
+  {
+    "url": "https://docs.docker.com/reference/cli/docker/container/cp/",
+    "status_code": 200,
+    "success": true,
+    "native_sha256": "9ad7718ce451f9e7461df9dfa7d8f1dd40154d132a8ba8ef2f8ed0082dbc4497",
+    "provider_version": "0.9.5+catalog.portable4",
+    "text_characters": 90567,
+    "scope_reviewed": true,
+    "scope": "Docker file-copy semantics, documented mount limitations and the exec-streaming alternative. Read-only-container rejection was observed in a separate native control."
+  }
+]

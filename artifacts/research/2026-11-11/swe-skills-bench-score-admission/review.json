@@ -1,0 +1,280 @@
+{
+  "controls": [
+    {
+      "admission": {
+        "case_status": {
+          "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_existing_tests_pass": "passed",
+          "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_iterutils_compiles": "passed",
+          "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_iterutils_exists": "passed",
+          "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_iterutils_uses_fstrings": "passed",
+          "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_no_bare_except_strutils": "passed",
+          "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_no_type_eq_checks_iterutils": "passed",
+          "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_no_type_eq_checks_strutils": "passed",
+          "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_strutils_compiles": "passed",
+          "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_strutils_exists": "passed",
+          "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_strutils_uses_fstrings": "passed"
+        },
+        "errors": 0,
+        "failed": 0,
+        "passed": 10,
+        "score": 1.0,
+        "sha256": {
+          "console": "05dc92a3be0e22a44e14f2121cafe8fd649b04f54d0436a1c02207dc4ef547bf",
+          "inventory": "4acedc26d3067afbb0ef425d081b7fc3cd926211930c1eda4ff26521ca799233",
+          "junit": "6768c462a715e55beca90e20eae3cd77c4ea8d0e03d64243d19c7e07868436fe",
+          "publisher": "17a62db0252af5fbb84775558bb22ec0638110489bfaedd86c915c69379271cd"
+        },
+        "skipped": 0,
+        "status": "native_pytest_result_verified",
+        "total": 10
+      },
+      "case": "unchanged",
+      "publisher": {
+        "result_sha256": "17a62db0252af5fbb84775558bb22ec0638110489bfaedd86c915c69379271cd",
+        "score": 1.0,
+        "status": "passed"
+      },
+      "transport_exit_code": 0,
+      "transport_timed_out": false
+    },
+    {
+      "admission": {
+        "case_status": {
+          "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_existing_tests_pass": "failed",
+          "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_iterutils_compiles": "failed",
+          "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_iterutils_exists": "passed",
+          "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_iterutils_uses_fstrings": "failed",
+          "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_no_bare_except_strutils": "passed",
+          "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_no_type_eq_checks_iterutils": "passed",
+          "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_no_type_eq_checks_strutils": "passed",
+          "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_strutils_compiles": "passed",
+          "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_strutils_exists": "passed",
+          "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_strutils_uses_fstrings": "passed"
+        },
+        "errors": 0,
+        "failed": 3,
+        "passed": 7,
+        "score": 0.7,
+        "sha256": {
+          "console": "56f0017a3c14df8f2ee56e73d85a50764ae0a21704fbf5a84b5f48b91558d8c2",
+          "inventory": "4acedc26d3067afbb0ef425d081b7fc3cd926211930c1eda4ff26521ca799233",
+          "junit": "89dd8716ea0104e04dee83c2d5f30ca58a9943e45b9f282b37ae53f85f2efa43",
+          "publisher": "5c58816c3b7174a54987764612b0831d4215b997e389e4a2baad26c0b8475fe5"
+        },
+        "skipped": 0,
+        "status": "native_pytest_result_verified",
+        "total": 10
+      },
+      "case": "syntax-error",
+      "publisher": {
+        "result_sha256": "5c58816c3b7174a54987764612b0831d4215b997e389e4a2baad26c0b8475fe5",
+        "score": 0.7,
+        "status": "failed"
+      },
+      "transport_exit_code": 1,
+      "transport_timed_out": false
+    },
+    {
+      "admission": {
+        "error": "Native pytest did not exit with an ordinary test verdict",
+        "score": null,
+        "status": "native_pytest_result_unverified"
+      },
+      "case": "incomplete-console",
+      "publisher": {
+        "result_sha256": "b5d802a57163615544f7febe20073d169c6441535a679f7ab38355d352468a70",
+        "score": 1.0,
+        "status": "passed"
+      },
+      "transport_exit_code": 2,
+      "transport_timed_out": false
+    },
+    {
+      "admission": {
+        "error": "Native evidence is empty or exceeds its size bound",
+        "score": null,
+        "status": "native_pytest_result_unverified"
+      },
+      "case": "missing-pytest",
+      "publisher": {
+        "result_sha256": "820abf30b3e226d35cac2bfd181ed36467f19d73fc18c926d121f69ddb94e1cc",
+        "score": 0.0,
+        "status": "error"
+      },
+      "transport_exit_code": 1,
+      "transport_timed_out": false
+    },
+    {
+      "admission": {
+        "error": "Native pytest did not exit with an ordinary test verdict",
+        "score": null,
+        "status": "native_pytest_result_unverified"
+      },
+      "case": "no-tests",
+      "publisher": {
+        "result_sha256": "8557a18dffa187fd3a5ef09e9330669f0bfe40d1fc253a86e0a8c9ac9551328e",
+        "score": 0.0,
+        "status": "skipped"
+      },
+      "transport_exit_code": 5,
+      "transport_timed_out": false
+    },
+    {
+      "admission": {
+        "error": "Native pytest did not exit with an ordinary test verdict",
+        "score": null,
+        "status": "native_pytest_result_unverified"
+      },
+      "case": "timed-out",
+      "publisher": {
+        "result_sha256": "f45d5e2f7750bb094e10d5c6e85da4395b7a3e02a41242049facce0f170300ca",
+        "score": 0.0,
+        "status": "failed"
+      },
+      "transport_exit_code": 124,
+      "transport_timed_out": true
+    }
+  ],
+  "gate": {
+    "path": "tools/verify_swe_skills_bench_pytest_result.py",
+    "sha256": "0f1873005f6c6886f63ecce5e8c7f08df2c39ad9426479f5deeaa740f559a93f",
+    "source_snapshot": "artifacts/research/2026-11-11/swe-skills-bench-score-admission/verifier-profile-v1.py.txt"
+  },
+  "kind": "publisher-native-result-admission",
+  "model_requests": 0,
+  "new_dependency_wheels": {
+    "charset-normalizer": {
+      "sha256": "b6b751274acb69d77b3323d6b7dbaa3c7fdfc1eb829b7eb61d262f32e1af9685",
+      "url": "https://files.pythonhosted.org/packages/fc/ad/d07d7862a62ffa6d79d68074d14823243dd235a77c45262acbf6adeb28bf/charset_normalizer-3.5.2-py3-none-any.whl",
+      "version": "3.5.2",
+      "wheel": "charset_normalizer-3.5.2-py3-none-any.whl"
+    },
+    "docker": {
+      "sha256": "a3f45fdeb9165e2d25d9a1d02ddf3bc70fb572cf5ebbf9b58558c22caf29b71f",
+      "url": "https://files.pythonhosted.org/packages/75/23/529140fe1aab80fc6992f93a706deec709140a6397439139a054e1515c45/docker-7.2.0-py3-none-any.whl",
+      "version": "7.2.0",
+      "wheel": "docker-7.2.0-py3-none-any.whl"
+    },
+    "markdown-it-py": {
+      "sha256": "7aa1511a46c39138de78d9eba92ce47e63124d8003fc98b3a351909e04239efa",
+      "url": "https://files.pythonhosted.org/packages/c9/31/5f0ac2f1a1c67423c995c731a11cd4ad05d081a2be969d74f868bdb9cc70/markdown_it_py-4.3.0-py3-none-any.whl",
+      "version": "4.3.0",
+      "wheel": "markdown_it_py-4.3.0-py3-none-any.whl"
+    },
+    "mdurl": {
+      "sha256": "84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8",
+      "url": "https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl",
+      "version": "0.1.2",
+      "wheel": "mdurl-0.1.2-py3-none-any.whl"
+    },
+    "requests": {
+      "sha256": "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0",
+      "url": "https://files.pythonhosted.org/packages/a0/f4/c67b0b3f1b9245e8d266f0f112c500d50e5b4e83cb6f3b71b6528104182a/requests-2.34.2-py3-none-any.whl",
+      "version": "2.34.2",
+      "wheel": "requests-2.34.2-py3-none-any.whl"
+    },
+    "rich": {
+      "sha256": "33bd4ef74232fb73fe9279a257718407f169c09b78a87ad3d296f548e27de0bb",
+      "url": "https://files.pythonhosted.org/packages/82/3b/64d4899d73f91ba49a8c18a8ff3f0ea8f1c1d75481760df8c68ef5235bf5/rich-15.0.0-py3-none-any.whl",
+      "version": "15.0.0",
+      "wheel": "rich-15.0.0-py3-none-any.whl"
+    },
+    "urllib3": {
+      "sha256": "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3",
+      "url": "https://files.pythonhosted.org/packages/92/9d/c4e665119135114480843e7ab388fa94d8480650450e6f8e26b70d323a4c/urllib3-2.8.0-py3-none-any.whl",
+      "version": "2.8.0",
+      "wheel": "urllib3-2.8.0-py3-none-any.whl"
+    }
+  },
+  "profile_provenance": "Expected cases enumerated from the pinned author verifier source for an already exposed development cell.",
+  "profile_sha256": "4acedc26d3067afbb0ef425d081b7fc3cd926211930c1eda4ff26521ca799233",
+  "publisher_evaluator": {
+    "blob": "b63cd6d4993b7b893d24462c5d38547e9623c485",
+    "bytes": 16553,
+    "sha256": "4eb50a5da8e47ba6d5cb1fa6b41de11011c5623be834ae9aabd6672d293d8d2c"
+  },
+  "publisher_image": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+  "publisher_replay_implementation_sha256": "731dc83e8cec086d74c99decab5090676f7b92c2d4d8242e420f5ce1aa85fa36",
+  "publisher_replay_summary_sha256": "ca35b74488078c5d4ec48f7bd2f6573ebab99b67138da3356c8c5b3e3724a5e1",
+  "publisher_revision": "4d3450d9216a590a8726fcb3604b5143daca776b",
+  "publisher_sources": {
+    "__init__.py": {
+      "blob": "bc42b93bc34d553fb7a217698c479d9a190fb5d2",
+      "bytes": 114,
+      "sha256": "c3234a174bda618c5717ff88f8decf74c6da13647ddff1583d04e07b5094c5b6"
+    },
+    "evaluator/__init__.py": {
+      "blob": "7faa77830b1cb8a61bd17000deaea55c79f0e2a9",
+      "bytes": 738,
+      "sha256": "54e9c140ed7500711f6e340c487e1a175d72cdffad3f27747fefc7461a13dadc"
+    },
+    "evaluator/base_evaluator.py": {
+      "blob": "9bc3ecbc794c41bb37a7a2eab66087051ecbec22",
+      "bytes": 12061,
+      "sha256": "7d8d4cce9d37a726f5fcdb26b42c05f70526dbab6062709cf4ac108d5f178f3a"
+    },
+    "evaluator/build_checker.py": {
+      "blob": "c7b482ec78938a12b2144229efa0b1d3ed28554d",
+      "bytes": 7197,
+      "sha256": "55ffa6288278d5329f85231098c0b1d470bc182c9b40dc13fa2a8671a9b3a96d"
+    },
+    "evaluator/quality_analyzer.py": {
+      "blob": "0de1f331d91bbeb465c99a98e6c27b36333fe952",
+      "bytes": 10908,
+      "sha256": "d2221852687d27713f14d160698c711519aec90f4968e7912c472b1588962936"
+    },
+    "evaluator/unit_test_runner.py": {
+      "blob": "b63cd6d4993b7b893d24462c5d38547e9623c485",
+      "bytes": 16553,
+      "sha256": "4eb50a5da8e47ba6d5cb1fa6b41de11011c5623be834ae9aabd6672d293d8d2c"
+    },
+    "orchestrator/__init__.py": {
+      "blob": "7a5eacf4c282c280bf8ef5a5718b08d250022494",
+      "bytes": 592,
+      "sha256": "5c5d6124704734b74867fb9594eea732f811ec8cb314099718b2ef05ba26b40d"
+    },
+    "orchestrator/docker_manager.py": {
+      "blob": "fa9e3394066e84bb2c28137414c2024ab38a883f",
+      "bytes": 19073,
+      "sha256": "2e8e0ae55df39ac7b95e06a6bc62f27d7d0e7b4e6c55dd68d4494126ce774e9c"
+    },
+    "orchestrator/enroot_manager.py": {
+      "blob": "44f645e66dfded3514b79f9094cf7cf44527d298",
+      "bytes": 28920,
+      "sha256": "6f2cdf28b7bd739c9b644c7d28c4687e7174c74d5a8f3656c0f9264ab0187680"
+    },
+    "orchestrator/lifecycle.py": {
+      "blob": "828b6e4612c38dfccaef373100de3b7dc8581daa",
+      "bytes": 51797,
+      "sha256": "083a9fcd8490b489289e07c827ac99f2f5d75e10d20956f9584b8dbfc2dffb4d"
+    },
+    "orchestrator/logger.py": {
+      "blob": "d4c8782dffd229c73b946bb786f95af7d9848374",
+      "bytes": 4839,
+      "sha256": "107a6318313e7ea3cc097e8bd666db204350faea05d7ae4fddf07d8b39a5b468"
+    }
+  },
+  "replay_versions": {
+    "certifi": "2026.2.25",
+    "charset-normalizer": "3.5.2",
+    "docker": "7.2.0",
+    "idna": "3.11",
+    "markdown-it-py": "4.3.0",
+    "mdurl": "0.1.2",
+    "pygments": "2.19.2",
+    "requests": "2.34.2",
+    "rich": "15.0.0",
+    "urllib3": "2.8.0"
+  },
+  "schema_version": 1,
+  "scope_limits": [
+    "The original UnitTestRunner and package imports ran in a fresh container. A recorded transport returned exact stdout and stderr from two native verifier executions and synthetic bytes for four failure controls.",
+    "The admission tool handles this qualified ordinary pass/fail pytest profile. Skips, errors, other toolchains and any full model/controller run require further qualification.",
+    "A complete score uses an independently frozen inventory and controller-owned evidence. The CLI reconciles those supplied inputs and cannot attest to how an arbitrary caller collected them."
+  ],
+  "verifier": {
+    "blob": "e1a79055a3c69db1c6b2aedd21837912468d3420",
+    "bytes": 4542,
+    "sha256": "b09a0ce0b57b6ca5642bfeb62245bbbb8b81f17d273847138635f0d805234237"
+  }
+}

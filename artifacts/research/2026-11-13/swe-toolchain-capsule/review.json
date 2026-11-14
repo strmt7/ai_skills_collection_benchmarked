@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-13",
+  "kind": "source-derived-sdk-capsule-and-cohort-environment-review",
+  "selection_sha256": "42de081f53b0273f936ea5ca12dd0a6f69da0c33ade087b7b76ac8e6b7bee1c5",
+  "cohort_changed": false,
+  "planned_tasks": 12,
+  "planned_attempts": 36,
+  "environment_families": 7,
+  "original_manifests_captured": 5,
+  "anonymous_manifests_unavailable": 2,
+  "selected_setup_commands_present": 6,
+  "source_configuration_findings": [
+    "The author configuration uses bridge networking and Enroot; the qualified capsule uses the existing offline Docker control. These routes are not asserted equivalent.",
+    "Six selected cells declare setup commands. They include online package resolution, package-manager activation and system-package installation; none was executed on the host or relabelled as an offline-compatible setup.",
+    "Build checks also require project-specific dependency qualification. A successful SDK command does not establish those builds or selected-task readiness."
+  ],
+  "node_capsule": {
+    "version": "v22.23.5",
+    "major": 22,
+    "npm_version": "10.9.9",
+    "archive_sha256": "c54118104acc524633b5abe106bbf44a53126ec8b4e5fa105cb92b5d7de8a1a1",
+    "complete_inventory_sha256": "2945874d41141c55d58e27a9e0a3bdbd6f344b79f126dd323123c48b1cfc6bc2",
+    "sdk_objects": 5867,
+    "component_cases_per_repetition": 11,
+    "fresh_repetitions": 2,
+    "byte_identical_inventory_receipts": true,
+    "license_sha256": "c738ae413cf561f174e34f6961f8ca458aae2369a73640dda6234c629b98bcc4",
+    "root_setup_separate_from_task_user": true,
+    "task_output_writable": true,
+    "base_node_unchanged": true,
+    "sdk_unchanged_after_task_use": true
+  },
+  "proposal": {
+    "path": "benchmarks/agent-effectiveness/development/swe-skills-pilot-v1/environment-candidates.json",
+    "sha256": "c07e04e28c52f52417ba5875103193c2fa797352317584102153d63d68dd5b60"
+  },
+  "artifacts": {
+    "common-control.py.txt": "93223e00a5cf90f0064570d2d5442b7bdab22db38b4a07e5fddb4c915d652403",
+    "controller.py.txt": "e617bae68cae0a68bf2fa250ec4b8db35919fa2d4703e3edf96474f30bc6c4dc",
+    "NOTICE.md": "4420b4162980fd1de34a65245649acc3030fc48469fdb4874f73a29b3c3af3ec",
+    "registry-inventory.json": "be7032f23dd22070ee08c8f415ff05aaca40d1dfdf55edb7b6958b3a94879dfe",
+    "result.json": "fe6d6450b86755f5ffae701be38ae99aab3c2d3fcf407833f8fd393cc58b9910",
+    "sdk-inventory.json": "82fd3c66ebfd15d2962b68a119327d84befc355b11a760fda61a4d5cf5100548",
+    "sdk-source-input.json": "5e4eeb2491acc6aecef20df475ff683c8fa78e8d2ec26524f8806b9479b3064c",
+    "selected-environment-metadata.json": "9ab22feb0e7151ad3f2b77280bb82a499a954771d8bfadcaa4620493a0d99fbd",
+    "setup-control.py.txt": "75054648129f9b9cc47877cbb111d76e5eea5f2e0cc258462448a0c65b42af2a",
+    "task-user-control.py.txt": "4470324e7c85c5f5c0c234475558bf54d758feef34923a5a4e56fcc0958ec616"
+  },
+  "controller_sha256": "e617bae68cae0a68bf2fa250ec4b8db35919fa2d4703e3edf96474f30bc6c4dc",
+  "first_controller_snapshot_sha256": "ddb8f7c6c2d8cc574f6766acc8f75d143706868d4bc08b2ad0a7a7e0b9534a22",
+  "retained_failures": [
+    "The first semantic query used an outdated corpus and was rejected. Preserved the failure and restored a narrowly bound corpus before broad navigation."
+  ],
+  "runtime_admitted": false,
+  "execution_admitted": false,
+  "model_invocations": 0,
+  "agent_efficacy_established": false,
+  "task_briefs_read": false,
+  "evaluator_implementations_read": false,
+  "publisher_outcomes_read": false,
+  "collection_changed_from_selected_task_or_evaluator_content": false,
+  "images_pulled": 0,
+  "images_created": 0,
+  "global_installation": false,
+  "remaining_owned_containers": 0,
+  "limits": [
+    "Only capsule component behavior and cohort metadata were qualified.",
+    "The proposed source-derived routes do not replace missing original images or complete experiment admission.",
+    "Current Windows subject tool access, all selected project dependencies, original scorers and common budgets still require qualification.",
+    "No model score, official-suite equivalence or superiority conclusion is admitted."
+  ],
+  "cohort_metadata_only": true
+}

@@ -1,0 +1,7 @@
+{
+  "inherited_raw_summary_field_not_accepted": "windows_actual_pinned_source_import_and_native_numpy_qualified",
+  "reason": "The reused environment-control summary retained this flag, but these task fixtures did not execute the explicit NumPy arithmetic/LAPACK test. No such result is attributed to these runs. Separate earlier environment controls remain separate evidence.",
+  "core_task_success_independently_verified": true,
+  "original_raw_receipts_modified": false,
+  "model_outcomes_removed_or_replaced": false
+}

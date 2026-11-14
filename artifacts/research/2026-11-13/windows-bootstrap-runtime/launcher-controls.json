@@ -1,0 +1,203 @@
+{
+  "review": {
+    "passed": true,
+    "correction": "Original Framework CLR accepts the long output path; original modern CLR rejects it. The fixed supervisor passes normal and bounded-overflow controls on both runtimes.",
+    "original_receipt_sha256": "57fff4578d7e4ff3f7668fd824a369d499fad99bef35fb52a4965905039518fa",
+    "raw_receipt_modified": false,
+    "controls": 6
+  },
+  "controls": [
+    {
+      "id": "original-framework-normal",
+      "passed": false,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 290,
+        "output_limit_bytes": 2097152,
+        "wall_time_limit_seconds": 60.0,
+        "job_memory_limit_bytes": 1073741824,
+        "active_process_limit": 32,
+        "explicit_environment": true
+      },
+      "native": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 0.3572903,
+        "observed_output_bytes": 27,
+        "retained_output_bytes": 27
+      },
+      "stdout_utf16_code_units": 306
+    },
+    {
+      "id": "original-modern-normal",
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 1,
+        "output_bytes": 474,
+        "output_limit_bytes": 2097152,
+        "wall_time_limit_seconds": 60.0,
+        "job_memory_limit_bytes": 1073741824,
+        "active_process_limit": 32,
+        "explicit_environment": true
+      },
+      "native": null,
+      "stdout_utf16_code_units": 303
+    },
+    {
+      "id": "fixed-framework-normal",
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 290,
+        "output_limit_bytes": 2097152,
+        "wall_time_limit_seconds": 60.0,
+        "job_memory_limit_bytes": 1073741824,
+        "active_process_limit": 32,
+        "explicit_environment": true
+      },
+      "native": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 0.3540258,
+        "observed_output_bytes": 27,
+        "retained_output_bytes": 27
+      },
+      "stdout_utf16_code_units": 303
+    },
+    {
+      "id": "fixed-framework-overflow",
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 306,
+        "output_limit_bytes": 2097152,
+        "wall_time_limit_seconds": 60.0,
+        "job_memory_limit_bytes": 1073741824,
+        "active_process_limit": 32,
+        "explicit_environment": true
+      },
+      "native": {
+        "exit_code": 125,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": "output_limit",
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 0.3347325,
+        "observed_output_bytes": 8192,
+        "retained_output_bytes": 1024
+      },
+      "stdout_utf16_code_units": 305
+    },
+    {
+      "id": "fixed-modern-normal",
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 290,
+        "output_limit_bytes": 2097152,
+        "wall_time_limit_seconds": 60.0,
+        "job_memory_limit_bytes": 1073741824,
+        "active_process_limit": 32,
+        "explicit_environment": true
+      },
+      "native": {
+        "exit_code": 0,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null,
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 0.3480532,
+        "observed_output_bytes": 27,
+        "retained_output_bytes": 27
+      },
+      "stdout_utf16_code_units": 300
+    },
+    {
+      "id": "fixed-modern-overflow",
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 306,
+        "output_limit_bytes": 2097152,
+        "wall_time_limit_seconds": 60.0,
+        "job_memory_limit_bytes": 1073741824,
+        "active_process_limit": 32,
+        "explicit_environment": true
+      },
+      "native": {
+        "exit_code": 125,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": "output_limit",
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "explicit_environment": true,
+        "attested_while_suspended": true,
+        "elapsed_seconds": 0.2723619,
+        "observed_output_bytes": 8192,
+        "retained_output_bytes": 1024
+      },
+      "stdout_utf16_code_units": 302
+    }
+  ],
+  "active_source_sha256": "74196cb95ebda326993a2bb44d90171436cad93d575a298acbfea79d972dfaa7",
+  "binary_sha256": "f0a41795d31c5841d4e81d9e5dd109a8f0809a8c707bbceec8efd48e30c54cdb",
+  "generated_bytes": 9728,
+  "two_deterministic_builds_equal": true,
+  "maintained_build_receipt_sha256": "61299747ff7b50b8b6a7fec6a5ad9169a1fbce75d4dd4d28f321ab5b3796aa35",
+  "maintained_check_receipt_sha256": "eef352e5267a80102d9d86028e947588f4a5baccbb2c6a948035b7c09d302edc"
+}

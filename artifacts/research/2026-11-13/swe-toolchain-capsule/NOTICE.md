@@ -1,0 +1,1 @@
+Environment metadata derives from ControllableModel/SWE-Skills-Bench at the recorded commit. The SDK derives from the official Node.js distribution; its complete license remains in the retained archive and installed capsule. This directory distributes controller code, metadata and file identities, not SDK binaries.

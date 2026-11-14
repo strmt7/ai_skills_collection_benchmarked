@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "command": "cd /workspace/fixture && python -m py_compile broken.py",
+  "timeout_seconds": 10,
+  "exit_code": 1,
+  "timed_out": false,
+  "duration_seconds": 0.03227080000033311,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "e9c318b198acd9a822b4aca9b5fcce27697567ee38aaf4e9753be62db2a7d984",
+  "execution_complete": true,
+  "remaining_owned_processes": 0
+}

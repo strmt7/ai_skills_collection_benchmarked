@@ -1,0 +1,340 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-11",
+  "classification": "dependency-runtime-readiness-and-model-free-harness-controls",
+  "source_sha256": {
+    "tools/prepare_subject_dependencies.py": "d15c4c13563f5708bcfa0913a98e24ac7f48a7508a7600e55d39ce45f566168c",
+    "tools/_native_trial_plan.py": "f65d8723d766adfebafeb1f4c35e5823b026967eb2ac11efada8b18d3233a5d9",
+    "tools/run_swe_skills_trial.py": "b515e12dd4be1e98beea37564f1ed6e60bfaf6ca0c7782ec930bbde0219469de",
+    "tools/_bootstrap_doctor.py": "ec124d1120318030c20435c7ac9d7c8edde399d3ba5749c6234bca30d91f5c95",
+    "tools/_trial_rpc.py": "99928c148d2b5726ecfa2485a1486ca57ea346cef2b445915b2d988685cd8643",
+    "tools/appcontainer_dependencies.py": "317b3f95063960575cd69365722393e46db485acc5e0a3c4bffde7930f8c2cf9",
+    "tests/test_subject_dependencies.py": "89f31bcc3b8f92d81b3b01bbb9d4ddc7b571d65fe04e4b406b216f9b7ffa209b",
+    "tests/test_native_trial_plan.py": "b51ae9062b75a9e11cb7b63d564dcb33786e741690e8413fe52ae87c8bca808d",
+    "tests/test_native_trial_runner.py": "26b4cce5a21e9169f18b75d0f004c630acf0a45485601a123f26e795fa0ec169",
+    "tests/test_trial_rpc.py": "75a91a1fc477f84d68519426a5b33def6fbd3ada7cb9b02b2dbbf257fc49e28c",
+    "tests/test_bootstrap_runtime.py": "17add769968df303c21227a7d82cc63155c0d425763e5be49dfa6c3d20946501",
+    "toolchains/bootstrap/bootstrap.ps1": "4bf1b0c86896876724ef5bb03014c6940f83b218633186899117ddf0275092a6",
+    "toolchains/bootstrap/manifest.json": "a7ea118956c2ef558bb036e14381f1de90b651ef1cb5004863cfb3fd77cbbe2c",
+    "docs/native-benchmark-controller.md": "b45e46d2264e43da8f09cd68f865756caa8ad94d6b5030042278efa56635e909",
+    "docs/benchmark-execution-plan.md": "52c10a1e46c0efb7ecd255363735b9c361aa9854088f24fe31093fbefb31e95d"
+  },
+  "task": {
+    "benchmark_repository": "https://github.com/ControllableModel/SWE-Skills-Bench",
+    "project_repository": "pypa/packaging",
+    "project_commit": "5d3ab595f9e1d564e7c48a2253c96ac38444ae63",
+    "project_commit_url": "https://github.com/pypa/packaging/commit/5d3ab595f9e1d564e7c48a2253c96ac38444ae63",
+    "cell": "batch1/python-packaging",
+    "scope": "Public development control; not a counted model or holdout evaluation."
+  },
+  "implementation": {
+    "installer": "Normal UV installation with --require-hashes, --only-binary, offline resolution, --target and --link-mode copy.",
+    "installer_version": "0.13.7",
+    "python": "3.14.10",
+    "platform": "Windows x64",
+    "package_inventory": [
+      [
+        "colorama",
+        "0.4.6"
+      ],
+      [
+        "coverage",
+        "7.17.2"
+      ],
+      [
+        "iniconfig",
+        "2.3.1"
+      ],
+      [
+        "packaging",
+        "26.3"
+      ],
+      [
+        "pip",
+        "26.3"
+      ],
+      [
+        "pluggy",
+        "1.7.0"
+      ],
+      [
+        "pretend",
+        "1.0.9"
+      ],
+      [
+        "pygments",
+        "2.21.0"
+      ],
+      [
+        "pytest",
+        "9.0.3"
+      ],
+      [
+        "tomli-w",
+        "1.2.0"
+      ]
+    ],
+    "installed_regular_files": 1133,
+    "installed_directories": 117,
+    "runtime_schema": 2,
+    "source_precedes_dependencies": true,
+    "fresh_profile_per_attempt": true,
+    "automatic_missing_wheel_download": "Exact pinned HTTPS files.pythonhosted.org URL; captured wheel hash and size must match.",
+    "namespace_verification": "All regular files and directories before and after subject execution and native grading.",
+    "credentials": "Setup uses a private system-only environment. Selected controller credentials are leased only after setup; tool PYTHONPATH is separate."
+  },
+  "compatibility_controls": [
+    {
+      "pytest": "9.2.0",
+      "installation": "passed",
+      "sandbox_imports_exit": 0,
+      "original_version_tests_exit": 2,
+      "finding": "Original generator parametrization triggers PytestRemovedIn10Warning under the unchanged warnings-as-errors configuration."
+    },
+    {
+      "pytest": "9.1.1",
+      "installation": "passed",
+      "sandbox_imports_exit": 0,
+      "original_version_tests_exit": 2,
+      "finding": "Same original generator parametrization deprecation."
+    },
+    {
+      "pytest": "9.0.3",
+      "selection": "Newest stable non-yanked release below the documented 9.1 deprecation boundary, from the captured release inventory.",
+      "initial_qualification_exit": 124,
+      "initial_limit_seconds": 5,
+      "finding": "The helper timeout interrupted a progressing test run. This was not a project failure.",
+      "supported_profile_version_tests": {
+        "exit_code": 0,
+        "passed": 51498,
+        "file": "tests/test_version.py",
+        "source_modified": false,
+        "warnings_suppressed": false,
+        "dependency_inventory_unchanged": true
+      }
+    }
+  ],
+  "native_controls": [
+    {
+      "mode": "edited",
+      "status": "task_passed",
+      "score": 1.0,
+      "native_counts": {
+        "errors": 0,
+        "failed": 0,
+        "passed": 11,
+        "skipped": 0,
+        "total": 11
+      },
+      "credential_binding_released": true,
+      "listener_stopped": true,
+      "model_requests": 0
+    },
+    {
+      "mode": "unchanged",
+      "status": "task_failed",
+      "score": 0.0,
+      "native_counts": {
+        "errors": 0,
+        "failed": 10,
+        "passed": 0,
+        "skipped": 1,
+        "total": 11
+      },
+      "credential_binding_released": true,
+      "listener_stopped": true,
+      "model_requests": 0
+    },
+    {
+      "mode": "truncated",
+      "status": "harness_error",
+      "score": null,
+      "native_counts": null,
+      "credential_binding_released": true,
+      "listener_stopped": true,
+      "model_requests": 0
+    }
+  ],
+  "cancellation": {
+    "regression_reproduced_before_fix": true,
+    "fix": "Join the owned worker and retain observations in finally before propagating cancellation.",
+    "native_child_started": true,
+    "worker_stopped": true,
+    "remaining_owned_processes": 0,
+    "client_aborted": "KeyboardInterrupt",
+    "temporary_context_removed": true
+  },
+  "package_advisory_query": {
+    "url": "https://api.osv.dev/v1/querybatch",
+    "status": 200,
+    "response_sha256": "dd796f6d32a769ccf1404f422654d76b749af429dbce8bf32c2f6e51e0c2612b",
+    "packages": [
+      {
+        "name": "pytest",
+        "version": "9.0.3",
+        "advisories": []
+      },
+      {
+        "name": "packaging",
+        "version": "26.3",
+        "advisories": []
+      },
+      {
+        "name": "pluggy",
+        "version": "1.7.0",
+        "advisories": []
+      },
+      {
+        "name": "iniconfig",
+        "version": "2.3.1",
+        "advisories": []
+      },
+      {
+        "name": "pygments",
+        "version": "2.21.0",
+        "advisories": []
+      },
+      {
+        "name": "colorama",
+        "version": "0.4.6",
+        "advisories": []
+      },
+      {
+        "name": "coverage",
+        "version": "7.17.2",
+        "advisories": []
+      },
+      {
+        "name": "pip",
+        "version": "26.3",
+        "advisories": []
+      },
+      {
+        "name": "pretend",
+        "version": "1.0.9",
+        "advisories": []
+      },
+      {
+        "name": "tomli-w",
+        "version": "1.2.0",
+        "advisories": []
+      }
+    ]
+  },
+  "documentation_sources": [
+    {
+      "url": "https://docs.astral.sh/uv/pip/packages/",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_sha256": "1271a5dc77a737649997eb4d027b505c57074e5bf34b315542eea71aead0d933",
+      "status": 200,
+      "scope_reviewed": true
+    },
+    {
+      "url": "https://docs.pytest.org/en/stable/deprecations.html",
+      "provider_version": "0.9.5+catalog.portable4",
+      "native_sha256": "f4df563edb1ad0f39d098f98dd74ac0db55645a1d3ea333f6197ca52cf3318d5",
+      "status": 200,
+      "scope_reviewed": true
+    }
+  ],
+  "validation": {
+    "focused_tests_passed": 91,
+    "mypy_source_files": 313,
+    "native_qualification_checks_passed": 8,
+    "repository_full_suite": "Final batch acceptance is recorded separately in validation.json, after its frozen run.",
+    "retained_prior_failures": [
+      {
+        "run": "subject-dependency-full-qualified-v1",
+        "finding": "Missing union annotation in the failure-control test fixture; full suite held by the static gate.",
+        "correction": "Explicit dict[str, int | str | None] annotation."
+      },
+      {
+        "run": "subject-dependency-full-qualified-v2",
+        "passed": 2800,
+        "failed": 1,
+        "skipped": 18,
+        "finding": "New documentation linked this review before it existed.",
+        "correction": "Write this reviewed evidence before the final documentation and full-suite checks."
+      },
+      {
+        "run": "subject-dependency-project-qualified-v1",
+        "finding": "The isolated full-project qualification helper shadowed its parsed arguments with a command argument list. No subject command launched.",
+        "correction": "Use a distinct command_args local; the corrected helper and passing full-project run are retained separately."
+      }
+    ]
+  },
+  "errata": [
+    "The prototype v1 host_packages_changed=false field was an inference from private target setup, not a measured host-wide audit. No host-wide nonmutation or leak claim is made.",
+    "An initial research update attributed the deprecation to pytest 9.2. Official documentation and the 9.1.1 negative control establish a 9.1 boundary.",
+    "The initial review attached the project commit to the benchmark repository. The corrected fields distinguish both repositories and are verified against the frozen task and a fresh official GitHub connector response. The pre-correction bytes are retained in private evidence."
+  ],
+  "limits": [
+    "No model inference or skill-efficacy score was measured; the public launch guard remains closed.",
+    "The declared profile qualifies the unchanged upstream project tests on Windows, not every benchmark task, every build command or the publisher complete Linux agent environment.",
+    "Selected import origins and the complete installed namespace are checked; all transitive runtime behavior is not proven.",
+    "The Windows subject/Linux grader adapter is not the publisher complete agent harness.",
+    "Remaining resource/storage, grader, live authentication/transport and independent matched-frame qualification still precede model launches.",
+    "Advisory results are a captured database query for the ten declared versions, not a security audit or permanent absence-of-vulnerabilities claim."
+  ],
+  "private_receipts": [
+    {
+      "path": "subject-dependency-supported-qualified-v1/qualification.json",
+      "sha256": "3058d22c2537531cbd1622fe4e919303d0dfa500a7ba5fff13509b0fbb6a5721"
+    },
+    {
+      "path": "subject-dependency-sandbox-qualified-v1/qualification.json",
+      "sha256": "959ed69b532dfb2c737541ab36b78d53ab3862c87e35dddfe9854657ee8a756a"
+    },
+    {
+      "path": "subject-dependency-supported-sandbox-v1/summary.json",
+      "sha256": "376022bf668d6e8a725c432871edae30844ad9dd73a307d87a3e4b5e4db3ce1a"
+    },
+    {
+      "path": "subject-dependency-advisories-v1/response.native.json",
+      "sha256": "dd796f6d32a769ccf1404f422654d76b749af429dbce8bf32c2f6e51e0c2612b"
+    },
+    {
+      "path": "subject-dependency-full-qualified-v1/qualification.json",
+      "sha256": "ff58b6375bd2828420bff7f7c8d8e3c7a7baf0238c176404427f8697093d7c7a"
+    },
+    {
+      "path": "subject-dependency-full-qualified-v2/qualification.json",
+      "sha256": "327b6682f89964a67c1c817cbf61c991ede4d76eaa218ca0120fd06da536b19e"
+    },
+    {
+      "path": "subject-dependency-sandbox-v1/summary.json",
+      "sha256": "41b516b82086b728ca96bc55f32f382dc00e5860633d07346ce1271946c0e282"
+    },
+    {
+      "path": "subject-dependency-sandbox-compat-v1/summary.json",
+      "sha256": "10db3e27c7d6eba1461a82cedd60d9b5aa33f1346f2a02c04b14e703cda61a83"
+    },
+    {
+      "path": "subject-dependency-sandbox-compat-v2/summary.json",
+      "sha256": "1369f187ccb6bd61fb4f770786dadd72b0530e9e1768bbcf5dc8e267de75a129"
+    },
+    {
+      "path": "subject-dependency-project-qualified-v2/qualification.json",
+      "sha256": "e34b07f6a4edff2eec6f8a43dfc721bbbeb206770135942ff08d7cb90f837043"
+    }
+  ],
+  "model_requests": 0,
+  "release_created": false,
+  "project_provenance_evidence": {
+    "transport": "official GitHub connector",
+    "native_response_sha256": "c00bb2d24406cae31570b0c19de2433f5ffcfe34ff379424df401deebfd4a37e",
+    "benchmark_commit_lookup_status": 422,
+    "benchmark_commit_lookup_native_sha256": "4ff8c208e7bdabbe3745a67e70d88ca05b57117e759ba064de2bdcdd40b771e6"
+  },
+  "follow_up_full_project": {
+    "scope": "Entire unchanged upstream project test suite in the declared Windows subject sandbox. This is readiness, not an agent efficacy evaluation.",
+    "passed": 61055,
+    "skipped": 1,
+    "skip_reason": "tests/test_manylinux.py:178 requires Linux",
+    "exit_code": 0,
+    "warnings_suppressed": false,
+    "dependency_inventory_unchanged": true,
+    "temporary_context_removed": true,
+    "qualification_sha256": "e34b07f6a4edff2eec6f8a43dfc721bbbeb206770135942ff08d7cb90f837043"
+  }
+}

@@ -1,0 +1,108 @@
+"""Exercise general build contracts in an owned offline component container."""
+import hashlib
+import json
+import os
+import shutil
+import subprocess
+import tempfile
+from pathlib import Path
+
+INPUT_CONTRACT = {'source': 'included\\skills\\by-category\\coding-refactoring-repository-automation\\latest-release-devops\\makefile-generator\\docs\\optimization-guide.md', 'canonical_source_sha256': '8b928d0ac61c01fc83255ba96a29e480c9496d991f72c47f561b08558b1f7a6f', 'source_examples': {'unity': '# Combine all sources into one compilation unit\nunity.c: $(SOURCES)\n\t@echo "Generating unity build..."\n\t@for src in $(SOURCES); do \\\n\t\techo "#include \\"$$src\\"" >> $@; \\\n\tdone\n\nunity.o: unity.c\n\t$(CC) $(CFLAGS) -c $< -o $@\n\n# Fast single-file compilation\n# Trade-off: No parallel compilation\n', 'recursive': '# Top-level Makefile\nSUBDIRS := lib1 lib2 app\n\nall:\n\tfor dir in $(SUBDIRS); do $(MAKE) -C $$dir; done\n'}, 'contracts': ['Regenerating an aggregate translation unit after one input changes must contain each declared source exactly once and compile.', 'Removing an explicitly configured source must remove its inclusion after the configuration changes.', 'A failing required sub-build must cause the parent build to fail even when a later sub-build would succeed.', 'An all-successful declared sub-build graph must succeed with bounded parallel jobs.', 'A documented profiling flag must be accepted by the declared Make executable; supported trace output is checked separately.'], 'scope': 'Source-grounded component review, not an independent agent benchmark or speed comparison. Contracts fixed before native execution and maintained guidance edits.'}
+assert isinstance(INPUT_CONTRACT, dict)
+make = shutil.which('make')
+cc = shutil.which('gcc')
+assert make and cc
+records = []
+
+
+def run(cwd, *args):
+    result = subprocess.run([make, '--no-print-directory', *args], cwd=cwd, text=True, capture_output=True, timeout=15)
+    row = {'argv': ['make', '--no-print-directory', *args], 'exit_code': result.returncode, 'stdout': result.stdout, 'stderr': result.stderr}
+    records.append(row)
+    return result
+
+
+def write(path, text):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(text, encoding='utf-8', newline='\n')
+
+
+maintained_unity = '''.DEFAULT_GOAL := unity.o
+.DELETE_ON_ERROR:
+SOURCES := src/one.c src/two.c
+unity.c: $(SOURCES) Makefile
+\t@set -eu; { for src in $(SOURCES); do printf '#include "%s"\\n' "$$src"; done; } > "$@.tmp"; mv "$@.tmp" "$@"
+unity.o: unity.c
+\t$(CC) -c "$<" -o "$@"
+'''
+maintained_recursive = '''.PHONY: all lib1 lib2 app
+all: app
+app: lib1 lib2
+lib1 lib2 app:
+\t+$(MAKE) --no-print-directory -C "$@"
+'''
+cases = []
+with tempfile.TemporaryDirectory(prefix='make-optimization-', dir='/tmp') as temp:
+    root = Path(temp)
+    for kind in ('original', 'maintained'):
+        project = root / ('unity-' + kind)
+        write(project / 'src/one.c', 'int one(void) { return 1; }\n')
+        write(project / 'src/two.c', 'int two(void) { return 2; }\n')
+        original = 'SOURCES := src/one.c src/two.c\n' + INPUT_CONTRACT['source_examples']['unity']
+        write(project / 'Makefile', original if kind == 'original' else maintained_unity)
+        first = run(project, 'unity.o', 'CC=' + cc)
+        assert first.returncode == 0, records[-1]
+        first_text = (project / 'unity.c').read_text()
+        assert first_text.count('#include') == 2
+        source = project / 'src/one.c'
+        source.write_text(source.read_text() + '/* Changed input. */\n')
+        # Make a deterministic prerequisite ordering without a timing sleep.
+        stamp = source.stat().st_mtime_ns
+        os.utime(project / 'unity.c', ns=(stamp - 2_000_000_000, stamp - 2_000_000_000))
+        second = run(project, 'unity.o', 'CC=' + cc)
+        regenerated = (project / 'unity.c').read_text()
+        expected_failure = kind == 'original'
+        assert (second.returncode != 0) == expected_failure
+        assert regenerated.count('#include') == (4 if expected_failure else 2)
+        if expected_failure:
+            assert 'redefinition' in second.stderr
+        cases.append({'case': kind + '-unity-regeneration', 'first_compile': first.returncode, 'second_compile': second.returncode, 'includes': regenerated.count('#include'), 'expected_observation': True})
+        if kind == 'maintained':
+            config = (project / 'Makefile').read_text().replace('SOURCES := src/one.c src/two.c', 'SOURCES := src/one.c')
+            write(project / 'Makefile', config)
+            stamp = (project / 'Makefile').stat().st_mtime_ns
+            os.utime(project / 'unity.c', ns=(stamp - 2_000_000_000, stamp - 2_000_000_000))
+            removed = run(project, 'unity.o', 'CC=' + cc)
+            content = (project / 'unity.c').read_text()
+            assert removed.returncode == 0 and 'src/two.c' not in content and content.count('#include') == 1
+            cases.append({'case': 'maintained-explicit-source-removal', 'exit_code': removed.returncode, 'remaining_includes': 1, 'expected_observation': True})
+    for kind in ('original', 'maintained'):
+        project = root / ('recursive-' + kind)
+        write(project / 'Makefile', INPUT_CONTRACT['source_examples']['recursive'] if kind == 'original' else maintained_recursive)
+        for sub in ('lib1', 'lib2', 'app'):
+            write(project / sub / 'Makefile', '.PHONY: all\nall:\n\t' + ('@false' if sub == 'lib1' else '@printf "%s\\n" ' + sub) + '\n')
+        result = run(project, '-j2', 'all')
+        assert (result.returncode == 0) == (kind == 'original')
+        assert 'Error' in result.stderr
+        if kind == 'original':
+            assert 'app\n' in result.stdout
+        else:
+            assert 'app\n' not in result.stdout
+        cases.append({'case': kind + '-recursive-failure', 'exit_code': result.returncode, 'expected_observation': True})
+        if kind == 'maintained':
+            write(project / 'lib1/Makefile', '.PHONY: all\nall:\n\t@printf "%s\\n" lib1\n')
+            positive = run(project, '-j2', 'all')
+            assert positive.returncode == 0 and all(x + '\n' in positive.stdout for x in ('lib1', 'lib2', 'app'))
+            cases.append({'case': 'maintained-recursive-success', 'exit_code': 0, 'expected_observation': True})
+    project = root / 'profiling'
+    write(project / 'Makefile', '.PHONY: all\nall:\n\t@printf "%s\\n" observed\n')
+    invalid = run(project, '--profile=profile.log', 'all')
+    assert invalid.returncode != 0 and 'unrecognized option' in invalid.stderr and not (project / 'profile.log').exists()
+    trace = run(project, '--trace', 'all')
+    assert trace.returncode == 0 and 'Makefile:' in trace.stdout and 'observed' in trace.stdout
+    cases += [{'case': 'original-profile-flag', 'exit_code': invalid.returncode, 'expected_observation': True}, {'case': 'supported-trace', 'exit_code': 0, 'expected_observation': True}]
+versions = {}
+for key, exe in [('make', make), ('compiler', cc)]:
+    result = subprocess.run([exe, '--version'], text=True, capture_output=True, timeout=5, check=True)
+    versions[key] = result.stdout.splitlines()[0]
+print(json.dumps({'passed': True, 'kind': 'source-grounded-component-controls', 'versions': versions, 'cases': cases, 'records': records, 'source_sha256': INPUT_CONTRACT['canonical_source_sha256'], 'maintained_recipes': {'unity': maintained_unity, 'recursive': maintained_recursive}, 'model_invocations': 0, 'scope': 'GNU Make/Linux C component examples only; no model efficacy or speed estimate.'}))

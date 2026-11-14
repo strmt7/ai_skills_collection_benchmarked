@@ -1,0 +1,22 @@
+{
+  "official_sources_path": "toolchains/native-node-replay/source.json",
+  "official_sources_sha256": "9f71a8334263109a89f86f7a93b040e6f2acd31863fbd6be912897b18424b40c",
+  "git_blob_verification": [
+    {
+      "git_blob_sha1": "d42d8ffb4419fad5015c7183c0529c919e267854",
+      "sha256": "4b71756ccd9c39e06b22f1adb0c7a964cc9eeb859a330600d300544e491131ed"
+    },
+    {
+      "git_blob_sha1": "a4ebfc824d63cdea89e4c9a0ac61d4a594f7fe47",
+      "sha256": "13f6ecafea5b0055d800ea7ff9390c9e0f1fc69f808780635d2e35a379603bb2"
+    }
+  ],
+  "conclusions": [
+    "The exact crane Save implementation gives digest inputs an i-was-a-digest tag; an output filename alone does not make an archive untagged.",
+    "The builder uses an explicit local assembly tag, removes only its manifest data extent, then validates the content-addressed archive before loading.",
+    "Current setup retains complete implementation snapshots and bounded failed HTTP response diagnostics.",
+    "The denial-path unit control detected an unclosed HTTPError response; explicit closure fixed it without suppressing the warning."
+  ],
+  "historical_initial_implementation_snapshots_sha256": "c74277a5e901004b199de7e50e40be6a0ab90f932cb54013a6e9bf825870df7e",
+  "initial_vs_current_implementation": "Runtime probe bytes and image inputs are unchanged. Current code additionally records source snapshots and transfer failures, closes HTTPError responses and conforms to the 120-character Python limit. Initial receipts are historical, not current-source attestations."
+}

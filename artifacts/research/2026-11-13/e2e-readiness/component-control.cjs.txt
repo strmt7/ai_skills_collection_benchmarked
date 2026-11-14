@@ -1,0 +1,66 @@
+
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const http = require('node:http');
+const path = require('node:path');
+const { pathToFileURL } = require('node:url');
+const [modulePath, browserPath, output] = process.argv.slice(2);
+const { chromium } = require(modulePath);
+const records = [];
+const counts = {poll: 0, search: 0};
+const html = (ready) => `<!doctype html><title>Independent readiness control</title>
+<h1>${ready ? 'Items' : 'Loading'}</h1><input data-testid="search-input"><div id="results"></div>
+<script>
+setInterval(() => fetch('/poll').catch(() => {}), 50);
+document.querySelector('input').addEventListener('input', async (event) => {
+ const response = await fetch('/api/search?q=' + encodeURIComponent(event.target.value));
+ const result = await response.json(); const output = document.querySelector('#results'); output.replaceChildren();
+ if (!response.ok) { output.setAttribute('role', 'alert'); output.textContent = 'Search failed'; return; }
+ for (const item of result.items) { const card = document.createElement('div'); card.dataset.testid = 'item-card'; card.textContent = item; output.appendChild(card); }
+});
+</script>`;
+const server = http.createServer((request, response) => {
+ const url = new URL(request.url, 'http://127.0.0.1');
+ if (url.pathname === '/poll') { counts.poll++; response.writeHead(200, {'Content-Type': 'application/json'}); response.end('{}'); return; }
+ if (url.pathname === '/api/search') { counts.search++; const q = url.searchParams.get('q'); response.writeHead(q === 'fail' ? 500 : 200, {'Content-Type': 'application/json'}); response.end(JSON.stringify({items:[q]})); return; }
+ response.writeHead(200, {'Content-Type': 'text/html'}); response.end(html(url.pathname !== '/broken'));
+});
+let browser, context;
+(async () => {
+ await new Promise((resolve, reject) => { server.once('error', reject); server.listen(0, '127.0.0.1', resolve); });
+ const origin = 'http://127.0.0.1:' + server.address().port;
+ const { ItemsPage } = await import(pathToFileURL(path.join(output, 'OriginalItemsPage.ts')).href);
+ browser = await chromium.launch({executablePath: browserPath, headless: true, chromiumSandbox: true});
+ context = await browser.newContext({baseURL: origin});
+ await context.route('**/*', route => new URL(route.request().url()).origin === origin ? route.continue() : route.abort());
+ await context.tracing.start({screenshots: true, snapshots: true});
+ const page = await context.newPage(); page.setDefaultTimeout(1500); page.setDefaultNavigationTimeout(1500);
+ let originalError;
+ try { await new ItemsPage(page).goto(); } catch (error) { originalError = error; }
+ assert.equal(originalError?.name, 'TimeoutError'); assert.match(originalError.message, /waitForLoadState/);
+ await page.getByRole('heading', {name:'Items',exact:true}).waitFor({state:'visible'}); assert(counts.poll >= 5);
+ records.push({case:'original-networkidle',expected:'times out while ready UI keeps polling',observed:originalError.message,pollRequests:counts.poll});
+ await page.close();
+ const ready = await context.newPage(); ready.setDefaultTimeout(1500);
+ await ready.goto('/items', {waitUntil:'domcontentloaded'}); await ready.getByRole('heading',{name:'Items',exact:true}).waitFor({state:'visible'});
+ records.push({case:'ready-dom-contract',passed:true,heading:await ready.locator('h1').textContent()});
+ const missing = await context.newPage(); await missing.goto('/broken', {waitUntil:'domcontentloaded'});
+ let missingError; try { await missing.getByRole('heading',{name:'Items',exact:true}).waitFor({state:'visible',timeout:300}); } catch (error) {missingError=error;}
+ assert.equal(missingError?.name,'TimeoutError'); records.push({case:'missing-ready-contract',passed:true,expectedTimeout:true}); await missing.close();
+ const matches = (response, q) => { const url = new URL(response.url()); return url.origin === origin && url.pathname === '/api/search' && url.searchParams.get('q') === q && response.request().method() === 'GET'; };
+ const searchBefore=counts.search;
+ const [response] = await Promise.all([ready.waitForResponse(r => matches(r,'alpha')),ready.getByTestId('search-input').fill('alpha')]);
+ assert.equal(response.status(),200); await ready.getByTestId('item-card').filter({hasText:'alpha'}).waitFor({state:'visible'}); assert.equal(counts.search-searchBefore,1);
+ records.push({case:'prearmed-response-and-ui',passed:true,status:response.status(),requestCount:counts.search-searchBefore});
+ let lateError; try {await ready.waitForResponse(r=>matches(r,'alpha'),{timeout:300});} catch(error){lateError=error;}
+ assert.equal(lateError?.name,'TimeoutError');assert.equal(counts.search-searchBefore,1);records.push({case:'completed-events-not-replayed',passed:true,expectedTimeout:true,scope:'Controlled ordering after known completion; not a claim that native fill always loses the event.'});
+ const [failed] = await Promise.all([ready.waitForResponse(r=>matches(r,'fail')),ready.getByTestId('search-input').fill('fail')]);
+ assert.equal(failed.status(),500);await ready.getByRole('alert').waitFor({state:'visible'});records.push({case:'failed-response-observed',passed:true,status:failed.status()});
+ const automation = await ready.evaluate(()=>navigator.webdriver);assert.equal(automation,true);
+ const trace=path.join(output,'control-trace.zip');await context.tracing.stop({path:trace});assert(fs.statSync(trace).size>0);
+ records.push({case:'native-context-trace',passed:true,bytes:fs.statSync(trace).size});
+ const result={passed:true,nodeVersion:process.version,playwrightVersion:require(path.join(modulePath,'package.json')).version,browserVersion:browser.version(),automation,componentCases:records.length,records,counts,modelInvocations:0};
+ await context.close();context=undefined;await browser.close();browser=undefined;
+ await new Promise(resolve=>server.close(resolve));assert.equal(server.listening,false);
+ result.listenerClosed=true;fs.writeFileSync(path.join(output,'result.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({passed:true,componentCases:records.length,listenerClosed:true}));
+})().catch(async error=>{console.error(error.stack);try{if(context)await context.close();if(browser)await browser.close();}finally{server.closeAllConnections();await new Promise(resolve=>server.close(resolve));}process.exitCode=1;});

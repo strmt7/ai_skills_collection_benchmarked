@@ -1,0 +1,103 @@
+{
+  "controls": [
+    {
+      "id": "windows-pydicom-positive",
+      "status": "task_passed",
+      "native_command_exit_code": 0,
+      "windows_contract_cases_passed": 15,
+      "original_verifier_cases_passed": 18,
+      "publisher_declared_test_timeout_seconds": 300,
+      "effective_test_timeout_seconds": 300,
+      "original_project_files_preserved": 541,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "raw_qualification_sha256": "d0e35a6dbb38c20360b5586afcb1e51fbb98feb0ef16a0991732b4f98d0baac2"
+    },
+    {
+      "id": "baseline",
+      "raw_qualification_sha256": "246051fc2f4c5f1dfac631d55fa5da0eb021201982b7414d0ba245643d5ba9ff",
+      "passed": true,
+      "case": "baseline",
+      "status": "task_failed",
+      "diagnostic_fraction": 0.0,
+      "native_counts": {
+        "passed": 0,
+        "failed": 18,
+        "skipped": 0,
+        "errors": 0,
+        "total": 18
+      },
+      "original_publisher_scoring_class_executed": true,
+      "dependency_inventory_unchanged": true,
+      "closed_leases": 2,
+      "remaining_owned_containers": 0,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "task_solution_written": false
+    },
+    {
+      "id": "wrong-import",
+      "raw_qualification_sha256": "8138ad7ac2c6d0dd8fabe42d1bd951432f430bfd994b2f26cefd3f7ad6f2e70a",
+      "passed": true,
+      "case": "wrong-import",
+      "status": "harness_error",
+      "diagnostic_fraction": null,
+      "native_counts": null,
+      "original_publisher_scoring_class_executed": false,
+      "dependency_inventory_unchanged": false,
+      "closed_leases": 1,
+      "remaining_owned_containers": 0,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "task_solution_written": false
+    },
+    {
+      "id": "schema-2",
+      "raw_qualification_sha256": "4703cc5e3608638a96fee58e8f95216bea166268072440af4285ac9bdd788278",
+      "passed": true,
+      "task_schema": 2,
+      "existing_public_fixture": "batch1/python-packaging",
+      "original_verifier_and_publisher_scorer_executed": true,
+      "native_counts": {
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "total": 11
+      },
+      "closed_leases": 2,
+      "remaining_owned_containers": 0,
+      "new_selected_task_solution_written": false,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "dependency_inventory_unchanged": false
+    },
+    {
+      "id": "schema-3",
+      "raw_qualification_sha256": "d95184133d574cd9d79bdfb983f196eda887166e8dce2c6374f7c0fe4bf62794",
+      "passed": true,
+      "task_schema": 3,
+      "existing_public_fixture": "batch1/python-packaging",
+      "original_verifier_and_publisher_scorer_executed": true,
+      "native_counts": {
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "total": 11
+      },
+      "closed_leases": 2,
+      "remaining_owned_containers": 0,
+      "new_selected_task_solution_written": false,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "dependency_inventory_unchanged": true
+    }
+  ],
+  "closed_container_leases": 9,
+  "complete_grader_dependency_objects": 2525,
+  "complete_inventory_unchanged_within_and_across_three_grades": true,
+  "qualification_sha256": "1e3c7b720bcb85816df8f1225a5ae954588d24171a786cac603a938db6cfc0bd",
+  "model_invocations": 0,
+  "counted_attempts": 0
+}

@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "observed_date": "2026-11-11",
+  "status": "supported_route_identified_not_integrated",
+  "owner_constraint": "OpenAI runs use only the official harness/app with existing sign-in; no API-key request, provisioning or direct-API substitute.",
+  "selected_route": "Pinned official codex exec, retaining native sign-in storage while ignoring user configuration and isolating all subject context.",
+  "root_cause": "The current adapter redirects CODEX_HOME to a new empty controller profile, so the normal existing sign-in is unavailable there.",
+  "documentation": [
+    {
+      "url": "https://learn.chatgpt.com/docs/auth?surface=cli",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200,
+      "native_result_sha256": "b013bfeeb19094e8d24426a1bcf8445085f4d1d2f7505132d4b4154ffdcb5b4f",
+      "scope_reviewed": true,
+      "reviewed_sections": [
+        "Sign in with ChatGPT",
+        "Login caching",
+        "Credential storage",
+        "Headless fallback"
+      ]
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/auth/ci-cd-auth",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200,
+      "native_result_sha256": "3e0a1f69f1027c0e3c14cf46ec7195760c52d03d553a17dc4ef67962e21deebc",
+      "scope_reviewed": true,
+      "reviewed_sections": [
+        "When to use this",
+        "Operational rules",
+        "Refresh failure"
+      ]
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/app-server",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status_code": 200,
+      "native_result_sha256": "fbe013c47f54f044f6a788f51037e3601742787076e9957ee3e4b082731fdf12",
+      "scope_reviewed": true,
+      "reviewed_sections": [
+        "Protocol",
+        "Authentication modes",
+        "Externally managed tokens"
+      ]
+    }
+  ],
+  "pinned_source": {
+    "repository": "openai/codex",
+    "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+    "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/exec/src/cli.rs#L44-L46",
+    "capture_sha256": "22942d28739133513ea1a78635d803019d1707ba78effc3415bc26b202b8036e",
+    "capture_kind": "Decoded public file content from the official GitHub connector; not a claimed wire-byte or Git-blob verification.",
+    "finding": "The exec flag ignores CODEX_HOME/config.toml while native authentication continues to use CODEX_HOME."
+  },
+  "adapter_source_sha256": {
+    "tools/_trial_context.py": "5aaa584b547872c0cd71557e74879b2468c829239437ae339ce5f3af3d1e8986"
+  },
+  "native_model_free_controls": {
+    "supported_help_controls": 3,
+    "cli_version": "0.167.1",
+    "cli_sha256": "c12aca02de615a9fcb76f955bf005a33f4b10b577f8a1730161953f57a1155b3",
+    "processes_remaining": 0,
+    "retained_rejected_probe": "The first probe assumed daemon status existed; the actual CLI rejects it. Its stdout/stderr and implementation are retained privately. Version is the documented read-only subcommand.",
+    "authenticated_connection_attempted": false,
+    "daemon_started": false
+  },
+  "routes_not_adopted": [
+    "API-key provisioning and direct Responses API calls are ruled out by the owner.",
+    "The copied-auth CI workflow is unsuitable for this public repository and warns against concurrent rotation; do not copy it into repository automation.",
+    "External ChatGPT token mode is experimental and requires ownership of the auth lifecycle; do not export tokens from another app as a shortcut.",
+    "The app-server proxy was inspected but no existing daemon connection or persistent daemon setup was attempted."
+  ],
+  "required_before_model_execution": [
+    "Integrate explicit native sign-in storage without importing user configuration, instructions, memory, skills or histories.",
+    "Admit ChatGPT sign-in through the official CLI without printing credentials, requesting a key or changing login state.",
+    "Qualify contamination canaries, subject denial of the authentication store, native authentication lifecycle and interruption cleanup.",
+    "Preserve the complete source-bound launcher gate, native scorer and preregistered matched conditions."
+  ],
+  "real_model_inferences": 0,
+  "credentials_exported": false,
+  "api_key_requested_or_provisioned": false,
+  "existing_authentication_changed": false,
+  "public_model_launch_guard": "closed",
+  "limitations": [
+    "Source review and CLI help do not establish a qualified live model route or model entitlement.",
+    "Ignoring config.toml alone does not prove that every other personal-context channel is excluded.",
+    "No skill-performance gain, release readiness or existing daemon availability is established."
+  ]
+}

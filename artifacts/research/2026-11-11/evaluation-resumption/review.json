@@ -1,0 +1,130 @@
+{
+  "kind": "source-bound-skill-redesign-review",
+  "limits": [
+    "Component controls exercised actual scorer reports and Windows process state independently of the overlay text.",
+    "The current upstream entrypoints were observed without advancing immutable catalog source pins.",
+    "The evaluation skill's deferred cybersecurity examples remain outside this review.",
+    "Neither overlay has completed matched agent trials."
+  ],
+  "model_inferences": 0,
+  "observations": {
+    "native_checkpoint": {
+      "actual_terminal_process_not_live": true,
+      "implementation_sha256": "9413f7aa15f33413d746f87dd0cd1923b427b69e0bc8c8953cefd1850362ee7b",
+      "observation_timeout_left_same_process_live": true,
+      "receipt_sha256": "f4bd2d41651a2b0a02b27b457785e42e767c8a25f1adecca34ca9af8c540a3bb",
+      "remaining_owned_processes": 0,
+      "same_pid_wrong_creation_time_rejected": true,
+      "stdout_sha256": "cab09ebc78156ae326028948895e4bba0abeef6a9c8c8230870a39de4d18677e",
+      "terminal_stream_received": true
+    },
+    "native_grader_receipts": {
+      "receipt_sha256": "0ce8647b591c1e2bff9cc6866dd6cf7eded7d18cf5c3a81c992c7796924cf521",
+      "rejected": [
+        "missing",
+        "contradictory-exit",
+        "active-child",
+        "wrong-output-size"
+      ]
+    },
+    "native_scoring": {
+      "controls": [
+        {
+          "case": "author-oracle",
+          "ctrf": {
+            "failed": 0,
+            "passed": 6,
+            "total": 6
+          },
+          "official_grouped_reward": 1.0,
+          "pytest": {
+            "failed": 0,
+            "passed": 35,
+            "total": 35
+          }
+        },
+        {
+          "case": "empty-graph",
+          "ctrf": {
+            "failed": 6,
+            "passed": 0,
+            "total": 6
+          },
+          "official_grouped_reward": 0.0,
+          "pytest": {
+            "failed": 29,
+            "passed": 6,
+            "total": 35
+          }
+        }
+      ],
+      "receipt_sha256": "12b494a54cf09277a4813ed8ae9a4117c8ab495ec670abc89f8bfdf0ff571c17"
+    }
+  },
+  "revisions": {
+    "affaan-m-everything-claude-code-agents-skills-eval-harness-skill-md": {
+      "original_source_sha256": "0bc29828b0b20c57f1d0904fab2f046155aae9e6d9cf1d7587dd8776a8747f3d",
+      "package_file_sha256": {
+        "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+        "SKILL.md": "67f75deff3178effa99b60287a6300bcb434e1254fae962d11b6f0592596b364",
+        "provenance/original-SKILL.md": "0bc29828b0b20c57f1d0904fab2f046155aae9e6d9cf1d7587dd8776a8747f3d",
+        "references/repeated-attempts.md": "5144b51701c5ab684ad74ecf9954b782c7ad882b5ea1b88dc77f10dd22650024"
+      },
+      "prior_path": "included/improved/skills/eval-harness-current",
+      "prior_skill_sha256": "03bd4666ace171cc6852c531b474de6cd13131fb89f3971c0a8fb56c4632ab8a",
+      "revision_path": "included/improved/skills/eval-harness-evidence",
+      "revision_skill_sha256": "67f75deff3178effa99b60287a6300bcb434e1254fae962d11b6f0592596b364"
+    },
+    "affaan-m-everything-claude-code-agents-skills-strategic-compact-skill-md": {
+      "original_source_sha256": "c83c4c9d60d30d508bbd2bf0c6ffa724b5fdac679addd4828b268892dc39dc1b",
+      "package_file_sha256": {
+        "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+        "SKILL.md": "b04c4e20f081782b94504b80f5dda57a749aacd2679d3e237e43b1f606f6ce4a",
+        "provenance/original-SKILL.md": "c83c4c9d60d30d508bbd2bf0c6ffa724b5fdac679addd4828b268892dc39dc1b",
+        "references/token-accounting.md": "668d1f858a115273cf8fa36cca2d35d9fe019b62c126f12976449cd534a34712"
+      },
+      "prior_path": "included/improved/skills/strategic-compact-current",
+      "prior_skill_sha256": "4686f2f919ada2efd48525485a0408249101a3d33b6f52d34121df88c6812566",
+      "revision_path": "included/improved/skills/strategic-compact-resume",
+      "revision_skill_sha256": "b04c4e20f081782b94504b80f5dda57a749aacd2679d3e237e43b1f606f6ce4a"
+    }
+  },
+  "schema_version": 1,
+  "source_pages": [
+    {
+      "native_sha256": "c6eb72332c44d0a4472b448ea7a3b9cd4bb78f06470c2c7559c92ed09b709ef2",
+      "provider_version": "0.9.5+catalog.portable4",
+      "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+    },
+    {
+      "native_sha256": "e5cd57325a4995a2431b61e54c564c691392af190c5899c83cd8272f8419dbeb",
+      "provider_version": "0.9.5+catalog.portable4",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/synchapi/nf-synchapi-waitforsingleobject"
+    },
+    {
+      "native_sha256": "172da0cc3fdd918ea4813773cebd6fa008d31a408157dc1291e09b886660e7fe",
+      "provider_version": "0.9.5+catalog.portable4",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getprocesstimes"
+    }
+  ],
+  "upstream_ecc": {
+    "files": [
+      {
+        "blob": "8b60b99b1aa09d0c9b7eb1d22cf1de9396be80ea",
+        "bytes": 5610,
+        "name": "eval-harness",
+        "path": ".agents/skills/eval-harness/SKILL.md",
+        "sha256": "49a5a10975860bb2d7e3c4e260ff19b6580e43f5fbc7770b32dece02dde48e49"
+      },
+      {
+        "blob": "a4164df44b0ba1a7c557fd9e65591bbfdfef3c05",
+        "bytes": 6583,
+        "name": "strategic-compact",
+        "path": ".agents/skills/strategic-compact/SKILL.md",
+        "sha256": "bf1429dbc4ece055ba2ff79b9dc3e926cfa1a39101a88ee8467de062d1a0e7f3"
+      }
+    ],
+    "main_commit": "d2ef2680594f9a17526a6e1a2e18b3d242c5d17b",
+    "repo": "affaan-m/ECC"
+  }
+}

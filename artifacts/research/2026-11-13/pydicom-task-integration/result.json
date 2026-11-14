@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "kind": "condensed-native-integration-control-result",
+  "cases": [
+    {
+      "case": "native-offline-graph-and-reinstall-qualified",
+      "resolved_versions": {
+        "iniconfig": "2.3.1",
+        "numpy": "2.5.4",
+        "packaging": "26.3",
+        "pip": "26.3",
+        "pluggy": "1.7.0",
+        "pydicom": "3.0.2",
+        "pygments": "2.21.0",
+        "pytest": "9.2.0"
+      },
+      "fresh_reinstall_equal": true
+    },
+    {
+      "case": "task-user-reads-frozen-dependency-inventory",
+      "objects": 2521,
+      "inventory_sha256": "ad668355b67ec281adb6ee0c4bb7948648c71b9e584c197b82a001bbc2bccd92"
+    },
+    {
+      "case": "actual-pinned-source-and-native-numpy-import",
+      "pydicom_path": "/workspace/pydicom/src/pydicom/__init__.py",
+      "pydicom_sha256": "1b5e9bd8528924058e19a7b29ac430bfd7e0b84565cc680edeaa81542b55f876",
+      "numpy_path": "/tmp/pydicom-dependencies/lib/python3.12/site-packages/numpy/__init__.py",
+      "pytest_path": "/tmp/pydicom-dependencies/lib/python3.12/site-packages/pytest/__init__.py",
+      "pydicom_distribution_version": "3.0.2",
+      "numpy_version": "2.5.4",
+      "array_sum": 45,
+      "dataset_instance": 7
+    },
+    {
+      "case": "installed-package-origin-rejected",
+      "rejected": true,
+      "observed_path": "/tmp/pydicom-dependencies/lib/python3.12/site-packages/pydicom/__init__.py"
+    },
+    {
+      "case": "task-user-cannot-write-grader-environment",
+      "rejected": true
+    },
+    {
+      "case": "original-evaluator-on-untouched-baseline",
+      "exit_code": 1,
+      "counts": {
+        "collected": 18,
+        "failed": 18,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 0
+      },
+      "classification": "Deliberate diagnostic failure control, not a model attempt or model score."
+    },
+    {
+      "case": "original-evaluator-on-intentionally-failing-deliverables",
+      "exit_code": 1,
+      "counts": {
+        "collected": 18,
+        "failed": 15,
+        "errors": 0,
+        "skipped": 0,
+        "passed": 3
+      },
+      "classification": "Deliberate diagnostic failure control, not a model attempt or model score."
+    },
+    {
+      "case": "every-original-project-file-preserved",
+      "files": 541
+    },
+    {
+      "case": "complete-grader-environment-unchanged-after-evaluation",
+      "inventory_sha256": "ad668355b67ec281adb6ee0c4bb7948648c71b9e584c197b82a001bbc2bccd92"
+    }
+  ],
+  "resolved_versions": {
+    "pytest": "9.2.0",
+    "iniconfig": "2.3.1",
+    "numpy": "2.5.4",
+    "packaging": "26.3",
+    "pluggy": "1.7.0",
+    "pydicom": "3.0.2",
+    "pygments": "2.21.0",
+    "pip": "26.3"
+  },
+  "resolved_lock": "iniconfig==2.3.1 --hash=sha256:9121e2c1fdb355232495be3194c8dfe87ccc2d5dee45947b78e68f499790d7a7\nnumpy==2.5.4 --hash=sha256:fbde6962867ee75b48b0ee29b2b9372ec5d617799dbaf38e82dc0596f2f7738a\npackaging==26.3 --hash=sha256:d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c\npip==26.3 --hash=sha256:f3b60b20ffaadd4415ed7957212a38ac63fa4c5fa375bd0f4a797777940fad13\npluggy==1.7.0 --hash=sha256:7dd7b0d8832ba3cb632c306926ded123429211b83641b35dc5c41ad2d34f9bec\npydicom==3.0.2 --hash=sha256:abf971a5440f84dbaf42c4b6758e30e62480902584f8b270b9a5d146e278a07b\npygments==2.21.0 --hash=sha256:2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9\npytest==9.2.0 --hash=sha256:07acdcf88ec174f907dc01af70bf52d49b014bbab03faeeade31c96b18c2e588\n",
+  "unused_candidate_projects": [
+    "colorama"
+  ],
+  "fresh_hash_locked_reinstall_equal": true,
+  "system_interpreter_unchanged": true,
+  "wrong_wheel_digest_rejected": true,
+  "inventory_sha256": "ad668355b67ec281adb6ee0c4bb7948648c71b9e584c197b82a001bbc2bccd92",
+  "inventory_objects": 2521,
+  "image_reference": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+  "image_id": "sha256:bcd148db78f6860c1e31f59a736d8239bb564598207da7a5ecf87f269ab46e29",
+  "limits": {
+    "memory_bytes": 1610612736,
+    "tmpfs_bytes": 536870912,
+    "lease_seconds": 300,
+    "setup_timeout_seconds": 120,
+    "probe_timeout_seconds": 120
+  },
+  "asset_sha256": {
+    "setup.py": "09803615089bfb8211abf1bbbee4f6a73a55d762e79e05b1fa176f37c7a53afc",
+    "probe.py": "e2528614b4b9562dce525357ea651c5d0d023ac52fcc7c67cd3f0fa785fc9e05",
+    "capsule_inventory.py": "012906a8e730eca29bac3f5a9589ac60d374e369383c5c63c66c4394dfe82ce2",
+    "configuration.json": "d3df4f8360f3dbc3cd69b15f3df6f99d529308ea33a3f75d25599027b01fe253",
+    "bootstrap-pip.lock": "321898f94f26b2e9bcddb2b214e5e7c73ab240555ccb17fb9038a2445d50391a",
+    "project.tar.gz": "36c35d54315e26107a8210114d2a18a99f3e010cee87246157dc20ef6bc18768",
+    "verifier.py": "8cf292604c990ca9de963dc108557e06bbb406316a0e608d384d2c6c1aa88925",
+    "wheels/colorama-0.4.6-py2.py3-none-any.whl": "4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6",
+    "wheels/iniconfig-2.3.1-py3-none-any.whl": "9121e2c1fdb355232495be3194c8dfe87ccc2d5dee45947b78e68f499790d7a7",
+    "wheels/numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl": "fbde6962867ee75b48b0ee29b2b9372ec5d617799dbaf38e82dc0596f2f7738a",
+    "wheels/packaging-26.3-py3-none-any.whl": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+    "wheels/pip-26.3-py3-none-any.whl": "f3b60b20ffaadd4415ed7957212a38ac63fa4c5fa375bd0f4a797777940fad13",
+    "wheels/pluggy-1.7.0-py3-none-any.whl": "7dd7b0d8832ba3cb632c306926ded123429211b83641b35dc5c41ad2d34f9bec",
+    "wheels/pydicom-3.0.2-py3-none-any.whl": "abf971a5440f84dbaf42c4b6758e30e62480902584f8b270b9a5d146e278a07b",
+    "wheels/pygments-2.21.0-py3-none-any.whl": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9",
+    "wheels/pytest-9.2.0-py3-none-any.whl": "07acdcf88ec174f907dc01af70bf52d49b014bbab03faeeade31c96b18c2e588"
+  },
+  "specification_sha256": "8b7c5acd4cf44f7c7588102487060976251f3e1fce580a79b59f30ec9c99b55c",
+  "controller_sha256": "3e68d36a9da3ed8d841d3fcc7b33e1282717154b010cba1a73cd39194965edf0",
+  "native_receipt_sha256": {
+    "summary.json": "37526d1b51a1ae56805b18526c87845e7f1619ce88f156d05a304a5da3a2f56a",
+    "setup.native.json": "b43fb0ab5c8f7b3c408a168482af96292f2f1a405e4ef95594513ad23255d992",
+    "probe.native.json": "c26242abf6cab5fec763a3a99ef8cbfaa9be2d4277f2b4264783ff99bdbbee3e"
+  },
+  "raw_native_receipts": "Retained by digest in ignored execution state. The public result omits original test failure tracebacks and credential/account data; counts and every component result remain explicit.",
+  "repetitions": 2,
+  "identical_dependency_inventories": true,
+  "original_test_verifier_executed": true,
+  "publisher_scoring_class_executed": false,
+  "counted_attempts": 0,
+  "model_invocations": 0,
+  "task_solution_written": false,
+  "runtime_admitted": false,
+  "remaining_owned_containers": 0
+}

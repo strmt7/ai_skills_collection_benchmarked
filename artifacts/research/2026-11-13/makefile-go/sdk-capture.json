@@ -1,0 +1,49 @@
+{
+  "capture": {
+    "version": "go1.27.4",
+    "url": "https://dl.google.com/go/go1.27.4.linux-amd64.tar.gz",
+    "sha256": "7226736c2339719cda28fbf3a54d71aa63bcefe376e98cef00034268dab24840",
+    "bytes": 70680823,
+    "archive_members": 17375,
+    "declared_expanded_bytes": 244338457,
+    "metadata_sha256": "00c8b9cdf0143ac3cc91c55166d28c6c3c08e70cd114129f76d9aa3a0e076ab9",
+    "root_directory_headers": [
+      "go"
+    ],
+    "host_extraction": false,
+    "global_installation": false,
+    "retained_precheck_failure": "v1 prefix predicate rejected the legitimate top-level go directory header; bytes were already checksum-verified. Current admission uses PurePosixPath components and admits only a directory at that root, with all bounds and no links retained.",
+    "network_downloads": 1
+  },
+  "official_release_selection": {
+    "source_url": "https://go.dev/dl/?mode=json",
+    "native_url": "https://go.dev/dl/?mode=json",
+    "metadata_sha256": "00c8b9cdf0143ac3cc91c55166d28c6c3c08e70cd114129f76d9aa3a0e076ab9",
+    "selected_version": "go1.27.4",
+    "stable": true,
+    "selection": "Highest stable numeric major/minor/patch in the official current release API response; no prerelease admitted.",
+    "archives": {
+      "linux": {
+        "filename": "go1.27.4.linux-amd64.tar.gz",
+        "os": "linux",
+        "arch": "amd64",
+        "version": "go1.27.4",
+        "sha256": "7226736c2339719cda28fbf3a54d71aa63bcefe376e98cef00034268dab24840",
+        "size": 70680823,
+        "kind": "archive"
+      },
+      "windows": {
+        "filename": "go1.27.4.windows-amd64.zip",
+        "os": "windows",
+        "arch": "amd64",
+        "version": "go1.27.4",
+        "sha256": "178ab98950ac69ab25069307dc6ade79f3816e414cce95b4da166a115cde1e7e",
+        "size": 79077744,
+        "kind": "archive"
+      }
+    },
+    "downloaded": false
+  },
+  "source_api_bytes_sha256": "00c8b9cdf0143ac3cc91c55166d28c6c3c08e70cd114129f76d9aa3a0e076ab9",
+  "windows_archive_downloaded_or_qualified": false
+}

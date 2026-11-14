@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "image_id": "sha256:706b871312a2396dabb1f751a253802c0f89347f74ec9d4fab0f6436ffe0308c",
+  "archive_sha256": "25e62584449d2cd915400d2dcbe4639f8c7aab26adc2deb87c8a266e086b5114",
+  "archive_bytes": 623288320,
+  "base_image": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+  "base_layers_unchanged": true,
+  "only_changes": [
+    "one verified Node 26.13.1 layer",
+    "PATH prefix",
+    "empty tag list"
+  ],
+  "publisher_equivalent": false,
+  "modern_replay_only": true,
+  "docker_daemon_mutated": false,
+  "model_trials_run": 0,
+  "node_version": "v26.13.1",
+  "npm_version": "11.20.0",
+  "layer_sha256": "0d91d4d4990796dab274a0f4d7ba66f1fc07230312bd56922cfa278f52f09894",
+  "layer_bytes": 229355520,
+  "layer_entries": 5828,
+  "layer_epoch": 1794268800,
+  "archive_transformation": "Remove RepoTags only; retain every configuration and compressed layer byte.",
+  "crane_version": "0.22.1",
+  "crane_executable_sha256": "e22e47202cece45d09fe92919bdb683f56f548d360cb96f6a852defd965c935d",
+  "distribution_captures": [
+    {
+      "url": "https://github.com/google/go-containerregistry/releases/download/v0.22.1/checksums.txt",
+      "final_host": "release-assets.githubusercontent.com",
+      "status": 200,
+      "bytes": 1387,
+      "sha256": "889e6996ef939c12d613f4cae657cc2ecce822e69ea74a58a453a95d723a857d",
+      "server_date": "Fri, 13 Nov 2026 14:04:16 GMT",
+      "path": "crane-checksums.native.txt"
+    },
+    {
+      "url": "https://github.com/google/go-containerregistry/releases/download/v0.22.1/go-containerregistry_Windows_x86_64.tar.gz",
+      "final_host": "release-assets.githubusercontent.com",
+      "status": 200,
+      "bytes": 16978582,
+      "sha256": "0e073ea8192c3b8442ec8aaf44d53c1050a09084669fae3a6ceb0f2026cf8b21",
+      "server_date": "Fri, 13 Nov 2026 14:04:16 GMT",
+      "path": "go-containerregistry_Windows_x86_64.tar.gz"
+    },
+    {
+      "url": "https://nodejs.org/dist/v26.13.1/SHASUMS256.txt",
+      "final_host": "nodejs.org",
+      "status": 200,
+      "bytes": 3171,
+      "sha256": "41f4c8ff7c0634558469d6f6c8744cecf417d3fd0aed5c57b3c2c571335a62dc",
+      "server_date": "Fri, 13 Nov 2026 14:04:16 GMT",
+      "path": "node-checksums.native.txt"
+    },
+    {
+      "url": "https://nodejs.org/dist/v26.13.1/node-v26.13.1-linux-x64.tar.gz",
+      "final_host": "nodejs.org",
+      "status": 200,
+      "bytes": 62904977,
+      "sha256": "518674de2b621728a5e4486f5fb3b7d2900bb3cc4aa97969edaa463db99f9778",
+      "server_date": "Fri, 13 Nov 2026 14:04:16 GMT",
+      "path": "node-v26.13.1-linux-x64.tar.gz"
+    }
+  ],
+  "runtime_schema_version": 2,
+  "admission_stage": "runtime probes only; task dependencies and all evaluator stages remain unqualified",
+  "selection_sha256": "42de081f53b0273f936ea5ca12dd0a6f69da0c33ade087b7b76ac8e6b7bee1c5",
+  "candidate_library_freeze_sha256": "ef2b41429643da1fdf105de0efc2d06152c7ca30278f354b672bc8da9bbd5520",
+  "candidate_files_unchanged": 18245,
+  "original_image_aliases_resolved": false,
+  "common_execution_admitted": false,
+  "model_improvement_established": false
+}

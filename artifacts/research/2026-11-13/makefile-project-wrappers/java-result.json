@@ -1,0 +1,508 @@
+{
+  "observation": {
+    "passed": true,
+    "cases": [
+      {
+        "case": "wrong-sdk-digest-rejected-before-execution",
+        "expected_observation": true,
+        "rejected": true
+      },
+      {
+        "case": "sdk-transfer-digest-admitted",
+        "expected_observation": true,
+        "sha256": "30cb129f6cf299c852cec0feca9ea2a596d2ee9f26d8605d3a253951f6c8b20f"
+      },
+      {
+        "case": "actual-sdk-tool-identities",
+        "expected_observation": true,
+        "release": {
+          "IMPLEMENTOR": "Eclipse Adoptium",
+          "IMPLEMENTOR_VERSION": "Temurin-27.0.1.0.2+1",
+          "JAVA_VERSION": "27.0.1.0.2",
+          "OS_ARCH": "x86_64",
+          "OS_NAME": "Linux"
+        }
+      },
+      {
+        "case": "actual-console-feature-admission",
+        "expected_observation": true,
+        "version": "6.1.3"
+      },
+      {
+        "case": "original-initial-archive",
+        "expected_observation": true,
+        "executable": true
+      },
+      {
+        "case": "original-removed-source-retains-class",
+        "expected_observation": true,
+        "obsolete_class_retained": true
+      },
+      {
+        "case": "fresh-native-output-excludes-removed-source",
+        "expected_observation": true,
+        "obsolete_class_retained": false
+      },
+      {
+        "case": "original-no-test-directory",
+        "expected_observation": true,
+        "exit_code": 0,
+        "tests_run": false
+      },
+      {
+        "case": "original-changed-abi-build-reports-success",
+        "expected_observation": true,
+        "exit_code": 0
+      },
+      {
+        "case": "original-changed-abi-runtime-fails",
+        "expected_observation": true,
+        "exit_code": 1
+      },
+      {
+        "case": "fresh-native-compiler-rejects-changed-abi",
+        "expected_observation": true,
+        "exit_code": 1
+      },
+      {
+        "case": "original-failing-test-not-discovered",
+        "expected_observation": true,
+        "exit_code": 0,
+        "actual_tests_run": 0
+      },
+      {
+        "case": "explicit-junit4-class-failure",
+        "expected_observation": true,
+        "exit_code": 1
+      },
+      {
+        "case": "current-console-propagates-actual-failure",
+        "expected_observation": true,
+        "exit_code": 1
+      },
+      {
+        "case": "current-console-executes-passing-test",
+        "expected_observation": true,
+        "exit_code": 0
+      },
+      {
+        "case": "current-console-rejects-zero-tests",
+        "expected_observation": true,
+        "exit_code": 2
+      }
+    ],
+    "records": [
+      {
+        "argv": [
+          "/tmp/java-make-9507wju5/sdk/jdk-27.0.1.0.2+1/bin/java",
+          "--version"
+        ],
+        "cwd_name": "java-make-9507wju5",
+        "exit_code": 0,
+        "stdout": "openjdk 27.0.1.0.2 2026-10-21\nOpenJDK Runtime Environment Temurin-27.0.1.0.2+1 (build 27.0.1.0.2+1)\nOpenJDK 64-Bit Server VM Temurin-27.0.1.0.2+1 (build 27.0.1.0.2+1, mixed mode, sharing)\n",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n"
+      },
+      {
+        "argv": [
+          "/tmp/java-make-9507wju5/sdk/jdk-27.0.1.0.2+1/bin/javac",
+          "--version"
+        ],
+        "cwd_name": "java-make-9507wju5",
+        "exit_code": 0,
+        "stdout": "javac 27.0.1.0.2\n",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n"
+      },
+      {
+        "argv": [
+          "/tmp/java-make-9507wju5/sdk/jdk-27.0.1.0.2+1/bin/jar",
+          "--version"
+        ],
+        "cwd_name": "java-make-9507wju5",
+        "exit_code": 0,
+        "stdout": "jar 27.0.1.0.2\n",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n"
+      },
+      {
+        "argv": [
+          "/tmp/java-make-9507wju5/sdk/jdk-27.0.1.0.2+1/bin/java",
+          "-jar",
+          "/tmp/benchmark-inputs/junit.jar",
+          "execute",
+          "--help"
+        ],
+        "cwd_name": "java-make-9507wju5",
+        "exit_code": 0,
+        "stdout": "Usage: junit execute [OPTIONS]\nExecute tests\n      [@<filename>...]       One or more argument files containing options.\n      --disable-ansi-colors  Disable ANSI colors in output (not supported by all terminals).\n      --disable-banner       Disable print out of the welcome message.\n  -h, --help                 Display help information.\n      --version              Display version information.\n\nSELECTORS\n\n      --scan-classpath, --scan-class-path[=PATH]\n                             Scan all directories on the classpath or explicit classpath\n                               roots. Without arguments, only directories on the system\n                               classpath as well as additional classpath entries supplied via\n                               -cp (directories and JAR files) are scanned. Explicit classpath\n                               roots that are not on the classpath will be silently ignored.\n                               This option can be repeated.\n      --scan-modules         Scan all resolved modules for test discovery.\n  -u, --select-uri=URI...    Select a URI for test discovery. This option can be repeated.\n  -f, --select-file=FILE...  Select a file for test discovery. The line and column numbers can\n                               be provided as URI query parameters (e.g. foo.txt?\n                               line=12&column=34). This option can be repeated.\n  -d, --select-directory=DIR...\n                             Select a directory for test discovery. This option can be\n                               repeated.\n  -o, --select-module=NAME...\n                             Select single module for test discovery. This option can be\n                               repeated.\n  -p, --select-package=PKG...\n                             Select a package for test discovery. This option can be repeated.\n  -c, --select-class=CLASS...\n                             Select a class for test discovery. This option can be repeated.\n  -m, --select-method=NAME...\n                             Select a method for test discovery. This option can be repeated.\n  -r, --select-resource=RESOURCE...\n                             Select a classpath resource for test discovery. This option can\n                               be repeated.\n  -i, --select-iteration=PREFIX:VALUE[INDEX(..INDEX)?(,INDEX(..INDEX)?)*]...\n                             Select iterations for test discovery via a prefixed identifier\n                               and a list of indexes or index ranges (e.g. method:com.acme.\n                               Foo#m()[1..2] selects the first and second iteration of the m()\n                               method in the com.acme.Foo class). This option can be repeated.\n      --uid, --select-unique-id=UNIQUE-ID...\n                             Select a unique id for test discovery. This option can be\n                               repeated.\n      --select=PREFIX:VALUE...\n                             Select via a prefixed identifier (e.g. method:com.acme.Foo#m\n                               selects the m() method in the com.acme.Foo class). This option\n                               can be repeated.\n\n  For more information on selectors including syntax examples, see\n  https://docs.junit.org/6.1.3/running-tests/discovery-selectors.html\n\nFILTERS\n\n  -n, --include-classname=PATTERN\n                             Provide a regular expression to include only classes whose fully\n                               qualified names match. To avoid loading classes unnecessarily,\n                               the default pattern only includes class names that begin with\n                               \"Test\" or end with \"Test\" or \"Tests\". When this option is\n                               repeated, all patterns will be combined using OR semantics.\n                               Default: ^(Test.*|.+[.$]Test.*|.*Tests?)$\n  -N, --exclude-classname=PATTERN\n                             Provide a regular expression to exclude those classes whose fully\n                               qualified names match. When this option is repeated, all\n                               patterns will be combined using OR semantics.\n      --include-package=PKG  ?Provide a package to be included in the test run. This option\n                               can be repeated.\n      --exclude-package=PKG  Provide a package to be excluded from the test run. This option\n                               can be repeated.\n      --include-methodname=PATTERN\n                             Provide a regular expression to include only methods whose fully\n                               qualified names without parameters match. When this option is\n                               repeated, all patterns will be combined using OR semantics.\n      --exclude-methodname=PATTERN\n                             Provide a regular expression to exclude those methods whose fully\n                               qualified names without parameters match. When this option is\n                               repeated, all patterns will be combined using OR semantics.\n  -t, --include-tag=TAG      Provide a tag or tag expression to include only tests whose tags\n                               match. When this option is repeated, all patterns will be\n                               combined using OR semantics.\n  -T, --exclude-tag=TAG      Provide a tag or tag expression to exclude those tests whose tags\n                               match. When this option is repeated, all patterns will be\n                               combined using OR semantics.\n  -e, --include-engine=ID    Provide the ID of an engine to be included in the test run. This\n                               option can be repeated.\n  -E, --exclude-engine=ID    Provide the ID of an engine to be excluded from the test run.\n                               This option can be repeated.\n\nRUNTIME CONFIGURATION\n\n      -cp, --classpath, --class-path=PATH\n                             Provide additional classpath entries -- for example, for adding\n                               engines and their dependencies. This option can be repeated.\n      --config-resource=PATH Set configuration parameters for test discovery and execution via\n                               a classpath resource. This option can be repeated.\n      --config=KEY=VALUE     Set a configuration parameter for test discovery and execution.\n                               This option can be repeated.\n\nCONSOLE OUTPUT\n\n      --color-palette=FILE   Specify a path to a properties file to customize ANSI style of\n                               output (not supported by all terminals).\n      --single-color         Style test output using only text attributes, no color (not\n                               supported by all terminals).\n      --details=MODE         Select an output details mode for when tests are executed. Use\n                               one of: none, summary, flat, tree, verbose, testfeed. If 'none'\n                               is selected, then only the summary and test failures are shown.\n                               Default: tree.\n      --details-theme=THEME  Select an output details tree theme for when tests are executed.\n                               Use one of: ascii, unicode. Default is detected based on\n                               default character encoding.\n      --redirect-stdout=FILE Redirect test output to stdout to a file.\n      --redirect-stderr=FILE Redirect test output to stderr to a file.\n\nREPORTING\n\n      --fail-if-no-tests     Fail and return exit status code 2 if no tests are found.\n      --fail-fast            Stops test execution after the first failed test.\n      --reports-dir=DIR      Enable report output into a specified local directory (will be\n                               created if it does not exist).\n\nFor more information, please refer to the JUnit User Guide at\nhttps://docs.junit.org/6.1.3/\n",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n"
+      },
+      {
+        "argv": [
+          "/usr/bin/bash",
+          "/tmp/java-make-9507wju5/generate.sh",
+          "java",
+          "demo",
+          "Makefile"
+        ],
+        "cwd_name": "removal",
+        "exit_code": 0,
+        "stdout": "INFO: Generating java Makefile for project 'demo'...\nSUCCESS: Makefile generated: Makefile\nINFO: Edit the Makefile to customize for your project\nINFO: Run 'make help' to see available targets\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "build"
+        ],
+        "cwd_name": "removal",
+        "exit_code": 0,
+        "stdout": "javac -Xlint:all -encoding UTF-8 -d build/classes -cp \"build/classes\" src/Obsolete.java src/Main.java\njar cvfm dist/demo-1.0.0.jar build/MANIFEST.MF -C build/classes .\nadded manifest\nadding: .compiled(in = 0) (out= 0)(stored 0%)\nadding: Main.class(in = 400) (out= 270)(deflated 32%)\nadding: Obsolete.class(in = 190) (out= 157)(deflated 17%)\nCreated: dist/demo-1.0.0.jar\n",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\nPicked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n"
+      },
+      {
+        "argv": [
+          "/tmp/java-make-9507wju5/sdk/jdk-27.0.1.0.2+1/bin/java",
+          "-jar",
+          "/tmp/java-make-9507wju5/removal/dist/demo-1.0.0.jar"
+        ],
+        "cwd_name": "removal",
+        "exit_code": 0,
+        "stdout": "live",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n"
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "build"
+        ],
+        "cwd_name": "removal",
+        "exit_code": 0,
+        "stdout": "jar cvfm dist/demo-1.0.0.jar build/MANIFEST.MF -C build/classes .\nadded manifest\nadding: .compiled(in = 0) (out= 0)(stored 0%)\nadding: Main.class(in = 400) (out= 270)(deflated 32%)\nadding: Obsolete.class(in = 190) (out= 157)(deflated 17%)\nCreated: dist/demo-1.0.0.jar\n",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n"
+      },
+      {
+        "argv": [
+          "/tmp/java-make-9507wju5/sdk/jdk-27.0.1.0.2+1/bin/javac",
+          "-d",
+          "/tmp/java-make-9507wju5/removal/fresh-classes",
+          "/tmp/java-make-9507wju5/removal/src/Main.java"
+        ],
+        "cwd_name": "removal",
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n"
+      },
+      {
+        "argv": [
+          "/tmp/java-make-9507wju5/sdk/jdk-27.0.1.0.2+1/bin/jar",
+          "--create",
+          "--file",
+          "/tmp/java-make-9507wju5/removal/fresh.jar",
+          "--main-class",
+          "Main",
+          "-C",
+          "/tmp/java-make-9507wju5/removal/fresh-classes",
+          "."
+        ],
+        "cwd_name": "removal",
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n"
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "test"
+        ],
+        "cwd_name": "removal",
+        "exit_code": 0,
+        "stdout": "Running tests...\nNo test directory found\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/bash",
+          "/tmp/java-make-9507wju5/generate.sh",
+          "java",
+          "demo",
+          "Makefile"
+        ],
+        "cwd_name": "dependency",
+        "exit_code": 0,
+        "stdout": "INFO: Generating java Makefile for project 'demo'...\nSUCCESS: Makefile generated: Makefile\nINFO: Edit the Makefile to customize for your project\nINFO: Run 'make help' to see available targets\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/tmp/java-make-9507wju5/sdk/jdk-27.0.1.0.2+1/bin/javac",
+          "-d",
+          "/tmp/java-make-9507wju5/library-0/classes",
+          "/tmp/java-make-9507wju5/library-0/dep/Helper.java"
+        ],
+        "cwd_name": "java-make-9507wju5",
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n"
+      },
+      {
+        "argv": [
+          "/tmp/java-make-9507wju5/sdk/jdk-27.0.1.0.2+1/bin/jar",
+          "--create",
+          "--file",
+          "/tmp/java-make-9507wju5/dependency/lib/dependency.jar",
+          "-C",
+          "/tmp/java-make-9507wju5/library-0/classes",
+          "."
+        ],
+        "cwd_name": "java-make-9507wju5",
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n"
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "build"
+        ],
+        "cwd_name": "dependency",
+        "exit_code": 0,
+        "stdout": "javac -Xlint:all -encoding UTF-8 -d build/classes -cp \"build/classes:lib/*\" src/Main.java\njar cvfm dist/demo-1.0.0.jar build/MANIFEST.MF -C build/classes .\nadded manifest\nadding: .compiled(in = 0) (out= 0)(stored 0%)\nadding: Main.class(in = 414) (out= 290)(deflated 29%)\nCreated: dist/demo-1.0.0.jar\n",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\nPicked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n"
+      },
+      {
+        "argv": [
+          "/tmp/java-make-9507wju5/sdk/jdk-27.0.1.0.2+1/bin/java",
+          "-cp",
+          "build/classes:lib/*",
+          "Main"
+        ],
+        "cwd_name": "dependency",
+        "exit_code": 0,
+        "stdout": "42",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n"
+      },
+      {
+        "argv": [
+          "/tmp/java-make-9507wju5/sdk/jdk-27.0.1.0.2+1/bin/javac",
+          "-d",
+          "/tmp/java-make-9507wju5/library-1/classes",
+          "/tmp/java-make-9507wju5/library-1/dep/Helper.java"
+        ],
+        "cwd_name": "java-make-9507wju5",
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n"
+      },
+      {
+        "argv": [
+          "/tmp/java-make-9507wju5/sdk/jdk-27.0.1.0.2+1/bin/jar",
+          "--create",
+          "--file",
+          "/tmp/java-make-9507wju5/dependency/lib/dependency.jar",
+          "-C",
+          "/tmp/java-make-9507wju5/library-1/classes",
+          "."
+        ],
+        "cwd_name": "java-make-9507wju5",
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n"
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "build"
+        ],
+        "cwd_name": "dependency",
+        "exit_code": 0,
+        "stdout": "jar cvfm dist/demo-1.0.0.jar build/MANIFEST.MF -C build/classes .\nadded manifest\nadding: .compiled(in = 0) (out= 0)(stored 0%)\nadding: Main.class(in = 414) (out= 290)(deflated 29%)\nCreated: dist/demo-1.0.0.jar\n",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n"
+      },
+      {
+        "argv": [
+          "/tmp/java-make-9507wju5/sdk/jdk-27.0.1.0.2+1/bin/java",
+          "-cp",
+          "build/classes:lib/*",
+          "Main"
+        ],
+        "cwd_name": "dependency",
+        "exit_code": 1,
+        "stdout": "",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\nException in thread \"main\" java.lang.NoSuchMethodError: 'int dep.Helper.value()'\n\tat Main.main(Main.java:1)\n"
+      },
+      {
+        "argv": [
+          "/tmp/java-make-9507wju5/sdk/jdk-27.0.1.0.2+1/bin/javac",
+          "-d",
+          "/tmp/java-make-9507wju5/dependency/fresh-classes",
+          "-cp",
+          "/tmp/java-make-9507wju5/dependency/lib/dependency.jar",
+          "/tmp/java-make-9507wju5/dependency/src/Main.java"
+        ],
+        "cwd_name": "dependency",
+        "exit_code": 1,
+        "stdout": "",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n/tmp/java-make-9507wju5/dependency/src/Main.java:1: error: cannot find symbol\npublic class Main { public static void main(String[] args) { System.out.print(dep.Helper.value()); } }\n                                                                                        ^\n  symbol:   method value()\n  location: class Helper\n1 error\n"
+      },
+      {
+        "argv": [
+          "/usr/bin/bash",
+          "/tmp/java-make-9507wju5/generate.sh",
+          "java",
+          "demo",
+          "Makefile"
+        ],
+        "cwd_name": "testing",
+        "exit_code": 0,
+        "stdout": "INFO: Generating java Makefile for project 'demo'...\nSUCCESS: Makefile generated: Makefile\nINFO: Edit the Makefile to customize for your project\nINFO: Run 'make help' to see available targets\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "test"
+        ],
+        "cwd_name": "testing",
+        "exit_code": 0,
+        "stdout": "javac -Xlint:all -encoding UTF-8 -d build/classes -cp \"build/classes:lib/*\" src/test/ExampleTest.java src/Main.java\nRunning tests...\nJUnit version 4.13.2\n\nTime: 0\n\nOK (0 tests)\n\n",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\nPicked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n"
+      },
+      {
+        "argv": [
+          "/tmp/java-make-9507wju5/sdk/jdk-27.0.1.0.2+1/bin/java",
+          "-cp",
+          "build/classes:lib/*",
+          "org.junit.runner.JUnitCore",
+          "ExampleTest"
+        ],
+        "cwd_name": "testing",
+        "exit_code": 1,
+        "stdout": "JUnit version 4.13.2\n.E\nTime: 0.005\nThere was 1 failure:\n1) actualFailure(ExampleTest)\njava.lang.AssertionError: expected:<1> but was:<2>\n\tat org.junit.Assert.fail(Assert.java:89)\n\tat org.junit.Assert.failNotEquals(Assert.java:835)\n\tat org.junit.Assert.assertEquals(Assert.java:647)\n\tat org.junit.Assert.assertEquals(Assert.java:633)\n\tat ExampleTest.actualFailure(ExampleTest.java:1)\n\nFAILURES!!!\nTests run: 1,  Failures: 1\n\n",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n"
+      },
+      {
+        "argv": [
+          "/tmp/java-make-9507wju5/sdk/jdk-27.0.1.0.2+1/bin/java",
+          "-jar",
+          "/tmp/benchmark-inputs/junit.jar",
+          "execute",
+          "--class-path",
+          "/tmp/java-make-9507wju5/testing/build/classes",
+          "--scan-class-path",
+          "--include-engine",
+          "junit-vintage",
+          "--fail-if-no-tests",
+          "--disable-ansi-colors",
+          "--disable-banner",
+          "--details",
+          "summary"
+        ],
+        "cwd_name": "testing",
+        "exit_code": 1,
+        "stdout": "\nFailures (1):\n  JUnit Vintage:ExampleTest:actualFailure\n    MethodSource [className = 'ExampleTest', methodName = 'actualFailure', methodParameterTypes = '']\n    => java.lang.AssertionError: expected:<1> but was:<2>\n       org.junit.Assert.fail(Assert.java:89)\n       org.junit.Assert.failNotEquals(Assert.java:835)\n       org.junit.Assert.assertEquals(Assert.java:647)\n       org.junit.Assert.assertEquals(Assert.java:633)\n       ExampleTest.actualFailure(ExampleTest.java:1)\n\nTest run finished after 78 ms\n[         2 containers found      ]\n[         0 containers skipped    ]\n[         2 containers started    ]\n[         0 containers aborted    ]\n[         2 containers successful ]\n[         0 containers failed     ]\n[         1 tests found           ]\n[         0 tests skipped         ]\n[         1 tests started         ]\n[         0 tests aborted         ]\n[         0 tests successful      ]\n[         1 tests failed          ]\n\n",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\nNov 13, 2026 6:56:43 AM org.junit.platform.launcher.core.DiscoveryIssueNotifier logIssues\nINFO: TestEngine with ID 'junit-vintage' encountered a non-critical issue during test discovery:\n\n(1) [INFO] The JUnit Vintage engine is deprecated and should only be used temporarily while migrating tests to JUnit Jupiter or another testing framework with native JUnit Platform support.\n"
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "compile"
+        ],
+        "cwd_name": "testing",
+        "exit_code": 0,
+        "stdout": "javac -Xlint:all -encoding UTF-8 -d build/classes -cp \"build/classes:lib/*\" src/test/ExampleTest.java src/Main.java\n",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n"
+      },
+      {
+        "argv": [
+          "/tmp/java-make-9507wju5/sdk/jdk-27.0.1.0.2+1/bin/java",
+          "-jar",
+          "/tmp/benchmark-inputs/junit.jar",
+          "execute",
+          "--class-path",
+          "/tmp/java-make-9507wju5/testing/build/classes",
+          "--scan-class-path",
+          "--include-engine",
+          "junit-vintage",
+          "--fail-if-no-tests",
+          "--disable-ansi-colors",
+          "--disable-banner",
+          "--details",
+          "summary"
+        ],
+        "cwd_name": "testing",
+        "exit_code": 0,
+        "stdout": "\nTest run finished after 29 ms\n[         2 containers found      ]\n[         0 containers skipped    ]\n[         2 containers started    ]\n[         0 containers aborted    ]\n[         2 containers successful ]\n[         0 containers failed     ]\n[         1 tests found           ]\n[         0 tests skipped         ]\n[         1 tests started         ]\n[         0 tests aborted         ]\n[         1 tests successful      ]\n[         0 tests failed          ]\n\n",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\nNov 13, 2026 6:56:45 AM org.junit.platform.launcher.core.DiscoveryIssueNotifier logIssues\nINFO: TestEngine with ID 'junit-vintage' encountered a non-critical issue during test discovery:\n\n(1) [INFO] The JUnit Vintage engine is deprecated and should only be used temporarily while migrating tests to JUnit Jupiter or another testing framework with native JUnit Platform support.\n"
+      },
+      {
+        "argv": [
+          "/tmp/java-make-9507wju5/sdk/jdk-27.0.1.0.2+1/bin/java",
+          "-jar",
+          "/tmp/benchmark-inputs/junit.jar",
+          "execute",
+          "--class-path",
+          "/tmp/java-make-9507wju5/testing/empty-classes",
+          "--scan-class-path",
+          "--include-engine",
+          "junit-vintage",
+          "--fail-if-no-tests",
+          "--disable-ansi-colors",
+          "--disable-banner",
+          "--details",
+          "summary"
+        ],
+        "cwd_name": "testing",
+        "exit_code": 2,
+        "stdout": "\nTest run finished after 61 ms\n[         1 containers found      ]\n[         0 containers skipped    ]\n[         1 containers started    ]\n[         0 containers aborted    ]\n[         1 containers successful ]\n[         0 containers failed     ]\n[         0 tests found           ]\n[         0 tests skipped         ]\n[         0 tests started         ]\n[         0 tests aborted         ]\n[         0 tests successful      ]\n[         0 tests failed          ]\n\n",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n"
+      }
+    ],
+    "sdk_release": {
+      "IMPLEMENTOR": "Eclipse Adoptium",
+      "IMPLEMENTOR_VERSION": "Temurin-27.0.1.0.2+1",
+      "JAVA_VERSION": "27.0.1.0.2",
+      "OS_ARCH": "x86_64",
+      "OS_NAME": "Linux"
+    },
+    "tool_versions": {
+      "java": {
+        "stdout": "openjdk 27.0.1.0.2 2026-10-21\nOpenJDK Runtime Environment Temurin-27.0.1.0.2+1 (build 27.0.1.0.2+1)\nOpenJDK 64-Bit Server VM Temurin-27.0.1.0.2+1 (build 27.0.1.0.2+1, mixed mode, sharing)\n",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n"
+      },
+      "javac": {
+        "stdout": "javac 27.0.1.0.2\n",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n"
+      },
+      "jar": {
+        "stdout": "jar 27.0.1.0.2\n",
+        "stderr": "Picked up JAVA_TOOL_OPTIONS: -Xmx256m -XX:ActiveProcessorCount=1 -Duser.language=en -Duser.country=US\n"
+      }
+    },
+    "junit_version": "6.1.3",
+    "jdk_license_sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726",
+    "model_invocations": 0,
+    "scope": "Source-grounded Java component contracts only; no model efficacy or arbitrary project/build-system qualification."
+  },
+  "program_sha256": "2c9aeb522142513a174f16bc56ac4656db8a15fd276e95a891aacbd179b65a01",
+  "asset_sha256": {
+    "probe.py": "2c9aeb522142513a174f16bc56ac4656db8a15fd276e95a891aacbd179b65a01",
+    "junit.jar": "e62b96ac475dbcde8599ea905d088f65d90778f86e259b856a49fa5c4ea256ec"
+  },
+  "sdk_sha256": "30cb129f6cf299c852cec0feca9ea2a596d2ee9f26d8605d3a253951f6c8b20f",
+  "image_reference": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+  "available_host_ram_before_bytes": 33899024384,
+  "memory_limit_bytes": 2147483648,
+  "tmpfs_limit_bytes": 1073741824,
+  "lease_seconds": 300,
+  "lease_closed": true,
+  "remaining_owned_containers": 0,
+  "images_pulled": 0,
+  "model_invocations": 0,
+  "global_installation": false
+}

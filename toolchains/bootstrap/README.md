@@ -26,11 +26,21 @@ profiles are preserved when a missing or changed component needs recovery.
 Concurrent setup requests share one installation.
 
 `codex` provisions the pinned stable benchmark CLI from its official npm platform
-package, its complete payload and source licenses, checks its version, and returns its executable and runtime
+package, its complete payload, source licenses and unmodified vendor model catalog,
+checks its version, and returns its executable and runtime
 read-root paths as JSON. It installs no Python environment or global application
 and accepts no execution arguments. Use the returned paths for model-free
 context qualification; model trials remain disabled until the complete runner
 boundary is qualified. Provisioning the CLI does not authorize a model request.
+
+The active package and complete payload are pinned in [codex.json](codex.json).
+The [0.169.0 CLI and 0.13.8 installer review](../../artifacts/research/2026-11-13/windows-pydicom-and-stable-tools/review.json)
+records publisher integrity, nine native setup controls and Windows source,
+pytest and grading-handoff checks. It also revokes two earlier candidate
+claims that incorrectly relied on an echoed marker. These controls made no
+real model requests. The earlier
+[0.167.2 catalog review](../../artifacts/research/2026-11-13/native-vendor-catalog/review.json)
+remains historical evidence, not current-version qualification.
 
 The package is extracted with the admitted PowerShell runtime's managed tar
 reader. Setup verifies every declared file and rejects missing, additional,
@@ -75,12 +85,49 @@ exercises automatic CocoIndex installation and retrieval. The
 builds, automatic setup, native browser controls and reuse. Each provider has
 its own isolated profiles and verifies its complete declared runtime inputs.
 
+For a CLI-only update, run
+`./tests/qualify_windows_bootstrap.ps1 -Profile codex`. This selects the same
+CLI installation, reuse, helper, license and vendor catalog recovery, argument refusal,
+concurrent setup and default-cache controls without installing the validation
+toolchain. The report records `qualification_profile: codex`; it does not
+establish Python, Git, Node, JDK or provider readiness. The default `all` profile
+and the setup workflow retain the complete qualification sequence.
+
 The portable shell is pinned in `powershell.json` to Microsoft's stable Windows
 x64 ZIP, its publisher-reported SHA-256 and every extracted file. No installation,
 remoting or policy-registration scripts from that archive are run. Setup uses no
 host PowerShell 7 installation, disables its update and telemetry checks in the
 child process, and keeps module discovery and its analysis cache in the owned
-installation. The original process environment is restored after handoff.
+installation. Handoff leaves the parent's environment unchanged and uses an
+owned Windows job with an explicit executable path, bounded output and process
+budgets. Noninteractive child shells use Windows' multi-threaded apartment mode.
+Architecture admission uses the runtime's OS and process architecture APIs;
+missing or incorrect inherited CPU environment variables do not determine it.
+
+The initial Windows PowerShell stage loads `NativeSupervisor.dll` only after
+checking its byte count, SHA-256 and `OwnedProcess.cs` source pin. It invokes no
+legacy C# compiler; that compiler cannot reliably build under Unicode temporary
+paths. The supervisor handles extended executable and output paths without
+shortening the selected cache path.
+
+After changing `OwnedProcess.cs`, rebuild from the checkout:
+
+```powershell
+./toolchains/bootstrap/build_supervisor.ps1
+./toolchains/bootstrap/build_supervisor.ps1 -Check
+```
+
+The builder automatically admits the pinned portable shell and Microsoft's
+.NET Framework 4.8 reference package into an owned cache. It uses the shell's
+pinned Roslyn compiler and treats reference assemblies as metadata only. Two
+independent compilations must produce identical bytes. `-Check` recompiles and
+checks the tracked binary, source and build-input pins without changing them.
+Native diagnostics remain in `.venv/supervisor-build/`. No installed SDK or
+host PowerShell 7 is required. A missing or corrupt tracked seed must be restored
+before rebuilding; ordinary setup rejects stale source or binary pins. The
+reference package's MIT notice is retained in `FRAMEWORK-REFERENCES-LICENSE.txt`.
+The internal `supervisor-build` provisioning profile accepts no development
+commands or credential forwarding.
 
 Development commands inherit no API credentials by default. When a command needs
 one, select its existing environment variable explicitly before the operation:

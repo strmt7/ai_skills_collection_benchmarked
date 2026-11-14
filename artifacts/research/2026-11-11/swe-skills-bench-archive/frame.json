@@ -1,0 +1,416 @@
+{
+  "batches": [
+    "batch1",
+    "batch2",
+    "batch3",
+    "batch4",
+    "batch5",
+    "batch6",
+    "batch7",
+    "batch8",
+    "batch9",
+    "batch10"
+  ],
+  "schema_version": 1,
+  "skills": {
+    "add-admin-api-endpoint": {
+      "commit": "56a3ec2fb2474025da9541c924b207db98737322",
+      "repository": "tryghost/ghost"
+    },
+    "add-malli-schemas": {
+      "commit": "d8bb291939a60c44d8ba6eb7bb132a5e0f271cf1",
+      "repository": "metabase/metabase"
+    },
+    "add-uint-support": {
+      "commit": null,
+      "repository": null
+    },
+    "analytics-events": {
+      "commit": "d8bb291939a60c44d8ba6eb7bb132a5e0f271cf1",
+      "repository": "metabase/metabase"
+    },
+    "analyze-ci": {
+      "commit": "6cabd8cddd3bfb4657c19ef7119b3293f7866bce",
+      "repository": "getsentry/sentry"
+    },
+    "asyncio-patterns": {
+      "commit": "c41e3b6ea2eccdeb6a32f9755525aecac48ba265",
+      "repository": "aio-libs/aiohttp"
+    },
+    "axum-web-patterns": {
+      "commit": "a95d41386faa9e2b8bd09a684b5e5234d6d5650c",
+      "repository": "shuttle-hq/shuttle"
+    },
+    "bash-defensive-patterns": {
+      "commit": "cd41f794383b6159757575c9debbf198426b21aa",
+      "repository": "koalaman/shellcheck"
+    },
+    "bats-shell-testing": {
+      "commit": "d9faff0d7bc32e7adebc6552446f978118d3ab3b",
+      "repository": "bats-core/bats-core"
+    },
+    "bazel-build-optimization": {
+      "commit": "cca38cb9d3b46e92ea008eea8dfef701efdcbb6b",
+      "repository": "bazelbuild/bazel"
+    },
+    "beautifulsoup-parsing": {
+      "commit": "5449b795251f751efb6067ebe6054aa8afa4e7b4",
+      "repository": "il-vladislav/beautifulsoup4"
+    },
+    "changelog-automation": {
+      "commit": "5a0cbdb6860ffc449e838541faf3f24e10d75722",
+      "repository": "github-changelog-generator/github-changelog-generator"
+    },
+    "cheerio-parsing": {
+      "commit": "4c0065dd8c8a1d20bf6b0df26bd2330f8c9144ed",
+      "repository": "cheeriojs/cheerio"
+    },
+    "clap-cli-patterns": {
+      "commit": "4519153e5e461527f4bca45b042fff45c4ec6fb9",
+      "repository": "burntsushi/ripgrep"
+    },
+    "clojure-write": {
+      "commit": "d8bb291939a60c44d8ba6eb7bb132a5e0f271cf1",
+      "repository": "metabase/metabase"
+    },
+    "cobra-cli-development": {
+      "commit": "352a00e83c1c0a9723c5fb863db1fa65157e4d2a",
+      "repository": "cli/cli"
+    },
+    "creating-financial-models": {
+      "commit": "d570a9170894671bfeac9e815977f7e26ad46c05",
+      "repository": "lballabio/quantlib"
+    },
+    "dbt-transformation-patterns": {
+      "commit": "984005a5ea1f745ecc3238616deebe6d154894fc",
+      "repository": "dbt-labs/dbt-core"
+    },
+    "distributed-tracing": {
+      "commit": "01ca8295bb51a66326354322b829b1e2cd2cf7aa",
+      "repository": "open-telemetry/opentelemetry-collector"
+    },
+    "django-patterns": {
+      "commit": "b6051eb07680de7b1f5609f4bee706b6ceb6de92",
+      "repository": "saleor/saleor"
+    },
+    "drizzle-orm-patterns": {
+      "commit": "38641acef359738f4f33476dfe61efdb7a399faa",
+      "repository": "dubinc/dub"
+    },
+    "fastapi-patterns": {
+      "commit": "13652b51ea0acca7dfe243ac25e2bbdc066f3c4f",
+      "repository": "fastapi/full-stack-fastapi-template"
+    },
+    "fastify-patterns": {
+      "commit": "c647de44cceaf8ec6ce81796374ff6ffd944d873",
+      "repository": "fastify/fastify"
+    },
+    "fix": {
+      "commit": "5f292188e9b427a96d3573b29e5677e4cdce58ea",
+      "repository": "michaelasper/upgradle"
+    },
+    "github-actions-templates": {
+      "commit": "affda94109f2228d5a7f542a28d23272ae31e00b",
+      "repository": "actions/starter-workflows"
+    },
+    "gitlab-ci-patterns": {
+      "commit": "d91b0b33f4c63b5f4b7307059a9b70d9b82a7b41",
+      "repository": "gitlabhq/gitlabhq"
+    },
+    "gitops-workflow": {
+      "commit": "d9f51d047dbb2e3184539ca40740f7b6f808f8d7",
+      "repository": "fluxcd/flux2"
+    },
+    "go-cache-hot": {
+      "commit": "73dffb5b27265dbaccc13645c3336628e3b27971",
+      "repository": "samber/hot"
+    },
+    "go-concurrency-patterns": {
+      "commit": "329127db328cb3282b51e43bf1d327f76c832602",
+      "repository": "hashicorp/consul"
+    },
+    "go-errors-oops": {
+      "commit": "c57d8644bc0dd7ca0c0ac22ae5cf37075f1e7c44",
+      "repository": "samber/oops"
+    },
+    "go-fx-di": {
+      "commit": "d5da5b04ac906bfbad8b400baeee9b970c1be6f3",
+      "repository": "uber-go/fx"
+    },
+    "go-monads-mo": {
+      "commit": "35a143a391a281ca954b388bd8c6795ea1ee1955",
+      "repository": "samber/mo"
+    },
+    "go-swagger-codegen": {
+      "commit": "fa1d2c801b35b1ee6d7baa0187580eb898c6e79c",
+      "repository": "swaggo/swag"
+    },
+    "go-testify-patterns": {
+      "commit": "7e3f57b40b4e055206581d98c5f56a8ef010873e",
+      "repository": "hashicorp/terraform"
+    },
+    "grafana-dashboards": {
+      "commit": "311636cc570127168117962c2f4e258a09d5eb2b",
+      "repository": "grafana/grafana"
+    },
+    "graphql-schema-design": {
+      "commit": "64c0e1bb5d79d571bf448c35aea0b31097e6ce9d",
+      "repository": "apollographql/apollo-server"
+    },
+    "grpc-service-definition": {
+      "commit": "f3815932116c5d2edb91be9f0a63c7dc50127dc0",
+      "repository": "etcd-io/etcd"
+    },
+    "hono-patterns": {
+      "commit": "e50df01453e71b071c3e6136b161b160b9fdf916",
+      "repository": "honojs/hono"
+    },
+    "implementing-agent-modes": {
+      "commit": "ded7ef313da2a3b04ff0af9e781619a30dae3517",
+      "repository": "posthog/posthog"
+    },
+    "implementing-jsc-classes-zig": {
+      "commit": "2e610b1402f5cc17f11803b01b87cbc59f563fab",
+      "repository": "oven-sh/bun"
+    },
+    "istio-traffic-management": {
+      "commit": "f9e2236290e696a1ffae4c6c4e41ec3253fafb1e",
+      "repository": "istio/istio"
+    },
+    "jest-advanced-patterns": {
+      "commit": "142cfde89edab3d4eabd6335458b4c8736cebfb6",
+      "repository": "facebook/react"
+    },
+    "junit5-testing": {
+      "commit": "599a282171ae8b61bb24a8cfaabccf1279d0b9b1",
+      "repository": "junit-team/junit5"
+    },
+    "k8s-manifest-generator": {
+      "commit": "29bf16c673061f95dedeb502f5700cedc9cfe1f8",
+      "repository": "kubernetes-sigs/kustomize"
+    },
+    "kysely-query-builder": {
+      "commit": "5442d955c030a9d3fb9581a817e76a43f7a1d8b6",
+      "repository": "kysely-org/kysely"
+    },
+    "langsmith-fetch": {
+      "commit": "5fd07f7f94645c4298cd917b586b7ba5e2b2ce43",
+      "repository": "langchain-ai/langchain"
+    },
+    "linkerd-patterns": {
+      "commit": "00344cfe03011638f2ad7b2012ccc0969a1f0486",
+      "repository": "linkerd/linkerd2"
+    },
+    "llm-evaluation": {
+      "commit": "2fd9c305bf6bbcdcd0e86fb5069e185de29f0e41",
+      "repository": "stanford-crfm/helm"
+    },
+    "mcp-builder": {
+      "commit": "f4244583a6af9425633e433a3eec000d23f4e011",
+      "repository": "modelcontextprotocol/servers"
+    },
+    "mypy-type-checking": {
+      "commit": "8dcc4865c8f9a2769411db5638927696172cdf75",
+      "repository": "psf/black"
+    },
+    "networkx-graph-algorithms": {
+      "commit": "489d5e65af00cc61e49d4a150cb9302d45805332",
+      "repository": "networkx/networkx"
+    },
+    "nx-workspace-patterns": {
+      "commit": "b3cb4d826144ceadce28dda7f614fd357bc61fd0",
+      "repository": "nrwl/nx"
+    },
+    "pandas-dataframe-patterns": {
+      "commit": "c4cc973ffccc06f30d4edb5092f5f42c7d476a3e",
+      "repository": "pandas-dev/pandas"
+    },
+    "pillow-image-processing": {
+      "commit": "701d40433650269af4607824e07309243a20d354",
+      "repository": "python-pillow/pillow"
+    },
+    "polars-dataframe": {
+      "commit": "eb9f06745b9392ad6e12cd214c9874a2688ccdd4",
+      "repository": "pola-rs/polars"
+    },
+    "prisma-schema-patterns": {
+      "commit": "e9c6d0ee462d974740e71f5355cd36b72594352c",
+      "repository": "calcom/cal.com"
+    },
+    "prometheus-configuration": {
+      "commit": "df61021436e3aa53917a76ae8a4599d2c7fe6097",
+      "repository": "prometheus/prometheus"
+    },
+    "prompt-engineering-patterns": {
+      "commit": "5fd07f7f94645c4298cd917b586b7ba5e2b2ce43",
+      "repository": "langchain-ai/langchain"
+    },
+    "pydicom-dicom-parsing": {
+      "commit": "f15214fb9bc83d063f481552c487b02b28bfb7cc",
+      "repository": "pydicom/pydicom"
+    },
+    "pytest-plugin-development": {
+      "commit": "916a7598e51d321abddb851bc9ed356bf11b0534",
+      "repository": "pytest-dev/pytest"
+    },
+    "python-anti-patterns": {
+      "commit": "207651ee6055aabd0d9cdeac2e00140cdc208d44",
+      "repository": "mahmoud/boltons"
+    },
+    "python-background-jobs": {
+      "commit": "c38600d429eb0d457ce57ae4ec6b52fe9e40a28d",
+      "repository": "celery/celery"
+    },
+    "python-configuration": {
+      "commit": "937d3075f9456dfcdfe2e1f6bc3b8b7b9a6c6cad",
+      "repository": "fastapi/fastapi"
+    },
+    "python-observability": {
+      "commit": "742593b01f47cc47a8bc8d8f3057297258357192",
+      "repository": "open-telemetry/opentelemetry-python"
+    },
+    "python-packaging": {
+      "commit": "5d3ab595f9e1d564e7c48a2253c96ac38444ae63",
+      "repository": "pypa/packaging"
+    },
+    "python-performance-optimization": {
+      "commit": "5e14e32f8d43be38cf538cd104531494f508c6d4",
+      "repository": "benfred/py-spy"
+    },
+    "python-resilience": {
+      "commit": "b5addb64f0161ff6bfe94c124ef76f6a1fba5254",
+      "repository": "encode/httpx"
+    },
+    "rag-implementation": {
+      "commit": "5fd07f7f94645c4298cd917b586b7ba5e2b2ce43",
+      "repository": "langchain-ai/langchain"
+    },
+    "react-hook-form-patterns": {
+      "commit": "1e00a1b18643d6de6cd9a92bcb05b996ac163455",
+      "repository": "react-hook-form/react-hook-form"
+    },
+    "risk-metrics-calculation": {
+      "commit": "4b901f6d73aa02ceb6d04b7d83502e5c6f2e81aa",
+      "repository": "quantopian/pyfolio"
+    },
+    "samber-lo-functional": {
+      "commit": "0875232f823bde660d71f5787c55021e96e5f150",
+      "repository": "samber/lo"
+    },
+    "scipy-scientific-computing": {
+      "commit": "94070c2f3540a1a949876ca61c5f877212874e90",
+      "repository": "scipy/scipy"
+    },
+    "security-review": {
+      "commit": "b307200149ae92d0d95dfde82e320d5401148dcf",
+      "repository": "babybuddy/babybuddy"
+    },
+    "sequelize-orm": {
+      "commit": "8260c2905e22f92b8c908023faaf4ad99994981c",
+      "repository": "sequelize/sequelize"
+    },
+    "service-mesh-observability": {
+      "commit": "00344cfe03011638f2ad7b2012ccc0969a1f0486",
+      "repository": "linkerd/linkerd2"
+    },
+    "similarity-search-patterns": {
+      "commit": "4bec0269ee2a32c8df31d4c7d97cde4971e5ba14",
+      "repository": "milvus-io/milvus"
+    },
+    "slo-implementation": {
+      "commit": "771848d6b7eeccfebb939042f5aa27463ee5d426",
+      "repository": "google/slo-generator"
+    },
+    "spark-optimization": {
+      "commit": "932f9f70d2e6b5495c80a6cc53397aa1343d342b",
+      "repository": "apache/spark"
+    },
+    "springboot-tdd": {
+      "commit": "edf4db28affcc4741c79850a3d95bc3f177b5ff9",
+      "repository": "spring-projects/spring-petclinic"
+    },
+    "sqlalchemy-orm-patterns": {
+      "commit": "e2437d8db8c8d12eaf23b7800b58ed3e9ea50353",
+      "repository": "getredash/redash"
+    },
+    "statsmodels-regression": {
+      "commit": "899f4a4553ed28350319cb5100b4569fcf67babc",
+      "repository": "statsmodels/statsmodels"
+    },
+    "sympy-symbolic-math": {
+      "commit": "ba8647df9546cfb1ab15d7d2fcb573ae60203be7",
+      "repository": "sympy/sympy"
+    },
+    "tanstack-query-patterns": {
+      "commit": "763782a2403aefaa52ce76601cf0f4912045be34",
+      "repository": "tanstack/query"
+    },
+    "tdd-workflow": {
+      "commit": "a1a2d04ae69bd50aba9dac2783737dfda8f048c9",
+      "repository": "tdd-starters/python"
+    },
+    "terraform-module-patterns": {
+      "commit": "3ffbd46fb1c7733e1b34d8666893280454e27436",
+      "repository": "terraform-aws-modules/terraform-aws-vpc"
+    },
+    "terraform-testing": {
+      "commit": "3ffbd46fb1c7733e1b34d8666893280454e27436",
+      "repository": "terraform-aws-modules/terraform-aws-vpc"
+    },
+    "trpc-patterns": {
+      "commit": "c7360d4eb3c89c336468809a293e5cda4b302d4b",
+      "repository": "trpc/trpc"
+    },
+    "turborepo": {
+      "commit": "2e2f8c37bb705163831718aac69bc4c7ae1f7372",
+      "repository": "vercel/turbo"
+    },
+    "typeorm-patterns": {
+      "commit": "b6b64e4151513b3369c12001eee4968046b0183f",
+      "repository": "typeorm/typeorm"
+    },
+    "v3-performance-optimization": {
+      "commit": "abd9943b66704f650ea1485a17126cd3817d1b1d",
+      "repository": "dao-ailab/flash-attention"
+    },
+    "valibot-validation": {
+      "commit": "c05bf954ada47d5ff953cdfad905cc701b25719c",
+      "repository": "fabian-hiller/valibot"
+    },
+    "vector-index-tuning": {
+      "commit": "0759009bd7ddf290170c930c70a722badd05aa7d",
+      "repository": "facebookresearch/faiss"
+    },
+    "viper-configuration": {
+      "commit": "72b85d5f9c2d40c06b81d496cd3ccf1f2105c383",
+      "repository": "gohugoio/hugo"
+    },
+    "vitest-unit-testing": {
+      "commit": "30028f94516fa06dd0212567373169b3b3f6e393",
+      "repository": "vitejs/vite"
+    },
+    "xlsx": {
+      "commit": "c55988e4904d4337ce4c35ab8b7dc305bca9de23",
+      "repository": "ericgazoni/openpyxl"
+    },
+    "xstate-state-machine": {
+      "commit": "e5435993b2dee17c0808c2997665df696865aebd",
+      "repository": "statelyai/xstate"
+    },
+    "zod-schema-validation": {
+      "commit": "e9c6d0ee462d974740e71f5355cd36b72594352c",
+      "repository": "calcom/cal.com"
+    },
+    "zustand-state-management": {
+      "commit": "566b5bf448f4354eb8e35c6243ea3772bdb3be96",
+      "repository": "pmndrs/zustand"
+    }
+  },
+  "source_commit": "4d3450d9216a590a8726fcb3604b5143daca776b",
+  "tables": {
+    "claude__Kimi-K2.6_cells.csv": "0f3f79c0b5df8d622f3477e6a5a61c1968ad8eed7b12f56ff71f9e5bfde85d16",
+    "claude__haiku-4-5_cells.csv": "645f4375e356361b2a9e6f8b7e3b3514377a2f815278df1317d1851a60ea36cb",
+    "codex__Kimi-K2.6_cells.csv": "7952d88b168c82ce92233e82c5f46ad2c03a459a51b8eab88fd24220a81e216b",
+    "codex__gpt-5.4-mini_cells.csv": "5537589bee18655f4d78a3f4ce574461e98b769ce4275b437502796532d5a348"
+  }
+}

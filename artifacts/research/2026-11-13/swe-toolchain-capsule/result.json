@@ -1,0 +1,138 @@
+{
+  "observation": {
+    "passed": true,
+    "cases": [
+      {
+        "case": "task-user-reads-complete-frozen-sdk",
+        "inventory_sha256": "2945874d41141c55d58e27a9e0a3bdbd6f344b79f126dd323123c48b1cfc6bc2",
+        "objects": 5867
+      },
+      {
+        "case": "sdk-write-open-rejected",
+        "rejected": true
+      },
+      {
+        "case": "sdk-mode-change-rejected",
+        "rejected": true
+      },
+      {
+        "case": "sdk-new-file-rejected",
+        "rejected": true
+      },
+      {
+        "case": "sdk-node-version",
+        "version": "v22.23.5"
+      },
+      {
+        "case": "base-node-unchanged",
+        "version": "v20.20.0"
+      },
+      {
+        "case": "bundled-npm-version",
+        "version": "10.9.9"
+      },
+      {
+        "case": "npm-child-uses-capsule",
+        "major": 22
+      },
+      {
+        "case": "wrong-major-rejected",
+        "exit_code": 1
+      },
+      {
+        "case": "task-output-remains-writable",
+        "created": true
+      },
+      {
+        "case": "complete-sdk-unchanged-after-task-use",
+        "inventory_sha256": "2945874d41141c55d58e27a9e0a3bdbd6f344b79f126dd323123c48b1cfc6bc2"
+      }
+    ],
+    "records": [
+      {
+        "case": "sdk-node-version",
+        "argv": [
+          "/tmp/benchmark-node22-capsule/node-v22.23.5-linux-x64/bin/node",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "v22.23.5\n",
+        "stderr": ""
+      },
+      {
+        "case": "base-node-unchanged",
+        "argv": [
+          "/usr/bin/node",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "v20.20.0\n",
+        "stderr": ""
+      },
+      {
+        "case": "bundled-npm-version",
+        "argv": [
+          "/tmp/benchmark-node22-capsule/node-v22.23.5-linux-x64/bin/node",
+          "/tmp/benchmark-node22-capsule/node-v22.23.5-linux-x64/lib/node_modules/npm/bin/npm-cli.js",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "10.9.9\n",
+        "stderr": ""
+      },
+      {
+        "case": "npm-child-uses-capsule",
+        "argv": [
+          "/tmp/benchmark-node22-capsule/node-v22.23.5-linux-x64/bin/node",
+          "/tmp/benchmark-node22-capsule/node-v22.23.5-linux-x64/lib/node_modules/npm/bin/npm-cli.js",
+          "--offline",
+          "run",
+          "--loglevel=error",
+          "test"
+        ],
+        "exit_code": 0,
+        "stdout": "\n> sdk-capsule-control@0.0.0 test\n> node check.cjs\n\nCAPSULE_CONTROL={\"major\":22,\"executable\":\"/tmp/benchmark-node22-capsule/node-v22.23.5-linux-x64/bin/node\"}\n",
+        "stderr": ""
+      },
+      {
+        "case": "wrong-major-rejected",
+        "argv": [
+          "/usr/bin/node",
+          "/tmp/capsule-task-h67gc4qo/check.cjs"
+        ],
+        "exit_code": 1,
+        "stdout": "",
+        "stderr": "node:assert:90\n  throw new AssertionError(obj);\n  ^\n\nAssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'20' !== '22'\n\n    at Object.<anonymous> (/tmp/capsule-task-h67gc4qo/check.cjs:1:51)\n    at Module._compile (node:internal/modules/cjs/loader:1521:14)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)\n    at Module.load (node:internal/modules/cjs/loader:1266:32)\n    at Module._load (node:internal/modules/cjs/loader:1091:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12)\n    at node:internal/main/run_main_module:28:49 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: '20',\n  expected: '22',\n  operator: 'strictEqual'\n}\n\nNode.js v20.20.0\n"
+      }
+    ],
+    "inventory_sha256": "2945874d41141c55d58e27a9e0a3bdbd6f344b79f126dd323123c48b1cfc6bc2",
+    "sdk_objects": 5867,
+    "task_uid": 1001,
+    "model_invocations": 0,
+    "task_or_scorer_executed": false,
+    "runtime_admitted": false,
+    "scope": "Source-derived Node 22 capsule component controls only. Native Windows subject access, selected task dependencies, scorer and complete experiment admission remain unqualified."
+  },
+  "archive_sha256": "c54118104acc524633b5abe106bbf44a53126ec8b4e5fa105cb92b5d7de8a1a1",
+  "setup_program_sha256": "75054648129f9b9cc47877cbb111d76e5eea5f2e0cc258462448a0c65b42af2a",
+  "probe_program_sha256": "4470324e7c85c5f5c0c234475558bf54d758feef34923a5a4e56fcc0958ec616",
+  "common_program_sha256": "93223e00a5cf90f0064570d2d5442b7bdab22db38b4a07e5fddb4c915d652403",
+  "complete_inventory_sha256": "2945874d41141c55d58e27a9e0a3bdbd6f344b79f126dd323123c48b1cfc6bc2",
+  "native_inventory_receipt_sha256": "82fd3c66ebfd15d2962b68a119327d84befc355b11a760fda61a4d5cf5100548",
+  "license_sha256": "c738ae413cf561f174e34f6961f8ca458aae2369a73640dda6234c629b98bcc4",
+  "image_reference": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+  "image_id": "sha256:bcd148db78f6860c1e31f59a736d8239bb564598207da7a5ecf87f269ab46e29",
+  "lease_closed": true,
+  "remaining_owned_containers": 0,
+  "images_pulled": 0,
+  "images_created": 0,
+  "global_installation": false,
+  "available_host_ram_before_bytes": 28457254912,
+  "memory_limit_bytes": 1073741824,
+  "tmpfs_limit_bytes": 536870912,
+  "cpus": 1,
+  "lease_seconds": 180,
+  "task_packet_budget_changed": false,
+  "model_invocations": 0,
+  "runtime_admitted": false
+}

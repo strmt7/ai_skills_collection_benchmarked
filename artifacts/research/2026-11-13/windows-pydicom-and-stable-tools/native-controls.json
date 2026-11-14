@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "controls": [
+    {
+      "control": "maintained-windows-source-pytest-handoff-v3",
+      "native_tool_exit_code": 0,
+      "junit_testcases_passed": 1,
+      "source_files_preserved": 541,
+      "collected_files": 543,
+      "original_linux_native_counts": {
+        "passed": 0,
+        "failed": 18,
+        "skipped": 0,
+        "errors": 0,
+        "total": 18
+      },
+      "original_publisher_scorer_executed": true,
+      "native_receipt_sha256": {
+        "qualification.json": "3c1f3e619bd8c35265346554e255da27fb8ed947c0ab541ab661f427f18159d3",
+        "attempt/transcript.jsonl": "41d7567018e81314bf032f30b8f31fc14a226eff23c6e63b36f2283120245f69",
+        "attempt/process.json": "00a5a38258f066957314b4f92a0af6f63a95d91fec918d0bb37c4aafbe3096cb",
+        "attempt/collection/result.json": "a01afe6410c7c24c96facfe9a248aa979196b921027736653f7f59fc103f9677",
+        "attempt/grading/result.json": "d78b931ba8ed85909ad8912349d000b34af7fb70a507398739f71c4aba1ae902",
+        "attempt/submission/qualification-environment-results.xml": "32a76d65f5f9a0c49059f2419e2bc766aeda57fd400187c4912bf85dad8d91af"
+      },
+      "listener_stopped": true,
+      "temporary_owned_roots_removed": true,
+      "model_invocations": 0,
+      "counted_attempts": 0
+    },
+    {
+      "control": "maintained-windows-source-pytest-handoff-v4",
+      "native_tool_exit_code": 0,
+      "junit_testcases_passed": 1,
+      "source_files_preserved": 541,
+      "collected_files": 543,
+      "original_linux_native_counts": {
+        "passed": 0,
+        "failed": 18,
+        "skipped": 0,
+        "errors": 0,
+        "total": 18
+      },
+      "original_publisher_scorer_executed": true,
+      "native_receipt_sha256": {
+        "qualification.json": "b5fe3008c59227e1397d69800c4ab77dfe9ca98f6b7b46b1063457befe2ee158",
+        "attempt/transcript.jsonl": "8e8e743c3e5a25947534fea45cd4d8387bb79e2b68235b4a457fecac3d480c39",
+        "attempt/process.json": "16811c04b0170682f05824f169c17dfeaf894d29928004c9ac4fadef577ac71e",
+        "attempt/collection/result.json": "4651fa6383cc4053c25605b6fd1da63e4c3b5f9196413072b29e36a27410526e",
+        "attempt/grading/result.json": "5abec9ba6ed1d92906c67d23d8c7ca06a724d70ce2feab8ca388e17bf8688f24",
+        "attempt/submission/qualification-environment-results.xml": "a14b73fcc0441394d46d92dfe13e5ea4620d80d9b1c3f7588e88db0358d04659"
+      },
+      "listener_stopped": true,
+      "temporary_owned_roots_removed": true,
+      "model_invocations": 0,
+      "counted_attempts": 0
+    }
+  ],
+  "classification": "Scripted environment and handoff qualification; original-task diagnostic failures are not model results."
+}

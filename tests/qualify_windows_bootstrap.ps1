@@ -1,4 +1,7 @@
-param([string]$OutputDirectory)
+param(
+    [string]$OutputDirectory,
+    [ValidateSet('all','codex')][string]$Profile = 'all'
+)
 
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
@@ -57,7 +60,8 @@ function Host-State {
     return [ordered]@{user_path=[Environment]::GetEnvironmentVariable('PATH','User'); machine_path=[Environment]::GetEnvironmentVariable('PATH','Machine'); python_registry=$registry}
 }
 
-$sourceNames = @('dev.ps1', 'toolchains/bootstrap/bootstrap.ps1', 'toolchains/bootstrap/powershell.json', 'toolchains/bootstrap/codex.json', 'toolchains/bootstrap/OwnedProcess.cs', 'toolchains/bootstrap/NativeCabinet.cs', 'toolchains/bootstrap/ArchiveLayers.ps1', 'tools/_bootstrap_archive.py', 'toolchains/bootstrap/manifest.json', 'toolchains/bootstrap/requirements.txt', 'tools/_bootstrap_doctor.py', 'tools/_bootstrap_launch.py', 'requirements-dev-lock.txt', 'requirements-reports-lock.txt', 'tests/qualify_windows_bootstrap.ps1')
+$sourceNames = @('dev.ps1', 'pyproject.toml', 'toolchains/bootstrap/bootstrap.ps1', 'toolchains/bootstrap/powershell.json', 'toolchains/bootstrap/codex.json', 'toolchains/bootstrap/OwnedProcess.cs', 'toolchains/bootstrap/NativeSupervisor.dll', 'toolchains/bootstrap/supervisor.json', 'toolchains/bootstrap/CompileSupervisor.ps1', 'toolchains/bootstrap/build_supervisor.ps1', 'toolchains/bootstrap/framework-references.json', 'toolchains/bootstrap/FRAMEWORK-REFERENCES-LICENSE.txt', 'toolchains/bootstrap/NativeCabinet.cs', 'toolchains/bootstrap/ArchiveLayers.ps1', 'tools/_bootstrap_archive.py', 'toolchains/bootstrap/manifest.json', 'toolchains/bootstrap/requirements.txt', 'tools/_bootstrap_doctor.py', 'tools/_bootstrap_launch.py', 'requirements-dev-lock.txt', 'requirements-reports-lock.txt', 'tests/qualify_windows_bootstrap.ps1')
+if($Profile -eq 'all'){$sourceNames+=@('tests/test_ci_transport.py','.gitattributes','benchmarks/agent-effectiveness/development/protocol-v2.json','artifacts/agent-trials/development-v2/repetition-1/default/result.json')}
 $sources = [ordered]@{}
 foreach ($name in $sourceNames) { $sources[$name] = (Get-FileHash -LiteralPath (Join-Path $root $name) -Algorithm SHA256).Hash.ToLowerInvariant() }
 $before = Host-State
@@ -101,6 +105,32 @@ function Invoke-NativeControl([string]$Name, [string[]]$Arguments, [int]$Seconds
 
 $failure = $null
 try {
+    $buildArguments=@('-NoLogo','-NoProfile','-NonInteractive','-File',(Join-Path $root 'toolchains/bootstrap/build_supervisor.ps1'),'-Check','-CacheRoot',$cache,'-OutputDirectory',(Join-Path $output 'supervisor-build'))
+    $buildProcess=[SkillsBootstrap.OwnedProcess]::Run($shell,$buildArguments,$root,$environment,(Join-Path $output 'supervisor-build.stdout.native'),(Join-Path $output 'supervisor-build.stderr.native'),900,2097152,4294967296,64)
+    $controls.Add(@{name='supervisor-reproducible-build';process=$buildProcess})
+    if($buildProcess.exit_code -ne 0 -or $null -ne $buildProcess.termination_reason -or $buildProcess.active_processes_after_cleanup -ne 0){throw 'Native supervisor reproducible build failed'}
+    $admissionFixture=Join-Path $privateTemporary 'supervisor-admission-fixture'
+    foreach($name in $sourceNames){
+        $target=Join-Path $admissionFixture $name
+        [void][IO.Directory]::CreateDirectory([IO.Path]::GetDirectoryName($target))
+        [IO.File]::WriteAllBytes($target,[IO.File]::ReadAllBytes((Join-Path $root $name)))
+    }
+    $fixtureLibrary=Join-Path $admissionFixture 'toolchains/bootstrap/NativeSupervisor.dll'
+    $fixtureSource=Join-Path $admissionFixture 'toolchains/bootstrap/OwnedProcess.cs'
+    foreach($case in @('binary','source')){
+        $selected=if($case -eq 'binary'){$fixtureLibrary}else{$fixtureSource}
+        $original=[IO.File]::ReadAllBytes($selected)
+        try{
+            $changed=[byte[]]$original.Clone(); $changed[$changed.Length-1]=$changed[$changed.Length-1] -bxor 1
+            [IO.File]::WriteAllBytes($selected,$changed)
+            $arguments=@('-NoLogo','-NoProfile','-NonInteractive','-File',(Join-Path $admissionFixture 'toolchains/bootstrap/bootstrap.ps1'),'-Root',$admissionFixture,'-Profile','codex','-CacheRoot',(Join-Path $admissionFixture '.venv/must-not-create'))
+            $name='supervisor-reject-'+$case
+            $process=[SkillsBootstrap.OwnedProcess]::Run($shell,$arguments,$root,$environment,(Join-Path $output ($name+'.stdout.native')),(Join-Path $output ($name+'.stderr.native')),30,1048576,536870912,16)
+            $controls.Add(@{name=$name;process=$process})
+            if($process.exit_code -ne 1 -or $null -ne $process.termination_reason -or $process.active_processes_after_cleanup -ne 0 -or -not [IO.File]::ReadAllText((Join-Path $output ($name+'.stderr.native'))).Contains('native supervisor differs from its source or binary pin')){throw 'Changed supervisor input was not rejected for its admission failure'}
+            if([IO.Directory]::Exists((Join-Path $admissionFixture '.venv/must-not-create'))){throw 'Supervisor admission mutated a cache before rejecting changed bytes'}
+        }finally{[IO.File]::WriteAllBytes($selected,$original)}
+    }
     $cliFresh = (Invoke-Control 'codex-fresh' @('codex')) | ConvertFrom-Json
     $cliReuse = (Invoke-Control 'codex-reuse' @('codex')) | ConvertFrom-Json
     $cliPin = [IO.File]::ReadAllText((Join-Path $root 'toolchains/bootstrap/codex.json')) | ConvertFrom-Json
@@ -122,6 +152,11 @@ try {
     [IO.File]::Move($license,($license+'.qualification-original'))
     $cliLicensed=(Invoke-Control 'codex-missing-license' @('codex')) | ConvertFrom-Json
     if ($cliLicensed.cli -cne $cliRecovered.cli -or (Get-FileHash -LiteralPath $license -Algorithm SHA256).Hash.ToLowerInvariant() -cne $cliPin.resources.LICENSE.sha256) { throw 'Missing CLI license was not restored in its admitted profile' }
+    $catalog=Join-Path $cliLicensed.package_root 'models.json'
+    if (-not $catalog.StartsWith(($cliTools+'\'),[StringComparison]::OrdinalIgnoreCase)) { throw 'The model catalog fixture escaped its owned cache' }
+    [IO.File]::Move($catalog,($catalog+'.qualification-original'))
+    $cliCatalog=(Invoke-Control 'codex-missing-model-catalog' @('codex')) | ConvertFrom-Json
+    if ($cliCatalog.cli -cne $cliLicensed.cli -or (Get-FileHash -LiteralPath $catalog -Algorithm SHA256).Hash.ToLowerInvariant() -cne $cliPin.resources.'models.json'.sha256) { throw 'Missing vendor model catalog was not restored in its admitted profile' }
     [void](Invoke-Control 'codex-execution-arguments' @('codex','exec','must-not-run') 1)
     [void](Invoke-Control 'codex-credential-forwarding' @('--credential-env','AI_SKILLS_QUALIFICATION_TOKEN','codex') 1)
     $cliCommand=[string[]]@('-NoLogo','-NoProfile','-NonInteractive','-File',$entry,'--cache-root',$cache,'codex')
@@ -138,54 +173,68 @@ try {
     if ($defaultProcess.exit_code -ne 0 -or $null -ne $defaultProcess.termination_reason -or $defaultProcess.active_processes_after_cleanup -ne 0) { throw 'Default CLI setup failed ownership or readiness' }
     $defaultCli=[IO.File]::ReadAllText((Join-Path $output 'codex-default.stdout.native')) | ConvertFrom-Json
     if (-not $defaultCli.ready -or -not $defaultCli.cli.StartsWith(((Join-Path $root '.venv/cli')+'\'),[StringComparison]::OrdinalIgnoreCase)) { throw 'The default CLI cache is not bound to this checkout' }
-    $fresh = (Invoke-Control 'fresh' @('doctor')) | ConvertFrom-Json
-    $reuse = (Invoke-Control 'reuse' @('doctor')) | ConvertFrom-Json
-    if (-not $fresh.ready -or -not $fresh.newly_installed -or $reuse.newly_installed -or $fresh.packages -cne $reuse.packages) { throw 'Fresh setup or reuse differs from the independent contract' }
-    $version = (Invoke-Control 'single-option' @('python','--version')).Trim()
-    $manifest = [IO.File]::ReadAllText((Join-Path $root 'toolchains/bootstrap/manifest.json')) | ConvertFrom-Json
-    if (($version -split '\s+',2)[0] -cne $manifest.profiles.validation.python) { throw 'The single-option command was not preserved' }
-    $singleScript = Join-Path $output 'single-script.py'
-    [IO.File]::WriteAllText($singleScript,"print('single script command')`n",$utf8)
-    if ((Invoke-Control 'single-script' @('python',$singleScript)).Trim() -cne 'single script command') { throw 'The single-script command was not preserved' }
-    $values = @('', 'a"b', 'trailing\', ('Unicode '+[char]0x03bb))
-    $arguments = (Invoke-Control 'arguments' (@('python','-c','import json,sys;print(json.dumps(sys.argv[1:]))') + $values)) | ConvertFrom-Json
-    if ($arguments.Count -ne $values.Count) { throw 'Command argument count changed' }
-    for ($index=0; $index -lt $values.Count; $index++) { if ($arguments[$index] -cne $values[$index]) { throw 'Command argument bytes changed' } }
-    $context = @{entry=$entry; cache=$cache} | ConvertTo-Json -Compress
-    $context = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($context))
-    $program = @'
+    if ($Profile -eq 'all') {
+        $fresh = (Invoke-Control 'fresh' @('doctor')) | ConvertFrom-Json
+        $reuse = (Invoke-Control 'reuse' @('doctor')) | ConvertFrom-Json
+        if (-not $fresh.ready -or -not $fresh.newly_installed -or $reuse.newly_installed -or $fresh.packages -cne $reuse.packages) { throw 'Fresh setup or reuse differs from the independent contract' }
+        $architectureEnvironment=@{}
+        foreach($name in @('PROCESSOR_ARCHITECTURE','PROCESSOR_ARCHITEW6432')){
+            $architectureEnvironment[$name]=if($environment.ContainsKey($name)){$environment[$name]}else{$null}
+        }
+        try{
+            foreach($name in $architectureEnvironment.Keys){[void]$environment.Remove($name)}
+            $missingArchitecture=(Invoke-Control 'missing-architecture-environment' @('doctor'))|ConvertFrom-Json
+            $environment['PROCESSOR_ARCHITECTURE']='ARM64'; $environment['PROCESSOR_ARCHITEW6432']='x86'
+            $wrongArchitecture=(Invoke-Control 'wrong-architecture-environment' @('doctor'))|ConvertFrom-Json
+            if(-not $missingArchitecture.ready -or -not $wrongArchitecture.ready -or $missingArchitecture.newly_installed -or $wrongArchitecture.newly_installed){throw 'Architecture detection depends on ambient CPU variables'}
+        }finally{
+            foreach($name in $architectureEnvironment.Keys){if($null -eq $architectureEnvironment[$name]){[void]$environment.Remove($name)}else{$environment[$name]=$architectureEnvironment[$name]}}
+        }
+        $version = (Invoke-Control 'single-option' @('python','--version')).Trim()
+        $manifest = [IO.File]::ReadAllText((Join-Path $root 'toolchains/bootstrap/manifest.json')) | ConvertFrom-Json
+        if (($version -split '\s+',2)[0] -cne $manifest.profiles.validation.python) { throw 'The single-option command was not preserved' }
+        $singleScript = Join-Path $output 'single-script.py'
+        [IO.File]::WriteAllText($singleScript,"print('single script command')`n",$utf8)
+        if ((Invoke-Control 'single-script' @('python',$singleScript)).Trim() -cne 'single script command') { throw 'The single-script command was not preserved' }
+        $values = @('', 'a"b', 'trailing\', ('Unicode '+[char]0x03bb))
+        $arguments = (Invoke-Control 'arguments' (@('python','-c','import json,sys;print(json.dumps(sys.argv[1:]))') + $values)) | ConvertFrom-Json
+        if ($arguments.Count -ne $values.Count) { throw 'Command argument count changed' }
+        for ($index=0; $index -lt $values.Count; $index++) { if ($arguments[$index] -cne $values[$index]) { throw 'Command argument bytes changed' } }
+        $context = @{entry=$entry; cache=$cache} | ConvertTo-Json -Compress
+        $context = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($context))
+        $program = @'
 $data = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String('__CONTEXT__')) | ConvertFrom-Json
 & $data.entry --cache-root $data.cache python -c 'import json,sys;print(json.dumps(sys.argv[1:]))' 2 '02' -3 1.25 $false
 exit $LASTEXITCODE
 '@
-    $program = $program.Replace('__CONTEXT__',$context)
-    $encoded = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes($program))
-    $process = [SkillsBootstrap.OwnedProcess]::Run($shell,@('-NoLogo','-NoProfile','-NonInteractive','-EncodedCommand',$encoded),$root,$environment,(Join-Path $output 'powershell-values.stdout.native'),(Join-Path $output 'powershell-values.stderr.native'),120,1048576,2147483648,32)
-    $controls.Add(@{name='powershell-values'; process=$process})
-    if ($process.exit_code -ne 0 -or $null -ne $process.termination_reason -or $process.active_processes_after_cleanup -ne 0) { throw 'Direct PowerShell invocation failed' }
-    $observed = [IO.File]::ReadAllText((Join-Path $output 'powershell-values.stdout.native')) | ConvertFrom-Json
-    $expected = @('2','02','-3','1.25','False')
-    if ($observed.Count -ne $expected.Count) { throw 'Direct PowerShell argument count changed' }
-    for ($index=0; $index -lt $expected.Count; $index++) { if ($observed[$index] -cne $expected[$index]) { throw 'Direct PowerShell argument value changed' } }
-    $credentialName = 'AI_SKILLS_QUALIFICATION_TOKEN'
-    $credentialValue = 'owned qualification fixture value'
-    $environment.Add($credentialName,$credentialValue)
-    $hash = [Security.Cryptography.SHA256]::Create()
-    try { $credentialDigest = ([BitConverter]::ToString($hash.ComputeHash($utf8.GetBytes($credentialValue)))).Replace('-','').ToLowerInvariant() }
-    finally { $hash.Dispose() }
-    $absentCode = 'import os;print("AI_SKILLS_QUALIFICATION_TOKEN" not in os.environ)'
-    if ((Invoke-Control 'credential-not-inherited' @('python','-c',$absentCode)).Trim() -cne 'True') { throw 'The development command inherited an undeclared credential' }
-    $selectedCode = 'import hashlib,os;print(hashlib.sha256(os.environ["AI_SKILLS_QUALIFICATION_TOKEN"].encode()).hexdigest())'
-    if ((Invoke-Control 'selected-credential' @('--credential-env',$credentialName,'python','-c',$selectedCode)).Trim() -cne $credentialDigest) { throw 'The explicitly selected credential was not forwarded intact' }
-    [void](Invoke-Control 'duplicate-credential' @('--credential-env',$credentialName,'--credential-env',$credentialName.ToLowerInvariant(),'python','-c','raise AssertionError("must not execute")') 1)
-    if (-not ([IO.File]::ReadAllText((Join-Path $output 'duplicate-credential.stderr.native'))).Contains('valid and distinct')) { throw 'The duplicate-name control failed for an unexpected reason' }
-    [void]$environment.Remove($credentialName)
-    [void](Invoke-Control 'missing-credential' @('--credential-env',$credentialName,'python','-c','raise AssertionError("must not execute")') 1)
-    if (-not ([IO.File]::ReadAllText((Join-Path $output 'missing-credential.stderr.native'))).Contains('missing or invalid')) { throw 'The missing-credential control failed for an unexpected reason' }
-    [void](Invoke-Control 'reserved-credential' @('--credential-env','PATH','python','-c','raise AssertionError("must not execute")') 1)
-    if (-not ([IO.File]::ReadAllText((Join-Path $output 'reserved-credential.stderr.native'))).Contains('isolated runtime environment')) { throw 'The reserved-name control failed for an unexpected reason' }
-    [void](Invoke-Control 'child-packages' @('python','-c','import subprocess,sys;subprocess.run([sys.executable,"-I","-c","import yaml,pip;print(yaml.__version__);print(pip.__version__)"],check=True)'))
-    $toolProbe = @'
+        $program = $program.Replace('__CONTEXT__',$context)
+        $encoded = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes($program))
+        $process = [SkillsBootstrap.OwnedProcess]::Run($shell,@('-NoLogo','-NoProfile','-NonInteractive','-EncodedCommand',$encoded),$root,$environment,(Join-Path $output 'powershell-values.stdout.native'),(Join-Path $output 'powershell-values.stderr.native'),120,1048576,2147483648,32)
+        $controls.Add(@{name='powershell-values'; process=$process})
+        if ($process.exit_code -ne 0 -or $null -ne $process.termination_reason -or $process.active_processes_after_cleanup -ne 0) { throw 'Direct PowerShell invocation failed' }
+        $observed = [IO.File]::ReadAllText((Join-Path $output 'powershell-values.stdout.native')) | ConvertFrom-Json
+        $expected = @('2','02','-3','1.25','False')
+        if ($observed.Count -ne $expected.Count) { throw 'Direct PowerShell argument count changed' }
+        for ($index=0; $index -lt $expected.Count; $index++) { if ($observed[$index] -cne $expected[$index]) { throw 'Direct PowerShell argument value changed' } }
+        $credentialName = 'AI_SKILLS_QUALIFICATION_TOKEN'
+        $credentialValue = 'owned qualification fixture value'
+        $environment.Add($credentialName,$credentialValue)
+        $hash = [Security.Cryptography.SHA256]::Create()
+        try { $credentialDigest = ([BitConverter]::ToString($hash.ComputeHash($utf8.GetBytes($credentialValue)))).Replace('-','').ToLowerInvariant() }
+        finally { $hash.Dispose() }
+        $absentCode = 'import os;print("AI_SKILLS_QUALIFICATION_TOKEN" not in os.environ)'
+        if ((Invoke-Control 'credential-not-inherited' @('python','-c',$absentCode)).Trim() -cne 'True') { throw 'The development command inherited an undeclared credential' }
+        $selectedCode = 'import hashlib,os;print(hashlib.sha256(os.environ["AI_SKILLS_QUALIFICATION_TOKEN"].encode()).hexdigest())'
+        if ((Invoke-Control 'selected-credential' @('--credential-env',$credentialName,'python','-c',$selectedCode)).Trim() -cne $credentialDigest) { throw 'The explicitly selected credential was not forwarded intact' }
+        [void](Invoke-Control 'duplicate-credential' @('--credential-env',$credentialName,'--credential-env',$credentialName.ToLowerInvariant(),'python','-c','raise AssertionError("must not execute")') 1)
+        if (-not ([IO.File]::ReadAllText((Join-Path $output 'duplicate-credential.stderr.native'))).Contains('valid and distinct')) { throw 'The duplicate-name control failed for an unexpected reason' }
+        [void]$environment.Remove($credentialName)
+        [void](Invoke-Control 'missing-credential' @('--credential-env',$credentialName,'python','-c','raise AssertionError("must not execute")') 1)
+        if (-not ([IO.File]::ReadAllText((Join-Path $output 'missing-credential.stderr.native'))).Contains('missing or invalid')) { throw 'The missing-credential control failed for an unexpected reason' }
+        [void](Invoke-Control 'reserved-credential' @('--credential-env','PATH','python','-c','raise AssertionError("must not execute")') 1)
+        if (-not ([IO.File]::ReadAllText((Join-Path $output 'reserved-credential.stderr.native'))).Contains('isolated runtime environment')) { throw 'The reserved-name control failed for an unexpected reason' }
+        [void](Invoke-Control 'child-packages' @('python','-c','import subprocess,sys;subprocess.run([sys.executable,"-I","-c","import yaml,pip;print(yaml.__version__);print(pip.__version__)"],check=True)'))
+        $toolProbe = @'
 import os,shutil,subprocess
 for name in ("git","uv","node","java","javac","bash","sleep","cygpath"):
     executable=shutil.which(name)
@@ -198,8 +247,8 @@ for name in ("git","uv","node","java","javac","bash","sleep","cygpath"):
         raise RuntimeError("Managed tool resolved outside its admitted installation: "+name)
     subprocess.run([executable,"--version"],check=True)
 '@
-    [void](Invoke-Control 'tools' @('python','-c',$toolProbe))
-    $gitPathProbe = @'
+        [void](Invoke-Control 'tools' @('python','-c',$toolProbe))
+        $gitPathProbe = @'
 import os,subprocess,tempfile
 from pathlib import Path
 expected={"GIT_CONFIG_NOSYSTEM":"1","GIT_CONFIG_GLOBAL":"NUL","GIT_CONFIG_COUNT":"1","GIT_CONFIG_KEY_0":"core.longpaths","GIT_CONFIG_VALUE_0":"true"}
@@ -229,71 +278,72 @@ with tempfile.TemporaryDirectory(prefix="git-path-",dir=parent) as directory:
         raise RuntimeError("Parent Git configuration crossed the isolated runtime boundary")
     print("Managed Git tracked and read a native path beyond 300 UTF-16 units")
 '@
-    [void](Invoke-Control 'git-long-path' @('python','-c',$gitPathProbe))
-    [void](Invoke-Control 'exit-code' @('python','-c','raise SystemExit(7)') 7)
-    $transport = Invoke-Control 'default-temp-git-transport' @('python','-m','pytest','-q','--no-cov','-o','addopts=','tests/test_ci_transport.py::test_frozen_trial_protocol_survives_lf_git_transport')
-    if (-not $transport.Contains('1 passed')) { throw 'The default temporary location did not pass actual Git transport' }
-    $timeout = Invoke-NativeControl 'timeout' @('-I','-S','-c','import time;time.sleep(30)') 1 1048576 'timeout'
-    if ($timeout.exit_code -ne 124) { throw 'The timeout did not terminate its owned job' }
-    $limited = Invoke-NativeControl 'output-limit' @('-I','-S','-c','import sys;sys.stdout.write("x"*1000000)') 10 1024 'output_limit'
-    if ($limited.retained_output_bytes -ne 1024) { throw 'The output retention budget was exceeded' }
-    $children = Invoke-NativeControl 'child-cleanup' @('-I','-S','-c','import subprocess,sys;child=subprocess.Popen([sys.executable,"-I","-S","-c","import time;time.sleep(30)"]);print(child.pid,flush=True)') 10 1048576 $null
-    if ($children.exit_code -ne 0) { throw 'The owned child-process control failed' }
-    $module = [IO.Path]::Combine($fresh.packages,'yaml/scanner.py')
-    if (-not [IO.File]::Exists($module)) { throw 'The missing-dependency control requires the admitted module' }
-    [IO.File]::Move($module,($module+'.qualification-original'))
-    $repaired = (Invoke-Control 'missing-package-recovery' @('doctor')) | ConvertFrom-Json
-    if (-not $repaired.newly_installed -or $repaired.packages -ceq $fresh.packages -or -not [IO.File]::Exists(($module+'.qualification-original'))) { throw 'Recovery did not preserve the original and provision a fresh environment' }
+        [void](Invoke-Control 'git-long-path' @('python','-c',$gitPathProbe))
+        [void](Invoke-Control 'exit-code' @('python','-c','raise SystemExit(7)') 7)
+        $transport = Invoke-Control 'default-temp-git-transport' @('python','-m','pytest','-q','--no-cov','-o','addopts=','tests/test_ci_transport.py::test_frozen_trial_protocol_survives_lf_git_transport')
+        if (-not $transport.Contains('1 passed')) { throw 'The default temporary location did not pass actual Git transport' }
+        $timeout = Invoke-NativeControl 'timeout' @('-I','-S','-c','import time;time.sleep(30)') 1 1048576 'timeout'
+        if ($timeout.exit_code -ne 124) { throw 'The timeout did not terminate its owned job' }
+        $limited = Invoke-NativeControl 'output-limit' @('-I','-S','-c','import sys;sys.stdout.write("x"*1000000)') 10 1024 'output_limit'
+        if ($limited.retained_output_bytes -ne 1024) { throw 'The output retention budget was exceeded' }
+        $children = Invoke-NativeControl 'child-cleanup' @('-I','-S','-c','import subprocess,sys;child=subprocess.Popen([sys.executable,"-I","-S","-c","import time;time.sleep(30)"]);print(child.pid,flush=True)') 10 1048576 $null
+        if ($children.exit_code -ne 0) { throw 'The owned child-process control failed' }
+        $module = [IO.Path]::Combine($fresh.packages,'yaml/scanner.py')
+        if (-not [IO.File]::Exists($module)) { throw 'The missing-dependency control requires the admitted module' }
+        [IO.File]::Move($module,($module+'.qualification-original'))
+        $repaired = (Invoke-Control 'missing-package-recovery' @('doctor')) | ConvertFrom-Json
+        if (-not $repaired.newly_installed -or $repaired.packages -ceq $fresh.packages -or -not [IO.File]::Exists(($module+'.qualification-original'))) { throw 'Recovery did not preserve the original and provision a fresh environment' }
 
-    $namespace = [IO.Directory]::GetParent($repaired.diagnostics).FullName
-    $enginePointer = Join-Path $namespace 'tools/powershell.json'
-    $oldEngine = [IO.File]::ReadAllText($enginePointer) | ConvertFrom-Json
-    $oldEngineModule = Join-Path $oldEngine.home 'Microsoft.PowerShell.Commands.Utility.dll'
-    if (-not $oldEngineModule.StartsWith(($namespace+[IO.Path]::DirectorySeparatorChar),[StringComparison]::OrdinalIgnoreCase)) { throw 'The missing-engine fixture escaped its owned namespace' }
-    [IO.File]::Move($oldEngineModule,($oldEngineModule+'.qualification-original'))
-    $engineRecovered = (Invoke-Control 'missing-engine-recovery' @('doctor')) | ConvertFrom-Json
-    $newEngine = [IO.File]::ReadAllText($enginePointer) | ConvertFrom-Json
-    if ($oldEngine.home -ceq $newEngine.home -or $engineRecovered.newly_installed -or -not [IO.File]::Exists(($oldEngineModule+'.qualification-original'))) { throw 'Missing engine recovery did not preserve the original and reuse the package environment' }
-    $ordinaryEnginePointer = [IO.File]::ReadAllText($enginePointer)
-    try {
-        $extendedEnginePointer = $ordinaryEnginePointer | ConvertFrom-Json
-        $extendedEnginePointer.home = '\\?\' + $extendedEnginePointer.home
-        Write-Record $enginePointer $extendedEnginePointer
-        $extendedEngine = (Invoke-Control 'extended-engine-path' @('doctor') 0 ('\\?\'+$cache)) | ConvertFrom-Json
-        if (-not $extendedEngine.ready -or $extendedEngine.newly_installed) { throw 'The extended engine spelling was not resolved without changing the package environment' }
-    } finally { [IO.File]::WriteAllText($enginePointer,$ordinaryEnginePointer,$utf8) }
-    $sourceRecord = [IO.File]::ReadAllText((Join-Path $repaired.diagnostics 'source.json')) | ConvertFrom-Json
-    $uvPointer = Join-Path $namespace 'tools/uv.json'
-    $oldTool = [IO.File]::ReadAllText($uvPointer) | ConvertFrom-Json
-    $oldUv = Join-Path $oldTool.home 'uv.exe'
-    [IO.File]::Move($oldUv,($oldUv+'.qualification-original'))
-    $restored = (Invoke-Control 'missing-tool-recovery' @('doctor')) | ConvertFrom-Json
-    $newTool = [IO.File]::ReadAllText($uvPointer) | ConvertFrom-Json
-    if ($oldTool.home -ceq $newTool.home -or $restored.newly_installed -or -not [IO.File]::Exists(($oldUv+'.qualification-original'))) { throw 'Missing tool recovery did not preserve the previous tool and package environment' }
-    $unownedCache = Join-Path $output 'unowned-cache'
-    $unownedNamespace = Join-Path $unownedCache ([IO.Path]::GetFileName($namespace))
-    [void][IO.Directory]::CreateDirectory($unownedNamespace)
-    $canary = Join-Path $unownedNamespace 'other-application.txt'
-    [IO.File]::WriteAllText($canary,'must remain unchanged',$utf8)
-    [void](Invoke-Control 'unowned-cache' @('doctor') 1 $unownedCache)
-    if (-not ([IO.File]::ReadAllText((Join-Path $output 'unowned-cache.stderr.native'))).Contains('Refusing to adopt') -or [IO.File]::ReadAllText($canary) -cne 'must remain unchanged' -or @([IO.Directory]::EnumerateFileSystemEntries($unownedNamespace)).Count -ne 1) { throw 'The unowned cache was adopted or modified' }
-    $pointer = Join-Path $namespace ('validation-'+$sourceRecord.graph_identity.Substring(0,16)+'.json')
-    if (-not ([IO.Path]::GetFullPath($pointer)).StartsWith(($namespace+'\'),[StringComparison]::OrdinalIgnoreCase)) { throw 'The concurrency fixture pointer escaped its owned cache' }
-    [IO.File]::Move($pointer,($pointer+'.qualification-original'))
-    $command = [string[]]@('-NoLogo','-NoProfile','-NonInteractive','-File',$entry,'--cache-root',$cache,'doctor')
-    $pair = [BootstrapConcurrentQualification]::Run([SkillsBootstrap.OwnedProcess],(Process-Arguments 'concurrent-first' $command),(Process-Arguments 'concurrent-second' $command))
-    foreach ($process in $pair) { if ($process.exit_code -ne 0 -or $null -ne $process.termination_reason -or $process.active_processes_after_cleanup -ne 0) { throw 'Concurrent callers failed ownership or readiness' } }
-    $left = [IO.File]::ReadAllText((Join-Path $output 'concurrent-first.stdout.native')) | ConvertFrom-Json
-    $right = [IO.File]::ReadAllText((Join-Path $output 'concurrent-second.stdout.native')) | ConvertFrom-Json
-    if ($left.newly_installed -eq $right.newly_installed -or $left.packages -cne $right.packages) { throw 'Concurrent setup did not install once and reuse once' }
-    $controls.Add(@{name='concurrent-installation'; processes=$pair; installed_once=$true})
+        $namespace = [IO.Directory]::GetParent($repaired.diagnostics).FullName
+        $enginePointer = Join-Path $namespace 'tools/powershell.json'
+        $oldEngine = [IO.File]::ReadAllText($enginePointer) | ConvertFrom-Json
+        $oldEngineModule = Join-Path $oldEngine.home 'Microsoft.PowerShell.Commands.Utility.dll'
+        if (-not $oldEngineModule.StartsWith(($namespace+[IO.Path]::DirectorySeparatorChar),[StringComparison]::OrdinalIgnoreCase)) { throw 'The missing-engine fixture escaped its owned namespace' }
+        [IO.File]::Move($oldEngineModule,($oldEngineModule+'.qualification-original'))
+        $engineRecovered = (Invoke-Control 'missing-engine-recovery' @('doctor')) | ConvertFrom-Json
+        $newEngine = [IO.File]::ReadAllText($enginePointer) | ConvertFrom-Json
+        if ($oldEngine.home -ceq $newEngine.home -or $engineRecovered.newly_installed -or -not [IO.File]::Exists(($oldEngineModule+'.qualification-original'))) { throw 'Missing engine recovery did not preserve the original and reuse the package environment' }
+        $ordinaryEnginePointer = [IO.File]::ReadAllText($enginePointer)
+        try {
+            $extendedEnginePointer = $ordinaryEnginePointer | ConvertFrom-Json
+            $extendedEnginePointer.home = '\\?\' + $extendedEnginePointer.home
+            Write-Record $enginePointer $extendedEnginePointer
+            $extendedEngine = (Invoke-Control 'extended-engine-path' @('doctor') 0 ('\\?\'+$cache)) | ConvertFrom-Json
+            if (-not $extendedEngine.ready -or $extendedEngine.newly_installed) { throw 'The extended engine spelling was not resolved without changing the package environment' }
+        } finally { [IO.File]::WriteAllText($enginePointer,$ordinaryEnginePointer,$utf8) }
+        $sourceRecord = [IO.File]::ReadAllText((Join-Path $repaired.diagnostics 'source.json')) | ConvertFrom-Json
+        $uvPointer = Join-Path $namespace 'tools/uv.json'
+        $oldTool = [IO.File]::ReadAllText($uvPointer) | ConvertFrom-Json
+        $oldUv = Join-Path $oldTool.home 'uv.exe'
+        [IO.File]::Move($oldUv,($oldUv+'.qualification-original'))
+        $restored = (Invoke-Control 'missing-tool-recovery' @('doctor')) | ConvertFrom-Json
+        $newTool = [IO.File]::ReadAllText($uvPointer) | ConvertFrom-Json
+        if ($oldTool.home -ceq $newTool.home -or $restored.newly_installed -or -not [IO.File]::Exists(($oldUv+'.qualification-original'))) { throw 'Missing tool recovery did not preserve the previous tool and package environment' }
+        $unownedCache = Join-Path $output 'unowned-cache'
+        $unownedNamespace = Join-Path $unownedCache ([IO.Path]::GetFileName($namespace))
+        [void][IO.Directory]::CreateDirectory($unownedNamespace)
+        $canary = Join-Path $unownedNamespace 'other-application.txt'
+        [IO.File]::WriteAllText($canary,'must remain unchanged',$utf8)
+        [void](Invoke-Control 'unowned-cache' @('doctor') 1 $unownedCache)
+        if (-not ([IO.File]::ReadAllText((Join-Path $output 'unowned-cache.stderr.native'))).Contains('Refusing to adopt') -or [IO.File]::ReadAllText($canary) -cne 'must remain unchanged' -or @([IO.Directory]::EnumerateFileSystemEntries($unownedNamespace)).Count -ne 1) { throw 'The unowned cache was adopted or modified' }
+        $pointer = Join-Path $namespace ('validation-'+$sourceRecord.graph_identity.Substring(0,16)+'.json')
+        if (-not ([IO.Path]::GetFullPath($pointer)).StartsWith(($namespace+'\'),[StringComparison]::OrdinalIgnoreCase)) { throw 'The concurrency fixture pointer escaped its owned cache' }
+        [IO.File]::Move($pointer,($pointer+'.qualification-original'))
+        $command = [string[]]@('-NoLogo','-NoProfile','-NonInteractive','-File',$entry,'--cache-root',$cache,'doctor')
+        $pair = [BootstrapConcurrentQualification]::Run([SkillsBootstrap.OwnedProcess],(Process-Arguments 'concurrent-first' $command),(Process-Arguments 'concurrent-second' $command))
+        foreach ($process in $pair) { if ($process.exit_code -ne 0 -or $null -ne $process.termination_reason -or $process.active_processes_after_cleanup -ne 0) { throw 'Concurrent callers failed ownership or readiness' } }
+        $left = [IO.File]::ReadAllText((Join-Path $output 'concurrent-first.stdout.native')) | ConvertFrom-Json
+        $right = [IO.File]::ReadAllText((Join-Path $output 'concurrent-second.stdout.native')) | ConvertFrom-Json
+        if ($left.newly_installed -eq $right.newly_installed -or $left.packages -cne $right.packages) { throw 'Concurrent setup did not install once and reuse once' }
+        $controls.Add(@{name='concurrent-installation'; processes=$pair; installed_once=$true})
+    }
     foreach ($name in $sourceNames) { if ($sources[$name] -cne (Get-FileHash -LiteralPath (Join-Path $root $name) -Algorithm SHA256).Hash.ToLowerInvariant()) { throw 'Qualification inputs changed during execution' } }
 } catch { $failure = $_.Exception.ToString() }
 finally {
     $after = Host-State
     Write-Record (Join-Path $output 'host-after.json') $after
     if (($before | ConvertTo-Json -Depth 16 -Compress) -cne ($after | ConvertTo-Json -Depth 16 -Compress)) { $failure = 'Persistent host PATH or Python/PowerShell registry changed' }
-    Write-Record (Join-Path $output 'qualification.json') @{passed=($null -eq $failure); model_requests=0; source_root=$root; sources=$sources; cache_root=$cache; temporary_root=$privateTemporary; controls=$controls; failure=$failure}
+    Write-Record (Join-Path $output 'qualification.json') @{passed=($null -eq $failure); qualification_profile=$Profile; model_requests=0; source_root=$root; sources=$sources; cache_root=$cache; temporary_root=$privateTemporary; controls=$controls; failure=$failure}
 }
 Write-Output $output
 if ($null -ne $failure) { throw $failure }

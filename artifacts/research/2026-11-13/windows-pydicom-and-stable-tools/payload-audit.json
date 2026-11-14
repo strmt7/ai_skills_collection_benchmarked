@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "profiles": [
+    {
+      "profile": "pydicom-windows-profile-uv0138-v1-a",
+      "publisher_payload_files_verified": 1741,
+      "installed_record_rows_verified": 1771,
+      "uv_archive_timestamps_match_exact_observed_wheel_mtimes": true
+    },
+    {
+      "profile": "pydicom-windows-profile-uv0138-v1-b",
+      "publisher_payload_files_verified": 1741,
+      "installed_record_rows_verified": 1771,
+      "uv_archive_timestamps_match_exact_observed_wheel_mtimes": true
+    }
+  ],
+  "full_inventories_identical": false,
+  "source_payloads_identical": true,
+  "explained_differing_files": [
+    "colorama-0.4.6.dist-info/RECORD",
+    "colorama-0.4.6.dist-info/uv_cache.json",
+    "iniconfig-2.3.1.dist-info/RECORD",
+    "iniconfig-2.3.1.dist-info/uv_cache.json",
+    "numpy-2.5.4.dist-info/RECORD",
+    "numpy-2.5.4.dist-info/uv_cache.json",
+    "packaging-26.3.dist-info/RECORD",
+    "packaging-26.3.dist-info/uv_cache.json",
+    "pluggy-1.7.0.dist-info/RECORD",
+    "pluggy-1.7.0.dist-info/uv_cache.json",
+    "pydicom-3.0.2.dist-info/RECORD",
+    "pydicom-3.0.2.dist-info/uv_cache.json",
+    "pygments-2.21.0.dist-info/RECORD",
+    "pygments-2.21.0.dist-info/uv_cache.json",
+    "pytest-9.2.0.dist-info/RECORD",
+    "pytest-9.2.0.dist-info/uv_cache.json"
+  ],
+  "difference_explanation": "UV records each copied input wheel modification timestamp in uv_cache.json and includes that actual metadata hash in installed RECORD. Every timestamp equals the captured wheel stat, every installed RECORD hash and size is reconciled, and every publisher payload file matches the original wheel byte-for-byte. Full inventories are retained without normalization.",
+  "scope": "Two native Windows offline installations and publisher payload/installation metadata only; AppContainer tool access is not yet established.",
+  "model_invocations": 0,
+  "counted_attempts": 0
+}

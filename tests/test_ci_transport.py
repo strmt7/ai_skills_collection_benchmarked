@@ -23,6 +23,16 @@ def test_frozen_trial_protocol_survives_lf_git_transport(tmp_path):
     protocol = source / relative
     protocol.parent.mkdir(parents=True)
     protocol.write_bytes(original)
+    supervisor_name = "toolchains/bootstrap/NativeSupervisor.dll"
+    supervisor_bytes = (ROOT / supervisor_name).read_bytes()
+    supervisor = source / supervisor_name
+    supervisor.parent.mkdir(parents=True)
+    supervisor.write_bytes(supervisor_bytes)
+    generated_pins = {}
+    for name in ("supervisor.json", "framework-references.json"):
+        path = "toolchains/bootstrap/" + name
+        generated_pins[path] = (ROOT / path).read_bytes()
+        (source / path).write_bytes(generated_pins[path])
 
     def git(*arguments, cwd=source):
         return subprocess.check_output(
@@ -32,11 +42,14 @@ def test_frozen_trial_protocol_survives_lf_git_transport(tmp_path):
         )
 
     git("init", "--initial-branch=main")
-    git("add", ".gitattributes", relative)
+    git("add", ".gitattributes", relative, supervisor_name, *generated_pins)
     git("-c", "user.name=AI agent", "-c", "user.email=", "commit", "-m", "Qualify frozen protocol transport")
     clone = tmp_path / "clone"
     git("clone", "--no-local", str(source), str(clone))
     assert (clone / relative).read_bytes() == original
+    assert (clone / supervisor_name).read_bytes() == supervisor_bytes
+    for name, content in generated_pins.items():
+        assert (clone / name).read_bytes() == content
 
 
 def test_windows_jobs_enable_long_paths_before_checkout():

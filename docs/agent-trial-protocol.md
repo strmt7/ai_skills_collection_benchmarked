@@ -40,11 +40,70 @@ put a credential value in that file. Remote endpoints require HTTPS. Explicit
 numeric loopback HTTP endpoints support local qualification and local providers;
 they do not establish TLS or remote-provider qualification.
 
-The selected credential enters only the private CLI controller environment.
+For an owned local provider that requires no authentication, declare exactly
+`base_url` and `authentication: "none"`. This form accepts only explicit numeric
+loopback addresses, including IPv6; DNS names and remote endpoints are rejected
+even with HTTPS. The CLI receives no credential variable or account-login
+requirement, and the credential source is not consulted. Omission of a credential
+field alone never selects this mode. Keep the private empty controller profile
+and qualify the actual provider before model use; this declaration neither
+starts a server nor opens the model-launch gate.
+
+For `credential_env` declarations, the selected credential enters only the private CLI controller environment.
 Subject commands keep their separate environment. Launch records retain the
 provider declaration and variable name without copying the credential. Reporting
 reconstructs the declared provider options and rejects an endpoint override.
 Missing credentials remain setup errors, not coding-task failures.
+
+Each attempt owns a scoped credential binding. The controller removes that
+entry after CLI execution and on setup failure, execution failure or
+cancellation. It does not change the caller's credential source. Context
+representations omit the controller environment; this does not promise erasure
+of immutable strings from process memory or revoke a provider's token.
+
+The value may be a provider key or an OAuth access token obtained through the
+provider's supported flow. The
+[official ChatGPT-plan integration](https://developers.openai.com/siwc/token-sharing-open-source/codex-app-server)
+uses the same Responses-provider settings and assigns renewal to the calling
+application. This contract does not acquire or refresh tokens, copy a desktop
+login cache or establish that a token is valid for a selected model.
+
+Native official CLI sign-in uses exactly `authentication: "codex_signin"`,
+`codex_home` and `credential_store`. Select an existing absolute local CLI home
+explicitly; the store is `file`, `keyring` or `auto`. The adapter runs the official
+bounded `login status`, admits only ChatGPT mode and discards its raw output.
+It selects the built-in OpenAI provider without unsupported provider overrides,
+copies no credentials and does not consult a credential variable. The owner's
+current goal permits this official harness/app route only; generic key/token
+contracts above do not authorize using them for that goal.
+
+Authentication storage must be disjoint from controller, subject and runtime
+grants. Subject permissions explicitly deny that home. The tool environment
+remains private, and release restores the controller's original `CODEX_HOME`;
+it neither revokes nor removes the existing sign-in. Native provider retry and
+transport defaults remain active inside fixed process time and resource limits.
+
+`--ignore-user-config` does not disable global `AGENTS.md` discovery. Native
+admission therefore rejects either `AGENTS.md` or `AGENTS.override.md` in the
+selected home before and after status, without reading or modifying its content.
+These checks do not freeze a shared home against concurrent changes. The
+[native sign-in controls](../artifacts/research/2026-11-11/native-signin-controller/review.json)
+use synthetic credentials and owned endpoints. They do not qualify real account
+refresh, every context channel or the complete model boundary; the launch guard
+remains closed.
+
+For signed-in subjects, both maintained runners also require the unmodified
+vendor model catalog pinned with the CLI. The supported `model_catalog_json`
+option prevents the observed fallback to profile-cached instructions during
+catalog refresh failure. Executable and catalog digests are verified before
+execution and at lease closure before grading. Archived context retains the
+public pin, bound to the protocol source digest; replaying command validation
+needs no original host files. Use the same vendor metadata in every condition.
+This does not establish real model identity, entitlement or complete isolation.
+The [current native review](../artifacts/research/2026-11-13/native-vendor-catalog/review.json)
+includes deliberate option removal and a late global-instruction canary. The
+discovered real sign-in home contains global instructions and remains ineligible;
+do not modify user files, copy credentials or clear vendor base instructions.
 
 When using the automatic development entrypoint, explicitly forward the selected
 variable with `--credential-env NAME` before `python`. Other parent credentials
@@ -52,6 +111,14 @@ are omitted. The local authentication controls use generated canaries and a
 deterministic endpoint; they make no real model requests and do not qualify live
 credentials, the complete controller or an agent advantage. The model-launch
 refusal remains in force.
+
+The existing environment-variable provider contract does not cover importing
+a user's cached ChatGPT authentication. The
+[authentication review](research-codex-authentication.md) verified the official
+CLI's read-only status command and documented file-cache fallback separately.
+Its successful controls do not authorize passing the host profile to a subject,
+converting cached tokens or weakening the frozen protocol. Integrate and qualify
+that authentication lifecycle explicitly before using it for model trials.
 
 ## Frozen inputs
 

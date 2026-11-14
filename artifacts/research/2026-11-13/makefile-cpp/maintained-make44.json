@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "tests_run": 6,
+  "skipped": 0,
+  "errors": 0,
+  "failures": 0,
+  "model_invocations": 0,
+  "make_version": "GNU Make 4.4.1",
+  "lease_closed": true,
+  "remaining_owned_containers": 0,
+  "images_pulled": 0,
+  "package_sha256": {
+    "generate.py": "aaff7fb0607dd8924d6216b832b0ee73f7e06d779a814578c8ad3031f129b4f0",
+    "SKILL.md": "4384083e7089238e408735d47630af71e0ddb453c62354578776c32b673f2acf",
+    "test_generator.py": "8a002cc3e5254b1dd5783fe673d95c50f15bf5eded7ede3e114e7808775d821c",
+    "templates/cpp.mk": "7c8df9fa6b16ed267b249e19e277579d17320b8b0a4a94a9c78c2959b56e4384"
+  },
+  "source_unchanged": true,
+  "scope": "Maintained C++ generation/build component controls only. Not a model trial, benchmark score or whole original package qualification.",
+  "build_record_sha256": "91fd3a34723bf0340b91aed2d397ba1200f1cfcb7c2c8d8acef3aa850314594b"
+}

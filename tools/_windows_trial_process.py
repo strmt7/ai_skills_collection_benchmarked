@@ -10,7 +10,7 @@ import time
 from contextlib import ExitStack
 from ctypes import wintypes as w
 from pathlib import Path
-from typing import Any, BinaryIO
+from typing import Any, BinaryIO, TypedDict
 
 from _windows_appcontainer import (
     Native,
@@ -23,7 +23,80 @@ from _windows_appcontainer import (
     stop_process,
     win_error,
 )
-from _windows_owned_python import Accounting, ExtendedLimits
+from _windows_owned_python import Accounting, Counters, ExtendedLimits
+from _windows_storage_budget import SpaceBudget
+
+
+class ProcessBudgetOptions(TypedDict, total=False):
+    write_io_limit: int
+    space_budget: SpaceBudget
+
+
+class IoAccounting(c.Structure):
+    """JOBOBJECT_BASIC_AND_IO_ACCOUNTING_INFORMATION, including exited members."""
+
+    _fields_ = [("basic", Accounting), ("io", Counters)]
+
+
+def verify_write_io_budget(record: dict[str, Any], expected_limit: int) -> None:
+    """Validate a budget record against its admitted plan without native API calls."""
+    fields = {
+        "write_io_limit_bytes",
+        "job_write_io_bytes",
+        "write_io_overshoot_bytes",
+        "write_io_observation_error",
+        "write_io_enforcement",
+        "hard_storage_quota",
+    }
+    if (
+        not isinstance(record, dict)
+        or not fields <= record.keys()
+        or type(record["write_io_limit_bytes"]) is not int
+        or record["write_io_limit_bytes"] != expected_limit
+        or record["write_io_enforcement"] != "polled_job_transfer_accounting"
+        or record["hard_storage_quota"] is not False
+    ):
+        raise ValueError("Recorded write-I/O budget differs from the admitted profile")
+    value, error = record["job_write_io_bytes"], record["write_io_observation_error"]
+    if value is not None and (type(value) is not int or not 0 <= value < 2**64):
+        raise ValueError("Recorded job write transfers must be an unsigned 64-bit count")
+    if error is None:
+        if value is None:
+            raise ValueError("Successful write accounting requires an observed count")
+    else:
+        if (
+            not isinstance(error, dict)
+            or error.get("api") != "QueryInformationJobObject"
+            or type(error.get("information_class")) is not int
+            or error["information_class"] != 8
+            or record.get("termination_reason") is None
+        ):
+            raise ValueError("Write accounting errors require a native diagnostic and interrupted execution")
+        if set(error) == {"api", "information_class", "winerror"}:
+            valid = type(error["winerror"]) is int and 0 <= error["winerror"] < 2**32
+        elif set(error) == {"api", "information_class", "expected_bytes", "returned_bytes"}:
+            valid = (
+                type(error["expected_bytes"]) is int
+                and error["expected_bytes"] == 96
+                and type(error["returned_bytes"]) is int
+                and 0 <= error["returned_bytes"] < 2**32
+                and error["returned_bytes"] != 96
+            )
+        else:
+            valid = False
+        if not valid:
+            raise ValueError("Write accounting diagnostic is invalid")
+    expected_overshoot = max(0, value - expected_limit) if value is not None else None
+    overshoot = record["write_io_overshoot_bytes"]
+    if type(overshoot) is not type(expected_overshoot) or overshoot != expected_overshoot:
+        raise ValueError("Write accounting overshoot contradicts its observed count")
+    reason = record.get("termination_reason")
+    if reason == "resource_observation_error" and error is None:
+        raise ValueError("Resource observation failure is missing its diagnostic")
+    if reason == "write_io_limit" and (value is None or value <= expected_limit):
+        raise ValueError("Write-budget termination is missing its exceeded count")
+    if reason is None and expected_overshoot:
+        raise ValueError("An exceeded write budget cannot become successful execution")
 
 
 def run_owned(
@@ -38,12 +111,18 @@ def run_owned(
     environment: dict[str, str] | None = None,
     memory_limit: int = 1024 * 1024 * 1024,
     process_limit: int = 32,
+    write_io_limit: int | None = None,
+    space_budget: SpaceBudget | None = None,
 ) -> dict[str, Any]:
     """Start suspended and stop all processes assigned to the job before return.
 
     Windows does not associate every service-created process with the caller's
     job. This controls job members and output, not filesystem, network or service
     access. The caller must independently qualify the sandbox and source bindings.
+
+    An optional cumulative write-transfer budget is polled during collection
+    and checked again after job termination. Overshoot is recorded; this is
+    not a hard filesystem quota or a measure of allocated disk space.
     """
     if sys.platform != "win32":
         raise ValueError("Owned trial execution requires Windows")
@@ -67,8 +146,9 @@ def run_owned(
         or not 32 * 1024 * 1024 <= memory_limit <= 8 * 1024 * 1024 * 1024
         or type(process_limit) is not int
         or not 1 <= process_limit <= 128
+        or (write_io_limit is not None and (type(write_io_limit) is not int or not 0 < write_io_limit <= 1024**3))
     ):
-        raise ValueError("Finite positive time and bounded output, memory and process limits are required")
+        raise ValueError("Finite positive time and bounded output, memory, process and write-I/O limits are required")
     environment_block = None
     if environment is not None:
         if not environment or any(
@@ -88,6 +168,9 @@ def run_owned(
             + "\0\0"
         )
 
+    if space_budget is not None:
+        space_budget.require_available()
+
     import msvcrt
 
     native = Native()
@@ -105,6 +188,42 @@ def run_owned(
         job = native.function("kernel", "CreateJobObjectW", [c.c_void_p, w.LPCWSTR], w.HANDLE)(None, None)
         require(job)
         resources.callback(native.close, job)
+        observed_write_bytes: int | None = None
+        observation_error: dict[str, Any] | None = None
+        query = native.function(
+            "kernel", "QueryInformationJobObject", [w.HANDLE, c.c_int, c.c_void_p, w.DWORD, c.c_void_p], w.BOOL
+        )
+
+        def monitor_writes() -> str | None:
+            nonlocal observed_write_bytes, observation_error
+            if observation_error is not None:
+                return "resource_observation_error"
+            info, returned = IoAccounting(), w.DWORD()
+            if not query(job, 8, c.byref(info), c.sizeof(info), c.byref(returned)):
+                observation_error = {
+                    "api": "QueryInformationJobObject",
+                    "information_class": 8,
+                    "winerror": last_error(),
+                }
+                return "resource_observation_error"
+            if returned.value != c.sizeof(info):
+                observation_error = {
+                    "api": "QueryInformationJobObject",
+                    "information_class": 8,
+                    "expected_bytes": c.sizeof(info),
+                    "returned_bytes": returned.value,
+                }
+                return "resource_observation_error"
+            observed_write_bytes = int(info.io.write_bytes)
+            if write_io_limit is not None and observed_write_bytes > write_io_limit:
+                return "write_io_limit"
+            return None
+
+        def monitor_resources() -> str | None:
+            write_reason = monitor_writes() if write_io_limit is not None else None
+            space_reason = space_budget.check() if space_budget is not None else None
+            return write_reason or space_reason
+
         limits = ExtendedLimits()
         limits.basic.flags = 0x2000 | 0x200 | 0x8  # Kill on close, total job memory and active process count.
         limits.basic.active_limit = process_limit
@@ -196,7 +315,15 @@ def run_owned(
             raise win_error(last_error())
         if resumed != 1:
             raise RuntimeError("Trial thread had an unexpected suspension count")
-        reason, total = collect(native, process.process, pipes, [stdout, stderr], timeout, output_limit)
+        reason, total = collect(
+            native,
+            process.process,
+            pipes,
+            [stdout, stderr],
+            timeout,
+            output_limit,
+            monitor=monitor_resources if write_io_limit is not None or space_budget is not None else None,
+        )
         exit_status = w.DWORD()
         get_exit = native.function("kernel", "GetExitCodeProcess", [w.HANDLE, c.POINTER(w.DWORD)], w.BOOL)
         require(native.function("kernel", "TerminateJobObject", [w.HANDLE, w.UINT], w.BOOL)(job, 124 if reason else 0))
@@ -205,9 +332,6 @@ def run_owned(
             raise RuntimeError("Trial process did not terminate")
         require(get_exit(process.process, c.byref(exit_status)))
         accounting = Accounting()
-        query = native.function(
-            "kernel", "QueryInformationJobObject", [w.HANDLE, c.c_int, c.c_void_p, w.DWORD, c.c_void_p], w.BOOL
-        )
         deadline = time.monotonic() + 5
         while True:
             require(query(job, 1, c.byref(accounting), c.sizeof(accounting), None))
@@ -216,6 +340,12 @@ def run_owned(
             if time.monotonic() > deadline:
                 raise RuntimeError("Trial job processes did not terminate")
             time.sleep(0.01)
+        if write_io_limit is not None:
+            final_reason = monitor_writes()
+            reason = reason or final_reason
+        if space_budget is not None:
+            final_space_reason = space_budget.check(force=True)
+            reason = reason or final_space_reason
         return {
             "windows_job": True,
             "assigned_before_resume": True,
@@ -230,4 +360,19 @@ def run_owned(
             "job_memory_limit_bytes": memory_limit,
             "active_process_limit": process_limit,
             "explicit_environment": environment is not None,
+            **({"space_budget": space_budget.record()} if space_budget is not None else {}),
+            **(
+                {
+                    "write_io_limit_bytes": write_io_limit,
+                    "job_write_io_bytes": observed_write_bytes,
+                    "write_io_overshoot_bytes": (
+                        max(0, observed_write_bytes - write_io_limit) if observed_write_bytes is not None else None
+                    ),
+                    "write_io_observation_error": observation_error,
+                    "write_io_enforcement": "polled_job_transfer_accounting",
+                    "hard_storage_quota": False,
+                }
+                if write_io_limit is not None
+                else {}
+            ),
         }

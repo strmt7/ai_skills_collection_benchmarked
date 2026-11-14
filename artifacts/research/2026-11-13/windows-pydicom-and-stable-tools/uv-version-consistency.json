@@ -1,0 +1,159 @@
+{
+  "source_of_truth": "toolchains/bootstrap/manifest.json",
+  "qualified_uv_version": "0.13.8",
+  "workflow_install_steps": [
+    {
+      "workflow": ".github/workflows/anndata-general-io.yml",
+      "job": "controls",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/anndata-io-controls.yml",
+      "job": "controls",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/census-ml-streaming.yml",
+      "job": "controls",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/census-summary-mean-controls.yml",
+      "job": "controls",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/crawl4ai-provider.yml",
+      "job": "native-controls",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/dataframe-controls.yml",
+      "job": "polars",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/dataframe-controls.yml",
+      "job": "dask",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/dataframe-controls.yml",
+      "job": "vaex",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/design-search.yml",
+      "job": "search",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/docs-js-inventory.yml",
+      "job": "controls",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/docs-python-inventory.yml",
+      "job": "controls",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/flowio-controls.yml",
+      "job": "controls",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/makefile-c.yml",
+      "job": "makefile",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/mypy.yml",
+      "job": "type-check",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/npm-cache-install.yml",
+      "job": "local-controls",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/offline-validation.yml",
+      "job": "validate",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/offline-validation.yml",
+      "job": "latest-test-dependencies",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/offline-validation.yml",
+      "job": "report-compatibility",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/pnpm-cache-install.yml",
+      "job": "local-controls",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/pytest-pdb-task.yml",
+      "job": "calibration",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/ruff.yml",
+      "job": "lint",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/scanpy-clustering-controls.yml",
+      "job": "controls",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/scvi-input-controls.yml",
+      "job": "controls",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/simpo-postrun.yml",
+      "job": "controls",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/simpo-verifier-task.yml",
+      "job": "controls",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/soma-anndata-ingestion.yml",
+      "job": "controls",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/workflow-call-inputs.yml",
+      "job": "controls",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/yarn-cache-install.yml",
+      "job": "controls",
+      "uv_version": "0.13.8"
+    },
+    {
+      "workflow": ".github/workflows/zarr-python-basics.yml",
+      "job": "selected-api-controls",
+      "uv_version": "0.13.8"
+    }
+  ],
+  "workflow_install_step_count": 29,
+  "offline_integration_cases_passed": 9,
+  "version_consistency_contract_cases_passed": 1,
+  "earlier_full_suite_extra_skipped_uv_cases": 9,
+  "earlier_full_qualification_sha256": "b00ef2cd7919a575fa1559335295ae7ffcb886c81311d5664861b78690830ff2",
+  "correction": "The lock verifier reads the canonical tool pin; every active workflow UV installer must match it. Existing integration cases run instead of being skipped for a stale constant.",
+  "test_expectations_weakened": false,
+  "suppressions_added": false
+}

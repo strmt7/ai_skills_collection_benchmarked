@@ -1,0 +1,18 @@
+{
+  "cases": {
+    "../tests/test_python_anti_patterns.py::TestPythonAntiPatterns::test_existing_tests_pass": "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_existing_tests_pass",
+    "../tests/test_python_anti_patterns.py::TestPythonAntiPatterns::test_iterutils_compiles": "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_iterutils_compiles",
+    "../tests/test_python_anti_patterns.py::TestPythonAntiPatterns::test_iterutils_exists": "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_iterutils_exists",
+    "../tests/test_python_anti_patterns.py::TestPythonAntiPatterns::test_iterutils_uses_fstrings": "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_iterutils_uses_fstrings",
+    "../tests/test_python_anti_patterns.py::TestPythonAntiPatterns::test_no_bare_except_strutils": "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_no_bare_except_strutils",
+    "../tests/test_python_anti_patterns.py::TestPythonAntiPatterns::test_no_type_eq_checks_iterutils": "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_no_type_eq_checks_iterutils",
+    "../tests/test_python_anti_patterns.py::TestPythonAntiPatterns::test_no_type_eq_checks_strutils": "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_no_type_eq_checks_strutils",
+    "../tests/test_python_anti_patterns.py::TestPythonAntiPatterns::test_strutils_compiles": "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_strutils_compiles",
+    "../tests/test_python_anti_patterns.py::TestPythonAntiPatterns::test_strutils_exists": "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_strutils_exists",
+    "../tests/test_python_anti_patterns.py::TestPythonAntiPatterns::test_strutils_uses_fstrings": "tests.test_python_anti_patterns.TestPythonAntiPatterns::test_strutils_uses_fstrings"
+  },
+  "min_pass_rate": 1.0,
+  "pytest_version": "9.0.2",
+  "rootdir": "/workspace",
+  "schema_version": 1
+}

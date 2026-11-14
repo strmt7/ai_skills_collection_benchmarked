@@ -1,0 +1,34 @@
+const fs=require('node:fs');const http=require('node:http');const path=require('node:path');const {spawn}=require('node:child_process');
+const counts = {poll: 0, search: 0};
+const html = (ready) => `<!doctype html><title>Independent readiness control</title>
+<h1>${ready ? 'Items' : 'Loading'}</h1><input data-testid="search-input"><div id="results"></div>
+<script>
+setInterval(() => fetch('/poll').catch(() => {}), 50);
+document.querySelector('input').addEventListener('input', async (event) => {
+ const response = await fetch('/api/search?q=' + encodeURIComponent(event.target.value));
+ const result = await response.json(); const output = document.querySelector('#results'); output.replaceChildren();
+ if (!response.ok) { output.setAttribute('role', 'alert'); output.textContent = 'Search failed'; return; }
+ for (const item of result.items) { const card = document.createElement('div'); card.dataset.testid = 'item-card'; card.textContent = item; output.appendChild(card); }
+});
+</script>`;
+const server = http.createServer((request, response) => {
+ const url = new URL(request.url, 'http://127.0.0.1');
+ if (url.pathname === '/poll') { counts.poll++; response.writeHead(200, {'Content-Type': 'application/json'}); response.end('{}'); return; }
+ if (url.pathname === '/api/search') { counts.search++; const q = url.searchParams.get('q'); response.writeHead(q === 'fail' ? 500 : 200, {'Content-Type': 'application/json'}); response.end(JSON.stringify({items:[q]})); return; }
+ response.writeHead(200, {'Content-Type': 'text/html'}); response.end(html(url.pathname !== '/broken'));
+});
+
+const [project,browserPath,casePath,mode]=process.argv.slice(2);
+if(mode==='missing')server.prependListener('request',request=>{if(new URL(request.url,'http://127.0.0.1').pathname==='/items')request.url='/broken';});
+(async()=>{
+ await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',resolve);});
+ const baseURL='http://127.0.0.1:'+server.address().port;
+ const config={testDir:project,testMatch:'example.spec.ts',workers:1,retries:0,forbidOnly:true,timeout:15000,expect:{timeout:1500},outputDir:path.join(casePath,'output'),reporter:[['json',{outputFile:path.join(casePath,'report.json')}]],use:{baseURL,headless:true,trace:'retain-on-failure',screenshot:'only-on-failure',launchOptions:{executablePath:browserPath,chromiumSandbox:true}}};
+ const configPath=path.join(casePath,'config.cjs');fs.writeFileSync(configPath,'module.exports='+JSON.stringify(config));
+ const child=spawn(process.execPath,[path.join(project,'node_modules/playwright/cli.js'),'test','--config',configPath],{cwd:project,env:process.env,stdio:'inherit',windowsHide:true});
+ const timer=setTimeout(()=>child.kill(),45000);
+ try{const exitCode=await new Promise((resolve,reject)=>{child.once('error',reject);child.once('exit',resolve);});fs.writeFileSync(path.join(casePath,'exit.json'),JSON.stringify({exitCode,counts}));}
+ finally{clearTimeout(timer);server.closeAllConnections();await new Promise(resolve=>server.close(resolve));}
+ if(server.listening)throw Error('Owned server remained listening');
+ fs.writeFileSync(path.join(casePath,'listener-closed.json'),JSON.stringify({closed:true}));
+})().catch(error=>{server.closeAllConnections();server.close();console.error(error.stack);process.exitCode=1;});

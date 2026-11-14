@@ -1,0 +1,8 @@
+{
+  "scope": "Owned Linux component controls for project cleanup and generic wrapper configuration; no model efficacy or arbitrary-project claim.",
+  "contracts": [
+    "Cleaning declared project outputs and cache directories must leave the dependency environment and an unrelated sibling unchanged.",
+    "A wrapper without a configured build or test operation must not report successful completion.",
+    "A configured wrapper must execute real work and propagate both a passing test and an intentional failing test."
+  ]
+}

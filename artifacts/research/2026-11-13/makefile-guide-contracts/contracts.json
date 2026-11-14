@@ -1,0 +1,46 @@
+{
+  "source_skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-makefile-generator-skill-md",
+  "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+  "resources": {
+    "docs/variables-guide.md": {
+      "canonical_sha256": "25ed125126630a1f58bac17ce3f8d0ee69f4508074510d473b2c98152a90d12e",
+      "characters": 12817
+    },
+    "docs/makefile-structure.md": {
+      "canonical_sha256": "c128dfeb981215cfe7b25957c8332dbc6ad757a8b8ae681eabebb048564df219",
+      "characters": 11183
+    },
+    "docs/patterns-guide.md": {
+      "canonical_sha256": "d1fd655e149df87b457bd85324c1c4e02fd858dd858cff5698508f196b34fe57",
+      "characters": 12594
+    },
+    "docs/targets-guide.md": {
+      "canonical_sha256": "282faa5b0264c6ba8215072dfa7e30b4c39ba8aa5d15bc8c1b9c3a6cfdf2eaa8",
+      "characters": 13244
+    },
+    "assets/templates/.gitkeep": {
+      "canonical_sha256": "3733477b18dd35099f9e9134394f247012e8e573329132098d328d725846dff9",
+      "characters": 43
+    }
+  },
+  "source_examples": {
+    "configurations": "BUILD_TYPES := debug release profile\n\n.PHONY: all $(BUILD_TYPES) clean\n\nall: release\n\n# Target-specific variables\ndebug: CFLAGS += -g -O0 -DDEBUG\ndebug: TARGET := build/debug/$(PROJECT)\ndebug: $(TARGET)\n\nrelease: CFLAGS += -O3 -DNDEBUG\nrelease: TARGET := build/release/$(PROJECT)\nrelease: $(TARGET)\n\nprofile: CFLAGS += -pg -O2\nprofile: TARGET := build/profile/$(PROJECT)\nprofile: $(TARGET)\n\n# Generic build rule\n$(TARGET): $(OBJECTS)\n\t@mkdir -p $(@D)\n\t$(CC) $(LDFLAGS) $^ $(LDLIBS) -o $@\n",
+    "mixed": "PROJECT := mixed\nCC ?= gcc\nCXX ?= g++\nCFLAGS ?= -Wall -O2\nCXXFLAGS ?= -Wall -O2 -std=c++17\n\nSRCDIR := src\nBUILDDIR := build\nOBJDIR := $(BUILDDIR)/obj\n\n# Separate C and C++ sources\nC_SOURCES := $(wildcard $(SRCDIR)/*.c)\nCXX_SOURCES := $(wildcard $(SRCDIR)/*.cpp)\n\n# Separate object files\nC_OBJECTS := $(C_SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o)\nCXX_OBJECTS := $(CXX_SOURCES:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)\n\nALL_OBJECTS := $(C_OBJECTS) $(CXX_OBJECTS)\nDEPENDS := $(ALL_OBJECTS:.o=.d)\n\nTARGET := $(BUILDDIR)/$(PROJECT)\n\n.PHONY: all clean\n\nall: $(TARGET)\n\n# Link with C++ compiler (for C++ standard library)\n$(TARGET): $(ALL_OBJECTS)\n\t@mkdir -p $(@D)\n\t$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@\n\n# Compile C sources\n$(OBJDIR)/%.o: $(SRCDIR)/%.c\n\t@mkdir -p $(@D)\n\t$(CC) $(CPPFLAGS) $(CFLAGS) -MMD -MP -c $< -o $@\n\n# Compile C++ sources\n$(OBJDIR)/%.o: $(SRCDIR)/%.cpp\n\t@mkdir -p $(@D)\n\t$(CXX) $(CPPFLAGS) $(CXXFLAGS) -MMD -MP -c $< -o $@\n\n-include $(DEPENDS)\n\nclean:\n\t$(RM) -r $(BUILDDIR)\n",
+    "directory": "# Each line is a separate shell invocation\nbad:\n\tcd subdir\n\tmake all  # ERROR: cd didn't persist!\n\n# Solution 1: Use && to chain commands\ngood:\n\tcd subdir && make all\n\n# Solution 2: Use semicolons\ngood2:\n\tcd subdir; make all\n\n# Solution 3: Use backslash continuation\ngood3:\n\tcd subdir && \\\n\tmake all\n",
+    "flags": "CFLAGS ?= -Wall -Wextra -O2\nCFLAGS += -I./include -I./src\n",
+    "builtin": ".SUFFIXES:\n",
+    "install": "## Install built files to PREFIX\n.PHONY: install\ninstall: all\n\t$(INSTALL) -d $(DESTDIR)$(BINDIR)\n\t$(INSTALL_PROGRAM) $(TARGET) $(DESTDIR)$(BINDIR)/\n\t$(INSTALL) -d $(DESTDIR)$(LIBDIR)\n\t$(INSTALL_DATA) lib$(PROJECT).a $(DESTDIR)$(LIBDIR)/\n\t$(INSTALL) -d $(DESTDIR)$(INCLUDEDIR)\n\t$(INSTALL_DATA) $(PROJECT).h $(DESTDIR)$(INCLUDEDIR)/\n\t$(INSTALL) -d $(DESTDIR)$(MAN1DIR)\n\t$(INSTALL_DATA) docs/$(PROJECT).1 $(DESTDIR)$(MAN1DIR)/\n",
+    "uninstall": "## Remove installed files\n.PHONY: uninstall\nuninstall:\n\t$(RM) $(DESTDIR)$(BINDIR)/$(TARGET)\n\t$(RM) $(DESTDIR)$(LIBDIR)/lib$(PROJECT).a\n\t$(RM) $(DESTDIR)$(INCLUDEDIR)/$(PROJECT).h\n\t$(RM) $(DESTDIR)$(MAN1DIR)/$(PROJECT).1\n"
+  },
+  "contracts": [
+    "An explicitly empty setting remains empty; a genuinely undefined setting receives its declared default.",
+    "User optimization flags must not silently remove project-required include paths.",
+    "Debug and release outputs must have distinct declared prerequisites and paths when both configurations are supported.",
+    "A failed directory change must stop the intended child build rather than run a parent build successfully.",
+    "Distinct C and C++ sources with the same basename must both reach the final executable.",
+    "A claim to disable implicit rules must be checked against actual rule resolution; explicit rules must still work.",
+    "Uninstall must remove the actual staged installed filename while preserving unrelated staged files; no host-system installation is permitted."
+  ],
+  "scope": "Source-grounded component review, not model evaluation. Contracts fixed before execution and maintained edits; no external benchmark tasks, solutions or graders used.",
+  "revision_reason": "Retain v1 exact-line fixture failure and v2 disproved C-link hypothesis. Inspect actual remaining built-in patterns through the Make database without executing checkout recipes; preserve the negative C-link observation."
+}

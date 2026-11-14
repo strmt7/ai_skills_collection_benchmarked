@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "command": "cd /workspace/fixture && python -c 'raise SystemExit(7)'",
+  "timeout_seconds": 10,
+  "exit_code": 7,
+  "timed_out": false,
+  "duration_seconds": 0.016093293999801972,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "execution_complete": true,
+  "remaining_owned_processes": 0
+}

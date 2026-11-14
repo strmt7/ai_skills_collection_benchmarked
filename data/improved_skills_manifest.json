@@ -6,13 +6,15 @@
       "license": "MIT",
       "license_file_sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
       "license_source_sha": "b832b6f642312312367c07688dc7426db40a82ed",
-      "original_path": "included/improved/skills/eval-harness-current/provenance/original-SKILL.md",
-      "overlay_path": "included/improved/skills/eval-harness-current",
-      "overlay_sha256": "03bd4666ace171cc6852c531b474de6cd13131fb89f3971c0a8fb56c4632ab8a",
+      "original_path": "included/improved/skills/eval-harness-integrity/provenance/original-SKILL.md",
+      "overlay_path": "included/improved/skills/eval-harness-integrity",
+      "overlay_sha256": "cedb0e80d9736e2d7e9cbded2b6b9b2589620f2bcea4f3ecc6ac4231ce4454e9",
       "package_file_sha256": {
         "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
-        "SKILL.md": "03bd4666ace171cc6852c531b474de6cd13131fb89f3971c0a8fb56c4632ab8a",
-        "provenance/original-SKILL.md": "0bc29828b0b20c57f1d0904fab2f046155aae9e6d9cf1d7587dd8776a8747f3d"
+        "SKILL.md": "cedb0e80d9736e2d7e9cbded2b6b9b2589620f2bcea4f3ecc6ac4231ce4454e9",
+        "provenance/original-SKILL.md": "0bc29828b0b20c57f1d0904fab2f046155aae9e6d9cf1d7587dd8776a8747f3d",
+        "references/grader-admission.md": "884d146561d7110ad6cba9e1e2ecf21aa1c9e90033c8e9c0ffc12f079ffa19d1",
+        "references/repeated-attempts.md": "5144b51701c5ab684ad74ecf9954b782c7ad882b5ea1b88dc77f10dd22650024"
       },
       "performance_status": "unbenchmarked",
       "skill_id": "affaan-m-everything-claude-code-agents-skills-eval-harness-skill-md",
@@ -24,13 +26,14 @@
       "license": "MIT",
       "license_file_sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
       "license_source_sha": "b832b6f642312312367c07688dc7426db40a82ed",
-      "original_path": "included/improved/skills/strategic-compact-current/provenance/original-SKILL.md",
-      "overlay_path": "included/improved/skills/strategic-compact-current",
-      "overlay_sha256": "4686f2f919ada2efd48525485a0408249101a3d33b6f52d34121df88c6812566",
+      "original_path": "included/improved/skills/strategic-compact-resume/provenance/original-SKILL.md",
+      "overlay_path": "included/improved/skills/strategic-compact-resume",
+      "overlay_sha256": "b04c4e20f081782b94504b80f5dda57a749aacd2679d3e237e43b1f606f6ce4a",
       "package_file_sha256": {
         "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
-        "SKILL.md": "4686f2f919ada2efd48525485a0408249101a3d33b6f52d34121df88c6812566",
-        "provenance/original-SKILL.md": "c83c4c9d60d30d508bbd2bf0c6ffa724b5fdac679addd4828b268892dc39dc1b"
+        "SKILL.md": "b04c4e20f081782b94504b80f5dda57a749aacd2679d3e237e43b1f606f6ce4a",
+        "provenance/original-SKILL.md": "c83c4c9d60d30d508bbd2bf0c6ffa724b5fdac679addd4828b268892dc39dc1b",
+        "references/token-accounting.md": "668d1f858a115273cf8fa36cca2d35d9fe019b62c126f12976449cd534a34712"
       },
       "performance_status": "unbenchmarked",
       "skill_id": "affaan-m-everything-claude-code-agents-skills-strategic-compact-skill-md",
@@ -86,21 +89,21 @@
       "overlay_path": "included/improved/skills/cover-image-workflow-current",
       "overlay_sha256": "50fcedc7b941c4d77ab441c0058778830c03665d4585920b6ce517bbe04859a5",
       "package_file_sha256": {
+        "LICENSE": "8b1855650f4439f83e80337656bf960fe5e06e6d8812ea30cae166e613d57304",
+        "NOTICE.md": "0a394fedc38c713d49b70b645015791e0cb52e53e737bbd0330f13047d95b283",
+        "SKILL.md": "50fcedc7b941c4d77ab441c0058778830c03665d4585920b6ce517bbe04859a5",
         "assets/cli.js": "3f8feabfbcd3d58b5dbe2c161348c28cdec393eb521f5daaabf77564ce5acd71",
         "assets/imageValidator.js": "70643e57021b25098716d79acd699ad727c8922e0fd28b9f9f104a6848d31f47",
         "assets/logoFetcher.js": "783a2d9b2f05333e3e286e3866ff2f92963a9f6a7722db5ad01f2fb22d193d24",
         "assets/package-lock.json": "2ae8788f07982864fc63bb82fab3c8a40265ca97d27c38eac9f9f01330120353",
         "assets/package.json": "7516f6be36f44cccd21b758ac47bcff6881a08b6d477fce2e939eee54c048ef3",
-        "LICENSE": "8b1855650f4439f83e80337656bf960fe5e06e6d8812ea30cae166e613d57304",
-        "NOTICE.md": "0a394fedc38c713d49b70b645015791e0cb52e53e737bbd0330f13047d95b283",
         "provenance/original-SKILL.md": "f5ab67d3ed7b80e1e7ad7dc34175633f28b3acf053f7a4366fc4b76960587fcc",
         "references/cli-repair.md": "aaed34a6a9ca6090d4bed4010f66496c64bd4f76c1b113c302c376a3aaa60ccb",
         "references/qualification-2026-10-25.md": "28c0679f34b78602674c295fb612111b3849fdf00eba9d052bf43e96363b1f9a",
         "references/qualification-2026-11-10.md": "7e8891241ec5bb2e339b6f3f0375cc820917d0288298361783617138077f1b1b",
         "references/qualified-implementation.md": "ad2c3e4cd0a3eec20e68195ed4085b962450a72cbe45b357cda1a78a07145c47",
         "references/source-files.json": "32c78cfdb79a70cf61202ccaad34bb5806d878d2ad784a308d40c2d28482beca",
-        "scripts/prepare_cli.py": "00216393e2f046100eea1fb125b14dc62fb79e4a57f607fd52e8727c3dc47272",
-        "SKILL.md": "50fcedc7b941c4d77ab441c0058778830c03665d4585920b6ce517bbe04859a5"
+        "scripts/prepare_cli.py": "00216393e2f046100eea1fb125b14dc62fb79e4a57f607fd52e8727c3dc47272"
       },
       "performance_status": "unbenchmarked",
       "skill_id": "varnan-tech-opendirectory-packages-cli-skills-blog-cover-image-cli-skill-md",
@@ -424,9 +427,9 @@
       "package_file_sha256": {
         "LICENSE": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
         "NOTICE.md": "894f86385a0b78eac31ab2e7859bd64783e54444d1afc92efbca747b9c4299fd",
+        "SKILL.md": "d7ac89b75a15258a6c578dcdbea70dcb49d5aef7afb76c720bcce324209a6d1e",
         "provenance/original.SKILL.md": "5404e73526105c064eb051abe726097a9699ba39a2aaa23fb1b195d2835bd9c4",
-        "references/qualification.md": "405272e0f620b082b76ab3c1c9296864c13bd31b31445575fd658119d6fdf668",
-        "SKILL.md": "d7ac89b75a15258a6c578dcdbea70dcb49d5aef7afb76c720bcce324209a6d1e"
+        "references/qualification.md": "405272e0f620b082b76ab3c1c9296864c13bd31b31445575fd658119d6fdf668"
       },
       "performance_status": "unbenchmarked",
       "skill_id": "trailofbits-skills-plugins-testing-handbook-skills-skills-address-sanitizer-skill-md",
@@ -444,9 +447,9 @@
       "package_file_sha256": {
         "LICENSE": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
         "NOTICE.md": "397eeffbe81c6e9e16fe840a5788a01d7d6340e4f8e029303db4ee664d1cfc60",
+        "SKILL.md": "c1cd3f868ca4910cac32ce79d7863d768701b225ebaa8d9268148d7e96900ddd",
         "provenance/original.SKILL.md": "3247064b931fdc5b259e9d7786a7e50858cde27cedbf6bef873a5d77827efed8",
-        "references/qualification.md": "2e01c15facdc61153ef5a6658e8c7309f3c9ea65827e545520e9a9bd0f59c39a",
-        "SKILL.md": "c1cd3f868ca4910cac32ce79d7863d768701b225ebaa8d9268148d7e96900ddd"
+        "references/qualification.md": "2e01c15facdc61153ef5a6658e8c7309f3c9ea65827e545520e9a9bd0f59c39a"
       },
       "performance_status": "unbenchmarked",
       "skill_id": "trailofbits-skills-plugins-testing-handbook-skills-skills-fuzzing-dictionary-skill-md",
@@ -530,6 +533,50 @@
       "source_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
       "source_file_sha256": "63249998befbdbbf2f7d2f089c9cd7a9912f26ddc8fdf04ab1248c82614b43ac",
       "source_url": "https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/tdd-workflow/SKILL.md"
+    },
+    {
+      "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-makefile-generator-skill-md",
+      "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+      "source_url": "https://github.com/akin-ozer/cc-devops-skills/blob/7fe7595e4512f8ce43dcf956aa5190b96d627dd1/devops-skills-plugin/skills/makefile-generator/SKILL.md",
+      "source_file_sha256": "c0090361f2f9999c81050beb7d65aaf4338094559bd227d944aafbf1500286fe",
+      "overlay_path": "included/improved/skills/makefile-generator-cpp",
+      "original_path": "included/improved/skills/makefile-generator-cpp/provenance/original-SKILL.md",
+      "overlay_sha256": "fa7331261f4a5230f45edbc742924146504b64de65f396b4fb632cf37b8c7316",
+      "license": "Apache-2.0",
+      "license_source_sha": "f49a4e16e68b128803cc2dcea614603632b04eac",
+      "license_file_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "package_file_sha256": {
+        "generate.py": "aaff7fb0607dd8924d6216b832b0ee73f7e06d779a814578c8ad3031f129b4f0",
+        "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "NOTICE.md": "2c13c3a2e93cbc2e849f7342c7bee270502ea2fc8223d5601187ee44dcbd9ed8",
+        "provenance/original-generate.sh": "f85287a85ab0b152b2d7f8681642d616031896e4e75d45b78970de514a324747",
+        "provenance/original-SKILL.md": "c0090361f2f9999c81050beb7d65aaf4338094559bd227d944aafbf1500286fe",
+        "references/build-reliability.md": "f623bd66209a463e4146553169408f4f1c2c895badbda245d46a785a58569317",
+        "references/configuration-and-variables.md": "143127ba439978bd4efc1973238c18ef0ee32c55f4f4fa33ba31459692a849dc",
+        "SKILL.md": "fa7331261f4a5230f45edbc742924146504b64de65f396b4fb632cf37b8c7316",
+        "templates/cpp.mk": "7c8df9fa6b16ed267b249e19e277579d17320b8b0a4a94a9c78c2959b56e4384",
+        "test_generator.py": "8a002cc3e5254b1dd5783fe673d95c50f15bf5eded7ede3e114e7808775d821c"
+      },
+      "performance_status": "unbenchmarked"
+    },
+    {
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-e2e-testing-skill-md",
+      "source_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "source_url": "https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/e2e-testing/SKILL.md",
+      "source_file_sha256": "f84ae93c159bf6ecef5a60c9735dc82d96bc5f977ef52eb71678b66722acf684",
+      "overlay_path": "included/improved/skills/e2e-testing-current",
+      "original_path": "included/improved/skills/e2e-testing-current/provenance/original-SKILL.md",
+      "overlay_sha256": "37dba3477baaa890c1e443027e472f06cffaa3345531d9525ad8a01d27c37d4a",
+      "license": "MIT",
+      "license_source_sha": "b832b6f642312312367c07688dc7426db40a82ed",
+      "license_file_sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+      "package_file_sha256": {
+        "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+        "NOTICE.md": "5a55fc6ffbc968310015d3767caa785be9900ef59bf5d3464261586070c3a3bd",
+        "provenance/original-SKILL.md": "f84ae93c159bf6ecef5a60c9735dc82d96bc5f977ef52eb71678b66722acf684",
+        "SKILL.md": "37dba3477baaa890c1e443027e472f06cffaa3345531d9525ad8a01d27c37d4a"
+      },
+      "performance_status": "unbenchmarked"
     }
   ]
 }

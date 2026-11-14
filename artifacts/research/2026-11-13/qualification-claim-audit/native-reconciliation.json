@@ -1,0 +1,1019 @@
+{
+  "scope": "All retained wrapper checks declaring either of the two selected complete native subject-controller fixture helpers in the bounded inventory. Other schemas and negative-cause qualification remain separate.",
+  "inventory_sha256": "47f880571f508b9174594716556fbac6c95e0473303267f266015029eebc5894",
+  "selected_helper_names": [
+    "qualify_native_subject_dependencies_v1.py",
+    "qualify_native_subject_trial_v2.py"
+  ],
+  "records": [
+    {
+      "wrapper": "native-storage-controls-qualified-v1/qualification.json",
+      "wrapper_sha256": "a5fe51b23ea1a0245222fea6fafe1123dda02bee0102fae1aec9d5a1046c5a7f",
+      "check_id": "native-edited",
+      "output": "native-subject-storage-edited-v1",
+      "historical_check_passed": true,
+      "historical_task_status": "task_passed",
+      "summary_sha256": "ccb459dde88d723ca2197f16d343a886f3cb30064e3ef65e0cc09b0c09bf1c05",
+      "classification": "native_command_and_original_grader_success_verified",
+      "native_command_count": 1,
+      "native_command_exit_codes": [
+        0
+      ],
+      "original_native_counts": {
+        "total": 11,
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "publisher_nonroot": true,
+      "historical_scope_only": true,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "native_receipts_sha256": {
+        "transcript": "d1e1bf56be4823fa3d12911c5be150a866cbe770f88a9abda081bd651ab2fcea",
+        "junit": "4b04224943fcaca7dcd2d5d3281a544a3499aa07e27c799b769d37b69937a24c",
+        "publisher": "15477e1a3745bd11161941608bd409f81fbfb2f6c4e6b33f2b5fdbbc979f352d",
+        "process": "0bf524c0fe89c0313c5397d2aa71b9b7c0b6d34ceee99b7f49ebd1747a4f274a",
+        "task": "dcf299107a39c30167e5af72b9cd6c2fda6508fd632b57234503f69aec59667e"
+      }
+    },
+    {
+      "wrapper": "native-storage-controls-qualified-v2/qualification.json",
+      "wrapper_sha256": "19e4e1e7879123b02de156ba5da1f7ccafa194d8f19221c02c530828b2b52a65",
+      "check_id": "native-edited",
+      "output": "native-subject-storage-edited-v2",
+      "historical_check_passed": true,
+      "historical_task_status": "task_passed",
+      "summary_sha256": "ccb459dde88d723ca2197f16d343a886f3cb30064e3ef65e0cc09b0c09bf1c05",
+      "classification": "native_command_and_original_grader_success_verified",
+      "native_command_count": 1,
+      "native_command_exit_codes": [
+        0
+      ],
+      "original_native_counts": {
+        "total": 11,
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "publisher_nonroot": true,
+      "historical_scope_only": true,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "native_receipts_sha256": {
+        "transcript": "318090965b2ab2eaa31f847ce11235084962b6dcdaa3f1a28129e406d9210b82",
+        "junit": "0f2b404178c9ecbfe8030272765739d51ef1ccc1574aa3ab16815c2ae04cda53",
+        "publisher": "8b9caba125121ee5aa53be228fbeb002136cf1911dcf3a06de1834dc35776b85",
+        "process": "b950debaddb28b14fe6e7f5cae7bbba99cba13b4084bd016cefe804e04b57540",
+        "task": "dcf299107a39c30167e5af72b9cd6c2fda6508fd632b57234503f69aec59667e"
+      }
+    },
+    {
+      "wrapper": "native-storage-controls-qualified-v2/qualification.json",
+      "wrapper_sha256": "19e4e1e7879123b02de156ba5da1f7ccafa194d8f19221c02c530828b2b52a65",
+      "check_id": "native-unchanged",
+      "output": "native-subject-storage-unchanged-v2",
+      "historical_check_passed": true,
+      "historical_task_status": "task_failed",
+      "summary_sha256": "dadd6a62f7bfc0d2a1a4e992512aea373cc2af55ffa63e3d4f4f2247cdf334c0",
+      "classification": "tool_free_unchanged_failure_verified",
+      "native_command_count": 0,
+      "native_command_exit_codes": [],
+      "original_native_counts": {
+        "total": 11,
+        "passed": 0,
+        "failed": 10,
+        "skipped": 1,
+        "errors": 0
+      },
+      "publisher_nonroot": true,
+      "historical_scope_only": true,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "native_receipts_sha256": {
+        "transcript": "434cd3d992a2a3fbb7d6bb14eeb78edaab2636ef21a76c0e527bcd72c10f6ed4",
+        "junit": "0493ec0ef4b6b490ce4bf2433c24b9a4a1eb14f99efe114ebc661112234ae880",
+        "publisher": "d185e034396f2f51e270ce8419541ad72e8bceda2257399b8df0203661f16bdf",
+        "process": "7df0665bb124263a25b368d3bad65d7ed82a54932e1f1fbf2ab9cd631933bc56",
+        "task": "dcf299107a39c30167e5af72b9cd6c2fda6508fd632b57234503f69aec59667e"
+      }
+    },
+    {
+      "wrapper": "native-storage-controls-qualified-v2/qualification.json",
+      "wrapper_sha256": "19e4e1e7879123b02de156ba5da1f7ccafa194d8f19221c02c530828b2b52a65",
+      "check_id": "native-truncated",
+      "output": "native-subject-storage-truncated-v2",
+      "historical_check_passed": true,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "81d095908b4d440cf369c7ec2eb9748e5e0b6e188d8f14ed4820d6b671f2739e",
+      "classification": "historical_negative_claim_not_readmitted",
+      "negative_cause_audit_complete": false,
+      "historical_stage": "collection"
+    },
+    {
+      "wrapper": "native-storage-controls-qualified-v2/qualification.json",
+      "wrapper_sha256": "19e4e1e7879123b02de156ba5da1f7ccafa194d8f19221c02c530828b2b52a65",
+      "check_id": "native-logical",
+      "output": "native-subject-storage-logical-v2",
+      "historical_check_passed": false,
+      "historical_task_status": "task_passed",
+      "summary_sha256": "09ebe926fe8614648c02440d1a6dee3ba46bc21ea9aa879a6608daf9cbf98465",
+      "classification": "historical_failed_qualification_preserved"
+    },
+    {
+      "wrapper": "native-storage-controls-qualified-v2/qualification.json",
+      "wrapper_sha256": "19e4e1e7879123b02de156ba5da1f7ccafa194d8f19221c02c530828b2b52a65",
+      "check_id": "native-space",
+      "output": "native-subject-storage-space-v2",
+      "historical_check_passed": true,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "be3e03343f3998f889e79c88afa6936c550716832acf51a20b54b694673ad190",
+      "classification": "historical_negative_claim_not_readmitted",
+      "negative_cause_audit_complete": false,
+      "historical_stage": "collection"
+    },
+    {
+      "wrapper": "native-storage-controls-qualified-v2/qualification.json",
+      "wrapper_sha256": "19e4e1e7879123b02de156ba5da1f7ccafa194d8f19221c02c530828b2b52a65",
+      "check_id": "native-spaceerror",
+      "output": "native-subject-storage-spaceerror-v2",
+      "historical_check_passed": true,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "318973ee695cd8e96b7f18b008d6e43e858d0113312d4947196fc36ebd851d76",
+      "classification": "historical_negative_claim_not_readmitted",
+      "negative_cause_audit_complete": false,
+      "historical_stage": "collection"
+    },
+    {
+      "wrapper": "native-storage-controls-qualified-v2/qualification.json",
+      "wrapper_sha256": "19e4e1e7879123b02de156ba5da1f7ccafa194d8f19221c02c530828b2b52a65",
+      "check_id": "native-preflight-space",
+      "output": "native-subject-storage-preflight-space-v2",
+      "historical_check_passed": true,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "9c15110b8ae62c827c601e434da9827620ddeef0d28d795b87a36e8dd6c3ee92",
+      "classification": "historical_negative_claim_not_readmitted",
+      "negative_cause_audit_complete": false,
+      "historical_stage": "storage_preflight"
+    },
+    {
+      "wrapper": "native-storage-controls-qualified-v3/qualification.json",
+      "wrapper_sha256": "359e042e22dd702b359cdbc745071f7ebff9e389dbea1158214cd96b686bb2f5",
+      "check_id": "native-logical",
+      "output": "native-subject-storage-logical-v3",
+      "historical_check_passed": true,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "05ff6f009b912ecd299417c92fa747e8a691d28ee6f83610c1c0dbb5f7bcb9ad",
+      "classification": "historical_negative_claim_not_readmitted",
+      "negative_cause_audit_complete": false,
+      "historical_stage": "final_storage"
+    },
+    {
+      "wrapper": "native-subject-adapter-validation-v1/qualification.json",
+      "wrapper_sha256": "45c5f037773a3686ffa998d41b86b94f93cc44a3685ae529c402432e63070b15",
+      "check_id": "native-edited",
+      "output": "native-subject-adapter-edited-v3",
+      "historical_check_passed": true,
+      "historical_task_status": "task_passed",
+      "summary_sha256": "4828675896b7d2a74ed9eba1c5b132f5ef281046bf264dba9bb674be4063616c",
+      "classification": "native_command_and_original_grader_success_verified",
+      "native_command_count": 1,
+      "native_command_exit_codes": [
+        0
+      ],
+      "original_native_counts": {
+        "total": 11,
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "publisher_nonroot": true,
+      "historical_scope_only": true,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "native_receipts_sha256": {
+        "transcript": "e7e77d7bf6d0010fa1aca8d0b09abacbb084913f7f9635242aefd26b99595b50",
+        "junit": "6493f31700db97a1e89d77dc17fe4a1f80290db39c9f02b9e7e3a909f088c22a",
+        "publisher": "2f8cc4a207b9673be64e212b195e2e1e5e83385ad38ea33775c3e33ccfc9a3db",
+        "process": "e8a8ce3d311419798430ca4f012c06c1c572206ca02d6af06ebf6994c5eb3f4d",
+        "task": "59d9d02feb74eb42b17d592e8c56e5d2a06e8b06e801c4b3f6f1512e555a3bb5"
+      }
+    },
+    {
+      "wrapper": "native-subject-adapter-validation-v1/qualification.json",
+      "wrapper_sha256": "45c5f037773a3686ffa998d41b86b94f93cc44a3685ae529c402432e63070b15",
+      "check_id": "native-unchanged",
+      "output": "native-subject-adapter-unchanged-v3",
+      "historical_check_passed": true,
+      "historical_task_status": "task_failed",
+      "summary_sha256": "df830691884b5a04d549b2e2c083f552bdd7ee0d1d979eac90c5e27dcf57a666",
+      "classification": "tool_free_unchanged_failure_verified",
+      "native_command_count": 0,
+      "native_command_exit_codes": [],
+      "original_native_counts": {
+        "total": 11,
+        "passed": 0,
+        "failed": 10,
+        "skipped": 1,
+        "errors": 0
+      },
+      "publisher_nonroot": true,
+      "historical_scope_only": true,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "native_receipts_sha256": {
+        "transcript": "b4bdddf570a70b53539b7cd86bc72ace1af16f8d078d5833d7b2ffc94af35e6c",
+        "junit": "689a05b98fe1dfc7207bcbb52f80b0161886f62ddfec77a8242a2e6586e36a7a",
+        "publisher": "de6118e129505ac38eec37143f248844bfa1e1c185160e80c1fc29fd4d1b3bc0",
+        "process": "810942f6d6264bfd8b214dad3a7893a3a84d91f64e276cdbe0c863018a588f25",
+        "task": "59d9d02feb74eb42b17d592e8c56e5d2a06e8b06e801c4b3f6f1512e555a3bb5"
+      }
+    },
+    {
+      "wrapper": "native-subject-adapter-validation-v1/qualification.json",
+      "wrapper_sha256": "45c5f037773a3686ffa998d41b86b94f93cc44a3685ae529c402432e63070b15",
+      "check_id": "native-truncated",
+      "output": "native-subject-adapter-truncated-v3",
+      "historical_check_passed": true,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "3d4c9d8af9b4bcb75e7fbe83d318f3b7dd87528f59fa537f3701622f67ed7b8b",
+      "classification": "historical_negative_claim_not_readmitted",
+      "negative_cause_audit_complete": false,
+      "historical_stage": "collection"
+    },
+    {
+      "wrapper": "provider-route-native-qualified-v1/qualification.json",
+      "wrapper_sha256": "37fb9eff007e247c99b6d7f57ab9fd83efaf9e3faff9ac581e71396c78fef10d",
+      "check_id": "none-edited",
+      "output": "provider-route-none-edited-v1",
+      "historical_check_passed": true,
+      "historical_task_status": "task_passed",
+      "summary_sha256": "165e0f094485ee9604241958dc1c2c46aaf1ea0f6cf47daa8bc7cfac77faa46f",
+      "classification": "native_command_and_original_grader_success_verified",
+      "native_command_count": 1,
+      "native_command_exit_codes": [
+        0
+      ],
+      "original_native_counts": {
+        "total": 11,
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "publisher_nonroot": true,
+      "historical_scope_only": true,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "native_receipts_sha256": {
+        "transcript": "ee733ed8d9c499533811126c60d3a31318ab9e6e44daf777f6450c88eba8737e",
+        "junit": "5a5dccdc8adc78cfba17adf1159cfa977932a6b885091f1a9260487701f1689a",
+        "publisher": "58e28967cc3b2ffdedec918ce98499b25dffe185ec82f62f61afe4994df6b4c8",
+        "process": "a3e449d68830580b18584d3bd7af16541723d2a527a2f39572cfb1187cfae495",
+        "task": "ab075f33c8db892758008386239560d4e2c43747985633943d49e42b59bb2027"
+      }
+    },
+    {
+      "wrapper": "provider-route-native-qualified-v1/qualification.json",
+      "wrapper_sha256": "37fb9eff007e247c99b6d7f57ab9fd83efaf9e3faff9ac581e71396c78fef10d",
+      "check_id": "none-unchanged",
+      "output": "provider-route-none-unchanged-v1",
+      "historical_check_passed": true,
+      "historical_task_status": "task_failed",
+      "summary_sha256": "6470af5fe49e8f33ad4d922c352d06b0616f0fdc95e3bcb2591fc827cd6333b7",
+      "classification": "tool_free_unchanged_failure_verified",
+      "native_command_count": 0,
+      "native_command_exit_codes": [],
+      "original_native_counts": {
+        "total": 11,
+        "passed": 0,
+        "failed": 10,
+        "skipped": 1,
+        "errors": 0
+      },
+      "publisher_nonroot": true,
+      "historical_scope_only": true,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "native_receipts_sha256": {
+        "transcript": "140bd36f3986c89810dcfea33a532ac582fea0e3dcd3c4b95ec4bc40e54446e4",
+        "junit": "4d60bc5a369dcc21ee1361a0496d53e93444f83ad56ffa0762faf96cda0f381e",
+        "publisher": "32588e285328d256bc74f337597308cd023aa6beeb0800ab2eff3edeb0b343f7",
+        "process": "58bf8642d22e843521cff6df15e081a31219c9eecc5117631f80c0ea82e87cd4",
+        "task": "ab075f33c8db892758008386239560d4e2c43747985633943d49e42b59bb2027"
+      }
+    },
+    {
+      "wrapper": "provider-route-native-qualified-v1/qualification.json",
+      "wrapper_sha256": "37fb9eff007e247c99b6d7f57ab9fd83efaf9e3faff9ac581e71396c78fef10d",
+      "check_id": "none-truncated",
+      "output": "provider-route-none-truncated-v1",
+      "historical_check_passed": true,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "31108d9308d00ac6c98c5cd010e929d60840bb43b46ab24c3e18d02ca9b25b17",
+      "classification": "historical_negative_claim_not_readmitted",
+      "negative_cause_audit_complete": false,
+      "historical_stage": "collection"
+    },
+    {
+      "wrapper": "provider-route-native-qualified-v1/qualification.json",
+      "wrapper_sha256": "37fb9eff007e247c99b6d7f57ab9fd83efaf9e3faff9ac581e71396c78fef10d",
+      "check_id": "bearer-edited",
+      "output": "provider-route-bearer-edited-v1",
+      "historical_check_passed": true,
+      "historical_task_status": "task_passed",
+      "summary_sha256": "5377457033f73de3eda5a7166930855be46a0ab96a19165c572a3f637449ef57",
+      "classification": "native_command_and_original_grader_success_verified",
+      "native_command_count": 1,
+      "native_command_exit_codes": [
+        0
+      ],
+      "original_native_counts": {
+        "total": 11,
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "publisher_nonroot": true,
+      "historical_scope_only": true,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "native_receipts_sha256": {
+        "transcript": "e401bf3f6561da261d47299fca76f1ff184f595f2cc44570ea6ea9b7a685eda0",
+        "junit": "cd2ca5a2cb73c0e1b2c4d02a52c139fd547dba3129efef435ae63385ca173297",
+        "publisher": "0b4ff206eaa6718ed498121d587472b54aa2358f3d1e6d0c7a92f3043bd43fb1",
+        "process": "7c3f5a6386e60d7a319f465f8f7dea8dfe9b3b29bc8104fe113fbb59bf65761a",
+        "task": "ab075f33c8db892758008386239560d4e2c43747985633943d49e42b59bb2027"
+      }
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-refresh1/qualification.json",
+      "wrapper_sha256": "a8a9caac2e705cf608feae69813db5f4875aaf3dee6d7033cd88e0668bf20117",
+      "check_id": "signin-unchanged-refresh",
+      "output": "provider-route-signin-unchanged-refresh-refresh1",
+      "historical_check_passed": true,
+      "historical_task_status": "task_failed",
+      "summary_sha256": "0505fc1e7baf185139ad4b600eb47e8599fc89e0f6226332778fdbd25fa1477f",
+      "classification": "revoked_wrapper_pass_nested_summary_failed",
+      "nested_summary_passed": false,
+      "reason": "The historical helper emitted the final failing summary but returned the stale pre-update passed variable. Process exit zero did not validate the final control criteria.",
+      "stdout_sha256": "e5ce1bc021e267b43716afc4df258ba763f8c1cdaf25c7e4803a4ad4b2a32f42",
+      "historical_implementation_sha256": "56d1942531773bb2f97994148a9b071534766206725495d338f477ff74f57253",
+      "current_corrected_implementation_sha256": "cd37cc70bcad6b7fea26187b27d62e1cad0751f3e986ef30a0c621ff88ba56a9",
+      "original_receipts_modified": false,
+      "accepted_for_current_admission": false
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-refresh2/qualification.json",
+      "wrapper_sha256": "5ed8b22703a9e7aa6b9686f8aae0e27bba05c679150d24ee744d271c26c040c6",
+      "check_id": "signin-unchanged-refresh",
+      "output": "provider-route-signin-unchanged-refresh-refresh2",
+      "historical_check_passed": true,
+      "historical_task_status": "task_failed",
+      "summary_sha256": "ad96aa9511cc78ce83c8c6bab2bd12d5476d195e180e0a1e99e6dbc37b8f4011",
+      "classification": "tool_free_unchanged_failure_verified",
+      "native_command_count": 0,
+      "native_command_exit_codes": [],
+      "original_native_counts": {
+        "total": 11,
+        "passed": 0,
+        "failed": 10,
+        "skipped": 1,
+        "errors": 0
+      },
+      "publisher_nonroot": true,
+      "historical_scope_only": true,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "native_receipts_sha256": {
+        "transcript": "9073e3188b911bb317049cb27d5b04cb1c2ea1815b0b12a239547fdac0d1bf62",
+        "junit": "5854d4ba3a22866d129eb53e71f5d5230ee09e51eb468d86072f3d38a6e53c92",
+        "publisher": "ff4dec611986c15851e0c67946ac13abd42a5f79ccfdcecdc6da9dfb89ab83ba",
+        "process": "bd36fcd5fadce877a5436964514914a1ffdc59ed91a0daaa3f690880e94e721a",
+        "task": "18cc0fca9ce3ed268499910e6ef4538951e372aa1dc7f1c82fb3a03e3daea85e"
+      }
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-refresh3/qualification.json",
+      "wrapper_sha256": "00c5ae413ff2e8d400eef2370c2ecf35e0ff23a4e4cb8a840ff285c9214acff7",
+      "check_id": "signin-unchanged-refresh-conflict",
+      "output": "provider-route-signin-unchanged-refresh-conflict-refresh3",
+      "historical_check_passed": true,
+      "historical_task_status": "task_failed",
+      "summary_sha256": "2d5d63caacd9a425bb4923154979fdd22ae911c4ab7cb496be0ec848ed6c395a",
+      "classification": "tool_free_unchanged_failure_verified",
+      "native_command_count": 0,
+      "native_command_exit_codes": [],
+      "original_native_counts": {
+        "total": 11,
+        "passed": 0,
+        "failed": 10,
+        "skipped": 1,
+        "errors": 0
+      },
+      "publisher_nonroot": true,
+      "historical_scope_only": true,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "native_receipts_sha256": {
+        "transcript": "f64d8aff9a04b3d2020e5db28b8d7c7e0cfc34b13f28e06f0fa4814c793a420e",
+        "junit": "c70fecfc7a94adcec76782c5f0e83f616fe3eec766a024e0d86ce03a67287613",
+        "publisher": "28811dbccefce81700a7c6c19d812a235e2912aa3fab5c3413d00b0d9368ca46",
+        "process": "dbc64eceba9eb90dc1bcbd18dc8d5f432b781bf4c95d19953055de52e7877d03",
+        "task": "18cc0fca9ce3ed268499910e6ef4538951e372aa1dc7f1c82fb3a03e3daea85e"
+      }
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-refresh3/qualification.json",
+      "wrapper_sha256": "00c5ae413ff2e8d400eef2370c2ecf35e0ff23a4e4cb8a840ff285c9214acff7",
+      "check_id": "signin-unchanged-refresh-rejected",
+      "output": "provider-route-signin-unchanged-refresh-rejected-refresh3",
+      "historical_check_passed": true,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "a4fc7f1a4d5d5ea48ebe96e012208bb3f042b815f255aeb551f1bb081a7bb8c6",
+      "classification": "historical_negative_claim_not_readmitted",
+      "negative_cause_audit_complete": false,
+      "historical_stage": "collection"
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-refresh4/qualification.json",
+      "wrapper_sha256": "98fe03c3ca6a582f14ada7c5c457a0a0a12e9b560c7ab953c7dbea92f16a9c92",
+      "check_id": "signin-unchanged-refresh-cancel",
+      "output": "provider-route-signin-unchanged-refresh-cancel-refresh4",
+      "historical_check_passed": true,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "000bd828fe7ebe156bd6b88a6fe4f557ab9054da4c91d3c98ee61e8b72336cef",
+      "classification": "historical_negative_claim_not_readmitted",
+      "negative_cause_audit_complete": false,
+      "historical_stage": "collection"
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-refresh5/qualification.json",
+      "wrapper_sha256": "cd0dbfe96f2462ad6f94572c656a89496d89fedd4424a591e8d71a992ef2bacc",
+      "check_id": "signin-unchanged-refresh",
+      "output": "provider-route-signin-unchanged-refresh-refresh5",
+      "historical_check_passed": true,
+      "historical_task_status": "task_failed",
+      "summary_sha256": "ad96aa9511cc78ce83c8c6bab2bd12d5476d195e180e0a1e99e6dbc37b8f4011",
+      "classification": "tool_free_unchanged_failure_verified",
+      "native_command_count": 0,
+      "native_command_exit_codes": [],
+      "original_native_counts": {
+        "total": 11,
+        "passed": 0,
+        "failed": 10,
+        "skipped": 1,
+        "errors": 0
+      },
+      "publisher_nonroot": true,
+      "historical_scope_only": true,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "native_receipts_sha256": {
+        "transcript": "2e0313856d2b996071474b2546749bd5b308fcbad9d5a5a28a68cc38af6105db",
+        "junit": "1a2862171cd9e5fd63efd4085c4ad306845d833ced12abf1d3e4324709e017e8",
+        "publisher": "137d67da1f94a8a0d1c023f35a873daddb773016ed687b0c330d6d777ce021ca",
+        "process": "eb5ef7cf0598f1c9cc10e754a58b29f9568ca3dfb5905b20c372ad496b52bc6f",
+        "task": "18cc0fca9ce3ed268499910e6ef4538951e372aa1dc7f1c82fb3a03e3daea85e"
+      }
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-refresh5/qualification.json",
+      "wrapper_sha256": "cd0dbfe96f2462ad6f94572c656a89496d89fedd4424a591e8d71a992ef2bacc",
+      "check_id": "signin-unchanged-refresh-conflict",
+      "output": "provider-route-signin-unchanged-refresh-conflict-refresh5",
+      "historical_check_passed": true,
+      "historical_task_status": "task_failed",
+      "summary_sha256": "2d5d63caacd9a425bb4923154979fdd22ae911c4ab7cb496be0ec848ed6c395a",
+      "classification": "tool_free_unchanged_failure_verified",
+      "native_command_count": 0,
+      "native_command_exit_codes": [],
+      "original_native_counts": {
+        "total": 11,
+        "passed": 0,
+        "failed": 10,
+        "skipped": 1,
+        "errors": 0
+      },
+      "publisher_nonroot": true,
+      "historical_scope_only": true,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "native_receipts_sha256": {
+        "transcript": "880aac0710fec29eb098c0b7cdb7a8eb0622b46e7a0e2e247d04b78ef7fe9898",
+        "junit": "f3a76390c99f75db4bcdbdd1a3a03ccf4adc399cdca30a0aee7a6cba7619c9b7",
+        "publisher": "dc461001c9269e57268eeb435a676a01624c4b5ce33ad9e0cb0cf806dd54e07d",
+        "process": "172bed1b4b521e8640731e730389f4b0298714bf27fc156303ca3a6c7e39d644",
+        "task": "18cc0fca9ce3ed268499910e6ef4538951e372aa1dc7f1c82fb3a03e3daea85e"
+      }
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-refresh5/qualification.json",
+      "wrapper_sha256": "cd0dbfe96f2462ad6f94572c656a89496d89fedd4424a591e8d71a992ef2bacc",
+      "check_id": "signin-unchanged-refresh-rejected",
+      "output": "provider-route-signin-unchanged-refresh-rejected-refresh5",
+      "historical_check_passed": true,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "a4fc7f1a4d5d5ea48ebe96e012208bb3f042b815f255aeb551f1bb081a7bb8c6",
+      "classification": "historical_negative_claim_not_readmitted",
+      "negative_cause_audit_complete": false,
+      "historical_stage": "collection"
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-refresh5/qualification.json",
+      "wrapper_sha256": "cd0dbfe96f2462ad6f94572c656a89496d89fedd4424a591e8d71a992ef2bacc",
+      "check_id": "signin-unchanged-refresh-cancel",
+      "output": "provider-route-signin-unchanged-refresh-cancel-refresh5",
+      "historical_check_passed": true,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "000bd828fe7ebe156bd6b88a6fe4f557ab9054da4c91d3c98ee61e8b72336cef",
+      "classification": "historical_negative_claim_not_readmitted",
+      "negative_cause_audit_complete": false,
+      "historical_stage": "collection"
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-si1/qualification.json",
+      "wrapper_sha256": "6a15ec759407e18d1eed265a6de29ed8c244d99f569a72f679b5d9ce6a279577",
+      "check_id": "signin-edited",
+      "output": "provider-route-signin-edited-si1",
+      "historical_check_passed": false,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "da8584274f6c09d65765157830ea59e628ea389d16d36063dafc7f787da8b7ba",
+      "classification": "historical_failed_qualification_preserved"
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-si10/qualification.json",
+      "wrapper_sha256": "22d4ed8e347e6357e833b0a180d33e5714a42355dd03879e6ad29179f09a00a4",
+      "check_id": "signin-edited-leaky",
+      "output": "provider-route-signin-edited-leaky-si10",
+      "historical_check_passed": true,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "fb27f1a55ed8fd01bd93dfb11a9f128e9ffd1d2fe737ad8ed89874caec9476fe",
+      "classification": "historical_negative_claim_not_readmitted",
+      "negative_cause_audit_complete": false,
+      "historical_stage": "collection"
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-si2/qualification.json",
+      "wrapper_sha256": "5b624d77014b5fd089eddcb34a30fbfdad361ef3662643c1900d65ffb5c072d5",
+      "check_id": "signin-edited",
+      "output": "provider-route-signin-edited-si2",
+      "historical_check_passed": false,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "c418825983975bc8234a0005b6eb4a7904a7f4341fde96960b04b713d5058644",
+      "classification": "historical_failed_qualification_preserved"
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-si3/qualification.json",
+      "wrapper_sha256": "96f22277d61dafaf475f67215591d2554085807df0ea547c9cc080381dda4fb5",
+      "check_id": "signin-edited",
+      "output": "provider-route-signin-edited-si3",
+      "historical_check_passed": false,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "c418825983975bc8234a0005b6eb4a7904a7f4341fde96960b04b713d5058644",
+      "classification": "historical_failed_qualification_preserved"
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-si4/qualification.json",
+      "wrapper_sha256": "3ac4b14a6162ddb8b3f538f7129dc54d81daa021c16f5dc9c5f5bc1a0376d72d",
+      "check_id": "signin-edited",
+      "output": "provider-route-signin-edited-si4",
+      "historical_check_passed": false,
+      "historical_task_status": null,
+      "summary_sha256": null,
+      "classification": "historical_failed_qualification_preserved"
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-si5/qualification.json",
+      "wrapper_sha256": "111565b17b00c4f9ad3a4ac07141929c34424e50df57d0dc3b27528612a583da",
+      "check_id": "signin-edited",
+      "output": "provider-route-signin-edited-si5",
+      "historical_check_passed": false,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "2149b7fa4bd72d036982542b2f653b0893c60e08fc97e3426315c3c15da47f0a",
+      "classification": "historical_failed_qualification_preserved"
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-si6/qualification.json",
+      "wrapper_sha256": "a7013323d6245b397966a19a69381ed16bc6c9b49cf014e4d8ad709d2b9baa2f",
+      "check_id": "signin-edited",
+      "output": "provider-route-signin-edited-si6",
+      "historical_check_passed": false,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "a577baeccaaf95fbbc47421031e1ee3525fd90d97f06dc1a5403a4f17fce0e27",
+      "classification": "historical_failed_qualification_preserved"
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-si7/qualification.json",
+      "wrapper_sha256": "fc57ab1aa1612702bd1793addd0d7a1856489622ea11d0df5bda6bbc285e7ac6",
+      "check_id": "signin-edited",
+      "output": "provider-route-signin-edited-si7",
+      "historical_check_passed": true,
+      "historical_task_status": "task_passed",
+      "summary_sha256": "4d9fd39c14068f900201169a3027e5e45ac530fb2379375b77ed0caad9a02ed8",
+      "classification": "native_command_and_original_grader_success_verified",
+      "native_command_count": 1,
+      "native_command_exit_codes": [
+        0
+      ],
+      "original_native_counts": {
+        "total": 11,
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "publisher_nonroot": true,
+      "historical_scope_only": true,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "native_receipts_sha256": {
+        "transcript": "489d719475173881dc3fbe093d1c5a3dcd7391646e127a4da59d4a7a1a1531f9",
+        "junit": "eceb20028d5f0a9691b91028365694d7cf063be02516ddbdaa61056063fc3411",
+        "publisher": "5f18a83df3ba41bd1ccefacc640490135ccc287905638ca0a17a1ff9b897c6d3",
+        "process": "b6d55ac95dc643d173a902296fb1ae794bc22ccb271003059ba8333dc3f525eb",
+        "task": "0cf82186ab0e5b33bd54b2af09498a7fd258941f3d2241c2e64f631ebe719b35"
+      }
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-si7/qualification.json",
+      "wrapper_sha256": "fc57ab1aa1612702bd1793addd0d7a1856489622ea11d0df5bda6bbc285e7ac6",
+      "check_id": "signin-unchanged",
+      "output": "provider-route-signin-unchanged-si7",
+      "historical_check_passed": true,
+      "historical_task_status": "task_failed",
+      "summary_sha256": "449403df1c4b41f91575f3a7d3ce402f91d6cd67231505b2fe61005e95fefe31",
+      "classification": "tool_free_unchanged_failure_verified",
+      "native_command_count": 0,
+      "native_command_exit_codes": [],
+      "original_native_counts": {
+        "total": 11,
+        "passed": 0,
+        "failed": 10,
+        "skipped": 1,
+        "errors": 0
+      },
+      "publisher_nonroot": true,
+      "historical_scope_only": true,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "native_receipts_sha256": {
+        "transcript": "ffc8a9e7ef9f67174ccce3b9d331e2769e3491747ee09f70b5b5b01f396f9d24",
+        "junit": "f4374d4b181a4b230f8908de5f5e99240450982b084e2766dcf447f324bcc8ca",
+        "publisher": "390cb7129905150f13b07f10b845761df0f4fd75e67150ce0740de71a988fca0",
+        "process": "f042e621551e8dc1af7e0a9d7cfa8a78cb0bfa376f396922bf131e360af4870e",
+        "task": "0cf82186ab0e5b33bd54b2af09498a7fd258941f3d2241c2e64f631ebe719b35"
+      }
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-si7/qualification.json",
+      "wrapper_sha256": "fc57ab1aa1612702bd1793addd0d7a1856489622ea11d0df5bda6bbc285e7ac6",
+      "check_id": "signin-truncated",
+      "output": "provider-route-signin-truncated-si7",
+      "historical_check_passed": false,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "7c7e63a67566f68e26779f73a0a1b8ecfe8c4d7fa0e116d061b3da030d9cc7ad",
+      "classification": "historical_failed_qualification_preserved"
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-si7/qualification.json",
+      "wrapper_sha256": "fc57ab1aa1612702bd1793addd0d7a1856489622ea11d0df5bda6bbc285e7ac6",
+      "check_id": "signin-edited-wrong-mode",
+      "output": "provider-route-signin-edited-wrong-mode-si7",
+      "historical_check_passed": false,
+      "historical_task_status": null,
+      "summary_sha256": null,
+      "classification": "historical_failed_qualification_preserved"
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-si7/qualification.json",
+      "wrapper_sha256": "fc57ab1aa1612702bd1793addd0d7a1856489622ea11d0df5bda6bbc285e7ac6",
+      "check_id": "signin-edited-leaky",
+      "output": "provider-route-signin-edited-leaky-si7",
+      "historical_check_passed": false,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "d1b07dba6044d5a52090887ecfee5231dbb8d798619bf0e41254b5ff774a7032",
+      "classification": "historical_failed_qualification_preserved"
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-si7/qualification.json",
+      "wrapper_sha256": "fc57ab1aa1612702bd1793addd0d7a1856489622ea11d0df5bda6bbc285e7ac6",
+      "check_id": "signin-edited-instructions",
+      "output": "provider-route-signin-edited-instructions-si7",
+      "historical_check_passed": false,
+      "historical_task_status": null,
+      "summary_sha256": null,
+      "classification": "historical_failed_qualification_preserved"
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-si8/qualification.json",
+      "wrapper_sha256": "681dadacf54515d2d91f93420507246f690147ec2cc3c8189172c3e920ac72f8",
+      "check_id": "signin-edited",
+      "output": "provider-route-signin-edited-si8",
+      "historical_check_passed": true,
+      "historical_task_status": "task_passed",
+      "summary_sha256": "4d9fd39c14068f900201169a3027e5e45ac530fb2379375b77ed0caad9a02ed8",
+      "classification": "native_command_and_original_grader_success_verified",
+      "native_command_count": 1,
+      "native_command_exit_codes": [
+        0
+      ],
+      "original_native_counts": {
+        "total": 11,
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "publisher_nonroot": true,
+      "historical_scope_only": true,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "native_receipts_sha256": {
+        "transcript": "dff4751400699a6aa790f70894927bb941643aaf0190cbf92fda9defdb359302",
+        "junit": "61774f929183dcda8d7c115585e1508c8858b5f69c2d7a4e578fbcc617e2531d",
+        "publisher": "ddf839f53f332b52f26597c66083d734370c05b14c992e3157e311d5f82d8eb0",
+        "process": "5efe772be76d7ea92e59b1fb9cd4f841f3ac570a6a6444a71e3bdaa7f01dd4da",
+        "task": "18cc0fca9ce3ed268499910e6ef4538951e372aa1dc7f1c82fb3a03e3daea85e"
+      }
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-si8/qualification.json",
+      "wrapper_sha256": "681dadacf54515d2d91f93420507246f690147ec2cc3c8189172c3e920ac72f8",
+      "check_id": "signin-unchanged",
+      "output": "provider-route-signin-unchanged-si8",
+      "historical_check_passed": true,
+      "historical_task_status": "task_failed",
+      "summary_sha256": "449403df1c4b41f91575f3a7d3ce402f91d6cd67231505b2fe61005e95fefe31",
+      "classification": "tool_free_unchanged_failure_verified",
+      "native_command_count": 0,
+      "native_command_exit_codes": [],
+      "original_native_counts": {
+        "total": 11,
+        "passed": 0,
+        "failed": 10,
+        "skipped": 1,
+        "errors": 0
+      },
+      "publisher_nonroot": true,
+      "historical_scope_only": true,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "native_receipts_sha256": {
+        "transcript": "6640aca2715c50f7177a3c3122e420ec185062da721ef4b41ced749ed12d0404",
+        "junit": "34f62acf8da446f4636d5c2e3caa4d8e90005e8b3a9480d1f80360aa527135d7",
+        "publisher": "f7c2c6e77a7cf7eebe1d12257673e391c3dedf6817940820ffbd9b86884bff68",
+        "process": "bef9dcf1ced87e39e2d644d8637c567f16b806072f68145ef0e0cdb19de1e6d8",
+        "task": "18cc0fca9ce3ed268499910e6ef4538951e372aa1dc7f1c82fb3a03e3daea85e"
+      }
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-si8/qualification.json",
+      "wrapper_sha256": "681dadacf54515d2d91f93420507246f690147ec2cc3c8189172c3e920ac72f8",
+      "check_id": "signin-truncated",
+      "output": "provider-route-signin-truncated-si8",
+      "historical_check_passed": true,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "a2dc2dfc5bc4a295eff1031fe5adea759f4d8925fee51d89c0a1addf3a3074c8",
+      "classification": "historical_negative_claim_not_readmitted",
+      "negative_cause_audit_complete": false,
+      "historical_stage": "collection"
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-si8/qualification.json",
+      "wrapper_sha256": "681dadacf54515d2d91f93420507246f690147ec2cc3c8189172c3e920ac72f8",
+      "check_id": "signin-edited-wrong-mode",
+      "output": "provider-route-signin-edited-wrong-mode-si8",
+      "historical_check_passed": true,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "f22952fdb87927e7c125cc75d73497512efe945f15915ad751f627ce80e20919",
+      "classification": "historical_negative_claim_not_readmitted",
+      "negative_cause_audit_complete": false,
+      "historical_stage": "agent"
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-si8/qualification.json",
+      "wrapper_sha256": "681dadacf54515d2d91f93420507246f690147ec2cc3c8189172c3e920ac72f8",
+      "check_id": "signin-edited-leaky",
+      "output": "provider-route-signin-edited-leaky-si8",
+      "historical_check_passed": true,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "fb27f1a55ed8fd01bd93dfb11a9f128e9ffd1d2fe737ad8ed89874caec9476fe",
+      "classification": "historical_negative_claim_not_readmitted",
+      "negative_cause_audit_complete": false,
+      "historical_stage": "collection"
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-si8/qualification.json",
+      "wrapper_sha256": "681dadacf54515d2d91f93420507246f690147ec2cc3c8189172c3e920ac72f8",
+      "check_id": "signin-edited-instructions",
+      "output": "provider-route-signin-edited-instructions-si8",
+      "historical_check_passed": true,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "107e2ae5418ce8b184f1308c980ff54e9372e73bb4e262ba01397354757b2659",
+      "classification": "historical_negative_claim_not_readmitted",
+      "negative_cause_audit_complete": false,
+      "historical_stage": "agent"
+    },
+    {
+      "wrapper": "provider-route-signin-native-qualified-si9/qualification.json",
+      "wrapper_sha256": "69045aa66b2a23b0021da33aa101d6b002b35936ed2e7b86a9f13fbc2cfbcc49",
+      "check_id": "signin-edited-leaky",
+      "output": "provider-route-signin-edited-leaky-si9",
+      "historical_check_passed": true,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "fb27f1a55ed8fd01bd93dfb11a9f128e9ffd1d2fe737ad8ed89874caec9476fe",
+      "classification": "historical_negative_claim_not_readmitted",
+      "negative_cause_audit_complete": false,
+      "historical_stage": "collection"
+    },
+    {
+      "wrapper": "subject-dependency-supported-qualified-v1/qualification.json",
+      "wrapper_sha256": "3058d22c2537531cbd1622fe4e919303d0dfa500a7ba5fff13509b0fbb6a5721",
+      "check_id": "native-edited",
+      "output": "native-subject-dependencies-edited-v1",
+      "historical_check_passed": true,
+      "historical_task_status": "task_passed",
+      "summary_sha256": "4828675896b7d2a74ed9eba1c5b132f5ef281046bf264dba9bb674be4063616c",
+      "classification": "native_command_and_original_grader_success_verified",
+      "native_command_count": 1,
+      "native_command_exit_codes": [
+        0
+      ],
+      "original_native_counts": {
+        "total": 11,
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "publisher_nonroot": true,
+      "historical_scope_only": true,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "native_receipts_sha256": {
+        "transcript": "9e91ef3d188d8f90a21af3bfd9dabee3ce7689d6b3de03cf9eea3d234bdd4470",
+        "junit": "c3a75bb737231990acfa865d54bbcc44c0360fec238747a1b17f05730ce0afbb",
+        "publisher": "f48462a9c7cf3e5af7d34b74824811baf77eebe6cf270d736ee0e14cfabd5101",
+        "process": "af02ccf4acc328b44894c8935dcd945eb0ece22718a567f4d9954a17cbdd09ad",
+        "task": "59d9d02feb74eb42b17d592e8c56e5d2a06e8b06e801c4b3f6f1512e555a3bb5"
+      }
+    },
+    {
+      "wrapper": "subject-dependency-supported-qualified-v1/qualification.json",
+      "wrapper_sha256": "3058d22c2537531cbd1622fe4e919303d0dfa500a7ba5fff13509b0fbb6a5721",
+      "check_id": "native-unchanged",
+      "output": "native-subject-dependencies-unchanged-v1",
+      "historical_check_passed": true,
+      "historical_task_status": "task_failed",
+      "summary_sha256": "df830691884b5a04d549b2e2c083f552bdd7ee0d1d979eac90c5e27dcf57a666",
+      "classification": "tool_free_unchanged_failure_verified",
+      "native_command_count": 0,
+      "native_command_exit_codes": [],
+      "original_native_counts": {
+        "total": 11,
+        "passed": 0,
+        "failed": 10,
+        "skipped": 1,
+        "errors": 0
+      },
+      "publisher_nonroot": true,
+      "historical_scope_only": true,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "native_receipts_sha256": {
+        "transcript": "1f18d9442c388ccdb1ededbf9aeb49f2c3cf188f02a916ff9258f4bb2656d998",
+        "junit": "58c67345050ebc70ffff23789c14eb3c18b78ef6db74eeff4a94963eac038e93",
+        "publisher": "ea3a6333d91b987f909476f59c291283dbf8521ba05cadd97f84428cb700b432",
+        "process": "83f49d253c51ab6c0444649005e91d65982a6722a286e5239ea9fc6663914475",
+        "task": "59d9d02feb74eb42b17d592e8c56e5d2a06e8b06e801c4b3f6f1512e555a3bb5"
+      }
+    },
+    {
+      "wrapper": "subject-dependency-supported-qualified-v1/qualification.json",
+      "wrapper_sha256": "3058d22c2537531cbd1622fe4e919303d0dfa500a7ba5fff13509b0fbb6a5721",
+      "check_id": "native-truncated",
+      "output": "native-subject-dependencies-truncated-v1",
+      "historical_check_passed": true,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "3d4c9d8af9b4bcb75e7fbe83d318f3b7dd87528f59fa537f3701622f67ed7b8b",
+      "classification": "historical_negative_claim_not_readmitted",
+      "negative_cause_audit_complete": false,
+      "historical_stage": "collection"
+    },
+    {
+      "wrapper": "subject-write-budget-native-qualified-v1/qualification.json",
+      "wrapper_sha256": "8d756ea27b93333d636b21e7b4bcdba5e88d7c8c93b5a94c95900a73ba2c9eac",
+      "check_id": "native-edited",
+      "output": "native-subject-write-budget-edited-v1",
+      "historical_check_passed": true,
+      "historical_task_status": "task_passed",
+      "summary_sha256": "8809106e9641cfe2f93cc02a7bc0bdc3aa2c63f91ac5f9ffd906e094345dd197",
+      "classification": "native_command_and_original_grader_success_verified",
+      "native_command_count": 1,
+      "native_command_exit_codes": [
+        0
+      ],
+      "original_native_counts": {
+        "total": 11,
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0
+      },
+      "publisher_nonroot": true,
+      "historical_scope_only": true,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "native_receipts_sha256": {
+        "transcript": "38dfd0ce97e0041a253987d1a345c0b01178cfa69a0f0b180fc579f7d364e45c",
+        "junit": "2196e9af59ad0c8d0e6242ad5f4b877d0ec5dcbd2c6614704b5974ea5b67fabb",
+        "publisher": "25d2abd5105fbd76c3636ca7b4bf814fcb7db9870f9bcf0a9607850961975f61",
+        "process": "5f7db5998a498f15369fda111dbc138211ba378e7f88374d1bad029d6c79da8a",
+        "task": "e3b4f3173b55374c0a1b8f589874e1993d23c64f021cabd491ad9e3b4d3cc6da"
+      }
+    },
+    {
+      "wrapper": "subject-write-budget-native-qualified-v1/qualification.json",
+      "wrapper_sha256": "8d756ea27b93333d636b21e7b4bcdba5e88d7c8c93b5a94c95900a73ba2c9eac",
+      "check_id": "native-unchanged",
+      "output": "native-subject-write-budget-unchanged-v1",
+      "historical_check_passed": true,
+      "historical_task_status": "task_failed",
+      "summary_sha256": "80dc568c36cb020e90b86bd2c511e1ae6139501ac915b9d810f8feeff4004b6f",
+      "classification": "tool_free_unchanged_failure_verified",
+      "native_command_count": 0,
+      "native_command_exit_codes": [],
+      "original_native_counts": {
+        "total": 11,
+        "passed": 0,
+        "failed": 10,
+        "skipped": 1,
+        "errors": 0
+      },
+      "publisher_nonroot": true,
+      "historical_scope_only": true,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "native_receipts_sha256": {
+        "transcript": "cf441c746adcb6fd49b9aa75cae32965f9e0c551b9eb1ba1a7df4da676999b42",
+        "junit": "1ba831034745d265af9d2a0431e63cf5c2aa063a8c0d3a901c2b0ea3bbaddfe1",
+        "publisher": "a9c3cb5392fc2f6075d0fe1d74100623ea8ebb4bf43ab2f7d68fe3045c1d4cb4",
+        "process": "b9de17eff80b20c9da7d94d269070099ee78e9d5b83d0e14d6beb28371463c27",
+        "task": "e3b4f3173b55374c0a1b8f589874e1993d23c64f021cabd491ad9e3b4d3cc6da"
+      }
+    },
+    {
+      "wrapper": "subject-write-budget-native-qualified-v1/qualification.json",
+      "wrapper_sha256": "8d756ea27b93333d636b21e7b4bcdba5e88d7c8c93b5a94c95900a73ba2c9eac",
+      "check_id": "native-truncated",
+      "output": "native-subject-write-budget-truncated-v1",
+      "historical_check_passed": true,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "6c397d0423430d74c8385d78e4ae9ab322935ecfe5b4e5741b4ffc63d8eaeb05",
+      "classification": "historical_negative_claim_not_readmitted",
+      "negative_cause_audit_complete": false,
+      "historical_stage": "collection"
+    },
+    {
+      "wrapper": "subject-write-budget-native-qualified-v1/qualification.json",
+      "wrapper_sha256": "8d756ea27b93333d636b21e7b4bcdba5e88d7c8c93b5a94c95900a73ba2c9eac",
+      "check_id": "native-budget",
+      "output": "native-subject-write-budget-budget-v1",
+      "historical_check_passed": true,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "7a1b9b670e885a1d153190ef6b234b2d7e8d7b45efb4ce1f78ea29c3f54bcfe8",
+      "classification": "historical_negative_claim_not_readmitted",
+      "negative_cause_audit_complete": false,
+      "historical_stage": "collection"
+    },
+    {
+      "wrapper": "subject-write-budget-native-qualified-v1/qualification.json",
+      "wrapper_sha256": "8d756ea27b93333d636b21e7b4bcdba5e88d7c8c93b5a94c95900a73ba2c9eac",
+      "check_id": "native-accounting",
+      "output": "native-subject-write-budget-accounting-v1",
+      "historical_check_passed": true,
+      "historical_task_status": "harness_error",
+      "summary_sha256": "1c210d4a756b4c2880c472ee3e681d706ec1bffc95d5a4df70041f9993ba8d92",
+      "classification": "historical_negative_claim_not_readmitted",
+      "negative_cause_audit_complete": false,
+      "historical_stage": "collection"
+    }
+  ],
+  "classification_counts": {
+    "native_command_and_original_grader_success_verified": 9,
+    "tool_free_unchanged_failure_verified": 11,
+    "historical_negative_claim_not_readmitted": 21,
+    "historical_failed_qualification_preserved": 11,
+    "revoked_wrapper_pass_nested_summary_failed": 1
+  },
+  "historical_native_evidence_only": true,
+  "current_model_execution_admitted": false,
+  "all_legacy_qualification_artifacts_audited": false,
+  "new_model_invocations": 0,
+  "original_receipts_modified": false
+}

@@ -1,0 +1,591 @@
+{
+  "schema_version": 1,
+  "kind": "native-config-readiness-provenance",
+  "date": "2026-11-11",
+  "scope": "Selected-profile config/read validation before and after native account/quota/model metadata. No model trial, entitlement or isolated-subject concordance claim.",
+  "cli_version": "0.167.1",
+  "source_commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+  "sources": [
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/app-server-protocol/schema/typescript/v2/ConfigReadParams.ts",
+      "reported_github_blob_sha": "7acf72c8506b4e787ba87ea618416fe50de178d1",
+      "transport": "Official GitHub connector decoded source capture; no wire-byte, blob-hash or reproducible-build verification claim.",
+      "capture_sha256": "ce1ba03a886fe019ae7b6d2d28cb746a455ac94f80a2d924262509d7fc0aa194"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/app-server-protocol/schema/typescript/v2/ConfigReadResponse.ts",
+      "reported_github_blob_sha": "6b9c6a5c9ab6849815cc4905001284955cb19d0a",
+      "transport": "Official GitHub connector decoded source capture; no wire-byte, blob-hash or reproducible-build verification claim.",
+      "capture_sha256": "7d95e9587c558dce314be92a186e23b9ff11072340013aa2256e19c140ff2e5c"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/app-server-protocol/schema/typescript/v2/Config.ts",
+      "reported_github_blob_sha": "4d0c4097966e019d94d0e93d9d6ca4eadb97f7ae",
+      "transport": "Official GitHub connector decoded source capture; no wire-byte, blob-hash or reproducible-build verification claim.",
+      "capture_sha256": "61b40f74ec5de29739e25c1f21c905f11773a604a9c700d8cb7191e2e04be89f"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/app-server/src/request_processors/config_processor.rs",
+      "reported_github_blob_sha": "5a47e3e0f2679a96f203bfbb910bde78abeb584e",
+      "transport": "Official GitHub connector decoded source capture; no wire-byte, blob-hash or reproducible-build verification claim.",
+      "capture_sha256": "529ffca8f576d0f8f1f5bc8d874b45976a96100abf5f1843a10467afc69fbba3"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/app-server/src/config_manager.rs",
+      "reported_github_blob_sha": "461920b677da7a40530837e354d89190ad18550f",
+      "transport": "Official GitHub connector decoded source capture; no wire-byte, blob-hash or reproducible-build verification claim.",
+      "capture_sha256": "b5170a477bfdc3755b64b52c921b870100c5e46566078e937d37ed43668349d3"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/exec/src/cli.rs",
+      "reported_github_blob_sha": "6a268da298380344c22ea12620606c3e6713f5fa",
+      "transport": "Official GitHub connector decoded source capture; no wire-byte, blob-hash or reproducible-build verification claim.",
+      "capture_sha256": "22942d28739133513ea1a78635d803019d1707ba78effc3415bc26b202b8036e"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/app-server/src/config_manager_service.rs",
+      "reported_github_blob_sha": "532494fc3ba5e6b664bc52e6881f0ca3f5d74d59",
+      "transport": "Official GitHub connector decoded source capture; no wire-byte, blob-hash or reproducible-build verification claim.",
+      "capture_sha256": "066e1c0c93f38a730e31a290fcd7625a3649652faf04668dd410f36526ab5c9c"
+    }
+  ],
+  "implementation_sha256": {
+    "tools/_trial_account_readiness.py": "3b2b40e8d598c5f72b33fce5b63b6255a86ae485a064752962ee525e1cb5f8ef",
+    "tests/test_trial_account_readiness.py": "bd5817157c3463b0feeb8a64bda7f35a791b4edb85becaff60bce036f26dc920"
+  },
+  "native_configuration_behavior": {
+    "cases": [
+      "clean",
+      "dirty",
+      "unsupported-flag"
+    ],
+    "qualification_sha256": "9a84643d4759a3b18ee6998657a97dcf4838c6b50596c17a0ae160dec25a7a26",
+    "scope": "Earlier isolated native API behavior controls; these did not invoke the new production configuration assessment."
+  },
+  "native_controls": [
+    {
+      "id": "rpc-cached",
+      "expected": {
+        "account_type": "chatgpt",
+        "refresh_requests": 0,
+        "authentication_file_unchanged": true,
+        "rpc_error_present": false
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "cached",
+        "refresh_requests": 0,
+        "native_refresh_persisted": false,
+        "authentication_file_unchanged": true,
+        "rpc_error_present": false,
+        "account_type": "chatgpt",
+        "owned_processes_after_cleanup": 0,
+        "listener_stopped": true,
+        "real_account_used": false,
+        "real_model_inferences": 0,
+        "token_export_requested": false,
+        "preflight_admission_qualified": false
+      },
+      "verdict_sha256": "3931e5683787b147f81e59d1ad600372c53859533cb8209552b8707d9039a281",
+      "transport_sha256": "535a3b86aadc449bf270167aa708ec064fe542a67436cb2e8b6d024f3f22af85"
+    },
+    {
+      "id": "rpc-refresh",
+      "expected": {
+        "account_type": "chatgpt",
+        "refresh_requests": 1,
+        "native_refresh_persisted": true,
+        "rpc_error_present": false
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "success",
+        "refresh_requests": 1,
+        "native_refresh_persisted": true,
+        "authentication_file_unchanged": false,
+        "rpc_error_present": false,
+        "account_type": "chatgpt",
+        "owned_processes_after_cleanup": 0,
+        "listener_stopped": true,
+        "real_account_used": false,
+        "real_model_inferences": 0,
+        "token_export_requested": false,
+        "preflight_admission_qualified": false
+      },
+      "verdict_sha256": "914c06a958d0ea79ebcf6abddf039f7845a8ffa89cea5849eb980fb707a124b7",
+      "transport_sha256": "10c499f8dce28995f15015b97b1823d632b18e4c8b05f113b87592764c308544"
+    },
+    {
+      "id": "rpc-permanent",
+      "expected": {
+        "account_type": null,
+        "refresh_requests": 1,
+        "authentication_file_unchanged": true,
+        "rpc_error_present": false
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "permanent",
+        "refresh_requests": 1,
+        "native_refresh_persisted": false,
+        "authentication_file_unchanged": true,
+        "rpc_error_present": false,
+        "account_type": null,
+        "owned_processes_after_cleanup": 0,
+        "listener_stopped": true,
+        "real_account_used": false,
+        "real_model_inferences": 0,
+        "token_export_requested": false,
+        "preflight_admission_qualified": false
+      },
+      "verdict_sha256": "8c3480c742d84d16f68dcd45afa1418af69134086b240d3ac6eed6b22313579c",
+      "transport_sha256": "f300003013f03627a1cad78a1d0b31688aa606e40fff32864689596a03ea27c0"
+    },
+    {
+      "id": "rpc-transient",
+      "expected": {
+        "account_type": "chatgpt",
+        "refresh_requests": 1,
+        "native_refresh_persisted": false,
+        "authentication_file_unchanged": true,
+        "rpc_error_present": false
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "transient",
+        "refresh_requests": 1,
+        "native_refresh_persisted": false,
+        "authentication_file_unchanged": true,
+        "rpc_error_present": false,
+        "account_type": "chatgpt",
+        "owned_processes_after_cleanup": 0,
+        "listener_stopped": true,
+        "real_account_used": false,
+        "real_model_inferences": 0,
+        "token_export_requested": false,
+        "preflight_admission_qualified": false
+      },
+      "verdict_sha256": "6fa243ee2cd544b815239ffe331d21b9f8643a32b6dd817d9a182c9b0d6d2357",
+      "transport_sha256": "c7a067aae4f9a6df7221314dde9296a1628ba11504dd862ba86f358cd86ab9b2"
+    },
+    {
+      "id": "cli-allowed",
+      "expected": {
+        "status": "eligible",
+        "eligible": true,
+        "production_cli_exit": 0
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "cached",
+        "production": true,
+        "production_cli": true,
+        "status": "eligible",
+        "eligible": true,
+        "stage": "complete",
+        "reasons": [],
+        "production_cli_exit": 0,
+        "refresh_requests": 0,
+        "quota_mode": "allowed",
+        "target_model": "gpt-6.1-sol",
+        "raw_account_metadata_retained": false,
+        "native_owned_processes_after_cleanup": 0,
+        "listener_stopped": true,
+        "real_model_inferences": 0,
+        "profile_instructions": false
+      },
+      "verdict_sha256": "f5922b27474dc29190b01e15cec16fe5b1f59e2e5c39b6c1f6ca20d716098836",
+      "transport_sha256": "ee6a53e1240d60a734031d42e65c900ce446eb4e336a114a2f9369d68acda484"
+    },
+    {
+      "id": "cli-denied",
+      "expected": {
+        "status": "ineligible",
+        "eligible": false,
+        "production_cli_exit": 1
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "cached",
+        "production": true,
+        "production_cli": true,
+        "status": "ineligible",
+        "eligible": false,
+        "stage": "complete",
+        "reasons": [
+          "ordinary_usage_unconfirmed",
+          "account_binding_unconfirmed"
+        ],
+        "production_cli_exit": 1,
+        "refresh_requests": 0,
+        "quota_mode": "denied",
+        "target_model": "gpt-6.1-sol",
+        "raw_account_metadata_retained": false,
+        "native_owned_processes_after_cleanup": 0,
+        "listener_stopped": true,
+        "real_model_inferences": 0,
+        "profile_instructions": false
+      },
+      "verdict_sha256": "5642707f9d884b8fced51f13f1a25cbc83fd31d91a55f99ff437b0095d92a962",
+      "transport_sha256": "ee6a53e1240d60a734031d42e65c900ce446eb4e336a114a2f9369d68acda484"
+    },
+    {
+      "id": "cli-exhausted",
+      "expected": {
+        "status": "ineligible",
+        "eligible": false,
+        "production_cli_exit": 1
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "cached",
+        "production": true,
+        "production_cli": true,
+        "status": "ineligible",
+        "eligible": false,
+        "stage": "complete",
+        "reasons": [
+          "ordinary_usage_blocked"
+        ],
+        "production_cli_exit": 1,
+        "refresh_requests": 0,
+        "quota_mode": "exhausted",
+        "target_model": "gpt-6.1-sol",
+        "raw_account_metadata_retained": false,
+        "native_owned_processes_after_cleanup": 0,
+        "listener_stopped": true,
+        "real_model_inferences": 0,
+        "profile_instructions": false
+      },
+      "verdict_sha256": "73fb1fd2b44791ca3de7ed7f3233fda17cd906c52b3980c0f540a43ecd7de44e",
+      "transport_sha256": "ee6a53e1240d60a734031d42e65c900ce446eb4e336a114a2f9369d68acda484"
+    },
+    {
+      "id": "cli-unknown",
+      "expected": {
+        "status": "ineligible",
+        "eligible": false,
+        "production_cli_exit": 1
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "cached",
+        "production": true,
+        "production_cli": true,
+        "status": "ineligible",
+        "eligible": false,
+        "stage": "complete",
+        "reasons": [
+          "ordinary_usage_unconfirmed"
+        ],
+        "production_cli_exit": 1,
+        "refresh_requests": 0,
+        "quota_mode": "unknown",
+        "target_model": "gpt-6.1-sol",
+        "raw_account_metadata_retained": false,
+        "native_owned_processes_after_cleanup": 0,
+        "listener_stopped": true,
+        "real_model_inferences": 0,
+        "profile_instructions": false
+      },
+      "verdict_sha256": "20fb4b69aeffb1a4216767ae6f59a8f5168bf812c4918056935b1ad143ae2b98",
+      "transport_sha256": "ee6a53e1240d60a734031d42e65c900ce446eb4e336a114a2f9369d68acda484"
+    },
+    {
+      "id": "cli-missing-model",
+      "expected": {
+        "status": "ineligible",
+        "eligible": false,
+        "production_cli_exit": 1
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "cached",
+        "production": true,
+        "production_cli": true,
+        "status": "ineligible",
+        "eligible": false,
+        "stage": "complete",
+        "reasons": [
+          "requested_model_unconfirmed"
+        ],
+        "production_cli_exit": 1,
+        "refresh_requests": 0,
+        "quota_mode": "allowed",
+        "target_model": "owned-missing-model",
+        "raw_account_metadata_retained": false,
+        "native_owned_processes_after_cleanup": 0,
+        "listener_stopped": true,
+        "real_model_inferences": 0,
+        "profile_instructions": false
+      },
+      "verdict_sha256": "5fbd45456d486656b4acb0959d27752cbf199a7e6bd48aff25f8490a8e90871a",
+      "transport_sha256": "ee6a53e1240d60a734031d42e65c900ce446eb4e336a114a2f9369d68acda484"
+    },
+    {
+      "id": "cli-global-instructions",
+      "expected": {
+        "status": "harness_error",
+        "eligible": false,
+        "stage": "signin_admission",
+        "production_cli_exit": 2
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "cached",
+        "production": true,
+        "production_cli": true,
+        "status": "harness_error",
+        "eligible": false,
+        "stage": "signin_admission",
+        "reasons": null,
+        "production_cli_exit": 2,
+        "refresh_requests": 0,
+        "quota_mode": "allowed",
+        "target_model": "gpt-6.1-sol",
+        "raw_account_metadata_retained": false,
+        "native_owned_processes_after_cleanup": null,
+        "listener_stopped": true,
+        "real_model_inferences": 0,
+        "profile_instructions": true
+      },
+      "verdict_sha256": "4e5eabfd3153aed9916f3d65674094a7a0b0e3053c88d9f1cc92dcd33d7e24bd",
+      "transport_sha256": "ca79b25609ab3df611722f6a16c4afe186d72736dbc438693f15e7574be52e5d"
+    },
+    {
+      "id": "cli-rejected-refresh",
+      "expected": {
+        "status": "ineligible",
+        "eligible": false,
+        "production_cli_exit": 1
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "permanent",
+        "production": true,
+        "production_cli": true,
+        "status": "ineligible",
+        "eligible": false,
+        "stage": "complete",
+        "reasons": [
+          "chatgpt_account_unconfirmed",
+          "account_binding_unconfirmed"
+        ],
+        "production_cli_exit": 1,
+        "refresh_requests": 2,
+        "quota_mode": "allowed",
+        "target_model": "gpt-6.1-sol",
+        "raw_account_metadata_retained": false,
+        "native_owned_processes_after_cleanup": 0,
+        "listener_stopped": true,
+        "real_model_inferences": 0,
+        "profile_instructions": false
+      },
+      "verdict_sha256": "967b163de83546858289f294ad34edbf8f15e6d606b5788ab93a7f5805918ed9",
+      "transport_sha256": "a91c16337021806b37988a5b57fb936c4167ca3b9ba92e7c6b789136e50be748"
+    },
+    {
+      "id": "cli-catalog",
+      "expected": {
+        "status": "ineligible",
+        "eligible": false,
+        "production_cli_exit": 1
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "cached",
+        "production": true,
+        "production_cli": true,
+        "status": "ineligible",
+        "eligible": false,
+        "stage": "complete",
+        "reasons": [
+          "selected_profile_catalog_override"
+        ],
+        "production_cli_exit": 1,
+        "refresh_requests": 0,
+        "quota_mode": "allowed",
+        "target_model": "gpt-6.1-sol",
+        "raw_account_metadata_retained": false,
+        "native_owned_processes_after_cleanup": 0,
+        "listener_stopped": true,
+        "real_model_inferences": 0,
+        "profile_instructions": false
+      },
+      "verdict_sha256": "c694d970e338f2b06d562008a09277ec4f1b10536950fe3039b05a28c4aa0750",
+      "transport_sha256": "52535eaa89e1831b2de2dc0367b4fc1e9739f06c9e8f071f4dd11955bb3f3634"
+    },
+    {
+      "id": "cli-config-drift",
+      "expected": {
+        "status": "ineligible",
+        "eligible": false,
+        "production_cli_exit": 1
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "cached",
+        "production": true,
+        "production_cli": true,
+        "status": "ineligible",
+        "eligible": false,
+        "stage": "complete",
+        "reasons": [
+          "configuration_changed"
+        ],
+        "production_cli_exit": 1,
+        "refresh_requests": 0,
+        "quota_mode": "allowed",
+        "target_model": "gpt-6.1-sol",
+        "raw_account_metadata_retained": false,
+        "native_owned_processes_after_cleanup": 0,
+        "listener_stopped": true,
+        "real_model_inferences": 0,
+        "profile_instructions": false
+      },
+      "verdict_sha256": "01884642f00864b39a96cb28b9ffeed863c36f67e598705c55c7be2e8cabbf15",
+      "transport_sha256": "ee6a53e1240d60a734031d42e65c900ce446eb4e336a114a2f9369d68acda484"
+    }
+  ],
+  "native_qualification_sha256": "6af1c5d26337a760884d6c8a72c9eccd4266eb9f9c54c75b95535a0222f7753c",
+  "native_exec_catalog_controls": {
+    "cases": [
+      {
+        "id": "catalog",
+        "observed": {
+          "authentication": "signin",
+          "authentication_file_unchanged": true,
+          "catalog_canary_rejected": false,
+          "credential_binding_released": true,
+          "listener_stopped": true,
+          "mode": "unchanged",
+          "model_catalog_override_ignored": true,
+          "model_requests": 0,
+          "native_counts": {
+            "errors": 0,
+            "failed": 10,
+            "passed": 0,
+            "skipped": 1,
+            "total": 11
+          },
+          "native_store_denial_observed": false,
+          "passed": true,
+          "personal_context_canary_observed": false,
+          "real_disk_pressure_created": false,
+          "real_model_inferences": 0,
+          "requests": 1,
+          "scope": "Scripted development control using the new Windows subject adapter and original Linux verifier/scorer; no model efficacy or official full-suite claim.",
+          "score": 0.0,
+          "signin_control": "catalog",
+          "space_injections": 0,
+          "stage": "complete",
+          "status": "task_failed",
+          "storage_limits": {
+            "max_workspace_bytes": 67108864,
+            "max_workspace_entries": 4096,
+            "min_free_bytes": 1073741824
+          },
+          "synthetic_authentication_only": true,
+          "whole_model_trial_boundary_qualified": false,
+          "write_io_limit_bytes": 536870912
+        },
+        "summary_sha256": "8ab1804740233f40bfac4a6a3c80ed14ee8c5fc27a316972d880a8cde3527485",
+        "process_sha256": "a17878847bda959e3c1ad4aebdaf907e4843af1c784664babc4032a911f2f7b0",
+        "transport_sha256": "a673e0b4e6582775a078518aedc4da8292f7c2c6886151181d102f0e5aa87f17"
+      },
+      {
+        "id": "catalog-leaky",
+        "observed": {
+          "authentication": "signin",
+          "authentication_file_unchanged": true,
+          "catalog_canary_rejected": true,
+          "credential_binding_released": true,
+          "listener_stopped": true,
+          "mode": "unchanged",
+          "model_catalog_override_ignored": false,
+          "model_requests": 0,
+          "native_counts": null,
+          "native_store_denial_observed": false,
+          "passed": true,
+          "personal_context_canary_observed": true,
+          "real_disk_pressure_created": false,
+          "real_model_inferences": 0,
+          "requests": 0,
+          "scope": "Scripted development control using the new Windows subject adapter and original Linux verifier/scorer; no model efficacy or official full-suite claim.",
+          "score": null,
+          "signin_control": "catalog-leaky",
+          "space_injections": 0,
+          "stage": "collection",
+          "status": "harness_error",
+          "storage_limits": {
+            "max_workspace_bytes": 67108864,
+            "max_workspace_entries": 4096,
+            "min_free_bytes": 1073741824
+          },
+          "synthetic_authentication_only": true,
+          "whole_model_trial_boundary_qualified": false,
+          "write_io_limit_bytes": 536870912
+        },
+        "summary_sha256": "30f6af1153f3742c6c6f107c96d296bf7dc79aaf840f338647234b754ae64654",
+        "process_sha256": "ad6b86c871617ee1ba5d5f9f66406474bc2b2aa6623d3d1fcc0f4cc33b97360f",
+        "transport_sha256": "63b42d8c15ba897ba03ae45e2e2b446431f2919bb599dfeb4942ed622c9e1b68"
+      }
+    ],
+    "qualification_sha256": "cf7325ebf343cf5cd9060edc5f49ea53442b2e97df739f5e32e849a1cba4ed71",
+    "scope": "Owned scripted endpoint only. Isolated exec omitted the profile catalog canary; deliberate flag removal exposed it and remained unscored. No real model or universal cache-isolation claim."
+  },
+  "focused_tests": {
+    "passed": 494,
+    "ruff": "passed",
+    "format": "passed",
+    "mypy": "passed",
+    "qualification_sha256": "804a87a85d699d01a06de511d9de1fad25fe150886eab1b03a5c0494c4ead79e"
+  },
+  "full_suite": {
+    "passed": 3072,
+    "skipped": 18,
+    "frozen_inputs": 22211,
+    "qualification_sha256": "671257961df5bce220f16bc5dbabed6ed5bc88c5883c60643e096082992776d8",
+    "line_coverage": 0.7564,
+    "branch_coverage": 0.7093,
+    "coverage_xml_sha256": "376fa99e4764c9841f4aea0fd65759212fa0832ebb1925e2f4a1d4b2bfda0436"
+  },
+  "findings": [
+    "App-server rejects the exec-only --ignore-user-config flag.",
+    "Explicit model/provider/effort arguments win, while valid user instruction and catalog settings remain in app-server config/read.",
+    "Built-in provider IDs cannot be replaced by user configuration in this pinned CLI. The initial invalid fixture was retained and corrected to use a distinct custom ID.",
+    "Native includeLayers:false omits layers; a nullable TypeScript declaration does not guarantee an explicit JSON null.",
+    "The native scripted exec control ignored a valid profile catalog canary. Deliberately removing --ignore-user-config exposed the canary to the owned peer and withheld the score. The unchanged positive fixture still scored zero; this is not a model gain.",
+    "The production check withholds eligibility for invalid, changed or explicitly substituted catalog metadata. Raw configuration, origin paths and instructions remain in memory.",
+    "Equal snapshots do not freeze a shared profile. A native catalog may be bundled or cached; absence of an explicit override does not prove live entitlement, inference success or backend weights."
+  ],
+  "retained_failures": [
+    {
+      "path": "native-config-qualified-v1/qualification.json",
+      "sha256": "5fd75c77febf5ee1427a5d14e21bed3ff26928dcd08ab0c86a58714a59cc3f1a",
+      "cause": "Invalid synthetic built-in provider replacement; no production claim accepted."
+    },
+    {
+      "path": "native-account-qualified-config1/qualification.json",
+      "sha256": "5e26dbe54beb6ae9d3853f4db337a30f013578c433b7281594aaeaf7e37758de",
+      "cause": "First implementation incorrectly required explicit layers:null; native positive control rejected it."
+    },
+    {
+      "path": "native-exec-catalog-qualified-v1/qualification.json",
+      "sha256": "09b5991203469c1d29d8177560dc3ed1eba9c2131b09f1b67cbb12829973da11",
+      "cause": "Invalid-catalog fixtures stopped at native login-status admission and did not reach exec. Replaced with valid catalog canaries; no preflight was bypassed."
+    }
+  ],
+  "openai_api_key_requested_or_used": false,
+  "real_account_used": false,
+  "real_model_inferences": 0,
+  "public_model_launch_guard": "closed",
+  "whole_model_trial_boundary_qualified": false,
+  "subject_configuration_match_established": false,
+  "release_readiness_established": false,
+  "remaining": [
+    "Profile/cache stability and interrupted-account recovery",
+    "Independent provider/model identity and full source-bound launch admission",
+    "Fresh setup and real matched external trials"
+  ]
+}

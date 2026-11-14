@@ -1,0 +1,80 @@
+[
+  {
+    "author_image": "zhangyiiiiii/swe-skills-bench-clojure",
+    "status": "manifest-captured",
+    "platform": {
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    "manifest_digest": "sha256:23dbff2f54f64213ea8b2a627594e6b72ec2c9d160902f51a55f2fd397cf462f",
+    "immutable_reference": "docker.io/zhangyiiiiii/swe-skills-bench-clojure@sha256:23dbff2f54f64213ea8b2a627594e6b72ec2c9d160902f51a55f2fd397cf462f",
+    "native_descriptor_sha256": "a5f545ae82957b0e5fbd149b55479638a8246b98fdf3430649aaf09748decf32",
+    "image_payload_admitted": false
+  },
+  {
+    "author_image": "zhangyiiiiii/swe-skills-bench-golang",
+    "status": "manifest-captured",
+    "platform": {
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    "manifest_digest": "sha256:08a709af3502f43282367befe0ae3ba641efe7300cf9d2295c01eb12564c6180",
+    "immutable_reference": "docker.io/zhangyiiiiii/swe-skills-bench-golang@sha256:08a709af3502f43282367befe0ae3ba641efe7300cf9d2295c01eb12564c6180",
+    "native_descriptor_sha256": "449601bcf0fcce1536b6fef33cbf779a6b07e1df93374c5313bec5438a28a962",
+    "image_payload_admitted": false
+  },
+  {
+    "author_image": "zhangyiiiiii/swe-skills-bench-node-ext",
+    "status": "anonymous-manifest-unavailable",
+    "manifest_status": 401,
+    "manifest_body_sha256": "165b8cad53eba3faf4b9effa255226af29638c5fff9cee52eb5c17b3e2e4b0db",
+    "immutable_reference": null,
+    "private_or_absent_not_determined": true,
+    "image_payload_admitted": false
+  },
+  {
+    "author_image": "zhangyiiiiii/swe-skills-bench-node22-ext",
+    "status": "anonymous-manifest-unavailable",
+    "manifest_status": 401,
+    "manifest_body_sha256": "e31085bd285b00f0d0c5c6cad9f12618b23170cbb77eb149ae0d0aadea094ea0",
+    "immutable_reference": null,
+    "private_or_absent_not_determined": true,
+    "image_payload_admitted": false
+  },
+  {
+    "author_image": "zhangyiiiiii/swe-skills-bench-python",
+    "status": "manifest-captured",
+    "platform": {
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    "manifest_digest": "sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+    "immutable_reference": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+    "native_descriptor_sha256": "2e619339e4cd2e4acd9472792c0e521a9dfd8c729a4fef00e9aecba5d0022099",
+    "image_payload_admitted": false
+  },
+  {
+    "author_image": "zhangyiiiiii/swe-skills-bench-ruby",
+    "status": "manifest-captured",
+    "platform": {
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    "manifest_digest": "sha256:fa5497839a3891571a70a5b8eb22ce510bf1932d801a4086fef78eb02c4406f5",
+    "immutable_reference": "docker.io/zhangyiiiiii/swe-skills-bench-ruby@sha256:fa5497839a3891571a70a5b8eb22ce510bf1932d801a4086fef78eb02c4406f5",
+    "native_descriptor_sha256": "3106dac78ce0e5d04ea139e0a027d0a261f30a7d94e52cbdb5a1a8714358196e",
+    "image_payload_admitted": false
+  },
+  {
+    "author_image": "zhangyiiiiii/swe-skills-bench-rust",
+    "status": "manifest-captured",
+    "platform": {
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    "manifest_digest": "sha256:d826cd5a4a34f5bcdad6b1560d40256785cc618e1a467193e33183a2c9c49b05",
+    "immutable_reference": "docker.io/zhangyiiiiii/swe-skills-bench-rust@sha256:d826cd5a4a34f5bcdad6b1560d40256785cc618e1a467193e33183a2c9c49b05",
+    "native_descriptor_sha256": "1cf41448b229c698bb4f3f921a5eb5e7d5e42f97ea336b1c0f9999913306b338",
+    "image_payload_admitted": false
+  }
+]

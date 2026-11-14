@@ -1,0 +1,383 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-11",
+  "kind": "model-free-controller-credential-lifecycle",
+  "problem": "A bound controller's default representation included its credential environment, and the controller did not explicitly release the binding.",
+  "changes": [
+    "Controller representations omit the credential environment.",
+    "A scoped lease owns the selected credential entry without changing the caller's source.",
+    "The controller closes the lease after CLI execution, before collection and grading.",
+    "The lease also closes on setup failure, execution failure and cancellation."
+  ],
+  "source_sha256": {
+    "tools/run_agent_trial.py": "b6ad1f119ec4d06bd57836b60d833818252a2593a339a6637399a637b7fc7430",
+    "tools/_trial_provider.py": "d82b3d8bd6257ba4fa2fa940c57c856a699960ed7b39b573a42b76a2e55ec920",
+    "tools/_trial_context.py": "5aaa584b547872c0cd71557e74879b2468c829239437ae339ce5f3af3d1e8986",
+    "tests/test_trial_provider.py": "f76ddcd2d8978bfb19c7b59edbd6b753cee647f2c0a66b50d1c4163e8329fba5",
+    "tests/test_trial_setup_accounting.py": "376dfe0507badc78060cf2a08189557e1cc72d8f42d499b17a6bdd57c8018597",
+    "docs/agent-trial-protocol.md": "b3657d26b680d8e4ead7d18a60b0d34a1047bc52eee585cd401d9b3fe5c9c8ef",
+    "pyproject.toml": "bb14112c89ed110bcaca444ecea64b4b81f8a8bdf0f74a6a64b37e4f097cbe1f",
+    "requirements-dev-lock.txt": "275945696e501d9eafdd90d60c20577b605b9f68564d1b0d39e896ebf2248770",
+    "toolchains/bootstrap/codex.json": "6ad514456ca7a5ce3dd62fc099c2eda32d795e513ab1fe538b465a1488bf58be"
+  },
+  "regression_reproduction": {
+    "failed_cases_before_fix": 4,
+    "receipt": {
+      "private_evidence": "account-credential-reproduction-v1.stdout.native",
+      "sha256": "a161f5d1aea4e0aa0449e256ebad2418eff482f158b704fa22083350dd6ca526"
+    }
+  },
+  "validation": {
+    "full_suite_passed": 2722,
+    "full_suite_skipped": 18,
+    "elapsed_seconds": 399.56,
+    "coverage": {
+      "combined_percent": 73.37,
+      "lines_valid": 17373,
+      "lines_covered": 12968,
+      "branches_valid": 6268,
+      "branches_covered": 4378,
+      "receipt": {
+        "private_evidence": "account-credential-full-validation-v1/coverage.xml",
+        "sha256": "7efeab1cda0db6cb2efd658c282bbf353ddd562ef295865109e52aae8a2b550a"
+      }
+    },
+    "ruff": "passed",
+    "format": "passed",
+    "mypy": "passed",
+    "compile": "passed",
+    "receipt": {
+      "private_evidence": "account-credential-validation-v1/qualification.json",
+      "sha256": "3d4c23a20f8b2af2abdee6769e74078ca6bcc0911a84330d27b4aa000baa1e8b"
+    },
+    "full_suite_stdout": {
+      "private_evidence": "account-credential-validation-v1/full-tests.stdout.native",
+      "sha256": "382863cfd1b974aa5b54c1b069c902d591d235c3a6055241573d44a81528fb3a"
+    }
+  },
+  "native_development_controls": [
+    {
+      "mode": "tool",
+      "credential_binding_released": true,
+      "status": "task_passed",
+      "grader_status": "task_passed",
+      "checks_passed": 17,
+      "checks_total": 17,
+      "owned_client_processes_remaining": 0,
+      "model_requests": 0,
+      "lifecycle_receipt": {
+        "private_evidence": "account-credential-native-tool-v1/credential-lifecycle.json",
+        "sha256": "7b522a2921c885b6fce0495e846533e919bcb9f072c72c6dcda539ad188df760"
+      },
+      "result_receipt": {
+        "private_evidence": "account-credential-native-tool-v1/summary.json",
+        "sha256": "aae729b3087265ecb9aa45eb9f43a648ec84790146069b2f33ba422aff359718"
+      },
+      "transport_receipt": {
+        "private_evidence": "account-credential-native-tool-v1/transport.json",
+        "sha256": "b7a5307759c481354357bb25372a2b5d345d8152fa6997b5c1afebf85e630c15"
+      }
+    },
+    {
+      "mode": "tool-wrong",
+      "credential_binding_released": true,
+      "status": "task_failed",
+      "grader_status": "task_failed",
+      "checks_passed": 2,
+      "checks_total": 17,
+      "owned_client_processes_remaining": 0,
+      "model_requests": 0,
+      "lifecycle_receipt": {
+        "private_evidence": "account-credential-native-tool-wrong-v1/credential-lifecycle.json",
+        "sha256": "a5da54fb51ec7406a08d2dc4345aaf625ad40abe40c439eedd52ab2a902999b4"
+      },
+      "result_receipt": {
+        "private_evidence": "account-credential-native-tool-wrong-v1/summary.json",
+        "sha256": "49b9dbf397d9edde9612fdbaf6e2862a968da7dc7ec8fe43a5526bee453d57bf"
+      },
+      "transport_receipt": {
+        "private_evidence": "account-credential-native-tool-wrong-v1/transport.json",
+        "sha256": "01aeb396732e3b78d03e0e036fe9fe425ca82c7a0cd5ef0f4cdd4e7a653a533d"
+      }
+    },
+    {
+      "mode": "truncated",
+      "credential_binding_released": true,
+      "status": "harness_error",
+      "grader_status": "harness_error",
+      "checks_passed": null,
+      "checks_total": null,
+      "owned_client_processes_remaining": 0,
+      "model_requests": 0,
+      "lifecycle_receipt": {
+        "private_evidence": "account-credential-native-truncated-v1/credential-lifecycle.json",
+        "sha256": "e92ec2c1d4aa3b9f7be668ded8989ff0d7e01e747b83f2d9efcc8b0551cb1e62"
+      },
+      "result_receipt": {
+        "private_evidence": "account-credential-native-truncated-v1/summary.json",
+        "sha256": "882a4ba73949742a228c97bdd9c8473bf968c5e60ba6b5e06893ea68dece8079"
+      },
+      "transport_receipt": {
+        "private_evidence": "account-credential-native-truncated-v1/transport.json",
+        "sha256": "74108e5b7e90c42738e5d1d0d023073f7ae0bf13733dd61489cdff7ffd2a77b7"
+      }
+    }
+  ],
+  "official_authentication_document": {
+    "url": "https://developers.openai.com/siwc/token-sharing-open-source/codex-app-server",
+    "provider_version": "0.9.5+catalog.portable4",
+    "native_result_sha256": "329cb93041084536a73c26c5591391d9c202daf3daa030566429715f157b0b2d",
+    "status_code": 200,
+    "success": true,
+    "scope_reviewed": true,
+    "reviewed_section": "Using Codex app-server: provider settings, caller-owned OAuth access token and caller-managed renewal"
+  },
+  "pinned_cli_source_review": {
+    "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+    "captures": [
+      {
+        "url": "https://api.github.com/repos/openai/codex/contents/codex-rs/login/src/lib.rs?ref=0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+        "status_code": 200,
+        "response_sha256": "c59c1c9d76295201749a88cf6e886c5f9a1155c2647ae732860aa679460b473e",
+        "git_blob_sha": "a7cbdce3f6e26b8c185c954b41e32774813de814",
+        "source_sha256": "8c351da2a2ea42d557b9ea94ac89325eb4ecf213fe5ba791ad4a623a3273058f",
+        "bytes": 3711
+      },
+      {
+        "url": "https://api.github.com/repos/openai/codex/contents/codex-rs/login/src/auth?ref=0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+        "status_code": 200,
+        "response_sha256": "c9b1d3a1f7659708a0b04b9d2232c9020e85bcb3e382b1430076d3a3a19b9338",
+        "children": [
+          {
+            "path": "codex-rs/login/src/auth/access_token.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/access_token_tests.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/account_grant.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/account_user_id_tests.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/agent_identity.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/api_key.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/auth_headers.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/auth_tests.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/bedrock_access_keys.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/bedrock_api_key.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/bedrock_api_key_tests.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/change_state.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/change_state_tests.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/default_client.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/default_client_tests.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/error.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/external_bearer.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/manager.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/manager",
+            "type": "dir"
+          },
+          {
+            "path": "codex-rs/login/src/auth/mod.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/personal_access_token.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/personal_access_token_tests.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/revoke.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/source.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/source_tests.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/storage.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/storage_commit.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/storage_commit_tests.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/storage_error.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/storage_error_tests.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/storage_file.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/storage_file_windows.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/storage_file_windows_tests.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/storage_policy_tests.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/storage_telemetry.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/storage_tests.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/util.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/workload_identity.rs",
+            "type": "file"
+          },
+          {
+            "path": "codex-rs/login/src/auth/workload_identity_tests.rs",
+            "type": "file"
+          }
+        ]
+      },
+      {
+        "url": "https://api.github.com/repos/openai/codex/contents/codex-rs/login/src/token_data.rs?ref=0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+        "status_code": 200,
+        "response_sha256": "fd8f6736ae75516a0080373ed7e9e3d7960784e6f266254780ba44b0390da047",
+        "git_blob_sha": "203700a379f47512f291720b605872f34bfadf23",
+        "source_sha256": "ca59ca56d607a602bf512603eeb1f60a8f9bbe6ef9f1bbc8555de499800b32ff",
+        "bytes": 7316
+      },
+      {
+        "url": "https://api.github.com/repos/openai/codex/contents/codex-rs/login/src/auth/storage.rs?ref=0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+        "status_code": 200,
+        "response_sha256": "2381900141ac4bcc5e312b459623a1fd729799719c79ac27b1e5e781da5e51d2",
+        "git_blob_sha": "5c1a8fc61e6acc2ce7391e152de1518f9dff9669",
+        "source_sha256": "ae70ac3edff091da6b0074d1eca0375c65657197d849eb46be8d16909377255d",
+        "bytes": 25956
+      },
+      {
+        "url": "https://api.github.com/repos/openai/codex/contents/codex-rs/login/src/auth/manager.rs?ref=0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+        "status_code": 200,
+        "response_sha256": "84514659f3b0d34131f6d34a326ed82604a73bcd7beed58faae1544e0eea732c",
+        "git_blob_sha": "ced49b3dc6f8d7c128676c5a287ddeda10164ba5",
+        "source_sha256": "584348a470e6d7f147962bf5d642d23859f60a85772aac1e916032d414756a90",
+        "bytes": 142895
+      },
+      {
+        "url": "https://api.github.com/repos/openai/codex/contents/codex-rs/login/src/auth/mod.rs?ref=0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+        "status_code": 200,
+        "response_sha256": "ce597214395569610b2ebc9cb73f921280fb5e044386ab111d959b9f0ca0ce45",
+        "git_blob_sha": "e629be9e6adc2a3763c2a5dc6809019885f659d0",
+        "source_sha256": "079d17972c6d3c575c354b7266753df51017a5a39f30fe06ca456bf122c926d7",
+        "bytes": 826
+      },
+      {
+        "url": "https://api.github.com/repos/openai/codex/contents/codex-rs/login/src/auth/source.rs?ref=0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+        "status_code": 200,
+        "response_sha256": "ada7289cbe6e15bbd5b8bc414c9e212ef80820ac75076d210015437c47134c17",
+        "git_blob_sha": "afe03ea705411cbec651745e9a4600c1b2ca2286",
+        "source_sha256": "0fa09872633c91cd16d9e886232503bde34238ffea3ce2db1c4525d3bec7a43c",
+        "bytes": 2812
+      }
+    ],
+    "reviewed_symbols": [
+      "AuthConfig",
+      "AuthRuntimeConfig",
+      "AuthDotJson",
+      "REFRESH_TOKEN_REUSED_MESSAGE"
+    ],
+    "inference": "Status-only auth-cache copying does not qualify coordinated refresh. The controller does not automate reuse of the desktop cache."
+  },
+  "prior_source_snapshots": {
+    "tools/_trial_provider.py": {
+      "path": "artifacts/research/2026-11-11/controller-credential-lifecycle/prior/_trial_provider.py.txt",
+      "sha256": "7ed48ac5a927264a5467b87e92b50a975dd2d4449ec97685f115a730aeea81be"
+    },
+    "tools/_trial_context.py": {
+      "path": "artifacts/research/2026-11-11/controller-credential-lifecycle/prior/_trial_context.py.txt",
+      "sha256": "69af575aa3af2816af7305760b94675ed180b51da691eb1325fc6d86671c71cf"
+    },
+    "tools/run_agent_trial.py": {
+      "path": "artifacts/research/2026-11-11/controller-credential-lifecycle/prior/run_agent_trial.py.txt",
+      "sha256": "ee53e087eb1bbb8b486ae701d091775e24f6b8b1b95ad7011b14a29d5594093b"
+    }
+  },
+  "prior_snapshot_method": "Reverse the credential-only transition and apply the existing formatter; accept only bytes matching every frozen pre-change SHA-256. Failed reconstruction evidence remains private.",
+  "host_authentication_cache_used": false,
+  "model_requests": 0,
+  "launch_guard_opened": false,
+  "limits": [
+    "Synthetic provider usage is fixture data, not measured model usage.",
+    "These development controls are not independent skill-effectiveness results.",
+    "Removing an owned environment entry does not guarantee erasure of immutable strings from process memory or token revocation.",
+    "The caller still owns supported credential acquisition and renewal.",
+    "No live account refresh, model entitlement or complete external benchmark adapter is qualified by this change."
+  ]
+}

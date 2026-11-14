@@ -6,10 +6,12 @@ import json
 import os
 import tempfile
 from collections.abc import Mapping
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
-from _trial_provider import provider_options
+from _trial_catalog import NativeCatalog
+from _trial_provider import provider_options, validate_provider
+from _trial_signin import NativeSignin, home_identity
 from _windows_appcontainer import checked_path
 
 DISABLED_FEATURES = (
@@ -40,8 +42,10 @@ class TrialContext:
     cli: Path
     python: Path
     readable_roots: tuple[Path, ...]
-    controller_environment: dict[str, str]
+    controller_environment: dict[str, str] = field(repr=False)
     tool_environment: dict[str, str]
+    signin: NativeSignin | None = field(default=None, repr=False)
+    native_catalog: NativeCatalog | None = field(default=None, repr=False)
 
 
 def profile_directories(home: Path) -> dict[str, str]:
@@ -134,6 +138,8 @@ def options(context: TrialContext, model: str, reasoning_effort: str) -> list[st
         **{str(path): "read" for path in context.readable_roots},
         ":workspace_roots": {".": "write", ".git": "read", ".agents": "read", ".codex": "read", ".aws": "read"},
     }
+    if context.signin is not None:
+        filesystem[str(context.signin.home)] = "deny"
     settings = {
         "model": json.dumps(model),
         "model_reasoning_effort": json.dumps(reasoning_effort),
@@ -160,10 +166,26 @@ def options(context: TrialContext, model: str, reasoning_effort: str) -> list[st
 def command(
     context: TrialContext, model: str, reasoning_effort: str, *, provider: dict[str, str] | None = None
 ) -> list[str]:
+    if provider is not None and validate_provider(provider).get("authentication") == "codex_signin":
+        if (
+            context.signin is None
+            or home_identity(str(context.signin.home)) != home_identity(provider["codex_home"])
+            or context.signin.store != provider["credential_store"]
+            or context.controller_environment.get("CODEX_HOME") != str(context.signin.home)
+            or context.native_catalog is None
+        ):
+            raise ValueError("The native sign-in declaration lacks its active admitted controller binding")
+    elif context.signin is not None or context.native_catalog is not None:
+        raise ValueError("A native sign-in binding requires its explicit provider declaration")
     return [
         str(context.cli),
         *options(context, model, reasoning_effort),
         *(provider_options(provider) if provider is not None else []),
+        *(
+            ["-c", "model_catalog_json=" + json.dumps(str(context.native_catalog.path(context.cli)))]
+            if context.native_catalog is not None
+            else []
+        ),
         "exec",
         "--ephemeral",
         "--ignore-user-config",

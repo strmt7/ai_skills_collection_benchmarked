@@ -1,0 +1,63 @@
+{
+  "unadmitted_attempts": [
+    {
+      "attempt": 1,
+      "admitted": false,
+      "terminal_wrapper_present": true,
+      "wrapper_sha256": "17ee01ee7bd7026012d491fe8f8cb3d5a5f14475bdc0e289a79bda5f11ff1b53",
+      "reason": "Incomplete fixture omitted its required project declaration."
+    },
+    {
+      "attempt": 2,
+      "admitted": false,
+      "terminal_wrapper_present": true,
+      "wrapper_sha256": "d5cb1ce2633a6bd73c691c71f3ce562b2382ed435de56c99e4419b0bba50ea16",
+      "reason": "Unadmitted fixture used a misencoded Unicode path; portable-engine handoff failed at the long default-cache path."
+    },
+    {
+      "attempt": 3,
+      "admitted": false,
+      "terminal_wrapper_present": true,
+      "wrapper_sha256": "f0905c47c29344b29ee84aa6f72db209a14108021674202a0d1ee1f62d868313",
+      "reason": "Legacy Windows PowerShell compiler failed under a Unicode temporary directory."
+    },
+    {
+      "attempt": 4,
+      "admitted": false,
+      "terminal_wrapper_present": true,
+      "wrapper_sha256": "230de8b1cb63d34214e179008482879e38be1fead8620941aee56d29c66995d2",
+      "reason": "Long engine path with the default STA runspace crashed; exit status alone was insufficient."
+    },
+    {
+      "attempt": 5,
+      "admitted": false,
+      "terminal_wrapper_present": false,
+      "wrapper_sha256": null,
+      "reason": "Interrupted without a terminal receipt; cause not established."
+    },
+    {
+      "attempt": 6,
+      "admitted": false,
+      "terminal_wrapper_present": true,
+      "wrapper_sha256": "3788e8b96805d57b1d2c4f464e4a123c120fe25dc0f295b1624b90467fdaaee2",
+      "reason": "Output paths were not normalized before native handle creation."
+    },
+    {
+      "attempt": 7,
+      "admitted": false,
+      "terminal_wrapper_present": true,
+      "wrapper_sha256": "8ee7abcbb5139680ee2966427759dbb1802eaddf583aca75dceee6c06ece555d",
+      "reason": "Fixture omitted the existing Git transport test inputs; active sources also changed during the copied-fixture run. No acceptance claimed."
+    },
+    {
+      "attempt": 8,
+      "admitted": false,
+      "terminal_wrapper_present": true,
+      "wrapper_sha256": "289638d256192b00db8ae57663c1dc6f998bc571bddc913aa948e1843f0673c7",
+      "reason": "The nested negative fixture reached a Windows PowerShell script-loading/policy error instead of the intended pin rejection."
+    }
+  ],
+  "accepted_attempt": 9,
+  "raw_prior_records_modified": false,
+  "failure_of_a_fixture_is_not_automatically_a_product_failure": true
+}

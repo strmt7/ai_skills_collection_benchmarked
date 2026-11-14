@@ -1,0 +1,1 @@
+Source snippets originate from akin-ozer/cc-devops-skills at 7fe7595e4512f8ce43dcf956aa5190b96d627dd1, under Apache-2.0. The complete license is retained in included/improved/skills/makefile-generator-cpp/LICENSE. New controls and maintained guidance are modifications. Original source mirrors remain unchanged. Component controls do not establish coding-agent effectiveness.

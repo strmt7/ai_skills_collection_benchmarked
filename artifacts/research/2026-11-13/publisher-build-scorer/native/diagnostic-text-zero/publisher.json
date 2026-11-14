@@ -1,0 +1,12 @@
+{
+  "level": "L1",
+  "method": "build_check",
+  "status": "passed",
+  "score": 1.0,
+  "message": "Build succeeded",
+  "details": {
+    "command": "python -c 'print(\"error: contract-only text\")'",
+    "exit_code": 0,
+    "duration": 0.016275721000056365
+  }
+}

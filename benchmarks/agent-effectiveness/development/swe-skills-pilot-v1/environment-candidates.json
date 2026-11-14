@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "kind": "prospective-source-bound-environment-candidates",
+  "stage": "component-qualified-candidates-only",
+  "selection_sha256": "42de081f53b0273f936ea5ca12dd0a6f69da0c33ade087b7b76ac8e6b7bee1c5",
+  "source_commit": "4d3450d9216a590a8726fcb3604b5143daca776b",
+  "source_config_sha256": "f658aca6273493e179b592e650341bc2cf76b1c48002633e592ab68c6cef212b",
+  "planned_tasks": 12,
+  "planned_attempts": 36,
+  "conditions": [
+    "default",
+    "karpathy",
+    "collection"
+  ],
+  "profiles": [
+    {
+      "author_image": "zhangyiiiiii/swe-skills-bench-clojure",
+      "task_ids": [
+        "swe-skills-bench/batch5/clojure-write"
+      ],
+      "route": "original-image-digest-candidate",
+      "candidate_image_reference": "docker.io/zhangyiiiiii/swe-skills-bench-clojure@sha256:23dbff2f54f64213ea8b2a627594e6b72ec2c9d160902f51a55f2fd397cf462f",
+      "source_equivalence_established": false,
+      "selected_task_dependencies_qualified": false,
+      "subject_tool_access_qualified": false,
+      "original_scorer_qualified_for_selected_tasks": false,
+      "execution_admitted": false
+    },
+    {
+      "author_image": "zhangyiiiiii/swe-skills-bench-golang",
+      "task_ids": [
+        "swe-skills-bench/batch10/prometheus-configuration",
+        "swe-skills-bench/batch3/go-monads-mo"
+      ],
+      "route": "original-image-digest-candidate",
+      "candidate_image_reference": "docker.io/zhangyiiiiii/swe-skills-bench-golang@sha256:08a709af3502f43282367befe0ae3ba641efe7300cf9d2295c01eb12564c6180",
+      "source_equivalence_established": false,
+      "selected_task_dependencies_qualified": false,
+      "subject_tool_access_qualified": false,
+      "original_scorer_qualified_for_selected_tasks": false,
+      "execution_admitted": false
+    },
+    {
+      "author_image": "zhangyiiiiii/swe-skills-bench-node-ext",
+      "task_ids": [
+        "swe-skills-bench/batch8/graphql-schema-design"
+      ],
+      "route": "source-derived-node20-base-proposal",
+      "candidate_image_reference": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+      "source_equivalence_established": false,
+      "selected_task_dependencies_qualified": false,
+      "subject_tool_access_qualified": false,
+      "original_scorer_qualified_for_selected_tasks": false,
+      "execution_admitted": false
+    },
+    {
+      "author_image": "zhangyiiiiii/swe-skills-bench-node22-ext",
+      "task_ids": [
+        "swe-skills-bench/batch3/tanstack-query-patterns"
+      ],
+      "route": "source-derived-node22-capsule-proposal",
+      "candidate_image_reference": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+      "source_equivalence_established": false,
+      "selected_task_dependencies_qualified": false,
+      "subject_tool_access_qualified": false,
+      "original_scorer_qualified_for_selected_tasks": false,
+      "execution_admitted": false,
+      "capsule": {
+        "sdk_archive_sha256": "c54118104acc524633b5abe106bbf44a53126ec8b4e5fa105cb92b5d7de8a1a1",
+        "complete_inventory_sha256": "2945874d41141c55d58e27a9e0a3bdbd6f344b79f126dd323123c48b1cfc6bc2",
+        "objects": 5867,
+        "component_cases": 11,
+        "fresh_repetitions": 2
+      }
+    },
+    {
+      "author_image": "zhangyiiiiii/swe-skills-bench-python",
+      "task_ids": [
+        "swe-skills-bench/batch1/vector-index-tuning",
+        "swe-skills-bench/batch4/pydicom-dicom-parsing",
+        "swe-skills-bench/batch4/nx-workspace-patterns",
+        "swe-skills-bench/batch4/bats-shell-testing",
+        "swe-skills-bench/batch2/mypy-type-checking"
+      ],
+      "route": "original-image-digest-candidate",
+      "candidate_image_reference": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+      "source_equivalence_established": false,
+      "selected_task_dependencies_qualified": false,
+      "subject_tool_access_qualified": false,
+      "original_scorer_qualified_for_selected_tasks": false,
+      "execution_admitted": false
+    },
+    {
+      "author_image": "zhangyiiiiii/swe-skills-bench-ruby",
+      "task_ids": [
+        "swe-skills-bench/batch7/gitlab-ci-patterns"
+      ],
+      "route": "original-image-digest-candidate",
+      "candidate_image_reference": "docker.io/zhangyiiiiii/swe-skills-bench-ruby@sha256:fa5497839a3891571a70a5b8eb22ce510bf1932d801a4086fef78eb02c4406f5",
+      "source_equivalence_established": false,
+      "selected_task_dependencies_qualified": false,
+      "subject_tool_access_qualified": false,
+      "original_scorer_qualified_for_selected_tasks": false,
+      "execution_admitted": false
+    },
+    {
+      "author_image": "zhangyiiiiii/swe-skills-bench-rust",
+      "task_ids": [
+        "swe-skills-bench/batch8/clap-cli-patterns"
+      ],
+      "route": "original-image-digest-candidate",
+      "candidate_image_reference": "docker.io/zhangyiiiiii/swe-skills-bench-rust@sha256:d826cd5a4a34f5bcdad6b1560d40256785cc618e1a467193e33183a2c9c49b05",
+      "source_equivalence_established": false,
+      "selected_task_dependencies_qualified": false,
+      "subject_tool_access_qualified": false,
+      "original_scorer_qualified_for_selected_tasks": false,
+      "execution_admitted": false
+    }
+  ],
+  "common_condition_rule": "After admission, use the same exact per-task environment and budgets across every condition. No replacement or silent fallback is admitted by this proposal.",
+  "source_network_mode": "bridge",
+  "source_container_backend": "enroot",
+  "qualified_component_network": "none",
+  "subject_platform_current_controller": "Windows",
+  "capsule_platform": "Linux/amd64",
+  "required_qualification": [
+    "Complete P1 actual-account isolation and provider/model admission",
+    "Actual subject tool access; a Linux grader control does not qualify the Windows subject toolchain",
+    "Complete selected project and original scorer dependency graphs, licenses and artifact identities",
+    "Predeclared provisioning/network deviations and source-derived environment scope",
+    "Existing original metrics, budgets, thresholds and complete analysis contract"
+  ],
+  "capsule_evidence": "artifacts/research/2026-11-13/swe-toolchain-capsule/result.json",
+  "runtime_admitted": false,
+  "execution_admitted": false,
+  "complete_preregistration": false,
+  "model_invocations": 0,
+  "agent_efficacy_established": false
+}

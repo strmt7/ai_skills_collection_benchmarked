@@ -1,0 +1,113 @@
+"""Qualify the offline graph and restore the complete pinned task project."""
+import hashlib
+import json
+import os
+import shutil
+import stat
+import subprocess
+import sys
+import tarfile
+from pathlib import Path, PurePosixPath
+
+sys.path.insert(0, '/tmp/benchmark-inputs')
+from capsule_inventory import inventory
+
+INPUT = Path('/tmp/benchmark-inputs')
+ROOT = Path('/tmp/pydicom-dependencies')
+SECOND = Path('/tmp/pydicom-dependencies-reinstall')
+PROJECT = Path('/workspace/pydicom')
+config = json.loads((INPUT / 'configuration.json').read_bytes())
+assert os.getuid() == 0 and not ROOT.exists() and not SECOND.exists() and not PROJECT.exists()
+records = []
+env = {'PATH': os.defpath, 'HOME': '/tmp/pydicom-setup-home', 'LANG': 'C.UTF-8', 'PIP_CONFIG_FILE': os.devnull, 'PIP_NO_INDEX': '1', 'PIP_DISABLE_PIP_VERSION_CHECK': '1', 'PYTHONDONTWRITEBYTECODE': '1', 'OPENBLAS_NUM_THREADS': '1', 'OMP_NUM_THREADS': '1'}
+Path(env['HOME']).mkdir()
+def run(args, cwd=INPUT):
+    result = subprocess.run(list(map(str, args)), cwd=cwd, env=env, stdin=subprocess.DEVNULL, text=True, capture_output=True, timeout=75)
+    records.append({'argv': list(map(str, args)), 'exit_code': result.returncode, 'stdout': result.stdout, 'stderr': result.stderr})
+    print(json.dumps(records[-1]), file=sys.stderr, flush=True)
+    assert result.returncode == 0, records[-1]
+    return result
+def sha(path):
+    with path.open('rb') as stream:
+        return hashlib.file_digest(stream, 'sha256').hexdigest()
+def admit_wheel(row):
+    path = INPUT / 'wheels' / row['filename']
+    if path.stat().st_size != row['bytes'] or sha(path) != row['sha256']:
+        raise ValueError('Wheel differs from the frozen publisher capture')
+    return path
+bad = dict(next(row for row in config['pool']['wheel_files'] if row['project'] == 'numpy'))
+bad['sha256'] = '0' * 64
+try:
+    admit_wheel(bad)
+except ValueError:
+    rejected = True
+else:
+    raise AssertionError('Corrupt expected wheel digest was not rejected')
+for row in config['pool']['wheel_files']:
+    admit_wheel(row)
+inspect_code = "import importlib.metadata,json,sys;print(json.dumps({'prefix':sys.prefix,'base_prefix':sys.base_prefix,'versions':{d.metadata['Name'].lower().replace('_','-'):d.version for d in importlib.metadata.distributions()}}))"
+before = json.loads(run([sys.executable, '-I', '-B', '-c', inspect_code]).stdout)
+run([sys.executable, '-I', '-B', '-m', 'venv', '--without-pip', '--copies', ROOT])
+python = ROOT / 'bin/python'
+pip_record = next(row for row in config['pool']['wheel_files'] if row['project'] == 'pip')
+pip_lock = INPUT / 'bootstrap-pip.lock'
+assert pip_lock.read_text() == f"pip=={pip_record['version']} --hash=sha256:{pip_record['sha256']}\n"
+run([sys.executable, '-I', '-B', '-m', 'pip', '--isolated', '--python', python, 'install', '--no-index', '--find-links', INPUT / 'wheels', '--require-hashes', '--no-compile', '--no-input', '--progress-bar', 'off', '-r', pip_lock])
+run([python, '-I', '-B', '-m', 'pip', '--isolated', 'install', '--no-index', '--find-links', INPUT / 'wheels', '--only-binary=:all:', '--no-compile', '--no-input', '--progress-bar', 'off', *config['pool']['roots']])
+run([python, '-I', '-B', '-m', 'pip', 'check'])
+observed = json.loads(run([python, '-I', '-B', '-c', inspect_code]).stdout)
+assert observed['prefix'] == str(ROOT) and observed['base_prefix'] != observed['prefix']
+assert set(config['pool']['roots']) <= set(observed['versions'])
+by_name = {row['project']: row for row in config['pool']['wheel_files']}
+lock = ''.join(f"{name}=={version} --hash=sha256:{by_name[name]['sha256']}\n" for name, version in sorted(observed['versions'].items()))
+lock_path = Path('/tmp/pydicom-resolved.lock')
+lock_path.write_text(lock)
+run([sys.executable, '-I', '-B', '-m', 'venv', '--without-pip', '--copies', SECOND])
+second_python = SECOND / 'bin/python'
+run([python, '-I', '-B', '-m', 'pip', '--isolated', '--python', second_python, 'install', '--no-index', '--find-links', INPUT / 'wheels', '--require-hashes', '--no-compile', '--no-input', '--progress-bar', 'off', '-r', lock_path])
+run([second_python, '-I', '-B', '-m', 'pip', 'check'])
+reinstalled = json.loads(run([second_python, '-I', '-B', '-c', inspect_code]).stdout)
+assert reinstalled['prefix'] == str(SECOND) and reinstalled['versions'] == observed['versions']
+after = json.loads(run([sys.executable, '-I', '-B', '-c', inspect_code]).stdout)
+assert before == after
+archive = INPUT / 'project.tar.gz'
+source = config['source']
+assert archive.stat().st_size == source['archive_bytes'] and sha(archive) == source['archive_sha256']
+with tarfile.open(archive, 'r:gz') as tar:
+    members = tar.getmembers()
+    assert len(members) <= 10000 and sum(row.size for row in members) <= 64 * 1024**2
+    for row in members:
+        path = PurePosixPath(row.name)
+        assert path.parts and path.parts[0] == source['archive_root'] and not path.is_absolute() and '..' not in path.parts
+        assert row.isdir() or row.isfile() or row.issym()
+    tar.extractall('/workspace', members=members, filter='data')
+(Path('/workspace') / source['archive_root']).rename(PROJECT)
+for name, entry in source['files'].items():
+    path = PROJECT / name
+    assert path.is_file() and sha(path) == entry['sha256']
+pending = [PROJECT]
+while pending:
+    path = pending.pop()
+    if path.is_symlink():
+        continue
+    info = path.stat()
+    if path.is_dir():
+        pending.extend(path.iterdir())
+        path.chmod(0o777)
+    else:
+        path.chmod(0o777 if info.st_mode & 0o111 else 0o666)
+pending = [ROOT]
+while pending:
+    path = pending.pop()
+    if path.is_symlink():
+        continue
+    if path.is_dir():
+        pending.extend(path.iterdir())
+    path.chmod(stat.S_IMODE(path.stat().st_mode) & ~0o222)
+ROOT.chmod(0o555)
+rows, identity = inventory(ROOT)
+receipt = {'passed': True, 'wrong_wheel_digest_rejected': rejected, 'resolved_versions': observed['versions'], 'resolved_lock': lock, 'fresh_hash_locked_reinstall_equal': True, 'system_interpreter_unchanged': True, 'unused_candidate_projects': sorted(set(by_name) - set(observed['versions'])), 'source_files_verified': len(source['files']), 'source_commit': source['source_commit'], 'source_tree_sha1': source['source_tree_sha1'], 'inventory_sha256': identity, 'inventory': rows, 'commands': records, 'setup_uid': os.getuid(), 'model_invocations': 0}
+target = Path('/tmp/pydicom-setup-receipt.json')
+target.write_text(json.dumps(receipt, sort_keys=True) + '\n')
+target.chmod(0o444)
+print(json.dumps(receipt))

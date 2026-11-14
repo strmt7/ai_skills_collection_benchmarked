@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "stage": "public-development-selection-only",
+  "execution_ready": false,
+  "selection_sha256": "42de081f53b0273f936ea5ca12dd0a6f69da0c33ade087b7b76ac8e6b7bee1c5",
+  "seed_provenance": {
+    "seed": "f658aca6273493e179b592e650341bc2cf76b1c48002633e592ab68c6cef212b",
+    "derivation": "SHA-256 of exact pinned author configuration bytes; no model outcomes or publisher tables used. Fixed development design, not a uniform random seed or proof of representative sampling.",
+    "source_url": "https://raw.githubusercontent.com/ControllableModel/SWE-Skills-Bench/4d3450d9216a590a8726fcb3604b5143daca776b/config/benchmark_config.yaml",
+    "source_commit": "4d3450d9216a590a8726fcb3604b5143daca776b",
+    "config_git_blob_sha1": "89b81807c59b68d629a3b4ed32193aac9378fe70",
+    "scope": "Public development only, not untouched holdout."
+  },
+  "target_model_requested": "gpt-6.1-sol",
+  "reasoning_effort_requested": "high",
+  "resolved_model_identity": null,
+  "planned_tasks": 12,
+  "planned_attempts": 36,
+  "repetitions_per_condition_per_task": 1,
+  "comparison_conditions": {
+    "default": "Same agent and common task constraints without collection instructions or development memory.",
+    "karpathy": "Pinned Karpathy-derived instructions under the same harness and common constraints.",
+    "collection": "A candidate intervention frozen from general skill development before its counted runs; not yet selected or admitted."
+  },
+  "native_metrics": "Retain the authors original evaluator, acceptance thresholds, result units and denominators. Do not replace fractional native rewards with a custom pass definition.",
+  "decision_rule": "Development pilot is descriptive only. No superiority, statistical significance or commercial-readiness decision from this selection.",
+  "missing_outcomes": "Retain every scheduled task and attempt. Unrun, interrupted and infrastructure-failed attempts remain explicit and unscored; never drop them or silently treat them as task failures.",
+  "retry_policy": "No counted retries or task replacements. Separate diagnostic controls must be labelled and must not overwrite original attempts.",
+  "stopping_rule": "No early efficacy stop. An isolation failure, authentication/identity change, host resource violation or invalid scorer stops execution; preserve the incomplete schedule and do not claim a complete official suite score.",
+  "amendment_rule": "Any eligibility, sample, condition, budget, controller or analysis change requires a new version and a recorded reason before new counted outcomes. Preserve the original schedule and evidence.",
+  "missing_before_execution": [
+    "P1 complete launch qualification and supported isolation for the actual sign-in home",
+    "Selected task, source revision, image digest, original scorer and runtime qualification",
+    "Candidate intervention bytes and pinned reference identity",
+    "Per-task common budgets, exact attempt plans and execution-source identities",
+    "Verified usage and provider/model identity reporting and complete prospective analysis contract"
+  ],
+  "confirmation_policy": "Public development cells are exposed material. Freeze a separately selected untouched confirmation frame and practical/statistical criteria before confirmation outcomes; do not promote this pilot to holdout.",
+  "model_invocations": 0,
+  "preregistration_timing_verified": false,
+  "scope": "Source-bound local prospective selection; not public timestamp attestation, runtime admission, a complete preregistration or model-performance evidence."
+}

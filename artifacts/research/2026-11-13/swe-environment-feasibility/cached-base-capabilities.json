@@ -1,0 +1,60 @@
+{
+  "observation": {
+    "os": "Linux",
+    "architecture": "x86_64",
+    "versions": {
+      "node": {
+        "available": true,
+        "resolved_executable": "/usr/bin/node",
+        "exit_code": 0,
+        "stdout": "v20.20.0\n",
+        "stderr": ""
+      },
+      "npm": {
+        "available": true,
+        "resolved_executable": "/usr/bin/npm",
+        "exit_code": 0,
+        "stdout": "10.8.2\n",
+        "stderr": ""
+      },
+      "yarn": {
+        "available": true,
+        "resolved_executable": "/usr/bin/yarn",
+        "exit_code": 0,
+        "stdout": "1.22.22\n",
+        "stderr": ""
+      },
+      "git": {
+        "available": true,
+        "resolved_executable": "/usr/bin/git",
+        "exit_code": 0,
+        "stdout": "git version 2.43.0\n",
+        "stderr": ""
+      },
+      "python3": {
+        "available": true,
+        "resolved_executable": "/usr/bin/python3",
+        "exit_code": 0,
+        "stdout": "Python 3.12.3\n",
+        "stderr": ""
+      },
+      "g++": {
+        "available": true,
+        "resolved_executable": "/usr/bin/g++",
+        "exit_code": 0,
+        "stdout": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+        "stderr": ""
+      }
+    },
+    "claude_executable_present_not_invoked": true,
+    "model_invocations": 0,
+    "scope": "Installed capability observation only; no package install or task/scorer execution."
+  },
+  "program_sha256": "327db66c22e6a0087685a844ffc1a9aa033e6eb9965fb1fec397d90729bbaedc",
+  "image_reference": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+  "lease_closed": true,
+  "remaining_owned_containers": 0,
+  "images_pulled": 0,
+  "model_invocations": 0,
+  "runtime_admitted": false
+}

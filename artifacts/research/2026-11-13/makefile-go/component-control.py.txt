@@ -1,0 +1,159 @@
+"""Exercise native Go dependency ownership in a bounded offline environment."""
+import hashlib
+import json
+import os
+import platform
+import shutil
+import subprocess
+import sys
+import tarfile
+import tempfile
+from pathlib import Path, PurePosixPath
+
+GENERATOR = '#!/usr/bin/env bash\n#\n# generate_makefile_template.sh\n# Description: Generate Makefile templates for different project types\n# Usage: bash generate_makefile_template.sh [OPTIONS] [PROJECT_TYPE] [PROJECT_NAME] [OUTPUT_FILE]\n#\n\nset -euo pipefail\n\n# Script metadata\nreadonly SCRIPT_NAME="$(basename "${BASH_SOURCE[0]}")"\nreadonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"\n\n# Default values\nFORCE=0\nPROJECT_TYPE=""\nPROJECT_NAME="myproject"\nOUTPUT_FILE="Makefile"\n\n# Colors for output\nif [[ -t 1 ]]; then\n    readonly RED=\'\\033[0;31m\'\n    readonly GREEN=\'\\033[0;32m\'\n    readonly YELLOW=\'\\033[1;33m\'\n    readonly NC=\'\\033[0m\' # No Color\nelse\n    readonly RED=\'\'\n    readonly GREEN=\'\'\n    readonly YELLOW=\'\'\n    readonly NC=\'\'\nfi\n\n# Print functions\nprint_error() {\n    echo -e "${RED}ERROR:${NC} $*" >&2\n}\n\nprint_success() {\n    echo -e "${GREEN}SUCCESS:${NC} $*"\n}\n\nprint_info() {\n    echo -e "${YELLOW}INFO:${NC} $*"\n}\n\n# Usage information\nusage() {\n    cat << EOF\nUsage: ${SCRIPT_NAME} [OPTIONS] [PROJECT_TYPE] [PROJECT_NAME] [OUTPUT_FILE]\n\nGenerate Makefile templates for different project types.\n\nOptions:\n    -f, --force     Overwrite existing files without prompting\n    -h, --help      Show this help message\n\nArguments:\n    PROJECT_TYPE    Type of project (required)\n    PROJECT_NAME    Name of the project (default: myproject)\n    OUTPUT_FILE     Output file path (default: Makefile)\n\nProject Types:\n    c               Simple C project\n    c-lib           C library project\n    cpp             C++ project\n    go              Go project\n    python          Python project\n    java            Java project\n    generic         Generic project\n\nExamples:\n    ${SCRIPT_NAME} c myapp\n    ${SCRIPT_NAME} go server Makefile\n    ${SCRIPT_NAME} python mypackage build.mk\n    ${SCRIPT_NAME} -f c myapp Makefile  # Force overwrite\n\nEOF\n}\n\n# Parse command line options\nparse_args() {\n    local -a positional=()\n\n    while [[ $# -gt 0 ]]; do\n        case "$1" in\n            -f|--force)\n                FORCE=1\n                shift\n                ;;\n            -h|--help)\n                usage\n                exit 0\n                ;;\n            -*)\n                print_error "Unknown option: $1"\n                usage\n                exit 1\n                ;;\n            *)\n                positional+=("$1")\n                shift\n                ;;\n        esac\n    done\n\n    if [[ ${#positional[@]} -gt 3 ]]; then\n        print_error "Too many positional arguments. Expected: [PROJECT_TYPE] [PROJECT_NAME] [OUTPUT_FILE]"\n        usage\n        exit 1\n    fi\n\n    if [[ ${#positional[@]} -ge 1 ]]; then\n        PROJECT_TYPE="${positional[0]}"\n    fi\n    if [[ ${#positional[@]} -ge 2 ]]; then\n        PROJECT_NAME="${positional[1]}"\n    fi\n    if [[ ${#positional[@]} -ge 3 ]]; then\n        OUTPUT_FILE="${positional[2]}"\n    fi\n}\n\n# Escape replacement text for sed "s///" usage.\nescape_sed_replacement() {\n    printf \'%s\' "$1" | sed -e \'s/[\\\\/&]/\\\\&/g\'\n}\n\n# Render a template from stdin and replace PROJECT_NAME safely.\nrender_template_with_project() {\n    local project="$1"\n    local escaped_project\n    escaped_project="$(escape_sed_replacement "$project")"\n    sed "s/PROJECT_NAME/${escaped_project}/g"\n}\n\n# Generate C project Makefile\ngenerate_c_makefile() {\n    local project="$1"\n    render_template_with_project "$project" << \'EOF\'\n# Makefile for C project\nSHELL := bash\n.ONESHELL:\n.SHELLFLAGS := -eu -o pipefail -c\n.DELETE_ON_ERROR:\n.SUFFIXES:\nMAKEFLAGS += --warn-undefined-variables\nMAKEFLAGS += --no-builtin-rules\n\nPROJECT := PROJECT_NAME\nVERSION := 1.0.0\n\nCC ?= gcc\nCFLAGS ?= -Wall -Wextra -O2\nPREFIX ?= /usr/local\n\nSRCDIR := src\nBUILDDIR := build\nOBJDIR := $(BUILDDIR)/obj\n\nSOURCES := $(wildcard $(SRCDIR)/*.c)\nOBJECTS := $(SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o)\nDEPENDS := $(OBJECTS:.o=.d)\nTARGET := $(BUILDDIR)/$(PROJECT)\n\n.PHONY: all clean install test help\n\n## Build the application (default)\nall: $(TARGET)\n\n$(TARGET): $(OBJECTS)\n\t@mkdir -p $(@D)\n\t$(CC) $(LDFLAGS) $^ $(LDLIBS) -o $@\n\n$(OBJDIR)/%.o: $(SRCDIR)/%.c\n\t@mkdir -p $(@D)\n\t$(CC) $(CPPFLAGS) $(CFLAGS) -MMD -MP -c $< -o $@\n\n-include $(DEPENDS)\n\n## Install to PREFIX\ninstall: $(TARGET)\n\tinstall -d $(DESTDIR)$(PREFIX)/bin\n\tinstall -m 755 $(TARGET) $(DESTDIR)$(PREFIX)/bin/$(PROJECT)\n\n## Run tests\ntest: $(TARGET)\n\t@echo "Running tests..."\n\t@$(TARGET) --test\n\n## Remove build artifacts\nclean:\n\t$(RM) -r $(BUILDDIR)\n\n## Show help\nhelp:\n\t@echo "$(PROJECT) v$(VERSION)"\n\t@echo ""\n\t@sed -n \'s/^## //p\' $(MAKEFILE_LIST)\nEOF\n}\n\n# Generate C++ project Makefile\ngenerate_cpp_makefile() {\n    local project="$1"\n    render_template_with_project "$project" << \'EOF\'\n# Makefile for C++ project\nSHELL := bash\n.ONESHELL:\n.SHELLFLAGS := -eu -o pipefail -c\n.DELETE_ON_ERROR:\n.SUFFIXES:\nMAKEFLAGS += --warn-undefined-variables\nMAKEFLAGS += --no-builtin-rules\n\nPROJECT := PROJECT_NAME\nVERSION := 1.0.0\n\nCXX ?= g++\nCXXFLAGS ?= -Wall -Wextra -std=c++17 -O2\nPREFIX ?= /usr/local\n\nSRCDIR := src\nBUILDDIR := build\nOBJDIR := $(BUILDDIR)/obj\n\nSOURCES := $(wildcard $(SRCDIR)/*.cpp)\nOBJECTS := $(SOURCES:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)\nDEPENDS := $(OBJECTS:.o=.d)\nTARGET := $(BUILDDIR)/$(PROJECT)\n\n.PHONY: all clean install test help\n\n## Build the application (default)\nall: $(TARGET)\n\n$(TARGET): $(OBJECTS)\n\t@mkdir -p $(@D)\n\t$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@\n\n$(OBJDIR)/%.o: $(SRCDIR)/%.cpp\n\t@mkdir -p $(@D)\n\t$(CXX) $(CPPFLAGS) $(CXXFLAGS) -MMD -MP -c $< -o $@\n\n-include $(DEPENDS)\n\n## Install to PREFIX\ninstall: $(TARGET)\n\tinstall -d $(DESTDIR)$(PREFIX)/bin\n\tinstall -m 755 $(TARGET) $(DESTDIR)$(PREFIX)/bin/$(PROJECT)\n\n## Run tests\ntest: $(TARGET)\n\t@echo "Running tests..."\n\t@$(TARGET) --test\n\n## Remove build artifacts\nclean:\n\t$(RM) -r $(BUILDDIR)\n\n## Show help\nhelp:\n\t@echo "$(PROJECT) v$(VERSION)"\n\t@echo ""\n\t@sed -n \'s/^## //p\' $(MAKEFILE_LIST)\nEOF\n}\n\n# Generate C library Makefile\ngenerate_c_lib_makefile() {\n    local project="$1"\n    render_template_with_project "$project" << \'EOF\'\n# Makefile for C library project\n.DELETE_ON_ERROR:\n\nPROJECT := PROJECT_NAME\nVERSION := 1.0.0\n\nCC ?= gcc\nAR ?= ar\nRANLIB ?= ranlib\nCFLAGS ?= -Wall -Wextra -O2 -fPIC\nPREFIX ?= /usr/local\n\nSRCDIR := src\nBUILDDIR := build\nOBJDIR := $(BUILDDIR)/obj\n\nSOURCES := $(wildcard $(SRCDIR)/*.c)\nOBJECTS := $(SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o)\nHEADERS := $(wildcard $(SRCDIR)/*.h)\n\nSTATIC_LIB := $(BUILDDIR)/lib$(PROJECT).a\nSHARED_LIB := $(BUILDDIR)/lib$(PROJECT).so.$(VERSION)\n\n.PHONY: all static shared clean install help\n\n## Build both static and shared libraries\nall: static shared\n\n## Build static library\nstatic: $(STATIC_LIB)\n\n## Build shared library\nshared: $(SHARED_LIB)\n\n$(STATIC_LIB): $(OBJECTS)\n\t@mkdir -p $(@D)\n\t$(AR) rcs $@ $^\n\t$(RANLIB) $@\n\n$(SHARED_LIB): $(OBJECTS)\n\t@mkdir -p $(@D)\n\t$(CC) -shared -Wl,-soname,lib$(PROJECT).so.1 $^ -o $@\n\n$(OBJDIR)/%.o: $(SRCDIR)/%.c\n\t@mkdir -p $(@D)\n\t$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@\n\n## Install libraries\ninstall: all\n\tinstall -d $(DESTDIR)$(PREFIX)/lib\n\tinstall -m 644 $(STATIC_LIB) $(DESTDIR)$(PREFIX)/lib/\n\tinstall -m 755 $(SHARED_LIB) $(DESTDIR)$(PREFIX)/lib/\n\tinstall -d $(DESTDIR)$(PREFIX)/include/$(PROJECT)\n\tinstall -m 644 $(HEADERS) $(DESTDIR)$(PREFIX)/include/$(PROJECT)/\n\n## Clean build artifacts\nclean:\n\t$(RM) -r $(BUILDDIR)\n\n## Show help\nhelp:\n\t@sed -n \'s/^## //p\' $(MAKEFILE_LIST)\nEOF\n}\n\n# Generate Go project Makefile\ngenerate_go_makefile() {\n    local project="$1"\n    render_template_with_project "$project" << \'EOF\'\n# Makefile for Go project\n.PHONY: all build install test clean fmt lint help\n\nPROJECT := PROJECT_NAME\nGO ?= go\nPREFIX ?= /usr/local\nGO_MAIN ?= ./cmd/$(PROJECT)\n\nVERSION := $(shell git describe --tags --always --dirty 2>/dev/null || echo "dev")\nLDFLAGS := -ldflags "-X main.version=$(VERSION)"\n\nSOURCES := $(shell find . -name \'*.go\' -not -path \'./vendor/*\')\nGO_SUM := $(wildcard go.sum)\nTARGET := $(PROJECT)\n\n## Build the application (default)\nall: build\n\n## Build binary\nbuild: $(TARGET)\n\n$(TARGET): $(SOURCES) go.mod $(GO_SUM)\n\t$(GO) build $(LDFLAGS) -o $@ $(GO_MAIN)\n\n## Install to PREFIX\ninstall: $(TARGET)\n\tinstall -d $(DESTDIR)$(PREFIX)/bin\n\tinstall -m 755 $(TARGET) $(DESTDIR)$(PREFIX)/bin/\n\n## Run tests\ntest:\n\t$(GO) test -v ./...\n\n## Clean build artifacts\nclean:\n\t$(RM) $(TARGET)\n\t$(GO) clean\n\n## Format code\nfmt:\n\t$(GO) fmt ./...\n\n## Run linter\nlint:\n\tgolangci-lint run\n\n## Show help\nhelp:\n\t@echo "$(PROJECT) - Go Project"\n\t@echo "Version: $(VERSION)"\n\t@echo ""\n\t@sed -n \'s/^## //p\' $(MAKEFILE_LIST)\nEOF\n}\n\n# Generate Python project Makefile\ngenerate_python_makefile() {\n    local project="$1"\n    render_template_with_project "$project" << \'EOF\'\n# Makefile for Python project\n.PHONY: all build install develop test format lint clean help\n\nPROJECT := PROJECT_NAME\nPYTHON ?= python3\nPIP ?= $(PYTHON) -m pip\n\n## Build the package (default)\nall: build\n\n## Build Python package\nbuild:\n\t$(PYTHON) -m build\n\n## Install package\ninstall:\n\t$(PIP) install .\n\n## Install in development mode\ndevelop:\n\t$(PIP) install -e .[dev]\n\n## Run tests\ntest:\n\t$(PYTHON) -m pytest tests/ -v\n\n## Format code\nformat:\n\t$(PYTHON) -m black src/ tests/\n\t$(PYTHON) -m isort src/ tests/\n\n## Run linters\nlint:\n\t$(PYTHON) -m flake8 src/ tests/\n\t$(PYTHON) -m pylint src/\n\n## Clean build artifacts\nclean:\n\t$(RM) -r build/ dist/ *.egg-info/\n\t$(RM) -r .pytest_cache/ .coverage htmlcov/\n\tfind . -type d -name \'__pycache__\' -exec rm -r {} +\n\n## Show help\nhelp:\n\t@echo "$(PROJECT) - Python Project"\n\t@echo ""\n\t@sed -n \'s/^## //p\' $(MAKEFILE_LIST)\nEOF\n}\n\n# Generate Java project Makefile\ngenerate_java_makefile() {\n    local project="$1"\n    render_template_with_project "$project" << \'EOF\'\n# Makefile for Java project\n.DELETE_ON_ERROR:\n\nPROJECT := PROJECT_NAME\nVERSION := 1.0.0\nMAIN_CLASS := Main\n\n# Java tools\nJAVAC ?= javac\nJAVA ?= java\nJAR ?= jar\n\n# Compiler flags\nJAVAC_FLAGS ?= -Xlint:all -encoding UTF-8\nJAR_FLAGS := cvf\n\n# Directories\nSRCDIR := src\nBUILDDIR := build\nCLASSDIR := $(BUILDDIR)/classes\nLIBDIR := lib\nDOCDIR := $(BUILDDIR)/docs\nDISTDIR := dist\n\n# Source and class files\nJAVA_SOURCES := $(shell find $(SRCDIR) -name \'*.java\')\nJAVA_CLASSES := $(JAVA_SOURCES:$(SRCDIR)/%.java=$(CLASSDIR)/%.class)\n\n# Classpath\nCLASSPATH := $(CLASSDIR)\nifneq ($(wildcard $(LIBDIR)/*.jar),)\n    CLASSPATH := $(CLASSPATH):$(LIBDIR)/*\nendif\n\n# Output JAR\nTARGET := $(DISTDIR)/$(PROJECT)-$(VERSION).jar\n\n.PHONY: all build compile jar run run-jar test clean distclean docs help\n\n## Build the project (default)\nall: build\n\n## Compile and create JAR\nbuild: jar\n\n## Compile Java sources\ncompile: $(CLASSDIR)/.compiled\n\n$(CLASSDIR)/.compiled: $(JAVA_SOURCES)\n\t@mkdir -p $(CLASSDIR)\n\t$(JAVAC) $(JAVAC_FLAGS) -d $(CLASSDIR) -cp "$(CLASSPATH)" $(JAVA_SOURCES)\n\t@touch $@\n\n## Create JAR file\njar: compile\n\t@mkdir -p $(DISTDIR)\n\t@echo "Manifest-Version: 1.0" > $(BUILDDIR)/MANIFEST.MF\n\t@echo "Main-Class: $(MAIN_CLASS)" >> $(BUILDDIR)/MANIFEST.MF\n\t@echo "Created-By: Makefile" >> $(BUILDDIR)/MANIFEST.MF\n\t$(JAR) $(JAR_FLAGS)m $(TARGET) $(BUILDDIR)/MANIFEST.MF -C $(CLASSDIR) .\n\t@echo "Created: $(TARGET)"\n\n## Run the application\nrun: compile\n\t$(JAVA) -cp "$(CLASSPATH)" $(MAIN_CLASS)\n\n## Run with JAR\nrun-jar: jar\n\t$(JAVA) -jar $(TARGET)\n\n## Run tests (requires JUnit in lib/)\ntest: compile\n\t@echo "Running tests..."\n\t@if [ -d "$(SRCDIR)/test" ]; then \\\n\t\t$(JAVA) -cp "$(CLASSPATH):$(LIBDIR)/*" org.junit.runner.JUnitCore; \\\n\telse \\\n\t\techo "No test directory found"; \\\n\tfi\n\n## Generate Javadoc\ndocs:\n\t@mkdir -p $(DOCDIR)\n\tjavadoc -d $(DOCDIR) -sourcepath $(SRCDIR) -subpackages .\n\t@echo "Documentation generated: $(DOCDIR)/index.html"\n\n## Remove build artifacts\nclean:\n\t$(RM) -r $(BUILDDIR)\n\t@echo "Clean complete"\n\n## Remove all generated files\ndistclean: clean\n\t$(RM) -r $(DISTDIR)\n\t@echo "Distclean complete"\n\n## Show available targets\nhelp:\n\t@echo "$(PROJECT) v$(VERSION) - Java Project"\n\t@echo ""\n\t@echo "Targets:"\n\t@sed -n \'s/^## //p\' $(MAKEFILE_LIST) | column -t -s \':\' | sed \'s/^/  /\'\n\t@echo ""\n\t@echo "Variables:"\n\t@echo "  JAVAC=$(JAVAC)"\n\t@echo "  JAVAC_FLAGS=$(JAVAC_FLAGS)"\n\t@echo "  MAIN_CLASS=$(MAIN_CLASS)"\n\t@echo ""\n\t@echo "Directory Structure:"\n\t@echo "  $(SRCDIR)/          - Java source files"\n\t@echo "  $(LIBDIR)/          - External JAR dependencies"\n\t@echo "  $(BUILDDIR)/        - Build output"\n\t@echo "  $(DISTDIR)/         - Distribution JARs"\n\t@echo ""\n\t@echo "Examples:"\n\t@echo "  make                    # Build the project"\n\t@echo "  make run                # Compile and run"\n\t@echo "  make jar                # Create JAR file"\n\t@echo "  make MAIN_CLASS=MyApp   # Set main class"\nEOF\n}\n\n# Generate generic Makefile\ngenerate_generic_makefile() {\n    local project="$1"\n    render_template_with_project "$project" << \'EOF\'\n# Generic Makefile\n.PHONY: all build clean install test help\n\nPROJECT := PROJECT_NAME\nVERSION := 1.0.0\n\n## Build the project (default)\nall: build\n\n## Build target\nbuild:\n\t@echo "Building $(PROJECT)..."\n\t# Add build commands here\n\n## Install target\ninstall: build\n\t@echo "Installing $(PROJECT)..."\n\t# Add installation commands here\n\n## Run tests\ntest:\n\t@echo "Running tests..."\n\t# Add test commands here\n\n## Clean build artifacts\nclean:\n\t@echo "Cleaning..."\n\t# Add cleanup commands here\n\n## Show help\nhelp:\n\t@echo "$(PROJECT) v$(VERSION)"\n\t@echo ""\n\t@echo "Available targets:"\n\t@sed -n \'s/^## //p\' $(MAKEFILE_LIST)\nEOF\n}\n\n# Main generation logic\ngenerate_makefile() {\n    local type="$1"\n    local project="$2"\n    local output="$3"\n\n    # Check if output file exists\n    if [[ -f "${output}" ]]; then\n        if [[ "${FORCE}" -eq 1 ]]; then\n            print_info "Overwriting existing file: ${output}"\n        elif [[ -t 0 ]]; then\n            # Interactive mode - prompt user\n            print_error "File \'${output}\' already exists"\n            read -p "Overwrite? [y/N] " -n 1 -r\n            echo\n            if [[ ! $REPLY =~ ^[Yy]$ ]]; then\n                print_info "Aborted"\n                exit 0\n            fi\n        else\n            # Non-interactive mode - fail without --force\n            print_error "File \'${output}\' already exists. Use -f/--force to overwrite."\n            exit 1\n        fi\n    fi\n\n    print_info "Generating ${type} Makefile for project \'${project}\'..."\n\n    case "${type}" in\n        c)\n            generate_c_makefile "${project}" > "${output}"\n            ;;\n        c-lib)\n            generate_c_lib_makefile "${project}" > "${output}"\n            ;;\n        cpp)\n            generate_cpp_makefile "${project}" > "${output}"\n            ;;\n        go)\n            generate_go_makefile "${project}" > "${output}"\n            ;;\n        python)\n            generate_python_makefile "${project}" > "${output}"\n            ;;\n        java)\n            generate_java_makefile "${project}" > "${output}"\n            ;;\n        generic)\n            generate_generic_makefile "${project}" > "${output}"\n            ;;\n        *)\n            print_error "Unknown project type: ${type}"\n            echo ""\n            usage\n            exit 1\n            ;;\n    esac\n\n    print_success "Makefile generated: ${output}"\n    print_info "Edit the Makefile to customize for your project"\n    print_info "Run \'make help\' to see available targets"\n}\n\n# Parse arguments\nparse_args "$@"\n\n# Check required argument\nif [[ -z "${PROJECT_TYPE}" ]]; then\n    usage\n    exit 0\nfi\n\n# Main execution\ngenerate_makefile "${PROJECT_TYPE}" "${PROJECT_NAME}" "${OUTPUT_FILE}"\n'
+CONTRACT = {'source_sha256': 'f85287a85ab0b152b2d7f8681642d616031896e4e75d45b78970de514a324747', 'sdk_version': 'go1.27.4', 'sdk_sha256': '7226736c2339719cda28fbf3a54d71aa63bcefe376e98cef00034268dab24840', 'contracts': ['A build after only an embedded resource changes must execute the new embedded content.', 'A missing required embedded resource must produce a build failure rather than success with an old executable.', 'The test target must run a real declared test and propagate an actual test failure.', 'The fixture must build without go.sum when it has no external dependencies.'], 'scope': 'Source-grounded component controls; not a model benchmark, speed comparison or arbitrary Go-project qualification.'}
+assert isinstance(GENERATOR, str) and isinstance(CONTRACT, dict)
+assert platform.system() == 'Linux' and platform.machine() == 'x86_64'
+make, bash = (shutil.which(name) for name in ('make', 'bash'))
+assert make and bash
+records, cases = [], []
+
+
+def execute(argv, cwd, env, timeout=90):
+    result = subprocess.run(argv, cwd=cwd, env=env, stdin=subprocess.DEVNULL, text=True, capture_output=True, timeout=timeout)
+    row = {'argv': argv, 'cwd_name': cwd.name, 'exit_code': result.returncode, 'stdout': result.stdout, 'stderr': result.stderr}
+    records.append(row)
+    print(json.dumps({'native_command': row}), file=sys.stderr, flush=True)
+    return result
+
+
+def case(name, **values):
+    cases.append({'case': name, 'expected_observation': True, **values})
+    print(json.dumps({'component_case': cases[-1]}), file=sys.stderr, flush=True)
+
+
+def write(path, text):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(text, encoding='utf-8', newline='\n')
+
+
+maintained = '''PROJECT := demo
+GO ?= go
+GO_MAIN ?= ./cmd/$(PROJECT)
+VERSION := dev
+LDFLAGS := -ldflags "-X main.version=$(VERSION)"
+.PHONY: all build test
+all: build
+build:
+\t$(GO) build $(LDFLAGS) -o $(PROJECT) $(GO_MAIN)
+test:
+\t$(GO) test -v ./...
+'''
+main = '''package main
+import (
+    _ "embed"
+    "fmt"
+    "strings"
+)
+//go:embed message.txt
+var message string
+var version = "development"
+func main() { fmt.Print(strings.TrimSpace(message) + "|" + version) }
+'''
+positive_test = '''package main
+import "testing"
+func TestEmbeddedMessage(t *testing.T) {
+    if len(message) == 0 { t.Fatal("missing embedded content") }
+}
+'''
+negative_test = '''package main
+import "testing"
+func TestEmbeddedMessage(t *testing.T) { t.Fatal("controlled test failure") }
+'''
+with tempfile.TemporaryDirectory(prefix='go-make-', dir='/tmp') as temporary:
+    root = Path(temporary)
+    archive = Path('/tmp/qualification-sdk.tar.gz')
+    def admit_sdk(expected):
+        observed = hashlib.sha256(archive.read_bytes()).hexdigest()
+        if observed != expected:
+            raise ValueError('SDK bytes differ from the admitted digest')
+        return observed
+    try:
+        admit_sdk('0' * 64)
+    except ValueError:
+        case('wrong-sdk-digest-rejected-before-execution', rejected=True)
+    else:
+        raise AssertionError('Wrong digest admitted')
+    assert admit_sdk(CONTRACT['sdk_sha256']) == CONTRACT['sdk_sha256']
+    case('copied-sdk-digest-admitted', sha256=CONTRACT['sdk_sha256'])
+    sdk_parent = root / 'sdk'
+    sdk_parent.mkdir()
+    with tarfile.open(archive, 'r:gz') as source:
+        members = source.getmembers()
+        assert len(members) <= 25000 and sum(m.size for m in members) <= 512 * 1024**2
+        for member in members:
+            name = PurePosixPath(member.name)
+            assert name.parts and name.parts[0] == 'go' and not name.is_absolute() and '..' not in name.parts
+            assert member.isfile() or member.isdir()
+            if len(name.parts) == 1:
+                assert member.isdir()
+        source.extractall(sdk_parent, members=members, filter='data')
+    sdk = sdk_parent / 'go'
+    go = sdk / 'bin/go'
+    assert go.is_file() and (sdk / 'LICENSE').is_file()
+    env = {'PATH': os.defpath, 'HOME': str(root / 'home'), 'GOROOT': str(sdk), 'GOCACHE': str(root / 'cache'), 'GOPATH': str(root / 'gopath'), 'GOMODCACHE': str(root / 'gopath/pkg/mod'), 'GOENV': 'off', 'GOTOOLCHAIN': 'local', 'GOPROXY': 'off', 'GOSUMDB': 'off', 'GOTELEMETRY': 'off', 'GOMAXPROCS': '1', 'GOFLAGS': '-p=1', 'CGO_ENABLED': '0', 'GIT_CONFIG_NOSYSTEM': '1', 'GIT_CONFIG_GLOBAL': os.devnull, 'GIT_CEILING_DIRECTORIES': str(root)}
+    (root / 'home').mkdir()
+    version = execute([str(go), 'version'], root, env, timeout=10)
+    assert version.returncode == 0 and version.stdout.strip() == 'go version ' + CONTRACT['sdk_version'] + ' linux/amd64'
+    case('actual-sdk-version', observed=version.stdout.strip())
+    generator = root / 'generate.sh'
+    write(generator, GENERATOR)
+    for kind in ('original', 'maintained'):
+        project = root / kind
+        project.mkdir()
+        write(project / 'go.mod', 'module example.invalid/demo\n\ngo 1.27.0\n')
+        write(project / 'cmd/demo/main.go', main)
+        test = project / 'cmd/demo/main_test.go'
+        write(test, positive_test)
+        resource = project / 'cmd/demo/message.txt'
+        write(resource, 'initial\n')
+        if kind == 'original':
+            result = execute([bash, str(generator), 'go', 'demo', 'Makefile'], project, env, timeout=10)
+            assert result.returncode == 0
+        else:
+            write(project / 'Makefile', maintained)
+        args = [make, '--no-print-directory', 'GO=' + str(go)]
+        initial = execute([*args, 'build'], project, env)
+        assert initial.returncode == 0 and not (project / 'go.sum').exists(), records[-1]
+        binary = project / 'demo'
+        first = execute([str(binary)], project, env, timeout=10)
+        assert first.returncode == 0 and first.stdout == 'initial|dev'
+        case(kind + '-initial-no-external-dependencies', output=first.stdout, go_sum_present=False)
+        original_hash = hashlib.sha256(binary.read_bytes()).hexdigest()
+        write(resource, 'updated\n')
+        changed = execute([*args, 'build'], project, env)
+        actual = execute([str(binary)], project, env, timeout=10)
+        expected = 'initial|dev' if kind == 'original' else 'updated|dev'
+        assert changed.returncode == actual.returncode == 0 and actual.stdout == expected
+        assert (hashlib.sha256(binary.read_bytes()).hexdigest() == original_hash) == (kind == 'original')
+        case(kind + '-embedded-resource-change', output=actual.stdout, old_binary_retained=(kind == 'original'))
+        if kind == 'original':
+            direct = execute([str(go), 'build', '-ldflags', '-X main.version=dev', '-o', 'demo', './cmd/demo'], project, env)
+            assert direct.returncode == 0 and execute([str(binary)], project, env, timeout=10).stdout == 'updated|dev'
+            case('native-go-recognizes-resource-change', exit_code=0)
+        resource.unlink()
+        missing = execute([*args, 'build'], project, env)
+        assert (missing.returncode == 0) == (kind == 'original'), records[-1]
+        if kind == 'maintained':
+            assert 'message.txt' in missing.stderr and 'no matching files found' in missing.stderr
+        case(kind + '-missing-required-resource', exit_code=missing.returncode)
+        write(resource, 'updated\n')
+        passed = execute([*args, 'test'], project, env)
+        assert passed.returncode == 0 and '=== RUN   TestEmbeddedMessage' in passed.stdout and '--- PASS:' in passed.stdout
+        case(kind + '-actual-test-passes', exit_code=0)
+        write(test, negative_test)
+        failed = execute([*args, 'test'], project, env)
+        assert failed.returncode != 0 and 'controlled test failure' in failed.stdout and '--- FAIL:' in failed.stdout
+        case(kind + '-actual-test-failure-propagates', exit_code=failed.returncode)
+    assert len(cases) == 14
+    print(json.dumps({'passed': True, 'cases': cases, 'records': records, 'go_version': version.stdout.strip(), 'license_sha256': hashlib.sha256((sdk / 'LICENSE').read_bytes()).hexdigest(), 'maintained_makefile': maintained, 'model_invocations': 0, 'scope': CONTRACT['scope']}))

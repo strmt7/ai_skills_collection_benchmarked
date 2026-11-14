@@ -1,0 +1,28 @@
+{
+  "repository": "https://github.com/forrestchang/andrej-karpathy-skills",
+  "scope": "Community Karpathy-derived baseline; not a repository owned by Karpathy",
+  "pinned_commit": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+  "default_branch_head": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+  "comparison_status": "identical",
+  "ahead_by": 0,
+  "behind_by": 0,
+  "total_commits": 0,
+  "files": [],
+  "sources": [
+    {
+      "url": "https://api.github.com/repos/forrestchang/andrej-karpathy-skills/commits?per_page=1",
+      "status_code": 200,
+      "response_date": "Wed, 11 Nov 2026 02:50:43 GMT",
+      "sha256": "fe764774d8362da987db052039c7ac657cee6c13ae62cd5605e2f9a47fd1106a",
+      "bytes": 4582
+    },
+    {
+      "url": "https://api.github.com/repos/forrestchang/andrej-karpathy-skills/compare/2c606141936f1eeef17fa3043a72095b4765b9c2...2c606141936f1eeef17fa3043a72095b4765b9c2?per_page=100",
+      "status_code": 200,
+      "response_date": "Wed, 11 Nov 2026 02:50:44 GMT",
+      "sha256": "e4874ee92550fce4f8d798ecb94ad86501f594f483315ee5a178a55d5ae4415c",
+      "bytes": 10055
+    }
+  ],
+  "repository_changed": false
+}

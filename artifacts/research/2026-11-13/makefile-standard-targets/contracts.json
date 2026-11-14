@@ -1,0 +1,273 @@
+{
+  "passed": true,
+  "versions": {
+    "make": "GNU Make 4.3",
+    "bash": "GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)"
+  },
+  "flat_existing_rule_preserved": true,
+  "dry_run_preserved_input": true,
+  "false_success_cases": [
+    "newly_invented_test",
+    "existing_multi_target_recipe",
+    "included_test_recipe",
+    "expanded_test_target"
+  ],
+  "supplied_regression_script_passed": true,
+  "component_cases": 7,
+  "records": [
+    {
+      "case": "flat",
+      "label": "before",
+      "argv": [
+        "make",
+        "--no-print-directory",
+        "test"
+      ],
+      "exit_code": 2,
+      "stdout": "ACTUAL_TEST_RAN\n",
+      "stderr": "make: *** [Makefile:3: test] Error 7\n"
+    },
+    {
+      "case": "flat",
+      "label": "add-test",
+      "argv": [
+        "bash",
+        "/tmp/benchmark-inputs/package/scripts/add_standard_targets.sh",
+        "--file",
+        "Makefile",
+        "--targets",
+        "test"
+      ],
+      "exit_code": 0,
+      "stdout": "INFO: Processing: Makefile\n\n- Skipped (exists): test\n\nINFO: No targets to add (all requested targets already exist)\n\nSummary:\n  Targets added:   0\n  Targets skipped: 1\n",
+      "stderr": ""
+    },
+    {
+      "case": "flat",
+      "label": "after",
+      "argv": [
+        "make",
+        "--no-print-directory",
+        "test"
+      ],
+      "exit_code": 2,
+      "stdout": "ACTUAL_TEST_RAN\n",
+      "stderr": "make: *** [Makefile:3: test] Error 7\n"
+    },
+    {
+      "case": "multi-target",
+      "label": "before",
+      "argv": [
+        "make",
+        "--no-print-directory",
+        "test"
+      ],
+      "exit_code": 2,
+      "stdout": "ACTUAL_TEST_RAN\n",
+      "stderr": "make: *** [Makefile:3: test] Error 7\n"
+    },
+    {
+      "case": "multi-target",
+      "label": "add-test",
+      "argv": [
+        "bash",
+        "/tmp/benchmark-inputs/package/scripts/add_standard_targets.sh",
+        "--file",
+        "Makefile",
+        "--targets",
+        "test"
+      ],
+      "exit_code": 0,
+      "stdout": "INFO: Processing: Makefile\n\n\nINFO: Added missing variable definitions\n+ Added target: test\nSUCCESS: Added 1 target(s) to Makefile\n\nSummary:\n  Targets added:   1\n  Targets skipped: 0\n\nINFO: Run 'make help' to see available targets\nINFO: Run 'make -n <target>' to preview what a target does\n",
+      "stderr": ""
+    },
+    {
+      "case": "multi-target",
+      "label": "after",
+      "argv": [
+        "make",
+        "--no-print-directory",
+        "test"
+      ],
+      "exit_code": 0,
+      "stdout": "Running tests...\n# Add test commands here\n# Examples:\n# ./run_tests.sh\n# python -m pytest\n# go test ./...\n",
+      "stderr": "Makefile:31: warning: overriding recipe for target 'test'\nMakefile:25: warning: ignoring old recipe for target 'test'\n"
+    },
+    {
+      "case": "included",
+      "label": "before",
+      "argv": [
+        "make",
+        "--no-print-directory",
+        "test"
+      ],
+      "exit_code": 2,
+      "stdout": "ACTUAL_TEST_RAN\n",
+      "stderr": "make: *** [tests.mk:3: test] Error 7\n"
+    },
+    {
+      "case": "included",
+      "label": "dry-run",
+      "argv": [
+        "bash",
+        "/tmp/benchmark-inputs/package/scripts/add_standard_targets.sh",
+        "--dry-run",
+        "--file",
+        "Makefile",
+        "--targets",
+        "test"
+      ],
+      "exit_code": 0,
+      "stdout": "INFO: Processing: Makefile\n\n+ Would add: test\n\nINFO: Dry run - no changes made\nWould add 1 target(s), skip 0 existing target(s)\n\nSummary:\n  Targets added:   1\n  Targets skipped: 0\n",
+      "stderr": ""
+    },
+    {
+      "case": "included",
+      "label": "add-test",
+      "argv": [
+        "bash",
+        "/tmp/benchmark-inputs/package/scripts/add_standard_targets.sh",
+        "--file",
+        "Makefile",
+        "--targets",
+        "test"
+      ],
+      "exit_code": 0,
+      "stdout": "INFO: Processing: Makefile\n\n\nINFO: Added missing variable definitions\n+ Added target: test\nSUCCESS: Added 1 target(s) to Makefile\n\nSummary:\n  Targets added:   1\n  Targets skipped: 0\n\nINFO: Run 'make help' to see available targets\nINFO: Run 'make -n <target>' to preview what a target does\n",
+      "stderr": ""
+    },
+    {
+      "case": "included",
+      "label": "after",
+      "argv": [
+        "make",
+        "--no-print-directory",
+        "test"
+      ],
+      "exit_code": 0,
+      "stdout": "Running tests...\n# Add test commands here\n# Examples:\n# ./run_tests.sh\n# python -m pytest\n# go test ./...\n",
+      "stderr": "Makefile:29: warning: overriding recipe for target 'test'\ntests.mk:2: warning: ignoring old recipe for target 'test'\n"
+    },
+    {
+      "case": "expanded",
+      "label": "before",
+      "argv": [
+        "make",
+        "--no-print-directory",
+        "test"
+      ],
+      "exit_code": 2,
+      "stdout": "ACTUAL_TEST_RAN\n",
+      "stderr": "make: *** [Makefile:4: test] Error 7\n"
+    },
+    {
+      "case": "expanded",
+      "label": "add-test",
+      "argv": [
+        "bash",
+        "/tmp/benchmark-inputs/package/scripts/add_standard_targets.sh",
+        "--file",
+        "Makefile",
+        "--targets",
+        "test"
+      ],
+      "exit_code": 0,
+      "stdout": "INFO: Processing: Makefile\n\n\nINFO: Added missing variable definitions\n+ Added target: test\nSUCCESS: Added 1 target(s) to Makefile\n\nSummary:\n  Targets added:   1\n  Targets skipped: 0\n\nINFO: Run 'make help' to see available targets\nINFO: Run 'make -n <target>' to preview what a target does\n",
+      "stderr": ""
+    },
+    {
+      "case": "expanded",
+      "label": "after",
+      "argv": [
+        "make",
+        "--no-print-directory",
+        "test"
+      ],
+      "exit_code": 0,
+      "stdout": "Running tests...\n# Add test commands here\n# Examples:\n# ./run_tests.sh\n# python -m pytest\n# go test ./...\n",
+      "stderr": "Makefile:32: warning: overriding recipe for target 'test'\nMakefile:26: warning: ignoring old recipe for target 'test'\n"
+    },
+    {
+      "case": "absent",
+      "label": "before",
+      "argv": [
+        "make",
+        "--no-print-directory",
+        "test"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "make: *** No rule to make target 'test'.  Stop.\n"
+    },
+    {
+      "case": "absent",
+      "label": "add-test",
+      "argv": [
+        "bash",
+        "/tmp/benchmark-inputs/package/scripts/add_standard_targets.sh",
+        "--file",
+        "Makefile",
+        "--targets",
+        "test"
+      ],
+      "exit_code": 0,
+      "stdout": "INFO: Processing: Makefile\n\n\nINFO: Added missing variable definitions\n+ Added target: test\nSUCCESS: Added 1 target(s) to Makefile\n\nSummary:\n  Targets added:   1\n  Targets skipped: 0\n\nINFO: Run 'make help' to see available targets\nINFO: Run 'make -n <target>' to preview what a target does\n",
+      "stderr": ""
+    },
+    {
+      "case": "absent",
+      "label": "after",
+      "argv": [
+        "make",
+        "--no-print-directory",
+        "test"
+      ],
+      "exit_code": 0,
+      "stdout": "Running tests...\n# Add test commands here\n# Examples:\n# ./run_tests.sh\n# python -m pytest\n# go test ./...\n",
+      "stderr": ""
+    },
+    {
+      "case": "standard target contract work",
+      "label": "upstream-regression",
+      "argv": [
+        "bash",
+        "/tmp/benchmark-inputs/package/test/test_helper_scripts.sh"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: makefile-generator helper script regression tests\n",
+      "stderr": ""
+    },
+    {
+      "case": "standard target contract work",
+      "label": "make-version",
+      "argv": [
+        "make",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "GNU Make 4.3\nBuilt for x86_64-pc-linux-gnu\nCopyright (C) 1988-2020 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n",
+      "stderr": ""
+    },
+    {
+      "case": "standard target contract work",
+      "label": "bash-version",
+      "argv": [
+        "bash",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)\nCopyright (C) 2022 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n\nThis is free software; you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n",
+      "stderr": ""
+    }
+  ],
+  "model_invocations": 0,
+  "scope": "Independent component controls, not agent benchmark scores; no immutable mirror modified.",
+  "lease_closed": true,
+  "remaining_owned_containers": 0,
+  "images_pulled": 0,
+  "source_sha256": {
+    "scripts/add_standard_targets.sh": "15a03d4651bc37947c375520fb58c5658bd5d6e5386bb58e227f4f96e8ee0ba9",
+    "scripts/generate_makefile_template.sh": "f85287a85ab0b152b2d7f8681642d616031896e4e75d45b78970de514a324747",
+    "test/test_helper_scripts.sh": "238e329e79e7fd484a9d3e8340f71f5ae20343376d85ac69bfdc0e6e64674355"
+  }
+}

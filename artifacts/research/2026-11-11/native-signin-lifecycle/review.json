@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "kind": "native-signin-lifecycle-component-qualification",
+  "date": "2026-11-11",
+  "cli_version": "0.167.1",
+  "source_commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+  "scope": "Four serial native CLI controls with synthetic file-store credentials and owned loopback endpoints, replayed in one frozen fixture batch. Exact private fixture and runner source copies are retained alongside its receipts. No real account, external model or keyring qualification.",
+  "retained_control_sources": [
+    {
+      "source_path": ".venv/research/benchmark-planning-20261110-v1/qualify_checkpoint.py",
+      "archive_path": "000.py",
+      "sha256": "e66c6dfaf291604c691f895e9daee3c5bd25d5e4ef67b4d84c7ef9f5c267f1a8"
+    },
+    {
+      "source_path": ".venv/research/benchmark-planning-20261110-v1/qualify_native_refresh_fixture_v1.py",
+      "archive_path": "001.py",
+      "sha256": "8cda7fa74772febdecad185c7e3b245aac9493094d68392724bf2a3eef2f9b3b"
+    },
+    {
+      "source_path": ".venv/research/benchmark-planning-20261110-v1/qualify_native_subject_dependencies_v1.py",
+      "archive_path": "002.py",
+      "sha256": "99548761a51afd8b2ac47287f3d6851812c1bca9810738f8429d186b995abb0d"
+    },
+    {
+      "source_path": ".venv/research/benchmark-planning-20261110-v1/qualify_signin_websocket_fixture_v1.py",
+      "archive_path": "003.py",
+      "sha256": "0d448ef45604417e40383279a47ae93601e4bd68c697cb089459c7ef252a2422"
+    },
+    {
+      "source_path": ".venv/research/benchmark-planning-20261110-v1/qualify_trial_transport.py",
+      "archive_path": "004.py",
+      "sha256": "17c2bcb3b0b339f85fe04925dfb678e61172237d573023d7eb4f169958141499"
+    }
+  ],
+  "private_control_archive": ".venv/research/benchmark-planning-20261110-v1/provider-route-signin-native-qualified-refresh5/control-sources",
+  "sources": [
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/login/src/auth/manager.rs",
+      "capture_sha256": "4b06794cd8900933bc16ad51d10704290a617ab5c50b3103f6062e8061d02a33",
+      "transport": "official GitHub connector decoded source; not wire bytes or Git-blob verification"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/login/src/auth/storage.rs",
+      "capture_sha256": "7bc69f8acc215a8458169d4859f95727136961a51d6cdf3cabb7cf275e945264",
+      "transport": "official GitHub connector decoded source; not wire bytes or Git-blob verification"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/app-server/src/request_processors/account_processor.rs",
+      "capture_sha256": "414b372236c8dacb6dc4b5f0d20cad914435b3caaafca4862eec73f162b6a4a1",
+      "transport": "official GitHub connector decoded source; not wire bytes or Git-blob verification"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/app-server/src/request_processors/account_processor/workspace_routing.rs",
+      "capture_sha256": "090677f70dc022851f752ae7436c8f64b0d2fd29ad2087b29935027ffc8f6827",
+      "transport": "official GitHub connector decoded source; not wire bytes or Git-blob verification"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/app-server-protocol/schema/typescript/v2/GetAccountParams.ts",
+      "capture_sha256": "98bf5420cdddb4d011765410d5d4836ec3b404c6d1bfde1e771a3f9fddba7beb",
+      "transport": "official GitHub connector decoded source; not wire bytes or Git-blob verification"
+    }
+  ],
+  "controls": [
+    {
+      "control": "refresh",
+      "passed": true,
+      "status": "task_failed",
+      "score": 0.0,
+      "native_counts": {
+        "errors": 0,
+        "failed": 10,
+        "passed": 0,
+        "skipped": 1,
+        "total": 11
+      },
+      "refresh_requests": 1,
+      "native_refresh_persisted": true,
+      "authentication_file_unchanged": false,
+      "credential_binding_released": true,
+      "listener_stopped": true,
+      "qualification_sha256": "cd0dbfe96f2462ad6f94572c656a89496d89fedd4424a591e8d71a992ef2bacc",
+      "summary_sha256": "ad96aa9511cc78ce83c8c6bab2bd12d5476d195e180e0a1e99e6dbc37b8f4011",
+      "native_process_sha256": "eb5ef7cf0598f1c9cc10e754a58b29f9568ca3dfb5905b20c372ad496b52bc6f",
+      "refresh_payload_sha256": {
+        "refresh-request-1.native.json": "63afd942d4cd11958e77fe6956cde66805033f49211459a8f5e08b7700369024",
+        "refresh-response.native.json": "e4ce74af052bbdfa16fb90056c1f52eef91a77825e4a719b29a6dacd34807243"
+      }
+    },
+    {
+      "control": "refresh-conflict",
+      "passed": true,
+      "status": "task_failed",
+      "score": 0.0,
+      "native_counts": {
+        "errors": 0,
+        "failed": 10,
+        "passed": 0,
+        "skipped": 1,
+        "total": 11
+      },
+      "refresh_requests": 1,
+      "external_generation_preserved": true,
+      "expected_auth_rejections": 0,
+      "authentication_file_unchanged": false,
+      "credential_binding_released": true,
+      "listener_stopped": true,
+      "qualification_sha256": "cd0dbfe96f2462ad6f94572c656a89496d89fedd4424a591e8d71a992ef2bacc",
+      "summary_sha256": "2d5d63caacd9a425bb4923154979fdd22ae911c4ab7cb496be0ec848ed6c395a",
+      "native_process_sha256": "172bed1b4b521e8640731e730389f4b0298714bf27fc156303ca3a6c7e39d644",
+      "refresh_payload_sha256": {
+        "refresh-request-1.native.json": "63afd942d4cd11958e77fe6956cde66805033f49211459a8f5e08b7700369024",
+        "refresh-response.native.json": "970b388796b49f3bafb781ec1e27bbc4dd54aed26e6b598181d39ba98f482728"
+      }
+    },
+    {
+      "control": "refresh-rejected",
+      "passed": true,
+      "status": "harness_error",
+      "score": null,
+      "native_counts": null,
+      "refresh_requests": 4,
+      "rejected_grant_unchanged": true,
+      "expected_auth_rejections": 16,
+      "authentication_file_unchanged": true,
+      "credential_binding_released": true,
+      "listener_stopped": true,
+      "qualification_sha256": "cd0dbfe96f2462ad6f94572c656a89496d89fedd4424a591e8d71a992ef2bacc",
+      "summary_sha256": "a4fc7f1a4d5d5ea48ebe96e012208bb3f042b815f255aeb551f1bb081a7bb8c6",
+      "native_process_sha256": "dd882135a5a95bef4556bab8cdaace9a4bbaa7ad56be1b8344dfab6e8de0c2ad",
+      "refresh_payload_sha256": {
+        "refresh-request-1.native.json": "63afd942d4cd11958e77fe6956cde66805033f49211459a8f5e08b7700369024",
+        "refresh-request-2.native.json": "63afd942d4cd11958e77fe6956cde66805033f49211459a8f5e08b7700369024",
+        "refresh-request-3.native.json": "63afd942d4cd11958e77fe6956cde66805033f49211459a8f5e08b7700369024",
+        "refresh-request-4.native.json": "63afd942d4cd11958e77fe6956cde66805033f49211459a8f5e08b7700369024"
+      }
+    },
+    {
+      "control": "refresh-cancel",
+      "passed": true,
+      "status": "harness_error",
+      "score": null,
+      "native_counts": null,
+      "refresh_requests": 1,
+      "simulated_authority_rotated": true,
+      "native_cache_unchanged": true,
+      "native_termination_reason": "timeout",
+      "native_owned_processes_after_cleanup": 0,
+      "authentication_file_unchanged": true,
+      "credential_binding_released": true,
+      "listener_stopped": true,
+      "qualification_sha256": "cd0dbfe96f2462ad6f94572c656a89496d89fedd4424a591e8d71a992ef2bacc",
+      "summary_sha256": "000bd828fe7ebe156bd6b88a6fe4f557ab9054da4c91d3c98ee61e8b72336cef",
+      "native_process_sha256": "1347d3e4b0cdd532bae5f6225f82621d1b695b9b8dcb7c29f351620fc2d6f109",
+      "refresh_payload_sha256": {
+        "refresh-request-1.native.json": "63afd942d4cd11958e77fe6956cde66805033f49211459a8f5e08b7700369024",
+        "refresh-response.native.json": "5e746808a935579be433a54622d7b9f3dfc4f87717438ff8cd41a5bbaeb93272"
+      }
+    }
+  ],
+  "production_code_changed_this_round": false,
+  "reused_full_suite": {
+    "passed": 2994,
+    "skipped": 18,
+    "qualification_sha256": "e2b6932257ebd0e3709e880d87a25562696159b597c00f1b9e33143597c13d7b",
+    "functional_source_files_reverified": 404,
+    "source_bytes_unchanged": true
+  },
+  "findings": [
+    {
+      "id": "write-generation-check",
+      "evidence": "Pinned source and native conflict control",
+      "conclusion": "Native persistence locks the read/modify/write and compares expected access/refresh generations. The injected newer generation was preserved."
+    },
+    {
+      "id": "jwt-expiry-precedence",
+      "evidence": "Pinned source and retained failed refresh1 attempt",
+      "conclusion": "A parseable access-token JWT expiry takes precedence over last_refresh; aging only last_refresh does not force a refresh."
+    },
+    {
+      "id": "cancellation-uncertainty",
+      "evidence": "Native refresh-cancel control",
+      "conclusion": "The simulated authority rotated before its delayed reply; the native process timed out with unchanged local credentials and zero owned children. An unchanged cache cannot establish that the authority grant is unchanged. The attempt stayed unscored."
+    },
+    {
+      "id": "account-read-not-refresh-proof",
+      "evidence": "Pinned source inspection only; not native RPC qualification",
+      "conclusion": "account/read requests refreshToken, but its implementation discards RefreshTokenRequestOutcome before assembling account data. A successful account response alone is insufficient proof of a successful refresh. Do not adopt it as that proof without independent controls."
+    }
+  ],
+  "invalid_attempt": {
+    "path": "native-refresh-refresh1-invalidity.json",
+    "sha256": "08d6ee072ba9fa00438cdf0dd71c45b1e4fbc398f088c0125e54863a6bc09328",
+    "counted_as_pass": false,
+    "repair": "The fixture now expires synthetic JWTs and exits from its final summary verdict. Review compares summary, process and qualification outcomes."
+  },
+  "public_model_launch_guard": "closed",
+  "real_model_inferences": 0,
+  "real_account_credentials_used": false,
+  "openai_api_keys_requested_or_used": false,
+  "direct_openai_api_requests": 0,
+  "github_writes": 0,
+  "release_created": false,
+  "remaining": [
+    "Qualified official authentication preflight with explicit failure and cancellation semantics",
+    "Shared-profile instruction and cache stability",
+    "Provider/model identity and source-bound public launch admission",
+    "Fresh-install qualification and real matched external trials"
+  ]
+}

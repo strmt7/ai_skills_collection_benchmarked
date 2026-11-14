@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-13",
+  "kind": "source-grounded-make-guide-contract-review",
+  "source_skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-makefile-generator-skill-md",
+  "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+  "source_url": "https://github.com/akin-ozer/cc-devops-skills/blob/7fe7595e4512f8ce43dcf956aa5190b96d627dd1/devops-skills-plugin/skills/makefile-generator/SKILL.md",
+  "resources": {
+    "docs/variables-guide.md": {
+      "canonical_sha256": "25ed125126630a1f58bac17ce3f8d0ee69f4508074510d473b2c98152a90d12e",
+      "characters": 12817,
+      "disposition": "reviewed_with_declared_scope",
+      "scope": "Complete guide read; undefined/explicit-empty settings, command-line replacement of project flags and actual required-header compilation tested. Installation conventions, external package discovery and every variable example are not fully qualified."
+    },
+    "docs/makefile-structure.md": {
+      "canonical_sha256": "c128dfeb981215cfe7b25957c8332dbc6ad757a8b8ae681eabebb048564df219",
+      "characters": 11183,
+      "disposition": "reviewed_with_declared_scope",
+      "scope": "Complete guide read; missing-directory continuation and successful child-directory controls tested. Prior recursive-loop and fake-test findings retained. POSIX portability, VPATH and complete installation recipes remain unqualified."
+    },
+    "docs/patterns-guide.md": {
+      "canonical_sha256": "d1fd655e149df87b457bd85324c1c4e02fd858dd858cff5698508f196b34fe57",
+      "characters": 12594,
+      "disposition": "reviewed_with_declared_scope",
+      "scope": "Complete guide read; configuration output identity, mixed-language equal-stem objects and active built-in rule distinctions tested. Go, Python, Docker, archive/shared-library and arbitrary source-layout examples remain unqualified."
+    },
+    "docs/targets-guide.md": {
+      "canonical_sha256": "282faa5b0264c6ba8215072dfa7e30b4c39ba8aa5d15bc8c1b9c3a6cfdf2eaa8",
+      "characters": 13244,
+      "disposition": "reviewed_with_declared_scope",
+      "scope": "Complete guide read; real staged installation/uninstallation with a nested build-path target tested. Previous test-contract and rule-preservation findings retained; packaging, distcheck, host loader changes and other privileged commands not executed."
+    },
+    "assets/templates/.gitkeep": {
+      "canonical_sha256": "3733477b18dd35099f9e9134394f247012e8e573329132098d328d725846dff9",
+      "characters": 43,
+      "disposition": "reviewed_with_declared_scope",
+      "scope": "Complete comment-only placeholder read; no executable or generated template content."
+    }
+  },
+  "findings": [
+    {
+      "id": "empty-setting-claim",
+      "observed": "The variable guide says ?= assigns an undefined or empty variable. Both explicit-empty controls retain the empty value; only the genuinely undefined setting receives its default."
+    },
+    {
+      "id": "required-flags-lost",
+      "observed": "A command-line CFLAGS override prevents the ordinary Makefile append from adding project include paths. Original compilation fails at the required header; separate project options preserve successful compilation."
+    },
+    {
+      "id": "configuration-graph-and-stale-output",
+      "observed": "Original target-specific output assignments do not change already-expanded prerequisites. Debug then release both execute debug code from build/shared. The explicit separate-path prototype yields debug and release behavior respectively."
+    },
+    {
+      "id": "wrong-directory-success",
+      "observed": "The recommended semicolon sequence continues after cd fails, runs a parent-directory target and returns zero. The checked directory change rejects the missing directory and reaches the intended child when it exists."
+    },
+    {
+      "id": "mixed-language-object-collision",
+      "observed": "Original equal-stem C/C++ mappings lose the C++ translation unit and fail at link. Extension-preserving object paths build both language units and the executable prints 42."
+    },
+    {
+      "id": "staged-uninstall-name-mismatch",
+      "observed": "Original uninstall appends build/demo below the installed binary directory and leaves its installed demo behind despite exit zero. Matching the installed basename removes it and preserves an unrelated staged file."
+    }
+  ],
+  "qualified_rule_distinction": "Clearing suffixes removes the observed implicit C-object link but leaves RCS checkout patterns in the rule database; --no-builtin-rules removes those patterns while the explicit app rule still works. No checkout command was executed.",
+  "rejected_hypothesis": {
+    "hypothesis": "An implicit C-object link would remain after clearing suffix rules.",
+    "observed": "Rejected by the v2 run and preserved as an expected negative observation in v3. No hidden C-link finding is claimed."
+  },
+  "retained_incomplete_runs": [
+    {
+      "run": "v1",
+      "cause": "Fixture substring matching treated the C rule as a prefix of the C++ rule; stopped at its precheck. Tightened to exact lines; not a skill pass/fail score."
+    },
+    {
+      "run": "v2",
+      "cause": "The fixture contradicted its own C-link expectation. Retained the negative result; v3 inspects actual remaining pattern classes without executing checkout recipes."
+    }
+  ],
+  "versions": {
+    "make": "GNU Make 4.3",
+    "cc": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "cxx": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+  },
+  "native_component_cases": 18,
+  "execution": {
+    "image_reference": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+    "network": "none",
+    "root_filesystem": "read_only",
+    "cpus": 1,
+    "memory_bytes": 536870912,
+    "tmpfs_bytes": 134217728,
+    "lease_seconds": 90,
+    "images_pulled": 0,
+    "lease_closed": true,
+    "remaining_owned_containers": 0,
+    "host_installation": false,
+    "host_loader_state_changed": false
+  },
+  "maintained_response": {
+    "path": "included/improved/skills/makefile-generator-cpp",
+    "previous_skill_sha256": "59b3127a45cde2400a071d2a527ceafbadad758224d42d968c6abf9766af4235",
+    "skill_sha256": "fa7331261f4a5230f45edbc742924146504b64de65f396b4fb632cf37b8c7316",
+    "generator_and_template_unchanged": true,
+    "scope": "Lazy-loaded variable/configuration guidance and small build-reliability additions. No new scaffold features, original-source edits or claim to support arbitrary mixed-language projects."
+  },
+  "artifacts": {
+    "contracts.json": "fa66196285a06240ff7a0e33c64398af442a7bb6e92bff75a21c1a08ef6a8002",
+    "native-controls.json": "8ffc392f9efa97d65143305eb58a5a4182c5d08742e48a2d7eea9911adfb49ad",
+    "component-control.py.txt": "1e0adb6ddc15de26f6327332b7aaa605cfbc174634df36d2bbc9994f7b369b65",
+    "NOTICE.md": "0584816b9117419014bbfca0f94e35f80803d683685ce26720f6d40f40ca75ad",
+    "primary-sources.json": "f1027f21344b8a6e26daa8811f5165e0a5a4b89e06453a6e40615d3841e41675"
+  },
+  "scope": "Five remaining nonsecurity resources read completely; selected mechanisms exercised. Every current source resource except the held security guide now has a read disposition. Original generator language branches and unexecuted guide commands still prevent whole-package qualification.",
+  "whole_skill_complete": false,
+  "security_review": "held; security guide not read",
+  "model_invocations": 0,
+  "agent_efficacy_established": false,
+  "performance_status": "unbenchmarked",
+  "commercial_release_ready": false,
+  "limitations": [
+    "Make 4.3 and GCC/G++ 13.3 in one Linux compatibility image; not a latest-toolchain, native Windows or cross-implementation claim.",
+    "Configuration fixtures do not fingerprint future flag changes within one configuration.",
+    "Install inputs are benign fixture files in a temporary DESTDIR; no real packaging, system integration, loader update or privileged install qualification.",
+    "Original guide speed, portability and external-tool claims are not established by these controls.",
+    "No model inference, external benchmark outcome or significant agent advantage over either baseline."
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "task_id": "diagnostic-text-zero",
+  "build_command": "python -c 'print(\"error: contract-only text\")'",
+  "working_dir": "/workspace/fixture",
+  "expected_exit_code": 0,
+  "timeout_seconds": 10
+}

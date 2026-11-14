@@ -1,0 +1,234 @@
+{
+  "collection_policy": {
+    "excluded_directory_names": [
+      ".mypy_cache",
+      ".pytest_cache",
+      ".ruff_cache",
+      "__pycache__"
+    ],
+    "max_depth": 32,
+    "max_directories": 2048,
+    "max_file_bytes": 8388608,
+    "max_files": 2048,
+    "max_total_bytes": 67108864,
+    "max_total_path_bytes": 4194304,
+    "timeout_seconds": 60
+  },
+  "collections": {
+    "baseline": {
+      "process_exit_code": 0,
+      "result_file_count": 116,
+      "result_sha256": "309f9d233a2c0b15fa1af18687b2af79c3eba697006541dfdbdc9eedfa3f1d71",
+      "result_status": "collected",
+      "stdout_sha256": "d89a10c13a975c76d9543c632b3c096244c63f775c2f0a899a7bf66f1a86741c"
+    },
+    "edited": {
+      "process_exit_code": 0,
+      "result_file_count": 118,
+      "result_sha256": "9e98e2db3406476a6d14185569da9c2f110d48d296b02dc56e754a187b3e2879",
+      "result_status": "collected",
+      "stdout_sha256": "cf1a8aaec15a3daf473efca740dfcab81184b2ea2713b3db6486bfc2b717f60b"
+    },
+    "incomplete": {
+      "process_exit_code": 1,
+      "result_file_count": null,
+      "result_sha256": "44a601172612869b44d938bcd118b2236b868f9363f1f1e65a02af4a33894d2b",
+      "result_status": "collection_error",
+      "stdout_sha256": "83e1635ee8bc4fe2aa3b97dc6ad62fe066aa96f91db9de82d7f52f7a7e9e7f26"
+    },
+    "unchanged": {
+      "process_exit_code": 0,
+      "result_file_count": 116,
+      "result_sha256": "309f9d233a2c0b15fa1af18687b2af79c3eba697006541dfdbdc9eedfa3f1d71",
+      "result_status": "collected",
+      "stdout_sha256": "d89a10c13a975c76d9543c632b3c096244c63f775c2f0a899a7bf66f1a86741c"
+    }
+  },
+  "execution_source_sha256": {
+    "_trial_collection_manifest.py": "92766b10b195a87884022c1cdb2b4d292e4464d31334abe8a4b969f3293f626b",
+    "_trial_collection_policy.py": "ff2b6163130348c7f5c6a1315c3b93e94abd1e93e607d6759e73ab1df88ee2c8",
+    "_trial_declarations.py": "157185245b98be55d3f101c63cb39b293abf8cbc47c3673efe843d3c4dab883c",
+    "_trial_protocol.py": "086fa266058574b09c0ca72f970f9c64341a5e697f737cdd0955fb9883b351de",
+    "_trial_provider.py": "7ed48ac5a927264a5467b87e92b50a975dd2d4449ec97685f115a730aeea81be",
+    "_trial_transcript.py": "bad23e9f19c3523a426c1ad140aebc331f5b47b94ab95b2296b487765430fb3f",
+    "transfer_benchmark_submission.py": "aa8abf2156e2274200360465dc8bf7b36e7218f7843c2682fe0d6d34414c6faa"
+  },
+  "kind": "supported-benchmark-source-handoff-qualification",
+  "linux_replays": [
+    {
+      "case": "edited",
+      "frame_sha256": "76d7bcab028f6a09f1917c451cbd8463361e83988d2ed9a790496d551df881cb",
+      "native_pytest": {
+        "errors": 0,
+        "failed": 0,
+        "native_sha256": {
+          "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout": "00e1a549e0f667f954df09a3cea35ab0c9dd67dc732cc23dc60954fd8814888b",
+          "xml": "616a71ab5219fb15a280d83185e31770cba4c5837fcfbedfe68415e88d3c35eb"
+        },
+        "passed": 11,
+        "runtime": {
+          "exit_code": 0,
+          "package_module": "/workspace/packaging/src/packaging/version.py",
+          "uid": 1001
+        },
+        "skipped": 0,
+        "total": 11
+      },
+      "reconstruction": {
+        "exit_code": 0,
+        "result": {
+          "archive_sha256": "bb3da6281377da336806829bd7e41b12500d57bf2fe9a1a74b90158f33a6ab54",
+          "baseline_manifest_sha256": "309f9d233a2c0b15fa1af18687b2af79c3eba697006541dfdbdc9eedfa3f1d71",
+          "deletes": [],
+          "directory_count": 15,
+          "file_count": 118,
+          "handoff_version": 1,
+          "status": "grader_tree_rebuilt",
+          "submission_manifest_sha256": "9e98e2db3406476a6d14185569da9c2f110d48d296b02dc56e754a187b3e2879",
+          "total_bytes": 846541,
+          "writes": {
+            "scripts/demo_packaging.py": {
+              "bytes": 988,
+              "sha256": "d4e32f2608db7d75fb8ee38f8c4a8cea10c3e3e95d941e2ce216a3fed4ccf4c6"
+            },
+            "tests/test_version_edge_cases.py": {
+              "bytes": 1426,
+              "sha256": "2af8cf9d4a3593298e1f398c1ac2ec0dfc91273ca83d6293139bf171ecfc6ef5"
+            }
+          }
+        },
+        "workspace_exists": true
+      },
+      "submission_bytes": 10240
+    },
+    {
+      "case": "unchanged",
+      "frame_sha256": "2621b5e47ba03befd16771182057d23b6bb377ef4e34b3024158b9ca2f2e2831",
+      "native_pytest": {
+        "errors": 0,
+        "failed": 10,
+        "native_sha256": {
+          "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout": "32a3bd3efd3bf5fb6efa7149d5f96dd5b475c2e031b61167660f14f1ac189324",
+          "xml": "0a22822ac8be682ed8cedd34535f36c897151e88df95b70b742d32d8ce880d02"
+        },
+        "passed": 0,
+        "runtime": {
+          "exit_code": 1,
+          "package_module": "/workspace/packaging/src/packaging/version.py",
+          "uid": 1001
+        },
+        "skipped": 1,
+        "total": 11
+      },
+      "reconstruction": {
+        "exit_code": 0,
+        "result": {
+          "archive_sha256": "9d2a7e51840fc91dc151e202899b39aa63fd0f475e91a1709a0c56e7365b8742",
+          "baseline_manifest_sha256": "309f9d233a2c0b15fa1af18687b2af79c3eba697006541dfdbdc9eedfa3f1d71",
+          "deletes": [],
+          "directory_count": 14,
+          "file_count": 116,
+          "handoff_version": 1,
+          "status": "grader_tree_rebuilt",
+          "submission_manifest_sha256": "309f9d233a2c0b15fa1af18687b2af79c3eba697006541dfdbdc9eedfa3f1d71",
+          "total_bytes": 844127,
+          "writes": {}
+        },
+        "workspace_exists": true
+      },
+      "submission_bytes": 10240
+    },
+    {
+      "case": "changed-archive",
+      "frame_sha256": "460a6d00fbc8689e16a926daaa5b7be4ac2cc9a70f14724e86d7c8219a2f0985",
+      "native_pytest": null,
+      "reconstruction": {
+        "exit_code": 2,
+        "result": {
+          "error": "Archive bytes differ from the controller's digest",
+          "status": "handoff_unverified"
+        },
+        "workspace_exists": false
+      },
+      "submission_bytes": 10263
+    }
+  ],
+  "model_requests": 0,
+  "publisher_image": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+  "qualification": {
+    "linux_driver_sha256": "7c0ff8aab4313f0cea888488f69c11ff0146212a8b17de8baf23fe6a514c3a86",
+    "linux_summary_sha256": "5cc8b4baf978b33a50d2625bcdf4c38611c1bee79d51e0d4d9b2e526025f1ad4",
+    "windows_driver_sha256": "c03191eabc2f881e7a3d234863114d0f9d9432315385d65e3052c20b1bfcba81",
+    "windows_summary_sha256": "cf357e1873fabd670c43e21ba18a4e5f765bbe834d5c4d972fc2ca060ad9ccd3"
+  },
+  "schema_version": 1,
+  "scope_limits": [
+    "Completed controller-owned captures and their separately trusted receipts are required. The tool compares declared regular-file contents and directory inventories.",
+    "The supplied snapshots use the repository collection policy, which excludes runtime metadata and declared caches. The captures do not encode executable-bit changes.",
+    "The zero-change submission was transported and reached the native verifier. Its observed outcome was ten failures and one skip caused by the absent demo. The existing ordinary pass/fail score admission profile requires an explicit skip policy before accepting this outcome as a benchmark score.",
+    "The controller cannot infer that a subject stopped from archive bytes. Qualification used closed producer roles, bounded Windows collection jobs and fresh leased Docker graders.",
+    "This model-free development control does not establish a collection skill advantage."
+  ],
+  "source": {
+    "archive_bytes": 189203,
+    "archive_sha256": "a5ca8f41965b8c80dcf4466ffe183f99cc2f5adec7c88546af34427f38176a56",
+    "request": {
+      "status": 200,
+      "url": "https://codeload.github.com/pypa/packaging/tar.gz/5d3ab595f9e1d564e7c48a2253c96ac38444ae63"
+    },
+    "source_commit": "5d3ab595f9e1d564e7c48a2253c96ac38444ae63",
+    "source_files_verified": 116,
+    "source_tree": "f880aef7b888d7f832e58adea613221f4c944131",
+    "unpacked_bytes": 844127
+  },
+  "windows_handoffs": [
+    {
+      "case": "unchanged",
+      "seal": {
+        "archive_sha256": "9d2a7e51840fc91dc151e202899b39aa63fd0f475e91a1709a0c56e7365b8742",
+        "baseline_manifest_sha256": "309f9d233a2c0b15fa1af18687b2af79c3eba697006541dfdbdc9eedfa3f1d71",
+        "deletes": [],
+        "handoff_version": 1,
+        "status": "handoff_sealed",
+        "submission_manifest_sha256": "309f9d233a2c0b15fa1af18687b2af79c3eba697006541dfdbdc9eedfa3f1d71",
+        "writes": {}
+      },
+      "status": "handoff_sealed",
+      "writes": 0
+    },
+    {
+      "case": "edited",
+      "seal": {
+        "archive_sha256": "bb3da6281377da336806829bd7e41b12500d57bf2fe9a1a74b90158f33a6ab54",
+        "baseline_manifest_sha256": "309f9d233a2c0b15fa1af18687b2af79c3eba697006541dfdbdc9eedfa3f1d71",
+        "deletes": [],
+        "handoff_version": 1,
+        "status": "handoff_sealed",
+        "submission_manifest_sha256": "9e98e2db3406476a6d14185569da9c2f110d48d296b02dc56e754a187b3e2879",
+        "writes": {
+          "scripts/demo_packaging.py": {
+            "bytes": 988,
+            "sha256": "d4e32f2608db7d75fb8ee38f8c4a8cea10c3e3e95d941e2ce216a3fed4ccf4c6"
+          },
+          "tests/test_version_edge_cases.py": {
+            "bytes": 1426,
+            "sha256": "2af8cf9d4a3593298e1f398c1ac2ec0dfc91273ca83d6293139bf171ecfc6ef5"
+          }
+        }
+      },
+      "status": "handoff_sealed",
+      "writes": 2
+    },
+    {
+      "case": "incomplete",
+      "seal": {
+        "error": "source capture does not match its frozen policy or completion contract",
+        "status": "handoff_unverified"
+      },
+      "status": "handoff_unverified",
+      "writes": null
+    }
+  ]
+}

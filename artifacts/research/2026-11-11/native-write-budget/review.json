@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-11",
+  "classification": "versioned-native-write-budget-implementation-and-controlled-qualification",
+  "project_source": {
+    "commit": "5d3ab595f9e1d564e7c48a2253c96ac38444ae63",
+    "repository": "pypa/packaging"
+  },
+  "source_sha256": {
+    "tools/_windows_trial_process.py": "21f539b85da763c8c0befb4e64356537d21ab35cc59503a8ecfa4fe95e92558a",
+    "tools/_windows_appcontainer.py": "8729f1b1782104551eff6d340ee3fbc4d65b6f63c642a150e5f3056ad062e17e",
+    "tools/run_agent_trial.py": "6aa924181f3ccfe63cd9ee3426108eb614f4096eee1f6a4220589fb87d6a2132",
+    "tools/_native_trial_plan.py": "a974225c459672255e491f45a36fca54a5ed97997ccdb5b8c7efa627f3dd9ed0",
+    "tools/run_swe_skills_trial.py": "61de2fa49e8768bdbf38e5c2c4a267b0bd9cb8aa0d85d329aa6c283cec5d3390",
+    "tests/test_windows_trial_process.py": "3313dfcdf60586a49d29312846cb04b51801c3fda61a9cd66b50113a064ba39a",
+    "tests/test_write_io_evidence.py": "7479d0a74ae90a5b7fc110c72b08bdc43abb845a134998162fb4696700667a64",
+    "tests/test_native_trial_plan.py": "e6a01f45388c4be74f7a457c472fbfa2c70e5bff8a4eeb40784b5c2382f59328",
+    "tests/test_native_trial_runner.py": "6ecabbab49ae22c13d2e8b759e99bf404439a6986e4a5564cd8418d59576f863",
+    "tools/qualify_appcontainer.py": "0748aa7a59d620b7ae9147799904ea0ee3ba220c2ab67364a38c49f92885e3ba",
+    "tests/test_appcontainer_evaluator.py": "f94f7ad23e815560eb35ebef5ec88d8caa62633b976504b07d69ef29d67769ed"
+  },
+  "changes": [
+    "Add optional cumulative job write-transfer monitoring to run_owned while preserving disabled legacy behavior.",
+    "Check transfers during stream collection and after all job members terminate; retain overshoot and accounting failures.",
+    "Keep a failed accounting observation unmeasured rather than inventing zero writes.",
+    "Admit native plan schema 2 with a frozen integer write_io_limit_bytes in 1..1073741824.",
+    "Require the budgeted plan on the public native route in addition to its existing global model-launch refusal.",
+    "Validate recorded limits, counts, overshoot, enforcement kind and diagnostics before source collection or native grading.",
+    "Permit a truncated final transcript when resource termination is recorded, including a process that exited before the last accounting check."
+  ],
+  "versioning": {
+    "legacy_protocol_4": "Unchanged; the optional execution parameter defaults to no write budget. Historical evidence is not retroactively assigned a budget.",
+    "native_plan_1": "Preserved for owned historical controls; rejected by future public admission.",
+    "native_plan_2": "Explicit write budget required; setup and grading remain separately bounded phases."
+  },
+  "controlled_native_results": [
+    {
+      "case": "edited",
+      "status": "task_passed",
+      "score": 1.0,
+      "native_counts": {
+        "errors": 0,
+        "failed": 0,
+        "passed": 11,
+        "skipped": 0,
+        "total": 11
+      },
+      "write_io_limit_bytes": 536870912,
+      "job_write_io_bytes": 2748250,
+      "write_io_overshoot_bytes": 0,
+      "termination_reason": null,
+      "write_io_observation_error": null,
+      "job_active_processes_after_cleanup": 0,
+      "credential_binding_released": true,
+      "listener_stopped": true,
+      "plan_sha256": "23df22b8a08d691bf2f27860f472c0ecddb5a66708ae1d018ad707aeba833007",
+      "process_sha256": "5f7db5998a498f15369fda111dbc138211ba378e7f88374d1bad029d6c79da8a",
+      "result_sha256": "21cc1b53da58a2a71c01e2afa29655de2fd06eb7dd2e109c2a89c7e029eb0e8c"
+    },
+    {
+      "case": "unchanged",
+      "status": "task_failed",
+      "score": 0.0,
+      "native_counts": {
+        "errors": 0,
+        "failed": 10,
+        "passed": 0,
+        "skipped": 1,
+        "total": 11
+      },
+      "write_io_limit_bytes": 536870912,
+      "job_write_io_bytes": 2737456,
+      "write_io_overshoot_bytes": 0,
+      "termination_reason": null,
+      "write_io_observation_error": null,
+      "job_active_processes_after_cleanup": 0,
+      "credential_binding_released": true,
+      "listener_stopped": true,
+      "plan_sha256": "2c06aea6443ec6baab64ed746770c932f4ef39ec05c2f73ed30248691875dcfa",
+      "process_sha256": "b9de17eff80b20c9da7d94d269070099ee78e9d5b83d0e14d6beb28371463c27",
+      "result_sha256": "f6a85e3824e6d5401a8278baa9bb570887543f79a86bda4f3a1ef08231a3aa44"
+    },
+    {
+      "case": "truncated",
+      "status": "harness_error",
+      "score": null,
+      "native_counts": null,
+      "write_io_limit_bytes": 536870912,
+      "job_write_io_bytes": 2618633,
+      "write_io_overshoot_bytes": 0,
+      "termination_reason": null,
+      "write_io_observation_error": null,
+      "job_active_processes_after_cleanup": 0,
+      "credential_binding_released": true,
+      "listener_stopped": true,
+      "plan_sha256": "3a0aeb34aecf07a62117684794a472f7ee9c7ea9817ffb126cbe1d4d21e9ed1e",
+      "process_sha256": "e40cdf00098032b4b74c432f53bbe2dd590000ff9e822bfb33e4f751f4b58a1a",
+      "result_sha256": "18e9f0310d59946e61da471bcd74b5e973883c7e7f74c879f2aaebd849a126ec"
+    },
+    {
+      "case": "budget",
+      "status": "harness_error",
+      "score": null,
+      "native_counts": null,
+      "write_io_limit_bytes": 1,
+      "job_write_io_bytes": 532,
+      "write_io_overshoot_bytes": 531,
+      "termination_reason": "write_io_limit",
+      "write_io_observation_error": null,
+      "job_active_processes_after_cleanup": 0,
+      "credential_binding_released": true,
+      "listener_stopped": true,
+      "plan_sha256": "0f6cb1340c3e4f9ca31fb51eff13746ba2753881f3ca8a388b98cfd701fae7b2",
+      "process_sha256": "f4188d1c1e459bfb04c9d2af6cb65af061bbdf66230d9dcf9e350a34a4c118cf",
+      "result_sha256": "03fcfff35ffe3082a00d45657cae55e3dbb2570963753e210d12b4219f187016"
+    },
+    {
+      "case": "accounting",
+      "status": "harness_error",
+      "score": null,
+      "native_counts": null,
+      "write_io_limit_bytes": 536870912,
+      "job_write_io_bytes": null,
+      "write_io_overshoot_bytes": null,
+      "termination_reason": "resource_observation_error",
+      "write_io_observation_error": {
+        "api": "QueryInformationJobObject",
+        "information_class": 8,
+        "winerror": 5
+      },
+      "job_active_processes_after_cleanup": 0,
+      "credential_binding_released": true,
+      "listener_stopped": true,
+      "plan_sha256": "120bf0039d3581207ccb875cb08ecb4c626549684ec54dbdca18d870e9bc5737",
+      "process_sha256": "f8aa2e37e2bab76c15cf5a098428bbde4568e152b8c6f8288d9ce15b6b02cd52",
+      "result_sha256": "5e532f33f93006350864389b824912dc01dd31304dfc94144453ac1ba0f3e86d"
+    }
+  ],
+  "native_qualification_sha256": "8d756ea27b93333d636b21e7b4bcdba5e88d7c8c93b5a94c95900a73ba2c9eac",
+  "focused_validation": {
+    "tests_passed": 178,
+    "ruff": "passed",
+    "mypy_source_files": 314,
+    "full_repository_suite": "Final acceptance will be recorded separately in validation.json after the frozen batch run."
+  },
+  "prior_source_bytes_retained": "Private subject-write-budget-prior-sources-v1 and each earlier native attempt source archive.",
+  "qualification_basis": "artifacts/research/2026-11-11/native-resource-observation/review.json",
+  "limits": [
+    "The enforcement is a polled cumulative kernel write-transfer detector, not a hard filesystem quota, allocated-space measurement or I/O-rate limit.",
+    "An accounting failure retains its last successful observation, or null if none; the interrupted attempt cannot receive a task score.",
+    "The generic runner does not claim to track every service-created process; the pinned Windows execution paths have scoped independent membership controls.",
+    "Workspace logical-size and free-space protection still require separate implementation and qualification.",
+    "These results use an owned deterministic provider; no real model inference or skill-performance gain was measured.",
+    "The complete public launch guard remains closed; hosted CI, publication and commercial readiness are not established."
+  ],
+  "live_model_inferences": 0,
+  "release_created": false,
+  "historical_evidence_repair": {
+    "discovery": {
+      "tests_passed": 2839,
+      "tests_skipped": 18,
+      "tests_failed": 1,
+      "qualification_sha256": "0143911368c44476e96bcf121edf5c99aebd67dd040b262f731a25032debf394"
+    },
+    "cause": "Historical admission reused live runner and fixture bytes for most of the source graph.",
+    "repair": "Recompute the complete original graph from exact archived inputs; retain the current source graph separately.",
+    "original_sources_admitted": 13,
+    "recovery_commit": "fb7e85307b96fdcad0bfdb5947b67b70a281d77c",
+    "admission": "Every snapshot matches the original recorded SHA-256 before creation; prior snapshots and original observations are unchanged.",
+    "regressions": [
+      "Live source and fixture changes cannot qualify or invalidate historical evidence.",
+      "Changed archived runner and fixture bytes invalidate historical admission."
+    ],
+    "current_source_qualified_by_historical_evidence": false
+  }
+}

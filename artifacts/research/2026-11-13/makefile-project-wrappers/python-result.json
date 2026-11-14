@@ -1,0 +1,492 @@
+{
+  "observation": {
+    "passed": true,
+    "cases": [
+      {
+        "case": "all-wheel-bytes-admitted",
+        "expected_observation": true,
+        "wheels": 25
+      },
+      {
+        "case": "native-isolated-graph-resolved",
+        "expected_observation": true,
+        "packages": {
+          "pylint": "4.1.3",
+          "black": "26.10.1",
+          "build": "1.6.1",
+          "flake8": "7.5.0",
+          "isort": "9.0.2",
+          "pytest": "9.2.0",
+          "wheel": "0.48.0",
+          "astroid": "4.3.4",
+          "click": "8.5.1",
+          "dill": "0.4.1",
+          "iniconfig": "2.3.1",
+          "mccabe": "0.7.0",
+          "mypy-extensions": "1.2.0",
+          "packaging": "26.3",
+          "pathspec": "1.1.1",
+          "pip": "26.3",
+          "platformdirs": "4.14.5",
+          "pluggy": "1.7.0",
+          "pycodestyle": "2.15.0",
+          "pyflakes": "4.1.0",
+          "pygments": "2.21.0",
+          "pyproject-hooks": "1.3.3",
+          "pytokens": "0.4.1",
+          "setuptools": "84.2.1",
+          "tomlkit": "0.15.2"
+        }
+      },
+      {
+        "case": "hash-locked-fresh-reinstall",
+        "expected_observation": true,
+        "packages_equal": true
+      },
+      {
+        "case": "system-interpreter-unchanged",
+        "expected_observation": true,
+        "packages_equal": true
+      },
+      {
+        "case": "original-build-produces-wheel-and-sdist",
+        "expected_observation": true,
+        "wheel_present": true,
+        "source_present": true
+      },
+      {
+        "case": "original-development-install-isolated",
+        "expected_observation": true,
+        "project_installed": true
+      },
+      {
+        "case": "original-real-test-passes",
+        "expected_observation": true,
+        "exit_code": 0
+      },
+      {
+        "case": "original-real-test-failure-propagates",
+        "expected_observation": true,
+        "exit_code": 2
+      },
+      {
+        "case": "original-linters-run-on-valid-project",
+        "expected_observation": true,
+        "exit_code": 0
+      },
+      {
+        "case": "original-default-formatter-compatibility-observed",
+        "expected_observation": true,
+        "wrapper_exit": 0,
+        "black_check_exit": 1,
+        "default_mismatch_observed": true
+      },
+      {
+        "case": "explicit-project-formatter-policy-agrees",
+        "expected_observation": true,
+        "line_length": 120,
+        "black_check_exit": 0,
+        "isort_check_exit": 0
+      }
+    ],
+    "records": [
+      {
+        "argv": [
+          "/usr/bin/python3",
+          "-I",
+          "-B",
+          "-c",
+          "import importlib.metadata,json,sys;print(json.dumps({'prefix':sys.prefix,'base_prefix':sys.base_prefix,'packages':{d.metadata['Name'].lower().replace('_','-'):d.version for d in importlib.metadata.distributions()}}))"
+        ],
+        "cwd_name": "python-make-4task9ad",
+        "exit_code": 0,
+        "stdout": "{\"prefix\": \"/usr\", \"base_prefix\": \"/usr\", \"packages\": {\"anyio\": \"4.12.1\", \"pluggy\": \"1.6.0\", \"iniconfig\": \"2.3.0\", \"pydantic\": \"2.12.5\", \"annotated-types\": \"0.7.0\", \"packaging\": \"26.0\", \"distro\": \"1.9.0\", \"h11\": \"0.16.0\", \"certifi\": \"2026.2.25\", \"httpcore\": \"1.0.9\", \"typing-extensions\": \"4.15.0\", \"idna\": \"3.11\", \"typing-inspection\": \"0.4.2\", \"pygments\": \"2.19.2\", \"docstring-parser\": \"0.17.0\", \"pyyaml\": \"6.0.3\", \"pytest\": \"9.0.2\", \"sniffio\": \"1.3.1\", \"pydantic-core\": \"2.41.5\", \"jiter\": \"0.13.0\", \"httpx\": \"0.28.1\", \"anthropic\": \"0.84.0\", \"setuptools\": \"68.1.2\", \"wheel\": \"0.42.0\", \"pip\": \"24.0\"}}\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/python3",
+          "-m",
+          "venv",
+          "--without-pip",
+          "/tmp/python-make-4task9ad/tools"
+        ],
+        "cwd_name": "python-make-4task9ad",
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/python3",
+          "-m",
+          "pip",
+          "--isolated",
+          "--python",
+          "/tmp/python-make-4task9ad/tools/bin/python",
+          "install",
+          "--no-index",
+          "--find-links",
+          "/tmp/benchmark-inputs/wheels",
+          "--only-binary",
+          ":all:",
+          "--no-input",
+          "--progress-bar",
+          "off",
+          "pip",
+          "build",
+          "pytest",
+          "setuptools",
+          "wheel",
+          "black",
+          "isort",
+          "flake8",
+          "pylint"
+        ],
+        "cwd_name": "python-make-4task9ad",
+        "exit_code": 0,
+        "stdout": "Looking in links: /tmp/benchmark-inputs/wheels\nProcessing /tmp/benchmark-inputs/wheels/pip-26.3-py3-none-any.whl\nProcessing /tmp/benchmark-inputs/wheels/build-1.6.1-py3-none-any.whl\nProcessing /tmp/benchmark-inputs/wheels/pytest-9.2.0-py3-none-any.whl\nProcessing /tmp/benchmark-inputs/wheels/setuptools-84.2.1-py3-none-any.whl\nProcessing /tmp/benchmark-inputs/wheels/wheel-0.48.0-py3-none-any.whl\nProcessing /tmp/benchmark-inputs/wheels/black-26.10.1-py3-none-any.whl\nProcessing /tmp/benchmark-inputs/wheels/isort-9.0.2-py3-none-any.whl\nProcessing /tmp/benchmark-inputs/wheels/flake8-7.5.0-py2.py3-none-any.whl\nProcessing /tmp/benchmark-inputs/wheels/pylint-4.1.3-py3-none-any.whl\nProcessing /tmp/benchmark-inputs/wheels/packaging-26.3-py3-none-any.whl (from build)\nProcessing /tmp/benchmark-inputs/wheels/pyproject_hooks-1.3.3-py3-none-any.whl (from build)\nProcessing /tmp/benchmark-inputs/wheels/iniconfig-2.3.1-py3-none-any.whl (from pytest)\nProcessing /tmp/benchmark-inputs/wheels/pluggy-1.7.0-py3-none-any.whl (from pytest)\nProcessing /tmp/benchmark-inputs/wheels/pygments-2.21.0-py3-none-any.whl (from pytest)\nProcessing /tmp/benchmark-inputs/wheels/click-8.5.1-py3-none-any.whl (from black)\nProcessing /tmp/benchmark-inputs/wheels/mypy_extensions-1.2.0-py3-none-any.whl (from black)\nProcessing /tmp/benchmark-inputs/wheels/pathspec-1.1.1-py3-none-any.whl (from black)\nProcessing /tmp/benchmark-inputs/wheels/platformdirs-4.14.5-py3-none-any.whl (from black)\nProcessing /tmp/benchmark-inputs/wheels/pytokens-0.4.1-py3-none-any.whl (from black)\nProcessing /tmp/benchmark-inputs/wheels/mccabe-0.7.0-py2.py3-none-any.whl (from flake8)\nProcessing /tmp/benchmark-inputs/wheels/pycodestyle-2.15.0-py2.py3-none-any.whl (from flake8)\nProcessing /tmp/benchmark-inputs/wheels/pyflakes-4.1.0-py2.py3-none-any.whl (from flake8)\nProcessing /tmp/benchmark-inputs/wheels/astroid-4.3.4-py3-none-any.whl (from pylint)\nProcessing /tmp/benchmark-inputs/wheels/dill-0.4.1-py3-none-any.whl (from pylint)\nProcessing /tmp/benchmark-inputs/wheels/tomlkit-0.15.2-py3-none-any.whl (from pylint)\nInstalling collected packages: tomlkit, setuptools, pytokens, pyproject_hooks, pygments, pyflakes, pycodestyle, pluggy, platformdirs, pip, pathspec, packaging, mypy-extensions, mccabe, iniconfig, dill, click, astroid, wheel, pytest, isort, flake8, build, black, pylint\nSuccessfully installed astroid-4.3.4 black-26.10.1 build-1.6.1 click-8.5.1 dill-0.4.1 flake8-7.5.0 iniconfig-2.3.1 isort-9.0.2 mccabe-0.7.0 mypy-extensions-1.2.0 packaging-26.3 pathspec-1.1.1 pip-26.3 platformdirs-4.14.5 pluggy-1.7.0 pycodestyle-2.15.0 pyflakes-4.1.0 pygments-2.21.0 pylint-4.1.3 pyproject_hooks-1.3.3 pytest-9.2.0 pytokens-0.4.1 setuptools-84.2.1 tomlkit-0.15.2 wheel-0.48.0\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/tmp/python-make-4task9ad/tools/bin/python",
+          "-I",
+          "-B",
+          "-c",
+          "import importlib.metadata,json,sys;print(json.dumps({'prefix':sys.prefix,'base_prefix':sys.base_prefix,'packages':{d.metadata['Name'].lower().replace('_','-'):d.version for d in importlib.metadata.distributions()}}))"
+        ],
+        "cwd_name": "python-make-4task9ad",
+        "exit_code": 0,
+        "stdout": "{\"prefix\": \"/tmp/python-make-4task9ad/tools\", \"base_prefix\": \"/usr\", \"packages\": {\"pylint\": \"4.1.3\", \"black\": \"26.10.1\", \"build\": \"1.6.1\", \"flake8\": \"7.5.0\", \"isort\": \"9.0.2\", \"pytest\": \"9.2.0\", \"wheel\": \"0.48.0\", \"astroid\": \"4.3.4\", \"click\": \"8.5.1\", \"dill\": \"0.4.1\", \"iniconfig\": \"2.3.1\", \"mccabe\": \"0.7.0\", \"mypy-extensions\": \"1.2.0\", \"packaging\": \"26.3\", \"pathspec\": \"1.1.1\", \"pip\": \"26.3\", \"platformdirs\": \"4.14.5\", \"pluggy\": \"1.7.0\", \"pycodestyle\": \"2.15.0\", \"pyflakes\": \"4.1.0\", \"pygments\": \"2.21.0\", \"pyproject-hooks\": \"1.3.3\", \"pytokens\": \"0.4.1\", \"setuptools\": \"84.2.1\", \"tomlkit\": \"0.15.2\"}}\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/tmp/python-make-4task9ad/tools/bin/python",
+          "-m",
+          "pip",
+          "check"
+        ],
+        "cwd_name": "python-make-4task9ad",
+        "exit_code": 0,
+        "stdout": "No broken requirements found.\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/python3",
+          "-m",
+          "venv",
+          "--without-pip",
+          "/tmp/python-make-4task9ad/locked-tools"
+        ],
+        "cwd_name": "python-make-4task9ad",
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/python3",
+          "-m",
+          "pip",
+          "--isolated",
+          "--python",
+          "/tmp/python-make-4task9ad/locked-tools/bin/python",
+          "install",
+          "--no-index",
+          "--find-links",
+          "/tmp/benchmark-inputs/wheels",
+          "--require-hashes",
+          "--only-binary",
+          ":all:",
+          "--no-input",
+          "--progress-bar",
+          "off",
+          "-r",
+          "/tmp/python-make-4task9ad/requirements.lock"
+        ],
+        "cwd_name": "python-make-4task9ad",
+        "exit_code": 0,
+        "stdout": "Looking in links: /tmp/benchmark-inputs/wheels\nProcessing /tmp/benchmark-inputs/wheels/astroid-4.3.4-py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 1))\nProcessing /tmp/benchmark-inputs/wheels/black-26.10.1-py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 2))\nProcessing /tmp/benchmark-inputs/wheels/build-1.6.1-py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 3))\nProcessing /tmp/benchmark-inputs/wheels/click-8.5.1-py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 4))\nProcessing /tmp/benchmark-inputs/wheels/dill-0.4.1-py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 5))\nProcessing /tmp/benchmark-inputs/wheels/flake8-7.5.0-py2.py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 6))\nProcessing /tmp/benchmark-inputs/wheels/iniconfig-2.3.1-py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 7))\nProcessing /tmp/benchmark-inputs/wheels/isort-9.0.2-py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 8))\nProcessing /tmp/benchmark-inputs/wheels/mccabe-0.7.0-py2.py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 9))\nProcessing /tmp/benchmark-inputs/wheels/mypy_extensions-1.2.0-py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 10))\nProcessing /tmp/benchmark-inputs/wheels/packaging-26.3-py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 11))\nProcessing /tmp/benchmark-inputs/wheels/pathspec-1.1.1-py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 12))\nProcessing /tmp/benchmark-inputs/wheels/pip-26.3-py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 13))\nProcessing /tmp/benchmark-inputs/wheels/platformdirs-4.14.5-py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 14))\nProcessing /tmp/benchmark-inputs/wheels/pluggy-1.7.0-py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 15))\nProcessing /tmp/benchmark-inputs/wheels/pycodestyle-2.15.0-py2.py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 16))\nProcessing /tmp/benchmark-inputs/wheels/pyflakes-4.1.0-py2.py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 17))\nProcessing /tmp/benchmark-inputs/wheels/pygments-2.21.0-py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 18))\nProcessing /tmp/benchmark-inputs/wheels/pylint-4.1.3-py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 19))\nProcessing /tmp/benchmark-inputs/wheels/pyproject_hooks-1.3.3-py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 20))\nProcessing /tmp/benchmark-inputs/wheels/pytest-9.2.0-py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 21))\nProcessing /tmp/benchmark-inputs/wheels/pytokens-0.4.1-py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 22))\nProcessing /tmp/benchmark-inputs/wheels/setuptools-84.2.1-py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 23))\nProcessing /tmp/benchmark-inputs/wheels/tomlkit-0.15.2-py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 24))\nProcessing /tmp/benchmark-inputs/wheels/wheel-0.48.0-py3-none-any.whl (from -r /tmp/python-make-4task9ad/requirements.lock (line 25))\nInstalling collected packages: tomlkit, setuptools, pytokens, pyproject-hooks, pygments, pyflakes, pycodestyle, pluggy, platformdirs, pip, pathspec, packaging, mypy-extensions, mccabe, iniconfig, dill, click, astroid, wheel, pytest, isort, flake8, build, black, pylint\nSuccessfully installed astroid-4.3.4 black-26.10.1 build-1.6.1 click-8.5.1 dill-0.4.1 flake8-7.5.0 iniconfig-2.3.1 isort-9.0.2 mccabe-0.7.0 mypy-extensions-1.2.0 packaging-26.3 pathspec-1.1.1 pip-26.3 platformdirs-4.14.5 pluggy-1.7.0 pycodestyle-2.15.0 pyflakes-4.1.0 pygments-2.21.0 pylint-4.1.3 pyproject-hooks-1.3.3 pytest-9.2.0 pytokens-0.4.1 setuptools-84.2.1 tomlkit-0.15.2 wheel-0.48.0\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/tmp/python-make-4task9ad/locked-tools/bin/python",
+          "-I",
+          "-B",
+          "-c",
+          "import importlib.metadata,json,sys;print(json.dumps({'prefix':sys.prefix,'base_prefix':sys.base_prefix,'packages':{d.metadata['Name'].lower().replace('_','-'):d.version for d in importlib.metadata.distributions()}}))"
+        ],
+        "cwd_name": "python-make-4task9ad",
+        "exit_code": 0,
+        "stdout": "{\"prefix\": \"/tmp/python-make-4task9ad/locked-tools\", \"base_prefix\": \"/usr\", \"packages\": {\"pylint\": \"4.1.3\", \"black\": \"26.10.1\", \"build\": \"1.6.1\", \"flake8\": \"7.5.0\", \"isort\": \"9.0.2\", \"pytest\": \"9.2.0\", \"wheel\": \"0.48.0\", \"astroid\": \"4.3.4\", \"click\": \"8.5.1\", \"dill\": \"0.4.1\", \"iniconfig\": \"2.3.1\", \"mccabe\": \"0.7.0\", \"mypy-extensions\": \"1.2.0\", \"packaging\": \"26.3\", \"pathspec\": \"1.1.1\", \"pip\": \"26.3\", \"platformdirs\": \"4.14.5\", \"pluggy\": \"1.7.0\", \"pycodestyle\": \"2.15.0\", \"pyflakes\": \"4.1.0\", \"pygments\": \"2.21.0\", \"pyproject-hooks\": \"1.3.3\", \"pytokens\": \"0.4.1\", \"setuptools\": \"84.2.1\", \"tomlkit\": \"0.15.2\"}}\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/tmp/python-make-4task9ad/locked-tools/bin/python",
+          "-m",
+          "pip",
+          "check"
+        ],
+        "cwd_name": "python-make-4task9ad",
+        "exit_code": 0,
+        "stdout": "No broken requirements found.\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/python3",
+          "-I",
+          "-B",
+          "-c",
+          "import importlib.metadata,json,sys;print(json.dumps({'prefix':sys.prefix,'base_prefix':sys.base_prefix,'packages':{d.metadata['Name'].lower().replace('_','-'):d.version for d in importlib.metadata.distributions()}}))"
+        ],
+        "cwd_name": "python-make-4task9ad",
+        "exit_code": 0,
+        "stdout": "{\"prefix\": \"/usr\", \"base_prefix\": \"/usr\", \"packages\": {\"anyio\": \"4.12.1\", \"pluggy\": \"1.6.0\", \"iniconfig\": \"2.3.0\", \"pydantic\": \"2.12.5\", \"annotated-types\": \"0.7.0\", \"packaging\": \"26.0\", \"distro\": \"1.9.0\", \"h11\": \"0.16.0\", \"certifi\": \"2026.2.25\", \"httpcore\": \"1.0.9\", \"typing-extensions\": \"4.15.0\", \"idna\": \"3.11\", \"typing-inspection\": \"0.4.2\", \"pygments\": \"2.19.2\", \"docstring-parser\": \"0.17.0\", \"pyyaml\": \"6.0.3\", \"pytest\": \"9.0.2\", \"sniffio\": \"1.3.1\", \"pydantic-core\": \"2.41.5\", \"jiter\": \"0.13.0\", \"httpx\": \"0.28.1\", \"anthropic\": \"0.84.0\", \"setuptools\": \"68.1.2\", \"wheel\": \"0.42.0\", \"pip\": \"24.0\"}}\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/bash",
+          "/tmp/python-make-4task9ad/generate.sh",
+          "python",
+          "demo",
+          "Makefile"
+        ],
+        "cwd_name": "project",
+        "exit_code": 0,
+        "stdout": "INFO: Generating python Makefile for project 'demo'...\nSUCCESS: Makefile generated: Makefile\nINFO: Edit the Makefile to customize for your project\nINFO: Run 'make help' to see available targets\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "PYTHON=/tmp/python-make-4task9ad/tools/bin/python",
+          "build"
+        ],
+        "cwd_name": "project",
+        "exit_code": 0,
+        "stdout": "/tmp/python-make-4task9ad/tools/bin/python -m build\nrunning egg_info\ncreating src/demo.egg-info\nwriting src/demo.egg-info/PKG-INFO\nwriting dependency_links to src/demo.egg-info/dependency_links.txt\nwriting requirements to src/demo.egg-info/requires.txt\nwriting top-level names to src/demo.egg-info/top_level.txt\nwriting manifest file 'src/demo.egg-info/SOURCES.txt'\nreading manifest file 'src/demo.egg-info/SOURCES.txt'\nwriting manifest file 'src/demo.egg-info/SOURCES.txt'\nrunning sdist\nrunning egg_info\nwriting src/demo.egg-info/PKG-INFO\nwriting dependency_links to src/demo.egg-info/dependency_links.txt\nwriting requirements to src/demo.egg-info/requires.txt\nwriting top-level names to src/demo.egg-info/top_level.txt\nreading manifest file 'src/demo.egg-info/SOURCES.txt'\nwriting manifest file 'src/demo.egg-info/SOURCES.txt'\nrunning check\ncreating demo-1.0.0\ncreating demo-1.0.0/src/demo\ncreating demo-1.0.0/src/demo.egg-info\ncreating demo-1.0.0/tests\ncopying files to demo-1.0.0...\ncopying pyproject.toml -> demo-1.0.0\ncopying src/demo/__init__.py -> demo-1.0.0/src/demo\ncopying src/demo.egg-info/PKG-INFO -> demo-1.0.0/src/demo.egg-info\ncopying src/demo.egg-info/SOURCES.txt -> demo-1.0.0/src/demo.egg-info\ncopying src/demo.egg-info/dependency_links.txt -> demo-1.0.0/src/demo.egg-info\ncopying src/demo.egg-info/requires.txt -> demo-1.0.0/src/demo.egg-info\ncopying src/demo.egg-info/top_level.txt -> demo-1.0.0/src/demo.egg-info\ncopying tests/test_demo.py -> demo-1.0.0/tests\nWriting demo-1.0.0/setup.cfg\nCreating tar archive\nremoving 'demo-1.0.0' (and everything under it)\nrunning egg_info\nwriting src/demo.egg-info/PKG-INFO\nwriting dependency_links to src/demo.egg-info/dependency_links.txt\nwriting requirements to src/demo.egg-info/requires.txt\nwriting top-level names to src/demo.egg-info/top_level.txt\nreading manifest file 'src/demo.egg-info/SOURCES.txt'\nwriting manifest file 'src/demo.egg-info/SOURCES.txt'\nrunning bdist_wheel\nrunning build\nrunning build_py\ncreating build/lib/demo\ncopying src/demo/__init__.py -> build/lib/demo\nrunning egg_info\nwriting src/demo.egg-info/PKG-INFO\nwriting dependency_links to src/demo.egg-info/dependency_links.txt\nwriting requirements to src/demo.egg-info/requires.txt\nwriting top-level names to src/demo.egg-info/top_level.txt\nreading manifest file 'src/demo.egg-info/SOURCES.txt'\nwriting manifest file 'src/demo.egg-info/SOURCES.txt'\ninstalling to build/bdist.linux-x86_64/wheel\nrunning install\nrunning install_lib\ncreating build/bdist.linux-x86_64/wheel\ncreating build/bdist.linux-x86_64/wheel/demo\ncopying build/lib/demo/__init__.py -> build/bdist.linux-x86_64/wheel/./demo\nrunning install_egg_info\nCopying src/demo.egg-info to build/bdist.linux-x86_64/wheel/./demo-1.0.0-py3.12.egg-info\nrunning install_scripts\ncreating build/bdist.linux-x86_64/wheel/demo-1.0.0.dist-info/WHEEL\ncreating '/tmp/python-make-4task9ad/project/dist/.tmp-1remr6hn/demo-1.0.0-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it\nadding 'demo/__init__.py'\nadding 'demo-1.0.0.dist-info/METADATA'\nadding 'demo-1.0.0.dist-info/WHEEL'\nadding 'demo-1.0.0.dist-info/top_level.txt'\nadding 'demo-1.0.0.dist-info/RECORD'\nremoving build/bdist.linux-x86_64/wheel\nSuccessfully built demo-1.0.0.tar.gz and demo-1.0.0-py3-none-any.whl\n",
+        "stderr": "* Creating isolated environment: venv+pip...\n* Installing packages in isolated environment:\n  - setuptools==84.2.1\n  - wheel==0.48.0\n* Getting build dependencies for sdist...\n* Installed build dependency versions:\n  - setuptools==84.2.1\n  - wheel==0.48.0\n* Building sdist...\nwarning: sdist: standard file not found: should have one of README, README.rst, README.txt, README.md\n\n* Building wheel from sdist\n* Creating isolated environment: venv+pip...\n* Installing packages in isolated environment:\n  - setuptools==84.2.1\n  - wheel==0.48.0\n* Getting build dependencies for wheel...\n* Installed build dependency versions:\n  - setuptools==84.2.1\n  - wheel==0.48.0\n* Building wheel...\n"
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "PYTHON=/tmp/python-make-4task9ad/tools/bin/python",
+          "develop"
+        ],
+        "cwd_name": "project",
+        "exit_code": 0,
+        "stdout": "/tmp/python-make-4task9ad/tools/bin/python -m pip install -e .[dev]\nLooking in links: /tmp/benchmark-inputs/wheels\nObtaining file:///tmp/python-make-4task9ad/project\n  Installing build dependencies: started\n  Installing build dependencies: finished with status 'done'\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Getting requirements to build editable: started\n  Getting requirements to build editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nRequirement already satisfied: pytest==9.2.0 in /tmp/python-make-4task9ad/tools/lib/python3.12/site-packages (from demo==1.0.0) (9.2.0)\nRequirement already satisfied: iniconfig>=2 in /tmp/python-make-4task9ad/tools/lib/python3.12/site-packages (from pytest==9.2.0->demo==1.0.0) (2.3.1)\nRequirement already satisfied: packaging>=24 in /tmp/python-make-4task9ad/tools/lib/python3.12/site-packages (from pytest==9.2.0->demo==1.0.0) (26.3)\nRequirement already satisfied: pluggy<2,>=1.6 in /tmp/python-make-4task9ad/tools/lib/python3.12/site-packages (from pytest==9.2.0->demo==1.0.0) (1.7.0)\nRequirement already satisfied: pygments>=2.15 in /tmp/python-make-4task9ad/tools/lib/python3.12/site-packages (from pytest==9.2.0->demo==1.0.0) (2.21.0)\nBuilding wheels for collected packages: demo\n  Building editable for demo (pyproject.toml): started\n  Building editable for demo (pyproject.toml): finished with status 'done'\n  Created wheel for demo: filename=demo-1.0.0-0.editable-py3-none-any.whl size=1179 sha256=2c8c2fb596cd4bbb47eaa996c8c4e1ce918ddd25d0b4ff000b82f7c37a4bd737\n  Stored in directory: /tmp/pip-ephem-wheel-cache-9amwv1od/wheels/9b/dd/6a/3cd1c46ef2ce58055dd25c9b2bb8f9485b5527150137a4cef4\nSuccessfully built demo\nInstalling collected packages: demo\nSuccessfully installed demo-1.0.0\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/tmp/python-make-4task9ad/tools/bin/python",
+          "-I",
+          "-B",
+          "-c",
+          "import importlib.metadata,json,sys;print(json.dumps({'prefix':sys.prefix,'base_prefix':sys.base_prefix,'packages':{d.metadata['Name'].lower().replace('_','-'):d.version for d in importlib.metadata.distributions()}}))"
+        ],
+        "cwd_name": "python-make-4task9ad",
+        "exit_code": 0,
+        "stdout": "{\"prefix\": \"/tmp/python-make-4task9ad/tools\", \"base_prefix\": \"/usr\", \"packages\": {\"demo\": \"1.0.0\", \"pylint\": \"4.1.3\", \"black\": \"26.10.1\", \"build\": \"1.6.1\", \"flake8\": \"7.5.0\", \"isort\": \"9.0.2\", \"pytest\": \"9.2.0\", \"wheel\": \"0.48.0\", \"astroid\": \"4.3.4\", \"click\": \"8.5.1\", \"dill\": \"0.4.1\", \"iniconfig\": \"2.3.1\", \"mccabe\": \"0.7.0\", \"mypy-extensions\": \"1.2.0\", \"packaging\": \"26.3\", \"pathspec\": \"1.1.1\", \"pip\": \"26.3\", \"platformdirs\": \"4.14.5\", \"pluggy\": \"1.7.0\", \"pycodestyle\": \"2.15.0\", \"pyflakes\": \"4.1.0\", \"pygments\": \"2.21.0\", \"pyproject-hooks\": \"1.3.3\", \"pytokens\": \"0.4.1\", \"setuptools\": \"84.2.1\", \"tomlkit\": \"0.15.2\"}}\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "PYTHON=/tmp/python-make-4task9ad/tools/bin/python",
+          "test"
+        ],
+        "cwd_name": "project",
+        "exit_code": 0,
+        "stdout": "/tmp/python-make-4task9ad/tools/bin/python -m pytest tests/ -v\n============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0 -- /tmp/python-make-4task9ad/tools/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/python-make-4task9ad/project\nconfigfile: pyproject.toml\nplugins: platformdirs-4.14.5\ncollecting ... collected 1 item\n\ntests/test_demo.py::test_add PASSED                                      [100%]\n\n============================== 1 passed in 0.00s ===============================\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "PYTHON=/tmp/python-make-4task9ad/tools/bin/python",
+          "test"
+        ],
+        "cwd_name": "project",
+        "exit_code": 2,
+        "stdout": "/tmp/python-make-4task9ad/tools/bin/python -m pytest tests/ -v\n============================= test session starts ==============================\nplatform linux -- Python 3.12.3, pytest-9.2.0, pluggy-1.7.0 -- /tmp/python-make-4task9ad/tools/bin/python\ncachedir: .pytest_cache\nrootdir: /tmp/python-make-4task9ad/project\nconfigfile: pyproject.toml\nplugins: platformdirs-4.14.5\ncollecting ... collected 1 item\n\ntests/test_demo.py::test_add FAILED                                      [100%]\n\n=================================== FAILURES ===================================\n___________________________________ test_add ___________________________________\n\n    def test_add():\n        \"\"\"Check actual addition.\"\"\"\n>       assert add(1, 2) == 4\nE       assert 3 == 4\nE        +  where 3 = add(1, 2)\n\ntests/test_demo.py:7: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_demo.py::test_add - assert 3 == 4\n============================== 1 failed in 0.01s ===============================\n",
+        "stderr": "make: *** [Makefile:25: test] Error 1\n"
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "PYTHON=/tmp/python-make-4task9ad/tools/bin/python",
+          "lint"
+        ],
+        "cwd_name": "project",
+        "exit_code": 0,
+        "stdout": "/tmp/python-make-4task9ad/tools/bin/python -m flake8 src/ tests/\n/tmp/python-make-4task9ad/tools/bin/python -m pylint src/\n\n------------------------------------\nYour code has been rated at 10.00/10\n\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/bash",
+          "/tmp/python-make-4task9ad/generate.sh",
+          "python",
+          "demo",
+          "Makefile"
+        ],
+        "cwd_name": "formatting",
+        "exit_code": 0,
+        "stdout": "INFO: Generating python Makefile for project 'demo'...\nSUCCESS: Makefile generated: Makefile\nINFO: Edit the Makefile to customize for your project\nINFO: Run 'make help' to see available targets\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "PYTHON=/tmp/python-make-4task9ad/tools/bin/python",
+          "format"
+        ],
+        "cwd_name": "formatting",
+        "exit_code": 0,
+        "stdout": "/tmp/python-make-4task9ad/tools/bin/python -m black src/ tests/\n/tmp/python-make-4task9ad/tools/bin/python -m isort src/ tests/\nFixing /tmp/python-make-4task9ad/formatting/src/imports.py\n",
+        "stderr": "reformatted /tmp/python-make-4task9ad/formatting/src/imports.py\n\nAll done! \u2728 \ud83c\udf70 \u2728\n1 file reformatted, 1 file left unchanged.\n"
+      },
+      {
+        "argv": [
+          "/tmp/python-make-4task9ad/tools/bin/python",
+          "-m",
+          "black",
+          "--check",
+          "src/",
+          "tests/"
+        ],
+        "cwd_name": "formatting",
+        "exit_code": 1,
+        "stdout": "",
+        "stderr": "would reformat /tmp/python-make-4task9ad/formatting/src/imports.py\n\nOh no! \ud83d\udca5 \ud83d\udc94 \ud83d\udca5\n1 file would be reformatted, 1 file would be left unchanged.\n"
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "PYTHON=/tmp/python-make-4task9ad/tools/bin/python",
+          "format"
+        ],
+        "cwd_name": "formatting",
+        "exit_code": 0,
+        "stdout": "/tmp/python-make-4task9ad/tools/bin/python -m black src/ tests/\n/tmp/python-make-4task9ad/tools/bin/python -m isort src/ tests/\n",
+        "stderr": "reformatted /tmp/python-make-4task9ad/formatting/src/imports.py\n\nAll done! \u2728 \ud83c\udf70 \u2728\n1 file reformatted, 1 file left unchanged.\n"
+      },
+      {
+        "argv": [
+          "/tmp/python-make-4task9ad/tools/bin/python",
+          "-m",
+          "black",
+          "--check",
+          "src/",
+          "tests/"
+        ],
+        "cwd_name": "formatting",
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "All done! \u2728 \ud83c\udf70 \u2728\n2 files would be left unchanged.\n"
+      },
+      {
+        "argv": [
+          "/tmp/python-make-4task9ad/tools/bin/python",
+          "-m",
+          "isort",
+          "--check-only",
+          "src/",
+          "tests/"
+        ],
+        "cwd_name": "formatting",
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      }
+    ],
+    "installed_versions": {
+      "pylint": "4.1.3",
+      "black": "26.10.1",
+      "build": "1.6.1",
+      "flake8": "7.5.0",
+      "isort": "9.0.2",
+      "pytest": "9.2.0",
+      "wheel": "0.48.0",
+      "astroid": "4.3.4",
+      "click": "8.5.1",
+      "dill": "0.4.1",
+      "iniconfig": "2.3.1",
+      "mccabe": "0.7.0",
+      "mypy-extensions": "1.2.0",
+      "packaging": "26.3",
+      "pathspec": "1.1.1",
+      "pip": "26.3",
+      "platformdirs": "4.14.5",
+      "pluggy": "1.7.0",
+      "pycodestyle": "2.15.0",
+      "pyflakes": "4.1.0",
+      "pygments": "2.21.0",
+      "pyproject-hooks": "1.3.3",
+      "pytokens": "0.4.1",
+      "setuptools": "84.2.1",
+      "tomlkit": "0.15.2"
+    },
+    "locked_requirements": "astroid==4.3.4 --hash=sha256:2bcd0d02648a443a4b818c952c3550091989daefac3c12d3b83b2289482e0818\nblack==26.10.1 --hash=sha256:28842f9a8207cc1df6eb983a35a14c5a0dfcd603d214fe82d84bef552afd2e3a\nbuild==1.6.1 --hash=sha256:ecd351a4be9d35a9eaaba244a7687143c9c7d4aea6ac964e7e7ddab20cbcf4e7\nclick==8.5.1 --hash=sha256:8bb5376d2006950386f8c6427613334a2acadc5f559cb80e638d00b4df957e37\ndill==0.4.1 --hash=sha256:1e1ce33e978ae97fcfcff5638477032b801c46c7c65cf717f95fbc2248f79a9d\nflake8==7.5.0 --hash=sha256:637ea1a443a78ed6ee461725cdf71ca93bc5cde0abf25436dbebdc3880b4e078\niniconfig==2.3.1 --hash=sha256:9121e2c1fdb355232495be3194c8dfe87ccc2d5dee45947b78e68f499790d7a7\nisort==9.0.2 --hash=sha256:6c29deeb39698a8717823b7f75b2ac58c5e8ab8dcf6cf31205a72a6617fb454e\nmccabe==0.7.0 --hash=sha256:6c2d30ab6be0e4a46919781807b4f0d834ebdd6c6e3dca0bda5a15f863427b6e\nmypy-extensions==1.2.0 --hash=sha256:993e7a20aa5671eb41a7132cf555af30062da99729601601b9a8382b11cae768\npackaging==26.3 --hash=sha256:d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c\npathspec==1.1.1 --hash=sha256:a00ce642f577bf7f473932318056212bc4f8bfdf53128c78bbd5af0b9b20b189\npip==26.3 --hash=sha256:f3b60b20ffaadd4415ed7957212a38ac63fa4c5fa375bd0f4a797777940fad13\nplatformdirs==4.14.5 --hash=sha256:8e778c6fa421516f4d3369449f8df3b0e1b72c0e0005fe88e3ec772d0a14e750\npluggy==1.7.0 --hash=sha256:7dd7b0d8832ba3cb632c306926ded123429211b83641b35dc5c41ad2d34f9bec\npycodestyle==2.15.0 --hash=sha256:12fd2f73c7b8ee8845a0431111df8faf4c1a07d6e64e2ee7f0c74014dab14181\npyflakes==4.1.0 --hash=sha256:b2e05e6bac8e49b67be2a6ffa63422c60f7193fc72e8180255907b41ec997dc1\npygments==2.21.0 --hash=sha256:2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9\npylint==4.1.3 --hash=sha256:a85357cae24f33ad8d86c8f3daaa92c600ae4012b54a57299cee76000e9364cf\npyproject-hooks==1.3.3 --hash=sha256:5fc53fdac9f7bd63fbcdc868fb5f90b4784d78a53a3d3388cd738b807441a20b\npytest==9.2.0 --hash=sha256:07acdcf88ec174f907dc01af70bf52d49b014bbab03faeeade31c96b18c2e588\npytokens==0.4.1 --hash=sha256:26cef14744a8385f35d0e095dc8b3a7583f6c953c2e3d269c7f82484bf5ad2de\nsetuptools==84.2.1 --hash=sha256:ca140b45d5325a9478f880e351484f62fef15f336462e449ca0c03c873d589c2\ntomlkit==0.15.2 --hash=sha256:05562412163a3037b94497385fb7f9204c637bc605af7a48199e41cf2272f437\nwheel==0.48.0 --hash=sha256:3217dcc807155e45db462d7ef2431f5ddda0d7273b700d05a67b271ceb1287ab\n",
+    "base_python_version": "3.12.3",
+    "base_pip_unchanged": "24.0",
+    "model_invocations": 0,
+    "scope": "Native Python 3.12.3 compatibility component controls only; no model efficacy, speed or arbitrary-project readiness claim."
+  },
+  "program_sha256": "7342ea1bfea3b1d01b2652b14c8e9ff1bc68c6a8804c2c1c60513d0b6c8800f8",
+  "asset_sha256": {
+    "probe.py": "7342ea1bfea3b1d01b2652b14c8e9ff1bc68c6a8804c2c1c60513d0b6c8800f8",
+    "wheels/pip-26.3-py3-none-any.whl": "f3b60b20ffaadd4415ed7957212a38ac63fa4c5fa375bd0f4a797777940fad13",
+    "wheels/build-1.6.1-py3-none-any.whl": "ecd351a4be9d35a9eaaba244a7687143c9c7d4aea6ac964e7e7ddab20cbcf4e7",
+    "wheels/pytest-9.2.0-py3-none-any.whl": "07acdcf88ec174f907dc01af70bf52d49b014bbab03faeeade31c96b18c2e588",
+    "wheels/setuptools-84.2.1-py3-none-any.whl": "ca140b45d5325a9478f880e351484f62fef15f336462e449ca0c03c873d589c2",
+    "wheels/wheel-0.48.0-py3-none-any.whl": "3217dcc807155e45db462d7ef2431f5ddda0d7273b700d05a67b271ceb1287ab",
+    "wheels/black-26.10.1-py3-none-any.whl": "28842f9a8207cc1df6eb983a35a14c5a0dfcd603d214fe82d84bef552afd2e3a",
+    "wheels/isort-9.0.2-py3-none-any.whl": "6c29deeb39698a8717823b7f75b2ac58c5e8ab8dcf6cf31205a72a6617fb454e",
+    "wheels/flake8-7.5.0-py2.py3-none-any.whl": "637ea1a443a78ed6ee461725cdf71ca93bc5cde0abf25436dbebdc3880b4e078",
+    "wheels/pylint-4.1.3-py3-none-any.whl": "a85357cae24f33ad8d86c8f3daaa92c600ae4012b54a57299cee76000e9364cf",
+    "wheels/packaging-26.3-py3-none-any.whl": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+    "wheels/pyproject_hooks-1.3.3-py3-none-any.whl": "5fc53fdac9f7bd63fbcdc868fb5f90b4784d78a53a3d3388cd738b807441a20b",
+    "wheels/iniconfig-2.3.1-py3-none-any.whl": "9121e2c1fdb355232495be3194c8dfe87ccc2d5dee45947b78e68f499790d7a7",
+    "wheels/pluggy-1.7.0-py3-none-any.whl": "7dd7b0d8832ba3cb632c306926ded123429211b83641b35dc5c41ad2d34f9bec",
+    "wheels/pygments-2.21.0-py3-none-any.whl": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9",
+    "wheels/click-8.5.1-py3-none-any.whl": "8bb5376d2006950386f8c6427613334a2acadc5f559cb80e638d00b4df957e37",
+    "wheels/mypy_extensions-1.2.0-py3-none-any.whl": "993e7a20aa5671eb41a7132cf555af30062da99729601601b9a8382b11cae768",
+    "wheels/pathspec-1.1.1-py3-none-any.whl": "a00ce642f577bf7f473932318056212bc4f8bfdf53128c78bbd5af0b9b20b189",
+    "wheels/platformdirs-4.14.5-py3-none-any.whl": "8e778c6fa421516f4d3369449f8df3b0e1b72c0e0005fe88e3ec772d0a14e750",
+    "wheels/pytokens-0.4.1-py3-none-any.whl": "26cef14744a8385f35d0e095dc8b3a7583f6c953c2e3d269c7f82484bf5ad2de",
+    "wheels/mccabe-0.7.0-py2.py3-none-any.whl": "6c2d30ab6be0e4a46919781807b4f0d834ebdd6c6e3dca0bda5a15f863427b6e",
+    "wheels/pycodestyle-2.15.0-py2.py3-none-any.whl": "12fd2f73c7b8ee8845a0431111df8faf4c1a07d6e64e2ee7f0c74014dab14181",
+    "wheels/pyflakes-4.1.0-py2.py3-none-any.whl": "b2e05e6bac8e49b67be2a6ffa63422c60f7193fc72e8180255907b41ec997dc1",
+    "wheels/astroid-4.3.4-py3-none-any.whl": "2bcd0d02648a443a4b818c952c3550091989daefac3c12d3b83b2289482e0818",
+    "wheels/dill-0.4.1-py3-none-any.whl": "1e1ce33e978ae97fcfcff5638477032b801c46c7c65cf717f95fbc2248f79a9d",
+    "wheels/tomlkit-0.15.2-py3-none-any.whl": "05562412163a3037b94497385fb7f9204c637bc605af7a48199e41cf2272f437"
+  },
+  "sdk_sha256": null,
+  "image_reference": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+  "available_host_ram_before_bytes": 32071720960,
+  "memory_limit_bytes": 2147483648,
+  "tmpfs_limit_bytes": 1073741824,
+  "lease_seconds": 300,
+  "lease_closed": true,
+  "remaining_owned_containers": 0,
+  "images_pulled": 0,
+  "model_invocations": 0,
+  "global_installation": false
+}

@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "candidate_skill_sha256": "37dba3477baaa890c1e443027e472f06cffaa3345531d9525ad8a01d27c37d4a",
+  "runtime_identities": {
+    "node_sha256": "14319838b3f355e0398c13569a90270bce4fc68f25189f58c59b03dadae0e6d5",
+    "browser_tree_sha256": "10d587e7f140866aefc7c693d4889136c8c33c9ed4e13af4f9e90312374a169d",
+    "npm_tree_sha256": "6492496f32010ea16c8af9af78b45898fe68b0494ebddef2087cf9918eefaea9",
+    "example_sha256": "fd45e971ae934251279bf0328b6937a6d06479bcb2825c99f0421fedc53e481a"
+  },
+  "node_version": "v26.13.0",
+  "npm_version": "12.2.2",
+  "package_versions": {
+    "@playwright/test": "1.65.0",
+    "playwright": "1.65.0",
+    "playwright-core": "1.65.0"
+  },
+  "package_lock_sha256": "fcc4bd1404ab67e52b2a02be6a8be02b8b705d2e6f47bb7349e588cd7b246970",
+  "candidate_cases": [
+    {
+      "mode": "ready",
+      "observed_exit_code": 0,
+      "test_status": "passed",
+      "expected_outcome_confirmed": true,
+      "listener_closed": true,
+      "trace_count": 0
+    },
+    {
+      "mode": "missing",
+      "observed_exit_code": 1,
+      "test_status": "failed",
+      "expected_outcome_confirmed": true,
+      "listener_closed": true,
+      "trace_count": 1
+    }
+  ],
+  "model_invocations": 0,
+  "global_installation": false,
+  "browser_downloads": 0,
+  "remaining_owned_job_processes": 0,
+  "security_remediation": "held; dependency installation is not a scanner-acceptance claim"
+}

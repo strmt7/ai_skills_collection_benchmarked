@@ -1,0 +1,37 @@
+"""Probe an official Node 22 distribution in a disposable, read-only base image."""
+import hashlib,json,os,re,subprocess,sys,tarfile
+from pathlib import Path,PurePosixPath
+archive=Path('/tmp/benchmark-inputs/runtime.tar.gz')
+expected='c54118104acc524633b5abe106bbf44a53126ec8b4e5fa105cb92b5d7de8a1a1';assert hashlib.sha256(archive.read_bytes()).hexdigest()==expected
+root=Path('/tmp/admitted-node22');root.mkdir();version='v22.23.5';prefix='node-'+version+'-linux-x64'
+with tarfile.open(archive,'r:gz') as tar:
+ members=tar.getmembers();assert len(members)<=10000 and sum(m.size for m in members)<256*1024**2
+ for member in members:
+  p=PurePosixPath(member.name);assert p.parts[0]==prefix and not p.is_absolute() and '..' not in p.parts and not member.isdev() and not member.isfifo()
+ tar.extractall(root,filter='data')
+runtime=root/prefix;node=runtime/'bin/node';assert node.is_file() and (runtime/'LICENSE').is_file()
+work=Path('/tmp/node22-compatibility-project');work.mkdir();home=work/'home';home.mkdir()
+env={k:os.environ[k] for k in ('PATH','LANG','LC_ALL') if k in os.environ};env.update(PATH=str(runtime/'bin')+':'+env['PATH'],HOME=str(home),npm_config_cache=str(home/'npm-cache'),npm_config_userconfig=str(home/'empty.npmrc'),npm_config_globalconfig=str(home/'global.npmrc'))
+(home/'empty.npmrc').write_text('');(home/'global.npmrc').write_text('')
+records=[]
+def call(name,args,expected_exit=0):
+ p=subprocess.run([str(v) for v in args],cwd=work,env=env,capture_output=True,text=True,timeout=25)
+ records.append({'case':name,'argv':[str(v) for v in args],'exit_code':p.returncode,'stdout':p.stdout[:2000],'stderr':p.stderr[:2000]})
+ print(json.dumps(records[-1]),file=sys.stderr,flush=True)
+ assert p.returncode==expected_exit,name
+ return p.stdout.strip()
+assert call('new-node-version',[node,'--version'])==version
+assert call('base-node-unchanged',['/usr/bin/node','--version'])=='v20.20.0'
+npm=runtime/'lib/node_modules/npm/bin/npm-cli.js';npm_version=json.loads((npm.parents[1]/'package.json').read_text())['version'];assert call('bundled-npm-version',[node,npm,'--version'])==npm_version
+addon=work/'answer.cc';addon.write_text('#include <node_api.h>\nnapi_value answer(napi_env e,napi_callback_info i){napi_value v;napi_create_int32(e,42,&v);return v;}\nnapi_value init(napi_env e,napi_value out){napi_value fn;napi_create_function(e,"answer",NAPI_AUTO_LENGTH,answer,nullptr,&fn);napi_set_named_property(e,out,"answer",fn);return out;}\nNAPI_MODULE(NODE_GYP_MODULE_NAME,init)\n')
+call('native-addon-compile',['g++','-shared','-fPIC','-I'+str(runtime/'include/node'),addon,'-o',work/'answer.node'])
+(work/'package.json').write_text(json.dumps({'name':'node22-component-contract','version':'0.0.0','private':True,'scripts':{'test':'node check.cjs'}}))
+(work/'check.cjs').write_text("const assert=require('node:assert/strict');assert.equal(process.versions.node.split('.')[0],'22');assert.equal(require('./answer.node').answer(),42);console.log('NODE22_CONTRACT='+JSON.stringify({major:22,napiAnswer:42}));\n")
+npm_output=call('npm-script-child-and-addon',[node,npm,'--offline','run','--loglevel=error','test'])
+protocol=[line.removeprefix('NODE22_CONTRACT=') for line in npm_output.splitlines() if line.startswith('NODE22_CONTRACT=')]
+assert len(protocol)==1 and json.loads(protocol[0])=={'major':22,'napiAnswer':42}
+call('wrong-runtime-negative-control',['/usr/bin/node',work/'check.cjs'],expected_exit=1)
+assert 'ERR_ASSERTION' in records[-1]['stderr'] and "'20' !== '22'" in records[-1]['stderr']
+http_program="""const assert=require('node:assert/strict');const http=require('node:http');const server=http.createServer((req,res)=>res.end('ready'));(async()=>{await new Promise(r=>server.listen(0,'127.0.0.1',r));try{const response=await fetch('http://127.0.0.1:'+server.address().port);assert.equal(await response.text(),'ready');}finally{server.closeAllConnections();await new Promise(r=>server.close(r));}assert.equal(server.listening,false);console.log('listener-closed');})().catch(e=>{server.closeAllConnections();server.close();console.error(e);process.exitCode=1;});"""
+assert call('owned-http-client-server',[node,'-e',http_program])=='listener-closed'
+print(json.dumps({'passed':True,'node_version':version,'npm_version':npm_version,'runtime_archive_sha256':expected,'node_binary_sha256':hashlib.sha256(node.read_bytes()).hexdigest(),'node_header_sha256':hashlib.sha256((runtime/'include/node/node_api.h').read_bytes()).hexdigest(),'license_sha256':hashlib.sha256((runtime/'LICENSE').read_bytes()).hexdigest(),'base_node_unchanged':True,'component_cases':len(records),'records':records,'global_installation':False,'host_modified':False,'external_network':'disabled by container','model_invocations':0,'runtime_admitted':False,'scope':'Source-derived toolchain compatibility prototype only. The author Enroot filesystem, original image bytes, selected task dependencies and scorer equivalence are not established.'}))

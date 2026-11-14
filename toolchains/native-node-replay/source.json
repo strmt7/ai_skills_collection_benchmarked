@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "profile_kind": "modern-replay-not-publisher-equivalent",
+  "node_release_index": "https://nodejs.org/dist/index.json",
+  "node_checksum_file": "https://nodejs.org/dist/v26.13.1/SHASUMS256.txt",
+  "node_release_date": "2026-11-10",
+  "crane_release": "https://github.com/google/go-containerregistry/releases/tag/v0.22.1",
+  "crane_checksum_file": "https://github.com/google/go-containerregistry/releases/download/v0.22.1/checksums.txt",
+  "crane_save_source": "https://github.com/google/go-containerregistry/blob/v0.22.1/pkg/crane/pull.go",
+  "crane_save_git_blob_sha1": "d42d8ffb4419fad5015c7183c0529c919e267854",
+  "crane_mutate_source": "https://github.com/google/go-containerregistry/blob/v0.22.1/cmd/crane/cmd/mutate.go",
+  "crane_mutate_git_blob_sha1": "d7140d0ab409ed5ea92f14609ea51e12cb686565",
+  "crane_keychain_source": "https://github.com/google/go-containerregistry/blob/v0.22.1/pkg/authn/keychain.go",
+  "crane_keychain_git_blob_sha1": "a9b105e177b6af8111b79f5e0d53196e591a0f8f",
+  "initial_runtime_qualification": "../../artifacts/research/2026-11-13/node-local-replay/review.json",
+  "node_archive_checksum_verification": true,
+  "crane_archive_checksum_and_release_asset_digest_verification": true,
+  "independent_publisher_signature_verification_claimed": false,
+  "publisher_environment_equivalence_claimed": false,
+  "model_improvement_claimed": false
+}

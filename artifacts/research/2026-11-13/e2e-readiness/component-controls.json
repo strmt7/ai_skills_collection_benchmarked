@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "nodeVersion": "v26.13.0",
+  "playwrightVersion": "1.65.0",
+  "browserVersion": "158.0.8127.18",
+  "automation": true,
+  "componentCases": 7,
+  "counts": {
+    "poll": 50,
+    "search": 2
+  },
+  "modelInvocations": 0,
+  "listenerClosed": true,
+  "identities": {
+    "node_sha256": "14319838b3f355e0398c13569a90270bce4fc68f25189f58c59b03dadae0e6d5",
+    "playwright_tree_sha256": "c65b31384cb46e7b7923d308fdc681ae9fbf1ce562a9174da9596c894b2ed315",
+    "browser_tree_sha256": "10d587e7f140866aefc7c693d4889136c8c33c9ed4e13af4f9e90312374a169d"
+  },
+  "source_sha256": "f84ae93c159bf6ecef5a60c9735dc82d96bc5f977ef52eb71678b66722acf684",
+  "source_transform": "Only the example import became type-only for native TypeScript stripping; class behavior unchanged.",
+  "remaining_owned_job_processes": 0,
+  "records": [
+    {
+      "case": "original-networkidle",
+      "expected": "times out while ready UI keeps polling",
+      "observed": "page.waitForLoadState: Timeout 1500ms exceeded.",
+      "pollRequests": 30
+    },
+    {
+      "case": "ready-dom-contract",
+      "passed": true,
+      "heading": "Items"
+    },
+    {
+      "case": "missing-ready-contract",
+      "passed": true,
+      "expectedTimeout": true
+    },
+    {
+      "case": "prearmed-response-and-ui",
+      "passed": true,
+      "status": 200,
+      "requestCount": 1
+    },
+    {
+      "case": "completed-events-not-replayed",
+      "passed": true,
+      "expectedTimeout": true,
+      "scope": "Controlled ordering after known completion; not a claim that native fill always loses the event."
+    },
+    {
+      "case": "failed-response-observed",
+      "passed": true,
+      "status": 500
+    },
+    {
+      "case": "native-context-trace",
+      "passed": true,
+      "bytes": 28011
+    }
+  ]
+}

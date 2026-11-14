@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "task_id": "owned-timeout",
+  "build_command": "python -c 'import subprocess,sys,time; child=subprocess.Popen([sys.executable,\"-c\",\"import time;time.sleep(30)\"]);print(child.pid,flush=True);time.sleep(30)'",
+  "working_dir": "/workspace/fixture",
+  "expected_exit_code": 0,
+  "timeout_seconds": 2
+}

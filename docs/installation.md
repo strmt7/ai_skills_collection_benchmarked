@@ -41,9 +41,14 @@ Some reviewed instructions have known limitations:
   distinguishes native PowerShell statuses and cmdlet errors; [see the shell controls](research-powershell-exit-status.md).
   It has not been evaluated in an agent trial.
 - The pinned evaluation-harness skill treats pass@k as a reliability trend.
-  The experimental [evaluation overlay](../included/improved/skills/eval-harness-current/SKILL.md)
-  distinguishes task weighting, any-of-k and all-of-k; [see the sampling review](research-eval-harness-sampling.md).
-  It has not been evaluated in an agent trial.
+  The experimental [evaluation overlay](../included/improved/skills/eval-harness-integrity/SKILL.md)
+  adds native score verification and distinguishes task weighting, any-of-k and
+  all-of-k. The [research review](research-evaluation-and-resumption.md) records
+  the metric controls. The [runtime-origin review](research-native-runtime-origins.md)
+  covers imported code, unchanged-input headroom and the limits of the evidence.
+- The experimental [checkpoint overlay](../included/improved/skills/strategic-compact-resume/SKILL.md)
+  records job ownership and current evidence so a resumed agent can distinguish
+  a slow observation from a finished run. [See the same research review](research-evaluation-and-resumption.md).
 - The pinned Claude instruction generator requires a retired external model and
   imposes a fixed line limit. The experimental [current-agent alternative](../included/improved/skills/claude-md-generator-current/SKILL.md)
   uses project evidence and documents Claude's import behavior. [See the review](research-claude-md-generator.md).
@@ -137,6 +142,11 @@ Some reviewed instructions have known limitations:
 
 - The E2E skill can register its response wait too late. An [E2E repair](../included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/e2e-testing/SKILL.md)
   addresses the ordering. [See the timing controls](research-e2e-response-order.md).
+  The broader [maintained E2E candidate](../included/improved/skills/e2e-testing-current/SKILL.md)
+  also covers business readiness, observable HTTP errors and owned test resources.
+  Its [current Windows controls](../artifacts/research/2026-11-13/e2e-readiness/review.json)
+  exercise a polling page and the exact TypeScript example, including a deliberate
+  missing-readiness failure. Agent efficacy remains unbenchmarked.
 
 - The Bun skill assumes frozen installs are always locked. A [Bun repair](../included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/bun-runtime/SKILL.md)
   makes the lockfile precondition explicit. [See the runtime controls](research-bun-runtime.md).
@@ -148,6 +158,27 @@ Some reviewed instructions have known limitations:
 - The Makefile generator can lose required PIC flags and ignore shared-link
   settings. A [C generator repair](../included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-c/SKILL.md)
   covers C executables and Linux ELF libraries. [See the build controls](research-makefile-generator-c.md).
+
+- Its C++ scaffold drops compiler runtime flags during linking and assumes an
+  executable implements `--test`. The [maintained C++ overlay](../included/improved/skills/makefile-generator-cpp/SKILL.md)
+  preserves the link contract and uses actual project tests. Its optional
+  scaffold supports flat `.cpp`/`.cc`/`.cxx` sources; Windows qualification covers
+  file generation, while Linux controls exercise compilation and rebuilding.
+  [See the qualified scope and remaining work](../artifacts/research/2026-11-13/makefile-cpp/review.json).
+
+- Its Go wrapper can retain an old executable after an embedded resource changes
+  or disappears. The [Go instruction repair](../included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-go/SKILL.md)
+  delegates dependency discovery and caching to Go and preserves real test
+  failures. [See the native controls and setup limitations](../artifacts/research/2026-11-13/makefile-go/review.json).
+  Agent efficacy remains unbenchmarked; native Windows execution is unqualified.
+
+- Its Python/Java/generic wrappers can clean dependency caches, miss changed
+  classpath inputs or report success without executing tests. The
+  [project-wrapper instruction repair](../included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-project-wrappers/SKILL.md)
+  preserves the actual project tools and distinguishes real work from scaffolds.
+  [See the verified behavior and limits](../artifacts/research/2026-11-13/makefile-project-wrappers/review.json).
+  These Linux component controls do not establish native Windows language setup
+  or agent performance gains.
 
 - The shell generator's bundled checks do not validate the generated output,
   and its Bash template is not a POSIX `sh` scaffold. A [shell-generation repair](../included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/bash-script-generator/SKILL.md)

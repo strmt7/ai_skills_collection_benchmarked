@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "name": "codex-fresh",
+      "expected_exit_code": 0,
+      "processes": [
+        {
+          "exit_code": 0,
+          "remaining_owned_processes": 0
+        }
+      ]
+    },
+    {
+      "name": "codex-reuse",
+      "expected_exit_code": 0,
+      "processes": [
+        {
+          "exit_code": 0,
+          "remaining_owned_processes": 0
+        }
+      ]
+    },
+    {
+      "name": "codex-missing-helper",
+      "expected_exit_code": 0,
+      "processes": [
+        {
+          "exit_code": 0,
+          "remaining_owned_processes": 0
+        }
+      ]
+    },
+    {
+      "name": "codex-missing-license",
+      "expected_exit_code": 0,
+      "processes": [
+        {
+          "exit_code": 0,
+          "remaining_owned_processes": 0
+        }
+      ]
+    },
+    {
+      "name": "codex-missing-model-catalog",
+      "expected_exit_code": 0,
+      "processes": [
+        {
+          "exit_code": 0,
+          "remaining_owned_processes": 0
+        }
+      ]
+    },
+    {
+      "name": "codex-execution-arguments",
+      "expected_exit_code": 1,
+      "processes": [
+        {
+          "exit_code": 1,
+          "remaining_owned_processes": 0
+        }
+      ]
+    },
+    {
+      "name": "codex-credential-forwarding",
+      "expected_exit_code": 1,
+      "processes": [
+        {
+          "exit_code": 1,
+          "remaining_owned_processes": 0
+        }
+      ]
+    },
+    {
+      "name": "codex-concurrent-reuse",
+      "expected_exit_code": 0,
+      "processes": [
+        {
+          "exit_code": 0,
+          "remaining_owned_processes": 0
+        },
+        {
+          "exit_code": 0,
+          "remaining_owned_processes": 0
+        }
+      ]
+    },
+    {
+      "name": "codex-default",
+      "expected_exit_code": 0,
+      "processes": [
+        {
+          "exit_code": 0,
+          "remaining_owned_processes": 0
+        }
+      ]
+    }
+  ],
+  "bootstrap_qualification_sha256": "9ee419a9596adff70d16076a8a9cde22b1db6413cc8a5c222274d7ab8150e24b",
+  "focused_bootstrap_tests_passed": 40,
+  "model_invocations": 0
+}

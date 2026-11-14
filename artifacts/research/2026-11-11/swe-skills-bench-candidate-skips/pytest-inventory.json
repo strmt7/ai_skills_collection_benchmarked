@@ -1,0 +1,40 @@
+{
+  "cases": {
+    "../tests/test_python_packaging.py::TestPythonPackaging::test_demo_script_compiles": "tests.test_python_packaging.TestPythonPackaging::test_demo_script_compiles",
+    "../tests/test_python_packaging.py::TestPythonPackaging::test_demo_script_exists": "tests.test_python_packaging.TestPythonPackaging::test_demo_script_exists",
+    "../tests/test_python_packaging.py::TestPythonPackaging::test_demo_script_runs": "tests.test_python_packaging.TestPythonPackaging::test_demo_script_runs",
+    "../tests/test_python_packaging.py::TestPythonPackaging::test_demo_shows_comparison": "tests.test_python_packaging.TestPythonPackaging::test_demo_shows_comparison",
+    "../tests/test_python_packaging.py::TestPythonPackaging::test_edge_case_tests_compile": "tests.test_python_packaging.TestPythonPackaging::test_edge_case_tests_compile",
+    "../tests/test_python_packaging.py::TestPythonPackaging::test_edge_case_tests_exist": "tests.test_python_packaging.TestPythonPackaging::test_edge_case_tests_exist",
+    "../tests/test_python_packaging.py::TestPythonPackaging::test_edge_case_tests_pass": "tests.test_python_packaging.TestPythonPackaging::test_edge_case_tests_pass",
+    "../tests/test_python_packaging.py::TestPythonPackaging::test_epoch_version_covered": "tests.test_python_packaging.TestPythonPackaging::test_epoch_version_covered",
+    "../tests/test_python_packaging.py::TestPythonPackaging::test_local_version_covered": "tests.test_python_packaging.TestPythonPackaging::test_local_version_covered",
+    "../tests/test_python_packaging.py::TestPythonPackaging::test_post_and_dev_versions_covered": "tests.test_python_packaging.TestPythonPackaging::test_post_and_dev_versions_covered",
+    "../tests/test_python_packaging.py::TestPythonPackaging::test_prerelease_versions_covered": "tests.test_python_packaging.TestPythonPackaging::test_prerelease_versions_covered"
+  },
+  "min_pass_rate": 1.0,
+  "pytest_version": "9.0.2",
+  "rootdir": "/workspace",
+  "schema_version": 2,
+  "collection_policy": {
+    "excluded_directory_names": [
+      ".mypy_cache",
+      ".pytest_cache",
+      ".ruff_cache",
+      "__pycache__"
+    ],
+    "max_depth": 32,
+    "max_directories": 2048,
+    "max_file_bytes": 8388608,
+    "max_files": 2048,
+    "max_total_bytes": 67108864,
+    "max_total_path_bytes": 4194304,
+    "timeout_seconds": 60
+  },
+  "candidate_skips": {
+    "tests.test_python_packaging.TestPythonPackaging::test_demo_shows_comparison": {
+      "missing_file": "scripts/demo_packaging.py",
+      "message": "Demo failed: python: can't open file '/workspace/packaging/scripts/demo_packaging.py': [Errno 2] No such file or directory"
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "schema_version": 2,
+  "components": [
+    {
+      "id": "native-project-resources",
+      "review": {
+        "path": "artifacts/research/2026-11-13/native-project-resources/review.json",
+        "sha256": "43722091a64a46feb6ec40b079106da0c37ea367bd7306b0f7d944e58d5f8072"
+      },
+      "sources": [
+        "tools/_native_benchmark_runtime.py",
+        "tools/grade_swe_skills_submission.py",
+        "tests/test_native_benchmark_runtime.py",
+        "tests/test_grade_swe_skills_submission.py"
+      ]
+    },
+    {
+      "id": "windows-error-boundary",
+      "review": {
+        "path": "artifacts/research/2026-11-13/current-development-qualification/review.json",
+        "sha256": "f04a82d9d333212282a865dd78af3920ae0f38d3d4616ea2f30100b9a37b871e"
+      },
+      "sources": [
+        "tools/_windows_appcontainer.py",
+        "tools/_windows_storage_budget.py",
+        "tests/test_windows_storage_budget.py",
+        "tests/test_windows_trial_process.py"
+      ]
+    },
+    {
+      "id": "qualification-gate",
+      "review": {
+        "path": "artifacts/research/2026-11-13/current-development-qualification/review.json",
+        "sha256": "f04a82d9d333212282a865dd78af3920ae0f38d3d4616ea2f30100b9a37b871e"
+      },
+      "sources": [
+        "tools/validate_native_qualification_index.py",
+        "tests/test_native_qualification_index.py",
+        ".github/workflows/offline-validation.yml"
+      ]
+    },
+    {
+      "id": "operating-policy",
+      "review": {
+        "path": "artifacts/research/2026-11-13/current-development-qualification/review.json",
+        "sha256": "f04a82d9d333212282a865dd78af3920ae0f38d3d4616ea2f30100b9a37b871e"
+      },
+      "sources": [
+        "AGENTS.md",
+        "CONTRIBUTING.md",
+        "docs/skill-improvement-method.md",
+        "docs/improvement-plan.md"
+      ]
+    },
+    {
+      "id": "publication-byte-retention",
+      "review": {
+        "path": "artifacts/research/2026-11-14/publication-byte-retention/review.json",
+        "sha256": "80a5622971cc1d596809dcecd51ebfaf6adf675aa3306cc7d8815c75bf362016"
+      },
+      "sources": [
+        ".gitattributes"
+      ]
+    }
+  ],
+  "historical_reviews": [
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-13/windows-bootstrap-runtime/review.json",
+        "sha256": "b863bbb96c44462a876908e8394aaf94d62fe03c295db103668518b32744a997"
+      },
+      "superseded_sources": [
+        ".gitattributes",
+        ".github/workflows/offline-validation.yml",
+        "tools/_native_benchmark_runtime.py",
+        "tools/_windows_appcontainer.py",
+        "tools/_windows_storage_budget.py",
+        "tools/grade_swe_skills_submission.py"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-13/maintained-node-replay-setup/review.json",
+        "sha256": "19147ccc73bd844a679c776f294532526d9983c32175897a1bf6339e51f2afdf"
+      },
+      "superseded_sources": [
+        "tools/_native_benchmark_runtime.py",
+        "tools/_windows_appcontainer.py",
+        "tools/_windows_storage_budget.py",
+        "tools/grade_swe_skills_submission.py"
+      ]
+    }
+  ]
+}

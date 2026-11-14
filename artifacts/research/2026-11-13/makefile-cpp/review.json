@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-13",
+  "kind": "source-bound-cpp-overlay-component-review",
+  "source_skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-makefile-generator-skill-md",
+  "source_signature": {
+    "commit_sha": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+    "skill_dir_sha256": "c7b51244ed4d37fdb03e26ad3bd84acbf8efb19e24a7519b166fe54ea9b54796",
+    "skill_file_sha256": "c0090361f2f9999c81050beb7d65aaf4338094559bd227d944aafbf1500286fe"
+  },
+  "upstream": {
+    "repository": "akin-ozer/cc-devops-skills",
+    "pinned_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+    "observed_head": "276af751e659315aaf56d3ad13d7c26f4e72e28a",
+    "commits_ahead": 7,
+    "package_child_git_objects_unchanged": true,
+    "package_children": [
+      {
+        "name": "SKILL.md",
+        "type": "file",
+        "sha": "07ca260903d20aedb6a2293ae3eb677d13cafcab"
+      },
+      {
+        "name": "assets",
+        "type": "dir",
+        "sha": "11927c2b07088197f39014bd7afd3e5721b63400"
+      },
+      {
+        "name": "docs",
+        "type": "dir",
+        "sha": "54161cb54d38a99d134dbaee2bcedb09784d534a"
+      },
+      {
+        "name": "scripts",
+        "type": "dir",
+        "sha": "90efef722d9eb7149a0d5cf5371aa550486cd31d"
+      },
+      {
+        "name": "test",
+        "type": "dir",
+        "sha": "45bf7e25d07c4137f7e12d8d43cb40c08a5434c3"
+      }
+    ],
+    "source_capture_sha256": {
+      "devops-head.json": "7881c3baaa8b1ace96efc833f5b7bcc401b72b3b6a777eeada5d6769e4c992ce",
+      "devops-compare.json": "062ef8bb694b3ade77e23792279d77c3079414dd2d80a993ff95f23bc86f3543",
+      "package-directory-0.json": "78583097a50060611b49695b878950c9b5d8e4378e0661673db01316861bf48a",
+      "package-directory-1.json": "53bbdf698e60a5640359d5b9fa3ba6317f28353ed62338d96a479092e47b2fc1",
+      "skill.source.json": "1ea620572ebbbc5c9c1ed12a3a252bd6e95134f7b2df253ea84d389a1a652346",
+      "generator.source.json": "3dfade75eddc033c803a324465850fcc939977e59bcccb350a614881877d119e",
+      "license.source.json": "03fba3f742bfdf3e2625a5bb5ed9807f8748e329c21dc57e2d257c57fc4691e6"
+    },
+    "mirror_note": "Current upstream raw skill becomes the exact locked mirror under the existing deterministic catalog canonicalization. No mirror was edited."
+  },
+  "karpathy_derived_baseline": {
+    "former_repository": "forrestchang/andrej-karpathy-skills",
+    "current_repository": "multica-ai/andrej-karpathy-skills",
+    "github_repository_id": 1142983825,
+    "pinned_and_observed_head": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+    "content_update_required": false,
+    "captures": {
+      "baseline-redirect.json": "352431ca23bd280c671d873ffd514d908377a4aeda7eee7b1f214ff17436c8e2",
+      "baseline-canonical.json": "0f7c2c62cbe03176dba3c8b19a1acefe2b9e32e4821f1648ca4d52605baf5b0e",
+      "baseline-head.json": "f87a2261fa13442ce1baef831852096ed89f696bc2f0224d0d6b29d8d7e8930d"
+    },
+    "access_note": "The old URL returned a repository-ID redirect. The connector rejected the numeric endpoint as unsupported; the supported canonical URL succeeded and its matching repository ID was verified. This was not a user or server access block."
+  },
+  "primary_page_captures": [
+    {
+      "url": "https://gcc.gnu.org/onlinedocs/gcc/OpenMP.html",
+      "success": true,
+      "status_code": 200,
+      "native_sha256": "e6f56c4f0aeb848f40e81dbc2cf98a13f9c922a376bfa86c0eaa1ea2d9b826b7",
+      "provider_version": "0.9.5+catalog.portable4",
+      "text_characters": 1844,
+      "scope": "GCC option and automatic runtime-link semantics",
+      "scope_reviewed": true,
+      "failure": null
+    },
+    {
+      "url": "https://clang.llvm.org/docs/OpenMPSupport.html",
+      "success": true,
+      "status_code": 200,
+      "native_sha256": "939db635ee9458f0f598e3507f4372694350d0abf8261d0440f1279d0074ae4d",
+      "provider_version": "0.9.5+catalog.portable4",
+      "text_characters": 48962,
+      "scope": "Clang/OpenMP capability context, not a tested Clang build",
+      "scope_reviewed": true,
+      "failure": null
+    },
+    {
+      "url": "https://www.gnu.org/software/make/manual/html_node/Automatic-Prerequisites.html",
+      "success": false,
+      "status_code": null,
+      "native_sha256": "8268932bc332f987a5ccd2a090d85547245cb83eb1a87fcd5c27578a1e3c4b30",
+      "provider_version": "0.9.5+catalog.portable4",
+      "text_characters": 0,
+      "scope": "GNU page unavailable; no content admitted",
+      "scope_reviewed": false,
+      "failure": "Native Page.goto: net::ERR_CONNECTION_TIMED_OUT; no fallback reader or content admission."
+    }
+  ],
+  "independent_original_contract": {
+    "path": "artifacts/research/2026-11-13/makefile-cpp/original-contract.json",
+    "sha256": "cf550a385feec22e4293deb70f0efb81b190117360ceda8d827806a21af0ef42",
+    "fixture_source_sha256": "2f9cf6acfd7561e047283e2e41bcdfed1b5a99d00c435348a9c2bca4907284fc",
+    "definition_scope": "Arithmetic/OpenMP compiler behavior and a program with no test suite defined before authoring the maintained overlay; no agent benchmark solutions or graders used."
+  },
+  "repair": {
+    "overlay_path": "included/improved/skills/makefile-generator-cpp",
+    "scope": "C++ executable guidance and optional flat-src GNU Make scaffold. Existing C repairs and immutable upstream resources remain unchanged.",
+    "package_file_sha256": {
+      "generate.py": "aaff7fb0607dd8924d6216b832b0ee73f7e06d779a814578c8ad3031f129b4f0",
+      "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "NOTICE.md": "1082af69738125487ab39dcf5b738f122388f27a6cbccab5b900675cd35debff",
+      "provenance/original-generate.sh": "f85287a85ab0b152b2d7f8681642d616031896e4e75d45b78970de514a324747",
+      "provenance/original-SKILL.md": "c0090361f2f9999c81050beb7d65aaf4338094559bd227d944aafbf1500286fe",
+      "SKILL.md": "4384083e7089238e408735d47630af71e0ddb453c62354578776c32b673f2acf",
+      "templates/cpp.mk": "7c8df9fa6b16ed267b249e19e277579d17320b8b0a4a94a9c78c2959b56e4384",
+      "test_generator.py": "8a002cc3e5254b1dd5783fe673d95c50f15bf5eded7ede3e114e7808775d821c"
+    },
+    "changes": [
+      "Preserve CXXFLAGS through link-driver invocation, with LDFLAGS before objects and LDLIBS after them.",
+      "Use extension-preserving object paths for .cpp/.cc/.cxx and compiler-generated transitive header dependencies.",
+      "Do not invent application --test, install or deployment targets.",
+      "Generate without overwriting files; offer read-only scaffold comparison.",
+      "Keep the entrypoint concise and require actual project/toolchain inspection."
+    ]
+  },
+  "qualification": {
+    "independent_prototype_sha256": "09a08dabe64080ee50c6476c6e5e6374342cda267ee5155bba56c2c409708500",
+    "prototype_checks": 5,
+    "lint_format_types_passed": true,
+    "native_linux_tests_passed": 6,
+    "native_linux_skipped": 0,
+    "windows_generation_tests_passed": 2,
+    "windows_compiler_tests_skipped": 4,
+    "native_result_path": "artifacts/research/2026-11-13/makefile-cpp/maintained-contract.json",
+    "native_result_sha256": "9f85d1e9920353c8a0ddd78f37374ce64234b7a127ad679aa8d5ccdb12a76164",
+    "compiler": "GCC C++ 13.3.0",
+    "make": "GNU Make 4.3",
+    "image_reference": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+    "images_pulled": 0,
+    "container_lease_closed": true,
+    "remaining_owned_containers": 0,
+    "tested_code_identical_after_promotion": true,
+    "make_versions": [
+      "GNU Make 4.3",
+      "GNU Make 4.4.1"
+    ],
+    "make44_result": {
+      "path": "artifacts/research/2026-11-13/makefile-cpp/maintained-make44.json",
+      "sha256": "af41aeb006cd087554f1773b13c3091b0423c59862edb7bf413ecd08e6e63794",
+      "native_tests_passed": 6,
+      "skipped": 0,
+      "image_pulls": 0,
+      "remaining_owned_containers": 0,
+      "source_archive_sha256": "dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3"
+    },
+    "repository_focused_tests": {
+      "passed": 721,
+      "typed_python_files": 327,
+      "qualification_sha256": "dad14a5cb32c2f6324f90c82d48b1d22bd389f815cd4e7d71b65d8979d43883d"
+    },
+    "full_repository_suite": {
+      "passed": 3137,
+      "skipped": 18,
+      "seconds": 383.78,
+      "frozen_inputs": 22238,
+      "source_unchanged": true,
+      "qualification_sha256": "0ba61dbcda830ed4fdc76b3cc3619ef218de26a737f7ba46d3cf18c1df0fe393",
+      "coverage_xml_sha256": "0ea15adc633c2b49113235601f37263989639f0eb561ce10cda00b475b8df69e",
+      "line_rate": 0.7585,
+      "workflow_commands_and_overlay_manifest_passed": true
+    }
+  },
+  "resource_inventory_path": "artifacts/research/2026-11-13/makefile-cpp/resources.json",
+  "resource_inventory_sha256": "0ffb67826656ae58710507bef45f2558cbab54e564f7c67a09f772fb9dbcca45",
+  "whole_skill_research_complete": false,
+  "model_invocations": 0,
+  "agent_efficacy_established": false,
+  "performance_status": "unbenchmarked",
+  "commercial_release_ready": false,
+  "limitations": [
+    "Other original resource guides and language branches remain pending or held; this is not a complete upstream-package qualification.",
+    "Nested sources, whitespace in source filenames, shared libraries, MSVC and native Windows compiler execution were not qualified.",
+    "Compiler/toolchain flag changes require affected outputs to be rebuilt; the scaffold does not fingerprint flag values.",
+    "The tested compiler is an admitted compatibility environment, not a bundled or claimed latest GCC release.",
+    "Hosted workflow acceptance, independent model comparisons and significant improvement over both baselines remain unproved."
+  ]
+}

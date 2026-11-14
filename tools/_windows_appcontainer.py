@@ -11,6 +11,7 @@ import subprocess
 import sys
 import time
 import uuid
+from collections.abc import Callable
 from contextlib import ExitStack
 from ctypes import wintypes as w
 from pathlib import Path
@@ -61,6 +62,12 @@ def last_error() -> int:
     if sys.platform != "win32":
         raise ValueError("Windows error state requires Windows")
     return c.get_last_error()
+
+
+def set_last_error(code: int) -> None:
+    if sys.platform != "win32":
+        raise ValueError("Windows error state requires Windows")
+    c.set_last_error(code)
 
 
 def require(value: Any) -> None:
@@ -494,7 +501,14 @@ def stop_process(native: Native, process: Any) -> None:
 
 
 def collect(
-    native: Native, process: Any, pipes: list[Pipe], files: list[BinaryIO], timeout: float, output_limit: int
+    native: Native,
+    process: Any,
+    pipes: list[Pipe],
+    files: list[BinaryIO],
+    timeout: float,
+    output_limit: int,
+    *,
+    monitor: Callable[[], str | None] | None = None,
 ) -> tuple[str | None, int]:
     wait = native.function("kernel", "WaitForSingleObject", [w.HANDLE, w.DWORD], w.DWORD)
     deadline, total = time.monotonic() + timeout, 0
@@ -508,6 +522,10 @@ def collect(
                 total += len(chunk)
                 if total > output_limit:
                     return "output_limit", total
+        if monitor is not None:
+            reason = monitor()
+            if reason is not None:
+                return reason, total
         state = wait(process, 0)
         if state not in {0, 0x102}:
             raise win_error(last_error())

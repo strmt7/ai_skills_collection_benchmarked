@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "task_id": "declared-nonzero",
+  "build_command": "python -c 'raise SystemExit(7)'",
+  "working_dir": "/workspace/fixture",
+  "expected_exit_code": 7,
+  "timeout_seconds": 10
+}

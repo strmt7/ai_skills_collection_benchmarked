@@ -1,0 +1,66 @@
+{
+  "complete_project_files": 541,
+  "original_project_files_unchanged": true,
+  "scorer_source_commit": "4d3450d9216a590a8726fcb3604b5143daca776b",
+  "scorer_files": [
+    {
+      "path": "src/__init__.py",
+      "git_blob_sha1": "bc42b93bc34d553fb7a217698c479d9a190fb5d2",
+      "sha256": "c3234a174bda618c5717ff88f8decf74c6da13647ddff1583d04e07b5094c5b6"
+    },
+    {
+      "path": "src/evaluator/__init__.py",
+      "git_blob_sha1": "7faa77830b1cb8a61bd17000deaea55c79f0e2a9",
+      "sha256": "54e9c140ed7500711f6e340c487e1a175d72cdffad3f27747fefc7461a13dadc"
+    },
+    {
+      "path": "src/evaluator/base_evaluator.py",
+      "git_blob_sha1": "9bc3ecbc794c41bb37a7a2eab66087051ecbec22",
+      "sha256": "7d8d4cce9d37a726f5fcdb26b42c05f70526dbab6062709cf4ac108d5f178f3a"
+    },
+    {
+      "path": "src/evaluator/build_checker.py",
+      "git_blob_sha1": "c7b482ec78938a12b2144229efa0b1d3ed28554d",
+      "sha256": "55ffa6288278d5329f85231098c0b1d470bc182c9b40dc13fa2a8671a9b3a96d"
+    },
+    {
+      "path": "src/evaluator/quality_analyzer.py",
+      "git_blob_sha1": "0de1f331d91bbeb465c99a98e6c27b36333fe952",
+      "sha256": "d2221852687d27713f14d160698c711519aec90f4968e7912c472b1588962936"
+    },
+    {
+      "path": "src/evaluator/unit_test_runner.py",
+      "git_blob_sha1": "b63cd6d4993b7b893d24462c5d38547e9623c485",
+      "sha256": "4eb50a5da8e47ba6d5cb1fa6b41de11011c5623be834ae9aabd6672d293d8d2c"
+    },
+    {
+      "path": "src/orchestrator/__init__.py",
+      "git_blob_sha1": "7a5eacf4c282c280bf8ef5a5718b08d250022494",
+      "sha256": "5c5d6124704734b74867fb9594eea732f811ec8cb314099718b2ef05ba26b40d"
+    },
+    {
+      "path": "src/orchestrator/docker_manager.py",
+      "git_blob_sha1": "fa9e3394066e84bb2c28137414c2024ab38a883f",
+      "sha256": "2e8e0ae55df39ac7b95e06a6bc62f27d7d0e7b4e6c55dd68d4494126ce774e9c"
+    },
+    {
+      "path": "src/orchestrator/enroot_manager.py",
+      "git_blob_sha1": "44f645e66dfded3514b79f9094cf7cf44527d298",
+      "sha256": "6f2cdf28b7bd739c9b644c7d28c4687e7174c74d5a8f3656c0f9264ab0187680"
+    },
+    {
+      "path": "src/orchestrator/lifecycle.py",
+      "git_blob_sha1": "828b6e4612c38dfccaef373100de3b7dc8581daa",
+      "sha256": "083a9fcd8490b489289e07c827ac99f2f5d75e10d20956f9584b8dbfc2dffb4d"
+    },
+    {
+      "path": "src/orchestrator/logger.py",
+      "git_blob_sha1": "d4c8782dffd229c73b946bb786f95af7d9848374",
+      "sha256": "107a6318313e7ea3cc097e8bd666db204350faea05d7ae4fddf07d8b39a5b468"
+    }
+  ],
+  "source_capture_sha256": "f54467f95016c2b48b455cac32ecac3abaf18018758600d346a8c523c2b32db4",
+  "task_solution_written": false,
+  "model_invocations": 0,
+  "counted_attempts": 0
+}

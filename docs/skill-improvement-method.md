@@ -10,6 +10,13 @@ Upstream mirrors remain immutable. Changes belong in attributable maintained
 or repaired overlays, preserving original sources and licenses. Evidence for an
 older revision never qualifies a later revision automatically.
 
+Design and functional testing need not wait for complete model-benchmark
+infrastructure. Keep new revisions experimental until their applicable evidence
+supports promotion. A frozen comparison protects that comparison's inputs;
+ordinary development may continue in a separately identified revision. Preserve
+the earlier bytes and outcomes instead of making the entire catalog wait for
+one runner or model-access dependency.
+
 ## Design from the work
 
 For each skill, establish intended users and tasks, supported versions,

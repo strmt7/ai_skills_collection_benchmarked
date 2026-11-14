@@ -18,10 +18,13 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--packages", type=Path, required=True)
     parser.add_argument("--requirements", type=Path, action="append", default=[])
     parser.add_argument("--import", dest="imports", action="append", default=[])
+    parser.add_argument("--require-package-imports", action="store_true")
     return parser
 
 
-def observation(packages: Path, requirements: list[Path], imports: list[str]) -> dict[str, object]:
+def observation(
+    packages: Path, requirements: list[Path], imports: list[str], *, require_package_imports: bool = False
+) -> dict[str, object]:
     sys.path.insert(0, str(packages))
     versions: dict[str, str] = {}
     distributions = list(importlib.metadata.distributions(path=[str(packages)]))
@@ -64,8 +67,14 @@ def observation(packages: Path, requirements: list[Path], imports: list[str]) ->
                     raise ValueError(f"Unsatisfied installed dependency: {requirement.name}")
     elif versions:
         raise ValueError("A standard-library profile contains undeclared packages")
+    origins = {}
     for name in imports:
-        importlib.import_module(name)
+        module = importlib.import_module(name)
+        if require_package_imports:
+            origin = getattr(module, "__file__", None)
+            if not isinstance(origin, str) or not Path(origin).resolve().is_relative_to(packages.resolve()):
+                raise ValueError(f"Selected import did not load from the owned packages: {name}")
+            origins[name] = str(Path(origin).resolve())
     return {
         "python": platform.python_version(),
         "prefix": sys.prefix,
@@ -75,12 +84,24 @@ def observation(packages: Path, requirements: list[Path], imports: list[str]) ->
         "isolated": sys.flags.isolated,
         "no_user_site": sys.flags.no_user_site,
         "packages": sorted(versions.items()),
+        **(
+            {"import_origins": origins, "os": platform.system(), "machine": platform.machine()}
+            if require_package_imports
+            else {}
+        ),
     }
 
 
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
-    print(json.dumps(observation(args.packages, args.requirements, args.imports), sort_keys=True))
+    print(
+        json.dumps(
+            observation(
+                args.packages, args.requirements, args.imports, require_package_imports=args.require_package_imports
+            ),
+            sort_keys=True,
+        )
+    )
     return 0
 
 

@@ -1,0 +1,25 @@
+{
+  "source_commit": "4d3450d9216a590a8726fcb3604b5143daca776b",
+  "library_freeze_sha256": "ef2b41429643da1fdf105de0efc2d06152c7ca30278f354b672bc8da9bbd5520",
+  "selection_sha256": "42de081f53b0273f936ea5ca12dd0a6f69da0c33ade087b7b76ac8e6b7bee1c5",
+  "task_id": "swe-skills-bench/batch4/pydicom-dicom-parsing",
+  "purpose": "Original task/scorer integration only. Candidate skill bytes are frozen; these exposed development materials must not define an untouched confirmation set.",
+  "records": [
+    {
+      "path": "tasks/batch4/pydicom-dicom-parsing.md",
+      "git_blob_sha1": "90685d75108c736439b98d08c54a0cfa0e927535",
+      "bytes": 3300,
+      "sha256": "fd1ec73df6e6ee48ceac3dcb9f18f654623a55371e95a361740e89c972139487",
+      "url": "https://github.com/ControllableModel/SWE-Skills-Bench/blob/4d3450d9216a590a8726fcb3604b5143daca776b/tasks/batch4/pydicom-dicom-parsing.md"
+    },
+    {
+      "path": "tests/batch4/test_pydicom_dicom_parsing.py",
+      "git_blob_sha1": "9cfd34a13f339803268ea40844b39de1f12529ab",
+      "bytes": 19072,
+      "sha256": "8cf292604c990ca9de963dc108557e06bbb406316a0e608d384d2c6c1aa88925",
+      "url": "https://github.com/ControllableModel/SWE-Skills-Bench/blob/4d3450d9216a590a8726fcb3604b5143daca776b/tests/batch4/test_pydicom_dicom_parsing.py"
+    }
+  ],
+  "model_invocations": 0,
+  "publisher_outcomes_or_solutions_read": false
+}

@@ -1,7 +1,7 @@
 # Contributing
 
-This repository governs three independent work loops (catalog mirror, artifact
-& test, and repair overlay). Read [`AGENTS.md`](AGENTS.md) before any change
+This repository separates source mirroring, maintained skill/tool improvements,
+repairs and independent evaluation. Read [`AGENTS.md`](AGENTS.md) before any change
 that touches more than one of those loops.
 
 For skill installation and use, start with the
@@ -37,6 +37,7 @@ their linked instructions and actual triggers.
 | Static benchmarks | `python3 tools/run_static_benchmarks.py --check` | `.github/workflows/offline-validation.yml` |
 | Risk audit | `python3 tools/audit_skill_quality.py --check` | `.github/workflows/offline-validation.yml` |
 | Improvement evidence | `python3 tools/manage_improvement_ledger.py --check --json` | `.github/workflows/offline-validation.yml` |
+| Current native qualification | `python3 tools/validate_native_qualification_index.py --check --json` | `.github/workflows/offline-validation.yml` |
 | Workflow evaluator controls | `python3 tools/report_workflow_evaluator_controls.py --check --json` | `.github/workflows/offline-validation.yml` |
 | Frontend component evidence | `python3 benchmarks/component-controls/frontend/prepare.py --check` | `.github/workflows/offline-validation.yml` |
 | API/backend component evidence | `python3 benchmarks/component-controls/backend/prepare_backend.py --check` | `.github/workflows/offline-validation.yml` |
@@ -135,11 +136,13 @@ Test coverage lives in `tests/test_hash_portability.py`; do not regress.
 ## Immutable Audit Model
 
 The 673 SKILL.md files under `included/skills/` are mirrored from pinned
-upstream commits and MUST NOT be edited by hand. Quality fixes belong in the
-upstream repository; this repo records the result and may add a *repaired
-overlay* under `included/repaired/` whose generator preserves the original
-text byte-for-byte under `provenance/`. See [`AGENTS.md`](AGENTS.md) for the
-full rule set.
+upstream commits and MUST NOT be edited by hand. Quality fixes and transferable
+redesigns may be developed locally in attributable maintained overlays under
+`included/improved/` or repaired overlays under `included/repaired/`; they do not
+need to wait for upstream acceptance. Repairs preserve the original text
+byte-for-byte under `provenance/`. Keep older revisions and evidence, qualify
+new revisions independently and distinguish functional readiness from measured
+agent benefit. See [`AGENTS.md`](AGENTS.md) for the full rule set.
 
 ## Commit attribution
 

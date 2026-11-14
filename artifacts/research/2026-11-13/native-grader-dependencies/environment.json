@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "python_version": "3.12.3",
+  "machine": "x86_64",
+  "resources": {
+    "memory_bytes": 1610612736,
+    "tmpfs_bytes": 536870912
+  },
+  "setup_timeout_seconds": 120,
+  "wheels": [
+    {
+      "filename": "iniconfig-2.3.1-py3-none-any.whl",
+      "project": "iniconfig",
+      "version": "2.3.1",
+      "bytes": 7552,
+      "sha256": "9121e2c1fdb355232495be3194c8dfe87ccc2d5dee45947b78e68f499790d7a7",
+      "url": "https://files.pythonhosted.org/packages/56/43/4ca9e49d27a1fcf6bece6f6aec0ea46bb9112489b93d4b688fb415457bdb/iniconfig-2.3.1-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/iniconfig/2.3.1/json",
+      "metadata_sha256": "ab4d5df71d2a4f01a0eb418d7809bb22dca3293991a369309f068c07c1471557"
+    },
+    {
+      "filename": "numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "project": "numpy",
+      "version": "2.5.4",
+      "bytes": 16727283,
+      "sha256": "fbde6962867ee75b48b0ee29b2b9372ec5d617799dbaf38e82dc0596f2f7738a",
+      "url": "https://files.pythonhosted.org/packages/43/a3/c799c62e19c337e6d3770b08e475887fb30ce8477d3c09efca6b2f0228a6/numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "metadata_url": "https://pypi.org/pypi/numpy/2.5.4/json",
+      "metadata_sha256": "3d5ab646290a0954f48ca6139bccb402377e54165b064b567d50c1106ce5678f"
+    },
+    {
+      "filename": "packaging-26.3-py3-none-any.whl",
+      "project": "packaging",
+      "version": "26.3",
+      "bytes": 129956,
+      "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+      "url": "https://files.pythonhosted.org/packages/63/34/ba1c580383c9eada3711951fef0795c80b829a078d72188184bcab9dd527/packaging-26.3-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/packaging/26.3/json",
+      "metadata_sha256": "4f190d2f0b312b3086058cee64ab4333bf3ce67fb78b4c2bdb43899049b29f4d"
+    },
+    {
+      "filename": "pip-26.3-py3-none-any.whl",
+      "project": "pip",
+      "version": "26.3",
+      "bytes": 1950951,
+      "sha256": "f3b60b20ffaadd4415ed7957212a38ac63fa4c5fa375bd0f4a797777940fad13",
+      "url": "https://files.pythonhosted.org/packages/07/25/ee8c38ae72d66b844ce8eb9711ba905dba21ca1a8a0c960057c41cd23337/pip-26.3-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/pip/26.3/json",
+      "metadata_sha256": "9cee103938ec9d9fb6201ecd0eb8a51b1893e01358f75c162d7c7cf6a9d8fa20"
+    },
+    {
+      "filename": "pluggy-1.7.0-py3-none-any.whl",
+      "project": "pluggy",
+      "version": "1.7.0",
+      "bytes": 27082,
+      "sha256": "7dd7b0d8832ba3cb632c306926ded123429211b83641b35dc5c41ad2d34f9bec",
+      "url": "https://files.pythonhosted.org/packages/40/9e/2b38731e0fc536806f16490e1a12d7f0dc2a1235aa8cc07bcc75416a7daa/pluggy-1.7.0-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/pluggy/1.7.0/json",
+      "metadata_sha256": "9e8f441bba8382eabf6febf386a5b9610cfe0c16b60b96e7b4b1831bd6d96361"
+    },
+    {
+      "filename": "pydicom-3.0.2-py3-none-any.whl",
+      "project": "pydicom",
+      "version": "3.0.2",
+      "bytes": 2376822,
+      "sha256": "abf971a5440f84dbaf42c4b6758e30e62480902584f8b270b9a5d146e278a07b",
+      "url": "https://files.pythonhosted.org/packages/46/e0/60466c6d712dad2cf807df315e39863e91609ffd1064ecb835994460bbda/pydicom-3.0.2-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/pydicom/3.0.2/json",
+      "metadata_sha256": "cb013cc464e41a2836995fb840aa0b9108a88163ec738d0592224749087bfadc"
+    },
+    {
+      "filename": "pygments-2.21.0-py3-none-any.whl",
+      "project": "pygments",
+      "version": "2.21.0",
+      "bytes": 1250147,
+      "sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9",
+      "url": "https://files.pythonhosted.org/packages/71/46/17f022dd3e953bf20a04a028a21ec746d942f8d2af30fa0f124fa0e6a684/pygments-2.21.0-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/pygments/2.21.0/json",
+      "metadata_sha256": "330104a10adc8a587e3f98f4e207557125ca0c1d489e129334da5acb2b813a03"
+    },
+    {
+      "filename": "pytest-9.2.0-py3-none-any.whl",
+      "project": "pytest",
+      "version": "9.2.0",
+      "bytes": 411776,
+      "sha256": "07acdcf88ec174f907dc01af70bf52d49b014bbab03faeeade31c96b18c2e588",
+      "url": "https://files.pythonhosted.org/packages/51/39/1f5d8c8877a0fa327db959c19341d4be61660de1ab6b7391f9eb805bcd67/pytest-9.2.0-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/pytest/9.2.0/json",
+      "metadata_sha256": "9bfb2ab87f53ac4e1770fb14b2431e5a4a1db5d8bd39189f441b92d8b59e94cc"
+    }
+  ],
+  "native_runtime_image_reference": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+  "base_interpreter_unchanged": true,
+  "identical_frozen_inventory_across_three_native_grades": true,
+  "system_installation_changed": false,
+  "native_pip_dependency_check": true,
+  "original_source_import_bound": true
+}

@@ -1,0 +1,183 @@
+{
+  "observation": {
+    "passed": true,
+    "kind": "source-grounded-component-controls",
+    "versions": {
+      "make": "GNU Make 4.3",
+      "compiler": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+    },
+    "cases": [
+      {
+        "case": "original-unity-regeneration",
+        "first_compile": 0,
+        "second_compile": 2,
+        "includes": 4,
+        "expected_observation": true
+      },
+      {
+        "case": "maintained-unity-regeneration",
+        "first_compile": 0,
+        "second_compile": 0,
+        "includes": 2,
+        "expected_observation": true
+      },
+      {
+        "case": "maintained-explicit-source-removal",
+        "exit_code": 0,
+        "remaining_includes": 1,
+        "expected_observation": true
+      },
+      {
+        "case": "original-recursive-failure",
+        "exit_code": 0,
+        "expected_observation": true
+      },
+      {
+        "case": "maintained-recursive-failure",
+        "exit_code": 2,
+        "expected_observation": true
+      },
+      {
+        "case": "maintained-recursive-success",
+        "exit_code": 0,
+        "expected_observation": true
+      },
+      {
+        "case": "original-profile-flag",
+        "exit_code": 2,
+        "expected_observation": true
+      },
+      {
+        "case": "supported-trace",
+        "exit_code": 0,
+        "expected_observation": true
+      }
+    ],
+    "records": [
+      {
+        "argv": [
+          "make",
+          "--no-print-directory",
+          "unity.o",
+          "CC=/usr/bin/gcc"
+        ],
+        "exit_code": 0,
+        "stdout": "Generating unity build...\n/usr/bin/gcc  -c unity.c -o unity.o\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "make",
+          "--no-print-directory",
+          "unity.o",
+          "CC=/usr/bin/gcc"
+        ],
+        "exit_code": 2,
+        "stdout": "Generating unity build...\n/usr/bin/gcc  -c unity.c -o unity.o\n",
+        "stderr": "In file included from unity.c:3:\nsrc/one.c:1:5: error: redefinition of ‘one’\n    1 | int one(void) { return 1; }\n      |     ^~~\nIn file included from unity.c:1:\nsrc/one.c:1:5: note: previous definition of ‘one’ with type ‘int(void)’\n    1 | int one(void) { return 1; }\n      |     ^~~\nIn file included from unity.c:4:\nsrc/two.c:1:5: error: redefinition of ‘two’\n    1 | int two(void) { return 2; }\n      |     ^~~\nIn file included from unity.c:2:\nsrc/two.c:1:5: note: previous definition of ‘two’ with type ‘int(void)’\n    1 | int two(void) { return 2; }\n      |     ^~~\nmake: *** [Makefile:10: unity.o] Error 1\n"
+      },
+      {
+        "argv": [
+          "make",
+          "--no-print-directory",
+          "unity.o",
+          "CC=/usr/bin/gcc"
+        ],
+        "exit_code": 0,
+        "stdout": "/usr/bin/gcc -c \"unity.c\" -o \"unity.o\"\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "make",
+          "--no-print-directory",
+          "unity.o",
+          "CC=/usr/bin/gcc"
+        ],
+        "exit_code": 0,
+        "stdout": "/usr/bin/gcc -c \"unity.c\" -o \"unity.o\"\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "make",
+          "--no-print-directory",
+          "unity.o",
+          "CC=/usr/bin/gcc"
+        ],
+        "exit_code": 0,
+        "stdout": "/usr/bin/gcc -c \"unity.c\" -o \"unity.o\"\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "make",
+          "--no-print-directory",
+          "-j2",
+          "all"
+        ],
+        "exit_code": 0,
+        "stdout": "for dir in lib1 lib2 app; do /usr/bin/make -C $dir; done\nlib2\napp\n",
+        "stderr": "make[1]: *** [Makefile:3: all] Error 1\n"
+      },
+      {
+        "argv": [
+          "make",
+          "--no-print-directory",
+          "-j2",
+          "all"
+        ],
+        "exit_code": 2,
+        "stdout": "/usr/bin/make --no-print-directory -C \"lib1\"\n/usr/bin/make --no-print-directory -C \"lib2\"\nlib2\n",
+        "stderr": "make[1]: *** [Makefile:3: all] Error 1\nmake: *** [Makefile:5: lib1] Error 2\nmake: *** Waiting for unfinished jobs....\n"
+      },
+      {
+        "argv": [
+          "make",
+          "--no-print-directory",
+          "-j2",
+          "all"
+        ],
+        "exit_code": 0,
+        "stdout": "/usr/bin/make --no-print-directory -C \"lib1\"\n/usr/bin/make --no-print-directory -C \"lib2\"\nlib1\nlib2\n/usr/bin/make --no-print-directory -C \"app\"\napp\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "make",
+          "--no-print-directory",
+          "--profile=profile.log",
+          "all"
+        ],
+        "exit_code": 2,
+        "stdout": "",
+        "stderr": "/usr/bin/make: unrecognized option '--profile=profile.log'\nUsage: make [options] [target] ...\nOptions:\n  -b, -m                      Ignored for compatibility.\n  -B, --always-make           Unconditionally make all targets.\n  -C DIRECTORY, --directory=DIRECTORY\n                              Change to DIRECTORY before doing anything.\n  -d                          Print lots of debugging information.\n  --debug[=FLAGS]             Print various types of debugging information.\n  -e, --environment-overrides\n                              Environment variables override makefiles.\n  -E STRING, --eval=STRING    Evaluate STRING as a makefile statement.\n  -f FILE, --file=FILE, --makefile=FILE\n                              Read FILE as a makefile.\n  -h, --help                  Print this message and exit.\n  -i, --ignore-errors         Ignore errors from recipes.\n  -I DIRECTORY, --include-dir=DIRECTORY\n                              Search DIRECTORY for included makefiles.\n  -j [N], --jobs[=N]          Allow N jobs at once; infinite jobs with no arg.\n  -k, --keep-going            Keep going when some targets can't be made.\n  -l [N], --load-average[=N], --max-load[=N]\n                              Don't start multiple jobs unless load is below N.\n  -L, --check-symlink-times   Use the latest mtime between symlinks and target.\n  -n, --just-print, --dry-run, --recon\n                              Don't actually run any recipe; just print them.\n  -o FILE, --old-file=FILE, --assume-old=FILE\n                              Consider FILE to be very old and don't remake it.\n  -O[TYPE], --output-sync[=TYPE]\n                              Synchronize output of parallel jobs by TYPE.\n  -p, --print-data-base       Print make's internal database.\n  -q, --question              Run no recipe; exit status says if up to date.\n  -r, --no-builtin-rules      Disable the built-in implicit rules.\n  -R, --no-builtin-variables  Disable the built-in variable settings.\n  -s, --silent, --quiet       Don't echo recipes.\n  --no-silent                 Echo recipes (disable --silent mode).\n  -S, --no-keep-going, --stop\n                              Turns off -k.\n  -t, --touch                 Touch targets instead of remaking them.\n  --trace                     Print tracing information.\n  -v, --version               Print the version number of make and exit.\n  -w, --print-directory       Print the current directory.\n  --no-print-directory        Turn off -w, even if it was turned on implicitly.\n  -W FILE, --what-if=FILE, --new-file=FILE, --assume-new=FILE\n                              Consider FILE to be infinitely new.\n  --warn-undefined-variables  Warn when an undefined variable is referenced.\n\nThis program built for x86_64-pc-linux-gnu\nReport bugs to <bug-make@gnu.org>\n"
+      },
+      {
+        "argv": [
+          "make",
+          "--no-print-directory",
+          "--trace",
+          "all"
+        ],
+        "exit_code": 0,
+        "stdout": "Makefile:3: target 'all' does not exist\nprintf \"%s\\n\" observed\nobserved\n",
+        "stderr": ""
+      }
+    ],
+    "source_sha256": "8b928d0ac61c01fc83255ba96a29e480c9496d991f72c47f561b08558b1f7a6f",
+    "maintained_recipes": {
+      "unity": ".DEFAULT_GOAL := unity.o\n.DELETE_ON_ERROR:\nSOURCES := src/one.c src/two.c\nunity.c: $(SOURCES) Makefile\n\t@set -eu; { for src in $(SOURCES); do printf '#include \"%s\"\\n' \"$$src\"; done; } > \"$@.tmp\"; mv \"$@.tmp\" \"$@\"\nunity.o: unity.c\n\t$(CC) -c \"$<\" -o \"$@\"\n",
+      "recursive": ".PHONY: all lib1 lib2 app\nall: app\napp: lib1 lib2\nlib1 lib2 app:\n\t+$(MAKE) --no-print-directory -C \"$@\"\n"
+    },
+    "model_invocations": 0,
+    "scope": "GNU Make/Linux C component examples only; no model efficacy or speed estimate."
+  },
+  "program_sha256": "c9a0f40d1fca1ac3e40f83723ede6d93a9cdca9f71b9f926de1d98e3b61237a0",
+  "image_reference": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+  "lease_closed": true,
+  "remaining_owned_containers": 0,
+  "images_pulled": 0,
+  "model_invocations": 0,
+  "runtime_admitted": false
+}

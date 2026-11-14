@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "specification": {
+    "schema_version": 1,
+    "python_version": "3.14.10",
+    "architecture": "AMD64",
+    "imports": [
+      "numpy",
+      "pydicom",
+      "pytest",
+      "packaging"
+    ],
+    "packages": [
+      {
+        "name": "colorama",
+        "version": "0.4.6",
+        "extras": [],
+        "filename": "colorama-0.4.6-py2.py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl",
+        "bytes": 25335,
+        "sha256": "4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6"
+      },
+      {
+        "name": "iniconfig",
+        "version": "2.3.1",
+        "extras": [],
+        "filename": "iniconfig-2.3.1-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/56/43/4ca9e49d27a1fcf6bece6f6aec0ea46bb9112489b93d4b688fb415457bdb/iniconfig-2.3.1-py3-none-any.whl",
+        "bytes": 7552,
+        "sha256": "9121e2c1fdb355232495be3194c8dfe87ccc2d5dee45947b78e68f499790d7a7"
+      },
+      {
+        "name": "numpy",
+        "version": "2.5.4",
+        "extras": [],
+        "filename": "numpy-2.5.4-cp314-cp314-win_amd64.whl",
+        "url": "https://files.pythonhosted.org/packages/52/9a/e1e512ebc948d5b9dd33b08736760f0ebbed2848fd4eda1f553088a6dcee/numpy-2.5.4-cp314-cp314-win_amd64.whl",
+        "bytes": 12703552,
+        "sha256": "2ca144f15135b6212a5c47b1e2aeca6e412f102f95a2d5d88d8aec77eb255de3"
+      },
+      {
+        "name": "packaging",
+        "version": "26.3",
+        "extras": [],
+        "filename": "packaging-26.3-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/63/34/ba1c580383c9eada3711951fef0795c80b829a078d72188184bcab9dd527/packaging-26.3-py3-none-any.whl",
+        "bytes": 129956,
+        "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+      },
+      {
+        "name": "pluggy",
+        "version": "1.7.0",
+        "extras": [],
+        "filename": "pluggy-1.7.0-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/40/9e/2b38731e0fc536806f16490e1a12d7f0dc2a1235aa8cc07bcc75416a7daa/pluggy-1.7.0-py3-none-any.whl",
+        "bytes": 27082,
+        "sha256": "7dd7b0d8832ba3cb632c306926ded123429211b83641b35dc5c41ad2d34f9bec"
+      },
+      {
+        "name": "pydicom",
+        "version": "3.0.2",
+        "extras": [],
+        "filename": "pydicom-3.0.2-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/46/e0/60466c6d712dad2cf807df315e39863e91609ffd1064ecb835994460bbda/pydicom-3.0.2-py3-none-any.whl",
+        "bytes": 2376822,
+        "sha256": "abf971a5440f84dbaf42c4b6758e30e62480902584f8b270b9a5d146e278a07b"
+      },
+      {
+        "name": "pygments",
+        "version": "2.21.0",
+        "extras": [],
+        "filename": "pygments-2.21.0-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/71/46/17f022dd3e953bf20a04a028a21ec746d942f8d2af30fa0f124fa0e6a684/pygments-2.21.0-py3-none-any.whl",
+        "bytes": 1250147,
+        "sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9"
+      },
+      {
+        "name": "pytest",
+        "version": "9.2.0",
+        "extras": [],
+        "filename": "pytest-9.2.0-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/51/39/1f5d8c8877a0fa327db959c19341d4be61660de1ab6b7391f9eb805bcd67/pytest-9.2.0-py3-none-any.whl",
+        "bytes": 411776,
+        "sha256": "07acdcf88ec174f907dc01af70bf52d49b014bbab03faeeade31c96b18c2e588"
+      }
+    ]
+  },
+  "fresh_native_offline_installs": 2,
+  "inventory_objects_per_install": 1965,
+  "publisher_payload_files_verified_per_install": 1741,
+  "installed_record_rows_verified_per_install": 1771,
+  "full_inventories_identical": false,
+  "differing_files": "Only eight uv_cache.json archive-mtime records and their eight installed RECORD files; each actual mtime and every RECORD hash/size is reconciled. No inventory normalization was performed.",
+  "installer_version": "0.13.8",
+  "wheel_capture_sha256": "4bbe3317debb4fb0bc2af03fd5b68390c90dac936f04d2686e80b93e941e541a",
+  "target_capture_sha256": "00335d3399facd6fb01d462186b8a752584612201abb618d76a18285062a1f77"
+}

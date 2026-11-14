@@ -1,0 +1,12 @@
+{
+  "source_sha256": "f85287a85ab0b152b2d7f8681642d616031896e4e75d45b78970de514a324747",
+  "sdk_version": "go1.27.4",
+  "sdk_sha256": "7226736c2339719cda28fbf3a54d71aa63bcefe376e98cef00034268dab24840",
+  "contracts": [
+    "A build after only an embedded resource changes must execute the new embedded content.",
+    "A missing required embedded resource must produce a build failure rather than success with an old executable.",
+    "The test target must run a real declared test and propagate an actual test failure.",
+    "The fixture must build without go.sum when it has no external dependencies."
+  ],
+  "scope": "Source-grounded component controls; not a model benchmark, speed comparison or arbitrary Go-project qualification."
+}

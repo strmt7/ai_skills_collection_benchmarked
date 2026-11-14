@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "scope": "Native resource/lifecycle and existing original-grader controls. Infrastructure qualification only; no model outcome or complete fixed-task admission.",
+  "source_sha256": {
+    "tools/_native_benchmark_runtime.py": "a839e0bee783f7a70f7be951e5cb3623a400dfe41ea51a574e54505d9f6732d8",
+    "tools/grade_swe_skills_submission.py": "7e17f6219234aaae85fe0a4d5312c6071d935dbad18095bd916c18c2a75347b5",
+    "tests/test_native_benchmark_runtime.py": "0396f3e888bba4c1c439dc9aec80e734754da9208a9f7c803c764a4789d9db6c",
+    "tests/test_grade_swe_skills_submission.py": "480bb16ea97fba170dbc8a80487a2ae3a511d1e607160aeb1f8e42fe8a7cd678"
+  },
+  "artifacts": {
+    "grader-controls.json": "1e0b2307c703d78a14a5f57d893981cd973b7b4e20d529b511f81ed87de0dd79",
+    "lifecycle.native.json": "b9917f2035d3300d3af072defc1c73e4a147c1f723a6ee8c6d1680bed64b827b",
+    "native-resources.json": "6bc23a27772bb90315b7bf7a10badfe5fe82fe22234998a0ba5a810987994b52"
+  },
+  "native_resource_profiles": 2,
+  "original_grader_controls": 7,
+  "long_deadline_controls": 2,
+  "long_lease_seconds": 2460,
+  "remaining_owned_containers": 0,
+  "selected_task_builds_qualified": false,
+  "full_multistage_controller_integrated": false,
+  "model_invocations": 0,
+  "counted_attempts": 0,
+  "model_improvement_established": false
+}

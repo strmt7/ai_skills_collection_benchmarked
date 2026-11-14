@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-13",
+  "skill_id": "akin-ozer-cc-devops-skills-devops-skills-plugin-skills-makefile-generator-skill-md",
+  "source_commit": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+  "source_sha256": {
+    "scripts/add_standard_targets.sh": "15a03d4651bc37947c375520fb58c5658bd5d6e5386bb58e227f4f96e8ee0ba9",
+    "scripts/generate_makefile_template.sh": "f85287a85ab0b152b2d7f8681642d616031896e4e75d45b78970de514a324747",
+    "test/test_helper_scripts.sh": "238e329e79e7fd484a9d3e8340f71f5ae20343376d85ac69bfdc0e6e64674355"
+  },
+  "source_policy": "Immutable source mirror unchanged; controlled input line endings normalized by the existing catalog policy.",
+  "method": "Independently define existing failing test recipes, then invoke the unchanged helper and compare actual make execution. Preserve a flat existing-rule positive control, dry-run byte control and the supplied regression script.",
+  "versions": {
+    "make": "GNU Make 4.3",
+    "bash": "GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)"
+  },
+  "component_cases": 7,
+  "findings": [
+    {
+      "id": "invented-test-success",
+      "trigger": "No test target or test command exists.",
+      "observed": "Helper adds an echo/comment-only target; make test returns zero without running tests."
+    },
+    {
+      "id": "existing-test-replaced",
+      "trigger": "An actual failing test recipe is defined through a multi-target rule, included file or expanded target name.",
+      "observed": "The line-based detector misses the rule. The appended recipe replaces it; make test returns zero without executing the original test recipe."
+    }
+  ],
+  "controls": {
+    "flat_existing_rule_preserved": true,
+    "dry_run_preserved_input": true,
+    "supplied_regression_script_passed": true
+  },
+  "maintained_response": "C++ overlay requires inspecting the effective source rules, preserving real recipes/failure statuses and avoiding the original target appender. Its scaffold does not generate a test target.",
+  "artifacts": [
+    {
+      "path": "artifacts/research/2026-11-13/makefile-standard-targets/independent-fixture.py.txt",
+      "sha256": "2891ae097fd8c9177e22160c9df0333ad35d68af5c0c8a426f83c872c2414a78"
+    },
+    {
+      "path": "artifacts/research/2026-11-13/makefile-standard-targets/contracts.json",
+      "sha256": "a89d752f58fcd4269da47c377720a851a8946beaca42428f86461e80dfc725c1"
+    }
+  ],
+  "execution": {
+    "network": "none",
+    "root_filesystem": "read_only",
+    "container_memory_bytes": 536870912,
+    "tmpfs_bytes": 134217728,
+    "cpus": 1,
+    "lease_seconds": 150,
+    "lease_closed": true,
+    "remaining_owned_containers": 0,
+    "images_pulled": 0,
+    "image_reference": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974"
+  },
+  "limitations": [
+    "GNU Make 4.3 and Bash 5.2.21 in the already admitted Linux image only.",
+    "The full target guide was not validated; packaging, installation, other languages and security claims remain unqualified.",
+    "This records two reviewed helper resources and measured failures, not full package readiness."
+  ],
+  "model_invocations": 0,
+  "performance_status": "unbenchmarked",
+  "agent_efficacy_established": false,
+  "maintained_skill_sha256": "608438ef42db5051ca18e0b7752c5ba610d8fccfb9b1de676e4d41a68cb654f1",
+  "validation": {
+    "focused_tests_passed": 721,
+    "full_tests_passed": 3137,
+    "full_tests_skipped": 18,
+    "executable_inputs_unchanged_since_full_validation": true,
+    "scope": "Local regression and manifest/workflow checks; no hosted CI or model efficacy claim. Execution metadata was finalized after the full source freeze and is checked separately."
+  }
+}

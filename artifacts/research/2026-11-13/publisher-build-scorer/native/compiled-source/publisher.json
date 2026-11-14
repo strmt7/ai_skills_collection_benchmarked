@@ -1,0 +1,12 @@
+{
+  "level": "L1",
+  "method": "build_check",
+  "status": "passed",
+  "score": 1.0,
+  "message": "Build succeeded",
+  "details": {
+    "command": "python -m py_compile valid.py",
+    "exit_code": 0,
+    "duration": 0.03367338499992911
+  }
+}

@@ -1,0 +1,30 @@
+
+import hashlib,json,os,shutil,subprocess
+from pathlib import Path
+root=Path('/tmp/cpp contract work');root.mkdir();(root/'src').mkdir()
+env={k:os.environ[k] for k in ('PATH','HOME','TMPDIR','LANG') if k in os.environ};env['OMP_NUM_THREADS']='2'
+def call(args, label):
+    p=subprocess.run(args,cwd=root,env=env,capture_output=True,text=True,timeout=25)
+    (root/(label+'.stdout')).write_text(p.stdout);(root/(label+'.stderr')).write_text(p.stderr)
+    return p
+for name in ('g++','make','bash'):
+    if not shutil.which(name):raise RuntimeError('Required admitted-image compiler tool missing: '+name)
+versions={name:call([name,'--version'],name.replace('+','p')+'-version').stdout.splitlines()[0] for name in ('g++','make','bash')}
+cpp='#include <iostream>\n#include <omp.h>\nint main(){long long sum=0;\n#pragma omp parallel for reduction(+:sum)\nfor(int i=1;i<=10000;++i)sum+=i;std::cout<<sum<<"\\n";return sum==50005000?0:1;}\n'
+(root/'src/main.cpp').write_text(cpp)
+generated=call(['bash','/tmp/benchmark-inputs/original.sh','cpp','contract','Makefile'],'generation')
+if generated.returncode:raise RuntimeError('Original generator did not reach the independent fixture')
+bad=call(['make','-j2','CXXFLAGS=-O0 -fopenmp','all'],'original-openmp')
+if bad.returncode==0 or not any(t in bad.stderr for t in ('GOMP_parallel','omp_get_num_threads','omp_get_thread_num')):
+    raise RuntimeError('Original failure did not establish the missing OpenMP link runtime')
+good=call(['g++','-O0','-fopenmp','src/main.cpp','-o','direct-oracle'],'independent-driver')
+if good.returncode:raise RuntimeError('Independent driver control did not build the fixture')
+executed=call([str(root/'direct-oracle')],'independent-execution')
+if executed.returncode or executed.stdout.strip()!='50005000':raise RuntimeError('Independent compiler result did not match the arithmetic contract')
+# The second fixture deliberately has no tests and ignores every argument.
+(root/'src/main.cpp').write_text('#include <iostream>\nint main(){std::cout<<"ordinary application started\\n";return 0;}\n')
+test=call(['make','test'],'invented-test')
+if test.returncode or 'ordinary application started' not in test.stdout:raise RuntimeError('The independent no-test program did not exercise the invented test target')
+print(json.dumps({'passed':True,'versions':versions,'original_link_failed_for_missing_runtime':True,'direct_driver_control_passed':True,'arithmetic_output':executed.stdout.strip(),
+    'original_test_target_returned_success_without_test_suite':True,'original_generator_sha256':hashlib.sha256(Path('/tmp/benchmark-inputs/original.sh').read_bytes()).hexdigest(),
+    'fixture_sha256':hashlib.sha256(cpp.encode()).hexdigest(),'model_invocations':0,'scope':'Independent component contracts only, authored before the maintained C++ overlay; not agent-efficacy evidence.'}))

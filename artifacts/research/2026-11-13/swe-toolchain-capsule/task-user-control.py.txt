@@ -1,0 +1,64 @@
+"""Exercise the provisioned SDK through the actual non-root task identity."""
+import json
+import os
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+sys.path.insert(0, '/tmp/benchmark-inputs')
+from capsule_common import ROOT, SDK, inventory
+
+assert os.getuid() != 0
+receipt = json.loads(Path('/tmp/node22-capsule-receipt.json').read_bytes())
+before, fingerprint = inventory()
+assert before == receipt['inventory'] and fingerprint == receipt['inventory_sha256']
+cases = [{'case': 'task-user-reads-complete-frozen-sdk', 'inventory_sha256': fingerprint, 'objects': len(before)}]
+node = SDK / 'bin/node'
+for name, operation in [('sdk-write-open-rejected', lambda: os.close(os.open(node, os.O_WRONLY | os.O_APPEND))), ('sdk-mode-change-rejected', lambda: node.chmod(0o755)), ('sdk-new-file-rejected', lambda: (SDK / 'unowned-output').write_text('unexpected'))]:
+    try:
+        operation()
+    except PermissionError:
+        cases.append({'case': name, 'rejected': True})
+    else:
+        raise AssertionError(name + ' did not reject')
+records = []
+with tempfile.TemporaryDirectory(prefix='capsule-task-', dir='/tmp') as raw:
+    work = Path(raw)
+    home = work / 'home'
+    home.mkdir()
+    env = {'PATH': str(SDK / 'bin') + ':' + os.defpath, 'HOME': str(home), 'LANG': 'C.UTF-8', 'npm_config_cache': str(home / 'npm-cache'), 'npm_config_userconfig': str(home / 'empty.npmrc'), 'npm_config_globalconfig': str(home / 'global.npmrc')}
+    (home / 'empty.npmrc').write_text('')
+    (home / 'global.npmrc').write_text('')
+    def run(label, args, code=0):
+        result = subprocess.run(list(map(str, args)), cwd=work, env=env, stdin=subprocess.DEVNULL, text=True, capture_output=True, timeout=25)
+        row = {'case': label, 'argv': list(map(str, args)), 'exit_code': result.returncode, 'stdout': result.stdout, 'stderr': result.stderr}
+        records.append(row)
+        print(json.dumps(row), file=sys.stderr, flush=True)
+        assert result.returncode == code, row
+        return result
+    assert run('sdk-node-version', [node, '--version']).stdout.strip() == 'v22.23.5'
+    cases.append({'case': 'sdk-node-version', 'version': 'v22.23.5'})
+    assert run('base-node-unchanged', ['/usr/bin/node', '--version']).stdout.strip() == 'v20.20.0'
+    cases.append({'case': 'base-node-unchanged', 'version': 'v20.20.0'})
+    npm = SDK / 'lib/node_modules/npm/bin/npm-cli.js'
+    assert run('bundled-npm-version', [node, npm, '--version']).stdout.strip() == '10.9.9'
+    cases.append({'case': 'bundled-npm-version', 'version': '10.9.9'})
+    (work / 'package.json').write_text(json.dumps({'name': 'sdk-capsule-control', 'version': '0.0.0', 'private': True, 'scripts': {'test': 'node check.cjs'}}))
+    check = work / 'check.cjs'
+    check.write_text("const assert=require('node:assert/strict');assert.equal(process.versions.node.split('.')[0],'22');assert.equal(process.execPath," + json.dumps(str(node)) + ");console.log('CAPSULE_CONTROL='+JSON.stringify({major:22,executable:process.execPath}));\n")
+    result = run('npm-child-uses-capsule', [node, npm, '--offline', 'run', '--loglevel=error', 'test'])
+    lines = [line.removeprefix('CAPSULE_CONTROL=') for line in result.stdout.splitlines() if line.startswith('CAPSULE_CONTROL=')]
+    assert len(lines) == 1 and json.loads(lines[0]) == {'major': 22, 'executable': str(node)}
+    cases.append({'case': 'npm-child-uses-capsule', 'major': 22})
+    result = run('wrong-major-rejected', ['/usr/bin/node', check], code=1)
+    assert 'ERR_ASSERTION' in result.stderr and "'20' !== '22'" in result.stderr
+    cases.append({'case': 'wrong-major-rejected', 'exit_code': 1})
+    (work / 'output.txt').write_text('real writable task output\n')
+    assert (work / 'output.txt').read_text() == 'real writable task output\n'
+    cases.append({'case': 'task-output-remains-writable', 'created': True})
+after, final = inventory()
+assert after == before and final == fingerprint
+cases.append({'case': 'complete-sdk-unchanged-after-task-use', 'inventory_sha256': final})
+assert len(cases) == 11
+print(json.dumps({'passed': True, 'cases': cases, 'records': records, 'inventory_sha256': fingerprint, 'sdk_objects': len(before), 'task_uid': os.getuid(), 'model_invocations': 0, 'task_or_scorer_executed': False, 'runtime_admitted': False, 'scope': 'Source-derived Node 22 capsule component controls only. Native Windows subject access, selected task dependencies, scorer and complete experiment admission remain unqualified.'}))

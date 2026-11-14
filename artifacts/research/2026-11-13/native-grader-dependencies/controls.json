@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "classification": "Scripted runtime qualification only; deliberate failure fractions are not model outcomes.",
+  "controls": [
+    {
+      "passed": true,
+      "case": "baseline",
+      "status": "task_failed",
+      "diagnostic_fraction": 0.0,
+      "native_counts": {
+        "passed": 0,
+        "failed": 18,
+        "skipped": 0,
+        "errors": 0,
+        "total": 18
+      },
+      "original_publisher_scoring_class_executed": true,
+      "dependency_inventory_unchanged": true,
+      "closed_leases": 2,
+      "remaining_owned_containers": 0,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "task_solution_written": false,
+      "native_receipt_sha256": {
+        "qualification-control.json": "71af642cb81db976ac225325b329dc7f70ae5af373e35e40dd98af26a08da3e8",
+        "result.json": "f4af4eef625025b8013b5c998b0f3eea1dca7c943270875ac72094c97fda664a",
+        "dependencies.native.json": "cfc7fd0946787991c81dab5c0d43fe1b975af2f8aec06e47c66233e93e37aae7",
+        "dependencies-after.native.json": "f14c716b24119abe57cb28ab7552ed024421b8c2019f573b15db248fa6a64607",
+        "publisher.json": "305e55d147b08e63c55f6ab306e9c2fddb10135ce169313b8ec6765cfe14fbc6",
+        "execution.json": "55a5ec6e3e26ced9451be781de885bfa1536551cb520c7715fb6b12bf01b698d",
+        "pytest.xml.native": "4264952925bea46b385bf9f93504671cac6b56d38dd2a23336348064ed7a8717"
+      }
+    },
+    {
+      "passed": true,
+      "case": "broken",
+      "status": "task_failed",
+      "diagnostic_fraction": 0.16666666666666666,
+      "native_counts": {
+        "passed": 3,
+        "failed": 15,
+        "skipped": 0,
+        "errors": 0,
+        "total": 18
+      },
+      "original_publisher_scoring_class_executed": true,
+      "dependency_inventory_unchanged": true,
+      "closed_leases": 2,
+      "remaining_owned_containers": 0,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "task_solution_written": false,
+      "native_receipt_sha256": {
+        "qualification-control.json": "e910bb0747c65e57d3c791e14500d2f9f5aecc3d8428eb78c994143ed9d861a7",
+        "result.json": "95597853fb8d578d24a2388efa11ec837e413ec7cb2dca7065f83e0ec77b3472",
+        "dependencies.native.json": "cfc7fd0946787991c81dab5c0d43fe1b975af2f8aec06e47c66233e93e37aae7",
+        "dependencies-after.native.json": "f14c716b24119abe57cb28ab7552ed024421b8c2019f573b15db248fa6a64607",
+        "publisher.json": "890571960516da21ba0d443d3af5bcea48b33d86374443c0ff9f65ef63780cb5",
+        "execution.json": "db657ff068581170337f2c6c6286642268c51852a0a7ee097cd09150e1f23da8",
+        "pytest.xml.native": "9fb3a8d934d3fb69d75274c08c2a9e9ec74cf7d09b200511b183fee190f8fc3a"
+      }
+    },
+    {
+      "passed": true,
+      "case": "wrong-python",
+      "status": "harness_error",
+      "diagnostic_fraction": null,
+      "native_counts": null,
+      "original_publisher_scoring_class_executed": false,
+      "dependency_inventory_unchanged": false,
+      "closed_leases": 1,
+      "remaining_owned_containers": 0,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "task_solution_written": false,
+      "native_receipt_sha256": {
+        "qualification-control.json": "d1cc8cedc648ee077b05052063db093323ed28e2766697ff5c0cd7f9adabd11e",
+        "result.json": "e4fcff39b28a6f08172a79900603101d1ec440f46826f65701766c32a6c220d8"
+      }
+    },
+    {
+      "passed": true,
+      "case": "wrong-import",
+      "status": "harness_error",
+      "diagnostic_fraction": null,
+      "native_counts": null,
+      "original_publisher_scoring_class_executed": false,
+      "dependency_inventory_unchanged": false,
+      "closed_leases": 1,
+      "remaining_owned_containers": 0,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "task_solution_written": false,
+      "native_receipt_sha256": {
+        "qualification-control.json": "48ecb4252e779fd9163a3c4922b6bd08ca2002c6e8337fc12d5ee805803a53ae",
+        "result.json": "6d74d10bfaf3c4a7d74a3cfb79bd50bbd793d30dfb9c512f585791e17ff440d3",
+        "dependencies.native.json": "cfc7fd0946787991c81dab5c0d43fe1b975af2f8aec06e47c66233e93e37aae7",
+        "execution.json": "809b5918c9ccb0279ea77dc94da9690236706e6af3220606bce4e85e7c1d19c0"
+      }
+    },
+    {
+      "passed": true,
+      "task_schema": 2,
+      "existing_public_fixture": "batch1/python-packaging",
+      "original_verifier_and_publisher_scorer_executed": true,
+      "native_counts": {
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "total": 11
+      },
+      "closed_leases": 2,
+      "remaining_owned_containers": 0,
+      "new_selected_task_solution_written": false,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "dependency_inventory_unchanged": false,
+      "native_receipt_sha256": {
+        "qualification-control.json": "7134be769412a27e97a2310cab0ff93d4931c5e9d1e05249db61e82b974dfe89",
+        "result.json": "8d7eb6336e815a3e6ae2b3a3c883bb68be7a9a39390ea2f7f1091b917bd91e9f",
+        "publisher.json": "f5200b153215b61994ad7564ec782f1afe478ede7375d1151b0ac50bf1c2c1e5",
+        "execution.json": "62c23c220315943ee91bdf407afdf9e16638dbad6d174714d6e4b4f660a4ab4c",
+        "pytest.xml.native": "cf1ba12a5aa940110e1196a08e38fe7c6040bfee70e4409fca71dc54bee6a5b2"
+      }
+    },
+    {
+      "passed": true,
+      "task_schema": 3,
+      "existing_public_fixture": "batch1/python-packaging",
+      "original_verifier_and_publisher_scorer_executed": true,
+      "native_counts": {
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "total": 11
+      },
+      "closed_leases": 2,
+      "remaining_owned_containers": 0,
+      "new_selected_task_solution_written": false,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "dependency_inventory_unchanged": true,
+      "native_receipt_sha256": {
+        "qualification-control.json": "db2ba05178c2060c6b74b3f25aab89d69e4e8ea08da42a5b2a76198cf54145be",
+        "result.json": "84be4c40f0a24d1e1332277dc142ec7a758203d825265b30f133574a3bc04a12",
+        "dependencies.native.json": "cfc7fd0946787991c81dab5c0d43fe1b975af2f8aec06e47c66233e93e37aae7",
+        "dependencies-after.native.json": "f14c716b24119abe57cb28ab7552ed024421b8c2019f573b15db248fa6a64607",
+        "publisher.json": "42f6c7881912a8faf39e6849e8143d2f0854458eabec9270ec033f1da677f4fd",
+        "execution.json": "a161b25ec7c34ab6628822b157f214e25377c57267cf4ada1ccc109ca436a95c",
+        "pytest.xml.native": "aa51c0002ff80a1698b951c4d3a2f20f483af4a39d97c238584e1f6dfe05c5f6"
+      }
+    }
+  ],
+  "model_invocations": 0,
+  "counted_attempts": 0
+}

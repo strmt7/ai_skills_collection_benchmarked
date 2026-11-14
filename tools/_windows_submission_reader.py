@@ -233,6 +233,14 @@ class WorkspaceReader:
         self._require_open()
         if type(max_bytes) is not int or not 0 <= max_bytes <= 8 * 1024 * 1024:
             raise ValueError("submission size limit must be between 0 and 8 MiB")
+        kernel, handle, size = self.open_file_metadata(name)
+        if size > max_bytes:
+            raise ValueError(f"submitted file exceeds its size limit ({max_bytes} bytes)")
+        return kernel, handle, size
+
+    def open_file_metadata(self, name: str) -> tuple[Any, Any, int]:
+        """Hold a verified regular file for metadata queries without reading its content."""
+        self._require_open()
         parts = _parts(name)
         if name not in self._files:
             parent = self.directory("/".join(parts[:-1]))
@@ -242,8 +250,6 @@ class WorkspaceReader:
                 raise ValueError("submitted file must have one link")
             self._files[name] = candidate, size
         handle, size = self._files[name]
-        if size > max_bytes:
-            raise ValueError(f"submitted file exceeds its size limit ({max_bytes} bytes)")
         return self.kernel, handle, size
 
     def read_file(self, name: str, *, max_bytes: int) -> bytes:

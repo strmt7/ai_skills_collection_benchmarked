@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "task_id": "compiled-source",
+  "build_command": "python -m py_compile valid.py",
+  "working_dir": "/workspace/fixture",
+  "expected_exit_code": 0,
+  "timeout_seconds": 10
+}

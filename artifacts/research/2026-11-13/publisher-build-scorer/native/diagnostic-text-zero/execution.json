@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "command": "cd /workspace/fixture && python -c 'print(\"error: contract-only text\")'",
+  "timeout_seconds": 10,
+  "exit_code": 0,
+  "timed_out": false,
+  "duration_seconds": 0.016275721000056365,
+  "stdout_sha256": "e8ed4b34fc2c2340d30cb1d137e2baa6f779ef1644e903c1c212788e3c15e80a",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "execution_complete": true,
+  "remaining_owned_processes": 0
+}

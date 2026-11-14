@@ -1,0 +1,29 @@
+{
+  "worker_process": {
+    "windows_job": true,
+    "assigned_before_resume": true,
+    "kill_on_close": true,
+    "job_active_processes_after_cleanup": 0,
+    "service_created_processes_tracked": false,
+    "termination_reason": "timeout",
+    "exit_code": 124,
+    "output_bytes": 0,
+    "output_limit_bytes": 2097152,
+    "wall_time_limit_seconds": 12.0,
+    "job_memory_limit_bytes": 536870912,
+    "active_process_limit": 16,
+    "explicit_environment": true
+  },
+  "ready": {
+    "container_id": "2e4a3d00860a565f16f18512ceb30e33c152e31e66242adf7a1cf04f09b0e295",
+    "token": "6b04047be94e48c6b8f049af2a1d8577",
+    "lease_seconds": 2460,
+    "actor": {
+      "uid": 1001,
+      "pid": 8
+    }
+  },
+  "watchdog_removed_without_explicit_close": true,
+  "post_termination_observation_seconds": 8.142293400000199,
+  "extended_journal_recovered": true
+}

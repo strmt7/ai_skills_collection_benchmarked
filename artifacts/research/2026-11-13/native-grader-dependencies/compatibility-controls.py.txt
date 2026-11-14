@@ -1,0 +1,22 @@
+"""Recheck legacy and frozen-environment success paths on an existing public fixture."""
+import argparse,json,sys
+from pathlib import Path
+S=Path(__file__).resolve().parent;R=S.parents[2];sys.path.insert(0,str(R/'tools'))
+from grade_swe_skills_submission import grade,source_hashes
+from _native_benchmark_runtime import DockerClient
+import hashlib
+read=lambda p:json.loads(p.read_bytes())
+def dump(p,x):
+ with p.open('x',encoding='utf-8',newline='\n') as stream:json.dump(x,stream,indent=2);stream.write('\n')
+p=argparse.ArgumentParser();p.add_argument('--schema',type=int,choices=(2,3),required=True);p.add_argument('--output',type=Path,required=True);a=p.parse_args();out=a.output.resolve();assert out.is_relative_to(S) and not out.exists()
+task=read(S/'native-controller-import-qualification-v1/task.json');task['execution_source_sha256']=source_hashes()
+if a.schema==3:
+ profile=read(S/'native-grader-environment-inputs-v1/task-v3.json');task['schema_version']=3;task['python_environment']=profile['python_environment'];task['import_origins']['pytest']=profile['import_origins']['pytest']
+ inv=read(Path(task['inventory']['path']));inv['pytest_version']='9.2.0';path=S/'native-grader-success-inventory-v1.json';dump(path,inv);task['inventory']={'path':str(path),'sha256':hashlib.sha256(path.read_bytes()).hexdigest()}
+capture=S/'swe-native-handoff-capture-v2';result=grade(task,S/'native-controller-runtime-qualification-v1/runtime.json',capture/'baseline/collection',capture/'edited/collection',out)
+assert result['status']=='task_passed' and result['score']==1.0 and result['native_counts']=={'passed':11,'failed':0,'skipped':0,'errors':0,'total':11},result
+if a.schema==3:assert read(out/'dependencies.native.json')['inventory']==read(out/'dependencies-after.native.json')
+client=DockerClient(R,out/'cleanup-client',S/'native-controller-runtime-qualification-v1/runtime.json');journals=list(out.glob('*.lease.json'));assert len(journals)==2
+for path in journals:
+ journal=read(path);assert journal['stage']=='closed' and not client.ids(journal['token'])
+summary={'passed':True,'task_schema':a.schema,'existing_public_fixture':'batch1/python-packaging','original_verifier_and_publisher_scorer_executed':True,'native_counts':result['native_counts'],'closed_leases':2,'remaining_owned_containers':0,'new_selected_task_solution_written':False,'model_invocations':0,'counted_attempts':0,'dependency_inventory_unchanged':a.schema==3,'execution_sources':source_hashes()};dump(out/'qualification-control.json',summary);print(json.dumps({k:v for k,v in summary.items() if k!='execution_sources'}))

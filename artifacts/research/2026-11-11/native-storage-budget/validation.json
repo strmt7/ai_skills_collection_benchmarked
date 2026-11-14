@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "classification": "local-source-bound-controlled-qualification",
+  "published": false,
+  "full_repository_tests": {
+    "passed": 2925,
+    "skipped": 18,
+    "failed": 0,
+    "workers": 2,
+    "coverage_percent": 75.28,
+    "qualification_sha256": "9aa50308145a830f26664c4fbf85af151b81c8084f4f018c8d03f45ee3710d7a",
+    "coverage_xml_sha256": "49c8467d9dcc2128facb307f5e39d7108f582b7d7d485c78f3beef7831f28891",
+    "source_files_frozen_during_run": 22197,
+    "source_unchanged_during_run": true,
+    "skipped_checks_are_not_passes": true
+  },
+  "checks_passed": [
+    "ruff",
+    "format",
+    "mypy",
+    "compile",
+    "focused-tests",
+    "full-tests",
+    "catalog",
+    "static-benchmarks",
+    "ledger"
+  ],
+  "native_controls_reconciled": 7,
+  "native_fixture_failure_retained": {
+    "attempt": "logical-v2",
+    "counted_as_guard_pass": false,
+    "summary_sha256": "09ebe926fe8614648c02440d1a6dee3ba46bc21ea9aa879a6608daf9cbf98465",
+    "cause": "The sandbox correctly rejected a .NET method call; no oversized file was created.",
+    "correction": "Use the already admitted Python runtime to create the controlled logical-size fixture; no sandbox rule changes."
+  },
+  "review_sha256": "87a04ea15c3ae3c03686e0a188484e34eac1b9c3e94e8e59823ccb442c18142b",
+  "closure": {
+    "qualification_sha256": "caf353e0257e04b35192e34e887937132304fb22b13b0114221872a951bf03aa",
+    "checks_passed": [
+      "review-artifacts",
+      "execution-policy",
+      "ledger",
+      "audit-owned-containers",
+      "observe-owned-host"
+    ],
+    "remaining_matching_nonobserver_processes": 0,
+    "remaining_matching_services": 0,
+    "remaining_matching_scheduled_tasks": 0,
+    "remaining_owned_containers": 0,
+    "container_engine_identity_verified": true,
+    "host_observed_utc": "2026-11-11T09:25:49.3421270Z",
+    "host_observation_scope": "Current checkout and current declared qualification cache; actual observer ancestry excluded by PID and creation-time checks. This is a path-scoped observation, not proof of absence of host-wide leaks. No process, service or schedule was terminated or modified.",
+    "free_ram_gib_observed": 26.15
+  },
+  "limitations": [
+    "These observations are not hard quotas, peak storage, physical allocation or host-wide I/O isolation.",
+    "The logical scan occurs before launch and after stop; the live reserve monitor uses polling.",
+    "Unsupported metadata and bounded enumeration failures withhold a score rather than silently omit objects.",
+    "Low-space and API-error controls are synthetic; they do not fill the host disk or prove physical quota enforcement.",
+    "No real model inference, comparative skill gain, hosted acceptance or commercial-readiness result is established."
+  ],
+  "public_model_launch_guard": "closed",
+  "model_requests": 0,
+  "security_scanner_and_history_remediation": "paused; not represented as passed",
+  "release_created": false,
+  "post_suite_output": "This acceptance report is generated and cross-checked after the frozen suite; it is not a program or test input."
+}

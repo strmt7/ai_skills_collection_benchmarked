@@ -25,7 +25,6 @@ PUBLISHED = ROOT / "artifacts/component-controls/appcontainer"
 HISTORICAL_SOURCES = (
     ROOT / "artifacts/component-controls/appcontainer-source-snapshots/fb7e85307b96fdcad0bfdb5947b67b70a281d77c"
 )
-HISTORICAL_REPLACEMENTS = {"tools/grade_validator_appcontainer.py", "tools/qualify_appcontainer.py"}
 SOURCE_FILES = (
     *grader.EVALUATOR_FILES,
     *grader.TASK_FILES,
@@ -260,10 +259,17 @@ def qualify(home: Path, output: Path, revision: str) -> dict[str, Any]:
 
 
 def source_graph(*, historical: bool = False) -> list[dict[str, str]]:
+    if historical:
+        recorded = json.loads((PUBLISHED / "result.json").read_bytes())["source_sha256"]
+        names = [Path(row["path"]).name + ".txt" for row in recorded]
+        if len(set(names)) != len(names):
+            raise ValueError("Historical source snapshot names must be unique")
+        return [
+            {**row, "sha256": runtime.digest(HISTORICAL_SOURCES / name)}
+            for row, name in zip(recorded, names, strict=True)
+        ]
     records = []
     for name in SOURCE_FILES:
-        if historical and name == "tools/_windows_submission_reader.py":
-            continue
         if name in grader.TASK_FILES:
             raw = subprocess.run(
                 ["git", "-c", "core.longpaths=true", "show", "HEAD:" + name],
@@ -274,12 +280,7 @@ def source_graph(*, historical: bool = False) -> list[dict[str, str]]:
             ).stdout
             digest, kind = hashlib.sha256(raw).hexdigest(), "git_fixture_blob"
         else:
-            source = (
-                HISTORICAL_SOURCES / (Path(name).name + ".txt")
-                if historical and name in HISTORICAL_REPLACEMENTS
-                else ROOT / name
-            )
-            digest, kind = runtime.digest(source), "executed_source_file"
+            digest, kind = runtime.digest(ROOT / name), "executed_source_file"
         records.append({"path": name, "sha256": digest, "source_kind": kind})
     return records
 

@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "kind": "metadata-only-public-development-selection",
+  "date": "2026-11-13",
+  "source_repository": "https://github.com/ControllableModel/SWE-Skills-Bench",
+  "source_commit": "4d3450d9216a590a8726fcb3604b5143daca776b",
+  "source_tree_sha": "faa67dc31132bfa1f8dd1bdae088b1b675f99f88",
+  "upstream_head_capture_sha256": "e5610b0979ef47021906a241ea1c758e521caa3053dd3a85de7bc51972c89fdc",
+  "upstream_configuration_url": "https://raw.githubusercontent.com/ControllableModel/SWE-Skills-Bench/4d3450d9216a590a8726fcb3604b5143daca776b/config/benchmark_config.yaml",
+  "configuration_git_blob_sha1": "89b81807c59b68d629a3b4ed32193aac9378fe70",
+  "configuration_blob_identity_verified": true,
+  "source_audit": {
+    "passed": true,
+    "source_commit": "4d3450d9216a590a8726fcb3604b5143daca776b",
+    "tree_sha": "faa67dc31132bfa1f8dd1bdae088b1b675f99f88",
+    "config_git_blob_sha1": "89b81807c59b68d629a3b4ed32193aac9378fe70",
+    "config_sha256": "f658aca6273493e179b592e650341bc2cf76b1c48002633e592ab68c6cef212b",
+    "frame_sha256": "04ee61200fa839b225765c108659bdbe16d0d13646ddc81a413620ff245feb67",
+    "skill_records": 98,
+    "batches": 10,
+    "task_file_references_verified": 980,
+    "declared_repository_groups": 90,
+    "missing_repository_revisions": [
+      "add-uint-support"
+    ],
+    "distinct_images": 12,
+    "immutable_image_references": 0,
+    "evaluation_methods": {
+      "build_check": 20,
+      "unit_test": 98
+    },
+    "declared_min_pass_rates": [
+      0.5,
+      1.0
+    ],
+    "task_briefs_tests_or_solutions_read": false,
+    "model_invocations": 0
+  },
+  "source_audit_sha256": "346e87ea9a946fafec32b9d3739a127a24d08f85bdbfb0c204735709936f4bf5",
+  "frame_path": "artifacts/research/2026-11-11/swe-skills-bench-archive/frame.json",
+  "selection_path": "benchmarks/agent-effectiveness/development/swe-skills-pilot-v1/selection.json",
+  "selection_sha256": "42de081f53b0273f936ea5ca12dd0a6f69da0c33ade087b7b76ac8e6b7bee1c5",
+  "policy_path": "benchmarks/agent-effectiveness/development/swe-skills-pilot-v1/policy.json",
+  "policy_sha256": "11a4f8152245f48b313cfd5e66255714f992d7adb6242787746dd97e12fa71f2",
+  "planned_tasks": 12,
+  "planned_attempts": 36,
+  "eligible_repository_groups": 89,
+  "eligible_cells": 960,
+  "held_skills": [
+    "security-review"
+  ],
+  "unresolved_source_skills": [
+    "add-uint-support"
+  ],
+  "qualification": {
+    "source_and_actual_cli_checks": {
+      "sha256": "f87cbf2a349a1e3305b3bc953833d59b3b38b59e7c4fd1b6f3b901aaa8db0f2f",
+      "checks": 3,
+      "source_unchanged": true
+    },
+    "focused": {
+      "sha256": "17eafe186a41da328f42b88140084912a2bcfb7686d6b3e06828e75ed10c846b",
+      "tests_passed": 664,
+      "typed_python_files": 326,
+      "lint_format_types_passed": true
+    },
+    "independent_prototype": {
+      "sha256": "56d9cd7ced3db654a1c6684adc6a85fc80a30340cbaeedd1db9b97f889c816da",
+      "scope": "Independent structural and file-IO controls before tracked promotion; maintained byte binding and formatting were subsequently validated by focused tests."
+    },
+    "full_suite": {
+      "sha256": "df572fdfdb5f8e196553c2e4fe783c8a428600a69bc8b0d74c9d3be3707379c9",
+      "passed": 3136,
+      "skipped": 18,
+      "seconds": 374.52,
+      "frozen_inputs": 22222,
+      "source_unchanged": true,
+      "checks": 2,
+      "exact_workflow_selection_command_passed": true,
+      "stdout_sha256": "4bb408580b58dfe595f239240665fce3af7ea1791b7c718cd84b7b0fc8b155b2",
+      "coverage_xml_sha256": "d2edf1781876a13cee7bbb051ad97ca92a74f0ac9f158ee38f52e48d21e22da6",
+      "line_rate": 0.7585
+    }
+  },
+  "implementation_sha256": {
+    "tools/select_swe_skills_tasks.py": "9b5f5e97228af24c6b9643efb066b6d1d3d5cbfccded71f60e4ef31560550122",
+    "tests/test_select_swe_skills_tasks.py": "6f8248f64667868e9badeae3bdb6dc1e9c7990224d08f98cc96f22c9b7a63620",
+    ".github/workflows/offline-validation.yml": "4abf82a99e8fd039776f51eac78fc3b1051513e2cd327221da3e2c7be3e08f0a"
+  },
+  "retained_failed_controls": [
+    {
+      "sha256": "d4b778b42c4703eeb4ed2d1747015056d56ca109d8b5a3437bbe3bfda6278cdd",
+      "reason": "Invalid uppercase repository identity in the initial synthetic fixture was rejected by the existing source-frame parser. Corrected fixture preserved the repository-group alias condition."
+    },
+    {
+      "sha256": "818904416c29fa1c4ba3dbc53c16decc992a20670d5e3de5cf1f00ad7d94bcdf",
+      "reason": "Four fixture typing errors; runtime tests passed, annotations corrected without suppressions before the accepted run."
+    },
+    {
+      "source_sha256": "42b954e62a042e455f57cbf1ae92927b0a949118faeb53e34b8c6f0b9b2e9904",
+      "reason": "Initial metadata-only preflight assumed an explicit :latest tag; author references use implicit latest. Corrected before network queries. The successful inventory still retains both denied registry responses."
+    }
+  ],
+  "model_invocations": 0,
+  "execution_admitted": false,
+  "complete_preregistration": false,
+  "skill_gain_established": false,
+  "commercial_release_ready": false,
+  "public_model_launch_guard": "closed",
+  "transport_scope": "Exact official GitHub API/source captures. No publisher result tables, task briefs, test implementations or reference solutions were read for this selection.",
+  "environment_metadata": {
+    "path": "benchmarks/agent-effectiveness/development/swe-skills-pilot-v1/environment-metadata.json",
+    "sha256": "e2e7e7ba903934fb433c0ffa8dd7a58a2abffde3d14972b4e70fba5e345cc862",
+    "resolved": 5,
+    "unresolved": 2,
+    "images_pulled": 0,
+    "containers_created": 0,
+    "runtime_admitted": false
+  }
+}

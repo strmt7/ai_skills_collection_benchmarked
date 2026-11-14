@@ -1,0 +1,84 @@
+{
+  "passed": true,
+  "native_resource_profiles": [
+    {
+      "id": "legacy-default",
+      "resources": {
+        "memory_bytes": 268435456,
+        "tmpfs_bytes": 16777216,
+        "pids_limit": 32,
+        "executable_workspace": false,
+        "task_workspace": false,
+        "repository_workspace": true,
+        "cpu_count": 1,
+        "repository_bytes": 16777216,
+        "repository_executable": false
+      },
+      "native": {
+        "uid": 1001,
+        "compiler_version": "cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "binary": {
+          "exit_code": null,
+          "stdout": null,
+          "stderr": null,
+          "errno": 13
+        },
+        "storage": {
+          "requested_bytes": 20971520,
+          "written_bytes": 16756736,
+          "errno": 28,
+          "filesystem_bytes": 16777216
+        },
+        "cgroup": {
+          "cpu.max": "100000 100000",
+          "memory.max": "268435456",
+          "memory.swap.max": "0",
+          "pids.max": "32"
+        }
+      }
+    },
+    {
+      "id": "explicit-project",
+      "resources": {
+        "memory_bytes": 8589934592,
+        "tmpfs_bytes": 67108864,
+        "pids_limit": 32,
+        "executable_workspace": false,
+        "task_workspace": false,
+        "repository_workspace": true,
+        "cpu_count": 4,
+        "repository_bytes": 4294967296,
+        "repository_executable": true
+      },
+      "native": {
+        "uid": 1001,
+        "compiler_version": "cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+        "binary": {
+          "exit_code": 0,
+          "stdout": "42\n",
+          "stderr": "",
+          "errno": null
+        },
+        "storage": {
+          "requested_bytes": 20971520,
+          "written_bytes": 20971520,
+          "errno": null,
+          "filesystem_bytes": 4294967296
+        },
+        "cgroup": {
+          "cpu.max": "400000 100000",
+          "memory.max": "8589934592",
+          "memory.swap.max": "0",
+          "pids.max": "32"
+        }
+      }
+    }
+  ],
+  "long_lease_seconds": 2460,
+  "orphan_watchdog_control": true,
+  "closed_container_leases": 3,
+  "remaining_owned_containers": 0,
+  "full_selected_task_builds_qualified": false,
+  "model_invocations": 0,
+  "counted_attempts": 0
+}

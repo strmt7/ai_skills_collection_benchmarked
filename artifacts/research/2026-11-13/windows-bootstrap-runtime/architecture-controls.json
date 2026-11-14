@@ -1,0 +1,118 @@
+{
+  "passed": true,
+  "controls": [
+    {
+      "id": "framework-missing",
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 51,
+        "output_limit_bytes": 1048576,
+        "wall_time_limit_seconds": 30.0,
+        "job_memory_limit_bytes": 536870912,
+        "active_process_limit": 16,
+        "explicit_environment": true
+      },
+      "observed": {
+        "platform": "Win32NT",
+        "os": "X64",
+        "process": "X64"
+      }
+    },
+    {
+      "id": "framework-wrong",
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 51,
+        "output_limit_bytes": 1048576,
+        "wall_time_limit_seconds": 30.0,
+        "job_memory_limit_bytes": 536870912,
+        "active_process_limit": 16,
+        "explicit_environment": true
+      },
+      "observed": {
+        "platform": "Win32NT",
+        "os": "X64",
+        "process": "X64"
+      }
+    },
+    {
+      "id": "modern-missing",
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 51,
+        "output_limit_bytes": 1048576,
+        "wall_time_limit_seconds": 30.0,
+        "job_memory_limit_bytes": 536870912,
+        "active_process_limit": 16,
+        "explicit_environment": true
+      },
+      "observed": {
+        "platform": "Win32NT",
+        "os": "X64",
+        "process": "X64"
+      }
+    },
+    {
+      "id": "modern-wrong",
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 51,
+        "output_limit_bytes": 1048576,
+        "wall_time_limit_seconds": 30.0,
+        "job_memory_limit_bytes": 536870912,
+        "active_process_limit": 16,
+        "explicit_environment": true
+      },
+      "observed": {
+        "platform": "Win32NT",
+        "os": "X64",
+        "process": "X64"
+      }
+    }
+  ],
+  "native_runtime_api_used": true,
+  "environment_variables_restored_instead": false,
+  "initial_checkpoint_admitted": false,
+  "initial_checkpoint_sha256": "8d9af63c2070573fd5ad7cb4ef7f226e297b5b81c2e6f2e0957e2bcf5f7dd3ea",
+  "initial_failed_controls": [
+    "bootstrap-live",
+    "supervisor-rebuild-check"
+  ],
+  "initial_full_suite": {
+    "passed": 3211,
+    "skipped": 18
+  },
+  "initial_architecture_probe_admitted": false,
+  "initial_architecture_probe_failure": "The probe selected an old recovery fixture with a missing PowerShell module. The corrected probe follows the admitted pointer and verifies every pinned payload file.",
+  "original_failed_probe_sha256": "48ae9df82790c0de7471d1200d616767ac7060ce20fb5d4d5e68c96f2b983de8",
+  "current_bootstrap_control_groups": 39,
+  "current_native_qualification_sha256": "abc6970b229d0110e8c16508bcfb9a65b13334a65c81ef4805904ed523f5669f"
+}

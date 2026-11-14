@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-13",
+  "kind": "selected-environment-source-and-protocol-feasibility",
+  "source_commit": "4d3450d9216a590a8726fcb3604b5143daca776b",
+  "selection_sha256": "42de081f53b0273f936ea5ca12dd0a6f69da0c33ade087b7b76ac8e6b7bee1c5",
+  "cohort_changed": false,
+  "registry": {
+    "documented_protocol_controls": 4,
+    "python_public_manifest": 200,
+    "node_ext_manifest": 401,
+    "node22_ext_manifest": 401,
+    "missing_tag_in_accessible_python_repository": 404,
+    "conclusion": "The same documented anonymous client succeeds for a public reference and distinguishes a missing tag there. Both Node repository references still reject anonymous manifest access. Their private-versus-absent state is not established.",
+    "credentials": "Anonymous opaque bearer values stayed in memory; no personal credentials, proxy configuration or profile were used or exported.",
+    "source_url": "https://docs.docker.com/reference/api/registry/auth/",
+    "source_native_sha256": "00e9928ce229637b6f0a9cc70e21c27a3963371a81765652ae3768e49dd0944c",
+    "source_review_scope": "Bearer challenge, requested scope, opaque token and manifest retry behavior; not a registry security assessment."
+  },
+  "author_build_sources": [
+    {
+      "url": "https://github.com/ControllableModel/SWE-Skills-Bench/blob/4d3450d9216a590a8726fcb3604b5143daca776b/scripts/build_node22_image.sh",
+      "git_blob_sha1": "d65cd509ef366efc8a968d30bcfb714c7f0f391e",
+      "source_sha256": "6a2aa5551a94d18bfa81152f1d5b4d0319a618f4ee27f3db1bcb5cb8c1ee0c1a"
+    },
+    {
+      "url": "https://github.com/ControllableModel/SWE-Skills-Bench/blob/4d3450d9216a590a8726fcb3604b5143daca776b/scripts/build_node_image.sh",
+      "git_blob_sha1": "6fd5894e0b0c46aff256a830d35680162240083b",
+      "source_sha256": "c785caf1686e36939d0261a0d532910deb54b0158e7cd84271f772199ab78d0f"
+    },
+    {
+      "url": "https://github.com/ControllableModel/SWE-Skills-Bench/blob/4d3450d9216a590a8726fcb3604b5143daca776b/docker/base/Dockerfile.node",
+      "git_blob_sha1": "999347484a1a65a23e4a09b99fc1b3567255cf8a",
+      "source_sha256": "a4530661ccb1b6694ad1cfee1a9190edf5b71ab7f8b5c1c4bb08ca91179353a5"
+    },
+    {
+      "url": "https://github.com/ControllableModel/SWE-Skills-Bench/blob/4d3450d9216a590a8726fcb3604b5143daca776b/scripts/bake_image.sh",
+      "git_blob_sha1": "7b1cb36b6488897643880ad13d447723fe908005",
+      "source_sha256": "dce93aac68b76fe22808df9a07dac4950cb02c8f2d6363f3aaca3e749455f4b1"
+    }
+  ],
+  "author_build_findings": [
+    "Both Node-major variants derive a local Enroot archive from a local Python archive and export local .sqsh files. Reading those scripts does not prove a corresponding Docker image was published.",
+    "The Node 22 implementation sets NODE_MAJOR=22 despite copied comments mentioning Node 20.",
+    "The GitHub release collection was empty at observation time; no claim is made about artifacts on other services.",
+    "Original Enroot archive bytes and actual installed versions remain uncaptured; comments do not establish them."
+  ],
+  "cached_base_observed": {
+    "image_reference": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+    "node": "v20.20.0",
+    "npm": "10.8.2",
+    "yarn": "1.22.22",
+    "python": "3.12.3"
+  },
+  "node22_prototype": {
+    "node_version": "v22.23.5",
+    "npm_version": "10.9.9",
+    "archive_sha256": "c54118104acc524633b5abe106bbf44a53126ec8b4e5fa105cb92b5d7de8a1a1",
+    "positive_component_cases": 6,
+    "wrong_major_negative_control": 1,
+    "mechanisms": [
+      "Official binary and bundled npm launch",
+      "Existing base Node remains unchanged",
+      "N-API addon builds and loads using the staged headers",
+      "npm script child resolves the declared Node major",
+      "Wrong-major runtime fails the explicit contract",
+      "Owned loopback HTTP listener closes"
+    ],
+    "filesystem": "Read-only original container with the SDK and fixture under owned temporary storage. No root filesystem or host installation changed.",
+    "runtime_admitted": false,
+    "source_equivalence": "Compatibility prototype. It is not the original Node image or Enroot filesystem and is not yet an admitted selected-task environment."
+  },
+  "retained_failure": {
+    "attempt": "swe-node22-compatibility-v1",
+    "stage": "Fixture output parsing after the npm script succeeded",
+    "error": "JSONDecodeError",
+    "correction": "Retain complete npm output and parse exactly one explicit child-protocol record; expected Node major and addon value remain unchanged. The successful variation also tests rejection by the original wrong-major binary."
+  },
+  "required_before_execution": [
+    "Declare the exact original-image or source-derived environment route before counted outcomes, preserving every selected cell.",
+    "Freeze all runtime files, dependency inventories, source/license identities, version differences and resource limits.",
+    "Qualify the actual subject tool access and selected task/scorer dependencies under that frozen environment.",
+    "Retain original evaluators, thresholds, units and denominators; qualify scorer behavior independently.",
+    "Complete P1 execution isolation, model/provider identity and P2 interventions, budgets and analysis contract.",
+    "Use the same admitted environment across default, Karpathy-derived and collection conditions; make source-derived environment differences visible in reported claims."
+  ],
+  "limits": [
+    "Four registry controls and seven toolchain controls establish only their observed protocol/capability boundaries.",
+    "Selected task briefs, evaluator implementations and publisher outcome contents were not read.",
+    "No task, native task score, original-environment equivalence or model efficacy was evaluated."
+  ],
+  "resource_limits": {
+    "container_memory_bytes": 805306368,
+    "container_tmpfs_bytes": 402653184,
+    "cpus": 1,
+    "lease_seconds": 120,
+    "external_container_network": "none",
+    "images_pulled": 0,
+    "remaining_owned_containers": 0
+  },
+  "artifacts": [
+    {
+      "path": "artifacts/research/2026-11-13/swe-environment-feasibility/cached-base-capabilities.json",
+      "sha256": "94ad5672d0058a76f855537c25b77726e83833932da7b31c6d6f2c07f2389fcf"
+    },
+    {
+      "path": "artifacts/research/2026-11-13/swe-environment-feasibility/node22-compatibility.json",
+      "sha256": "77a18de1e44963dda2ee59b77ce52ccadbedc3d61d5dd6f848d6c25c82683821"
+    },
+    {
+      "path": "artifacts/research/2026-11-13/swe-environment-feasibility/node22-source-input.json",
+      "sha256": "5e4eeb2491acc6aecef20df475ff683c8fa78e8d2ec26524f8806b9479b3064c"
+    },
+    {
+      "path": "artifacts/research/2026-11-13/swe-environment-feasibility/registry-protocol.json",
+      "sha256": "3f76e3486cb9539f447ece448af250bb5a7c7dc07d19e4c76c977916ad5aedad"
+    },
+    {
+      "path": "artifacts/research/2026-11-13/swe-environment-feasibility/toolchain-control.py.txt",
+      "sha256": "f861e5e7e83558b1a1c29236389a2f078e3c9be06b3292683b4dbcaaebfbbd59"
+    }
+  ],
+  "global_installation": false,
+  "actual_user_profile_modified": false,
+  "model_invocations": 0,
+  "execution_admitted": false,
+  "agent_efficacy_established": false
+}

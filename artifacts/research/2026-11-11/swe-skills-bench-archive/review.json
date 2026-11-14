@@ -1,0 +1,215 @@
+{
+  "catalog_overlap": {
+    "catalog_mirror_entrypoints": 673,
+    "catalog_sha256": "befada014a8adf1cbb5f49049829783640725551a08862b17c22488b6fec106b",
+    "exact_entrypoint_matches": 0,
+    "publisher_entrypoints": 98,
+    "publisher_skill_tree": "c029a06f5a5bf8b7f1cf32af82fae696043efccd"
+  },
+  "frame_sha256": "04ee61200fa839b225765c108659bdbe16d0d13646ddc81a413620ff245feb67",
+  "kind": "publisher-archive-replay",
+  "official_tables": {
+    "aggregate_checks": [
+      {
+        "configuration": "claude__haiku-4-5",
+        "displayed": [
+          "74.2",
+          "74.5",
+          "0.26"
+        ],
+        "leave_one_repository_out": {
+          "max": 0.49752577319587626,
+          "min": 0.035360824742268045
+        },
+        "pairs": 980,
+        "publisher_delta_pp": 0.2598979591836735
+      },
+      {
+        "configuration": "claude__Kimi-K2.6",
+        "displayed": [
+          "78.5",
+          "79.2",
+          "0.64"
+        ],
+        "leave_one_repository_out": {
+          "max": 0.8150515463917526,
+          "min": 0.37608247422680413
+        },
+        "pairs": 980,
+        "publisher_delta_pp": 0.6422448979591837
+      },
+      {
+        "configuration": "codex__gpt-5.4-mini",
+        "displayed": [
+          "76.0",
+          "76.7",
+          "0.76"
+        ],
+        "leave_one_repository_out": {
+          "max": 0.9706185567010309,
+          "min": 0.3395876288659794
+        },
+        "pairs": 980,
+        "publisher_delta_pp": 0.7579591836734694
+      },
+      {
+        "configuration": "codex__Kimi-K2.6",
+        "displayed": [
+          "77.6",
+          "77.3",
+          "-0.29"
+        ],
+        "leave_one_repository_out": {
+          "max": -0.0968041237113402,
+          "min": -0.5570103092783505
+        },
+        "pairs": 980,
+        "publisher_delta_pp": -0.28683673469387755
+      }
+    ],
+    "combined_csv_sha256": "ffca3a5bef5b7e704659b54347c6b1f6fe1a32830448c773ea1325a77b0f651c",
+    "combined_git_blob": "5e486a171eb55e41133ec245ee2305ef95e395b7",
+    "model_requests": 0,
+    "paired_rows_replayed": 3920
+  },
+  "paper": {
+    "captured_page": "https://arxiv.org/abs/2603.15401",
+    "native_sha256": "3618945423848a38faa85ad33f5136c5d37af7b2b7b7cad8a35569af9d2476f9",
+    "provider_version": "0.9.5+catalog.portable4",
+    "url": "https://arxiv.org/abs/2603.15401v2"
+  },
+  "published_release_tag": null,
+  "replay": {
+    "configurations": {
+      "claude__Kimi-K2.6": {
+        "declared_repository_groups": 90,
+        "leave_one_declared_repository_out_delta_pp": {
+          "max": 0.8150515463917526,
+          "min": 0.37608247422680413
+        },
+        "none_mean_percent": 78.53438775510205,
+        "one_mean_percent": 79.17663265306122,
+        "pairs": 980,
+        "pairs_without_declared_repo_commit": 10,
+        "published_delta_direction_counts": {
+          "higher": 159,
+          "lower": 131,
+          "tied": 690
+        },
+        "published_delta_mean_pp": 0.6422448979591837,
+        "rounded_arm_difference_pp": 0.6422448979591837,
+        "table_sha256": "0f3f79c0b5df8d622f3477e6a5a61c1968ad8eed7b12f56ff71f9e5bfde85d16"
+      },
+      "claude__haiku-4-5": {
+        "declared_repository_groups": 90,
+        "leave_one_declared_repository_out_delta_pp": {
+          "max": 0.49752577319587626,
+          "min": 0.035360824742268045
+        },
+        "none_mean_percent": 74.24448979591837,
+        "one_mean_percent": 74.50438775510204,
+        "pairs": 980,
+        "pairs_without_declared_repo_commit": 10,
+        "published_delta_direction_counts": {
+          "higher": 163,
+          "lower": 150,
+          "tied": 667
+        },
+        "published_delta_mean_pp": 0.2598979591836735,
+        "rounded_arm_difference_pp": 0.2598979591836735,
+        "table_sha256": "645f4375e356361b2a9e6f8b7e3b3514377a2f815278df1317d1851a60ea36cb"
+      },
+      "codex__Kimi-K2.6": {
+        "declared_repository_groups": 90,
+        "leave_one_declared_repository_out_delta_pp": {
+          "max": -0.0968041237113402,
+          "min": -0.5570103092783505
+        },
+        "none_mean_percent": 77.6034693877551,
+        "one_mean_percent": 77.31663265306122,
+        "pairs": 980,
+        "pairs_without_declared_repo_commit": 10,
+        "published_delta_direction_counts": {
+          "higher": 155,
+          "lower": 167,
+          "tied": 658
+        },
+        "published_delta_mean_pp": -0.28683673469387755,
+        "rounded_arm_difference_pp": -0.28683673469387755,
+        "table_sha256": "7952d88b168c82ce92233e82c5f46ad2c03a459a51b8eab88fd24220a81e216b"
+      },
+      "codex__gpt-5.4-mini": {
+        "declared_repository_groups": 90,
+        "leave_one_declared_repository_out_delta_pp": {
+          "max": 0.9706185567010309,
+          "min": 0.3395876288659794
+        },
+        "none_mean_percent": 75.97755102040816,
+        "one_mean_percent": 76.73551020408163,
+        "pairs": 980,
+        "pairs_without_declared_repo_commit": 10,
+        "published_delta_direction_counts": {
+          "higher": 152,
+          "lower": 132,
+          "tied": 696
+        },
+        "published_delta_mean_pp": 0.7579591836734694,
+        "rounded_arm_difference_pp": 0.7579591836734694,
+        "table_sha256": "5537589bee18655f4d78a3f4ce574461e98b769ce4275b437502796532d5a348"
+      }
+    },
+    "frame_sha256": "04ee61200fa839b225765c108659bdbe16d0d13646ddc81a413620ff245feb67",
+    "local_model_trials": 0,
+    "source_commit": "4d3450d9216a590a8726fcb3604b5143daca776b",
+    "status": "publisher_archive_replayed"
+  },
+  "replay_stdout_sha256": "790f5b607ab4d6bdb13da2c121367c34ffbc1a7ecec430dfdc500a40b0d98560",
+  "repository": "https://github.com/ControllableModel/SWE-Skills-Bench",
+  "schema_version": 1,
+  "scope_limits": [
+    "The publisher's CSV columns were replayed against a frozen 98-skill by 10-batch frame. No new agents or verifiers ran.",
+    "The publisher's separate and combined tables agreed. The tables do not contain the original per-attempt transcripts or enough information to independently requalify the publisher's infrastructure gate.",
+    "Leave-one-repository-out ranges are descriptive sensitivity checks using the declared repository identities. They are not confidence intervals.",
+    "A byte comparison does not establish semantic overlap or package equivalence.",
+    "No task requirements, verifier bodies or publisher skill bodies were fetched. Per-cell outcomes were processed by code without being used to select tasks or revise skills."
+  ],
+  "source_commit": "4d3450d9216a590a8726fcb3604b5143daca776b",
+  "source_frame": {
+    "additional_verifier_paths": [
+      "batch1/_dependency_utils.py",
+      "batch10/_dependency_utils.py",
+      "batch2/_dependency_utils.py",
+      "batch3/_dependency_utils.py",
+      "batch4/_dependency_utils.py",
+      "batch5/_dependency_utils.py",
+      "batch6/_dependency_utils.py",
+      "batch7/_dependency_utils.py",
+      "batch8/_dependency_utils.py",
+      "batch9/_dependency_utils.py"
+    ],
+    "author_backend": "enroot",
+    "cell_verifier_files": 980,
+    "config_sha256": "f658aca6273493e179b592e650341bc2cf76b1c48002633e592ab68c6cef212b",
+    "declared_image_references": 12,
+    "declared_network_mode": "bridge",
+    "declared_repository_groups": 90,
+    "skills_without_digest_pinned_image": 98,
+    "skills_without_repo_commit": 1,
+    "source_tree": "faa67dc31132bfa1f8dd1bdae088b1b675f99f88",
+    "table_git_blobs": {
+      "claude__Kimi-K2.6_cells.csv": "a795d1c3822b30c69e055cb83aa1725ce5263931",
+      "claude__haiku-4-5_cells.csv": "bae4532c0a11d975b254c18a5c42752fcaab1493",
+      "codex__Kimi-K2.6_cells.csv": "ee3568fdb94a93531cd24b97ef2b11dafa35fd93",
+      "codex__gpt-5.4-mini_cells.csv": "e54e17393f01b3ce436c89f97ce1a923cdb7b94d"
+    },
+    "task_contents_fetched": 0,
+    "task_files": 980,
+    "tasks_tree": "0800f4734a9a21d69e5bcb32cac7754487a92031",
+    "verifier_contents_fetched": 0,
+    "verifier_tree": "7c2acfcdb6a5365d1e2466b368a7010de5f34dc5"
+  },
+  "tool": {
+    "path": "tools/verify_swe_skills_bench_results.py",
+    "sha256": "055812ea04c9593b4f85a10559e5729a1305b5a5e7e89e0c823f4cfef18b2dad"
+  }
+}

@@ -1,0 +1,506 @@
+{
+  "schema_version": 1,
+  "kind": "native-account-quota-model-metadata-readiness",
+  "date": "2026-11-11",
+  "entrypoint": "tools/check_native_trial_readiness.py",
+  "scope": "Current selected official CLI profile account/quota/model metadata. This is not a model turn or full benchmark admission.",
+  "cli_version": "0.167.1",
+  "source_commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+  "binary_pin_sha256": "6ad514456ca7a5ce3dd62fc099c2eda32d795e513ab1fe538b465a1488bf58be",
+  "release_provenance": {
+    "latest_stable_url": "https://api.github.com/repos/openai/codex/releases/latest",
+    "tag": "rust-v0.167.1",
+    "published_at": "2026-11-10T21:32:01Z",
+    "annotated_tag_resolves_pinned_commit": true,
+    "github_tag_signature_verified": false,
+    "capture_sha256": {
+      "0": "3963ff26eba248851054ebd93ddcf4f382929e35717ed9eeb800f665005a81e2",
+      "1": "41e3c3b76cb023982e0334036d208c22ae87c355435d81965bc6b2accee4b009",
+      "2": "78a95696433f379dea4c58f5b3d74f7adf4b885faa169976628b85d85315cb69"
+    },
+    "scope": "Official API tag/release provenance and pinned archive/file identities; no reproducible-build or signed-tag claim."
+  },
+  "sources": [
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/app-server/src/request_processors/account_processor.rs",
+      "capture_sha256": "414b372236c8dacb6dc4b5f0d20cad914435b3caaafca4862eec73f162b6a4a1",
+      "transport": "official GitHub connector decoded source, not wire-byte or Git-blob verification"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/app-server/src/request_processors/account_processor/workspace_routing.rs",
+      "capture_sha256": "090677f70dc022851f752ae7436c8f64b0d2fd29ad2087b29935027ffc8f6827",
+      "transport": "official GitHub connector decoded source, not wire-byte or Git-blob verification"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/backend-client/src/types.rs",
+      "capture_sha256": "db9a2b931b55ca372133350cf9578325e4d052b8311e7a1291b0cefcdb0f844b",
+      "transport": "official GitHub connector decoded source, not wire-byte or Git-blob verification"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/backend-client/src/client/rate_limit_resets.rs",
+      "capture_sha256": "4e7ff286b7f928e485ede6265ed57ba0fc18dda0948fc7c699ed909a52730359",
+      "transport": "official GitHub connector decoded source, not wire-byte or Git-blob verification"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/app-server-protocol/schema/typescript/v2/GetAccountRateLimitsParams.ts",
+      "capture_sha256": "b168970fe66cd779b8cb963efef909a685d5bbf047c75c33d51a6f919db08cb7",
+      "transport": "official GitHub connector decoded source, not wire-byte or Git-blob verification"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/app-server-protocol/schema/typescript/v2/ModelListParams.ts",
+      "capture_sha256": "08bddd47bd11562a1157e8bba7019e4dc0aa3680fcb058ad1ce2f1304bac9251",
+      "transport": "official GitHub connector decoded source, not wire-byte or Git-blob verification"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/0a94398fa60c4fac0e7659e4213a0a36e613dd46/codex-rs/app-server/src/startup_config.rs",
+      "capture_sha256": "b286a9eb5aea7edf661a36094366533e8db5177382c9a30a56aced9c583739ed",
+      "transport": "official GitHub connector decoded source, not wire-byte or Git-blob verification"
+    }
+  ],
+  "implementation_sha256": {
+    "tools/_trial_account_readiness.py": "e377ab1592028930eec0c763799edce0efd9f4dabf6e5e9838b5cb7199c0f2c4",
+    "tools/check_native_trial_readiness.py": "f375b81d58863313ba5bcb256ae4afc9444e2482dc98860a5dc875f3a35f783c",
+    "tools/run_agent_trial.py": "2d17cd68d39e09f3544777ce2c88f449ecb8f77b9fe5c515208b215109ae6df1",
+    "tools/_trial_signin.py": "066a18c063ca6bfb7871450dcb601f759484687dc015dd87900659763174c054",
+    "tests/test_trial_signin.py": "b28340b0dd1dfb9ca5cd86d63edfbc71d2bba1d8481dd2725208836306c1f945",
+    "tests/test_trial_account_readiness.py": "a640b097dda2b3d121245ddf6a85292f76ab7dd37348d63191328a54e126c179",
+    "tests/test_native_readiness_command.py": "c2186c06f2476dfba07c0bb105d1565f04369578e0a487f4b88405acbadf4106"
+  },
+  "focused_tests": {
+    "passed": 470,
+    "ruff": "passed",
+    "format": "passed",
+    "mypy_files": 322,
+    "qualification_sha256": "2bf3e724d460f73e21ab1c809f01dff7c0dfe6228ccf06855faa5cc20ef92379"
+  },
+  "native_controls": [
+    {
+      "id": "rpc-cached",
+      "passed": true,
+      "expected": {
+        "account_type": "chatgpt",
+        "refresh_requests": 0,
+        "authentication_file_unchanged": true,
+        "rpc_error_present": false
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "cached",
+        "refresh_requests": 0,
+        "native_refresh_persisted": false,
+        "authentication_file_unchanged": true,
+        "rpc_error_present": false,
+        "account_type": "chatgpt",
+        "owned_processes_after_cleanup": 0,
+        "listener_stopped": true,
+        "real_account_used": false,
+        "real_model_inferences": 0,
+        "token_export_requested": false,
+        "preflight_admission_qualified": false
+      },
+      "summary_sha256": "71a7f961b61f898d302035f7b0aa6855892d06da7ec2cdb6ee2b0c890d33a8cf",
+      "transport_sha256": "535a3b86aadc449bf270167aa708ec064fe542a67436cb2e8b6d024f3f22af85",
+      "case_verdict_sha256": "3931e5683787b147f81e59d1ad600372c53859533cb8209552b8707d9039a281"
+    },
+    {
+      "id": "rpc-refresh",
+      "passed": true,
+      "expected": {
+        "account_type": "chatgpt",
+        "refresh_requests": 1,
+        "native_refresh_persisted": true,
+        "rpc_error_present": false
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "success",
+        "refresh_requests": 1,
+        "native_refresh_persisted": true,
+        "authentication_file_unchanged": false,
+        "rpc_error_present": false,
+        "account_type": "chatgpt",
+        "owned_processes_after_cleanup": 0,
+        "listener_stopped": true,
+        "real_account_used": false,
+        "real_model_inferences": 0,
+        "token_export_requested": false,
+        "preflight_admission_qualified": false
+      },
+      "summary_sha256": "d5ebc0716a6ba354cbb6dcafc7f5f9c574c464e79141a27a1becf7b50b999261",
+      "transport_sha256": "10c499f8dce28995f15015b97b1823d632b18e4c8b05f113b87592764c308544",
+      "case_verdict_sha256": "914c06a958d0ea79ebcf6abddf039f7845a8ffa89cea5849eb980fb707a124b7"
+    },
+    {
+      "id": "rpc-permanent",
+      "passed": true,
+      "expected": {
+        "account_type": null,
+        "refresh_requests": 1,
+        "authentication_file_unchanged": true,
+        "rpc_error_present": false
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "permanent",
+        "refresh_requests": 1,
+        "native_refresh_persisted": false,
+        "authentication_file_unchanged": true,
+        "rpc_error_present": false,
+        "account_type": null,
+        "owned_processes_after_cleanup": 0,
+        "listener_stopped": true,
+        "real_account_used": false,
+        "real_model_inferences": 0,
+        "token_export_requested": false,
+        "preflight_admission_qualified": false
+      },
+      "summary_sha256": "54805bab0efd16f8f6e682316cf6405985fadfb14f5180ccdae4634c6061546c",
+      "transport_sha256": "f300003013f03627a1cad78a1d0b31688aa606e40fff32864689596a03ea27c0",
+      "case_verdict_sha256": "8c3480c742d84d16f68dcd45afa1418af69134086b240d3ac6eed6b22313579c"
+    },
+    {
+      "id": "rpc-transient",
+      "passed": true,
+      "expected": {
+        "account_type": "chatgpt",
+        "refresh_requests": 1,
+        "native_refresh_persisted": false,
+        "authentication_file_unchanged": true,
+        "rpc_error_present": false
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "transient",
+        "refresh_requests": 1,
+        "native_refresh_persisted": false,
+        "authentication_file_unchanged": true,
+        "rpc_error_present": false,
+        "account_type": "chatgpt",
+        "owned_processes_after_cleanup": 0,
+        "listener_stopped": true,
+        "real_account_used": false,
+        "real_model_inferences": 0,
+        "token_export_requested": false,
+        "preflight_admission_qualified": false
+      },
+      "summary_sha256": "9165ce6ab9b24f62ee904d9bcea186d74812b781de7be10a63a86258918fda00",
+      "transport_sha256": "c7a067aae4f9a6df7221314dde9296a1628ba11504dd862ba86f358cd86ab9b2",
+      "case_verdict_sha256": "6fa243ee2cd544b815239ffe331d21b9f8643a32b6dd817d9a182c9b0d6d2357"
+    },
+    {
+      "id": "cli-allowed",
+      "passed": true,
+      "expected": {
+        "status": "eligible",
+        "eligible": true,
+        "production_cli_exit": 0
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "cached",
+        "production": true,
+        "production_cli": true,
+        "status": "eligible",
+        "eligible": true,
+        "stage": "complete",
+        "reasons": [],
+        "production_cli_exit": 0,
+        "refresh_requests": 0,
+        "quota_mode": "allowed",
+        "target_model": "gpt-6.1-sol",
+        "raw_account_metadata_retained": false,
+        "native_owned_processes_after_cleanup": 0,
+        "listener_stopped": true,
+        "real_model_inferences": 0,
+        "profile_instructions": false
+      },
+      "summary_sha256": "6f5e7a11196d955e4947f4cd6ff8d1ffdc3bc79af8153ab353a5dfe0c269d912",
+      "transport_sha256": "ee6a53e1240d60a734031d42e65c900ce446eb4e336a114a2f9369d68acda484",
+      "case_verdict_sha256": "f5922b27474dc29190b01e15cec16fe5b1f59e2e5c39b6c1f6ca20d716098836"
+    },
+    {
+      "id": "cli-denied",
+      "passed": true,
+      "expected": {
+        "status": "ineligible",
+        "eligible": false,
+        "production_cli_exit": 1
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "cached",
+        "production": true,
+        "production_cli": true,
+        "status": "ineligible",
+        "eligible": false,
+        "stage": "complete",
+        "reasons": [
+          "ordinary_usage_unconfirmed",
+          "account_binding_unconfirmed"
+        ],
+        "production_cli_exit": 1,
+        "refresh_requests": 0,
+        "quota_mode": "denied",
+        "target_model": "gpt-6.1-sol",
+        "raw_account_metadata_retained": false,
+        "native_owned_processes_after_cleanup": 0,
+        "listener_stopped": true,
+        "real_model_inferences": 0,
+        "profile_instructions": false
+      },
+      "summary_sha256": "1e2244bbaedbe2ba75c3ff0672703482c2f0fd9223b690bd7da9f7f3836371f3",
+      "transport_sha256": "ee6a53e1240d60a734031d42e65c900ce446eb4e336a114a2f9369d68acda484",
+      "case_verdict_sha256": "5642707f9d884b8fced51f13f1a25cbc83fd31d91a55f99ff437b0095d92a962"
+    },
+    {
+      "id": "cli-exhausted",
+      "passed": true,
+      "expected": {
+        "status": "ineligible",
+        "eligible": false,
+        "production_cli_exit": 1
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "cached",
+        "production": true,
+        "production_cli": true,
+        "status": "ineligible",
+        "eligible": false,
+        "stage": "complete",
+        "reasons": [
+          "ordinary_usage_blocked"
+        ],
+        "production_cli_exit": 1,
+        "refresh_requests": 0,
+        "quota_mode": "exhausted",
+        "target_model": "gpt-6.1-sol",
+        "raw_account_metadata_retained": false,
+        "native_owned_processes_after_cleanup": 0,
+        "listener_stopped": true,
+        "real_model_inferences": 0,
+        "profile_instructions": false
+      },
+      "summary_sha256": "392d69e282a030615ef6800a3d6bd9865d33e55b588672c6d013f31467de3a77",
+      "transport_sha256": "ee6a53e1240d60a734031d42e65c900ce446eb4e336a114a2f9369d68acda484",
+      "case_verdict_sha256": "73fb1fd2b44791ca3de7ed7f3233fda17cd906c52b3980c0f540a43ecd7de44e"
+    },
+    {
+      "id": "cli-unknown",
+      "passed": true,
+      "expected": {
+        "status": "ineligible",
+        "eligible": false,
+        "production_cli_exit": 1
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "cached",
+        "production": true,
+        "production_cli": true,
+        "status": "ineligible",
+        "eligible": false,
+        "stage": "complete",
+        "reasons": [
+          "ordinary_usage_unconfirmed"
+        ],
+        "production_cli_exit": 1,
+        "refresh_requests": 0,
+        "quota_mode": "unknown",
+        "target_model": "gpt-6.1-sol",
+        "raw_account_metadata_retained": false,
+        "native_owned_processes_after_cleanup": 0,
+        "listener_stopped": true,
+        "real_model_inferences": 0,
+        "profile_instructions": false
+      },
+      "summary_sha256": "2e81dfefd4fc0b2999737322eddebb6e8aa9b29d989162233717c22cc82a8f02",
+      "transport_sha256": "ee6a53e1240d60a734031d42e65c900ce446eb4e336a114a2f9369d68acda484",
+      "case_verdict_sha256": "20fb4b69aeffb1a4216767ae6f59a8f5168bf812c4918056935b1ad143ae2b98"
+    },
+    {
+      "id": "cli-missing-model",
+      "passed": true,
+      "expected": {
+        "status": "ineligible",
+        "eligible": false,
+        "production_cli_exit": 1
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "cached",
+        "production": true,
+        "production_cli": true,
+        "status": "ineligible",
+        "eligible": false,
+        "stage": "complete",
+        "reasons": [
+          "requested_model_unconfirmed"
+        ],
+        "production_cli_exit": 1,
+        "refresh_requests": 0,
+        "quota_mode": "allowed",
+        "target_model": "owned-missing-model",
+        "raw_account_metadata_retained": false,
+        "native_owned_processes_after_cleanup": 0,
+        "listener_stopped": true,
+        "real_model_inferences": 0,
+        "profile_instructions": false
+      },
+      "summary_sha256": "4f548e761f7b064d860ae38664811a4083cf2555d8cca35ec4a9f747616eae1e",
+      "transport_sha256": "ee6a53e1240d60a734031d42e65c900ce446eb4e336a114a2f9369d68acda484",
+      "case_verdict_sha256": "5fbd45456d486656b4acb0959d27752cbf199a7e6bd48aff25f8490a8e90871a"
+    },
+    {
+      "id": "cli-global-instructions",
+      "passed": true,
+      "expected": {
+        "status": "harness_error",
+        "eligible": false,
+        "stage": "signin_admission",
+        "production_cli_exit": 2
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "cached",
+        "production": true,
+        "production_cli": true,
+        "status": "harness_error",
+        "eligible": false,
+        "stage": "signin_admission",
+        "reasons": null,
+        "production_cli_exit": 2,
+        "refresh_requests": 0,
+        "quota_mode": "allowed",
+        "target_model": "gpt-6.1-sol",
+        "raw_account_metadata_retained": false,
+        "native_owned_processes_after_cleanup": null,
+        "listener_stopped": true,
+        "real_model_inferences": 0,
+        "profile_instructions": true
+      },
+      "summary_sha256": "19a970bc532bd2f98176f1475d3a1862e377913679b41277ad8c93dee7ec5033",
+      "transport_sha256": "ca79b25609ab3df611722f6a16c4afe186d72736dbc438693f15e7574be52e5d",
+      "case_verdict_sha256": "4e5eabfd3153aed9916f3d65674094a7a0b0e3053c88d9f1cc92dcd33d7e24bd"
+    },
+    {
+      "id": "cli-rejected-refresh",
+      "passed": true,
+      "expected": {
+        "status": "ineligible",
+        "eligible": false,
+        "production_cli_exit": 1
+      },
+      "observed": {
+        "probe_completed": true,
+        "mode": "permanent",
+        "production": true,
+        "production_cli": true,
+        "status": "ineligible",
+        "eligible": false,
+        "stage": "complete",
+        "reasons": [
+          "chatgpt_account_unconfirmed",
+          "account_binding_unconfirmed"
+        ],
+        "production_cli_exit": 1,
+        "refresh_requests": 2,
+        "quota_mode": "allowed",
+        "target_model": "gpt-6.1-sol",
+        "raw_account_metadata_retained": false,
+        "native_owned_processes_after_cleanup": 0,
+        "listener_stopped": true,
+        "real_model_inferences": 0,
+        "profile_instructions": false
+      },
+      "summary_sha256": "c460dd958a87a6a934cf26cba153305eff1523584ce32646990a8b483efca9b5",
+      "transport_sha256": "a91c16337021806b37988a5b57fb936c4167ca3b9ba92e7c6b789136e50be748",
+      "case_verdict_sha256": "967b163de83546858289f294ad34edbf8f15e6d606b5788ab93a7f5805918ed9"
+    }
+  ],
+  "native_qualification_sha256": "1097fa1b54ed217639147051122982f34155934888dcc56339899ea959f1239a",
+  "retained_control_sources": [
+    {
+      "source_path": ".venv/research/benchmark-planning-20261110-v1/check_native_account_case_v1.py",
+      "archive_path": "000.py",
+      "sha256": "95e139a82181ce43dd73afaeba912fc8252e10feb5b032b73cbe9873c13c5638"
+    },
+    {
+      "source_path": ".venv/research/benchmark-planning-20261110-v1/probe_native_account_rpc_v1.py",
+      "archive_path": "001.py",
+      "sha256": "c59b9555f85e26cee73ce3127ac4cadf5f22f6bc008c16f3e0a1cb8415a5a6b4"
+    },
+    {
+      "source_path": ".venv/research/benchmark-planning-20261110-v1/qualify_checkpoint.py",
+      "archive_path": "002.py",
+      "sha256": "e66c6dfaf291604c691f895e9daee3c5bd25d5e4ef67b4d84c7ef9f5c267f1a8"
+    },
+    {
+      "source_path": ".venv/research/benchmark-planning-20261110-v1/qualify_signin_websocket_fixture_v1.py",
+      "archive_path": "003.py",
+      "sha256": "0d448ef45604417e40383279a47ae93601e4bd68c697cb089459c7ef252a2422"
+    },
+    {
+      "source_path": ".venv/research/benchmark-planning-20261110-v1/qualify_trial_transport.py",
+      "archive_path": "004.py",
+      "sha256": "17c2bcb3b0b339f85fe04925dfb678e61172237d573023d7eb4f169958141499"
+    }
+  ],
+  "private_control_archive": ".venv/research/benchmark-planning-20261110-v1/native-account-qualified-v4/control-sources",
+  "local_profile_path_regression": {
+    "note_sha256": "548c3d3838c667d2174b73ff0c1e4db4b33004637ebae1bd04158caa94317f89",
+    "test": "tests/test_trial_signin.py::test_native_storage_rejects_network_and_device_namespaces_before_any_io",
+    "scope": "Ordinary local path admission; network/device namespace aliases rejected before profile I/O."
+  },
+  "full_suite": {
+    "passed": 3048,
+    "skipped": 18,
+    "frozen_inputs": 22211,
+    "qualification_sha256": "5eea4b0731ef2c004c7ec4e154bf9e4c7dc9a0de7a0356bdceca96d4d118acf6",
+    "coverage": {
+      "line_rate": 0.7562,
+      "branch_rate": 0.709,
+      "combined_line_branch_percent": 74.36,
+      "xml_sha256": "a55374f766b4e51414af34f6b8f4a5e5e98ebda1ad0e6ddf25524313b2bd237a"
+    }
+  },
+  "findings": [
+    "Transient refresh failure returned a ChatGPT account without persisting refreshed credentials. Account presence is not refresh proof.",
+    "Permanent refresh rejection returned a null account rather than a JSON-RPC error. The assessment must inspect account data.",
+    "The production checker requires explicit ordinary-usage permission, stable account binding before/after metadata reads, a complete model inventory and the requested reasoning effort.",
+    "Production raw stdout/stderr and account details stay in bounded memory; output retains sanitized decisions, source identities and process results. No token export or Reserve operation is requested.",
+    "App-server reads the selected profile configuration; exec --ignore-user-config uses a different loading contract. Configuration concordance remains unproved and is explicitly false in metadata results.",
+    "Workspace-routing identity and quota identity are version-bound observed native fields. Missing identity is unconfirmed readiness; broader SDK or cross-version compatibility is not established."
+  ],
+  "fixture_scope": "Synthetic file-store credentials and local HTTP endpoints only. HTTPS loopback routing is returned as metadata; TLS, real cloud routing and real account/keyring behavior are not qualified.",
+  "retained_failures": [
+    {
+      "attempt": "native-account-rpc-success-v1",
+      "finding": "Refresh succeeded but the old fixture lacked workspace discovery; not counted as account readiness."
+    },
+    {
+      "attempt": "provider-route-unit-qualified-readiness1",
+      "finding": "Test annotations failed mypy; fixed without suppressions and requalified."
+    },
+    {
+      "attempt": "native-account-qualified-v1",
+      "finding": "Three fresh-output checks collided with earlier exploratory directories. Old evidence was preserved; case outputs now use a separate namespace."
+    }
+  ],
+  "public_model_launch_guard": "closed",
+  "whole_model_trial_boundary_qualified": false,
+  "subject_configuration_match_established": false,
+  "real_model_inferences": 0,
+  "model_efficacy_established": false,
+  "real_account_credentials_used": false,
+  "openai_api_keys_requested_or_used": false,
+  "direct_openai_api_requests": 0,
+  "github_writes": 0,
+  "release_created": false,
+  "remaining": [
+    "Configuration concordance between app-server preflight and isolated exec",
+    "Remaining shared-profile/cache channels and interrupted-account recovery semantics",
+    "Provider model identity and source-bound full launch qualification",
+    "Fresh-install qualification, preregistration and real matched external trials"
+  ]
+}

@@ -34,7 +34,7 @@ and installed agent runtimes need separate qualification; an offline catalog
 check does not prove their behavior. On Windows, use the active environment's
 `Scripts/python.exe` in place of `python3` in the commands below.
 
-The main offline-validation matrix explicitly provisions Node 26.13.0 for its
+The main offline-validation matrix explicitly provisions Node 26.13.1 for its
 native controls. When qualifying external Python tools in isolated mode, use
 explicit text encodings and, where required by the tool, `-I -X utf8 -B`.
 `-I` ignores `PYTHONUTF8`; setting that environment variable does not establish
@@ -65,15 +65,24 @@ directories outside the checkout: Git's non-repository fixtures must not
 discover the collection as a parent repository. The automatic entrypoint
 provides a private temporary directory; use its default for the full suite.
 
+Native setup qualification also recompiles the tracked process supervisor twice
+and rejects stale or altered inputs before cache mutation. See the
+[rebuild instructions](../toolchains/bootstrap/README.md). Keep a qualification's
+complete source and test-fixture inputs unchanged until its process has ended
+and its terminal receipt is present. Preserve failed and interrupted attempts;
+an observation timeout is not permission to launch a duplicate. Admit actual
+output and cleanup evidence as well as exit status. Verify fixture completeness
+and the intended failure cause before treating a failed control as a product bug.
+
 For an existing supported Python environment or the Linux CI jobs, use the
 locked setup below.
 
 The Ruff, mypy and main offline-validation jobs use
-`requirements-dev-lock.txt` with uv 0.13.7.
+`requirements-dev-lock.txt` with uv 0.13.8.
 It locks the project runtime, test, lint and build requirements, including
 distribution hashes. Their lock check resolves the existing pins again against
 PyPI and rejects changed inputs or hashes. To reproduce the locked environment,
-install uv 0.13.7,
+install uv 0.13.8,
 create and activate a Python 3.11–3.14 virtual environment, then run:
 
 ```bash
@@ -93,7 +102,7 @@ runs the suite. Those canary environments do not produce the locked coverage
 reports or replace the pinned validation jobs.
 
 To regenerate the developer lock after changing project or build requirements,
-first create and activate `.venv`, install uv 0.13.7, then run:
+first create and activate `.venv`, install uv 0.13.8, then run:
 
 ```bash
 python -c "import pathlib,tomllib; p=pathlib.Path('pyproject.toml'); r=tomllib.loads(p.read_text(encoding='utf-8'))['build-system']['requires']; pathlib.Path('.venv/dev-build.in').write_text('\n'.join(r)+'\n', encoding='utf-8')"

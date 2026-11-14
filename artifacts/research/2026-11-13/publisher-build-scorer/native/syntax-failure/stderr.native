@@ -1,0 +1,4 @@
+  File "broken.py", line 1
+    def invalid(:
+                ^
+SyntaxError: invalid syntax

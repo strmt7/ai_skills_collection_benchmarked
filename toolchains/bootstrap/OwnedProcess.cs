@@ -87,6 +87,7 @@ namespace SkillsBootstrap {
             if(timeoutSeconds<=0 || outputLimit<=0 || memoryLimit<=0 || processLimit<=0)
                 throw new ArgumentException("Positive process budgets are required");
             executable=NativePath(executable); cwd=NativePath(cwd);
+            stdout=NativePath(stdout); stderr=NativePath(stderr);
             IntPtr job=IntPtr.Zero,input=IntPtr.Zero,output=IntPtr.Zero,error=IntPtr.Zero;
             IntPtr environmentBlock=IntPtr.Zero,attributes=IntPtr.Zero,handles=IntPtr.Zero;
             ProcessInfo process=new ProcessInfo(); bool initialized=false,assigned=false;

@@ -3,22 +3,22 @@
   "os": "windows",
   "architecture": "x86_64",
   "uv": {
-    "version": "0.13.7",
-    "url": "https://github.com/astral-sh/uv/releases/download/0.13.7/uv-x86_64-pc-windows-msvc.zip",
-    "archive_bytes": 15236317,
-    "archive_sha256": "0cdc5b38fe5a8168ed6a25814f5ba43c21d313dd3187314fccb37b7cec46e021",
+    "version": "0.13.8",
+    "url": "https://github.com/astral-sh/uv/releases/download/0.13.8/uv-x86_64-pc-windows-msvc.zip",
+    "archive_bytes": 15529884,
+    "archive_sha256": "529e78a9cec6cd7e3e014f7ecd8bda0c113969d4ed0f2efeedb85c30943325b8",
     "files": {
       "uv.exe": {
-        "bytes": 31803184,
-        "sha256": "1791d7a9ed5b6df13ccf80f102e025c333010d96326b4ff0262aa3b578835c5a"
+        "bytes": 32481072,
+        "sha256": "03fa174894b9d0cbe08762d40d1c2c64d10e875bd56f1a1e334ee1e00d60cdbe"
       },
       "uvw.exe": {
         "bytes": 346416,
-        "sha256": "c5a32e09f6c41967d359eb7aa5ec7afc028cd9c2c3984b53d8b23059d25f1aa7"
+        "sha256": "b0adfdb0dbcebdfed0e14a1585a24e7d791018fc583f34c869ad4a92a6f5efe8"
       },
       "uvx.exe": {
         "bytes": 345392,
-        "sha256": "fa0769ada563bb9f425ef9e83564d182639f6125069cb6978d4df8a84911461a"
+        "sha256": "848dac6b5a5d0e03c5b3fcf7fc9e697c1be59d40b1989e428c95806f44443d6b"
       }
     }
   },
@@ -39069,23 +39069,23 @@
     }
   },
   "node": {
-    "version": "v26.13.0",
-    "url": "https://nodejs.org/dist/v26.13.0/node-v26.13.0-win-x64.zip",
-    "archive_bytes": 41157375,
-    "archive_sha256": "dcc60d59a0746999f99064a01c020445d54d84228c691cdbf25b49ac3b59150a",
+    "version": "v26.13.1",
+    "url": "https://nodejs.org/dist/v26.13.1/node-v26.13.1-win-x64.zip",
+    "archive_bytes": 41166246,
+    "archive_sha256": "e2edda75bfb089654705cf65a13b58933bfd5f57148e8ebda916f58a2474f1f7",
     "files": {
       "LICENSE": {
         "bytes": 159309,
         "sha256": "cbc91dba25c546898544155e1c0fce897f00e3f1df0afc795b8da891d38f92d9"
       },
       "node.exe": {
-        "bytes": 100097864,
-        "sha256": "14319838b3f355e0398c13569a90270bce4fc68f25189f58c59b03dadae0e6d5"
+        "bytes": 100089160,
+        "sha256": "f5109dc868ec38703ad8f305e0aceece717cb60d4889873f434017af4e96cccb"
       }
     },
     "file_map": {
-      "node-v26.13.0-win-x64/LICENSE": "LICENSE",
-      "node-v26.13.0-win-x64/node.exe": "node.exe"
+      "node-v26.13.1-win-x64/LICENSE": "LICENSE",
+      "node-v26.13.1-win-x64/node.exe": "node.exe"
     }
   },
   "jdk": {

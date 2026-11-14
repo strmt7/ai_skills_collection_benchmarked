@@ -1,0 +1,304 @@
+{
+  "observation": {
+    "passed": true,
+    "cases": [
+      {
+        "case": "wrong-sdk-digest-rejected-before-execution",
+        "expected_observation": true,
+        "rejected": true
+      },
+      {
+        "case": "copied-sdk-digest-admitted",
+        "expected_observation": true,
+        "sha256": "7226736c2339719cda28fbf3a54d71aa63bcefe376e98cef00034268dab24840"
+      },
+      {
+        "case": "actual-sdk-version",
+        "expected_observation": true,
+        "observed": "go version go1.27.4 linux/amd64"
+      },
+      {
+        "case": "original-initial-no-external-dependencies",
+        "expected_observation": true,
+        "output": "initial|dev",
+        "go_sum_present": false
+      },
+      {
+        "case": "original-embedded-resource-change",
+        "expected_observation": true,
+        "output": "initial|dev",
+        "old_binary_retained": true
+      },
+      {
+        "case": "native-go-recognizes-resource-change",
+        "expected_observation": true,
+        "exit_code": 0
+      },
+      {
+        "case": "original-missing-required-resource",
+        "expected_observation": true,
+        "exit_code": 0
+      },
+      {
+        "case": "original-actual-test-passes",
+        "expected_observation": true,
+        "exit_code": 0
+      },
+      {
+        "case": "original-actual-test-failure-propagates",
+        "expected_observation": true,
+        "exit_code": 2
+      },
+      {
+        "case": "maintained-initial-no-external-dependencies",
+        "expected_observation": true,
+        "output": "initial|dev",
+        "go_sum_present": false
+      },
+      {
+        "case": "maintained-embedded-resource-change",
+        "expected_observation": true,
+        "output": "updated|dev",
+        "old_binary_retained": false
+      },
+      {
+        "case": "maintained-missing-required-resource",
+        "expected_observation": true,
+        "exit_code": 2
+      },
+      {
+        "case": "maintained-actual-test-passes",
+        "expected_observation": true,
+        "exit_code": 0
+      },
+      {
+        "case": "maintained-actual-test-failure-propagates",
+        "expected_observation": true,
+        "exit_code": 2
+      }
+    ],
+    "records": [
+      {
+        "argv": [
+          "/tmp/go-make-67eb848l/sdk/go/bin/go",
+          "version"
+        ],
+        "cwd_name": "go-make-67eb848l",
+        "exit_code": 0,
+        "stdout": "go version go1.27.4 linux/amd64\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/bash",
+          "/tmp/go-make-67eb848l/generate.sh",
+          "go",
+          "demo",
+          "Makefile"
+        ],
+        "cwd_name": "original",
+        "exit_code": 0,
+        "stdout": "INFO: Generating go Makefile for project 'demo'...\nSUCCESS: Makefile generated: Makefile\nINFO: Edit the Makefile to customize for your project\nINFO: Run 'make help' to see available targets\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "GO=/tmp/go-make-67eb848l/sdk/go/bin/go",
+          "build"
+        ],
+        "cwd_name": "original",
+        "exit_code": 0,
+        "stdout": "/tmp/go-make-67eb848l/sdk/go/bin/go build -ldflags \"-X main.version=dev\" -o demo ./cmd/demo\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/tmp/go-make-67eb848l/original/demo"
+        ],
+        "cwd_name": "original",
+        "exit_code": 0,
+        "stdout": "initial|dev",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "GO=/tmp/go-make-67eb848l/sdk/go/bin/go",
+          "build"
+        ],
+        "cwd_name": "original",
+        "exit_code": 0,
+        "stdout": "make: Nothing to be done for 'build'.\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/tmp/go-make-67eb848l/original/demo"
+        ],
+        "cwd_name": "original",
+        "exit_code": 0,
+        "stdout": "initial|dev",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/tmp/go-make-67eb848l/sdk/go/bin/go",
+          "build",
+          "-ldflags",
+          "-X main.version=dev",
+          "-o",
+          "demo",
+          "./cmd/demo"
+        ],
+        "cwd_name": "original",
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/tmp/go-make-67eb848l/original/demo"
+        ],
+        "cwd_name": "original",
+        "exit_code": 0,
+        "stdout": "updated|dev",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "GO=/tmp/go-make-67eb848l/sdk/go/bin/go",
+          "build"
+        ],
+        "cwd_name": "original",
+        "exit_code": 0,
+        "stdout": "make: Nothing to be done for 'build'.\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "GO=/tmp/go-make-67eb848l/sdk/go/bin/go",
+          "test"
+        ],
+        "cwd_name": "original",
+        "exit_code": 0,
+        "stdout": "/tmp/go-make-67eb848l/sdk/go/bin/go test -v ./...\n=== RUN   TestEmbeddedMessage\n--- PASS: TestEmbeddedMessage (0.00s)\nPASS\nok  \texample.invalid/demo/cmd/demo\t0.002s\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "GO=/tmp/go-make-67eb848l/sdk/go/bin/go",
+          "test"
+        ],
+        "cwd_name": "original",
+        "exit_code": 2,
+        "stdout": "/tmp/go-make-67eb848l/sdk/go/bin/go test -v ./...\n=== RUN   TestEmbeddedMessage\n    main_test.go:3: controlled test failure\n--- FAIL: TestEmbeddedMessage (0.00s)\nFAIL\nFAIL\texample.invalid/demo/cmd/demo\t0.002s\nFAIL\n",
+        "stderr": "make: *** [Makefile:32: test] Error 1\n"
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "GO=/tmp/go-make-67eb848l/sdk/go/bin/go",
+          "build"
+        ],
+        "cwd_name": "maintained",
+        "exit_code": 0,
+        "stdout": "/tmp/go-make-67eb848l/sdk/go/bin/go build -ldflags \"-X main.version=dev\" -o demo ./cmd/demo\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/tmp/go-make-67eb848l/maintained/demo"
+        ],
+        "cwd_name": "maintained",
+        "exit_code": 0,
+        "stdout": "initial|dev",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "GO=/tmp/go-make-67eb848l/sdk/go/bin/go",
+          "build"
+        ],
+        "cwd_name": "maintained",
+        "exit_code": 0,
+        "stdout": "/tmp/go-make-67eb848l/sdk/go/bin/go build -ldflags \"-X main.version=dev\" -o demo ./cmd/demo\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/tmp/go-make-67eb848l/maintained/demo"
+        ],
+        "cwd_name": "maintained",
+        "exit_code": 0,
+        "stdout": "updated|dev",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "GO=/tmp/go-make-67eb848l/sdk/go/bin/go",
+          "build"
+        ],
+        "cwd_name": "maintained",
+        "exit_code": 2,
+        "stdout": "/tmp/go-make-67eb848l/sdk/go/bin/go build -ldflags \"-X main.version=dev\" -o demo ./cmd/demo\n",
+        "stderr": "cmd/demo/main.go:7:12: pattern message.txt: no matching files found\nmake: *** [Makefile:9: build] Error 1\n"
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "GO=/tmp/go-make-67eb848l/sdk/go/bin/go",
+          "test"
+        ],
+        "cwd_name": "maintained",
+        "exit_code": 0,
+        "stdout": "/tmp/go-make-67eb848l/sdk/go/bin/go test -v ./...\n=== RUN   TestEmbeddedMessage\n--- PASS: TestEmbeddedMessage (0.00s)\nPASS\nok  \texample.invalid/demo/cmd/demo\t0.002s\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "--no-print-directory",
+          "GO=/tmp/go-make-67eb848l/sdk/go/bin/go",
+          "test"
+        ],
+        "cwd_name": "maintained",
+        "exit_code": 2,
+        "stdout": "/tmp/go-make-67eb848l/sdk/go/bin/go test -v ./...\n=== RUN   TestEmbeddedMessage\n    main_test.go:3: controlled test failure\n--- FAIL: TestEmbeddedMessage (0.00s)\nFAIL\nFAIL\texample.invalid/demo/cmd/demo\t0.002s\nFAIL\n",
+        "stderr": "make: *** [Makefile:11: test] Error 1\n"
+      }
+    ],
+    "go_version": "go version go1.27.4 linux/amd64",
+    "license_sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+    "maintained_makefile": "PROJECT := demo\nGO ?= go\nGO_MAIN ?= ./cmd/$(PROJECT)\nVERSION := dev\nLDFLAGS := -ldflags \"-X main.version=$(VERSION)\"\n.PHONY: all build test\nall: build\nbuild:\n\t$(GO) build $(LDFLAGS) -o $(PROJECT) $(GO_MAIN)\ntest:\n\t$(GO) test -v ./...\n",
+    "model_invocations": 0,
+    "scope": "Source-grounded component controls; not a model benchmark, speed comparison or arbitrary Go-project qualification."
+  },
+  "program_sha256": "ec532d8deb4b25aeb19e6f65e615704cefd22b085b970b0eaf81db190f7de7a4",
+  "sdk_sha256": "7226736c2339719cda28fbf3a54d71aa63bcefe376e98cef00034268dab24840",
+  "sdk_version": "go1.27.4",
+  "image_reference": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+  "available_host_ram_before_bytes": 31651880960,
+  "memory_limit_bytes": 2147483648,
+  "tmpfs_limit_bytes": 1073741824,
+  "lease_seconds": 300,
+  "lease_closed": true,
+  "remaining_owned_containers": 0,
+  "images_pulled": 0,
+  "model_invocations": 0,
+  "host_installation": false
+}

@@ -1,0 +1,284 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-11",
+  "kind": "model-free-stable-cli-promotion",
+  "previous_version": "0.167.0",
+  "version": "0.167.1",
+  "official_release": "https://github.com/openai/codex/releases/tag/rust-v0.167.1",
+  "publisher_sources": [
+    {
+      "url": "https://api.github.com/repos/openai/codex/releases/latest",
+      "status_code": 200,
+      "response_sha256": "b6fd3b8b8fbeccb8a4fde176719be76a5b44eca35a1f7e27bbcb2c634320c32f"
+    },
+    {
+      "url": "https://registry.npmjs.org/@openai%2fcodex/latest",
+      "status_code": 200,
+      "response_sha256": "2b2e5061a66f168a0d4aeeb121b4c0bab2745fbfdf4a76d8c79f7e5972812594"
+    },
+    {
+      "url": "https://registry.npmjs.org/@openai%2fcodex/0.167.1-win32-x64",
+      "status_code": 200,
+      "response_sha256": "f46b32cb13105514cb907eb81c3b71a28ad3cd442c81f567e0bf314b15db4b04"
+    },
+    {
+      "url": "https://api.github.com/repos/openai/codex/git/ref/tags/rust-v0.167.1",
+      "status_code": 200,
+      "response_sha256": "f581dad0a7b287541a872e21a4e94beb096588fac11deda340f8315433cf2408"
+    },
+    {
+      "url": "https://api.github.com/repos/openai/codex/git/tags/595a35e837a1b6752e60a5de85b89adf415b0ccb",
+      "status_code": 200,
+      "response_sha256": "9bea7412a5313fcce95b5b3b4d5c72c08f51faed2c256654855eb5b85d879957"
+    }
+  ],
+  "source_commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+  "publisher_integrity_verified": true,
+  "archive_sha256": "2152b10a5f32432a6be46aa4f65f38b7c1dff01e9d1cb1ceab2683da00c783c3",
+  "complete_payload_files_verified": 47,
+  "licenses": {
+    "LICENSE": {
+      "url": "https://raw.githubusercontent.com/openai/codex/0a94398fa60c4fac0e7659e4213a0a36e613dd46/LICENSE",
+      "bytes": 10926,
+      "sha256": "d17f227e4df5da1600391338865ce0f3055211760a36688f816941d58232d8dc"
+    },
+    "NOTICE": {
+      "url": "https://raw.githubusercontent.com/openai/codex/0a94398fa60c4fac0e7659e4213a0a36e613dd46/NOTICE",
+      "bytes": 242,
+      "sha256": "9d71575ecfd9a843fc1677b0efb08053c6ba9fd686a0de1a6f5382fd3c220915"
+    }
+  },
+  "pin": {
+    "path": "toolchains/bootstrap/codex.json",
+    "sha256": "6ad514456ca7a5ce3dd62fc099c2eda32d795e513ab1fe538b465a1488bf58be"
+  },
+  "native_setup": {
+    "passed": true,
+    "qualification_profile": "codex",
+    "control_groups": [
+      {
+        "name": "codex-fresh",
+        "process": {
+          "exit_code": 0,
+          "active_processes_after_cleanup": 0,
+          "termination_reason": null,
+          "windows_job": true,
+          "assigned_before_resume": true,
+          "kill_on_close": true,
+          "explicit_environment": true,
+          "attested_while_suspended": true,
+          "elapsed_seconds": 20.6073632,
+          "observed_output_bytes": 751,
+          "retained_output_bytes": 751
+        }
+      },
+      {
+        "name": "codex-reuse",
+        "process": {
+          "exit_code": 0,
+          "active_processes_after_cleanup": 0,
+          "termination_reason": null,
+          "windows_job": true,
+          "assigned_before_resume": true,
+          "kill_on_close": true,
+          "explicit_environment": true,
+          "attested_while_suspended": true,
+          "elapsed_seconds": 5.4512767,
+          "observed_output_bytes": 751,
+          "retained_output_bytes": 751
+        }
+      },
+      {
+        "name": "codex-missing-helper",
+        "process": {
+          "exit_code": 0,
+          "active_processes_after_cleanup": 0,
+          "termination_reason": null,
+          "windows_job": true,
+          "assigned_before_resume": true,
+          "kill_on_close": true,
+          "explicit_environment": true,
+          "attested_while_suspended": true,
+          "elapsed_seconds": 13.2108636,
+          "observed_output_bytes": 751,
+          "retained_output_bytes": 751
+        }
+      },
+      {
+        "name": "codex-missing-license",
+        "process": {
+          "exit_code": 0,
+          "active_processes_after_cleanup": 0,
+          "termination_reason": null,
+          "windows_job": true,
+          "assigned_before_resume": true,
+          "kill_on_close": true,
+          "explicit_environment": true,
+          "attested_while_suspended": true,
+          "elapsed_seconds": 6.1270743,
+          "observed_output_bytes": 751,
+          "retained_output_bytes": 751
+        }
+      },
+      {
+        "name": "codex-execution-arguments",
+        "process": {
+          "exit_code": 1,
+          "active_processes_after_cleanup": 0,
+          "termination_reason": null,
+          "windows_job": true,
+          "assigned_before_resume": true,
+          "kill_on_close": true,
+          "explicit_environment": true,
+          "attested_while_suspended": true,
+          "elapsed_seconds": 0.5302629,
+          "observed_output_bytes": 580,
+          "retained_output_bytes": 580
+        }
+      },
+      {
+        "name": "codex-credential-forwarding",
+        "process": {
+          "exit_code": 1,
+          "active_processes_after_cleanup": 0,
+          "termination_reason": null,
+          "windows_job": true,
+          "assigned_before_resume": true,
+          "kill_on_close": true,
+          "explicit_environment": true,
+          "attested_while_suspended": true,
+          "elapsed_seconds": 0.4431045,
+          "observed_output_bytes": 518,
+          "retained_output_bytes": 518
+        }
+      },
+      {
+        "name": "codex-concurrent-reuse",
+        "processes": [
+          {
+            "exit_code": 0,
+            "active_processes_after_cleanup": 0,
+            "termination_reason": null,
+            "windows_job": true,
+            "assigned_before_resume": true,
+            "kill_on_close": true,
+            "explicit_environment": true,
+            "attested_while_suspended": true,
+            "elapsed_seconds": 8.1253546,
+            "observed_output_bytes": 751,
+            "retained_output_bytes": 751
+          },
+          {
+            "exit_code": 0,
+            "active_processes_after_cleanup": 0,
+            "termination_reason": null,
+            "windows_job": true,
+            "assigned_before_resume": true,
+            "kill_on_close": true,
+            "explicit_environment": true,
+            "attested_while_suspended": true,
+            "elapsed_seconds": 11.6436444,
+            "observed_output_bytes": 751,
+            "retained_output_bytes": 751
+          }
+        ],
+        "shared_installation": true
+      },
+      {
+        "name": "codex-default",
+        "process": {
+          "exit_code": 0,
+          "active_processes_after_cleanup": 0,
+          "termination_reason": null,
+          "windows_job": true,
+          "assigned_before_resume": true,
+          "kill_on_close": true,
+          "explicit_environment": true,
+          "attested_while_suspended": true,
+          "elapsed_seconds": 15.9161828,
+          "observed_output_bytes": 867,
+          "retained_output_bytes": 867
+        }
+      }
+    ],
+    "persistent_host_path_and_registry_unchanged": true,
+    "source_sha256": {
+      "dev.ps1": "36db5492385586dfcf2cf820b40f53ee99c851a6896f4c478964846ebfca6c31",
+      "toolchains/bootstrap/bootstrap.ps1": "d80ab6dd334d8fb062d8f8c50f43484dbefd9443fd6f93030601680d3ce72dfa",
+      "toolchains/bootstrap/powershell.json": "d5c147eba4fc753ba3c73ecf8a13010d7da5f67a3161c0404ad1115686761fcc",
+      "toolchains/bootstrap/codex.json": "6ad514456ca7a5ce3dd62fc099c2eda32d795e513ab1fe538b465a1488bf58be",
+      "toolchains/bootstrap/OwnedProcess.cs": "e721786a924aa4154eb5dab3382a5eb9cf56f133a728a7a61ba2721c16ff96fe",
+      "toolchains/bootstrap/NativeCabinet.cs": "1309feaf17aa57e41b22885f35609118798780c49c59a70b2ee02c4d6ffcaf0a",
+      "toolchains/bootstrap/ArchiveLayers.ps1": "ec95601fb4a835576126b49fa4ba53156a73434531e54dc298e8fd1fb6050266",
+      "tools/_bootstrap_archive.py": "5cd24adc0939fe313fb1ef6241ee66da9f5ad256f33bd23e993328bd030c48d5",
+      "toolchains/bootstrap/manifest.json": "a7ea118956c2ef558bb036e14381f1de90b651ef1cb5004863cfb3fd77cbbe2c",
+      "toolchains/bootstrap/requirements.txt": "40b9b3f1c8bb32d056afa33effd956ae035798c04a14d5939da7dd86cad3feac",
+      "tools/_bootstrap_doctor.py": "d844c9d9a374888ac448095c9bf322f0c4a0005ace987fed0d62632d662d55a8",
+      "tools/_bootstrap_launch.py": "cd6a906429d4efb062efc856be1f84f94a447ab6064ea97cafad43b41daf23c5",
+      "requirements-dev-lock.txt": "275945696e501d9eafdd90d60c20577b605b9f68564d1b0d39e896ebf2248770",
+      "requirements-reports-lock.txt": "9cbebd90fcd78834c2db444ae349624f6f0f8886afb49194df1d830ab608d2dd",
+      "tests/qualify_windows_bootstrap.ps1": "837e1707ae0c76fddc6e91aaf58208757c4296bf7110f95bbb033ffb227c92e3"
+    }
+  },
+  "focused_tests": {
+    "passed": 39,
+    "elapsed_seconds": 5.43,
+    "files": [
+      "tests/test_bootstrap_runtime.py",
+      "tests/test_bootstrap_archive.py",
+      "tests/test_bootstrap_tar.py"
+    ],
+    "receipt": {
+      "private_evidence": "codex-promotion-checks-v1/focused-bootstrap-tests.stdout.native",
+      "sha256": "f5fcd2d2353fe3968e1041ca58cd03aac254b44e8058bb6d0685727c5f83074d"
+    }
+  },
+  "default_cache_context": {
+    "cli_sha256": "c12aca02de615a9fcb76f955bf005a33f4b10b577f8a1730161953f57a1155b3",
+    "checks": {
+      "baseline_markers": true,
+      "baseline_process": true,
+      "declared_command_only": true,
+      "declared_intervention_only": true,
+      "declared_probe": true,
+      "host_countercontrol": true,
+      "intervention_markers": true,
+      "intervention_process": true,
+      "matched_prefix": true,
+      "model_free_methods": true,
+      "native_cleanup": true,
+      "native_command": true,
+      "positive_markers": true,
+      "positive_process": true,
+      "sources_unchanged": true
+    },
+    "complete_trial_boundary_qualified": false,
+    "receipt": {
+      "private_evidence": "codex-bootstrap-context-v1/qualification.json",
+      "sha256": "1b549bb7de4937b2a80526c01e5faae36bf7c7703b7ece91ad0a8cfc849456f5"
+    }
+  },
+  "native_receipts": [
+    {
+      "private_evidence": "codex-bootstrap-native-v1/qualification.json",
+      "sha256": "0389b6b92f3c37b480a0a713a7c997dde542b022e922805d6bba6de93b1f97e8"
+    },
+    {
+      "private_evidence": "codex-promotion-checks-v1/qualification.json",
+      "sha256": "d6f7696f587e8d2c09b94987bbd187fd8b740591f6e8d9a400e09c99617b907b"
+    },
+    {
+      "private_evidence": "codex-promotion-resolved-v1/qualification.json",
+      "sha256": "9fe6579e0e84809e0134176ea23ade06a1e7033a7196b583dadd2daa9589fa4f"
+    }
+  ],
+  "model_requests": 0,
+  "limits": [
+    "The CLI-only qualification does not establish validation-toolchain or provider readiness.",
+    "Native context controls do not qualify the complete model-trial, collection and grading lifecycle.",
+    "The default cache passed on the observed Windows x64 host; other cache locations need their own context qualification.",
+    "The full default all-profile setup and full Python suite were not rerun for this package promotion.",
+    "A documentation-only evidence link was added after native checks; its earlier tested snapshot is retained separately.",
+    "No live model access, skill efficacy or commercial-readiness claim follows from these controls."
+  ]
+}

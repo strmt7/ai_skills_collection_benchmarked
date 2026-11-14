@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "native_commands": 5,
+  "original_publisher_contract_controls": 6,
+  "mismatched_command_rejected": "Publisher command contract differs from native execution",
+  "closed_container_leases": 2,
+  "remaining_owned_containers": 0,
+  "compiled_output_confirmed": true,
+  "results": [
+    {
+      "admitted": true,
+      "status": "task_passed",
+      "score": 1.0,
+      "task_id": "compiled-source",
+      "exit_code": 0,
+      "timed_out": false,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.03367338499992911
+    },
+    {
+      "admitted": true,
+      "status": "task_failed",
+      "score": 0.0,
+      "task_id": "syntax-failure",
+      "exit_code": 1,
+      "timed_out": false,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.03227080000033311
+    },
+    {
+      "admitted": true,
+      "status": "task_passed",
+      "score": 1.0,
+      "task_id": "declared-nonzero",
+      "exit_code": 7,
+      "timed_out": false,
+      "expected_exit_code": 7,
+      "duration_seconds": 0.016093293999801972
+    },
+    {
+      "admitted": true,
+      "status": "task_passed",
+      "score": 1.0,
+      "task_id": "diagnostic-text-zero",
+      "exit_code": 0,
+      "timed_out": false,
+      "expected_exit_code": 0,
+      "duration_seconds": 0.016275721000056365
+    },
+    {
+      "admitted": true,
+      "status": "task_failed",
+      "score": 0.0,
+      "task_id": "owned-timeout",
+      "exit_code": -9,
+      "timed_out": true,
+      "expected_exit_code": 0,
+      "duration_seconds": 2.002217655000095
+    }
+  ],
+  "native_qualification_sha256": "b27f4d5694e6e1bfa4c9153ec565d1a77c54824343837e010df8a79026c15a9c",
+  "independent_draft_tests_passed": 45,
+  "draft_qualification_sha256": "5d041d750d18f40c15702213dbd6c48bfe2618fedf0415459144a7c0648cddf0",
+  "model_invocations": 0
+}

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from contextlib import contextmanager
 from pathlib import Path
 from typing import Any
 
@@ -261,6 +262,60 @@ def controller_run(frozen, monkeypatch):
     monkeypatch.setattr(trials, "collect_submission", collected)
     monkeypatch.setattr(trials, "external_grade", graded)
     return path, protocol, digest, output
+
+
+@pytest.mark.parametrize("failure", ["launch_record", "agent", "cancellation", None])
+def test_controller_releases_credentials_before_collection_and_on_failure(controller_run, monkeypatch, failure):
+    path, protocol, _, output = controller_run
+    key, secret = "TRIAL_CREDENTIAL", "owned controller credential fixture"
+    parent = {key: secret}
+    protocol["provider"] = {"base_url": "http://127.0.0.1:8041/v1", "credential_env": key}
+    path.write_text(json.dumps(protocol), encoding="utf-8")
+    manifest_path = path.with_name("protocol.grading.json")
+    manifest = json.loads(manifest_path.read_bytes())
+    manifest["protocol_sha256"] = trials.sha256(path.read_bytes())
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+    original_lease, original_write = trials.credential_lease, trials.write_json
+    original_execute, original_collect = trials.execute_agent, trials.collect_submission
+    contexts = []
+
+    @contextmanager
+    def observed_lease(*args):
+        with original_lease(*args) as selected:
+            contexts.append(selected)
+            yield selected
+
+    def write(target, value):
+        if failure == "launch_record" and target.name == "launch.json":
+            raise OSError("owned launch recording failure")
+        return original_write(target, value)
+
+    def execute(*args, **kwargs):
+        assert kwargs["context"].controller_environment[key] == secret
+        if failure == "agent":
+            raise OSError("owned execution failure")
+        if failure == "cancellation":
+            raise KeyboardInterrupt
+        return original_execute(*args, **kwargs)
+
+    def collect(*args, **kwargs):
+        assert key not in contexts[0].controller_environment
+        return original_collect(*args, **kwargs)
+
+    monkeypatch.setattr(trials, "credential_lease", observed_lease)
+    monkeypatch.setattr(trials, "write_json", write)
+    monkeypatch.setattr(trials, "execute_agent", execute)
+    monkeypatch.setattr(trials, "collect_submission", collect)
+    arguments = (path, "default", output, Path("fixture"), Path("python"))
+    if failure == "cancellation":
+        with pytest.raises(KeyboardInterrupt):
+            trials._run_controller(*arguments, credential_source=parent)
+    else:
+        result = trials._run_controller(*arguments, credential_source=parent)
+        assert result["status"] == "harness_error"
+        assert secret not in json.dumps(result)
+    assert len(contexts) == 1 and key not in contexts[0].controller_environment
+    assert parent == {key: secret}
 
 
 @pytest.mark.parametrize("stage", ["agent", "transcript", "submission", "grader", "evidence", "result"])

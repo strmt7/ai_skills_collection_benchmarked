@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-13",
+  "kind": "observed-native-clean-profile-signin-prerequisite",
+  "official_documentation": {
+    "url": "https://learn.chatgpt.com/docs/auth",
+    "native_status": 200,
+    "native_success": true,
+    "native_result_sha256": "91c993b2a3490083d2725849d65ba0c9d89aa28c1a4a9a9299668847d440cd6f",
+    "provider_version": "0.9.5+catalog.portable4",
+    "reviewed_scope": "Official browser/device login flow, prerequisite account authentication and credential-storage guidance. Device-code authentication is documented as beta; no account settings or credential-copy fallback was used."
+  },
+  "browser_observation": {
+    "surface": "Existing connected Chrome session; an unused existing tab was used.",
+    "normal_existing_account_signin_attempted": true,
+    "observed_requirement": "OpenAI presented a registered passkey/security-key challenge. Its normal alternative offered a recovery key.",
+    "passkey_or_recovery_key_entered": false,
+    "credentials_or_cookies_extracted": false,
+    "account_security_settings_changed": false,
+    "new_cli_login_or_model_process_started": false,
+    "new_cli_credentials_created": false,
+    "existing_native_authentication_profile_modified": false,
+    "cleanup": "Browser policy rejected restoration to the internal new-tab URL. No workaround was attempted; the tab was left on the allowed official HTTPS authentication documentation page."
+  },
+  "conclusion": "The observed browser login cannot be completed unattended without the required account verification. This is a bounded observed requirement, not a claim of an API outage or universal impossibility.",
+  "decision": "Keep native global-instruction rejection and the public model-launch refusal. Continue independent integration and skill work; no credential export, auth-setting change or verification bypass.",
+  "model_invocations": 0,
+  "release_created": false
+}

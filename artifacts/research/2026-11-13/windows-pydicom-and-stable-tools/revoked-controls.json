@@ -1,0 +1,35 @@
+{
+  "reason": "The marker appeared in an echoed failing inline command; CLI turn completion did not establish tool success.",
+  "revoked": [
+    {
+      "control": "candidate-windows-pydicom-tool-v1-a",
+      "qualification_sha256": "229709359deb7cc1325d1ef940cbabd5f1862e86877f10cc4e609f467944f542",
+      "transcript_sha256": "da9b785cff6fb962cede05f6cb35a725ac0f37fe23dcc6f92ab8835bba8d3002",
+      "native_tool_exit_code": 1,
+      "previous_pass_claim_revoked": true
+    },
+    {
+      "control": "candidate-windows-pydicom-tool-v1-b",
+      "qualification_sha256": "229709359deb7cc1325d1ef940cbabd5f1862e86877f10cc4e609f467944f542",
+      "transcript_sha256": "a4a66477101897d94d99514b2a27ae3d92a35e112a25baaf65b8ccb7e7087253",
+      "native_tool_exit_code": 1,
+      "previous_pass_claim_revoked": true
+    }
+  ],
+  "other_retained_failed_controls": [
+    {
+      "control": "windows-pydicom-native-trial-v1",
+      "cause": "Nested inline Python quotes were lost through Windows PowerShell native argument passing.",
+      "transcript_sha256": "ed4bcb8f67df3015c130da154df868d6fcd35e59f23e7ebfbdc9337c7cdf222f"
+    },
+    {
+      "control": "windows-pydicom-native-trial-v2",
+      "cause": "A .NET readback call was unavailable in constrained PowerShell. The corrected control uses Get-Content without changing language policy.",
+      "transcript_sha256": "74cc9f3473612babe7a0880fb1984174fca49412ce3547e33937ea26120a167d"
+    }
+  ],
+  "correction": "Require native integer exit code 0 and completed status, verify actual JUnit results and collected source bytes, and retain all failures.",
+  "model_outcomes_removed_or_replaced": false,
+  "model_invocations": 0,
+  "counted_attempts": 0
+}

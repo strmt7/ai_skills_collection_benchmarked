@@ -1,0 +1,149 @@
+{
+  "controls": [
+    {
+      "case": "edited",
+      "gate_stdout_sha256": "ef3f53a947b845449d8ef55cdfab862a4640dacebb208f4f69078cd7a2cd5b11",
+      "input_sha256": {
+        "console": "00e1a549e0f667f954df09a3cea35ab0c9dd67dc732cc23dc60954fd8814888b",
+        "handoff": "a80a4b770f865c68618867c132834b3874a3997b537a7f0ad466aa8254eb3d94",
+        "junit": "616a71ab5219fb15a280d83185e31770cba4c5837fcfbedfe68415e88d3c35eb",
+        "publisher": "3f662c886142fa18a6451824603c5f80e58874b3898625dd02dd87316ab2316f",
+        "submission": "9e98e2db3406476a6d14185569da9c2f110d48d296b02dc56e754a187b3e2879"
+      },
+      "score": 1.0,
+      "status": "native_pytest_result_verified"
+    },
+    {
+      "case": "unchanged",
+      "gate_stdout_sha256": "577ac5c529a914200b80076e6beb9df160628c0b641a6209e1be407a242163b9",
+      "input_sha256": {
+        "console": "32a3bd3efd3bf5fb6efa7149d5f96dd5b475c2e031b61167660f14f1ac189324",
+        "handoff": "01f82cafe7f84e673dcd719283f53c0808f837d51f4c336fe5493c1cf38daba1",
+        "junit": "0a22822ac8be682ed8cedd34535f36c897151e88df95b70b742d32d8ce880d02",
+        "publisher": "1e2cf15d6402d2bcac0e9f005d7f5a5485df0eeb94bd47ce9aada1acb0bedd26",
+        "submission": "309f9d233a2c0b15fa1af18687b2af79c3eba697006541dfdbdc9eedfa3f1d71"
+      },
+      "score": 0.0,
+      "status": "native_pytest_result_verified"
+    },
+    {
+      "case": "claimed-missing-but-present",
+      "gate_stdout_sha256": "41e10c9ce44b93eaacf420b5e58b2577f20d488d05aeb3f1f90d889731b5002d",
+      "input_sha256": {
+        "console": "32a3bd3efd3bf5fb6efa7149d5f96dd5b475c2e031b61167660f14f1ac189324",
+        "handoff": "a80a4b770f865c68618867c132834b3874a3997b537a7f0ad466aa8254eb3d94",
+        "junit": "0a22822ac8be682ed8cedd34535f36c897151e88df95b70b742d32d8ce880d02",
+        "publisher": "1e2cf15d6402d2bcac0e9f005d7f5a5485df0eeb94bd47ce9aada1acb0bedd26",
+        "submission": "9e98e2db3406476a6d14185569da9c2f110d48d296b02dc56e754a187b3e2879"
+      },
+      "score": null,
+      "status": "native_pytest_result_unverified"
+    },
+    {
+      "case": "wrong-reconstruction",
+      "gate_stdout_sha256": "2cc14891ac2cf6d0e4375f186090989d9ef407542107b425ca79a7c25cfcd62f",
+      "input_sha256": {
+        "console": "32a3bd3efd3bf5fb6efa7149d5f96dd5b475c2e031b61167660f14f1ac189324",
+        "handoff": "a80a4b770f865c68618867c132834b3874a3997b537a7f0ad466aa8254eb3d94",
+        "junit": "0a22822ac8be682ed8cedd34535f36c897151e88df95b70b742d32d8ce880d02",
+        "publisher": "1e2cf15d6402d2bcac0e9f005d7f5a5485df0eeb94bd47ce9aada1acb0bedd26",
+        "submission": "309f9d233a2c0b15fa1af18687b2af79c3eba697006541dfdbdc9eedfa3f1d71"
+      },
+      "score": null,
+      "status": "native_pytest_result_unverified"
+    },
+    {
+      "case": "wrong-skip-reason",
+      "gate_stdout_sha256": "41e10c9ce44b93eaacf420b5e58b2577f20d488d05aeb3f1f90d889731b5002d",
+      "input_sha256": {
+        "console": "32a3bd3efd3bf5fb6efa7149d5f96dd5b475c2e031b61167660f14f1ac189324",
+        "handoff": "01f82cafe7f84e673dcd719283f53c0808f837d51f4c336fe5493c1cf38daba1",
+        "junit": "dfa3fb873cc75bb27d805adbaa4059f771f19eac986227c723db8fd0f4f36d56",
+        "publisher": "1e2cf15d6402d2bcac0e9f005d7f5a5485df0eeb94bd47ce9aada1acb0bedd26",
+        "submission": "309f9d233a2c0b15fa1af18687b2af79c3eba697006541dfdbdc9eedfa3f1d71"
+      },
+      "score": null,
+      "status": "native_pytest_result_unverified"
+    },
+    {
+      "case": "truncated-console",
+      "gate_stdout_sha256": "9091ab0591a2e89950cb96408dffddc0e8aed12348a639ae8e19e0956950d19d",
+      "input_sha256": {
+        "console": "c94dd92436acce6f7113104373eb165b8c3c10d4dbe22fa9cc4d8afeec7c1cc6",
+        "handoff": "01f82cafe7f84e673dcd719283f53c0808f837d51f4c336fe5493c1cf38daba1",
+        "junit": "0a22822ac8be682ed8cedd34535f36c897151e88df95b70b742d32d8ce880d02",
+        "publisher": "1e2cf15d6402d2bcac0e9f005d7f5a5485df0eeb94bd47ce9aada1acb0bedd26",
+        "submission": "309f9d233a2c0b15fa1af18687b2af79c3eba697006541dfdbdc9eedfa3f1d71"
+      },
+      "score": null,
+      "status": "native_pytest_result_unverified"
+    },
+    {
+      "case": "failed-collection",
+      "gate_stdout_sha256": "78290c1bfe755baa439db9ef169518351b551a5667620342ac71c09027888726",
+      "input_sha256": {
+        "console": "32a3bd3efd3bf5fb6efa7149d5f96dd5b475c2e031b61167660f14f1ac189324",
+        "handoff": "01f82cafe7f84e673dcd719283f53c0808f837d51f4c336fe5493c1cf38daba1",
+        "junit": "0a22822ac8be682ed8cedd34535f36c897151e88df95b70b742d32d8ce880d02",
+        "publisher": "1e2cf15d6402d2bcac0e9f005d7f5a5485df0eeb94bd47ce9aada1acb0bedd26",
+        "submission": "44a601172612869b44d938bcd118b2236b868f9363f1f1e65a02af4a33894d2b"
+      },
+      "score": null,
+      "status": "native_pytest_result_unverified"
+    }
+  ],
+  "execution_source_sha256": {
+    "_trial_collection_manifest.py": "92766b10b195a87884022c1cdb2b4d292e4464d31334abe8a4b969f3293f626b",
+    "_trial_collection_policy.py": "ff2b6163130348c7f5c6a1315c3b93e94abd1e93e607d6759e73ab1df88ee2c8",
+    "_trial_declarations.py": "157185245b98be55d3f101c63cb39b293abf8cbc47c3673efe843d3c4dab883c",
+    "_trial_protocol.py": "086fa266058574b09c0ca72f970f9c64341a5e697f737cdd0955fb9883b351de",
+    "_trial_provider.py": "7ed48ac5a927264a5467b87e92b50a975dd2d4449ec97685f115a730aeea81be",
+    "_trial_transcript.py": "bad23e9f19c3523a426c1ad140aebc331f5b47b94ab95b2296b487765430fb3f",
+    "transfer_benchmark_submission.py": "aa8abf2156e2274200360465dc8bf7b36e7218f7843c2682fe0d6d34414c6faa",
+    "verify_swe_skills_bench_pytest_result.py": "5f6af07acc181f1c56cdd30feb3bc9fe4589b30991c204db4565eea574137545"
+  },
+  "identical_admission_on_windows_and_linux": true,
+  "inventory_sha256": "1f69c619d1a5295116e6b532828f90eff095554429fb5b4f4fe99adf1cc22be5",
+  "kind": "candidate-skip-admission-qualification",
+  "model_requests": 0,
+  "ordinary_and_skip_counts": {
+    "edited": {
+      "candidate_skip_evidence": {},
+      "failed": 0,
+      "passed": 11,
+      "score": 1.0,
+      "skipped": 0,
+      "total": 11
+    },
+    "unchanged": {
+      "candidate_skip_evidence": {
+        "tests.test_python_packaging.TestPythonPackaging::test_demo_shows_comparison": {
+          "message": "Demo failed: python: can't open file '/workspace/packaging/scripts/demo_packaging.py': [Errno 2] No such file or directory",
+          "missing_file": "scripts/demo_packaging.py"
+        }
+      },
+      "failed": 10,
+      "passed": 0,
+      "score": 0.0,
+      "skipped": 1,
+      "total": 11
+    }
+  },
+  "publisher_evaluator": {
+    "blob": "b63cd6d4993b7b893d24462c5d38547e9623c485",
+    "bytes": 16553,
+    "sha256": "4eb50a5da8e47ba6d5cb1fa6b41de11011c5623be834ae9aabd6672d293d8d2c"
+  },
+  "publisher_image": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+  "publisher_replay_summary_sha256": "f3673b0e3b5cb17b98a66ae892b493c4592c1fa3c89bbda449fd233b21648603",
+  "publisher_revision": "4d3450d9216a590a8726fcb3604b5143daca776b",
+  "qualification_driver_sha256": "501205e5fde1bfae46ce2426611a5d1e6195355d85b1b061d595eb8fda54a1ea",
+  "qualification_summary_sha256": "1fa90091d2f9b199833b2b3274eec743c8433be41b1ce5ac88e9b8e90876ca3f",
+  "schema_version": 1,
+  "scope_limits": [
+    "This declared skip policy is for the exposed Packaging development cell. It requires the exact native skip reason, the complete source capture and a reconstruction receipt bound to that capture.",
+    "The missing file must be within the capture scope and absent from its complete file and directory inventories. Skipped tests stay in the publisher denominator and earn no passing count.",
+    "The publisher scorer replayed exact prior native console and stderr captures through its original code. This qualification replays evidence and does not constitute a model trial.",
+    "Caller-supplied receipts need the trusted controller and stopped-subject boundary. The admission CLI checks consistency of the supplied records."
+  ]
+}

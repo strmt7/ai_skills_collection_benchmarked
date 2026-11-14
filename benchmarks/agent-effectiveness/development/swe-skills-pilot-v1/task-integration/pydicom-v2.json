@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "task_id": "swe-skills-bench/batch4/pydicom-dicom-parsing",
+  "partition": "development",
+  "selection_sha256": "42de081f53b0273f936ea5ca12dd0a6f69da0c33ade087b7b76ac8e6b7bee1c5",
+  "previous_diagnostic_record": "benchmarks/agent-effectiveness/development/swe-skills-pilot-v1/task-integration/pydicom-v1.json",
+  "maintained_grader_dependency_profile_implemented": true,
+  "native_original_verifier_failure_controls_qualified": true,
+  "original_publisher_scoring_class_failure_controls_qualified": true,
+  "legacy_and_dependency_profile_generic_success_controls_qualified": true,
+  "original_verifier_success_control_for_selected_task_qualified": false,
+  "windows_subject_tool_access_qualified": false,
+  "complete_preregistration": false,
+  "execution_admitted": false,
+  "agent_efficacy_established": false,
+  "model_invocations": 0,
+  "counted_attempts": 0,
+  "selected_task_now_exposed_to_integration_controller": true,
+  "candidate_library_unchanged_since_preexposure_freeze": true,
+  "previous_diagnostic_record_sha256": "d447e6ca58f5372ca1de04f865243cd196828de1bbfe163271a02b9298d3ad04"
+}

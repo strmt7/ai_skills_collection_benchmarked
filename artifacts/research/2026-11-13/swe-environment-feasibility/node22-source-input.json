@@ -1,0 +1,18 @@
+{
+  "version": "v22.23.5",
+  "major": 22,
+  "architecture": "linux-x64",
+  "release_date": "2026-11-11",
+  "lts": "Jod",
+  "official_index_url": "https://nodejs.org/dist/index.json",
+  "index_sha256": "ecbf1d9f49532daf606cd495537d2ff7ab28f441e877ae40821738d56e2a0a80",
+  "archive_url": "https://nodejs.org/dist/v22.23.5/node-v22.23.5-linux-x64.tar.gz",
+  "archive_name": "node-v22.23.5-linux-x64.tar.gz",
+  "archive_bytes": 56856114,
+  "archive_sha256": "c54118104acc524633b5abe106bbf44a53126ec8b4e5fa105cb92b5d7de8a1a1",
+  "checksums_url": "https://nodejs.org/dist/v22.23.5/SHASUMS256.txt",
+  "checksums_sha256": "658770bd465343e4bf441d22e89e7d944244b37041695f3f2a85b53d1a84b53f",
+  "selection": "Latest published non-prerelease major-22 distribution at observation time; this is the benchmark-requested major, not the repository development runtime.",
+  "global_installation": false,
+  "runtime_admitted": false
+}

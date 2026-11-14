@@ -306,6 +306,23 @@ def test_historical_qualification_checks_archived_sources_without_claiming_curre
     assert "Native qualification source graph is stale" in qualification.check()["errors"]
 
 
+def test_historical_source_graph_is_independent_of_live_sources(tmp_path, monkeypatch):
+    original = qualification.source_graph(historical=True)
+    monkeypatch.setattr(qualification, "ROOT", tmp_path)
+    monkeypatch.setattr(qualification, "SOURCE_FILES", ("new-live-source.py",))
+    monkeypatch.setattr(grader, "TASK_FILES", ("new-live-fixture.json",))
+    assert qualification.source_graph(historical=True) == original
+
+
+@pytest.mark.parametrize("name", ["_windows_appcontainer.py.txt", "skills_catalog.json.txt"])
+def test_historical_source_drift_is_rejected_for_runtime_and_fixtures(tmp_path, monkeypatch, name):
+    for path in qualification.HISTORICAL_SOURCES.iterdir():
+        (tmp_path / path.name).write_bytes(path.read_bytes())
+    (tmp_path / name).write_bytes(b"changed historical source\n")
+    monkeypatch.setattr(qualification, "HISTORICAL_SOURCES", tmp_path)
+    assert "Native qualification source graph is stale" in qualification.check()["errors"]
+
+
 def test_evaluator_fingerprints_detect_changed_source_bytes(tmp_path, monkeypatch):
     source = tmp_path / "tools/public.py"
     source.parent.mkdir()

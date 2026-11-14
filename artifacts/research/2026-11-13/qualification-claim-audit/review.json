@@ -1,0 +1,38 @@
+{
+  "scope": "Retrospective claim reconciliation, not fresh execution qualification, model evaluation or full historical acceptance.",
+  "inventory_qualification_files": 260,
+  "inventory_schema_variants": 18,
+  "selected_native_controller_checks": 53,
+  "classification_counts": {
+    "native_command_and_original_grader_success_verified": 9,
+    "tool_free_unchanged_failure_verified": 11,
+    "historical_negative_claim_not_readmitted": 21,
+    "historical_failed_qualification_preserved": 11,
+    "revoked_wrapper_pass_nested_summary_failed": 1
+  },
+  "all_legacy_qualification_artifacts_audited": false,
+  "current_model_execution_admitted": false,
+  "model_improvement_established": false,
+  "new_model_invocations": 0,
+  "original_receipts_modified": false,
+  "artifacts": {
+    "native-reconciliation.json": "ca4795b76366589c07f51dd0bd7daa14e61aae8a314d525db2f5ca6233ba21c2",
+    "inventory-summary.json": "c9d2e9ec207581e0b2cafe4602194956ee47957aa79b2d56ea099f1a5d081ab2",
+    "revocations.json": "67b2e2d1a8d5758953ac12bd42a7667acb406dc7c564a64457181ef3ebe273b4"
+  },
+  "auditor_source_sha256": "90e777b6781cfbf6cf57190bc810c472c190f9279fc86b5ebf93029d7215988d",
+  "native_validation_source_sha256": {
+    "tools/_scripted_tool_control.py": "ad1a5b57b44fdf54f6abeafb43fb56c40c7cf2edcf708729966f3b4a9d47034f",
+    "tools/_trial_transcript.py": "bad23e9f19c3523a426c1ad140aebc331f5b47b94ab95b2296b487765430fb3f"
+  },
+  "findings": [
+    "One historical helper emitted passed=false but returned a stale earlier boolean, leaving its wrapper green. That claim is revoked; the current helper uses the final summary status.",
+    "Nine historical positive controls have native command exit zero and complete passing original-evaluator inventories. Eleven intentionally unchanged controls have no command calls and retain their failing task results.",
+    "Twenty-one historical negative claims need separate cause-specific reconciliation; this audit does not readmit them. Eleven unsuccessful qualifications remain unsuccessful."
+  ],
+  "limitations": [
+    "Recorded past versions and environments are not current model-launch qualification.",
+    "The original raw evidence and fixture bundles remain in ignored owned storage; this public audit summary alone is not a standalone reproducer.",
+    "Actual account/target-model qualification, common prospective admission and matched model trials remain incomplete."
+  ]
+}

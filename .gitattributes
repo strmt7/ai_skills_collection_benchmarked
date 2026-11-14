@@ -67,6 +67,9 @@
 /dev.ps1 text eol=lf
 /.agents/skills/** text eol=lf
 /toolchains/bootstrap/** text eol=lf
+/toolchains/bootstrap/NativeSupervisor.dll binary
+# Replay provenance binds the exact qualified pin bytes, including line endings.
+/toolchains/native-node-replay/pins.json -text !eol
 /requirements-dev-lock.txt text eol=lf
 /pyproject.toml text eol=lf
 # Licensed build inputs and qualified wheel hashes require exact source bytes.

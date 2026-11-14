@@ -1,0 +1,73 @@
+{
+  "controls": [
+    {
+      "repetition": "a",
+      "classification": "controller-authored scripted task-success fixture",
+      "native_tool_exit_code": 0,
+      "windows_junit_passed": 15,
+      "original_linux_junit_passed": 18,
+      "original_publisher_status": "passed",
+      "original_publisher_fraction": 1.0,
+      "original_publisher_user_is_nonroot": true,
+      "original_project_files_preserved": 541,
+      "collected_files": 544,
+      "complete_grader_dependency_objects": 2525,
+      "complete_dependency_inventory_unchanged": true,
+      "closed_container_leases": 2,
+      "subject_job_remaining_processes": 0,
+      "temporary_listener_stopped": true,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "selected_task_solution_written_by_controller": true,
+      "fixture_payload_sha256": {
+        "src/pydicom/util/series.py": "f6b1b15472abd4aec27d0288cc4e1caeee4f547309e4d162d6dd6e8286c54938",
+        "tests/test_util_series.py": "46dcd4c2ddbb0ebb2477aa502fabb0b459557423586fdbdbcdd5be530ca7e6d6"
+      },
+      "native_receipt_sha256": {
+        "raw_qualification": "9af5ead3db4278a7842e82c0a03316cb453166beade3bfc14dfd92bb83e659eb",
+        "provenance": "3dd2dde95ce811e8569eaa0b183b004386aef878698f38ebbedc68dfd9870f9d",
+        "transcript": "8f1a1d35a28368ae8acefd33c15cfbc4a374b11b8714f11647f981354c0bb55c",
+        "windows_junit": "ba4f9a4613ee863a773c0105ec7ea1744b31bb0fec08d1c4389efc7a52e2b3d0",
+        "linux_junit": "09f31ede2e3e6367311f50e53d31aca2e2daaefe3596da88fc548756ef9f8816",
+        "publisher": "254ca5a930d2baa6f8595b5f4edf7c75b1a88d31ecaffb67d82a3a03c3c434cb",
+        "dependencies_before": "cfc7fd0946787991c81dab5c0d43fe1b975af2f8aec06e47c66233e93e37aae7",
+        "dependencies_after": "f14c716b24119abe57cb28ab7552ed024421b8c2019f573b15db248fa6a64607"
+      }
+    },
+    {
+      "repetition": "b",
+      "classification": "controller-authored scripted task-success fixture",
+      "native_tool_exit_code": 0,
+      "windows_junit_passed": 15,
+      "original_linux_junit_passed": 18,
+      "original_publisher_status": "passed",
+      "original_publisher_fraction": 1.0,
+      "original_publisher_user_is_nonroot": true,
+      "original_project_files_preserved": 541,
+      "collected_files": 544,
+      "complete_grader_dependency_objects": 2525,
+      "complete_dependency_inventory_unchanged": true,
+      "closed_container_leases": 2,
+      "subject_job_remaining_processes": 0,
+      "temporary_listener_stopped": true,
+      "model_invocations": 0,
+      "counted_attempts": 0,
+      "selected_task_solution_written_by_controller": true,
+      "fixture_payload_sha256": {
+        "src/pydicom/util/series.py": "f6b1b15472abd4aec27d0288cc4e1caeee4f547309e4d162d6dd6e8286c54938",
+        "tests/test_util_series.py": "46dcd4c2ddbb0ebb2477aa502fabb0b459557423586fdbdbcdd5be530ca7e6d6"
+      },
+      "native_receipt_sha256": {
+        "raw_qualification": "e7192eaa97b4de1ebb030c09593d7cb88abe4908b87a2108f7e768bb885397b6",
+        "provenance": "3dd2dde95ce811e8569eaa0b183b004386aef878698f38ebbedc68dfd9870f9d",
+        "transcript": "32af27ce3b8b0e6031b618fdf7a65812137b9459ca2d3e8f3ccf641a532ceda9",
+        "windows_junit": "eb603a71d0bedb825d26b04c7f1af5c0946e8be15b6232e17e857dcffffe5b59",
+        "linux_junit": "3ce764100e39fa4642d3e67abbb0b341a823d136087bad36807803bd7d5a7495",
+        "publisher": "66887ef6d647a76827e5bd0e457685a8e8f0fcaa3b02adff67408db2cd872b2d",
+        "dependencies_before": "cfc7fd0946787991c81dab5c0d43fe1b975af2f8aec06e47c66233e93e37aae7",
+        "dependencies_after": "f14c716b24119abe57cb28ab7552ed024421b8c2019f573b15db248fa6a64607"
+      }
+    }
+  ],
+  "complete_inventories_equal_across_repetitions": true
+}

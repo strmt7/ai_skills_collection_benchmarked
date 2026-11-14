@@ -1,0 +1,87 @@
+"""Exercise the maintained grader on complete original DICOM task failure controls."""
+import argparse,ast,hashlib,json,re,sys,tarfile,zipfile
+from pathlib import Path
+S=Path(__file__).resolve().parent;R=S.parents[2];sys.path.insert(0,str(R/'tools'))
+from _trial_collection import capture_owned
+from _trial_collection_policy import default_collection_policy
+from _native_benchmark_runtime import DockerClient
+from grade_swe_skills_submission import grade,source_hashes,validate_task
+read=lambda p:json.loads(p.read_bytes())
+def sha(p):
+ with p.open('rb') as stream:return hashlib.file_digest(stream,'sha256').hexdigest()
+def dump(p,x):
+ with p.open('x',encoding='utf-8',newline='\n') as stream:json.dump(x,stream,indent=2);stream.write('\n')
+def ref(p):return {'path':str(p.resolve()),'sha256':sha(p)}
+def prepare(out):
+ out.mkdir();project=out/'project';project.mkdir()
+ source=read(S/'pydicom-project-archive-v1/capture.json');archive=S/'pydicom-project-archive-v1/source.tar.gz';assert sha(archive)==source['archive_sha256']
+ with tarfile.open(archive,'r:gz') as tar:
+  for name,row in source['files'].items():
+   assert row['mode'] in ('100644','100755')
+   target=(project/name).resolve();assert target.is_relative_to(project)
+   member=tar.getmember(source['archive_root']+'/'+name);assert member.isfile()
+   data=tar.extractfile(member).read();assert len(data)==row['bytes'] and hashlib.sha256(data).hexdigest()==row['sha256']
+   target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(data)
+ policy=default_collection_policy();baseline=out/'baseline';broken=out/'broken'
+ first=capture_owned(project,baseline/'submission',baseline/'collection',Path(sys.executable),policy)
+ assert first['status']=='collected' and first['file_count']==541,first.get('status')
+ module=project/'src/pydicom/util/series.py';test=project/'tests/test_util_series.py';assert not module.exists() and not test.exists()
+ module.write_text('def sort_slices(datasets):\n    raise RuntimeError("Intentional source-origin/evaluator qualification failure")\n',encoding='utf-8',newline='\n')
+ test.write_text('def test_intentional_control_failure():\n    assert False, "Intentional native-test qualification failure"\n',encoding='utf-8',newline='\n')
+ after=capture_owned(project,broken/'submission',broken/'collection',Path(sys.executable),policy);assert after['status']=='collected' and after['file_count']==543
+ assert all(sha(project/n)==row['sha256'] for n,row in source['files'].items())
+ old=read(S/'native-controller-import-qualification-v1/task.json')
+ api=read(S/'grader-publisher-source-admission-v1/benchmark-tree.connector.json');tree=json.loads(api['structuredContent']['content']);assert not tree['truncated'] and tree['sha']=='4d3450d9216a590a8726fcb3604b5143daca776b'
+ by={row['path']:row for row in tree['tree']};scorer=[]
+ for row in old['scorer']['files']:
+  raw=Path(row['path']).read_bytes();blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest();assert blob==by[row['target']]['sha'] and sha(Path(row['path']))==row['sha256'];scorer.append({'path':row['target'],'git_blob_sha1':blob,'sha256':row['sha256']})
+ pool=read(S/'pydicom-linux-wheelpool-v1/capture.json');resolved=read(S/'pydicom-capsule-native-repeat-v1/summary.json')['setup']['resolved_versions'];wheels=[];imports={'pydicom':{'source_path':'src/pydicom/__init__.py'}}
+ for row in pool['wheel_files']:
+  if row['project'] not in resolved:continue
+  assert row['version']==resolved[row['project']]
+  path=S/'pydicom-linux-wheelpool-v1/wheels'/row['filename'];assert sha(path)==row['sha256']
+  wheels.append({**ref(path),'project':row['project'],'version':row['version']})
+  if row['project'] in ('pytest','numpy'):
+   name=row['project']+'/__init__.py'
+   with zipfile.ZipFile(path) as wheel: digest=hashlib.sha256(wheel.read(name)).hexdigest()
+   imports[row['project']]={'environment_path':'lib/python3.12/site-packages/'+name,'sha256':digest}
+ verifier=S/'pydicom-integration-source-v1/verifier.py';parsed=ast.parse(verifier.read_bytes());cases={}
+ target='test_pydicom_dicom_parsing.py'
+ for node in parsed.body:
+  if isinstance(node,ast.ClassDef):
+   for method in node.body:
+    if isinstance(method,ast.FunctionDef) and method.name.startswith('test_'):
+     cases['../tests/'+target+'::'+node.name+'::'+method.name]='tests.test_pydicom_dicom_parsing.'+node.name+'::'+method.name
+ assert len(cases)==18
+ inventory=out/'inventory.json';dump(inventory,{'schema_version':1,'pytest_version':resolved['pytest'],'rootdir':'/workspace','min_pass_rate':1.0,'cases':cases})
+ task={'schema_version':3,'id':'public-development-pydicom-dicom-parsing-failure-control','source':{'repository':'pydicom/pydicom','commit':source['source_commit']},'collection_policy':policy,'baseline_manifest_sha256':sha(baseline/'collection/result.json'),'image_reference':old['image_reference'],'source_directory':'pydicom','import_paths':['src'],'grader_user':'dev','test_timeout_seconds':120,'min_pass_rate':1.0,'verifier':{**ref(verifier),'target':target},'inventory':ref(inventory),'scorer':old['scorer'],'execution_source_sha256':source_hashes(),'python_safe_path':True,'import_origins':imports,'python_environment':{'schema_version':1,'python_version':'3.12.3','machine':'x86_64','wheels':wheels,'resources':{'memory_bytes':1536*1024**2,'tmpfs_bytes':512*1024**2},'setup_timeout_seconds':120}}
+ validate_task(task);dump(out/'task.json',task);dump(out/'source-admission.json',{'complete_project_files':541,'original_project_files_unchanged':True,'scorer_source_commit':tree['sha'],'scorer_files':scorer,'source_capture_sha256':sha(S/'pydicom-project-archive-v1/capture.json'),'task_solution_written':False,'model_invocations':0,'counted_attempts':0})
+ print(json.dumps({'prepared':True,'original_files':541,'negative_fixture_files':543,'evaluator_cases':len(cases),'scorer_source_files':len(scorer)}))
+def check(inputs,out,mode):
+ task=read(inputs/'task-v4.json');assert task['execution_source_sha256']==source_hashes()
+ if mode=='wrong-python':task['python_environment']['python_version']='3.12.4'
+ if mode=='wrong-import':task['import_origins']['numpy']['sha256']='0'*64
+ collection=inputs/('broken' if mode=='broken' else 'baseline')/'collection'
+ result=grade(task,S/'native-controller-runtime-qualification-v1/runtime.json',inputs/'baseline/collection',collection,out)
+ expected={'baseline':('task_failed',0.0),'broken':('task_failed',3/18),'wrong-python':('harness_error',None),'wrong-import':('harness_error',None)}[mode]
+ assert (result['status'],result['score'])==expected,result
+ if mode in ('baseline','broken'):
+  passed=0 if mode=='baseline' else 3
+  assert result['native_counts']=={'passed':passed,'failed':18-passed,'skipped':0,'errors':0,'total':18},result
+  before=read(out/'dependencies.native.json');after=read(out/'dependencies-after.native.json');assert before['inventory']==after and before['base_interpreter_unchanged']
+  assert read(out/'publisher.json')['uid']!=0
+ elif mode=='wrong-import':assert result['stage']=='native-grader' and not (out/'publisher.json').exists() and read(out/'execution.json')['import_error']
+ else:assert result['stage']=='native-grader' and not (out/'execution.json').exists()
+ client=DockerClient(R,out/'cleanup-client',S/'native-controller-runtime-qualification-v1/runtime.json');journals=list(out.glob('*.lease.json'));assert journals
+ for path in journals:
+  journal=read(path);assert journal['stage']=='closed' and not client.ids(journal['token'])
+ summary={'passed':True,'case':mode,'status':result['status'],'diagnostic_fraction':result['score'],'native_counts':result.get('native_counts'),'original_publisher_scoring_class_executed':mode in ('baseline','broken'),'dependency_inventory_unchanged':mode in ('baseline','broken'),'closed_leases':len(journals),'remaining_owned_containers':0,'model_invocations':0,'counted_attempts':0,'task_solution_written':False,'execution_sources':source_hashes()}
+ dump(out/'qualification-control.json',summary);print(json.dumps({k:v for k,v in summary.items() if k!='execution_sources'}))
+def main():
+ p=argparse.ArgumentParser();p.add_argument('--mode',choices=('prepare','baseline','broken','wrong-python','wrong-import'),required=True);p.add_argument('--inputs',type=Path,required=True);p.add_argument('--output',type=Path)
+ a=p.parse_args();inputs=a.inputs.resolve();assert inputs.is_relative_to(S)
+ if a.mode=='prepare':prepare(inputs)
+ else:
+  out=a.output.resolve();assert out.is_relative_to(S);check(inputs,out,a.mode)
+ return 0
+if __name__=='__main__':raise SystemExit(main())

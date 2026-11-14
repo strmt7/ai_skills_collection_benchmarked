@@ -1,0 +1,117 @@
+{
+  "author_image_id": "sha256:7f1ae1a07398cd0ea98b405bf589a6f2ed17daa5e9a5eeb445e6ba38c291ae8e",
+  "controls": [
+    {
+      "collected_submission_sha256": {
+        "/app/dialogue.dot": "86c37a8b216825c541f065a7f4abddc6c12826d9d258209c187d95e1cb29952a",
+        "/app/dialogue.json": "3fe57d1ffcf51427d756fd3a5d6625980890e59c9b5d93d7d2784ef7a8c6525d"
+      },
+      "control": "author-oracle",
+      "grader_role_sha256": "4024ce0ef77179d9b40c9af75870fe58cf51b4c0cc7b190028ad472826c7abbe",
+      "producer_lease_closed_before_grade": true,
+      "producer_role_sha256": "8f23fb2af6c0bae52bb72eb90565fcc6779a721fc25e30609853d222eff51dda",
+      "report": {
+        "ctrf": {
+          "failed": 0,
+          "passed": 6,
+          "tests": 6
+        },
+        "official_grouped_reward": 1.0,
+        "ordered_node_ids_sha256": "5c15f09fcd66f158d19c35e0fa6432c19ddc0659bf486415243c8429f4dc65b5",
+        "profile": "skillsbench-pytest-ctrf-0.3.6",
+        "pytest": {
+          "failed": 0,
+          "passed": 35,
+          "tests": 35
+        },
+        "report_sha256": {
+          "ctrf": "30167a481d1d816e73545242b0d7bc3f382f2075fed8d102d7f28bbdef473f3e",
+          "pytest_output": "efc917c1db6e036d0f71f7f9b75b20b8ec052e593761c979a9c8ccf7cb4108ba",
+          "reward": "5717e7c840171019a4eeab5b79a7f894a4986eaff93d04ec5b12c9a189f594bf"
+        },
+        "status": "verified_reports"
+      },
+      "separate_producer_grader": true,
+      "verification_sha256": "f92c87d3b8ec9a2f8809e522f51f68188a4eaa4e2594bcb98dc768a83e093cab"
+    },
+    {
+      "collected_submission_sha256": {
+        "/app/dialogue.dot": "517ba1d92cbaf0f820026b1cfa06eefbed24e99768ee580a453dc0a2ac4a3826",
+        "/app/dialogue.json": "abbbfb47098474bd0d478558b8155778186e01016ee5127395ad1c5a2d3dbfb3"
+      },
+      "control": "empty-graph",
+      "grader_role_sha256": "4bb6caa8266e62765717ecea7a06d993484d4c05053856cc7c8b9bef0bdcffde",
+      "producer_lease_closed_before_grade": true,
+      "producer_role_sha256": "ab24dc4542f58fea6652f700e7375f13c586983ae5ba8c15562b6704df316c70",
+      "report": {
+        "ctrf": {
+          "failed": 6,
+          "passed": 0,
+          "tests": 6
+        },
+        "official_grouped_reward": 0.0,
+        "ordered_node_ids_sha256": "5c15f09fcd66f158d19c35e0fa6432c19ddc0659bf486415243c8429f4dc65b5",
+        "profile": "skillsbench-pytest-ctrf-0.3.6",
+        "pytest": {
+          "failed": 29,
+          "passed": 6,
+          "tests": 35
+        },
+        "report_sha256": {
+          "ctrf": "5721cc2e966bf930baf3d33f25f561de729687374664e1ad1910aa04422f7feb",
+          "pytest_output": "dc017c6e24930ed7be79d446f8c0929c4e502c88f3e9208258292e83d5b47b90",
+          "reward": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+        },
+        "status": "verified_reports"
+      },
+      "separate_producer_grader": true,
+      "verification_sha256": "b2a83877c5b7f9feaae95c80d317aac8f20c014b6d38d277126cbda95da09c9b"
+    }
+  ],
+  "expected_inventory_source": "Frozen native oracle control prior to fresh grading replay.",
+  "expected_node_ids_sha256": "5c15f09fcd66f158d19c35e0fa6432c19ddc0659bf486415243c8429f4dc65b5",
+  "kind": "skillsbench-native-verifier-qualification",
+  "limits": [
+    "The authors' verifier grades two output files. It does not invoke the requested parser function.",
+    "A grouped reward and an underlying pytest case fraction are different measures.",
+    "These controls qualify a report profile and a two-stage grading replay. They do not run a model or measure skill effects."
+  ],
+  "model_requests": 0,
+  "native_controls_summary_sha256": "217455b826431d5813885fd0e42742fad30e67f8ce57f50559554c336b9821f7",
+  "python": [
+    3,
+    12,
+    8
+  ],
+  "report_checker": {
+    "path": "tools/verify_skillsbench_pytest_reports.py",
+    "profile": "skillsbench-pytest-ctrf-0.3.6",
+    "sha256": "9edd6a8c03733a1b61cf163cf61984d1b4c1b101a43a94c693833723aa4de139"
+  },
+  "runtime_packages": {
+    "graphviz": "0.20.3",
+    "iniconfig": "2.3.1",
+    "packaging": "26.3",
+    "pip": "26.3",
+    "pluggy": "1.7.0",
+    "pytest": "8.3.4",
+    "pytest-json-ctrf": "0.3.6"
+  },
+  "schema_version": 1,
+  "source_commit": "f860ecf02ef53412a030f8661c83d644b739ff01",
+  "task": "dialogue-parser",
+  "task_excluded_from_untouched_evaluation": true,
+  "task_file_sha256": {
+    "tasks/dialogue-parser/environment/Dockerfile": "e0fdab0e028c11d5437caf3b827f10aa65fcf224c8a9689fecc7fa49f3ec92e7",
+    "tasks/dialogue-parser/environment/script.txt": "f63dcc28386cb2f963362eb78d40af75eb362945646c3c86e2a699bb2f14b409",
+    "tasks/dialogue-parser/environment/skills/dialogue-graph/SKILL.md": "03d711b93219cec1cd70d823d595e7c5adffc058c5910b94886fe6cc374f08d8",
+    "tasks/dialogue-parser/environment/skills/dialogue-graph/scripts/dialogue_graph.py": "f169725b80f5d63bddab1f2b5bbe1114643952defff760ef9e2e1096a93f53de",
+    "tasks/dialogue-parser/oracle/dialogue.json": "7c26e8db8b9624f73d3f0ee6406a5eda0a2044ed401efbb98d9eff8092a57f15",
+    "tasks/dialogue-parser/oracle/script.txt": "f63dcc28386cb2f963362eb78d40af75eb362945646c3c86e2a699bb2f14b409",
+    "tasks/dialogue-parser/oracle/solution.py": "583e6513768600d8daa0e25c882cf3efd78d063c27eb66662591e0cb8a1799e2",
+    "tasks/dialogue-parser/oracle/solve.sh": "5973e2fe36b0e6c7219ef1ced877580eea3519b7433ef8254113d8cadfaf442e",
+    "tasks/dialogue-parser/task.md": "f96d2d4f1332d6bb55d699e654f05a81334db8015b875af44f6f473565b8a390",
+    "tasks/dialogue-parser/verifier/test.sh": "57d2cb2cbd76d173357da476eb525e07678aabbb4b22392563718fe867e12f67",
+    "tasks/dialogue-parser/verifier/test_outputs.py": "d0effcfa8ba898260bce69ba8a0c4852f4959a83e9130cc69c13847f0f05b01c"
+  }
+}

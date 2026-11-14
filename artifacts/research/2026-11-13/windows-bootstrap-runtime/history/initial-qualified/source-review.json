@@ -1,0 +1,68 @@
+{
+  "official_web_sources": [
+    {
+      "capture": "windows-createprocess-doc.native.json",
+      "metadata": "windows-createprocess-doc.metadata.json",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessw",
+      "native_sha256": "edf300d7b22887e6645366f95e79adc14294cb4e541e935e350b281405c0fbb4",
+      "metadata_sha256": "8d4682a381d120a5aa40a388672c931bdecc38a9553c044f6b65015d8a535e7f",
+      "status_code": 200,
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true,
+      "reviewed_conclusion": "CreateProcessW supports explicit application names; its mutable Unicode command line has a 32767-character limit. Native controls, rather than documentation alone, establish long-path launch behavior."
+    },
+    {
+      "capture": "windows-add-type-doc.native.json",
+      "metadata": "windows-add-type-doc.metadata.json",
+      "url": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/add-type?view=powershell-5.1",
+      "native_sha256": "8c95853453f1a400d646f9d2f91f2156bcd67dfa3c46fd7772919f9b3345e339",
+      "metadata_sha256": "0cccf348d2c981951b42d061bda3e9c87045bf71ad1cbaed634ec56f810cb6ce",
+      "status_code": 200,
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true,
+      "reviewed_conclusion": "Windows PowerShell Add-Type compiles source against .NET Framework. The Unicode temporary-path failure is established by retained native controls, not asserted by this article."
+    },
+    {
+      "capture": "windows-pwsh-cli-doc.native.json",
+      "metadata": "windows-pwsh-cli-doc.metadata.json",
+      "url": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.6",
+      "native_sha256": "ed2b8ebbc30c22d57d390e4e3896afdafea9f44a0039b3be33f6d4477368a2aa",
+      "metadata_sha256": "8f12e971e0fc1455aecc39eb410a6705c0b7f92bf1d47b56161f3697f1e27484",
+      "status_code": 200,
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true,
+      "reviewed_conclusion": "-MTA starts PowerShell in a multi-threaded apartment and is Windows-only; -NonInteractive turns interactive prompts into terminating errors."
+    }
+  ],
+  "package": {
+    "package": "Microsoft.NETFramework.ReferenceAssemblies.net48",
+    "version": "1.0.3",
+    "url": "https://api.nuget.org/v3-flatcontainer/microsoft.netframework.referenceassemblies.net48/1.0.3/microsoft.netframework.referenceassemblies.net48.1.0.3.nupkg",
+    "archive_bytes": 20997929,
+    "archive_sha256": "8a7e348538e7eb91351696911689f49e3d4f63f8bab517432bbe159b8b1104a2",
+    "publisher_sha512_base64": "XWKgyeNadNcTQaIVvQB8BrdCNrEar6fo/de1OdQRZ9HFy0jcBSaM8IV5q64ZampsSnC8AlTsACaGZUuoFw41RA==",
+    "reference_assemblies_executed": false,
+    "license_source_url": "https://github.com/microsoft/dotnet/blob/main/LICENSE",
+    "license_git_blob": "b73b4a1293c328fdb684ee285e2039f72f4f1c4c",
+    "license_verification": "Official package metadata links the former master-branch license URL, which returned 404; the official repository current main-branch MIT notice was retrieved and Git-blob verified. The failed original request is retained privately.",
+    "qualification_limit": "A pinned compiler input is not an independently verified vendor signature or evidence of model capability gains."
+  },
+  "node": {
+    "passed": true,
+    "version": "v26.13.1",
+    "url": "https://nodejs.org/dist/v26.13.1/node-v26.13.1-win-x64.zip",
+    "archive_bytes": 41166246,
+    "archive_sha256": "e2edda75bfb089654705cf65a13b58933bfd5f57148e8ebda916f58a2474f1f7",
+    "files": {
+      "LICENSE": {
+        "bytes": 159309,
+        "sha256": "cbc91dba25c546898544155e1c0fce897f00e3f1df0afc795b8da891d38f92d9"
+      },
+      "node.exe": {
+        "bytes": 100089160,
+        "sha256": "f5109dc868ec38703ad8f305e0aceece717cb60d4889873f434017af4e96cccb"
+      }
+    }
+  },
+  "raw_captures_modified": false
+}

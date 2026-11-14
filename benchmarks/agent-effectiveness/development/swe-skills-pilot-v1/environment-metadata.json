@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-13",
+  "kind": "selected-environment-registry-metadata",
+  "source_commit": "4d3450d9216a590a8726fcb3604b5143daca776b",
+  "selection_sha256": "42de081f53b0273f936ea5ca12dd0a6f69da0c33ade087b7b76ac8e6b7bee1c5",
+  "capture_sha256": "b31c5513dd4268c5ac6bd804f3d9b35ff589ae50ebd24a5b03cf081b37dd8b87",
+  "images": [
+    {
+      "image_reference": "zhangyiiiiii/swe-skills-bench-clojure",
+      "native_exit_code": 0,
+      "termination_reason": null,
+      "descriptors": [
+        {
+          "digest": "sha256:23dbff2f54f64213ea8b2a627594e6b72ec2c9d160902f51a55f2fd397cf462f",
+          "media_type": "application/vnd.oci.image.manifest.v1+json",
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "reference": "docker.io/zhangyiiiiii/swe-skills-bench-clojure:latest"
+        }
+      ],
+      "native_stdout_sha256": "a5f545ae82957b0e5fbd149b55479638a8246b98fdf3430649aaf09748decf32",
+      "native_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_error": null,
+      "owned_processes_after_cleanup": 0,
+      "runtime_admitted": false
+    },
+    {
+      "image_reference": "zhangyiiiiii/swe-skills-bench-golang",
+      "native_exit_code": 0,
+      "termination_reason": null,
+      "descriptors": [
+        {
+          "digest": "sha256:08a709af3502f43282367befe0ae3ba641efe7300cf9d2295c01eb12564c6180",
+          "media_type": "application/vnd.oci.image.manifest.v1+json",
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "reference": "docker.io/zhangyiiiiii/swe-skills-bench-golang:latest"
+        }
+      ],
+      "native_stdout_sha256": "449601bcf0fcce1536b6fef33cbf779a6b07e1df93374c5313bec5438a28a962",
+      "native_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_error": null,
+      "owned_processes_after_cleanup": 0,
+      "runtime_admitted": false
+    },
+    {
+      "image_reference": "zhangyiiiiii/swe-skills-bench-node-ext",
+      "native_exit_code": 1,
+      "termination_reason": null,
+      "descriptors": [],
+      "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_stderr_sha256": "0cf9cfbbd6a5ffecf9b2f3c48c56b93bde9c1ae7aa0c47139508ac2eb0807865",
+      "native_error": "errors:\ndenied: requested access to the resource is denied\nunauthorized: authentication required",
+      "owned_processes_after_cleanup": 0,
+      "runtime_admitted": false
+    },
+    {
+      "image_reference": "zhangyiiiiii/swe-skills-bench-node22-ext",
+      "native_exit_code": 1,
+      "termination_reason": null,
+      "descriptors": [],
+      "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_stderr_sha256": "0cf9cfbbd6a5ffecf9b2f3c48c56b93bde9c1ae7aa0c47139508ac2eb0807865",
+      "native_error": "errors:\ndenied: requested access to the resource is denied\nunauthorized: authentication required",
+      "owned_processes_after_cleanup": 0,
+      "runtime_admitted": false
+    },
+    {
+      "image_reference": "zhangyiiiiii/swe-skills-bench-python",
+      "native_exit_code": 0,
+      "termination_reason": null,
+      "descriptors": [
+        {
+          "digest": "sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+          "media_type": "application/vnd.oci.image.manifest.v1+json",
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "reference": "docker.io/zhangyiiiiii/swe-skills-bench-python:latest"
+        }
+      ],
+      "native_stdout_sha256": "2e619339e4cd2e4acd9472792c0e521a9dfd8c729a4fef00e9aecba5d0022099",
+      "native_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_error": null,
+      "owned_processes_after_cleanup": 0,
+      "runtime_admitted": false
+    },
+    {
+      "image_reference": "zhangyiiiiii/swe-skills-bench-ruby",
+      "native_exit_code": 0,
+      "termination_reason": null,
+      "descriptors": [
+        {
+          "digest": "sha256:fa5497839a3891571a70a5b8eb22ce510bf1932d801a4086fef78eb02c4406f5",
+          "media_type": "application/vnd.oci.image.manifest.v1+json",
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "reference": "docker.io/zhangyiiiiii/swe-skills-bench-ruby:latest"
+        }
+      ],
+      "native_stdout_sha256": "3106dac78ce0e5d04ea139e0a027d0a261f30a7d94e52cbdb5a1a8714358196e",
+      "native_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_error": null,
+      "owned_processes_after_cleanup": 0,
+      "runtime_admitted": false
+    },
+    {
+      "image_reference": "zhangyiiiiii/swe-skills-bench-rust",
+      "native_exit_code": 0,
+      "termination_reason": null,
+      "descriptors": [
+        {
+          "digest": "sha256:d826cd5a4a34f5bcdad6b1560d40256785cc618e1a467193e33183a2c9c49b05",
+          "media_type": "application/vnd.oci.image.manifest.v1+json",
+          "platform": {
+            "architecture": "amd64",
+            "os": "linux"
+          },
+          "reference": "docker.io/zhangyiiiiii/swe-skills-bench-rust:latest"
+        }
+      ],
+      "native_stdout_sha256": "1cf41448b229c698bb4f3f921a5eb5e7d5e42f97ea336b1c0f9999913306b338",
+      "native_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "native_error": null,
+      "owned_processes_after_cleanup": 0,
+      "runtime_admitted": false
+    }
+  ],
+  "registry_metadata_resolved": 5,
+  "registry_queries_unresolved": 2,
+  "official_node_dockerfile": {
+    "url": "https://github.com/ControllableModel/SWE-Skills-Bench/blob/4d3450d9216a590a8726fcb3604b5143daca776b/docker/node-ext/Dockerfile",
+    "git_blob_sha1": "147b53701147dded6ffecc7f96aa9d4ae5fd7dfc",
+    "git_blob_identity_verified": true,
+    "decoded_source_sha256": "ea291a8d9b7227c322b82f35d29d259db9221097fad628a3e132b25263cf9860",
+    "scope": "Author source exists, but its Ubuntu/Node package inputs are not all immutable. No equivalent replacement image has been built or qualified."
+  },
+  "images_pulled": 0,
+  "containers_created": 0,
+  "model_invocations": 0,
+  "execution_admitted": false,
+  "limitations": [
+    "Reported descriptors are native CLI registry metadata, not image-layer verification or original-environment qualification.",
+    "Denied anonymous queries do not distinguish a private image, absent image or another registry authorization condition.",
+    "Keep unresolved selected cells in the frame; do not silently substitute environments or resample easier tasks.",
+    "No external registry restriction was bypassed and no personal Docker profile or credentials were used."
+  ]
+}

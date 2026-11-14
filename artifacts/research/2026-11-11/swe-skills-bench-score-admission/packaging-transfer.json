@@ -1,0 +1,218 @@
+{
+  "gate_sha256": "0f1873005f6c6886f63ecce5e8c7f08df2c39ad9426479f5deeaa740f559a93f",
+  "gate_source_snapshot": "artifacts/research/2026-11-11/swe-skills-bench-score-admission/verifier-profile-v1.py.txt",
+  "inventory_sha256": "fe6f4ae56ed8c547d4839298a6268b2c580418c02551b324614814d9094e701c",
+  "kind": "producer-to-grader-repository-transfer-control",
+  "limits": [
+    "A scripted, unprivileged producer generated two task files in each case. The authored behavior fixture derives from the public task requirements.",
+    "The controller collected exact ordinary file bytes, verified their digests and closed the producer before creating the grader. The grader received the same pinned source separately from the two candidate files and original verifier.",
+    "The native author verifier and result mapper agreed with the independent console and JUnit gate. PYTHONPATH was pinned to the target repository source to prevent a preinstalled dependency from answering the task.",
+    "This transfer control does not qualify model transport or represent an agent performance score."
+  ],
+  "model_requests": 0,
+  "publisher_evaluator": {
+    "blob": "b63cd6d4993b7b893d24462c5d38547e9623c485",
+    "bytes": 16553,
+    "sha256": "4eb50a5da8e47ba6d5cb1fa6b41de11011c5623be834ae9aabd6672d293d8d2c"
+  },
+  "publisher_image": "docker.io/zhangyiiiiii/swe-skills-bench-python@sha256:51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+  "publisher_inputs": {
+    "task.md": {
+      "bytes": 1011,
+      "git_blob": "03212ae93aac2b2347ea9b6fe38cbcaadb11262b",
+      "sha256": "2c07a3235604d2c5364eb26f6c7bb64e1b73b81204a3f5cf53fbfd15c37d4bd6"
+    },
+    "verifier.py.txt": {
+      "bytes": 5543,
+      "git_blob": "64502d795b29793f20c8011f973371136cc61244",
+      "sha256": "a81feadd8ae9c7742b44298317f96d352f7d744bd70cd573752e0d36ff99fba2"
+    }
+  },
+  "publisher_replay_driver_sha256": "c8bd68dca30726799130ef8f78a679f9766be0ace24de69b85fd9ea819ff0c37",
+  "results": [
+    {
+      "admission": {
+        "case_status": {
+          "tests.test_python_packaging.TestPythonPackaging::test_demo_script_compiles": "passed",
+          "tests.test_python_packaging.TestPythonPackaging::test_demo_script_exists": "passed",
+          "tests.test_python_packaging.TestPythonPackaging::test_demo_script_runs": "passed",
+          "tests.test_python_packaging.TestPythonPackaging::test_demo_shows_comparison": "passed",
+          "tests.test_python_packaging.TestPythonPackaging::test_edge_case_tests_compile": "passed",
+          "tests.test_python_packaging.TestPythonPackaging::test_edge_case_tests_exist": "passed",
+          "tests.test_python_packaging.TestPythonPackaging::test_edge_case_tests_pass": "passed",
+          "tests.test_python_packaging.TestPythonPackaging::test_epoch_version_covered": "passed",
+          "tests.test_python_packaging.TestPythonPackaging::test_local_version_covered": "passed",
+          "tests.test_python_packaging.TestPythonPackaging::test_post_and_dev_versions_covered": "passed",
+          "tests.test_python_packaging.TestPythonPackaging::test_prerelease_versions_covered": "passed"
+        },
+        "errors": 0,
+        "failed": 0,
+        "passed": 11,
+        "score": 1.0,
+        "sha256": {
+          "console": "307e58ea18259ef3473ff19f9f31cac6ca788a63031909b55bcd94605e2be0b8",
+          "inventory": "fe6f4ae56ed8c547d4839298a6268b2c580418c02551b324614814d9094e701c",
+          "junit": "6b660e8b4f06d04ea299a4b44115f4e1c5a0240def89f74f8e639967ee6e956a",
+          "publisher": "bcfec1121402e2e7a3a7a40ca194f2994caccd06d1d187861dbb751ffc3dbc07"
+        },
+        "skipped": 0,
+        "status": "native_pytest_result_verified",
+        "total": 11
+      },
+      "case": "behavior-fixture",
+      "case_status": {
+        "tests.test_python_packaging.TestPythonPackaging::test_demo_script_compiles": "passed",
+        "tests.test_python_packaging.TestPythonPackaging::test_demo_script_exists": "passed",
+        "tests.test_python_packaging.TestPythonPackaging::test_demo_script_runs": "passed",
+        "tests.test_python_packaging.TestPythonPackaging::test_demo_shows_comparison": "passed",
+        "tests.test_python_packaging.TestPythonPackaging::test_edge_case_tests_compile": "passed",
+        "tests.test_python_packaging.TestPythonPackaging::test_edge_case_tests_exist": "passed",
+        "tests.test_python_packaging.TestPythonPackaging::test_edge_case_tests_pass": "passed",
+        "tests.test_python_packaging.TestPythonPackaging::test_epoch_version_covered": "passed",
+        "tests.test_python_packaging.TestPythonPackaging::test_local_version_covered": "passed",
+        "tests.test_python_packaging.TestPythonPackaging::test_post_and_dev_versions_covered": "passed",
+        "tests.test_python_packaging.TestPythonPackaging::test_prerelease_versions_covered": "passed"
+      },
+      "failed": 0,
+      "grader": {
+        "extra": [
+          "scripts/demo_packaging.py",
+          "tests/test_version_edge_cases.py",
+          "verifier.py"
+        ],
+        "role": "grader",
+        "source_files": 116
+      },
+      "native_runtime": {
+        "exit_code": 0,
+        "package_module": "/workspace/packaging/src/packaging/version.py",
+        "uid": 1001
+      },
+      "native_sha256": {
+        "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "307e58ea18259ef3473ff19f9f31cac6ca788a63031909b55bcd94605e2be0b8",
+        "xml": "6b660e8b4f06d04ea299a4b44115f4e1c5a0240def89f74f8e639967ee6e956a"
+      },
+      "passed": 11,
+      "producer": {
+        "extra": [
+          "scripts/demo_packaging.py",
+          "tests/test_version_edge_cases.py"
+        ],
+        "role": "producer",
+        "source_files": 116
+      },
+      "producer_closed_before_grader": true,
+      "publisher_status": "passed",
+      "total": 11,
+      "transferred_sha256": {
+        "scripts/demo_packaging.py": "d4e32f2608db7d75fb8ee38f8c4a8cea10c3e3e95d941e2ce216a3fed4ccf4c6",
+        "tests/test_version_edge_cases.py": "2af8cf9d4a3593298e1f398c1ac2ec0dfc91273ca83d6293139bf171ecfc6ef5"
+      }
+    },
+    {
+      "admission": {
+        "case_status": {
+          "tests.test_python_packaging.TestPythonPackaging::test_demo_script_compiles": "passed",
+          "tests.test_python_packaging.TestPythonPackaging::test_demo_script_exists": "passed",
+          "tests.test_python_packaging.TestPythonPackaging::test_demo_script_runs": "passed",
+          "tests.test_python_packaging.TestPythonPackaging::test_demo_shows_comparison": "failed",
+          "tests.test_python_packaging.TestPythonPackaging::test_edge_case_tests_compile": "passed",
+          "tests.test_python_packaging.TestPythonPackaging::test_edge_case_tests_exist": "passed",
+          "tests.test_python_packaging.TestPythonPackaging::test_edge_case_tests_pass": "passed",
+          "tests.test_python_packaging.TestPythonPackaging::test_epoch_version_covered": "passed",
+          "tests.test_python_packaging.TestPythonPackaging::test_local_version_covered": "passed",
+          "tests.test_python_packaging.TestPythonPackaging::test_post_and_dev_versions_covered": "passed",
+          "tests.test_python_packaging.TestPythonPackaging::test_prerelease_versions_covered": "passed"
+        },
+        "errors": 0,
+        "failed": 1,
+        "passed": 10,
+        "score": 0.9090909090909091,
+        "sha256": {
+          "console": "213f200df634ec786dd28d6cfd3273ae85401c29e8a8ebdcaf17ed81af78428a",
+          "inventory": "fe6f4ae56ed8c547d4839298a6268b2c580418c02551b324614814d9094e701c",
+          "junit": "4e96d794f73f6bb8d03f71cbd55bd4cbc3830242b160f8190ca757b44b9307af",
+          "publisher": "7afd1c898e49492ef1d1d788dca9e192f769b5fbb420c45d966307510cf5cc9a"
+        },
+        "skipped": 0,
+        "status": "native_pytest_result_verified",
+        "total": 11
+      },
+      "case": "incomplete-demo",
+      "case_status": {
+        "tests.test_python_packaging.TestPythonPackaging::test_demo_script_compiles": "passed",
+        "tests.test_python_packaging.TestPythonPackaging::test_demo_script_exists": "passed",
+        "tests.test_python_packaging.TestPythonPackaging::test_demo_script_runs": "passed",
+        "tests.test_python_packaging.TestPythonPackaging::test_demo_shows_comparison": "failed",
+        "tests.test_python_packaging.TestPythonPackaging::test_edge_case_tests_compile": "passed",
+        "tests.test_python_packaging.TestPythonPackaging::test_edge_case_tests_exist": "passed",
+        "tests.test_python_packaging.TestPythonPackaging::test_edge_case_tests_pass": "passed",
+        "tests.test_python_packaging.TestPythonPackaging::test_epoch_version_covered": "passed",
+        "tests.test_python_packaging.TestPythonPackaging::test_local_version_covered": "passed",
+        "tests.test_python_packaging.TestPythonPackaging::test_post_and_dev_versions_covered": "passed",
+        "tests.test_python_packaging.TestPythonPackaging::test_prerelease_versions_covered": "passed"
+      },
+      "failed": 1,
+      "grader": {
+        "extra": [
+          "scripts/demo_packaging.py",
+          "tests/test_version_edge_cases.py",
+          "verifier.py"
+        ],
+        "role": "grader",
+        "source_files": 116
+      },
+      "native_runtime": {
+        "exit_code": 1,
+        "package_module": "/workspace/packaging/src/packaging/version.py",
+        "uid": 1001
+      },
+      "native_sha256": {
+        "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout": "213f200df634ec786dd28d6cfd3273ae85401c29e8a8ebdcaf17ed81af78428a",
+        "xml": "4e96d794f73f6bb8d03f71cbd55bd4cbc3830242b160f8190ca757b44b9307af"
+      },
+      "passed": 10,
+      "producer": {
+        "extra": [
+          "scripts/demo_packaging.py",
+          "tests/test_version_edge_cases.py"
+        ],
+        "role": "producer",
+        "source_files": 116
+      },
+      "producer_closed_before_grader": true,
+      "publisher_status": "failed",
+      "total": 11,
+      "transferred_sha256": {
+        "scripts/demo_packaging.py": "86331a4d1fc4bbd8946466d6697e1ba34b207871f5513316e4abb8b67836db31",
+        "tests/test_version_edge_cases.py": "2af8cf9d4a3593298e1f398c1ac2ec0dfc91273ca83d6293139bf171ecfc6ef5"
+      }
+    }
+  ],
+  "schema_version": 1,
+  "selection": {
+    "benchmark_commit": "4d3450d9216a590a8726fcb3604b5143daca776b",
+    "benchmark_repo": "ControllableModel/SWE-Skills-Bench",
+    "cell": "batch1/python-packaging",
+    "confirmatory_eligible": false,
+    "model_requests": 0,
+    "reason": "Second public development cell for a producer-to-grader repository transfer control. Uses a different repository and packaging behavior with the already admitted Python image and no declared setup commands. Chosen by configuration, not by a measured score.",
+    "target": "pypa/packaging",
+    "target_commit": "5d3ab595f9e1d564e7c48a2253c96ac38444ae63"
+  },
+  "source": {
+    "archive_bytes": 189203,
+    "archive_sha256": "a5ca8f41965b8c80dcf4466ffe183f99cc2f5adec7c88546af34427f38176a56",
+    "request": {
+      "status": 200,
+      "url": "https://codeload.github.com/pypa/packaging/tar.gz/5d3ab595f9e1d564e7c48a2253c96ac38444ae63"
+    },
+    "source_commit": "5d3ab595f9e1d564e7c48a2253c96ac38444ae63",
+    "source_files_verified": 116,
+    "source_tree": "f880aef7b888d7f832e58adea613221f4c944131",
+    "unpacked_bytes": 844127
+  },
+  "transfer_driver_sha256": "0ba9380682cb0dc9014225e024bd6b4ed5858f62e4a36273863f9402d07a9227"
+}

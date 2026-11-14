@@ -1,0 +1,51 @@
+
+import hashlib,json,os,subprocess
+from pathlib import Path
+root=Path('/tmp/standard target contract work');root.mkdir()
+env={k:os.environ[k] for k in ('PATH','HOME','TMPDIR','LANG') if k in os.environ}
+helper='/tmp/benchmark-inputs/package/scripts/add_standard_targets.sh'
+records=[]
+def call(case,args,label):
+    p=subprocess.run(args,cwd=case,env=env,capture_output=True,text=True,timeout=20)
+    records.append({'case':case.name,'label':label,'argv':args,'exit_code':p.returncode,'stdout':p.stdout,'stderr':p.stderr})
+    return p
+def add(case):
+    p=call(case,['bash',helper,'--file','Makefile','--targets','test'],'add-test')
+    if p.returncode:raise RuntimeError('Helper did not reach the test contract: '+case.name)
+def failing_before(case):
+    p=call(case,['make','--no-print-directory','test'],'before')
+    if p.returncode==0 or 'ACTUAL_TEST_RAN' not in p.stdout:raise RuntimeError('Failure control did not run the real recipe: '+case.name)
+    return p
+def after(case,expect_failure):
+    p=call(case,['make','--no-print-directory','test'],'after')
+    if expect_failure:
+        if p.returncode==0 or 'ACTUAL_TEST_RAN' not in p.stdout:raise RuntimeError('Flat-rule preservation control failed')
+    elif p.returncode!=0 or 'ACTUAL_TEST_RAN' in p.stdout:
+        raise RuntimeError('Expected false-success trigger was not established: '+case.name)
+    return p
+recipe='\t@echo ACTUAL_TEST_RAN\n\t@exit 7\n'
+for label,makefile,include in [
+ ('flat','test:\n'+recipe,None),
+ ('multi-target','verify test:\n'+recipe,None),
+ ('included','include tests.mk\n','test:\n'+recipe),
+ ('expanded','TEST_TARGET := test\n$(TEST_TARGET):\n'+recipe,None),
+]:
+    case=root/label;case.mkdir();(case/'Makefile').write_text(makefile)
+    if include is not None:(case/'tests.mk').write_text(include)
+    failing_before(case)
+    if label=='included':
+        before=(case/'Makefile').read_bytes()
+        p=call(case,['bash',helper,'--dry-run','--file','Makefile','--targets','test'],'dry-run')
+        if p.returncode or (case/'Makefile').read_bytes()!=before:raise RuntimeError('Dry run changed an input')
+    add(case);after(case,label=='flat')
+case=root/'absent';case.mkdir();(case/'Makefile').write_text('all:\n\t@echo application-build\n')
+p=call(case,['make','--no-print-directory','test'],'before')
+if p.returncode==0:raise RuntimeError('Absent test contract unexpectedly exists')
+add(case);after(case,False)
+smoke=call(root,['bash','/tmp/benchmark-inputs/package/test/test_helper_scripts.sh'],'upstream-regression')
+if smoke.returncode or 'PASS: makefile-generator helper script regression tests' not in smoke.stdout:raise RuntimeError('Supplied regression script did not pass')
+versions={name:call(root,[name,'--version'],name+'-version').stdout.splitlines()[0] for name in ('make','bash')}
+print(json.dumps({'passed':True,'versions':versions,'flat_existing_rule_preserved':True,'dry_run_preserved_input':True,
+ 'false_success_cases':['newly_invented_test','existing_multi_target_recipe','included_test_recipe','expanded_test_target'],
+ 'supplied_regression_script_passed':True,'component_cases':7,'records':records,'model_invocations':0,
+ 'scope':'Independent component controls, not agent benchmark scores; no immutable mirror modified.'}))
