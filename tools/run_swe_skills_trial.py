@@ -114,7 +114,7 @@ def _run_controller(
             write_json(output / "attempt.json", report)
             setup_space.require_available()
         archive_sources(output / "sources", plan["execution_source_sha256"])
-        for name, entry in input_assets(plan).items():
+        for name, entry in input_assets(plan, runtime).items():
             target = output / "inputs" / name
             target.parent.mkdir(parents=True, exist_ok=True)
             with target.open("xb") as stream:
@@ -209,7 +209,9 @@ def _run_controller(
                     context, plan["provider"], os.environ if credential_source is None else credential_source
                 )
             )
-            selected = credentials.enter_context(catalog_lease(selected, plan["provider"]))
+            selected = credentials.enter_context(
+                catalog_lease(selected, plan["provider"], local=runtime.get("local_catalog"))
+            )
             invocation = command(selected, plan["model"], plan["reasoning_effort"], provider=plan["provider"])
             write_json(
                 output / "launch.json",
@@ -280,7 +282,7 @@ def _run_controller(
         )
         if setup_space is not None:
             setup_space.require_available()
-        for entry in input_assets(plan).values():
+        for entry in input_assets(plan, runtime).values():
             asset(entry)
         subject_runtime(plan["subject_runtime"])
         if dependency_receipt is not None:

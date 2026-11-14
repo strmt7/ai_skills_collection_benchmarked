@@ -2,6 +2,9 @@ from __future__ import annotations
 
 import copy
 import json
+import os
+from pathlib import Path
+from typing import Any
 from xml.sax.saxutils import escape
 
 import pytest
@@ -14,6 +17,8 @@ def observation(tmp_path):
     cli.write_bytes(b"CLI identity fixture")
     python.write_bytes(b"Python identity fixture")
     shell.write_bytes(b"Shell identity fixture")
+    git = tmp_path / "git.exe"
+    git.write_bytes(b"Git identity fixture")
     workspace, home = tmp_path / "runtime-workspace", tmp_path / "private/profile"
 
     def put(name, value):
@@ -77,6 +82,8 @@ def observation(tmp_path):
             "cli": str(cli),
             "python": str(python),
             "shell": str(shell),
+            "git": str(git),
+            "git_sha256": controls.digest(git),
             "workspace": str(workspace),
             "codex_home": str(home),
         },
@@ -90,6 +97,9 @@ def observation(tmp_path):
         path.parent.mkdir(parents=True, exist_ok=True)
         if not path.exists():
             path.write_bytes(b"owned fixture")
+    for condition in ("positive", "baseline"):
+        put("git-" + condition + "/process.json", process)
+        put("git-" + condition + "/command.json", {"command": [str(git), "init", "--quiet"]})
     checks = controls.observed_checks(tmp_path)
     checks["sources_unchanged"] = True
     record = {
@@ -105,6 +115,8 @@ def observation(tmp_path):
         "python_sha256": controls.digest(python),
         "shell": str(shell),
         "shell_sha256": controls.digest(shell),
+        "git": str(git),
+        "git_sha256": controls.digest(git),
         "workspace": str(workspace),
         "codex_home": str(home),
         "evidence_sha256": {name: controls.digest(tmp_path / name) for name in controls.EVIDENCE_NAMES},
@@ -121,7 +133,7 @@ def test_complete_context_record_is_verified_without_claiming_full_trials(observ
 
 
 @pytest.mark.parametrize(
-    "change", ["missing_check", "numeric_check", "missing_evidence", "scope", "source", "bytes", "shell"]
+    "change", ["missing_check", "numeric_check", "missing_evidence", "scope", "source", "bytes", "shell", "git"]
 )
 def test_incomplete_or_changed_records_never_pass(observation, change):
     path, record, put = observation
@@ -137,10 +149,49 @@ def test_incomplete_or_changed_records_never_pass(observation, change):
         record["source_sha256"]["tools/_trial_context.py"] = "a" * 64
     elif change == "shell":
         (path / "powershell.exe").write_bytes(b"changed shell executable")
+    elif change == "git":
+        (path / "git.exe").write_bytes(b"changed Git executable")
     else:
         (path / "baseline-prompt/stderr.native").write_bytes(b"changed")
     put("qualification.json", record)
     assert controls.check(path)["ok"] is False
+
+
+def test_rehashed_bare_git_command_cannot_prove_explicit_runtime_use(observation):
+    path, record, put = observation
+    relative = "git-positive/command.json"
+    put(relative, {"command": ["git", "init", "--quiet"]})
+    record["evidence_sha256"][relative] = controls.digest(path / relative)
+    put("qualification.json", record)
+    assert controls.check(path)["ok"] is False
+
+
+def test_fixture_git_ignores_inherited_configuration_and_uses_owned_bounds(tmp_path, monkeypatch):
+    git = tmp_path / "admitted/git.exe"
+    workspace = tmp_path / "workspace"
+    workspace.mkdir()
+    for key in controls.SYSTEM_VARIABLES:
+        monkeypatch.setenv(key, os.environ.get(key, "owned-system-value"))
+    monkeypatch.setenv("GIT_DIR", "unrelated repository")
+    monkeypatch.setenv("GIT_CONFIG_COUNT", "1")
+    observed: dict[str, Any] = {}
+
+    def run(command, **kwargs):
+        observed.update(command=command, options=kwargs)
+        return {"exit_code": 0, "termination_reason": None, "job_active_processes_after_cleanup": 0}
+
+    monkeypatch.setattr(controls, "run_owned", run)
+    output = tmp_path / "owned-evidence"
+    controls.initialize_fixture(git, workspace, output)
+    assert observed["command"][0] == str(git)
+    options = observed["options"]
+    assert options["cwd"] == workspace and options["timeout"] == 10
+    assert options["memory_limit"] == 512 * 1024**2 and options["process_limit"] == 8
+    environment = options["environment"]
+    assert "GIT_DIR" not in environment and "GIT_CONFIG_COUNT" not in environment
+    assert environment["GIT_CONFIG_NOSYSTEM"] == "1" and environment["GIT_TERMINAL_PROMPT"] == "0"
+    assert Path(environment["GIT_CONFIG_GLOBAL"]).read_bytes() == b""
+    assert (output / "process.json").is_file()
 
 
 @pytest.mark.parametrize("change", ["command", "cwd"])

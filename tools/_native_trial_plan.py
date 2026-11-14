@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from _native_benchmark_runtime import sha256
+from _trial_catalog import load_local_catalog
 from _trial_provider import validate_provider
 from _trial_transcript import strict_json
 from _windows_appcontainer import checked_path
@@ -43,7 +44,8 @@ def subject_runtime(entry: Any) -> dict[str, Any]:
     if (
         not isinstance(runtime, dict)
         or type(runtime["schema_version"]) is not int
-        or (runtime["schema_version"], set(runtime)) not in ((1, basic), (2, basic | extra))
+        or (runtime["schema_version"], set(runtime))
+        not in ((1, basic), (2, basic | extra), (3, basic | {"model_catalog"}), (3, basic | extra | {"model_catalog"}))
     ):
         raise ValueError("Expected an explicit subject runtime declaration")
     package, python = (checked_path(Path(runtime[name])) for name in ("cli_package_root", "python"))
@@ -82,7 +84,7 @@ def subject_runtime(entry: Any) -> dict[str, Any]:
     if not isinstance(runtime["python_sha256"], str) or sha256(python.read_bytes()) != runtime["python_sha256"]:
         raise ValueError("Subject Python differs from its frozen runtime identity")
     dependencies = {}
-    if runtime["schema_version"] == 2:
+    if "dependencies" in runtime:
         entry = runtime["dependencies"]
         if not isinstance(entry, dict) or set(entry) != {"path", "sha256"}:
             raise ValueError("Subject dependencies require a frozen specification asset")
@@ -120,15 +122,17 @@ def subject_runtime(entry: Any) -> dict[str, Any]:
         "python": python,
         "roots": (package / pin["runtime_root"], python.parent),
         **dependencies,
+        **({"local_catalog": load_local_catalog(runtime["model_catalog"])} if runtime["schema_version"] == 3 else {}),
     }
 
 
-def input_assets(plan: dict[str, Any]) -> dict[str, Any]:
+def input_assets(plan: dict[str, Any], runtime: dict[str, Any] | None = None) -> dict[str, Any]:
     """Name frozen inputs independently of their source filenames."""
     return {
         **{name + ".json": plan[name] for name in ("task", "subject_runtime", "grader_runtime")},
         "prompt.txt": plan["prompt"],
         **{f"interventions/{index:04d}.txt": entry for index, entry in enumerate(plan["interventions"])},
+        **({"model-catalog.json": runtime["local_catalog"].asset()} if runtime and "local_catalog" in runtime else {}),
     }
 
 
@@ -231,6 +235,14 @@ def load_plan(path: Path) -> dict[str, Any]:
     if sum(len(text.encode("utf-8")) for text in [prompt, *interventions]) > 1024**2:
         raise ValueError("Native attempt prompt exceeds the one-MiB input budget")
     runtime = subject_runtime(plan["subject_runtime"])
+    if "local_catalog" in runtime:
+        catalog = runtime["local_catalog"]
+        if validate_provider(plan["provider"]).get("authentication") != "none":
+            raise ValueError("Local model metadata requires an anonymous provider")
+        if catalog.metadata()["slug"] != plan["model"]:
+            raise ValueError("Local catalog differs from the requested model")
+        if catalog.sha256 in grader_hashes:
+            raise ValueError("Model metadata must not expose native evaluator assets")
     asset(plan["grader_runtime"])
     protected = [
         path,
@@ -242,6 +254,8 @@ def load_plan(path: Path) -> dict[str, Any]:
     protected.extend(ROOT / name for name in execution_sources())
     if "dependencies" in runtime:
         protected.append(Path(runtime["dependencies"]["asset"]["path"]))
+    if "local_catalog" in runtime:
+        protected.append(Path(runtime["local_catalog"].location))
     protected.extend(Path(task[name]["path"]) for name in ("verifier", "inventory"))
     protected.extend(Path(entry["path"]) for entry in [*task["scorer"]["files"], *task["scorer"]["wheels"]])
     protected.extend(Path(entry["path"]) for entry in task.get("python_environment", {}).get("wheels", []))

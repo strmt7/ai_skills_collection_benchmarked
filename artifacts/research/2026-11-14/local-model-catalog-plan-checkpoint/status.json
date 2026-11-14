@@ -1,0 +1,27 @@
+{
+  "task_states_unchanged": true,
+  "task_states": {
+    "P0": "complete",
+    "P1": "active",
+    "P2": "active",
+    "P3": "active",
+    "P4": "pending",
+    "P5": "pending",
+    "P6": "pending",
+    "P7": "active",
+    "P8": "held",
+    "P9": "active",
+    "P10": "pending",
+    "P11": "pending"
+  },
+  "native_controls": 11,
+  "context_controls": 17,
+  "counted_model_trials": 0,
+  "coding_calibration": {
+    "deadline_seconds": 180,
+    "score": null,
+    "status": "timed_out"
+  },
+  "release_hold": true,
+  "security_scope": "held"
+}

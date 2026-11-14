@@ -196,8 +196,10 @@ def test_grader_wheel_bytes_cannot_be_used_as_subject_instructions(frozen):
 
 
 @pytest.mark.parametrize("mutation", [None, "missing", "changed", "extra", "directory", "python"])
-@pytest.mark.parametrize("schema", [1, 2])
-def test_subject_runtime_checks_complete_cli_payload_and_python(tmp_path, monkeypatch, mutation, schema):
+@pytest.mark.parametrize("schema,with_dependencies", [(1, False), (2, True), (3, False), (3, True)])
+def test_subject_runtime_checks_complete_cli_payload_and_python(
+    tmp_path, monkeypatch, mutation, schema, with_dependencies
+):
     root = tmp_path / "controller"
     pin_path = root / "toolchains/bootstrap/codex.json"
     package = tmp_path / "cli"
@@ -219,7 +221,7 @@ def test_subject_runtime_checks_complete_cli_payload_and_python(tmp_path, monkey
     }
     ref(pin_path, json.dumps(pin).encode())
     extra = {}
-    if schema == 2:
+    if with_dependencies:
         extra = {
             "dependencies": ref(tmp_path / "dependency.json", b"owned specification fixture"),
             "installer": str(tmp_path / "uv.exe"),
@@ -228,6 +230,21 @@ def test_subject_runtime_checks_complete_cli_payload_and_python(tmp_path, monkey
         }
         monkeypatch.setattr(plans, "load_specification", lambda raw: {"admitted": True})
         monkeypatch.setattr(plans, "installer_identity", lambda path: {"admitted": True})
+    if schema == 3:
+        extra["model_catalog"] = ref(
+            tmp_path / "model-catalog.json",
+            json.dumps(
+                {
+                    "models": [
+                        {
+                            "slug": "owned-local",
+                            "context_window": 65536,
+                            "base_instructions": "Frozen native instructions.",
+                        }
+                    ]
+                }
+            ).encode(),
+        )
     runtime = ref(
         tmp_path / "runtime.json",
         json.dumps(
@@ -254,9 +271,45 @@ def test_subject_runtime_checks_complete_cli_payload_and_python(tmp_path, monkey
     if mutation is None:
         admitted = plans.subject_runtime(runtime)
         assert admitted["cli"] == executable and admitted["python"] == python
+        if schema == 3:
+            assert admitted["local_catalog"].metadata()["slug"] == "owned-local"
     else:
         with pytest.raises(ValueError):
             plans.subject_runtime(runtime)
+
+
+@pytest.mark.parametrize("fault", [None, "model", "authentication", "runtime-grant", "evaluator"])
+def test_local_metadata_is_bound_to_the_task_and_kept_outside_subject_grants(frozen, monkeypatch, fault):
+    path, plan, runtime_root = frozen
+    location = (runtime_root if fault == "runtime-grant" else path.parent) / "local-catalog.json"
+    entry = ref(
+        location,
+        json.dumps(
+            {
+                "models": [
+                    {"slug": plan["model"], "context_window": 65536, "base_instructions": "Frozen native instructions."}
+                ]
+            }
+        ).encode(),
+    )
+    local = plans.load_local_catalog(entry)
+    runtime = {"roots": (runtime_root,), "local_catalog": local}
+    monkeypatch.setattr(plans, "subject_runtime", lambda entry: runtime)
+    if fault != "authentication":
+        plan["provider"] = {"authentication": "none", "base_url": "http://127.0.0.1:8123/v1"}
+    if fault == "model":
+        plan["model"] = "different-model"
+    if fault == "evaluator":
+        task_path = Path(plan["task"]["path"])
+        task = json.loads(task_path.read_bytes())
+        task["verifier"] = entry
+        plan["task"] = ref(task_path, json.dumps(task).encode())
+    if fault is not None:
+        with pytest.raises(ValueError):
+            load(frozen)
+    else:
+        assert load(frozen)["runtime"]["local_catalog"] is local
+        assert plans.input_assets(plan, runtime)["model-catalog.json"] == entry
 
 
 def test_source_archive_matches_the_frozen_implementation(tmp_path, monkeypatch):

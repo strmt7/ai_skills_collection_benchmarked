@@ -9,7 +9,7 @@ from collections.abc import Mapping
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from _trial_catalog import NativeCatalog
+from _trial_catalog import LocalCatalog, NativeCatalog
 from _trial_provider import provider_options, validate_provider
 from _trial_signin import NativeSignin, home_identity
 from _windows_appcontainer import checked_path
@@ -46,6 +46,7 @@ class TrialContext:
     tool_environment: dict[str, str]
     signin: NativeSignin | None = field(default=None, repr=False)
     native_catalog: NativeCatalog | None = field(default=None, repr=False)
+    local_catalog: LocalCatalog | None = field(default=None, repr=False)
 
 
 def profile_directories(home: Path) -> dict[str, str]:
@@ -173,10 +174,17 @@ def command(
             or context.signin.store != provider["credential_store"]
             or context.controller_environment.get("CODEX_HOME") != str(context.signin.home)
             or context.native_catalog is None
+            or context.local_catalog is not None
         ):
             raise ValueError("The native sign-in declaration lacks its active admitted controller binding")
     elif context.signin is not None or context.native_catalog is not None:
         raise ValueError("A native sign-in binding requires its explicit provider declaration")
+    if context.local_catalog is not None and (
+        provider is None
+        or validate_provider(provider).get("authentication") != "none"
+        or context.local_catalog.metadata()["slug"] != model
+    ):
+        raise ValueError("Local model catalog differs from the anonymous provider or requested model")
     return [
         str(context.cli),
         *options(context, model, reasoning_effort),
@@ -184,6 +192,11 @@ def command(
         *(
             ["-c", "model_catalog_json=" + json.dumps(str(context.native_catalog.path(context.cli)))]
             if context.native_catalog is not None
+            else []
+        ),
+        *(
+            ["-c", "model_catalog_json=" + json.dumps(str(context.local_catalog.path()))]
+            if context.local_catalog is not None
             else []
         ),
         "exec",

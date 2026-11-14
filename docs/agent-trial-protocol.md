@@ -432,7 +432,7 @@ declare the Python runtime read roots, including the base runtime for a virtual
 environment. Replace the bracketed paths with their locations:
 
 ```powershell
-python tools/qualify_trial_context.py --cli <codex.exe> --python <python.exe> --readable-root <CLI-package-root> --readable-root <Python-runtime-root> --output .venv/context-controls --json
+python tools/qualify_trial_context.py --cli <codex.exe> --python <python.exe> --git <git.exe> --readable-root <CLI-package-root> --readable-root <Python-runtime-root> --output .venv/context-controls --json
 python tools/qualify_trial_context.py --output .venv/context-controls --check --json
 ```
 

@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "kind": "scripted_native_controls",
+  "profile": "windows-native-packaging-anonymous-v1",
+  "execution_boundary_qualified": true,
+  "model_transport_qualified": false,
+  "model_inferences": 0,
+  "counted_model_trials": 0,
+  "raw_boundary_receipt_sha256": "688046878b8c850533f315b6af311ad3eb19600e7552c330d2160a76e6060392",
+  "admission_source_sha256": "9454dde9ef10419ed4a7708d34f57010e6f197abd2ef1367291ad6425a2e23c8",
+  "local_catalog_sha256": "293e604386328d91cfafd94cf44c075d227cc71f36517a315fa3b59f474b10c5",
+  "native_controls": {
+    "edited": {
+      "status": "task_passed",
+      "stage": "complete",
+      "score": 1.0,
+      "native_counts": {
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "total": 11
+      },
+      "raw_result_sha256": "82d011b41b1d7a2ad069a41f046b6b73c644583529a1370984397243176d2b56",
+      "native_process": {
+        "exit_code": 0,
+        "termination_reason": null,
+        "job_active_processes_after_cleanup": 0,
+        "wall_time_limit_seconds": 90.0
+      }
+    },
+    "unchanged": {
+      "status": "task_failed",
+      "stage": "complete",
+      "score": 0.0,
+      "native_counts": {
+        "passed": 0,
+        "failed": 10,
+        "skipped": 1,
+        "errors": 0,
+        "total": 11
+      },
+      "raw_result_sha256": "0a8ac7412c1fb394ac1d725280e82ad55486f6dce2ed9b995f42ea1ad994606d",
+      "native_process": {
+        "exit_code": 0,
+        "termination_reason": null,
+        "job_active_processes_after_cleanup": 0,
+        "wall_time_limit_seconds": 90.0
+      }
+    },
+    "truncated": {
+      "status": "harness_error",
+      "stage": "collection",
+      "score": null,
+      "native_counts": null,
+      "raw_result_sha256": "c5d64fc6d8d385e43163323924c8708ca8db8883db6b5ef77256ad5b27d587cb",
+      "native_process": {
+        "exit_code": 1,
+        "termination_reason": null,
+        "job_active_processes_after_cleanup": 0,
+        "wall_time_limit_seconds": 90.0
+      }
+    },
+    "budget": {
+      "status": "harness_error",
+      "stage": "collection",
+      "score": null,
+      "native_counts": null,
+      "raw_result_sha256": "ff83f0f8e47d39f22a585753109c1c64d81a7178ab46d833a9461afbf766f8c9",
+      "native_process": {
+        "exit_code": 124,
+        "termination_reason": "write_io_limit",
+        "job_active_processes_after_cleanup": 0,
+        "wall_time_limit_seconds": 90.0
+      }
+    },
+    "accounting": {
+      "status": "harness_error",
+      "stage": "collection",
+      "score": null,
+      "native_counts": null,
+      "raw_result_sha256": "d44132694652275eeb7a87884be5a3577a8195e6426025810f03c5b655cb2ec5",
+      "native_process": {
+        "exit_code": 124,
+        "termination_reason": "resource_observation_error",
+        "job_active_processes_after_cleanup": 0,
+        "wall_time_limit_seconds": 90.0
+      }
+    },
+    "logical": {
+      "status": "harness_error",
+      "stage": "final_storage",
+      "score": null,
+      "native_counts": null,
+      "raw_result_sha256": "a44df54ffa65c0c337d20174d454eda779113b3f851abbf0d31609af1a20c2a2",
+      "native_process": {
+        "exit_code": 0,
+        "termination_reason": null,
+        "job_active_processes_after_cleanup": 0,
+        "wall_time_limit_seconds": 90.0
+      }
+    },
+    "space": {
+      "status": "harness_error",
+      "stage": "collection",
+      "score": null,
+      "native_counts": null,
+      "raw_result_sha256": "6b032ffb7a8914f9293eb0a88828d37e62618cd3b12165adc76592771c701b66",
+      "native_process": {
+        "exit_code": 0,
+        "termination_reason": "free_space_limit",
+        "job_active_processes_after_cleanup": 0,
+        "wall_time_limit_seconds": 90.0
+      }
+    },
+    "spaceerror": {
+      "status": "harness_error",
+      "stage": "collection",
+      "score": null,
+      "native_counts": null,
+      "raw_result_sha256": "2dc86b6cdbd274013506d00821f87df542da84b61c59f49b59758175611376b5",
+      "native_process": {
+        "exit_code": 0,
+        "termination_reason": "storage_observation_error",
+        "job_active_processes_after_cleanup": 0,
+        "wall_time_limit_seconds": 90.0
+      }
+    },
+    "preflight-space": {
+      "status": "harness_error",
+      "stage": "storage_preflight",
+      "score": null,
+      "native_counts": null,
+      "raw_result_sha256": "421486f43f19fd46e75ee1edac433c6eca9211678feadb664d0e4f7051069168"
+    },
+    "timeout": {
+      "status": "harness_error",
+      "stage": "collection",
+      "score": null,
+      "native_counts": null,
+      "raw_result_sha256": "a41ebb9f8d0fbc53912e163fdb08e80140a20e910cb611b51f77b74f2e83b288",
+      "native_process": {
+        "exit_code": 124,
+        "termination_reason": "timeout",
+        "job_active_processes_after_cleanup": 0,
+        "wall_time_limit_seconds": 5.0
+      },
+      "exact_tool_incarnation_seen_running_then_stopped": true
+    },
+    "isolation": {
+      "status": "task_passed",
+      "stage": "complete",
+      "score": 1.0,
+      "native_counts": {
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "errors": 0,
+        "total": 11
+      },
+      "raw_result_sha256": "a21e55cea584dd83a5a5a872d5889e478f2b679a2743067e79fb020d0ac84e3d",
+      "native_process": {
+        "exit_code": 0,
+        "termination_reason": null,
+        "job_active_processes_after_cleanup": 0,
+        "wall_time_limit_seconds": 90.0
+      }
+    }
+  },
+  "context_checks": {
+    "baseline_markers": true,
+    "baseline_process": true,
+    "declared_command_only": true,
+    "declared_intervention_only": true,
+    "declared_probe": true,
+    "explicit_git_initialization": true,
+    "git_identity_unchanged": true,
+    "host_countercontrol": true,
+    "intervention_markers": true,
+    "intervention_process": true,
+    "matched_prefix": true,
+    "model_free_methods": true,
+    "native_cleanup": true,
+    "native_command": true,
+    "positive_markers": true,
+    "positive_process": true,
+    "sources_unchanged": true
+  },
+  "runtime_sha256": {
+    "cli": "ce1945eb440b5481ed1233ebaf32b7056ee7e4e452fa62ffe1cbfb26103cdee0",
+    "python": "d718435b892db4ad5b547d12fec61be7baa7faf7a58d857ea58053be24c7a000",
+    "shell": "d8f182560210d43baaf767d482ad1dc1207372522e91413b9d5e515a875e552d",
+    "git": "9c75f3f41eb5686bacde4b7c4fdfcd7970e8b699ee05c8d7a0cc9c8a7ddaffe8"
+  },
+  "prior_catalog_semantics": {
+    "scope": "Earlier isolated deterministic-peer observations under their archived source snapshot; not current backend or model qualification.",
+    "raw_receipt_sha256": "2abbae23ecbb3d8cd30e0add4019ac6a311b7943c015cbc74f6fe0ea25e04aa5",
+    "cases": {
+      "fallback": {
+        "requests": 1,
+        "instructions_sha256": "f6d6b8750560366f9a3e1086c7c9a539082230636baa89590d3fa8ce1c75a40b",
+        "instructions_bytes": 17314,
+        "model_metadata_warning": true,
+        "tools_sha256": "e873326dc6a8983c63a6be2c218e1a75df530e9acb6ba8a05be912235af49d00",
+        "reasoning": {
+          "effort": "high",
+          "summary": "auto"
+        },
+        "parallel_tool_calls": true,
+        "peer_stopped": true,
+        "owned_job_members_remaining": 0,
+        "declared_context_window": null
+      },
+      "publisher-empty-instructions": {
+        "requests": 1,
+        "instructions_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "instructions_bytes": 0,
+        "model_metadata_warning": false,
+        "tools_sha256": "e873326dc6a8983c63a6be2c218e1a75df530e9acb6ba8a05be912235af49d00",
+        "reasoning": {
+          "effort": "high",
+          "summary": "auto"
+        },
+        "parallel_tool_calls": true,
+        "peer_stopped": true,
+        "owned_job_members_remaining": 0,
+        "declared_context_window": 65536
+      },
+      "raw-pinned-instructions": {
+        "requests": 1,
+        "instructions_sha256": "ac8ae107a0d72fe3476b430afb161ea4e67da2e446d778aefc44828160559807",
+        "instructions_bytes": 20903,
+        "model_metadata_warning": false,
+        "tools_sha256": "e873326dc6a8983c63a6be2c218e1a75df530e9acb6ba8a05be912235af49d00",
+        "reasoning": {
+          "effort": "high",
+          "summary": "auto"
+        },
+        "parallel_tool_calls": true,
+        "peer_stopped": true,
+        "owned_job_members_remaining": 0,
+        "declared_context_window": 65536
+      },
+      "preserved-native-instructions": {
+        "requests": 1,
+        "instructions_sha256": "f6d6b8750560366f9a3e1086c7c9a539082230636baa89590d3fa8ce1c75a40b",
+        "instructions_bytes": 17314,
+        "model_metadata_warning": false,
+        "tools_sha256": "e873326dc6a8983c63a6be2c218e1a75df530e9acb6ba8a05be912235af49d00",
+        "reasoning": {
+          "effort": "high",
+          "summary": "auto"
+        },
+        "parallel_tool_calls": true,
+        "peer_stopped": true,
+        "owned_job_members_remaining": 0,
+        "declared_context_window": 65536
+      }
+    }
+  },
+  "retained_failed_control": {
+    "case": "timeout-v1",
+    "raw_summary_sha256": "a474c55d85ec8219d4db018c4d6b4c8914f218475c6845e38e9e1688b56369e8",
+    "passed": false,
+    "diagnosis": "The marker rename returned Access denied before the sleep; the scripted session finished normally. This control was rejected.",
+    "repair": "Close the JSON writer, publish a separate ready sentinel, then observe the same PID and creation time before and after the unchanged five-second deadline.",
+    "accepted_replacement": "timeout-v2"
+  }
+}

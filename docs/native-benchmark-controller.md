@@ -48,7 +48,33 @@ controller stopped. See the
 [qualification evidence](../artifacts/research/2026-11-11/native-controller/review.json).
 
 The controller targets Windows with an explicitly configured local Linux
-Docker engine. Its runtime file declares the following fields.
+Docker engine.
+
+An anonymous local model can declare a separate model catalog through subject
+runtime schema 3. Keep the existing CLI/Python fields, add `model_catalog` as a
+`path` and `sha256` asset, and retain the complete dependency fields when needed.
+The catalog must contain one model matching the plan, an explicit context window
+from 1 to 2,000,000 tokens, and substantive instructions. Keep it outside the
+subject's runtime read grants. Its exact bytes are archived with the attempt and
+checked before and after execution; changed metadata invalidates the attempt.
+Signed-in vendor catalogs retain their separate qualification and cannot accept
+this local override. Older version-4 trial protocols cannot acquire it through
+an edited launch record.
+
+Treat model metadata as part of the frozen agent configuration. A catalog's
+declared capabilities do not prove backend support. Independently verify the
+loaded model, context and reasoning behavior, and use the same qualified profile
+for every comparison condition. Preserve the native baseline's rendered coding
+instructions and tool definitions: an upstream catalog may intentionally supply
+empty instructions, while copying a raw upstream prompt can differ from the
+instructions rendered by the installed binary. Qualify the resulting native
+requests before inference. Catalog admission alone establishes neither execution
+readiness nor model or skill performance.
+
+The [local catalog controls](../artifacts/research/2026-11-14/local-model-catalog/review.json)
+record the source-bound metadata, context, timeout and cleanup observations.
+
+The separate grader runtime file declares the following fields.
 
 | Field | Required value |
 | --- | --- |

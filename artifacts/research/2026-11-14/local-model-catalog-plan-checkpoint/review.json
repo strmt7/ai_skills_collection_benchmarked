@@ -1,0 +1,9 @@
+{
+  "scope": "Update dependency-ready actions from current native and hosted evidence while preserving every task status and owner hold.",
+  "source_sha256": {
+    "data/development_plan.json": "2557d4eb2da6e3289343816adfc8ff77a0b935705d47cc55c7145347ee231b70"
+  },
+  "artifacts": {
+    "status.json": "d8cf2b6d0c66cc905d4ccea728ca1af18864686b06a97ec64aafc4d88cf8631e"
+  }
+}

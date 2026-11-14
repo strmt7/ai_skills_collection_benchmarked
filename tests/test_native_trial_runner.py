@@ -73,7 +73,7 @@ def attempt(tmp_path, monkeypatch):
     )
     monkeypatch.setattr(trials, "command", lambda *args, **kwargs: ["forbidden-process-fixture"])
     monkeypatch.setattr(trials, "asset", lambda entry: b"frozen")
-    monkeypatch.setattr(trials, "input_assets", lambda plan: {"fixture.json": {}})
+    monkeypatch.setattr(trials, "input_assets", lambda plan, runtime=None: {"fixture.json": {}})
 
     def execute(invocation, prompt, output, timeout, *, context, **resource_options):
         state["context"] = context

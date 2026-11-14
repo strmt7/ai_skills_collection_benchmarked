@@ -20,6 +20,114 @@ if TYPE_CHECKING:
 PIN = Path(__file__).resolve().parents[1] / "toolchains/bootstrap/codex.json"
 PIN_SOURCE = "toolchains/bootstrap/codex.json"
 RESOURCE = "models.json"
+LOCAL_CATALOG_LIMIT = 256 * 1024
+
+
+@dataclass(frozen=True, repr=False)
+class LocalCatalog:
+    """Archive explicitly declared local metadata without depending on its original host."""
+
+    location: str
+    sha256: str
+    content: str
+
+    def path(self) -> PurePath:
+        location: PurePath = PureWindowsPath(self.location)
+        if not location.is_absolute():
+            location = PurePosixPath(self.location)
+        if (
+            not location.is_absolute()
+            or str(location) != self.location
+            or ".." in location.parts
+            or "\0" in self.location
+            or (isinstance(location, PureWindowsPath) and len(location.drive) != 2)
+        ):
+            raise ValueError("Local catalog requires a canonical absolute recorded path")
+        return location
+
+    def metadata(self) -> dict[str, Any]:
+        self.path()
+        if (
+            not isinstance(self.content, str)
+            or not 0 < len(self.content.encode("utf-8")) <= LOCAL_CATALOG_LIMIT
+            or not isinstance(self.sha256, str)
+            or re.fullmatch(r"[a-f0-9]{64}", self.sha256) is None
+            or hashlib.sha256(self.content.encode("utf-8")).hexdigest() != self.sha256
+        ):
+            raise ValueError("Local catalog content differs from its bounded frozen identity")
+        catalog = strict_json(self.content)
+        if (
+            not isinstance(catalog, dict)
+            or set(catalog) != {"models"}
+            or not isinstance(catalog["models"], list)
+            or len(catalog["models"]) != 1
+            or not isinstance(catalog["models"][0], dict)
+        ):
+            raise ValueError("Local catalog must declare exactly one model")
+        model = catalog["models"][0]
+        slug, window = model.get("slug"), model.get("context_window")
+        if (
+            not isinstance(slug, str)
+            or not slug.strip()
+            or any(ord(character) < 32 for character in slug)
+            or type(window) is not int
+            or not 1 <= window <= 2_000_000
+        ):
+            raise ValueError("Local catalog model identity or context window is invalid")
+        messages = model.get("model_messages")
+        if messages is not None and not isinstance(messages, dict):
+            raise ValueError("Local catalog model messages must be an object")
+        template = messages.get("instructions_template") if messages is not None else None
+        legacy = model.get("base_instructions")
+        if template is not None and legacy is not None and template != legacy:
+            raise ValueError("Local catalog contains conflicting instruction templates")
+        instructions = template if template is not None else legacy
+        if not isinstance(instructions, str) or not instructions.strip():
+            raise ValueError("Local catalog must explicitly retain substantive model instructions")
+        return model
+
+    def asset(self) -> dict[str, str]:
+        return {"path": self.location, "sha256": self.sha256}
+
+    def record(self) -> dict[str, str]:
+        return {**self.asset(), "content": self.content}
+
+
+def decode_local_record(value: Any) -> LocalCatalog:
+    """Replay declared metadata without reading original filesystem paths."""
+    if (
+        not isinstance(value, dict)
+        or set(value) != {"path", "sha256", "content"}
+        or any(not isinstance(item, str) for item in value.values())
+    ):
+        raise ValueError("Local catalog record is incomplete or invalid")
+    catalog = LocalCatalog(value["path"], value["sha256"], value["content"])
+    catalog.metadata()
+    return catalog
+
+
+def load_local_catalog(entry: Any) -> LocalCatalog:
+    """Bind a small native catalog asset before any subject execution."""
+    if (
+        not isinstance(entry, dict)
+        or set(entry) != {"path", "sha256"}
+        or any(not isinstance(item, str) for item in entry.values())
+        or not Path(entry["path"]).is_absolute()
+    ):
+        raise ValueError("Local catalog requires an explicit frozen asset")
+    path = checked_path(Path(entry["path"]))
+    if not path.is_file() or not 0 < path.stat().st_size <= LOCAL_CATALOG_LIMIT:
+        raise ValueError("Local catalog exceeds its input bounds or is missing")
+    with path.open("rb") as stream:
+        raw = stream.read(LOCAL_CATALOG_LIMIT + 1)
+    catalog = LocalCatalog(str(path), entry["sha256"], raw.decode("utf-8"))
+    catalog.metadata()
+    return catalog
+
+
+def verify_local_catalog(catalog: LocalCatalog) -> None:
+    if load_local_catalog(catalog.asset()) != catalog:
+        raise ValueError("Local catalog changed during execution")
 
 
 @dataclass(frozen=True, repr=False)
@@ -114,12 +222,29 @@ def verify(catalog: NativeCatalog, cli: Path) -> None:
 
 
 @contextmanager
-def catalog_lease(context: TrialContext, provider: Any) -> Iterator[TrialContext]:
-    """Freeze bundled vendor metadata for a native signed-in subject only.
+def catalog_lease(context: TrialContext, provider: Any, *, local: LocalCatalog | None = None) -> Iterator[TrialContext]:
+    """Freeze vendor sign-in metadata or an explicitly declared anonymous catalog.
 
     Account/quota/model metadata probes retain their distinct selected-profile
     contract. This lease never copies, edits or exports authentication storage.
     """
+    if local is not None:
+        if (
+            provider is None
+            or validate_provider(provider).get("authentication") != "none"
+            or context.signin is not None
+            or context.native_catalog is not None
+            or context.local_catalog is not None
+        ):
+            raise ValueError("Local catalog requires an anonymous provider and no prior catalog or sign-in binding")
+        verify_local_catalog(local)
+        try:
+            yield replace(context, local_catalog=local)
+        finally:
+            verify_local_catalog(local)
+        return
+    if context.local_catalog is not None:
+        raise ValueError("A prior local catalog binding must not enter another lease")
     if provider is None or validate_provider(provider).get("authentication") != "codex_signin":
         yield context
         return

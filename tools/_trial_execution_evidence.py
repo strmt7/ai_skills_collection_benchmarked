@@ -6,7 +6,7 @@ import re
 from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Any
 
-from _trial_catalog import PIN_SOURCE, decode_record
+from _trial_catalog import PIN_SOURCE, decode_local_record, decode_record
 from _trial_context import SYSTEM_VARIABLES, TrialContext, command
 from _trial_grading_process import DRIVER_PROCESS, DRIVER_STDERR, DRIVER_STDOUT
 from _trial_protocol import relative_path
@@ -110,6 +110,7 @@ def context_record(context: TrialContext) -> dict[str, Any]:
         "tool_environment": context.tool_environment,
         **({"signin": context.signin.record()} if context.signin is not None else {}),
         **({"native_catalog": context.native_catalog.record()} if context.native_catalog is not None else {}),
+        **({"local_catalog": context.local_catalog.record()} if context.local_catalog is not None else {}),
     }
 
 
@@ -136,6 +137,7 @@ def _context(value: Any) -> TrialContext:
         fields,
         fields | {"signin"},
         fields | {"signin", "native_catalog"},
+        fields | {"local_catalog"},
     ):
         raise ValueError("launch must record the complete declared trial context")
     home, workspace, cli, python = (_path(value[name]) for name in ("home", "workspace", "cli", "python"))
@@ -218,6 +220,7 @@ def _context(value: Any) -> TrialContext:
         environment,
         signin,
         decode_record(value["native_catalog"], Path(str(cli))) if "native_catalog" in value else None,
+        decode_local_record(value["local_catalog"]) if "local_catalog" in value else None,
     )
 
 
@@ -232,6 +235,8 @@ def verify_launch(launch: Any, protocol: dict[str, Any]) -> None:
     ):
         raise ValueError("launch execution sources differ from the frozen protocol")
     context = _context(launch.get("context"))
+    if context.local_catalog is not None:
+        raise ValueError("Version-4 trial protocols do not declare a local model catalog")
     if context.native_catalog is not None and context.native_catalog.source_sha256 != sources.get(PIN_SOURCE):
         raise ValueError("Native model catalog evidence differs from the frozen execution source pin")
     if launch.get("command") != command(

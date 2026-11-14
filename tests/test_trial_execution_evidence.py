@@ -10,7 +10,7 @@ from typing import Any
 
 import pytest
 import summarize_agent_trials as summary
-from _trial_catalog import PIN_SOURCE
+from _trial_catalog import PIN_SOURCE, LocalCatalog
 from _trial_collection_contract import collector_command
 from _trial_collection_policy import default_collection_policy
 from _trial_context import TrialContext, command
@@ -102,6 +102,29 @@ def test_launch_context_excludes_controller_authentication(frozen):
     protocol, launch, _ = frozen
     assert "AUTHENTICATION_CANARY" not in json.dumps(launch)
     verify_launch(launch, protocol)
+
+
+def test_archived_local_metadata_round_trips_but_cannot_rewrite_a_version_four_protocol(frozen):
+    protocol, launch, _ = frozen
+    raw = json.dumps(
+        {
+            "models": [
+                {
+                    "slug": protocol["model"],
+                    "context_window": 65536,
+                    "base_instructions": "Owned frozen native instructions.",
+                }
+            ]
+        }
+    )
+    local = LocalCatalog(r"C:\owned\local-model.json", hashlib.sha256(raw.encode()).hexdigest(), raw)
+    context = replace(read_context(launch["context"]), local_catalog=local)
+    launch["context"] = context_record(context)
+    assert read_context(launch["context"]).local_catalog == local
+    protocol["provider"] = {"authentication": "none", "base_url": "http://127.0.0.1:8123/v1"}
+    launch["command"] = command(context, protocol["model"], protocol["reasoning_effort"], provider=protocol["provider"])
+    with pytest.raises(ValueError, match="Version-4"):
+        verify_launch(launch, protocol)
 
 
 def native_launch(frozen, native_catalog_pin):

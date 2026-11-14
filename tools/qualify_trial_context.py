@@ -8,7 +8,6 @@ import json
 import os
 import re
 import socket
-import subprocess
 import sys
 import tempfile
 from pathlib import Path
@@ -16,7 +15,7 @@ from typing import Any
 from xml.sax.saxutils import escape
 
 from _lib_b.io_utils import write_json
-from _trial_context import TrialContext, create_context, options, temporary_home
+from _trial_context import SYSTEM_VARIABLES, TrialContext, create_context, options, temporary_home
 from _trial_rpc import command_control
 from _trial_transcript import strict_json
 from _windows_appcontainer import checked_path
@@ -26,6 +25,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCES = (
     "tools/qualify_trial_context.py",
     "tools/_trial_context.py",
+    "tools/_trial_catalog.py",
     "tools/_trial_provider.py",
     "tools/_trial_rpc.py",
     "tools/_windows_trial_process.py",
@@ -54,6 +54,11 @@ EVIDENCE_NAMES = (
     PROBE_PATH,
     "source-binding.json",
     "specification.json",
+    *(
+        f"git-{condition}/{name}"
+        for condition in ("positive", "baseline")
+        for name in ("stdout.native", "stderr.native", "process.json", "command.json", "global.gitconfig")
+    ),
     *(
         prefix + "/" + name
         for prefix in ("positive-prompt", "baseline-prompt", "intervention-prompt", "host-command")
@@ -114,6 +119,55 @@ def capture(context: TrialContext, command: list[str], output: Path) -> dict[str
         )
     write_json(output / "process.json", process)
     return process
+
+
+def initialize_fixture(git: Path, workspace: Path, output: Path) -> None:
+    """Initialize only the owned fixture with a bound executable and private configuration."""
+    output.mkdir()
+    template = output / "empty-template"
+    template.mkdir()
+    global_config = output / "global.gitconfig"
+    global_config.write_bytes(b"")
+    environment = {key: os.environ[key] for key in SYSTEM_VARIABLES}
+    system = Path(environment["SYSTEMROOT"])
+    environment.update(
+        PATH=os.pathsep.join(map(str, (git.parent, system / "System32"))),
+        GIT_CONFIG_NOSYSTEM="1",
+        GIT_CONFIG_GLOBAL=str(global_config),
+        GIT_TERMINAL_PROMPT="0",
+    )
+    command = [
+        str(git),
+        "-c",
+        "core.longpaths=true",
+        "init",
+        "--quiet",
+        "--initial-branch=main",
+        "--template=" + str(template),
+        str(workspace),
+    ]
+    write_json(output / "command.json", {"command": command, "environment": environment})
+    with (
+        open(os.devnull, "rb") as stdin,
+        (output / "stdout.native").open("xb") as stdout,
+        (output / "stderr.native").open("xb") as stderr,
+    ):
+        process = run_owned(
+            command,
+            cwd=workspace,
+            stdin=stdin,
+            stdout=stdout,
+            stderr=stderr,
+            timeout=10,
+            output_limit=1024**2,
+            memory_limit=512 * 1024**2,
+            process_limit=8,
+            write_io_limit=64 * 1024**2,
+            environment=environment,
+        )
+    write_json(output / "process.json", process)
+    if not exited_cleanly(process):
+        raise ValueError("Owned fixture Git initialization failed; native evidence retained")
 
 
 def semantic_messages(items: list[dict[str, Any]], codex_home: Path) -> list[dict[str, Any]]:
@@ -178,10 +232,18 @@ def observed_checks(output: Path) -> dict[str, bool]:
     binding = strict_json((output / "source-binding.json").read_text(encoding="utf-8"))
     if not isinstance(binding, dict) or any(
         not isinstance(binding.get(key), str) or not binding[key]
-        for key in ("python", "shell", "workspace", "codex_home")
+        for key in ("python", "shell", "git", "workspace", "codex_home")
     ):
         raise ValueError("Invalid control source binding")
     checks, inputs = {}, {}
+    git_controls = []
+    for condition in ("positive", "baseline"):
+        destination = output / ("git-" + condition)
+        process = strict_json((destination / "process.json").read_text(encoding="utf-8"))
+        invocation = strict_json((destination / "command.json").read_text(encoding="utf-8"))
+        git_controls.append(exited_cleanly(process) and invocation.get("command", [])[:1] == [binding["git"]])
+    checks["explicit_git_initialization"] = all(git_controls)
+    checks["git_identity_unchanged"] = digest(checked_path(Path(binding["git"]))) == binding.get("git_sha256")
     for condition in ("positive", "baseline", "intervention"):
         destination = output / (condition + "-prompt")
         process = strict_json((destination / "process.json").read_text(encoding="utf-8"))
@@ -251,16 +313,19 @@ def observed_checks(output: Path) -> dict[str, bool]:
     return checks
 
 
-def qualify(cli: Path, python: Path, roots: tuple[Path, ...], output: Path) -> dict[str, Any]:
+def qualify(cli: Path, python: Path, roots: tuple[Path, ...], output: Path, *, git: Path) -> dict[str, Any]:
     if sys.platform != "win32":
         raise ValueError("Native context controls require Windows")
-    cli, python, output = (checked_path(path) for path in (cli, python, output))
+    cli, python, output, git = (checked_path(path) for path in (cli, python, output, git))
     shell = checked_path(Path(os.environ["SYSTEMROOT"]) / "System32/WindowsPowerShell/v1.0/powershell.exe")
     if not shell.is_file():
         raise ValueError("The declared native Windows PowerShell executable is unavailable")
+    if not git.is_file():
+        raise ValueError("An explicit admitted Git executable is required")
     if not output.is_relative_to(ROOT / ".venv") or output == ROOT / ".venv":
         raise ValueError("Use a dedicated private output directory inside this clone's .venv")
     initial = sources()
+    initial_git = digest(git)
     output.mkdir(parents=True, exist_ok=False)
     fixtures = Path(tempfile.mkdtemp(prefix="skills-context-fixtures-"))
     positive_workspace, workspace = fixtures / "positive/task", fixtures / "clean/task"
@@ -272,6 +337,8 @@ def qualify(cli: Path, python: Path, roots: tuple[Path, ...], output: Path) -> d
             "cli": str(cli),
             "python": str(python),
             "shell": str(shell),
+            "git": str(git),
+            "git_sha256": initial_git,
             "workspace": str(workspace),
             "codex_home": str(home / "profile"),
         },
@@ -290,10 +357,10 @@ def qualify(cli: Path, python: Path, roots: tuple[Path, ...], output: Path) -> d
         "direct_non_system_image_launch_qualified": False,
     }
     write_json(output / "specification.json", specification)
-    for path in (positive_workspace, workspace):
+    for condition, path in (("positive", positive_workspace), ("baseline", workspace)):
         path.mkdir(parents=True)
         (path / "AGENTS.md").write_text(MARKERS["project"] + "\n", encoding="utf-8")
-        subprocess.run(["git", "-c", "core.longpaths=true", "init", "--quiet", str(path)], check=True, timeout=10)
+        initialize_fixture(git, path, output / ("git-" + condition))
     positive = create_context(positive_home, positive_workspace, cli, python, roots)
     context = create_context(home, workspace, cli, python, roots)
     (output / PROBE_PATH).write_bytes(PROBE.encode("utf-8"))
@@ -359,6 +426,8 @@ def qualify(cli: Path, python: Path, roots: tuple[Path, ...], output: Path) -> d
         "python_sha256": digest(python),
         "shell": str(shell),
         "shell_sha256": digest(shell),
+        "git": str(git),
+        "git_sha256": initial_git,
         "workspace": str(workspace),
         "codex_home": context.controller_environment["CODEX_HOME"],
         "evidence_sha256": {name: digest(output / name) for name in EVIDENCE_NAMES},
@@ -387,10 +456,10 @@ def check(output: Path) -> dict[str, Any]:
     binding = strict_json((output / "source-binding.json").read_text(encoding="utf-8"))
     if not isinstance(binding, dict) or any(
         binding.get(key) != record.get(key)
-        for key in ("source_sha256", "cli", "python", "shell", "workspace", "codex_home")
+        for key in ("source_sha256", "cli", "python", "shell", "git", "git_sha256", "workspace", "codex_home")
     ):
         errors.append("native source binding disagrees with its qualification record")
-    for key in ("cli", "python", "shell"):
+    for key in ("cli", "python", "shell", "git"):
         if digest(checked_path(Path(record[key]))) != record[key + "_sha256"]:
             errors.append(key + " executable changed")
     if set(record["evidence_sha256"]) != set(EVIDENCE_NAMES):
@@ -415,6 +484,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--cli", type=Path)
     parser.add_argument("--python", type=Path)
+    parser.add_argument("--git", type=Path)
     parser.add_argument("--readable-root", type=Path, action="append", default=[])
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--check", action="store_true")
@@ -428,9 +498,9 @@ def main(argv: list[str] | None = None) -> int:
         if args.check:
             record = check(checked_path(args.output))
         else:
-            if args.cli is None or args.python is None:
-                raise ValueError("Explicit CLI and Python executables are required")
-            record = qualify(args.cli, args.python, tuple(args.readable_root), args.output)
+            if args.cli is None or args.python is None or args.git is None:
+                raise ValueError("Explicit CLI, Python and Git executables are required")
+            record = qualify(args.cli, args.python, tuple(args.readable_root), args.output, git=args.git)
         print(
             json.dumps(
                 record

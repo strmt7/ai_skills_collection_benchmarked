@@ -1,0 +1,60 @@
+{
+  "scope": "Explicit local catalog assets, immutable native launch metadata, and host-independent context setup. Scripted development controls only; no coding/model efficacy or release-readiness claim.",
+  "qualification": {
+    "profile": "windows-native-packaging-anonymous-v1",
+    "native_controls": 11,
+    "context_controls": 17,
+    "execution_boundary_qualified": true,
+    "model_inferences": 0,
+    "counted_model_trials": 0
+  },
+  "research_sources": [
+    {
+      "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+      "status": 200,
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true,
+      "native_sha256": "961cd07e9afae0e6ca6539cc1c224450920e868aceb279552840010b106a3725",
+      "scope": "Model catalog, context-window and replacement-instruction settings only."
+    },
+    {
+      "repository": "openai/codex",
+      "commit": "d32063f96c2dff1dc96af839b3952abb6acfeda4",
+      "path": "codex-rs/models-manager/src/model_info.rs",
+      "git_blob_sha": "ca242dac85fd77cac298f93f6e12577db99d4561"
+    },
+    {
+      "repository": "ollama/ollama",
+      "commit": "d63b702609c4300a2ca07be2bdb0adb9834725e5",
+      "path": "cmd/launch/codex.go",
+      "git_blob_sha": "148018ab4d3dd36ba8b55b0487674351dffd259e"
+    }
+  ],
+  "limitations": [
+    "This is a trusted-controller observation, not cryptographic attestation of an arbitrary producer.",
+    "Complete raw native evidence remains in owned ignored state. Selected measurements and raw digests are published without model reasoning or benchmark solutions.",
+    "Catalog properties are declarations. Actual backend capability, model identity and loaded context require separate verification.",
+    "The earlier real coding calibration timed out at 180 seconds and received no score. It was not repeated or counted.",
+    "The frozen twelve-task frame, matched model comparisons, OpenAI sign-in qualification, security hold and release hold remain unchanged.",
+    "Older generic trial protocols cannot silently inherit a local catalog. The public native route still requires the current scoped qualification receipt."
+  ],
+  "source_sha256": {
+    "tools/_trial_catalog.py": "36906f720b06cda62c2bf5966ef94889f636ed020ecc0ed24612d38d5c50ac02",
+    "tools/_trial_context.py": "1cef6454e8cb5f390789a59db414d04d98978e9a89819fbaa177b4f8852fe2de",
+    "tools/_trial_execution_evidence.py": "90a4b30982b804ebf10ec0511768b2def9bf8d0cb2bdad2f80948567311eb5d3",
+    "tools/_native_trial_plan.py": "4ef8facedf5afd4621ff6a24aaf64b5f0e10037e1bb0b643767c02f4de1aa0cc",
+    "tools/run_swe_skills_trial.py": "d8542318ed970e2db237ea75d82ebd2d81c43789cfc8a499b82452133f46120c",
+    "tools/qualify_trial_context.py": "d1547b109da4666553587ad4cb0be857e8efa592820349eb9e618b908b36bcfd",
+    "tools/qualify_native_trial_boundary.py": "9454dde9ef10419ed4a7708d34f57010e6f197abd2ef1367291ad6425a2e23c8",
+    "tests/test_trial_local_catalog.py": "8534e3d9a2573e5c268738b2136f60e68b0a6d52701b4fad4ccba7136cbcd060",
+    "tests/test_native_trial_plan.py": "8bd27d39066c70562b309db1252ea21a4a80112da76cb96fb559fee35aa9c934",
+    "tests/test_native_trial_runner.py": "80b914f6babea7eaa366920c5ee8af80b7debd4c0a2b09ff2bfcf5eb6fec2e68",
+    "tests/test_trial_execution_evidence.py": "35b1769625fcfc1ac0c569a39aeb2945437bfd663da659726cb9c3c5c947c30f",
+    "tests/test_qualify_trial_context.py": "ce7fbc2d9993f3e4bd8ffc3c7cdd5338691c83a5f1d64caf6abe9139d76bf29f",
+    "docs/agent-trial-protocol.md": "d217c9f41085967b4b03b2ffdb83a428076fba1ddf6c39723beb10a84170e8de",
+    "docs/native-benchmark-controller.md": "aa275ae868cd3703f677efefa4fc7ea0156a909681f456860f5d00b7e99f5f1d"
+  },
+  "artifacts": {
+    "observations.json": "2dcb63110271a5597e24dfa6085c910a4237cc51eee88583040f6b2e9191c0d2"
+  }
+}

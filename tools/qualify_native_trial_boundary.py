@@ -11,6 +11,7 @@ from urllib.parse import urlsplit
 
 from _native_benchmark_runtime import ProcessIdentity, sha256, write_json
 from _native_trial_plan import ROOT, execution_sources, input_assets, load_plan
+from _trial_catalog import LocalCatalog
 from _trial_provider import validate_provider
 from _trial_transcript import parse_events, strict_json
 from _windows_appcontainer import checked_path
@@ -108,7 +109,34 @@ def tool_output(directory: Path, inventory: dict[str, str]) -> str:
     return str(output)
 
 
-def control(name: str, directory: Path, positive: dict[str, Any], inventory: dict[str, str]) -> dict[str, Any]:
+def local_catalog_control(attempt: Path, catalog: LocalCatalog, inventory: dict[str, str]) -> None:
+    """Check actual launch metadata and archived bytes separately from task scoring."""
+    launch = document(attempt / "launch.json")
+    require(isinstance(launch.get("context"), dict), "Local catalog launch has no context")
+    require(launch["context"].get("local_catalog") == catalog.record(), "Local catalog launch record differs")
+    arguments = launch.get("command")
+    if not isinstance(arguments, list) or any(not isinstance(value, str) for value in arguments):
+        raise ValueError("Invalid catalog command")
+    selected = [value for value in arguments if value.startswith("model_catalog_json=")]
+    require(selected == ["model_catalog_json=" + json.dumps(str(catalog.path()))], "Local catalog command differs")
+    archived = attempt / "inputs/model-catalog.json"
+    require(sha256(raw(archived)) == catalog.sha256, "Archived local catalog bytes differ")
+    remember(archived, inventory)
+    events = parse_events(raw(attempt / "transcript.jsonl"), allow_truncated_final=True)
+    require(
+        not any(
+            row.get("type") == "item.completed"
+            and row.get("item", {}).get("type") == "error"
+            and "Model metadata" in row["item"].get("message", "")
+            for row in events
+        ),
+        "Native CLI fell back instead of loading the declared model catalog",
+    )
+
+
+def control(
+    name: str, directory: Path, positive: dict[str, Any], inventory: dict[str, str], local: LocalCatalog | None = None
+) -> dict[str, Any]:
     attempt = directory / "attempt"
     summary, plan, result, transport = (
         document(path)
@@ -164,6 +192,8 @@ def control(name: str, directory: Path, positive: dict[str, Any], inventory: dic
     if name != "preflight-space":
         require(result["execution_source_sha256"] == execution_sources(), "Attempt sources differ")
         require(result["plan_sha256"] == sha256(raw(directory / "plan.json")), "Attempt plan digest differs")
+        if local is not None:
+            local_catalog_control(attempt, local, inventory)
     required = (
         {"plan.json", "setup-space.json"}
         if name == "preflight-space"
@@ -371,7 +401,10 @@ def verify(specification: dict[str, Any]) -> dict[str, Any]:
     inventory: dict[str, str] = {}
     for name in (*CONTEXT_EVIDENCE_NAMES, "qualification.json"):
         remember(context / name, inventory)
-    results = [control(name, paths[name], positive, inventory) for name in CASES]
+    local = admitted["runtime"].get("local_catalog")
+    if local is not None:
+        remember(Path(local.location), inventory)
+    results = [control(name, paths[name], positive, inventory, local) for name in CASES]
     require(execution_sources() == sources, "Boundary sources changed during qualification")
     return {
         "profile": PROFILE,
@@ -380,6 +413,7 @@ def verify(specification: dict[str, Any]) -> dict[str, Any]:
         "model_efficacy_established": False,
         "model_inferences": 0,
         "counted_model_trials": 0,
+        **({"local_catalog_sha256": local.sha256} if local is not None else {}),
         "execution_source_sha256": sources,
         "admission_source_sha256": sha256(raw(Path(__file__))),
         "controls": results,
