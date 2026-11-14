@@ -242,6 +242,11 @@ a skill or copying an entrypoint does not prove compliance.
 
 On Windows x64, the required providers have automatic setup entrypoints:
 
+Use CocoIndex Code's `--root` option to search the project where you apply a
+skill. The provider stays in this collection clone, while the selected project's
+index and search receipts stay under its own `.venv`. See
+[searching another project](../toolchains/cocoindex-code/README.md#search-another-project).
+
 ```powershell
 .\dev.ps1 cocoindex check
 .\dev.ps1 crawl4ai check

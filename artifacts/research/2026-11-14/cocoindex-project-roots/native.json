@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "provider_version": "0.2.43+catalog.local1",
+  "provider_installation_unchanged": true,
+  "provider_reinstalled": false,
+  "cases": [
+    {
+      "label": "alpha",
+      "source_root": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\external-cocoindex-native-v2\\project alpha \u03a9",
+      "index": {
+        "ok": true,
+        "corpus": ".venv\\index",
+        "operation": {
+          "phase": "index",
+          "logs": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\agent-tools\\automatic-cocoindex\\profile-91a5ff9b8c63\\logs\\index-368d892ba83742aba46a741b66458d01",
+          "windows_job": true,
+          "real_interpreter_gated_before_site": true,
+          "kill_on_close": true,
+          "active_processes_after_cleanup": 0,
+          "termination_reason": null,
+          "exit_code": 0
+        }
+      },
+      "search": {
+        "ok": true,
+        "output": ".venv\\receipt.json",
+        "operation": {
+          "phase": "query",
+          "logs": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\agent-tools\\automatic-cocoindex\\profile-91a5ff9b8c63\\logs\\query-e143c99389f74f74a708d7a21a409a76",
+          "windows_job": true,
+          "real_interpreter_gated_before_site": true,
+          "kill_on_close": true,
+          "active_processes_after_cleanup": 0,
+          "termination_reason": null,
+          "exit_code": 0
+        }
+      },
+      "receipt_sha256": "edf1a06470648d0a2f0a092861e670ca32fe43160ab7db799ae8ef664e3dad2c",
+      "hits": 1,
+      "source_sha256": "38f02786cf255bab8f1a0930732d2575804db6ce228d0801fc9b2974470dabb5",
+      "source_unchanged": true
+    },
+    {
+      "label": "beta",
+      "source_root": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\external-cocoindex-native-v2\\project beta \u03a9",
+      "index": {
+        "ok": true,
+        "corpus": ".venv\\index",
+        "operation": {
+          "phase": "index",
+          "logs": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\agent-tools\\automatic-cocoindex\\profile-91a5ff9b8c63\\logs\\index-cd66d3a6cd7447a3bedaedbab537a85f",
+          "windows_job": true,
+          "real_interpreter_gated_before_site": true,
+          "kill_on_close": true,
+          "active_processes_after_cleanup": 0,
+          "termination_reason": null,
+          "exit_code": 0
+        }
+      },
+      "search": {
+        "ok": true,
+        "output": ".venv\\receipt.json",
+        "operation": {
+          "phase": "query",
+          "logs": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\agent-tools\\automatic-cocoindex\\profile-91a5ff9b8c63\\logs\\query-6f0aaec0dfc440db9ec862d1598dea54",
+          "windows_job": true,
+          "real_interpreter_gated_before_site": true,
+          "kill_on_close": true,
+          "active_processes_after_cleanup": 0,
+          "termination_reason": null,
+          "exit_code": 0
+        }
+      },
+      "receipt_sha256": "0ba334c6ba06324218548874b56c782a6aab24aaa79b475b007debb9490cdecb",
+      "hits": 1,
+      "source_sha256": "b5bdfa22455d7cf0f873186fcf0a4055f94302547aa0c636aaeb4b689e8f457b",
+      "source_unchanged": true
+    }
+  ],
+  "source_sha256": {
+    "tools/cocoindex_tool.py": "c4505d37b5672a9ad81b813fa85dd80a56c984cdb9b2d3b678f4e06b60609151",
+    "tools/cocoindex_runtime.py": "3c370bc0ea8dd6c6abc9fa498a1378c2e55e66e8ee4929ec89cfb0204d611ea0",
+    "tools/search_semantic_corpus.py": "2edae444b05bd0b87021f84a2ff28ec3575a97f8f4c39204c7e591764a956720",
+    "tests/test_cocoindex_provider.py": "9e051104af8d14c5fad019603e1644e5389a1b3f9f75e4d2bbf0046e0322ab9a",
+    "tests/test_semantic_search.py": "fc94f5857ca3a429c7254b139c207c075478078d7fc97f25df5786a2690802d0"
+  },
+  "model_trials": 0,
+  "agent_efficacy_established": false
+}

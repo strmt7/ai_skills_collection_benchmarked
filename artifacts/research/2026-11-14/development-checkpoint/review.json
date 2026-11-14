@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "scope": "Current work order and publication checkpoint reconciliation. Preserve the dated baseline, source mirrors, explicit security hold and release hold. No model-effectiveness claim.",
+  "source_sha256": {
+    "docs/improvement-plan.md": "37efb301dcb2a70c4bf2c6d0a588c88236e8697cf7f1a3bf6a225b9490b916c2",
+    "data/development_plan.json": "667c855c38f6defe4f5c6ded068c88ee90b267d99dce91c1ef779ea96c25bc1d"
+  },
+  "artifacts": {
+    "checkpoint.json": "cf8c448e376a69093aea6c2d1a375dc02590356394c61ea31d2ea059e06435d1",
+    "hosted-runs.json": "73a88f88da49a371d614409d23f5067185cad4680b2c3f7da1b9aca6898ee7ff"
+  },
+  "full_goal_complete": false
+}

@@ -19,7 +19,10 @@ For a fresh provider, follow the reviewed
 [local-only installation and search guide](../../../toolchains/cocoindex-code/README.md).
 Use `./dev.ps1 cocoindex` to provision, index explicit source prefixes and
 write native search receipts. Its admitted local CPU build disables remote
-model code and keeps providers, models and indexes inside the current clone.
+model code. Providers and models stay inside the collection clone; indexes and
+receipts stay inside the selected source project's `.venv`. Use `--root` for an
+explicit target project, preserving source and provider checkout identities.
+Repository maintenance still targets this checkout.
 Existing providers still require explicit version, source and cache review;
 never overwrite them or relax admission to make an installation succeed.
 

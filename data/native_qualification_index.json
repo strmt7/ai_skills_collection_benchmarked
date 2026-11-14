@@ -48,18 +48,65 @@
       "sources": [
         "AGENTS.md",
         "CONTRIBUTING.md",
-        "docs/skill-improvement-method.md",
-        "docs/improvement-plan.md"
+        "docs/skill-improvement-method.md"
       ]
     },
     {
       "id": "publication-byte-retention",
       "review": {
-        "path": "artifacts/research/2026-11-14/publication-byte-retention/review.json",
-        "sha256": "80a5622971cc1d596809dcecd51ebfaf6adf675aa3306cc7d8815c75bf362016"
+        "path": "artifacts/research/2026-11-14/publication-byte-retention-v3/review.json",
+        "sha256": "2862e244fe2f070cfbc1c50c6304e261d6f4e9307cfd3732d244d52fb5e8ec4e"
       },
       "sources": [
-        ".gitattributes"
+        ".gitattributes",
+        "requirements-reports-lock.txt"
+      ]
+    },
+    {
+      "id": "cocoindex-project-roots",
+      "review": {
+        "path": "artifacts/research/2026-11-14/cocoindex-project-roots/review.json",
+        "sha256": "15d0e9a8c2d3e2d9b40a9f6da74f65eba42744801527a71277a720d2234deb8c"
+      },
+      "sources": [
+        "tools/cocoindex_tool.py",
+        "tools/cocoindex_runtime.py",
+        "tools/search_semantic_corpus.py",
+        "tests/test_cocoindex_provider.py",
+        "toolchains/cocoindex-code/README.md",
+        ".agents/skills/cocoindex-code-search/SKILL.md",
+        "docs/installation.md"
+      ]
+    },
+    {
+      "id": "pnpm-action-update",
+      "review": {
+        "path": "artifacts/research/2026-11-14/pnpm-action-update/review.json",
+        "sha256": "4aa778691e078fd66d2ea76f46f0e6125155a1d31e424d8c4c0033a83276eac0"
+      },
+      "sources": [
+        ".github/workflows/pnpm-cache-install.yml"
+      ]
+    },
+    {
+      "id": "current-checkpoint-plan",
+      "review": {
+        "path": "artifacts/research/2026-11-14/development-checkpoint/review.json",
+        "sha256": "0716c3edfe7fdf54f6ba8050f4e1e7972d002af7da7da64570ffd8028fa397f7"
+      },
+      "sources": [
+        "docs/improvement-plan.md",
+        "data/development_plan.json"
+      ]
+    },
+    {
+      "id": "project-root-test-helper",
+      "review": {
+        "path": "artifacts/research/2026-11-14/project-root-test-helper/review.json",
+        "sha256": "10cb329142f1233ba3f11c51f35bfbf3c92636dcc0b74ded6a048cd490dc21e2"
+      },
+      "sources": [
+        "tests/test_semantic_search.py"
       ]
     }
   ],
@@ -88,6 +135,33 @@
         "tools/_windows_appcontainer.py",
         "tools/_windows_storage_budget.py",
         "tools/grade_swe_skills_submission.py"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-14/publication-byte-retention/review.json",
+        "sha256": "80a5622971cc1d596809dcecd51ebfaf6adf675aa3306cc7d8815c75bf362016"
+      },
+      "superseded_sources": [
+        ".gitattributes"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-13/current-development-qualification/review.json",
+        "sha256": "f04a82d9d333212282a865dd78af3920ae0f38d3d4616ea2f30100b9a37b871e"
+      },
+      "superseded_sources": [
+        "docs/improvement-plan.md"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-14/cocoindex-project-roots/review.json",
+        "sha256": "15d0e9a8c2d3e2d9b40a9f6da74f65eba42744801527a71277a720d2234deb8c"
+      },
+      "superseded_sources": [
+        "tests/test_semantic_search.py"
       ]
     }
   ]

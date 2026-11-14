@@ -117,6 +117,66 @@ def test_changed_retrieved_bytes_fail_binding(bound):
         search.verify_response(response, base, manifest, [], 3)
 
 
+def test_external_provider_root_preserves_project_source_binding(bound, tmp_path, monkeypatch, capsys):
+    root, base, _, response = bound
+    provider_root = tmp_path / "collection"
+    providers = provider_root / ".venv/providers"
+    providers.mkdir(parents=True)
+    python = provider_root / ".venv/python.exe"
+    python.write_bytes(b"not executed")
+    proof = provider_root / "proof.json"
+    proof.write_text("{}", encoding="utf-8")
+    observed = []
+
+    def environment(*args):
+        observed.append(args)
+        return {}
+
+    monkeypatch.setattr(search, "local_environment", environment)
+    real_run = subprocess.run
+
+    def run(command, **kwargs):
+        if command[0] != str(python):
+            return real_run(command, **kwargs)
+        assert kwargs["cwd"] == base / "tree"
+        assert json.loads(kwargs["input"])["project_root"] == str(base / "tree")
+        return subprocess.CompletedProcess(
+            command,
+            0,
+            stdout=json.dumps({"response": response, "project_status": {"indexing": False, "index_exists": True}}),
+            stderr="",
+        )
+
+    monkeypatch.setattr(search.subprocess, "run", run)
+    assert (
+        search.main(
+            [
+                "--root",
+                str(root),
+                "--provider-root",
+                str(provider_root),
+                "--corpus",
+                str(base),
+                "--python",
+                str(python),
+                "--provider-dir",
+                str(providers),
+                "--model-proof",
+                str(proof),
+                "--query",
+                "precise evidence",
+                "--json",
+            ]
+        )
+        == 0
+    )
+    result = json.loads(capsys.readouterr().out)
+    assert result["source_root"] == str(root)
+    assert result["provider_root"] == str(provider_root)
+    assert observed[0][0] == provider_root
+    assert result["source_checks"][0]["source_span_verified"]
+
+
 def test_indexed_source_cannot_shadow_a_provider_import(bound, monkeypatch, capsys):
     root, _, _, response = bound
     (root / "probe_index_import.py").write_text(

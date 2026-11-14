@@ -1,0 +1,15 @@
+{
+  "commit": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+  "parent": "c80f19ad60fda34b59197010ebe4fd84df5d4323",
+  "tree": "c5a0e643d8f4de5b781a2497f976fc4261276d14",
+  "publication_transport": "official GitHub connector",
+  "local_tree_identical": true,
+  "changed_files": 441,
+  "hosted_success": 39,
+  "hosted_failure": 3,
+  "security_remediation_held": true,
+  "new_release": false,
+  "model_trials": 0,
+  "model_advantage_established": false,
+  "dependency_change_reason": "Repeatable non-held development publication can proceed while dependency maintenance continues. The security hold remains controlling and blocks final readiness, rather than all ordinary commits."
+}

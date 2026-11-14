@@ -1,0 +1,425 @@
+{
+  "total_count": 42,
+  "workflow_runs": [
+    {
+      "id": 43571209910,
+      "name": "Reusable workflow input controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209910",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:28:41Z"
+    },
+    {
+      "id": 43571209923,
+      "name": "Ruff",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209923",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:28:42Z"
+    },
+    {
+      "id": 43571209903,
+      "name": "SOMA and AnnData ingestion controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209903",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:28:39Z"
+    },
+    {
+      "id": 43571209869,
+      "name": "Azure Event Hubs .NET batching controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209869",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:28:50Z"
+    },
+    {
+      "id": 43571209864,
+      "name": "Azure Event Hubs TypeScript checkpoint controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209864",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:28:53Z"
+    },
+    {
+      "id": 43571209898,
+      "name": "Zarr Python component controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209898",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:28:55Z"
+    },
+    {
+      "id": 43571209938,
+      "name": "SimPO verifier task calibration",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209938",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:28:57Z"
+    },
+    {
+      "id": 43571209959,
+      "name": "AnnData general I/O controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209959",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:28:59Z"
+    },
+    {
+      "id": 43571209819,
+      "name": "FlowIO FCS component controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209819",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:29:02Z"
+    },
+    {
+      "id": 43571209886,
+      "name": "Confined evaluator controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209886",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:29:01Z"
+    },
+    {
+      "id": 43571209896,
+      "name": "Azure Event Hubs Java batching controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209896",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:29:03Z"
+    },
+    {
+      "id": 43571209831,
+      "name": "Census ML streaming controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209831",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:29:06Z"
+    },
+    {
+      "id": 43571209955,
+      "name": "Image CLI acceptance controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209955",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:29:10Z"
+    },
+    {
+      "id": 43571209924,
+      "name": "Azure Event Hubs Python checkpoint controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209924",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:29:16Z"
+    },
+    {
+      "id": 43571209948,
+      "name": "SimPO snapshot comparison controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209948",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:29:24Z"
+    },
+    {
+      "id": 43571209885,
+      "name": "Scanpy counts and clustering controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209885",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:29:22Z"
+    },
+    {
+      "id": 43571209941,
+      "name": "Azure Pipelines Node example controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209941",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:29:26Z"
+    },
+    {
+      "id": 43571209977,
+      "name": "Yarn cache installation controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209977",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:29:28Z"
+    },
+    {
+      "id": 43571209961,
+      "name": "Native fuzzing contracts",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209961",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:29:39Z"
+    },
+    {
+      "id": 43571209937,
+      "name": "scvi-tools model input controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209937",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:29:36Z"
+    },
+    {
+      "id": 43571209865,
+      "name": "pip-audit",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209865",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:29:42Z"
+    },
+    {
+      "id": 43571210089,
+      "name": "Census summary and sparse mean controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571210089",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:29:47Z"
+    },
+    {
+      "id": 43571209815,
+      "name": "Python documentation inventory controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209815",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:29:57Z"
+    },
+    {
+      "id": 43571209922,
+      "name": "Playwright executor compatibility",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209922",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:30:02Z"
+    },
+    {
+      "id": 43571209974,
+      "name": "C Makefile compatibility",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209974",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:30:21Z"
+    },
+    {
+      "id": 43571210016,
+      "name": "Azure AI Projects .NET controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571210016",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:30:55Z"
+    },
+    {
+      "id": 43571209935,
+      "name": "Crawl4AI source build controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209935",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:31:09Z"
+    },
+    {
+      "id": 43571209925,
+      "name": "JavaScript documentation inventory controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209925",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:31:10Z"
+    },
+    {
+      "id": 43571209926,
+      "name": "Pytest skipped-class task controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209926",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:31:13Z"
+    },
+    {
+      "id": 43571209945,
+      "name": "Slides navigation compatibility",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209945",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:31:22Z"
+    },
+    {
+      "id": 43571209875,
+      "name": "CocoIndex local provider controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209875",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:32:02Z"
+    },
+    {
+      "id": 43571209824,
+      "name": "Secret scan",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209824",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:32:17Z"
+    },
+    {
+      "id": 43571209868,
+      "name": "CodeQL",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209868",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:33:25Z"
+    },
+    {
+      "id": 43571209947,
+      "name": "Offline validation",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209947",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:33:26Z"
+    },
+    {
+      "id": 43571209997,
+      "name": "Design search compatibility",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209997",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:30:27Z"
+    },
+    {
+      "id": 43571209978,
+      "name": "npm cache installation controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209978",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:30:24Z"
+    },
+    {
+      "id": 43571209949,
+      "name": "pnpm cache installation controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209949",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:30:23Z"
+    },
+    {
+      "id": 43571209958,
+      "name": "Dataframe component controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209958",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:30:33Z"
+    },
+    {
+      "id": 43571209917,
+      "name": "AnnData I/O component controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209917",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:30:34Z"
+    },
+    {
+      "id": 43571209822,
+      "name": "Azure Event Hubs Rust batching controls",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209822",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:30:34Z"
+    },
+    {
+      "id": 43571209989,
+      "name": "Mypy",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209989",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:30:44Z"
+    },
+    {
+      "id": 43571209907,
+      "name": "Automatic Windows setup",
+      "head_sha": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/43571209907",
+      "created_at": "2026-11-14T07:27:52Z",
+      "updated_at": "2026-11-14T07:36:40Z"
+    }
+  ]
+}

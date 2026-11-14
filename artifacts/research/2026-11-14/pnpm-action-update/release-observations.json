@@ -1,0 +1,132 @@
+{
+  "observed_at_utc": "2026-11-14T07:30:31Z",
+  "origin_run": 43571209947,
+  "origin_job": 132375818508,
+  "origin_head": "1091ed16ec51e06e0826fd1bc36d94a740738514",
+  "errors": [
+    ".github/workflows/pnpm-cache-install.yml: pnpm/setup@fa36a5ef7dcdefc3a7cb25655c122e00cf6e636e differs from latest stable v3.2.0@731dfb6463bbd11c11fd0ee11fe00ed0e36d48a1",
+    ".github/workflows/pnpm-cache-install.yml: pnpm/setup@fa36a5ef7dcdefc3a7cb25655c122e00cf6e636e differs from latest stable v3.2.0@731dfb6463bbd11c11fd0ee11fe00ed0e36d48a1",
+    ".github/workflows/pnpm-cache-install.yml: pnpm/setup@fa36a5ef7dcdefc3a7cb25655c122e00cf6e636e differs from latest stable v3.2.0@731dfb6463bbd11c11fd0ee11fe00ed0e36d48a1",
+    ".github/workflows/pnpm-cache-install.yml: pnpm/setup@fa36a5ef7dcdefc3a7cb25655c122e00cf6e636e differs from latest stable v3.2.0@731dfb6463bbd11c11fd0ee11fe00ed0e36d48a1",
+    ".github/workflows/pnpm-cache-install.yml: pnpm/setup@fa36a5ef7dcdefc3a7cb25655c122e00cf6e636e differs from latest stable v3.2.0@731dfb6463bbd11c11fd0ee11fe00ed0e36d48a1"
+  ],
+  "actions": [
+    {
+      "repo": "actions/checkout",
+      "status": "resolved",
+      "stable_tag": "v7.0.1",
+      "commit_sha": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "published_at": "2026-07-20T15:10:05Z",
+      "release_url": "https://github.com/actions/checkout/releases/tag/v7.0.1",
+      "selection": "highest published non-prerelease semantic version; all release pages inspected"
+    },
+    {
+      "repo": "actions/download-artifact",
+      "status": "resolved",
+      "stable_tag": "v8.0.2",
+      "commit_sha": "9000827ccba6bdab643e8b6fd33ac0654aef8333",
+      "published_at": "2026-10-07T10:09:51Z",
+      "release_url": "https://github.com/actions/download-artifact/releases/tag/v8.0.2",
+      "selection": "highest published non-prerelease semantic version; all release pages inspected"
+    },
+    {
+      "repo": "actions/setup-dotnet",
+      "status": "resolved",
+      "stable_tag": "v6.1.0",
+      "commit_sha": "0f4a354dd5547a28c70b7853dbd95d5b67886e73",
+      "published_at": "2026-11-03T02:51:23Z",
+      "release_url": "https://github.com/actions/setup-dotnet/releases/tag/v6.1.0",
+      "selection": "highest published non-prerelease semantic version; all release pages inspected"
+    },
+    {
+      "repo": "actions/setup-go",
+      "status": "resolved",
+      "stable_tag": "v7.0.0",
+      "commit_sha": "b7ad1dad31e06c5925ef5d2fc7ad053ef454303e",
+      "published_at": "2026-07-16T02:50:50Z",
+      "release_url": "https://github.com/actions/setup-go/releases/tag/v7.0.0",
+      "selection": "highest published non-prerelease semantic version; all release pages inspected"
+    },
+    {
+      "repo": "actions/setup-node",
+      "status": "resolved",
+      "stable_tag": "v7.1.0",
+      "commit_sha": "949feb2413d6458794dcd2491c4babbbce0c15c1",
+      "published_at": "2026-10-08T02:52:34Z",
+      "release_url": "https://github.com/actions/setup-node/releases/tag/v7.1.0",
+      "selection": "highest published non-prerelease semantic version; all release pages inspected"
+    },
+    {
+      "repo": "actions/setup-python",
+      "status": "resolved",
+      "stable_tag": "v7.1.0",
+      "commit_sha": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+      "published_at": "2026-10-22T02:56:04Z",
+      "release_url": "https://github.com/actions/setup-python/releases/tag/v7.1.0",
+      "selection": "highest published non-prerelease semantic version; all release pages inspected"
+    },
+    {
+      "repo": "actions/upload-artifact",
+      "status": "resolved",
+      "stable_tag": "v7.0.2",
+      "commit_sha": "cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+      "published_at": "2026-10-07T10:08:14Z",
+      "release_url": "https://github.com/actions/upload-artifact/releases/tag/v7.0.2",
+      "selection": "highest published non-prerelease semantic version; all release pages inspected"
+    },
+    {
+      "repo": "akin-ozer/cc-devops-skills",
+      "status": "resolved",
+      "stable_tag": "v1.0.0",
+      "commit_sha": "7fe7595e4512f8ce43dcf956aa5190b96d627dd1",
+      "published_at": "2026-03-04T06:44:32Z",
+      "release_url": "https://github.com/akin-ozer/cc-devops-skills/releases/tag/v1.0.0",
+      "selection": "highest published non-prerelease semantic version; all release pages inspected"
+    },
+    {
+      "repo": "astral-sh/setup-uv",
+      "status": "resolved",
+      "stable_tag": "v10.3.3",
+      "commit_sha": "68559e99cc807c1eb7e9238fd43a15bba460eec2",
+      "published_at": "2026-10-28T14:35:19Z",
+      "release_url": "https://github.com/astral-sh/setup-uv/releases/tag/v10.3.3",
+      "selection": "highest published non-prerelease semantic version; all release pages inspected"
+    },
+    {
+      "repo": "codecov/codecov-action",
+      "status": "resolved",
+      "stable_tag": "v7.1.1",
+      "commit_sha": "303a32d7a59b442fa8d48b6a1cc6825c09c847a5",
+      "published_at": "2026-09-17T00:48:02Z",
+      "release_url": "https://github.com/codecov/codecov-action/releases/tag/v7.1.1",
+      "selection": "highest published non-prerelease semantic version; all release pages inspected"
+    },
+    {
+      "repo": "github/codeql-action",
+      "status": "resolved",
+      "stable_tag": "v4.39.3",
+      "commit_sha": "33d7b85da1a04171e211befe2c739303b9a4c066",
+      "published_at": "2026-11-04T16:49:20Z",
+      "release_url": "https://github.com/github/codeql-action/releases/tag/v4.39.3",
+      "selection": "highest published non-prerelease semantic version; all release pages inspected"
+    },
+    {
+      "repo": "pnpm/setup",
+      "status": "resolved",
+      "stable_tag": "v3.2.0",
+      "commit_sha": "731dfb6463bbd11c11fd0ee11fe00ed0e36d48a1",
+      "published_at": "2026-11-12T14:28:11Z",
+      "release_url": "https://github.com/pnpm/setup/releases/tag/v3.2.0",
+      "selection": "highest published non-prerelease semantic version; all release pages inspected"
+    },
+    {
+      "repo": "softprops/action-gh-release",
+      "status": "resolved",
+      "stable_tag": "v3.0.4",
+      "commit_sha": "8a0cd651e5b2365bd640854a3fa5dfc70e4875f3",
+      "published_at": "2026-11-05T14:26:38Z",
+      "release_url": "https://github.com/softprops/action-gh-release/releases/tag/v3.0.4",
+      "selection": "highest published non-prerelease semantic version; all release pages inspected"
+    }
+  ]
+}

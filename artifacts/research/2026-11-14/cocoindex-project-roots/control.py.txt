@@ -1,0 +1,45 @@
+"""Exercise two disposable Git projects with one already admitted native provider."""
+import hashlib
+import argparse
+import json
+import os
+import subprocess
+import sys
+from pathlib import Path
+S=Path(__file__).resolve().parent;R=S.parents[2]
+sys.path.insert(0,str(R/'tools'))
+import cocoindex_tool as launcher
+from search_semantic_corpus import _verify_source_span
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--home',type=Path,required=True)
+parser.add_argument('--output',type=Path,required=True)
+args=parser.parse_args()
+O=args.output.resolve();O.mkdir()
+home=args.home.resolve(strict=True)
+admission=launcher.verify(home)
+provider_pin=(home/'installation.json').read_bytes()
+sources=['tools/cocoindex_tool.py','tools/cocoindex_runtime.py','tools/search_semantic_corpus.py','tests/test_cocoindex_provider.py','tests/test_semantic_search.py']
+before={n:hashlib.sha256((R/n).read_bytes()).hexdigest() for n in sources}
+cases=[]
+for label,term in [('alpha','calculate_invoice_total'),('beta','load_temperature_readings')]:
+    project=O/('project '+label+' Ω');project.mkdir()
+    subprocess.run([os.environ['AI_SKILLS_GIT'],'init','--quiet',str(project)],check=True,capture_output=True,timeout=30)
+    (project/'.gitignore').write_text('.venv/\n',encoding='utf-8',newline='\n')
+    (project/'src').mkdir()
+    source=project/'src/application.py'
+    source.write_text(f'def {term}(values):\n    return sum(values)\n',encoding='utf-8',newline='\n')
+    parser=launcher.build_parser()
+    index=parser.parse_args(['--home',str(home),'index','--root',str(project),'--corpus','.venv/index','--prefix','src'])
+    indexed=launcher.execute(index,home,{'ok':True})
+    query=parser.parse_args(['--home',str(home),'search','--root',str(project),'--corpus','.venv/index','--query',term,'--limit','2','--output','.venv/receipt.json'])
+    searched=launcher.execute(query,home,{'ok':True})
+    raw=(project/'.venv/receipt.json').read_bytes();receipt=json.loads(raw)
+    if not receipt['ok'] or receipt['source_root']!=str(project) or receipt['provider_root']!=str(R):raise ValueError('Incorrect project/provider binding')
+    for hit in receipt['response']['results']:
+        _verify_source_span(hit,(project/hit['file_path']).read_bytes())
+        if term not in hit['content']:raise ValueError('Cross-project retrieval contamination')
+    cases.append({'label':label,'source_root':str(project),'index':indexed,'search':searched,'receipt_sha256':hashlib.sha256(raw).hexdigest(),'hits':len(receipt['response']['results']),'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'source_unchanged':source.read_text(encoding='utf-8')==f'def {term}(values):\n    return sum(values)\n'})
+if (home/'installation.json').read_bytes()!=provider_pin or any(hashlib.sha256((R/n).read_bytes()).hexdigest()!=d for n,d in before.items()):raise ValueError('Provider admission or source changed')
+result={'passed':True,'provider_version':admission['provider_version'],'provider_installation_unchanged':True,'provider_reinstalled':False,'cases':cases,'source_sha256':before,'model_trials':0,'agent_efficacy_established':False}
+with (O/'result.json').open('x',encoding='utf-8',newline='\n') as f:json.dump(result,f,indent=2);f.write('\n')
+print(json.dumps({'passed':True,'projects':len(cases),'provider_version':admission['provider_version'],'model_trials':0}))

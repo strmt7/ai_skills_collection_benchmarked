@@ -13,6 +13,13 @@ do not overwrite historical observations or create a separate goal.
 
 ## Verified position on 11 November 2026
 
+The dated baseline below is retained. On 14 November, checkpoint
+[`1091ed16`](https://github.com/strmt7/ai_skills_collection_benchmarked/commit/1091ed16ec51e06e0826fd1bc36d94a740738514)
+was published through the official connector. All 42 triggered workflows finished:
+39 passed; offline validation, secret scanning and the code-scanning alert budget
+failed. The work order tracks repairs to the ordinary workflow failures. Security
+remediation remains held under P8. This checkpoint establishes no model advantage.
+
 The [source-bound improvement ledger](../data/improvement_ledger.json) contains
 673 skills across 15 categories from 30 distinct contributing source repositories.
 Its current workflow states are:
@@ -216,7 +223,7 @@ separate development or review agents.
 | P6: confirm transfer | Pending; P3, P5 | Freeze final candidates and untouched confirmatory selection. Demonstrate practical, statistically supported gains against both baselines in declared model/task populations. Publish limitations. |
 | P7: delivery engineering | Active; P0 | Current compatible stable graphs, isolated automatic setup, root-cause flaky-test repairs, workflow map, exact-source coverage and reproducible CI. Recheck dependency alerts without suppression. |
 | P8: security work | Held; P0 | After explicit scope restoration only: paginated exact-source scanner inventories, count reconciliation, root-cause bulk remediation and verified thresholds/protection details. No suppression or guessed exceptions. |
-| P9: qualified checkpoint | Pending; P7, P8 | Review exact bytes; use only the official connector to expected-head main with GitHub-assigned identity. Wait for required jobs on that commit. Repeat for cohesive batches. |
+| P9: qualified checkpoint | Active; P0 | Publish cohesive batches after their non-held checks pass; use only the official connector to expected-head main with GitHub-assigned identity. Wait for every triggered job and retain failures. P7 continues; P8 remains required for final readiness. |
 | P10: final structural refactor | Pending; P3, P5, P6, P7, P8 | Complete folder/interface/report cleanup and short end-user README after substantive work. Preserve provenance, stable interfaces or explicit migrations and old evidence. Requalify consumers. |
 | P11: final readiness | Pending; P3, P6, P7, P8, P9, P10 | Reconcile requirements against the final exact revision and hosted checks. Notify the owner of readiness and limitations; create no release or tag. |
 

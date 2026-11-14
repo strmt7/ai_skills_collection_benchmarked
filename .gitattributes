@@ -69,7 +69,10 @@
 /toolchains/bootstrap/** text eol=lf
 /toolchains/bootstrap/NativeSupervisor.dll binary
 # Replay provenance binds the exact qualified pin bytes, including line endings.
+/toolchains/native-node-replay/** text eol=lf
 /toolchains/native-node-replay/pins.json -text !eol
+# Native qualification binds the exact dependency-lock input, not converted text.
+/requirements-reports-lock.txt -text !eol
 /requirements-dev-lock.txt text eol=lf
 /pyproject.toml text eol=lf
 # Licensed build inputs and qualified wheel hashes require exact source bytes.

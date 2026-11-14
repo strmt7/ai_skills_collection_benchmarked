@@ -1,0 +1,69 @@
+{
+  "response": {
+    "type": "search",
+    "success": true,
+    "results": [
+      {
+        "file_path": "src/application.py",
+        "language": "python",
+        "content": "def calculate_invoice_total(values):\n    return sum(values)",
+        "start_line": 1,
+        "end_line": 2,
+        "score": 0.788083420508535
+      }
+    ],
+    "total_returned": 1,
+    "offset": 0,
+    "message": null
+  },
+  "project_status": {
+    "type": "project_status",
+    "indexing": false,
+    "total_chunks": 1,
+    "total_files": 1,
+    "languages": {
+      "python": 1
+    },
+    "progress": null,
+    "index_exists": true
+  },
+  "daemon_status": {
+    "type": "daemon_status",
+    "version": "0.2.43+catalog.local1",
+    "uptime_seconds": 7.248526299999867,
+    "projects": [
+      {
+        "project_root": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\external-cocoindex-native-v2\\project alpha \u03a9\\.venv\\index\\tree",
+        "indexing": false
+      }
+    ],
+    "idle_seconds": 0.0005110000001877779,
+    "idle_timeout_minutes": 1
+  },
+  "versions": {
+    "cocoindex": "1.0.26",
+    "cocoindex-code": "0.2.43+catalog.local1"
+  },
+  "python_version": "3.13.18",
+  "ok": true,
+  "source_root": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\external-cocoindex-native-v2\\project alpha \u03a9",
+  "provider_root": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1",
+  "source_checks": [
+    {
+      "path": "src/application.py",
+      "sha256": "38f02786cf255bab8f1a0930732d2575804db6ce228d0801fc9b2974470dabb5",
+      "source_span_verified": true
+    }
+  ],
+  "manifest_sha256": "59a785cd726c139d5a3c9a8512c6a004e1fb97cbd09cc4e1cafec05656353cb2",
+  "query": {
+    "project_root": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\external-cocoindex-native-v2\\project alpha \u03a9\\.venv\\index\\tree",
+    "query": "calculate_invoice_total",
+    "paths": null,
+    "limit": 2,
+    "offset": 0
+  },
+  "stderr": "",
+  "retrieval_quality_established": false,
+  "agent_efficacy_scored": false
+}

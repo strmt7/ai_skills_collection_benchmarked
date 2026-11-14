@@ -214,11 +214,13 @@ def build_parser() -> argparse.ArgumentParser:
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("setup", help="Build and normally install the complete local-only provider and pinned model")
     commands.add_parser("check", help="Verify dependency versions, provider sources and local model bytes")
-    index = commands.add_parser("index", help="Index only explicit current-repository prefixes")
+    index = commands.add_parser("index", help="Index explicit prefixes in the selected source repository")
+    index.add_argument("--root", type=Path, default=ROOT, help="Source repository; provider stays in this collection")
     index.add_argument("--corpus", type=Path, required=True)
     index.add_argument("--prefix", action="append", required=True)
     index.add_argument("--check", action="store_true")
     query = commands.add_parser("search", help="Write a native source-bound search receipt")
+    query.add_argument("--root", type=Path, default=ROOT, help="Source repository used to prepare this corpus")
     query.add_argument("--corpus", type=Path, required=True)
     query.add_argument("--query", required=True)
     query.add_argument("--path", action="append", default=[])
@@ -229,7 +231,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 def execute(args: argparse.Namespace, home: Path, result: dict[str, Any]) -> dict[str, Any]:
     if args.command == "index":
-        arguments: list[str | Path] = ["--corpus", args.corpus]
+        arguments: list[str | Path] = ["--root", args.root, "--corpus", args.corpus]
         for prefix in args.prefix:
             arguments.extend(["--prefix", prefix])
         if args.check:
@@ -238,6 +240,8 @@ def execute(args: argparse.Namespace, home: Path, result: dict[str, Any]) -> dic
         result.update(corpus=str(args.corpus), operation=process)
     elif args.command == "search":
         arguments = [
+            "--root",
+            args.root,
             "--corpus",
             args.corpus,
             "--query",

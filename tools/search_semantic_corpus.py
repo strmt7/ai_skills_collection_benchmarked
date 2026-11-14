@@ -131,6 +131,7 @@ def local_environment(root: Path, base: Path, python: Path, providers: Path, pro
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=ROOT)
+    parser.add_argument("--provider-root", type=Path, help="Qualified tool checkout; defaults to the source root")
     parser.add_argument("--corpus", type=Path, required=True)
     parser.add_argument("--python", type=Path, required=True)
     parser.add_argument("--provider-dir", type=Path, required=True)
@@ -146,6 +147,7 @@ def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
         root = args.root.resolve(strict=True)
+        provider_root = (args.provider_root or root).resolve(strict=True)
         base = corpus.checked_output(root, args.corpus)
         manifest_raw = corpus.regular_file(base, "manifest.json").read_bytes()
         manifest = json.loads(manifest_raw)
@@ -154,7 +156,7 @@ def main(argv: list[str] | None = None) -> int:
             raise ValueError("stale corpus: " + "; ".join(before["errors"]))
         python = args.python.resolve(strict=True)
         env = local_environment(
-            root,
+            provider_root,
             base,
             python,
             args.provider_dir.resolve(strict=True),
@@ -190,6 +192,8 @@ def main(argv: list[str] | None = None) -> int:
             raise ValueError("index is missing or still changing")
         report.update(
             ok=True,
+            source_root=str(root),
+            provider_root=str(provider_root),
             source_checks=checks,
             manifest_sha256=hashlib.sha256(manifest_raw).hexdigest(),
             query=request,

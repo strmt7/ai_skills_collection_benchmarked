@@ -1,0 +1,2 @@
+def calculate_invoice_total(values):
+    return sum(values)

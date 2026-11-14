@@ -296,6 +296,40 @@ def test_missing_index_check_does_not_prepare_or_create_a_corpus(tmp_path, monke
     assert not target.exists()
 
 
+def test_external_project_index_keeps_provider_and_project_state_separate(tmp_path, monkeypatch):
+    provider_root = tmp_path / "collection"
+    home = provider_root / ".venv/provider"
+    home.mkdir(parents=True)
+    sentinel = home / "retained-model"
+    sentinel.write_bytes(b"existing qualified model")
+    project = tmp_path / "project"
+    project.mkdir()
+    subprocess.run(["git", "init", "--quiet", str(project)], check=True)
+    (project / ".gitignore").write_text(".venv/\n", encoding="utf-8")
+    (project / "application.py").write_text("def calculate_total():\n    return 42\n", encoding="utf-8")
+    monkeypatch.setattr(runtime, "ROOT", provider_root)
+    monkeypatch.setattr(runtime, "configure", lambda *args, **kwargs: None)
+    monkeypatch.setattr(runtime, "local_environment", lambda *args: {})
+    monkeypatch.setattr(runtime, "model_proof", lambda: {"revision": "fixture"})
+    real_run = subprocess.run
+
+    def run(command, **kwargs):
+        if command[0] == sys.executable:
+            assert kwargs["cwd"] == project / ".venv/index/tree"
+            return subprocess.CompletedProcess(command, 0)
+        return real_run(command, **kwargs)
+
+    monkeypatch.setattr(runtime.subprocess, "run", run)
+    result = runtime.index(home, project / ".venv/index", ["application.py"], check=False, root=project)
+    manifest = json.loads((project / ".venv/index/manifest.json").read_bytes())
+    assert result["source_root"] == manifest["source_root"] == str(project)
+    assert (project / ".venv/index/tree/application.py").read_bytes() == (project / "application.py").read_bytes()
+    assert sentinel.read_bytes() == b"existing qualified model"
+    assert not (provider_root / ".venv/index").exists()
+    with pytest.raises(ValueError, match="source repository"):
+        runtime.index(home, home / "index", ["application.py"], check=False, root=project)
+
+
 def test_index_check_waits_for_the_native_startup_scan(monkeypatch):
     states = [
         {"indexing": True, "index_exists": True, "progress": {"num_errors": 0}},

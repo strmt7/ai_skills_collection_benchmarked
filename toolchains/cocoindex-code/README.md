@@ -20,8 +20,9 @@ used inside the private installation; no global installer runs. No administrator
 access, API key, global packages, persistent PATH changes, registry registration,
 MCP registration or particular AI client is required.
 
-The foundation uses an owned cache for this checkout; provider environments,
-models and indexes stay in its `.venv`. `--cache-root PATH` before `cocoindex`
+The foundation uses an owned cache for this checkout; provider environments and
+models stay in its `.venv`. Each source project's index stays in that project's
+`.venv`. `--cache-root PATH` before `cocoindex`
 selects another writable foundation cache. Create fresh caches on each host.
 Only the validation command provisions Node and Java.
 
@@ -34,6 +35,27 @@ with the admitted model.
 Read the native search JSON and confirm relevant hits in the current source.
 A ranking is not a completeness check. `--path 'tools/**'` restricts a search to
 a source scope. Use a new output filename for each receipt.
+
+## Search another project
+
+To search another Git project, keep the qualified provider in this collection
+clone and select the source project explicitly:
+
+```powershell
+$project = (Resolve-Path ../my-project).Path
+.\dev.ps1 cocoindex index --root $project --corpus .venv/semantic/task-a --prefix src --prefix tests
+.\dev.ps1 cocoindex search --root $project --corpus .venv/semantic/task-a --query "Where is input validation performed?" --limit 5 --output .venv/research/search-a.json
+```
+
+The provider and pinned model remain in the collection clone. Corpus and receipt
+paths are relative to the selected project and must stay under its `.venv`.
+Add `.venv/` to that project's ignore rules before indexing. Source files remain
+unchanged; only selected, non-ignored inputs are copied into the local corpus.
+Each receipt identifies the source project and provider checkout separately.
+Use the same `--root` for indexing and searching; a different project or changed
+source invalidates the binding. Existing indexes, provider caches and other
+projects' registrations are preserved. No provider installation is needed inside
+the target project.
 
 ## Refresh and recovery
 

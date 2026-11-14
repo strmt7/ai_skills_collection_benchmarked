@@ -1,0 +1,9 @@
+{
+  "windows_job": true,
+  "real_interpreter_gated_before_site": true,
+  "kill_on_close": true,
+  "active_processes_after_cleanup": 0,
+  "termination_reason": null,
+  "exit_code": 0,
+  "phase": "query"
+}

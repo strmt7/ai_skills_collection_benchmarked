@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "scope": "Correct the cross-project test observer helper to return a mapping explicitly. Five focused checks passed, including both platform type targets and 24 semantic search tests. Earlier two-project native results remain unchanged.",
+  "source_sha256": {
+    "tests/test_semantic_search.py": "4bee7fa4bd497ce25e48c23a9612cee5f3ac463f8ef90b2a8ac9d1449aa93772"
+  },
+  "artifacts": {
+    "helper-format.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "helper-format.stdout.native": "fd2299c9f1c6dc869070883e281051bfe93aacf66c1a3b0069f45b4aa410ca50",
+    "helper-lint.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "helper-lint.stdout.native": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "previous-test-source.py.txt": "fc94f5857ca3a429c7254b139c207c075478078d7fc97f25df5786a2690802d0",
+    "semantic-search-controls.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "semantic-search-controls.stdout.native": "f50a23d91bc1323507121a6be8e6f4b9230f15fbc065da73846c0ac44c7707a6",
+    "types-linux.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "types-linux.stdout.native": "680d481cc62731d2fd04d8210927e7bd5809d6ac50c76e04c215cd8ff6cdcec8",
+    "types-win32.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "types-win32.stdout.native": "680d481cc62731d2fd04d8210927e7bd5809d6ac50c76e04c215cd8ff6cdcec8"
+  },
+  "checks": 5,
+  "model_trials": 0
+}

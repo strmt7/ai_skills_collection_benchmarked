@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "scope": "Real add and checkout with Windows line conversion enabled; no commit or ref update",
+  "source_sha256": {
+    ".gitattributes": "c38735e26eb3e6ec860f2730efa74991eca26e2d78cfff4042a43c8941eb19ab",
+    "requirements-reports-lock.txt": "9cbebd90fcd78834c2db444ae349624f6f0f8886afb49194df1d830ab608d2dd"
+  },
+  "artifacts": {
+    "native.json": "0da6f8b9eee7e8e3eab040a980ee3112f93e091698364199d25419ad24c327aa"
+  },
+  "model_improvement_established": false
+}

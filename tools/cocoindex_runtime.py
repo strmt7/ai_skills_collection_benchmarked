@@ -131,9 +131,10 @@ def install_model(home: Path) -> dict[str, Any]:
     return check_model(home)
 
 
-def corpus_path(home: Path, base: Path) -> Path:
-    base = corpus.checked_output(ROOT, base)
-    if base == ROOT / ".venv" or base.is_relative_to(home) or home.is_relative_to(base):
+def corpus_path(home: Path, base: Path, root: Path | None = None) -> Path:
+    root = (root or ROOT).resolve(strict=True)
+    base = corpus.checked_output(root, root / base)
+    if base.is_relative_to(home) or home.is_relative_to(base):
         raise ValueError("Select a dedicated corpus outside the provider home")
     return base
 
@@ -198,12 +199,13 @@ def wait_for_index(project_root: Path, *, timeout: float = 500) -> dict[str, Any
     return status
 
 
-def index(home: Path, base: Path, prefixes: list[str], *, check: bool) -> dict[str, Any]:
-    base = corpus_path(home, base)
+def index(home: Path, base: Path, prefixes: list[str], *, check: bool, root: Path | None = None) -> dict[str, Any]:
+    root = (root or ROOT).resolve(strict=True)
+    base = corpus_path(home, base, root)
     existing = base.exists()
     if check and not existing:
         raise ValueError("The corpus must already exist for an index check")
-    prepared = corpus.prepare(ROOT, base, prefixes, check=existing)
+    prepared = corpus.prepare(root, base, prefixes, check=existing)
     if not prepared["ok"]:
         raise ValueError("Stale corpus; preserve its evidence and select a new path: " + "; ".join(prepared["errors"]))
     configure(home, base, check=existing)
@@ -221,11 +223,12 @@ def index(home: Path, base: Path, prefixes: list[str], *, check: bool) -> dict[s
     else:
         command = [sys.executable, "-P", "-B", "-c", "from cocoindex_code.cli import app;app()", "index"]
         subprocess.run(command, cwd=base / "tree", env=env, check=True, timeout=540)
-    after = corpus.prepare(ROOT, base, prefixes, check=True)
+    after = corpus.prepare(root, base, prefixes, check=True)
     if not after["ok"]:
         raise ValueError("Source binding changed during indexing: " + "; ".join(after["errors"]))
     result = {
         **prepared,
+        "source_root": str(root),
         "corpus": str(base),
         "manifest_sha256": digest((base / "manifest.json").read_bytes()),
         "model_revision": model_proof()["revision"],
@@ -241,14 +244,17 @@ def index(home: Path, base: Path, prefixes: list[str], *, check: bool) -> dict[s
 def query(home: Path, args: argparse.Namespace) -> int:
     import search_semantic_corpus as search
 
-    base = corpus_path(home, args.corpus)
+    root = args.root.resolve(strict=True)
+    base = corpus_path(home, args.corpus, root)
     configure(home, base, check=True)
-    output = corpus.checked_output(ROOT, args.output)
+    output = corpus.checked_output(root, root / args.output)
     if output.exists() or output.is_relative_to(home) or output.is_relative_to(base):
         raise ValueError("Select a new query receipt outside provider and corpus caches")
     output.parent.mkdir(parents=True, exist_ok=True)
     arguments = [
         "--root",
+        str(root),
+        "--provider-root",
         str(ROOT),
         "--corpus",
         str(base),
@@ -284,10 +290,12 @@ def build_parser() -> argparse.ArgumentParser:
     commands.add_parser("install-model")
     commands.add_parser("check-model")
     prepare = commands.add_parser("index")
+    prepare.add_argument("--root", type=Path, default=ROOT)
     prepare.add_argument("--corpus", type=Path, required=True)
     prepare.add_argument("--prefix", action="append", required=True)
     prepare.add_argument("--check", action="store_true")
     retrieve = commands.add_parser("query")
+    retrieve.add_argument("--root", type=Path, default=ROOT)
     retrieve.add_argument("--corpus", type=Path, required=True)
     retrieve.add_argument("--query", required=True)
     retrieve.add_argument("--path", action="append", default=[])
@@ -306,7 +314,7 @@ def main(argv: list[str] | None = None) -> int:
         elif args.command != "check-runtime":
             result.update(check_model(home))
             if args.command == "index":
-                result.update(index(home, args.corpus, args.prefix, check=args.check))
+                result.update(index(home, args.corpus, args.prefix, check=args.check, root=args.root))
             elif args.command == "query":
                 return query(home, args)
         result["ok"] = True

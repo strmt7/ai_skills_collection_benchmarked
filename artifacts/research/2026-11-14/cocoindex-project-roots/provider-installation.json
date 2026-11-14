@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "input_identity": "649eb5fd415eef486388179a3a2dda5b2821b5c8a98524217c2984c1ec1309e6",
+  "provider_version": "0.2.43+catalog.local1",
+  "python_version": "3.13.18",
+  "wheel_name": "cocoindex_code-0.2.43+catalog.local1-py3-none-any.whl",
+  "wheel_sha256": "be7617dcd8a2669b4d2c0d6152a7330336c480e4ea02e30c044deced7c0203c2",
+  "source_files_admitted": 125,
+  "runtime_distributions": 76,
+  "model_files_admitted": 11,
+  "model_revision": "d8c86521100d3556476a063fc2342036d45c106f",
+  "setup_implementation_sha256": "c4505d37b5672a9ad81b813fa85dd80a56c984cdb9b2d3b678f4e06b60609151",
+  "steps": [
+    {
+      "phase": "create-build",
+      "logs": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\agent-tools\\automatic-cocoindex\\profile-91a5ff9b8c63\\logs\\create-build-7d57620509f242d0ab784e7ecb75f017",
+      "windows_job": true,
+      "real_interpreter_gated_before_site": true,
+      "kill_on_close": true,
+      "active_processes_after_cleanup": 0,
+      "termination_reason": null,
+      "exit_code": 0
+    },
+    {
+      "phase": "build-dependencies",
+      "logs": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\agent-tools\\automatic-cocoindex\\profile-91a5ff9b8c63\\logs\\build-dependencies-07966ab38399440a8736ad044195b518",
+      "windows_job": true,
+      "real_interpreter_gated_before_site": true,
+      "kill_on_close": true,
+      "active_processes_after_cleanup": 0,
+      "termination_reason": null,
+      "exit_code": 0
+    },
+    {
+      "phase": "build-pip-check",
+      "logs": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\agent-tools\\automatic-cocoindex\\profile-91a5ff9b8c63\\logs\\build-pip-check-1b6531430d4747ed8e371222feaac0f7",
+      "windows_job": true,
+      "real_interpreter_gated_before_site": true,
+      "kill_on_close": true,
+      "active_processes_after_cleanup": 0,
+      "termination_reason": null,
+      "exit_code": 0
+    },
+    {
+      "phase": "build-wheel",
+      "logs": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\agent-tools\\automatic-cocoindex\\profile-91a5ff9b8c63\\logs\\build-wheel-e212a0869aff4a4e87c9061e3054a2cf",
+      "windows_job": true,
+      "real_interpreter_gated_before_site": true,
+      "kill_on_close": true,
+      "active_processes_after_cleanup": 0,
+      "termination_reason": null,
+      "exit_code": 0
+    },
+    {
+      "phase": "create-runtime",
+      "logs": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\agent-tools\\automatic-cocoindex\\profile-91a5ff9b8c63\\logs\\create-runtime-39b61f3671d0403cbaac8a4b470a7bf3",
+      "windows_job": true,
+      "real_interpreter_gated_before_site": true,
+      "kill_on_close": true,
+      "active_processes_after_cleanup": 0,
+      "termination_reason": null,
+      "exit_code": 0
+    },
+    {
+      "phase": "bootstrap",
+      "logs": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\agent-tools\\automatic-cocoindex\\profile-91a5ff9b8c63\\logs\\bootstrap-fec6e9e3f7694ec4999008d92b93b923",
+      "windows_job": true,
+      "real_interpreter_gated_before_site": true,
+      "kill_on_close": true,
+      "active_processes_after_cleanup": 0,
+      "termination_reason": null,
+      "exit_code": 0
+    },
+    {
+      "phase": "runtime-dependencies",
+      "logs": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\agent-tools\\automatic-cocoindex\\profile-91a5ff9b8c63\\logs\\runtime-dependencies-1ab7788952b749a78a569639a6369263",
+      "windows_job": true,
+      "real_interpreter_gated_before_site": true,
+      "kill_on_close": true,
+      "active_processes_after_cleanup": 0,
+      "termination_reason": null,
+      "exit_code": 0
+    },
+    {
+      "phase": "runtime-pip-check",
+      "logs": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\agent-tools\\automatic-cocoindex\\profile-91a5ff9b8c63\\logs\\runtime-pip-check-dffa218dc1254f088efe81c424043853",
+      "windows_job": true,
+      "real_interpreter_gated_before_site": true,
+      "kill_on_close": true,
+      "active_processes_after_cleanup": 0,
+      "termination_reason": null,
+      "exit_code": 0
+    },
+    {
+      "phase": "check-runtime",
+      "logs": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\agent-tools\\automatic-cocoindex\\profile-91a5ff9b8c63\\logs\\check-runtime-0754efb19e3543b2adcdadfdbc96432c",
+      "windows_job": true,
+      "real_interpreter_gated_before_site": true,
+      "kill_on_close": true,
+      "active_processes_after_cleanup": 0,
+      "termination_reason": null,
+      "exit_code": 0
+    },
+    {
+      "phase": "install-model",
+      "logs": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\agent-tools\\automatic-cocoindex\\profile-91a5ff9b8c63\\logs\\install-model-edcfdf66627b4d43af8b3e4febdc3b4c",
+      "windows_job": true,
+      "real_interpreter_gated_before_site": true,
+      "kill_on_close": true,
+      "active_processes_after_cleanup": 0,
+      "termination_reason": null,
+      "exit_code": 0
+    },
+    {
+      "phase": "check-model",
+      "logs": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\agent-tools\\automatic-cocoindex\\profile-91a5ff9b8c63\\logs\\check-model-24044049f9b94184a3a68d4c612a47dd",
+      "windows_job": true,
+      "real_interpreter_gated_before_site": true,
+      "kill_on_close": true,
+      "active_processes_after_cleanup": 0,
+      "termination_reason": null,
+      "exit_code": 0
+    }
+  ],
+  "model_query_qualified": false,
+  "cloud_embeddings_supported": false,
+  "agent_efficacy_claim": false
+}

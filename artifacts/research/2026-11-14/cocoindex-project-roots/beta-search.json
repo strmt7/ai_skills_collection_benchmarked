@@ -1,0 +1,69 @@
+{
+  "response": {
+    "type": "search",
+    "success": true,
+    "results": [
+      {
+        "file_path": "src/application.py",
+        "language": "python",
+        "content": "def load_temperature_readings(values):\n    return sum(values)",
+        "start_line": 1,
+        "end_line": 2,
+        "score": 0.7036524906488903
+      }
+    ],
+    "total_returned": 1,
+    "offset": 0,
+    "message": null
+  },
+  "project_status": {
+    "type": "project_status",
+    "indexing": false,
+    "total_chunks": 1,
+    "total_files": 1,
+    "languages": {
+      "python": 1
+    },
+    "progress": null,
+    "index_exists": true
+  },
+  "daemon_status": {
+    "type": "daemon_status",
+    "version": "0.2.43+catalog.local1",
+    "uptime_seconds": 6.397091000000728,
+    "projects": [
+      {
+        "project_root": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\external-cocoindex-native-v2\\project beta \u03a9\\.venv\\index\\tree",
+        "indexing": false
+      }
+    ],
+    "idle_seconds": 0.00043570000070758397,
+    "idle_timeout_minutes": 1
+  },
+  "versions": {
+    "cocoindex": "1.0.26",
+    "cocoindex-code": "0.2.43+catalog.local1"
+  },
+  "python_version": "3.13.18",
+  "ok": true,
+  "source_root": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\external-cocoindex-native-v2\\project beta \u03a9",
+  "provider_root": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1",
+  "source_checks": [
+    {
+      "path": "src/application.py",
+      "sha256": "b5bdfa22455d7cf0f873186fcf0a4055f94302547aa0c636aaeb4b689e8f457b",
+      "source_span_verified": true
+    }
+  ],
+  "manifest_sha256": "f96e564e9a1ec5669257d18f3bacd443a29113eadac68413a5d06b145e2facb8",
+  "query": {
+    "project_root": "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\external-cocoindex-native-v2\\project beta \u03a9\\.venv\\index\\tree",
+    "query": "load_temperature_readings",
+    "paths": null,
+    "limit": 2,
+    "offset": 0
+  },
+  "stderr": "",
+  "retrieval_quality_established": false,
+  "agent_efficacy_scored": false
+}

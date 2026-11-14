@@ -412,7 +412,7 @@
         "R9",
         "R12"
       ],
-      "next_action": "Qualify the remaining deliberately versioned native workflow families separately, preserve historical evidence, and obtain exact-revision hosted acceptance after authorized publication. Current Windows setup has 39 native controls and five current-source controller/grader controls; these establish no model advantage.",
+      "next_action": "Qualify the cross-project provider and exact-byte checkout fixes; verify the updated stable pnpm action in hosted controls. Continue remaining dependency, workflow and Codecov acceptance without claiming completion or model advantage.",
       "deliverables": [
         "Fresh-cache and recovery qualification",
         "Workflow-to-source trigger map",
@@ -438,6 +438,18 @@
         {
           "path": "artifacts/research/2026-11-13/windows-bootstrap-runtime/review.json",
           "sha256": "b863bbb96c44462a876908e8394aaf94d62fe03c295db103668518b32744a997"
+        },
+        {
+          "path": "artifacts/research/2026-11-14/cocoindex-project-roots/review.json",
+          "sha256": "15d0e9a8c2d3e2d9b40a9f6da74f65eba42744801527a71277a720d2234deb8c"
+        },
+        {
+          "path": "artifacts/research/2026-11-14/publication-byte-retention-v3/review.json",
+          "sha256": "2862e244fe2f070cfbc1c50c6304e261d6f4e9307cfd3732d244d52fb5e8ec4e"
+        },
+        {
+          "path": "artifacts/research/2026-11-14/pnpm-action-update/review.json",
+          "sha256": "4aa778691e078fd66d2ea76f46f0e6125155a1d31e424d8c4c0033a83276eac0"
         }
       ]
     },
@@ -475,17 +487,16 @@
       "id": "P9",
       "priority": 9,
       "title": "Publish cohesive development checkpoints and wait for hosted acceptance",
-      "status": "pending",
+      "status": "active",
       "depends_on": [
-        "P7",
-        "P8"
+        "P0"
       ],
       "requirements": [
         "R8",
         "R11",
         "R12"
       ],
-      "next_action": "Prepare the exact reviewed tree now; publish only after the full required batch gates pass.",
+      "next_action": "Repair the ordinary offline-validation failures found on 1091ed16ec51e06e0826fd1bc36d94a740738514, qualify this cohesive portability batch, publish through the connector, then wait for every triggered workflow. Keep the two held security gates visibly failed until authorized remediation.",
       "deliverables": [
         "Reviewed file and line-ending inventory",
         "Connector commit on main with expected-head check",
@@ -497,7 +508,15 @@
         "All required triggered/dispatchable jobs finish and are reviewed",
         "No release, tag or development branch is created"
       ],
-      "repeatable": true
+      "repeatable": true,
+      "scope": "Publish independently verified non-held development checkpoints while P7 continues. P8 remains required for final readiness; its explicit hold does not block ordinary authorized development commits or permit suppressing failed checks.",
+      "evidence": [
+        {
+          "path": "artifacts/research/2026-11-14/development-checkpoint/hosted-runs.json",
+          "sha256": "73a88f88da49a371d614409d23f5067185cad4680b2c3f7da1b9aca6898ee7ff",
+          "scope": "All 42 workflows terminal on the published checkpoint; 39 succeeded and three failed. This is not hosted acceptance."
+        }
+      ]
     },
     {
       "id": "P10",

@@ -1,0 +1,762 @@
+{
+  "passed": true,
+  "git_version": "git version 2.56.0.windows.4",
+  "git_sha256": "9c75f3f41eb5686bacde4b7c4fdfcd7970e8b699ee05c8d7a0cc9c8a7ddaffe8",
+  "core_autocrlf": true,
+  "records": [
+    {
+      "path": ".gitattributes",
+      "bytes": 20551,
+      "sha256": "c38735e26eb3e6ec860f2730efa74991eca26e2d78cfff4042a43c8941eb19ab",
+      "staged_blob_sha": "1fde99999d99a0e7196b63bcd7c20e624d5cbb6c",
+      "raw_blob_sha": "1fde99999d99a0e7196b63bcd7c20e624d5cbb6c",
+      "checkout_identical": true
+    },
+    {
+      "path": ".github/workflows/offline-validation.yml",
+      "bytes": 29975,
+      "sha256": "0f6b653469b082033c4cd3c8d7f7efbfaf9415932c37e1a8d8114f112311a1e1",
+      "staged_blob_sha": "1e060398620e0c57db48920985f6705cd450ee0e",
+      "raw_blob_sha": "1e060398620e0c57db48920985f6705cd450ee0e",
+      "checkout_identical": true
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 29188,
+      "sha256": "5e5c743af064d3c371356112ff868d271bb6bf4b4d14998afa387f2519bb892f",
+      "staged_blob_sha": "f11e08eccb6e6e6e4bcc011a9dc66ec57def4e39",
+      "raw_blob_sha": "f11e08eccb6e6e6e4bcc011a9dc66ec57def4e39",
+      "checkout_identical": true
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 11350,
+      "sha256": "8f917aefb6cda3e8fef54ebf4f5628f000e4620ce61c403ab3766e35d3cf703b",
+      "staged_blob_sha": "066c1a37461b2e2f0037539f737b613e9d7f157c",
+      "raw_blob_sha": "066c1a37461b2e2f0037539f737b613e9d7f157c",
+      "checkout_identical": true
+    },
+    {
+      "path": "artifacts/agent-trials/development-v2/repetition-1/default/result.json",
+      "bytes": 8580,
+      "sha256": "186b10927a66bede61c82af0b67554cea403955a1ee780bcfb00672db79040e0",
+      "staged_blob_sha": "dd8d33df6ef7a77b1d356ffc21f217789c287b85",
+      "raw_blob_sha": "dd8d33df6ef7a77b1d356ffc21f217789c287b85",
+      "checkout_identical": true
+    },
+    {
+      "path": "benchmarks/agent-effectiveness/development/protocol-v2.json",
+      "bytes": 6237,
+      "sha256": "a1f6cbd086680ca19c3a6a124b7739537a7ad38550de8b59b83ec1f8781fcda9",
+      "staged_blob_sha": "9ba5a5ebcb915ff5278456a3a83881f31e6a3612",
+      "raw_blob_sha": "9ba5a5ebcb915ff5278456a3a83881f31e6a3612",
+      "checkout_identical": true
+    },
+    {
+      "path": "benchmarks/agent-effectiveness/graders/artifact_validator.py",
+      "bytes": 707,
+      "sha256": "629ea3bdd915f51c7ccd628a9fa4007d7976c25e84767000a1c62469328e9356",
+      "staged_blob_sha": "9d87e0fd070645bfbdc785f182d03883c0adde54",
+      "raw_blob_sha": "9d87e0fd070645bfbdc785f182d03883c0adde54",
+      "checkout_identical": true
+    },
+    {
+      "path": "dev.ps1",
+      "bytes": 3563,
+      "sha256": "36db5492385586dfcf2cf820b40f53ee99c851a6896f4c478964846ebfca6c31",
+      "staged_blob_sha": "09e710f5347297bd11ea52ac54fa5a0b918e661b",
+      "raw_blob_sha": "09e710f5347297bd11ea52ac54fa5a0b918e661b",
+      "checkout_identical": true
+    },
+    {
+      "path": "docs/improvement-plan.md",
+      "bytes": 30807,
+      "sha256": "00ee0f9844ef6ed8dc14533a5e33453def08f0868116c1d46eb6c59675ee10ce",
+      "staged_blob_sha": "324c640fe65f2b0ecb3ce1a0fed0b20647d0d286",
+      "raw_blob_sha": "324c640fe65f2b0ecb3ce1a0fed0b20647d0d286",
+      "checkout_identical": true
+    },
+    {
+      "path": "docs/skill-improvement-method.md",
+      "bytes": 4096,
+      "sha256": "af773694d29aed633e653a2462154d1fceaf9a331d60869105e13bc8ba81c47e",
+      "staged_blob_sha": "aa2f1dbffc53ccbe4ac2e800871d3aa4e06b2519",
+      "raw_blob_sha": "aa2f1dbffc53ccbe4ac2e800871d3aa4e06b2519",
+      "checkout_identical": true
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 5029,
+      "sha256": "bb14112c89ed110bcaca444ecea64b4b81f8a8bdf0f74a6a64b37e4f097cbe1f",
+      "staged_blob_sha": "dbcfffef374d0ba0c7578201dbd0b4ec9c535394",
+      "raw_blob_sha": "dbcfffef374d0ba0c7578201dbd0b4ec9c535394",
+      "checkout_identical": true
+    },
+    {
+      "path": "requirements-dev-lock.txt",
+      "bytes": 61074,
+      "sha256": "275945696e501d9eafdd90d60c20577b605b9f68564d1b0d39e896ebf2248770",
+      "staged_blob_sha": "87e95a08376ea6a8a8ef28bd477a1554e98d4323",
+      "raw_blob_sha": "87e95a08376ea6a8a8ef28bd477a1554e98d4323",
+      "checkout_identical": true
+    },
+    {
+      "path": "requirements-reports-lock.txt",
+      "bytes": 60832,
+      "sha256": "9cbebd90fcd78834c2db444ae349624f6f0f8886afb49194df1d830ab608d2dd",
+      "staged_blob_sha": "963aa47163e02c24a4c85a826a95ad2191cbabb9",
+      "raw_blob_sha": "963aa47163e02c24a4c85a826a95ad2191cbabb9",
+      "checkout_identical": true
+    },
+    {
+      "path": "tests/qualify_windows_bootstrap.ps1",
+      "bytes": 31789,
+      "sha256": "80236479075469eb721012bd1a2887fb861c09f5019a2030b352397b91d64b6f",
+      "staged_blob_sha": "632c11968c9205d261b20741ec462b53ffd6599e",
+      "raw_blob_sha": "632c11968c9205d261b20741ec462b53ffd6599e",
+      "checkout_identical": true
+    },
+    {
+      "path": "tests/test_ci_transport.py",
+      "bytes": 3745,
+      "sha256": "674725393f39a47479da30c0865c2ab00dcb5fd8a5526582c6567090c6565c5f",
+      "staged_blob_sha": "4f5bef5c8a4720348e2a25df2e9bc0b27af65ae7",
+      "raw_blob_sha": "4f5bef5c8a4720348e2a25df2e9bc0b27af65ae7",
+      "checkout_identical": true
+    },
+    {
+      "path": "tests/test_grade_swe_skills_submission.py",
+      "bytes": 10143,
+      "sha256": "480bb16ea97fba170dbc8a80487a2ae3a511d1e607160aeb1f8e42fe8a7cd678",
+      "staged_blob_sha": "6ff6e624740e7bacbad98060cd1fdc943600139d",
+      "raw_blob_sha": "6ff6e624740e7bacbad98060cd1fdc943600139d",
+      "checkout_identical": true
+    },
+    {
+      "path": "tests/test_native_benchmark_runtime.py",
+      "bytes": 10071,
+      "sha256": "0396f3e888bba4c1c439dc9aec80e734754da9208a9f7c803c764a4789d9db6c",
+      "staged_blob_sha": "52574131b837fea39f58a3565ef33325cc7a6ddc",
+      "raw_blob_sha": "52574131b837fea39f58a3565ef33325cc7a6ddc",
+      "checkout_identical": true
+    },
+    {
+      "path": "tests/test_native_qualification_index.py",
+      "bytes": 4488,
+      "sha256": "a893227616ca3cd6768f1b22e2af725d07577d19c8c98be3bda5cf3e3075075e",
+      "staged_blob_sha": "259802f7335d700ad7d6c023e1ae1285050fea9e",
+      "raw_blob_sha": "259802f7335d700ad7d6c023e1ae1285050fea9e",
+      "checkout_identical": true
+    },
+    {
+      "path": "tests/test_native_replay_assets.py",
+      "bytes": 7868,
+      "sha256": "efea9c280c295da9477d781d37738f86cb00689e2dcf094934a016adf6036581",
+      "staged_blob_sha": "46993bd31ad8313af12a9ca55e113fefe12310ac",
+      "raw_blob_sha": "46993bd31ad8313af12a9ca55e113fefe12310ac",
+      "checkout_identical": true
+    },
+    {
+      "path": "tests/test_prepare_native_node_replay.py",
+      "bytes": 2717,
+      "sha256": "d8f772b2fa21560e8103b9b7d3b021f37871b34417124f8b3d25bef2be30e371",
+      "staged_blob_sha": "c239afcb99f8c805180694e2ee26e40f82848a3f",
+      "raw_blob_sha": "c239afcb99f8c805180694e2ee26e40f82848a3f",
+      "checkout_identical": true
+    },
+    {
+      "path": "tests/test_windows_storage_budget.py",
+      "bytes": 12973,
+      "sha256": "2eac926beaa6441b3b559a82ae21607807f7ca469f84cd3b6d439bc3cbd7f091",
+      "staged_blob_sha": "332b636099a5edefb2243b4925f263644a6eced3",
+      "raw_blob_sha": "332b636099a5edefb2243b4925f263644a6eced3",
+      "checkout_identical": true
+    },
+    {
+      "path": "tests/test_windows_trial_process.py",
+      "bytes": 18523,
+      "sha256": "9f4f8519f2e90b68d1fd9af3f9955cb3f6d87bf4af83d6e7e6088e895fc15f3e",
+      "staged_blob_sha": "59f9f0cc325fb2e86e630bae42b0644e61ed0b93",
+      "raw_blob_sha": "59f9f0cc325fb2e86e630bae42b0644e61ed0b93",
+      "checkout_identical": true
+    },
+    {
+      "path": "toolchains/appcontainer-modern/source.json",
+      "bytes": 24807,
+      "sha256": "1bfb80175437905a82f00ee93e6e2ebd8918b767e69157bef1d3e511dee62e97",
+      "staged_blob_sha": "b3aa7dc8acba26a1fc082ed87e88a20f6ad7f194",
+      "raw_blob_sha": "b3aa7dc8acba26a1fc082ed87e88a20f6ad7f194",
+      "checkout_identical": true
+    },
+    {
+      "path": "toolchains/appcontainer/source.json",
+      "bytes": 4168,
+      "sha256": "74aa8e69784119f58a9d443a7b004d9d2572da79541fb26e75aeb50ed2391ff3",
+      "staged_blob_sha": "fe2a62d888a05df745e869eaa2fc15fd0b782da1",
+      "raw_blob_sha": "fe2a62d888a05df745e869eaa2fc15fd0b782da1",
+      "checkout_identical": true
+    },
+    {
+      "path": "toolchains/bootstrap/ArchiveLayers.ps1",
+      "bytes": 7980,
+      "sha256": "ec95601fb4a835576126b49fa4ba53156a73434531e54dc298e8fd1fb6050266",
+      "staged_blob_sha": "dfec573c1b24aac69d60e1419cea447affcdf155",
+      "raw_blob_sha": "dfec573c1b24aac69d60e1419cea447affcdf155",
+      "checkout_identical": true
+    },
+    {
+      "path": "toolchains/bootstrap/CompileSupervisor.ps1",
+      "bytes": 2146,
+      "sha256": "45c2e16bba6111204d8fbaf5390646fc124c81574ae03ef28b0182fcef5050b4",
+      "staged_blob_sha": "16a619ac57c78aedcca74cbe2b696b3614cdf47f",
+      "raw_blob_sha": "16a619ac57c78aedcca74cbe2b696b3614cdf47f",
+      "checkout_identical": true
+    },
+    {
+      "path": "toolchains/bootstrap/FRAMEWORK-REFERENCES-LICENSE.txt",
+      "bytes": 1076,
+      "sha256": "d4610d405ef708b4af60529fcbe8e61ece6f8a3b9ed1988b6cd0274abd406f97",
+      "staged_blob_sha": "b73b4a1293c328fdb684ee285e2039f72f4f1c4c",
+      "raw_blob_sha": "b73b4a1293c328fdb684ee285e2039f72f4f1c4c",
+      "checkout_identical": true
+    },
+    {
+      "path": "toolchains/bootstrap/NativeCabinet.cs",
+      "bytes": 5100,
+      "sha256": "1309feaf17aa57e41b22885f35609118798780c49c59a70b2ee02c4d6ffcaf0a",
+      "staged_blob_sha": "b6580c74fa4b395f1c0c2a0b517239729c50e7af",
+      "raw_blob_sha": "b6580c74fa4b395f1c0c2a0b517239729c50e7af",
+      "checkout_identical": true
+    },
+    {
+      "path": "toolchains/bootstrap/NativeSupervisor.dll",
+      "bytes": 9728,
+      "sha256": "f0a41795d31c5841d4e81d9e5dd109a8f0809a8c707bbceec8efd48e30c54cdb",
+      "staged_blob_sha": "d7faa86ef1116f97fb70d6ce0d2267d94049ba0b",
+      "raw_blob_sha": "d7faa86ef1116f97fb70d6ce0d2267d94049ba0b",
+      "checkout_identical": true
+    },
+    {
+      "path": "toolchains/bootstrap/OwnedProcess.cs",
+      "bytes": 12563,
+      "sha256": "74196cb95ebda326993a2bb44d90171436cad93d575a298acbfea79d972dfaa7",
+      "staged_blob_sha": "59f5531754ea3a1585c6e0925a3cdc5ce1eeda45",
+      "raw_blob_sha": "59f5531754ea3a1585c6e0925a3cdc5ce1eeda45",
+      "checkout_identical": true
+    },
+    {
+      "path": "toolchains/bootstrap/bootstrap.ps1",
+      "bytes": 36347,
+      "sha256": "368dca252af6467638f688abadd8ede0f96b1b1ad98c0959ad2023ef89033eb7",
+      "staged_blob_sha": "4db7f02f65f8e734c7088426bfeef5e5971d9e95",
+      "raw_blob_sha": "4db7f02f65f8e734c7088426bfeef5e5971d9e95",
+      "checkout_identical": true
+    },
+    {
+      "path": "toolchains/bootstrap/build_supervisor.ps1",
+      "bytes": 7042,
+      "sha256": "87971225642f874daea0fbb1dbec41cd603ac39630304ed04298a3763c72bceb",
+      "staged_blob_sha": "20fcc714bb452cff0475fa344b449cfc9627dfae",
+      "raw_blob_sha": "20fcc714bb452cff0475fa344b449cfc9627dfae",
+      "checkout_identical": true
+    },
+    {
+      "path": "toolchains/bootstrap/codex.json",
+      "bytes": 10498,
+      "sha256": "f84483a94d1e1e48073612add046771ce948340cf8201d3f852572a3e7e4c370",
+      "staged_blob_sha": "f893c180e91deacd56cea7b6ad35d2bd642c4553",
+      "raw_blob_sha": "f893c180e91deacd56cea7b6ad35d2bd642c4553",
+      "checkout_identical": true
+    },
+    {
+      "path": "toolchains/bootstrap/framework-reference-source.json",
+      "bytes": 1087,
+      "sha256": "c00d112f22c1afcb00b8cb6b7da48a13962d73325443b1a6fb8ddb384a61bb77",
+      "staged_blob_sha": "d7337582c0c430537e9e5d0182bfd4dfd8ea0e8c",
+      "raw_blob_sha": "d7337582c0c430537e9e5d0182bfd4dfd8ea0e8c",
+      "checkout_identical": true
+    },
+    {
+      "path": "toolchains/bootstrap/framework-references.json",
+      "bytes": 1236,
+      "sha256": "9a8d2add32b4433407b854e443bdfbb291e87654a86b06c793b115bce8f2f893",
+      "staged_blob_sha": "bf14220e79f5839966afde9f2b97ee46367283b1",
+      "raw_blob_sha": "bf14220e79f5839966afde9f2b97ee46367283b1",
+      "checkout_identical": true
+    },
+    {
+      "path": "toolchains/bootstrap/manifest.json",
+      "bytes": 1811807,
+      "sha256": "f1bc539ed50ee769df9a609204f61fea02542443ebca6ece99a3cdb30aa15b29",
+      "staged_blob_sha": "616dddf19b6f01e06ef053fc9fcbff7cc3f2ac85",
+      "raw_blob_sha": "616dddf19b6f01e06ef053fc9fcbff7cc3f2ac85",
+      "checkout_identical": true
+    },
+    {
+      "path": "toolchains/bootstrap/powershell.json",
+      "bytes": 105485,
+      "sha256": "d5c147eba4fc753ba3c73ecf8a13010d7da5f67a3161c0404ad1115686761fcc",
+      "staged_blob_sha": "1c19bab9ff4b83659c7c76ffcdac87a93503041a",
+      "raw_blob_sha": "1c19bab9ff4b83659c7c76ffcdac87a93503041a",
+      "checkout_identical": true
+    },
+    {
+      "path": "toolchains/bootstrap/requirements.txt",
+      "bytes": 276,
+      "sha256": "40b9b3f1c8bb32d056afa33effd956ae035798c04a14d5939da7dd86cad3feac",
+      "staged_blob_sha": "fdacd9424f24ea3d8311696932d6ee17e3ee0e92",
+      "raw_blob_sha": "fdacd9424f24ea3d8311696932d6ee17e3ee0e92",
+      "checkout_identical": true
+    },
+    {
+      "path": "toolchains/bootstrap/supervisor.json",
+      "bytes": 637,
+      "sha256": "c56e235f8ca80840ca4f97b8ee1183d8cf3535b81dc921eeffb2a91496b815bd",
+      "staged_blob_sha": "e6827e5637f008bc744e914fa789a4aedbeebba4",
+      "raw_blob_sha": "e6827e5637f008bc744e914fa789a4aedbeebba4",
+      "checkout_identical": true
+    },
+    {
+      "path": "toolchains/native-node-replay/base-config.json",
+      "bytes": 5335,
+      "sha256": "bcd148db78f6860c1e31f59a736d8239bb564598207da7a5ecf87f269ab46e29",
+      "staged_blob_sha": "868da116957f2ab07e3a170f0110fe15b317f40f",
+      "raw_blob_sha": "868da116957f2ab07e3a170f0110fe15b317f40f",
+      "checkout_identical": true
+    },
+    {
+      "path": "toolchains/native-node-replay/base-manifest.json",
+      "bytes": 2708,
+      "sha256": "51d40310cdf44d00b3e383af1c4467bc460e6a3a25fedb1f9fab6a8d7b77b974",
+      "staged_blob_sha": "dde77829deb19943de12a7b7f9aead0045264471",
+      "raw_blob_sha": "dde77829deb19943de12a7b7f9aead0045264471",
+      "checkout_identical": true
+    },
+    {
+      "path": "toolchains/native-node-replay/pins.json",
+      "bytes": 2083,
+      "sha256": "ce92b02cd2b190de2d3a7d348a921f0fac3121a229b16821010789f7cc6fbab6",
+      "staged_blob_sha": "b81f92b4e12dcbde5af10d86035f23c9cac3be51",
+      "raw_blob_sha": "b81f92b4e12dcbde5af10d86035f23c9cac3be51",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_bootstrap_archive.py",
+      "bytes": 5456,
+      "sha256": "5cd24adc0939fe313fb1ef6241ee66da9f5ad256f33bd23e993328bd030c48d5",
+      "staged_blob_sha": "d8675454780a2bdebb26f0b132394519670ed82f",
+      "raw_blob_sha": "d8675454780a2bdebb26f0b132394519670ed82f",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_bootstrap_doctor.py",
+      "bytes": 4643,
+      "sha256": "ec124d1120318030c20435c7ac9d7c8edde399d3ba5749c6234bca30d91f5c95",
+      "staged_blob_sha": "0e7beeef2f1a0ccc0868a95ee806859953f116f1",
+      "raw_blob_sha": "0e7beeef2f1a0ccc0868a95ee806859953f116f1",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_bootstrap_launch.py",
+      "bytes": 2013,
+      "sha256": "cd6a906429d4efb062efc856be1f84f94a447ab6064ea97cafad43b41daf23c5",
+      "staged_blob_sha": "dcf22325f47fb0dfa1ef9d7b432ac7d800d61405",
+      "raw_blob_sha": "dcf22325f47fb0dfa1ef9d7b432ac7d800d61405",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_lib_b/__init__.py",
+      "bytes": 778,
+      "sha256": "d5d2f451fd013d9c3848cf9ea24fbf1cb9f9aa6e3277440f7afda3fbfe3305e7",
+      "staged_blob_sha": "74cb367dbe755420ba795558b3bce18e0b3ef07c",
+      "raw_blob_sha": "74cb367dbe755420ba795558b3bce18e0b3ef07c",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_lib_b/determinism.py",
+      "bytes": 3619,
+      "sha256": "d8e0829e9306e630c47b857d4558ab1b40f7a529e7a5b69b13f764c7240c8cb5",
+      "staged_blob_sha": "f52cf4e1a8d2751d4a951e78dbf774b90ed59e8b",
+      "raw_blob_sha": "f52cf4e1a8d2751d4a951e78dbf774b90ed59e8b",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_lib_b/frontmatter_utils.py",
+      "bytes": 2734,
+      "sha256": "ce8dabc7321d6089628e42a1fdcda576a5f7b8657a2090718551191fad736165",
+      "staged_blob_sha": "002a11250f7e87a8feb3b75c0c0ed7940319650f",
+      "raw_blob_sha": "002a11250f7e87a8feb3b75c0c0ed7940319650f",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_lib_b/hashing.py",
+      "bytes": 1318,
+      "sha256": "7a19e225c3df4a18bd1b6447a7b13783f2169b9d9628fb6d85cda04429ce0c35",
+      "staged_blob_sha": "0181df42bad8a9f9234c89588ecf2682d682cc7d",
+      "raw_blob_sha": "0181df42bad8a9f9234c89588ecf2682d682cc7d",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_lib_b/io_utils.py",
+      "bytes": 2194,
+      "sha256": "b470b6a341006053110b53348d5a2322ea0d3d7995a8d99a7513e5fd59fcf376",
+      "staged_blob_sha": "9c31f6fbe43241e1953de07a1eff642cbe2f129c",
+      "raw_blob_sha": "9c31f6fbe43241e1953de07a1eff642cbe2f129c",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_lib_b/logging_utils.py",
+      "bytes": 1396,
+      "sha256": "e20db684564c57d2a4a0922e7797c5a4661fc74434b159bfd98f090cf41aea83",
+      "staged_blob_sha": "80bd0c83652bb17aa6e3b298aaa59b73c528eca5",
+      "raw_blob_sha": "80bd0c83652bb17aa6e3b298aaa59b73c528eca5",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_native_benchmark_runtime.py",
+      "bytes": 35094,
+      "sha256": "a839e0bee783f7a70f7be951e5cb3623a400dfe41ea51a574e54505d9f6732d8",
+      "staged_blob_sha": "57be09284764114d5f67281929663642cb23b07b",
+      "raw_blob_sha": "57be09284764114d5f67281929663642cb23b07b",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_native_grader_dependencies.py",
+      "bytes": 8662,
+      "sha256": "6b04fe4e6e48228d26d606561dc2aa1c34413bc60b062f732bd64991fc629340",
+      "staged_blob_sha": "02990140e3f6def501b2996948eff77a6c3d858f",
+      "raw_blob_sha": "02990140e3f6def501b2996948eff77a6c3d858f",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_native_image_archive.py",
+      "bytes": 4856,
+      "sha256": "9b1b503de2aef4fa75b4c1fa045afc369f2b3537c063276388da5ac535eaba4b",
+      "staged_blob_sha": "b63d94df21223c50d9528072159737577aea9fc7",
+      "raw_blob_sha": "b63d94df21223c50d9528072159737577aea9fc7",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_native_replay_assets.py",
+      "bytes": 10102,
+      "sha256": "99f46f32d63b4e02f8572266a15492efc02a6bc7372de55665cfd01af633f8c3",
+      "staged_blob_sha": "c61bf3e0b61fa87a2878f1eb458b27a104d209d2",
+      "raw_blob_sha": "c61bf3e0b61fa87a2878f1eb458b27a104d209d2",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_trial_account_readiness.py",
+      "bytes": 15866,
+      "sha256": "3b2b40e8d598c5f72b33fce5b63b6255a86ae485a064752962ee525e1cb5f8ef",
+      "staged_blob_sha": "5d8fd176e83a19e45ddcb8e5f66dc23fdec30e92",
+      "raw_blob_sha": "5d8fd176e83a19e45ddcb8e5f66dc23fdec30e92",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_trial_catalog.py",
+      "bytes": 5934,
+      "sha256": "7a380a989ef18a134f0ec32f240cab7a59101f8582a9d97ecb3231455fdb259a",
+      "staged_blob_sha": "76077f6db47e8784695d3034ff9337dd2be44462",
+      "raw_blob_sha": "76077f6db47e8784695d3034ff9337dd2be44462",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_trial_collection.py",
+      "bytes": 4684,
+      "sha256": "5c2388bc3a2a361c4ee0a4465e73745651eb87c0baaa91066f0afc33874cb5e0",
+      "staged_blob_sha": "e3bb45fd97baa1dda75859bd73ed8a6e7407c2f7",
+      "raw_blob_sha": "e3bb45fd97baa1dda75859bd73ed8a6e7407c2f7",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_trial_collection_contract.py",
+      "bytes": 3653,
+      "sha256": "99ddd0c2a4be1ef50fd41ff91c57973b8ccf8508f9061411bd510c19ca7db676",
+      "staged_blob_sha": "c877dcac6c242162f9509d4b4238c3ec3dbd6e41",
+      "raw_blob_sha": "c877dcac6c242162f9509d4b4238c3ec3dbd6e41",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_trial_collection_manifest.py",
+      "bytes": 5101,
+      "sha256": "92766b10b195a87884022c1cdb2b4d292e4464d31334abe8a4b969f3293f626b",
+      "staged_blob_sha": "505d17753d0461c98a90623e3622bddf36b30ff2",
+      "raw_blob_sha": "505d17753d0461c98a90623e3622bddf36b30ff2",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_trial_collection_policy.py",
+      "bytes": 2622,
+      "sha256": "ff2b6163130348c7f5c6a1315c3b93e94abd1e93e607d6759e73ab1df88ee2c8",
+      "staged_blob_sha": "b62cc7964b027dd275ca3d4476c7b969bd6b5038",
+      "raw_blob_sha": "b62cc7964b027dd275ca3d4476c7b969bd6b5038",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_trial_context.py",
+      "bytes": 8099,
+      "sha256": "67e86b88e0cc58a7b31a01fd248ba05211542fa26cac55ccf8b8c27d63512067",
+      "staged_blob_sha": "7ac278f76d417c3513f4bb591225c2413ffd59d3",
+      "raw_blob_sha": "7ac278f76d417c3513f4bb591225c2413ffd59d3",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_trial_declarations.py",
+      "bytes": 2258,
+      "sha256": "157185245b98be55d3f101c63cb39b293abf8cbc47c3673efe843d3c4dab883c",
+      "staged_blob_sha": "b3cc5193d07b7b2ec2a7448aa9d782fdf5e4b70a",
+      "raw_blob_sha": "b3cc5193d07b7b2ec2a7448aa9d782fdf5e4b70a",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_trial_execution_evidence.py",
+      "bytes": 12735,
+      "sha256": "eaec60e6f611957fb737293a4be0a402856f5c7e4c8114589408162a39029926",
+      "staged_blob_sha": "3b8c4a39108779359ddebf936e55f8b1da805cdb",
+      "raw_blob_sha": "3b8c4a39108779359ddebf936e55f8b1da805cdb",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_trial_grading_process.py",
+      "bytes": 2335,
+      "sha256": "4694b30f3a921214ee6fac6cb4d95a8b0e1f799b5a28c40a8ee921690df3aefc",
+      "staged_blob_sha": "bb2ef892fdc0eae7691beaf0a2e09c1a8f1d23b9",
+      "raw_blob_sha": "bb2ef892fdc0eae7691beaf0a2e09c1a8f1d23b9",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_trial_manifest.py",
+      "bytes": 5423,
+      "sha256": "fb70ce24aa79bc0e7f236f23b10a5543884d0a1c26745581d41b41302c658c79",
+      "staged_blob_sha": "340a6990c15563bf66c756fb546ea2bbcc8a73fe",
+      "raw_blob_sha": "340a6990c15563bf66c756fb546ea2bbcc8a73fe",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_trial_patch.py",
+      "bytes": 2108,
+      "sha256": "1910d39115fac763c8869fe8ec3ad5f977463bec1d22e260a4e70b27b03f91a3",
+      "staged_blob_sha": "3ea54209c91475f7d80a1257889c3019c702d024",
+      "raw_blob_sha": "3ea54209c91475f7d80a1257889c3019c702d024",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_trial_protocol.py",
+      "bytes": 8033,
+      "sha256": "086fa266058574b09c0ca72f970f9c64341a5e697f737cdd0955fb9883b351de",
+      "staged_blob_sha": "9a07ac85bdcb70fe839cf2223069d1edf5641eb1",
+      "raw_blob_sha": "9a07ac85bdcb70fe839cf2223069d1edf5641eb1",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_trial_provider.py",
+      "bytes": 5778,
+      "sha256": "f8b35a67b28a8e9fdb6a83ddd6d2a5012e6e76d81965ab2fc031d5332b600894",
+      "staged_blob_sha": "125c741bdcdf50220ccbac92dde14198028f0ba0",
+      "raw_blob_sha": "125c741bdcdf50220ccbac92dde14198028f0ba0",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_trial_signin.py",
+      "bytes": 6870,
+      "sha256": "066a18c063ca6bfb7871450dcb601f759484687dc015dd87900659763174c054",
+      "staged_blob_sha": "e791e41a1c73d5c2e799c205f08e00cbe5b797c3",
+      "raw_blob_sha": "e791e41a1c73d5c2e799c205f08e00cbe5b797c3",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_trial_transcript.py",
+      "bytes": 2627,
+      "sha256": "bad23e9f19c3523a426c1ad140aebc331f5b47b94ab95b2296b487765430fb3f",
+      "staged_blob_sha": "01c8e42f4c5a8d85f8a53815e4846bc82231270d",
+      "raw_blob_sha": "01c8e42f4c5a8d85f8a53815e4846bc82231270d",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_trial_workspace_changes.py",
+      "bytes": 3259,
+      "sha256": "c6635829bc4a557a760901e41b5bcb85e80c0cc3a5bb5fda1e42595678f33594",
+      "staged_blob_sha": "1ca5b1a0ddda8ea51182ac95beb815480a009383",
+      "raw_blob_sha": "1ca5b1a0ddda8ea51182ac95beb815480a009383",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_validator_cases.py",
+      "bytes": 3561,
+      "sha256": "c42df082de8ad465b56c5a61c67e6a8f2a8b1b711ac68b77ef969988bd159def",
+      "staged_blob_sha": "352d8a4f565c1bac3cf5da1dbc50ada5894cb8cd",
+      "raw_blob_sha": "352d8a4f565c1bac3cf5da1dbc50ada5894cb8cd",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_windows_appcontainer.py",
+      "bytes": 26007,
+      "sha256": "57e23120b6da5ab1391f68c054382164236cbe31846482a3aaa17856d069a3fd",
+      "staged_blob_sha": "58093f022007381b479a7f4bf69d3e245050d00f",
+      "raw_blob_sha": "58093f022007381b479a7f4bf69d3e245050d00f",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_windows_directory_reader.py",
+      "bytes": 6704,
+      "sha256": "35ad2ebd910a379a05177f18ac6fbd5c49b43f1c669f8844972cdcea46f5586f",
+      "staged_blob_sha": "97b2ca339e4c4bb7b5df23d128415018b0a707aa",
+      "raw_blob_sha": "97b2ca339e4c4bb7b5df23d128415018b0a707aa",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_windows_owned_python.py",
+      "bytes": 7869,
+      "sha256": "acf5b4e2d94758065cef125e5d6386ff741fe75e80bde2e66e0e67ac5e4a2651",
+      "staged_blob_sha": "769712486edf066a614c3535b9d2ab57ea8ef6a2",
+      "raw_blob_sha": "769712486edf066a614c3535b9d2ab57ea8ef6a2",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_windows_storage_budget.py",
+      "bytes": 11354,
+      "sha256": "3ab9e8b4e864a463280aa936e6cb1464db9a7d56710b4cec9f6dc0c8d931451a",
+      "staged_blob_sha": "7c9122e6bb65c657419f6827eeccc464254e7749",
+      "raw_blob_sha": "7c9122e6bb65c657419f6827eeccc464254e7749",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_windows_submission_reader.py",
+      "bytes": 11933,
+      "sha256": "27cd274f560c34c1101ccb1a5d0d2f1a7b4806a587ec90799475cb689bda42ba",
+      "staged_blob_sha": "9bd997e7bb2817824afd5344e59db199ed72fab0",
+      "raw_blob_sha": "9bd997e7bb2817824afd5344e59db199ed72fab0",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/_windows_trial_process.py",
+      "bytes": 16000,
+      "sha256": "b716265c9b8afd96c6534c722ee4bad62748dd6326a0178c15bafd69d0ad0a17",
+      "staged_blob_sha": "e277eb958554c16f5cb4808b86ff13d44776c880",
+      "raw_blob_sha": "e277eb958554c16f5cb4808b86ff13d44776c880",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/appcontainer_dependencies.py",
+      "bytes": 10577,
+      "sha256": "317b3f95063960575cd69365722393e46db485acc5e0a3c4bffde7930f8c2cf9",
+      "staged_blob_sha": "d64a95040da590fab96e7fa9c93266090b43b149",
+      "raw_blob_sha": "d64a95040da590fab96e7fa9c93266090b43b149",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/appcontainer_runtime.py",
+      "bytes": 8855,
+      "sha256": "0798526b4ac9c82906a20898a589ed49e57e5f63849c16db3da785bb2e53efaf",
+      "staged_blob_sha": "7a95e0b3db4cd9abeb375286052c8ef3b491d769",
+      "raw_blob_sha": "7a95e0b3db4cd9abeb375286052c8ef3b491d769",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/appcontainer_validator_worker.py",
+      "bytes": 1482,
+      "sha256": "e333bff3e8d40c07c8e2623a4d00d25e7f0f729251f02d7ec07fe93b494b5ab9",
+      "staged_blob_sha": "88d0427d1127e5a934e38eabc38a69de8fdba974",
+      "raw_blob_sha": "88d0427d1127e5a934e38eabc38a69de8fdba974",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/appcontainer_validator_worker_modern.py",
+      "bytes": 1575,
+      "sha256": "cd0b687c96263680590cd23a3818710c97510b89ef9555a17d11e9a3d4d1bdb2",
+      "staged_blob_sha": "340b446a04f58f50e1d45311c99f0c8aacab8e14",
+      "raw_blob_sha": "340b446a04f58f50e1d45311c99f0c8aacab8e14",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/check_native_trial_readiness.py",
+      "bytes": 3454,
+      "sha256": "f375b81d58863313ba5bcb256ae4afc9444e2482dc98860a5dc875f3a35f783c",
+      "staged_blob_sha": "27ae4ce68e2c3e4bf44e0f2906abdf1c5e6c0491",
+      "raw_blob_sha": "27ae4ce68e2c3e4bf44e0f2906abdf1c5e6c0491",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/collect_agent_workspace.py",
+      "bytes": 4009,
+      "sha256": "fe18ba7a2512d7ad30d5e987cc59dcdd1db3c782a6da080d082ea7755abdebc8",
+      "staged_blob_sha": "1c34b2414566b0b4a46c0d726cef78fbad0a9fd2",
+      "raw_blob_sha": "1c34b2414566b0b4a46c0d726cef78fbad0a9fd2",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/grade_agent_submission.py",
+      "bytes": 2852,
+      "sha256": "ae0a84a8c7671bba58e84b39762e0b7f3ebf1a8899e42c5cc0fae14ae4119aa8",
+      "staged_blob_sha": "ce8bebcf9955df6ced968b6e89147d2941f66538",
+      "raw_blob_sha": "ce8bebcf9955df6ced968b6e89147d2941f66538",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/grade_swe_skills_submission.py",
+      "bytes": 28897,
+      "sha256": "7e17f6219234aaae85fe0a4d5312c6071d935dbad18095bd916c18c2a75347b5",
+      "staged_blob_sha": "59a956526538bd7a0db0914521d9d3fb73c6c3f2",
+      "raw_blob_sha": "59a956526538bd7a0db0914521d9d3fb73c6c3f2",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/grade_validator_appcontainer.py",
+      "bytes": 11454,
+      "sha256": "61b2052e8caa63eb175ac9fc10be27ada4a443fdb5a308764158df1879fa241f",
+      "staged_blob_sha": "afd705c70ce3041dc1d937568c3e0fb7be0093a5",
+      "raw_blob_sha": "afd705c70ce3041dc1d937568c3e0fb7be0093a5",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/grade_validator_appcontainer_modern.py",
+      "bytes": 12682,
+      "sha256": "74942d47c6502f86a62770019e1cb0214145b5d9cd97fbe9a725ef69fd3c036c",
+      "staged_blob_sha": "0a352501962026d838acf1738d4dfc2f4226461a",
+      "raw_blob_sha": "0a352501962026d838acf1738d4dfc2f4226461a",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/prepare_native_node_replay.py",
+      "bytes": 13585,
+      "sha256": "8072bd840cbb9961582861f13b354a9fa9cde577ca9fa4def2a347f33eb4c915",
+      "staged_blob_sha": "7392be0f74b8c5cf4ee83661a9adb6552cd750b9",
+      "raw_blob_sha": "7392be0f74b8c5cf4ee83661a9adb6552cd750b9",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/run_agent_trial.py",
+      "bytes": 33541,
+      "sha256": "b2f72b158661a5ca8e1cde73ea2e3b2659f4177a0050c613566f46f37c14f768",
+      "staged_blob_sha": "4e6705c36523294c82c77cf6b40c4fb6203f2bdc",
+      "raw_blob_sha": "4e6705c36523294c82c77cf6b40c4fb6203f2bdc",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/transfer_benchmark_submission.py",
+      "bytes": 10653,
+      "sha256": "aa8abf2156e2274200360465dc8bf7b36e7218f7843c2682fe0d6d34414c6faa",
+      "staged_blob_sha": "13d2d8dfa347e45ae6960b6b39ea063538239fd3",
+      "raw_blob_sha": "13d2d8dfa347e45ae6960b6b39ea063538239fd3",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/validate_native_qualification_index.py",
+      "bytes": 5770,
+      "sha256": "33a8333d7400b1ef6305e171905317f1efca9ca64a0924239c8f6e1bd758cf14",
+      "staged_blob_sha": "d5f386c2ecf995e51149be14c2015a78418a876f",
+      "raw_blob_sha": "d5f386c2ecf995e51149be14c2015a78418a876f",
+      "checkout_identical": true
+    },
+    {
+      "path": "tools/verify_swe_skills_bench_pytest_result.py",
+      "bytes": 13841,
+      "sha256": "5f6af07acc181f1c56cdd30feb3bc9fe4589b30991c204db4565eea574137545",
+      "staged_blob_sha": "90185b4aadda96a78684321879f60ecb4126058f",
+      "raw_blob_sha": "90185b4aadda96a78684321879f60ecb4126058f",
+      "checkout_identical": true
+    }
+  ],
+  "scope": "Real add and checkout with Windows line conversion enabled; no commit or ref update",
+  "model_trials": 0
+}

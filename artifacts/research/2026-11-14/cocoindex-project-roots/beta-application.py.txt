@@ -1,0 +1,2 @@
+def load_temperature_readings(values):
+    return sum(values)

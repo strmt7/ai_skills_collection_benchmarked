@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "scope": "Windows x64 local CPU provider: two disposable Git projects, separate source and provider roots, verified native source spans, relative target-state paths, retained provider installation, and automatic frontend index check/search. This is transport and portability qualification, not retrieval-quality or agent-effectiveness evidence.",
+  "source_sha256": {
+    "tools/cocoindex_tool.py": "c4505d37b5672a9ad81b813fa85dd80a56c984cdb9b2d3b678f4e06b60609151",
+    "tools/cocoindex_runtime.py": "3c370bc0ea8dd6c6abc9fa498a1378c2e55e66e8ee4929ec89cfb0204d611ea0",
+    "tools/search_semantic_corpus.py": "2edae444b05bd0b87021f84a2ff28ec3575a97f8f4c39204c7e591764a956720",
+    "tests/test_cocoindex_provider.py": "9e051104af8d14c5fad019603e1644e5389a1b3f9f75e4d2bbf0046e0322ab9a",
+    "tests/test_semantic_search.py": "fc94f5857ca3a429c7254b139c207c075478078d7fc97f25df5786a2690802d0",
+    "toolchains/cocoindex-code/README.md": "eb00cdf2da97dcbb61a2a5cc9c28583edde912905dd0ad74b73a82e7a1d1ec61",
+    ".agents/skills/cocoindex-code-search/SKILL.md": "e9605deac6690223e649e1c3941e342cceba7b16a2441392fde69435bd4f4edd",
+    "docs/installation.md": "276f4714e12c2ce908549e80aebb01ca8db0179a001bce96f8429bbc68f45f34"
+  },
+  "artifacts": {
+    "alpha-application.py.txt": "38f02786cf255bab8f1a0930732d2575804db6ce228d0801fc9b2974470dabb5",
+    "alpha-search.json": "edf1a06470648d0a2f0a092861e670ca32fe43160ab7db799ae8ef664e3dad2c",
+    "automatic-query-process.json": "d1c1560210e96d99a572db04e70757a6f1d52ccfd791b9ece04bf5255c4ff703",
+    "automatic-search.json": "2269adcc326a514323aea65e37982f1c8642a4eb63f962d8998a63b233c592b0",
+    "beta-application.py.txt": "b5bdfa22455d7cf0f873186fcf0a4055f94302547aa0c636aaeb4b689e8f457b",
+    "beta-search.json": "0ba334c6ba06324218548874b56c782a6aab24aaa79b475b007debb9490cdecb",
+    "control.py.txt": "8b90462af3094182bdad82d1f00fd8584d9e6b1aed1c727e3bf790a6625680d7",
+    "native.json": "ddafb550454bfe7b54f363010202c20d009612d46ecf0a0826b4e8f604e9adc7",
+    "provider-installation.json": "f6f55883b3086dfdb73f266a881663f271849fd5dab645c0d2283e0dad4126a8"
+  },
+  "native_projects": 2,
+  "provider_version": "0.2.43+catalog.local1",
+  "new_installation_per_project": false,
+  "automatic_recovery_observed": true,
+  "initial_failure": "The earlier provider referenced a missing base interpreter; automatic isolated setup restored a fresh profile. The cause of the missing old path was not established.",
+  "owned_process_cleanup_verified": true,
+  "model_trials": 0,
+  "model_improvement_established": false
+}

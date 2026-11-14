@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "scope": "Update five pnpm/setup pins from v3.1.2 to officially resolved v3.2.0; retain release/tag/action metadata and compare all 13 action repositories. Hosted behavior remains subject to the next workflow run.",
+  "source_sha256": {
+    ".github/workflows/pnpm-cache-install.yml": "4fd0a093a2b5bfb3d5d366d75277a83320aeb264194eaaefae0236434a1503ea"
+  },
+  "artifacts": {
+    "official-release.json": "b029857bee8c670164d66b5934fa1aeceedb536dbe9a0d9c11313c3f8ae86f73",
+    "pin-check.json": "01a8e429b514b44880b8822efce7de2f9e1c47b28cd8c8ad498e05a92d41ede6",
+    "release-observations.json": "69683f9f217897698a626fbefef4c0a643a9eaad6670183d926e69fc0b08249c"
+  },
+  "model_trials": 0,
+  "hosted_execution_of_new_pin_qualified": false
+}
