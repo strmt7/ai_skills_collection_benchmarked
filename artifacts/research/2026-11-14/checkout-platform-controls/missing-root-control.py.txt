@@ -1,0 +1,18 @@
+"""Exercise fake Windows runtime unit controls without borrowing host SYSTEMROOT."""
+import os
+import runpy
+import sys
+from pathlib import Path
+R=Path(__file__).resolve().parents[3]
+native_environment=os.environ
+simulated=dict(native_environment)
+simulated.pop('SYSTEMROOT',None)
+simulated.pop('SystemRoot',None)
+# Replace the Python mapping only; Windows' native loader environment stays intact.
+os.environ=simulated
+sys.path.insert(0,str(R))
+sys.argv=['pytest','-q','--no-cov','tests/test_native_benchmark_runtime.py']
+try:
+    runpy.run_module('pytest',run_name='__main__',alter_sys=True)
+finally:
+    os.environ=native_environment

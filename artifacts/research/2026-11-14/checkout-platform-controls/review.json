@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "scope": "All 585 raw-bound evidence/source paths survive Git staging and checkout with autocrlf=false and true. Five focused checks include both type targets and all 37 fake Windows runtime cases with no SYSTEMROOT in the Python environment mapping. The native OS loader environment remains intact. Production runtime and every existing assertion about engine/image identity, quotas and deadlines remain unchanged.",
+  "source_sha256": {
+    ".gitattributes": "013ddc7f4e43a70ea247a93db9be4e133ef024308d93b87b85e9890978bd64fa",
+    "tests/test_native_benchmark_runtime.py": "4094ed88e53fe988eefdf09953aeb86148d7a61453927e915de83507257d9357",
+    "tests/test_native_project_resource_artifacts.py": "be34174fb31a93f2c5e480a1fd3131c60053dba81df1efb09019c1554a633216"
+  },
+  "artifacts": {
+    "format.stdout.native": "3bc53bf3e981a98a34a852e175bf9b77af841edea74fca595d9aedcbaf9a4938",
+    "lint.stdout.native": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "missing-host-systemroot.stdout.native": "9c00f5e6fb8376041c02e496b73b4a88e2efe6c24cfb55f4d8c1e8b13e1f8a58",
+    "missing-root-control.py.txt": "6baaca2fcfa084e5a749e4741935f7a9fa2e398a905cb4e0bb079578a6001ddc",
+    "transport-control.py.txt": "ad5ab12029ed2ed11c173f41c346451dce6af7a88876b47163056f91b2983f3b",
+    "transport.json": "5ed7dec2f64388b32d52df4075b931bb5ff2d67812584a3a9750dd4e0a67b59c",
+    "types-linux.stdout.native": "680d481cc62731d2fd04d8210927e7bd5809d6ac50c76e04c215cd8ff6cdcec8",
+    "types-win32.stdout.native": "680d481cc62731d2fd04d8210927e7bd5809d6ac50c76e04c215cd8ff6cdcec8"
+  },
+  "transport_files": 585,
+  "eol_modes": [
+    "false",
+    "true"
+  ],
+  "focused_checks": 5,
+  "mock_runtime_cases": 37,
+  "earlier_invalid_probe": "Deleting the actual Windows process environment before pytest startup prevented Winsock initialization. That failed attempt is retained; the corrected probe simulates only the Python mapping.",
+  "actual_linux_execution_qualified": false,
+  "model_inferences": 0
+}

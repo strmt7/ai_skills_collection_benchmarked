@@ -1,0 +1,56 @@
+"""Verify every raw ledger evidence reference and native source through both Git EOL modes."""
+import hashlib
+import json
+import os
+import subprocess
+from pathlib import Path
+S=Path(__file__).resolve().parent;R=S.parents[2]
+read=lambda p:json.loads(p.read_bytes())
+sha=lambda raw:hashlib.sha256(raw).hexdigest()
+b=read(S/'swe-capsule-qualified-tool-bindings-v2.json');git=Path(b['git'])
+if sha(git.read_bytes())!=b['git_sha256']:raise ValueError('Git identity changed')
+O=S/'bound-content-transport-qualified-v1';O.mkdir()
+env=dict(os.environ,GIT_INDEX_FILE=str(O/'index'))
+def run(*args,input=None,mode='false'):
+    return subprocess.run([str(git),'--literal-pathspecs','-c','core.longpaths=true','-c','core.autocrlf='+mode,*args],cwd=R,env=env,input=input,check=True,capture_output=True,timeout=90).stdout
+names={'.gitattributes','tests/test_native_benchmark_runtime.py','tests/test_native_project_resource_artifacts.py'}
+ledger=read(R/'data/improvement_ledger.json')
+for state in ledger['skills'].values():
+    for phase in ['research','revision','evaluation']:
+        names.update(e['path'] for e in state[phase].get('evidence',[]))
+index=read(R/'data/native_qualification_index.json')
+for reference in [*index['components'],*index['historical_reviews']]:
+    path=R/reference['review']['path'];review=read(path)
+    names.add(reference['review']['path']);names.update(review['source_sha256'])
+    names.update((path.parent/n).relative_to(R).as_posix() for n in review['artifacts'])
+for slug in ['makefile-generator-go','makefile-generator-project-wrappers']:
+    base=R/'included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops'/slug
+    names.update(p.relative_to(R).as_posix() for p in base.rglob('*') if p.is_file())
+names=sorted(names)
+for name in names:
+    path=R/name
+    if not path.resolve(strict=True).is_relative_to(R) or path.is_symlink():raise ValueError('Invalid evidence path')
+paths=b'\0'.join(name.encode('utf-8') for name in names)+b'\0'
+(O/'paths.null').write_bytes(paths)
+run('read-tree','HEAD')
+run('add','--pathspec-from-file='+str(O/'paths.null'),'--pathspec-file-nul')
+staged={}
+for item in run('ls-files','--stage','-z').split(b'\0'):
+    if item:
+        meta,name=item.split(b'\t',1);staged[name.decode('utf-8')]=meta.split()[1].decode()
+preflight=O/'preflight';preflight.mkdir()
+run('checkout-index','-z','--stdin','--prefix='+preflight.as_posix()+'/',input=b'.gitattributes\0')
+if (preflight/'.gitattributes').read_bytes()!=(R/'.gitattributes').read_bytes():raise ValueError('Export preflight failed')
+records={}
+for name in names:
+    raw=(R/name).read_bytes();oid=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
+    records[name]={'sha256':sha(raw),'bytes':len(raw),'staged_sha1':staged[name],'raw_sha1':oid,'exports':{}}
+for mode in ['false','true']:
+    export=O/('checkout-'+mode);export.mkdir()
+    run('checkout-index','-z','--stdin','--prefix='+export.as_posix()+'/',input=paths,mode=mode)
+    for name in names:records[name]['exports'][mode]=sha((export/name).read_bytes())
+errors=[n for n,r in records.items() if r['staged_sha1']!=r['raw_sha1'] or any(d!=r['sha256'] for d in r['exports'].values())]
+result={'passed':not errors,'files':len(names),'records':records,'errors':errors,'scope':'All raw phase evidence across 673 skills, native qualification source/artifact paths and both new Makefile repairs. Real Git add/checkout with core.autocrlf=false and true. No mirror edits, commits or ref updates.','git_sha256':b['git_sha256'],'model_inferences':0}
+(O/'result.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8',newline='\n')
+print(json.dumps({'passed':not errors,'files':len(names),'errors':errors}))
+raise SystemExit(bool(errors))

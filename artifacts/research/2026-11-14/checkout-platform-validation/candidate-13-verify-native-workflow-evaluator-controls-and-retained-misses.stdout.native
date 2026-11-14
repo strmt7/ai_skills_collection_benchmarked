@@ -1,0 +1,425 @@
+{
+  "ok": true,
+  "errors": [],
+  "variants": [
+    {
+      "revision": 1,
+      "cases": [
+        {
+          "case_id": "bash-direct-template",
+          "domain_expected_unsafe": true,
+          "native": {
+            "actionlint": {
+              "exit_code": 1,
+              "all_diagnostic_count": 1,
+              "all_rules": [
+                "expression"
+              ],
+              "all_severities": null,
+              "target_hazard_detected": true,
+              "no_diagnostics": false
+            },
+            "zizmor": {
+              "exit_code": 14,
+              "all_diagnostic_count": 2,
+              "all_rules": [
+                "template-injection",
+                "anonymous-definition"
+              ],
+              "all_severities": [
+                "High",
+                "Informational"
+              ],
+              "target_hazard_detected": true,
+              "no_diagnostics": false
+            }
+          }
+        },
+        {
+          "case_id": "bash-environment-data",
+          "domain_expected_unsafe": false,
+          "native": {
+            "actionlint": {
+              "exit_code": 0,
+              "all_diagnostic_count": 0,
+              "all_rules": [],
+              "all_severities": null,
+              "target_hazard_detected": null,
+              "no_diagnostics": true
+            },
+            "zizmor": {
+              "exit_code": 11,
+              "all_diagnostic_count": 1,
+              "all_rules": [
+                "anonymous-definition"
+              ],
+              "all_severities": [
+                "Informational"
+              ],
+              "target_hazard_detected": null,
+              "no_diagnostics": false
+            }
+          }
+        },
+        {
+          "case_id": "powershell-direct-template",
+          "domain_expected_unsafe": true,
+          "native": {
+            "actionlint": {
+              "exit_code": 1,
+              "all_diagnostic_count": 1,
+              "all_rules": [
+                "expression"
+              ],
+              "all_severities": null,
+              "target_hazard_detected": true,
+              "no_diagnostics": false
+            },
+            "zizmor": {
+              "exit_code": 14,
+              "all_diagnostic_count": 2,
+              "all_rules": [
+                "template-injection",
+                "anonymous-definition"
+              ],
+              "all_severities": [
+                "High",
+                "Informational"
+              ],
+              "target_hazard_detected": true,
+              "no_diagnostics": false
+            }
+          }
+        },
+        {
+          "case_id": "powershell-environment-data",
+          "domain_expected_unsafe": false,
+          "native": {
+            "actionlint": {
+              "exit_code": 0,
+              "all_diagnostic_count": 0,
+              "all_rules": [],
+              "all_severities": null,
+              "target_hazard_detected": null,
+              "no_diagnostics": true
+            },
+            "zizmor": {
+              "exit_code": 11,
+              "all_diagnostic_count": 1,
+              "all_rules": [
+                "anonymous-definition"
+              ],
+              "all_severities": [
+                "Informational"
+              ],
+              "target_hazard_detected": null,
+              "no_diagnostics": false
+            }
+          }
+        },
+        {
+          "case_id": "environment-fed-eval",
+          "domain_expected_unsafe": true,
+          "native": {
+            "actionlint": {
+              "exit_code": 0,
+              "all_diagnostic_count": 0,
+              "all_rules": [],
+              "all_severities": null,
+              "target_hazard_detected": false,
+              "no_diagnostics": true
+            },
+            "zizmor": {
+              "exit_code": 11,
+              "all_diagnostic_count": 1,
+              "all_rules": [
+                "anonymous-definition"
+              ],
+              "all_severities": [
+                "Informational"
+              ],
+              "target_hazard_detected": false,
+              "no_diagnostics": false
+            }
+          }
+        },
+        {
+          "case_id": "checkout-mutable-ref",
+          "domain_expected_unsafe": true,
+          "native": {
+            "actionlint": {
+              "exit_code": 0,
+              "all_diagnostic_count": 0,
+              "all_rules": [],
+              "all_severities": null,
+              "target_hazard_detected": false,
+              "no_diagnostics": true
+            },
+            "zizmor": {
+              "exit_code": 14,
+              "all_diagnostic_count": 2,
+              "all_rules": [
+                "unpinned-uses",
+                "anonymous-definition"
+              ],
+              "all_severities": [
+                "High",
+                "Informational"
+              ],
+              "target_hazard_detected": true,
+              "no_diagnostics": false
+            }
+          }
+        },
+        {
+          "case_id": "checkout-immutable-ref",
+          "domain_expected_unsafe": false,
+          "native": {
+            "actionlint": {
+              "exit_code": 0,
+              "all_diagnostic_count": 0,
+              "all_rules": [],
+              "all_severities": null,
+              "target_hazard_detected": null,
+              "no_diagnostics": true
+            },
+            "zizmor": {
+              "exit_code": 11,
+              "all_diagnostic_count": 1,
+              "all_rules": [
+                "anonymous-definition"
+              ],
+              "all_severities": [
+                "Informational"
+              ],
+              "target_hazard_detected": null,
+              "no_diagnostics": false
+            }
+          }
+        }
+      ],
+      "tools": {
+        "actionlint": {
+          "missed_hazards": [
+            "environment-fed-eval",
+            "checkout-mutable-ref"
+          ],
+          "domain_safe_controls_with_findings": [],
+          "qualified_as_complete_security_grader": false
+        },
+        "zizmor": {
+          "missed_hazards": [
+            "environment-fed-eval"
+          ],
+          "domain_safe_controls_with_findings": [
+            "bash-environment-data",
+            "powershell-environment-data",
+            "checkout-immutable-ref"
+          ],
+          "qualified_as_complete_security_grader": false
+        }
+      }
+    },
+    {
+      "revision": 2,
+      "cases": [
+        {
+          "case_id": "bash-direct-template",
+          "domain_expected_unsafe": true,
+          "native": {
+            "actionlint": {
+              "exit_code": 1,
+              "all_diagnostic_count": 1,
+              "all_rules": [
+                "expression"
+              ],
+              "all_severities": null,
+              "target_hazard_detected": true,
+              "no_diagnostics": false
+            },
+            "zizmor": {
+              "exit_code": 14,
+              "all_diagnostic_count": 1,
+              "all_rules": [
+                "template-injection"
+              ],
+              "all_severities": [
+                "High"
+              ],
+              "target_hazard_detected": true,
+              "no_diagnostics": false
+            }
+          }
+        },
+        {
+          "case_id": "bash-environment-data",
+          "domain_expected_unsafe": false,
+          "native": {
+            "actionlint": {
+              "exit_code": 0,
+              "all_diagnostic_count": 0,
+              "all_rules": [],
+              "all_severities": null,
+              "target_hazard_detected": null,
+              "no_diagnostics": true
+            },
+            "zizmor": {
+              "exit_code": 0,
+              "all_diagnostic_count": 0,
+              "all_rules": [],
+              "all_severities": [],
+              "target_hazard_detected": null,
+              "no_diagnostics": true
+            }
+          }
+        },
+        {
+          "case_id": "powershell-direct-template",
+          "domain_expected_unsafe": true,
+          "native": {
+            "actionlint": {
+              "exit_code": 1,
+              "all_diagnostic_count": 1,
+              "all_rules": [
+                "expression"
+              ],
+              "all_severities": null,
+              "target_hazard_detected": true,
+              "no_diagnostics": false
+            },
+            "zizmor": {
+              "exit_code": 14,
+              "all_diagnostic_count": 1,
+              "all_rules": [
+                "template-injection"
+              ],
+              "all_severities": [
+                "High"
+              ],
+              "target_hazard_detected": true,
+              "no_diagnostics": false
+            }
+          }
+        },
+        {
+          "case_id": "powershell-environment-data",
+          "domain_expected_unsafe": false,
+          "native": {
+            "actionlint": {
+              "exit_code": 0,
+              "all_diagnostic_count": 0,
+              "all_rules": [],
+              "all_severities": null,
+              "target_hazard_detected": null,
+              "no_diagnostics": true
+            },
+            "zizmor": {
+              "exit_code": 0,
+              "all_diagnostic_count": 0,
+              "all_rules": [],
+              "all_severities": [],
+              "target_hazard_detected": null,
+              "no_diagnostics": true
+            }
+          }
+        },
+        {
+          "case_id": "environment-fed-eval",
+          "domain_expected_unsafe": true,
+          "native": {
+            "actionlint": {
+              "exit_code": 0,
+              "all_diagnostic_count": 0,
+              "all_rules": [],
+              "all_severities": null,
+              "target_hazard_detected": false,
+              "no_diagnostics": true
+            },
+            "zizmor": {
+              "exit_code": 0,
+              "all_diagnostic_count": 0,
+              "all_rules": [],
+              "all_severities": [],
+              "target_hazard_detected": false,
+              "no_diagnostics": true
+            }
+          }
+        },
+        {
+          "case_id": "checkout-mutable-ref",
+          "domain_expected_unsafe": true,
+          "native": {
+            "actionlint": {
+              "exit_code": 0,
+              "all_diagnostic_count": 0,
+              "all_rules": [],
+              "all_severities": null,
+              "target_hazard_detected": false,
+              "no_diagnostics": true
+            },
+            "zizmor": {
+              "exit_code": 14,
+              "all_diagnostic_count": 1,
+              "all_rules": [
+                "unpinned-uses"
+              ],
+              "all_severities": [
+                "High"
+              ],
+              "target_hazard_detected": true,
+              "no_diagnostics": false
+            }
+          }
+        },
+        {
+          "case_id": "checkout-immutable-ref",
+          "domain_expected_unsafe": false,
+          "native": {
+            "actionlint": {
+              "exit_code": 0,
+              "all_diagnostic_count": 0,
+              "all_rules": [],
+              "all_severities": null,
+              "target_hazard_detected": null,
+              "no_diagnostics": true
+            },
+            "zizmor": {
+              "exit_code": 0,
+              "all_diagnostic_count": 0,
+              "all_rules": [],
+              "all_severities": [],
+              "target_hazard_detected": null,
+              "no_diagnostics": true
+            }
+          }
+        }
+      ],
+      "tools": {
+        "actionlint": {
+          "missed_hazards": [
+            "environment-fed-eval",
+            "checkout-mutable-ref"
+          ],
+          "domain_safe_controls_with_findings": [],
+          "qualified_as_complete_security_grader": false
+        },
+        "zizmor": {
+          "missed_hazards": [
+            "environment-fed-eval"
+          ],
+          "domain_safe_controls_with_findings": [],
+          "qualified_as_complete_security_grader": false
+        }
+      }
+    }
+  ],
+  "agent_efficacy_scored": false,
+  "quality_superiority_claim_permitted": false,
+  "limits": [
+    "These seven controls are selected domain probes, not a representative vulnerability distribution.",
+    "Native outputs and independent ground truth must remain separate; unrelated findings do not detect the intended hazard.",
+    "Offline zizmor excludes remote audits. Optional ShellCheck and Pyflakes were not provisioned for actionlint.",
+    "Hashes validate recorded bytes, not an independently witnessed execution or a binary signature.",
+    "No coding-agent comparison, real GitHub event execution or model superiority is measured."
+  ]
+}

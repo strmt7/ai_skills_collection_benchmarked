@@ -1,0 +1,47 @@
+"""Run clean-checkout tests through the supported launcher and declared tool environment."""
+import argparse
+import hashlib
+import json
+import os
+import sys
+import tempfile
+from pathlib import Path
+S=Path(__file__).resolve().parent;R=S.parents[2]
+sys.path.insert(0,str(R/'tools'))
+from _windows_trial_process import run_owned
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--domain',type=Path,required=True)
+parser.add_argument('--checkout',type=Path,required=True)
+parser.add_argument('--output',type=Path,required=True)
+args=parser.parse_args()
+domain=args.domain.resolve(strict=True)
+C=args.checkout.resolve(strict=True)
+O=args.output.resolve()
+if not all(p.is_relative_to(S) and p!=S for p in (domain,C,O)):raise ValueError('Use owned research paths')
+prior=json.loads(domain.read_bytes())
+if prior['candidate_domain_passed']!=21 or not prior['source_unchanged']:raise ValueError('Complete clean-checkout domain qualification is required')
+O.mkdir()
+for name,digest in prior['source_sha256'].items():
+    if hashlib.sha256((R/name).read_bytes()).hexdigest()!=digest or hashlib.sha256((C/name).read_bytes()).hexdigest()!=digest:raise ValueError('Candidate inputs changed')
+for name in ['AI_SKILLS_GIT','AI_SKILLS_BASH','AI_SKILLS_UV']:
+    if not Path(os.environ[name]).is_file():raise ValueError('Missing managed capability: '+name)
+environment=dict(os.environ)
+records=[]
+with tempfile.TemporaryDirectory(prefix='cc-') as reserved:
+    temporary=Path(reserved).resolve()
+    if temporary.parent!=Path(tempfile.gettempdir()).resolve():raise ValueError('Temporary root changed')
+    environment.update(TEMP=str(temporary),TMP=str(temporary))
+    base=[sys.executable,'-I','-B',str(C/'tools/_bootstrap_launch.py'),'--packages',str(Path(sys.prefix)/'Lib/site-packages'),'--root',str(C),'--','-m','pytest','-q']
+    cases=[('preflight',[*base,'--no-cov','tests/test_agent_tool_policy.py','tests/test_cocoindex_provider.py::test_external_project_index_keeps_provider_and_project_state_separate','tests/test_pnpm_cache_install.py::test_fixture_refuses_existing_files_and_distinct_runs_change_package'],180),('full-tests',[*base,'-n','2','--cov-report','xml:'+str(O/'coverage.xml')],1500)]
+    for label,command,timeout in cases:
+        with (O/(label+'.stdout.native')).open('xb') as stdout,(O/(label+'.stderr.native')).open('xb') as stderr,open(os.devnull,'rb') as stdin:
+            process=run_owned(command,cwd=C,stdin=stdin,stdout=stdout,stderr=stderr,timeout=timeout,output_limit=16*1024**2,memory_limit=4*1024**3,process_limit=64,environment=environment)
+        passed=process['exit_code']==0 and not process['termination_reason'] and process['job_active_processes_after_cleanup']==0
+        records.append({'id':label,'passed':passed,'process':process})
+        (O/'progress.json').write_text(json.dumps(records,indent=2)+'\n',encoding='utf-8',newline='\n')
+        print(label+(': passed' if passed else ': FAILED'),flush=True)
+        if not passed:break
+    unchanged=all(hashlib.sha256((R/name).read_bytes()).hexdigest()==digest and hashlib.sha256((C/name).read_bytes()).hexdigest()==digest for name,digest in prior['source_sha256'].items())
+result={'passed':len(records)==2 and all(r['passed'] for r in records) and unchanged,'records':records,'source_unchanged':unchanged,'source_sha256':prior['source_sha256'],'prior_domain_qualification_sha256':hashlib.sha256(domain.read_bytes()).hexdigest(),'domain_gates_passed':21,'temporary_directory_removed':not temporary.exists(),'model_invocations':0}
+(O/'qualification.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8',newline='\n')
+raise SystemExit(not result['passed'])

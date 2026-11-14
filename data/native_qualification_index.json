@@ -10,7 +10,6 @@
       "sources": [
         "tools/_native_benchmark_runtime.py",
         "tools/grade_swe_skills_submission.py",
-        "tests/test_native_benchmark_runtime.py",
         "tests/test_grade_swe_skills_submission.py"
       ]
     },
@@ -58,7 +57,6 @@
         "sha256": "2862e244fe2f070cfbc1c50c6304e261d6f4e9307cfd3732d244d52fb5e8ec4e"
       },
       "sources": [
-        ".gitattributes",
         "requirements-reports-lock.txt"
       ]
     },
@@ -107,6 +105,18 @@
       },
       "sources": [
         "tests/test_semantic_search.py"
+      ]
+    },
+    {
+      "id": "checkout-platform-controls",
+      "review": {
+        "path": "artifacts/research/2026-11-14/checkout-platform-controls/review.json",
+        "sha256": "52ccd5251dac352333233e33a777003b0d3d35b002fe10ab96fb2b55b6835cd2"
+      },
+      "sources": [
+        ".gitattributes",
+        "tests/test_native_benchmark_runtime.py",
+        "tests/test_native_project_resource_artifacts.py"
       ]
     }
   ],
@@ -162,6 +172,24 @@
       },
       "superseded_sources": [
         "tests/test_semantic_search.py"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-13/native-project-resources/review.json",
+        "sha256": "43722091a64a46feb6ec40b079106da0c37ea367bd7306b0f7d944e58d5f8072"
+      },
+      "superseded_sources": [
+        "tests/test_native_benchmark_runtime.py"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-14/publication-byte-retention-v3/review.json",
+        "sha256": "2862e244fe2f070cfbc1c50c6304e261d6f4e9307cfd3732d244d52fb5e8ec4e"
+      },
+      "superseded_sources": [
+        ".gitattributes"
       ]
     }
   ]

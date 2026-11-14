@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "records": [
+    {
+      "id": "preflight",
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 101,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 180.0,
+        "job_memory_limit_bytes": 4294967296,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    },
+    {
+      "id": "full-tests",
+      "passed": true,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 26976,
+        "output_limit_bytes": 16777216,
+        "wall_time_limit_seconds": 1500.0,
+        "job_memory_limit_bytes": 4294967296,
+        "active_process_limit": 64,
+        "explicit_environment": true
+      }
+    }
+  ],
+  "source_unchanged": true,
+  "source_sha256": {
+    ".gitattributes": "013ddc7f4e43a70ea247a93db9be4e133ef024308d93b87b85e9890978bd64fa",
+    "tests/test_native_benchmark_runtime.py": "4094ed88e53fe988eefdf09953aeb86148d7a61453927e915de83507257d9357",
+    "tests/test_native_project_resource_artifacts.py": "be34174fb31a93f2c5e480a1fd3131c60053dba81df1efb09019c1554a633216",
+    "data/native_qualification_index.json": "80a33d9ebff5f912b7bf228888caafb0b36107d953343314f5526689e48d144c",
+    "artifacts/research/2026-11-14/checkout-platform-controls/format.stdout.native": "3bc53bf3e981a98a34a852e175bf9b77af841edea74fca595d9aedcbaf9a4938",
+    "artifacts/research/2026-11-14/checkout-platform-controls/lint.stdout.native": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "artifacts/research/2026-11-14/checkout-platform-controls/missing-host-systemroot.stdout.native": "9c00f5e6fb8376041c02e496b73b4a88e2efe6c24cfb55f4d8c1e8b13e1f8a58",
+    "artifacts/research/2026-11-14/checkout-platform-controls/missing-root-control.py.txt": "6baaca2fcfa084e5a749e4741935f7a9fa2e398a905cb4e0bb079578a6001ddc",
+    "artifacts/research/2026-11-14/checkout-platform-controls/review.json": "52ccd5251dac352333233e33a777003b0d3d35b002fe10ab96fb2b55b6835cd2",
+    "artifacts/research/2026-11-14/checkout-platform-controls/transport-control.py.txt": "ad5ab12029ed2ed11c173f41c346451dce6af7a88876b47163056f91b2983f3b",
+    "artifacts/research/2026-11-14/checkout-platform-controls/transport.json": "5ed7dec2f64388b32d52df4075b931bb5ff2d67812584a3a9750dd4e0a67b59c",
+    "artifacts/research/2026-11-14/checkout-platform-controls/types-linux.stdout.native": "680d481cc62731d2fd04d8210927e7bd5809d6ac50c76e04c215cd8ff6cdcec8",
+    "artifacts/research/2026-11-14/checkout-platform-controls/types-win32.stdout.native": "680d481cc62731d2fd04d8210927e7bd5809d6ac50c76e04c215cd8ff6cdcec8",
+    "included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-go/LICENSE": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+    "included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-go/NOTICE.md": "d518fc20c24e3ff7ecca3e3efe776e2e61cc448ee0d5d3ffef3e0f2ecc346fa3",
+    "included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-go/provenance/original.generate.sh": "f85287a85ab0b152b2d7f8681642d616031896e4e75d45b78970de514a324747",
+    "included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-go/provenance/original.SKILL.md": "c0090361f2f9999c81050beb7d65aaf4338094559bd227d944aafbf1500286fe",
+    "included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-go/repair.json": "236e3f7846780f7e9ed5f2aa0fa179d56b6cc71a5065aeaeebfde341d97c609c",
+    "included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-go/SKILL.md": "a035c8253bf10c51e0afda0efd438af77ffb57e13d075927237941bd59c0486d",
+    "included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-project-wrappers/LICENSE": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+    "included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-project-wrappers/NOTICE.md": "d518fc20c24e3ff7ecca3e3efe776e2e61cc448ee0d5d3ffef3e0f2ecc346fa3",
+    "included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-project-wrappers/provenance/original.generate.sh": "f85287a85ab0b152b2d7f8681642d616031896e4e75d45b78970de514a324747",
+    "included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-project-wrappers/provenance/original.SKILL.md": "c0090361f2f9999c81050beb7d65aaf4338094559bd227d944aafbf1500286fe",
+    "included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-project-wrappers/repair.json": "01c8a3002f39a2f3b7813d78f75ee01c22800183aa78735308ae183c51a2a4f0",
+    "included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-project-wrappers/SKILL.md": "3a7bbd5a40e6e28a3e97efc580d042796c06452b6e69695981be5f5b79379b83"
+  },
+  "prior_domain_qualification_sha256": "b9fad2a25ebcd92eb1c46da6888d007e900d84e6d73f36057b6bb4be82f861d9",
+  "domain_gates_passed": 21,
+  "temporary_directory_removed": true,
+  "model_invocations": 0
+}

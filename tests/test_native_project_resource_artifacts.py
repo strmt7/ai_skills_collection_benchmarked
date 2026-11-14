@@ -7,14 +7,16 @@ import hashlib
 import json
 from pathlib import Path
 
+from validate_native_qualification_index import validate
+
 ROOT = Path(__file__).resolve().parents[1]
 FOLDER = ROOT / "artifacts/research/2026-11-13/native-project-resources"
 
 
 def test_native_resource_evidence_matches_current_source_and_kernel_observations() -> None:
     review = json.loads((FOLDER / "review.json").read_bytes())
-    for name, digest in review["source_sha256"].items():
-        assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == digest, name
+    qualification = validate(ROOT)
+    assert qualification["ok"], qualification["errors"]
     for name, digest in review["artifacts"].items():
         assert hashlib.sha256((FOLDER / name).read_bytes()).hexdigest() == digest, name
     native = json.loads((FOLDER / "native-resources.json").read_bytes())

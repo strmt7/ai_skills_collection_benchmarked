@@ -1,0 +1,213 @@
+{
+  "categories": {
+    "Agent infrastructure & skill creation": {
+      "evaluation": {
+        "in_progress": 2,
+        "pending": 6
+      },
+      "research": {
+        "complete": 1,
+        "in_progress": 7
+      },
+      "revision": {
+        "in_progress": 2,
+        "pending": 6
+      },
+      "skills": 8
+    },
+    "Cloud, Azure & Microsoft SDKs": {
+      "evaluation": {
+        "pending": 178
+      },
+      "research": {
+        "in_progress": 10,
+        "pending": 168
+      },
+      "revision": {
+        "in_progress": 9,
+        "pending": 169
+      },
+      "skills": 178
+    },
+    "Coding, refactoring & repository automation": {
+      "evaluation": {
+        "in_progress": 7,
+        "pending": 23
+      },
+      "research": {
+        "in_progress": 20,
+        "pending": 10
+      },
+      "revision": {
+        "complete": 3,
+        "in_progress": 9,
+        "pending": 18
+      },
+      "skills": 30
+    },
+    "Communication, productivity & support": {
+      "evaluation": {
+        "pending": 59
+      },
+      "research": {
+        "in_progress": 20,
+        "pending": 39
+      },
+      "revision": {
+        "pending": 59
+      },
+      "skills": 59
+    },
+    "Creative, media & design": {
+      "evaluation": {
+        "pending": 30
+      },
+      "research": {
+        "complete": 1,
+        "in_progress": 27,
+        "pending": 2
+      },
+      "revision": {
+        "in_progress": 1,
+        "pending": 29
+      },
+      "skills": 30
+    },
+    "DevOps, cloud & operations": {
+      "evaluation": {
+        "in_progress": 1,
+        "pending": 39
+      },
+      "research": {
+        "in_progress": 36,
+        "pending": 4
+      },
+      "revision": {
+        "in_progress": 2,
+        "pending": 38
+      },
+      "skills": 40
+    },
+    "Documents, spreadsheets & presentations": {
+      "evaluation": {
+        "pending": 12
+      },
+      "research": {
+        "in_progress": 12
+      },
+      "revision": {
+        "in_progress": 3,
+        "pending": 9
+      },
+      "skills": 12
+    },
+    "Finance, commerce & forecasting": {
+      "evaluation": {
+        "pending": 2
+      },
+      "research": {
+        "in_progress": 2
+      },
+      "revision": {
+        "pending": 2
+      },
+      "skills": 2
+    },
+    "Frontend, UI & browser automation": {
+      "evaluation": {
+        "in_progress": 2,
+        "pending": 1
+      },
+      "research": {
+        "in_progress": 3
+      },
+      "revision": {
+        "complete": 2,
+        "pending": 1
+      },
+      "skills": 3
+    },
+    "Game, mobile & visual QA": {
+      "evaluation": {
+        "pending": 25
+      },
+      "research": {
+        "in_progress": 7,
+        "pending": 18
+      },
+      "revision": {
+        "pending": 25
+      },
+      "skills": 25
+    },
+    "OMERO, Django, Docker & lab infrastructure": {
+      "evaluation": {
+        "pending": 46
+      },
+      "research": {
+        "in_progress": 3,
+        "pending": 43
+      },
+      "revision": {
+        "pending": 46
+      },
+      "skills": 46
+    },
+    "Science, research & data analysis": {
+      "evaluation": {
+        "pending": 148
+      },
+      "research": {
+        "in_progress": 133,
+        "pending": 15
+      },
+      "revision": {
+        "in_progress": 12,
+        "pending": 136
+      },
+      "skills": 148
+    },
+    "Search, retrieval & web automation": {
+      "evaluation": {
+        "pending": 16
+      },
+      "research": {
+        "in_progress": 14,
+        "pending": 2
+      },
+      "revision": {
+        "pending": 16
+      },
+      "skills": 16
+    },
+    "Security, compliance & risk": {
+      "evaluation": {
+        "pending": 57
+      },
+      "research": {
+        "in_progress": 3,
+        "pending": 54
+      },
+      "revision": {
+        "pending": 57
+      },
+      "skills": 57
+    },
+    "Testing, QA & benchmarking": {
+      "evaluation": {
+        "pending": 19
+      },
+      "research": {
+        "in_progress": 19
+      },
+      "revision": {
+        "in_progress": 15,
+        "pending": 4
+      },
+      "skills": 19
+    }
+  },
+  "category_count": 15,
+  "errors": [],
+  "skill_count": 673
+}

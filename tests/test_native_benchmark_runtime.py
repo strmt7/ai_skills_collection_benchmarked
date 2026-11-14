@@ -11,7 +11,9 @@ import _native_benchmark_runtime as runtime
 import pytest
 
 
-def _runtime(tmp_path: Path) -> tuple[Path, str]:
+def _runtime(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> tuple[Path, str]:
+    # These cases simulate a Windows client; do not borrow the host OS environment.
+    monkeypatch.setenv("SYSTEMROOT", str(tmp_path / "simulated-system-root"))
     cli = tmp_path / "docker.exe"
     cli.write_bytes(b"admitted native executable")
     image_id = "sha256:" + "1" * 64
@@ -38,7 +40,7 @@ def _runtime(tmp_path: Path) -> tuple[Path, str]:
 
 
 def test_runtime_rejects_cli_change_before_engine_use(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
-    spec, _ = _runtime(tmp_path)
+    spec, _ = _runtime(tmp_path, monkeypatch)
     (tmp_path / "docker.exe").write_bytes(b"changed")
     (tmp_path / ".venv").mkdir()
     calls = []
@@ -52,7 +54,7 @@ def test_runtime_rejects_cli_change_before_engine_use(tmp_path: Path, monkeypatc
 def test_runtime_binds_engine_and_image_before_container_creation(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch, changed: str
 ) -> None:
-    spec, image_id = _runtime(tmp_path)
+    spec, image_id = _runtime(tmp_path, monkeypatch)
     (tmp_path / ".venv").mkdir()
     calls = []
 
@@ -165,7 +167,7 @@ def test_invalid_lease_deadline_is_rejected_before_owner_or_engine_use(tmp_path:
 
 
 def test_missing_native_image_pulls_the_frozen_digest(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
-    spec, image_id = _runtime(tmp_path)
+    spec, image_id = _runtime(tmp_path, monkeypatch)
     declared = json.loads(spec.read_bytes())
     (tmp_path / ".venv").mkdir()
     calls = []
@@ -204,7 +206,7 @@ def test_local_replay_loads_only_a_verified_archive_without_registry_access(
 ) -> None:
     from test_native_image_archive import archive_fixture
 
-    spec, _ = _runtime(tmp_path)
+    spec, _ = _runtime(tmp_path, monkeypatch)
     owned = tmp_path / ".venv"
     owned.mkdir()
     packet = owned / "image.tar"

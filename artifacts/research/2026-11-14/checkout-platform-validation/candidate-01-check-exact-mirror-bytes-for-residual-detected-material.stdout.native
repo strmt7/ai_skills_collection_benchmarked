@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "errors": [],
+  "catalog_sha256": "befada014a8adf1cbb5f49049829783640725551a08862b17c22488b6fec106b",
+  "catalog_entries": 673,
+  "checked_resources": 17671,
+  "bytes": 235815724
+}

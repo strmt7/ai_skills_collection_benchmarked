@@ -108,6 +108,10 @@
 /included/repaired/skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill/** text eol=lf
 /artifacts/repaired-skill-readiness/playwright-executor-v1/** text eol=lf
 /included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-c/** text eol=lf
+/included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-go/** text eol=lf
+/included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-go/provenance/** -text !eol
+/included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-project-wrappers/** text eol=lf
+/included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-generator-project-wrappers/provenance/** -text !eol
 /artifacts/repaired-skill-readiness/makefile-generator-c-v1/** text eol=lf
 /included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-parallelism/** text eol=lf
 /included/repaired/skills/by-category/coding-refactoring-repository-automation/latest-release-devops/makefile-parallelism/provenance/original.SKILL.md -text !eol
