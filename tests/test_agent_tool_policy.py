@@ -192,6 +192,21 @@ def test_gate_main_is_read_only_and_machine_readable(contract, capsys):
     assert (contract / "AGENTS.md").read_bytes() == before
 
 
+def test_task_evidence_can_be_checked_before_catalog_generation(contract, capsys):
+    path, _ = execution(contract)
+    (contract / "data/skills_catalog.json").unlink()
+    args = ["--root", str(contract), "--execution-receipt", str(path), "--json"]
+
+    assert policy.main(args) == 0
+    evidence = json.loads(capsys.readouterr().out)
+    assert evidence["ok"] is True
+    assert evidence["entrypoints_checked"] == 0
+
+    assert policy.main([*args, "--check"]) == 1
+    combined = json.loads(capsys.readouterr().out)
+    assert any("data/skills_catalog.json" in error for error in combined["errors"])
+
+
 @pytest.fixture
 def linked_execution(contract):
     path, receipt = execution(contract, navigation=True, web=True)
@@ -247,6 +262,36 @@ def linked_execution(contract):
 def test_linked_evidence_contract_accepts_matching_source_and_native_result(contract, linked_execution):
     path, _, _ = linked_execution
     assert policy.validate_execution(contract, path) == []
+
+
+@pytest.mark.parametrize(
+    ("limit", "error"),
+    [
+        (6, None),
+        (5, "exceeded the limit"),
+        (0, "invalid query result limit"),
+        (21, "invalid query result limit"),
+        (True, "invalid query result limit"),
+    ],
+)
+def test_task_receipt_uses_bounded_native_request_limit(contract, linked_execution, limit, error):
+    path, receipt, _ = linked_execution
+    search_path = Path(receipt["cocoindex_code"]["path"])
+    search = json.loads(search_path.read_bytes())
+    search["query"]["limit"] = limit
+    search["response"]["results"] *= 6
+    search["response"]["total_returned"] = 6
+    search["source_checks"] *= 6
+    search_path.write_text(json.dumps(search), encoding="utf-8")
+    receipt["cocoindex_code"]["sha256"] = hashlib.sha256(search_path.read_bytes()).hexdigest()
+    path.write_text(json.dumps(receipt), encoding="utf-8")
+
+    errors = policy.validate_execution(contract, path)
+    if error is None:
+        assert errors == []
+    else:
+        assert len(errors) == 1
+        assert error in errors[0]
 
 
 def test_changed_indexed_source_is_rejected(contract, linked_execution):

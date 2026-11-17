@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-17",
+  "partition": "public_development",
+  "suite": {
+    "project": "ControllableModel/SWE-Skills-Bench",
+    "commit": "4d3450d9216a590a8726fcb3604b5143daca776b",
+    "task": "tasks/batch1/python-packaging.md",
+    "task_file_sha256": "2c07a3235604d2c5364eb26f6c7bb64e1b73b81204a3f5cf53fbfd15c37d4bd6",
+    "source_commit": "5d3ab595f9e1d564e7c48a2253c96ac38444ae63",
+    "scoring": "Publisher L2 unit tests reconciled with the complete pytest console and JUnit outputs."
+  },
+  "subject": {
+    "harness": "Codex CLI 0.169.0",
+    "host": "Windows x64, AMD ROCm",
+    "grader": "Linux publisher image",
+    "backend": "Ollama 0.40.16",
+    "model": "qwen3:8b",
+    "model_manifest_sha256": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "reasoning_effort": "high",
+    "context_tokens": 16384,
+    "time_per_attempt_seconds": 600
+  },
+  "design": {
+    "preregistration_sha256": "7d4599af87f7f00200f3bc47a160ad7321c824f3b856bd1dd193c476b77f93ac",
+    "task_count": 1,
+    "matched_assignment_order": [
+      "karpathy",
+      "collection",
+      "default"
+    ],
+    "attempts_planned": 3,
+    "attempts_scored": 3,
+    "grading_reproduction_sha256": "7d3eec5dd34119a01ca1549492050760bd55c5908dd9d03027b98516c68ca724",
+    "intervention_delivery": "Append unchanged standalone skill file bytes to the unchanged publisher prompt, in the same position for both intervention arms.",
+    "default_intervention": null,
+    "karpathy_origin": {
+      "repository": "multica-ai/andrej-karpathy-skills",
+      "commit": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+      "path": "skills/karpathy-guidelines/SKILL.md",
+      "git_blob": "6a62d0441753157ca6ca50479e490c2948033adb",
+      "sha256": "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+    },
+    "collection_origin": {
+      "repository": "strmt7/ai_skills_collection_benchmarked",
+      "commit": "195dadca836dbf402bf55574b6160dc5f197deba",
+      "path": "included/improved/skills/tdd-workflow-current/SKILL.md",
+      "sha256": "38515bb140a79f78469e06da346dca10c3cc05fd7be4cb70e668e2c539c66c14"
+    }
+  },
+  "arms": [
+    {
+      "condition": "karpathy",
+      "status": "task_failed",
+      "native_score": 0,
+      "cases": {
+        "errors": 0,
+        "failed": 10,
+        "passed": 0,
+        "skipped": 1,
+        "total": 11
+      },
+      "native_terminal_tokens": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 68533,
+        "input_tokens": 97332,
+        "output_tokens": 11634,
+        "reasoning_output_tokens": 0
+      },
+      "elapsed_seconds": 177.148,
+      "transcript_completed_command_events": 11,
+      "transcript_completed_command_exit_zero": 4,
+      "workspace_changes": {
+        "added": 0,
+        "modified": 0,
+        "removed": 0,
+        "python_environment_files": 0
+      },
+      "plan_sha256": "0fe7e7104c81e20921bb1ac50a019a743b9aa0c63e9c0f0549cde595effd8c0e",
+      "result_sha256": "f00e59b57b39002bf7eebc10d905d8e389c0bd683e1bc01b10b61341cef6b075",
+      "transcript_sha256": "d8998a3d086ee0f71eeb17117554b4259023de078b407db8b24151736ab24b8c",
+      "native_evidence_sha256": {
+        "console": "e2b1aa76df769bc622b77fcfbd51e08945f62db5cdcc220dc6c32806715d0de6",
+        "handoff_result": "e6144ea531ac01d61d72e11cef3ea867070a2bcb4d2ccd63b9209d85554205fc",
+        "inventory": "1f69c619d1a5295116e6b532828f90eff095554429fb5b4f4fe99adf1cc22be5",
+        "junit": "b4bf47b6ca8a4ce706a2c2f83995a2c931afec82d861c6c0881f4321ee14634c",
+        "publisher": "d73dc18d606ce878f8b8b84865efd82434155dd3e6add4e507e45424a1f3a421",
+        "submission_manifest": "8356d14d0fecf3c0d22518a0de72c965eecf9a14462a93194e9a57ab2207ed59"
+      },
+      "owned_scope_cleanup_verified": true
+    },
+    {
+      "condition": "collection",
+      "status": "task_failed",
+      "native_score": 0,
+      "cases": {
+        "errors": 0,
+        "failed": 10,
+        "passed": 0,
+        "skipped": 1,
+        "total": 11
+      },
+      "native_terminal_tokens": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 97121,
+        "input_tokens": 125517,
+        "output_tokens": 11491,
+        "reasoning_output_tokens": 0
+      },
+      "elapsed_seconds": 203.174,
+      "transcript_completed_command_events": 12,
+      "transcript_completed_command_exit_zero": 11,
+      "workspace_changes": {
+        "added": 492,
+        "modified": 0,
+        "removed": 0,
+        "python_environment_files": 492
+      },
+      "plan_sha256": "1d3fb80faf8b4f4763727342c08a5d109867a06b5a3a7dafae0f76765906b4e5",
+      "result_sha256": "ddebca2a94bf58a6cefba957f41d0f61db9ea468c71dc02770f9e4d028cd628e",
+      "transcript_sha256": "aba703215e493687ece3271f4daa065041b6214888f15365d0b0702450b7600a",
+      "native_evidence_sha256": {
+        "console": "a164dbc7cf9772943f651a763c47182eb11048cde3c3179801af69e56934f48b",
+        "handoff_result": "f22241db4ae83bea6b8405976fd3b4f4a9c9671ce67fab3d1cc48151ac1acfe9",
+        "inventory": "1f69c619d1a5295116e6b532828f90eff095554429fb5b4f4fe99adf1cc22be5",
+        "junit": "909a5784393f23618afbf368b4f014a07743d603dc446e17f1f42aa85bb41030",
+        "publisher": "c9e1b49a2a0f52b2afee7d5f98198acfcfe456dcd62e6c17e7a6ecdb024803c4",
+        "submission_manifest": "ac3dccac01e925db15bde9c33f19c3225c8ab409c43a5f2b09d2dd714c880f49"
+      },
+      "owned_scope_cleanup_verified": true
+    },
+    {
+      "condition": "default",
+      "status": "task_failed",
+      "native_score": 0,
+      "cases": {
+        "errors": 0,
+        "failed": 10,
+        "passed": 0,
+        "skipped": 1,
+        "total": 11
+      },
+      "native_terminal_tokens": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 73190,
+        "input_tokens": 98192,
+        "output_tokens": 14143,
+        "reasoning_output_tokens": 0
+      },
+      "elapsed_seconds": 204.974,
+      "transcript_completed_command_events": 10,
+      "transcript_completed_command_exit_zero": 1,
+      "workspace_changes": {
+        "added": 0,
+        "modified": 0,
+        "removed": 0,
+        "python_environment_files": 0
+      },
+      "plan_sha256": "36bbf949967ff3f5b9ec5f15d8e304091d60836d920f1d6d794837ce7d7265d0",
+      "result_sha256": "81b695d5641acf1fb6a8387b47ee4c072c7d75cbdb058cce3ee828c1806fe5a1",
+      "transcript_sha256": "53d7cffca03cfab21301eac2e997baad894af387cfe00cb1cfc8a1660ce523c6",
+      "native_evidence_sha256": {
+        "console": "4a46b7f6e0c76126ab032b83846dd2861e0b3fe3f5a433e065f514869933db0c",
+        "handoff_result": "cf3825ec8692c5957a1f95400bbbaae481eaf06cad6684b4cd0b93b11ce4dc3b",
+        "inventory": "1f69c619d1a5295116e6b532828f90eff095554429fb5b4f4fe99adf1cc22be5",
+        "junit": "890dc8ae3f6552ef83013ad1ccdf7f487edd0e6c1862f696ce1ac7bd94368a9c",
+        "publisher": "f34e1ff4cc875077016ea775088ea8281f47ec96015c403464719dbf5a641642",
+        "submission_manifest": "2eb0a4e4c2a979d9e1bad859c2e01610e6ef00499212dc099df5fe0c8e460051"
+      },
+      "owned_scope_cleanup_verified": true
+    }
+  ],
+  "collection_minus_baseline": {
+    "default": 0,
+    "karpathy": 0
+  },
+  "interpretation": {
+    "outcome": "All three attempts received the same minimum native score. The collection condition produced 492 environment files and changed no baseline files.",
+    "scope": "This is one public development task on one local model. The independent 12-task frame, untouched confirmation, and the requested GPT-6.1 Sol high comparison remain separate work. No transferable efficacy or speed estimate is established.",
+    "diagnostic": "Measure whether guidance helps agents use already provisioned project runners, distinguish setup from task failures, and keep environment artifacts out of deliverables using independent tasks."
+  }
+}

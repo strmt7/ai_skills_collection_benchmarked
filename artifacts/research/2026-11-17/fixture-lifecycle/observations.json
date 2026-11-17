@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "scope": "Application test fixture ownership at setup, action and teardown. Owned Windows Chromium and pytest controls.",
+  "observed_on": "2026-11-17",
+  "framework_sources": [
+    {
+      "url": "https://docs.pytest.org/en/stable/how-to/fixtures.html",
+      "receipt_sha256": "12b14a4695daef1a6566a6b122738404c6f5c697f45e857ca14b158d27c9b7b7",
+      "http_status": 200
+    },
+    {
+      "url": "https://playwright.dev/docs/best-practices",
+      "receipt_sha256": "f778a08d3246c4e086fac04b5ca283d0c48292f90bc15c15604d3588376ab43a",
+      "http_status": 200
+    }
+  ],
+  "pytest_controls": [
+    {
+      "case": "normal",
+      "passed": true,
+      "native_exit": 0,
+      "test_nodes": 1,
+      "native_outcomes": [],
+      "event_sequence": [
+        "open-first",
+        "open-second",
+        "test",
+        "close-second",
+        "close-first"
+      ],
+      "retained_markers": []
+    },
+    {
+      "case": "naive-setup-failure",
+      "passed": true,
+      "native_exit": 1,
+      "test_nodes": 1,
+      "native_outcomes": [
+        "error"
+      ],
+      "event_sequence": [
+        "open-first"
+      ],
+      "retained_markers": [
+        "first.owned"
+      ]
+    },
+    {
+      "case": "owned-setup-failure",
+      "passed": true,
+      "native_exit": 1,
+      "test_nodes": 1,
+      "native_outcomes": [
+        "error"
+      ],
+      "event_sequence": [
+        "open-first",
+        "close-first"
+      ],
+      "retained_markers": []
+    },
+    {
+      "case": "assertion-failure",
+      "passed": true,
+      "native_exit": 1,
+      "test_nodes": 1,
+      "native_outcomes": [
+        "failure"
+      ],
+      "event_sequence": [
+        "open-first",
+        "open-second",
+        "test",
+        "close-second",
+        "close-first"
+      ],
+      "retained_markers": []
+    },
+    {
+      "case": "teardown-failure",
+      "passed": true,
+      "native_exit": 1,
+      "test_nodes": 1,
+      "native_outcomes": [
+        "error"
+      ],
+      "event_sequence": [
+        "open-first",
+        "open-second",
+        "test",
+        "close-second",
+        "close-first"
+      ],
+      "retained_markers": []
+    }
+  ],
+  "chromium_controls": [
+    {
+      "case": "normal",
+      "outcome": "saved",
+      "events": [
+        "context",
+        "browser"
+      ],
+      "connected_before_recovery": false,
+      "browser_closed": true,
+      "passed": true
+    },
+    {
+      "case": "partial-setup",
+      "outcome": "setup failed",
+      "events": [
+        "context",
+        "browser"
+      ],
+      "connected_before_recovery": false,
+      "browser_closed": true,
+      "passed": true
+    },
+    {
+      "case": "cleanup-error",
+      "outcome": "cleanup failed",
+      "events": [
+        "context",
+        "browser"
+      ],
+      "connected_before_recovery": false,
+      "browser_closed": true,
+      "passed": true
+    },
+    {
+      "case": "delayed-registration",
+      "outcome": "setup failed",
+      "events": [
+        "context",
+        "browser"
+      ],
+      "connected_before_recovery": true,
+      "browser_closed": true,
+      "passed": true
+    }
+  ],
+  "playwright_version": "1.65.0",
+  "browser_sha256": "dafaf388c1194eb610fc5706ba986eb38e5ebedb1fae44f39569e20940a3bae2",
+  "executable_evidence": {
+    "pytest_probe_sha256": "d4d3d63d5a8964ed871d001c449ff7d88e65ba784c0907edc1b8e00434f90fe3",
+    "chromium_probe_sha256": "d130460000e0797ada92cf0c96dc8073bd59aa8cabcaa768013bb25b20c23109",
+    "process_cleanup_zero": true,
+    "pytest_controls_sha256": "7b7e32cc81f5a78b80ba0bb4bab7f708a0ad6b07b950bd3cc87c6a9f93cfef50",
+    "chromium_controls_sha256": "0ab28cabb4698b9eaaf6c39f5a431f37b95061388969f8bdb116384dfdf1ef23"
+  },
+  "model_inferences": 0,
+  "counted_comparative_attempts": 0
+}

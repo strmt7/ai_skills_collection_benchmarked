@@ -5,8 +5,7 @@ tools globally:
 
 ```powershell
 .\dev.ps1 doctor
-.\dev.ps1 python -m pytest -q -n 2
-.\dev.ps1 python -m ruff check tools tests
+.\dev.ps1 python --version
 .\dev.ps1 cocoindex check
 .\dev.ps1 crawl4ai check
 .\dev.ps1 codex
@@ -24,6 +23,11 @@ No administrator access, global packages, persistent PATH changes, registry
 registration, shell-profile edits or specific AI client are required. Existing
 profiles are preserved when a missing or changed component needs recovery.
 Concurrent setup requests share one installation.
+
+The Windows installer verifies the uv archive and binary listed in
+[the bootstrap manifest](manifest.json). Hosted workflows read the same exact
+version from [uv.toml](uv.toml). Update both inputs together and verify the
+development lock with the selected version.
 
 Development commands default to a 4 GiB aggregate memory ceiling; the enclosing
 PowerShell handoff permits 6 GiB and the first bootstrap hop permits 8 GiB.

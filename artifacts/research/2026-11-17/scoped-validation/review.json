@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-17",
+  "scope": "Current policy and source qualification, native retrieval, shared uv input paths and developer lock. Documentation and work order retain independently checked snapshots. Hosted acceptance and model efficacy are separate.",
+  "source_sha256": {
+    ".github/workflows/mcp-python-sdk.yml": "ae79cd24f531c592caaeb93947343c0b41ced9ddee0369cd414c505b10d1f957",
+    ".github/workflows/offline-validation.yml": "1bba15c6a5d543bfefd916637ea01b31afd9553dcdcb3d631b90179612d523e3",
+    ".github/workflows/pnpm-cache-install.yml": "65f72d366312b7d7ad862974d5a60954cb4427ca621d68ba260e272b9a0d9ce8",
+    "AGENTS.md": "67c2f6f8828ebfa7796e6a82cffce3ea501cdb0c9b763a210733cddfbe2afe90",
+    "data/development_plan.json": "07b3b6688be2c3e91d4b6ed8ffe4789e73ef26a4b57c4ae380e18933770fdb5e",
+    "docs/development.md": "4e6ef4807e7ac60905c04667ee7aaf527b73458c32254566b05b383fa36fc936",
+    "docs/improvement-plan.md": "bbefe97f0821817f0bb51aa88c428bad10f15bd45c863561e10fb9538b6b5118",
+    "requirements-dev-lock.txt": "2c47d307df44b6b5ddfb7fe176eca5823d78bc32602cd8c7a3f485e85b9310f7",
+    "tests/test_agent_tool_policy.py": "91598cb5dce4b862dda0e9084d94ce94515b2599c9e0207f1cfbe8d80bdd37be",
+    "tests/test_native_qualification_index.py": "2f34ab289a05215f7b5c0a5dded6006009797a722b82e25e48db8070e6341f68",
+    "toolchains/bootstrap/README.md": "a9123207feee040f14beb25dbec82865feb50fa24b00cf8525d8f58952198d6b",
+    "tools/search_semantic_corpus.py": "2dad8265873175af7c5af839c9b0e674c20117f733e10bad1c3b9f8a3512777d",
+    "tools/validate_agent_tool_policy.py": "a7af5ef70422547d7b6fc34b36bfd184f9c09807890caf27ba90dcfe26d8fcb8",
+    "tools/validate_native_qualification_index.py": "e235ca458739a22571cfb4a3d771631800597e25a8e80eb3f4d575d7c10b7c05"
+  },
+  "artifacts": {
+    "observations.json": "2a1fda698c25034702a5acf25dbbb51d8f4982b7a74c56cce3031d1cc0cad36b"
+  }
+}

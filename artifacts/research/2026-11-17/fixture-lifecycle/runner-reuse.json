@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "cases": [
+    {
+      "id": "existing-python-runner",
+      "exit_code": 0,
+      "stdout_sha256": "158b23828b080f4bf962ebcb1f1f4fecf966b14a935081c8e2a51fb5bd7db12c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "ordinary-assertion-failure",
+      "exit_code": 1,
+      "stdout_sha256": "ceb58d05960bd1ba5c99cd584fe1bcabe26d631a1b1374630af5608446544cdd",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "existing-node-runner",
+      "exit_code": 0,
+      "stdout_sha256": "90bfad0db3c9bd05f3436f41105504d7d37b090b347e526b4225430c1bf89b55",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "missing-runner",
+      "exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "cf65bcb65777986313a4c935675698bd22b16930b5d4c8d4662a045140bd0320"
+    }
+  ],
+  "fixture_sha256": {
+    "stock.test.cjs": "8ecacb3b579386c768e059d0fb18cd4a6c08864cceb2b9d93734b24b135e2dc8",
+    "test_totals.py": "c07ea356297b874aa2155aae206b93b7226bfb1d280f132278db8ea4722ef5f5"
+  },
+  "workspace_unchanged": true,
+  "fixture_cleaned": true,
+  "model_attempts": 0,
+  "tool_installations": 0
+}

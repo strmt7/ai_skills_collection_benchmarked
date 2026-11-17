@@ -3,6 +3,7 @@ name: AnnData general I/O controls
 on:
   push:
     paths:
+      - "toolchains/bootstrap/uv.toml"
       - 'included/repaired/skills/by-category/science-research-data-analysis/latest-release-community/anndata-general-io/**'
       - 'artifacts/repaired-skill-readiness/anndata-general-io-v1/**'
       - '.github/workflows/anndata-general-io.yml'
@@ -39,7 +40,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
-          version: '0.13.8'
+          version-file: ${{ github.workspace }}/toolchains/bootstrap/uv.toml
           python-version: '3.13.18'
           activate-environment: 'true'
           venv-path: ${{ runner.temp }}/anndata-general-io-venv

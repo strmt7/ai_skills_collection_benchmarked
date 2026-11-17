@@ -3,6 +3,7 @@ name: pnpm cache installation controls
 on:
   push:
     paths:
+      - "toolchains/bootstrap/uv.toml"
       - 'artifacts/repaired-skill-readiness/pnpm-cache-install-v1/**'
       - 'included/repaired/skills/by-category/devops-cloud-operations/latest-release-devops/pnpm-cache-install/**'
       - 'included/skills/by-category/devops-cloud-operations/latest-release-devops/github-actions-generator/examples/actions/setup-node-cached/**'
@@ -36,7 +37,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
-          version: "0.13.8"
+          version-file: ${{ github.workspace }}/toolchains/bootstrap/uv.toml
           python-version: '3.13.18'
           activate-environment: 'true'
           venv-path: ${{ runner.temp }}/pnpm-cache-control-venv

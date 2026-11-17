@@ -56,7 +56,6 @@ def test_explicit_fresh_source_proof_preserves_historical_review_bytes(qualified
     "change",
     [
         "current-source",
-        "stable-source",
         "old-evidence",
         "current-evidence",
         "review",
@@ -71,10 +70,8 @@ def test_explicit_fresh_source_proof_preserves_historical_review_bytes(qualified
 def test_unproven_changes_and_inconsistent_supersessions_fail(qualified_history: Path, change: str) -> None:
     index_path = qualified_history / INDEX
     index = json.loads(index_path.read_bytes())
-    if change in {"current-source", "stable-source"}:
-        (qualified_history / ("module.py" if change == "current-source" else "stable.py")).write_bytes(
-            b"unqualified change"
-        )
+    if change == "current-source":
+        (qualified_history / "module.py").write_bytes(b"unqualified change")
     elif change in {"old-evidence", "current-evidence"}:
         (qualified_history / ("old" if change == "old-evidence" else "current") / "native.txt").write_bytes(
             b"changed evidence"
@@ -114,3 +111,32 @@ def test_components_can_reuse_unchanged_scopes_from_an_older_review(qualified_hi
     )
     write(path, index)
     assert validate(qualified_history)["ok"]
+    (qualified_history / "stable.py").write_bytes(b"changed live component")
+    assert not validate(qualified_history)["ok"]
+
+
+def test_archived_sources_can_change_or_leave_the_checkout(qualified_history: Path) -> None:
+    path = qualified_history / "stable.py"
+    archived_review = (qualified_history / "old/review.json").read_bytes()
+
+    path.write_bytes(b"new unrelated implementation")
+    assert validate(qualified_history)["ok"]
+    path.unlink()
+    assert validate(qualified_history)["ok"]
+    assert (qualified_history / "old/review.json").read_bytes() == archived_review
+
+
+@pytest.mark.parametrize(("name", "value"), [("stable.py", "bad-digest"), ("../elsewhere.py", "a" * 64)])
+def test_historical_source_inventory_requires_portable_ids_and_digests(
+    qualified_history: Path, name: str, value: str
+) -> None:
+    index_file = qualified_history / INDEX
+    index = json.loads(index_file.read_bytes())
+    review_file = qualified_history / "old/review.json"
+    review = json.loads(review_file.read_bytes())
+    review["source_sha256"][name] = value
+    write(review_file, review)
+    index["historical_reviews"][0]["review"]["sha256"] = digest(review_file)
+    write(index_file, index)
+
+    assert not validate(qualified_history)["ok"]

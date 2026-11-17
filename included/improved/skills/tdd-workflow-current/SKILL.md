@@ -18,6 +18,11 @@ actual test runner and project commands instead of assuming a package manager
 or framework. Choose unit, integration and end-to-end checks according to the
 change, existing requirements and risk; preserve required checks.
 
+Try the focused test command in the project's declared runtime first. If a
+prerequisite is missing, use the documented setup to install compatible
+dependencies. Put new environments and caches in approved ignored locations
+and check that the deliverable contains only intended changes.
+
 ## Establish a meaningful baseline
 
 For a behavior change or bug fix, define observable outcomes and realistic
@@ -34,7 +39,9 @@ claiming it was reproduced.
 Make the smallest maintainable change that satisfies the contract. Rerun the
 focused test and check that it actually executes and passes, then run relevant
 regressions and all required project gates. Keep test data deterministic and
-isolate and clean up resources owned by the test. Test important integration
+isolate resources owned by the test. Register cleanup after each acquisition,
+including acquisitions made before setup completes. Use test reports to separate
+cleanup errors from behavior assertions. Test important integration
 boundaries with appropriate real components; use mocks where isolation helps
 without claiming that a mocked boundary was exercised end to end.
 

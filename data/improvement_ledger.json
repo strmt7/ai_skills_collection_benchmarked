@@ -823,6 +823,11 @@
             "path": "artifacts/research/2026-11-13/e2e-readiness/review.json",
             "scope": "Source-grounded component and exact candidate-example controls; no independent model-efficacy result.",
             "sha256": "720f19fcd7a1cc3b075b930e835e2a6337027c74f453338493c7e36a6a6a7ea8"
+          },
+          {
+            "path": "artifacts/research/2026-11-17/fixture-lifecycle/review.json",
+            "scope": "Validated fixture ownership and cleanup behavior. Comparative evaluation pending.",
+            "sha256": "a277732c7592235712719c51162d7111625e1dfb2e7c322b912df7a71da6c467"
           }
         ],
         "status": "in_progress"
@@ -1786,9 +1791,19 @@
             "sha256": "6ced12d7d3721198a75e6dc6f1037f0560952785cf7bfc988a29eb62a6d047c4"
           },
           {
-            "path": "included/improved/skills/tdd-workflow-current/SKILL.md",
+            "path": "artifacts/research/2026-11-17/fixture-lifecycle/previous-tdd.md",
             "scope": "Experimental unbenchmarked revision; original and historical repair remain unchanged.",
             "sha256": "38515bb140a79f78469e06da346dca10c3cc05fd7be4cb70e668e2c539c66c14"
+          },
+          {
+            "path": "artifacts/research/2026-11-17/fixture-lifecycle/review.json",
+            "scope": "Validated fixture ownership and cleanup behavior. Comparative evaluation pending.",
+            "sha256": "a277732c7592235712719c51162d7111625e1dfb2e7c322b912df7a71da6c467"
+          },
+          {
+            "path": "artifacts/research/2026-11-17/fixture-lifecycle/review-v2.json",
+            "sha256": "3e3df833247abccf8ddbf98e70d400336b285745e57edcb4d19c8b7c50621753",
+            "scope": "Native independent focused-runner reuse, setup-failure classification and prior fixture lifecycle controls. The earlier measured candidate remains separate."
           }
         ],
         "status": "in_progress"

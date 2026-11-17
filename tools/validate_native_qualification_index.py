@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any
 
 from _catalog_publication import checked_path
+from _trial_protocol import relative_path
 from _trial_transcript import strict_json
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -28,9 +29,12 @@ def validate(root: Path = ROOT) -> dict[str, Any]:
             raise ValueError("Qualification document must be an object")
         return value
 
-    def check_digest(path: Path, digest: Any) -> None:
+    def require_digest(name: str, digest: Any) -> None:
         if not isinstance(digest, str) or not re.fullmatch(r"[0-9a-f]{64}", digest):
-            raise ValueError("Invalid qualification digest: " + path.name)
+            raise ValueError("Invalid qualification digest: " + name)
+
+    def check_digest(path: Path, digest: Any) -> None:
+        require_digest(path.name, digest)
         if hashlib.sha256(path.read_bytes()).hexdigest() != digest:
             errors.append("Qualification bytes differ: " + str(path.relative_to(root)))
 
@@ -42,6 +46,8 @@ def validate(root: Path = ROOT) -> dict[str, Any]:
         value = read(path)
         if not isinstance(value.get("artifacts"), dict) or not isinstance(value.get("source_sha256"), dict):
             raise ValueError("A review requires artifact and source inventories")
+        for name, digest in value["source_sha256"].items():
+            require_digest(relative_path(name), digest)
         for name, digest in value["artifacts"].items():
             check_digest(checked_path(path.parent, name), digest)
         return path, value
@@ -96,11 +102,9 @@ def validate(root: Path = ROOT) -> dict[str, Any]:
             changed = {name for name in previous.keys() & sources.keys() if previous[name] != sources[name]}
             if set(declared) != changed:
                 errors.append("Source supersessions differ: " + str(path.relative_to(root)))
-            for name, digest in previous.items():
-                check_digest(checked_path(root, name), sources[name] if name in changed else digest)
     except (OSError, ValueError, TypeError, KeyError, UnicodeError) as error:
         errors.append(str(error))
-    return {"ok": not errors, "errors": errors, "scope": "Source and artifact binding; not proof of model efficacy"}
+    return {"ok": not errors, "errors": errors, "scope": "Current source binding and retained review evidence"}
 
 
 def build_parser() -> argparse.ArgumentParser:

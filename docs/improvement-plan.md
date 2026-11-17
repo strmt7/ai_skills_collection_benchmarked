@@ -32,7 +32,7 @@ and evaluates artifacts. These functions must remain distinguishable to users.
 | Packaging repairs | 34 repair-manifest records plus two separate native-testing experiments | Keep packaging repair, functional correctness and model efficacy separate |
 | Scenario definitions | 718 templates | Independent executable tasks, original evaluators and actual runs |
 | Benchmark discovery | 18 registry methods at declared-source-probe stage | Qualified adapters and suite executions; historical smoke results are not suite scores |
-| Model evidence | An earlier one-task, nine-attempt comparison reached a ceiling: all three conditions passed three times | Discriminating, paired development results and untouched confirmation |
+| Model evidence | The independent packaging comparison scored all three arms at 0/11. An earlier comparison reached a ceiling with nine passes on one task. | Discriminating, paired development results and untouched confirmation |
 | New development experiment | Frozen 12-task frame, 36 prospective condition attempts, zero counted attempts | Complete runtime graphs, model transport, isolation, admission and prospective analysis |
 | Setup and ownership | Isolated managed environments, native process ownership and component controls | Complete supported fresh-host, relocation, recovery and dependency-graph qualification |
 | Quality | Extensive tests, typing, deterministic validators and hosted controls | All applicable workflows accepted on the published revision, unresolved integration failures and held findings closed |
@@ -204,8 +204,8 @@ for cohesive qualified batches.
 | P1: model execution | Active | P0 | Qualified real model-to-tool-to-artifact route, isolation, cleanup and admission |
 | P2: development protocol | Active | P0 | Each study's native task graphs and frozen comparison and analysis contract. The original pilot retains all 12 graphs. |
 | P3: every-skill redesign | Active | P0 | Complete accounted-for research/resource/revision dispositions; evaluation still needs its gates |
-| P4: development comparisons | Pending | P1 and P2 for each study | Complete matched attempts and native scoring for the declared population |
-| P5: iterative improvement | Pending | P4 | Transferable revisions, controlled ablations and independent development transfer |
+| P4: development comparisons | Active | P1 and P2 for each study | Complete matched attempts and native scoring for the declared population |
+| P5: iterative improvement | Active | P4 | Transferable revisions, controlled ablations and independent development transfer |
 | P6: confirmation | Pending | P3 for the candidate and P5 for the study | Untouched, frozen, adequately powered confirmation against both baselines |
 | P7: delivery engineering | Active | P0 | Current compatible graphs, supported installation/recovery, coverage and hosted quality |
 | P8: security/scanners | Held | P0 plus restored owner scope | Reconciled inventories and verified authorized remediation; no suppression |
@@ -463,6 +463,18 @@ an unexplained pending entry is not release-ready.
 
 ## P4 — execute a discriminating development pilot
 
+The [November 17 packaging comparison](../artifacts/research/2026-11-17/packaging-development/observations.json)
+completed three preregistered Codex CLI attempts with Qwen3 8B at high effort
+against one public SWE-Skills-Bench task. The original grader awarded 0/11 in
+each arm. The collection arm completed 11 commands with exit code zero and
+added a virtual environment. The Karpathy and default arms completed four and
+one such commands, respectively. All arms left the original task files
+unchanged. The comparison establishes a functioning matched execution and
+scoring route for this model and task. Quality improvement remains unproven.
+Preserve this floor result and qualify a different, prospectively chosen
+development task before estimating transfer. The 12-task pilot and requested
+GPT-6.1 Sol high comparison have separate acceptance requirements.
+
 1. Freeze the admitted P1/P2 implementation, candidate artifacts and native
    scorer identities. Verify actual source bytes immediately before each attempt.
 2. Execute the declared serial order in fresh isolated contexts. Do not share
@@ -490,6 +502,12 @@ scientific feasibility/effect report and documented general failure mechanisms.
 A null or ceiling result can complete the pilot; it cannot establish superiority.
 
 ## P5 — iterate from general failures and test transfer
+
+The [runner and fixture controls](../artifacts/research/2026-11-17/fixture-lifecycle/review-v2.json)
+justify the current test-driven development instructions. They exercise reused
+Python and Node runners, distinguish assertion failures from absent tooling,
+and verify partial fixture cleanup. Freeze the revised skill separately for
+the next independent model comparison.
 
 1. Classify development failures into skill activation, reasoning/decision
    guidance, missing domain knowledge, tool/API behavior, environment or scoring.

@@ -47,9 +47,17 @@ validation toolset into an owned cache:
 
 ```powershell
 .\dev.ps1 doctor
-.\dev.ps1 python -m pytest -q -n 2
-.\dev.ps1 python -m ruff check tools tests benchmarks/agent-effectiveness/graders
+.\dev.ps1 python --version
 ```
+
+Use focused checks while editing and run the
+[pre-publication gates](../CONTRIBUTING.md#quality-gates-must-pass-before-push)
+on the batch you intend to publish.
+
+The qualification index binds current components to their tested source bytes.
+Historical reviews retain their original source digests and native artifacts.
+Ordinary edits and removals outside current qualification scopes can proceed
+without qualifying an old revision again.
 
 No preinstalled Python, uv, Git, Node or JDK is required. Setup checks pinned
 downloads, creates isolated Python environments and supplies native tool paths
@@ -78,11 +86,12 @@ For an existing supported Python environment or the Linux CI jobs, use the
 locked setup below.
 
 The Ruff, mypy and main offline-validation jobs use
-`requirements-dev-lock.txt` with uv 0.13.8.
+`requirements-dev-lock.txt` with the version pinned in
+[`toolchains/bootstrap/uv.toml`](../toolchains/bootstrap/uv.toml).
 It locks the project runtime, test, lint and build requirements, including
 distribution hashes. Their lock check resolves the existing pins again against
 PyPI and rejects changed inputs or hashes. To reproduce the locked environment,
-install uv 0.13.8,
+install that version of uv,
 create and activate a Python 3.11–3.14 virtual environment, then run:
 
 ```bash
@@ -102,7 +111,7 @@ runs the suite. Those canary environments do not produce the locked coverage
 reports or replace the pinned validation jobs.
 
 To regenerate the developer lock after changing project or build requirements,
-first create and activate `.venv`, install uv 0.13.8, then run:
+first create and activate `.venv` and install the pinned uv version. Then run:
 
 ```bash
 python -c "import pathlib,tomllib; p=pathlib.Path('pyproject.toml'); r=tomllib.loads(p.read_text(encoding='utf-8'))['build-system']['requires']; pathlib.Path('.venv/dev-build.in').write_text('\n'.join(r)+'\n', encoding='utf-8')"

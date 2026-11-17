@@ -50,7 +50,7 @@ jobs:
         run: node --version
       - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
-          version: "0.13.8"
+          version-file: ${{ github.workspace }}/toolchains/bootstrap/uv.toml
       - name: Install locked test environment
         shell: python
         run: |
@@ -248,7 +248,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
-          version: "0.13.8"
+          version-file: ${{ github.workspace }}/toolchains/bootstrap/uv.toml
       - name: Install latest compatible development dependencies
         shell: python
         run: |
@@ -419,7 +419,7 @@ jobs:
       - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         if: ${{ runner.os == 'Windows' && !startsWith(matrix.python-version, '3.14.') }}
         with:
-          version: "0.13.8"
+          version-file: ${{ github.workspace }}/toolchains/bootstrap/uv.toml
           python-version: ${{ matrix.python-version }}
           activate-environment: "true"
           venv-path: ${{ runner.temp }}/report-compatibility-venv

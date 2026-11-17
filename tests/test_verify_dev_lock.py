@@ -6,6 +6,7 @@ import json
 import os
 import shutil
 import subprocess
+import tomllib
 import zipfile
 from pathlib import Path
 from typing import Any
@@ -16,18 +17,33 @@ import yaml
 
 
 def test_workflow_installers_and_lock_verifier_use_the_qualified_uv_pin() -> None:
+    version_path = "toolchains/bootstrap/uv.toml"
+    version_input = "${{ github.workspace }}/" + version_path
     expected = json.loads((module.ROOT / "toolchains/bootstrap/manifest.json").read_bytes())["uv"]["version"]
+    required = tomllib.loads((module.ROOT / version_path).read_text(encoding="utf-8"))["required-version"]
     assert expected == module.UV_VERSION
+    assert required == f"=={expected}"
     found = []
     workflows = module.ROOT / ".github/workflows"
     for path in sorted([*workflows.glob("*.yml"), *workflows.glob("*.yaml")]):
         definition = yaml.safe_load(path.read_bytes())
-        for job in definition.get("jobs", {}).values():
-            for step in job.get("steps", []):
-                if step.get("uses", "").startswith("astral-sh/setup-uv@"):
-                    observed = step.get("with", {}).get("version")
-                    assert observed == expected, (path.name, observed, expected)
-                    found.append((path.name, observed))
+        installers = [
+            step
+            for job in definition.get("jobs", {}).values()
+            for step in job.get("steps", [])
+            if step.get("uses", "").startswith("astral-sh/setup-uv@")
+        ]
+        if not installers:
+            continue
+        for step in installers:
+            inputs = step["with"]
+            assert "version" not in inputs and inputs.get("version-file") == version_input, path.name
+        events = definition.get("on", definition.get(True, {}))
+        for event in ("push", "pull_request"):
+            trigger = events.get(event) or {}
+            if "paths" in trigger:
+                assert {version_path, "toolchains/bootstrap/**"}.intersection(trigger["paths"]), path.name
+        found.extend(installers)
     assert found, "The qualified UV version must be exercised by workflow installers"
 
 

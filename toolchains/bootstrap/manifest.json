@@ -3,22 +3,22 @@
   "os": "windows",
   "architecture": "x86_64",
   "uv": {
-    "version": "0.13.8",
-    "url": "https://github.com/astral-sh/uv/releases/download/0.13.8/uv-x86_64-pc-windows-msvc.zip",
-    "archive_bytes": 15529884,
-    "archive_sha256": "529e78a9cec6cd7e3e014f7ecd8bda0c113969d4ed0f2efeedb85c30943325b8",
+    "version": "0.13.9",
+    "url": "https://github.com/astral-sh/uv/releases/download/0.13.9/uv-x86_64-pc-windows-msvc.zip",
+    "archive_bytes": 15567875,
+    "archive_sha256": "edd61f7f5728a56cc62455386661860bdfc7bab65872f39b0c25bdcc1d8e1beb",
     "files": {
       "uv.exe": {
-        "bytes": 32481072,
-        "sha256": "03fa174894b9d0cbe08762d40d1c2c64d10e875bd56f1a1e334ee1e00d60cdbe"
+        "bytes": 32581424,
+        "sha256": "7e6349bc24cfc7249f892c41298e4371826a19008c3cbcfe13eacd08ac398470"
       },
       "uvw.exe": {
-        "bytes": 346416,
-        "sha256": "b0adfdb0dbcebdfed0e14a1585a24e7d791018fc583f34c869ad4a92a6f5efe8"
+        "bytes": 339248,
+        "sha256": "5466c6a0f777d8943eac9f6d6349134afbd74a6d95a6c958a2b7f4e03e33ad8a"
       },
       "uvx.exe": {
-        "bytes": 345392,
-        "sha256": "848dac6b5a5d0e03c5b3fcf7fc9e697c1be59d40b1989e428c95806f44443d6b"
+        "bytes": 338736,
+        "sha256": "489a4cc058ebe2670f7f269d0eb6932a40dee6ffe0bd3a82d8b8b6798cecd8d8"
       }
     }
   },

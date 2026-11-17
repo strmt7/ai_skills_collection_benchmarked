@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-17",
+  "regression_tests_passed": 53,
+  "focused_checks": [
+    "policy-and-history-regressions",
+    "retained-live-receipt",
+    "focused-lint",
+    "focused-format"
+  ],
+  "scope_failure_reproduced": {
+    "catalog_entries_scanned_for_standalone_receipt": 673,
+    "valid_native_results_previously_rejected": 6
+  },
+  "receipt": {
+    "query_limit": 6,
+    "results": 6,
+    "independent_source_matches": true,
+    "archive_sha256": "1af55336dd980515555307f78ceada39275cd249341cddbec1a4a827f9788113",
+    "standalone_receipt_catalog_entries": 0
+  },
+  "historical_review_contract": {
+    "revision_and_native_artifact_digests_retained": true,
+    "current_components_require_exact_source_bytes": true,
+    "archived_only_source_can_change_or_leave_checkout": true,
+    "live_scopes_reused_by_current_id_remain_exact": true
+  },
+  "stable_installer": {
+    "version": "0.13.9",
+    "local_checks": [
+      "qualified-uv-version",
+      "locked-runtime-compatibility",
+      "pin-and-lock-regressions",
+      "seeded-pypi-lock"
+    ],
+    "native_model_free_packaging_controls": 11,
+    "admission_checks": 2,
+    "native_profile_receipt_sha256": "162ca8e34a9a113f6f6ef6adbee06a2b399f1a69fc2c0f4d73557afaf0d0c933"
+  },
+  "mutable_plans_and_documentation": [
+    "AGENTS.md",
+    "data/development_plan.json",
+    "docs/development.md",
+    "docs/improvement-plan.md",
+    "toolchains/bootstrap/README.md"
+  ],
+  "efficacy_runs_in_this_qualification": 0
+}

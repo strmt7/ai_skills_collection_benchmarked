@@ -60,7 +60,8 @@ For CocoIndex, use the reviewed local adapter in
 [search_semantic_corpus.py](../tools/search_semantic_corpus.py). Bind its corpus
 to the current Git root and exact selected source bytes. The adapter rejects
 stale sources, verifies the local model and returned source spans, and emits a
-JSON receipt. Start with at most five candidates. Retain that actual output;
+JSON receipt. Start with five or fewer candidates and broaden only as needed
+within the supported range of 1 to 20. Retain that actual output;
 installation, an index marker or an old query is insufficient. Refresh only
 inputs relevant to the task, without touching another repository's MCP server,
 runtime or index. Keep secrets and unrelated ignored files out of the corpus.
@@ -119,12 +120,20 @@ an omitted policy link in any catalog entrypoint. Generated entrypoints inherit
 this requirement from their generator; regeneration must preserve it. Audited
 upstream mirrors remain unchanged.
 
-Before accepting task completion, also run the gate with `--execution-receipt`
-pointing to the task's retained JSON. Declare `schema_version: 1`, `source_root`,
+Before accepting task completion, validate the job's evidence independently:
+
+```text
+python tools/validate_agent_tool_policy.py --execution-receipt <receipt> --json
+```
+
+This checks the supplied receipt without traversing the entire catalog.
+Use both flags to check task evidence and repository routing together.
+Declare `schema_version: 1`, `source_root`,
 and boolean `task_scope.broad_navigation` and `task_scope.web_research` values.
 Record `caveman.applied: true` and the local skill's exact `skill_sha256`.
 For broad navigation, `cocoindex_code` supplies the actual search JSON's absolute
-`path`, `sha256` and isolated `corpus` path. For web research, `crawl4ai` supplies
+`path`, `sha256` and isolated `corpus` path. The validator uses the result limit
+recorded in the native request. For web research, `crawl4ai` supplies
 the native result's absolute `path`, `sha256`, `provider_version`, intended `url`
 and `scope_reviewed: true` after reviewing the extracted document. The gate
 rechecks returned source spans, bindings and digests, rejects missing triggered

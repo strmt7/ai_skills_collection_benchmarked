@@ -24,10 +24,9 @@ broad navigation, and read web pages with Crawl4AI. Retain actual source-bound
 receipts for the operations performed. When a required tool fails, diagnose it
 and restore it before dependent work. Continue independent work in the meantime.
 
-CI checks repository routing with
-`python tools/validate_agent_tool_policy.py --check --json`. Also validate the
-classified task receipt before completion with
-`python tools/validate_agent_tool_policy.py --check --execution-receipt <receipt> --json`.
+Validate the classified task receipt before completion with
+`python tools/validate_agent_tool_policy.py --execution-receipt <receipt> --json`.
+The separate `--check` mode verifies catalog routing for publication and CI.
 
 ## Communication and execution efficiency
 

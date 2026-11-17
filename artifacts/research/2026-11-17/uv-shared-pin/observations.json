@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-17",
+  "version": "0.13.9",
+  "source": "https://github.com/astral-sh/uv/releases/download/0.13.9/uv-x86_64-pc-windows-msvc.zip",
+  "archive_sha256": "edd61f7f5728a56cc62455386661860bdfc7bab65872f39b0c25bdcc1d8e1beb",
+  "windows_binary_sha256": "7e6349bc24cfc7249f892c41298e4371826a19008c3cbcfe13eacd08ac398470",
+  "development_lock": {
+    "sha256": "2c47d307df44b6b5ddfb7fe176eca5823d78bc32602cd8c7a3f485e85b9310f7",
+    "changed_distribution": "types-PyYAML",
+    "new_version": "6.0.12.20261113",
+    "seeded_registry_verification": true
+  },
+  "hosted_pin": {
+    "action": "astral-sh/setup-uv",
+    "source_commit": "68559e99cc807c1eb7e9238fd43a15bba460eec2",
+    "action_bundle_git_blob": "0a02bcd1446d4be253afba77179722419e8f1d0e",
+    "native_local_execution_node": "v26.13.1",
+    "checked_workflow_installers": 30,
+    "path_filtered_events_added": 21
+  },
+  "windows_checks": [
+    "qualified-uv-version",
+    "locked-runtime-compatibility",
+    "pin-and-lock-regressions",
+    "seeded-pypi-lock"
+  ],
+  "bound_input_sha256": {
+    "version_file": "37df1ac279bdbe85c7876a3494789bdf113e9eb3ef798749cec46a625dd97525",
+    "bootstrap_manifest": "a56d0c9b56caac4e621af983f443786a891d4d64c27449761f073143a462aaa5"
+  },
+  "scope": "Qualified Windows provisioning and current development lock. Hosted validation is evaluated separately on the published revision."
+}

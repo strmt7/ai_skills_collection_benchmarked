@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any
 
 import yaml
-from search_semantic_corpus import verify_response
+from search_semantic_corpus import SEARCH_LIMITS, verify_response
 
 ROOT = Path(__file__).resolve().parents[1]
 POLICY = "docs/agent-tools.md"
@@ -193,20 +193,25 @@ def validate_execution(root: Path, path: Path) -> list[str]:
             manifest = json.loads(raw_manifest)
             if not isinstance(manifest, dict) or not isinstance(search.get("query"), dict):
                 raise ValueError("invalid source manifest or query")
-            paths = search["query"]["paths"]
+            query = search["query"]
+            paths = query["paths"]
+            # Preserve the original five-hit bound for receipts without a request limit.
+            limit = query.get("limit", 5)
+            if type(limit) is not int or limit not in SEARCH_LIMITS:
+                raise ValueError("invalid query result limit")
             if paths is not None and (not isinstance(paths, list) or any(not isinstance(item, str) for item in paths)):
                 raise ValueError("invalid query path scopes")
             if (
                 search.get("ok") is not True
-                or not isinstance(search["query"]["query"], str)
-                or not search["query"]["query"].strip()
+                or not isinstance(query["query"], str)
+                or not query["query"].strip()
                 or not isinstance(search.get("response"), dict)
-                or Path(search["query"]["project_root"]).resolve() != base / "tree"
+                or Path(query["project_root"]).resolve() != base / "tree"
                 or Path(manifest["source_root"]).resolve() != root
                 or search["manifest_sha256"] != hashlib.sha256(raw_manifest).hexdigest()
             ):
                 raise ValueError("CocoIndex execution or source binding is invalid")
-            checks = verify_response(search["response"], base, manifest, paths or [], 5)
+            checks = verify_response(search["response"], base, manifest, paths or [], limit)
             if search["source_checks"] != checks:
                 raise ValueError("CocoIndex source verification differs from the linked receipt")
         except (OSError, ValueError, KeyError, TypeError) as exc:
@@ -237,25 +242,24 @@ def validate_execution(root: Path, path: Path) -> list[str]:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=ROOT)
-    parser.add_argument("--check", action="store_true", help="Verify the contract without rewriting files")
+    parser.add_argument("--check", action="store_true", help="Verify repository routing and all catalog entrypoints")
     parser.add_argument("--json", action="store_true", help="Emit a machine-readable envelope")
-    parser.add_argument(
-        "--execution-receipt", type=Path, help="Also verify mandatory tool evidence for a classified task"
-    )
+    parser.add_argument("--execution-receipt", type=Path, help="Verify one task's mandatory tool evidence")
     return parser
 
 
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
-    result = validate(args.root.resolve())
-    if args.execution_receipt:
-        result["errors"].extend(validate_execution(args.root.resolve(), args.execution_receipt))
-        result["ok"] = not result["errors"]
-    print(
-        json.dumps(result, indent=2)
-        if args.json
-        else ("OK: mandatory agent-tool routing" if result["ok"] else "\n".join(result["errors"]))
+    root = args.root.resolve()
+    check_routing = args.check or args.execution_receipt is None
+    result: dict[str, Any] = (
+        validate(root) if check_routing else {"required_tools": list(TOOLS), "entrypoints_checked": 0, "errors": []}
     )
+    if args.execution_receipt:
+        result["errors"].extend(validate_execution(root, args.execution_receipt))
+    result["ok"] = not result["errors"]
+    success = "OK: mandatory agent-tool routing" if check_routing else "OK: mandatory task tool evidence"
+    print(json.dumps(result, indent=2) if args.json else (success if result["ok"] else "\n".join(result["errors"])))
     return 0 if result["ok"] else 1
 
 

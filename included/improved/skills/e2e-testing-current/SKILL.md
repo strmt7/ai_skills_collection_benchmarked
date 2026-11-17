@@ -77,8 +77,11 @@ any explicitly approved quarantine and keep its failed behavior visible.
 
 Keep each test's mutable state isolated. Use a declared application endpoint and
 an owned server lifecycle; do not accidentally reuse another task's localhost
-server. Bound workers and browser projects to the available resources. Close
-owned contexts, browsers, listeners and server processes in failure paths too.
+server. Bound workers and browser projects to the available resources.
+Register cleanup immediately after acquiring each context, browser, listener
+or process. Keep the cleanup active while acquiring the next resource, so
+a partial setup failure still releases resources already opened. Run each
+cleanup independently and retain teardown errors with the original failure.
 
 Retain useful failure evidence with the test runner's unique output paths and
 attachments. Fixed shared screenshot names can collide under parallel runs.

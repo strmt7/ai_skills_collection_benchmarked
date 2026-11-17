@@ -26,17 +26,6 @@
       ]
     },
     {
-      "id": "qualification-gate",
-      "review": {
-        "path": "artifacts/research/2026-11-13/current-development-qualification/review.json",
-        "sha256": "f04a82d9d333212282a865dd78af3920ae0f38d3d4616ea2f30100b9a37b871e"
-      },
-      "sources": [
-        "tools/validate_native_qualification_index.py",
-        "tests/test_native_qualification_index.py"
-      ]
-    },
-    {
       "id": "operating-policy",
       "review": {
         "path": "artifacts/research/2026-11-13/current-development-qualification/review.json",
@@ -65,31 +54,10 @@
       "sources": [
         "tools/cocoindex_tool.py",
         "tools/cocoindex_runtime.py",
-        "tools/search_semantic_corpus.py",
         "tests/test_cocoindex_provider.py",
         "toolchains/cocoindex-code/README.md",
         ".agents/skills/cocoindex-code-search/SKILL.md",
         "docs/installation.md"
-      ]
-    },
-    {
-      "id": "pnpm-action-update",
-      "review": {
-        "path": "artifacts/research/2026-11-14/pnpm-action-update/review.json",
-        "sha256": "4aa778691e078fd66d2ea76f46f0e6125155a1d31e424d8c4c0033a83276eac0"
-      },
-      "sources": [
-        ".github/workflows/pnpm-cache-install.yml"
-      ]
-    },
-    {
-      "id": "current-checkpoint-plan",
-      "review": {
-        "path": "artifacts/research/2026-11-17/scoped-study-and-skill-delivery/review.json",
-        "sha256": "eaa6134464b67177f06fccb9f896d92e54164db9e1295af132896bf97a859f9c"
-      },
-      "sources": [
-        "docs/improvement-plan.md"
       ]
     },
     {
@@ -124,8 +92,7 @@
         "included/improved/skills/mcp-builder-current/SKILL.md",
         "included/improved/skills/mcp-builder-current/NOTICE.md",
         "included/improved/skills/mcp-builder-current/references/python-contracts.md",
-        "included/improved/skills/mcp-builder-current/scripts/qualify_sdk.py",
-        ".github/workflows/mcp-python-sdk.yml"
+        "included/improved/skills/mcp-builder-current/scripts/qualify_sdk.py"
       ]
     },
     {
@@ -147,16 +114,6 @@
       "sources": [
         "tools/_windows_trial_process.py",
         "tests/test_windows_trial_process.py"
-      ]
-    },
-    {
-      "id": "native-boundary-plan-checkpoint",
-      "review": {
-        "path": "artifacts/research/2026-11-17/scoped-study-and-skill-delivery/review.json",
-        "sha256": "eaa6134464b67177f06fccb9f896d92e54164db9e1295af132896bf97a859f9c"
-      },
-      "sources": [
-        "data/development_plan.json"
       ]
     },
     {
@@ -209,18 +166,7 @@
       },
       "sources": [
         "dev.ps1",
-        "toolchains/bootstrap/README.md",
         "tests/test_frontend_ownership.py"
-      ]
-    },
-    {
-      "id": "stable-development-tools",
-      "review": {
-        "path": "artifacts/research/2026-11-17/development-action-update/review.json",
-        "sha256": "74082bec415197281e40e155e1a417f14a41e62ff3624157bf6121d649c0d053"
-      },
-      "sources": [
-        "requirements-dev-lock.txt"
       ]
     },
     {
@@ -251,22 +197,46 @@
         "tools/run_agent_trial.py",
         "tests/test_frontmatter_utils.py",
         "included/improved/skills/verification-loop-shell-status/SKILL.md",
-        "AGENTS.md",
         "CONTRIBUTING.md",
         "pyproject.toml",
-        ".github/workflows/offline-validation.yml",
         ".github/workflows/release.yml",
         "docs/coverage.md",
-        "docs/development.md",
         "tools/qualify_trial_context.py",
         "tools/qualify_native_trial_boundary.py",
         "tests/test_native_trial_boundary.py",
         "tests/test_qualify_trial_context.py",
         "tests/test_coverage_bundle.py",
         "tools/validate_catalog.py",
-        "tools/validate_agent_tool_policy.py",
-        "tests/test_agent_tool_policy.py",
         "tests/test_documentation_contracts.py"
+      ]
+    },
+    {
+      "id": "qa-fixture-lifecycle",
+      "review": {
+        "path": "artifacts/research/2026-11-17/fixture-lifecycle/review-v2.json",
+        "sha256": "3e3df833247abccf8ddbf98e70d400336b285745e57edcb4d19c8b7c50621753"
+      },
+      "sources": [
+        "included/improved/skills/tdd-workflow-current/SKILL.md",
+        "included/improved/skills/e2e-testing-current/SKILL.md"
+      ]
+    },
+    {
+      "id": "scoped-live-validation",
+      "review": {
+        "path": "artifacts/research/2026-11-17/scoped-validation/review.json",
+        "sha256": "a600dbb45e14099031fb9021a62bd8375bd92b4147e8c29e35df4eec411c94ed"
+      },
+      "sources": [
+        ".github/workflows/mcp-python-sdk.yml",
+        ".github/workflows/offline-validation.yml",
+        ".github/workflows/pnpm-cache-install.yml",
+        "requirements-dev-lock.txt",
+        "tests/test_agent_tool_policy.py",
+        "tests/test_native_qualification_index.py",
+        "tools/search_semantic_corpus.py",
+        "tools/validate_agent_tool_policy.py",
+        "tools/validate_native_qualification_index.py"
       ]
     }
   ],
@@ -331,10 +301,10 @@
       },
       "superseded_sources": [
         ".github/workflows/offline-validation.yml",
-        "AGENTS.md",
         "CONTRIBUTING.md",
-        "docs/improvement-plan.md",
-        "tests/test_windows_trial_process.py"
+        "tests/test_native_qualification_index.py",
+        "tests/test_windows_trial_process.py",
+        "tools/validate_native_qualification_index.py"
       ]
     },
     {
@@ -343,7 +313,8 @@
         "sha256": "15d0e9a8c2d3e2d9b40a9f6da74f65eba42744801527a71277a720d2234deb8c"
       },
       "superseded_sources": [
-        "tests/test_semantic_search.py"
+        "tests/test_semantic_search.py",
+        "tools/search_semantic_corpus.py"
       ]
     },
     {
@@ -369,10 +340,7 @@
         "path": "artifacts/research/2026-11-14/development-checkpoint/review.json",
         "sha256": "0716c3edfe7fdf54f6ba8050f4e1e7972d002af7da7da64570ffd8028fa397f7"
       },
-      "superseded_sources": [
-        "data/development_plan.json",
-        "docs/improvement-plan.md"
-      ]
+      "superseded_sources": []
     },
     {
       "review": {
@@ -393,9 +361,7 @@
         "path": "artifacts/research/2026-11-14/native-boundary-plan-checkpoint/review.json",
         "sha256": "cfa2fcffb8f8470aebe742fe08c466e96f038f1d2fb90f728dfceab8a4d09585"
       },
-      "superseded_sources": [
-        "data/development_plan.json"
-      ]
+      "superseded_sources": []
     },
     {
       "review": {
@@ -418,9 +384,7 @@
         "path": "artifacts/research/2026-11-14/local-model-catalog-plan-checkpoint/review.json",
         "sha256": "98e895fc83db0c008934fa77f165186fdf82ccc1fb3d1927c0e2b7985575b3f5"
       },
-      "superseded_sources": [
-        "data/development_plan.json"
-      ]
+      "superseded_sources": []
     },
     {
       "review": {
@@ -428,8 +392,7 @@
         "sha256": "5386596e9fda519f44eca8e890f79eb278a190216acbd5ee5758f0156203b5a0"
       },
       "superseded_sources": [
-        "dev.ps1",
-        "toolchains/bootstrap/README.md"
+        "dev.ps1"
       ]
     },
     {
@@ -437,9 +400,7 @@
         "path": "artifacts/research/2026-11-14/native-resource-plan-checkpoint/review.json",
         "sha256": "05c6182521a5b862292d1da5b077dd701599412c07d66ba7530b78e9634d402f"
       },
-      "superseded_sources": [
-        "data/development_plan.json"
-      ]
+      "superseded_sources": []
     },
     {
       "review": {
@@ -447,10 +408,8 @@
         "sha256": "dc1ffacd7ab9b40ad1be7f57d49284fc7f5db2d2dfa017bada2ca531b215a511"
       },
       "superseded_sources": [
-        "AGENTS.md",
         "dev.ps1",
-        "tests/test_frontend_ownership.py",
-        "toolchains/bootstrap/README.md"
+        "tests/test_frontend_ownership.py"
       ]
     },
     {
@@ -459,7 +418,8 @@
         "sha256": "9a14f441f4389465e21650a15300f0f683fcf7ac75abdcf41fd73595cc338faf"
       },
       "superseded_sources": [
-        ".github/workflows/offline-validation.yml"
+        ".github/workflows/offline-validation.yml",
+        "requirements-dev-lock.txt"
       ]
     },
     {
@@ -467,19 +427,14 @@
         "path": "artifacts/research/2026-11-17/repository-state/review.json",
         "sha256": "04aa96045709277c5396f89c45697e5bd3575a9f5aa3b822730a9eae51a362be"
       },
-      "superseded_sources": [
-        "data/development_plan.json",
-        "docs/improvement-plan.md"
-      ]
+      "superseded_sources": []
     },
     {
       "review": {
         "path": "artifacts/research/2026-11-17/frontend-stream-contract/review.json",
         "sha256": "6323b9865876784ec62b9a691dcf9c53935bda93a3b4675279c51992be55d06a"
       },
-      "superseded_sources": [
-        "AGENTS.md"
-      ]
+      "superseded_sources": []
     },
     {
       "review": {
@@ -487,7 +442,46 @@
         "sha256": "74082bec415197281e40e155e1a417f14a41e62ff3624157bf6121d649c0d053"
       },
       "superseded_sources": [
-        ".github/workflows/offline-validation.yml"
+        ".github/workflows/offline-validation.yml",
+        "requirements-dev-lock.txt"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-17/fixture-lifecycle/review.json",
+        "sha256": "a277732c7592235712719c51162d7111625e1dfb2e7c322b912df7a71da6c467"
+      },
+      "superseded_sources": [
+        "included/improved/skills/tdd-workflow-current/SKILL.md"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-14/pnpm-action-update/review.json",
+        "sha256": "4aa778691e078fd66d2ea76f46f0e6125155a1d31e424d8c4c0033a83276eac0"
+      },
+      "superseded_sources": [
+        ".github/workflows/pnpm-cache-install.yml"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-17/scoped-study-and-skill-delivery/review.json",
+        "sha256": "eaa6134464b67177f06fccb9f896d92e54164db9e1295af132896bf97a859f9c"
+      },
+      "superseded_sources": [
+        ".github/workflows/offline-validation.yml",
+        "tests/test_agent_tool_policy.py",
+        "tools/validate_agent_tool_policy.py"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-14/mcp-pagination-sdk230/review.json",
+        "sha256": "b521001d32e22ee22b0614e44d584bd4f44201695a019a4082f04752bc2330d3"
+      },
+      "superseded_sources": [
+        ".github/workflows/mcp-python-sdk.yml"
       ]
     }
   ]

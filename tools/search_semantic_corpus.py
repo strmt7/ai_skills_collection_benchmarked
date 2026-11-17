@@ -19,6 +19,7 @@ import yaml
 from prepare_crawl4ai_source import runtime_sources
 
 ROOT = Path(__file__).resolve().parents[1]
+SEARCH_LIMITS = range(1, 21)
 CLIENT = """import importlib.metadata,json,sys,msgspec
 from cocoindex_code.client import search,project_status,daemon_status
 request=json.load(sys.stdin)
@@ -138,7 +139,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--model-proof", type=Path, required=True)
     parser.add_argument("--query", required=True)
     parser.add_argument("--path", action="append", default=[])
-    parser.add_argument("--limit", type=int, choices=range(1, 21), default=3)
+    parser.add_argument("--limit", type=int, choices=SEARCH_LIMITS, default=3)
     parser.add_argument("--json", action="store_true")
     return parser
 

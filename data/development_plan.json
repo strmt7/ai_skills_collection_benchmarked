@@ -343,7 +343,7 @@
       "id": "P4",
       "priority": 4,
       "title": "Run independent development comparisons",
-      "status": "pending",
+      "status": "active",
       "depends_on": [
         "P1",
         "P2"
@@ -353,7 +353,7 @@
         "R9",
         "R12"
       ],
-      "next_action": "Execute the first independently selected study with a qualified P1 model route and fully admitted P2 task/scorer scope. Preserve every matched B0/BK/BC attempt. Include all 12 tasks when admitting or reporting the original frame.",
+      "next_action": "Retain the verified packaging floor result. Qualify and preregister discriminating development tasks on admitted routes before collecting further model outcomes. Preserve all twelve graphs and assignments in the original frame.",
       "deliverables": [
         "All attempt transcripts and native results",
         "Usage and failure accounting",
@@ -367,14 +367,20 @@
         "Paired quality, uncertainty, costs where observed, regressions and heterogeneity are reported against both baselines",
         "A ceiling, floor, low-power or infrastructure result is preserved and diagnosed rather than reclassified as superiority"
       ],
-      "evidence": [],
+      "evidence": [
+        {
+          "path": "artifacts/research/2026-11-17/packaging-development/observations.json",
+          "sha256": "7b0de2d5702f61b855c55be3745e82203cb69baa918940df55df41411c9a1bb7",
+          "scope": "Three valid native scores on the single public packaging task, all at the floor. The original 12-task frame and GPT-6.1 Sol high comparison retain separate scope."
+        }
+      ],
       "dependency_scope": "Per study"
     },
     {
       "id": "P5",
       "priority": 5,
       "title": "Iterate skills from general mechanisms and broaden external evaluation",
-      "status": "pending",
+      "status": "active",
       "depends_on": [
         "P4"
       ],
@@ -386,7 +392,7 @@
         "R9",
         "R12"
       ],
-      "next_action": "Use development evidence to repair general behavior mechanisms, qualify independent reproductions and compare separately frozen revisions. Run routing/content/tool ablations and independent development-transfer tasks without importing benchmark answers or tuning confirmation material.",
+      "next_action": "Freeze the current test-guidance revision separately. Use independent development tasks to test focused runner reuse and distinguish setup failures from product failures. Retain all outcomes without optimizing for the packaging verifier.",
       "deliverables": [
         "Recorded hypotheses and revisions",
         "Skill/routing/tool ablations",
@@ -400,7 +406,13 @@
         "Changed candidate revisions are not pooled into one score; transfer and regression effects are reported",
         "Selection prioritizes useful quality gains and reliability; noise, a favorable seed or lower tokens alone cannot satisfy efficacy"
       ],
-      "evidence": [],
+      "evidence": [
+        {
+          "path": "artifacts/research/2026-11-17/fixture-lifecycle/review-v2.json",
+          "sha256": "3e3df833247abccf8ddbf98e70d400336b285745e57edcb4d19c8b7c50621753",
+          "scope": "Independent functional runner and fixture checks qualify the instructions before new model tests. Current revision efficacy remains unmeasured."
+        }
+      ],
       "dependency_scope": "Per study"
     },
     {
@@ -498,6 +510,11 @@
           "path": "artifacts/research/2026-11-14/bootstrap-command-resources/review.json",
           "sha256": "5386596e9fda519f44eca8e890f79eb278a190216acbd5ee5758f0156203b5a0",
           "scope": "Optional bounded command memory propagates through both launch layers; normal defaults remain 4/6 GiB. Invalid arguments are rejected before setup and actual commit behavior is measured separately from declarations."
+        },
+        {
+          "path": "artifacts/research/2026-11-17/uv-shared-pin/observations.json",
+          "sha256": "45da77c64c4f65f5b8d99e5c454ae873b46384ec3da1954033b055ed4c063a48",
+          "scope": "Installed and verified uv 0.13.9 on Windows and replayed the pinned setup action against the same version file. Verified the updated locked dependency graph."
         }
       ]
     },

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "scope": "Focused runner reuse, failure classification, fixture ownership, partial setup, and cleanup diagnostics on independent pytest, Node, and Chromium fixtures.",
+  "observed_on": "2026-11-17",
+  "source_sha256": {
+    "included/improved/skills/tdd-workflow-current/SKILL.md": "64a8ade109658d0e777e4a6cf770f61fc7fa055d903600eaff9815327250e64b",
+    "included/improved/skills/e2e-testing-current/SKILL.md": "c8732e81f0d181e5de0030d86770f5bfccc928a3942514837b7b233383fcce29"
+  },
+  "artifacts": {
+    "previous-tdd.md": "38515bb140a79f78469e06da346dca10c3cc05fd7be4cb70e668e2c539c66c14",
+    "previous-browser.md": "37dba3477baaa890c1e443027e472f06cffaa3345531d9525ad8a01d27c37d4a",
+    "observations.json": "4a255c52dce70b017307821715eee23d95c5afda849f4a9196e6cfff2bd5cdac",
+    "runner-reuse.json": "ddba340d1b5c8c4204363de63207d52689ed03a66f2af8e15e435cfb297dee25",
+    "previous-qa-tdd.md": "fc5c9aee20eaa69740583f4080fdbc93d8ae4474ab1f2e96c856b465dc4db669"
+  },
+  "comparative_model_attempts": 0,
+  "model_efficacy_established": false
+}
