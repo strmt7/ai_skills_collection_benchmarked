@@ -16,7 +16,7 @@ the unchanged original instructions. Follow the collection's
 | --- | --- |
 | Skip Windows/macOS ASan; describe Windows support as experimental | Current LLVM and Microsoft documentation supports native ASan on documented platforms. The Windows LLVM control detects an invalid access. MSVC and macOS were not executed here. |
 | Disable libFuzzer RSS limits because ASan maps a large shadow address range | LLVM distinguishes virtual address mappings from resident memory. Keep a finite RSS budget; this review does not stress-test the limit. |
-| Use `\r` and `\n` in a libFuzzer PNG dictionary entry | LLVM 23.1.4 and 23.1.5 reject that line. Explicit `\x0D` and `\x0A` escapes load successfully. |
+| Use `\r` and `\n` in a libFuzzer PNG dictionary entry | LLVM 23.1.4, 23.1.5 and 23.1.6 reject that line. Explicit `\x0D` and `\x0A` escapes load successfully. |
 | Pass raw extracted strings directly into a dictionary | Extraction alone does not serialize embedded quotes, backslashes or binary bytes. Separate native controls admit escaped strings and all 256 byte values. |
 
 The native run has **11 successful controls**, including compiler identity,
@@ -25,17 +25,23 @@ accepted dictionaries and two expected dictionary failures. Every child runs
 inside an owned Windows process tree with a deadline and bounded logs. Expected
 failures remain in the evidence; they are not converted into clean runs.
 
-The current qualified compiler is the official **LLVM 23.1.5 Windows x64** portable
-archive, checked against the latest non-prerelease release on 10 November 2026.
-The [update record](../artifacts/research/2026-11-10/llvm-toolchain-refresh/review.json)
-retains the earlier 23.1.4 inputs and results, and all 11 current native controls
-through the automatic development entrypoint. Native checks use verified owned
-toolchain paths; excessively long Windows loader paths remain unsupported.
-Windows
-builds also require installed MSVC C++ headers/libraries and a Windows SDK.
-The runner discovers those installations and records their selected paths in
-the verbose build log. No global installation, AI client, fixed username or
-fixed drive is required. The matching ASan DLL is added only to test processes.
+The current qualified compiler is the official **LLVM 23.1.6 Windows x64**
+portable archive, observed on 17 November 2026. The
+[17 November update](../artifacts/research/2026-11-17/llvm-toolchain-refresh/review.json)
+retains its verified asset identities, all 11 native outcomes and the original
+266-character SDK DLL startup failure. The
+[10 November record](../artifacts/research/2026-11-10/llvm-toolchain-refresh/review.json)
+retains the earlier 23.1.4 and 23.1.5 evidence.
+
+The runner deploys its digest-verified matching ASan DLL beside the owned test
+executables. This Windows app-local deployment supports the longer SDK DLL path;
+it does not establish arbitrary executable-path support or change global PATH
+or registry settings. Executable paths retain their documented loader limits.
+Windows builds currently require installed MSVC C++ headers/libraries and a
+Windows SDK. The runner discovers them and records selected paths in the verbose
+build log; qualification did not install or modify them. Fresh automatic setup
+of those prerequisites remains unqualified. Tool paths come from explicit inputs
+and discovery, without a fixed username or drive.
 
 These controls prove specific native contracts. They do not measure a fuzzing
 campaign's coverage or bug yield, validate every tool mentioned by the original

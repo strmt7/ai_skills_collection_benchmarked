@@ -1,0 +1,9 @@
+Dictionary: 1 entries
+INFO: Running with entropic power schedule (0xFF, 100).
+INFO: Seed: 1
+INFO: Loaded 1 modules   (1 inline 8-bit counters): 1 [00007FF742E475C8, 00007FF742E475C9), 
+INFO: Loaded 1 PC tables (1 PCs): 1 [00007FF742E2BC00,00007FF742E2BC10), 
+INFO: A corpus is not provided, starting from an empty corpus
+#2	INITED cov: 1 ft: 1 corp: 1/1b exec/s: 0 rss: 36Mb
+#2	DONE   cov: 1 ft: 1 corp: 1/1b lim: 4 exec/s: 0 rss: 36Mb
+Done 2 runs in 0 second(s)

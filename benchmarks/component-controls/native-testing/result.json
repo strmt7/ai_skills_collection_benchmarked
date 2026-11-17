@@ -1,9 +1,9 @@
 {
   "measurement_kind": "native_component_contract_controls",
-  "compiler_version": "23.1.5",
+  "compiler_version": "23.1.6",
   "input_sha256": {
-    "run_native.py": "9baa52b3a9d8d5349c9b225505c92b3e7cba990c91147d4a0f449203e7aa2abe",
-    "source.json": "206c0063b7dd6e2adab31d5b388786574f8f3ddaeedd0b8cd86fb4878e0b6a29",
+    "run_native.py": "75506958b7ad0c2368596dbd6c6ea27db40f5069ee1362c79e9995d670b0ff34",
+    "source.json": "16d95b53715415ff75ab9638573af342d4b799e30707f961f760b68ab681fe35",
     "allocation-boundary.cpp": "4394f1041faf454c5f53dbff58b3d792ec2bd5368e80b09b6972d73d0b5959d0",
     "dictionary-loader.cpp": "3066e04216a90aecd40b128075432f5decdf34b64d92a205e800139b5e1744b2",
     "unsupported-c-escapes.dict": "b3335be4a07a961f41de4dc667aa0bf850aca3af44dd89c08849f896fee29894",
@@ -23,9 +23,9 @@
       "exit_code": 0,
       "expected_zero_exit": true,
       "required_diagnostics": [
-        "clang version 23.1.5"
+        "clang version 23.1.6"
       ],
-      "stdout_sha256": "3d344616acfdb9148260b098f8dd58523dd7ac28cd1d47da70bc135f6ad73290",
+      "stdout_sha256": "4fd041d810ffba83f24c58c4e23ed4763291372eed5aa343ceb7a5d41582a7c9",
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "process": {
         "windows_job": true,
@@ -54,7 +54,7 @@
       "expected_zero_exit": true,
       "required_diagnostics": [],
       "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stderr_sha256": "6f06e51f48c2754281b074d69e0e119c901da64927bac8bf99b789e842de2c50",
+      "stderr_sha256": "92c0b1b3d08fc55e556edfb560937be7bea8bba97dc097a488bfcfb655098696",
       "process": {
         "windows_job": true,
         "real_interpreter_gated_before_site": true,
@@ -67,7 +67,7 @@
     {
       "label": "asan-clean",
       "arguments": [
-        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-qualification-20261110-v1\\live-llvm-v2\\workspace\\allocation-boundary.exe"
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\llvm-23.1.6-qualification-v1\\workspace-v2\\allocation-boundary.exe"
       ],
       "exit_code": 0,
       "expected_zero_exit": true,
@@ -86,7 +86,7 @@
     {
       "label": "asan-out-of-bounds",
       "arguments": [
-        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-qualification-20261110-v1\\live-llvm-v2\\workspace\\allocation-boundary.exe",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\llvm-23.1.6-qualification-v1\\workspace-v2\\allocation-boundary.exe",
         "outside"
       ],
       "exit_code": 1,
@@ -95,7 +95,7 @@
         "ERROR: AddressSanitizer: heap-buffer-overflow"
       ],
       "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stderr_sha256": "7d979a3976d44d23e715b79e1c934ed8556a822b883561cab6339100e8eb70a8",
+      "stderr_sha256": "b833bf8eff753b2a70c42947cacae886f7ae9958e89f8419061051dc016b4061",
       "process": {
         "windows_job": true,
         "real_interpreter_gated_before_site": true,
@@ -134,7 +134,7 @@
     {
       "label": "fuzzer-help",
       "arguments": [
-        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-qualification-20261110-v1\\live-llvm-v2\\workspace\\dictionary-loader.exe",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\llvm-23.1.6-qualification-v1\\workspace-v2\\dictionary-loader.exe",
         "-help=1"
       ],
       "exit_code": 0,
@@ -144,7 +144,7 @@
         "malloc_limit_mb"
       ],
       "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stderr_sha256": "db9816d21e1cda5c50b23a714ff1c3fe40e84115d023b11f0aca1fc8c45878f3",
+      "stderr_sha256": "d04f70cf060ce5ee2b964a6eb0840639d2dcd686858693ce0b36160a6748b57a",
       "process": {
         "windows_job": true,
         "real_interpreter_gated_before_site": true,
@@ -157,7 +157,7 @@
     {
       "label": "unsupported-c-escapes",
       "arguments": [
-        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-qualification-20261110-v1\\live-llvm-v2\\workspace\\dictionary-loader.exe",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\llvm-23.1.6-qualification-v1\\workspace-v2\\dictionary-loader.exe",
         "-runs=1",
         "-seed=1",
         "-timeout=2",
@@ -185,7 +185,7 @@
     {
       "label": "portable-byte-escapes",
       "arguments": [
-        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-qualification-20261110-v1\\live-llvm-v2\\workspace\\dictionary-loader.exe",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\llvm-23.1.6-qualification-v1\\workspace-v2\\dictionary-loader.exe",
         "-runs=1",
         "-seed=1",
         "-timeout=2",
@@ -200,7 +200,7 @@
         "Dictionary: 1 entries"
       ],
       "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stderr_sha256": "5ea9fff10817fb7adb978aa5ba81c5ba27c5c896f2612c4b4c1902fc32ce1c04",
+      "stderr_sha256": "e818b37c60292162785108393f5f679c724ba8c1b3db6166bb53591a30e981d1",
       "process": {
         "windows_job": true,
         "real_interpreter_gated_before_site": true,
@@ -213,7 +213,7 @@
     {
       "label": "quoted-and-backslash",
       "arguments": [
-        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-qualification-20261110-v1\\live-llvm-v2\\workspace\\dictionary-loader.exe",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\llvm-23.1.6-qualification-v1\\workspace-v2\\dictionary-loader.exe",
         "-runs=1",
         "-seed=1",
         "-timeout=2",
@@ -228,7 +228,7 @@
         "Dictionary: 1 entries"
       ],
       "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stderr_sha256": "5ea9fff10817fb7adb978aa5ba81c5ba27c5c896f2612c4b4c1902fc32ce1c04",
+      "stderr_sha256": "e818b37c60292162785108393f5f679c724ba8c1b3db6166bb53591a30e981d1",
       "process": {
         "windows_job": true,
         "real_interpreter_gated_before_site": true,
@@ -241,7 +241,7 @@
     {
       "label": "all-byte-values",
       "arguments": [
-        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-qualification-20261110-v1\\live-llvm-v2\\workspace\\dictionary-loader.exe",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\llvm-23.1.6-qualification-v1\\workspace-v2\\dictionary-loader.exe",
         "-runs=1",
         "-seed=1",
         "-timeout=2",
@@ -256,7 +256,7 @@
         "Dictionary: 1 entries"
       ],
       "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stderr_sha256": "5ea9fff10817fb7adb978aa5ba81c5ba27c5c896f2612c4b4c1902fc32ce1c04",
+      "stderr_sha256": "e818b37c60292162785108393f5f679c724ba8c1b3db6166bb53591a30e981d1",
       "process": {
         "windows_job": true,
         "real_interpreter_gated_before_site": true,
@@ -269,7 +269,7 @@
     {
       "label": "unterminated-quote",
       "arguments": [
-        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-qualification-20261110-v1\\live-llvm-v2\\workspace\\dictionary-loader.exe",
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\llvm-23.1.6-qualification-v1\\workspace-v2\\dictionary-loader.exe",
         "-runs=1",
         "-seed=1",
         "-timeout=2",

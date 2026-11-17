@@ -90,6 +90,10 @@ def execute(compiler: Path, workspace: Path, output: Path, source: dict[str, Any
     output.mkdir(parents=True, exist_ok=False)
     for name in FIXTURES:
         (workspace / name).write_bytes((HERE / name).read_bytes().replace(b"\r\n", b"\n"))
+    staged_runtime = workspace / runtime.name
+    shutil.copyfile(runtime, staged_runtime)
+    if digest(staged_runtime) != source["runtime_sha256"]:
+        raise ValueError("App-local ASan runtime differs from the qualified official asset")
     allowed = {
         "SYSTEMROOT",
         "WINDIR",
@@ -104,9 +108,7 @@ def execute(compiler: Path, workspace: Path, output: Path, source: dict[str, Any
         "PROGRAMDATA",
     }
     environment = {key.upper(): value for key, value in os.environ.items() if key.upper() in allowed}
-    environment["PATH"] = (
-        str(runtime.parent) + os.pathsep + str(compiler.parent) + os.pathsep + environment.get("PATH", "")
-    )
+    environment["PATH"] = str(compiler.parent) + os.pathsep + environment.get("PATH", "")
     environment["ASAN_OPTIONS"] = "symbolize=1:halt_on_error=1"
     environment["ASAN_SYMBOLIZER_PATH"] = str(compiler.with_name("llvm-symbolizer.exe"))
     controls: list[dict[str, Any]] = []

@@ -37,6 +37,11 @@ under the selected temporary directory in `ai-skills-frontend-<unique-id>`;
 command and handoff records remain in the managed cache. This option applies
 only to the `python` operation.
 
+Output and errors use standard PowerShell streams, so assignments, pipelines,
+redirection and `Tee-Object` can consume the results. Native output is replayed
+after the owned process finishes. The diagnostic files retain its exact bytes;
+PowerShell formats the displayed output and error records.
+
 These limits are ceilings, not memory reservations. The selected operation must
 still check available host resources and enforce its own bounds. A nested 16 GiB
 job cannot overcome a smaller enclosing job. Increasing the command ceiling

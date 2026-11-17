@@ -1,0 +1,302 @@
+{
+  "measurement_kind": "native_component_contract_controls",
+  "compiler_version": "23.1.5",
+  "input_sha256": {
+    "run_native.py": "9baa52b3a9d8d5349c9b225505c92b3e7cba990c91147d4a0f449203e7aa2abe",
+    "source.json": "206c0063b7dd6e2adab31d5b388786574f8f3ddaeedd0b8cd86fb4878e0b6a29",
+    "allocation-boundary.cpp": "4394f1041faf454c5f53dbff58b3d792ec2bd5368e80b09b6972d73d0b5959d0",
+    "dictionary-loader.cpp": "3066e04216a90aecd40b128075432f5decdf34b64d92a205e800139b5e1744b2",
+    "unsupported-c-escapes.dict": "b3335be4a07a961f41de4dc667aa0bf850aca3af44dd89c08849f896fee29894",
+    "portable-byte-escapes.dict": "7a924c8e3d0b7ee460e817d2f864a61289d814b01b0fb45f3dd0897aa588bfce",
+    "quoted-and-backslash.dict": "b9387dd979084af24e194e421fd04eb7e3f28ccbe8e598dce8ab2b605d933138",
+    "all-byte-values.dict": "83bcaf5f7c0f5659de75b3d16638ff704593bd4b1658739b486a0afdb0292661",
+    "unterminated-quote.dict": "3dbada9657912dacea122dccb87478b5fee0a39df07764c7881df202aece7de3",
+    "tools/_windows_owned_python.py": "acf5b4e2d94758065cef125e5d6386ff741fe75e80bde2e66e0e67ac5e4a2651"
+  },
+  "controls": [
+    {
+      "label": "compiler-version",
+      "arguments": [
+        "<compiler>",
+        "--version"
+      ],
+      "exit_code": 0,
+      "expected_zero_exit": true,
+      "required_diagnostics": [
+        "clang version 23.1.5"
+      ],
+      "stdout_sha256": "3d344616acfdb9148260b098f8dd58523dd7ac28cd1d47da70bc135f6ad73290",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process": {
+        "windows_job": true,
+        "real_interpreter_gated_before_site": true,
+        "kill_on_close": true,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null
+      },
+      "passed": true
+    },
+    {
+      "label": "asan-build",
+      "arguments": [
+        "<compiler>",
+        "-O1",
+        "-g",
+        "-fno-omit-frame-pointer",
+        "-fsanitize=address",
+        "-fuse-ld=lld",
+        "-v",
+        "allocation-boundary.cpp",
+        "-o",
+        "allocation-boundary.exe"
+      ],
+      "exit_code": 0,
+      "expected_zero_exit": true,
+      "required_diagnostics": [],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "6f06e51f48c2754281b074d69e0e119c901da64927bac8bf99b789e842de2c50",
+      "process": {
+        "windows_job": true,
+        "real_interpreter_gated_before_site": true,
+        "kill_on_close": true,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null
+      },
+      "passed": true
+    },
+    {
+      "label": "asan-clean",
+      "arguments": [
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-qualification-20261110-v1\\live-llvm-v2\\workspace\\allocation-boundary.exe"
+      ],
+      "exit_code": 0,
+      "expected_zero_exit": true,
+      "required_diagnostics": [],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process": {
+        "windows_job": true,
+        "real_interpreter_gated_before_site": true,
+        "kill_on_close": true,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null
+      },
+      "passed": true
+    },
+    {
+      "label": "asan-out-of-bounds",
+      "arguments": [
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-qualification-20261110-v1\\live-llvm-v2\\workspace\\allocation-boundary.exe",
+        "outside"
+      ],
+      "exit_code": 1,
+      "expected_zero_exit": false,
+      "required_diagnostics": [
+        "ERROR: AddressSanitizer: heap-buffer-overflow"
+      ],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "7d979a3976d44d23e715b79e1c934ed8556a822b883561cab6339100e8eb70a8",
+      "process": {
+        "windows_job": true,
+        "real_interpreter_gated_before_site": true,
+        "kill_on_close": true,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null
+      },
+      "passed": true
+    },
+    {
+      "label": "fuzzer-build",
+      "arguments": [
+        "<compiler>",
+        "-O1",
+        "-g",
+        "-fsanitize=fuzzer,address",
+        "-fuse-ld=lld",
+        "dictionary-loader.cpp",
+        "-o",
+        "dictionary-loader.exe"
+      ],
+      "exit_code": 0,
+      "expected_zero_exit": true,
+      "required_diagnostics": [],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "process": {
+        "windows_job": true,
+        "real_interpreter_gated_before_site": true,
+        "kill_on_close": true,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null
+      },
+      "passed": true
+    },
+    {
+      "label": "fuzzer-help",
+      "arguments": [
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-qualification-20261110-v1\\live-llvm-v2\\workspace\\dictionary-loader.exe",
+        "-help=1"
+      ],
+      "exit_code": 0,
+      "expected_zero_exit": true,
+      "required_diagnostics": [
+        "rss_limit_mb",
+        "malloc_limit_mb"
+      ],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "db9816d21e1cda5c50b23a714ff1c3fe40e84115d023b11f0aca1fc8c45878f3",
+      "process": {
+        "windows_job": true,
+        "real_interpreter_gated_before_site": true,
+        "kill_on_close": true,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null
+      },
+      "passed": true
+    },
+    {
+      "label": "unsupported-c-escapes",
+      "arguments": [
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-qualification-20261110-v1\\live-llvm-v2\\workspace\\dictionary-loader.exe",
+        "-runs=1",
+        "-seed=1",
+        "-timeout=2",
+        "-max_len=512",
+        "-rss_limit_mb=256",
+        "-malloc_limit_mb=32",
+        "-dict=unsupported-c-escapes.dict"
+      ],
+      "exit_code": 1,
+      "expected_zero_exit": false,
+      "required_diagnostics": [
+        "ParseDictionaryFile: error in line 1"
+      ],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e6d1c7c096da387ab8616780d1cad626a9bfdd2da014b1444bee703ef3337560",
+      "process": {
+        "windows_job": true,
+        "real_interpreter_gated_before_site": true,
+        "kill_on_close": true,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null
+      },
+      "passed": true
+    },
+    {
+      "label": "portable-byte-escapes",
+      "arguments": [
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-qualification-20261110-v1\\live-llvm-v2\\workspace\\dictionary-loader.exe",
+        "-runs=1",
+        "-seed=1",
+        "-timeout=2",
+        "-max_len=512",
+        "-rss_limit_mb=256",
+        "-malloc_limit_mb=32",
+        "-dict=portable-byte-escapes.dict"
+      ],
+      "exit_code": 0,
+      "expected_zero_exit": true,
+      "required_diagnostics": [
+        "Dictionary: 1 entries"
+      ],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "5ea9fff10817fb7adb978aa5ba81c5ba27c5c896f2612c4b4c1902fc32ce1c04",
+      "process": {
+        "windows_job": true,
+        "real_interpreter_gated_before_site": true,
+        "kill_on_close": true,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null
+      },
+      "passed": true
+    },
+    {
+      "label": "quoted-and-backslash",
+      "arguments": [
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-qualification-20261110-v1\\live-llvm-v2\\workspace\\dictionary-loader.exe",
+        "-runs=1",
+        "-seed=1",
+        "-timeout=2",
+        "-max_len=512",
+        "-rss_limit_mb=256",
+        "-malloc_limit_mb=32",
+        "-dict=quoted-and-backslash.dict"
+      ],
+      "exit_code": 0,
+      "expected_zero_exit": true,
+      "required_diagnostics": [
+        "Dictionary: 1 entries"
+      ],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "5ea9fff10817fb7adb978aa5ba81c5ba27c5c896f2612c4b4c1902fc32ce1c04",
+      "process": {
+        "windows_job": true,
+        "real_interpreter_gated_before_site": true,
+        "kill_on_close": true,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null
+      },
+      "passed": true
+    },
+    {
+      "label": "all-byte-values",
+      "arguments": [
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-qualification-20261110-v1\\live-llvm-v2\\workspace\\dictionary-loader.exe",
+        "-runs=1",
+        "-seed=1",
+        "-timeout=2",
+        "-max_len=512",
+        "-rss_limit_mb=256",
+        "-malloc_limit_mb=32",
+        "-dict=all-byte-values.dict"
+      ],
+      "exit_code": 0,
+      "expected_zero_exit": true,
+      "required_diagnostics": [
+        "Dictionary: 1 entries"
+      ],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "5ea9fff10817fb7adb978aa5ba81c5ba27c5c896f2612c4b4c1902fc32ce1c04",
+      "process": {
+        "windows_job": true,
+        "real_interpreter_gated_before_site": true,
+        "kill_on_close": true,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null
+      },
+      "passed": true
+    },
+    {
+      "label": "unterminated-quote",
+      "arguments": [
+        "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-qualification-20261110-v1\\live-llvm-v2\\workspace\\dictionary-loader.exe",
+        "-runs=1",
+        "-seed=1",
+        "-timeout=2",
+        "-max_len=512",
+        "-rss_limit_mb=256",
+        "-malloc_limit_mb=32",
+        "-dict=unterminated-quote.dict"
+      ],
+      "exit_code": 1,
+      "expected_zero_exit": false,
+      "required_diagnostics": [
+        "ParseDictionaryFile: error in line 1"
+      ],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "4598081d4fcb95e03b37d538eb2a1f3d745d1f5d62e4ad534c5f3669ed162a78",
+      "process": {
+        "windows_job": true,
+        "real_interpreter_gated_before_site": true,
+        "kill_on_close": true,
+        "active_processes_after_cleanup": 0,
+        "termination_reason": null
+      },
+      "passed": true
+    }
+  ],
+  "all_passed": true,
+  "agent_performance_claim": false,
+  "independent_model_trials": 0,
+  "scope": "Windows x64 LLVM ASan detection and libFuzzer dictionary admission; no campaign, MSVC compiler, other fuzzer or leak qualification"
+}

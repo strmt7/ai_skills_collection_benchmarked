@@ -1,0 +1,44 @@
+{
+  "observed_on": "2026-11-17",
+  "regression": {
+    "published_commit": "8be77acf11261b918f6380426dc8cdece82c1b9e",
+    "native_failed_controls": 6,
+    "junit_sha256": "4f82c69f9a378e2228895f15c17202c05c589fdcae26a491068d7d136d02e44c",
+    "cause": "Console writes bypass PowerShell object/error streams, so assignment/pipelines/redirection receive no output"
+  },
+  "repair": {
+    "native_passed_controls": 9,
+    "junit_sha256": "8cf0532d67e2c9fb52ab9e273057ddb5686ba105742d08c3785ef0ab75e60816",
+    "controls": [
+      "test_terminating_frontend_stops_first_bootstrap_and_descendant",
+      "test_frontend_preserves_output_exit_status_and_declared_limits[None]",
+      "test_frontend_preserves_output_exit_status_and_declared_limits[18]",
+      "test_frontend_json_is_available_to_powershell_consumers[assignment]",
+      "test_frontend_json_is_available_to_powershell_consumers[pipeline]",
+      "test_frontend_json_is_available_to_powershell_consumers[redirect]",
+      "test_frontend_json_is_available_to_powershell_consumers[tee]",
+      "test_frontend_error_stream_and_exit_status_survive_powershell_capture[redirect]",
+      "test_frontend_error_stream_and_exit_status_survive_powershell_capture[merge]"
+    ],
+    "output_contract": "Standard PowerShell output/error streams, original exit status and exact native diagnostic bytes",
+    "first_hop_ownership_preserved": true
+  },
+  "actual_public_frontends": {
+    "cocoindex": {
+      "ok": true,
+      "provider_version": "0.2.43+catalog.local1",
+      "newly_installed": false,
+      "native_sha256": "f0389231637bc1b05b40abcfb5761b5c257833d8ab71fb9bc20927676cc8e4a1"
+    },
+    "crawl4ai": {
+      "ok": true,
+      "provider_version": "0.9.5+catalog.portable4",
+      "newly_installed": false,
+      "native_sha256": "a0fb17e810ce89b917f80bbb47a00d072beeee6f5b409705fa1208c5ce1f77a9"
+    }
+  },
+  "normalization": "Standard PowerShell output/error records are formatted by the consumer; raw diagnostic files retain native bytes.",
+  "model_invocations": 0,
+  "counted_comparative_attempts": 0,
+  "model_improvement_established": false
+}

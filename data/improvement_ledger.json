@@ -22944,8 +22944,12 @@
             "sha256": "c1db8a146d1a007b0d394453c802baa075266e1c1605a23d55d03cca9688da6e"
           },
           {
-            "path": "benchmarks/component-controls/native-testing/result.json",
+            "path": "artifacts/research/2026-11-17/llvm-toolchain-refresh/previous/result.json",
             "sha256": "e90ebab354c10ead9b7f5be7f8913c55c4c64c40925d0d5b3da3cfe801b03678"
+          },
+          {
+            "path": "artifacts/research/2026-11-17/llvm-toolchain-refresh/native/result.native.json",
+            "sha256": "fcc7e4e1f8e80193ca8ad24775ea36d86001994abcc83d5334cfd407300b6ffc"
           }
         ],
         "status": "in_progress"
@@ -22966,8 +22970,12 @@
             "sha256": "c1db8a146d1a007b0d394453c802baa075266e1c1605a23d55d03cca9688da6e"
           },
           {
-            "path": "benchmarks/component-controls/native-testing/result.json",
+            "path": "artifacts/research/2026-11-17/llvm-toolchain-refresh/previous/result.json",
             "sha256": "e90ebab354c10ead9b7f5be7f8913c55c4c64c40925d0d5b3da3cfe801b03678"
+          },
+          {
+            "path": "artifacts/research/2026-11-17/llvm-toolchain-refresh/native/result.native.json",
+            "sha256": "fcc7e4e1f8e80193ca8ad24775ea36d86001994abcc83d5334cfd407300b6ffc"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -23204,8 +23212,12 @@
             "sha256": "c1db8a146d1a007b0d394453c802baa075266e1c1605a23d55d03cca9688da6e"
           },
           {
-            "path": "benchmarks/component-controls/native-testing/result.json",
+            "path": "artifacts/research/2026-11-17/llvm-toolchain-refresh/previous/result.json",
             "sha256": "e90ebab354c10ead9b7f5be7f8913c55c4c64c40925d0d5b3da3cfe801b03678"
+          },
+          {
+            "path": "artifacts/research/2026-11-17/llvm-toolchain-refresh/native/result.native.json",
+            "sha256": "fcc7e4e1f8e80193ca8ad24775ea36d86001994abcc83d5334cfd407300b6ffc"
           }
         ],
         "status": "in_progress"
@@ -23226,8 +23238,12 @@
             "sha256": "c1db8a146d1a007b0d394453c802baa075266e1c1605a23d55d03cca9688da6e"
           },
           {
-            "path": "benchmarks/component-controls/native-testing/result.json",
+            "path": "artifacts/research/2026-11-17/llvm-toolchain-refresh/previous/result.json",
             "sha256": "e90ebab354c10ead9b7f5be7f8913c55c4c64c40925d0d5b3da3cfe801b03678"
+          },
+          {
+            "path": "artifacts/research/2026-11-17/llvm-toolchain-refresh/native/result.native.json",
+            "sha256": "fcc7e4e1f8e80193ca8ad24775ea36d86001994abcc83d5334cfd407300b6ffc"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",

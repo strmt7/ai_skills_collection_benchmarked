@@ -1,0 +1,18 @@
+{
+  "archive_reader": {
+    "result": "failed before extraction: unsupported tarfile streaming options keyword",
+    "qualification_sha256": "0d6b6c4234a1072a25fba6074b9c90c092b8df6a005378b3684bd245b6cab099",
+    "recovery": "Use the admitted stdlib ZstdFile stream; verified archive reused, no redownload"
+  },
+  "loader": {
+    "exit_code": 3221225734,
+    "ntstatus": "0xC0000106",
+    "name": "STATUS_NAME_TOO_LONG",
+    "runtime_path_characters": 266,
+    "compiler_and_build_passed": true,
+    "asan_clean_passed": false,
+    "commands_sha256": "e04885eeabe8b0ada954512a10207f6c72a387ecc967dd27d668e20823fab185",
+    "recovery": "Copy the verified matching ASan runtime into the owned executable directory, verify its digest and remove runtime-directory PATH dependence"
+  },
+  "scope": "Native component qualification only; no inference or benchmark task changes"
+}

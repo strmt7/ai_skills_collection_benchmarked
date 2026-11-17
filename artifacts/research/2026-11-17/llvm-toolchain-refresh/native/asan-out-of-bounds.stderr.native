@@ -1,0 +1,51 @@
+=================================================================
+==67380==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x125f4ffa0020 at pc 0x7ff7f2f529eb bp 0x0075204ffd40 sp 0x0075204ffd88
+WRITE of size 4 at 0x125f4ffa0020 thread T0
+    #0 0x7ff7f2f529ea in main C:\Users\strat\Documents\Codex\independent-development\poster-repair-2026-10-26-v1\.venv\research\benchmark-planning-20261110-v1\llvm-23.1.6-qualification-v1\workspace-v2\allocation-boundary.cpp:5
+    #1 0x7ff7f2f52cee in invoke_main F:\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl:78
+    #2 0x7ff7f2f52cee in __scrt_common_main_seh F:\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl:288
+    #3 0x7ff85f4cdda6  (C:\WINDOWS\System32\KERNEL32.DLL+0x18002dda6)
+    #4 0x7ff861899c5b  (C:\WINDOWS\SYSTEM32\ntdll.dll+0x1800c9c5b)
+
+0x125f4ffa0020 is located 0 bytes after 16-byte region [0x125f4ffa0010,0x125f4ffa0020)
+allocated by thread T0 here:
+    #0 0x7ffeddf8dacf  (C:\Users\strat\Documents\Codex\independent-development\poster-repair-2026-10-26-v1\.venv\research\benchmark-planning-20261110-v1\llvm-23.1.6-qualification-v1\workspace-v2\clang_rt.asan_dynamic-x86_64.dll+0x18005dacf)
+    #1 0x7ff7f2f5298b in main C:\Users\strat\Documents\Codex\independent-development\poster-repair-2026-10-26-v1\.venv\research\benchmark-planning-20261110-v1\llvm-23.1.6-qualification-v1\workspace-v2\allocation-boundary.cpp:4
+    #2 0x7ff7f2f52cee in invoke_main F:\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl:78
+    #3 0x7ff7f2f52cee in __scrt_common_main_seh F:\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl:288
+    #4 0x7ff85f4cdda6  (C:\WINDOWS\System32\KERNEL32.DLL+0x18002dda6)
+    #5 0x7ff861899c5b  (C:\WINDOWS\SYSTEM32\ntdll.dll+0x1800c9c5b)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow C:\Users\strat\Documents\Codex\independent-development\poster-repair-2026-10-26-v1\.venv\research\benchmark-planning-20261110-v1\llvm-23.1.6-qualification-v1\workspace-v2\allocation-boundary.cpp:5 in main
+Shadow bytes around the buggy address:
+  0x125f4ff9fd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x125f4ff9fe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x125f4ff9fe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x125f4ff9ff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x125f4ff9ff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x125f4ffa0000: fa fa 00 00[fa]fa fa fa fa fa fa fa fa fa fa fa
+  0x125f4ffa0080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x125f4ffa0100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x125f4ffa0180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x125f4ffa0200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x125f4ffa0280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==67380==ABORTING

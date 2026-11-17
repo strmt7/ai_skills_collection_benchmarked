@@ -128,13 +128,94 @@ def test_frontend_preserves_output_exit_status_and_declared_limits(tmp_path: Pat
         creationflags=subprocess.CREATE_NO_WINDOW,
     )
     assert result.returncode == 23
-    assert result.stdout.decode("utf-8") == "ordinary-output"
-    assert result.stderr.decode("utf-8") == "ordinary-error"
+    assert result.stdout.decode("utf-8").splitlines() == ["ordinary-output"]
+    assert "ordinary-error" in result.stderr.decode("utf-8")
     directories = list(tmp_path.glob("ai-skills-frontend-*"))
     assert len(directories) == 1
+    assert (directories[0] / "stdout.native").read_bytes() == b"ordinary-output"
+    assert (directories[0] / "stderr.native").read_bytes() == b"ordinary-error"
     resources = json.loads((directories[0] / "resources.json").read_bytes())
     assert resources["memory_limit_bytes"] == max(8, (memory or 4) + 4) * 1024**3
     assert resources["command_memory_limit_bytes"] == (memory or 4) * 1024**3
     process = json.loads((directories[0] / "process.json").read_bytes())
     assert process["exit_code"] == 23 and process["active_processes_after_cleanup"] == 0
     assert process["termination_reason"] is None
+
+
+@pytest.mark.skipif(os.name != "nt", reason="Native PowerShell output contract")
+@pytest.mark.parametrize("capture", ["assignment", "pipeline", "redirect", "tee"])
+def test_frontend_json_is_available_to_powershell_consumers(tmp_path: Path, capture: str) -> None:
+    if sys.platform != "win32":
+        pytest.skip("Native PowerShell output contract")
+    checkout = fixture_checkout(tmp_path, r"""[Console]::Out.WriteLine('{"value":"\u03bb","items":[1,2]}'); exit 0""")
+    entry = "'" + str(checkout / "dev.ps1").replace("'", "''") + "'"
+    target = "'" + str(tmp_path / "captured.json").replace("'", "''") + "'"
+    call = f"& {entry} python --version"
+    statements = {
+        "assignment": f"$raw = {call}; $value = $raw | ConvertFrom-Json",
+        "pipeline": f"$value = {call} | ConvertFrom-Json",
+        "redirect": f"{call} > {target}; $value = Get-Content -LiteralPath {target} -Raw | ConvertFrom-Json",
+        "tee": f"$value = {call} | Tee-Object -FilePath {target} | ConvertFrom-Json",
+    }
+    driver = tmp_path / "consume.ps1"
+    driver.write_text(
+        "$ErrorActionPreference='Stop'\n"
+        + statements[capture]
+        + "\nif ($null -eq $value -or $value.value -ne [string][char]955 -or $value.items.Count -ne 2) { throw 'Pipeline data lost' }\n"
+        + "[Console]::Out.Write('PIPELINE_OK'); exit 0\n",
+        encoding="utf-8",
+    )
+    shell = Path(os.environ["SYSTEMROOT"]) / "System32/WindowsPowerShell/v1.0/powershell.exe"
+    result = subprocess.run(
+        [str(shell), "-NoLogo", "-NoProfile", "-NonInteractive", "-File", str(driver)],
+        cwd=checkout,
+        env={**os.environ, "TEMP": str(tmp_path), "TMP": str(tmp_path)},
+        stdin=subprocess.DEVNULL,
+        capture_output=True,
+        timeout=20,
+        creationflags=subprocess.CREATE_NO_WINDOW,
+    )
+    assert result.returncode == 0, result.stderr.decode("utf-8", errors="replace")
+    assert result.stdout.decode("utf-8") == "PIPELINE_OK"
+    assert result.stderr == b""
+
+
+@pytest.mark.skipif(os.name != "nt", reason="Native PowerShell error-stream contract")
+@pytest.mark.parametrize("capture", ["redirect", "merge"])
+def test_frontend_error_stream_and_exit_status_survive_powershell_capture(tmp_path: Path, capture: str) -> None:
+    if sys.platform != "win32":
+        pytest.skip("Native PowerShell error-stream contract")
+    checkout = fixture_checkout(
+        tmp_path,
+        "[Console]::Out.WriteLine('{\"ok\":true}'); [Console]::Error.WriteLine('expected diagnostic'); exit 23",
+    )
+    entry = "'" + str(checkout / "dev.ps1").replace("'", "''") + "'"
+    target = "'" + str(tmp_path / "errors.txt").replace("'", "''") + "'"
+    call = f"& {entry} python --version"
+    if capture == "redirect":
+        command = f"$raw = {call} 2> {target}; $childExit = $LASTEXITCODE; $errorText = Get-Content -LiteralPath {target} -Raw"
+        check = "$value = $raw | ConvertFrom-Json; if (-not $value.ok -or $errorText -notmatch 'expected diagnostic') { throw 'Redirect lost data' }"
+    else:
+        command = f"$raw = @({call} 2>&1); $childExit = $LASTEXITCODE"
+        check = "$errors = @($raw | Where-Object { $_ -is [Management.Automation.ErrorRecord] }); if ($errors.Count -ne 1 -or $errors[0].ToString() -notmatch 'expected diagnostic') { throw 'Error stream was not captured' }; $value = $raw[0] | ConvertFrom-Json; if (-not $value.ok) { throw 'Output data lost' }"
+    driver = tmp_path / "consume-error.ps1"
+    driver.write_text(
+        command
+        + "\n"
+        + check
+        + "\nif ($childExit -ne 23) { throw 'Exit status changed' }; [Console]::Out.Write('ERROR_STREAM_OK'); exit 0\n",
+        encoding="utf-8",
+    )
+    shell = Path(os.environ["SYSTEMROOT"]) / "System32/WindowsPowerShell/v1.0/powershell.exe"
+    result = subprocess.run(
+        [str(shell), "-NoLogo", "-NoProfile", "-NonInteractive", "-File", str(driver)],
+        cwd=checkout,
+        env={**os.environ, "TEMP": str(tmp_path), "TMP": str(tmp_path)},
+        stdin=subprocess.DEVNULL,
+        capture_output=True,
+        timeout=20,
+        creationflags=subprocess.CREATE_NO_WINDOW,
+    )
+    assert result.returncode == 0, result.stderr.decode("utf-8", errors="replace")
+    assert result.stdout.decode("utf-8") == "ERROR_STREAM_OK"
+    assert result.stderr == b""

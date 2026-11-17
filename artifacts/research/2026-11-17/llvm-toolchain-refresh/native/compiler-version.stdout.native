@@ -1,0 +1,5 @@
+clang version 23.1.6 (https://github.com/llvm/llvm-project 5b10d2d74929eae78912771222c9855af97496f4)
+Target: x86_64-pc-windows-msvc
+Thread model: posix
+InstalledDir: C:\Users\strat\Documents\Codex\independent-development\poster-repair-2026-10-26-v1\.venv\research\benchmark-planning-20261110-v1\llvm-23.1.6-qualification-v1\toolchain\clang+llvm-23.1.6-x86_64-pc-windows-msvc\bin
+Build config: +alloc:rpmalloc

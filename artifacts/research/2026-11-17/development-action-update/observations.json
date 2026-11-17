@@ -1,0 +1,8 @@
+{
+  "repo": "actions/setup-go",
+  "tag": "v7.1.0",
+  "commit": "d8cbb8045d7f43706b9177cceb36c1f91a6644d5",
+  "release_published": "2026-11-17T03:01:17Z",
+  "source": "Official GitHub releases/latest and git/ref/tags/v7.1.0 responses",
+  "scope": "Immutable official action reference; hosted Go workflow execution must still be verified after publication."
+}

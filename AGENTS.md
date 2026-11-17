@@ -110,6 +110,9 @@ termination with a live descendant; successful cleanup after an ordinary return
 does not prove cleanup when the parent dies. Reuse the exact admitted provider
 and foundation cache for bounded research; changing caches can trigger a separate
 installation and is not a remedy for a stale source index.
+Check launcher output through assignments, pipelines and redirection as well
+as direct process capture. Visible console output does not prove that a caller
+received the output stream.
 Use the repository's owned-process runners with time, output, memory and child
 process limits. Retain actual cleanup results. Track ownership through the
 launch handle, process identity and creation time; a process name alone is

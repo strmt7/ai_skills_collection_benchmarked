@@ -8,7 +8,9 @@ accepted escapes independently of this overlay.
 
 The [10 November update](../../../../../artifacts/research/2026-11-10/llvm-toolchain-refresh/review.json)
 repeated all 11 unchanged native controls with LLVM 23.1.5 through the automatic
-development entrypoint. Its current identities are in the
+development entrypoint. The [17 November update](../../../../../artifacts/research/2026-11-17/llvm-toolchain-refresh/review.json)
+repeats all 11 outcomes with verified LLVM 23.1.6 and a digest-verified app-local
+ASan runtime. Its current identities are in the
 [native controls](../../../../../benchmarks/component-controls/native-testing/source.json).
 
 The mirrored PNG dictionary line, containing C-style `\r` and `\n`, failed with

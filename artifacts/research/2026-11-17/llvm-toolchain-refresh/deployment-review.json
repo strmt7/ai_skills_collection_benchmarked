@@ -1,0 +1,10 @@
+{
+  "url": "https://learn.microsoft.com/en-us/windows/win32/dlls/dynamic-link-library-search-order",
+  "provider_version": "0.9.5+catalog.portable4",
+  "native_status": 200,
+  "native_success": true,
+  "result_sha256": "4388e5b5de9461d76d4d0947b7a250bf33ad0e9686945275c51907c53b1948e4",
+  "scope_reviewed": true,
+  "conclusion": "The Windows application-directory search supports deploying the admitted matching runtime beside the generated test executables. No global PATH or registry changes.",
+  "limitations": "Does not establish arbitrary executable-path support, fresh MSVC/SDK provisioning, all sanitizer configurations or model efficacy."
+}

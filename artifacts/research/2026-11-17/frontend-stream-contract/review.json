@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-17",
+  "scope": "Native frontend first-hop ownership, PowerShell output/error streams and public provider pipeline reuse; no agent efficacy",
+  "source_sha256": {
+    "dev.ps1": "0d6fcc5d4c6fcb0f2e5a16208d820c29c1a6b5b6cbd2379dff7a6134f43fc3c2",
+    "AGENTS.md": "1e3106c1cf36cddbd5918b34d3db67eaf26439bdb579b3bb1b71a05bd91c8228",
+    "toolchains/bootstrap/README.md": "8ceba2fb210a1f8635fa5cbb64f21f4a94a35ba1abcc6af412d6d096f77c7d97",
+    "tests/test_frontend_ownership.py": "b839155989fd6e3627f09179da81e89d4920df2236d11d5d10e94c9c21c176bf"
+  },
+  "artifacts": {
+    "observations.json": "28f1109924659fe0dc1f8664528da50ac4f834965c3b9da457d9efe3a8e9e0eb"
+  },
+  "native_controls": 9,
+  "failed_regression_controls": 6,
+  "actual_provider_pipeline_commands": 2,
+  "model_invocations": 0,
+  "counted_attempts": 0,
+  "model_improvement_established": false
+}

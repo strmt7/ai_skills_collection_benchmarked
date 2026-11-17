@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-17",
+  "scope": "Official actions/setup-go v7.1.0 identity and offline workflow pin; unchanged qualified root developer lock",
+  "source_sha256": {
+    "requirements-dev-lock.txt": "f6f4bd49c0947319a7de3e2be51967ed2c2e0f5b1d9393131fe236eaf29d494a",
+    ".github/workflows/offline-validation.yml": "01567e69555b88d90bd8050e18c32b8017405354fae9b8ed34f57ec6156f96f5"
+  },
+  "artifacts": {
+    "observations.json": "b336d5ab2c1916271fc6868e1e3a74e56ba627e92dd9c586a0a29da0ceef01cb"
+  },
+  "hosted_followup_accepted": false,
+  "model_invocations": 0,
+  "model_improvement_established": false
+}

@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-17",
+  "scope": "Windows x64 LLVM 23.1.6 ASan and libFuzzer component controls with matching app-local runtime deployment",
+  "source_sha256": {
+    "benchmarks/component-controls/native-testing/run_native.py": "75506958b7ad0c2368596dbd6c6ea27db40f5069ee1362c79e9995d670b0ff34",
+    "benchmarks/component-controls/native-testing/source.json": "16d95b53715415ff75ab9638573af342d4b799e30707f961f760b68ab681fe35",
+    "tools/_windows_owned_python.py": "acf5b4e2d94758065cef125e5d6386ff741fe75e80bde2e66e0e67ac5e4a2651",
+    "benchmarks/component-controls/native-testing/allocation-boundary.cpp": "4394f1041faf454c5f53dbff58b3d792ec2bd5368e80b09b6972d73d0b5959d0",
+    "benchmarks/component-controls/native-testing/dictionary-loader.cpp": "3066e04216a90aecd40b128075432f5decdf34b64d92a205e800139b5e1744b2",
+    "benchmarks/component-controls/native-testing/unsupported-c-escapes.dict": "b3335be4a07a961f41de4dc667aa0bf850aca3af44dd89c08849f896fee29894",
+    "benchmarks/component-controls/native-testing/portable-byte-escapes.dict": "7a924c8e3d0b7ee460e817d2f864a61289d814b01b0fb45f3dd0897aa588bfce",
+    "benchmarks/component-controls/native-testing/quoted-and-backslash.dict": "b9387dd979084af24e194e421fd04eb7e3f28ccbe8e598dce8ab2b605d933138",
+    "benchmarks/component-controls/native-testing/all-byte-values.dict": "83bcaf5f7c0f5659de75b3d16638ff704593bd4b1658739b486a0afdb0292661",
+    "benchmarks/component-controls/native-testing/unterminated-quote.dict": "3dbada9657912dacea122dccb87478b5fee0a39df07764c7881df202aece7de3",
+    "benchmarks/component-controls/native-testing/result.json": "1be0e31697adc19f4ee2140779d86d907a015694cb3a0a7788cff9283ba9cc3b",
+    "docs/research-native-testing-contracts.md": "fa148d3ec3f9e2c7e32035f34ccca35b617b3e339dd7a06c96f045056afefa7d",
+    "included/repaired/skills/address-sanitizer-current/references/qualification.md": "6fb028593a8d2e9d28959b6de92591cfba6eeac2a5e205a9b2b528fa7a7f0f3f",
+    "included/repaired/skills/fuzzing-dictionary-current/references/qualification.md": "e9aa463a03e1bae5fe27fa3dfcffd0a197fb127e26068f04be28ce9a2306ccd0",
+    "data/improved_skills_manifest.json": "ebbffbd39361f22f78d1a176fc9b4cda4316c190ea797ac92eb3671dc6a5f6f3"
+  },
+  "artifacts": {
+    "native/all-byte-values.stderr.native": "e818b37c60292162785108393f5f679c724ba8c1b3db6166bb53591a30e981d1",
+    "native/all-byte-values.stdout.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native/asan-build.stderr.native": "92c0b1b3d08fc55e556edfb560937be7bea8bba97dc097a488bfcfb655098696",
+    "native/asan-build.stdout.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native/asan-clean.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native/asan-clean.stdout.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native/asan-out-of-bounds.stderr.native": "b833bf8eff753b2a70c42947cacae886f7ae9958e89f8419061051dc016b4061",
+    "native/asan-out-of-bounds.stdout.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native/commands.json": "6cb3229f5d030aeb0525861d433b32352c750d8a8cd965f047f482c1bc73a28d",
+    "native/compiler-version.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native/compiler-version.stdout.native": "4fd041d810ffba83f24c58c4e23ed4763291372eed5aa343ceb7a5d41582a7c9",
+    "native/fuzzer-build.stderr.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native/fuzzer-build.stdout.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native/fuzzer-help.stderr.native": "d04f70cf060ce5ee2b964a6eb0840639d2dcd686858693ce0b36160a6748b57a",
+    "native/fuzzer-help.stdout.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native/portable-byte-escapes.stderr.native": "e818b37c60292162785108393f5f679c724ba8c1b3db6166bb53591a30e981d1",
+    "native/portable-byte-escapes.stdout.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native/quoted-and-backslash.stderr.native": "e818b37c60292162785108393f5f679c724ba8c1b3db6166bb53591a30e981d1",
+    "native/quoted-and-backslash.stdout.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native/unsupported-c-escapes.stderr.native": "e6d1c7c096da387ab8616780d1cad626a9bfdd2da014b1444bee703ef3337560",
+    "native/unsupported-c-escapes.stdout.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native/unterminated-quote.stderr.native": "4598081d4fcb95e03b37d538eb2a1f3d745d1f5d62e4ad534c5f3669ed162a78",
+    "native/unterminated-quote.stdout.native": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "negative-observations.json": "3004156d4a80192dd15b4bd7c79f72c1eec6d030643c238e54e6b896288061db",
+    "official-asset.json": "1596aab3c18666d1104ef81552cb4f921d3544352b41549ad9e83965708f1a6a",
+    "deployment-review.json": "2a4d52c227ae0f235262e1edaabe966c95a69dbce5fc9a7ce76a98e3705de973",
+    "native/result.native.json": "fcc7e4e1f8e80193ca8ad24775ea36d86001994abcc83d5334cfd407300b6ffc",
+    "previous/result.json": "e90ebab354c10ead9b7f5be7f8913c55c4c64c40925d0d5b3da3cfe801b03678"
+  },
+  "official_archive": {
+    "version": "23.1.6",
+    "release": "llvmorg-23.1.6",
+    "release_url": "https://github.com/llvm/llvm-project/releases/tag/llvmorg-23.1.6",
+    "archive_url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.6/clang%2Bllvm-23.1.6-x86_64-pc-windows-msvc.tar.zst",
+    "archive_bytes": 276226344,
+    "archive_sha256": "7623f582089983c1cb51030cf1996514b19464e5669099571b399e8543770155",
+    "compiler_sha256": "0d1fb4523a41c8ec722cdb72909a0a8fff1343700125b3f11d5cf83063a4d7e3",
+    "runtime_relative_path": "lib/clang/23/lib/windows/clang_rt.asan_dynamic-x86_64.dll",
+    "runtime_sha256": "52c09b411e6fe2520e42a920f12b747b1acb695c633e1f3e0ebc57e257101280"
+  },
+  "controls": 11,
+  "all_passed": true,
+  "owned_processes_after_cleanup": 0,
+  "model_invocations": 0,
+  "counted_comparative_attempts": 0,
+  "model_improvement_established": false,
+  "previous": {
+    "commit": "8be77acf11261b918f6380426dc8cdece82c1b9e",
+    "source_sha256": "206c0063b7dd6e2adab31d5b388786574f8f3ddaeedd0b8cd86fb4878e0b6a29",
+    "result_sha256": "e90ebab354c10ead9b7f5be7f8913c55c4c64c40925d0d5b3da3cfe801b03678",
+    "collector_sha256": "9baa52b3a9d8d5349c9b225505c92b3e7cba990c91147d4a0f449203e7aa2abe"
+  },
+  "limitations": [
+    "Host-discovered MSVC/Windows SDK prerequisites were used; their fresh automatic setup is not qualified.",
+    "The SDK DLL path was 266 characters; generated executable paths remained within their supported loader scope.",
+    "No model comparison, fuzz campaign, coverage-yield, GCC, macOS, MSVC compiler or leak qualification."
+  ],
+  "serialization": {
+    "canonical_result": "LF text as required by .gitattributes",
+    "native_result": "native/result.native.json retains exact captured bytes",
+    "native_observations_changed": false
+  },
+  "evidence_lineage": {
+    "previous_artifact": "artifacts/research/2026-11-17/llvm-toolchain-refresh/previous/result.json",
+    "current_artifact": "artifacts/research/2026-11-17/llvm-toolchain-refresh/native/result.native.json",
+    "prior_bytes_preserved": true,
+    "scope": "Two existing skills, research/evaluation evidence only; no status or source baseline change."
+  }
+}

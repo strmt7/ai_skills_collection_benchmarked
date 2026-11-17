@@ -87,7 +87,11 @@ $resources=@{source_root=$Root; memory_limit_bytes=$frontendMemoryBytes; command
 [IO.File]::WriteAllText((Frontend-NativePath (Join-Path $diagnostics 'resources.json')),($resources | ConvertTo-Json),$utf8)
 $result=[SkillsBootstrap.OwnedProcess]::Run($shell,[string[]]$parameters,$Root,$environment,$stdout,$stderr,3600,16777216,$frontendMemoryBytes,256)
 [IO.File]::WriteAllText((Frontend-NativePath (Join-Path $diagnostics 'process.json')),($result | ConvertTo-Json),$utf8)
-[Console]::Out.Write([IO.File]::ReadAllText((Frontend-NativePath $stdout),$utf8))
-[Console]::Error.Write([IO.File]::ReadAllText((Frontend-NativePath $stderr),$utf8))
+foreach ($line in [IO.File]::ReadLines((Frontend-NativePath $stdout),$utf8)) {
+    Write-Output -InputObject $line
+}
+foreach ($line in [IO.File]::ReadLines((Frontend-NativePath $stderr),$utf8)) {
+    Write-Error -Message $line -ErrorAction Continue
+}
 if ($null -ne $result.termination_reason -or $result.active_processes_after_cleanup -ne 0) { throw "Frontend bootstrap did not complete normally; diagnostics: $diagnostics" }
 exit $result.exit_code

@@ -5,7 +5,8 @@ archive. Its archive, compiler and ASan runtime digests are pinned in the
 [retained source pin](../../../../../artifacts/research/2026-11-10/llvm-toolchain-refresh/previous/source.json).
 The [10 November update](../../../../../artifacts/research/2026-11-10/llvm-toolchain-refresh/review.json)
 repeated all 11 unchanged native controls with LLVM 23.1.5 through the automatic
-development entrypoint. The current pin is in the
+development entrypoint. The [17 November update](../../../../../artifacts/research/2026-11-17/llvm-toolchain-refresh/review.json)
+repeats the same 11 outcomes with verified LLVM 23.1.6. The current pin is in the
 [native controls](../../../../../benchmarks/component-controls/native-testing/source.json).
 The Windows build also needs installed MSVC C++ headers/libraries and a Windows
 SDK. The runner lets LLVM discover them through the system's standard program
@@ -22,7 +23,10 @@ Recovery kept the verified archive and used an explicit 1 GiB decoder-window
 bound. The first clean executable then failed at Windows loader startup with
 `0xC0000135`: its matching ASan DLL was outside the process search path.
 Adding that archive's runtime directory to only the test process's `PATH`
-restored startup. Both failures remain separate from sanitizer diagnostics.
+restored startup in that historical run. The 17 November qualification
+reproduced `0xC0000106` with a 266-character SDK DLL path. The current runner
+places the digest-verified matching ASan DLL beside its owned test executables,
+using Windows app-local deployment and no global PATH or registry changes. Both failures remain separate from sanitizer diagnostics.
 The first restricted-environment run also omitted Windows program-location
 variables, preventing SDK discovery. Its compiler error is preserved; the
 runner now passes only those discovery variables and essential process paths,

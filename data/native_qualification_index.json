@@ -86,8 +86,8 @@
     {
       "id": "current-checkpoint-plan",
       "review": {
-        "path": "artifacts/research/2026-11-14/development-checkpoint/review.json",
-        "sha256": "0716c3edfe7fdf54f6ba8050f4e1e7972d002af7da7da64570ffd8028fa397f7"
+        "path": "artifacts/research/2026-11-17/repository-state/review.json",
+        "sha256": "04aa96045709277c5396f89c45697e5bd3575a9f5aa3b822730a9eae51a362be"
       },
       "sources": [
         "docs/improvement-plan.md"
@@ -154,8 +154,8 @@
     {
       "id": "native-boundary-plan-checkpoint",
       "review": {
-        "path": "artifacts/research/2026-11-14/native-resource-plan-checkpoint/review.json",
-        "sha256": "05c6182521a5b862292d1da5b077dd701599412c07d66ba7530b78e9634d402f"
+        "path": "artifacts/research/2026-11-17/repository-state/review.json",
+        "sha256": "04aa96045709277c5396f89c45697e5bd3575a9f5aa3b822730a9eae51a362be"
       },
       "sources": [
         "data/development_plan.json"
@@ -209,8 +209,8 @@
     {
       "id": "frontend-process-lifetime",
       "review": {
-        "path": "artifacts/research/2026-11-14/frontend-process-lifetime/review.json",
-        "sha256": "dc1ffacd7ab9b40ad1be7f57d49284fc7f5db2d2dfa017bada2ca531b215a511"
+        "path": "artifacts/research/2026-11-17/frontend-stream-contract/review.json",
+        "sha256": "6323b9865876784ec62b9a691dcf9c53935bda93a3b4675279c51992be55d06a"
       },
       "sources": [
         "dev.ps1",
@@ -222,12 +222,27 @@
     {
       "id": "stable-development-tools",
       "review": {
-        "path": "artifacts/research/2026-11-14/stable-development-tools/review.json",
-        "sha256": "9a14f441f4389465e21650a15300f0f683fcf7ac75abdcf41fd73595cc338faf"
+        "path": "artifacts/research/2026-11-17/development-action-update/review.json",
+        "sha256": "74082bec415197281e40e155e1a417f14a41e62ff3624157bf6121d649c0d053"
       },
       "sources": [
         "requirements-dev-lock.txt",
         ".github/workflows/offline-validation.yml"
+      ]
+    },
+    {
+      "id": "llvm-2316-app-local-runtime",
+      "review": {
+        "path": "artifacts/research/2026-11-17/llvm-toolchain-refresh/review.json",
+        "sha256": "261deeed10cc73d9366a508b6d7cfe0d70d79505d0dc40effd5dcaedb4c3eebf"
+      },
+      "sources": [
+        "benchmarks/component-controls/native-testing/run_native.py",
+        "benchmarks/component-controls/native-testing/source.json",
+        "benchmarks/component-controls/native-testing/result.json",
+        "docs/research-native-testing-contracts.md",
+        "included/repaired/skills/address-sanitizer-current/references/qualification.md",
+        "included/repaired/skills/fuzzing-dictionary-current/references/qualification.md"
       ]
     }
   ],
@@ -323,7 +338,8 @@
         "sha256": "0716c3edfe7fdf54f6ba8050f4e1e7972d002af7da7da64570ffd8028fa397f7"
       },
       "superseded_sources": [
-        "data/development_plan.json"
+        "data/development_plan.json",
+        "docs/improvement-plan.md"
       ]
     },
     {
@@ -378,6 +394,36 @@
       "superseded_sources": [
         "dev.ps1",
         "toolchains/bootstrap/README.md"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-14/native-resource-plan-checkpoint/review.json",
+        "sha256": "05c6182521a5b862292d1da5b077dd701599412c07d66ba7530b78e9634d402f"
+      },
+      "superseded_sources": [
+        "data/development_plan.json"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-14/frontend-process-lifetime/review.json",
+        "sha256": "dc1ffacd7ab9b40ad1be7f57d49284fc7f5db2d2dfa017bada2ca531b215a511"
+      },
+      "superseded_sources": [
+        "AGENTS.md",
+        "dev.ps1",
+        "tests/test_frontend_ownership.py",
+        "toolchains/bootstrap/README.md"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-14/stable-development-tools/review.json",
+        "sha256": "9a14f441f4389465e21650a15300f0f683fcf7ac75abdcf41fd73595cc338faf"
+      },
+      "superseded_sources": [
+        ".github/workflows/offline-validation.yml"
       ]
     }
   ]

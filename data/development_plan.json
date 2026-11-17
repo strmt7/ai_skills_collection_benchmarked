@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "plan_date": "2026-11-14",
+  "plan_date": "2026-11-17",
   "objective_status": "active_and_incomplete",
   "controller_mode": "single_development_session",
   "benchmark_subject_mode": "serial_isolated_conditions_under_approved_exception",
@@ -43,15 +43,16 @@
         "R11",
         "R12"
       ],
-      "next_action": "Keep the dated audit immutable; update this active work order after material gates.",
+      "next_action": "Maintain this dated assessment as historical evidence and refresh the current work order after material gates. The controlling detailed plan is docs/improvement-plan.md; no second goal or development session is authorized.",
       "deliverables": [
         "Current-state audit",
         "Detailed work plan",
         "Agent-readable task registry"
       ],
       "acceptance": [
-        "Reconcile live ledger, qualified results, working tree and published head",
-        "Record unknowns and paused work explicitly"
+        "Reconcile current catalog/resource states, qualified source identities, published head and follow-up changes",
+        "Record all terminal hosted results, unverified claims, manual status and current scope holds",
+        "Preserve prior audits and the previous plan/work-order identities"
       ],
       "evidence": [
         {
@@ -61,6 +62,10 @@
         {
           "path": "artifacts/research/2026-11-13/publisher-build-scorer/review.json",
           "sha256": "bb017b9b141a3bf3cb9c0692b9f3c10b148799d991a8c01cc84b589ce7af4c74"
+        },
+        {
+          "path": "artifacts/research/2026-11-17/repository-state/audit.json",
+          "sha256": "dbcae1592610e6924c839e375f80117d3b9bb5b9fe0588e12f37fd891cbdfd0a"
         }
       ]
     },
@@ -78,7 +83,7 @@
         "R9",
         "R12"
       ],
-      "next_action": "Finish real-model transport under an explicitly qualified enclosing command budget before attempting independent comparisons. The backend retains its 16 GiB limit and the coding agent retains 2 GiB; the generation profile still requires 28 GiB of available RAM inside its preflight. The previous launch under default enclosing caps failed a ROCm allocation; matched commit controls establish the launcher mismatch, while successful corrected-profile inference remains unverified. Preserve the earlier unscored 180-second coding timeout. Complete all twelve original task/runtime/collection graphs, including the unresolved Node file-loader metadata gap, before admitting the frozen pilot. Keep the named GPT-6.1 high sign-in route separately open; use only the official harness/app and never request an OpenAI API key or alter personal account state.",
+      "next_action": "Qualify official CODEX_ROLLOUT_TRACE_ROOT tool-dispatch traces on independent scripted peers before a new prospectively specified public model-to-tool calibration. The corrected resource envelope loaded the intended local model but still timed out after 180.089 seconds with a missing-cmd parser error and no executed command; its score remains null and raw arguments were not retained. Preserve ephemeral isolation, the 12-task frame and original budgets. Complete actual command/edit/artifact collection and the distinct signed-in GPT-6.1 Sol high route through the official app/harness only; no OpenAI API key, credential copying or personal instruction exposure.",
       "deliverables": [
         "Maintained qualification entrypoint and frozen input assets",
         "Provider/model identity and capability admission",
@@ -86,11 +91,12 @@
         "Source-bound launch admission"
       ],
       "acceptance": [
-        "Every positive and negative control proves its actual trigger and expected stage",
-        "No personal instructions, configuration, memory, skills or history enter a subject; no credential leakage or unexplained process/service remains",
-        "Subject tools cannot read or modify the native authentication store",
-        "Fresh supported installation works",
-        "Public development calibration follows boundary qualification before counted comparisons"
+        "Native opt-in tracing is qualified for valid/malformed calls, disabled/enabled modes, interruption, byte bounds and controller-only access",
+        "A prospectively specified real public calibration executes a command, completes a turn and produces the independently expected artifact",
+        "Actual requested/reported model identities, catalogs and local weights where applicable are source-bound; metadata/help output alone is insufficient",
+        "The enclosing command, backend and subject limits are qualified together, with actual cancellation and zero owned descendants/listeners after cleanup",
+        "No personal instructions, memory, shared configuration/history or credentials contaminate a subject; the requested official signed-in route remains a separate acceptance requirement",
+        "Complete execution/edit/collection/grading controls and clone-validatable admission pass before counted comparisons"
       ],
       "policy": "Use only the official harness or app with existing sign-in for the requested GPT-6.1 Sol high target; no OpenAI API key or substitute direct-API route. Local models are supplementary; never silently replace that target.",
       "expansion_rule": "Add runtime features only for an observed blocking requirement; stop broad infrastructure expansion when this gate passes.",
@@ -175,7 +181,7 @@
         "R4",
         "R12"
       ],
-      "next_action": "Integrate the complete original build/test stages and modular scoring for all twelve fixed tasks. Native resource components now support original 600–900-second test budgets, explicit project quotas and long leases; seven original-grader controls passed. Full Faiss CUDA-enabled, Prometheus Go and Nx pnpm dependency/build qualification remains open. Preserve the fixed frame and keep counted model trials closed until admission passes.",
+      "next_action": "Complete all twelve original runtime/build/test/collection graphs and native aggregation without changing the frozen 12-task/36-prospective-attempt development frame. Resolve Node file-loader metadata access and original Go, Faiss CUDA and Nx pnpm graphs. Then timestamp the actual prospective conditions/activation/budgets and analysis; do not backdate preregistration, reduce scorers or admit only the easiest tasks.",
       "deliverables": [
         "Frozen public-development frame",
         "Candidate and intervention hashes",
@@ -183,10 +189,12 @@
         "Practical effect and uncertainty criteria"
       ],
       "acceptance": [
-        "Only declared interventions vary",
-        "No benchmark solutions or grader content enter skill development",
-        "Native scorer denominators remain intact",
-        "Requested and resolved model identities are separate"
+        "All twelve original runtime and source manifests, dependency/hardware requirements, collection limits and complete build/test stages are qualified",
+        "Native success, task failure, missing/malformed/contradictory report, import and interruption controls prove actual stage and original aggregation semantics",
+        "B0/BK/BC candidates, matched ordinary capabilities, activation, order, budgets and missingness rules are frozen prospectively",
+        "The fixed development frame and original denominators/time budgets remain intact; pilot evidence is never presented as untouched confirmation",
+        "The analysis specifies estimands, native metrics, uncertainty, clustering, multiplicity, practical thresholds and stopping rules before counted outcomes",
+        "Complete experiment admission passes; component checks, grouped pytest/CTRF counts and source probes are not substituted for it"
       ],
       "evidence": [
         {
@@ -277,7 +285,7 @@
         "R10",
         "R12"
       ],
-      "next_action": "Continue category-by-category maintained skill and tool redesign, primary-source review and functional testing without waiting for model-launch admission. Preserve immutable upstream mirrors and older candidates. Qualify comparative claims in separately frozen experiments; security-category work remains held.",
+      "next_action": "Execute the detailed per-skill and category queue in bounded source-bound batches, independently of optional model-runner work. Account for all 673 skills and 15 categories: research 2 complete/316 in progress/355 pending; revision 5/53/615; evaluation 0/12/661. Finish the 1,316 pending records among 192 inventoried skills and inventory the remaining 481 packages. Preserve immutable mirrors, evidence-scoped unchanged dispositions and the held security population.",
       "deliverables": [
         "Complete resource and license dispositions",
         "Verified upstream/API/dependency observations",
@@ -285,11 +293,12 @@
         "Independent per-entry controls and activation/cost evidence"
       ],
       "acceptance": [
-        "Every catalog ID and resource has an evidenced disposition",
-        "Unreviewed resources prevent complete status",
-        "Mirrors and their original provenance remain unchanged",
-        "Unsupported capabilities stay explicit",
-        "All S01-S15 and AISC-01-AISC-06 manual items receive verified dispositions"
+        "Every catalog ID and source signature has an explicit independently supported research/resource/revision disposition; no entry is silently dropped",
+        "All supporting files, nested/shared resources, dependencies, licenses and current upstream changes are inventoried and reviewed within declared scope",
+        "Maintained overlays preserve exact original provenance and contain no benchmark answers, benchmark-ID branches or verifier-specific exceptions",
+        "Meaningful positive/negative functional controls exercise actual public consumers and failure behavior for adopted changes",
+        "Security-affecting work remains explicitly held; reviewed inventory counts never become readiness percentages",
+        "Model evaluation states change only after admitted independent runs for the declared task/model/agent scope; broad universal benefit is not inferred"
       ],
       "model_evaluation_requires": [
         "P1",
@@ -342,7 +351,7 @@
         "R9",
         "R12"
       ],
-      "next_action": "Execute serial fresh baseline, pinned Karpathy-derived and candidate conditions on the frozen development frame.",
+      "next_action": "After P1/P2 admission, execute every serial fresh B0/BK/BC attempt on the fixed development frame; retain native results, usage, failed pairs, missingness, deviations and actual activation. Report discriminating feasibility and paired uncertainty; ceiling/floor/null results do not prove a gain.",
       "deliverables": [
         "All attempt transcripts and native results",
         "Usage and failure accounting",
@@ -350,11 +359,13 @@
         "A causal failure taxonomy"
       ],
       "acceptance": [
-        "No ceiling-only result is called a gain",
-        "No failed or missing attempt is silently dropped",
-        "An incomplete official run receives no invented suite score",
-        "Show actual identity, budget and source bindings for each attempt"
-      ]
+        "Every planned attempt is accounted for with source/condition/model/environment identities and native scoring evidence",
+        "Fresh serial subjects share neither developer memory, prior answers nor private verifier access",
+        "Original native scores, grouped metrics and experiment-completion denominators are independently validated",
+        "Paired quality, uncertainty, costs where observed, regressions and heterogeneity are reported against both baselines",
+        "A ceiling, floor, low-power or infrastructure result is preserved and diagnosed rather than reclassified as superiority"
+      ],
+      "evidence": []
     },
     {
       "id": "P5",
@@ -372,7 +383,7 @@
         "R9",
         "R12"
       ],
-      "next_action": "Use development evidence to revise transferable guidance, then repeat the matched frame and test independent development transfer.",
+      "next_action": "Use development evidence to repair general behavior mechanisms, qualify independent reproductions and compare separately frozen revisions. Run routing/content/tool ablations and independent development-transfer tasks without importing benchmark answers or tuning confirmation material.",
       "deliverables": [
         "Recorded hypotheses and revisions",
         "Skill/routing/tool ablations",
@@ -380,11 +391,13 @@
         "Per-category evaluation coverage"
       ],
       "acceptance": [
-        "No benchmark IDs, answer fragments or evaluator-specific behavior in skills",
-        "Every change has independent regressions beyond the revealing case",
-        "Preserve neutral and harmful results",
-        "Separate new-tool effects from instruction effects"
-      ]
+        "Every revision has a general failure hypothesis, independent reproducer and source-bound maintained implementation",
+        "Original mirrors, previous candidates, negative results and protocol deviations remain recoverable",
+        "Routing, instruction and tool effects are separated with matched ordinary capabilities and budgets",
+        "Changed candidate revisions are not pooled into one score; transfer and regression effects are reported",
+        "Selection prioritizes useful quality gains and reliability; noise, a favorable seed or lower tokens alone cannot satisfy efficacy"
+      ],
+      "evidence": []
     },
     {
       "id": "P6",
@@ -399,18 +412,20 @@
         "R4",
         "R12"
       ],
-      "next_action": "Freeze final candidates and confirmatory selection, then open the held-out task content and run the predeclared analysis.",
+      "next_action": "After P3/P5 acceptance, freeze the claim population, final candidates, practical effect criteria, adequate independent-task allocation and complete confirmatory analysis before untouched task access. Confirm against both baselines and qualify additional model/harness configurations before making cross-model or cross-agent claims.",
       "deliverables": [
         "Held-out cross-model and cross-task results",
         "Paired uncertainty and sensitivity analysis",
         "Reproducible graphs from valid artifacts"
       ],
       "acceptance": [
-        "Practical and statistical support against both requested baselines",
-        "Independent tasks are distinguished from repeated seeds",
-        "Multiplicity and missing outcomes follow the preregistration",
-        "Claims stay within tested models, agents, tasks and environments"
-      ]
+        "Previously exposed development/research material is excluded from the untouched designation and fully recorded",
+        "Candidate, selection, environments, practical thresholds, power assumptions, multiplicity, missingness and stopping rules are frozen before confirmation outcomes",
+        "Native paired quality evidence meets declared practical/statistical criteria against both B0 and BK, with regressions and costs accounted for",
+        "Repetitions do not inflate independent task counts; broad claims require qualified distinct models and harnesses",
+        "Validated native artifacts support all tables/graphs and bounded claims; changed candidates require new untouched evaluation"
+      ],
+      "evidence": []
     },
     {
       "id": "P7",
@@ -427,7 +442,7 @@
         "R9",
         "R12"
       ],
-      "next_action": "The db5a359 exact-revision observation has ten terminal workflows: eight successes and two held scanner failures. Codecov processed that commit, while its hosted metric and local coverage representation still need reconciliation; DeepSource skipped analysis because its Analysis quota was exhausted. Qualify the new explicit command-memory option and complete whole supported stable dependency/setup graphs and latest-compatible evidence. Resource controls and tooling coverage do not establish skill efficacy.",
+      "next_action": "Qualify and publish the working PowerShell stream repair, actions/setup-go v7.1.0 pin and verified LLVM 23.1.6 app-local runtime update; focused controls pass but new hosted acceptance remains pending. The 8be77acf checkpoint has 16 terminal workflows: ten successes/six failures. Codecov processed it at 70.19%, while report reconciliation and the tracked-lines UI remain open. DeepSource skipped because Analysis quota is exhausted; security remediation is held. Complete every compatible stable dependency/workflow graph, fresh/relocated safe automatic setup, missing MSVC/SDK provisioning scope, distribution licensing and effective protection verification.",
       "deliverables": [
         "Fresh-cache and recovery qualification",
         "Workflow-to-source trigger map",
@@ -435,10 +450,14 @@
         "Current source-bound coverage and dependency evidence"
       ],
       "acceptance": [
-        "Required enabled jobs finish successfully on the exact candidate revision",
-        "No rerun-only repair or dropped required test family",
-        "Codecov uploads and UI state are verified after publication",
-        "Dependency findings are fixed, not suppressed"
+        "Actual public caller contracts, including PowerShell streams and first-hop cancellation, pass meaningful native controls",
+        "All runtime/build/test/provider/overlay/workflow dependency graphs and installed payloads have dated current compatible stable qualification",
+        "Fresh supported, relocated, absent-tool, offline-reuse and interrupted/concurrent-install cases provision or diagnose safely without global host changes",
+        "Process trees, listeners, memory/output/time bounds and durable initial/final source identities are verified; unrelated applications remain intact",
+        "Coverage producer/source/runtime/aggregation/upload/service/UI evidence is reconciled without padding or exclusions",
+        "All workflow triggers, source-pinned actions, caller contracts and latest-compatible canaries are mapped and exercised as applicable",
+        "Distribution payload/license/platform contracts and effective GitHub protections are verified; maintained-code terms do not relicense upstream",
+        "All applicable ordinary hosted checks accept the exact published revision; held scanner failures remain visible"
       ],
       "scope": "Dependency maintenance is authorized. Security/scanner/history remediation remains held under P8.",
       "evidence": [
@@ -492,7 +511,7 @@
         "R11",
         "R12"
       ],
-      "next_action": "Retain the hold; resume only when the owner changes the current security scope.",
+      "next_action": "Retain the owner security/scanner/history hold. The detailed official inventory, root-cause grouping, reconciliation and gate-verification sequence is contingent on scope restoration; read-only monitoring does not authorize remediation.",
       "deliverables": [
         "Paginated exact-revision inventories",
         "Issue-family root-cause remediation",
@@ -500,12 +519,14 @@
         "Final identity/protection and alert acceptance"
       ],
       "acceptance": [
-        "Reconcile full page totals and analyzer identities",
-        "No path exemptions or suppression used to make findings disappear",
-        "All required findings have verified dispositions",
-        "Current administrative protection details are verified through the permitted mechanism"
+        "After scope restoration, retain complete official paginated finding pages with counts, cursor completion, analyzer/config/run/commit identities",
+        "Reconcile every original/final finding and exact residual disposition; analyzer disappearance or suppression is not a fix",
+        "Fix root mechanisms with genuine independent reproductions and complete regressions while preserving immutable sources",
+        "Verify actual zero-DeepSource and explicitly justified code-scanning exception policy through effective gates and exact findings, never guessed thresholds",
+        "Complete local/hosted validation and fresh inventories reconcile on the exact repaired commit"
       ],
-      "hold_reason": "Existing owner security/scanner/history pause; this plan does not resume it."
+      "hold_reason": "Existing owner security/scanner/history pause; this plan does not resume it.",
+      "evidence": []
     },
     {
       "id": "P9",
@@ -520,17 +541,19 @@
         "R11",
         "R12"
       ],
-      "next_action": "Run the complete source-bound nonheld publication gates for the cohesive native-toolchain and enclosing-resource batch. Publish verified changes only through the official GitHub connector on main with an expected-head check, then wait for every triggered workflow. Preserve failures, the security-work hold and the release/tag hold.",
+      "next_action": "Freeze the cohesive launcher/LLVM/current-action/overview/detailed-plan batch, validate exact-source nonheld gates and only reviewed Git blobs, then publish through the official authenticated GitHub connector to expected-head main. Verify tree/parents/GitHub-assigned identity and wait for every triggered workflow. Avoid frequent small pushes, full-tree add scans, local commits and alternate publication transports.",
       "deliverables": [
         "Reviewed file and line-ending inventory",
         "Connector commit on main with expected-head check",
         "Exact-commit hosted results"
       ],
       "acceptance": [
-        "Only the authenticated official GitHub connector performs mutations",
-        "GitHub supplies contributor attribution",
-        "All required triggered/dispatchable jobs finish and are reviewed",
-        "No release, tag or development branch is created"
+        "Cohesive explicit paths and generated outputs are source-bound through applicable complete nonheld checks; holds are never claimed passes",
+        "Prepared Git blobs match qualified bytes and the real index remains preserved; changed payloads contain no real/provider-shaped credentials",
+        "Only the official connector creates commits and updates main with an expected-head lease; GitHub assigns contributor identity",
+        "Remote readback, local cache synchronization, ordered parents/tree and actual signature status are verified",
+        "Every triggered hosted workflow is terminal and its failures/artifacts retained; a missing path-filtered run is not a pass",
+        "No task-owned process/service/task/listener remains unexplained; no branch, PR, tag or release is created"
       ],
       "repeatable": true,
       "scope": "Publish independently verified non-held development checkpoints while P7 continues. P8 remains required for final readiness; its explicit hold does not block ordinary authorized development commits or permit suppressing failed checks.",
@@ -564,7 +587,7 @@
         "R8",
         "R12"
       ],
-      "next_action": "After substantive requirements pass, map consumers and consolidate code, folders, workflows and current documentation coherently.",
+      "next_action": "After substantive P3/P5/P6/P7/P8 closure, map actual consumers and perform the final complete architecture/folder/workflow/report refactor. Preserve migrations and historical evidence, then rewrite README as a short tested end-user path with generated badges and linked developer documentation.",
       "deliverables": [
         "Clear catalog/overlay/runtime/evaluator/report boundaries",
         "Maintained public qualification commands",
@@ -572,11 +595,13 @@
         "Short end-user README and separate developer guide"
       ],
       "acceptance": [
-        "Preserve historical bytes and immutable mirrors",
-        "Update every caller, source hash, schema and generated link together",
-        "Requalify affected behavior, installation and benchmark contracts",
-        "No broad deletion of retained untrusted scratch or unrelated host data"
-      ]
+        "A responsibility/consumer graph justifies consolidation and module boundaries; large line counts alone do not justify rewriting",
+        "Deterministic generators, canonical hashes, public command/schema contracts and native scoring remain intact or have explicit tested migrations",
+        "Superseded reports are indexed and recoverable; no inconvenient negative or scanner evidence is deleted",
+        "Final README and user docs explain real supported use and measured limits; developer operations remain separately linked",
+        "All affected consumer/install/generator/native/full local and hosted checks accept the final layout"
+      ],
+      "evidence": []
     },
     {
       "id": "P11",
@@ -605,18 +630,20 @@
         "R11",
         "R12"
       ],
-      "next_action": "Perform a requirement-by-requirement exact-revision audit and report readiness without creating a release.",
+      "next_action": "When dependencies pass, audit every R1-R12 requirement, every catalog/resource and manual disposition, native independent confirmation, delivery licenses/portability, current dependencies, effective protections and all final hosted evidence. Report readiness or exact blockers without releasing, tagging or enabling the release workflow.",
       "deliverables": [
         "Complete requirement/evidence matrix",
         "Current hosted and external benchmark acceptance",
         "Explicit limitations and supported scope"
       ],
       "acceptance": [
-        "Every original requirement is proved or remains visibly open",
-        "No static/package/control result substitutes for efficacy",
-        "No defensible issue is hidden",
-        "The release/tag hold remains until a new explicit owner request"
-      ]
+        "Every requirement and applicable S01-S15/AISC-01-AISC-06 claim has inspected exact-revision acceptance evidence or a real unresolved hold",
+        "Practical/statistical improvement against both baselines, exposure accounting, missing attempts, negative effects and supported claim scope are independently checked",
+        "All required ordinary/security/dependency/workflow/coverage/distribution/portability/protection gates are satisfied on the final revision",
+        "All generated claims/tables/graphs recompute from validated artifacts and task-owned cleanup is verified",
+        "The owner receives a candid readiness assessment; no release/tag/package publication occurs without separate explicit instruction"
+      ],
+      "evidence": []
     }
   ],
   "execution_rules": [
@@ -625,10 +652,14 @@
     "Advance a task only from inspected evidence; record the path, source identity, scope and unresolved failures.",
     "Do not create a separate goal, agent, thread, scheduled job or persistent service to execute this plan.",
     "Refresh the plan after material gates; keep dated state snapshots and historical failures immutable.",
-    "No model invocation before boundary qualification; no holdout access before candidate and analysis freeze."
+    "No model invocation before boundary qualification; no holdout access before candidate and analysis freeze.",
+    "Use the detailed numbered steps in docs/improvement-plan.md; maintain P0-P11 and R1-R12 rather than creating a competing plan.",
+    "Record benchmark task exposure and preserve the original development frame; no solution-derived guidance, hidden exclusions or backdated registration.",
+    "Treat Codecov processing, native component controls and static/source checks as distinct from agent effectiveness.",
+    "P8 remains held; no release/tag or changes to another owner repository are authorized."
   ],
   "audit": {
-    "path": "artifacts/research/2026-11-11/repository-state/audit.json",
-    "sha256": "59398cdf891f764e4b613165b9da45499b1a48a7cd27ae697cd6c24c634cf1c2"
+    "path": "artifacts/research/2026-11-17/repository-state/audit.json",
+    "sha256": "dbcae1592610e6924c839e375f80117d3b9bb5b9fe0588e12f37fd891cbdfd0a"
   }
 }

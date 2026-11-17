@@ -1,0 +1,751 @@
+{
+  "schema_version": 1,
+  "observed_date": "2026-11-17",
+  "published_head": "8be77acf11261b918f6380426dc8cdece82c1b9e",
+  "scope": "Current repository only. Tracked inventory and ledger observations on the published head with the explicitly described follow-up working changes; not a commercial-readiness certification.",
+  "source_sha256": {
+    "data/skills_catalog.json": "befada014a8adf1cbb5f49049829783640725551a08862b17c22488b6fec106b",
+    "data/improvement_ledger.json": "739059ef5fed9d37c37d53743ec5d4d4d88be168d859ae625d98e8f07228e5db",
+    "data/source_lock.json": "8a2e4a90ecc0465c828cb3f5ef15d3c29f35771c9399fd8d45dd65cf767b83d6",
+    "data/improved_skills_manifest.json": "5920e65bcf364e20a2953648c5f4cebfd46c60b7921dbdcbd08f7d7e8c33ea98",
+    "artifacts/research/2026-11-03/implementation-manual-review/ledger.json": "b6ce32d873b156b4f00b5599393328130a5bdc9c1a22e14daeae63d37cd5a7b0",
+    "pyproject.toml": "bb14112c89ed110bcaca444ecea64b4b81f8a8bdf0f74a6a64b37e4f097cbe1f"
+  },
+  "prior_plan": {
+    "commit": "8be77acf11261b918f6380426dc8cdece82c1b9e",
+    "path": "docs/improvement-plan.md",
+    "sha256": "37efb301dcb2a70c4bf2c6d0a588c88236e8697cf7f1a3bf6a225b9490b916c2"
+  },
+  "prior_work_order": {
+    "commit": "8be77acf11261b918f6380426dc8cdece82c1b9e",
+    "path": "data/development_plan.json",
+    "sha256": "cd32e75b5e031571b48217f8c8b604ebf781f779e42d34d2e7490e7ed12d9613"
+  },
+  "catalog": {
+    "skills": 673,
+    "categories": {
+      "Agent infrastructure & skill creation": 8,
+      "Cloud, Azure & Microsoft SDKs": 178,
+      "Coding, refactoring & repository automation": 30,
+      "Communication, productivity & support": 59,
+      "Creative, media & design": 30,
+      "DevOps, cloud & operations": 40,
+      "Documents, spreadsheets & presentations": 12,
+      "Finance, commerce & forecasting": 2,
+      "Frontend, UI & browser automation": 3,
+      "Game, mobile & visual QA": 25,
+      "OMERO, Django, Docker & lab infrastructure": 46,
+      "Science, research & data analysis": 148,
+      "Search, retrieval & web automation": 16,
+      "Security, compliance & risk": 57,
+      "Testing, QA & benchmarking": 19
+    },
+    "contributing_repositories": 30,
+    "selected_entries": 80,
+    "scenario_templates": 718,
+    "workflow_stages": {
+      "research": {
+        "complete": 2,
+        "in_progress": 316,
+        "pending": 355
+      },
+      "revision": {
+        "complete": 5,
+        "in_progress": 53,
+        "pending": 615
+      },
+      "evaluation": {
+        "in_progress": 12,
+        "pending": 661
+      }
+    },
+    "resource_inventories": 192,
+    "resource_records": 1468,
+    "resource_status": {
+      "pending": 1316,
+      "reviewed": 152
+    },
+    "resource_record_scope": "Per-skill records; not a count of unique physical files"
+  },
+  "maintained_overlay_records": 28,
+  "overlay_efficacy": "Not established",
+  "architecture": {
+    "tracked_files": 22693,
+    "tracked_by_top_level": {
+      ".agents": 3,
+      ".gitattributes": 1,
+      ".github": 51,
+      ".gitignore": 1,
+      ".gitleaks.toml": 1,
+      ".pre-commit-config.yaml": 1,
+      ".python-version": 1,
+      "AGENTS.md": 1,
+      "CHANGELOG.md": 1,
+      "CONTRIBUTING.md": 1,
+      "README.md": 1,
+      "SECURITY.md": 1,
+      "artifacts": 2255,
+      "benchmarks": 191,
+      "data": 18,
+      "dev.ps1": 1,
+      "docs": 835,
+      "evaluators": 5,
+      "included": 18916,
+      "pyproject.toml": 1,
+      "requirements-coverage-lock.txt": 1,
+      "requirements-dev-lock.txt": 1,
+      "requirements-lock.txt": 1,
+      "requirements-reports-lock.txt": 1,
+      "requirements-runtime-lock.txt": 1,
+      "tests": 197,
+      "toolchains": 45,
+      "tools": 160
+    },
+    "maintained_python_scope": [
+      "tools/",
+      "tests/",
+      "benchmarks/agent-effectiveness/graders/"
+    ],
+    "maintained_python_modules": 357,
+    "maintained_python_lines": 71957,
+    "largest_maintained_modules": [
+      {
+        "path": "tools/build_catalog.py",
+        "lines": 2375,
+        "bytes": 108314
+      },
+      {
+        "path": "tests/test_summarize_multi_task_trials.py",
+        "lines": 960,
+        "bytes": 47150
+      },
+      {
+        "path": "tools/summarize_agent_trials.py",
+        "lines": 939,
+        "bytes": 45547
+      },
+      {
+        "path": "tools/evaluate_external_benchmark_methods.py",
+        "lines": 842,
+        "bytes": 38865
+      },
+      {
+        "path": "tools/create_independent_runtime_batch.py",
+        "lines": 803,
+        "bytes": 32081
+      },
+      {
+        "path": "tools/run_agent_trial.py",
+        "lines": 788,
+        "bytes": 33541
+      },
+      {
+        "path": "tools/_native_benchmark_runtime.py",
+        "lines": 781,
+        "bytes": 35094
+      },
+      {
+        "path": "tests/test_agent_trial_runner.py",
+        "lines": 774,
+        "bytes": 35315
+      },
+      {
+        "path": "tools/deepsource_inventory.py",
+        "lines": 753,
+        "bytes": 31942
+      },
+      {
+        "path": "tools/create_repaired_skill_overlays.py",
+        "lines": 707,
+        "bytes": 30422
+      }
+    ],
+    "top_level_documentation_files": 146,
+    "workflow_definitions": 46,
+    "root_license_files": [],
+    "distribution_metadata": {
+      "version": "0.2.0",
+      "packages": [],
+      "py_modules": [],
+      "installed_application_payload_established": false
+    },
+    "limits": "File counts and module size do not prove redundancy or defects. Source/overlay license terms still apply; a missing root license is a distribution-governance question, not permission to relicense upstream."
+  },
+  "benchmarks": {
+    "registry_methods": [
+      {
+        "id": "swe-skills-bench",
+        "title": "SWE-Skills-Bench",
+        "adapter_stage": "declared-source-probe",
+        "url": "https://arxiv.org/abs/2603.15401v2",
+        "primary_metrics": [
+          "with-skill pass rate",
+          "without-skill pass rate",
+          "pass-rate delta",
+          "token overhead"
+        ]
+      },
+      {
+        "id": "skillsbench",
+        "title": "SkillsBench",
+        "adapter_stage": "declared-source-probe",
+        "url": "https://www.skillsbench.ai/",
+        "primary_metrics": [
+          "task pass rate",
+          "skill gain",
+          "steps",
+          "token usage"
+        ]
+      },
+      {
+        "id": "skill-bench",
+        "title": "Skill Bench",
+        "adapter_stage": "declared-source-probe",
+        "url": "https://skill-bench.dev/",
+        "primary_metrics": [
+          "criterion score",
+          "evidence coverage",
+          "pass/fail",
+          "regression delta"
+        ]
+      },
+      {
+        "id": "swe-bench",
+        "title": "SWE-bench",
+        "adapter_stage": "declared-source-probe",
+        "url": "https://github.com/SWE-bench/SWE-bench",
+        "primary_metrics": [
+          "resolved instances",
+          "patch applies",
+          "test pass rate",
+          "regression count"
+        ]
+      },
+      {
+        "id": "terminal-bench",
+        "title": "Terminal-Bench",
+        "adapter_stage": "declared-source-probe",
+        "url": "https://github.com/harbor-framework/terminal-bench/releases/tag/v4.1.0",
+        "primary_metrics": [
+          "task success",
+          "command log completeness",
+          "execution time",
+          "resource use"
+        ]
+      },
+      {
+        "id": "browsergym",
+        "title": "BrowserGym",
+        "adapter_stage": "declared-source-probe",
+        "url": "https://github.com/ServiceNow/BrowserGym",
+        "primary_metrics": [
+          "task success",
+          "trace completeness",
+          "browser actions",
+          "wall time"
+        ]
+      },
+      {
+        "id": "webarena",
+        "title": "WebArena",
+        "adapter_stage": "declared-source-probe",
+        "url": "https://arxiv.org/abs/2307.13854",
+        "primary_metrics": [
+          "end-to-end task success",
+          "site state correctness",
+          "action trace",
+          "human-baseline comparison"
+        ]
+      },
+      {
+        "id": "webarena-verified",
+        "title": "WebArena-Verified",
+        "adapter_stage": "declared-source-probe",
+        "url": "https://github.com/ServiceNow/webarena-verified",
+        "primary_metrics": [
+          "verified task success",
+          "network trace evidence",
+          "response evaluator result",
+          "state evaluator result"
+        ]
+      },
+      {
+        "id": "st-webagentbench",
+        "title": "ST-WebAgentBench",
+        "adapter_stage": "declared-source-probe",
+        "url": "https://github.com/segev-shlomov/ST-WebAgentBench",
+        "primary_metrics": [
+          "task success",
+          "safety violation rate",
+          "trustworthiness score",
+          "modality challenge score"
+        ]
+      },
+      {
+        "id": "osworld",
+        "title": "OSWorld",
+        "adapter_stage": "declared-source-probe",
+        "url": "https://os-world.github.io/",
+        "primary_metrics": [
+          "task success",
+          "execution evaluator result",
+          "screen trace",
+          "application state correctness"
+        ]
+      },
+      {
+        "id": "bfcl",
+        "title": "Berkeley Function Calling Leaderboard",
+        "adapter_stage": "declared-source-probe",
+        "url": "https://gorilla.cs.berkeley.edu/blogs/8_berkeley_function_calling_leaderboard.html",
+        "primary_metrics": [
+          "AST match",
+          "execution accuracy",
+          "function relevance",
+          "multi-turn correctness"
+        ]
+      },
+      {
+        "id": "mle-bench",
+        "title": "MLE-bench",
+        "adapter_stage": "declared-source-probe",
+        "url": "https://github.com/openai/mle-bench",
+        "primary_metrics": [
+          "competition score",
+          "medal threshold",
+          "valid submission rate",
+          "runtime budget"
+        ]
+      },
+      {
+        "id": "ml-dev-bench",
+        "title": "ML-Dev-Bench",
+        "adapter_stage": "declared-source-probe",
+        "url": "https://github.com/ml-dev-bench/ml-dev-bench",
+        "primary_metrics": [
+          "task success",
+          "model score",
+          "debugging correctness",
+          "implementation correctness"
+        ]
+      },
+      {
+        "id": "gittaskbench",
+        "title": "GitTaskBench",
+        "adapter_stage": "declared-source-probe",
+        "url": "https://github.com/QuantaAlpha/GitTaskBench",
+        "primary_metrics": [
+          "task success",
+          "setup success",
+          "cost-aware alpha",
+          "test result"
+        ]
+      },
+      {
+        "id": "swe-bench-pro-v2",
+        "title": "SWE-Bench Pro V2",
+        "adapter_stage": "declared-source-probe",
+        "url": "https://labs.scale.com/leaderboard/swe_bench_pro_public_v2",
+        "primary_metrics": [
+          "resolved tasks",
+          "fail-to-pass outcomes",
+          "pass-to-pass regressions",
+          "attempt cost"
+        ]
+      },
+      {
+        "id": "deepswe",
+        "title": "DeepSWE",
+        "adapter_stage": "declared-source-probe",
+        "url": "https://deepswe.datacurve.ai/blog/deepswe-v1-1",
+        "primary_metrics": [
+          "task pass rate",
+          "named test outcomes",
+          "agent steps",
+          "token usage"
+        ]
+      },
+      {
+        "id": "workarena",
+        "title": "WorkArena / WorkArena++",
+        "adapter_stage": "declared-source-probe",
+        "url": "https://github.com/ServiceNow/WorkArena",
+        "primary_metrics": [
+          "task success",
+          "application state correctness",
+          "action count",
+          "attempt cost"
+        ]
+      },
+      {
+        "id": "scienceagentbench",
+        "title": "ScienceAgentBench",
+        "adapter_stage": "declared-source-probe",
+        "url": "https://osu-nlp-group.github.io/ScienceAgentBench/",
+        "primary_metrics": [
+          "task success",
+          "program execution",
+          "scientific output correctness",
+          "attempt cost"
+        ]
+      }
+    ],
+    "historical_model_comparison": {
+      "attempts": 9,
+      "task_count": 1,
+      "per_condition_passes": 3,
+      "conditions": 3,
+      "meaningful_advantage_established": false
+    },
+    "current_frozen_development_frame": {
+      "tasks": 12,
+      "prospective_condition_attempts": 36,
+      "counted_comparative_attempts": 0,
+      "admitted": false,
+      "frame_changed_by_this_round": false
+    },
+    "official_suite_scores_established": false,
+    "model_transport": {
+      "loaded_local_model": "gpt-oss:20b",
+      "weights_digest": "a0b38d0b19f7c5dd3589e5e6598edfed41c81969d73f9e4774011c1328e9dad8",
+      "context": 65536,
+      "last_public_calibration_seconds": 180.08949749999738,
+      "result": "harness_error_timeout",
+      "score": null,
+      "observed_error": "failed to parse function arguments: missing field cmd",
+      "raw_function_arguments_retained": false,
+      "native_opt_in_trace_runtime_qualified": false
+    },
+    "open_runtime_graphs": [
+      "Node native file-loader metadata boundary",
+      "Complete original Go build/test graph",
+      "Complete original Faiss CUDA build/test graph",
+      "Complete original Nx pnpm build/test graph",
+      "All twelve original build/test/collection graphs and native aggregation"
+    ],
+    "limits": "Installed software, component controls, source probes, scenario templates and ceiling results are not measured skill gains. Official OpenAI app/harness only; no OpenAI API keys."
+  },
+  "manual": {
+    "pages": 154,
+    "sha256": "e47cd7084b51ba5b8d8ef0f6b1cb9cb0812d90b46af328caec55705ed1b2304e",
+    "page_status": {
+      "inspected_claims_unverified": 154
+    },
+    "attachments": [
+      {
+        "bytes": 24286,
+        "name": "Content Credentials",
+        "sha256": "0d9dd6d020ee916d9aee6f8848e8aca3873ae4518769ad634971ea7fc37f45f3",
+        "status": "inventory_only"
+      },
+      {
+        "bytes": 155093,
+        "name": "currentness-snapshot.json",
+        "sha256": "06f9899096989936f0215a384a1bfe2d68e231b1b6a97942a2d8704f55b409b2",
+        "status": "inventory_only"
+      },
+      {
+        "bytes": 38775,
+        "name": "implementation-contract.zip",
+        "sha256": "0d8ed02c2ecea30ba2c4ebaaef79d6d1ae4d1d18789c6f379e978121f561f335",
+        "status": "member_manifest_hashes_checked_partial"
+      },
+      {
+        "bytes": 523750,
+        "name": "implementation-manual.md",
+        "sha256": "ab82b4cc17709e41da30babc2f6ea544d716c83c11731303296f93c0957259b4",
+        "status": "inventory_only"
+      },
+      {
+        "bytes": 6348700,
+        "name": "report-verification-ledger.json",
+        "sha256": "328cbb9e13996674eecb2005a074a18b33857de2e71d81cc41515ce678dd8fde",
+        "status": "internal_digest_links_checked_partial"
+      },
+      {
+        "bytes": 94938,
+        "name": "repository-action-cards.json",
+        "sha256": "b96710dd9476385a0f89a045d0302ab5b5f6fdb2ab5aaa416e557f704b8192b7",
+        "status": "target_card_inspected_partial"
+      },
+      {
+        "bytes": 12969,
+        "name": "requirements-traceability.json",
+        "sha256": "f04115672ac33e8935346f153b4f2fe840fc0d3b9ae994d5f297bdb77ed05549",
+        "status": "structure_inspected_partial"
+      }
+    ],
+    "shared": [
+      {
+        "id": "S01",
+        "status": "pending_verification"
+      },
+      {
+        "id": "S02",
+        "status": "pending_verification"
+      },
+      {
+        "id": "S03",
+        "status": "pending_verification"
+      },
+      {
+        "id": "S04",
+        "status": "pending_verification"
+      },
+      {
+        "id": "S05",
+        "status": "pending_verification"
+      },
+      {
+        "id": "S06",
+        "status": "pending_verification"
+      },
+      {
+        "id": "S07",
+        "status": "pending_verification"
+      },
+      {
+        "id": "S08",
+        "note": "Selected independent finite-subset enumeration and unchanged numerical-result controls passed. This does not qualify all skill or real-agent test oracles.",
+        "review_batch": "common-standard-20261109-v1",
+        "status": "partially_checked"
+      },
+      {
+        "id": "S09",
+        "note": "Selected coverage-bundle source-binding and negative fixtures passed, and the workflow requires five current reports. No complete coverage or required-test-family qualification is established by this batch.",
+        "review_batch": "common-standard-20261109-v1",
+        "status": "partially_checked"
+      },
+      {
+        "id": "S10",
+        "note": "Task declarations and report summaries import without loading either trial verifier in separate-process controls. This verifies selected dependency boundaries, not the entire architecture.",
+        "review_batch": "common-standard-20261109-v1",
+        "status": "partially_checked"
+      },
+      {
+        "id": "S11",
+        "status": "pending_verification"
+      },
+      {
+        "id": "S12",
+        "status": "pending_verification"
+      },
+      {
+        "id": "S13",
+        "status": "pending_verification"
+      },
+      {
+        "id": "S14",
+        "note": "The current sampling receipt is explicitly versioned, preserves v1, and rejects changed evidence. The full documentation and generator inventory remains open.",
+        "review_batch": "common-standard-20261109-v1",
+        "status": "partially_checked"
+      },
+      {
+        "id": "S15",
+        "status": "pending_verification"
+      }
+    ],
+    "project": [
+      {
+        "id": "AISC-01",
+        "note": "Secret-scan investigation is outside the currently authorized work scope.",
+        "status": "deferred_security_pause"
+      },
+      {
+        "id": "AISC-02",
+        "note": "Current agent instructions describe main-only development, connector attribution and actual workflow schedules; effective ruleset and complete governance remain to be checked in scope.",
+        "status": "partially_checked"
+      },
+      {
+        "id": "AISC-03",
+        "note": "The main offline test matrix now verifies and installs the hashed universal developer lock; a separate scheduled and manually dispatched matrix resolves latest compatible test dependencies. Independent installation and focused controls passed locally on Windows and Linux. Closure requires exact-commit hosted validation and qualification of the scheduled canary.",
+        "status": "partially_checked"
+      },
+      {
+        "id": "AISC-04",
+        "note": "Existing nine-attempt single-task result reached a ceiling and does not show a skill advantage; discriminating preregistered held-out trials remain.",
+        "status": "open"
+      },
+      {
+        "id": "AISC-05",
+        "note": "The owner approved benchmark-only execution/collection/grading qualification. Confined grader and bounded collection components are integrated; model-free context controls and protocol/report consistency checks are implemented. Complete runtime graphs, built-in editing, authentication/model transport and end-to-end execution remain unqualified; the model-launch refusal remains active. Security scanner/advisory/history remediation stays paused.",
+        "status": "partially_checked"
+      },
+      {
+        "id": "AISC-06",
+        "note": "Current artifact validator imports Draft202012Validator; complete schema behavior and catalog refactoring qualification remain open.",
+        "status": "partially_checked"
+      }
+    ]
+  },
+  "release_hold": true,
+  "security_remediation": "held",
+  "commercial_readiness": "not_established",
+  "completion_percentage": "not_computed",
+  "evidence_limitations": [
+    "No independent model advantage has been established.",
+    "Full per-skill research, revision and evaluation remain incomplete.",
+    "Code scanning and secret-scan failures are retained under the current security hold.",
+    "Codecov service processing does not verify the tracked-lines UI.",
+    "Administrative branch-protection details and complete current DeepSource inventory remain open.",
+    "No release or tag is authorized."
+  ],
+  "followup_round": {
+    "launcher": "Six real PowerShell consumer controls failed on the published replay implementation; all nine native frontend controls pass after the working stream-contract repair. Actual public provider commands reuse admitted profiles with valid pipeline JSON.",
+    "llvm": "Official verified LLVM 23.1.6 archive; all eleven native controls pass after matching DLL app-local deployment. The earlier archive-reader API error and 266-character SDK DLL loader failure remain retained negatives; no model trials.",
+    "setup_go": "Official latest stable v7.1.0 commit independently resolved; working pin update requires hosted acceptance.",
+    "scope": "No other owner repository was modified and no mirrored upstream skill was edited."
+  },
+  "github": {
+    "head": "8be77acf11261b918f6380426dc8cdece82c1b9e",
+    "branch_count": 1,
+    "main_protected_flag": true,
+    "tag_refs": 0,
+    "open_pull_requests": 0,
+    "releases": 0,
+    "workflow_runs": {
+      "total": 16,
+      "completed": 16,
+      "success": 10,
+      "failure": 6
+    },
+    "rulesets": [
+      {
+        "id": 25868912,
+        "name": "Main-only development",
+        "enforcement": "active",
+        "rules": [
+          "creation",
+          "update"
+        ],
+        "scope": "All branch refs except main",
+        "bypass_actors": 0
+      },
+      {
+        "id": 25868913,
+        "name": "Owner-directed release hold",
+        "enforcement": "active",
+        "rules": [
+          "creation",
+          "update"
+        ],
+        "scope": "All tag refs",
+        "bypass_actors": 0
+      },
+      {
+        "id": 26045088,
+        "name": "Protect main from history replacement and deletion",
+        "enforcement": "active",
+        "rules": [
+          "deletion",
+          "non_fast_forward"
+        ],
+        "scope": "main",
+        "bypass_actors": 0
+      }
+    ],
+    "classic_protection_details_currently_verified": false,
+    "native_capture_sha256": {
+      "runs": "1a915d0f8e5513a010a7e579a05e0e5a931fdcc7391a6491bf49878483ba4c45",
+      "rulesets": "eab5362c118cc7a3bf25cb0818a5276f02330708e550b4cf6d281de0bb833132",
+      "tagrefs": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "karpathy": "fe764774d8362da987db052039c7ac657cee6c13ae62cd5605e2f9a47fd1106a",
+      "branches": "9cf080324508e35b7e7795753c4d0c668d8d2c77950094c04d17e01d97dfa53e",
+      "pulls": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "releases": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  },
+  "codecov": {
+    "url": "https://api.codecov.io/api/v2/github/strmt7/repos/ai_skills_collection_benchmarked/commits/8be77acf11261b918f6380426dc8cdece82c1b9e/",
+    "status": 200,
+    "sha256": "18b7fd9bd51b64330d22ae1e07bee407aacec13858be621745e9cd50c3c8e119",
+    "commit": "8be77acf11261b918f6380426dc8cdece82c1b9e",
+    "state": "complete",
+    "totals": {
+      "files": 158,
+      "lines": 19958,
+      "hits": 14009,
+      "misses": 4876,
+      "partials": 1073,
+      "coverage": 70.19,
+      "branches": 3624,
+      "methods": 0,
+      "sessions": 1,
+      "complexity": 0,
+      "complexity_total": 0,
+      "complexity_ratio": 0,
+      "diff": 0
+    },
+    "tracked_lines_ui_verified": false
+  },
+  "current_baseline": {
+    "repository": "multica-ai/andrej-karpathy-skills",
+    "owner_is_karpathy": false,
+    "observed_head": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+    "matches_pin": true,
+    "checked_date": "2026-11-17"
+  },
+  "packaging_population": {
+    "repair_manifest_records": 34,
+    "separate_native_testing_experiments": 2,
+    "top_level_repaired_directories": 5,
+    "limits": "Nested by-category packages account for multiple manifest entries; top-level directories, repair records, provenance copies and maintained overlays are distinct populations."
+  },
+  "historical_comparison_evidence": {
+    "path": "artifacts/agent-trials/development-v2-report/summary.json",
+    "sha256": "6b7eb92c679409eb116fb31ee50da299cc9c9b4f90558ade82f15114014be701"
+  },
+  "primary_methodology_research": [
+    {
+      "id": "skillsbench",
+      "url": "https://www.skillsbench.ai/",
+      "status": 200,
+      "success": true,
+      "characters": 20648,
+      "sha256": "71dc53f48fea4b20940b46be19e6b5345aa29a006df88e0f9a0d46f6cb87ca4e",
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true
+    },
+    {
+      "id": "agent-skills-spec",
+      "url": "https://agentskills.io/specification",
+      "status": 200,
+      "success": true,
+      "characters": 64533,
+      "sha256": "e0707f01dd77dad89b7469a6b23131c7df9b7f178145555bbeaee76fee9f510e",
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true
+    },
+    {
+      "id": "swebench-evaluation",
+      "url": "https://www.swebench.com/SWE-bench/guides/evaluation/",
+      "status": 200,
+      "success": true,
+      "characters": 12870,
+      "sha256": "48d8c30dfbb52410623e6134d14c3f64de6824e07618928761aa5687c513ac0e",
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true
+    },
+    {
+      "id": "harbor-methods",
+      "url": "https://github.com/harbor-framework/harbor/blob/main/README.md",
+      "status": 200,
+      "success": true,
+      "characters": 11962,
+      "sha256": "b46ca7723b616638d392a98ab31342f95488cb14426ea45445900de590ac437d",
+      "provider_version": "0.9.5+catalog.portable4",
+      "scope_reviewed": true
+    }
+  ],
+  "research_exposure": {
+    "purpose": "Benchmark methodology and interoperability research only; no task answers or grading-oracle acquisition",
+    "search_discovery": "Official benchmark/framework and specification URLs. Search output incidentally displayed public Terminal-Bench leaderboard/job metadata and task names. No solutions were requested or read; do not use those public outcomes to choose favorable tasks or tune candidate skills.",
+    "frozen_swe_frame": "No tasks, budgets, scorers, denominators or outcomes changed by this research.",
+    "future_confirmation": "Record exposure before task freeze; do not label examined material as untouched.",
+    "additional_exposure": {
+      "source": "skillsbench.native.json",
+      "scope": "Public home-page task titles and short problem summaries were present in retrieved methodology content and a bounded review excerpt; no solutions, reference patches or evaluator answers were requested or read.",
+      "use": "Do not use these tasks as untouched confirmation material. Preserve the frozen twelve-task development frame and do not choose or alter candidates to match these task summaries."
+    }
+  }
+}

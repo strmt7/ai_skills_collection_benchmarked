@@ -1,437 +1,776 @@
 # Development plan and release readiness
 
-This collection remains experimental. Meaningful improvement over the default
-agent and the Karpathy-derived baseline has not been demonstrated. No release
-or tag will be created without the owner's later explicit request.
+The collection is under development. It has not demonstrated a meaningful
+advantage over the same agent without skills or over the pinned community
+Karpathy-derived baseline. It is not ready for a commercial release. Do not
+create a release or tag; the owner will decide publication separately.
 
-This is the controlling plan for the existing active goal. The
-[machine-readable work order](../data/development_plan.json) records dependencies,
-acceptance criteria and scope holds. The
-[dated audit](../artifacts/research/2026-11-11/repository-state/audit.json)
-preserves the observations below. Update the work order after material gates;
-do not overwrite historical observations or create a separate goal.
+This is the controlling implementation plan for the existing active goal,
+refreshed on **17 November 2026**. The [active work order](../data/development_plan.json)
+retains requirements R1–R12, packages P0–P11, dependencies and scope holds.
+The [dated assessment](../artifacts/research/2026-11-17/repository-state/audit.json)
+records the evidence and limitations. Previous observations remain historical;
+the previous edition is recoverable at
+[commit 8be77acf](https://github.com/strmt7/ai_skills_collection_benchmarked/blob/8be77acf11261b918f6380426dc8cdece82c1b9e/docs/improvement-plan.md).
+This plan authorizes neither a second goal nor another development agent.
 
-## Verified position on 11 November 2026
+## Current repository overview
 
-The dated baseline below is retained. On 14 November, checkpoint
-[`1091ed16`](https://github.com/strmt7/ai_skills_collection_benchmarked/commit/1091ed16ec51e06e0826fd1bc36d94a740738514)
-was published through the official connector. All 42 triggered workflows finished:
-39 passed; offline validation, secret scanning and the code-scanning alert budget
-failed. The work order tracks repairs to the ordinary workflow failures. Security
-remediation remains held under P8. This checkpoint establishes no model advantage.
+### Product, evidence and architecture
 
-The [source-bound improvement ledger](../data/improvement_ledger.json) contains
-673 skills across 15 categories from 30 distinct contributing source repositories.
-Its current workflow states are:
+The useful product is a searchable collection of task-focused skill packages,
+with source provenance, explicit maintained overlays and evidence about their
+supported behavior. The engineering system imports pinned public sources,
+generates the catalog and entrypoints, records reviews, prepares isolated tools,
+and evaluates artifacts. These functions must remain distinguishable to users.
 
-| Work stream | Complete | In progress | Pending |
-| --- | ---: | ---: | ---: |
-| Research | 2 | 316 | 355 |
-| Revision | 5 | 53 | 615 |
-| Evaluation | 0 | 12 | 661 |
-
-There are resource inventories for 191 skills: 140 resource records are reviewed
-and 1,317 remain pending. Records are scoped to skills and can overlap between
-nested packages. Inventories and workflow states are not readiness percentages
-or evidence that a model benefits from a skill.
-
-Automatic isolated installation and recovery cover validation dependencies,
-CocoIndex Code, Crawl4AI and the pinned benchmark CLI. At the state-audit
-checkpoint, checks passed 2,925 tests with 18 skips, 75.28% coverage and typing across
-316 Python files. All nine checks in that frozen batch passed; its 22,197 inputs
-remained unchanged during execution. Subsequent planning changes need separate
-checks. Process, credential, evaluator and storage controls retain positive and
-negative fixture evidence. These are infrastructure results, not model trials.
-The complete live-model boundary remains gated. See the
-[latest control review](../artifacts/research/2026-11-11/native-storage-budget/review.json)
-and [validation](../artifacts/research/2026-11-11/native-storage-budget/validation.json).
-See [setup](../toolchains/bootstrap/README.md) and [trial methods](agent-trial-protocol.md).
-
-Subsequent P1 work added explicit unauthenticated numeric-loopback providers,
-preserving existing authenticated declarations and exact option order. Four
-native controls qualified edited, unchanged, interrupted and authenticated
-regression behavior; the full suite passed 2,941 tests with 18 skips. See the
-[provider-authentication review](../artifacts/research/2026-11-11/native-provider-authentication/review.json).
-This is a limited deterministic transport capability: no real model was invoked,
-no local backend or weights were admitted, and the public launch guard stays closed.
-
-The historical [published development checkpoint](https://github.com/strmt7/ai_skills_collection_benchmarked/commit/5c95bcac4646c5aed06bd9aed5235cfc7985aafc)
-completed 39 triggered workflows: 31 passed and eight failed. The
-[retained hosted review](../artifacts/research/2026-11-10/hosted-checkpoint-review/review.json)
-drives the follow-up repairs. A local pass alone did not catch interpreter
-availability, Windows command resolution and quoting, upstream package drift,
-or Linux type-checking errors. Hosted acceptance and the paused security gates
-remain release requirements; a subsequent source revision needs its own checks.
-
-The historical [follow-up checkpoint](https://github.com/strmt7/ai_skills_collection_benchmarked/commit/5a51fca0e994a574820ef673a1b62e609c05f9b6)
-finished all 15 triggered workflows: 13 passed and the two paused security gates
-failed. Windows validation passed on a targeted rerun with 2,570 tests and 56
-skips; its initial Node timeout remains an unresolved intermittent finding.
-The [follow-up review](../artifacts/research/2026-11-10/hosted-repair-follow-up/review.json)
-retains both attempts. A passing rerun does not establish a repair.
-
-At the 11 November state audit, local and published main both identified
-`c80f19ad60fda34b59197010ebe4fd84df5d4323`. Before this planning update, the
-working tree had 112 uncommitted files: 28 modified and 84 untracked. None
-changes immutable `included/skills/` mirrors. GitHub has one branch, no open
-pull requests, no releases and no tag refs. All ten runs triggered on that head
-are terminal: eight succeeded; [CodeQL](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42893946152)
-and [Secret scan](https://github.com/strmt7/ai_skills_collection_benchmarked/actions/runs/42893945983)
-failed. Causes and fresh alert inventories were not investigated in this
-overview because security work is paused. Historical alert totals are not
-current counts. Ten triggered runs do not mean all 45 workflow definitions ran.
-The unpublished local changes have no hosted acceptance.
-
-Three public rulesets are active: main-only development, the tag/release hold,
-and protection against deletion or history replacement of main. Classic branch
-protection details remain unverified: that administrative endpoint returned
-403, `Resource not accessible by integration`, for the active connector. This
-specific limitation does not establish that required checks are absent or that
-all GitHub APIs are blocked.
-
-The [native benchmark plan](benchmark-execution-plan.md) supersedes the older
-preflight's evaluator status. Native positive and negative scoring controls now
-exist, while complete supported model transport and launch admission remain
-unqualified. Preserve scoring semantics and resource ownership; do not change
-the workstation's OS or bypass the public model-launch refusal.
-
-The earlier nine matched development attempts reached a ceiling: each of the
-default, Karpathy and experimental conditions passed three times. That result
-does not demonstrate an advantage. Official external-suite scores for this
-collection have not been established.
-
-At that state audit there were 26 maintained overlay records, all explicitly unbenchmarked. The 34
-historical packaging repairs and two experimental native-testing overlays are
-different populations. Provenance copies and aliases are not additional unique
-improvements. The 718 scenario templates, 18 registry methods at declared-source-
-probe stage and README's 14 selected smoke adapters are not model scores.
-
-The [10 November upstream observation](../artifacts/research/2026-11-10/karpathy-baseline-head.json)
-found that the Karpathy-inspired source still matches the pinned baseline
-commit. That observation does not complete review of the other upstreams or
-establish the baseline's quality.
-
-The supplied implementation manual has 154 pages and seven embedded files.
-All extracted page texts have been inspected; claim verification, embedded-file
-review and relevant visual checks remain open. Follow its
-[review ledger](../artifacts/research/2026-11-03/implementation-manual-review/ledger.json).
-Its recommendations remain claims to verify, and the owner's 120-character
-Python limit and current repository scope remain controlling.
-
-The [Windows bootstrap review](../artifacts/research/2026-11-13/windows-bootstrap-runtime/review.json)
-qualifies Node 26.13.1 and a compiler-free, source-bound process supervisor with
-39 native setup controls. The corrected launcher passes output and output-limit
-controls on both Windows CLR runtimes, including extended paths. Architecture
-admission uses the runtime APIs and passes with absent or incorrect inherited
-CPU variables; the earlier nested-launch failure remains unadmitted. Its maintained
-builder produces the same 9,728-byte assembly twice from pinned inputs. Five
-current-source controller/grader controls also pass, preserving successful,
-failed-task and unscored-import outcomes. Earlier failed and interrupted
-qualifications remain unadmitted. These results establish neither agent gains
-nor hosted acceptance. Other deliberately versioned native workflow families
-still need separate compatible-version qualification.
-
-The [original build-scorer qualification](../artifacts/research/2026-11-13/publisher-build-scorer/review.json)
-adds five native outcomes, six original-scorer contract controls and independent
-build-result admission. Native evidence can now be validated from a clone;
-contradictions remain unscored. Source and runtime probes identify concrete
-prerequisites for the three selected build stages. Full project builds, their
-controller integration and original multi-stage aggregation remain open.
-The [native resource qualification](../artifacts/research/2026-11-13/native-project-resources/review.json)
-also verifies explicit project quotas and preserves the frame's longer test
-deadlines. Seven original-grader controls pass, including two 900-second
-configurations; resource and lifecycle controls remain separate from complete
-project-build admission and model efficacy.
-The [current qualification index](../data/native_qualification_index.json)
-binds this fresh component evidence to the exact sources superseding older
-reports. Historical build and bootstrap reports stay unchanged. Unexplained
-source drift, missing supersessions and changed evidence fail the index gate;
-an unrelated component update need not rebuild an unchanged image.
-
-The owner-authorized operating-policy review clarifies that maintained skill
-redesign and functional testing can proceed while model-runner work remains
-open. Frozen comparisons retain their original revisions; development advances
-through explicitly identified snapshots. Repository-maintenance restrictions
-do not become general restrictions on agents consuming skills elsewhere.
-The fresh upstream-head checks match the existing community baseline and the
-three previously reviewed official repositories; only the generated badge's
-canonical link needed updating.
-
-## Problems and inefficiencies
-
-1. **The product claim remains unproved.** Packaging checks, source proofs,
-   deterministic controls and coverage do not establish better agent decisions.
-   The next major result must come from discriminating matched external trials.
-   Do not improve static counters or build optional infrastructure instead.
-2. **Skill and resource coverage is incomplete.** Review examples, scripts,
-   dependencies and licenses as well as instructions. Inventories and phase
-   states must not masquerade as complete research or efficacy evidence.
-   The [standard-target helper controls](../artifacts/research/2026-11-13/makefile-standard-targets/review.json)
-   reproduce four false successes despite the supplied regression script passing.
-   Maintained guidance now requires preserving effective rules and real failure
-   statuses. Four of that package's eleven resources have scoped reviews; its
-   remaining guides and language cases are still open, with security work held.
-3. **Private experiments have accumulated.** The private planning area contained
-   139 Python scripts and 412 top-level directories. They retain useful failures
-   and provenance but make replay and discovery costly. These are ignored assets,
-   not tracked-repo contamination; recursive disk footprint was not measured.
-   Consolidate qualified methods into maintained configurable commands. Preserve
-   frozen inputs and failures; reuse admitted environments for validation batches.
-4. **Documentation and delivery need consolidation.** There are 145 top-level
-   documentation files and 45 workflow definitions. The previous rolling plan
-   had stale counts and evaluator status. Build a revision-aware report index
-   and workflow trigger/dependency map before merging or retiring anything.
-   Counts alone do not prove redundancy. Keep user setup prominent and developer
-   operations linked separately.
-5. **The unpublished batch is large.** Review pending files with exact source
-   bindings, generated outputs and newline behavior. Publish cohesive qualified
-   batches; do not push merely to reduce the dirty-tree count.
-6. **Runtime qualification remains a prerequisite.** Complete supported unattended
-   provider transport, isolation and source-bound admission. An installed CLI,
-   discovered model or successful help command does not satisfy this gate.
-7. **Readiness has unresolved evidence gaps.** Hosted failures, current scanner
-   totals, administrative protection details and complete Codecov upload/UI
-   verification remain open. Security stays held. A passing rerun does not prove
-   a flaky-test repair. Dependency maintenance qualifies whole compatible graphs.
-8. **The manual is not verified.** All 154 page texts have ledger status
-   `inspected_claims_unverified`; all seven attachments are inventory-only or
-   partially reviewed. Of 15 shared requirements, 11 await verification and four
-   are partial. Six project actions include one security deferral, four partial
-   items and one open item. Verify claims independently, including relevant visual
-   content and embedded materials; inspection is not acceptance.
-9. **Structural review must be evidence-led.** The 316 Python modules contain
-   about 63,925 lines; several tools are large. Size warrants responsibility and
-   interface review, not an assumption of defects or an early cosmetic rewrite.
-   Review distribution metadata, including the local `0.2.0` version and platform
-   classifiers, before readiness claims. A package version is not a GitHub release.
-
-## Ordered work packages
-
-One development controller executes dependency-ready work. Independent research
-can advance while a runtime capability is restored. Dependent benchmarks cannot
-bypass gates. The approved exception permits serial isolated test subjects, not
-separate development or review agents.
-
-| Package | State and dependencies | Deliverable and acceptance gate |
+| Area | Present state | What remains to establish |
 | --- | --- | --- |
-| P0: state and plan | Complete for this audit | Reconciled local/published state, this document and the work order. Keep observations dated. |
-| P1: execution route | Active; P0 | CLI 0.167.2, source-frozen vendor catalog, 529 focused tests, 13 native metadata cases, three maintained cache controls, one late-global-instruction control, nine bootstrap controls and 3,107 full-suite passes with 18 skips. The discovered real sign-in home contains global instructions and remains ineligible. Finish supported profile isolation, recovery, fresh setup, model identity and complete admission. Keep public refusal closed. |
-| P2: development experiment | Active; P0 | Source-verified metadata selection now fixes 12 declared repository groups and 36 prospective condition attempts without reading outcomes. Complete selected task/scorer admission, intervention identities, budgets, activation and the full analysis contract before counted comparisons. Selection alone is not preregistration or execution admission. |
-| P3: complete skill review | Active; P0 | Evidence-backed dispositions for every skill, resource, upstream and applicable manual claim. Work in bounded batches; runtime promotion needs P1 and P2. Security-category work stays held. |
-| P4: useful pilot | Pending; P1, P2 | Serial clean matched conditions, native external scoring and actual usage. Retain every attempt. A ceiling, floor or underpowered result triggers diagnosis, not superiority claims. |
-| P5: iterative improvement | Pending; P4 | Transferable redesigns, routing/content/tool ablations and broader development tasks. Preserve regressions and null results. Never fit benchmark answers. |
-| P6: confirm transfer | Pending; P3, P5 | Freeze final candidates and untouched confirmatory selection. Demonstrate practical, statistically supported gains against both baselines in declared model/task populations. Publish limitations. |
-| P7: delivery engineering | Active; P0 | Current compatible stable graphs, isolated automatic setup, root-cause flaky-test repairs, workflow map, exact-source coverage and reproducible CI. Recheck dependency alerts without suppression. |
-| P8: security work | Held; P0 | After explicit scope restoration only: paginated exact-source scanner inventories, count reconciliation, root-cause bulk remediation and verified thresholds/protection details. No suppression or guessed exceptions. |
-| P9: qualified checkpoint | Active; P0 | Publish cohesive batches after their non-held checks pass; use only the official connector to expected-head main with GitHub-assigned identity. Wait for every triggered job and retain failures. P7 continues; P8 remains required for final readiness. |
-| P10: final structural refactor | Pending; P3, P5, P6, P7, P8 | Complete folder/interface/report cleanup and short end-user README after substantive work. Preserve provenance, stable interfaces or explicit migrations and old evidence. Requalify consumers. |
-| P11: final readiness | Pending; P3, P6, P7, P8, P9, P10 | Reconcile requirements against the final exact revision and hosted checks. Notify the owner of readiness and limitations; create no release or tag. |
+| Catalog | 673 skills, 15 categories, 30 contributing repositories; 80 selected entries | Complete source, resource, currentness and supported-scope dispositions for every entry |
+| Locked sources | Original mirrors and deterministic catalog generation | Review all upstream changes; inclusion does not certify quality or safety |
+| Maintained candidates | 28 records in the maintained-overlay manifest | Whole-skill readiness and independent model benefit; an overlay record is not a measured improvement |
+| Packaging repairs | 34 repair-manifest records plus two separate native-testing experiments | Keep packaging repair, functional correctness and model efficacy separate |
+| Scenario definitions | 718 templates | Independent executable tasks, original evaluators and actual runs |
+| Benchmark discovery | 18 registry methods at declared-source-probe stage | Qualified adapters and suite executions; historical smoke results are not suite scores |
+| Model evidence | An earlier one-task, nine-attempt comparison reached a ceiling: all three conditions passed three times | Discriminating, paired development results and untouched confirmation |
+| New development experiment | Frozen 12-task frame, 36 prospective condition attempts, zero counted attempts | Complete runtime graphs, model transport, isolation, admission and prospective analysis |
+| Setup and ownership | Isolated managed environments, native process ownership and component controls | Complete supported fresh-host, relocation, recovery and dependency-graph qualification |
+| Quality | Extensive tests, typing, deterministic validators and hosted controls | All applicable workflows accepted on the published revision, unresolved integration failures and held findings closed |
+| Release | Explicit hold; no release authorized | All readiness gates, then an owner decision |
 
-P1 has priority: finish the shortest supported qualified path to the requested
-GPT-6.1 Sol high comparison through the official harness or app with the existing
-sign-in. The owner ruled out providing an OpenAI API key: do not request,
-provision or use one, or substitute direct OpenAI API requests for that route.
-Local models provide supplementary evidence; they
-cannot silently replace that target. Stop infrastructure expansion once the
-necessary gate passes. P2 proceeds without inspecting held-out answers. Advance
-P3 independently and P7 for concrete failures, compatibility or release needs.
+The current ledger has **2 complete / 316 in-progress / 355 pending research**
+records, **5 / 53 / 615 revision** records, and **0 / 12 / 661 evaluation** records.
+These are workflow states with limited recorded scopes, not completion or quality
+percentages. There are resource inventories for **192 skills**, comprising
+**1,468 per-skill resource records: 152 reviewed and 1,316 pending**. Nested
+packages can share physical resources. Another **481 skills have no recorded
+resource inventory**; that does not establish that their packages contain no
+supporting files.
 
-The [official harness sign-in review](../artifacts/research/2026-11-11/official-harness-signin/review.json)
-identified the integration mismatch: the adapter's empty `CODEX_HOME` hides the
-existing sign-in. The official exec flag can ignore user configuration while
-retaining native authentication storage. The initial explicit native adapter qualified
-417 passing focused tests and six synthetic native controls, including original
-11-case positive/unchanged grading and subject denial of store access. Native
-testing exposed global AGENTS discovery despite the config flag; admission now
-rejects those entries without changing the user's profile. See the
-[controller review](../artifacts/research/2026-11-11/native-signin-controller/review.json).
-The full suite passed 2,994 tests with 18 skips across 22,205 unchanged frozen
-inputs. Skipped platform/scanner checks are not claimed as passing.
-Finish shared-profile/refresh stability, remaining context channels, real model
-identity and source-bound launch admission. These controls do not open the gate.
+The tracked inventory on published head
+[8be77acf](https://github.com/strmt7/ai_skills_collection_benchmarked/commit/8be77acf11261b918f6380426dc8cdece82c1b9e)
+contains 22,693 files: 18,916 under included/, 2,255 under artifacts/, 835 under
+docs/, 191 under benchmarks/, 160 under tools/ and 197 under tests/. There are
+146 top-level documentation files and 46 workflow definitions. The explicitly
+counted maintained Python scopes—tools/, tests/ and the agent-effectiveness
+graders—contain 357 modules and 71,957 lines in the observed working snapshot.
+Other mirrored and overlay programs are outside that module count. File size
+and counts are review inputs; they do not demonstrate defects or duplication.
 
-Four subsequent [native lifecycle components](../artifacts/research/2026-11-11/native-signin-lifecycle/review.json)
-qualify synthetic refresh persistence, generation-conflict preservation,
-rejection and timeout accounting. Cancellation can leave the authority's
-simulated grant changed while the local cache is unchanged. Establish explicit
-official preflight and interruption semantics; an account response or cached
-status alone is insufficient refresh proof. At that lifecycle checkpoint, the 404 functional source files
-covered by the earlier full-suite snapshot remained byte-identical; those
-controls add component evidence rather than another full-suite or model score.
+| Boundary | Responsibilities and invariants |
+| --- | --- |
+| data/source_lock.json → catalog generator | Select pinned public inputs and deterministic allowed transformations; never tune mirrored instructions for benchmarks |
+| included/skills/ | Immutable upstream baseline, including documented deficiencies |
+| included/agent-ready/ and generated catalog pages | Portable routing and source metadata; generated outputs must remain synchronized |
+| included/repaired/ | Explicit packaging/runtime repairs with original provenance; retain the original mirror |
+| included/improved/ | Maintained candidates, research rationale, supporting resources and declared limits |
+| data/improvement_ledger.json | Exact per-skill source signatures, research/revision/evaluation state and evidence |
+| benchmarks/, evaluators/ and tools/ | Task selection, execution, native scoring and result validation; keep oracles outside subject access |
+| toolchains/ and dev.ps1 | Verified isolated setup, bounded process ownership and actual public command contracts |
+| artifacts/ and data/native_qualification_index.json | Dated observations and exact current/historical source qualification, never a substitute for model outcomes |
+| docs/installation.md and README | End-user discovery, requirements, setup and honest evidence; developer operations remain linked separately |
 
-The [metadata-readiness entrypoint](../artifacts/research/2026-11-11/native-account-readiness/review.json)
-combined account, authenticated quota and model metadata without exporting
-tokens or starting a model turn. That round passed 11 native cases and 470 focused tests;
-the full suite passed 3,048 tests with 18 skips and 22,211 unchanged frozen inputs.
-App-server honors the selected profile while isolated exec ignores user config.
-Qualify configuration concordance and remaining profile/cache channels before
-using this component for full launch admission. Metadata eligibility does not
-prove model effectiveness or complete this package.
+The package metadata currently declares version 0.2.0 with empty setuptools
+package and module lists. This is not evidence of a published release or a wheel
+containing an installed application. Define the intended source-clone, package
+and optional-distribution contracts before commercial claims. No root LICENSE
+file was found in the tracked inventory. Preserve upstream licenses and notices;
+resolve licensing of maintained code and aggregate distribution explicitly.
+Do not infer permission to relicense upstream material.
 
-The [configuration-readiness review](../artifacts/research/2026-11-11/native-configuration-readiness/review.json)
-adds before/after configuration and origin-version checks, rejects explicit
-catalog substitutions and retains a native omitted-field regression. All 13
-metadata controls and 494 focused tests passed; the new full suite passed
-3,072 tests with 18 skips and 22,211 unchanged frozen inputs. Two scripted
-catalog-isolation controls also passed: isolated exec omitted the profile
-marker, while deliberate flag removal exposed it and withheld the result.
-The unchanged positive task still scored zero; these are infrastructure controls.
-Their scope does not establish every shared-cache channel or real-account model
-identity. The public model-launch refusal remains closed.
+### Exact-revision quality observations
 
-The [13 November catalog review](../artifacts/research/2026-11-13/native-vendor-catalog/review.json)
-supersedes the CLI pin with stable 0.167.2. Native controls reproduced a separate
-matching-cache leak during catalog refresh failure. Both maintained runners now
-use the same source-verified vendor catalog, with before/after digest checks and
-portable archived command evidence. Nine bootstrap controls include automatic
-catalog recovery. Validation passed 529 focused tests, typing across 324 Python
-files, 13 native metadata cases and 3,107 full-suite tests with 18 skips. The full
-suite's 22,214 frozen inputs remained unchanged; line coverage was 75.75%.
+All **16** workflow runs observed for 8be77acf are terminal: **10 succeeded and
+6 failed**. This is not a claim that all 46 workflow definitions ran. Failures
+were CocoIndex setup-output binding, Crawl4AI setup-output binding, the offline
+stable-action check, LLVM freshness, the code-scanning budget and secret-history
+scanning. The first four are ordinary P7 integration work. Scanner remediation
+remains held under P8.
 
-The actual sign-in home remains ineligible because it contains global
-instructions. Presence-only discovery did not read credentials or modify user
-files. Official source and one generated-profile late-file control show that
-global instructions still load despite ignored configuration and a zero project
-budget. Admission rejection remains necessary and shared-profile concurrency
-remains unqualified. Do not move user files, copy credentials or erase vendor
-base instructions. Continue independent P2/P3 work while establishing a supported
-isolation route. No real model, skill-gain or commercial-readiness claim follows
-from these infrastructure results; the public launch guard stays closed.
+The preceding local publication qualification passed all 19 nonheld checks,
+including 3,459 tests with 18 expected skips, on unchanged inputs. Hosted runs
+nevertheless found a real launcher regression: console writes bypassed
+PowerShell assignments, pipelines and redirection. The follow-up reproduces six
+consumer failures and passes all nine frontend ownership/stream controls after
+repair. Actual public CocoIndex and Crawl4AI commands also return valid JSON
+through pipelines while reusing their admitted profiles. These focused results
+do not establish hosted acceptance of the follow-up revision.
 
-## Every-skill research and redesign loop
+The follow-up also resolves actions/setup-go v7.1.0 to its official commit.
+LLVM 23.1.6 Windows assets appeared during this round. The verified archive and
+matching compiler/runtime pass all 11 unchanged native outcomes after the
+runner stages its matching DLL app-locally. The original 266-character DLL-path
+startup failure is retained. These are native component controls, not AI scores.
+The Windows compiler controls still use discovered MSVC/Windows SDK prerequisites;
+this does not establish automatic setup of those prerequisites on a fresh host.
 
-The [13 November C++ review](../artifacts/research/2026-11-13/makefile-cpp/review.json)
-adds a [maintained Makefile overlay](../included/improved/skills/makefile-generator-cpp/SKILL.md)
-after independently reproducing lost compiler flags during linking and a test
-target that succeeded without tests. All six Linux compiler controls passed
-with GNU Make 4.3 and a source-verified build of 4.4.1;
-Windows file-generation controls passed with four compiler-dependent skips.
-That checkpoint contained 27 maintained overlay records, all unbenchmarked for agent efficacy.
-The source package's 11 resources are inventoried; remaining guides, other
-language cases and held security guidance prevent whole-skill completion.
+Codecov's API reports the exact 8be77acf commit complete, with 70.19% coverage,
+158 files and 19,958 tracked lines. Reconcile its metric with the exact uploaded
+reports and local representation. The tracked-lines “deactivated” UI has not
+been verified resolved. Coverage measures exercised tooling code, not skill
+intelligence. DeepSource's exact-commit check was skipped with **“Analysis quota
+is exhausted.”** This does not establish a current findings total or an API/auth
+block. The CodeQL budget reported 86 open alerts against a limit of two; its
+snapshot was not atomic. Do not treat that observation as a new reconciled
+inventory or an approved exception list.
 
-The [current E2E review](../artifacts/research/2026-11-13/e2e-readiness/review.json)
-adds a maintained candidate after seven live Windows browser controls. The exact
-TypeScript example passes on a ready polling page and fails at the intended
-assertion when readiness is absent, retaining a valid trace and screenshot.
-The original example is unchanged in the checked current upstream; the broader
-source update is not adopted by this observation. Earlier response-ordering
-repairs remain historical evidence. There are now 28 maintained overlay records,
-all unbenchmarked for agent efficacy. Remaining application, browser and CI
-claims still need qualification; security work remains held and real model
-launches remain unqualified.
+Fresh public GitHub reads confirm main as the only branch, no tag refs, no open
+pull requests and no releases. Three active public rulesets restrict non-main
+branch creation/update, all tag creation/update, and main deletion/history
+replacement. Their observed rules have no bypass actors. Classic protection
+and the complete effective required-check policy still require verification;
+a prior administrative read was denied to the integration. Never extrapolate
+that endpoint limitation to all API access or attribute it to the owner.
 
-Start with coding, testing, agent infrastructure and retrieval. Process bounded
-batches, normally five to eight skills or fewer for resource-heavy packages.
-Preserve every skill ID and resource disposition in the ledger. Batch size
-controls context and resources; it never justifies skipping difficult entries.
+The community baseline's fresh head still matches
+2c606141936f1eeef17fa3043a72095b4765b9c2 in
+[multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills),
+formerly forrestchang/andrej-karpathy-skills. This is a community Karpathy-inspired
+repository, not a repository owned by Karpathy. That observation does not verify
+all 30 contributing upstreams or prove baseline quality.
 
-1. Inventory all original files, dependencies, licenses, source pins and limits.
-   Read supporting resources; compare upstream changes and current primary sources.
-2. Define intended outcomes and general failure hypotheses. Record independent
-   task/evaluator provenance outside the exact skill text. Research is not a score.
-3. Design the smallest transferable improvement. Preserve mirrors; use attributable
-   overlays with original provenance, explicit activation and qualified portable setup.
-4. Verify readiness with meaningful positive and negative controls. Functional
-   success is not efficacy.
-5. Compare against both baselines on independent development tasks. Separate
-   instruction, routing and tool effects; retain costs, regressions and missing data.
-6. Promote supported scopes, reopen evidence after material changes and feed
-   general findings into later batches. Reserve untouched tasks for P6. Unchanged
-   skills need justified dispositions, not arbitrary rewrites.
+### Principal problems and avoidable costs
 
-All category populations stay accounted for: Azure/cloud SDKs (178), science
-(148), communication/productivity (59), security (57, held), OMERO/lab (46),
-DevOps (40), coding/refactoring (30), creative/design (30), game/mobile (25),
-testing (19), retrieval (16), documents/spreadsheets (12), agent infrastructure
-(8), frontend/browser (3) and finance (2). The sum is 673. These labels are
-shortened; operations use exact ledger IDs/categories. Prior cross-repository
-inspiration must remain generic, cannot replace independent tasks and does not
-authorize new work on other owner repositories.
+1. **No demonstrated capability advantage.** Infrastructure, static counters,
+   source proofs and coverage cannot answer the product's central question.
+   Prioritize a qualified discriminating external comparison over optional runner
+   features, decorative graphs or broader registries without executions.
+2. **Incomplete per-skill and resource work.** Many reviews are partial; supporting
+   programs, dependencies, examples, licenses and failure behavior need their own
+   dispositions. An inventory is not a review, and a passing example is not a
+   complete skill evaluation.
+3. **Model transport remains unqualified.** The latest public local calibration
+   loaded the intended gpt-oss:20b weights and 65,536-token context but timed out
+   after 180.089 seconds with a missing-cmd parser error and no completed command.
+   Its score is null. Raw tool arguments were not retained; do not invent their
+   shape or claim inference succeeded. Native opt-in tracing is a prospect to
+   qualify, not a completed remedy. The requested signed-in GPT-6.1 high route
+   remains separately open because actual personal instructions violate isolation.
+4. **Original task graphs are incomplete.** Node file-loader metadata access,
+   Go, Faiss/CUDA, Nx/pnpm and complete original build/test/collection stages need
+   qualification. An AMD GPU does not establish CUDA compatibility. Preserve the
+   frozen frame rather than drop inconvenient tasks or alter their scoring.
+5. **Qualification has missed real callers.** A successful native capture did not
+   prove PowerShell pipeline behavior. Test the actual public consumer contract,
+   including interruption, before broad suites and publication. Preserve both
+   failing and passing source identities.
+6. **Excess repeated I/O and private orchestration.** Earlier inventory and
+   publication helpers scanned too widely. Keep ignored research out of navigation,
+   use explicit tracked paths, reuse admitted caches and stage only reviewed files.
+   Consolidate recurring qualified methods; retain failures and frozen inputs.
+   A long check needs a durable start identity and terminal result, not an ambiguous
+   progress file. This is targeted reliability work, not a new general framework.
+7. **Documentation and workflow sprawl.** Map consumers, triggers, required checks,
+   generators, public entrypoints and report precedence before removing or merging.
+   Chronological status appendices have allowed old counts and pins to look current.
+   The final refactor must establish one current plan and an indexed evidence archive.
+8. **Distribution and licensing are unresolved.** Source-clone behavior, installed
+   payload, platform promises, provider licenses and root-project terms need explicit
+   acceptance. Do not label metadata installation as application installation.
+9. **The supplied manual is not verified.** Its original 8,182,434-byte PDF hash
+   was rechecked: e47cd7084b51ba5b8d8ef0f6b1cb9cb0812d90b46af328caec55705ed1b2304e.
+   All 154 extracted pages remain inspected_claims_unverified; seven attachments
+   are inventory-only or partial. Of 15 shared requirements, 11 are pending and
+   four partial; six AISC actions include a held security item and an open efficacy
+   item. Inspect relevant visuals and embedded claims; never adopt recommendations
+   merely because they appear in the document.
+10. **Commercial acceptance is blocked.** Per-skill closure, independent gains,
+    complete portability/dependency graphs, hosted acceptance, coverage reconciliation,
+    distribution terms and held security work remain. No credible completion
+    percentage or release date follows from present counts.
 
-## Benchmark design and reporting
+## Execution order and state transitions
 
-Use three matched conditions: B0, the same agent without collection instructions;
-BK, that agent with the pinned community Karpathy-derived baseline; and BC, the
-candidate skills with declared activation. The source is
-`multica-ai/andrej-karpathy-skills` (formerly `forrestchang/andrej-karpathy-skills`),
-not a Karpathy-owned repository, pinned at
-`2c606141936f1eeef17fa3043a72095b4765b9c2`. Reverify contributing upstreams
-during their reviews.
+One development controller runs dependency-ready work. Benchmark subjects are
+serial isolated test conditions under the approved exception, never delegated
+developers or reviewers. Normal development retains all mandatory tools. OpenAI
+runs use the official app/harness with existing sign-in only; no OpenAI API key,
+credential copying or direct OpenAI request is permitted.
 
-Keep model, reasoning setting, ordinary tools, task input, environment, budgets
-and evaluator constant except for the intervention. Name any separate tool-bundle
-experiment and its ablations. Use clean serial contexts under the approved
-exception; never share development memory, earlier answers or personal profiles.
-Qualify runner and grader on public controls before real subjects.
+The critical path is P1 + P2 → P4 → P5 → P6 → P10 → P11. P3 and P7 advance
+independently where their inputs permit. P8 remains held and blocks final
+readiness. P9 repeats for cohesive qualified batches; it does not wait for the
+entire project, and a push does not complete any scientific gate.
 
-Prioritize skill-focused SkillsBench and SWE-Skills-Bench methods, then compatible
-SWE-bench repository tasks and Terminal-Bench terminal tasks. Extend relevant
-domains through the existing registry, including BrowserGym/WebArena, WorkArena,
-BFCL tool use and scientific tasks. Confirm versions, licenses, native scorers,
-environment needs and coverage before selection. Registry entries, popularity
-and smoke checks are not suite scores. Breadth cannot replace enough independent
-tasks within each claimed population.
+| Package | Current state | Dependencies | Exit condition |
+| --- | --- | --- | --- |
+| P0: state and plan | Complete for the assessment | None | Source-bound overview and synchronized active work order |
+| P1: model execution | Active | P0 | Qualified real model-to-tool-to-artifact route, isolation, cleanup and admission |
+| P2: development protocol | Active | P0 | All 12 original task graphs and prospective comparison/analysis contract |
+| P3: every-skill redesign | Active | P0 | Complete accounted-for research/resource/revision dispositions; evaluation still needs its gates |
+| P4: discriminating pilot | Pending | P1, P2 | Complete matched development attempts, native scoring and honest feasibility/result analysis |
+| P5: iterative improvement | Pending | P4 | Transferable revisions, controlled ablations and independent development transfer |
+| P6: confirmation | Pending | P3, P5 | Untouched, frozen, adequately powered confirmation against both baselines |
+| P7: delivery engineering | Active | P0 | Current compatible graphs, supported installation/recovery, coverage and hosted quality |
+| P8: security/scanners | Held | P0 plus restored owner scope | Reconciled inventories and verified authorized remediation; no suppression |
+| P9: publication checkpoint | Active, repeatable | P0 and applicable batch gates | Verified connector publication and every triggered hosted result retained |
+| P10: final refactor | Pending | P3, P5, P6, P7, P8 | Coherent final structure, migrations, archived evidence and short end-user README |
+| P11: readiness audit | Pending | P3, P6, P7, P8, P9, P10 | Exact-revision requirement audit and candid readiness report; no release |
 
-Use pilot variance and feasibility to specify confirmatory allocation and practical
-thresholds before accessing holdout content. Preserve official metrics and scoring
-denominators; report paired uncertainty clustered by independent task, multiplicity
-handling and sensitivity analyses. Repeated seeds are not new independent tasks.
-Report native scoring and the whole planned experiment separately, including
-setup errors, cancellations, timeouts, missing outcomes and harmful effects.
-Never silently drop failed pairs.
+A task changes state only when its acceptance evidence exists and is inspected.
+A partial success advances the recorded substep, not the whole package. Missing
+access, incompatible environments and interrupted commands remain explicit;
+never substitute assumptions, a passing rerun or a reduced denominator. Work on
+an independent ready package while a genuine external capability is unavailable.
+Do not wait on a supposed publisher job without an actual job identity.
 
-Quality gain is the primary requested result; lower cost alone does not satisfy
-it. Token, cache and cost comparisons require actual provider measurements;
-missing usage is not zero. Workstation timing requires controlled host context
-and repeated measurements. Generate plots from validated artifacts with counts,
-uncertainty, versions and raw-evidence links. Packaging checks, source proofs and
-fixture controls never enter agent win rates. Finite experiments support declared
-models/tasks, not a promise that every possible model improves.
+### Immediate work sequence
 
-## Operating and release constraints
+1. Finish the launcher stream repair, app-local LLVM deployment and current
+   action pin. Qualify actual public commands, unchanged native controls, source
+   freshness and the full nonheld publication checks. Keep held failures visible.
+2. Publish this cohesive batch using the official connector, verify the exact
+   tree and attribution, synchronize the local cache and wait for all triggered
+   workflows. Diagnose ordinary failures; record held scanner failures separately.
+3. Qualify native opt-in raw tool-dispatch diagnostics against scripted peers;
+   then run a prospectively specified public transport calibration. Preserve
+   the old timeout and do not retry inference blindly or change pilot budgets.
+4. Complete the original twelve runtime graphs and P2 admission without changing
+   task membership or grading semantics. Continue P3's next bounded skill batch
+   alongside dependency-ready qualification work.
+5. Execute P4 only after P1/P2 admission. Let independent development evidence
+   guide general revisions and a separately frozen confirmation study.
 
-Use one development controller and serial isolated experimental subjects under
-the [benchmark policy](benchmark-subject-policy.md). Keep mandatory tools,
-source-bound receipts and [host resource lifecycle rules](../AGENTS.md#process-and-host-resource-lifecycle).
-Bound processes, concurrency and output; clean up owned children on success,
-failure and cancellation. Preserve unrelated applications and other tasks.
-Use the declared Windows x64 local target and qualify separate benchmark
-environments explicitly. Do not change the host operating system or assume
-preinstalled applications.
+## P1 — qualify one complete model-execution route
 
-All development stays on `main`; no development branches, dependency-update PRs,
-releases or tags. Work only in this repository. Public upstreams and disposable
-external benchmark inputs do not authorize changes to the owner's other repos.
+**Purpose:** make a real, isolated official agent perform an actual tool action,
+collect its artifact and terminate cleanly. Metadata probes are insufficient.
 
-Use maintained setup commands for missing qualified dependencies in owned isolated
-caches on the declared OS/architecture. Never assume host packages, paths, cached
-credentials or administrator access. Reuse admitted environments in frozen batches.
-Keep Python formatting at 120 columns. Audit whole runtime/build graphs against
-current stable compatible releases and document compatibility pins.
+1. **P1.1: freeze the diagnostic boundary.** Record the official CLI version,
+   source commit, executable digest, requested/reported model, reasoning setting,
+   model catalog, backend identity, actual local weights digest where available,
+   context, tool schema and resource graph. Keep requested GPT-6.1 Sol high and
+   supplementary local-model results distinct. Do not demand unavailable private
+   weight hashes for proprietary providers or infer identity from a model's prose.
+2. **P1.2: qualify native traces without inference.** The pinned official CLI
+   exposes CODEX_ROLLOUT_TRACE_ROOT. Use independent scripted peers to check valid
+   and malformed tool arguments, tracing disabled/enabled, cancellation, truncation,
+   size limits and cleanup. Keep traces controller-owned and inaccessible to the
+   subject; preserve ephemeral execution and avoid external telemetry. Establish
+   what the trace actually records before relying on it. Preserve complete failures.
+3. **P1.3: specify a new public calibration prospectively.** Before launch, fix
+   prompt, expected artifact, model/reasoning, deadline, tool schema and pass/fail
+   criteria independently of candidate skills. Require an actual executed command,
+   expected artifact bytes, completed turn and consistent native event trail.
+   An echoed call or reasoned plan is not execution. Retain parser/provider errors;
+   do not unwrap malformed calls or add favorable prompt hints to hide a defect.
+4. **P1.4: prove the full resource envelope.** Retain the 16 GiB local backend,
+   2 GiB coding subject, declared enclosing command allowance and 28 GiB available
+   RAM preflight where that generation profile requires them. Verify nested job
+   limits, cancellation, output caps and listener cleanup from actual observations.
+   The corrected enclosing budget is qualified separately from successful inference.
+   Never kill the user's unrelated Ollama or change the workstation operating system.
+5. **P1.5: finish signed-in official-route isolation.** Establish a supported
+   app/harness configuration that does not import personal instructions, history,
+   skills, caches or configuration into the subject. Test matching and stale
+   catalog cases and late-created global instructions. Do not move personal files,
+   copy credential stores, remove vendor base instructions or weaken the no-skills
+   condition. A local-model pass does not close this requested route.
+6. **P1.6: qualify end-to-end execution and collection.** Exercise meaningful
+   positive, task-failure, malformed-call, timeout, interrupted-controller, missing
+   artifact and collection-boundary controls using the same maintained launcher.
+   Prove editing, build/test invocation, artifact collection and independent grader
+   visibility. Check source digests before/after and actual owned-job termination.
+7. **P1.7: admit only the proved scope.** Produce a clone-validatable admission
+   artifact binding environment, controls and source identities. Keep the public
+   refusal until the complete gate passes. Afterward stop optional infrastructure
+   expansion and run the planned development comparison.
 
-Verify the coverage producer, revision, upload receipt, service processing and UI
-independently. A badge or local percentage does not prove Codecov accepted a report.
-Do not claim the tracked-lines "deactivated" state resolved without live evidence.
-A rerun alone does not establish a flaky-test root-cause repair.
+**Exit evidence:** native traces and controls, real calibration artifact and events,
+requested/reported model identity, isolation proof, full source-bound admission,
+resource/cleanup receipts and a tested replay command. No efficacy claim follows.
 
-The manual ledger remains authoritative for S01-S15 and AISC-01-AISC-06. Finish
-relevant page, attachment and visual checks, verify against current sources and
-this repository, then record adoption, justified non-applicability or a scope hold.
-Do not copy recommendations as facts or modify other repositories.
+## P2 — qualify the original tasks and freeze the experiment
 
-The work order maps requirements R1-R12 to packages P0-P11. Recheck mappings after
-scope changes. Advance only from inspected exact-source evidence; a completed
-package does not complete the broader goal. Security/scanner and history work stay
-held, preventing full readiness. Publication uses the official connector and
-GitHub-assigned identities; this update authorizes no history rewrite.
+1. **P2.1: preserve the frame.** Retain the original 12 task identities, selection
+   receipt, source commits and 36 prospective B0/BK/BC attempts. Preserve earlier
+   declarations and failed preflights. Mark the current frame development-only;
+   it is not untouched confirmation or a completed preregistration. Never backdate
+   registration, substitute easier tasks or drop unsupported members.
+2. **P2.2: complete every runtime graph.** Inventory the declared runtime,
+   interpreter/compiler, package manager, registry/archive inputs, lockfiles,
+   build/test commands, licenses, hardware, network and resource requirements for
+   each selected task. Qualify Windows paths and actual native command resolution.
+   Finish Node file-module loading, Go, Faiss/CUDA and Nx/pnpm specifically;
+   distinguish supported external grading environments from changes to the host OS.
+3. **P2.3: preserve original scoring.** Integrate every original build/test stage,
+   public scoring formula and aggregation rule. Verify individual pytest cases,
+   grouped CTRF outcomes and suite denominators independently; case counts are not
+   interchangeable with grouped scores. Keep original time budgets and longer
+   project quotas. Do not replace a native evaluator with a convenient local proxy.
+4. **P2.4: qualify scorer/collector controls.** Run independently authored known
+   success, known task failure, partial result, malformed/missing report,
+   contradictory evidence, import failure and interruption controls. Prove the
+   expected trigger and stage. Infrastructure failures remain unscored; native
+   task failures remain task failures. Keep subject changes away from verifiers.
+5. **P2.5: freeze conditions and activation.** B0 is the same agent without
+   collection instructions; BK adds the pinned community Karpathy baseline; BC
+   adds the declared candidate package and routing. Keep ordinary capabilities,
+   environments and budgets equal. Declare trigger selection, manual versus
+   automatic activation, installed-tool policy, interventions and order allocation.
+   Measure a tool bundle in a separate ablation, not as unexplained instruction gain.
+6. **P2.6: register analysis before outcomes.** Specify estimand, native primary
+   metrics, task population, pairing/randomized serial order, repetitions,
+   feasibility criteria, exclusions, missingness policy, multiplicity, practical
+   effect criteria and stopping rules. For the pilot, emphasize feasibility and
+   effect uncertainty; twelve tasks do not automatically provide adequate power.
+   Timestamp and hash the exact protocol and candidate versions.
+7. **P2.7: admit the complete experiment.** Validate all task/runtime/scorer graphs,
+   isolation, storage limits, cleanup and budget feasibility together. Do not
+   promote a subset of successful component controls into complete admission.
+   Report an unresolved hardware/runtime need explicitly while independent P3
+   research continues.
 
-Immediate sequence: P1 qualification, P2 preregistration, P4 pilot, then P5
-iteration alongside P3 review. Execute this plan within the existing active goal.
+**Exit evidence:** twelve task/runtime manifests, native positive/negative scorer
+results, original aggregation proof, frozen condition packages, prospective
+analysis contract and successful complete admission. No model score exists yet.
 
-Readiness requires evidence-backed dispositions for every catalog entry and
-resource, independently validated applicable skills, meaningful held-out
-advantages against both requested baselines, current installation/dependency
-and workflow acceptance, and closure of required findings. One successful task,
-coverage percentage, static audit or source probe is insufficient. There is no
-defensible overall completion percentage or date while those requirements remain open.
+## P3 — research and redesign every skill and maintained tool
+
+### Common per-skill contract
+
+Process bounded batches, normally five to eight entries and fewer for large
+resource packages. Batch boundaries control context, never coverage. Keep all
+673 IDs and their source signatures in the ledger; retain the held security
+population. A changed source invalidates affected conclusions, not unrelated
+completed work.
+
+1. **P3.1: inventory the entire package.** Enumerate instructions, scripts,
+   references, assets, examples, nested skill boundaries, dependencies, licenses,
+   external services and generated files. Record shared physical resources without
+   counting them as independent evidence. For apparent zero-resource packages,
+   retain an actual source-tree inventory proving that scoped observation.
+2. **P3.2: verify upstream and current sources.** Resolve each contributing
+   repository's actual current head and stable release policy, compare changed
+   files with the lock, inspect primary documentation and qualify compatibility.
+   Distinguish Karpathy's statements, community interpretation and this repository's
+   adaptation. Record URLs, versions, dates, digests, failures and scope. Do not
+   import every latest commit without review or treat search snippets as research.
+3. **P3.3: define a general behavior contract first.** Record intended users,
+   activation/non-activation cases, inputs, outputs, prerequisites, boundaries,
+   failure modes and independent functional checks before designing a candidate.
+   Evaluators and expected answers must not derive from the exact skill text.
+   Generic software specifications and independent task requirements are inputs;
+   benchmark solutions and verifier details are not candidate design material.
+4. **P3.4: review every resource.** Check runnable examples, real exit status,
+   failure propagation, dependency APIs, data formats, state changes, portability,
+   disposal and license attribution. Preserve scoped findings. A prose review
+   cannot close an unexecuted program, and one working example cannot close all
+   language/platform variants. Keep unsupported or externally unavailable cases
+   explicit instead of inventing a pass.
+5. **P3.5: write the smallest transferable candidate.** Preserve included/skills/.
+   Use maintained or repaired overlays with exact original provenance. Give clear
+   triggers, a compact decision procedure, stopping/verification rules, practical
+   examples and limitations. Put detailed references and resources behind explicit
+   links; avoid blanket verbosity, repository-owner paths and benchmark-ID logic.
+6. **P3.6: qualify the real user path.** Test meaningful successes and failures
+   through documented entrypoints, including consumer pipelines where applicable.
+   Exercise actual installed contents, dependencies and representative inputs.
+   Prove declared OS/architecture support and safe missing-dependency setup for
+   the operation. Preserve resource/lifecycle observations and negative controls.
+7. **P3.7: record a justified disposition.** Accept unchanged source when evidence
+   supports it; otherwise retain a maintained candidate, an explicit limitation,
+   a failed check or a scope hold. Do not rewrite every skill mechanically.
+   Research and functional readiness remain separate from model efficacy.
+8. **P3.8: evaluate and revisit.** Freeze candidates before their declared model
+   comparison. Use P4/P5 development evidence for general failure mechanisms,
+   not answers. Changed candidates receive new identities; invalidate only affected
+   claims. Close evaluation only for the tested task/model/agent scope.
+
+### Complete category work queue
+
+| Category | Skills | Inventoried packages | Research complete | Revision complete | Evaluation complete |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Agent infrastructure & skill creation | 8 | 1 | 1 | 0 | 0 |
+| Cloud, Azure & Microsoft SDKs | 178 | 0 | 0 | 0 | 0 |
+| Coding, refactoring & repository automation | 30 | 11 | 0 | 3 | 0 |
+| Communication, productivity & support | 59 | 0 | 0 | 0 | 0 |
+| Creative, media & design | 30 | 1 | 1 | 0 | 0 |
+| DevOps, cloud & operations | 40 | 2 | 0 | 0 | 0 |
+| Documents, spreadsheets & presentations | 12 | 0 | 0 | 0 | 0 |
+| Finance, commerce & forecasting | 2 | 2 | 0 | 0 | 0 |
+| Frontend, UI & browser automation | 3 | 3 | 0 | 2 | 0 |
+| Game, mobile & visual QA | 25 | 2 | 0 | 0 | 0 |
+| OMERO, Django, Docker & lab infrastructure | 46 | 2 | 0 | 0 | 0 |
+| Science, research & data analysis | 148 | 148 | 0 | 0 | 0 |
+| Search, retrieval & web automation | 16 | 0 | 0 | 0 | 0 |
+| Security, compliance & risk | 57 | 1 | 0 | 0 | 0 |
+| Testing, QA & benchmarking | 19 | 19 | 0 | 0 | 0 |
+
+The current category counts are workload denominators, not effectiveness claims.
+Security-affecting work in the 57-entry security category remains held; other
+held material encountered in mixed packages also receives an explicit deferral.
+Never omit held entries to make overall progress look complete.
+
+### Category-specific research and independent checks
+
+| Category family | Research and redesign focus | Independent functional evidence before model claims |
+| --- | --- | --- |
+| Agent infrastructure and skill creation | Activation precision, progressive disclosure, capability requirements, context budgets and artifact contracts | Relevant/irrelevant activation controls; actual generated package loads; tool and file outcomes rather than self-reported compliance |
+| Coding, refactoring and repository automation | Preserve program semantics, build rules, error propagation, dependency APIs and maintainable changes | Real compiler/test failures propagate; unchanged behavior and public interfaces survive; representative supported language cases execute |
+| Testing, QA and benchmarking | Test oracle independence, discriminating assertions, subprocess status and metric semantics | Seeded defects fail at the intended assertion; clean controls pass; missing reports, empty suites and contradictory results cannot pass |
+| Retrieval and web automation | Current-root indexing, source freshness, relevant retrieval, actual page scope and explicit external failures | Stale/wrong-root inputs reject; returned spans match live source; native crawls retain substantive content and honest failures |
+| Frontend and browser automation | Readiness, race conditions, accessibility, browser lifecycle and user-visible outcomes | Real browser positive/negative readiness cases, trace/screenshot validity, console checks and cleanup; no sleep-only success criteria |
+| Cloud, Azure and Microsoft SDKs | Stable API contracts, pagination, cancellation, required configuration and credential-free qualification | SDK compilation/type checking plus owned local protocol/service controls; qualify live-service behavior only when actually exercised |
+| DevOps, cloud and operations | Declarative config, idempotence, failure handling, recovery and bounded side effects | Disposable environment apply/reapply/recovery controls; validate workflow caller inputs and real failure exits |
+| OMERO, Django, Docker and laboratory infrastructure | Supported runtime/API contracts, application lifecycle, data integrity and service dependencies | Owned disposable service/data fixtures, migration/restart/readback tests and actual supported environment receipts |
+| Science, research and data analysis | Numerical assumptions, units, input schema, missingness, data provenance and method validity | Independent mathematical/reference controls, boundary datasets, exact output checks or justified tolerances; distinguish API readiness from scientific validity |
+| Documents, spreadsheets and presentations | File validity, formulas/layout, interoperability and usable output | Open/render/round-trip representative artifacts; verify values and visual requirements independently; never use file existence alone |
+| Creative, media and design | Intent preservation, asset rights, deterministic transformations where applicable and reviewable output | Format/decoding controls, before/after checks and independent visual or human rubric where an objective oracle is unavailable |
+| Game, mobile and visual QA | State progression, input/layout behavior, platform compatibility and measured resource use | Real supported runtime/device controls, failure reproduction, frame/input checks and justified performance measurements |
+| Communication, productivity and support | Correct context, audience, verifiable facts, action boundaries and concise usable output | Independent task rubrics, wrong-context/irrelevant-trigger controls and factual/action verification; do not substitute length for quality |
+| Finance, commerce and forecasting | Data/time provenance, units, costs, leakage and uncertainty | Independent calculations and temporal validation; no profitability or decision-quality claim from a functional example |
+| Security, compliance and risk | Preserve accounting and existing findings while scope is held | No redesign/scanner remediation under the hold; define authorized verification only after scope restoration |
+
+### Interoperability and tool redesign
+
+Apply the [Agent Skills specification](https://agentskills.io/specification)
+against each maintained package's intended interface. Its metadata and
+progressive-disclosure conventions are useful interoperability requirements;
+conformance does not demonstrate effectiveness. Keep descriptions specific and
+resources optional until needed. Do not inject this repository's development
+holds or publication rules into unrelated downstream projects.
+
+Inventory every maintained tool by public entrypoint, consumer, dependency graph,
+state/resources and required evidence. Repair concrete failures before broad
+refactoring. Test actual shell/object-stream consumers, not only visible output;
+exercise native wire consumers rather than relying on generated type schemas.
+Apply the same general-purpose and independence rules to tools and instructions.
+No candidate may contain a benchmark answer, reference patch, benchmark-ID branch
+or verifier-specific exception.
+
+**Exit evidence:** every catalog/resource disposition is accounted for, all
+adopted changes have provenance and appropriate functional checks, upstream and
+manual claims are resolved or explicitly held, and efficacy states remain tied
+to actual admitted model evidence. A valid unchanged disposition is allowed;
+an unexplained pending entry is not release-ready.
+
+## P4 — execute a discriminating development pilot
+
+1. Freeze the admitted P1/P2 implementation, candidate artifacts and native
+   scorer identities. Verify actual source bytes immediately before each attempt.
+2. Execute the declared serial order in fresh isolated contexts. Do not share
+   previous attempts, developer memory, tool traces or private grader material.
+   Keep ordinary agent tools and budgets matched across B0, BK and BC.
+3. Retain every planned attempt's event stream, usage, submission, environment,
+   elapsed time, resource observations, exit/cancellation and collection result.
+   Grade through the original independent scorer. Do not convert harness errors
+   into model failures or silent exclusions; report both native-score and
+   experiment-completion denominators.
+4. Validate artifact integrity, actual condition activation and grouped scoring
+   independently. Check missing outcomes, contamination and protocol deviations
+   before estimating an effect. Preserve failed pairs and replacement rules.
+5. Report the paired quality difference against both baselines, task-level
+   uncertainty, cost/latency observations, regressions and task heterogeneity.
+   Repetitions on the same task are not new independent tasks. Missing provider
+   usage is unknown, not zero tokens or zero cost.
+6. Diagnose ceiling, floor, low power or transport failure honestly. Keep the
+   original frame intact and its result visible. A new development frame may be
+   declared prospectively for a justified general coverage gap; it must not
+   erase unfavorable outcomes or masquerade as untouched confirmation.
+
+**Exit evidence:** complete attempt accounting and validated original scores,
+scientific feasibility/effect report and documented general failure mechanisms.
+A null or ceiling result can complete the pilot; it cannot establish superiority.
+
+## P5 — iterate from general failures and test transfer
+
+1. Classify development failures into skill activation, reasoning/decision
+   guidance, missing domain knowledge, tool/API behavior, environment or scoring.
+   Preserve ambiguity when evidence cannot distinguish causes.
+2. Link each proposed revision to a general behavior contract and primary source.
+   Author independent reproductions before changing guidance. Do not inspect or
+   import benchmark solutions, reference patches or private verifier logic.
+3. Revise maintained overlays and tools in cohesive scoped batches. Retain prior
+   candidates and exact evidence. Re-run affected native/functional regressions,
+   package validation and publication gates without altering upstream mirrors.
+4. Run declared ablations separating routing, instruction content and tool bundle.
+   Match budgets and ordinary capabilities. Include irrelevant-skill controls
+   where needed to detect distraction or context overhead.
+5. Repeat matched development comparisons at separately declared candidate
+   revisions. Retain all earlier results; never combine changing candidates into
+   one pass rate. Check new independent development tasks for transfer before
+   freezing confirmation.
+6. Select a candidate using a documented objective that prioritizes quality,
+   practical reliability and bounded cost. Stop revising for effects inside
+   noise; a favorable seed or token reduction alone is insufficient. Record null,
+   negative and domain-specific effects as supported limits.
+
+**Exit evidence:** source-bound general improvements, ablation/transfer results,
+regression accounting and a frozen final candidate ready for P6 selection.
+
+## P6 — confirm meaningful gains on untouched material
+
+1. Define the exact claim population: task domains, supported skill scopes,
+   model families/configurations, agent harnesses and operating environments.
+   Finite experiments cannot prove improvement for every possible model or agent.
+   The requested GPT-6.1 Sol high official-route comparison remains required;
+   supplementary local results must be named as such.
+2. Use pilot feasibility and variance to determine adequate independent-task
+   allocation and repetitions. Document a practically meaningful minimum effect
+   per native primary metric and justify it from user impact, not observed favorable
+   confirmation outcomes. Freeze thresholds, power assumptions, multiplicity,
+   uncertainty, clustering, missingness and stopping rules before holdout access.
+3. Select confirmation tasks independently of candidate text and development
+   outcomes. Record all previous benchmark/task exposure, including incidental
+   public homepage task summaries from research. Previously examined material
+   cannot be called untouched. Freeze selection receipt, candidate versions,
+   environments and analysis before opening task content.
+4. Execute serial matched B0/BK/BC conditions with qualified native evaluation.
+   Evaluate more than one model and agent harness before making cross-model or
+   cross-agent benefit claims. If only one qualified configuration is accessible,
+   publish that bounded scope and leave broader claims unestablished.
+5. Require quality improvement against **both** baselines under the declared
+   practical and statistical criteria, with acceptable regressions and costs.
+   Report task/cluster-level paired intervals and appropriate exact/bootstrap or
+   other justified methods; seeds do not inflate the independent sample size.
+   An inadequate or unfavorable result reopens development rather than shifting
+   thresholds, dropping tasks or tuning the same holdout.
+6. Generate plots only from validated real artifacts. Show native resolution or
+   quality, paired changes/uncertainty, per-domain heterogeneity, failure categories,
+   wall time and measured usage where available. Name models, harnesses, budgets,
+   versions and denominators; distinguish unknown cost and host-noisy timing.
+
+**Exit evidence:** registered untouched study, complete validated runs, practical
+and statistical support against both baselines, no concealed regressions and
+scope-correct public claims. Changed candidates require new untouched evaluation.
+
+## P7 — complete delivery, dependencies, coverage and workflows
+
+1. **P7.1: close the current public-contract defects.** Keep the six-failure
+   launcher reproduction, nine passing repaired controls and two actual provider
+   pipeline observations. Complete source/index freshness, full nonheld checks
+   and exact-revision hosted acceptance. Preserve LLVM loader and setup-go
+   observations. Do not equate one green rerun with an explained repair.
+2. **P7.2: inventory all dependency graphs.** Cover root runtime/test/lint/reports,
+   build backend, bootstrap Python/Git/Node/CLI, mandatory providers/models/browser,
+   maintained overlays and each native workflow. Record direct/transitive packages,
+   source URLs, licenses, hashes, platform constraints and qualification owners.
+   Latest means newest qualified compatible stable graph, with an observation date;
+   not a floating untested pin or a claim every package was checked today.
+3. **P7.3: update whole compatible graphs.** Use current official releases and
+   package APIs, verify complete artifacts and installed contents, then exercise
+   actual imports, entrypoints and affected native workflows. Keep failed new
+   versions and compatibility floors explicit. Recheck Dependabot alerts through
+   the authorized official access; fixing a dependency requires runtime/install
+   qualification, not suppressing its alert. Keep automatic update PRs disabled.
+4. **P7.4: prove declared portability.** Test a fresh supported Windows x64
+   account/cache, relocated clone/cache, spaces and relevant path boundaries,
+   missing host Python/Node/Git/browser, incompatible host tools, unavailable
+   downloads, offline reuse and concurrent installation recovery. No global
+   packages, PATH/profile/registry changes, administrator assumption or OS switch.
+   Missing declared dependencies must provision safely in owned caches; document
+   and resolve remaining MSVC/SDK prerequisites before claiming that operation's
+   fresh-host automatic setup. Agent-neutral package use must not require this
+   development harness.
+5. **P7.5: complete process and resource lifecycle.** Test first-hop death,
+   cancellation and nested jobs as well as ordinary return. Bound memory, child
+   count, I/O, deadlines and listeners; verify no owned processes after cleanup.
+   Keep diagnostic outputs from interrupted runs and preserve unrelated apps.
+   Record initial source identity durably before long checks, then final identity,
+   so interruption does not leave apparently reusable but unbound evidence.
+6. **P7.6: reconcile coverage.** Bind each required coverage report to exact source,
+   runtime, producer and test family; verify aggregation and missing-report refusal.
+   Validate upload receipts and Codecov processing for the published commit,
+   reconcile line/branch/partial definitions and exclusions, and inspect the
+   tracked-lines UI through official available access. Keep the generated Codecov
+   badge synchronized. Coverage is a maintenance diagnostic, never skill efficacy;
+   do not add mirrored implementation tests or exclusions to inflate it.
+7. **P7.7: map and qualify workflows.** For each of 46 definitions, record triggers,
+   paths, permissions, action identities, runtime graphs, artifacts, consumers,
+   schedules, required-check status and explicit release-disable state. Validate
+   reusable caller inputs and actual output streams. Exercise scheduled/manual
+   latest-compatible canaries, not only locked matrix jobs. Requalify changes on
+   their actual Windows/Linux environments without changing the workstation OS.
+8. **P7.8: resolve delivery governance.** Define source-clone and installed-package
+   contracts, intended users/platforms, maintained-code license and retained
+   upstream notices. Admit package payload/module contents before installation.
+   Inspect effective main protections and required checks through available
+   official reads; distinguish public rulesets from administrative endpoints.
+   No hardcoded contributor identity or newly authorized history rewrite.
+
+**Exit evidence:** a complete dependency/workflow map, latest-compatible qualified
+graphs, fresh/relocated/recovery demonstrations, reconciled coverage and service
+state, supported distribution terms and exact-revision hosted acceptance.
+
+## P8 — held security and scanner work
+
+This package remains **held**. Read-only monitoring does not authorize scanner,
+security-category or history remediation. Do not change exclusions, thresholds,
+findings or history to turn held checks green. The following is a contingent
+implementation plan for scope restoration, not permission to execute it now.
+
+1. Retrieve complete official paginated finding inventories with native pages,
+   cursor/end conditions, counts, analyzer/category identity, commit/run/config
+   bindings and timestamps. For DeepSource, distinguish ordinary GitHub App
+   analysis, OIDC report upload and GraphQL finding access. A report-upload
+   credential policy does not establish finding-query access. Verify current
+   official methods; preserve the observed quota-skipped check without guessing
+   a findings total or silently changing a paid plan.
+2. Reconcile inventory totals and categories against the service UI/API. If a
+   complete inventory cannot be retrieved, preserve exact errors and work from
+   retrievable batches without claiming completeness. Do not attribute failures
+   to the user without evidence.
+3. Group findings by root mechanism, source ownership, affected generated paths,
+   real versus false-positive behavior and regression risk. Keep immutable mirrors
+   intact; use authorized upstream updates or explicit maintained repair boundaries
+   instead of rewriting audited originals or hiding analyzer coverage.
+4. Reproduce representative mechanisms, implement complete maintainable repairs
+   and test affected consumers and regressions. Reconcile every original finding's
+   disposition. An analyzer-wide disappearance after configuration change is not
+   remediation. Do not suppress alerts or create guessed exceptions.
+5. Verify the actual DeepSource/code-scanning gate configuration and effective
+   protections. The intended tolerance—zero DeepSource issues and only explicitly
+   justified unavoidable code-scanning exceptions—needs exact alert identities,
+   owner policy and current evidence. Never silently substitute a numerical
+   allowance for adjudicated findings or trust an old cross-repository recollection.
+6. Run complete local/hosted checks on the exact repaired commit, page the fresh
+   inventories again and prove reconciliation. Keep remaining findings explicit;
+   any unsatisfied required gate blocks P10/P11 readiness.
+
+**Exit evidence after scope restoration:** original/final reconciled inventories,
+source-bound root-cause repairs, genuine regression evidence, approved explicit
+residual dispositions and effective failing gates. None is established by this plan.
+
+## P9 — publish cohesive verified checkpoints
+
+1. Freeze a reviewable batch: explicit file list, source/output identities,
+   intended behavior, native evidence, failures and affected workflows. Keep
+   originals and required negative evidence; avoid sweeping unrelated cleanup.
+2. Run the full applicable local nonheld gates from [CONTRIBUTING](../CONTRIBUTING.md),
+   including lint/format, both mypy platforms, full bounded tests, compile,
+   catalog, static/risk freshness, mirror admission, ledger/overlay/lock checks,
+   mandatory-tool execution receipt and native qualification-index validation.
+   Preserve security-held gates as held, never claimed passes. Freeze all inputs
+   through completion and re-run affected checks after relevant changes.
+3. Prepare an explicit private index from the verified parent and stage only
+   reviewed paths. Verify qualified bytes against prepared Git blobs and tree;
+   preserve the real index. Avoid full-tree add operations over ignored research.
+   Check the changed payload for real/provider-shaped credentials before sending.
+4. Use only the authenticated official GitHub connector to create the tree and
+   commit. Let GitHub assign identity; do not set an author/committer/co-author.
+   Verify tree, ordered parents and attribution, then advance main with an
+   expected-head lease and no force. A rejected lease requires fresh inspection.
+5. Verify remote main and synchronize the local checkout/cache without creating
+   local commits or pushing through another transport. Confirm source bytes and
+   real-index state are preserved. Do not claim a connector commit is signed
+   unless its verification actually reports that.
+6. Enumerate and wait for every triggered workflow to finish, following pagination
+   and rerun identities. Preserve individual job failures and artifacts. A missing
+   path-filtered workflow is not a pass. Repair ordinary failures through the next
+   cohesive qualified batch; retain held failures and their release implications.
+7. Update this work order, report only meaningful changes, and audit owned process,
+   service, task and listener cleanup. Do not create a branch, PR, tag, release,
+   persistent monitor or separate development session.
+
+**Exit evidence per batch:** qualified exact bytes, connector commit/ref readback,
+identity/tree/parent checks, all terminal hosted outcomes and bounded cleanup.
+P9 is repeatable and does not imply the whole repository is ready.
+
+## P10 — final complete refactor and end-user documentation
+
+Begin this final pass only after substantive P3/P5/P6/P7/P8 acceptance. Necessary
+local defect repairs before then remain scoped repairs, not the promised final
+whole-repository refactor.
+
+1. Build a responsibility and consumer graph for generators, schemas, validators,
+   runners, public commands, overlays, report indexes and workflows. Identify real
+   duplication, cycles, competing authorities and missing contracts from evidence.
+2. Choose the smallest coherent final layout. Separate immutable inputs,
+   maintained candidates, runtime tooling, benchmark adapters, executable tests,
+   current user documentation and historical evidence. Preserve stable interfaces
+   or supply explicit migration/compatibility tests for actual consumers.
+3. Split or consolidate large modules only where responsibilities justify it.
+   Keep deterministic generator behavior, canonical hashes, public parser/main
+   contracts and native scoring semantics. Do not perform a mechanical rewrite
+   merely because a module has many lines.
+4. Archive superseded reports through a revision-aware index. Keep failures,
+   original inputs, licenses and evidence links recoverable. Remove only proven
+   redundant/generated/disposable material with verified replacements; never
+   delete inconvenient benchmark or scanner evidence.
+5. Rewrite README as a short end-user path: what the collection does, supported
+   scopes, honest measured benefit, choose/install/use a skill, requirements,
+   limitations and links. Generate the badge block through its maintained tool.
+   Put contributor and agent development details in linked developer documents.
+6. Requalify end-user installation/use, every affected generator and native
+   consumer, documentation links, full local gates and all applicable workflows
+   on the exact final layout. Compare pre/post artifact identities and outcomes;
+   preserve deliberate migrations explicitly.
+
+**Exit evidence:** justified final architecture, migration compatibility,
+reproducible unchanged contracts, indexed historical evidence and clear tested
+end-user instructions. Structure alone does not repair missing capability proof.
+
+## P11 — exact-revision readiness evaluation, without releasing
+
+1. Reconcile every R1–R12 requirement against actual P-package outputs, every
+   catalog/resource disposition and manual S01–S15/AISC-01–AISC-06 outcome. Record
+   adoption, verified non-applicability or a real unresolved/held requirement.
+2. Verify candidate/source/upstream/version identities, distribution licenses,
+   automatic setup and supported host/agent scopes. Recheck dependency and hosted
+   observations for the final revision; an old green commit is not final acceptance.
+3. Audit independent confirmation, both baseline comparisons, practical/statistical
+   thresholds, contamination, missing attempts, adverse effects and claim scope.
+   Independently recompute report tables/graphs from validated raw artifacts.
+4. Verify all required workflows terminal/successful, findings reconciled under
+   authorized scope, coverage processing/UI understood, protections effective and
+   owned processes/services/tasks cleaned up. Record exact exceptions and limits.
+5. Give the owner a readiness report with explicit blockers and evidence. If
+   everything required passes, state ready for the owner's release decision.
+   **Do not create a release or tag, re-enable the release workflow or publish a
+   package as a consequence of this audit.** A package version is not authorization.
+
+## Manual verification and requirement traceability
+
+The [manual review ledger](../artifacts/research/2026-11-03/implementation-manual-review/ledger.json)
+remains authoritative for individual claims. Verify all 154 pages and seven
+attachments, relevant rendered diagrams/tables, archive-member relationships and
+embedded currentness claims against live source and current primary documentation.
+Preserve the supplied document as evidence, never as unquestioned instructions.
+Continue ordinary claim verification under P3/P7; record security deferrals under
+P8. Prior cross-repository inspiration remains historical read-only context and
+never authorizes new changes to another owner repository or owner-specific skills.
+
+| Requirement | Operational coverage |
+| --- | --- |
+| R1 upstream and current compatible stable tools | P1 identities; P3 per-source review; P7 complete graphs and canaries |
+| R2 every skill and resource | P3 exact-ID/resource accounting and category queue |
+| R3 transferable redesign with immutable originals | P3 contracts/overlays; P5 evidence-driven iteration |
+| R4 meaningful default and Karpathy gains | P1/P2 admission; P4/P5 development; P6 confirmation |
+| R5 generic cross-repository inspiration | P3 portable contracts; no other repository mutations |
+| R6 final refactor and short user README | P10 after substantive prerequisites |
+| R7 host/install/agent independence and safe setup | P1/P3 actual consumers; P7 fresh/relocated/dependency qualification |
+| R8 quality, workflows, coverage, dependencies and findings | P7; held P8; P9 exact-revision acceptance; P11 reconciliation |
+| R9 bounded host resources and efficient work | P1/P7 lifecycle controls; P9 scoped preparation and cleanup |
+| R10 every applicable manual claim | P3/P7 ledger verification; held P8; P11 traceability audit |
+| R11 main, connector attribution and protections | P7 governance; P9 publication; P11 fresh audit |
+| R12 honest science, provenance and limits | All packages; especially P2/P4/P5/P6/P11 |
+
+## Research basis and limits
+
+The current methodology review used retained native Crawl4AI captures of
+[SkillsBench](https://www.skillsbench.ai/), the
+[Agent Skills specification](https://agentskills.io/specification),
+[SWE-bench evaluation](https://www.swebench.com/SWE-bench/guides/evaluation/)
+and the [Harbor framework](https://github.com/harbor-framework/harbor/blob/main/README.md).
+SkillsBench directly studies skill use; SWE-bench evaluates generated patches
+against repository tests; Harbor supplies benchmark/agent environment integration.
+These are complementary methods, not evidence that this collection has run them
+or that any is a universal certification. Benchmark versions and official metrics
+must be pinned for execution.
+
+Use the existing 18-method registry to evaluate coverage and feasibility:
+skill-focused SkillsBench/SWE-Skills-Bench/Skill-Bench; repository and terminal
+methods such as SWE-bench and Terminal-Bench; browser/enterprise methods such as
+BrowserGym, WebArena, WorkArena and OSWorld; tool use through BFCL; and relevant
+scientific/ML methods. Verify every method's actual source, license, environment,
+scorer and current version before admission. Do not average incompatible metrics,
+claim a suite score from an adapter smoke check, or select benchmarks for favorable
+public leaderboard outcomes. Greater breadth needs enough independent tasks
+within each claimed population, not merely more benchmark names.
+
+The current overview is an evidence-based assessment and executable plan, not
+completion of its steps. Run it within the existing goal, use concise progress
+updates, preserve source-bound receipts and failures, and refresh state after
+material gates. The next valuable milestone is a qualified discriminating model
+comparison—not a release, a larger static counter or a claim of universal gain.

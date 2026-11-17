@@ -1,0 +1,282 @@
+[
+  {
+    "label": "compiler-version",
+    "arguments": [
+      "<compiler>",
+      "--version"
+    ],
+    "exit_code": 0,
+    "expected_zero_exit": true,
+    "required_diagnostics": [
+      "clang version 23.1.6"
+    ],
+    "stdout_sha256": "4fd041d810ffba83f24c58c4e23ed4763291372eed5aa343ceb7a5d41582a7c9",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "process": {
+      "windows_job": true,
+      "real_interpreter_gated_before_site": true,
+      "kill_on_close": true,
+      "active_processes_after_cleanup": 0,
+      "termination_reason": null
+    },
+    "passed": true
+  },
+  {
+    "label": "asan-build",
+    "arguments": [
+      "<compiler>",
+      "-O1",
+      "-g",
+      "-fno-omit-frame-pointer",
+      "-fsanitize=address",
+      "-fuse-ld=lld",
+      "-v",
+      "allocation-boundary.cpp",
+      "-o",
+      "allocation-boundary.exe"
+    ],
+    "exit_code": 0,
+    "expected_zero_exit": true,
+    "required_diagnostics": [],
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "92c0b1b3d08fc55e556edfb560937be7bea8bba97dc097a488bfcfb655098696",
+    "process": {
+      "windows_job": true,
+      "real_interpreter_gated_before_site": true,
+      "kill_on_close": true,
+      "active_processes_after_cleanup": 0,
+      "termination_reason": null
+    },
+    "passed": true
+  },
+  {
+    "label": "asan-clean",
+    "arguments": [
+      "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\llvm-23.1.6-qualification-v1\\workspace-v2\\allocation-boundary.exe"
+    ],
+    "exit_code": 0,
+    "expected_zero_exit": true,
+    "required_diagnostics": [],
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "process": {
+      "windows_job": true,
+      "real_interpreter_gated_before_site": true,
+      "kill_on_close": true,
+      "active_processes_after_cleanup": 0,
+      "termination_reason": null
+    },
+    "passed": true
+  },
+  {
+    "label": "asan-out-of-bounds",
+    "arguments": [
+      "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\llvm-23.1.6-qualification-v1\\workspace-v2\\allocation-boundary.exe",
+      "outside"
+    ],
+    "exit_code": 1,
+    "expected_zero_exit": false,
+    "required_diagnostics": [
+      "ERROR: AddressSanitizer: heap-buffer-overflow"
+    ],
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "b833bf8eff753b2a70c42947cacae886f7ae9958e89f8419061051dc016b4061",
+    "process": {
+      "windows_job": true,
+      "real_interpreter_gated_before_site": true,
+      "kill_on_close": true,
+      "active_processes_after_cleanup": 0,
+      "termination_reason": null
+    },
+    "passed": true
+  },
+  {
+    "label": "fuzzer-build",
+    "arguments": [
+      "<compiler>",
+      "-O1",
+      "-g",
+      "-fsanitize=fuzzer,address",
+      "-fuse-ld=lld",
+      "dictionary-loader.cpp",
+      "-o",
+      "dictionary-loader.exe"
+    ],
+    "exit_code": 0,
+    "expected_zero_exit": true,
+    "required_diagnostics": [],
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "process": {
+      "windows_job": true,
+      "real_interpreter_gated_before_site": true,
+      "kill_on_close": true,
+      "active_processes_after_cleanup": 0,
+      "termination_reason": null
+    },
+    "passed": true
+  },
+  {
+    "label": "fuzzer-help",
+    "arguments": [
+      "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\llvm-23.1.6-qualification-v1\\workspace-v2\\dictionary-loader.exe",
+      "-help=1"
+    ],
+    "exit_code": 0,
+    "expected_zero_exit": true,
+    "required_diagnostics": [
+      "rss_limit_mb",
+      "malloc_limit_mb"
+    ],
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "d04f70cf060ce5ee2b964a6eb0840639d2dcd686858693ce0b36160a6748b57a",
+    "process": {
+      "windows_job": true,
+      "real_interpreter_gated_before_site": true,
+      "kill_on_close": true,
+      "active_processes_after_cleanup": 0,
+      "termination_reason": null
+    },
+    "passed": true
+  },
+  {
+    "label": "unsupported-c-escapes",
+    "arguments": [
+      "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\llvm-23.1.6-qualification-v1\\workspace-v2\\dictionary-loader.exe",
+      "-runs=1",
+      "-seed=1",
+      "-timeout=2",
+      "-max_len=512",
+      "-rss_limit_mb=256",
+      "-malloc_limit_mb=32",
+      "-dict=unsupported-c-escapes.dict"
+    ],
+    "exit_code": 1,
+    "expected_zero_exit": false,
+    "required_diagnostics": [
+      "ParseDictionaryFile: error in line 1"
+    ],
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e6d1c7c096da387ab8616780d1cad626a9bfdd2da014b1444bee703ef3337560",
+    "process": {
+      "windows_job": true,
+      "real_interpreter_gated_before_site": true,
+      "kill_on_close": true,
+      "active_processes_after_cleanup": 0,
+      "termination_reason": null
+    },
+    "passed": true
+  },
+  {
+    "label": "portable-byte-escapes",
+    "arguments": [
+      "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\llvm-23.1.6-qualification-v1\\workspace-v2\\dictionary-loader.exe",
+      "-runs=1",
+      "-seed=1",
+      "-timeout=2",
+      "-max_len=512",
+      "-rss_limit_mb=256",
+      "-malloc_limit_mb=32",
+      "-dict=portable-byte-escapes.dict"
+    ],
+    "exit_code": 0,
+    "expected_zero_exit": true,
+    "required_diagnostics": [
+      "Dictionary: 1 entries"
+    ],
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e818b37c60292162785108393f5f679c724ba8c1b3db6166bb53591a30e981d1",
+    "process": {
+      "windows_job": true,
+      "real_interpreter_gated_before_site": true,
+      "kill_on_close": true,
+      "active_processes_after_cleanup": 0,
+      "termination_reason": null
+    },
+    "passed": true
+  },
+  {
+    "label": "quoted-and-backslash",
+    "arguments": [
+      "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\llvm-23.1.6-qualification-v1\\workspace-v2\\dictionary-loader.exe",
+      "-runs=1",
+      "-seed=1",
+      "-timeout=2",
+      "-max_len=512",
+      "-rss_limit_mb=256",
+      "-malloc_limit_mb=32",
+      "-dict=quoted-and-backslash.dict"
+    ],
+    "exit_code": 0,
+    "expected_zero_exit": true,
+    "required_diagnostics": [
+      "Dictionary: 1 entries"
+    ],
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e818b37c60292162785108393f5f679c724ba8c1b3db6166bb53591a30e981d1",
+    "process": {
+      "windows_job": true,
+      "real_interpreter_gated_before_site": true,
+      "kill_on_close": true,
+      "active_processes_after_cleanup": 0,
+      "termination_reason": null
+    },
+    "passed": true
+  },
+  {
+    "label": "all-byte-values",
+    "arguments": [
+      "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\llvm-23.1.6-qualification-v1\\workspace-v2\\dictionary-loader.exe",
+      "-runs=1",
+      "-seed=1",
+      "-timeout=2",
+      "-max_len=512",
+      "-rss_limit_mb=256",
+      "-malloc_limit_mb=32",
+      "-dict=all-byte-values.dict"
+    ],
+    "exit_code": 0,
+    "expected_zero_exit": true,
+    "required_diagnostics": [
+      "Dictionary: 1 entries"
+    ],
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e818b37c60292162785108393f5f679c724ba8c1b3db6166bb53591a30e981d1",
+    "process": {
+      "windows_job": true,
+      "real_interpreter_gated_before_site": true,
+      "kill_on_close": true,
+      "active_processes_after_cleanup": 0,
+      "termination_reason": null
+    },
+    "passed": true
+  },
+  {
+    "label": "unterminated-quote",
+    "arguments": [
+      "C:\\Users\\strat\\Documents\\Codex\\independent-development\\poster-repair-2026-10-26-v1\\.venv\\research\\benchmark-planning-20261110-v1\\llvm-23.1.6-qualification-v1\\workspace-v2\\dictionary-loader.exe",
+      "-runs=1",
+      "-seed=1",
+      "-timeout=2",
+      "-max_len=512",
+      "-rss_limit_mb=256",
+      "-malloc_limit_mb=32",
+      "-dict=unterminated-quote.dict"
+    ],
+    "exit_code": 1,
+    "expected_zero_exit": false,
+    "required_diagnostics": [
+      "ParseDictionaryFile: error in line 1"
+    ],
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "4598081d4fcb95e03b37d538eb2a1f3d745d1f5d62e4ad534c5f3669ed162a78",
+    "process": {
+      "windows_job": true,
+      "real_interpreter_gated_before_site": true,
+      "kill_on_close": true,
+      "active_processes_after_cleanup": 0,
+      "termination_reason": null
+    },
+    "passed": true
+  }
+]

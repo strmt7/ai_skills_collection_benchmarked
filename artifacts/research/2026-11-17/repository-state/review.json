@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-17",
+  "scope": "Repository overview and detailed implementation plan, preserving the active goal, existing requirements/dependencies, release hold and security hold",
+  "source_sha256": {
+    "docs/improvement-plan.md": "f2b3887ca4580c58a839a3b926f3bfe91f13d59a59d2c79403df52e5f44a5dfa",
+    "data/development_plan.json": "13d2e240527df64f699cc561bfa2c76a0b54c4d8c47a3962bcd9a85f2d1f53d0"
+  },
+  "artifacts": {
+    "audit.json": "dbcae1592610e6924c839e375f80117d3b9bb5b9fe0588e12f37fd891cbdfd0a"
+  },
+  "counted_comparative_attempts": 0,
+  "model_improvement_established": false,
+  "plan_is_execution_evidence": false
+}
