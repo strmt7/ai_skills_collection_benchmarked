@@ -18,7 +18,14 @@ this grants no general bypass.
 Runner/grader integration and execution/collection isolation qualification are
 permitted for these trials. Preserve the launch refusal until the actual
 complete boundary passes independently specified positive and negative
-controls. Do not substitute a host subprocess or unqualified alternate launcher.
+controls for the selected study. Reuse current evidence when its source and
+scope match. A study requires its own working model route, original task and
+grader admission, and frozen analysis. Another study's environment or an
+unrelated catalog review does not delay it. Preserve each frozen schedule and
+denominator. Do not substitute a host subprocess or unqualified launcher.
+Qualify the runner and grader with independent controls. Once a study is
+admitted, score valid model failures through the frozen grader and retain each
+attempt in its assigned condition.
 Security-scanner, code-scanning-alert and history-scan remediation remain paused.
 The owner's subsequent dependency-maintenance instruction permits package and
 tool updates and Dependabot remediation. Qualify complete compatible graphs,

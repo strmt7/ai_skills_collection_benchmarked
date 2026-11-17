@@ -1849,6 +1849,14 @@
           {
             "path": "artifacts/research/2026-11-03/verification-powershell-status-v1/result.json",
             "sha256": "9f60914d03a49112e85de2280cf3a9ac1bc78939a400710595708761c0bf867c"
+          },
+          {
+            "path": "artifacts/research/2026-11-17/scoped-study-and-skill-delivery/observations.json",
+            "sha256": "1c7e041d8406bb702d8c3f8077b57c3217d7e4b5666810a0577125d4adc8ad8d"
+          },
+          {
+            "path": "artifacts/research/2026-11-17/frontend-stream-contract/review.json",
+            "sha256": "6323b9865876784ec62b9a691dcf9c53935bda93a3b4675279c51992be55d06a"
           }
         ],
         "open_work": [
@@ -1877,8 +1885,16 @@
             "sha256": "0f05a838b09ecb124e78ae84e264f957b0e0f9668dde8f3a61ef98563bdfdbf0"
           },
           {
-            "path": "included/improved/skills/verification-loop-shell-status/SKILL.md",
+            "path": "artifacts/research/2026-11-17/scoped-study-and-skill-delivery/previous-verification-skill.md",
             "sha256": "64637a36eee74d85b2f6f65a5b3f029e399c60ac9cc37fe00ba5651bd80b4f49"
+          },
+          {
+            "path": "artifacts/research/2026-11-17/scoped-study-and-skill-delivery/observations.json",
+            "sha256": "1c7e041d8406bb702d8c3f8077b57c3217d7e4b5666810a0577125d4adc8ad8d"
+          },
+          {
+            "path": "artifacts/research/2026-11-17/frontend-stream-contract/review.json",
+            "sha256": "6323b9865876784ec62b9a691dcf9c53935bda93a3b4675279c51992be55d06a"
           }
         ],
         "status": "in_progress"

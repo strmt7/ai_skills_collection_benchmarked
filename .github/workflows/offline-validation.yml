@@ -209,7 +209,9 @@ jobs:
           --output benchmarks/agent-effectiveness/development/swe-skills-pilot-v1/selection.json
           --check
       - name: Run tests (with coverage)
-        run: python -m pytest -q -n auto
+        run: >-
+          python -m pytest -q -n auto
+          --cov=tools --cov-report=term-missing:skip-covered --cov-report=xml:coverage.xml
       - name: Upload coverage.xml
         if: always()
         # https://github.com/actions/upload-artifact/releases/tag/v7.0.2

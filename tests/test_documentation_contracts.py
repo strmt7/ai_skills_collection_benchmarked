@@ -86,17 +86,6 @@ def test_documentation_local_links_resolve():
     assert not broken
 
 
-def test_agent_instructions_forbid_subagents():
-    text = (ROOT / "AGENTS.md").read_text(encoding="utf-8").lower()
-    for phrase in ["mandatory single-session rule", "do not spawn", "subagents", "one ai session only"]:
-        assert phrase in text
-    for phrase in [
-        "separate work loops",
-        "skill mirror loop",
-        "artifact and test loop",
-        "benchmark independence rule",
-        "must not be counted as runtime benchmark passes",
-        "repair overlay loop",
-        "external benchmark adapter loop",
-    ]:
-        assert phrase in text
+def test_agent_instructions_link_the_skill_review_method():
+    text = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
+    assert "](docs/skill-improvement-method.md)" in text

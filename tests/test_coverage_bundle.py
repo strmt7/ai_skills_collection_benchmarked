@@ -235,7 +235,11 @@ def test_coverage_upload_keeps_oidc_out_of_test_jobs_and_requires_the_full_matri
     assert upload["with"]["use_oidc"] is True
     assert upload["with"]["fail_ci_if_error"] is True
     assert upload["with"]["disable_search"] is True
-    matrix = workflow["jobs"]["validate"]["strategy"]["matrix"]
+    validation_job = workflow["jobs"]["validate"]
+    measurement = next(step for step in validation_job["steps"] if step.get("name") == "Run tests (with coverage)")
+    assert "--cov=tools" in measurement["run"]
+    assert "--cov-report=xml:coverage.xml" in measurement["run"]
+    matrix = validation_job["strategy"]["matrix"]
     count = len(matrix["os"]) * len(matrix["python-version"]) + len(matrix["include"])
     assert steps.index(install) < steps.index(validation) < steps.index(upload)
     assert f"--expected-reports {count}" in validation["run"]

@@ -239,6 +239,13 @@ def test_complete_matrix_roundtrip_and_scoped_admission(matrix):
         boundary.verify_binding(admitted)
 
 
+def test_stale_context_receipt_reports_which_component_changed(matrix, monkeypatch):
+    failure = "Context qualification sources changed in tools/_trial_context.py"
+    monkeypatch.setattr(boundary, "check_context", lambda path: {"ok": False, "errors": [failure]})
+    with pytest.raises(ValueError, match="changed in tools/_trial_context"):
+        boundary.verify(matrix[1])
+
+
 @pytest.mark.parametrize("fault", ["missing", "duplicate", "old-sources", "outside"])
 def test_invalid_matrix_cannot_qualify(matrix, fault):
     state, spec = matrix
@@ -344,12 +351,6 @@ def test_output_cannot_be_created_inside_a_control(matrix):
     write_json(state / "specification.json", spec)
     with pytest.raises(ValueError, match="overlaps"):
         boundary.qualify(state / "specification.json", Path(spec["controls"]["edited"]) / "new-output")
-
-
-def test_failed_context_controls_prevent_qualification(matrix, monkeypatch):
-    monkeypatch.setattr(boundary, "check_context", lambda path: {"ok": False})
-    with pytest.raises(ValueError, match="context qualification failed"):
-        boundary.verify(matrix[1])
 
 
 def test_source_change_during_verification_is_rejected(matrix, monkeypatch):

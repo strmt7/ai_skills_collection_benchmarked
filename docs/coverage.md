@@ -50,14 +50,26 @@ The configuration follows FlitzZip's measured-report approach: SHA-pinned
 Codecov Action, a pinned CLI, GitHub OIDC, explicit report paths and upload
 failures that fail CI. No upload secret is stored. The project status compares
 with the base commit at zero tolerance; the 90% patch target is informational.
-The existing 45% local minimum remains a coarse floor rather than a claim of
-complete test coverage. See the
+The measured job enforces the 45% floor for a full suite run. See the
 [Codecov policy](../.github/codecov.yml) and
 [workflow](../.github/workflows/offline-validation.yml).
 
 An unavailable badge or failed upload means the hosted measurement is not
 confirmed; consult that commit's workflow and retained receipt. No green status
 or missing finding should be inferred from an absent report.
+
+## Run tests with coverage
+
+Use the [locked development environment](development.md#set-up-validation-from-a-fresh-clone).
+The following command runs the full suite, enforces the coverage floor and
+writes `coverage.xml`.
+
+```sh
+python -m pytest -q -n 2 --cov=tools --cov-report=term-missing:skip-covered --cov-report=xml:coverage.xml
+```
+
+For normal development, run `python -m pytest -q` with a test path or node ID
+to check just the behavior you changed.
 
 Contributors can inspect the
 [documentation and workflow research](documentation-guide.md) for the design

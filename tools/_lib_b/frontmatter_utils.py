@@ -11,6 +11,7 @@ file, matching the existing ``build_catalog.parse_frontmatter`` behaviour.
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 from typing import Any
 
@@ -18,6 +19,9 @@ try:  # pragma: no cover - exercised implicitly by any YAML parse
     import yaml
 except ImportError as exc:  # pragma: no cover
     raise ImportError("PyYAML is required for frontmatter parsing; install 'PyYAML'.") from exc
+
+
+_CLOSING_FENCE = re.compile(r"^---(?:\r?\n|\Z)", re.MULTILINE)
 
 
 @dataclass(frozen=True)
@@ -44,14 +48,16 @@ def parse(text: str) -> tuple[dict[str, Any], str]:
     Returns (metadata, body). If there is no frontmatter, returns ({}, text).
     Raises ``FrontmatterError`` with line/column info on malformed YAML.
     """
-    if not text.startswith("---\n"):
+    if text.startswith("---\n"):
+        start = 4
+    elif text.startswith("---\r\n"):
+        start = 5
+    else:
         return {}, text
-    try:
-        end = text.index("\n---", 4)
-    except ValueError:
-        # Malformed: opening fence but no closing fence.
+    closing = _CLOSING_FENCE.search(text, start)
+    if closing is None:
         return {}, text
-    raw = text[4:end]
+    raw = text[start : closing.start()].removesuffix("\n").removesuffix("\r")
     try:
         meta = yaml.safe_load(raw) or {}
     except yaml.YAMLError as exc:
@@ -70,7 +76,4 @@ def parse(text: str) -> tuple[dict[str, Any], str]:
             line=2,
             column=1,
         )
-    body_start = end + len("\n---")
-    if text[body_start : body_start + 1] == "\n":
-        body_start += 1
-    return meta, text[body_start:]
+    return meta, text[closing.end() :]

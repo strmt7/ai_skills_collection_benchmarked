@@ -146,6 +146,11 @@ mypy tools tests
 python3 -m pytest -q -n 2
 ```
 
+For a focused check, pass a test path or node ID. The standard test command
+reports test outcomes without generating a coverage report. Use the
+[measured test command](coverage.md#run-tests-with-coverage) when you need to reproduce
+the coverage gate locally.
+
 Use fewer workers on constrained hosts. Increase concurrency only after checking
 available RAM, CPU and disk activity; do not use automatic host-wide parallelism
 by default on a shared workstation. Hosted CI sizes workers to its runner.

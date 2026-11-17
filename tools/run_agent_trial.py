@@ -80,10 +80,8 @@ EXECUTION_SOURCES = tuple(
             "tools/collect_agent_workspace.py",
             "tools/_windows_trial_process.py",
             "tools/_windows_storage_budget.py",
-            *(
-                f"tools/_lib_b/{name}.py"
-                for name in ("__init__", "determinism", "frontmatter_utils", "hashing", "io_utils", "logging_utils")
-            ),
+            "tools/_lib_b/__init__.py",
+            "tools/_lib_b/io_utils.py",
         }
     )
 )

@@ -43,7 +43,6 @@
         "sha256": "f04a82d9d333212282a865dd78af3920ae0f38d3d4616ea2f30100b9a37b871e"
       },
       "sources": [
-        "CONTRIBUTING.md",
         "docs/skill-improvement-method.md"
       ]
     },
@@ -86,8 +85,8 @@
     {
       "id": "current-checkpoint-plan",
       "review": {
-        "path": "artifacts/research/2026-11-17/repository-state/review.json",
-        "sha256": "04aa96045709277c5396f89c45697e5bd3575a9f5aa3b822730a9eae51a362be"
+        "path": "artifacts/research/2026-11-17/scoped-study-and-skill-delivery/review.json",
+        "sha256": "eaa6134464b67177f06fccb9f896d92e54164db9e1295af132896bf97a859f9c"
       },
       "sources": [
         "docs/improvement-plan.md"
@@ -147,15 +146,14 @@
       },
       "sources": [
         "tools/_windows_trial_process.py",
-        "tests/test_native_trial_boundary.py",
         "tests/test_windows_trial_process.py"
       ]
     },
     {
       "id": "native-boundary-plan-checkpoint",
       "review": {
-        "path": "artifacts/research/2026-11-17/repository-state/review.json",
-        "sha256": "04aa96045709277c5396f89c45697e5bd3575a9f5aa3b822730a9eae51a362be"
+        "path": "artifacts/research/2026-11-17/scoped-study-and-skill-delivery/review.json",
+        "sha256": "eaa6134464b67177f06fccb9f896d92e54164db9e1295af132896bf97a859f9c"
       },
       "sources": [
         "data/development_plan.json"
@@ -171,11 +169,8 @@
         "tools/_trial_catalog.py",
         "tools/_trial_context.py",
         "tools/_trial_execution_evidence.py",
-        "tools/qualify_trial_context.py",
-        "tools/qualify_native_trial_boundary.py",
         "tests/test_trial_local_catalog.py",
         "tests/test_trial_execution_evidence.py",
-        "tests/test_qualify_trial_context.py",
         "docs/agent-trial-protocol.md"
       ]
     },
@@ -214,7 +209,6 @@
       },
       "sources": [
         "dev.ps1",
-        "AGENTS.md",
         "toolchains/bootstrap/README.md",
         "tests/test_frontend_ownership.py"
       ]
@@ -226,8 +220,7 @@
         "sha256": "74082bec415197281e40e155e1a417f14a41e62ff3624157bf6121d649c0d053"
       },
       "sources": [
-        "requirements-dev-lock.txt",
-        ".github/workflows/offline-validation.yml"
+        "requirements-dev-lock.txt"
       ]
     },
     {
@@ -244,6 +237,37 @@
         "included/repaired/skills/address-sanitizer-current/references/qualification.md",
         "included/repaired/skills/fuzzing-dictionary-current/references/qualification.md"
       ]
+    },
+    {
+      "id": "scoped-study-and-skill-delivery",
+      "review": {
+        "path": "artifacts/research/2026-11-17/scoped-study-and-skill-delivery/review.json",
+        "sha256": "eaa6134464b67177f06fccb9f896d92e54164db9e1295af132896bf97a859f9c"
+      },
+      "sources": [
+        "docs/benchmark-subject-policy.md",
+        "tools/_lib_b/__init__.py",
+        "tools/_lib_b/frontmatter_utils.py",
+        "tools/run_agent_trial.py",
+        "tests/test_frontmatter_utils.py",
+        "included/improved/skills/verification-loop-shell-status/SKILL.md",
+        "AGENTS.md",
+        "CONTRIBUTING.md",
+        "pyproject.toml",
+        ".github/workflows/offline-validation.yml",
+        ".github/workflows/release.yml",
+        "docs/coverage.md",
+        "docs/development.md",
+        "tools/qualify_trial_context.py",
+        "tools/qualify_native_trial_boundary.py",
+        "tests/test_native_trial_boundary.py",
+        "tests/test_qualify_trial_context.py",
+        "tests/test_coverage_bundle.py",
+        "tools/validate_catalog.py",
+        "tools/validate_agent_tool_policy.py",
+        "tests/test_agent_tool_policy.py",
+        "tests/test_documentation_contracts.py"
+      ]
     }
   ],
   "historical_reviews": [
@@ -256,8 +280,11 @@
         ".gitattributes",
         ".github/workflows/offline-validation.yml",
         "dev.ps1",
+        "pyproject.toml",
         "requirements-dev-lock.txt",
         "toolchains/bootstrap/bootstrap.ps1",
+        "tools/_lib_b/__init__.py",
+        "tools/_lib_b/frontmatter_utils.py",
         "tools/_native_benchmark_runtime.py",
         "tools/_trial_catalog.py",
         "tools/_trial_context.py",
@@ -265,7 +292,8 @@
         "tools/_windows_appcontainer.py",
         "tools/_windows_storage_budget.py",
         "tools/_windows_trial_process.py",
-        "tools/grade_swe_skills_submission.py"
+        "tools/grade_swe_skills_submission.py",
+        "tools/run_agent_trial.py"
       ]
     },
     {
@@ -274,6 +302,8 @@
         "sha256": "19147ccc73bd844a679c776f294532526d9983c32175897a1bf6339e51f2afdf"
       },
       "superseded_sources": [
+        "tools/_lib_b/__init__.py",
+        "tools/_lib_b/frontmatter_utils.py",
         "tools/_native_benchmark_runtime.py",
         "tools/_trial_catalog.py",
         "tools/_trial_context.py",
@@ -281,7 +311,8 @@
         "tools/_windows_appcontainer.py",
         "tools/_windows_storage_budget.py",
         "tools/_windows_trial_process.py",
-        "tools/grade_swe_skills_submission.py"
+        "tools/grade_swe_skills_submission.py",
+        "tools/run_agent_trial.py"
       ]
     },
     {
@@ -301,6 +332,7 @@
       "superseded_sources": [
         ".github/workflows/offline-validation.yml",
         "AGENTS.md",
+        "CONTRIBUTING.md",
         "docs/improvement-plan.md",
         "tests/test_windows_trial_process.py"
       ]
@@ -349,6 +381,7 @@
       },
       "superseded_sources": [
         "docs/native-benchmark-controller.md",
+        "tests/test_native_trial_boundary.py",
         "tests/test_native_trial_runner.py",
         "tools/_native_trial_plan.py",
         "tools/qualify_native_trial_boundary.py",
@@ -373,7 +406,10 @@
         "docs/native-benchmark-controller.md",
         "tests/test_native_trial_plan.py",
         "tests/test_native_trial_runner.py",
+        "tests/test_qualify_trial_context.py",
         "tools/_native_trial_plan.py",
+        "tools/qualify_native_trial_boundary.py",
+        "tools/qualify_trial_context.py",
         "tools/run_swe_skills_trial.py"
       ]
     },
@@ -421,6 +457,34 @@
       "review": {
         "path": "artifacts/research/2026-11-14/stable-development-tools/review.json",
         "sha256": "9a14f441f4389465e21650a15300f0f683fcf7ac75abdcf41fd73595cc338faf"
+      },
+      "superseded_sources": [
+        ".github/workflows/offline-validation.yml"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-17/repository-state/review.json",
+        "sha256": "04aa96045709277c5396f89c45697e5bd3575a9f5aa3b822730a9eae51a362be"
+      },
+      "superseded_sources": [
+        "data/development_plan.json",
+        "docs/improvement-plan.md"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-17/frontend-stream-contract/review.json",
+        "sha256": "6323b9865876784ec62b9a691dcf9c53935bda93a3b4675279c51992be55d06a"
+      },
+      "superseded_sources": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-17/development-action-update/review.json",
+        "sha256": "74082bec415197281e40e155e1a417f14a41e62ff3624157bf6121d649c0d053"
       },
       "superseded_sources": [
         ".github/workflows/offline-validation.yml"

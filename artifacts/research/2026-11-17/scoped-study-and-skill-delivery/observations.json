@@ -1,0 +1,546 @@
+{
+  "schema_version": 1,
+  "source_revision": "b20d0e1c6a1195a1784ca21290fbf141bec078c1",
+  "purpose": "Independent study admission and one portable packaging observation",
+  "native_delivery": {
+    "passed": true,
+    "cases": [
+      {
+        "condition": "absent",
+        "native_name_and_description_observed": false,
+        "local_links_missing": [],
+        "source_manifest_files": 4,
+        "relocated_package_bytes": 0,
+        "native_prompt_bytes": 8743,
+        "native_prompt_sha256": "e3da40761ca4537a69143004349c0cfc826bb4650a2c2b88f6a9d343f6043627",
+        "expected_name_matches_directory": false,
+        "remaining_processes": 0
+      },
+      {
+        "condition": "maintained",
+        "native_name_and_description_observed": true,
+        "local_links_missing": [],
+        "source_manifest_files": 4,
+        "relocated_package_bytes": 9855,
+        "native_prompt_bytes": 9181,
+        "native_prompt_sha256": "ad1ad0033a79493a7c2e8f8609fa5ed2b922bce6096c36a63370ce0e488c5f91",
+        "expected_name_matches_directory": true,
+        "remaining_processes": 0
+      },
+      {
+        "condition": "wrapper-only",
+        "native_name_and_description_observed": true,
+        "local_links_missing": [
+          "../../../../../../docs/agent-tools.md",
+          "../../../../../skills/by-category/testing-qa-benchmarking/selected-structure-reference/verification-loop-everything-claude-code/SKILL.md"
+        ],
+        "source_manifest_files": 4,
+        "relocated_package_bytes": 2118,
+        "native_prompt_bytes": 9009,
+        "native_prompt_sha256": "ee929424ca4519b27786ec3ba1ba513334eafbed9ad899817be3e1c6f7190389",
+        "expected_name_matches_directory": false,
+        "remaining_processes": 0
+      }
+    ],
+    "model_inferences": 0,
+    "scope": "Official Codex local discovery and retained package closure only"
+  },
+  "limits": [
+    "The intact candidate was discovered by one native Codex CLI version. No agent executed the skill or its prerequisites.",
+    "A detached generated entrypoint was discoverable but had missing source/policy targets and a name/directory mismatch. This is not standalone delivery.",
+    "The original wrapper inspection tried to parse literal CRLF bytes with an LF-only parser. The external consumer has been reproduced using the correct newline handling."
+  ],
+  "old_candidate_sha256": "64637a36eee74d85b2f6f65a5b3f029e399c60ac9cc37fe00ba5651bd80b4f49",
+  "new_candidate_sha256": "e2fb6690c8cba0e0aafbfb81c658b909f1fc9cac3e0bcb7c445df374930e6f2c",
+  "decision": "Qualify studies with their own model and task evidence. For skill packages, qualify actual local file closure separately from metadata discovery.",
+  "exact_frozen_pilot_unchanged": true,
+  "comparative_attempts_counted": 0,
+  "native_delivery_after_parser_change": {
+    "passed": true,
+    "cases": [
+      {
+        "condition": "absent",
+        "native_name_and_description_observed": false,
+        "local_links_missing": [],
+        "source_manifest_files": 4,
+        "relocated_package_bytes": 0,
+        "native_prompt_bytes": 8743,
+        "native_prompt_sha256": "46ed26ded00d523b03d7ba70da88b4d1b993a22b22c4c00110ecd8889c865cb0",
+        "expected_name_matches_directory": false,
+        "remaining_processes": 0
+      },
+      {
+        "condition": "maintained",
+        "native_name_and_description_observed": true,
+        "local_links_missing": [],
+        "source_manifest_files": 4,
+        "relocated_package_bytes": 10245,
+        "native_prompt_bytes": 9180,
+        "native_prompt_sha256": "1c0632bb347e146a9f3765c61c87f2fd1f6fb038f0f931e4f9c490cf0859f702",
+        "expected_name_matches_directory": true,
+        "remaining_processes": 0
+      },
+      {
+        "condition": "wrapper-only",
+        "native_name_and_description_observed": true,
+        "local_links_missing": [
+          "../../../../../../docs/agent-tools.md",
+          "../../../../../skills/by-category/testing-qa-benchmarking/selected-structure-reference/verification-loop-everything-claude-code/SKILL.md"
+        ],
+        "source_manifest_files": 4,
+        "relocated_package_bytes": 2118,
+        "native_prompt_bytes": 9008,
+        "native_prompt_sha256": "6c1c57d768f141d4debadd00e26572eb0b0cdd05abe488a94cbdc96d6f3133e5",
+        "expected_name_matches_directory": false,
+        "remaining_processes": 0
+      }
+    ],
+    "model_inferences": 0,
+    "scope": "Official Codex local discovery and retained package closure only"
+  },
+  "publisher_inventory": {
+    "suite": "SkillsBench",
+    "version": "v1.1",
+    "source_commit": "b63b7b2850226b6aa4fb5929a8c1ac7bc4d9a6af",
+    "task_tree_sha": "dc144e1357083d9c2cebf3056944fa2c2354770b",
+    "task_count": 87,
+    "harbor": {
+      "version": "v0.26.0",
+      "source_commit": "3cb627394b95d3ae605f31e0d694edf508cf4b7b",
+      "annotated_tag_sha": "e916831b8062a6fa51bc9aea850e74cddb7bc9e1"
+    },
+    "source": "https://github.com/benchflow-ai/skillsbench/releases/tag/v1.1",
+    "selection_status": "Task-directory frame independently resolved. No selected attempt or native scorer admission.",
+    "frame_sha256": "c0c176931e5d3bf67891d5d9219e81d8f136dc3450ec789fa89445e05a4a171f"
+  },
+  "active_source_check": {
+    "focused_test_count": 197,
+    "checks": [
+      {
+        "id": "focused-skill-and-native-tests",
+        "passed": true
+      },
+      {
+        "id": "lint",
+        "passed": true
+      },
+      {
+        "id": "format",
+        "passed": true
+      },
+      {
+        "id": "types-win32",
+        "passed": true
+      },
+      {
+        "id": "types-linux",
+        "passed": true
+      },
+      {
+        "id": "ledger",
+        "passed": true
+      },
+      {
+        "id": "improved-overlays",
+        "passed": true
+      }
+    ],
+    "native_checks": [
+      {
+        "id": "portable-delivery-controls",
+        "passed": true
+      },
+      {
+        "id": "native-tool-trace",
+        "passed": true
+      }
+    ],
+    "trace_controls": [
+      {
+        "case": "disabled",
+        "passed": true,
+        "trace_bytes": 0,
+        "exact_arguments": false,
+        "remaining_owned_processes": 0
+      },
+      {
+        "case": "valid",
+        "passed": true,
+        "trace_bytes": 86319,
+        "exact_arguments": true,
+        "remaining_owned_processes": 0
+      },
+      {
+        "case": "malformed",
+        "passed": true,
+        "trace_bytes": 75423,
+        "exact_arguments": true,
+        "remaining_owned_processes": 0
+      },
+      {
+        "case": "interrupted",
+        "passed": true,
+        "trace_bytes": 82989,
+        "exact_arguments": true,
+        "remaining_owned_processes": 0
+      }
+    ],
+    "no_live_model_inference": true
+  },
+  "transport_preflights": [
+    {
+      "id": "own-traced-v1",
+      "outcome": "Available RAM below 28 GiB. Backend never started."
+    },
+    {
+      "id": "own-traced-v2",
+      "outcome": "Runtime fingerprint changed solely due to skill parser source. Backend never started."
+    },
+    {
+      "id": "own-traced-v3",
+      "outcome": "Exact previously qualified source, current RAM below 28 GiB. Backend never started."
+    }
+  ],
+  "scope_after_changes": {
+    "0": "T",
+    "1": "h",
+    "2": "e",
+    "3": " ",
+    "4": "n",
+    "5": "a",
+    "6": "t",
+    "7": "i",
+    "8": "v",
+    "9": "e",
+    "10": " ",
+    "11": "t",
+    "12": "r",
+    "13": "i",
+    "14": "a",
+    "15": "l",
+    "16": " ",
+    "17": "i",
+    "18": "m",
+    "19": "p",
+    "20": "o",
+    "21": "r",
+    "22": "t",
+    "23": " ",
+    "24": "n",
+    "25": "o",
+    "26": " ",
+    "27": "l",
+    "28": "o",
+    "29": "n",
+    "30": "g",
+    "31": "e",
+    "32": "r",
+    "33": " ",
+    "34": "e",
+    "35": "x",
+    "36": "e",
+    "37": "c",
+    "38": "u",
+    "39": "t",
+    "40": "e",
+    "41": "s",
+    "42": " ",
+    "43": "o",
+    "44": "r",
+    "45": " ",
+    "46": "f",
+    "47": "i",
+    "48": "n",
+    "49": "g",
+    "50": "e",
+    "51": "r",
+    "52": "p",
+    "53": "r",
+    "54": "i",
+    "55": "n",
+    "56": "t",
+    "57": "s",
+    "58": " ",
+    "59": "t",
+    "60": "h",
+    "61": "e",
+    "62": " ",
+    "63": "Y",
+    "64": "A",
+    "65": "M",
+    "66": "L",
+    "67": " ",
+    "68": "p",
+    "69": "a",
+    "70": "r",
+    "71": "s",
+    "72": "e",
+    "73": "r",
+    "74": ".",
+    "75": " ",
+    "76": "C",
+    "77": "u",
+    "78": "r",
+    "79": "r",
+    "80": "e",
+    "81": "n",
+    "82": "t",
+    "83": " ",
+    "84": "c",
+    "85": "o",
+    "86": "m",
+    "87": "p",
+    "88": "o",
+    "89": "n",
+    "90": "e",
+    "91": "n",
+    "92": "t",
+    "93": " ",
+    "94": "d",
+    "95": "i",
+    "96": "a",
+    "97": "g",
+    "98": "n",
+    "99": "o",
+    "100": "s",
+    "101": "t",
+    "102": "i",
+    "103": "c",
+    "104": "s",
+    "105": " ",
+    "106": "p",
+    "107": "a",
+    "108": "s",
+    "109": "s",
+    "110": ".",
+    "111": " ",
+    "112": "F",
+    "113": "u",
+    "114": "l",
+    "115": "l",
+    "116": " ",
+    "117": "n",
+    "118": "a",
+    "119": "t",
+    "120": "i",
+    "121": "v",
+    "122": "e",
+    "123": " ",
+    "124": "r",
+    "125": "u",
+    "126": "n",
+    "127": "n",
+    "128": "e",
+    "129": "r",
+    "130": " ",
+    "131": "a",
+    "132": "n",
+    "133": "d",
+    "134": " ",
+    "135": "c",
+    "136": "o",
+    "137": "m",
+    "138": "p",
+    "139": "a",
+    "140": "r",
+    "141": "a",
+    "142": "t",
+    "143": "i",
+    "144": "v",
+    "145": "e",
+    "146": " ",
+    "147": "m",
+    "148": "o",
+    "149": "d",
+    "150": "e",
+    "151": "l",
+    "152": " ",
+    "153": "q",
+    "154": "u",
+    "155": "a",
+    "156": "l",
+    "157": "i",
+    "158": "f",
+    "159": "i",
+    "160": "c",
+    "161": "a",
+    "162": "t",
+    "163": "i",
+    "164": "o",
+    "165": "n",
+    "166": " ",
+    "167": "r",
+    "168": "e",
+    "169": "m",
+    "170": "a",
+    "171": "i",
+    "172": "n",
+    "173": " ",
+    "174": "o",
+    "175": "p",
+    "176": "e",
+    "177": "n",
+    "178": ".",
+    "focused_tests_decoupled_from_full_coverage": true
+  },
+  "hosted_checkpoint": {
+    "source_revision": "b20d0e1c6a1195a1784ca21290fbf141bec078c1",
+    "terminal_runs": 19,
+    "success": 17,
+    "failure": 2,
+    "additional_scheduled_runs": 2,
+    "codecov_state": "complete",
+    "codecov_coverage": 70.19,
+    "tracked_lines_ui_verified": false,
+    "public_page_refusal": "403 Access denied by robots.txt",
+    "deepsource": "Analysis quota is exhausted."
+  },
+  "quality_gate_scope": {
+    "agent_instruction_lines_before": 442,
+    "agent_instruction_lines_after": 131,
+    "standard_pytest_coverage_enabled": false,
+    "measured_coverage_floor_percent": 45,
+    "measured_workflows": [
+      ".github/workflows/offline-validation.yml",
+      ".github/workflows/release.yml"
+    ],
+    "stale_context_diagnostic_reports_changed_paths": true,
+    "context_runtime_modules": 18,
+    "release_authorized": false,
+    "single_session_validation": {
+      "source": "data/development_plan.json",
+      "schema_version": 1,
+      "controller_mode": "single_development_session",
+      "benchmark_subject_mode": "serial_isolated_conditions_under_approved_exception",
+      "validator": "tools/validate_agent_tool_policy.py",
+      "catalog_phrase_checks_removed": true,
+      "independent_focused_tests": 44,
+      "policy_validation_receipt_sha256": "fadbe3faa8caec86d6a955a949016920d4b6e51776b11c4fdf7400ae07b9336c"
+    }
+  },
+  "scripted_packaging_boundary": {
+    "profile": "windows-native-packaging-anonymous-v1",
+    "execution_boundary_qualified": true,
+    "check_receipt_sha256": "0fa26adbf402fa92a84e412103c8dff47d654c8dd96ab709df17d140e8d93fcb",
+    "execution_controls": [
+      {
+        "case": "edited",
+        "stage": "complete",
+        "status": "task_passed",
+        "score": 1
+      },
+      {
+        "case": "unchanged",
+        "stage": "complete",
+        "status": "task_failed",
+        "score": 0
+      },
+      {
+        "case": "truncated",
+        "stage": "collection",
+        "status": "harness_error",
+        "score": null
+      },
+      {
+        "case": "budget",
+        "stage": "collection",
+        "status": "harness_error",
+        "score": null
+      },
+      {
+        "case": "accounting",
+        "stage": "collection",
+        "status": "harness_error",
+        "score": null
+      },
+      {
+        "case": "logical",
+        "stage": "final_storage",
+        "status": "harness_error",
+        "score": null
+      },
+      {
+        "case": "space",
+        "stage": "collection",
+        "status": "harness_error",
+        "score": null
+      },
+      {
+        "case": "spaceerror",
+        "stage": "collection",
+        "status": "harness_error",
+        "score": null
+      },
+      {
+        "case": "preflight-space",
+        "stage": "storage_preflight",
+        "status": "harness_error",
+        "score": null
+      },
+      {
+        "case": "timeout",
+        "stage": "collection",
+        "status": "harness_error",
+        "score": null
+      },
+      {
+        "case": "isolation",
+        "stage": "complete",
+        "status": "task_passed",
+        "score": 1
+      }
+    ],
+    "context_checks": 17,
+    "model_inferences": 0,
+    "counted_attempts": 0
+  },
+  "live_local_probe": {
+    "model": "qwen3:1.7b",
+    "provider_version": "0.40.16",
+    "manifest_sha256": "8f68893c685c3ddff2aa3fffce2aa60a30bb2da65ca488b61fff134a4d1730e7",
+    "role": "Unscored official native harness transport calibration",
+    "prompt_sha256": "b2fd9e97c1362ba4e136211f46417401f5812dc193ced97bbe9d13bfbc394aa6",
+    "attempt_requested": true,
+    "completed_turn": true,
+    "model_response_observed": true,
+    "command_count": 1,
+    "command_exit_code": 1,
+    "output_file_created": false,
+    "elapsed_seconds": 80.984,
+    "command_failure": "Model supplied a placeholder Python script path that did not exist",
+    "observed_context_tokens": 16384,
+    "observed_cpu": true,
+    "scripted_same_catalog_controls": 4,
+    "minimum_observed_free_ram_bytes": 28015882240,
+    "weight_bytes_downloaded": 0,
+    "weight_bytes_copied": 0,
+    "trace_files": 16,
+    "probe_result_sha256": "2cc5682192745ae93842013ac70ae86b9fe61f5c4b2f8f430aeb70e7a18a7c05",
+    "raw_transcript_sha256": "4851442cec282120544f4a8deb1d3ed3fc73b39f594a92ac7a6b20bf97717609",
+    "backend_listener_stopped": true,
+    "observer_stopped": true,
+    "owned_job_remaining_processes": 0,
+    "calibration_passed": false,
+    "counted_model_attempts": 0,
+    "score": null
+  },
+  "compatible_version_candidates": {
+    "observation": "Published stable versions from authoritative release/package metadata; compatibility qualification remains separate.",
+    "packages": [
+      {
+        "package": "types-pyyaml",
+        "pinned": "6.0.12.20261103",
+        "published": "6.0.12.20261113",
+        "metadata_sha256": "5de4201281e6cb8cfca1af91eb06342ce8c178369ed3e90273d3df7a8a4c3146"
+      },
+      {
+        "package": "uv",
+        "pinned": "0.13.8",
+        "published": "0.13.9",
+        "metadata_sha256": "dfcb281459a1d2a6ebcc7df042954cde41127d4e6823088752adc857d819e666"
+      }
+    ],
+    "codex_stable": "0.169.0",
+    "ollama_stable": "v0.40.16"
+  }
+}

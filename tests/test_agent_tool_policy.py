@@ -18,7 +18,9 @@ from tests.helpers import ROOT
 def contract(tmp_path, monkeypatch):
     for relative in (
         "AGENTS.md",
-        "docs/agent-tools.md",
+        policy.POLICY,
+        policy.WORK_ORDER,
+        policy.SUBJECT_POLICY,
         ".github/workflows/offline-validation.yml",
         *policy.TOOLS.values(),
     ):
@@ -26,7 +28,6 @@ def contract(tmp_path, monkeypatch):
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / relative, target)
     entries = json.loads((ROOT / "data/skills_catalog.json").read_text(encoding="utf-8"))[:2]
-    (tmp_path / "data").mkdir()
     (tmp_path / "data/skills_catalog.json").write_text(json.dumps(entries), encoding="utf-8")
     monkeypatch.setattr(build_catalog, "ROOT", tmp_path)
     build_catalog.write_agent_ready_skills(entries)
@@ -41,6 +42,29 @@ def test_all_catalog_entrypoints_receive_mandatory_policy():
 
 def test_generator_preserves_mandatory_policy(contract):
     assert policy.validate(contract)["ok"]
+
+
+@pytest.mark.parametrize(
+    "field, replacement, diagnostic",
+    [
+        ("schema_version", True, "unsupported work order schema"),
+        ("controller_mode", "parallel_development", "invalid controller_mode"),
+        ("benchmark_subject_mode", "parallel_trials", "invalid benchmark_subject_mode"),
+    ],
+)
+def test_benchmark_policy_rejects_invalid_execution_mode(contract, field, replacement, diagnostic):
+    path = contract / policy.WORK_ORDER
+    work_order = json.loads(path.read_text(encoding="utf-8"))
+    work_order[field] = replacement
+    path.write_text(json.dumps(work_order), encoding="utf-8")
+    assert any(diagnostic in error for error in policy.validate(contract)["errors"])
+
+
+def test_benchmark_subject_policy_link_is_required(contract):
+    path = contract / "AGENTS.md"
+    text = path.read_text(encoding="utf-8")
+    path.write_text(text.replace(policy.SUBJECT_POLICY, "retired-policy.md"), encoding="utf-8")
+    assert any(policy.SUBJECT_POLICY in error for error in policy.validate(contract)["errors"])
 
 
 @pytest.mark.parametrize("name", ["caveman", "cocoindex-code-search", "crawl4ai-research"])

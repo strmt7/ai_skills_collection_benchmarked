@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-17",
+  "scope": "Scoped development and coverage gates, Windows frontmatter and native context verification, one verification skill overlay, scripted packaging controls and an unscored failed live transport probe.",
+  "source_sha256": {
+    "docs/improvement-plan.md": "fd1744949a5694ae5da43142a95ef1a857c13f0c129627232600f4049dbed424",
+    "data/development_plan.json": "23ed22dcf6074a2b1030f5c6158d6db46fa24d3ce671548027016332c4ecd6c3",
+    "docs/benchmark-subject-policy.md": "0ed871b4775561de3bd888728c7ae8dfd8cac2d489095dd33ab8f27da7e16a32",
+    "tools/_lib_b/__init__.py": "b4919932818ddea16dd8695b282e3c8e0708bb0c89f5ab4d41adacf3e83878f9",
+    "tools/_lib_b/frontmatter_utils.py": "656c943699188a777fa29536bc005a301495f245d4b3d368ca657d78e715f6b1",
+    "tools/run_agent_trial.py": "fb82cb8fcf3c6ec04745269549c4039e90338a8ad15a9a8aaa6ec4f04acd4f16",
+    "tests/test_frontmatter_utils.py": "6aa808e6ab25c0a5a4e07edab943440a4b28c9b4e833a7b58d586a6141513c67",
+    "included/improved/skills/verification-loop-shell-status/SKILL.md": "e2fb6690c8cba0e0aafbfb81c658b909f1fc9cac3e0bcb7c445df374930e6f2c",
+    "AGENTS.md": "747c87e4db4d14129406b46f961503916d730fce04c1373c455443ed1f433a2c",
+    "CONTRIBUTING.md": "1b8889a680b81e6fc3ed013c9f9d8ad473535a8b2ddc53a9ffbd543830cc56e8",
+    "pyproject.toml": "c7bd185a7c8d9d396c86d68d34c0c28ea0e248a2198a00b59b75347e744c24d8",
+    ".github/workflows/offline-validation.yml": "50cd75c82086325eff0bd4ca3774c801c0f370a8df43ca16af3084ce82b8c036",
+    ".github/workflows/release.yml": "dff39c2b526b4203c83058e316352f05fdc18f05445f2a5b499147953ce0ac29",
+    "docs/coverage.md": "d36fbba0ece88a6e63f0f0ce9d8eb0cd6f47759efd77c590dc216d1be9463ea2",
+    "docs/development.md": "93ae3597a186078ff30d218e0f5d0b914487b9ca2f6a5b67b7726f7d65252c1b",
+    "tools/qualify_trial_context.py": "6f24558065c9754834efdcdd7f95be4e96a609eeb378ff4c7a516b76e958c7df",
+    "tools/qualify_native_trial_boundary.py": "4c0fda46f5bb019659032397018678c24ab366dc46348876428e0adcc1cad4ef",
+    "tests/test_native_trial_boundary.py": "d4608f2493f2af968d77e08f261352516f8642d4b52e5e1bacb55754da60794e",
+    "tests/test_qualify_trial_context.py": "bde034955a692dcd9b5227ac45c56ee4b647af9a7832a17759568e0513cd34c3",
+    "tests/test_coverage_bundle.py": "9f3b3d77181c0176c7f355a4cfefc995ee709367432f9d120454be519b4d13bf",
+    "tools/validate_catalog.py": "00bf04491aa33c3250142edc59205419b0f2d4dcafb4d15264232552be9959bc",
+    "tools/validate_agent_tool_policy.py": "e6b1d00e344ed1231b6d7156301b3994ec87debf4b37745e60f061f975fc5cdd",
+    "tests/test_agent_tool_policy.py": "7283995511a470be66379393ac5ed5a5e20b00cd7fe54482611515ced8b102e7",
+    "tests/test_documentation_contracts.py": "53c0ee2123bab7df1f175623b4ba6861f9165f62c3339eab5c8e4324c17659da"
+  },
+  "artifacts": {
+    "observations.json": "1c7e041d8406bb702d8c3f8077b57c3217d7e4b5666810a0577125d4adc8ad8d",
+    "previous-verification-skill.md": "64637a36eee74d85b2f6f65a5b3f029e399c60ac9cc37fe00ba5651bd80b4f49",
+    "skillsbench-build-recovery-frame.json": "5207d8642ab89083a6e9655b6556e6fe875c505f1326d4e02f42581ce1f76467"
+  },
+  "native_complete_runner_qualified": false,
+  "comparative_model_attempts": 0,
+  "model_efficacy_established": false,
+  "native_packaging_boundary_qualified": true
+}

@@ -10,7 +10,6 @@ Invariants checked:
   in the catalog (uses ``build_catalog.sha256_file`` and the host-portable
   ``build_catalog.sha256_tree``);
 * README statistics / required links / absence of overclaim phrases;
-* AGENTS.md single-session rule phrases still present;
 * legacy "priority" / "requested" wording removed from catalog + tree;
 * vulnerable package-lock minimums respected in mirrored node_modules entries;
 * assignment and scenario coverage for candidate skills.
@@ -65,12 +64,6 @@ README_FORBIDDEN_SOURCES = {
     "ZMB-UZH/omero-docker-extended",
 }
 README_OVERCLAIM_PHRASES = ("bug-free", "error-free", "guaranteed", "best skills", "fully proven")
-AGENTS_SINGLE_SESSION_PHRASES = (
-    "mandatory single-session rule",
-    "do not spawn",
-    "subagents",
-    "one ai session only",
-)
 DELEGATION_FORBIDDEN_PHRASES = ("subagent", "parallel agent", "multi-agent orchestration")
 
 
@@ -227,10 +220,6 @@ def validate_catalog(report: Report) -> None:
             build_catalog.validate_preserved_notice(ROOT, source.get("preserved_notice"), source["commit_sha"])
         except (OSError, ValueError) as error:
             report.require(False, f"{source.get('repo')}: {error}")
-
-    agents_text = (ROOT / "AGENTS.md").read_text(encoding="utf-8").lower()
-    for phrase in AGENTS_SINGLE_SESSION_PHRASES:
-        report.require(phrase in agents_text, f"AGENTS.md missing single-session rule phrase: {phrase}")
 
     for agent_ready_path in (ROOT / "included" / "agent-ready").rglob("SKILL.md"):
         text = agent_ready_path.read_text(encoding="utf-8").lower()

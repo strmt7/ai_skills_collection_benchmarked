@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "role": "Public build-recovery task frame for a separate development study",
+  "selection_rule": "Include every published task whose ID begins fix-build-. Later runtime admission checks the unchanged environment, verifier and available toolchains. Preserve failures and exclusions.",
+  "suite": "SkillsBench",
+  "version": "v1.1",
+  "publisher_commit": "b63b7b2850226b6aa4fb5929a8c1ac7bc4d9a6af",
+  "tree": "dc144e1357083d9c2cebf3056944fa2c2354770b",
+  "tree_receipt_sha256": "715c3267332023468939367e3f5941623b375a544fb206159d029c107b6c0d52",
+  "publisher_tasks": 87,
+  "selected": [
+    {
+      "task_id": "fix-build-agentops",
+      "tree_sha": "66ccbac03d78ac746d60692a96b9a916dd7800aa",
+      "package_bytes": 112071,
+      "blob_count": 14,
+      "task_document": "bf36946a0e2411ee4aeecd74e94539f010a457e8",
+      "environment_recipe": "ce42d4e1d82b65d568dc9dc3f467ed9ffb6d57d5",
+      "verifier_present": true,
+      "oracle_present": true
+    },
+    {
+      "task_id": "fix-build-google-auto",
+      "tree_sha": "4c27bb95b137d32039c3d5c0d5c7e47e66b7d882",
+      "package_bytes": 65766,
+      "blob_count": 10,
+      "task_document": "3ab45a957c82a388b3ccb40fd9434d62a5f8acf6",
+      "environment_recipe": "86d928b637c7f3cd86addb544c994cf99ccd8117",
+      "verifier_present": true,
+      "oracle_present": true
+    }
+  ],
+  "task_or_grader_bodies_read": false,
+  "publisher_aggregate_outcomes_incidentally_seen": true,
+  "scoped_study_admitted": false,
+  "counted_attempts": 0,
+  "holdout_eligible": false
+}

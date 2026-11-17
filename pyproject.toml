@@ -54,14 +54,7 @@ py-modules = []
 [tool.pytest.ini_options]
 minversion = "8.4"
 testpaths = ["tests"]
-addopts = [
-  "-ra",
-  "--strict-markers",
-  "--strict-config",
-  "--cov=tools",
-  "--cov-report=term-missing:skip-covered",
-  "--cov-report=xml:coverage.xml",
-]
+addopts = ["-ra", "--strict-markers", "--strict-config"]
 filterwarnings = [
   "error",
   # Silence harmless third-party DeprecationWarnings that are outside this repo's control.
@@ -162,7 +155,7 @@ exclude_also = [
   "if TYPE_CHECKING:",
   "pragma: no cover",
 ]
-# Coarse local minimum. Codecov separately compares measured head coverage
+# Floor for explicit coverage runs. Codecov separately compares measured head coverage
 # against the base commit; this percentage does not measure skill efficacy.
 fail_under = 45
 show_missing = true

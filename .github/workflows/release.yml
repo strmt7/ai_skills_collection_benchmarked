@@ -43,7 +43,7 @@ jobs:
           ruff check tools tests
           ruff format --check tools tests
           mypy tools tests
-          python -m pytest -q -n auto
+          python -m pytest -q -n auto --cov=tools --cov-report=term-missing:skip-covered --cov-report=xml:coverage.xml
           python tools/validate_catalog.py
           python tools/run_static_benchmarks.py --check
           python tools/audit_skill_quality.py --check

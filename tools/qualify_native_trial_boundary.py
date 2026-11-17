@@ -391,7 +391,8 @@ def verify(specification: dict[str, Any]) -> dict[str, Any]:
     )
     context = owned(specification["context_directory"])
     context_report = check_context(context)
-    require(context_report["ok"] is True, "Current native context qualification failed")
+    if context_report["ok"] is not True:
+        raise ValueError("Native context qualification failed. " + ". ".join(context_report["errors"]))
     record = document(context / "qualification.json")
     require(
         checked_path(Path(record["cli"])) == admitted["runtime"]["cli"]

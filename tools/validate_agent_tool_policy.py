@@ -15,6 +15,8 @@ from search_semantic_corpus import verify_response
 
 ROOT = Path(__file__).resolve().parents[1]
 POLICY = "docs/agent-tools.md"
+WORK_ORDER = "data/development_plan.json"
+SUBJECT_POLICY = "docs/benchmark-subject-policy.md"
 TOOLS = {
     "caveman": ".agents/skills/caveman/SKILL.md",
     "cocoindex-code-search": ".agents/skills/cocoindex-code-search/SKILL.md",
@@ -53,6 +55,24 @@ def validate(root: Path) -> dict[str, Any]:
         errors.append("AGENTS.md: mandatory agent-tool policy link missing")
     if "Caveman, CocoIndex Code and Crawl4AI are mandatory" not in agents:
         errors.append("AGENTS.md: mandatory three-tool directive missing")
+    for policy_path in (WORK_ORDER, SUBJECT_POLICY):
+        if f"]({policy_path})" not in agents:
+            errors.append(f"AGENTS.md: benchmark scope link missing to {policy_path}")
+    if not read(SUBJECT_POLICY).strip():
+        errors.append(f"{SUBJECT_POLICY}: empty benchmark subject policy")
+    try:
+        order = json.loads(read(WORK_ORDER))
+        version = order.get("schema_version") if isinstance(order, dict) else None
+        if type(version) is not int or version != 1:
+            raise ValueError("unsupported work order schema")
+        for field, expected in (
+            ("controller_mode", "single_development_session"),
+            ("benchmark_subject_mode", "serial_isolated_conditions_under_approved_exception"),
+        ):
+            if order.get(field) != expected:
+                errors.append(f"{WORK_ORDER}: invalid {field}")
+    except ValueError as exc:
+        errors.append(f"{WORK_ORDER}: {exc}")
     for name, path in TOOLS.items():
         if f"]({os.path.relpath(root / path, root / 'docs').replace(os.sep, '/')})" not in policy:
             errors.append(f"{POLICY}: {name} skill link missing")

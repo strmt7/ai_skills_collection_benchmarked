@@ -133,7 +133,18 @@ def test_complete_context_record_is_verified_without_claiming_full_trials(observ
 
 
 @pytest.mark.parametrize(
-    "change", ["missing_check", "numeric_check", "missing_evidence", "scope", "source", "bytes", "shell", "git"]
+    "change",
+    [
+        "missing_check",
+        "numeric_check",
+        "missing_evidence",
+        "scope",
+        "source",
+        "null_extra_source",
+        "bytes",
+        "shell",
+        "git",
+    ],
 )
 def test_incomplete_or_changed_records_never_pass(observation, change):
     path, record, put = observation
@@ -147,6 +158,12 @@ def test_incomplete_or_changed_records_never_pass(observation, change):
         record["complete_trial_boundary_qualified"] = True
     elif change == "source":
         record["source_sha256"]["tools/_trial_context.py"] = "a" * 64
+    elif change == "null_extra_source":
+        record["source_sha256"]["unrelated.py"] = None
+        binding = json.loads((path / "source-binding.json").read_bytes())
+        binding["source_sha256"] = record["source_sha256"]
+        put("source-binding.json", binding)
+        record["evidence_sha256"]["source-binding.json"] = controls.digest(path / "source-binding.json")
     elif change == "shell":
         (path / "powershell.exe").write_bytes(b"changed shell executable")
     elif change == "git":
@@ -154,7 +171,10 @@ def test_incomplete_or_changed_records_never_pass(observation, change):
     else:
         (path / "baseline-prompt/stderr.native").write_bytes(b"changed")
     put("qualification.json", record)
-    assert controls.check(path)["ok"] is False
+    result = controls.check(path)
+    assert result["ok"] is False
+    if change == "source":
+        assert "Context qualification sources changed in tools/_trial_context.py" in result["errors"]
 
 
 def test_rehashed_bare_git_command_cannot_prove_explicit_runtime_use(observation):

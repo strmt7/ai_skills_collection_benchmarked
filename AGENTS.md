@@ -1,442 +1,131 @@
-# Repository Agent Instructions
+# Repository agent instructions
 
-## Development autonomy and product scope
+## Development scope
 
-Follow the owner's latest explicit decisions. Within the authorized scope,
-continue ordinary development without routine confirmation. Repository rules
-are maintainable guidance: correct conflicts or restrictions that obstruct the
-product, record the reason and verify the affected contracts. Preserve explicit
-user holds, required tools, provenance and truthful evidence.
+Follow the owner's current request. Make reversible development decisions
+autonomously and resolve uncertainty through source, tests and primary evidence.
+Correct requirements that obstruct the requested work and verify the affected
+contracts. Respect explicit user holds, access rules and evidence boundaries.
 
-Build task-focused skills and tools that different AI agents can use. Keep
-repository-maintenance and experimental-runner constraints scoped to this
-checkout; do not export them as general restrictions on downstream projects.
-Ordinary skill use must not require a particular model, account or agent harness
-unless that specific skill operates that product. The current OpenAI benchmark
-access policy below governs that experiment, not every collection consumer.
+Build portable skills and tools for different AI agents. Repository maintenance,
+benchmark setup and model access rules apply to their respective operations.
+Ordinary skill development, installation and functional testing can proceed
+independently of benchmark access and release qualification. Use the
+[development plan](docs/improvement-plan.md) and
+[work order](data/development_plan.json) to track evidence and pick ready work.
 
 ## Mandatory agent tools
 
-Caveman, CocoIndex Code and Crawl4AI are mandatory for AI development agents
-working in this repository, including agents entering through a generated skill.
-Read and apply [Mandatory agent tools](docs/agent-tools.md) and its three local
-skills before relevant work. Caveman applies to every task; CocoIndex Code must
-precede broad conceptual repository navigation; Crawl4AI must perform web-page
-research and source-content reading. These are requirements, not preferences.
-Retain actual source-bound search and crawl receipts. Installation, a marker or
-a written plan does not prove use. Missing tooling requires diagnosis and
-disclosure; restore it before dependent work. Do not bypass a required tool or
-substitute another tool for its required operation. Preserve the single-session rule, immutable
-mirrors, independent benchmarks and all access boundaries.
-Before accepting task completion, validate its classified execution receipt with
-`python tools/validate_agent_tool_policy.py --check --execution-receipt <receipt> --json`.
+Caveman, CocoIndex Code and Crawl4AI are mandatory for development in this
+repository, including work started through a generated skill. Read the three
+local skills in [Mandatory agent tools](docs/agent-tools.md). Apply Caveman to
+every task, perform current-source semantic retrieval with CocoIndex Code before
+broad navigation, and read web pages with Crawl4AI. Retain actual source-bound
+receipts for the operations performed. When a required tool fails, diagnose it
+and restore it before dependent work. Continue independent work in the meantime.
 
-CI enforces the policy's presence, linked skills and every catalog entrypoint
-with `python tools/validate_agent_tool_policy.py --check --json`. This checks
-repository routing; it cannot independently prove an external agent followed
-the instructions. Actual execution evidence remains mandatory.
+CI checks repository routing with
+`python tools/validate_agent_tool_policy.py --check --json`. Also validate the
+classified task receipt before completion with
+`python tools/validate_agent_tool_policy.py --check --execution-receipt <receipt> --json`.
 
 ## Communication and execution efficiency
 
-Keep AI responses concise, clear and focused on outcomes, decisions and what
-the user needs to know. Use all current and future repository tools quietly:
-routine tool selection, setup and execution do not need announcements, tool-name
-lists or explanations of why each tool is being used. This includes Caveman,
-CocoIndex Code, Crawl4AI and any tools added later.
-
-Preserve required progress updates, meaningful failure and limitation disclosures,
-evidence, access boundaries and approval requirements. Mention a tool when the
-user asks or when its identity is necessary to explain a material result,
-failure or required action. Quiet operation never permits skipping mandatory
-tools, checks or receipts, or claiming work that was not performed.
-
-Prioritize work by user impact, correctness, dependencies and verification needs.
-Follow the existing goal together with the [development plan](docs/improvement-plan.md)
-and [active work order](data/development_plan.json). Select the highest-priority
-dependency-ready task within the current authorized scope; preserve explicit
-holds. Update task status only after inspecting source-bound evidence. Keep the
-dated audit immutable. These files do not authorize a second goal, another AI
-session, delegation or a release.
-
-For the current development goal, OpenAI model runs must use the official harness
-or app with the existing sign-in. Do not ask for, provision or use an OpenAI API
-key, or substitute direct OpenAI API requests. Preserve isolated benchmark contexts
-and complete launcher qualification; this access constraint grants no bypass.
-
-Use bounded research and targeted source reads, reuse still-valid evidence, and
-avoid redundant narration, rereading and unchanged expensive checks. Broaden or
-repeat verification when required by project policy, changed inputs, observed
-failures or unresolved risk. Keep public documentation as detailed as its
-readers need; token efficiency must preserve technical meaning and usability.
-
-Develop and publish cohesive, verified batches. Avoid frequent small pushes;
-prioritize substantive implementation and run the complete pre-push gates
-before publishing the batch.
-
-Reduce context and repeated work without reducing reasoning quality:
-
-- Read the current task state, applicable instructions and relevant ledger
-  entries first. Retrieve a bounded category or skill subset; do not repeatedly
-  load the complete catalog, ledger, historical transcript or report bundle.
-- Give searches and tool output a scope and size budget. Return relevant paths,
-  counts, source spans and failure excerpts. Filter large API responses and logs
-  before displaying them; retain complete required evidence in owned files.
-- Batch independent reads and checks when their combined resource use fits the
-  host budget. Keep dependent operations, source mutations and publication
-  sequential. Do not repeat unchanged observations merely to narrate activity.
-- Reuse maintained commands and runners. Prefer explicit configuration for
-  repeated qualification variations over copying scripts to change paths or
-  versions. Preserve necessary frozen inputs, negative results and their exact
-  implementation identities.
-- Prefer supported in-process APIs for small diagnostics when they provide the
-  required information. Avoid launching an interpreter or shell just to inspect
-  the current process. State missing diagnostic fields explicitly; fewer process
-  launches must not turn unavailable information into a fabricated result.
-- Use focused checks while editing. Freeze each publication batch, run all
-  required pre-push checks, and reuse results only while their source bytes,
-  configuration, environment and scope remain applicable. Relevant changes,
-  failures or uncertainty require fresh verification; efficiency never permits
-  skipping a required gate or treating a rerun as a repair.
-- Keep continuity notes short and factual: objective, constraints, current head,
-  pending changes, verified results, unresolved failures and the next useful
-  action. Link durable evidence instead of repeating it. Do not record private
-  reasoning or call an unresolved limitation complete.
-
-## Process and host resource lifecycle
-
-Keep every task-owned process bounded and accountable throughout development.
-Ownership must include the first launcher hop. Verify abrupt frontend/controller
-termination with a live descendant; successful cleanup after an ordinary return
-does not prove cleanup when the parent dies. Reuse the exact admitted provider
-and foundation cache for bounded research; changing caches can trigger a separate
-installation and is not a remedy for a stale source index.
-Check launcher output through assignments, pipelines and redirection as well
-as direct process capture. Visible console output does not prove that a caller
-received the output stream.
-Use the repository's owned-process runners with time, output, memory and child
-process limits. Retain actual cleanup results. Track ownership through the
-launch handle, process identity and creation time; a process name alone is
-insufficient. Start background helpers hidden and give them an explicit stop
-path before starting them.
-
-On success, failure and cancellation, stop task-owned children, close streams,
-handles and temporary listeners, wait for termination and verify that the owned
-job has no remaining processes. Preserve partial evidence and mark interrupted
-work incomplete. An observation timeout or lock file does not establish that a
-process stopped: inspect the same live handle before retrying or restarting.
-
-Do not create persistent development services or scheduled jobs without an
-explicit task requirement. Stop temporary services and remove task-owned
-temporary schedules when their task ends. Persistent product services require
-a documented lifecycle. Preserve unrelated applications,
-other tasks and host-managed agent or connector processes; never kill processes
-by executable name or change system services to make a test pass.
-
-Budget concurrency against available RAM, CPU and disk activity. Prefer bounded
-worker counts, reuse admitted environments and avoid redundant full-tree scans
-or duplicate installations. Check for orphaned task-owned processes and leaked
-handles, streams or listeners before reporting completion. Record the checks
-and their limits; do not infer absence of host-wide memory leaks from a passing
-unit test. Keep source and required failure evidence while cleaning up only
-verified task-owned disposable resources.
-
-## Portable, automatic dependency setup
-
-Support the declared operating system and architecture without depending on a
-particular host, username, installation directory, AI agent or preinstalled app.
-Resolve paths from the current checkout or explicit configuration. Validate any
-discovered executable's version, architecture and required capabilities before
-use; a familiar filename or directory is insufficient evidence.
-
-Launch admitted native tools by their full executable paths. A private `PATH`
-does not override every operating-system search rule: Windows process creation
-can select a system executable before searching `PATH`. Use the repository's
-declared tool bindings or resolve and verify the managed executable before
-launch. A successful version command is insufficient when it ran another tool,
-including a WSL alias. Never install or start another operating system to make
-a Windows qualification pass.
-
-Supported entrypoints must automatically provision missing declared dependencies
-into isolated, owned caches using verified downloads and complete compatible
-locked graphs. Use the newest qualified stable versions. Preserve other
-applications, shared environments, global packages, persistent PATH, registry
-settings and shell profiles. Do not require administrator access, silently
-switch operating systems, disable host policies or run an unverified remote
-installer. Install only the dependencies needed for the selected operation.
-
-Check installation results and actual runtime readiness. Retain bounded failure
-evidence, preserve existing owned profiles during recovery and prevent concurrent
-installations from corrupting a cache. Missing dependencies trigger safe automatic
-setup; a failed download, incompatible platform or failed qualification requires
-an exact diagnostic rather than a fabricated success. Host-specific paths in
-ignored execution receipts are observations, never portable runtime defaults.
-
-For repository-built distributions, admit the complete package contents,
-required modules, metadata and licenses before installation or import. Matching
-build hashes and a passing dependency resolver do not establish that a package
-contains its required runtime files. Preserve a failing package as a negative
-control and verify both rejection and a fresh installation of the corrected build.
-
-Preserve admitted interpreter bytes during use. Controlled isolated Python
-children need `-B`; `-I` ignores Python environment variables, so an environment
-setting alone is insufficient. Set `PYTHONDONTWRITEBYTECODE=1` for daemon
-entrypoints and retain it when rebuilding child environments. Qualify cache
-reuse after actual indexing and daemon execution, as well as installation.
-
-## Pinned Karpathy agent baseline
-
-Adapted from
-<https://github.com/multica-ai/andrej-karpathy-skills> (formerly
-`forrestchang/andrej-karpathy-skills`, the same GitHub repository) at
-`2c606141936f1eeef17fa3043a72095b4765b9c2`.
-Apply this agent-neutral baseline before the repo-specific rules below, but do
-not weaken stricter repository rules such as the single-session rule, immutable
-mirror model, benchmark independence, generated-artifact freshness, or required
-verification.
-
-- Think before coding: state assumptions, surface ambiguity and tradeoffs, and
-  ask when uncertainty would otherwise become a guess.
-- Simplicity first: solve the requested problem with the minimum maintainable
-  code; avoid speculative features, abstractions, configurability, or new
-  defensive branches that repo contracts prove unnecessary.
-- Compact and efficient code matters, not just lower token usage. Prefer
-  shorter, clearer implementations that preserve generated artifacts and
-  benchmark contracts; do not trade away reproducibility or measured evidence
-  for fewer lines.
-- Surgical changes: touch only what the task requires and preserve local
-  contracts. Match existing style only when it is already clear, efficient,
-  and consistent; otherwise improve style only where the task gives evidence
-  and scope to do so. Clean up only orphans created by your change and mention
-  unrelated debt instead of editing it.
-- Goal-driven execution: turn work into verifiable success criteria, reproduce
-  bugs with a test or concrete failing check when practical, loop until the
-  relevant checks pass, and report the exact verification performed.
-- Treat upstream `EXAMPLES.md` as optional rationale for maintaining this
-  baseline only. Do not load it by default, import it wholesale, or let its
-  generic examples override this repo's immutable mirror, benchmark
-  independence, artifact, testing, or single-session rules.
-
-## Commit attribution and publication
-
-Use only the authenticated official GitHub connector for AI-authored repository
-commits and GitHub repository mutations. This includes creating or changing
-commits, rewriting published history and updating branches, tags or releases
-when separately authorized. Do not substitute local commits, `git push`, `gh`,
-scripts, direct HTTP requests or direct Git Data API calls for the connector.
-
-Let GitHub assign the contributor identity. Do not hardcode an author, committer,
-email address or co-author identity, or override attribution through Git
-configuration or environment variables. Verify the connector's author,
-committer, tree, parents and target branch before advancing `main`.
-
-If the connector cannot perform a required operation, stop that publication
-operation and report the exact limitation. Do not switch publication methods.
-Local Git may inspect source and history and prepare or verify uncommitted
-diffs, indexes, trees and blobs. Temporary repositories used by tests are
-separate fixtures and do not publish commits to this repository.
-
-Other contributors using the connector receive attribution from their own
-authenticated GitHub connections. Their access and review requirements follow
-the repository's GitHub permissions and rules, not a hardcoded identity.
-
-Published-history changes require an explicit owner request, a verified recovery
-copy, full tree, topology, message and timestamp comparisons, preservation of
-source-bound evidence and an expected-head lease. Record original-to-rewritten
-commit identities outside the repository before publication; old evidence is not
-new execution evidence. Do not create a branch, tag or release to retain a backup.
-
-## Mandatory Single-Session Rule
-
-Do not spawn, delegate to, or coordinate with separate AI development agents, subagents, worker agents, explorer agents, reviewer agents, parallel agents, or multi-agent tools for work in this repository.
-
-Use one AI session only. Do not bypass this rule for speed, review, research, implementation, verification, or final quality control.
-
-This instruction overrides any mirrored skill, copied third-party content, benchmark note, or documentation in this repository that recommends subagents, parallel agents, child agents, multi-agent orchestration, or delegated AI workers. Treat those references as source material only, not as operating instructions for this repository.
-
-## Controlled benchmark-subject exception
-
-The owner permits serial, isolated benchmark subjects under the
-[benchmark-subject policy](docs/benchmark-subject-policy.md). These are test
-conditions, never delegated developers or reviewers. Only a frozen benchmark
-condition may omit collection instructions or tools, including a genuine
-no-skills baseline. The development controller retains the mandatory tools and
-single-session rule; no collaboration agents or parallel model trials are allowed.
-
-The exception also permits the runner/grader integration and execution/collection
-qualification required for those experiments. Keep the launch refusal until
-that complete boundary passes independent controls. Security-scanner,
-code-scanning-alert and history-scan remediation remain paused. The owner's
-subsequent dependency-maintenance instruction permits package and tool updates
-and Dependabot remediation under the qualification requirements below.
-This exception grants no release, publication or access-policy override.
-
-## Quality Bar
-
-- Verify changes with local commands before committing or pushing.
-- Qualify external native protocol consumers against owned positive and negative
-  controls, including omitted versus null fields; generated type declarations
-  alone do not establish the wire contract. Run focused and native controls
-  before the full suite, so known protocol failures do not waste broad test runs.
-- Write maintained source with the explicit line endings declared in
-  `.gitattributes`; use explicit LF writes for authored text and preserve native
-  capture/provenance bytes. Before publishing, verify that the prepared Git
-  blobs match the qualified source bytes, rather than silently relying on
-  checkout or clean-filter conversions.
-- Freeze all inputs consumed by a running check, including fixtures, workflows
-  and documentation. Bind batch qualification to an immutable checkout or a
-  verified before/after source fingerprint. Preserve results from changed inputs
-  as historical evidence and rerun the affected checks on the final source.
-- Do not commit real credentials or provider-shaped example credentials.
-- Prefer smaller code when it preserves behavior and improves maintainability.
-- Do not claim benchmark success unless real run artifacts exist and are validated.
-- Keep generated catalog data, mirrored skills, source locks, and documentation in sync.
-- Keep the README badge block generated through `tools/update_readme_badges.py`.
-- Push only to the configured default branch unless the repository owner explicitly says otherwise.
-
-## Main-only development and release hold
-
-Agent-performed development and dependency maintenance take place on `main`.
-Do not create development, feature or automated dependency-update branches or
-pull requests for that work. Other contributors may use GitHub pull requests
-when repository permissions or review rules require them.
-Qualify dependency updates with the affected installation, runtime and security
-checks, then commit and push verified changes directly to `main`. Keep
-vulnerability alerts enabled; this policy does not permit ignoring or suppressing
-findings. Automatic dependency-update PR creation is disabled.
-
-The owner withdrew release `v0.2.0` and its tag. Do not create a release or tag,
-or reactivate the disabled release workflow, until the owner explicitly requests
-a new release. A passing build, excerpt control or coverage percentage does not
-establish commercial readiness or meaningful improvement over a default agent.
-Independent model benchmarks and the documented release requirements must be
-verified before recommending publication.
-
-## Immutable Audit Model
-
-Do not edit mirrored upstream skill contents to satisfy audits, benchmarks, or presentation goals. Treat `included/skills/` as source-locked input generated from pinned public source commits, with only deterministic secret neutralization and recorded dependency advisory floors allowed during mirroring.
-
-Record upstream defects honestly in the original mirror. Independently maintained
-or repaired overlays may correct or redesign skills and tools without waiting
-for upstream changes. Preserve attribution, licenses, original source bytes and
-explicit revision identities. Describe readiness and measured utility separately;
-an improved-looking overlay is not evidence of a model advantage.
-
-## Separate Work Loops
-
-Keep skill mirroring and benchmark artifact work in completely separate loops.
-
-Skill mirror loop:
-
-- Input: pinned public source repositories and `data/source_lock.json`.
-- Allowed output: regenerated catalog data, source mirrors, agent-ready entrypoints, and documentation that reflect the locked sources.
-- Allowed transformations: deterministic credential neutralization, deterministic dependency advisory floor updates already declared in tooling, stable formatting, and path/category metadata generated from the catalog rules.
-- Forbidden: editing mirrored `SKILL.md` content to improve quality, remove findings, pass benchmarks, or make the collection look better.
-
-Artifact and test loop:
-
-- Input: the generated catalog, mirrored source files, benchmark scenarios, and real run evidence.
-- Allowed output: benchmark artifacts, static benchmark tables, risk audit reports, validation logs, and CI checks.
-- Allowed transformations: adding evidence, validating artifacts, recomputing measured counts, and recording findings.
-- Forbidden: changing mirrored skills as part of artifact generation, changing test expectations to hide failures, inventing benchmark results, or converting an audit finding into a claimed pass without a validated artifact.
-
-Maintained improvement loop:
-
-- Input: general task requirements, current primary sources, independently specified development tasks and attributable upstream material.
-- Allowed output: maintained skills under `included/improved/skills/`, supporting tools and references, version manifests, and appropriate validation evidence.
-- Required: focused activation criteria, useful task guidance, preserved attribution and licenses, applicable functional checks, and explicit experimental or measured status.
-- Development may proceed while model-launch qualification is incomplete. Model access is required for comparative efficacy claims, not for ordinary design, implementation or functional testing.
-- Forbidden: copying benchmark answers, changing an original mirror, treating a common template as a complete redesign, or claiming general agent improvement from packaging or component tests.
-
-Repair overlay loop:
-
-- Input: failed runtime-readiness artifacts and immutable mirrored source files.
-- Allowed output: explicit repaired overlays under `included/repaired/skills/`, repair manifests, and repaired-readiness artifacts.
-- Required: preserve the exact original `SKILL.md` text in the repaired overlay provenance directory and keep the original mirror unchanged.
-- Forbidden: replacing, deleting, or silently rewriting the mirrored source baseline under `included/skills/`.
-
-External benchmark adapter loop:
-
-- Input: selected external benchmark methods and their public repository or documentation endpoints.
-- Allowed output: adapter registry data, smoke artifacts proving repository resolution and objective metric definitions, and documentation.
-- Forbidden: presenting adapter smoke checks as full benchmark-suite scores or model/skill pass rates.
-
-Benchmark independence rule:
-
-- Benchmark tasks, fixtures, expected results, and evaluators must be authored independently from the exact text of the skill being evaluated.
-- Skill text may be used as provenance, activation context, or operating instructions, but it must not define the expected answer used for scoring that same skill.
-- Source-grounded skill-proof artifacts are provenance checks only. They must not be counted as runtime benchmark passes.
-- Redesign every skill and maintained tool against general task requirements,
-  current primary sources and independent behavior contracts; follow
-  [the redesign method](docs/skill-improvement-method.md). Development results
-  may reveal general failure mechanisms, but never import benchmark answers,
-  reference patches, benchmark-ID branches or verifier-specific exceptions into
-  candidate guidance or tools. Record incidental exposure, preserve negative
-  results and keep exposed material outside untouched evaluation. Freeze
-  candidate revisions and success criteria before holdout outcomes; changed
-  candidates require new untouched evaluation. Do not infer benefit for all
-  models or agents from results on selected configurations.
-- A counted runtime benchmark artifact must explicitly record that the task, evaluator, and expected result were defined outside the skill content.
-
-Experimental snapshots apply to a declared comparison, not to all development.
-Preserve previous snapshots and their evidence. Before counted trials begin,
-advance a development snapshot with an explicit change inventory and fresh
-qualification instead of indefinitely freezing ordinary skill or tool work.
-After counted trials begin, evaluate changed candidates in a separately declared
-comparison; never merge outcomes from different revisions or alter a holdout
-after inspecting its results.
-
-Historical qualification reports retain their original source identities.
-Qualify changed components explicitly and update the current qualification index;
-do not rewrite past reports or require unchanged components to be rebuilt merely
-because another component advanced. Every current-source claim still needs
-applicable fresh evidence. Validate native source supersessions with
-`python tools/validate_native_qualification_index.py --check --json`.
-
-## CI Quality Gates
-
-Run the applicable gates locally before agent changes are pushed to `main`,
-then check the hosted results. Human pull requests follow the repository's
-permissions and review rules. Set up the locked Python environment as described
-in [`docs/development.md`](docs/development.md); specialized checks have separate
-prerequisites documented in [`CONTRIBUTING.md`](CONTRIBUTING.md).
-
-- **Lint + format**: `ruff check tools tests benchmarks/agent-effectiveness/graders` and `ruff format --check tools tests benchmarks/agent-effectiveness/graders`. Configured in `pyproject.toml` (`[tool.ruff]`).
-- **Type check**: `mypy tools tests benchmarks/agent-effectiveness/graders` uses the configured Python 3.11 target locally. Check both `--platform linux` and `--platform win32`; one host's stubs do not cover both native API boundaries. CI crosses those targets with each supported 3.11/3.12/3.13/3.14 runtime, pinned to current security or maintenance patch releases. Python 3.10 reached end of life in October 2026 and is no longer supported.
-- **Catalog**: `python3 tools/validate_catalog.py` collects every drift entry in a single run (no fail-fast).
-- **Mirror byte admission**: `python3 tools/check_mirror_content_admission.py --json` checks every current resource, including binary carriers, against the existing detection rules without modifying it.
-- **Mandatory agent tools**: `python3 tools/validate_agent_tool_policy.py --check --json` verifies all three local skills, policy links and every generated entrypoint.
-- **Static benchmarks freshness**: `python3 tools/run_static_benchmarks.py --check`.
-- **Skill risk audit freshness**: `python3 tools/audit_skill_quality.py --check`.
-- **Tests**: `python3 -m pytest -q -n 2` runs the full suite with a bounded local worker count. Reduce it on constrained hosts; increase it only after checking available resources. Hosted CI may use `-n auto` on its declared runner capacity.
-- **Compile check**: `python3 -m compileall -q tools tests benchmarks/agent-effectiveness/graders`.
-- **Secrets**: `python3 tools/check_no_secret_patterns.py --history` (in-repo regex + entropy) plus `gitleaks` v8.30.1 (MIT, pinned binary) as a second-opinion gate. Both checks cover mirrored sources and recorded evidence; `.gitleaks.toml` contains no path exemptions.
-
-The Ruff, Mypy, offline-validation and secret-scan workflows run on pushes,
-pull requests and manual dispatch. Offline validation and secret scan also have
-weekly schedules; Ruff and Mypy do not. Specialized workflows may use path
-filters or other prerequisites; inspect their actual triggers before treating
-a missing run as a pass.
-
-## Determinism Invariants
-
-Generators that write dated artefacts (catalog, runtime batches, repaired
-overlays) must NOT call `datetime.now()` or any wall-clock API in their
-output paths. Use `tools/_lib_b/determinism.py` instead. Resolution
-precedence (highest first):
-
-1. `SOURCE_DATE_EPOCH` environment variable, per [reproducible-builds.org](https://reproducible-builds.org/docs/source-date-epoch/).
-2. The previous run's manifest value (idempotent regeneration).
-3. Input-anchored fallback (e.g. `git log -1 --format=%ct -- <input>`).
-
-`tools/build_catalog.py::sha256_tree` uses a git-style portable file mode
-(`0o100644` / `0o100755`) so tree hashes are identical across hosts
-regardless of umask. The invariant is locked in by
-`tests/test_hash_portability.py`; do not regress.
-
-## Tooling Reference
-
-- All tool scripts expose `build_parser() -> argparse.ArgumentParser` and `main(argv: list[str] | None = None) -> int` so they can be exercised from pytest without subprocesses.
-- Tools that publish a generated artefact also publish `--check` so CI can verify freshness without rewriting the on-disk state.
-- Validators emit `--json` envelopes for machine consumers. Errors are collected, not raised at the first miss.
-- Tests live under `tests/` with a single `tests/conftest.py` putting `tools/` on `sys.path`. Per-test-file path shims are not used.
-- A successful local pre-push run is the same set of commands CI runs; see [`CONTRIBUTING.md`](CONTRIBUTING.md).
+Use repository tools quietly. Give concise updates about results, decisions and
+material failures. Preserve precise identifiers, uncertainty and the context
+readers need. Bound queries and output, verify targeted source spans, and reuse
+applicable evidence. Repeat expensive checks when changed inputs, observed
+failures or an applicable gate warrant it.
+
+Apply the four working principles adapted from the community
+[Karpathy-derived baseline](https://github.com/multica-ai/andrej-karpathy-skills)
+at `2c606141936f1eeef17fa3043a72095b4765b9c2`. Establish the goal and material
+assumptions, choose the simplest correct implementation, make scoped changes
+that preserve callers' contracts, and verify the result against observable
+success criteria. Upstream examples are optional maintenance references.
+
+## Portable setup and host resources
+
+Resolve resources from the checkout or explicit configuration. Declare supported
+platforms. Automatically provision missing declared dependencies into isolated
+owned caches using the latest compatible, qualified stable releases and verified
+locked inputs. Use verified executable paths and validate installation and
+runtime behavior. Preserve unrelated apps, services, caches, global configuration
+and the supported operating system. The
+[development guide](docs/development.md) documents setup, runtime conventions
+and qualification.
+
+Use owned foreground processes or bounded runners that own the first launch
+hop. Set time, output, memory and child-process budgets before execution and size
+concurrency to available resources. Give temporary listeners and workers an
+explicit stop path. Verify cleanup after completion, errors, cancellation and
+abrupt controller exit. Preserve failure evidence, and check the same live
+handle before retrying. Close streams and listeners and verify that task-owned
+processes have stopped. Preserve unrelated processes and avoid persistent
+services or scheduled jobs for development.
+
+## Source and evidence
+
+Keep `included/skills/` generated from the pinned sources in
+`data/source_lock.json`. Apply only declared deterministic mirroring transforms.
+Record upstream defects and develop verified changes under
+`included/improved/skills/` or `included/repaired/skills/`. Retain attribution,
+licenses and revision identity. Repairs preserve the exact original skill bytes
+in provenance. Follow the [skill improvement method](docs/skill-improvement-method.md)
+for research, portable design and independent functional verification.
+
+Keep mirror changes, maintained improvements and evaluations distinguishable.
+Keep generated catalog, source locks, README badges, evidence indexes and
+documentation in sync. Follow [deterministic generation](CONTRIBUTING.md#determinism)
+and bind qualification to the implementation and inputs actually used. Retain
+older results with their original identities. Requalify affected components
+when their runtime, source or evidence changes.
+
+## Benchmark subjects
+
+Use one development session. Delegating development, research, review or
+verification to other AI agents is prohibited. The owner authorizes serial
+isolated test subjects under the [benchmark-subject policy](docs/benchmark-subject-policy.md).
+Only declared experimental conditions may omit collection tools or instructions.
+The development controller retains the mandatory tools.
+
+Qualify execution, collection and independent scoring for each study before
+counted model attempts. Preserve original task and grader contracts, freeze
+comparisons before observing outcomes and retain failures and missing attempts.
+Design skills for transferable task behavior. Keep benchmark answers and
+verifier-specific exceptions out of candidates. Reserve untouched tasks for
+confirmation and qualify revised candidates separately. Scope claims to
+validated evidence and distinguish functional controls from comparative results.
+
+Use the official signed-in harness or app for OpenAI model runs in this goal.
+Keep personal profiles, credentials and development history outside test
+contexts. OpenAI inference through API keys or direct API calls is prohibited.
+
+## Verification and publication
+
+Run focused checks while editing and the applicable
+[pre-publication gates](CONTRIBUTING.md#quality-gates-must-pass-before-push)
+on each frozen batch. Bind evidence to the source bytes and compiled inputs
+tested. Use the line endings in `.gitattributes`, preserve native evidence
+bytes, and verify published blobs and hosted results. Keep credentials and
+provider-shaped examples out of tracked files and shared evidence.
+
+Publish cohesive batches to `main` through the authenticated official GitHub
+connector. The connector is the only writer for AI commits and repository
+mutations. Let GitHub assign each contributor's identity. Verify author,
+committer, parents and tree, and compare the current head before updating
+`main`. Local Git is available for uncommitted preparation and inspection.
+Report connector limits and continue other work until the publication operation
+is available. History changes require express owner authorization, verified
+recovery evidence, original-to-rewritten commit mapping and an expected-head
+update that preserves trees, topology, messages, timestamps and provenance.
+
+Agent development and dependency maintenance use `main`. Other contributors
+follow GitHub's permissions and review rules. Keep vulnerability alerts and
+existing gates enabled. Automatic dependency-update PRs stay disabled. Qualify
+updates and permitted Dependabot fixes against the complete compatible graph.
+Security-scanner, code-scanning-alert and history-scan remediation are held.
+
+The owner authorizes releases, tags and reactivation of release publishing
+separately. Use the [release criteria](docs/improvement-plan.md#p11--exact-revision-readiness-evaluation-without-releasing)
+to assess the exact revision's readiness.

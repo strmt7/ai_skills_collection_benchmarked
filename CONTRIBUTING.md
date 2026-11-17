@@ -1,8 +1,8 @@
 # Contributing
 
 This repository separates source mirroring, maintained skill/tool improvements,
-repairs and independent evaluation. Read [`AGENTS.md`](AGENTS.md) before any change
-that touches more than one of those loops.
+repairs and independent evaluation. Read [the repository instructions](AGENTS.md)
+before working on the collection.
 
 For skill installation and use, start with the
 [user documentation](docs/README.md). To maintain this collection, use
@@ -42,7 +42,7 @@ their linked instructions and actual triggers.
 | Frontend component evidence | `python3 benchmarks/component-controls/frontend/prepare.py --check` | `.github/workflows/offline-validation.yml` |
 | API/backend component evidence | `python3 benchmarks/component-controls/backend/prepare_backend.py --check` | `.github/workflows/offline-validation.yml` |
 | Native fuzzing evidence | `python3 benchmarks/component-controls/native-testing/run_native.py --check`; [Windows runtime controls](docs/research-native-testing-contracts.md) | `.github/workflows/{offline-validation,native-fuzzing-controls}.yml` |
-| Measured Python coverage | Complete matrix XML bundle, source hashes and Codecov OIDC; see [coverage scope](docs/coverage.md) | `.github/workflows/offline-validation.yml` |
+| Measured Python coverage | [Measured full-suite command](docs/coverage.md#run-tests-with-coverage), matrix XML bundle, source hashes and Codecov OIDC | `.github/workflows/offline-validation.yml` |
 | Tests | `python3 -m pytest -q -n 2` (supported matrix: 3.11/3.12/3.13/3.14; adjust workers to available resources) | `.github/workflows/offline-validation.yml` |
 | Compile | `python3 -m compileall -q tools tests benchmarks/agent-effectiveness/graders` | `.github/workflows/offline-validation.yml` |
 | Image CLI acceptance | Source-locked preparation, `npm ci --ignore-scripts`, audit and independent intercepted controls; see [`repair evidence`](docs/research-image-cli-acceptance.md) | `.github/workflows/image-cli-controls.yml` |

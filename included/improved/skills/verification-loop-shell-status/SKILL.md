@@ -52,6 +52,12 @@ wrapper when needed. For cmdlets, inspect their own success or error behavior:
 nonzero exits; check the host and its native-command preference. Do not assume
 POSIX and PowerShell pipeline behavior is identical.
 
+Test an output wrapper through the actual ways callers consume it. A visible
+console line can bypass assignment, a pipeline or redirection. Exercise each
+supported consumer with structured output, a failure diagnostic and a nonzero
+exit. Verify that the consumer receives usable data and that the exit reaches
+its caller. Compare captured bytes separately when exact bytes are a contract.
+
 Record the exact command, environment/tool versions, input revision/signatures,
 status, diagnostics and artifact location. Distinguish failure, timeout, abort,
 skipped, unavailable and not-run from passed. Retain the first failure and its

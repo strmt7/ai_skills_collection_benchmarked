@@ -139,13 +139,15 @@ all 30 contributing upstreams or prove baseline quality.
    programs, dependencies, examples, licenses and failure behavior need their own
    dispositions. An inventory is not a review, and a passing example is not a
    complete skill evaluation.
-3. **Model transport remains unqualified.** The latest public local calibration
-   loaded the intended gpt-oss:20b weights and 65,536-token context but timed out
-   after 180.089 seconds with a missing-cmd parser error and no completed command.
-   Its score is null. Raw tool arguments were not retained; do not invent their
-   shape or claim inference succeeded. Native opt-in tracing is a prospect to
-   qualify, not a completed remedy. The requested signed-in GPT-6.1 high route
-   remains separately open because actual personal instructions violate isolation.
+3. **Counted model trials remain unqualified.** The scripted native packaging
+   boundary passed its context and execution controls. The live Qwen3 1.7B
+   probe loaded the pinned CPU model at a 16,384-token context. The official
+   harness completed the turn and delivered one command, which exited 1 because
+   the model chose a placeholder script path. The required file was absent.
+   Retain the raw trace and failed, unscored attempt. The earlier gpt-oss:20b run
+   timed out after 180.089 seconds with a missing required `cmd` field. Its later
+   preflights also stopped before inference. The requested official signed-in
+   GPT-6.1 Sol high route awaits a clean, isolated authenticated context.
 4. **Original task graphs are incomplete.** Node file-loader metadata access,
    Go, Faiss/CUDA, Nx/pnpm and complete original build/test/collection stages need
    qualification. An AMD GPU does not establish CUDA compatibility. Preserve the
@@ -187,20 +189,24 @@ developers or reviewers. Normal development retains all mandatory tools. OpenAI
 runs use the official app/harness with existing sign-in only; no OpenAI API key,
 credential copying or direct OpenAI request is permitted.
 
-The critical path is P1 + P2 → P4 → P5 → P6 → P10 → P11. P3 and P7 advance
-independently where their inputs permit. P8 remains held and blocks final
-readiness. P9 repeats for cohesive qualified batches; it does not wait for the
-entire project, and a push does not complete any scientific gate.
+The critical path for each benchmark study is its P1 execution route and P2
+task qualification, followed by P4 development runs, P5 iteration and P6
+confirmation. A study can proceed when its own dependencies pass. An unresolved
+Faiss, Go or Node environment in the fixed SWE-Skills-Bench pilot does not hold
+up another independently selected study. P6 requires P3 acceptance for the
+candidate and resources it evaluates. P11 still requires the full catalog
+disposition, final refactor, delivery checks and closure of held work. P9 repeats
+for cohesive qualified batches.
 
 | Package | Current state | Dependencies | Exit condition |
 | --- | --- | --- | --- |
 | P0: state and plan | Complete for the assessment | None | Source-bound overview and synchronized active work order |
 | P1: model execution | Active | P0 | Qualified real model-to-tool-to-artifact route, isolation, cleanup and admission |
-| P2: development protocol | Active | P0 | All 12 original task graphs and prospective comparison/analysis contract |
+| P2: development protocol | Active | P0 | Each study's native task graphs and frozen comparison and analysis contract. The original pilot retains all 12 graphs. |
 | P3: every-skill redesign | Active | P0 | Complete accounted-for research/resource/revision dispositions; evaluation still needs its gates |
-| P4: discriminating pilot | Pending | P1, P2 | Complete matched development attempts, native scoring and honest feasibility/result analysis |
+| P4: development comparisons | Pending | P1 and P2 for each study | Complete matched attempts and native scoring for the declared population |
 | P5: iterative improvement | Pending | P4 | Transferable revisions, controlled ablations and independent development transfer |
-| P6: confirmation | Pending | P3, P5 | Untouched, frozen, adequately powered confirmation against both baselines |
+| P6: confirmation | Pending | P3 for the candidate and P5 for the study | Untouched, frozen, adequately powered confirmation against both baselines |
 | P7: delivery engineering | Active | P0 | Current compatible graphs, supported installation/recovery, coverage and hosted quality |
 | P8: security/scanners | Held | P0 plus restored owner scope | Reconciled inventories and verified authorized remediation; no suppression |
 | P9: publication checkpoint | Active, repeatable | P0 and applicable batch gates | Verified connector publication and every triggered hosted result retained |
@@ -216,20 +222,26 @@ Do not wait on a supposed publisher job without an actual job identity.
 
 ### Immediate work sequence
 
-1. Finish the launcher stream repair, app-local LLVM deployment and current
-   action pin. Qualify actual public commands, unchanged native controls, source
-   freshness and the full nonheld publication checks. Keep held failures visible.
-2. Publish this cohesive batch using the official connector, verify the exact
-   tree and attribution, synchronize the local cache and wait for all triggered
-   workflows. Diagnose ordinary failures; record held scanner failures separately.
-3. Qualify native opt-in raw tool-dispatch diagnostics against scripted peers;
-   then run a prospectively specified public transport calibration. Preserve
-   the old timeout and do not retry inference blindly or change pilot budgets.
-4. Complete the original twelve runtime graphs and P2 admission without changing
-   task membership or grading semantics. Continue P3's next bounded skill batch
-   alongside dependency-ready qualification work.
-5. Execute P4 only after P1/P2 admission. Let independent development evidence
-   guide general revisions and a separately frozen confirmation study.
+1. The launcher stream repair, app-local LLVM deployment and setup-go pin
+   passed 20 local gates and were published in
+   [b20d0e1c](https://github.com/strmt7/ai_skills_collection_benchmarked/commit/b20d0e1c6a1195a1784ca21290fbf141bec078c1).
+   All 19 observed runs on this revision finished, including two later
+   scheduled runs. Seventeen passed. CodeQL and Secret scan failed under the
+   current hold. Codecov processed this revision at 70.19%.
+2. Keep coverage explicit in full measured runs and use focused tests during
+   development. Bind context qualification to its runtime dependencies. Retain
+   the current native replay and prior independent verification-skill controls
+   under their exact source identities.
+3. Preserve the smaller model's failed live probe and its four passing scripted
+   controls. Qualify the approved signed-in route in a clean context. Resolve
+   runtime and collection defects independently of whether a model solves a task.
+4. Continue the original twelve runtime graphs and the separately scoped
+   SkillsBench v1.1 build-recovery study. The two selected public task IDs are
+   `fix-build-agentops` and `fix-build-google-auto`. Their publisher bytes and
+   task and scorer admission remain part of P2. Keep this frame outside
+   untouched confirmation.
+5. Execute each P4 study when its own P1/P2 evidence passes. Let independent
+   development evidence guide general revisions and a frozen confirmation study.
 
 ## P1 — qualify one complete model-execution route
 
@@ -280,7 +292,7 @@ collect its artifact and terminate cleanly. Metadata probes are insufficient.
 requested/reported model identity, isolation proof, full source-bound admission,
 resource/cleanup receipts and a tested replay command. No efficacy claim follows.
 
-## P2 — qualify the original tasks and freeze the experiment
+## P2 — qualify each study and freeze its experiment
 
 1. **P2.1: preserve the frame.** Retain the original 12 task identities, selection
    receipt, source commits and 36 prospective B0/BK/BC attempts. Preserve earlier
@@ -315,15 +327,19 @@ resource/cleanup receipts and a tested replay command. No efficacy claim follows
    effect criteria and stopping rules. For the pilot, emphasize feasibility and
    effect uncertainty; twelve tasks do not automatically provide adequate power.
    Timestamp and hash the exact protocol and candidate versions.
-7. **P2.7: admit the complete experiment.** Validate all task/runtime/scorer graphs,
-   isolation, storage limits, cleanup and budget feasibility together. Do not
-   promote a subset of successful component controls into complete admission.
-   Report an unresolved hardware/runtime need explicitly while independent P3
-   research continues.
+7. **P2.7: admit the declared study.** Validate its included task/runtime/scorer
+   graphs, isolation, resource limits, cleanup and budget feasibility together.
+   Use the same frozen evidence boundaries for each external method. Qualify a
+   newly selected independent study in its own versioned declaration. Its
+   selection policy must be fixed before candidate outcomes and retain projected
+   coverage and excluded capabilities. Report it with that study's denominator.
+   The original 12-task pilot's admission and results remain separate.
 
-**Exit evidence:** twelve task/runtime manifests, native positive/negative scorer
-results, original aggregation proof, frozen condition packages, prospective
-analysis contract and successful complete admission. No model score exists yet.
+**Exit evidence:** a frozen population, task/runtime manifests, native positive
+and negative scorer results, original aggregation proof, frozen conditions,
+prospective analysis and complete admission for that study. The original pilot
+requires all twelve task/runtime manifests. A different study's result cannot
+close that requirement.
 
 ## P3 — research and redesign every skill and maintained tool
 

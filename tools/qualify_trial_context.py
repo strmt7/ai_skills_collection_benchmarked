@@ -22,20 +22,26 @@ from _windows_appcontainer import checked_path
 from _windows_trial_process import run_owned
 
 ROOT = Path(__file__).resolve().parents[1]
+# Files in the context checks' runtime import graph. Catalog-only changes are independent.
 SOURCES = (
-    "tools/qualify_trial_context.py",
-    "tools/_trial_context.py",
+    "tools/_lib_b/__init__.py",
+    "tools/_lib_b/io_utils.py",
     "tools/_trial_catalog.py",
+    "tools/_trial_collection_policy.py",
+    "tools/_trial_context.py",
+    "tools/_trial_declarations.py",
+    "tools/_trial_protocol.py",
     "tools/_trial_provider.py",
     "tools/_trial_rpc.py",
-    "tools/_windows_trial_process.py",
-    "tools/_windows_appcontainer.py",
-    "tools/_windows_owned_python.py",
+    "tools/_trial_signin.py",
     "tools/_trial_transcript.py",
-    *(
-        f"tools/_lib_b/{name}.py"
-        for name in ("__init__", "determinism", "frontmatter_utils", "hashing", "io_utils", "logging_utils")
-    ),
+    "tools/_windows_appcontainer.py",
+    "tools/_windows_directory_reader.py",
+    "tools/_windows_owned_python.py",
+    "tools/_windows_storage_budget.py",
+    "tools/_windows_submission_reader.py",
+    "tools/_windows_trial_process.py",
+    "tools/qualify_trial_context.py",
 )
 MARKERS = {"global": "CONTEXT_GLOBAL_680ef4", "project": "CONTEXT_PROJECT_e34321", "skill": "CONTEXT_SKILL_a4d36c"}
 INTERVENTION = "CONTEXT_INTERVENTION_26f9a1"
@@ -439,7 +445,7 @@ def qualify(cli: Path, python: Path, roots: tuple[Path, ...], output: Path, *, g
 def check(output: Path) -> dict[str, Any]:
     record = strict_json((output / "qualification.json").read_text(encoding="utf-8"))
     if not isinstance(record, dict) or any(
-        not isinstance(record.get(key), dict) for key in ("checks", "evidence_sha256")
+        not isinstance(record.get(key), dict) for key in ("checks", "evidence_sha256", "source_sha256")
     ):
         raise ValueError("Invalid qualification record")
     errors = []
@@ -451,8 +457,15 @@ def check(output: Path) -> dict[str, Any]:
         or record.get("model_inferences") != 0
     ):
         errors.append("invalid context-only qualification scope")
-    if record.get("source_sha256") != sources():
-        errors.append("context qualification sources changed")
+    recorded_sources = record["source_sha256"]
+    current_sources = sources()
+    changed_sources = sorted(
+        name
+        for name in recorded_sources.keys() | current_sources.keys()
+        if name not in current_sources or recorded_sources.get(name) != current_sources[name]
+    )
+    if changed_sources:
+        errors.append("Context qualification sources changed in " + ", ".join(changed_sources))
     binding = strict_json((output / "source-binding.json").read_text(encoding="utf-8"))
     if not isinstance(binding, dict) or any(
         binding.get(key) != record.get(key)
@@ -469,7 +482,7 @@ def check(output: Path) -> dict[str, Any]:
         if not target.is_relative_to(output.resolve()) or digest(target) != expected:
             errors.append("native evidence changed: " + name)
     recomputed = observed_checks(output)
-    recomputed["sources_unchanged"] = record.get("source_sha256") == sources()
+    recomputed["sources_unchanged"] = not changed_sources and sources() == current_sources
     if (
         record.get("ok") is not True
         or record.get("checks") != recomputed
