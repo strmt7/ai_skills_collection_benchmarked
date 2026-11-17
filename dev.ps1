@@ -55,5 +55,39 @@ if ($Operation -eq 'codex') {
     $json=ConvertTo-Json -InputObject @($CommandArguments) -Compress
     $parameters+=@('-CommandBase64',[Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($json)))
 } elseif ($CommandArguments.Count -gt 0) { throw 'The doctor operation accepts no command arguments' }
-& $shell @parameters
-exit $LASTEXITCODE
+# Own the first bootstrap process too: an unowned first hop survives abrupt
+# termination of this frontend even when its later descendants use jobs.
+function Frontend-NativePath([string]$Path) {
+    $full=[IO.Path]::GetFullPath($Path)
+    if ($full.StartsWith('\\?\')) { return $full }
+    if ($full.StartsWith('\\')) { return '\\?\UNC\'+$full.Substring(2) }
+    return '\\?\'+$full
+}
+$bootstrapHome=Join-Path $Root 'toolchains/bootstrap'
+$utf8=New-Object Text.UTF8Encoding($false)
+$supervisorPin=[IO.File]::ReadAllText((Frontend-NativePath (Join-Path $bootstrapHome 'supervisor.json')),$utf8) | ConvertFrom-Json
+$supervisorBytes=[IO.File]::ReadAllBytes((Frontend-NativePath (Join-Path $bootstrapHome 'NativeSupervisor.dll')))
+$sourceBytes=[IO.File]::ReadAllBytes((Frontend-NativePath (Join-Path $bootstrapHome 'OwnedProcess.cs')))
+$hasher=[Security.Cryptography.SHA256]::Create()
+try {
+    $assemblyDigest=[BitConverter]::ToString($hasher.ComputeHash($supervisorBytes)).Replace('-','').ToLowerInvariant()
+    $sourceDigest=[BitConverter]::ToString($hasher.ComputeHash($sourceBytes)).Replace('-','').ToLowerInvariant()
+} finally { $hasher.Dispose() }
+if ($supervisorPin.schema_version -ne 1 -or $supervisorBytes.Length -ne $supervisorPin.assembly_bytes -or $assemblyDigest -cne $supervisorPin.assembly_sha256 -or $sourceDigest -cne $supervisorPin.source_sha256) { throw 'The native supervisor differs from its source or binary pin' }
+[void][Reflection.Assembly]::Load($supervisorBytes)
+$environment=New-Object 'System.Collections.Generic.Dictionary[string,string]' ([StringComparer]::OrdinalIgnoreCase)
+foreach ($item in [Environment]::GetEnvironmentVariables('Process').GetEnumerator()) {
+    $environment.Add([string]$item.Key,[string]$item.Value)
+}
+$diagnostics=Join-Path ([IO.Path]::GetTempPath()) ('ai-skills-frontend-'+[Guid]::NewGuid().ToString('N'))
+[void][IO.Directory]::CreateDirectory((Frontend-NativePath $diagnostics))
+$stdout=Join-Path $diagnostics 'stdout.native'; $stderr=Join-Path $diagnostics 'stderr.native'
+$frontendMemoryBytes=[long]([Math]::Max(8,$commandMemoryGiB+4))*1GB
+$resources=@{source_root=$Root; memory_limit_bytes=$frontendMemoryBytes; command_memory_limit_bytes=([long]$commandMemoryGiB*1GB); scope='Owned first bootstrap hop; limits are ceilings, not reservations'}
+[IO.File]::WriteAllText((Frontend-NativePath (Join-Path $diagnostics 'resources.json')),($resources | ConvertTo-Json),$utf8)
+$result=[SkillsBootstrap.OwnedProcess]::Run($shell,[string[]]$parameters,$Root,$environment,$stdout,$stderr,3600,16777216,$frontendMemoryBytes,256)
+[IO.File]::WriteAllText((Frontend-NativePath (Join-Path $diagnostics 'process.json')),($result | ConvertTo-Json),$utf8)
+[Console]::Out.Write([IO.File]::ReadAllText((Frontend-NativePath $stdout),$utf8))
+[Console]::Error.Write([IO.File]::ReadAllText((Frontend-NativePath $stderr),$utf8))
+if ($null -ne $result.termination_reason -or $result.active_processes_after_cleanup -ne 0) { throw "Frontend bootstrap did not complete normally; diagnostics: $diagnostics" }
+exit $result.exit_code

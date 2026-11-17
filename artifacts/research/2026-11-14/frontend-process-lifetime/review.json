@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "scope": "First-hop bootstrap ownership after abrupt frontend termination; normal output/exit status and declared limits",
+  "source_sha256": {
+    "dev.ps1": "50c4a15b9d7a0cf084af7cf37241ffb780700e79205067d7f3ad57d3ead93cd4",
+    "AGENTS.md": "799a7ad3d744908527087ea3d030c91dd96cfa9e5c5b275ee5695b80538d2f9d",
+    "toolchains/bootstrap/README.md": "9a1c808ea8f21ea91a4fba6d143bbe1b7e8c76fb9f76f10f8b6cdac725fba150",
+    "tests/test_frontend_ownership.py": "f970af3ae87a95f7defe773b42133fe0b26cfd5a04a301c7d366483e189eab8e"
+  },
+  "artifacts": {
+    "observations.json": "c58ea2d1b4ebc8000074a3ae0ddc004b0f7d3dda4deacd28b10eaebc01db2e4f"
+  },
+  "native_lifetime_controls_qualified": true,
+  "full_suite_passed": false,
+  "selected_task_builds_qualified": false,
+  "model_invocations": 0,
+  "counted_attempts": 0,
+  "model_improvement_established": false
+}

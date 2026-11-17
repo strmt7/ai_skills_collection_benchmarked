@@ -26,11 +26,16 @@ profiles are preserved when a missing or changed component needs recovery.
 Concurrent setup requests share one installation.
 
 Development commands default to a 4 GiB aggregate memory ceiling; the enclosing
-PowerShell handoff permits 6 GiB. For an operation with a separately qualified
+PowerShell handoff permits 6 GiB and the first bootstrap hop permits 8 GiB.
+The frontend assigns that first hop to an owned Windows job before it starts,
+so terminating the frontend also stops bootstrap descendants. For an operation with a separately qualified
 larger resource budget, put `--command-memory-gib 18` before `python`. The integer
 range is 1–32 GiB. The selected command ceiling propagates through the handoff,
-which retains at least 2 GiB of additional headroom. Both limits are recorded in
-the diagnostics. This option applies only to the `python` operation.
+which retains at least 2 GiB of additional headroom. The first hop retains another
+2 GiB. Limits are recorded in the diagnostics. First-hop records are retained
+under the selected temporary directory in `ai-skills-frontend-<unique-id>`;
+command and handoff records remain in the managed cache. This option applies
+only to the `python` operation.
 
 These limits are ceilings, not memory reservations. The selected operation must
 still check available host resources and enforce its own bounds. A nested 16 GiB

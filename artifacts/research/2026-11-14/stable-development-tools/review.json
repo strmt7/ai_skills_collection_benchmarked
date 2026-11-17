@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "scope": "Exact canonical two-tool update and latest-compatible development graph workflow declaration; local isolated test/lint/build graph only",
+  "source_sha256": {
+    "requirements-dev-lock.txt": "f6f4bd49c0947319a7de3e2be51967ed2c2e0f5b1d9393131fe236eaf29d494a",
+    ".github/workflows/offline-validation.yml": "ee27fb21006f27353ca964ddb5987fca5d7139de658ccffcd6e8325c695d2e0b"
+  },
+  "artifacts": {
+    "observations.json": "ab6b8c0074316e5ad8b79d162fb3508b9ab2b566f006d3ad3ab197ab07b94d6f"
+  },
+  "candidate_graph_qualified": true,
+  "full_managed_reports_installation_qualified": false,
+  "hosted_workflow_execution_qualified": false,
+  "model_improvement_established": false
+}

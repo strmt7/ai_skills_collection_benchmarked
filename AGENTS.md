@@ -105,6 +105,11 @@ Reduce context and repeated work without reducing reasoning quality:
 ## Process and host resource lifecycle
 
 Keep every task-owned process bounded and accountable throughout development.
+Ownership must include the first launcher hop. Verify abrupt frontend/controller
+termination with a live descendant; successful cleanup after an ordinary return
+does not prove cleanup when the parent dies. Reuse the exact admitted provider
+and foundation cache for bounded research; changing caches can trigger a separate
+installation and is not a remedy for a stale source index.
 Use the repository's owned-process runners with time, output, memory and child
 process limits. Retain actual cleanup results. Track ownership through the
 launch handle, process identity and creation time; a process name alone is

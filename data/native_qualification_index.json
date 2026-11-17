@@ -33,8 +33,7 @@
       },
       "sources": [
         "tools/validate_native_qualification_index.py",
-        "tests/test_native_qualification_index.py",
-        ".github/workflows/offline-validation.yml"
+        "tests/test_native_qualification_index.py"
       ]
     },
     {
@@ -44,7 +43,6 @@
         "sha256": "f04a82d9d333212282a865dd78af3920ae0f38d3d4616ea2f30100b9a37b871e"
       },
       "sources": [
-        "AGENTS.md",
         "CONTRIBUTING.md",
         "docs/skill-improvement-method.md"
       ]
@@ -204,10 +202,32 @@
         "sha256": "5386596e9fda519f44eca8e890f79eb278a190216acbd5ee5758f0156203b5a0"
       },
       "sources": [
-        "dev.ps1",
         "toolchains/bootstrap/bootstrap.ps1",
-        "toolchains/bootstrap/README.md",
         "tests/test_bootstrap_runtime.py"
+      ]
+    },
+    {
+      "id": "frontend-process-lifetime",
+      "review": {
+        "path": "artifacts/research/2026-11-14/frontend-process-lifetime/review.json",
+        "sha256": "dc1ffacd7ab9b40ad1be7f57d49284fc7f5db2d2dfa017bada2ca531b215a511"
+      },
+      "sources": [
+        "dev.ps1",
+        "AGENTS.md",
+        "toolchains/bootstrap/README.md",
+        "tests/test_frontend_ownership.py"
+      ]
+    },
+    {
+      "id": "stable-development-tools",
+      "review": {
+        "path": "artifacts/research/2026-11-14/stable-development-tools/review.json",
+        "sha256": "9a14f441f4389465e21650a15300f0f683fcf7ac75abdcf41fd73595cc338faf"
+      },
+      "sources": [
+        "requirements-dev-lock.txt",
+        ".github/workflows/offline-validation.yml"
       ]
     }
   ],
@@ -221,6 +241,7 @@
         ".gitattributes",
         ".github/workflows/offline-validation.yml",
         "dev.ps1",
+        "requirements-dev-lock.txt",
         "toolchains/bootstrap/bootstrap.ps1",
         "tools/_native_benchmark_runtime.py",
         "tools/_trial_catalog.py",
@@ -263,6 +284,8 @@
         "sha256": "f04a82d9d333212282a865dd78af3920ae0f38d3d4616ea2f30100b9a37b871e"
       },
       "superseded_sources": [
+        ".github/workflows/offline-validation.yml",
+        "AGENTS.md",
         "docs/improvement-plan.md",
         "tests/test_windows_trial_process.py"
       ]
@@ -345,6 +368,16 @@
       },
       "superseded_sources": [
         "data/development_plan.json"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-14/bootstrap-command-resources/review.json",
+        "sha256": "5386596e9fda519f44eca8e890f79eb278a190216acbd5ee5758f0156203b5a0"
+      },
+      "superseded_sources": [
+        "dev.ps1",
+        "toolchains/bootstrap/README.md"
       ]
     }
   ]

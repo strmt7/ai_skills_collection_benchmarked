@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "baseline": {
+    "revision": "2297dd001c9483e91b4efd2240209b71b336a1d8",
+    "assertion_failed": "A bootstrap process outlived its terminated frontend",
+    "all_known_descendants_stopped_after_failure": true
+  },
+  "repair": {
+    "first_hop_owned_before_resume": true,
+    "kill_on_close_job": true,
+    "uses_existing_source_and_binary_admitted_supervisor": true,
+    "default_command_gib": 4,
+    "default_handoff_gib": 6,
+    "default_first_hop_gib": 8,
+    "first_hop_maximum_processes": 256,
+    "first_hop_timeout_seconds": 3600,
+    "output_limit_bytes": 16777216
+  },
+  "native_controls": [
+    {
+      "name": "test_terminating_frontend_stops_first_bootstrap_and_descendant",
+      "passed": true,
+      "seconds": 1.448
+    },
+    {
+      "name": "test_frontend_preserves_output_exit_status_and_declared_limits[None]",
+      "passed": true,
+      "seconds": 1.161
+    },
+    {
+      "name": "test_frontend_preserves_output_exit_status_and_declared_limits[18]",
+      "passed": true,
+      "seconds": 1.086
+    }
+  ],
+  "source_bound_checks": [
+    {
+      "id": "lint",
+      "passed": true,
+      "cleanup_processes": 0
+    },
+    {
+      "id": "format",
+      "passed": true,
+      "cleanup_processes": 0
+    },
+    {
+      "id": "types-win32",
+      "passed": true,
+      "cleanup_processes": 0
+    },
+    {
+      "id": "types-linux",
+      "passed": true,
+      "cleanup_processes": 0
+    },
+    {
+      "id": "full-tests",
+      "passed": false,
+      "cleanup_processes": 0
+    },
+    {
+      "id": "compile",
+      "passed": true,
+      "cleanup_processes": 0
+    }
+  ],
+  "full_suite": {
+    "passed": 3456,
+    "failed": 3,
+    "skipped": 18,
+    "seconds": 345.33,
+    "failures": [
+      "test_anonymous_client_has_live_discovery_control_and_preserves_grader_results",
+      "test_native_resource_evidence_matches_current_source_and_kernel_observations",
+      "test_maintained_setup_preserves_build_history_and_current_dependency_qualification"
+    ],
+    "reason": "These three source-freshness assertions rejected AGENTS.md, dev.ps1 and bootstrap README changes before this explicit qualification supersession was recorded.",
+    "all_passed": false
+  },
+  "qualification_source_unchanged": true,
+  "selected_task_builds_qualified": false,
+  "model_invocations": 0,
+  "counted_attempts": 0,
+  "model_improvement_established": false,
+  "limitations": [
+    "No full-suite pass is claimed from the retained pre-supersession run.",
+    "This is a process-lifetime repair, not qualification of every benchmark runtime or a skill-gain result.",
+    "No complete fresh-cache installation or hosted execution of these new bytes is claimed."
+  ]
+}

@@ -223,7 +223,7 @@ jobs:
         run: python -m compileall -q tools tests benchmarks/agent-effectiveness/graders
 
   latest-test-dependencies:
-    name: Latest compatible test dependencies
+    name: Latest compatible development dependencies
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ${{ matrix.os }}
     env:
@@ -247,7 +247,7 @@ jobs:
       - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
         with:
           version: "0.13.8"
-      - name: Install latest compatible test dependencies
+      - name: Install latest compatible development dependencies
         shell: python
         run: |
           import os
@@ -260,7 +260,7 @@ jobs:
           python = bindir / ("python.exe" if os.name == "nt" else "python")
           subprocess.run([
               "uv", "pip", "install", "--python", str(python), "--no-config",
-              "--default-index", "https://pypi.org/simple", "--editable", ".[test]",
+              "--default-index", "https://pypi.org/simple", "--editable", ".[test,lint]",
           ], check=True)
           subprocess.run(["uv", "pip", "check", "--python", str(python)], check=True)
           subprocess.run(["uv", "pip", "freeze", "--python", str(python)], check=True)
@@ -268,6 +268,12 @@ jobs:
               output.write(f"{bindir.resolve()}\n")
       - name: Run tests against latest compatible dependencies
         run: python -m pytest -q -n auto
+      - name: Lint latest compatible dependencies
+        run: python -m ruff check tools tests benchmarks/agent-effectiveness/graders
+      - name: Check formatting with latest compatible dependencies
+        run: python -m ruff format --check tools tests benchmarks/agent-effectiveness/graders
+      - name: Type-check latest compatible dependencies
+        run: python -m mypy tools tests benchmarks/agent-effectiveness/graders
 
   coverage:
     needs: validate

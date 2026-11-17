@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "updates": [
+    {
+      "package": "ruff",
+      "previous": "0.17.4",
+      "current": "0.17.5"
+    },
+    {
+      "package": "coverage",
+      "previous": "7.17.2",
+      "current": "7.17.3"
+    }
+  ],
+  "other_requirement_declarations_unchanged": true,
+  "canonical_candidate_sha256": "f6f4bd49c0947319a7de3e2be51967ed2c2e0f5b1d9393131fe236eaf29d494a",
+  "resolver_version": "0.13.8",
+  "minimum_resolution_python": "3.11.18",
+  "isolated_installation": {
+    "packages": 30,
+    "complete_test_lint_build_graph_admitted": true,
+    "consistency_passed": true,
+    "host_packages_modified": false
+  },
+  "checks": [
+    {
+      "id": "lint",
+      "passed": true,
+      "remaining_processes": 0
+    },
+    {
+      "id": "format",
+      "passed": true,
+      "remaining_processes": 0
+    },
+    {
+      "id": "types-win32",
+      "passed": true,
+      "remaining_processes": 0
+    },
+    {
+      "id": "types-linux",
+      "passed": true,
+      "remaining_processes": 0
+    },
+    {
+      "id": "full-tests",
+      "passed": true,
+      "remaining_processes": 0
+    },
+    {
+      "id": "compile",
+      "passed": true,
+      "remaining_processes": 0
+    }
+  ],
+  "tests": {
+    "passed": 3430,
+    "skipped": 47,
+    "failed": 0,
+    "seconds": 353.86,
+    "reports_extra_present": false,
+    "complete_optional_reports_suite_qualified": false
+  },
+  "workflow": {
+    "change": "Scheduled/manual latest-compatible job installs test and lint extras and runs tests, lint, format and types.",
+    "hosted_execution_of_changed_workflow_qualified": false,
+    "platform_matrix_qualified_by_this_local_run": false
+  },
+  "model_invocations": 0,
+  "counted_attempts": 0,
+  "model_improvement_established": false
+}
