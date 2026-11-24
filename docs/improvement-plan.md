@@ -488,7 +488,13 @@ added a virtual environment. The Karpathy and default arms completed four and
 one such commands, respectively. All arms left the original task files
 unchanged. The comparison establishes a functioning matched execution and
 scoring route for this model and task. Quality improvement remains unproven.
-Preserve this floor result and qualify a different, prospectively chosen
+The [November 24 replication](../artifacts/research/2026-11-24/packaging-development-replication/observations.json)
+reversed the condition order and used the newly qualified Ollama 0.40.18
+runtime. The default and collection conditions each scored 0/11. The
+Karpathy condition reached its 600-second limit before grading, so its score
+is unavailable. Both runs exercise the same single independent task.
+
+Preserve both floor observations and qualify a different, prospectively chosen
 development task before estimating transfer. The 12-task pilot and requested
 GPT-6.1 Sol high comparison have separate acceptance requirements.
 

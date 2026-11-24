@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-24",
+  "partition": "public_development",
+  "suite": "SWE-Skills-Bench",
+  "task": {
+    "id": "swe-skills-bench/batch1/python-packaging",
+    "repository": "ControllableModel/SWE-Skills-Bench",
+    "commit": "4d3450d9216a590a8726fcb3604b5143daca776b",
+    "path": "tasks/batch1/python-packaging.md",
+    "git_blob_sha": "03212ae93aac2b2347ea9b6fe38cbcaadb11262b",
+    "sha256": "2c07a3235604d2c5364eb26f6c7bb64e1b73b81204a3f5cf53fbfd15c37d4bd6",
+    "native_task_sha256": "535ee7255b4e4e31d032956c7772dff35a6888c28d125a7c2ca64d4a1aaae065"
+  },
+  "subject": {
+    "harness": "Codex CLI 0.169.0",
+    "backend": "Ollama",
+    "backend_version": "0.40.18",
+    "model": "qwen3:8b",
+    "model_manifest_sha256": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+    "reasoning_effort": "high",
+    "context_tokens": 16384,
+    "time_per_attempt_seconds": 600
+  },
+  "design": {
+    "preregistration_sha256": "743f17dc1efc743af961682af9240455754846a12617bbdf858e377e215598aa",
+    "independent_replay_sha256": "31e3aa164a65c0572638867d455f513f07bc21ca0d254d0261e467f6341e59f1",
+    "matched_assignment_order": [
+      "default",
+      "collection",
+      "karpathy"
+    ],
+    "attempts_planned": 3,
+    "attempts_scored": 2,
+    "independent_task_count": 1,
+    "prior_observation": "artifacts/research/2026-11-17/packaging-development/observations.json",
+    "intervention_delivery": "Append unchanged standalone skill file bytes to the unchanged publisher prompt, in the same position for both intervention arms.",
+    "karpathy_origin": {
+      "repository": "multica-ai/andrej-karpathy-skills",
+      "commit": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+      "path": "skills/karpathy-guidelines/SKILL.md",
+      "git_blob": "6a62d0441753157ca6ca50479e490c2948033adb"
+    },
+    "collection_origin": {
+      "repository": "strmt7/ai_skills_collection_benchmarked",
+      "commit": "195dadca836dbf402bf55574b6160dc5f197deba",
+      "path": "included/improved/skills/tdd-workflow-current/SKILL.md"
+    }
+  },
+  "arms": [
+    {
+      "condition": "default",
+      "status": "task_failed",
+      "native_score": 0,
+      "cases": {
+        "errors": 0,
+        "failed": 10,
+        "passed": 0,
+        "skipped": 1,
+        "total": 11
+      },
+      "elapsed_seconds": 239.12052770000446,
+      "native_terminal_tokens": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 148991,
+        "input_tokens": 179182,
+        "output_tokens": 14425,
+        "reasoning_output_tokens": 0
+      },
+      "timed_out": false,
+      "native_completed_command_events": 19,
+      "plan_sha256": "1b0268927bb44fe1b999f656fd114c83f9bcb1f62c40db4ba47f6f54f10ddd71",
+      "result_sha256": "2b6dd35d4dee789fab29cae2c7930bdc8d38b576498050e966f901c393a08d05",
+      "transcript_sha256": "58b690b1d835f172d940efc16dc1c337349ba07d61185f90001b043104643917",
+      "native_evidence_sha256": {
+        "collection/result.json": "4b1cfed035356181c21a36e5b6462c8bbf145365019044e107265ea973a3e227",
+        "final-storage.json": "2d23b368b69b72de17c6fbb7e9c4d1b83f9a6e56463d370f043cb3ebaac27229",
+        "grading/result.json": "ef9d08a3797cadc01f39da99c91d2149e50cb2c6d396677004cf58b0d9ea1b1d",
+        "initial-collection/result.json": "309f9d233a2c0b15fa1af18687b2af79c3eba697006541dfdbdc9eedfa3f1d71",
+        "initial-storage.json": "48ea9450c90127158780cd2903aeeb71a42bcc545e8ceb9a5769f52bd414c85c",
+        "input.native": "eba6ff089894e95afde0a741dd35c54c67e391fbc9585a5cc88b6000bc3260d6",
+        "launch.json": "d2eca756bfb623ae0a96a90f772f048074c3693aa5543eb35469f6575ab09bae",
+        "plan.json": "1b0268927bb44fe1b999f656fd114c83f9bcb1f62c40db4ba47f6f54f10ddd71",
+        "process.json": "a88a870ef34c923cc53043a6efbf9cdae62b6de8b35f92edca6b4fbeb43c473a",
+        "setup-space.json": "b7cc8518a3ea4c8fb3f8af713c1f8d5e14035ba58183461b33f850460a60e83a",
+        "stderr.txt": "08f780d50221a3a353bb6a369b9294554da4c9a86e18b0c7c883f0d588e90831",
+        "transcript.jsonl": "58b690b1d835f172d940efc16dc1c337349ba07d61185f90001b043104643917"
+      },
+      "grading_evidence_sha256": {
+        "console": "784622a0aea74303862a57c611620ecb1aa8470529b377e02a27cee29fd984b2",
+        "handoff_result": "91a7731358ff084e328c5513331fc19b136a05f438a53388a5302a9bda1cfaa0",
+        "inventory": "1f69c619d1a5295116e6b532828f90eff095554429fb5b4f4fe99adf1cc22be5",
+        "junit": "5e9618085f4bbc946e5e65c1da2fbc03f3a2b3f4026b6bb7c2f2c47732b5fdf3",
+        "publisher": "2ec6e2151d49a96392ea25eba7d57215111a2e80f37bf6411b1226b282b1b0ee",
+        "submission_manifest": "4b1cfed035356181c21a36e5b6462c8bbf145365019044e107265ea973a3e227"
+      },
+      "owned_scope_cleanup_verified": true
+    },
+    {
+      "condition": "collection",
+      "status": "task_failed",
+      "native_score": 0,
+      "cases": {
+        "errors": 0,
+        "failed": 10,
+        "passed": 0,
+        "skipped": 1,
+        "total": 11
+      },
+      "elapsed_seconds": 77.15579910000088,
+      "native_terminal_tokens": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 7548,
+        "input_tokens": 12509,
+        "output_tokens": 5138,
+        "reasoning_output_tokens": 0
+      },
+      "timed_out": false,
+      "native_completed_command_events": 2,
+      "plan_sha256": "2ab457799209fb14ea98d02ced9ee06ab28fa60dcb2dc4ae2c86ec23a50fc427",
+      "result_sha256": "b8a8db7c3a3ef909553095312d68727664be672a3dae5f5a97b7cae591a42a9c",
+      "transcript_sha256": "9046a0ce4116335ec068e855a7a3bdf941782ea6a4e03cef5d3cb419d7257253",
+      "native_evidence_sha256": {
+        "collection/result.json": "bea628d479521aa55c6a3207a59d98fad8a4631a0f46384faf8504ff9c5241f0",
+        "final-storage.json": "483f3b9ffcca30c3ba6cbbceca88f2269546d11322e12af341b493f503a97a09",
+        "grading/result.json": "0ecf9430c6bf6e58648dd03eca3ddc918c92b7bbcc1be058ea535245fb4aaae6",
+        "initial-collection/result.json": "309f9d233a2c0b15fa1af18687b2af79c3eba697006541dfdbdc9eedfa3f1d71",
+        "initial-storage.json": "48ea9450c90127158780cd2903aeeb71a42bcc545e8ceb9a5769f52bd414c85c",
+        "input.native": "edd702cb14660126ab4b8d618357722a4ed6c9ebf473eae15f5c4e984d0b383b",
+        "launch.json": "ac3e81b6012785b6467f611f652bdf49e750d7826162c304c85453e0c985a855",
+        "plan.json": "2ab457799209fb14ea98d02ced9ee06ab28fa60dcb2dc4ae2c86ec23a50fc427",
+        "process.json": "24713c9655b79dda57110121286a0994abb7ae503e05e46576e9d2024fe283f9",
+        "setup-space.json": "3a2a6069d8319f3615ca03469d1eef8c76ef26e31febe0fc00d43acdda7fb4e5",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "transcript.jsonl": "9046a0ce4116335ec068e855a7a3bdf941782ea6a4e03cef5d3cb419d7257253"
+      },
+      "grading_evidence_sha256": {
+        "console": "3bb7cc500da2fa54cbf6559543ac3ddd9468c78d928196a8edfcfe3cf22f9a7a",
+        "handoff_result": "dba13068c367f5a64567f007b722adae5eff632c465fd0505c6bad087b634a00",
+        "inventory": "1f69c619d1a5295116e6b532828f90eff095554429fb5b4f4fe99adf1cc22be5",
+        "junit": "b77bb03266d780c0c2aacefea43a9f6a242a94224885700960463a33cbe09dfd",
+        "publisher": "317798f035f5fc87301a6137dfa1161ce33a89c9647a6c7166ee642cfa38a08a",
+        "submission_manifest": "bea628d479521aa55c6a3207a59d98fad8a4631a0f46384faf8504ff9c5241f0"
+      },
+      "owned_scope_cleanup_verified": true
+    },
+    {
+      "condition": "karpathy",
+      "status": "harness_error",
+      "native_score": null,
+      "cases": null,
+      "elapsed_seconds": 600.0549056000018,
+      "native_terminal_tokens": null,
+      "timed_out": true,
+      "native_completed_command_events": 46,
+      "plan_sha256": "90df6ad9f7d1ba7cce9bd94785ba4713dc7942ac0499baa2256873d678eca851",
+      "result_sha256": "7c9cdbb15bfd1f5b01f6c8550f52a536553eb36b2693ac9b722486daccd8096e",
+      "transcript_sha256": "6b4c8acbdf20b8f9b34b97397ae8cdc8ecccfd38d9cc33061fe5424e8188505c",
+      "native_evidence_sha256": {
+        "collection/result.json": "ec13e4fab7cc7cfa880a22614bf8d992939b8c964569694252c91b6d3a6a41af",
+        "final-storage.json": "1d40f5ea9521fe88e93aa720a18e8829a1223df4b325bd4b6e9fa62c0892d272",
+        "initial-collection/result.json": "309f9d233a2c0b15fa1af18687b2af79c3eba697006541dfdbdc9eedfa3f1d71",
+        "initial-storage.json": "48ea9450c90127158780cd2903aeeb71a42bcc545e8ceb9a5769f52bd414c85c",
+        "input.native": "3cee063cc37f16cfb7284a21ced64541b4cd97e3d303704307de5518b1877eab",
+        "launch.json": "2469b8c7f04cfbf20cf7cdef059636974d056d77c0da842f226c48b189c40fd0",
+        "plan.json": "90df6ad9f7d1ba7cce9bd94785ba4713dc7942ac0499baa2256873d678eca851",
+        "process.json": "a2a825b01a914bb54f4360cca09ec14e3f0be89d2ab5660317f4ff5c0452e3fa",
+        "setup-space.json": "9860c3abdfe2b6fd05f967b710602403e139787fcbc541239bf10d0d6865df37",
+        "stderr.txt": "e6db6ac33c813e8371818ad8a1dcaf5022515b0c03e67bbde2998eb7d078fe6a",
+        "transcript.jsonl": "6b4c8acbdf20b8f9b34b97397ae8cdc8ecccfd38d9cc33061fe5424e8188505c"
+      },
+      "grading_evidence_sha256": null,
+      "owned_scope_cleanup_verified": true
+    }
+  ],
+  "collection_minus_baseline": {
+    "default": 0,
+    "karpathy": null
+  },
+  "interpretation": "The collection and default conditions tied at zero on one public development task. The Karpathy condition reached the time limit before scoring. The replicate uses a different backend version from the November 17 comparison. The two records describe one independent task and establish no positive skill effect."
+}

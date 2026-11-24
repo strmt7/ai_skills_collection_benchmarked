@@ -3,7 +3,10 @@ from __future__ import annotations
 import subprocess
 from pathlib import Path
 
+import pytest
 import verify_dependency_lock as lockcheck
+from packaging.requirements import Requirement
+from packaging.utils import canonicalize_name
 
 
 def test_metadata_does_not_mask_changed_versions_or_hashes():
@@ -71,3 +74,27 @@ def test_report_extra_cli_reaches_seeded_verifier(tmp_path, monkeypatch, capsys)
     monkeypatch.setattr(lockcheck, "verify", verify)
     assert lockcheck.main(["--project", str(project), "--lock", str(lock), "--extra", "reports", "--json"]) == 0
     assert '"valid": true' in capsys.readouterr().out
+
+
+@pytest.mark.parametrize(
+    "lock_files",
+    [
+        ("requirements-lock.txt", "requirements-reports-lock.txt", "requirements-coverage-lock.txt"),
+        ("requirements-dev-lock.txt", "requirements-reports-lock.txt"),
+    ],
+)
+def test_coinstalled_locks_agree_on_active_versions(lock_files: tuple[str, ...]) -> None:
+    versions_by_package: dict[str, dict[str, list[str]]] = {}
+    for filename in lock_files:
+        text = (lockcheck.ROOT / filename).read_text(encoding="utf-8")
+        for line in lockcheck.requirement_lines(text):
+            if line.startswith("--hash="):
+                continue
+            requirement = Requirement(line.removesuffix("\\").rstrip())
+            if requirement.marker is not None and not requirement.marker.evaluate():
+                continue
+            versions = versions_by_package.setdefault(canonicalize_name(requirement.name), {})
+            versions.setdefault(str(requirement.specifier), []).append(filename)
+
+    conflicts = {package: versions for package, versions in versions_by_package.items() if len(versions) > 1}
+    assert not conflicts, f"Coinstalled dependency locks disagree on active versions: {conflicts}"

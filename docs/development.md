@@ -135,6 +135,23 @@ Verify the combined installation through `./dev.ps1` and run the report tests
 before updating the evidence index. Preserve the report lock's recorded line
 endings when replacing the generated dependencies.
 
+The hosted audit resolves `requirements-lock.txt`, `requirements-reports-lock.txt`
+and `requirements-coverage-lock.txt` together. When shared versions change,
+regenerate `requirements-lock.txt` with its header command on Windows Python
+3.14.10 in an isolated environment installed from the current lock. Add
+`--upgrade-package name==version` for each shared version you are aligning with
+the reviewed development or report lock. This preserves the seeded versions
+outside the update. Copy the current PyYAML requirement and its hashes into
+`requirements-runtime-lock.txt` when that pin changes. Verify the seeded runtime
+and report locks and resolve
+the combined graph before publishing.
+
+```bash
+python tools/verify_dependency_lock.py --json
+python tools/verify_dependency_lock.py --lock requirements-reports-lock.txt --extra reports --json
+python -m pip install --dry-run --ignore-installed --only-binary=:all: --require-hashes -r requirements-lock.txt -r requirements-reports-lock.txt -r requirements-coverage-lock.txt
+```
+
 With the locked environment activated, run the applicable checks:
 
 ```bash
