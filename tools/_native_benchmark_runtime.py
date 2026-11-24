@@ -363,6 +363,10 @@ class DockerClient:
         return containers[0]
 
 
+CONTROL_DIRECTORY = "/run/benchmark-lease"
+CONTROL_MOUNT = "rw,nosuid,nodev,noexec,size=65536,mode=0700"
+
+
 @dataclass(frozen=True)
 class LeaseResources:
     memory_bytes: int = 256 * 1024**2
@@ -405,7 +409,10 @@ class LeaseResources:
 
     def mounts(self) -> dict[str, str]:
         execution = "exec" if self.executable_workspace else "noexec"
-        mounts = {"/tmp": f"rw,nosuid,nodev,{execution},size={self.tmpfs_bytes},mode=1777"}
+        mounts = {
+            "/tmp": f"rw,nosuid,nodev,{execution},size={self.tmpfs_bytes},mode=1777",
+            CONTROL_DIRECTORY: CONTROL_MOUNT,
+        }
         if self.task_workspace:
             mounts.update(
                 {
@@ -517,7 +524,7 @@ class ContainerLease:
             raise RuntimeError("Lease has already created a container")
         program = (
             "import json,os,time;from pathlib import Path\n"
-            "directory=Path('/tmp/lease-control');directory.mkdir(mode=0o700,exist_ok=True);heartbeat=directory/'heartbeat'\n"
+            f"directory=Path({CONTROL_DIRECTORY!r});heartbeat=directory/'heartbeat'\n"
             "started=time.monotonic();maximum=" + str(self.seconds) + ";grace=8\n"
             "if not heartbeat.exists():heartbeat.write_text(str(started));heartbeat.chmod(0o600)\n"
             "print(json.dumps({'pid':os.getpid(),'uid':os.getuid(),'lease_seconds':maximum,'heartbeat_grace_seconds':grace}),flush=True)\n"
@@ -612,7 +619,7 @@ class ContainerLease:
     def _heartbeat(self) -> None:
         deadline = time.monotonic() + self.seconds
         program = (
-            "import os,time;from pathlib import Path;directory=Path('/tmp/lease-control');directory.mkdir(mode=0o700,exist_ok=True);"
+            f"import os,time;from pathlib import Path;directory=Path({CONTROL_DIRECTORY!r});"
             "temporary=directory/'heartbeat.next';temporary.write_text(str(time.monotonic()));temporary.chmod(0o600);os.replace(temporary,directory/'heartbeat')"
         )
         try:

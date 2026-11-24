@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-24",
+  "scope": "Current development, reporting and bootstrap locks. Native watchdog storage and packaging controls. Independent, model-free project build observations. Prior published workflow and coverage snapshots are retained separately.",
+  "source_sha256": {
+    ".gitattributes": "013ddc7f4e43a70ea247a93db9be4e133ef024308d93b87b85e9890978bd64fa",
+    "docs/native-benchmark-controller.md": "1fff6f62e4e67b21a61ef4b7a0f1826baa8033f0591321a18ad4d7b3a27d7b9e",
+    "requirements-dev-lock.txt": "2078e8d436bf471c5a294df328e5b4f8b0ce3ec8cc2ec3c5ba4c77caa641b963",
+    "requirements-reports-lock.txt": "e099a93adcb3db72a57d9bc37e9db6141fd90b9378dd941bf135be18677bd901",
+    "tests/test_agent_tool_policy.py": "91598cb5dce4b862dda0e9084d94ce94515b2599c9e0207f1cfbe8d80bdd37be",
+    "tests/test_grade_swe_skills_submission.py": "480bb16ea97fba170dbc8a80487a2ae3a511d1e607160aeb1f8e42fe8a7cd678",
+    "tests/test_native_benchmark_runtime.py": "b3c8e45dc90279ce178f2f5b246b6e2a7d7e538e843f2de3923caf9b8f8b825e",
+    "tests/test_native_project_resource_artifacts.py": "be34174fb31a93f2c5e480a1fd3131c60053dba81df1efb09019c1554a633216",
+    "tests/test_native_qualification_index.py": "2f34ab289a05215f7b5c0a5dded6006009797a722b82e25e48db8070e6341f68",
+    "tests/test_native_trial_plan.py": "b9263ab677674022b3e83edbb1485bdb89e8d69c662b30806426c0de95655136",
+    "tests/test_native_trial_runner.py": "6783a54ce4f43d918c99b0b11674e45cd8bea540690680a1d3758e500dd78c3c",
+    "tests/test_subject_toolchains.py": "bebe3ebfd5e5871f7a87651d626b7b530ca217f8a72c3fcfb7f618896a792f11",
+    "toolchains/bootstrap/requirements.txt": "7ad2c662f0b44a4f44f46c2941880f605c02d5995808973e128b5857f59ac024",
+    "tools/_native_benchmark_runtime.py": "dae6d01da04e91b7ecad4000703503961246cecca920c4bd60ed313723df7659",
+    "tools/_native_trial_plan.py": "162f1d6299532b5c68d2d76ad984b5e8d6104e0407cf7836616c2eec591ac2b6",
+    "tools/_subject_toolchains.py": "a619c7eeb0b329d7eb7618ba3c8f199cbbdbb453104889d993ea58fa0b46c1bc",
+    "tools/grade_swe_skills_submission.py": "7e17f6219234aaae85fe0a4d5312c6071d935dbad18095bd916c18c2a75347b5",
+    "tools/run_swe_skills_trial.py": "728b9a49330f7e71ebea12a6f5c127246ba252f4ee3554607e0e20088ab56816",
+    "tools/search_semantic_corpus.py": "2dad8265873175af7c5af839c9b0e674c20117f733e10bad1c3b9f8a3512777d",
+    "tools/validate_agent_tool_policy.py": "a7af5ef70422547d7b6fc34b36bfd184f9c09807890caf27ba90dcfe26d8fcb8",
+    "tools/validate_native_qualification_index.py": "e235ca458739a22571cfb4a3d771631800597e25a8e80eb3f4d575d7c10b7c05"
+  },
+  "artifacts": {
+    "observations.json": "1bf0e3170d40fdd96192aad71ab8dc873d02865c661736ca04b8215e7b3fcfa3"
+  }
+}

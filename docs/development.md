@@ -123,6 +123,18 @@ Review dependency changes and run the affected checks before committing. Add
 `--upgrade` when intentionally updating the resolved versions. The test and
 lint lock does not replace the separate audit and report dependency locks.
 
+Resolve the report lock with the same pinned uv and the development lock as
+constraints. The reporting workflows use Python 3.14.10.
+
+```bash
+uv pip compile pyproject.toml --extra reports --universal --python-version 3.14.10 --generate-hashes --no-strip-markers --only-binary=:all: --no-annotate --no-header --no-config --default-index https://pypi.org/simple --constraint requirements-dev-lock.txt --output-file .venv/requirements-reports-lock.generated.txt
+```
+
+Keep shared pins aligned in the development, reporting and bootstrap locks.
+Verify the combined installation through `./dev.ps1` and run the report tests
+before updating the evidence index. Preserve the report lock's recorded line
+endings when replacing the generated dependencies.
+
 With the locked environment activated, run the applicable checks:
 
 ```bash

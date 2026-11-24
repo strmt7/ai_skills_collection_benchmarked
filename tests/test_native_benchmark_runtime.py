@@ -105,6 +105,7 @@ def test_full_project_profile_declares_cpu_storage_and_execution_separately() ->
     )
     assert resources.mounts() == {
         "/tmp": "rw,nosuid,nodev,noexec,size=1073741824,mode=1777",
+        "/run/benchmark-lease": "rw,nosuid,nodev,noexec,size=65536,mode=0700",
         "/workspace": "rw,nosuid,nodev,exec,size=4294967296,mode=0755",
     }
     assert runtime.LeaseResources(**asdict(resources)) == resources
@@ -135,7 +136,7 @@ def test_resource_profiles_reject_invalid_or_unfunded_combined_mounts(options: d
 
 def test_combined_mount_budget_accounts_for_all_four_task_mounts() -> None:
     resources = runtime.LeaseResources(tmpfs_bytes=168 * 1024**2, task_workspace=True)
-    assert len(resources.mounts()) == 5
+    assert len(resources.mounts()) == 6
 
 
 @pytest.mark.parametrize("seconds", [900, 1200, 1800, 2460, 3600])

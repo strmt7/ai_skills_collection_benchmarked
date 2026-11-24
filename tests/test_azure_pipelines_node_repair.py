@@ -3,7 +3,6 @@
 import copy
 import hashlib
 import json
-import re
 import subprocess
 import sys
 from pathlib import Path
@@ -45,11 +44,11 @@ def test_overlay_preserves_sources_and_binds_every_file() -> None:
         assert actual == manifest[key]
 
 
-def test_pyyaml_lock_matches_the_repository_report_lock() -> None:
-    text = (ROOT / "requirements-reports-lock.txt").read_text(encoding="utf-8")
-    match = re.search(r"^pyyaml==6\.0\.3 \\\n(?:    --hash=sha256:[0-9a-f]{64}(?: \\)?\n)+", text, re.M)
-    assert match is not None
-    assert (EVIDENCE / "requirements-pyyaml.txt").read_text(encoding="utf-8") == match.group()
+def test_recorded_pyyaml_lock_keeps_qualified_bytes() -> None:
+    # The historical Node controls replay this exact parser lock.
+    assert (
+        sha(EVIDENCE / "requirements-pyyaml.txt") == "4d38355ae2f80970b6413d6931628417d0f91921bf60bc6d07ca84e6cdcdcc5d"
+    )
 
 
 def test_recorded_linux_shell_guard_covers_empty_and_skipped_reports() -> None:

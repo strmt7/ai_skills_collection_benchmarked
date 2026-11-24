@@ -111,7 +111,22 @@ removes fixture-sized component limits that excluded the fixed frame's original
 budgets through staging and scoring. Separate live controls verify explicit
 project CPU, memory and executable-workspace quotas, plus orphan cleanup for a
 2,460-second lease. Full build-stage integration and language-specific dependency
-graphs remain required; passing these controls does not admit the cohort.
+graphs remain required. Cohort admission requires every original stage.
+
+The pinned Prometheus archive reproduced all 1,589 source files. The published
+Go installation layer contains Go 1.22.5. The pinned project requires Go
+1.25.0, which the original launcher selected successfully from a verified
+offline distribution. That control loaded the project's module declaration and
+compiled and ran a separate Go program. The complete workspace resolved 1,500
+packages from sealed dependencies. The original build passed in an experimental
+container with 12 GiB of memory and 8 GiB of task storage. The unmodified
+publisher build scorer and an independent checker both accepted its outcome.
+The original unit tests and production integration remain pending. Trial admission also
+requires a declared treatment for the upstream `AGENTS.md` and support for
+the original 10,003,571-byte test fixture. Keep those bytes in the frozen
+source archive and apply any context policy equally to all arms.
+The [preflight evidence](../artifacts/research/2026-11-24/development-qualification/observations.json)
+records the native controls and unresolved prerequisites.
 
 | Priority and method | Evidence sought | Native admission requirements |
 | --- | --- | --- |

@@ -31,6 +31,12 @@ Repository capacity defaults to 16 MiB with execution disabled; larger capacity
 and executable build outputs require explicit settings. Combined temporary
 mount capacities may use at most three quarters of the memory limit, including
 all four optional task mounts. These are quotas, not preallocated host memory.
+The lease watchdog renews through a dedicated root-owned 64 KiB mount.
+The grader can fill its task filesystem while the watchdog keeps renewing.
+The [storage exhaustion control](../artifacts/research/2026-11-24/development-qualification/observations.json)
+fills the task mount under the grader identity, observes a subsequent heartbeat,
+and verifies that the owned container is removed.
+
 The current grading CLI still uses its Python-verifier resource profile;
 configurable full-project resources and build stages are not integrated there.
 

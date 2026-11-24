@@ -80,6 +80,23 @@ Do not infer permission to relicense upstream material.
 
 ### Exact-revision quality observations
 
+At [626519bb](https://github.com/strmt7/ai_skills_collection_benchmarked/commit/626519bbf141883689a9cc2c5115c04e5ac8bd8c),
+all 32 triggered workflow runs completed. Twenty-nine passed. The code-scanning
+alert budget and secret-history scan failed. Offline validation completed its
+runtime matrix and its coverage upload. Its stable-actions check flagged the
+held CodeQL pin. Codecov processed the exact commit with 19,987 tracked lines
+and 70.27% coverage. The five native test reports cover the supported hosted
+Python matrix and measure tooling behavior.
+
+The current Windows runtime passed all 17 isolation controls and 13 packaging
+checks without model inference. The original Prometheus build passed in a
+larger isolated resource profile and its build score was independently checked.
+The native unit-test stage and trial admission remain pending. Its upstream
+instruction file and oversized fixture need documented admission before running
+a subject. See [native observations](../artifacts/research/2026-11-24/development-qualification/observations.json).
+
+The following observations describe the 17 November assessment.
+
 All **16** workflow runs observed for 8be77acf are terminal: **10 succeeded and
 6 failed**. This is not a claim that all 46 workflow definitions ran. Failures
 were CocoIndex setup-output binding, Crawl4AI setup-output binding, the offline

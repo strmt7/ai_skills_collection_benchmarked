@@ -44,18 +44,21 @@ checks identify published versions and constraints; they do not test runner
 compatibility or benchmark performance. The [recorded comparison](../artifacts/research/2026-10-30/skillsbench-currentness/result.json)
 includes the source identities and range-membership results.
 
-## SWE-Skills-Bench: useful methodology, unavailable code endpoint
+## SWE-Skills-Bench and its public results
 
 The [primary paper](https://arxiv.org/abs/2603.15401) pairs software requirements
-and pinned repositories with execution tests. It reports limited benefit for
-most of its 49 evaluated skills and substantial overhead in some conditions.
-These are the authors' results for their tested stack, not results for this
-collection or GPT-6.1 Sol. The linked GitHub repository currently returns 404;
-retain that acquisition failure. The author's public ungated Hugging Face dataset is pinned at
-`a111a9d9e53722c7aafd951830b459b08439f2da`, with declared MIT terms and
-49 dataset rows. Rows, evaluated skills and the paper's roughly 565 task
-instances are different denominators. Full data/verifier/environment review
-remains pending; this acquisition does not repair the unavailable code endpoint. Publication alone does not establish adoption.
+and pinned repositories with execution tests. The first review records a 404
+for the paper's repository link. A subsequent review retrieved the publisher's
+[code and results](https://github.com/ControllableModel/SWE-Skills-Bench/tree/4d3450d9216a590a8726fcb3604b5143daca776b)
+and reproduced four comparisons of 980 matched requirements each. Across those
+configurations the mean changes ranged from −0.29 to +0.76 percentage points.
+See [archive verification and native controls](research-swe-skills-bench-archive.md).
+
+The authors' earlier Hugging Face dataset at
+`a111a9d9e53722c7aafd951830b459b08439f2da` contains 49 rows under declared MIT
+terms. The 49 rows, the original paper's task counts, and the later archive's
+matched comparisons refer to different populations. Results for this
+collection and GPT-6.1 Sol require a new matched experiment.
 
 ## Do not rely on benchmark reputation alone
 

@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-24",
+  "earlier_main": {
+    "commit": "626519bbf141883689a9cc2c5115c04e5ac8bd8c",
+    "workflows": 32,
+    "succeeded": 29,
+    "failures": [
+      {
+        "workflow": "CodeQL",
+        "run_id": 45461271866
+      },
+      {
+        "workflow": "Offline validation",
+        "run_id": 45461271779
+      },
+      {
+        "workflow": "Secret scan",
+        "run_id": 45461271369
+      }
+    ],
+    "codecov": {
+      "files": 158,
+      "tracked_lines": 19987,
+      "coverage_percent": 70.27
+    }
+  },
+  "development_dependencies": {
+    "stable_metadata_records": 31,
+    "changed_development_packages": [
+      {
+        "name": "coverage",
+        "old_version": "7.17.3",
+        "new_version": "7.17.5"
+      },
+      {
+        "name": "hypothesis",
+        "old_version": "6.170.15",
+        "new_version": "6.170.17"
+      },
+      {
+        "name": "librt",
+        "old_version": "0.16.0",
+        "new_version": "0.17.0"
+      },
+      {
+        "name": "packaging",
+        "old_version": "26.3",
+        "new_version": "26.4"
+      },
+      {
+        "name": "pyyaml",
+        "old_version": "6.0.3",
+        "new_version": "6.0.4"
+      },
+      {
+        "name": "ruff",
+        "old_version": "0.17.5",
+        "new_version": "0.17.6"
+      },
+      {
+        "name": "types-pyyaml",
+        "old_version": "6.0.12.20261113",
+        "new_version": "6.0.12.20261122"
+      }
+    ],
+    "supported_wheel_resolutions": 8,
+    "managed_python": "3.14.10",
+    "managed_packages": 41,
+    "lock_sha256": {
+      "requirements-dev-lock.txt": "2078e8d436bf471c5a294df328e5b4f8b0ce3ec8cc2ec3c5ba4c77caa641b963",
+      "requirements-reports-lock.txt": "e099a93adcb3db72a57d9bc37e9db6141fd90b9378dd941bf135be18677bd901",
+      "toolchains/bootstrap/requirements.txt": "7ad2c662f0b44a4f44f46c2941880f605c02d5995808973e128b5857f59ac024"
+    },
+    "native_tests_before_reports_extra": {
+      "passed": 3452,
+      "skipped": 47
+    },
+    "report_tests_with_all_locks": 113,
+    "skips_replayed_with_report_extra": 29
+  },
+  "native_watchdog": {
+    "passed": true,
+    "task_bytes": 16777216,
+    "task_free_blocks": 0,
+    "watchdog_free_blocks": 15,
+    "watchdog_writable_by_task": false,
+    "heartbeat_advanced_after_enospc": true,
+    "remaining_owned_containers": 0,
+    "model_invocations": 0,
+    "earlier_project_scratch_limit_exhausted": true,
+    "earlier_project_error_observation_sha256": "ca409b9f1ab5a3cb9904e814d8cdf816afacb02056ccf3824572e8da4535015b",
+    "focused_native_tests": 68,
+    "packaging_native_controls": 11,
+    "packaging_admission_checks": 2
+  },
+  "benchmark_build": {
+    "task": "swe-skills-bench/batch10/prometheus-configuration",
+    "base_commit": "df61021436e3aa53917a76ae8a4599d2c7fe6097",
+    "source_tree": "f69e16e28bfbbcf86331c9b8ab92cade8cd86c22",
+    "original_archive_sha256": "6241ef6c54ab6cb6db21e2b9fa3a51b2f643741b08f86e2f31cd7a9dcbd8b91b",
+    "original_project_files": 1589,
+    "subject_context_conflicts": [
+      {
+        "path": "AGENTS.md",
+        "git_blob": "bdc352b8f09cd3080c0a7364511f72c3968d0beb"
+      }
+    ],
+    "collector_limit_conflicts": [
+      {
+        "path": "tsdb/testdata/20kseries.json",
+        "bytes": 10003571,
+        "git_blob": "27b4292016be95fcc6c0170f60035db9abfa7942"
+      }
+    ],
+    "publisher_image": "docker.io/zhangyiiiiii/swe-skills-bench-golang@sha256:08a709af3502f43282367befe0ae3ba641efe7300cf9d2295c01eb12564c6180",
+    "native_publisher_go_version": "go1.22.5",
+    "offline_go_version": "go1.25.0",
+    "full_workspace_module_versions": 710,
+    "additional_pinned_module_metadata": 300,
+    "sealed_dependency_inputs_sha256": "2e97caf5cb0ac7b448120fa1859f6f41ec2e0a4a20921d779cbf38ddd811db3e",
+    "native_packages_resolved": 1500,
+    "generated_workspace_outputs": {
+      "go.work.sum": "b8d4becd37bfd888df75d174ae828e80c0939a352d305cfe35b45221565b8fbe"
+    },
+    "network_disabled_for_build": true,
+    "original_build": {
+      "passed": true,
+      "exit_code": 0,
+      "duration_seconds": 142.25000803799776,
+      "timed_out": false,
+      "command": "go build ./...",
+      "original_source_paths_changed": [],
+      "experimental_memory_limit_bytes": 12884901888,
+      "experimental_tmpfs_limit_bytes": 8589934592,
+      "peak_cgroup_memory_bytes": 8162234368,
+      "output_sha256": "f7a864a1e2710f4c383b882017e32d21ffc743b1d8e821fd2a718d37da4793f2",
+      "unit_tests_run": false,
+      "counted_model_trials": 0,
+      "independently_admitted_publisher_build_score": 1
+    },
+    "publisher_test_source_sha256": "05708b4e42ba188e02b53f7c43fe43002d124961e4c7a94ab15390206d700e33"
+  },
+  "mandatory_tool_replays": {
+    "cocoindex_version": "0.2.43+catalog.local1",
+    "cocoindex_search_receipt_sha256": "4a5c4073f745d94ebaeed6ca54cc934d00294da911bf2d39fc913e4e9ff76be4",
+    "crawl4ai_version": "0.9.5+catalog.portable4",
+    "crawl4ai_url": "https://go.dev/ref/mod",
+    "crawl4ai_receipt_sha256": "f79d19215cfe6853b048c7f21e642fc3c5704c18d23892ac610fb1e7e81b7d88",
+    "signed_windows_context_controls": 17
+  },
+  "model_invocations": 0,
+  "model_trials_counted": 0,
+  "efficacy_established": false,
+  "commercial_release_ready": false
+}

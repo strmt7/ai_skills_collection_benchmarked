@@ -4,8 +4,8 @@
     {
       "id": "native-project-resources",
       "review": {
-        "path": "artifacts/research/2026-11-13/native-project-resources/review.json",
-        "sha256": "43722091a64a46feb6ec40b079106da0c37ea367bd7306b0f7d944e58d5f8072"
+        "path": "artifacts/research/2026-11-24/development-qualification/review.json",
+        "sha256": "388df47f34c894db266a144440d1ff24c786f4be0af6acdeb137e31f7d798182"
       },
       "sources": [
         "tools/_native_benchmark_runtime.py",
@@ -38,8 +38,8 @@
     {
       "id": "publication-byte-retention",
       "review": {
-        "path": "artifacts/research/2026-11-14/publication-byte-retention-v3/review.json",
-        "sha256": "2862e244fe2f070cfbc1c50c6304e261d6f4e9307cfd3732d244d52fb5e8ec4e"
+        "path": "artifacts/research/2026-11-24/development-qualification/review.json",
+        "sha256": "388df47f34c894db266a144440d1ff24c786f4be0af6acdeb137e31f7d798182"
       },
       "sources": [
         "requirements-reports-lock.txt"
@@ -73,8 +73,8 @@
     {
       "id": "checkout-platform-controls",
       "review": {
-        "path": "artifacts/research/2026-11-14/checkout-platform-controls/review.json",
-        "sha256": "52ccd5251dac352333233e33a777003b0d3d35b002fe10ab96fb2b55b6835cd2"
+        "path": "artifacts/research/2026-11-24/development-qualification/review.json",
+        "sha256": "388df47f34c894db266a144440d1ff24c786f4be0af6acdeb137e31f7d798182"
       },
       "sources": [
         ".gitattributes",
@@ -134,8 +134,8 @@
     {
       "id": "native-subject-toolchains",
       "review": {
-        "path": "artifacts/research/2026-11-14/native-subject-toolchains/review.json",
-        "sha256": "a8c626bda7dacb2c08078251cedfdcc577d30a9bc561c02a975e56491de835ea"
+        "path": "artifacts/research/2026-11-24/development-qualification/review.json",
+        "sha256": "388df47f34c894db266a144440d1ff24c786f4be0af6acdeb137e31f7d798182"
       },
       "sources": [
         "tools/_subject_toolchains.py",
@@ -223,13 +223,14 @@
     {
       "id": "scoped-live-validation",
       "review": {
-        "path": "artifacts/research/2026-11-17/scoped-validation/review.json",
-        "sha256": "a600dbb45e14099031fb9021a62bd8375bd92b4147e8c29e35df4eec411c94ed"
+        "path": "artifacts/research/2026-11-24/development-qualification/review.json",
+        "sha256": "388df47f34c894db266a144440d1ff24c786f4be0af6acdeb137e31f7d798182"
       },
       "sources": [
         "requirements-dev-lock.txt",
         "tests/test_agent_tool_policy.py",
         "tests/test_native_qualification_index.py",
+        "toolchains/bootstrap/requirements.txt",
         "tools/search_semantic_corpus.py",
         "tools/validate_agent_tool_policy.py",
         "tools/validate_native_qualification_index.py"
@@ -261,7 +262,9 @@
         "dev.ps1",
         "pyproject.toml",
         "requirements-dev-lock.txt",
+        "requirements-reports-lock.txt",
         "toolchains/bootstrap/bootstrap.ps1",
+        "toolchains/bootstrap/requirements.txt",
         "tools/_lib_b/__init__.py",
         "tools/_lib_b/frontmatter_utils.py",
         "tools/_native_benchmark_runtime.py",
@@ -332,7 +335,8 @@
         "sha256": "43722091a64a46feb6ec40b079106da0c37ea367bd7306b0f7d944e58d5f8072"
       },
       "superseded_sources": [
-        "tests/test_native_benchmark_runtime.py"
+        "tests/test_native_benchmark_runtime.py",
+        "tools/_native_benchmark_runtime.py"
       ]
     },
     {
@@ -341,7 +345,8 @@
         "sha256": "2862e244fe2f070cfbc1c50c6304e261d6f4e9307cfd3732d244d52fb5e8ec4e"
       },
       "superseded_sources": [
-        ".gitattributes"
+        ".gitattributes",
+        "requirements-reports-lock.txt"
       ]
     },
     {
@@ -503,7 +508,26 @@
       "superseded_sources": [
         ".github/workflows/mcp-python-sdk.yml",
         ".github/workflows/offline-validation.yml",
-        ".github/workflows/pnpm-cache-install.yml"
+        ".github/workflows/pnpm-cache-install.yml",
+        "requirements-dev-lock.txt"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-14/checkout-platform-controls/review.json",
+        "sha256": "52ccd5251dac352333233e33a777003b0d3d35b002fe10ab96fb2b55b6835cd2"
+      },
+      "superseded_sources": [
+        "tests/test_native_benchmark_runtime.py"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-14/native-subject-toolchains/review.json",
+        "sha256": "a8c626bda7dacb2c08078251cedfdcc577d30a9bc561c02a975e56491de835ea"
+      },
+      "superseded_sources": [
+        "docs/native-benchmark-controller.md"
       ]
     }
   ]
