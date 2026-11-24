@@ -165,8 +165,7 @@
         "sha256": "6323b9865876784ec62b9a691dcf9c53935bda93a3b4675279c51992be55d06a"
       },
       "sources": [
-        "dev.ps1",
-        "tests/test_frontend_ownership.py"
+        "dev.ps1"
       ]
     },
     {
@@ -228,15 +227,25 @@
         "sha256": "a600dbb45e14099031fb9021a62bd8375bd92b4147e8c29e35df4eec411c94ed"
       },
       "sources": [
-        ".github/workflows/mcp-python-sdk.yml",
-        ".github/workflows/offline-validation.yml",
-        ".github/workflows/pnpm-cache-install.yml",
         "requirements-dev-lock.txt",
         "tests/test_agent_tool_policy.py",
         "tests/test_native_qualification_index.py",
         "tools/search_semantic_corpus.py",
         "tools/validate_agent_tool_policy.py",
         "tools/validate_native_qualification_index.py"
+      ]
+    },
+    {
+      "id": "scheduled-workflow-recovery",
+      "review": {
+        "path": "artifacts/research/2026-11-24/scheduled-workflow-recovery/review.json",
+        "sha256": "4152ad5f4e015b7928fddc95d13ea0f002031079695205b0bb2a4a4f2ad60907"
+      },
+      "sources": [
+        ".github/workflows/mcp-python-sdk.yml",
+        ".github/workflows/offline-validation.yml",
+        ".github/workflows/pnpm-cache-install.yml",
+        "tests/test_frontend_ownership.py"
       ]
     }
   ],
@@ -434,7 +443,9 @@
         "path": "artifacts/research/2026-11-17/frontend-stream-contract/review.json",
         "sha256": "6323b9865876784ec62b9a691dcf9c53935bda93a3b4675279c51992be55d06a"
       },
-      "superseded_sources": []
+      "superseded_sources": [
+        "tests/test_frontend_ownership.py"
+      ]
     },
     {
       "review": {
@@ -482,6 +493,17 @@
       },
       "superseded_sources": [
         ".github/workflows/mcp-python-sdk.yml"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-17/scoped-validation/review.json",
+        "sha256": "a600dbb45e14099031fb9021a62bd8375bd92b4147e8c29e35df4eec411c94ed"
+      },
+      "superseded_sources": [
+        ".github/workflows/mcp-python-sdk.yml",
+        ".github/workflows/offline-validation.yml",
+        ".github/workflows/pnpm-cache-install.yml"
       ]
     }
   ]

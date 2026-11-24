@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-24",
+  "scope": "Native replay of the current setup action, exact Maven archive transport and Windows framework startup controls.",
+  "source_sha256": {
+    ".github/workflows/anndata-general-io.yml": "59ed57b60023d8a4ba01f89ccb023d02431e5ec3dbb94c7b4d758352591a1fb7",
+    ".github/workflows/anndata-io-controls.yml": "292eb9774e185bf2fc94a612fc08432718e809b1e35ef345585c9a49986f4361",
+    ".github/workflows/census-ml-streaming.yml": "992fadd527a132159e825cff3c3c0b427abc43315dabc4250f0bb5b1914703dc",
+    ".github/workflows/census-summary-mean-controls.yml": "84e28201744a35e5a70cb0e5150831acee8198d660aedda3fceb1155c5802bb1",
+    ".github/workflows/crawl4ai-provider.yml": "a431818b6055ce8979965d429a7728be9391d4fc00da6c29702c6657c3747647",
+    ".github/workflows/dataframe-controls.yml": "df3ed57de86d25f4141d6c0af77722e7d8695d5a03018bb93a3d4e79ddd5970b",
+    ".github/workflows/design-search.yml": "d56fe008ee08350352be8478a4de0ec08656af82fc4b569090c33b17a8d91ff8",
+    ".github/workflows/docs-js-inventory.yml": "ea3ac5c5b8a311014ee30606a935fe9c2fb0f1cbe3cbf8965a69ecf5ccc35af6",
+    ".github/workflows/docs-python-inventory.yml": "bb82f1fafa6d68de27a29250a9475578d3c565656cddb60b6dd0c138df217671",
+    ".github/workflows/flowio-controls.yml": "797e43737035bf5217415d86649e3389136ddef01a3a6e1408edc6592e6084a4",
+    ".github/workflows/makefile-c.yml": "07c00174a5592891270be2692e252d78e6d5d3349e2e34e3f87bcaf0c80420f9",
+    ".github/workflows/mcp-python-sdk.yml": "af86a05cf357ce73f3a04b5c943caaf913ee667504c94d52ac454c9694b4b975",
+    ".github/workflows/mypy.yml": "18d7a47b5cc517871a2c7e8a14f98e96a9ec9e4ade9cb9a136ba3f7789922a4c",
+    ".github/workflows/npm-cache-install.yml": "8be012ab40d37b487a27503bcee94c2261a0084afb33ab31caffd59478392494",
+    ".github/workflows/offline-validation.yml": "0324257184812d91a3bc3eea519c16f0ec5f2d02080f395a76e4412bcb46d78e",
+    ".github/workflows/pnpm-cache-install.yml": "d22e4003964b484c4865fe6478e4f3e59992e702e334cdb3cf80b46583f32f0d",
+    ".github/workflows/pytest-pdb-task.yml": "3aa16df2a76b19f6760b413544ff5032a805ead5c3f9a22f12f9457f21a476e8",
+    ".github/workflows/ruff.yml": "55a67bfec5a64372435524e3f4ed15ba422e86e63d65140d79c0c8ce9bac6737",
+    ".github/workflows/scanpy-clustering-controls.yml": "ee40776f4a4ad284be8fb7641a0ba9326603b1f1e0da37ce716a75112d46138f",
+    ".github/workflows/scvi-input-controls.yml": "a78eb0d13a65834640e3ebf268041606958f59196e2a6837e9ff8f4cd7ba6ffc",
+    ".github/workflows/simpo-postrun.yml": "bf81dd8a1b007bb48458b4d80d38ada20836b79be2fdf420356f792e095578c6",
+    ".github/workflows/simpo-verifier-task.yml": "e928a1dd9feff1e45fa2865cf4e3ff62431cec3acb74c6c857f8affbe7da3a7f",
+    ".github/workflows/soma-anndata-ingestion.yml": "b6ac6b5f2b07664961f54544e91ea5a5cc84ea0d09ebfee5607886e7d622159b",
+    ".github/workflows/workflow-call-inputs.yml": "7723de2d3435cc21d4171137ed9e30fb3414316e4e1785d51bf8c43baa1a4658",
+    ".github/workflows/yarn-cache-install.yml": "e68f0a8656532883e32214fbf31b2b4a8dda570ba972679f83f7031412d834f6",
+    ".github/workflows/zarr-python-basics.yml": "9b7ae26ebc9716fdbb0ca28af61a03d11034a920ed32e5f59748c4ced5adc740",
+    ".github/workflows/azure-eventhub-java.yml": "b7d8f057279d48eade73925018e3e64b88aba8f171050637a7c026da03f245b4",
+    "tests/test_frontend_ownership.py": "618db23c982f6a7e0c16e5fe47209e319ca794a019d756f4192a65438a0738e0"
+  },
+  "artifacts": {
+    "observations.json": "3080d30fbf1d66417666a9bae529832b4fcc2fb25cb4e4c46537bf5672700602"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-24",
+  "diagnosed_revision": "944b093faf08966d548aa3d57de411a65bbf6c20",
+  "scheduled_incidents": [
+    {
+      "workflow": "Azure Event Hubs Java batching controls",
+      "run_id": 44364881373,
+      "observed": "Both installation jobs failed when the rotating Maven download mirror returned HTTP 404."
+    },
+    {
+      "workflow": "Offline validation",
+      "run_id": 45221193981,
+      "observed": "The scheduled stable-action audit detected a new setup-uv release. The Windows latest-dependency lane could not observe the process-lifetime fixture before it stopped waiting. Existing diagnostics did not distinguish early exit and waiting."
+    }
+  ],
+  "setup_uv": {
+    "tag": "v10.4.0",
+    "commit": "1db35dd8eee11c5894872e0b383ae6c406cf738d",
+    "compiled_action_git_blob": "11131ce1c657c1767d80113f06a7f3a4abf32719",
+    "windows_node": "v26.13.1",
+    "uv_version": "0.13.9",
+    "verified_workflow_installers": 30,
+    "effective_inputs": "Publisher input defaults, the repository shared version file and an explicitly uncached native replay."
+  },
+  "java": [
+    {
+      "version": "3.10.0",
+      "role": "Exact historical fixture reproduction",
+      "distribution_sha512": "22d31676d5b92ed53308c19ecded3245d0efd0cddfec51ec7bab62f4f13ad70ddddceff8e62940e0e8e2421f3cde8106737f4becec0aa034ffeff2a754e88337",
+      "central_archive_matches_original": true,
+      "windows_native_tests": 9,
+      "dependency_tree_matched": true,
+      "java_major": 27,
+      "azure_service_called": false
+    },
+    {
+      "version": "3.10.2",
+      "role": "Independent stable-version compatibility control",
+      "distribution_sha512": "a24007fbf26eb885de8ba07c54fa05bb12e97082d16bfcd37283708b9db60232768435a0165ef0ed7c1309af843c11bf797f9959b9ca0a7343b055a165d8761c",
+      "apache_published_sha512_matches": true,
+      "windows_native_tests": 9,
+      "dependency_tree_matched": true,
+      "java_major": 27,
+      "azure_service_called": false
+    }
+  ],
+  "windows_frontend": {
+    "original_local_replays": 2,
+    "original_local_replays_passed": 2,
+    "exact_hosted_failure_reproduced": false,
+    "check": "Require complete newline-terminated PID markers within a bounded startup interval and report early exit separately from timeout with retained stderr."
+  },
+  "targeted_tests": {
+    "passed": 22,
+    "skipped": 0
+  },
+  "scope": "Historical fixture inputs and the Maven version guard are preserved. Findings and scanner dependencies under the owner hold were outside the change."
+}

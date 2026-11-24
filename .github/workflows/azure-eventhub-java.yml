@@ -63,7 +63,7 @@ jobs:
           if ($IsWindows) { Expand-Archive -LiteralPath $jdkArchive -DestinationPath $jdkDirectory }
           else { tar -xzf $jdkArchive -C $jdkDirectory; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE } }
           $mavenArchive = Join-Path $downloads 'maven.zip'
-          Invoke-WebRequest -Uri 'https://dlcdn.apache.org/maven/maven-3/3.10.0/binaries/apache-maven-3.10.0-bin.zip' -OutFile $mavenArchive -TimeoutSec 180
+          Invoke-WebRequest -Uri 'https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.10.0/apache-maven-3.10.0-bin.zip' -OutFile $mavenArchive -TimeoutSec 180
           if ((Get-FileHash -LiteralPath $mavenArchive -Algorithm SHA512).Hash.ToLowerInvariant() -ne '22d31676d5b92ed53308c19ecded3245d0efd0cddfec51ec7bab62f4f13ad70ddddceff8e62940e0e8e2421f3cde8106737f4becec0aa034ffeff2a754e88337') { throw 'Maven release digest mismatch' }
           Expand-Archive -LiteralPath $mavenArchive -DestinationPath (Join-Path $downloads 'maven')
       - name: Run isolated SDK batch controls

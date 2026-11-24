@@ -33,8 +33,8 @@ def test_terminating_frontend_stops_first_bootstrap_and_descendant(tmp_path: Pat
         pytest.skip("Native Windows process lifetime contract")
     shell = Path(os.environ["SYSTEMROOT"]) / "System32/WindowsPowerShell/v1.0/powershell.exe"
     fixture = r"""param($Root,$CacheRoot,$Profile,$CommandBase64,$CommandMemoryGiB)
-[IO.File]::WriteAllText((Join-Path $Root 'bootstrap.pid'),[string]$PID)
-$program="[IO.File]::WriteAllText('"+$Root.Replace("'","''")+"/descendant.pid',[string]`$PID); Start-Sleep -Seconds 90"
+[IO.File]::WriteAllText((Join-Path $Root 'bootstrap.pid'),[string]$PID + [Environment]::NewLine)
+$program="[IO.File]::WriteAllText('"+$Root.Replace("'","''")+"/descendant.pid',[string]`$PID + [Environment]::NewLine); Start-Sleep -Seconds 90"
 $start=New-Object Diagnostics.ProcessStartInfo
 $start.FileName=[IO.Path]::Combine([Environment]::GetFolderPath('System'),'WindowsPowerShell/v1.0/powershell.exe')
 $start.Arguments='-NoLogo -NoProfile -NonInteractive -EncodedCommand '+[Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes($program))
@@ -76,14 +76,30 @@ try { Start-Sleep -Seconds 90 } finally { $child.Dispose() }
             creationflags=subprocess.CREATE_NO_WINDOW,
         )
         try:
-            deadline = time.monotonic() + 20
+            # Hosted runners may start three cold PowerShell processes before
+            # the ownership assertion can observe both fixtures.
+            deadline = time.monotonic() + 60
             for name in ("bootstrap.pid", "descendant.pid"):
                 path = checkout / name
-                while not path.exists():
-                    if process.poll() is not None or time.monotonic() >= deadline:
-                        pytest.fail("The independent bootstrap fixture did not start")
+                while True:
+                    try:
+                        marker = path.read_text(encoding="utf-8")
+                    except FileNotFoundError:
+                        marker = ""
+                    pid_text = marker.removesuffix("\n")
+                    if marker.endswith("\n") and pid_text.isdecimal() and 0 < int(pid_text) <= 0xFFFFFFFF:
+                        break
+                    exit_code = process.poll()
+                    if exit_code is not None or time.monotonic() >= deadline:
+                        reason = (
+                            f"frontend exited with status {exit_code}" if exit_code is not None else "startup timed out"
+                        )
+                        stderr_tail = (
+                            (tmp_path / "stderr.native").read_bytes()[-2048:].decode("utf-8", errors="replace")
+                        )
+                        pytest.fail(f"Waiting for {name} failed because {reason}\n{stderr_tail}")
                     time.sleep(0.05)
-                pid = int(path.read_text(encoding="utf-8"))
+                pid = int(pid_text)
                 handle = kernel.OpenProcess(0x100000 | 0x1, False, pid)
                 if not handle:
                     raise ctypes.WinError(ctypes.get_last_error())
