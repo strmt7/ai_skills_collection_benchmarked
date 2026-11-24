@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-24",
+  "scope": "Model-free verification of the preserved Go task, resource-bounded offline module setup, subject tool inputs, and PowerShell cache placement.",
+  "source_sha256": {
+    "tools/_native_benchmark_runtime.py": "dae6d01da04e91b7ecad4000703503961246cecca920c4bd60ed313723df7659",
+    "tools/_native_grader_go.py": "9a8d7824749361201629a762ab61a6f5e648b758cc5d3ae1e95e9f9ca96d1e83",
+    "tools/grade_swe_skills_submission.py": "866314c638801772c5ea1c338f42084f99b63544a4fc938b296c8f5fc5fbea1c",
+    "tests/test_grade_swe_skills_submission.py": "f444d62519626882a239d64c7dbf5fd7b4d5afabfa89274fdd94bc20eada6c14",
+    "tools/_subject_toolchains.py": "c421f4b57578d11604198271026dabd31a6ae347c1c93cd8cba38b57cb76e773",
+    "tools/_native_trial_plan.py": "162f1d6299532b5c68d2d76ad984b5e8d6104e0407cf7836616c2eec591ac2b6",
+    "tools/run_swe_skills_trial.py": "728b9a49330f7e71ebea12a6f5c127246ba252f4ee3554607e0e20088ab56816",
+    "tests/test_subject_toolchains.py": "e54b9ae8321c40ec23370a6986afd9cbc52dd706f7bdd08e2c27cafd55d25b49",
+    "tests/test_native_trial_plan.py": "b9263ab677674022b3e83edbb1485bdb89e8d69c662b30806426c0de95655136",
+    "tests/test_native_trial_runner.py": "6783a54ce4f43d918c99b0b11674e45cd8bea540690680a1d3758e500dd78c3c",
+    "docs/native-benchmark-controller.md": "81da07bc2112972b1070edd2c925f203dd9a9e6d1ef1347eab336373c75542e5",
+    "tools/_trial_context.py": "c8da4a551005bd0a3f32f01e6bd1705883429e77f05bd5af9858213748f216cc",
+    "tests/test_trial_context.py": "b74917312e3bbe45699ed6501a2b2b62340932623c6418e9ca9c63bb14688917",
+    "docs/benchmark-execution-plan.md": "8a1727dcada5f6c1f83128d81d82fd2e42f430061cde98d15d7782aea76a4050"
+  },
+  "artifacts": {
+    "observations.json": "7a993b08d6f351b403e0d24cafe9e048842dc359da792ae6ca0209855c79ad87"
+  },
+  "comparative_model_attempts": 0,
+  "model_efficacy_established": false
+}

@@ -92,6 +92,8 @@ entry declares `name`, `version`, absolute `root`, `files`, `directories` and
 `directories` includes every directory, including empty ones. Each command maps
 to a nonempty list of declared relative file paths: for example, Node's executable
 followed by a pnpm script. Command arguments belong in the task invocation.
+Use an empty command map for frozen dependency data such as an offline module
+proxy. The data stay in their own read-only mount and produce no command prefix.
 
 Provision supported tools through their qualified isolated setup before freezing
 the manifest. Do not point it at an ambient installation or an entire shared
@@ -421,6 +423,9 @@ Attempt evidence retains its exact plan, input assets, implementation sources,
 launch, transcript, process result, collection and native grading result.
 Changed frozen inputs withhold the score. Credentials remain in the controller
 and their binding closes before collection; no desktop profile is imported.
+The controller and subject shell each have a private PowerShell module analysis
+cache. The subject cache lives in its reserved runtime profile, outside the
+captured source files.
 
 This adapter uses a Windows subject and a Linux grader. It does not reproduce
 the publisher's complete agent harness. Task-specific subject dependency
@@ -429,6 +434,31 @@ admission because the current capture contract records source bytes. A frozen
 single-attempt plan also does not establish independent sampling, contamination
 controls or a matched efficacy experiment. Those remain requirements before
 counted model comparisons or commercial-readiness claims.
+
+## Go repository verifiers
+
+Native grading task schema 4 adds a `go_environment` to the requirements for
+an original publisher pytest verifier. Declare the exact Go release and
+executable hash in the pinned Linux x64 image, a setup timeout and explicit
+guest memory, CPU and temporary filesystem budgets. List the offline proxy
+records by portable `module/@v/version.extension` target, absolute asset path and
+SHA-256. Each version has its original `.info` and `.mod` bytes, with a `.zip`
+when the graph needs the module source. The proxy fits within the 48 MiB input
+budget and shares the native packet limit with the other task assets.
+
+The runner checks the image's Go executable and prepares the dependencies with
+the publisher's `go mod download` command on a private copy of the frozen
+starting tree. Freeze the publisher's starting tree after any setup that
+changes module declarations. The original pytest command then evaluates the
+actual submitted tree under the same unprivileged identity and offline module
+graph. The runner verifies the proxy bytes before setup and after evaluation.
+
+Publisher and independent grading retain the original case inventory and
+threshold. A missing frozen dependency stops setup and produces an unscored
+attempt. A malformed submission proceeds to the original verifier. Supply
+identical compiler and proxy payloads, neutral setup, and resource limits to
+every compared subject. Qualify the actual subject tools and any other enabled
+publisher stages before running a model.
 
 ## Account, quota and model metadata
 

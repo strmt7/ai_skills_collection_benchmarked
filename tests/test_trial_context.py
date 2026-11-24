@@ -26,6 +26,7 @@ def paths(tmp_path):
         "PATHEXT": ".EXE;.CMD",
         "SystemDrive": tmp_path.anchor,
         "PATH": "unrelated-personal-bin",
+        "PSModuleAnalysisCachePath": str(tmp_path / "host-cache"),
         "PARENT_CANARY": "must stay in the controller's parent",
     }
     return tmp_path / "controller", workspace, cli, python, (runtime,), parent
@@ -61,6 +62,18 @@ def test_private_context_has_separate_empty_profiles_and_no_parent_state(paths):
     assert value.tool_environment["HOME"] == str(value.workspace / ".trial-profile/profile")
     assert value.tool_environment["PYTHONNOUSERSITE"] == "1"
     assert os.pathsep.join([str(value.python.parent), str(value.cli.parent)]) in value.tool_environment["PATH"]
+
+
+def test_powershell_module_cache_is_private_and_writable_from_each_profile(paths):
+    value = create(paths)
+    for environment, profile in (
+        (value.controller_environment, value.home),
+        (value.tool_environment, value.workspace / ".trial-profile"),
+    ):
+        cache = Path(environment["PSModuleAnalysisCachePath"])
+        assert cache == profile / "profile/AppData/Local/ModuleAnalysisCache"
+        assert cache.parent.is_dir()
+        assert not cache.exists()
 
 
 def test_permission_and_context_settings_are_valid_toml_and_explicit(paths):

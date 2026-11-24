@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-24",
+  "scope": "Functional qualification of the maintained TDD guidance for synchronized asynchronous checks.",
+  "source_sha256": {
+    "included/improved/skills/tdd-workflow-current/SKILL.md": "815bd0c1c748ac4c80c95ac5406d2647c50834c2c2d82d39c91786dcf64f2b55"
+  },
+  "artifacts": {
+    "observations.json": "0c9888abf44c39675eddb832de290b65c81447f3105f9919e89e49e7ab0b765e"
+  },
+  "comparative_model_attempts": 0,
+  "model_efficacy_established": false
+}

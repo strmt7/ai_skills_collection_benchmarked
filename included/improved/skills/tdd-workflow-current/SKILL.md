@@ -45,6 +45,10 @@ cleanup errors from behavior assertions. Test important integration
 boundaries with appropriate real components; use mocks where isolation helps
 without claiming that a mocked boundary was exercised end to end.
 
+For asynchronous work, wait for an observable milestone before advancing time
+or triggering cancellation. Use a deadline to report stalled work. Release and
+join test-owned workers during cleanup, including after assertion failures.
+
 For browser checks, control the data and wait for observable conditions, not
 fixed delays. Use fixtures and selectors supported by the application. During
 refactoring, keep behavior-focused checks in place and repeat them after changes.

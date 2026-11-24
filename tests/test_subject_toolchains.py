@@ -142,3 +142,14 @@ def test_combined_payloads_cannot_multiply_resource_limits(tmp_path, monkeypatch
         monkeypatch.setattr(toolchains, "MAX_BYTES", 60)
     with pytest.raises(ValueError, match="Combined"):
         admit(tmp_path, value)
+
+
+def test_frozen_dependency_data_have_a_mount_without_an_executable_prefix(tmp_path):
+    root, value = frozen_payload(tmp_path)
+    value["toolchains"][0]["commands"] = {}
+    admitted = admit(tmp_path, value)
+    assert admitted.roots() == (root,)
+    assert admitted.instructions() == ""
+    (root / "pnpm/bin/pnpm.cjs").write_bytes(b"changed frozen dependency")
+    with pytest.raises(ValueError):
+        admitted.verify()

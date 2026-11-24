@@ -61,7 +61,7 @@ def _payload(value: Any) -> dict[str, Any]:
             raise ValueError("Toolchain files need exact byte counts and SHA-256 identities")
     if sum(identity["bytes"] for identity in files.values()) > MAX_BYTES:
         raise ValueError("Toolchain payload exceeds its byte budget")
-    if not isinstance(commands, dict) or not 1 <= len(commands) <= 8:
+    if not isinstance(commands, dict) or len(commands) > 8:
         raise ValueError("Toolchain commands require bounded explicit file prefixes")
     for name, prefix in commands.items():
         if not re.fullmatch(r"[a-z][a-z0-9_-]{0,47}", name):
@@ -119,7 +119,11 @@ class NativeToolchains:
             for item in self.payloads()
             for name, prefix in item["commands"].items()
         }
-        return "\nNative command prefixes for this attempt (use these full paths): " + json.dumps(commands) + "\n"
+        return (
+            ("\nNative command prefixes for this attempt (use these full paths): " + json.dumps(commands) + "\n")
+            if commands
+            else ""
+        )
 
     def verify(self) -> None:
         for item in self.payloads():

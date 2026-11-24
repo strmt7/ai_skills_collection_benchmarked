@@ -63,6 +63,7 @@ def profile_directories(home: Path) -> dict[str, str]:
         path = home / relative
         path.mkdir(parents=True, exist_ok=True)
         environment[key] = str(path)
+    environment["PSModuleAnalysisCachePath"] = str(Path(environment["LOCALAPPDATA"]) / "ModuleAnalysisCache")
     return environment
 
 

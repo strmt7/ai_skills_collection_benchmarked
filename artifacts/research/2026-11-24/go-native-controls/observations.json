@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "scope": "Model-free native development controls for the preselected SWE-Skills-Bench Go Monads task and compatibility replay for Packaging.",
+  "comparative_model_attempts": 0,
+  "model_efficacy_established": false,
+  "task": {
+    "id": "swe-skills-bench/batch3/go-monads-mo",
+    "publisher_commit": "4d3450d9216a590a8726fcb3604b5143daca776b",
+    "prompt_sha256": "2cb95adbf3a593c6cc9098c2799039a67004823e4b044c8282d58169a6ebd115",
+    "source": {
+      "repository": "samber/mo",
+      "commit": "35a143a391a281ca954b388bd8c6795ea1ee1955"
+    },
+    "fixture_image": "docker.io/zhangyiiiiii/swe-skills-bench-golang@sha256:08a709af3502f43282367befe0ae3ba641efe7300cf9d2295c01eb12564c6180",
+    "grader_user": "dev",
+    "native_test_timeout_seconds": 300,
+    "native_pass_threshold": 1
+  },
+  "go_dependencies": {
+    "verified_linux_executable_sha256": "4565f55b45b9c06b8f0b12c26d48edf0e0e62906991b3ee0e5a75fc81d0c116d",
+    "observed_release": "go version go1.22.5 linux/amd64",
+    "original_setup_command_exit_code": 0,
+    "proxy_records": 41,
+    "proxy_sha256_before_and_after": "65d1187c529879253b6090d11826130c2efb053cdaaf3ffbe2249ad836bbc2ee"
+  },
+  "native_grading_controls": {
+    "unchanged": {
+      "status": "task_failed",
+      "score": 0.21428571428571427,
+      "native_counts": {
+        "passed": 3,
+        "failed": 11,
+        "skipped": 0,
+        "errors": 0,
+        "total": 14
+      }
+    },
+    "malformed": {
+      "status": "task_failed",
+      "score": 0.07142857142857142,
+      "native_counts": {
+        "passed": 1,
+        "failed": 13,
+        "skipped": 0,
+        "errors": 0,
+        "total": 14
+      }
+    },
+    "missing_dependency": {
+      "status": "harness_error",
+      "score": null,
+      "native_counts": null
+    }
+  },
+  "subject_runtime": {
+    "offline_go_dependency_compiled": true,
+    "proxy_read_only": true,
+    "final_workspace_bytes": 92567599,
+    "final_workspace_entries": 4126,
+    "final_workspace_budget": {
+      "max_workspace_bytes": 402653184,
+      "max_workspace_entries": 16384,
+      "min_free_bytes": 4294967296
+    },
+    "remaining_owned_processes": 0
+  },
+  "cache_placement_control": {
+    "earlier_capture_status": "rejected",
+    "earlier_unexpected_path": "Microsoft/Windows/PowerShell/ModuleAnalysisCache",
+    "earlier_extra_bytes": 8246,
+    "current_cache_destination": "private PowerShell runtime profile",
+    "current_capture_status": "verified",
+    "earlier_source_transfer_summary_sha256": "c928cae5ded8fb6d7185f3109cfc95ac7e41f75b3326b0745161c6c15db9493f",
+    "current_source_transfer_summary_sha256": "cbbd6bb537d61a77fe09df87f6afb148e48132fbffaaf06bf54812ac1eafb11b"
+  },
+  "end_to_end": {
+    "initial_source_files": 82,
+    "reconstructed_source_files": 83,
+    "written": [
+      "native-control-note.txt"
+    ],
+    "deleted": [],
+    "collected_change_verified": true,
+    "publisher_and_independent_score_verified": true,
+    "status": "task_failed",
+    "native_counts": {
+      "errors": 0,
+      "failed": 11,
+      "passed": 3,
+      "skipped": 0,
+      "total": 14
+    },
+    "score": 0.21428571428571427
+  },
+  "python_regressions": {
+    "controls_passed": 11,
+    "boundary_checks_passed": 2,
+    "context_checks_passed": 17
+  },
+  "inference_admission": "Development controls. Study-specific admission and matched model runs remain required."
+}

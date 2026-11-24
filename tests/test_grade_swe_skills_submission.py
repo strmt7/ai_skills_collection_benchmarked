@@ -10,6 +10,7 @@ from typing import Any
 
 import grade_swe_skills_submission as controller
 import pytest
+from _native_grader_go import go_environment
 from _trial_collection_policy import default_collection_policy
 
 
@@ -248,5 +249,67 @@ def test_frozen_environment_rejects_invalid_graph_or_runtime(frozen_task, tmp_pa
         spec["resources"]["memory_bytes"] = True
     else:
         spec["machine"] = "unobserved-host"
+    with pytest.raises(ValueError):
+        controller.validate_task(task)
+
+
+def _with_go_environment(task: dict[str, Any], tmp_path: Path) -> dict[str, Any]:
+    task.update(
+        schema_version=4,
+        go_environment={
+            "schema_version": 1,
+            "go_version": "go1.22.5",
+            "go_sha256": "a" * 64,
+            "modules": [
+                _asset(
+                    tmp_path / f"v1.0.0.{suffix}",
+                    suffix.encode(),
+                    target=f"example.org/dependency/@v/v1.0.0.{suffix}",
+                )
+                for suffix in ("info", "mod", "zip")
+            ],
+            "resources": {
+                "memory_bytes": 1024**3,
+                "tmpfs_bytes": 256 * 1024**2,
+                "cpu_count": 2,
+                "repository_bytes": 16 * 1024**2,
+            },
+            "setup_timeout_seconds": 120,
+        },
+        import_origins={"pytest": task["import_origins"]["pytest"]},
+    )
+    return task
+
+
+def test_go_task_admits_native_project_with_frozen_proxy_and_posix_guest_paths(frozen_task, tmp_path):
+    task = _with_go_environment(frozen_task, tmp_path)
+    profile = task["go_environment"]
+    assert controller.validate_task(task) is task
+    packet = controller.go_environment_packet(profile, controller.asset)
+    assert packet["grader-go-proxy/example.org/dependency/@v/v1.0.0.mod"] == b"mod"
+    env = go_environment({"GOWORK": "ambient", "GOFLAGS": "ambient", "GOPROXY": "https://ambient.test"}, profile)
+    assert env["GOPROXY"] == "file:///tmp/benchmark-inputs/grader-go-proxy"
+    assert env["GOTOOLCHAIN"] == "local" and env["GOENV"] == "off"
+    assert env["GOMODCACHE"] == "/tmp/grader-go/modules"
+    assert env["GOFLAGS"] == "" and "GOWORK" not in env
+
+
+@pytest.mark.parametrize("mutation", ["escape", "duplicate", "missing-mod", "changed-asset", "mutable-version", "cpu"])
+def test_go_task_rejects_invalid_module_graph_or_guest_contract(frozen_task, tmp_path, mutation):
+    task = _with_go_environment(frozen_task, tmp_path)
+    environment = task["go_environment"]
+    entries = environment["modules"]
+    if mutation == "escape":
+        entries[0]["target"] = "../unverified.info"
+    elif mutation == "duplicate":
+        entries.append(dict(entries[0]))
+    elif mutation == "missing-mod":
+        del entries[1]
+    elif mutation == "changed-asset":
+        Path(entries[0]["path"]).write_bytes(b"changed")
+    elif mutation == "mutable-version":
+        environment["go_version"] = "latest"
+    else:
+        environment["resources"]["cpu_count"] = True
     with pytest.raises(ValueError):
         controller.validate_task(task)

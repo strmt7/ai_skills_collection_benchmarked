@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-24",
+  "scope": "General cancellation, liveness and cleanup behavior on an independent Go worker fixture.",
+  "primary_source": {
+    "url": "https://go.dev/blog/testing-time",
+    "http_status": 200,
+    "provider": "0.9.5+catalog.portable4",
+    "native_sha256": "50860fc8b53e48f93a4aa0b191b1ca949fa18ba5ea2d2c3d0fd1f9a3c8a548bf",
+    "conclusion": "Tests need reliable synchronization with asynchronous work before examining state or driving time."
+  },
+  "earlier_revision": {
+    "commit": "53aeaa87f12c90cc6597efe2866194bd4adc20d2",
+    "path": "included/improved/skills/tdd-workflow-current/SKILL.md",
+    "sha256": "64a8ade109658d0e777e4a6cf770f61fc7fa055d903600eaff9815327250e64b"
+  },
+  "fixture": {
+    "go_release": "1.22.5",
+    "go_test": "go test -v -count=1 -p 2 -timeout 12s ./...",
+    "test_sha256": "c288ec4fe5a380c1bde1bf0b1261df981218a70500c64edc45702bb4671dbdf3",
+    "test_construction": "The worker signals readiness before cancellation. Buffered results and a releasable channel let cleanup join the worker even when the assertion fails.",
+    "cases": [
+      {
+        "behavior": "respects cancellation",
+        "exit_code": 0,
+        "worker_joined": true,
+        "native_stdout_sha256": "30f97e0f8ad1ac8992867b5f37f8ca93314dad7f1b9ff7030b095890c3b7e9d5"
+      },
+      {
+        "behavior": "ignores cancellation",
+        "exit_code": 1,
+        "worker_joined": true,
+        "native_stdout_sha256": "ff4b926466c5f43cb163d521eeed6c7225aecae15ba518b232fab0e101e80075"
+      }
+    ]
+  },
+  "comparative_model_attempts": 0
+}

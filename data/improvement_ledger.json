@@ -1804,6 +1804,11 @@
             "path": "artifacts/research/2026-11-17/fixture-lifecycle/review-v2.json",
             "sha256": "3e3df833247abccf8ddbf98e70d400336b285745e57edcb4d19c8b7c50621753",
             "scope": "Native independent focused-runner reuse, setup-failure classification and prior fixture lifecycle controls. The earlier measured candidate remains separate."
+          },
+          {
+            "path": "artifacts/research/2026-11-24/synchronized-cancellation/review.json",
+            "scope": "Independent native controls for synchronized cancellation and cleanup after assertion failure.",
+            "sha256": "4e288f304c2db95c9a33928420c92728b616ada5abe3de085dcd560bb1473c0f"
           }
         ],
         "status": "in_progress"

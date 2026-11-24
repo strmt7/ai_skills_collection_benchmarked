@@ -13,6 +13,7 @@ from _native_benchmark_runtime import ContainerLease, DockerClient, LeaseResourc
 from _native_grader_dependencies import PREFIX as DEPENDENCY_PREFIX
 from _native_grader_dependencies import PYTHON as DEPENDENCY_PYTHON
 from _native_grader_dependencies import environment_packet, validate_environment
+from _native_grader_go import go_environment_packet, validate_go_environment
 from _trial_collection_contract import process_complete, verify_collector_launch
 from _trial_collection_manifest import validate_manifest
 from _trial_collection_policy import collection_policy
@@ -26,6 +27,16 @@ ROOT = Path(__file__).resolve().parents[1]
 PYTHON = ["python", "-I", "-B", "-X", "utf8"]
 DEPENDENCY_SETUP = "import sys,json;sys.path.insert(0,'/tmp/benchmark-inputs/tools');from _native_grader_dependencies import prepare;print(json.dumps(prepare()))"
 DEPENDENCY_VERIFY = "import sys,json;sys.path.insert(0,'/tmp/benchmark-inputs/tools');from _native_grader_dependencies import inventory;print(json.dumps(inventory()))"
+GO_SETUP = (
+    "import json,sys;sys.path.insert(0,'/tmp/benchmark-inputs/tools');"
+    "from _native_grader_go import prepare_go;print(json.dumps(prepare_go()))"
+)
+GO_VERIFY = (
+    "import json,sys;from pathlib import Path;"
+    "root=Path('/tmp/benchmark-inputs');sys.path.insert(0,str(root/'tools'));"
+    "from _native_grader_go import proxy_inventory;"
+    "print(json.dumps(proxy_inventory(json.loads((root/'task.json').read_bytes())['go_environment'])))"
+)
 SUPPORT = (
     "transfer_benchmark_submission.py",
     "_trial_collection_manifest.py",
@@ -49,7 +60,7 @@ base=root/"baseline"
 base.mkdir(exist_ok=True)
 for path in json.loads(before)["directories"]:(base/path).mkdir(exist_ok=True)
 result=restore(plan_handoff(before,after),base,root/"delta.tar",sys.argv[1],Path("/workspace")/task["source_directory"])
-if "python_environment" in task:
+if "python_environment" in task or "go_environment" in task:
     repo=Path("/workspace")/task["source_directory"]
     for path in [repo,*repo.rglob("*")]:path.chmod(path.stat().st_mode|0o222)
 tests=Path("/workspace/tests")
@@ -71,6 +82,11 @@ if "python_environment" in task:
     home=Path("/tmp/grader-task-home")
     home.mkdir(mode=0o700)
     env.update(HOME=str(home),XDG_CACHE_HOME=str(home/"cache"),XDG_CONFIG_HOME=str(home/"config"),XDG_DATA_HOME=str(home/"data"),TMPDIR="/tmp",OPENBLAS_NUM_THREADS="1",OMP_NUM_THREADS="1")
+if "go_environment" in task:
+    sys.path.insert(0,str(root/"tools"))
+    from _native_grader_go import go_environment
+    env=go_environment(env,task["go_environment"])
+if "python_environment" in task or "go_environment" in task:
     with tempfile.TemporaryFile(dir=repo):pass
 env["PYTHONPATH"]=os.pathsep.join(str(repo/path) for path in task["import_paths"])
 if task["python_safe_path"]:env["PYTHONSAFEPATH"]="1"
@@ -132,6 +148,7 @@ def source_hashes() -> dict[str, str]:
     names = {
         "grade_swe_skills_submission.py",
         "_native_grader_dependencies.py",
+        "_native_grader_go.py",
         "_native_benchmark_runtime.py",
         "_native_image_archive.py",
         "transfer_benchmark_submission.py",
@@ -181,11 +198,12 @@ def validate_task(task: Any) -> dict[str, Any]:
         "import_origins",
         "python_safe_path",
     }
+    profiles: dict[int, set[str]] = {2: set(), 3: {"python_environment"}, 4: {"go_environment"}}
     if (
         not isinstance(task, dict)
         or type(task.get("schema_version")) is not int
-        or task.get("schema_version") not in (2, 3)
-        or set(task) != fields | ({"python_environment"} if task["schema_version"] == 3 else set())
+        or task["schema_version"] not in profiles
+        or set(task) != fields | profiles[task["schema_version"]]
     ):
         raise ValueError("Expected a complete frozen native grading task")
     if task["execution_source_sha256"] != source_hashes():
@@ -193,6 +211,9 @@ def validate_task(task: Any) -> dict[str, Any]:
     collection_policy(task["collection_policy"])
     if task["schema_version"] == 3:
         environment = validate_environment(task["python_environment"], asset)
+        LeaseResources(**environment["resources"], executable_workspace=True, repository_workspace=True)
+    elif task["schema_version"] == 4:
+        environment = validate_go_environment(task["go_environment"], asset)
         LeaseResources(**environment["resources"], executable_workspace=True, repository_workspace=True)
     source = task["source"]
     if (
@@ -257,7 +278,7 @@ def validate_task(task: Any) -> dict[str, Any]:
                 raise ValueError("Frozen environment import identity is malformed")
         else:
             raise ValueError("An import origin must declare source bytes or a pinned image module")
-    if not source_modules:
+    if not source_modules and "go_environment" not in task:
         raise ValueError("Native task must declare the project code being evaluated")
     scorer = task["scorer"]
     if not isinstance(scorer, dict) or set(scorer) != {"files", "wheels", "versions"}:
@@ -401,22 +422,26 @@ def grade(task: dict[str, Any], runtime: Path, baseline: Path, collection: Path,
                 raise ValueError("Pinned baseline bytes changed after collection")
             packet["baseline/" + name] = raw
         environment = task.get("python_environment")
+        go_profile = task.get("go_environment")
+        dependencies = environment if environment is not None else go_profile
         if environment is not None:
             packet.update(environment_packet(environment, asset))
+        if go_profile is not None:
+            packet.update(go_environment_packet(go_profile, asset))
         report["stage"] = "native-grader"
         write_json(output / "progress.json", report)
         lease = ContainerLease(
             client,
             output / "grader.lease.json",
-            seconds=task["test_timeout_seconds"] + 60 + (environment["setup_timeout_seconds"] if environment else 0),
+            seconds=task["test_timeout_seconds"] + 60 + (dependencies["setup_timeout_seconds"] if dependencies else 0),
             resources=LeaseResources(
                 **(
-                    environment["resources"]
-                    if environment
+                    dependencies["resources"]
+                    if dependencies
                     else {"memory_bytes": 768 * 1024**2, "tmpfs_bytes": 64 * 1024**2}
                 ),
                 pids_limit=64,
-                executable_workspace=environment is not None,
+                executable_workspace=dependencies is not None,
                 repository_workspace=True,
             ),
         )
@@ -442,6 +467,17 @@ def grade(task: dict[str, Any], runtime: Path, baseline: Path, collection: Path,
             }
             if not isinstance(rebuilt, dict) or any(rebuilt.get(key) != value for key, value in expected.items()):
                 raise ValueError("Native reconstruction differs from the sealed captures")
+            if go_profile is not None:
+                go_setup = strict_json(
+                    _run(
+                        lease,
+                        "prepare-go-dependencies",
+                        GO_SETUP,
+                        user=task["grader_user"],
+                        timeout=go_profile["setup_timeout_seconds"] + 15,
+                    ).decode("utf-8")
+                )
+                write_json(output / "go-setup.native.json", go_setup)
             native = strict_json(
                 _run(
                     lease,
@@ -482,6 +518,13 @@ def grade(task: dict[str, Any], runtime: Path, baseline: Path, collection: Path,
                 write_json(output / "dependencies-after.native.json", final_inventory)
                 if final_inventory != prepared["inventory"]:
                     raise ValueError("Frozen grader environment changed during evaluator execution")
+            if go_profile is not None:
+                go_after = strict_json(
+                    _run(lease, "verify-go-proxy", GO_VERIFY, user=task["grader_user"]).decode("utf-8")
+                )
+                write_json(output / "go-proxy-after.native.json", go_after)
+                if go_after != go_setup["proxy"]:
+                    raise ValueError("Frozen Go proxy differs after evaluator execution")
         finally:
             lease.close()
 

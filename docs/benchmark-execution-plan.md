@@ -32,6 +32,15 @@ declared framework and project import origins before tests. See the
 [runtime-origin controls](research-native-runtime-origins.md). Model launch
 and live transport qualification remain required for a matched experiment.
 
+The preselected Go Monads development task now has a Windows subject-to-Linux
+grader control using the publisher's exact prompt, image and tests. The
+unchanged source scored 3/14 and the malformed module scored 1/14. A missing
+offline dependency stopped preparation before scoring. The end-to-end replay
+verified the intended submission edit and reproduced 3/14. These scripted
+controls qualify this path for development. A counted comparison still requires
+admission for this study and matched model runs. See the
+[Go native controls](../artifacts/research/2026-11-24/go-native-controls/review.json).
+
 The Windows subject adapter now supports automatic, hash-locked dependency
 installation into a fresh private profile. In the Packaging development cell,
 51,498 unchanged project version tests passed inside the subject sandbox.

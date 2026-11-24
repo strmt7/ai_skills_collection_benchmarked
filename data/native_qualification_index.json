@@ -4,11 +4,12 @@
     {
       "id": "native-project-resources",
       "review": {
-        "path": "artifacts/research/2026-11-24/development-qualification/review.json",
-        "sha256": "388df47f34c894db266a144440d1ff24c786f4be0af6acdeb137e31f7d798182"
+        "path": "artifacts/research/2026-11-24/go-native-controls/review.json",
+        "sha256": "0e43dd1b61f03561c079786ab0e6e859bb84142040cc5e4ea4120668b1fefe28"
       },
       "sources": [
         "tools/_native_benchmark_runtime.py",
+        "tools/_native_grader_go.py",
         "tools/grade_swe_skills_submission.py",
         "tests/test_grade_swe_skills_submission.py"
       ]
@@ -124,7 +125,6 @@
       },
       "sources": [
         "tools/_trial_catalog.py",
-        "tools/_trial_context.py",
         "tools/_trial_execution_evidence.py",
         "tests/test_trial_local_catalog.py",
         "tests/test_trial_execution_evidence.py",
@@ -132,10 +132,21 @@
       ]
     },
     {
+      "id": "native-trial-shell-profile",
+      "review": {
+        "path": "artifacts/research/2026-11-24/go-native-controls/review.json",
+        "sha256": "0e43dd1b61f03561c079786ab0e6e859bb84142040cc5e4ea4120668b1fefe28"
+      },
+      "sources": [
+        "tools/_trial_context.py",
+        "tests/test_trial_context.py"
+      ]
+    },
+    {
       "id": "native-subject-toolchains",
       "review": {
-        "path": "artifacts/research/2026-11-24/development-qualification/review.json",
-        "sha256": "388df47f34c894db266a144440d1ff24c786f4be0af6acdeb137e31f7d798182"
+        "path": "artifacts/research/2026-11-24/go-native-controls/review.json",
+        "sha256": "0e43dd1b61f03561c079786ab0e6e859bb84142040cc5e4ea4120668b1fefe28"
       },
       "sources": [
         "tools/_subject_toolchains.py",
@@ -216,8 +227,17 @@
         "sha256": "3e3df833247abccf8ddbf98e70d400336b285745e57edcb4d19c8b7c50621753"
       },
       "sources": [
-        "included/improved/skills/tdd-workflow-current/SKILL.md",
         "included/improved/skills/e2e-testing-current/SKILL.md"
+      ]
+    },
+    {
+      "id": "qa-synchronized-cancellation",
+      "review": {
+        "path": "artifacts/research/2026-11-24/synchronized-cancellation/review.json",
+        "sha256": "4e288f304c2db95c9a33928420c92728b616ada5abe3de085dcd560bb1473c0f"
+      },
+      "sources": [
+        "included/improved/skills/tdd-workflow-current/SKILL.md"
       ]
     },
     {
@@ -335,8 +355,10 @@
         "sha256": "43722091a64a46feb6ec40b079106da0c37ea367bd7306b0f7d944e58d5f8072"
       },
       "superseded_sources": [
+        "tools/_native_benchmark_runtime.py",
+        "tools/grade_swe_skills_submission.py",
         "tests/test_native_benchmark_runtime.py",
-        "tools/_native_benchmark_runtime.py"
+        "tests/test_grade_swe_skills_submission.py"
       ]
     },
     {
@@ -383,14 +405,15 @@
         "sha256": "428e35bfb1366f30772c0c7768986cefe4da3b8e7ff9f9188bf6b8b91bbec836"
       },
       "superseded_sources": [
-        "docs/native-benchmark-controller.md",
+        "tools/_trial_context.py",
+        "tools/_native_trial_plan.py",
+        "tools/run_swe_skills_trial.py",
+        "tools/qualify_trial_context.py",
+        "tools/qualify_native_trial_boundary.py",
         "tests/test_native_trial_plan.py",
         "tests/test_native_trial_runner.py",
         "tests/test_qualify_trial_context.py",
-        "tools/_native_trial_plan.py",
-        "tools/qualify_native_trial_boundary.py",
-        "tools/qualify_trial_context.py",
-        "tools/run_swe_skills_trial.py"
+        "docs/native-benchmark-controller.md"
       ]
     },
     {
@@ -527,7 +550,31 @@
         "sha256": "a8c626bda7dacb2c08078251cedfdcc577d30a9bc561c02a975e56491de835ea"
       },
       "superseded_sources": [
+        "tools/_subject_toolchains.py",
+        "tests/test_subject_toolchains.py",
         "docs/native-benchmark-controller.md"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-24/development-qualification/review.json",
+        "sha256": "388df47f34c894db266a144440d1ff24c786f4be0af6acdeb137e31f7d798182"
+      },
+      "superseded_sources": [
+        "docs/native-benchmark-controller.md",
+        "tests/test_grade_swe_skills_submission.py",
+        "tests/test_subject_toolchains.py",
+        "tools/_subject_toolchains.py",
+        "tools/grade_swe_skills_submission.py"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-17/fixture-lifecycle/review-v2.json",
+        "sha256": "3e3df833247abccf8ddbf98e70d400336b285745e57edcb4d19c8b7c50621753"
+      },
+      "superseded_sources": [
+        "included/improved/skills/tdd-workflow-current/SKILL.md"
       ]
     }
   ]
