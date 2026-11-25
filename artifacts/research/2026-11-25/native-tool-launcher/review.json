@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-25",
+  "scope": "Native tool launcher, scripted command session replay and offline benchmark profile qualification",
+  "source_sha256": {
+    "docs/native-benchmark-controller.md": "9a6256bbf8bcadd2fcb5bc21cdbe4d18984e0c6a478abf18760a29390e8bd72f",
+    "tests/test_native_trial_boundary.py": "a894c883ec4320f1ff4f8bec1a09510696e6f1f7c50a501936039c212766fa5b",
+    "tests/test_native_trial_runner.py": "9de7bbac3a4c5b5f6f83299e522bb8085a93f03533f17a1c9042a220f37699c4",
+    "tests/test_subject_toolchains.py": "b729a0cc925d0dfdd795f3aa3e5071c313f02c3cbc893ed9675de852a247a5c4",
+    "tools/_subject_toolchains.py": "0c6a8abf6cae14ef467a36c39b0381623f7ef49138b80f0cd78255042861858d",
+    "tools/qualify_native_trial_boundary.py": "56a08f5e99cfd417ba6e70ac472c2cb2da1ccd940216cdc08015766d2ec68a20",
+    "tools/run_swe_skills_trial.py": "02ba44aa77b6a9eed2d84991940cb3e9283cd1dd49e20acfb199ed01815ad113"
+  },
+  "artifacts": {
+    "observations.json": "a97d7d53fe91bf6ed6256f9242325b4d519858cdb7acf4b9f7d096dfd0c00211"
+  },
+  "comparative_model_attempts": 0,
+  "model_efficacy_established": false
+}

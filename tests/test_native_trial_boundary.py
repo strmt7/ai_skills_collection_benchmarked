@@ -12,6 +12,12 @@ import qualify_native_trial_boundary as boundary
 from _native_benchmark_runtime import sha256, write_json
 
 
+def tool_return(status: str, *lines: str) -> str:
+    return "\n".join(
+        ("Chunk ID: fixture", "Wall time: 1 second", status, "Original token count: 20", "Output:", *lines)
+    )
+
+
 @pytest.fixture
 def matrix(tmp_path, monkeypatch):
     root = tmp_path / "project"
@@ -83,12 +89,17 @@ def matrix(tmp_path, monkeypatch):
                 "listener_stopped": True,
                 "errors": [],
                 "fallback_requests": 0,
-                "posts": 0 if name == "preflight-space" else 1,
+                "posts": {"preflight-space": 0, "edited": 2, "isolation": 2}.get(name, 1),
                 "requests": [{"authentication": "none", "authorization_present": False}],
             },
         )
         (directory / "implementation.py.txt").write_text("owned unit producer, never executed", encoding="utf-8")
         evidence = {}
+        tool_markers = (
+            "SUBJECT_DEPENDENCY_IMPORTS_VERIFIED",
+            "NATIVE_SUBJECT_EDIT_COMPLETED",
+            "NATIVE_INTEGRATED_ISOLATION_VERIFIED",
+        )
         if name != "preflight-space":
             reason = {
                 "budget": "write_io_limit",
@@ -124,11 +135,25 @@ def matrix(tmp_path, monkeypatch):
                 "space_budget": {"termination_reason": reason, "observation_error": {"winerror": 5}},
             }
             write_json(attempt / "process.json", process)
-            events = (
+            events: list[dict[str, Any]] = (
                 [{"type": "turn.failed", "error": "stream closed before response.completed"}]
                 if name == "truncated"
                 else [{"type": "turn.completed"}]
             )
+            if name in {"edited", "isolation"}:
+                events.insert(
+                    0,
+                    {
+                        "type": "item.completed",
+                        "item": {
+                            "type": "command_execution",
+                            "id": "item_0",
+                            "status": "completed",
+                            "exit_code": 0,
+                            "aggregated_output": "\n".join(tool_markers),
+                        },
+                    },
+                )
             (attempt / "transcript.jsonl").write_text(
                 "\n".join(json.dumps(event) for event in events) + "\n", encoding="utf-8"
             )
@@ -150,13 +175,16 @@ def matrix(tmp_path, monkeypatch):
                     "model_requests": 0,
                 },
             )
-            output = "Process exited with code 0\nSUBJECT_DEPENDENCY_IMPORTS_VERIFIED\nNATIVE_SUBJECT_EDIT_COMPLETED\nNATIVE_INTEGRATED_ISOLATION_VERIFIED"
             write_json(
                 directory / "request-2.native.json",
                 {
                     "input": [
-                        {"type": "function_call", "arguments": output},
-                        {"type": "function_call_output", "call_id": "call_owned_control", "output": output},
+                        {"type": "function_call", "name": "exec_command", "call_id": "call_owned_control"},
+                        {
+                            "type": "function_call_output",
+                            "call_id": "call_owned_control",
+                            "output": tool_return("Process exited with code 0", *tool_markers),
+                        },
                     ]
                 },
             )
@@ -358,11 +386,56 @@ def test_wrong_native_mechanism_fails_even_with_consistent_digests(matrix, case,
 
 def test_command_marker_without_matched_output_is_rejected(matrix):
     def remove(record):
-        record["input"][1]["output"] = "Process exited with code 0\nNo probe output"
+        record["input"][1]["output"] = tool_return("Process exited with code 0", "No probe output")
 
     mutate(matrix, "isolation", "request-2.native.json", remove)
     with pytest.raises(ValueError, match="imports or edits"):
         boundary.verify(matrix[1])
+
+
+@pytest.mark.parametrize(
+    "fault,diagnostic",
+    [
+        (None, None),
+        ("wrong-session", "different session"),
+        ("changed-history", "command history differs"),
+        ("failed-process", "did not exit successfully"),
+    ],
+)
+def test_native_control_uses_matching_poll_and_final_exit(matrix, fault, diagnostic):
+    directory = Path(matrix[1]["controls"]["edited"])
+    initial_path = directory / "request-2.native.json"
+    inputs = json.loads(initial_path.read_bytes())["input"]
+    inputs[1]["output"] = tool_return("Process running with session ID 41", "SUBJECT_DEPENDENCY_IMPORTS_VERIFIED")
+    write_json(initial_path, {"input": inputs})
+    final_status = "Process exited with code 2" if fault == "failed-process" else "Process exited with code 0"
+    if fault == "changed-history":
+        inputs[0]["name"] = "unexpected"
+    inputs.extend(
+        (
+            {
+                "type": "function_call",
+                "name": "write_stdin",
+                "call_id": "call_poll",
+                "arguments": json.dumps({"session_id": 42 if fault == "wrong-session" else 41, "chars": ""}),
+            },
+            {
+                "type": "function_call_output",
+                "call_id": "call_poll",
+                "output": tool_return(final_status, "NATIVE_SUBJECT_EDIT_COMPLETED", "Process exited with code 0"),
+            },
+        )
+    )
+    final_path = directory / "request-3.native.json"
+    write_json(final_path, {"input": inputs})
+    mutate(matrix, "edited", "transport.json", lambda record: record.update(posts=3))
+    if diagnostic is not None:
+        with pytest.raises(ValueError, match=diagnostic):
+            boundary.verify(matrix[1])
+    else:
+        evidence = boundary.verify(matrix[1])["input_sha256"]
+        assert evidence[str(initial_path)] == sha256(initial_path.read_bytes())
+        assert evidence[str(final_path)] == sha256(final_path.read_bytes())
 
 
 @pytest.mark.parametrize("change", ["model", "holdout", "credentials", "ipv6", "route", "task", "runtime", "storage"])
@@ -429,15 +502,15 @@ def test_missing_or_unexpected_evidence_cannot_be_qualified(matrix, evidence):
         boundary.verify(matrix[1])
 
 
-def test_changed_admission_implementation_invalidates_live_binding(matrix, monkeypatch):
+@pytest.mark.parametrize("changed", ["qualify_native_trial_boundary.py", "_scripted_tool_control.py"])
+def test_changed_admission_implementation_invalidates_live_binding(matrix, monkeypatch, changed):
     state, spec = matrix
     write_json(state / "specification.json", spec)
     boundary.qualify(state / "specification.json", state / "qualified")
     admitted = boundary.admit(Path(spec["controls"]["edited"]) / "plan.json", state / "qualified")
     original = boundary.raw
-    monkeypatch.setattr(
-        boundary, "raw", lambda path: b"changed admission source" if path == Path(boundary.__file__) else original(path)
-    )
+    source = Path(boundary.__file__).with_name(changed)
+    monkeypatch.setattr(boundary, "raw", lambda path: b"changed admission source" if path == source else original(path))
     with pytest.raises(ValueError, match="admission source changed"):
         boundary.verify_binding(admitted)
 
@@ -453,7 +526,7 @@ def test_json_cli_checks_a_complete_receipt(matrix, capsys):
     )
     result = json.loads(capsys.readouterr().out)
     assert result["ok"] is True and result["validation"]["model_transport_qualified"] is False
-    assert result["validation"]["admission_source_sha256"] == sha256(Path(boundary.__file__).read_bytes())
+    assert result["validation"]["admission_source_sha256"] == boundary.admission_source_digest()
 
 
 @pytest.mark.parametrize(

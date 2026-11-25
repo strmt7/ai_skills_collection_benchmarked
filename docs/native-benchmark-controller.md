@@ -104,15 +104,23 @@ admission. The combined manifest permits at most eight toolchains, 32,000 file
 and directory entries, and 4 GiB of payload bytes. These are explicit profile
 limits, not evidence that every original benchmark runtime fits them.
 
-The runner archives the manifest, grants read access to the declared payloads,
-and supplies full command prefixes alongside the Python executable in the common
-runtime instructions. It does not infer tools from the host `PATH`. Use identical
-tool declarations and runtime instructions in every matched condition; a tool
-bundle treatment requires its own experiment. Payloads are checked before launch
-and before accepting the native score. A declared version does not independently
-prove capabilities, current stable status or a complete task build. Qualify actual
-execution in the native subject and each original task's build/test stages before
-admitting comparative model trials.
+The runner archives the manifest and grants read access to the declared payloads.
+Its common runtime instructions show a PowerShell invocation for the prepared
+launcher. The launcher passes each declared command and its arguments directly
+to the child process, restores the subject's temporary directory and returns the
+child exit status. Go uses private build and module caches and the declared local
+module proxy when available. The launcher and caches are stored in the reserved
+subject profile outside the collected submission.
+
+Use identical tool declarations and runtime instructions in every matched
+condition. A tool bundle treatment requires its own experiment. The runner
+checks the declared payloads and archives the launcher source for replay.
+Scripted calibration verifies the same live command session through its exit
+and checks its required output in both the tool returns and the native transcript.
+Qualify compilation in the subject environment before admitting comparative
+model trials. Run supported native checks and retain their outcomes. The Go
+admission control compiles the publisher's packages and test binaries on
+Windows, and the original Linux evaluator supplies the benchmark score.
 
 The current Windows Node 26.13.1 file-entrypoint control fails with `EPERM`
 when its normal module loader queries drive-root metadata under the minimal

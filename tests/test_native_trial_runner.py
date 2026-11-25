@@ -10,7 +10,7 @@ from typing import Any
 import pytest
 import run_swe_skills_trial as trials
 from _native_benchmark_runtime import sha256
-from _subject_toolchains import load_toolchains
+from _subject_toolchains import LAUNCHER_EVIDENCE, load_toolchains
 from _trial_context import TrialContext
 from prepare_subject_dependencies import inventory
 
@@ -160,7 +160,7 @@ def test_native_fraction_and_denominator_are_preserved(attempt):
     assert "owned fixture credential" not in json.dumps(result)
 
 
-@pytest.mark.parametrize("drift", [False, True])
+@pytest.mark.parametrize("drift", [None, "payload", "launcher"])
 def test_native_toolchains_need_no_python_dependencies_and_drift_forbids_grading(attempt, tmp_path, monkeypatch, drift):
     root = tmp_path / "native tools"
     root.mkdir()
@@ -192,18 +192,34 @@ def test_native_toolchains_need_no_python_dependencies_and_drift_forbids_grading
         return value
 
     execute = trials.execute_agent
+    create = trials.create_context
+
+    def context_with_scratch(*args):
+        context = create(*args)
+        temporary = context.workspace / ".trial-profile/temporary"
+        temporary.mkdir(parents=True)
+        context.tool_environment["TEMP"] = str(temporary)
+        return context
 
     def subject(*args, **kwargs):
-        assert root in kwargs["context"].readable_roots
+        context = kwargs["context"]
+        assert root in context.readable_roots
         result = execute(*args, **kwargs)
-        if drift:
+        if drift == "payload":
             binary.write_bytes(b"changed native tool fixture")
+        if drift == "launcher":
+            (context.workspace / ".trial-profile/native-tools.py").write_bytes(b"changed launcher")
         return result
 
+    monkeypatch.setattr(trials, "create_context", context_with_scratch)
     monkeypatch.setattr(trials, "load_plan", with_tools)
     monkeypatch.setattr(trials, "execute_agent", subject)
     result = invoke(attempt)
-    assert json.dumps(str(binary)) in attempt[2]["prompt"]
+    assert "Available native tools: node" in attempt[2]["prompt"]
+    assert ".trial-profile" in attempt[2]["prompt"]
+    launcher = attempt[1] / LAUNCHER_EVIDENCE
+    assert repr(str(binary)) in launcher.read_text(encoding="utf-8")
+    assert result["evidence_sha256"][LAUNCHER_EVIDENCE] == sha256(launcher.read_bytes())
     assert result["status"] == ("harness_error" if drift else "task_failed")
     assert result["score"] == (None if drift else 0.5)
     assert attempt[2]["grade_calls"] == (0 if drift else 1)

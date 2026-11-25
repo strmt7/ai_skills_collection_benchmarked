@@ -15,6 +15,7 @@ from typing import Any
 
 from _native_benchmark_runtime import DockerClient, sha256, write_json
 from _native_trial_plan import ROOT, archive_sources, execution_sources, input_assets, load_plan, subject_runtime
+from _subject_toolchains import LAUNCHER_EVIDENCE
 from _trial_catalog import catalog_lease
 from _trial_collection import capture_owned
 from _trial_context import command, create_context, temporary_home
@@ -203,8 +204,14 @@ def _run_controller(
         if agent_space is not None:
             resources["space_budget"] = agent_space
         prompt = admitted["prompt"] + "\n\nPython executable for this attempt: " + str(runtime["python"]) + "\n"
+        native_tools = None
         if "toolchains" in runtime:
-            prompt += runtime["toolchains"].instructions()
+            native_tools = runtime["toolchains"].prepare(
+                workspace, runtime["python"], Path(context.tool_environment["TEMP"])
+            )
+            if native_tools is not None:
+                (output / LAUNCHER_EVIDENCE).write_bytes(native_tools.source)
+                prompt += native_tools.instructions
         with ExitStack() as credentials:
             selected = credentials.enter_context(
                 credential_lease(
@@ -247,6 +254,10 @@ def _run_controller(
             report["stage"] = "final_storage"
             write_json(output / "attempt.json", report)
             record_workspace_storage(workspace, output / "final-storage.json", agent_space.limits)
+        if native_tools is not None:
+            native_tools.verify()
+        if "toolchains" in runtime:
+            runtime["toolchains"].verify()
         report["stage"] = "collection"
         write_json(output / "attempt.json", report)
         if setup_space is not None:
@@ -276,8 +287,6 @@ def _run_controller(
         if dependency_receipt is not None:
             verify_dependencies(dependency_receipt)
             asset(runtime["dependencies"]["asset"])
-        if "toolchains" in runtime:
-            runtime["toolchains"].verify()
         asset(plan["grader_runtime"])
         if setup_space is not None:
             setup_space.require_available()
@@ -315,6 +324,7 @@ def _run_controller(
     names = [
         "plan.json",
         "launch.json",
+        LAUNCHER_EVIDENCE,
         "input.native",
         "process.json",
         "transcript.jsonl",

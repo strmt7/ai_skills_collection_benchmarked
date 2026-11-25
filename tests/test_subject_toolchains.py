@@ -3,6 +3,9 @@
 from __future__ import annotations
 
 import json
+import runpy
+import subprocess
+import sys
 from pathlib import Path
 
 import _subject_toolchains as toolchains
@@ -39,17 +42,81 @@ def admit(tmp_path: Path, value: dict) -> toolchains.NativeToolchains:
     return toolchains.load_toolchains({"path": str(location), "sha256": sha256(raw)})
 
 
-def test_explicit_command_prefixes_cover_native_and_script_tools(tmp_path):
+def prepare_workspace(tmp_path: Path) -> tuple[Path, Path]:
+    workspace = tmp_path / "task workspace"
+    temporary = workspace / ".trial-profile/temporary"
+    temporary.mkdir(parents=True)
+    return workspace, temporary
+
+
+def test_launcher_preserves_prefix_arguments_and_child_exit(tmp_path, monkeypatch):
     root, value = frozen_payload(tmp_path)
     admitted = admit(tmp_path, value)
     assert admitted.roots() == (root,)
-    instructions = admitted.instructions()
-    commands = json.loads(instructions[instructions.index("{") :])
-    assert commands == {
-        "node": [str(root / "node.exe")],
-        "pnpm": [str(root / "node.exe"), str(root / "pnpm/bin/pnpm.cjs")],
-    }
+    workspace, temporary = prepare_workspace(tmp_path)
+    prepared = admitted.prepare(workspace, Path(sys.executable), temporary)
+    assert prepared is not None
+    assert "Available native tools: node, pnpm" in prepared.instructions
+    assert str(prepared.launcher) in prepared.instructions
+
+    def child(arguments, *, env, check):
+        assert arguments == [str(root / "node.exe"), str(root / "pnpm/bin/pnpm.cjs"), "test", "", "owner's value"]
+        assert env["TEMP"] == env["TMP"] == str(temporary)
+        assert env["LAUNCH_FIXTURE"] == "preserved"
+        assert check is False
+        return subprocess.CompletedProcess(arguments, 7)
+
+    monkeypatch.setenv("LAUNCH_FIXTURE", "preserved")
+    monkeypatch.setattr(subprocess, "run", child)
+    monkeypatch.setattr(sys, "argv", [str(prepared.launcher), "pnpm", "test", "", "owner's value"])
+    with pytest.raises(SystemExit) as error:
+        runpy.run_path(str(prepared.launcher), run_name="__main__")
+    assert error.value.code == 7
     admitted.verify()
+    prepared.verify()
+
+
+def test_go_uses_bound_proxy_and_private_directories(tmp_path, monkeypatch):
+    root, value = frozen_payload(tmp_path)
+    payload = value["toolchains"][0]
+    payload.update(name="go", commands={"go": ["node.exe"]})
+    proxy = tmp_path / "module proxy's inputs"
+    proxy.mkdir()
+    (proxy / "data").write_bytes(b"frozen dependency")
+    value["toolchains"].append(
+        {
+            "name": "go-module-proxy",
+            "version": "1",
+            "root": str(proxy),
+            "files": {"data": {"bytes": 17, "sha256": sha256(b"frozen dependency")}},
+            "directories": [],
+            "commands": {},
+        }
+    )
+    workspace, temporary = prepare_workspace(tmp_path)
+    launcher = admit(tmp_path, value).prepare(workspace, Path(sys.executable), temporary)
+    assert launcher is not None
+    assert "go test ./..." in launcher.instructions
+
+    def child(arguments, *, env, check):
+        assert arguments == [str(root / "node.exe"), "test", "./..."]
+        assert env["GOPROXY"] == proxy.as_uri()
+        assert env["GOTMPDIR"] == env["TMP"] == env["TEMP"] == str(temporary)
+        assert Path(env["GOCACHE"]).is_relative_to(workspace / ".trial-profile")
+        assert Path(env["GOMODCACHE"]).is_relative_to(workspace / ".trial-profile")
+        assert env["GOTOOLCHAIN"] == "local"
+        assert env["GOSUMDB"] == "sum.golang.org"
+        return subprocess.CompletedProcess(arguments, 0)
+
+    monkeypatch.setenv("GOSUMDB", "sum.golang.org")
+    monkeypatch.setattr(subprocess, "run", child)
+    monkeypatch.setattr(sys, "argv", [str(launcher.launcher), "go", "test", "./..."])
+    with pytest.raises(SystemExit) as error:
+        runpy.run_path(str(launcher.launcher), run_name="__main__")
+    assert error.value.code == 0
+    launcher.launcher.write_bytes(b"changed runtime launcher")
+    with pytest.raises(ValueError, match="launcher changed"):
+        launcher.verify()
 
 
 @pytest.mark.parametrize("mutation", ["contents", "size", "missing", "new-file", "new-directory", "missing-empty"])
@@ -122,12 +189,13 @@ def test_incomplete_or_ambiguous_declarations_fail_before_launch(tmp_path, mutat
         admit(tmp_path, value)
 
 
-def test_manifest_is_reverified_when_producing_command_instructions(tmp_path):
+def test_manifest_is_reverified_when_preparing_the_launcher(tmp_path):
     _, value = frozen_payload(tmp_path)
     admitted = admit(tmp_path, value)
+    workspace, temporary = prepare_workspace(tmp_path)
     Path(admitted.location).write_bytes(b"changed declaration")
     with pytest.raises(ValueError):
-        admitted.instructions()
+        admitted.prepare(workspace, Path(sys.executable), temporary)
 
 
 @pytest.mark.parametrize("budget", ["entries", "bytes"])
@@ -149,7 +217,8 @@ def test_frozen_dependency_data_have_a_mount_without_an_executable_prefix(tmp_pa
     value["toolchains"][0]["commands"] = {}
     admitted = admit(tmp_path, value)
     assert admitted.roots() == (root,)
-    assert admitted.instructions() == ""
+    workspace, temporary = prepare_workspace(tmp_path)
+    assert admitted.prepare(workspace, Path(sys.executable), temporary) is None
     (root / "pnpm/bin/pnpm.cjs").write_bytes(b"changed frozen dependency")
     with pytest.raises(ValueError):
         admitted.verify()

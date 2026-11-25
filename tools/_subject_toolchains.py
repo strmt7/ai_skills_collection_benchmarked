@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import hashlib
-import json
 import re
 from dataclasses import dataclass
 from pathlib import Path
@@ -16,6 +15,22 @@ from grade_swe_skills_submission import asset
 
 MAX_ENTRIES = 32000
 MAX_BYTES = 4 * 1024**3
+LAUNCHER_EVIDENCE = "native-tool-launcher.py.txt"
+LAUNCHER = """
+import os
+import subprocess
+import sys
+
+def main():
+    if len(sys.argv) < 2 or sys.argv[1] not in COMMANDS:
+        print("Choose a native tool and supply its arguments. Available tools: " + ", ".join(COMMANDS), file=sys.stderr)
+        return 2
+    name, *arguments = sys.argv[1:]
+    environment = {**os.environ, **COMMON_ENVIRONMENT, **TOOL_ENVIRONMENTS.get(name, {})}
+    return subprocess.run([*COMMANDS[name], *arguments], env=environment, check=False).returncode
+
+raise SystemExit(main())
+"""
 
 
 def _names(values: Any) -> list[str]:
@@ -74,6 +89,18 @@ def _payload(value: Any) -> dict[str, Any]:
 
 
 @dataclass(frozen=True)
+class PreparedNativeTools:
+    launcher: Path
+    source: bytes
+    instructions: str
+
+    def verify(self) -> None:
+        with checked_path(self.launcher).open("rb") as stream:
+            if stream.read(len(self.source) + 1) != self.source:
+                raise ValueError("The prepared native tool launcher changed during execution")
+
+
+@dataclass(frozen=True)
 class NativeToolchains:
     """Recheck the declaration and its complete namespace before accepting results."""
 
@@ -113,17 +140,52 @@ class NativeToolchains:
     def roots(self) -> tuple[Path, ...]:
         return tuple(checked_path(Path(item["root"])) for item in self.payloads())
 
-    def instructions(self) -> str:
+    def prepare(self, workspace: Path, python: Path, temporary: Path) -> PreparedNativeTools | None:
+        """Give declared commands a writable scratch directory inside the subject profile."""
+        payloads = {item["name"]: item for item in self.payloads()}
         commands = {
             name: [str(checked_path(Path(item["root"]) / part)) for part in prefix]
-            for item in self.payloads()
+            for item in payloads.values()
             for name, prefix in item["commands"].items()
         }
-        return (
-            ("\nNative command prefixes for this attempt (use these full paths): " + json.dumps(commands) + "\n")
-            if commands
-            else ""
+        if not commands:
+            return None
+        profile = checked_path(workspace / ".trial-profile")
+        temporary = checked_path(temporary)
+        if not temporary.is_relative_to(profile) or not temporary.is_dir():
+            raise ValueError("Native tools require the runner's writable subject temporary directory")
+        tool_environments = {}
+        go = payloads.get("go")
+        if go and "go" in go["commands"]:
+            go_home = profile / "go"
+            tool_environments["go"] = {
+                "GOENV": "off",
+                "GOTOOLCHAIN": "local",
+                "GOTMPDIR": str(temporary),
+                "GOPATH": str(go_home),
+                "GOCACHE": str(go_home / "build"),
+                "GOMODCACHE": str(go_home / "pkg/mod"),
+            }
+            if proxy := payloads.get("go-module-proxy"):
+                tool_environments["go"]["GOPROXY"] = checked_path(Path(proxy["root"])).as_uri()
+        source = (
+            f"COMMANDS = {commands!r}\n"
+            f"COMMON_ENVIRONMENT = {{'TEMP': {str(temporary)!r}, 'TMP': {str(temporary)!r}}}\n"
+            f"TOOL_ENVIRONMENTS = {tool_environments!r}\n" + LAUNCHER
+        ).encode("utf-8")
+        launcher = checked_path(profile / "native-tools.py")
+        with launcher.open("xb") as stream:
+            stream.write(source)
+        command = "& '{}' -I -B -S '{}'".format(str(python).replace("'", "''"), str(launcher).replace("'", "''"))
+        invocation = "go test ./..." if "go" in tool_environments else "<tool> <arguments>"
+        instructions = (
+            "\nThe Windows PowerShell command tool starts in the task workspace. Use project-relative source paths.\n"
+            "Run the declared native tools through this launcher. Supply the tool name and the arguments it expects.\n"
+            f"Available native tools: {', '.join(commands)}\n"
+            f"{command} {invocation}\n"
+            "If a command returns a session ID, poll it until the exit status is available.\n"
         )
+        return PreparedNativeTools(launcher, source, instructions)
 
     def verify(self) -> None:
         for item in self.payloads():

@@ -149,12 +149,8 @@
         "sha256": "0e43dd1b61f03561c079786ab0e6e859bb84142040cc5e4ea4120668b1fefe28"
       },
       "sources": [
-        "tools/_subject_toolchains.py",
         "tools/_native_trial_plan.py",
-        "tools/run_swe_skills_trial.py",
-        "tests/test_subject_toolchains.py",
-        "tests/test_native_trial_plan.py",
-        "tests/test_native_trial_runner.py"
+        "tests/test_native_trial_plan.py"
       ]
     },
     {
@@ -272,9 +268,7 @@
         "sha256": "bf99efaac4d28d99b651c355ae77702a79c16d359be99254ea0dd355aab85c96"
       },
       "sources": [
-        "docs/benchmark-execution-plan.md",
-        "tests/test_native_trial_boundary.py",
-        "tools/qualify_native_trial_boundary.py"
+        "docs/benchmark-execution-plan.md"
       ]
     },
     {
@@ -284,10 +278,25 @@
         "sha256": "c55c9261d4f23a1cae0c8293b7a945653960847fd34bdb392e02859938991c31"
       },
       "sources": [
-        "docs/native-benchmark-controller.md",
         "included/improved/skills/verification-loop-shell-status/SKILL.md",
         "tests/test_analyze_native_trial_commands.py",
         "tools/analyze_native_trial_commands.py"
+      ]
+    },
+    {
+      "id": "native-tool-launcher",
+      "review": {
+        "path": "artifacts/research/2026-11-25/native-tool-launcher/review.json",
+        "sha256": "21d771a6055016c7a14d7fc0451226b4a2b0cf044895da74623ca6444a597f7e"
+      },
+      "sources": [
+        "docs/native-benchmark-controller.md",
+        "tests/test_native_trial_boundary.py",
+        "tests/test_native_trial_runner.py",
+        "tests/test_subject_toolchains.py",
+        "tools/_subject_toolchains.py",
+        "tools/qualify_native_trial_boundary.py",
+        "tools/run_swe_skills_trial.py"
       ]
     }
   ],
@@ -576,7 +585,9 @@
       "superseded_sources": [
         "tools/_subject_toolchains.py",
         "tests/test_subject_toolchains.py",
-        "docs/native-benchmark-controller.md"
+        "docs/native-benchmark-controller.md",
+        "tests/test_native_trial_runner.py",
+        "tools/run_swe_skills_trial.py"
       ]
     },
     {
@@ -589,7 +600,9 @@
         "tests/test_grade_swe_skills_submission.py",
         "tests/test_subject_toolchains.py",
         "tools/_subject_toolchains.py",
-        "tools/grade_swe_skills_submission.py"
+        "tools/grade_swe_skills_submission.py",
+        "tests/test_native_trial_runner.py",
+        "tools/run_swe_skills_trial.py"
       ]
     },
     {
@@ -608,13 +621,28 @@
       },
       "superseded_sources": [
         "docs/native-benchmark-controller.md",
-        "docs/benchmark-execution-plan.md"
+        "docs/benchmark-execution-plan.md",
+        "tests/test_native_trial_runner.py",
+        "tests/test_subject_toolchains.py",
+        "tools/_subject_toolchains.py",
+        "tools/run_swe_skills_trial.py"
       ]
     },
     {
       "review": {
         "path": "artifacts/research/2026-11-25/go-study-admission/review.json",
         "sha256": "bf99efaac4d28d99b651c355ae77702a79c16d359be99254ea0dd355aab85c96"
+      },
+      "superseded_sources": [
+        "docs/native-benchmark-controller.md",
+        "tests/test_native_trial_boundary.py",
+        "tools/qualify_native_trial_boundary.py"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-25/native-command-verification/review.json",
+        "sha256": "c55c9261d4f23a1cae0c8293b7a945653960847fd34bdb392e02859938991c31"
       },
       "superseded_sources": [
         "docs/native-benchmark-controller.md"

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -11,6 +12,8 @@ from urllib.parse import urlsplit
 
 from _native_benchmark_runtime import ProcessIdentity, sha256, write_json
 from _native_trial_plan import ROOT, execution_sources, input_assets, load_plan
+from _scripted_tool_control import successful_commands
+from _subject_toolchains import LAUNCHER_EVIDENCE
 from _trial_catalog import LocalCatalog
 from _trial_provider import validate_provider
 from _trial_transcript import parse_events, strict_json
@@ -25,6 +28,7 @@ TASK = "swe-skills-bench/batch1/python-packaging"
 GO_PROFILE = "windows-native-go-monads-anonymous-v1"
 GO_TASK = "swe-skills-bench/batch3/go-monads-mo"
 GO_PROMPT_SHA256 = "2cb95adbf3a593c6cc9098c2799039a67004823e4b044c8282d58169a6ebd115"
+GO_BUILD_CONTROL_SECONDS = 240
 GO_VERIFIER_SHA256 = "cf36811cb42b196f4ea8ca13c5a547a0485126d126f4fd34126a6a9359b10e75"
 GO_IMAGE = (
     "docker.io/zhangyiiiiii/swe-skills-bench-golang@sha256:"
@@ -83,7 +87,12 @@ CALIBRATIONS = {
         {**CASES, "unchanged": ("complete", "task_failed", 3 / 14)},
         {"passed": 3, "failed": 11, "skipped": 0, "errors": 0, "total": 14},
         {"passed": 14, "failed": 0, "skipped": 0, "errors": 0, "total": 14},
-        ("NATIVE_GO_TOOLCHAIN_VERIFIED", "NATIVE_GO_PROXY_READ_ONLY_VERIFIED", "NATIVE_SUBJECT_EDIT_COMPLETED"),
+        (
+            "NATIVE_GO_TOOLCHAIN_VERIFIED",
+            "NATIVE_GO_PROXY_READ_ONLY_VERIFIED",
+            "NATIVE_SUBJECT_EDIT_COMPLETED",
+            "NATIVE_GO_WORKSPACE_COMPILE_VERIFIED",
+        ),
     ),
 }
 
@@ -129,19 +138,61 @@ def remember(path: Path, inventory: dict[str, str]) -> None:
     inventory[str(path)] = sha256(raw(path))
 
 
-def tool_output(directory: Path, inventory: dict[str, str]) -> str:
-    path = directory / "request-2.native.json"
-    reply = document(path)
-    outputs = [
-        row
-        for row in reply["input"]
-        if row.get("type") == "function_call_output" and row.get("call_id") == "call_owned_control"
-    ]
-    require(len(outputs) == 1 and isinstance(outputs[0].get("output"), str), "Missing matched tool return")
-    output = outputs[0]["output"]
-    require("Process exited with code 0" in output, "Native control tool did not exit successfully")
-    remember(path, inventory)
-    return str(output)
+def admission_source_digest() -> str:
+    main = Path(__file__)
+    sources = (main, main.with_name("_scripted_tool_control.py"))
+    return sha256(b"\n".join(sha256(raw(path)).encode("ascii") for path in sources))
+
+
+def tool_output(directory: Path, inventory: dict[str, str], posts: int) -> set[str]:
+    """Verify the ordered returns of a scripted command and any polls it needed."""
+    require(type(posts) is int and 2 <= posts <= 16, "Unexpected scripted command request count")
+    history: list[dict[str, Any]] = []
+    identities: set[str] = set()
+    session: int | None = None
+    output: set[str] = set()
+    for number in range(2, posts + 1):
+        path = directory / f"request-{number}.native.json"
+        rows = [row for row in document(path)["input"] if row.get("type") in {"function_call", "function_call_output"}]
+        require(len(rows) == len(history) + 2 and rows[:-2] == history, "Scripted command history differs")
+        call, returned = rows[-2:]
+        identity = call.get("call_id")
+        require(
+            call["type"] == "function_call"
+            and returned["type"] == "function_call_output"
+            and isinstance(identity, str)
+            and bool(identity)
+            and identity not in identities
+            and returned.get("call_id") == identity
+            and isinstance(returned.get("output"), str),
+            "Missing matched tool return",
+        )
+        identities.add(identity)
+        require(call.get("name") == ("exec_command" if session is None else "write_stdin"), "Wrong scripted tool")
+        if session is not None:
+            arguments = strict_json(call["arguments"])
+            require(
+                isinstance(arguments, dict)
+                and type(arguments.get("session_id")) is int
+                and arguments["session_id"] == session
+                and arguments.get("chars") == "",
+                "Scripted poll used a different session or sent input",
+            )
+        lines = returned["output"].splitlines()
+        require(len(lines) >= 5 and lines[4] in {"Output:", "Final output:"}, "Invalid native tool output header")
+        if number == posts:
+            require(lines[2] == "Process exited with code 0", "Native control tool did not exit successfully")
+        else:
+            running = re.fullmatch(r"Process running with session ID ([1-9][0-9]*)", lines[2])
+            if running is None:
+                raise ValueError("Native control tool did not return a live session before polling")
+            returned_session = int(running[1])
+            require(session is None or session == returned_session, "Native control tool changed its session")
+            session = returned_session
+        output.update(lines[5:])
+        history = rows
+        remember(path, inventory)
+    return output
 
 
 def local_catalog_control(attempt: Path, catalog: LocalCatalog, inventory: dict[str, str]) -> None:
@@ -224,7 +275,10 @@ def control(
         "baseline_collection",
     )
     require(all(plan[key] == positive[key] for key in stable), "Controls do not share one frozen profile")
-    require(plan["time_limit_seconds"] == (5 if name == "timeout" else 90), "Control deadline differs")
+    expected_deadline = 5 if name == "timeout" else 90
+    if calibration.task == GO_TASK and name in {"edited", "isolation"}:
+        expected_deadline = GO_BUILD_CONTROL_SECONDS
+    require(plan["time_limit_seconds"] == expected_deadline, "Control deadline differs")
     require(plan["write_io_limit_bytes"] == (1 if name == "budget" else 1024**3), "Control write budget differs")
     for key, entry in input_assets(plan).items():
         asset(entry)
@@ -244,9 +298,11 @@ def control(
     )
     if name in {"edited", "unchanged", "isolation"}:
         required = ATTEMPT_EVIDENCE
+    if calibration.task == GO_TASK and name != "preflight-space":
+        required = required | {LAUNCHER_EVIDENCE}
+    allowed = ATTEMPT_EVIDENCE | {LAUNCHER_EVIDENCE}
     require(
-        isinstance(result["evidence_sha256"], dict)
-        and required <= result["evidence_sha256"].keys() <= ATTEMPT_EVIDENCE,
+        isinstance(result["evidence_sha256"], dict) and required <= result["evidence_sha256"].keys() <= allowed,
         "Native evidence set is incomplete or unexpected",
     )
     for relative, expected in result["evidence_sha256"].items():
@@ -299,7 +355,8 @@ def control(
         "Native resource profile differs",
     )
     verify_write_io_budget(process, plan["write_io_limit_bytes"])
-    events = parse_events(raw(attempt / "transcript.jsonl"), allow_truncated_final=result["status"] == "harness_error")
+    transcript = raw(attempt / "transcript.jsonl")
+    events = parse_events(transcript, allow_truncated_final=result["status"] == "harness_error")
     if name in {"edited", "unchanged", "isolation"}:
         require(
             process["exit_code"] == 0
@@ -327,9 +384,12 @@ def control(
         )
         remember(attempt / "grading/result.json", inventory)
         if name != "unchanged":
-            output = tool_output(directory, inventory)
+            (command,) = successful_commands(transcript, expected_count=1)
+            output = tool_output(directory, inventory, transport["posts"]).intersection(
+                command["aggregated_output"].splitlines()
+            )
             require(
-                all(marker in output for marker in calibration.tool_markers),
+                set(calibration.tool_markers) <= output,
                 "Prepared tools, imports or edits did not execute",
             )
             if name == "isolation":
@@ -446,6 +506,7 @@ def verify(specification: dict[str, Any]) -> dict[str, Any]:
         "Invalid boundary qualification specification",
     )
     sources = execution_sources()
+    admission_sources = admission_source_digest()
     require(specification["execution_source_sha256"] == sources, "Boundary specification sources changed")
     directories = specification["controls"]
     require(
@@ -485,6 +546,7 @@ def verify(specification: dict[str, Any]) -> dict[str, Any]:
         remember(Path(local.location), inventory)
     results = [control(name, paths[name], positive, inventory, local, calibration) for name in calibration.cases]
     require(execution_sources() == sources, "Boundary sources changed during qualification")
+    require(admission_source_digest() == admission_sources, "Boundary admission sources changed during qualification")
     return {
         "profile": profile,
         "execution_boundary_qualified": True,
@@ -494,12 +556,12 @@ def verify(specification: dict[str, Any]) -> dict[str, Any]:
         "counted_model_trials": 0,
         **({"local_catalog_sha256": local.sha256} if local is not None else {}),
         "execution_source_sha256": sources,
-        "admission_source_sha256": sha256(raw(Path(__file__))),
+        "admission_source_sha256": admission_sources,
         "controls": results,
         "context_checks": len(record["checks"]),
         "positive_plan": positive,
         "input_sha256": inventory,
-        "scope": "Serial Windows anonymous-Responses development calibration for the frozen packaging task and qualified runtime; no other task, account, model-backend identity, efficacy or commercial-readiness claim.",
+        "scope": f"Serial Windows anonymous Responses development calibration for {calibration.task} and its declared runtime.",
     }
 
 
@@ -552,7 +614,7 @@ class QualifiedNativeTrial:
 
 
 def verify_binding(qualification: QualifiedNativeTrial) -> None:
-    require(sha256(raw(Path(__file__))) == qualification.admission_source_sha256, "Boundary admission source changed")
+    require(admission_source_digest() == qualification.admission_source_sha256, "Boundary admission source changed")
     require(sha256(raw(qualification.receipt_path)) == qualification.receipt_sha256, "Boundary receipt changed")
     for path, expected in qualification.input_sha256:
         require(sha256(raw(owned(path))) == expected, "Boundary evidence changed: " + path)
