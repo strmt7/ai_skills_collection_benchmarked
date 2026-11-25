@@ -24,7 +24,8 @@ COVERAGE = re.compile(r"^Average Line Coverage: ([^,\n]+), Average Branch Covera
 OUTCOMES = {"failure": "failures", "error": "errors", "skipped": "skipped"}
 
 
-def _read(path: Path) -> bytes:
+def read_evidence(path: Path) -> bytes:
+    """Read a bounded, nonempty native evidence file."""
     with path.open("rb") as stream:
         content = stream.read(LIMIT + 1)
     if not content or len(content) > LIMIT:
@@ -32,7 +33,8 @@ def _read(path: Path) -> bytes:
     return content
 
 
-def _evidence(root: Path, spec: dict[str, str], streams: dict[str, str] | None = None) -> bytes:
+def evidence_stream(root: Path, spec: dict[str, str], streams: dict[str, str] | None = None) -> bytes:
+    """Read and verify an individual native or archived report."""
     name, expected = spec["file"], spec["sha256"]
     if not re.fullmatch(r"[a-zA-Z0-9][a-zA-Z0-9_.-]*", name) or DIGEST.fullmatch(expected) is None:
         raise ValueError("Evidence requires a local filename and a SHA-256 digest")
@@ -40,7 +42,7 @@ def _evidence(root: Path, spec: dict[str, str], streams: dict[str, str] | None =
         path = root / name
         if path.resolve(strict=True) != path or not path.is_file():
             raise ValueError(f"Evidence file is missing, linked or outside its directory {name}")
-        content = _read(path)
+        content = read_evidence(path)
     else:
         value = streams.get(name)
         if not isinstance(value, str) or not value:
@@ -114,23 +116,23 @@ def inspect(directory: Path, manifest: dict[str, Any]) -> dict[str, Any]:
         raise ValueError("A versioned TestEval calibration manifest is required")
     streams = None
     if version == 2:
-        streams = strict_json(_evidence(root, manifest["stream_archive"]).decode("utf-8"))
+        streams = strict_json(evidence_stream(root, manifest["stream_archive"]).decode("utf-8"))
         required = {manifest["terminal"]["file"]}
         for spec in cases.values():
             required.update(spec[key]["file"] for key in ("publisher_stdout", "independent_junit", "independent_exit"))
         if not isinstance(streams, dict) or streams.keys() != required:
             raise ValueError("The archive must contain exactly the declared evidence streams")
-    [terminal_count, terminal_exit] = _evidence(root, manifest["terminal"], streams).decode("ascii").splitlines()
+    [terminal_count, terminal_exit] = evidence_stream(root, manifest["terminal"], streams).decode("ascii").splitlines()
     if (terminal_count, terminal_exit) != ("temporary_storage_removed=true", "exit=0"):
         raise ValueError("The model-free calibration did not complete cleanly")
     return {
         "schema_version": 1,
         "cases": {
             name: {
-                "native_metrics": publisher_metrics(_evidence(root, spec["publisher_stdout"], streams)),
+                "native_metrics": publisher_metrics(evidence_stream(root, spec["publisher_stdout"], streams)),
                 "independent_pytest": independent_pytest(
-                    _evidence(root, spec["independent_junit"], streams),
-                    _evidence(root, spec["independent_exit"], streams),
+                    evidence_stream(root, spec["independent_junit"], streams),
+                    evidence_stream(root, spec["independent_exit"], streams),
                     spec["expected_independent_tests"],
                 ),
             }
@@ -154,9 +156,9 @@ def build_parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
-        result = inspect(args.directory, strict_json(_read(args.directory / "manifest.json").decode("utf-8")))
+        result = inspect(args.directory, strict_json(read_evidence(args.directory / "manifest.json").decode("utf-8")))
         if args.check:
-            expected = strict_json(_read(args.directory / "result.json").decode("utf-8"))
+            expected = strict_json(read_evidence(args.directory / "result.json").decode("utf-8"))
             if expected != result:
                 raise ValueError("Published TestEval calibration differs from the recorded evidence")
     except (OSError, ValueError, KeyError, TypeError, ElementTree.ParseError, DefusedXmlException) as error:

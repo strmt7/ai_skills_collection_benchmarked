@@ -40,9 +40,16 @@ For test-generation tasks, evaluate a test with an independently known outcome
 using both the prescribed scorer and the project's regular test runner. Keep
 the target program fixed when changing a correct assertion to a wrong one.
 Verify which measurements change and whether both tests reach the same behavior.
-Use a trivially passing test to check that relevant reach is actually measured.
-Record assertion outcomes, coverage and verified bug detection in their own
-units. Carry forward the registered acceptance rule for every comparison arm.
+Use a passing test with no call to check that reach is measured. Use the same
+calls and a shape-only assertion to check whether reach predicts detection.
+Qualify each deliberate defect with an independent witness and a working
+environment. Run identical submitted tests on the valid program and on each
+defect. Attribute a failure to a defect after the suite passes on the valid
+program. Record skipped cases, setup errors, and incomplete runs as unscored
+and keep their planned counts visible.
+
+Record assertion outcomes, coverage and defect detection in their own units.
+Carry forward the registered acceptance rule for every comparison arm.
 
 Publisher result tables, oracle controls and synthetic transport tests each
 support their recorded scope. A claim that a skill improves an agent requires

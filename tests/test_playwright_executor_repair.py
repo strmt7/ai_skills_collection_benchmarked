@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-ARTIFACT = ROOT / "artifacts/repaired-skill-readiness/playwright-executor-v1"
+ARTIFACT = ROOT / "artifacts/repaired-skill-readiness/playwright-executor-v2"
 OVERLAY = (
     ROOT
     / "included/repaired/skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill"
@@ -40,13 +40,13 @@ def test_component_evidence_records_both_runtimes_and_platforms() -> None:
         assert data["original_sha256"] == manifest["original_executor_sha256"]
         assert data["repaired_sha256"] == manifest["repaired_executor_sha256"]
         assert data["package_lock_sha256"] == digest(OVERLAY / "package-lock.json")
-        assert data["playwright"] == "1.64.1" and data["agent_efficacy_scored"] is False
+        assert data["playwright"] == "1.65.1" and data["agent_efficacy_scored"] is False
         assert data["cases"]["direct"]["exit"] == 0 and data["cases"]["direct"]["fixture_ok"]
         assert data["cases"]["original"]["exit"] != 0 and data["cases"]["original"]["missing_fixture"]
         assert all(
             data["cases"][name]["exit"] == 0 and data["cases"][name]["fixture_ok"] for name in ("repaired", "inline")
         )
-        assert data["playwright_without_node_path"] == {"exit": 0, "version": "1.64.1"}
+        assert data["playwright_without_node_path"] == {"exit": 0, "version": "1.65.1"}
         assert data["browser_smoke"] == {"exit": 0, "result": "control ready"}
 
 

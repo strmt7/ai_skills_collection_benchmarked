@@ -1,0 +1,1017 @@
+{
+  "artifacts": {},
+  "base_revision": "1f989716477b048eabe5325c6595bedba9d1139e",
+  "collector_runtime": {
+    "image_id": "sha256:d9b8c34d61a9b9a3c44cab883d7d2f2619d674966ab520186f799cf32e3e0377",
+    "network": "none",
+    "pytest": "9.2.0",
+    "python": "3.14.10"
+  },
+  "controls_sha256": "6a619dabf994df417c11d43eb27d205881e09535e030a5e7e476dc0524372243",
+  "grade_consumer_sha256": "cb811bab714c079bd96eef1577a84b9d6f7deda9695574c3e9ae42df13b5a323",
+  "independent_pytest_attempts": 108,
+  "kind": "testeval-public-pilot-grader-qualification",
+  "method": {
+    "cases": "Exact, shape-only and incorrect suites execute the same calls on each public reference program.",
+    "defect_programs": "Two controlled result faults per program preserve the return type. Each exact suite passed on its reference and distinguished both faults.",
+    "evidence": "The controller retains raw native reports, frozen inputs and exit records. This public review retains their digests and normalized outcomes.",
+    "scope": "Controls qualify separation of publisher reach, assertion outcomes and detection. They contain no model attempts or held-out tasks."
+  },
+  "metric_parsers_sha256": "f390aea39c07f135a295994a848636badf16f6d44519a9643b1e626b6352ccf3",
+  "model_attempts": 0,
+  "native_inventory_sha256": "b4b1049708efe18f38b3e11004c58704ceaa7ee8bcebb141609e901bcd396c35",
+  "native_program_projection_sha256": "d77e5dbaa3939903c54d1e6f887a3fc8876730293143f88d8ef00f538c64b232",
+  "native_publisher_attempts": 36,
+  "producer_sha256": "37e4a5f93e3c364c1c8bbdd92495379de7525583d915d6e42575c7f2847627f4",
+  "publisher": {
+    "commit": "6f67dee71de6ccda1767b8c219a93f4ae0a7ce90",
+    "dataset_sha256": "a37bcaae5fd88c978254aff5633355c7c76a324ad90b8d965f6213e522e022bf",
+    "evaluator_sha256": "0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3",
+    "repository": "https://github.com/LLM4SoftwareTesting/TestEval"
+  },
+  "schema_version": 1,
+  "scope": "Model-free measurement controls using all 12 public development tasks and implementation variants with controlled result faults.",
+  "selection_sha256": "5c1d2fd6edf296ab129127d5ef42f0961bc4635a5bc8086b46d83201c3a96d16",
+  "source_sha256": {
+    "docs/benchmark-execution-plan.md": "5921b0399a4dac50ce2950861a280dc2b57dc0c58b6c6f3bac305fe5e9b54f27",
+    "docs/recognized-skill-benchmarks.md": "9b7b50106822ae74b57eac96a44dc8a9bf92986bc1e4354ec9f150a8c912fe54",
+    "included/improved/skills/eval-harness-integrity/SKILL.md": "6a1c2d5a3e5845ad20b08752e92aefb33cc70bf1d75c370606ce70fe486e743b",
+    "included/improved/skills/eval-harness-integrity/references/grader-admission.md": "38816c482fdaa6a31823bdec8f6c061153c933dc4e42440324ff9819a704bfe6",
+    "tests/test_grade_testeval_submission.py": "5e9e662a3df2d839ab2be023c0ee2e250f1eebb53bf319a1ae6d6fd0b88196c8",
+    "tests/test_validate_testeval_calibration.py": "f9c73ab308a5dc7d0d6e70272a064326da044748a5391cf1b4266f56c179b090",
+    "tools/grade_testeval_submission.py": "cb811bab714c079bd96eef1577a84b9d6f7deda9695574c3e9ae42df13b5a323",
+    "tools/validate_testeval_calibration.py": "f390aea39c07f135a295994a848636badf16f6d44519a9643b1e626b6352ccf3"
+  },
+  "summary": {
+    "exact_detected": 24,
+    "native_publisher_reports": 36,
+    "planned_defects": 24,
+    "rejected_incorrect_reference_suites": 12,
+    "same_native_metrics_tasks": 12,
+    "shape_detected": 0,
+    "valid_exact_reference_suites": 12,
+    "valid_shape_reference_suites": 12
+  },
+  "tasks": {
+    "1805": {
+      "outcomes": {
+        "exact": {
+          "capture_sha256": "5c4bb00e3453f6df38d62688a7fa34ecfb22c08dcf63bb6d736c287871e2ee69",
+          "defect_statuses": {
+            "offset-result": "test_failed",
+            "zero-result": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "25f750b97962185a9b0c30c7099eef607e9016c685274be25cbfc1b2d8247338",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 2,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 0
+          }
+        },
+        "incorrect": {
+          "capture_sha256": "d5c07129d7c4566bf8feda2512de58b7057215de8d9531ec20de1da3180c3f8b",
+          "defect_statuses": {
+            "offset-result": "test_failed",
+            "zero-result": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "b5e38b003ea1edfb97014b950697d240fe5a500e356baec3af847f45e4c6e725",
+          "reference_status": "test_failed",
+          "sensitivity": {
+            "detected": null,
+            "inconclusive": null,
+            "planned": 2,
+            "survived": null
+          }
+        },
+        "shape": {
+          "capture_sha256": "ea1ab4442f9b3c4a830a7bb7d24920e053f2269f9b5c0470115bf8c52a67dc4e",
+          "defect_statuses": {
+            "offset-result": "passed",
+            "zero-result": "passed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "d3ce8f8854240029c51b44e58218837dd53c634d73e70518b9d3e96eb1999ef5",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 0,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 2
+          }
+        }
+      },
+      "same_publisher_metrics": true
+    },
+    "1976": {
+      "outcomes": {
+        "exact": {
+          "capture_sha256": "986968c97c3f32e16a50f5b1d1064460800dcc1199ea5005c37c8b3eab621613",
+          "defect_statuses": {
+            "offset-result": "test_failed",
+            "zero-result": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "644ec07a34a358eba925f5598758e574495075c39b9676c1167235fcee9ca820",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 2,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 0
+          }
+        },
+        "incorrect": {
+          "capture_sha256": "82418fea6d42704ef41d9d1cc3e157cd590b07f3405fbd93870056688fb16890",
+          "defect_statuses": {
+            "offset-result": "test_failed",
+            "zero-result": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "424d0ff3de96eb5f515e76f4c909c9eff8cdf1d99382237fe876b33b5fc37501",
+          "reference_status": "test_failed",
+          "sensitivity": {
+            "detected": null,
+            "inconclusive": null,
+            "planned": 2,
+            "survived": null
+          }
+        },
+        "shape": {
+          "capture_sha256": "482a1459799cb4d1a9631086052c7b278aeec47ae795b945212f4bc8fead32c9",
+          "defect_statuses": {
+            "offset-result": "passed",
+            "zero-result": "passed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "22a5081b59e75986c8387445773dec2c967b0edef9d328d4fec7fc6d95f35786",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 0,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 2
+          }
+        }
+      },
+      "same_publisher_metrics": true
+    },
+    "2086": {
+      "outcomes": {
+        "exact": {
+          "capture_sha256": "f18ae19f53cea219f62c323e3b71001dd261f753ec2704f54362d81445cd9a12",
+          "defect_statuses": {
+            "offset-result": "test_failed",
+            "zero-result": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "78af6ab5ed1aef0fc24ddca88723672226b2de637a3f4bdabc9a992cc52c308e",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 2,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 0
+          }
+        },
+        "incorrect": {
+          "capture_sha256": "8da9933461913d05861d4592b90f238fab39887e614d2f3c3d6bd79678d9099d",
+          "defect_statuses": {
+            "offset-result": "test_failed",
+            "zero-result": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "b989e32a0469a82725baf9d393224a20d204fc73c2ea225ad61586eb1f190577",
+          "reference_status": "test_failed",
+          "sensitivity": {
+            "detected": null,
+            "inconclusive": null,
+            "planned": 2,
+            "survived": null
+          }
+        },
+        "shape": {
+          "capture_sha256": "1fab441390b52ff4b63cfb6f3adb00317aea383b767c138523852c65db5963c8",
+          "defect_statuses": {
+            "offset-result": "passed",
+            "zero-result": "passed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "75b2ff36d4e76a40abc1a9a4ab4f9dbbf735252555e8e0e1055974e0a413abda",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 0,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 2
+          }
+        }
+      },
+      "same_publisher_metrics": true
+    },
+    "2242": {
+      "outcomes": {
+        "exact": {
+          "capture_sha256": "fec334015dd32ce0880d4b75c07095b852387dc6a48e2629ea5ebcbc011d2164",
+          "defect_statuses": {
+            "offset-result": "test_failed",
+            "zero-result": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "8d69182299bfbe41d056c5d0ce9f6368cc1918248d4b45f79424572a34c88927",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 2,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 0
+          }
+        },
+        "incorrect": {
+          "capture_sha256": "9fceb2009193a538b5fd8bce9ed1c3d98d65500517c03214fe9dcf187f0825ec",
+          "defect_statuses": {
+            "offset-result": "test_failed",
+            "zero-result": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "a5b19a9254d6e3d39baf99d84de55d3b3606b93756d713caa0dd20bec375f975",
+          "reference_status": "test_failed",
+          "sensitivity": {
+            "detected": null,
+            "inconclusive": null,
+            "planned": 2,
+            "survived": null
+          }
+        },
+        "shape": {
+          "capture_sha256": "3156f3a53b59ecb91672e58a863fe1d2f5749396ce5d2a85c50f4394a1198c1a",
+          "defect_statuses": {
+            "offset-result": "passed",
+            "zero-result": "passed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "190ed4ced8261c648eb81ed9654ea6aaf34a5192dbae750115c670836c4a865e",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 0,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 2
+          }
+        }
+      },
+      "same_publisher_metrics": true
+    },
+    "2299": {
+      "outcomes": {
+        "exact": {
+          "capture_sha256": "c6c5c78c3d50eb68a657b54599f7c5affc4b2773f230c30d349011eadf84347c",
+          "defect_statuses": {
+            "always-false": "test_failed",
+            "always-true": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "9700f2fe9671d4a95f81713385c39aa88d826274f5d5d473012c88cc32267cdf",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 2,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 0
+          }
+        },
+        "incorrect": {
+          "capture_sha256": "dbc4e5d0330198eb70fb8abfa931cedbd3f65809adce175518e6d87749c6cb37",
+          "defect_statuses": {
+            "always-false": "passed",
+            "always-true": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "7745b335e38c6a422678a63e460cca71a0045cd88639162204aafff2ad26a07e",
+          "reference_status": "test_failed",
+          "sensitivity": {
+            "detected": null,
+            "inconclusive": null,
+            "planned": 2,
+            "survived": null
+          }
+        },
+        "shape": {
+          "capture_sha256": "fb1d1c462605d91e25ad52ee9b2f5d7438c7dda45014239aad3267470c37cbb7",
+          "defect_statuses": {
+            "always-false": "passed",
+            "always-true": "passed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "e7fa77503ff73b2a7cd394978d9f95b56c95be68e0c89017f99df1e79380e367",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 0,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 2
+          }
+        }
+      },
+      "same_publisher_metrics": true
+    },
+    "2850": {
+      "outcomes": {
+        "exact": {
+          "capture_sha256": "1d9e2aa62a9251cb547fd8cc7945f6797c61db91dbf1f21d98f4e482c142a1f5",
+          "defect_statuses": {
+            "offset-result": "test_failed",
+            "zero-result": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "090200efd1c51935a33da37b1372ca29b787fc68679116727556e43cfc6ed37e",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 2,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 0
+          }
+        },
+        "incorrect": {
+          "capture_sha256": "cfa43016726468546736a8253216409d23f892a58e4744367b4a45531fd8c5f1",
+          "defect_statuses": {
+            "offset-result": "test_failed",
+            "zero-result": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "1827ac4dd443071e5517590dc830a5fba37bae748175d5c3e9dadccb0a7d88ee",
+          "reference_status": "test_failed",
+          "sensitivity": {
+            "detected": null,
+            "inconclusive": null,
+            "planned": 2,
+            "survived": null
+          }
+        },
+        "shape": {
+          "capture_sha256": "293c0e28230e6173ae87c5ab4aa81b13d363d9d1f4df936be1a6f1b5cf637f2b",
+          "defect_statuses": {
+            "offset-result": "passed",
+            "zero-result": "passed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "11d7ad0dc03179de30a336ad0094e0478945c32e7e6b300a873afa6fe688b016",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 0,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 2
+          }
+        }
+      },
+      "same_publisher_metrics": true
+    },
+    "2932": {
+      "outcomes": {
+        "exact": {
+          "capture_sha256": "77594aadf7da51aa6c9d6424afde86f6fbe2f81b6bcb6d942df3c18b24e2c702",
+          "defect_statuses": {
+            "offset-result": "test_failed",
+            "zero-result": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "759fec9b954f13a7108c36ed3e309d9271b362497467c0c992200dc89aff4ee6",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 2,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 0
+          }
+        },
+        "incorrect": {
+          "capture_sha256": "a062d353b68fb70ada4da568b69add72b1ee316e3b82d139e21c882c0531e01e",
+          "defect_statuses": {
+            "offset-result": "test_failed",
+            "zero-result": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "6f52ba0c78bb8ced186c1a99aff32cbc4b80abd438498968334a029ae9f04a20",
+          "reference_status": "test_failed",
+          "sensitivity": {
+            "detected": null,
+            "inconclusive": null,
+            "planned": 2,
+            "survived": null
+          }
+        },
+        "shape": {
+          "capture_sha256": "76a5305c4e722e4852096a48169ba17babf5dbcf2a9a2a8d7c32cafdbf69c0c6",
+          "defect_statuses": {
+            "offset-result": "passed",
+            "zero-result": "passed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "631a55393ac49b18eff3fb50662e9d919f3b03a0599317b00e572ef8c4d07f72",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 0,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 2
+          }
+        }
+      },
+      "same_publisher_metrics": true
+    },
+    "2977": {
+      "outcomes": {
+        "exact": {
+          "capture_sha256": "fc9dc0dde8046c62083bbeaae88b623ce2c84bb4389073ce3cbb970bce1f58ff",
+          "defect_statuses": {
+            "offset-result": "test_failed",
+            "zero-result": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "0a76fe931d6ca231c362990962c394e43352fd7bdd7dff86e127d1194edf7cad",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 2,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 0
+          }
+        },
+        "incorrect": {
+          "capture_sha256": "10ddab66d50479d6873ac9e51f631505389ac08024e31fc34218fcf021ccbaf5",
+          "defect_statuses": {
+            "offset-result": "test_failed",
+            "zero-result": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "3899ac62102192157af32310e70c1023706b5dbf3d58676d5aedd5f33434917d",
+          "reference_status": "test_failed",
+          "sensitivity": {
+            "detected": null,
+            "inconclusive": null,
+            "planned": 2,
+            "survived": null
+          }
+        },
+        "shape": {
+          "capture_sha256": "f973b33f057aec6d023a8118e3bf52c55e25c37622de781ae3e971d7798eb1e6",
+          "defect_statuses": {
+            "offset-result": "passed",
+            "zero-result": "passed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "c386cdc66197e62a304cb740c4fab2f020c95aa111324c15ce7c7a59d9e421ba",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 0,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 2
+          }
+        }
+      },
+      "same_publisher_metrics": true
+    },
+    "3072": {
+      "outcomes": {
+        "exact": {
+          "capture_sha256": "5181b2b37a59f6fcacb4c503f1baf2af413287798965d463c7075193f15677c8",
+          "defect_statuses": {
+            "repeat-last": "test_failed",
+            "reverse-order": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "a651ca2fa204df94f77f2eb318f3eb79d9954c2c7b97b77fd690bafa09e1f586",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 2,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 0
+          }
+        },
+        "incorrect": {
+          "capture_sha256": "7f7d3963d897c3264ecb73df5e035ef9ff444d7b70a4293c37ff50c8a4294772",
+          "defect_statuses": {
+            "repeat-last": "test_failed",
+            "reverse-order": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "f1b5f01b28b81d5867d73e99ee292d0b623d3b55ac1ad1f4f17d09912c257b06",
+          "reference_status": "test_failed",
+          "sensitivity": {
+            "detected": null,
+            "inconclusive": null,
+            "planned": 2,
+            "survived": null
+          }
+        },
+        "shape": {
+          "capture_sha256": "a12776de6c0d0299dfb4c1be8d78e11e086d453c467c086484d6d09bbde26f0f",
+          "defect_statuses": {
+            "repeat-last": "passed",
+            "reverse-order": "passed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "07e0cf11a50f22a3a86dd6210f68379720fdba52bd36f68911ff88744534dbce",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 0,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 2
+          }
+        }
+      },
+      "same_publisher_metrics": true
+    },
+    "3095": {
+      "outcomes": {
+        "exact": {
+          "capture_sha256": "c2d650007e31979dcc8e38302b669c3c125fe6b9db1bf9d6d8ed6d1f0143474e",
+          "defect_statuses": {
+            "offset-result": "test_failed",
+            "zero-result": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "b3914f71194278157a97140957d03bc1dcd87c0cfb0369f221eb17e2557e2dad",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 2,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 0
+          }
+        },
+        "incorrect": {
+          "capture_sha256": "b1aa12e4ca917df2477ebdc4b8d67184e1fd7559a227f194eba7c98ef9f01cca",
+          "defect_statuses": {
+            "offset-result": "test_failed",
+            "zero-result": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "f9ff15db470ac6c4abb910092f1140b5af3dd375f0c13bf424530c57bea2cedf",
+          "reference_status": "test_failed",
+          "sensitivity": {
+            "detected": null,
+            "inconclusive": null,
+            "planned": 2,
+            "survived": null
+          }
+        },
+        "shape": {
+          "capture_sha256": "caeee04e3ae6e0841085c4bf94c471ffb9f5ce14ba62dce3c37b317758796d5d",
+          "defect_statuses": {
+            "offset-result": "passed",
+            "zero-result": "passed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "6ccbaf1ea139786adb643752c3dce5b803381efb56cbee5350019162ae880ba7",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 0,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 2
+          }
+        }
+      },
+      "same_publisher_metrics": true
+    },
+    "685": {
+      "outcomes": {
+        "exact": {
+          "capture_sha256": "912fc0c476080059f0b952e801f0dc10ced1d9e320313a8aa0d2d84ad3d21059",
+          "defect_statuses": {
+            "repeat-last": "test_failed",
+            "reverse-order": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "ece68d6c73e1c847eab568d79e590e573dab1bb4687c4a3422860665ff7615c9",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 2,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 0
+          }
+        },
+        "incorrect": {
+          "capture_sha256": "3a9365d3830a9ba3f01429abad544835095599e72fa6065b42c6285d1a0f5b4d",
+          "defect_statuses": {
+            "repeat-last": "test_failed",
+            "reverse-order": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "ac27761c89b7e2105e921bea6c4084654730157befdcbfc824229c3b798e9843",
+          "reference_status": "test_failed",
+          "sensitivity": {
+            "detected": null,
+            "inconclusive": null,
+            "planned": 2,
+            "survived": null
+          }
+        },
+        "shape": {
+          "capture_sha256": "3c2a4aef790744db7ecf1c4d812b87229e3478dbd46a747a7306fb71d5abbf20",
+          "defect_statuses": {
+            "repeat-last": "passed",
+            "reverse-order": "passed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "28f7644b9907fc80c91d39df9cf7ba18610e4e32af5e625ae7856c8152a6c2ca",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 0,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 2
+          }
+        }
+      },
+      "same_publisher_metrics": true
+    },
+    "777": {
+      "outcomes": {
+        "exact": {
+          "capture_sha256": "1a6bf1546fa87153cbaca160ff409a80bec06ad41eabf45cc301c027201209a1",
+          "defect_statuses": {
+            "always-false": "test_failed",
+            "always-true": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "adeb657adbc64c1155b51e7c676d7577c52085ef7515789f6ef379f5b9605554",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 2,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 0
+          }
+        },
+        "incorrect": {
+          "capture_sha256": "baea2feca20fa0edc43493e5aa65b2fbe7e6ada8928383437d62ac80b79e2727",
+          "defect_statuses": {
+            "always-false": "passed",
+            "always-true": "test_failed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "833f423d5655d33fdc81b124d2576a38376252d5306e493bb195b25e89d922e2",
+          "reference_status": "test_failed",
+          "sensitivity": {
+            "detected": null,
+            "inconclusive": null,
+            "planned": 2,
+            "survived": null
+          }
+        },
+        "shape": {
+          "capture_sha256": "502a91ca8900bc630ce70ba7ed169773f68701930bb6eca619959b1e0733af4f",
+          "defect_statuses": {
+            "always-false": "passed",
+            "always-true": "passed"
+          },
+          "native": {
+            "exit_code": 0,
+            "metrics": {
+              "branch_coverage": 0.0,
+              "executable_correctness": 0.0,
+              "line_coverage": 0.0,
+              "syntax_correctness": 1.0
+            },
+            "status": "measured"
+          },
+          "plan_sha256": "ebc3e4042ec5b95181b98367edcc1291794406a57a40086d32c7db6ef94fefd5",
+          "reference_status": "passed",
+          "sensitivity": {
+            "detected": 0,
+            "inconclusive": 0,
+            "planned": 2,
+            "survived": 2
+          }
+        }
+      },
+      "same_publisher_metrics": true
+    }
+  }
+}

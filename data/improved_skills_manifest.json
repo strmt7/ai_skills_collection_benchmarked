@@ -26,13 +26,13 @@
       "license_source_sha": "b832b6f642312312367c07688dc7426db40a82ed",
       "original_path": "included/improved/skills/eval-harness-integrity/provenance/original-SKILL.md",
       "overlay_path": "included/improved/skills/eval-harness-integrity",
-      "overlay_sha256": "55f3022ce1617f9aa7f82cea3a5544e2009b6e01e8a97e3dc7a53b8b923e9f02",
+      "overlay_sha256": "6a1c2d5a3e5845ad20b08752e92aefb33cc70bf1d75c370606ce70fe486e743b",
       "package_file_sha256": {
         "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
         "provenance/original-SKILL.md": "49a5a10975860bb2d7e3c4e260ff19b6580e43f5fbc7770b32dece02dde48e49",
-        "references/grader-admission.md": "486860c572ce1b19abc79cf1457dc4c520c729e6365abe56b267bb87fe540395",
+        "references/grader-admission.md": "38816c482fdaa6a31823bdec8f6c061153c933dc4e42440324ff9819a704bfe6",
         "references/repeated-attempts.md": "5144b51701c5ab684ad74ecf9954b782c7ad882b5ea1b88dc77f10dd22650024",
-        "SKILL.md": "55f3022ce1617f9aa7f82cea3a5544e2009b6e01e8a97e3dc7a53b8b923e9f02"
+        "SKILL.md": "6a1c2d5a3e5845ad20b08752e92aefb33cc70bf1d75c370606ce70fe486e743b"
       },
       "performance_status": "unbenchmarked",
       "skill_id": "affaan-m-everything-claude-code-agents-skills-eval-harness-skill-md",

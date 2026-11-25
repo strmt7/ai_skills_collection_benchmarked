@@ -1,0 +1,42 @@
+{
+  "scope": "Publisher version and independently verified package and browser lifecycle.",
+  "upstream_skill_commit": "289abdea7df857dc7a6ece937dbe0c5ecc964ccd",
+  "upstream_skill_release": "v5.0.0",
+  "playwright_version": "1.65.1",
+  "browser_revision": "1255",
+  "source_installation": "locked",
+  "matrix": {
+    "linux": {
+      "browser_binary_sha256": "24eb0a14de64ab0c9c2e283a5512ca817db64af8fd853cdb4d818f19a8e23b9b",
+      "lanes": {
+        "24.22.3": {
+          "report": "node24-linux.json",
+          "sha256": "ffd99e56cb272951a52346893017fef79c6f3d02592c1361d2ed1519dca707b0"
+        },
+        "26.13.1": {
+          "report": "node26-linux.json",
+          "sha256": "940291a8eb0520994f5169b79201ff07e386a3a334e096ed70cd5e5c26271980"
+        }
+      }
+    },
+    "windows": {
+      "browser_binary_sha256": "b23921f57bcff971495917b208b63df393788525120c6ce23a79c1e3e1583114",
+      "lanes": {
+        "24.22.3": {
+          "report": "node24-windows.json",
+          "sha256": "912ba720b94a6dfecab3211b2b18fd3acd6a8836cece04e2cad596da81f6e398"
+        },
+        "26.13.1": {
+          "report": "node26-windows.json",
+          "sha256": "00da2b1f355e19c3e06af55563aa123f0925abc991bdb0bcdb3dc4a606db4686"
+        }
+      }
+    }
+  },
+  "model_attempts": 0,
+  "upstream_metadata": {
+    "playwright": "142a893e43143a8660ccbf91827d6112169e1f24939cf78503d23d2e618a5715",
+    "playwright_core": "7508a44c868fc36f8d35466b21293756d2c7ff3eda1da68fccf7b1249b829438",
+    "node_releases": "cb36ee534b08ef30f63c0c8e1bff66ec143fb2ceedb26b331b58309165a4451d"
+  }
+}

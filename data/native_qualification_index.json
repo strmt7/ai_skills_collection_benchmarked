@@ -421,16 +421,6 @@
       ]
     },
     {
-      "id": "testeval-grader-calibration",
-      "review": {
-        "path": "artifacts/research/2026-11-25/testeval-grader-calibration/manifest.json",
-        "sha256": "454a45e7006df4a5351dda80de50cafd34c21cf41e74d1a1877be52d30bacfc6"
-      },
-      "sources": [
-        "included/improved/skills/eval-harness-integrity/references/grader-admission.md"
-      ]
-    },
-    {
       "id": "slides-browser-controls",
       "review": {
         "path": "artifacts/repaired-skill-readiness/slides-navigation-v1/qualification.json",
@@ -475,29 +465,6 @@
       ]
     },
     {
-      "id": "qualification-checkout-fidelity",
-      "review": {
-        "path": "artifacts/research/2026-11-25/native-qualification-checkout/review.json",
-        "sha256": "df4bef19fe53b6b60c91e957377e3314eda52c17b56e54401491f3b9a66fa02f"
-      },
-      "sources": [
-        ".gitattributes",
-        "tests/test_native_qualification_index.py"
-      ]
-    },
-    {
-      "id": "testeval-public-controls",
-      "review": {
-        "path": "artifacts/research/2026-11-25/testeval-public-controls/manifest.json",
-        "sha256": "5e5bf4c614e329737664b919284017142b67277639dad65e76acb97971c10237"
-      },
-      "sources": [
-        "docs/recognized-skill-benchmarks.md",
-        "tests/test_validate_testeval_calibration.py",
-        "tools/validate_testeval_calibration.py"
-      ]
-    },
-    {
       "id": "portable-evaluation-and-verification",
       "review": {
         "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
@@ -506,11 +473,9 @@
       "sources": [
         "benchmarks/agent-effectiveness/development/testeval-pilot-v2/frame.json",
         "benchmarks/agent-effectiveness/development/testeval-pilot-v2/selection.json",
-        "docs/benchmark-execution-plan.md",
         "included/improved/skills/e2e-testing-current/NOTICE.md",
         "included/improved/skills/e2e-testing-current/SKILL.md",
         "included/improved/skills/e2e-testing-current/provenance/original-SKILL.md",
-        "included/improved/skills/eval-harness-integrity/SKILL.md",
         "included/improved/skills/eval-harness-integrity/provenance/original-SKILL.md",
         "included/improved/skills/verification-loop-shell-status/NOTICE.md",
         "included/improved/skills/verification-loop-shell-status/SKILL.md",
@@ -520,6 +485,34 @@
         "tests/test_select_testeval_tasks.py",
         "tools/_lib_b/io_utils.py",
         "tools/select_testeval_tasks.py"
+      ]
+    },
+    {
+      "id": "testeval-public-pilot-grading",
+      "review": {
+        "path": "artifacts/research/2026-11-25/testeval-pilot-grading/review.json",
+        "sha256": "556301f1e03e67e7c9c38809b746776e7c88994f5890dc2fab8e2a3f66dedbda"
+      },
+      "sources": [
+        "docs/benchmark-execution-plan.md",
+        "docs/recognized-skill-benchmarks.md",
+        "included/improved/skills/eval-harness-integrity/SKILL.md",
+        "included/improved/skills/eval-harness-integrity/references/grader-admission.md",
+        "tests/test_grade_testeval_submission.py",
+        "tests/test_validate_testeval_calibration.py",
+        "tools/grade_testeval_submission.py",
+        "tools/validate_testeval_calibration.py"
+      ]
+    },
+    {
+      "id": "qualification-checkout-fidelity",
+      "review": {
+        "path": "artifacts/research/2026-11-25/native-qualification-checkout-v2/review.json",
+        "sha256": "81ba64292405404fc8b7b40d62fa1cd4efa4e559d430fa07313a82d95b32d591"
+      },
+      "sources": [
+        ".gitattributes",
+        "tests/test_native_qualification_index.py"
       ]
     }
   ],
@@ -997,8 +990,38 @@
       },
       "superseded_sources": [
         "included/improved/skills/eval-harness-integrity/SKILL.md",
+        "included/improved/skills/eval-harness-integrity/references/grader-admission.md",
         "tests/test_validate_testeval_calibration.py",
         "tools/validate_testeval_calibration.py"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-25/native-qualification-checkout/review.json",
+        "sha256": "df4bef19fe53b6b60c91e957377e3314eda52c17b56e54401491f3b9a66fa02f"
+      },
+      "superseded_sources": [
+        ".gitattributes"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-25/testeval-public-controls/manifest.json",
+        "sha256": "5e5bf4c614e329737664b919284017142b67277639dad65e76acb97971c10237"
+      },
+      "superseded_sources": [
+        "docs/recognized-skill-benchmarks.md",
+        "tools/validate_testeval_calibration.py"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+        "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
+      },
+      "superseded_sources": [
+        "docs/benchmark-execution-plan.md",
+        "included/improved/skills/eval-harness-integrity/SKILL.md"
       ]
     }
   ],

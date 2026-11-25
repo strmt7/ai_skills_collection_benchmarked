@@ -70,6 +70,14 @@ that passed under pytest with a different name and invocation form. Publish
 the native metrics alongside independent checks of assertion outcomes.
 [Benchmark paper](https://arxiv.org/abs/2406.04531) · [15 paired controls](../artifacts/research/2026-11-25/testeval-public-controls/result.json)
 
+Across all 12 public pilot tasks, the publisher gave the same metrics to
+exact, shape-only and incorrect assertions using the same calls. The exact
+suites passed on the reference and detected all 24 controlled result faults.
+The shape-only suites passed on the reference and detected zero. The
+independent runner rejected all 12 incorrect suites on the reference. These
+controls qualify the measurement method with authored tests.
+[Public pilot grader review](../artifacts/research/2026-11-25/testeval-pilot-grading/review.json)
+
 ## Do not rely on benchmark reputation alone
 
 [OpenAI's February review](https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/)

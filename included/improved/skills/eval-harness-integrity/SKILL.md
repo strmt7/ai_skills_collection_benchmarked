@@ -33,9 +33,10 @@ inputs and acceptance checks independent of the instructions under evaluation.
    reproduce the original defect and keep unrelated valid behavior passing. Keep expected answers outside the
    subject workspace. Score observable behavior. Use blinded judgment only
    for criteria that executable checks cannot settle.
-   When evaluating generated tests, measure assertion outcomes, reach and defect
-   detection separately. Use the same call with an incorrect expectation, and
-   a passing test with no call, to check which differences each metric detects.
+   For generated tests, measure reference correctness, coverage and defect
+   detection separately. Run the same suite on the verified reference before
+   attributing a failure to a known defect. Use a wrong assertion and a
+   passing no-call or shape-only test to qualify what each metric detects.
 3. **Admit each result.** Keep the declared task and scorer revisions, actual
    submission, native reports, exit or completion signal, scope checks, and
    resource observations together. Check that the scorer graded the submitted

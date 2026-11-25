@@ -7,18 +7,18 @@
   "original_skill_sha256": "746a885d19ce9fc027c376f30bab4c86907e7ab956366c242ccdb4cf20eb8a9b",
   "provenance_skill": "provenance/original.SKILL.md",
   "original_executor_sha256": "f2afe1a17379548abee60e91c9cee9a3907ff5ae9a2423d9190e45ace761399d",
-  "repaired_skill_sha256": "9282400eb7799905a1bc12df8f77e9ab087239edd6cc450cb3247bf88ffc4919",
+  "repaired_skill_sha256": "81f2a548c0e3ec279409b5f902e60c348c148d6a35c4c116f47db2b9bc8f4827",
   "repaired_executor_sha256": "c8bcb288f1b63815a074cd0ff8650dfc5ea73b93018af62cf18a7c3d088cbe67",
   "license_file": "LICENSE",
   "license_sha256": "c9104b65859edbe0df0255c2adbad01b147b58a02fa2aff1c2e5736512e8a143",
   "scope": "Preserve caller NODE_PATH, isolate package setup, and use portable temporary paths; component controls do not measure agent effectiveness.",
   "model_performance_claim": false,
-  "readiness_evidence": "artifacts/repaired-skill-readiness/playwright-executor-v1/node26-windows.json",
+  "readiness_evidence": "artifacts/repaired-skill-readiness/playwright-executor-v2/node26-windows.json",
   "additional_evidence": [
-    "artifacts/repaired-skill-readiness/playwright-executor-v1/node24-windows.json",
-    "artifacts/repaired-skill-readiness/playwright-executor-v1/node24-linux.json",
-    "artifacts/repaired-skill-readiness/playwright-executor-v1/node26-linux.json",
-    "artifacts/repaired-skill-readiness/playwright-executor-v1/upstream-observation.json"
+    "artifacts/repaired-skill-readiness/playwright-executor-v2/node24-windows.json",
+    "artifacts/repaired-skill-readiness/playwright-executor-v2/node24-linux.json",
+    "artifacts/repaired-skill-readiness/playwright-executor-v2/node26-linux.json",
+    "artifacts/repaired-skill-readiness/playwright-executor-v2/upstream-observation.json"
   ],
   "documented_repairs": [
     "Preserve existing NODE_PATH entries using the platform delimiter.",
@@ -28,20 +28,20 @@
   "overlay_sha256": {
     "lib/helpers.js": "b837864b43126da1c0fc216b4d555b14a52c78bd78e0075af0c6acd1efa0e010",
     "LICENSE": "c9104b65859edbe0df0255c2adbad01b147b58a02fa2aff1c2e5736512e8a143",
-    "package-lock.json": "ee1206e0b5b61b34668bf5c686fede1bd310443b6a1d434262fd6374117331ff",
-    "package.json": "b5a0c30d2ef1e420a9fbff262991af5ec3e5dce382319b460949deb54772c3ed",
+    "package-lock.json": "212e7702aefc5643ad4810348385c2c3f1f7fea266bd2878897b8f104c0a023d",
+    "package.json": "125564fbc0d191440e76cb9957558114a8ab254a1a83e8f7d61c6b2adbf02f08",
     "provenance/original.run.js": "f2afe1a17379548abee60e91c9cee9a3907ff5ae9a2423d9190e45ace761399d",
     "provenance/original.SKILL.md": "746a885d19ce9fc027c376f30bab4c86907e7ab956366c242ccdb4cf20eb8a9b",
     "run.js": "c8bcb288f1b63815a074cd0ff8650dfc5ea73b93018af62cf18a7c3d088cbe67",
-    "SKILL.md": "9282400eb7799905a1bc12df8f77e9ab087239edd6cc450cb3247bf88ffc4919",
+    "SKILL.md": "81f2a548c0e3ec279409b5f902e60c348c148d6a35c4c116f47db2b9bc8f4827",
     "tests/executor-node-path.test.cjs": "5de9befb209effcd2654fcc87ce2e924f84cfc40a41444ff661d9e1e65432bd6"
   },
   "evidence_sha256": {
-    "node24-linux.json": "b68918fda8149a6b4c8f0fb1e800edc0487b8fde684e2c91e8b3c2dfdd76ac33",
-    "node24-windows.json": "93aab59a9e169f489d49e379c260a9849c2ea00938b5c4e7218d4eea819e98ac",
-    "node26-linux.json": "bd4df54c0f3ecca5286234b70ee575b9adaaef3647068a08f7fd812fdc751b9a",
-    "node26-windows.json": "b764e3b6a31c45478ca33d584a6b6cfe1192655dd3c9d834d6120b07304fe0e2",
-    "reproduce.py": "4c470beeb99f7fe66f65de1c10bde55e30bcb1e1779877a56cd2ba19e28bf3d9",
-    "upstream-observation.json": "f2d16d5d00c2c73a8ebe5d703b291cf69121884361e930e673520b45d5fb9f4d"
+    "node24-linux.json": "ffd99e56cb272951a52346893017fef79c6f3d02592c1361d2ed1519dca707b0",
+    "node24-windows.json": "912ba720b94a6dfecab3211b2b18fd3acd6a8836cece04e2cad596da81f6e398",
+    "node26-linux.json": "940291a8eb0520994f5169b79201ff07e386a3a334e096ed70cd5e5c26271980",
+    "node26-windows.json": "00da2b1f355e19c3e06af55563aa123f0925abc991bdb0bcdb3dc4a606db4686",
+    "reproduce.py": "649359737b909df48dc9f44bc7e08391efa267b3bf29c7c42b6dd77401c60a22",
+    "upstream-observation.json": "c7af5c0279624dd7e4ef5a8770ca0b8abef3253d027c4b02605760d28a321685"
   }
 }

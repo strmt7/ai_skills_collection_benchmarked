@@ -420,6 +420,11 @@
           {
             "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
             "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/testeval-pilot-grading/review.json",
+            "sha256": "556301f1e03e67e7c9c38809b746776e7c88994f5890dc2fab8e2a3f66dedbda",
+            "scope": "Native public TestEval controls measure reference correctness, reach and fault detection separately across 12 tasks."
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -455,10 +460,15 @@
           {
             "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
             "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/testeval-pilot-grading/review.json",
+            "sha256": "556301f1e03e67e7c9c38809b746776e7c88994f5890dc2fab8e2a3f66dedbda",
+            "scope": "General evaluator qualification guidance is bound to independently replayed public controls."
           }
         ],
         "status": "complete",
-        "disposition": "The maintained portable overlay is bound to the current source and independent functional controls."
+        "disposition": "The portable overlay distinguishes coverage, reference correctness and fault detection, with independently replayed public controls. Comparative model evaluation is pending."
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
@@ -15166,8 +15176,8 @@
           },
           {
             "path": "docs/research-playwright-executor.md",
-            "scope": "Playwright executor module-path and local browser component controls; no agent efficacy result.",
-            "sha256": "a623a28ec307a33155756f21ccce0791e997ee0304733084285934fd9c4caec6"
+            "scope": "Windows and Linux Node 24 and Node 26 executor controls and in-memory browser checks with Playwright 1.65.1.",
+            "sha256": "7235f96a3f2c38e9be12ea01df0f8fe19e8ab932e80baaf0b9005f9fc74ae695"
           },
           {
             "path": "artifacts/repaired-skill-readiness/playwright-executor-v1/reproduce.py",
@@ -15206,6 +15216,36 @@
           {
             "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
             "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/playwright-executor-v2/node24-linux.json",
+            "sha256": "ffd99e56cb272951a52346893017fef79c6f3d02592c1361d2ed1519dca707b0",
+            "scope": "Current module lookup or browser component evidence tied to the 1.65.1 package."
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/playwright-executor-v2/node24-windows.json",
+            "sha256": "912ba720b94a6dfecab3211b2b18fd3acd6a8836cece04e2cad596da81f6e398",
+            "scope": "Current module lookup or browser component evidence tied to the 1.65.1 package."
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/playwright-executor-v2/node26-linux.json",
+            "sha256": "940291a8eb0520994f5169b79201ff07e386a3a334e096ed70cd5e5c26271980",
+            "scope": "Current module lookup or browser component evidence tied to the 1.65.1 package."
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/playwright-executor-v2/node26-windows.json",
+            "sha256": "00da2b1f355e19c3e06af55563aa123f0925abc991bdb0bcdb3dc4a606db4686",
+            "scope": "Current module lookup or browser component evidence tied to the 1.65.1 package."
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/playwright-executor-v2/reproduce.py",
+            "sha256": "649359737b909df48dc9f44bc7e08391efa267b3bf29c7c42b6dd77401c60a22",
+            "scope": "Current module lookup or browser component evidence tied to the 1.65.1 package."
+          },
+          {
+            "path": "artifacts/repaired-skill-readiness/playwright-executor-v2/upstream-observation.json",
+            "sha256": "c7af5c0279624dd7e4ef5a8770ca0b8abef3253d027c4b02605760d28a321685",
+            "scope": "Current module lookup or browser component evidence tied to the 1.65.1 package."
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -15247,15 +15287,15 @@
         "evidence": [
           {
             "path": "included/repaired/skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill/repair.json",
-            "sha256": "c38ce55b47ec06f3f219e049dab5a4f42d3a5854dee2bead95a198185b3f0b80"
+            "sha256": "d81d549a331a9ff350771b094f4490ca83f38de3893d5f8c080fa541687419bb"
           },
           {
             "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
             "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
           }
         ],
-        "status": "in_progress",
-        "disposition": "Published portable fixture qualification complements the executor package. The executor's separate dependency and installation graph still needs its own version qualification."
+        "status": "complete",
+        "disposition": "Maintained executor passes isolated Playwright 1.65.1 installation, module lookup and browser controls on Windows x64 and Linux x64 with Node 24.22.3 and 26.13.1. Comparative model evaluation is pending."
       },
       "source_repo": "lackeyjb/playwright-skill",
       "source_signature": {
@@ -28815,6 +28855,199 @@
             }
           ],
           "status": "in_progress"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+          "skill_dir_sha256": "bbe6528d38bb325b7355b23d5e59b1079c668b308d1e703e9c2eccb37a185db2",
+          "skill_file_sha256": "49a5a10975860bb2d7e3c4e260ff19b6580e43f5fbc7770b32dece02dde48e49"
+        }
+      }
+    },
+    {
+      "skill_id": "lackeyjb-playwright-skill-skills-playwright-skill-skill-md",
+      "catalog_revision": "1f989716477b048eabe5325c6595bedba9d1139e",
+      "review": {
+        "category": "Testing, QA & benchmarking",
+        "evaluation": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill",
+        "research": {
+          "evidence": [
+            {
+              "path": "artifacts/research/2026-10-25/playwright-v5-source-review.json",
+              "sha256": "aa37dd78bcc9cc051390ded805edb0e943cad84e659b72de3ee7e2c8834f1a39"
+            },
+            {
+              "path": "docs/research-playwright-executor.md",
+              "scope": "Playwright executor module-path and local browser component controls; no agent efficacy result.",
+              "sha256": "a623a28ec307a33155756f21ccce0791e997ee0304733084285934fd9c4caec6"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/playwright-executor-v1/reproduce.py",
+              "scope": "Playwright executor module-path and local browser component controls; no agent efficacy result.",
+              "sha256": "4c470beeb99f7fe66f65de1c10bde55e30bcb1e1779877a56cd2ba19e28bf3d9"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/playwright-executor-v1/node24-windows.json",
+              "scope": "Playwright executor module-path and local browser component controls; no agent efficacy result.",
+              "sha256": "93aab59a9e169f489d49e379c260a9849c2ea00938b5c4e7218d4eea819e98ac"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/playwright-executor-v1/node24-linux.json",
+              "scope": "Playwright executor module-path and local browser component controls; no agent efficacy result.",
+              "sha256": "b68918fda8149a6b4c8f0fb1e800edc0487b8fde684e2c91e8b3c2dfdd76ac33"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/playwright-executor-v1/node26-windows.json",
+              "scope": "Playwright executor module-path and local browser component controls; no agent efficacy result.",
+              "sha256": "b764e3b6a31c45478ca33d584a6b6cfe1192655dd3c9d834d6120b07304fe0e2"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/playwright-executor-v1/node26-linux.json",
+              "scope": "Playwright executor module-path and local browser component controls; no agent efficacy result.",
+              "sha256": "bd4df54c0f3ecca5286234b70ee575b9adaaef3647068a08f7fd812fdc751b9a"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/playwright-executor-v1/upstream-observation.json",
+              "scope": "Playwright executor module-path and local browser component controls; no agent efficacy result.",
+              "sha256": "f2d16d5d00c2c73a8ebe5d703b291cf69121884361e930e673520b45d5fb9f4d"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
+              "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+            },
+            {
+              "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+              "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
+            }
+          ],
+          "resource_hash_policy": "catalog-canonical-v1",
+          "resources": {
+            "API_REFERENCE.md": {
+              "review_scope": "Reviewed setup, actions, locator semantics, wait states, assertions and failure evidence, along with the network, browser, mobile, accessibility and CI examples. Browser and package claims remain scoped to the actual runner version.",
+              "sha256": "948e778e15e24d453219be6e05889416f088b59469818875f728d97a4ad17603",
+              "status": "reviewed"
+            },
+            "SKILL.md": {
+              "review_scope": "Reviewed target discovery, setup, runner modes, locators, examples, output and configuration. Prefer a declared target and explicitly owned resources. The immutable source defaults to visible browsers and is not the portable fixture workflow.",
+              "sha256": "746a885d19ce9fc027c376f30bab4c86907e7ab956366c242ccdb4cf20eb8a9b",
+              "status": "reviewed"
+            },
+            "lib/helpers.js": {
+              "review_scope": "Reviewed caller configuration, browser and context creation, artifact paths, banner and development-server behavior. The fixture experiment does not qualify this helper or arbitrary target discovery.",
+              "sha256": "b837864b43126da1c0fc216b4d555b14a52c78bd78e0075af0c6acd1efa0e010",
+              "status": "reviewed"
+            },
+            "package-lock.json": {
+              "review_scope": "Reviewed the resolved original Playwright and core versions, their integrity and the optional platform package. The released skill is v5.0.0 and its mirror resolves 1.62.1. The portable fixture experiment used publisher packages at 1.65.1.",
+              "sha256": "a0502f20d5c475c9654b8a6faa69263d2eb7ab0c7898c3c0a2490ddc75316df3",
+              "status": "reviewed"
+            },
+            "package.json": {
+              "review_scope": "Reviewed four package contracts: engine range, test entrypoint, native browser setup and the Playwright range. Maintained compatibility requires its own exact consumer checks.",
+              "sha256": "8f1870c8f1124cadae0bf493eccdbc8e2df48124f90d2eecaef0c43638906d8e",
+              "status": "reviewed"
+            },
+            "run.js": {
+              "review_scope": "Reviewed separate inline and file modes, operating directory, saved scripts, status forwarding and process lifetime. The known Git mirror remains unchanged.",
+              "sha256": "f2afe1a17379548abee60e91c9cee9a3907ff5ae9a2423d9190e45ace761399d",
+              "status": "reviewed"
+            }
+          },
+          "status": "complete"
+        },
+        "revision": {
+          "evidence": [
+            {
+              "path": "included/repaired/skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill/repair.json",
+              "sha256": "c38ce55b47ec06f3f219e049dab5a4f42d3a5854dee2bead95a198185b3f0b80"
+            },
+            {
+              "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+              "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
+            }
+          ],
+          "status": "in_progress",
+          "disposition": "Published portable fixture qualification complements the executor package. The executor's separate dependency and installation graph still needs its own version qualification."
+        },
+        "source_repo": "lackeyjb/playwright-skill",
+        "source_signature": {
+          "commit_sha": "289abdea7df857dc7a6ece937dbe0c5ecc964ccd",
+          "skill_dir_sha256": "050d832718bd16b276385cab33564d231e0a728ac1f82ce4e00e4e80461ede13",
+          "skill_file_sha256": "746a885d19ce9fc027c376f30bab4c86907e7ab956366c242ccdb4cf20eb8a9b"
+        }
+      }
+    },
+    {
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-eval-harness-skill-md",
+      "catalog_revision": "1f989716477b048eabe5325c6595bedba9d1139e",
+      "review": {
+        "category": "Coding, refactoring & repository automation",
+        "evaluation": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/eval-harness",
+        "research": {
+          "evidence": [
+            {
+              "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
+              "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
+            },
+            {
+              "path": "artifacts/research/2026-11-25/swt-bench-calibration/review.json",
+              "sha256": "c935b137990030308319bd4d16480c8206cc84ad8d48a5605ccd643672b44ff6"
+            },
+            {
+              "path": "artifacts/research/2026-11-25/testeval-grader-calibration/manifest.json",
+              "scope": "Independent TestEval and pytest calibration checks actual test outcomes separately from publisher coverage. Zero model attempts.",
+              "sha256": "454a45e7006df4a5351dda80de50cafd34c21cf41e74d1a1877be52d30bacfc6"
+            },
+            {
+              "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+              "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
+            }
+          ],
+          "resource_hash_policy": "catalog-canonical-v1",
+          "resources": {
+            "SKILL.md": {
+              "review_scope": "Reviewed all capability, regression, grader, metric and reporting examples. The current source changes frontmatter. The portable revision keeps independently qualified grading, checks condition order within strata, and tests supported equivalent inputs separately from behavioral failures.",
+              "sha256": "49a5a10975860bb2d7e3c4e260ff19b6580e43f5fbc7770b32dece02dde48e49",
+              "status": "reviewed"
+            },
+            "agents/openai.yaml": {
+              "review_scope": "Reviewed interface, default activation and its scope. A prompt hint drives discovery without establishing actual evaluation or independent grading.",
+              "sha256": "d62e64db25157bd18cc15239f4aa2747076aee1a35aac324e2bb47a80b2fd292",
+              "status": "reviewed"
+            }
+          },
+          "status": "complete"
+        },
+        "revision": {
+          "evidence": [
+            {
+              "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
+              "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
+            },
+            {
+              "path": "artifacts/research/2026-11-25/swt-bench-calibration/review.json",
+              "sha256": "c935b137990030308319bd4d16480c8206cc84ad8d48a5605ccd643672b44ff6"
+            },
+            {
+              "path": "artifacts/research/2026-11-25/testeval-grader-calibration/manifest.json",
+              "scope": "Independent TestEval and pytest calibration checks actual test outcomes separately from publisher coverage. Zero model attempts.",
+              "sha256": "454a45e7006df4a5351dda80de50cafd34c21cf41e74d1a1877be52d30bacfc6"
+            },
+            {
+              "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+              "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
+            }
+          ],
+          "status": "complete",
+          "disposition": "The maintained portable overlay is bound to the current source and independent functional controls."
         },
         "source_repo": "affaan-m/everything-claude-code",
         "source_signature": {

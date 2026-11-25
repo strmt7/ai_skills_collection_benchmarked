@@ -330,6 +330,32 @@ model-free grader controls. The schedule establishes the assignments alone.
 Native execution still requires the declared model, subject runtime, independent
 grader and trial qualification. [Frozen selection](../benchmarks/agent-effectiveness/development/testeval-pilot-v2/selection.json) · [Publisher](https://github.com/LLM4SoftwareTesting/TestEval)
 
+#### Grade public TestEval captures
+
+Freeze the task, exact publisher inputs, prepared defect programs, and grading
+rules before the attempt. Verify that each prepared defect changes a known
+behavior on admissible input. After collecting a submission, bind its suite
+digest and expected pytest case IDs to the controller's grade plan. Collect
+the native publisher stdout and independent JUnit outputs in isolated
+processes. Keep plans, expected outcomes and captures outside subject access.
+
+```powershell
+python tools/grade_testeval_submission.py --plan plan.json --capture capture.json
+```
+
+The command verifies captured bytes and reconciles publisher inputs, program
+and suite identities, case outcomes and native exits. Save its JSON output
+and pass it back with `--check result.json` to verify an existing grade.
+An incorrect reference result leaves sensitivity unmeasured. A skipped,
+failed-to-start or interrupted defect run remains visible in the planned
+count. The publisher's metrics keep their original scale.
+
+The grade consumer reads captured reports. Admission for a model study
+still requires a qualified launcher, a protected collector and independent
+defect witnesses for the frozen study. The current qualification uses 12
+public tasks and zero model attempts.
+[Grader qualification](../artifacts/research/2026-11-25/testeval-pilot-grading/review.json)
+
 ## Success criteria and reporting
 
 Preregister per-suite practical effect thresholds, independent task counts,

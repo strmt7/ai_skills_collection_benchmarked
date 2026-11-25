@@ -18,7 +18,7 @@
     "general-purpose"
   ],
   "dependencies": {
-    "playwright": "1.64.1"
+    "playwright": "1.65.1"
   },
   "engines": {
     "node": ">=20.0.0"

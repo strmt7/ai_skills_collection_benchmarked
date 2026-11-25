@@ -1,0 +1,33 @@
+{
+  "artifacts": {},
+  "base_revision": "1f989716477b048eabe5325c6595bedba9d1139e",
+  "checked_path_count": 8,
+  "native_checkout_sha256": {
+    "false": {
+      ".gitattributes": "2d27f60a1c1210d9157330b0949a4854f4913c47d930f9a7aaf3789d2a2795e1",
+      "artifacts/repaired-skill-readiness/playwright-executor-v2/node24-linux.json": "ffd99e56cb272951a52346893017fef79c6f3d02592c1361d2ed1519dca707b0",
+      "artifacts/repaired-skill-readiness/playwright-executor-v2/node24-windows.json": "912ba720b94a6dfecab3211b2b18fd3acd6a8836cece04e2cad596da81f6e398",
+      "artifacts/repaired-skill-readiness/playwright-executor-v2/node26-linux.json": "940291a8eb0520994f5169b79201ff07e386a3a334e096ed70cd5e5c26271980",
+      "artifacts/repaired-skill-readiness/playwright-executor-v2/node26-windows.json": "00da2b1f355e19c3e06af55563aa123f0925abc991bdb0bcdb3dc4a606db4686",
+      "artifacts/repaired-skill-readiness/playwright-executor-v2/reproduce.py": "649359737b909df48dc9f44bc7e08391efa267b3bf29c7c42b6dd77401c60a22",
+      "artifacts/repaired-skill-readiness/playwright-executor-v2/upstream-observation.json": "c7af5c0279624dd7e4ef5a8770ca0b8abef3253d027c4b02605760d28a321685",
+      "tests/test_native_qualification_index.py": "64c14cab3af548ad3d015d957de68360697e58af9f0d555b3ad1013f0ee958ac"
+    },
+    "true": {
+      ".gitattributes": "2d27f60a1c1210d9157330b0949a4854f4913c47d930f9a7aaf3789d2a2795e1",
+      "artifacts/repaired-skill-readiness/playwright-executor-v2/node24-linux.json": "ffd99e56cb272951a52346893017fef79c6f3d02592c1361d2ed1519dca707b0",
+      "artifacts/repaired-skill-readiness/playwright-executor-v2/node24-windows.json": "912ba720b94a6dfecab3211b2b18fd3acd6a8836cece04e2cad596da81f6e398",
+      "artifacts/repaired-skill-readiness/playwright-executor-v2/node26-linux.json": "940291a8eb0520994f5169b79201ff07e386a3a334e096ed70cd5e5c26271980",
+      "artifacts/repaired-skill-readiness/playwright-executor-v2/node26-windows.json": "00da2b1f355e19c3e06af55563aa123f0925abc991bdb0bcdb3dc4a606db4686",
+      "artifacts/repaired-skill-readiness/playwright-executor-v2/reproduce.py": "649359737b909df48dc9f44bc7e08391efa267b3bf29c7c42b6dd77401c60a22",
+      "artifacts/repaired-skill-readiness/playwright-executor-v2/upstream-observation.json": "c7af5c0279624dd7e4ef5a8770ca0b8abef3253d027c4b02605760d28a321685",
+      "tests/test_native_qualification_index.py": "64c14cab3af548ad3d015d957de68360697e58af9f0d555b3ad1013f0ee958ac"
+    }
+  },
+  "schema_version": 1,
+  "scope": "Verify Git checkout bytes for current attributes and new versioned Playwright receipts.",
+  "source_sha256": {
+    ".gitattributes": "2d27f60a1c1210d9157330b0949a4854f4913c47d930f9a7aaf3789d2a2795e1",
+    "tests/test_native_qualification_index.py": "64c14cab3af548ad3d015d957de68360697e58af9f0d555b3ad1013f0ee958ac"
+  }
+}
