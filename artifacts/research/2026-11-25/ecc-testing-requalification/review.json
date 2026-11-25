@@ -1,0 +1,215 @@
+{
+  "artifacts": {
+    "browser-order.json": "8f248d22ac4a8649bebce5e1ce5c9149bc749d64be9f2f798384b6ebdbbc7a5a",
+    "browser_order_control.py": "739c682443f0b16b4610772f9884f047f13a55bce3409903415d589e3d62b540"
+  },
+  "browser_version_limit": "The browser experiment used the admitted Playwright 1.65.0 / Chromium 158.0.8127.18 graph. Stable Playwright 1.65.2 declares a different browser, so moving the provider requires fresh package and browser qualification.",
+  "comparative_model_attempts_for_browser_candidate": 0,
+  "focused_control_runs": {
+    "evaluation-verification-controls": {
+      "native_log_sha256": "a452130e57dd57a3036efc678072a3fdc66c49457e9c383e74c9db4b8f230486",
+      "passed": 43
+    },
+    "inventory-and-tdd-after": {
+      "native_log_sha256": "79e2c987c6a09d6c99b92539eb06dc2a0308bef950abe5626a70b53eb2250787",
+      "passed": 38
+    }
+  },
+  "latest_observed_pypi_packages": {
+    "playwright": "1.65.2",
+    "pytest": "9.2.0"
+  },
+  "ledger_negative_control": {
+    "expected_failure": true,
+    "native_log_sha256": "206157d657529ce227a5b37edc5490e196fcb66e4e5335b36d88149b9da64758"
+  },
+  "native_browser_process": {
+    "active_processes_after_cleanup": 0,
+    "control_sha256": "739c682443f0b16b4610772f9884f047f13a55bce3409903415d589e3d62b540",
+    "exit_status": 0,
+    "kill_on_close": true,
+    "real_interpreter_gated_before_site": true,
+    "termination_reason": null,
+    "windows_job": true
+  },
+  "observed_on": "2026-11-25",
+  "packages": {
+    "affaan-m-everything-claude-code-agents-skills-e2e-testing-skill-md": {
+      "current_mirror": "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/e2e-testing",
+      "maintained_package": "included/improved/skills/e2e-testing-current",
+      "maintained_package_entrypoint_sha256": "6a155180352355c515b61b55025fbc108db9d658a169d163825a4aa575105497",
+      "maintained_package_provenance_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "observation": "The released examples still combine early scalar observations, late response subscriptions and network-idle readiness. The maintained package tests application-level completion of stale responses. Wallet and financial examples are illustrative and remain outside the executed browser control.",
+      "research_status": "in_progress",
+      "resources": {
+        "SKILL.md": {
+          "file_sha256": "8cfa22c35e5370c1f85400921d27e259cc99ba67a890625412bf2fc650a1d038",
+          "pinned_blob_sha": "5187aeaa3dd0dafc54fe5c0da5a85ded870c5153",
+          "unreleased_head_blob_sha": "5187aeaa3dd0dafc54fe5c0da5a85ded870c5153"
+        },
+        "agents/openai.yaml": {
+          "file_sha256": "980dd8a3447f207ef9ddc047ef74f2978499ec66ea607213a3e4982f1494c268",
+          "pinned_blob_sha": "6f44f3d022e63cca2d178fbf7b50988821c1be80",
+          "unreleased_head_blob_sha": "6f44f3d022e63cca2d178fbf7b50988821c1be80"
+        }
+      },
+      "revision_status": "in_progress",
+      "source_signature": {
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "6c92d5f2861dd2ffde8fbd1ce47ede85d82b510ea6d0765096a2c5d228924986",
+        "skill_file_sha256": "8cfa22c35e5370c1f85400921d27e259cc99ba67a890625412bf2fc650a1d038"
+      }
+    },
+    "affaan-m-everything-claude-code-agents-skills-eval-harness-skill-md": {
+      "current_mirror": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/eval-harness",
+      "maintained_package": "included/improved/skills/eval-harness-integrity",
+      "maintained_package_entrypoint_sha256": "cedb0e80d9736e2d7e9cbded2b6b9b2589620f2bcea4f3ecc6ac4231ce4454e9",
+      "maintained_package_provenance_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "observation": "The released example can classify log text independently of underlying process status. Its repeated-attempt example does not distinguish equal-task any-of-k and all-of-k reporting from attempts pooled across tasks. Authentication-oriented examples remain held.",
+      "research_status": "in_progress",
+      "resources": {
+        "SKILL.md": {
+          "file_sha256": "49a5a10975860bb2d7e3c4e260ff19b6580e43f5fbc7770b32dece02dde48e49",
+          "pinned_blob_sha": "8b60b99b1aa09d0c9b7eb1d22cf1de9396be80ea",
+          "unreleased_head_blob_sha": "8b60b99b1aa09d0c9b7eb1d22cf1de9396be80ea"
+        },
+        "agents/openai.yaml": {
+          "file_sha256": "d62e64db25157bd18cc15239f4aa2747076aee1a35aac324e2bb47a80b2fd292",
+          "pinned_blob_sha": "d55d58d04a9330c9286d79452782d5bf88f3d4f1",
+          "unreleased_head_blob_sha": "d55d58d04a9330c9286d79452782d5bf88f3d4f1"
+        }
+      },
+      "revision_status": "in_progress",
+      "source_signature": {
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "bbe6528d38bb325b7355b23d5e59b1079c668b308d1e703e9c2eccb37a185db2",
+        "skill_file_sha256": "49a5a10975860bb2d7e3c4e260ff19b6580e43f5fbc7770b32dece02dde48e49"
+      }
+    },
+    "affaan-m-everything-claude-code-agents-skills-tdd-workflow-skill-md": {
+      "current_mirror": "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/tdd-workflow-everything-claude-code",
+      "maintained_package": "included/improved/skills/tdd-workflow-current",
+      "maintained_package_entrypoint_sha256": "815bd0c1c748ac4c80c95ac5406d2647c50834c2c2d82d39c91786dcf64f2b55",
+      "maintained_package_provenance_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "observation": "The released instructions refer to a runner-discovery script absent from this two-file package and make a universal coverage claim. The documented pytest control differentiates assertion failure, collection absence, setup failure and skips. The unreleased branch adds plan handoff guidance. Mixed external-service and security examples remain outside this check.",
+      "research_status": "in_progress",
+      "resources": {
+        "SKILL.md": {
+          "file_sha256": "e9507695657b05f26dd62127f1d6ff58e4015d624df65dd4d7e07f6470317393",
+          "pinned_blob_sha": "67300bf520db15fe9254837780dcef7cf97fd3e8",
+          "unreleased_head_blob_sha": "78fc6e258448b9b56b0e55711bb505bf89aae456"
+        },
+        "agents/openai.yaml": {
+          "file_sha256": "d68700053a6f3a4a65ec18e34bcef58e75986b5f8ae19f6e20e7412ccbd895a4",
+          "pinned_blob_sha": "7f6355cf90d9d9e6726b7bca3ac82391f3340948",
+          "unreleased_head_blob_sha": "7f6355cf90d9d9e6726b7bca3ac82391f3340948"
+        }
+      },
+      "revision_status": "in_progress",
+      "source_signature": {
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "42d96a102bba09ff5d42329f9ee4344d83524d80890400f5a34259f8f1f6d7e0",
+        "skill_file_sha256": "e9507695657b05f26dd62127f1d6ff58e4015d624df65dd4d7e07f6470317393"
+      }
+    },
+    "affaan-m-everything-claude-code-agents-skills-verification-loop-skill-md": {
+      "current_mirror": "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/verification-loop-everything-claude-code",
+      "maintained_package": "included/improved/skills/verification-loop-shell-status",
+      "maintained_package_entrypoint_sha256": "e2d4aa146727b49c0621127cd6e0b723babe1480d5520f816e2b369496b08b8a",
+      "maintained_package_provenance_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "observation": "The released piped commands can lose producer status, and the example uses a fixed coverage target. Current native command tests preserve independent command evidence. The unreleased branch adds separate target-acceptance reporting. Scanner-specific instructions remain held.",
+      "research_status": "in_progress",
+      "resources": {
+        "SKILL.md": {
+          "file_sha256": "6d4a399d856207297168cc03f3f8c90d4085ff14566bb928af3c97d9a31f2650",
+          "pinned_blob_sha": "b936bc9646e3b286dbe89ab2b2a7fb47bf3ad28e",
+          "unreleased_head_blob_sha": "1a0dca129ea345708f94d237890e40e7caf18d13"
+        },
+        "agents/openai.yaml": {
+          "file_sha256": "6ec7745a73b6370a72dd96cdab7bdc71f3a383416d87ddfa943e91226d7c0559",
+          "pinned_blob_sha": "e1d72dd92af84674310965281929bee79816faed",
+          "unreleased_head_blob_sha": "e1d72dd92af84674310965281929bee79816faed"
+        }
+      },
+      "revision_status": "in_progress",
+      "source_signature": {
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "e1a976b821073666179024fc6b0b12542dedb76307d276c25632cc6ebb10417b",
+        "skill_file_sha256": "6d4a399d856207297168cc03f3f8c90d4085ff14566bb928af3c97d9a31f2650"
+      }
+    }
+  },
+  "previous_checkout": "6b02a31b4c38769afb0aa46e7cb0875f1e8d729b",
+  "previous_e2e_qualification": {
+    "path": "artifacts/research/2026-11-17/fixture-lifecycle/review-v2.json",
+    "sha256": "3e3df833247abccf8ddbf98e70d400336b285745e57edcb4d19c8b7c50621753"
+  },
+  "rejected_capture": {
+    "native_result_sha256": "1b0c8242c4f60a0c2fa95cc25d88c385c03ab205361bac5af1900b2b9e29dfe1",
+    "status": 308,
+    "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+  },
+  "research_sources": {
+    "anthropic-canonical": {
+      "extraction_characters": 45682,
+      "native_result_sha256": "2215637883d6ed600ced36961b8ac4b0e20cb12740781e71492bf185e9a36de8",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status": 200,
+      "url": "https://www.anthropic.com/research/demystifying-evals-for-ai-agents"
+    },
+    "playwright": {
+      "extraction_characters": 29645,
+      "native_result_sha256": "a433631c9c3ed77c1d9f5bb5da98e7b052f2ffaa091d6bd5eae1c662af8e075d",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status": 200,
+      "url": "https://playwright.dev/docs/best-practices"
+    },
+    "pytest": {
+      "extraction_characters": 7760,
+      "native_result_sha256": "521262a91378f39048ec97b4988764cf2d8efd079db033ad9c7fa458bcc123d2",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status": 200,
+      "url": "https://docs.pytest.org/en/stable/reference/exit-codes.html"
+    },
+    "python": {
+      "extraction_characters": 97737,
+      "native_result_sha256": "265058b8d10ac613fdeb9eb9c360d8d261ec37a6dab746e7dc3fc2e9fad3c705",
+      "provider_version": "0.9.5+catalog.portable4",
+      "status": 200,
+      "url": "https://docs.python.org/3/library/subprocess.html"
+    }
+  },
+  "schema_version": 1,
+  "scope": "Requalification of four current ECC testing and verification source packages and independent functional controls.",
+  "source_sha256": {
+    "docs/benchmark-execution-plan.md": "e6b9cc26449852cb8339068ebd2bd6a638261450152f2dc38c5e4df8ea991ee9",
+    "docs/improvement-plan.md": "7819c5980c132db3cd93dfabeba0b60177e19839943475f66f556a14143de50b",
+    "docs/installation.md": "4516905b0f8963dc214a15eda8cacfb36d127446111cc65f3ea49ca4d551d9d1",
+    "included/improved/skills/e2e-testing-current/NOTICE.md": "f7736461e19dcb8f579fbbdc877db0649f9b99a38fa55f496b68818ecc5df7b2",
+    "included/improved/skills/e2e-testing-current/SKILL.md": "6a155180352355c515b61b55025fbc108db9d658a169d163825a4aa575105497",
+    "included/improved/skills/e2e-testing-current/references/out-of-order-results.md": "b710e989f86914fb5dfffbe7bbba5e8e816601f14eb7603244ae5d74b5c3c0c5",
+    "included/improved/skills/eval-harness-integrity/SKILL.md": "cedb0e80d9736e2d7e9cbded2b6b9b2589620f2bcea4f3ecc6ac4231ce4454e9",
+    "included/improved/skills/tdd-workflow-current/SKILL.md": "815bd0c1c748ac4c80c95ac5406d2647c50834c2c2d82d39c91786dcf64f2b55",
+    "included/improved/skills/verification-loop-shell-status/SKILL.md": "e2d4aa146727b49c0621127cd6e0b723babe1480d5520f816e2b369496b08b8a",
+    "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/eval-harness/SKILL.md": "49a5a10975860bb2d7e3c4e260ff19b6580e43f5fbc7770b32dece02dde48e49",
+    "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/eval-harness/agents/openai.yaml": "d62e64db25157bd18cc15239f4aa2747076aee1a35aac324e2bb47a80b2fd292",
+    "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/e2e-testing/SKILL.md": "8cfa22c35e5370c1f85400921d27e259cc99ba67a890625412bf2fc650a1d038",
+    "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/e2e-testing/agents/openai.yaml": "980dd8a3447f207ef9ddc047ef74f2978499ec66ea607213a3e4982f1494c268",
+    "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/tdd-workflow-everything-claude-code/SKILL.md": "e9507695657b05f26dd62127f1d6ff58e4015d624df65dd4d7e07f6470317393",
+    "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/tdd-workflow-everything-claude-code/agents/openai.yaml": "d68700053a6f3a4a65ec18e34bcef58e75986b5f8ae19f6e20e7412ccbd895a4",
+    "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/verification-loop-everything-claude-code/SKILL.md": "6d4a399d856207297168cc03f3f8c90d4085ff14566bb928af3c97d9a31f2650",
+    "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/verification-loop-everything-claude-code/agents/openai.yaml": "6ec7745a73b6370a72dd96cdab7bdc71f3a383416d87ddfa943e91226d7c0559",
+    "tests/test_improvement_ledger.py": "1a09cdfe74b16db3ba10d5f28884351e053f6176856636688e0cd17437b0896c",
+    "tools/manage_improvement_ledger.py": "99aa7e05836c8ca967e0837827f148113f763d929f6f4bf646bd243f7c433af8"
+  },
+  "stable_playwright_browser_requirement": {
+    "chromium_revision": "1255",
+    "chromium_version": "159.0.8154.6",
+    "shares_admitted_browser": false,
+    "windows_wheel_sha256": "d0aec9e1c97b6f497f3d9f2ad6e1b7f299968e61239d71f100298b0690f3c776"
+  },
+  "stable_release": "v2.2.3",
+  "stable_release_commit": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+  "unreleased_main_commit": "4adeee6732a12d1540f49a4d50a38ce8c97f9a53",
+  "upstream_repository": "https://github.com/affaan-m/ECC"
+}

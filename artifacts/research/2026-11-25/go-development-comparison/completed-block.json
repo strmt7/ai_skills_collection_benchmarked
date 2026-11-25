@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "task": "swe-skills-bench/batch3/go-monads-mo",
+  "partition": "public_development",
+  "native_harness": "Codex CLI",
+  "local_model": "qwen3:8b",
+  "model_manifest_sha256": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+  "reasoning_effort_requested": "high",
+  "original_prompt_sha256": "2cb95adbf3a593c6cc9098c2799039a67004823e4b044c8282d58169a6ebd115",
+  "preregistration_sha256": "856a8a3621e798f92dd6f81e0dfd9fbd83a79c5db2220f6830a6e6464ac1a91a",
+  "native_comparison_plan_sha256": "3d99ef99b902fbce728838181a3c463b02158a9b8b0d81e61cb26b5eb473a02f",
+  "execution_boundary_qualification": {
+    "profile": "windows-native-go-monads-anonymous-v1",
+    "receipt_sha256": "112939cb127bf87f3e9443ad31ede015922293436e4412c7d544270e9db6fad4"
+  },
+  "frozen_intervention_sha256": {
+    "karpathy": [
+      "6e22cc54cb02a5e98ae42d06d9d7292db0c1b43894831b32879beb0166b2aea7"
+    ],
+    "default": [],
+    "collection": [
+      "815bd0c1c748ac4c80c95ac5406d2647c50834c2c2d82d39c91786dcf64f2b55"
+    ]
+  },
+  "initial_observations": {
+    "path": "artifacts/research/2026-11-25/go-development-comparison/observations.json",
+    "sha256": "708432a6126bd0f4305fb0a13d900509afb5d59375a9eecaf82381bafd3753cd"
+  },
+  "launch_refusals_before_inference": [
+    {
+      "condition": "default",
+      "reason": "available RAM below the frozen admission floor",
+      "required_start_ram_bytes": 19327352832,
+      "inference_started": false,
+      "native_stderr_sha256": "4b65d061db0061677dd69918a6b5dc4ea6d89def56e92999622e5a9a79a8a164"
+    },
+    {
+      "condition": "collection",
+      "reason": "available RAM below the frozen admission floor",
+      "required_start_ram_bytes": 19327352832,
+      "inference_started": false,
+      "native_stderr_sha256": "4b65d061db0061677dd69918a6b5dc4ea6d89def56e92999622e5a9a79a8a164"
+    }
+  ],
+  "scored_model_attempts": 3,
+  "openai_hosted_model_attempts": 0,
+  "run_qualification_sha256": {
+    "karpathy": "33068786396aa6eaec29e2bfc40a165f17019da751431698217c45622e2896f4",
+    "default": "9d400fcd18c1d5a5a507c921210db403475552b80e5e9b8553952897745791fd",
+    "collection": "9d400fcd18c1d5a5a507c921210db403475552b80e5e9b8553952897745791fd"
+  },
+  "outcomes": [
+    {
+      "condition": "karpathy",
+      "status": "task_failed",
+      "score": 0.21428571428571427,
+      "native_counts": {
+        "passed": 3,
+        "failed": 11,
+        "skipped": 0,
+        "errors": 0,
+        "total": 14
+      },
+      "usage": {
+        "input_tokens": 141077,
+        "cached_input_tokens": 75464,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 14570,
+        "reasoning_output_tokens": 0
+      },
+      "elapsed_seconds": 362.56,
+      "native_result_sha256": "ac03f30e637c3925e290089c8d2cf63cda1d9f4dd4276603859e0d30c5367714",
+      "publisher_result_sha256": "1b513cd5459d3db7f5ec84b95db9b4f754074dbb8b4cc21f3a0a6717024d7645",
+      "native_pytest_xml_sha256": "8680c8973f797de061aa3a5f4c0ab0ea833adcfde8cccf002274572382a3fcc3",
+      "validated_evidence_files": 12,
+      "runner_job_processes_after_cleanup": 0
+    },
+    {
+      "condition": "default",
+      "status": "task_failed",
+      "score": 0.21428571428571427,
+      "native_counts": {
+        "passed": 3,
+        "failed": 11,
+        "skipped": 0,
+        "errors": 0,
+        "total": 14
+      },
+      "usage": {
+        "input_tokens": 119539,
+        "cached_input_tokens": 86267,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 15235,
+        "reasoning_output_tokens": 0
+      },
+      "elapsed_seconds": 222.673,
+      "native_result_sha256": "b28b75f7fddbd2547a00f30987c5faa21717e5492fa955184c3815397f4ffa38",
+      "publisher_result_sha256": "7d8693347e7dc44dbbd0a4a741cbcff2daf07cf8f24de247cf5aae2384f4a9b5",
+      "native_pytest_xml_sha256": "b5c7a2d40e3192e2390f72799df51bbfad0cb6730490639a037b1e392a3da038",
+      "validated_evidence_files": 12,
+      "runner_job_processes_after_cleanup": 0
+    },
+    {
+      "condition": "collection",
+      "status": "task_failed",
+      "score": 0.21428571428571427,
+      "native_counts": {
+        "passed": 3,
+        "failed": 11,
+        "skipped": 0,
+        "errors": 0,
+        "total": 14
+      },
+      "usage": {
+        "input_tokens": 86823,
+        "cached_input_tokens": 73283,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 7938,
+        "reasoning_output_tokens": 0
+      },
+      "elapsed_seconds": 117.398,
+      "native_result_sha256": "4963fa2bc1adf7c8ea87ba4d816534551d18dd94fcb5dd435c02a6e6214f669a",
+      "publisher_result_sha256": "1138c53b50d71c8ce0e79fd707743e5dd55b8bb7a4d3a2fc7f7e113578bd967c",
+      "native_pytest_xml_sha256": "4807727ee433cad31b1b075f577ad1a1667404512e844fd526115c5751f9067c",
+      "validated_evidence_files": 12,
+      "runner_job_processes_after_cleanup": 0
+    }
+  ],
+  "collection_minus_baselines_in_cases_passed": {
+    "karpathy": 0,
+    "default": 0
+  },
+  "confirmatory": false,
+  "interpretation": "All three scored attempts finished at the unchanged-project control score. This single task and one sample per condition show no observed correctness gain. The token observations describe these attempts and cannot establish an efficiency advantage."
+}

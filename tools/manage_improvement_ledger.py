@@ -94,8 +94,11 @@ def validate(ledger: dict[str, Any], root: Path) -> list[str]:
                 elif hashlib.sha256(path.read_bytes()).hexdigest() != item.get("sha256"):
                     errors.append(f"{skill_id}/{phase}: evidence hash mismatch")
         research = state.get("research", {})
-        if isinstance(research, dict) and "resources" in research:
-            errors.extend(validate_resources(skill_id, state, root))
+        if isinstance(research, dict):
+            if "resources" in research:
+                errors.extend(validate_resources(skill_id, state, root))
+            elif research.get("status") == "complete":
+                errors.append(f"{skill_id}/research: completed research requires a resource inventory")
     gate_ids = set()
     gates = ledger.get("time_gates", [])
     if not isinstance(gates, list):

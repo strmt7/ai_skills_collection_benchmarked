@@ -144,9 +144,9 @@ Some reviewed instructions have known limitations:
   addresses the ordering. [See the timing controls](research-e2e-response-order.md).
   The broader [maintained E2E candidate](../included/improved/skills/e2e-testing-current/SKILL.md)
   also covers business readiness, observable HTTP errors and owned test resources.
-  Its [current Windows controls](../artifacts/research/2026-11-13/e2e-readiness/review.json)
-  exercise a polling page and the exact TypeScript example, including a deliberate
-  missing-readiness failure. Agent efficacy remains unbenchmarked.
+  The [Windows browser controls](../artifacts/research/2026-11-25/ecc-testing-requalification/review.json)
+  check whether a delayed response can overwrite newer results in the UI.
+  Agent efficacy remains unbenchmarked.
 
 - The Bun skill assumes frozen installs are always locked. A [Bun repair](../included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/bun-runtime/SKILL.md)
   makes the lockfile precondition explicit. [See the runtime controls](research-bun-runtime.md).

@@ -49,10 +49,13 @@ and the existing Packaging profile passed its recheck. A comparative claim
 requires admitted model outcomes. See the
 [Go study admission](../artifacts/research/2026-11-25/go-study-admission/review.json).
 
-The first local Qwen3 8B comparison scored the Karpathy arm at 3/14.
-The default and collection arms were refused before inference when host RAM
-fell below the frozen launch floor. Paired effects remain unavailable.
-[Go comparison record](../artifacts/research/2026-11-25/go-development-comparison/observations.json)
+The three scored Go attempts used local Qwen3 8B through Codex CLI and the
+original SWE-Skills-Bench grader. Default, Karpathy and the collection TDD
+skill each passed 3 of 14 cases, matching the unchanged-project control. Two
+earlier launch refusals occurred before inference when host RAM fell below the
+frozen floor. The completed block accounts for both refusals and the later
+scored attempts. One task at this score cannot establish an accuracy or
+efficiency gain. [Go comparison record](../artifacts/research/2026-11-25/go-development-comparison/completed-block.json)
 
 The Windows subject adapter now supports automatic, hash-locked dependency
 installation into a fresh private profile. In the Packaging development cell,

@@ -207,11 +207,18 @@
     {
       "id": "qa-fixture-lifecycle",
       "review": {
-        "path": "artifacts/research/2026-11-17/fixture-lifecycle/review-v2.json",
-        "sha256": "3e3df833247abccf8ddbf98e70d400336b285745e57edcb4d19c8b7c50621753"
+        "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
+        "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
       },
       "sources": [
-        "included/improved/skills/e2e-testing-current/SKILL.md"
+        "included/improved/skills/e2e-testing-current/SKILL.md",
+        "included/improved/skills/e2e-testing-current/NOTICE.md",
+        "included/improved/skills/e2e-testing-current/references/out-of-order-results.md",
+        "tools/manage_improvement_ledger.py",
+        "tests/test_improvement_ledger.py",
+        "docs/benchmark-execution-plan.md",
+        "docs/improvement-plan.md",
+        "docs/installation.md"
       ]
     },
     {
@@ -251,16 +258,6 @@
         ".github/workflows/offline-validation.yml",
         ".github/workflows/pnpm-cache-install.yml",
         "tests/test_frontend_ownership.py"
-      ]
-    },
-    {
-      "id": "native-go-study-admission",
-      "review": {
-        "path": "artifacts/research/2026-11-25/go-study-admission/review.json",
-        "sha256": "bf99efaac4d28d99b651c355ae77702a79c16d359be99254ea0dd355aab85c96"
-      },
-      "sources": [
-        "docs/benchmark-execution-plan.md"
       ]
     },
     {
@@ -336,7 +333,6 @@
       "sources": [
         "benchmarks/dependency-regressions/webapp_managed_service_contract.json",
         "benchmarks/dependency-regressions/webapp_managed_service_fixture.py",
-        "docs/installation.md",
         "included/improved/skills/webapp-testing-current/assets/playwright.config.cjs",
         "included/improved/skills/webapp-testing-current/assets/preview-health.spec.cjs",
         "included/improved/skills/webapp-testing-current/LICENSE",
@@ -445,6 +441,7 @@
       "superseded_sources": [
         ".github/workflows/offline-validation.yml",
         "CONTRIBUTING.md",
+        "docs/improvement-plan.md",
         "tests/test_native_qualification_index.py",
         "tests/test_windows_trial_process.py",
         "tools/validate_native_qualification_index.py"
@@ -488,7 +485,9 @@
         "path": "artifacts/research/2026-11-14/development-checkpoint/review.json",
         "sha256": "0716c3edfe7fdf54f6ba8050f4e1e7972d002af7da7da64570ffd8028fa397f7"
       },
-      "superseded_sources": []
+      "superseded_sources": [
+        "docs/improvement-plan.md"
+      ]
     },
     {
       "review": {
@@ -578,7 +577,9 @@
         "path": "artifacts/research/2026-11-17/repository-state/review.json",
         "sha256": "04aa96045709277c5396f89c45697e5bd3575a9f5aa3b822730a9eae51a362be"
       },
-      "superseded_sources": []
+      "superseded_sources": [
+        "docs/improvement-plan.md"
+      ]
     },
     {
       "review": {
@@ -606,6 +607,7 @@
         "sha256": "a277732c7592235712719c51162d7111625e1dfb2e7c322b912df7a71da6c467"
       },
       "superseded_sources": [
+        "included/improved/skills/e2e-testing-current/SKILL.md",
         "included/improved/skills/tdd-workflow-current/SKILL.md"
       ]
     },
@@ -625,6 +627,7 @@
       },
       "superseded_sources": [
         ".github/workflows/offline-validation.yml",
+        "docs/improvement-plan.md",
         "included/improved/skills/verification-loop-shell-status/SKILL.md",
         "tests/test_agent_tool_policy.py",
         "tests/test_native_trial_boundary.py",
@@ -653,6 +656,7 @@
         ".github/workflows/mcp-python-sdk.yml",
         ".github/workflows/offline-validation.yml",
         ".github/workflows/pnpm-cache-install.yml",
+        "docs/improvement-plan.md",
         "requirements-dev-lock.txt",
         "toolchains/bootstrap/README.md"
       ]
@@ -704,6 +708,7 @@
         "sha256": "3e3df833247abccf8ddbf98e70d400336b285745e57edcb4d19c8b7c50621753"
       },
       "superseded_sources": [
+        "included/improved/skills/e2e-testing-current/SKILL.md",
         "included/improved/skills/tdd-workflow-current/SKILL.md"
       ]
     },
@@ -729,6 +734,7 @@
         "sha256": "bf99efaac4d28d99b651c355ae77702a79c16d359be99254ea0dd355aab85c96"
       },
       "superseded_sources": [
+        "docs/benchmark-execution-plan.md",
         "docs/native-benchmark-controller.md",
         "tests/test_native_trial_boundary.py",
         "tools/qualify_native_trial_boundary.py"
@@ -769,6 +775,15 @@
       },
       "superseded_sources": [
         "docs/native-benchmark-controller.md"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-25/webapp-managed-service/review.json",
+        "sha256": "aea4fb728aa36f2b2027aff6a44ad7b3a208662be5b3fb7b7238c112e280572f"
+      },
+      "superseded_sources": [
+        "docs/installation.md"
       ]
     }
   ]

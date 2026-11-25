@@ -1,0 +1,41 @@
+{
+  "playwright": "1.65.0",
+  "chromium": "158.0.8127.18",
+  "rounds": {
+    "current_intent": [
+      {
+        "visible_result": "Gaskets",
+        "settled_responses": 2,
+        "latest_intent_preserved": true
+      },
+      {
+        "visible_result": "Gaskets",
+        "settled_responses": 2,
+        "latest_intent_preserved": true
+      },
+      {
+        "visible_result": "Gaskets",
+        "settled_responses": 2,
+        "latest_intent_preserved": true
+      }
+    ],
+    "late_result_overwrites": [
+      {
+        "visible_result": "Washers",
+        "settled_responses": 2,
+        "latest_intent_preserved": false
+      },
+      {
+        "visible_result": "Washers",
+        "settled_responses": 2,
+        "latest_intent_preserved": false
+      },
+      {
+        "visible_result": "Washers",
+        "settled_responses": 2,
+        "latest_intent_preserved": false
+      }
+    ]
+  },
+  "mocked_network": true
+}

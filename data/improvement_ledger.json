@@ -319,12 +319,35 @@
       },
       "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/e2e-testing",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
+            "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
+          }
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "review_scope": "Reviewed activation, current Playwright contracts and ordering guidance. The controlled app verified late results and preserved visible state.",
+            "sha256": "8cfa22c35e5370c1f85400921d27e259cc99ba67a890625412bf2fc650a1d038",
+            "status": "reviewed"
+          },
+          "agents/openai.yaml": {
+            "review_scope": "Reviewed display name, activation summary, explicit invocation and implicit invocation flag. This metadata changes discovery and has no independently executable code.",
+            "sha256": "980dd8a3447f207ef9ddc047ef74f2978499ec66ea607213a3e4982f1494c268",
+            "status": "reviewed"
+          }
+        },
+        "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
+            "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
@@ -341,12 +364,35 @@
       },
       "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/eval-harness",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
+            "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
+          }
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "review_scope": "Reviewed evaluator independence, attempt accounting and repeated-attempt guidance against primary methodology and exact estimator controls.",
+            "sha256": "49a5a10975860bb2d7e3c4e260ff19b6580e43f5fbc7770b32dece02dde48e49",
+            "status": "reviewed"
+          },
+          "agents/openai.yaml": {
+            "review_scope": "Reviewed display name, activation summary, explicit invocation and implicit invocation flag. This metadata changes discovery and has no independently executable code.",
+            "sha256": "d62e64db25157bd18cc15239f4aa2747076aee1a35aac324e2bb47a80b2fd292",
+            "status": "reviewed"
+          }
+        },
+        "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
+            "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
@@ -694,17 +740,45 @@
     "affaan-m-everything-claude-code-agents-skills-tdd-workflow-skill-md": {
       "category": "Testing, QA & benchmarking",
       "evaluation": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/go-development-comparison/completed-block.json",
+            "sha256": "cb3b619b8fccbb530519b8a92e3528aa1e9f48b550bf281aba7a332f1faaaa3f"
+          }
+        ],
+        "status": "in_progress"
       },
       "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/tdd-workflow-everything-claude-code",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
+            "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
+          }
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "review_scope": "Reviewed runner resolution, meaningful red phase, supported pytest statuses, coverage guidance and released versus unreleased documentation.",
+            "sha256": "e9507695657b05f26dd62127f1d6ff58e4015d624df65dd4d7e07f6470317393",
+            "status": "reviewed"
+          },
+          "agents/openai.yaml": {
+            "review_scope": "Reviewed display name, activation summary, explicit invocation and implicit invocation flag. This metadata changes discovery and has no independently executable code.",
+            "sha256": "d68700053a6f3a4a65ec18e34bcef58e75986b5f8ae19f6e20e7412ccbd895a4",
+            "status": "reviewed"
+          }
+        },
+        "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
+            "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
@@ -721,12 +795,35 @@
       },
       "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/verification-loop-everything-claude-code",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
+            "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
+          }
+        ],
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "review_scope": "Reviewed build, typecheck, lint and test producer statuses, bounded output, native command accounting and released versus unreleased documentation.",
+            "sha256": "6d4a399d856207297168cc03f3f8c90d4085ff14566bb928af3c97d9a31f2650",
+            "status": "reviewed"
+          },
+          "agents/openai.yaml": {
+            "review_scope": "Reviewed display name, activation summary, explicit invocation and implicit invocation flag. This metadata changes discovery and has no independently executable code.",
+            "sha256": "6ec7745a73b6370a72dd96cdab7bdc71f3a383416d87ddfa943e91226d7c0559",
+            "status": "reviewed"
+          }
+        },
+        "status": "in_progress"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
+            "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
+          }
+        ],
+        "status": "in_progress"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {

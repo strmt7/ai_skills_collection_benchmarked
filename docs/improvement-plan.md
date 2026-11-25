@@ -38,14 +38,11 @@ and evaluates artifacts. These functions must remain distinguishable to users.
 | Quality | Extensive tests, typing, deterministic validators and hosted controls | All applicable workflows accepted on the published revision, unresolved integration failures and held findings closed |
 | Release | Explicit hold; no release authorized | All readiness gates, then an owner decision |
 
-The current ledger has **2 complete / 316 in-progress / 355 pending research**
-records, **5 / 53 / 615 revision** records, and **0 / 12 / 661 evaluation** records.
-These are workflow states with limited recorded scopes, not completion or quality
-percentages. There are resource inventories for **192 skills**, comprising
-**1,468 per-skill resource records: 152 reviewed and 1,316 pending**. Nested
-packages can share physical resources. Another **481 skills have no recorded
-resource inventory**; that does not establish that their packages contain no
-supporting files.
+The [improvement ledger](../data/improvement_ledger.json) tracks the active
+source revision of every skill. `python tools/manage_improvement_ledger.py --check --json`
+reports the current stage counts by category. A source refresh can reopen a review
+while preserving its earlier evidence. Completed research requires an inventory
+and a scoped review for every package resource.
 
 The tracked inventory on published head
 [8be77acf](https://github.com/strmt7/ai_skills_collection_benchmarked/commit/8be77acf11261b918f6380426dc8cdece82c1b9e)
@@ -413,23 +410,23 @@ completed work.
 
 ### Complete category work queue
 
-| Category | Skills | Inventoried packages | Research complete | Revision complete | Evaluation complete |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| Agent infrastructure & skill creation | 8 | 1 | 1 | 0 | 0 |
-| Cloud, Azure & Microsoft SDKs | 178 | 0 | 0 | 0 | 0 |
-| Coding, refactoring & repository automation | 30 | 11 | 0 | 3 | 0 |
-| Communication, productivity & support | 59 | 0 | 0 | 0 | 0 |
-| Creative, media & design | 30 | 1 | 1 | 0 | 0 |
-| DevOps, cloud & operations | 40 | 2 | 0 | 0 | 0 |
-| Documents, spreadsheets & presentations | 12 | 0 | 0 | 0 | 0 |
-| Finance, commerce & forecasting | 2 | 2 | 0 | 0 | 0 |
-| Frontend, UI & browser automation | 3 | 3 | 0 | 2 | 0 |
-| Game, mobile & visual QA | 25 | 2 | 0 | 0 | 0 |
-| OMERO, Django, Docker & lab infrastructure | 46 | 2 | 0 | 0 | 0 |
-| Science, research & data analysis | 148 | 148 | 0 | 0 | 0 |
-| Search, retrieval & web automation | 16 | 0 | 0 | 0 | 0 |
-| Security, compliance & risk | 57 | 1 | 0 | 0 | 0 |
-| Testing, QA & benchmarking | 19 | 19 | 0 | 0 | 0 |
+| Category | Skills |
+| --- | ---: |
+| Agent infrastructure & skill creation | 8 |
+| Cloud, Azure & Microsoft SDKs | 178 |
+| Coding, refactoring & repository automation | 30 |
+| Communication, productivity & support | 59 |
+| Creative, media & design | 30 |
+| DevOps, cloud & operations | 40 |
+| Documents, spreadsheets & presentations | 12 |
+| Finance, commerce & forecasting | 2 |
+| Frontend, UI & browser automation | 3 |
+| Game, mobile & visual QA | 25 |
+| OMERO, Django, Docker & lab infrastructure | 46 |
+| Science, research & data analysis | 148 |
+| Search, retrieval & web automation | 16 |
+| Security, compliance & risk | 57 |
+| Testing, QA & benchmarking | 19 |
 
 The current category counts are workload denominators, not effectiveness claims.
 Security-affecting work in the 57-entry security category remains held; other

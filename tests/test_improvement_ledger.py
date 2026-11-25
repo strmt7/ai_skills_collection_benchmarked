@@ -70,7 +70,7 @@ def test_gate_rejects_ambiguous_or_non_utc_timestamps(value):
 
 def test_finished_status_requires_existing_unchanged_evidence(tmp_path):
     data = ledger.synchronize([entry()], {})
-    record = data["skills"]["one"]["research"]
+    record = data["skills"]["one"]["revision"]
     record["status"] = "complete"
     assert any("requires evidence" in error for error in ledger.validate(data, tmp_path))
     proof = tmp_path / "research.json"
@@ -178,6 +178,23 @@ def test_reviewed_resource_requires_scope_and_complete_review_rejects_pending(tm
     assert not ledger.validate(data, tmp_path)
     research["status"] = "complete"
     assert any("pending resources" in e for e in ledger.validate(data, tmp_path))
+
+
+def test_completed_research_requires_inventory_of_the_entire_package(tmp_path):
+    data, _ = resource_ledger(tmp_path)
+    research = data["skills"]["one"]["research"]
+    resources = research.pop("resources")
+    proof = tmp_path / "review.json"
+    proof.write_text("Review notes", encoding="utf-8")
+    research["status"] = "complete"
+    research["evidence"] = [{"path": proof.name, "sha256": hashlib.sha256(proof.read_bytes()).hexdigest()}]
+
+    assert ledger.validate(data, tmp_path) == ["one/research: completed research requires a resource inventory"]
+
+    for resource in resources.values():
+        resource.update(status="reviewed", review_scope="Complete controlled resource reviewed")
+    research["resources"] = resources
+    assert ledger.validate(data, tmp_path) == []
 
 
 @pytest.mark.parametrize("record", [[], {"status": []}, {"status": "invented"}])

@@ -287,7 +287,7 @@
         "R10",
         "R12"
       ],
-      "next_action": "Execute the detailed per-skill and category queue in bounded source-bound batches, independently of optional model-runner work. Account for all 673 skills and 15 categories: research 2 complete/316 in progress/355 pending; revision 5/53/615; evaluation 0/12/661. Finish the 1,316 pending records among 192 inventoried skills and inventory the remaining 481 packages. Preserve immutable mirrors, evidence-scoped unchanged dispositions and the held security population.",
+      "next_action": "Use the validated improvement ledger to choose bounded source-bound batches and account for all 673 skills in 15 categories. Requalify changed sources before carrying forward earlier research, then inventory and review each remaining package and resource. Preserve immutable mirrors, evidence-scoped dispositions and the held security population.",
       "deliverables": [
         "Complete resource and license dispositions",
         "Verified upstream/API/dependency observations",
@@ -336,6 +336,11 @@
         {
           "path": "artifacts/research/2026-11-13/makefile-project-wrappers/review.json",
           "sha256": "5a7522ca9714acda243949731007f39a1b8da516cc46feb744a0220487fc371b"
+        },
+        {
+          "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
+          "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050",
+          "scope": "Four current source packages, a late-response browser control and a completed-research inventory regression."
         }
       ]
     },
@@ -353,7 +358,7 @@
         "R9",
         "R12"
       ],
-      "next_action": "Retain the verified packaging floor result. Qualify and preregister discriminating development tasks on admitted routes before collecting further model outcomes. Preserve all twelve graphs and assignments in the original frame.",
+      "next_action": "Retain the completed Go block and replicated packaging floor without repeating unchanged inputs. Qualify a different public development task and an admitted model route with independent passing and failing controls. Use a predeclared capability calibration before freezing further matched blocks. Preserve all twelve graphs and assignments in the original frame.",
       "deliverables": [
         "All attempt transcripts and native results",
         "Usage and failure accounting",
@@ -372,6 +377,11 @@
           "path": "artifacts/research/2026-11-17/packaging-development/observations.json",
           "sha256": "7b0de2d5702f61b855c55be3745e82203cb69baa918940df55df41411c9a1bb7",
           "scope": "Three valid native scores on the single public packaging task, all at the floor. The original 12-task frame and GPT-6.1 Sol high comparison retain separate scope."
+        },
+        {
+          "path": "artifacts/research/2026-11-25/go-development-comparison/completed-block.json",
+          "sha256": "cb3b619b8fccbb530519b8a92e3528aa1e9f48b550bf281aba7a332f1faaaa3f",
+          "scope": "One matched local Qwen3 8B Go block; all conditions matched the unchanged control."
         }
       ],
       "dependency_scope": "Per study"

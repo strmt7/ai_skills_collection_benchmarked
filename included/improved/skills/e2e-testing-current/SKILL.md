@@ -42,6 +42,9 @@ silently download a different tool through an unpinned command.
 - Keep page objects small. Centralize repeated selectors and interactions while
   leaving the test's business expectations visible. Do not add a page-object
   framework or extra waits around every auto-waiting action.
+- For search, filters and other replaceable requests, test whether a late
+  response can overwrite the latest selection. See [out-of-order results](references/out-of-order-results.md)
+  for a controlled response order and a check that both results were handled.
 
 For example, adapt this contract to the actual application's API and UI:
 
