@@ -117,13 +117,16 @@
       "license_source_sha": "2c7ec5e78b8e5d43ea02e90bb8826f6b9f147b0c",
       "original_path": "included/improved/skills/webapp-testing-current/provenance/original-SKILL.md",
       "overlay_path": "included/improved/skills/webapp-testing-current",
-      "overlay_sha256": "7676c82af9d04743cb65262b678dcf5968f5b8402d79e2e446a6c2911feefcfd",
+      "overlay_sha256": "834de7555860b16302960b61ba2f7dd06a9cc7f0bea5040f7b588d5efffad288",
       "package_file_sha256": {
+        "assets/playwright.config.cjs": "58b6ccc74b0df8d143b2cc43455af4f39a068137463b59906ab8f7a4bd00c7a3",
+        "assets/preview-health.spec.cjs": "992c0c548fd3e3ae8075d57580c0735d41ef8cf7fdcfa393d7d78c268f2e3a8d",
         "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
-        "NOTICE.md": "442ec5ba597b68a3d6cb0fa50202ac1c41948ab21294366bc99085c8f80a2e61",
-        "SKILL.md": "7676c82af9d04743cb65262b678dcf5968f5b8402d79e2e446a6c2911feefcfd",
+        "NOTICE.md": "e58746562255167a5098d96c82bcd52700b1fdc8a0bbcc39cb137e0e28e974e9",
         "provenance/original-SKILL.md": "1f77d7de1954dd311fbd319e993f54ce8de4f5855e59289630adb414d9bfdabc",
-        "references/controls.md": "ca9084718429d6036010bc4cca5a45ef1523e2689d13c141e9519b04d81f142e"
+        "references/controls.md": "12c98261dd0aa48b8a9c3b3243a4dde753df0fc2241e3c8f4c5009b33bb196db",
+        "references/playwright-managed-server.md": "9a20310a13d37e4b662a2d762f4c212101b6de0c92dde74669d127a94bc01c3d",
+        "SKILL.md": "834de7555860b16302960b61ba2f7dd06a9cc7f0bea5040f7b588d5efffad288"
       },
       "performance_status": "unbenchmarked",
       "skill_id": "anthropics-skills-skills-webapp-testing-skill-md",

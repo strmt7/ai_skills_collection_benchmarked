@@ -151,6 +151,11 @@ Some reviewed instructions have known limitations:
 - The Bun skill assumes frozen installs are always locked. A [Bun repair](../included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/bun-runtime/SKILL.md)
   makes the lockfile precondition explicit. [See the runtime controls](research-bun-runtime.md).
 
+- The maintained [local web app testing skill](../included/improved/skills/webapp-testing-current/SKILL.md)
+  includes a tested Playwright server configuration and an instance check.
+  The [lifecycle controls](../artifacts/research/2026-11-25/webapp-managed-service/review.json)
+  cover occupied endpoints, startup output, timeouts and cleanup on Linux.
+
 - The Playwright skill executor replaces the caller’s module search path. A
   [maintained executor](../included/repaired/skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill/SKILL.md)
   preserves it. [See the tested cases](research-playwright-executor.md).

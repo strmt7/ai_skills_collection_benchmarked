@@ -1,9 +1,12 @@
-This experimental instruction overlay adapts `anthropics/skills`'s
-`skills/webapp-testing` package under the Apache License, Version 2.0.
-The exact mirrored entrypoint is retained in `provenance/original-SKILL.md`.
-Changes replace network-idle and black-box reliability prescriptions with
-observable application checks, qualified lifecycle handling and truthful
-outcome reporting. Supporting implementations are not silently repaired.
+This experimental overlay adapts the `skills/webapp-testing` package from
+`anthropics/skills`, licensed under the Apache License, Version 2.0.
+Copyright 2026 Anthropic, PBC.
 
-The packaged license retains the exact original notice. No individual
-coding-agent efficacy improvement has been established for this overlay.
+The package retains the exact pinned license in `LICENSE` and the original
+entrypoint in `provenance/original-SKILL.md`. The overlay adds
+application-specific readiness, owned server lifecycle guidance, and a
+tested Playwright configuration and instance assertion. The source-locked
+package continues to hold the original helper and examples.
+
+The included example and its independent controls have their own source
+bindings. The overlay's agent-effectiveness status is unbenchmarked.

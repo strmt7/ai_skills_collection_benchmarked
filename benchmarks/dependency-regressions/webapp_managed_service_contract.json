@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "scope": "Independent local service lifecycle for a preview application",
+  "product_contract": {
+    "ready_endpoint": "/health/ready",
+    "ready_status": 200,
+    "startup_status": 503,
+    "ready_payload": {"application": "preview", "ready": true, "instance": "unique run identity"},
+    "startup_log_bytes": 2097152
+  },
+  "profile": {"cpu_count": 1, "memory_bytes": 1073741824, "pids_limit": 64, "external_network": false},
+  "cases": [
+    {"id": "normal", "outcome": "pass", "owned_service_started": true, "test_started": true},
+    {"id": "noisy", "outcome": "pass", "owned_service_started": true, "test_started": true},
+    {"id": "slow-readiness", "outcome": "pass", "owned_service_started": true, "test_started": true},
+    {"id": "occupied", "outcome": "port-conflict", "owned_service_started": false, "test_started": false},
+    {"id": "wrong-instance", "outcome": "test-failure", "owned_service_started": true, "test_started": true},
+    {"id": "early-exit", "outcome": "startup-failure", "owned_service_started": true, "test_started": false},
+    {"id": "never-ready", "outcome": "startup-timeout", "owned_service_started": true, "test_started": false},
+    {"id": "interrupted", "outcome": "interrupted", "owned_service_started": true, "test_started": true}
+  ],
+  "required_observations": [
+    "All started child services stop after the observed outcome",
+    "All owned local listener sockets close",
+    "The occupied-port fixture remains alive until its independent owner stops it",
+    "The interrupted case observes a running test before signalling its exact runner",
+    "The never-ready fixture never returns the ready status",
+    "Every run retains the actual runner and test outcomes"
+  ],
+  "task_fixture_and_expectations_defined_independently_of_skill": true,
+  "model_attempts": 0
+}

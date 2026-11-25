@@ -56,8 +56,7 @@
         "tools/cocoindex_runtime.py",
         "tests/test_cocoindex_provider.py",
         "toolchains/cocoindex-code/README.md",
-        ".agents/skills/cocoindex-code-search/SKILL.md",
-        "docs/installation.md"
+        ".agents/skills/cocoindex-code-search/SKILL.md"
       ]
     },
     {
@@ -332,6 +331,26 @@
         "tests/test_native_benchmark_runtime.py",
         "tools/_native_benchmark_runtime.py"
       ]
+    },
+    {
+      "id": "playwright-managed-service",
+      "review": {
+        "path": "artifacts/research/2026-11-25/webapp-managed-service/review.json",
+        "sha256": "aea4fb728aa36f2b2027aff6a44ad7b3a208662be5b3fb7b7238c112e280572f"
+      },
+      "sources": [
+        "benchmarks/dependency-regressions/webapp_managed_service_contract.json",
+        "benchmarks/dependency-regressions/webapp_managed_service_fixture.py",
+        "docs/installation.md",
+        "included/improved/skills/webapp-testing-current/assets/playwright.config.cjs",
+        "included/improved/skills/webapp-testing-current/assets/preview-health.spec.cjs",
+        "included/improved/skills/webapp-testing-current/LICENSE",
+        "included/improved/skills/webapp-testing-current/NOTICE.md",
+        "included/improved/skills/webapp-testing-current/provenance/original-SKILL.md",
+        "included/improved/skills/webapp-testing-current/references/controls.md",
+        "included/improved/skills/webapp-testing-current/references/playwright-managed-server.md",
+        "included/improved/skills/webapp-testing-current/SKILL.md"
+      ]
     }
   ],
   "historical_reviews": [
@@ -413,6 +432,7 @@
         "sha256": "15d0e9a8c2d3e2d9b40a9f6da74f65eba42744801527a71277a720d2234deb8c"
       },
       "superseded_sources": [
+        "docs/installation.md",
         "tests/test_semantic_search.py",
         "tools/search_semantic_corpus.py"
       ]

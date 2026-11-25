@@ -1802,8 +1802,8 @@
           },
           {
             "path": "artifacts/research/2026-11-17/fixture-lifecycle/review-v2.json",
-            "sha256": "3e3df833247abccf8ddbf98e70d400336b285745e57edcb4d19c8b7c50621753",
-            "scope": "Native independent focused-runner reuse, setup-failure classification and prior fixture lifecycle controls. The earlier measured candidate remains separate."
+            "scope": "Native independent focused-runner reuse, setup-failure classification and prior fixture lifecycle controls. The earlier measured candidate remains separate.",
+            "sha256": "3e3df833247abccf8ddbf98e70d400336b285745e57edcb4d19c8b7c50621753"
           },
           {
             "path": "artifacts/research/2026-11-24/synchronized-cancellation/review.json",
@@ -1921,10 +1921,10 @@
             "sha256": "6323b9865876784ec62b9a691dcf9c53935bda93a3b4675279c51992be55d06a"
           },
           {
-            "path": "artifacts/research/2026-11-25/native-command-verification/review.json",
-            "sha256": "c55c9261d4f23a1cae0c8293b7a945653960847fd34bdb392e02859938991c31",
             "current_overlay_sha256": "e2d4aa146727b49c0621127cd6e0b723babe1480d5520f816e2b369496b08b8a",
-            "scope": "Verified native command and artifact behavior. Agent effectiveness for this revision remains open."
+            "path": "artifacts/research/2026-11-25/native-command-verification/review.json",
+            "scope": "Verified native command and artifact behavior. Agent effectiveness for this revision remains open.",
+            "sha256": "c55c9261d4f23a1cae0c8293b7a945653960847fd34bdb392e02859938991c31"
           }
         ],
         "status": "in_progress"
@@ -4296,6 +4296,10 @@
             "path": "artifacts/research/2026-11-01/anthropic-upstream-tree-delta.json",
             "scope": "Raw upstream Git tree comparison only; content, license, runtime and agent-effectiveness reviews remain separate.",
             "sha256": "8627febb9e9ec18df126c1805a32e7f04060e5c62f7ccb76d9fc55ae4763d663"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/webapp-managed-service/review.json",
+            "sha256": "aea4fb728aa36f2b2027aff6a44ad7b3a208662be5b3fb7b7238c112e280572f"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
@@ -4337,20 +4341,24 @@
             "status": "reviewed"
           }
         },
-        "status": "in_progress"
+        "status": "complete"
       },
       "revision": {
         "evidence": [
           {
             "path": "included/improved/skills/webapp-testing-current/SKILL.md",
-            "sha256": "7676c82af9d04743cb65262b678dcf5968f5b8402d79e2e446a6c2911feefcfd"
+            "sha256": "834de7555860b16302960b61ba2f7dd06a9cc7f0bea5040f7b588d5efffad288"
           },
           {
             "path": "artifacts/research/2026-10-02/improved-skills-manifest-six-overlays.json",
             "sha256": "06fbc5902626753e163092a88710fb97389d63175354791f3d9e78e729ba8224"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/webapp-managed-service/review.json",
+            "sha256": "aea4fb728aa36f2b2027aff6a44ad7b3a208662be5b3fb7b7238c112e280572f"
           }
         ],
-        "status": "in_progress"
+        "status": "complete"
       },
       "source_repo": "anthropics/skills",
       "source_signature": {

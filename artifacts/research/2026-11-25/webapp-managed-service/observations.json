@@ -1,0 +1,739 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-25",
+  "scope": "Independent local HTTP service lifecycle controls for a maintained skill example",
+  "upstream": {
+    "source_commit": "2c7ec5e78b8e5d43ea02e90bb8826f6b9f147b0c",
+    "observed_main_commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+    "reviewed_file_count": 6,
+    "changed_files": [
+      "skills/webapp-testing/LICENSE.txt"
+    ],
+    "license_blobs": [
+      {
+        "blob": "7a4a3ea2424c09fbe48d455aed1eaa94d9124835",
+        "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+        "bytes": 11357
+      },
+      {
+        "blob": "4f881c52d1f72f4cfb720e339e2d35c3058d01a9",
+        "sha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+        "bytes": 11345
+      }
+    ]
+  },
+  "legacy_helper": {
+    "normalized_observation_sha256": "5fdb65d60fa8a37cfcde0bfce42588a80d81bd40586e71adb085e807f25888bd",
+    "original_helper_sha256": "bad569c06e313d8a4290bbbef37bd53673ac7515754b04f5c67ddc55f7649094",
+    "cases": {
+      "quiet": {
+        "exit_code": 0,
+        "healthy_target": true,
+        "unrelated_target": false,
+        "startup_timed_out": false
+      },
+      "unrelated": {
+        "exit_code": 0,
+        "healthy_target": false,
+        "unrelated_target": true,
+        "startup_timed_out": false
+      },
+      "loud": {
+        "exit_code": 1,
+        "healthy_target": false,
+        "unrelated_target": false,
+        "startup_timed_out": true
+      }
+    },
+    "historical_reproducer": "benchmarks/dependency-regressions/webapp_server_fixture.py"
+  },
+  "primary_references": [
+    {
+      "url": "https://playwright.dev/docs/actionability",
+      "native_result_sha256": "b3e8acf447a49efa88cc26642b8113e68efb8e7b0d8534ac557817a3c619bc62",
+      "provider_version": "0.9.5+catalog.portable4"
+    },
+    {
+      "url": "https://playwright.dev/docs/test-webserver",
+      "native_result_sha256": "e0252f0331016043b62df90c99ef8f44ff15a8f2c86c8527bd29e3969f2d7a86",
+      "provider_version": "0.9.5+catalog.portable4"
+    }
+  ],
+  "npm_admission": {
+    "stable_version": "1.65.1",
+    "packages": [
+      {
+        "name": "@playwright/test",
+        "version": "1.65.1",
+        "integrity": "sha512-y+NCIRm2LvY4slUVWvGh1nujJ8RF/hEisIsq2mtUPgdQC4L701bq5hZGMhrpeXjACvwvO9tj5dJqhvM6TP9lbw==",
+        "archive": "playwright-test.package.tgz",
+        "bytes": 8742,
+        "sha256": "025a0b1ab36fd4e5f4ede6c9397020b9c3805d8f19c75a16989a02d70a88f37b",
+        "metadata_sha256": "178c83ec72a24721ecd8139b482a19cb414cf7060f9dac528d4d3d2f49b119f4"
+      },
+      {
+        "name": "playwright",
+        "version": "1.65.1",
+        "integrity": "sha512-vJ1FuoOrNwOKHUIVEvSt3jT1L+wjjDpwhwIstKtfvTh8XIG4FG4bIFuvNdMxi81LGfAhUgUZleVFaOLY4RIUUw==",
+        "archive": "playwright.package.tgz",
+        "bytes": 909830,
+        "sha256": "e2ebec5abb40f511c7a4442e83042fd8a4e654c3367e120b76e94a61a8f91e01",
+        "metadata_sha256": "142a893e43143a8660ccbf91827d6112169e1f24939cf78503d23d2e618a5715"
+      },
+      {
+        "name": "playwright-core",
+        "version": "1.65.1",
+        "integrity": "sha512-hqPpz7blSMPxWVdoeE1yiBSzXsKiVOd2k+kjCvmUywD2GPO2Dd9HfcWnq9NN0GHbNZDFgZ9JfBFr+X5/BLo0qw==",
+        "archive": "playwright-core.package.tgz",
+        "bytes": 3232772,
+        "sha256": "6f5a60be62a4fddfbe7d10c448d8fbd54547da3358f2f8a04211440471ee863e",
+        "metadata_sha256": "7508a44c868fc36f8d35466b21293756d2c7ff3eda1da68fccf7b1249b829438"
+      }
+    ],
+    "linux_x64_optional_dependencies": [],
+    "required_node": ">=20",
+    "native_graph_verified": true
+  },
+  "execution_inputs": {
+    "service-lifecycle-contract.json": {
+      "path": "benchmarks/dependency-regressions/webapp_managed_service_contract.json",
+      "sha256": "da6d62be2180f05b0974489bac6c9be69e744d23df50728dd8ba2be24cdac9ed"
+    },
+    "webapp_managed_service_fixture.py": {
+      "path": "benchmarks/dependency-regressions/webapp_managed_service_fixture.py",
+      "sha256": "4b5aab8c228c1096c23a9bb13be556a94a93acc547cedb5da96d856b12cc3d31"
+    },
+    "playwright.config.cjs": {
+      "path": "included/improved/skills/webapp-testing-current/assets/playwright.config.cjs",
+      "sha256": "58b6ccc74b0df8d143b2cc43455af4f39a068137463b59906ab8f7a4bd00c7a3"
+    },
+    "preview-health.spec.cjs": {
+      "path": "included/improved/skills/webapp-testing-current/assets/preview-health.spec.cjs",
+      "sha256": "992c0c548fd3e3ae8075d57580c0735d41ef8cf7fdcfa393d7d78c268f2e3a8d"
+    }
+  },
+  "frozen_contract_sha256": "da6d62be2180f05b0974489bac6c9be69e744d23df50728dd8ba2be24cdac9ed",
+  "contract_prenormalization_sha256": "9bb048278d77ff5e43d598035a4b6f3bbc32803dc1fd793f36f0751adef9f2cd",
+  "runs": [
+    {
+      "playwright": "1.65.1",
+      "node": "v20.18.1",
+      "order": "forward",
+      "cases": [
+        {
+          "id": "normal",
+          "passed": true,
+          "outcome": "pass",
+          "exit_code": 0,
+          "runner_stats": {
+            "startTime": "2026-11-25T07:24:25.629Z",
+            "duration": 775.801,
+            "expected": 1,
+            "skipped": 0,
+            "unexpected": 0,
+            "flaky": 0
+          },
+          "owned_service_started": true,
+          "test_started": true,
+          "service_process_present_after": false,
+          "remaining_project_processes": 0,
+          "listener_present_after": false,
+          "independent_occupant_preserved": null,
+          "statuses": [
+            200,
+            200
+          ],
+          "startup_stdout_bytes": 0,
+          "interrupt_delivered": false,
+          "native_streams": {
+            "stdout": {
+              "sha256": "4ced7d5337d7b839c8ab98fc138859b280b535c1bc717ba9429d170cfa9a14bb",
+              "bytes": 3856
+            },
+            "stderr": {
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "bytes": 0
+            }
+          }
+        },
+        {
+          "id": "noisy",
+          "passed": true,
+          "outcome": "pass",
+          "exit_code": 0,
+          "runner_stats": {
+            "startTime": "2026-11-25T07:24:26.947Z",
+            "duration": 841.3969999999999,
+            "expected": 1,
+            "skipped": 0,
+            "unexpected": 0,
+            "flaky": 0
+          },
+          "owned_service_started": true,
+          "test_started": true,
+          "service_process_present_after": false,
+          "remaining_project_processes": 0,
+          "listener_present_after": false,
+          "independent_occupant_preserved": null,
+          "statuses": [
+            200,
+            200
+          ],
+          "startup_stdout_bytes": 2097152,
+          "interrupt_delivered": false,
+          "native_streams": {
+            "stdout": {
+              "sha256": "1b1a308b323c7b27573f4b4aaa1697a87520112177e38c2d226577d04daffabf",
+              "bytes": 3858
+            },
+            "stderr": {
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "bytes": 0
+            }
+          }
+        },
+        {
+          "id": "slow-readiness",
+          "passed": true,
+          "outcome": "pass",
+          "exit_code": 0,
+          "runner_stats": {
+            "startTime": "2026-11-25T07:24:28.247Z",
+            "duration": 1271.862,
+            "expected": 1,
+            "skipped": 0,
+            "unexpected": 0,
+            "flaky": 0
+          },
+          "owned_service_started": true,
+          "test_started": true,
+          "service_process_present_after": false,
+          "remaining_project_processes": 0,
+          "listener_present_after": false,
+          "independent_occupant_preserved": null,
+          "statuses": [
+            503,
+            200,
+            200
+          ],
+          "startup_stdout_bytes": 0,
+          "interrupt_delivered": false,
+          "native_streams": {
+            "stdout": {
+              "sha256": "c05f871e1ab3c8e2c14d25c1edf74c6ef7bd7f4560f7b6db20f91066a236a1b2",
+              "bytes": 3921
+            },
+            "stderr": {
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "bytes": 0
+            }
+          }
+        },
+        {
+          "id": "occupied",
+          "passed": true,
+          "outcome": "port-conflict",
+          "exit_code": 1,
+          "runner_stats": {
+            "startTime": "2026-11-25T07:24:30.009Z",
+            "duration": 7.216000000000008,
+            "expected": 0,
+            "skipped": 0,
+            "unexpected": 0,
+            "flaky": 0
+          },
+          "owned_service_started": false,
+          "test_started": false,
+          "service_process_present_after": false,
+          "remaining_project_processes": 0,
+          "listener_present_after": false,
+          "independent_occupant_preserved": true,
+          "statuses": [],
+          "startup_stdout_bytes": 0,
+          "interrupt_delivered": false,
+          "native_streams": {
+            "stdout": {
+              "sha256": "2c7166f7db5a2cd37c4c2d569b0dd962a2b379df1db17e4f9016bf2a7c430582",
+              "bytes": 2969
+            },
+            "stderr": {
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "bytes": 0
+            }
+          }
+        },
+        {
+          "id": "wrong-instance",
+          "passed": true,
+          "outcome": "test-failure",
+          "exit_code": 1,
+          "runner_stats": {
+            "startTime": "2026-11-25T07:24:30.439Z",
+            "duration": 841.2869999999999,
+            "expected": 0,
+            "skipped": 0,
+            "unexpected": 1,
+            "flaky": 0
+          },
+          "owned_service_started": true,
+          "test_started": true,
+          "service_process_present_after": false,
+          "remaining_project_processes": 0,
+          "listener_present_after": false,
+          "independent_occupant_preserved": null,
+          "statuses": [
+            200,
+            200
+          ],
+          "startup_stdout_bytes": 0,
+          "interrupt_delivered": false,
+          "native_streams": {
+            "stdout": {
+              "sha256": "b4630e25efa7e3bce7f24d612a05c83cf6cc1d181ac77352798ac94fb5ed1a32",
+              "bytes": 7608
+            },
+            "stderr": {
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "bytes": 0
+            }
+          }
+        },
+        {
+          "id": "early-exit",
+          "passed": true,
+          "outcome": "startup-failure",
+          "exit_code": 1,
+          "runner_stats": {
+            "startTime": "2026-11-25T07:24:31.786Z",
+            "duration": 151.51199999999994,
+            "expected": 0,
+            "skipped": 0,
+            "unexpected": 0,
+            "flaky": 0
+          },
+          "owned_service_started": true,
+          "test_started": false,
+          "service_process_present_after": false,
+          "remaining_project_processes": 0,
+          "listener_present_after": false,
+          "independent_occupant_preserved": null,
+          "statuses": [],
+          "startup_stdout_bytes": 0,
+          "interrupt_delivered": false,
+          "native_streams": {
+            "stdout": {
+              "sha256": "be212b4666ae44f7d1e72d1a04ea3dda2eca0ddcbe6c27ed88e97f366cd0363a",
+              "bytes": 2806
+            },
+            "stderr": {
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "bytes": 0
+            }
+          }
+        },
+        {
+          "id": "never-ready",
+          "passed": true,
+          "outcome": "startup-timeout",
+          "exit_code": 1,
+          "runner_stats": {
+            "startTime": "2026-11-25T07:24:32.425Z",
+            "duration": 10012.645,
+            "expected": 0,
+            "skipped": 0,
+            "unexpected": 0,
+            "flaky": 0
+          },
+          "owned_service_started": true,
+          "test_started": false,
+          "service_process_present_after": false,
+          "remaining_project_processes": 0,
+          "listener_present_after": false,
+          "independent_occupant_preserved": null,
+          "statuses": [
+            503,
+            503,
+            503,
+            503,
+            503,
+            503,
+            503,
+            503,
+            503,
+            503,
+            503
+          ],
+          "startup_stdout_bytes": 0,
+          "interrupt_delivered": false,
+          "native_streams": {
+            "stdout": {
+              "sha256": "3e7f036327b7939b48e811473d3650a876eb153d6818fa0003e405c42bf65ab4",
+              "bytes": 2771
+            },
+            "stderr": {
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "bytes": 0
+            }
+          }
+        },
+        {
+          "id": "interrupted",
+          "passed": true,
+          "outcome": "interrupted",
+          "exit_code": 130,
+          "runner_stats": {
+            "startTime": "2026-11-25T07:24:42.915Z",
+            "duration": 772.0590000000001,
+            "expected": 0,
+            "skipped": 1,
+            "unexpected": 0,
+            "flaky": 0
+          },
+          "owned_service_started": true,
+          "test_started": true,
+          "service_process_present_after": false,
+          "remaining_project_processes": 0,
+          "listener_present_after": false,
+          "independent_occupant_preserved": null,
+          "statuses": [
+            200
+          ],
+          "startup_stdout_bytes": 0,
+          "interrupt_delivered": true,
+          "native_streams": {
+            "stdout": {
+              "sha256": "9adb6e6989a295144ced250b30e41efc76b1b69763b0a304dfa52c5ae7aad6fc",
+              "bytes": 3909
+            },
+            "stderr": {
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "bytes": 0
+            }
+          }
+        }
+      ],
+      "source_sha256": {
+        "webapp_managed_service_fixture.py": "4b5aab8c228c1096c23a9bb13be556a94a93acc547cedb5da96d856b12cc3d31",
+        "service-lifecycle-contract.json": "da6d62be2180f05b0974489bac6c9be69e744d23df50728dd8ba2be24cdac9ed",
+        "playwright.config.cjs": "58b6ccc74b0df8d143b2cc43455af4f39a068137463b59906ab8f7a4bd00c7a3",
+        "preview-health.spec.cjs": "992c0c548fd3e3ae8075d57580c0735d41ef8cf7fdcfa393d7d78c268f2e3a8d"
+      },
+      "npm_package_admission_sha256": "952db50827281c04870edaf2e02f4146e418c7ad8b95a72165d03321cfc1defe",
+      "remaining_owned_containers": 0,
+      "network_profile": "none",
+      "model_attempts": 0
+    },
+    {
+      "playwright": "1.65.1",
+      "node": "v20.18.1",
+      "order": "reverse",
+      "cases": [
+        {
+          "id": "interrupted",
+          "passed": true,
+          "outcome": "interrupted",
+          "exit_code": 130,
+          "runner_stats": {
+            "startTime": "2026-11-25T07:25:35.749Z",
+            "duration": 810.2169999999999,
+            "expected": 0,
+            "skipped": 1,
+            "unexpected": 0,
+            "flaky": 0
+          },
+          "owned_service_started": true,
+          "test_started": true,
+          "service_process_present_after": false,
+          "remaining_project_processes": 0,
+          "listener_present_after": false,
+          "independent_occupant_preserved": null,
+          "statuses": [
+            200
+          ],
+          "startup_stdout_bytes": 0,
+          "interrupt_delivered": true,
+          "native_streams": {
+            "stdout": {
+              "sha256": "bf27aab0866b10deb9a522e1f38a7b126715a58292d584bdf847a4acffa9aceb",
+              "bytes": 3909
+            },
+            "stderr": {
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "bytes": 0
+            }
+          }
+        },
+        {
+          "id": "never-ready",
+          "passed": true,
+          "outcome": "startup-timeout",
+          "exit_code": 1,
+          "runner_stats": {
+            "startTime": "2026-11-25T07:25:37.079Z",
+            "duration": 10012.399000000001,
+            "expected": 0,
+            "skipped": 0,
+            "unexpected": 0,
+            "flaky": 0
+          },
+          "owned_service_started": true,
+          "test_started": false,
+          "service_process_present_after": false,
+          "remaining_project_processes": 0,
+          "listener_present_after": false,
+          "independent_occupant_preserved": null,
+          "statuses": [
+            503,
+            503,
+            503,
+            503,
+            503,
+            503,
+            503,
+            503,
+            503,
+            503,
+            503
+          ],
+          "startup_stdout_bytes": 0,
+          "interrupt_delivered": false,
+          "native_streams": {
+            "stdout": {
+              "sha256": "de72802c9560396f2c8e9c177c4da94a3fd209fc9f6fda7157c3e7b20bfc4c77",
+              "bytes": 2780
+            },
+            "stderr": {
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "bytes": 0
+            }
+          }
+        },
+        {
+          "id": "early-exit",
+          "passed": true,
+          "outcome": "startup-failure",
+          "exit_code": 1,
+          "runner_stats": {
+            "startTime": "2026-11-25T07:25:47.545Z",
+            "duration": 131.94500000000005,
+            "expected": 0,
+            "skipped": 0,
+            "unexpected": 0,
+            "flaky": 0
+          },
+          "owned_service_started": true,
+          "test_started": false,
+          "service_process_present_after": false,
+          "remaining_project_processes": 0,
+          "listener_present_after": false,
+          "independent_occupant_preserved": null,
+          "statuses": [],
+          "startup_stdout_bytes": 0,
+          "interrupt_delivered": false,
+          "native_streams": {
+            "stdout": {
+              "sha256": "1e1c4f02556fad42a0e06b05c5ce62560c4e78c9ed15c069510876a5478042e1",
+              "bytes": 2806
+            },
+            "stderr": {
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "bytes": 0
+            }
+          }
+        },
+        {
+          "id": "wrong-instance",
+          "passed": true,
+          "outcome": "test-failure",
+          "exit_code": 1,
+          "runner_stats": {
+            "startTime": "2026-11-25T07:25:48.147Z",
+            "duration": 778.5049999999999,
+            "expected": 0,
+            "skipped": 0,
+            "unexpected": 1,
+            "flaky": 0
+          },
+          "owned_service_started": true,
+          "test_started": true,
+          "service_process_present_after": false,
+          "remaining_project_processes": 0,
+          "listener_present_after": false,
+          "independent_occupant_preserved": null,
+          "statuses": [
+            200,
+            200
+          ],
+          "startup_stdout_bytes": 0,
+          "interrupt_delivered": false,
+          "native_streams": {
+            "stdout": {
+              "sha256": "7ec643251cbdbbd39c2379f31e2d2296845879dc5ffa56a0b8690e608ccf6fc3",
+              "bytes": 7608
+            },
+            "stderr": {
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "bytes": 0
+            }
+          }
+        },
+        {
+          "id": "occupied",
+          "passed": true,
+          "outcome": "port-conflict",
+          "exit_code": 1,
+          "runner_stats": {
+            "startTime": "2026-11-25T07:25:49.367Z",
+            "duration": 6.590000000000032,
+            "expected": 0,
+            "skipped": 0,
+            "unexpected": 0,
+            "flaky": 0
+          },
+          "owned_service_started": false,
+          "test_started": false,
+          "service_process_present_after": false,
+          "remaining_project_processes": 0,
+          "listener_present_after": false,
+          "independent_occupant_preserved": true,
+          "statuses": [],
+          "startup_stdout_bytes": 0,
+          "interrupt_delivered": false,
+          "native_streams": {
+            "stdout": {
+              "sha256": "0de20a5516287f2846c66e62b89ba8974584278fde3d75c7ba4d12410d1700b6",
+              "bytes": 2969
+            },
+            "stderr": {
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "bytes": 0
+            }
+          }
+        },
+        {
+          "id": "slow-readiness",
+          "passed": true,
+          "outcome": "pass",
+          "exit_code": 0,
+          "runner_stats": {
+            "startTime": "2026-11-25T07:25:49.834Z",
+            "duration": 1301.918,
+            "expected": 1,
+            "skipped": 0,
+            "unexpected": 0,
+            "flaky": 0
+          },
+          "owned_service_started": true,
+          "test_started": true,
+          "service_process_present_after": false,
+          "remaining_project_processes": 0,
+          "listener_present_after": false,
+          "independent_occupant_preserved": null,
+          "statuses": [
+            503,
+            200,
+            200
+          ],
+          "startup_stdout_bytes": 0,
+          "interrupt_delivered": false,
+          "native_streams": {
+            "stdout": {
+              "sha256": "33e2f88175370afe068e4f0c314376fe49a017c474ccc2d41f4c1ec2901c27a6",
+              "bytes": 3921
+            },
+            "stderr": {
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "bytes": 0
+            }
+          }
+        },
+        {
+          "id": "noisy",
+          "passed": true,
+          "outcome": "pass",
+          "exit_code": 0,
+          "runner_stats": {
+            "startTime": "2026-11-25T07:25:51.558Z",
+            "duration": 880.9080000000001,
+            "expected": 1,
+            "skipped": 0,
+            "unexpected": 0,
+            "flaky": 0
+          },
+          "owned_service_started": true,
+          "test_started": true,
+          "service_process_present_after": false,
+          "remaining_project_processes": 0,
+          "listener_present_after": false,
+          "independent_occupant_preserved": null,
+          "statuses": [
+            200,
+            200
+          ],
+          "startup_stdout_bytes": 2097152,
+          "interrupt_delivered": false,
+          "native_streams": {
+            "stdout": {
+              "sha256": "9d58961f7566871445491b735485e47eb432e41eda631e92c082c41b41bab90f",
+              "bytes": 3858
+            },
+            "stderr": {
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "bytes": 0
+            }
+          }
+        },
+        {
+          "id": "normal",
+          "passed": true,
+          "outcome": "pass",
+          "exit_code": 0,
+          "runner_stats": {
+            "startTime": "2026-11-25T07:25:52.865Z",
+            "duration": 713.3059999999999,
+            "expected": 1,
+            "skipped": 0,
+            "unexpected": 0,
+            "flaky": 0
+          },
+          "owned_service_started": true,
+          "test_started": true,
+          "service_process_present_after": false,
+          "remaining_project_processes": 0,
+          "listener_present_after": false,
+          "independent_occupant_preserved": null,
+          "statuses": [
+            200,
+            200
+          ],
+          "startup_stdout_bytes": 0,
+          "interrupt_delivered": false,
+          "native_streams": {
+            "stdout": {
+              "sha256": "5a5482d92d9cb15f5306c592ad2be9a59ab82033b5ae4968df274df384c6f95b",
+              "bytes": 3866
+            },
+            "stderr": {
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "bytes": 0
+            }
+          }
+        }
+      ],
+      "source_sha256": {
+        "webapp_managed_service_fixture.py": "4b5aab8c228c1096c23a9bb13be556a94a93acc547cedb5da96d856b12cc3d31",
+        "service-lifecycle-contract.json": "da6d62be2180f05b0974489bac6c9be69e744d23df50728dd8ba2be24cdac9ed",
+        "playwright.config.cjs": "58b6ccc74b0df8d143b2cc43455af4f39a068137463b59906ab8f7a4bd00c7a3",
+        "preview-health.spec.cjs": "992c0c548fd3e3ae8075d57580c0735d41ef8cf7fdcfa393d7d78c268f2e3a8d"
+      },
+      "npm_package_admission_sha256": "952db50827281c04870edaf2e02f4146e418c7ad8b95a72165d03321cfc1defe",
+      "remaining_owned_containers": 0,
+      "network_profile": "none",
+      "model_attempts": 0
+    }
+  ],
+  "task_fixture_and_expectations_defined_independently_of_skill": true,
+  "native_windows_teardown_qualified": false,
+  "model_attempts": 0,
+  "model_efficacy_established": false
+}
