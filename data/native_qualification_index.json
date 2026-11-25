@@ -219,13 +219,15 @@
       ]
     },
     {
-      "id": "qa-synchronized-cancellation",
+      "id": "tdd-portable-workflow",
       "review": {
-        "path": "artifacts/research/2026-11-24/synchronized-cancellation/review.json",
-        "sha256": "4e288f304c2db95c9a33928420c92728b616ada5abe3de085dcd560bb1473c0f"
+        "path": "artifacts/research/2026-11-25/tdd-portable-workflow/review.json",
+        "sha256": "cf7199c7f54ddea8bb80fc165c8b1a6852233e28a0ece9f19e7479c2f3b9b941"
       },
       "sources": [
-        "included/improved/skills/tdd-workflow-current/SKILL.md"
+        "included/improved/skills/tdd-workflow-current/SKILL.md",
+        "included/improved/skills/tdd-workflow-current/NOTICE.md",
+        "included/improved/skills/tdd-workflow-current/provenance/original-SKILL.md"
       ]
     },
     {
@@ -430,9 +432,7 @@
       },
       "sources": [
         "included/improved/skills/eval-harness-integrity/SKILL.md",
-        "included/improved/skills/eval-harness-integrity/references/grader-admission.md",
-        "tools/validate_testeval_calibration.py",
-        "tests/test_validate_testeval_calibration.py"
+        "included/improved/skills/eval-harness-integrity/references/grader-admission.md"
       ]
     },
     {
@@ -488,6 +488,18 @@
       "sources": [
         ".gitattributes",
         "tests/test_native_qualification_index.py"
+      ]
+    },
+    {
+      "id": "testeval-public-controls",
+      "review": {
+        "path": "artifacts/research/2026-11-25/testeval-public-controls/manifest.json",
+        "sha256": "5e5bf4c614e329737664b919284017142b67277639dad65e76acb97971c10237"
+      },
+      "sources": [
+        "docs/recognized-skill-benchmarks.md",
+        "tests/test_validate_testeval_calibration.py",
+        "tools/validate_testeval_calibration.py"
       ]
     }
   ],
@@ -929,7 +941,8 @@
       },
       "superseded_sources": [
         "docs/installation.md",
-        "included/improved/skills/eval-harness-integrity/SKILL.md"
+        "included/improved/skills/eval-harness-integrity/SKILL.md",
+        "included/improved/skills/tdd-workflow-current/SKILL.md"
       ]
     },
     {
@@ -939,6 +952,25 @@
       },
       "superseded_sources": [
         ".gitattributes"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-24/synchronized-cancellation/review.json",
+        "sha256": "4e288f304c2db95c9a33928420c92728b616ada5abe3de085dcd560bb1473c0f"
+      },
+      "superseded_sources": [
+        "included/improved/skills/tdd-workflow-current/SKILL.md"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-25/testeval-grader-calibration/manifest.json",
+        "sha256": "454a45e7006df4a5351dda80de50cafd34c21cf41e74d1a1877be52d30bacfc6"
+      },
+      "superseded_sources": [
+        "tests/test_validate_testeval_calibration.py",
+        "tools/validate_testeval_calibration.py"
       ]
     }
   ],

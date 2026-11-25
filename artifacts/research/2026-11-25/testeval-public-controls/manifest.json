@@ -1,0 +1,328 @@
+{
+  "artifacts": {
+    "capture_controls.py": "056e2f06065ac9b2d99b81b39721d1f51960c723e47ffa872d2a9bdacaa1187b",
+    "evidence/native-streams.json": "faf8e5d60faba58ea03b0634f0003dfc066e8d4e647e74a3985a09a745d1b773",
+    "result.json": "56a83dd83f98fb7463258fa9a10b9ace474d30f1694b424c2ba5b8944b99b983",
+    "specification.json": "5e456bee69252f8548475779dc2dbc853c841f45217cee931ea4a44d05ab7d12"
+  },
+  "cases": {
+    "task-1805-matching": {
+      "expected_independent_tests": [
+        "test_control::test_numDifferentIntegers"
+      ],
+      "independent_exit": {
+        "file": "task-1805-matching.exit.txt",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "independent_junit": {
+        "file": "task-1805-matching.junit.xml",
+        "sha256": "01205f8cad56a311a03e0ceb25d0f0783f88bd404a5cfdfba2897e5929ce23db"
+      },
+      "publisher_stdout": {
+        "file": "task-1805-matching-publisher.stdout.native",
+        "sha256": "29989b66d314941e43757fbdff914aeeed698d191544fb0b624d414919367be0"
+      }
+    },
+    "task-1805-matching-portable-shape": {
+      "expected_independent_tests": [
+        "test_control::test_control"
+      ],
+      "independent_exit": {
+        "file": "task-1805-matching-portable-shape.exit.txt",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "independent_junit": {
+        "file": "task-1805-matching-portable-shape.junit.xml",
+        "sha256": "ab07e17a40bb27aa43f4490a53c495de5bfbe6febfbc2eaa507e92f63d6429a8"
+      },
+      "publisher_stdout": {
+        "file": "task-1805-matching-portable-shape-publisher.stdout.native",
+        "sha256": "8b97b384da01860a087df2626244590faf4ea6365411a0ebbb049157d7eb0283"
+      }
+    },
+    "task-1805-mismatching": {
+      "expected_independent_tests": [
+        "test_control::test_numDifferentIntegers"
+      ],
+      "independent_exit": {
+        "file": "task-1805-mismatching.exit.txt",
+        "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+      },
+      "independent_junit": {
+        "file": "task-1805-mismatching.junit.xml",
+        "sha256": "fdc3cb1fbce8dd39e9a8f227909ced7541833559d660996518ffc04ad949fb92"
+      },
+      "publisher_stdout": {
+        "file": "task-1805-mismatching-publisher.stdout.native",
+        "sha256": "29989b66d314941e43757fbdff914aeeed698d191544fb0b624d414919367be0"
+      }
+    },
+    "task-1805-mismatching-portable-shape": {
+      "expected_independent_tests": [
+        "test_control::test_control"
+      ],
+      "independent_exit": {
+        "file": "task-1805-mismatching-portable-shape.exit.txt",
+        "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+      },
+      "independent_junit": {
+        "file": "task-1805-mismatching-portable-shape.junit.xml",
+        "sha256": "c533422337e1e5aa384e708bed70f92c401fc8a8de459079fbcdafac9bb922cb"
+      },
+      "publisher_stdout": {
+        "file": "task-1805-mismatching-portable-shape-publisher.stdout.native",
+        "sha256": "8b97b384da01860a087df2626244590faf4ea6365411a0ebbb049157d7eb0283"
+      }
+    },
+    "task-1805-no-call": {
+      "expected_independent_tests": [
+        "test_control::test_numDifferentIntegers"
+      ],
+      "independent_exit": {
+        "file": "task-1805-no-call.exit.txt",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "independent_junit": {
+        "file": "task-1805-no-call.junit.xml",
+        "sha256": "8834c7a7e04c536ddcdefd0ac0d3dba57a3ab4a8a411c992aa5f101df85b564d"
+      },
+      "publisher_stdout": {
+        "file": "task-1805-no-call-publisher.stdout.native",
+        "sha256": "8292e3dc0ecbc78cdf64af192756620d58f07fc403a182f1b37ad5eb745f2af9"
+      }
+    },
+    "task-2850-matching": {
+      "expected_independent_tests": [
+        "test_control::test_minimumMoves"
+      ],
+      "independent_exit": {
+        "file": "task-2850-matching.exit.txt",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "independent_junit": {
+        "file": "task-2850-matching.junit.xml",
+        "sha256": "3d88bf776cbb9d7063aa435f01188db6acd29d1f793708ab2e4854ec080d6d07"
+      },
+      "publisher_stdout": {
+        "file": "task-2850-matching-publisher.stdout.native",
+        "sha256": "63177d075a4e88ecf6bb04b5f910bbcc1a7a67320926fa25e8c3a60e4f5daa20"
+      }
+    },
+    "task-2850-matching-portable-shape": {
+      "expected_independent_tests": [
+        "test_control::test_control"
+      ],
+      "independent_exit": {
+        "file": "task-2850-matching-portable-shape.exit.txt",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "independent_junit": {
+        "file": "task-2850-matching-portable-shape.junit.xml",
+        "sha256": "7c3897ff1332e0105c9225706b713525dd607a0d1cd5ef70503b711973ae668e"
+      },
+      "publisher_stdout": {
+        "file": "task-2850-matching-portable-shape-publisher.stdout.native",
+        "sha256": "8b97b384da01860a087df2626244590faf4ea6365411a0ebbb049157d7eb0283"
+      }
+    },
+    "task-2850-mismatching": {
+      "expected_independent_tests": [
+        "test_control::test_minimumMoves"
+      ],
+      "independent_exit": {
+        "file": "task-2850-mismatching.exit.txt",
+        "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+      },
+      "independent_junit": {
+        "file": "task-2850-mismatching.junit.xml",
+        "sha256": "e4cf51551674923113f51f3ef0c2185301948d4780fbfaf5fbbfc7231f267abc"
+      },
+      "publisher_stdout": {
+        "file": "task-2850-mismatching-publisher.stdout.native",
+        "sha256": "63177d075a4e88ecf6bb04b5f910bbcc1a7a67320926fa25e8c3a60e4f5daa20"
+      }
+    },
+    "task-2850-mismatching-portable-shape": {
+      "expected_independent_tests": [
+        "test_control::test_control"
+      ],
+      "independent_exit": {
+        "file": "task-2850-mismatching-portable-shape.exit.txt",
+        "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+      },
+      "independent_junit": {
+        "file": "task-2850-mismatching-portable-shape.junit.xml",
+        "sha256": "f25306b4abc3329350c8341e901fa40f09e0de86b6455241bff1a41ecdde2565"
+      },
+      "publisher_stdout": {
+        "file": "task-2850-mismatching-portable-shape-publisher.stdout.native",
+        "sha256": "8b97b384da01860a087df2626244590faf4ea6365411a0ebbb049157d7eb0283"
+      }
+    },
+    "task-2850-no-call": {
+      "expected_independent_tests": [
+        "test_control::test_minimumMoves"
+      ],
+      "independent_exit": {
+        "file": "task-2850-no-call.exit.txt",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "independent_junit": {
+        "file": "task-2850-no-call.junit.xml",
+        "sha256": "2977d07b12fee8e7575a57da2adde5364d83f2fe73539269eefcc49a56f7199b"
+      },
+      "publisher_stdout": {
+        "file": "task-2850-no-call-publisher.stdout.native",
+        "sha256": "8292e3dc0ecbc78cdf64af192756620d58f07fc403a182f1b37ad5eb745f2af9"
+      }
+    },
+    "task-685-matching": {
+      "expected_independent_tests": [
+        "test_control::test_findRedundantDirectedConnection"
+      ],
+      "independent_exit": {
+        "file": "task-685-matching.exit.txt",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "independent_junit": {
+        "file": "task-685-matching.junit.xml",
+        "sha256": "8ee659552a29e09bb32ecfa13f8c2f13a5147f1c4a800e27a9b901fba1255e3a"
+      },
+      "publisher_stdout": {
+        "file": "task-685-matching-publisher.stdout.native",
+        "sha256": "10b0723d08ad3a8157d05713fe478007a5d20776c7d5b0477ea4b02e985d1e06"
+      }
+    },
+    "task-685-matching-portable-shape": {
+      "expected_independent_tests": [
+        "test_control::test_control"
+      ],
+      "independent_exit": {
+        "file": "task-685-matching-portable-shape.exit.txt",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "independent_junit": {
+        "file": "task-685-matching-portable-shape.junit.xml",
+        "sha256": "f97c8961c00baf1a03bcbf4c8e8073994387a17c353e9fd310b4a13c522fdf55"
+      },
+      "publisher_stdout": {
+        "file": "task-685-matching-portable-shape-publisher.stdout.native",
+        "sha256": "8b97b384da01860a087df2626244590faf4ea6365411a0ebbb049157d7eb0283"
+      }
+    },
+    "task-685-mismatching": {
+      "expected_independent_tests": [
+        "test_control::test_findRedundantDirectedConnection"
+      ],
+      "independent_exit": {
+        "file": "task-685-mismatching.exit.txt",
+        "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+      },
+      "independent_junit": {
+        "file": "task-685-mismatching.junit.xml",
+        "sha256": "350a0a0993eccea4e03e716b00d76b2bd021a72337bba2320f57f84a8ba662c8"
+      },
+      "publisher_stdout": {
+        "file": "task-685-mismatching-publisher.stdout.native",
+        "sha256": "10b0723d08ad3a8157d05713fe478007a5d20776c7d5b0477ea4b02e985d1e06"
+      }
+    },
+    "task-685-mismatching-portable-shape": {
+      "expected_independent_tests": [
+        "test_control::test_control"
+      ],
+      "independent_exit": {
+        "file": "task-685-mismatching-portable-shape.exit.txt",
+        "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+      },
+      "independent_junit": {
+        "file": "task-685-mismatching-portable-shape.junit.xml",
+        "sha256": "568046cc2940498b700d10febca3c411620fea0c2f833d87725a235d6b92651d"
+      },
+      "publisher_stdout": {
+        "file": "task-685-mismatching-portable-shape-publisher.stdout.native",
+        "sha256": "8b97b384da01860a087df2626244590faf4ea6365411a0ebbb049157d7eb0283"
+      }
+    },
+    "task-685-no-call": {
+      "expected_independent_tests": [
+        "test_control::test_findRedundantDirectedConnection"
+      ],
+      "independent_exit": {
+        "file": "task-685-no-call.exit.txt",
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      },
+      "independent_junit": {
+        "file": "task-685-no-call.junit.xml",
+        "sha256": "cec4c4a1112053fa883bdfa1d53cfaaf9b40c82c71363157b853164fed40ef5d"
+      },
+      "publisher_stdout": {
+        "file": "task-685-no-call-publisher.stdout.native",
+        "sha256": "8292e3dc0ecbc78cdf64af192756620d58f07fc403a182f1b37ad5eb745f2af9"
+      }
+    }
+  },
+  "publisher": {
+    "commit": "6f67dee71de6ccda1767b8c219a93f4ae0a7ce90",
+    "dataset_sha256": "a37bcaae5fd88c978254aff5633355c7c76a324ad90b8d965f6213e522e022bf",
+    "evaluator_sha256": "0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3",
+    "paper": "https://arxiv.org/abs/2406.04531",
+    "repository": "https://github.com/LLM4SoftwareTesting/TestEval"
+  },
+  "runtime": {
+    "capture_network": "none",
+    "containers_remaining": 0,
+    "coverage": "7.17.5",
+    "exit": 0,
+    "image": "sha256:d9b8c34d61a9b9a3c44cab883d7d2f2619d674966ab520186f799cf32e3e0377",
+    "pytest": "9.2.0",
+    "pytest_cov": "7.1.0",
+    "python": "3.14.10",
+    "volumes_remaining": 0
+  },
+  "schema_version": 2,
+  "scope": {
+    "cohort_size": 12,
+    "control_count": 15,
+    "model_attempts": 0,
+    "observation": "The native scores were identical for matching and deliberately mismatching assertions. The portable pytest forms were independently executed and the publisher reported zero native execution and coverage for both. Native reports were preserved.",
+    "partition": "public_development",
+    "program_sha256": {
+      "1805": "eed2a6bd93b2503733e588dee71db46a4989d7d1b5c1ce716fa66059e10308c4",
+      "2850": "f8cfc817c2e3588272eb47cd669d0ec9a7616ec20f8bb5a036d35fa391c07862",
+      "685": "aa4091943f63bb9185a5d6db3e0d53764a124b2ff9c32335c2149b3534ddca39"
+    },
+    "selected_tasks": 3,
+    "source_contracts": {
+      "1805": {
+        "native_result_sha256": "8ddbbfdb1f49798d54c7c031752c1352a443b7c2c47f71639bb5612719121985",
+        "provider_version": "0.9.6+catalog.portable1",
+        "url": "https://leetcode.com/problems/number-of-different-integers-in-a-string/description/"
+      },
+      "2850": {
+        "native_result_sha256": "7172681b00bd81af9f87fe5bd0d4ca02d78d217f63cbd802f2fed5557b0fd4d9",
+        "provider_version": "0.9.6+catalog.portable1",
+        "url": "https://leetcode.com/problems/minimum-moves-to-spread-stones-over-grid/description/"
+      },
+      "685": {
+        "native_result_sha256": "562b553dda71b53db6500bea180d7736b33471fe863fc097f4c111b6ba2e6d80",
+        "provider_version": "0.9.6+catalog.portable1",
+        "url": "https://leetcode.com/problems/redundant-connection-ii/description/"
+      }
+    },
+    "source_frame_sha256": "0180237d062210a351ef5c6ef14ab6e39dbba339f3f98c50af59313e811a7762"
+  },
+  "source_sha256": {
+    "docs/recognized-skill-benchmarks.md": "3a4eda9662a8e857e7c0d262eb5ff828d97cec4bb653fde45527b8f941a4fec0",
+    "tests/test_validate_testeval_calibration.py": "f9c73ab308a5dc7d0d6e70272a064326da044748a5391cf1b4266f56c179b090",
+    "tools/validate_testeval_calibration.py": "a730342dd43a7b941ea32923ad2cc88a205a8bcda622c2eb9b0a073d72d566ab"
+  },
+  "stream_archive": {
+    "file": "native-streams.json",
+    "sha256": "faf8e5d60faba58ea03b0634f0003dfc066e8d4e647e74a3985a09a745d1b773"
+  },
+  "terminal": {
+    "file": "terminal.txt",
+    "sha256": "0fd8ee77d0cabe3bfdd44ed62a42aa704ac8f25168de19f01c530827009f3d00"
+  }
+}

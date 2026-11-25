@@ -822,17 +822,21 @@
             "path": "artifacts/research/2026-11-25/tdd-execution-controls/review.json",
             "scope": "Complete current two-resource source review and seven independent native outcome controls.",
             "sha256": "0d633606e01df995282e15da9c321ee72f77bcebfa79854f04a6a76fb8803aea"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/tdd-portable-workflow/review.json",
+            "sha256": "cf7199c7f54ddea8bb80fc165c8b1a6852233e28a0ece9f19e7479c2f3b9b941"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
         "resources": {
           "SKILL.md": {
-            "review_scope": "Reviewed the complete current entrypoint, runner selection, coverage rules, examples, isolation and CI recommendations. Current code uses separate dependency and runner roles. Portable guidance uses policy-specific coverage, meaningful failure diagnosis and observed browser state.",
+            "review_scope": "Reviewed the complete current locked entrypoint and its test, coverage, browser, setup and CI claims. Retained test-runner discovery, meaningful case execution, partial-setup cleanup and risk-based verification. Added matching case identity before and after a repair.",
             "sha256": "e9507695657b05f26dd62127f1d6ff58e4015d624df65dd4d7e07f6470317393",
             "status": "reviewed"
           },
           "agents/openai.yaml": {
-            "review_scope": "Reviewed activation, display labels, short description and default prompt. They can prompt intended selection but do not prove that a test executed or establish a portable coverage target.",
+            "review_scope": "Reviewed activation and description. Generic workflow guidance applies to observed test execution without requiring a specific agent or activation implementation.",
             "sha256": "d68700053a6f3a4a65ec18e34bcef58e75986b5f8ae19f6e20e7412ccbd895a4",
             "status": "reviewed"
           }
@@ -840,17 +844,14 @@
         "status": "complete"
       },
       "revision": {
+        "status": "complete",
         "evidence": [
           {
-            "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
-            "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
+            "path": "artifacts/research/2026-11-25/tdd-portable-workflow/review.json",
+            "sha256": "cf7199c7f54ddea8bb80fc165c8b1a6852233e28a0ece9f19e7479c2f3b9b941"
           }
         ],
-        "open_work": [
-          "Rebind the maintained TDD intervention to the current source pin and requalify its synchronized asynchronous guidance accessibly.",
-          "Run isolated independent model comparisons after the study launcher and grader are admitted."
-        ],
-        "status": "in_progress"
+        "disposition": "Updated the maintained portable overlay and retained the exact current MIT-licensed source. Original activation metadata remains in the locked mirror."
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
@@ -20016,19 +20017,31 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/tdd-workflow-ome-zarr-c",
       "research": {
-        "evidence": [],
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/tdd-portable-workflow/review.json",
+            "sha256": "cf7199c7f54ddea8bb80fc165c8b1a6852233e28a0ece9f19e7479c2f3b9b941"
+          }
+        ],
         "resource_hash_policy": "catalog-canonical-v1",
         "resources": {
           "SKILL.md": {
             "sha256": "e67f67a95ccd0b74adca5943f9a1059dd4e5bbc8bb7a76b8f520f1406f21db5c",
-            "status": "pending"
+            "status": "reviewed",
+            "review_scope": "Reviewed the full porting workflow. The portable contribution is an upstream behavior contract verified against the same input and, where practical, a reference implementation."
           }
         },
-        "status": "pending"
+        "status": "complete"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "status": "not_applicable",
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/tdd-portable-workflow/review.json",
+            "sha256": "cf7199c7f54ddea8bb80fc165c8b1a6852233e28a0ece9f19e7479c2f3b9b941"
+          }
+        ],
+        "disposition": "Retained the project mirror. Its reusable reference comparison is covered by the maintained portable TDD overlay."
       },
       "source_repo": "strmt7/ome-zarr-C",
       "source_signature": {
@@ -25256,12 +25269,36 @@
       },
       "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/tdd-workflow-omero-docker-extended",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/tdd-portable-workflow/review.json",
+            "sha256": "cf7199c7f54ddea8bb80fc165c8b1a6852233e28a0ece9f19e7479c2f3b9b941"
+          }
+        ],
+        "status": "complete",
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "agents/openai.yaml": {
+            "sha256": "e669008e81200879e91297045fa0a0ffc3f62ae0f59f1674a580fec5b5b63d13",
+            "status": "reviewed",
+            "review_scope": "Reviewed the display, routing and prompt text. The original targets a project-specific workflow, so the generic skill retains selection by relevant behavior rather than project names or commands."
+          },
+          "SKILL.md": {
+            "sha256": "bd4d19fb6d7df6fe89e495b70af2238ee9a57f25d8b4c90dc218db34434d46fc",
+            "status": "reviewed",
+            "review_scope": "Reviewed the full project-specific workflow, its test-lane selection and configuration or documentation checks. The portable revision retains those principles with the consuming project's own commands."
+          }
+        }
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "status": "not_applicable",
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/tdd-portable-workflow/review.json",
+            "sha256": "cf7199c7f54ddea8bb80fc165c8b1a6852233e28a0ece9f19e7479c2f3b9b941"
+          }
+        ],
+        "disposition": "Retained the project mirror. Its reusable test-lane and documentation or configuration verification guidance is covered by the maintained portable TDD overlay."
       },
       "source_repo": "ZMB-UZH/omero-docker-extended",
       "source_signature": {
@@ -25661,12 +25698,31 @@
       },
       "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/tdd-workflow-third-party-ecc-v1-10-0-tdd-workflow",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/tdd-portable-workflow/review.json",
+            "sha256": "cf7199c7f54ddea8bb80fc165c8b1a6852233e28a0ece9f19e7479c2f3b9b941"
+          }
+        ],
+        "status": "complete",
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "sha256": "934c453594ce68330888c70497f40f1454f7c1e7e5a07501a637ecb3c66d87b6",
+            "status": "reviewed",
+            "review_scope": "Reviewed the full archived workflow. The portable revision adopts type-diagnostic and runtime checks, selects the declared runner and coverage policy, and leaves fixed package commands and publication steps with their original context."
+          }
+        }
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "status": "not_applicable",
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/tdd-portable-workflow/review.json",
+            "sha256": "cf7199c7f54ddea8bb80fc165c8b1a6852233e28a0ece9f19e7479c2f3b9b941"
+          }
+        ],
+        "disposition": "Retained the archival mirror. The maintained portable TDD overlay incorporates compile-time RED without requiring the archive's package versions or source-control actions."
       },
       "source_repo": "ZMB-UZH/omero-docker-extended",
       "source_signature": {

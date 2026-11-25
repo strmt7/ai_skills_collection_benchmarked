@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-25",
+  "scope": "Current-resource review and independent synthetic controls for portable TDD guidance.",
+  "source_reviews": {
+    "affaan-m-everything-claude-code-agents-skills-tdd-workflow-skill-md": {
+      "source_url": "https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/tdd-workflow/SKILL.md",
+      "source": {
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "42d96a102bba09ff5d42329f9ee4344d83524d80890400f5a34259f8f1f6d7e0",
+        "skill_file_sha256": "e9507695657b05f26dd62127f1d6ff58e4015d624df65dd4d7e07f6470317393"
+      },
+      "resource_hash_policy": "catalog-canonical-v1",
+      "resources": {
+        "agents/openai.yaml": {
+          "sha256": "d68700053a6f3a4a65ec18e34bcef58e75986b5f8ae19f6e20e7412ccbd895a4",
+          "review_scope": "Reviewed activation and description. Generic workflow guidance applies to observed test execution without requiring a specific agent or activation implementation."
+        },
+        "SKILL.md": {
+          "sha256": "e9507695657b05f26dd62127f1d6ff58e4015d624df65dd4d7e07f6470317393",
+          "review_scope": "Reviewed the complete current locked entrypoint and its test, coverage, browser, setup and CI claims. Retained test-runner discovery, meaningful case execution, partial-setup cleanup and risk-based verification. Added matching case identity before and after a repair."
+        }
+      },
+      "disposition": "Updated the maintained portable overlay and retained the exact current MIT-licensed source. Original activation metadata remains in the locked mirror."
+    },
+    "strmt7-ome-zarr-c-agents-skills-tdd-workflow-skill-md": {
+      "source_url": "https://github.com/strmt7/ome-zarr-C/blob/a9238a81742f96c89acf6d83fce6d6b882ac4d1c/.agents/skills/tdd-workflow/SKILL.md",
+      "source": {
+        "commit_sha": "a9238a81742f96c89acf6d83fce6d6b882ac4d1c",
+        "skill_dir_sha256": "1da3b891cf42c41c64d42c5abd60f0e4651d4a0a1a0c736ece193124f7423f07",
+        "skill_file_sha256": "e67f67a95ccd0b74adca5943f9a1059dd4e5bbc8bb7a76b8f520f1406f21db5c"
+      },
+      "resource_hash_policy": "catalog-canonical-v1",
+      "resources": {
+        "SKILL.md": {
+          "sha256": "e67f67a95ccd0b74adca5943f9a1059dd4e5bbc8bb7a76b8f520f1406f21db5c",
+          "review_scope": "Reviewed the full porting workflow. The portable contribution is an upstream behavior contract verified against the same input and, where practical, a reference implementation."
+        }
+      },
+      "disposition": "Retained the project mirror. Its reusable reference comparison is covered by the maintained portable TDD overlay."
+    },
+    "zmb-uzh-omero-docker-extended-agents-skills-tdd-workflow-skill-md": {
+      "source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/.agents/skills/tdd-workflow/SKILL.md",
+      "source": {
+        "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+        "skill_dir_sha256": "46c7f17d2b0713a3b920ee95fa29695c58414113692be1ed6854310bd900986c",
+        "skill_file_sha256": "bd4d19fb6d7df6fe89e495b70af2238ee9a57f25d8b4c90dc218db34434d46fc"
+      },
+      "resource_hash_policy": "catalog-canonical-v1",
+      "resources": {
+        "agents/openai.yaml": {
+          "sha256": "e669008e81200879e91297045fa0a0ffc3f62ae0f59f1674a580fec5b5b63d13",
+          "review_scope": "Reviewed the display, routing and prompt text. The original targets a project-specific workflow, so the generic skill retains selection by relevant behavior rather than project names or commands."
+        },
+        "SKILL.md": {
+          "sha256": "bd4d19fb6d7df6fe89e495b70af2238ee9a57f25d8b4c90dc218db34434d46fc",
+          "review_scope": "Reviewed the full project-specific workflow, its test-lane selection and configuration or documentation checks. The portable revision retains those principles with the consuming project's own commands."
+        }
+      },
+      "disposition": "Retained the project mirror. Its reusable test-lane and documentation or configuration verification guidance is covered by the maintained portable TDD overlay."
+    },
+    "zmb-uzh-omero-docker-extended-third-party-ecc-v1-10-0-skills-tdd-workflow-skill-md": {
+      "source_url": "https://github.com/ZMB-UZH/omero-docker-extended/blob/b7c7cfa2a057f08eb872aadae49d89f521480114/third_party/ecc-v1.10.0/skills/tdd-workflow/SKILL.md",
+      "source": {
+        "commit_sha": "b7c7cfa2a057f08eb872aadae49d89f521480114",
+        "skill_dir_sha256": "594871bfeb140bf6589ee1ff4d3e1348d5d385a24fa2ea79189ef8efd878081c",
+        "skill_file_sha256": "934c453594ce68330888c70497f40f1454f7c1e7e5a07501a637ecb3c66d87b6"
+      },
+      "resource_hash_policy": "catalog-canonical-v1",
+      "resources": {
+        "SKILL.md": {
+          "sha256": "934c453594ce68330888c70497f40f1454f7c1e7e5a07501a637ecb3c66d87b6",
+          "review_scope": "Reviewed the full archived workflow. The portable revision adopts type-diagnostic and runtime checks, selects the declared runner and coverage policy, and leaves fixed package commands and publication steps with their original context."
+        }
+      },
+      "disposition": "Retained the archival mirror. The maintained portable TDD overlay incorporates compile-time RED without requiring the archive's package versions or source-control actions."
+    }
+  },
+  "prior_execution_controls": {
+    "path": "artifacts/research/2026-11-25/tdd-execution-controls/review.json",
+    "sha256": "0d633606e01df995282e15da9c321ee72f77bcebfa79854f04a6a76fb8803aea"
+  },
+  "findings": [
+    "The same consumer and compiler command rejected an incompatible call, accepted the corrected contract, and reported an invalid option separately.",
+    "The same cancellation check observed a worker ignoring cancellation before repair and completion after repair. Both implementations were joined and left no owned work running.",
+    "The portable overlay does not select a fixed package manager, threshold, source-control checkpoint or project-specific location."
+  ],
+  "source_sha256": {
+    "included/improved/skills/tdd-workflow-current/SKILL.md": "d92372384e524b781fe82d2530b5a78737c9082e0fced9424362ec1c515da976",
+    "included/improved/skills/tdd-workflow-current/NOTICE.md": "70e4436e06d37ad0943b6c2853c107679da39785c9d6808143c4602c7a7265ec",
+    "included/improved/skills/tdd-workflow-current/provenance/original-SKILL.md": "e9507695657b05f26dd62127f1d6ff58e4015d624df65dd4d7e07f6470317393"
+  },
+  "artifacts": {
+    "observations.json": "c983ff2e5472fef2249b6127b47860c607a1d0d15474cb986e1f9ecbc7f13df0",
+    "observe_cancellation.py": "c8cf2e96f0e92dfc50475fd51802226514f664fb3f2778cd4d426b47e319bfad",
+    "observe_typecheck_outcomes.py": "7c37832cfd972f92a9b3abecf30f4bfccc7cae12d69b15e3ff7d25e5ab0f2c5a"
+  },
+  "comparative_model_attempts": 0,
+  "model_efficacy_established": false
+}

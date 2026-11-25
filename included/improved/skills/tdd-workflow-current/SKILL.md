@@ -1,63 +1,53 @@
 ---
 name: tdd-workflow-current
-description: Develop or repair software using risk-based behavioral tests, a meaningful failing baseline, and verified regression checks.
+description: Use when changing software behavior or repairing a regression. Verify that the same focused check observes the defect and passes after the implementation changes.
 license: MIT
 metadata:
   source: affaan-m/everything-claude-code
-  source-commit: 846ffb75da9a5f4e677d927af1ad4a1951652267
+  source-commit: c05b2d6614f62f6db0047669aa4eefb223d478f9
   revision-status: experimental-unbenchmarked
 ---
 
 # Test-driven development
 
-Read the repository instructions and `docs/agent-tools.md`: apply Caveman for
-every task, CocoIndex Code before broad repository navigation, and Crawl4AI for
-web-page research; retain the required execution evidence. Identify the
-requested behavior, existing contracts and affected environments. Discover the
-actual test runner and project commands instead of assuming a package manager
-or framework. Choose unit, integration and end-to-end checks according to the
-change, existing requirements and risk; preserve required checks.
+Read the repository instructions and `docs/agent-tools.md`. Apply Caveman for
+every task, CocoIndex Code before broad navigation, and Crawl4AI for web
+research. Keep the required execution evidence.
 
-Try the focused test command in the project's declared runtime first. If a
-prerequisite is missing, use the documented setup to install compatible
-dependencies. Put new environments and caches in approved ignored locations
-and check that the deliverable contains only intended changes.
+## Define the contract and reproduce
 
-## Establish a meaningful baseline
-
-For a behavior change or bug fix, define observable outcomes and realistic
-boundary and failure cases. Where practical, add a focused test or reproduce the
-bug before changing production behavior. Confirm the intended test was collected
-and executed, and inspect its failure: the failure should demonstrate the missing
-behavior. A nonzero exit from setup, collection, an unavailable dependency or an
-unrelated assertion is not that evidence. A skip or expected failure is not an
-observed failing assertion. If a baseline cannot be run, record why rather than
-claiming it was reproduced.
+- Identify the behavior a caller can observe, the affected inputs and failure
+  boundaries, and the project's supported runtimes. For ports or compatibility
+  changes, derive expectations from the reference contract and compare the
+  same inputs against the reference implementation when practical.
+- Find the project's declared test commands and dependencies. Use its documented
+  setup with compatible versions and keep new caches and environments outside
+  deliverables. Choose the smallest relevant unit, integration, browser,
+  compiler, or documentation and configuration check. Preserve required gates.
+- Before changing production behavior, run a focused test or a concrete
+  reproducer. Confirm the intended case executed and failed on the expected
+  behavior. For a type contract, require the expected compiler diagnostic at
+  the intended call. Collection, setup, teardown, missing dependencies, skipped
+  or expected failures, and unrelated diagnostics require separate reporting.
+  Record any reason the baseline could not run.
 
 ## Implement and verify
 
-Make the smallest maintainable change that satisfies the contract. Rerun the
-focused test and check that it actually executes and passes, then run relevant
-regressions and all required project gates. Keep test data deterministic and
-isolate resources owned by the test. Register cleanup after each acquisition,
-including acquisitions made before setup completes. Use test reports to separate
-cleanup errors from behavior assertions. Test important integration
-boundaries with appropriate real components; use mocks where isolation helps
-without claiming that a mocked boundary was exercised end to end.
+- Fix the behavior with the smallest maintainable implementation. Run the same
+  case with the same input, assertion, configuration, and command. Confirm it
+  executes and passes. Expand to affected consumers, regressions, and required
+  gates. If a test needed correction, establish a new baseline when practical.
+- Use deterministic data and test the important real integration boundaries.
+  Use mocks where isolation is useful and report which boundaries were exercised.
+  Register cleanup as each resource is acquired, including during partial setup.
+  For asynchronous work, wait for an observable milestone, enforce deadlines,
+  and release and join test-owned workers even when an assertion fails. For
+  browser checks, use supported selectors and wait for observable conditions.
+- Preserve behavioral checks during refactoring. For documentation or
+  configuration changes, verify the affected example, parser, or consuming
+  command. Prefer tests that distinguish credible regressions from correct
+  behavior over assertions that repeat implementation details.
 
-For asynchronous work, wait for an observable milestone before advancing time
-or triggering cancellation. Use a deadline to report stalled work. Release and
-join test-owned workers during cleanup, including after assertion failures.
-
-For browser checks, control the data and wait for observable conditions, not
-fixed delays. Use fixtures and selectors supported by the application. During
-refactoring, keep behavior-focused checks in place and repeat them after changes.
-Do not add tests that merely duplicate implementation details or add no useful
-signal for a reversible, low-impact change.
-
-Follow the project's coverage policy and use coverage to identify unexercised
-behavior. A percentage alone cannot establish that assertions are correct; do
-not invent a universal threshold or weaken an existing gate. Report executed,
-passed, failed, skipped and unavailable checks separately, with relevant command
-status and limitations. Passing tests reduce uncertainty; they do not prove the
-absence of defects.
+Follow the project's coverage policy. Use coverage to locate unexercised
+behavior and check assertions separately. Report commands and observed pass,
+failure, skip, setup, and cleanup outcomes with their relevant limitations.

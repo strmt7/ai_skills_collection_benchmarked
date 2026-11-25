@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "selection": "The first frozen task in each of the three publisher difficulty strata.",
+  "source_frame_sha256": "0180237d062210a351ef5c6ef14ab6e39dbba339f3f98c50af59313e811a7762",
+  "model_attempts": 0,
+  "cases": [
+    {
+      "task_num": 1805,
+      "difficulty": 1,
+      "input": "001b0c00d007e7f002",
+      "expected": 4,
+      "intended_false": 5,
+      "oracle": "The decimal groups normalize to 1, 0, 0, 7, 7 and 2. There are four distinct values.",
+      "specification": "https://leetcode.com/problems/number-of-different-integers-in-a-string/description/",
+      "specification_native_sha256": "8ddbbfdb1f49798d54c7c031752c1352a443b7c2c47f71639bb5612719121985"
+    },
+    {
+      "task_num": 2850,
+      "difficulty": 2,
+      "input": [
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "expected": 4,
+      "intended_false": 5,
+      "oracle": "One surplus stone at the top left must reach the only deficit at the bottom right. Their shortest side-adjacent route has four steps.",
+      "specification": "https://leetcode.com/problems/minimum-moves-to-spread-stones-over-grid/description/",
+      "specification_native_sha256": "7172681b00bd81af9f87fe5bd0d4ca02d78d217f63cbd802f2fed5557b0fd4d9"
+    },
+    {
+      "task_num": 685,
+      "difficulty": 3,
+      "input": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "expected": [
+        4,
+        2
+      ],
+      "intended_false": [
+        1,
+        2
+      ],
+      "oracle": "Removing the edge from 4 to 2 leaves the directed path from 1 through 4. Removing the edge from 1 to 2 keeps the cycle. Removing any other edge leaves node 2 with two parents.",
+      "specification": "https://leetcode.com/problems/redundant-connection-ii/description/",
+      "specification_native_sha256": "562b553dda71b53db6500bea180d7736b33471fe863fc097f4c111b6ba2e6d80"
+    }
+  ]
+}

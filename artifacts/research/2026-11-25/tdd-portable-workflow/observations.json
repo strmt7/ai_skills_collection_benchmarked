@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "model_attempts": 0,
+  "cancellation": {
+    "win32": {
+      "case_id": "worker_finishes_after_cancellation",
+      "before": {
+        "started_before_cancel": true,
+        "finished_before_release": false,
+        "pending_before_release": true,
+        "observed_ignored_cancel": true,
+        "cancelled_before_release": false,
+        "joined_after_cleanup": true,
+        "other_pending_tasks": 0
+      },
+      "after": {
+        "started_before_cancel": true,
+        "finished_before_release": true,
+        "pending_before_release": false,
+        "observed_ignored_cancel": false,
+        "cancelled_before_release": true,
+        "joined_after_cleanup": true,
+        "other_pending_tasks": 0
+      },
+      "python": "3.14.10",
+      "platform": "win32",
+      "machine": "AMD64",
+      "test_sha256": "c8cf2e96f0e92dfc50475fd51802226514f664fb3f2778cd4d426b47e319bfad",
+      "model_attempts": 0,
+      "native_stdout_sha256": "305f1dbbe075142094ae46dfdbe7d1d88af27e37220d31836332c241ff31ad62",
+      "native_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "process": {
+        "windows_job": true,
+        "assigned_before_resume": true,
+        "kill_on_close": true,
+        "job_active_processes_after_cleanup": 0,
+        "service_created_processes_tracked": false,
+        "termination_reason": null,
+        "exit_code": 0,
+        "output_bytes": 789,
+        "output_limit_bytes": 16384,
+        "wall_time_limit_seconds": 15.0,
+        "job_memory_limit_bytes": 134217728,
+        "job_peak_memory_used_bytes": 19570688,
+        "active_process_limit": 1,
+        "explicit_environment": true
+      }
+    },
+    "linux": {
+      "case_id": "worker_finishes_after_cancellation",
+      "before": {
+        "started_before_cancel": true,
+        "finished_before_release": false,
+        "pending_before_release": true,
+        "observed_ignored_cancel": true,
+        "cancelled_before_release": false,
+        "joined_after_cleanup": true,
+        "other_pending_tasks": 0
+      },
+      "after": {
+        "started_before_cancel": true,
+        "finished_before_release": true,
+        "pending_before_release": false,
+        "observed_ignored_cancel": false,
+        "cancelled_before_release": true,
+        "joined_after_cleanup": true,
+        "other_pending_tasks": 0
+      },
+      "python": "3.12.3",
+      "platform": "linux",
+      "machine": "x86_64",
+      "test_sha256": "c8cf2e96f0e92dfc50475fd51802226514f664fb3f2778cd4d426b47e319bfad",
+      "model_attempts": 0,
+      "native_stdout_sha256": "282e395c91c6a6379346ec218e2db8af3073d5b5c839b2a8dfb1e7c860117473",
+      "native_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "process": {
+        "ControlGroup": "",
+        "ActiveState": "inactive",
+        "SubState": "dead"
+      }
+    }
+  },
+  "compiler": {
+    "win32": {
+      "typescript": "7.0.2",
+      "node": "24.22.3",
+      "platform": "win32",
+      "packages": {
+        "typescript": {
+          "sha512": "sha512-8FYau96o3NKOhbjKi/qNvG/W5jhzxkbdm5sj9AbZ/5T5sWqn3hJgLfGx27sRKZWTvyzCP8dLRBTf5tBTSRVUNA==",
+          "archive_bytes": 365612
+        },
+        "@typescript/typescript-win32-x64": {
+          "sha512": "sha512-0BQ3HkAHHlKLSp1qRvf3SUhGpGsDuhB/jgFw75guyqbxJqEaS0Cw/VFO8i2nHglJUzQCRtMMR/IBAKE3ETMC4g==",
+          "archive_bytes": 9776626
+        }
+      },
+      "cases": {
+        "type-contract-fails": {
+          "exit_code": 1,
+          "diagnostic": "error TS2345",
+          "consumer_sha256": "4b6ccfcf0141bd611b34cd340e052006d5849180a19d0074a57fe514c6087eab",
+          "implementation_sha256": "b7c707229cf2c44a1aa9696ad84206e4b642f6334d7a2335853a7809b747a57f",
+          "stdout_sha256": "171e2d08a39c219f13b49143a76f3004057a9d84de1272c465e8677f657cdc13",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "diagnostic_output": "consumer.ts(2,30): error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'."
+        },
+        "type-contract-passes": {
+          "exit_code": 0,
+          "diagnostic": "",
+          "consumer_sha256": "4b6ccfcf0141bd611b34cd340e052006d5849180a19d0074a57fe514c6087eab",
+          "implementation_sha256": "dcc26e6078aa176637157b44754c2487ac29af3dee63fd51baf7d34b0b3448a1",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "diagnostic_output": ""
+        },
+        "invalid-runner-option": {
+          "exit_code": 1,
+          "diagnostic": "error TS5023",
+          "consumer_sha256": "4b6ccfcf0141bd611b34cd340e052006d5849180a19d0074a57fe514c6087eab",
+          "implementation_sha256": "dcc26e6078aa176637157b44754c2487ac29af3dee63fd51baf7d34b0b3448a1",
+          "stdout_sha256": "52b524fc4cec56e792c6bd5dd7b9def7903653e32a7b38158b538f2381ee7af4",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "diagnostic_output": "error TS5023: Unknown compiler option '--nonexistentSetupSwitch'."
+        }
+      },
+      "scratch_removed": true,
+      "model_attempts": 0,
+      "result_sha256": "28faa3e5ec4a95ec7eec967272f14e4965c75dcdc704c9ceae43647197b11997"
+    },
+    "linux": {
+      "typescript": "7.0.2",
+      "node": "24.22.3",
+      "platform": "linux",
+      "packages": {
+        "typescript": {
+          "sha512": "sha512-8FYau96o3NKOhbjKi/qNvG/W5jhzxkbdm5sj9AbZ/5T5sWqn3hJgLfGx27sRKZWTvyzCP8dLRBTf5tBTSRVUNA==",
+          "archive_bytes": 365612
+        },
+        "@typescript/typescript-linux-x64": {
+          "sha512": "sha512-EYdf2cNg7rgCWJnxCdJ+F3V39O8ihb37eHAu1LK8oAFizgTQbPOK7zHHXbPt8rX24COqODXeI3sIf0fCXG7H/A==",
+          "archive_bytes": 9669334
+        }
+      },
+      "cases": {
+        "type-contract-fails": {
+          "exit_code": 1,
+          "diagnostic": "error TS2345",
+          "consumer_sha256": "4b6ccfcf0141bd611b34cd340e052006d5849180a19d0074a57fe514c6087eab",
+          "implementation_sha256": "b7c707229cf2c44a1aa9696ad84206e4b642f6334d7a2335853a7809b747a57f",
+          "stdout_sha256": "171e2d08a39c219f13b49143a76f3004057a9d84de1272c465e8677f657cdc13",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "diagnostic_output": "consumer.ts(2,30): error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'."
+        },
+        "type-contract-passes": {
+          "exit_code": 0,
+          "diagnostic": "",
+          "consumer_sha256": "4b6ccfcf0141bd611b34cd340e052006d5849180a19d0074a57fe514c6087eab",
+          "implementation_sha256": "dcc26e6078aa176637157b44754c2487ac29af3dee63fd51baf7d34b0b3448a1",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "diagnostic_output": ""
+        },
+        "invalid-runner-option": {
+          "exit_code": 1,
+          "diagnostic": "error TS5023",
+          "consumer_sha256": "4b6ccfcf0141bd611b34cd340e052006d5849180a19d0074a57fe514c6087eab",
+          "implementation_sha256": "dcc26e6078aa176637157b44754c2487ac29af3dee63fd51baf7d34b0b3448a1",
+          "stdout_sha256": "52b524fc4cec56e792c6bd5dd7b9def7903653e32a7b38158b538f2381ee7af4",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "diagnostic_output": "error TS5023: Unknown compiler option '--nonexistentSetupSwitch'."
+        }
+      },
+      "scratch_removed": true,
+      "model_attempts": 0,
+      "result_sha256": "2603d030a156d4fde31fb096299000d8ffd8e0f4ebd4deb41bc65f2ebdcb544c"
+    },
+    "fixture_sha256": "c499cd2311756b4c88f6db6cb21e491d5d054e9de049f00dded7e7c57b441559",
+    "published_fixture": {
+      "path": "observe_typecheck_outcomes.py",
+      "sha256": "7c37832cfd972f92a9b3abecf30f4bfccc7cae12d69b15e3ff7d25e5ab0f2c5a",
+      "normalization": "Removed blank lines at EOF. The Python AST and source locations match the executed fixture."
+    }
+  },
+  "primary_documentation": {
+    "pytest-expected-outcomes": {
+      "native_url": "https://docs.pytest.org/en/stable/how-to/skipping.html",
+      "native_result_sha256": "6a61a9684eaf3d2ac8a67c3e47ef790f870871c3f78aaa57d704ee2215fbae84",
+      "provider_version": "0.9.6+catalog.portable1",
+      "status_code": 200,
+      "markdown_characters": 21982
+    },
+    "pytest-output-contract": {
+      "native_url": "https://docs.pytest.org/en/stable/how-to/output.html",
+      "native_result_sha256": "37d64f07dda1d954deb75145ae977157fa620a59836e7f0acf1b41fc59cdec58",
+      "provider_version": "0.9.6+catalog.portable1",
+      "status_code": 200,
+      "markdown_characters": 38502
+    },
+    "typescript-no-emit": {
+      "native_url": "https://www.typescriptlang.org/tsconfig/noEmit.html",
+      "native_result_sha256": "97549d383bc07224820116800a3accdb3a4246d115a270a0d9159c485a7dc0a8",
+      "provider_version": "0.9.6+catalog.portable1",
+      "status_code": 200,
+      "markdown_characters": 3726
+    }
+  }
+}

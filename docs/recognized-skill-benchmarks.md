@@ -60,6 +60,16 @@ terms. The 49 rows, the original paper's task counts, and the later archive's
 matched comparisons refer to different populations. Results for this
 collection and GPT-6.1 Sol require a new matched experiment.
 
+## TestEval for Python test generation
+
+TestEval measures whether generated Python tests execute and what code they
+cover. On three public development tasks, the native evaluator reported
+identical execution and coverage for matching and deliberately failing
+assertions. It also reported zero execution and coverage for three tests
+that passed under pytest with a different name and invocation form. Publish
+the native metrics alongside independent checks of assertion outcomes.
+[Benchmark paper](https://arxiv.org/abs/2406.04531) · [15 paired controls](../artifacts/research/2026-11-25/testeval-public-controls/result.json)
+
 ## Do not rely on benchmark reputation alone
 
 [OpenAI's February review](https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/)

@@ -32,14 +32,20 @@ def _read(path: Path) -> bytes:
     return content
 
 
-def _evidence(root: Path, spec: dict[str, str]) -> bytes:
+def _evidence(root: Path, spec: dict[str, str], streams: dict[str, str] | None = None) -> bytes:
     name, expected = spec["file"], spec["sha256"]
     if not re.fullmatch(r"[a-zA-Z0-9][a-zA-Z0-9_.-]*", name) or DIGEST.fullmatch(expected) is None:
         raise ValueError("Evidence requires a local filename and a SHA-256 digest")
-    path = root / name
-    if path.resolve(strict=True) != path or not path.is_file():
-        raise ValueError(f"Evidence file is missing, linked or outside its directory {name}")
-    content = _read(path)
+    if streams is None:
+        path = root / name
+        if path.resolve(strict=True) != path or not path.is_file():
+            raise ValueError(f"Evidence file is missing, linked or outside its directory {name}")
+        content = _read(path)
+    else:
+        value = streams.get(name)
+        if not isinstance(value, str) or not value:
+            raise ValueError(f"Missing or empty archived evidence stream {name}")
+        content = value.encode("utf-8")
     if hashlib.sha256(content).hexdigest() != expected:
         raise ValueError(f"Evidence bytes changed for {name}")
     return content
@@ -102,23 +108,33 @@ def inspect(directory: Path, manifest: dict[str, Any]) -> dict[str, Any]:
     root = (directory / "evidence").resolve(strict=True)
     if root.parent != directory.resolve(strict=True):
         raise ValueError("Evidence directory is outside the calibration")
-    if manifest["schema_version"] != 1 or not manifest["cases"]:
+    version = manifest["schema_version"]
+    cases = manifest["cases"]
+    if type(version) is not int or version not in {1, 2} or not isinstance(cases, dict) or not cases:
         raise ValueError("A versioned TestEval calibration manifest is required")
-    [terminal_count, terminal_exit] = _evidence(root, manifest["terminal"]).decode("ascii").splitlines()
+    streams = None
+    if version == 2:
+        streams = strict_json(_evidence(root, manifest["stream_archive"]).decode("utf-8"))
+        required = {manifest["terminal"]["file"]}
+        for spec in cases.values():
+            required.update(spec[key]["file"] for key in ("publisher_stdout", "independent_junit", "independent_exit"))
+        if not isinstance(streams, dict) or streams.keys() != required:
+            raise ValueError("The archive must contain exactly the declared evidence streams")
+    [terminal_count, terminal_exit] = _evidence(root, manifest["terminal"], streams).decode("ascii").splitlines()
     if (terminal_count, terminal_exit) != ("temporary_storage_removed=true", "exit=0"):
         raise ValueError("The model-free calibration did not complete cleanly")
     return {
         "schema_version": 1,
         "cases": {
             name: {
-                "native_metrics": publisher_metrics(_evidence(root, spec["publisher_stdout"])),
+                "native_metrics": publisher_metrics(_evidence(root, spec["publisher_stdout"], streams)),
                 "independent_pytest": independent_pytest(
-                    _evidence(root, spec["independent_junit"]),
-                    _evidence(root, spec["independent_exit"]),
+                    _evidence(root, spec["independent_junit"], streams),
+                    _evidence(root, spec["independent_exit"], streams),
                     spec["expected_independent_tests"],
                 ),
             }
-            for name, spec in manifest["cases"].items()
+            for name, spec in cases.items()
         },
         "composite_score": None,
         "model_attempts": 0,

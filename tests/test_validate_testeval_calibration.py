@@ -64,3 +64,32 @@ def test_rejects_nested_case_absent_from_suite_count() -> None:
     )
     with pytest.raises(ValueError, match="different case set"):
         calibration.independent_pytest(raw, b"0", ["generated::test_output"])
+
+
+def test_published_controls_preserve_task_and_runner_disagreements() -> None:
+    directory = calibration.DEFAULT.with_name("testeval-public-controls")
+    assert calibration.main(["--directory", str(directory), "--check"]) == 0
+    result = json.loads((directory / "result.json").read_bytes())
+    cases = result["cases"]
+    assert result["model_attempts"] == 0
+    assert result["composite_score"] is None
+    assert len(cases) == 15
+    for task in (1805, 2850, 685):
+        matching = cases[f"task-{task}-matching"]
+        mismatching = cases[f"task-{task}-mismatching"]
+        portable = cases[f"task-{task}-matching-portable-shape"]
+        no_call = cases[f"task-{task}-no-call"]
+        assert matching["native_metrics"] == mismatching["native_metrics"]
+        assert matching["native_metrics"]["line_coverage"] > 0
+        assert matching["independent_pytest"]["passed"] == portable["independent_pytest"]["passed"] == 1
+        assert mismatching["independent_pytest"]["failures"] == 1
+        assert portable["native_metrics"] == no_call["native_metrics"]
+        assert portable["native_metrics"]["executable_correctness"] == 0
+
+
+def test_rejects_a_mismatched_native_stream_in_an_intact_archive() -> None:
+    directory = calibration.DEFAULT.with_name("testeval-public-controls")
+    manifest = json.loads((directory / "manifest.json").read_bytes())
+    manifest["cases"]["task-1805-matching"]["publisher_stdout"]["sha256"] = "0" * 64
+    with pytest.raises(ValueError, match="Evidence bytes changed"):
+        calibration.inspect(directory, manifest)
