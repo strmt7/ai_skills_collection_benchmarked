@@ -209,12 +209,9 @@
         "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
       },
       "sources": [
-        "included/improved/skills/e2e-testing-current/SKILL.md",
-        "included/improved/skills/e2e-testing-current/NOTICE.md",
         "included/improved/skills/e2e-testing-current/references/out-of-order-results.md",
         "tools/manage_improvement_ledger.py",
         "tests/test_improvement_ledger.py",
-        "docs/benchmark-execution-plan.md",
         "docs/improvement-plan.md"
       ]
     },
@@ -265,7 +262,6 @@
         "sha256": "c55c9261d4f23a1cae0c8293b7a945653960847fd34bdb392e02859938991c31"
       },
       "sources": [
-        "included/improved/skills/verification-loop-shell-status/SKILL.md",
         "tests/test_analyze_native_trial_commands.py",
         "tools/analyze_native_trial_commands.py"
       ]
@@ -431,7 +427,6 @@
         "sha256": "454a45e7006df4a5351dda80de50cafd34c21cf41e74d1a1877be52d30bacfc6"
       },
       "sources": [
-        "included/improved/skills/eval-harness-integrity/SKILL.md",
         "included/improved/skills/eval-harness-integrity/references/grader-admission.md"
       ]
     },
@@ -501,6 +496,31 @@
         "tests/test_validate_testeval_calibration.py",
         "tools/validate_testeval_calibration.py"
       ]
+    },
+    {
+      "id": "portable-evaluation-and-verification",
+      "review": {
+        "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+        "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
+      },
+      "sources": [
+        "benchmarks/agent-effectiveness/development/testeval-pilot-v2/frame.json",
+        "benchmarks/agent-effectiveness/development/testeval-pilot-v2/selection.json",
+        "docs/benchmark-execution-plan.md",
+        "included/improved/skills/e2e-testing-current/NOTICE.md",
+        "included/improved/skills/e2e-testing-current/SKILL.md",
+        "included/improved/skills/e2e-testing-current/provenance/original-SKILL.md",
+        "included/improved/skills/eval-harness-integrity/SKILL.md",
+        "included/improved/skills/eval-harness-integrity/provenance/original-SKILL.md",
+        "included/improved/skills/verification-loop-shell-status/NOTICE.md",
+        "included/improved/skills/verification-loop-shell-status/SKILL.md",
+        "included/improved/skills/verification-loop-shell-status/provenance/original-SKILL.md",
+        "included/improved/skills/verification-loop-shell-status/references/native-command-status.md",
+        "tests/test_deterministic_writes.py",
+        "tests/test_select_testeval_tasks.py",
+        "tools/_lib_b/io_utils.py",
+        "tools/select_testeval_tasks.py"
+      ]
     }
   ],
   "historical_reviews": [
@@ -521,6 +541,7 @@
         "toolchains/bootstrap/requirements.txt",
         "tools/_lib_b/__init__.py",
         "tools/_lib_b/frontmatter_utils.py",
+        "tools/_lib_b/io_utils.py",
         "tools/_native_benchmark_runtime.py",
         "tools/_trial_account_readiness.py",
         "tools/_trial_catalog.py",
@@ -544,6 +565,7 @@
         "toolchains/bootstrap/codex.json",
         "tools/_lib_b/__init__.py",
         "tools/_lib_b/frontmatter_utils.py",
+        "tools/_lib_b/io_utils.py",
         "tools/_native_benchmark_runtime.py",
         "tools/_trial_account_readiness.py",
         "tools/_trial_catalog.py",
@@ -883,7 +905,8 @@
         "sha256": "c55c9261d4f23a1cae0c8293b7a945653960847fd34bdb392e02859938991c31"
       },
       "superseded_sources": [
-        "docs/native-benchmark-controller.md"
+        "docs/native-benchmark-controller.md",
+        "included/improved/skills/verification-loop-shell-status/SKILL.md"
       ]
     },
     {
@@ -940,9 +963,13 @@
         "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
       },
       "superseded_sources": [
+        "docs/benchmark-execution-plan.md",
         "docs/installation.md",
+        "included/improved/skills/e2e-testing-current/NOTICE.md",
+        "included/improved/skills/e2e-testing-current/SKILL.md",
         "included/improved/skills/eval-harness-integrity/SKILL.md",
-        "included/improved/skills/tdd-workflow-current/SKILL.md"
+        "included/improved/skills/tdd-workflow-current/SKILL.md",
+        "included/improved/skills/verification-loop-shell-status/SKILL.md"
       ]
     },
     {
@@ -969,6 +996,7 @@
         "sha256": "454a45e7006df4a5351dda80de50cafd34c21cf41e74d1a1877be52d30bacfc6"
       },
       "superseded_sources": [
+        "included/improved/skills/eval-harness-integrity/SKILL.md",
         "tests/test_validate_testeval_calibration.py",
         "tools/validate_testeval_calibration.py"
       ]

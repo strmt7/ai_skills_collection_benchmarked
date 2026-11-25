@@ -4,11 +4,14 @@ description: Design and verify matched coding-agent evaluations when comparing s
 license: MIT
 metadata:
   source: affaan-m/everything-claude-code
-  source-commit: 846ffb75da9a5f4e677d927af1ad4a1951652267
+  source-commit: c05b2d6614f62f6db0047669aa4eefb223d478f9
   revision-status: experimental-unbenchmarked
 ---
 
 # Controlled agent evaluation
+
+Read the repository's operating instructions and apply its mandatory development
+tools.
 
 Define the decision, comparison, target task population, primary metric, and
 smallest useful effect before looking at confirmatory results. Keep the task
@@ -19,17 +22,20 @@ inputs and acceptance checks independent of the instructions under evaluation.
    failure that motivated the change. Freeze the candidate and reserve tasks
    that were never used to select or revise it. In a matched block, use the same
    task, model, reasoning effort, ordinary tools, dependencies, and budgets.
-   Change only the declared intervention. Use fresh subject state and balance
-   condition order. Record the requested and observed model identities separately.
+   Change only the declared intervention. Use fresh subject state. Check condition
+   order across the full sample and within planned strata before running. Record
+   the requested and observed model identities separately.
 2. **Qualify the evaluator.** Check the unchanged input, a known valid result,
-   a plausible wrong result, and an incomplete run. An unchanged input can
-   already meet the scoring ceiling. For a repair task, reproduce the original defect and
-   keep unrelated valid behavior passing. Keep expected answers outside the
+   a plausible wrong result, and an incomplete run. Try a valid equivalent
+   submission and verify the scorer applies the declared input contract.
+   Report input-format limitations separately from behavioral failures. An
+   unchanged input can already meet the scoring ceiling. For a repair task,
+   reproduce the original defect and keep unrelated valid behavior passing. Keep expected answers outside the
    subject workspace. Score observable behavior. Use blinded judgment only
    for criteria that executable checks cannot settle.
-   When evaluating generated tests, verify ordinary assertion execution and
-   coverage separately. Use a wrong expectation with the same code reach and
-   a passing test with no relevant reach to check what each metric can detect.
+   When evaluating generated tests, measure assertion outcomes, reach and defect
+   detection separately. Use the same call with an incorrect expectation, and
+   a passing test with no call, to check which differences each metric detects.
 3. **Admit each result.** Keep the declared task and scorer revisions, actual
    submission, native reports, exit or completion signal, scope checks, and
    resource observations together. Check that the scorer graded the submitted

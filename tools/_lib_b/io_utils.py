@@ -17,24 +17,39 @@ import contextlib
 import json
 import os
 from pathlib import Path
+from time import sleep
 from typing import Any
+from uuid import uuid4
+
+
+def _replace_file(source: Path, target: Path) -> None:
+    # Windows can temporarily reject an atomic rename during another rename or open.
+    for delay in (0.01, 0.03, 0.09):
+        try:
+            os.replace(source, target)
+            return
+        except PermissionError as error:
+            if getattr(error, "winerror", None) not in {5, 32, 33}:
+                raise
+            sleep(delay)
+    os.replace(source, target)
 
 
 def _atomic_write_bytes(path: Path, data: bytes) -> None:
-    """Write *data* to *path* via a temp file in the same directory + os.replace.
-
-    os.replace is atomic on POSIX and Windows, so readers either see the old
-    content or the new content but never a truncated file.
-    """
+    """Write one complete artifact using a private staging file on the same filesystem."""
     path.parent.mkdir(parents=True, exist_ok=True)
-    tmp = path.with_suffix(path.suffix + ".tmp")
-    with open(tmp, "wb") as handle:
-        handle.write(data)
-        handle.flush()
-        # Best-effort fsync: unsupported on some filesystems (e.g. tmpfs).
-        with contextlib.suppress(OSError):
-            os.fsync(handle.fileno())
-    os.replace(tmp, path)
+    temporary = path.with_name(f".write-{uuid4().hex}.tmp")
+    handle = temporary.open("xb")
+    try:
+        with handle:
+            handle.write(data)
+            handle.flush()
+            # Some filesystems do not support fsync.
+            with contextlib.suppress(OSError):
+                os.fsync(handle.fileno())
+        _replace_file(temporary, path)
+    finally:
+        temporary.unlink(missing_ok=True)
 
 
 def dumps_deterministic(data: Any) -> str:

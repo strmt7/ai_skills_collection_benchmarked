@@ -1,0 +1,396 @@
+{
+  "atomic_generated_artifact_writes": {
+    "finding": "Exclusive sibling staging keeps concurrent writes independent from the benchmark workspace allocator. A bounded Windows retry handles transient rename conflicts. Failed replacement keeps the old bytes and cleans staging.",
+    "linux": {
+      "python": "3.12.3",
+      "platform": "linux",
+      "separate_staging_files": 2,
+      "preserved_old_bytes_after_failure": true,
+      "owned_scratch_removed": true,
+      "source_sha256": "370b18a72210d03170b8a5c6eff086ff0b039b0382220a25a12be2758c1f335c"
+    },
+    "windows": {
+      "after_native_sha256": "ee20524715c3dd94532df9a2d1c93878c0a048a52636e99c88a4f65cf547e6a8",
+      "after_total_focused_passed": 51,
+      "before_expected_regressions": 2,
+      "before_native_sha256": "4cc9be3815033e3ab0aebeee79c2c6840fb7f8570bd2e0be3fd4c0712e1c6598",
+      "integration_failure_receipt_sha256": "e0fd4c36518c8b71a04a474532fbd2a0254438003f07166e3ebf2678ac071c48",
+      "observed_rename_conflict_sha256": "a489563fc86e8d22bf97389a171ef8312b7c2cb28d9e1604c3341d26f6039c34"
+    },
+    "candidate_recovery": {
+      "whole_suite_failure": "Receipt staging shared the benchmark workspace allocator used by failure injection.",
+      "windows_retry": "A real simultaneous file replacement returned WinError 5 during the corrected writer test.",
+      "focused_replay_passed": 51
+    }
+  },
+  "initial_runner_failures": {
+    "linux": {
+      "diagnostic": "Playwright worker exited with SIGABRT",
+      "initial_task_cap": 20,
+      "native_stdout_sha256": "c4177e51af404dd8fcb77d3d07c96bcf69ccc8ed9cd97187ba7ec116dd66c0fe",
+      "observed_qualified_peak": 24,
+      "qualified_task_cap": 48
+    },
+    "win32": {
+      "diagnostic": "ENAMETOOLONG from Node mkdtemp",
+      "native_stdout_sha256": "a3bad2b9e5c288f3e049ca7f65d4467b48f54ad727eef3026527d2764e86f8c9",
+      "qualification_change": "Used a short owned system temporary path and verified the actual diagnostic prefix."
+    }
+  },
+  "model_attempts": 0,
+  "playwright_fixtures": {
+    "linux": {
+      "controls": {
+        "body-failure-released": {
+          "exit": 1,
+          "expected_failure_diagnostic": "intended behavior assertion",
+          "owned_processes_after": null,
+          "resource_remained_before_scratch_cleanup": false,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "a402d1693d93bb8a4c6b596a21b612e30bfb9f87881048d792b5e08dc1bb9a3d",
+          "test_body_ran": true,
+          "test_outcome": "failed"
+        },
+        "setup-error-leaked": {
+          "exit": 1,
+          "expected_failure_diagnostic": "deliberate second acquisition failure",
+          "owned_processes_after": null,
+          "resource_remained_before_scratch_cleanup": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "e5baf52ac454efe59edb84385b3cf1981c4376866ed143001c63593e331ba0e0",
+          "test_body_ran": false,
+          "test_outcome": "failed"
+        },
+        "setup-error-released": {
+          "exit": 1,
+          "expected_failure_diagnostic": "deliberate second acquisition failure",
+          "owned_processes_after": null,
+          "resource_remained_before_scratch_cleanup": false,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "529229b65237c64a13b4fde17d5c1bbaa743723c3745f05a00d07a4ac1451580",
+          "test_body_ran": false,
+          "test_outcome": "failed"
+        },
+        "success": {
+          "exit": 0,
+          "expected_failure_diagnostic": "",
+          "owned_processes_after": null,
+          "resource_remained_before_scratch_cleanup": false,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "47c35e399a38db59e0069f5018b6199d12cd035b37df208a86719824ec15b36f",
+          "test_body_ran": true,
+          "test_outcome": "passed"
+        }
+      },
+      "fixture_sha256": "ddf817ad9d73973a99567cd67ca525f4bf5564e303e2ad3f7481417ef7056fc6",
+      "machine": "x86_64",
+      "model_attempts": 0,
+      "node": "24.22.3",
+      "owned_scratch_removed": true,
+      "packages": {
+        "@playwright/test": {
+          "compressed_bytes": 8742,
+          "metadata_sha256": "178c83ec72a24721ecd8139b482a19cb414cf7060f9dac528d4d3d2f49b119f4",
+          "sha512": "sha512-y+NCIRm2LvY4slUVWvGh1nujJ8RF/hEisIsq2mtUPgdQC4L701bq5hZGMhrpeXjACvwvO9tj5dJqhvM6TP9lbw=="
+        },
+        "playwright": {
+          "compressed_bytes": 909830,
+          "metadata_sha256": "142a893e43143a8660ccbf91827d6112169e1f24939cf78503d23d2e618a5715",
+          "sha512": "sha512-vJ1FuoOrNwOKHUIVEvSt3jT1L+wjjDpwhwIstKtfvTh8XIG4FG4bIFuvNdMxi81LGfAhUgUZleVFaOLY4RIUUw=="
+        },
+        "playwright-core": {
+          "compressed_bytes": 3232772,
+          "metadata_sha256": "7508a44c868fc36f8d35466b21293756d2c7ff3eda1da68fccf7b1249b829438",
+          "sha512": "sha512-hqPpz7blSMPxWVdoeE1yiBSzXsKiVOd2k+kjCvmUywD2GPO2Dd9HfcWnq9NN0GHbNZDFgZ9JfBFr+X5/BLo0qw=="
+        }
+      },
+      "platform": "linux",
+      "playwright_test": "1.65.1",
+      "result_sha256": "c926e7a1d9470050749da0fc7e34941039dc26a2f55cd12a1ca7b9a69ab744ea"
+    },
+    "win32": {
+      "controls": {
+        "body-failure-released": {
+          "exit": 1,
+          "expected_failure_diagnostic": "intended behavior assertion",
+          "owned_processes_after": 0,
+          "resource_remained_before_scratch_cleanup": false,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "ca3504d2ba67fb8e1200535f1653ad3e8959a4631a521200f572e9f7e25c8230",
+          "test_body_ran": true,
+          "test_outcome": "failed"
+        },
+        "setup-error-leaked": {
+          "exit": 1,
+          "expected_failure_diagnostic": "deliberate second acquisition failure",
+          "owned_processes_after": 0,
+          "resource_remained_before_scratch_cleanup": true,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "25040c7b47e88006594f50ba0b02969ee6b5d9b463d32715f26a45f3c30c7f08",
+          "test_body_ran": false,
+          "test_outcome": "failed"
+        },
+        "setup-error-released": {
+          "exit": 1,
+          "expected_failure_diagnostic": "deliberate second acquisition failure",
+          "owned_processes_after": 0,
+          "resource_remained_before_scratch_cleanup": false,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "635dc37505846ba3edab87838c131ab432403a904f3debb6cb9f827b5bc83c55",
+          "test_body_ran": false,
+          "test_outcome": "failed"
+        },
+        "success": {
+          "exit": 0,
+          "expected_failure_diagnostic": "",
+          "owned_processes_after": 0,
+          "resource_remained_before_scratch_cleanup": false,
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_sha256": "7aee8fe959421de60d8fe6ceae1fce94d9399fcdb73cbfd36c6ccf881b90953a",
+          "test_body_ran": true,
+          "test_outcome": "passed"
+        }
+      },
+      "fixture_sha256": "ddf817ad9d73973a99567cd67ca525f4bf5564e303e2ad3f7481417ef7056fc6",
+      "machine": "AMD64",
+      "model_attempts": 0,
+      "node": "24.22.3",
+      "owned_scratch_removed": true,
+      "packages": {
+        "@playwright/test": {
+          "compressed_bytes": 8742,
+          "metadata_sha256": "178c83ec72a24721ecd8139b482a19cb414cf7060f9dac528d4d3d2f49b119f4",
+          "sha512": "sha512-y+NCIRm2LvY4slUVWvGh1nujJ8RF/hEisIsq2mtUPgdQC4L701bq5hZGMhrpeXjACvwvO9tj5dJqhvM6TP9lbw=="
+        },
+        "playwright": {
+          "compressed_bytes": 909830,
+          "metadata_sha256": "142a893e43143a8660ccbf91827d6112169e1f24939cf78503d23d2e618a5715",
+          "sha512": "sha512-vJ1FuoOrNwOKHUIVEvSt3jT1L+wjjDpwhwIstKtfvTh8XIG4FG4bIFuvNdMxi81LGfAhUgUZleVFaOLY4RIUUw=="
+        },
+        "playwright-core": {
+          "compressed_bytes": 3232772,
+          "metadata_sha256": "7508a44c868fc36f8d35466b21293756d2c7ff3eda1da68fccf7b1249b829438",
+          "sha512": "sha512-hqPpz7blSMPxWVdoeE1yiBSzXsKiVOd2k+kjCvmUywD2GPO2Dd9HfcWnq9NN0GHbNZDFgZ9JfBFr+X5/BLo0qw=="
+        }
+      },
+      "platform": "win32",
+      "playwright_test": "1.65.1",
+      "result_sha256": "5ca15621131e7c5977b0bafa65af74a8c61a07464785d6ae6da7ecad6129e1c4"
+    }
+  },
+  "previous_behavior_controls": [
+    {
+      "path": "artifacts/research/2026-11-25/testeval-public-controls/manifest.json",
+      "sha256": "5e5bf4c614e329737664b919284017142b67277639dad65e76acb97971c10237"
+    },
+    {
+      "path": "artifacts/research/2026-11-25/native-command-verification/review.json",
+      "sha256": "c55c9261d4f23a1cae0c8293b7a945653960847fd34bdb392e02859938991c31"
+    },
+    {
+      "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
+      "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
+    }
+  ],
+  "publisher_pages": {
+    "agentskills-spec": {
+      "markdown_characters": 64801,
+      "native_result_sha256": "eba246be36c54b3bee506c5f67d274e3a18bb348c437bb2affd49dc7e289c0c3",
+      "native_url": "https://agentskills.io/specification",
+      "provider_version": "0.9.6+catalog.portable1",
+      "status_code": 200
+    },
+    "mutation-results": {
+      "markdown_characters": 8137,
+      "native_result_sha256": "2c8e818bcebb3a5f2dd125641887267681f22ee5fedf3441d5200027cdfa3e92",
+      "native_url": "https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/",
+      "provider_version": "0.9.6+catalog.portable1",
+      "status_code": 200
+    },
+    "playwright-fixtures": {
+      "markdown_characters": 43423,
+      "native_result_sha256": "14f339f9c447614c272d590709dae048332b9ca3a7dd0ed198cd5fa18312793e",
+      "native_url": "https://playwright.dev/docs/test-fixtures",
+      "provider_version": "0.9.6+catalog.portable1",
+      "status_code": 200
+    }
+  },
+  "schema_version": 1,
+  "testeval_development_order": {
+    "model_attempts": 0,
+    "old_frame_sha256": "0180237d062210a351ef5c6ef14ab6e39dbba339f3f98c50af59313e811a7762",
+    "old_medium_karpathy_positions": {
+      "2": 4
+    },
+    "planned_attempts": 36,
+    "position_counts_by_difficulty": {
+      "1": {
+        "collection": [
+          2,
+          1,
+          1
+        ],
+        "default": [
+          1,
+          2,
+          1
+        ],
+        "karpathy": [
+          1,
+          1,
+          2
+        ]
+      },
+      "2": {
+        "collection": [
+          1,
+          2,
+          1
+        ],
+        "default": [
+          1,
+          1,
+          2
+        ],
+        "karpathy": [
+          2,
+          1,
+          1
+        ]
+      },
+      "3": {
+        "collection": [
+          1,
+          1,
+          2
+        ],
+        "default": [
+          2,
+          1,
+          1
+        ],
+        "karpathy": [
+          1,
+          2,
+          1
+        ]
+      }
+    },
+    "prior_candidate_orders_reproduced": true,
+    "published_source_metadata_count": 210,
+    "same_task_ids_and_difficulty": true,
+    "selection_sha256": "5c1d2fd6edf296ab129127d5ef42f0961bc4635a5bc8086b46d83201c3a96d16"
+  },
+  "verification_lanes": {
+    "linux": {
+      "machine": "x86_64",
+      "model_attempts": 0,
+      "observations": {
+        "corrected": {
+          "implementation_sha256": "79e3f5ffb2dfccf757b74674c5161c85d148a71ff54496da4c13b3cca2b97b51",
+          "lanes": {
+            "caller": {
+              "exit": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stdout_sha256": "75469a68b07851edce6f2c97d3a2f5e6048e28cda7c94b31822fa74fb5777b2e"
+            },
+            "syntax": {
+              "exit": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "unit": {
+              "exit": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stdout_sha256": "01b37ed38fb78cc09ea8afdb3c5f6e31cfd2f8b0ebfca3081bda8dde37428c81"
+            }
+          }
+        },
+        "defective": {
+          "implementation_sha256": "bbc3eaf7b1cc85f6cfb31d0a0798bf69de51f91d78442f572c9c99372bfab4d4",
+          "lanes": {
+            "caller": {
+              "exit": 1,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stdout_sha256": "c2438ccdbf5e7b79f5d96945622996360e3aff3592c234915936d9efa80d3492"
+            },
+            "syntax": {
+              "exit": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "unit": {
+              "exit": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stdout_sha256": "477a0b5ba0c5e450da57eb76012c15fc0b8abcb770820d189251af81ce718f26"
+            }
+          }
+        }
+      },
+      "owned_scratch_removed": true,
+      "platform": "linux",
+      "result_sha256": "b30ce257e7402a76c3882e06ec4f53b2191434bde8bac738841f247d8ef0c123",
+      "runtime": "Node.js 24.22.3",
+      "tests": {
+        "caller_sha256": "aa3d143fb8fa7bf3ca7cba9e6a7ad6277bfc6bc40601874a1bbfc3269d1c4938",
+        "service_sha256": "18346d8907f70fca316dc93b1533620a3e3bdb9e3467a230b8c9a9992e478322",
+        "unit_sha256": "c510234fd6f4904f39cd94e3c51c018e1e81871a0e91b4063699fc13be805059"
+      }
+    },
+    "win32": {
+      "machine": "AMD64",
+      "model_attempts": 0,
+      "observations": {
+        "corrected": {
+          "implementation_sha256": "79e3f5ffb2dfccf757b74674c5161c85d148a71ff54496da4c13b3cca2b97b51",
+          "lanes": {
+            "caller": {
+              "exit": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stdout_sha256": "dff8af1a687124d50a2c1d101be3d5be7e51c368a4843f61b0c5040dc0e20377"
+            },
+            "syntax": {
+              "exit": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "unit": {
+              "exit": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stdout_sha256": "c45e9bd5e0df5ceee149006229f28678297f19b2d94686b0f65bfb62fcdde3eb"
+            }
+          }
+        },
+        "defective": {
+          "implementation_sha256": "bbc3eaf7b1cc85f6cfb31d0a0798bf69de51f91d78442f572c9c99372bfab4d4",
+          "lanes": {
+            "caller": {
+              "exit": 1,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stdout_sha256": "d9d6aa459dc834e28bc80eb46c70597440c639d8f2d546e0098b3d31b1be1905"
+            },
+            "syntax": {
+              "exit": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "unit": {
+              "exit": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stdout_sha256": "e2e7fe771b61a341f8c565c40ba5c5964dc13faa4acf1ec38955de88516d82c4"
+            }
+          }
+        }
+      },
+      "owned_scratch_removed": true,
+      "platform": "win32",
+      "result_sha256": "bd39b00c94de521b85812657046909fd24fc85850ccbf699ae5fc68a0aff5f0b",
+      "runtime": "Node.js 24.22.3",
+      "tests": {
+        "caller_sha256": "aa3d143fb8fa7bf3ca7cba9e6a7ad6277bfc6bc40601874a1bbfc3269d1c4938",
+        "service_sha256": "18346d8907f70fca316dc93b1533620a3e3bdb9e3467a230b8c9a9992e478322",
+        "unit_sha256": "c510234fd6f4904f39cd94e3c51c018e1e81871a0e91b4063699fc13be805059"
+      }
+    }
+  }
+}

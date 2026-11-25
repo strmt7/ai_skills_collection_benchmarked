@@ -1,108 +1,54 @@
 ---
 name: verification-loop-shell-status
-description: Verify a substantial code change against the repository's actual acceptance gates, preserving command exit status, complete failure accounting, tested input identity, and meaningful behavioral evidence before claiming completion.
+description: Verify a substantial change with the project's declared commands. Preserve actual failure status, source identity, test scope and evidence that affected callers work.
 license: MIT
 metadata:
   source: affaan-m/everything-claude-code
-  source-commit: 846ffb75da9a5f4e677d927af1ad4a1951652267
+  source-commit: c05b2d6614f62f6db0047669aa4eefb223d478f9
   revision-status: experimental-unbenchmarked
 ---
 
-# Verification tied to the actual change
+# Verify a change
 
-Read the repository instructions, manifests, lockfiles, CI and relevant tests.
-Identify the requested behavior, supported environments and exact required gates.
-Use existing authorization. Preserve unrelated changes and determine the intended
-base from current Git/remote state; do not assume `HEAD~1` represents the task.
+Read the repository instructions, manifests and relevant CI. Identify the
+requested behavior, affected callers, supported environments and required checks.
+Resolve the intended base from live source control. Preserve unrelated changes.
 
-## Choose checks that can expose the failure
+## Choose checks that expose the defect
 
-Write down observable acceptance conditions before implementing or revising tests.
-For a bug, reproduce the failure where practical, then check the repair and related
-regressions. Test behavior, useful boundaries and plausible wrong outcomes.
-Multiple related assertions can establish one behavior. Tests that repeat an
-implementation, placeholder bodies, package metadata and a success message do
-not establish correctness.
+- Define observable outcomes, boundaries and plausible wrong results. For a
+  bug, reproduce the failure when practical and keep the focused case after
+  the repair.
+- Use the project's declared runner, dependencies, commands and configuration.
+  Start with the affected behavior, then cover direct consumers and required
+  broader gates. For runtime claims, verify the built or installed artifact
+  those consumers use. Separate syntax checks, focused behavior and full-scope
+  verification.
+- Follow the project's coverage policy and inspect unexercised behavior.
+  Qualify tests through their real assertions and case reports. A reported
+  coverage percentage alone leaves assertion correctness unresolved.
 
-Use the project's actual test runner, scripts and configuration. A package manager
-or an installed Bun binary does not identify the runner. Resolve installed tool
-APIs and current stable dependencies; preserve a reproducible environment.
-Follow repository coverage gates and inspect missing relevant coverage. Do not
-invent an 80% universal requirement or equate coverage with a correct oracle.
+## Preserve actual results
 
-Start with checks affected by the change, then run required broader gates.
-Repeat checks when new edits, failures, input changes or unresolved concerns
-justify it. A timer or completing every function is not sufficient reason to
-repeat an expensive unchanged suite. Reversible presentation-only edits do not
-need tests that merely restate them.
+Run the required executable with the intended arguments. Capture its complete
+bounded output and exit status before showing excerpts. For a shell pipeline
+or output wrapper, [verify argument and exit propagation](references/native-command-status.md).
+Check that callers receive the return status, structured payload and failure
+diagnostic they depend on.
 
-## Preserve real status and evidence
+Record the command, tool/runtime, input revision, intended case IDs, outcome and
+retained evidence. Confirm the failure phase and actual diagnostic. Distinguish
+assertion failures from setup, timeouts, aborts, skips and unavailable checks.
+Retain the first failure when a corrected invocation later passes. Retry when
+evidence identifies a transient failure or an input to correct.
 
-Use the executable, subcommand and operands specified by the project or tool.
-If a task command prints usage and fails, check that syntax before retrying.
-Before retrying to recover, look for evidence of a transient failure or correct
-the relevant input. Retain the original failure.
-In PowerShell, use `& $executable` to invoke a quoted or variable executable
-path. Use a direct process API with an argument vector when argument boundaries
-matter, particularly for an empty argument under Windows PowerShell 5.1.
-Verify the received arguments when the result depends on exact values.
+## Check and report the delivered scope
 
-Capture each command's exit status and complete bounded log before displaying
-excerpts. A default POSIX pipeline reports the last program's status: piping a
-failed build through `head`, `tail` or `grep` can report success and truncate
-errors. Preserve the producer's status with the chosen shell's supported
-mechanism, or invoke it directly through a process API. In PowerShell,
-`$LASTEXITCODE` is not a record of every native process in a pipeline. To retain
-a producer's status, run it separately and capture `$LASTEXITCODE` before another
-native invocation; then inspect its output and propagate the saved status from a
-wrapper when needed. For cmdlets, inspect their own success or error behavior:
-`$LASTEXITCODE` can still contain an earlier native command's result.
-`$ErrorActionPreference = 'Stop'` alone does not universally stop on native
-nonzero exits; check the host and its native-command preference. Do not assume
-POSIX and PowerShell pipeline behavior is identical.
+Review staged and unstaged changes, generated outputs and relevant untracked
+files. Validate source identities and rerun affected checks after input changes.
+Keep required gates visible, honor authorized scope, and verify hosted results
+against the delivered commit. Keep credential-bearing logs private.
 
-Test an output wrapper through the actual ways callers consume it. A visible
-console line can bypass assignment, a pipeline or redirection. Exercise each
-supported consumer with structured output, a failure diagnostic and a nonzero
-exit. Verify that the consumer receives usable data and that the exit reaches
-its caller. Compare captured bytes separately when exact bytes are a contract.
-
-Record the exact command, environment/tool versions, input revision/signatures,
-status, diagnostics and artifact location. Distinguish failure, timeout, abort,
-skipped, unavailable and not-run from passed. Retain the first failure and its
-cause when a corrected invocation later passes. A harness error is not a test
-failure or successful task outcome. Keep credential-bearing logs private and
-publish only suitable evidence.
-
-Read structured test reports and complete denominators. Check that the intended
-tests actually ran and that output-producing wrappers preserve failure. Explain
-genuine platform skips and remaining coverage; do not disable required tests,
-hide retries or suppress findings to make a report green.
-
-## Verify security and scope
-
-Run the repository's configured secret, dependency and code-scanning checks at
-their intended scope. Two grep strings or checking console logging cannot prove
-the repository clean. Include relevant languages, dependencies, generated files
-and history when required. Fix validated causes, retain unresolved findings and
-report unavailable scanners explicitly. Never turn off checks or add exemptions
-to satisfy a count.
-
-Review all changed file groups, staged/unstaged edits and relevant untracked
-outputs. Confirm generated artifacts and locks match their inputs. Check that
-the patch stays within the task's authorized scope and preserves unrelated data.
-After a meaningful input change, invalidate affected verification evidence and
-rerun the appropriate gate. Hosted checks must match the exact delivered head.
-
-## Report the practical conclusion
-
-Lead with the resulting behavior, then state the relevant tests and their scope.
-Report planned/executed/passed/failed/skipped/not-run checks and material limits.
-Use a completion verdict only when the requested acceptance criteria and required
-gates are verified. Otherwise name the concrete remaining work and keep the task
-active. Do not extrapolate a focused pass to untested platforms, remote security,
-all skill categories or coding-agent superiority.
-
-This experimental overlay corrects the original verification guidance. Actual
-shell controls reproduce the lost-exit-status defect, but no independent matched
-agent trial has established this overlay's benefit over default behavior.
+Lead with the resulting behavior. State which commands ran, their outcomes and
+the unverified scope. Claim completion when the acceptance criteria and
+required gates have evidence.

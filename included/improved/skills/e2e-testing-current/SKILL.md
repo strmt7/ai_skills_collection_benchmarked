@@ -2,6 +2,10 @@
 name: e2e-testing-current
 description: Build or repair Playwright end-to-end tests, page objects, readiness checks and CI diagnostics. Use for browser journeys and flaky test investigation; preserve the application's real contracts and existing runner.
 license: MIT
+metadata:
+  source: affaan-m/everything-claude-code
+  source-commit: c05b2d6614f62f6db0047669aa4eefb223d478f9
+  revision-status: experimental-unbenchmarked
 ---
 
 # Reliable browser journeys
@@ -83,8 +87,11 @@ an owned server lifecycle; do not accidentally reuse another task's localhost
 server. Bound workers and browser projects to the available resources.
 Register cleanup immediately after acquiring each context, browser, listener
 or process. Keep the cleanup active while acquiring the next resource, so
-a partial setup failure still releases resources already opened. Run each
-cleanup independently and retain teardown errors with the original failure.
+a partial setup failure still releases resources already opened. Use a fixture
+with its own cleanup scope when the runner supports it. Verify that failed
+setup released what it acquired and record whether the test body actually ran.
+Use a writable, owned temporary location with paths the runtime supports.
+Run each cleanup independently and retain teardown errors with the original failure.
 
 Retain useful failure evidence with the test runner's unique output paths and
 attachments. Fixed shared screenshot names can collide under parallel runs.

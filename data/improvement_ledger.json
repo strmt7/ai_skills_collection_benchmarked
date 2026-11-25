@@ -353,31 +353,40 @@
           {
             "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
             "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+            "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
         "resources": {
           "SKILL.md": {
-            "review_scope": "Reviewed activation, current Playwright contracts and ordering guidance. The controlled app verified late results and preserved visible state.",
+            "review_scope": "Reviewed every pattern and example. Portable guidance preserves observable product state, prearmed request identity, failure reporting and resources acquired during partial setup. Domain examples were reviewed as source and were not executed.",
             "sha256": "8cfa22c35e5370c1f85400921d27e259cc99ba67a890625412bf2fc650a1d038",
             "status": "reviewed"
           },
           "agents/openai.yaml": {
-            "review_scope": "Reviewed display name, activation summary, explicit invocation and implicit invocation flag. This metadata changes discovery and has no independently executable code.",
+            "review_scope": "Reviewed the short description and default prompt. Activation is relevant to Playwright end-to-end design and cannot prove runner or case execution.",
             "sha256": "980dd8a3447f207ef9ddc047ef74f2978499ec66ea607213a3e4982f1494c268",
             "status": "reviewed"
           }
         },
-        "status": "in_progress"
+        "status": "complete"
       },
       "revision": {
         "evidence": [
           {
             "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
             "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+            "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
           }
         ],
-        "status": "in_progress"
+        "status": "complete",
+        "disposition": "The maintained portable overlay is bound to the current source and independent functional controls."
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
@@ -407,22 +416,26 @@
             "path": "artifacts/research/2026-11-25/testeval-grader-calibration/manifest.json",
             "scope": "Independent TestEval and pytest calibration checks actual test outcomes separately from publisher coverage. Zero model attempts.",
             "sha256": "454a45e7006df4a5351dda80de50cafd34c21cf41e74d1a1877be52d30bacfc6"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+            "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
         "resources": {
           "SKILL.md": {
-            "review_scope": "Reviewed evaluator independence, attempt accounting and repeated-attempt guidance against primary methodology and exact estimator controls. The generated-test grader controls independently tested separate assertion and coverage outcomes.",
+            "review_scope": "Reviewed all capability, regression, grader, metric and reporting examples. The current source changes frontmatter. The portable revision keeps independently qualified grading, checks condition order within strata, and tests supported equivalent inputs separately from behavioral failures.",
             "sha256": "49a5a10975860bb2d7e3c4e260ff19b6580e43f5fbc7770b32dece02dde48e49",
             "status": "reviewed"
           },
           "agents/openai.yaml": {
-            "review_scope": "Reviewed display name, activation summary, explicit invocation and implicit invocation flag. This metadata changes discovery and has no independently executable code.",
+            "review_scope": "Reviewed interface, default activation and its scope. A prompt hint drives discovery without establishing actual evaluation or independent grading.",
             "sha256": "d62e64db25157bd18cc15239f4aa2747076aee1a35aac324e2bb47a80b2fd292",
             "status": "reviewed"
           }
         },
-        "status": "in_progress"
+        "status": "complete"
       },
       "revision": {
         "evidence": [
@@ -440,12 +453,12 @@
             "sha256": "454a45e7006df4a5351dda80de50cafd34c21cf41e74d1a1877be52d30bacfc6"
           },
           {
-            "path": "included/improved/skills/eval-harness-integrity/SKILL.md",
-            "scope": "Active experimental overlay incorporates transferable findings from native grader calibration. No agent comparative measurement.",
-            "sha256": "1ca16b131a0e99e029a799e3f19f7ed56e7d7f31a11e0f7bab56a74c361f5127"
+            "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+            "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
           }
         ],
-        "status": "in_progress"
+        "status": "complete",
+        "disposition": "The maintained portable overlay is bound to the current source and independent functional controls."
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
@@ -872,31 +885,40 @@
           {
             "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
             "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+            "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
         "resources": {
           "SKILL.md": {
-            "review_scope": "Reviewed build, typecheck, lint and test producer statuses, bounded output, native command accounting and released versus unreleased documentation.",
+            "review_scope": "Reviewed the full current sequence, build, type check, lint, test and status reporting. The portable revision uses the declared runner and scoped consumers, preserves producer status, and removes the fixed coverage threshold and timer from active guidance.",
             "sha256": "6d4a399d856207297168cc03f3f8c90d4085ff14566bb928af3c97d9a31f2650",
             "status": "reviewed"
           },
           "agents/openai.yaml": {
-            "review_scope": "Reviewed display name, activation summary, explicit invocation and implicit invocation flag. This metadata changes discovery and has no independently executable code.",
+            "review_scope": "Reviewed display and default routing. Build and test phases follow the actual repository and task contract.",
             "sha256": "6ec7745a73b6370a72dd96cdab7bdc71f3a383416d87ddfa943e91226d7c0559",
             "status": "reviewed"
           }
         },
-        "status": "in_progress"
+        "status": "complete"
       },
       "revision": {
         "evidence": [
           {
             "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
             "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+            "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
           }
         ],
-        "status": "in_progress"
+        "status": "complete",
+        "disposition": "The maintained portable overlay is bound to the current source and independent functional controls."
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
@@ -5002,22 +5024,32 @@
           {
             "path": "docs/research-testing-category-boundaries.md",
             "sha256": "50f852b3c771fa536f6daa80125cd74e5f7cbdf7fa4a9c3267ae8514b9d04a69"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+            "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
         "resources": {
           "SKILL.md": {
             "captured_raw_sha256": "47b074d08f201a7a154ac9dfaad1bb40ca87dad61273d0d28ee6821f925a7335",
-            "review_scope": "Complete entrypoint, applicability, invocation and evidence-semantics review; no runtime efficacy claim.",
+            "review_scope": "Reviewed complete accuracy, coverage, tone and tone examples, promises, approval scope and output guidance. Portable support review needs all material claims checked, verified next steps and no implicit permission to send or promise. These are separate from technical verification.",
             "sha256": "b74954fe239796f8d28c0f189311b7cb7c7a6131660df07da9c8f916edb21538",
             "status": "reviewed"
           }
         },
-        "status": "in_progress"
+        "status": "complete"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+            "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
+          }
+        ],
+        "status": "in_progress",
+        "disposition": "The locked source review identifies fact verification and authorization as separate requirements. A support-specific intervention needs its own independent controls."
       },
       "source_repo": "composio-community/support-skills",
       "source_signature": {
@@ -15170,51 +15202,60 @@
           {
             "path": "artifacts/research/2026-11-02/nonsecurity-upstream-v1/manifest.json",
             "sha256": "7c897dc02abd823703f7acb2468f3c8021d7c2f3ccf2e64db82897ad8b8450ea"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+            "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
         "resources": {
           "API_REFERENCE.md": {
-            "review_scope": "Read complete locator, navigation, input, assertions, interception and CI examples; recorded inconsistent legacy selector/action guidance.",
+            "review_scope": "Reviewed setup, actions, locator semantics, wait states, assertions and failure evidence, along with the network, browser, mobile, accessibility and CI examples. Browser and package claims remain scoped to the actual runner version.",
             "sha256": "948e778e15e24d453219be6e05889416f088b59469818875f728d97a4ad17603",
             "status": "reviewed"
           },
           "SKILL.md": {
-            "review_scope": "Read complete activation, executor/inline workflow, context/artifact/header settings, constraints and all examples; recorded fixed paths and agent assumptions.",
+            "review_scope": "Reviewed target discovery, setup, runner modes, locators, examples, output and configuration. Prefer a declared target and explicitly owned resources. The immutable source defaults to visible browsers and is not the portable fixture workflow.",
             "sha256": "746a885d19ce9fc027c376f30bab4c86907e7ab956366c242ccdb4cf20eb8a9b",
             "status": "reviewed"
           },
           "lib/helpers.js": {
-            "review_scope": "Read all browser/context/header/screenshot/cookie and server-detection helpers; real local login/cookie helper check passed; unowned server probes blocked before transport.",
+            "review_scope": "Reviewed caller configuration, browser and context creation, artifact paths, banner and development-server behavior. The fixture experiment does not qualify this helper or arbitrary target discovery.",
             "sha256": "b837864b43126da1c0fc216b4d555b14a52c78bd78e0075af0c6acd1efa0e010",
             "status": "reviewed"
           },
           "package-lock.json": {
-            "review_scope": "Read locked package identities/integrities/engines; retained source graph; native package-lock-only advisory audit returned zero.",
+            "review_scope": "Reviewed the resolved original Playwright and core versions, their integrity and the optional platform package. The released skill is v5.0.0 and its mirror resolves 1.62.1. The portable fixture experiment used publisher packages at 1.65.1.",
             "sha256": "a0502f20d5c475c9654b8a6faa69263d2eb7ab0c7898c3c0a2490ddc75316df3",
             "status": "reviewed"
           },
           "package.json": {
-            "review_scope": "Read complete dependency/engine/scripts/license declarations; latest compatible SDK separately installed and exercised without modifying the mirror.",
+            "review_scope": "Reviewed four package contracts: engine range, test entrypoint, native browser setup and the Playwright range. Maintained compatibility requires its own exact consumer checks.",
             "sha256": "8f1870c8f1124cadae0bf493eccdbc8e2df48124f90d2eecaef0c43638906d8e",
             "status": "reviewed"
           },
           "run.js": {
-            "review_scope": "Read complete argument handling, child execution, output flushing, exit propagation, helper resolution, optional saved-script naming and error paths; upstream executor tests passed unchanged.",
+            "review_scope": "Reviewed separate inline and file modes, operating directory, saved scripts, status forwarding and process lifetime. The known Git mirror remains unchanged.",
             "sha256": "f2afe1a17379548abee60e91c9cee9a3907ff5ae9a2423d9190e45ace761399d",
             "status": "reviewed"
           }
         },
-        "status": "in_progress"
+        "status": "complete"
       },
       "revision": {
         "evidence": [
           {
             "path": "included/repaired/skills/by-category/testing-qa-benchmarking/latest-release-browser-automation/playwright-skill/repair.json",
             "sha256": "c38ce55b47ec06f3f219e049dab5a4f42d3a5854dee2bead95a198185b3f0b80"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+            "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
           }
         ],
-        "status": "in_progress"
+        "status": "in_progress",
+        "disposition": "Published portable fixture qualification complements the executor package. The executor's separate dependency and installation graph still needs its own version qualification."
       },
       "source_repo": "lackeyjb/playwright-skill",
       "source_signature": {
@@ -20058,19 +20099,31 @@
       },
       "mirrored_path": "included/skills/by-category/science-research-data-analysis/selected-project-reference/verification-loop-ome-zarr-c",
       "research": {
-        "evidence": [],
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+            "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
+          }
+        ],
         "resource_hash_policy": "catalog-canonical-v1",
         "resources": {
           "SKILL.md": {
             "sha256": "2e89dc304465914ce1667f739bef43981dcd8e136607f1f6e5332f86cdef12fd",
-            "status": "pending"
+            "status": "reviewed",
+            "review_scope": "Reviewed all lane choices, source identity, focused and whole-suite imports, rebuilding native consumers and exact hosted status. Retain caller and artifact verification in generic guidance without the port's fixed commands."
           }
         },
-        "status": "pending"
+        "status": "complete"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+            "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
+          }
+        ],
+        "status": "not_applicable",
+        "disposition": "The portable verification overlay incorporates the reusable lane and evidence guidance. The original package remains available in its project or archive context."
       },
       "source_repo": "strmt7/ome-zarr-C",
       "source_signature": {
@@ -20637,22 +20690,32 @@
           {
             "path": "docs/research-testing-category-boundaries.md",
             "sha256": "50f852b3c771fa536f6daa80125cd74e5f7cbdf7fa4a9c3267ae8514b9d04a69"
+          },
+          {
+            "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+            "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
           }
         ],
         "resource_hash_policy": "catalog-canonical-v1",
         "resources": {
           "SKILL.md": {
             "captured_raw_sha256": "1f5e4884ced911fb65c11ed5c384b4f8ab64de0d4e3eabce243801e0f9b94bc1",
-            "review_scope": "Complete entrypoint, applicability, invocation and evidence-semantics review; no runtime efficacy claim.",
+            "review_scope": "Reviewed focused checks, branch coverage, required full suites and local CI command fidelity. The portable revision verifies relevant command and scope without using project-specific tests. No trading or live action was performed.",
             "sha256": "a5de5ed9f0088375c9237c86451a54bcf151571fb6bd314efdf6713198ab99cf",
             "status": "reviewed"
           }
         },
-        "status": "in_progress"
+        "status": "complete"
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+            "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
+          }
+        ],
+        "status": "not_applicable",
+        "disposition": "The portable verification overlay incorporates the reusable lane and evidence guidance. The original package remains available in its project or archive context."
       },
       "source_repo": "strmt7/simple_ai_bitcoin_trading_binance",
       "source_signature": {
@@ -25315,12 +25378,36 @@
       },
       "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/verification-loop-omero-docker-extended",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+            "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
+          }
+        ],
+        "status": "complete",
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "agents/openai.yaml": {
+            "sha256": "241fb7520f67d4c3a40af1f19e7ec704ef8080fd752497d75968f49caf82c1f6",
+            "status": "reviewed",
+            "review_scope": "Reviewed routing, display label and prompt for the repository's split suites. Generic guidance follows the consuming project's declared lanes."
+          },
+          "SKILL.md": {
+            "sha256": "67b995798d2542893b5b474ad20eda1bf574c0794511f06aa57ef44bc18ae8dd",
+            "status": "reviewed",
+            "review_scope": "Reviewed documented lint, docs, shell, split tests, affected consumers and explicit fallback levels. Keep syntax-only, targeted behavior and full verification separate."
+          }
+        }
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+            "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
+          }
+        ],
+        "status": "not_applicable",
+        "disposition": "The portable verification overlay incorporates the reusable lane and evidence guidance. The original package remains available in its project or archive context."
       },
       "source_repo": "ZMB-UZH/omero-docker-extended",
       "source_signature": {
@@ -25739,12 +25826,31 @@
       },
       "mirrored_path": "included/skills/by-category/omero-django-docker-lab-infrastructure/selected-omero-reference/verification-loop-third-party-ecc-v1-10-0-verification-loop",
       "research": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+            "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
+          }
+        ],
+        "status": "complete",
+        "resource_hash_policy": "catalog-canonical-v1",
+        "resources": {
+          "SKILL.md": {
+            "sha256": "01a9ae310ad4426bb05660dda6cefdeaac9513417585c09c8bb1b94738649a78",
+            "status": "reviewed",
+            "review_scope": "Reviewed the entire archived sequence and report. Reuse its verify-before-completion intent while preserving native phase/exit details and the consuming project's declared gates."
+          }
+        }
       },
       "revision": {
-        "evidence": [],
-        "status": "pending"
+        "evidence": [
+          {
+            "path": "artifacts/research/2026-11-25/evaluation-and-verification-workflows/review.json",
+            "sha256": "67a10994edabb7d1af2c356ae219f065a33a49c3d8a845aa6077d0f1caf48868"
+          }
+        ],
+        "status": "not_applicable",
+        "disposition": "The portable verification overlay incorporates the reusable lane and evidence guidance. The original package remains available in its project or archive context."
       },
       "source_repo": "ZMB-UZH/omero-docker-extended",
       "source_signature": {
@@ -28646,6 +28752,77 @@
         }
       },
       "skill_id": "affaan-m-everything-claude-code-agents-skills-video-editing-skill-md"
+    },
+    {
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-eval-harness-skill-md",
+      "review": {
+        "category": "Coding, refactoring & repository automation",
+        "evaluation": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/eval-harness",
+        "research": {
+          "evidence": [
+            {
+              "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
+              "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
+            },
+            {
+              "path": "artifacts/research/2026-11-25/swt-bench-calibration/review.json",
+              "sha256": "c935b137990030308319bd4d16480c8206cc84ad8d48a5605ccd643672b44ff6"
+            },
+            {
+              "path": "artifacts/research/2026-11-25/testeval-grader-calibration/manifest.json",
+              "scope": "Independent TestEval and pytest calibration checks actual test outcomes separately from publisher coverage. Zero model attempts.",
+              "sha256": "454a45e7006df4a5351dda80de50cafd34c21cf41e74d1a1877be52d30bacfc6"
+            }
+          ],
+          "resource_hash_policy": "catalog-canonical-v1",
+          "resources": {
+            "SKILL.md": {
+              "review_scope": "Reviewed evaluator independence, attempt accounting and repeated-attempt guidance against primary methodology and exact estimator controls. The generated-test grader controls independently tested separate assertion and coverage outcomes.",
+              "sha256": "49a5a10975860bb2d7e3c4e260ff19b6580e43f5fbc7770b32dece02dde48e49",
+              "status": "reviewed"
+            },
+            "agents/openai.yaml": {
+              "review_scope": "Reviewed display name, activation summary, explicit invocation and implicit invocation flag. This metadata changes discovery and has no independently executable code.",
+              "sha256": "d62e64db25157bd18cc15239f4aa2747076aee1a35aac324e2bb47a80b2fd292",
+              "status": "reviewed"
+            }
+          },
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [
+            {
+              "path": "artifacts/research/2026-11-25/ecc-testing-requalification/review.json",
+              "sha256": "d7be0e096565bfc9122823d9a4e28c68877b63551f6d7364fd9df93abb966050"
+            },
+            {
+              "path": "artifacts/research/2026-11-25/swt-bench-calibration/review.json",
+              "sha256": "c935b137990030308319bd4d16480c8206cc84ad8d48a5605ccd643672b44ff6"
+            },
+            {
+              "path": "artifacts/research/2026-11-25/testeval-grader-calibration/manifest.json",
+              "scope": "Independent TestEval and pytest calibration checks actual test outcomes separately from publisher coverage. Zero model attempts.",
+              "sha256": "454a45e7006df4a5351dda80de50cafd34c21cf41e74d1a1877be52d30bacfc6"
+            },
+            {
+              "path": "included/improved/skills/eval-harness-integrity/SKILL.md",
+              "scope": "Active experimental overlay incorporates transferable findings from native grader calibration. No agent comparative measurement.",
+              "sha256": "1ca16b131a0e99e029a799e3f19f7ed56e7d7f31a11e0f7bab56a74c361f5127"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+          "skill_dir_sha256": "bbe6528d38bb325b7355b23d5e59b1079c668b308d1e703e9c2eccb37a185db2",
+          "skill_file_sha256": "49a5a10975860bb2d7e3c4e260ff19b6580e43f5fbc7770b32dece02dde48e49"
+        }
+      }
     }
   ],
   "time_gates": [

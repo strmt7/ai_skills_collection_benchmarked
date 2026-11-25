@@ -310,6 +310,26 @@ Complete the original multi-stage aggregate as well as each native stage before
 common trial admission; the publisher averages enabled stage scores and rounds
 the aggregate to three decimal places.
 
+### TestEval public development task order
+
+The TestEval pilot freezes four task IDs from each of the publisher's three
+difficulty levels. It preserves the original public sample and schedules all
+three agent conditions once per task. Each of the six orders appears twice
+overall. Within every difficulty level the conditions occupy each position
+one or two times. This limits order imbalance when model or host behavior
+changes during a serial study. The pilot covers 36 planned attempts.
+
+Verify the checked-in schedule from the metadata-only publisher frame.
+
+```powershell
+python tools/select_testeval_tasks.py --check
+```
+
+The pilot contains public development tasks, including examples used in
+model-free grader controls. The schedule establishes the assignments alone.
+Native execution still requires the declared model, subject runtime, independent
+grader and trial qualification. [Frozen selection](../benchmarks/agent-effectiveness/development/testeval-pilot-v2/selection.json) · [Publisher](https://github.com/LLM4SoftwareTesting/TestEval)
+
 ## Success criteria and reporting
 
 Preregister per-suite practical effect thresholds, independent task counts,

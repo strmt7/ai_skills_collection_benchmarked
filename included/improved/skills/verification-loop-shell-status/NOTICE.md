@@ -1,7 +1,7 @@
 # Attribution and modifications
 
 Adapted from ECC's `verification-loop` entrypoint at
-`846ffb75da9a5f4e677d927af1ad4a1951652267`, under its MIT license.
+`c05b2d6614f62f6db0047669aa4eefb223d478f9`, under its MIT license.
 The unchanged mirrored original is preserved in `provenance/original-SKILL.md`.
 
 Modified on 2 October 2026: rewritten around actual repository gates, real
@@ -13,3 +13,7 @@ This is an experimental overlay; agent efficacy remains unestablished.
 Modified on 3 November 2026: clarify PowerShell native pipeline, wrapper and
 cmdlet status handling using the recorded shell controls. The earlier overlay
 remains preserved for its historical manifest.
+
+On 25 November 2026, the maintained guidance was reviewed against the current
+locked source and newly qualified native controls. Earlier evidence remains
+associated with the exact historical revisions it tested.

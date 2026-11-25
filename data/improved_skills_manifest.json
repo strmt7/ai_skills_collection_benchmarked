@@ -26,19 +26,19 @@
       "license_source_sha": "b832b6f642312312367c07688dc7426db40a82ed",
       "original_path": "included/improved/skills/eval-harness-integrity/provenance/original-SKILL.md",
       "overlay_path": "included/improved/skills/eval-harness-integrity",
-      "overlay_sha256": "1ca16b131a0e99e029a799e3f19f7ed56e7d7f31a11e0f7bab56a74c361f5127",
+      "overlay_sha256": "55f3022ce1617f9aa7f82cea3a5544e2009b6e01e8a97e3dc7a53b8b923e9f02",
       "package_file_sha256": {
         "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
-        "SKILL.md": "1ca16b131a0e99e029a799e3f19f7ed56e7d7f31a11e0f7bab56a74c361f5127",
-        "provenance/original-SKILL.md": "0bc29828b0b20c57f1d0904fab2f046155aae9e6d9cf1d7587dd8776a8747f3d",
+        "provenance/original-SKILL.md": "49a5a10975860bb2d7e3c4e260ff19b6580e43f5fbc7770b32dece02dde48e49",
         "references/grader-admission.md": "486860c572ce1b19abc79cf1457dc4c520c729e6365abe56b267bb87fe540395",
-        "references/repeated-attempts.md": "5144b51701c5ab684ad74ecf9954b782c7ad882b5ea1b88dc77f10dd22650024"
+        "references/repeated-attempts.md": "5144b51701c5ab684ad74ecf9954b782c7ad882b5ea1b88dc77f10dd22650024",
+        "SKILL.md": "55f3022ce1617f9aa7f82cea3a5544e2009b6e01e8a97e3dc7a53b8b923e9f02"
       },
       "performance_status": "unbenchmarked",
       "skill_id": "affaan-m-everything-claude-code-agents-skills-eval-harness-skill-md",
-      "source_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-      "source_file_sha256": "0bc29828b0b20c57f1d0904fab2f046155aae9e6d9cf1d7587dd8776a8747f3d",
-      "source_url": "https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/eval-harness/SKILL.md"
+      "source_commit": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+      "source_file_sha256": "49a5a10975860bb2d7e3c4e260ff19b6580e43f5fbc7770b32dece02dde48e49",
+      "source_url": "https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/eval-harness/SKILL.md"
     },
     {
       "license": "MIT",
@@ -86,18 +86,19 @@
       "license_source_sha": "b832b6f642312312367c07688dc7426db40a82ed",
       "original_path": "included/improved/skills/verification-loop-shell-status/provenance/original-SKILL.md",
       "overlay_path": "included/improved/skills/verification-loop-shell-status",
-      "overlay_sha256": "e2d4aa146727b49c0621127cd6e0b723babe1480d5520f816e2b369496b08b8a",
+      "overlay_sha256": "c9362dde3aabde490a8a5dd9148dcf66d98cde2b14e8ebf39b640b4fbc8799a5",
       "package_file_sha256": {
         "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
-        "NOTICE.md": "faae9affbb0da3cc6f736882d1f69faad6cd4b347be90d0b7b67d65c1d3fada9",
-        "SKILL.md": "e2d4aa146727b49c0621127cd6e0b723babe1480d5520f816e2b369496b08b8a",
-        "provenance/original-SKILL.md": "01a9ae310ad4426bb05660dda6cefdeaac9513417585c09c8bb1b94738649a78"
+        "NOTICE.md": "6e7fa532e6dc05253979c6ec607087914d5f4c8011e0fee04f4dd9406eb1436e",
+        "provenance/original-SKILL.md": "6d4a399d856207297168cc03f3f8c90d4085ff14566bb928af3c97d9a31f2650",
+        "references/native-command-status.md": "d6caac29bb75db8e51ac771cf2e45cdce48e530837cb7bc4bf12574af9533ef7",
+        "SKILL.md": "c9362dde3aabde490a8a5dd9148dcf66d98cde2b14e8ebf39b640b4fbc8799a5"
       },
       "performance_status": "unbenchmarked",
       "skill_id": "affaan-m-everything-claude-code-agents-skills-verification-loop-skill-md",
-      "source_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-      "source_file_sha256": "01a9ae310ad4426bb05660dda6cefdeaac9513417585c09c8bb1b94738649a78",
-      "source_url": "https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/verification-loop/SKILL.md"
+      "source_commit": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+      "source_file_sha256": "6d4a399d856207297168cc03f3f8c90d4085ff14566bb928af3c97d9a31f2650",
+      "source_url": "https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/verification-loop/SKILL.md"
     },
     {
       "license": "ISC",
@@ -582,21 +583,21 @@
     },
     {
       "skill_id": "affaan-m-everything-claude-code-agents-skills-e2e-testing-skill-md",
-      "source_commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-      "source_url": "https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/e2e-testing/SKILL.md",
-      "source_file_sha256": "f84ae93c159bf6ecef5a60c9735dc82d96bc5f977ef52eb71678b66722acf684",
+      "source_commit": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+      "source_url": "https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/e2e-testing/SKILL.md",
+      "source_file_sha256": "8cfa22c35e5370c1f85400921d27e259cc99ba67a890625412bf2fc650a1d038",
       "overlay_path": "included/improved/skills/e2e-testing-current",
       "original_path": "included/improved/skills/e2e-testing-current/provenance/original-SKILL.md",
-      "overlay_sha256": "6a155180352355c515b61b55025fbc108db9d658a169d163825a4aa575105497",
+      "overlay_sha256": "83c0d831be800f6556451921501627ca87d036fac840bcfc0de1799ff812261f",
       "license": "MIT",
       "license_source_sha": "b832b6f642312312367c07688dc7426db40a82ed",
       "license_file_sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
       "package_file_sha256": {
         "LICENSE": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
-        "NOTICE.md": "f7736461e19dcb8f579fbbdc877db0649f9b99a38fa55f496b68818ecc5df7b2",
-        "provenance/original-SKILL.md": "f84ae93c159bf6ecef5a60c9735dc82d96bc5f977ef52eb71678b66722acf684",
+        "NOTICE.md": "c76439472dd7ef6b8ede6ba1c8fc29d23c3607a587a42252759b2d85beabca84",
+        "provenance/original-SKILL.md": "8cfa22c35e5370c1f85400921d27e259cc99ba67a890625412bf2fc650a1d038",
         "references/out-of-order-results.md": "b710e989f86914fb5dfffbe7bbba5e8e816601f14eb7603244ae5d74b5c3c0c5",
-        "SKILL.md": "6a155180352355c515b61b55025fbc108db9d658a169d163825a4aa575105497"
+        "SKILL.md": "83c0d831be800f6556451921501627ca87d036fac840bcfc0de1799ff812261f"
       },
       "performance_status": "unbenchmarked"
     }

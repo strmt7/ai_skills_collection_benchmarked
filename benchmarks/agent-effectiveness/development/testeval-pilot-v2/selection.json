@@ -1,0 +1,213 @@
+{
+  "conditions": [
+    "default",
+    "karpathy",
+    "collection"
+  ],
+  "execution_admitted": false,
+  "frame_sha256": "31ff416dc78929b0ad65426c89cec6ae7db4a38e3a02d36b19e5af025c587f46",
+  "global_position_counts": {
+    "collection": [
+      4,
+      4,
+      4
+    ],
+    "default": [
+      4,
+      4,
+      4
+    ],
+    "karpathy": [
+      4,
+      4,
+      4
+    ]
+  },
+  "kind": "testeval-public-development-selection",
+  "model_attempts": 0,
+  "order_seed": "testeval-public-order-v2",
+  "partition": "public_development",
+  "planned_attempts": 36,
+  "position_counts_by_difficulty": {
+    "1": {
+      "collection": [
+        2,
+        1,
+        1
+      ],
+      "default": [
+        1,
+        2,
+        1
+      ],
+      "karpathy": [
+        1,
+        1,
+        2
+      ]
+    },
+    "2": {
+      "collection": [
+        1,
+        2,
+        1
+      ],
+      "default": [
+        1,
+        1,
+        2
+      ],
+      "karpathy": [
+        2,
+        1,
+        1
+      ]
+    },
+    "3": {
+      "collection": [
+        1,
+        1,
+        2
+      ],
+      "default": [
+        2,
+        1,
+        1
+      ],
+      "karpathy": [
+        1,
+        2,
+        1
+      ]
+    }
+  },
+  "previous_exposures": [
+    {
+      "reason": "Earlier hand-authored native grader control",
+      "task_num": 4
+    }
+  ],
+  "publisher": {
+    "commit": "6f67dee71de6ccda1767b8c219a93f4ae0a7ce90",
+    "dataset_sha256": "a37bcaae5fd88c978254aff5633355c7c76a324ad90b8d965f6213e522e022bf",
+    "evaluator_sha256": "0bed65d444033cd33218e3a4c75bc0b65d12b1c6fe24d8939cfe96dca255f7e3",
+    "repository": "https://github.com/LLM4SoftwareTesting/TestEval"
+  },
+  "schema_version": 2,
+  "selected": [
+    {
+      "condition_order": [
+        "collection",
+        "default",
+        "karpathy"
+      ],
+      "publisher_difficulty": 1,
+      "task_num": 2932
+    },
+    {
+      "condition_order": [
+        "collection",
+        "karpathy",
+        "default"
+      ],
+      "publisher_difficulty": 2,
+      "task_num": 2850
+    },
+    {
+      "condition_order": [
+        "default",
+        "collection",
+        "karpathy"
+      ],
+      "publisher_difficulty": 3,
+      "task_num": 2242
+    },
+    {
+      "condition_order": [
+        "collection",
+        "default",
+        "karpathy"
+      ],
+      "publisher_difficulty": 1,
+      "task_num": 2299
+    },
+    {
+      "condition_order": [
+        "karpathy",
+        "default",
+        "collection"
+      ],
+      "publisher_difficulty": 2,
+      "task_num": 1976
+    },
+    {
+      "condition_order": [
+        "default",
+        "karpathy",
+        "collection"
+      ],
+      "publisher_difficulty": 3,
+      "task_num": 3072
+    },
+    {
+      "condition_order": [
+        "karpathy",
+        "collection",
+        "default"
+      ],
+      "publisher_difficulty": 1,
+      "task_num": 1805
+    },
+    {
+      "condition_order": [
+        "karpathy",
+        "collection",
+        "default"
+      ],
+      "publisher_difficulty": 2,
+      "task_num": 777
+    },
+    {
+      "condition_order": [
+        "karpathy",
+        "default",
+        "collection"
+      ],
+      "publisher_difficulty": 3,
+      "task_num": 2977
+    },
+    {
+      "condition_order": [
+        "default",
+        "karpathy",
+        "collection"
+      ],
+      "publisher_difficulty": 1,
+      "task_num": 3095
+    },
+    {
+      "condition_order": [
+        "default",
+        "collection",
+        "karpathy"
+      ],
+      "publisher_difficulty": 2,
+      "task_num": 2086
+    },
+    {
+      "condition_order": [
+        "collection",
+        "karpathy",
+        "default"
+      ],
+      "publisher_difficulty": 3,
+      "task_num": 685
+    }
+  ],
+  "selection_seed": "ai-skills-testeval-public-development-v1",
+  "source_counts_by_difficulty": {
+    "1": 9,
+    "2": 100,
+    "3": 101
+  }
+}
