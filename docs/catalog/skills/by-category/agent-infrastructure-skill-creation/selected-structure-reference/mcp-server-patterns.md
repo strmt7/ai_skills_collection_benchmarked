@@ -6,9 +6,9 @@ Mirrored skill: `included/skills/by-category/agent-infrastructure-skill-creation
 
 Agent-ready entrypoint: `included/agent-ready/by-category/agent-infrastructure-skill-creation/selected-structure-reference/mcp-server-patterns/SKILL.md`
 
-Source: [affaan-m/everything-claude-code `.agents/skills/mcp-server-patterns/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/mcp-server-patterns/SKILL.md)
+Source: [affaan-m/everything-claude-code `.agents/skills/mcp-server-patterns/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/mcp-server-patterns/SKILL.md)
 
-Selected ref: `v1.10.0`; commit `846ffb75da9a`
+Selected ref: `v2.2.3`; commit `c05b2d6614f6`
 
 ## Use
 
@@ -16,7 +16,7 @@ Load this skill only when the task matches the catalog summary or source path; r
 
 ## Scope
 
-Catalog summary: Build MCP servers with Node/TypeScript SDK — tools, resources, prompts, Zod validation, stdio vs Streamable HTTP. Use Context7 or official MCP docs for latest API.
+Catalog summary: Build MCP servers with Node/TypeScript SDK — tools, resources, prompts, Zod validation, stdio vs Streamable HTTP. Use Context7 or official MCP docs for latest API. Use when building or debugging an MCP server — tools, resources, prompts, validation, or transport choice.
 
 ## Verification
 
@@ -24,7 +24,7 @@ Static benchmark results are reported in `docs/benchmark-results.md`. Runtime cl
 
 Assigned scenarios:
 
-- `skill-proof-affaan-m-everything-claude-code-agents-skills-mcp-server-patterns-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/mcp-server-patterns/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+- `skill-proof-affaan-m-everything-claude-code-agents-skills-mcp-server-patterns-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/mcp-server-patterns/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
 - `agent-infrastructure-and-skill-creation-beir-retrieval`: Evaluate retrieval workflows across datasets.
 - `agent-infrastructure-and-skill-creation-swe-bench-lite`: Patch real GitHub issue tasks and verify with repository tests.
 - `agent-infrastructure-and-skill-creation-common-crawl-warc`: Retrieve, parse, and cite web-scale documents.
@@ -33,4 +33,3 @@ Improvement notes:
 
 - Keep provenance and selected ref visible so agents can verify the source before use.
 - Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
-- Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings.

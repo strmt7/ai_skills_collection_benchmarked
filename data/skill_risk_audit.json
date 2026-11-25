@@ -1915,17 +1915,11 @@
       "agent_ready_path": "included/agent-ready/by-category/agent-infrastructure-skill-creation/selected-structure-reference/mcp-server-patterns/SKILL.md",
       "blocking_count": 0,
       "category": "Agent infrastructure & skill creation",
-      "findings": [
-        {
-          "code": "missing-agent-metadata",
-          "detail": "No agents/openai.yaml metadata was observed for listing UI compatibility.",
-          "severity": "info"
-        }
-      ],
-      "info_count": 1,
+      "findings": [],
+      "info_count": 0,
       "mirrored_path": "included/skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/mcp-server-patterns",
       "name": "mcp-server-patterns",
-      "risk_level": "usable_with_listing_gaps",
+      "risk_level": "no_static_risk_found",
       "skill_id": "affaan-m-everything-claude-code-agents-skills-mcp-server-patterns-skill-md",
       "source_path": ".agents/skills/mcp-server-patterns/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code",
@@ -7681,17 +7675,11 @@
       "agent_ready_path": "included/agent-ready/by-category/creative-media-design/selected-structure-reference/brand-voice/SKILL.md",
       "blocking_count": 0,
       "category": "Creative, media & design",
-      "findings": [
-        {
-          "code": "missing-agent-metadata",
-          "detail": "No agents/openai.yaml metadata was observed for listing UI compatibility.",
-          "severity": "info"
-        }
-      ],
-      "info_count": 1,
+      "findings": [],
+      "info_count": 0,
       "mirrored_path": "included/skills/by-category/creative-media-design/selected-structure-reference/brand-voice",
       "name": "brand-voice",
-      "risk_level": "usable_with_listing_gaps",
+      "risk_level": "no_static_risk_found",
       "skill_id": "affaan-m-everything-claude-code-agents-skills-brand-voice-skill-md",
       "source_path": ".agents/skills/brand-voice/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code",
@@ -15006,9 +14994,9 @@
   ],
   "summary": {
     "likely_non_working": 44,
-    "no_static_risk_found": 19,
+    "no_static_risk_found": 21,
     "skill_count": 673,
     "subpar_needs_review": 262,
-    "usable_with_listing_gaps": 348
+    "usable_with_listing_gaps": 346
   }
 }

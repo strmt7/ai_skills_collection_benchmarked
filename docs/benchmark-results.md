@@ -129,7 +129,7 @@ The deterministic package-readiness runner checks package structure and records 
 | `varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md` | Agent infrastructure & skill creation | 12/12 | 100.0 | 0 | 3 | none |
 | `affaan-m-everything-claude-code-agents-skills-claude-api-skill-md` | Agent infrastructure & skill creation | 12/12 | 100.0 | 0 | 2 | none |
 | `affaan-m-everything-claude-code-agents-skills-dmux-workflows-skill-md` | Agent infrastructure & skill creation | 12/12 | 100.0 | 0 | 2 | none |
-| `affaan-m-everything-claude-code-agents-skills-mcp-server-patterns-skill-md` | Agent infrastructure & skill creation | 12/12 | 100.0 | 0 | 3 | none |
+| `affaan-m-everything-claude-code-agents-skills-mcp-server-patterns-skill-md` | Agent infrastructure & skill creation | 12/12 | 100.0 | 0 | 2 | none |
 | `affaan-m-everything-claude-code-agents-skills-strategic-compact-skill-md` | Agent infrastructure & skill creation | 12/12 | 100.0 | 0 | 2 | none |
 | `anthropics-skills-skills-mcp-builder-skill-md` | Agent infrastructure & skill creation | 12/12 | 100.0 | 0 | 3 | none |
 | `trailofbits-skills-plugins-building-secure-contracts-skills-token-integration-analyzer-skill-md` | Agent infrastructure & skill creation | 12/12 | 100.0 | 0 | 3 | none |
@@ -410,7 +410,7 @@ The deterministic package-readiness runner checks package structure and records 
 | `raven7979-ai-video-editing-skill-skill-md` | Creative, media & design | 12/12 | 100.0 | 0 | 3 | none |
 | `varnan-tech-opendirectory-packages-cli-skills-blog-cover-image-cli-skill-md` | Creative, media & design | 12/12 | 100.0 | 0 | 3 | none |
 | `affaan-m-everything-claude-code-agents-skills-article-writing-skill-md` | Creative, media & design | 12/12 | 100.0 | 0 | 2 | none |
-| `affaan-m-everything-claude-code-agents-skills-brand-voice-skill-md` | Creative, media & design | 12/12 | 100.0 | 0 | 3 | none |
+| `affaan-m-everything-claude-code-agents-skills-brand-voice-skill-md` | Creative, media & design | 12/12 | 100.0 | 0 | 2 | none |
 | `affaan-m-everything-claude-code-agents-skills-fal-ai-media-skill-md` | Creative, media & design | 12/12 | 100.0 | 0 | 2 | none |
 | `anthropics-skills-skills-algorithmic-art-skill-md` | Creative, media & design | 12/12 | 100.0 | 0 | 3 | none |
 | `anthropics-skills-skills-brand-guidelines-skill-md` | Creative, media & design | 12/12 | 100.0 | 0 | 3 | none |
@@ -630,7 +630,7 @@ The deterministic package-readiness runner checks package structure and records 
 | `k-dense-ai-scientific-agent-skills-scientific-skills-zarr-python-skill-md` | Science, research & data analysis | 12/12 | 100.0 | 0 | 5 | none |
 | `varnan-tech-opendirectory-packages-cli-skills-google-trends-api-skills-skill-md` | Search, retrieval & web automation | 12/12 | 100.0 | 0 | 3 | none |
 | `varnan-tech-opendirectory-packages-cli-skills-luma-attendees-scraper-skill-md` | Search, retrieval & web automation | 12/12 | 100.0 | 0 | 3 | none |
-| `affaan-m-everything-claude-code-agents-skills-deep-research-skill-md` | Search, retrieval & web automation | 12/12 | 100.0 | 1 | 2 | none |
+| `affaan-m-everything-claude-code-agents-skills-deep-research-skill-md` | Search, retrieval & web automation | 12/12 | 100.0 | 0 | 2 | none |
 | `affaan-m-everything-claude-code-agents-skills-documentation-lookup-skill-md` | Search, retrieval & web automation | 12/12 | 100.0 | 0 | 2 | none |
 | `affaan-m-everything-claude-code-agents-skills-exa-search-skill-md` | Search, retrieval & web automation | 12/12 | 100.0 | 0 | 2 | none |
 | `anthropics-skills-skills-frontend-design-skill-md` | Search, retrieval & web automation | 12/12 | 100.0 | 0 | 3 | none |

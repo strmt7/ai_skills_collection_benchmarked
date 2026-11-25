@@ -23,7 +23,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 ## Verification
 
 - Source mirror: `../../../../../skills/by-category/finance-commerce-forecasting/selected-structure-reference/market-research/SKILL.md`
-- Source commit: `846ffb75da9a5f4e677d927af1ad4a1951652267`
+- Source commit: `c05b2d6614f62f6db0047669aa4eefb223d478f9`
 - Static benchmark results: see `docs/benchmark-results.md`
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-affaan-m-everything-claude-code-agents-skills-market-research-skill-md`, `finance-commerce-and-forecasting-sec-edgar-companyfacts`, `finance-commerce-and-forecasting-nyc-tlc-trip-records`, `finance-commerce-and-forecasting-stackoverflow-survey`

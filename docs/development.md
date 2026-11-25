@@ -255,10 +255,14 @@ update that would rename unrelated skills. Only selected repositories need
 source checkouts; retaining a mirror does not establish upstream freshness or
 runtime readiness for that source. Neither mode fetches upstream repositories.
 
+When a source spans multiple release pins, give each ref its own checkout
+directory and declare the exact skill paths assigned to it. Preserve existing
+skill IDs when the same upstream repository changes its GitHub name. Archive
+any earlier source versions referenced by published evidence before a refresh.
+
 Evaluator schemas under `evaluators/` are maintained scoring inputs in the
-independent artifact loop; catalog generation never rewrites them. README
-packaging and adapter counts come from their existing manifests, which are
-also preserved rather than regenerated during a source refresh.
+independent artifact loop. The root README is maintained separately, with its
+badge block managed by `tools/update_readme_badges.py`.
 
 The [Windows Node control timeout investigation](research-windows-node-timeout.md)
 records an intermittent hosted test failure, local controls and its unresolved

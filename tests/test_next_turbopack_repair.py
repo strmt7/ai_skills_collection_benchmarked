@@ -4,17 +4,14 @@ import hashlib
 import json
 from pathlib import Path
 
+from helpers import original_skill_for_repair
+
 ROOT = Path(__file__).resolve().parents[1]
 ARTIFACT = ROOT / "artifacts/repaired-skill-readiness/next-turbopack-v1"
 OVERLAY = (
     ROOT
     / "included/repaired/skills/by-category/coding-refactoring-repository-automation"
     / "selected-structure-reference/nextjs-turbopack"
-)
-MIRROR = (
-    ROOT
-    / "included/skills/by-category/coding-refactoring-repository-automation"
-    / "selected-structure-reference/nextjs-turbopack/SKILL.md"
 )
 
 
@@ -24,7 +21,8 @@ def digest(path: Path) -> str:
 
 def test_overlay_preserves_original_and_binds_evidence() -> None:
     manifest = json.loads((OVERLAY / "repair.json").read_text(encoding="utf-8"))
-    assert digest(OVERLAY / manifest["provenance_skill"]) == digest(MIRROR) == manifest["original_skill_sha256"]
+    original = original_skill_for_repair(manifest)
+    assert digest(OVERLAY / manifest["provenance_skill"]) == digest(original) == manifest["original_skill_sha256"]
     assert digest(OVERLAY / "SKILL.md") == manifest["repaired_skill_sha256"]
     assert digest(OVERLAY / manifest["license_file"]) == manifest["license_sha256"]
     assert manifest["model_performance_claim"] is False

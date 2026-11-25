@@ -31,7 +31,8 @@
 - `Varnan-Tech/opendirectory`: default-branch HEAD; GitHub API reported no latest release
 - `supermemoryai/skills`: default-branch HEAD; GitHub API reported no latest release
 - `hardikpandya/stop-slop`: default-branch HEAD; GitHub API reported no latest release
-- `affaan-m/everything-claude-code`: latest GitHub release v1.10.0 ([release](https://github.com/affaan-m/everything-claude-code/releases/tag/v1.10.0))
+- `affaan-m/everything-claude-code`: retained packages from v1.10.0 ([release](https://github.com/affaan-m/everything-claude-code/releases/tag/v1.10.0))
+- `affaan-m/ECC`: selected packages from stable ECC v2.2.3 ([release](https://github.com/affaan-m/ECC/releases/tag/v2.2.3)) ([verbatim source notice](../artifacts/source-notices/ecc-MIT.txt))
 
 ## Best-Practice Sources Reviewed
 

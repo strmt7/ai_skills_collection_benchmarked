@@ -6,9 +6,9 @@ Mirrored skill: `included/skills/by-category/testing-qa-benchmarking/selected-st
 
 Agent-ready entrypoint: `included/agent-ready/by-category/testing-qa-benchmarking/selected-structure-reference/tdd-workflow-everything-claude-code/SKILL.md`
 
-Source: [affaan-m/everything-claude-code `.agents/skills/tdd-workflow/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/tdd-workflow/SKILL.md)
+Source: [affaan-m/everything-claude-code `.agents/skills/tdd-workflow/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/tdd-workflow/SKILL.md)
 
-Selected ref: `v1.10.0`; commit `846ffb75da9a`
+Selected ref: `v2.2.3`; commit `c05b2d6614f6`
 
 ## Use
 
@@ -24,7 +24,7 @@ Static benchmark results are reported in `docs/benchmark-results.md`. Runtime cl
 
 Assigned scenarios:
 
-- `skill-proof-affaan-m-everything-claude-code-agents-skills-tdd-workflow-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/tdd-workflow/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+- `skill-proof-affaan-m-everything-claude-code-agents-skills-tdd-workflow-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/tdd-workflow/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
 - `testing-qa-and-benchmarking-swe-bench-lite`: Patch real GitHub issue tasks and verify with repository tests.
 - `testing-qa-and-benchmarking-owasp-benchmark`: Find and classify vulnerability test cases.
 - `testing-qa-and-benchmarking-local-omero-compose-workflows`: Validate OMERO deployment, plugin, upload/import, and monitoring workflows.

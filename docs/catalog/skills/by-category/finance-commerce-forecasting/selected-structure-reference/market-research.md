@@ -6,9 +6,9 @@ Mirrored skill: `included/skills/by-category/finance-commerce-forecasting/select
 
 Agent-ready entrypoint: `included/agent-ready/by-category/finance-commerce-forecasting/selected-structure-reference/market-research/SKILL.md`
 
-Source: [affaan-m/everything-claude-code `.agents/skills/market-research/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/market-research/SKILL.md)
+Source: [affaan-m/everything-claude-code `.agents/skills/market-research/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/market-research/SKILL.md)
 
-Selected ref: `v1.10.0`; commit `846ffb75da9a`
+Selected ref: `v2.2.3`; commit `c05b2d6614f6`
 
 ## Use
 
@@ -24,7 +24,7 @@ Static benchmark results are reported in `docs/benchmark-results.md`. Runtime cl
 
 Assigned scenarios:
 
-- `skill-proof-affaan-m-everything-claude-code-agents-skills-market-research-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/market-research/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+- `skill-proof-affaan-m-everything-claude-code-agents-skills-market-research-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/market-research/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
 - `finance-commerce-and-forecasting-sec-edgar-companyfacts`: Extract and reconcile financial facts from filings.
 - `finance-commerce-and-forecasting-nyc-tlc-trip-records`: Clean, aggregate, and explain large real trip data.
 - `finance-commerce-and-forecasting-stackoverflow-survey`: Analyze survey data and produce reproducible charts.

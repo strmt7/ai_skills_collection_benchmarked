@@ -1,6 +1,6 @@
 ---
 name: "mcp-server-patterns"
-description: "Build MCP servers with Node/TypeScript SDK \u2014 tools, resources, prompts, Zod validation, stdio vs Streamable HTTP. Use Context7 or official MCP docs for latest API."
+description: "Build MCP servers with Node/TypeScript SDK \u2014 tools, resources, prompts, Zod validation, stdio vs Streamable HTTP. Use Context7 or official MCP docs for latest API. Use when building or debugging an MCP server \u2014 tools, resources, prompts, validation, or transport choice."
 source_skill_id: "affaan-m-everything-claude-code-agents-skills-mcp-server-patterns-skill-md"
 category: "Agent infrastructure & skill creation"
 source_mirror: "../../../../../skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/mcp-server-patterns/SKILL.md"
@@ -23,7 +23,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 ## Verification
 
 - Source mirror: `../../../../../skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/mcp-server-patterns/SKILL.md`
-- Source commit: `846ffb75da9a5f4e677d927af1ad4a1951652267`
+- Source commit: `c05b2d6614f62f6db0047669aa4eefb223d478f9`
 - Static benchmark results: see `docs/benchmark-results.md`
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-affaan-m-everything-claude-code-agents-skills-mcp-server-patterns-skill-md`, `agent-infrastructure-and-skill-creation-beir-retrieval`, `agent-infrastructure-and-skill-creation-swe-bench-lite`, `agent-infrastructure-and-skill-creation-common-crawl-warc`

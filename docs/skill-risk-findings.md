@@ -7,8 +7,8 @@ This report flags likely subpar or non-working skills from static, source-backed
 - Skills audited: `673`
 - Likely non-working: `44`
 - Subpar / needs review: `262`
-- Usable with listing gaps: `348`
-- No static risk found: `19`
+- Usable with listing gaps: `346`
+- No static risk found: `21`
 
 ## Findings
 
@@ -91,7 +91,6 @@ This report flags likely subpar or non-working skills from static, source-backed
 | `usable_with_listing_gaps` | `varnan-tech-opendirectory-packages-cli-skills-show-hn-writer-skill-md` | Agent infrastructure & skill creation | 0 | 0 | missing-agent-metadata: No agents/openai.yaml metadata was observed for listing UI compatibility. |
 | `subpar_needs_review` | `affaan-m-everything-claude-code-agents-skills-claude-api-skill-md` | Agent infrastructure & skill creation | 0 | 1 | duplicate-skill-name: This skill name collides with another source; bulk install is unsafe. |
 | `subpar_needs_review` | `affaan-m-everything-claude-code-agents-skills-dmux-workflows-skill-md` | Agent infrastructure & skill creation | 0 | 1 | delegation-conflict-in-source: Mirrored source mentions delegated AI work; repository AGENTS.md overrides it with single-session execution. |
-| `usable_with_listing_gaps` | `affaan-m-everything-claude-code-agents-skills-mcp-server-patterns-skill-md` | Agent infrastructure & skill creation | 0 | 0 | missing-agent-metadata: No agents/openai.yaml metadata was observed for listing UI compatibility. |
 | `subpar_needs_review` | `anthropics-skills-skills-mcp-builder-skill-md` | Agent infrastructure & skill creation | 0 | 1 | duplicate-skill-name: This skill name collides with another source; bulk install is unsafe.; missing-agent-metadata: No agents/openai.yaml metadata was observed for listing UI compatibility. |
 | `usable_with_listing_gaps` | `trailofbits-skills-plugins-building-secure-contracts-skills-token-integration-analyzer-skill-md` | Agent infrastructure & skill creation | 0 | 0 | missing-agent-metadata: No agents/openai.yaml metadata was observed for listing UI compatibility. |
 | `usable_with_listing_gaps` | `trailofbits-skills-plugins-skill-improver-skills-skill-improver-skill-md` | Agent infrastructure & skill creation | 0 | 0 | missing-agent-metadata: No agents/openai.yaml metadata was observed for listing UI compatibility. |
@@ -363,7 +362,6 @@ This report flags likely subpar or non-working skills from static, source-backed
 | `usable_with_listing_gaps` | `evolinkai-video-generation-skill-for-openclaw-skill-md` | Creative, media & design | 0 | 0 | missing-agent-metadata: No agents/openai.yaml metadata was observed for listing UI compatibility. |
 | `usable_with_listing_gaps` | `raven7979-ai-video-editing-skill-skill-md` | Creative, media & design | 0 | 0 | missing-agent-metadata: No agents/openai.yaml metadata was observed for listing UI compatibility. |
 | `usable_with_listing_gaps` | `varnan-tech-opendirectory-packages-cli-skills-blog-cover-image-cli-skill-md` | Creative, media & design | 0 | 0 | missing-agent-metadata: No agents/openai.yaml metadata was observed for listing UI compatibility. |
-| `usable_with_listing_gaps` | `affaan-m-everything-claude-code-agents-skills-brand-voice-skill-md` | Creative, media & design | 0 | 0 | missing-agent-metadata: No agents/openai.yaml metadata was observed for listing UI compatibility. |
 | `usable_with_listing_gaps` | `anthropics-skills-skills-algorithmic-art-skill-md` | Creative, media & design | 0 | 0 | missing-agent-metadata: No agents/openai.yaml metadata was observed for listing UI compatibility. |
 | `usable_with_listing_gaps` | `anthropics-skills-skills-brand-guidelines-skill-md` | Creative, media & design | 0 | 0 | missing-agent-metadata: No agents/openai.yaml metadata was observed for listing UI compatibility. |
 | `usable_with_listing_gaps` | `anthropics-skills-skills-slack-gif-creator-skill-md` | Creative, media & design | 0 | 0 | missing-agent-metadata: No agents/openai.yaml metadata was observed for listing UI compatibility. |

@@ -131,9 +131,9 @@
 - Skill page: [api-design](../skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/api-design.md)
 - Mirrored skill: `included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/api-design`
 - Agent-ready entrypoint: `included/agent-ready/by-category/coding-refactoring-repository-automation/selected-structure-reference/api-design/SKILL.md`
-- Source: [affaan-m/everything-claude-code `.agents/skills/api-design/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/api-design/SKILL.md)
-- Selected ref: `v1.10.0`; commit `846ffb75da9a`
-- What it covers: Catalog summary: REST API design patterns including resource naming, status codes, pagination, filtering, error responses, versioning, and rate limiting for production APIs.
+- Source: [affaan-m/everything-claude-code `.agents/skills/api-design/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/api-design/SKILL.md)
+- Selected ref: `v2.2.3`; commit `c05b2d6614f6`
+- What it covers: Catalog summary: REST API design patterns including resource naming, status codes, pagination, filtering, error responses, versioning, and rate limiting for production APIs. Use when designing or reviewing REST endpoints, resource names, status codes, pagination, or versioning.
 - Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 - Observed structure: Headings: API Design Patterns, When to Activate, Resource Design, URL Structure, Resources are nouns, plural, lowercase, kebab-case. Resources: has_agents_metadata.
 - Notability: Included from selected repository structure reference with explicit GitHub provenance.
@@ -142,7 +142,7 @@
   - Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
   - Move long background material into references/ to keep SKILL.md concise.
 - Assigned benchmark scenarios:
-  - `skill-proof-affaan-m-everything-claude-code-agents-skills-api-design-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/api-design/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+  - `skill-proof-affaan-m-everything-claude-code-agents-skills-api-design-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/api-design/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
   - `coding-refactoring-and-repository-automation-swe-bench-lite`: Patch real GitHub issue tasks and verify with repository tests.
   - `coding-refactoring-and-repository-automation-kubernetes-examples`: Validate manifests and operational runbooks.
   - `coding-refactoring-and-repository-automation-opentelemetry-demo`: Debug telemetry across microservices.
@@ -152,9 +152,9 @@
 - Skill page: [backend-patterns](../skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/backend-patterns.md)
 - Mirrored skill: `included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/backend-patterns`
 - Agent-ready entrypoint: `included/agent-ready/by-category/coding-refactoring-repository-automation/selected-structure-reference/backend-patterns/SKILL.md`
-- Source: [affaan-m/everything-claude-code `.agents/skills/backend-patterns/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/backend-patterns/SKILL.md)
-- Selected ref: `v1.10.0`; commit `846ffb75da9a`
-- What it covers: Catalog summary: Backend architecture patterns, API design, database optimization, and server-side best practices for Node.js, Express, and Next.js API routes.
+- Source: [affaan-m/everything-claude-code `.agents/skills/backend-patterns/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/backend-patterns/SKILL.md)
+- Selected ref: `v2.2.3`; commit `c05b2d6614f6`
+- What it covers: Catalog summary: Backend architecture patterns, API design, database optimization, and server-side best practices for Node.js, Express, and Next.js API routes. Use when building or reviewing Node.js, Express, or Next.js API routes and their data access.
 - Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 - Observed structure: Headings: Backend Development Patterns, When to Activate, API Design Patterns, RESTful API Structure, Repository Pattern. Resources: has_agents_metadata.
 - Notability: Included from selected repository structure reference with explicit GitHub provenance.
@@ -163,7 +163,7 @@
   - Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
   - Move long background material into references/ to keep SKILL.md concise.
 - Assigned benchmark scenarios:
-  - `skill-proof-affaan-m-everything-claude-code-agents-skills-backend-patterns-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/backend-patterns/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+  - `skill-proof-affaan-m-everything-claude-code-agents-skills-backend-patterns-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/backend-patterns/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
   - `coding-refactoring-and-repository-automation-swe-bench-lite`: Patch real GitHub issue tasks and verify with repository tests.
   - `coding-refactoring-and-repository-automation-kubernetes-examples`: Validate manifests and operational runbooks.
   - `coding-refactoring-and-repository-automation-opentelemetry-demo`: Debug telemetry across microservices.
@@ -173,9 +173,9 @@
 - Skill page: [eval-harness](../skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/eval-harness.md)
 - Mirrored skill: `included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/eval-harness`
 - Agent-ready entrypoint: `included/agent-ready/by-category/coding-refactoring-repository-automation/selected-structure-reference/eval-harness/SKILL.md`
-- Source: [affaan-m/everything-claude-code `.agents/skills/eval-harness/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/eval-harness/SKILL.md)
-- Selected ref: `v1.10.0`; commit `846ffb75da9a`
-- What it covers: Catalog summary: Formal evaluation framework for Claude Code sessions implementing eval-driven development (EDD) principles
+- Source: [affaan-m/everything-claude-code `.agents/skills/eval-harness/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/eval-harness/SKILL.md)
+- Selected ref: `v2.2.3`; commit `c05b2d6614f6`
+- What it covers: Catalog summary: Formal evaluation framework for Claude Code sessions implementing eval-driven development (EDD) principles. Use when a Claude Code workflow needs a formal eval before it is trusted or changed.
 - Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 - Observed structure: Headings: Eval Harness Skill, When to Activate, Philosophy, Eval Types, Capability Evals. Resources: has_agents_metadata.
 - Notability: Included from selected repository structure reference with explicit GitHub provenance.
@@ -183,7 +183,7 @@
   - Keep provenance and selected ref visible so agents can verify the source before use.
   - Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
 - Assigned benchmark scenarios:
-  - `skill-proof-affaan-m-everything-claude-code-agents-skills-eval-harness-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/eval-harness/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+  - `skill-proof-affaan-m-everything-claude-code-agents-skills-eval-harness-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/eval-harness/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
   - `coding-refactoring-and-repository-automation-swe-bench-lite`: Patch real GitHub issue tasks and verify with repository tests.
   - `coding-refactoring-and-repository-automation-kubernetes-examples`: Validate manifests and operational runbooks.
   - `coding-refactoring-and-repository-automation-opentelemetry-demo`: Debug telemetry across microservices.
@@ -213,8 +213,8 @@
 - Skill page: [investor-materials](../skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/investor-materials.md)
 - Mirrored skill: `included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/investor-materials`
 - Agent-ready entrypoint: `included/agent-ready/by-category/coding-refactoring-repository-automation/selected-structure-reference/investor-materials/SKILL.md`
-- Source: [affaan-m/everything-claude-code `.agents/skills/investor-materials/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/investor-materials/SKILL.md)
-- Selected ref: `v1.10.0`; commit `846ffb75da9a`
+- Source: [affaan-m/everything-claude-code `.agents/skills/investor-materials/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/investor-materials/SKILL.md)
+- Selected ref: `v2.2.3`; commit `c05b2d6614f6`
 - What it covers: Catalog summary: Create and update pitch decks, one-pagers, investor memos, accelerator applications, financial models, and fundraising materials. Use when the user needs investor-facing documents, projections, use-of-funds tables, milestone plans, or materials that must stay internally consistent across multiple fundraising assets.
 - Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 - Observed structure: Headings: Investor Materials, When to Activate, Golden Rule, Core Workflow, Asset Guidance. Resources: has_agents_metadata.
@@ -223,7 +223,7 @@
   - Keep provenance and selected ref visible so agents can verify the source before use.
   - Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
 - Assigned benchmark scenarios:
-  - `skill-proof-affaan-m-everything-claude-code-agents-skills-investor-materials-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/investor-materials/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+  - `skill-proof-affaan-m-everything-claude-code-agents-skills-investor-materials-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/investor-materials/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
   - `coding-refactoring-and-repository-automation-swe-bench-lite`: Patch real GitHub issue tasks and verify with repository tests.
   - `coding-refactoring-and-repository-automation-kubernetes-examples`: Validate manifests and operational runbooks.
   - `coding-refactoring-and-repository-automation-opentelemetry-demo`: Debug telemetry across microservices.
@@ -233,8 +233,8 @@
 - Skill page: [nextjs-turbopack](../skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/nextjs-turbopack.md)
 - Mirrored skill: `included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/nextjs-turbopack`
 - Agent-ready entrypoint: `included/agent-ready/by-category/coding-refactoring-repository-automation/selected-structure-reference/nextjs-turbopack/SKILL.md`
-- Source: [affaan-m/everything-claude-code `.agents/skills/nextjs-turbopack/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/nextjs-turbopack/SKILL.md)
-- Selected ref: `v1.10.0`; commit `846ffb75da9a`
+- Source: [affaan-m/everything-claude-code `.agents/skills/nextjs-turbopack/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/nextjs-turbopack/SKILL.md)
+- Selected ref: `v2.2.3`; commit `c05b2d6614f6`
 - What it covers: Catalog summary: Next.js 16+ and Turbopack — incremental bundling, FS caching, dev speed, and when to use Turbopack vs webpack.
 - Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 - Observed structure: Headings: Next.js and Turbopack, When to Use, How It Works, Examples, Commands. Resources: has_agents_metadata.
@@ -243,7 +243,7 @@
   - Keep provenance and selected ref visible so agents can verify the source before use.
   - Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
 - Assigned benchmark scenarios:
-  - `skill-proof-affaan-m-everything-claude-code-agents-skills-nextjs-turbopack-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/nextjs-turbopack/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+  - `skill-proof-affaan-m-everything-claude-code-agents-skills-nextjs-turbopack-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/nextjs-turbopack/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
   - `coding-refactoring-and-repository-automation-swe-bench-lite`: Patch real GitHub issue tasks and verify with repository tests.
   - `coding-refactoring-and-repository-automation-kubernetes-examples`: Validate manifests and operational runbooks.
   - `coding-refactoring-and-repository-automation-opentelemetry-demo`: Debug telemetry across microservices.

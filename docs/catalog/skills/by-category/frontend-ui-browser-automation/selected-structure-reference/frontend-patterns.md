@@ -6,9 +6,9 @@ Mirrored skill: `included/skills/by-category/frontend-ui-browser-automation/sele
 
 Agent-ready entrypoint: `included/agent-ready/by-category/frontend-ui-browser-automation/selected-structure-reference/frontend-patterns/SKILL.md`
 
-Source: [affaan-m/everything-claude-code `.agents/skills/frontend-patterns/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/frontend-patterns/SKILL.md)
+Source: [affaan-m/everything-claude-code `.agents/skills/frontend-patterns/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/frontend-patterns/SKILL.md)
 
-Selected ref: `v1.10.0`; commit `846ffb75da9a`
+Selected ref: `v2.2.3`; commit `c05b2d6614f6`
 
 ## Use
 
@@ -16,7 +16,7 @@ Load this skill only when the task matches the catalog summary or source path; r
 
 ## Scope
 
-Catalog summary: Frontend development patterns for React, Next.js, state management, performance optimization, and UI best practices.
+Catalog summary: Frontend development patterns for React, Next.js, state management, performance optimization, and UI best practices. Use when building or reviewing React or Next.js components, state, or render performance.
 
 ## Verification
 
@@ -24,7 +24,7 @@ Static benchmark results are reported in `docs/benchmark-results.md`. Runtime cl
 
 Assigned scenarios:
 
-- `skill-proof-affaan-m-everything-claude-code-agents-skills-frontend-patterns-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/frontend-patterns/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+- `skill-proof-affaan-m-everything-claude-code-agents-skills-frontend-patterns-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/frontend-patterns/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
 - `frontend-ui-and-browser-automation-owasp-juice-shop`: Run safe local security workflows against a known vulnerable app.
 - `frontend-ui-and-browser-automation-coco-captions`: Evaluate image understanding and visual QA tasks.
 - `frontend-ui-and-browser-automation-air-defense-android-benchmarks`: Run startup, gameplay, and visual QA benchmark scenarios.

@@ -8,11 +8,9 @@ import re
 from pathlib import Path
 from typing import Any
 
+from helpers import original_skill_for_repair
+
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = (
-    ROOT
-    / "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/tdd-workflow-everything-claude-code"
-)
 OVERLAY = (
     ROOT
     / "included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/tdd-workflow-everything-claude-code"
@@ -44,11 +42,12 @@ def threshold_example(path: Path, option: str) -> dict[str, Any]:
 
 def test_provenance_and_corrected_configuration_match() -> None:
     repair = json.loads((OVERLAY / "repair.json").read_text(encoding="utf-8"))
-    assert canonical(SOURCE / "SKILL.md") == canonical(OVERLAY / repair["provenance_skill"])
-    assert digest(SOURCE / "SKILL.md") == repair["original_skill_sha256"]
+    original = original_skill_for_repair(repair)
+    assert canonical(original) == canonical(OVERLAY / repair["provenance_skill"])
+    assert digest(original) == repair["original_skill_sha256"]
     assert digest(OVERLAY / "SKILL.md") == repair["repaired_skill_sha256"]
     assert digest(OVERLAY / repair["license_file"]) == repair["license_sha256"]
-    assert threshold_example(SOURCE / "SKILL.md", "coverageThresholds") == threshold_example(
+    assert threshold_example(original, "coverageThresholds") == threshold_example(
         OVERLAY / "SKILL.md", "coverageThreshold"
     )
     for name, expected in repair["evidence_sha256"].items():

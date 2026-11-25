@@ -36,89 +36,23 @@
     "affaan-m-everything-claude-code-agents-skills-api-design-skill-md": {
       "category": "Coding, refactoring & repository automation",
       "evaluation": {
-        "evidence": [
-          {
-            "path": "artifacts/research/backend-contracts/backend-review.json",
-            "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
-          },
-          {
-            "path": "docs/research-backend-contracts.md",
-            "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
-          },
-          {
-            "path": "benchmarks/component-controls/backend/result.json",
-            "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
-          }
-        ],
-        "scope": "Selected source-bound component controls only; no whole-skill or model-efficacy claim",
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/api-design",
       "research": {
-        "evidence": [
-          {
-            "path": "artifacts/research/backend-contracts/backend-review.json",
-            "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
-          },
-          {
-            "path": "docs/research-backend-contracts.md",
-            "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
-          },
-          {
-            "path": "benchmarks/component-controls/backend/result.json",
-            "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
-          },
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          }
-        ],
-        "open_work": [
-          "Complete original package read; whole-domain/runtime and agent-efficacy qualification remain open"
-        ],
-        "resource_hash_policy": "catalog-canonical-v1",
-        "resources": {
-          "SKILL.md": {
-            "review_scope": "Complete original instruction body and all examples",
-            "sha256": "de3be9cde47bd707b2a8af79254915ed03bfcd1b2aeb187f1d889597e8cbb76d",
-            "status": "reviewed"
-          },
-          "agents/openai.yaml": {
-            "review_scope": "Complete UI, activation policy and default prompt; not installed",
-            "sha256": "e823a4342b02b5410aae18a3c3ad351d8a73b206b59f1446dc04c43c4944c2dd",
-            "status": "reviewed"
-          }
-        },
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
-        "evidence": [
-          {
-            "path": "artifacts/research/backend-contracts/backend-review.json",
-            "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
-          },
-          {
-            "path": "docs/research-backend-contracts.md",
-            "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
-          },
-          {
-            "path": "benchmarks/component-controls/backend/result.json",
-            "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
-          }
-        ],
-        "scope": "Licensed experimental overlay with complete original provenance; immutable mirror unchanged",
-        "status": "complete"
+        "evidence": [],
+        "status": "pending"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "7d58157146bcc1479c7501ec5d729d7a4961cef054ae79800d07d4125251a895",
-        "skill_file_sha256": "de3be9cde47bd707b2a8af79254915ed03bfcd1b2aeb187f1d889597e8cbb76d"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "0703a1f095369848595f117521bfef9bbb9221f5d6fefb7ff88363f4e717fd5c",
+        "skill_file_sha256": "fa3aea33ce430e2c6406f3c00c0d07aadaed244607d396981524cb50399db8c9"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-article-writing-skill-md": {
@@ -129,18 +63,8 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/selected-structure-reference/article-writing",
       "research": {
-        "evidence": [
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          }
-        ],
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
         "evidence": [],
@@ -148,97 +72,31 @@
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "351f756db6122484ab36395947905b83b2a336d1566faa1df0e90994cb3fe5ff",
-        "skill_file_sha256": "068e9aa2bc7e7e63b396a5df7c50b8b68fa338d3ad1f66012757cde6b41fb7bd"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "e903e6b092e64a62e96b43c11ecc1cdc765ba56d10fb276382f9c18de0f20e89",
+        "skill_file_sha256": "6305169f1aaf57e293284aa21bf646d995079ae2921499f7800c7db42d57091f"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-backend-patterns-skill-md": {
       "category": "Coding, refactoring & repository automation",
       "evaluation": {
-        "evidence": [
-          {
-            "path": "artifacts/research/backend-contracts/backend-review.json",
-            "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
-          },
-          {
-            "path": "docs/research-backend-contracts.md",
-            "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
-          },
-          {
-            "path": "benchmarks/component-controls/backend/result.json",
-            "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
-          }
-        ],
-        "scope": "Selected source-bound component controls only; no whole-skill or model-efficacy claim",
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/backend-patterns",
       "research": {
-        "evidence": [
-          {
-            "path": "artifacts/research/backend-contracts/backend-review.json",
-            "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
-          },
-          {
-            "path": "docs/research-backend-contracts.md",
-            "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
-          },
-          {
-            "path": "benchmarks/component-controls/backend/result.json",
-            "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
-          },
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          }
-        ],
-        "open_work": [
-          "Complete original package read; whole-domain/runtime and agent-efficacy qualification remain open"
-        ],
-        "resource_hash_policy": "catalog-canonical-v1",
-        "resources": {
-          "SKILL.md": {
-            "review_scope": "Complete original instruction body and all examples",
-            "sha256": "952e95fd7e8d0b17f13835dde8067d7dd2abd019e6e17821d5ebf913113c589e",
-            "status": "reviewed"
-          },
-          "agents/openai.yaml": {
-            "review_scope": "Complete UI, activation policy and default prompt; not installed",
-            "sha256": "6a56b16e6ea055931bc38979c12279e7cd3ac7d3440bdd8fa1dc3152d003d36b",
-            "status": "reviewed"
-          }
-        },
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
-        "evidence": [
-          {
-            "path": "artifacts/research/backend-contracts/backend-review.json",
-            "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
-          },
-          {
-            "path": "docs/research-backend-contracts.md",
-            "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
-          },
-          {
-            "path": "benchmarks/component-controls/backend/result.json",
-            "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
-          }
-        ],
-        "scope": "Licensed experimental overlay with complete original provenance; immutable mirror unchanged",
-        "status": "complete"
+        "evidence": [],
+        "status": "pending"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "9268785eefb6545f307e6f4d271dd4f2e838982bed776f435f0261d8a69a14c1",
-        "skill_file_sha256": "952e95fd7e8d0b17f13835dde8067d7dd2abd019e6e17821d5ebf913113c589e"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "85939026c4ae3c734607f1bbda0d6ef29c1b3305d20dda732e34f13a62626f64",
+        "skill_file_sha256": "d4d3c9c54b5bf5af3c1711fe16ef28db1538d4c272cfa0e4420da60c368fef02"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-brand-voice-skill-md": {
@@ -249,18 +107,8 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/selected-structure-reference/brand-voice",
       "research": {
-        "evidence": [
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          }
-        ],
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
         "evidence": [],
@@ -268,9 +116,9 @@
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "5bd4e2059a601031b4cf06ea5369235dc5c965900217e6b433905e7d68606917",
-        "skill_file_sha256": "9c23f871aa77a7d64d2a005fe0849a1380de2a4098d81ec73d13c468e556a59e"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "b4b3089799d9252c075e193d263041264992cd0717cbbd2797653d8e772020b8",
+        "skill_file_sha256": "63bb7231f1ec358dcd6b4d9c8bceb212d3c2475be2dd2b8336e3c265bc6d5c03"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-bun-runtime-skill-md": {
@@ -281,135 +129,18 @@
       },
       "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/bun-runtime",
       "research": {
-        "evidence": [
-          {
-            "path": "docs/research-testing-workflows.md",
-            "sha256": "b1c1e389a83345d776df6b922cebee42a8bf4a7890d4275657bd2c8122e0e71d"
-          },
-          {
-            "path": "artifacts/research/2026-10-02/testing-stable-version-review.json",
-            "sha256": "fe1d9275f9223b3a28c295543ff96d2911c0c2cb06bee99e8fc2092c8639fb01"
-          },
-          {
-            "path": "artifacts/research/2026-10-02/verification-pipeline-controls.json",
-            "sha256": "4b1055f47959b6107c820cc64eddb5ef737f545a0ebfe450d874ae2bce56cbef"
-          },
-          {
-            "path": "artifacts/research/2026-10-02/playwright-current-contract-review.json",
-            "sha256": "7934647cceb6f62c6ac213a6f4fcf81ad6eafb369570c22097e494c6a8136ad0"
-          },
-          {
-            "path": "artifacts/research/2026-10-02/playwright-wait-runtime-controls.json",
-            "sha256": "55207bb87a1cfffd2c7e51f29593055b469fbd0cdb9429883fc15f742afbd9ee"
-          },
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "docs/research-bun-runtime.md",
-            "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
-            "sha256": "36373612d07247578d1ec0a575bb266b1a390dae6b0e6db510e6283aafc64d85"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/frozen-control.py",
-            "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
-            "sha256": "90ea226a9d0ecd06b9051243dcab61f48ef7429da927738825d5d4b4b8d51845"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/http-server-probe.cjs",
-            "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
-            "sha256": "53dec6eb87a3ae41de1b0aaf62541311f58b2ee79719d017ad21aafe05bac42d"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/windows/result.json",
-            "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
-            "sha256": "b12476f42ab7a62668c44ce9cd8e37f90737d11d4f44b34ca0438b5e898cedc7"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/linux/result.json",
-            "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
-            "sha256": "aea0d2f58dc97dfb43ede225a55842e3562a41afb0aa7cc345ba3dffbaea662c"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/windows/node26-http.json",
-            "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
-            "sha256": "dec6f8e452726ad755e4934a553ad69989cc418371c69cb6474f10676cbdbbce"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/windows/bun14-http.json",
-            "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
-            "sha256": "b87cbf8eedc95af6a61cb266515928890c9077c22c96b4e0276794d5d05dc6f7"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/linux/node26-http.json",
-            "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
-            "sha256": "573393f58d10b88c0e7c842d51747cc9185bff89fcaa86414541af015687ad33"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/linux/bun14-http.json",
-            "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
-            "sha256": "f7c2348abcbf29de74b37b4ddee9e6054888459082de609f6d3ab6c5ccc7d3d4"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/upstream-observation.json",
-            "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
-            "sha256": "b210c97b88aca6ec0feee1bdde45377650457e90665e9f3fd230720f2d0da697"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/shell-control.py",
-            "scope": "Bun 1.4.4 selected CLI and shell controls only; no deployment or agent efficacy evaluation.",
-            "sha256": "7de9664b378cbb945f9d90c10fe38e153d9fa645f2608f2b77c727b090203b6a"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/windows/shell-control.json",
-            "scope": "Bun 1.4.4 selected CLI and shell controls only; no deployment or agent efficacy evaluation.",
-            "sha256": "7a4b3fb5c34d0086ce82007925a11d2e9ffb070a8f8efb99c98cad7dd252238e"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/linux/shell-control.json",
-            "scope": "Bun 1.4.4 selected CLI and shell controls only; no deployment or agent efficacy evaluation.",
-            "sha256": "aa9f57c850759dd1f22e6cee14ebe5572d623af78952d2ba8ef9537768b81baa"
-          }
-        ],
-        "open_work": [
-          "Review remaining runtime, package manager, bundler and migration claims against current sources and representative projects.",
-          "Qualify actual agent activation and independently measure model effectiveness; do not infer efficacy from component controls."
-        ],
-        "resource_hash_policy": "catalog-canonical-v1",
-        "resources": {
-          "SKILL.md": {
-            "review_scope": "Complete pinned instruction text read; selected compatibility, frozen install, deployment guidance and shell examples checked; remaining claims and agent efficacy remain open.",
-            "sha256": "2929d1f227962d86bfb2f0e45efd81590cfc90aeaad5b449f4630207e4e07204",
-            "status": "reviewed"
-          },
-          "agents/openai.yaml": {
-            "review_scope": "Complete display, prompt and activation metadata read; actual agent activation was not tested.",
-            "sha256": "7e118790707006a543e3105cb3269c41dc98e601182dce4c7160867a934adb1a",
-            "status": "reviewed"
-          }
-        },
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
-        "evidence": [
-          {
-            "path": "included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/bun-runtime/repair.json",
-            "sha256": "b872d62edc3b268bfaaeb15ae3dcfd2d2940e54858dbc9f8f0c7bbf6b48e222b"
-          }
-        ],
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "0c83016f06cc0a4a7bff5c28d0fa89d4afa05385206324de0efc89976238ff97",
-        "skill_file_sha256": "2929d1f227962d86bfb2f0e45efd81590cfc90aeaad5b449f4630207e4e07204"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "d506e0a286ae4bcbdf84821e63b9f85ef99aa5ea11d4344ce87c66930d41f244",
+        "skill_file_sha256": "b93720b74ea93e870ca87418f490f939b16e4cddace7fb3c97d2fa21398cc985"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-claude-api-skill-md": {
@@ -451,89 +182,23 @@
     "affaan-m-everything-claude-code-agents-skills-coding-standards-skill-md": {
       "category": "Frontend, UI & browser automation",
       "evaluation": {
-        "evidence": [
-          {
-            "path": "artifacts/research/frontend-contracts/frontend-review.json",
-            "sha256": "b7e5e43f27280b5010636e9a8ede3ec9ee06c0d080e0394014726f3d649ff792"
-          },
-          {
-            "path": "docs/research-frontend-contracts.md",
-            "sha256": "dc7e9e056d6bf60267a0e23a2c5a56354cd812a9cdd8476f19cc5537a9d06fe5"
-          },
-          {
-            "path": "benchmarks/component-controls/frontend/result.json",
-            "sha256": "f0824f04eb0ef4885b52ff6f10e98c75b204ae0f27f311aac3c945ea3f158ea4"
-          }
-        ],
-        "scope": "Selected component controls and targeted native React qualification; no agent-efficacy claim",
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "mirrored_path": "included/skills/by-category/frontend-ui-browser-automation/selected-structure-reference/coding-standards",
       "research": {
-        "evidence": [
-          {
-            "path": "artifacts/research/frontend-contracts/frontend-review.json",
-            "sha256": "b7e5e43f27280b5010636e9a8ede3ec9ee06c0d080e0394014726f3d649ff792"
-          },
-          {
-            "path": "docs/research-frontend-contracts.md",
-            "sha256": "dc7e9e056d6bf60267a0e23a2c5a56354cd812a9cdd8476f19cc5537a9d06fe5"
-          },
-          {
-            "path": "benchmarks/component-controls/frontend/result.json",
-            "sha256": "f0824f04eb0ef4885b52ff6f10e98c75b204ae0f27f311aac3c945ea3f158ea4"
-          },
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          }
-        ],
-        "open_work": [
-          "See documented platform/framework and agent-trial qualification limits; reviewed instruction bodies are not runtime completion"
-        ],
-        "resource_hash_policy": "catalog-canonical-v1",
-        "resources": {
-          "SKILL.md": {
-            "review_scope": "Complete instruction body and examples; source/version/platform and dependency contracts",
-            "sha256": "f856f758c97fb62ddbfbd75d4570e03bf4ed04c258d13756fecdb313a04cc8d9",
-            "status": "reviewed"
-          },
-          "agents/openai.yaml": {
-            "review_scope": "Complete UI metadata, activation policy and default prompt; not installed",
-            "sha256": "5661a2691330e2a64e41d2c38638809eeeafb44a62d3a5d434fdc234ad3bb235",
-            "status": "reviewed"
-          }
-        },
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
-        "evidence": [
-          {
-            "path": "artifacts/research/frontend-contracts/frontend-review.json",
-            "sha256": "b7e5e43f27280b5010636e9a8ede3ec9ee06c0d080e0394014726f3d649ff792"
-          },
-          {
-            "path": "docs/research-frontend-contracts.md",
-            "sha256": "dc7e9e056d6bf60267a0e23a2c5a56354cd812a9cdd8476f19cc5537a9d06fe5"
-          },
-          {
-            "path": "benchmarks/component-controls/frontend/result.json",
-            "sha256": "f0824f04eb0ef4885b52ff6f10e98c75b204ae0f27f311aac3c945ea3f158ea4"
-          }
-        ],
-        "scope": "Authored experimental overlay with complete original provenance; immutable source unchanged",
-        "status": "complete"
+        "evidence": [],
+        "status": "pending"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "c2b14280ff723c38a2add7d863bfa4d60f090b3fca9b74812de89c119b2e1230",
-        "skill_file_sha256": "f856f758c97fb62ddbfbd75d4570e03bf4ed04c258d13756fecdb313a04cc8d9"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "4d94a23156707e86aee7a2857b78ee61f0c6909d10ef52cc8c53483c656ece06",
+        "skill_file_sha256": "7295014cdb95589b28e9ac687e0c40a7fd329288e18a0e6fb6c5b1ed58437a0d"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-content-engine-skill-md": {
@@ -544,18 +209,8 @@
       },
       "mirrored_path": "included/skills/by-category/communication-productivity-support/selected-structure-reference/content-engine",
       "research": {
-        "evidence": [
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          }
-        ],
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
         "evidence": [],
@@ -563,9 +218,9 @@
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "3051d9f5d6dc16949d4f6797b0a98a7ba99e807d9aca8c38ef90479d78c13d59",
-        "skill_file_sha256": "a64c6df93125b77c7199df086e4aedeecae0ea578d30e8c2ac73f9957688b52c"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "bc36babff49935a48e4fefd4113f4539e184f0dd93fbad438d597376dd85907e",
+        "skill_file_sha256": "1daa87ef009908ac3851230bf366f87d6fde3da90372ff3f21069044a79e100b"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-crosspost-skill-md": {
@@ -576,18 +231,8 @@
       },
       "mirrored_path": "included/skills/by-category/communication-productivity-support/selected-structure-reference/crosspost",
       "research": {
-        "evidence": [
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          }
-        ],
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
         "evidence": [],
@@ -595,9 +240,9 @@
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "3f214b37700ade61749fdc782c92064841769aac17f82538b250be2e69267aa1",
-        "skill_file_sha256": "4c130ad682003589622dccae004f6180a472648179919ec23677aef1b743b5a4"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "b34584d8e1c80aac880e8d92cff45d74b8a2c7af242ef7b5d5bd303980d14834",
+        "skill_file_sha256": "fc136701621edcfceb2c3d8c7529120c32d39b4e57142941e0d55b08d252e78b"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-deep-research-skill-md": {
@@ -608,18 +253,8 @@
       },
       "mirrored_path": "included/skills/by-category/search-retrieval-web-automation/selected-structure-reference/deep-research",
       "research": {
-        "evidence": [
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          }
-        ],
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
         "evidence": [],
@@ -627,9 +262,9 @@
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "93f3867033673b0b5bb4ad4f799cc5cf2e2d3622831299cac8e7814277048b69",
-        "skill_file_sha256": "2d631427fc9aba27a318735f930bdb49f5c6ce416506340025eac01648f1df09"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "4386b4abcd3e063da2b8fa75860089ee383aabb8ebaf285dc1fadb5044fbed50",
+        "skill_file_sha256": "e42c74a515e9c2a2f662f7846402c1ccd8b2bd278cba84450ff0960b07f0f995"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-dmux-workflows-skill-md": {
@@ -640,22 +275,8 @@
       },
       "mirrored_path": "included/skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/dmux-workflows",
       "research": {
-        "evidence": [
-          {
-            "path": "docs/research-category-routing.md",
-            "sha256": "ebb12eeb2087d52667592165a53e37ec144ead27ab2f83e994dd857e371d1958"
-          },
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          }
-        ],
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
         "evidence": [],
@@ -663,9 +284,9 @@
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "b29f541bbf30f26014f17aa0f6929321c0647274d364b820bca1d259011f7550",
-        "skill_file_sha256": "06343029c1ae3b08f585a3d7826e782066e0ad3d1e0173cc98c969a380137e90"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "6e7b4d0c960626c4232e9eb19b896307274eedfe248fb4e9019186d5475f40ab",
+        "skill_file_sha256": "75eef4455c91b14c2dd67196f4be8b50e53bbbc82b6d060d5aa6c0a58e8c4daa"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-documentation-lookup-skill-md": {
@@ -676,18 +297,8 @@
       },
       "mirrored_path": "included/skills/by-category/search-retrieval-web-automation/selected-structure-reference/documentation-lookup-everything-claude-code",
       "research": {
-        "evidence": [
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          }
-        ],
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
         "evidence": [],
@@ -695,9 +306,9 @@
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "80187d5b911e2a61ae78cc720fc67dc072bd8b1ba5d42017ac9d95c2b3894e3b",
-        "skill_file_sha256": "89cc655f72a5e3a947e88b7bae419c068f9ea34101b3fc9e7129184432b507cd"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "e95e18e3f0f23a5fec524f754a9cfb6421c043b83d2cb699b344bd3e16da0b18",
+        "skill_file_sha256": "e171317c95add368192bfe127eff5873dacc55c7669db4e12b0bf03277ea9e67"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-e2e-testing-skill-md": {
@@ -708,273 +319,40 @@
       },
       "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/e2e-testing",
       "research": {
-        "evidence": [
-          {
-            "path": "docs/research-testing-workflows.md",
-            "sha256": "b1c1e389a83345d776df6b922cebee42a8bf4a7890d4275657bd2c8122e0e71d"
-          },
-          {
-            "path": "artifacts/research/2026-10-02/testing-stable-version-review.json",
-            "sha256": "fe1d9275f9223b3a28c295543ff96d2911c0c2cb06bee99e8fc2092c8639fb01"
-          },
-          {
-            "path": "artifacts/research/2026-10-02/verification-pipeline-controls.json",
-            "sha256": "4b1055f47959b6107c820cc64eddb5ef737f545a0ebfe450d874ae2bce56cbef"
-          },
-          {
-            "path": "artifacts/research/2026-10-02/playwright-current-contract-review.json",
-            "sha256": "7934647cceb6f62c6ac213a6f4fcf81ad6eafb369570c22097e494c6a8136ad0"
-          },
-          {
-            "path": "artifacts/research/2026-10-02/playwright-wait-runtime-controls.json",
-            "sha256": "55207bb87a1cfffd2c7e51f29593055b469fbd0cdb9429883fc15f742afbd9ee"
-          },
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "docs/research-e2e-response-order.md",
-            "scope": "Synthetic Playwright response-ordering component controls and selected upstream source observation; no agent efficacy result.",
-            "sha256": "d69eddbd27b88b656f41f414a5c6298b35ebb4e50ee2410747348abaa622832a"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/e2e-response-v1/control.cjs",
-            "scope": "Synthetic Playwright response-ordering component controls and selected upstream source observation; no agent efficacy result.",
-            "sha256": "cae9eab344c0b944b29894e5d61d117ac8c94e6f5a28c3a7530b9d5708a0e8b6"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/e2e-response-v1/final-node24-linux.json",
-            "scope": "Synthetic Playwright response-ordering component controls and selected upstream source observation; no agent efficacy result.",
-            "sha256": "e9bd89fce59fa06ebe6f0baf55d98eca1adb87ddb1e4a0ace9e4b9afe323f40b"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/e2e-response-v1/final-node24-windows.json",
-            "scope": "Synthetic Playwright response-ordering component controls and selected upstream source observation; no agent efficacy result.",
-            "sha256": "99d53470954d19d0347967bbe2217cdaacb8fa7c86af3c9cf0e15127e8326d79"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/e2e-response-v1/final-node26-linux.json",
-            "scope": "Synthetic Playwright response-ordering component controls and selected upstream source observation; no agent efficacy result.",
-            "sha256": "117bad6bbf74d2465fc5125ddf93a092ea22422d1a8a465ff23e4c4f96b83fce"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/e2e-response-v1/final-node26-windows.json",
-            "scope": "Synthetic Playwright response-ordering component controls and selected upstream source observation; no agent efficacy result.",
-            "sha256": "d074699b70786c41acc7dd15fab608ad8afcff0d0dfb379d463886d7f1fc0d74"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/e2e-response-v1/replay-ci-windows.json",
-            "scope": "Synthetic Playwright response-ordering component controls and selected upstream source observation; no agent efficacy result.",
-            "sha256": "99d53470954d19d0347967bbe2217cdaacb8fa7c86af3c9cf0e15127e8326d79"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/e2e-response-v1/upstream-final-node26-linux.json",
-            "scope": "Synthetic Playwright response-ordering component controls and selected upstream source observation; no agent efficacy result.",
-            "sha256": "68e718acae6a80b98a07fe9baffed8baa852c07cc115aaf1779b0439b87b3909"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/e2e-response-v1/upstream-final-node26-windows.json",
-            "scope": "Synthetic Playwright response-ordering component controls and selected upstream source observation; no agent efficacy result.",
-            "sha256": "38f14ad348cc865539122e0b6c2b9fef98fec9c09a7f9b5154b950c403cbee30"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/e2e-response-v1/upstream-observation.json",
-            "scope": "Synthetic Playwright response-ordering component controls and selected upstream source observation; no agent efficacy result.",
-            "sha256": "c4c7224eb72293216b90c14afbd8e4c7acf6b8f4dcd0aa8a2cdc434d09349f54"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          },
-          {
-            "path": "artifacts/research/2026-11-13/e2e-readiness/review.json",
-            "scope": "Source-grounded component and exact candidate-example controls; no independent model-efficacy result.",
-            "sha256": "720f19fcd7a1cc3b075b930e835e2a6337027c74f453338493c7e36a6a6a7ea8"
-          }
-        ],
-        "open_work": [
-          "Validate remaining application/browser/CI claims and held scopes independently.",
-          "Preserve existing source and historical repair evidence; perform counted model comparisons only after execution and experiment admission."
-        ],
-        "resource_hash_policy": "catalog-canonical-v1",
-        "resources": {
-          "SKILL.md": {
-            "review_scope": "Complete entrypoint read; selected readiness, response-order and trace contracts qualified with current native browser and exact maintained example. Other source claims, financial/wallet flows and cybersecurity scope are not accepted by these controls.",
-            "sha256": "f84ae93c159bf6ecef5a60c9735dc82d96bc5f977ef52eb71678b66722acf684",
-            "status": "reviewed"
-          },
-          "agents/openai.yaml": {
-            "review_scope": "Complete descriptor read; metadata/activation intent only. No external agent or OpenAI API runtime invoked.",
-            "sha256": "5f50508a300616d77f39dc50a51de10cabd05ef7ae770e7948ef6c28f340cdf2",
-            "status": "reviewed"
-          }
-        },
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
-        "evidence": [
-          {
-            "path": "included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/e2e-testing/repair.json",
-            "sha256": "6292f1e6a55d24c0943b5499630e80c7cb2006feac789654f7874c9c09c12fdd"
-          },
-          {
-            "path": "artifacts/research/2026-11-13/e2e-readiness/review.json",
-            "scope": "Source-grounded component and exact candidate-example controls; no independent model-efficacy result.",
-            "sha256": "720f19fcd7a1cc3b075b930e835e2a6337027c74f453338493c7e36a6a6a7ea8"
-          },
-          {
-            "path": "artifacts/research/2026-11-17/fixture-lifecycle/review.json",
-            "scope": "Validated fixture ownership and cleanup behavior. Comparative evaluation pending.",
-            "sha256": "a277732c7592235712719c51162d7111625e1dfb2e7c322b912df7a71da6c467"
-          }
-        ],
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "e171e35e31104739e070e54cb0f4de788414f9cada9a455c82580f439da3c511",
-        "skill_file_sha256": "f84ae93c159bf6ecef5a60c9735dc82d96bc5f977ef52eb71678b66722acf684"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "6c92d5f2861dd2ffde8fbd1ce47ede85d82b510ea6d0765096a2c5d228924986",
+        "skill_file_sha256": "8cfa22c35e5370c1f85400921d27e259cc99ba67a890625412bf2fc650a1d038"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-eval-harness-skill-md": {
       "category": "Coding, refactoring & repository automation",
       "evaluation": {
-        "evidence": [
-          {
-            "path": "artifacts/agent-trials/development-v2-report/summary.json",
-            "scope": "Joint injected eval-harness and strategic-compact bundle; one development task; all arms 3/3 task passes; no isolated skill effect or quality gain established.",
-            "sha256": "6b7eb92c679409eb116fb31ee50da299cc9c9b4f90558ade82f15114014be701"
-          }
-        ],
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/eval-harness",
       "research": {
-        "evidence": [
-          {
-            "path": "docs/research-initial-agent-workflows.md",
-            "sha256": "04a54ee8f98e844081de808bc770fd9ab63cb7fcdb60c35f48378aec83496d05"
-          },
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          },
-          {
-            "path": "artifacts/research/2026-11-09/benchmark-expansion/protocol-source-before-expansion.json",
-            "scope": "Selected any-of-k and all-of-k subset metrics, missing-outcome bounds and independent controls; not full skill review or agent-efficacy evidence. Historical protocol page retained as an exact-byte source snapshot; no expanded review or new run is inferred.",
-            "sha256": "b1d7a9002e5f23b61848871cde8f392b686313a59b648a2dbae5dbf43c63901b"
-          },
-          {
-            "path": "tools/summarize_best_of_k.py",
-            "scope": "Selected any-of-k and all-of-k subset metrics, missing-outcome bounds and independent controls; not full skill review or agent-efficacy evidence.",
-            "sha256": "6bc8cfba948b6bed6e0a8c716978937538b963a6c8752e029a8a0fe348fb0772"
-          },
-          {
-            "path": "tests/test_summarize_best_of_k.py",
-            "scope": "Selected any-of-k and all-of-k subset metrics, missing-outcome bounds and independent controls; not full skill review or agent-efficacy evidence.",
-            "sha256": "79c9d03f26cb46280958110c59f54ad055576f74c0a54122ddbb598237fde1be"
-          },
-          {
-            "path": "docs/research-eval-harness-sampling.md",
-            "scope": "Scoped sampling review; not a full skill review or agent trial.",
-            "sha256": "93518a12556780f14bebe238bf118ea9f48ca772bbb174e1486ae99274518f51"
-          },
-          {
-            "path": "artifacts/research/2026-11-03/eval-harness-sampling-v1/check_metrics.py",
-            "scope": "Independent finite-subset control; synthetic observations only.",
-            "sha256": "1a6ddc366f1b69e92333a37e1362ecc633895751c885ff5601d0444e1dc0dad2"
-          },
-          {
-            "path": "artifacts/research/2026-11-03/eval-harness-sampling-v1/result.json",
-            "scope": "Source-bound synthetic control result; no agent-performance claim.",
-            "sha256": "104223ca324f4b9c5d41b0ded47144ec5a00e13d7333c96196ce9cf30dfb092b"
-          },
-          {
-            "path": "artifacts/research/2026-11-09/eval-harness-sampling-v2/summary-core-source.py.txt",
-            "scope": "Descriptive summary core extracted with unchanged calculation syntax trees; not agent-efficacy evidence. Historical exact-byte tools/_trial_summary.py source at ba7899423096fb0add6b462cc9f4e85e95a519ff; later prompt-availability changes are outside this original source review.",
-            "sha256": "46985cacd8e131f1f4aa83a0956021636e5b646d05c329b305f53edfdab809a6"
-          },
-          {
-            "path": "artifacts/research/2026-11-09/eval-harness-sampling-v2/result.json",
-            "scope": "Refactored-source finite subset receipt; same independent enumeration and numerical results as v1, no agent-efficacy evidence.",
-            "sha256": "ca67159373bad41c0e2ad2aca0488e9667de57dd14700737715fca651cad2ca2"
-          },
-          {
-            "path": "artifacts/research/2026-11-09/benchmark-expansion/sources.json",
-            "scope": "External methodology overview/abstract review supporting proposed content, routing and context-cost controls; no study reproduction, complete skill review or agent-efficacy evidence.",
-            "sha256": "23998266d904fe9cefdea0b2c82dfe8131a2bae1e6cbe0109f4b300e95c65f9b"
-          },
-          {
-            "path": "artifacts/research/2026-11-11/evaluation-resumption/review.json",
-            "scope": "Independent native controls and upstream observation. No agent efficacy evidence.",
-            "sha256": "a4581ce106cdfbc51b309141d5ea46f67033a68fdd0866f168041baef7f1db93"
-          },
-          {
-            "path": "docs/research-evaluation-and-resumption.md",
-            "sha256": "f2a216e27b872f8836ba5cb5b104358809e8532a75e66657987ea1cd8d3ffcf4"
-          },
-          {
-            "path": "artifacts/research/2026-11-11/evaluation-runtime-origins/review.json",
-            "scope": "Official Python path behavior, five native origin probes, and six native controller controls. No model-efficacy evidence.",
-            "sha256": "188fbc537d9b8ecd1cee3b1629183102b2280068018a52820f2003fab5b31320"
-          }
-        ],
-        "open_work": [
-          "Complete the original skill review within the permitted scope; cybersecurity-related examples are deferred.",
-          "Independently test skill activation and agent effectiveness; a component-level metric is not an agent benchmark."
-        ],
-        "resource_hash_policy": "catalog-canonical-v1",
-        "resources": {
-          "SKILL.md": {
-            "review_scope": "Complete source read; only evaluation metrics and reporting were assessed. Other guidance remains unreviewed, including deferred cybersecurity examples. Native scorer unit and result-admission controls reviewed in the current round. Runtime-origin, starting-score headroom and complete-source collection mechanisms reviewed using independent development controls.",
-            "sha256": "0bc29828b0b20c57f1d0904fab2f046155aae9e6d9cf1d7587dd8776a8747f3d",
-            "status": "pending"
-          },
-          "agents/openai.yaml": {
-            "review_scope": "Complete display metadata, invocation policy and default prompt read; no runtime activation tested.",
-            "sha256": "6f2c19eb59062ca776286c2f6a6a7f1b552b4f927a2b48de888a7dbb2eeec6bd",
-            "status": "reviewed"
-          }
-        },
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
-        "evidence": [
-          {
-            "path": "included/improved/skills/eval-harness/SKILL.md",
-            "sha256": "c598eed23babdb8fcc2eea2498c5841516bd641e7d0e373aeadb504201daf1d9"
-          },
-          {
-            "path": "included/improved/skills/eval-harness-current/SKILL.md",
-            "scope": "Versioned experimental overlay; no agent-effectiveness evaluation.",
-            "sha256": "03bd4666ace171cc6852c531b474de6cd13131fb89f3971c0a8fb56c4632ab8a"
-          },
-          {
-            "path": "included/improved/skills/eval-harness-evidence/SKILL.md",
-            "scope": "Versioned experimental overlay. Prior trial and research versions preserved.",
-            "sha256": "67f75deff3178effa99b60287a6300bcb434e1254fae962d11b6f0592596b364"
-          },
-          {
-            "path": "included/improved/skills/eval-harness-integrity/SKILL.md",
-            "scope": "Versioned experimental overlay covering unchanged-input headroom, runtime origin identity and attempt accounting. Previous versions preserved.",
-            "sha256": "cedb0e80d9736e2d7e9cbded2b6b9b2589620f2bcea4f3ecc6ac4231ce4454e9"
-          }
-        ],
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "b144cd41a249418ac510f97d58e5fd51ab16061148167afd4012f9e6f7a6548c",
-        "skill_file_sha256": "0bc29828b0b20c57f1d0904fab2f046155aae9e6d9cf1d7587dd8776a8747f3d"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "bbe6528d38bb325b7355b23d5e59b1079c668b308d1e703e9c2eccb37a185db2",
+        "skill_file_sha256": "49a5a10975860bb2d7e3c4e260ff19b6580e43f5fbc7770b32dece02dde48e49"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-everything-claude-code-skill-md": {
@@ -1073,18 +451,8 @@
       },
       "mirrored_path": "included/skills/by-category/search-retrieval-web-automation/selected-structure-reference/exa-search",
       "research": {
-        "evidence": [
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          }
-        ],
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
         "evidence": [],
@@ -1092,9 +460,9 @@
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "ff7533d62af0f7f9b325de2328b442930c9f2ddd4ec33f196e26863532e82afe",
-        "skill_file_sha256": "284d5c438457c4aeb1636e2b79cfa73c03c0365f4f698214a0a222991f893523"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "28208c393df2f5f265acbbb4af55b556de4c68180407394ff6204dfe7128c187",
+        "skill_file_sha256": "7d9004b9a874a9bdbb6025fd7cdd0b416b9e25b7ecfc8fca7bc7852392a7fb05"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-fal-ai-media-skill-md": {
@@ -1105,18 +473,8 @@
       },
       "mirrored_path": "included/skills/by-category/creative-media-design/selected-structure-reference/fal-ai-media",
       "research": {
-        "evidence": [
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          }
-        ],
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
         "evidence": [],
@@ -1124,97 +482,31 @@
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "8dcbcccaa0b233a8c8c994e3c288da69649698993065fdfb299a3663ca91c20f",
-        "skill_file_sha256": "86f110798171367784c0b83e45d8f4202fcc3d590e980c6ec7e82d0212fa7aff"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "293d8d1a944f1eac6c6501f108007e04e09f1127c205e3928169e2289851f7a9",
+        "skill_file_sha256": "fa1016998c7e73b14f584dab9ebcaaff9a5b2197854814375c73b58a6048f48e"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-frontend-patterns-skill-md": {
       "category": "Frontend, UI & browser automation",
       "evaluation": {
-        "evidence": [
-          {
-            "path": "artifacts/research/frontend-contracts/frontend-review.json",
-            "sha256": "b7e5e43f27280b5010636e9a8ede3ec9ee06c0d080e0394014726f3d649ff792"
-          },
-          {
-            "path": "docs/research-frontend-contracts.md",
-            "sha256": "dc7e9e056d6bf60267a0e23a2c5a56354cd812a9cdd8476f19cc5537a9d06fe5"
-          },
-          {
-            "path": "benchmarks/component-controls/frontend/result.json",
-            "sha256": "f0824f04eb0ef4885b52ff6f10e98c75b204ae0f27f311aac3c945ea3f158ea4"
-          }
-        ],
-        "scope": "Selected component controls and targeted native React qualification; no agent-efficacy claim",
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "mirrored_path": "included/skills/by-category/frontend-ui-browser-automation/selected-structure-reference/frontend-patterns",
       "research": {
-        "evidence": [
-          {
-            "path": "artifacts/research/frontend-contracts/frontend-review.json",
-            "sha256": "b7e5e43f27280b5010636e9a8ede3ec9ee06c0d080e0394014726f3d649ff792"
-          },
-          {
-            "path": "docs/research-frontend-contracts.md",
-            "sha256": "dc7e9e056d6bf60267a0e23a2c5a56354cd812a9cdd8476f19cc5537a9d06fe5"
-          },
-          {
-            "path": "benchmarks/component-controls/frontend/result.json",
-            "sha256": "f0824f04eb0ef4885b52ff6f10e98c75b204ae0f27f311aac3c945ea3f158ea4"
-          },
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          }
-        ],
-        "open_work": [
-          "See documented platform/framework and agent-trial qualification limits; reviewed instruction bodies are not runtime completion"
-        ],
-        "resource_hash_policy": "catalog-canonical-v1",
-        "resources": {
-          "SKILL.md": {
-            "review_scope": "Complete instruction body and examples; source/version/platform and dependency contracts",
-            "sha256": "dd04a1c02503036ee7f4d649c9b7b75d2e6954a94d6f464faedfa992701d1978",
-            "status": "reviewed"
-          },
-          "agents/openai.yaml": {
-            "review_scope": "Complete UI metadata, activation policy and default prompt; not installed",
-            "sha256": "8b21415748f7b5cb0f289f1f2c4cad934ef4cee1cdaa6306dbf2d7754b1ca8ec",
-            "status": "reviewed"
-          }
-        },
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
-        "evidence": [
-          {
-            "path": "artifacts/research/frontend-contracts/frontend-review.json",
-            "sha256": "b7e5e43f27280b5010636e9a8ede3ec9ee06c0d080e0394014726f3d649ff792"
-          },
-          {
-            "path": "docs/research-frontend-contracts.md",
-            "sha256": "dc7e9e056d6bf60267a0e23a2c5a56354cd812a9cdd8476f19cc5537a9d06fe5"
-          },
-          {
-            "path": "benchmarks/component-controls/frontend/result.json",
-            "sha256": "f0824f04eb0ef4885b52ff6f10e98c75b204ae0f27f311aac3c945ea3f158ea4"
-          }
-        ],
-        "scope": "Authored experimental overlay with complete original provenance; immutable source unchanged",
-        "status": "complete"
+        "evidence": [],
+        "status": "pending"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "0251173f22aa20293bd562963717e67d101260dba06ac9de7fa82117a54e159e",
-        "skill_file_sha256": "dd04a1c02503036ee7f4d649c9b7b75d2e6954a94d6f464faedfa992701d1978"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "5204d255f2d247f71828da748d02972fcb822c349d5a600cc0025c2f88961ac4",
+        "skill_file_sha256": "722866e1106ca51a6eb7f6dd163554d5fa3a30fe9beb5fdbc075ab3a84ae883b"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-frontend-slides-skill-md": {
@@ -1225,18 +517,8 @@
       },
       "mirrored_path": "included/skills/by-category/documents-spreadsheets-presentations/selected-structure-reference/frontend-slides",
       "research": {
-        "evidence": [
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          }
-        ],
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
         "evidence": [],
@@ -1244,97 +526,31 @@
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "cffe5157bbf5dbf68f5697b99ff6c786c521a85c894e950003a140527dd191c8",
-        "skill_file_sha256": "da378954096f51844ab9214d6ae30f317d7f5373af41fbc7e989d20518adb9b8"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "2209d1075a87e1e659338dd54ffc456641c95f9442e254fe381216335f453bcb",
+        "skill_file_sha256": "3d05c5e983e9d046ccc9336237dde02918e74fb0cf1787dbfeddac3d802f5071"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-investor-materials-skill-md": {
       "category": "Coding, refactoring & repository automation",
       "evaluation": {
-        "evidence": [
-          {
-            "path": "artifacts/research/backend-contracts/backend-review.json",
-            "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
-          },
-          {
-            "path": "docs/research-backend-contracts.md",
-            "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
-          },
-          {
-            "path": "benchmarks/component-controls/backend/result.json",
-            "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
-          }
-        ],
-        "scope": "Selected source-bound component controls only; no whole-skill or model-efficacy claim",
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/investor-materials",
       "research": {
-        "evidence": [
-          {
-            "path": "artifacts/research/backend-contracts/backend-review.json",
-            "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
-          },
-          {
-            "path": "docs/research-backend-contracts.md",
-            "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
-          },
-          {
-            "path": "benchmarks/component-controls/backend/result.json",
-            "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
-          },
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          }
-        ],
-        "open_work": [
-          "Complete original package read; whole-domain/runtime and agent-efficacy qualification remain open"
-        ],
-        "resource_hash_policy": "catalog-canonical-v1",
-        "resources": {
-          "SKILL.md": {
-            "review_scope": "Complete original instruction body and all examples",
-            "sha256": "0541ac8ede8d39c59a646834481d0de86312e598331b86dc7027ece0def3c193",
-            "status": "reviewed"
-          },
-          "agents/openai.yaml": {
-            "review_scope": "Complete UI, activation policy and default prompt; not installed",
-            "sha256": "fae8c572e0edc7110f692e115d4ad7fa20d2d2852dead8dc366bfebdbf29b041",
-            "status": "reviewed"
-          }
-        },
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
-        "evidence": [
-          {
-            "path": "artifacts/research/backend-contracts/backend-review.json",
-            "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
-          },
-          {
-            "path": "docs/research-backend-contracts.md",
-            "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
-          },
-          {
-            "path": "benchmarks/component-controls/backend/result.json",
-            "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
-          }
-        ],
-        "scope": "Instructions retained; finance/documentation routing change reserved for final layout",
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "6234f4ffd52c20b50489d75881fdf4eada1083bedc681528f70fdf1ab099ce82",
-        "skill_file_sha256": "0541ac8ede8d39c59a646834481d0de86312e598331b86dc7027ece0def3c193"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "72a5e6c3ef96fc7b134d70913a78a6c8737e0875b7e49fcd17aa397ebfb577fb",
+        "skill_file_sha256": "11797289d40f893053fee569b9a5922222d35f931e7bc38ba9268845a29cc164"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-investor-outreach-skill-md": {
@@ -1345,18 +561,8 @@
       },
       "mirrored_path": "included/skills/by-category/communication-productivity-support/selected-structure-reference/investor-outreach",
       "research": {
-        "evidence": [
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          }
-        ],
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
         "evidence": [],
@@ -1364,9 +570,9 @@
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "b88e42dc8bda3119e4ed4148d41b7b8681076d4be491db62e4ddbd2cedb1312a",
-        "skill_file_sha256": "ab71ee37a1ff5f9b7f27908d33fc47f03e7897e6c87be3f8d7c0e4a8d73fefdd"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "ce34d720cdc3765f4d988aa53e3579a9e5eed068d058e21303254efb05f0ad14",
+        "skill_file_sha256": "592568dae2182091e66505ad2eab2a1316ab17b461aa483723ebbb12e3d5f254"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-market-research-skill-md": {
@@ -1377,29 +583,8 @@
       },
       "mirrored_path": "included/skills/by-category/finance-commerce-forecasting/selected-structure-reference/market-research",
       "research": {
-        "evidence": [
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          }
-        ],
-        "resource_hash_policy": "catalog-canonical-v1",
-        "resources": {
-          "SKILL.md": {
-            "sha256": "7ef3fa13d6272fd295eeb2aca9f6a2f09f6a8270cf33b0675fc5a0018cf6e406",
-            "status": "pending"
-          },
-          "agents/openai.yaml": {
-            "sha256": "42e1b1bf676506bc50027131cd8226b151f48a57551197308102dd01fd080943",
-            "status": "pending"
-          }
-        },
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
         "evidence": [],
@@ -1407,9 +592,9 @@
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "92611c259721a6b07f2e2f951919deca33aa9a1e690a626d7e6a2750748775bd",
-        "skill_file_sha256": "7ef3fa13d6272fd295eeb2aca9f6a2f09f6a8270cf33b0675fc5a0018cf6e406"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "5345354ad761fdbfe665060e803835f2ca59ff59e3fd19ea8cd765b975092bc7",
+        "skill_file_sha256": "bcccf6d1976ca9cebb08b5b80e53b76fc01d13698ad4cac544955d9dbe5bee03"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-mcp-server-patterns-skill-md": {
@@ -1420,22 +605,8 @@
       },
       "mirrored_path": "included/skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/mcp-server-patterns",
       "research": {
-        "evidence": [
-          {
-            "path": "docs/research-initial-agent-workflows.md",
-            "sha256": "04a54ee8f98e844081de808bc770fd9ab63cb7fcdb60c35f48378aec83496d05"
-          },
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          }
-        ],
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
         "evidence": [],
@@ -1443,9 +614,9 @@
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "93540dd91d9a82c715bdb5c9757803b14a8be590ba4012b1406de584b550ea34",
-        "skill_file_sha256": "8da7edb0647f1015c5d70951d66a8f9dd2108726eb1cf9949ff2874849c4a880"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "99e465adde71158d3b2c1422ad7e6c9a1615660f4fb299e6f57f8b685d044f60",
+        "skill_file_sha256": "a740cb21444aec71800aafb94beedc4045c0ad33f20dee1f5f3acd567a300a8d"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-nextjs-turbopack-skill-md": {
@@ -1456,92 +627,18 @@
       },
       "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/nextjs-turbopack",
       "research": {
-        "evidence": [
-          {
-            "path": "docs/research-category-routing.md",
-            "sha256": "ebb12eeb2087d52667592165a53e37ec144ead27ab2f83e994dd857e371d1958"
-          },
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/next-turbopack-v1/windows-result.json",
-            "scope": "Selected version-specific component controls and upstream observation; not an agent evaluation.",
-            "sha256": "1750263eef3a404ebcd34bcace2e4eab38492ca5ea86040fe5888581ce249790"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/next-turbopack-v1/linux-result.json",
-            "scope": "Selected version-specific component controls and upstream observation; not an agent evaluation.",
-            "sha256": "19aceb5a695bb73686f50fd41e68894a47dd36afad8fa19c1b3f362f70351aa6"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/next-turbopack-v1/upstream-observation.json",
-            "scope": "Selected version-specific component controls and upstream observation; not an agent evaluation.",
-            "sha256": "bb37c645756835db4f8bada076b67e1e36dfd5851362229ace20f3399225517b"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          },
-          {
-            "path": "docs/research-next-cache-defaults.md",
-            "sha256": "0dcd3151652fb9525dfc36a4e50c121e326e090d85d961e870d33c2ca3b048ef"
-          },
-          {
-            "path": "benchmarks/dependency-regressions/next_turbopack_cache.py",
-            "sha256": "f28abe958b6e84ba7cc189b93d9874ddb24e8323b816d72fa03d7032d94a41d4"
-          },
-          {
-            "path": "artifacts/research/2026-11-03/next-cache-defaults-v1/windows-result.json",
-            "sha256": "239613d3b4c7fdf00f24dd8c42386d084da57c97a29c330f2b1e39f8dfa8042a"
-          },
-          {
-            "path": "artifacts/research/2026-11-03/next-cache-defaults-v1/linux-result.json",
-            "sha256": "671c70509d486f096949783ffe3ca9210e79d7337a682f9f2e3de9e5884e2ab3"
-          },
-          {
-            "path": "artifacts/research/2026-11-03/next-cache-defaults-v1/upstream-observation.json",
-            "sha256": "0e5c5bf0d151becf69675b5f80ff089dc59ee05d78d0bb5a4b46d4ccce1ea63a"
-          }
-        ],
-        "resource_hash_policy": "catalog-canonical-v1",
-        "resources": {
-          "SKILL.md": {
-            "captured_raw_sha256": "ca08eec7bc37bc0d90b2417f6806cc09d1c9b3536028ee07f7d53d9769fdb822",
-            "review_scope": "Complete locked entrypoint reviewed against upstream, current documentation and selected component controls; speed and agent effectiveness remain unmeasured.",
-            "sha256": "f65da15aabeb9dca7ae08525739e72ab16e79a78ff4004f7cab6ad2de1c2a79b",
-            "status": "reviewed"
-          },
-          "agents/openai.yaml": {
-            "captured_raw_sha256": "e33c8bc4bbb6fac578c5a7e54517f35dc4f492c807851058c4bb0722e95eb93a",
-            "review_scope": "Complete locked discovery metadata reviewed and compared with the stable upstream release; automatic selection was not evaluated.",
-            "sha256": "eae70fb66b6bcbc2df6137f4f1a7681a11391d45b333a282fa512864f36785e6",
-            "status": "reviewed"
-          }
-        },
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
-        "evidence": [
-          {
-            "path": "included/repaired/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/nextjs-turbopack/repair.json",
-            "scope": "Maintained version-specific overlay; upstream mirror remains unchanged.",
-            "sha256": "0534182588674fe9682cae796194b0a473217903cc9034fe3b0f85e27ff2966a"
-          },
-          {
-            "path": "included/improved/skills/nextjs-turbopack-cache/SKILL.md",
-            "sha256": "616f4264a1b82d70280cb16f02e9e1c87568bf9c7642b2b654337808abfc60fb"
-          }
-        ],
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "da74181af5e8b11c70fa12d97ec7c1e2d94fcea5023841c51e97ea4e01048bff",
-        "skill_file_sha256": "f65da15aabeb9dca7ae08525739e72ab16e79a78ff4004f7cab6ad2de1c2a79b"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "ac96189b510890c953a7c56b52c6b734f3c4dd453bb1ccd208faca27954dd59c",
+        "skill_file_sha256": "2beabec4326fc32e652db21378bae5f704c931a6ff50d0496b9c9f1c8340f82d"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-security-review-skill-md": {
@@ -1575,90 +672,23 @@
     "affaan-m-everything-claude-code-agents-skills-strategic-compact-skill-md": {
       "category": "Agent infrastructure & skill creation",
       "evaluation": {
-        "evidence": [
-          {
-            "path": "artifacts/agent-trials/development-v2-report/summary.json",
-            "scope": "Frozen earlier strategic-compact overlay and eval-harness bundle; one development task; all arms 3/3 task passes; no isolated skill effect or quality gain established. The later strategic-compact-current overlay has not been evaluated.",
-            "sha256": "6b7eb92c679409eb116fb31ee50da299cc9c9b4f90558ade82f15114014be701"
-          }
-        ],
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "mirrored_path": "included/skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/strategic-compact",
       "research": {
-        "evidence": [
-          {
-            "path": "docs/research-initial-agent-workflows.md",
-            "sha256": "04a54ee8f98e844081de808bc770fd9ab63cb7fcdb60c35f48378aec83496d05"
-          },
-          {
-            "path": "docs/research-context-token-accounting.md",
-            "sha256": "a14303ebd4cf07f4e216b04172db0a2e1a5a432fbab2ac539e84b21fbc7850d9"
-          },
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          },
-          {
-            "path": "artifacts/research/2026-11-11/evaluation-resumption/review.json",
-            "scope": "Independent native controls and upstream observation. No agent efficacy evidence.",
-            "sha256": "a4581ce106cdfbc51b309141d5ea46f67033a68fdd0866f168041baef7f1db93"
-          },
-          {
-            "path": "docs/research-evaluation-and-resumption.md",
-            "sha256": "f2a216e27b872f8836ba5cb5b104358809e8532a75e66657987ea1cd8d3ffcf4"
-          },
-          {
-            "path": "artifacts/research/2026-11-14/ledger-resource-portability/migration.json",
-            "scope": "Exact original and published bytes establish a line-ending-only migration to the existing catalog hash policy. No review status or evaluation result changed.",
-            "sha256": "ef15b6c20a301329d1f996fb5d126f0c61b3ad501ac7b0add9230d771d10c99f"
-          }
-        ],
-        "resource_hash_policy": "catalog-canonical-v1",
-        "resources": {
-          "SKILL.md": {
-            "captured_raw_sha256": "3687b590f5f39a23d22b7700bf9e208e14a462b1a2c68f531f995fe3675f95f5",
-            "review_scope": "Reviewed the pinned entrypoint in full. Assessed context signals, host hooks, durable records and owned process resumption. The referenced hook is absent from the locked package.",
-            "sha256": "c83c4c9d60d30d508bbd2bf0c6ffa724b5fdac679addd4828b268892dc39dc1b",
-            "status": "reviewed"
-          },
-          "agents/openai.yaml": {
-            "captured_raw_sha256": "7354622d7dd7d5ddf271c07aa0b2db72e69e83a18b9c4309751cb3a647789ac4",
-            "review_scope": "Reviewed complete user-interface metadata and implicit invocation policy. Activation behavior has not been measured.",
-            "sha256": "88acce453f917eda04f291533c1edb9722b00a37e94581dc30255028f65961b2",
-            "status": "reviewed"
-          }
-        },
-        "status": "complete"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
-        "evidence": [
-          {
-            "path": "included/improved/skills/strategic-compact/SKILL.md",
-            "sha256": "3f53ae09458f05fd1938198c8266e578463eb68146ffeae8443f910b6ab1c875"
-          },
-          {
-            "path": "included/improved/skills/strategic-compact-current/SKILL.md",
-            "sha256": "4686f2f919ada2efd48525485a0408249101a3d33b6f52d34121df88c6812566"
-          },
-          {
-            "path": "included/improved/skills/strategic-compact-resume/SKILL.md",
-            "scope": "Versioned experimental overlay. Prior trial and research versions preserved.",
-            "sha256": "b04c4e20f081782b94504b80f5dda57a749aacd2679d3e237e43b1f606f6ce4a"
-          }
-        ],
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "4663c2e81b5de7d51f8cb07ba0920fa60257f0c7cc60487f36071c9d07d83e10",
-        "skill_file_sha256": "c83c4c9d60d30d508bbd2bf0c6ffa724b5fdac679addd4828b268892dc39dc1b"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "b93535111e380ad65bc3496bd15e23ab12207e2dbd30fa3cf938b0cf6c8cd99b",
+        "skill_file_sha256": "bf1429dbc4ece055ba2ff79b9dc3e926cfa1a39101a88ee8467de062d1a0e7f3"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-tdd-workflow-skill-md": {
@@ -1669,155 +699,18 @@
       },
       "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/tdd-workflow-everything-claude-code",
       "research": {
-        "evidence": [
-          {
-            "path": "docs/research-testing-workflows.md",
-            "sha256": "b1c1e389a83345d776df6b922cebee42a8bf4a7890d4275657bd2c8122e0e71d"
-          },
-          {
-            "path": "artifacts/research/2026-10-02/testing-stable-version-review.json",
-            "sha256": "fe1d9275f9223b3a28c295543ff96d2911c0c2cb06bee99e8fc2092c8639fb01"
-          },
-          {
-            "path": "artifacts/research/2026-10-02/verification-pipeline-controls.json",
-            "sha256": "4b1055f47959b6107c820cc64eddb5ef737f545a0ebfe450d874ae2bce56cbef"
-          },
-          {
-            "path": "artifacts/research/2026-10-02/playwright-current-contract-review.json",
-            "sha256": "7934647cceb6f62c6ac213a6f4fcf81ad6eafb369570c22097e494c6a8136ad0"
-          },
-          {
-            "path": "artifacts/research/2026-10-02/playwright-wait-runtime-controls.json",
-            "sha256": "55207bb87a1cfffd2c7e51f29593055b469fbd0cdb9429883fc15f742afbd9ee"
-          },
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "docs/research-tdd-jest-configuration.md",
-            "scope": "Jest configuration component controls and selected upstream source observation; no agent efficacy result.",
-            "sha256": "7b9a8c784753bef31a39e050a186dcc06b88d113938a0454b91cfc1931de9399"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/reproduce.py",
-            "scope": "Jest configuration component controls and selected upstream source observation; no agent efficacy result.",
-            "sha256": "82dfe2827aff77e23e6f591df1155a7abd10db6219127e160a88a6bc312b550e"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/windows-result.json",
-            "scope": "Jest configuration component controls and selected upstream source observation; no agent efficacy result.",
-            "sha256": "9352120134c5daf36247efe770461c00a8a99af71b518edec485dfbcd25c79d1"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/linux-result.json",
-            "scope": "Jest configuration component controls and selected upstream source observation; no agent efficacy result.",
-            "sha256": "94300c8100cac7084bebf538258ac39d6accf194c01876dd1d9063502e2e3e34"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/upstream-observation.json",
-            "scope": "Jest configuration component controls and selected upstream source observation; no agent efficacy result.",
-            "sha256": "39f444e6c1b1f2e2b5b518a250e4e0c4b3dd1e524e8f96fcf3e8fe1f199e9960"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/upstream-windows-result.json",
-            "scope": "Jest configuration component controls and selected upstream source observation; no agent efficacy result.",
-            "sha256": "548a6d4c174f6aa7672bd0c8453bd457189c2eb4fd91e029c76d39c3aa649cdc"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/upstream-linux-result.json",
-            "scope": "Jest configuration component controls and selected upstream source observation; no agent efficacy result.",
-            "sha256": "cb2014a05e88a03f941e8f8295a011fd0debb73dea4fa8ee6793afc0aeb8c4f0"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/node26-windows-result.json",
-            "scope": "Jest threshold component control using Node 26.13.0; no agent efficacy result.",
-            "sha256": "2f70d2f3a41a411241e0410def2d544e9f5f3c57cebeb694ede94f781ff4579a"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/node26-linux-result.json",
-            "scope": "Jest threshold component control using Node 26.13.0; no agent efficacy result.",
-            "sha256": "b82c518c63d1e71cf05c067dc6421fc8c9c265e6db85dfca543bb42f9c0b0d71"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/upstream-node26-windows-result.json",
-            "scope": "Jest threshold component control using Node 26.13.0; no agent efficacy result.",
-            "sha256": "b9c4d09cc6168022971c0a20af3c372bef1049b099f903d245dbd34ae8984608"
-          },
-          {
-            "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/upstream-node26-linux-result.json",
-            "scope": "Jest threshold component control using Node 26.13.0; no agent efficacy result.",
-            "sha256": "a63bbccab65917d657d25b7fa52ee4b07ef34c3572e5a3e20023ff5fada648ea"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          },
-          {
-            "path": "docs/research-tdd-red-phase.md",
-            "scope": "Pytest red-phase outcome interpretation; not agent-efficacy evidence.",
-            "sha256": "a13e1626c017e4e7224c25a819623471253a466a7bff895d3da0e1efd7c9e887"
-          },
-          {
-            "path": "tests/test_tdd_red_phase_controls.py",
-            "scope": "Independent executable pytest outcome controls; not an agent trial.",
-            "sha256": "360d587fa7205ae2845ede08fe398ba8611b04b52c715333d4b4f5ffa17ed7bb"
-          }
-        ],
-        "open_work": [
-          "Evaluate remaining examples and test-runner integrations independently.",
-          "Measure agent effects on independently defined tasks; component checks alone are not efficacy evidence."
-        ],
-        "resource_hash_policy": "catalog-canonical-v1",
-        "resources": {
-          "SKILL.md": {
-            "review_scope": "Complete instruction body and examples read; research and runtime checks cover only the documented testing and Jest cases. Remaining examples and agent efficacy are unverified.",
-            "sha256": "63249998befbdbbf2f7d2f089c9cd7a9912f26ddc8fdf04ab1248c82614b43ac",
-            "status": "reviewed"
-          },
-          "agents/openai.yaml": {
-            "review_scope": "Complete display metadata, invocation policy and default prompt read; runtime activation not tested.",
-            "sha256": "ac132cb2dc93fa89181f8abe4067930ab215a440894be46fc5d0ebde7ee6185b",
-            "status": "reviewed"
-          }
-        },
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
-        "evidence": [
-          {
-            "path": "included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/tdd-workflow-everything-claude-code/repair.json",
-            "sha256": "6ced12d7d3721198a75e6dc6f1037f0560952785cf7bfc988a29eb62a6d047c4"
-          },
-          {
-            "path": "artifacts/research/2026-11-17/fixture-lifecycle/previous-tdd.md",
-            "scope": "Experimental unbenchmarked revision; original and historical repair remain unchanged.",
-            "sha256": "38515bb140a79f78469e06da346dca10c3cc05fd7be4cb70e668e2c539c66c14"
-          },
-          {
-            "path": "artifacts/research/2026-11-17/fixture-lifecycle/review.json",
-            "scope": "Validated fixture ownership and cleanup behavior. Comparative evaluation pending.",
-            "sha256": "a277732c7592235712719c51162d7111625e1dfb2e7c322b912df7a71da6c467"
-          },
-          {
-            "path": "artifacts/research/2026-11-17/fixture-lifecycle/review-v2.json",
-            "scope": "Native independent focused-runner reuse, setup-failure classification and prior fixture lifecycle controls. The earlier measured candidate remains separate.",
-            "sha256": "3e3df833247abccf8ddbf98e70d400336b285745e57edcb4d19c8b7c50621753"
-          },
-          {
-            "path": "artifacts/research/2026-11-24/synchronized-cancellation/review.json",
-            "scope": "Independent native controls for synchronized cancellation and cleanup after assertion failure.",
-            "sha256": "4e288f304c2db95c9a33928420c92728b616ada5abe3de085dcd560bb1473c0f"
-          }
-        ],
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "fd68cd58dc3f2edf9bf054299552c3a4c70c0a4515213bfad79e870026b7e2db",
-        "skill_file_sha256": "63249998befbdbbf2f7d2f089c9cd7a9912f26ddc8fdf04ab1248c82614b43ac"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "42d96a102bba09ff5d42329f9ee4344d83524d80890400f5a34259f8f1f6d7e0",
+        "skill_file_sha256": "e9507695657b05f26dd62127f1d6ff58e4015d624df65dd4d7e07f6470317393"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-verification-loop-skill-md": {
@@ -1828,112 +721,18 @@
       },
       "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/verification-loop-everything-claude-code",
       "research": {
-        "evidence": [
-          {
-            "path": "docs/research-testing-workflows.md",
-            "sha256": "b1c1e389a83345d776df6b922cebee42a8bf4a7890d4275657bd2c8122e0e71d"
-          },
-          {
-            "path": "artifacts/research/2026-10-02/testing-stable-version-review.json",
-            "sha256": "fe1d9275f9223b3a28c295543ff96d2911c0c2cb06bee99e8fc2092c8639fb01"
-          },
-          {
-            "path": "artifacts/research/2026-10-02/verification-pipeline-controls.json",
-            "sha256": "4b1055f47959b6107c820cc64eddb5ef737f545a0ebfe450d874ae2bce56cbef"
-          },
-          {
-            "path": "artifacts/research/2026-10-02/playwright-current-contract-review.json",
-            "sha256": "7934647cceb6f62c6ac213a6f4fcf81ad6eafb369570c22097e494c6a8136ad0"
-          },
-          {
-            "path": "artifacts/research/2026-10-02/playwright-wait-runtime-controls.json",
-            "sha256": "55207bb87a1cfffd2c7e51f29593055b469fbd0cdb9429883fc15f742afbd9ee"
-          },
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          },
-          {
-            "path": "docs/research-powershell-exit-status.md",
-            "sha256": "2257f0e9646c886235a0d10a208687155b741b5bab8c8ccd271e7437681ead45"
-          },
-          {
-            "path": "benchmarks/dependency-regressions/verification_powershell.py",
-            "sha256": "2c17256f0e0c0280c12cac603efc70e3e7a02b746f26f1fd47a01640e5571149"
-          },
-          {
-            "path": "artifacts/research/2026-11-03/verification-powershell-status-v1/result.json",
-            "sha256": "9f60914d03a49112e85de2280cf3a9ac1bc78939a400710595708761c0bf867c"
-          },
-          {
-            "path": "artifacts/research/2026-11-17/scoped-study-and-skill-delivery/observations.json",
-            "sha256": "1c7e041d8406bb702d8c3f8077b57c3217d7e4b5666810a0577125d4adc8ad8d"
-          },
-          {
-            "path": "artifacts/research/2026-11-17/frontend-stream-contract/review.json",
-            "sha256": "6323b9865876784ec62b9a691dcf9c53935bda93a3b4675279c51992be55d06a"
-          },
-          {
-            "path": "artifacts/research/2026-11-25/native-command-verification/observations.json",
-            "sha256": "72c7ee191f6ab32c6a5bff65e5602b043eb6f07fa17f820b3e953661034e798d"
-          }
-        ],
-        "open_work": [
-          "Complete remaining non-security behavior checks and agent evaluation.",
-          "Cybersecurity-related review is deferred under the owner instruction."
-        ],
-        "resource_hash_policy": "catalog-canonical-v1",
-        "resources": {
-          "SKILL.md": {
-            "review_scope": "Complete source read; selected non-security pipeline, coverage and diff guidance reviewed. Cybersecurity-related guidance and remaining claims are deferred or unverified.",
-            "sha256": "01a9ae310ad4426bb05660dda6cefdeaac9513417585c09c8bb1b94738649a78",
-            "status": "pending"
-          },
-          "agents/openai.yaml": {
-            "review_scope": "Complete display metadata, invocation policy and default prompt read; runtime activation not tested.",
-            "sha256": "1907fd04fea5c83d15faf14acfc978de90076d4351341cf9259639aa0c3b7bd3",
-            "status": "reviewed"
-          }
-        },
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
-        "evidence": [
-          {
-            "path": "artifacts/research/2026-10-02/improved-skills-manifest-four-overlays.json",
-            "sha256": "0f05a838b09ecb124e78ae84e264f957b0e0f9668dde8f3a61ef98563bdfdbf0"
-          },
-          {
-            "path": "artifacts/research/2026-11-17/scoped-study-and-skill-delivery/previous-verification-skill.md",
-            "sha256": "64637a36eee74d85b2f6f65a5b3f029e399c60ac9cc37fe00ba5651bd80b4f49"
-          },
-          {
-            "path": "artifacts/research/2026-11-17/scoped-study-and-skill-delivery/observations.json",
-            "sha256": "1c7e041d8406bb702d8c3f8077b57c3217d7e4b5666810a0577125d4adc8ad8d"
-          },
-          {
-            "path": "artifacts/research/2026-11-17/frontend-stream-contract/review.json",
-            "sha256": "6323b9865876784ec62b9a691dcf9c53935bda93a3b4675279c51992be55d06a"
-          },
-          {
-            "current_overlay_sha256": "e2d4aa146727b49c0621127cd6e0b723babe1480d5520f816e2b369496b08b8a",
-            "path": "artifacts/research/2026-11-25/native-command-verification/review.json",
-            "scope": "Verified native command and artifact behavior. Agent effectiveness for this revision remains open.",
-            "sha256": "c55c9261d4f23a1cae0c8293b7a945653960847fd34bdb392e02859938991c31"
-          }
-        ],
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "44c77ad787f653cf5619d289abd89de890c64bbbf2318a9838fc4f25779f4c2e",
-        "skill_file_sha256": "01a9ae310ad4426bb05660dda6cefdeaac9513417585c09c8bb1b94738649a78"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "e1a976b821073666179024fc6b0b12542dedb76307d276c25632cc6ebb10417b",
+        "skill_file_sha256": "6d4a399d856207297168cc03f3f8c90d4085ff14566bb928af3c97d9a31f2650"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-video-editing-skill-md": {
@@ -1944,18 +743,8 @@
       },
       "mirrored_path": "included/skills/by-category/devops-cloud-operations/selected-structure-reference/video-editing",
       "research": {
-        "evidence": [
-          {
-            "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
-            "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
-            "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
-          },
-          {
-            "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
-            "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
-          }
-        ],
-        "status": "in_progress"
+        "evidence": [],
+        "status": "pending"
       },
       "revision": {
         "evidence": [],
@@ -1963,9 +752,9 @@
       },
       "source_repo": "affaan-m/everything-claude-code",
       "source_signature": {
-        "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
-        "skill_dir_sha256": "a36778517ee9c7d9d1226c393b3e7a4d96d96d2c8ae78c14a2b3c7e48d7d87f0",
-        "skill_file_sha256": "daa74807d8a53d735392dedadafe2e91dbeba9266d57aa0691308dca106237ef"
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "skill_dir_sha256": "e617d9eebd847f3a10071e7c81268ac3499cfab69c9a3181d6ba779eb30c83e0",
+        "skill_file_sha256": "765558c820d0b6f8e4424b55ca1cf13bf9163a1ec572851d1db229693dc8e2ad"
       }
     },
     "affaan-m-everything-claude-code-agents-skills-x-api-skill-md": {
@@ -27737,6 +26526,1867 @@
         }
       },
       "skill_id": "lackeyjb-playwright-skill-skills-playwright-skill-skill-md"
+    },
+    {
+      "review": {
+        "category": "Coding, refactoring & repository automation",
+        "evaluation": {
+          "evidence": [
+            {
+              "path": "artifacts/research/backend-contracts/backend-review.json",
+              "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
+            },
+            {
+              "path": "docs/research-backend-contracts.md",
+              "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
+            },
+            {
+              "path": "benchmarks/component-controls/backend/result.json",
+              "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
+            }
+          ],
+          "scope": "Selected source-bound component controls only; no whole-skill or model-efficacy claim",
+          "status": "in_progress"
+        },
+        "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/api-design",
+        "research": {
+          "evidence": [
+            {
+              "path": "artifacts/research/backend-contracts/backend-review.json",
+              "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
+            },
+            {
+              "path": "docs/research-backend-contracts.md",
+              "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
+            },
+            {
+              "path": "benchmarks/component-controls/backend/result.json",
+              "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
+            },
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            }
+          ],
+          "open_work": [
+            "Complete original package read; whole-domain/runtime and agent-efficacy qualification remain open"
+          ],
+          "resource_hash_policy": "catalog-canonical-v1",
+          "resources": {
+            "SKILL.md": {
+              "review_scope": "Complete original instruction body and all examples",
+              "sha256": "de3be9cde47bd707b2a8af79254915ed03bfcd1b2aeb187f1d889597e8cbb76d",
+              "status": "reviewed"
+            },
+            "agents/openai.yaml": {
+              "review_scope": "Complete UI, activation policy and default prompt; not installed",
+              "sha256": "e823a4342b02b5410aae18a3c3ad351d8a73b206b59f1446dc04c43c4944c2dd",
+              "status": "reviewed"
+            }
+          },
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [
+            {
+              "path": "artifacts/research/backend-contracts/backend-review.json",
+              "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
+            },
+            {
+              "path": "docs/research-backend-contracts.md",
+              "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
+            },
+            {
+              "path": "benchmarks/component-controls/backend/result.json",
+              "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
+            }
+          ],
+          "scope": "Licensed experimental overlay with complete original provenance; immutable mirror unchanged",
+          "status": "complete"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "7d58157146bcc1479c7501ec5d729d7a4961cef054ae79800d07d4125251a895",
+          "skill_file_sha256": "de3be9cde47bd707b2a8af79254915ed03bfcd1b2aeb187f1d889597e8cbb76d"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-api-design-skill-md"
+    },
+    {
+      "review": {
+        "category": "Creative, media & design",
+        "evaluation": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "mirrored_path": "included/skills/by-category/creative-media-design/selected-structure-reference/article-writing",
+        "research": {
+          "evidence": [
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "351f756db6122484ab36395947905b83b2a336d1566faa1df0e90994cb3fe5ff",
+          "skill_file_sha256": "068e9aa2bc7e7e63b396a5df7c50b8b68fa338d3ad1f66012757cde6b41fb7bd"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-article-writing-skill-md"
+    },
+    {
+      "review": {
+        "category": "Coding, refactoring & repository automation",
+        "evaluation": {
+          "evidence": [
+            {
+              "path": "artifacts/research/backend-contracts/backend-review.json",
+              "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
+            },
+            {
+              "path": "docs/research-backend-contracts.md",
+              "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
+            },
+            {
+              "path": "benchmarks/component-controls/backend/result.json",
+              "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
+            }
+          ],
+          "scope": "Selected source-bound component controls only; no whole-skill or model-efficacy claim",
+          "status": "in_progress"
+        },
+        "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/backend-patterns",
+        "research": {
+          "evidence": [
+            {
+              "path": "artifacts/research/backend-contracts/backend-review.json",
+              "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
+            },
+            {
+              "path": "docs/research-backend-contracts.md",
+              "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
+            },
+            {
+              "path": "benchmarks/component-controls/backend/result.json",
+              "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
+            },
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            }
+          ],
+          "open_work": [
+            "Complete original package read; whole-domain/runtime and agent-efficacy qualification remain open"
+          ],
+          "resource_hash_policy": "catalog-canonical-v1",
+          "resources": {
+            "SKILL.md": {
+              "review_scope": "Complete original instruction body and all examples",
+              "sha256": "952e95fd7e8d0b17f13835dde8067d7dd2abd019e6e17821d5ebf913113c589e",
+              "status": "reviewed"
+            },
+            "agents/openai.yaml": {
+              "review_scope": "Complete UI, activation policy and default prompt; not installed",
+              "sha256": "6a56b16e6ea055931bc38979c12279e7cd3ac7d3440bdd8fa1dc3152d003d36b",
+              "status": "reviewed"
+            }
+          },
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [
+            {
+              "path": "artifacts/research/backend-contracts/backend-review.json",
+              "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
+            },
+            {
+              "path": "docs/research-backend-contracts.md",
+              "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
+            },
+            {
+              "path": "benchmarks/component-controls/backend/result.json",
+              "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
+            }
+          ],
+          "scope": "Licensed experimental overlay with complete original provenance; immutable mirror unchanged",
+          "status": "complete"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "9268785eefb6545f307e6f4d271dd4f2e838982bed776f435f0261d8a69a14c1",
+          "skill_file_sha256": "952e95fd7e8d0b17f13835dde8067d7dd2abd019e6e17821d5ebf913113c589e"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-backend-patterns-skill-md"
+    },
+    {
+      "review": {
+        "category": "Creative, media & design",
+        "evaluation": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "mirrored_path": "included/skills/by-category/creative-media-design/selected-structure-reference/brand-voice",
+        "research": {
+          "evidence": [
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "5bd4e2059a601031b4cf06ea5369235dc5c965900217e6b433905e7d68606917",
+          "skill_file_sha256": "9c23f871aa77a7d64d2a005fe0849a1380de2a4098d81ec73d13c468e556a59e"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-brand-voice-skill-md"
+    },
+    {
+      "review": {
+        "category": "Testing, QA & benchmarking",
+        "evaluation": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/bun-runtime",
+        "research": {
+          "evidence": [
+            {
+              "path": "docs/research-testing-workflows.md",
+              "sha256": "b1c1e389a83345d776df6b922cebee42a8bf4a7890d4275657bd2c8122e0e71d"
+            },
+            {
+              "path": "artifacts/research/2026-10-02/testing-stable-version-review.json",
+              "sha256": "fe1d9275f9223b3a28c295543ff96d2911c0c2cb06bee99e8fc2092c8639fb01"
+            },
+            {
+              "path": "artifacts/research/2026-10-02/verification-pipeline-controls.json",
+              "sha256": "4b1055f47959b6107c820cc64eddb5ef737f545a0ebfe450d874ae2bce56cbef"
+            },
+            {
+              "path": "artifacts/research/2026-10-02/playwright-current-contract-review.json",
+              "sha256": "7934647cceb6f62c6ac213a6f4fcf81ad6eafb369570c22097e494c6a8136ad0"
+            },
+            {
+              "path": "artifacts/research/2026-10-02/playwright-wait-runtime-controls.json",
+              "sha256": "55207bb87a1cfffd2c7e51f29593055b469fbd0cdb9429883fc15f742afbd9ee"
+            },
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "docs/research-bun-runtime.md",
+              "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
+              "sha256": "36373612d07247578d1ec0a575bb266b1a390dae6b0e6db510e6283aafc64d85"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/frozen-control.py",
+              "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
+              "sha256": "90ea226a9d0ecd06b9051243dcab61f48ef7429da927738825d5d4b4b8d51845"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/http-server-probe.cjs",
+              "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
+              "sha256": "53dec6eb87a3ae41de1b0aaf62541311f58b2ee79719d017ad21aafe05bac42d"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/windows/result.json",
+              "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
+              "sha256": "b12476f42ab7a62668c44ce9cd8e37f90737d11d4f44b34ca0438b5e898cedc7"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/linux/result.json",
+              "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
+              "sha256": "aea0d2f58dc97dfb43ede225a55842e3562a41afb0aa7cc345ba3dffbaea662c"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/windows/node26-http.json",
+              "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
+              "sha256": "dec6f8e452726ad755e4934a553ad69989cc418371c69cb6474f10676cbdbbce"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/windows/bun14-http.json",
+              "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
+              "sha256": "b87cbf8eedc95af6a61cb266515928890c9077c22c96b4e0276794d5d05dc6f7"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/linux/node26-http.json",
+              "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
+              "sha256": "573393f58d10b88c0e7c842d51747cc9185bff89fcaa86414541af015687ad33"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/linux/bun14-http.json",
+              "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
+              "sha256": "f7c2348abcbf29de74b37b4ddee9e6054888459082de609f6d3ab6c5ccc7d3d4"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/upstream-observation.json",
+              "scope": "Bun frozen-install and runtime component controls and selected upstream observation; no agent efficacy result.",
+              "sha256": "b210c97b88aca6ec0feee1bdde45377650457e90665e9f3fd230720f2d0da697"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/shell-control.py",
+              "scope": "Bun 1.4.4 selected CLI and shell controls only; no deployment or agent efficacy evaluation.",
+              "sha256": "7de9664b378cbb945f9d90c10fe38e153d9fa645f2608f2b77c727b090203b6a"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/windows/shell-control.json",
+              "scope": "Bun 1.4.4 selected CLI and shell controls only; no deployment or agent efficacy evaluation.",
+              "sha256": "7a4b3fb5c34d0086ce82007925a11d2e9ffb070a8f8efb99c98cad7dd252238e"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/bun-runtime-v1/linux/shell-control.json",
+              "scope": "Bun 1.4.4 selected CLI and shell controls only; no deployment or agent efficacy evaluation.",
+              "sha256": "aa9f57c850759dd1f22e6cee14ebe5572d623af78952d2ba8ef9537768b81baa"
+            }
+          ],
+          "open_work": [
+            "Review remaining runtime, package manager, bundler and migration claims against current sources and representative projects.",
+            "Qualify actual agent activation and independently measure model effectiveness; do not infer efficacy from component controls."
+          ],
+          "resource_hash_policy": "catalog-canonical-v1",
+          "resources": {
+            "SKILL.md": {
+              "review_scope": "Complete pinned instruction text read; selected compatibility, frozen install, deployment guidance and shell examples checked; remaining claims and agent efficacy remain open.",
+              "sha256": "2929d1f227962d86bfb2f0e45efd81590cfc90aeaad5b449f4630207e4e07204",
+              "status": "reviewed"
+            },
+            "agents/openai.yaml": {
+              "review_scope": "Complete display, prompt and activation metadata read; actual agent activation was not tested.",
+              "sha256": "7e118790707006a543e3105cb3269c41dc98e601182dce4c7160867a934adb1a",
+              "status": "reviewed"
+            }
+          },
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [
+            {
+              "path": "included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/bun-runtime/repair.json",
+              "sha256": "b872d62edc3b268bfaaeb15ae3dcfd2d2940e54858dbc9f8f0c7bbf6b48e222b"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "0c83016f06cc0a4a7bff5c28d0fa89d4afa05385206324de0efc89976238ff97",
+          "skill_file_sha256": "2929d1f227962d86bfb2f0e45efd81590cfc90aeaad5b449f4630207e4e07204"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-bun-runtime-skill-md"
+    },
+    {
+      "review": {
+        "category": "Frontend, UI & browser automation",
+        "evaluation": {
+          "evidence": [
+            {
+              "path": "artifacts/research/frontend-contracts/frontend-review.json",
+              "sha256": "b7e5e43f27280b5010636e9a8ede3ec9ee06c0d080e0394014726f3d649ff792"
+            },
+            {
+              "path": "docs/research-frontend-contracts.md",
+              "sha256": "dc7e9e056d6bf60267a0e23a2c5a56354cd812a9cdd8476f19cc5537a9d06fe5"
+            },
+            {
+              "path": "benchmarks/component-controls/frontend/result.json",
+              "sha256": "f0824f04eb0ef4885b52ff6f10e98c75b204ae0f27f311aac3c945ea3f158ea4"
+            }
+          ],
+          "scope": "Selected component controls and targeted native React qualification; no agent-efficacy claim",
+          "status": "in_progress"
+        },
+        "mirrored_path": "included/skills/by-category/frontend-ui-browser-automation/selected-structure-reference/coding-standards",
+        "research": {
+          "evidence": [
+            {
+              "path": "artifacts/research/frontend-contracts/frontend-review.json",
+              "sha256": "b7e5e43f27280b5010636e9a8ede3ec9ee06c0d080e0394014726f3d649ff792"
+            },
+            {
+              "path": "docs/research-frontend-contracts.md",
+              "sha256": "dc7e9e056d6bf60267a0e23a2c5a56354cd812a9cdd8476f19cc5537a9d06fe5"
+            },
+            {
+              "path": "benchmarks/component-controls/frontend/result.json",
+              "sha256": "f0824f04eb0ef4885b52ff6f10e98c75b204ae0f27f311aac3c945ea3f158ea4"
+            },
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            }
+          ],
+          "open_work": [
+            "See documented platform/framework and agent-trial qualification limits; reviewed instruction bodies are not runtime completion"
+          ],
+          "resource_hash_policy": "catalog-canonical-v1",
+          "resources": {
+            "SKILL.md": {
+              "review_scope": "Complete instruction body and examples; source/version/platform and dependency contracts",
+              "sha256": "f856f758c97fb62ddbfbd75d4570e03bf4ed04c258d13756fecdb313a04cc8d9",
+              "status": "reviewed"
+            },
+            "agents/openai.yaml": {
+              "review_scope": "Complete UI metadata, activation policy and default prompt; not installed",
+              "sha256": "5661a2691330e2a64e41d2c38638809eeeafb44a62d3a5d434fdc234ad3bb235",
+              "status": "reviewed"
+            }
+          },
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [
+            {
+              "path": "artifacts/research/frontend-contracts/frontend-review.json",
+              "sha256": "b7e5e43f27280b5010636e9a8ede3ec9ee06c0d080e0394014726f3d649ff792"
+            },
+            {
+              "path": "docs/research-frontend-contracts.md",
+              "sha256": "dc7e9e056d6bf60267a0e23a2c5a56354cd812a9cdd8476f19cc5537a9d06fe5"
+            },
+            {
+              "path": "benchmarks/component-controls/frontend/result.json",
+              "sha256": "f0824f04eb0ef4885b52ff6f10e98c75b204ae0f27f311aac3c945ea3f158ea4"
+            }
+          ],
+          "scope": "Authored experimental overlay with complete original provenance; immutable source unchanged",
+          "status": "complete"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "c2b14280ff723c38a2add7d863bfa4d60f090b3fca9b74812de89c119b2e1230",
+          "skill_file_sha256": "f856f758c97fb62ddbfbd75d4570e03bf4ed04c258d13756fecdb313a04cc8d9"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-coding-standards-skill-md"
+    },
+    {
+      "review": {
+        "category": "Communication, productivity & support",
+        "evaluation": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "mirrored_path": "included/skills/by-category/communication-productivity-support/selected-structure-reference/content-engine",
+        "research": {
+          "evidence": [
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "3051d9f5d6dc16949d4f6797b0a98a7ba99e807d9aca8c38ef90479d78c13d59",
+          "skill_file_sha256": "a64c6df93125b77c7199df086e4aedeecae0ea578d30e8c2ac73f9957688b52c"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-content-engine-skill-md"
+    },
+    {
+      "review": {
+        "category": "Communication, productivity & support",
+        "evaluation": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "mirrored_path": "included/skills/by-category/communication-productivity-support/selected-structure-reference/crosspost",
+        "research": {
+          "evidence": [
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "3f214b37700ade61749fdc782c92064841769aac17f82538b250be2e69267aa1",
+          "skill_file_sha256": "4c130ad682003589622dccae004f6180a472648179919ec23677aef1b743b5a4"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-crosspost-skill-md"
+    },
+    {
+      "review": {
+        "category": "Search, retrieval & web automation",
+        "evaluation": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "mirrored_path": "included/skills/by-category/search-retrieval-web-automation/selected-structure-reference/deep-research",
+        "research": {
+          "evidence": [
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "93f3867033673b0b5bb4ad4f799cc5cf2e2d3622831299cac8e7814277048b69",
+          "skill_file_sha256": "2d631427fc9aba27a318735f930bdb49f5c6ce416506340025eac01648f1df09"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-deep-research-skill-md"
+    },
+    {
+      "review": {
+        "category": "Agent infrastructure & skill creation",
+        "evaluation": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "mirrored_path": "included/skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/dmux-workflows",
+        "research": {
+          "evidence": [
+            {
+              "path": "docs/research-category-routing.md",
+              "sha256": "ebb12eeb2087d52667592165a53e37ec144ead27ab2f83e994dd857e371d1958"
+            },
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "b29f541bbf30f26014f17aa0f6929321c0647274d364b820bca1d259011f7550",
+          "skill_file_sha256": "06343029c1ae3b08f585a3d7826e782066e0ad3d1e0173cc98c969a380137e90"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-dmux-workflows-skill-md"
+    },
+    {
+      "review": {
+        "category": "Search, retrieval & web automation",
+        "evaluation": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "mirrored_path": "included/skills/by-category/search-retrieval-web-automation/selected-structure-reference/documentation-lookup-everything-claude-code",
+        "research": {
+          "evidence": [
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "80187d5b911e2a61ae78cc720fc67dc072bd8b1ba5d42017ac9d95c2b3894e3b",
+          "skill_file_sha256": "89cc655f72a5e3a947e88b7bae419c068f9ea34101b3fc9e7129184432b507cd"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-documentation-lookup-skill-md"
+    },
+    {
+      "review": {
+        "category": "Testing, QA & benchmarking",
+        "evaluation": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/e2e-testing",
+        "research": {
+          "evidence": [
+            {
+              "path": "docs/research-testing-workflows.md",
+              "sha256": "b1c1e389a83345d776df6b922cebee42a8bf4a7890d4275657bd2c8122e0e71d"
+            },
+            {
+              "path": "artifacts/research/2026-10-02/testing-stable-version-review.json",
+              "sha256": "fe1d9275f9223b3a28c295543ff96d2911c0c2cb06bee99e8fc2092c8639fb01"
+            },
+            {
+              "path": "artifacts/research/2026-10-02/verification-pipeline-controls.json",
+              "sha256": "4b1055f47959b6107c820cc64eddb5ef737f545a0ebfe450d874ae2bce56cbef"
+            },
+            {
+              "path": "artifacts/research/2026-10-02/playwright-current-contract-review.json",
+              "sha256": "7934647cceb6f62c6ac213a6f4fcf81ad6eafb369570c22097e494c6a8136ad0"
+            },
+            {
+              "path": "artifacts/research/2026-10-02/playwright-wait-runtime-controls.json",
+              "sha256": "55207bb87a1cfffd2c7e51f29593055b469fbd0cdb9429883fc15f742afbd9ee"
+            },
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "docs/research-e2e-response-order.md",
+              "scope": "Synthetic Playwright response-ordering component controls and selected upstream source observation; no agent efficacy result.",
+              "sha256": "d69eddbd27b88b656f41f414a5c6298b35ebb4e50ee2410747348abaa622832a"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/e2e-response-v1/control.cjs",
+              "scope": "Synthetic Playwright response-ordering component controls and selected upstream source observation; no agent efficacy result.",
+              "sha256": "cae9eab344c0b944b29894e5d61d117ac8c94e6f5a28c3a7530b9d5708a0e8b6"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/e2e-response-v1/final-node24-linux.json",
+              "scope": "Synthetic Playwright response-ordering component controls and selected upstream source observation; no agent efficacy result.",
+              "sha256": "e9bd89fce59fa06ebe6f0baf55d98eca1adb87ddb1e4a0ace9e4b9afe323f40b"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/e2e-response-v1/final-node24-windows.json",
+              "scope": "Synthetic Playwright response-ordering component controls and selected upstream source observation; no agent efficacy result.",
+              "sha256": "99d53470954d19d0347967bbe2217cdaacb8fa7c86af3c9cf0e15127e8326d79"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/e2e-response-v1/final-node26-linux.json",
+              "scope": "Synthetic Playwright response-ordering component controls and selected upstream source observation; no agent efficacy result.",
+              "sha256": "117bad6bbf74d2465fc5125ddf93a092ea22422d1a8a465ff23e4c4f96b83fce"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/e2e-response-v1/final-node26-windows.json",
+              "scope": "Synthetic Playwright response-ordering component controls and selected upstream source observation; no agent efficacy result.",
+              "sha256": "d074699b70786c41acc7dd15fab608ad8afcff0d0dfb379d463886d7f1fc0d74"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/e2e-response-v1/replay-ci-windows.json",
+              "scope": "Synthetic Playwright response-ordering component controls and selected upstream source observation; no agent efficacy result.",
+              "sha256": "99d53470954d19d0347967bbe2217cdaacb8fa7c86af3c9cf0e15127e8326d79"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/e2e-response-v1/upstream-final-node26-linux.json",
+              "scope": "Synthetic Playwright response-ordering component controls and selected upstream source observation; no agent efficacy result.",
+              "sha256": "68e718acae6a80b98a07fe9baffed8baa852c07cc115aaf1779b0439b87b3909"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/e2e-response-v1/upstream-final-node26-windows.json",
+              "scope": "Synthetic Playwright response-ordering component controls and selected upstream source observation; no agent efficacy result.",
+              "sha256": "38f14ad348cc865539122e0b6c2b9fef98fec9c09a7f9b5154b950c403cbee30"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/e2e-response-v1/upstream-observation.json",
+              "scope": "Synthetic Playwright response-ordering component controls and selected upstream source observation; no agent efficacy result.",
+              "sha256": "c4c7224eb72293216b90c14afbd8e4c7acf6b8f4dcd0aa8a2cdc434d09349f54"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            },
+            {
+              "path": "artifacts/research/2026-11-13/e2e-readiness/review.json",
+              "scope": "Source-grounded component and exact candidate-example controls; no independent model-efficacy result.",
+              "sha256": "720f19fcd7a1cc3b075b930e835e2a6337027c74f453338493c7e36a6a6a7ea8"
+            }
+          ],
+          "open_work": [
+            "Validate remaining application/browser/CI claims and held scopes independently.",
+            "Preserve existing source and historical repair evidence; perform counted model comparisons only after execution and experiment admission."
+          ],
+          "resource_hash_policy": "catalog-canonical-v1",
+          "resources": {
+            "SKILL.md": {
+              "review_scope": "Complete entrypoint read; selected readiness, response-order and trace contracts qualified with current native browser and exact maintained example. Other source claims, financial/wallet flows and cybersecurity scope are not accepted by these controls.",
+              "sha256": "f84ae93c159bf6ecef5a60c9735dc82d96bc5f977ef52eb71678b66722acf684",
+              "status": "reviewed"
+            },
+            "agents/openai.yaml": {
+              "review_scope": "Complete descriptor read; metadata/activation intent only. No external agent or OpenAI API runtime invoked.",
+              "sha256": "5f50508a300616d77f39dc50a51de10cabd05ef7ae770e7948ef6c28f340cdf2",
+              "status": "reviewed"
+            }
+          },
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [
+            {
+              "path": "included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/e2e-testing/repair.json",
+              "sha256": "6292f1e6a55d24c0943b5499630e80c7cb2006feac789654f7874c9c09c12fdd"
+            },
+            {
+              "path": "artifacts/research/2026-11-13/e2e-readiness/review.json",
+              "scope": "Source-grounded component and exact candidate-example controls; no independent model-efficacy result.",
+              "sha256": "720f19fcd7a1cc3b075b930e835e2a6337027c74f453338493c7e36a6a6a7ea8"
+            },
+            {
+              "path": "artifacts/research/2026-11-17/fixture-lifecycle/review.json",
+              "scope": "Validated fixture ownership and cleanup behavior. Comparative evaluation pending.",
+              "sha256": "a277732c7592235712719c51162d7111625e1dfb2e7c322b912df7a71da6c467"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "e171e35e31104739e070e54cb0f4de788414f9cada9a455c82580f439da3c511",
+          "skill_file_sha256": "f84ae93c159bf6ecef5a60c9735dc82d96bc5f977ef52eb71678b66722acf684"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-e2e-testing-skill-md"
+    },
+    {
+      "review": {
+        "category": "Coding, refactoring & repository automation",
+        "evaluation": {
+          "evidence": [
+            {
+              "path": "artifacts/agent-trials/development-v2-report/summary.json",
+              "scope": "Joint injected eval-harness and strategic-compact bundle; one development task; all arms 3/3 task passes; no isolated skill effect or quality gain established.",
+              "sha256": "6b7eb92c679409eb116fb31ee50da299cc9c9b4f90558ade82f15114014be701"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/eval-harness",
+        "research": {
+          "evidence": [
+            {
+              "path": "docs/research-initial-agent-workflows.md",
+              "sha256": "04a54ee8f98e844081de808bc770fd9ab63cb7fcdb60c35f48378aec83496d05"
+            },
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            },
+            {
+              "path": "artifacts/research/2026-11-09/benchmark-expansion/protocol-source-before-expansion.json",
+              "scope": "Selected any-of-k and all-of-k subset metrics, missing-outcome bounds and independent controls; not full skill review or agent-efficacy evidence. Historical protocol page retained as an exact-byte source snapshot; no expanded review or new run is inferred.",
+              "sha256": "b1d7a9002e5f23b61848871cde8f392b686313a59b648a2dbae5dbf43c63901b"
+            },
+            {
+              "path": "tools/summarize_best_of_k.py",
+              "scope": "Selected any-of-k and all-of-k subset metrics, missing-outcome bounds and independent controls; not full skill review or agent-efficacy evidence.",
+              "sha256": "6bc8cfba948b6bed6e0a8c716978937538b963a6c8752e029a8a0fe348fb0772"
+            },
+            {
+              "path": "tests/test_summarize_best_of_k.py",
+              "scope": "Selected any-of-k and all-of-k subset metrics, missing-outcome bounds and independent controls; not full skill review or agent-efficacy evidence.",
+              "sha256": "79c9d03f26cb46280958110c59f54ad055576f74c0a54122ddbb598237fde1be"
+            },
+            {
+              "path": "docs/research-eval-harness-sampling.md",
+              "scope": "Scoped sampling review; not a full skill review or agent trial.",
+              "sha256": "93518a12556780f14bebe238bf118ea9f48ca772bbb174e1486ae99274518f51"
+            },
+            {
+              "path": "artifacts/research/2026-11-03/eval-harness-sampling-v1/check_metrics.py",
+              "scope": "Independent finite-subset control; synthetic observations only.",
+              "sha256": "1a6ddc366f1b69e92333a37e1362ecc633895751c885ff5601d0444e1dc0dad2"
+            },
+            {
+              "path": "artifacts/research/2026-11-03/eval-harness-sampling-v1/result.json",
+              "scope": "Source-bound synthetic control result; no agent-performance claim.",
+              "sha256": "104223ca324f4b9c5d41b0ded47144ec5a00e13d7333c96196ce9cf30dfb092b"
+            },
+            {
+              "path": "artifacts/research/2026-11-09/eval-harness-sampling-v2/summary-core-source.py.txt",
+              "scope": "Descriptive summary core extracted with unchanged calculation syntax trees; not agent-efficacy evidence. Historical exact-byte tools/_trial_summary.py source at ba7899423096fb0add6b462cc9f4e85e95a519ff; later prompt-availability changes are outside this original source review.",
+              "sha256": "46985cacd8e131f1f4aa83a0956021636e5b646d05c329b305f53edfdab809a6"
+            },
+            {
+              "path": "artifacts/research/2026-11-09/eval-harness-sampling-v2/result.json",
+              "scope": "Refactored-source finite subset receipt; same independent enumeration and numerical results as v1, no agent-efficacy evidence.",
+              "sha256": "ca67159373bad41c0e2ad2aca0488e9667de57dd14700737715fca651cad2ca2"
+            },
+            {
+              "path": "artifacts/research/2026-11-09/benchmark-expansion/sources.json",
+              "scope": "External methodology overview/abstract review supporting proposed content, routing and context-cost controls; no study reproduction, complete skill review or agent-efficacy evidence.",
+              "sha256": "23998266d904fe9cefdea0b2c82dfe8131a2bae1e6cbe0109f4b300e95c65f9b"
+            },
+            {
+              "path": "artifacts/research/2026-11-11/evaluation-resumption/review.json",
+              "scope": "Independent native controls and upstream observation. No agent efficacy evidence.",
+              "sha256": "a4581ce106cdfbc51b309141d5ea46f67033a68fdd0866f168041baef7f1db93"
+            },
+            {
+              "path": "docs/research-evaluation-and-resumption.md",
+              "sha256": "f2a216e27b872f8836ba5cb5b104358809e8532a75e66657987ea1cd8d3ffcf4"
+            },
+            {
+              "path": "artifacts/research/2026-11-11/evaluation-runtime-origins/review.json",
+              "scope": "Official Python path behavior, five native origin probes, and six native controller controls. No model-efficacy evidence.",
+              "sha256": "188fbc537d9b8ecd1cee3b1629183102b2280068018a52820f2003fab5b31320"
+            }
+          ],
+          "open_work": [
+            "Complete the original skill review within the permitted scope; cybersecurity-related examples are deferred.",
+            "Independently test skill activation and agent effectiveness; a component-level metric is not an agent benchmark."
+          ],
+          "resource_hash_policy": "catalog-canonical-v1",
+          "resources": {
+            "SKILL.md": {
+              "review_scope": "Complete source read; only evaluation metrics and reporting were assessed. Other guidance remains unreviewed, including deferred cybersecurity examples. Native scorer unit and result-admission controls reviewed in the current round. Runtime-origin, starting-score headroom and complete-source collection mechanisms reviewed using independent development controls.",
+              "sha256": "0bc29828b0b20c57f1d0904fab2f046155aae9e6d9cf1d7587dd8776a8747f3d",
+              "status": "pending"
+            },
+            "agents/openai.yaml": {
+              "review_scope": "Complete display metadata, invocation policy and default prompt read; no runtime activation tested.",
+              "sha256": "6f2c19eb59062ca776286c2f6a6a7f1b552b4f927a2b48de888a7dbb2eeec6bd",
+              "status": "reviewed"
+            }
+          },
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [
+            {
+              "path": "included/improved/skills/eval-harness/SKILL.md",
+              "sha256": "c598eed23babdb8fcc2eea2498c5841516bd641e7d0e373aeadb504201daf1d9"
+            },
+            {
+              "path": "included/improved/skills/eval-harness-current/SKILL.md",
+              "scope": "Versioned experimental overlay; no agent-effectiveness evaluation.",
+              "sha256": "03bd4666ace171cc6852c531b474de6cd13131fb89f3971c0a8fb56c4632ab8a"
+            },
+            {
+              "path": "included/improved/skills/eval-harness-evidence/SKILL.md",
+              "scope": "Versioned experimental overlay. Prior trial and research versions preserved.",
+              "sha256": "67f75deff3178effa99b60287a6300bcb434e1254fae962d11b6f0592596b364"
+            },
+            {
+              "path": "included/improved/skills/eval-harness-integrity/SKILL.md",
+              "scope": "Versioned experimental overlay covering unchanged-input headroom, runtime origin identity and attempt accounting. Previous versions preserved.",
+              "sha256": "cedb0e80d9736e2d7e9cbded2b6b9b2589620f2bcea4f3ecc6ac4231ce4454e9"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "b144cd41a249418ac510f97d58e5fd51ab16061148167afd4012f9e6f7a6548c",
+          "skill_file_sha256": "0bc29828b0b20c57f1d0904fab2f046155aae9e6d9cf1d7587dd8776a8747f3d"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-eval-harness-skill-md"
+    },
+    {
+      "review": {
+        "category": "Search, retrieval & web automation",
+        "evaluation": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "mirrored_path": "included/skills/by-category/search-retrieval-web-automation/selected-structure-reference/exa-search",
+        "research": {
+          "evidence": [
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "ff7533d62af0f7f9b325de2328b442930c9f2ddd4ec33f196e26863532e82afe",
+          "skill_file_sha256": "284d5c438457c4aeb1636e2b79cfa73c03c0365f4f698214a0a222991f893523"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-exa-search-skill-md"
+    },
+    {
+      "review": {
+        "category": "Creative, media & design",
+        "evaluation": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "mirrored_path": "included/skills/by-category/creative-media-design/selected-structure-reference/fal-ai-media",
+        "research": {
+          "evidence": [
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "8dcbcccaa0b233a8c8c994e3c288da69649698993065fdfb299a3663ca91c20f",
+          "skill_file_sha256": "86f110798171367784c0b83e45d8f4202fcc3d590e980c6ec7e82d0212fa7aff"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-fal-ai-media-skill-md"
+    },
+    {
+      "review": {
+        "category": "Frontend, UI & browser automation",
+        "evaluation": {
+          "evidence": [
+            {
+              "path": "artifacts/research/frontend-contracts/frontend-review.json",
+              "sha256": "b7e5e43f27280b5010636e9a8ede3ec9ee06c0d080e0394014726f3d649ff792"
+            },
+            {
+              "path": "docs/research-frontend-contracts.md",
+              "sha256": "dc7e9e056d6bf60267a0e23a2c5a56354cd812a9cdd8476f19cc5537a9d06fe5"
+            },
+            {
+              "path": "benchmarks/component-controls/frontend/result.json",
+              "sha256": "f0824f04eb0ef4885b52ff6f10e98c75b204ae0f27f311aac3c945ea3f158ea4"
+            }
+          ],
+          "scope": "Selected component controls and targeted native React qualification; no agent-efficacy claim",
+          "status": "in_progress"
+        },
+        "mirrored_path": "included/skills/by-category/frontend-ui-browser-automation/selected-structure-reference/frontend-patterns",
+        "research": {
+          "evidence": [
+            {
+              "path": "artifacts/research/frontend-contracts/frontend-review.json",
+              "sha256": "b7e5e43f27280b5010636e9a8ede3ec9ee06c0d080e0394014726f3d649ff792"
+            },
+            {
+              "path": "docs/research-frontend-contracts.md",
+              "sha256": "dc7e9e056d6bf60267a0e23a2c5a56354cd812a9cdd8476f19cc5537a9d06fe5"
+            },
+            {
+              "path": "benchmarks/component-controls/frontend/result.json",
+              "sha256": "f0824f04eb0ef4885b52ff6f10e98c75b204ae0f27f311aac3c945ea3f158ea4"
+            },
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            }
+          ],
+          "open_work": [
+            "See documented platform/framework and agent-trial qualification limits; reviewed instruction bodies are not runtime completion"
+          ],
+          "resource_hash_policy": "catalog-canonical-v1",
+          "resources": {
+            "SKILL.md": {
+              "review_scope": "Complete instruction body and examples; source/version/platform and dependency contracts",
+              "sha256": "dd04a1c02503036ee7f4d649c9b7b75d2e6954a94d6f464faedfa992701d1978",
+              "status": "reviewed"
+            },
+            "agents/openai.yaml": {
+              "review_scope": "Complete UI metadata, activation policy and default prompt; not installed",
+              "sha256": "8b21415748f7b5cb0f289f1f2c4cad934ef4cee1cdaa6306dbf2d7754b1ca8ec",
+              "status": "reviewed"
+            }
+          },
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [
+            {
+              "path": "artifacts/research/frontend-contracts/frontend-review.json",
+              "sha256": "b7e5e43f27280b5010636e9a8ede3ec9ee06c0d080e0394014726f3d649ff792"
+            },
+            {
+              "path": "docs/research-frontend-contracts.md",
+              "sha256": "dc7e9e056d6bf60267a0e23a2c5a56354cd812a9cdd8476f19cc5537a9d06fe5"
+            },
+            {
+              "path": "benchmarks/component-controls/frontend/result.json",
+              "sha256": "f0824f04eb0ef4885b52ff6f10e98c75b204ae0f27f311aac3c945ea3f158ea4"
+            }
+          ],
+          "scope": "Authored experimental overlay with complete original provenance; immutable source unchanged",
+          "status": "complete"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "0251173f22aa20293bd562963717e67d101260dba06ac9de7fa82117a54e159e",
+          "skill_file_sha256": "dd04a1c02503036ee7f4d649c9b7b75d2e6954a94d6f464faedfa992701d1978"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-frontend-patterns-skill-md"
+    },
+    {
+      "review": {
+        "category": "Documents, spreadsheets & presentations",
+        "evaluation": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "mirrored_path": "included/skills/by-category/documents-spreadsheets-presentations/selected-structure-reference/frontend-slides",
+        "research": {
+          "evidence": [
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "cffe5157bbf5dbf68f5697b99ff6c786c521a85c894e950003a140527dd191c8",
+          "skill_file_sha256": "da378954096f51844ab9214d6ae30f317d7f5373af41fbc7e989d20518adb9b8"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-frontend-slides-skill-md"
+    },
+    {
+      "review": {
+        "category": "Coding, refactoring & repository automation",
+        "evaluation": {
+          "evidence": [
+            {
+              "path": "artifacts/research/backend-contracts/backend-review.json",
+              "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
+            },
+            {
+              "path": "docs/research-backend-contracts.md",
+              "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
+            },
+            {
+              "path": "benchmarks/component-controls/backend/result.json",
+              "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
+            }
+          ],
+          "scope": "Selected source-bound component controls only; no whole-skill or model-efficacy claim",
+          "status": "in_progress"
+        },
+        "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/investor-materials",
+        "research": {
+          "evidence": [
+            {
+              "path": "artifacts/research/backend-contracts/backend-review.json",
+              "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
+            },
+            {
+              "path": "docs/research-backend-contracts.md",
+              "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
+            },
+            {
+              "path": "benchmarks/component-controls/backend/result.json",
+              "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
+            },
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            }
+          ],
+          "open_work": [
+            "Complete original package read; whole-domain/runtime and agent-efficacy qualification remain open"
+          ],
+          "resource_hash_policy": "catalog-canonical-v1",
+          "resources": {
+            "SKILL.md": {
+              "review_scope": "Complete original instruction body and all examples",
+              "sha256": "0541ac8ede8d39c59a646834481d0de86312e598331b86dc7027ece0def3c193",
+              "status": "reviewed"
+            },
+            "agents/openai.yaml": {
+              "review_scope": "Complete UI, activation policy and default prompt; not installed",
+              "sha256": "fae8c572e0edc7110f692e115d4ad7fa20d2d2852dead8dc366bfebdbf29b041",
+              "status": "reviewed"
+            }
+          },
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [
+            {
+              "path": "artifacts/research/backend-contracts/backend-review.json",
+              "sha256": "a95dd30ad0a1321ba303ebc55eaa7acb08acccdf3b764710cf17593a60864f58"
+            },
+            {
+              "path": "docs/research-backend-contracts.md",
+              "sha256": "28d1a8a2bf6c2bb44ec05a39a2b9afeaf349f0058873a6ff64b6abdd0b1fd2a1"
+            },
+            {
+              "path": "benchmarks/component-controls/backend/result.json",
+              "sha256": "3a797744fb5841ad2669756d45b7ad90929cfee47ef230593cf5044e73bab1ad"
+            }
+          ],
+          "scope": "Instructions retained; finance/documentation routing change reserved for final layout",
+          "status": "in_progress"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "6234f4ffd52c20b50489d75881fdf4eada1083bedc681528f70fdf1ab099ce82",
+          "skill_file_sha256": "0541ac8ede8d39c59a646834481d0de86312e598331b86dc7027ece0def3c193"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-investor-materials-skill-md"
+    },
+    {
+      "review": {
+        "category": "Communication, productivity & support",
+        "evaluation": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "mirrored_path": "included/skills/by-category/communication-productivity-support/selected-structure-reference/investor-outreach",
+        "research": {
+          "evidence": [
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "b88e42dc8bda3119e4ed4148d41b7b8681076d4be491db62e4ddbd2cedb1312a",
+          "skill_file_sha256": "ab71ee37a1ff5f9b7f27908d33fc47f03e7897e6c87be3f8d7c0e4a8d73fefdd"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-investor-outreach-skill-md"
+    },
+    {
+      "review": {
+        "category": "Finance, commerce & forecasting",
+        "evaluation": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "mirrored_path": "included/skills/by-category/finance-commerce-forecasting/selected-structure-reference/market-research",
+        "research": {
+          "evidence": [
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            }
+          ],
+          "resource_hash_policy": "catalog-canonical-v1",
+          "resources": {
+            "SKILL.md": {
+              "sha256": "7ef3fa13d6272fd295eeb2aca9f6a2f09f6a8270cf33b0675fc5a0018cf6e406",
+              "status": "pending"
+            },
+            "agents/openai.yaml": {
+              "sha256": "42e1b1bf676506bc50027131cd8226b151f48a57551197308102dd01fd080943",
+              "status": "pending"
+            }
+          },
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "92611c259721a6b07f2e2f951919deca33aa9a1e690a626d7e6a2750748775bd",
+          "skill_file_sha256": "7ef3fa13d6272fd295eeb2aca9f6a2f09f6a8270cf33b0675fc5a0018cf6e406"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-market-research-skill-md"
+    },
+    {
+      "review": {
+        "category": "Agent infrastructure & skill creation",
+        "evaluation": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "mirrored_path": "included/skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/mcp-server-patterns",
+        "research": {
+          "evidence": [
+            {
+              "path": "docs/research-initial-agent-workflows.md",
+              "sha256": "04a54ee8f98e844081de808bc770fd9ab63cb7fcdb60c35f48378aec83496d05"
+            },
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "93540dd91d9a82c715bdb5c9757803b14a8be590ba4012b1406de584b550ea34",
+          "skill_file_sha256": "8da7edb0647f1015c5d70951d66a8f9dd2108726eb1cf9949ff2874849c4a880"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-mcp-server-patterns-skill-md"
+    },
+    {
+      "review": {
+        "category": "Coding, refactoring & repository automation",
+        "evaluation": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "mirrored_path": "included/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/nextjs-turbopack",
+        "research": {
+          "evidence": [
+            {
+              "path": "docs/research-category-routing.md",
+              "sha256": "ebb12eeb2087d52667592165a53e37ec144ead27ab2f83e994dd857e371d1958"
+            },
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/next-turbopack-v1/windows-result.json",
+              "scope": "Selected version-specific component controls and upstream observation; not an agent evaluation.",
+              "sha256": "1750263eef3a404ebcd34bcace2e4eab38492ca5ea86040fe5888581ce249790"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/next-turbopack-v1/linux-result.json",
+              "scope": "Selected version-specific component controls and upstream observation; not an agent evaluation.",
+              "sha256": "19aceb5a695bb73686f50fd41e68894a47dd36afad8fa19c1b3f362f70351aa6"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/next-turbopack-v1/upstream-observation.json",
+              "scope": "Selected version-specific component controls and upstream observation; not an agent evaluation.",
+              "sha256": "bb37c645756835db4f8bada076b67e1e36dfd5851362229ace20f3399225517b"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            },
+            {
+              "path": "docs/research-next-cache-defaults.md",
+              "sha256": "0dcd3151652fb9525dfc36a4e50c121e326e090d85d961e870d33c2ca3b048ef"
+            },
+            {
+              "path": "benchmarks/dependency-regressions/next_turbopack_cache.py",
+              "sha256": "f28abe958b6e84ba7cc189b93d9874ddb24e8323b816d72fa03d7032d94a41d4"
+            },
+            {
+              "path": "artifacts/research/2026-11-03/next-cache-defaults-v1/windows-result.json",
+              "sha256": "239613d3b4c7fdf00f24dd8c42386d084da57c97a29c330f2b1e39f8dfa8042a"
+            },
+            {
+              "path": "artifacts/research/2026-11-03/next-cache-defaults-v1/linux-result.json",
+              "sha256": "671c70509d486f096949783ffe3ca9210e79d7337a682f9f2e3de9e5884e2ab3"
+            },
+            {
+              "path": "artifacts/research/2026-11-03/next-cache-defaults-v1/upstream-observation.json",
+              "sha256": "0e5c5bf0d151becf69675b5f80ff089dc59ee05d78d0bb5a4b46d4ccce1ea63a"
+            }
+          ],
+          "resource_hash_policy": "catalog-canonical-v1",
+          "resources": {
+            "SKILL.md": {
+              "captured_raw_sha256": "ca08eec7bc37bc0d90b2417f6806cc09d1c9b3536028ee07f7d53d9769fdb822",
+              "review_scope": "Complete locked entrypoint reviewed against upstream, current documentation and selected component controls; speed and agent effectiveness remain unmeasured.",
+              "sha256": "f65da15aabeb9dca7ae08525739e72ab16e79a78ff4004f7cab6ad2de1c2a79b",
+              "status": "reviewed"
+            },
+            "agents/openai.yaml": {
+              "captured_raw_sha256": "e33c8bc4bbb6fac578c5a7e54517f35dc4f492c807851058c4bb0722e95eb93a",
+              "review_scope": "Complete locked discovery metadata reviewed and compared with the stable upstream release; automatic selection was not evaluated.",
+              "sha256": "eae70fb66b6bcbc2df6137f4f1a7681a11391d45b333a282fa512864f36785e6",
+              "status": "reviewed"
+            }
+          },
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [
+            {
+              "path": "included/repaired/skills/by-category/coding-refactoring-repository-automation/selected-structure-reference/nextjs-turbopack/repair.json",
+              "scope": "Maintained version-specific overlay; upstream mirror remains unchanged.",
+              "sha256": "0534182588674fe9682cae796194b0a473217903cc9034fe3b0f85e27ff2966a"
+            },
+            {
+              "path": "included/improved/skills/nextjs-turbopack-cache/SKILL.md",
+              "sha256": "616f4264a1b82d70280cb16f02e9e1c87568bf9c7642b2b654337808abfc60fb"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "da74181af5e8b11c70fa12d97ec7c1e2d94fcea5023841c51e97ea4e01048bff",
+          "skill_file_sha256": "f65da15aabeb9dca7ae08525739e72ab16e79a78ff4004f7cab6ad2de1c2a79b"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-nextjs-turbopack-skill-md"
+    },
+    {
+      "review": {
+        "category": "Agent infrastructure & skill creation",
+        "evaluation": {
+          "evidence": [
+            {
+              "path": "artifacts/agent-trials/development-v2-report/summary.json",
+              "scope": "Frozen earlier strategic-compact overlay and eval-harness bundle; one development task; all arms 3/3 task passes; no isolated skill effect or quality gain established. The later strategic-compact-current overlay has not been evaluated.",
+              "sha256": "6b7eb92c679409eb116fb31ee50da299cc9c9b4f90558ade82f15114014be701"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "mirrored_path": "included/skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/strategic-compact",
+        "research": {
+          "evidence": [
+            {
+              "path": "docs/research-initial-agent-workflows.md",
+              "sha256": "04a54ee8f98e844081de808bc770fd9ab63cb7fcdb60c35f48378aec83496d05"
+            },
+            {
+              "path": "docs/research-context-token-accounting.md",
+              "sha256": "a14303ebd4cf07f4e216b04172db0a2e1a5a432fbab2ac539e84b21fbc7850d9"
+            },
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            },
+            {
+              "path": "artifacts/research/2026-11-11/evaluation-resumption/review.json",
+              "scope": "Independent native controls and upstream observation. No agent efficacy evidence.",
+              "sha256": "a4581ce106cdfbc51b309141d5ea46f67033a68fdd0866f168041baef7f1db93"
+            },
+            {
+              "path": "docs/research-evaluation-and-resumption.md",
+              "sha256": "f2a216e27b872f8836ba5cb5b104358809e8532a75e66657987ea1cd8d3ffcf4"
+            },
+            {
+              "path": "artifacts/research/2026-11-14/ledger-resource-portability/migration.json",
+              "scope": "Exact original and published bytes establish a line-ending-only migration to the existing catalog hash policy. No review status or evaluation result changed.",
+              "sha256": "ef15b6c20a301329d1f996fb5d126f0c61b3ad501ac7b0add9230d771d10c99f"
+            }
+          ],
+          "resource_hash_policy": "catalog-canonical-v1",
+          "resources": {
+            "SKILL.md": {
+              "captured_raw_sha256": "3687b590f5f39a23d22b7700bf9e208e14a462b1a2c68f531f995fe3675f95f5",
+              "review_scope": "Reviewed the pinned entrypoint in full. Assessed context signals, host hooks, durable records and owned process resumption. The referenced hook is absent from the locked package.",
+              "sha256": "c83c4c9d60d30d508bbd2bf0c6ffa724b5fdac679addd4828b268892dc39dc1b",
+              "status": "reviewed"
+            },
+            "agents/openai.yaml": {
+              "captured_raw_sha256": "7354622d7dd7d5ddf271c07aa0b2db72e69e83a18b9c4309751cb3a647789ac4",
+              "review_scope": "Reviewed complete user-interface metadata and implicit invocation policy. Activation behavior has not been measured.",
+              "sha256": "88acce453f917eda04f291533c1edb9722b00a37e94581dc30255028f65961b2",
+              "status": "reviewed"
+            }
+          },
+          "status": "complete"
+        },
+        "revision": {
+          "evidence": [
+            {
+              "path": "included/improved/skills/strategic-compact/SKILL.md",
+              "sha256": "3f53ae09458f05fd1938198c8266e578463eb68146ffeae8443f910b6ab1c875"
+            },
+            {
+              "path": "included/improved/skills/strategic-compact-current/SKILL.md",
+              "sha256": "4686f2f919ada2efd48525485a0408249101a3d33b6f52d34121df88c6812566"
+            },
+            {
+              "path": "included/improved/skills/strategic-compact-resume/SKILL.md",
+              "scope": "Versioned experimental overlay. Prior trial and research versions preserved.",
+              "sha256": "b04c4e20f081782b94504b80f5dda57a749aacd2679d3e237e43b1f606f6ce4a"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "4663c2e81b5de7d51f8cb07ba0920fa60257f0c7cc60487f36071c9d07d83e10",
+          "skill_file_sha256": "c83c4c9d60d30d508bbd2bf0c6ffa724b5fdac679addd4828b268892dc39dc1b"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-strategic-compact-skill-md"
+    },
+    {
+      "review": {
+        "category": "Testing, QA & benchmarking",
+        "evaluation": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/tdd-workflow-everything-claude-code",
+        "research": {
+          "evidence": [
+            {
+              "path": "docs/research-testing-workflows.md",
+              "sha256": "b1c1e389a83345d776df6b922cebee42a8bf4a7890d4275657bd2c8122e0e71d"
+            },
+            {
+              "path": "artifacts/research/2026-10-02/testing-stable-version-review.json",
+              "sha256": "fe1d9275f9223b3a28c295543ff96d2911c0c2cb06bee99e8fc2092c8639fb01"
+            },
+            {
+              "path": "artifacts/research/2026-10-02/verification-pipeline-controls.json",
+              "sha256": "4b1055f47959b6107c820cc64eddb5ef737f545a0ebfe450d874ae2bce56cbef"
+            },
+            {
+              "path": "artifacts/research/2026-10-02/playwright-current-contract-review.json",
+              "sha256": "7934647cceb6f62c6ac213a6f4fcf81ad6eafb369570c22097e494c6a8136ad0"
+            },
+            {
+              "path": "artifacts/research/2026-10-02/playwright-wait-runtime-controls.json",
+              "sha256": "55207bb87a1cfffd2c7e51f29593055b469fbd0cdb9429883fc15f742afbd9ee"
+            },
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "docs/research-tdd-jest-configuration.md",
+              "scope": "Jest configuration component controls and selected upstream source observation; no agent efficacy result.",
+              "sha256": "7b9a8c784753bef31a39e050a186dcc06b88d113938a0454b91cfc1931de9399"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/reproduce.py",
+              "scope": "Jest configuration component controls and selected upstream source observation; no agent efficacy result.",
+              "sha256": "82dfe2827aff77e23e6f591df1155a7abd10db6219127e160a88a6bc312b550e"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/windows-result.json",
+              "scope": "Jest configuration component controls and selected upstream source observation; no agent efficacy result.",
+              "sha256": "9352120134c5daf36247efe770461c00a8a99af71b518edec485dfbcd25c79d1"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/linux-result.json",
+              "scope": "Jest configuration component controls and selected upstream source observation; no agent efficacy result.",
+              "sha256": "94300c8100cac7084bebf538258ac39d6accf194c01876dd1d9063502e2e3e34"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/upstream-observation.json",
+              "scope": "Jest configuration component controls and selected upstream source observation; no agent efficacy result.",
+              "sha256": "39f444e6c1b1f2e2b5b518a250e4e0c4b3dd1e524e8f96fcf3e8fe1f199e9960"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/upstream-windows-result.json",
+              "scope": "Jest configuration component controls and selected upstream source observation; no agent efficacy result.",
+              "sha256": "548a6d4c174f6aa7672bd0c8453bd457189c2eb4fd91e029c76d39c3aa649cdc"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/upstream-linux-result.json",
+              "scope": "Jest configuration component controls and selected upstream source observation; no agent efficacy result.",
+              "sha256": "cb2014a05e88a03f941e8f8295a011fd0debb73dea4fa8ee6793afc0aeb8c4f0"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/node26-windows-result.json",
+              "scope": "Jest threshold component control using Node 26.13.0; no agent efficacy result.",
+              "sha256": "2f70d2f3a41a411241e0410def2d544e9f5f3c57cebeb694ede94f781ff4579a"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/node26-linux-result.json",
+              "scope": "Jest threshold component control using Node 26.13.0; no agent efficacy result.",
+              "sha256": "b82c518c63d1e71cf05c067dc6421fc8c9c265e6db85dfca543bb42f9c0b0d71"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/upstream-node26-windows-result.json",
+              "scope": "Jest threshold component control using Node 26.13.0; no agent efficacy result.",
+              "sha256": "b9c4d09cc6168022971c0a20af3c372bef1049b099f903d245dbd34ae8984608"
+            },
+            {
+              "path": "artifacts/repaired-skill-readiness/tdd-jest-v1/upstream-node26-linux-result.json",
+              "scope": "Jest threshold component control using Node 26.13.0; no agent efficacy result.",
+              "sha256": "a63bbccab65917d657d25b7fa52ee4b07ef34c3572e5a3e20023ff5fada648ea"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            },
+            {
+              "path": "docs/research-tdd-red-phase.md",
+              "scope": "Pytest red-phase outcome interpretation; not agent-efficacy evidence.",
+              "sha256": "a13e1626c017e4e7224c25a819623471253a466a7bff895d3da0e1efd7c9e887"
+            },
+            {
+              "path": "tests/test_tdd_red_phase_controls.py",
+              "scope": "Independent executable pytest outcome controls; not an agent trial.",
+              "sha256": "360d587fa7205ae2845ede08fe398ba8611b04b52c715333d4b4f5ffa17ed7bb"
+            }
+          ],
+          "open_work": [
+            "Evaluate remaining examples and test-runner integrations independently.",
+            "Measure agent effects on independently defined tasks; component checks alone are not efficacy evidence."
+          ],
+          "resource_hash_policy": "catalog-canonical-v1",
+          "resources": {
+            "SKILL.md": {
+              "review_scope": "Complete instruction body and examples read; research and runtime checks cover only the documented testing and Jest cases. Remaining examples and agent efficacy are unverified.",
+              "sha256": "63249998befbdbbf2f7d2f089c9cd7a9912f26ddc8fdf04ab1248c82614b43ac",
+              "status": "reviewed"
+            },
+            "agents/openai.yaml": {
+              "review_scope": "Complete display metadata, invocation policy and default prompt read; runtime activation not tested.",
+              "sha256": "ac132cb2dc93fa89181f8abe4067930ab215a440894be46fc5d0ebde7ee6185b",
+              "status": "reviewed"
+            }
+          },
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [
+            {
+              "path": "included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/tdd-workflow-everything-claude-code/repair.json",
+              "sha256": "6ced12d7d3721198a75e6dc6f1037f0560952785cf7bfc988a29eb62a6d047c4"
+            },
+            {
+              "path": "artifacts/research/2026-11-17/fixture-lifecycle/previous-tdd.md",
+              "scope": "Experimental unbenchmarked revision; original and historical repair remain unchanged.",
+              "sha256": "38515bb140a79f78469e06da346dca10c3cc05fd7be4cb70e668e2c539c66c14"
+            },
+            {
+              "path": "artifacts/research/2026-11-17/fixture-lifecycle/review.json",
+              "scope": "Validated fixture ownership and cleanup behavior. Comparative evaluation pending.",
+              "sha256": "a277732c7592235712719c51162d7111625e1dfb2e7c322b912df7a71da6c467"
+            },
+            {
+              "path": "artifacts/research/2026-11-17/fixture-lifecycle/review-v2.json",
+              "scope": "Native independent focused-runner reuse, setup-failure classification and prior fixture lifecycle controls. The earlier measured candidate remains separate.",
+              "sha256": "3e3df833247abccf8ddbf98e70d400336b285745e57edcb4d19c8b7c50621753"
+            },
+            {
+              "path": "artifacts/research/2026-11-24/synchronized-cancellation/review.json",
+              "scope": "Independent native controls for synchronized cancellation and cleanup after assertion failure.",
+              "sha256": "4e288f304c2db95c9a33928420c92728b616ada5abe3de085dcd560bb1473c0f"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "fd68cd58dc3f2edf9bf054299552c3a4c70c0a4515213bfad79e870026b7e2db",
+          "skill_file_sha256": "63249998befbdbbf2f7d2f089c9cd7a9912f26ddc8fdf04ab1248c82614b43ac"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-tdd-workflow-skill-md"
+    },
+    {
+      "review": {
+        "category": "Testing, QA & benchmarking",
+        "evaluation": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "mirrored_path": "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/verification-loop-everything-claude-code",
+        "research": {
+          "evidence": [
+            {
+              "path": "docs/research-testing-workflows.md",
+              "sha256": "b1c1e389a83345d776df6b922cebee42a8bf4a7890d4275657bd2c8122e0e71d"
+            },
+            {
+              "path": "artifacts/research/2026-10-02/testing-stable-version-review.json",
+              "sha256": "fe1d9275f9223b3a28c295543ff96d2911c0c2cb06bee99e8fc2092c8639fb01"
+            },
+            {
+              "path": "artifacts/research/2026-10-02/verification-pipeline-controls.json",
+              "sha256": "4b1055f47959b6107c820cc64eddb5ef737f545a0ebfe450d874ae2bce56cbef"
+            },
+            {
+              "path": "artifacts/research/2026-10-02/playwright-current-contract-review.json",
+              "sha256": "7934647cceb6f62c6ac213a6f4fcf81ad6eafb369570c22097e494c6a8136ad0"
+            },
+            {
+              "path": "artifacts/research/2026-10-02/playwright-wait-runtime-controls.json",
+              "sha256": "55207bb87a1cfffd2c7e51f29593055b469fbd0cdb9429883fc15f742afbd9ee"
+            },
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            },
+            {
+              "path": "docs/research-powershell-exit-status.md",
+              "sha256": "2257f0e9646c886235a0d10a208687155b741b5bab8c8ccd271e7437681ead45"
+            },
+            {
+              "path": "benchmarks/dependency-regressions/verification_powershell.py",
+              "sha256": "2c17256f0e0c0280c12cac603efc70e3e7a02b746f26f1fd47a01640e5571149"
+            },
+            {
+              "path": "artifacts/research/2026-11-03/verification-powershell-status-v1/result.json",
+              "sha256": "9f60914d03a49112e85de2280cf3a9ac1bc78939a400710595708761c0bf867c"
+            },
+            {
+              "path": "artifacts/research/2026-11-17/scoped-study-and-skill-delivery/observations.json",
+              "sha256": "1c7e041d8406bb702d8c3f8077b57c3217d7e4b5666810a0577125d4adc8ad8d"
+            },
+            {
+              "path": "artifacts/research/2026-11-17/frontend-stream-contract/review.json",
+              "sha256": "6323b9865876784ec62b9a691dcf9c53935bda93a3b4675279c51992be55d06a"
+            },
+            {
+              "path": "artifacts/research/2026-11-25/native-command-verification/observations.json",
+              "sha256": "72c7ee191f6ab32c6a5bff65e5602b043eb6f07fa17f820b3e953661034e798d"
+            }
+          ],
+          "open_work": [
+            "Complete remaining non-security behavior checks and agent evaluation.",
+            "Cybersecurity-related review is deferred under the owner instruction."
+          ],
+          "resource_hash_policy": "catalog-canonical-v1",
+          "resources": {
+            "SKILL.md": {
+              "review_scope": "Complete source read; selected non-security pipeline, coverage and diff guidance reviewed. Cybersecurity-related guidance and remaining claims are deferred or unverified.",
+              "sha256": "01a9ae310ad4426bb05660dda6cefdeaac9513417585c09c8bb1b94738649a78",
+              "status": "pending"
+            },
+            "agents/openai.yaml": {
+              "review_scope": "Complete display metadata, invocation policy and default prompt read; runtime activation not tested.",
+              "sha256": "1907fd04fea5c83d15faf14acfc978de90076d4351341cf9259639aa0c3b7bd3",
+              "status": "reviewed"
+            }
+          },
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [
+            {
+              "path": "artifacts/research/2026-10-02/improved-skills-manifest-four-overlays.json",
+              "sha256": "0f05a838b09ecb124e78ae84e264f957b0e0f9668dde8f3a61ef98563bdfdbf0"
+            },
+            {
+              "path": "artifacts/research/2026-11-17/scoped-study-and-skill-delivery/previous-verification-skill.md",
+              "sha256": "64637a36eee74d85b2f6f65a5b3f029e399c60ac9cc37fe00ba5651bd80b4f49"
+            },
+            {
+              "path": "artifacts/research/2026-11-17/scoped-study-and-skill-delivery/observations.json",
+              "sha256": "1c7e041d8406bb702d8c3f8077b57c3217d7e4b5666810a0577125d4adc8ad8d"
+            },
+            {
+              "path": "artifacts/research/2026-11-17/frontend-stream-contract/review.json",
+              "sha256": "6323b9865876784ec62b9a691dcf9c53935bda93a3b4675279c51992be55d06a"
+            },
+            {
+              "current_overlay_sha256": "e2d4aa146727b49c0621127cd6e0b723babe1480d5520f816e2b369496b08b8a",
+              "path": "artifacts/research/2026-11-25/native-command-verification/review.json",
+              "scope": "Verified native command and artifact behavior. Agent effectiveness for this revision remains open.",
+              "sha256": "c55c9261d4f23a1cae0c8293b7a945653960847fd34bdb392e02859938991c31"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "44c77ad787f653cf5619d289abd89de890c64bbbf2318a9838fc4f25779f4c2e",
+          "skill_file_sha256": "01a9ae310ad4426bb05660dda6cefdeaac9513417585c09c8bb1b94738649a78"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-verification-loop-skill-md"
+    },
+    {
+      "review": {
+        "category": "DevOps, cloud & operations",
+        "evaluation": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "mirrored_path": "included/skills/by-category/devops-cloud-operations/selected-structure-reference/video-editing",
+        "research": {
+          "evidence": [
+            {
+              "path": "artifacts/research/2026-10-28/ecc-upstream-tree-delta.json",
+              "scope": "Verified raw Git directory delta only; content, license, runtime and agent-effectiveness review remain separate.",
+              "sha256": "594965a01dd6f1fc020afa598e9497040bf28a4831259e537b84d655ffb00fa9"
+            },
+            {
+              "path": "artifacts/research/2026-11-02/mixed-upstream-v1/manifest.json",
+              "sha256": "f2eec02d704bc53164961b322936c425f9f115dca567ad7c1b66d364faca70a8"
+            }
+          ],
+          "status": "in_progress"
+        },
+        "revision": {
+          "evidence": [],
+          "status": "pending"
+        },
+        "source_repo": "affaan-m/everything-claude-code",
+        "source_signature": {
+          "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+          "skill_dir_sha256": "a36778517ee9c7d9d1226c393b3e7a4d96d96d2c8ae78c14a2b3c7e48d7d87f0",
+          "skill_file_sha256": "daa74807d8a53d735392dedadafe2e91dbeba9266d57aa0691308dca106237ef"
+        }
+      },
+      "skill_id": "affaan-m-everything-claude-code-agents-skills-video-editing-skill-md"
     }
   ],
   "time_gates": [

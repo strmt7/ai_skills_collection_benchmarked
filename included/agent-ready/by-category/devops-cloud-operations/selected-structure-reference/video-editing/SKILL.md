@@ -23,7 +23,7 @@ Before repository work, read and apply [Mandatory agent tools](../../../../../..
 ## Verification
 
 - Source mirror: `../../../../../skills/by-category/devops-cloud-operations/selected-structure-reference/video-editing/SKILL.md`
-- Source commit: `846ffb75da9a5f4e677d927af1ad4a1951652267`
+- Source commit: `c05b2d6614f62f6db0047669aa4eefb223d478f9`
 - Static benchmark results: see `docs/benchmark-results.md`
 - Runtime artifacts recorded by this entrypoint: `0`
 - Assigned scenarios: `skill-proof-affaan-m-everything-claude-code-agents-skills-video-editing-skill-md`, `devops-cloud-and-operations-kubernetes-examples`, `devops-cloud-and-operations-opentelemetry-demo`, `devops-cloud-and-operations-local-omero-compose-workflows`

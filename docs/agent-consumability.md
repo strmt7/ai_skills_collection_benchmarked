@@ -4,7 +4,7 @@ Mechanical checks:
 
 - `SKILL.md` exists at the recorded source path.
 - `name`, description, source URL, immutable URL, selected ref, and commit SHA are recorded.
-- Selected ref is latest release tag where available, otherwise default branch HEAD with explicit no-release policy.
+- Each source ref and commit are declared. A source can retain older packages while other packages use a newer release.
 - At least `3` real workflow scenarios are assigned to every scenario-covered candidate.
 - Improvement notes are derived from observed file structure.
 

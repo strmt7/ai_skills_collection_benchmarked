@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-25",
+  "scope": "Native Windows Git checkout in both line-ending modes and exact catalog validation for both ECC pins.",
+  "source_sha256": {
+    ".gitattributes": "fb4dbee1ec49607e76213c7c59887941fbb49567d5b67eebd46d0e9166bd4f5e",
+    "tools/validate_catalog.py": "4ede474bf07ab78bd99d9f5fca59be8734fef49a6d4c6be701fe99b27b0350fd"
+  },
+  "artifacts": {
+    "observations.json": "4d77a49243330321a5395e4fb233f83c692924751f7baa0abef522cc04a2066c"
+  }
+}

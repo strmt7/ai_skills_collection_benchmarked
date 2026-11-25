@@ -12,11 +12,11 @@ from typing import Any
 from unittest.mock import Mock
 
 import pytest
+from helpers import original_skill_for_repair
 
 ROOT = Path(__file__).resolve().parents[1]
 ARTIFACT = ROOT / "artifacts/repaired-skill-readiness/e2e-response-v1"
 OVERLAY = ROOT / "included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/e2e-testing"
-MIRROR = ROOT / "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/e2e-testing/SKILL.md"
 
 
 def windows_process_cpu_seconds(pid: int) -> tuple[float, float] | None:
@@ -110,7 +110,7 @@ def digest(path: Path) -> str:
 def test_original_overlay_and_evidence_are_source_bound() -> None:
     manifest = json.loads((OVERLAY / "repair.json").read_text(encoding="utf-8"))
     original = OVERLAY / manifest["provenance_skill"]
-    assert digest(original) == digest(MIRROR) == manifest["original_skill_sha256"]
+    assert digest(original) == digest(original_skill_for_repair(manifest)) == manifest["original_skill_sha256"]
     assert digest(OVERLAY / "SKILL.md") == manifest["repaired_skill_sha256"]
     assert digest(OVERLAY / manifest["license_file"]) == manifest["license_sha256"]
     assert manifest["model_performance_claim"] is False
@@ -141,6 +141,8 @@ def test_recorded_controls_preserve_results_and_limit_claims() -> None:
 
 
 def test_control_rejects_unreviewed_overlay_before_loading_dependencies(tmp_path: Path) -> None:
+    manifest = json.loads((OVERLAY / "repair.json").read_text(encoding="utf-8"))
+    source = original_skill_for_repair(manifest)
     node = shutil.which("node")
     if node is None:
         pytest.skip("Node is not installed")
@@ -150,7 +152,7 @@ def test_control_rejects_unreviewed_overlay_before_loading_dependencies(tmp_path
         # reader threads to drain Windows' synchronous process-output pipes.
         with captures["stdout"].open("xb") as stdout, captures["stderr"].open("xb") as stderr:
             process = subprocess.Popen(
-                [node, str(ARTIFACT / "control.cjs"), str(MIRROR), str(MIRROR), str(tmp_path)],
+                [node, str(ARTIFACT / "control.cjs"), str(source), str(source), str(tmp_path)],
                 stdin=subprocess.DEVNULL,
                 stdout=stdout,
                 stderr=stderr,

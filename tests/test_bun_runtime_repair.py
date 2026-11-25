@@ -6,10 +6,11 @@ import subprocess
 import sys
 from pathlib import Path
 
+from helpers import original_skill_for_repair
+
 ROOT = Path(__file__).resolve().parents[1]
 ARTIFACT = ROOT / "artifacts/repaired-skill-readiness/bun-runtime-v1"
 OVERLAY = ROOT / "included/repaired/skills/by-category/testing-qa-benchmarking/selected-structure-reference/bun-runtime"
-MIRROR = ROOT / "included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/bun-runtime/SKILL.md"
 
 
 def digest(path: Path) -> str:
@@ -18,7 +19,8 @@ def digest(path: Path) -> str:
 
 def test_original_overlay_and_component_evidence_are_source_bound() -> None:
     manifest = json.loads((OVERLAY / "repair.json").read_text(encoding="utf-8"))
-    assert digest(OVERLAY / manifest["provenance_skill"]) == digest(MIRROR) == manifest["original_skill_sha256"]
+    original = original_skill_for_repair(manifest)
+    assert digest(OVERLAY / manifest["provenance_skill"]) == digest(original) == manifest["original_skill_sha256"]
     assert digest(OVERLAY / "SKILL.md") == manifest["repaired_skill_sha256"]
     assert digest(OVERLAY / manifest["license_file"]) == manifest["license_sha256"]
     assert manifest["model_performance_claim"] is False

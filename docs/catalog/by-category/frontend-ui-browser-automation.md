@@ -5,18 +5,18 @@
 - Skill page: [coding-standards](../skills/by-category/frontend-ui-browser-automation/selected-structure-reference/coding-standards.md)
 - Mirrored skill: `included/skills/by-category/frontend-ui-browser-automation/selected-structure-reference/coding-standards`
 - Agent-ready entrypoint: `included/agent-ready/by-category/frontend-ui-browser-automation/selected-structure-reference/coding-standards/SKILL.md`
-- Source: [affaan-m/everything-claude-code `.agents/skills/coding-standards/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/coding-standards/SKILL.md)
-- Selected ref: `v1.10.0`; commit `846ffb75da9a`
-- What it covers: Catalog summary: Universal coding standards, best practices, and patterns for TypeScript, JavaScript, React, and Node.js development.
+- Source: [affaan-m/everything-claude-code `.agents/skills/coding-standards/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/coding-standards/SKILL.md)
+- Selected ref: `v2.2.3`; commit `c05b2d6614f6`
+- What it covers: Catalog summary: Baseline cross-project coding conventions for naming, readability, immutability, and code-quality review. Use detailed frontend or backend skills for framework-specific patterns. Use when reviewing code quality or naming with no framework-specific skill that applies.
 - Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
-- Observed structure: Headings: Coding Standards & Best Practices, When to Activate, Code Quality Principles, 1. Readability First, 2. KISS (Keep It Simple, Stupid). Resources: has_agents_metadata.
+- Observed structure: Headings: Coding Standards & Best Practices, When to Activate, Scope Boundaries, Code Quality Principles, 1. Readability First. Resources: has_agents_metadata.
 - Notability: Included from selected repository structure reference with explicit GitHub provenance.
 - Improvement and correction plan:
   - Keep provenance and selected ref visible so agents can verify the source before use.
   - Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
   - Move long background material into references/ to keep SKILL.md concise.
 - Assigned benchmark scenarios:
-  - `skill-proof-affaan-m-everything-claude-code-agents-skills-coding-standards-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/coding-standards/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+  - `skill-proof-affaan-m-everything-claude-code-agents-skills-coding-standards-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/coding-standards/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
   - `frontend-ui-and-browser-automation-owasp-juice-shop`: Run safe local security workflows against a known vulnerable app.
   - `frontend-ui-and-browser-automation-coco-captions`: Evaluate image understanding and visual QA tasks.
   - `frontend-ui-and-browser-automation-air-defense-android-benchmarks`: Run startup, gameplay, and visual QA benchmark scenarios.
@@ -26,18 +26,18 @@
 - Skill page: [frontend-patterns](../skills/by-category/frontend-ui-browser-automation/selected-structure-reference/frontend-patterns.md)
 - Mirrored skill: `included/skills/by-category/frontend-ui-browser-automation/selected-structure-reference/frontend-patterns`
 - Agent-ready entrypoint: `included/agent-ready/by-category/frontend-ui-browser-automation/selected-structure-reference/frontend-patterns/SKILL.md`
-- Source: [affaan-m/everything-claude-code `.agents/skills/frontend-patterns/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/frontend-patterns/SKILL.md)
-- Selected ref: `v1.10.0`; commit `846ffb75da9a`
-- What it covers: Catalog summary: Frontend development patterns for React, Next.js, state management, performance optimization, and UI best practices.
+- Source: [affaan-m/everything-claude-code `.agents/skills/frontend-patterns/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/frontend-patterns/SKILL.md)
+- Selected ref: `v2.2.3`; commit `c05b2d6614f6`
+- What it covers: Catalog summary: Frontend development patterns for React, Next.js, state management, performance optimization, and UI best practices. Use when building or reviewing React or Next.js components, state, or render performance.
 - Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
-- Observed structure: Headings: Frontend Development Patterns, When to Activate, Component Patterns, Composition Over Inheritance, Compound Components. Resources: has_agents_metadata.
+- Observed structure: Headings: Frontend Development Patterns, When to Activate, Privacy and Data Boundaries, Component Patterns, Composition Over Inheritance. Resources: has_agents_metadata.
 - Notability: Included from selected repository structure reference with explicit GitHub provenance.
 - Improvement and correction plan:
   - Keep provenance and selected ref visible so agents can verify the source before use.
   - Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
   - Move long background material into references/ to keep SKILL.md concise.
 - Assigned benchmark scenarios:
-  - `skill-proof-affaan-m-everything-claude-code-agents-skills-frontend-patterns-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/frontend-patterns/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+  - `skill-proof-affaan-m-everything-claude-code-agents-skills-frontend-patterns-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/frontend-patterns/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
   - `frontend-ui-and-browser-automation-owasp-juice-shop`: Run safe local security workflows against a known vulnerable app.
   - `frontend-ui-and-browser-automation-coco-captions`: Evaluate image understanding and visual QA tasks.
   - `frontend-ui-and-browser-automation-air-defense-android-benchmarks`: Run startup, gameplay, and visual QA benchmark scenarios.

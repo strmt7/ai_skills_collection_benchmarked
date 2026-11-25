@@ -30,7 +30,7 @@ def publication(tmp_path, monkeypatch):
     (previous / "previous.txt").write_text("preserve me", encoding="utf-8")
     monkeypatch.setattr(catalog, "ROOT", root)
     monkeypatch.setattr(catalog, "SOURCE_ROOT", sources)
-    monkeypatch.setattr(catalog, "SOURCES", [{"repo": "fixture/example", "dir": "fixture"}])
+    monkeypatch.setattr(catalog, "SOURCES", [{"repo": "fixture/example", "dir": "fixture", "tag": "fixture"}])
     entry = {
         "id": "fixture-example",
         "name": "example",

@@ -23850,65 +23850,9 @@
       "origin_url": "https://github.com/affaan-m/everything-claude-code.git",
       "repo": "affaan-m/everything-claude-code",
       "selected_ref": "v1.10.0",
-      "selection_policy": "latest GitHub release v1.10.0",
-      "skill_count": 30,
+      "selection_policy": "retained packages from v1.10.0",
+      "skill_count": 4,
       "skills": [
-        {
-          "credential_policy_version": 2,
-          "file_modes": {
-            "SKILL.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-api-design-skill-md",
-          "install_name": "api-design",
-          "skill_dir_sha256": "7d58157146bcc1479c7501ec5d729d7a4961cef054ae79800d07d4125251a895",
-          "skill_file_sha256": "de3be9cde47bd707b2a8af79254915ed03bfcd1b2aeb187f1d889597e8cbb76d",
-          "source_path": ".agents/skills/api-design/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-article-writing-skill-md",
-          "install_name": "article-writing",
-          "skill_dir_sha256": "351f756db6122484ab36395947905b83b2a336d1566faa1df0e90994cb3fe5ff",
-          "skill_file_sha256": "068e9aa2bc7e7e63b396a5df7c50b8b68fa338d3ad1f66012757cde6b41fb7bd",
-          "source_path": ".agents/skills/article-writing/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-backend-patterns-skill-md",
-          "install_name": "backend-patterns",
-          "skill_dir_sha256": "9268785eefb6545f307e6f4d271dd4f2e838982bed776f435f0261d8a69a14c1",
-          "skill_file_sha256": "952e95fd7e8d0b17f13835dde8067d7dd2abd019e6e17821d5ebf913113c589e",
-          "source_path": ".agents/skills/backend-patterns/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "references/voice-profile-schema.md": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-brand-voice-skill-md",
-          "install_name": "brand-voice",
-          "skill_dir_sha256": "5bd4e2059a601031b4cf06ea5369235dc5c965900217e6b433905e7d68606917",
-          "skill_file_sha256": "9c23f871aa77a7d64d2a005fe0849a1380de2a4098d81ec73d13c468e556a59e",
-          "source_path": ".agents/skills/brand-voice/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-bun-runtime-skill-md",
-          "install_name": "bun-runtime",
-          "skill_dir_sha256": "0c83016f06cc0a4a7bff5c28d0fa89d4afa05385206324de0efc89976238ff97",
-          "skill_file_sha256": "2929d1f227962d86bfb2f0e45efd81590cfc90aeaad5b449f4630207e4e07204",
-          "source_path": ".agents/skills/bun-runtime/SKILL.md"
-        },
         {
           "file_modes": {
             "SKILL.md": "100644",
@@ -23919,94 +23863,6 @@
           "skill_dir_sha256": "d042421417392d1a733b4269c3a9d190040e78237c3033217d7364c96a9986bc",
           "skill_file_sha256": "5092a3ce7e6bceb8f3ef2f0d12d292509183651c0f1b66fb56f514dba35a7525",
           "source_path": ".agents/skills/claude-api/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-coding-standards-skill-md",
-          "install_name": "coding-standards",
-          "skill_dir_sha256": "c2b14280ff723c38a2add7d863bfa4d60f090b3fca9b74812de89c119b2e1230",
-          "skill_file_sha256": "f856f758c97fb62ddbfbd75d4570e03bf4ed04c258d13756fecdb313a04cc8d9",
-          "source_path": ".agents/skills/coding-standards/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-content-engine-skill-md",
-          "install_name": "content-engine",
-          "skill_dir_sha256": "3051d9f5d6dc16949d4f6797b0a98a7ba99e807d9aca8c38ef90479d78c13d59",
-          "skill_file_sha256": "a64c6df93125b77c7199df086e4aedeecae0ea578d30e8c2ac73f9957688b52c",
-          "source_path": ".agents/skills/content-engine/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-crosspost-skill-md",
-          "install_name": "crosspost",
-          "skill_dir_sha256": "3f214b37700ade61749fdc782c92064841769aac17f82538b250be2e69267aa1",
-          "skill_file_sha256": "4c130ad682003589622dccae004f6180a472648179919ec23677aef1b743b5a4",
-          "source_path": ".agents/skills/crosspost/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-deep-research-skill-md",
-          "install_name": "deep-research",
-          "skill_dir_sha256": "93f3867033673b0b5bb4ad4f799cc5cf2e2d3622831299cac8e7814277048b69",
-          "skill_file_sha256": "2d631427fc9aba27a318735f930bdb49f5c6ce416506340025eac01648f1df09",
-          "source_path": ".agents/skills/deep-research/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-dmux-workflows-skill-md",
-          "install_name": "dmux-workflows",
-          "skill_dir_sha256": "b29f541bbf30f26014f17aa0f6929321c0647274d364b820bca1d259011f7550",
-          "skill_file_sha256": "06343029c1ae3b08f585a3d7826e782066e0ad3d1e0173cc98c969a380137e90",
-          "source_path": ".agents/skills/dmux-workflows/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-documentation-lookup-skill-md",
-          "install_name": "documentation-lookup-everything-claude-code",
-          "skill_dir_sha256": "80187d5b911e2a61ae78cc720fc67dc072bd8b1ba5d42017ac9d95c2b3894e3b",
-          "skill_file_sha256": "89cc655f72a5e3a947e88b7bae419c068f9ea34101b3fc9e7129184432b507cd",
-          "source_path": ".agents/skills/documentation-lookup/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-e2e-testing-skill-md",
-          "install_name": "e2e-testing",
-          "skill_dir_sha256": "e171e35e31104739e070e54cb0f4de788414f9cada9a455c82580f439da3c511",
-          "skill_file_sha256": "f84ae93c159bf6ecef5a60c9735dc82d96bc5f977ef52eb71678b66722acf684",
-          "source_path": ".agents/skills/e2e-testing/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-eval-harness-skill-md",
-          "install_name": "eval-harness",
-          "skill_dir_sha256": "b144cd41a249418ac510f97d58e5fd51ab16061148167afd4012f9e6f7a6548c",
-          "skill_file_sha256": "0bc29828b0b20c57f1d0904fab2f046155aae9e6d9cf1d7587dd8776a8747f3d",
-          "source_path": ".agents/skills/eval-harness/SKILL.md"
         },
         {
           "file_modes": {
@@ -24024,154 +23880,11 @@
             "SKILL.md": "100644",
             "agents/openai.yaml": "100644"
           },
-          "id": "affaan-m-everything-claude-code-agents-skills-exa-search-skill-md",
-          "install_name": "exa-search",
-          "skill_dir_sha256": "ff7533d62af0f7f9b325de2328b442930c9f2ddd4ec33f196e26863532e82afe",
-          "skill_file_sha256": "284d5c438457c4aeb1636e2b79cfa73c03c0365f4f698214a0a222991f893523",
-          "source_path": ".agents/skills/exa-search/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-fal-ai-media-skill-md",
-          "install_name": "fal-ai-media",
-          "skill_dir_sha256": "8dcbcccaa0b233a8c8c994e3c288da69649698993065fdfb299a3663ca91c20f",
-          "skill_file_sha256": "86f110798171367784c0b83e45d8f4202fcc3d590e980c6ec7e82d0212fa7aff",
-          "source_path": ".agents/skills/fal-ai-media/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-frontend-patterns-skill-md",
-          "install_name": "frontend-patterns",
-          "skill_dir_sha256": "0251173f22aa20293bd562963717e67d101260dba06ac9de7fa82117a54e159e",
-          "skill_file_sha256": "dd04a1c02503036ee7f4d649c9b7b75d2e6954a94d6f464faedfa992701d1978",
-          "source_path": ".agents/skills/frontend-patterns/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "STYLE_PRESETS.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-frontend-slides-skill-md",
-          "install_name": "frontend-slides",
-          "skill_dir_sha256": "cffe5157bbf5dbf68f5697b99ff6c786c521a85c894e950003a140527dd191c8",
-          "skill_file_sha256": "da378954096f51844ab9214d6ae30f317d7f5373af41fbc7e989d20518adb9b8",
-          "source_path": ".agents/skills/frontend-slides/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-investor-materials-skill-md",
-          "install_name": "investor-materials",
-          "skill_dir_sha256": "6234f4ffd52c20b50489d75881fdf4eada1083bedc681528f70fdf1ab099ce82",
-          "skill_file_sha256": "0541ac8ede8d39c59a646834481d0de86312e598331b86dc7027ece0def3c193",
-          "source_path": ".agents/skills/investor-materials/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-investor-outreach-skill-md",
-          "install_name": "investor-outreach",
-          "skill_dir_sha256": "b88e42dc8bda3119e4ed4148d41b7b8681076d4be491db62e4ddbd2cedb1312a",
-          "skill_file_sha256": "ab71ee37a1ff5f9b7f27908d33fc47f03e7897e6c87be3f8d7c0e4a8d73fefdd",
-          "source_path": ".agents/skills/investor-outreach/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-market-research-skill-md",
-          "install_name": "market-research",
-          "skill_dir_sha256": "92611c259721a6b07f2e2f951919deca33aa9a1e690a626d7e6a2750748775bd",
-          "skill_file_sha256": "7ef3fa13d6272fd295eeb2aca9f6a2f09f6a8270cf33b0675fc5a0018cf6e406",
-          "source_path": ".agents/skills/market-research/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-mcp-server-patterns-skill-md",
-          "install_name": "mcp-server-patterns",
-          "skill_dir_sha256": "93540dd91d9a82c715bdb5c9757803b14a8be590ba4012b1406de584b550ea34",
-          "skill_file_sha256": "8da7edb0647f1015c5d70951d66a8f9dd2108726eb1cf9949ff2874849c4a880",
-          "source_path": ".agents/skills/mcp-server-patterns/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-nextjs-turbopack-skill-md",
-          "install_name": "nextjs-turbopack",
-          "skill_dir_sha256": "da74181af5e8b11c70fa12d97ec7c1e2d94fcea5023841c51e97ea4e01048bff",
-          "skill_file_sha256": "f65da15aabeb9dca7ae08525739e72ab16e79a78ff4004f7cab6ad2de1c2a79b",
-          "source_path": ".agents/skills/nextjs-turbopack/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
           "id": "affaan-m-everything-claude-code-agents-skills-security-review-skill-md",
           "install_name": "security-review-everything-claude-code",
           "skill_dir_sha256": "1abc42873e97cee0ed908dde9bc735d5fc73dde7b482061b746fe975db355225",
           "skill_file_sha256": "b3d8b293db34a917232c75be1283ce966c43c9b67c722fb65d4ef2d2bded9167",
           "source_path": ".agents/skills/security-review/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-strategic-compact-skill-md",
-          "install_name": "strategic-compact",
-          "skill_dir_sha256": "4663c2e81b5de7d51f8cb07ba0920fa60257f0c7cc60487f36071c9d07d83e10",
-          "skill_file_sha256": "c83c4c9d60d30d508bbd2bf0c6ffa724b5fdac679addd4828b268892dc39dc1b",
-          "source_path": ".agents/skills/strategic-compact/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-tdd-workflow-skill-md",
-          "install_name": "tdd-workflow-everything-claude-code",
-          "skill_dir_sha256": "fd68cd58dc3f2edf9bf054299552c3a4c70c0a4515213bfad79e870026b7e2db",
-          "skill_file_sha256": "63249998befbdbbf2f7d2f089c9cd7a9912f26ddc8fdf04ab1248c82614b43ac",
-          "source_path": ".agents/skills/tdd-workflow/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-verification-loop-skill-md",
-          "install_name": "verification-loop-everything-claude-code",
-          "skill_dir_sha256": "44c77ad787f653cf5619d289abd89de890c64bbbf2318a9838fc4f25779f4c2e",
-          "skill_file_sha256": "01a9ae310ad4426bb05660dda6cefdeaac9513417585c09c8bb1b94738649a78",
-          "source_path": ".agents/skills/verification-loop/SKILL.md"
-        },
-        {
-          "file_modes": {
-            "SKILL.md": "100644",
-            "agents/openai.yaml": "100644"
-          },
-          "id": "affaan-m-everything-claude-code-agents-skills-video-editing-skill-md",
-          "install_name": "video-editing",
-          "skill_dir_sha256": "a36778517ee9c7d9d1226c393b3e7a4d96d96d2c8ae78c14a2b3c7e48d7d87f0",
-          "skill_file_sha256": "daa74807d8a53d735392dedadafe2e91dbeba9266d57aa0691308dca106237ef",
-          "source_path": ".agents/skills/video-editing/SKILL.md"
         },
         {
           "file_modes": {
@@ -24186,6 +23899,313 @@
         }
       ],
       "tree_sha": "7c25b0da160557a8fb352e73075f10b797d1a24c"
+    },
+    {
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+      "local_dir": "affaan-m__ecc_v2.2.3",
+      "origin_url": "https://github.com/affaan-m/ECC.git",
+      "preserved_notice": {
+        "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "path": "artifacts/source-notices/ecc-MIT.txt",
+        "sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+        "source_path": "LICENSE"
+      },
+      "repo": "affaan-m/everything-claude-code",
+      "selected_ref": "v2.2.3",
+      "selection_policy": "selected packages from stable ECC v2.2.3",
+      "skill_count": 26,
+      "skills": [
+        {
+          "credential_policy_version": 2,
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-api-design-skill-md",
+          "install_name": "api-design",
+          "skill_dir_sha256": "0703a1f095369848595f117521bfef9bbb9221f5d6fefb7ff88363f4e717fd5c",
+          "skill_file_sha256": "fa3aea33ce430e2c6406f3c00c0d07aadaed244607d396981524cb50399db8c9",
+          "source_path": ".agents/skills/api-design/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-article-writing-skill-md",
+          "install_name": "article-writing",
+          "skill_dir_sha256": "e903e6b092e64a62e96b43c11ecc1cdc765ba56d10fb276382f9c18de0f20e89",
+          "skill_file_sha256": "6305169f1aaf57e293284aa21bf646d995079ae2921499f7800c7db42d57091f",
+          "source_path": ".agents/skills/article-writing/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-backend-patterns-skill-md",
+          "install_name": "backend-patterns",
+          "skill_dir_sha256": "85939026c4ae3c734607f1bbda0d6ef29c1b3305d20dda732e34f13a62626f64",
+          "skill_file_sha256": "d4d3c9c54b5bf5af3c1711fe16ef28db1538d4c272cfa0e4420da60c368fef02",
+          "source_path": ".agents/skills/backend-patterns/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644",
+            "references/voice-profile-schema.md": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-brand-voice-skill-md",
+          "install_name": "brand-voice",
+          "skill_dir_sha256": "b4b3089799d9252c075e193d263041264992cd0717cbbd2797653d8e772020b8",
+          "skill_file_sha256": "63bb7231f1ec358dcd6b4d9c8bceb212d3c2475be2dd2b8336e3c265bc6d5c03",
+          "source_path": ".agents/skills/brand-voice/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-bun-runtime-skill-md",
+          "install_name": "bun-runtime",
+          "skill_dir_sha256": "d506e0a286ae4bcbdf84821e63b9f85ef99aa5ea11d4344ce87c66930d41f244",
+          "skill_file_sha256": "b93720b74ea93e870ca87418f490f939b16e4cddace7fb3c97d2fa21398cc985",
+          "source_path": ".agents/skills/bun-runtime/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-coding-standards-skill-md",
+          "install_name": "coding-standards",
+          "skill_dir_sha256": "4d94a23156707e86aee7a2857b78ee61f0c6909d10ef52cc8c53483c656ece06",
+          "skill_file_sha256": "7295014cdb95589b28e9ac687e0c40a7fd329288e18a0e6fb6c5b1ed58437a0d",
+          "source_path": ".agents/skills/coding-standards/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-content-engine-skill-md",
+          "install_name": "content-engine",
+          "skill_dir_sha256": "bc36babff49935a48e4fefd4113f4539e184f0dd93fbad438d597376dd85907e",
+          "skill_file_sha256": "1daa87ef009908ac3851230bf366f87d6fde3da90372ff3f21069044a79e100b",
+          "source_path": ".agents/skills/content-engine/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-crosspost-skill-md",
+          "install_name": "crosspost",
+          "skill_dir_sha256": "b34584d8e1c80aac880e8d92cff45d74b8a2c7af242ef7b5d5bd303980d14834",
+          "skill_file_sha256": "fc136701621edcfceb2c3d8c7529120c32d39b4e57142941e0d55b08d252e78b",
+          "source_path": ".agents/skills/crosspost/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-deep-research-skill-md",
+          "install_name": "deep-research",
+          "skill_dir_sha256": "4386b4abcd3e063da2b8fa75860089ee383aabb8ebaf285dc1fadb5044fbed50",
+          "skill_file_sha256": "e42c74a515e9c2a2f662f7846402c1ccd8b2bd278cba84450ff0960b07f0f995",
+          "source_path": ".agents/skills/deep-research/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-dmux-workflows-skill-md",
+          "install_name": "dmux-workflows",
+          "skill_dir_sha256": "6e7b4d0c960626c4232e9eb19b896307274eedfe248fb4e9019186d5475f40ab",
+          "skill_file_sha256": "75eef4455c91b14c2dd67196f4be8b50e53bbbc82b6d060d5aa6c0a58e8c4daa",
+          "source_path": ".agents/skills/dmux-workflows/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-documentation-lookup-skill-md",
+          "install_name": "documentation-lookup-everything-claude-code",
+          "skill_dir_sha256": "e95e18e3f0f23a5fec524f754a9cfb6421c043b83d2cb699b344bd3e16da0b18",
+          "skill_file_sha256": "e171317c95add368192bfe127eff5873dacc55c7669db4e12b0bf03277ea9e67",
+          "source_path": ".agents/skills/documentation-lookup/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-e2e-testing-skill-md",
+          "install_name": "e2e-testing",
+          "skill_dir_sha256": "6c92d5f2861dd2ffde8fbd1ce47ede85d82b510ea6d0765096a2c5d228924986",
+          "skill_file_sha256": "8cfa22c35e5370c1f85400921d27e259cc99ba67a890625412bf2fc650a1d038",
+          "source_path": ".agents/skills/e2e-testing/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-eval-harness-skill-md",
+          "install_name": "eval-harness",
+          "skill_dir_sha256": "bbe6528d38bb325b7355b23d5e59b1079c668b308d1e703e9c2eccb37a185db2",
+          "skill_file_sha256": "49a5a10975860bb2d7e3c4e260ff19b6580e43f5fbc7770b32dece02dde48e49",
+          "source_path": ".agents/skills/eval-harness/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-exa-search-skill-md",
+          "install_name": "exa-search",
+          "skill_dir_sha256": "28208c393df2f5f265acbbb4af55b556de4c68180407394ff6204dfe7128c187",
+          "skill_file_sha256": "7d9004b9a874a9bdbb6025fd7cdd0b416b9e25b7ecfc8fca7bc7852392a7fb05",
+          "source_path": ".agents/skills/exa-search/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-fal-ai-media-skill-md",
+          "install_name": "fal-ai-media",
+          "skill_dir_sha256": "293d8d1a944f1eac6c6501f108007e04e09f1127c205e3928169e2289851f7a9",
+          "skill_file_sha256": "fa1016998c7e73b14f584dab9ebcaaff9a5b2197854814375c73b58a6048f48e",
+          "source_path": ".agents/skills/fal-ai-media/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-frontend-patterns-skill-md",
+          "install_name": "frontend-patterns",
+          "skill_dir_sha256": "5204d255f2d247f71828da748d02972fcb822c349d5a600cc0025c2f88961ac4",
+          "skill_file_sha256": "722866e1106ca51a6eb7f6dd163554d5fa3a30fe9beb5fdbc075ab3a84ae883b",
+          "source_path": ".agents/skills/frontend-patterns/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "STYLE_PRESETS.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-frontend-slides-skill-md",
+          "install_name": "frontend-slides",
+          "skill_dir_sha256": "2209d1075a87e1e659338dd54ffc456641c95f9442e254fe381216335f453bcb",
+          "skill_file_sha256": "3d05c5e983e9d046ccc9336237dde02918e74fb0cf1787dbfeddac3d802f5071",
+          "source_path": ".agents/skills/frontend-slides/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-investor-materials-skill-md",
+          "install_name": "investor-materials",
+          "skill_dir_sha256": "72a5e6c3ef96fc7b134d70913a78a6c8737e0875b7e49fcd17aa397ebfb577fb",
+          "skill_file_sha256": "11797289d40f893053fee569b9a5922222d35f931e7bc38ba9268845a29cc164",
+          "source_path": ".agents/skills/investor-materials/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-investor-outreach-skill-md",
+          "install_name": "investor-outreach",
+          "skill_dir_sha256": "ce34d720cdc3765f4d988aa53e3579a9e5eed068d058e21303254efb05f0ad14",
+          "skill_file_sha256": "592568dae2182091e66505ad2eab2a1316ab17b461aa483723ebbb12e3d5f254",
+          "source_path": ".agents/skills/investor-outreach/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-market-research-skill-md",
+          "install_name": "market-research",
+          "skill_dir_sha256": "5345354ad761fdbfe665060e803835f2ca59ff59e3fd19ea8cd765b975092bc7",
+          "skill_file_sha256": "bcccf6d1976ca9cebb08b5b80e53b76fc01d13698ad4cac544955d9dbe5bee03",
+          "source_path": ".agents/skills/market-research/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-mcp-server-patterns-skill-md",
+          "install_name": "mcp-server-patterns",
+          "skill_dir_sha256": "99e465adde71158d3b2c1422ad7e6c9a1615660f4fb299e6f57f8b685d044f60",
+          "skill_file_sha256": "a740cb21444aec71800aafb94beedc4045c0ad33f20dee1f5f3acd567a300a8d",
+          "source_path": ".agents/skills/mcp-server-patterns/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-nextjs-turbopack-skill-md",
+          "install_name": "nextjs-turbopack",
+          "skill_dir_sha256": "ac96189b510890c953a7c56b52c6b734f3c4dd453bb1ccd208faca27954dd59c",
+          "skill_file_sha256": "2beabec4326fc32e652db21378bae5f704c931a6ff50d0496b9c9f1c8340f82d",
+          "source_path": ".agents/skills/nextjs-turbopack/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-strategic-compact-skill-md",
+          "install_name": "strategic-compact",
+          "skill_dir_sha256": "b93535111e380ad65bc3496bd15e23ab12207e2dbd30fa3cf938b0cf6c8cd99b",
+          "skill_file_sha256": "bf1429dbc4ece055ba2ff79b9dc3e926cfa1a39101a88ee8467de062d1a0e7f3",
+          "source_path": ".agents/skills/strategic-compact/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-tdd-workflow-skill-md",
+          "install_name": "tdd-workflow-everything-claude-code",
+          "skill_dir_sha256": "42d96a102bba09ff5d42329f9ee4344d83524d80890400f5a34259f8f1f6d7e0",
+          "skill_file_sha256": "e9507695657b05f26dd62127f1d6ff58e4015d624df65dd4d7e07f6470317393",
+          "source_path": ".agents/skills/tdd-workflow/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-verification-loop-skill-md",
+          "install_name": "verification-loop-everything-claude-code",
+          "skill_dir_sha256": "e1a976b821073666179024fc6b0b12542dedb76307d276c25632cc6ebb10417b",
+          "skill_file_sha256": "6d4a399d856207297168cc03f3f8c90d4085ff14566bb928af3c97d9a31f2650",
+          "source_path": ".agents/skills/verification-loop/SKILL.md"
+        },
+        {
+          "file_modes": {
+            "SKILL.md": "100644",
+            "agents/openai.yaml": "100644"
+          },
+          "id": "affaan-m-everything-claude-code-agents-skills-video-editing-skill-md",
+          "install_name": "video-editing",
+          "skill_dir_sha256": "e617d9eebd847f3a10071e7c81268ac3499cfab69c9a3181d6ba779eb30c83e0",
+          "skill_file_sha256": "765558c820d0b6f8e4424b55ca1cf13bf9163a1ec572851d1db229693dc8e2ad",
+          "source_path": ".agents/skills/video-editing/SKILL.md"
+        }
+      ],
+      "tree_sha": "ae3070ee183d0bae220745ec9120964e6b671175"
     }
   ],
   "unused_staged_source_dirs": [

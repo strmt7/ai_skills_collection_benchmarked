@@ -76,7 +76,6 @@
         "sha256": "388df47f34c894db266a144440d1ff24c786f4be0af6acdeb137e31f7d798182"
       },
       "sources": [
-        ".gitattributes",
         "tests/test_native_project_resource_artifacts.py"
       ]
     },
@@ -203,7 +202,6 @@
         ".github/workflows/release.yml",
         "docs/coverage.md",
         "tests/test_coverage_bundle.py",
-        "tools/validate_catalog.py",
         "tests/test_documentation_contracts.py"
       ]
     },
@@ -351,6 +349,17 @@
         "included/improved/skills/webapp-testing-current/references/playwright-managed-server.md",
         "included/improved/skills/webapp-testing-current/SKILL.md"
       ]
+    },
+    {
+      "id": "catalog-refresh-checkout-and-pins",
+      "review": {
+        "path": "artifacts/research/2026-11-25/catalog-refresh-validation/review.json",
+        "sha256": "18685b3b16824cb7f7506306c562f588c015620d530dd4b52a4bdac5e68657d2"
+      },
+      "sources": [
+        ".gitattributes",
+        "tools/validate_catalog.py"
+      ]
     }
   ],
   "historical_reviews": [
@@ -367,6 +376,7 @@
         "requirements-dev-lock.txt",
         "requirements-reports-lock.txt",
         "toolchains/bootstrap/bootstrap.ps1",
+        "toolchains/bootstrap/codex.json",
         "toolchains/bootstrap/requirements.txt",
         "tools/_lib_b/__init__.py",
         "tools/_lib_b/frontmatter_utils.py",
@@ -377,10 +387,9 @@
         "tools/_windows_appcontainer.py",
         "tools/_windows_storage_budget.py",
         "tools/_windows_trial_process.py",
+        "tools/check_native_trial_readiness.py",
         "tools/grade_swe_skills_submission.py",
-        "tools/run_agent_trial.py",
-        "toolchains/bootstrap/codex.json",
-        "tools/check_native_trial_readiness.py"
+        "tools/run_agent_trial.py"
       ]
     },
     {
@@ -389,6 +398,7 @@
         "sha256": "19147ccc73bd844a679c776f294532526d9983c32175897a1bf6339e51f2afdf"
       },
       "superseded_sources": [
+        "toolchains/bootstrap/codex.json",
         "tools/_lib_b/__init__.py",
         "tools/_lib_b/frontmatter_utils.py",
         "tools/_native_benchmark_runtime.py",
@@ -398,10 +408,9 @@
         "tools/_windows_appcontainer.py",
         "tools/_windows_storage_budget.py",
         "tools/_windows_trial_process.py",
+        "tools/check_native_trial_readiness.py",
         "tools/grade_swe_skills_submission.py",
-        "tools/run_agent_trial.py",
-        "toolchains/bootstrap/codex.json",
-        "tools/check_native_trial_readiness.py"
+        "tools/run_agent_trial.py"
       ]
     },
     {
@@ -443,10 +452,10 @@
         "sha256": "43722091a64a46feb6ec40b079106da0c37ea367bd7306b0f7d944e58d5f8072"
       },
       "superseded_sources": [
-        "tools/_native_benchmark_runtime.py",
-        "tools/grade_swe_skills_submission.py",
+        "tests/test_grade_swe_skills_submission.py",
         "tests/test_native_benchmark_runtime.py",
-        "tests/test_grade_swe_skills_submission.py"
+        "tools/_native_benchmark_runtime.py",
+        "tools/grade_swe_skills_submission.py"
       ]
     },
     {
@@ -493,15 +502,15 @@
         "sha256": "428e35bfb1366f30772c0c7768986cefe4da3b8e7ff9f9188bf6b8b91bbec836"
       },
       "superseded_sources": [
-        "tools/_trial_context.py",
-        "tools/_native_trial_plan.py",
-        "tools/run_swe_skills_trial.py",
-        "tools/qualify_trial_context.py",
-        "tools/qualify_native_trial_boundary.py",
+        "docs/native-benchmark-controller.md",
         "tests/test_native_trial_plan.py",
         "tests/test_native_trial_runner.py",
         "tests/test_qualify_trial_context.py",
-        "docs/native-benchmark-controller.md"
+        "tools/_native_trial_plan.py",
+        "tools/_trial_context.py",
+        "tools/qualify_native_trial_boundary.py",
+        "tools/qualify_trial_context.py",
+        "tools/run_swe_skills_trial.py"
       ]
     },
     {
@@ -601,13 +610,14 @@
       },
       "superseded_sources": [
         ".github/workflows/offline-validation.yml",
-        "tools/qualify_native_trial_boundary.py",
-        "tests/test_native_trial_boundary.py",
-        "tools/validate_agent_tool_policy.py",
-        "tests/test_agent_tool_policy.py",
         "included/improved/skills/verification-loop-shell-status/SKILL.md",
+        "tests/test_agent_tool_policy.py",
+        "tests/test_native_trial_boundary.py",
         "tests/test_qualify_trial_context.py",
-        "tools/qualify_trial_context.py"
+        "tools/qualify_native_trial_boundary.py",
+        "tools/qualify_trial_context.py",
+        "tools/validate_agent_tool_policy.py",
+        "tools/validate_catalog.py"
       ]
     },
     {
@@ -638,6 +648,7 @@
         "sha256": "52ccd5251dac352333233e33a777003b0d3d35b002fe10ab96fb2b55b6835cd2"
       },
       "superseded_sources": [
+        ".gitattributes",
         "tests/test_native_benchmark_runtime.py"
       ]
     },
@@ -647,10 +658,10 @@
         "sha256": "a8c626bda7dacb2c08078251cedfdcc577d30a9bc561c02a975e56491de835ea"
       },
       "superseded_sources": [
-        "tools/_subject_toolchains.py",
-        "tests/test_subject_toolchains.py",
         "docs/native-benchmark-controller.md",
         "tests/test_native_trial_runner.py",
+        "tests/test_subject_toolchains.py",
+        "tools/_subject_toolchains.py",
         "tools/run_swe_skills_trial.py"
       ]
     },
@@ -660,6 +671,7 @@
         "sha256": "388df47f34c894db266a144440d1ff24c786f4be0af6acdeb137e31f7d798182"
       },
       "superseded_sources": [
+        ".gitattributes",
         "docs/native-benchmark-controller.md",
         "tests/test_grade_swe_skills_submission.py",
         "tests/test_native_benchmark_runtime.py",

@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import copy
+import hashlib
+import json
 import shutil
 from pathlib import Path
 
@@ -79,3 +81,45 @@ def test_changed_bundled_script_is_rejected(tmp_path):
     assert any(
         "package file coverage or hash mismatch" in error for error in overlays.validate(selected, catalog, tmp_path)
     )
+
+
+def test_overlay_accepts_validated_historical_source_and_checks_current_mirror(tmp_path):
+    manifest = read_json(overlays.ROOT / "data/improved_skills_manifest.json")
+    item = manifest["skills"][0]
+    source = next(row for row in read_json(overlays.ROOT / "data/skills_catalog.json") if row["id"] == item["skill_id"])
+    if source["commit_sha"] != item["source_commit"]:
+        from _source_history import resolve_entry
+
+        source, _ = resolve_entry(overlays.ROOT, source, item["skill_id"], item["source_commit"])
+    shutil.copytree(overlays.ROOT / item["overlay_path"], tmp_path / item["overlay_path"])
+    relative = "artifacts/source-history/example/SKILL.md"
+    snapshot = tmp_path / relative
+    snapshot.parent.mkdir(parents=True)
+    raw = (tmp_path / item["original_path"]).read_bytes()
+    snapshot.write_bytes(raw)
+    versions = [
+        {
+            "entry": source,
+            "observed_catalog_revision": "a" * 40,
+            "observed_catalog_sha256": "b" * 64,
+            "skill_snapshot": relative,
+            "skill_snapshot_sha256": hashlib.sha256(raw).hexdigest(),
+        }
+    ]
+    mirror = tmp_path / source["mirrored_path"] / "SKILL.md"
+    mirror.parent.mkdir(parents=True)
+    mirror.write_text("# Updated source\n", encoding="utf-8")
+    current = {**source, "commit_sha": "d" * 40, "skill_file_sha256": sha256_file(mirror)}
+    selected = {"manifest_version": 1, "skills": [item]}
+    assert any("source commit is absent" in error for error in overlays.validate(selected, [current], tmp_path))
+
+    history = tmp_path / "data/catalog_source_history.json"
+    history.parent.mkdir()
+    history.write_text(json.dumps({"schema_version": 1, "versions": versions}), encoding="utf-8")
+    assert overlays.validate(selected, [current], tmp_path) == []
+    mirror.write_text("# Unexpected mirror edit\n", encoding="utf-8")
+    assert any(
+        "immutable source mirror was changed" in error for error in overlays.validate(selected, [current], tmp_path)
+    )
+    snapshot.write_bytes(raw + b"tampered")
+    assert any("snapshot bytes changed" in error for error in overlays.validate(selected, [current], tmp_path))

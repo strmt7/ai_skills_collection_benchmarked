@@ -10,6 +10,7 @@ from typing import Any
 
 from _lib_b.frontmatter_utils import parse
 from _lib_b.io_utils import read_json
+from _source_history import historical_entries
 from build_catalog import sha256_file
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,6 +33,11 @@ def validate(manifest: Any, catalog: list[dict[str, Any]], root: Path) -> list[s
     if manifest.get("manifest_version") != 1:
         errors.append("unsupported manifest_version")
     by_id = {entry["id"]: entry for entry in catalog}
+    try:
+        by_version = {(entry["id"], entry["commit_sha"]): entry for entry in historical_entries(root)}
+    except (OSError, ValueError) as exc:
+        return [*errors, f"source history: {exc}"]
+    by_version.update(((entry["id"], entry["commit_sha"]), entry) for entry in catalog)
     seen = set()
     items = manifest.get("skills")
     if not isinstance(items, list) or not items:
@@ -44,14 +50,18 @@ def validate(manifest: Any, catalog: list[dict[str, Any]], root: Path) -> list[s
         if skill_id in seen:
             errors.append(f"duplicate overlay: {skill_id}")
         seen.add(skill_id)
-        source = by_id.get(skill_id)
-        if not source:
+        current = by_id.get(skill_id)
+        if not current:
             errors.append(f"unknown source skill: {skill_id}")
             continue
         try:
+            source = by_version.get((skill_id, item.get("source_commit")))
+            if source is None:
+                errors.append(f"{skill_id}: source commit is absent from the catalog and source history")
+                continue
             overlay = inside(root, item["overlay_path"])
             original = inside(root, item["original_path"])
-            mirror = inside(root, source["mirrored_path"])
+            mirror = inside(root, current["mirrored_path"])
             if overlay == mirror or overlay.is_relative_to(mirror) or mirror.is_relative_to(overlay):
                 errors.append(f"{skill_id}: overlay overlaps immutable source mirror")
             if not original.resolve().is_relative_to(overlay.resolve()):
@@ -59,12 +69,10 @@ def validate(manifest: Any, catalog: list[dict[str, Any]], root: Path) -> list[s
             expected = source["skill_file_sha256"]
             if item.get("source_file_sha256") != expected or sha256_file(original) != expected:
                 errors.append(f"{skill_id}: original provenance differs from locked source")
-            if sha256_file(mirror / "SKILL.md") != expected:
+            if sha256_file(mirror / "SKILL.md") != current["skill_file_sha256"]:
                 errors.append(f"{skill_id}: immutable source mirror was changed")
-            if item.get("source_commit") != source["commit_sha"]:
-                errors.append(f"{skill_id}: source commit differs from catalog")
             if item.get("source_url") != source["immutable_source_url"]:
-                errors.append(f"{skill_id}: source URL differs from catalog")
+                errors.append(f"{skill_id}: provenance URL differs from the recorded source")
             skill_file = overlay / "SKILL.md"
             if sha256_file(skill_file) != item.get("overlay_sha256"):
                 errors.append(f"{skill_id}: overlay hash mismatch")

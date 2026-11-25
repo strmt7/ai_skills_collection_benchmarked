@@ -21,8 +21,10 @@ from __future__ import annotations
 import json
 from functools import cache
 from pathlib import Path
+from typing import Any
 
 import check_benchmark_artifact  # tests/conftest.py puts tools/ on sys.path
+from _source_history import resolve_version
 
 
 def _discover_root() -> Path:
@@ -60,6 +62,17 @@ def load(path):
     """
 
     return json.loads(_load_cached(str(path)))
+
+
+def original_skill_for_repair(repair: dict[str, Any]) -> Path:
+    """Resolve the exact source revision used to qualify a retained repair."""
+    skill_id, commit = repair["source_skill_id"], repair["source_commit"]
+    current = next((item for item in load("data/skills_catalog.json") if item["id"] == skill_id), None)
+    version, archived = resolve_version(ROOT, current, skill_id, commit)
+    assert version["entry"]["mirrored_path"] == repair["source_mirror"]
+    if archived:
+        return ROOT / version["skill_snapshot"]
+    return ROOT / version["entry"]["mirrored_path"] / "SKILL.md"
 
 
 def complete_artifacts():

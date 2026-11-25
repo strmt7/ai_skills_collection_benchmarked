@@ -5229,7 +5229,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-dmux-workflows-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/dmux-workflows/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -5245,7 +5245,7 @@
       "agent transcript"
     ],
     "title": "dmux-workflows source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/dmux-workflows/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/dmux-workflows/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -5270,7 +5270,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-mcp-server-patterns-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/mcp-server-patterns/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -5286,7 +5286,7 @@
       "agent transcript"
     ],
     "title": "mcp-server-patterns source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/mcp-server-patterns/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/mcp-server-patterns/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -5311,7 +5311,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-strategic-compact-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/strategic-compact/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -5327,7 +5327,7 @@
       "agent transcript"
     ],
     "title": "strategic-compact source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/strategic-compact/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/strategic-compact/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -13019,7 +13019,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-api-design-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/api-design/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -13035,7 +13035,7 @@
       "agent transcript"
     ],
     "title": "api-design source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/api-design/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/api-design/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -13060,7 +13060,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-backend-patterns-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/backend-patterns/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -13076,7 +13076,7 @@
       "agent transcript"
     ],
     "title": "backend-patterns source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/backend-patterns/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/backend-patterns/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -13101,7 +13101,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-eval-harness-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/eval-harness/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -13117,7 +13117,7 @@
       "agent transcript"
     ],
     "title": "eval-harness source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/eval-harness/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/eval-harness/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -13183,7 +13183,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-investor-materials-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/investor-materials/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -13199,7 +13199,7 @@
       "agent transcript"
     ],
     "title": "investor-materials source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/investor-materials/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/investor-materials/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -13224,7 +13224,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-nextjs-turbopack-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/nextjs-turbopack/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -13240,7 +13240,7 @@
       "agent transcript"
     ],
     "title": "nextjs-turbopack source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/nextjs-turbopack/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/nextjs-turbopack/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -14413,7 +14413,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-content-engine-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/content-engine/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -14429,7 +14429,7 @@
       "agent transcript"
     ],
     "title": "content-engine source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/content-engine/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/content-engine/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -14454,7 +14454,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-crosspost-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/crosspost/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -14470,7 +14470,7 @@
       "agent transcript"
     ],
     "title": "crosspost source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/crosspost/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/crosspost/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -14495,7 +14495,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-investor-outreach-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/investor-outreach/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -14511,7 +14511,7 @@
       "agent transcript"
     ],
     "title": "investor-outreach source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/investor-outreach/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/investor-outreach/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -16750,7 +16750,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-article-writing-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/article-writing/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -16766,7 +16766,7 @@
       "agent transcript"
     ],
     "title": "article-writing source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/article-writing/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/article-writing/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -16791,7 +16791,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-brand-voice-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/brand-voice/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -16807,7 +16807,7 @@
       "agent transcript"
     ],
     "title": "brand-voice source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/brand-voice/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/brand-voice/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -16832,7 +16832,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-fal-ai-media-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/fal-ai-media/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -16848,7 +16848,7 @@
       "agent transcript"
     ],
     "title": "fal-ai-media source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/fal-ai-media/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/fal-ai-media/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -17816,7 +17816,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-video-editing-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/video-editing/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -17832,7 +17832,7 @@
       "agent transcript"
     ],
     "title": "video-editing source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/video-editing/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/video-editing/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -19292,7 +19292,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-frontend-slides-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/frontend-slides/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -19308,7 +19308,7 @@
       "agent transcript"
     ],
     "title": "frontend-slides source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/frontend-slides/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/frontend-slides/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -19784,7 +19784,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-market-research-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/market-research/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -19800,7 +19800,7 @@
       "agent transcript"
     ],
     "title": "market-research source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/market-research/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/market-research/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -19825,7 +19825,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-coding-standards-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/coding-standards/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -19841,7 +19841,7 @@
       "agent transcript"
     ],
     "title": "coding-standards source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/coding-standards/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/coding-standards/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -19866,7 +19866,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-frontend-patterns-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/frontend-patterns/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -19882,7 +19882,7 @@
       "agent transcript"
     ],
     "title": "frontend-patterns source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/frontend-patterns/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/frontend-patterns/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -25811,7 +25811,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-deep-research-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/deep-research/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -25827,7 +25827,7 @@
       "agent transcript"
     ],
     "title": "deep-research source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/deep-research/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/deep-research/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -25852,7 +25852,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-documentation-lookup-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/documentation-lookup/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -25868,7 +25868,7 @@
       "agent transcript"
     ],
     "title": "documentation-lookup source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/documentation-lookup/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/documentation-lookup/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -25893,7 +25893,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-exa-search-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/exa-search/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -25909,7 +25909,7 @@
       "agent transcript"
     ],
     "title": "exa-search source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/exa-search/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/exa-search/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -28722,7 +28722,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-bun-runtime-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/bun-runtime/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -28738,7 +28738,7 @@
       "agent transcript"
     ],
     "title": "bun-runtime source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/bun-runtime/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/bun-runtime/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -28763,7 +28763,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-e2e-testing-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/e2e-testing/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -28779,7 +28779,7 @@
       "agent transcript"
     ],
     "title": "e2e-testing source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/e2e-testing/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/e2e-testing/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -28804,7 +28804,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-tdd-workflow-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/tdd-workflow/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -28820,7 +28820,7 @@
       "agent transcript"
     ],
     "title": "tdd-workflow source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/tdd-workflow/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/tdd-workflow/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",
@@ -28845,7 +28845,7 @@
     },
     "id": "skill-proof-affaan-m-everything-claude-code-agents-skills-verification-loop-skill-md",
     "input_selector": {
-      "commit_sha": "846ffb75da9a5f4e677d927af1ad4a1951652267",
+      "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
       "source_path": ".agents/skills/verification-loop/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code"
     },
@@ -28861,7 +28861,7 @@
       "agent transcript"
     ],
     "title": "verification-loop source-grounded functionality proof",
-    "workflow": "Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/verification-loop/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
+    "workflow": "Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/verification-loop/SKILL.md as the fixture and prove the agent can understand when and how to use the skill."
   },
   {
     "agent_task": "In a fresh agent session, read only the recorded SKILL.md and directly referenced local resources, then produce an activation proof, misuse boundaries, required inputs, expected outputs, and one realistic task plan.",

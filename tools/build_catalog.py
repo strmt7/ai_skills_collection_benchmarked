@@ -23,7 +23,6 @@ from pathlib import Path, PurePosixPath
 from typing import Any
 
 import _catalog_publication as publication
-import update_readme_badges
 from _lib_b import credential_neutralizations, dependency_graphs
 from _lib_b.credential_patterns import V2_NEUTRALIZATIONS
 from _lib_b.determinism import existing_field, git_latest_commit_epoch_for, resolve_timestamp
@@ -315,10 +314,64 @@ SOURCES: list[dict[str, Any]] = [
         "dir": "affaan-m__everything-claude-code",
         "tier": "selected-structure-reference",
         "group": "selected repository structure reference",
-        "policy": "latest GitHub release v1.10.0",
+        "policy": "retained packages from v1.10.0",
         "tag": "v1.10.0",
+        "commit": "846ffb75da9a5f4e677d927af1ad4a1951652267",
         "release_url": "https://github.com/affaan-m/everything-claude-code/releases/tag/v1.10.0",
-        "prefixes": [".agents/skills/"],
+        "skill_paths": [
+            ".agents/skills/claude-api/SKILL.md",
+            ".agents/skills/everything-claude-code/SKILL.md",
+            ".agents/skills/security-review/SKILL.md",
+            ".agents/skills/x-api/SKILL.md",
+        ],
+    },
+    {
+        "repo": "affaan-m/everything-claude-code",
+        "upstream_repo": "affaan-m/ECC",
+        "dir": "affaan-m__ecc_v2.2.3",
+        "tier": "selected-structure-reference",
+        "group": "selected repository structure reference",
+        "policy": "selected packages from stable ECC v2.2.3",
+        "tag": "v2.2.3",
+        "commit": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+        "release_url": "https://github.com/affaan-m/ECC/releases/tag/v2.2.3",
+        "preserved_notice": {
+            "path": "artifacts/source-notices/ecc-MIT.txt",
+            "source_path": "LICENSE",
+            "commit_sha": "c05b2d6614f62f6db0047669aa4eefb223d478f9",
+            "sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+        },
+        "skill_categories": {
+            ".agents/skills/eval-harness/SKILL.md": "Coding, refactoring & repository automation",
+        },
+        "skill_paths": [
+            ".agents/skills/api-design/SKILL.md",
+            ".agents/skills/article-writing/SKILL.md",
+            ".agents/skills/backend-patterns/SKILL.md",
+            ".agents/skills/brand-voice/SKILL.md",
+            ".agents/skills/bun-runtime/SKILL.md",
+            ".agents/skills/coding-standards/SKILL.md",
+            ".agents/skills/content-engine/SKILL.md",
+            ".agents/skills/crosspost/SKILL.md",
+            ".agents/skills/deep-research/SKILL.md",
+            ".agents/skills/dmux-workflows/SKILL.md",
+            ".agents/skills/documentation-lookup/SKILL.md",
+            ".agents/skills/e2e-testing/SKILL.md",
+            ".agents/skills/eval-harness/SKILL.md",
+            ".agents/skills/exa-search/SKILL.md",
+            ".agents/skills/fal-ai-media/SKILL.md",
+            ".agents/skills/frontend-patterns/SKILL.md",
+            ".agents/skills/frontend-slides/SKILL.md",
+            ".agents/skills/investor-materials/SKILL.md",
+            ".agents/skills/investor-outreach/SKILL.md",
+            ".agents/skills/market-research/SKILL.md",
+            ".agents/skills/mcp-server-patterns/SKILL.md",
+            ".agents/skills/nextjs-turbopack/SKILL.md",
+            ".agents/skills/strategic-compact/SKILL.md",
+            ".agents/skills/tdd-workflow/SKILL.md",
+            ".agents/skills/verification-loop/SKILL.md",
+            ".agents/skills/video-editing/SKILL.md",
+        ],
     },
 ]
 
@@ -791,7 +844,7 @@ def unique_install_name(entry: dict[str, Any], used_names: set[str], base_counts
     raise ValueError(f"could not allocate unique install_name for {entry['id']}")
 
 
-def locked_install_names(root: Path) -> dict[str, str]:
+def locked_skill_records(root: Path) -> dict[str, dict[str, Any]]:
     path = root / "data/source_lock.json"
     if not path.is_file():
         return {}
@@ -800,13 +853,17 @@ def locked_install_names(root: Path) -> dict[str, str]:
         return {}  # A first-build timestamp seed has no locked installation names.
     if not isinstance(data, dict) or not isinstance(data.get("sources"), list):
         raise ValueError("source lock must contain source records")
-    names: dict[str, str] = {}
+    records: dict[str, dict[str, Any]] = {}
     for source in data["sources"]:
         for entry in source["skills"]:
-            if entry["id"] in names:
+            if entry["id"] in records:
                 raise ValueError("duplicate source-lock skill identity")
-            names[entry["id"]] = entry["install_name"]
-    return names
+            records[entry["id"]] = entry
+    return records
+
+
+def locked_install_names(root: Path) -> dict[str, str]:
+    return {skill_id: entry["install_name"] for skill_id, entry in locked_skill_records(root).items()}
 
 
 def assign_install_names(entries: list[dict[str, Any]], *, preserved_names: dict[str, str] | None = None) -> None:
@@ -1169,6 +1226,8 @@ def keyword_matches(blob: str, keyword: str) -> bool:
 
 
 def category_for(source: dict[str, Any], rel: str, name: str, description: str) -> str:
+    if rel in source.get("skill_categories", {}):
+        return str(source["skill_categories"][rel])
     # A reviewed, single-purpose source must not move categories because its
     # release description gains a generic word such as "workflow".
     if "category" in source:
@@ -1241,9 +1300,17 @@ def validate_preserved_notice(root: Path, notice: Any, commit: str) -> dict[str,
     return dict(notice)
 
 
-def collect() -> list[dict[str, Any]]:
+def source_pins(sources: list[dict[str, Any]]) -> dict[tuple[str, str], dict[str, Any]]:
+    pins = {(source["repo"], source.get("tag") or "default-branch HEAD"): source for source in sources}
+    if len(pins) != len(sources) or len({source["dir"] for source in sources}) != len(sources):
+        raise ValueError("source declarations must have distinct repository refs and checkout directories")
+    return pins
+
+
+def collect(sources: list[dict[str, Any]] | None = None) -> list[dict[str, Any]]:
     entries: list[dict[str, Any]] = []
-    for source in SOURCES:
+    locked_skills = locked_skill_records(ROOT)
+    for (repo, selected_ref), source in source_pins(SOURCES if sources is None else sources).items():
         repo_dir = SOURCE_ROOT / source["dir"]
         if not repo_dir.exists():
             raise FileNotFoundError(
@@ -1253,7 +1320,9 @@ def collect() -> list[dict[str, Any]]:
         if run_git(repo_dir, "status", "--porcelain=v1", "--untracked-files=all"):
             raise ValueError(f"source checkout contains uncommitted changes: {source['repo']}")
         commit = run_git(repo_dir, "rev-parse", "HEAD")
-        require_admitted_source(ROOT, source["repo"], commit)
+        if source.get("commit", commit) != commit:
+            raise ValueError(f"{repo}: checkout HEAD differs from the declared source commit")
+        require_admitted_source(ROOT, repo, commit)
         notice = validate_preserved_notice(ROOT, source.get("preserved_notice"), commit)
         if notice is not None:
             original_notice = subprocess.run(
@@ -1273,9 +1342,14 @@ def collect() -> list[dict[str, Any]]:
                 raise ValueError(
                     f"{source['repo']} checkout HEAD {commit} does not match tag {source['tag']} commit {tag_commit}"
                 )
-        selected_ref = source.get("tag") or "default-branch HEAD"
         ref_url = source.get("tag") or commit
-        skill_files = sorted(repo_dir.rglob("SKILL.md"))
+        upstream_repo = source.get("upstream_repo", repo)
+        if "skill_paths" in source:
+            skill_files = [publication.checked_path(repo_dir, path) for path in source["skill_paths"]]
+            if not all(file.name == "SKILL.md" and file.is_file() for file in skill_files):
+                raise ValueError(f"{repo}@{selected_ref}: a declared SKILL.md is missing")
+        else:
+            skill_files = sorted(repo_dir.rglob("SKILL.md"))
         for skill_file in skill_files:
             rel = skill_file.relative_to(repo_dir).as_posix()
             prefixes = source.get("prefixes") or []
@@ -1286,8 +1360,12 @@ def collect() -> list[dict[str, Any]]:
                 continue
             if source.get("max_path_parts") and len(rel.split("/")) > source["max_path_parts"]:
                 continue
+            skill_id = slug(f"{repo} {rel}")
+            locked_policy = locked_skills.get(skill_id, {}).get("credential_policy_version", 1)
+            validate_credential_policy(locked_policy)
+            credential_policy = max(CREDENTIAL_POLICY_VERSION, locked_policy)
             text = skill_file.read_text(encoding="utf-8", errors="replace")
-            if CREDENTIAL_POLICY_VERSION >= 2:
+            if credential_policy >= 2:
                 text = sanitize_secret_like_text(text, credential_policy=2)
             skill_dir = skill_file.parent
             meta, body = parse_frontmatter(text)
@@ -1302,7 +1380,7 @@ def collect() -> list[dict[str, Any]]:
             graph = dependency_graphs.graph_for(source["repo"], commit, rel, root=ROOT)
             graph_files = dependency_graphs.replacements(skill_dir, graph, root=ROOT) if graph else {}
             item = {
-                "id": slug(f"{source['repo']} {rel}"),
+                "id": skill_id,
                 "name": name,
                 "description": description,
                 "category": category,
@@ -1315,18 +1393,18 @@ def collect() -> list[dict[str, Any]]:
                 "source_tier": source["tier"],
                 "selected_subset": bool(source.get("selected_subset")),
                 "source_path": rel,
-                "source_url": f"https://github.com/{source['repo']}/blob/{ref_url}/{rel}",
-                "immutable_source_url": f"https://github.com/{source['repo']}/blob/{commit}/{rel}",
+                "source_url": f"https://github.com/{upstream_repo}/blob/{ref_url}/{rel}",
+                "immutable_source_url": f"https://github.com/{upstream_repo}/blob/{commit}/{rel}",
                 "selected_ref": selected_ref,
                 "selection_policy": source["policy"],
                 "latest_release_tag": source.get("tag"),
                 "latest_release_url": source.get("release_url"),
                 "commit_sha": commit,
-                "skill_file_sha256": sha256_file(skill_file, credential_policy=CREDENTIAL_POLICY_VERSION),
+                "skill_file_sha256": sha256_file(skill_file, credential_policy=credential_policy),
                 "skill_dir_sha256": sha256_tree(
                     skill_dir,
                     file_modes=file_modes,
-                    credential_policy=CREDENTIAL_POLICY_VERSION,
+                    credential_policy=credential_policy,
                     replacements=graph_files,
                 ),
                 "file_modes": file_modes,
@@ -1342,8 +1420,8 @@ def collect() -> list[dict[str, Any]]:
                 "benchmark_scenarios": [],
                 "best_practice_basis": [item["id"] for item in BEST_PRACTICE_SOURCES[:4]],
             }
-            if CREDENTIAL_POLICY_VERSION != 1:
-                item["credential_policy_version"] = CREDENTIAL_POLICY_VERSION
+            if credential_policy != 1:
+                item["credential_policy_version"] = credential_policy
             if graph:
                 item["dependency_graph"] = graph["id"]
             notes = [
@@ -1374,6 +1452,8 @@ def collect() -> list[dict[str, Any]]:
             }
             item["benchmark_scenarios"] = [f"skill-proof-{item['id']}"] + scenario_ids(category)
             entries.append(item)
+    if len({entry["id"] for entry in entries}) != len(entries):
+        raise ValueError("source declarations select duplicate skill identities")
     entries.sort(key=lambda e: (0 if e["selected_subset"] else 1, e["category"], e["source_repo"], e["source_path"]))
     assign_install_names(entries)
     return entries
@@ -1453,7 +1533,7 @@ def build_scenarios(entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 def write_json(path: Path, data: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    path.write_text(json.dumps(data, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
 
 
 def esc(text: Any) -> str:
@@ -1540,7 +1620,7 @@ def mirror_all_skills(
         raise ValueError("generation staging directory escapes the workspace")
     staging_parent.mkdir(parents=True, exist_ok=True)
     staged = Path(tempfile.mkdtemp(prefix="skill-mirrors-", dir=staging_parent))
-    source_by_repo = {source["repo"]: source for source in SOURCES}
+    pins = source_pins(SOURCES)
     conflicts = name_conflict_groups(entries)
     manifest = []
     for entry, relative in zip(entries, relative_targets, strict=True):
@@ -1564,7 +1644,7 @@ def mirror_all_skills(
                 }
             )
             continue
-        source = source_by_repo[entry["source_repo"]]
+        source = pins[entry["source_repo"], entry["selected_ref"]]
         repo_dir = SOURCE_ROOT / source["dir"]
         src_dir = (repo_dir / entry["source_path"]).parent
         if not src_dir.resolve().is_relative_to(repo_dir.resolve()):
@@ -1596,6 +1676,7 @@ def mirror_all_skills(
         "Use `manifest.json` to trace every mirror back to its full immutable source URL, commit, source path, and SHA-256 hashes.\n\n"
         "Do not bulk-install entries where `bulk_install_safe` is false.\n",
         encoding="utf-8",
+        newline="\n",
     )
     target.parent.mkdir(parents=True, exist_ok=True)
     backup = staged.with_name(staged.name + "-previous")
@@ -1652,7 +1733,7 @@ Before repository work, read and apply [Mandatory agent tools]({rel_policy}): Ca
 
 Do not claim this skill passed a runtime benchmark until a validated artifact exists.
 """
-        path.write_text(body, encoding="utf-8")
+        path.write_text(body, encoding="utf-8", newline="\n")
         manifest.append(
             {
                 "id": entry["id"],
@@ -1672,6 +1753,7 @@ Do not claim this skill passed a runtime benchmark until a validated artifact ex
         "Use these files when an agent needs a concise starting point. Use the source mirrors when full upstream detail is required.\n\n"
         "Every agent working in this repository must apply [Mandatory agent tools](../../docs/agent-tools.md): Caveman, CocoIndex Code and Crawl4AI, within their required task scopes.\n",
         encoding="utf-8",
+        newline="\n",
     )
 
 
@@ -1692,33 +1774,39 @@ def write_selected_manifest(entries: list[dict[str, Any]]) -> None:
         "This directory is a selected subset manifest only. The actual skill directories are physically written once under `included/skills/` and are referenced by each entry's `mirrored_path`.\n\n"
         "Use `manifest.json` to trace selected entries back to full immutable source URLs and unique `install_name` values. Do not bulk-install entries where `bulk_install_safe` is false.\n",
         encoding="utf-8",
+        newline="\n",
     )
 
 
-def build_source_lock(entries: list[dict[str, Any]]) -> dict[str, Any]:
-    entries_by_repo: dict[str, list[dict[str, Any]]] = {}
+def build_source_lock(entries: list[dict[str, Any]], sources: list[dict[str, Any]] | None = None) -> dict[str, Any]:
+    pins = source_pins(SOURCES if sources is None else sources)
+    entries_by_pin: dict[tuple[str, str], list[dict[str, Any]]] = {}
     for entry in entries:
-        entries_by_repo.setdefault(entry["source_repo"], []).append(entry)
-    declared_dirs = {source["dir"] for source in SOURCES}
+        entries_by_pin.setdefault((entry["source_repo"], entry["selected_ref"]), []).append(entry)
+    if entries_by_pin.keys() - pins.keys():
+        raise ValueError("catalog entries lack a declared source checkout")
+    declared_dirs = {source["dir"] for source in pins.values()}
     staged_dirs = {path.name for path in SOURCE_ROOT.iterdir() if path.is_dir()} if SOURCE_ROOT.exists() else set()
     sources = []
-    for source in SOURCES:
+    for (repo, selected_ref), source in pins.items():
         repo_dir = SOURCE_ROOT / source["dir"]
-        repo_entries = sorted(entries_by_repo.get(source["repo"], []), key=lambda item: item["source_path"])
+        repo_entries = sorted(entries_by_pin.get((repo, selected_ref), []), key=lambda item: item["source_path"])
         if not repo_entries:
             continue
         commit = run_git(repo_dir, "rev-parse", "HEAD")
         origin_url = run_git(repo_dir, "config", "--get", "remote.origin.url")
+        if "upstream_repo" in source and origin_url != f"https://github.com/{source['upstream_repo']}.git":
+            raise ValueError(f"{repo}: checkout origin differs from the declared upstream repository")
         if run_git(repo_dir, "status", "--porcelain=v1", "--untracked-files=all"):
             raise ValueError(f"source checkout changed during collection: {source['repo']}")
         if any(entry["commit_sha"] != commit for entry in repo_entries):
             raise ValueError(f"source HEAD changed after collection: {source['repo']}")
         sources.append(
             {
-                "repo": source["repo"],
+                "repo": repo,
                 "local_dir": source["dir"],
                 "origin_url": origin_url,
-                "selected_ref": source.get("tag") or "default-branch HEAD",
+                "selected_ref": selected_ref,
                 "selection_policy": source["policy"],
                 "commit_sha": commit,
                 "tree_sha": run_git(repo_dir, "rev-parse", "HEAD^{tree}"),
@@ -1761,9 +1849,7 @@ def build_source_lock(entries: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
-def write_docs(
-    entries: list[dict[str, Any]], scenarios: list[dict[str, Any]], *, context_root: Path | None = None
-) -> None:
+def write_docs(entries: list[dict[str, Any]], scenarios: list[dict[str, Any]]) -> None:
     docs = ROOT / "docs"
     cat_dir = docs / "catalog" / "by-category"
     if cat_dir.exists():
@@ -1776,102 +1862,9 @@ def write_docs(
     skill_doc_dir.mkdir(parents=True, exist_ok=True)
     categories = sorted({e["category"] for e in entries})
     selected = [e for e in entries if e["selected_subset"]]
-    # Read independent artifact inventories before staging, without regenerating
-    # them or turning their packaging/smoke counts into efficacy claims.
-    context = ROOT if context_root is None else context_root
-    supplemental_counts = []
-    repair_manifest = context / "included/repaired/skills/manifest.json"
-    if repair_manifest.exists():
-        repairs = json.loads(repair_manifest.read_text(encoding="utf-8"))["repairs"]
-        supplemental_counts.append(
-            f"- `{len(repairs)}` repaired skill overlays under `included/repaired/skills/` "
-            "for currently observed runtime-readiness packaging failures."
-        )
-    adapter_registry = context / "data/external_benchmark_methods.json"
-    if adapter_registry.exists():
-        methods = json.loads(adapter_registry.read_text(encoding="utf-8"))["methods"]
-        supplemental_counts.append(
-            f"- `{len(methods)}` selected external benchmark method adapters with smoke artifacts."
-        )
-    supplemental_snapshot = "".join(f"{line}\n" for line in supplemental_counts)
     legacy_priority_doc = docs / "priority-skills.md"
     if legacy_priority_doc.exists():
         legacy_priority_doc.unlink()
-
-    (ROOT / "README.md").write_text(
-        f"""# AI Skills Collection Benchmarked
-
-> Early alpha: this repository is experimental. Many entries may be incomplete, incompatible, stale, or unsuitable for a given environment. Use it at your own risk; the maintainers accept no responsibility for results, failures, or downstream use.
-
-Evidence-backed catalog of AI agent skills, with benchmark scenarios tied to real datasets and real repository workflows.
-
-Repository scope:
-
-- Catalog entries come from observed `SKILL.md` files in public GitHub repositories.
-- Each entry records source repo, path, selected ref, immutable commit URL, category, and readiness caveat.
-- Source discovery used a broad web and repository search, then offline verification against local checkouts.
-- Selected-entry ordering follows the source policy and lock files, not README-only claims.
-- Scenario-covered candidates must have multiple benchmark scenarios before any runtime claim is considered.
-- The benchmark suite defines realistic workflows and datasets; it does not claim a skill passed until a run artifact is recorded.
-
-Current snapshot:
-
-- `{len(entries)}` source-backed skill entries.
-- `{len(entries)}` written skill mirrors under `included/skills/`.
-- `{len(entries)}` compact agent-ready skill entrypoints under `included/agent-ready/`.
-{supplemental_snapshot}- `{len(selected)}` selected repository entries.
-- `{len(categories)}` categories.
-- `{len(scenarios)}` real-data scenario templates.
-- Minimum `{MIN_SCENARIOS}` benchmark scenarios assigned per scenario-covered candidate.
-
-Start here:
-
-- [Methodology](docs/methodology.md)
-- [Source policy](docs/source-policy.md)
-- [Included skill mirrors](included/skills/README.md)
-- [Agent-ready skills](included/agent-ready/README.md)
-- [Selected skills](docs/selected-skills.md)
-- [Catalog index](docs/catalog/index.md)
-- [Benchmark suite](docs/benchmarks.md)
-- [Benchmark results](docs/benchmark-results.md)
-- [Runtime benchmark batch 01](docs/runtime-benchmark-batch-01.md)
-- [Runtime benchmark batch 02](docs/runtime-benchmark-batch-02.md)
-- [Runtime benchmark batch 03](docs/runtime-benchmark-batch-03.md)
-- [Local Markdown link failures](docs/local-markdown-link-failures.md)
-- [Repaired skill readiness](docs/repaired-skill-readiness.md)
-- [Objective benchmark methods](docs/objective-benchmark-methods.md)
-- [External benchmark adapter smoke](docs/external-benchmark-adapter-smoke.md)
-- [Skill quality findings](docs/skill-quality-findings.md)
-- [Skill risk findings](docs/skill-risk-findings.md)
-- [Immutable audit model](docs/immutable-audit-model.md)
-- [Benchmark runner requirements](docs/benchmark-runner-requirements.md)
-- [Host-agnostic installation](docs/installation.md)
-- [Agent consumability checklist](docs/agent-consumability.md)
-- [Contributing guide](CONTRIBUTING.md)
-- [Changelog](CHANGELOG.md)
-
-Validation (offline; no source checkouts required):
-
-```bash
-python3 -m pip install -e '.[test,lint]'
-python3 tools/validate_catalog.py            # cross-reference + mirror integrity
-python3 tools/validate_source_lock.py        # offline structural + mirror-hash check
-python3 tools/run_static_benchmarks.py --check
-python3 tools/audit_skill_quality.py --check
-python3 tools/check_no_secret_patterns.py --history
-ruff check tools tests benchmarks/agent-effectiveness/graders
-ruff format --check tools tests benchmarks/agent-effectiveness/graders
-mypy tools tests benchmarks/agent-effectiveness/graders
-python3 -m pytest -q -n auto
-python3 -m compileall -q tools tests benchmarks/agent-effectiveness/graders
-```
-
-The corresponding [GitHub Actions](.github/workflows/) run on pushes and manual
-dispatch; selected workflows also run weekly. See [docs/installation.md](docs/installation.md)
-for the full reproducible / `SOURCE_DATE_EPOCH`-anchored regeneration flow.
-""",
-        encoding="utf-8",
-    )
 
     (docs / "methodology.md").write_text(
         f"""# Methodology
@@ -1892,6 +1885,7 @@ Rules:
 The repository provides catalog and benchmark definitions. A skill is not marked as having passed until an external run artifact is recorded.
 """,
         encoding="utf-8",
+        newline="\n",
     )
 
     (docs / "immutable-audit-model.md").write_text(
@@ -1922,11 +1916,12 @@ Source-grounded skill-proof artifacts are provenance checks. They are useful for
 A counted runtime benchmark artifact must record that its task, evaluator, and expected result were created outside the skill content.
 """,
         encoding="utf-8",
+        newline="\n",
     )
 
     source_doc = "# Source Policy\n\n## Skill Sources\n\n"
     for source in SOURCES:
-        source_doc += f"- `{source['repo']}`: {source['policy']}"
+        source_doc += f"- `{source.get('upstream_repo', source['repo'])}`: {source['policy']}"
         if source.get("release_url"):
             source_doc += f" ([release]({source['release_url']}))"
         if source.get("preserved_notice"):
@@ -1935,20 +1930,20 @@ A counted runtime benchmark artifact must record that its task, evaluator, and e
     source_doc += "\n## Best-Practice Sources Reviewed\n\n"
     for source in BEST_PRACTICE_SOURCES:
         source_doc += f"- [{source['title']}]({source['url']})\n"
-    (docs / "source-policy.md").write_text(source_doc, encoding="utf-8")
+    (docs / "source-policy.md").write_text(source_doc, encoding="utf-8", newline="\n")
 
     selected_doc = f"# Selected Skills\n\nSelected entries: `{len(selected)}`.\n\n| Skill | Category | Source | Ref | Scenarios |\n|---|---|---|---|---:|\n"
     for entry in selected:
         selected_doc += f"| `{esc(entry['name'])}` | {esc(entry['category'])} | [{esc(entry['source_repo'])}]({entry['immutable_source_url']}) | {esc(entry['selected_ref'])} | {len(entry['benchmark_scenarios'])} |\n"
     selected_doc += "\nSelected entries are a subset of the physical mirrors under `included/skills/`; `included/selected/manifest.json` points to the exact mirrored directory for each one. Adjacent agent instruction files and benchmark folders are documented as context in the source policy, not counted as skills.\n"
-    (docs / "selected-skills.md").write_text(selected_doc, encoding="utf-8")
+    (docs / "selected-skills.md").write_text(selected_doc, encoding="utf-8", newline="\n")
 
     index = f"# Catalog Index\n\nTotal entries: `{len(entries)}`. Every skill also has its own compact page under `docs/catalog/skills/by-category/`.\n\n| Category | Count | Category document |\n|---|---:|---|\n"
     for category in categories:
         filename = f"{slug(category)}.md"
         count = sum(e["category"] == category for e in entries)
         index += f"| {esc(category)} | {count} | [Open](by-category/{filename}) |\n"
-    (docs / "catalog" / "index.md").write_text(index, encoding="utf-8")
+    (docs / "catalog" / "index.md").write_text(index, encoding="utf-8", newline="\n")
 
     scenario_lookup = {s["id"]: s for s in scenarios}
     for category in categories:
@@ -2008,8 +2003,8 @@ Assigned scenarios:
                 skill_doc_dir / slug(entry["category"]) / slug(entry["subcategory"]) / f"{entry['install_name']}.md"
             )
             skill_path.parent.mkdir(parents=True, exist_ok=True)
-            skill_path.write_text(per_skill.rstrip() + "\n", encoding="utf-8")
-        (cat_dir / f"{slug(category)}.md").write_text(doc.rstrip() + "\n", encoding="utf-8")
+            skill_path.write_text(per_skill.rstrip() + "\n", encoding="utf-8", newline="\n")
+        (cat_dir / f"{slug(category)}.md").write_text(doc.rstrip() + "\n", encoding="utf-8", newline="\n")
 
     benchmark_doc = "# Benchmark Suite\n\nScenario definitions live in `data/benchmark_scenarios.json`; per-skill assignments live in `data/benchmark_assignments.json`.\n\n"
     category_template_count = len(scenarios) - len(entries)
@@ -2017,7 +2012,7 @@ Assigned scenarios:
     benchmark_doc += "## Scoring Rules\n\nA benchmark run must record the skill ID, scenario ID, source commit, dataset or website snapshot, environment, commands or transcript, output artifact, objective metrics, and evaluator result. Synthetic fixtures may supplement coverage, but they do not replace a real source repository, real dataset, real website, or recorded runtime workflow when the scenario calls for one.\n\n"
     for track_id, title, url, problem, metrics in TRACKS:
         benchmark_doc += f"## {title}\n\n- ID: `{track_id}`\n- URL: {url}\n- Workflow: {problem}\n- Metrics: {', '.join(metrics)}\n\n"
-    (docs / "benchmarks.md").write_text(benchmark_doc.rstrip() + "\n", encoding="utf-8")
+    (docs / "benchmarks.md").write_text(benchmark_doc.rstrip() + "\n", encoding="utf-8", newline="\n")
 
     (docs / "benchmark-runner-requirements.md").write_text(
         """# Benchmark Runner Requirements
@@ -2057,6 +2052,7 @@ Data, science, and document skills:
 - Validate numeric outputs against an independent calculation or dataset-provided ground truth where possible.
 """,
         encoding="utf-8",
+        newline="\n",
     )
 
     (docs / "agent-consumability.md").write_text(
@@ -2066,18 +2062,18 @@ Mechanical checks:
 
 - `SKILL.md` exists at the recorded source path.
 - `name`, description, source URL, immutable URL, selected ref, and commit SHA are recorded.
-- Selected ref is latest release tag where available, otherwise default branch HEAD with explicit no-release policy.
+- Each source ref and commit are declared. A source can retain older packages while other packages use a newer release.
 - At least `{MIN_SCENARIOS}` real workflow scenarios are assigned to every scenario-covered candidate.
 - Improvement notes are derived from observed file structure.
 
 Runtime proof requires running the scenario in the target agent environment and saving artifacts.
 """,
         encoding="utf-8",
+        newline="\n",
     )
 
 
 GENERATED_OUTPUTS = (
-    "README.md",
     "data/skills_catalog.json",
     "data/best_practice_sources.json",
     "data/benchmark_tracks.json",
@@ -2135,7 +2131,6 @@ def write_catalog_outputs(
     *,
     retained_root: Path | None = None,
     refreshed_repos: set[str] | None = None,
-    context_root: Path | None = None,
 ) -> None:
     tracks = [
         {
@@ -2160,7 +2155,7 @@ def write_catalog_outputs(
     mirror_all_skills(entries, retained_root=retained_root, refreshed_repos=refreshed_repos)
     write_agent_ready_skills(entries)
     write_selected_manifest(entries)
-    write_docs(entries, scenarios, context_root=context_root)
+    write_docs(entries, scenarios)
     # Evaluator schemas, tests, and validation belong to the independent artifact
     # loop. Catalog generation never rewrites those maintained scoring inputs.
 
@@ -2197,7 +2192,6 @@ def verify_generated_outputs(root: Path, entries: list[dict[str, Any]], source_l
 
 def scoped_refresh_inputs(root: Path, repos: set[str]) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     """Resolve selected sources while preserving independently verified locked inputs."""
-    global SOURCES
     old_entries = json.loads((root / "data/skills_catalog.json").read_text(encoding="utf-8"))
     old_lock = json.loads((root / "data/source_lock.json").read_text(encoding="utf-8"))
     for entry in old_entries:
@@ -2219,6 +2213,7 @@ def scoped_refresh_inputs(root: Path, repos: set[str]) -> tuple[list[dict[str, A
                 entry is None
                 or entry["source_repo"] != source["repo"]
                 or entry["commit_sha"] != source["commit_sha"]
+                or entry["selected_ref"] != source["selected_ref"]
                 or any(
                     entry.get(key) != skill.get(key)
                     for key in (
@@ -2235,41 +2230,45 @@ def scoped_refresh_inputs(root: Path, repos: set[str]) -> tuple[list[dict[str, A
                 raise ValueError(f"source lock differs from catalog: {skill['id']}")
     if len(locked_ids) != len(set(locked_ids)) or set(locked_ids) != set(by_id):
         raise ValueError("source lock and catalog IDs differ")
-    original_sources = SOURCES
-    try:
-        SOURCES = [source for source in original_sources if source["repo"] in repos]
-        updated = collect()
-        if {entry["source_repo"] for entry in updated} != repos:
-            raise ValueError("a selected source no longer contains catalogable skills")
-        entries = [copy.deepcopy(entry) for entry in old_entries if entry["source_repo"] not in repos] + updated
-        # Legacy catalogs infer executable bits from the repository Git index.
-        # Staging has no such index: retain these exact input modes explicitly
-        # so the replacement remains portable on NTFS and fresh Linux clones.
-        for entry in entries:
-            if entry["source_repo"] not in repos and "file_modes" not in entry:
-                entry["file_modes"] = skill_file_modes(publication.checked_path(root, entry["mirrored_path"]))
-        entries.sort(
-            key=lambda entry: (
-                0 if entry["selected_subset"] else 1,
-                entry["category"],
-                entry["source_repo"],
-                entry["source_path"],
-            )
+    selected_sources = [source for source in SOURCES if source["repo"] in repos]
+    updated = collect(selected_sources)
+    if {entry["source_repo"] for entry in updated} != repos:
+        raise ValueError("a selected source no longer contains catalogable skills")
+    entries = [copy.deepcopy(entry) for entry in old_entries if entry["source_repo"] not in repos] + updated
+    # Legacy catalogs infer executable bits from the repository Git index.
+    # Staging has no such index: retain these exact input modes explicitly
+    # so the replacement remains portable on NTFS and fresh Linux clones.
+    for entry in entries:
+        if entry["source_repo"] not in repos and "file_modes" not in entry:
+            entry["file_modes"] = skill_file_modes(publication.checked_path(root, entry["mirrored_path"]))
+    entries.sort(
+        key=lambda entry: (
+            0 if entry["selected_subset"] else 1,
+            entry["category"],
+            entry["source_repo"],
+            entry["source_path"],
         )
-        assign_install_names(entries, preserved_names=locked_install_names(root))
-        if any(
-            {key: value for key, value in entry.items() if key != "file_modes"}
-            != {key: value for key, value in by_id[entry["id"]].items() if key != "file_modes"}
-            for entry in entries
-            if entry["source_repo"] not in repos
-        ):
-            raise ValueError("scoped refresh would rename retained skills; use a complete source build")
-        new_lock = build_source_lock(updated)
-    finally:
-        SOURCES = original_sources
+    )
+    assign_install_names(entries, preserved_names=locked_install_names(root))
+    if any(
+        {key: value for key, value in entry.items() if key != "file_modes"}
+        != {key: value for key, value in by_id[entry["id"]].items() if key != "file_modes"}
+        for entry in entries
+        if entry["source_repo"] not in repos
+    ):
+        raise ValueError("scoped refresh would rename retained skills; use a complete source build")
+    new_lock = build_source_lock(updated, selected_sources)
     lock = copy.deepcopy(old_lock)
-    replacements = {source["repo"]: source for source in new_lock["sources"]}
-    lock["sources"] = [replacements.get(source["repo"], source) for source in lock["sources"]]
+    replacements: dict[str, list[dict[str, Any]]] = {}
+    for source in new_lock["sources"]:
+        replacements.setdefault(source["repo"], []).append(source)
+    retained_sources = []
+    for source in lock["sources"]:
+        if source["repo"] in repos:
+            retained_sources.extend(replacements.pop(source["repo"], []))
+        else:
+            retained_sources.append(source)
+    lock["sources"] = retained_sources
     refreshed_entries = {entry["id"]: entry for entry in entries}
     for source in lock["sources"]:
         for skill in source["skills"]:
@@ -2285,6 +2284,15 @@ def require_source_history(root: Path, entries: list[dict[str, Any]]) -> None:
     for path in sorted((root / "artifacts/benchmark-runs").rglob("artifact.json")):
         artifact = json.loads(path.read_text(encoding="utf-8"))
         required.add((artifact["skill_id"], artifact["source_commit"]))
+    improved = root / "data/improved_skills_manifest.json"
+    if improved.is_file():
+        manifest = json.loads(improved.read_text(encoding="utf-8"))
+        required.update((skill["skill_id"], skill["source_commit"]) for skill in manifest["skills"])
+    for path in sorted((root / "included/repaired/skills").rglob("repair.json")):
+        repair = json.loads(path.read_text(encoding="utf-8"))
+        source = repair.get("source_mirror")
+        if isinstance(source, str) and source.startswith("included/skills/"):
+            required.add((repair["source_skill_id"], repair["source_commit"]))
     missing = required - target_versions
     if not missing:
         return
@@ -2321,7 +2329,6 @@ def main(argv: list[str] | None = None) -> int:
             source_lock = build_source_lock(entries)
         require_source_history(root, entries)
         scenarios = build_scenarios(entries)
-        badge_block = update_readme_badges.render_badge_block(update_readme_badges.load_metadata(root))
 
         def build(staged: Path) -> None:
             global ROOT
@@ -2333,11 +2340,7 @@ def main(argv: list[str] | None = None) -> int:
                     source_lock,
                     retained_root=retained_root,
                     refreshed_repos=refreshed_repos,
-                    context_root=root,
                 )
-                readme_path = staged / "README.md"
-                heading, body = readme_path.read_text(encoding="utf-8").split("\n", 1)
-                readme_path.write_text(f"{heading}\n\n{badge_block}\n{body}", encoding="utf-8", newline="\n")
                 verify_generated_outputs(staged, entries, source_lock)
             finally:
                 ROOT = original_root

@@ -39,7 +39,7 @@ def load_json(path: Path) -> Any:
 
 def write_json(path: Path, data: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    path.write_text(json.dumps(data, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
 
 
 def table_cell(value: Any) -> str:
@@ -225,7 +225,7 @@ def main(argv: list[str] | None = None) -> int:
             raise SystemExit("docs/skill-risk-findings.md is stale")
     else:
         write_json(data_path, results)
-        doc_path.write_text(rendered, encoding="utf-8")
+        doc_path.write_text(rendered, encoding="utf-8", newline="\n")
 
     if args.json:
         if args.severity != "any":

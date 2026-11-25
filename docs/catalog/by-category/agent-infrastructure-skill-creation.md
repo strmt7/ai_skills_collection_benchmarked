@@ -46,8 +46,8 @@
 - Skill page: [dmux-workflows](../skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/dmux-workflows.md)
 - Mirrored skill: `included/skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/dmux-workflows`
 - Agent-ready entrypoint: `included/agent-ready/by-category/agent-infrastructure-skill-creation/selected-structure-reference/dmux-workflows/SKILL.md`
-- Source: [affaan-m/everything-claude-code `.agents/skills/dmux-workflows/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/dmux-workflows/SKILL.md)
-- Selected ref: `v1.10.0`; commit `846ffb75da9a`
+- Source: [affaan-m/everything-claude-code `.agents/skills/dmux-workflows/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/dmux-workflows/SKILL.md)
+- Selected ref: `v2.2.3`; commit `c05b2d6614f6`
 - What it covers: Catalog summary: Single-session workflow coordination using dmux (tmux pane manager for AI agents). Patterns for single-session workflow coordination across Claude Code, Codex, OpenCode, and other harnesses. Use when running one AI session or coordinating single-session development workflows.
 - Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 - Observed structure: Headings: dmux Workflows, When to Activate, What is dmux, Quick Start, Start dmux session. Resources: has_agents_metadata.
@@ -56,7 +56,7 @@
   - Keep provenance and selected ref visible so agents can verify the source before use.
   - Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
 - Assigned benchmark scenarios:
-  - `skill-proof-affaan-m-everything-claude-code-agents-skills-dmux-workflows-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/dmux-workflows/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+  - `skill-proof-affaan-m-everything-claude-code-agents-skills-dmux-workflows-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/dmux-workflows/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
   - `agent-infrastructure-and-skill-creation-beir-retrieval`: Evaluate retrieval workflows across datasets.
   - `agent-infrastructure-and-skill-creation-swe-bench-lite`: Patch real GitHub issue tasks and verify with repository tests.
   - `agent-infrastructure-and-skill-creation-common-crawl-warc`: Retrieve, parse, and cite web-scale documents.
@@ -66,18 +66,17 @@
 - Skill page: [mcp-server-patterns](../skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/mcp-server-patterns.md)
 - Mirrored skill: `included/skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/mcp-server-patterns`
 - Agent-ready entrypoint: `included/agent-ready/by-category/agent-infrastructure-skill-creation/selected-structure-reference/mcp-server-patterns/SKILL.md`
-- Source: [affaan-m/everything-claude-code `.agents/skills/mcp-server-patterns/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/mcp-server-patterns/SKILL.md)
-- Selected ref: `v1.10.0`; commit `846ffb75da9a`
-- What it covers: Catalog summary: Build MCP servers with Node/TypeScript SDK — tools, resources, prompts, Zod validation, stdio vs Streamable HTTP. Use Context7 or official MCP docs for latest API.
+- Source: [affaan-m/everything-claude-code `.agents/skills/mcp-server-patterns/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/mcp-server-patterns/SKILL.md)
+- Selected ref: `v2.2.3`; commit `c05b2d6614f6`
+- What it covers: Catalog summary: Build MCP servers with Node/TypeScript SDK — tools, resources, prompts, Zod validation, stdio vs Streamable HTTP. Use Context7 or official MCP docs for latest API. Use when building or debugging an MCP server — tools, resources, prompts, validation, or transport choice.
 - Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
-- Observed structure: Headings: MCP Server Patterns, When to Use, How It Works, Core concepts, Connecting with stdio. Resources: none observed.
+- Observed structure: Headings: MCP Server Patterns, When to Use, How It Works, Core concepts, Connecting with stdio. Resources: has_agents_metadata.
 - Notability: Included from selected repository structure reference with explicit GitHub provenance.
 - Improvement and correction plan:
   - Keep provenance and selected ref visible so agents can verify the source before use.
   - Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
-  - Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings.
 - Assigned benchmark scenarios:
-  - `skill-proof-affaan-m-everything-claude-code-agents-skills-mcp-server-patterns-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/mcp-server-patterns/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+  - `skill-proof-affaan-m-everything-claude-code-agents-skills-mcp-server-patterns-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/mcp-server-patterns/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
   - `agent-infrastructure-and-skill-creation-beir-retrieval`: Evaluate retrieval workflows across datasets.
   - `agent-infrastructure-and-skill-creation-swe-bench-lite`: Patch real GitHub issue tasks and verify with repository tests.
   - `agent-infrastructure-and-skill-creation-common-crawl-warc`: Retrieve, parse, and cite web-scale documents.
@@ -87,9 +86,9 @@
 - Skill page: [strategic-compact](../skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/strategic-compact.md)
 - Mirrored skill: `included/skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/strategic-compact`
 - Agent-ready entrypoint: `included/agent-ready/by-category/agent-infrastructure-skill-creation/selected-structure-reference/strategic-compact/SKILL.md`
-- Source: [affaan-m/everything-claude-code `.agents/skills/strategic-compact/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/strategic-compact/SKILL.md)
-- Selected ref: `v1.10.0`; commit `846ffb75da9a`
-- What it covers: Catalog summary: Suggests manual context compaction at logical intervals to preserve context through task phases rather than arbitrary auto-compaction.
+- Source: [affaan-m/everything-claude-code `.agents/skills/strategic-compact/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/strategic-compact/SKILL.md)
+- Selected ref: `v2.2.3`; commit `c05b2d6614f6`
+- What it covers: Catalog summary: Suggests manual context compaction at logical intervals to preserve context through task phases rather than arbitrary auto-compaction. Use when a session is approaching a context limit and a task phase is a natural place to compact.
 - Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 - Observed structure: Headings: Strategic Compact Skill, When to Activate, Why Strategic Compaction?, How It Works, Hook Setup. Resources: has_agents_metadata.
 - Notability: Included from selected repository structure reference with explicit GitHub provenance.
@@ -97,7 +96,7 @@
   - Keep provenance and selected ref visible so agents can verify the source before use.
   - Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
 - Assigned benchmark scenarios:
-  - `skill-proof-affaan-m-everything-claude-code-agents-skills-strategic-compact-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/strategic-compact/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+  - `skill-proof-affaan-m-everything-claude-code-agents-skills-strategic-compact-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/strategic-compact/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
   - `agent-infrastructure-and-skill-creation-beir-retrieval`: Evaluate retrieval workflows across datasets.
   - `agent-infrastructure-and-skill-creation-swe-bench-lite`: Patch real GitHub issue tasks and verify with repository tests.
   - `agent-infrastructure-and-skill-creation-common-crawl-warc`: Retrieve, parse, and cite web-scale documents.

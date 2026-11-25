@@ -1,0 +1,33 @@
+{
+  "checkout": {
+    "git": "git version 2.56.0.windows.4",
+    "git_sha256": "9c75f3f41eb5686bacde4b7c4fdfcd7970e8b699ee05c8d7a0cc9c8a7ddaffe8",
+    "platform": "win32",
+    "catalog_base": "93cf4a8f022f50bba4ca3dd4edf2a16391abb9ad",
+    "checkout_controls": [
+      {
+        "core_autocrlf": "true",
+        "exit_code": 0,
+        "files_verified": 1368,
+        "canonical_inventory_sha256": "2b2c96136dd8dc172731750277b1c33310893c7c13c6c0af97f50934868c8ae4"
+      },
+      {
+        "core_autocrlf": "false",
+        "exit_code": 0,
+        "files_verified": 1368,
+        "canonical_inventory_sha256": "2b2c96136dd8dc172731750277b1c33310893c7c13c6c0af97f50934868c8ae4"
+      }
+    ],
+    "primary_index_unchanged": true,
+    "gitattributes_sha256": "fb4dbee1ec49607e76213c7c59887941fbb49567d5b67eebd46d0e9166bd4f5e"
+  },
+  "catalog": {
+    "catalog_entries": 673,
+    "error_count": 0,
+    "errors": [],
+    "ok": true,
+    "scenarios": 718,
+    "tracks": 19
+  },
+  "scope": "Generated text checkout and source-pin validation"
+}

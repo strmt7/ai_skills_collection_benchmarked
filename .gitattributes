@@ -4,6 +4,11 @@
 /tests/** text eol=lf
 /.github/** text eol=lf
 /data/*.json text eol=lf
+/docs/catalog/** text eol=lf
+/included/agent-ready/** text eol=lf
+/included/selected/** text eol=lf
+/included/skills/README.md text eol=lf
+/included/skills/manifest.json text eol=lf
 /included/improved/** text eol=lf
 # This repair is generated from canonical locked source bytes on every host.
 /included/repaired/skills/citation-management-security/** text eol=lf

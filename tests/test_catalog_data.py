@@ -12,6 +12,8 @@ def test_catalog_scale_and_unique_ids():
 
 
 def test_entry_provenance():
+    sources = {(source["repo"], source["selected_ref"]): source for source in load("data/source_lock.json")["sources"]}
+    pins = build_catalog.source_pins(build_catalog.SOURCES)
     for entry in load("data/skills_catalog.json"):
         assert entry["name"]
         assert entry["description"]
@@ -30,14 +32,17 @@ def test_entry_provenance():
         assert re.fullmatch(r"[0-9a-f]{40}", entry["commit_sha"])
         assert re.fullmatch(r"[0-9a-f]{64}", entry["skill_file_sha256"])
         assert re.fullmatch(r"[0-9a-f]{64}", entry["skill_dir_sha256"])
-        expected_immutable = (
-            f"https://github.com/{entry['source_repo']}/blob/{entry['commit_sha']}/{entry['source_path']}"
-        )
+        origin = (entry["source_repo"], entry["selected_ref"])
+        locked = sources[origin]
+        declared = pins.get(origin, {})
+        assert locked["commit_sha"] == entry["commit_sha"]
+        upstream = declared.get("upstream_repo", entry["source_repo"])
+        if "upstream_repo" in declared:
+            assert locked["origin_url"] == f"https://github.com/{upstream}.git"
+        expected_immutable = f"https://github.com/{upstream}/blob/{entry['commit_sha']}/{entry['source_path']}"
         assert entry["immutable_source_url"] == expected_immutable
         if entry["latest_release_tag"]:
-            expected_source = (
-                f"https://github.com/{entry['source_repo']}/blob/{entry['latest_release_tag']}/{entry['source_path']}"
-            )
+            expected_source = f"https://github.com/{upstream}/blob/{entry['latest_release_tag']}/{entry['source_path']}"
             assert entry["selected_ref"] == entry["latest_release_tag"]
             assert entry["source_url"] == expected_source
         else:

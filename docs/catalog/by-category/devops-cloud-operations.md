@@ -114,8 +114,8 @@
 - Skill page: [video-editing](../skills/by-category/devops-cloud-operations/selected-structure-reference/video-editing.md)
 - Mirrored skill: `included/skills/by-category/devops-cloud-operations/selected-structure-reference/video-editing`
 - Agent-ready entrypoint: `included/agent-ready/by-category/devops-cloud-operations/selected-structure-reference/video-editing/SKILL.md`
-- Source: [affaan-m/everything-claude-code `.agents/skills/video-editing/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/video-editing/SKILL.md)
-- Selected ref: `v1.10.0`; commit `846ffb75da9a`
+- Source: [affaan-m/everything-claude-code `.agents/skills/video-editing/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/video-editing/SKILL.md)
+- Selected ref: `v2.2.3`; commit `c05b2d6614f6`
 - What it covers: Catalog summary: AI-assisted video editing workflows for cutting, structuring, and augmenting real footage. Covers the full pipeline from raw capture through FFmpeg, Remotion, ElevenLabs, fal.ai, and final polish in Descript or CapCut. Use when the user wants to edit video, cut footage, create vlogs, or build video content.
 - Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 - Observed structure: Headings: Video Editing, When to Activate, Core Thesis, The Pipeline, Layer 1: Capture (Screen Studio / Raw Footage). Resources: has_agents_metadata.
@@ -125,7 +125,7 @@
   - Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
   - Add an executable validator or helper script so the workflow has objective checks.
 - Assigned benchmark scenarios:
-  - `skill-proof-affaan-m-everything-claude-code-agents-skills-video-editing-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/video-editing/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+  - `skill-proof-affaan-m-everything-claude-code-agents-skills-video-editing-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/video-editing/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
   - `devops-cloud-and-operations-kubernetes-examples`: Validate manifests and operational runbooks.
   - `devops-cloud-and-operations-opentelemetry-demo`: Debug telemetry across microservices.
   - `devops-cloud-and-operations-local-omero-compose-workflows`: Validate OMERO deployment, plugin, upload/import, and monitoring workflows.

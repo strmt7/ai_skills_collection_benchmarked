@@ -27,8 +27,8 @@
 - Skill page: [bun-runtime](../skills/by-category/testing-qa-benchmarking/selected-structure-reference/bun-runtime.md)
 - Mirrored skill: `included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/bun-runtime`
 - Agent-ready entrypoint: `included/agent-ready/by-category/testing-qa-benchmarking/selected-structure-reference/bun-runtime/SKILL.md`
-- Source: [affaan-m/everything-claude-code `.agents/skills/bun-runtime/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/bun-runtime/SKILL.md)
-- Selected ref: `v1.10.0`; commit `846ffb75da9a`
+- Source: [affaan-m/everything-claude-code `.agents/skills/bun-runtime/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/bun-runtime/SKILL.md)
+- Selected ref: `v2.2.3`; commit `c05b2d6614f6`
 - What it covers: Catalog summary: Bun as runtime, package manager, bundler, and test runner. When to choose Bun vs Node, migration notes, and Vercel support.
 - Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 - Observed structure: Headings: Bun Runtime, When to Use, How It Works, Examples, Run and install. Resources: has_agents_metadata.
@@ -38,7 +38,7 @@
   - Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
   - Add an executable validator or helper script so the workflow has objective checks.
 - Assigned benchmark scenarios:
-  - `skill-proof-affaan-m-everything-claude-code-agents-skills-bun-runtime-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/bun-runtime/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+  - `skill-proof-affaan-m-everything-claude-code-agents-skills-bun-runtime-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/bun-runtime/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
   - `testing-qa-and-benchmarking-swe-bench-lite`: Patch real GitHub issue tasks and verify with repository tests.
   - `testing-qa-and-benchmarking-owasp-benchmark`: Find and classify vulnerability test cases.
   - `testing-qa-and-benchmarking-local-omero-compose-workflows`: Validate OMERO deployment, plugin, upload/import, and monitoring workflows.
@@ -48,9 +48,9 @@
 - Skill page: [e2e-testing](../skills/by-category/testing-qa-benchmarking/selected-structure-reference/e2e-testing.md)
 - Mirrored skill: `included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/e2e-testing`
 - Agent-ready entrypoint: `included/agent-ready/by-category/testing-qa-benchmarking/selected-structure-reference/e2e-testing/SKILL.md`
-- Source: [affaan-m/everything-claude-code `.agents/skills/e2e-testing/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/e2e-testing/SKILL.md)
-- Selected ref: `v1.10.0`; commit `846ffb75da9a`
-- What it covers: Catalog summary: Playwright E2E testing patterns, Page Object Model, configuration, CI/CD integration, artifact management, and flaky test strategies.
+- Source: [affaan-m/everything-claude-code `.agents/skills/e2e-testing/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/e2e-testing/SKILL.md)
+- Selected ref: `v2.2.3`; commit `c05b2d6614f6`
+- What it covers: Catalog summary: Playwright E2E testing patterns, Page Object Model, configuration, CI/CD integration, artifact management, and flaky test strategies. Use when writing Playwright tests, structuring page objects, or fixing flaky E2E runs in CI.
 - Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 - Observed structure: Headings: E2E Testing Patterns, Test File Organization, Page Object Model (POM), Test Structure, Playwright Configuration. Resources: has_agents_metadata.
 - Notability: Included from selected repository structure reference with explicit GitHub provenance.
@@ -59,7 +59,7 @@
   - Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
   - Add an executable validator or helper script so the workflow has objective checks.
 - Assigned benchmark scenarios:
-  - `skill-proof-affaan-m-everything-claude-code-agents-skills-e2e-testing-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/e2e-testing/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+  - `skill-proof-affaan-m-everything-claude-code-agents-skills-e2e-testing-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/e2e-testing/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
   - `testing-qa-and-benchmarking-swe-bench-lite`: Patch real GitHub issue tasks and verify with repository tests.
   - `testing-qa-and-benchmarking-owasp-benchmark`: Find and classify vulnerability test cases.
   - `testing-qa-and-benchmarking-local-omero-compose-workflows`: Validate OMERO deployment, plugin, upload/import, and monitoring workflows.
@@ -69,8 +69,8 @@
 - Skill page: [tdd-workflow-everything-claude-code](../skills/by-category/testing-qa-benchmarking/selected-structure-reference/tdd-workflow-everything-claude-code.md)
 - Mirrored skill: `included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/tdd-workflow-everything-claude-code`
 - Agent-ready entrypoint: `included/agent-ready/by-category/testing-qa-benchmarking/selected-structure-reference/tdd-workflow-everything-claude-code/SKILL.md`
-- Source: [affaan-m/everything-claude-code `.agents/skills/tdd-workflow/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/tdd-workflow/SKILL.md)
-- Selected ref: `v1.10.0`; commit `846ffb75da9a`
+- Source: [affaan-m/everything-claude-code `.agents/skills/tdd-workflow/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/tdd-workflow/SKILL.md)
+- Selected ref: `v2.2.3`; commit `c05b2d6614f6`
 - What it covers: Catalog summary: Use this skill when writing new features, fixing bugs, or refactoring code. Enforces test-driven development with 80%+ coverage including unit, integration, and E2E tests.
 - Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 - Observed structure: Headings: Test-Driven Development Workflow, When to Activate, Core Principles, 1. Tests BEFORE Code, 2. Coverage Requirements. Resources: has_agents_metadata.
@@ -80,7 +80,7 @@
   - Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
   - Add an executable validator or helper script so the workflow has objective checks.
 - Assigned benchmark scenarios:
-  - `skill-proof-affaan-m-everything-claude-code-agents-skills-tdd-workflow-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/tdd-workflow/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+  - `skill-proof-affaan-m-everything-claude-code-agents-skills-tdd-workflow-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/tdd-workflow/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
   - `testing-qa-and-benchmarking-swe-bench-lite`: Patch real GitHub issue tasks and verify with repository tests.
   - `testing-qa-and-benchmarking-owasp-benchmark`: Find and classify vulnerability test cases.
   - `testing-qa-and-benchmarking-local-omero-compose-workflows`: Validate OMERO deployment, plugin, upload/import, and monitoring workflows.
@@ -90,9 +90,9 @@
 - Skill page: [verification-loop-everything-claude-code](../skills/by-category/testing-qa-benchmarking/selected-structure-reference/verification-loop-everything-claude-code.md)
 - Mirrored skill: `included/skills/by-category/testing-qa-benchmarking/selected-structure-reference/verification-loop-everything-claude-code`
 - Agent-ready entrypoint: `included/agent-ready/by-category/testing-qa-benchmarking/selected-structure-reference/verification-loop-everything-claude-code/SKILL.md`
-- Source: [affaan-m/everything-claude-code `.agents/skills/verification-loop/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/verification-loop/SKILL.md)
-- Selected ref: `v1.10.0`; commit `846ffb75da9a`
-- What it covers: Catalog summary: A comprehensive verification system for Claude Code sessions.
+- Source: [affaan-m/everything-claude-code `.agents/skills/verification-loop/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/verification-loop/SKILL.md)
+- Selected ref: `v2.2.3`; commit `c05b2d6614f6`
+- What it covers: Catalog summary: A comprehensive verification system for Claude Code sessions. Use when verifying a Claude Code session's work before claiming it is complete.
 - Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 - Observed structure: Headings: Verification Loop Skill, When to Use, Verification Phases, Phase 1: Build Verification, Check if project builds. Resources: has_agents_metadata.
 - Notability: Included from selected repository structure reference with explicit GitHub provenance.
@@ -101,7 +101,7 @@
   - Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
   - Add an executable validator or helper script so the workflow has objective checks.
 - Assigned benchmark scenarios:
-  - `skill-proof-affaan-m-everything-claude-code-agents-skills-verification-loop-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/verification-loop/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+  - `skill-proof-affaan-m-everything-claude-code-agents-skills-verification-loop-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/verification-loop/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
   - `testing-qa-and-benchmarking-swe-bench-lite`: Patch real GitHub issue tasks and verify with repository tests.
   - `testing-qa-and-benchmarking-owasp-benchmark`: Find and classify vulnerability test cases.
   - `testing-qa-and-benchmarking-local-omero-compose-workflows`: Validate OMERO deployment, plugin, upload/import, and monitoring workflows.

@@ -218,25 +218,6 @@ def complete_generator(tmp_path, monkeypatch):
     (root / "README.md").write_text("previous README", encoding="utf-8")
     (root / "docs").mkdir()
     (root / "docs/installation.md").write_text("maintained installation gates", encoding="utf-8")
-    (root / ".github").mkdir()
-    (root / ".github/readme_badges.json").write_text(
-        json.dumps(
-            {
-                "host": "github.com",
-                "owner": "fixture",
-                "repo": "example",
-                "branch_name": "main",
-                "badges": [
-                    {
-                        "alt": "Gate",
-                        "image": "https://example.invalid/{repo_path}/{branch}",
-                        "target": "https://example.invalid/{repo_path}",
-                    }
-                ],
-            }
-        ),
-        encoding="utf-8",
-    )
     monkeypatch.setattr(catalog, "ROOT", root)
     monkeypatch.setattr(catalog, "SOURCE_ROOT", sources)
     monkeypatch.setattr(
@@ -274,7 +255,7 @@ def test_generator_complete_roundtrip_and_freshness(complete_generator, capsys):
     result = json.loads(capsys.readouterr().out)
     assert result["skills"] == 1
     assert (root / "docs/installation.md").read_text() == "maintained installation gates"
-    assert "BEGIN GENERATED BADGES" in (root / "README.md").read_text()
+    assert (root / "README.md").read_text() == "previous README"
     assert json.loads((root / "data/source_lock.json").read_text())["generated_on"] == "2026-04-17"
     assert root == catalog.ROOT and sources == catalog.SOURCE_ROOT
     before = {relative: publication.signature(root / relative) for relative in catalog.GENERATED_OUTPUTS}
@@ -332,6 +313,55 @@ def test_scoped_refresh_uses_only_selected_checkout_and_preserves_other_locks(sc
     assert lock["sources"][0]["commit_sha"] == "c" * 40
     updated = next(entry for entry in after if entry["source_repo"] == "fixture/example")
     assert (root / updated["mirrored_path"] / "new.txt").read_text() == "new public resource\n"
+    assert catalog.main([*arguments, "--check"]) == 0
+    assert json.loads(capsys.readouterr().out)["different_outputs"] == []
+
+
+def test_scoped_refresh_splits_one_repository_into_two_disjoint_pins(complete_generator, monkeypatch, capsys):
+    root, sources = complete_generator
+    old_skill = sources / "fixture/skills/next/SKILL.md"
+    old_skill.parent.mkdir()
+    old_skill.write_text("---\nname: next\ndescription: An earlier workflow.\n---\n# Earlier\n", encoding="utf-8")
+    assert catalog.main(["--source-root", str(sources), "--credential-policy", "2"]) == 0
+    capsys.readouterr()
+    before = json.loads((root / "data/skills_catalog.json").read_text(encoding="utf-8"))
+    earlier, next_skill = before
+    assert earlier["name"] == "example" and next_skill["name"] == "next"
+
+    original = catalog.SOURCES[0]
+    stable = {**original, "dir": "stable", "tag": "v2", "skill_paths": ["skills/next/SKILL.md"]}
+    monkeypatch.setattr(catalog, "SOURCES", [{**original, "skill_paths": ["skills/example/SKILL.md"]}, stable])
+    updated = sources / "stable/skills/next/SKILL.md"
+    updated.parent.mkdir(parents=True)
+    updated.write_text(
+        "---\nname: next\ndescription: A revised workflow.\n---\n# Revised\n", encoding="utf-8", newline="\n"
+    )
+    unselected = sources / "stable/skills/unselected/SKILL.md"
+    unselected.parent.mkdir()
+    unselected.write_text("---\nname: unselected\ndescription: Out of scope.\n---\n# Unselected\n", encoding="utf-8")
+
+    original_git = catalog.run_git
+
+    def git(path, *args):
+        if path.name == "stable" and args in {("rev-parse", "HEAD"), ("rev-parse", "v2^{commit}")}:
+            return "c" * 40
+        return original_git(path, *args)
+
+    monkeypatch.setattr(catalog, "run_git", git)
+    arguments = ["--source-root", str(sources), "--refresh-source", "fixture/example", "--json"]
+    assert catalog.main(arguments) == 0
+    capsys.readouterr()
+    after = json.loads((root / "data/skills_catalog.json").read_text(encoding="utf-8"))
+    assert after[0] == earlier
+    assert after[1]["id"] == next_skill["id"]
+    assert after[1]["commit_sha"] == "c" * 40
+    assert after[1]["credential_policy_version"] == 2
+    assert (root / after[1]["mirrored_path"] / "SKILL.md").read_bytes() == updated.read_bytes()
+    records = json.loads((root / "data/source_lock.json").read_text(encoding="utf-8"))["sources"]
+    assert [(row["repo"], row["selected_ref"], row["skill_count"]) for row in records] == [
+        ("fixture/example", "default-branch HEAD", 1),
+        ("fixture/example", "v2", 1),
+    ]
     assert catalog.main([*arguments, "--check"]) == 0
     assert json.loads(capsys.readouterr().out)["different_outputs"] == []
 
@@ -508,44 +538,40 @@ def test_catalog_refresh_preserves_independent_schemas_and_artifact_inventories(
     repair_manifest.write_text(json.dumps({"repairs": [{"id": "a"}, {"id": "b"}]}), encoding="utf-8")
     adapter_registry = root / "data/external_benchmark_methods.json"
     adapter_registry.write_text(json.dumps({"methods": [{"id": "x"}]}), encoding="utf-8")
-    before = {path: path.read_bytes() for path in (repair_manifest, adapter_registry)}
+    before = {path: path.read_bytes() for path in (repair_manifest, adapter_registry, root / "README.md")}
     args = ["--source-root", str(sources)]
     assert catalog.main(args) == 0
     assert catalog.main([*args, "--check"]) == 0
     assert {path.name: path.read_bytes() for path in (root / "evaluators").glob("*.schema.json")} == schemas
     assert all(path.read_bytes() == content for path, content in before.items())
     assert not any(path.startswith("evaluators/") for path in catalog.GENERATED_OUTPUTS)
-    readme = (root / "README.md").read_text(encoding="utf-8")
-    assert "- `2` repaired skill overlays" in readme
-    assert "- `1` selected external benchmark method adapters with smoke artifacts." in readme
-    for link in (
-        "[Repaired skill readiness](docs/repaired-skill-readiness.md)",
-        "[Objective benchmark methods](docs/objective-benchmark-methods.md)",
-        "[Contributing guide](CONTRIBUTING.md)",
-        "[Changelog](CHANGELOG.md)",
-    ):
-        assert link in readme
-    for gate in (
-        "tools/validate_source_lock.py",
-        "tools/run_static_benchmarks.py --check",
-        "tools/audit_skill_quality.py --check",
-        "tools/check_no_secret_patterns.py --history",
-        "ruff format --check tools tests",
-        "mypy tools tests",
-        "pytest -q -n auto",
-    ):
-        assert gate in readme
+    for path in [root / "data/skills_catalog.json", root / "docs/catalog/index.md"]:
+        assert b"\r\n" not in path.read_bytes()
 
 
-def test_unreadable_artifact_inventory_aborts_before_catalog_publication(complete_generator):
+def test_independent_artifact_inventory_does_not_affect_catalog_publication(complete_generator):
     root, sources = complete_generator
     registry = root / "data/external_benchmark_methods.json"
     registry.write_text("invalid JSON", encoding="utf-8")
-    before = publication.signature(root / "data")
-    with pytest.raises(json.JSONDecodeError):
-        catalog.main(["--source-root", str(sources)])
-    assert publication.signature(root / "data") == before
+    assert catalog.main(["--source-root", str(sources)]) == 0
+    assert registry.read_text(encoding="utf-8") == "invalid JSON"
     assert (root / "README.md").read_text() == "previous README"
+
+
+@pytest.mark.parametrize("record_kind", ["maintained", "repaired"])
+def test_catalog_refresh_requires_history_for_retained_overlay_sources(tmp_path, record_kind):
+    identity = {"source_commit": "a" * 40}
+    payload: dict[str, object]
+    if record_kind == "maintained":
+        record = tmp_path / "data/improved_skills_manifest.json"
+        payload = {"skills": [{"skill_id": "old-skill", **identity}]}
+    else:
+        record = tmp_path / "included/repaired/skills/example/repair.json"
+        payload = {"source_skill_id": "old-skill", "source_mirror": "included/skills/example", **identity}
+    record.parent.mkdir(parents=True)
+    record.write_text(json.dumps(payload), encoding="utf-8")
+    with pytest.raises(ValueError, match="source refresh would orphan recorded evidence"):
+        catalog.require_source_history(tmp_path, [{"id": "old-skill", "commit_sha": "b" * 40}])
 
 
 def test_source_head_change_between_collection_and_lock_rejected(complete_generator):

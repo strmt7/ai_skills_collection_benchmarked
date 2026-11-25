@@ -674,7 +674,9 @@
       "validation": {
         "errors": [],
         "verdict": "artifact_complete",
-        "warnings": []
+        "warnings": [
+          "historical source version: this artifact does not qualify the current catalog pin"
+        ]
       }
     },
     {
@@ -4581,11 +4583,10 @@
       "historical_runtime_artifacts_recorded": 0,
       "mirrored_path": "included/skills/by-category/agent-infrastructure-skill-creation/selected-structure-reference/mcp-server-patterns",
       "name": "mcp-server-patterns",
-      "quality_fix_point_count": 3,
+      "quality_fix_point_count": 2,
       "quality_fix_points": [
         "Keep provenance and selected ref visible so agents can verify the source before use.",
-        "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.",
-        "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings."
+        "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable."
       ],
       "runtime_artifact_paths": [],
       "runtime_artifacts_recorded": 0,
@@ -15305,11 +15306,10 @@
       "historical_runtime_artifacts_recorded": 0,
       "mirrored_path": "included/skills/by-category/creative-media-design/selected-structure-reference/brand-voice",
       "name": "brand-voice",
-      "quality_fix_point_count": 3,
+      "quality_fix_point_count": 2,
       "quality_fix_points": [
         "Keep provenance and selected ref visible so agents can verify the source before use.",
-        "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.",
-        "Add agents/openai.yaml or equivalent metadata when the skill is intended for OpenAI/Codex-style listings."
+        "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable."
       ],
       "runtime_artifact_paths": [],
       "runtime_artifacts_recorded": 0,
@@ -23804,8 +23804,10 @@
         "source_proof_first": true
       },
       "failed_checks": [],
-      "historical_runtime_artifact_paths": [],
-      "historical_runtime_artifacts_recorded": 0,
+      "historical_runtime_artifact_paths": [
+        "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/affaan-m-everything-claude-code-agents-skills-deep-research-skill-md/search-retrieval-and-web-automation-common-crawl-warc/artifact.json"
+      ],
+      "historical_runtime_artifacts_recorded": 1,
       "mirrored_path": "included/skills/by-category/search-retrieval-web-automation/selected-structure-reference/deep-research",
       "name": "deep-research",
       "quality_fix_point_count": 2,
@@ -23813,10 +23815,8 @@
         "Keep provenance and selected ref visible so agents can verify the source before use.",
         "Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable."
       ],
-      "runtime_artifact_paths": [
-        "artifacts/benchmark-runs/2026-04-18-independent-runtime-readiness-batch-02/affaan-m-everything-claude-code-agents-skills-deep-research-skill-md/search-retrieval-and-web-automation-common-crawl-warc/artifact.json"
-      ],
-      "runtime_artifacts_recorded": 1,
+      "runtime_artifact_paths": [],
+      "runtime_artifacts_recorded": 0,
       "skill_id": "affaan-m-everything-claude-code-agents-skills-deep-research-skill-md",
       "source_path": ".agents/skills/deep-research/SKILL.md",
       "source_repo": "affaan-m/everything-claude-code",
@@ -27238,7 +27238,7 @@
   "summary": {
     "average_static_score_percent": 100.0,
     "provenance_artifacts_recorded": 10,
-    "quality_fix_points": 2194,
+    "quality_fix_points": 2192,
     "runtime_artifacts_failed": 34,
     "runtime_artifacts_passed": 0,
     "runtime_artifacts_recorded": 34,

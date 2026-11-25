@@ -47,8 +47,8 @@
 - Skill page: [deep-research](../skills/by-category/search-retrieval-web-automation/selected-structure-reference/deep-research.md)
 - Mirrored skill: `included/skills/by-category/search-retrieval-web-automation/selected-structure-reference/deep-research`
 - Agent-ready entrypoint: `included/agent-ready/by-category/search-retrieval-web-automation/selected-structure-reference/deep-research/SKILL.md`
-- Source: [affaan-m/everything-claude-code `.agents/skills/deep-research/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/deep-research/SKILL.md)
-- Selected ref: `v1.10.0`; commit `846ffb75da9a`
+- Source: [affaan-m/everything-claude-code `.agents/skills/deep-research/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/deep-research/SKILL.md)
+- Selected ref: `v2.2.3`; commit `c05b2d6614f6`
 - What it covers: Catalog summary: Multi-source deep research using firecrawl and exa MCPs. Searches the web, synthesizes findings, and delivers cited reports with source attribution. Use when the user wants thorough research on any topic with evidence and citations.
 - Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 - Observed structure: Headings: Deep Research, When to Activate, MCP Requirements, Workflow, Step 1: Understand the Goal. Resources: has_agents_metadata.
@@ -57,7 +57,7 @@
   - Keep provenance and selected ref visible so agents can verify the source before use.
   - Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
 - Assigned benchmark scenarios:
-  - `skill-proof-affaan-m-everything-claude-code-agents-skills-deep-research-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/deep-research/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+  - `skill-proof-affaan-m-everything-claude-code-agents-skills-deep-research-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/deep-research/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
   - `search-retrieval-and-web-automation-common-crawl-warc`: Retrieve, parse, and cite web-scale documents.
   - `search-retrieval-and-web-automation-beir-retrieval`: Evaluate retrieval workflows across datasets.
   - `search-retrieval-and-web-automation-ms-marco`: Rank passages and support answer extraction.
@@ -67,8 +67,8 @@
 - Skill page: [documentation-lookup-everything-claude-code](../skills/by-category/search-retrieval-web-automation/selected-structure-reference/documentation-lookup-everything-claude-code.md)
 - Mirrored skill: `included/skills/by-category/search-retrieval-web-automation/selected-structure-reference/documentation-lookup-everything-claude-code`
 - Agent-ready entrypoint: `included/agent-ready/by-category/search-retrieval-web-automation/selected-structure-reference/documentation-lookup-everything-claude-code/SKILL.md`
-- Source: [affaan-m/everything-claude-code `.agents/skills/documentation-lookup/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/documentation-lookup/SKILL.md)
-- Selected ref: `v1.10.0`; commit `846ffb75da9a`
+- Source: [affaan-m/everything-claude-code `.agents/skills/documentation-lookup/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/documentation-lookup/SKILL.md)
+- Selected ref: `v2.2.3`; commit `c05b2d6614f6`
 - What it covers: Catalog summary: Use up-to-date library and framework docs via Context7 MCP instead of training data. Activates for setup questions, API references, code examples, or when the user names a framework (e.g. React, Next.js, Prisma).
 - Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 - Observed structure: Headings: Documentation Lookup (Context7), Core Concepts, When to use, How it works, Step 1: Resolve the Library ID. Resources: has_agents_metadata.
@@ -77,7 +77,7 @@
   - Keep provenance and selected ref visible so agents can verify the source before use.
   - Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
 - Assigned benchmark scenarios:
-  - `skill-proof-affaan-m-everything-claude-code-agents-skills-documentation-lookup-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/documentation-lookup/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+  - `skill-proof-affaan-m-everything-claude-code-agents-skills-documentation-lookup-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/documentation-lookup/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
   - `search-retrieval-and-web-automation-common-crawl-warc`: Retrieve, parse, and cite web-scale documents.
   - `search-retrieval-and-web-automation-beir-retrieval`: Evaluate retrieval workflows across datasets.
   - `search-retrieval-and-web-automation-ms-marco`: Rank passages and support answer extraction.
@@ -87,8 +87,8 @@
 - Skill page: [exa-search](../skills/by-category/search-retrieval-web-automation/selected-structure-reference/exa-search.md)
 - Mirrored skill: `included/skills/by-category/search-retrieval-web-automation/selected-structure-reference/exa-search`
 - Agent-ready entrypoint: `included/agent-ready/by-category/search-retrieval-web-automation/selected-structure-reference/exa-search/SKILL.md`
-- Source: [affaan-m/everything-claude-code `.agents/skills/exa-search/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/exa-search/SKILL.md)
-- Selected ref: `v1.10.0`; commit `846ffb75da9a`
+- Source: [affaan-m/everything-claude-code `.agents/skills/exa-search/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/exa-search/SKILL.md)
+- Selected ref: `v2.2.3`; commit `c05b2d6614f6`
 - What it covers: Catalog summary: Neural search via Exa MCP for web, code, and company research. Use when the user needs web search, code examples, company intel, people lookup, or AI-powered deep research with Exa's neural search engine.
 - Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 - Observed structure: Headings: Exa Search, When to Activate, MCP Requirement, Core Tools, web_search_exa. Resources: has_agents_metadata.
@@ -97,7 +97,7 @@
   - Keep provenance and selected ref visible so agents can verify the source before use.
   - Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
 - Assigned benchmark scenarios:
-  - `skill-proof-affaan-m-everything-claude-code-agents-skills-exa-search-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/exa-search/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+  - `skill-proof-affaan-m-everything-claude-code-agents-skills-exa-search-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/exa-search/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
   - `search-retrieval-and-web-automation-common-crawl-warc`: Retrieve, parse, and cite web-scale documents.
   - `search-retrieval-and-web-automation-beir-retrieval`: Evaluate retrieval workflows across datasets.
   - `search-retrieval-and-web-automation-ms-marco`: Rank passages and support answer extraction.

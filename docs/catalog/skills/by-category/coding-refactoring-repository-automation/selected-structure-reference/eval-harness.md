@@ -6,9 +6,9 @@ Mirrored skill: `included/skills/by-category/coding-refactoring-repository-autom
 
 Agent-ready entrypoint: `included/agent-ready/by-category/coding-refactoring-repository-automation/selected-structure-reference/eval-harness/SKILL.md`
 
-Source: [affaan-m/everything-claude-code `.agents/skills/eval-harness/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/eval-harness/SKILL.md)
+Source: [affaan-m/everything-claude-code `.agents/skills/eval-harness/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/eval-harness/SKILL.md)
 
-Selected ref: `v1.10.0`; commit `846ffb75da9a`
+Selected ref: `v2.2.3`; commit `c05b2d6614f6`
 
 ## Use
 
@@ -16,7 +16,7 @@ Load this skill only when the task matches the catalog summary or source path; r
 
 ## Scope
 
-Catalog summary: Formal evaluation framework for Claude Code sessions implementing eval-driven development (EDD) principles
+Catalog summary: Formal evaluation framework for Claude Code sessions implementing eval-driven development (EDD) principles. Use when a Claude Code workflow needs a formal eval before it is trusted or changed.
 
 ## Verification
 
@@ -24,7 +24,7 @@ Static benchmark results are reported in `docs/benchmark-results.md`. Runtime cl
 
 Assigned scenarios:
 
-- `skill-proof-affaan-m-everything-claude-code-agents-skills-eval-harness-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/eval-harness/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+- `skill-proof-affaan-m-everything-claude-code-agents-skills-eval-harness-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/eval-harness/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
 - `coding-refactoring-and-repository-automation-swe-bench-lite`: Patch real GitHub issue tasks and verify with repository tests.
 - `coding-refactoring-and-repository-automation-kubernetes-examples`: Validate manifests and operational runbooks.
 - `coding-refactoring-and-repository-automation-opentelemetry-demo`: Debug telemetry across microservices.

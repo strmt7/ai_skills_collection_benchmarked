@@ -202,24 +202,40 @@ def validate_catalog(report: Report) -> None:
     report.require(len(install_names) == len(set(install_names)), "duplicate catalog install_name")
     report.require(max(len(name) for name in install_names) <= 80, "catalog install_name value exceeds path policy")
 
-    locked_skills = {
-        skill["id"]: source | {"skill": skill}
-        for source in source_lock.get("sources", [])
-        for skill in source.get("skills", [])
-    }
+    declared_pins = build_catalog.source_pins(build_catalog.SOURCES)
+    locked_skills = {}
+    locked_refs = set()
     report.require(source_lock.get("lock_version") == 1, "source lock version mismatch")
     report.require(source_lock.get("hash_algorithm") == "sha256", "source lock hash algorithm mismatch")
     try:
         historical_entries(ROOT)
     except (OSError, ValueError) as exc:
         report.require(False, f"source history: {exc}")
-    report.require(set(locked_skills) == set(catalog_by_id), "source lock skills do not match catalog")
     for source in source_lock.get("sources", []):
+        identity = (source["repo"], source["selected_ref"])
+        report.require(identity not in locked_refs, f"duplicate source lock ref {identity}")
+        locked_refs.add(identity)
+        declared = declared_pins.get(identity, {})
+        if "commit" in declared:
+            report.require(
+                source["commit_sha"] == declared["commit"],
+                f"{source['repo']} source lock commit differs from the declared checkout",
+            )
+        upstream_repo = declared.get("upstream_repo", source["repo"])
+        if upstream_repo != source["repo"]:
+            report.require(
+                source["origin_url"] == f"https://github.com/{upstream_repo}.git",
+                f"{source['repo']} canonical upstream origin differs from the declared checkout",
+            )
+        for skill in source.get("skills", []):
+            report.require(skill["id"] not in locked_skills, f"duplicate source lock skill {skill['id']}")
+            locked_skills[skill["id"]] = source | {"skill": skill, "upstream_repo": upstream_repo}
         try:
             require_admitted_source(ROOT, source["repo"], source["commit_sha"])
             build_catalog.validate_preserved_notice(ROOT, source.get("preserved_notice"), source["commit_sha"])
         except (OSError, ValueError) as error:
             report.require(False, f"{source.get('repo')}: {error}")
+    report.require(set(locked_skills) == set(catalog_by_id), "source lock skills do not match catalog")
 
     for agent_ready_path in (ROOT / "included" / "agent-ready").rglob("SKILL.md"):
         text = agent_ready_path.read_text(encoding="utf-8").lower()
@@ -417,12 +433,12 @@ def _validate_entry(
     )
     for path_key in ("install_name", "mirrored_path", "agent_ready_path", "source_path", "immutable_source_url"):
         report.require("..." not in entry[path_key], f"{entry['id']} {path_key} contains an elided path")
-    expected_immutable = f"https://github.com/{entry['source_repo']}/blob/{entry['commit_sha']}/{entry['source_path']}"
+    locked = locked_skills[entry["id"]]
+    upstream = locked["upstream_repo"]
+    expected_immutable = f"https://github.com/{upstream}/blob/{entry['commit_sha']}/{entry['source_path']}"
     report.require(entry["immutable_source_url"] == expected_immutable, f"{entry['id']} immutable_source_url mismatch")
     if entry.get("latest_release_tag"):
-        expected_source = (
-            f"https://github.com/{entry['source_repo']}/blob/{entry['latest_release_tag']}/{entry['source_path']}"
-        )
+        expected_source = f"https://github.com/{upstream}/blob/{entry['latest_release_tag']}/{entry['source_path']}"
         report.require(
             entry["selected_ref"] == entry["latest_release_tag"],
             f"{entry['id']} selected_ref does not match latest_release_tag",
@@ -464,9 +480,9 @@ def _validate_entry(
             entry["mirrored_path"] in agent_text or "../" in agent_text,
             f"{entry['id']} agent-ready SKILL.md missing local source pointer",
         )
-    locked = locked_skills[entry["id"]]
     report.require(locked["repo"] == entry["source_repo"], f"{entry['id']} source lock repo mismatch")
     report.require(locked["commit_sha"] == entry["commit_sha"], f"{entry['id']} source lock commit mismatch")
+    report.require(locked["selected_ref"] == entry["selected_ref"], f"{entry['id']} source lock ref mismatch")
     report.require(locked["skill"]["source_path"] == entry["source_path"], f"{entry['id']} source lock path mismatch")
     report.require(
         locked["skill"]["install_name"] == entry["install_name"], f"{entry['id']} source lock install_name mismatch"

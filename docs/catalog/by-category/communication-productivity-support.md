@@ -215,8 +215,8 @@
 - Skill page: [content-engine](../skills/by-category/communication-productivity-support/selected-structure-reference/content-engine.md)
 - Mirrored skill: `included/skills/by-category/communication-productivity-support/selected-structure-reference/content-engine`
 - Agent-ready entrypoint: `included/agent-ready/by-category/communication-productivity-support/selected-structure-reference/content-engine/SKILL.md`
-- Source: [affaan-m/everything-claude-code `.agents/skills/content-engine/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/content-engine/SKILL.md)
-- Selected ref: `v1.10.0`; commit `846ffb75da9a`
+- Source: [affaan-m/everything-claude-code `.agents/skills/content-engine/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/content-engine/SKILL.md)
+- Selected ref: `v2.2.3`; commit `c05b2d6614f6`
 - What it covers: Catalog summary: Create platform-native content systems for X, LinkedIn, TikTok, YouTube, newsletters, and repurposed multi-platform campaigns. Use when the user wants social posts, threads, scripts, content calendars, or one source asset adapted cleanly across platforms.
 - Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 - Observed structure: Headings: Content Engine, When to Activate, Non-Negotiables, Source-First Workflow, Voice Handling. Resources: has_agents_metadata.
@@ -225,7 +225,7 @@
   - Keep provenance and selected ref visible so agents can verify the source before use.
   - Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
 - Assigned benchmark scenarios:
-  - `skill-proof-affaan-m-everything-claude-code-agents-skills-content-engine-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/content-engine/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+  - `skill-proof-affaan-m-everything-claude-code-agents-skills-content-engine-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/content-engine/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
   - `communication-productivity-and-support-enron-email`: Classify, summarize, and route real email threads.
   - `communication-productivity-and-support-ms-marco`: Rank passages and support answer extraction.
   - `communication-productivity-and-support-sec-edgar-companyfacts`: Extract and reconcile financial facts from filings.
@@ -235,8 +235,8 @@
 - Skill page: [crosspost](../skills/by-category/communication-productivity-support/selected-structure-reference/crosspost.md)
 - Mirrored skill: `included/skills/by-category/communication-productivity-support/selected-structure-reference/crosspost`
 - Agent-ready entrypoint: `included/agent-ready/by-category/communication-productivity-support/selected-structure-reference/crosspost/SKILL.md`
-- Source: [affaan-m/everything-claude-code `.agents/skills/crosspost/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/crosspost/SKILL.md)
-- Selected ref: `v1.10.0`; commit `846ffb75da9a`
+- Source: [affaan-m/everything-claude-code `.agents/skills/crosspost/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/crosspost/SKILL.md)
+- Selected ref: `v2.2.3`; commit `c05b2d6614f6`
 - What it covers: Catalog summary: Multi-platform content distribution across X, LinkedIn, Threads, and Bluesky. Adapts content per platform using content-engine patterns. Never posts identical content cross-platform. Use when the user wants to distribute content across social platforms.
 - Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 - Observed structure: Headings: Crosspost, When to Activate, Core Rules, Workflow, Step 1: Start with the Primary Version. Resources: has_agents_metadata.
@@ -245,7 +245,7 @@
   - Keep provenance and selected ref visible so agents can verify the source before use.
   - Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
 - Assigned benchmark scenarios:
-  - `skill-proof-affaan-m-everything-claude-code-agents-skills-crosspost-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/crosspost/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+  - `skill-proof-affaan-m-everything-claude-code-agents-skills-crosspost-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/crosspost/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
   - `communication-productivity-and-support-enron-email`: Classify, summarize, and route real email threads.
   - `communication-productivity-and-support-ms-marco`: Rank passages and support answer extraction.
   - `communication-productivity-and-support-sec-edgar-companyfacts`: Extract and reconcile financial facts from filings.
@@ -255,8 +255,8 @@
 - Skill page: [investor-outreach](../skills/by-category/communication-productivity-support/selected-structure-reference/investor-outreach.md)
 - Mirrored skill: `included/skills/by-category/communication-productivity-support/selected-structure-reference/investor-outreach`
 - Agent-ready entrypoint: `included/agent-ready/by-category/communication-productivity-support/selected-structure-reference/investor-outreach/SKILL.md`
-- Source: [affaan-m/everything-claude-code `.agents/skills/investor-outreach/SKILL.md`](https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/investor-outreach/SKILL.md)
-- Selected ref: `v1.10.0`; commit `846ffb75da9a`
+- Source: [affaan-m/everything-claude-code `.agents/skills/investor-outreach/SKILL.md`](https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/investor-outreach/SKILL.md)
+- Selected ref: `v2.2.3`; commit `c05b2d6614f6`
 - What it covers: Catalog summary: Draft cold emails, warm intro blurbs, follow-ups, update emails, and investor communications for fundraising. Use when the user wants outreach to angels, VCs, strategic investors, or accelerators and needs concise, personalized, investor-facing messaging.
 - Agent use: Load this skill only when the task matches the catalog summary or source path; read SKILL.md first and then load referenced resources on demand.
 - Observed structure: Headings: Investor Outreach, When to Activate, Core Rules, Voice Handling, Hard Bans. Resources: has_agents_metadata.
@@ -265,7 +265,7 @@
   - Keep provenance and selected ref visible so agents can verify the source before use.
   - Maintain at least 3 real workflow benchmark scenarios before treating the skill as deployable.
 - Assigned benchmark scenarios:
-  - `skill-proof-affaan-m-everything-claude-code-agents-skills-investor-outreach-skill-md`: Use the immutable source file https://github.com/affaan-m/everything-claude-code/blob/846ffb75da9a5f4e677d927af1ad4a1951652267/.agents/skills/investor-outreach/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
+  - `skill-proof-affaan-m-everything-claude-code-agents-skills-investor-outreach-skill-md`: Use the immutable source file https://github.com/affaan-m/ECC/blob/c05b2d6614f62f6db0047669aa4eefb223d478f9/.agents/skills/investor-outreach/SKILL.md as the fixture and prove the agent can understand when and how to use the skill.
   - `communication-productivity-and-support-enron-email`: Classify, summarize, and route real email threads.
   - `communication-productivity-and-support-ms-marco`: Rank passages and support answer extraction.
   - `communication-productivity-and-support-sec-edgar-companyfacts`: Extract and reconcile financial facts from filings.
