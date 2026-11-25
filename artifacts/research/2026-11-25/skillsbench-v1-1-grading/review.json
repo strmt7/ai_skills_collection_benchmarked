@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-25",
+  "scope": "SkillsBench v1.1 native reports with grouped errors and skips",
+  "source_sha256": {
+    "docs/research-skillsbench-native.md": "c52ab5584396efac4f574ac994a212b95c559a22fd7ea2ac118b5deda1fa277b",
+    "tests/test_verify_skillsbench_pytest_reports.py": "efd30e6349885d3a59c24dfb3b006ed840db230996a01289215736e6390515a9",
+    "tools/verify_skillsbench_pytest_reports.py": "63a807b97b0ffeceaa9f1a4581c723a63aba84618b10f90513919da980366341"
+  },
+  "artifacts": {
+    "observations.json": "89377fef4d9703240238708dda540db043193ad33b3cfb31358a1300c37e6f7f"
+  },
+  "comparative_model_attempts": 0,
+  "model_efficacy_established": false
+}

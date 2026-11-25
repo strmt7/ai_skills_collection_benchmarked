@@ -128,3 +128,60 @@ def test_exit_zero_and_reward_alone_cannot_be_scored(tmp_path, capsys):
     assert code == 2
     assert result["status"] == "unscored"
     assert "official_grouped_reward" not in result
+
+
+@pytest.fixture
+def missing_submission_reports(reports):
+    pytest_output = (
+        "platform linux -- Python 3.12.8, pytest-8.3.4, pluggy-1.7.0 -- /tmp/grader/bin/python\n"
+        "rootdir: /verifier\n"
+        "plugins: json-ctrf-0.3.6\n"
+        "collecting ... collected 3 items\n"
+        f"../verifier/{NODE_IDS[0]} ERROR [ 33%]\n"
+        f"../verifier/{NODE_IDS[1]} ERROR [ 66%]\n"
+        f"../verifier/{NODE_IDS[2]} SKIPPED (artifact missing) [100%]\n"
+        "================ short test summary info ================\n"
+        "SKIPPED [1] ../verifier/test_metrics.py:24: artifact missing\n"
+        f"ERROR ../verifier/{NODE_IDS[0]} - FileNotFoundError\n"
+        f"ERROR ../verifier/{NODE_IDS[1]}\n"
+        "================ 1 skipped, 2 errors in 0.10s ================\n"
+    )
+    ctrf = json.loads(reports["ctrf"])
+    ctrf["results"]["summary"].update(passed=0, failed=1, skipped=1)
+    ctrf["results"]["tests"][0]["status"] = "failed"
+    ctrf["results"]["tests"][1]["status"] = "skipped"
+    return {**reports, "ctrf": json.dumps(ctrf).encode(), "pytest_output": pytest_output.encode(), "reward": b"0.0\n"}
+
+
+def test_native_zero_keeps_individual_errors_and_skips(missing_submission_reports):
+    result = verify_reports(**missing_submission_reports)
+    assert result["official_grouped_reward"] == 0.0
+    assert result["ctrf"] == {"tests": 2, "passed": 0, "failed": 1, "skipped": 1}
+    assert result["pytest"] == {"tests": 3, "passed": 0, "failed": 0, "errors": 2, "skipped": 1}
+    assert result["ordered_node_ids_sha256"] == INVENTORY
+
+
+@pytest.mark.parametrize(
+    "old,replacement,message",
+    [
+        (b"SKIPPED [1]", b"SKIPPED [2]", "grouped skips disagree"),
+        (b"test_metrics.py:24:", b"test_others.py:24:", "grouped skips disagree"),
+        (b"1 skipped, 2 errors", b"1 skipped, 1 error", "terminal counts disagree"),
+        (b"ERROR ../verifier/test_metrics.py", b"FAILED ../verifier/test_metrics.py", "short summary disagree"),
+    ],
+)
+def test_rejects_contradictory_errors_and_skips(missing_submission_reports, old, replacement, message):
+    missing_submission_reports["pytest_output"] = missing_submission_reports["pytest_output"].replace(
+        old, replacement, 1
+    )
+    with pytest.raises(ValueError, match=message):
+        verify_reports(**missing_submission_reports)
+
+
+def test_grouped_report_cannot_convert_an_individual_skip_to_a_failure(missing_submission_reports):
+    ctrf = json.loads(missing_submission_reports["ctrf"])
+    ctrf["results"]["tests"][1]["status"] = "failed"
+    ctrf["results"]["summary"].update(failed=2, skipped=0)
+    missing_submission_reports["ctrf"] = json.dumps(ctrf).encode()
+    with pytest.raises(ValueError, match="last outcome"):
+        verify_reports(**missing_submission_reports)

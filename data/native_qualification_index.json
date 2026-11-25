@@ -311,6 +311,18 @@
         "tools/check_native_trial_readiness.py",
         "tools/qualify_trial_context.py"
       ]
+    },
+    {
+      "id": "skillsbench-1-1-native-report-profile",
+      "review": {
+        "path": "artifacts/research/2026-11-25/skillsbench-v1-1-grading/review.json",
+        "sha256": "9110a8a49620106ac8080c87448729e23a244167bab9a18a4c94b7ddaba47aae"
+      },
+      "sources": [
+        "docs/research-skillsbench-native.md",
+        "tests/test_verify_skillsbench_pytest_reports.py",
+        "tools/verify_skillsbench_pytest_reports.py"
+      ]
     }
   ],
   "historical_reviews": [

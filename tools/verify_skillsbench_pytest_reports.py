@@ -17,8 +17,9 @@ from _trial_transcript import strict_json
 PROFILE = "skillsbench-pytest-ctrf-0.3.6"
 MAX_REPORT_BYTES = 512 * 1024
 MAX_NODE_ID_CHARS = 4096
-PROGRESS = re.compile(r"^\.\./verifier/(\S[^:]*::.+?) (PASSED|FAILED)[ \t]+\[[ \t]*\d+%\]$")
-SHORT = re.compile(r"^(PASSED|FAILED) \.\./verifier/(.+)$")
+PROGRESS = re.compile(r"^\.\./verifier/(\S[^:]*::.+?) (PASSED|FAILED|ERROR|SKIPPED)(?: \((.*)\))?[ \t]+\[[ \t]*\d+%\]$")
+SHORT = re.compile(r"^(PASSED|FAILED|ERROR) \.\./verifier/(.+)$")
+SKIP_SHORT = re.compile(r"^SKIPPED \[([1-9]\d*)\] (?:\.\.)?/verifier/([A-Za-z0-9_./-]+\.py):[1-9]\d*: .+$")
 TERMINAL = re.compile(r"=+ (.+?) in \d+(?:\.\d+)?s(?: \([0-9:]+\))? =+")
 NODE = re.compile(r"[A-Za-z0-9_./-]+\.py::[A-Za-z0-9_:]+(?:\[.*\])?")
 
@@ -51,9 +52,10 @@ def _pytest_cases(raw: bytes, pytest_version: str) -> dict[str, str]:
         match = PROGRESS.fullmatch(line)
         if match is None:
             continue
-        node, status = match.groups()
+        node, status, reason = match.groups()
         if (
-            len(node) > MAX_NODE_ID_CHARS
+            (reason is not None and status != "SKIPPED")
+            or len(node) > MAX_NODE_ID_CHARS
             or NODE.fullmatch(node) is None
             or ".." in node.split("::", 1)[0].split("/")
             or node in progress
@@ -68,7 +70,12 @@ def _pytest_cases(raw: bytes, pytest_version: str) -> dict[str, str]:
     if len(summaries) != 1 or terminal is None:
         raise ValueError("Pytest output has no complete terminal summary")
     summary = {}
+    skipped: Counter[str] = Counter()
     for line in lines[summaries[0] + 1 : -1]:
+        if match := SKIP_SHORT.fullmatch(line):
+            count, source_file = match.groups()
+            skipped[source_file] += int(count)
+            continue
         match = SHORT.fullmatch(line)
         if match is None:
             continue
@@ -87,20 +94,22 @@ def _pytest_cases(raw: bytes, pytest_version: str) -> dict[str, str]:
         if selected is None or selected in summary:
             raise ValueError("Pytest short summary has an invalid or ambiguous case ID")
         summary[selected] = status.lower()
-    if summary != progress:
+    if summary != {node: status for node, status in progress.items() if status != "skipped"}:
         raise ValueError("Pytest progress and short summary disagree")
+    if skipped != Counter(node.split("::", 1)[0] for node, status in progress.items() if status == "skipped"):
+        raise ValueError("Pytest progress and grouped skips disagree")
 
     counts = {}
     for entry in terminal[1].split(", "):
-        count = re.fullmatch(r"(\d+) (passed|failed|warnings?)", entry)
+        count = re.fullmatch(r"(\d+) (passed|failed|skipped|errors?|warnings?)", entry)
         if count is None:
             raise ValueError("Pytest terminal summary contains an unsupported outcome")
-        label = count[2].removesuffix("s") if count[2].startswith("warning") else count[2]
+        label = count[2].removesuffix("s")
         if label in counts:
             raise ValueError("Pytest terminal summary repeats an outcome")
         counts[label] = int(count[1])
     observed = Counter(progress.values())
-    if any(counts.get(status, 0) != observed[status] for status in ("passed", "failed")):
+    if any(counts.get(status, 0) != observed[status] for status in ("passed", "failed", "skipped", "error")):
         raise ValueError("Pytest terminal counts disagree with its case outcomes")
     return progress
 
@@ -121,7 +130,7 @@ def _ctrf_cases(raw: bytes, pytest_version: str) -> dict[str, str]:
         if not isinstance(row, dict):
             raise ValueError("CTRF case must be an object")
         name, status = row.get("name"), row.get("status")
-        if not isinstance(name, str) or not name or name in outcomes or status not in ("passed", "failed"):
+        if not isinstance(name, str) or not name or name in outcomes or status not in ("passed", "failed", "skipped"):
             raise ValueError("CTRF has a duplicate or unsupported case outcome")
         outcomes[name] = status
     observed = Counter(outcomes.values())
@@ -129,7 +138,7 @@ def _ctrf_cases(raw: bytes, pytest_version: str) -> dict[str, str]:
         "tests": len(outcomes),
         "passed": observed["passed"],
         "failed": observed["failed"],
-        "skipped": 0,
+        "skipped": observed["skipped"],
         "pending": 0,
         "other": 0,
     }
@@ -155,7 +164,10 @@ def verify_reports(
     inventory = hashlib.sha256("\n".join(pytest_cases).encode("utf-8")).hexdigest()
     if inventory != expected_node_ids_sha256:
         raise ValueError("Pytest case inventory differs from the frozen digest")
-    grouped = {node.split("[", 1)[0]: status for node, status in pytest_cases.items()}
+    # The publisher's pinned CTRF plugin reports pytest error outcomes as failures.
+    grouped = {
+        node.split("[", 1)[0]: "failed" if status == "error" else status for node, status in pytest_cases.items()
+    }
     ctrf_cases = _ctrf_cases(ctrf, pytest_version)
     if grouped != ctrf_cases:
         raise ValueError("CTRF does not match the pinned reporter's last outcome per test function")
@@ -166,11 +178,19 @@ def verify_reports(
     pytest_counts, ctrf_counts = Counter(pytest_cases.values()), Counter(ctrf_cases.values())
     if Decimal(value) != Decimal(str(round(ctrf_counts["passed"] / len(ctrf_cases), 3))):
         raise ValueError("Native reward disagrees with the grouped result")
+    ctrf_totals = {"tests": len(ctrf_cases), "passed": ctrf_counts["passed"], "failed": ctrf_counts["failed"]}
+    pytest_totals = {"tests": len(pytest_cases), "passed": pytest_counts["passed"], "failed": pytest_counts["failed"]}
+    if ctrf_counts["skipped"]:
+        ctrf_totals["skipped"] = ctrf_counts["skipped"]
+    if pytest_counts["skipped"]:
+        pytest_totals["skipped"] = pytest_counts["skipped"]
+    if pytest_counts["error"]:
+        pytest_totals["errors"] = pytest_counts["error"]
     return {
         "profile": PROFILE,
         "official_grouped_reward": float(value),
-        "ctrf": {"tests": len(ctrf_cases), "passed": ctrf_counts["passed"], "failed": ctrf_counts["failed"]},
-        "pytest": {"tests": len(pytest_cases), "passed": pytest_counts["passed"], "failed": pytest_counts["failed"]},
+        "ctrf": ctrf_totals,
+        "pytest": pytest_totals,
         "ordered_node_ids_sha256": inventory,
         "report_sha256": {
             key: hashlib.sha256(raw).hexdigest()

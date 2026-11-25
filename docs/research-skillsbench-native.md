@@ -65,6 +65,30 @@ task's reward. The exposed task and oracle are excluded from untouched
 confirmatory evaluation. See the [qualification evidence](../artifacts/research/2026-11-11/benchmark-qualification/review.json)
 and the [execution plan](benchmark-execution-plan.md).
 
+## SkillsBench v1.1 replay
+
+The tagged `dialogue-parser` package matches the earlier verifier files and
+the frozen 35-case inventory. BenchFlow 0.10.1 installed from 141 locked Linux
+wheels and validated the tagged package. The verifier replay used its
+publisher Python 3.12.8 image in network-disabled leases and seven pinned
+Python wheels. The producer and grader used separate leases. The task's
+system Graphviz package was outside this replay's environment. [SkillsBench
+v1.1](https://github.com/benchflow-ai/skillsbench/releases/tag/v1.1) ·
+[BenchFlow 0.10.1](https://pypi.org/project/benchflow/0.10.1/)
+
+| Control | Individual pytest outcomes | Grouped CTRF outcomes | Official reward |
+| --- | --- | --- | ---: |
+| Publisher oracle | 35 passed | 6 passed | 1.0 |
+| Empty submission | 31 errors, 4 skipped | 5 failed, 1 skipped | 0.0 |
+| Grader dependencies unavailable | Pytest did not run | Report missing | Unscored |
+
+The dependency failure wrote `0` and the verifier exited zero. Only the
+empty submission produced a corresponding scored test report. The oracle
+produced `dialogue.json` and `dialogue.dot`, and earned full reward with no
+`solution.py` in its captured submission. The original task asks for that
+file, so its native reward is insufficient evidence of parser implementation.
+Treat the task as an evaluator control. [Tagged replay evidence](../artifacts/research/2026-11-25/skillsbench-v1-1-grading/review.json)
+
 ## Verify captured reports
 
 The report checker supports the pinned pytest verbose output and
@@ -81,7 +105,10 @@ python tools/verify_skillsbench_pytest_reports.py \
 ```
 
 The checker emits the official grouped reward, the individual pytest counts
-and the raw report hashes. Missing, unsupported, or contradictory reports
-return `unscored` and exit code 2. The three files must come from the same
-attempt. Keep the task, submission, and environment receipts with them to
-establish that association.
+and the raw report hashes. It preserves skips and errors in the native counts.
+The pinned CTRF reporter counts individual pytest errors as failures at the
+grouped level and can report a skipped group. The checker reconciles these
+outcomes with the frozen case inventory, short summary and terminal totals.
+Missing, unsupported or contradictory reports return `unscored` and exit
+code 2. The three files must come from the same attempt. Keep the task,
+submission and environment receipts with them to establish that association.

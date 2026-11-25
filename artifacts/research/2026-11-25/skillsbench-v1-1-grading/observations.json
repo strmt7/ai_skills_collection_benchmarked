@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-25",
+  "scope": "Native tagged task grading and report-profile verification",
+  "publisher": {
+    "repository": "https://github.com/benchflow-ai/skillsbench",
+    "tag": "v1.1",
+    "commit": "b63b7b2850226b6aa4fb5929a8c1ac7bc4d9a6af",
+    "task_tree": "5cf76c4e3d63dac143f10439f169dd23c85c8d28",
+    "task_file_sha256": {
+      "environment/Dockerfile": "e0fdab0e028c11d5437caf3b827f10aa65fcf224c8a9689fecc7fa49f3ec92e7",
+      "environment/script.txt": "f63dcc28386cb2f963362eb78d40af75eb362945646c3c86e2a699bb2f14b409",
+      "environment/skills/dialogue-graph/SKILL.md": "03d711b93219cec1cd70d823d595e7c5adffc058c5910b94886fe6cc374f08d8",
+      "environment/skills/dialogue-graph/scripts/dialogue_graph.py": "f169725b80f5d63bddab1f2b5bbe1114643952defff760ef9e2e1096a93f53de",
+      "oracle/dialogue.json": "7c26e8db8b9624f73d3f0ee6406a5eda0a2044ed401efbb98d9eff8092a57f15",
+      "oracle/script.txt": "f63dcc28386cb2f963362eb78d40af75eb362945646c3c86e2a699bb2f14b409",
+      "oracle/solution.py": "583e6513768600d8daa0e25c882cf3efd78d063c27eb66662591e0cb8a1799e2",
+      "oracle/solve.sh": "5973e2fe36b0e6c7219ef1ced877580eea3519b7433ef8254113d8cadfaf442e",
+      "task.md": "d14e9102a433abcdb7cbab8a02e082b698fb87eb50fd9e8bc95c2ebb8d9cc1ab",
+      "verifier/test.sh": "57d2cb2cbd76d173357da476eb525e07678aabbb4b22392563718fe867e12f67",
+      "verifier/test_outputs.py": "d0effcfa8ba898260bce69ba8a0c4852f4959a83e9130cc69c13847f0f05b01c"
+    },
+    "task": "dialogue-parser",
+    "task_files_verified": 11
+  },
+  "benchflow": {
+    "native_version": "0.10.1",
+    "installed_linux_projects": 141,
+    "package_sha256": "fe3fb87f0bac897e8730a7e9d85f3807d426c0de77ff0a7e55a844199794b018",
+    "validated_schema": true
+  },
+  "runtime": {
+    "image": {
+      "tag": "3.12.8-slim",
+      "index_digest": "sha256:2199a62885a12290dc9c5be3ca0681d367576ab7bf037da120e564723292a2f0",
+      "platform_digest": "sha256:8859bd6ca943079262c27e38b7119cdacede77c463139a15651dd340087a6cc9",
+      "image_id": "sha256:9868da1de9f4ed56f66f6f501440e23c230ea163f0636ef0e24564dcbcc1ef27",
+      "compressed_layer_bytes": 45372989,
+      "manifest_url": "https://registry-1.docker.io/v2/library/python/manifests/sha256:8859bd6ca943079262c27e38b7119cdacede77c463139a15651dd340087a6cc9",
+      "image_reference": "docker.io/library/python@sha256:8859bd6ca943079262c27e38b7119cdacede77c463139a15651dd340087a6cc9"
+    },
+    "dependencies": {
+      "graphviz": {
+        "version": "0.20.3",
+        "sha256": "81f848f2904515d8cd359cc611faba817598d2feaac4027b266aa3eda7b3dde5"
+      },
+      "iniconfig": {
+        "version": "2.3.1",
+        "sha256": "9121e2c1fdb355232495be3194c8dfe87ccc2d5dee45947b78e68f499790d7a7"
+      },
+      "packaging": {
+        "version": "26.4",
+        "sha256": "81383611a09c1bc0b08b76e0fd5829d7c6824c65b27a6aee339da133f4233ea2"
+      },
+      "pip": {
+        "version": "26.3",
+        "sha256": "f3b60b20ffaadd4415ed7957212a38ac63fa4c5fa375bd0f4a797777940fad13"
+      },
+      "pluggy": {
+        "version": "1.7.0",
+        "sha256": "7dd7b0d8832ba3cb632c306926ded123429211b83641b35dc5c41ad2d34f9bec"
+      },
+      "pytest": {
+        "version": "8.3.4",
+        "sha256": "50e16d954148559c9a74109af1eaf0c945ba2d8f30f0a3d3335edde19788b6f6"
+      },
+      "pytest-json-ctrf": {
+        "version": "0.3.6",
+        "sha256": "82231614ff52b5eec14e214761eb2d785b45c062775b315a67b44659a42f5a2d"
+      }
+    },
+    "dependency_lock_sha256": "69b3b65773edcc521ae2e4b62d452b27861099964886713ac528546adb95d24b",
+    "network_disabled": true,
+    "separate_oracle_and_verifier_leases": true,
+    "system_graphviz_installed": false,
+    "remaining_owned_containers": 0,
+    "remaining_owned_controller_processes": 0
+  },
+  "native_results": {
+    "oracle-submission": {
+      "profile": "skillsbench-pytest-ctrf-0.3.6",
+      "official_grouped_reward": 1.0,
+      "ctrf": {
+        "tests": 6,
+        "passed": 6,
+        "failed": 0
+      },
+      "pytest": {
+        "tests": 35,
+        "passed": 35,
+        "failed": 0
+      },
+      "ordered_node_ids_sha256": "5c15f09fcd66f158d19c35e0fa6432c19ddc0659bf486415243c8429f4dc65b5",
+      "report_sha256": {
+        "ctrf": "acd6a88fcd3568d8dd6260d015bbbc3868b4ccb6ef70600767d9c6da2a50c534",
+        "pytest_output": "942078e1b3b9eeff928ecf2ad5c6bd59ab23ad7a7a213d3f02c8d3e76ea3ffd4",
+        "reward": "5717e7c840171019a4eeab5b79a7f894a4986eaff93d04ec5b12c9a189f594bf"
+      }
+    },
+    "no-operation": {
+      "profile": "skillsbench-pytest-ctrf-0.3.6",
+      "official_grouped_reward": 0.0,
+      "ctrf": {
+        "tests": 6,
+        "passed": 0,
+        "failed": 5,
+        "skipped": 1
+      },
+      "pytest": {
+        "tests": 35,
+        "passed": 0,
+        "failed": 0,
+        "skipped": 4,
+        "errors": 31
+      },
+      "ordered_node_ids_sha256": "5c15f09fcd66f158d19c35e0fa6432c19ddc0659bf486415243c8429f4dc65b5",
+      "report_sha256": {
+        "ctrf": "b9e4c200f8de6d6c4e73878f1b0e2daa5807f81afc86f35e5ff2484d734c62ba",
+        "pytest_output": "2f098c168f2a71600e98797832bd40e6c9abeae54bbf459de6955426ebb8b6ee",
+        "reward": "51ff0d2f0d3a5d61edec31785532ea0d570f8c348d58b15b94ff9c2ca6e926a4"
+      }
+    }
+  },
+  "unavailable_grader": {
+    "native_reward_written": 0,
+    "ctrf_present": false,
+    "report_status": "unscored",
+    "reward_sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+  },
+  "oracle_outputs": [
+    "dialogue.dot",
+    "dialogue.json"
+  ],
+  "missing_declared_oracle_outputs": [
+    "solution.py"
+  ],
+  "prior_failed_control": "The controller expected the unmodified oracle to emit solution.py before grading. The retained oracle output shows that it does not emit this artifact.",
+  "prior_checker_case": "The published checker rejected the complete no-operation result because it handled only passed and failed cases.",
+  "inventory_sha256": "5c15f09fcd66f158d19c35e0fa6432c19ddc0659bf486415243c8429f4dc65b5",
+  "native_execution_sha256": "1b0a5928e31efd2faa626fe9c4045ff1ccd0c62669b92e3d8caf72b6f35cda82",
+  "complete_publisher_job_ran": false,
+  "benchmarked_model_attempts": 0,
+  "use": "Evaluator control only. The grouped reward does not establish the declared parser implementation."
+}
