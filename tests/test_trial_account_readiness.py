@@ -10,6 +10,7 @@ import _trial_account_readiness as readiness
 import check_native_trial_readiness as readiness_cli
 import pytest
 from _trial_context import TrialContext
+from _trial_provider import bind_credentials
 
 
 @pytest.mark.parametrize("failure", [False, True])
@@ -301,6 +302,23 @@ def test_native_preflight_has_no_subject_turn_token_export_or_raw_metadata_artif
     assert limits["stdout"].closed and limits["stderr"].closed
     settings = tomllib.loads(next(value for value in invocation if value.startswith("permissions.trial.filesystem=")))
     assert settings["permissions"]["trial"]["filesystem"][declaration["codex_home"]] == "deny"
+
+
+@pytest.mark.parametrize("name", ["AGENTS.md", "AGENTS.override.md"])
+def test_metadata_probe_checks_shared_signin_without_admitting_a_subject(native, name):
+    context, declaration, state = native
+    entry = Path(declaration["codex_home"]) / name
+    entry.write_bytes(b"personal-instructions-canary")
+    report = readiness.probe(context, declaration, "gpt-6.1-sol", "high")
+    assert report["eligible"] and report["global_instruction_entries_present"] is True
+    assert report["whole_model_trial_boundary_qualified"] is False
+    assert "personal-instructions-canary" not in json.dumps(report)
+    assert state["calls"][-1][1]["environment"]["CODEX_HOME"] == declaration["codex_home"]
+    assert len(state["calls"]) == 2
+    with pytest.raises(ValueError, match="global instructions"):
+        bind_credentials(context, declaration, {})
+    assert len(state["calls"]) == 2 and context.signin is None
+    assert entry.read_bytes() == b"personal-instructions-canary"
 
 
 @pytest.mark.parametrize(

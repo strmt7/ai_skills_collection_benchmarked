@@ -521,6 +521,11 @@ requested model and reasoning effort. It requests no token export, interactive
 login, Reserve operation or explicit forced refresh. Native authentication can
 still refresh credentials when its normal lifecycle requires it.
 
+The metadata check accepts a declared sign-in profile with global instruction
+entries and reports their presence from filesystem metadata. Subject launch
+still requires an instruction-free profile and a source-bound execution
+qualification.
+
 The checker uses disposable controller and workspace directories separate from
 the report path. This gives native SQLite a shorter temporary path on Windows.
 It removes the scratch directories when the check closes and discards raw RPC
@@ -531,6 +536,10 @@ CLI maintains its normal sign-in state in the declared profile.
 Codex CLI 0.172.0 passed 13 synthetic readiness controls covering account and
 model metadata, refresh, profile inputs and configuration stability.
 [Codex CLI 0.172.0 qualification](../artifacts/research/2026-11-25/codex-0172-runtime/review.json)
+
+The live metadata check listed GPT-6.1 Sol with high reasoning effort and
+confirmed ordinary account usage.
+[Live metadata evidence](../artifacts/research/2026-11-25/official-signed-metadata/review.json)
 
 The [11 native controls](../artifacts/research/2026-11-11/native-account-readiness/review.json)
 include successful metadata, unavailable or denied usage, an unavailable model,

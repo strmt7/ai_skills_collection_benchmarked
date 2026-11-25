@@ -131,7 +131,13 @@ def inline_table(values: Mapping[str, str | Mapping[str, str]]) -> str:
     )
 
 
-def options(context: TrialContext, model: str, reasoning_effort: str) -> list[str]:
+def options(
+    context: TrialContext,
+    model: str,
+    reasoning_effort: str,
+    *,
+    protected_profile: Path | None = None,
+) -> list[str]:
     """Use the same context and permission settings in probes and model trials."""
     if not model or "\0" in model or reasoning_effort not in {"low", "medium", "high", "xhigh", "max"}:
         raise ValueError("An explicit model and supported reasoning effort are required")
@@ -142,6 +148,8 @@ def options(context: TrialContext, model: str, reasoning_effort: str) -> list[st
     }
     if context.signin is not None:
         filesystem[str(context.signin.home)] = "deny"
+    if protected_profile is not None:
+        filesystem[str(protected_profile)] = "deny"
     settings = {
         "model": json.dumps(model),
         "model_reasoning_effort": json.dumps(reasoning_effort),

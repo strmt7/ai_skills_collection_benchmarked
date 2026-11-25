@@ -163,8 +163,9 @@ all 30 contributing upstreams or prove baseline quality.
    the model chose a placeholder script path. The required file was absent.
    Retain the raw trace and failed, unscored attempt. The earlier gpt-oss:20b run
    timed out after 180.089 seconds with a missing required `cmd` field. Its later
-   preflights also stopped before inference. The requested official signed-in
-   GPT-6.1 Sol high route awaits a clean, isolated authenticated context.
+   preflights also stopped before inference. The official signed-in CLI lists
+   GPT-6.1 Sol and high effort, and reports ordinary usage allowed. Model
+   execution awaits a clean, isolated authenticated context.
 4. **Original task graphs are incomplete.** Node file-loader metadata access,
    Go, Faiss/CUDA, Nx/pnpm and complete original build/test/collection stages need
    qualification. An AMD GPU does not establish CUDA compatibility. Preserve the

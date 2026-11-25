@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-25",
+  "scope": "Live account and model metadata in the official Windows Codex CLI, and independent sign-in boundary checks",
+  "source_sha256": {
+    "docs/improvement-plan.md": "0efe31d53cc9c061e6b466d6266dcddf887e1a0fb7a282aecbd218a33fc6281d",
+    "docs/native-benchmark-controller.md": "6554b99698034b54993ed4a8f0233422b4f62ccfd446c4efaed9f38555cf0c6f",
+    "tests/test_trial_account_readiness.py": "fb2197595d3fb05ce4668acfc75cc2d2fa73201d4564a520df44ff33d544faf1",
+    "tests/test_trial_signin.py": "df8d13c039ff958a73b3b4cb77dd9fdb9665b558b39f62e6677dffed5c40705c",
+    "toolchains/bootstrap/codex.json": "ba19414eee75368b808031f6a3eefe9f24dd7a330375c7d7b9da1cfbf996190f",
+    "tools/_trial_account_readiness.py": "233c72863bdb049a68950e4c6e710d1b3ba6844f8183968c847e441aee3de29f",
+    "tools/_trial_context.py": "9644724991b501d404762f4b5785d151c6fba460614128e4eac39eeed7255418",
+    "tools/_trial_provider.py": "f8b35a67b28a8e9fdb6a83ddd6d2a5012e6e76d81965ab2fc031d5332b600894",
+    "tools/_trial_signin.py": "961bb67633a6d7ec6605e2153b4a11c97f86392a9a5d640d88fac01a73253df1",
+    "tools/_windows_trial_process.py": "ab73c62bb12bb9e255bc321694860168b1cf9f555ffa3c589192ec0ac08aa9e2",
+    "tools/check_native_trial_readiness.py": "8d942364abd040f080d6ba99cab8685c34bab2a1d5e8b93e5f5f73d5cc26d5c7"
+  },
+  "artifacts": {
+    "observations.json": "5dcd93c03e10800199f679dbc1a321d3d095c956f22f6ac8629b9c3330300ba6"
+  },
+  "official_protocol_reference": "https://learn.chatgpt.com/docs/app-server",
+  "comparative_model_attempts": 0,
+  "model_efficacy_established": false
+}

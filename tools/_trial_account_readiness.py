@@ -10,8 +10,8 @@ import threading
 import time
 from typing import TYPE_CHECKING, Any
 
-from _trial_provider import credential_lease, provider_options, validate_provider
-from _trial_signin import SigninAdmissionError
+from _trial_provider import provider_options, validate_provider
+from _trial_signin import SigninAdmissionError, global_instructions_present, read_signin_status, signin_home
 from _trial_transcript import strict_json
 
 if TYPE_CHECKING:
@@ -227,11 +227,15 @@ def probe(context: TrialContext, provider: Any, model: str, effort: str) -> dict
     observed: dict[str, Any] = {}
     methods: list[str] = []
     try:
-        with credential_lease(context, declared, {}) as selected, _Capture() as stdout, _Capture() as stderr:
+        profile = signin_home(context, declared)
+        report["global_instruction_entries_present"] = global_instructions_present(profile)
+        report["signin_status_process"] = read_signin_status(context, profile, declared["credential_store"])
+        environment = {**context.controller_environment, "CODEX_HOME": str(profile)}
+        with _Capture() as stdout, _Capture() as stderr:
             report["stage"] = "account_metadata"
             invocation = [
-                str(selected.cli),
-                *options(selected, model, effort),
+                str(context.cli),
+                *options(context, model, effort, protected_profile=profile),
                 *provider_options(declared),
                 "-c",
                 "mcp_servers={}",
@@ -246,8 +250,8 @@ def probe(context: TrialContext, provider: Any, model: str, effort: str) -> dict
                     with os.fdopen(read_fd, "rb", buffering=0) as stdin:
                         observed["process"] = run_owned(
                             invocation,
-                            cwd=selected.workspace,
-                            environment=selected.controller_environment,
+                            cwd=context.workspace,
+                            environment=environment,
                             stdin=stdin,
                             stdout=stdout,
                             stderr=stderr,
@@ -293,7 +297,7 @@ def probe(context: TrialContext, provider: Any, model: str, effort: str) -> dict
                     if "error" in initialized:
                         raise ValueError("Native readiness initialization failed")
                     writer.write(b'{"method":"initialized","params":{}}\n')
-                    config_params = {"includeLayers": False, "cwd": str(selected.workspace)}
+                    config_params = {"includeLayers": False, "cwd": str(context.workspace)}
                     configuration = request("config/read", config_params)
                     account = request("account/read", {"refreshToken": False})
                     quota = request(
@@ -341,6 +345,8 @@ def probe(context: TrialContext, provider: Any, model: str, effort: str) -> dict
             report["stage"] = "process_completion"
             if observed.get("process_error") or not _completed(report["process"], size):
                 raise RuntimeError("Native readiness process did not complete its owned contract")
+            present = global_instructions_present(profile)
+            report["global_instruction_entries_present"] = report["global_instruction_entries_present"] or present
             report.update(observed["assessment"])
             report["status"] = "eligible" if report["eligible"] else "ineligible"
             report["stage"] = "complete"

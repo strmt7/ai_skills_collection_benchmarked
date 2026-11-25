@@ -134,7 +134,6 @@
         "sha256": "0e43dd1b61f03561c079786ab0e6e859bb84142040cc5e4ea4120668b1fefe28"
       },
       "sources": [
-        "tools/_trial_context.py",
         "tests/test_trial_context.py"
       ]
     },
@@ -299,7 +298,6 @@
       },
       "sources": [
         "tests/test_qualify_trial_context.py",
-        "tests/test_trial_account_readiness.py",
         "toolchains/bootstrap/README.md",
         "toolchains/bootstrap/codex.json",
         "tools/check_native_trial_readiness.py",
@@ -325,7 +323,6 @@
         "sha256": "cb02327aae970a7794554dfbd1a57e1707e4c77ccb5782c36d998d9990b094c7"
       },
       "sources": [
-        "docs/native-benchmark-controller.md",
         "tests/test_native_benchmark_runtime.py",
         "tools/_native_benchmark_runtime.py"
       ]
@@ -360,6 +357,20 @@
         ".gitattributes",
         "tools/validate_catalog.py"
       ]
+    },
+    {
+      "id": "official-codex-signed-metadata",
+      "review": {
+        "path": "artifacts/research/2026-11-25/official-signed-metadata/review.json",
+        "sha256": "19bebf91660608a9885a715603cf171e6763314f63d57cbbf452a7512880dfe7"
+      },
+      "sources": [
+        "docs/native-benchmark-controller.md",
+        "tests/test_trial_account_readiness.py",
+        "tools/_trial_account_readiness.py",
+        "tools/_trial_context.py",
+        "tools/_trial_signin.py"
+      ]
     }
   ],
   "historical_reviews": [
@@ -381,9 +392,11 @@
         "tools/_lib_b/__init__.py",
         "tools/_lib_b/frontmatter_utils.py",
         "tools/_native_benchmark_runtime.py",
+        "tools/_trial_account_readiness.py",
         "tools/_trial_catalog.py",
         "tools/_trial_context.py",
         "tools/_trial_execution_evidence.py",
+        "tools/_trial_signin.py",
         "tools/_windows_appcontainer.py",
         "tools/_windows_storage_budget.py",
         "tools/_windows_trial_process.py",
@@ -402,9 +415,11 @@
         "tools/_lib_b/__init__.py",
         "tools/_lib_b/frontmatter_utils.py",
         "tools/_native_benchmark_runtime.py",
+        "tools/_trial_account_readiness.py",
         "tools/_trial_catalog.py",
         "tools/_trial_context.py",
         "tools/_trial_execution_evidence.py",
+        "tools/_trial_signin.py",
         "tools/_windows_appcontainer.py",
         "tools/_windows_storage_budget.py",
         "tools/_windows_trial_process.py",
@@ -704,6 +719,7 @@
         "tests/test_subject_toolchains.py",
         "tools/_native_benchmark_runtime.py",
         "tools/_subject_toolchains.py",
+        "tools/_trial_context.py",
         "tools/run_swe_skills_trial.py"
       ]
     },
@@ -740,6 +756,16 @@
       "review": {
         "path": "artifacts/research/2026-11-25/codex-0172-runtime/review.json",
         "sha256": "f8421961875909bd86738f36d735e4147586e2231daf17b30fa0bfc34e8323cb"
+      },
+      "superseded_sources": [
+        "docs/native-benchmark-controller.md",
+        "tests/test_trial_account_readiness.py"
+      ]
+    },
+    {
+      "review": {
+        "path": "artifacts/research/2026-11-25/skillsbench-react-native/review.json",
+        "sha256": "cb02327aae970a7794554dfbd1a57e1707e4c77ccb5782c36d998d9990b094c7"
       },
       "superseded_sources": [
         "docs/native-benchmark-controller.md"

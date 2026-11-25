@@ -100,10 +100,9 @@ def status_completed(value: Any) -> bool:
     )
 
 
-def bind_signin(context: TrialContext, declaration: dict[str, str]) -> TrialContext:
-    """Admit the selected existing login through a bounded official status command."""
+def signin_home(context: TrialContext, declaration: dict[str, str]) -> Path:
+    """Resolve the existing sign-in directory outside controller and subject grants."""
     from _windows_appcontainer import checked_path
-    from _windows_trial_process import run_owned
 
     home = checked_path(Path(declaration["codex_home"]))
     if (
@@ -115,14 +114,20 @@ def bind_signin(context: TrialContext, declaration: dict[str, str]) -> TrialCont
         )
     ):
         raise ValueError("Native sign-in storage must be disjoint from controller, subject and runtime grants")
-    require_instruction_free_home(home)
+    return home
+
+
+def read_signin_status(context: TrialContext, home: Path, store: str) -> dict[str, Any]:
+    """Verify a completed official status command without retaining its text."""
+    from _windows_trial_process import run_owned
+
     environment = {**context.controller_environment, "CODEX_HOME": str(home)}
     with io.BytesIO() as stdout, io.BytesIO() as stderr, open(os.devnull, "rb") as stdin:
         process = run_owned(
             [
                 str(context.cli),
                 "-c",
-                "cli_auth_credentials_store=" + '"' + declaration["credential_store"] + '"',
+                "cli_auth_credentials_store=" + '"' + store + '"',
                 "login",
                 "status",
             ],
@@ -151,10 +156,29 @@ def bind_signin(context: TrialContext, declaration: dict[str, str]) -> TrialCont
     admitted = mode == "chatgpt" and status_completed(process)
     if not admitted:
         raise SigninAdmissionError({"admitted": False, "mode": mode, "process": process})
+    return process
+
+
+def bind_signin(context: TrialContext, declaration: dict[str, str]) -> TrialContext:
+    """Admit a ChatGPT sign-in and an instruction-free profile for trial execution."""
+    home = signin_home(context, declaration)
+    store = declaration["credential_store"]
     require_instruction_free_home(home)
-    return replace(
-        context, controller_environment=environment, signin=NativeSignin(home, declaration["credential_store"], process)
-    )
+    process = read_signin_status(context, home, store)
+    require_instruction_free_home(home)
+    environment = {**context.controller_environment, "CODEX_HOME": str(home)}
+    return replace(context, controller_environment=environment, signin=NativeSignin(home, store, process))
+
+
+def global_instructions_present(home: Path) -> bool:
+    """Observe entry presence without opening any instruction contents."""
+    for name in ("AGENTS.override.md", "AGENTS.md"):
+        try:
+            (home / name).lstat()
+        except FileNotFoundError:
+            continue
+        return True
+    return False
 
 
 def require_instruction_free_home(home: Path) -> None:
@@ -163,9 +187,5 @@ def require_instruction_free_home(home: Path) -> None:
     The pinned CLI loads these separately from config.toml and the project byte
     limit. These checks do not freeze a shared profile against concurrent writes.
     """
-    for name in ("AGENTS.override.md", "AGENTS.md"):
-        try:
-            (home / name).lstat()
-        except FileNotFoundError:
-            continue
+    if global_instructions_present(home):
         raise SigninAdmissionError({"admitted": False, "mode": "not_checked", "reason": "global_instructions_present"})

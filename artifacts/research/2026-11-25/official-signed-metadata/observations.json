@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-11-25",
+  "official_cli_version": "0.172.0",
+  "official_cli_source_commit": "3d86e43b075adeba2193ec5c22ac92f55afd82e6",
+  "profile_status_controls": [
+    {
+      "profile_role": "existing_profile",
+      "native_status": "chatgpt",
+      "global_instruction_entries_present": true
+    },
+    {
+      "profile_role": "fresh_profile",
+      "native_status": "not_logged_in",
+      "global_instruction_entries_present": false
+    }
+  ],
+  "metadata_readiness": {
+    "scope": "account_quota_model_metadata",
+    "status": "eligible",
+    "eligible": true,
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "high",
+    "ordinary_usage_allowed": true,
+    "global_instruction_entries_present": true,
+    "configuration_metadata_confirmed": true,
+    "configuration_snapshots_match": true,
+    "explicit_model_catalog_override": false,
+    "whole_model_trial_boundary_qualified": false,
+    "raw_account_metadata_retained": false,
+    "raw_configuration_retained": false,
+    "model_inferences": 0
+  },
+  "methods": [
+    "initialize",
+    "config/read",
+    "account/read",
+    "account/rateLimits/read",
+    "model/list",
+    "account/read",
+    "config/read"
+  ],
+  "native_processes": {
+    "signin_status_process": {
+      "exit_code": 0,
+      "job_active_processes_after_cleanup": 0,
+      "windows_job": true,
+      "assigned_before_resume": true,
+      "kill_on_close": true,
+      "explicit_environment": true,
+      "termination_reason": null
+    },
+    "process": {
+      "exit_code": 0,
+      "job_active_processes_after_cleanup": 0,
+      "windows_job": true,
+      "assigned_before_resume": true,
+      "kill_on_close": true,
+      "explicit_environment": true,
+      "termination_reason": null
+    }
+  },
+  "subject_command_started": false
+}
